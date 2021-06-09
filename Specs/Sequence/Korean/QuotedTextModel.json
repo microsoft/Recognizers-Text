@@ -1,0 +1,29 @@
+[
+ {
+  "Input": "이 `숫자`는 `123`또는 `456`입니다.",
+  "NotSupportedByDesign": "javascript, python, java",
+  "Results": [
+   {
+    "Text": "`숫자`",
+    "TypeName": "quotedText",
+    "Resolution": {
+     "value": "`숫자`"
+    }
+   },
+   {
+    "Text": "`123`",
+    "TypeName": "quotedText",
+    "Resolution": {
+     "value": "`123`"
+    }
+   },
+   {
+    "Text": "`456`",
+    "TypeName": "quotedText",
+    "Resolution": {
+     "value": "`456`"
+    }
+   }
+  ]
+ }
+]

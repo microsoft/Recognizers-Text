@@ -6,10 +6,8 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
-    public class ChineseSetExtractorConfiguration : IDateTimeExtractor
+    public class ChineseSetExtractorConfiguration : BaseDateTimeOptionsConfiguration, ICJKSetExtractorConfiguration
     {
-        public static readonly string ExtractorName = Constants.SYS_DATETIME_SET;
-
         public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.SetUnitRegex, RegexFlags);
 
         public static readonly Regex EachUnitRegex = new Regex(DateTimeDefinitions.SetEachUnitRegex, RegexFlags);
@@ -22,118 +20,40 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        private static readonly ChineseDurationExtractorConfiguration DurationExtractor = new ChineseDurationExtractorConfiguration();
-
-        private static readonly ChineseTimeExtractorConfiguration TimeExtractor = new ChineseTimeExtractorConfiguration();
-
-        private static readonly ChineseDateExtractorConfiguration DateExtractor = new ChineseDateExtractorConfiguration();
-
-        private static readonly ChineseDateTimeExtractorConfiguration DateTimeExtractor = new ChineseDateTimeExtractorConfiguration();
-
-        public static List<Token> MatchEachDuration(string text, DateObject referenceTime)
+        public ChineseSetExtractorConfiguration(IDateTimeOptionsConfiguration config)
+            : base(config)
         {
-            var ret = new List<Token>();
-
-            var ers = DurationExtractor.Extract(text, referenceTime);
-            foreach (var er in ers)
-            {
-                // "each last summer" doesn't make sense
-                if (LastRegex.IsMatch(er.Text))
-                {
-                    continue;
-                }
-
-                var beforeStr = text.Substring(0, er.Start ?? 0);
-                var match = EachPrefixRegex.Match(beforeStr);
-                if (match.Success)
-                {
-                    ret.Add(new Token(match.Index, er.Start + er.Length ?? 0));
-                }
-            }
-
-            return ret;
+            DurationExtractor = new BaseCJKDurationExtractor(new ChineseDurationExtractorConfiguration(this));
+            TimeExtractor = new BaseCJKTimeExtractor(new ChineseTimeExtractorConfiguration(this));
+            DateExtractor = new BaseCJKDateExtractor(new ChineseDateExtractorConfiguration(this));
+            DateTimeExtractor = new BaseCJKDateTimeExtractor(new ChineseDateTimeExtractorConfiguration(this));
+            DatePeriodExtractor = new BaseCJKDatePeriodExtractor(new ChineseDatePeriodExtractorConfiguration(this));
+            TimePeriodExtractor = new BaseCJKTimePeriodExtractor(new ChineseTimePeriodExtractorConfiguration(this));
+            DateTimePeriodExtractor = new BaseCJKDateTimePeriodExtractor(new ChineseDateTimePeriodExtractorConfiguration(this));
         }
 
-        public static List<Token> MatchEachUnit(string text)
-        {
-            var ret = new List<Token>();
+        public IDateTimeExtractor DurationExtractor { get; }
 
-            // handle "each month"
-            var matches = EachUnitRegex.Matches(text);
-            foreach (Match match in matches)
-            {
-                ret.Add(new Token(match.Index, match.Index + match.Length));
-            }
+        public IDateTimeExtractor TimeExtractor { get; }
 
-            return ret;
-        }
+        public IDateTimeExtractor DateExtractor { get; }
 
-        public static List<Token> TimeEveryday(string text, DateObject referenceTime)
-        {
-            var ret = new List<Token>();
-            var ers = TimeExtractor.Extract(text, referenceTime);
-            foreach (var er in ers)
-            {
-                var beforeStr = text.Substring(0, er.Start ?? 0);
-                var match = EachDayRegex.Match(beforeStr);
-                if (match.Success)
-                {
-                    ret.Add(new Token(match.Index, match.Index + match.Length + (er.Length ?? 0)));
-                }
-            }
+        public IDateTimeExtractor DateTimeExtractor { get; }
 
-            return ret;
-        }
+        public IDateTimeExtractor DatePeriodExtractor { get; }
 
-        public static List<Token> MatchEachDate(string text, DateObject referenceTime)
-        {
-            var ret = new List<Token>();
-            var ers = DateExtractor.Extract(text, referenceTime);
-            foreach (var er in ers)
-            {
-                var beforeStr = text.Substring(0, er.Start ?? 0);
-                var match = EachPrefixRegex.Match(beforeStr);
-                if (match.Success)
-                {
-                    ret.Add(new Token(match.Index, match.Index + match.Length + (er.Length ?? 0)));
-                }
-            }
+        public IDateTimeExtractor TimePeriodExtractor { get; }
 
-            return ret;
-        }
+        public IDateTimeExtractor DateTimePeriodExtractor { get; }
 
-        public static List<Token> MatchEachDateTime(string text, DateObject referenceTime)
-        {
-            var ret = new List<Token>();
-            var ers = DateTimeExtractor.Extract(text, referenceTime);
-            foreach (var er in ers)
-            {
-                var beforeStr = text.Substring(0, er.Start ?? 0);
-                var match = EachPrefixRegex.Match(beforeStr);
-                if (match.Success)
-                {
-                    ret.Add(new Token(match.Index, match.Index + match.Length + (er.Length ?? 0)));
-                }
-            }
+        Regex ICJKSetExtractorConfiguration.LastRegex => LastRegex;
 
-            return ret;
-        }
+        Regex ICJKSetExtractorConfiguration.EachPrefixRegex => EachPrefixRegex;
 
-        public List<ExtractResult> Extract(string text)
-        {
-            return Extract(text, DateObject.Now);
-        }
+        Regex ICJKSetExtractorConfiguration.EachUnitRegex => EachUnitRegex;
 
-        public List<ExtractResult> Extract(string text, DateObject referenceTime)
-        {
-            var tokens = new List<Token>();
-            tokens.AddRange(MatchEachUnit(text));
-            tokens.AddRange(MatchEachDuration(text, referenceTime));
-            tokens.AddRange(TimeEveryday(text, referenceTime));
-            tokens.AddRange(MatchEachDate(text, referenceTime));
-            tokens.AddRange(MatchEachDateTime(text, referenceTime));
+        Regex ICJKSetExtractorConfiguration.UnitRegex => UnitRegex;
 
-            return Token.MergeAllTokens(tokens, text, ExtractorName);
-        }
+        Regex ICJKSetExtractorConfiguration.EachDayRegex => EachDayRegex;
     }
 }

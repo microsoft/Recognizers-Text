@@ -1258,7 +1258,7 @@
         "Text": "1,2b",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "decimal",
+          "subtype": "integer",
           "value": "1200000000"
         },
         "Start": 0,
@@ -2281,7 +2281,7 @@
         "Text": "2,12 hundra",
         "TypeName": "number",
         "Resolution": {
-          "subtype": "decimal",
+          "subtype": "integer",
           "value": "212"
         },
         "Start": 13,
@@ -2399,7 +2399,7 @@
         "End": 32,
         "TypeName": "number",
         "Resolution": {
-          "subtype": "decimal",
+          "subtype": "integer",
           "value": "5"
         }
       },
@@ -2409,7 +2409,7 @@
         "End": 43,
         "TypeName": "number",
         "Resolution": {
-          "subtype": "decimal",
+          "subtype": "integer",
           "value": "5"
         }
       }
@@ -2528,6 +2528,64 @@
           "subtype": "integer",
           "value": "20"
         }
+      }
+    ]
+  },
+  {
+    "Input": "resultatet är ⅔",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "⅔",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0,666666666666667"
+        },
+        "Start": 14,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "resultatet är ¾",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "¾",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0,75"
+        },
+        "Start": 14,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "resultatet är ⅙ och ibland ½",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "⅙",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0,166666666666667"
+        },
+        "Start": 14,
+        "End": 14
+      },
+      {
+        "Text": "½",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0,5"
+        },
+        "Start": 27,
+        "End": 27
       }
     ]
   }

@@ -260,7 +260,14 @@ class CJKNumberParser(BaseNumberParser):
                     double_value -= self.get_point_value(split_result[1])
                 else:
                     double_value += self.get_point_value(split_result[1])
+
             result.value = double_value
+        percentage_num_search = regex.search(self.config.percentage_num_regex, source_text)
+        if percentage_num_search:
+            split_result = regex.search(self.config.percentage_num_regex, source_text).group()
+            split_result = regex.split(self.config.frac_split_regex, split_result)
+            demo_value = self.get_value_from_part(split_result[0])
+            result.value /= (demo_value / 100)
 
         result.resolution_str = self.__format(result.value) + '%'
         return result
@@ -303,6 +310,9 @@ class CJKNumberParser(BaseNumberParser):
     def get_value_from_part(self, part: str) -> float:
         if self.is_digit(part):
             return self.get_digit_value(part, 1.0)
+        split_result = regex.split(self.config.point_regex, part)
+        if len(split_result) == 2:
+            return self.get_int_value(split_result[0]) + self.get_point_value(split_result[1])
         return self.get_int_value(part)
 
     def dou_parse(self, source: ExtractResult) -> ParseResult:
@@ -382,6 +392,7 @@ class CJKNumberParser(BaseNumberParser):
         round_before = -1
         round_default = 1
         negative = False
+        has_previous_digits = False
 
         if regex.search(self.config.negative_number_sign_regex, result_str) is not None:
             negative = True
@@ -417,15 +428,27 @@ class CJKNumberParser(BaseNumberParser):
                         before_value = 1
                         round_default = 1
                     else:
-                        before_value = self.config.zero_to_nine_map[c]
+                        current_digit = self.config.zero_to_nine_map[c]
+                        if has_previous_digits:
+                            before_value = before_value * 10 + current_digit
+                        else:
+                            before_value = current_digit
                         is_round_before = False
                 else:
-                    if i == len(result_str)-1 and self.config.culture_info.code == Culture.Japanese:
+                    # In colloquial Chinese, 百 may be omitted from the end of a number,
+                    # similarly to how 一 can be dropped from the beginning. Japanese
+                    # doesn't have such behaviour.
+                    if self.config.culture_info.code == Culture.Japanese or c.isdigit():
                         round_default = 1
-                    part_value += self.config.zero_to_nine_map[c] * \
-                        round_default
+                    current_digit = self.config.zero_to_nine_map[c]
+                    if has_previous_digits:
+                        before_value = before_value * 10 + current_digit
+                    else:
+                        before_value = current_digit
+                    part_value += before_value * round_default
                     int_value += part_value
                     part_value = 0
+            has_previous_digits = c.isdigit()
         if negative:
             int_value = - int_value
         if dozen:

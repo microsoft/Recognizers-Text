@@ -22,15 +22,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.6.3">
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="StyleCop.Analyzers" Version="1.1.0-beta008">
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="YamlDotNet" Version="8.1.0" />
+    <PackageReference Include="YamlDotNet" Version="8.1.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -38,6 +38,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Arabic\DateTimeDefinitions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DateTimeDefinitions.tt</DependentUpon>
     </Compile>
     <Compile Update="Arabic\NumbersDefinitions.cs">
       <DesignTime>True</DesignTime>
@@ -68,6 +73,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>BaseHashTag.tt</DependentUpon>
+    </Compile>
+    <Compile Update="BaseQuotedText.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BaseQuotedText.tt</DependentUpon>
     </Compile>
     <Compile Update="BaseIp.cs">
       <DesignTime>True</DesignTime>
@@ -299,6 +309,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>NumbersDefinitions.tt</DependentUpon>
     </Compile>
+    <Compile Update="Korean\NumbersWithUnitDefinitions.cs">
+      <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Update="Portuguese\ChoiceDefinitions.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -354,6 +369,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+	<Compile Update="Swedish\NumbersWithUnitDefinitions.cs">
+	  <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
+	  <DesignTime>True</DesignTime>
+	  <AutoGen>True</AutoGen>
+	</Compile>
     <Compile Update="Turkish\ChoiceDefinitions.cs">
       <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -378,6 +398,8 @@
 
   <ItemGroup>
     <None Update="Arabic\ChoiceDefinitions.tt">
+    </None>
+    <None Update="Arabic\DateTimeDefinitions.tt">
     </None>
     <None Update="Arabic\NumbersDefinitions.tt">
     </None>
@@ -483,6 +505,8 @@
     </None>
     <None Update="Korean\NumbersDefinitions.tt">
     </None>
+    <None Update="Korean\NumbersWithUnitDefinitions.tt">
+    </None>
     <None Update="Portuguese\ChoiceDefinitions.tt">
     </None>
     <None Update="Portuguese\DateTimeDefinitions.tt">
@@ -504,6 +528,8 @@
     <None Update="Swedish\ChoiceDefinitions.tt">
     </None>
     <None Update="Swedish\NumbersDefinitions.tt">
+    </None>
+    <None Update="Swedish\NumbersWithUnitDefinitions.tt">
     </None>
     <None Update="Turkish\ChoiceDefinitions.tt">
     </None>

@@ -11,7 +11,8 @@ namespace Microsoft.Recognizers.Text.Number
 
         ImmutableDictionary<char, char> FullToHalfMap { get; }
 
-        ImmutableDictionary<string, string> UnitMap { get; }
+        // A UnitMap sorted by key length is required to ensure the correct replacement order.
+        ImmutableSortedDictionary<string, string> UnitMap { get; }
 
         ImmutableDictionary<char, char> TratoSimMap { get; }
 
@@ -26,6 +27,8 @@ namespace Microsoft.Recognizers.Text.Number
         Regex SpeGetNumberRegex { get; }
 
         Regex PercentageRegex { get; }
+
+        Regex PercentageNumRegex { get; }
 
         Regex PointRegex { get; }
 

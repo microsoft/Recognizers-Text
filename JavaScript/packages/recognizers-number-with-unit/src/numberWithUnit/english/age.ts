@@ -19,8 +19,8 @@ export class EnglishAgeExtractorConfiguration extends EnglishNumberWithUnitExtra
         this.extractType = Constants.SYS_UNIT_AGE;
 
         this.suffixList = EnglishNumericWithUnit.AgeSuffixList;
-        this.prefixList = new Map<string, string>();
-        this.ambiguousUnitList = new Array<string>();
+        this.prefixList = EnglishNumericWithUnit.AgePrefixList;
+        this.ambiguousUnitList = EnglishNumericWithUnit.AmbiguousAgeUnitList;
     }
 }
 
@@ -33,5 +33,6 @@ export class EnglishAgeParserConfiguration extends EnglishNumberWithUnitParserCo
         super(ci);
 
         this.BindDictionary(EnglishNumericWithUnit.AgeSuffixList);
+        this.BindDictionary(EnglishNumericWithUnit.AgePrefixList);
     }
 }

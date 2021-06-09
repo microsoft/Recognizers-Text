@@ -10,7 +10,11 @@ public abstract class StringUtility {
     }
 
     public static String trimStart(String source) {
-        return source.replaceFirst("^\\s+", "");
+        return trimStart(source, "^\\s+", "");
+    }
+
+    public static String trimStart(String source, String regex, String replacement) {
+        return source.replaceFirst(regex, replacement);
     }
 
     public static String trimEnd(String source) {

@@ -113,7 +113,7 @@
   },
   {
     "Input": "j_9@[129.126.118.1] is a valid email address",
-    "NotSupportedByDesign": "javascript, python",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "j_9@[129.126.118.1]",
@@ -136,6 +136,26 @@
         "TypeName": "email",
         "Resolution": {
           "value": "user.name+tag@lero.com"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Both a..bc@outlook.com and .abc@hotmail.com are not valid e-mail addresses.",
+	"Comment": "By default the current system is strict. If a relavex match is needed (to catch these), enable the Relaxed option.",
+    "NotSupportedByDesign": "javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "Periods at the end of addresses can be ambiguous. Contact webmaster@contoso.com.",
+	"Comment": "By default the current system is strict. If a relavex match is needed (to catch the period), enable the Relaxed option.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "webmaster@contoso.com",
+        "TypeName": "email",
+        "Resolution": {
+          "value": "webmaster@contoso.com"
         }
       }
     ]

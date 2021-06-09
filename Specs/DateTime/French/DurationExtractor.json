@@ -471,5 +471,725 @@
         "Length": 18
       }
     ]
+  },
+  {
+    "Input": "Je pars pour 3 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 heures",
+        "Type": "duration",
+        "Start": 13,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour 3 jours",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 jours",
+        "Type": "duration",
+        "Start": 13,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour trois ans et demi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "trois ans et demi",
+        "Type": "duration",
+        "Start": 13,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour 3 ans et demi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 ans et demi",
+        "Type": "duration",
+        "Start": 13,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour 3h",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "3h",
+        "Type": "duration",
+        "Start": 13,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour trois heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "trois heures",
+        "Type": "duration",
+        "Start": 13,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir pour 3 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 heures",
+        "Type": "duration",
+        "Start": 20,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai pour 3 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 heures",
+        "Type": "duration",
+        "Start": 17,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai pour 3 jours",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 jours",
+        "Type": "duration",
+        "Start": 17,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour 3 mois",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 mois",
+        "Type": "duration",
+        "Start": 13,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai pour 3 minutes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 minutes",
+        "Type": "duration",
+        "Start": 17,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour trois minutes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "trois minutes",
+        "Type": "duration",
+        "Start": 13,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour 3 secondes et demi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 secondes et demi",
+        "Type": "duration",
+        "Start": 13,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour 123,45 secondes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "123,45 secondes",
+        "Type": "duration",
+        "Start": 13,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour deux semaines",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "deux semaines",
+        "Type": "duration",
+        "Start": 13,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour 20 minutes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "20 minutes",
+        "Type": "duration",
+        "Start": 13,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour vingt et quatre heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "vingt et quatre heures",
+        "Type": "duration",
+        "Start": 13,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Je pars toute la journée",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "toute la journée",
+        "Type": "duration",
+        "Start": 8,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je pars toute la semaine",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "toute la semaine",
+        "Type": "duration",
+        "Start": 8,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je pars tout le mois",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "tout le mois",
+        "Type": "duration",
+        "Start": 8,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Je pars toute l’année",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "toute l’année",
+        "Type": "duration",
+        "Start": 8,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai pour toute la journée",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "toute la journée",
+        "Type": "duration",
+        "Start": 17,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai pour tout le mois",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "tout le mois",
+        "Type": "duration",
+        "Start": 17,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai pour toute l’année",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "toute l’année",
+        "Type": "duration",
+        "Start": 17,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour la journée entière",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "journée entière",
+        "Type": "duration",
+        "Start": 16,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour la semaine entière",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "semaine entière",
+        "Type": "duration",
+        "Start": 16,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour le mois entier",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mois entier",
+        "Type": "duration",
+        "Start": 16,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour l'année entière",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "année entière",
+        "Type": "duration",
+        "Start": 15,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour toute la journée",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "toute la journée",
+        "Type": "duration",
+        "Start": 13,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour toute la semaine",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "toute la semaine",
+        "Type": "duration",
+        "Start": 13,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour tout le mois",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "tout le mois",
+        "Type": "duration",
+        "Start": 13,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour toute l’année",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "toute l’année",
+        "Type": "duration",
+        "Start": 13,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour une heure",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "une heure",
+        "Type": "duration",
+        "Start": 13,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour un an",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "un an",
+        "Type": "duration",
+        "Start": 13,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "semestre",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "semestre",
+        "Type": "duration",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "une demi-année",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "une demi-année",
+        "Type": "duration",
+        "Start": 0,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour 3 minutes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 minutes",
+        "Type": "duration",
+        "Start": 13,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai pour 30 minutes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "30 minutes",
+        "Type": "duration",
+        "Start": 17,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour 30 minutes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "30 minutes",
+        "Type": "duration",
+        "Start": 13,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour une heure et demie",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "une heure et demie",
+        "Type": "duration",
+        "Start": 13,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour 90 minutes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "90 minutes",
+        "Type": "duration",
+        "Start": 13,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour une demi-heure",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "demi-heure",
+        "Type": "duration",
+        "Start": 17,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour deux heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "deux heures",
+        "Type": "duration",
+        "Start": 13,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour deux heures et demie",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "deux heures et demie",
+        "Type": "duration",
+        "Start": 13,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Dans une semaine",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "une semaine",
+        "Type": "duration",
+        "Start": 5,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Dans un jour",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "un jour",
+        "Type": "duration",
+        "Start": 5,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "pendant une heure",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "une heure",
+        "Type": "duration",
+        "Start": 8,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "pendant un mois",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "un mois",
+        "Type": "duration",
+        "Start": 8,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour quelques heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "quelques heures",
+        "Type": "duration",
+        "Start": 13,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour quelques minutes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "quelques minutes",
+        "Type": "duration",
+        "Start": 13,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour quelques jours",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "quelques jours",
+        "Type": "duration",
+        "Start": 13,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour divers jours",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "divers jours",
+        "Type": "duration",
+        "Start": 13,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour un an, un mois et vingt-et-un jours",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "un an, un mois et vingt-et-un jours",
+        "Type": "duration",
+        "Start": 13,
+        "Length": 35
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour deux jours et un mois",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "deux jours et un mois",
+        "Type": "duration",
+        "Start": 13,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "J’ai connu que tu étais sorti une semaine de plus.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "une semaine de plus",
+        "Type": "duration",
+        "Start": 30,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "On peut attendre encore un mois?",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "encore un mois",
+        "Type": "duration",
+        "Start": 17,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "On peut attendre encore un jour ouvré?",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "encore un jour ouvré",
+        "Type": "duration",
+        "Start": 17,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour une demi-journée ouvrée.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "demi-journée ouvrée",
+        "Type": "duration",
+        "Start": 17,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour 20 ans.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "20 ans",
+        "Type": "duration",
+        "Start": 13,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour quinze jours.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "quinze jours",
+        "Type": "duration",
+        "Start": 13,
+        "Length": 12
+      }
+    ]
   }
 ]

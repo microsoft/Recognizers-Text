@@ -2,6 +2,7 @@
 // Licensed under the MIT License.
 
 using System.Collections.Generic;
+using System.Globalization;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
@@ -199,22 +200,27 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
         {
             foreach (var item in source)
             {
+                if (item.Value.Equals(string.Empty))
+                {
+                    continue;
+                }
+
                 switch (item.Key)
                 {
                     case "year":
-                        Year = int.Parse(item.Value);
+                        Year = int.Parse(item.Value, CultureInfo.InvariantCulture);
                         break;
 
                     case "month":
-                        Month = int.Parse(item.Value);
+                        Month = int.Parse(item.Value, CultureInfo.InvariantCulture);
                         break;
 
                     case "dayOfMonth":
-                        DayOfMonth = int.Parse(item.Value);
+                        DayOfMonth = int.Parse(item.Value, CultureInfo.InvariantCulture);
                         break;
 
                     case "dayOfWeek":
-                        DayOfWeek = int.Parse(item.Value);
+                        DayOfWeek = int.Parse(item.Value, CultureInfo.InvariantCulture);
                         break;
 
                     case "season":
@@ -222,7 +228,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                         break;
 
                     case "weekOfYear":
-                        WeekOfYear = int.Parse(item.Value);
+                        WeekOfYear = int.Parse(item.Value, CultureInfo.InvariantCulture);
                         break;
 
                     case "weekend":
@@ -230,18 +236,18 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                         break;
 
                     case "weekOfMonth":
-                        WeekOfMonth = int.Parse(item.Value);
+                        WeekOfMonth = int.Parse(item.Value, CultureInfo.InvariantCulture);
                         break;
 
                     case "hour":
-                        Hour = int.Parse(item.Value);
+                        Hour = int.Parse(item.Value, CultureInfo.InvariantCulture);
                         break;
 
                     case "minute":
-                        Minute = int.Parse(item.Value);
+                        Minute = int.Parse(item.Value, CultureInfo.InvariantCulture);
                         break;
                     case "second":
-                        Second = int.Parse(item.Value);
+                        Second = int.Parse(item.Value, CultureInfo.InvariantCulture);
                         break;
 
                     case "partOfDay":
@@ -252,8 +258,16 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                         AssignDateDuration(source);
                         break;
 
-                    case "timeUnit":
-                        AssignTimeDuration(source);
+                    case "hourAmount":
+                        Hours = int.Parse(item.Value, CultureInfo.InvariantCulture);
+                        break;
+
+                    case "minuteAmount":
+                        Minutes = int.Parse(item.Value, CultureInfo.InvariantCulture);
+                        break;
+
+                    case "secondAmount":
+                        Seconds = int.Parse(item.Value, CultureInfo.InvariantCulture);
                         break;
                 }
             }
@@ -264,37 +278,19 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             switch (source["dateUnit"])
             {
                 case "Y":
-                    Years = decimal.Parse(source["amount"]);
+                    Years = decimal.Parse(source["amount"], CultureInfo.InvariantCulture);
                     break;
 
                 case "M":
-                    Months = decimal.Parse(source["amount"]);
+                    Months = decimal.Parse(source["amount"], CultureInfo.InvariantCulture);
                     break;
 
                 case "W":
-                    Weeks = decimal.Parse(source["amount"]);
+                    Weeks = decimal.Parse(source["amount"], CultureInfo.InvariantCulture);
                     break;
 
                 case "D":
-                    Days = decimal.Parse(source["amount"]);
-                    break;
-            }
-        }
-
-        private void AssignTimeDuration(IDictionary<string, string> source)
-        {
-            switch (source["timeUnit"])
-            {
-                case "H":
-                    Hours = decimal.Parse(source["amount"]);
-                    break;
-
-                case "M":
-                    Minutes = decimal.Parse(source["amount"]);
-                    break;
-
-                case "S":
-                    Seconds = decimal.Parse(source["amount"]);
+                    Days = decimal.Parse(source["amount"], CultureInfo.InvariantCulture);
                     break;
             }
         }

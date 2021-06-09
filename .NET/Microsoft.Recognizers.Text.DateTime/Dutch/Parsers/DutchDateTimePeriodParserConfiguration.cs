@@ -25,6 +25,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
+            TokenBeforeTime = DateTimeDefinitions.TokenBeforeTime;
 
             DateExtractor = config.DateExtractor;
             TimeExtractor = config.TimeExtractor;
@@ -64,6 +65,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         }
 
         public string TokenBeforeDate { get; }
+
+        public string TokenBeforeTime { get; }
 
         public IDateExtractor DateExtractor { get; }
 
@@ -137,7 +140,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public bool GetMatchedTimeRange(string text, out string timeStr, out int beginHour, out int endHour, out int endMin)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
 
             beginHour = 0;
             endHour = 0;

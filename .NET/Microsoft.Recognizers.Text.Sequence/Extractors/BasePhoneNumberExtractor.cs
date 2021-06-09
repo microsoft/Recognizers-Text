@@ -1,15 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
-using System.Xml;
 using Microsoft.Recognizers.Definitions;
 
 namespace Microsoft.Recognizers.Text.Sequence
 {
     public class BasePhoneNumberExtractor : BaseSequenceExtractor
     {
-        private static readonly Regex InternationDialingPrefixRegex = new Regex(BasePhoneNumbers.InternationDialingPrefixRegex);
+        private static readonly Regex InternationalDialingPrefixRegex = new Regex(BasePhoneNumbers.InternationDialingPrefixRegex);
 
         private static readonly Regex PreCheckPhoneNumberRegex = new Regex(BasePhoneNumbers.PreCheckPhoneNumberRegex, RegexOptions.Compiled);
 
@@ -97,7 +97,7 @@ namespace Microsoft.Recognizers.Text.Sequence
                     continue;
                 }
 
-                if (CountDigits(er.Text) == 16 && !er.Text.StartsWith("+"))
+                if (CountDigits(er.Text) == 16 && !er.Text.StartsWith("+", StringComparison.Ordinal))
                 {
                     ers.Remove(er);
                     i--;
@@ -175,9 +175,9 @@ namespace Microsoft.Recognizers.Text.Sequence
                             }
 
                             // check the international dialing prefix
-                            if (InternationDialingPrefixRegex.IsMatch(front))
+                            if (InternationalDialingPrefixRegex.IsMatch(front))
                             {
-                                var moveOffset = InternationDialingPrefixRegex.Match(front).Length + 1;
+                                var moveOffset = InternationalDialingPrefixRegex.Match(front).Length + 1;
                                 er.Start = er.Start - moveOffset;
                                 er.Length = er.Length + moveOffset;
                                 er.Text = text.Substring((int)er.Start, (int)er.Length);
@@ -226,12 +226,12 @@ namespace Microsoft.Recognizers.Text.Sequence
             return ers;
         }
 
-        private bool CheckFormattedPhoneNumber(string phoneNumberText)
+        private static bool CheckFormattedPhoneNumber(string phoneNumberText)
         {
             return Regex.IsMatch(phoneNumberText, BasePhoneNumbers.FormatIndicatorRegex);
         }
 
-        private int CountDigits(string candidateString)
+        private static int CountDigits(string candidateString)
         {
             var count = 0;
             foreach (var t in candidateString)

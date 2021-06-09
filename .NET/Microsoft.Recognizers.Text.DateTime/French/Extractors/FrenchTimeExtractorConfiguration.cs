@@ -2,6 +2,7 @@
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.French;
+using Microsoft.Recognizers.Definitions.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
@@ -143,5 +144,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public IDateTimeExtractor TimeZoneExtractor { get; }
 
         public string TimeTokenPrefix => DateTimeDefinitions.TimeTokenPrefix;
+
+        public Dictionary<Regex, Regex> AmbiguityFiltersDict => DefinitionLoader.LoadAmbiguityFilters(DateTimeDefinitions.AmbiguityTimeFiltersDict);
     }
 }

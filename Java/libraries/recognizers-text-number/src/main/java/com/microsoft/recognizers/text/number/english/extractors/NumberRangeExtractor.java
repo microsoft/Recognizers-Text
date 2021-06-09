@@ -28,7 +28,7 @@ public class NumberRangeExtractor extends BaseNumberRangeExtractor {
         // less than ... more than ...
         builder.put(RegExpUtility.getSafeRegExp(EnglishNumeric.TwoNumberRangeRegex3, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), NumberRangeConstants.TWONUM);
         // from ... to/~/- ...
-        builder.put(Pattern.compile(EnglishNumeric.TwoNumberRangeRegex4, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), NumberRangeConstants.TWONUMTILL);
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(EnglishNumeric.TwoNumberRangeRegex4, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), NumberRangeConstants.TWONUMTILL);
         // more/greater/higher than ...
         builder.put(Pattern.compile(EnglishNumeric.OneNumberRangeMoreRegex1, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), NumberRangeConstants.MORE);
         // 30 and/or greater/higher
@@ -38,13 +38,13 @@ public class NumberRangeExtractor extends BaseNumberRangeExtractor {
         // 30 and/or less/smaller/lower
         builder.put(Pattern.compile(EnglishNumeric.OneNumberRangeLessRegex2, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), NumberRangeConstants.LESS);
         // equal to ...
-        builder.put(Pattern.compile(EnglishNumeric.OneNumberRangeEqualRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), NumberRangeConstants.EQUAL);
+        builder.put(RegExpUtility.getSafeLookbehindRegExp(EnglishNumeric.OneNumberRangeEqualRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS), NumberRangeConstants.EQUAL);
         // equal to 30 or more than, larger than 30 or equal to ...
         builder.put(RegExpUtility.getSafeRegExp(EnglishNumeric.OneNumberRangeMoreSeparateRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
-            NumberRangeConstants.MORE);
+                NumberRangeConstants.MORE);
         // equal to 30 or less, smaller than 30 or equal ...
         builder.put(RegExpUtility.getSafeRegExp(EnglishNumeric.OneNumberRangeLessSeparateRegex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CHARACTER_CLASS),
-            NumberRangeConstants.LESS);
+                NumberRangeConstants.LESS);
 
         this.regexes = Collections.unmodifiableMap(builder);
     }

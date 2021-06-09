@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.Matcher;
 using Microsoft.Recognizers.Text.Utilities;
@@ -28,8 +30,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             var normalizedText = QueryProcessor.RemoveDiacritics(text);
 
-            tokens.AddRange(MatchTimeZones(normalizedText));
-            tokens.AddRange(MatchLocationTimes(normalizedText, tokens));
+            // If normalized and original texts have different lengths, re-calculate indices
+            var reIndex = text.Length > normalizedText.Length;
+
+            tokens.AddRange(MatchTimeZones(normalizedText, text, reIndex));
+            tokens.AddRange(MatchLocationTimes(normalizedText, tokens, text, reIndex));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }
@@ -40,7 +45,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ers;
         }
 
-        private IEnumerable<Token> MatchLocationTimes(string text, List<Token> tokens)
+        private IEnumerable<Token> MatchLocationTimes(string text, List<Token> tokens, string originalText, bool reIndex)
         {
             var ret = new List<Token>();
 
@@ -82,15 +87,31 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (timeMatch.Count != 0 && !isAllSuffixInsideTokens)
             {
                 var lastMatchIndex = timeMatch[timeMatch.Count - 1].Index;
+
                 var matches = config.LocationMatcher.Find(text.Substring(0, lastMatchIndex));
                 var locationMatches = MatchingUtil.RemoveSubMatches(matches);
+
+                if (reIndex)
+                {
+                    foreach (var locMatch in locationMatches)
+                    {
+                        locMatch.Start = originalText.IndexOf(locMatch.CanonicalValues.FirstOrDefault(), locMatch.Start, StringComparison.Ordinal);
+                    }
+                }
 
                 var i = 0;
                 foreach (Match match in timeMatch)
                 {
                     var hasCityBefore = false;
 
-                    while (i < locationMatches.Count && locationMatches[i].End <= match.Index)
+                    var index = match.Index;
+
+                    if (reIndex)
+                    {
+                        index = originalText.IndexOf(match.Value, match.Index, StringComparison.Ordinal);
+                    }
+
+                    while (i < locationMatches.Count && locationMatches[i].End <= index)
                     {
                         hasCityBefore = true;
                         i++;
@@ -101,9 +122,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                         }
                     }
 
-                    if (hasCityBefore && locationMatches[i - 1].End == match.Index)
+                    if (hasCityBefore && locationMatches[i - 1].End == index)
                     {
-                        ret.Add(new Token(locationMatches[i - 1].Start, match.Index + match.Length));
+                        ret.Add(new Token(locationMatches[i - 1].Start, index + match.Length));
                     }
 
                     if (i == locationMatches.Count)
@@ -116,7 +137,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private List<Token> MatchTimeZones(string text)
+        private List<Token> MatchTimeZones(string text, string originalText, bool reIndex)
         {
             var ret = new List<Token>();
 
@@ -126,13 +147,29 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var directUtc = this.config.DirectUtcRegex.Matches(text);
                 foreach (Match match in directUtc)
                 {
-                    ret.Add(new Token(match.Index, match.Index + match.Length));
+
+                    var index = match.Index;
+
+                    if (reIndex)
+                    {
+                        index = originalText.IndexOf(match.Value, match.Index, StringComparison.Ordinal);
+                    }
+
+                    ret.Add(new Token(index, index + match.Length));
+
                 }
 
                 var matches = this.config.TimeZoneMatcher.Find(text);
                 foreach (MatchResult<string> match in matches)
                 {
-                    ret.Add(new Token(match.Start, match.Start + match.Length));
+                    var index = match.Start;
+
+                    if (reIndex)
+                    {
+                        index = originalText.IndexOf(match.CanonicalValues.FirstOrDefault(), match.Start, StringComparison.Ordinal);
+                    }
+
+                    ret.Add(new Token(index, index + match.Length));
                 }
             }
 

@@ -111,6 +111,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
         public static readonly Regex RangeConnectorSymbolRegex =
             new Regex(Definitions.BaseDateTime.RangeConnectorSymbolRegex, RegexFlags);
 
+        public static readonly Regex BeforeAfterRegex =
+            new Regex(DateTimeDefinitions.BeforeAfterRegex, RegexFlags);
+
         public static readonly ImmutableDictionary<string, int> DayOfWeek =
             DateTimeDefinitions.DayOfWeek.ToImmutableDictionary();
 
@@ -140,6 +143,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
             NumberParser = new BaseIndianNumberParser(new HindiNumberParserConfiguration(numConfig));
 
             DurationExtractor = new BaseDurationExtractor(new HindiDurationExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new HindiHolidayExtractorConfiguration(this));
             UtilityConfiguration = new HindiDatetimeUtilityConfiguration();
 
             ImplicitDateList = new List<Regex>
@@ -237,6 +241,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
 
         public IDateTimeExtractor DurationExtractor { get; }
 
+        public IDateTimeExtractor HolidayExtractor { get; }
+
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
         public IEnumerable<Regex> ImplicitDateList { get; }
@@ -284,5 +290,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
         Regex IDateExtractorConfiguration.RangeUnitRegex => RangeUnitRegex;
 
         Regex IDateExtractorConfiguration.RangeConnectorSymbolRegex => RangeConnectorSymbolRegex;
+
+        Regex IDateExtractorConfiguration.BeforeAfterRegex => BeforeAfterRegex;
     }
 }

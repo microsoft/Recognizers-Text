@@ -1,0 +1,29 @@
+[
+ {
+  "Input": "यह “संख्या” `123` या`456` है",
+  "NotSupportedByDesign": "javascript, python, java",
+  "Results": [
+   {
+    "Text": "“संख्या”",
+    "TypeName": "quotedText",
+    "Resolution": {
+     "value": "“संख्या”"
+    }
+   },
+   {
+    "Text": "`123`",
+    "TypeName": "quotedText",
+    "Resolution": {
+     "value": "`123`"
+    }
+   },
+   {
+    "Text": "`456`",
+    "TypeName": "quotedText",
+    "Resolution": {
+     "value": "`456`"
+    }
+   }
+  ]
+ }
+]

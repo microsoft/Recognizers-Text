@@ -230,8 +230,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
             var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
 
-            CardinalExtractor = Number.French.CardinalExtractor.GetInstance();
-            OrdinalExtractor = Number.French.OrdinalExtractor.GetInstance();
+            CardinalExtractor = Number.French.CardinalExtractor.GetInstance(numConfig);
+            OrdinalExtractor = Number.French.OrdinalExtractor.GetInstance(numConfig);
 
             NumberParser = new BaseNumberParser(new FrenchNumberParserConfiguration(numConfig));
         }

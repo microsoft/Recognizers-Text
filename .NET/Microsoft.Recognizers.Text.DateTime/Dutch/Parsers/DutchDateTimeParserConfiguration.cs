@@ -1,4 +1,5 @@
-﻿using System.Collections.Immutable;
+﻿using System;
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Dutch;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
@@ -105,13 +106,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         {
             int result = hour;
 
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
 
-            if (trimmedText.EndsWith("ochtend") && hour >= Constants.HalfDayHourCount)
+            // @TODO move hardcoded values to resources file
+
+            if (trimmedText.EndsWith("ochtend", StringComparison.Ordinal) && hour >= Constants.HalfDayHourCount)
             {
                 result -= Constants.HalfDayHourCount;
             }
-            else if (!trimmedText.EndsWith("ochtend") && hour < Constants.HalfDayHourCount)
+            else if (!trimmedText.EndsWith("ochtend", StringComparison.Ordinal) && hour < Constants.HalfDayHourCount)
             {
                 result += Constants.HalfDayHourCount;
             }
@@ -121,17 +124,21 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public bool GetMatchedNowTimex(string text, out string timex)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
 
-            if (trimmedText.EndsWith("nu"))
+            // @TODO move hardcoded values to resources file
+
+            if (trimmedText.EndsWith("nu", StringComparison.Ordinal))
             {
                 timex = "PRESENT_REF";
             }
-            else if (trimmedText.Equals("kort geleden") || trimmedText.Equals("eerder"))
+            else if (trimmedText.Equals("kort geleden", StringComparison.Ordinal) ||
+                     trimmedText.Equals("eerder", StringComparison.Ordinal))
             {
                 timex = "PAST_REF";
             }
-            else if (trimmedText.Equals("zo snel mogelijk") || trimmedText.Equals("zsm"))
+            else if (trimmedText.Equals("zo snel mogelijk", StringComparison.Ordinal) ||
+                     trimmedText.Equals("zsm", StringComparison.Ordinal))
             {
                 timex = "FUTURE_REF";
             }
@@ -146,14 +153,18 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public int GetSwiftDay(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
 
             var swift = 0;
-            if (trimmedText.StartsWith("volgende"))
+
+            // @TODO move hardcoded values to resources file
+
+            if (trimmedText.StartsWith("volgende", StringComparison.Ordinal))
             {
                 swift = 1;
             }
-            else if (trimmedText.StartsWith("vorige") || trimmedText.StartsWith("laatste"))
+            else if (trimmedText.StartsWith("vorige", StringComparison.Ordinal) ||
+                     trimmedText.StartsWith("laatste", StringComparison.Ordinal))
             {
                 swift = -1;
             }

@@ -4,7 +4,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -19,8 +19,8 @@
             "date": "0001-01-01"
           }
         },
-        "Start": 16,
-        "Length": 6
+        "Start": 3,
+        "Length": 3
       }
     ]
   },
@@ -29,7 +29,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -44,8 +44,8 @@
             "date": "2015-12-25"
           }
         },
-        "Start": 16,
-        "Length": 13
+        "Start": 3,
+        "Length": 5
       }
     ]
   },
@@ -54,7 +54,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -69,8 +69,8 @@
             "date": "2015-12-31"
           }
         },
-        "Start": 16,
-        "Length": 12
+        "Start": 3,
+        "Length": 5
       }
     ]
   },
@@ -79,7 +79,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -94,8 +94,8 @@
             "date": "2016-01-01"
           }
         },
-        "Start": 16,
-        "Length": 7
+        "Start": 3,
+        "Length": 2
       }
     ]
   },
@@ -104,7 +104,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -119,8 +119,8 @@
             "date": "2015-11-26"
           }
         },
-        "Start": 16,
-        "Length": 17
+        "Start": 3,
+        "Length": 5
       }
     ]
   },
@@ -129,7 +129,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -144,8 +144,8 @@
             "date": "2016-06-19"
           }
         },
-        "Start": 16,
-        "Length": 12
+        "Start": 3,
+        "Length": 6
       }
     ]
   },
@@ -154,7 +154,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -169,8 +169,8 @@
             "date": "2017-01-01"
           }
         },
-        "Start": 16,
-        "Length": 20
+        "Start": 3,
+        "Length": 5
       }
     ]
   },
@@ -179,7 +179,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -194,8 +194,8 @@
             "date": "2010-11-25"
           }
         },
-        "Start": 16,
-        "Length": 22
+        "Start": 3,
+        "Length": 11
       }
     ]
   },
@@ -204,7 +204,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -219,8 +219,8 @@
             "date": "2015-06-21"
           }
         },
-        "Start": 16,
-        "Length": 20
+        "Start": 3,
+        "Length": 12
       }
     ]
   },
@@ -229,7 +229,7 @@
     "Context": {
       "ReferenceDateTime": "2018-06-01T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -244,8 +244,8 @@
             "date": "2018-05-01"
           }
         },
-        "Start": 32,
-        "Length": 7
+        "Start": 0,
+        "Length": 4
       },
       {
         "Text": "국제 노동자의 날 ",
@@ -259,8 +259,8 @@
             "date": "2018-05-01"
           }
         },
-        "Start": 40,
-        "Length": 17
+        "Start": 6,
+        "Length": 9
       }
     ]
   },
@@ -269,7 +269,7 @@
     "Context": {
       "ReferenceDateTime": "2018-06-01T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -285,7 +285,7 @@
           }
         },
         "Start": 0,
-        "Length": 22
+        "Length": 10
       }
     ]
   }

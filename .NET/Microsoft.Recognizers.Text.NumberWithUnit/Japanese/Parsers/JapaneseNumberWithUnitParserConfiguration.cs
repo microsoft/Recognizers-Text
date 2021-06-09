@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System.Collections.Generic;
+using System.Globalization;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Japanese;
 
@@ -10,9 +11,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Japanese
             : base(ci)
         {
 
-            var numConfig = new BaseNumberOptionsConfiguration(Culture.Japanese, NumberOptions.None);
+            var numConfig = new BaseNumberOptionsConfiguration(ci.Name, NumberOptions.None);
 
-            this.InternalNumberExtractor = new NumberExtractor();
+            this.InternalNumberExtractor = new NumberExtractor(numConfig);
             this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number,
                                                                               new JapaneseNumberParserConfiguration(numConfig));
             this.ConnectorToken = string.Empty;
@@ -23,5 +24,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Japanese
         public override IExtractor InternalNumberExtractor { get; }
 
         public override string ConnectorToken { get; }
+
+        public override IDictionary<string, string> TypeList { get; set; } = null;
     }
 }

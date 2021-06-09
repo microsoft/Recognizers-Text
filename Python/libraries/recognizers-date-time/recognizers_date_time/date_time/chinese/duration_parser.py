@@ -28,10 +28,6 @@ class ChineseDurationParser(BaseDurationParser):
 
             has_half_suffix = source.text.endswith('半')
 
-            if has_half_suffix:
-                source.length = source.length - 1
-                source.text = source.text[:source.length]
-
             parse_result = self._internal_parser.parse(source)
             unit_result = parse_result.value
 
@@ -40,9 +36,6 @@ class ChineseDurationParser(BaseDurationParser):
 
             unit_str = unit_result.unit
             number_str = unit_result.number
-
-            if has_half_suffix:
-                number_str = str((float(number_str) + 0.5))
 
             unit_type = 'T' if self.is_less_than_day(unit_str) else ''
             time_value = int(float(number_str) *

@@ -578,5 +578,1183 @@
         "Length": 19
       }
     ]
+  },
+  {
+    "Input": "Je pars pour 3 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 heures",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT3H",
+          "FutureResolution": {
+            "duration": "10800"
+          },
+          "PastResolution": {
+            "duration": "10800"
+          }
+        },
+        "Start": 13,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour 3 jours",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 jours",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P3D",
+          "FutureResolution": {
+            "duration": "259200"
+          },
+          "PastResolution": {
+            "duration": "259200"
+          }
+        },
+        "Start": 13,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour trois ans et demi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "trois ans et demi",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P3.5Y",
+          "FutureResolution": {
+            "duration": "110376000"
+          },
+          "PastResolution": {
+            "duration": "110376000"
+          }
+        },
+        "Start": 13,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour trois heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "trois heures",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT3H",
+          "FutureResolution": {
+            "duration": "10800"
+          },
+          "PastResolution": {
+            "duration": "10800"
+          }
+        },
+        "Start": 13,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour 3h",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "3h",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT3H",
+          "FutureResolution": {
+            "duration": "10800"
+          },
+          "PastResolution": {
+            "duration": "10800"
+          }
+        },
+        "Start": 13,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai pour 3 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 heures",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT3H",
+          "FutureResolution": {
+            "duration": "10800"
+          },
+          "PastResolution": {
+            "duration": "10800"
+          }
+        },
+        "Start": 17,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir pour 3 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 heures",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT3H",
+          "FutureResolution": {
+            "duration": "10800"
+          },
+          "PastResolution": {
+            "duration": "10800"
+          }
+        },
+        "Start": 20,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai pour 3 jours",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 jours",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P3D",
+          "FutureResolution": {
+            "duration": "259200"
+          },
+          "PastResolution": {
+            "duration": "259200"
+          }
+        },
+        "Start": 17,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour 3 mois",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 mois",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P3M",
+          "FutureResolution": {
+            "duration": "7776000"
+          },
+          "PastResolution": {
+            "duration": "7776000"
+          }
+        },
+        "Start": 13,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour trois minutes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "trois minutes",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT3M",
+          "FutureResolution": {
+            "duration": "180"
+          },
+          "PastResolution": {
+            "duration": "180"
+          }
+        },
+        "Start": 13,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai pour 3 minutes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 minutes",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT3M",
+          "FutureResolution": {
+            "duration": "180"
+          },
+          "PastResolution": {
+            "duration": "180"
+          }
+        },
+        "Start": 17,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour trois secondes et demi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "trois secondes et demi",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT3.5S",
+          "FutureResolution": {
+            "duration": "3.5"
+          },
+          "PastResolution": {
+            "duration": "3.5"
+          }
+        },
+        "Start": 13,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour 123,45 secondes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "123,45 secondes",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT123.45S",
+          "FutureResolution": {
+            "duration": "123.45"
+          },
+          "PastResolution": {
+            "duration": "123.45"
+          }
+        },
+        "Start": 13,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour deux semaines",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "deux semaines",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P2W",
+          "FutureResolution": {
+            "duration": "1209600"
+          },
+          "PastResolution": {
+            "duration": "1209600"
+          }
+        },
+        "Start": 13,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour 20 minutes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "20 minutes",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT20M",
+          "FutureResolution": {
+            "duration": "1200"
+          },
+          "PastResolution": {
+            "duration": "1200"
+          }
+        },
+        "Start": 13,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour vingt et quatre heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "vingt et quatre heures",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT24H",
+          "FutureResolution": {
+            "duration": "86400"
+          },
+          "PastResolution": {
+            "duration": "86400"
+          }
+        },
+        "Start": 13,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Je pars toute la journée",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "toute la journée",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1D",
+          "FutureResolution": {
+            "duration": "86400"
+          },
+          "PastResolution": {
+            "duration": "86400"
+          }
+        },
+        "Start": 8,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je pars toute la semaine",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "toute la semaine",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1W",
+          "FutureResolution": {
+            "duration": "604800"
+          },
+          "PastResolution": {
+            "duration": "604800"
+          }
+        },
+        "Start": 8,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je pars tout le mois",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "tout le mois",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1M",
+          "FutureResolution": {
+            "duration": "2592000"
+          },
+          "PastResolution": {
+            "duration": "2592000"
+          }
+        },
+        "Start": 8,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Je pars toute l’année",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "toute l’année",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1Y",
+          "FutureResolution": {
+            "duration": "31536000"
+          },
+          "PastResolution": {
+            "duration": "31536000"
+          }
+        },
+        "Start": 8,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pendant toute la journée",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "toute la journée",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1D",
+          "FutureResolution": {
+            "duration": "86400"
+          },
+          "PastResolution": {
+            "duration": "86400"
+          }
+        },
+        "Start": 16,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pendant toute la semaine",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "toute la semaine",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1W",
+          "FutureResolution": {
+            "duration": "604800"
+          },
+          "PastResolution": {
+            "duration": "604800"
+          }
+        },
+        "Start": 16,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai pour un plein mois",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "plein mois",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1M",
+          "FutureResolution": {
+            "duration": "2592000"
+          },
+          "PastResolution": {
+            "duration": "2592000"
+          }
+        },
+        "Start": 20,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour une pleine année",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "pleine année",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1Y",
+          "FutureResolution": {
+            "duration": "31536000"
+          },
+          "PastResolution": {
+            "duration": "31536000"
+          }
+        },
+        "Start": 17,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour une pleine journée",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "pleine journée",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1D",
+          "FutureResolution": {
+            "duration": "86400"
+          },
+          "PastResolution": {
+            "duration": "86400"
+          }
+        },
+        "Start": 17,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour une pleine semaine",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "pleine semaine",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1W",
+          "FutureResolution": {
+            "duration": "604800"
+          },
+          "PastResolution": {
+            "duration": "604800"
+          }
+        },
+        "Start": 17,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour un plein mois",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "plein mois",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1M",
+          "FutureResolution": {
+            "duration": "2592000"
+          },
+          "PastResolution": {
+            "duration": "2592000"
+          }
+        },
+        "Start": 16,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour une année entière",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "année entière",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1Y",
+          "FutureResolution": {
+            "duration": "31536000"
+          },
+          "PastResolution": {
+            "duration": "31536000"
+          }
+        },
+        "Start": 17,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour une journée entière",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "journée entière",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1D",
+          "FutureResolution": {
+            "duration": "86400"
+          },
+          "PastResolution": {
+            "duration": "86400"
+          }
+        },
+        "Start": 17,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour une semaine entière",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "semaine entière",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1W",
+          "FutureResolution": {
+            "duration": "604800"
+          },
+          "PastResolution": {
+            "duration": "604800"
+          }
+        },
+        "Start": 17,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour un mois entier",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mois entier",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1M",
+          "FutureResolution": {
+            "duration": "2592000"
+          },
+          "PastResolution": {
+            "duration": "2592000"
+          }
+        },
+        "Start": 16,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pendant toute l’année",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "toute l’année",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1Y",
+          "FutureResolution": {
+            "duration": "31536000"
+          },
+          "PastResolution": {
+            "duration": "31536000"
+          }
+        },
+        "Start": 16,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour une heure",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "une heure",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT1H",
+          "FutureResolution": {
+            "duration": "3600"
+          },
+          "PastResolution": {
+            "duration": "3600"
+          }
+        },
+        "Start": 13,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour toute la journée",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "toute la journée",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1D",
+          "FutureResolution": {
+            "duration": "86400"
+          },
+          "PastResolution": {
+            "duration": "86400"
+          }
+        },
+        "Start": 13,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "semestre",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "semestre",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P0.5Y",
+          "FutureResolution": {
+            "duration": "15768000"
+          },
+          "PastResolution": {
+            "duration": "15768000"
+          }
+        },
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "demi-année",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "demi-année",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P0.5Y",
+          "FutureResolution": {
+            "duration": "15768000"
+          },
+          "PastResolution": {
+            "duration": "15768000"
+          }
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour 3 minutes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 minutes",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT3M",
+          "FutureResolution": {
+            "duration": "180"
+          },
+          "PastResolution": {
+            "duration": "180"
+          }
+        },
+        "Start": 13,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour 30 minutes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "30 minutes",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT30M",
+          "FutureResolution": {
+            "duration": "1800"
+          },
+          "PastResolution": {
+            "duration": "1800"
+          }
+        },
+        "Start": 13,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour une heure et demie",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "une heure et demie",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT1.5H",
+          "FutureResolution": {
+            "duration": "5400"
+          },
+          "PastResolution": {
+            "duration": "5400"
+          }
+        },
+        "Start": 13,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai pour une heure et demie",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "une heure et demie",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT1.5H",
+          "FutureResolution": {
+            "duration": "5400"
+          },
+          "PastResolution": {
+            "duration": "5400"
+          }
+        },
+        "Start": 17,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour une demi-heure",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "demi-heure",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT0.5H",
+          "FutureResolution": {
+            "duration": "1800"
+          },
+          "PastResolution": {
+            "duration": "1800"
+          }
+        },
+        "Start": 17,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour deux heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "deux heures",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT2H",
+          "FutureResolution": {
+            "duration": "7200"
+          },
+          "PastResolution": {
+            "duration": "7200"
+          }
+        },
+        "Start": 13,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour deux heures et demie",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "deux heures et demie",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT2.5H",
+          "FutureResolution": {
+            "duration": "9000"
+          },
+          "PastResolution": {
+            "duration": "9000"
+          }
+        },
+        "Start": 13,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour un an, un mois et 21 jours",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "un an, un mois et 21 jours",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1Y1M21D",
+          "FutureResolution": {
+            "duration": "35942400"
+          },
+          "PastResolution": {
+            "duration": "35942400"
+          }
+        },
+        "Start": 13,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour deux jours et un mois",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "deux jours et un mois",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1M2D",
+          "FutureResolution": {
+            "duration": "2764800"
+          },
+          "PastResolution": {
+            "duration": "2764800"
+          }
+        },
+        "Start": 13,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour une semaine et trois jours",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "une semaine et trois jours",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1W3D",
+          "FutureResolution": {
+            "duration": "864000"
+          },
+          "PastResolution": {
+            "duration": "864000"
+          }
+        },
+        "Start": 13,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour quelques semaines",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "quelques semaines",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P2W",
+          "FutureResolution": {
+            "duration": "1209600"
+          },
+          "PastResolution": {
+            "duration": "1209600"
+          }
+        },
+        "Start": 13,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent quelques jours.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "quelques jours",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P2D",
+          "FutureResolution": {
+            "duration": "172800"
+          },
+          "PastResolution": {
+            "duration": "172800"
+          }
+        },
+        "Start": 16,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent moins de deux jours.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "moins de deux jours",
+        "Type": "duration",
+        "Value": {
+          "Mod": "less",
+          "Timex": "P2D",
+          "FutureResolution": {
+            "duration": "172800"
+          },
+          "PastResolution": {
+            "duration": "172800"
+          }
+        },
+        "Start": 16,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Je pars plus d’une heure",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "plus d’une heure",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT1H",
+          "Mod": "more",
+          "FutureResolution": {
+            "duration": "3600"
+          },
+          "PastResolution": {
+            "duration": "3600"
+          }
+        },
+        "Start": 8,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je pars encore une heure",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "encore une heure",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT1H",
+          "FutureResolution": {
+            "duration": "3600"
+          },
+          "PastResolution": {
+            "duration": "3600"
+          }
+        },
+        "Start": 8,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "J’ai connu que tu serais sorti encore une semaine.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "encore une semaine",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1W",
+          "FutureResolution": {
+            "duration": "604800"
+          },
+          "PastResolution": {
+            "duration": "604800"
+          }
+        },
+        "Start": 31,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "On peut attendre encore un mois?",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "encore un mois",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1M",
+          "FutureResolution": {
+            "duration": "2592000"
+          },
+          "PastResolution": {
+            "duration": "2592000"
+          }
+        },
+        "Start": 17,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "On peut attendre un autre jour ouvré?",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "un autre jour ouvré",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P1BD",
+          "FutureResolution": {
+            "duration": "86400"
+          },
+          "PastResolution": {
+            "duration": "86400"
+          }
+        },
+        "Start": 17,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour 20 ans.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "20 ans",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P20Y",
+          "FutureResolution": {
+            "duration": "630720000"
+          },
+          "PastResolution": {
+            "duration": "630720000"
+          }
+        },
+        "Start": 13,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Je pars pour quinze jours.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "quinze jours",
+        "Type": "duration",
+        "Value": {
+          "Timex": "P2W",
+          "FutureResolution": {
+            "duration": "1209600"
+          },
+          "PastResolution": {
+            "duration": "1209600"
+          }
+        },
+        "Start": 13,
+        "Length": 12
+      }
+    ]
   }
 ]

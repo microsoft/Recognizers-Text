@@ -19,7 +19,7 @@
     "Input": "मेरा फोन नंबर 26741570 है.",
     "Comment": "Local call numbers",
     "NotSupported":"dotnet",
-    "NotSupportedByDesign": "javascript,java,python",
+    "NotSupportedByDesign": "javascript,python",
     "Results": [
       {
         "Text": "26741570",
@@ -37,7 +37,7 @@
     "Input": "मेरा फोन नंबर 9834257234 है.",
     "Comment": "Local call numbers",
     "NotSupported":"dotnet",
-    "NotSupportedByDesign": "javascript,java,python",
+    "NotSupportedByDesign": "javascript,python",
     "Results": [
       {
         "Text": "9834257234",
@@ -55,7 +55,7 @@
     "Input": "मेरा फोन नंबर 011-26701508 है.",
     "Comment": "STD calls (interstate or sometimes inter-city)",
     "NotSupported":"dotnet",
-    "NotSupportedByDesign": "javascript,java,python",
+    "NotSupportedByDesign": "javascript,python",
     "Results": [
       {
         "Text": "011-26701508",
@@ -73,7 +73,7 @@
     "Input": "मेरा फोन नंबर 09810234587 है.",
     "Comment": "STD calls (interstate or sometimes inter-city)",
     "NotSupported":"dotnet",
-    "NotSupportedByDesign": "javascript,java,python",
+    "NotSupportedByDesign": "javascript,python",
     "Results": [
       {
         "Text": "09810234587",
@@ -91,7 +91,7 @@
     "Input": "मेरा फोन नंबर 0124-2543645 है.",
     "Comment": "STD calls (interstate or sometimes inter-city)",
     "NotSupported":"dotnet",
-    "NotSupportedByDesign": "javascript,java,python",
+    "NotSupportedByDesign": "javascript,python",
     "Results": [
       {
         "Text": "0124-2543645",
@@ -109,7 +109,7 @@
     "Input": "मेरा फोन नंबर 1-800-555-6666 है.",
     "Comment": "Toll free numbers",
     "NotSupported":"dotnet",
-    "NotSupportedByDesign": "javascript,java,python",
+    "NotSupportedByDesign": "javascript,python",
     "Results": [
       {
         "Text": "1-800-555-6666",
@@ -127,7 +127,7 @@
     "Input": "मेरा फोन नंबर 1800 425 3800 है.",
     "Comment": "Toll free numbers",
     "NotSupported":"dotnet",
-    "NotSupportedByDesign": "javascript,java,python",
+    "NotSupportedByDesign": "javascript,python",
     "Results": [
       {
         "Text": "1800 425 3800",
@@ -145,7 +145,7 @@
     "Input": "मेरा फोन नंबर 1800-103-8181 है.",
     "Comment": "Toll free numbers",
     "NotSupported":"dotnet",
-    "NotSupportedByDesign": "javascript,java,python",
+    "NotSupportedByDesign": "javascript,python",
     "Results": [
       {
         "Text": "1800-103-8181",
@@ -163,7 +163,7 @@
     "Input": "मेरा फोन नंबर 91-22-39830000 है.",
     "Comment": "International Calls (without + sign)",
     "NotSupported":"dotnet",
-    "NotSupportedByDesign": "javascript,java,python",
+    "NotSupportedByDesign": "javascript,python",
     "Results": [
       {
         "Text": "91-22-39830000",
@@ -181,7 +181,7 @@
     "Input": "मेरा फोन नंबर 912239830000 है.",
     "Comment": "International Calls (without + sign)",
     "NotSupported":"dotnet",
-    "NotSupportedByDesign": "javascript,java,python",
+    "NotSupportedByDesign": "javascript,python",
     "Results": [
       {
         "Text": "912239830000",
@@ -199,7 +199,7 @@
     "Input": "मेरा फोन नंबर 91-124-2543100 है.",
     "Comment": "International Calls (without + sign)",
     "NotSupported":"dotnet",
-    "NotSupportedByDesign": "javascript,java,python",
+    "NotSupportedByDesign": "javascript,python",
     "Results": [
       {
         "Text": "91-124-2543100",
@@ -217,7 +217,7 @@
     "Input": "मेरा फोन नंबर +91-22-39830000 है.",
     "Comment": "International Calls (with + sign)",
     "NotSupported":"dotnet",
-    "NotSupportedByDesign": "javascript,java,python",
+    "NotSupportedByDesign": "javascript,python",
     "Results": [
       {
         "Text": "+91-22-39830000",
@@ -235,7 +235,7 @@
     "Input": "मेरा फोन नंबर +912239830000 है.",
     "Comment": "International Calls (with + sign)",
     "NotSupported":"dotnet",
-    "NotSupportedByDesign": "javascript,java,python",
+    "NotSupportedByDesign": "javascript,python",
     "Results": [
       {
         "Text": "+912239830000",
@@ -253,7 +253,7 @@
     "Input": "मेरा फोन नंबर +91 24 39830000 है.",
     "Comment": "International Calls (with + sign)",
     "NotSupported":"dotnet",
-    "NotSupportedByDesign": "javascript,java,python",
+    "NotSupportedByDesign": "javascript,python",
     "Results": [
       {
         "Text": "+91 24 39830000",
@@ -271,7 +271,7 @@
     "Input": "मेरा फोन नंबर +91 124 2543100 है.",
     "Comment": "International Calls (with + sign)",
     "NotSupported":"dotnet",
-    "NotSupportedByDesign": "javascript,java,python",
+    "NotSupportedByDesign": "javascript,python",
     "Results": [
       {
         "Text": "+91 124 2543100",
@@ -289,7 +289,7 @@
     "Input": "मेरा फोन नंबर ९९२५७४३५०८ है.",
     "Comment": "Devenagari numerals",
     "NotSupported":"dotnet",
-    "NotSupportedByDesign": "javascript,java,python",
+    "NotSupportedByDesign": "javascript,python",
     "Results": [
       {
         "Text": "९९२५७४३५०८",
@@ -307,7 +307,7 @@
     "Input": "मेरा फोन नंबर १८००४२५३८०० है.",
     "Comment": "Devenagari numerals",
     "NotSupported":"dotnet",
-    "NotSupportedByDesign": "javascript,java,python",
+    "NotSupportedByDesign": "javascript,python",
     "Results": [
       {
         "Text": "१८००४२५३८००",

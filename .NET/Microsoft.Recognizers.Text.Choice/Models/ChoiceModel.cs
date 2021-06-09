@@ -6,6 +6,11 @@ namespace Microsoft.Recognizers.Text.Choice
 {
     public abstract class ChoiceModel : IModel
     {
+
+        private string culture;
+
+        private string requestedCulture;
+
         protected ChoiceModel(IParser parser, IExtractor extractor)
         {
             this.Parser = parser;
@@ -13,6 +18,10 @@ namespace Microsoft.Recognizers.Text.Choice
         }
 
         public abstract string ModelTypeName { get; }
+
+        public string Culture => this.culture;
+
+        public string RequestedCulture => this.requestedCulture;
 
         protected IExtractor Extractor { get; private set; }
 
@@ -41,6 +50,12 @@ namespace Microsoft.Recognizers.Text.Choice
                 Text = pr.Text,
                 TypeName = ModelTypeName,
             }).ToList();
+        }
+
+        public void SetCultureInfo(string culture, string requestedCulture = null)
+        {
+            this.culture = culture;
+            this.requestedCulture = requestedCulture;
         }
 
         protected abstract SortedDictionary<string, object> GetResolution(ParseResult parseResult);

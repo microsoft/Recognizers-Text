@@ -1,0 +1,650 @@
+[
+  {
+    "Input": "utanför är temperaturen 40 gr celsius",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "40 gr celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "40",
+          "unit": "C"
+        },
+        "Start": 24,
+        "End": 36
+      }
+    ]
+  },
+  {
+    "Input": "det är 90 fahrenheit i texas",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "90 fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "90",
+          "unit": "F"
+        },
+        "Start": 7,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "-5 grader fahrenheit",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "-5 grader fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "-5",
+          "unit": "F"
+        },
+        "Start": 0,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "6 gr. C",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "6 gr. c",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "6",
+          "unit": "C"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "98,6 grader f är normal temperatur",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "98,6 grader f",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "98,6",
+          "unit": "F"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "ställ in temperaturen på 30 grader celsius",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "30 grader celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "30",
+          "unit": "C"
+        },
+        "Start": 25,
+        "End": 41
+      }
+    ]
+  },
+  {
+    "Input": "normal temperatur är 98,6 grader fahrenheit",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "98,6 grader fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "98,6",
+          "unit": "F"
+        },
+        "Start": 21,
+        "End": 42
+      }
+    ]
+  },
+  {
+    "Input": "100 grader f",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "100 grader f",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "100",
+          "unit": "F"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "20 grader c",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "20 grader c",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "20",
+          "unit": "C"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "100,2 grader fahrenheit är lågt",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "100,2 grader fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "100,2",
+          "unit": "F"
+        },
+        "Start": 0,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "10,5 celsius",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "10,5 celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "10,5",
+          "unit": "C"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "20 grader celsius",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "20 grader celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "20",
+          "unit": "C"
+        },
+        "Start": 0,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "20,3 celsius",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "20,3 celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "20,3",
+          "unit": "C"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "34,5 celsius",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "34,5 celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "34,5",
+          "unit": "C"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "utanför är temperaturen 98 grader",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "98 grader",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "98",
+          "unit": "Degree"
+        },
+        "Start": 24,
+        "End": 32
+      }
+    ]
+  },
+  {
+    "Input": "ställ in termostaten på 85°",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "85°",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "85",
+          "unit": "Degree"
+        },
+        "Start": 24,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "höj temperaturen med 5 grader",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "5 grader",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "5",
+          "unit": "Degree"
+        },
+        "Start": 21,
+        "End": 28
+      }
+    ]
+  },
+  {
+    "Input": "ställ in temperaturen på 70 grader f",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "70 grader f",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "70",
+          "unit": "F"
+        },
+        "Start": 25,
+        "End": 35
+      }
+    ]
+  },
+  {
+    "Input": "höj temperaturen med 20 grader",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "20 grader",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "20",
+          "unit": "Degree"
+        },
+        "Start": 21,
+        "End": 29
+      }
+    ]
+  },
+  {
+    "Input": "ställ in temperaturen på 100 grader",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "100 grader",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "100",
+          "unit": "Degree"
+        },
+        "Start": 25,
+        "End": 34
+      }
+    ]
+  },
+  {
+    "Input": "behåll temperaturen på 75 grader f",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "75 grader f",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "75",
+          "unit": "F"
+        },
+        "Start": 23,
+        "End": 33
+      }
+    ]
+  },
+  {
+    "Input": "lämna temperaturen på 40 celsius",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "40 celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "40",
+          "unit": "C"
+        },
+        "Start": 22,
+        "End": 31
+      }
+    ]
+  },
+  {
+    "Input": "lämna temperaturen på 50 gr.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "50 gr.",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "50",
+          "unit": "Degree"
+        },
+        "Start": 22,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "omvandla 10 celsius till fahrenheit",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "10 celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "10",
+          "unit": "C"
+        },
+        "Start": 9,
+        "End": 18
+      },
+      {
+        "Text": "fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "F"
+        },
+        "Start": 25,
+        "End": 34
+      }
+    ]
+  },
+  {
+    "Input": "34,9 celsiusgrader till fahrenheit",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "34,9 celsiusgrader",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "34,9",
+          "unit": "C"
+        },
+        "Start": 0,
+        "End": 17
+      },
+      {
+        "Text": "fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "F"
+        },
+        "Start": 24,
+        "End": 33
+      }
+    ]
+  },
+  {
+    "Input": "omvandla 200 celsius till fahrenheit",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "200 celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "200",
+          "unit": "C"
+        },
+        "Start": 9,
+        "End": 19
+      },
+      {
+        "Text": "fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "F"
+        },
+        "Start": 26,
+        "End": 35
+      }
+    ]
+  },
+  {
+    "Input": "fahrenheit till celsius 101 fahrenheit är så mycket celsius",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "101 fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "101",
+          "unit": "F"
+        },
+        "Start": 24,
+        "End": 37
+      },
+      {
+        "Text": "fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "F"
+        },
+        "Start": 0,
+        "End": 9
+      },
+      {
+        "Text": "celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "C"
+        },
+        "Start": 16,
+        "End": 22
+      },
+      {
+        "Text": "celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "C"
+        },
+        "Start": 52,
+        "End": 58
+      }
+    ]
+  },
+  {
+    "Input": "50 grader celsius till fahrenheit",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "50 grader celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "50",
+          "unit": "C"
+        },
+        "Start": 0,
+        "End": 16
+      },
+      {
+        "Text": "fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "F"
+        },
+        "Start": 23,
+        "End": 32
+      }
+    ]
+  },
+  {
+    "Input": "skulle du kunna omvandla 51 fahrenheit till grader celsius",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "51 fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "51",
+          "unit": "F"
+        },
+        "Start": 25,
+        "End": 37
+      },
+      {
+        "Text": "grader celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "C"
+        },
+        "Start": 44,
+        "End": 57
+      }
+    ]
+  },
+  {
+    "Input": "omvandla 106 grader fahrenheit till grader celsius",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "106 grader fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "106",
+          "unit": "F"
+        },
+        "Start": 9,
+        "End": 29
+      },
+      {
+        "Text": "grader celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "C"
+        },
+        "Start": 36,
+        "End": 49
+      }
+    ]
+  },
+  {
+    "Input": "omvandla 1 grad fahrenheit till celsius",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1 grad fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "1",
+          "unit": "F"
+        },
+        "Start": 9,
+        "End": 25
+      },
+      {
+        "Text": "celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "C"
+        },
+        "Start": 32,
+        "End": 38
+      }
+    ]
+  },
+  {
+    "Input": "omvandla 1 grad celsius till fahrenheit",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1 grad celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "1",
+          "unit": "C"
+        },
+        "Start": 9,
+        "End": 22
+      },
+      {
+        "Text": "fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "F"
+        },
+        "Start": 29,
+        "End": 38
+      }
+    ]
+  },
+  {
+    "Input": "hur man omvandlar - 20 grader fahrenheit till celsius",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "- 20 grader fahrenheit",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "-20",
+          "unit": "F"
+        },
+        "Start": 18,
+        "End": 39
+      },
+      {
+        "Text": "celsius",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "C"
+        },
+        "Start": 46,
+        "End": 52
+      }
+    ]
+  }
+]

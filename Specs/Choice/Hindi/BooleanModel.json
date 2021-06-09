@@ -36,7 +36,7 @@
         "TypeName": "boolean",
         "Resolution": {
           "value": true,
-          "score": 0.454545454545455
+          "score": 0.4545454545454546
         }
       }
     ]
@@ -64,7 +64,7 @@
         "TypeName": "boolean",
         "Resolution": {
           "value": true,
-          "score": 0.485714285714286
+          "score": 0.4857142857142857
         }
       }
     ]
@@ -187,6 +187,62 @@
     "Results": [
       {
         "Text": "👌",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.6
+        }
+      }
+    ]
+  },
+  {
+    "Input": "👌🏾 यह ठीक है",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "👌🏾",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.64
+        }
+      }
+    ]
+  },
+  {
+    "Input": "👌🏿 यह ठीक है",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "👌🏿",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.64
+        }
+      }
+    ]
+  },
+  {
+    "Input": "👌🏻 यह ठीक है",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "👌🏻",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.64
+        }
+      }
+    ]
+  },
+  {
+    "Input": "👌🏼👌🏻👌🏽",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "👌🏼",
         "TypeName": "boolean",
         "Resolution": {
           "value": true,

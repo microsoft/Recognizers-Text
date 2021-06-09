@@ -2,8 +2,12 @@
 {
     public class EmailParser : BaseSequenceParser
     {
-        public EmailParser()
+
+        private BaseSequenceConfiguration config;
+
+        public EmailParser(BaseSequenceConfiguration config)
         {
+            this.config = config;
         }
     }
 }

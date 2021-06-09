@@ -32,14 +32,21 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Utilities
 
             foreach (var token in values)
             {
-                if (string.IsNullOrWhiteSpace(token) || (sourceDictionary.ContainsKey(token) && sourceDictionary[token].Equals(key)))
+                if (string.IsNullOrWhiteSpace(token) || (sourceDictionary.ContainsKey(token) && sourceDictionary[token].Equals(key, StringComparison.Ordinal)))
                 {
                     continue;
                 }
 
                 // This segment of code is going to break if there're duplicated key-values in the resource files.
                 // Those duplicates should be fixed before committing.
-                sourceDictionary.Add(token, key);
+                try
+                {
+                    sourceDictionary.Add(token, key);
+                }
+                catch (ArgumentException ae)
+                {
+                    throw new ArgumentException(ae.Message + ": " + token);
+                }
             }
         }
     }

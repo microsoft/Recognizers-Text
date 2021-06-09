@@ -137,18 +137,9 @@ class BaseDateTimeExtractor(DateTimeExtractor):
         tokens.extend(self.time_of_today_after(source, reference))
         tokens.extend(self.special_time_of_date(source, reference))
         tokens.extend(self.duration_with_before_and_after(source, reference))
-        tokens.extend(self.special_time_of_day(source, reference))
 
         result = merge_all_tokens(tokens, source, self.extractor_type_name)
         return result
-
-    def special_time_of_day(self, text: str, reference: datetime):
-        ret = []
-        match = self.config.specific_end_of_regex.search(text)
-        if match:
-            ret.append(Token(text.index(match.group()), len(text)))
-
-        return ret
 
     # merge a Date entity and a Time entity, like "at 7 tomorrow"
     def merge_date_and_time(self, source: str, reference: datetime) -> List[Token]:

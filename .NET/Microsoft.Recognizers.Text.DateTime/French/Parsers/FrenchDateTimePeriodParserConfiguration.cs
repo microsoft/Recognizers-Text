@@ -1,4 +1,5 @@
-﻿using System.Collections.Immutable;
+﻿using System;
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.French;
@@ -25,6 +26,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
+            TokenBeforeTime = DateTimeDefinitions.TokenBeforeTime;
+
             DateExtractor = config.DateExtractor;
             TimeExtractor = config.TimeExtractor;
             DateTimeExtractor = config.DateTimeExtractor;
@@ -64,6 +67,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         }
 
         public string TokenBeforeDate { get; }
+
+        public string TokenBeforeTime { get; }
 
         public IDateExtractor DateExtractor { get; }
 
@@ -141,7 +146,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             endHour = 0;
             endMin = 0;
 
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
 
             if (MorningStartEndRegex.IsMatch(trimmedText))
             {
@@ -180,16 +185,23 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         // **NOTE: for certain cases, prochain/dernier (next, last) are suffix OR prefix
         public int GetSwiftPrefix(string text)
         {
-            var trimmedText = text.Trim().ToLowerInvariant();
+            var trimmedText = text.Trim();
+
             var swift = 0;
 
-            if (trimmedText.StartsWith("prochain") || trimmedText.EndsWith("prochain") ||
-                trimmedText.StartsWith("prochaine") || trimmedText.EndsWith("prochaine"))
+            // @TODO move hardcoded values to resources file
+
+            if (trimmedText.StartsWith("prochain", StringComparison.Ordinal) ||
+                trimmedText.EndsWith("prochain", StringComparison.Ordinal) ||
+                trimmedText.StartsWith("prochaine", StringComparison.Ordinal) ||
+                trimmedText.EndsWith("prochaine", StringComparison.Ordinal))
             {
                 swift = 1;
             }
-            else if (trimmedText.StartsWith("derniere") || trimmedText.StartsWith("dernier") ||
-                     trimmedText.EndsWith("derniere") || trimmedText.EndsWith("dernier"))
+            else if (trimmedText.StartsWith("derniere", StringComparison.Ordinal) ||
+                     trimmedText.StartsWith("dernier", StringComparison.Ordinal) ||
+                     trimmedText.EndsWith("derniere", StringComparison.Ordinal) ||
+                     trimmedText.EndsWith("dernier", StringComparison.Ordinal))
             {
                 swift = -1;
             }

@@ -1,0 +1,142 @@
+[
+  {
+    "Input": "100%",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "100%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "vingt pour cent",
+    "NotSupported": "dotnet, java, javascript, python",
+    "Results": [
+      {
+        "Text": "vingt pour cent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "20%"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "cent pour cent",
+    "NotSupported": "dotnet, java, javascript, python",
+    "Results": [
+      {
+        "Text": "cent pour cent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "vingt pourcents",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "vingt pourcents",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "20%"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "un sur trois",
+    "NotSupported": "dotnet, java, javascript, python",
+    "Results": [
+      {
+        "Text": "un sur trois",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "33.3333333333333%"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "un sur deux",
+    "NotSupported": "dotnet, java, javascript, python",
+    "Results": [
+      {
+        "Text": "un sur deux",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "50%"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "1/4 de",
+    "NotSupported": "dotnet, java, javascript, python",
+    "Results": [
+      {
+        "Text": "1/4 de",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "25%"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "un quart de",
+    "NotSupported": "dotnet, java, javascript, python",
+    "Results": [
+      {
+        "Text": "un quart de",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "25%"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "une moitié de",
+    "NotSupported": "dotnet, java, javascript, python",
+    "Results": [
+      {
+        "Text": "une moitié de",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "50%"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "un tiers",
+    "NotSupported": "javascript, python",
+    "Results": []
+  }
+]

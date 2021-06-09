@@ -2912,5 +2912,146 @@
         "Length": 11
       }
     ]
+  },
+  {
+    "Input": "Feb 29",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "Feb 29",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-02-29",
+          "FutureResolution": {
+            "date": "2020-02-29"
+          },
+          "PastResolution": {
+            "date": "2016-02-29"
+          }
+        },
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "2/29",
+    "Context": {
+      "ReferenceDateTime": "2019-03-22T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2/29",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-02-29",
+          "FutureResolution": {
+            "date": "2020-02-29"
+          },
+          "PastResolution": {
+            "date": "2016-02-29"
+          }
+        },
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Feb 29th",
+    "Context": {
+      "ReferenceDateTime": "2020-03-22T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "Feb 29th",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-02-29",
+          "FutureResolution": {
+            "date": "2024-02-29"
+          },
+          "PastResolution": {
+            "date": "2020-02-29"
+          }
+        },
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Feb 30",
+    "Context": {
+      "ReferenceDateTime": "2020-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "Feb 30",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-02-30",
+          "FutureResolution": {
+            "date": "0001-01-01"
+          },
+          "PastResolution": {
+            "date": "0001-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "2/29/2019",
+    "Context": {
+      "ReferenceDateTime": "2020-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2/29/2019",
+        "Type": "date",
+        "Value": {
+          "Timex": "2019-02-29",
+          "FutureResolution": {
+            "date": "0001-01-01"
+          },
+          "PastResolution": {
+            "date": "0001-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "2/29/2020",
+    "Context": {
+      "ReferenceDateTime": "2020-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2/29/2020",
+        "Type": "date",
+        "Value": {
+          "Timex": "2020-02-29",
+          "FutureResolution": {
+            "date": "2020-02-29"
+          },
+          "PastResolution": {
+            "date": "2020-02-29"
+          }
+        },
+        "Start": 0,
+        "Length": 9
+      }
+    ]
   }
 ]

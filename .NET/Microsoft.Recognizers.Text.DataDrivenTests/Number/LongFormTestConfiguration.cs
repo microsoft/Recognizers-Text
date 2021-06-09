@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.Number.Tests
@@ -40,6 +41,8 @@ namespace Microsoft.Recognizers.Text.Number.Tests
 
         public Regex FractionPrepositionRegex { get; }
 
+        public Regex RoundMultiplierRegex { get; }
+
         public string FractionMarkerToken { get; }
 
         public Regex HalfADozenRegex { get; }
@@ -68,6 +71,8 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         public bool IsCompoundNumberLanguage { get; }
 
         public bool IsMultiDecimalSeparatorCulture { get; }
+
+        public IEnumerable<string> NonStandardSeparatorVariants => Enumerable.Empty<string>();
 
         public IEnumerable<string> NormalizeTokenSet(IEnumerable<string> tokens, ParseResult context)
         {

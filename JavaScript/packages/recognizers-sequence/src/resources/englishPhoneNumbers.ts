@@ -10,6 +10,6 @@
 // ------------------------------------------------------------------------------
 
 export namespace EnglishPhoneNumbers {
-    export const NumberReplaceToken = '@builtin.phonenumber';
+    export const NumberReplaceToken = `@builtin.phonenumber`;
     export const FalsePositivePrefixRegex = `(account|card)(\\s+(#|number))?(\\s+is)?:?\\s*$`;
 }

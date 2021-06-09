@@ -1,0 +1,189 @@
+{
+  "outputPath": "libraries/recognizers-text-sequence/src/main/java/com/microsoft/recognizers/text/sequence/resources/",
+  "configFiles": [
+    {
+      "input": [
+        "Base-PhoneNumbers"
+      ],
+      "output": "BasePhoneNumbers",
+      "header": [
+        "package com.microsoft.recognizers.text.sequence.resources;",
+        "",
+        "import java.util.Arrays;",
+        "import java.util.List;",
+        "",
+        "public class BasePhoneNumbers {"
+      ],
+      "footer": [
+        "}"
+      ]
+    },
+    {
+      "input": [
+        "Base-Ip"
+      ],
+      "output": "BaseIp",
+      "header": [
+        "package com.microsoft.recognizers.text.sequence.resources;",
+        "",
+        "public class BaseIp {"
+      ],
+      "footer": [
+        "}"
+      ]
+    },
+    {
+      "input": [
+        "Base-Mention"
+      ],
+      "output": "BaseMention",
+      "header": [
+        "package com.microsoft.recognizers.text.sequence.resources;",
+        "",
+        "public class BaseMention {"
+      ],
+      "footer": [
+        "}"
+      ]
+    },
+    {
+      "input": [
+        "Base-Hashtag"
+      ],
+      "output": "BaseHashtag",
+      "header": [
+        "package com.microsoft.recognizers.text.sequence.resources;",
+        "",
+        "public class BaseHashtag {"
+      ],
+      "footer": [
+        "}"
+      ]
+    },
+    {
+      "input": [
+        "Base-URL"
+      ],
+      "output": "BaseURL",
+      "header": [
+        "package com.microsoft.recognizers.text.sequence.resources;",
+        "",
+        "import java.util.Arrays;",
+        "import java.util.List;",
+        "",
+        "public class BaseURL {"
+      ],
+      "footer": [
+        "}"
+      ]
+    },
+    {
+      "input": [
+        "Base-Email"
+      ],
+      "output": "BaseEmail",
+      "header": [
+        "package com.microsoft.recognizers.text.sequence.resources;",
+        "",
+        "public class BaseEmail {"
+      ],
+      "footer": [
+        "}"
+      ]
+    },
+    {
+      "input": [
+        "Base-GUID"
+      ],
+      "output": "BaseGUID",
+      "header": [
+        "package com.microsoft.recognizers.text.sequence.resources;",
+        "",
+        "public class BaseGUID {"
+      ],
+      "footer": [
+        "}"
+      ]
+    },
+    {
+      "input": [
+        "English",
+        "English-PhoneNumbers"
+      ],
+      "output": "EnglishPhoneNumbers",
+      "header": [
+        "package com.microsoft.recognizers.text.sequence.resources;",
+        "",
+        "public class EnglishPhoneNumbers {"
+      ],
+      "footer": [
+        "}"
+      ]
+    },
+    {
+      "input": [
+        "Chinese",
+        "Chinese-URL"
+      ],
+      "output": "ChineseURL",
+      "header": [
+        "package com.microsoft.recognizers.text.sequence.resources;",
+        "",
+        "public class ChineseURL {"
+      ],
+      "footer": [
+        "}"
+      ]
+    },
+    {
+      "input": [
+        "Chinese",
+        "Chinese-PhoneNumbers"
+      ],
+      "output": "ChinesePhoneNumbers",
+      "header": [
+        "package com.microsoft.recognizers.text.sequence.resources;",
+        "",
+        "import java.util.Arrays;",
+        "import java.util.List;",
+        "",
+        "public class ChinesePhoneNumbers {"
+      ],
+      "footer": [
+        "}"
+      ]
+    },
+    {
+      "input": [
+        "Chinese",
+        "Chinese-Ip"
+      ],
+      "output": "ChineseIp",
+      "header": [
+        "package com.microsoft.recognizers.text.sequence.resources;",
+        "",
+        "public class ChineseIp {",
+        "",
+        "private static ChinesePhoneNumbers PhoneNumbersDefinitions;"
+      ],
+      "footer": [
+        "}"
+      ]
+    },
+    {
+      "input": [
+        "Portuguese",
+        "Portuguese-PhoneNumbers"
+      ],
+      "output": "PortuguesePhoneNumbers",
+      "header": [
+        "package com.microsoft.recognizers.text.sequence.resources;",
+        "",
+        "public class PortuguesePhoneNumbers {"
+      ],
+      "footer": [
+        "}"
+      ]
+    }
+  ]
+}

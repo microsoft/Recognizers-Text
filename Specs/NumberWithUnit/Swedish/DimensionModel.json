@@ -1,0 +1,985 @@
+[
+  {
+    "Input": "75ml",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "75ml",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "75",
+          "unit": "Milliliter",
+          "subtype": "Volume"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "Den största nackdelen är dess tjocklek på 3 tum, stor nog för att kallas klumpig.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 tum",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "3",
+          "unit": "Inch",
+          "subtype": "Length"
+        },
+        "Start": 42,
+        "End": 46
+      }
+    ]
+  },
+  {
+    "Input": "en tornado blåste igenom längs tio miles. Minst 14 människor dödades och dussintals lämnades hemlösa.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "tio miles",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "10",
+          "unit": "Mile",
+          "subtype": "Length"
+        },
+        "Start": 31,
+        "End": 39
+      }
+    ]
+  },
+  {
+    "Input": "det krävs mer än 10 1/2 miles med kabel för att koppla upp alla 23 datorerna.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "10 1/2 miles",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "10,5",
+          "unit": "Mile",
+          "subtype": "Length"
+        },
+        "Start": 17,
+        "End": 28
+      }
+    ]
+  },
+  {
+    "Input": "resan på sextio kilometer som tidigare på dagen tagit 20 minuter tog nu mer än tre timmar.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "sextio kilometer",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "60",
+          "unit": "Kilometer",
+          "subtype": "Length"
+        },
+        "Start": 9,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "sett till hela industrin , föll oljeproduktionen i detta land med 500000 fat per dag under de första åtta månaderna detta år.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "500000 fat",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "500000",
+          "unit": "Barrel",
+          "subtype": "Weight"
+        },
+        "Start": 66,
+        "End": 75
+      }
+    ]
+  },
+  {
+    "Input": "det är vad som 1 ) förklarar varför vi är , ja , oss själva snarare än bo jackson ; 2 ) varnar för att det är möjligt att drunkna i en sjö som i genomsnitt är två fot djup ; och 3 ) förutsäger att 10 , 000 apor placerade framför 10 , 000 pianon skulle producerae 1 , 118 publicerbara rock ' n ' roll sånger.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "två fot",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "2",
+          "unit": "Foot",
+          "subtype": "Length"
+        },
+        "Start": 159,
+        "End": 165
+      }
+    ]
+  },
+  {
+    "Input": "den 19 maj , började fda internera kinesiska svampar in 68-grams burkar efter att mer än 100 människor i mississippi , new york och pennsylvania blev sjuka efter att de hade ätit skämda svampar.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "68-grams",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "68",
+          "unit": "Gram",
+          "subtype": "Weight"
+        },
+        "Start": 56,
+        "End": 63
+      }
+    ]
+  },
+  {
+    "Input": "mr . hulings berättade skadeglatt att han sålde alla sina aktier en vecka innan marknaden rasade med 190 punkter den 13 okt , och han använder pengarna till att köpa en 45ha hästgård.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "45ha",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "45",
+          "unit": "Square hectometer",
+          "subtype": "Area"
+        },
+        "Start": 169,
+        "End": 172
+      }
+    ]
+  },
+  {
+    "Input": "sen , för att göra dessa trädgårdstält till veritabla rum , hade ms . bartlett slängt upp fönsterlösa väggar (tegel, puts, häck ) åtta till 10 fot högt, vilket medförde att insidan föll i en dags - lång skugga.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "10 fot",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "10",
+          "unit": "Foot",
+          "subtype": "Length"
+        },
+        "Start": 140,
+        "End": 145
+      }
+    ]
+  },
+  {
+    "Input": "` ` ledningen gillar inte överraskningar , ' ' noterar jack zaves , som , i egenskap av fuel - services director på american airlines , köper 2,4 miljarder gallons med flygbränsle per år.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "2,4 miljarder gallons",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "2400000000",
+          "unit": "Gallon",
+          "subtype": "Weight"
+        },
+        "Start": 142,
+        "End": 162
+      }
+    ]
+  },
+  {
+    "Input": "en vattenkylare på 10-gallon hade vält ned på golvet och blött ned den röda mattan.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "10-gallon",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "10",
+          "unit": "Gallon",
+          "subtype": "Weight"
+        },
+        "Start": 19,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "i närheten plaskade sex delfiner runt i tanken med 1,5 miljoner gallon saltvatten.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1,5 miljoner gallon",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "1500000",
+          "unit": "Gallon",
+          "subtype": "Weight"
+        },
+        "Start": 51,
+        "End": 69
+      }
+    ]
+  },
+  {
+    "Input": "och hans barn väger mer än 2 kilo.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "2 kilo",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "2",
+          "unit": "Kilogram",
+          "subtype": "Weight"
+        },
+        "Start": 27,
+        "End": 32
+      }
+    ]
+  },
+  {
+    "Input": "``jag litar inte på människor som inte äter,'' sa ms. volokh, även om hon själv slutade äta lunch för några år sedan för att gå ner 15kg.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "15kg",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "15",
+          "unit": "Kilogram",
+          "subtype": "Weight"
+        },
+        "Start": 132,
+        "End": 135
+      }
+    ]
+  },
+  {
+    "Input": "shell , ett dotterföretag till royal dutch / shell group , kommer att tillåtas exportera 0,9 biljoner kubikfot , och gulf , en enhet inom olympia & york developments ltd. kommer tillåtas exportera",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "0,9 biljoner kubikfot",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "900000000000",
+          "unit": "Cubic foot",
+          "subtype": "Volume"
+        },
+        "Start": 89,
+        "End": 109
+      }
+    ]
+  },
+  {
+    "Input": "viktiga punkter i dekretet , som det ser ut nu , är : - - en begränsning på 660 kvadratmeter för vad en familj kan äga , i landets sex största städer , men mer i mindre städer.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "660 kvadratmeter",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "660",
+          "unit": "Square meter",
+          "subtype": "Area"
+        },
+        "Start": 76,
+        "End": 91
+      }
+    ]
+  },
+  {
+    "Input": "tigrean armies are now 200 miles north of addis ababa , threatening the town of dese , which would cut off mr . mengistu ' s capital from the port of assab , through which all fuel and other supplies reach addis ababa.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "200 miles",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "200",
+          "unit": "Mile",
+          "subtype": "Length"
+        },
+        "Start": 23,
+        "End": 31
+      }
+    ]
+  },
+  {
+    "Input": "han sa att hans en av datorerna gled 3 meter längs golvet.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 meter",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "3",
+          "unit": "Meter",
+          "subtype": "Length"
+        },
+        "Start": 37,
+        "End": 43
+      }
+    ]
+  },
+  {
+    "Input": "kärnan i hans innehav är 190000 kvadratmeter oerhört värdefulla fastigheter i marunouchi distriktet , affärs- och finanscentrat i Tokyo, ofta skämtsamt kallat ` ` mitsubishi village. ' '",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "190000 kvadratmeter",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "190000",
+          "unit": "Square meter",
+          "subtype": "Area"
+        },
+        "Start": 25,
+        "End": 43
+      }
+    ]
+  },
+  {
+    "Input": "satelliten , byggd av hughes för den internationella kommunikationssattelitorganisationen , är en del av ett $ 700 miljoners-kontrakt som tilldelades hughes 1982 för att utveckla fem av tre-tons satteliterna.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "tre-tons",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "3",
+          "unit": "Ton",
+          "subtype": "Weight"
+        },
+        "Start": 186,
+        "End": 193
+      }
+    ]
+  },
+  {
+    "Input": "in a 1996 report on biological weapons , the center for strategic and international studies , a public policy research institution in washington , warned that it was easy for would - be terrorists to assemble biological weapons _ using commercial equipment with a capacity of 130 gallons.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "130 gallons",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "130",
+          "unit": "Gallon",
+          "subtype": "Weight"
+        },
+        "Start": 276,
+        "End": 286
+      }
+    ]
+  },
+  {
+    "Input": "the trade group ' s compilation of commerce department data showed that august imports , the second largest monthly total of the year , were up 5 % from july ' s 1458000 ton but below last year ' s high of in june 1988.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1458000 ton",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "1458000",
+          "unit": "Ton",
+          "subtype": "Weight"
+        },
+        "Start": 162,
+        "End": 172
+      }
+    ]
+  },
+  {
+    "Input": "vid nr . 1 , slog singh ett slag med en järn 9:a som hamnade mindre än sex fot från koppen.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "sex fot",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "6",
+          "unit": "Foot",
+          "subtype": "Length"
+        },
+        "Start": 71,
+        "End": 77
+      }
+    ]
+  },
+  {
+    "Input": "så när nästa års ' s psyllium-gröda skördas i mars, är den kanske mindre än de 16000 ton de senaste åren - - just vid toppen av psyllium-boomen.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "16000 ton",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "16000",
+          "unit": "Ton",
+          "subtype": "Weight"
+        },
+        "Start": 79,
+        "End": 87
+      }
+    ]
+  },
+  {
+    "Input": "the 486 is the descendant of a long series of intel chips that began dominating the market ever since ibm picked the 16-bit 8088 chip for its first personal computer.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "16-bit",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "16",
+          "unit": "Bit",
+          "subtype": "Information"
+        },
+        "Start": 117,
+        "End": 122
+      }
+    ]
+  },
+  {
+    "Input": "Detta: ` ` jiotto caspita ' ' kan köra i över 188 kilometer per timme , som en talesman för företaget yttryckte det..",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "188 kilometer per timme",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "188",
+          "unit": "Kilometer per hour",
+          "subtype": "Speed"
+        },
+        "Start": 46,
+        "End": 68
+      }
+    ]
+  },
+  {
+    "Input": "flottan har satt upp en landningsplats för helikoptrar 100 meter från en mobil kommandocentral i utkanten av Stockholm.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "100 meter",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "100",
+          "unit": "Meter",
+          "subtype": "Length"
+        },
+        "Start": 55,
+        "End": 63
+      }
+    ]
+  },
+  {
+    "Input": "trafikverket planerar att lägga till en upphöjd väg för bussar och bilpendlare för ca halva sträckningen, som är 25,5km, mellan Malmö och Sankt Olof.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "25,5km",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "25,5",
+          "unit": "Kilometer",
+          "subtype": "Length"
+        },
+        "Start": 113,
+        "End": 118
+      }
+    ]
+  },
+  {
+    "Input": "på min 4-kilometers resa varje morgon kör jag förbi fyra tomma hus.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "4-kilometers",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "4",
+          "unit": "Kilometer",
+          "subtype": "Length"
+        },
+        "Start": 7,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "vi är förolämpade, sa langa från det grekiskkatolska högkvarteret, ca 325 kilometer nordost om bukarest.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "325 kilometer",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "325",
+          "unit": "Kilometer",
+          "subtype": "Length"
+        },
+        "Start": 70,
+        "End": 82
+      }
+    ]
+  },
+  {
+    "Input": "rotich är korta ( 5 fot",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "5 fot",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "5",
+          "unit": "Foot",
+          "subtype": "Length"
+        },
+        "Start": 18,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "4 inches) 28 - år - gammal som inte började springa seriöst förrän för tre år sedan och som inte hade tävlat inomhus förrän denna månad.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "4 inches",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "4",
+          "unit": "Inch",
+          "subtype": "Length"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "raceway park ( minnesota ) i shakopee är en 1/4 kilometer belagd oval.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1/4 kilometer",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "0,25",
+          "unit": "Kilometer",
+          "subtype": "Length"
+        },
+        "Start": 44,
+        "End": 56
+      }
+    ]
+  },
+  {
+    "Input": "castlecrag mountain är beläget söder om moat-sjön , 1,6 km väster om frinkberget längs samma bergskam.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1,6 km",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "1,6",
+          "unit": "Kilometer",
+          "subtype": "Length"
+        },
+        "Start": 52,
+        "End": 57
+      }
+    ]
+  },
+  {
+    "Input": "javadi-kullarna är belägna ungefär 17 km från Anbur.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "17 km",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "17",
+          "unit": "Kilometer",
+          "subtype": "Length"
+        },
+        "Start": 35,
+        "End": 39
+      }
+    ]
+  },
+  {
+    "Input": "efter att de cirkulerat i två timmar runt lake michigan nära utställning landade kapten hugo lang 776-fots luftfarkosten vid närbelägna curtiss - wright flygplatsen i glenview.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "776-fots",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "776",
+          "unit": "Foot",
+          "subtype": "Length"
+        },
+        "Start": 98,
+        "End": 105
+      }
+    ]
+  },
+  {
+    "Input": "korsningen med highway 35 och highway 115 mot lindsay och peterborough ( avfart 436 ) ligger 500 meter öster om bennett road.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "500 meter",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "500",
+          "unit": "Meter",
+          "subtype": "Length"
+        },
+        "Start": 93,
+        "End": 101
+      }
+    ]
+  },
+  {
+    "Input": "1995 introducerade canon det första kommersiellt gångbara slr-objektivet med inbyggd bildstabilisering; ef 75 -300mm f / 4 - 5 . 6 is usm.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "java, javascript",
+    "Results": [
+      {
+        "Text": "300mm",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "300",
+          "unit": "Millimeter",
+          "subtype": "Length"
+        },
+        "Start": 111,
+        "End": 115
+      }
+    ]
+  },
+  {
+    "Input": "sterling armaments i dagenham , essex producerade ett konverteringskit som bestod av en ny 7,62mm pipa , magasin , extractor och utkastare kommersiellt.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "7,62mm",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "7,62",
+          "unit": "Millimeter",
+          "subtype": "Length"
+        },
+        "Start": 91,
+        "End": 96
+      }
+    ]
+  },
+  {
+    "Input": "projektet kostar $ 46 , 8 million , och är avsett att öka företaget ' s produktionskapacitet med 25 % till 34500 ton kopparkatoder per år.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "34500 ton",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "34500",
+          "unit": "Ton",
+          "subtype": "Weight"
+        },
+        "Start": 107,
+        "End": 115
+      }
+    ]
+  },
+  {
+    "Input": "canadian steels - pelletsproduktion uppgick till 291890 ton veckan som slutade den 7 okt, en ökning med 7 , upp 14 . 8 % jämfört med föregående veckas totalproduktion , meddelade statistikbyrån.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "291890 ton",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "291890",
+          "unit": "Ton",
+          "subtype": "Weight"
+        },
+        "Start": 49,
+        "End": 58
+      }
+    ]
+  },
+  {
+    "Input": "floridapantrar lever i revir mellan 190 km2.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "190 km2",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "190",
+          "unit": "Square kilometer",
+          "subtype": "Area"
+        },
+        "Start": 36,
+        "End": 42
+      }
+    ]
+  },
+  {
+    "Input": "Jag är en man.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Skicka ett snabbt DM och fråga efter deras e-post adress",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "1m är lika med 10 dm",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1m",
+        "Start": 0,
+        "End": 1,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Meter",
+          "subtype": "Length",
+          "value": "1"
+        }
+      },
+      {
+        "Text": "10 dm",
+        "Start": 15,
+        "End": 19,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Decimeter",
+          "subtype": "Length",
+          "value": "10"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Han har en penna som är 10 \" lång.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "10 \"",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "10",
+          "unit": "Inch",
+          "subtype": "Length"
+        },
+        "Start": 24,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "Storleken på denna fil är 100 mb",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "100 mb",
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Megabit",
+          "subtype": "Information",
+          "value": "100"
+        },
+        "Start": 26,
+        "End": 31
+      }
+    ]
+  },
+  {
+    "Input": "Storleken på denna fil är 100 MB",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "100 mb",
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Megabyte",
+          "subtype": "Information",
+          "value": "100"
+        },
+        "Start": 26,
+        "End": 31
+      }
+    ]
+  },
+  {
+    "Input": "Jag överraskar dig 14:00",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Han sade: 2 pm är 2 pikometer",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "2 pm",
+        "Start": 10,
+        "End": 13,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Picometer",
+          "subtype": "Length",
+          "value": "2"
+        }
+      },
+      {
+        "Text": "2 pikometer",
+        "Start": 18,
+        "End": 28,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Picometer",
+          "subtype": "Length",
+          "value": "2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "som en mile kan ge.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "en mile",
+        "Start": 4,
+        "End": 10,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Mile",
+          "subtype": "Length",
+          "value": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I ' m tired",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Jag är 1,8m lång.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1,8m",
+        "Start": 7,
+        "End": 10,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Meter",
+          "subtype": "Length",
+          "value": "1,8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Det kostar 1.8M dollar.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "1 m 1 m",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1 m",
+        "Start": 0,
+        "End": 2,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Meter",
+          "subtype": "Length",
+          "value": "1"
+        }
+      },
+      {
+        "Text": "1 m",
+        "Start": 4,
+        "End": 6,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Meter",
+          "subtype": "Length",
+          "value": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1 m x 1 m",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1 m",
+        "Start": 0,
+        "End": 2,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Meter",
+          "subtype": "Length",
+          "value": "1"
+        }
+      },
+      {
+        "Text": "1 m",
+        "Start": 6,
+        "End": 8,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Meter",
+          "subtype": "Length",
+          "value": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Längden är 12 m 2 dm mer eller mindre",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "12 m",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "12",
+          "unit": "Meter",
+          "subtype": "Length"
+        },
+        "Start": 11,
+        "End": 14
+      },
+      {
+        "Text": "2 dm",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "2",
+          "unit": "Decimeter",
+          "subtype": "Length"
+        },
+        "Start": 16,
+        "End": 19
+      }
+    ]
+  }
+]

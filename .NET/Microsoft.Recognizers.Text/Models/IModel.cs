@@ -6,6 +6,12 @@ namespace Microsoft.Recognizers.Text
     {
         string ModelTypeName { get; }
 
+        string Culture { get; }
+
+        string RequestedCulture { get; }
+
         List<ModelResult> Parse(string query);
+
+        void SetCultureInfo(string culture, string requestedCulture = null);
     }
 }

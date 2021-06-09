@@ -160,6 +160,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 len += match.Groups[Constants.PrefixGroupName].ToString().Length;
                             }
 
+                            if (match.Groups[Constants.SuffixGroupName].ToString().Length > 0)
+                            {
+                                len += match.Groups[Constants.SuffixGroupName].ToString().Length;
+                            }
+
                             ret.Add(new Token(er.Start ?? 0, er.Start + len ?? 0));
                         }
                     }

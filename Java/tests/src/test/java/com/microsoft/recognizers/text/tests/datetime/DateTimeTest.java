@@ -6,6 +6,8 @@ import com.microsoft.recognizers.text.ResolutionKey;
 import com.microsoft.recognizers.text.datetime.DateTimeOptions;
 import com.microsoft.recognizers.text.datetime.DateTimeRecognizer;
 import com.microsoft.recognizers.text.tests.AbstractTest;
+import com.microsoft.recognizers.text.tests.DependencyConstants;
+import com.microsoft.recognizers.text.tests.NotSupportedException;
 import com.microsoft.recognizers.text.tests.TestCase;
 
 import java.time.LocalDateTime;
@@ -34,6 +36,7 @@ public class DateTimeTest extends AbstractTest {
 
     @Override
     protected void recognizeAndAssert(TestCase currentCase) {
+
         // parse
         List<ModelResult> results = recognize(currentCase);
 
@@ -42,6 +45,7 @@ public class DateTimeTest extends AbstractTest {
     }
 
     public static <T extends ModelResult> void assertResultsDateTime(TestCase currentCase, List<T> results) {
+
         List<ExtendedModelResult> expectedResults = readExpectedResults(ExtendedModelResult.class, currentCase.results);
         Assert.assertEquals(getMessage(currentCase, "\"Result Count\""), expectedResults.size(), results.size());
 
@@ -54,14 +58,18 @@ public class DateTimeTest extends AbstractTest {
                     Assert.assertEquals(getMessage(currentCase, "typeName"), expected.typeName, actual.typeName);
                     Assert.assertEquals(getMessage(currentCase, "text"), expected.text, actual.text);
                     if (actual instanceof ExtendedModelResult) {
-                        Assert.assertEquals(getMessage(currentCase, "parentText"), expected.parentText, ((ExtendedModelResult)actual).parentText);
+                        Assert.assertEquals(getMessage(currentCase, "parentText"),
+                                            expected.parentText, ((ExtendedModelResult)actual).parentText);
                     }
 
                     if (expected.resolution.containsKey(ResolutionKey.ValueSet)) {
+
                         Assert.assertNotNull(getMessage(currentCase, "resolution"), actual.resolution);
-                        Assert.assertNotNull(getMessage(currentCase, ResolutionKey.ValueSet), actual.resolution.get(ResolutionKey.ValueSet));
-                        assertValueSet(
-                            currentCase,
+
+                        Assert.assertNotNull(getMessage(currentCase,
+                                             ResolutionKey.ValueSet), actual.resolution.get(ResolutionKey.ValueSet));
+
+                        assertValueSet(currentCase,
                             (List<Map<String, Object>>)expected.resolution.get(ResolutionKey.ValueSet),
                             (List<Map<String, Object>>)actual.resolution.get(ResolutionKey.ValueSet));
                     }
@@ -69,6 +77,7 @@ public class DateTimeTest extends AbstractTest {
     }
 
     private static void assertValueSet(TestCase currentCase, List<Map<String, Object>> expected, List<Map<String, Object>> actual) {
+
         Assert.assertEquals(getMessage(currentCase, "\"Result Count\""), expected.size(), actual.size());
 
         expected.sort((a, b) -> {
@@ -76,6 +85,7 @@ public class DateTimeTest extends AbstractTest {
             String timexB = (String)b.getOrDefault("timex", "");
             return timexA.compareTo(timexB);
         });
+
         actual.sort((a, b) -> {
             String timexA = (String)a.getOrDefault("timex", "");
             String timexB = (String)b.getOrDefault("timex", "");
@@ -97,6 +107,7 @@ public class DateTimeTest extends AbstractTest {
 
     @Override
     protected List<ModelResult> recognize(TestCase currentCase) {
+
         try {
             String culture = getCultureCode(currentCase.language);
             LocalDateTime reference = currentCase.getReferenceDateTime();
@@ -114,10 +125,16 @@ public class DateTimeTest extends AbstractTest {
                 case "DateTimeModelComplexCalendar":
                     return DateTimeRecognizer.recognizeDateTime(currentCase.input, culture, DateTimeOptions.ComplexCalendar, false, reference);
                 default:
-                    throw new AssumptionViolatedException("Model Type/Name not supported.");
+                    throw new NotSupportedException("Model Type/Name not supported: " + currentCase.modelName + " in " + culture);
             }
         } catch (IllegalArgumentException ex) {
-            throw new AssumptionViolatedException(ex.getMessage(), ex);
+
+            // Model not existing in a given culture can be considered a skip. Other illegal argument exceptions should fail tests.
+            if (ex.getMessage().toLowerCase().contains(DependencyConstants.BASE_RECOGNIZERS_MODEL_UNAVAILABLE)) {
+                throw new AssumptionViolatedException(ex.getMessage(), ex);
+            } else throw new IllegalArgumentException(ex.getMessage(), ex);
+        } catch (NotSupportedException nex) {
+            throw new AssumptionViolatedException(nex.getMessage(), nex);
         }
     }
 }

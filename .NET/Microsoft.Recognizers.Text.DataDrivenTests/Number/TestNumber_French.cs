@@ -26,5 +26,30 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         {
             TestNumber(testSpec);
         }
+
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void PercentModelPercentMode(TestModel testSpec)
+        {
+            TestNumber(testSpec);
+        }
+
+        /*
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void NumberRangeModel(TestModel testSpec)
+        {
+            TestNumber(testSpec);
+        }
+        */
+
+        /*
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void NumberRangeModelExperimentalMode(TestModel testSpec)
+        {
+            TestNumber(testSpec);
+        }
+        */
     }
 }

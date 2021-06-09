@@ -1,5 +1,5 @@
 HourRegex: !simpleRegex
-  def: (?<hour>2[0-4]|[0-1]?\d)(h)?
+  def: (?<!\d[,.])(?<hour>2[0-4]|[0-1]?\d)(h)?
 TwoDigitHourRegex: !simpleRegex
   def: (?<hour>[0-1]\d|2[0-4])(h)?
 MinuteRegex: !simpleRegex
@@ -17,6 +17,8 @@ HyphenDateRegex: !simpleRegex
 IllegalYearRegex: !nestedRegex
   def: ([-])({FourDigitYearRegex})([-])
   references: [ FourDigitYearRegex ]
+CheckDecimalRegex: !simpleRegex
+  def: (?![,.]\d)
 RangeConnectorSymbolRegex: !simpleRegex
   def: (--|-|—|——|~|–)
 BaseAmDescRegex: !simpleRegex
@@ -27,6 +29,8 @@ BaseAmPmDescRegex: !simpleRegex
   def: (ampm)
 EqualRegex: !simpleRegex
   def: (?<!<|>)=
+BracketRegex: !simpleRegex
+  def: ^\s*[\)\]]|[\[\(]\s*$
 MinYearNum: 1500
 MaxYearNum: 2100
 MaxTwoDigitYearFutureNum: 30

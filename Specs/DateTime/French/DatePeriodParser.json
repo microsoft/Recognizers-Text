@@ -1628,5 +1628,5517 @@
         "Length": 14
       }
     ]
+  },
+  {
+    "Input": "Je serai absent du 4 au 22 ce mois-ci",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "du 4 au 22 ce mois-ci",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-04,2016-11-22,P18D)",
+          "FutureResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-22"
+          }
+        },
+        "Start": 16,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent du 4 au 23 le mois prochain",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "du 4 au 23 le mois prochain",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-12-04,2016-12-23,P19D)",
+          "FutureResolution": {
+            "startDate": "2016-12-04",
+            "endDate": "2016-12-23"
+          },
+          "PastResolution": {
+            "startDate": "2016-12-04",
+            "endDate": "2016-12-23"
+          }
+        },
+        "Start": 16,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent du 3 au 12 septembre hahaha",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "du 3 au 12 septembre",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-09-03,XXXX-09-12,P9D)",
+          "FutureResolution": {
+            "startDate": "2017-09-03",
+            "endDate": "2017-09-12"
+          },
+          "PastResolution": {
+            "startDate": "2016-09-03",
+            "endDate": "2016-09-12"
+          }
+        },
+        "Start": 16,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent du vendredi 11 au mardi 15",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "du vendredi 11 au mardi 15",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-11,2016-11-15,P4D)",
+          "FutureResolution": {
+            "startDate": "2016-11-11",
+            "endDate": "2016-11-15"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-11",
+            "endDate": "2016-11-15"
+          }
+        },
+        "Start": 16,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent du 4-23 le mois prochain",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "4-23 le mois prochain",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-12-04,2016-12-23,P19D)",
+          "FutureResolution": {
+            "startDate": "2016-12-04",
+            "endDate": "2016-12-23"
+          },
+          "PastResolution": {
+            "startDate": "2016-12-04",
+            "endDate": "2016-12-23"
+          }
+        },
+        "Start": 19,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent du 4 au 23 de ce mois",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "4 au 23 de ce mois",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-04,2016-11-23,P19D)",
+          "FutureResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-23"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-23"
+          }
+        },
+        "Start": 19,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je sortirai entre le 4 et le 22 ce mois-ci",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre le 4 et le 22 ce mois-ci",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-04,2016-11-22,P18D)",
+          "FutureResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-22"
+          }
+        },
+        "Start": 12,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent entre le 3 et le 12 septembre hahaha",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre le 3 et le 12 septembre hahaha",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-09-03,XXXX-09-12,P9D)",
+          "FutureResolution": {
+            "startDate": "2017-09-03",
+            "endDate": "2017-09-12"
+          },
+          "PastResolution": {
+            "startDate": "2016-09-03",
+            "endDate": "2016-09-12"
+          }
+        },
+        "Start": 16,
+        "Length": 36
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent du 4 au 22 janvier, 1995",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "du 4 au 22 janvier, 1995",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(1995-01-04,1995-01-22,P18D)",
+          "FutureResolution": {
+            "startDate": "1995-01-04",
+            "endDate": "1995-01-22"
+          },
+          "PastResolution": {
+            "startDate": "1995-01-04",
+            "endDate": "1995-01-22"
+          }
+        },
+        "Start": 16,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Je sortirai entre le 4 et le 22 janvier 1995",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre le 4 et le 22 janvier 1995",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(1995-01-04,1995-01-22,P18D)",
+          "FutureResolution": {
+            "startDate": "1995-01-04",
+            "endDate": "1995-01-22"
+          },
+          "PastResolution": {
+            "startDate": "1995-01-04",
+            "endDate": "1995-01-22"
+          }
+        },
+        "Start": 12,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent entre le 4 septembre et le 8 septembre",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre le 4 septembre et le 8 septembre",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-09-04,XXXX-09-08,P4D)",
+          "FutureResolution": {
+            "startDate": "2017-09-04",
+            "endDate": "2017-09-08"
+          },
+          "PastResolution": {
+            "startDate": "2016-09-04",
+            "endDate": "2016-09-08"
+          }
+        },
+        "Start": 16,
+        "Length": 38
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent cette semaine",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "cette semaine",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-14"
+          }
+        },
+        "Start": 16,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent la semaine prochaine",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "semaine prochaine",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W46",
+          "FutureResolution": {
+            "startDate": "2016-11-14",
+            "endDate": "2016-11-21"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-14",
+            "endDate": "2016-11-21"
+          }
+        },
+        "Start": 19,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent la semaine en cours",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "semaine en cours",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-14"
+          }
+        },
+        "Start": 19,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent en février",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "février",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-02",
+          "FutureResolution": {
+            "startDate": "2017-02-01",
+            "endDate": "2017-03-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-02-01",
+            "endDate": "2016-03-01"
+          }
+        },
+        "Start": 19,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent en ce septembre",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "ce septembre",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-09",
+          "FutureResolution": {
+            "startDate": "2016-09-01",
+            "endDate": "2016-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-09-01",
+            "endDate": "2016-10-01"
+          }
+        },
+        "Start": 19,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent en septembre dernier",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "septembre dernier",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2015-09",
+          "FutureResolution": {
+            "startDate": "2015-09-01",
+            "endDate": "2015-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2015-09-01",
+            "endDate": "2015-10-01"
+          }
+        },
+        "Start": 19,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent en juin prochain",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "juin prochain",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-06",
+          "FutureResolution": {
+            "startDate": "2017-06-01",
+            "endDate": "2017-07-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-06-01",
+            "endDate": "2017-07-01"
+          }
+        },
+        "Start": 19,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je sortirai la troisième semaine de ce mois",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "la troisième semaine de ce mois",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-11-W03",
+          "FutureResolution": {
+            "startDate": "2016-11-14",
+            "endDate": "2016-11-21"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-14",
+            "endDate": "2016-11-21"
+          }
+        },
+        "Start": 12,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent la dernière semaine de juillet",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "la dernière semaine de juillet",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-07-W05",
+          "FutureResolution": {
+            "startDate": "2017-07-24",
+            "endDate": "2017-07-31"
+          },
+          "PastResolution": {
+            "startDate": "2016-07-25",
+            "endDate": "2016-08-01"
+          }
+        },
+        "Start": 16,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "la semaine du 16 septembre",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "semaine du 16 septembre",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-09-16",
+          "FutureResolution": {
+            "startDate": "2017-09-11",
+            "endDate": "2017-09-18"
+          },
+          "PastResolution": {
+            "startDate": "2016-09-12",
+            "endDate": "2016-09-19"
+          }
+        },
+        "Start": 3,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "le mois du 16 septembre",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mois du 16 septembre",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-09-16",
+          "FutureResolution": {
+            "startDate": "2017-09-01",
+            "endDate": "2017-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-09-01",
+            "endDate": "2016-10-01"
+          }
+        },
+        "Start": 3,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent en 2015.3",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2015.3",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2015-03",
+          "FutureResolution": {
+            "startDate": "2015-03-01",
+            "endDate": "2015-04-01"
+          },
+          "PastResolution": {
+            "startDate": "2015-03-01",
+            "endDate": "2015-04-01"
+          }
+        },
+        "Start": 19,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent en 2015-3",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2015-3",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2015-03",
+          "FutureResolution": {
+            "startDate": "2015-03-01",
+            "endDate": "2015-04-01"
+          },
+          "PastResolution": {
+            "startDate": "2015-03-01",
+            "endDate": "2015-04-01"
+          }
+        },
+        "Start": 19,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors en mars. 2015",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mars. 2015",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2015-03",
+          "FutureResolution": {
+            "startDate": "2015-03-01",
+            "endDate": "2015-04-01"
+          },
+          "PastResolution": {
+            "startDate": "2015-03-01",
+            "endDate": "2015-04-01"
+          }
+        },
+        "Start": 19,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent en 03/2015",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "03/2015",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2015-03",
+          "FutureResolution": {
+            "startDate": "2015-03-01",
+            "endDate": "2015-04-01"
+          },
+          "PastResolution": {
+            "startDate": "2015-03-01",
+            "endDate": "2015-04-01"
+          }
+        },
+        "Start": 19,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "planifier une réunion dans deux semaines",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "les 2 prochains jours",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2 prochains jours",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-08,2016-11-10,P2D)",
+          "FutureResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2016-11-10"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2016-11-10"
+          }
+        },
+        "Start": 4,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "ces derniers jours",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "derniers jours",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-04,2016-11-07,P3D)",
+          "FutureResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-07"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-04",
+            "endDate": "2016-11-07"
+          }
+        },
+        "Start": 4,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "la semaine",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "la semaine",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-14"
+          }
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Le syndicat a suspendu son action de grève cette semaine.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "cette semaine",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2026-W01",
+          "FutureResolution": {
+            "startDate": "2025-12-29",
+            "endDate": "2026-01-05"
+          },
+          "PastResolution": {
+            "startDate": "2025-12-29",
+            "endDate": "2026-01-05"
+          }
+        },
+        "Start": 43,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "ma semaine",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "ma semaine",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-14"
+          }
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "le week-end",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "le week-end",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45-WE",
+          "FutureResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          }
+        },
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "ce week-end",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "ce week-end",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45-WE",
+          "FutureResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          }
+        },
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "mon week-end",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mon week-end",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45-WE",
+          "FutureResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          }
+        },
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent du 2 au 22 octobre",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "du 2 au 22 octobre",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-10-02,XXXX-10-22,P20D)",
+          "FutureResolution": {
+            "startDate": "2017-10-02",
+            "endDate": "2017-10-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-10-02",
+            "endDate": "2016-10-22"
+          }
+        },
+        "Start": 16,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je sortirai du 12 janvier 2016 au 22/01/2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "du 12 janvier 2016 au 22/01/2016",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-01-12,2016-01-22,P10D)",
+          "FutureResolution": {
+            "startDate": "2016-01-12",
+            "endDate": "2016-01-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-01-12",
+            "endDate": "2016-01-22"
+          }
+        },
+        "Start": 12,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent du 1er janvier au mercredi 22 janvier",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "du 1er janvier au mercredi 22 janvier",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-01-01,XXXX-01-22,P21D)",
+          "FutureResolution": {
+            "startDate": "2017-01-01",
+            "endDate": "2017-01-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-01-01",
+            "endDate": "2016-01-22"
+          }
+        },
+        "Start": 16,
+        "Length": 37
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent d'aujourd'hui jusqu'à demain",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "d'aujourd'hui jusqu'à demain",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-07,2016-11-08,P1D)",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-08"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-08"
+          }
+        },
+        "Start": 16,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent du 2 octobre au 22 octobre",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "du 2 octobre au 22 octobre",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-10-02,XXXX-10-22,P20D)",
+          "FutureResolution": {
+            "startDate": "2017-10-02",
+            "endDate": "2017-10-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-10-02",
+            "endDate": "2016-10-22"
+          }
+        },
+        "Start": 16,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent entre le 2 et le 22 octobre",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre le 2 et le 22 octobre",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-10-02,XXXX-10-22,P20D)",
+          "FutureResolution": {
+            "startDate": "2017-10-02",
+            "endDate": "2017-10-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-10-02",
+            "endDate": "2016-10-22"
+          }
+        },
+        "Start": 16,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Je sortirai du 19 au 20 novembre",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "du 19 au 20 novembre",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
+          "FutureResolution": {
+            "startDate": "2016-11-19",
+            "endDate": "2016-11-20"
+          },
+          "PastResolution": {
+            "startDate": "2015-11-19",
+            "endDate": "2015-11-20"
+          }
+        },
+        "Start": 12,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent du 19 au 20 du mois de novembre",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "du 19 au 20 du mois de novembre",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
+          "FutureResolution": {
+            "startDate": "2016-11-19",
+            "endDate": "2016-11-20"
+          },
+          "PastResolution": {
+            "startDate": "2015-11-19",
+            "endDate": "2015-11-20"
+          }
+        },
+        "Start": 16,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "Je sortirai du 19 au 20 nov.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "du 19 au 20 nov.",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
+          "FutureResolution": {
+            "startDate": "2016-11-19",
+            "endDate": "2016-11-20"
+          },
+          "PastResolution": {
+            "startDate": "2015-11-19",
+            "endDate": "2015-11-20"
+          }
+        },
+        "Start": 12,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent le reste de la semaine",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "reste de la semaine",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-07,2016-11-13,P6D)",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-13"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-13"
+          }
+        },
+        "Start": 19,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent le reste de semaine",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "reste de semaine",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-07,2016-11-13,P6D)",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-13"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-13"
+          }
+        },
+        "Start": 19,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent la reste semaine",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "reste semaine",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-07,2016-11-13,P6D)",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-13"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-13"
+          }
+        },
+        "Start": 19,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent le reste de cette semaine",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "reste de cette semaine",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-07,2016-11-13,P6D)",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-13"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-13"
+          }
+        },
+        "Start": 19,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent le reste de ma semaine",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "reste de ma semaine",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-07,2016-11-13,P6D)",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-13"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-13"
+          }
+        },
+        "Start": 19,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent le reste de la semaine en cours",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "reste de la semaine en cours",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-07,2016-11-13,P6D)",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-13"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-13"
+          }
+        },
+        "Start": 19,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent le reste du mois",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "reste du mois",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-07,2016-11-30,P24D)",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-30"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-11-30"
+          }
+        },
+        "Start": 19,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent le reste de l'année",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "reste de l'année",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-07,2016-12-31,P55D)",
+          "FutureResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-12-31"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-07",
+            "endDate": "2016-12-31"
+          }
+        },
+        "Start": 19,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent au cour du reste de ma semaine",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "reste de ma semaine",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-13,2016-11-13,P0D)",
+          "FutureResolution": {
+            "startDate": "2016-11-13",
+            "endDate": "2016-11-13"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-13",
+            "endDate": "2016-11-13"
+          }
+        },
+        "Start": 27,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent le week-end",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "week-end",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45-WE",
+          "FutureResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          }
+        },
+        "Start": 19,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent ce week-end",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "ce week-end",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W45-WE",
+          "FutureResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          }
+        },
+        "Start": 16,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent en juin 2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "juin 2016",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-06",
+          "FutureResolution": {
+            "startDate": "2016-06-01",
+            "endDate": "2016-07-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-06-01",
+            "endDate": "2016-07-01"
+          }
+        },
+        "Start": 19,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent en juin de l'année prochaine",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "juin de l'année prochaine",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-06",
+          "FutureResolution": {
+            "startDate": "2017-06-01",
+            "endDate": "2017-07-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-06-01",
+            "endDate": "2017-07-01"
+          }
+        },
+        "Start": 19,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent l'année prochaine",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "année prochaine",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017",
+          "FutureResolution": {
+            "startDate": "2017-01-01",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-01-01",
+            "endDate": "2018-01-01"
+          }
+        },
+        "Start": 18,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent les 3 prochains jours",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 prochains jours",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-08,2016-11-11,P3D)",
+          "FutureResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2016-11-11"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2016-11-11"
+          }
+        },
+        "Start": 20,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent les 3 prochains mois",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 prochains mois",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-08,2017-02-08,P3M)",
+          "FutureResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2017-02-08"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2017-02-08"
+          }
+        },
+        "Start": 20,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent dans 3 ans",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Je serai absent les 3 semaines passées",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 semaines passées",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-10-17,2016-11-07,P3W)",
+          "FutureResolution": {
+            "startDate": "2016-10-17",
+            "endDate": "2016-11-07"
+          },
+          "PastResolution": {
+            "startDate": "2016-10-17",
+            "endDate": "2016-11-07"
+          }
+        },
+        "Start": 20,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent les 3 semaines dernières",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 semaines dernières",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2013-11-07,2016-11-07,P3Y)",
+          "FutureResolution": {
+            "startDate": "2013-11-07",
+            "endDate": "2016-11-07"
+          },
+          "PastResolution": {
+            "startDate": "2013-11-07",
+            "endDate": "2016-11-07"
+          }
+        },
+        "Start": 20,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent les 3 semaines précédentes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 semaines précédentes",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-10-17,2016-11-07,P3W)",
+          "FutureResolution": {
+            "startDate": "2016-10-17",
+            "endDate": "2016-11-07"
+          },
+          "PastResolution": {
+            "startDate": "2016-10-17",
+            "endDate": "2016-11-07"
+          }
+        },
+        "Start": 20,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "la première semaine d'octobre",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "la première semaine d'octobre",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-10-W01",
+          "FutureResolution": {
+            "startDate": "2017-10-02",
+            "endDate": "2017-10-09"
+          },
+          "PastResolution": {
+            "startDate": "2016-10-03",
+            "endDate": "2016-10-10"
+          }
+        },
+        "Start": 0,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "Je sortirai la troisième semaine de 2027",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "la troisième semaine de 2027",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2027-W03",
+          "FutureResolution": {
+            "startDate": "2027-01-18",
+            "endDate": "2027-01-25"
+          },
+          "PastResolution": {
+            "startDate": "2027-01-18",
+            "endDate": "2027-01-25"
+          }
+        },
+        "Start": 12,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent la troisième semaine l'année prochaine",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "la troisième semaine l'année prochaine",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W03",
+          "FutureResolution": {
+            "startDate": "2017-01-16",
+            "endDate": "2017-01-23"
+          },
+          "PastResolution": {
+            "startDate": "2017-01-16",
+            "endDate": "2017-01-23"
+          }
+        },
+        "Start": 16,
+        "Length": 38
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent le troisième trimestre de 2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "le troisième trimestre de 2016",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-07-01,2016-10-01,P3M)",
+          "FutureResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          }
+        },
+        "Start": 16,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent le troisième trimestre cette année",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "le troisième trimestre cette année",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-07-01,2016-10-01,P3M)",
+          "FutureResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          }
+        },
+        "Start": 16,
+        "Length": 34
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent en 2016 le troisième trimestre",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2016 le troisième trimestre",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-07-01,2016-10-01,P3M)",
+          "FutureResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          }
+        },
+        "Start": 19,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent le 3ème trimestre cette année",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "le 3ème trimestre cette année",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-07-01,2016-10-01,P3M)",
+          "FutureResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          }
+        },
+        "Start": 16,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent 2016 Q3",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2016 Q3",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-07-01,2016-10-01,P3M)",
+          "FutureResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          }
+        },
+        "Start": 16,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai au troisième trimestre",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "troisième trimestre",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-07-01,XXXX-10-01,P3M)",
+          "FutureResolution": {
+            "startDate": "2017-07-01",
+            "endDate": "2017-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2016-10-01"
+          }
+        },
+        "Start": 17,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai au deuxième trimestre",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "deuxième trimestre",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-04-01,XXXX-07-01,P3M)",
+          "FutureResolution": {
+            "startDate": "2017-04-01",
+            "endDate": "2017-07-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-04-01",
+            "endDate": "2016-07-01"
+          }
+        },
+        "Start": 17,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai Q1 2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "Q1 2016",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-01-01,2016-04-01,P3M)",
+          "FutureResolution": {
+            "startDate": "2016-01-01",
+            "endDate": "2016-04-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-01-01",
+            "endDate": "2016-04-01"
+          }
+        },
+        "Start": 14,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent au quatrième trimestre 2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "quatrième trimestre 2016",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-10-01,2017-01-01,P3M)",
+          "FutureResolution": {
+            "startDate": "2016-10-01",
+            "endDate": "2017-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-10-01",
+            "endDate": "2017-01-01"
+          }
+        },
+        "Start": 19,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent pendant H1 2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "H1 2016",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-01-01,2016-07-01,P6M)",
+          "FutureResolution": {
+            "startDate": "2016-01-01",
+            "endDate": "2016-07-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-01-01",
+            "endDate": "2016-07-01"
+          }
+        },
+        "Start": 24,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent pendant H2 2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "H2 2016",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-07-01,2017-01-01,P6M)",
+          "FutureResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2017-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2017-01-01"
+          }
+        },
+        "Start": 24,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent pendant 2016 H2",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2016 H2",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-07-01,2017-01-01,P6M)",
+          "FutureResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2017-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2017-01-01"
+          }
+        },
+        "Start": 24,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent pendant 2016H2",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2016H2",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-07-01,2017-01-01,P6M)",
+          "FutureResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2017-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2017-01-01"
+          }
+        },
+        "Start": 24,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent pendant H2",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Je partirai cet été",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "cet été",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-SU",
+          "FutureResolution": {},
+          "PastResolution": {}
+        },
+        "Start": 12,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai au printemps prochain",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "printemps prochain",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-SP",
+          "FutureResolution": {},
+          "PastResolution": {}
+        },
+        "Start": 15,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai l'été",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "l'été",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "SU",
+          "FutureResolution": {},
+          "PastResolution": {}
+        },
+        "Start": 12,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai en été",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "été",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "SU",
+          "FutureResolution": {},
+          "PastResolution": {}
+        },
+        "Start": 15,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "Je quitterai l'été 2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "été 2016",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-SU",
+          "FutureResolution": {},
+          "PastResolution": {}
+        },
+        "Start": 15,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Je quitterai l'été de l'année 2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "été de l'année 2016",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-SU",
+          "FutureResolution": {},
+          "PastResolution": {}
+        },
+        "Start": 15,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "vacances du mois à venir",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mois à venir",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-12",
+          "FutureResolution": {
+            "startDate": "2016-12-01",
+            "endDate": "2017-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-12-01",
+            "endDate": "2017-01-01"
+          }
+        },
+        "Start": 12,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "vacances du mois prochain",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mois prochain",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-12",
+          "FutureResolution": {
+            "startDate": "2016-12-01",
+            "endDate": "2017-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-12-01",
+            "endDate": "2017-01-01"
+          }
+        },
+        "Start": 12,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Veuillez nous trouver un moment pour nous rencontrer tard ce mois-ci",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "tard ce mois-ci",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-11",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDate": "2017-11-16",
+            "endDate": "2017-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-16",
+            "endDate": "2017-12-01"
+          }
+        },
+        "Start": 53,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Veuillez nous trouver un moment pour nous rencontrer tard cette semaine",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "tard cette semaine",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W45",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDate": "2017-11-09",
+            "endDate": "2017-11-13"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-09",
+            "endDate": "2017-11-13"
+          }
+        },
+        "Start": 53,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Veuillez nous trouver un moment pour nous rencontrer tard cette année",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "tard cette année",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDate": "2017-07-01",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-07-01",
+            "endDate": "2018-01-01"
+          }
+        },
+        "Start": 53,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Veuillez nous trouver un moment pour nous rencontrer au début de l'année prochaine",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "début de l'année prochaine",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2018",
+          "Mod": "start",
+          "FutureResolution": {
+            "startDate": "2018-01-01",
+            "endDate": "2018-07-01"
+          },
+          "PastResolution": {
+            "startDate": "2018-01-01",
+            "endDate": "2018-07-01"
+          }
+        },
+        "Start": 56,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Veuillez nous trouver un moment pour nous rencontrer au début de la semaine prochaine",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "début de la semaine prochaine",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W46",
+          "Mod": "start",
+          "FutureResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-16"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-16"
+          }
+        },
+        "Start": 56,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "Veuillez nous trouver un moment pour nous rencontrer au début du mois prochain",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "début du mois prochain",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-12",
+          "Mod": "start",
+          "FutureResolution": {
+            "startDate": "2017-12-01",
+            "endDate": "2017-12-16"
+          },
+          "PastResolution": {
+            "startDate": "2017-12-01",
+            "endDate": "2017-12-16"
+          }
+        },
+        "Start": 56,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Nous avons eu une réunion à la fin de l'année dernière",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "fin de l'année dernière",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2017-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-07-01",
+            "endDate": "2017-01-01"
+          }
+        },
+        "Start": 31,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Nous avons eu une réunion tard la semaine dernière",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "tard la semaine dernière",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W44",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDate": "2017-11-02",
+            "endDate": "2017-11-06"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-02",
+            "endDate": "2017-11-06"
+          }
+        },
+        "Start": 26,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Nous avons eu une réunion tard la fin du mois dernier",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "tard la fin du mois dernier",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-10",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDate": "2017-10-16",
+            "endDate": "2017-11-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-10-16",
+            "endDate": "2017-11-01"
+          }
+        },
+        "Start": 26,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, veuillez coordonner une réunion de 25 minutes avec antonio la semaine prochaine entre mercredi et vendredi.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "semaine prochaine entre mercredi et vendredi",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2017-11-22,2017-11-24,P2D)",
+          "FutureResolution": {
+            "startDate": "2017-11-22",
+            "endDate": "2017-11-24"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-22",
+            "endDate": "2017-11-24"
+          }
+        },
+        "Start": 71,
+        "Length": 44
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, veuillez coordonner une réunion de 25 minutes avec antonio la semaine dernière entre vendredi et dimanche.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "semaine dernière entre vendredi et dimanche",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2017-11-10,2017-11-12,P2D)",
+          "FutureResolution": {
+            "startDate": "2017-11-10",
+            "endDate": "2017-11-12"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-10",
+            "endDate": "2017-11-12"
+          }
+        },
+        "Start": 71,
+        "Length": 43
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, veuillez coordonner une réunion de 25 minutes avec antonio cette semaine du mardi au jeudi.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "cette semaine du mardi au jeudi",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2017-11-14,2017-11-16,P2D)",
+          "FutureResolution": {
+            "startDate": "2017-11-14",
+            "endDate": "2017-11-16"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-14",
+            "endDate": "2017-11-16"
+          }
+        },
+        "Start": 68,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "Nous avons eu une réunion cette semaine",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "cette semaine",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W46",
+          "FutureResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-20"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-20"
+          }
+        },
+        "Start": 26,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Nous avons eu une réunion la première semaine de cette année",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "première semaine de cette année",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W01",
+          "FutureResolution": {
+            "startDate": "2017-01-02",
+            "endDate": "2017-01-09"
+          },
+          "PastResolution": {
+            "startDate": "2017-01-02",
+            "endDate": "2017-01-09"
+          }
+        },
+        "Start": 29,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "la première semaine de 2015",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "première semaine de 2015",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2015-W01",
+          "FutureResolution": {
+            "startDate": "2014-12-29",
+            "endDate": "2015-01-05"
+          },
+          "PastResolution": {
+            "startDate": "2014-12-29",
+            "endDate": "2015-01-05"
+          }
+        },
+        "Start": 3,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "la deuxième semaine de 2015",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "deuxième semaine de 2015",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2015-W02",
+          "FutureResolution": {
+            "startDate": "2015-01-05",
+            "endDate": "2015-01-12"
+          },
+          "PastResolution": {
+            "startDate": "2015-01-05",
+            "endDate": "2015-01-12"
+          }
+        },
+        "Start": 3,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "la dernière semaine de 2015",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dernière semaine de 2015",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2015-W53",
+          "FutureResolution": {
+            "startDate": "2015-12-28",
+            "endDate": "2016-01-04"
+          },
+          "PastResolution": {
+            "startDate": "2015-12-28",
+            "endDate": "2016-01-04"
+          }
+        },
+        "Start": 3,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent de l'année 247",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "année 247",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "0247",
+          "FutureResolution": {
+            "startDate": "0247-01-01",
+            "endDate": "0248-01-01"
+          },
+          "PastResolution": {
+            "startDate": "0247-01-01",
+            "endDate": "0248-01-01"
+          }
+        },
+        "Start": 21,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Dans les 1970s",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "les 1970s",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(1970-01-01,1980-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "1970-01-01",
+            "endDate": "1980-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1970-01-01",
+            "endDate": "1980-01-01"
+          }
+        },
+        "Start": 5,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Dans les années 2000, il est né.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "les années 2000",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2000-01-01,2010-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2010-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2010-01-01"
+          }
+        },
+        "Start": 5,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Dans les années 1970's",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "les années 1970",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(1970-01-01,1980-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "1970-01-01",
+            "endDate": "1980-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1970-01-01",
+            "endDate": "1980-01-01"
+          }
+        },
+        "Start": 5,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Dans les années 70s",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "les années 70",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XX70-01-01,XX80-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2070-01-01",
+            "endDate": "2080-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1970-01-01",
+            "endDate": "1980-01-01"
+          }
+        },
+        "Start": 5,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Dans les années 70's",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "les années 70",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XX70-01-01,XX80-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2070-01-01",
+            "endDate": "2080-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1970-01-01",
+            "endDate": "1980-01-01"
+          }
+        },
+        "Start": 5,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Dans 70's",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "70's",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XX70-01-01,XX80-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2070-01-01",
+            "endDate": "2080-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1970-01-01",
+            "endDate": "1980-01-01"
+          }
+        },
+        "Start": 5,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Dans les années 40",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "les années 40",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XX40-01-01,XX50-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2040-01-01",
+            "endDate": "2050-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1940-01-01",
+            "endDate": "1950-01-01"
+          }
+        },
+        "Start": 5,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Dans les années soixante-dix",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "les années soixante-dix",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XX70-01-01,XX80-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2070-01-01",
+            "endDate": "2080-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1970-01-01",
+            "endDate": "1980-01-01"
+          }
+        },
+        "Start": 5,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Dans les années 1970",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "les années 1970",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(1970-01-01,1980-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "1970-01-01",
+            "endDate": "1980-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1970-01-01",
+            "endDate": "1980-01-01"
+          }
+        },
+        "Start": 5,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Dans les deux mille dix",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "les deux mille dix",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2010-01-01,2020-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2010-01-01",
+            "endDate": "2020-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2010-01-01",
+            "endDate": "2020-01-01"
+          }
+        },
+        "Start": 5,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Dans les années 2010",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "les années 2010",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2010-01-01,2020-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2010-01-01",
+            "endDate": "2020-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2010-01-01",
+            "endDate": "2020-01-01"
+          }
+        },
+        "Start": 5,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Dans les années deux milles",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "les années deux milles",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2000-01-01,2010-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2010-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2010-01-01"
+          }
+        },
+        "Start": 5,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Dans les années 2000",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "les années 2000",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2000-01-01,2010-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2010-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2010-01-01"
+          }
+        },
+        "Start": 5,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent du 2 au 7 février deux mille dix-huit",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "du 2 au 7 février deux mille dix-huit",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2018-02-02,2018-02-07,P5D)",
+          "FutureResolution": {
+            "startDate": "2018-02-02",
+            "endDate": "2018-02-07"
+          },
+          "PastResolution": {
+            "startDate": "2018-02-02",
+            "endDate": "2018-02-07"
+          }
+        },
+        "Start": 16,
+        "Length": 37
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent entre le 2 et le 7 février deux mille dix-huit",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre le 2 et le 7 février deux mille dix-huit",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2018-02-02,2018-02-07,P5D)",
+          "FutureResolution": {
+            "startDate": "2018-02-02",
+            "endDate": "2018-02-07"
+          },
+          "PastResolution": {
+            "startDate": "2018-02-02",
+            "endDate": "2018-02-07"
+          }
+        },
+        "Start": 16,
+        "Length": 46
+      }
+    ]
+  },
+  {
+    "Input": "Je sortirai du 2 au 7 février deux mille dix-huit",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "du 2 au 7 février deux mille dix-huit",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2018-02-02,2018-02-07,P5D)",
+          "FutureResolution": {
+            "startDate": "2018-02-02",
+            "endDate": "2018-02-07"
+          },
+          "PastResolution": {
+            "startDate": "2018-02-02",
+            "endDate": "2018-02-07"
+          }
+        },
+        "Start": 12,
+        "Length": 37
+      }
+    ]
+  },
+  {
+    "Input": "C'est arrivé en juin 1999",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "juin 1999",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "1999-06",
+          "FutureResolution": {
+            "startDate": "1999-06-01",
+            "endDate": "1999-07-01"
+          },
+          "PastResolution": {
+            "startDate": "1999-06-01",
+            "endDate": "1999-07-01"
+          }
+        },
+        "Start": 16,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "En 1928",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1928",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "1928",
+          "FutureResolution": {
+            "startDate": "1928-01-01",
+            "endDate": "1929-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1928-01-01",
+            "endDate": "1929-01-01"
+          }
+        },
+        "Start": 3,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Dans mille sept cent quatre-vingt-neuf",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mille sept cent quatre-vingt-neuf",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "1789",
+          "FutureResolution": {
+            "startDate": "1789-01-01",
+            "endDate": "1790-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1789-01-01",
+            "endDate": "1790-01-01"
+          }
+        },
+        "Start": 5,
+        "Length": 33
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent la troisième semaine de deux mille vingt sept",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "la troisième semaine de deux mille vingt sept",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2027-W03",
+          "FutureResolution": {
+            "startDate": "2027-01-18",
+            "endDate": "2027-01-25"
+          },
+          "PastResolution": {
+            "startDate": "2027-01-18",
+            "endDate": "2027-01-25"
+          }
+        },
+        "Start": 16,
+        "Length": 45
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent le troisième quart de deux mille vingt",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "le troisième quart de deux mille vingt",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2020-07-01,2020-10-01,P3M)",
+          "FutureResolution": {
+            "startDate": "2020-07-01",
+            "endDate": "2020-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2020-07-01",
+            "endDate": "2020-10-01"
+          }
+        },
+        "Start": 16,
+        "Length": 38
+      }
+    ]
+  },
+  {
+    "Input": "Au printemps de 1978",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "printemps de 1978",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "1978-SP",
+          "FutureResolution": {},
+          "PastResolution": {}
+        },
+        "Start": 3,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "L'année deux cent soixante-sept",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "année deux cent soixante-sept",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "0267",
+          "FutureResolution": {
+            "startDate": "0267-01-01",
+            "endDate": "0268-01-01"
+          },
+          "PastResolution": {
+            "startDate": "0267-01-01",
+            "endDate": "0268-01-01"
+          }
+        },
+        "Start": 2,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent la prochaine semaine",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "la prochaine semaine",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W47",
+          "FutureResolution": {
+            "startDate": "2016-11-21",
+            "endDate": "2016-11-28"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-21",
+            "endDate": "2016-11-28"
+          }
+        },
+        "Start": 16,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent le mois après le prochain",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "le mois après le prochain",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-01",
+          "FutureResolution": {
+            "startDate": "2017-01-01",
+            "endDate": "2017-02-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-01-01",
+            "endDate": "2017-02-01"
+          }
+        },
+        "Start": 16,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent l'année après le prochain",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "l'année après le prochain",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2018",
+          "FutureResolution": {
+            "startDate": "2018-01-01",
+            "endDate": "2019-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2018-01-01",
+            "endDate": "2019-01-01"
+          }
+        },
+        "Start": 16,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent le week-end après le prochain",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "le week-end après le prochain",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W47-WE",
+          "FutureResolution": {
+            "startDate": "2016-11-26",
+            "endDate": "2016-11-28"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-26",
+            "endDate": "2016-11-28"
+          }
+        },
+        "Start": 16,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "La gamme est 2014-2018.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2014-2018",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2014-01-01,2018-01-01,P4Y)",
+          "FutureResolution": {
+            "startDate": "2014-01-01",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2014-01-01",
+            "endDate": "2018-01-01"
+          }
+        },
+        "Start": 13,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "La gamme se situe entre 2014 et 2018.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre 2014 et 2018",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2014-01-01,2018-01-01,P4Y)",
+          "FutureResolution": {
+            "startDate": "2014-01-01",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2014-01-01",
+            "endDate": "2018-01-01"
+          }
+        },
+        "Start": 18,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "La gamme est de 2014 à 2018.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 2014 à 2018",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2014-01-01,2018-01-01,P4Y)",
+          "FutureResolution": {
+            "startDate": "2014-01-01",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2014-01-01",
+            "endDate": "2018-01-01"
+          }
+        },
+        "Start": 13,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Le cardre est de 2014 à 2018.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 2014 à 2018",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2014-01-01,2018-01-01,P4Y)",
+          "FutureResolution": {
+            "startDate": "2014-01-01",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2014-01-01",
+            "endDate": "2018-01-01"
+          }
+        },
+        "Start": 14,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "La gamme est de deux mille à deux mille quatorze.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de deux mille à deux mille quatorze",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2000-01-01,2014-01-01,P14Y)",
+          "FutureResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2014-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2014-01-01"
+          }
+        },
+        "Start": 13,
+        "Length": 35
+      }
+    ]
+  },
+  {
+    "Input": "Cela a eu lieu des 2 dernières décennies.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "des 2 dernières décennie",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(1990-01-01,2010-01-01,P20Y)",
+          "FutureResolution": {
+            "startDate": "1990-01-01",
+            "endDate": "2010-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1990-01-01",
+            "endDate": "2010-01-01"
+          }
+        },
+        "Start": 15,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Cela a eu lieu des deux dernières décennies.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "des deux dernières décennies",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(1990-01-01,2010-01-01,P20Y)",
+          "FutureResolution": {
+            "startDate": "1990-01-01",
+            "endDate": "2010-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1990-01-01",
+            "endDate": "2010-01-01"
+          }
+        },
+        "Start": 15,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Cela a eu lieu la décennie suivante.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "la décennie suivante",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2020-01-01,2030-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2020-01-01",
+            "endDate": "2030-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2020-01-01",
+            "endDate": "2030-01-01"
+          }
+        },
+        "Start": 15,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Cela a eu lieu des 3 prochaines décennies.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "des 3 prochaines décennies",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2020-01-01,2050-01-01,P30Y)",
+          "FutureResolution": {
+            "startDate": "2020-01-01",
+            "endDate": "2050-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2020-01-01",
+            "endDate": "2050-01-01"
+          }
+        },
+        "Start": 15,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Cela aura eu lieu 4 semaines dans le futur.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "4 semaines dans le futur",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-08,2016-12-06,P4W)",
+          "FutureResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2016-12-06"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2016-12-06"
+          }
+        },
+        "Start": 18,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Cela aura eu lieu dans 2 jours.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans 2 jours.",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-08,2016-11-10,P2D)",
+          "FutureResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2016-11-10"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2016-11-10"
+          }
+        },
+        "Start": 18,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Cortana peut nous trouver un temps au début de la semaine prochaine",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "début de la semaine prochaine",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W46",
+          "Mod": "start",
+          "FutureResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-16"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-16"
+          }
+        },
+        "Start": 38,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "Bien sûr, nous allons communiquer par Skype à la fin de la semaine prochaine",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "fin de la semaine prochaine",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W46",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDate": "2017-11-16",
+            "endDate": "2017-11-20"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-16",
+            "endDate": "2017-11-20"
+          }
+        },
+        "Start": 49,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Bien sûr, nous allons communiquer par Skype au début de la semaine prochaine",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "début de la semaine prochaine",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W46",
+          "Mod": "start",
+          "FutureResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-16"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-16"
+          }
+        },
+        "Start": 47,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, trouve-nous un temps du fin de mars",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "fin de mars",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-03",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDate": "2018-03-16",
+            "endDate": "2018-04-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-03-16",
+            "endDate": "2017-04-01"
+          }
+        },
+        "Start": 33,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, veuillez nous trouver untemps au milieu de la semaine prochaine",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "milieu de la semaine prochaine",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W46",
+          "Mod": "mid",
+          "FutureResolution": {
+            "startDate": "2017-11-14",
+            "endDate": "2017-11-18"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-14",
+            "endDate": "2017-11-18"
+          }
+        },
+        "Start": 42,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "Je peux nous trouver un temps au début de la semaine prochaine",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "début de la semaine prochaine",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W46",
+          "Mod": "start",
+          "FutureResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-16"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-16"
+          }
+        },
+        "Start": 33,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "pourquoi pas au milieu de l'été?",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "milieu de l'été",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "SU",
+          "Mod": "mid",
+          "FutureResolution": {},
+          "PastResolution": {}
+        },
+        "Start": 16,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai dans les 5 jours",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans les 5 jours",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2017-11-08,2017-11-13,P5D)",
+          "FutureResolution": {
+            "startDate": "2017-11-08",
+            "endDate": "2017-11-13"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-08",
+            "endDate": "2017-11-13"
+          }
+        },
+        "Start": 14,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai dans 10 mois",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans 10 mois",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2017-11-08,2018-09-08,P10M)",
+          "FutureResolution": {
+            "startDate": "2017-11-08",
+            "endDate": "2018-09-08"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-08",
+            "endDate": "2018-09-08"
+          }
+        },
+        "Start": 14,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai dans 3 ans",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans 3 ans",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2017-11-08,2020-11-08,P3Y)",
+          "FutureResolution": {
+            "startDate": "2017-11-08",
+            "endDate": "2020-11-08"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-08",
+            "endDate": "2020-11-08"
+          }
+        },
+        "Start": 14,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai dans 5 ans 1 mois 12 jours",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans 5 ans 1 mois 12 jours",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2017-11-08,2022-12-20,P5Y1M12D)",
+          "FutureResolution": {
+            "startDate": "2017-11-08",
+            "endDate": "2022-12-20"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-08",
+            "endDate": "2022-12-20"
+          }
+        },
+        "Start": 14,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai dans les 3 prochaines années",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans les 3 prochaines années",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2017-11-08,2020-11-08,P3Y)",
+          "FutureResolution": {
+            "startDate": "2017-11-08",
+            "endDate": "2020-11-08"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-08",
+            "endDate": "2020-11-08"
+          }
+        },
+        "Start": 14,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai dans les 5 prochaines années 1 mois 12 jours",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans les 5 prochaines années 1 mois 12 jours",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2017-11-08,2022-12-20,P5Y1M12D)",
+          "FutureResolution": {
+            "startDate": "2017-11-08",
+            "endDate": "2022-12-20"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-08",
+            "endDate": "2022-12-20"
+          }
+        },
+        "Start": 14,
+        "Length": 44
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent du 4 au 22 janvier 1995",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "du 4 au 22 janvier 1995",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(1995-01-04,1995-01-22,P18D)",
+          "FutureResolution": {
+            "startDate": "1995-01-04",
+            "endDate": "1995-01-22"
+          },
+          "PastResolution": {
+            "startDate": "1995-01-04",
+            "endDate": "1995-01-22"
+          }
+        },
+        "Start": 16,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Je veux réserver une chambre du 02 au 07 avril",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "du 02 au 07 avril",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-04-02,XXXX-04-07,P5D)",
+          "FutureResolution": {
+            "startDate": "2018-04-02",
+            "endDate": "2018-04-07"
+          },
+          "PastResolution": {
+            "startDate": "2017-04-02",
+            "endDate": "2017-04-07"
+          }
+        },
+        "Start": 29,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "planifier une réunion dans quelques semaines",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Je serai absent en 11-2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "11-2016",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-06",
+          "FutureResolution": {
+            "startDate": "2016-06-01",
+            "endDate": "2016-07-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-06-01",
+            "endDate": "2016-07-01"
+          }
+        },
+        "Start": 19,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent en 2016.11",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2016.11",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-11",
+          "FutureResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          }
+        },
+        "Start": 19,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent  en 11/2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "11/2016",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-11",
+          "FutureResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          }
+        },
+        "Start": 20,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent en 11/2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "11/2016",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-11",
+          "FutureResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          }
+        },
+        "Start": 19,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent en 11, 2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "11, 2016",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-11",
+          "FutureResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          }
+        },
+        "Start": 19,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent en novembre 2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "novembre 2016",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-11",
+          "FutureResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          }
+        },
+        "Start": 19,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent en 2016-11",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2016-11",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-11",
+          "FutureResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          }
+        },
+        "Start": 19,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent au mois de 11, 2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mois de 11, 2016",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-11",
+          "FutureResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          }
+        },
+        "Start": 19,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent au mois de nov. 2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mois de nov. 2016",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-11",
+          "FutureResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          }
+        },
+        "Start": 19,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent en nov. de l'année 2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "nov. de l'année 2016",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-11",
+          "FutureResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          }
+        },
+        "Start": 19,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent en nov., 2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "nov., 2016",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-11",
+          "FutureResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          }
+        },
+        "Start": 19,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent en novembre de 2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "novembre de 2016",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-11",
+          "FutureResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          }
+        },
+        "Start": 19,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent en nov. 2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "nov. 2016",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-11",
+          "FutureResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          }
+        },
+        "Start": 19,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent en 16-nov.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "16-nov.",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-11",
+          "FutureResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          }
+        },
+        "Start": 19,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je serai en absence en novembre 2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "novembre 2016",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-11",
+          "FutureResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          }
+        },
+        "Start": 23,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent en novembre de l'année 2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "novembre de l'année 2016",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-11",
+          "FutureResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          }
+        },
+        "Start": 19,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Je ne serai pas ici  2016, nov",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2016, nov",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-11",
+          "FutureResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          }
+        },
+        "Start": 21,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je  ne serai pas ici 2016, nov",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2016, nov",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-11",
+          "FutureResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          }
+        },
+        "Start": 21,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je serai dehors le 11/2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "11/2016",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-11",
+          "FutureResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-01",
+            "endDate": "2016-12-01"
+          }
+        },
+        "Start": 19,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je sortirai entre le 1er janvier et le 5 avril",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre le 1er janvier et le 5 avril",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-01-01,XXXX-04-05,P94D)",
+          "FutureResolution": {
+            "startDate": "2017-01-01",
+            "endDate": "2017-04-05"
+          },
+          "PastResolution": {
+            "startDate": "2016-01-01",
+            "endDate": "2016-04-05"
+          }
+        },
+        "Start": 12,
+        "Length": 34
+      }
+    ]
+  },
+  {
+    "Input": "Je sortirai entre le 1er janvier 2015 et le 5 février 2018",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre le 1er janvier 2015 et le 5 février 2018",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2015-01-01,2018-02-05,P1131D)",
+          "FutureResolution": {
+            "startDate": "2015-01-01",
+            "endDate": "2018-02-05"
+          },
+          "PastResolution": {
+            "startDate": "2015-01-01",
+            "endDate": "2018-02-05"
+          }
+        },
+        "Start": 12,
+        "Length": 46
+      }
+    ]
+  },
+  {
+    "Input": "Je sortirai entre le 1er janvier 2015 et février 2018",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre le 1er janvier 2015 et février 2018",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2015-01-01,2018-02-01,P1127D)",
+          "FutureResolution": {
+            "startDate": "2015-01-01",
+            "endDate": "2018-02-01"
+          },
+          "PastResolution": {
+            "startDate": "2015-01-01",
+            "endDate": "2018-02-01"
+          }
+        },
+        "Start": 12,
+        "Length": 41
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent entre 2015 et février 2018",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre 2015 et février 2018",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2015-01-01,2018-02-01,P37M)",
+          "FutureResolution": {
+            "startDate": "2015-01-01",
+            "endDate": "2018-02-01"
+          },
+          "PastResolution": {
+            "startDate": "2015-01-01",
+            "endDate": "2018-02-01"
+          }
+        },
+        "Start": 16,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent du 1er février au mars 2019",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1er février au mars 2019",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2019-02-01,2019-03-01,P28D)",
+          "FutureResolution": {
+            "startDate": "2019-02-01",
+            "endDate": "2019-03-01"
+          },
+          "PastResolution": {
+            "startDate": "2019-02-01",
+            "endDate": "2019-03-01"
+          }
+        },
+        "Start": 19,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent entre le 1er février et mars 2019",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre le 1er février et mars 2019",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2019-02-01,2019-03-01,P28D)",
+          "FutureResolution": {
+            "startDate": "2019-02-01",
+            "endDate": "2019-03-01"
+          },
+          "PastResolution": {
+            "startDate": "2019-02-01",
+            "endDate": "2019-03-01"
+          }
+        },
+        "Start": 16,
+        "Length": 33
+      }
+    ]
+  },
+  {
+    "Input": "Je sortirai entre juin 2015 et mai 2018",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre juin 2015 et mai 2018",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2015-06-01,2018-05-01,P35M)",
+          "FutureResolution": {
+            "startDate": "2015-06-01",
+            "endDate": "2018-05-01"
+          },
+          "PastResolution": {
+            "startDate": "2015-06-01",
+            "endDate": "2018-05-01"
+          }
+        },
+        "Start": 12,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Je sortirai entre 2015-05 et 2018",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre 2015-05 et 2018",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2015-05-01,2018-01-01,P32M)",
+          "FutureResolution": {
+            "startDate": "2015-05-01",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2015-05-01",
+            "endDate": "2018-01-01"
+          }
+        },
+        "Start": 12,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Je sortirai entre mai 2015 et 2018",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre mai 2015 et 2018",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2015-05-01,2018-01-01,P32M)",
+          "FutureResolution": {
+            "startDate": "2015-05-01",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2015-05-01",
+            "endDate": "2018-01-01"
+          }
+        },
+        "Start": 12,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Je sortirai entre mai 2015 et juin 2018",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre mai 2015 et juin 2018",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2015-05-01,2018-06-01,P37M)",
+          "FutureResolution": {
+            "startDate": "2015-05-01",
+            "endDate": "2018-06-01"
+          },
+          "PastResolution": {
+            "startDate": "2015-05-01",
+            "endDate": "2018-06-01"
+          }
+        },
+        "Start": 12,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Je sortirai entre 2015 et le 5 janvier 2018",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre 2015 et le 5 janvier 2018",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2015-01-01,2018-01-05,P1100D)",
+          "FutureResolution": {
+            "startDate": "2015-01-01",
+            "endDate": "2018-01-05"
+          },
+          "PastResolution": {
+            "startDate": "2015-01-01",
+            "endDate": "2018-01-05"
+          }
+        },
+        "Start": 12,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent du 2015 au 5 mai 2017",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "du 2015 au 5 mai 2017",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2015-01-01,2017-05-05,P855D)",
+          "FutureResolution": {
+            "startDate": "2015-01-01",
+            "endDate": "2017-05-05"
+          },
+          "PastResolution": {
+            "startDate": "2015-01-01",
+            "endDate": "2017-05-05"
+          }
+        },
+        "Start": 16,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent du dernier lundi d'avril à 2019",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "du dernier lundi d'avril à 2019",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2018-04-30,2019-01-01,P246D)",
+          "FutureResolution": {
+            "startDate": "2018-04-30",
+            "endDate": "2019-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2018-04-30",
+            "endDate": "2019-01-01"
+          }
+        },
+        "Start": 16,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent de la semaine 31 à la semaine 35",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de la semaine 31 à la semaine 35",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2018-07-30,2018-08-27,P4W)",
+          "FutureResolution": {
+            "startDate": "2018-07-30",
+            "endDate": "2018-08-27"
+          },
+          "PastResolution": {
+            "startDate": "2018-07-30",
+            "endDate": "2018-08-27"
+          }
+        },
+        "Start": 16,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "Je serai absent entre la semaine 31 et la semaine 35",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre la semaine 31 et la semaine 35",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2018-07-30,2018-08-27,P4W)",
+          "FutureResolution": {
+            "startDate": "2018-07-30",
+            "endDate": "2018-08-27"
+          },
+          "PastResolution": {
+            "startDate": "2018-07-30",
+            "endDate": "2018-08-27"
+          }
+        },
+        "Start": 16,
+        "Length": 36
+      }
+    ]
+  },
+  {
+    "Input": "Je resterai ici d'aujourd'hui à deux jours et demi plus tard",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "d'aujourd'hui à deux jours et demi plus tard",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2018-05-04,2018-05-06,P2.5D)",
+          "FutureResolution": {
+            "startDate": "2018-05-04",
+            "endDate": "2018-05-06"
+          },
+          "PastResolution": {
+            "startDate": "2018-05-04",
+            "endDate": "2018-05-06"
+          }
+        },
+        "Start": 16,
+        "Length": 44
+      }
+    ]
+  },
+  {
+    "Input": "Je n'étais pas là la même semaine que cela s'est produit.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "même semaine",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-WXX",
+          "Mod": "ref_undef",
+          "FutureResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-20"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-13",
+            "endDate": "2017-11-20"
+          }
+        },
+        "Start": 21,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Je n'étais pas là le même mois que c'est arrivé.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "même mois",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-XX",
+          "Mod": "ref_undef",
+          "FutureResolution": {
+            "startDate": "2017-11-01",
+            "endDate": "2017-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-01",
+            "endDate": "2017-12-01"
+          }
+        },
+        "Start": 21,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je n'étais pas ici le week-end-là.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "le week-end-là",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-WXX-WE",
+          "Mod": "ref_undef",
+          "FutureResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-12",
+            "endDate": "2016-11-14"
+          }
+        },
+        "Start": 19,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je n'étais pas là la même année que cela a eu lieu.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "même année",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX",
+          "Mod": "ref_undef",
+          "FutureResolution": {
+            "startDate": "2017-01-01",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-01-01",
+            "endDate": "2018-01-01"
+          }
+        },
+        "Start": 21,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Nous aurions pu prévoir un moment pour nous rencontrer plus tôt dans la semaine.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "plus tôt dans la semaine",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2018-W22",
+          "FutureResolution": {
+            "startDate": "2018-05-28",
+            "endDate": "2018-05-31"
+          },
+          "PastResolution": {
+            "startDate": "2018-05-28",
+            "endDate": "2018-05-31"
+          }
+        },
+        "Start": 55,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Nous aurions pu prévoir un moment pour nous rencontrer plus tôt ce mois-ci.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "plus tôt ce mois-ci",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2018-05",
+          "FutureResolution": {
+            "startDate": "2018-05-01",
+            "endDate": "2018-05-13"
+          },
+          "PastResolution": {
+            "startDate": "2018-05-01",
+            "endDate": "2018-05-13"
+          }
+        },
+        "Start": 55,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Nous aurions pu prévoir un moment pour nous rencontrer plus tôt cette année.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "plus tôt cette année",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2018",
+          "FutureResolution": {
+            "startDate": "2018-01-01",
+            "endDate": "2018-05-28"
+          },
+          "PastResolution": {
+            "startDate": "2018-01-01",
+            "endDate": "2018-05-28"
+          }
+        },
+        "Start": 55,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Veuillez nous trouver un moment pour nous rencontrer plus tard cette semaine",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "plus tard cette semaine",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W45",
+          "FutureResolution": {
+            "startDate": "2017-11-10",
+            "endDate": "2017-11-13"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-10",
+            "endDate": "2017-11-13"
+          }
+        },
+        "Start": 53,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Veuillez nous trouver un moment pour nous rencontrer plus tard ce mois-ci",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "plus tard ce mois-ci",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2018-05",
+          "FutureResolution": {
+            "startDate": "2018-05-28",
+            "endDate": "2018-06-01"
+          },
+          "PastResolution": {
+            "startDate": "2018-05-28",
+            "endDate": "2018-06-01"
+          }
+        },
+        "Start": 53,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Veuillez nous trouver un moment pour nous rencontrer plus tard cette année",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "plus tard cette année",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017",
+          "FutureResolution": {
+            "startDate": "2017-11-08",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-08",
+            "endDate": "2018-01-01"
+          }
+        },
+        "Start": 53,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Veuillez nous trouver un moment pour nous rencontrer plus tard dans l'année",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "plus tard dans l'année",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017",
+          "FutureResolution": {
+            "startDate": "2017-11-08",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-08",
+            "endDate": "2018-01-01"
+          }
+        },
+        "Start": 53,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Cette tâche commencera plus de 2 semaines après aujourd'hui",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "plus de 2 semaines après aujourd'hui",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2018-06-12",
+          "Mod": "after",
+          "FutureResolution": {
+            "startDate": "2018-06-12"
+          },
+          "PastResolution": {
+            "startDate": "2018-06-12"
+          }
+        },
+        "Start": 23,
+        "Length": 36
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai dans moins de 2 semaines à partir d'aujourd'hui",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "moins de 2 semaines à partir d'aujourd'hui",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2018-05-29,2018-06-12,P2W)",
+          "FutureResolution": {
+            "startDate": "2018-05-29",
+            "endDate": "2018-06-12"
+          },
+          "PastResolution": {
+            "startDate": "2018-05-29",
+            "endDate": "2018-06-12"
+          }
+        },
+        "Start": 19,
+        "Length": 42
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai dans 2 semaines à compter d'aujourd'hui",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans 2 semaines à compter d'aujourd'hui",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2018-05-29,2018-06-12,P2W)",
+          "FutureResolution": {
+            "startDate": "2018-05-29",
+            "endDate": "2018-06-12"
+          },
+          "PastResolution": {
+            "startDate": "2018-05-29",
+            "endDate": "2018-06-12"
+          }
+        },
+        "Start": 14,
+        "Length": 39
+      }
+    ]
+  },
+  {
+    "Input": "J'ai déjà terminé tout mon travail plus de 2 semaines avant aujourd'hui",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "plus de 2 semaines avant aujourd'hui",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2018-05-15",
+          "Mod": "before",
+          "FutureResolution": {
+            "endDate": "2018-05-15"
+          },
+          "PastResolution": {
+            "endDate": "2018-05-15"
+          }
+        },
+        "Start": 35,
+        "Length": 36
+      }
+    ]
+  },
+  {
+    "Input": "Cette tâche aurait dû être effectuée plus de 2 jours avant hier",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "plus de 2 jours avant hier",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2018-05-26",
+          "Mod": "before",
+          "FutureResolution": {
+            "endDate": "2018-05-26"
+          },
+          "PastResolution": {
+            "endDate": "2018-05-26"
+          }
+        },
+        "Start": 37,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Cette tâche sera effectuée moins de 3 jours après demain",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "moins de 3 jours après demain",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2018-05-30,2018-06-02,P3D)",
+          "FutureResolution": {
+            "startDate": "2018-05-30",
+            "endDate": "2018-06-02"
+          },
+          "PastResolution": {
+            "startDate": "2018-05-30",
+            "endDate": "2018-06-02"
+          }
+        },
+        "Start": 27,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "Ça se passe au 15ème siècle",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "15ème siècle",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(1400-01-01,1500-01-01,P100Y)",
+          "FutureResolution": {
+            "startDate": "1400-01-01",
+            "endDate": "1500-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1400-01-01",
+            "endDate": "1500-01-01"
+          }
+        },
+        "Start": 15,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Montre-moi les records du 21e siècle",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "21e siècle",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2000-01-01,2100-01-01,P100Y)",
+          "FutureResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2100-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2100-01-01"
+          }
+        },
+        "Start": 26,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, pouvez-vous organiser quelque chose pour la semaine du 18.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "la semaine du 18",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-XX-18",
+          "FutureResolution": {
+            "startDate": "2018-08-13",
+            "endDate": "2018-08-20"
+          },
+          "PastResolution": {
+            "startDate": "2018-07-16",
+            "endDate": "2018-07-23"
+          }
+        },
+        "Start": 50,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, pourriez-vous organiser quelque chose pour la semaine du 18.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "la semaine du 18",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-XX-18",
+          "FutureResolution": {
+            "startDate": "2018-09-17",
+            "endDate": "2018-09-24"
+          },
+          "PastResolution": {
+            "startDate": "2018-08-13",
+            "endDate": "2018-08-20"
+          }
+        },
+        "Start": 52,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "ventes où la date est cette décennie.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "cette décennie",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2010-01-01,2020-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2010-01-01",
+            "endDate": "2020-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2010-01-01",
+            "endDate": "2020-01-01"
+          }
+        },
+        "Start": 22,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "du 10/01 au 11/07",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "du 10/01 au 11/07",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-10-01,XXXX-11-07,P37D)",
+          "FutureResolution": {
+            "startDate": "2018-10-01",
+            "endDate": "2018-11-07"
+          },
+          "PastResolution": {
+            "startDate": "2018-10-01",
+            "endDate": "2018-11-07"
+          }
+        },
+        "Start": 0,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "du 25/10 au 25/01",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "du 25/10 au 25/01",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-10-25,XXXX-01-25,P92D)",
+          "FutureResolution": {
+            "startDate": "2018-10-25",
+            "endDate": "2019-01-25"
+          },
+          "PastResolution": {
+            "startDate": "2017-10-25",
+            "endDate": "2018-01-25"
+          }
+        },
+        "Start": 0,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Le gouvernement américain est encore en suspension cette semaine.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "cette semaine",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2019-W01",
+          "FutureResolution": {
+            "startDate": "2018-12-31",
+            "endDate": "2019-01-07"
+          },
+          "PastResolution": {
+            "startDate": "2018-12-31",
+            "endDate": "2019-01-07"
+          }
+        },
+        "Start": 51,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "M. Werner a dévoilé sa nouvelle stratégie cette semaine.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "cette semaine",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2016-W52",
+          "FutureResolution": {
+            "startDate": "2016-12-26",
+            "endDate": "2017-01-02"
+          },
+          "PastResolution": {
+            "startDate": "2016-12-26",
+            "endDate": "2017-01-02"
+          }
+        },
+        "Start": 42,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Il n'y a pas de grande nouvelle cette semaine.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "cette semaine",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2015-W53",
+          "FutureResolution": {
+            "startDate": "2015-12-28",
+            "endDate": "2016-01-04"
+          },
+          "PastResolution": {
+            "startDate": "2015-12-28",
+            "endDate": "2016-01-04"
+          }
+        },
+        "Start": 32,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je ferai mon travail entre aujourd'hui et le 15 novembre",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre aujourd'hui et le 15 novembre",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2019-04-23,XXXX-11-15,P206D)",
+          "FutureResolution": {
+            "startDate": "2019-04-23",
+            "endDate": "2019-11-15"
+          },
+          "PastResolution": {
+            "startDate": "2019-04-23",
+            "endDate": "2019-11-15"
+          }
+        },
+        "Start": 21,
+        "Length": 35
+      }
+    ]
+  },
+  {
+    "Input": "J'ai terminé mon travail entre le 22 janvier et aujourd'hui",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre le 22 janvier et aujourd'hui",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-01-22,2019-04-25,P93D)",
+          "FutureResolution": {
+            "startDate": "2019-01-22",
+            "endDate": "2019-04-25"
+          },
+          "PastResolution": {
+            "startDate": "2019-01-22",
+            "endDate": "2019-04-25"
+          }
+        },
+        "Start": 25,
+        "Length": 34
+      }
+    ]
+  },
+  {
+    "Input": "15h: je serai absent cette semaine",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "cette semaine",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2019-W28",
+          "FutureResolution": {
+            "startDate": "2019-07-08",
+            "endDate": "2019-07-15"
+          },
+          "PastResolution": {
+            "startDate": "2019-07-08",
+            "endDate": "2019-07-15"
+          }
+        },
+        "Start": 21,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "cette semaine, 8h du matin devrait être un délai et un temps.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "cette semaine",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2019-W28",
+          "FutureResolution": {
+            "startDate": "2019-07-08",
+            "endDate": "2019-07-15"
+          },
+          "PastResolution": {
+            "startDate": "2019-07-08",
+            "endDate": "2019-07-15"
+          }
+        },
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "cette semaine 20h devrait être un délai et un temps.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "cette semaine",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2019-W28",
+          "FutureResolution": {
+            "startDate": "2019-07-08",
+            "endDate": "2019-07-15"
+          },
+          "PastResolution": {
+            "startDate": "2019-07-08",
+            "endDate": "2019-07-15"
+          }
+        },
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "la dixième semaine 20h devrait être un délai et un temps.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dixième semaine",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2019-W10",
+          "FutureResolution": {
+            "startDate": "2019-03-04",
+            "endDate": "2019-03-11"
+          },
+          "PastResolution": {
+            "startDate": "2019-03-04",
+            "endDate": "2019-03-11"
+          }
+        },
+        "Start": 3,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "la dixième semaine 8p.m. devrait être un délai et un temps.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dixième semaine",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2019-W10",
+          "FutureResolution": {
+            "startDate": "2019-03-04",
+            "endDate": "2019-03-11"
+          },
+          "PastResolution": {
+            "startDate": "2019-03-04",
+            "endDate": "2019-03-11"
+          }
+        },
+        "Start": 3,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "la dixième semaine 10h20 devrait être un délai et un temps.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dixième semaine",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2019-W10",
+          "FutureResolution": {
+            "startDate": "2019-03-04",
+            "endDate": "2019-03-11"
+          },
+          "PastResolution": {
+            "startDate": "2019-03-04",
+            "endDate": "2019-03-11"
+          }
+        },
+        "Start": 3,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai du vendredi prochain au 1er octobre 2020",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "du vendredi prochain au 1er octobre 2020",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2019-08-09,2020-10-01,P419D)",
+          "FutureResolution": {
+            "startDate": "2019-08-09",
+            "endDate": "2020-10-01"
+          },
+          "PastResolution": {
+            "startDate": "2019-08-09",
+            "endDate": "2020-10-01"
+          }
+        },
+        "Start": 12,
+        "Length": 40
+      }
+    ]
+  },
+  {
+    "Input": "6,107,31 août 2019 ne devrait pas inclure dans la décimale",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "août 2019",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2019-08",
+          "FutureResolution": {
+            "startDate": "2019-08-01",
+            "endDate": "2019-09-01"
+          },
+          "PastResolution": {
+            "startDate": "2019-08-01",
+            "endDate": "2019-09-01"
+          }
+        },
+        "Start": 9,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je n'étais pas là du 1er août 2019 à aujourd'hui",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "du 1er août 2019 à aujourd'hui",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2019-08-01,2019-10-14,P74D)",
+          "FutureResolution": {
+            "startDate": "2019-08-01",
+            "endDate": "2019-10-14"
+          },
+          "PastResolution": {
+            "startDate": "2019-08-01",
+            "endDate": "2019-10-14"
+          }
+        },
+        "Start": 18,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "Je n'étais pas là du 2019/08/01 à aujourd'hui",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "du 2019/08/01 à aujourd'hui",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2019-08-01,2019-09-30,P60D)",
+          "FutureResolution": {
+            "startDate": "2019-08-01",
+            "endDate": "2019-09-30"
+          },
+          "PastResolution": {
+            "startDate": "2019-08-01",
+            "endDate": "2019-09-30"
+          }
+        },
+        "Start": 18,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "veuillez planifier une réunion pour la semaine commençant le 4 février",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "semaine commençant le 4 février",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-02-04",
+          "FutureResolution": {
+            "startDate": "2020-02-03",
+            "endDate": "2020-02-10"
+          },
+          "PastResolution": {
+            "startDate": "2019-02-04",
+            "endDate": "2019-02-11"
+          }
+        },
+        "Start": 39,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "veuillez planifier une réunion pour la semaine commençant le 4 fev.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "semaine commençant le 4 fev.",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-02-04",
+          "FutureResolution": {
+            "startDate": "2020-02-03",
+            "endDate": "2020-02-10"
+          },
+          "PastResolution": {
+            "startDate": "2019-02-04",
+            "endDate": "2019-02-11"
+          }
+        },
+        "Start": 39,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "veuillez planifier une réunion pour la semaine commençant le 2.4",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "semaine commençant le 2.4",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-02-04",
+          "FutureResolution": {
+            "startDate": "2020-02-03",
+            "endDate": "2020-02-10"
+          },
+          "PastResolution": {
+            "startDate": "2019-02-04",
+            "endDate": "2019-02-11"
+          }
+        },
+        "Start": 39,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "veuillez planifier une réunion pour la semaine commençant le 2-4",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "semaine commençant le 2-4",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-02-04",
+          "FutureResolution": {
+            "startDate": "2020-02-03",
+            "endDate": "2020-02-10"
+          },
+          "PastResolution": {
+            "startDate": "2019-02-04",
+            "endDate": "2019-02-11"
+          }
+        },
+        "Start": 39,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "veuillez planifier une réunion pour la semaine commençant le 04/02",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "semaine commençant le 04/02",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-02-04",
+          "FutureResolution": {
+            "startDate": "2020-02-03",
+            "endDate": "2020-02-10"
+          },
+          "PastResolution": {
+            "startDate": "2019-02-04",
+            "endDate": "2019-02-11"
+          }
+        },
+        "Start": 39,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "veuillez planifier une réunion pour w/c le 4 février.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "w/c le 4 février",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-02-04",
+          "FutureResolution": {
+            "startDate": "2020-02-03",
+            "endDate": "2020-02-10"
+          },
+          "PastResolution": {
+            "startDate": "2019-02-04",
+            "endDate": "2019-02-11"
+          }
+        },
+        "Start": 36,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Cette société a été créée fin 2000",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "fin 2000",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2000",
+          "Mod": "end",
+          "FutureResolution": {
+            "startDate": "2000-09-01",
+            "endDate": "2001-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2000-09-01",
+            "endDate": "2001-01-01"
+          }
+        },
+        "Start": 26,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Cette société a été créée au début de 2000",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "début de 2000",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2000",
+          "Mod": "start",
+          "FutureResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2000-05-01"
+          },
+          "PastResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2000-05-01"
+          }
+        },
+        "Start": 29,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Cette société a été créée au milieu de 2000",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "milieu de 2000",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2000",
+          "Mod": "mid",
+          "FutureResolution": {
+            "startDate": "2000-05-01",
+            "endDate": "2000-09-01"
+          },
+          "PastResolution": {
+            "startDate": "2000-05-01",
+            "endDate": "2000-09-01"
+          }
+        },
+        "Start": 29,
+        "Length": 14
+      }
+    ]
   }
 ]

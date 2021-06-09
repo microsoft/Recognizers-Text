@@ -67,6 +67,7 @@
 		"browserify-shim": "^3.8.14",
 		"cached-path-relative": ">=1.0.2",
 		"colors": "^1.1.2",
+		"dot-prop": ">=5.1.1",
 		"eslint": "^6.2.2",
 		"eslint-config-prettier": "^6.1.0",
 		"eslint-plugin-only-warn": "^1.0.1",
@@ -95,7 +96,8 @@
 		"ts-node": "^3.3.0",
 		"tsc-watch": "^1.0.8",
 		"typescript": "^3.2.1",
-		"xregexp": "^4.2.0"
+		"xregexp": "^4.2.0",
+		"yargs-parser": ">=13.1.2"
 	},
 	"dependencies": {
 		"@microsoft/recognizers-text": "file:./packages/recognizers-text",

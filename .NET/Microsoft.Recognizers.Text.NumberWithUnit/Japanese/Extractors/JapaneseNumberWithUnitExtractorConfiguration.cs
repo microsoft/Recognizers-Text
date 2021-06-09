@@ -1,11 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Japanese;
 using Microsoft.Recognizers.Definitions.Utilities;
+using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Config;
 using Microsoft.Recognizers.Text.Number.Japanese;
 
@@ -25,7 +27,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Japanese
         protected JapaneseNumberWithUnitExtractorConfiguration(CultureInfo ci)
         {
             this.CultureInfo = ci;
-            this.UnitNumExtractor = new NumberExtractor(CJKNumberExtractorMode.ExtractAll);
+
+            var numConfig = new BaseNumberOptionsConfiguration(ci.Name, NumberOptions.None);
+
+            this.UnitNumExtractor = new NumberExtractor(numConfig, CJKNumberExtractorMode.ExtractAll);
+
             this.BuildPrefix = NumbersWithUnitDefinitions.BuildPrefix;
             this.BuildSuffix = NumbersWithUnitDefinitions.BuildSuffix;
             this.ConnectorToken = NumbersWithUnitDefinitions.ConnectorToken;
@@ -60,5 +66,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Japanese
         public abstract ImmutableDictionary<string, string> PrefixList { get; }
 
         public abstract ImmutableList<string> AmbiguousUnitList { get; }
+
+        public void ExpandHalfSuffix(string source, ref List<ExtractResult> result, IOrderedEnumerable<ExtractResult> numbers)
+        {
+        }
     }
 }

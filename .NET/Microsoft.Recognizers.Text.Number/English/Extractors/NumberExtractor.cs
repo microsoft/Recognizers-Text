@@ -27,6 +27,8 @@ namespace Microsoft.Recognizers.Text.Number.English
 
             RelativeReferenceRegex = new Regex(NumbersDefinitions.RelativeOrdinalRegex, RegexFlags);
 
+            NumberParser = new BaseNumberParser(new EnglishNumberParserConfiguration(config));
+
             var builder = ImmutableDictionary.CreateBuilder<Regex, TypeTag>();
 
             // Add Cardinal
@@ -74,6 +76,8 @@ namespace Microsoft.Recognizers.Text.Number.English
 
             AmbiguityFiltersDict = ambiguityBuilder.ToImmutable();
         }
+
+        public override BaseNumberParser NumberParser { get; }
 
         internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
 

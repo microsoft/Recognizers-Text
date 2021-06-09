@@ -8,19 +8,24 @@ namespace Microsoft.Recognizers.Text.Number
 {
     public abstract class AbstractNumberModel : IModel
     {
+
         // Languages supporting subtypes in the resolution to be added here
         private static readonly List<string> ExtractorsSupportingSubtype = new List<string>
         {
-                Constants.ENGLISH,
-                Constants.SWEDISH,
-                Constants.ARABIC,
+            Constants.ARABIC,
+            Constants.ENGLISH,
+            Constants.PORTUGUESE,
+            Constants.SPANISH,
+            Constants.SWEDISH,
 
-                // TODO: Temporarily disabled as existing TestSpec not supporting
-                // Constants.JAPANESE_SUBS
-
-                // TODO: Temporarily disabled as existing TestSpec not supporting
-                // Constants.KOREAN,
+            // TODO: Temporarily disabled as existing TestSpec not supporting
+            // Constants.JAPANESE_SUBS,
+            // Constants.KOREAN,
         };
+
+        private string culture;
+
+        private string requestedCulture;
 
         protected AbstractNumberModel(IParser parser, IExtractor extractor)
         {
@@ -29,6 +34,10 @@ namespace Microsoft.Recognizers.Text.Number
         }
 
         public abstract string ModelTypeName { get; }
+
+        public string Culture => this.culture;
+
+        public string RequestedCulture => this.requestedCulture;
 
         protected IExtractor Extractor { get; private set; }
 
@@ -69,6 +78,12 @@ namespace Microsoft.Recognizers.Text.Number
             }
 
             return new List<ModelResult>();
+        }
+
+        public void SetCultureInfo(string culture, string requestedCulture = null)
+        {
+            this.culture = culture;
+            this.requestedCulture = requestedCulture;
         }
 
         private ModelResult BuildModelResult(ParseResult pn)

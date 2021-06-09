@@ -5,6 +5,8 @@ import com.microsoft.recognizers.text.ResolutionKey;
 import com.microsoft.recognizers.text.choice.ChoiceOptions;
 import com.microsoft.recognizers.text.choice.ChoiceRecognizer;
 import com.microsoft.recognizers.text.tests.AbstractTest;
+import com.microsoft.recognizers.text.tests.DependencyConstants;
+import com.microsoft.recognizers.text.tests.NotSupportedException;
 import com.microsoft.recognizers.text.tests.TestCase;
 
 import java.util.Arrays;
@@ -56,12 +58,18 @@ public class BooleanModelTest extends AbstractTest {
                 }
 
                 default: {
-                    throw new AssumptionViolatedException("Model Type/Name not supported.");
+                    throw new NotSupportedException("Model Type/Name not supported: " + currentCase.modelName + " in " + culture);
                 }
             }
 
         } catch (IllegalArgumentException ex) {
-            throw new AssumptionViolatedException(ex.getMessage(), ex);
+
+            // Model not existing can be considered a skip. Other exceptions should fail tests.
+            if (ex.getMessage().toLowerCase().contains(DependencyConstants.BASE_RECOGNIZERS_MODEL_UNAVAILABLE)) {
+                throw new AssumptionViolatedException(ex.getMessage(), ex);
+            } else throw new IllegalArgumentException(ex.getMessage(), ex);
+        } catch (NotSupportedException nex) {
+            throw new AssumptionViolatedException(nex.getMessage(), nex);
         }
     }
 }

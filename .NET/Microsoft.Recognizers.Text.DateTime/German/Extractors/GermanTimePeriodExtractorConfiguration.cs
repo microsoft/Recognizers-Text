@@ -4,6 +4,8 @@ using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.German;
 using Microsoft.Recognizers.Text.DateTime.German.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
+using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
@@ -60,6 +62,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public static readonly Regex GeneralEndingRegex =
             new Regex(DateTimeDefinitions.GeneralEndingRegex, RegexFlags);
 
+        public static readonly Regex AmbiguousTimePeriodRegex =
+            new Regex(DateTimeDefinitions.AmbiguousTimePeriodRegex, RegexFlags);
+
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         public GermanTimePeriodExtractorConfiguration(IDateTimeOptionsConfiguration config)
@@ -68,7 +73,17 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
             SingleTimeExtractor = new BaseTimeExtractor(new GermanTimeExtractorConfiguration(this));
             UtilityConfiguration = new GermanDatetimeUtilityConfiguration();
-            IntegerExtractor = Number.German.IntegerExtractor.GetInstance();
+
+            var numOptions = NumberOptions.None;
+            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            {
+                numOptions = NumberOptions.NoProtoCache;
+            }
+
+            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
+
+            IntegerExtractor = Number.German.IntegerExtractor.GetInstance(numConfig);
+
             TimeZoneExtractor = new BaseTimeZoneExtractor(new GermanTimeZoneExtractorConfiguration(this));
         }
 
@@ -98,7 +113,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public bool GetFromTokenIndex(string text, out int index)
         {
             index = -1;
-            if (text.EndsWith("von"))
+
+            if (text.EndsWith("von", StringComparison.Ordinal))
             {
                 index = text.LastIndexOf("von", StringComparison.Ordinal);
                 return true;
@@ -110,7 +126,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public bool GetBetweenTokenIndex(string text, out int index)
         {
             index = -1;
-            if (text.EndsWith("zwischen"))
+
+            if (text.EndsWith("zwischen", StringComparison.Ordinal))
             {
                 index = text.LastIndexOf("zwischen", StringComparison.Ordinal);
                 return true;
@@ -121,7 +138,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public bool IsConnectorToken(string text)
         {
-            return text.Equals("und");
+            return text.Equals("und", StringComparison.Ordinal);
         }
 
         // For German there is a problem with cases like "Morgen Abend" which is parsed as "Morning Evening" as "Morgen" can mean both "tomorrow" and "morning".
@@ -131,12 +148,27 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         // It should also be solvable through the config but we do not want to introduce changes to the interface and configs for all other languages.
         public List<ExtractResult> ApplyPotentialPeriodAmbiguityHotfix(string text, List<ExtractResult> timePeriodErs)
         {
-            if (text.Equals("morgen"))
+            List<ExtractResult> timePeriodErsResult = new List<ExtractResult>();
+            var matches = AmbiguousTimePeriodRegex.Matches(text);
+            foreach (var timePeriodEr in timePeriodErs)
             {
-                timePeriodErs.Clear();
+                if (matches.Count > 0)
+                {
+                    foreach (Match match in matches)
+                    {
+                        if (!(timePeriodEr.Text == match.Value && timePeriodEr.Start == match.Index && timePeriodEr.Length == match.Length))
+                        {
+                            timePeriodErsResult.Add(timePeriodEr);
+                        }
+                    }
+                }
+                else
+                {
+                    timePeriodErsResult.Add(timePeriodEr);
+                }
             }
 
-            return timePeriodErs;
+            return timePeriodErsResult;
         }
     }
 }

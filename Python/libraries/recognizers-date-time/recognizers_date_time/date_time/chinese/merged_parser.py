@@ -3,7 +3,7 @@ from datetime import datetime
 
 from recognizers_text import ExtractResult
 
-from ..utilities import DateTimeOptions, DateTimeResolutionResult
+from ..utilities import DateTimeOptions, DateTimeResolutionResult, TimexUtil
 from ..constants import Constants, TimeTypeConstants
 from ..parsers import DateTimeParseResult
 from ..base_merged import BaseMergedParser
@@ -132,7 +132,7 @@ class ChineseMergedParser(BaseMergedParser):
             if past_values:
                 self._add_resolution_fields_any(
                     result, Constants.RESOLVE_TO_PAST_KEY, past)
-            if future_resolution:
+            if future_values:
                 self._add_resolution_fields_any(
                     result, Constants.RESOLVE_TO_FUTURE_KEY, future)
 
@@ -142,6 +142,9 @@ class ChineseMergedParser(BaseMergedParser):
             else:
                 self._resolve_ampm(result, 'resolveToPast')
                 self._resolve_ampm(result, 'resolveToFuture')
+
+        if TimexUtil._has_double_timex(comment):
+            TimexUtil._process_double_timex(result, Constants.RESOLVE_TO_FUTURE_KEY, Constants.RESOLVE_TO_PAST_KEY, timex)
 
         if is_lunar:
             self._add_resolution_fields_any(

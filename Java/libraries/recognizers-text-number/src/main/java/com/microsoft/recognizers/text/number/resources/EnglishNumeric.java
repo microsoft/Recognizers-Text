@@ -25,7 +25,9 @@ public class EnglishNumeric {
 
     public static final Boolean MultiDecimalSeparatorCulture = true;
 
-    public static final String RoundNumberIntegerRegex = "(?:hundred|thousand|million|billion|trillion|lakh|crore)";
+    public static final List<String> NonStandardSeparatorVariants = Arrays.asList("en-za", "en-na", "en-zw");
+
+    public static final String RoundNumberIntegerRegex = "(?:hundred|thousand|million|mln|billion|bln|trillion|tln|lakh|crore)s?";
 
     public static final String ZeroToNineIntegerRegex = "(?:three|seven|eight|four|five|zero|nine|one|two|six)";
 
@@ -120,19 +122,25 @@ public class EnglishNumeric {
 
     public static final String FractionNotationWithSpacesRegex = "(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s+\\d+[/]\\d+(?=(\\b[^/]|$))";
 
-    public static final String FractionNotationRegex = "(((?<=\\W|^)-\\s*)|(?<![/-])(?<=\\b))\\d+[/]\\d+(?=(\\b[^/]|$))";
+    public static final String FractionNotationRegex = "{BaseNumbers.FractionNotationRegex}"
+            .replace("{BaseNumbers.FractionNotationRegex}", BaseNumbers.FractionNotationRegex);
 
-    public static final String FractionNounRegex = "(?<=\\b)({AllIntRegex}\\s+(and\\s+)?)?({AllIntRegex})(\\s+|\\s*-\\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))s|halves|quarters)(?=\\b)"
+    public static final String RoundMultiplierRegex = "\\b\\s*((of\\s+)?a\\s+)?(?<multiplier>{RoundNumberIntegerRegex})$"
+            .replace("{RoundNumberIntegerRegex}", RoundNumberIntegerRegex);
+
+    public static final String FractionNounRegex = "(?<=\\b)({AllIntRegex}\\s+(and\\s+)?)?(({AllIntRegex})(\\s+|\\s*-\\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))s|halves|quarters)((\\s+of\\s+a)?\\s+{RoundNumberIntegerRegex})?|(half(\\s+a)?|quarter(\\s+of\\s+a)?)\\s+{RoundNumberIntegerRegex})(?=\\b)"
             .replace("{AllIntRegex}", AllIntRegex)
             .replace("{AllOrdinalRegex}", AllOrdinalRegex)
-            .replace("{RoundNumberOrdinalRegex}", RoundNumberOrdinalRegex);
+            .replace("{RoundNumberOrdinalRegex}", RoundNumberOrdinalRegex)
+            .replace("{RoundNumberIntegerRegex}", RoundNumberIntegerRegex);
 
-    public static final String FractionNounWithArticleRegex = "(?<=\\b)((({AllIntRegex}\\s+(and\\s+)?)?(an?|one)(\\s+|\\s*-\\s*)(?!\\bfirst\\b|\\bsecond\\b)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|half|quarter))|(half))(?=\\b)"
+    public static final String FractionNounWithArticleRegex = "(?<=\\b)((({AllIntRegex}\\s+(and\\s+)?)?(an?|one)(\\s+|\\s*-\\s*)(?!\\bfirst\\b|\\bsecond\\b)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|(half|quarter)(((\\s+of)?\\s+a)?\\s+{RoundNumberIntegerRegex})?))|(half))(?=\\b)"
             .replace("{AllIntRegex}", AllIntRegex)
             .replace("{AllOrdinalRegex}", AllOrdinalRegex)
-            .replace("{RoundNumberOrdinalRegex}", RoundNumberOrdinalRegex);
+            .replace("{RoundNumberOrdinalRegex}", RoundNumberOrdinalRegex)
+            .replace("{RoundNumberIntegerRegex}", RoundNumberIntegerRegex);
 
-    public static final String FractionPrepositionRegex = "(?<!{BaseNumbers.CommonCurrencySymbol}\\s*)(?<=\\b)(?<numerator>({AllIntRegex})|((?<![\\.,])\\d+))\\s+(over|in|out\\s+of)\\s+(?<denominator>({AllIntRegex})|(\\d+)(?![\\.,]))(?=\\b)"
+    public static final String FractionPrepositionRegex = "(?<!{BaseNumbers.CommonCurrencySymbol}\\s*)(?<=\\b)(?<numerator>({AllIntRegex})|((?<![\\.,])\\d+))\\s+(over|(?<ambiguousSeparator>in|out\\s+of))\\s+(?<denominator>({AllIntRegex})|(\\d+)(?![\\.,]))(?=\\b)"
             .replace("{AllIntRegex}", AllIntRegex)
             .replace("{BaseNumbers.CommonCurrencySymbol}", BaseNumbers.CommonCurrencySymbol);
 
@@ -190,9 +198,9 @@ public class EnglishNumeric {
     public static final String NumberWithPrepositionPercentage = "({BaseNumbers.NumberReplaceToken})\\s*(in|out\\s+of)\\s*({BaseNumbers.NumberReplaceToken})"
             .replace("{BaseNumbers.NumberReplaceToken}", BaseNumbers.NumberReplaceToken);
 
-    public static final String TillRegex = "(to|through|--|-|—|——|~|–)";
+    public static final String TillRegex = "((?<!\\bequal\\s+)to|through|--|-|—|——|~|–)";
 
-    public static final String MoreRegex = "(?:(bigger|greater|more|higher|larger)(\\s+than)?|above|over|exceed(ed|ing)?|surpass(ed|ing)?|(?<!<|=)>)";
+    public static final String MoreRegex = "(?:(bigger|greater|more|higher|larger)(\\s+than)?|above|over|beyond|exceed(ed|ing)?|surpass(ed|ing)?|(?<!<|=)>)";
 
     public static final String LessRegex = "(?:(less|lower|smaller|fewer)(\\s+than)?|below|under|(?<!>|=)<)";
 
@@ -207,7 +215,7 @@ public class EnglishNumeric {
             .replace("{LessRegex}", LessRegex)
             .replace("{MoreOrEqualPrefix}", MoreOrEqualPrefix);
 
-    public static final String MoreOrEqualSuffix = "((and|or)\\s+(((more|greater|higher|larger|bigger)((?!\\s+than)|(\\s+than(?!(\\s*\\d+)))))|((over|above)(?!\\s+than))))";
+    public static final String MoreOrEqualSuffix = "((and|or)\\s+(((more|greater|higher|larger|bigger)((?!\\s+than)|(\\s+than(?!((\\s+or\\s+equal\\s+to)?\\s*\\d+)))))|((over|above)(?!\\s+than))))";
 
     public static final String LessOrEqualPrefix = "((no\\s+{MoreRegex})|(at\\s+most)|(up\\s+to))"
             .replace("{MoreRegex}", MoreRegex);
@@ -220,7 +228,9 @@ public class EnglishNumeric {
 
     public static final String LessOrEqualSuffix = "((and|or)\\s+(less|lower|smaller|fewer)((?!\\s+than)|(\\s+than(?!(\\s*\\d+)))))";
 
-    public static final String NumberSplitMark = "(?![,.](?!\\d+))";
+    public static final String NumberSplitMark = "(?![,.](?!\\d+))(?!\\s*\\b(and\\s+({LessRegex}|{MoreRegex})|but|or|to)\\b)"
+            .replace("{MoreRegex}", MoreRegex)
+            .replace("{LessRegex}", LessRegex);
 
     public static final String MoreRegexNoNumberSucceed = "((bigger|greater|more|higher|larger)((?!\\s+than)|\\s+(than(?!(\\s*\\d+))))|(above|over)(?!(\\s*\\d+)))";
 
@@ -232,6 +242,9 @@ public class EnglishNumeric {
             .replace("{MoreOrEqual}", MoreOrEqual)
             .replace("{MoreRegex}", MoreRegex)
             .replace("{NumberSplitMark}", NumberSplitMark);
+
+    public static final String OneNumberRangeMoreRegex1LB = "(?<!no\\s+){OneNumberRangeMoreRegex1}"
+            .replace("{OneNumberRangeMoreRegex1}", OneNumberRangeMoreRegex1);
 
     public static final String OneNumberRangeMoreRegex2 = "(?<number1>({NumberSplitMark}.)+)\\s*{MoreOrEqualSuffix}"
             .replace("{MoreOrEqualSuffix}", MoreOrEqualSuffix)
@@ -249,6 +262,9 @@ public class EnglishNumeric {
             .replace("{LessRegex}", LessRegex)
             .replace("{NumberSplitMark}", NumberSplitMark);
 
+    public static final String OneNumberRangeLessRegex1LB = "(?<!no\\s+){OneNumberRangeLessRegex1}"
+            .replace("{OneNumberRangeLessRegex1}", OneNumberRangeLessRegex1);
+
     public static final String OneNumberRangeLessRegex2 = "(?<number2>({NumberSplitMark}.)+)\\s*{LessOrEqualSuffix}"
             .replace("{LessOrEqualSuffix}", LessOrEqualSuffix)
             .replace("{NumberSplitMark}", NumberSplitMark);
@@ -260,7 +276,7 @@ public class EnglishNumeric {
             .replace("{LessRegexNoNumberSucceed}", LessRegexNoNumberSucceed)
             .replace("{NumberSplitMark}", NumberSplitMark);
 
-    public static final String OneNumberRangeEqualRegex = "{EqualRegex}\\s*(the\\s+)?(?<number1>({NumberSplitMark}.)+)"
+    public static final String OneNumberRangeEqualRegex = "(?<!\\bthan\\s+or\\s+){EqualRegex}\\s*(the\\s+)?(?<number1>({NumberSplitMark}.)+)"
             .replace("{EqualRegex}", EqualRegex)
             .replace("{NumberSplitMark}", NumberSplitMark);
 
@@ -305,7 +321,7 @@ public class EnglishNumeric {
 
     public static final String HalfADozenRegex = "half\\s+a\\s+dozen";
 
-    public static final String DigitalNumberRegex = "((?<=\\b)(hundred|thousand|[mb]illion|trillion|lakh|crore|dozen(s)?)(?=\\b))|((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))"
+    public static final String DigitalNumberRegex = "((?<=\\b)(hundred|thousand|[mb]illion|trillion|[mbt]ln|lakh|crore|dozen(s)?)(?=\\b))|((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))"
             .replace("{BaseNumbers.MultiplierLookupRegex}", BaseNumbers.MultiplierLookupRegex);
 
     public static final ImmutableMap<String, Long> CardinalNumberMap = ImmutableMap.<String, Long>builder()
@@ -344,8 +360,11 @@ public class EnglishNumeric {
         .put("hundred", 100L)
         .put("thousand", 1000L)
         .put("million", 1000000L)
+        .put("mln", 1000000L)
         .put("billion", 1000000000L)
+        .put("bln", 1000000000L)
         .put("trillion", 1000000000000L)
+        .put("tln", 1000000000000L)
         .put("lakh", 100000L)
         .put("crore", 10000000L)
         .build();
@@ -425,8 +444,11 @@ public class EnglishNumeric {
         .put("hundred", 100L)
         .put("thousand", 1000L)
         .put("million", 1000000L)
+        .put("mln", 1000000L)
         .put("billion", 1000000000L)
+        .put("bln", 1000000000L)
         .put("trillion", 1000000000000L)
+        .put("tln", 1000000000000L)
         .put("lakh", 100000L)
         .put("crore", 10000000L)
         .put("hundredth", 100L)

@@ -13,15 +13,26 @@ MODELFUNCTION = {
     recognizer='Number', entity='Model'))
 def test_number_recognizer(culture, model, options,
                            context, source, expected_results):
+
+    spec_info = model + "Model : " + source
+
     results = get_results(culture, model, source)
+
     assert len(results) == len(expected_results)
+
     for actual, expected in zip(results, expected_results):
-        assert actual.type_name == expected['TypeName']
-        assert actual.text == expected['Text']
-        assert actual.start == expected['Start']
-        assert actual.end == expected['End']
-        assert actual.resolution['value'] == expected['Resolution']['value']
+
+        assert_verbose(actual.type_name, expected['TypeName'], spec_info)
+        assert_verbose(actual.text, expected['Text'], spec_info)
+        assert_verbose(actual.start, expected['Start'], spec_info)
+        assert_verbose(actual.end, expected['End'], spec_info)
+        assert_verbose(actual.resolution['value'], expected['Resolution']['value'], spec_info)
 
 
 def get_results(culture, model, source):
     return MODELFUNCTION[model](source, culture)
+
+
+def assert_verbose(actual, expected, spec_info):
+    assert actual == expected, \
+        "Actual: {} | Expected: {} | Context: {}".format(actual, expected, spec_info)

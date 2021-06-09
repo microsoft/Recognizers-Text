@@ -6,9 +6,11 @@ export class GermanBooleanExtractorConfiguration implements IBooleanExtractorCon
     readonly regexTrue: RegExp;
     readonly regexFalse: RegExp;
     readonly tokenRegex: RegExp;
+    readonly emojiSkinToneRegex: RegExp;
     readonly onlyTopMatch: boolean;
 
     constructor(onlyTopMatch: boolean = true) {
+        this.emojiSkinToneRegex = RegExpUtility.getSafeRegExp(GermanChoice.SkinToneRegex);
         this.regexTrue = RegExpUtility.getSafeRegExp(GermanChoice.TrueRegex);
         this.regexFalse = RegExpUtility.getSafeRegExp(GermanChoice.FalseRegex);
         this.tokenRegex = RegExpUtility.getSafeRegExp(GermanChoice.TokenizerRegex, 'is');

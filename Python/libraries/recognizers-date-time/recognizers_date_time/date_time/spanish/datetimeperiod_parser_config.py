@@ -65,6 +65,7 @@ class SpanishDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration
         self._after_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.AfterRegex)
         self._before_regex = RegExpUtility.get_safe_reg_exp(SpanishDateTime.BeforeRegex)
         self._token_before_date = SpanishDateTime.TokenBeforeDate
+        self._token_before_time = SpanishDateTime.TokenBeforeTime
         self._check_both_before_after = SpanishDateTime.CheckBothBeforeAfter
         self.next_prefix_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.NextPrefixRegex)
@@ -112,6 +113,10 @@ class SpanishDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration
     @property
     def token_before_date(self):
         return self._token_before_date
+
+    @property
+    def token_before_time(self):
+        return self._token_before_time
 
     @property
     def check_both_before_after(self) -> bool:

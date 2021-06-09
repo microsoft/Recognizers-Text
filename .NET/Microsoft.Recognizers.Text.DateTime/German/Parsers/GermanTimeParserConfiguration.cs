@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Globalization;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.German;
@@ -93,7 +95,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
                 var minStr = match.Groups["deltamin"].Value;
                 if (!string.IsNullOrWhiteSpace(minStr))
                 {
-                    deltaMin = int.Parse(minStr);
+                    deltaMin = int.Parse(minStr, CultureInfo.InvariantCulture);
                 }
                 else
                 {
@@ -102,7 +104,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
                 }
             }
 
-            if (trimmedPrefix.EndsWith("zum"))
+            // @TODO move hardcoded values to resources file
+
+            if (trimmedPrefix.EndsWith("zum", StringComparison.Ordinal))
             {
                 deltaMin = -deltaMin;
             }
@@ -126,6 +130,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             if (match.Success)
             {
                 var oclockStr = match.Groups["oclock"].Value;
+
                 if (string.IsNullOrEmpty(oclockStr))
                 {
                     var matchAmStr = match.Groups[Constants.AmGroupName].Value;

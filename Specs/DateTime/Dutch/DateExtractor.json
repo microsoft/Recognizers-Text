@@ -2585,5 +2585,77 @@
     "Comment": "1/4 shouldn't recognized as date here",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
+  },
+  {
+    "Input": "Ik ga terug op Sep-23-2020.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Sep-23-2020",
+        "Type": "date",
+        "Start": 15,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga terug op September-2020-23.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "September-2020-23",
+        "Type": "date",
+        "Start": 15,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga terug op 2020/23/Sep.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2020/23/Sep",
+        "Type": "date",
+        "Start": 15,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga terug op 2020-Sep-23",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2020-Sep-23",
+        "Type": "date",
+        "Start": 15,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga terug op 23/Sep/2020",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "23/Sep/2020",
+        "Type": "date",
+        "Start": 15,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga terug op 23-2020-September",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "23-2020-September",
+        "Type": "date",
+        "Start": 15,
+        "Length": 17
+      }
+    ]
   }
 ]

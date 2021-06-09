@@ -15,6 +15,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex AnUnitRegex { get; }
 
+        Regex PrefixArticleRegex { get; }
+
         Regex DuringRegex { get; }
 
         Regex AllDateUnitRegex { get; }

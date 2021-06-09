@@ -60,6 +60,10 @@ namespace Microsoft.Recognizers.Text.Number.Arabic
                     GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumNoBreakSpaceDot, config.Placeholder, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
+                {
+                    new Regex(NumbersDefinitions.DoubleWithThousandMarkRegex(config.Placeholder), RegexFlags),
+                    RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
+                },
             };
 
             Regexes = regexes.ToImmutableDictionary();

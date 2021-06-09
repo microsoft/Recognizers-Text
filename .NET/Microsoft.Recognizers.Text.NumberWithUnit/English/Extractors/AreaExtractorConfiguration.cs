@@ -10,6 +10,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
         public static readonly ImmutableDictionary<string, string> AreaSuffixList =
             NumbersWithUnitDefinitions.AreaSuffixList.ToImmutableDictionary();
 
+        public static readonly ImmutableList<string> AmbiguousUnits =
+            NumbersWithUnitDefinitions.AmbiguousAreaUnitList.ToImmutableList();
+
         public AreaExtractorConfiguration()
                : this(new CultureInfo(Culture.English))
         {
@@ -24,7 +27,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
 
         public override ImmutableDictionary<string, string> PrefixList => null;
 
-        public override ImmutableList<string> AmbiguousUnitList => null;
+        public override ImmutableList<string> AmbiguousUnitList => AmbiguousUnits;
 
         public override string ExtractType => Constants.SYS_UNIT_AREA;
     }

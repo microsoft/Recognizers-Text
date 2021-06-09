@@ -1,4 +1,4 @@
-import { IExtractor, IParser, RegExpUtility } from "@microsoft/recognizers-text";
+import { ExtractResult, IExtractor, IParser, RegExpUtility } from "@microsoft/recognizers-text";
 import { Culture, CultureInfo, NumberMode, AgnosticNumberParserFactory, AgnosticNumberParserType, ChineseNumberExtractor, ChineseNumberParserConfiguration, ChineseNumberExtractorMode } from "@microsoft/recognizers-text-number";
 import { Constants } from "../constants";
 import { INumberWithUnitExtractorConfiguration } from "../extractors";
@@ -7,6 +7,8 @@ import { ChineseNumericWithUnit } from "../../resources/chineseNumericWithUnit";
 import { BaseUnits } from "../../resources/baseUnits";
 
 export abstract class ChineseNumberWithUnitExtractorConfiguration implements INumberWithUnitExtractorConfiguration {
+    private readonly halfUnitRegex = RegExpUtility.getSafeRegExp(ChineseNumericWithUnit.HalfUnitRegex);
+
     abstract readonly suffixList: ReadonlyMap<string, string>;
     abstract readonly prefixList: ReadonlyMap<string, string>;
     abstract readonly ambiguousUnitList: readonly string[];
@@ -30,6 +32,42 @@ export abstract class ChineseNumberWithUnitExtractorConfiguration implements INu
         this.connectorToken = ChineseNumericWithUnit.ConnectorToken;
         this.compoundUnitConnectorRegex = RegExpUtility.getSafeRegExp(ChineseNumericWithUnit.CompoundUnitConnectorRegex);
         this.nonUnitRegex = RegExpUtility.getSafeRegExp(BaseUnits.PmNonUnitRegex);
+    }
+
+    expandHalfSuffix(source: string, result: ExtractResult[], numbers: ExtractResult[]) {
+        // expand Chinese phrase to the `half` patterns when it follows closely origin phrase.
+        if (this.halfUnitRegex != null){
+            let match = new Array<ExtractResult>();
+            for (let number of numbers) {
+                if (RegExpUtility.getMatches(this.halfUnitRegex, number.text).length > 0){
+                    match.push(number);
+                }
+            }
+            if (match.length > 0){
+                let res = new Array<ExtractResult>();
+                for (let er of result){
+                    let start = er.start;
+                    let length = er.length;
+                    let matchSuffix = new Array<ExtractResult>();
+                    for (let mr of match){
+                        if (mr.start == start + length){
+                            matchSuffix.push(mr);
+                        }
+                    }
+                    if (matchSuffix.length === 1){
+                        let mr = matchSuffix[0];
+                        er.length += mr.length;
+                        er.text += mr.text;
+                        let tmp = new Array<ExtractResult>();
+                        tmp.push(er.data);
+                        tmp.push(mr);
+                        er.data = tmp;
+                    }
+                    res.push(er);
+                }
+                result = res;
+            }
+        }
     }
 }
 

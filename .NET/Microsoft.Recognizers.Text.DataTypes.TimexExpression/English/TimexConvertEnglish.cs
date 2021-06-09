@@ -2,6 +2,7 @@
 // Licensed under the MIT License.
 
 using System;
+using System.Globalization;
 
 namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 {
@@ -13,7 +14,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
             if (types.Contains(Constants.TimexTypes.Present))
             {
-                return "now";
+                return TimexConstantsEnglish.Now;
             }
 
             if (types.Contains(Constants.TimexTypes.DateTimeRange))
@@ -60,11 +61,11 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             var timex = timexSet.Timex;
             if (timex.Types.Contains(Constants.TimexTypes.Duration))
             {
-                return $"every {ConvertTimexDurationToString(timex, false)}";
+                return $"{TimexConstantsEnglish.Every} {ConvertTimexDurationToString(timex, false)}";
             }
             else
             {
-                return $"every {ConvertTimexToString(timex)}";
+                return $"{TimexConstantsEnglish.Every} {ConvertTimexToString(timex)}";
             }
         }
 
@@ -72,18 +73,18 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
         {
             if (timex.Hour == 0 && timex.Minute == 0 && timex.Second == 0)
             {
-                return "midnight";
+                return TimexConstantsEnglish.Midnight;
             }
 
             if (timex.Hour == 12 && timex.Minute == 0 && timex.Second == 0)
             {
-                return "midday";
+                return TimexConstantsEnglish.Midday;
             }
 
-            var hour = (timex.Hour == 0) ? "12" : (timex.Hour > 12) ? (timex.Hour - 12).ToString() : timex.Hour.ToString();
-            var minute = (timex.Minute == 0 && timex.Second == 0) ? string.Empty : ":" + timex.Minute.ToString().PadLeft(2, '0');
-            var second = (timex.Second == 0) ? string.Empty : ":" + timex.Second.ToString().PadLeft(2, '0');
-            var period = timex.Hour < 12 ? "AM" : "PM";
+            var hour = (timex.Hour == 0) ? "12" : (timex.Hour > 12) ? (timex.Hour - 12).Value.ToString(CultureInfo.InvariantCulture) : timex.Hour.Value.ToString(CultureInfo.InvariantCulture);
+            var minute = (timex.Minute == 0 && timex.Second == 0) ? string.Empty : Constants.TimeTimexConnector + timex.Minute.Value.ToString(CultureInfo.InvariantCulture).PadLeft(2, '0');
+            var second = (timex.Second == 0) ? string.Empty : Constants.TimeTimexConnector + timex.Second.Value.ToString(CultureInfo.InvariantCulture).PadLeft(2, '0');
+            var period = timex.Hour < 12 ? Constants.AM : Constants.PM;
 
             return $"{hour}{minute}{second}{period}";
         }
@@ -95,16 +96,21 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                 return TimexConstantsEnglish.Days[timex.DayOfWeek.Value - 1];
             }
 
-            var month = TimexConstantsEnglish.Months[timex.Month.Value - 1];
-            var date = timex.DayOfMonth.ToString();
-            var abbreviation = TimexConstantsEnglish.DateAbbreviation[int.Parse(date[date.Length - 1].ToString())];
+            var date = timex.DayOfMonth.Value.ToString(CultureInfo.InvariantCulture);
+            var abbreviation = TimexConstantsEnglish.DateAbbreviation[int.Parse(date[date.Length - 1].ToString(CultureInfo.InvariantCulture), CultureInfo.InvariantCulture)];
 
-            if (timex.Year != null)
+            if (timex.Month != null)
             {
-                return $"{date}{abbreviation} {month} {timex.Year}".Trim();
+                var month = TimexConstantsEnglish.Months[timex.Month.Value - 1];
+                if (timex.Year != null)
+                {
+                    return $"{date}{abbreviation} {month} {timex.Year}".Trim();
+                }
+
+                return $"{date}{abbreviation} {month}";
             }
 
-            return $"{date}{abbreviation} {month}";
+            return $"{date}{abbreviation}";
         }
 
         private static string ConvertDurationPropertyToString(decimal value, string property, bool includeSingleCount)
@@ -115,48 +121,49 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             }
             else
             {
-                return $"{value} {property}s";
+                return $"{value} {property}{Constants.TimeDurationUnit}";
             }
         }
 
         private static string ConvertTimexDurationToString(TimexProperty timex, bool includeSingleCount)
         {
+            string result = string.Empty;
             if (timex.Years != null)
             {
-                return ConvertDurationPropertyToString(timex.Years.Value, "year", includeSingleCount);
+                result += ConvertDurationPropertyToString(timex.Years.Value, Constants.YearUnit, includeSingleCount);
             }
 
             if (timex.Months != null)
             {
-                return ConvertDurationPropertyToString(timex.Months.Value, "month", includeSingleCount);
+                result += ConvertDurationPropertyToString(timex.Months.Value, Constants.MonthUnit, includeSingleCount);
             }
 
             if (timex.Weeks != null)
             {
-                return ConvertDurationPropertyToString(timex.Weeks.Value, "week", includeSingleCount);
+                result += ConvertDurationPropertyToString(timex.Weeks.Value, Constants.WeekUnit, includeSingleCount);
             }
 
             if (timex.Days != null)
             {
-                return ConvertDurationPropertyToString(timex.Days.Value, "day", includeSingleCount);
+                result += ConvertDurationPropertyToString(timex.Days.Value, Constants.DayUnit, includeSingleCount);
             }
 
             if (timex.Hours != null)
             {
-                return ConvertDurationPropertyToString(timex.Hours.Value, "hour", includeSingleCount);
+                result += ConvertDurationPropertyToString(timex.Hours.Value, Constants.HourUnit, includeSingleCount);
             }
 
             if (timex.Minutes != null)
             {
-                return ConvertDurationPropertyToString(timex.Minutes.Value, "minute", includeSingleCount);
+                result += ConvertDurationPropertyToString(timex.Minutes.Value, Constants.MinuteUnit, includeSingleCount);
             }
 
             if (timex.Seconds != null)
             {
-                return ConvertDurationPropertyToString(timex.Seconds.Value, "second", includeSingleCount);
+                result += ConvertDurationPropertyToString(timex.Seconds.Value, Constants.SecondUnit, includeSingleCount);
             }
 
-            return string.Empty;
+            return result;
         }
 
         private static string ConvertDuration(TimexProperty timex)
@@ -168,7 +175,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
         {
             var season = (timex.Season != null) ? TimexConstantsEnglish.Seasons[timex.Season] : string.Empty;
 
-            var year = (timex.Year != null) ? timex.Year.ToString() : string.Empty;
+            var year = (timex.Year != null) ? timex.Year.Value.ToString(CultureInfo.InvariantCulture) : string.Empty;
 
             if (timex.WeekOfYear != null)
             {

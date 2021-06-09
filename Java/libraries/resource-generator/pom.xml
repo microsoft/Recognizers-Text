@@ -29,12 +29,12 @@
         <dependency>
             <groupId>org.yaml</groupId>
             <artifactId>snakeyaml</artifactId>
-            <version>1.20</version>
+            <version>1.26</version>
         </dependency>
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>24.1.1-jre</version>
+            <version>29.0-jre</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
@@ -61,6 +61,7 @@
                         <argument>libraries/recognizers-text-number-with-unit/resource-definitions.json</argument>
                         <argument>libraries/recognizers-text-choice/resource-definitions.json</argument>
                         <argument>libraries/recognizers-text-date-time/resource-definitions.json</argument>
+                        <argument>libraries/recognizers-text-sequence/resource-definitions.json</argument>
                     </arguments>
                 </configuration>
             </plugin>

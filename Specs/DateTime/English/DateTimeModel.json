@@ -4245,7 +4245,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "3 minutes",
@@ -4263,18 +4263,16 @@
         }
       },
       {
-        "Text": "from today",
-        "Start": 22,
+        "Text": "today",
+        "Start": 27,
         "End": 31,
-        "TypeName": "datetimeV2.daterange",
+        "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
             {
               "timex": "2018-05-29",
-              "Mod": "since",
-              "type": "daterange",
-              "sourceEntity": "datetimepoint",
-              "start": "2018-05-29"
+              "type": "date",
+              "value": "2018-05-29"
             }
           ]
         }
@@ -14025,20 +14023,20 @@
     "Context": {
       "ReferenceDateTime": "2019-08-12T00:00:00"
     },
-    "Comment": "Interpretation as ordinal + month is not ideal, but it is interpreatable and should guarantee that the recognizers don't raise exceptional behaviour.",
     "Results": [
       {
-        "Text": "the month",
-        "Start": 63,
+        "Text": "before the thirty-first day of the month",
+        "Start": 32,
         "End": 71,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
             {
-              "timex": "2019-08",
+              "timex": "2019-08-31",
+              "Mod": "before",
               "type": "daterange",
-              "start": "2019-08-01",
-              "end": "2019-09-01"
+              "sourceEntity": "datetimepoint",
+              "end": "2019-08-31"
             }
           ]
         }
@@ -14436,27 +14434,26 @@
     "Context": {
       "ReferenceDateTime": "2019-08-24T00:00:00"
     },
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
-        "Text": "from october",
-        "Start": 23,
+        "Text": "october",
+        "Start": 28,
         "End": 34,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
             {
               "timex": "XXXX-10",
-              "Mod": "since",
               "type": "daterange",
-              "sourceEntity": "datetimerange",
-              "start": "2018-10-01"
+              "start": "2018-10-01",
+              "end": "2018-11-01"
             },
             {
               "timex": "XXXX-10",
-              "Mod": "since",
               "type": "daterange",
-              "sourceEntity": "datetimerange",
-              "start": "2019-10-01"
+              "start": "2019-10-01",
+              "end": "2019-11-01"
             }
           ]
         }
@@ -14808,6 +14805,21 @@
             }
           ]
         }
+      },
+      {
+        "Text": "any year",
+        "Start": 19,
+        "End": 26,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1Y",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
       }
     ]
   },
@@ -14898,10 +14910,10 @@
         "Resolution": {
           "values": [
             {
-              "timex": "(2019-01-01,2019-01-01,P0M)",
+              "timex": "(2019-01-01,2019-04-01,P3M)",
               "type": "daterange",
               "start": "2019-01-01",
-              "end": "2019-01-01"
+              "end": "2019-04-01"
             }
           ]
         }
@@ -15432,18 +15444,18 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "from the end of 1989",
-        "Start": 19,
+        "Text": "end of 1989",
+        "Start": 28,
         "End": 38,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
             {
               "timex": "1989",
-              "Mod": "since-end",
+              "Mod": "end",
               "type": "daterange",
-              "sourceEntity": "datetimerange",
-              "start": "1989-09-01"
+              "start": "1989-09-01",
+              "end": "1990-01-01"
             }
           ]
         }
@@ -15458,18 +15470,18 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "from mid 1989",
-        "Start": 19,
+        "Text": "mid 1989",
+        "Start": 24,
         "End": 31,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
             {
               "timex": "1989",
-              "Mod": "since-mid",
+              "Mod": "mid",
               "type": "daterange",
-              "sourceEntity": "datetimerange",
-              "start": "1989-05-01"
+              "start": "1989-05-01",
+              "end": "1989-09-01"
             }
           ]
         }
@@ -16922,6 +16934,3694 @@
               "type": "datetimerange",
               "start": "2020-07-01 20:00:00",
               "end": "2020-07-01 23:59:59"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "When is the next new year day?",
+    "Context": {
+      "ReferenceDateTime": "2019-07-12T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "next new year day",
+        "Start": 12,
+        "End": 28,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-01-01",
+              "type": "date",
+              "value": "2020-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "When was the last easter?",
+    "Context": {
+      "ReferenceDateTime": "2019-03-12T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "last easter",
+        "Start": 13,
+        "End": 23,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-04-01",
+              "type": "date",
+              "value": "2018-04-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "tonight at 1am",
+    "Context": {
+      "ReferenceDateTime": "2019-12-26T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "tonight at 1am",
+        "Start": 0,
+        "End": 13,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-12-26T01",
+              "type": "datetime",
+              "value": "2019-12-26 01:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back tonight at 2am",
+    "Context": {
+      "ReferenceDateTime": "2019-12-26T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "tonight at 2am",
+        "Start": 13,
+        "End": 26,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-12-26T02",
+              "type": "datetime",
+              "value": "2019-12-26 02:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back tonight around 7",
+    "Context": {
+      "ReferenceDateTime": "2019-12-26T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "tonight around 7",
+        "Start": 13,
+        "End": 28,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-12-26T19",
+              "type": "datetime",
+              "value": "2019-12-26 19:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back tonight around 3",
+    "Context": {
+      "ReferenceDateTime": "2019-12-26T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "tonight around 3",
+        "Start": 13,
+        "End": 28,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-12-26T03",
+              "type": "datetime",
+              "value": "2019-12-26 03:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "When was the previous easter?",
+    "Context": {
+      "ReferenceDateTime": "2019-02-12T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "previous easter",
+        "Start": 13,
+        "End": 27,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-04-01",
+              "type": "date",
+              "value": "2018-04-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "When was the last easter?",
+    "Context": {
+      "ReferenceDateTime": "2019-06-12T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "last easter",
+        "Start": 13,
+        "End": 23,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-04-21",
+              "type": "date",
+              "value": "2019-04-21"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "When was the next easter?",
+    "Context": {
+      "ReferenceDateTime": "2019-02-12T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "next easter",
+        "Start": 13,
+        "End": 23,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-04-21",
+              "type": "date",
+              "value": "2019-04-21"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "When was the following easter?",
+    "Context": {
+      "ReferenceDateTime": "2019-06-12T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "following easter",
+        "Start": 13,
+        "End": 28,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-04-12",
+              "type": "date",
+              "value": "2020-04-12"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back by end of this month",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "by end of this month",
+        "Start": 13,
+        "End": 32,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "Mod": "before-end",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "end": "2016-12-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back before end of this year",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "before end of this year",
+        "Start": 13,
+        "End": 35,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016",
+              "Mod": "before-end",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "end": "2017-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back end of this year",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "end of this year",
+        "Start": 13,
+        "End": 28,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016",
+              "Mod": "end",
+              "type": "daterange",
+              "start": "2016-07-01",
+              "end": "2017-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back after the beginning of March",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "after the beginning of march",
+        "Start": 13,
+        "End": 40,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-03",
+              "Mod": "after-start",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "start": "2016-03-01"
+            },
+            {
+              "timex": "XXXX-03",
+              "Mod": "after-start",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "start": "2017-03-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back before the end of December",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "before the end of december",
+        "Start": 13,
+        "End": 38,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-12",
+              "Mod": "before-end",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "end": "2016-01-01"
+            },
+            {
+              "timex": "XXXX-12",
+              "Mod": "before-end",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "end": "2017-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "We will come back before the twenty-sixth day of the month",
+    "Context": {
+      "ReferenceDateTime": "2020-07-01T12:00:00"
+    },
+    "Results": [
+      {
+        "Text": "before the twenty-sixth day of the month",
+        "Start": 18,
+        "End": 57,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-07-26",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "end": "2020-07-26"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "We will come back after the 15th day of next month",
+    "Context": {
+      "ReferenceDateTime": "2020-07-01T12:00:00"
+    },
+    "Results": [
+      {
+        "Text": "after the 15th day of next month",
+        "Start": 18,
+        "End": 49,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-08-15",
+              "Mod": "after",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "start": "2020-08-15"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "We will come back on the 15th day of next month",
+    "Context": {
+      "ReferenceDateTime": "2020-07-01T12:00:00"
+    },
+    "NotSupportedByDesign": "python, java, javascript",
+    "Results": [
+      {
+        "Text": "the 15th day of next month",
+        "Start": 21,
+        "End": 46,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-08-15",
+              "type": "date",
+              "value": "2020-08-15"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "We will come back after the 15th day of June",
+    "Context": {
+      "ReferenceDateTime": "2020-07-01T12:00:00"
+    },
+    "Results": [
+      {
+        "Text": "after the 15th day of june",
+        "Start": 18,
+        "End": 43,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-06-15",
+              "Mod": "after",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "start": "2020-06-15"
+            },
+            {
+              "timex": "XXXX-06-15",
+              "Mod": "after",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "start": "2021-06-15"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "We will come back on the twenty third day of September",
+    "Context": {
+      "ReferenceDateTime": "2020-07-01T12:00:00"
+    },
+    "NotSupportedByDesign": "python, java, javascript",
+    "Results": [
+      {
+        "Text": "twenty third day of september",
+        "Start": 25,
+        "End": 53,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-09-23",
+              "type": "date",
+              "value": "2019-09-23"
+            },
+            {
+              "timex": "XXXX-09-23",
+              "type": "date",
+              "value": "2020-09-23"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "How many Azure clusters docked till date?",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "till date",
+        "Start": 31,
+        "End": 39,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PRESENT_REF",
+              "type": "daterange",
+              "Mod": "before",
+              "end": "2016-11-07"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "How many Azure clusters docked to date?",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "to date",
+        "Start": 31,
+        "End": 37,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PRESENT_REF",
+              "type": "daterange",
+              "Mod": "before",
+              "end": "2016-11-07"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "How many Azure clusters docked from March to date?",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "from march to date",
+        "Start": 31,
+        "End": 48,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-03-01,2016-11-07,P251D)",
+              "type": "daterange",
+              "start": "2016-03-01",
+              "end": "2016-11-07"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "It will happen on the 17 from 2pm to 4pm",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "the 17 from 2pm to 4pm",
+        "Start": 18,
+        "End": 39,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-XX-17T14,XXXX-XX-17T16,PT2H)",
+              "type": "datetimerange",
+              "start": "2016-10-17 14:00:00",
+              "end": "2016-10-17 16:00:00"
+            },
+            {
+              "timex": "(XXXX-XX-17T14,XXXX-XX-17T16,PT2H)",
+              "type": "datetimerange",
+              "start": "2016-11-17 14:00:00",
+              "end": "2016-11-17 16:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "It will happen on the 17 between 2 and 4pm",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "the 17 between 2 and 4pm",
+        "Start": 18,
+        "End": 41,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-XX-17T14,XXXX-XX-17T16,PT2H)",
+              "type": "datetimerange",
+              "start": "2016-10-17 14:00:00",
+              "end": "2016-10-17 16:00:00"
+            },
+            {
+              "timex": "(XXXX-XX-17T14,XXXX-XX-17T16,PT2H)",
+              "type": "datetimerange",
+              "start": "2016-11-17 14:00:00",
+              "end": "2016-11-17 16:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out between 7 and 9:30 last night",
+    "Context": {
+      "ReferenceDateTime": "2018-06-01T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "between 7 and 9:30 last night",
+        "Start": 12,
+        "End": 40,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2018-05-31T19,2018-05-31T21:30,PT2H30M)",
+              "type": "datetimerange",
+              "start": "2018-05-31 19:00:00",
+              "end": "2018-05-31 21:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "It will happen between 10 and 11:30 this morning",
+    "Context": {
+      "ReferenceDateTime": "2018-05-31T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "between 10 and 11:30 this morning",
+        "Start": 15,
+        "End": 47,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2018-05-31T10,2018-05-31T11:30,PT1H30M)",
+              "type": "datetimerange",
+              "start": "2018-05-31 10:00:00",
+              "end": "2018-05-31 11:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "It will happen next evening between 10:30 and 11:45",
+    "Context": {
+      "ReferenceDateTime": "2018-05-30T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "next evening between 10:30 and 11:45",
+        "Start": 15,
+        "End": 50,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2018-05-31T22:30,2018-05-31T23:45,PT1H15M)",
+              "type": "datetimerange",
+              "start": "2018-05-31 22:30:00",
+              "end": "2018-05-31 23:45:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out between 7 and 9 last night",
+    "Context": {
+      "ReferenceDateTime": "2018-06-01T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "between 7 and 9 last night",
+        "Start": 12,
+        "End": 37,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2018-05-31T19,2018-05-31T21,PT2H)",
+              "type": "datetimerange",
+              "start": "2018-05-31 19:00:00",
+              "end": "2018-05-31 21:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "dinner with mom weekend.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-11T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "weekend",
+        "Start": 16,
+        "End": 22,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-W45-WE",
+              "type": "daterange",
+              "start": "2016-11-12",
+              "end": "2016-11-14"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "dinner with mom the weekend.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-11T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "the weekend",
+        "Start": 16,
+        "End": 26,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-W45-WE",
+              "type": "daterange",
+              "start": "2016-11-12",
+              "end": "2016-11-14"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "dinner with mom any weekend.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-11T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "any weekend",
+        "Start": 16,
+        "End": 26,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1WE",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "dinner with mom all weekends.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-11T00:00:00"
+    },
+    "NotSupported": "javascript, python, java, dotnet",
+    "Results": [
+      {
+        "Text": "all weekends",
+        "Start": 16,
+        "End": 27,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1WE",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out next evening from 7 to 9",
+    "Context": {
+      "ReferenceDateTime": "2018-06-01T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "next evening from 7 to 9",
+        "Start": 12,
+        "End": 35,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2018-06-02T19,2018-06-02T21,PT2H)",
+              "type": "datetimerange",
+              "start": "2018-06-02 19:00:00",
+              "end": "2018-06-02 21:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "They were working between 7 and 9 last morning.",
+    "Context": {
+      "ReferenceDateTime": "2018-06-01T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "between 7 and 9 last morning",
+        "Start": 18,
+        "End": 45,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2018-05-31T07,2018-05-31T09,PT2H)",
+              "type": "datetimerange",
+              "start": "2018-05-31 07:00:00",
+              "end": "2018-05-31 09:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The range is from 2007 to the end of 2008.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "from 2007 to the end of 2008",
+        "Start": 13,
+        "End": 40,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2007-01-01,2009-01-01,P24M)",
+              "type": "daterange",
+              "start": "2007-01-01",
+              "end": "2009-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The range is between 2007 and the end of 2008.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "between 2007 and the end of 2008",
+        "Start": 13,
+        "End": 44,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2007-01-01,2009-01-01,P24M)",
+              "type": "daterange",
+              "start": "2007-01-01",
+              "end": "2009-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "It has been closed from April until the end of June.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "from april until the end of june",
+        "Start": 19,
+        "End": 50,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-04-01,XXXX-07-01,P3M)",
+              "type": "daterange",
+              "start": "2016-04-01",
+              "end": "2016-07-01"
+            },
+            {
+              "timex": "(XXXX-04-01,XXXX-07-01,P3M)",
+              "type": "daterange",
+              "start": "2017-04-01",
+              "end": "2017-07-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The range is from 2007 to the start of 2008.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "from 2007 to the start of 2008",
+        "Start": 13,
+        "End": 42,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2007-01-01,2008-01-01,P12M)",
+              "type": "daterange",
+              "start": "2007-01-01",
+              "end": "2008-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The range is between the end of 2007 and the end of 2008.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "between the end of 2007 and the end of 2008",
+        "Start": 13,
+        "End": 55,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2008-01-01,2009-01-01,P12M)",
+              "type": "daterange",
+              "start": "2008-01-01",
+              "end": "2009-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The range is from the middle of 2007 to the end of 2008.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "from the middle of 2007 to the end of 2008",
+        "Start": 13,
+        "End": 54,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2007-07-02,2009-01-01,P18M)",
+              "type": "daterange",
+              "start": "2007-07-02",
+              "end": "2009-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The range is from the end of March to the middle of September.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "from the end of march to the middle of september",
+        "Start": 13,
+        "End": 60,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-04-01,XXXX-09-16,P5M)",
+              "type": "daterange",
+              "start": "2016-04-01",
+              "end": "2016-09-16"
+            },
+            {
+              "timex": "(XXXX-04-01,XXXX-09-16,P5M)",
+              "type": "daterange",
+              "start": "2017-04-01",
+              "end": "2017-09-16"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The range is between the middle of March and the end of September.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "between the middle of march and the end of september",
+        "Start": 13,
+        "End": 64,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-03-16,XXXX-10-01,P7M)",
+              "type": "daterange",
+              "start": "2016-03-16",
+              "end": "2016-10-01"
+            },
+            {
+              "timex": "(XXXX-03-16,XXXX-10-01,P7M)",
+              "type": "daterange",
+              "start": "2017-03-16",
+              "end": "2017-10-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "It will happen this working week",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "this working week",
+        "Start": 15,
+        "End": 31,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-W26",
+              "type": "daterange",
+              "start": "2018-06-25",
+              "end": "2018-06-30"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "It will happen on next workweek",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "next workweek",
+        "Start": 18,
+        "End": 30,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-W27",
+              "type": "daterange",
+              "start": "2018-07-02",
+              "end": "2018-07-07"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I am feeling sick from around 1pm",
+    "Context": {
+      "ReferenceDateTime": "2018-08-17T15:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "around 1pm",
+        "Start": 23,
+        "End": 32,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T13",
+              "Mod": "approx",
+              "type": "timerange",
+              "value": "13:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I am feeling sick before around 2pm today",
+    "Context": {
+      "ReferenceDateTime": "2018-08-17T15:00:00"
+    },
+    "NotSupported": "java, javascript",
+    "Results": [
+      {
+        "Text": "before around 2pm today",
+        "Start": 18,
+        "End": 40,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-08-17T14",
+              "Mod": "before-approx",
+              "type": "datetimerange",
+              "end": "2018-08-17 14:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I am feeling sick after around 3:30pm",
+    "Context": {
+      "ReferenceDateTime": "2018-08-17T15:00:00"
+    },
+    "NotSupported": "java, javascript",
+    "Results": [
+      {
+        "Text": "after around 3:30pm",
+        "Start": 18,
+        "End": 36,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T15:30",
+              "Mod": "after-approx",
+              "type": "timerange",
+              "start": "15:30:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I am feeling sick around 1pm",
+    "Context": {
+      "ReferenceDateTime": "2018-08-17T15:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "around 1pm",
+        "Start": 18,
+        "End": 27,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T13",
+              "Mod": "approx",
+              "type": "timerange",
+              "value": "13:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The range is from 2014",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2014",
+        "Start": 18,
+        "End": 21,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2014",
+              "type": "daterange",
+              "start": "2014-01-01",
+              "end": "2015-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The range is from 2015 and 2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2015",
+        "Start": 18,
+        "End": 21,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015",
+              "type": "daterange",
+              "start": "2015-01-01",
+              "end": "2016-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2016",
+        "Start": 27,
+        "End": 30,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016",
+              "type": "daterange",
+              "start": "2016-01-01",
+              "end": "2017-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "after January 1, 2007 and no later than January 1, 2010",
+    "Context": {
+      "ReferenceDateTime": "2019-12-15T01:00:00"
+    },
+    "Results": [
+      {
+        "Text": "after january 1, 2007",
+        "Start": 0,
+        "End": 20,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2007-01-01",
+              "Mod": "after",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "start": "2007-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "no later than january 1, 2010",
+        "Start": 26,
+        "End": 54,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2010-01-01",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "end": "2010-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Since January 1, 2010 or no later than January 1, 2007",
+    "Context": {
+      "ReferenceDateTime": "2019-12-15T01:00:00"
+    },
+    "Results": [
+      {
+        "Text": "since january 1, 2010",
+        "Start": 0,
+        "End": 20,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2010-01-01",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "start": "2010-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "no later than january 1, 2007",
+        "Start": 25,
+        "End": 53,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2007-01-01",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "end": "2007-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "It will happen 3 days from Tuesday.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 days from tuesday",
+        "Start": 15,
+        "End": 33,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-11",
+              "type": "date",
+              "value": "2016-11-11"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "It will happen 2 weeks from January 15.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "2 weeks from january 15",
+        "Start": 15,
+        "End": 37,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-01-29",
+              "type": "date",
+              "value": "2017-01-29"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "It will happen 4 months from tomorrow.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "4 months from tomorrow",
+        "Start": 15,
+        "End": 36,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-03-08",
+              "type": "date",
+              "value": "2017-03-08"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "It will happen 16 days from 01/02/2018.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "16 days from 01/02/2018",
+        "Start": 15,
+        "End": 37,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-01-18",
+              "type": "date",
+              "value": "2018-01-18"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "It will end two months after next Friday.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "two months after next friday",
+        "Start": 12,
+        "End": 39,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-01-18",
+              "type": "date",
+              "value": "2017-01-18"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "It will happen 3 days after January 12th.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 days after january 12th",
+        "Start": 15,
+        "End": 39,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-01-15",
+              "type": "date",
+              "value": "2017-01-15"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "It happened 2 weeks before May 13 1999.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "2 weeks before may 13 1999",
+        "Start": 12,
+        "End": 37,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1999-04-29",
+              "type": "date",
+              "value": "1999-04-29"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll leave every day at 7:13 p.m.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "every day",
+        "Start": 11,
+        "End": 19,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1D",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "7:13 p.m.",
+        "Start": 24,
+        "End": 32,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T19:13",
+              "type": "time",
+              "value": "19:13:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll leave every evening at 7:13 p.m.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "every evening at 7:13 p.m.",
+        "Start": 11,
+        "End": 36,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T19:13",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "What happened on Easter Monday at 10:30 am?",
+    "Context": {
+      "ReferenceDateTime": "2019-08-05T00:00:00"
+    },
+    "NotSupported": "python, java, javascript",
+    "Results": [
+      {
+        "Text": "easter monday",
+        "Start": 17,
+        "End": 29,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-04-22",
+              "type": "date",
+              "value": "2019-04-22"
+            },
+            {
+              "timex": "XXXX-04-22",
+              "type": "date",
+              "value": "2020-04-13"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "10:30 am",
+        "Start": 34,
+        "End": 41,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T10:30",
+              "type": "time",
+              "value": "10:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "which films are shown on christmas eve at 6 p.m.?",
+    "Context": {
+      "ReferenceDateTime": "2019-08-05T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "christmas eve",
+        "Start": 25,
+        "End": 37,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-12-24",
+              "type": "date",
+              "value": "2018-12-24"
+            },
+            {
+              "timex": "XXXX-12-24",
+              "type": "date",
+              "value": "2019-12-24"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "6 p.m.",
+        "Start": 42,
+        "End": 47,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T18",
+              "type": "time",
+              "value": "18:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "dinner with mom weekends.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-11T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "weekends",
+        "Start": 16,
+        "End": 23,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1WE",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out Tuesday from 2:00 to 2:30 pm",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "java, javascript",
+    "Results": [
+      {
+        "Text": "tuesday from 2:00 to 2:30 pm",
+        "Start": 12,
+        "End": 39,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-WXX-2T14:00,XXXX-WXX-2T14:30,PT30M)",
+              "type": "datetimerange",
+              "start": "2016-11-01 14:00:00",
+              "end": "2016-11-01 14:30:00"
+            },
+            {
+              "timex": "(XXXX-WXX-2T14:00,XXXX-WXX-2T14:30,PT30M)",
+              "type": "datetimerange",
+              "start": "2016-11-08 14:00:00",
+              "end": "2016-11-08 14:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out Tuesday at 2:00 - 2:30 pm",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "java, javascript",
+    "Results": [
+      {
+        "Text": "tuesday at 2:00 - 2:30 pm",
+        "Start": 12,
+        "End": 36,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-WXX-2T14:00,XXXX-WXX-2T14:30,PT30M)",
+              "type": "datetimerange",
+              "start": "2016-11-01 14:00:00",
+              "end": "2016-11-01 14:30:00"
+            },
+            {
+              "timex": "(XXXX-WXX-2T14:00,XXXX-WXX-2T14:30,PT30M)",
+              "type": "datetimerange",
+              "start": "2016-11-08 14:00:00",
+              "end": "2016-11-08 14:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out on December 12th at 4 - 6:30 pm",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "java, javascript",
+    "Results": [
+      {
+        "Text": "december 12th at 4 - 6:30 pm",
+        "Start": 15,
+        "End": 42,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-12-12T16,XXXX-12-12T18:30,PT2H30M)",
+              "type": "datetimerange",
+              "start": "2015-12-12 16:00:00",
+              "end": "2015-12-12 18:30:00"
+            },
+            {
+              "timex": "(XXXX-12-12T16,XXXX-12-12T18:30,PT2H30M)",
+              "type": "datetimerange",
+              "start": "2016-12-12 16:00:00",
+              "end": "2016-12-12 18:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out at 2:00 - 2:30 pm on Tuesday",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "java, javascript",
+    "Results": [
+      {
+        "Text": "2:00 - 2:30 pm on tuesday",
+        "Start": 15,
+        "End": 39,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-WXX-2T14:00,XXXX-WXX-2T14:30,PT30M)",
+              "type": "datetimerange",
+              "start": "2016-11-01 14:00:00",
+              "end": "2016-11-01 14:30:00"
+            },
+            {
+              "timex": "(XXXX-WXX-2T14:00,XXXX-WXX-2T14:30,PT30M)",
+              "type": "datetimerange",
+              "start": "2016-11-08 14:00:00",
+              "end": "2016-11-08 14:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out from 2:30 to 2:15 pm",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "java, javascript",
+    "Results": [
+      {
+        "Text": "from 2:30 to 2:15 pm",
+        "Start": 12,
+        "End": 31,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(T02:30,T14:15,PT11H45M)",
+              "type": "timerange",
+              "start": "02:30:00",
+              "end": "14:15:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "It happened the year before 2015",
+    "Context": {
+      "ReferenceDateTime": "2018-11-08T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "the year",
+        "Start": 12,
+        "End": 19,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018",
+              "type": "daterange",
+              "start": "2018-01-01",
+              "end": "2019-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "before 2015",
+        "Start": 21,
+        "End": 31,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "end": "2015-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "It happened 2 weeks before Christmas.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "2 weeks before christmas",
+        "Start": 12,
+        "End": 35,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-12-11",
+              "type": "date",
+              "value": "2016-12-11"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "It happened three months after Easter.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "three months after easter",
+        "Start": 12,
+        "End": 36,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-07-16",
+              "type": "date",
+              "value": "2017-07-16"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "We will meet 5 days before new year.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "5 days before new year",
+        "Start": 13,
+        "End": 34,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-12-27",
+              "type": "date",
+              "value": "2016-12-27"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Show sales in two thousand and twenty",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "two thousand and twenty",
+        "Start": 14,
+        "End": 36,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020",
+              "type": "daterange",
+              "start": "2020-01-01",
+              "end": "2021-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "They left in nineteen ninety six and came back in two thousand and fifteen",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "nineteen ninety six",
+        "Start": 13,
+        "End": 31,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1996",
+              "type": "daterange",
+              "start": "1996-01-01",
+              "end": "1997-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "two thousand and fifteen",
+        "Start": 50,
+        "End": 73,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015",
+              "type": "daterange",
+              "start": "2015-01-01",
+              "end": "2016-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "We've reached the end of today",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "the end of today",
+        "Start": 14,
+        "End": 29,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-06-26T23:59:59",
+              "type": "datetime",
+              "value": "2018-06-26 23:59:59"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "We've reached the end of the line",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "Results": []
+  },
+  {
+    "Input": "We've reached end of the line",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "Results": []
+  },
+  {
+    "Input": "end of",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "Results": []
+  },
+  {
+    "Input": "end of the",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "Results": []
+  },
+  {
+    "Input": "Show sales all week",
+    "Context": {
+      "ReferenceDateTime": "2018-07-02T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "all week",
+        "Start": 11,
+        "End": 18,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1W",
+              "type": "duration",
+              "value": "604800"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Show sales in the first week",
+    "Context": {
+      "ReferenceDateTime": "2011-07-02T00:00:00"
+    },
+    "Results": []
+  },
+  {
+    "Input": "Show sales in the 1st week",
+    "Context": {
+      "ReferenceDateTime": "2011-07-02T00:00:00"
+    },
+    "Results": []
+  },
+  {
+    "Input": "Feb 29",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "feb 29",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-02-29",
+              "type": "date",
+              "value": "2016-02-29"
+            },
+            {
+              "timex": "XXXX-02-29",
+              "type": "date",
+              "value": "2020-02-29"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "2/29",
+    "Context": {
+      "ReferenceDateTime": "2019-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2/29",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-02-29",
+              "type": "date",
+              "value": "2016-02-29"
+            },
+            {
+              "timex": "XXXX-02-29",
+              "type": "date",
+              "value": "2020-02-29"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "Feb 29th",
+    "Context": {
+      "ReferenceDateTime": "2020-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "feb 29th",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-02-29",
+              "type": "date",
+              "value": "2020-02-29"
+            },
+            {
+              "timex": "XXXX-02-29",
+              "type": "date",
+              "value": "2024-02-29"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "Feb 30",
+    "Context": {
+      "ReferenceDateTime": "2020-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "feb 30",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-02-30",
+              "type": "date",
+              "value": "not resolved"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "2/29/2019",
+    "Context": {
+      "ReferenceDateTime": "2020-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2/29/2019",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-02-29",
+              "type": "date",
+              "value": "not resolved"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "2/29/2020",
+    "Context": {
+      "ReferenceDateTime": "2020-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2/29/2020",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-02-29",
+              "type": "date",
+              "value": "2020-02-29"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "Feb 28th to March 1st",
+    "Context": {
+      "ReferenceDateTime": "2019-09-18T18:00:00"
+    },
+    "Results": [
+      {
+        "Text": "feb 28th to march 1st",
+        "Start": 0,
+        "End": 20,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-02-28,XXXX-03-01,P1D)",
+              "type": "daterange",
+              "start": "2019-02-28",
+              "end": "2019-03-01"
+            },
+            {
+              "timex": "(XXXX-02-28,XXXX-03-01,P2D)",
+              "type": "daterange",
+              "start": "2020-02-28",
+              "end": "2020-03-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2/29-3/1",
+    "Context": {
+      "ReferenceDateTime": "2019-09-18T18:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2/29-3/1",
+        "Start": 0,
+        "End": 7,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-02-29,XXXX-03-01,P1D)",
+              "type": "daterange",
+              "start": "2016-02-29",
+              "end": "2016-03-01"
+            },
+            {
+              "timex": "(XXXX-02-29,XXXX-03-01,P1D)",
+              "type": "daterange",
+              "start": "2020-02-29",
+              "end": "2020-03-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2/29-3/1/2019",
+    "Context": {
+      "ReferenceDateTime": "2019-09-18T18:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2/29-3/1/2019",
+        "Start": 0,
+        "End": 12,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-02-29,2019-03-01,PXD)",
+              "type": "daterange",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Pierre de Fermat died otd.",
+    "Context": {
+      "ReferenceDateTime": "2021-01-15T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "otd",
+        "Start": 22,
+        "End": 24,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-01-15",
+              "type": "date",
+              "value": "2021-01-15"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I have a secure enough supply line, at the minute I'm ok.",
+    "Context": {
+      "ReferenceDateTime": "2021-01-15T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "at the minute",
+        "Start": 36,
+        "End": 48,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PRESENT_REF",
+              "type": "datetime",
+              "value": "2021-01-15 00:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Feb 2th 9:00 am",
+    "Context": {
+      "ReferenceDateTime": "2021-01-15T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "feb 2th 9:00 am",
+        "Start": 0,
+        "End": 14,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-02-02T09:00",
+              "type": "datetime",
+              "value": "2020-02-02 09:00:00"
+            },
+            {
+              "timex": "XXXX-02-02T09:00",
+              "type": "datetime",
+              "value": "2021-02-02 09:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "it happened last night at 8.",
+    "Context": {
+      "ReferenceDateTime": "2018-08-16T10:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "last night at 8",
+        "Start": 12,
+        "End": 26,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-08-15T20",
+              "type": "datetime",
+              "value": "2018-08-15 20:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "My temperature was 37.1 in the morning",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "in the morning",
+        "Start": 24,
+        "End": 37,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TMO",
+              "type": "timerange",
+              "start": "08:00:00",
+              "end": "12:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Labs were notable for a BUN/Cr of 30/4.85, troponin 0.182",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": []
+  },
+  {
+    "Input": "I'll go back Sep-23-2020.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "sep-23-2020",
+        "Start": 13,
+        "End": 23,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-09-23",
+              "type": "date",
+              "value": "2020-09-23"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back September-2020-23.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "september-2020-23",
+        "Start": 13,
+        "End": 29,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-09-23",
+              "type": "date",
+              "value": "2020-09-23"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back 2020/23/Sep.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2020/23/sep",
+        "Start": 13,
+        "End": 23,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-09-23",
+              "type": "date",
+              "value": "2020-09-23"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "i'll go back 2020/Sep/23",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2020/sep/23",
+        "Start": 13,
+        "End": 23,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-09-23",
+              "type": "date",
+              "value": "2020-09-23"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "i'll go back 23/Sep/2020",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "23/sep/2020",
+        "Start": 13,
+        "End": 23,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-09-23",
+              "type": "date",
+              "value": "2020-09-23"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "i'll go back 23-2020-September",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "23-2020-september",
+        "Start": 13,
+        "End": 29,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-09-23",
+              "type": "date",
+              "value": "2020-09-23"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "i'll go back friday 23 at 4",
+    "Context": {
+      "ReferenceDateTime": "2019-08-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "friday 23 at 4",
+        "Start": 13,
+        "End": 26,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-5T04",
+              "type": "datetime",
+              "value": "2018-11-23 04:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-5T04",
+              "type": "datetime",
+              "value": "2019-08-23 04:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-5T16",
+              "type": "datetime",
+              "value": "2018-11-23 16:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-5T16",
+              "type": "datetime",
+              "value": "2019-08-23 16:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Let's meet at friday the 26th at 4",
+    "Context": {
+      "ReferenceDateTime": "2021-03-15T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "friday the 26th at 4",
+        "Start": 14,
+        "End": 33,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-03-26T04",
+              "type": "datetime",
+              "value": "2021-03-26 04:00:00"
+            },
+            {
+              "timex": "2021-03-26T16",
+              "type": "datetime",
+              "value": "2021-03-26 16:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Let's meet at friday the 26th around 4",
+    "Context": {
+      "ReferenceDateTime": "2021-03-15T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "friday the 26th around 4",
+        "Start": 14,
+        "End": 37,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-03-26T04",
+              "type": "datetime",
+              "value": "2021-03-26 04:00:00"
+            },
+            {
+              "timex": "2021-03-26T16",
+              "type": "datetime",
+              "value": "2021-03-26 16:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Does friday at 4pm work?",
+    "Context": {
+      "ReferenceDateTime": "2021-03-15T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "friday at 4pm",
+        "Start": 5,
+        "End": 17,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-5T16",
+              "type": "datetime",
+              "value": "2021-03-12 16:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-5T16",
+              "type": "datetime",
+              "value": "2021-03-19 16:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "circa 5 in the morning",
+    "Context": {
+      "ReferenceDateTime": "2021-03-15T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "circa 5 in the morning",
+        "Start": 0,
+        "End": 21,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T05",
+              "Mod": "approx",
+              "type": "timerange",
+              "value": "05:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back 12/12/30.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "12/12/30",
+        "Start": 13,
+        "End": 20,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XX30-12-12",
+              "type": "date",
+              "value": "1930-12-12"
+            },
+            {
+              "timex": "XX30-12-12",
+              "type": "date",
+              "value": "2030-12-12"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back 11/12/35.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "11/12/35",
+        "Start": 13,
+        "End": 20,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XX35-11-12",
+              "type": "date",
+              "value": "1935-11-12"
+            },
+            {
+              "timex": "XX35-11-12",
+              "type": "date",
+              "value": "2035-11-12"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back 23/08/39.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "23/08/39",
+        "Start": 13,
+        "End": 20,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XX39-08-23",
+              "type": "date",
+              "value": "1939-08-23"
+            },
+            {
+              "timex": "XX39-08-23",
+              "type": "date",
+              "value": "2039-08-23"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back 03/18/40.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "03/18/40",
+        "Start": 13,
+        "End": 20,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1940-03-18",
+              "type": "date",
+              "value": "1940-03-18"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "$DEC farming is coming to $CUB Finance!",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": []
+  },
+  {
+    "Input": "In dec $DEC farming is coming to $CUB Finance!",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "dec",
+        "Start": 3,
+        "End": 5,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-12",
+              "type": "daterange",
+              "start": "2015-12-01",
+              "end": "2016-01-01"
+            },
+            {
+              "timex": "XXXX-12",
+              "type": "daterange",
+              "start": "2016-12-01",
+              "end": "2017-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back 9am on Tuesday",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "9am on tuesday",
+        "Start": 13,
+        "End": 26,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-2T09",
+              "type": "datetime",
+              "value": "2016-11-01 09:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-2T09",
+              "type": "datetime",
+              "value": "2016-11-08 09:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tune in tomorrow, 13/04/21, at 7 PM CET for episode 3 of Decentralized",
+    "Context": {
+      "ReferenceDateTime": "2018-06-06T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "tomorrow, 13/04/21, at 7 pm",
+        "Start": 8,
+        "End": 34,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-04-13T19",
+              "type": "datetime",
+              "value": "2021-04-13 19:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The sun will set tomorrow at seven twenty-seven",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "tomorrow at seven twenty-seven",
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-08T07:27",
+              "type": "datetime",
+              "value": "2016-11-08 07:27:00"
+            },
+            {
+              "timex": "2016-11-08T19:27",
+              "type": "datetime",
+              "value": "2016-11-08 19:27:00"
+            }
+          ]
+        },
+        "Start": 17,
+        "End": 46
+      }
+    ]
+  },
+  {
+    "Input": "The sun will set tomorrow at six forty-three minutes",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "tomorrow at six forty-three minutes",
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-08T06:43",
+              "type": "datetime",
+              "value": "2016-11-08 06:43:00"
+            },
+            {
+              "timex": "2016-11-08T18:43",
+              "type": "datetime",
+              "value": "2016-11-08 18:43:00"
+            }
+          ]
+        },
+        "Start": 17,
+        "End": 51
+      }
+    ]
+  },
+  {
+    "Input": "The sun will set tomorrow at thirty-six minutes past eight",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "tomorrow at thirty-six minutes past eight",
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-08T08:36",
+              "type": "datetime",
+              "value": "2016-11-08 08:36:00"
+            },
+            {
+              "timex": "2016-11-08T20:36",
+              "type": "datetime",
+              "value": "2016-11-08 20:36:00"
+            }
+          ]
+        },
+        "Start": 17,
+        "End": 57
+      }
+    ]
+  },
+  {
+    "Input": "Our 24th retweet competition #WINNER has been randomly selected! Congratulations, @dreaming_70! You have won $100 in $ETH. This tweet begins (and counts towards) the next day of the retweet competition. Winners will be selected daily until April 27th",
+    "Context": {
+      "ReferenceDateTime": "2018-05-22T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "the next day",
+        "Start": 162,
+        "End": 173,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-05-23",
+              "type": "date",
+              "value": "2018-05-23"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "daily",
+        "Start": 228,
+        "End": 232,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1D",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "until april 27th",
+        "Start": 234,
+        "End": 249,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-04-27",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "end": "2018-04-27"
+            },
+            {
+              "timex": "XXXX-04-27",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "end": "2019-04-27"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Can we meet now",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "now",
+        "Start": 12,
+        "End": 14,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PRESENT_REF",
+              "type": "datetime",
+              "value": "2016-11-07 00:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Let's go right now",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, python",
+    "Results": [
+      {
+        "Text": "right now",
+        "Start": 9,
+        "End": 17,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PRESENT_REF",
+              "type": "datetime",
+              "value": "2016-11-07 00:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Can you meet at the moment?",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, python",
+    "Results": [
+      {
+        "Text": "at the moment",
+        "Start": 13,
+        "End": 25,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PRESENT_REF",
+              "type": "datetime",
+              "value": "2016-11-07 00:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "He's not here at present.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, python",
+    "Results": [
+      {
+        "Text": "at present",
+        "Start": 14,
+        "End": 23,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PRESENT_REF",
+              "type": "datetime",
+              "value": "2016-11-07 00:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "We're working on that at the present time.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, python",
+    "Results": [
+      {
+        "Text": "at the present time",
+        "Start": 22,
+        "End": 40,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PRESENT_REF",
+              "type": "datetime",
+              "value": "2016-11-07 00:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "We're not open at this time.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, python",
+    "Results": [
+      {
+        "Text": "at this time",
+        "Start": 15,
+        "End": 26,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PRESENT_REF",
+              "type": "datetime",
+              "value": "2016-11-07 00:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be offline for the hour",
+    "Context": {
+      "ReferenceDateTime": "2021-05-20T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "the hour",
+        "Start": 20,
+        "End": 27,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT1H",
+              "type": "duration",
+              "value": "3600"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The same story played out in Kolkata, the capital city of the eastern state of West Bengal, a fortnight later.",
+    "Context": {
+      "ReferenceDateTime": "2021-05-20T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "a fortnight later",
+        "Start": 92,
+        "End": 108,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-06-03",
+              "type": "date",
+              "value": "2021-06-03"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "in a fortnight’s time",
+    "Context": {
+      "ReferenceDateTime": "2021-05-20T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "in a fortnight",
+        "Start": 0,
+        "End": 13,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-06-03",
+              "type": "date",
+              "value": "2021-06-03"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'm unavailable the fortnight",
+    "Context": {
+      "ReferenceDateTime": "2021-05-20T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "the fortnight",
+        "Start": 16,
+        "End": 28,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2021-05-17,2021-05-31,P2W)",
+              "type": "daterange",
+              "start": "2021-05-17",
+              "end": "2021-05-31"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Mumbai has seen the highest number of daily infections over the past fortnight",
+    "Context": {
+      "ReferenceDateTime": "2021-05-20T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "daily",
+        "Start": 38,
+        "End": 42,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1D",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "past fortnight",
+        "Start": 64,
+        "End": 77,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2021-05-03,2021-05-17,P2W)",
+              "type": "daterange",
+              "start": "2021-05-03",
+              "end": "2021-05-17"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "We hope to leave in the next fortnight.",
+    "Context": {
+      "ReferenceDateTime": "2021-05-20T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "next fortnight",
+        "Start": 24,
+        "End": 37,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2021-05-31,2021-06-14,P2W)",
+              "type": "daterange",
+              "start": "2021-05-31",
+              "end": "2021-06-14"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Latitude: 40.1693, 1666.90125 BRL",
+    "Context": {
+      "ReferenceDateTime": "2021-05-20T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": []
+  },
+  {
+    "Input": "I'll be back within 5 minutes",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "within 5 minutes",
+        "Start": 13,
+        "End": 28,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-11-07T00:00:00,2016-11-07T00:05:00,PT5M)",
+              "type": "datetimerange",
+              "start": "2016-11-07 00:00:00",
+              "end": "2016-11-07 00:05:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be back in 3 min",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "in 3 min",
+        "Start": 13,
+        "End": 20,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-07T00:03:00",
+              "type": "datetime",
+              "value": "2016-11-07 00:03:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be back 3 minutes from now",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 minutes from now",
+        "Start": 13,
+        "End": 30,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-07T00:03:00",
+              "type": "datetime",
+              "value": "2016-11-07 00:03:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be back within 3 min",
+    "Context": {
+      "ReferenceDateTime": "2019-07-30T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "within 3 min",
+        "Start": 13,
+        "End": 24,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-07-30T00:00:00,2019-07-30T00:03:00,PT3M)",
+              "type": "datetimerange",
+              "start": "2019-07-30 00:00:00",
+              "end": "2019-07-30 00:03:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be back from now until 3 min later",
+    "Context": {
+      "ReferenceDateTime": "2019-07-30T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "from now until 3 min later",
+        "Start": 13,
+        "End": 38,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(PRESENT_REF,2019-07-30T00:03:00,PT3M)",
+              "type": "datetimerange",
+              "start": "2019-07-30 00:00:00",
+              "end": "2019-07-30 00:03:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be back within the next day and 5 hours",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "within the next day and 5 hours",
+        "Start": 13,
+        "End": 43,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-11-07T16:12:00,2016-11-08T21:12:00,P1DT5H)",
+              "type": "datetimerange",
+              "start": "2016-11-07 16:12:00",
+              "end": "2016-11-08 21:12:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "let's meet in the daytime",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "in the daytime",
+        "Start": 11,
+        "End": 24,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TDT",
+              "type": "timerange",
+              "start": "08:00:00",
+              "end": "18:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "they were working in the night-time",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "in the night-time",
+        "Start": 18,
+        "End": 34,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TNT",
+              "type": "timerange",
+              "start": "00:00:00",
+              "end": "08:00:00"
             }
           ]
         }

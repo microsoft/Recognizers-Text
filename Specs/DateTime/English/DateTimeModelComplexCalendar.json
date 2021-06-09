@@ -2888,6 +2888,7 @@
     "Context": {
       "ReferenceDateTime": "2018-06-19T00:00:00"
     },
+    "Comment": "ET by default resolves to standard time, not daylight. Returning both options is in the roadmap.",
     "NotSupported": "python, javascript",
     "Results": [
       {
@@ -2915,18 +2916,18 @@
             {
               "timex": "(XXXX-01-16T08:30,XXXX-01-16T09,PT30M)",
               "type": "datetimerange",
-              "timezone": "UTC-04:00",
+              "timezone": "UTC-05:00",
               "timezoneText": "et",
-              "utcOffsetMins": "-240",
+              "utcOffsetMins": "-300",
               "start": "2018-01-16 08:30:00",
               "end": "2018-01-16 09:00:00"
             },
             {
               "timex": "(XXXX-01-16T08:30,XXXX-01-16T09,PT30M)",
               "type": "datetimerange",
-              "timezone": "UTC-04:00",
+              "timezone": "UTC-05:00",
               "timezoneText": "et",
-              "utcOffsetMins": "-240",
+              "utcOffsetMins": "-300",
               "start": "2019-01-16 08:30:00",
               "end": "2019-01-16 09:00:00"
             }
@@ -2940,6 +2941,7 @@
     "Context": {
       "ReferenceDateTime": "2018-06-19T00:00:00"
     },
+    "Comment": "PT by default resolves to standard time, not daylight. Returning both options is in the roadmap.",
     "NotSupported": "python, javascript",
     "Results": [
       {
@@ -2967,9 +2969,9 @@
             {
               "timex": "2018-06-20T13",
               "type": "datetime",
-              "timezone": "UTC-07:00",
+              "timezone": "UTC-08:00",
               "timezoneText": "pt",
-              "utcOffsetMins": "-420",
+              "utcOffsetMins": "-480",
               "value": "2018-06-20 13:00:00"
             }
           ]
@@ -2982,6 +2984,7 @@
     "Context": {
       "ReferenceDateTime": "2018-06-19T00:00:00"
     },
+    "Comment": "Eastern by default resolves to standard time, not daylight. Returning both options is in the roadmap.",
     "NotSupported": "python, javascript",
     "Results": [
       {
@@ -3039,17 +3042,17 @@
             {
               "timex": "XXXX-WXX-3T19",
               "type": "datetime",
-              "timezone": "UTC-04:00",
+              "timezone": "UTC-05:00",
               "timezoneText": "eastern",
-              "utcOffsetMins": "-240",
+              "utcOffsetMins": "-300",
               "value": "2018-06-13 19:00:00"
             },
             {
               "timex": "XXXX-WXX-3T19",
               "type": "datetime",
-              "timezone": "UTC-04:00",
+              "timezone": "UTC-05:00",
               "timezoneText": "eastern",
-              "utcOffsetMins": "-240",
+              "utcOffsetMins": "-300",
               "value": "2018-06-20 19:00:00"
             }
           ]
@@ -3062,6 +3065,7 @@
     "Context": {
       "ReferenceDateTime": "2018-06-19T00:00:00"
     },
+    "Comment": "Pacific by default resolves to standard time, not daylight. Returning both options is in the roadmap.",
     "NotSupported": "python, javascript",
     "Results": [
       {
@@ -3104,6 +3108,7 @@
     "Context": {
       "ReferenceDateTime": "2018-06-19T00:00:00"
     },
+    "Comment": "Central by default resolves to standard time, not daylight. Returning both options is in the roadmap.",
     "NotSupported": "python, javascript",
     "Results": [
       {
@@ -3132,9 +3137,9 @@
               "timex": "2018-06-19T11:00",
               "Mod": "after",
               "type": "datetimerange",
-              "timezone": "UTC-05:00",
+              "timezone": "UTC-06:00",
               "timezoneText": "central",
-              "utcOffsetMins": "-300",
+              "utcOffsetMins": "-360",
               "start": "2018-06-19 11:00:00",
               "sourceEntity": "datetimepoint"
             }
@@ -3148,6 +3153,7 @@
     "Context": {
       "ReferenceDateTime": "2018-06-19T00:00:00"
     },
+    "Comment": "Mountain by default resolves to standard time, not daylight. Returning both options is in the roadmap.",
     "NotSupported": "python, javascript",
     "Results": [
       {
@@ -3176,9 +3182,9 @@
               "timex": "2018-06-19T11:00",
               "Mod": "after",
               "type": "datetimerange",
-              "timezone": "UTC-06:00",
+              "timezone": "UTC-07:00",
               "timezoneText": "mountain",
-              "utcOffsetMins": "-360",
+              "utcOffsetMins": "-420",
               "start": "2018-06-19 11:00:00",
               "sourceEntity": "datetimepoint"
             }
@@ -3607,7 +3613,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "3 minutes",
@@ -3625,18 +3631,16 @@
         }
       },
       {
-        "Text": "from today",
-        "Start": 22,
+        "Text": "today",
+        "Start": 27,
         "End": 31,
-        "TypeName": "datetimeV2.daterange",
+        "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
             {
               "timex": "2018-05-29",
-              "Mod": "since",
-              "type": "daterange",
-              "sourceEntity": "datetimepoint",
-              "start": "2018-05-29"
+              "type": "date",
+              "value": "2018-05-29"
             }
           ]
         }
@@ -4565,6 +4569,7 @@
     "Context": {
       "ReferenceDateTime": "2018-07-20T06:00:00"
     },
+    "Comment": "PT by default resolves to standard time, not daylight. Returning both options is in the roadmap.",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -4578,18 +4583,18 @@
               "timex": "XXXX-WXX-3T15",
               "Mod": "after",
               "type": "datetimerange",
-              "timezone": "UTC-07:00",
+              "timezone": "UTC-08:00",
               "timezoneText": "pt",
-              "utcOffsetMins": "-420",
+              "utcOffsetMins": "-480",
               "start": "2018-07-18 15:00:00"
             },
             {
               "timex": "XXXX-WXX-3T15",
               "Mod": "after",
               "type": "datetimerange",
-              "timezone": "UTC-07:00",
+              "timezone": "UTC-08:00",
               "timezoneText": "pt",
-              "utcOffsetMins": "-420",
+              "utcOffsetMins": "-480",
               "start": "2018-07-25 15:00:00"
             }
           ]
@@ -4606,18 +4611,18 @@
               "timex": "XXXX-WXX-4T13:30",
               "Mod": "after",
               "type": "datetimerange",
-              "timezone": "UTC-07:00",
+              "timezone": "UTC-08:00",
               "timezoneText": "pt",
-              "utcOffsetMins": "-420",
+              "utcOffsetMins": "-480",
               "start": "2018-07-19 13:30:00"
             },
             {
               "timex": "XXXX-WXX-4T13:30",
               "Mod": "after",
               "type": "datetimerange",
-              "timezone": "UTC-07:00",
+              "timezone": "UTC-08:00",
               "timezoneText": "pt",
-              "utcOffsetMins": "-420",
+              "utcOffsetMins": "-480",
               "start": "2018-07-26 13:30:00"
             }
           ]
@@ -4655,6 +4660,43 @@
               "timezone": "UTC-08:00",
               "timezoneText": "pst",
               "utcOffsetMins": "-480",
+              "start": "2018-07-23 15:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Can we meet monday after 3pm PDT.",
+    "Context": {
+      "ReferenceDateTime": "2018-07-20T06:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "monday after 3pm pdt",
+        "Start": 12,
+        "End": 31,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-1T15",
+              "Mod": "after",
+              "type": "datetimerange",
+              "timezone": "UTC-07:00",
+              "timezoneText": "pdt",
+              "utcOffsetMins": "-420",
+              "start": "2018-07-16 15:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-1T15",
+              "Mod": "after",
+              "type": "datetimerange",
+              "timezone": "UTC-07:00",
+              "timezoneText": "pdt",
+              "utcOffsetMins": "-420",
               "start": "2018-07-23 15:00:00"
             }
           ]
@@ -4796,6 +4838,7 @@
     "Context": {
       "ReferenceDateTime": "2018-07-30T20:00:00"
     },
+    "Comment": "PT by default resolves to standard time, not daylight. Returning both options is in the roadmap.",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -4808,17 +4851,17 @@
             {
               "timex": "XXXX-05-22T11:30",
               "type": "datetime",
-              "timezone": "UTC-07:00",
+              "timezone": "UTC-08:00",
               "timezoneText": "pt",
-              "utcOffsetMins": "-420",
+              "utcOffsetMins": "-480",
               "value": "2018-05-22 11:30:00"
             },
             {
               "timex": "XXXX-05-22T11:30",
               "type": "datetime",
-              "timezone": "UTC-07:00",
+              "timezone": "UTC-08:00",
               "timezoneText": "pt",
-              "utcOffsetMins": "-420",
+              "utcOffsetMins": "-480",
               "value": "2019-05-22 11:30:00"
             }
           ]
@@ -7731,6 +7774,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-30T12:00:00"
     },
+    "Comment": "PT by default resolves to standard time, not daylight. Returning both options is in the roadmap.",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -7791,18 +7835,18 @@
             {
               "timex": "(T09,T18,PT9H)",
               "type": "timerange",
-              "timezone": "UTC-07:00",
+              "timezone": "UTC-08:00",
               "timezoneText": "pt",
-              "utcOffsetMins": "-420",
+              "utcOffsetMins": "-480",
               "start": "09:00:00",
               "end": "18:00:00"
             },
             {
               "timex": "(T21,T06,PT9H)",
               "type": "timerange",
-              "timezone": "UTC-07:00",
+              "timezone": "UTC-08:00",
               "timezoneText": "pt",
-              "utcOffsetMins": "-420",
+              "utcOffsetMins": "-480",
               "start": "21:00:00",
               "end": "06:00:00"
             }
@@ -11434,6 +11478,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
+    "Comment": "Pacific by default resolves to standard time, not daylight. Returning both options is in the roadmap.",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -11458,6 +11503,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-28T12:00:00"
     },
+    "Comment": "Mountain by default resolves to standard time, not daylight. Returning both options is in the roadmap.",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -11470,9 +11516,9 @@
             {
               "timex": "T13",
               "type": "time",
-              "timezone": "UTC-06:00",
+              "timezone": "UTC-07:00",
               "timezoneText": "mountain timezone",
-              "utcOffsetMins": "-360",
+              "utcOffsetMins": "-420",
               "value": "13:00:00"
             }
           ]
@@ -11847,6 +11893,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-01T00:00:00"
     },
+    "Comment": "Pacific by default resolves to standard time, not daylight. Returning both options is in the roadmap.",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -12334,27 +12381,26 @@
     "Context": {
       "ReferenceDateTime": "2019-08-24T00:00:00"
     },
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
-        "Text": "from october",
-        "Start": 23,
+        "Text": "october",
+        "Start": 28,
         "End": 34,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
             {
               "timex": "XXXX-10",
-              "Mod": "since",
               "type": "daterange",
-              "sourceEntity": "datetimerange",
-              "start": "2018-10-01"
+              "start": "2018-10-01",
+              "end": "2018-11-01"
             },
             {
               "timex": "XXXX-10",
-              "Mod": "since",
               "type": "daterange",
-              "sourceEntity": "datetimerange",
-              "start": "2019-10-01"
+              "start": "2019-10-01",
+              "end": "2019-11-01"
             }
           ]
         }
@@ -12780,18 +12826,18 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "from the end of 1989",
-        "Start": 19,
+        "Text": "end of 1989",
+        "Start": 28,
         "End": 38,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
             {
               "timex": "1989",
-              "Mod": "since-end",
+              "Mod": "end",
               "type": "daterange",
-              "sourceEntity": "datetimerange",
-              "start": "1989-09-01"
+              "start": "1989-09-01",
+              "end": "1990-01-01"
             }
           ]
         }
@@ -12806,18 +12852,18 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "from mid 1989",
-        "Start": 19,
+        "Text": "mid 1989",
+        "Start": 24,
         "End": 31,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
             {
               "timex": "1989",
-              "Mod": "since-mid",
+              "Mod": "mid",
               "type": "daterange",
-              "sourceEntity": "datetimerange",
-              "start": "1989-05-01"
+              "start": "1989-05-01",
+              "end": "1989-09-01"
             }
           ]
         }
@@ -13044,6 +13090,7 @@
     "Context": {
       "ReferenceDateTime": "2020-06-12T00:00:00"
     },
+    "Comment": "Eastern by default resolves to standard time, not daylight. Returning both options is in the roadmap.",
     "NotSupported": "javascript, python, java",
     "Results": [
       {
@@ -13071,9 +13118,9 @@
             {
               "timex": "(T15:00,T17:00,PT2H)",
               "type": "timerange",
-              "timezone": "UTC-04:00",
+              "timezone": "UTC-05:00",
               "timezoneText": "eastern",
-              "utcOffsetMins": "-240",
+              "utcOffsetMins": "-300",
               "start": "15:00:00",
               "end": "17:00:00"
             }
@@ -13302,6 +13349,151 @@
               "timex": "XXXX-WXX-2T09",
               "type": "set",
               "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tune in tomorrow, 13/04/21, at 7 PM CET for episode 3 of Decentralized",
+    "Context": {
+      "ReferenceDateTime": "2018-06-06T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "tomorrow, 13/04/21, at 7 pm cet",
+        "Start": 8,
+        "End": 38,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-04-13T19",
+              "type": "datetime",
+              "timezone": "UTC+01:00",
+              "timezoneText": "cet",
+              "utcOffsetMins": "60",
+              "value": "2021-04-13 19:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Voice chat tonight 9PM EST in #FEG telegram!",
+    "Context": {
+      "ReferenceDateTime": "2018-06-06T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "tonight 9pm est",
+        "Start": 11,
+        "End": 25,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-06-06T21",
+              "type": "datetime",
+              "timezone": "UTC-05:00",
+              "timezoneText": "est",
+              "utcOffsetMins": "-300",
+              "value": "2018-06-06 21:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Voice chat next morning 7:30am EDT in #FEG telegram!",
+    "Context": {
+      "ReferenceDateTime": "2018-06-06T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "next morning 7:30am edt",
+        "Start": 11,
+        "End": 33,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-06-07T07:30",
+              "type": "datetime",
+              "timezone": "UTC-04:00",
+              "timezoneText": "edt",
+              "utcOffsetMins": "-240",
+              "value": "2018-06-07 07:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The event is scheduled 16:00, 23 Apr - 22:00, 27 April (UTC+8)",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "16:00, 23 apr - 22:00, 27 april (utc+8)",
+        "Start": 23,
+        "End": 61,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-04-23T16:00,XXXX-04-27T22:00,PT102H)",
+              "type": "datetimerange",
+              "timezone": "UTC+08:00",
+              "timezoneText": "utc+8",
+              "utcOffsetMins": "480",
+              "start": "2016-04-23 16:00:00",
+              "end": "2016-04-27 22:00:00"
+            },
+            {
+              "timex": "(XXXX-04-23T16:00,XXXX-04-27T22:00,PT102H)",
+              "type": "datetimerange",
+              "timezone": "UTC+08:00",
+              "timezoneText": "utc+8",
+              "utcOffsetMins": "480",
+              "start": "2017-04-23 16:00:00",
+              "end": "2017-04-27 22:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The meeting will start at 10.30 am ( CET ).",
+    "Context": {
+      "ReferenceDateTime": "2018-06-06T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "at 10.30 am ( cet )",
+        "Start": 23,
+        "End": 41,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T10:30",
+              "type": "time",
+              "timezone": "UTC+01:00",
+              "timezoneText": "cet",
+              "utcOffsetMins": "60",
+              "value": "10:30:00"
             }
           ]
         }

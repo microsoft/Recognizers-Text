@@ -65,7 +65,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public static readonly string AmPmDescRegex = $@"(?:{BaseDateTime.BaseAmPmDescRegex})";
       public static readonly string DescRegex = $@"(?:(?:({OclockRegex}\s+)?(?<desc>({AmPmDescRegex}|{AmDescRegex}|{PmDescRegex})))|{OclockRegex})";
       public static readonly string DescRegexA = $@"(?:(?:({OclockRegex}\s+)?(?<desc>({AmPmDescRegex}|(?:{BaseDateTime.BaseAmDescRegex})|(?:{BaseDateTime.BasePmDescRegex}))))|{OclockRegex})";
-      public static readonly string TwoDigitYearRegex = $@"\b(?<![$])(?<year>([0-24-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|{OclockRegex}|\.\d)))";
+      public static readonly string TwoDigitYearRegex = $@"\b(?<![$])(?<year>([0-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|{OclockRegex}|\.\d)))";
       public static readonly string YearRegex = $@"(?:{BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})";
       public const string WeekDayRegex = @"\b(?<weekday>(?:रवि|इत|एत|सोम|मंगल|म्गल|गुरु|((बृ|वृ)हस्पति)|वीर|शुक्र)(वार)?|बुध(वार)?|बीफ़े|शनि(वार)?|संडे|मंडे)";
       public const string SingleWeekDayRegex = @"\b(?<weekday>रविवार|इतवार|एतवार|शनिवार|संडे|मंडे|(?:सोम|मंगल|म्गल|गुरु|((बृ|वृ)हस्पति)|वीर|शुक्र)(वार)?|बुध(वार)?|बीफ़े|((शनि|रवि)(?<=को\s+)))\b";
@@ -131,18 +131,18 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public static readonly string RelativeWeekDayRegex = $@"\b((अभी\s+से\s+अगले|अब\s+से|बाद|अगले)\s+{AllWrittenNumericalRegex}\s+{WeekDayRegex}(\s+के\s+बाद)?)";
       public static readonly string SpecialDate = $@"({DayRegex}(?=\s*(को|पर)))";
       public const string DatePreposition = @"\b(को|में)";
-      public static readonly string DateExtractorYearTermRegex = $@"(\s+|\s*,\s*|\s+(का|की|के|को)\s+){DateYearRegex}";
+      public static readonly string DateExtractorYearTermRegex = $@"(\s+|\s*[/\\.,-]\s*|\s+(का|की|के|को)\s+){DateYearRegex}";
       public static readonly string DateExtractor1 = $@"((({DateYearRegex}(\s+|\s*,\s*|\s+(का|की|के|को)\s+))({MonthRegex}[\.]?\s*[/\\.,-]?\s*{DayRegex}(?!(\:)?\d+)))|(\b({WeekDayRegex}\s*[\(,-]?\s*)?(({MonthRegex}[\.]?\s*[/\\.,-]?\s*{DayRegex})|(\({MonthRegex}\s*[-.]\s*{DayRegex}\)))(\s*\))?(\s*\(\s*{WeekDayRegex}\s*\))?({DateExtractorYearTermRegex}\b)?))";
-      public static readonly string DateExtractor3 = $@"\b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}[\.]?(\s+|\s*,\s*|\s+(का|की|के|को)\s+|\s*-\s*){MonthRegex}[\.]?((\s+|\s*,\s*|\s+में\s+){DateYearRegex})?";
+      public static readonly string DateExtractor3 = $@"\b({WeekDayRegex}(\s+|\s*,\s*))?({DayRegex}[\.]?(\s+|\s*[/\\.,-]\s*|\s+(का|की|के|को)\s+){MonthRegex}[\.]?((\s+|\s*[/\\.,-]\s*|\s+में\s+){DateYearRegex})?|{BaseDateTime.FourDigitYearRegex}\s*[/\\.,\- ]\s*{DayRegex}(\s+|\s*[/\\.,-]\s*|\s+(का|की|के|को)\s+){MonthRegex}[\.]?)";
       public static readonly string DateExtractor4 = $@"\b{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}[\.]?\s*[/\\\-]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)";
       public static readonly string DateExtractor5 = $@"\b{DayRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)";
       public static readonly string DateExtractor6 = $@"({StrictRelativeRegex}\s+)?({WeekDayRegex}\s+)?{MonthNumRegex}[\-\.]{DayRegex}(?![%])(?=\s+{DatePreposition})";
       public static readonly string DateExtractor7L = $@"\b({WeekDayRegex}\s+)?{MonthNumRegex}\s*/\s*{DayRegex}{DateExtractorYearTermRegex}(?![%])";
-      public static readonly string DateExtractor7S = $@"\b({WeekDayRegex}\s+)?{MonthNumRegex}\s*/\s*{DayRegex}(?![%])";
-      public static readonly string DateExtractor8 = $@"(?<={DatePreposition}\s+)({StrictRelativeRegex}\s+)?({WeekDayRegex}\s+)?{DayRegex}[\\\-]{MonthNumRegex}(?![%])";
+      public static readonly string DateExtractor7S = $@"\b({WeekDayRegex}\s+)?{MonthNumRegex}\s*/\s*{DayRegex}{BaseDateTime.CheckDecimalRegex}(?![%])";
+      public static readonly string DateExtractor8 = $@"(?<={DatePreposition}\s+)({StrictRelativeRegex}\s+)?({WeekDayRegex}\s+)?{DayRegex}[\\\-]{MonthNumRegex}{BaseDateTime.CheckDecimalRegex}(?![%])";
       public static readonly string DateExtractor9L = $@"\b({WeekDayRegex}\s+)?{DayRegex}\s*/\s*{MonthNumRegex}{DateExtractorYearTermRegex}(?![%])";
-      public static readonly string DateExtractor9S = $@"\b({WeekDayRegex}\s+)?{DayRegex}\s*/\s*{MonthNumRegex}(?![%])";
-      public static readonly string DateExtractorA = $@"\b({WeekDayRegex}\s+)?{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]\s*{MonthNumRegex}\s*[/\\\-\.]\s*{DayRegex}(?!\s*[/\\\-\.]\s*\d+)";
+      public static readonly string DateExtractor9S = $@"\b({WeekDayRegex}\s+)?{DayRegex}\s*/\s*{MonthNumRegex}{BaseDateTime.CheckDecimalRegex}(?![%])";
+      public static readonly string DateExtractorA = $@"\b({WeekDayRegex}\s+)?({BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DayRegex}|{MonthRegex}\s*[/\\\-\.]\s*{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]\s*{DayRegex}|{DayRegex}\s*[/\\\-\.]\s*{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]\s*{MonthRegex})(?!\s*[/\\\-\.]\s*\d+)";
       public static readonly string OfMonth = $@"^\s*{MonthRegex}(?=\s*(को|की)?)";
       public static readonly string MonthEnd = $@"({MonthRegex}(\s+की)?|{RelativeMonthRegex})\s*$";
       public static readonly string WeekDayEnd = $@"(इस\s+)?{WeekDayRegex}\s*,?\s*$";
@@ -152,6 +152,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public const string MinuteNumRegex = @"(?<minnum>शून्य|एक|दो|तीन|फ़ोर|चार|पांच|पाँच|छह|सात|आठ|नौ|दस|ग्यारह|बारह|तेरह|चौदह|पंद्रह|सोलह|सत्रह|अठारह|उन्नीस|बीस|इक्कीस|बाईस|तेईस|चौबीस|पच्चीस|छब्बीस|सत्ताईस|अट्ठाईस|अट्ठाइस|उनतीस|तीस|इकतीस|इकत्तीस|बत्तीस|तैंतीस|चौंतीस|पैंतीस|छ्त्तीस|सैंतीस|अड़तीस|उनतालीस|चालीस|इकतालीस|बयालीस|तैंतालीस|चौंतालीस|पैंतालीस|पैंतालिस|पेंतालिस|छियालीस|सैंतालीस|अड़तालीस|उनचास|पचास|इक्याबन|बावन|तिरेपन|चौबन|पचपन|छप्पन|सत्तावन|अट्ठावन|उनसठ|ten|eleven|twelve|thirteen|fifteen|eighteen|(four|six|seven|nine)(teen)?|twenty|thirty|forty|fifty|one|two|three|five|eight|टेन|इलेवन|ट्वेल्व|थर्टीन|फ़ोर्टीन|फ़िफ़्टीन|सिक्सटीन|सेवेनटीन|एइटीन|नाइनटीन|ट्वेन्टी|ट्वेंटी|वन|टू|थ्री|फोर|फ़ाइव|सिक्स|सेवन|एइट|नाइन|थर्टी|फ़ोर्टी|फ़िफ़्टी)(?![\u0900-\u097f])";
       public const string DeltaMinuteNumRegex = @"(?<deltaminnum>शून्य|एक|दो|तीन|फ़ोर|चार|पांच|पाँच|छह|सात|आठ|नौ|दस|ग्यारह|बारह|तेरह|चौदह|पंद्रह|सोलह|सत्रह|अठारह|उन्नीस|बीस|इक्कीस|बाईस|तेईस|चौबीस|पच्चीस|छब्बीस|सत्ताईस|अट्ठाईस|अट्ठाइस|उनतीस|तीस|इकतीस|इकत्तीस|बत्तीस|तैंतीस|चौंतीस|पैंतीस|छ्त्तीस|सैंतीस|अड़तीस|उनतालीस|चालीस|इकतालीस|बयालीस|तैंतालीस|चौंतालीस|पैंतालीस|पैंतालिस|पेंतालिस|छियालीस|सैंतालीस|अड़तालीस|उनचास|पचास|इक्याबन|बावन|तिरेपन|चौबन|पचपन|छप्पन|सत्तावन|अट्ठावन|उनसठ|ten|eleven|twelve|thirteen|fifteen|eighteen|(four|six|seven|nine)(teen)?|twenty|thirty|forty|fifty|one|two|three|five|eight|टेन|इलेवन|ट्वेल्व|थर्टीन|फ़ोर्टीन|फ़िफ़्टीन|सिक्सटीन|सेवेनटीन|एइटीन|नाइनटीन|ट्वेन्टी|ट्वेंटी|वन|टू|थ्री|फोर|फ़ाइव|सिक्स|सेवन|एइट|नाइन|थर्टी|फ़ोर्टी|फ़िफ़्टी)";
       public const string PmRegex = @"(?<pm>(दोपहर\s+)?खाने\s+के\s+वक़्त\s+तक|(दोपहर|सायं|शामों|शाम|संध्या|सायंकाल|evening|((आधी|अर्ध)\s+)?रात)(\s+((के(?!\s+लिए)|को|में|की)(?!\s+दौरान)|(?=(\s+(के|को|में|की)\s+दौरान))))?|आधी\s*(-\s*)?रात|अर्ध\s*(-\s*)?रात्रि|लंचटाइम|लंच\s+के\s+समय|दोपहर\s+खाने\s+के\s+समय)";
+      public const string RangePmRegex = @"(?<pm>(दोपहर\s+)?खाने\s+के\s+वक़्त\s+तक|(दोपहर|सायं|शामों|शाम|संध्या|सायंकाल|evening|(अर्ध\s+)?रात)(\s+((के(?!\s+लिए)|को|में|की)(?!\s+दौरान)|(?=(\s+(के|को|में|की)\s+दौरान))))?|अर्ध\s*(-\s*)?रात्रि|लंचटाइम|लंच\s+के\s+समय|दोपहर\s+खाने\s+के\s+समय)";
       public const string PmRegexFull = @"(?<pm>(दोपहर\s+)?खाने\s+के\s+वक़्त\s+तक|(दोपहर|सायं|शामों|शाम|संध्या|सायंकाल|अपराह्न|अपराहन|evening|((आधी|अर्ध)\s+)?रात)(\s+((के(?!\s+लिए)|को|में|की)(?!\s+दौरान)|(?=(\s+(के|को|में|की)\s+दौरान))))?|आधी\s*(-\s*)?रात|अर्ध\s*(-\s*)?रात्रि|लंचटाइम|लंच\s+के\s+समय)";
       public const string AmRegex = @"(?<am>सवेरे|पूर्वाह्न|(सुबह(?!\s+(के\s+दौरान))|morning|दिन(?!\s+हैं)|पूर्वाहन|प्रातः)(\s*(-सुबह|(?:के|को|में|की)))?)";
       public const string LunchRegex = @"(खाने\s+के\s+वक़्त\s+तक|लंचटाइम|लंच\s+के\s+समय)";
@@ -202,7 +203,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public const string LaterEarlyRegex = @"((?<early>((को|की)\s+)?(जल्दी|तड़के|सुबह(?!\s+देर))(\s+से)?-?)|(?<late>((को|की)\s+)?(प्रहर\s+)?देर(\s+से)?-?))";
       public const string MealTimeRegex = @"\b(?<mealTime>खाने\s+के\s+वक़्त\s+तक|लंचटाइम|लंच\s+के\s+समय)";
       public static readonly string UnspecificTimePeriodRegex = $@"({MealTimeRegex})";
-      public static readonly string TimeOfDayRegex = $@"\b(?<timeOfDay>(रोज\s+)?{LaterEarlyRegex}\s*(सुबह|दोपहर|शाम|{AmRegex}|{PmRegex})(?:\s+(को|में))?|(रोज\s+)?(सुबह|दोपहर|{AmRegex}|{PmRegex}|संध्या\s+प्रहर)(\s+{LaterEarlyRegex})?(?:\s+(को|में))?|शाम|(काम|व्यापार)\s+के\s+(समय|घंटों)(\s+में)?)";
+      public static readonly string TimeOfDayRegex = $@"\b(?<timeOfDay>(रोज\s+)?{LaterEarlyRegex}\s*(सुबह|दोपहर|शाम|{AmRegex}|{RangePmRegex})(?:\s+(को|में))?|(रोज\s+)?(सुबह|दोपहर|{AmRegex}|{RangePmRegex}|संध्या\s+प्रहर)(\s+{LaterEarlyRegex})?(?:\s+(को|में))?|शाम|(काम|व्यापार)\s+के\s+(समय|घंटों)(\s+में)?)";
       public static readonly string SpecificTimeOfDayRegex = $@"\b(({StrictRelativeRegex}\s+{TimeOfDayRegex})|\b(tonight|आज(\s+रात)?))s?";
       public static readonly string TimeFollowedUnit = $@"^\s*{TimeUnitRegex}";
       public static readonly string TimeNumberCombinedWithUnit = $@"\b(?<num>\d+(\.\d*)?){TimeUnitRegex}";
@@ -255,6 +256,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public const string AroundRegex = @"(?:\b(?:around|circa|लगभग|(के\s+)?आसपास))";
       public const string AgoRegex = @"((?<day>(कल से पहले)|कल|आज)(\s+(से|के)\s*पहले)?|पहले)";
       public static readonly string LaterRegex = $@"\b(?:(?<day>(कल|अब|आज)\s+से)\s+बाद|बाद(?!((\s+में)?\s*{OneWordPeriodRegex})|(\s+{TimeOfDayRegex}))|(?<day>कल|आज) (से|बाद)|अब\s+से|के\s+बाद)";
+      public const string BeforeAfterRegex = @"^[.]";
       public const string InConnectorRegex = @"\b(में|को)";
       public static readonly string SinceYearSuffixRegex = $@"(^\s*{SinceRegex}(\s*(the\s+)?year\s*)?{YearSuffix})";
       public static readonly string WithinNextPrefixRegex = $@"\b(((?<next>{NextPrefixRegex}?के)\s+)?(अंदर|भीतर))";

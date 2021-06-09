@@ -1,7 +1,6 @@
 [
   {
     "Input": "この数は20より大きいが35より小さいか等しい",
-    "Comment": "PendingValidation",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -17,7 +16,6 @@
   },
   {
     "Input": "この数字は20と30の間にある",
-    "Comment": "PendingValidation",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -33,7 +31,6 @@
   },
   {
     "Input": "彼のランキング第10と第15の間",
-    "Comment": "PendingValidation",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -49,7 +46,6 @@
   },
   {
     "Input": "これは100より大きく300より小さい",
-    "Comment": "PendingValidation",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -65,7 +61,6 @@
   },
   {
     "Input": "これは、100以上310以下の数値です",
-    "Comment": "PendingValidation",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -81,7 +76,6 @@
   },
   {
     "Input": "これらのリンゴはたぶん20~100個",
-    "Comment": "PendingValidation",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -97,7 +91,6 @@
   },
   {
     "Input": "数字の範囲は1000から1500です",
-    "Comment": "PendingValidation",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -128,7 +121,6 @@
   },
   {
     "Input": "数字は4分の1より大きく, 2分の1より小さい",
-    "Comment": "PendingValidation",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -144,7 +136,6 @@
   },
   {
     "Input": "この数は3965以上です",
-    "Comment": "PendingValidation",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -160,7 +151,6 @@
   },
   {
     "Input": "この数は3965大なりです",
-    "Comment": "PendingValidation",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -176,7 +166,6 @@
   },
   {
     "Input": "彼の年齢は30以上です",
-    "Comment": "PendingValidation",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -192,7 +181,6 @@
   },
   {
     "Input": "この製品は500以上のものがあります",
-    "Comment": "PendingValidation",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -208,7 +196,6 @@
   },
   {
     "Input": "100以下の素数を見つける",
-    "Comment": "PendingValidation",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -224,7 +211,6 @@
   },
   {
     "Input": "暁明の高さは170より低い",
-    "Comment": "PendingValidation",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -240,7 +226,6 @@
   },
   {
     "Input": "暁明の身長は170未満です",
-    "Comment": "PendingValidation",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -256,7 +241,6 @@
   },
   {
     "Input": "xは107に等しいです",
-    "Comment": "PendingValidation",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -272,7 +256,6 @@
   },
   {
     "Input": "xはイコール107です",
-    "Comment": "PendingValidation",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -288,7 +271,6 @@
   },
   {
     "Input": "xは10より大きくyは20より小さい",
-    "Comment": "PendingValidation",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -313,7 +295,6 @@
   },
   {
     "Input": "1から5個のリンゴを私に与えてください",
-    "Comment": "PendingValidation",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -329,7 +310,6 @@
   },
   {
     "Input": "りんごを1以上ください",
-    "Comment": "PendingValidation",
     "NotSupported": "javascript, python",
     "Results": [
       {
@@ -2033,6 +2013,846 @@
         },
         "Start": 0,
         "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "小なりイコール百の素数を見つけて",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "小なりイコール百",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,100]"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "１００より小さい、またイコールの素数を見つけよう",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "１００より小さい、またイコール",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,100]"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "彼の年齢は三十以上",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "三十以上",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(30,)"
+        },
+        "Start": 5,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "これらのリンゴは最大百、最小二十があります",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "最大百、最小二十",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[20,100]"
+        },
+        "Start": 8,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "50より大きくて、12より小さいターと12より大きくて、50より小さいターゲット",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "50より大きく",
+        "Start": 0,
+        "End": 6,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(50,)"
+        }
+      },
+      {
+        "Text": "12より小さい",
+        "Start": 9,
+        "End": 15,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,12)"
+        }
+      },
+      {
+        "Text": "12より大きくて、50より小さい",
+        "Start": 19,
+        "End": 34,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(12,50)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "この数字は20より大きい同時により小さい又イコール35",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "20より大きい同時により小さい又イコール35",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(20,35]"
+        },
+        "Start": 5,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "高度は少なくとも３ある製品",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "少なくとも３ある",
+        "Start": 3,
+        "End": 10,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[3,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "彼の順位は十位から十五位までにある",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "十位から十五位まで",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[10,15)"
+        },
+        "Start": 5,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "どの学院の国文総成績が80超えた？",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "80超えた",
+        "Start": 11,
+        "End": 15,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(80,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "五百、また多くのグッズを注文せよ",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "五百、また多く",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[500,)"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "募集人数の中央値最大が５のマイクロソフト職位",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "最大が５",
+        "Start": 8,
+        "End": 11,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,5]"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "これは大なりイコール百そして小さいイコール三百十の数です",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "大なりイコール百そして小さいイコール三百十",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[100,310]"
+        },
+        "Start": 3,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "彼の年齢は三十、あるいは以上あります",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "三十、あるいは以上",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[30,)"
+        },
+        "Start": 5,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "これらのリンゴは二十個以上あるが百個まではない",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "二十個以上あるが百個まではない",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[20,100)"
+        },
+        "Start": 8,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "大なりイコール0、そして230.3964より小さい",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "大なりイコール0、そして230.3964より小さい",
+        "Start": 0,
+        "End": 24,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[0,230.3964)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "数字は四分の一より大きい、二分の一より小さい",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "四分の一より大きい、二分の一より小さい",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(0.25,0.5)"
+        },
+        "Start": 3,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "ⅹは10より大きくて20より小さい、yは50より大きくなく、20より小さくない",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "10より大きくて20より小さい",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(10,20)"
+        },
+        "Start": 2,
+        "End": 16
+      },
+      {
+        "Text": "50より大きくなく、20より小さくない",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[20,50]"
+        },
+        "Start": 20,
+        "End": 38
+      }
+    ]
+  },
+  {
+    "Input": "数字の範囲は一千から千五百までです",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "一千から千五百まで",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[1000,1500)"
+        },
+        "Start": 6,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "これらのリンゴは20-100個あります",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "20-100",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[20,100)"
+        },
+        "Start": 8,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "どの州9217商店の面積は最低2252平方フィートあるの？",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "最低2252",
+        "Start": 13,
+        "End": 18,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[2252,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "一万と二万の間",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "一万と二万の間",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[10000,20000)"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "シャオミンの身長は１７０までもない",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "１７０までもない",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,170)"
+        },
+        "Start": 9,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "ⅹは10より大きい、そして20より小さい",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "10より大きい",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(10,)"
+        },
+        "Start": 2,
+        "End": 8
+      },
+      {
+        "Text": "20より小さい",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,20)"
+        },
+        "Start": 13,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "少なくとも10回攻撃した国",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "少なくとも10",
+        "Start": 0,
+        "End": 6,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[10,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "この数字は二十と三十の間にある",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "二十と三十の間",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[20,30)"
+        },
+        "Start": 5,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "ⅹイコール170",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "イコール170",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[170,170]"
+        },
+        "Start": 1,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "マイナス一万と二万の中",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "マイナス一万と二万の中",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[-10000,20000)"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "五百以上のグッズを注文せよ",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "五百以上",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(500,)"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "この数字は大なりイコール三千九百六十五",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "三千九百六十五",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[3965,)"
+        },
+        "Start": 12,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "平均値は5.83933518で、経度が100以下のメッセージ",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "100以下",
+        "Start": 19,
+        "End": 23,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,100)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "負荷が300超え、そして圧延荷重が1535のメッセージ",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "300超え",
+        "Start": 3,
+        "End": 7,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(300,)"
+        }
+      },
+      {
+        "Text": "が1535",
+        "Start": 16,
+        "End": 20,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[1535,1535]"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "どのブランドが少なくとも10モデル以上あります？",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "少なくとも10",
+        "Start": 7,
+        "End": 13,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[10,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "このロットのグッズは五百くらいある",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "五百くらい",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(500,)"
+        },
+        "Start": 10,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "一個から五個までのリンゴください",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "一個から五個まで",
+        "Start": 0,
+        "End": 7,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[1,5)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "人口が4865超えて、20793以下のメッセージ",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "4865超えて、20793以下",
+        "Start": 3,
+        "End": 17,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(4865,20793)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "数字は一千以上、千五百までです",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "一千以上、千五百まで",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(1000,1500)"
+        },
+        "Start": 3,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "一個以上のリンゴください",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "一個以上",
+        "Start": 0,
+        "End": 3,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(1,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "五割以上の人数が揃えました",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "五割以上",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(0.5,)"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "シャオミンの身長は１７０より低い",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "１７０より低い",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,170)"
+        },
+        "Start": 9,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "50より大きくて、12より小さいターゲット",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "50より大きく",
+        "Start": 0,
+        "End": 6,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(50,)"
+        }
+      },
+      {
+        "Text": "12より小さい",
+        "Start": 9,
+        "End": 15,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,12)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "報酬の中央値大なりイコール50の会社と違う国と相応しい最低報酬",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "大なりイコール50",
+        "Start": 6,
+        "End": 14,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[50,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "これらのリンゴは二十個以上で、百個以下あります",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "二十個以上で、百個以下",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[20,100)"
+        },
+        "Start": 8,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "10000から20000",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "10000から20000",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[10000,20000)"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "どのジャンルの価格は一千超えました？",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "一千超え",
+        "Start": 10,
+        "End": 13,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(1000,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "50より大きいそして12より小さいターゲット",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "50より大きい",
+        "Start": 0,
+        "End": 6,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(50,)"
+        }
+      },
+      {
+        "Text": "12より小さい",
+        "Start": 10,
+        "End": 16,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,12)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "50より大きくて、12より小さいターゲットは12より小さくて、50より大きいターゲットと同じです",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "50より大きく",
+        "Start": 0,
+        "End": 6,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(50,)"
+        }
+      },
+      {
+        "Text": "12より小さい",
+        "Start": 9,
+        "End": 15,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,12)"
+        }
+      },
+      {
+        "Text": "12より小さく",
+        "Start": 22,
+        "End": 28,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,12)"
+        }
+      },
+      {
+        "Text": "50より大きい",
+        "Start": 31,
+        "End": 37,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(50,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "これは大なりイコール100そして小さいイコール300の数です",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "大なりイコール100そして小さいイコール300",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(100,300)"
+        },
+        "Start": 3,
+        "End": 25
+      }
+    ]
+  },
+  {
+    "Input": "この数字は4565より大なり又イコール",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "4565より大なり又イコール",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[4565,)"
+        },
+        "Start": 5,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "彼の年齢は三十より少なくない",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "三十より少なくない",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[30,)"
+        },
+        "Start": 5,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "これらのリンゴの数は20から100までです",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "20から100まで",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[20,100)"
+        },
+        "Start": 10,
+        "End": 18
       }
     ]
   }

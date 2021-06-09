@@ -58,7 +58,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ret = new List<ExtractResult>();
 
             tokens = tokens.OrderBy(s => s.Start).ThenByDescending(s => s.Length).ToList();
+
             var mergedTokens = new List<Token>();
+
             foreach (var token in tokens)
             {
                 if (token != null)

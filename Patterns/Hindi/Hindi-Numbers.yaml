@@ -214,8 +214,9 @@ OrdinalSuffixRegex: !simpleRegex
 #FractionPrepositionRegex s used to catch all fraction cases which includes cardina/cardinal or cardinal/ordinal
 FractionNotationWithSpacesRegex: !simpleRegex
   def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))
-FractionNotationRegex: !simpleRegex
-  def: (((?<=\W|^)-\s*)|(?<![/-])(?<=\b))\d+[/]\d+(?=(\b[^/]|$))
+FractionNotationRegex: !nestedRegex
+  def: '{BaseNumbers.FractionNotationRegex}'
+  references: [ BaseNumbers.FractionNotationRegex ]
 FractionNounRegex: !nestedRegex
   def: (?<=\b)(((({AllNumericalIntRegex})(\s?)((({RoundNumberIntegerRegex})|({RoundNumberOrdinalRegex}))\s?)?)((और\s)?))+((आधा|आधे|चौथाई|तिहाई)))(?=\b)
   references: [AllNumericalIntRegex, RoundNumberIntegerRegex,RoundNumberOrdinalRegex ]

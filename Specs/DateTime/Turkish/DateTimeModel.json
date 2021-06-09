@@ -8720,5 +8720,391 @@
         }
       }
     ]
+  },
+  {
+    "Input": "29/2",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "29/2",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-02-29",
+              "type": "date",
+              "value": "2016-02-29"
+            },
+            {
+              "timex": "XXXX-02-29",
+              "type": "date",
+              "value": "2020-02-29"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "29/2",
+    "Context": {
+      "ReferenceDateTime": "2019-03-22T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "29/2",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-02-29",
+              "type": "date",
+              "value": "2016-02-29"
+            },
+            {
+              "timex": "XXXX-02-29",
+              "type": "date",
+              "value": "2020-02-29"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "29/2",
+    "Context": {
+      "ReferenceDateTime": "2020-03-22T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "29/2",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-02-29",
+              "type": "date",
+              "value": "2020-02-29"
+            },
+            {
+              "timex": "XXXX-02-29",
+              "type": "date",
+              "value": "2024-02-29"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "30/2",
+    "Context": {
+      "ReferenceDateTime": "2020-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "30/2",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-02-30",
+              "type": "date",
+              "value": "not resolved"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "29/2/2019",
+    "Context": {
+      "ReferenceDateTime": "2020-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "29/2/2019",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-02-29",
+              "type": "date",
+              "value": "not resolved"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "29/2/2020",
+    "Context": {
+      "ReferenceDateTime": "2020-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "29/2/2020",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-02-29",
+              "type": "date",
+              "value": "2020-02-29"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "28/2-1/3",
+    "Context": {
+      "ReferenceDateTime": "2019-09-18T18:00:00"
+    },
+    "NotSupported": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "28/2-1/3",
+        "Start": 0,
+        "End": 7,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-02-28,XXXX-03-01,P1D)",
+              "type": "daterange",
+              "start": "2019-02-28",
+              "end": "2019-03-01"
+            },
+            {
+              "timex": "(XXXX-02-28,XXXX-03-01,P2D)",
+              "type": "daterange",
+              "start": "2020-02-28",
+              "end": "2020-03-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "29/2-1/3",
+    "Context": {
+      "ReferenceDateTime": "2019-09-18T18:00:00"
+    },
+    "NotSupported": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "29/2-1/3",
+        "Start": 0,
+        "End": 7,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-02-29,XXXX-03-01,P1D)",
+              "type": "daterange",
+              "start": "2016-02-29",
+              "end": "2016-03-01"
+            },
+            {
+              "timex": "(XXXX-02-29,XXXX-03-01,P1D)",
+              "type": "daterange",
+              "start": "2020-02-29",
+              "end": "2020-03-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "29/2-1/3/2019",
+    "Context": {
+      "ReferenceDateTime": "2019-09-18T18:00:00"
+    },
+    "NotSupported": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "29/2-1/3/2019",
+        "Start": 0,
+        "End": 12,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-02-29,2019-03-01,PXD)",
+              "type": "daterange",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Eyl-23-2020'ye geri döneceğim.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "eyl-23-2020",
+        "Start": 0,
+        "End": 10,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-09-23",
+              "type": "date",
+              "value": "2020-09-23"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Eylül-2020-23 geri döneceğim.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "eylül-2020-23",
+        "Start": 0,
+        "End": 12,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-09-23",
+              "type": "date",
+              "value": "2020-09-23"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2020/23/Eyl geri döneceğim.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2020/23/eyl",
+        "Start": 0,
+        "End": 10,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-09-23",
+              "type": "date",
+              "value": "2020-09-23"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2020/Eyl/23 geri döneceğim",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2020/eyl/23",
+        "Start": 0,
+        "End": 10,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-09-23",
+              "type": "date",
+              "value": "2020-09-23"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "23/Eyl/2020 geri döneceğim",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "23/eyl/2020",
+        "Start": 0,
+        "End": 10,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-09-23",
+              "type": "date",
+              "value": "2020-09-23"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "23-2020-Eylül'e geri döneceğim",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "23-2020-eylül",
+        "Start": 0,
+        "End": 12,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-09-23",
+              "type": "date",
+              "value": "2020-09-23"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

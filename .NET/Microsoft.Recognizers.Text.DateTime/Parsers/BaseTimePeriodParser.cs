@@ -268,7 +268,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     hourStr = hourGroup.Captures[1].Value;
                     afterHourIndex = hourGroup.Captures[1].Index + hourGroup.Captures[1].Length;
 
-                    if (afterHourIndex == trimmedText.Length || !trimmedText.Substring(afterHourIndex).Trim().StartsWith(":"))
+                    if (afterHourIndex == trimmedText.Length || !trimmedText.Substring(afterHourIndex).Trim().StartsWith(":", StringComparison.Ordinal))
                     {
                         if (!this.config.Numbers.TryGetValue(hourStr, out int endHour))
                         {
@@ -451,7 +451,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                     else if (secondCapture.Index >= time2StartIndex && secondCapture.Index + secondCapture.Length <= time2EndIndex)
                     {
-                        endSecond = int.Parse(secondCapture.Value);
+                        endSecond = int.Parse(secondCapture.Value, CultureInfo.InvariantCulture);
                     }
                 }
 

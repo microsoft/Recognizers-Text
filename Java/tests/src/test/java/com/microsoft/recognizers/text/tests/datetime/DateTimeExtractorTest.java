@@ -51,6 +51,7 @@ import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishSetExtr
 import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishTimeExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishTimePeriodExtractorConfiguration;
 import com.microsoft.recognizers.text.tests.AbstractTest;
+import com.microsoft.recognizers.text.tests.NotSupportedException;
 import com.microsoft.recognizers.text.tests.TestCase;
 
 import java.util.Collection;
@@ -126,14 +127,14 @@ public class DateTimeExtractorTest extends AbstractTest {
                 case Culture.French:
                     return getFrenchExtractor(modelName);
                 default:
-                    throw new AssumptionViolatedException("Extractor Type/Name not supported.");
+                    throw new NotSupportedException("Extractor Type/Name not supported in: " + culture);
             }
-        } catch (IllegalArgumentException ex) {
+        } catch (NotSupportedException ex) {
             throw new AssumptionViolatedException(ex.getMessage(), ex);
         }
     }
 
-    private static IDateTimeExtractor getEnglishExtractor(String name) {
+    private static IDateTimeExtractor getEnglishExtractor(String name) throws NotSupportedException {
 
         IOptionsConfiguration config = new BaseOptionsConfiguration();
         switch (name) {
@@ -165,11 +166,11 @@ public class DateTimeExtractorTest extends AbstractTest {
                 return new BaseTimeZoneExtractor(new EnglishTimeZoneExtractorConfiguration(DateTimeOptions.EnablePreview));
 
             default:
-                throw new AssumptionViolatedException("Extractor Type/Name not supported.");
+                throw new NotSupportedException("English extractor Type/Name not supported for type: " + name);
         }
     }
 
-    private static IDateTimeExtractor getSpanishExtractor(String name) {
+    private static IDateTimeExtractor getSpanishExtractor(String name) throws NotSupportedException {
 
         IOptionsConfiguration config = new BaseOptionsConfiguration();
         switch (name) {
@@ -201,11 +202,11 @@ public class DateTimeExtractorTest extends AbstractTest {
             //    return new BaseTimeZoneExtractor(new SpanishTimeZoneExtractorConfiguration(DateTimeOptions.EnablePreview));
 
             default:
-                throw new AssumptionViolatedException("Extractor Type/Name not supported.");
+                throw new NotSupportedException("Spanish extractor Type/Name not supported for type: " + name);
         }
     }
 
-    private static IDateTimeExtractor getFrenchExtractor(String name) {
+    private static IDateTimeExtractor getFrenchExtractor(String name) throws NotSupportedException {
 
         IOptionsConfiguration config = new BaseOptionsConfiguration();
         switch (name) {
@@ -237,7 +238,7 @@ public class DateTimeExtractorTest extends AbstractTest {
                 return new BaseTimeZoneExtractor(new FrenchTimeZoneExtractorConfiguration(DateTimeOptions.EnablePreview));
 
             default:
-                throw new AssumptionViolatedException("Extractor Type/Name not supported.");
+                throw new NotSupportedException("French extractor Type/Name not supported for type: " + name);
         }
     }
 }

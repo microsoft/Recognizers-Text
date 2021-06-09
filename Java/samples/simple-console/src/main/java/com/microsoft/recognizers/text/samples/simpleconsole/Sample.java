@@ -8,6 +8,8 @@ import com.microsoft.recognizers.text.ModelResult;
 import com.microsoft.recognizers.text.datetime.DateTimeRecognizer;
 import com.microsoft.recognizers.text.number.NumberRecognizer;
 import com.microsoft.recognizers.text.numberwithunit.NumberWithUnitRecognizer;
+import com.microsoft.recognizers.text.sequence.SequenceOptions;
+import com.microsoft.recognizers.text.sequence.SequenceRecognizer;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -94,7 +96,35 @@ public class Sample {
 
                 // Datetime recognizer This model will find any Date even if its write in colloquial language
                 // E.g "I'll go back 8pm today" will return "2017-10-04 20:00:00"
-                DateTimeRecognizer.recognizeDateTime(query, culture)
+                DateTimeRecognizer.recognizeDateTime(query, culture),
+
+                // PhoneNumber recognizer will find any phone number presented
+                // E.g "My phone number is ( 19 ) 38294427."
+                SequenceRecognizer.recognizePhoneNumber(query, culture),
+
+                // Add IP recognizer - This recognizer will find any Ipv4/Ipv6 presented
+                // E.g "My Ip is 8.8.8.8"
+                SequenceRecognizer.recognizeIpAddress(query, culture),
+
+                // Mention recognizer will find all the mention usages
+                // E.g "@Cicero"
+                SequenceRecognizer.recognizeMention(query, culture),
+
+                // Hashtag recognizer will find all the hash tag usages
+                // E.g "task #123"
+                SequenceRecognizer.recognizeHashtag(query, culture),
+
+                // Email recognizer will find all the emails
+                // E.g "a@b.com"
+                SequenceRecognizer.recognizeEmail(query, culture),
+
+                // URL recognizer will find all the urls
+                // E.g "bing.com"
+                SequenceRecognizer.recognizeURL(query, culture),
+
+                // GUID recognizer will find all the GUID usages
+                // E.g "{123e4567-e89b-12d3-a456-426655440000}"
+                SequenceRecognizer.recognizeGUID(query, culture)
         );
     }
 

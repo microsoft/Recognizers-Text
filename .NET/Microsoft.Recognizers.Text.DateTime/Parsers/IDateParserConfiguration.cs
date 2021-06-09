@@ -23,6 +23,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IDateTimeParser DurationParser { get; }
 
+        IDateTimeParser HolidayParser { get; }
+
         IEnumerable<Regex> DateRegexes { get; }
 
         Regex OnRegex { get; }
@@ -68,6 +70,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex NextPrefixRegex { get; }
 
         Regex PreviousPrefixRegex { get; }
+
+        Regex BeforeAfterRegex { get; }
 
         IImmutableDictionary<string, string> UnitMap { get; }
 

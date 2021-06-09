@@ -8,6 +8,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public class DateTimeModel : IModel
     {
+
+        private string culture;
+
+        private string requestedCulture;
+
         public DateTimeModel(IDateTimeParser parser, IDateTimeExtractor extractor)
         {
             this.Parser = parser;
@@ -15,6 +20,10 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         public string ModelTypeName => Constants.MODEL_DATETIME;
+
+        public string Culture => this.culture;
+
+        public string RequestedCulture => this.requestedCulture;
 
         protected IDateTimeExtractor Extractor { get; private set; }
 
@@ -25,6 +34,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return this.Parse(query, DateObject.Now);
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "By design")]
         public List<ModelResult> Parse(string query, DateObject refTime)
         {
             var parsedDateTimes = new List<DateTimeParseResult>();
@@ -62,6 +72,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             return parsedDateTimes.Select(o => GetModelResult(o)).ToList();
         }
 
+        public void SetCultureInfo(string culture, string requestedCulture = null)
+        {
+            this.culture = culture;
+            this.requestedCulture = requestedCulture;
+        }
+
         private static string GetParentText(DateTimeParseResult parsedDateTime)
         {
             return ((Dictionary<string, object>)parsedDateTime.Data)[ExtendedModelResult.ParentTextKey].ToString();
@@ -94,5 +110,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             return ret;
         }
+
     }
 }

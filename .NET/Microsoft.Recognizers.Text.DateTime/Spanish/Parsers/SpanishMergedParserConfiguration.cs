@@ -11,7 +11,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         {
             BeforeRegex = SpanishMergedExtractorConfiguration.BeforeRegex;
             AfterRegex = SpanishMergedExtractorConfiguration.AfterRegex;
-            SinceRegex = SpanishMergedExtractorConfiguration.SinceRegex;
+            SinceRegex = (config.Options & DateTimeOptions.ExperimentalMode) != 0 ? SpanishMergedExtractorConfiguration.SinceRegexExp :
+                SpanishMergedExtractorConfiguration.SinceRegex;
             AroundRegex = SpanishMergedExtractorConfiguration.AroundRegex;
             EqualRegex = SpanishMergedExtractorConfiguration.EqualRegex;
             SuffixAfter = SpanishMergedExtractorConfiguration.SuffixAfterRegex;

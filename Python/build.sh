@@ -4,6 +4,7 @@ echo // Installing Resource Generator Dependencies
 pip install -r ./requirements.txt
 
 echo // Building Resources
+python index.py ../recognizers-choice/resource-definitions.json
 python index.py ../recognizers-number/resource-definitions.json
 python index.py ../recognizers-number-with-unit/resource-definitions.json
 python index.py ../recognizers-date-time/resource-definitions.json
@@ -19,11 +20,17 @@ pip install -e ./libraries/recognizers-number/
 echo // Installing recognizers-number-with-unit
 pip install -e ./libraries/recognizers-number-with-unit/
 
+echo // Installing datatypes-timex-expression
+pip install -e ./libraries/datatypes-timex-expression/
+
 echo // Installing recognizers-date-time
 pip install -e ./libraries/recognizers-date-time/
 
 echo // Installing recognizers-sequence
 pip install -e ./libraries/recognizers-sequence/
+
+echo // Installing recognizers-choice
+pip install -e ./libraries/recognizers-choice/
 
 echo // Installing recognizers-suite
 pip install -e ./libraries/recognizers-suite/

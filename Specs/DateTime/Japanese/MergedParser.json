@@ -1,0 +1,87 @@
+[
+  {
+    "Input": "今日夜十時ぐらい以降",
+    "Context": {
+      "ReferenceDateTime": "2020-01-05T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "今日夜十時ぐらい以降",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2020-01-05T22",
+              "Mod": "after",
+              "type": "datetimerange",
+              "sourceEntity": "datetimepoint",
+              "start": "2020-01-05 22:00:00"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "十時ぐらい以降",
+    "Context": {
+      "ReferenceDateTime": "2020-01-05T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "十時ぐらい以降",
+        "Type": "datetimeV2.timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "T10",
+              "Mod": "after",
+              "type": "timerange",
+              "start": "10:00:00",
+              "sourceEntity": "datetimepoint"
+            },
+            {
+              "timex": "T22",
+              "Mod": "after",
+              "type": "timerange",
+              "start": "22:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "夜十時ぐらい以降",
+    "Context": {
+      "ReferenceDateTime": "2020-01-05T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "夜十時ぐらい以降",
+        "Type": "datetimeV2.timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "T22",
+              "Mod": "after",
+              "type": "timerange",
+              "start": "22:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  }
+]

@@ -37,6 +37,8 @@ public interface ICJKNumberParserConfiguration extends INumberParserConfiguratio
 
     Pattern getPercentageRegex();
 
+    Pattern getPercentageNumRegex();
+
     Pattern getPointRegex();
 
     Pattern getDoubleAndRoundRegex();

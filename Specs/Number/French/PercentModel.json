@@ -246,5 +246,225 @@
     "Input": "vous pouvez aller à https://www.test.com/search?q=30%25%2020%",
     "NotSupported": "javascript",
     "Results": []
+  },
+  {
+    "Input": "cent pour cent",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "cent pour cent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "100 pour-cent",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "100 pour-cent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "100 pour cent",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "100 pour cent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "100 pourcentage",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "100 pourcentage",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "deux cent quarante pour-cent",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "deux cent quarante pour-cent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "240%"
+        },
+        "Start": 0,
+        "End": 28
+      }
+    ]
+  },
+  {
+    "Input": "vingt pour cent",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "vingt pour cent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "20%"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "cent pour cent.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "cent pour cent.",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "cent pour-cent",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "cent pour-cent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "100%"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "vingt pour-cent",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "vingt pour-cent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "20%"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "dix pour cent",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dix pour cent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "10%"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "vingt-deux pour-cent",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "vingt-deux pour-cent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "22%"
+        },
+        "Start": 0,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "deux cent dix pour-cent",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "deux cent dix pour-cent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "210%"
+        },
+        "Start": 0,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "dix pour-cent",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dix pour-cent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "10%"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "juste demander de soustraire cinq pour-cent",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "soustraire cinq pour-cent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "-5%"
+        },
+        "Start": 18,
+        "End": 43
+      }
+    ]
+  },
+  {
+    "Input": "vous pouvez aller sur http://proquest.umi.com/pqdweb?RQT=305&SQ=issn%280024%2D9114%29%20and%20%28ti%28Using%203D%20CAD%20to%20design%20a%20dog%29%20or%20startpage%28158%29%29%20and%20volume%2872%29%20and%20issue%289%29%20and%20pdn%28%3E01%2F01%2F2000%20AND%20%3C12%2F31%2F2000%29&clientId=17859 pour plus de détails.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Vous pouvez aller sur https://www.test.com/search?q=30%25%2020%",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
   }
 ]

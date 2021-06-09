@@ -1,0 +1,324 @@
+[
+  {
+    "Input": "När hon var fem år gammal lärde hon sig cykla.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "fem år gammal",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "5",
+          "unit": "Year"
+        },
+        "Start": 12,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "Denna saga är tio år gammal.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "tio år gammal",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "10",
+          "unit": "Year"
+        },
+        "Start": 14,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "Jag är bara 29 år gammal!",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "29 år gammal",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "29",
+          "unit": "Year"
+        },
+        "Start": 12,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "Nu, vid nittiofem års ålder, förändras perspektiven.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "nittiofem års ålder",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "95",
+          "unit": "Year"
+        },
+        "Start": 8,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "Kinesiska muren är mer än 500 år gammal och sträcker sig över mer än 8000 kilometer.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "500 år gammal",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "500",
+          "unit": "Year"
+        },
+        "Start": 26,
+        "End": 38
+      }
+    ]
+  },
+  {
+    "Input": "Hon är 60 år gammal. Hon föddes den 8 maj, 1945.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "60 år gammal",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "60",
+          "unit": "Year"
+        },
+        "Start": 7,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "25% av fallen diagnosticeras inte förrän vid 3 års ålder.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 års ålder",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "3",
+          "unit": "Year"
+        },
+        "Start": 45,
+        "End": 55
+      }
+    ]
+  },
+  {
+    "Input": "När kommer kravet att infria ett löfte som är ett år gammalt?",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "ett år gammalt",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "1",
+          "unit": "Year"
+        },
+        "Start": 46,
+        "End": 59
+      }
+    ]
+  },
+  {
+    "Input": "Det hände då barnet bara var tio månader gammalt.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "tio månader gammalt",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "10",
+          "unit": "Month"
+        },
+        "Start": 29,
+        "End": 47
+      }
+    ]
+  },
+  {
+    "Input": "Kommitténs förslag är 8 månader gammalt.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "8 månader gammalt",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "8",
+          "unit": "Month"
+        },
+        "Start": 22,
+        "End": 38
+      }
+    ]
+  },
+  {
+    "Input": "Uppskattningsvis 50% av fallen diagnosticeras vid ungefär arton månaders ålder.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "arton månaders ålder",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "18",
+          "unit": "Month"
+        },
+        "Start": 58,
+        "End": 77
+      }
+    ]
+  },
+  {
+    "Input": "Det är möjligt, men 2006 var 95% av dem yngre än tre månader gamla.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "tre månader gamla",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "3",
+          "unit": "Month"
+        },
+        "Start": 49,
+        "End": 65
+      }
+    ]
+  },
+  {
+    "Input": "Om vi fortsätter i december kommer det vara tre veckor gammalt.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "tre veckor gammalt",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "3",
+          "unit": "Week"
+        },
+        "Start": 44,
+        "End": 61
+      }
+    ]
+  },
+  {
+    "Input": "Vid 6 veckors ålder kan man redan börja fira jul.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "6 veckors ålder",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "6",
+          "unit": "Week"
+        },
+        "Start": 4,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "En 90 dagar gammal vattenräkning är ganska gammal.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "90 dagar gammal",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "90",
+          "unit": "Day"
+        },
+        "Start": 3,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "Han är ungefär 40 - 50 år gammal.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "javascript, java",
+    "Results": [
+      {
+        "Text": "50 år gammal",
+        "Start": 20,
+        "End": 31,
+        "TypeName": "age",
+        "Resolution": {
+          "unit": "Year",
+          "value": "50"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "En 3-åring är väldigt nyfiken!",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "3-åring",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "3",
+          "unit": "Year"
+        },
+        "Start": 3,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "Vi har just köpt ett 5-årigt sto.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "5-årigt",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "5",
+          "unit": "Year"
+        },
+        "Start": 21,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "Han är 25 år.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "25 år",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "25",
+          "unit": "Year"
+        },
+        "Start": 7,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "Fölet är bara dagsgammalt.",
+    "NotSupportedByDesign": "dotnet, javascript, python, java",
+    "Comment":  "The word 'dagsgammal(t)' w/out prefix should resolve as 1 day.",
+    "Results": [
+      {
+        "Text": "dagsgammalt",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "1",
+          "unit": "Day"
+        },
+        "Start": 14,
+        "End": 24
+      }
+    ]
+  }
+]

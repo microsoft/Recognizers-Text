@@ -48,12 +48,14 @@ class NumberWithUnitParser(Parser):
 
     def parse(self, source: ExtractResult) -> Optional[ParseResult]:
         ret = ParseResult(source)
-        number_result = None
+        number_result, half_result = None, None
         if source.data and isinstance(source.data, ExtractResult):
             number_result = source.data
         elif source.type == Constants.SYS_NUM:
             ret.value = self.config.internal_number_parser.parse(source).value
             return ret
+        elif source.data and isinstance(source.data, list) and len(source.data) == 2:
+            number_result, half_result = source.data
         else:  # if there is no unitResult, means there is just unit
             number_result = ExtractResult()
             number_result.start = -1
@@ -84,6 +86,8 @@ class NumberWithUnitParser(Parser):
 
         # Unit type depends on last unit in suffix.
         last_unit = unit_keys[-1]
+        if half_result and half_result.text in last_unit:
+            last_unit = last_unit[:-1 * half_result.length]
         normalized_last_unit = last_unit.lower()
         if self.config.connector_token and normalized_last_unit.startswith(self.config.connector_token):
             normalized_last_unit = normalized_last_unit[len(
@@ -99,6 +103,10 @@ class NumberWithUnitParser(Parser):
                 num_value = self.config.internal_number_parser.parse(
                     number_result) if number_result.text else None
                 resolution_str = num_value.resolution_str if num_value else None
+
+                if half_result:
+                    half_result = self.config.internal_number_parser.parse(half_result)
+                    resolution_str += half_result.resolution_str[1:] if half_result else 0
 
                 ret.value = UnitValue(
                     number=resolution_str,

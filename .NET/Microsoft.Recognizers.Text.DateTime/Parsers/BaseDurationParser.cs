@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -363,13 +365,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret = result;
             }
 
-            // handle "during/for the day/week/month/year"
-            if ((config.Options & DateTimeOptions.CalendarMode) != 0 &&
-                TryGetResultFromRegex(config.DuringRegex, text, "1", out result))
-            {
-                ret = result;
-            }
-
             // handle "half day", "half year"
             if (TryGetResultFromRegex(config.HalfDateUnitRegex, text, "0.5", out result))
             {
@@ -380,6 +375,41 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (TryGetResultFromRegex(config.FollowedUnit, text, "1", out result))
             {
                 ret = result;
+            }
+
+            // handle "during/for the day/week/month/year"
+            if ((config.Options & DateTimeOptions.CalendarMode) != 0 &&
+                TryGetResultFromRegex(config.DuringRegex, text, "1", out result))
+            {
+                ret = result;
+            }
+            else
+            {
+                // handle cases like "the hour", which are special durations always not in CalendarMode
+                if ((this.config.Options & DateTimeOptions.CalendarMode) == 0)
+                {
+                    var regex = this.config.PrefixArticleRegex;
+
+                    if (regex != null)
+                    {
+                        var match = RegExpUtility.MatchBegin(regex, text, false);
+                        if (match.Success)
+                        {
+                            var srcUnit = text.Substring(match.Length);
+                            if (this.config.UnitValueMap.ContainsKey(srcUnit))
+                            {
+                                var numStr = "1";
+                                var unitStr = this.config.UnitMap[srcUnit];
+                                var numVal = double.Parse(numStr, CultureInfo.InvariantCulture);
+
+                                ret.Timex = TimexUtility.GenerateDurationTimex(numVal, unitStr, IsLessThanDay(unitStr));
+                                ret.FutureValue = ret.PastValue = numVal * this.config.UnitValueMap[srcUnit];
+                                ret.Success = true;
+                            }
+                        }
+                    }
+                }
+
             }
 
             return ret;
@@ -413,6 +443,26 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             // DurationExtractor without parameter will not extract merged duration
             var ers = durationExtractor.Extract(text, referenceTime);
+
+            // If the duration extractions do not start at 0, check if the input starts with an isolated unit.
+            // This happens for example with patterns like "next week and 3 days" where "next" is not part of the extraction.
+            var minStart = ers.Min(er => er.Start);
+            if (minStart > 0)
+            {
+                var match = config.FollowedUnit.Match(text);
+                if (match.Success)
+                {
+                    var er = new ExtractResult
+                    {
+                        Start = match.Index,
+                        Length = match.Length,
+                        Text = match.Value,
+                        Type = ParserName,
+                        Data = null,
+                    };
+                    ers.Insert(0, er);
+                }
+            }
 
             // only handle merged duration cases like "1 month 21 days"
             if (ers.Count <= 1)

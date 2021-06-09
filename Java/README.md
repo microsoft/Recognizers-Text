@@ -18,6 +18,61 @@ Open a terminal and run the following commands:
     cd Java
     mvn clean install
 
+### Installation
+Install Recognizer's by adding the following dependencies in your `pom.xml`:
+- Get core Recognizer's features:
+    ````xml
+    <dependency>
+        <groupId>com.microsoft.recognizers.text</groupId>
+        <artifactId>recognizers-text</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </dependency>
+    ````
+- Get numbers Recognizer's features:
+    ````xml
+    <dependency>
+        <groupId>com.microsoft.recognizers.text.number</groupId>
+        <artifactId>recognizers-text-number</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </dependency>
+    ````
+
+- Get numbers with units Recognizer's features:
+    ````xml
+    <dependency>
+        <groupId>com.microsoft.recognizers.text.numberwithunit</groupId>
+        <artifactId>recognizers-text-number-with-unit</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </dependency>
+    ````
+
+- Get datetime Recognizer's features:
+    ````xml
+    <dependency>
+        <groupId>com.microsoft.recognizers.text.datetime</groupId>
+        <artifactId>recognizers-text-date-time</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </dependency>
+    ````
+
+- Get sequence Recognizer's features:
+    ````xml
+    <dependency>
+        <groupId>com.microsoft.recognizers.text.sequence</groupId>
+        <artifactId>recognizers-text-sequence</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </dependency>
+    ````
+
+- Get choice Recognizer's features:
+    ````xml
+    <dependency>
+        <groupId>com.microsoft.recognizers.text.choice</groupId>
+        <artifactId>recognizers-text-choice</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </dependency>
+    ````
+
 ## API Documentation
 
 Once the proper modules are installed, you'll need to import the modules:

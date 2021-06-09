@@ -36,7 +36,7 @@ namespace Microsoft.Recognizers.Text.Matcher
                         inToken = false;
                     }
                 }
-                else if ((!specialTokenCharacters.Contains(c) && !char.IsLetterOrDigit(c)) || IsChinese(c) || IsJapanese(c))
+                else if ((!specialTokenCharacters.Contains(c) && !char.IsLetterOrDigit(c)) || IsCjk(c))
                 {
                     // Non-splittable currency units (as "$") are treated as regular letters. For instance, 'us$' should be a single token
                     if (inToken)

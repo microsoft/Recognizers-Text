@@ -76,7 +76,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public const string OrdinalNumericRegex = @"(?<=\b)(?:\d{1,3}(\s*,\s*\d{3})*('inci|'ıncı|'uncu|'üncü|'nci|'ncı))(?=\b)";
       public static readonly string OrdinalTurkishRegex = $@"(?<=\b)({AllOrdinalRegex}(?=\b)|{AllOrdinalSuffix})";
       public const string FractionNotationWithSpacesRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))";
-      public const string FractionNotationRegex = @"(((?<=\W|^)-\s*)|(?<![/-])(?<=\b))\d+[/]\d+(?=(\b[^/]|$))";
+      public static readonly string FractionNotationRegex = $@"{BaseNumbers.FractionNotationRegex}";
       public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)(({AllIntRegex}\s+)?(buçuk|çeyrek|yarım))(?=(t[ae]n|d[[ae]n|y?[ae])?\b)";
       public static readonly string FractionPrepositionRegex = $@"(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(eksi\s+)?(?<numerator>({AllIntRegex})|((?<!,)\d+))\s+(bölü)\s+(?<denominator>({AllIntRegex})|(\d+)(?!,))(?=\b)";
       public static readonly string AllPointRegex = $@"((\s{ZeroToNineIntegerRegex})+|(\s{AllIntRegex}))";

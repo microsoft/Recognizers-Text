@@ -19,6 +19,7 @@ export interface INumberWithUnitExtractorConfiguration {
     readonly compoundUnitConnectorRegex: RegExp;
     readonly nonUnitRegex: RegExp;
     readonly ambiguousUnitNumberMultiplierRegex: RegExp;
+    expandHalfSuffix(source: string, result: ExtractResult[], numbers: ExtractResult[]): void;
 }
 
 export class NumberWithUnitExtractor implements IExtractor {
@@ -262,6 +263,9 @@ export class NumberWithUnitExtractor implements IExtractor {
 
         // remove common ambiguous cases
         result = this.filterAmbiguity(result, source);
+
+        // expand Chinese phrase to the `half` patterns when it follows closely origin phrase.
+        this.config.expandHalfSuffix(source, result, numbers);
 
         return result;
     }

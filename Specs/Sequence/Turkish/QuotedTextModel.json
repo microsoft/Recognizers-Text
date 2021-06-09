@@ -1,0 +1,29 @@
+[
+ {
+  "Input": "Bu “numara” `123` veya `456` dır",
+  "NotSupportedByDesign": "javascript, python, java",
+  "Results": [
+   {
+    "Text": "“numara”",
+    "TypeName": "quotedText",
+    "Resolution": {
+     "value": "“numara”"
+    }
+   },
+   {
+    "Text": "`123`",
+    "TypeName": "quotedText",
+    "Resolution": {
+     "value": "`123`"
+    }
+   },
+   {
+    "Text": "`456`",
+    "TypeName": "quotedText",
+    "Resolution": {
+     "value": "`456`"
+    }
+   }
+  ]
+ }
+]

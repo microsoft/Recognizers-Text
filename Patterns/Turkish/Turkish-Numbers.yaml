@@ -143,8 +143,9 @@ OrdinalTurkishRegex: !nestedRegex
 # Fraction Regex
 FractionNotationWithSpacesRegex: !simpleRegex
   def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))
-FractionNotationRegex: !simpleRegex
-  def: (((?<=\W|^)-\s*)|(?<![/-])(?<=\b))\d+[/]\d+(?=(\b[^/]|$))
+FractionNotationRegex: !nestedRegex
+  def: '{BaseNumbers.FractionNotationRegex}'
+  references: [ BaseNumbers.FractionNotationRegex ]
 FractionNounWithArticleRegex: !nestedRegex
   def: (?<=\b)(({AllIntRegex}\s+)?(buçuk|çeyrek|yarım))(?=(t[ae]n|d[[ae]n|y?[ae])?\b)
   references: [ AllIntRegex ]

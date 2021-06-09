@@ -132,6 +132,10 @@ class ChineseNumberParserConfiguration(NumberParserConfiguration):
         return self._percentage_regex
 
     @property
+    def percentage_num_regex(self) -> Pattern:
+        return self._percentage_num_regex
+
+    @property
     def double_and_round_regex(self) -> Pattern:
         return self._double_and_round_regex
 
@@ -184,6 +188,7 @@ class ChineseNumberParserConfiguration(NumberParserConfiguration):
         self._digit_num_regex = ChineseNumeric.DigitNumRegex
         self._dozen_regex = ChineseNumeric.DozenRegex
         self._percentage_regex = ChineseNumeric.PercentageRegex
+        self._percentage_num_regex = ChineseNumeric.PercentageNumRegex
         self._double_and_round_regex = RegExpUtility.get_safe_reg_exp(
             ChineseNumeric.DoubleAndRoundRegex)
         self._frac_split_regex = RegExpUtility.get_safe_reg_exp(

@@ -235,14 +235,7 @@
   },
   {
     "Input": "Estare afuera en 3 años",
-    "Results": [
-      {
-        "Text": "en 3 años",
-        "Type": "daterange",
-        "Start": 14,
-        "Length": 9
-      }
-    ]
+    "Results": []
   },
   {
     "Input": "Estuve afuera las pasadas 3 semanas",
@@ -389,24 +382,24 @@
     ]
   },
   {
-    "Input": "Estare afuera el tercer cuatrimestre de 2016",
+    "Input": "Estare afuera el tercer trimestre de 2016",
     "Results": [
       {
-        "Text": "el tercer cuatrimestre de 2016",
+        "Text": "el tercer trimestre de 2016",
         "Type": "daterange",
         "Start": 14,
-        "Length": 30
+        "Length": 27
       }
     ]
   },
   {
-    "Input": "Estare afuera el tercer cuatrimestre de este año",
+    "Input": "Estare afuera el tercer trimestre de este año",
     "Results": [
       {
-        "Text": "el tercer cuatrimestre de este año",
+        "Text": "el tercer trimestre de este año",
         "Type": "daterange",
         "Start": 14,
-        "Length": 34
+        "Length": 31
       }
     ]
   },
@@ -3760,14 +3753,7 @@
     "Input": "Ya no estaré en dos semanas",
     "NotSupported": "java",
     "NotSupportedByDesign": "javascript",
-    "Results": [
-      {
-        "Text": "en dos semanas",
-        "Type": "daterange",
-        "Start": 13,
-        "Length": 14
-      }
-    ]
+    "Results": []
   },
   {
     "Input": "Ocurrió en las últimas 2 décadas",
@@ -3812,27 +3798,14 @@
     "Input": "Ocurrirá en 4 semanas",
     "NotSupported": "java",
     "NotSupportedByDesign": "javascript",
-    "Results": [
-      {
-        "Text": "en 4 semanas",
-        "Type": "daterange",
-        "Start": 9,
-        "Length": 12
-      }
-    ]
+    "Results": []
   },
   {
     "Input": "Ocurrirá 2 días después",
     "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
-    "Results": [
-      {
-        "Text": "2 días después",
-        "Type": "daterange",
-        "Start": 9,
-        "Length": 14
-      }
-    ]
+    "Comment": "'2 días después' seems to mean '2 days later' more than '2 days hence'.",
+    "Results": []
   },
   {
     "Input": "Cortana puede buscarnos un tiempo para inicios de la próxima semana",
@@ -4663,5 +4636,60 @@
     "Input": "Llámame al (206)555-1212",
     "NotSupportedByDesign": "javascript",
     "Results": []
+  },
+  {
+    "Input": "Ocurrirá 2 días a partir de ahora",
+    "NotSupported": "java, python",
+    "NotSupportedByDesign": "javascript",
+    "Results": []
+  },
+  {
+    "Input": "Estare afuera próximos 3 años",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "próximos 3 años",
+        "Type": "daterange",
+        "Start": 14,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Ya no estaré la semana después de la próxima",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "la semana después de la próxima",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "Ocurrirá 4 semanas en el futuro",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "4 semanas en el futuro",
+        "Type": "daterange",
+        "Start": 9,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Ocurrirá 2 días en el futuro",
+    "NotSupported": "java, python",
+    "NotSupportedByDesign": "javascript",
+    "Results": [
+      {
+        "Text": "2 días en el futuro",
+        "Type": "daterange",
+        "Start": 9,
+        "Length": 19
+      }
+    ]
   }
 ]

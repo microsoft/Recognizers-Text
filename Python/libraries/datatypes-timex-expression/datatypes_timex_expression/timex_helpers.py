@@ -106,6 +106,7 @@ class TimexHelpers:
                     result = Timex()
                     result.year = start.year + duration.years
                     result.month = start.month
+                    result.day_of_month = start.day_of_month
                     return result
             if duration.month:
                 if start.month:

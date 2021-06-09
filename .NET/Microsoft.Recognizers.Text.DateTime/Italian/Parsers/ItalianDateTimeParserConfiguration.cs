@@ -1,4 +1,5 @@
-﻿using System.Collections.Immutable;
+﻿using System;
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Italian;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
@@ -106,12 +107,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public int GetHour(string text, int hour)
         {
             var trimmedText = text.Trim();
+
             int result = hour;
-            if ((trimmedText.EndsWith("mattino") || trimmedText.EndsWith("mattina")) && hour >= 12)
+
+            // @TODO move hardcoded values to resources file
+
+            if ((trimmedText.EndsWith("mattino", StringComparison.Ordinal) ||
+                 trimmedText.EndsWith("mattina", StringComparison.Ordinal)) &&
+                hour >= 12)
             {
                 result -= 12;
             }
-            else if (!(trimmedText.EndsWith("mattino") || trimmedText.EndsWith("mattina")) && hour < 12)
+            else if (!(trimmedText.EndsWith("mattino", StringComparison.Ordinal) ||
+                       trimmedText.EndsWith("mattina", StringComparison.Ordinal)) &&
+                     hour < 12)
             {
                 result += 12;
             }
@@ -122,15 +131,22 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public bool GetMatchedNowTimex(string text, out string timex)
         {
             var trimmedText = text.Trim();
-            if (trimmedText.EndsWith("ora") || trimmedText.EndsWith("adesso") || trimmedText.EndsWith("in questo momento"))
+
+            // @TODO move hardcoded values to resources file
+
+            if (trimmedText.EndsWith("ora", StringComparison.Ordinal) ||
+                trimmedText.EndsWith("adesso", StringComparison.Ordinal) ||
+                trimmedText.EndsWith("in questo momento", StringComparison.Ordinal))
             {
                 timex = "PRESENT_REF";
             }
-            else if (trimmedText.Equals("recentemente") || trimmedText.Equals("precedentemente"))
+            else if (trimmedText.Equals("recentemente", StringComparison.Ordinal) ||
+                     trimmedText.Equals("precedentemente", StringComparison.Ordinal))
             {
                 timex = "PAST_REF";
             }
-            else if (trimmedText.Equals("il prima possibile") || trimmedText.Equals("asap"))
+            else if (trimmedText.Equals("il prima possibile", StringComparison.Ordinal) ||
+                     trimmedText.Equals("asap", StringComparison.Ordinal))
             {
                 timex = "FUTURE_REF";
             }

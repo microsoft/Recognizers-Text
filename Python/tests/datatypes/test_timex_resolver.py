@@ -243,6 +243,16 @@ def test_datatypes_resolver_dateRange_last_three_weeks():
     assert resolution.values[0].end == "2019-05-01"
 
 
+def test_datatypes_resolver_dateRange_last_ten_years():
+    today = datetime(2021, 1, 1)
+    resolution = TimexResolver.resolve(["(2011-01-01,2021-01-01,P10Y)"], today)
+    assert len(resolution.values) == 1
+    assert resolution.values[0].timex == "(2011-01-01,2021-01-01,P10Y)"
+    assert resolution.values[0].type == "daterange"
+    assert resolution.values[0].start == "2011-01-01"
+    assert resolution.values[0].end == "2021-01-01"
+
+
 def test_datatypes_resolver_timeRange_4am_to_8pm():
     today = datetime.now()
     resolution = TimexResolver.resolve(["(T04,T20,PT16H)"], today)

@@ -21,13 +21,16 @@ class ChineseHolidayParserConfiguration(BaseHolidayParserConfiguration):
         return self._holiday_func_dictionary
 
     def get_swift_year(self, text: str) -> int:
-        if text.endswith('年'):
-            return 0
-        if text.endswith('去年'):
-            return -1
-        if text.endswith('明年'):
-            return 1
-        return None
+        trimmed_text = text.strip().lower()
+
+        swift = 0
+        if trimmed_text.startswith('明'):
+            swift = 1
+        if trimmed_text.startswith('去'):
+            swift = -1
+        if trimmed_text.startswith('今'):
+            swift = 0
+        return swift
 
     def sanitize_holiday_token(self, holiday: str) -> str:
         return holiday

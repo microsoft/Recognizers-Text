@@ -24,6 +24,9 @@
 
         public bool IsMealtime { get; set; } = false;
 
+        // For cases where a language has variations in handling decimal separators
+        public bool TreatAsInteger { get; set; } = false;
+
         public Metadata Clone()
         {
             return (Metadata)MemberwiseClone();

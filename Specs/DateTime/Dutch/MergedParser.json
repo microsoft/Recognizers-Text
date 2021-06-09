@@ -1,12 +1,9 @@
 [
   {
     "Input": "VOEG LUNCH TOE OM 12.30 OP VRIJ",
-    "Comment": "Disable this for now because of new features in .NET",
-    "NotSupported": "javascript, Java, python",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -23,6 +20,16 @@
               "timex": "XXXX-WXX-5T12:30",
               "type": "datetime",
               "value": "2016-11-11 12:30:00"
+            },
+            {
+              "timex": "XXXX-WXX-5T00:30",
+              "type": "datetime",
+              "value": "2016-11-04 00:30:00"
+            },
+            {
+              "timex": "XXXX-WXX-5T00:30",
+              "type": "datetime",
+              "value": "2016-11-11 00:30:00"
             }
           ]
         },
@@ -36,7 +43,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -68,7 +74,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -77,14 +82,24 @@
         "Value": {
           "values": [
             {
-              "timex": "XXXX-WXX-1T12",
+              "timex": "XXXX-WXX-1T12:00",
               "type": "datetime",
               "value": "2016-10-31 12:00:00"
             },
             {
-              "timex": "XXXX-WXX-1T12",
+              "timex": "XXXX-WXX-1T12:00",
               "type": "datetime",
               "value": "2016-11-07 12:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-1T00:00",
+              "type": "datetime",
+              "value": "2016-10-31 00:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-1T00:00",
+              "type": "datetime",
+              "value": "2016-11-07 00:00:00"
             }
           ]
         },
@@ -98,7 +113,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -123,23 +137,24 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "vanavond rond 20.00",
-        "Type": "datetimeV2.datetime",
+        "Text": "voor vanavond rond 20.00",
+        "Type": "datetimeV2.datetimerange",
         "Value": {
           "values": [
             {
-              "timex": "2016-11-07T20",
-              "type": "datetime",
-              "value": "2016-11-07 20:00:00"
+              "timex": "2016-11-07T20:00",
+              "Mod": "before",
+              "type": "datetimerange",
+              "sourceEntity": "datetimepoint",
+              "end": "2016-11-07 20:00:00"
             }
           ]
         },
-        "Start": 66,
-        "Length": 19
+        "Start": 61,
+        "Length": 24
       }
     ]
   },
@@ -148,8 +163,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, java, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -179,8 +192,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, java, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -205,7 +216,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -230,7 +240,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -239,9 +248,14 @@
         "Value": {
           "values": [
             {
-              "timex": "2016-11-09T08",
+              "timex": "2016-11-09T08:00",
               "type": "datetime",
               "value": "2016-11-09 08:00:00"
+            },
+            {
+              "timex": "2016-11-09T20:00",
+              "type": "datetime",
+              "value": "2016-11-09 20:00:00"
             }
           ]
         },
@@ -255,7 +269,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -287,23 +300,24 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "vrijdag voor 3 's middags",
-        "Type": "datetimeV2.datetime",
+        "Type": "datetimeV2.datetimerange",
         "Value": {
           "values": [
             {
               "timex": "XXXX-WXX-5T15",
-              "type": "datetime",
-              "value": "2016-11-04 15:00:00"
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2016-11-04 15:00:00"
             },
             {
               "timex": "XXXX-WXX-5T15",
-              "type": "datetime",
-              "value": "2016-11-11 15:00:00"
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2016-11-11 15:00:00"
             }
           ]
         },
@@ -317,7 +331,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -342,28 +355,31 @@
     "Context": {
       "ReferenceDateTime": "2017-09-15T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "woensdag",
-        "Type": "datetimeV2.date",
+        "Text": "voor woensdag",
+        "Type": "datetimeV2.daterange",
         "Value": {
           "values": [
             {
               "timex": "XXXX-WXX-3",
-              "type": "date",
-              "value": "2017-09-13"
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "end": "2017-09-13"
             },
             {
               "timex": "XXXX-WXX-3",
-              "type": "date",
-              "value": "2017-09-20"
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "end": "2017-09-20"
             }
           ]
         },
-        "Start": 50,
-        "Length": 8
+        "Start": 45,
+        "Length": 13
       }
     ]
   },
@@ -372,23 +388,24 @@
     "Context": {
       "ReferenceDateTime": "2017-10-15T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "dinsdag de eenendertigste",
-        "Type": "datetimeV2.date",
+        "Text": "voor dinsdag de eenendertigste",
+        "Type": "datetimeV2.daterange",
         "Value": {
           "values": [
             {
               "timex": "2017-10-31",
-              "type": "date",
-              "value": "2017-10-31"
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "end": "2017-10-31"
             }
           ]
         },
-        "Start": 50,
-        "Length": 25
+        "Start": 45,
+        "Length": 30
       }
     ]
   },
@@ -397,7 +414,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -422,7 +438,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -447,7 +462,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -472,8 +486,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -498,8 +510,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -524,8 +534,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -550,7 +558,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -559,7 +566,7 @@
         "Value": {
           "values": [
             {
-              "timex": "T20",
+              "timex": "T20:00",
               "Mod": "after",
               "type": "timerange",
               "start": "20:00:00",
@@ -577,7 +584,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -586,7 +592,7 @@
         "Value": {
           "values": [
             {
-              "timex": "T20",
+              "timex": "T20:00",
               "Mod": "before",
               "type": "timerange",
               "end": "20:00:00",
@@ -604,7 +610,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -613,7 +618,7 @@
         "Value": {
           "values": [
             {
-              "timex": "T20",
+              "timex": "T20:00",
               "Mod": "since",
               "type": "timerange",
               "start": "20:00:00",
@@ -631,7 +636,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -656,34 +660,14 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "2015-1",
-        "Type": "datetimeV2.daterange",
-        "Value": {
-          "values": [
-            {
-              "timex": "2015-01",
-              "type": "daterange",
-              "start": "2015-01-01",
-              "end": "2015-02-01"
-            }
-          ]
-        },
-        "Start": 0,
-        "Length": 6
-      }
-    ]
+    "Results": []
   },
   {
     "Input": "2017-13-12",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, java, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
@@ -692,7 +676,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -716,24 +699,24 @@
         "Length": 7
       },
       {
-        "Text": "wednesday at 3pm",
+        "Text": "woensdag om 15.00",
         "Type": "datetimeV2.datetime",
         "Value": {
           "values": [
             {
-              "timex": "XXXX-WXX-3T15",
+              "timex": "XXXX-WXX-3T15:00",
               "type": "datetime",
               "value": "2016-11-02 15:00:00"
             },
             {
-              "timex": "XXXX-WXX-3T15",
+              "timex": "XXXX-WXX-3T15:00",
               "type": "datetime",
               "value": "2016-11-09 15:00:00"
             }
           ]
         },
-        "Start": 44,
-        "Length": 16
+        "Start": 52,
+        "Length": 17
       }
     ]
   },
@@ -742,26 +725,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "8.00",
-        "Type": "datetimeV2.time",
-        "Value": {
-          "values": [
-            {
-              "timex": "T08",
-              "type": "time",
-              "value": "08:00:00"
-            }
-          ]
-        },
-        "Start": 36,
-        "Length": 4
-      },
-      {
-        "Text": "every week",
+        "Text": "iedere week",
         "Type": "datetimeV2.set",
         "Value": {
           "values": [
@@ -772,17 +739,36 @@
             }
           ]
         },
-        "Start": 27,
-        "Length": 10
+        "Start": 21,
+        "Length": 11
+      },
+      {
+        "Text": "8.00",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T08:00",
+              "type": "time",
+              "value": "08:00:00"
+            },
+            {
+              "timex": "T20:00",
+              "type": "time",
+              "value": "20:00:00"
+            }
+          ]
+        },
+        "Start": 36,
+        "Length": 4
       }
     ]
   },
   {
-    "Input": "leg vast tweede zaterdag elke maand ",
+    "Input": "leg vast tweede zaterdag elke maand",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -801,7 +787,7 @@
         "Length": 15
       },
       {
-        "Text": "each month",
+        "Text": "elke maand",
         "Type": "datetimeV2.set",
         "Value": {
           "values": [
@@ -812,7 +798,7 @@
             }
           ]
         },
-        "Start": 28,
+        "Start": 25,
         "Length": 10
       }
     ]
@@ -822,8 +808,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, java, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -853,8 +837,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, java, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -879,7 +861,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -898,7 +879,7 @@
         "Length": 5
       },
       {
-        "Text": "tomorrow morning",
+        "Text": "morgenochtend",
         "Type": "datetimeV2.datetimerange",
         "Value": {
           "values": [
@@ -910,8 +891,8 @@
             }
           ]
         },
-        "Start": 28,
-        "Length": 16
+        "Start": 29,
+        "Length": 13
       }
     ]
   },
@@ -920,7 +901,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -944,7 +924,7 @@
         "Length": 7
       },
       {
-        "Text": "August 22nd",
+        "Text": "22 augustus",
         "Type": "datetimeV2.date",
         "Value": {
           "values": [
@@ -960,7 +940,7 @@
             }
           ]
         },
-        "Start": 40,
+        "Start": 47,
         "Length": 11
       }
     ]
@@ -970,7 +950,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -994,7 +973,7 @@
         "Length": 7
       },
       {
-        "Text": "in the afternoon",
+        "Text": "in de middag",
         "Type": "datetimeV2.timerange",
         "Value": {
           "values": [
@@ -1006,8 +985,8 @@
             }
           ]
         },
-        "Start": 28,
-        "Length": 16
+        "Start": 30,
+        "Length": 12
       }
     ]
   },
@@ -1016,7 +995,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1025,17 +1003,17 @@
         "Value": {
           "values": [
             {
-              "timex": "2016-11-15T12:00",
+              "timex": "2016-11-08T12:00",
               "Mod": "before",
               "type": "datetimerange",
-              "end": "2016-11-15 12:00:00",
+              "end": "2016-11-08 12:00:00",
               "sourceEntity": "datetimepoint"
             },
             {
-              "timex": "2016-11-15T00:00",
+              "timex": "2016-11-08T00:00",
               "Mod": "before",
               "type": "datetimerange",
-              "end": "2016-11-15 00:00:00",
+              "end": "2016-11-08 00:00:00",
               "sourceEntity": "datetimepoint"
             }
           ]
@@ -1050,25 +1028,24 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "voorafgaand aan 14.00 ",
+        "Text": "voorafgaand aan 14.00",
         "Type": "datetimeV2.timerange",
         "Value": {
           "values": [
             {
-              "timex": "T14",
+              "timex": "T14:00",
               "Mod": "before",
               "type": "timerange",
-              "end": "14:00:00",
-              "sourceEntity": "datetimepoint"
+              "sourceEntity": "datetimepoint",
+              "end": "14:00:00"
             }
           ]
         },
         "Start": 16,
-        "Length": 22
+        "Length": 21
       }
     ]
   },
@@ -1077,7 +1054,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1096,7 +1072,7 @@
         "Length": 20
       },
       {
-        "Text": "twenty",
+        "Text": "twintig",
         "Type": "datetimeV2.time",
         "Value": {
           "values": [
@@ -1107,8 +1083,8 @@
             }
           ]
         },
-        "Start": 38,
-        "Length": 6
+        "Start": 49,
+        "Length": 7
       }
     ]
   },
@@ -1117,7 +1093,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1136,19 +1111,19 @@
         "Length": 20
       },
       {
-        "Text": "20",
+        "Text": "20.00",
         "Type": "datetimeV2.time",
         "Value": {
           "values": [
             {
-              "timex": "T20",
+              "timex": "T20:00",
               "type": "time",
               "value": "20:00:00"
             }
           ]
         },
-        "Start": 38,
-        "Length": 2
+        "Start": 49,
+        "Length": 5
       }
     ]
   },
@@ -1157,7 +1132,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1176,7 +1150,7 @@
         "Length": 20
       },
       {
-        "Text": "nine",
+        "Text": "negen",
         "Type": "datetimeV2.time",
         "Value": {
           "values": [
@@ -1192,8 +1166,8 @@
             }
           ]
         },
-        "Start": 38,
-        "Length": 4
+        "Start": 49,
+        "Length": 5
       }
     ]
   },
@@ -1202,7 +1176,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1227,7 +1200,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1252,7 +1224,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1277,7 +1248,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1302,11 +1272,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "ochtend",
+        "Text": "de ochtend",
         "Type": "datetimeV2.timerange",
         "Value": {
           "values": [
@@ -1318,8 +1287,8 @@
             }
           ]
         },
-        "Start": 22,
-        "Length": 7
+        "Start": 19,
+        "Length": 10
       }
     ]
   },
@@ -1328,20 +1297,17 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "morgen",
-        "Type": "datetimeV2.daterange",
+        "Type": "datetimeV2.date",
         "Value": {
           "values": [
             {
               "timex": "2016-11-08",
-              "Mod": "before",
-              "type": "daterange",
-              "end": "2016-11-08",
-              "sourceEntity": "datetimepoint"
+              "type": "date",
+              "value": "2016-11-08"
             }
           ]
         },
@@ -1355,7 +1321,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1382,7 +1347,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1409,7 +1373,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1436,7 +1399,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1463,7 +1425,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1490,7 +1451,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1517,11 +1477,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "beginnend vanaf 1-1-2016 ",
+        "Text": "beginnend vanaf 1-1-2016",
         "Type": "datetimeV2.daterange",
         "Value": {
           "values": [
@@ -1535,7 +1494,7 @@
           ]
         },
         "Start": 8,
-        "Length": 25
+        "Length": 24
       }
     ]
   },
@@ -1544,7 +1503,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1571,7 +1529,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1598,7 +1555,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1625,8 +1581,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1653,8 +1607,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1680,8 +1632,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1707,8 +1657,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1734,8 +1682,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1761,8 +1707,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1788,8 +1732,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1815,8 +1757,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1842,8 +1782,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1869,8 +1807,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1896,8 +1832,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1923,8 +1857,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1950,8 +1882,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1977,12 +1907,10 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "binnen de komende 10 maanden ",
+        "Text": "binnen de komende 10 maanden",
         "Type": "datetimeV2.daterange",
         "Value": {
           "values": [
@@ -1995,7 +1923,7 @@
           ]
         },
         "Start": 7,
-        "Length": 29
+        "Length": 28
       }
     ]
   },
@@ -2004,7 +1932,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2030,7 +1957,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2056,11 +1982,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "november , 2016 ",
+        "Text": "november , 2016",
         "Type": "datetimeV2.daterange",
         "Value": {
           "values": [
@@ -2073,7 +1998,7 @@
           ]
         },
         "Start": 7,
-        "Length": 16
+        "Length": 15
       }
     ]
   },
@@ -2082,7 +2007,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2108,7 +2032,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2134,7 +2057,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2160,7 +2082,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2186,7 +2107,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2212,7 +2132,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2238,7 +2157,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2264,11 +2182,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "11 - 2016 ",
+        "Text": "11 - 2016",
         "Type": "datetimeV2.daterange",
         "Value": {
           "values": [
@@ -2281,7 +2198,7 @@
           ]
         },
         "Start": 7,
-        "Length": 10
+        "Length": 9
       }
     ]
   },
@@ -2290,7 +2207,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2316,12 +2232,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "later dan of op 1-1-2016 ",
+        "Text": "later dan of op 1-1-2016",
         "Type": "datetimeV2.daterange",
         "Value": {
           "values": [
@@ -2335,7 +2249,7 @@
           ]
         },
         "Start": 8,
-        "Length": 25
+        "Length": 24
       }
     ]
   },
@@ -2344,11 +2258,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "later dan 1-1-2016 ",
+        "Text": "later dan 1-1-2016",
         "Type": "datetimeV2.daterange",
         "Value": {
           "values": [
@@ -2362,7 +2275,7 @@
           ]
         },
         "Start": 8,
-        "Length": 19
+        "Length": 18
       }
     ]
   },
@@ -2371,11 +2284,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "1-1-2016 ",
+        "Text": "1-1-2016",
         "Type": "datetimeV2.date",
         "Value": {
           "values": [
@@ -2387,7 +2299,7 @@
           ]
         },
         "Start": 11,
-        "Length": 9
+        "Length": 8
       }
     ]
   },
@@ -2396,8 +2308,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2424,11 +2334,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "voor 1-1-2016 ",
+        "Text": "voor 1-1-2016",
         "Type": "datetimeV2.daterange",
         "Value": {
           "values": [
@@ -2442,7 +2351,7 @@
           ]
         },
         "Start": 8,
-        "Length": 14
+        "Length": 13
       }
     ]
   },
@@ -2451,12 +2360,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "op of eerder dan 1-1-2016 ",
+        "Text": "op of eerder dan 1-1-2016",
         "Type": "datetimeV2.daterange",
         "Value": {
           "values": [
@@ -2470,7 +2377,7 @@
           ]
         },
         "Start": 14,
-        "Length": 26
+        "Length": 25
       }
     ]
   },
@@ -2479,7 +2386,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2504,7 +2410,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2531,8 +2436,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2559,7 +2462,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2586,7 +2488,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2612,26 +2513,24 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "later dan of in 2016 ",
+        "Text": "niet later dan of in 2016",
         "Type": "datetimeV2.daterange",
         "Value": {
           "values": [
             {
               "timex": "2016",
-              "Mod": "since",
+              "Mod": "until",
               "type": "daterange",
-              "start": "2016-01-01",
+              "end": "2017-01-01",
               "sourceEntity": "datetimerange"
             }
           ]
         },
-        "Start": 13,
-        "Length": 21
+        "Start": 8,
+        "Length": 25
       }
     ]
   },
@@ -2640,25 +2539,24 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "later dan 2016 ",
+        "Text": "niet later dan 2016",
         "Type": "datetimeV2.daterange",
         "Value": {
           "values": [
             {
               "timex": "2016",
-              "Mod": "after",
+              "Mod": "before",
               "type": "daterange",
-              "start": "2017-01-01",
+              "end": "2016-01-01",
               "sourceEntity": "datetimerange"
             }
           ]
         },
-        "Start": 13,
-        "Length": 15
+        "Start": 8,
+        "Length": 19
       }
     ]
   },
@@ -2667,7 +2565,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2693,8 +2590,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2721,7 +2616,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2738,7 +2632,7 @@
             }
           ]
         },
-        "Start": 16,
+        "Start": 21,
         "Length": 16
       }
     ]
@@ -2748,11 +2642,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "18.30 vandaag ",
+        "Text": "18.30 vandaag",
         "Type": "datetimeV2.datetime",
         "Value": {
           "values": [
@@ -2763,8 +2656,8 @@
             }
           ]
         },
-        "Start": 19,
-        "Length": 14
+        "Start": 24,
+        "Length": 13
       }
     ]
   },
@@ -2773,12 +2666,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "op of voor overmorgen ",
+        "Text": "op of voor overmorgen",
         "Type": "datetimeV2.daterange",
         "Value": {
           "values": [
@@ -2792,7 +2683,7 @@
           ]
         },
         "Start": 8,
-        "Length": 22
+        "Length": 21
       }
     ]
   },
@@ -2801,7 +2692,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2826,7 +2716,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2853,8 +2742,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2863,7 +2750,7 @@
         "Value": {
           "values": [
             {
-              "timex": "2018-05-15T15",
+              "timex": "2018-05-15T15:00",
               "Mod": "until",
               "type": "datetimerange",
               "end": "2018-05-15 15:00:00",
@@ -2881,16 +2768,15 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "eerder dan 15.00 15-5-2018 ",
+        "Text": "eerder dan 15.00 15-5-2018",
         "Type": "datetimeV2.datetimerange",
         "Value": {
           "values": [
             {
-              "timex": "2018-05-15T15",
+              "timex": "2018-05-15T15:00",
               "Mod": "before",
               "type": "datetimerange",
               "end": "2018-05-15 15:00:00",
@@ -2899,7 +2785,7 @@
           ]
         },
         "Start": 8,
-        "Length": 27
+        "Length": 26
       }
     ]
   },
@@ -2908,23 +2794,22 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "15.00 15-5-2018 ",
+        "Text": "15.00 15-5-2018",
         "Type": "datetimeV2.datetime",
         "Value": {
           "values": [
             {
-              "timex": "2018-05-15T15",
+              "timex": "2018-05-15T15:00",
               "type": "datetime",
               "value": "2018-05-15 15:00:00"
             }
           ]
         },
         "Start": 11,
-        "Length": 16
+        "Length": 15
       }
     ]
   },
@@ -2933,7 +2818,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2958,8 +2842,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2984,8 +2866,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3010,7 +2890,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3031,7 +2910,7 @@
         "Length": 9
       },
       {
-        "Text": "after 2018",
+        "Text": "na 2018",
         "Type": "datetimeV2.daterange",
         "Value": {
           "values": [
@@ -3044,8 +2923,8 @@
             }
           ]
         },
-        "Start": 29,
-        "Length": 10
+        "Start": 34,
+        "Length": 7
       }
     ]
   },
@@ -3054,7 +2933,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3075,7 +2953,7 @@
         "Length": 7
       },
       {
-        "Text": "before 2018",
+        "Text": "voor 2018",
         "Type": "datetimeV2.daterange",
         "Value": {
           "values": [
@@ -3088,11 +2966,11 @@
             }
           ]
         },
-        "Start": 29,
-        "Length": 11
+        "Start": 32,
+        "Length": 9
       },
       {
-        "Text": "before 2000",
+        "Text": "voor 2000",
         "Type": "datetimeV2.daterange",
         "Value": {
           "values": [
@@ -3105,8 +2983,8 @@
             }
           ]
         },
-        "Start": 44,
-        "Length": 11
+        "Start": 45,
+        "Length": 9
       },
       {
         "Text": "1998",
@@ -3121,7 +2999,7 @@
             }
           ]
         },
-        "Start": 64,
+        "Start": 65,
         "Length": 4
       }
     ]
@@ -3131,8 +3009,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3152,7 +3028,7 @@
         "Length": 16
       },
       {
-        "Text": "less than 1 week",
+        "Text": "minder dan 1 week",
         "Type": "datetimeV2.duration",
         "Value": {
           "values": [
@@ -3164,8 +3040,8 @@
             }
           ]
         },
-        "Start": 37,
-        "Length": 16
+        "Start": 42,
+        "Length": 17
       }
     ]
   },
@@ -3174,8 +3050,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3201,8 +3075,6 @@
     "Context": {
       "ReferenceDateTime": "2018-06-12T00:00:00"
     },
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3228,8 +3100,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3255,12 +3125,10 @@
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "meer dan 2 dagen voor gisteren ",
+        "Text": "meer dan 2 dagen voor gisteren",
         "Type": "datetimeV2.daterange",
         "Value": {
           "values": [
@@ -3273,7 +3141,7 @@
           ]
         },
         "Start": 17,
-        "Length": 31
+        "Length": 30
       }
     ]
   },
@@ -3282,8 +3150,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3309,8 +3175,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3336,8 +3200,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3362,41 +3224,37 @@
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "3 minuten",
-        "Type": "datetimeV2.duration",
+        "Text": "over 3 minuten",
+        "Type": "datetimeV2.datetime",
         "Value": {
           "values": [
             {
-              "timex": "PT3M",
-              "type": "duration",
-              "value": "180"
+              "timex": "2018-05-29T00:03:00",
+              "type": "datetime",
+              "value": "2018-05-29 00:03:00"
             }
           ]
         },
-        "Start": 14,
-        "Length": 9
+        "Start": 9,
+        "Length": 14
       },
       {
-        "Text": "from today",
-        "Type": "datetimeV2.daterange",
+        "Text": "vandaag",
+        "Type": "datetimeV2.date",
         "Value": {
           "values": [
             {
               "timex": "2018-05-29",
-              "Mod": "since",
-              "type": "daterange",
-              "sourceEntity": "datetimepoint",
-              "start": "2018-05-29"
+              "type": "date",
+              "value": "2018-05-29"
             }
           ]
         },
-        "Start": 22,
-        "Length": 10
+        "Start": 30,
+        "Length": 7
       }
     ]
   },
@@ -3405,8 +3263,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3432,8 +3288,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3459,8 +3313,6 @@
     "Context": {
       "ReferenceDateTime": "2018-06-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3485,12 +3337,10 @@
     "Context": {
       "ReferenceDateTime": "2018-06-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2 weken na morgen ",
+        "Text": "2 weken na morgen",
         "Type": "datetimeV2.date",
         "Value": {
           "values": [
@@ -3502,7 +3352,7 @@
           ]
         },
         "Start": 32,
-        "Length": 18
+        "Length": 17
       }
     ]
   },
@@ -3511,12 +3361,10 @@
     "Context": {
       "ReferenceDateTime": "2018-06-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2 weken voor gisteren ",
+        "Text": "2 weken voor gisteren",
         "Type": "datetimeV2.date",
         "Value": {
           "values": [
@@ -3528,7 +3376,7 @@
           ]
         },
         "Start": 21,
-        "Length": 22
+        "Length": 21
       }
     ]
   },
@@ -3537,8 +3385,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3570,7 +3416,7 @@
             }
           ]
         },
-        "Start": 39,
+        "Start": 45,
         "Length": 4
       }
     ]
@@ -3580,8 +3426,6 @@
     "Context": {
       "ReferenceDateTime": "2018-06-22T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3608,8 +3452,6 @@
     "Context": {
       "ReferenceDateTime": "2018-06-22T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3636,8 +3478,6 @@
     "Context": {
       "ReferenceDateTime": "2018-06-22T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3671,8 +3511,6 @@
     "Context": {
       "ReferenceDateTime": "2018-06-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3704,8 +3542,6 @@
     "Context": {
       "ReferenceDateTime": "2018-06-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3714,7 +3550,7 @@
         "Value": {
           "values": [
             {
-              "timex": "2018-06-22T16",
+              "timex": "2018-06-22T16:00",
               "Mod": "before",
               "type": "datetimerange",
               "end": "2018-06-22 16:00:00"
@@ -3731,12 +3567,10 @@
     "Context": {
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "volgende week woensdag later dan 10 uur 's ochtends ",
+        "Text": "volgende week woensdag later dan 10 uur 's ochtends",
         "Type": "datetimeV2.datetimerange",
         "Value": {
           "values": [
@@ -3749,7 +3583,7 @@
           ]
         },
         "Start": 8,
-        "Length": 52
+        "Length": 51
       }
     ]
   },
@@ -3758,20 +3592,17 @@
     "Context": {
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "vorige week dinsdag om 2 uur 's middags",
-        "Type": "datetimeV2.datetimerange",
+        "Type": "datetimeV2.datetime",
         "Value": {
           "values": [
             {
               "timex": "2018-06-19T14",
-              "Mod": "before",
-              "type": "datetimerange",
-              "end": "2018-06-19 14:00:00"
+              "type": "datetime",
+              "value": "2018-06-19 14:00:00"
             }
           ]
         },
@@ -3785,8 +3616,6 @@
     "Context": {
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3830,8 +3659,6 @@
     "Context": {
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3851,7 +3678,7 @@
         "Length": 13
       },
       {
-        "Text": "after 2:00",
+        "Text": "na 2:00",
         "Type": "datetimeV2.timerange",
         "Value": {
           "values": [
@@ -3871,8 +3698,8 @@
             }
           ]
         },
-        "Start": 25,
-        "Length": 10
+        "Start": 30,
+        "Length": 7
       }
     ]
   },
@@ -3881,9 +3708,6 @@
     "Context": {
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3915,7 +3739,7 @@
             }
           ]
         },
-        "Start": 23,
+        "Start": 29,
         "Length": 4
       }
     ]
@@ -3925,9 +3749,6 @@
     "Context": {
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3953,9 +3774,6 @@
     "Context": {
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3981,9 +3799,6 @@
     "Context": {
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4009,9 +3824,6 @@
     "Context": {
       "ReferenceDateTime": "2018-07-02T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4037,9 +3849,6 @@
     "Context": {
       "ReferenceDateTime": "2018-07-02T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4065,9 +3874,6 @@
     "Context": {
       "ReferenceDateTime": "2018-07-02T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4093,9 +3899,6 @@
     "Context": {
       "ReferenceDateTime": "2018-07-05T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4120,9 +3923,6 @@
     "Context": {
       "ReferenceDateTime": "2018-07-05T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4147,9 +3947,6 @@
     "Context": {
       "ReferenceDateTime": "2018-07-05T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4174,9 +3971,6 @@
     "Context": {
       "ReferenceDateTime": "2018-07-05T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4201,9 +3995,6 @@
     "Context": {
       "ReferenceDateTime": "2018-07-05T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4228,9 +4019,6 @@
     "Context": {
       "ReferenceDateTime": "2018-07-05T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4255,8 +4043,6 @@
     "Context": {
       "ReferenceDateTime": "2018-08-10T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4265,7 +4051,7 @@
         "Value": {
           "values": [
             {
-              "timex": "2018-08-10T18",
+              "timex": "2018-08-10T18:00",
               "Mod": "after",
               "type": "datetimerange",
               "start": "2018-08-10 18:00:00",
@@ -4283,8 +4069,6 @@
     "Context": {
       "ReferenceDateTime": "2018-08-10T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4293,7 +4077,7 @@
         "Value": {
           "values": [
             {
-              "timex": "2018-08-10T18",
+              "timex": "2018-08-10T18:00",
               "Mod": "since",
               "type": "datetimerange",
               "start": "2018-08-10 18:00:00",
@@ -4311,8 +4095,6 @@
     "Context": {
       "ReferenceDateTime": "2018-08-10T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4321,7 +4103,7 @@
         "Value": {
           "values": [
             {
-              "timex": "2018-08-10T18",
+              "timex": "2018-08-10T18:00",
               "Mod": "before",
               "type": "datetimerange",
               "end": "2018-08-10 18:00:00",
@@ -4339,8 +4121,6 @@
     "Context": {
       "ReferenceDateTime": "2018-08-10T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4349,7 +4129,7 @@
         "Value": {
           "values": [
             {
-              "timex": "2018-08-10T18",
+              "timex": "2018-08-10T18:00",
               "Mod": "until",
               "type": "datetimerange",
               "end": "2018-08-10 18:00:00",
@@ -4367,8 +4147,6 @@
     "Context": {
       "ReferenceDateTime": "2018-08-10T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4377,7 +4155,7 @@
         "Value": {
           "values": [
             {
-              "timex": "T18",
+              "timex": "T18:00",
               "type": "time",
               "value": "18:00:00"
             }
@@ -4393,8 +4171,6 @@
     "Context": {
       "ReferenceDateTime": "2018-08-10T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4403,7 +4179,7 @@
         "Value": {
           "values": [
             {
-              "timex": "T18",
+              "timex": "T18:00",
               "type": "time",
               "value": "18:00:00"
             }
@@ -4419,7 +4195,6 @@
     "Context": {
       "ReferenceDateTime": "2015-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4440,9 +4215,9 @@
         }
       },
       {
-        "Text": "before 2018",
-        "Start": 29,
-        "Length": 11,
+        "Text": "voor 2018",
+        "Start": 19,
+        "Length": 9,
         "Type": "datetimeV2.daterange",
         "Value": {
           "values": [
@@ -4457,9 +4232,9 @@
         }
       },
       {
-        "Text": "before 2019",
-        "Start": 45,
-        "Length": 11,
+        "Text": "voor 2019",
+        "Start": 33,
+        "Length": 9,
         "Type": "datetimeV2.daterange",
         "Value": {
           "values": [
@@ -4480,8 +4255,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, java, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4511,12 +4284,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, java, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Paasmaandag 2017",
+        "Text": "paasmaandag 2017",
         "Type": "datetimeV2.date",
         "Value": {
           "values": [
@@ -4537,7 +4308,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4546,7 +4316,7 @@
         "Value": {
           "values": [
             {
-              "timex": "T14",
+              "timex": "T14:00",
               "Mod": "before",
               "type": "timerange",
               "end": "14:00:00",
@@ -4564,7 +4334,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4591,8 +4360,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4618,12 +4385,10 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "binnen komende 10 maanden ",
+        "Text": "binnen komende 10 maanden",
         "Type": "datetimeV2.daterange",
         "Value": {
           "values": [
@@ -4636,7 +4401,7 @@
           ]
         },
         "Start": 7,
-        "Length": 26
+        "Length": 25
       }
     ]
   },
@@ -4645,7 +4410,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4672,11 +4436,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "18.30 vandaag ",
+        "Text": "18.30 vandaag",
         "Type": "datetimeV2.datetime",
         "Value": {
           "values": [
@@ -4688,7 +4451,7 @@
           ]
         },
         "Start": 19,
-        "Length": 14
+        "Length": 13
       }
     ]
   },
@@ -4697,12 +4460,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "op of voor de dag na morgen ",
+        "Text": "op of voor de dag na morgen",
         "Type": "datetimeV2.daterange",
         "Value": {
           "values": [
@@ -4716,7 +4477,7 @@
           ]
         },
         "Start": 8,
-        "Length": 28
+        "Length": 27
       }
     ]
   },
@@ -4725,7 +4486,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4750,7 +4510,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4777,8 +4536,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4787,9 +4544,10 @@
         "Value": {
           "values": [
             {
-              "timex": "(2018-05-30,2018-06-02,P3D)",
+              "timex": "2018-06-02",
+              "Mod": "before",
               "type": "daterange",
-              "start": "2018-05-30",
+              "sourceEntity": "datetimepoint",
               "end": "2018-06-02"
             }
           ]
@@ -4804,8 +4562,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4831,12 +4587,10 @@
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "3 minuten sinds nu",
+        "Text": "over 3 minuten",
         "Type": "datetimeV2.datetime",
         "Value": {
           "values": [
@@ -4847,8 +4601,25 @@
             }
           ]
         },
-        "Start": 14,
-        "Length": 18
+        "Start": 9,
+        "Length": 14
+      },
+      {
+        "Text": "sinds nu",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "PRESENT_REF",
+              "Mod": "since",
+              "type": "datetimerange",
+              "sourceEntity": "datetimepoint",
+              "start": "2018-05-29 00:00:00"
+            }
+          ]
+        },
+        "Start": 24,
+        "Length": 8
       }
     ]
   },
@@ -4857,27 +4628,25 @@
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "3 minutes",
-        "Type": "datetimeV2.duration",
+        "Text": "over 3 minuten",
+        "Type": "datetimeV2.datetime",
         "Value": {
           "values": [
             {
-              "timex": "PT3M",
-              "type": "duration",
-              "value": "180"
+              "timex": "2018-05-29T00:03:00",
+              "type": "datetime",
+              "value": "2018-05-29 00:03:00"
             }
           ]
         },
-        "Start": 12,
-        "Length": 9
+        "Start": 9,
+        "Length": 14
       },
       {
-        "Text": "from today",
+        "Text": "sinds vandaag",
         "Type": "datetimeV2.daterange",
         "Value": {
           "values": [
@@ -4890,8 +4659,8 @@
             }
           ]
         },
-        "Start": 22,
-        "Length": 10
+        "Start": 24,
+        "Length": 13
       }
     ]
   },
@@ -4900,12 +4669,10 @@
     "Context": {
       "ReferenceDateTime": "2018-06-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2 weken eerder dan gisteren ",
+        "Text": "2 weken eerder dan gisteren",
         "Type": "datetimeV2.date",
         "Value": {
           "values": [
@@ -4917,7 +4684,7 @@
           ]
         },
         "Start": 21,
-        "Length": 28
+        "Length": 27
       }
     ]
   },
@@ -4926,8 +4693,6 @@
     "Context": {
       "ReferenceDateTime": "2018-06-22T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4954,8 +4719,6 @@
     "Context": {
       "ReferenceDateTime": "2018-06-22T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4982,8 +4745,6 @@
     "Context": {
       "ReferenceDateTime": "2018-06-22T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -5017,8 +4778,6 @@
     "Context": {
       "ReferenceDateTime": "2018-06-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -5050,12 +4809,10 @@
     "Context": {
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
-    "NotSupported": "javascript, python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "volgende week woensdag na 10 uur 's ochtends ",
+        "Text": "volgende week woensdag na 10 uur 's ochtends",
         "Type": "datetimeV2.datetimerange",
         "Value": {
           "values": [
@@ -5068,7 +4825,7 @@
           ]
         },
         "Start": 8,
-        "Length": 45
+        "Length": 44
       }
     ]
   },
@@ -5077,8 +4834,6 @@
     "Context": {
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -5098,7 +4853,7 @@
         "Length": 12
       },
       {
-        "Text": "after 2:00",
+        "Text": "na 2:00",
         "Type": "datetimeV2.timerange",
         "Value": {
           "values": [
@@ -5118,8 +4873,8 @@
             }
           ]
         },
-        "Start": 25,
-        "Length": 10
+        "Start": 29,
+        "Length": 7
       }
     ]
   },
@@ -5128,9 +4883,6 @@
     "Context": {
       "ReferenceDateTime": "2018-07-02T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -5156,9 +4908,6 @@
     "Context": {
       "ReferenceDateTime": "2018-07-05T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -5183,9 +4932,6 @@
     "Context": {
       "ReferenceDateTime": "2018-07-05T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -5210,9 +4956,6 @@
     "Context": {
       "ReferenceDateTime": "2018-07-05T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -5237,9 +4980,6 @@
     "Context": {
       "ReferenceDateTime": "2018-07-05T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -5264,9 +5004,6 @@
     "Context": {
       "ReferenceDateTime": "2018-07-05T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -5291,7 +5028,6 @@
     "Context": {
       "ReferenceDateTime": "2015-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -5312,9 +5048,9 @@
         }
       },
       {
-        "Text": "before 2018",
-        "Start": 29,
-        "Length": 11,
+        "Text": "voor 2018",
+        "Start": 30,
+        "Length": 9,
         "Type": "datetimeV2.daterange",
         "Value": {
           "values": [
@@ -5329,9 +5065,9 @@
         }
       },
       {
-        "Text": "before 2019",
-        "Start": 45,
-        "Length": 11,
+        "Text": "voor 2019",
+        "Start": 44,
+        "Length": 9,
         "Type": "datetimeV2.daterange",
         "Value": {
           "values": [
@@ -5344,6 +5080,408 @@
             }
           ]
         }
+      }
+    ]
+  },
+  {
+    "Input": "pik Jordans medicijnen op bij de costco apotheek op havana ergens voor volgende dinsdag om 12.00",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "voor volgende dinsdag om 12.00",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-15T12:00",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2016-11-15 12:00:00",
+              "sourceEntity": "datetimepoint"
+            },
+            {
+              "timex": "2016-11-15T00:00",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2016-11-15 00:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 66,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "Laten we 3 minuten sinds vandaag beginnen",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 minuten",
+        "Type": "datetimeV2.duration",
+        "Value": {
+          "values": [
+            {
+              "timex": "PT3M",
+              "type": "duration",
+              "value": "180"
+            }
+          ]
+        },
+        "Start": 9,
+        "Length": 9
+      },
+      {
+        "Text": "sinds vandaag",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-05-29",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "start": "2018-05-29"
+            }
+          ]
+        },
+        "Start": 19,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Laten we 3 minuten vanaf nu beginnen",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 minuten vanaf nu",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-05-29T00:03:00",
+              "type": "datetime",
+              "value": "2018-05-29 00:03:00"
+            }
+          ]
+        },
+        "Start": 9,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Het gebeurde op vorige week dinsdag tegen 2 uur 's middags",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "vorige week dinsdag tegen 2 uur 's middags",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-06-19T14",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2018-06-19 14:00:00"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 42
+      }
+    ]
+  },
+  {
+    "Input": "Laten we 3 minuten vanaf vandaag beginnen",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 minuten",
+        "Type": "datetimeV2.duration",
+        "Value": {
+          "values": [
+            {
+              "timex": "PT3M",
+              "type": "duration",
+              "value": "180"
+            }
+          ]
+        },
+        "Start": 9,
+        "Length": 9
+      },
+      {
+        "Text": "vandaag",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-05-29",
+              "type": "date",
+              "value": "2018-05-29"
+            }
+          ]
+        },
+        "Start": 25,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal tegen morgen vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tegen morgen",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-08",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2016-11-08",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal uiterlijk morgen vertrekken",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "uiterlijk morgen",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-08",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2016-11-08",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Vergeet niet je huiswerk voor morgen in te leveren",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "voor morgen",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-08",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2016-11-08",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 25,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Je moet het boek uiterlijk morgen terugbrengen",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "uiterlijk morgen",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-08",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2016-11-08",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 17,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Het evenement zal 2 dagen vanaf nu plaatsvinden.",
+    "Context": {
+      "ReferenceDateTime": "2018-07-05T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2 dagen vanaf nu",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-07-07",
+              "type": "date",
+              "value": "2018-07-07"
+            }
+          ]
+        },
+        "Start": 18,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Ik wil vanavond een tafel reserveren",
+    "Context": {
+      "ReferenceDateTime": "2018-07-05T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "vanavond",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-07-05TEV",
+              "type": "datetimerange",
+              "start": "2018-07-05 16:00:00",
+              "end": "2018-07-05 20:00:00"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Maak een afspraak op 3 mei",
+    "Context": {
+      "ReferenceDateTime": "2018-07-05T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 mei",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-05-03",
+              "type": "date",
+              "value": "2018-05-03"
+            },
+            {
+              "timex": "XXXX-05-03",
+              "type": "date",
+              "value": "2019-05-03"
+            }
+          ]
+        },
+        "Start": 21,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "We ontmoeten elkaar weer op tweede Paasdag",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tweede paasdag",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-03-28",
+              "type": "date",
+              "value": "2016-03-28"
+            },
+            {
+              "timex": "XXXX-03-28",
+              "type": "date",
+              "value": "2017-04-17"
+            }
+          ]
+        },
+        "Start": 28,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Paaseieren zoeken rond het resort op eerste paasdag",
+    "Context": {
+      "ReferenceDateTime": "2018-07-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "eerste paasdag",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-04-01",
+              "type": "date",
+              "value": "2018-04-01"
+            },
+            {
+              "timex": "XXXX-04-01",
+              "type": "date",
+              "value": "2019-04-21"
+            }
+          ]
+        },
+        "Start": 37,
+        "Length": 14
       }
     ]
   }

@@ -205,6 +205,18 @@ class ChineseDatePeriodParserConfiguration(DatePeriodParserConfiguration):
     def relative_decade_regex(self) -> Pattern:
         return self._relative_decade_regex
 
+    @property
+    def dynasty_year_regex(self) -> Pattern:
+        return self._dynasty_year_regex
+
+    @property
+    def dynasty_year_map(self) -> Dict[str, int]:
+        return self._dynasty_year_map
+
+    @property
+    def dynasty_start_year(self) -> str:
+        return self._dynasty_start_year
+
     def __init__(self):
         self._complex_dateperiod_regex = None
         self._relative_decade_regex = None
@@ -246,6 +258,10 @@ class ChineseDatePeriodParserConfiguration(DatePeriodParserConfiguration):
         self._unit_map = ChineseDateTime.ParserConfigurationUnitMap
         self._now_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.NowRegex)
+        self._dynasty_year_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.DynastyYearRegex)
+        self._dynasty_year_map = ChineseDateTime.DynastyYearMap
+        self._dynasty_start_year = ChineseDateTime.DynastyStartYear
         # TODO When the implementation for these properties is added, change the None values to their respective Regexps
         self._reference_date_period_regex = RegExpUtility.get_safe_reg_exp(r'\0')
         self._decade_with_century_regex = None

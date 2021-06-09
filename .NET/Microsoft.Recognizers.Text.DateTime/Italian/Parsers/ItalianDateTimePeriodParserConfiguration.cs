@@ -31,6 +31,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
+            TokenBeforeTime = DateTimeDefinitions.TokenBeforeTime;
+
             DateExtractor = config.DateExtractor;
             TimeExtractor = config.TimeExtractor;
             DateTimeExtractor = config.DateTimeExtractor;
@@ -70,6 +72,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         }
 
         public string TokenBeforeDate { get; }
+
+        public string TokenBeforeTime { get; }
 
         public IDateExtractor DateExtractor { get; }
 

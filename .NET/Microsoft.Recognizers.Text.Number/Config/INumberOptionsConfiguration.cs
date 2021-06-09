@@ -1,6 +1,4 @@
-﻿using Microsoft.Recognizers.Text.Config;
-
-namespace Microsoft.Recognizers.Text.Number
+﻿namespace Microsoft.Recognizers.Text.Number
 {
     public interface INumberOptionsConfiguration : IConfiguration
     {

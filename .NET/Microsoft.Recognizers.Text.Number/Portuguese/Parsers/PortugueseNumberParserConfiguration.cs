@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
 using System.Linq;
@@ -66,7 +67,7 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
                 }
 
                 // ends with 'avo' or 'ava'
-                if (NumbersDefinitions.WrittenFractionSuffix.Any(suffix => tempWord.EndsWith(suffix)))
+                if (NumbersDefinitions.WrittenFractionSuffix.Any(suffix => tempWord.EndsWith(suffix, StringComparison.Ordinal)))
                 {
                     var origTempWord = tempWord;
                     var newLength = origTempWord.Length;

@@ -1,4 +1,6 @@
-﻿using System.Collections.Immutable;
+﻿using System;
+using System.Collections.Immutable;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Spanish;
@@ -7,10 +9,28 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
     public class SpanishDateTimePeriodParserConfiguration : BaseDateTimeOptionsConfiguration, IDateTimePeriodParserConfiguration
     {
+        public static readonly Regex EarlyMorningStartEndRegex =
+            new Regex(DateTimeDefinitions.EarlyMorningStartEndRegex, RegexFlags);
+
+        public static readonly Regex MorningStartEndRegex =
+            new Regex(DateTimeDefinitions.MorningStartEndRegex, RegexFlags);
+
+        public static readonly Regex AfternoonStartEndRegex =
+            new Regex(DateTimeDefinitions.AfternoonStartEndRegex, RegexFlags);
+
+        public static readonly Regex EveningStartEndRegex =
+            new Regex(DateTimeDefinitions.EveningStartEndRegex, RegexFlags);
+
+        public static readonly Regex NightStartEndRegex =
+            new Regex(DateTimeDefinitions.NightStartEndRegex, RegexFlags);
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         public SpanishDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
         {
-            TokenBeforeDate = Definitions.Spanish.DateTimeDefinitions.TokenBeforeDate;
+            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
+            TokenBeforeTime = DateTimeDefinitions.TokenBeforeTime;
 
             DateExtractor = config.DateExtractor;
             TimeExtractor = config.TimeExtractor;
@@ -29,7 +49,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             PureNumberFromToRegex = SpanishTimePeriodExtractorConfiguration.PureNumFromTo;
             HyphenDateRegex = SpanishDateTimePeriodExtractorConfiguration.HyphenDateRegex;
             PureNumberBetweenAndRegex = SpanishTimePeriodExtractorConfiguration.PureNumBetweenAnd;
-            SpecificTimeOfDayRegex = SpanishDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
+            SpecificTimeOfDayRegex = SpanishDateTimePeriodExtractorConfiguration.PeriodSpecificTimeOfDayRegex;
             TimeOfDayRegex = SpanishDateTimeExtractorConfiguration.TimeOfDayRegex;
             PreviousPrefixRegex = SpanishDatePeriodExtractorConfiguration.PastRegex;
             FutureRegex = SpanishDatePeriodExtractorConfiguration.FutureRegex;
@@ -45,11 +65,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             PrefixDayRegex = SpanishDateTimePeriodExtractorConfiguration.PrefixDayRegex;
             BeforeRegex = SpanishDateTimePeriodExtractorConfiguration.BeforeRegex;
             AfterRegex = SpanishDateTimePeriodExtractorConfiguration.AfterRegex;
+
             UnitMap = config.UnitMap;
             Numbers = config.Numbers;
         }
 
         public string TokenBeforeDate { get; }
+
+        public string TokenBeforeTime { get; }
 
         public IDateExtractor DateExtractor { get; }
 
@@ -127,38 +150,36 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             beginHour = 0;
             endHour = 0;
             endMin = 0;
-
-            // TODO: modify it according to the coresponding function in English part
-            if (trimmedText.EndsWith("madrugada"))
+            if (EarlyMorningStartEndRegex.IsMatch(trimmedText))
             {
-                timeStr = "TDA";
+                timeStr = Constants.EarlyMorning;
                 beginHour = 4;
                 endHour = 8;
             }
-            else if (trimmedText.EndsWith("mañana"))
+            else if (AfternoonStartEndRegex.IsMatch(trimmedText))
             {
-                timeStr = "TMO";
-                beginHour = 8;
-                endHour = Constants.HalfDayHourCount;
-            }
-            else if (trimmedText.Contains("pasado mediodia") || trimmedText.Contains("pasado el mediodia"))
-            {
-                timeStr = "TAF";
+                timeStr = Constants.Afternoon;
                 beginHour = Constants.HalfDayHourCount;
                 endHour = 16;
             }
-            else if (trimmedText.EndsWith("tarde"))
+            else if (EveningStartEndRegex.IsMatch(trimmedText))
             {
-                timeStr = "TEV";
+                timeStr = Constants.Evening;
                 beginHour = 16;
                 endHour = 20;
             }
-            else if (trimmedText.EndsWith("noche"))
+            else if (NightStartEndRegex.IsMatch(trimmedText))
             {
-                timeStr = "TNI";
+                timeStr = Constants.Night;
                 beginHour = 20;
                 endHour = 23;
                 endMin = 59;
+            }
+            else if (MorningStartEndRegex.IsMatch(trimmedText))
+            {
+                timeStr = Constants.Morning;
+                beginHour = 8;
+                endHour = Constants.HalfDayHourCount;
             }
             else
             {
@@ -174,9 +195,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             var trimmedText = text.Trim();
             var swift = 0;
 
-            // TODO: Replace with a regex
+            // @TODO move hardcoded values to resources file
             if (SpanishDatePeriodParserConfiguration.PreviousPrefixRegex.IsMatch(trimmedText) ||
-                trimmedText.Equals("anoche"))
+                trimmedText.StartsWith("anoche", StringComparison.Ordinal))
             {
                 swift = -1;
             }

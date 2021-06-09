@@ -58,6 +58,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex AfterRegex =
             new Regex(DateTimeDefinitions.AfterRegex, RegexFlags);
 
+        public static readonly Regex PeriodTimeOfDayRegex =
+            new Regex(DateTimeDefinitions.PeriodTimeOfDayRegex, RegexFlags);
+
+        public static readonly Regex PeriodSpecificTimeOfDayRegex =
+            new Regex(DateTimeDefinitions.PeriodSpecificTimeOfDayRegex, RegexFlags);
+
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly Regex FromRegex =
@@ -118,9 +124,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex TillRegex => SpanishDatePeriodExtractorConfiguration.TillRegex;
 
-        public Regex SpecificTimeOfDayRegex => SpanishDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;
+        public Regex TimeOfDayRegex => PeriodTimeOfDayRegex;
 
-        public Regex TimeOfDayRegex => SpanishDateTimeExtractorConfiguration.TimeOfDayRegex;
+        public Regex SpecificTimeOfDayRegex => PeriodSpecificTimeOfDayRegex;
 
         public Regex FollowedUnit => SpanishTimePeriodExtractorConfiguration.FollowedUnit;
 

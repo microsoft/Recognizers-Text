@@ -188,6 +188,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             MonthFrontSimpleCasesRegex,
             QuarterRegex,
             QuarterRegexYearFront,
+            AllHalfYearRegex,
             SeasonRegex,
             RestOfDateRegex,
             LaterEarlyPeriodRegex,

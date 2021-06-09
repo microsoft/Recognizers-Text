@@ -154,14 +154,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                     continue;
                 }
 
-                match = this.config.FutureRegex.MatchBegin(afterStr, trim: true);
-
-                if (match.Success)
-                {
-                    ret.Add(new Token(duration.Start, duration.End + match.Index + match.Length));
-                    continue;
-                }
-
                 match = this.config.FutureSuffixRegex.MatchBegin(afterStr, trim: true);
 
                 if (match.Success)
@@ -180,12 +172,12 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             var match = regex.Match(text);
             bool isMatchAtEdge = inPrefix ?
-                                 text.Trim().EndsWith(match.Value.Trim()) :
-                                 text.Trim().StartsWith(match.Value.Trim());
+                                 text.Trim().EndsWith(match.Value.Trim(), StringComparison.Ordinal) :
+                                 text.Trim().StartsWith(match.Value.Trim(), StringComparison.Ordinal);
 
             if (match.Success && isMatchAtEdge)
             {
-                var startIndex = inPrefix ? text.LastIndexOf(match.Value) : (int)er.Start;
+                var startIndex = inPrefix ? text.LastIndexOf(match.Value, StringComparison.Ordinal) : (int)er.Start;
                 var endIndex = (int)er.Start + (int)er.Length;
                 endIndex += inPrefix ? 0 : match.Index + match.Length;
 
@@ -588,8 +580,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim();
+                var endPointStr = extractionResults[idx + 1].Text;
 
-                if (config.TillRegex.IsExactMatch(middleStr, trim: true))
+                if (config.TillRegex.IsExactMatch(middleStr, trim: true) || (string.IsNullOrEmpty(middleStr) &&
+                    config.TillRegex.MatchBegin(endPointStr, trim: true).Success))
                 {
                     var periodBegin = extractionResults[idx].Start ?? 0;
                     var periodEnd = (extractionResults[idx + 1].Start ?? 0) + (extractionResults[idx + 1].Length ?? 0);

@@ -32,7 +32,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             tokens.AddRange(TimeOfTodayAfter(text, reference));
             tokens.AddRange(SpecialTimeOfDate(text, reference));
             tokens.AddRange(DurationWithBeforeAndAfter(text, reference));
-            tokens.AddRange(SpecialTimeOfDay(text, reference));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }
@@ -302,19 +301,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             foreach (Match match in eod)
             {
                 ret.Add(new Token(match.Index, match.Index + match.Length));
-            }
-
-            return ret;
-        }
-
-        // Special case for 'the end of today'
-        public List<Token> SpecialTimeOfDay(string text, DateObject reference)
-        {
-            var ret = new List<Token>();
-            var match = this.config.SpecificEndOfRegex.Match(text);
-            if (match.Success)
-            {
-                ret.Add(new Token(match.Index, text.Length));
             }
 
             return ret;

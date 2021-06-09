@@ -10,3 +10,8 @@ Python/.cache/v/cache/lastfailed
 /JavaScript/*.lerna_backup
 .DS_Store
 /JavaScript/packages/**/*.tgz
+.history
+/Tools/src/ValidationTool/bin
+/Tools/src/ValidationTool/obj
+/Python/venv
+/Tools/.vs/Microsoft.Recognizers.Text.Validation/v16

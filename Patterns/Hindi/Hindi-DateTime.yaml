@@ -110,7 +110,7 @@ DescRegexA: !nestedRegex
   references: [ OclockRegex, BaseDateTime.BaseAmDescRegex, BaseDateTime.BasePmDescRegex, AmPmDescRegex ]
 # Exclude cases that include the "Am/Pm" suffix
 TwoDigitYearRegex: !nestedRegex
-  def: \b(?<![$])(?<year>([0-24-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|{OclockRegex}|\.\d)))
+  def: \b(?<![$])(?<year>([0-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|{OclockRegex}|\.\d)))
   references: [ AmDescRegex, PmDescRegex, OclockRegex]
 YearRegex: !nestedRegex
   def: (?:{BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})
@@ -279,14 +279,14 @@ SpecialDate: !nestedRegex
 DatePreposition: !simpleRegex
   def: \b(को|में)
 DateExtractorYearTermRegex: !nestedRegex
-  def: (\s+|\s*,\s*|\s+(का|की|के|को)\s+){DateYearRegex}
+  def: (\s+|\s*[/\\.,-]\s*|\s+(का|की|के|को)\s+){DateYearRegex}
   references: [ DateYearRegex ]
 DateExtractor1: !nestedRegex
   def: ((({DateYearRegex}(\s+|\s*,\s*|\s+(का|की|के|को)\s+))({MonthRegex}[\.]?\s*[/\\.,-]?\s*{DayRegex}(?!(\:)?\d+)))|(\b({WeekDayRegex}\s*[\(,-]?\s*)?(({MonthRegex}[\.]?\s*[/\\.,-]?\s*{DayRegex})|(\({MonthRegex}\s*[-.]\s*{DayRegex}\)))(\s*\))?(\s*\(\s*{WeekDayRegex}\s*\))?({DateExtractorYearTermRegex}\b)?))
   references: [ WeekDayRegex, MonthRegex, DayRegex, DateExtractorYearTermRegex,DateYearRegex]
 DateExtractor3: !nestedRegex
-  def: \b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}[\.]?(\s+|\s*,\s*|\s+(का|की|के|को)\s+|\s*-\s*){MonthRegex}[\.]?((\s+|\s*,\s*|\s+में\s+){DateYearRegex})?
-  references: [ WeekDayRegex, DayRegex, MonthRegex, DateYearRegex ]
+  def: \b({WeekDayRegex}(\s+|\s*,\s*))?({DayRegex}[\.]?(\s+|\s*[/\\.,-]\s*|\s+(का|की|के|को)\s+){MonthRegex}[\.]?((\s+|\s*[/\\.,-]\s*|\s+में\s+){DateYearRegex})?|{BaseDateTime.FourDigitYearRegex}\s*[/\\.,\- ]\s*{DayRegex}(\s+|\s*[/\\.,-]\s*|\s+(का|की|के|को)\s+){MonthRegex}[\.]?)
+  references: [ WeekDayRegex, DayRegex, MonthRegex, DateYearRegex, BaseDateTime.FourDigitYearRegex ]
 # The final lookahead in DateExtractor4|5|A avoids extracting as date "10/1-11" from an input like "10/1-11/2/2017" 
 DateExtractor4: !nestedRegex
   def: \b{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}[\.]?\s*[/\\\-]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)
@@ -301,24 +301,24 @@ DateExtractor7L: !nestedRegex
   def: \b({WeekDayRegex}\s+)?{MonthNumRegex}\s*/\s*{DayRegex}{DateExtractorYearTermRegex}(?![%])
   references: [ MonthNumRegex, DayRegex, WeekDayRegex, DateExtractorYearTermRegex ]
 DateExtractor7S: !nestedRegex
-  def: \b({WeekDayRegex}\s+)?{MonthNumRegex}\s*/\s*{DayRegex}(?![%])
-  references: [ MonthNumRegex, DayRegex, WeekDayRegex ]
+  def: \b({WeekDayRegex}\s+)?{MonthNumRegex}\s*/\s*{DayRegex}{BaseDateTime.CheckDecimalRegex}(?![%])
+  references: [ MonthNumRegex, DayRegex, WeekDayRegex, BaseDateTime.CheckDecimalRegex ]
 # The only difference between 7L and 7S is whether "Year" part is required
 # We have both the long and short Regex because we would like to catch both "11/20, 12" and "11/20, 12/20"
 # Only use the long Regex would ignore "11/20" in "11/20, 12/20" and it is hard to exhaust all characters after the "year" as we also have cases like "11/20, 12 of April"
 # Same for DateExtractor9L and DateExtractor9S
 DateExtractor8: !nestedRegex
-  def: (?<={DatePreposition}\s+)({StrictRelativeRegex}\s+)?({WeekDayRegex}\s+)?{DayRegex}[\\\-]{MonthNumRegex}(?![%])
-  references: [ DayRegex, MonthNumRegex, WeekDayRegex, DatePreposition, StrictRelativeRegex ]
+  def: (?<={DatePreposition}\s+)({StrictRelativeRegex}\s+)?({WeekDayRegex}\s+)?{DayRegex}[\\\-]{MonthNumRegex}{BaseDateTime.CheckDecimalRegex}(?![%])
+  references: [ DayRegex, MonthNumRegex, WeekDayRegex, DatePreposition, StrictRelativeRegex, BaseDateTime.CheckDecimalRegex ]
 DateExtractor9L: !nestedRegex
   def: \b({WeekDayRegex}\s+)?{DayRegex}\s*/\s*{MonthNumRegex}{DateExtractorYearTermRegex}(?![%])
   references: [ DayRegex, MonthNumRegex, WeekDayRegex, DateExtractorYearTermRegex ]
 DateExtractor9S: !nestedRegex
-  def: \b({WeekDayRegex}\s+)?{DayRegex}\s*/\s*{MonthNumRegex}(?![%])
-  references: [ DayRegex, MonthNumRegex, WeekDayRegex ]
+  def: \b({WeekDayRegex}\s+)?{DayRegex}\s*/\s*{MonthNumRegex}{BaseDateTime.CheckDecimalRegex}(?![%])
+  references: [ DayRegex, MonthNumRegex, WeekDayRegex, BaseDateTime.CheckDecimalRegex ]
 DateExtractorA: !nestedRegex
-  def: \b({WeekDayRegex}\s+)?{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]\s*{MonthNumRegex}\s*[/\\\-\.]\s*{DayRegex}(?!\s*[/\\\-\.]\s*\d+)
-  references: [ BaseDateTime.FourDigitYearRegex, MonthNumRegex, DayRegex, WeekDayRegex ]
+  def: \b({WeekDayRegex}\s+)?({BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DayRegex}|{MonthRegex}\s*[/\\\-\.]\s*{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]\s*{DayRegex}|{DayRegex}\s*[/\\\-\.]\s*{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]\s*{MonthRegex})(?!\s*[/\\\-\.]\s*\d+)
+  references: [ BaseDateTime.FourDigitYearRegex, MonthNumRegex, MonthRegex, DayRegex, WeekDayRegex ]
 OfMonth: !nestedRegex
   def: ^\s*{MonthRegex}(?=\s*(को|की)?)
   references: [ MonthRegex ]
@@ -340,6 +340,8 @@ DeltaMinuteNumRegex: !simpleRegex
   def: (?<deltaminnum>शून्य|एक|दो|तीन|फ़ोर|चार|पांच|पाँच|छह|सात|आठ|नौ|दस|ग्यारह|बारह|तेरह|चौदह|पंद्रह|सोलह|सत्रह|अठारह|उन्नीस|बीस|इक्कीस|बाईस|तेईस|चौबीस|पच्चीस|छब्बीस|सत्ताईस|अट्ठाईस|अट्ठाइस|उनतीस|तीस|इकतीस|इकत्तीस|बत्तीस|तैंतीस|चौंतीस|पैंतीस|छ्त्तीस|सैंतीस|अड़तीस|उनतालीस|चालीस|इकतालीस|बयालीस|तैंतालीस|चौंतालीस|पैंतालीस|पैंतालिस|पेंतालिस|छियालीस|सैंतालीस|अड़तालीस|उनचास|पचास|इक्याबन|बावन|तिरेपन|चौबन|पचपन|छप्पन|सत्तावन|अट्ठावन|उनसठ|ten|eleven|twelve|thirteen|fifteen|eighteen|(four|six|seven|nine)(teen)?|twenty|thirty|forty|fifty|one|two|three|five|eight|टेन|इलेवन|ट्वेल्व|थर्टीन|फ़ोर्टीन|फ़िफ़्टीन|सिक्सटीन|सेवेनटीन|एइटीन|नाइनटीन|ट्वेन्टी|ट्वेंटी|वन|टू|थ्री|फोर|फ़ाइव|सिक्स|सेवन|एइट|नाइन|थर्टी|फ़ोर्टी|फ़िफ़्टी)
 PmRegex: !simpleRegex
   def: (?<pm>(दोपहर\s+)?खाने\s+के\s+वक़्त\s+तक|(दोपहर|सायं|शामों|शाम|संध्या|सायंकाल|evening|((आधी|अर्ध)\s+)?रात)(\s+((के(?!\s+लिए)|को|में|की)(?!\s+दौरान)|(?=(\s+(के|को|में|की)\s+दौरान))))?|आधी\s*(-\s*)?रात|अर्ध\s*(-\s*)?रात्रि|लंचटाइम|लंच\s+के\s+समय|दोपहर\s+खाने\s+के\s+समय)
+RangePmRegex: !simpleRegex
+  def: (?<pm>(दोपहर\s+)?खाने\s+के\s+वक़्त\s+तक|(दोपहर|सायं|शामों|शाम|संध्या|सायंकाल|evening|(अर्ध\s+)?रात)(\s+((के(?!\s+लिए)|को|में|की)(?!\s+दौरान)|(?=(\s+(के|को|में|की)\s+दौरान))))?|अर्ध\s*(-\s*)?रात्रि|लंचटाइम|लंच\s+के\s+समय|दोपहर\s+खाने\s+के\s+समय)
 PmRegexFull: !simpleRegex
   def: (?<pm>(दोपहर\s+)?खाने\s+के\s+वक़्त\s+तक|(दोपहर|सायं|शामों|शाम|संध्या|सायंकाल|अपराह्न|अपराहन|evening|((आधी|अर्ध)\s+)?रात)(\s+((के(?!\s+लिए)|को|में|की)(?!\s+दौरान)|(?=(\s+(के|को|में|की)\s+दौरान))))?|आधी\s*(-\s*)?रात|अर्ध\s*(-\s*)?रात्रि|लंचटाइम|लंच\s+के\s+समय)
 AmRegex: !simpleRegex
@@ -471,8 +473,8 @@ UnspecificTimePeriodRegex: !nestedRegex
   def: ({MealTimeRegex})
   references: [ MealTimeRegex ]
 TimeOfDayRegex: !nestedRegex
-  def: \b(?<timeOfDay>(रोज\s+)?{LaterEarlyRegex}\s*(सुबह|दोपहर|शाम|{AmRegex}|{PmRegex})(?:\s+(को|में))?|(रोज\s+)?(सुबह|दोपहर|{AmRegex}|{PmRegex}|संध्या\s+प्रहर)(\s+{LaterEarlyRegex})?(?:\s+(को|में))?|शाम|(काम|व्यापार)\s+के\s+(समय|घंटों)(\s+में)?)
-  references: [ LaterEarlyRegex, AmRegex, PmRegex ]
+  def: \b(?<timeOfDay>(रोज\s+)?{LaterEarlyRegex}\s*(सुबह|दोपहर|शाम|{AmRegex}|{RangePmRegex})(?:\s+(को|में))?|(रोज\s+)?(सुबह|दोपहर|{AmRegex}|{RangePmRegex}|संध्या\s+प्रहर)(\s+{LaterEarlyRegex})?(?:\s+(को|में))?|शाम|(काम|व्यापार)\s+के\s+(समय|घंटों)(\s+में)?)
+  references: [ LaterEarlyRegex, AmRegex, RangePmRegex ]
 SpecificTimeOfDayRegex: !nestedRegex
   def: \b(({StrictRelativeRegex}\s+{TimeOfDayRegex})|\b(tonight|आज(\s+रात)?))s?
   references: [ TimeOfDayRegex, StrictRelativeRegex ]
@@ -603,6 +605,8 @@ AgoRegex: !simpleRegex
 LaterRegex: !nestedRegex
   def: \b(?:(?<day>(कल|अब|आज)\s+से)\s+बाद|बाद(?!((\s+में)?\s*{OneWordPeriodRegex})|(\s+{TimeOfDayRegex}))|(?<day>कल|आज) (से|बाद)|अब\s+से|के\s+बाद)
   references: [ OneWordPeriodRegex, TimeOfDayRegex ]
+BeforeAfterRegex: !simpleRegex
+  def: ^[.]
 InConnectorRegex: !simpleRegex
   def: \b(में|को)
 SinceYearSuffixRegex: !nestedRegex

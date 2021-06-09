@@ -70,6 +70,7 @@ namespace Microsoft.Recognizers.Text.Number
         public const string DECIMAL = "decimal";
         public const string FRACTION = "fraction";
         public const string POWER = "power";
+
         public static readonly HashSet<string> ValidSubTypes = new HashSet<string>()
         {
             INTEGER,

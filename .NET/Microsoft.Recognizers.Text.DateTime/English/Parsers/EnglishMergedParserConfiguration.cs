@@ -11,7 +11,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             BeforeRegex = EnglishMergedExtractorConfiguration.BeforeRegex;
             AfterRegex = EnglishMergedExtractorConfiguration.AfterRegex;
-            SinceRegex = EnglishMergedExtractorConfiguration.SinceRegex;
+            SinceRegex = (config.Options & DateTimeOptions.ExperimentalMode) != 0 ? EnglishMergedExtractorConfiguration.SinceRegexExp :
+                EnglishMergedExtractorConfiguration.SinceRegex;
             AroundRegex = EnglishMergedExtractorConfiguration.AroundRegex;
             EqualRegex = EnglishMergedExtractorConfiguration.EqualRegex;
             SuffixAfter = EnglishMergedExtractorConfiguration.SuffixAfterRegex;

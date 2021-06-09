@@ -47,6 +47,9 @@ class FrenchNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfigur
     def ambiguous_unit_number_multiplier_regex(self) -> Pattern:
         return None
 
+    def expand_half_suffix(self, source, result, numbers):
+        pass
+
     def __init__(self, culture_info: CultureInfo):
         if culture_info is None:
             culture_info = CultureInfo(Culture.French)

@@ -32,6 +32,10 @@ public class Constants {
     public static final String Resolve = "resolve";
     public static final String ResolveToPast = "resolveToPast";
     public static final String ResolveToFuture = "resolveToFuture";
+    public static final String FutureDate = "futureDate";
+    public static final String PastDate = "pastDate";
+    public static final String ParseResult1 = "parseResult1";
+    public static final String ParseResult2 = "parseResult2";
 
     // In the ExtractResult data
     public static final String Context = "context";
@@ -51,6 +55,12 @@ public class Constants {
     // Parse week of date format
     public static final String Comment_WeekOf = "WeekOf";
     public static final String Comment_MonthOf = "MonthOf";
+
+    public static final String Comment_DoubleTimex = "doubleTimex";
+
+    public static final String InvalidDateString = "0001-01-01";
+    public static final String CompositeTimexDelimiter = "|";
+    public static final String CompositeTimexSplit = "\\|";
 
     // Mod Value
     // "before" -> To mean "preceding in time". I.e. Does not include the extracted datetime entity in the resolution's ending point. Equivalent to "<"
@@ -114,8 +124,10 @@ public class Constants {
     // the length of four digits year, e.g., 2018
     public static final int FourDigitsYearLength = 4;
 
+    // specifies the priority interpreting month and day order
     public static final String DefaultLanguageFallback_MDY = "MDY";
     public static final String DefaultLanguageFallback_DMY = "DMY";
+    public static final String DefaultLanguageFallback_YMD = "YMD"; // ZH
 
     // Groups' names for named groups in regexes
     public static final String NextGroupName = "next";

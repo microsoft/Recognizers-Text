@@ -57,7 +57,7 @@ RelativeMonthRegex: !nestedRegex
   def: (?<relmonth>((di|del|dell[o'])\s+)?(({ThisPrefixRegex}\s+mese)|(mese\s+({PastSuffixRegex}|{NextSuffixRegex}))|(({PastSuffixRegex}|{NextSuffixRegex})\s+mese)))\b
   references: [ThisPrefixRegex, PastSuffixRegex, NextSuffixRegex]
 MonthRegex: !simpleRegex
-  def: (?<month>aprile|apr|agosto|ago|dicembre|dic|febbraio|feb|gennaio|gen|luglio|lug|giugno|giu|marzo|mar|maggio|mag|novembre|nov|ottobre|ott|settembre|set|sett)\b
+  def: (?<month>apr(ile)?|ago(sto)?|dic(embre)?|feb(braio)?|gen(naio)?|lug(lio)?|giu(gno)?|mar(zo)?|mag(gio)?|nov(embre)?|ott(obre)?|set(tembre|t)?)\b
 EngMonthRegex: !nestedRegex
   def: (((il\s+)?mese di\s+)?{MonthRegex})
   references: [ MonthRegex ]
@@ -103,7 +103,7 @@ FullTextYearRegex: !nestedRegex
   def: \b((?<firsttwoyearnum>{WrittenCenturyFullYearRegex})(?<lasttwoyearnum>{LastTwoYearNumRegex})?)\b
   references: [ WrittenCenturyFullYearRegex, LastTwoYearNumRegex ]
 TwoDigitYearRegex: !nestedRegex
-  def: \b(?<![$])(?<year>([0-24-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b
+  def: \b(?<![$])(?<year>([0-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b
   references: [ AmDescRegex, PmDescRegex]
 #This is a look-behind assertion. Some cases should extract two digits as year like 11/25/16, where 16 means 2016. 
 #The assertion determines if not connected with am/pm or hour separator (:), which should be a time.
@@ -228,33 +228,33 @@ DateExtractor1: !nestedRegex
   def: \b((quest[oa]\s+)?{WeekDayRegex}\s*[,-]?\s*)?(({MonthRegex}(\.)?\s*[/\\.,-]?\s*{DayRegex})|(\({MonthRegex}\s*[-.]\s*{DayRegex}\))|({DayRegex}\s*[/\\.,-]?\s*{MonthRegex}(\.)?))(\s*\(\s*{WeekDayRegex}\s*\))?
   references: [ WeekDayRegex, MonthRegex, DayRegex ]
 DateExtractor2: !nestedRegex
-  def: ({DateExtractor1}(\s+|\s*[\-/,]\s*|\s+del\s+)({DateYearRegex}))\b
+  def: ({DateExtractor1}(\s+|\s*[\-/,.]\s*|\s+del\s+)({DateYearRegex}))\b
   references: [ DateExtractor1, DateYearRegex ]
 DateExtractor3: !nestedRegex
-  def: \b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}(\.)?(\s+|\s*,\s*|\s+di\s+|\s*-\s*){MonthRegex}(\.)?((\s+|\s*,\s*){DateYearRegex})?\b
-  references: [ WeekDayRegex, DayRegex, MonthRegex, DateYearRegex ]
+  def: \b({WeekDayRegex}(\s+|\s*,\s*))?({DayRegex}(\.)?(\s*[/,.\- ]\s*|\s+di\s+){MonthRegex}(\.)?(\s*[/,.\- ]\s*{DateYearRegex})?|{BaseDateTime.FourDigitYearRegex}\s*[/,.\- ]\s*{DayRegex}\s*[/,.\- ]\s*{MonthRegex})\b
+  references: [ WeekDayRegex, DayRegex, MonthRegex, DateYearRegex, BaseDateTime.FourDigitYearRegex ]
 # The final lookahead in DateExtractor4|5|7|A avoids extracting as date "10/1-11" from an input like "10/1-11/2/2017"  
 DateExtractor4: !nestedRegex
-  def: \b((il|l')\s*)?{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}(\.)?\s*[/\\\-]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)
-  references: [ MonthNumRegex, DayRegex, DateYearRegex ]
+  def: \b({WeekDayRegex}(\s+|\s*,\s*))?((il|l')\s*)?{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}(\.)?\s*[/\\\-]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)
+  references: [ MonthNumRegex, DayRegex, DateYearRegex, WeekDayRegex ]
 DateExtractor5: !nestedRegex
-  def: \b{DayRegex}\s*[/\\\-]\s*({MonthNumRegex}|{MonthRegex}(\.)?)\s*[/\\\-]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)
-  references: [ DayRegex, MonthNumRegex, MonthRegex, DateYearRegex ]
+  def: \b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}\s*[/\\\-]\s*({MonthNumRegex}|{MonthRegex}(\.)?)\s*[/\\\-]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)
+  references: [ DayRegex, MonthNumRegex, MonthRegex, DateYearRegex, WeekDayRegex ]
 DateExtractor6: !nestedRegex
-  def: (?<!([\-\.\/]|all[e']\s*|l[e']\s*))\b{MonthNumRegex}[\-\.\/]{DayRegex}(?!(%|\s*{DescRegex}))\b
-  references: [MonthNumRegex, DayRegex ]
+  def: (?<!([\-\.\/]|all[e']\s*|l[e']\s*))\b{MonthNumRegex}[\-\.\/]{DayRegex}{BaseDateTime.CheckDecimalRegex}(?!(%|\s*{DescRegex}))\b
+  references: [MonthNumRegex, DayRegex, BaseDateTime.CheckDecimalRegex ]
 DateExtractor7: !nestedRegex
-  def: (?<!\b{DateYearRegex}\s*[/\\\-]\s*)\b{DayRegex}\s*[\/\\-]s*{MonthNumRegex}((\s+|\s*[\/\-\\,]\s*){DateYearRegex})?\b(?!\s*[/\\\-\.]\s*\d+)
-  references: [ DayRegex, MonthNumRegex, DateYearRegex ]
+  def: (?<!\b{DateYearRegex}\s*[/\\\-]\s*)\b{DayRegex}\s*[\/\\-]s*{MonthNumRegex}((\s+|\s*[\/\-\\,]\s*){DateYearRegex})?\b{BaseDateTime.CheckDecimalRegex}(?!\s*[/\\\-\.]\s*\d+)
+  references: [ DayRegex, MonthNumRegex, DateYearRegex, BaseDateTime.CheckDecimalRegex ]
 DateExtractor8: !nestedRegex
-  def: (?<!([\-\.\/]|all[e']\s*|l[e']\s*))\b{DayRegex}[\/\\\-]{MonthNumRegex}(?!(%|\s*{DescRegex}))\b
-  references: [ DayRegex, MonthNumRegex, DescRegex ]
+  def: (?<!([\-\.\/]|all[e']\s*|l[e']\s*))\b{DayRegex}[\/\\\-]{MonthNumRegex}{BaseDateTime.CheckDecimalRegex}(?!(%|\s*{DescRegex}))\b
+  references: [ DayRegex, MonthNumRegex, DescRegex, BaseDateTime.CheckDecimalRegex ]
 DateExtractor9: !nestedRegex
-  def: (?<!\b{DateYearRegex}\s*[/\\\-]\s*)\b{DayRegex}\s*/\s*{MonthNumRegex}((\s+|\s*,\s*|\s+del\s+){DateYearRegex})?\b
-  references: [ DayRegex, MonthNumRegex, DateYearRegex ]
+  def: (?<!\b{DateYearRegex}\s*[/\\\-]\s*)\b{DayRegex}\s*/\s*{MonthNumRegex}((\s+|\s*,\s*|\s+del\s+){DateYearRegex})?{BaseDateTime.CheckDecimalRegex}\b
+  references: [ DayRegex, MonthNumRegex, DateYearRegex, BaseDateTime.CheckDecimalRegex ]
 DateExtractorA: !nestedRegex
-  def: \b{DateYearRegex}\s*[/\\\-]\s*{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}(?!\s*[/\\\-\.]\s*\d+)
-  references: [ DateYearRegex, MonthNumRegex, DayRegex ]
+  def: \b({DateYearRegex}\s*[/\\\-]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-]\s*{DayRegex}|{MonthRegex}\s*[/.\-]\s*{BaseDateTime.FourDigitYearRegex}\s*[/.\-]\s*{DayRegex}|{DayRegex}\s*[/.\-]\s*{BaseDateTime.FourDigitYearRegex}\s*[/.\-]\s*{MonthRegex})(?!\s*[/\\\-\.]\s*\d+)
+  references: [ DateYearRegex, MonthNumRegex, MonthRegex, DayRegex, BaseDateTime.FourDigitYearRegex ]
 OfMonth: !nestedRegex
   def: (^\s*(di\s+)?){MonthRegex}
   references: [ MonthRegex ]
@@ -287,6 +287,8 @@ OclockPrefix: !simpleRegex
   def: (?<oclock>ore)
 PmRegex: !simpleRegex
   def: \b(?<pm>(((di|del|a(l(l')?)?|nel|il|per|verso)\s+(il\s+)?)?(pomeriggio|ora di pranzo))|(((di|della|nella|a|alla|verso|la|per|in)\s+)?(la\s+)?(notte|serata|sera|mezzanotte)))\b
+RangePmRegex: !simpleRegex
+  def: \b(?<pm>(((di|del|a(l(l')?)?|nel|il|per|verso)\s+(il\s+)?)?(pomeriggio))|(((di|della|nella|a|alla|verso|la|per|in)\s+)?(la\s+)?(notte|serata|sera)))\b
 AmRegex: !simpleRegex
   def: \b(?<am>((((la|alla|verso|per|della|di|in)\s+(la\s+)?)?(mattinata|mattina))|(((il|al|verso|per|del|di)\s+(il\s+)?)?(mattino))))\b
 LunchRegex: !simpleRegex
@@ -525,6 +527,8 @@ LaterRegex: !simpleRegex
   def: \b(dopo|da\s+adesso|da\s+questo\s+momento)\b
 AgoRegex: !simpleRegex
   def: \b(fa|prima|addietro)\b
+BeforeAfterRegex: !simpleRegex
+  def: ^[.]
 InConnectorRegex: !simpleRegex
   def: \b(in|tra|fra|a)\b
 SinceYearSuffixRegex: !nestedRegex
@@ -636,6 +640,8 @@ FutureSuffixRegex: !simpleRegex
 ComplexDatePeriodRegex: !nestedRegex
   def: (((da(l(l[aeo'])?|i)?|durante|in|nel(l[aeo'])?|negli)\s*)?(?<start>.+)\s*({TillRegex})\s*(?<end>.+)|(([tf]ra)\s+)(?<start>.+)\s*({RangeConnectorRegex})\s*(?<end>.+))
   references: [ YearRegex, TillRegex, RangeConnectorRegex ]
+AmbiguousPointRangeRegex: !simpleRegex
+  def: ^(mar)$
 UnitMap: !dictionary
   types: [ string, string ]
   entries:
@@ -1012,7 +1018,9 @@ DurationDateRestrictions: []
 AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:
+    '^\d{4}$': '(\d\.\d{4}|\d{4}\.\d)'
     '\bgiorno|pomeriggio|sera|notte\b': '\b(buona?\s*(giorno|pomeriggio|sera|notte))\b'
+    '^(apr|ago|dic|feb|gen|lug|giu|mar|mag|nov|ott|sett?)$': '([$%£&!?@#])(apr|ago|dic|feb|gen|lug|giu|mar|mag|nov|ott|sett?)|(apr|ago|dic|feb|gen|lug|giu|mar|mag|nov|ott|sett?)([$%£&@#])'
 # For TimeOfDay resolution
 MorningTermList: !list
   types: [ string ]

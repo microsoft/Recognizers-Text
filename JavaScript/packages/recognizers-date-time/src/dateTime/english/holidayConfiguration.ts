@@ -8,9 +8,7 @@ export class EnglishHolidayExtractorConfiguration implements IHolidayExtractorCo
 
     constructor() {
         this.holidayRegexes = [
-            RegExpUtility.getSafeRegExp(EnglishDateTime.HolidayRegex1, "gis"),
-            RegExpUtility.getSafeRegExp(EnglishDateTime.HolidayRegex2, "gis"),
-            RegExpUtility.getSafeRegExp(EnglishDateTime.HolidayRegex3, "gis")
+            RegExpUtility.getSafeRegExp(EnglishDateTime.HolidayRegex, "gis")
         ];
     }
 }
@@ -19,9 +17,7 @@ export class EnglishHolidayParserConfiguration extends BaseHolidayParserConfigur
     constructor() {
         super();
         this.holidayRegexList = [
-            RegExpUtility.getSafeRegExp(EnglishDateTime.HolidayRegex1, "gis"),
-            RegExpUtility.getSafeRegExp(EnglishDateTime.HolidayRegex2, "gis"),
-            RegExpUtility.getSafeRegExp(EnglishDateTime.HolidayRegex3, "gis")
+            RegExpUtility.getSafeRegExp(EnglishDateTime.HolidayRegex, "gis")
         ];
         this.holidayNames = EnglishDateTime.HolidayNames;
         this.holidayFuncDictionary = this.initHolidayFuncs();

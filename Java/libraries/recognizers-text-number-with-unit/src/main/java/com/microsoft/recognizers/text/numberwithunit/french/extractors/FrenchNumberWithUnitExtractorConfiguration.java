@@ -1,6 +1,7 @@
 package com.microsoft.recognizers.text.numberwithunit.french.extractors;
 
 import com.microsoft.recognizers.text.CultureInfo;
+import com.microsoft.recognizers.text.ExtractResult;
 import com.microsoft.recognizers.text.IExtractor;
 import com.microsoft.recognizers.text.number.NumberMode;
 import com.microsoft.recognizers.text.number.french.extractors.NumberExtractor;
@@ -68,5 +69,9 @@ public abstract class FrenchNumberWithUnitExtractorConfiguration implements INum
 
     public Map<Pattern, Pattern> getAmbiguityFiltersDict() {
         return ambiguityFiltersDict;
+    }
+
+    public List<ExtractResult> expandHalfSuffix(String source, List<ExtractResult> result, List<ExtractResult> numbers) {
+        return result;
     }
 }

@@ -50,7 +50,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();
 
-        public static readonly Regex[] TermFilterRegexes = { };
+        public static readonly Regex[] TermFilterRegexes = System.Array.Empty<Regex>();
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 

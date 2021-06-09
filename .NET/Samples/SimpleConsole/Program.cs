@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Text;
 using Microsoft.Recognizers.Text;
 using Microsoft.Recognizers.Text.Choice;
 using Microsoft.Recognizers.Text.DateTime;
@@ -19,6 +20,9 @@ namespace SimpleConsole
 
         public static void Main(string[] args)
         {
+            // Enable support for multiple encodings, especially in .NET Core
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+
             ShowIntro();
 
             while (true)
@@ -118,6 +122,10 @@ namespace SimpleConsole
                 // GUID recognizer will find all the GUID usages
                 // E.g "{123e4567-e89b-12d3-a456-426655440000}"
                 SequenceRecognizer.RecognizeGUID(query, culture),
+
+                // Quoted text recognizer
+                // E.g "I meant "no""
+                SequenceRecognizer.RecognizeQuotedText(query, culture),
 
                 // Add Boolean recognizer - This model will find yes/no like responses, including emoji -
                 // E.g "yup, I need that" will return "True"

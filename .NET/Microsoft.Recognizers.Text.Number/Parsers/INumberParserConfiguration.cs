@@ -30,6 +30,8 @@ namespace Microsoft.Recognizers.Text.Number
 
         Regex FractionPrepositionRegex { get; }
 
+        Regex RoundMultiplierRegex { get; }
+
         string FractionMarkerToken { get; }
 
         Regex HalfADozenRegex { get; }
@@ -39,6 +41,10 @@ namespace Microsoft.Recognizers.Text.Number
         char NonDecimalSeparatorChar { get; }
 
         char DecimalSeparatorChar { get; }
+
+        bool IsMultiDecimalSeparatorCulture { get; }
+
+        IEnumerable<string> NonStandardSeparatorVariants { get; }
 
         string WordSeparatorToken { get; }
 
@@ -53,8 +59,6 @@ namespace Microsoft.Recognizers.Text.Number
         Regex NegativeNumberSignRegex { get; }
 
         bool IsCompoundNumberLanguage { get; }
-
-        bool IsMultiDecimalSeparatorCulture { get; }
 
         /// <summary>
         /// Used when requiring to normalize a token to a valid expression supported by the ImmutableDictionaries (language dictionaries).
@@ -105,6 +109,8 @@ namespace Microsoft.Recognizers.Text.Number
 
         public Regex FractionPrepositionRegex { get; set; }
 
+        public Regex RoundMultiplierRegex { get; set; } = null;
+
         public string FractionMarkerToken { get; set; }
 
         public Regex HalfADozenRegex { get; set; }
@@ -116,6 +122,10 @@ namespace Microsoft.Recognizers.Text.Number
         public char NonDecimalSeparatorChar { get; set; }
 
         public char DecimalSeparatorChar { get; set; }
+
+        public bool IsMultiDecimalSeparatorCulture { get; set; }
+
+        public virtual IEnumerable<string> NonStandardSeparatorVariants => Enumerable.Empty<string>();
 
         public string WordSeparatorToken { get; set; }
 
@@ -130,8 +140,6 @@ namespace Microsoft.Recognizers.Text.Number
         public Regex NegativeNumberSignRegex { get; set; }
 
         public bool IsCompoundNumberLanguage { get; set; }
-
-        public bool IsMultiDecimalSeparatorCulture { get; set; }
 
         public virtual long ResolveCompositeNumber(string numberStr)
         {

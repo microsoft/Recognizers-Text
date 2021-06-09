@@ -506,6 +506,10 @@ CurrencySuffixList: !dictionary
 #Additional
     Finnish markka: finse mark|finse markka|suomen markka|finnish markka|finsk mark|fim|markkaa|markka
     Penni: penniä|penni
+#CC
+    Bitcoin: bitcoin|bitcoins|btc|xbt|₿
+    Millibitcoin: millibitcoin|millibitcoins|milibitcoin|milibitcoins
+    Satoshi: satoshi|satoshis
 CurrencyNameToIsoCodeMap: !dictionary
   types: [ string, string ]
   entries:
@@ -698,6 +702,7 @@ CurrencyNameToIsoCodeMap: !dictionary
     Ascension pound: _AP 
     Alderney pound: _ALP 
     Abkhazian apsar: _AA
+    Bitcoin: _XBT
 FractionalUnitNameToCodeMap: !dictionary
   types: [ string, string ]
   entries:
@@ -777,6 +782,8 @@ FractionalUnitNameToCodeMap: !dictionary
     Kwartje: KWARTJE
     Dubbeltje: DUBBELTJE
     Stuiver: STUIVER
+    Millibitcoin: MILLIBITCOIN
+    Satoshi: SATOSHI
 CompoundUnitConnectorRegex: !simpleRegex
     def: (?<spacer>en)
 CurrencyPrefixList: !dictionary
@@ -816,6 +823,7 @@ CurrencyPrefixList: !dictionary
     New Taiwan dollar: taiwanese $|nt$|nt $
     Trinidad and Tobago dollar: trinidad en tobago $|trinidad and tobago $|trinidad $|trinidadian $
     Tuvaluan dollar: tuvaluaanse $|tuvaluan $
+#Other prefix
     Samoan tālā: ws$
     Chinese yuan: ￥
     Japanese yen: ¥
@@ -823,6 +831,8 @@ CurrencyPrefixList: !dictionary
     Pound: £
     Costa Rican colón: ₡
     Turkish lira: ₺
+#CC
+    Bitcoin: ₿|btc|xbt
 AmbiguousCurrencyUnitList: !list
   types: [ string ]
   entries:

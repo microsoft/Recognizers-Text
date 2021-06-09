@@ -6,9 +6,11 @@ export class FrenchBooleanExtractorConfiguration implements IBooleanExtractorCon
     readonly regexTrue: RegExp;
     readonly regexFalse: RegExp;
     readonly tokenRegex: RegExp;
+    readonly emojiSkinToneRegex: RegExp;
     readonly onlyTopMatch: boolean;
 
     constructor(onlyTopMatch: boolean = true) {
+        this.emojiSkinToneRegex = RegExpUtility.getSafeRegExp(FrenchChoice.SkinToneRegex);
         this.regexTrue = RegExpUtility.getSafeRegExp(FrenchChoice.TrueRegex);
         this.regexFalse = RegExpUtility.getSafeRegExp(FrenchChoice.FalseRegex);
         this.tokenRegex = RegExpUtility.getSafeRegExp(FrenchChoice.TokenizerRegex, 'is');

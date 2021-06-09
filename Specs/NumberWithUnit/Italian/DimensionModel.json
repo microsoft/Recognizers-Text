@@ -8,7 +8,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "75",
-          "unit": "Millilitro"
+          "unit": "Millilitro",
+          "subtype": "Volume"
         }
       }
     ]
@@ -22,7 +23,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "3",
-          "unit": "Pollice"
+          "unit": "Pollice",
+          "subtype": "Length"
         }
       }
     ]
@@ -36,7 +38,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "10",
-          "unit": "Miglio"
+          "unit": "Miglio",
+          "subtype": "Length"
         }
       }
     ]
@@ -50,7 +53,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "10,5",
-          "unit": "Miglio"
+          "unit": "Miglio",
+          "subtype": "Length"
         }
       }
     ]
@@ -64,7 +68,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "6",
-          "unit": "Miglio"
+          "unit": "Miglio",
+          "subtype": "Length"
         }
       }
     ]
@@ -78,7 +83,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "500000",
-          "unit": "Barile"
+          "unit": "Barile",
+          "subtype": "Volume"
         }
       }
     ]
@@ -92,7 +98,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "2",
-          "unit": "Piede"
+          "unit": "Piede",
+          "subtype": "Length"
         }
       }
     ]
@@ -106,7 +113,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "68",
-          "unit": "Oncia"
+          "unit": "Oncia",
+          "subtype": "Weight"
         }
       }
     ]
@@ -120,7 +128,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "45",
-          "unit": "Acro"
+          "unit": "Acro",
+          "subtype": "Area"
         }
       }
     ]
@@ -134,7 +143,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "10",
-          "unit": "Piede"
+          "unit": "Piede",
+          "subtype": "Length"
         }
       }
     ]
@@ -148,7 +158,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "2400000000",
-          "unit": "Gallone"
+          "unit": "Gallone",
+          "subtype": "Volume"
         }
       }
     ]
@@ -162,7 +173,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "10",
-          "unit": "Gallone"
+          "unit": "Gallone",
+          "subtype": "Volume"
         }
       }
     ]
@@ -176,7 +188,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "1500000",
-          "unit": "Gallone"
+          "unit": "Gallone",
+          "subtype": "Volume"
         }
       }
     ]
@@ -190,7 +203,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "2",
-          "unit": "Libbra"
+          "unit": "Libbra",
+          "subtype": "Weight"
         }
       }
     ]
@@ -204,7 +218,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "25",
-          "unit": "Libbra"
+          "unit": "Libbra",
+          "subtype": "Weight"
         }
       }
     ]
@@ -218,7 +233,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "9E+17",
-          "unit": "Piede cubo"
+          "unit": "Piede cubo",
+          "subtype": "Volume"
         }
       }
     ]
@@ -232,7 +248,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "660",
-          "unit": "Metro quadrato"
+          "unit": "Metro quadrato",
+          "subtype": "Area"
         }
       }
     ]
@@ -246,7 +263,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "200",
-          "unit": "Miglio"
+          "unit": "Miglio",
+          "subtype": "Length"
         }
       }
     ]
@@ -260,7 +278,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "3",
-          "unit": "Piede"
+          "unit": "Piede",
+          "subtype": "Length"
         }
       }
     ]
@@ -274,7 +293,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "190000",
-          "unit": "Metro quadrato"
+          "unit": "Metro quadrato",
+          "subtype": "Area"
         }
       }
     ]
@@ -288,7 +308,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "3",
-          "unit": "Tonnellata"
+          "unit": "Tonnellata",
+          "subtype": "Weight"
         }
       }
     ]
@@ -302,7 +323,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "130",
-          "unit": "Gallone"
+          "unit": "Gallone",
+          "subtype": "Volume"
         }
       }
     ]
@@ -316,7 +338,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "1458000",
-          "unit": "Tonnellata"
+          "unit": "Tonnellata",
+          "subtype": "Weight"
         }
       }
     ]
@@ -330,7 +353,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "6",
-          "unit": "Piede"
+          "unit": "Piede",
+          "subtype": "Length"
         }
       }
     ]
@@ -344,7 +368,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "16000",
-          "unit": "Tonnellata"
+          "unit": "Tonnellata",
+          "subtype": "Weight"
         }
       }
     ]
@@ -358,7 +383,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "16",
-          "unit": "Bit"
+          "unit": "Bit",
+          "subtype": "Information"
         }
       }
     ]
@@ -372,7 +398,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "188",
-          "unit": "Miglia all'ora"
+          "unit": "Miglia all'ora",
+          "subtype": "Speed"
         }
       }
     ]
@@ -386,7 +413,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "100",
-          "unit": "Metro"
+          "unit": "Metro",
+          "subtype": "Length"
         }
       }
     ]
@@ -400,7 +428,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "2,5",
-          "unit": "Miglio"
+          "unit": "Miglio",
+          "subtype": "Length"
         }
       }
     ]
@@ -414,7 +443,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "4",
-          "unit": "Miglio"
+          "unit": "Miglio",
+          "subtype": "Length"
         }
       }
     ]
@@ -428,7 +458,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "325",
-          "unit": "Chilometro"
+          "unit": "Chilometro",
+          "subtype": "Length"
         }
       }
     ]
@@ -442,7 +473,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "5",
-          "unit": "Piede"
+          "unit": "Piede",
+          "subtype": "Length"
         }
       }
     ]
@@ -456,7 +488,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "4",
-          "unit": "Pollice"
+          "unit": "Pollice",
+          "subtype": "Length"
         }
       }
     ]
@@ -470,7 +503,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "0,25",
-          "unit": "Miglio"
+          "unit": "Miglio",
+          "subtype": "Length"
         }
       }
     ]
@@ -484,7 +518,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "1,6",
-          "unit": "Chilometro"
+          "unit": "Chilometro",
+          "subtype": "Length"
         }
       }
     ]
@@ -498,7 +533,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "17",
-          "unit": "Chilometro"
+          "unit": "Chilometro",
+          "subtype": "Length"
         }
       }
     ]
@@ -512,7 +548,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "776",
-          "unit": "Piede"
+          "unit": "Piede",
+          "subtype": "Length"
         }
       }
     ]
@@ -526,7 +563,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "500",
-          "unit": "Metro"
+          "unit": "Metro",
+          "subtype": "Length"
         }
       }
     ]
@@ -540,7 +578,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "300",
-          "unit": "Millimetro"
+          "unit": "Millimetro",
+          "subtype": "Length"
         }
       }
     ]
@@ -554,7 +593,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "7,62",
-          "unit": "Millimetro"
+          "unit": "Millimetro",
+          "subtype": "Length"
         }
       }
     ]
@@ -568,7 +608,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "34500",
-          "unit": "Tonnellata"
+          "unit": "Tonnellata",
+          "subtype": "Weight"
         }
       }
     ]
@@ -582,7 +623,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "291890",
-          "unit": "Tonnellata"
+          "unit": "Tonnellata",
+          "subtype": "Weight"
         }
       }
     ]
@@ -596,7 +638,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "190",
-          "unit": "Chilometro quadrato"
+          "unit": "Chilometro quadrato",
+          "subtype": "Area"
         }
       }
     ]
@@ -610,7 +653,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "1",
-          "unit": "Tonnellata"
+          "unit": "Tonnellata",
+          "subtype": "Weight"
         }
       },
       {
@@ -618,7 +662,8 @@
         "TypeName": "dimension",
         "Resolution": {
           "value": "2204,62",
-          "unit": "Libbra"
+          "unit": "Libbra",
+          "subtype": "Weight"
         }
       }
     ]
@@ -644,6 +689,7 @@
         "TypeName": "dimension",
         "Resolution": {
           "unit": "Litro",
+          "subtype": "Volume",
           "value": "20"
         }
       }
@@ -660,6 +706,7 @@
         "TypeName": "dimension",
         "Resolution": {
           "unit": "Litro",
+          "subtype": "Volume",
           "value": "10"
         }
       }

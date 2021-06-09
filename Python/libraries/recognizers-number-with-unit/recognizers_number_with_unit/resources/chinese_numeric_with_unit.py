@@ -231,7 +231,8 @@ class ChineseNumericWithUnit:
                                ("Fen", "分钱|分"),
                                ("Jiao", "毛钱|毛|角钱|角"),
                                ("Finnish markka", "芬兰马克"),
-                               ("Penni", "盆尼")])
+                               ("Penni", "盆尼"),
+                               ("Bitcoin", "₿|btc|xbt|个比特币|比特币")])
     CurrencyNameToIsoCodeMap = dict([("Afghan afghani", "AFN"),
                                      ("Euro", "EUR"),
                                      ("Albanian lek", "ALL"),
@@ -512,7 +513,8 @@ class ChineseNumericWithUnit:
                                ("Turkish lira", "₺"),
                                ("Euro", "€"),
                                ("Pound", "£"),
-                               ("Costa Rican colón", "₡")])
+                               ("Costa Rican colón", "₡"),
+                               ("Bitcoin", "₿|btc|xbt")])
     CurrencyAmbiguousValues = [r'元', r'仙', r'分', r'圆', r'块', r'毛', r'盾', r'箍', r'蚊', r'角']
     DimensionSuffixList = dict([("Meter", "米|公尺|m"),
                                 ("Kilometer", "千米|公里|km"),
@@ -569,13 +571,19 @@ class ChineseNumericWithUnit:
                                 ("Ton", "公吨|吨|t"),
                                 ("Pound", "磅"),
                                 ("Ounce", "盎司"),
-                                ("Bit", "比特|位|b"),
-                                ("Byte", "字节|byte"),
-                                ("Kilobyte", "千字节|kb"),
-                                ("Megabyte", "兆字节|mb"),
-                                ("Gigabyte", "十亿字节|千兆字节|gb"),
-                                ("Terabyte", "万亿字节|兆兆字节|tb"),
-                                ("Petabyte", "千兆兆|千万亿字节|pb")])
+                                ("Liang", "两"),
+                                ("Bit", "比特|位|b|bit"),
+                                ("Kilobit", "千比特|千位|kb|Kb"),
+                                ("Megabit", "兆比特|兆位|mb|Mb"),
+                                ("Gigabit", "十亿比特|千兆比特|十亿位|千兆位|gb|Gb"),
+                                ("Terabit", "万亿比特|兆兆比特|万亿位|兆兆位|tb|Tb"),
+                                ("Petabit", "千兆兆比特|千万亿比特|千兆兆位|千万亿位|pb|Pb"),
+                                ("Byte", "字节|byte|Byte"),
+                                ("Kilobyte", "千字节|kB|KB"),
+                                ("Megabyte", "兆字节|mB|MB"),
+                                ("Gigabyte", "十亿字节|千兆字节|gB|GB"),
+                                ("Terabyte", "万亿字节|兆兆字节|tB|TB"),
+                                ("Petabyte", "千兆兆字节|千万亿字节|pB|PB")])
     DimensionAmbiguousValues = [r'丈', r'位', r'克', r'分', r'升', r'寸', r'尺', r'斗', r'斤', r'桶', r'毫', r'石', r'码', r'磅', r'米', r'罐', r'里', r'm', r'km', r'dm', r'cm', r'mm', r'l', r'ml', r'kg', r'mg', r'g', r't', r'b', r'byte', r'kb', r'mb', r'gb', r'tb', r'pb']
     AmbiguityFiltersDict = dict([("五角", "五角大楼"),
                                  ("普尔", "标准普尔")])
@@ -589,4 +597,5 @@ class ChineseNumericWithUnit:
                                   ("R", "兰氏温度|兰氏"),
                                   ("C", "摄氏温度|摄氏")])
     TemperatureAmbiguousValues = [r'度', r'k']
+    HalfUnitRegex = f'半'
 # pylint: enable=line-too-long

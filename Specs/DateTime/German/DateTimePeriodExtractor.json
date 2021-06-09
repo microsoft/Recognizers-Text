@@ -48,6 +48,18 @@
     ]
   },
   {
+    "Input": "Lass uns den übernächsten Mittwoch von 16 bis 20 Uhr anpeilen.",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "übernächsten Mittwoch von 16 bis 20 Uhr",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 39
+      }
+    ]
+  },
+  {
     "Input": "Das Projekt ging vom 7. April 2017 um 4 Uhr bis heute um 4 Uhr.",
     "NotSupported": "javascript, python",
     "Results": [

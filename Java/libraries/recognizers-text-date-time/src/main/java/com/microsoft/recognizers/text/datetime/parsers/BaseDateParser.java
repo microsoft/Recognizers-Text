@@ -9,6 +9,7 @@ import com.microsoft.recognizers.text.datetime.extractors.BaseDateExtractor;
 import com.microsoft.recognizers.text.datetime.parsers.config.IDateParserConfiguration;
 import com.microsoft.recognizers.text.datetime.utilities.AgoLaterUtil;
 import com.microsoft.recognizers.text.datetime.utilities.ConditionalMatch;
+import com.microsoft.recognizers.text.datetime.utilities.DateContext;
 import com.microsoft.recognizers.text.datetime.utilities.DateTimeFormatUtil;
 import com.microsoft.recognizers.text.datetime.utilities.DateTimeResolutionResult;
 import com.microsoft.recognizers.text.datetime.utilities.DateUtil;
@@ -19,6 +20,7 @@ import com.microsoft.recognizers.text.utilities.StringUtility;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 import java.util.regex.Pattern;
@@ -673,16 +675,9 @@ public class BaseDateParser implements IDateTimeParser {
             ret.setTimex(DateTimeFormatUtil.luisDate(year, month, day));
         }
 
-        LocalDateTime futureDate = DateUtil.safeCreateFromMinValue(year, month, day);
-        LocalDateTime pastDate = DateUtil.safeCreateFromMinValue(year, month, day);
-
-        if (noYear && futureDate.isBefore(referenceDate) && !futureDate.isEqual(DateUtil.minValue())) {
-            futureDate = futureDate.plusYears(1);
-        }
-
-        if (noYear && (pastDate.isEqual(referenceDate) || pastDate.isAfter(referenceDate)) && !pastDate.isEqual(DateUtil.minValue())) {
-            pastDate = pastDate.minusYears(1);
-        }
+        HashMap<String, LocalDateTime> futurePastDates = DateContext.generateDates(noYear, referenceDate, year, month, day);
+        LocalDateTime futureDate = futurePastDates.get(Constants.FutureDate);
+        LocalDateTime pastDate = futurePastDates.get(Constants.PastDate);
 
         ret.setFutureValue(futureDate);
         ret.setPastValue(pastDate);

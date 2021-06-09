@@ -120,6 +120,7 @@ namespace Microsoft.Recognizers.Text.Number.Italian
             long prevValue = 0;
 
             long finalValue = 0;
+
             var strBuilder = new StringBuilder();
             int lastGoodChar = 0;
             for (int i = 0; i < numberStr.Length; i++)

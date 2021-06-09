@@ -4,10 +4,10 @@ using Microsoft.Recognizers.Definitions.Japanese;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
-    public class JapaneseHolidayExtractorConfiguration : BaseDateTimeOptionsConfiguration, IHolidayExtractorConfiguration
+    public class JapaneseHolidayExtractorConfiguration : BaseDateTimeOptionsConfiguration, ICJKHolidayExtractorConfiguration
     {
-        public static readonly Regex LunarHolidayRegex =
-            new Regex(DateTimeDefinitions.LunarHolidayRegex, RegexFlags);
+
+        public static readonly Regex LunarHolidayRegex = new Regex(DateTimeDefinitions.LunarHolidayRegex, RegexFlags);
 
         public static readonly Regex[] HolidayRegexList =
         {

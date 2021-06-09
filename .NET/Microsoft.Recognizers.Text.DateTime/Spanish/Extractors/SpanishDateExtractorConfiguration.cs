@@ -118,6 +118,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex RangeUnitRegex =
             new Regex(DateTimeDefinitions.RangeUnitRegex, RegexFlags);
 
+        public static readonly Regex BeforeAfterRegex =
+            new Regex(DateTimeDefinitions.BeforeAfterRegex, RegexFlags);
+
         public static readonly ImmutableDictionary<string, int> DayOfWeek = DateTimeDefinitions.DayOfWeek.ToImmutableDictionary();
 
         public static readonly ImmutableDictionary<string, int> MonthOfYear = DateTimeDefinitions.MonthOfYear.ToImmutableDictionary();
@@ -141,6 +144,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             NumberParser = new BaseNumberParser(new SpanishNumberParserConfiguration(numConfig));
 
             DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new SpanishHolidayExtractorConfiguration(this));
             UtilityConfiguration = new SpanishDatetimeUtilityConfiguration();
 
             // 3-23-2017
@@ -194,6 +198,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IDateTimeExtractor DurationExtractor { get; }
 
+        public IDateTimeExtractor HolidayExtractor { get; }
+
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
         IEnumerable<Regex> IDateExtractorConfiguration.ImplicitDateList => ImplicitDateList;
@@ -241,5 +247,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         Regex IDateExtractorConfiguration.RangeUnitRegex => RangeUnitRegex;
 
         Regex IDateExtractorConfiguration.RangeConnectorSymbolRegex => RangeConnectorSymbolRegex;
+
+        Regex IDateExtractorConfiguration.BeforeAfterRegex => BeforeAfterRegex;
     }
 }

@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 
 export namespace BasePhoneNumbers {
-    export const NumberReplaceToken = '@builtin.phonenumber';
+    export const NumberReplaceToken = `@builtin.phonenumber`;
     export const WordBoundariesRegex = `\\b`;
     export const NonWordBoundariesRegex = `\\B`;
     export const EndWordBoundariesRegex = `\\b`;

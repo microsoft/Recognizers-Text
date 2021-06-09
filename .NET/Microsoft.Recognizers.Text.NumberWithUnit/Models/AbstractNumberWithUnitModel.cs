@@ -8,12 +8,20 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
     public abstract class AbstractNumberWithUnitModel : IModel
     {
+        private string culture;
+
+        private string requestedCulture;
+
         protected AbstractNumberWithUnitModel(Dictionary<IExtractor, IParser> extractorParserDic)
         {
             this.ExtractorParserDic = extractorParserDic;
         }
 
         public abstract string ModelTypeName { get; }
+
+        public string Culture => this.culture;
+
+        public string RequestedCulture => this.requestedCulture;
 
         protected Dictionary<IExtractor, IParser> ExtractorParserDic { get; }
 
@@ -58,6 +66,12 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                 { ResolutionKey.Unit, ((CurrencyUnitValue)o.Value).Unit },
                                 { ResolutionKey.IsoCurrency, ((CurrencyUnitValue)o.Value).IsoCurrency },
                             }
+                            : (o.Value is UnitValue && !string.IsNullOrEmpty(o.Type) && Constants.ValidSubTypes.Contains(o.Type)) ? new SortedDictionary<string, object>
+                            {
+                                { ResolutionKey.Value, ((UnitValue)o.Value).Number },
+                                { ResolutionKey.Unit, ((UnitValue)o.Value).Unit },
+                                { ResolutionKey.SubType, o.Type },
+                            }
                             : (o.Value is UnitValue) ? new SortedDictionary<string, object>
                             {
                                 { ResolutionKey.Value, ((UnitValue)o.Value).Number },
@@ -97,6 +111,12 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             }
 
             return extractionResults;
+        }
+
+        public void SetCultureInfo(string culture, string requestedCulture = null)
+        {
+            this.culture = culture;
+            this.requestedCulture = requestedCulture;
         }
     }
 }

@@ -59,6 +59,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string Comment_WeekOf = "WeekOf";
         public const string Comment_MonthOf = "MonthOf";
 
+        // Tag to mark cases where the specifc resolution timex depends on future or past values.
+        public const string Comment_DoubleTimex = "DoubleTimex";
+
         // MOD Value
         // "before" -> To mean "preceding in time". I.e. Does not include the extracted datetime entity in the resolution's ending point. Equivalent to "<"
         public const string BEFORE_MOD = "before";
@@ -107,8 +110,17 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const int MaxMonth = 12;
         public const int MinMonth = 1;
 
+        // Day start hour
+        public const int DayHourStart = 0;
+
+        // hours of one day
+        public const int DayHourCount = 24;
+
         // hours of one half day
         public const int HalfDayHourCount = 12;
+
+        // hours of one quarter day
+        public const int QuarterDayHourCount = 6;
 
         // hours of a half mid-day-duration
         public const int HalfMidDayDurationHourCount = 2;
@@ -116,8 +128,10 @@ namespace Microsoft.Recognizers.Text.DateTime
         // the length of four digits year, e.g., 2018
         public const int FourDigitsYearLength = 4;
 
+        // specifies the priority interpreting month and day order
         public const string DefaultLanguageFallback_MDY = "MDY";
         public const string DefaultLanguageFallback_DMY = "DMY";
+        public const string DefaultLanguageFallback_YMD = "YMD"; // ZH
 
         // Groups' names for named groups in regexes
         public const string NextGroupName = "next";
@@ -137,6 +151,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string LeftAmPmGroupName = "leftDesc";
         public const string RightAmPmGroupName = "rightDesc";
         public const string MealTimeGroupName = "mealTime";
+        public const string NegativeGroupName = "neg";
+        public const string YearCJKGroupName = "yearCJK";
 
         // Include the date mentioned, to make "before" -> "until" or "after" -> "since". Such as "on or earlier than 1/1/2016".
         public const string IncludeGroupName = "include";
@@ -151,6 +167,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string TimexMonth = "M";
         public const string TimexMonthFull = "MON";
         public const string TimexWeek = "W";
+        public const string TimexFortnight = "W"; // Unit calculation comes from code
         public const string TimexDay = "D";
         public const string TimexBusinessDay = "BD";
         public const string TimexWeekend = "WE";
@@ -174,12 +191,17 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string Afternoon = "TAF";
         public const string Evening = "TEV";
         public const string Daytime = "TDT";
+        public const string Nighttime = "TNT";
         public const string Night = "TNI";
         public const string BusinessHour = "TBH";
         public const string MealtimeBreakfast = "TMEB";
         public const string MealtimeBrunch = "TMER";
         public const string MealtimeLunch = "TMEL";
         public const string MealtimeDinner = "TMED";
+
+        public const string InvalidDateString = "0001-01-01";
+
+        public const char CompositeTimexDelimiter = '|';
 
         // Invalid year
         public const int InvalidYear = int.MinValue;
@@ -199,6 +221,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         public static readonly int MaxTwoDigitYearFutureNum = int.Parse(BaseDateTime.MaxTwoDigitYearFutureNum, CultureInfo.InvariantCulture);
         public static readonly int MinTwoDigitYearPastNum = int.Parse(BaseDateTime.MinTwoDigitYearPastNum, CultureInfo.InvariantCulture);
         public static readonly System.DateTime InvalidDate = default(System.DateTime);
+        public static readonly int BASE_YEAR_PAST_CENTURY = 1900;
+        public static readonly int BASE_YEAR_CURRENT_CENTURY = 2000;
 
         // Timex non-constant
         public static readonly string[] DatePeriodTimexSplitter = { ",", "(", ")" };

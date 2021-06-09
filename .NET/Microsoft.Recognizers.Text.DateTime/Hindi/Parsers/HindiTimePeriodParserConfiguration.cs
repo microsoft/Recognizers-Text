@@ -1,4 +1,5 @@
-﻿using System.Collections.Immutable;
+﻿using System;
+using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Hindi;
@@ -74,23 +75,23 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
             endMin = 0;
 
             var timeOfDay = string.Empty;
-            if (DateTimeDefinitions.MorningTermList.Any(o => trimmedText.StartsWith(o)))
+            if (DateTimeDefinitions.MorningTermList.Any(o => trimmedText.StartsWith(o, StringComparison.InvariantCulture)))
             {
                 timeOfDay = Constants.Morning;
             }
-            else if (DateTimeDefinitions.AfternoonTermList.Any(o => trimmedText.StartsWith(o)))
+            else if (DateTimeDefinitions.AfternoonTermList.Any(o => trimmedText.StartsWith(o, StringComparison.InvariantCulture)))
             {
                 timeOfDay = Constants.Afternoon;
             }
-            else if (DateTimeDefinitions.EveningTermList.Any(o => trimmedText.StartsWith(o)))
+            else if (DateTimeDefinitions.EveningTermList.Any(o => trimmedText.StartsWith(o, StringComparison.InvariantCulture)))
             {
                 timeOfDay = Constants.Evening;
             }
-            else if (DateTimeDefinitions.DaytimeTermList.Any(o => trimmedText.Equals(o)))
+            else if (DateTimeDefinitions.DaytimeTermList.Any(o => trimmedText.Equals(o, StringComparison.InvariantCulture)))
             {
                 timeOfDay = Constants.Daytime;
             }
-            else if (DateTimeDefinitions.NightTermList.Any(o => trimmedText.StartsWith(o)))
+            else if (DateTimeDefinitions.NightTermList.Any(o => trimmedText.StartsWith(o, StringComparison.InvariantCulture)))
             {
                 timeOfDay = Constants.Night;
             }

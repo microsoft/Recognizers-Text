@@ -80,6 +80,9 @@ export class EnglishDateTimeParserConfiguration implements IDateTimeParserConfig
     unitMap: ReadonlyMap<string, string>;
     numbers: ReadonlyMap<string, number>;
     utilityConfiguration: IDateTimeUtilityConfiguration;
+    nowTimeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.NowTimeRegex);
+    recentlyTimeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RecentlyTimeRegex);
+    asapTimeRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.AsapTimeRegex);
 
     constructor(config: ICommonDateTimeParserConfiguration) {
         this.tokenBeforeDate = EnglishDateTime.TokenBeforeDate;
@@ -112,7 +115,7 @@ export class EnglishDateTimeParserConfiguration implements IDateTimeParserConfig
         if (trimmedText.endsWith("morning") && hour >= 12) {
             result -= 12;
         }
-        else if (!trimmedText.endsWith("morning") && hour < 12) {
+        else if (!trimmedText.endsWith("morning") && hour < 12 && !(trimmedText.endsWith("night") && hour < 6)) {
             result += 12;
         }
         return result;
@@ -121,13 +124,13 @@ export class EnglishDateTimeParserConfiguration implements IDateTimeParserConfig
     public getMatchedNowTimex(text: string): { matched: boolean, timex: string } {
         let trimmedText = text.trim().toLowerCase();
         let timex: string;
-        if (trimmedText.endsWith("now")) {
+        if (RegExpUtility.isMatch(this.nowTimeRegex, trimmedText)) {
             timex = "PRESENT_REF";
         }
-        else if (trimmedText === "recently" || trimmedText === "previously") {
+        else if (RegExpUtility.isMatch(this.recentlyTimeRegex, trimmedText)) {
             timex = "PAST_REF";
         }
-        else if (trimmedText === "as soon as possible" || trimmedText === "asap") {
+        else if (RegExpUtility.isMatch(this.asapTimeRegex, trimmedText)) {
             timex = "FUTURE_REF";
         }
         else {

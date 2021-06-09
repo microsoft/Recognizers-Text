@@ -158,6 +158,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             ret = ret.OrderBy(p => p.Start).ToList();
 
+            // Merge overlapping results
+            ret = ExtractResultExtension.MergeAllResults(ret);
+
             // Pop
             if ((this.config.Options & DateTimeOptions.EnablePreview) != 0)
             {
@@ -287,7 +290,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // @TODO: Refactor to remove this method and use the general ambiguity filter approach
-            extractResults = extractResults.Where(er => !(NumberOrConnectorRegex.IsMatch(er.Text) && (text.Substring(0, (int)er.Start).Trim().EndsWith("-") || text.Substring((int)(er.Start + er.Length)).Trim().StartsWith("-"))))
+            extractResults = extractResults.Where(er => !(NumberOrConnectorRegex.IsMatch(er.Text) &&
+                    (text.Substring(0, (int)er.Start).Trim().EndsWith("-", StringComparison.Ordinal) || text.Substring((int)(er.Start + er.Length)).Trim().StartsWith("-", StringComparison.Ordinal))))
                     .ToList();
 
             return extractResults;
@@ -327,6 +331,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             foreach (var er in ers)
             {
+                // AroundRegex is matched non-exclusively before the other relative regexes in order to catch also combined modifiers e.g. "before around 1pm"
+                TryMergeModifierToken(er, config.AroundRegex, text);
                 var success = TryMergeModifierToken(er, config.BeforeRegex, text);
 
                 if (!success)
@@ -338,11 +344,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     // SinceRegex in English contains the term "from" which is potentially ambiguous with ranges in the form "from X to Y"
                     success = TryMergeModifierToken(er, config.SinceRegex, text, potentialAmbiguity: true);
-                }
-
-                if (!success)
-                {
-                    success = TryMergeModifierToken(er, config.AroundRegex, text);
                 }
 
                 if (!success)
@@ -375,7 +376,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 var nextStr = afterStr.Trim().Substring(match.Length).Trim();
                                 var nextEr = ers.FirstOrDefault(t => t.Start > er.Start);
 
-                                if (nextEr == null || !nextStr.StartsWith(nextEr.Text))
+                                if (nextEr == null || !nextStr.StartsWith(nextEr.Text, StringComparison.Ordinal))
                                 {
                                     isFollowedByOtherEntity = false;
                                 }

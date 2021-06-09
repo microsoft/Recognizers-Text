@@ -20,15 +20,15 @@ namespace Microsoft.Recognizers.Text.Matcher
                     Matcher = new TrieTree<string>();
                     break;
                 default:
-                    throw new ArgumentException($"Unsupported match strategy: {matchStrategy.ToString()}");
+                    throw new ArgumentException($"Unsupported match strategy: {matchStrategy}");
             }
         }
 
-        private IMatcher<string> Matcher { get; set; }
+        private IMatcher<string> Matcher { get; }
 
         public void Init(IEnumerable<string> values)
         {
-            Init(values, values.Select(v => v.ToString()).ToArray());
+            Init(values, values.Select(v => v).ToArray());
         }
 
         public void Init(IEnumerable<string> values, string[] ids)
@@ -77,13 +77,13 @@ namespace Microsoft.Recognizers.Text.Matcher
                 var endToken = queryTokens[r.Start + r.Length - 1];
                 var start = startToken.Start;
                 var length = endToken.End - startToken.Start;
-                var rtext = queryText.Substring(start, length);
+                var resultText = queryText.Substring(start, length);
 
                 yield return new MatchResult<string>()
                 {
                     Start = start,
                     Length = length,
-                    Text = rtext,
+                    Text = resultText,
                     CanonicalValues = r.CanonicalValues,
                 };
             }

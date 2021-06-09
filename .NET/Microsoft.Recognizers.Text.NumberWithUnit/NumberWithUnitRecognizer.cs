@@ -68,46 +68,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         protected override void InitializeConfiguration()
         {
             RegisterModel<CurrencyModel>(
-                Culture.English,
-                (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
-                {
-                    {
-                        new BaseMergedUnitExtractor(new English.CurrencyExtractorConfiguration()),
-                        new BaseMergedUnitParser(new English.CurrencyParserConfiguration())
-                    },
-                }));
-
-            RegisterModel<TemperatureModel>(
-                Culture.English,
-                (options) => new TemperatureModel(new Dictionary<IExtractor, IParser>
-                {
-                    {
-                        new NumberWithUnitExtractor(new English.TemperatureExtractorConfiguration()),
-                        new NumberWithUnitParser(new English.TemperatureParserConfiguration())
-                    },
-                }));
-
-            RegisterModel<DimensionModel>(
-                Culture.English,
-                (options) => new DimensionModel(new Dictionary<IExtractor, IParser>
-                {
-                    {
-                        new NumberWithUnitExtractor(new English.DimensionExtractorConfiguration()),
-                        new NumberWithUnitParser(new English.DimensionParserConfiguration())
-                    },
-                }));
-
-            RegisterModel<AgeModel>(
-                Culture.English,
-                (options) => new AgeModel(new Dictionary<IExtractor, IParser>
-                {
-                    {
-                        new NumberWithUnitExtractor(new English.AgeExtractorConfiguration()),
-                        new NumberWithUnitParser(new English.AgeParserConfiguration())
-                    },
-                }));
-
-            RegisterModel<CurrencyModel>(
                 Culture.Chinese,
                 (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
                 {
@@ -164,234 +124,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 }));
 
             RegisterModel<CurrencyModel>(
-                Culture.Spanish,
-                (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
-                {
-                    {
-                        new NumberWithUnitExtractor(new Spanish.CurrencyExtractorConfiguration()),
-                        new NumberWithUnitParser(new Spanish.CurrencyParserConfiguration())
-                    },
-                }));
-
-            RegisterModel<TemperatureModel>(
-                Culture.Spanish,
-                (options) => new TemperatureModel(new Dictionary<IExtractor, IParser>
-                {
-                    {
-                        new NumberWithUnitExtractor(new Spanish.TemperatureExtractorConfiguration()),
-                        new NumberWithUnitParser(new Spanish.TemperatureParserConfiguration())
-                    },
-                }));
-
-            RegisterModel<DimensionModel>(
-                Culture.Spanish,
-                (options) => new DimensionModel(new Dictionary<IExtractor, IParser>
-                {
-                    {
-                        new NumberWithUnitExtractor(new Spanish.DimensionExtractorConfiguration()),
-                        new NumberWithUnitParser(new Spanish.DimensionParserConfiguration())
-                    },
-                }));
-
-            RegisterModel<AgeModel>(
-                Culture.Spanish,
-                (options) => new AgeModel(new Dictionary<IExtractor, IParser>
-                {
-                    {
-                        new NumberWithUnitExtractor(new Spanish.AgeExtractorConfiguration()),
-                        new NumberWithUnitParser(new Spanish.AgeParserConfiguration())
-                    },
-                }));
-
-            RegisterModel<CurrencyModel>(
-                Culture.Portuguese,
-                (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
-                {
-                    {
-                        new NumberWithUnitExtractor(new Portuguese.CurrencyExtractorConfiguration()),
-                        new NumberWithUnitParser(new Portuguese.CurrencyParserConfiguration())
-                    },
-                }));
-
-            RegisterModel<TemperatureModel>(
-                Culture.Portuguese,
-                (options) => new TemperatureModel(new Dictionary<IExtractor, IParser>
-                {
-                    {
-                        new NumberWithUnitExtractor(new Portuguese.TemperatureExtractorConfiguration()),
-                        new NumberWithUnitParser(new Portuguese.TemperatureParserConfiguration())
-                    },
-                }));
-
-            RegisterModel<DimensionModel>(
-                Culture.Portuguese,
-                (options) => new DimensionModel(new Dictionary<IExtractor, IParser>
-                {
-                    {
-                        new NumberWithUnitExtractor(new Portuguese.DimensionExtractorConfiguration()),
-                        new NumberWithUnitParser(new Portuguese.DimensionParserConfiguration())
-                    },
-                }));
-
-            RegisterModel<AgeModel>(
-                Culture.Portuguese,
-                (options) => new AgeModel(new Dictionary<IExtractor, IParser>
-                {
-                    {
-                        new NumberWithUnitExtractor(new Portuguese.AgeExtractorConfiguration()),
-                        new NumberWithUnitParser(new Portuguese.AgeParserConfiguration())
-                    },
-                }));
-
-            RegisterModel<CurrencyModel>(
-                Culture.French,
-                (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
-                {
-                    {
-                        new NumberWithUnitExtractor(new French.CurrencyExtractorConfiguration()),
-                        new NumberWithUnitParser(new French.CurrencyParserConfiguration())
-                    },
-                }));
-
-            RegisterModel<TemperatureModel>(
-                Culture.French,
-                (options) => new TemperatureModel(new Dictionary<IExtractor, IParser>
-                {
-                    {
-                        new NumberWithUnitExtractor(new French.TemperatureExtractorConfiguration()),
-                        new NumberWithUnitParser(new French.TemperatureParserConfiguration())
-                    },
-                }));
-
-            RegisterModel<DimensionModel>(
-                Culture.French,
-                (options) => new DimensionModel(new Dictionary<IExtractor, IParser>
-                {
-                    {
-                        new NumberWithUnitExtractor(new French.DimensionExtractorConfiguration()),
-                        new NumberWithUnitParser(new French.DimensionParserConfiguration())
-                    },
-                }));
-
-            RegisterModel<AgeModel>(
-                Culture.French,
-                (options) => new AgeModel(new Dictionary<IExtractor, IParser>
-                {
-                    {
-                        new NumberWithUnitExtractor(new French.AgeExtractorConfiguration()),
-                        new NumberWithUnitParser(new French.AgeParserConfiguration())
-                    },
-                }));
-
-            RegisterModel<CurrencyModel>(
-                Culture.German,
-                (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
-                 {
-                    {
-                        new NumberWithUnitExtractor(new German.CurrencyExtractorConfiguration()),
-                        new NumberWithUnitParser(new German.CurrencyParserConfiguration())
-                    },
-                 }));
-
-            RegisterModel<TemperatureModel>(
-                Culture.German,
-                (options) => new TemperatureModel(new Dictionary<IExtractor, IParser>
-                 {
-                    {
-                        new NumberWithUnitExtractor(new German.TemperatureExtractorConfiguration()),
-                        new NumberWithUnitParser(new German.TemperatureParserConfiguration())
-                    },
-                 }));
-
-            RegisterModel<DimensionModel>(
-                Culture.German,
-                (options) => new DimensionModel(new Dictionary<IExtractor, IParser>
-                 {
-                    {
-                        new NumberWithUnitExtractor(new German.DimensionExtractorConfiguration()),
-                        new NumberWithUnitParser(new German.DimensionParserConfiguration())
-                    },
-                 }));
-
-            RegisterModel<AgeModel>(
-                Culture.German,
-                (options) => new AgeModel(new Dictionary<IExtractor, IParser>
-                {
-                    {
-                        new NumberWithUnitExtractor(new German.AgeExtractorConfiguration()),
-                        new NumberWithUnitParser(new German.AgeParserConfiguration())
-                    },
-                }));
-
-            RegisterModel<CurrencyModel>(
-                Culture.Italian,
-                (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
-                {
-                    {
-                        new NumberWithUnitExtractor(new Italian.CurrencyExtractorConfiguration()),
-                        new NumberWithUnitParser(new Italian.CurrencyParserConfiguration())
-                    },
-                }));
-
-            RegisterModel<TemperatureModel>(
-                Culture.Italian,
-                (options) => new TemperatureModel(new Dictionary<IExtractor, IParser>
-                {
-                    {
-                        new NumberWithUnitExtractor(new Italian.TemperatureExtractorConfiguration()),
-                        new NumberWithUnitParser(new Italian.TemperatureParserConfiguration())
-                    },
-                }));
-
-            RegisterModel<DimensionModel>(
-                Culture.Italian,
-                (options) => new DimensionModel(new Dictionary<IExtractor, IParser>
-                {
-                    {
-                        new NumberWithUnitExtractor(new Italian.DimensionExtractorConfiguration()),
-                        new NumberWithUnitParser(new Italian.DimensionParserConfiguration())
-                    },
-               }));
-
-            RegisterModel<AgeModel>(
-                Culture.Italian,
-                (options) => new AgeModel(new Dictionary<IExtractor, IParser>
-                {
-                    {
-                        new NumberWithUnitExtractor(new Italian.AgeExtractorConfiguration()),
-                        new NumberWithUnitParser(new Italian.AgeParserConfiguration())
-                    },
-                }));
-
-            RegisterModel<CurrencyModel>(
-                Culture.Japanese,
-                (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
-                {
-                    {
-                        new BaseMergedUnitExtractor(new Japanese.CurrencyExtractorConfiguration()),
-                        new BaseMergedUnitParser(new Japanese.CurrencyParserConfiguration())
-                    }, /*
-                    {
-                        new NumberWithUnitExtractor(new English.CurrencyExtractorConfiguration()),
-                        new NumberWithUnitParser(new English.CurrencyParserConfiguration())
-                    }*/
-                }));
-
-            RegisterModel<AgeModel>(
-                Culture.Japanese,
-                (options) => new AgeModel(new Dictionary<IExtractor, IParser>
-                {
-                    {
-                        new NumberWithUnitExtractor(new Japanese.AgeExtractorConfiguration()),
-                        new NumberWithUnitParser(new Japanese.AgeParserConfiguration())
-                    },
-                    {
-                        new NumberWithUnitExtractor(new English.AgeExtractorConfiguration()),
-                        new NumberWithUnitParser(new English.AgeParserConfiguration())
-                    },
-                }));
-
-            RegisterModel<CurrencyModel>(
                 Culture.Dutch,
                 (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
                 {
@@ -431,43 +163,123 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     },
                 }));
 
-            RegisterModel<AgeModel>(
-                Culture.Turkish,
-                (options) => new AgeModel(new Dictionary<IExtractor, IParser>
+            RegisterModel<CurrencyModel>(
+                Culture.English,
+                (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
                 {
                     {
-                        new NumberWithUnitExtractor(new Turkish.AgeExtractorConfiguration()),
-                        new NumberWithUnitParser(new Turkish.AgeParserConfiguration())
+                        new BaseMergedUnitExtractor(new English.CurrencyExtractorConfiguration()),
+                        new BaseMergedUnitParser(new English.CurrencyParserConfiguration())
                     },
                 }));
 
             RegisterModel<TemperatureModel>(
-                Culture.Turkish,
+                Culture.English,
                 (options) => new TemperatureModel(new Dictionary<IExtractor, IParser>
                 {
                     {
-                        new NumberWithUnitExtractor(new Turkish.TemperatureExtractorConfiguration()),
-                        new NumberWithUnitParser(new Turkish.TemperatureParserConfiguration())
+                        new NumberWithUnitExtractor(new English.TemperatureExtractorConfiguration()),
+                        new NumberWithUnitParser(new English.TemperatureParserConfiguration())
                     },
                 }));
 
             RegisterModel<DimensionModel>(
-                Culture.Turkish,
+                Culture.English,
                 (options) => new DimensionModel(new Dictionary<IExtractor, IParser>
                 {
                     {
-                        new NumberWithUnitExtractor(new Turkish.DimensionExtractorConfiguration()),
-                        new NumberWithUnitParser(new Turkish.DimensionParserConfiguration())
+                        new NumberWithUnitExtractor(new English.DimensionExtractorConfiguration()),
+                        new NumberWithUnitParser(new English.DimensionParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<AgeModel>(
+                Culture.English,
+                (options) => new AgeModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new English.AgeExtractorConfiguration()),
+                        new NumberWithUnitParser(new English.AgeParserConfiguration())
                     },
                 }));
 
             RegisterModel<CurrencyModel>(
-                Culture.Turkish,
+                Culture.French,
                 (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
                 {
                     {
-                        new BaseMergedUnitExtractor(new Turkish.CurrencyExtractorConfiguration()),
-                        new BaseMergedUnitParser(new Turkish.CurrencyParserConfiguration())
+                        new BaseMergedUnitExtractor(new French.CurrencyExtractorConfiguration()),
+                        new BaseMergedUnitParser(new French.CurrencyParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<TemperatureModel>(
+                Culture.French,
+                (options) => new TemperatureModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new French.TemperatureExtractorConfiguration()),
+                        new NumberWithUnitParser(new French.TemperatureParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<DimensionModel>(
+                Culture.French,
+                (options) => new DimensionModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new French.DimensionExtractorConfiguration()),
+                        new NumberWithUnitParser(new French.DimensionParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<AgeModel>(
+                Culture.French,
+                (options) => new AgeModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new French.AgeExtractorConfiguration()),
+                        new NumberWithUnitParser(new French.AgeParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<CurrencyModel>(
+                Culture.German,
+                (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
+                 {
+                    {
+                        new BaseMergedUnitExtractor(new German.CurrencyExtractorConfiguration()),
+                        new BaseMergedUnitParser(new German.CurrencyParserConfiguration())
+                    },
+                 }));
+
+            RegisterModel<TemperatureModel>(
+                Culture.German,
+                (options) => new TemperatureModel(new Dictionary<IExtractor, IParser>
+                 {
+                    {
+                        new NumberWithUnitExtractor(new German.TemperatureExtractorConfiguration()),
+                        new NumberWithUnitParser(new German.TemperatureParserConfiguration())
+                    },
+                 }));
+
+            RegisterModel<DimensionModel>(
+                Culture.German,
+                (options) => new DimensionModel(new Dictionary<IExtractor, IParser>
+                 {
+                    {
+                        new NumberWithUnitExtractor(new German.DimensionExtractorConfiguration()),
+                        new NumberWithUnitParser(new German.DimensionParserConfiguration())
+                    },
+                 }));
+
+            RegisterModel<AgeModel>(
+                Culture.German,
+                (options) => new AgeModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new German.AgeExtractorConfiguration()),
+                        new NumberWithUnitParser(new German.AgeParserConfiguration())
                     },
                 }));
 
@@ -508,6 +320,330 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     {
                         new BaseMergedUnitExtractor(new Hindi.CurrencyExtractorConfiguration()),
                         new BaseMergedUnitParser(new Hindi.CurrencyParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<CurrencyModel>(
+                Culture.Italian,
+                (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new BaseMergedUnitExtractor(new Italian.CurrencyExtractorConfiguration()),
+                        new BaseMergedUnitParser(new Italian.CurrencyParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<TemperatureModel>(
+                Culture.Italian,
+                (options) => new TemperatureModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Italian.TemperatureExtractorConfiguration()),
+                        new NumberWithUnitParser(new Italian.TemperatureParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<DimensionModel>(
+                Culture.Italian,
+                (options) => new DimensionModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Italian.DimensionExtractorConfiguration()),
+                        new NumberWithUnitParser(new Italian.DimensionParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<AgeModel>(
+                Culture.Italian,
+                (options) => new AgeModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Italian.AgeExtractorConfiguration()),
+                        new NumberWithUnitParser(new Italian.AgeParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<CurrencyModel>(
+                Culture.Japanese,
+                (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new BaseMergedUnitExtractor(new Japanese.CurrencyExtractorConfiguration()),
+                        new BaseMergedUnitParser(new Japanese.CurrencyParserConfiguration())
+                    }, /*
+                    {
+                        new NumberWithUnitExtractor(new English.CurrencyExtractorConfiguration()),
+                        new NumberWithUnitParser(new English.CurrencyParserConfiguration())
+                    }*/
+                }));
+
+            RegisterModel<AgeModel>(
+                Culture.Japanese,
+                (options) => new AgeModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Japanese.AgeExtractorConfiguration()),
+                        new NumberWithUnitParser(new Japanese.AgeParserConfiguration())
+                    },
+                    {
+                        new NumberWithUnitExtractor(new English.AgeExtractorConfiguration()),
+                        new NumberWithUnitParser(new English.AgeParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<CurrencyModel>(
+                Culture.Korean,
+                (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new BaseMergedUnitExtractor(new Korean.CurrencyExtractorConfiguration()),
+                        new BaseMergedUnitParser(new Korean.CurrencyParserConfiguration())
+                    },
+                    {
+                        new NumberWithUnitExtractor(new English.CurrencyExtractorConfiguration()),
+                        new NumberWithUnitParser(new English.CurrencyParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<TemperatureModel>(
+                Culture.Korean,
+                (options) => new TemperatureModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Korean.TemperatureExtractorConfiguration()),
+                        new NumberWithUnitParser(new Korean.TemperatureParserConfiguration())
+                    },
+                    {
+                        new NumberWithUnitExtractor(new English.TemperatureExtractorConfiguration()),
+                        new NumberWithUnitParser(new English.TemperatureParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<DimensionModel>(
+                Culture.Korean,
+                (options) => new DimensionModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Korean.DimensionExtractorConfiguration()),
+                        new NumberWithUnitParser(new Korean.DimensionParserConfiguration())
+                    },
+                    {
+                        new NumberWithUnitExtractor(new English.DimensionExtractorConfiguration()),
+                        new NumberWithUnitParser(new English.DimensionParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<AgeModel>(
+                Culture.Korean,
+                (options) => new AgeModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Korean.AgeExtractorConfiguration()),
+                        new NumberWithUnitParser(new Korean.AgeParserConfiguration())
+                    },
+                    {
+                        new NumberWithUnitExtractor(new English.AgeExtractorConfiguration()),
+                        new NumberWithUnitParser(new English.AgeParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<CurrencyModel>(
+                Culture.Portuguese,
+                (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new BaseMergedUnitExtractor(new Portuguese.CurrencyExtractorConfiguration()),
+                        new BaseMergedUnitParser(new Portuguese.CurrencyParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<TemperatureModel>(
+                Culture.Portuguese,
+                (options) => new TemperatureModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Portuguese.TemperatureExtractorConfiguration()),
+                        new NumberWithUnitParser(new Portuguese.TemperatureParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<DimensionModel>(
+                Culture.Portuguese,
+                (options) => new DimensionModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Portuguese.DimensionExtractorConfiguration()),
+                        new NumberWithUnitParser(new Portuguese.DimensionParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<AgeModel>(
+                Culture.Portuguese,
+                (options) => new AgeModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Portuguese.AgeExtractorConfiguration()),
+                        new NumberWithUnitParser(new Portuguese.AgeParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<CurrencyModel>(
+                Culture.Spanish,
+                (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new BaseMergedUnitExtractor(new Spanish.CurrencyExtractorConfiguration()),
+                        new BaseMergedUnitParser(new Spanish.CurrencyParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<TemperatureModel>(
+                Culture.Spanish,
+                (options) => new TemperatureModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Spanish.TemperatureExtractorConfiguration()),
+                        new NumberWithUnitParser(new Spanish.TemperatureParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<DimensionModel>(
+                Culture.Spanish,
+                (options) => new DimensionModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Spanish.DimensionExtractorConfiguration()),
+                        new NumberWithUnitParser(new Spanish.DimensionParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<AgeModel>(
+                Culture.Spanish,
+                (options) => new AgeModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Spanish.AgeExtractorConfiguration()),
+                        new NumberWithUnitParser(new Spanish.AgeParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<CurrencyModel>(
+                Culture.SpanishMexican,
+                (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new BaseMergedUnitExtractor(new Spanish.CurrencyExtractorConfiguration()),
+                        new BaseMergedUnitParser(new Spanish.CurrencyParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<TemperatureModel>(
+                Culture.SpanishMexican,
+                (options) => new TemperatureModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Spanish.TemperatureExtractorConfiguration()),
+                        new NumberWithUnitParser(new Spanish.TemperatureParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<DimensionModel>(
+                Culture.SpanishMexican,
+                (options) => new DimensionModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Spanish.DimensionExtractorConfiguration()),
+                        new NumberWithUnitParser(new Spanish.DimensionParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<AgeModel>(
+                Culture.SpanishMexican,
+                (options) => new AgeModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Spanish.AgeExtractorConfiguration()),
+                        new NumberWithUnitParser(new Spanish.AgeParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<AgeModel>(
+                Culture.Swedish,
+                (options) => new AgeModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Swedish.AgeExtractorConfiguration()),
+                        new NumberWithUnitParser(new Swedish.AgeParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<TemperatureModel>(
+                Culture.Swedish,
+                (options) => new TemperatureModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Swedish.TemperatureExtractorConfiguration()),
+                        new NumberWithUnitParser(new Swedish.TemperatureParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<DimensionModel>(
+                Culture.Swedish,
+                (options) => new DimensionModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Swedish.DimensionExtractorConfiguration()),
+                        new NumberWithUnitParser(new Swedish.DimensionParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<CurrencyModel>(
+                Culture.Swedish,
+                (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new BaseMergedUnitExtractor(new Swedish.CurrencyExtractorConfiguration()),
+                        new BaseMergedUnitParser(new Swedish.CurrencyParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<AgeModel>(
+                Culture.Turkish,
+                (options) => new AgeModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Turkish.AgeExtractorConfiguration()),
+                        new NumberWithUnitParser(new Turkish.AgeParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<TemperatureModel>(
+                Culture.Turkish,
+                (options) => new TemperatureModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Turkish.TemperatureExtractorConfiguration()),
+                        new NumberWithUnitParser(new Turkish.TemperatureParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<DimensionModel>(
+                Culture.Turkish,
+                (options) => new DimensionModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Turkish.DimensionExtractorConfiguration()),
+                        new NumberWithUnitParser(new Turkish.DimensionParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<CurrencyModel>(
+                Culture.Turkish,
+                (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new BaseMergedUnitExtractor(new Turkish.CurrencyExtractorConfiguration()),
+                        new BaseMergedUnitParser(new Turkish.CurrencyParserConfiguration())
                     },
                 }));
         }

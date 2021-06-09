@@ -63,6 +63,15 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         }
 
         [TestMethod]
+        public void DataTypes_Helpers_DateRangeFromTimex_Week23()
+        {
+            var timex = new TimexProperty("2020-W23");
+            var range = TimexHelpers.DateRangeFromTimex(timex);
+            Assert.AreEqual(new System.DateTime(2020, 6, 1), range.Start);
+            Assert.AreEqual(new System.DateTime(2020, 6, 8), range.End);
+        }
+
+        [TestMethod]
         public void DataTypes_Helpers_DateRangeFromTimex()
         {
             var timex = new TimexProperty("(2017-09-27,2017-09-29,P2D)");

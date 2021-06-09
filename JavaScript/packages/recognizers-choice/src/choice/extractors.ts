@@ -9,6 +9,7 @@ export interface IChoiceExtractorConfiguration {
     allowPartialMatch: boolean;
     maxDistance: number;
     onlyTopMatch: boolean;
+    emojiSkinToneRegex: RegExp;
 }
 
 export class ChoiceExtractor implements IExtractor {
@@ -75,6 +76,7 @@ export class ChoiceExtractor implements IExtractor {
 
     matchValue(source: string[], match: string[], startPos: number): number {
         let matched = 0;
+        let emojiSkinToneMatch = 0;
         let totalDeviation = 0;
         match.forEach(matchToken => {
             let pos = source.indexOf(matchToken, startPos);
@@ -84,15 +86,17 @@ export class ChoiceExtractor implements IExtractor {
                     matched++;
                     totalDeviation += distance;
                     startPos = pos + 1;
+                    emojiSkinToneMatch += RegExpUtility.getMatches(this.config.emojiSkinToneRegex, matchToken).length;
                 }
             }
         });
 
         let score = 0.0;
-        if (matched > 0 && (matched === match.length || this.config.allowPartialMatch)) {
+        let emojiSkinToneLen = RegExpUtility.getMatches(this.config.emojiSkinToneRegex, source.join()).length;
+        if (matched > 0 && (matched === (match.length) || this.config.allowPartialMatch)) {
             let completeness = matched / match.length;
             let accuracy = completeness * (matched / (matched + totalDeviation));
-            let initialScore = accuracy * (matched / source.length);
+            let initialScore = accuracy * ((matched + emojiSkinToneMatch) / (source.length + emojiSkinToneLen));
             score = 0.4 + (0.6 * initialScore);
         }
         return score;
@@ -135,6 +139,7 @@ export interface IBooleanExtractorConfiguration {
     regexFalse: RegExp;
     tokenRegex: RegExp;
     onlyTopMatch: boolean;
+    emojiSkinToneRegex: RegExp;
 }
 
 export class BooleanExtractor extends ChoiceExtractor {
@@ -151,7 +156,8 @@ export class BooleanExtractor extends ChoiceExtractor {
             tokenRegex: config.tokenRegex,
             allowPartialMatch: false,
             maxDistance: 2,
-            onlyTopMatch: config.onlyTopMatch
+            onlyTopMatch: config.onlyTopMatch,
+            emojiSkinToneRegex: config.emojiSkinToneRegex
         };
         super(optionsConfig);
         this.extractType = Constants.SYS_BOOLEAN;

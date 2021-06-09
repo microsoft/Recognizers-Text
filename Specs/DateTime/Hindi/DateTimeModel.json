@@ -13575,5 +13575,391 @@
         }
       }
     ]
+  },
+  {
+    "Input": "2/29",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "2/29",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-02-29",
+              "type": "date",
+              "value": "2016-02-29"
+            },
+            {
+              "timex": "XXXX-02-29",
+              "type": "date",
+              "value": "2020-02-29"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "2/29",
+    "Context": {
+      "ReferenceDateTime": "2019-03-22T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "2/29",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-02-29",
+              "type": "date",
+              "value": "2016-02-29"
+            },
+            {
+              "timex": "XXXX-02-29",
+              "type": "date",
+              "value": "2020-02-29"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "2/29",
+    "Context": {
+      "ReferenceDateTime": "2020-03-22T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "2/29",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-02-29",
+              "type": "date",
+              "value": "2020-02-29"
+            },
+            {
+              "timex": "XXXX-02-29",
+              "type": "date",
+              "value": "2024-02-29"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "2/30",
+    "Context": {
+      "ReferenceDateTime": "2020-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2/30",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-02-30",
+              "type": "date",
+              "value": "not resolved"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "2/29/2019",
+    "Context": {
+      "ReferenceDateTime": "2020-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2/29/2019",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-02-29",
+              "type": "date",
+              "value": "not resolved"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "2/29/2020",
+    "Context": {
+      "ReferenceDateTime": "2020-03-22T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2/29/2020",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-02-29",
+              "type": "date",
+              "value": "2020-02-29"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "2/28-3/1",
+    "Context": {
+      "ReferenceDateTime": "2019-09-18T18:00:00"
+    },
+    "NotSupported": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2/28-3/1",
+        "Start": 0,
+        "End": 7,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-02-28,XXXX-03-01,P1D)",
+              "type": "daterange",
+              "start": "2019-02-28",
+              "end": "2019-03-01"
+            },
+            {
+              "timex": "(XXXX-02-28,XXXX-03-01,P2D)",
+              "type": "daterange",
+              "start": "2020-02-28",
+              "end": "2020-03-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2/29-3/1",
+    "Context": {
+      "ReferenceDateTime": "2019-09-18T18:00:00"
+    },
+    "NotSupported": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2/29-3/1",
+        "Start": 0,
+        "End": 7,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-02-29,XXXX-03-01,P1D)",
+              "type": "daterange",
+              "start": "2016-02-29",
+              "end": "2016-03-01"
+            },
+            {
+              "timex": "(XXXX-02-29,XXXX-03-01,P1D)",
+              "type": "daterange",
+              "start": "2020-02-29",
+              "end": "2020-03-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2/29-3/1/2019",
+    "Context": {
+      "ReferenceDateTime": "2019-09-18T18:00:00"
+    },
+    "NotSupported": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2/29-3/1/2019",
+        "Start": 0,
+        "End": 12,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-02-29,2019-03-01,PXD)",
+              "type": "daterange",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मैं सित-23-2020 को वापस जाऊंगा.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "सित-23-2020",
+        "Start": 4,
+        "End": 14,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-09-23",
+              "type": "date",
+              "value": "2020-09-23"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मैं सितंबर-2020-23 को वापस जाऊंगा.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "सितंबर-2020-23",
+        "Start": 4,
+        "End": 17,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-09-23",
+              "type": "date",
+              "value": "2020-09-23"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मैं 2020/23/सित को वापस जाऊंगा.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2020/23/सित",
+        "Start": 4,
+        "End": 14,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-09-23",
+              "type": "date",
+              "value": "2020-09-23"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मैं 2020/सित/23 को वापस जाऊंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2020/सित/23",
+        "Start": 4,
+        "End": 14,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-09-23",
+              "type": "date",
+              "value": "2020-09-23"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मैं 23/सित/2020 को वापस जाऊंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "23/सित/2020",
+        "Start": 4,
+        "End": 14,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-09-23",
+              "type": "date",
+              "value": "2020-09-23"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मैं 23-2020-सितंबर को वापस जाऊंगा",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "23-2020-सितंबर",
+        "Start": 4,
+        "End": 17,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-09-23",
+              "type": "date",
+              "value": "2020-09-23"
+            }
+          ]
+        }
+      }
+    ]
   }
 ] 

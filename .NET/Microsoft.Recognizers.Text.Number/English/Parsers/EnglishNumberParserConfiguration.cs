@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
 using System.Text.RegularExpressions;
@@ -50,8 +51,11 @@ namespace Microsoft.Recognizers.Text.Number.English
             this.DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexFlags);
             this.NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexFlags);
             this.FractionPrepositionRegex = new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexFlags);
+            this.RoundMultiplierRegex = new Regex(NumbersDefinitions.RoundMultiplierRegex, RegexFlags);
         }
 
         public string NonDecimalSeparatorText { get; private set; }
+
+        public override IEnumerable<string> NonStandardSeparatorVariants => NumbersDefinitions.NonStandardSeparatorVariants;
     }
 }

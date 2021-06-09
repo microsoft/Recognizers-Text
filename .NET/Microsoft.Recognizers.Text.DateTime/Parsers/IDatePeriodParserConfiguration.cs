@@ -101,6 +101,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex UnspecificEndOfRangeRegex { get; }
 
+        Regex AmbiguousPointRangeRegex { get; }
+
         Regex NowRegex { get; }
 
         Regex SpecialDayRegex { get; }
@@ -134,6 +136,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         bool IsMonthToDate(string text);
 
         bool IsWeekOnly(string text);
+
+        bool IsFortnight(string text);
 
         bool IsWeekend(string text);
 

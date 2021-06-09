@@ -27,6 +27,7 @@ export class EnglishDateExtractorConfiguration implements IDateExtractorConfigur
     readonly numberParser: BaseNumberParser;
     readonly durationExtractor: IDateTimeExtractor;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
+    readonly rangeConnectorSymbolRegex : RegExp;
 
     constructor(dmyDateFormat: boolean) {
 
@@ -93,6 +94,7 @@ export class EnglishDateExtractorConfiguration implements IDateExtractorConfigur
         this.numberParser = new BaseNumberParser(new EnglishNumberParserConfiguration());
         this.durationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration());
         this.utilityConfiguration = new EnglishDateTimeUtilityConfiguration();
+        this.rangeConnectorSymbolRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.RangeConnectorRegex);
     }
 }
 

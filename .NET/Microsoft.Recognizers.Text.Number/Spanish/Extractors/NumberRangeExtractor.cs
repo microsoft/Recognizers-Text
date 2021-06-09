@@ -42,7 +42,7 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
                 },
                 {
                     // más/mayor que ...
-                    new Regex(NumbersDefinitions.OneNumberRangeMoreRegex1, RegexFlags),
+                    new Regex(NumbersDefinitions.OneNumberRangeMoreRegex1LB, RegexFlags),
                     NumberRangeConstants.MORE
                 },
                 {
@@ -52,7 +52,7 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
                 },
                 {
                     // less/smaller/lower than ...
-                    new Regex(NumbersDefinitions.OneNumberRangeLessRegex1, RegexFlags),
+                    new Regex(NumbersDefinitions.OneNumberRangeLessRegex1LB, RegexFlags),
                     NumberRangeConstants.LESS
                 },
                 {

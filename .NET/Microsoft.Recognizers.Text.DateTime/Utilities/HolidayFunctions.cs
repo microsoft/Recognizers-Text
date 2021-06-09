@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Globalization;
 
 using DateObject = System.DateTime;
 
@@ -12,6 +13,15 @@ namespace Microsoft.Recognizers.Text.DateTime
         // @TODO move declarations to base DateTime or implement lunar calculation
         private static readonly IDictionary<int, IEnumerable<int>> HoliDiwaliRakshabandhanBaisakhiDates =
             Definitions.Hindi.DateTimeDefinitions.HoliDiwaliRakshabandhanBaisakhiDates.ToImmutableDictionary();
+
+        public enum IslamicHolidayType
+        {
+            /// <summary>Ramadan</summary>
+            Ramadan = 0,
+
+            /// <summary>Sacrifice</summary>
+            Sacrifice,
+        }
 
         public static DateObject CalculateHolidayByEaster(int year, int days = 0)
         {
@@ -99,6 +109,47 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return DateObject.MinValue.SafeCreateFromValue(year, month, day);
+        }
+
+        // Calculates the exact gregorian date for the given holiday using only gregorian year and exact hijri date
+        public static DateObject IslamicHoliday(int year, IslamicHolidayType holidayType)
+        {
+            int y = 0;
+            int m = 0;
+            int d = 0;
+
+            int hijriDay = 1;
+            int hijriMonth = 1;
+            int hijriYear = 1;
+
+            var gregorian = new GregorianCalendar();
+            var hijri = new HijriCalendar();
+
+            if (holidayType == IslamicHolidayType.Ramadan)
+            {
+                hijriDay = 1;
+                hijriMonth = 10;
+            }
+            else if (holidayType == IslamicHolidayType.Sacrifice)
+            {
+                hijriDay = 10;
+                hijriMonth = 12;
+            }
+
+            for (hijriYear = 1; hijriYear <= 9999; hijriYear++)
+            {
+                var hijriDate = new DateObject(hijriYear, hijriMonth, hijriDay, hijri);
+                y = gregorian.GetYear(hijriDate);
+                m = gregorian.GetMonth(hijriDate);
+                d = gregorian.GetDayOfMonth(hijriDate);
+
+                if (y == year)
+                {
+                    break;
+                }
+            }
+
+            return DateObject.MinValue.SafeCreateFromValue(y, m, d);
         }
     }
 }

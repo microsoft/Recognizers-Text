@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Globalization;
 using Microsoft.Recognizers.Text.NumberWithUnit.Utilities;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit
@@ -150,7 +150,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
                     if (parseResultValue?.Number != null)
                     {
-                        numberValue = double.Parse(parseResultValue.Number);
+                        numberValue = double.Parse(parseResultValue.Number, CultureInfo.InvariantCulture);
                     }
 
                     result.ResolutionStr = parseResult.ResolutionStr;
@@ -197,7 +197,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     if (!string.IsNullOrEmpty(fractionUnitCode) && fractionNumValue != 0 &&
                         CheckUnitsStringContains(fractionUnitCode, fractionUnitsString))
                     {
-                        numberValue += double.Parse(parseResultValue?.Number) *
+                        numberValue += double.Parse(parseResultValue?.Number, CultureInfo.InvariantCulture) *
                                        (1.0 / fractionNumValue);
                         result.ResolutionStr += ' ' + parseResult.ResolutionStr;
                         result.Length = parseResult.Start + parseResult.Length - result.Start;

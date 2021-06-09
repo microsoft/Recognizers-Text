@@ -95,8 +95,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             // once (y)? veinticinco
             new Regex(DateTimeDefinitions.TimeRegex9, RegexFlags),
 
-            new Regex(DateTimeDefinitions.TimeRegex10, RegexFlags),
-
             // (tres menos veinte) (pm)?
             new Regex(DateTimeDefinitions.TimeRegex11, RegexFlags),
 
@@ -129,5 +127,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public IDateTimeExtractor TimeZoneExtractor { get; }
 
         public string TimeTokenPrefix => DateTimeDefinitions.TimeTokenPrefix;
+
+        public Dictionary<Regex, Regex> AmbiguityFiltersDict => null;
     }
 }

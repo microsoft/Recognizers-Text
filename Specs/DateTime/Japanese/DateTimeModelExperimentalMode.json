@@ -1,0 +1,1633 @@
+[
+  {
+    "Input": "どのネットワーク接続の最高単位は平成25年またはその以前の最高単位を超えていない？",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "平成25年またはその以前",
+        "Start": 16,
+        "End": 27,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2013",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "end": "2013-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "単位中間値を基づいて、2010年一月四日またはその以前、2011年一月七日またはその以降のネットワーク接続を降順で並べる",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2010年一月四日またはその以前",
+        "Start": 11,
+        "End": 26,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2010-01-04",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2010-01-04"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2011年一月七日またはその以降",
+        "Start": 28,
+        "End": 43,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2011-01-07",
+              "Mod": "after",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "start": "2011-01-07"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "出荷日付が2015-01-01またはその以前、または2015-02-01之前である、受け方の納税中間値を降順で並べる",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2015-01-01またはその以前",
+        "Start": 5,
+        "End": 21,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-01-01",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2015-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2015-02-01之前",
+        "Start": 26,
+        "End": 37,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-02-01",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "end": "2015-02-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "二〇十九年5月5日またはその以前または二〇十九年11月11日の年分を総売り上げ額の中間値を基づいて昇順で並べる",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "二〇十九年5月5日またはその以前",
+        "Start": 0,
+        "End": 15,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-05-05",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2019-05-05"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "二〇十九年11月11日",
+        "Start": 19,
+        "End": 29,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-11-11",
+              "type": "date",
+              "value": "2019-11-11"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2010年1月4日またはその以降、平板の売上額単位が単位中間値より多いまたは同じのネットワークコネクションは？",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2010年1月4日またはその以降",
+        "Start": 0,
+        "End": 15,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2010-01-04",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2010-01-04"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "降順で二〇十九年八月六日または以降、または二〇十九年一月一日にて毎公園の平均年齢。",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "二〇十九年八月六日または以降",
+        "Start": 3,
+        "End": 16,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-08-06",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2019-08-06"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "二〇十九年一月一日",
+        "Start": 21,
+        "End": 29,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-01-01",
+              "type": "date",
+              "value": "2019-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2019年4月4日またはその以前、2019年9月9日またはその以降の毎年の総売上額を降順で並べる",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2019年4月4日またはその以前",
+        "Start": 0,
+        "End": 15,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-04-04",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2019-04-04"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2019年9月9日またはその以降",
+        "Start": 17,
+        "End": 32,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-09-09",
+              "Mod": "after",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "start": "2019-09-09"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "毎年",
+        "Start": 34,
+        "End": 35,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1Y",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2010年1月10日または以前、または2012年1月1日、ネットワークコネクション総単位を基づいて降順で並ぶ。",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2010年1月10日または以前",
+        "Start": 0,
+        "End": 14,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2010-01-10",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2010-01-10"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2012年1月1日",
+        "Start": 19,
+        "End": 27,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2012-01-01",
+              "type": "date",
+              "value": "2012-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2011年1月10日またはその以前、最低単位が45を超えているネットワーク接続の売り上げは？",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2011年1月10日またはその以前",
+        "Start": 0,
+        "End": 16,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2011-01-10",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2011-01-10"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "出荷日付が2015-02-01またはその以前、そして2015-01-01またはその以降のものの高度や受け方は出荷日付の降順で並べる。",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2015-02-01またはその以前",
+        "Start": 5,
+        "End": 21,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-02-01",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2015-02-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2015-01-01またはその以降",
+        "Start": 26,
+        "End": 42,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-01-01",
+              "Mod": "after",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "start": "2015-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "二〇十五年1月1日またはその以前、出荷物の総価額を降順で並べる",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "二〇十五年1月1日またはその以前",
+        "Start": 0,
+        "End": 15,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-01-01",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2015-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "離散数学の成績が89以下であり、二〇〇一年10月1日またはその以前生まれのアカデミー",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "二〇〇一年10月1日またはその以前",
+        "Start": 16,
+        "End": 32,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2001-10-01",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2001-10-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "降順で二〇十〇年1月4日または以前、二〇十二年1月1日または以降の段階。",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "二〇十〇年1月4日または以前",
+        "Start": 3,
+        "End": 16,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2010-01-04",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2010-01-04"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "二〇十二年1月1日または以降",
+        "Start": 18,
+        "End": 31,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2012-01-01",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2012-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2015-01-01またはその以降、どの受け方の量は量の中間値より低い？",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2015-01-01またはその以降",
+        "Start": 0,
+        "End": 16,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-01-01",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2015-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2015年2月1日またはその以降、または2015年1月1日以前の出荷した平均横幅を降順で並べる",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2015年2月1日またはその以降",
+        "Start": 0,
+        "End": 15,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-02-01",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2015-02-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2015年1月1日以前",
+        "Start": 20,
+        "End": 30,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-01-01",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "end": "2015-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2007年1月10日またはその以前の日付を昇順で並べる",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2007年1月10日またはその以前",
+        "Start": 0,
+        "End": 16,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2007-01-10",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2007-01-10"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2016年3月1日からの平均ローリングロード",
+    "Context": {
+      "ReferenceDateTime": "2018-08-30T14:16:03"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2016年3月1日から",
+        "Start": 0,
+        "End": 10,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-03-01",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2016-03-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "二〇十五年2月1日またはその以前の受け方をコストの昇順で並べる",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "二〇十五年2月1日またはその以前",
+        "Start": 0,
+        "End": 15,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-02-01",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2015-02-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "表で示している、二〇十九年9月14日またはその以前に年齢が年齢中間値より多い公園",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "二〇十九年9月14日またはその以前",
+        "Start": 8,
+        "End": 24,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-09-14",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2019-09-14"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "二〇十五年2月1日またはその以前の出荷物の平均量を降順で並べる",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "二〇十五年2月1日またはその以前",
+        "Start": 0,
+        "End": 15,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-02-01",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2015-02-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "平成27年から、点数が80から90までに必要な大学はどれら？",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "平成27年から",
+        "Start": 0,
+        "End": 6,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "start": "2015-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "二〇十五年1月1日または二〇十五年2月1日からの受け方を平均高度を基づいて降順で並べる",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "二〇十五年1月1日",
+        "Start": 0,
+        "End": 8,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-01-01",
+              "type": "date",
+              "value": "2015-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "二〇十五年2月1日から",
+        "Start": 12,
+        "End": 22,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-02-01",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2015-02-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2015年1月1日またはその以降、出荷した各受け方の総価額を昇順で並べる",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2015年1月1日またはその以降",
+        "Start": 0,
+        "End": 15,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-01-01",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2015-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "貨物年齢が最大年齢と同じで、2015年1月1日またはその以降出荷した受け方",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2015年1月1日またはその以降",
+        "Start": 14,
+        "End": 29,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-01-01",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2015-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2019年11月11日またはその以前、毎年の平均売上額を昇順で並べる",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2019年11月11日またはその以前",
+        "Start": 0,
+        "End": 17,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-11-11",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2019-11-11"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "毎年",
+        "Start": 19,
+        "End": 20,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1Y",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2019年8月1日以降、2019年4月5日またはその以前の違う公園の平均年齢を降順で並べる",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2019年8月1日以降",
+        "Start": 0,
+        "End": 10,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-08-01",
+              "Mod": "after",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "start": "2019-08-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2019年4月5日またはその以前",
+        "Start": 12,
+        "End": 27,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-04-05",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2019-04-05"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "どのネットワークコネクションの最高単位が2012-01-01または以前、そして2010-01-01または以降の期間中の最高単位より低いの？",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2012-01-01または以前",
+        "Start": 20,
+        "End": 34,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2012-01-01",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2012-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2010-01-01または以降",
+        "Start": 39,
+        "End": 53,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2010-01-01",
+              "Mod": "after",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "start": "2010-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2015年1月1日またはその以降、昇順で出荷の平均値またその受け方",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2015年1月1日またはその以降",
+        "Start": 0,
+        "End": 15,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-01-01",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2015-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "二〇十八年7月9日またはその以前、出版日付を降順で並べる",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "二〇十八年7月9日またはその以前",
+        "Start": 0,
+        "End": 15,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-07-09",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2018-07-09"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2010年1月1日またはその以降、2011年1月8日以前のネットワーク接続の平均単位",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2010年1月1日またはその以降",
+        "Start": 0,
+        "End": 15,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2010-01-01",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2010-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2011年1月8日以前",
+        "Start": 17,
+        "End": 27,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2011-01-08",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "end": "2011-01-08"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2019年9月9日以降、2019年4月4日またはその之前の毎年の総売上額を降順で並べる",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2019年9月9日以降",
+        "Start": 0,
+        "End": 10,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-09-09",
+              "Mod": "after",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "start": "2019-09-09"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2019年4月4日またはその之前",
+        "Start": 12,
+        "End": 27,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-04-04",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2019-04-04"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "毎年",
+        "Start": 29,
+        "End": 30,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1Y",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2014-06-04またはその以降2009-08-16またはその以前の最新年度財務最高評価総計を降順で並べる",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2014-06-04またはその以降",
+        "Start": 0,
+        "End": 16,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2014-06-04",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2014-06-04"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2009-08-16またはその以前",
+        "Start": 17,
+        "End": 33,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2009-08-16",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2009-08-16"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2015年1月1日以前、2015年2月1日またはその以降の出荷総量を降順で並べる",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2015年1月1日以前",
+        "Start": 0,
+        "End": 10,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-01-01",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "end": "2015-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2015年2月1日またはその以降",
+        "Start": 12,
+        "End": 27,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-02-01",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2015-02-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2011-03-22またはその以前、または2009-08-29以降の最新年度財務の平均に基づいて、今運営評価を降順で並べる",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2011-03-22またはその以前",
+        "Start": 0,
+        "End": 16,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2011-03-22",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2011-03-22"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2009-08-29以降",
+        "Start": 21,
+        "End": 32,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2009-08-29",
+              "Mod": "after",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "start": "2009-08-29"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "二〇十五年2月1日またはその以前、出荷しか貨物ぼ受け方を平均税値を基づいて降順で並ぶ",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "二〇十五年2月1日またはその以前",
+        "Start": 0,
+        "End": 15,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-02-01",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2015-02-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2016年9月1日から、または2016年1月1日以前のローリングロードを運動自覚量に基づいて昇順で並べる",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2016年9月1日から",
+        "Start": 0,
+        "End": 10,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-09-01",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2016-09-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2016年1月1日以前",
+        "Start": 15,
+        "End": 25,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "end": "2016-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "二〇十六年5月1日または二〇十六年12月1日またはその以降の運動自覚量を平均ロードを基づいて降順で並べる",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "二〇十六年5月1日",
+        "Start": 0,
+        "End": 8,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-05-01",
+              "type": "date",
+              "value": "2016-05-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "二〇十六年12月1日またはその以降",
+        "Start": 12,
+        "End": 28,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-12-01",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2016-12-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2010年1月1日またはその以降、売れた平均単位そして対応するネットワークコネクション",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2010年1月1日またはその以降",
+        "Start": 0,
+        "End": 15,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2010-01-01",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2010-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "昇順で2015年二月一日からの出荷受け方の平均コストを並べる。",
+    "Context": {
+      "ReferenceDateTime": "2018-08-30T14:16:03"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2015年二月一日から",
+        "Start": 3,
+        "End": 13,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-02-01",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2015-02-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "二〇十九年八月一日またはその以降、そして二〇十九年四月五日またはその以前の毎公園の平均年齢を昇順で並べる。",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "二〇十九年八月一日またはその以降",
+        "Start": 0,
+        "End": 15,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-08-01",
+              "Mod": "after",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "start": "2019-08-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "二〇十九年四月五日またはその以前",
+        "Start": 20,
+        "End": 35,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-04-05",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2019-04-05"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2015年1月1日またはその以降出荷したものの受け方が平均税数を基づいて昇順の序列",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2015年1月1日またはその以降",
+        "Start": 0,
+        "End": 15,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-01-01",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2015-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2010-01-10または以降、そして2011-01-07または以前で期間中、どのネットワークコネクションの単位が単位の中間値を超えていないの？",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2010-01-10または以降",
+        "Start": 0,
+        "End": 14,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2010-01-10",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2010-01-10"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2011-01-07または以前",
+        "Start": 19,
+        "End": 33,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2011-01-07",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "end": "2011-01-07"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2009年9月1日またはその以降、どのラスト年度財務総評価債務が一番高い？",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2009年9月1日またはその以降",
+        "Start": 0,
+        "End": 15,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2009-09-01",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2009-09-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2019年11月9日またはその以前、どの公園の年齢は平均年齢より低い？",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2019年11月9日またはその以前",
+        "Start": 0,
+        "End": 16,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-11-09",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2019-11-09"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2019年1月1日またはその以降、平均総売上額が一番少ない二つの年は？",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2019年1月1日またはその以降",
+        "Start": 0,
+        "End": 15,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-01-01",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2019-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "第一季日付が2014年6月14日から2014年9月14日まで、xが-83.8232を超えない街道。",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2014年6月14日から",
+        "Start": 6,
+        "End": 17,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2014-06-14",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2014-06-14"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2014年9月14日まで",
+        "Start": 18,
+        "End": 29,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2014-09-14",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "end": "2014-09-14"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2012年1月7日またはその以前、単位中間値より少ないネットワーク接続",
+    "Context": {
+      "ReferenceDateTime": "2019-01-06T12:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2012年1月7日またはその以前",
+        "Start": 0,
+        "End": 15,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2012-01-07",
+              "Mod": "until",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "value": "2012-01-07"
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

@@ -1,6 +1,6 @@
 import { RegExpUtility, ExtractResult } from "@microsoft/recognizers-text";
 import { CultureInfo, Culture, BaseNumberExtractor, BaseNumberParser } from "@microsoft/recognizers-text-number";
-import { NumberWithUnitExtractor, ChineseNumberWithUnitExtractorConfiguration, NumberWithUnitParser, ChineseNumberWithUnitParserConfiguration, UnitValue } from "@microsoft/recognizers-text-number-with-unit";
+import { ChineseNumberWithUnitExtractorConfiguration, NumberWithUnitExtractor, NumberWithUnitParser, ChineseNumberWithUnitParserConfiguration, UnitValue } from "@microsoft/recognizers-text-number-with-unit";
 import { BaseDateTimeExtractor } from "./baseDateTime";
 import { IDurationParserConfiguration, BaseDurationParser } from "../baseDuration";
 import { Constants, TimeTypeConstants } from "../constants";
@@ -56,11 +56,6 @@ export class ChineseDurationExtractor extends BaseDateTimeExtractor<DurationType
 
             // match suffix
             let suffix = source.substr(result.start + result.length);
-            let suffixMatch = RegExpUtility.getMatches(this.halfSuffixRegex, suffix).pop();
-            if (suffixMatch && suffixMatch.index === 0) {
-                result.text = result.text + suffixMatch.value;
-                result.length += suffixMatch.length;
-            }
 
             results.push(result);
         });
@@ -111,12 +106,6 @@ export class ChineseDurationParser extends BaseDurationParser {
         let resultValue;
         if (extractorResult.type === this.parserName) {
             let innerResult = new DateTimeResolutionResult();
-            let hasHalfSuffix = extractorResult.text.endsWith('半');
-
-            if (hasHalfSuffix) {
-                extractorResult.length--;
-                extractorResult.text = extractorResult.text.substr(0, extractorResult.length);
-            }
 
             let parserResult = this.internalParser.parse(extractorResult);
             let unitResult: UnitValue = parserResult.value;
@@ -126,10 +115,6 @@ export class ChineseDurationParser extends BaseDurationParser {
 
             let unitStr = unitResult.unit;
             let numberStr = unitResult.number;
-
-            if (hasHalfSuffix) {
-                numberStr = (Number.parseFloat(numberStr) + 0.5).toString();
-            }
 
             innerResult.timex = `P${this.isLessThanDay(unitStr) ? 'T' : ''}${numberStr}${unitStr.charAt(0)}`;
             innerResult.futureValue = Number.parseFloat(numberStr) * this.config.unitValueMap.get(unitStr);

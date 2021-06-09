@@ -530,11 +530,14 @@ public class BaseDatePeriodParser implements IDateTimeParser {
             pastYear--;
         }
 
+        HashMap<String, LocalDateTime> futurePastBeginDates = DateContext.generateDates(noYear, referenceDate, year, month, beginDay);
+        HashMap<String, LocalDateTime> futurePastEndDates = DateContext.generateDates(noYear, referenceDate, year, month, endDay);
+
         ret.setTimex(String.format("(%s,%s,P%sD)", beginLuisStr, endLuisStr, (endDay - beginDay)));
-        ret.setFutureValue(new Pair<>(DateUtil.safeCreateFromMinValue(futureYear, month, beginDay),
-                DateUtil.safeCreateFromMinValue(futureYear, month, endDay)));
-        ret.setPastValue(new Pair<>(DateUtil.safeCreateFromMinValue(pastYear, month, beginDay),
-                DateUtil.safeCreateFromMinValue(pastYear, month, endDay)));
+        ret.setFutureValue(new Pair<>(futurePastBeginDates.get(Constants.FutureDate),
+                futurePastEndDates.get(Constants.FutureDate)));
+        ret.setPastValue(new Pair<>(futurePastBeginDates.get(Constants.PastDate),
+                futurePastEndDates.get(Constants.PastDate)));
         ret.setSuccess(true);
 
         return ret;
@@ -1002,6 +1005,15 @@ public class BaseDatePeriodParser implements IDateTimeParser {
 
             pr1 = dateContext.processDateEntityParsingResult(pr1);
             pr2 = dateContext.processDateEntityParsingResult(pr2);
+
+            // When the case has no specified year, we should sync the future/past year due to invalid date Feb 29th.
+            if (dateContext.isEmpty() && (DateContext.isFeb29th((LocalDateTime)((DateTimeResolutionResult)pr1.getValue()).getFutureValue()) ||
+                    DateContext.isFeb29th((LocalDateTime)((DateTimeResolutionResult)pr2.getValue()).getFutureValue()))) {
+
+                HashMap<String, DateTimeParseResult> parseResultHashMap = dateContext.syncYear(pr1, pr2);
+                pr1 = parseResultHashMap.get(Constants.ParseResult1);
+                pr2 = parseResultHashMap.get(Constants.ParseResult2);
+            }
         }
 
         List<Object> subDateTimeEntities = new ArrayList<Object>();
@@ -1023,9 +1035,17 @@ public class BaseDatePeriodParser implements IDateTimeParser {
             pastEnd = futureEnd;
         }
 
-        String totalDays = StringUtility.format((double)ChronoUnit.HOURS.between(futureBegin, futureEnd) / 24);
+        ret.setTimex(TimexUtility.generateDatePeriodTimexStr(futureBegin, futureEnd, DatePeriodTimexType.ByDay, pr1.getTimexStr(), pr2.getTimexStr()));
 
-        ret.setTimex(String.format("(%s,%s,P%sD)", ((DateTimeParseResult)pr1).getTimexStr(), ((DateTimeParseResult)pr2).getTimexStr(), totalDays));
+        if (pr1.getTimexStr().startsWith(Constants.TimexFuzzyYear) && futureBegin.compareTo(DateUtil.safeCreateFromMinValue(futureBegin.getYear(), 2, 28)) <= 0 &&
+                futureEnd.compareTo(DateUtil.safeCreateFromMinValue(futureBegin.getYear(), 3, 1)) >= 0) {
+
+            // Handle cases like "Feb 29th to March 1st".
+            // There may be different timexes for FutureValue and PastValue due to the different validity of Feb 29th.
+            ret.setComment(Constants.Comment_DoubleTimex);
+            String pastTimex = TimexUtility.generateDatePeriodTimexStr(pastBegin, pastEnd, DatePeriodTimexType.ByDay, pr1.getTimexStr(), pr2.getTimexStr());
+            ret.setTimex(TimexUtility.mergeTimexAlternatives(ret.getTimex(), pastTimex));
+        }
         ret.setFutureValue(new Pair<>(futureBegin, futureEnd));
         ret.setPastValue(new Pair<>(pastBegin, pastEnd));
         ret.setSuccess(true);
@@ -1110,6 +1130,7 @@ public class BaseDatePeriodParser implements IDateTimeParser {
 
                 // Handle the "within two weeks" case which means from today to the end of next two weeks
                 // Cases like "within 3 days before/after today" is not handled here (4th condition)
+                boolean isMatch = false;
                 if (RegexExtension.isExactMatch(config.getWithinNextPrefixRegex(), beforeStr, true)) {
                     getModAndDateResult = getModAndDate(beginDate, endDate, referenceDate, durationResult.getTimex(), true);
                     beginDate = getModAndDateResult.beginDate;
@@ -1118,19 +1139,14 @@ public class BaseDatePeriodParser implements IDateTimeParser {
                     // In GetModAndDate, this "future" resolution will add one day to beginDate/endDate, but for the "within" case it should start from the current day.
                     beginDate = beginDate.minusDays(1);
                     endDate = endDate.minusDays(1);
+                    isMatch = true;
                 }
 
                 if (RegexExtension.isExactMatch(config.getFutureRegex(), beforeStr, true)) {
                     getModAndDateResult = getModAndDate(beginDate, endDate, referenceDate, durationResult.getTimex(), true);
                     beginDate = getModAndDateResult.beginDate;
                     endDate = getModAndDateResult.endDate;
-                } else {
-                    suffixMatch = Arrays.stream(RegExpUtility.getMatches(config.getFutureRegex(), afterStr)).findFirst();
-                    if (suffixMatch.isPresent()) {
-                        getModAndDateResult = getModAndDate(beginDate, endDate, referenceDate, durationResult.getTimex(), true);
-                        beginDate = getModAndDateResult.beginDate;
-                        endDate = getModAndDateResult.endDate;
-                    }
+                    isMatch = true;
                 }
 
                 Optional<Match> futureSuffixMatch = Arrays.stream(RegExpUtility.getMatches(config.getFutureSuffixRegex(), afterStr)).findFirst();
@@ -1142,7 +1158,7 @@ public class BaseDatePeriodParser implements IDateTimeParser {
 
                 // Handle the "in two weeks" case which means the second week
                 if (RegexExtension.isExactMatch(config.getInConnectorRegex(), beforeStr, true) &&
-                        !DurationParsingUtil.isMultipleDuration(durationResult.getTimex())) {
+                        !DurationParsingUtil.isMultipleDuration(durationResult.getTimex()) && !isMatch) {
                     getModAndDateResult = getModAndDate(beginDate, endDate, referenceDate, durationResult.getTimex(), true);
                     beginDate = getModAndDateResult.beginDate;
                     endDate = getModAndDateResult.endDate;

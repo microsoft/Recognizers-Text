@@ -257,6 +257,9 @@ public class NumberWithUnitExtractor implements IExtractor {
         // Remove common ambiguous cases
         result = filterAmbiguity(result, source);
 
+        // Expand Chinese phrase to the `half` patterns when it follows closely origin phrase.
+        result = this.config.expandHalfSuffix(source, result, numbers);
+
         return result;
     }
 

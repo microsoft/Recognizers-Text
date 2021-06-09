@@ -1,4 +1,5 @@
-﻿using System.Collections.Immutable;
+﻿using System;
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 
@@ -79,28 +80,35 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public bool GetMatchedDailyTimex(string text, out string timex)
         {
             var trimmedText = text.Trim();
-            if (trimmedText.Equals("quotidien") || trimmedText.Equals("quotidienne") ||
-                trimmedText.Equals("jours") || trimmedText.Equals("journellement"))
+
+            // @TODO move hardcoded values to resources file
+
+            if (trimmedText.Equals("quotidien", StringComparison.Ordinal) ||
+                trimmedText.Equals("quotidienne", StringComparison.Ordinal) ||
+                trimmedText.Equals("jours", StringComparison.Ordinal) ||
+                trimmedText.Equals("journellement", StringComparison.Ordinal))
             {
                 // daily
                 timex = "P1D";
             }
-            else if (trimmedText.Equals("hebdomadaire"))
+            else if (trimmedText.Equals("hebdomadaire", StringComparison.Ordinal))
             {
                 // weekly
                 timex = "P1W";
             }
-            else if (trimmedText.Equals("bihebdomadaire"))
+            else if (trimmedText.Equals("bihebdomadaire", StringComparison.Ordinal))
             {
                 // bi weekly
                 timex = "P2W";
             }
-            else if (trimmedText.Equals("mensuel") || trimmedText.Equals("mensuelle"))
+            else if (trimmedText.Equals("mensuel", StringComparison.Ordinal) ||
+                     trimmedText.Equals("mensuelle", StringComparison.Ordinal))
             {
                 // monthly
                 timex = "P1M";
             }
-            else if (trimmedText.Equals("annuel") || trimmedText.Equals("annuellement"))
+            else if (trimmedText.Equals("annuel", StringComparison.Ordinal) ||
+                     trimmedText.Equals("annuellement", StringComparison.Ordinal))
             {
                 // yearly/annually
                 timex = "P1Y";
@@ -117,19 +125,24 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public bool GetMatchedUnitTimex(string text, out string timex)
         {
             var trimmedText = text.Trim();
-            if (trimmedText.Equals("jour") || trimmedText.Equals("journee"))
+
+            // @TODO move hardcoded values to resources file
+
+            if (trimmedText.Equals("jour", StringComparison.Ordinal) ||
+                trimmedText.Equals("journee", StringComparison.Ordinal))
             {
                 timex = "P1D";
             }
-            else if (trimmedText.Equals("semaine"))
+            else if (trimmedText.Equals("semaine", StringComparison.Ordinal))
             {
                 timex = "P1W";
             }
-            else if (trimmedText.Equals("mois"))
+            else if (trimmedText.Equals("mois", StringComparison.Ordinal))
             {
                 timex = "P1M";
             }
-            else if (trimmedText.Equals("an") || trimmedText.Equals("annee"))
+            else if (trimmedText.Equals("an", StringComparison.Ordinal) ||
+                     trimmedText.Equals("annee", StringComparison.Ordinal))
             {
                 // year
                 timex = "P1Y";

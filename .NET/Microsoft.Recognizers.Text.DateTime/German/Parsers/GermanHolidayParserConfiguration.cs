@@ -1,32 +1,45 @@
-﻿using System.Collections.Immutable;
+﻿using System;
+using System.Collections.Immutable;
+using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.German;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
     public class GermanHolidayParserConfiguration : BaseHolidayParserConfiguration
     {
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         public GermanHolidayParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
+            ThisPrefixRegex = new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
+            NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
+            PreviousPrefixRegex = new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
             this.HolidayRegexList = GermanHolidayExtractorConfiguration.HolidayRegexList;
             this.HolidayNames = DateTimeDefinitions.HolidayNames.ToImmutableDictionary();
         }
+
+        public Regex ThisPrefixRegex { get; }
+
+        public Regex NextPrefixRegex { get; }
+
+        public Regex PreviousPrefixRegex { get; }
 
         public override int GetSwiftYear(string text)
         {
             var trimmedText = text.Trim();
             var swift = -10;
 
-            // @TODO move hardcoded terms to resource file
-            if (trimmedText.StartsWith("nächster") || trimmedText.StartsWith("nächstes") || trimmedText.StartsWith("nächsten") || trimmedText.StartsWith("nächste"))
+            if (NextPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 1;
             }
-            else if (trimmedText.StartsWith("letzter") || trimmedText.StartsWith("letztes") || trimmedText.StartsWith("letzten") || trimmedText.StartsWith("letzte"))
+            else if (PreviousPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }
-            else if (trimmedText.StartsWith("dieser") || trimmedText.StartsWith("dieses") || trimmedText.StartsWith("diesen") || trimmedText.StartsWith("diese"))
+            else if (ThisPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 0;
             }
