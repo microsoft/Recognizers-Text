@@ -298,12 +298,12 @@
         "Text": "2015 Ramazan Bayramı",
         "Type": "date",
         "Value": {
-          "Timex": "2015-07-17",
+          "Timex": "2015-06-17",
           "FutureResolution": {
-            "date": "2015-07-17"
+            "date": "2015-06-17"
           },
           "PastResolution": {
-            "date": "2015-07-17"
+            "date": "2015-06-17"
           }
         },
         "Start": 0,
