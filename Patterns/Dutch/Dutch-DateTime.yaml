@@ -569,7 +569,7 @@ HalfRegex: !simpleRegex
 ConjunctionRegex: !simpleRegex
   def: \b((en(\s+voor)?)|plus)\b
 HolidayList1: !nestedRegex
-  def: (?<holiday>goede vrijdag|pasen|((eerste|tweede)\s+)?paasdag|paas(zondag|maandag)|kerst|kerstavond|kerstmis|thanksgiving|halloween|nieuwjaar|oud en nieuw|oud & nieuw|pinksteren|oude?jaar|oude?jaarsavond|silvester|silvesteravond|sinterklaas|sinterklaasfeest|sinterklaasavond|pakjesavond)
+  def: (?<holiday>goede vrijdag|pasen|((eerste|tweede)\s+)?paasdag|paas(zondag|maandag)|kerst|kerstavond|kerstmis|thanksgiving|halloween|(islamitisch\s+)?nieuwjaar|oud en nieuw|oud & nieuw|pinksteren|oude?jaar|oude?jaarsavond|silvester|silvesteravond|sinterklaas|sinterklaasfeest|sinterklaasavond|pakjesavond|eidalfitr|eidaladha)
   references: [ YearRegex, RelativeRegex ]
 HolidayList2: !nestedRegex
   def: (?<holiday>black friday|cyber monday|nationale dodenherdenking|nationale herdenking|dodenherdenking|dag van de leraar|dag van de leerkracht(en)?|dag van de arbeid|feest van de arbeid|yuandan|valentijn|sint-maartensfeest|sint-maarten|driekoningen|keti(\s+|-)?koti|ramadan|suikerfeest|offerfeest|allerheiligen|allerheiligenavond|franse nationale feestdag|bestorming van de bastille)

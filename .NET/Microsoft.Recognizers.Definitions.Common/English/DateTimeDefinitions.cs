@@ -703,7 +703,11 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"veteransday", new string[] { @"veteransday" } },
             { @"christmaseve", new string[] { @"christmaseve" } },
             { @"newyeareve", new string[] { @"newyearseve", @"newyeareve" } },
-            { @"juneteenth", new string[] { @"juneteenth", @"freedomday", @"jubileeday" } }
+            { @"juneteenth", new string[] { @"juneteenth", @"freedomday", @"jubileeday" } },
+            { @"ramadan", new string[] { @"ramadan", @"ramazan", @"ramzan", @"ramadhan", @"ramathan" } },
+            { @"sacrifice", new string[] { @"eidaladha", @"eidalazha", @"eidulazha", @"feastofthesacrifice" } },
+            { @"islamicnewyear", new string[] { @"islamicnewyear", @"hijrinewyear", @"arabicnewyear" } },
+            { @"eidalfitr", new string[] { @"eidalfitr", @"festivalofbreakingthefast" } }
         };
       public static readonly Dictionary<string, int> WrittenDecades = new Dictionary<string, int>
         {
