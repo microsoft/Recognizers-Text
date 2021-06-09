@@ -133,7 +133,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             switch (holidayType)
             {
-                case IslamicHolidayType.Ramadan: // TODO Change to use start date (instead of end date)
+                case IslamicHolidayType.Ramadan:
                     hijriDay = 1;
                     hijriMonth = 9;
                     break;
