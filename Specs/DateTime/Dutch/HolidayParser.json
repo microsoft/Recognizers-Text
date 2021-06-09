@@ -1273,15 +1273,15 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "Ramadan",
+        "Text": "offerfeest",
         "Type": "date",
         "Value": {
-          "timex": "XXXX-04-12",
+          "timex": "XXXX-07-19",
           "FutureResolution": {
-            "date": "2022-04-02"
+            "date": "2021-07-19"
           },
           "PastResolution": {
-            "date": "2021-04-12"
+            "date": "2020-07-30"
           }
         },
         "Start": 4,
@@ -1309,7 +1309,7 @@
           }
         },
         "Start": 4,
-        "Length": 19
+        "Length": 21
       }
     ]
   }
