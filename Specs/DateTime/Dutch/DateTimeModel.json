@@ -10497,5 +10497,95 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Ik ga op zat terug",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "zat",
+        "Start": 9,
+        "End": 11,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-6",
+              "type": "date",
+              "value": "2016-11-05"
+            },
+            {
+              "timex": "XXXX-WXX-6",
+              "type": "date",
+              "value": "2016-11-12"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga zat. terug",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "zat.",
+        "Start": 6,
+        "End": 9,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-6",
+              "type": "date",
+              "value": "2016-11-05"
+            },
+            {
+              "timex": "XXXX-WXX-6",
+              "type": "date",
+              "value": "2016-11-12"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ze zei dat je in de problemen zat.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "Jullie moeten deze verdieping vrij maken.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "Dat was zo meesterlijk, zo bazig, zo machteloos.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "Een unieke zuidkust met veel zon uren.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
   }
 ]

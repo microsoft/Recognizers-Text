@@ -115,9 +115,9 @@ YearRegex: !nestedRegex
   def: ({BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})
   references: [ BaseDateTime.FourDigitYearRegex, FullTextYearRegex ]
 WeekDayRegex: !simpleRegex
-  def: \b(?<weekday>((ma|di(ns)?|wo(e(ns)?)?|do|vr(ij)?|za(t)?|zo)[\.\b])|((?:maan|dins|woens|donder|vrij|zater|zon)(dag)?(en)?(middag)?)\b)
+  def: \b(?<weekday>((ma|di(ns)?|wo(e(ns)?)?|do|vr(ij)?|zat?|zo)(\.|\b))|((?:maan|dins|woens|donder|vrij|zater|zon)(dag(en)?)?(middag)?)\b)
 SingleWeekDayRegex: !simpleRegex
-  def: \b(?<weekday>(((ma|di(ns)?|wo(e(ns)?)?|do|vr(ij\.)?|za(t)?)\b(\.)?)|(((?<!in\s+de\s+)(maan|dins|woens|donder|zater|zon)(dag(en)?)?|(?<=op\s+)vrij|vrij(dag(en)?))\b))|zondag|maandag|dinsdag|woensdag|donderdag|vrijdag|zaterdag)
+  def: \b(?<weekday>(((ma|di(ns)?|wo(e(ns)?)?|do|vr|za)\b(\.)?)|(vrij|zat|zon?)\.(?!$)|(((?<!in\s+de\s+)(maan|dins|woens|donder|zater)(dag(en)?)?|(?<=(op|voor)\s+)(vrij|zon?|zat)|vrij(dag(en)?))\b))|zondag|maandag|dinsdag|woensdag|donderdag|vrijdag|zaterdag)
 RelativeMonthRegex: !nestedRegex
   def: (?<relmonth>((van\s+)?(de\s+)?)?{RelativeRegex}\s+maand)\b
   references: [RelativeRegex]
@@ -250,7 +250,7 @@ LastDateRegex: !nestedRegex
   def: \b({PreviousPrefixRegex}(\s*week)?\s+{WeekDayRegex})|({WeekDayRegex}(\s+vorige\s+week))\b
   references: [ PreviousPrefixRegex, WeekDayRegex ]
 WeekDayForNextDateRegex: !simpleRegex
-  def: \b(?<weekday>((ma|di(ns)?|wo(e(ns)?)?|do|vr(ij)?|za(t)?|zo)[\.\b])|((?:maan(?!den)|dins|woens|donder|vrij|zater|zon)(dag)?))
+  def: \b(?<weekday>((ma|di(ns)?|wo(e(ns)?)?|do|vr(ij)?|za(t)?|zo)(\.|\b))|((?:maan(?!den)|dins|woens|donder|vrij|zater|zon)(dag)?))
 NextDateRegex1: !nestedRegex
   def: \b({NextPrefixRegex}(\s*week(\s*,?\s*op)?)?\s+{WeekDayForNextDateRegex}|(op\s+)?{WeekDayForNextDateRegex}\s+((van\s+)?(de\s+)?{NextPrefixRegex})\s*week|(op\s+)?{NextPrefixRegex}\s*week\s+{WeekDayForNextDateRegex})
   references: [ NextPrefixRegex, WeekDayForNextDateRegex ]
@@ -1274,8 +1274,8 @@ AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:
     '^\d{4}$': '(\d\.\d{4}|\d{4}\.\d)'
-    '\b(lunch)$': '(?<!\b(op|om|voor|ana(ar)?|rond)\b\s)(lunch)'
-    '^(morgen|middag|avond|nacht|dag)\b': '\b(goeden?\s*(morgen|middag|avond|nacht|dag))\b'
+    '\b(lunch)$': '(?<!\b(op|om|voor|na(ar)?|rond)\b\s)(lunch)'
+    '^(morgen|middag|avond|nacht|dag)\b': '\b(goe[di]en?\s*(morgen|middag|avond|nacht|dag))\b'
 # Used to exclude ambiguous time/duration patterns
 # TODO: Add more patterns to improve coverage
 AmbiguityTimeFiltersDict: !dictionary
