@@ -51,7 +51,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         {
             return holiday
                 .Replace(" ", string.Empty)
-                .Replace("'", string.Empty);
+                .Replace("'", string.Empty)
+                .Replace("-", string.Empty);
         }
 
         protected override IDictionary<string, Func<int, DateObject>> InitHolidayFuncs()
