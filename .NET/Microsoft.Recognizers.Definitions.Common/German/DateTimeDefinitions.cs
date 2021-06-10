@@ -151,7 +151,7 @@ namespace Microsoft.Recognizers.Definitions.German
       public static readonly string PureNumBetweenAnd = $@"\b(?<preDesc>({PmRegex}|{AmRegex})\s+)?(zwischen\s+)({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>({PmRegex}|{AmRegex}|{DescRegex})))?\s*{RangeConnectorRegex}\s*({HourRegex}|{PeriodHourNumRegex})\s*(?<rightDesc>\s*{PmRegex}|{AmRegex}|{DescRegex}){{0,2}}\b";
       public static readonly string SpecificTimeFromTo = $@"((?<preDesc>({PmRegex}|{AmRegex})\s+)?(von)\s+)?(?<time1>({TimeRegex2}|({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>({PmRegex}|{AmRegex}|{DescRegex})))?))\s*{TillRegex}\s*(?<time2>({TimeRegex2}|({HourRegex}|{PeriodHourNumRegex})(\s*(?<rightDesc>({PmRegex}|{AmRegex}|{DescRegex})))?))";
       public static readonly string SpecificTimeBetweenAnd = $@"(?<preDesc>({PmRegex}|{AmRegex})\s+)?(zwischen\s+)(?<time1>({TimeRegex2}|({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>({PmRegex}|{AmRegex}|{DescRegex})))?))\s*{RangeConnectorRegex}\s*(?<time2>({TimeRegex2}|({HourRegex}|{PeriodHourNumRegex})(\s*(?<rightDesc>({PmRegex}|{AmRegex}|{DescRegex})))?))";
-      public const string PrepositionRegex = @"(?<prep>^(um|am|vo[mn]|in|zur)(\s+(de[rmn]))?$)";
+      public const string PrepositionRegex = @"(?<prep>^(um|am|in|zur)(\s+(de[rmn]))?$)";
       public const string TimeOfDayRegex = @"\b(?<timeOfDay>(((?<early>(früh(\s+am|er)|am frühen)(\s+|-))|(?<late>(spät(\s+am|er)?|am späten)(\s*|-)))?((am\s+)?morgens?(?! (früh|vor|nach|abend|(nacht|primetime)|morgen))|(vor|nach)mittags?|abends?|früh|(nachts?|primetime))))\b";
       public static readonly string SpecificTimeOfDayRegex = $@"\b((({StrictRelativeRegex}|heute)\s+{TimeOfDayRegex}))\b";
       public static readonly string TimeFollowedUnit = $@"^\s*{TimeUnitRegex}$";
@@ -196,6 +196,8 @@ namespace Microsoft.Recognizers.Definitions.German
       public const string TimeTokenPrefix = @"um ";
       public const string TokenBeforeDate = @"am ";
       public const string TokenBeforeTime = @"um ";
+      public const string FromRegex = @"\b(vo[mn](\s+de[rmsn])?)$";
+      public const string BetweenTokenRegex = @"\b(zwischen(\s+de[rmsn])?)$";
       public const string AMTimeRegex = @"(?<am>morgens|vormittags?|früh)";
       public const string PMTimeRegex = @"\b(?<pm>nachmittags?|abends?|nachts?)";
       public const string BeforeRegex = @"(vorher(ige(s|n|r)?)?|bevor|vor(\W)?|vorige(s|n|r)?|bis)";
@@ -226,7 +228,7 @@ namespace Microsoft.Recognizers.Definitions.German
       public const string FlexibleDayRegex = @"(?<DayOfMonth>([A-Za-z]+\s)?[A-Za-z\d]+)";
       public static readonly string ForTheRegex = $@"\b(für\s+den\s+{FlexibleDayRegex}(?<end>\s*(,|\.(?!(\d|\s?{WrittenMonthRegex}))|!|\?|$)))";
       public static readonly string WeekDayAndDayOfMonthRegex = $@"\b{WeekDayRegex}(\s*,)?\s+((de(r|n))\s+{FlexibleDayRegex})\b";
-      public static readonly string WeekDayAndDayRegex = $@"\b{WeekDayRegex}\s+(?!(the)){DayRegex}(?!([-:]|(\s+({AmDescRegex}|{{PmDescRegex|{OclockRegex}}}))))\b";
+      public static readonly string WeekDayAndDayRegex = $@"\b{WeekDayRegex}\s+(?!de[nr]){DayRegex}(?!([-:]|(\s+({AmDescRegex}|{PmDescRegex}|{OclockRegex}))))\b";
       public const string RestOfDateRegex = @"\brest\s+((de[rs]|dieser)\s+)((aktuellen|jetzigen)\s+)?(?<duration>woche|monats|jahres)\b";
       public const string RestOfDateTimeRegex = @"\brest\s+((des|diesen)\s+)((aktuellen|heutigen)\s+)?(?<unit>tages)\b";
       public const string MealTimeRegex = @"\b((zu(m|r))\s+)?(?<mealTime>(essenszeit|mittagessen|mittag))\b";
