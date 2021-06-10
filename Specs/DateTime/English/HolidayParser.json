@@ -531,6 +531,7 @@
     "Context": {
       "ReferenceDateTime": "2020-08-17T00:00:00"
     },
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "Ramadan",
