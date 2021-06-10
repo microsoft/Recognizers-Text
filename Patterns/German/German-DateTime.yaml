@@ -341,7 +341,7 @@ SpecificTimeBetweenAnd: !nestedRegex
   def: (?<preDesc>({PmRegex}|{AmRegex})\s+)?(zwischen\s+)(?<time1>({TimeRegex2}|({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>({PmRegex}|{AmRegex}|{DescRegex})))?))\s*{RangeConnectorRegex}\s*(?<time2>({TimeRegex2}|({HourRegex}|{PeriodHourNumRegex})(\s*(?<rightDesc>({PmRegex}|{AmRegex}|{DescRegex})))?))
   references: [ TimeRegex2, RangeConnectorRegex, HourRegex, PeriodHourNumRegex, DescRegex, PmRegex, AmRegex ]
 PrepositionRegex: !simpleRegex
-  def: (?<prep>^(um|am|vo[mn]|in|zur)(\s+(de[rmn]))?$)
+  def: (?<prep>^(um|am|in|zur)(\s+(de[rmn]))?$)
 TimeOfDayRegex: !simpleRegex
   def: \b(?<timeOfDay>(((?<early>(früh(\s+am|er)|am frühen)(\s+|-))|(?<late>(spät(\s+am|er)?|am späten)(\s*|-)))?((am\s+)?morgens?(?! (früh|vor|nach|abend|(nacht|primetime)|morgen))|(vor|nach)mittags?|abends?|früh|(nachts?|primetime))))\b
 SpecificTimeOfDayRegex: !nestedRegex
@@ -445,6 +445,10 @@ DateTokenPrefix: 'am '
 TimeTokenPrefix: 'um '
 TokenBeforeDate: 'am '
 TokenBeforeTime: 'um '
+FromRegex: !simpleRegex
+  def: \b(vo[mn](\s+de[rmsn])?)$
+BetweenTokenRegex: !simpleRegex
+  def: \b(zwischen(\s+de[rmsn])?)$
 AMTimeRegex: !simpleRegex
   def: (?<am>morgens|vormittags?|früh)
 PMTimeRegex: !simpleRegex
@@ -514,7 +518,7 @@ WeekDayAndDayOfMonthRegex: !nestedRegex
   def: \b{WeekDayRegex}(\s*,)?\s+((de(r|n))\s+{FlexibleDayRegex})\b
   references: [WeekDayRegex, FlexibleDayRegex]
 WeekDayAndDayRegex: !nestedRegex
-  def: \b{WeekDayRegex}\s+(?!(the)){DayRegex}(?!([-:]|(\s+({AmDescRegex}|{PmDescRegex|{OclockRegex}}))))\b
+  def: \b{WeekDayRegex}\s+(?!de[nr]){DayRegex}(?!([-:]|(\s+({AmDescRegex}|{PmDescRegex}|{OclockRegex}))))\b
   references: [WeekDayRegex, DayRegex, AmDescRegex, PmDescRegex, OclockRegex]
 RestOfDateRegex: !simpleRegex
   def: \brest\s+((de[rs]|dieser)\s+)((aktuellen|jetzigen)\s+)?(?<duration>woche|monats|jahres)\b

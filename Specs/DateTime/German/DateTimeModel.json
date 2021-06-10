@@ -4080,5 +4080,75 @@
         }
       }
     ]
+  },
+  {
+    "Input": "7 Uhr von Montag bis Freitag.",
+    "Context": {
+      "ReferenceDateTime": "2021-05-04T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "7 uhr",
+        "Start": 0,
+        "End": 4,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07",
+              "type": "time",
+              "value": "07:00:00"
+            },
+            {
+              "timex": "T19",
+              "type": "time",
+              "value": "19:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "von montag bis freitag",
+        "Start": 6,
+        "End": 27,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-WXX-1,XXXX-WXX-5,P4D)",
+              "type": "daterange",
+              "start": "2021-05-03",
+              "end": "2021-05-07"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "von Montag 7 Uhr bis Freitag 15 Uhr.",
+    "Context": {
+      "ReferenceDateTime": "2021-05-04T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "von montag 7 uhr bis freitag 15 uhr",
+        "Start": 0,
+        "End": 34,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-WXX-1T07,XXXX-WXX-5T15,PT104H)",
+              "type": "datetimerange",
+              "start": "2021-05-03 07:00:00",
+              "end": "2021-05-07 15:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

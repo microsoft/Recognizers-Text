@@ -76,6 +76,12 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         private static readonly Regex MiddlePauseRegex =
             new Regex(DateTimeDefinitions.MiddlePauseRegex, RegexFlags);
 
+        private static readonly Regex FromTokenRegex =
+            new Regex(DateTimeDefinitions.FromRegex, RegexFlags);
+
+        private static readonly Regex BetweenTokenRegex =
+            new Regex(DateTimeDefinitions.BetweenTokenRegex, RegexFlags);
+
         private static readonly Regex RangeConnectorRegex =
             new Regex(DateTimeDefinitions.RangeConnectorRegex, RegexFlags);
 
@@ -172,32 +178,28 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public IDateTimeExtractor TimeZoneExtractor { get; }
 
-        // TODO: these three methods are the same in DatePeriod, should be abstracted
         public bool GetFromTokenIndex(string text, out int index)
         {
             index = -1;
-
-            // @TODO move hardcoded values to resources file
-
-            if (text.EndsWith("vom", StringComparison.Ordinal))
+            var fromMatch = FromTokenRegex.Match(text);
+            if (fromMatch.Success)
             {
-                index = text.LastIndexOf("vom", StringComparison.Ordinal);
-                return true;
+                index = fromMatch.Index;
             }
 
-            return false;
+            return fromMatch.Success;
         }
 
         public bool GetBetweenTokenIndex(string text, out int index)
         {
             index = -1;
-            if (text.EndsWith("zwischen", StringComparison.Ordinal))
+            var betweenMatch = BetweenTokenRegex.Match(text);
+            if (betweenMatch.Success)
             {
-                index = text.LastIndexOf("zwischen", StringComparison.Ordinal);
-                return true;
+                index = betweenMatch.Index;
             }
 
-            return false;
+            return betweenMatch.Success;
         }
 
         public bool HasConnectorToken(string text)
