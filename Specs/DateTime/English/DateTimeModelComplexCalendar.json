@@ -9877,7 +9877,7 @@
     "Context": {
       "ReferenceDateTime": "2019-05-23T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "90 s",
@@ -9887,13 +9887,13 @@
         "Resolution": {
           "values": [
             {
-              "timex": "(XX90-01-01,XX100-01-01,P10Y)",
+              "timex": "(XX90-01-01,XX00-01-01,P10Y)",
               "type": "daterange",
               "start": "1990-01-01",
               "end": "2000-01-01"
             },
             {
-              "timex": "(XX90-01-01,XX100-01-01,P10Y)",
+              "timex": "(XX90-01-01,XX00-01-01,P10Y)",
               "type": "daterange",
               "start": "2090-01-01",
               "end": "2100-01-01"

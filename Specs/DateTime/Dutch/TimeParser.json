@@ -693,10 +693,10 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "Ik ben om 7 uur vanavond terug",
+    "Input": "Ik ben om 7 uur 's avonds terug",
     "Results": [
       {
-        "Text": "7 uur vanavond",
+        "Text": "7 uur 's avonds",
         "Type": "time",
         "Value": {
           "Timex": "T19",
@@ -708,7 +708,7 @@
           }
         },
         "Start": 10,
-        "Length": 14
+        "Length": 15
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"

@@ -348,26 +348,26 @@
     ]
   },
   {
-    "Input": "Ik ga terug om 20u vanavond, maandag",
+    "Input": "Ik ga terug om 20u 's avonds, maandag",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "20u vanavond, maandag",
+        "Text": "20u 's avonds, maandag",
         "Type": "datetime",
         "Start": 15,
-        "Length": 21
+        "Length": 22
       }
     ]
   },
   {
-    "Input": "Ik ga terug 20u vanavond, 1 jan",
+    "Input": "Ik ga terug 20u in de avond, 1 jan",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "20u vanavond, 1 jan",
+        "Text": "20u in de avond, 1 jan",
         "Type": "datetime",
         "Start": 12,
-        "Length": 19
+        "Length": 22
       }
     ]
   },
