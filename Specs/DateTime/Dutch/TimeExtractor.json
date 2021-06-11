@@ -372,13 +372,13 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "Ik ga om half zes vanavond",
+    "Input": "Ik ga om half zes 's avonds",
     "Results": [
       {
-        "Text": "half zes vanavond",
+        "Text": "half zes 's avonds",
         "Type": "time",
         "Start": 9,
-        "Length": 17
+        "Length": 18
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"

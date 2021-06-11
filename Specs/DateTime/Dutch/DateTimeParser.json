@@ -682,7 +682,7 @@
         "Text": "22:00 vanavond",
         "Type": "datetime",
         "Value": {
-          "Timex": "2016-11-07T22",
+          "Timex": "2016-11-07T22:00",
           "FutureResolution": {
             "dateTime": "2016-11-07 22:00:00"
           },
@@ -730,7 +730,7 @@
         "Text": "20:00 vanavond",
         "Type": "datetime",
         "Value": {
-          "Timex": "2016-11-07T20",
+          "Timex": "2016-11-07T20:00",
           "FutureResolution": {
             "dateTime": "2016-11-07 20:00:00"
           },
