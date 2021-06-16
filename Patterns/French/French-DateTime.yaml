@@ -11,9 +11,9 @@ RelativeRegex: !simpleRegex
 StrictRelativeRegex: !simpleRegex
   def: (?<order>prochaine?|derni[eè]re|hier|pr[eé]c[eé]dente|au\s+cours+(de|du\s*))
 NextSuffixRegex: !simpleRegex
-  def: (?<order>prochaines?|prochain|suivante)\b
+  def: (?<order>prochain(es?)?|suivante)\b
 PastSuffixRegex: !simpleRegex
-  def: (?<order>derni[eè]re?|pr[eé]c[eé]dente)\b
+  def: (?<order>derni[eè]r(es?)?|pr[eé]c[eé]dente)\b
 ThisPrefixRegex: !simpleRegex
   def: (?<order>ce(tte)?|au\s+cours+(du|de))\b
 RangePrefixRegex: !simpleRegex
@@ -483,7 +483,7 @@ RelativeTimeUnitRegex: !nestedRegex
   def: (((({ThisPrefixRegex})?)\s+({TimeUnitRegex}(\s*{NextSuffixRegex}|{PastSuffixRegex})?))|((le))\s+({RestrictedTimeUnitRegex}))
   references: [NextSuffixRegex, PastSuffixRegex, ThisPrefixRegex, TimeUnitRegex, RestrictedTimeUnitRegex]
 RelativeDurationUnitRegex: !nestedRegex
-  def: ((\b({DurationUnitRegex})(\s+{NextSuffixRegex}|{PastSuffixRegex})?)|((le|my))\s+({RestrictedTimeUnitRegex}))
+  def: \b(((?<=({NextSuffixRegex}|{PastSuffixRegex})\s+)({DurationUnitRegex}))|(({DurationUnitRegex})(\s+({NextSuffixRegex}|{PastSuffixRegex}))?)|((le|my))\s+({RestrictedTimeUnitRegex}))\b
   references: [NextSuffixRegex, PastSuffixRegex, ThisPrefixRegex, DurationUnitRegex, RestrictedTimeUnitRegex]
 ReferenceDatePeriodRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English

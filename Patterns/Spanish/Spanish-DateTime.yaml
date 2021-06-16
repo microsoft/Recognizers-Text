@@ -930,7 +930,7 @@ NextPrefixRegex: !nestedRegex
 PastPrefixRegex: !simpleRegex
   def: ((este\s+))
 PreviousPrefixRegex: !nestedRegex
-  def: \b({PastPrefixRegex}?pasad[oa](?!(\s+el)?\s+medio\s*d[ií]a)|[uú]ltim[oa]|anterior)\b
+  def: \b({PastPrefixRegex}?pasad[oa]s?(?!(\s+el)?\s+medio\s*d[ií]a)|[uú]ltim[oa]s?|anterior)\b
   references: [ PastPrefixRegex ]
 ThisPrefixRegex: !simpleRegex
   def: (est?[ea]|actual)\b

@@ -566,7 +566,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public const string UpcomingPrefixRegex = @"((este\s+))";
       public static readonly string NextPrefixRegex = $@"\b({UpcomingPrefixRegex}?pr[oó]xim[oa]s?|siguiente|que\s+viene)\b";
       public const string PastPrefixRegex = @"((este\s+))";
-      public static readonly string PreviousPrefixRegex = $@"\b({PastPrefixRegex}?pasad[oa](?!(\s+el)?\s+medio\s*d[ií]a)|[uú]ltim[oa]|anterior)\b";
+      public static readonly string PreviousPrefixRegex = $@"\b({PastPrefixRegex}?pasad[oa]s?(?!(\s+el)?\s+medio\s*d[ií]a)|[uú]ltim[oa]s?|anterior)\b";
       public const string ThisPrefixRegex = @"(est?[ea]|actual)\b";
       public const string PrefixWeekDayRegex = @"(\s*((,?\s*el)|[-—–]))";
       public static readonly string ThisRegex = $@"\b((est[ae]\s*)(semana{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|({WeekDayRegex}\s*((de\s+)?esta\s+semana))\b";

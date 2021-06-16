@@ -831,7 +831,7 @@ PastPrefixRegex: !simpleRegex
   def: .^
 # TODO: modify below regex according to the counterpart in English
 PreviousPrefixRegex: !nestedRegex
-  def: ([uú]ltim[oa]|{PastPrefixRegex})\b
+  def: ([uú]ltim[oa]s?|{PastPrefixRegex})\b
   references: [PastPrefixRegex]
 ThisPrefixRegex: !simpleRegex
   def: ([nd]?es[st][ea])\b
@@ -841,9 +841,12 @@ RelativeDayRegex: !simpleRegex
 RestOfDateRegex: !simpleRegex
   # TODO: add this regex, let it correspond to the one in English
   def: ^[\.]
-RelativeDurationUnitRegex: !simpleRegex
-  # TODO: change to Portuguese according to corresponding Regex
-  def: ^[\.]
+DurationUnitRegex: !nestedRegex
+  def: (?<unit>{DateUnitRegex}|{TimeUnitRegex}|noites?)\b
+  references: [ DateUnitRegex, TimeUnitRegex ]
+RelativeDurationUnitRegex: !nestedRegex
+  def: (?:(?<=({NextPrefixRegex}|{PreviousPrefixRegex}|{ThisPrefixRegex})\s+)({DurationUnitRegex}))
+  references: [ NextPrefixRegex, PreviousPrefixRegex, ThisPrefixRegex, DurationUnitRegex ]
 ReferenceDatePeriodRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
@@ -869,9 +872,6 @@ NightRegex: !simpleRegex
   def: \b(meia noite|noite|de noite)\b
 CommonDatePrefixRegex: !simpleRegex
   def: \b(dia)\s+$
-DurationUnitRegex: !simpleRegex
-  # TODO: add this according to the related part in English
-  def: ^[\.]
 DurationConnectorRegex: !simpleRegex
   # TODO: add this according to the related part in English
   def: ^[.]

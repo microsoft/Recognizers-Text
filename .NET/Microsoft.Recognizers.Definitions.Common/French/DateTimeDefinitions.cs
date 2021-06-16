@@ -27,8 +27,8 @@ namespace Microsoft.Recognizers.Definitions.French
       public const string RangeConnectorRegex = @"(?<and>de la|au|[aà]|et(\s*la)?|--|-|—|——)";
       public const string RelativeRegex = @"(?<order>prochaine?|de|du|ce(tte)?|l[ae]|derni[eè]re|hier|pr[eé]c[eé]dente|au\s+cours+(de|du\s*))";
       public const string StrictRelativeRegex = @"(?<order>prochaine?|derni[eè]re|hier|pr[eé]c[eé]dente|au\s+cours+(de|du\s*))";
-      public const string NextSuffixRegex = @"(?<order>prochaines?|prochain|suivante)\b";
-      public const string PastSuffixRegex = @"(?<order>derni[eè]re?|pr[eé]c[eé]dente)\b";
+      public const string NextSuffixRegex = @"(?<order>prochain(es?)?|suivante)\b";
+      public const string PastSuffixRegex = @"(?<order>derni[eè]r(es?)?|pr[eé]c[eé]dente)\b";
       public const string ThisPrefixRegex = @"(?<order>ce(tte)?|au\s+cours+(du|de))\b";
       public const string RangePrefixRegex = @"(du|depuis|des?|entre)";
       public const string DayRegex = @"(?<day>(?:3[0-1]|[1-2]\d|0?[1-9])(e(r)?)?)(?=\b|t)";
@@ -213,7 +213,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public const string InexactNumberRegex = @"\b(quel qu[ée]s|quelqu[ée]s?|plusieurs?|divers)\b";
       public static readonly string InexactNumberUnitRegex = $@"({InexactNumberRegex})\s+({DurationUnitRegex})";
       public static readonly string RelativeTimeUnitRegex = $@"(((({ThisPrefixRegex})?)\s+({TimeUnitRegex}(\s*{NextSuffixRegex}|{PastSuffixRegex})?))|((le))\s+({RestrictedTimeUnitRegex}))";
-      public static readonly string RelativeDurationUnitRegex = $@"((\b({DurationUnitRegex})(\s+{NextSuffixRegex}|{PastSuffixRegex})?)|((le|my))\s+({RestrictedTimeUnitRegex}))";
+      public static readonly string RelativeDurationUnitRegex = $@"\b(((?<=({NextSuffixRegex}|{PastSuffixRegex})\s+)({DurationUnitRegex}))|(({DurationUnitRegex})(\s+({NextSuffixRegex}|{PastSuffixRegex}))?)|((le|my))\s+({RestrictedTimeUnitRegex}))\b";
       public const string ReferenceDatePeriodRegex = @"^\b$";
       public const string UpcomingPrefixRegex = @".^";
       public const string NextPrefixRegex = @".^";

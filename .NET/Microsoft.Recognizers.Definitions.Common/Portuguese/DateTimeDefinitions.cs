@@ -499,11 +499,12 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public const string TokenBeforeDate = @"o ";
       public const string TokenBeforeTime = @"as ";
       public const string PastPrefixRegex = @".^";
-      public static readonly string PreviousPrefixRegex = $@"([uú]ltim[oa]|{PastPrefixRegex})\b";
+      public static readonly string PreviousPrefixRegex = $@"([uú]ltim[oa]s?|{PastPrefixRegex})\b";
       public const string ThisPrefixRegex = @"([nd]?es[st][ea])\b";
       public const string RelativeDayRegex = @"^[\.]";
       public const string RestOfDateRegex = @"^[\.]";
-      public const string RelativeDurationUnitRegex = @"^[\.]";
+      public static readonly string DurationUnitRegex = $@"(?<unit>{DateUnitRegex}|{TimeUnitRegex}|noites?)\b";
+      public static readonly string RelativeDurationUnitRegex = $@"(?:(?<=({NextPrefixRegex}|{PreviousPrefixRegex}|{ThisPrefixRegex})\s+)({DurationUnitRegex}))";
       public const string ReferenceDatePeriodRegex = @"^[.]";
       public const string FromToRegex = @"\b(from).+(to)\b.+";
       public const string SingleAmbiguousMonthRegex = @"^(the\s+)?(may|march)$";
@@ -513,7 +514,6 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public const string SetWeekDayRegex = @"^[\.]";
       public const string NightRegex = @"\b(meia noite|noite|de noite)\b";
       public const string CommonDatePrefixRegex = @"\b(dia)\s+$";
-      public const string DurationUnitRegex = @"^[\.]";
       public const string DurationConnectorRegex = @"^[.]";
       public const string CenturyRegex = @"^[.]";
       public const string DecadeRegex = @"^[.]";

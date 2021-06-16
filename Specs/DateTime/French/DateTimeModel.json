@@ -21022,5 +21022,105 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Nous ne serons que 3 la semaine prochaine.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "la semaine prochaine",
+        "Start": 21,
+        "End": 40,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-W46",
+              "type": "daterange",
+              "start": "2016-11-14",
+              "end": "2016-11-21"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "J'en ai compté 13 dernière minute.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T12:30:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "dernière minute",
+        "Start": 18,
+        "End": 32,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-11-07T12:29:00,2016-11-07T12:30:00,PT1M)",
+              "type": "datetimerange",
+              "start": "2016-11-07 12:29:00",
+              "end": "2016-11-07 12:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Nous ne serons absents que les 3 prochaines semaines.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 prochaines semaines",
+        "Start": 31,
+        "End": 51,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-11-08,2016-11-29,P3W)",
+              "type": "daterange",
+              "start": "2016-11-08",
+              "end": "2016-11-29"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "J'en ai compté 3 dans les 13 dernières minutes.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T12:30:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "13 dernières minutes",
+        "Start": 26,
+        "End": 45,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-11-07T12:17:00,2016-11-07T12:30:00,PT13M)",
+              "type": "datetimerange",
+              "start": "2016-11-07 12:17:00",
+              "end": "2016-11-07 12:30:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
