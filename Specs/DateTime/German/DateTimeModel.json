@@ -4785,7 +4785,7 @@
     ]
   },
   {
-    "Input": "Das Projekt wurde letzten Monat eingereicht und 3 Wochen später wurde es genehmigt",
+    "Input": "Das Projekt wurde eingereicht letzten Monat und 3 Wochen später wurde es genehmigt",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -4793,8 +4793,8 @@
     "Results": [
       {
         "Text": "letzten monat",
-        "Start": 18,
-        "End": 30,
+        "Start": 30,
+        "End": 42,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
