@@ -220,26 +220,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return extractorResults;
             }
 
-            // If the first and last extractions are both preceded/followed by modifiers,
-            // they should not be merged, e.g. "last 2 weeks and 3 days ago"
-            var minStart = extractorResults.Min(er => er.Start);
-            var beforeStr = text.Substring(0, (int)minStart);
-            var beforeMod = this.config.ModPrefixRegex.MatchEnd(beforeStr, trim: true);
-            if (beforeMod.Success)
-            {
-                var maxEnd = extractorResults.Max(er => er.Start + er.Length);
-                var afterStr = text.Substring((int)maxEnd);
-                var afterMod = this.config.ModSuffixRegex.MatchBegin(afterStr, trim: true);
-                if (afterMod.Success)
-                {
-                    return extractorResults;
-                }
-            }
-
             var unitMap = this.config.UnitMap;
             var unitValueMap = this.config.UnitValueMap;
             var unitRegex = this.config.DurationUnitRegex;
             List<ExtractResult> ret = new List<ExtractResult>();
+            List<List<ExtractResult>> separaRet = new List<List<ExtractResult>>();
 
             var firstExtractionIndex = 0;
             var timeUnit = 0;
@@ -264,6 +249,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                     firstExtractionIndex++;
                     continue;
                 }
+
+                // Add extraction to list of separate results (needed in case the extractions should not be merged)
+                List<ExtractResult> separaList = new List<ExtractResult>() { extractorResults[firstExtractionIndex] };
 
                 var secondExtractionIndex = firstExtractionIndex + 1;
                 while (secondExtractionIndex < extractorResults.Count)
@@ -301,6 +289,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                         break;
                     }
 
+                    // Add extraction to list of separate results (needed in case the extractions should not be merged)
+                    separaList.Add(extractorResults[secondExtractionIndex]);
+
                     secondExtractionIndex++;
                 }
 
@@ -335,10 +326,35 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ret.Add(extractorResults[firstExtractionIndex]);
                 }
 
+                // Add list of separate extractions to separaRet, so that there is a 1 to 1 correspondence
+                // between ret (list of merged extractions) and separaRet (list of unmerged extractions)
+                separaRet.Add(separaList);
+
                 firstExtractionIndex = secondExtractionIndex;
             }
 
-            return ret;
+            // If the first and last elements of a group of contiguous extractions are both preceded/followed by modifiers,
+            // they should not be merged, e.g. "last 2 weeks and 3 days ago"
+            List<ExtractResult> newRet = new List<ExtractResult>();
+            for (int i = 0; i < ret.Count; i++)
+            {
+                var start = (int)ret[i].Start;
+                var end = start + (int)ret[i].Length;
+                var beforeStr = text.Substring(0, start);
+                var afterStr = text.Substring(end);
+                var beforeMod = this.config.ModPrefixRegex.MatchEnd(beforeStr, trim: true);
+                var afterMod = this.config.ModSuffixRegex.MatchBegin(afterStr, trim: true);
+                if (beforeMod.Success && afterMod.Success)
+                {
+                    newRet.AddRange(separaRet[i]);
+                }
+                else
+                {
+                    newRet.Add(ret[i]);
+                }
+            }
+
+            return newRet;
         }
     }
 }
