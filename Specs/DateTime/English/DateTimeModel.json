@@ -20627,5 +20627,130 @@
         }
       }
     ]
+  },
+  {
+    "Input": "etfs with negative flows of at least $1k last month",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "last month",
+        "Start": 41,
+        "End": 50,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-10",
+              "type": "daterange",
+              "start": "2016-10-01",
+              "end": "2016-11-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "We will be only 3 next week.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "next week",
+        "Start": 18,
+        "End": 26,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-W46",
+              "type": "daterange",
+              "start": "2016-11-14",
+              "end": "2016-11-21"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I counted 13 last minute.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T12:30:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "last minute",
+        "Start": 13,
+        "End": 23,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-11-07T12:29:00,2016-11-07T12:30:00,PT1M)",
+              "type": "datetimerange",
+              "start": "2016-11-07 12:29:00",
+              "end": "2016-11-07 12:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "We will be gone for only the 3 next weeks.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 next weeks",
+        "Start": 29,
+        "End": 40,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-11-08,2016-11-29,P3W)",
+              "type": "daterange",
+              "start": "2016-11-08",
+              "end": "2016-11-29"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I counted 3 in the 13 last minutes.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T12:30:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "13 last minutes",
+        "Start": 19,
+        "End": 33,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-11-07T12:17:00,2016-11-07T12:30:00,PT13M)",
+              "type": "datetimerange",
+              "start": "2016-11-07 12:17:00",
+              "end": "2016-11-07 12:30:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

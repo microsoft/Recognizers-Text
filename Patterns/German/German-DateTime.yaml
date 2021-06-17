@@ -68,7 +68,7 @@ MonthSuffixRegex: !nestedRegex
   def: (?<msuf>(im\s*|des\s*)?({RelativeMonthRegex}|{WrittenMonthRegex}|{MonthNumRegex}))
   references: [ RelativeMonthRegex, WrittenMonthRegex, MonthNumRegex ]
 DateUnitRegex: !simpleRegex
-  def: (?<unit>jahre|jahr|monate|monat|wochen?|tage?|tg)(s)?
+  def: (?<unit>tg|woche(?<plural>n)?|(jahr|monat|tag)(?<plural>e)?)(s)?
 HalfTokenRegex: !simpleRegex
   def: ^(halb)
 QuarterToTokenRegex: !simpleRegex
@@ -285,7 +285,7 @@ IshRegex: !nestedRegex
   def: '\b(noonish)\b'
   references: [ BaseDateTime.HourRegex ]
 TimeUnitRegex: !simpleRegex
-  def: (?<unit>stunden?|std?|h|min(uten?)?|sek(unden?)?|s)\b
+  def: (?<unit>(stunde|minute|sekunde)(?<plural>n)?|std?|min|sek|h|s)\b
 RestrictedTimeUnitRegex: !simpleRegex
   def: (?<unit>stunde|minute)\b
 FivesRegex: !simpleRegex

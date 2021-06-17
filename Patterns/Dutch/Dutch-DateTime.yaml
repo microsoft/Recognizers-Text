@@ -127,7 +127,7 @@ MonthSuffixRegex: !nestedRegex
   def: (?<msuf>((in|van|tijdens|sinds|tot|op)\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))
   references: [ RelativeMonthRegex, WrittenMonthRegex ]
 DateUnitRegex: !simpleRegex
-  def: (?<unit>eeuw(en)?|jaar|jaren|jr|decennia|maand(en)?|mnd|week|weken|(?<business>(werk))?dag(en)?|dgn)\b
+  def: (?<unit>(eeuw|maand)(?<plural>en)?|jaar|(?<plural>jaren|weken)|jr|decennia|mnd|week|(?<business>(werk))?dag(?<plural>en)?|dgn)\b
 DateTokenPrefix: 'op '
 TimeTokenPrefix: 'om '
 TokenBeforeDate: 'op '
@@ -403,7 +403,7 @@ IshRegex: !nestedRegex
   def: \b(tegen\s+{BaseDateTime.HourRegex}(-|——|\s*{ApostrofRegex}\s*)?en|middagloos)\b
   references: [ BaseDateTime.HourRegex, ApostrofRegex ]
 TimeUnitRegex: !simpleRegex
-  def: ([^A-Za-z]{1,}|\b)(?<unit>((min\.|sec\.)|((uren|u(ur)?|minuten|minuut|mins?|seconde[ns]?|secs?)\b)))
+  def: ([^A-Za-z]{1,}|\b)(?<unit>(min\.|sec\.)|(u(ur)?|minuut|seconde|(?<plural>uren|minuten|seconde[ns])|(min|sec)(?<plural>s)?)\b)
 RestrictedTimeUnitRegex: !simpleRegex
   def: (?<unit>uur|minuut)\b
 FivesRegex: !simpleRegex

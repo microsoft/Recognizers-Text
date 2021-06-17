@@ -71,7 +71,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public static readonly string RelativeMonthRegex = $@"(?<relmonth>((van\s+)?(de\s+)?)?{RelativeRegex}\s+maand)\b";
       public const string WrittenMonthRegex = @"(((de\s+)?maand\s+)?(?<month>januari|februari|maart|april|mei|juni|juli|augustus|september|oktober|november|december|jan|feb|mar|mrt|apr|jun|jul|aug|sep|sept|oct|okt|nov|dec))";
       public static readonly string MonthSuffixRegex = $@"(?<msuf>((in|van|tijdens|sinds|tot|op)\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))";
-      public const string DateUnitRegex = @"(?<unit>eeuw(en)?|jaar|jaren|jr|decennia|maand(en)?|mnd|week|weken|(?<business>(werk))?dag(en)?|dgn)\b";
+      public const string DateUnitRegex = @"(?<unit>(eeuw|maand)(?<plural>en)?|jaar|(?<plural>jaren|weken)|jr|decennia|mnd|week|(?<business>(werk))?dag(?<plural>en)?|dgn)\b";
       public const string DateTokenPrefix = @"op ";
       public const string TimeTokenPrefix = @"om ";
       public const string TokenBeforeDate = @"op ";
@@ -173,7 +173,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public static readonly string MidTimeRegex = $@"(?<mid>({MidnightRegex}|{MidmorningRegex}|{MidafternoonRegex}|{MiddayRegex}))";
       public static readonly string AtRegex = $@"(((?<=\bom\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}(?!\.\d)(\s*((?<iam>a)|(?<ipm>p)))?|{MidTimeRegex}))|{MidTimeRegex})\b";
       public static readonly string IshRegex = $@"\b(tegen\s+{BaseDateTime.HourRegex}(-|——|\s*{ApostrofRegex}\s*)?en|middagloos)\b";
-      public const string TimeUnitRegex = @"([^A-Za-z]{1,}|\b)(?<unit>((min\.|sec\.)|((uren|u(ur)?|minuten|minuut|mins?|seconde[ns]?|secs?)\b)))";
+      public const string TimeUnitRegex = @"([^A-Za-z]{1,}|\b)(?<unit>(min\.|sec\.)|(u(ur)?|minuut|seconde|(?<plural>uren|minuten|seconde[ns])|(min|sec)(?<plural>s)?)\b)";
       public const string RestrictedTimeUnitRegex = @"(?<unit>uur|minuut)\b";
       public const string FivesRegex = @"(?<tens>(vijf|tien|vijftien|twintig|vijfentwintig|vijventwintig|dertig|vijfendertig|veertig|vijfenveertig|vijftig|vijfenvijftig))\b";
       public static readonly string HourRegex = $@"\b{BaseDateTime.HourRegex}";

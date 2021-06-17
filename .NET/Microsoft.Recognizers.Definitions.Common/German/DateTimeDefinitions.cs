@@ -49,7 +49,7 @@ namespace Microsoft.Recognizers.Definitions.German
       public static readonly string RelativeMonthRegex = $@"(?<relmonth>{RelativeRegex}\s+monat(s)?)";
       public const string WrittenMonthRegex = @"((monat\s*)?(?<month>apr(il|\.)|aug(ust|\.)|dez(ember|\.)|feb(ruar|ber|\.)|j[äa]n(uar|ner|\.)|jul(e?i|l\.)|jun([io]|\.)|märz|mai|nov(ember|\.)|okt(ober|\.)|sept?(ember|\.)))";
       public static readonly string MonthSuffixRegex = $@"(?<msuf>(im\s*|des\s*)?({RelativeMonthRegex}|{WrittenMonthRegex}|{MonthNumRegex}))";
-      public const string DateUnitRegex = @"(?<unit>jahre|jahr|monate|monat|wochen?|tage?|tg)(s)?";
+      public const string DateUnitRegex = @"(?<unit>tg|woche(?<plural>n)?|(jahr|monat|tag)(?<plural>e)?)(s)?";
       public const string HalfTokenRegex = @"^(halb)";
       public const string QuarterToTokenRegex = @"^(viertel\s+vor|dreiviertel)\s*$";
       public const string QuarterPastTokenRegex = @"^(viertel\s+nach)\s*$";
@@ -131,7 +131,7 @@ namespace Microsoft.Recognizers.Definitions.German
       public static readonly string MidTimeRegex = $@"(?<mid>({MidnightRegex}|{MidmorningRegex}|{MidafternoonRegex}|{MiddayRegex}))";
       public static readonly string AtRegex = $@"(((?<=\b(um|gegen)\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}(?![%\d])|{MidTimeRegex}))|{MidTimeRegex})\b";
       public static readonly string IshRegex = $@"\b(noonish)\b";
-      public const string TimeUnitRegex = @"(?<unit>stunden?|std?|h|min(uten?)?|sek(unden?)?|s)\b";
+      public const string TimeUnitRegex = @"(?<unit>(stunde|minute|sekunde)(?<plural>n)?|std?|min|sek|h|s)\b";
       public const string RestrictedTimeUnitRegex = @"(?<unit>stunde|minute)\b";
       public const string FivesRegex = @"(?<tens>(fünfzehn|(fünfund)?(zwanzig?|dreißig|vierzig|fünfzig)|zehn|fünf))\b";
       public static readonly string HourRegex = $@"\b{BaseDateTime.HourRegex}";

@@ -62,7 +62,7 @@ MonthSuffixRegex: !nestedRegex
   def: (?<msuf>((em|no)\s+|d[eo]\s+)?({RelativeMonthRegex}|{MonthRegex}))
   references: [ RelativeMonthRegex, MonthRegex ]
 DateUnitRegex: !simpleRegex
-  def: (?<unit>anos?|meses|m[êe]s|semanas?|dias?)\b
+  def: (?<unit>m[êe]s(?<plural>es)?|(ano|semana|dia)(?<plural>s)?)\b
 PastRegex: !simpleRegex
   def: (?<past>\b(passad[ao](s)?|[uú]ltim[oa](s)?|anterior(es)?|h[aá]|pr[ée]vi[oa](s)?)\b)
 FutureRegex: !simpleRegex
@@ -407,7 +407,7 @@ SpecificTimeBetweenAnd: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
 TimeUnitRegex: !simpleRegex
-  def: (?<unit>horas?|h|minutos?|mins?|segundos?|se[cg]s?)\b
+  def: (?<unit>(hora|minuto|min|segundo|se[cg])(?<plural>s)?|h)\b
 TimeFollowedUnit: !nestedRegex
   def: ^\s*{TimeUnitRegex}
   references: [ TimeUnitRegex ]
@@ -831,7 +831,7 @@ PastPrefixRegex: !simpleRegex
   def: .^
 # TODO: modify below regex according to the counterpart in English
 PreviousPrefixRegex: !nestedRegex
-  def: ([uú]ltim[oa]|{PastPrefixRegex})\b
+  def: ([uú]ltim[oa]s?|{PastPrefixRegex})\b
   references: [PastPrefixRegex]
 ThisPrefixRegex: !simpleRegex
   def: ([nd]?es[st][ea])\b
@@ -841,9 +841,12 @@ RelativeDayRegex: !simpleRegex
 RestOfDateRegex: !simpleRegex
   # TODO: add this regex, let it correspond to the one in English
   def: ^[\.]
-RelativeDurationUnitRegex: !simpleRegex
-  # TODO: change to Portuguese according to corresponding Regex
-  def: ^[\.]
+DurationUnitRegex: !nestedRegex
+  def: (?<unit>{DateUnitRegex}|{TimeUnitRegex}|noites?)\b
+  references: [ DateUnitRegex, TimeUnitRegex ]
+RelativeDurationUnitRegex: !nestedRegex
+  def: (?:(?<=({NextPrefixRegex}|{PreviousPrefixRegex}|{ThisPrefixRegex})\s+)({DurationUnitRegex}))
+  references: [ NextPrefixRegex, PreviousPrefixRegex, ThisPrefixRegex, DurationUnitRegex ]
 ReferenceDatePeriodRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
@@ -869,9 +872,6 @@ NightRegex: !simpleRegex
   def: \b(meia noite|noite|de noite)\b
 CommonDatePrefixRegex: !simpleRegex
   def: \b(dia)\s+$
-DurationUnitRegex: !simpleRegex
-  # TODO: add this according to the related part in English
-  def: ^[\.]
 DurationConnectorRegex: !simpleRegex
   # TODO: add this according to the related part in English
   def: ^[.]

@@ -68,7 +68,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
       public static readonly string DateYearRegex = $@"(?<year>{BaseDateTime.FourDigitYearRegex}|{TwoDigitYearRegex})";
       public static readonly string YearSuffix = $@"(,?\s*({DateYearRegex}|{FullTextYearRegex}))";
       public static readonly string YearRegex = $@"({BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})";
-      public const string DateUnitRegex = @"\b(?<unit>decennio?|ann[oi]|mes[ei]|settiman[ae]|giorn[oi])\b";
+      public const string DateUnitRegex = @"\b(?<unit>decennio|mese|settimana|(ann|giorn)(o|(?<plural>i))|(?<plural>decenni|mesi|settimane))\b";
       public static readonly string SimpleCasesRegex = $@"\b((dal?|[tf]ra)\s+)?({DayRegex})(\s+{MonthSuffixRegex})?\s*{TillRegex}\s*({DayRegex}\s+{MonthSuffixRegex}|{MonthSuffixRegex}\s+{DayRegex})((\s+|\s*,\s*){YearRegex})?\b";
       public static readonly string MonthFrontSimpleCasesRegex = $@"\b((dal?|[tf]ra)\s+)?{MonthSuffixRegex}\s+((dal?|[tf]ra)\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex})((\s+|\s*,\s*){YearRegex})?\b";
       public static readonly string MonthFrontBetweenRegex = $@"\b{MonthSuffixRegex}\s+([tf]ra\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})((\s+|\s*,\s*){YearRegex})?\b";
@@ -153,7 +153,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
       public const string PrepRegex = @"\b((\.|,)(?!\d+)|!|\?|$|circa|presso|vicino|sopra|sotto|lontano|dentro|fuori|di|del(l['oae])?|dei|degli|a|al(l['oae])?|ai|agli|da|dal(l['oae])?|dai|dagli|in|nel(l['oae])?|nei|negli|su|sul(l['oae])?|sui|sugli)\b";
       public static readonly string AtRegex = $@"\b(((?<=\b(a)\s+){MidTimeRegex}|{MidTimeRegex}\b)|((?<=\ball[e']\s*){EngTimeRegex}\b)|((?<=\b\d+\s+all[e']\s*)({HourNumRegex}|{BaseDateTime.HourRegex})\b(?=\s*(e|{DescRegex}|{PrepRegex})\b))|((?<=([^\d\s]|^)\s*\ball[e']\s*)({HourNumRegex}|{BaseDateTime.HourRegex})\b(?![\.,]\d+)))";
       public static readonly string IshRegex = $@"\b(((poco\s+(prima|dopo)(\s+(di|dell[e']))?)|circa(\s+a(ll['e])?)?|più o meno(\s+a(ll['e])?)?)\s*(({BaseDateTime.HourRegex}|{PeriodHourNumRegex})(?!\s*({DescRegex}|[:\.,/e]\s*\d+))|mezzogiorno)|(({BaseDateTime.HourRegex}|{PeriodHourNumRegex})(?!\s*({DescRegex}|[:\.,/e]\s*\d+))(\s+circa)|mezzogiorno(\s+circa)|verso\s+mezzogiorno))\b";
-      public const string TimeUnitRegex = @"(\b\d+([\.,]\d*)?|\b)(?<unit>or[ae]|hrs|hr|h|minut[oi]|mins|min|second[oi]|secs|sec)\b";
+      public const string TimeUnitRegex = @"(\b\d+([\.,]\d*)?|\b)(?<unit>or(a|(?<plural>e))|(minut|second)(o|(?<plural>i))|h|(hr|min|sec)(?<plural>s)?)\b";
       public const string RestrictedTimeUnitRegex = @"(?<unit>ore|minuti)\b";
       public static readonly string ConnectNumRegex = $@"{BaseDateTime.HourRegex}(?<min>00|01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59)\s*{DescRegex}";
       public const string AmbiguousRangeModifierPrefix = @"^[.]";
