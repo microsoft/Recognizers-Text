@@ -2474,7 +2474,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "(2018-03-01,2018-09-01,P6M)",
+              "timex": "(XXXX-03-01,XXXX-09-01,P6M)",
               "type": "daterange",
               "start": "2018-03-01",
               "end": "2018-09-01"
@@ -2499,7 +2499,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "(2018-05-01,2018-10-01,P5M)",
+              "timex": "(XXXX-05-01,XXXX-10-01,P5M)",
               "type": "daterange",
               "start": "2018-05-01",
               "end": "2018-10-01"
@@ -2524,7 +2524,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "(2018-08-01,2019-02-01,P6M)",
+              "timex": "(XXXX-08-01,XXXX-02-01,P6M)",
               "type": "daterange",
               "start": "2018-08-01",
               "end": "2019-02-01"
@@ -2580,13 +2580,13 @@
         "Resolution": {
           "values": [
             {
-              "timex": "(XXXX-10-01,XXXX-05-01,P5M)",
+              "timex": "(XXXX-10-01,XXXX-05-01,P7M)",
               "type": "daterange",
               "start": "2017-10-01",
               "end": "2018-05-01"
             },
             {
-              "timex": "(XXXX-10-01,XXXX-05-01,P5M)",
+              "timex": "(XXXX-10-01,XXXX-05-01,P7M)",
               "type": "daterange",
               "start": "2018-10-01",
               "end": "2019-05-01"

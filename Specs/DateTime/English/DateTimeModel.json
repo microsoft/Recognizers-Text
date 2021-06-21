@@ -7408,7 +7408,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "(2018-08-01,2018-10-01,P2M)",
+              "timex": "(XXXX-08-01,XXXX-10-01,P2M)",
               "type": "daterange",
               "start": "2018-08-01",
               "end": "2018-10-01"
@@ -7433,7 +7433,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "(2018-05-01,2019-03-01,P10M)",
+              "timex": "(XXXX-05-01,XXXX-03-01,P10M)",
               "type": "daterange",
               "start": "2018-05-01",
               "end": "2019-03-01"
@@ -7489,7 +7489,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "(2018-05-01,2018-09-01,P4M)",
+              "timex": "(XXXX-05-01,XXXX-09-01,P4M)",
               "type": "daterange",
               "start": "2018-05-01",
               "end": "2018-09-01"
@@ -20747,6 +20747,62 @@
               "type": "datetimerange",
               "start": "2016-11-07 12:17:00",
               "end": "2016-11-07 12:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out from August to October",
+    "Context": {
+      "ReferenceDateTime": "2016-07-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "from august to october",
+        "Start": 12,
+        "End": 33,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-08-01,XXXX-10-01,P2M)",
+              "type": "daterange",
+              "start": "2015-08-01",
+              "end": "2015-10-01"
+            },
+            {
+              "timex": "(XXXX-08-01,XXXX-10-01,P2M)",
+              "type": "daterange",
+              "start": "2016-08-01",
+              "end": "2016-10-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out from August to October",
+    "Context": {
+      "ReferenceDateTime": "2016-09-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "from august to october",
+        "Start": 12,
+        "End": 33,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-08-01,XXXX-10-01,P2M)",
+              "type": "daterange",
+              "start": "2016-08-01",
+              "end": "2016-10-01"
             }
           ]
         }

@@ -688,9 +688,16 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var endTimex = hasYear || beginYearForPastResolution == endYearForFutureResolution ? DateTimeFormatUtil.LuisDate(endDateForPastResolution, endDateForFutureResolution) :
                         DateTimeFormatUtil.LuisDate(-1, endMonth, 1);*/
 
-                    var beginTimex = DateTimeFormatUtil.LuisDate(beginDateForPastResolution, beginDateForFutureResolution);
-                    var endTimex = DateTimeFormatUtil.LuisDate(endDateForPastResolution, endDateForFutureResolution);
-                    ret.Timex = $"({beginTimex},{endTimex},P{durationMonths}M)";
+                    // If the year is not specified, the combined range timex will use fuzzy years.
+                    if (!hasYear)
+                    {
+                        ret.Timex = TimexUtility.GenerateDatePeriodTimex(beginDateForFutureResolution, endDateForFutureResolution, DatePeriodTimexType.ByMonth, UnspecificDateTimeTerms.NonspecificYear);
+                    }
+                    else
+                    {
+                        ret.Timex = TimexUtility.GenerateDatePeriodTimex(beginDateForFutureResolution, endDateForFutureResolution, DatePeriodTimexType.ByMonth, beginDateForPastResolution, endDateForPastResolution);
+                    }
+
                     ret.PastValue = new Tuple<DateObject, DateObject>(beginDateForPastResolution, endDateForPastResolution);
                     ret.FutureValue = new Tuple<DateObject, DateObject>(beginDateForFutureResolution, endDateForFutureResolution);
                     ret.Success = true;

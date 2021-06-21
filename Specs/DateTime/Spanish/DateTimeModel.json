@@ -9238,7 +9238,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "(2018-08-01,2018-10-01,P2M)",
+              "timex": "(XXXX-08-01,XXXX-10-01,P2M)",
               "type": "daterange",
               "start": "2018-08-01",
               "end": "2018-10-01"
@@ -9263,7 +9263,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "(2018-05-01,2019-03-01,P10M)",
+              "timex": "(XXXX-05-01,XXXX-03-01,P10M)",
               "type": "daterange",
               "start": "2018-05-01",
               "end": "2019-03-01"
@@ -9319,7 +9319,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "(2018-05-01,2018-09-01,P4M)",
+              "timex": "(XXXX-05-01,XXXX-09-01,P4M)",
               "type": "daterange",
               "start": "2018-05-01",
               "end": "2018-09-01"

@@ -205,7 +205,14 @@ public class BaseDatePeriodParser implements IDateTimeParser {
                         datePeriodTimexType = DatePeriodTimexType.ByWeek;
                     }
 
-                    ret.setTimex(TimexUtility.generateDatePeriodTimex(futureBegin, futureEnd, datePeriodTimexType, pastBegin, pastEnd));
+                    // If startResolution and endResolution have fuzzy years, also the combined
+                    // range timex will use fuzzy years.
+                    if (startResolution.getTimex().startsWith(Constants.TimexFuzzyYear) &&
+                            endResolution.getTimex().startsWith(Constants.TimexFuzzyYear)) {
+                        ret.setTimex(TimexUtility.generateDatePeriodTimex(futureBegin, futureEnd, datePeriodTimexType, TimexUtility.UnspecificDateTimeTerms.NonspecificYear));
+                    } else {
+                        ret.setTimex(TimexUtility.generateDatePeriodTimex(futureBegin, futureEnd, datePeriodTimexType, pastBegin, pastEnd));
+                    }
 
                     ret.setFutureValue(new Pair<>(futureBegin, futureEnd));
                     ret.setPastValue(new Pair<>(pastBegin, pastEnd));
