@@ -65,7 +65,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public const string MonthRegex = @"\b(?<month>apr(il)?|aug(ust)?|dec(ember)?|feb(ruary)?|jan(uary)?|july?|june?|mar(ch)?|may|nov(ember)?|oct(ober)?|sept(ember)?|sep)(?!\p{L})";
       public static readonly string WrittenMonthRegex = $@"(((the\s+)?month of\s+)?{MonthRegex})";
       public static readonly string MonthSuffixRegex = $@"(?<msuf>(?:(in|of|on)\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))";
-      public const string DateUnitRegex = @"(?<unit>decades?|years?|months?|weeks?|(?<business>(business\s+|week\s*))?days?|fortnights?|weekends?|(?<=\s+\d{1,4})[ymwd])\b";
+      public const string DateUnitRegex = @"(?<unit>(decade|year|month|week|(?<business>(business\s+|week\s*))?day|fortnight|weekend)(?<plural>s)?|(?<=\s+\d{1,4})[ymwd])\b";
       public const string DateTokenPrefix = @"on ";
       public const string TimeTokenPrefix = @"at ";
       public const string TokenBeforeDate = @"on ";
@@ -163,7 +163,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly string MidTimeRegex = $@"(?<mid>({MidnightRegex}|{MidmorningRegex}|{MidafternoonRegex}|{MiddayRegex}))";
       public static readonly string AtRegex = $@"\b(?:(?:(?<=\b(at|(at)?\s*around|circa)\s+)(?:{WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}(?!\.\d)(\s*((?<iam>a)|(?<ipm>p)))?|{MidTimeRegex}))|{MidTimeRegex})\b";
       public static readonly string IshRegex = $@"\b({BaseDateTime.HourRegex}(-|——)?ish|noon(ish)?)\b";
-      public const string TimeUnitRegex = @"([^a-z]{1,}|\b)(?<unit>h(ou)?rs?|h|min(ute)?s?|sec(ond)?s?)\b";
+      public const string TimeUnitRegex = @"([^a-z]{1,}|\b)(?<unit>(h(ou)?r|min(ute)?|sec(ond)?)(?<plural>s)?|h)\b";
       public const string RestrictedTimeUnitRegex = @"(?<unit>hour|minute)\b";
       public const string FivesRegex = @"(?<tens>(?:fifteen|(?:twen|thir|fou?r|fif)ty(\s*five)?|ten|five))\b";
       public static readonly string HourRegex = $@"\b{BaseDateTime.HourRegex}";

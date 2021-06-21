@@ -2365,7 +2365,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 beginLuisStr = DateTimeFormatUtil.LuisDate(-1, 1, 1);
                 beginLuisStr = beginLuisStr.Replace("XXXX", beginYearStr);
 
-                var endYearStr = "XX" + (decade + totalLastYear);
+                var endYearStr = "XX" + ((decade + totalLastYear) % 100).ToString("D2", CultureInfo.InvariantCulture);
                 endLuisStr = DateTimeFormatUtil.LuisDate(-1, 1, 1);
                 endLuisStr = endLuisStr.Replace("XXXX", endYearStr);
             }

@@ -99,11 +99,11 @@ public class SpanishDateTime {
             .replace("{RelativeMonthRegex}", RelativeMonthRegex)
             .replace("{MonthRegex}", MonthRegex);
 
-    public static final String DateUnitRegex = "(?<unit>años?|mes(es)?|semanas?|d[ií]as?(?<business>\\s+(h[aá]biles|laborales))?)\\b";
+    public static final String DateUnitRegex = "(?<unit>(año|semana)(?<plural>s)?|mes(?<plural>es)?|d[ií]a(?<plural>s)?(?<business>\\s+(h[aá]biles|laborales))?)\\b";
 
     public static final String PastRegex = "(?<past>\\b(pasad(a|o)(s)?|[uú]ltim[oa](s)?|anterior(es)?|previo(s)?)\\b)";
 
-    public static final String FutureRegex = "\\b(siguiente(s)?|pr[oó]xim[oa](s)?|dentro\\s+de|en)\\b";
+    public static final String FutureRegex = "\\b(siguiente(s)?|pr[oó]xim[oa](s)?)\\b";
 
     public static final String SimpleCasesRegex = "\\b((desde(\\s+el)?|entre|del?)\\s+)?({DayRegex})\\s*{TillRegex}\\s*({DayRegex})\\s+{MonthSuffixRegex}((\\s+|\\s*,\\s*)((en|del?)\\s+)?{YearRegex})?\\b"
             .replace("{DayRegex}", DayRegex)
@@ -215,11 +215,7 @@ public class SpanishDateTime {
 
     public static final String BeforeAfterRegex = "^[.]";
 
-    public static final String InConnectorRegex = "\\b(en)\\b";
-
-    public static final String SinceYearSuffixRegex = "^[.]";
-
-    public static final String WithinNextPrefixRegex = "\\b(dentro\\s+de)\\b";
+    public static final String InConnectorRegex = "\\b(en)(?=\\s*$)\\b";
 
     public static final String TodayNowRegex = "\\b(hoy|ahora|este entonces)\\b";
 
@@ -597,7 +593,7 @@ public class SpanishDateTime {
             .replace("{TimeHourNumRegex}", TimeHourNumRegex)
             .replace("{DescRegex}", DescRegex);
 
-    public static final String TimeUnitRegex = "([^A-Za-z]{1,}|\\b)(?<unit>horas?|h|minutos?|mins?|segundos?|se[cg]s?)\\b";
+    public static final String TimeUnitRegex = "([^A-Za-z]{1,}|\\b)(?<unit>(hora|minuto|min|segundo|se[cg])(?<plural>s)?|h)\\b";
 
     public static final String TimeFollowedUnit = "^\\s*{TimeUnitRegex}"
             .replace("{TimeUnitRegex}", TimeUnitRegex);
@@ -745,9 +741,13 @@ public class SpanishDateTime {
             .replace("{YearRegex}", YearRegex)
             .replace("{FullTextYearRegex}", FullTextYearRegex);
 
-    public static final String AgoRegex = "\\b(antes\\s+de\\s+(?<day>hoy|ayer|mañana)|antes)\\b";
+    public static final String SinceYearSuffixRegex = "(^\\s*{SinceRegex}(\\s*(el\\s+)?año\\s*)?{YearSuffix})"
+            .replace("{SinceRegex}", SinceRegex)
+            .replace("{YearSuffix}", YearSuffix);
 
-    public static final String LaterRegex = "\\b(despu[eé]s(?!\\s+de\\b)|desde\\s+ahora|a\\s+partir\\s+de\\s+(?<day>hoy|ayer|mañana))\\b";
+    public static final String AgoRegex = "\\b(antes\\s+de\\s+(?<day>hoy|ayer|mañana)|antes|hace)\\b";
+
+    public static final String LaterRegex = "\\b(despu[eé]s(?!\\s+de\\b)|desde\\s+ahora|a\\s+partir\\s+de\\s+(ahora|(?<day>hoy|ayer|mañana)))\\b";
 
     public static final String Tomorrow = "mañana";
 
@@ -1083,7 +1083,7 @@ public class SpanishDateTime {
 
     public static final String PastPrefixRegex = "((este\\s+))";
 
-    public static final String PreviousPrefixRegex = "\\b({PastPrefixRegex}?pasad[oa](?!(\\s+el)?\\s+medio\\s*d[ií]a)|[uú]ltim[oa]|anterior)\\b"
+    public static final String PreviousPrefixRegex = "\\b({PastPrefixRegex}?pasad[oa]s?(?!(\\s+el)?\\s+medio\\s*d[ií]a)|[uú]ltim[oa]s?|anterior)\\b"
             .replace("{PastPrefixRegex}", PastPrefixRegex);
 
     public static final String ThisPrefixRegex = "(est?[ea]|actual)\\b";
@@ -1107,6 +1107,9 @@ public class SpanishDateTime {
     public static final String RelativeDayRegex = "(?<relday>((este|pr[oó]ximo|([uú]ltim(o|as|os)))\\s+días)|(días\\s+((que\\s+viene)|pasado)))\\b";
 
     public static final String RestOfDateRegex = "\\bresto\\s+((del|de)\\s+)?((la|el|est?[ae])\\s+)?(?<duration>semana|mes|año|decada)(\\s+actual)?\\b";
+
+    public static final String WithinNextPrefixRegex = "\\b(dentro\\s+de((\\s+(el|l[ao]s?))?\\s+(?<next>{NextPrefixRegex}))?)(?=\\s*$)\\b"
+            .replace("{NextPrefixRegex}", NextPrefixRegex);
 
     public static final String DurationUnitRegex = "(?<unit>{DateUnitRegex}|horas?|hra?s?|hs?|minutos?|mins?|segundos?|segs?|noches?)\\b"
             .replace("{DateUnitRegex}", DateUnitRegex);
@@ -1148,7 +1151,7 @@ public class SpanishDateTime {
             .replace("{TillRegex}", TillRegex)
             .replace("{RangeConnectorRegex}", RangeConnectorRegex);
 
-    public static final String FutureSuffixRegex = "\\b(siguiente(s)?|pr[oó]xim[oa](s)?|(en\\s+el\\s+)?futuro|a\\s+partir\\s+de\\s+ahora)\\b";
+    public static final String FutureSuffixRegex = "\\b(siguiente(s)?|pr[oó]xim[oa](s)?|(en\\s+el\\s+)?futuro)\\b";
 
     public static final ImmutableMap<String, Integer> WrittenDecades = ImmutableMap.<String, Integer>builder()
         .put("", 0)

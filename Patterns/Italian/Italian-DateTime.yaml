@@ -117,7 +117,7 @@ YearRegex: !nestedRegex
   def: ({BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})
   references: [ BaseDateTime.FourDigitYearRegex, FullTextYearRegex ]
 DateUnitRegex: !simpleRegex
-  def: \b(?<unit>decennio?|ann[oi]|mes[ei]|settiman[ae]|giorn[oi])\b
+  def: \b(?<unit>decennio|mese|settimana|(ann|giorn)(o|(?<plural>i))|(?<plural>decenni|mesi|settimane))\b
 SimpleCasesRegex: !nestedRegex
   def: \b((dal?|[tf]ra)\s+)?({DayRegex})(\s+{MonthSuffixRegex})?\s*{TillRegex}\s*({DayRegex}\s+{MonthSuffixRegex}|{MonthSuffixRegex}\s+{DayRegex})((\s+|\s*,\s*){YearRegex})?\b
   references: [ DayRegex, TillRegex, MonthSuffixRegex, YearRegex ]
@@ -338,7 +338,7 @@ IshRegex: !nestedRegex
   def: \b(((poco\s+(prima|dopo)(\s+(di|dell[e']))?)|circa(\s+a(ll['e])?)?|più o meno(\s+a(ll['e])?)?)\s*(({BaseDateTime.HourRegex}|{PeriodHourNumRegex})(?!\s*({DescRegex}|[:\.,/e]\s*\d+))|mezzogiorno)|(({BaseDateTime.HourRegex}|{PeriodHourNumRegex})(?!\s*({DescRegex}|[:\.,/e]\s*\d+))(\s+circa)|mezzogiorno(\s+circa)|verso\s+mezzogiorno))\b
   references: [ BaseDateTime.HourRegex, PeriodHourNumRegex, DescRegex ]
 TimeUnitRegex: !simpleRegex
-  def: (\b\d+([\.,]\d*)?|\b)(?<unit>or[ae]|hrs|hr|h|minut[oi]|mins|min|second[oi]|secs|sec)\b
+  def: (\b\d+([\.,]\d*)?|\b)(?<unit>or(a|(?<plural>e))|(minut|second)(o|(?<plural>i))|h|(hr|min|sec)(?<plural>s)?)\b
 RestrictedTimeUnitRegex: !simpleRegex
   def: (?<unit>ore|minuti)\b
 ConnectNumRegex: !nestedRegex

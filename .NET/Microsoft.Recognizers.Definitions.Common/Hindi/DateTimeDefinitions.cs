@@ -72,7 +72,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public static readonly string RelativeMonthRegex = $@"(?<relmonth>{RelativeRegex}\s+(माह|महि(ने|ना)|महीनों|महीने)(\s+(का|की|के))?)";
       public static readonly string WrittenMonthRegex = $@"\b({MonthRegex}(\s+(का|के(?!\s+बीच)|की)(\s+(माह|महि(ने|ना)))?)?)";
       public static readonly string MonthSuffixRegex = $@"(?<msuf>({RelativeMonthRegex}|{WrittenMonthRegex})(\s*(का|के|की))?)";
-      public const string DateUnitRegex = @"(?<unit>(?<decade>decades?|दशकों|दशक)|(?<year>साल|वर्षों|वर्ष?)|(?<month>माह|महीनों|महीना|महीने?)|(?<week>हफ़्तों|हफ़्ते|हफ्ता|(?!सप्ताहांत)सप्ताह?|हफ्तों|हफ्ते)|(?<business>(व्यावसायिक|कार्य|व्यापारिक|व्यापार\s+के)\s?)?(?<day>(दिवस|दिनों|दिन)|(?<=रो)ज|^ज$)|(?<fortnight>fortnights?|पखवाड़े|पखवाड़ा|पखवाड़े))";
+      public const string DateUnitRegex = @"(?<unit>(?<decade>decade|(?<plural>दशकों)|दशक|decades)|(?<year>साल|(?<plural>वर्षों)|वर्ष?)|(?<month>माह|(?<plural>महीनों|महीना)|महीने?)|(?<week>(?<plural>हफ़्तों|हफ्तों)|हफ़्ते|हफ्ता|(?!सप्ताहांत)सप्ताह?|हफ्ते)|(?<business>(व्यावसायिक|कार्य|व्यापारिक|व्यापार\s+के)\s?)?(?<day>(दिवस|(?<plural>दिनों)|दिन)|(?<=रो)ज|^ज$)|(?<fortnight>(?<plural>fortnights)fortnight|पखवाड़े|पखवाड़ा|पखवाड़े))";
       public const string DateTokenPrefix = @"को ";
       public const string TimeTokenPrefix = @"at ";
       public const string TokenBeforeDate = @"को|की";
@@ -171,7 +171,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public static readonly string MidTimeRegex = $@"(?<mid>({MidafternoonRegex}|{MiddayRegex}|{MidnightRegex}|{MidmorningRegex}))";
       public static readonly string AtRegex = $@"\b(?:(?<=\bकी\s+)(?:{MidTimeRegex}|{WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}(?!\.\d))|{MidTimeRegex})";
       public static readonly string IshRegex = $@"\b({BaseDateTime.HourRegex}((-|——)?ish|दोपहर(\s*((के\s*आसपास)|देर))?|(\s+बजे)?\s+के\s+आसपास)|लगभग\s+लंच\s+के\s+समय)";
-      public const string TimeUnitRegex = @"([\u0900-\u097f]{1,}|\b)(?<unit>h(ou)?rs?|h|घंटों|घंटे|घंटा|आर्स|मिनट|सेकंड्स|सेकंड|घण्टों|sec(ond)?s?)";
+      public const string TimeUnitRegex = @"([\u0900-\u097f]{1,}|\b)(?<unit>h(ou)?r|h|(?<plural>घंटों|घंटे|घंटा|आर्स|सेकंड्स|घण्टों|मिनटों|seconds|hours)|मिनट|सेकंड|sec(ond)?)";
       public const string RestrictedTimeUnitRegex = @"(?<unit>hour|घंटे|घंटा|घंटों|घण्टे|घण्टों|मिनट|आर्स|minute|मि|घण्टे)";
       public const string FivesRegex = @"(?<tens>पाँच|पांच|दस|पंद्रह|बीस|पच्चीस|तीस|पैंतीस|चालीस|पैंतालीस|पचास|पचपन)";
       public static readonly string HourRegex = $@"\b{BaseDateTime.HourRegex}";

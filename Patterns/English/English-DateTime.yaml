@@ -113,7 +113,7 @@ MonthSuffixRegex: !nestedRegex
   def: (?<msuf>(?:(in|of|on)\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))
   references: [ RelativeMonthRegex, WrittenMonthRegex ]
 DateUnitRegex: !simpleRegex
-  def: (?<unit>decades?|years?|months?|weeks?|(?<business>(business\s+|week\s*))?days?|fortnights?|weekends?|(?<=\s+\d{1,4})[ymwd])\b
+  def: (?<unit>(decade|year|month|week|(?<business>(business\s+|week\s*))?day|fortnight|weekend)(?<plural>s)?|(?<=\s+\d{1,4})[ymwd])\b
 DateTokenPrefix: 'on '
 TimeTokenPrefix: 'at '
 TokenBeforeDate: 'on '
@@ -369,7 +369,7 @@ IshRegex: !nestedRegex
   def: '\b({BaseDateTime.HourRegex}(-|——)?ish|noon(ish)?)\b'
   references: [ BaseDateTime.HourRegex ]
 TimeUnitRegex: !simpleRegex
-  def: ([^a-z]{1,}|\b)(?<unit>h(ou)?rs?|h|min(ute)?s?|sec(ond)?s?)\b
+  def: ([^a-z]{1,}|\b)(?<unit>(h(ou)?r|min(ute)?|sec(ond)?)(?<plural>s)?|h)\b
 RestrictedTimeUnitRegex: !simpleRegex
   def: (?<unit>hour|minute)\b
 FivesRegex: !simpleRegex

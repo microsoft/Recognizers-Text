@@ -3,6 +3,7 @@ using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Dutch;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
+using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
@@ -14,7 +15,28 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public static readonly Regex PmTimeRegex =
             new Regex(DateTimeDefinitions.PMTimeRegex, RegexFlags);
 
+        public static readonly Regex NightTimeRegex =
+             new Regex(DateTimeDefinitions.NightTimeRegex, RegexFlags);
+
+        public static readonly Regex MorningTimeRegex =
+             new Regex(DateTimeDefinitions.MorningTimeRegex, RegexFlags);
+
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
+        private static readonly Regex NowTimeRegex =
+            new Regex(DateTimeDefinitions.NowTimeRegex, RegexFlags);
+
+        private static readonly Regex RecentlyTimeRegex =
+            new Regex(DateTimeDefinitions.RecentlyTimeRegex, RegexFlags);
+
+        private static readonly Regex AsapTimeRegex =
+            new Regex(DateTimeDefinitions.AsapTimeRegex, RegexFlags);
+
+        private static readonly Regex NextPrefixRegex =
+            new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
+
+        private static readonly Regex PreviousPrefixRegex =
+            new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
 
         public DutchDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
@@ -108,13 +130,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
             var trimmedText = text.Trim();
 
-            // @TODO move hardcoded values to resources file
-
-            if (trimmedText.EndsWith("ochtend", StringComparison.Ordinal) && hour >= Constants.HalfDayHourCount)
+            if (MorningTimeRegex.MatchEnd(trimmedText, trim: true).Success && hour >= Constants.HalfDayHourCount)
             {
                 result -= Constants.HalfDayHourCount;
             }
-            else if (!trimmedText.EndsWith("ochtend", StringComparison.Ordinal) && hour < Constants.HalfDayHourCount)
+            else if (!MorningTimeRegex.MatchEnd(trimmedText, trim: true).Success && hour < Constants.HalfDayHourCount &&
+                !(NightTimeRegex.MatchEnd(trimmedText, trim: true).Success && hour < Constants.QuarterDayHourCount))
             {
                 result += Constants.HalfDayHourCount;
             }
@@ -126,19 +147,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         {
             var trimmedText = text.Trim();
 
-            // @TODO move hardcoded values to resources file
-
-            if (trimmedText.EndsWith("nu", StringComparison.Ordinal))
+            if (NowTimeRegex.MatchEnd(trimmedText, trim: true).Success)
             {
                 timex = "PRESENT_REF";
             }
-            else if (trimmedText.Equals("kort geleden", StringComparison.Ordinal) ||
-                     trimmedText.Equals("eerder", StringComparison.Ordinal))
+            else if (RecentlyTimeRegex.IsExactMatch(trimmedText, trim: true))
             {
                 timex = "PAST_REF";
             }
-            else if (trimmedText.Equals("zo snel mogelijk", StringComparison.Ordinal) ||
-                     trimmedText.Equals("zsm", StringComparison.Ordinal))
+            else if (AsapTimeRegex.IsExactMatch(trimmedText, trim: true))
             {
                 timex = "FUTURE_REF";
             }
@@ -156,15 +173,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             var trimmedText = text.Trim();
 
             var swift = 0;
-
-            // @TODO move hardcoded values to resources file
-
-            if (trimmedText.StartsWith("volgende", StringComparison.Ordinal))
+            if (NextPrefixRegex.MatchBegin(trimmedText, trim: true).Success)
             {
                 swift = 1;
             }
-            else if (trimmedText.StartsWith("vorige", StringComparison.Ordinal) ||
-                     trimmedText.StartsWith("laatste", StringComparison.Ordinal))
+            else if (PreviousPrefixRegex.MatchBegin(trimmedText, trim: true).Success)
             {
                 swift = -1;
             }

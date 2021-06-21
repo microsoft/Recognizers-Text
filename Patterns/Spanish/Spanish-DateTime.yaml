@@ -73,7 +73,7 @@ MonthSuffixRegex: !nestedRegex
   def: (?<msuf>((del?|la|el)\s+)?({RelativeMonthRegex}|{MonthRegex}))
   references: [ RelativeMonthRegex, MonthRegex ]
 DateUnitRegex: !simpleRegex
-  def: (?<unit>años?|mes(es)?|semanas?|d[ií]as?(?<business>\s+(h[aá]biles|laborales))?)\b
+  def: (?<unit>(año|semana)(?<plural>s)?|mes(?<plural>es)?|d[ií]a(?<plural>s)?(?<business>\s+(h[aá]biles|laborales))?)\b
 PastRegex: !simpleRegex
   def: (?<past>\b(pasad(a|o)(s)?|[uú]ltim[oa](s)?|anterior(es)?|previo(s)?)\b)
 FutureRegex: !simpleRegex
@@ -444,7 +444,7 @@ SpecificTimeBetweenAnd: !nestedRegex
   def: ({BetweenRegex}\s+)(?<time1>(({TimeRegex1}|{TimeRegex2}|{TimeRegexWithDotConnector}(\s*{DescRegex})?)|({BaseDateTime.HourRegex}|{TimeHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?))\s*{RangeConnectorRegex}\s*(?<time2>(({TimeRegex1}|{TimeRegex2}|{TimeRegexWithDotConnector}(\s*{DescRegex})?)|({BaseDateTime.HourRegex}|{TimeHourNumRegex})(\s*(?<rightDesc>{DescRegex}))?))
   references: [ BetweenRegex, TimeRegex1, TimeRegex2, TimeRegexWithDotConnector, RangeConnectorRegex, BaseDateTime.HourRegex, TimeHourNumRegex, DescRegex ]
 TimeUnitRegex: !simpleRegex
-  def: ([^A-Za-z]{1,}|\b)(?<unit>horas?|h|minutos?|mins?|segundos?|se[cg]s?)\b
+  def: ([^A-Za-z]{1,}|\b)(?<unit>(hora|minuto|min|segundo|se[cg])(?<plural>s)?|h)\b
 TimeFollowedUnit: !nestedRegex
   def: ^\s*{TimeUnitRegex}
   references: [ TimeUnitRegex ]
@@ -930,7 +930,7 @@ NextPrefixRegex: !nestedRegex
 PastPrefixRegex: !simpleRegex
   def: ((este\s+))
 PreviousPrefixRegex: !nestedRegex
-  def: \b({PastPrefixRegex}?pasad[oa](?!(\s+el)?\s+medio\s*d[ií]a)|[uú]ltim[oa]|anterior)\b
+  def: \b({PastPrefixRegex}?pasad[oa]s?(?!(\s+el)?\s+medio\s*d[ií]a)|[uú]ltim[oa]s?|anterior)\b
   references: [ PastPrefixRegex ]
 ThisPrefixRegex: !simpleRegex
   def: (est?[ea]|actual)\b
