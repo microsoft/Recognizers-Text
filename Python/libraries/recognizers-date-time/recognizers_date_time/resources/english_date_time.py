@@ -58,7 +58,7 @@ class EnglishDateTime:
     MonthRegex = f'\\b(?<month>apr(il)?|aug(ust)?|dec(ember)?|feb(ruary)?|jan(uary)?|july?|june?|mar(ch)?|may|nov(ember)?|oct(ober)?|sept(ember)?|sep)(?!\\p{{L}})'
     WrittenMonthRegex = f'(((the\\s+)?month of\\s+)?{MonthRegex})'
     MonthSuffixRegex = f'(?<msuf>(?:(in|of|on)\\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))'
-    DateUnitRegex = f'(?<unit>decades?|years?|months?|weeks?|(?<business>(business\\s+|week\\s*))?days?|fortnights?|weekends?|(?<=\\s+\\d{{1,4}})[ymwd])\\b'
+    DateUnitRegex = f'(?<unit>(decade|year|month|week|(?<business>(business\\s+|week\\s*))?day|fortnight|weekend)(?<plural>s)?|(?<=\\s+\\d{{1,4}})[ymwd])\\b'
     DateTokenPrefix = 'on '
     TimeTokenPrefix = 'at '
     TokenBeforeDate = 'on '
@@ -156,7 +156,7 @@ class EnglishDateTime:
     MidTimeRegex = f'(?<mid>({MidnightRegex}|{MidmorningRegex}|{MidafternoonRegex}|{MiddayRegex}))'
     AtRegex = f'\\b(?:(?:(?<=\\b(at|(at)?\\s*around|circa)\\s+)(?:{WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}(?!\\.\\d)(\\s*((?<iam>a)|(?<ipm>p)))?|{MidTimeRegex}))|{MidTimeRegex})\\b'
     IshRegex = f'\\b({BaseDateTime.HourRegex}(-|——)?ish|noon(ish)?)\\b'
-    TimeUnitRegex = f'([^a-z]{{1,}}|\\b)(?<unit>h(ou)?rs?|h|min(ute)?s?|sec(ond)?s?)\\b'
+    TimeUnitRegex = f'([^a-z]{{1,}}|\\b)(?<unit>(h(ou)?r|min(ute)?|sec(ond)?)(?<plural>s)?|h)\\b'
     RestrictedTimeUnitRegex = f'(?<unit>hour|minute)\\b'
     FivesRegex = f'(?<tens>(?:fifteen|(?:twen|thir|fou?r|fif)ty(\\s*five)?|ten|five))\\b'
     HourRegex = f'\\b{BaseDateTime.HourRegex}'
@@ -184,7 +184,7 @@ class EnglishDateTime:
     LaterEarlyRegex = f'((?<early>earl(y|ier)(\\s+|-))|(?<late>late(r?\\s+|-)))'
     MealTimeRegex = f'\\b(at\\s+)?(?<mealTime>breakfast|brunch|lunch(\\s*time)?|dinner(\\s*time)?|supper)\\b'
     UnspecificTimePeriodRegex = f'({MealTimeRegex})'
-    TimeOfDayRegex = f'\\b(?<timeOfDay>((((in\\s+the\\s+)?{LaterEarlyRegex}?(in(\\s+the)?\\s+)?(morning|afternoon|night|evening)))|{MealTimeRegex}|(((in\\s+(the)?\\s+)?)(daytime|business\\s+hour)))s?)\\b'
+    TimeOfDayRegex = f'\\b(?<timeOfDay>((((in\\s+the\\s+)?{LaterEarlyRegex}?(in(\\s+the)?\\s+)?(morning|afternoon|night(-?time)?|evening)))|{MealTimeRegex}|(((in\\s+(the)?\\s+)?)(daytime|business\\s+hour)))s?)\\b'
     SpecificTimeOfDayRegex = f'\\b(({StrictRelativeRegex}\\s+{TimeOfDayRegex})\\b|\\btoni(ght|te))s?\\b'
     TimeFollowedUnit = f'^\\s*{TimeUnitRegex}'
     TimeNumberCombinedWithUnit = f'\\b(?<num>\\d+(\\.\\d*)?){TimeUnitRegex}'
@@ -695,6 +695,7 @@ class EnglishDateTime:
     MealtimeDinnerTermList = [r'dinner', r'dinnertime', r'supper']
     DaytimeTermList = [r'daytime']
     NightTermList = [r'night']
+    NighttimeTermList = [r'nighttime', r'night-time']
     SameDayTerms = [r'today', r'otd']
     PlusOneDayTerms = [r'tomorrow', r'tmr', r'day after']
     MinusOneDayTerms = [r'yesterday', r'day before']

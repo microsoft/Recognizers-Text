@@ -44,8 +44,8 @@ namespace Microsoft.Recognizers.Definitions.German
       public static readonly string TwoDigitYearRegex = $@"\b(?<![$])(?<year>([0-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b";
       public static readonly string FullTextYearRegex = $@"\b((?<firsttwoyearnum>{CenturyRegex})\s+(?<lasttwoyearnum>((zwanzig|dreißig|vierzig|fünfzig|sechzig|siebzig|achtzig|neunzig)\s+{WrittenNumRegex})|{WrittenNumRegex}))\b|\b(?<firsttwoyearnum>{CenturyRegex})\b";
       public static readonly string YearRegex = $@"({BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})";
-      public const string WeekDayRegex = @"(?<weekday>sonntag|montag|dienstag|mittwoch|donnerstag|freitag|samstag|(mo|di|mi|do|fr|sa|so)(\.|\b))";
-      public const string SingleWeekDayRegex = @"\b(?<weekday>sonntag|montag|dienstag|mittwoch|donnerstag|freitag|samstag|(mo|di|mi|do|fr|sa|so)(\.|\b))";
+      public const string WeekDayRegex = @"(?<weekday>sonntag|montag|dienstag|mittwoch|donnerstag|freitag|samstag|sonnabend|(mo|di|mi|do|fr|sa|so)(\.|\b))";
+      public const string SingleWeekDayRegex = @"\b(?<weekday>sonntag|montag|dienstag|mittwoch|donnerstag|freitag|samstag|sonnabend|(mo|di|mi|do|fr|sa|so)(\.|\b))";
       public static readonly string RelativeMonthRegex = $@"(?<relmonth>{RelativeRegex}\s+monat(s)?)";
       public const string WrittenMonthRegex = @"((monat\s*)?(?<month>apr(il|\.)|aug(ust|\.)|dez(ember|\.)|feb(ruar|ber|\.)|j[äa]n(uar|ner|\.)|jul(e?i|l\.)|jun([io]|\.)|märz|mai|nov(ember|\.)|okt(ober|\.)|sept?(ember|\.)))";
       public static readonly string MonthSuffixRegex = $@"(?<msuf>(im\s*|des\s*)?({RelativeMonthRegex}|{WrittenMonthRegex}|{MonthNumRegex}))";
@@ -69,7 +69,7 @@ namespace Microsoft.Recognizers.Definitions.German
       public static readonly string QuarterRegex = $@"((das|im|in dem|dem)\s+)?(?<cardinal>erste[rns]?|1\.|zweite[rns]?|2\.|dritte[rns]?|3\.|vierte[rns]?|4\.)\s+quartal(\s+(von|des jahres)?|\s*,\s*)?\s+({YearRegex}|{RelativeRegex})";
       public static readonly string QuarterRegexYearFront = $@"(?!)#({YearRegex}|{RelativeRegex}\s+year)\s+(the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th)\s+quarter";
       public static readonly string AllHalfYearRegex = $@"((das|im|in dem|dem)\s+)?(?<cardinal>erste[rns]?|1\.|zweite[rns]?|2\.)\s+(halbjahr|hälfte)(\s+(von|des jahres)?|\s*,\s*)?\s+({YearRegex}|{RelativeRegex})";
-      public const string PrefixDayRegex = @"\b((?<EarlyPrefix>früh)|(?<MidPrefix>mitten|in der mitte)|(?<LatePrefix>spät(er)?))(\s+am\s+tag)?(\s+des\s+tages)?$";
+      public const string PrefixDayRegex = @"((?<EarlyPrefix>früh)|(?<MidPrefix>mitten|in der mitte)|(?<LatePrefix>spät(er)?))(\s+am\s+tag)?(\s+des\s+tages)?$";
       public const string CenturySuffixRegex = @"(^jahrhundert)\b";
       public const string ReferencePrefixRegex = @"((gleich(e|en))|(selb(e|en)))\b";
       public static readonly string SeasonRegex = $@"\b(?<season>({RelativeRegex}\s+)?(?<seas>frühling|sommer|herbst|winter)((\s+(von|des jahres)?|\s*,\s*)?\s+({YearRegex}|{RelativeRegex}\s+jahr(e(s)?)?))?)\b";
@@ -86,7 +86,7 @@ namespace Microsoft.Recognizers.Definitions.German
       public static readonly string SpecialDayRegex = $@"\b(vorgestern|übermorgen|((der\s+)?{RelativeRegex}\s+(tag(s|es)?|(?<!\bam\s+)morgen))|\bgestern\b|\bmorgen\b|heute|(heutige[rns]?|aktuelle[rns]?) (datum|tag(s|es)?))";
       public static readonly string SpecialDayWithNumRegex = $@"\b((?<number>{WrittenNumRegex})\s+tage?\s+(von|nach|ab)\s+(?<day>\bgestern\b|\bmorgen\b|heute|(heutige[rns]?|aktuelle[rns]?) (datum|tag(s|es)?)))\b";
       public static readonly string RelativeDayRegex = $@"\b((((de[rmns])\s+)?{RelativeRegex}\s+tag(e(s)?)?))";
-      public const string SetWeekDayRegex = @"\b(?<prefix>(an)\s+)?(?<weekday>sonntag|montag|dienstag|mittwoch|donnerstag|freitag|samstag)(s|en)\b";
+      public const string SetWeekDayRegex = @"\b(?<prefix>(an)\s+)?(?<weekday>sonntag|montag|dienstag|mittwoch|donnerstag|freitag|samstag|sonnabend)(s|en)\b";
       public static readonly string WeekDayOfMonthRegex = $@"\b(?<wom>((an( dem)?|de[rs]|am)\s+)?(?<cardinal>erste[rns]?|1\.|zweite[rns]?|2\.|dritte[rns]?|3\.|vierte[rns]?|4\.|fünfte[rns]?|5\.|letzte[rns]?)\s+{WeekDayRegex}\s+{MonthSuffixRegex})\b";
       public static readonly string RelativeWeekDayRegex = $@"\b({WrittenNumRegex}\s+{WeekDayRegex}e\s+(von\s+jetzt|später))\b";
       public const string WrittenNumRegex = @"(zw(ö|oe)lf|dreizehn|vierzehn|fünfzehn|sechzehn|siebzehn|achtzehn|neunzehn|zwanzig|dreißig|vierzig|fünfzig|sechzig|siebzig|achtzig|neunzig|eins?|zw(een|ei|o)|drei|vier|fünf|fuenf|sechs|sieben|acht|neun|zehn|elf)";
@@ -124,10 +124,10 @@ namespace Microsoft.Recognizers.Definitions.German
       public static readonly string TimeSuffix = $@"(?<suffix>{AmRegex}|{PmRegex}|{OclockRegex})";
       public static readonly string TimeSuffixFull = $@"(?<suffix>{AmRegex}|{PmRegex}|{OclockRegex}|\b(?<pm>nachmittag(s)?|nacht(s)?|abend(s)?))";
       public static readonly string BasicTime = $@"(?<basictime>{WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}(:|\s+uhr(\s+und)?\s+){BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?|\b{BaseDateTime.HourRegex}(?![%\d]))";
-      public const string MidnightRegex = @"(?<midnight>mitte(r|n in der )nacht)";
+      public const string MidnightRegex = @"(?<midnight>mitte(r|n in der )nachts?)";
       public const string MidmorningRegex = @"(?<midmorning>mitten am vormittag)";
       public const string MidafternoonRegex = @"(?<midafternoon>mitten am nachmittag)";
-      public const string MiddayRegex = @"((?<midday>(am\s+)?mittag(s(zeit)?)?)|(?<midday>(?<=montag|dienstag|mittwoch|donnerstag|freitag|samstag|sonntag)(mittags?)))";
+      public const string MiddayRegex = @"((?<midday>(am\s+)?mittag(s(zeit)?)?)|(?<midday>(?<=montag|dienstag|mittwoch|donnerstag|freitag|samstag|sonnabend|sonntag)(mittags?)))";
       public static readonly string MidTimeRegex = $@"(?<mid>({MidnightRegex}|{MidmorningRegex}|{MidafternoonRegex}|{MiddayRegex}))";
       public static readonly string AtRegex = $@"(((?<=\b(um|gegen)\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}(?![%\d])|{MidTimeRegex}))|{MidTimeRegex})\b";
       public static readonly string IshRegex = $@"\b(noonish)\b";
@@ -152,7 +152,7 @@ namespace Microsoft.Recognizers.Definitions.German
       public static readonly string SpecificTimeFromTo = $@"((?<preDesc>({PmRegex}|{AmRegex})\s+)?(von)\s+)?(?<time1>({TimeRegex2}|({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>({PmRegex}|{AmRegex}|{DescRegex})))?))\s*{TillRegex}\s*(?<time2>({TimeRegex2}|({HourRegex}|{PeriodHourNumRegex})(\s*(?<rightDesc>({PmRegex}|{AmRegex}|{DescRegex})))?))";
       public static readonly string SpecificTimeBetweenAnd = $@"(?<preDesc>({PmRegex}|{AmRegex})\s+)?(zwischen\s+)(?<time1>({TimeRegex2}|({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>({PmRegex}|{AmRegex}|{DescRegex})))?))\s*{RangeConnectorRegex}\s*(?<time2>({TimeRegex2}|({HourRegex}|{PeriodHourNumRegex})(\s*(?<rightDesc>({PmRegex}|{AmRegex}|{DescRegex})))?))";
       public const string PrepositionRegex = @"(?<prep>^(um|am|in|zur)(\s+(de[rmn]))?$)";
-      public const string TimeOfDayRegex = @"\b(?<timeOfDay>(((?<early>(früh(\s+am|er)|am frühen)(\s+|-))|(?<late>(spät(\s+am|er)?|am späten)(\s*|-)))?((am\s+)?morgens?(?! (früh|vor|nach|abend|(nacht|primetime)|morgen))|(vor|nach)mittags?|abends?|früh|(nachts?|primetime))))\b";
+      public const string TimeOfDayRegex = @"(?<timeOfDay>((((?<early>(früh(\s+am|er)?|am frühen))|(?<late>(spät(\s+am|er)?|am späten)))(\s*|-))?((am\s+)?morgens?(?! (früh|vor|nach|abend|(nacht|primetime)|morgen))|(vor|nach)mittags?|(?<!sonn)abends?|früh|(nachts?|primetime))))\b";
       public static readonly string SpecificTimeOfDayRegex = $@"\b((({StrictRelativeRegex}|heute)\s+{TimeOfDayRegex}))\b";
       public static readonly string TimeFollowedUnit = $@"^\s*{TimeUnitRegex}$";
       public static readonly string TimeNumberCombinedWithUnit = $@"(?<num>\d+(\,\d*)?){TimeUnitRegex}";
@@ -167,9 +167,9 @@ namespace Microsoft.Recognizers.Definitions.German
       public const string SpecificEndOfRegex = @"((das|am|an( dem)?)\s+)?\bende(\s+(de[mnsr])?)\s*$";
       public const string UnspecificEndOfRegex = @"^[.]";
       public const string UnspecificEndOfRangeRegex = @"^[.]";
-      public const string PeriodTimeOfDayRegex = @"\b(((?<early>(früh( am|er)|am frühen)(\s+|-))|(?<late>(spät( am|er)|am späten)(\s+|-)))?(?<timeOfDay>morgens?|früh|(vor|nach)mittags?|(nachts?|primetime)|abends?))\b";
+      public const string PeriodTimeOfDayRegex = @"(((?<early>(früh( am|er)?|am frühen)(\s*|-))|(?<late>(spät( am|er)|am späten)(\s*|-)))?(?<timeOfDay>morgens?|früh|(vor|nach)mittags?|(nachts?|primetime)|abends?))";
       public static readonly string PeriodSpecificTimeOfDayRegex = $@"(({StrictRelativeRegex}\s+{PeriodTimeOfDayRegex})|heute)";
-      public static readonly string PeriodTimeOfDayWithDateRegex = $@"\b((((am|zur|von|in der)\s+)?{TimeOfDayRegex}(\s+am)?))|(?<timeOfDay>(?<=montag|dienstag|mittwoch|donnerstag|freitag|samstag|sonntag)((vor|nach)?mittags?|abends?|(nachts?|primetime)|morgens?))\b";
+      public static readonly string PeriodTimeOfDayWithDateRegex = $@"((((am|zur|von|in der)\s+)?{TimeOfDayRegex}(\s+am)?))|(?<timeOfDay>(?<=montag|dienstag|mittwoch|donnerstag|freitag|samstag|sonnabend|sonntag)((vor|nach)?mittags?|abends?|(nachts?|primetime)|morgens?))\b";
       public const string LessThanRegex = @"\b(weniger\s+als)\b";
       public const string MoreThanRegex = @"\b(mehr\s+als)\b";
       public const string DurationUnitRegex = @"(?<unit>jahr(e(n|s)?)?|monat(en?|s)?|wochen?|tag(e(n|s)?)?|tg|stunden?|std?|h|min(uten?)?|sek(unden?)?)\b";
@@ -189,7 +189,7 @@ namespace Microsoft.Recognizers.Definitions.German
       public const string AllRegex = @"\b(?<all>ganz(e(n|s|r)?)\s+(?<unit>jahr|monat|woche|tag))\b";
       public const string HalfRegex = @"(((ein(e(n|r|s)?)?)\s*)|\b)(?<half>halb(e(n|r|s)?)?\s+(?<unit>jahr(e(r|s)?)?|monat(s|e)?|woch(en?)?|tag(e(n|r|s)?)?|stund(en?)?))\b";
       public const string ConjunctionRegex = @"\b((und(\s+für)?)|mit|für)\b";
-      public static readonly string HolidayRegex1 = $@"\b((dieses jahr)\s*)?(?<holiday>reformations(tag|fest)|gedenktag der reformation|martinstag|st. martin|sankt martin|martinsfest|martini|nikolaustag|dreikönigstag|dreikönigsfest|walpurgisnacht|nationalfeiertag|mariä empfängnis|weihnachten|weihnachtstag|erste(r|n)? weihnachtstag|1. weihnachtstag|erste(r|n)? weihnachtsfeiertag|1\. weihnachtsfeiertag|zweite(r|n)? weihnachtstag|zweite(r|n)? weihnachtsfeiertag|2\. weihnachtstag|zweite(r|n)? weihnachtsfeiertag|stefanitag|stafanstag|berchtoldstag|bechtelistag|bächtelistag|berchtelistag|bärzelistag|josefstag|joseftag|josefitag|ostermontag|ostersonntag|bundesfeiertag|bundesfeier|mariä himmelfahrt|tag der deutschen einheit|ostern|vatertag|muttertag|erntedankfest|thanksgiving|martin luther king day|martin luther king jr day|washington's birthday|washington birthday|canberraday|tag der arbeit|columbus day|memorial day|yuandan|mao's birthday|teachersday|teacher day|single day|tag der jugend|kindertag|(Internationaler\s+)?frauentag|treeplanting day|tag des baumes|girlsday|white lover day|loverday|weihnachten|weihnachtstag|xmas|neujahr|neujahrstag|neujahr|neujahrstag|neujahr|inauguration day|murmeltiertag|sommeranfang|winteranfang|frühlingsanfang|herbstanfang|valentinstag|st patrick day|erster april|april scherz|georgstag|mayday|maitag|maifeiertag|geburt johannes des täufers|us unabhängigkeitstag|unabhängigkeitstag|sturm auf die bastille|halloween|guy fawkes day|guy fawkes night|veterans day|heiligabend|silvester|pi-tag|pitag|pi (tag|day))(\s+((diesen)\s+)?(im jahr {YearRegex}|{YearRegex}|(im\s+)?{RelativeRegex}\s+jahr(es)?))?\b";
+      public static readonly string HolidayRegex1 = $@"\b((dieses jahr)\s*)?(?<holiday>reformations(tag|fest)|gedenktag der reformation|martinstag|st. martin|sankt martin|martinsfest|martini|nikolaustag|dreikönigstag|dreikönigsfest|walpurgisnacht|nationalfeiertag|mariä empfängnis|weihnachten|weihnachts(feier)?tag|erste(r|n)? weihnachtstag|1. weihnachtstag|erste(r|n)? weihnachtsfeiertag|1\. weihnachtsfeiertag|zweite(r|n)? weihnachtstag|zweite(r|n)? weihnachtsfeiertag|2\. weihnachtstag|zweite(r|n)? weihnachtsfeiertag|stefanitag|stafanstag|berchtoldstag|bechtelistag|bächtelistag|berchtelistag|bärzelistag|josefstag|joseftag|josefitag|pfingsten|ostermontag|ostersonntag|bundesfeiertag|bundesfeier|mariä himmelfahrt|tag der deutschen einheit|ostern|vatertag|muttertag|erntedank(fest)?|thanksgiving|martin luther king day|martin luther king jr day|washington's birthday|washington birthday|canberraday|tag der arbeit|columbus day|memorial day|yuandan|mao's birthday|teachersday|teacher day|single day|tag der jugend|kindertag|(Internationaler\s+)?frauentag|treeplanting day|tag des baumes|girlsday|white lover day|loverday|weihnachten|weihnachtstag|xmas|neujahr|neujahrstag|neujahr|neujahrstag|neujahr|inauguration day|murmeltiertag|sommeranfang|winteranfang|frühlingsanfang|herbstanfang|valentinstag|st patrick day|erster april|april scherz|georgstag|mayday|maitag|maifeiertag|geburt johannes des täufers|us unabhängigkeitstag|unabhängigkeitstag|sturm auf die bastille|halloween|guy fawkes day|guy fawkes night|veterans day|heiligabend|silvester|pi-tag|pitag|pi (tag|day))(\s+((diesen)\s+)?(im jahr {YearRegex}|{YearRegex}|(im\s+)?{RelativeRegex}\s+jahr(es)?))?\b";
       public static readonly string HolidayRegex2 = $@"\b((dieses jahr)\s*)?(?<holiday>martin luther king|martin luther king jr|allerheiligen|tree planting day|white lover|st patrick|st george|independence|us independence|allerseelen|guy fawkes|silvester|weiberfastnacht|karneval|aschermittwoch|palm(en)?sonntag|karsamstag|fastnachtssamstag|fastnachtssonntag|heilige drei könige|barbaratag|reformationstag|weltkindertag|augsburger friedensfest|johannistag|peter und paul|karfreitag|christi himmelfahrt|pfingstsonntag|pfingstmontag|fronleichnam|rosenmontag|fastnacht|gründonnerstag|himmelfahrt|volkstrauertag|buß und bettag|buß- und bettag|buss- und bettag|buss und bettag|totensonntag|erste(r|n)? advent|1\. advent|zweite(r|n)? advent|2\. advent|dritte(r|n)? advent|3\. advent|vierte(r|n)? advent|4\. advent|schweizer buss- und bettag|schweizer buss und bettag|schweizer buß und bettag|schweizer buß- und bettag)(\s+((diesen)\s+)?(im jahr {YearRegex}|{YearRegex}|(im\s+)?{RelativeRegex}\s+jahr(es)?))?\b";
       public static readonly string HolidayRegex3 = $@"((dieses jahr)\s*)?(?<holiday>(canberra|columbus|thanks\s*giving|groundhog|bastille|halloween|veterans|memorial|spring|lantern|qingming|dragon boat)\s+(day))(\s+((diesen)\s+)?(im jahr {YearRegex}|{YearRegex}|(im\s+)?{RelativeRegex}\s+jahr(es)?))?";
       public const string DateTokenPrefix = @"am ";
@@ -364,6 +364,7 @@ namespace Microsoft.Recognizers.Definitions.German
             { @"donnerstag", 4 },
             { @"freitag", 5 },
             { @"samstag", 6 },
+            { @"sonnabend", 6 },
             { @"sonntag", 0 },
             { @"mo.", 1 },
             { @"di.", 2 },
@@ -636,23 +637,23 @@ namespace Microsoft.Recognizers.Definitions.German
             { @"walpurgisnight", new string[] { @"walpurgisnacht" } },
             { @"austriannationalday", new string[] { @"nationalfeiertag" } },
             { @"immaculateconception", new string[] { @"mariäempfängnis" } },
-            { @"firstchristmasday", new string[] { @"weihnachten", @"weihnachtstag", @"erstenweihnachtstag", @"erstenweihnachtstag", @"ersterweihnachtstag", @"1.weihnachtstag", @"ersterweihnachtsfeiertag", @"1.weihnachtsfeiertag" } },
-            { @"secondchristmasday", new string[] { @"zweiterweihnachtstag", @"zweiteweihnachtsfeiertag", @"zweitenweihnachtsfeiertag", @"zweiterweihnachtsfeiertag", @"2.weihnachtstag", @"zweiterweihnachtsfeiertag", @"stefanitag", @"stafanstag" } },
+            { @"firstchristmasday", new string[] { @"weihnachten", @"weihnachtstag", @"weihnachtsfeiertag", @"erstenweihnachtstag", @"erstenweihnachtsfeiertag", @"ersterweihnachtstag", @"ersterweihnachtsfeiertag", @"erstenweihnachtstag", @"erstenweihnachtsfeiertag", @"1.weihnachtstag", @"1.weihnachtsfeiertag" } },
+            { @"secondchristmasday", new string[] { @"zweiterweihnachtstag", @"zweiterweihnachtsfeiertag", @"zweiteweihnachtstag", @"zweiteweihnachtsfeiertag", @"zweitenweihnachtstag", @"zweitenweihnachtsfeiertag", @"2.weihnachtstag", @"2.weihnachtsfeiertag", @"stefanitag", @"stafanstag" } },
             { @"berchtoldsday", new string[] { @"berchtoldstag", @"bechtelistag", @"bächtelistag", @"berchtelistag", @"bärzelistag" } },
             { @"saintjosephsday", new string[] { @"josefstag", @"joseftag", @"josefitag" } },
+            { @"easterday", new string[] { @"ostern" } },
             { @"eastermonday", new string[] { @"ostermontag" } },
             { @"eastersunday", new string[] { @"ostersonntag" } },
             { @"swissnationalday", new string[] { @"bundesfeiertag", @"bundesfeier" } },
             { @"assumptionofmary", new string[] { @"mariähimmelfahrt" } },
             { @"germanunityday", new string[] { @"tagderdeutscheneinheit" } },
-            { @"easterday", new string[] { @"ostern" } },
             { @"fathers", new string[] { @"vatertag", @"männertag" } },
             { @"mothers", new string[] { @"muttertag" } },
-            { @"thanksgiving", new string[] { @"erntedankfest", @"thanksgiving" } },
+            { @"thanksgiving", new string[] { @"erntedankfest", @"erntedank", @"thanksgiving" } },
             { @"martinlutherking", new string[] { @"martinlutherkingday", @"martinlutherkingjrday" } },
             { @"washingtonsbirthday", new string[] { @"washingtonsbirthday", @"washingtonbirthday" } },
             { @"canberra", new string[] { @"canberraday" } },
-            { @"labour", new string[] { @"tag der arbeit" } },
+            { @"labour", new string[] { @"tagderarbeit" } },
             { @"columbus", new string[] { @"columbusday" } },
             { @"memorial", new string[] { @"memorialday" } },
             { @"yuandan", new string[] { @"yuandan" } },
@@ -680,7 +681,7 @@ namespace Microsoft.Recognizers.Definitions.German
             { @"stgeorgeday", new string[] { @"georgstag" } },
             { @"mayday", new string[] { @"mayday", @"maitag", @"tagderarbeit", @"maifeiertag" } },
             { @"laborday", new string[] { @"mayday", @"maitag", @"tagderarbeit", @"maifeiertag" } },
-            { @"cincodemayoday", new string[] { @"cinco de mayo" } },
+            { @"cincodemayoday", new string[] { @"cincodemayo" } },
             { @"baptisteday", new string[] { @"geburtjohannesdestäufers" } },
             { @"usindependenceday", new string[] { @"usunabhängigkeitstag" } },
             { @"independenceday", new string[] { @"unabhängigkeitstag" } },
@@ -699,7 +700,7 @@ namespace Microsoft.Recognizers.Definitions.German
             { @"palmsunday", new string[] { @"palmensonntag", @"palmsonntag" } },
             { @"goodfriday", new string[] { @"karfreitag" } },
             { @"ascensionofchrist", new string[] { @"christihimmelfahrt" } },
-            { @"whitsunday", new string[] { @"pfingstsonntag" } },
+            { @"whitesunday", new string[] { @"pfingstsonntag", @"pfingsten" } },
             { @"whitemonday", new string[] { @"pfingstmontag" } },
             { @"corpuschristi", new string[] { @"fronleichnam" } },
             { @"rosenmontag", new string[] { @"rosenmontag" } },
@@ -758,9 +759,10 @@ namespace Microsoft.Recognizers.Definitions.German
             { @"^\d{4}$", @"(\d\.\d{4}|\d{4}\.\d)" },
             { @"\b(morgen|nachmittag|abend|nacht|tag)\b", @"\b(gut(en?)?\s+(morgen|nachmittag|abend|nacht|tag))\b" },
             { @"^(apr|aug|dez|feb|j[äa]n|jul|jun|märz|mai|nov|okt|sept?)$", @"([$%£&!?@#])(apr|aug|dez|feb|j[äa]n|jul|jun|märz|mai|nov|okt|sept?)|(apr|aug|dez|feb|j[äa]n|jul|jun|märz|mai|nov|okt|sept?)([$%£&@#])" },
-            { @"^(mo|di|mi|do|fr|sa|so)$", @"\b(mo|di|mi|do|fr|sa|so)\b" }
+            { @"^(mo|di|mi|do|fr|sa|so)$", @"\b(mo|di|mi|do|fr|sa|so)\b" },
+            { @"^((früh|spät)(\s+am|er)?\s*)?(abends?|morgens?|nachts?|(vor|nach)mittags?|früh|primetime)$", @"((?<!(frü|spä))[a-z0-9])((früh|spät)(\s+am|er)?\s*)?(abends?|morgens?|nachts?|(vor|nach)mittags?|früh|primetime)\b" }
         };
-      public static readonly string AmbiguousTimePeriodRegex = $@"\b((?<!{RelativeRegex}\s+)morgen|früh)\b";
+      public static readonly string AmbiguousTimePeriodRegex = $@"\b((?<!{RelativeRegex}\s+)morgen|früh(?!(\s*morgens?)))\b";
       public static readonly IList<string> MorningTermList = new List<string>
         {
             @"morgen",
@@ -782,6 +784,7 @@ namespace Microsoft.Recognizers.Definitions.German
       public static readonly IList<string> NightTermList = new List<string>
         {
             @"nacht",
+            @"nacths",
             @"primetime"
         };
       public static readonly IList<string> SameDayTerms = new List<string>

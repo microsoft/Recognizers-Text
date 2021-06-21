@@ -4152,6 +4152,463 @@
     ]
   },
   {
+    "Input": "Am Erntedankfest sind viele Kirchen kunstvoll mit Feldfrüchten verziert",
+    "Context": {
+      "ReferenceDateTime": "2021-05-04T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "erntedankfest",
+        "Start": 3,
+        "End": 15,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX",
+              "type": "date",
+              "value": "2020-10-04"
+            },
+            {
+              "timex": "XXXX",
+              "type": "date",
+              "value": "2021-10-03"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Wann ist Pfingsten 2022?",
+    "Context": {
+      "ReferenceDateTime": "2021-05-04T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "pfingsten 2022",
+        "Start": 9,
+        "End": 22,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2022-06-05",
+              "type": "date",
+              "value": "2022-06-05"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Selbst mitternachts hat das Schnellrestaurant geöffnet.",
+    "Context": {
+      "ReferenceDateTime": "2021-06-18T18:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "mitternachts",
+        "Start": 7,
+        "End": 18,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T00",
+              "type": "time",
+              "value": "00:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Vorgestern Dienstagfrühmorgens",
+    "Context": {
+      "ReferenceDateTime": "2021-06-18T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "vorgestern",
+        "Start": 0,
+        "End": 9,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-06-16",
+              "type": "date",
+              "value": "2021-06-16"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "dienstagfrühmorgens",
+        "Start": 11,
+        "End": 29,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-2TMO",
+              "Mod": "start",
+              "type": "datetimerange",
+              "start": "2021-06-15 08:00:00",
+              "end": "2021-06-15 10:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-2TMO",
+              "Mod": "start",
+              "type": "datetimerange",
+              "start": "2021-06-22 08:00:00",
+              "end": "2021-06-22 10:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sonnabend frühmorgens bin ich erst um 8 Uhr aufgestanden.",
+    "Context": {
+        "ReferenceDateTime": "2021-06-18T18:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "sonnabend frühmorgens",
+        "Start": 0,
+        "End": 20,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-6TMO",
+              "Mod": "start",
+              "type": "datetimerange",
+              "start": "2021-06-12 08:00:00",
+              "end": "2021-06-12 10:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-6TMO",
+              "Mod": "start",
+              "type": "datetimerange",
+              "start": "2021-06-19 08:00:00",
+              "end": "2021-06-19 10:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "8 uhr",
+        "Start": 38,
+        "End": 42,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T08",
+              "type": "time",
+              "value": "08:00:00"
+            },
+            {
+              "timex": "T20",
+              "type": "time",
+              "value": "20:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Damit stehen den Fahrgästen am kommenden Sonnabendabend Züge für die Rückfahrt ab Bremen bis Osnabrück um 20.20 Uhr sowie 22.20 Uhr und 23.23 Uhr.",
+    "Context": {
+        "ReferenceDateTime": "2021-06-18T18:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "kommenden sonnabendabend",
+        "Start": 31,
+        "End": 54,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-06-26TEV",
+              "type": "datetimerange",
+              "start": "2021-06-26 16:00:00",
+              "end": "2021-06-26 20:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "20.20 uhr",
+        "Start": 106,
+        "End": 114,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T20:20",
+              "type": "time",
+              "value": "20:20:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "22.20 uhr",
+        "Start": 122,
+        "End": 130,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T22:20",
+              "type": "time",
+              "value": "22:20:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "23.23 uhr",
+        "Start": 136,
+        "End": 144,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T23:23",
+              "type": "time",
+              "value": "23:23:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Dienstagspätabends Anreise, samstagfrüh Abreise.",
+    "Context": {
+        "ReferenceDateTime": "2021-06-18T18:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "dienstagspätabends",
+        "Start": 0,
+        "End": 17,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-2TEV",
+              "Mod": "end",
+              "type": "datetimerange",
+              "start": "2021-06-15 18:00:00",
+              "end": "2021-06-15 20:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-2TEV",
+              "Mod": "end",
+              "type": "datetimerange",
+              "start": "2021-06-22 18:00:00",
+              "end": "2021-06-22 20:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "samstagfrüh",
+        "Start": 28,
+        "End": 38,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-6TMO",
+              "type": "datetimerange",
+              "start": "2021-06-12 08:00:00",
+              "end": "2021-06-12 12:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-6TMO",
+              "type": "datetimerange",
+              "start": "2021-06-19 08:00:00",
+              "end": "2021-06-19 12:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Jeden Donnerstag wandern wir auf dem Goldsteig.",
+    "Context": {
+        "ReferenceDateTime": "2021-06-18T18:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "jeden donnerstag",
+        "Start": 0,
+        "End": 15,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-4",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tag der Arbeit, ersten Weihnachtsfeiertag, zweiten Weihnachtstag",
+    "Context": {
+        "ReferenceDateTime": "2021-06-18T18:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "tag der arbeit",
+        "Start": 0,
+        "End": 13,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-05-01",
+              "type": "date",
+              "value": "2021-05-01"
+            },
+            {
+              "timex": "XXXX-05-01",
+              "type": "date",
+              "value": "2022-05-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "ersten weihnachtsfeiertag",
+        "Start": 16,
+        "End": 40,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-12-25",
+              "type": "date",
+              "value": "2020-12-25"
+            },
+            {
+              "timex": "XXXX-12-25",
+              "type": "date",
+              "value": "2021-12-25"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "zweiten weihnachtstag",
+        "Start": 43,
+        "End": 63,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-12-26",
+              "type": "date",
+              "value": "2020-12-26"
+            },
+            {
+              "timex": "XXXX-12-26",
+              "type": "date",
+              "value": "2021-12-26"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Morgens stehe ich um 7 Uhr von Montag bis Freitag auf und ich gehe zur Schule",
+    "Context": {
+        "ReferenceDateTime": "2021-06-18T18:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "morgens",
+        "Start": 0,
+        "End": 6,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TMO",
+              "type": "timerange",
+              "start": "08:00:00",
+              "end": "12:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "7 uhr",
+        "Start": 21,
+        "End": 25,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07",
+              "type": "time",
+              "value": "07:00:00"
+            },
+            {
+              "timex": "T19",
+              "type": "time",
+              "value": "19:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "von montag bis freitag",
+        "Start": 27,
+        "End": 48,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-WXX-1,XXXX-WXX-5,P4D)",
+              "type": "daterange",
+              "start": "2021-06-14",
+              "end": "2021-06-18"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "Ich bin geboren in dem Jahr.",
     "Context": {
       "ReferenceDateTime": "2019-11-07T00:00:00"
