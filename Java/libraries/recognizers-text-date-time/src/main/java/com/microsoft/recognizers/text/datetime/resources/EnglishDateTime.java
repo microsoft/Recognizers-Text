@@ -753,10 +753,13 @@ public class EnglishDateTime {
 
     public static final String HolidayList3 = "(?<holiday>(?:independence|presidents(?:')?|mlk|martin luther king( jr)?|canberra|ascension|columbus|tree( planting)?|arbor|labou?r|((international|int'?l)\\s+)?workers'?|mother'?s?|father'?s?|female|women('s)?|single|teacher'?s|youth|children|girls|lovers?|earth|inauguration|groundhog|valentine'?s|baptiste|bastille|veterans(?:')?|memorial|mid[ \\-]autumn|moon|spring|lantern)\\s+day)";
 
-    public static final String HolidayRegex = "\\b(({StrictRelativeRegex}\\s+({HolidayList1}|{HolidayList2}|{HolidayList3}))|(({HolidayList1}|{HolidayList2}|{HolidayList3})(\\s+(of\\s+)?({YearRegex}|{RelativeRegex}\\s+year))?))\\b"
+    public static final String HolidayList4 = "(?<holiday>ramad(h)?an|ram(a)?zan|ramathan|eid al(-|\\s+)adha|eid al(-|\\s+)azha|eidul(-|\\s+)azha|feast of the sacrifice|(islamic|arabic|hijri) new year|eid al(-|\\s+)fitr|festival of breaking the fast)";
+
+    public static final String HolidayRegex = "\\b(({StrictRelativeRegex}\\s+({HolidayList1}|{HolidayList2}|{HolidayList3}|{HolidayList4}))|(({HolidayList1}|{HolidayList2}|{HolidayList3}|{HolidayList4})(\\s+(of\\s+)?({YearRegex}|{RelativeRegex}\\s+year))?))\\b"
             .replace("{HolidayList1}", HolidayList1)
             .replace("{HolidayList2}", HolidayList2)
             .replace("{HolidayList3}", HolidayList3)
+            .replace("{HolidayList4}", HolidayList4)
             .replace("{YearRegex}", YearRegex)
             .replace("{RelativeRegex}", RelativeRegex)
             .replace("{StrictRelativeRegex}", StrictRelativeRegex);
@@ -1372,6 +1375,10 @@ public class EnglishDateTime {
         .put("christmaseve", new String[]{"christmaseve"})
         .put("newyeareve", new String[]{"newyearseve", "newyeareve"})
         .put("juneteenth", new String[]{"juneteenth", "freedomday", "jubileeday"})
+        .put("ramadan", new String[]{"ramadan", "ramazan", "ramzan", "ramadhan", "ramathan"})
+        .put("sacrifice", new String[]{"eidaladha", "eidalazha", "eidulazha", "feastofthesacrifice"})
+        .put("islamicnewyear", new String[]{"islamicnewyear", "hijrinewyear", "arabicnewyear"})
+        .put("eidalfitr", new String[]{"eidalfitr", "festivalofbreakingthefast"})
         .build();
 
     public static final ImmutableMap<String, Integer> WrittenDecades = ImmutableMap.<String, Integer>builder()

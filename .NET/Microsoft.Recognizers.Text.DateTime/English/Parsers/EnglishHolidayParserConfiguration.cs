@@ -57,7 +57,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 .Replace("saint ", "st ")
                 .Replace(" ", string.Empty)
                 .Replace("'", string.Empty)
-                .Replace(".", string.Empty);
+                .Replace(".", string.Empty)
+                .Replace("-", string.Empty);
         }
 
         // @TODO Change to auto-generate.
@@ -116,6 +117,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 { "trinitysunday", TrinitySunday },
                 { "corpuschristi", CorpusChristi },
                 { "juneteenth", Juneteenth },
+                { "ramadan", Ramadan },
+                { "sacrifice", Sacrifice },
+                { "eidalfitr", EidAlFitr },
+                { "islamicnewyear", IslamicNewYear },
             };
         }
 
@@ -205,5 +210,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         private static DateObject CorpusChristi(int year) => EasterDay(year).AddDays(60);
 
+        private static DateObject Ramadan(int year) => HolidayFunctions.IslamicHoliday(year, HolidayFunctions.IslamicHolidayType.Ramadan);
+
+        private static DateObject Sacrifice(int year) => HolidayFunctions.IslamicHoliday(year, HolidayFunctions.IslamicHolidayType.Sacrifice);
+
+        private static DateObject EidAlFitr(int year) => HolidayFunctions.IslamicHoliday(year, HolidayFunctions.IslamicHolidayType.EidAlFitr);
+
+        private static DateObject IslamicNewYear(int year) => HolidayFunctions.IslamicHoliday(year, HolidayFunctions.IslamicHolidayType.NewYear);
     }
 }
