@@ -37,9 +37,9 @@ export namespace PortugueseDateTime {
     export const RelativeMonthRegex = `(?<relmonth>([nd]?es[st]e|pr[óo]ximo|passsado|[uú]ltimo)\\s+m[eê]s)\\b`;
     export const MonthRegex = `(?<month>abr(il)?|ago(sto)?|dez(embro)?|fev(ereiro)?|jan(eiro)?|ju[ln](ho)?|mar([çc]o)?|maio?|nov(embro)?|out(ubro)?|sep?t(embro)?)`;
     export const MonthSuffixRegex = `(?<msuf>((em|no)\\s+|d[eo]\\s+)?(${RelativeMonthRegex}|${MonthRegex}))`;
-    export const DateUnitRegex = `(?<unit>anos?|meses|m[êe]s|semanas?|dias?)\\b`;
+    export const DateUnitRegex = `(?<unit>m[êe]s(?<plural>es)?|(ano|semana|dia)(?<plural>s)?)\\b`;
     export const PastRegex = `(?<past>\\b(passad[ao](s)?|[uú]ltim[oa](s)?|anterior(es)?|h[aá]|pr[ée]vi[oa](s)?)\\b)`;
-    export const FutureRegex = `(?<past>\\b(seguinte(s)?|pr[oó]xim[oa](s)?|dentro\\s+de|em|daqui\\s+a)\\b)`;
+    export const FutureRegex = `(?<past>\\b(seguinte(s)?|pr[oó]xim[oa](s)?|daqui\\s+a)\\b)`;
     export const SimpleCasesRegex = `\\b((desde\\s+[oa]|desde|d[oa])\\s+)?(dia\\s+)?(${DayRegex})\\s*${TillRegex}\\s*(o dia\\s+)?(${DayRegex})\\s+${MonthSuffixRegex}((\\s+|\\s*,\\s*)${YearRegex})?\\b`;
     export const MonthFrontSimpleCasesRegex = `\\b${MonthSuffixRegex}\\s+((desde\\s+[oa]|desde|d[oa])\\s+)?(dia\\s+)?(${DayRegex})\\s*${TillRegex}\\s*(${DayRegex})((\\s+|\\s*,\\s*)${YearRegex})?\\b`;
     export const MonthFrontBetweenRegex = `\\b${MonthSuffixRegex}\\s+((entre|entre\\s+[oa]s?)\\s+)(dias?\\s+)?(${DayRegex})\\s*${RangeConnectorRegex}\\s*(${DayRegex})((\\s+|\\s*,\\s*)${YearRegex})?\\b`;
@@ -61,9 +61,11 @@ export namespace PortugueseDateTime {
     export const MonthOfRegex = `(mes)(\\s*)((do|da|de))`;
     export const RangeUnitRegex = `\\b(?<unit>anos?|meses|m[êe]s|semanas?)\\b`;
     export const BeforeAfterRegex = `^[.]`;
+    export const UpcomingPrefixRegex = `.^`;
+    export const NextPrefixRegex = `(pr[oó]xim[oa]s?|seguinte|${UpcomingPrefixRegex})\\b`;
     export const InConnectorRegex = `\\b(em)\\b`;
     export const SinceYearSuffixRegex = `^[.]`;
-    export const WithinNextPrefixRegex = `^[.]`;
+    export const WithinNextPrefixRegex = `\\b(dentro\\s+d(e|as)(\\s+(?<next>${NextPrefixRegex}))?)\\b`;
     export const TodayNowRegex = `\\b(hoje|agora)\\b`;
     export const CenturySuffixRegex = `^[.]`;
     export const FromRegex = `((desde|de)(\\s*a(s)?)?)$`;
@@ -152,7 +154,7 @@ export namespace PortugueseDateTime {
     export const PureNumBetweenAnd = `(entre\\s+((a|as)?\\s+)?)(${BaseDateTime.HourRegex}|${TimeHourNumRegex})(\\s*(?<leftDesc>${DescRegex}))?\\s*e\\s*(a(s)?\\s+)?(${BaseDateTime.HourRegex}|${TimeHourNumRegex})\\s*(?<rightDesc>${PmRegex}|${AmRegex}|${DescRegex})?`;
     export const SpecificTimeFromTo = `^[.]`;
     export const SpecificTimeBetweenAnd = `^[.]`;
-    export const TimeUnitRegex = `(?<unit>horas?|h|minutos?|mins?|segundos?|se[cg]s?)\\b`;
+    export const TimeUnitRegex = `(?<unit>(hora|minuto|min|segundo|se[cg])(?<plural>s)?|h)\\b`;
     export const TimeFollowedUnit = `^\\s*${TimeUnitRegex}`;
     export const TimeNumberCombinedWithUnit = `\\b(?<num>\\d+(\\,\\d*)?)\\s*${TimeUnitRegex}`;
     export const DateTimePeriodNumberCombinedWithUnit = `\\b(?<num>\\d+(\\.\\d*)?)\\s*${TimeUnitRegex}`;
@@ -214,14 +216,13 @@ export namespace PortugueseDateTime {
     export const TimeTokenPrefix = `as `;
     export const TokenBeforeDate = `o `;
     export const TokenBeforeTime = `as `;
-    export const UpcomingPrefixRegex = `.^`;
-    export const NextPrefixRegex = `(pr[oó]xim[oa]|seguinte|${UpcomingPrefixRegex})\\b`;
     export const PastPrefixRegex = `.^`;
-    export const PreviousPrefixRegex = `([uú]ltim[oa]|${PastPrefixRegex})\\b`;
+    export const PreviousPrefixRegex = `([uú]ltim[oa]s?|${PastPrefixRegex})\\b`;
     export const ThisPrefixRegex = `([nd]?es[st][ea])\\b`;
     export const RelativeDayRegex = `^[\\.]`;
     export const RestOfDateRegex = `^[\\.]`;
-    export const RelativeDurationUnitRegex = `^[\\.]`;
+    export const DurationUnitRegex = `(?<unit>${DateUnitRegex}|${TimeUnitRegex}|noites?)\\b`;
+    export const RelativeDurationUnitRegex = `(?:(?<=(${NextPrefixRegex}|${PreviousPrefixRegex}|${ThisPrefixRegex})\\s+)(${DurationUnitRegex}))`;
     export const ReferenceDatePeriodRegex = `^[.]`;
     export const FromToRegex = `\\b(from).+(to)\\b.+`;
     export const SingleAmbiguousMonthRegex = `^(the\\s+)?(may|march)$`;
@@ -231,7 +232,6 @@ export namespace PortugueseDateTime {
     export const SetWeekDayRegex = `^[\\.]`;
     export const NightRegex = `\\b(meia noite|noite|de noite)\\b`;
     export const CommonDatePrefixRegex = `\\b(dia)\\s+$`;
-    export const DurationUnitRegex = `^[\\.]`;
     export const DurationConnectorRegex = `^[.]`;
     export const CenturyRegex = `^[.]`;
     export const DecadeRegex = `^[.]`;
@@ -240,7 +240,7 @@ export namespace PortugueseDateTime {
     export const YearSuffix = `((,|\\sde)?\\s*(${YearRegex}|${FullTextYearRegex}))`;
     export const SuffixAfterRegex = `^[.]`;
     export const YearPeriodRegex = `^[.]`;
-    export const FutureSuffixRegex = `^[.]`;
+    export const FutureSuffixRegex = `\\b(seguinte(s)?|pr[oó]xim[oa](s)?|no\\s+futuro)\\b`;
     export const WrittenDecades: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
     export const SpecialDecadeCases: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
     export const DefaultLanguageFallback = `DMY`;

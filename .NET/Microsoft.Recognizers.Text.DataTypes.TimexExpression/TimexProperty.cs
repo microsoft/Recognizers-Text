@@ -200,7 +200,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
         {
             foreach (var item in source)
             {
-                if (item.Value.Equals(string.Empty))
+                if (string.IsNullOrEmpty(item.Value))
                 {
                     continue;
                 }

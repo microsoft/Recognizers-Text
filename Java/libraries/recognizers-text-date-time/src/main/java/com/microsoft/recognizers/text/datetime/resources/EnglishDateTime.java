@@ -143,7 +143,7 @@ public class EnglishDateTime {
             .replace("{RelativeMonthRegex}", RelativeMonthRegex)
             .replace("{WrittenMonthRegex}", WrittenMonthRegex);
 
-    public static final String DateUnitRegex = "(?<unit>decades?|years?|months?|weeks?|(?<business>(business\\s+|week\\s*))?days?|fortnights?|weekends?|(?<=\\s+\\d{1,4})[ymwd])\\b";
+    public static final String DateUnitRegex = "(?<unit>(decade|year|month|week|(?<business>(business\\s+|week\\s*))?day|fortnight|weekend)(?<plural>s)?|(?<=\\s+\\d{1,4})[ymwd])\\b";
 
     public static final String DateTokenPrefix = "on ";
 
@@ -500,7 +500,7 @@ public class EnglishDateTime {
     public static final String IshRegex = "\\b({BaseDateTime.HourRegex}(-|——)?ish|noon(ish)?)\\b"
             .replace("{BaseDateTime.HourRegex}", BaseDateTime.HourRegex);
 
-    public static final String TimeUnitRegex = "([^a-z]{1,}|\\b)(?<unit>h(ou)?rs?|h|min(ute)?s?|sec(ond)?s?)\\b";
+    public static final String TimeUnitRegex = "([^a-z]{1,}|\\b)(?<unit>(h(ou)?r|min(ute)?|sec(ond)?)(?<plural>s)?|h)\\b";
 
     public static final String RestrictedTimeUnitRegex = "(?<unit>hour|minute)\\b";
 
@@ -638,7 +638,7 @@ public class EnglishDateTime {
     public static final String UnspecificTimePeriodRegex = "({MealTimeRegex})"
             .replace("{MealTimeRegex}", MealTimeRegex);
 
-    public static final String TimeOfDayRegex = "\\b(?<timeOfDay>((((in\\s+the\\s+)?{LaterEarlyRegex}?(in(\\s+the)?\\s+)?(morning|afternoon|night|evening)))|{MealTimeRegex}|(((in\\s+(the)?\\s+)?)(daytime|business\\s+hour)))s?)\\b"
+    public static final String TimeOfDayRegex = "\\b(?<timeOfDay>((((in\\s+the\\s+)?{LaterEarlyRegex}?(in(\\s+the)?\\s+)?(morning|afternoon|night(-?time)?|evening)))|{MealTimeRegex}|(((in\\s+(the)?\\s+)?)(daytime|business\\s+hour)))s?)\\b"
             .replace("{LaterEarlyRegex}", LaterEarlyRegex)
             .replace("{MealTimeRegex}", MealTimeRegex);
 
@@ -1427,6 +1427,8 @@ public class EnglishDateTime {
     public static final List<String> DaytimeTermList = Arrays.asList("daytime");
 
     public static final List<String> NightTermList = Arrays.asList("night");
+
+    public static final List<String> NighttimeTermList = Arrays.asList("nighttime", "night-time");
 
     public static final List<String> SameDayTerms = Arrays.asList("today", "otd");
 
