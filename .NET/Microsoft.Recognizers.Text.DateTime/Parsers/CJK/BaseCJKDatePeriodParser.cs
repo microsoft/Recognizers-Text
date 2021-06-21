@@ -689,15 +689,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         DateTimeFormatUtil.LuisDate(-1, endMonth, 1);*/
 
                     // If the year is not specified, the combined range timex will use fuzzy years.
-                    if (!hasYear)
-                    {
-                        ret.Timex = TimexUtility.GenerateDatePeriodTimex(beginDateForFutureResolution, endDateForFutureResolution, DatePeriodTimexType.ByMonth, UnspecificDateTimeTerms.NonspecificYear);
-                    }
-                    else
-                    {
-                        ret.Timex = TimexUtility.GenerateDatePeriodTimex(beginDateForFutureResolution, endDateForFutureResolution, DatePeriodTimexType.ByMonth, beginDateForPastResolution, endDateForPastResolution);
-                    }
-
+                    ret.Timex = TimexUtility.GenerateDatePeriodTimex(beginDateForFutureResolution, endDateForFutureResolution, DatePeriodTimexType.ByMonth, beginDateForPastResolution, endDateForPastResolution, hasYear);
                     ret.PastValue = new Tuple<DateObject, DateObject>(beginDateForPastResolution, endDateForPastResolution);
                     ret.FutureValue = new Tuple<DateObject, DateObject>(beginDateForFutureResolution, endDateForFutureResolution);
                     ret.Success = true;
