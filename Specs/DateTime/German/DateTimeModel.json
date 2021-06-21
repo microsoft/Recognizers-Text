@@ -4607,5 +4607,181 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Ich bin geboren in dem Jahr.",
+    "Context": {
+      "ReferenceDateTime": "2019-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "dem jahr",
+        "Start": 19,
+        "End": 26,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019",
+              "type": "daterange",
+              "start": "2019-01-01",
+              "end": "2020-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Das Jahr hatte Höhen und Tiefen.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "das jahr",
+        "Start": 0,
+        "End": 7,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016",
+              "type": "daterange",
+              "start": "2016-01-01",
+              "end": "2017-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Mit dem Jahr 2009 war ich zufrieden.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "jahr 2009",
+        "Start": 8,
+        "End": 16,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2009",
+              "type": "daterange",
+              "start": "2009-01-01",
+              "end": "2010-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Publikationen aus dem Jahr 2012.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "jahr 2012",
+        "Start": 22,
+        "End": 30,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2012",
+              "type": "daterange",
+              "start": "2012-01-01",
+              "end": "2013-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Diese Webseite gibt es seit dem Jahr 2001.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "seit dem jahr 2001",
+        "Start": 23,
+        "End": 40,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2001",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "start": "2001-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "für das jahr 2010 sind wieder verschiedene ausstellungen und projekte geplant.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "jahr 2010",
+        "Start": 8,
+        "End": 16,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2010",
+              "type": "daterange",
+              "start": "2010-01-01",
+              "end": "2011-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Es wurde zum Film des Jahres gekürt.",
+    "Context": {
+      "ReferenceDateTime": "2021-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "des jahres",
+        "Start": 18,
+        "End": 27,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021",
+              "type": "daterange",
+              "start": "2021-01-01",
+              "end": "2022-01-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
