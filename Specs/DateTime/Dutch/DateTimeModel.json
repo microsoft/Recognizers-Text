@@ -10588,12 +10588,12 @@
     "Context": {
       "ReferenceDateTime": "2019-03-28T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "9.00",
-        "Start": 10,
+        "Text": "om 9.00",
+        "Start": 7,
         "End": 13,
         "TypeName": "datetimeV2.time",
         "Resolution": {
@@ -10613,8 +10613,8 @@
     "Context": {
       "ReferenceDateTime": "2019-03-28T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "morgen om 8.45",
@@ -10638,8 +10638,8 @@
     "Context": {
       "ReferenceDateTime": "2019-03-10T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "tijdens twee jaar sinds 2011",
@@ -10663,8 +10663,8 @@
     "Context": {
       "ReferenceDateTime": "2019-03-10T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "tijdens twee weken sinds het jaar 2011",
@@ -10688,8 +10688,8 @@
     "Context": {
       "ReferenceDateTime": "2019-03-10T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "voorafgaand aan het jaar 2019",
@@ -10715,8 +10715,8 @@
     "Context": {
       "ReferenceDateTime": "2019-04-15T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "woensdag 4 uur",
@@ -10756,17 +10756,16 @@
       "ReferenceDateTime": "2019-04-22T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "15.00 of later",
-        "Start": 14,
+        "Text": "om 15.00 of later",
+        "Start": 11,
         "End": 27,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
           "values": [
             {
-              "timex": "T15",
+              "timex": "T15:00",
               "Mod": "since",
               "type": "timerange",
               "start": "15:00:00",
@@ -10783,24 +10782,23 @@
       "ReferenceDateTime": "2019-04-22T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "15.00 uur of later op maandag",
-        "Start": 14,
+        "Text": "om 15.00 uur of later op maandag",
+        "Start": 11,
         "End": 42,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
             {
-              "timex": "XXXX-WXX-1T15",
+              "timex": "XXXX-WXX-1T15:00",
               "Mod": "since",
               "type": "datetimerange",
               "start": "2019-04-15 15:00:00",
               "sourceEntity": "datetimepoint"
             },
             {
-              "timex": "XXXX-WXX-1T15",
+              "timex": "XXXX-WXX-1T15:00",
               "Mod": "since",
               "type": "datetimerange",
               "start": "2019-04-22 15:00:00",
@@ -10816,18 +10814,18 @@
     "Context": {
       "ReferenceDateTime": "2019-04-19T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "9.00",
-        "Start": 10,
+        "Text": "om 9.00",
+        "Start": 7,
         "End": 13,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
             {
-              "timex": "T09",
+              "timex": "T09:00",
               "type": "time",
               "value": "09:00:00"
             }
@@ -10842,7 +10840,6 @@
       "ReferenceDateTime": "2019-04-25T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "achttiende van maart half tien",
@@ -10882,7 +10879,6 @@
       "ReferenceDateTime": "2019-04-25T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "tweeëntwintig februari",
@@ -10912,7 +10908,6 @@
       "ReferenceDateTime": "2019-04-25T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "tweeëntwintig februari 3.30",
@@ -10951,8 +10946,8 @@
     "Context": {
       "ReferenceDateTime": "2019-04-24T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "beginnend 7 januari",
@@ -10985,13 +10980,13 @@
     "Context": {
       "ReferenceDateTime": "2019-04-24T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "beginnend op 7 januari",
-        "Start": -1,
-        "End": 20,
+        "Text": "startend op 7 januari",
+        "Start": 55,
+        "End": 75,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -11020,7 +11015,6 @@
       "ReferenceDateTime": "2019-04-25T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "tweeëntwintig februari om 3.30",
@@ -11060,11 +11054,10 @@
       "ReferenceDateTime": "2019-04-25T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "22e februari 3.30",
-        "Start": 25,
+        "Text": "de 22e februari 3.30",
+        "Start": 22,
         "End": 41,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
@@ -11099,8 +11092,8 @@
     "Context": {
       "ReferenceDateTime": "2019-04-24T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "beginnend 7 januari",
@@ -11133,8 +11126,8 @@
     "Context": {
       "ReferenceDateTime": "2019-04-24T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "beginnend op 7 januari",
@@ -11167,8 +11160,8 @@
     "Context": {
       "ReferenceDateTime": "2019-04-25T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "vrijdag de vijftiende maart negen uur 's ochtends",
@@ -11198,7 +11191,6 @@
       "ReferenceDateTime": "2019-04-25T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "januari de eerste tweeduizend en tweeëndertig",
@@ -11222,8 +11214,8 @@
     "Context": {
       "ReferenceDateTime": "2018-11-21T12:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "Woensd. 26 okt 15:50:06 2016",
@@ -11279,7 +11271,6 @@
       "ReferenceDateTime": "2019-04-23T12:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "tussen nu en november de 15e",
@@ -11305,7 +11296,6 @@
       "ReferenceDateTime": "2019-04-25T12:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "tussen 22 jan en nu",
@@ -11330,8 +11320,8 @@
     "Context": {
       "ReferenceDateTime": "2019-05-09T12:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "tussen nu en de 21e van mei",
@@ -11372,7 +11362,6 @@
       "ReferenceDateTime": "2019-05-16T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "van april tot juni in 2017",
@@ -11398,7 +11387,6 @@
       "ReferenceDateTime": "2019-05-16T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "van april in 2016 tot juni in 2017",
@@ -11424,7 +11412,6 @@
       "ReferenceDateTime": "2019-05-22T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "van januari tot april 2015",
@@ -11449,8 +11436,8 @@
     "Context": {
       "ReferenceDateTime": "2019-05-20T12:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "deze vrijdag 7.6",
@@ -11474,8 +11461,8 @@
     "Context": {
       "ReferenceDateTime": "2019-05-20T12:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "5.12",
@@ -11500,15 +11487,14 @@
     ]
   },
   {
-    "Input": "Deze taak moet op vrijdag 5/12 gedaan worden",
+    "Input": "Deze taak moet op vrijdag 12/5 gedaan worden",
     "Context": {
       "ReferenceDateTime": "2019-05-20T12:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "vrijdag 5/12",
+        "Text": "vrijdag 12/5",
         "Start": 18,
         "End": 29,
         "TypeName": "datetimeV2.date",
@@ -11530,15 +11516,15 @@
     ]
   },
   {
-    "Input": "Deze taak moet deze vrijdag 5/12 gedaan worden",
+    "Input": "Deze taak moet deze vrijdag 12/5 gedaan worden",
     "Context": {
       "ReferenceDateTime": "2019-05-20T12:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "deze vrijdag 5/12",
+        "Text": "deze vrijdag 12/5",
         "Start": 15,
         "End": 31,
         "TypeName": "datetimeV2.date",
@@ -11555,15 +11541,15 @@
     ]
   },
   {
-    "Input": "Deze taak moet volgende vrijdag 5/12 gedaan worden",
+    "Input": "Deze taak moet volgende vrijdag 12/5 gedaan worden",
     "Context": {
       "ReferenceDateTime": "2019-05-20T12:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "volgende vrijdag 5/12",
+        "Text": "volgende vrijdag 12/5",
         "Start": 15,
         "End": 35,
         "TypeName": "datetimeV2.date",
@@ -11580,15 +11566,14 @@
     ]
   },
   {
-    "Input": "Deze taak moet deze 5/12 gedaan worden",
+    "Input": "Deze taak moet deze 12/5 gedaan worden",
     "Context": {
       "ReferenceDateTime": "2019-05-20T12:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "deze 5/12",
+        "Text": "deze 12/5",
         "Start": 15,
         "End": 23,
         "TypeName": "datetimeV2.date",
@@ -11605,15 +11590,14 @@
     ]
   },
   {
-    "Input": "Deze taak moet volgende 5/12 gedaan worden",
+    "Input": "Deze taak moet volgende 12/5 gedaan worden",
     "Context": {
       "ReferenceDateTime": "2019-05-20T12:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "volgende 5/12",
+        "Text": "volgende 12/5",
         "Start": 15,
         "End": 27,
         "TypeName": "datetimeV2.date",
@@ -11635,11 +11619,10 @@
       "ReferenceDateTime": "2019-05-20T12:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "de volgende 6e april",
-        "Start": 15,
+        "Text": "volgende 6e april",
+        "Start": 18,
         "End": 34,
         "TypeName": "datetimeV2.date",
         "Resolution": {
@@ -11659,8 +11642,8 @@
     "Context": {
       "ReferenceDateTime": "2019-05-20T12:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "Van deze 5/12 tot de volgende 5/19",
@@ -11685,8 +11668,8 @@
     "Context": {
       "ReferenceDateTime": "2019-05-20T12:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "Van deze vrijdag 5/12 tot volgende zondag 5/20",
@@ -11712,7 +11695,6 @@
       "ReferenceDateTime": "2019-05-22T12:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "3/jan",
@@ -11742,7 +11724,6 @@
       "ReferenceDateTime": "2019-05-23T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": []
   },
   {
@@ -11751,7 +11732,6 @@
       "ReferenceDateTime": "2019-05-23T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": []
   },
   {
@@ -11759,8 +11739,8 @@
     "Context": {
       "ReferenceDateTime": "2019-05-23T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "90s",
@@ -11791,8 +11771,8 @@
     "Context": {
       "ReferenceDateTime": "2019-05-23T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "na het jaar 2020",
@@ -11818,8 +11798,8 @@
     "Context": {
       "ReferenceDateTime": "2019-05-27T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "30 minuten",
@@ -11860,7 +11840,6 @@
       "ReferenceDateTime": "2019-05-27T12:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "30 minuten later",
@@ -11885,7 +11864,6 @@
       "ReferenceDateTime": "2019-05-30T12:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "26 juni tot 28 juni in 2020",
@@ -11911,7 +11889,6 @@
       "ReferenceDateTime": "2019-05-30T12:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "26 juni in 2019 tot 28 juni in 2020",
@@ -11937,7 +11914,6 @@
       "ReferenceDateTime": "2019-05-30T12:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "28 juni in 2020",
@@ -11962,7 +11938,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "black friday 2010",
@@ -11986,8 +11961,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "Dag van de Aarde 2010",
@@ -12012,10 +11987,9 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "Pasen 2018",
+        "Text": "pasen 2018",
         "Start": 20,
         "End": 29,
         "TypeName": "datetimeV2.date",
@@ -12037,7 +12011,6 @@
       "ReferenceDateTime": "2019-05-07T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "maandag de zevenentwintigste om zes uur 's avonds",
@@ -12062,7 +12035,6 @@
       "ReferenceDateTime": "2019-06-13T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "maandag de vierentwintigste zes uur 's avonds",
@@ -12086,8 +12058,8 @@
     "Context": {
       "ReferenceDateTime": "2019-06-11T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "Q1-2017",
@@ -12112,8 +12084,8 @@
     "Context": {
       "ReferenceDateTime": "2019-06-11T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "Q1 2017",
@@ -12138,8 +12110,8 @@
     "Context": {
       "ReferenceDateTime": "2019-06-11T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "H2 2019",
@@ -12164,8 +12136,8 @@
     "Context": {
       "ReferenceDateTime": "2019-06-11T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "H2-2019",
@@ -12190,8 +12162,8 @@
     "Context": {
       "ReferenceDateTime": "2019-06-11T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "van Q1-2017 tot Q1-2018",
@@ -12216,8 +12188,8 @@
     "Context": {
       "ReferenceDateTime": "2019-06-11T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "van Q1 2017 tot Q1 2018",
@@ -12242,8 +12214,8 @@
     "Context": {
       "ReferenceDateTime": "2019-06-11T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "van Q1 van 2017 - Q3 van 2018",
@@ -12269,11 +12241,10 @@
       "ReferenceDateTime": "2019-06-03T12:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "De eerste januari 2000",
-        "Start": 0,
+        "Text": "eerste januari 2000",
+        "Start": 3,
         "End": 21,
         "TypeName": "datetimeV2.date",
         "Resolution": {
@@ -12294,11 +12265,10 @@
       "ReferenceDateTime": "2019-06-03T12:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "De eerste januari 2012",
-        "Start": 0,
+        "Text": "eerste januari 2012",
+        "Start": 3,
         "End": 21,
         "TypeName": "datetimeV2.date",
         "Resolution": {
@@ -12319,8 +12289,8 @@
       "ReferenceDateTime": "2019-06-03T12:00:00"
     },
     "Comment": "Not supported as currently a cutoff on year by itself is needed for legacy reasons.",
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "2150",
@@ -12346,11 +12316,10 @@
       "ReferenceDateTime": "2013-06-03T12:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "13.00 28 februari 2013",
-        "Start": 19,
+        "Text": "om 13.00 28 februari 2013",
+        "Start": 16,
         "End": 40,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
@@ -12370,8 +12339,8 @@
     "Context": {
       "ReferenceDateTime": "2019-06-18T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "dit schooljaar",
@@ -12395,8 +12364,8 @@
     "Context": {
       "ReferenceDateTime": "2019-06-18T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "vorig fiscaal jaar",
@@ -12420,8 +12389,8 @@
     "Context": {
       "ReferenceDateTime": "2019-06-18T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "dit kalenderjaar",
@@ -12446,8 +12415,8 @@
     "Context": {
       "ReferenceDateTime": "2019-06-18T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "fiscale jaar 2008",
@@ -12471,8 +12440,8 @@
     "Context": {
       "ReferenceDateTime": "2019-06-18T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "schooljaar 2008",
@@ -12496,8 +12465,8 @@
     "Context": {
       "ReferenceDateTime": "2019-06-18T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "kalenderjaar 2008",
@@ -12522,8 +12491,8 @@
     "Context": {
       "ReferenceDateTime": "2019-06-18T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "huidige jaar 2008",
@@ -12548,8 +12517,8 @@
     "Context": {
       "ReferenceDateTime": "2019-06-18T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "schooljaar 2008",
@@ -12573,8 +12542,8 @@
     "Context": {
       "ReferenceDateTime": "2019-06-18T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "fiscale jaar",
@@ -12598,8 +12567,8 @@
     "Context": {
       "ReferenceDateTime": "2019-06-18T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "schooljaar '18",
@@ -12623,8 +12592,8 @@
     "Context": {
       "ReferenceDateTime": "2019-06-18T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "huidige jaar '18",
@@ -12649,8 +12618,8 @@
     "Context": {
       "ReferenceDateTime": "2019-06-28T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "St. Patrick's Day 2020",
@@ -12675,7 +12644,6 @@
       "ReferenceDateTime": "2019-06-28T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "half zes morgenavond",
@@ -12700,7 +12668,6 @@
       "ReferenceDateTime": "2019-06-28T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "van half vier tot half vijf",
@@ -12732,7 +12699,6 @@
       "ReferenceDateTime": "2019-06-28T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "van half drie tot kwart voor drie",
@@ -12764,7 +12730,6 @@
       "ReferenceDateTime": "2019-06-28T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "=2019",
@@ -12789,8 +12754,8 @@
     "Context": {
       "ReferenceDateTime": "2019-06-28T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "> = 2019",
@@ -12816,8 +12781,8 @@
     "Context": {
       "ReferenceDateTime": "2019-06-28T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "< =2019",
@@ -12843,8 +12808,8 @@
     "Context": {
       "ReferenceDateTime": "2019-07-04T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "dit kwartaal",
@@ -12869,8 +12834,8 @@
     "Context": {
       "ReferenceDateTime": "2019-07-04T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "huidig kwartaal",
@@ -12895,8 +12860,8 @@
     "Context": {
       "ReferenceDateTime": "2019-07-04T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "afgelopen kwartaal",
@@ -12921,8 +12886,8 @@
     "Context": {
       "ReferenceDateTime": "2019-01-28T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "afgelopen kwartaal",
@@ -12947,8 +12912,8 @@
     "Context": {
       "ReferenceDateTime": "2019-07-04T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "volgende kwartaal",
@@ -12973,8 +12938,8 @@
     "Context": {
       "ReferenceDateTime": "2019-12-28T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "volgende kwartaal",
@@ -12999,8 +12964,8 @@
     "Context": {
       "ReferenceDateTime": "2019-07-04T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "komende kwartaal",
@@ -13025,8 +12990,8 @@
     "Context": {
       "ReferenceDateTime": "2019-07-04T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "aankomende kwartaal",
@@ -13051,8 +13016,8 @@
     "Context": {
       "ReferenceDateTime": "2019-07-04T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "voorafgaande kwartaal",
@@ -13078,11 +13043,10 @@
       "ReferenceDateTime": "2019-07-04T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "11.30 tot 12.30 27e van december",
-        "Start": 20,
+        "Text": "van 11.30 tot 12.30 27e van december",
+        "Start": 16,
         "End": 51,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
@@ -13110,7 +13074,6 @@
       "ReferenceDateTime": "2019-07-04T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "12.30 de 27e van december",
@@ -13150,7 +13113,6 @@
       "ReferenceDateTime": "2019-07-04T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "27 december",
@@ -13180,7 +13142,6 @@
       "ReferenceDateTime": "2019-07-04T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "30 december",
@@ -13210,7 +13171,6 @@
       "ReferenceDateTime": "2019-07-11T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "15.00",
@@ -13220,7 +13180,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "T15",
+              "timex": "T15:00",
               "type": "time",
               "value": "15:00:00"
             }
@@ -13250,8 +13210,8 @@
     "Context": {
       "ReferenceDateTime": "2019-07-11T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "deze week",
@@ -13291,8 +13251,8 @@
     "Context": {
       "ReferenceDateTime": "2019-07-11T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "deze week",
@@ -13332,8 +13292,8 @@
     "Context": {
       "ReferenceDateTime": "2019-07-11T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "week 10",
@@ -13373,8 +13333,8 @@
     "Context": {
       "ReferenceDateTime": "2019-07-11T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "week 10",
@@ -13419,8 +13379,8 @@
     "Context": {
       "ReferenceDateTime": "2019-07-17T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "namiddag",
@@ -13446,8 +13406,8 @@
     "Context": {
       "ReferenceDateTime": "2019-07-17T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "later in de middag",
@@ -13474,11 +13434,10 @@
       "ReferenceDateTime": "2019-07-17T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "vroege ochtend",
-        "Start": 19,
+        "Text": "in de vroege ochtend",
+        "Start": 13,
         "End": 32,
         "TypeName": "datetimeV2.timerange",
         "Resolution": {
@@ -13500,8 +13459,8 @@
     "Context": {
       "ReferenceDateTime": "2019-07-17T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "vroeg in de ochtend",
@@ -13527,8 +13486,8 @@
     "Context": {
       "ReferenceDateTime": "2019-07-17T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "volgende week",
@@ -13570,8 +13529,8 @@
     "Context": {
       "ReferenceDateTime": "2019-07-17T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "volgende week",
@@ -13613,8 +13572,8 @@
     "Context": {
       "ReferenceDateTime": "2019-07-17T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "volgende week",
@@ -13657,8 +13616,8 @@
       "ReferenceDateTime": "2018-11-28T12:00:00"
     },
     "Comment": "Not supported as the TimeZone is not enabled for now",
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "Pacifische tijdzone",
@@ -13683,8 +13642,8 @@
       "ReferenceDateTime": "2018-11-28T12:00:00"
     },
     "Comment": "Not supported as the TimeZone is not enabled for now",
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "13.00 Mountain tijdzone",
@@ -13711,12 +13670,12 @@
     "Context": {
       "ReferenceDateTime": "2019-07-17T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "avond van 4 mrt",
-        "Start": 30,
+        "Text": "de avond van 4 mrt",
+        "Start": 27,
         "End": 44,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
@@ -13743,8 +13702,8 @@
     "Context": {
       "ReferenceDateTime": "2019-06-17T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "dinsd. de 4e 19.00",
@@ -13769,7 +13728,6 @@
       "ReferenceDateTime": "2019-06-10T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "dinsdag de elfde",
@@ -13794,7 +13752,6 @@
       "ReferenceDateTime": "2019-07-19T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "woensdag de eenendertigste",
@@ -13819,7 +13776,6 @@
       "ReferenceDateTime": "2019-07-30T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "deze middag",
@@ -13844,8 +13800,8 @@
     "Context": {
       "ReferenceDateTime": "2019-07-30T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "deze middag",
@@ -13871,7 +13827,6 @@
       "ReferenceDateTime": "2019-07-30T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "deze middag",
@@ -13897,7 +13852,6 @@
       "ReferenceDateTime": "2019-07-30T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "op volgende week dinsdag",
@@ -13921,8 +13875,8 @@
     "Context": {
       "ReferenceDateTime": "2019-07-30T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "dinsdag van vorige week",
@@ -13946,8 +13900,8 @@
     "Context": {
       "ReferenceDateTime": "2019-08-01T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "later deze middag",
@@ -13973,8 +13927,8 @@
     "Context": {
       "ReferenceDateTime": "2019-08-01T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "later deze ochtend",
@@ -14000,8 +13954,8 @@
     "Context": {
       "ReferenceDateTime": "2019-08-01T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "vroeg deze avond",
@@ -14028,7 +13982,6 @@
       "ReferenceDateTime": "2019-07-30T08:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "van volgende vrijdag tot 1 okt. 2020",
@@ -14053,8 +14006,8 @@
     "Context": {
       "ReferenceDateTime": "2019-08-01T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "",
@@ -14080,7 +14033,6 @@
       "ReferenceDateTime": "2018-01-07T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": []
   },
   {
@@ -14089,7 +14041,6 @@
       "ReferenceDateTime": "2018-01-07T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": []
   },
   {
@@ -14098,7 +14049,6 @@
       "ReferenceDateTime": "2019-08-08T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": []
   },
   {
@@ -14106,8 +14056,8 @@
     "Context": {
       "ReferenceDateTime": "2019-08-08T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "3maart",
@@ -14152,8 +14102,8 @@
     "Context": {
       "ReferenceDateTime": "2019-08-12T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "3 jaar",
@@ -14178,7 +14128,6 @@
       "ReferenceDateTime": "2019-08-12T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "in 3 jaar",
@@ -14202,8 +14151,8 @@
     "Context": {
       "ReferenceDateTime": "2019-08-12T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "voor de eenendertigste dag van de maand",
@@ -14230,7 +14179,6 @@
       "ReferenceDateTime": "2019-09-05T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "van volgende maandag tot vrijdag",
@@ -14256,8 +14204,8 @@
     "Context": {
       "ReferenceDateTime": "2019-09-05T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "augustus 2019",
@@ -14283,8 +14231,8 @@
     "Context": {
       "ReferenceDateTime": "2019-09-05T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": []
   },
   {
@@ -14293,8 +14241,8 @@
     "Context": {
       "ReferenceDateTime": "2019-09-05T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": []
   },
   {
@@ -14303,7 +14251,6 @@
       "ReferenceDateTime": "2020-07-30T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "30 feb 2019",
@@ -14328,7 +14275,6 @@
       "ReferenceDateTime": "2019-01-30T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "30 feb",
@@ -14353,7 +14299,6 @@
       "ReferenceDateTime": "2019-07-30T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "30 feb",
@@ -14378,7 +14323,6 @@
       "ReferenceDateTime": "2019-07-30T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "30 feb 2019 17.20",
@@ -14403,7 +14347,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "eenmaal per week",
@@ -14428,7 +14371,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "eenmaal per jaar",
@@ -14452,13 +14394,13 @@
     "Context": {
       "ReferenceDateTime": "2019-09-09T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "30 minuten ",
+        "Text": "30 minute",
         "Start": 73,
-        "End": 83,
+        "End": 82,
         "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
@@ -14510,7 +14452,6 @@
       "ReferenceDateTime": "2019-09-09T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "vorige week",
@@ -14536,7 +14477,6 @@
       "ReferenceDateTime": "2019-09-09T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": []
   },
   {
@@ -14544,8 +14484,8 @@
     "Context": {
       "ReferenceDateTime": "2019-09-09T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "vorige week",
@@ -14571,7 +14511,6 @@
       "ReferenceDateTime": "2019-09-09T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "½ uur",
@@ -14596,7 +14535,6 @@
       "ReferenceDateTime": "2019-09-09T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": []
   },
   {
@@ -14604,8 +14542,8 @@
     "Context": {
       "ReferenceDateTime": "2019-09-09T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "een seconde",
@@ -14630,7 +14568,6 @@
       "ReferenceDateTime": "2019-08-24T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "3 dagen vanaf vandaag",
@@ -14655,7 +14592,6 @@
       "ReferenceDateTime": "2019-08-24T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "oktober",
@@ -14686,8 +14622,8 @@
     "Context": {
       "ReferenceDateTime": "2019-09-12T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "na het ontbijt",
@@ -14712,8 +14648,8 @@
     "Context": {
       "ReferenceDateTime": "2019-09-12T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "voor de lunch",
@@ -14738,8 +14674,8 @@
     "Context": {
       "ReferenceDateTime": "2019-09-12T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "rond het avondeten",
@@ -14767,7 +14703,6 @@
       "ReferenceDateTime": "2019-09-12T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": []
   },
   {
@@ -14776,7 +14711,6 @@
       "ReferenceDateTime": "2019-09-12T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "19.00",
@@ -14786,7 +14720,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "T19",
+              "timex": "T19:00",
               "type": "time",
               "value": "19:00:00"
             }
@@ -14801,7 +14735,6 @@
       "ReferenceDateTime": "2019-09-19T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "komende twee dagen",
@@ -14826,12 +14759,12 @@
     "Context": {
       "ReferenceDateTime": "2019-09-19T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": " 01/aug/2019",
-        "Start": 15,
+        "Text": "01/aug/2019",
+        "Start": 16,
         "End": 26,
         "TypeName": "datetimeV2.date",
         "Resolution": {
@@ -14852,7 +14785,6 @@
       "ReferenceDateTime": "2019-09-19T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "01-aug-2019",
@@ -14877,7 +14809,6 @@
       "ReferenceDateTime": "2019-10-14T01:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "van 01-aug-2019 tot vandaag",
@@ -14903,7 +14834,6 @@
       "ReferenceDateTime": "2019-10-14T10:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "01/aug/2019 tot vandaag",
@@ -14929,7 +14859,6 @@
       "ReferenceDateTime": "2019-11-01T15:16:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "30 min later",
@@ -14953,8 +14882,8 @@
     "Context": {
       "ReferenceDateTime": "2019-11-25T17:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "Om de week vrijdag",
@@ -14979,7 +14908,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "driemaandelijkse",
@@ -15003,8 +14931,8 @@
     "Context": {
       "ReferenceDateTime": "2019-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "Q1",
@@ -15072,8 +15000,8 @@
     "Context": {
       "ReferenceDateTime": "2019-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "2019 q1",
@@ -15098,8 +15026,8 @@
     "Context": {
       "ReferenceDateTime": "2019-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "2019-Q1",
@@ -15124,8 +15052,8 @@
     "Context": {
       "ReferenceDateTime": "2019-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "Q3 2019",
@@ -15150,8 +15078,8 @@
     "Context": {
       "ReferenceDateTime": "2019-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "Q1-2019",
@@ -15176,8 +15104,8 @@
     "Context": {
       "ReferenceDateTime": "2019-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "2019 Q3",
@@ -15218,8 +15146,8 @@
     "Context": {
       "ReferenceDateTime": "2019-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "week beginnend op 4 feb",
@@ -15250,8 +15178,8 @@
     "Context": {
       "ReferenceDateTime": "2019-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "de week beginnend 4 februari",
@@ -15282,8 +15210,8 @@
     "Context": {
       "ReferenceDateTime": "2019-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "de week startend 4 februari",
@@ -15314,8 +15242,8 @@
     "Context": {
       "ReferenceDateTime": "2019-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "de week aanvangend 4 februari",
@@ -15346,8 +15274,8 @@
     "Context": {
       "ReferenceDateTime": "2019-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "lunchconcert",
@@ -15372,8 +15300,8 @@
     "Context": {
       "ReferenceDateTime": "2019-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "tijdens lunchtijd",
@@ -15414,11 +15342,10 @@
       "ReferenceDateTime": "2019-12-26T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "om 20.30 vandaag",
-        "Start": 7,
+        "Text": "20.30 vandaag",
+        "Start": 10,
         "End": 22,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
@@ -15439,7 +15366,6 @@
       "ReferenceDateTime": "2019-12-26T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "vandaag om 20.30",
@@ -15464,7 +15390,6 @@
       "ReferenceDateTime": "2019-12-26T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "20.30 vandaag",
@@ -15489,11 +15414,10 @@
       "ReferenceDateTime": "2019-12-26T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "om 20.30 vandaag",
-        "Start": 17,
+        "Text": "20.30 vandaag",
+        "Start": 20,
         "End": 32,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
@@ -15513,8 +15437,8 @@
     "Context": {
       "ReferenceDateTime": "2019-12-26T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "20.10",
@@ -15539,7 +15463,6 @@
       "ReferenceDateTime": "2019-11-07T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "van 26e juni van 2020 tot 28e juni van 2020",
@@ -15564,8 +15487,8 @@
     "Context": {
       "ReferenceDateTime": "2019-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "van de 26e juni van 2020 tot de 28e juni van 2020",
@@ -15591,7 +15514,6 @@
       "ReferenceDateTime": "2019-11-07T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "van 26e juni van 2020 tot 28e van juni 2020",
@@ -15616,8 +15538,8 @@
     "Context": {
       "ReferenceDateTime": "2020-04-24T10:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "eind van 2000",
@@ -15643,8 +15565,8 @@
     "Context": {
       "ReferenceDateTime": "2020-04-24T10:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "midden van 2000",
@@ -15670,8 +15592,8 @@
     "Context": {
       "ReferenceDateTime": "2020-04-24T10:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "begin van 2000",
@@ -15697,8 +15619,8 @@
     "Context": {
       "ReferenceDateTime": "2020-04-27T18:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "sinds het einde van 1989",
@@ -15724,8 +15646,8 @@
     "Context": {
       "ReferenceDateTime": "2020-04-27T18:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "einde van 1989",
@@ -15751,8 +15673,8 @@
     "Context": {
       "ReferenceDateTime": "2020-04-27T18:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "halverwege 1989",
@@ -15779,7 +15701,6 @@
       "ReferenceDateTime": "2020-04-26T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "tussen jan 2019 en vandaag",
@@ -15805,7 +15726,6 @@
       "ReferenceDateTime": "2020-04-26T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "tussen jan 2019 en morgen",
@@ -15831,7 +15751,6 @@
       "ReferenceDateTime": "2020-04-26T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "tussen jan 2019 en nu",
@@ -15857,7 +15776,6 @@
       "ReferenceDateTime": "2020-05-06T18:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "tussen vandaag en morgen",
@@ -15883,7 +15801,6 @@
       "ReferenceDateTime": "2020-05-06T18:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "tussen 22/jan/2019 en gisteren",
@@ -15908,8 +15825,8 @@
     "Context": {
       "ReferenceDateTime": "2020-05-06T18:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "tussen 22/jan/2019 en nu",
@@ -15935,7 +15852,6 @@
       "ReferenceDateTime": "2020-05-14T12:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": []
   },
   {
@@ -15944,7 +15860,6 @@
       "ReferenceDateTime": "2020-05-14T12:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "02-02-2020 - 03-03-2020",
@@ -15970,7 +15885,6 @@
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "1/10-2/11/2017",
@@ -15996,7 +15910,6 @@
       "ReferenceDateTime": "2020-05-14T12:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": []
   },
   {
@@ -16005,7 +15918,6 @@
       "ReferenceDateTime": "2020-05-14T12:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": []
   },
   {
@@ -16014,7 +15926,6 @@
       "ReferenceDateTime": "2020-05-14T12:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": []
   },
   {
@@ -16023,7 +15934,6 @@
       "ReferenceDateTime": "2020-05-14T12:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": []
   },
   {
@@ -16031,8 +15941,8 @@
     "Context": {
       "ReferenceDateTime": "2019-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "1e week van okt. op vrijdag.",
@@ -16061,8 +15971,8 @@
     "Context": {
       "ReferenceDateTime": "2020-05-14T12:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "Dag van de Arbeid",
@@ -16091,12 +16001,12 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "twee dagen",
-        "Start": 20,
+        "Text": "voor twee dagen",
+        "Start": 15,
         "End": 29,
         "TypeName": "datetimeV2.duration",
         "Resolution": {
@@ -16116,12 +16026,12 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "twee nachten",
-        "Start": 20,
+        "Text": "voor twee nachten",
+        "Start": 15,
         "End": 31,
         "TypeName": "datetimeV2.duration",
         "Resolution": {
@@ -16141,12 +16051,12 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "1 nacht",
-        "Start": 20,
+        "Text": "voor 1 nacht",
+        "Start": 15,
         "End": 26,
         "TypeName": "datetimeV2.duration",
         "Resolution": {
@@ -16167,7 +16077,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "vierde juli van 1995",
@@ -16192,7 +16101,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "juni van 1992",
@@ -16218,7 +16126,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "4e juli van 1995",
@@ -16243,7 +16150,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "vierde van juli 1995",
@@ -16268,7 +16174,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "vierde van juli, 1995",
@@ -16293,7 +16198,6 @@
       "ReferenceDateTime": "2020-05-31T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "9 tot 12 juni",
@@ -16325,7 +16229,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "drie maanden",
@@ -16380,8 +16283,8 @@
     "Context": {
       "ReferenceDateTime": "2020-06-12T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "donderdagen om 17.30",
@@ -16405,8 +16308,8 @@
     "Context": {
       "ReferenceDateTime": "2020-06-12T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "juneteenth",
@@ -16527,7 +16430,6 @@
       "ReferenceDateTime": "2020-06-12T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "morgen",
@@ -16568,7 +16470,6 @@
       "ReferenceDateTime": "2020-06-12T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "woensdag om 15.30",
@@ -16597,8 +16498,8 @@
     "Context": {
       "ReferenceDateTime": "2020-06-12T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "halfjaarlijkse",
@@ -16622,8 +16523,8 @@
     "Context": {
       "ReferenceDateTime": "2020-06-12T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "halfjaarlijks",
@@ -16648,7 +16549,6 @@
       "ReferenceDateTime": "2020-06-12T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "volgende week",
@@ -16673,8 +16573,8 @@
     "Context": {
       "ReferenceDateTime": "2020-06-12T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "elke weekdag",
@@ -16699,7 +16599,6 @@
       "ReferenceDateTime": "2020-06-12T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "rest van de week",
@@ -16725,7 +16624,6 @@
       "ReferenceDateTime": "2020-06-12T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "jaarlijks",
@@ -16749,8 +16647,8 @@
     "Context": {
       "ReferenceDateTime": "2020-06-12T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "elk kartaal",
@@ -16775,7 +16673,6 @@
       "ReferenceDateTime": "2020-06-12T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "4e van juli",
@@ -16804,8 +16701,8 @@
     "Context": {
       "ReferenceDateTime": "2020-06-12T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "tweemaandelijkse",
@@ -16844,8 +16741,8 @@
     "Context": {
       "ReferenceDateTime": "2020-06-12T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "elk weekend",
@@ -16869,8 +16766,8 @@
     "Context": {
       "ReferenceDateTime": "2020-06-12T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "elke twee weekenden",
@@ -16894,8 +16791,8 @@
     "Context": {
       "ReferenceDateTime": "2020-06-12T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "drie weekenden",
@@ -16920,7 +16817,6 @@
       "ReferenceDateTime": "2020-06-12T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "het eerste kwartaal van het jaar",
@@ -16952,7 +16848,6 @@
       "ReferenceDateTime": "2020-06-12T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "winter",
@@ -16992,8 +16887,8 @@
     "Context": {
       "ReferenceDateTime": "2020-06-15T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "drie weekenden",
@@ -17018,7 +16913,6 @@
       "ReferenceDateTime": "2020-06-15T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "twee uren",
@@ -17043,7 +16937,6 @@
       "ReferenceDateTime": "2020-06-16T12:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "15.00",
@@ -17053,7 +16946,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "T15",
+              "timex": "T15:00",
               "type": "time",
               "value": "15:00:00"
             }
@@ -17083,8 +16976,8 @@
     "Context": {
       "ReferenceDateTime": "2020-06-16T12:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "vandaag",
@@ -17144,7 +17037,6 @@
       "ReferenceDateTime": "2020-06-16T12:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "25e mei",
@@ -17167,8 +17059,8 @@
         }
       },
       {
-        "Text": "29e",
-        "Start": 54,
+        "Text": "de 29e",
+        "Start": 51,
         "End": 56,
         "TypeName": "datetimeV2.date",
         "Resolution": {
@@ -17187,14 +17079,14 @@
         }
       },
       {
-        "Text": "14.00",
-        "Start": 68,
+        "Text": "om 14.00",
+        "Start": 65,
         "End": 72,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
             {
-              "timex": "T14",
+              "timex": "T14:00",
               "type": "time",
               "value": "14:00:00"
             }
@@ -17223,8 +17115,8 @@
     "Context": {
       "ReferenceDateTime": "2020-06-16T12:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "vandaag",
@@ -17248,8 +17140,8 @@
     "Context": {
       "ReferenceDateTime": "2020-07-01T12:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "vanavond",
@@ -17275,10 +17167,9 @@
       "ReferenceDateTime": "2019-07-12T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "volgende Nieuwjaarsdag",
+        "Text": "volgende nieuwjaarsdag",
         "Start": 14,
         "End": 35,
         "TypeName": "datetimeV2.date",
@@ -17300,10 +17191,9 @@
       "ReferenceDateTime": "2019-03-12T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "laatste Pasen",
+        "Text": "laatste pasen",
         "Start": 15,
         "End": 27,
         "TypeName": "datetimeV2.date",
@@ -17324,8 +17214,8 @@
     "Context": {
       "ReferenceDateTime": "2019-12-26T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "vanavond om 1.00",
@@ -17349,8 +17239,8 @@
     "Context": {
       "ReferenceDateTime": "2019-12-26T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "vanavond om 2.00",
@@ -17375,7 +17265,6 @@
       "ReferenceDateTime": "2019-12-26T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "vanavond rond 19.00",
@@ -17385,7 +17274,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "2019-12-26T19",
+              "timex": "2019-12-26T19:00",
               "type": "datetime",
               "value": "2019-12-26 19:00:00"
             }
@@ -17399,8 +17288,8 @@
     "Context": {
       "ReferenceDateTime": "2019-12-26T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "vanavond rond 3.00",
@@ -17425,10 +17314,9 @@
       "ReferenceDateTime": "2019-02-12T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "voorgaande Pasen",
+        "Text": "voorgaande pasen",
         "Start": 15,
         "End": 30,
         "TypeName": "datetimeV2.date",
@@ -17450,10 +17338,9 @@
       "ReferenceDateTime": "2019-06-12T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "laatste Pasen",
+        "Text": "laatste pasen",
         "Start": 15,
         "End": 27,
         "TypeName": "datetimeV2.date",
@@ -17475,10 +17362,9 @@
       "ReferenceDateTime": "2019-02-12T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "volgende Pasen",
+        "Text": "volgende pasen",
         "Start": 15,
         "End": 28,
         "TypeName": "datetimeV2.date",
@@ -17499,8 +17385,8 @@
     "Context": {
       "ReferenceDateTime": "2019-06-12T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "eropvolgende Pasen",
@@ -17524,8 +17410,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "tegen het eind van deze maand",
@@ -17551,8 +17437,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "voor het eind van dit jaar",
@@ -17579,7 +17465,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "eind dit jaar",
@@ -17605,8 +17490,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "na het begin van maart",
@@ -17639,8 +17524,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "voor het einde van december",
@@ -17673,8 +17558,8 @@
     "Context": {
       "ReferenceDateTime": "2020-07-01T12:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "voor de zesentwintigste dag van de maand ",
@@ -17700,8 +17585,8 @@
     "Context": {
       "ReferenceDateTime": "2020-07-01T12:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "na de 15e dag van volgende maand",
@@ -17727,8 +17612,8 @@
     "Context": {
       "ReferenceDateTime": "2020-07-01T12:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "de 15e dag van volgende maand",
@@ -17753,12 +17638,11 @@
       "ReferenceDateTime": "2020-07-01T12:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "na de 15e dag van juni ",
+        "Text": "na de 15e dag van juni",
         "Start": 10,
-        "End": 32,
+        "End": 31,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -17786,8 +17670,8 @@
     "Context": {
       "ReferenceDateTime": "2020-07-01T12:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "drieëntwintigste dag van september",
@@ -17816,8 +17700,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "tot nu toe",
@@ -17842,8 +17726,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "tot op heden",
@@ -17868,8 +17752,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "van maart tot op heden",
@@ -17895,7 +17779,6 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "de 17 van 14.00 tot 16.00",
@@ -17905,13 +17788,13 @@
         "Resolution": {
           "values": [
             {
-              "timex": "(XXXX-XX-17T14,XXXX-XX-17T16,PT2H)",
+              "timex": "(XXXX-XX-17T14:00,XXXX-XX-17T16:00,PT2H)",
               "type": "datetimerange",
               "start": "2016-10-17 14:00:00",
               "end": "2016-10-17 16:00:00"
             },
             {
-              "timex": "(XXXX-XX-17T14,XXXX-XX-17T16,PT2H)",
+              "timex": "(XXXX-XX-17T14:00,XXXX-XX-17T16:00,PT2H)",
               "type": "datetimerange",
               "start": "2016-11-17 14:00:00",
               "end": "2016-11-17 16:00:00"
@@ -17927,7 +17810,6 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "de 17 tussen 14.00 en 16.00",
@@ -17937,13 +17819,13 @@
         "Resolution": {
           "values": [
             {
-              "timex": "(XXXX-XX-17T14,XXXX-XX-17T16,PT2H)",
+              "timex": "(XXXX-XX-17T14:00,XXXX-XX-17T16:00,PT2H)",
               "type": "datetimerange",
               "start": "2016-10-17 14:00:00",
               "end": "2016-10-17 16:00:00"
             },
             {
-              "timex": "(XXXX-XX-17T14,XXXX-XX-17T16,PT2H)",
+              "timex": "(XXXX-XX-17T14:00,XXXX-XX-17T16:00,PT2H)",
               "type": "datetimerange",
               "start": "2016-11-17 14:00:00",
               "end": "2016-11-17 16:00:00"
@@ -17959,7 +17841,6 @@
       "ReferenceDateTime": "2018-06-01T16:12:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "tussen 19.00 en 21.30 gisterenavond",
@@ -17969,7 +17850,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "(2018-05-31T19,2018-05-31T21:30,PT2H30M)",
+              "timex": "(2018-05-31T19:00,2018-05-31T21:30,PT2H30M)",
               "type": "datetimerange",
               "start": "2018-05-31 19:00:00",
               "end": "2018-05-31 21:30:00"
@@ -17985,12 +17866,11 @@
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "tussen 10 en 11.30 deze ochtend gebeuren",
+        "Text": "tussen 10 en 11.30 deze ochtend",
         "Start": 8,
-        "End": 47,
+        "End": 38,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -18011,7 +17891,6 @@
       "ReferenceDateTime": "2018-05-30T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "volgende avond tussen 22.30 en 23.45",
@@ -18037,7 +17916,6 @@
       "ReferenceDateTime": "2018-06-01T16:12:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "tussen 19.00 en 21.00 gisterenavond",
@@ -18047,7 +17925,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "(2018-05-31T19,2018-05-31T21,PT2H)",
+              "timex": "(2018-05-31T19:00,2018-05-31T21:00,PT2H)",
               "type": "datetimerange",
               "start": "2018-05-31 19:00:00",
               "end": "2018-05-31 21:00:00"
@@ -18062,8 +17940,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-11T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "weekend",
@@ -18089,7 +17967,6 @@
       "ReferenceDateTime": "2016-11-11T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "het weekend",
@@ -18114,8 +17991,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-11T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "welk weekend dan ook",
@@ -18139,8 +18016,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-11T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "alle weekenden",
@@ -18165,7 +18042,6 @@
       "ReferenceDateTime": "2018-06-01T16:12:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "komende avond van 7 tot 9",
@@ -18191,7 +18067,6 @@
       "ReferenceDateTime": "2018-06-01T16:12:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "tussen 7 en 9 afgelopen ochtend",
@@ -18216,8 +18091,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "van 2007 tot het einde van 2008",
@@ -18242,8 +18117,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "tussen 2007 en het einde van 2008",
@@ -18268,8 +18143,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "van april tot het einde van juni",
@@ -18300,8 +18175,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "van 2007 tot de start van 2008",
@@ -18326,8 +18201,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "tussen het einde van 2007 en het einde van 2008",
@@ -18352,8 +18227,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "van het midden van 2007 tot het einde van 2008",
@@ -18378,8 +18253,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "van het einde van maart tot het midden van september",
@@ -18410,8 +18285,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "tussen het midden van maart en het einde van september",
@@ -18442,8 +18317,8 @@
     "Context": {
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "deze werkweek",
@@ -18468,8 +18343,8 @@
     "Context": {
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "volgende werkweek",
@@ -18495,7 +18370,6 @@
       "ReferenceDateTime": "2018-08-17T15:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "rond 13.00",
@@ -18505,7 +18379,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "T13",
+              "timex": "T13:00",
               "Mod": "approx",
               "type": "timerange",
               "value": "13:00:00"
@@ -18521,7 +18395,6 @@
       "ReferenceDateTime": "2018-08-17T15:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "voor rond 14.00 vandaag",
@@ -18531,7 +18404,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "2018-08-17T14",
+              "timex": "2018-08-17T14:00",
               "Mod": "before-approx",
               "type": "datetimerange",
               "end": "2018-08-17 14:00:00",
@@ -18548,7 +18421,6 @@
       "ReferenceDateTime": "2018-08-17T15:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "na rond 15.30",
@@ -18575,17 +18447,16 @@
       "ReferenceDateTime": "2018-08-17T15:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "13.00",
-        "Start": 26,
+        "Text": "rond 13.00",
+        "Start": 21,
         "End": 30,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
             {
-              "timex": "T13",
+              "timex": "T13:00",
               "Mod": "approx",
               "type": "timerange",
               "value": "13:00:00"
@@ -18601,7 +18472,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "2014",
@@ -18627,7 +18497,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "2015",
@@ -18669,7 +18538,6 @@
       "ReferenceDateTime": "2019-12-15T01:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "na 1 januari, 2007",
@@ -18712,8 +18580,8 @@
     "Context": {
       "ReferenceDateTime": "2019-12-15T01:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "1 januari, 2010",
@@ -18756,8 +18624,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "3 dagen vanaf dinsdag",
@@ -18781,8 +18649,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "2 weken vanaf 15 januari",
@@ -18807,7 +18675,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "4 maanden vanaf morgen",
@@ -18831,8 +18698,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "16 dagen vanaf 01/02/2018",
@@ -18856,8 +18723,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "twee maanden na komende vrijdag",
@@ -18881,8 +18748,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "3 dagen na de 12e januari",
@@ -18906,8 +18773,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "2 weken voor 13 mei 1999",
@@ -18931,8 +18798,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "elke dag",
@@ -18972,7 +18839,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "elke avond om 19.13",
@@ -18996,11 +18862,11 @@
     "Context": {
       "ReferenceDateTime": "2019-08-05T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "Tweede Paasdag",
+        "Text": "tweede paasdag",
         "Start": 19,
         "End": 32,
         "TypeName": "datetimeV2.date",
@@ -19020,8 +18886,8 @@
         }
       },
       {
-        "Text": "10.30",
-        "Start": 37,
+        "Text": "om 10.30",
+        "Start": 34,
         "End": 41,
         "TypeName": "datetimeV2.time",
         "Resolution": {
@@ -19041,8 +18907,8 @@
     "Context": {
       "ReferenceDateTime": "2019-08-05T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "Kerstavond",
@@ -19086,8 +18952,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-11T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "weekenden",
@@ -19112,7 +18978,6 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "dinsdag van 14.00 tot 14.30",
@@ -19144,7 +19009,6 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "dinsdag om 14.00 - 14.30",
@@ -19176,7 +19040,6 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "12 december om 16.00 - 18.30",
@@ -19186,13 +19049,13 @@
         "Resolution": {
           "values": [
             {
-              "timex": "(XXXX-12-12T16,XXXX-12-12T18:30,PT2H30M)",
+              "timex": "(XXXX-12-12T16:00,XXXX-12-12T18:30,PT2H30M)",
               "type": "datetimerange",
               "start": "2015-12-12 16:00:00",
               "end": "2015-12-12 18:30:00"
             },
             {
-              "timex": "(XXXX-12-12T16,XXXX-12-12T18:30,PT2H30M)",
+              "timex": "(XXXX-12-12T16:00,XXXX-12-12T18:30,PT2H30M)",
               "type": "datetimerange",
               "start": "2016-12-12 16:00:00",
               "end": "2016-12-12 18:30:00"
@@ -19208,11 +19071,10 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "14.00 - 14.30 op dinsdag",
-        "Start": 10,
+        "Text": "om 14.00 - 14.30 op dinsdag",
+        "Start": 7,
         "End": 33,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
@@ -19239,8 +19101,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "van 14.30 tot 14.15",
@@ -19266,7 +19128,6 @@
       "ReferenceDateTime": "2018-11-08T12:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "het jaar",
@@ -19308,8 +19169,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "2 weken voor Kerst",
@@ -19333,8 +19194,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "drie maanden na Pasen",
@@ -19358,8 +19219,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "5 dagen voor nieuwjaar",
@@ -19384,7 +19245,6 @@
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "tweeduizend twintig",
@@ -19410,7 +19270,6 @@
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "negentienhonderd zesennegentig",
@@ -19452,7 +19311,6 @@
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "het einde van vandaag",
@@ -19477,7 +19335,6 @@
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": []
   },
   {
@@ -19486,7 +19343,6 @@
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": []
   },
   {
@@ -19495,7 +19351,6 @@
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": []
   },
   {
@@ -19504,7 +19359,6 @@
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": []
   },
   {
@@ -19513,7 +19367,6 @@
       "ReferenceDateTime": "2018-07-02T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "hele week",
@@ -19538,7 +19391,6 @@
       "ReferenceDateTime": "2011-07-02T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": []
   },
   {
@@ -19547,7 +19399,6 @@
       "ReferenceDateTime": "2011-07-02T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": []
   },
   {
@@ -19556,7 +19407,6 @@
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "29 feb",
@@ -19586,7 +19436,6 @@
       "ReferenceDateTime": "2019-03-22T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "29/2",
@@ -19616,7 +19465,6 @@
       "ReferenceDateTime": "2020-03-22T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "29e feb",
@@ -19646,7 +19494,6 @@
       "ReferenceDateTime": "2020-03-22T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "30 feb",
@@ -19671,7 +19518,6 @@
       "ReferenceDateTime": "2020-03-22T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "29/2/2019",
@@ -19696,7 +19542,6 @@
       "ReferenceDateTime": "2020-03-22T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "29/2/2020",
@@ -19720,8 +19565,8 @@
     "Context": {
       "ReferenceDateTime": "2019-09-18T18:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "28e feb tot 1e maart",
@@ -19753,7 +19598,6 @@
       "ReferenceDateTime": "2019-09-18T18:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "29/2-1/3",
@@ -19785,7 +19629,6 @@
       "ReferenceDateTime": "2019-09-18T18:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "29/2-1/3/2019",
@@ -19810,11 +19653,10 @@
       "ReferenceDateTime": "2021-01-15T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "op deze dag",
-        "Start": 26,
+        "Text": "deze dag",
+        "Start": 29,
         "End": 36,
         "TypeName": "datetimeV2.date",
         "Resolution": {
@@ -19834,8 +19676,8 @@
     "Context": {
       "ReferenceDateTime": "2021-01-15T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "op het moment",
@@ -19859,8 +19701,8 @@
     "Context": {
       "ReferenceDateTime": "2021-01-15T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "2 feb 9.00",
@@ -19890,7 +19732,6 @@
       "ReferenceDateTime": "2018-08-16T10:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "afgelopen nacht om 8",
@@ -19915,7 +19756,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "in de ochtend",
@@ -19941,7 +19781,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": []
   },
   {
@@ -19950,7 +19789,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "23-sep-2020",
@@ -19975,7 +19813,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "23-september-2020",
@@ -20000,7 +19837,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "23/sep/2020",
@@ -20025,7 +19861,6 @@
       "ReferenceDateTime": "2019-08-07T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "vrijdag 23 om 4",
@@ -20065,7 +19900,6 @@
       "ReferenceDateTime": "2021-03-15T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "vrijdag de 26e om 4",
@@ -20094,8 +19928,8 @@
     "Context": {
       "ReferenceDateTime": "2021-03-15T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "vrijdag de 26e rond vieren",
@@ -20125,7 +19959,6 @@
       "ReferenceDateTime": "2021-03-15T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "vrijdag om 16.00",
@@ -20135,12 +19968,12 @@
         "Resolution": {
           "values": [
             {
-              "timex": "XXXX-WXX-5T16",
+              "timex": "XXXX-WXX-5T16:00",
               "type": "datetime",
               "value": "2021-03-12 16:00:00"
             },
             {
-              "timex": "XXXX-WXX-5T16",
+              "timex": "XXXX-WXX-5T16:00",
               "type": "datetime",
               "value": "2021-03-19 16:00:00"
             }
@@ -20154,8 +19987,8 @@
     "Context": {
       "ReferenceDateTime": "2021-03-15T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "omstreeks 5 in de ochtend",

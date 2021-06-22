@@ -1254,7 +1254,6 @@
       "ReferenceDateTime": "2018-11-21T12:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "woens 26 okt 15:50:06 2016",
@@ -1279,7 +1278,6 @@
       "ReferenceDateTime": "2018-11-21T12:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "woens 26 okt 15:50:06 2016",
@@ -1304,10 +1302,9 @@
       "ReferenceDateTime": "2018-12-26T12:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "om 20.30 vandaag",
+        "Text": "20.30 vandaag",
         "Type": "datetime",
         "Value": {
           "Timex": "2018-12-26T20:30",
@@ -1318,8 +1315,8 @@
             "dateTime": "2018-12-26 20:30:00"
           }
         },
-        "Start": 7,
-        "Length": 16
+        "Start": 10,
+        "Length": 13
       }
     ]
   },
@@ -1329,7 +1326,6 @@
       "ReferenceDateTime": "2018-12-26T12:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "vandaag om 20.30",
@@ -1354,7 +1350,6 @@
       "ReferenceDateTime": "2018-12-26T12:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "20.30 vandaag",

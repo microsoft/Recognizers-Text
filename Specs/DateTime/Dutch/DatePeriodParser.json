@@ -4884,7 +4884,6 @@
       "ReferenceDateTime": "2019-01-01T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "deze week",
@@ -4911,7 +4910,6 @@
       "ReferenceDateTime": "2017-01-01T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "deze week",
@@ -4938,7 +4936,6 @@
       "ReferenceDateTime": "2016-01-01T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "deze week",
@@ -4965,7 +4962,6 @@
       "ReferenceDateTime": "2019-04-23T12:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "tussen nu en 15 november",
@@ -4992,7 +4988,6 @@
       "ReferenceDateTime": "2019-04-25T12:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "tussen 22 jan en nu",
@@ -5019,7 +5014,6 @@
       "ReferenceDateTime": "2019-07-11T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "deze week",
@@ -5046,7 +5040,6 @@
       "ReferenceDateTime": "2019-07-11T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "deze week",
@@ -5073,7 +5066,6 @@
       "ReferenceDateTime": "2019-07-11T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "deze week",
@@ -5100,7 +5092,6 @@
       "ReferenceDateTime": "2019-07-11T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "week 10",
@@ -5127,7 +5118,6 @@
       "ReferenceDateTime": "2019-07-11T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "week 10",
@@ -5153,8 +5143,8 @@
     "Context": {
       "ReferenceDateTime": "2019-07-30T15:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "van aankomende vrijdag tot 1 okt 2020",
@@ -5181,7 +5171,6 @@
       "ReferenceDateTime": "2019-07-30T15:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "augustus 2019",
@@ -5208,7 +5197,6 @@
       "ReferenceDateTime": "2019-10-14T15:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "van 1-aug-2019 tot vandaag",
@@ -5235,7 +5223,6 @@
       "ReferenceDateTime": "2019-09-30T15:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "van 01/aug/2019 tot vandaag",
@@ -5261,8 +5248,8 @@
     "Context": {
       "ReferenceDateTime": "2019-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "de week die 4 februari aanvangt",
@@ -5288,8 +5275,8 @@
     "Context": {
       "ReferenceDateTime": "2019-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "de week die 4 februari start",
@@ -5315,8 +5302,8 @@
     "Context": {
       "ReferenceDateTime": "2019-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "de week die op 4 februari start",
@@ -5342,8 +5329,8 @@
     "Context": {
       "ReferenceDateTime": "2019-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "de week die op 4 februari begint",
@@ -5369,8 +5356,8 @@
     "Context": {
       "ReferenceDateTime": "2019-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "de week die 4 februari begint",
@@ -5396,8 +5383,8 @@
     "Context": {
       "ReferenceDateTime": "2020-04-23T18:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "einde van 2000",
@@ -5424,8 +5411,8 @@
     "Context": {
       "ReferenceDateTime": "2020-04-23T18:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "begin van 2000",
@@ -5452,8 +5439,8 @@
     "Context": {
       "ReferenceDateTime": "2020-04-23T18:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "halverwege 2000",

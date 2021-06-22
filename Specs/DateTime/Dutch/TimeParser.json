@@ -2774,13 +2774,12 @@
   {
     "Input": "15.00 : Ik zal op deze week weg zijn",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "15.00",
         "Type": "time",
         "Value": {
-          "Timex": "T15",
+          "Timex": "T15:00",
           "FutureResolution": {
             "time": "15:00:00"
           },
@@ -2795,8 +2794,8 @@
   },
   {
     "Input": "deze week 8.00 zou een datumreeks en een tijd moeten zijn",
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "8.00",
@@ -2817,8 +2816,8 @@
   },
   {
     "Input": "deze week 20.00 zou een datumreeks en een tijd moeten zijn",
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "20.00",
@@ -2839,8 +2838,8 @@
   },
   {
     "Input": "week 10 20.00 zou een datumreeks en een tijd moeten zijn",
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "20.00",
@@ -2861,8 +2860,8 @@
   },
   {
     "Input": "week 10 10.20 zou een datumreeks en een tijd moeten zijn",
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "10.20",
@@ -2884,7 +2883,6 @@
   {
     "Input": "De doeltijd is 20.10",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "20.10",

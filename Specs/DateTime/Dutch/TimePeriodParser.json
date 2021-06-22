@@ -1812,8 +1812,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "lunchtijd",
@@ -1839,8 +1839,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "lunchpauze",
@@ -1866,8 +1866,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "lunchconcert",

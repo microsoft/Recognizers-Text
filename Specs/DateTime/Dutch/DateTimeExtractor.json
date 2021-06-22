@@ -1550,7 +1550,6 @@
   {
     "Input": "Ik zal teruggaan op woens. 26 okt. 15:50:06 2016.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "woens. 26 okt. 15:50:06 2016",
@@ -1563,7 +1562,6 @@
   {
     "Input": "Woens. 26 okt. 15:50:06 2016 is geen dag in 2019.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "woens. 26 okt. 15:50:06 2016",
@@ -1576,20 +1574,18 @@
   {
     "Input": "Ik zal om 20.30 vandaag teruggaan.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "om 20.30 vandaag",
+        "Text": "20.30 vandaag",
         "Type": "datetime",
-        "Start": 7,
-        "Length": 16
+        "Start": 10,
+        "Length": 13
       }
     ]
   },
   {
     "Input": "Ik zal vandaag om 20.30 teruggaan.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "vandaag om 20.30",
@@ -1602,7 +1598,6 @@
   {
     "Input": "Ik zal 20.30 vandaag teruggaan.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "20.30 vandaag",

@@ -3610,7 +3610,6 @@
   {
     "Input": "Ik zal mijn werk doen tussen nu en november 15e",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "tussen nu en november 15e",
@@ -3623,7 +3622,6 @@
   {
     "Input": "Ik heb mijn werk tussen 22 jan en nu afgerond",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "tussen 22 jan en nu",
@@ -3636,7 +3634,6 @@
   {
     "Input": "15.00 : ik ben deze week weg",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "deze week",
@@ -3648,8 +3645,8 @@
   },
   {
     "Input": "deze week 8.00 zou een datumreeks en een tijdstip moeten zijn",
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "deze week",
@@ -3661,8 +3658,8 @@
   },
   {
     "Input": "deze week 20.00 zou een datumreeks en een tijdstip moeten zijn",
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "deze week",
@@ -3675,7 +3672,6 @@
   {
     "Input": "week 10 20.00 zou een datumreeks en een tijdstip moeten zijn",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "week 10",
@@ -3688,7 +3684,6 @@
   {
     "Input": "week 10 10:20 zou een datumreeks en een tijdstip moeten zijn",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "week 10",
@@ -3701,7 +3696,6 @@
   {
     "Input": "6,107.31 augustus 2019 zou het decimaal niet moeten bevatten",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "augustus 2019",
@@ -3714,7 +3708,6 @@
   {
     "Input": "Ik was daar niet van 01/aug/2019 tot vandaag",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "van 01/aug/2019 tot vandaag",
@@ -3727,7 +3720,6 @@
   {
     "Input": "Ik was daar niet van 01-aug-2019 tot vandaag",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "van 01-aug-2019 tot vandaag",
@@ -3739,8 +3731,8 @@
   },
   {
     "Input": "plan alsjeblieft een meeting in voor de week die 4 februari aanvangt",
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "de week die 4 februari aanvangt",
@@ -3752,8 +3744,8 @@
   },
   {
     "Input": "plan alsjeblieft een meeting in voor de week die 4 februari start",
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "de week die 4 februari start",
@@ -3765,8 +3757,8 @@
   },
   {
     "Input": "plan alsjeblieft een meeting in voor de week die op 4 februari start",
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "de week die op 4 februari start",
@@ -3778,8 +3770,8 @@
   },
   {
     "Input": "plan alsjeblieft een meeting in voor de week die op 4 februari begint",
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "de week die op 4 februari begint",
@@ -3791,8 +3783,8 @@
   },
   {
     "Input": "plan alsjeblieft een meeting in voor de week die 4 februari begint",
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "de week die 4 februari begint",
@@ -3805,7 +3797,6 @@
   {
     "Input": "Boek een reis van 26e juni van 2020 tot 28e juni van 2020",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "van 26e juni van 2020 tot 28e juni van 2020",

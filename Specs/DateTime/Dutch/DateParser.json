@@ -5045,7 +5045,6 @@
       "ReferenceDateTime": "2018-08-21T08:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "tweeëntwintigste van juni 2017",
@@ -5070,7 +5069,6 @@
       "ReferenceDateTime": "2018-08-21T08:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "1-sep-2019",
@@ -5095,10 +5093,9 @@
       "ReferenceDateTime": "2018-08-21T08:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "01/sep/2019 ",
+        "Text": "01/sep/2019",
         "Type": "date",
         "Value": {
           "Timex": "2019-09-01",
@@ -5110,7 +5107,7 @@
           }
         },
         "Start": 7,
-        "Length": 12
+        "Length": 11
       }
     ]
   },
@@ -5120,7 +5117,6 @@
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "29 feb",
@@ -5145,7 +5141,6 @@
       "ReferenceDateTime": "2019-03-22T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "29/2",
@@ -5170,7 +5165,6 @@
       "ReferenceDateTime": "2020-03-22T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "29e feb",
@@ -5195,7 +5189,6 @@
       "ReferenceDateTime": "2020-03-22T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "30 feb",
@@ -5220,7 +5213,6 @@
       "ReferenceDateTime": "2020-03-22T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "29/2/2019",
@@ -5245,7 +5237,6 @@
       "ReferenceDateTime": "2020-03-22T00:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "29/2/2020",

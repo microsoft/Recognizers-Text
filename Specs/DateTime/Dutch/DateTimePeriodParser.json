@@ -4649,8 +4649,8 @@
     "Context": {
       "ReferenceDateTime": "2017-11-09T16:12:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "op volgende week vrijdag tussen 8.00 en 14.00",
@@ -4677,7 +4677,6 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "van 04-12-2019 6.00 tot 05-12-2019 20.00",
@@ -4703,8 +4702,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "tussen half acht en 16.00",

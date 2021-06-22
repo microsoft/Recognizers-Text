@@ -2661,7 +2661,6 @@
   {
     "Input": "ik zal tweeëntwintig juni 2017 teruggaan",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "tweeëntwintig juni 2017",
@@ -2674,14 +2673,13 @@
   {
     "Input": "6,107.31 augustus 2019 moet het decimaal niet bevatten",
     "Comment": "Only August 2019 should be extracted as a DateRange, so no output in Date only. Java disabled due to issue in lookbehind.",
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": []
   },
   {
     "Input": "ik zal 1-sep-2019 teruggaan",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "1-sep-2019",
@@ -2694,7 +2692,6 @@
   {
     "Input": "ik zal 01/sep/2019 teruggaan",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "01/sep/2019",
@@ -2707,7 +2704,6 @@
   {
     "Input": "Boek een reis voor me op 26 juni van 2020",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "26 juni van 2020",

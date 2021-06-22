@@ -943,7 +943,6 @@
   {
     "Input": "Maak me onbeschikbaar van 04-12-2019 6.00 tot 05-12-2019 20.00",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "van 04-12-2019 6.00 tot 05-12-2019 20.00",

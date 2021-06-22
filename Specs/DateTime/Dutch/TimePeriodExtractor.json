@@ -1402,7 +1402,6 @@
   {
     "Input": "Ik zal lunchtijd weg zijn.",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "lunchtijd",
@@ -1414,8 +1413,8 @@
   },
   {
     "Input": "Hij heeft lunchpauze",
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "lunchpauze",
@@ -1427,8 +1426,8 @@
   },
   {
     "Input": "Dit populaire, familievriendelijke concert komt terug naar de Hall voor weer een lunchconcert vol met traditionele kerstliederen en feestfavorieten",
-    "NotSupportedByDesign": "java, javascript, python",
     "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "lunchconcert",
