@@ -7455,7 +7455,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "(2018-05-01,2019-03-01,P10M)",
+              "timex": "(XXXX-05-01,XXXX-03-01,P10M)",
               "type": "daterange",
               "start": "2018-05-01",
               "end": "2019-03-01"

@@ -60,8 +60,14 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         // TODO: Unify this two methods. This one here detect if "begin/end" have same year, month and day with "alter begin/end" and make them nonspecific.
-        public static string GenerateDatePeriodTimex(DateObject begin, DateObject end, DatePeriodTimexType timexType, DateObject alternativeBegin = default(DateObject), DateObject alternativeEnd = default(DateObject))
+        public static string GenerateDatePeriodTimex(DateObject begin, DateObject end, DatePeriodTimexType timexType, DateObject alternativeBegin = default(DateObject), DateObject alternativeEnd = default(DateObject), bool hasYear = true)
         {
+            // If the year is not specified, the combined range timex will use fuzzy years.
+            if (!hasYear)
+            {
+                return GenerateDatePeriodTimex(begin, end, timexType, UnspecificDateTimeTerms.NonspecificYear);
+            }
+
             var equalDurationLength = (end - begin) == (alternativeEnd - alternativeBegin);
 
             if (alternativeBegin.IsDefaultValue() || alternativeEnd.IsDefaultValue())
