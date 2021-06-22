@@ -1247,5 +1247,130 @@
         "Length": 23
       }
     ]
+  },
+  {
+    "Input": "Ik zal op woens 26 okt 15:50:06 2016 terug gaan",
+    "Context": {
+      "ReferenceDateTime": "2018-11-21T12:00:00"
+    },
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "woens 26 okt 15:50:06 2016",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-10-26T15:50:06",
+          "FutureResolution": {
+            "dateTime": "2016-10-26 15:50:06"
+          },
+          "PastResolution": {
+            "dateTime": "2016-10-26 15:50:06"
+          }
+        },
+        "Start": 10,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Woens 26 okt 15:50:06 2016 is geen dag in 2019",
+    "Context": {
+      "ReferenceDateTime": "2018-11-21T12:00:00"
+    },
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "woens 26 okt 15:50:06 2016",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-10-26T15:50:06",
+          "FutureResolution": {
+            "dateTime": "2016-10-26 15:50:06"
+          },
+          "PastResolution": {
+            "dateTime": "2016-10-26 15:50:06"
+          }
+        },
+        "Start": 0,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal om 20.30 vandaag terug gaan",
+    "Context": {
+      "ReferenceDateTime": "2018-12-26T12:00:00"
+    },
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "om 20.30 vandaag",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2018-12-26T20:30",
+          "FutureResolution": {
+            "dateTime": "2018-12-26 20:30:00"
+          },
+          "PastResolution": {
+            "dateTime": "2018-12-26 20:30:00"
+          }
+        },
+        "Start": 7,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal vandaag om 20.30 terug gaan",
+    "Context": {
+      "ReferenceDateTime": "2018-12-26T12:00:00"
+    },
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "vandaag om 20.30",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2018-12-26T20:30",
+          "FutureResolution": {
+            "dateTime": "2018-12-26 20:30:00"
+          },
+          "PastResolution": {
+            "dateTime": "2018-12-26 20:30:00"
+          }
+        },
+        "Start": 7,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal 20.30 vandaag terug gaan",
+    "Context": {
+      "ReferenceDateTime": "2018-12-26T12:00:00"
+    },
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "20.30 vandaag",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2018-12-26T20:30",
+          "FutureResolution": {
+            "dateTime": "2018-12-26 20:30:00"
+          },
+          "PastResolution": {
+            "dateTime": "2018-12-26 20:30:00"
+          }
+        },
+        "Start": 7,
+        "Length": 13
+      }
+    ]
   }
 ]

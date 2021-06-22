@@ -5038,5 +5038,230 @@
         "Length": 19
       }
     ]
+  },
+  {
+    "Input": "Ik zal tweeëntwintigste van juni 2017 teruggaan",
+    "Context": {
+      "ReferenceDateTime": "2018-08-21T08:00:00"
+    },
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "tweeëntwintigste van juni 2017",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-06-22",
+          "FutureResolution": {
+            "date": "2017-06-22"
+          },
+          "PastResolution": {
+            "date": "2017-06-22"
+          }
+        },
+        "Start": 7,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "ik zal 1-sep-2019 teruggaan.",
+    "Context": {
+      "ReferenceDateTime": "2018-08-21T08:00:00"
+    },
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "1-sep-2019",
+        "Type": "date",
+        "Value": {
+          "Timex": "2019-09-01",
+          "FutureResolution": {
+            "date": "2019-09-01"
+          },
+          "PastResolution": {
+            "date": "2019-09-01"
+          }
+        },
+        "Start": 7,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "ik zal 01/sep/2019 teruggaan.",
+    "Context": {
+      "ReferenceDateTime": "2018-08-21T08:00:00"
+    },
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "01/sep/2019 ",
+        "Type": "date",
+        "Value": {
+          "Timex": "2019-09-01",
+          "FutureResolution": {
+            "date": "2019-09-01"
+          },
+          "PastResolution": {
+            "date": "2019-09-01"
+          }
+        },
+        "Start": 7,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "29 feb",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "29 feb",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-02-29",
+          "FutureResolution": {
+            "date": "2020-02-29"
+          },
+          "PastResolution": {
+            "date": "2016-02-29"
+          }
+        },
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "29/2",
+    "Context": {
+      "ReferenceDateTime": "2019-03-22T00:00:00"
+    },
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "29/2",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-02-29",
+          "FutureResolution": {
+            "date": "2020-02-29"
+          },
+          "PastResolution": {
+            "date": "2016-02-29"
+          }
+        },
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "29e feb",
+    "Context": {
+      "ReferenceDateTime": "2020-03-22T00:00:00"
+    },
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "29e feb",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-02-29",
+          "FutureResolution": {
+            "date": "2024-02-29"
+          },
+          "PastResolution": {
+            "date": "2020-02-29"
+          }
+        },
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "30 feb",
+    "Context": {
+      "ReferenceDateTime": "2020-03-22T00:00:00"
+    },
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "30 feb",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-02-30",
+          "FutureResolution": {
+            "date": "0001-01-01"
+          },
+          "PastResolution": {
+            "date": "0001-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "29/2/2019",
+    "Context": {
+      "ReferenceDateTime": "2020-03-22T00:00:00"
+    },
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "29/2/2019",
+        "Type": "date",
+        "Value": {
+          "Timex": "2019-02-29",
+          "FutureResolution": {
+            "date": "0001-01-01"
+          },
+          "PastResolution": {
+            "date": "0001-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "29/2/2020",
+    "Context": {
+      "ReferenceDateTime": "2020-03-22T00:00:00"
+    },
+    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "29/2/2020",
+        "Type": "date",
+        "Value": {
+          "Timex": "2020-02-29",
+          "FutureResolution": {
+            "date": "2020-02-29"
+          },
+          "PastResolution": {
+            "date": "2020-02-29"
+          }
+        },
+        "Start": 0,
+        "Length": 9
+      }
+    ]
   }
 ]
