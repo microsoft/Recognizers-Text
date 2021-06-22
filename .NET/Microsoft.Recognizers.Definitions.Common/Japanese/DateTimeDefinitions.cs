@@ -42,6 +42,9 @@ namespace Microsoft.Recognizers.Definitions.Japanese
       public static readonly string DateThisRegex = $@"(这个|这一个|这|这一|本|今週|そ)(的|の)?({WeekDayRegex}|日)";
       public static readonly string DateLastRegex = $@"(上一个|上个|上一|上|最后一个|最后|先週|最後)(的|の)?({WeekDayRegex}|日)";
       public static readonly string DateNextRegex = $@"(下一个|下个|下一|下|来週)(的|の)?{WeekDayRegex}";
+      public const string WoMLastRegex = @"^\b$";
+      public const string WoMPreviousRegex = @"^\b$";
+      public const string WoMNextRegex = @"^\b$";
       public const string SpecialMonthRegex = @"(先月|来月|今月|前月|再来月|昨月|先々月|ぜんげつ|(せん)?せんげつ|さくげつ|らいげつ|こんげつ)";
       public const string SpecialYearRegex = @"(昨年|再?来年|今年|前年|ことし|さ?らいねん|きょねん|さくねん|去年)";
       public const string SpecialDayRegex = @"((いっ)?さくじつ|おとつい|最近|前天|后天|昨天|明天|今天|今日?|明日|一?昨?昨日|一昨日|大后天|大前天|後天|大後天|きょう|あす|あした|きのう|明々後日|(弥)?明後日|この日|前日|二日前|おととい|し?あさって)((から|の)([\d１２３４５６７８９十一二三四五六七八九]*)(日|週)間?(先|後|前)?(の(日曜日?|月曜日?|火曜日?|水曜日?|木曜日?|金曜日?|土曜日?))?)?";
@@ -67,6 +70,8 @@ namespace Microsoft.Recognizers.Definitions.Japanese
       public static readonly string DateRegexList10 = $@"({SimpleYearRegex}[/\\\-]{MonthNumRegex}[/\\\-]{DayRegexForPeriod})";
       public static readonly string DateRegexList11 = $@"({SimpleYearRegex}[/\\\-]{MonthNumRegexForPeriod})";
       public const string DatePeriodTillRegex = @"(?<till>到|至|--|-|—|——|~|–)";
+      public const string DatePeriodRangeSuffixRegex = @"^\b$";
+      public const string DatePeriodRangePrefixRegex = @"^\b$";
       public const string DatePeriodTillSuffixRequiredRegex = @"(?<till>与|和)";
       public const string DatePeriodDayRegexInCJK = @"(?<day>初一|三十|一日|十一日|二十一日|三十一日|二日|三日|四日|五日|六日|七日|八日|九日|十二日|十三日|十四日|十五日|十六日|十七日|十八日|十九日|二十二日|二十三日|二十四日|二十五日|二十六日|二十七日|二十八日|二十九日|一日|十一日|十日|二十一日|二十日|三十一日|三十日|二日|三日|四日|五日|六日|七日|八日|九日|十二日|十三日|十四日|十五日|十六日|十七日|十八日|十九日|二十二日|二十三日|二十四日|二十五日|二十六日|二十七日|二十八日|二十九日|十日|二十日|三十日|10日|11日|12日|13日|14日|15日|16日|17日|18日|19日|1日|20日|21日|22日|23日|24日|25日|26日|27日|28日|29日|2日|30日|31日|3日|4日|5日|6日|7日|8日|9日|一号|十一号|二十一号|三十一号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|一号|十一号|十号|二十一号|二十号|三十一号|三十号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|十号|二十号|三十号|10号|11号|12号|13号|14号|15号|16号|17号|18号|19号|1号|20号|21号|22号|23号|24号|25号|26号|27号|28号|29号|2号|30号|31号|3号|4号|5号|6号|7号|8号|9号|一|十一|二十一|三十一|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|一|十一|十|二十一|二十|三十一|三十|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|十|二十|三十|廿|卅)";
       public const string DatePeriodThisRegex = @"这个|这一个|这|这一|本";

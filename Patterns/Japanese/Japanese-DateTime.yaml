@@ -45,6 +45,13 @@ DateLastRegex: !nestedRegex
 DateNextRegex: !nestedRegex
   def: (下一个|下个|下一|下|来週)(的|の)?{WeekDayRegex}
   references: [WeekDayRegex]
+# TODO: Modify the 3 regex according to the counterpart in Korean
+WoMLastRegex: !simpleRegex
+  def: ^\b$
+WoMPreviousRegex: !simpleRegex
+  def: ^\b$
+WoMNextRegex: !simpleRegex
+  def: ^\b$
 SpecialMonthRegex: !simpleRegex
   def: (先月|来月|今月|前月|再来月|昨月|先々月|ぜんげつ|(せん)?せんげつ|さくげつ|らいげつ|こんげつ)
 SpecialYearRegex: !simpleRegex
@@ -122,6 +129,12 @@ DateRegexList11: !nestedRegex
 # DatePeriodExtractorCJK
 DatePeriodTillRegex: !simpleRegex
   def: (?<till>到|至|--|-|—|——|~|–)
+DatePeriodRangeSuffixRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Korean
+  def: ^\b$
+DatePeriodRangePrefixRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Korean
+  def: ^\b$
 # DatePeriodExtractorCJK
 # Note that these "Till" connector can only be used with some suffix like "之间|之内|期间|中间|间"
 DatePeriodTillSuffixRequiredRegex: !simpleRegex

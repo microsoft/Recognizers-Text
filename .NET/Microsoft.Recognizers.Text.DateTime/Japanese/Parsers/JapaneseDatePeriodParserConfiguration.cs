@@ -15,7 +15,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
     public class JapaneseDatePeriodParserConfiguration : BaseDateTimeOptionsConfiguration, ICJKDatePeriodParserConfiguration
     {
 
+        public static readonly Regex WoMLastRegex = new Regex(DateTimeDefinitions.WoMLastRegex, RegexFlags);
+        public static readonly Regex WoMPreviousRegex = new Regex(DateTimeDefinitions.WoMPreviousRegex, RegexFlags);
+        public static readonly Regex WoMNextRegex = new Regex(DateTimeDefinitions.WoMNextRegex, RegexFlags);
+
         public static readonly ImmutableDictionary<string, int> MonthOfYear = DateTimeDefinitions.ParserConfigurationMonthOfYear.ToImmutableDictionary();
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         public JapaneseDatePeriodParserConfiguration(ICJKCommonDateTimeParserConfiguration config)
             : base(config)
@@ -147,6 +153,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         public Regex SpecialMonthRegex { get; }
 
         public Regex SpecialYearRegex { get; }
+
+        Regex ICJKDatePeriodParserConfiguration.WoMLastRegex => WoMLastRegex;
+
+        Regex ICJKDatePeriodParserConfiguration.WoMPreviousRegex => WoMPreviousRegex;
+
+        Regex ICJKDatePeriodParserConfiguration.WoMNextRegex => WoMNextRegex;
 
         public int TwoNumYear => int.Parse(DateTimeDefinitions.TwoNumYear, CultureInfo.InvariantCulture);
 
