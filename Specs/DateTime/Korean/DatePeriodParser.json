@@ -703,32 +703,6 @@
     ]
   },
   {
-    "Input": "주말",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "주말",
-        "Type": "daterange",
-        "Value": {
-          "Timex": "2016-W45-WE",
-          "FutureResolution": {
-            "startDate": "2016-11-12",
-            "endDate": "2016-11-14"
-          },
-          "PastResolution": {
-            "startDate": "2016-11-12",
-            "endDate": "2016-11-14"
-          }
-        },
-        "Start": 0,
-        "Length": 2
-      }
-    ]
-  },
-  {
     "Input": "10월 2일부터 10월 22일까지 자리를 비울 예정입니다. ",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
