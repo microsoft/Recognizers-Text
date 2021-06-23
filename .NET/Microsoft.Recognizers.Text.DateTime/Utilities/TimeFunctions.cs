@@ -106,7 +106,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
                 build.Append(":" + second.ToString("D2", CultureInfo.InvariantCulture));
             }
 
-            if (noDesc)
+            if (noDesc && hour <= Constants.HalfDayHourCount)
             {
                 // build.Append("ampm");
                 dateTimeResult.Comment = Constants.Comment_AmPm;
