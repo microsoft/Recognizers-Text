@@ -6622,5 +6622,34 @@
         }
       }
     ]
+  },
+  {
+    "Input": "9点",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "9点",
+        "Start": 0,
+        "End": 1,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T09",
+              "type": "time",
+              "value": "09:00:00"
+            },
+            {
+              "timex": "T21",
+              "type": "time",
+              "value": "21:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
