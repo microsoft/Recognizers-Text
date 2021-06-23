@@ -1195,7 +1195,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 hasHalf = true;
             }
 
-            return text;
+            return text.Trim();
         }
 
         private DateTimeResolutionResult HandleYearResult(DateTimeResolutionResult ret, bool hasHalf, bool isFirstHalf, int year)
@@ -1507,7 +1507,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             int year;
 
             int cardinal;
-            if (cardinalStr.Equals("最后一", StringComparison.Ordinal))
+            if (config.WoMLastRegex.IsExactMatch(cardinalStr, trim: true))
             {
                 cardinal = 5;
             }
@@ -1520,11 +1520,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (string.IsNullOrEmpty(monthStr))
             {
                 var swift = 0;
-                if (trimmedText.StartsWith("下个", StringComparison.Ordinal))
+                if (config.WoMNextRegex.MatchBegin(trimmedText, trim: true).Success)
                 {
                     swift = 1;
                 }
-                else if (trimmedText.StartsWith("上个", StringComparison.Ordinal))
+                else if (config.WoMPreviousRegex.MatchBegin(trimmedText, trim: true).Success)
                 {
                     swift = -1;
                 }

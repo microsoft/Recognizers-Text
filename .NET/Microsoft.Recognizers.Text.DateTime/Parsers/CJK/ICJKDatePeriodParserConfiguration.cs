@@ -91,6 +91,12 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex SpecialYearRegex { get; }
 
+        Regex WoMLastRegex { get; }
+
+        Regex WoMPreviousRegex { get; }
+
+        Regex WoMNextRegex { get; }
+
         int ToMonthNumber(string monthStr);
 
         bool IsMonthOnly(string text);

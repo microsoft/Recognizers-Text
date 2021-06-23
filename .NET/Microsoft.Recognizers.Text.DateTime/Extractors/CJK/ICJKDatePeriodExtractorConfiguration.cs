@@ -9,6 +9,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex TillRegex { get; }
 
+        Regex RangePrefixRegex { get; }
+
+        Regex RangeSuffixRegex { get; }
+
         Regex FutureRegex { get; }
 
         Regex PastRegex { get; }
