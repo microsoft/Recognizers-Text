@@ -254,6 +254,9 @@ namespace Microsoft.Recognizers.Definitions.German
       public const string SuffixAfterRegex = @"\b(o\s+(nach|in der Vergangenheit))\b";
       public static readonly string YearPeriodRegex = $@"((((von|während|zwischen)\s+)?{YearRegex}\s*({TillRegex})\s*{YearRegex})|(((zwischen)\s+){YearRegex}\s*({RangeConnectorRegex})\s*{YearRegex}))";
       public const string FutureSuffixRegex = @"\b(in\s+der\s+)?(zukunft|zukünftig)\b";
+      public const string PastSuffixRegex = @"^\b$";
+      public static readonly string ModPrefixRegex = $@"\b({RelativeRegex}|{AroundRegex}|{BeforeRegex}|{AfterRegex}|{SinceRegex})\b";
+      public static readonly string ModSuffixRegex = $@"\b({AgoRegex}|{LaterRegex}|{BeforeAfterRegex}|{FutureSuffixRegex}|{PastSuffixRegex})\b";
       public static readonly string ComplexDatePeriodRegex = $@"(((von|während|in)\s+)?(?<start>.+)\s*({TillRegex})\s*(?<end>.+)|((zwischen)\s+)(?<start>.+)\s*({RangeConnectorRegex})\s*(?<end>.+))";
       public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>
         {

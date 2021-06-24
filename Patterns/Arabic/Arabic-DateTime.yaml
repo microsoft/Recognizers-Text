@@ -44,6 +44,8 @@ ReferencePrefixRegex: !simpleRegex
   def: (ذلك|نفس|هذا)\b
 FutureSuffixRegex: !simpleRegex
   def: \b(الحالي(ة)|القادم(ة)|في المستقبل|التالي(ة)|الآتي(ة)|المقبلين|المقبل(ة))\b
+PastSuffixRegex: !simpleRegex
+  def: ^\b$
 DayRegex: !simpleRegex
   def: (?<day>(?:3[0-1]|[1-2]\d|0?[1-9]))
 ImplicitDayRegex: !simpleRegex
@@ -642,6 +644,12 @@ LaterRegex: !nestedRegex
   references: [ OneWordPeriodRegex, TimeOfDayRegex ]
 BeforeAfterRegex: !simpleRegex
   def: \b((?<before>before)|(?<after>from|after))\b
+ModPrefixRegex: !nestedRegex
+  def: \b({RelativeRegex}|{AroundRegex}|{BeforeRegex}|{AfterRegex}|{SinceRegex})\b
+  references: [RelativeRegex, AroundRegex, BeforeRegex, AfterRegex, SinceRegex ]
+ModSuffixRegex: !nestedRegex
+  def: \b({AgoRegex}|{LaterRegex}|{BeforeAfterRegex}|{FutureSuffixRegex}|{PastSuffixRegex})\b
+  references: [AgoRegex, LaterRegex, BeforeAfterRegex, FutureSuffixRegex, PastSuffixRegex]
 InConnectorRegex: !simpleRegex
   def: \b(in)\b
 SinceYearSuffixRegex: !nestedRegex

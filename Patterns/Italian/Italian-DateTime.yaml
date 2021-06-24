@@ -637,6 +637,12 @@ YearPeriodRegex: !nestedRegex
   references: [ YearRegex, TillRegex ]
 FutureSuffixRegex: !simpleRegex
   def: \b(((in|nel)\s+)?(futuro|seguito))|(da\s+questo\s+momento)\b
+ModPrefixRegex: !nestedRegex
+  def: \b({RelativeRegex}|{AroundRegex}|{BeforeRegex}|{AfterRegex}|{SinceRegex})\b
+  references: [RelativeRegex, AroundRegex, BeforeRegex, AfterRegex, SinceRegex ]
+ModSuffixRegex: !nestedRegex
+  def: \b({AgoRegex}|{LaterRegex}|{BeforeAfterRegex}|{FutureSuffixRegex}|{PastSuffixRegex})\b
+  references: [AgoRegex, LaterRegex, BeforeAfterRegex, FutureSuffixRegex, PastSuffixRegex]
 ComplexDatePeriodRegex: !nestedRegex
   def: (((da(l(l[aeo'])?|i)?|durante|in|nel(l[aeo'])?|negli)\s*)?(?<start>.+)\s*({TillRegex})\s*(?<end>.+)|(([tf]ra)\s+)(?<start>.+)\s*({RangeConnectorRegex})\s*(?<end>.+))
   references: [ YearRegex, TillRegex, RangeConnectorRegex ]

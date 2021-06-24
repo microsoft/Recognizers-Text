@@ -42,7 +42,9 @@ CenturySuffixRegex: !simpleRegex
 ReferencePrefixRegex: !simpleRegex
   def: (that|same)\b
 FutureSuffixRegex: !simpleRegex
-  def: \b(in\s+the\s+)?(future|hence)\b
+  def: \b((in\s+the\s+)?future|hence)\b
+PastSuffixRegex: !simpleRegex
+  def: \b((in\s+the\s+)past)\b
 DayRegex: !simpleRegex
   def: (the\s*)?(?<!(\d+:?|\$)\s*)(?<day>(?:3[0-1]|[1-2]\d|0?[1-9])(?:th|nd|rd|st)?)(?=\b|t)
 ImplicitDayRegex: !simpleRegex
@@ -584,12 +586,18 @@ SinceRegexExp: !nestedRegex
   def: ({SinceRegex}|\bfrom(\s+the)?\b)
   references: [ SinceRegex ]
 AgoRegex: !simpleRegex
-  def: \b(ago|before\s+(?<day>yesterday|today))\b
+  def: \b(ago|earlier|before\s+(?<day>yesterday|today))\b
 LaterRegex: !nestedRegex
   def: \b(?:later(?!((\s+in)?\s*{OneWordPeriodRegex})|(\s+{TimeOfDayRegex})|\s+than\b)|from now|(from|after)\s+(?<day>tomorrow|tmr|today))\b
   references: [ OneWordPeriodRegex, TimeOfDayRegex ]
 BeforeAfterRegex: !simpleRegex
   def: \b((?<before>before)|(?<after>from|after))\b
+ModPrefixRegex: !nestedRegex
+  def: \b({RelativeRegex}|{AroundRegex}|{BeforeRegex}|{AfterRegex}|{SinceRegex})\b
+  references: [RelativeRegex, AroundRegex, BeforeRegex, AfterRegex, SinceRegex ]
+ModSuffixRegex: !nestedRegex
+  def: \b({AgoRegex}|{LaterRegex}|{BeforeAfterRegex}|{FutureSuffixRegex}|{PastSuffixRegex})\b
+  references: [AgoRegex, LaterRegex, BeforeAfterRegex, FutureSuffixRegex, PastSuffixRegex]
 InConnectorRegex: !simpleRegex
   def: \b(in)\b
 SinceYearSuffixRegex: !nestedRegex

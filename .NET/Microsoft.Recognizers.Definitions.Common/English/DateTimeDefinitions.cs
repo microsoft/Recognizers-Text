@@ -37,7 +37,8 @@ namespace Microsoft.Recognizers.Definitions.English
       public const string RangePrefixRegex = @"(from|between)";
       public const string CenturySuffixRegex = @"(^century)\b";
       public const string ReferencePrefixRegex = @"(that|same)\b";
-      public const string FutureSuffixRegex = @"\b(in\s+the\s+)?(future|hence)\b";
+      public const string FutureSuffixRegex = @"\b((in\s+the\s+)?future|hence)\b";
+      public const string PastSuffixRegex = @"\b((in\s+the\s+)past)\b";
       public const string DayRegex = @"(the\s*)?(?<!(\d+:?|\$)\s*)(?<day>(?:3[0-1]|[1-2]\d|0?[1-9])(?:th|nd|rd|st)?)(?=\b|t)";
       public const string ImplicitDayRegex = @"(the\s*)?(?<day>(?:3[0-1]|[0-2]?\d)(?:th|nd|rd|st))\b";
       public const string MonthNumRegex = @"(?<month>1[0-2]|(0)?[1-9])\b";
@@ -246,9 +247,11 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly string AfterRegex = $@"((\b{InclusiveModPrepositions}?((after|(starting|beginning)(\s+on)?(?!\sfrom)|(?<!no\s+)later than)|(year greater than))(?!\s+or equal to){InclusiveModPrepositions}?\b\s*?)|(?<!\w|<)((?<include>>\s*=)|>))(\s+the)?";
       public const string SinceRegex = @"(?:(?:\b(?:since|after\s+or\s+equal\s+to|starting\s+(?:from|on|with)|as\s+early\s+as|(any\s+time\s+)from)\b\s*?)|(?<!\w|<)(>=))(\s+the)?";
       public static readonly string SinceRegexExp = $@"({SinceRegex}|\bfrom(\s+the)?\b)";
-      public const string AgoRegex = @"\b(ago|before\s+(?<day>yesterday|today))\b";
+      public const string AgoRegex = @"\b(ago|earlier|before\s+(?<day>yesterday|today))\b";
       public static readonly string LaterRegex = $@"\b(?:later(?!((\s+in)?\s*{OneWordPeriodRegex})|(\s+{TimeOfDayRegex})|\s+than\b)|from now|(from|after)\s+(?<day>tomorrow|tmr|today))\b";
       public const string BeforeAfterRegex = @"\b((?<before>before)|(?<after>from|after))\b";
+      public static readonly string ModPrefixRegex = $@"\b({RelativeRegex}|{AroundRegex}|{BeforeRegex}|{AfterRegex}|{SinceRegex})\b";
+      public static readonly string ModSuffixRegex = $@"\b({AgoRegex}|{LaterRegex}|{BeforeAfterRegex}|{FutureSuffixRegex}|{PastSuffixRegex})\b";
       public const string InConnectorRegex = @"\b(in)\b";
       public static readonly string SinceYearSuffixRegex = $@"(^\s*{SinceRegex}(\s*(the\s+)?year\s*)?{YearSuffix})";
       public static readonly string WithinNextPrefixRegex = $@"\b(within(\s+the)?(\s+(?<next>{NextPrefixRegex}))?)\b";

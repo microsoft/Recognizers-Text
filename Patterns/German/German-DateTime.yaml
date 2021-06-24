@@ -581,6 +581,14 @@ YearPeriodRegex: !nestedRegex
   references: [ YearRegex, TillRegex, RangeConnectorRegex ]
 FutureSuffixRegex: !simpleRegex
   def: \b(in\s+der\s+)?(zukunft|zukünftig)\b
+PastSuffixRegex: !simpleRegex
+  def: ^\b$
+ModPrefixRegex: !nestedRegex
+  def: \b({RelativeRegex}|{AroundRegex}|{BeforeRegex}|{AfterRegex}|{SinceRegex})\b
+  references: [RelativeRegex, AroundRegex, BeforeRegex, AfterRegex, SinceRegex ]
+ModSuffixRegex: !nestedRegex
+  def: \b({AgoRegex}|{LaterRegex}|{BeforeAfterRegex}|{FutureSuffixRegex}|{PastSuffixRegex})\b
+  references: [AgoRegex, LaterRegex, BeforeAfterRegex, FutureSuffixRegex, PastSuffixRegex]
 ComplexDatePeriodRegex: !nestedRegex
   def: (((von|während|in)\s+)?(?<start>.+)\s*({TillRegex})\s*(?<end>.+)|((zwischen)\s+)(?<start>.+)\s*({RangeConnectorRegex})\s*(?<end>.+))
   references: [ YearRegex, TillRegex, RangeConnectorRegex ]

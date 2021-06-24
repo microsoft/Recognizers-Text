@@ -253,6 +253,8 @@ namespace Microsoft.Recognizers.Definitions.French
       public const string SuffixAfterRegex = @"^\b$";
       public const string YearPeriodRegex = @"^\b$";
       public const string FutureSuffixRegex = @"\b(dans\s+le\s+futur)\b";
+      public static readonly string ModPrefixRegex = $@"\b({RelativeRegex}|{AroundRegex}|{BeforeRegex}|{AfterRegex}|{SinceRegex})\b";
+      public static readonly string ModSuffixRegex = $@"\b({AgoRegex}|{LaterRegex}|{BeforeAfterRegex}|{FutureSuffixRegex}|{PastSuffixRegex})\b";
       public const string ComplexDatePeriodRegex = @"^\b$";
       public const string AmbiguousPointRangeRegex = @"^(mar\.?)$";
       public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>

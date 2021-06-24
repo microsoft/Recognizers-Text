@@ -38,6 +38,7 @@ namespace Microsoft.Recognizers.Definitions.Arabic
       public const string CenturySuffixRegex = @"(^century)\b";
       public const string ReferencePrefixRegex = @"(ذلك|نفس|هذا)\b";
       public const string FutureSuffixRegex = @"\b(الحالي(ة)|القادم(ة)|في المستقبل|التالي(ة)|الآتي(ة)|المقبلين|المقبل(ة))\b";
+      public const string PastSuffixRegex = @"^\b$";
       public const string DayRegex = @"(?<day>(?:3[0-1]|[1-2]\d|0?[1-9]))";
       public const string ImplicitDayRegex = @"(the\s*)?(?<day>(?:3[0-1]|[0-2]?\d)(?:th|nd|rd|st))\b";
       public const string MonthNumRegex = @"(?<month>1[0-2]|(0)?[1-9])\b";
@@ -269,6 +270,8 @@ namespace Microsoft.Recognizers.Definitions.Arabic
       public const string AgoRegex = @"\b(ago|before\s+(?<day>yesterday|today))\b";
       public static readonly string LaterRegex = $@"\b(?:later(?!((\s+in)?\s*{OneWordPeriodRegex})|(\s+{TimeOfDayRegex})|\s+than\b)|من الآن|من الان|(from|after)\s+(?<day>tomorrow|tmr|today))\b";
       public const string BeforeAfterRegex = @"\b((?<before>before)|(?<after>from|after))\b";
+      public static readonly string ModPrefixRegex = $@"\b({RelativeRegex}|{AroundRegex}|{BeforeRegex}|{AfterRegex}|{SinceRegex})\b";
+      public static readonly string ModSuffixRegex = $@"\b({AgoRegex}|{LaterRegex}|{BeforeAfterRegex}|{FutureSuffixRegex}|{PastSuffixRegex})\b";
       public const string InConnectorRegex = @"\b(in)\b";
       public static readonly string SinceYearSuffixRegex = $@"(^\s*{SinceRegex}(\s*(the\s+)?year\s*)?{YearSuffix})";
       public static readonly string WithinNextPrefixRegex = $@"\b(within(\s+the)?(\s+(?<next>{NextPrefixRegex}))?)\b";

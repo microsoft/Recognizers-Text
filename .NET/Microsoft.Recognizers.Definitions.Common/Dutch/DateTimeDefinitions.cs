@@ -40,6 +40,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public const string CenturySuffixRegex = @"(^eeuw|^centennium)\b";
       public const string ReferencePrefixRegex = @"(dezelfde|hetzelfde|dat(zelfde)?|die|overeenkomstige)\b";
       public const string FutureSuffixRegex = @"\b(((in\s+de\s+)?toekomst)|daarna|over|na)\b";
+      public const string PastSuffixRegex = @"^\b$";
       public const string DayRegex = @"(de\s*)?(?<!(\d+:|\$)\s*)(?<day>(?:3[0-1]|[1-2]\d|0?[1-9]))(?:ste|de|e)?(?=\b|t)";
       public static readonly string WrittenDayRegex = $@"(?<day>({WrittenOneToNineRegex})|({WrittenElevenToNineteenRegex})|(({WrittenOneToNineRegex}(en|ën))?twintig)|(((één|een)(en|ën))?dertig))";
       public static readonly string WrittenCardinalDayRegex = $@"(?<=((de\s+)|\b))(?<day>(éérste|eerste|tweede|derde|vierde|vijfde|zesde|zevende|achtste|negende|tiende|{WrittenElevenToNineteenRegex}de|({WrittenOneToNineRegex}(en|ën))?twintigste|((één|een)(en|ën))?dertigste))";
@@ -262,6 +263,8 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public const string AgoRegex = @"\b(geleden|(voor|eerder\s+dan)\s+(?<day>gisteren|vandaag))\b";
       public const string LaterRegex = @"\b(later|vanaf\s+nu|(vanaf|na|sedert)\s+(?<day>morgen|vandaag))\b";
       public const string BeforeAfterRegex = @"^[.]";
+      public static readonly string ModPrefixRegex = $@"\b({RelativeRegex}|{AroundRegex}|{BeforeRegex}|{AfterRegex}|{SinceRegex})\b";
+      public static readonly string ModSuffixRegex = $@"\b({AgoRegex}|{LaterRegex}|{BeforeAfterRegex}|{FutureSuffixRegex}|{PastSuffixRegex})\b";
       public const string InConnectorRegex = @"\b(in|over|na)(\s+de)?\b";
       public static readonly string SinceYearSuffixRegex = $@"(^\s*{SinceRegex}((vanaf|sedert|sinds)\s+(het\s+)?jaar\s+)?{YearSuffix})";
       public static readonly string WithinNextPrefixRegex = $@"\b((binnen)(\s+de|het)?(\s+(?<next>{NextPrefixRegex}))?)\b";

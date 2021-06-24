@@ -38,6 +38,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public const string CenturySuffixRegex = @"^(सन|सदी|शताब्दी)";
       public const string ReferencePrefixRegex = @"(उस|उसी)";
       public const string FutureSuffixRegex = @"\b((आने\s+वा(ले|ला)\s+)?(भविष्य|बाद)(\s+(में|मे))?|आज\s+से)";
+      public const string PastSuffixRegex = @"^\b$";
       public const string DayRegex = @"(उस\s*)?(?<day>(?:3[0-1]|[1-2]\d|0?[1-9]))(?!\d+)(?:ला|ली|रा|था|वां|वीं|वें|वाँ|वा|ठा|th|nd|rd|st)?(?=तारीख|दिन)?";
       public const string ImplicitDayRegex = @"(उस\s*)?(?<day>(?:3[0-1]|[0-2]?\d))(?:ला|ली|रा|था|वां|वीं|वें|वाँ|वा|ठा)(?=\b|\s*(तारीख|दिन))?";
       public const string MonthNumRegex = @"(?<month>1[0-2]|(0)?[1-9])\b";
@@ -257,6 +258,8 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public const string AgoRegex = @"((?<day>(कल से पहले)|कल|आज)(\s+(से|के)\s*पहले)?|पहले)";
       public static readonly string LaterRegex = $@"\b(?:(?<day>(कल|अब|आज)\s+से)\s+बाद|बाद(?!((\s+में)?\s*{OneWordPeriodRegex})|(\s+{TimeOfDayRegex}))|(?<day>कल|आज) (से|बाद)|अब\s+से|के\s+बाद)";
       public const string BeforeAfterRegex = @"^[.]";
+      public static readonly string ModPrefixRegex = $@"\b({RelativeRegex}|{AroundRegex}|{BeforeRegex}|{AfterRegex}|{SinceRegex})\b";
+      public static readonly string ModSuffixRegex = $@"\b({AgoRegex}|{LaterRegex}|{BeforeAfterRegex}|{FutureSuffixRegex}|{PastSuffixRegex})\b";
       public const string InConnectorRegex = @"\b(में|को)";
       public static readonly string SinceYearSuffixRegex = $@"(^\s*{SinceRegex}(\s*(the\s+)?year\s*)?{YearSuffix})";
       public static readonly string WithinNextPrefixRegex = $@"\b(((?<next>{NextPrefixRegex}?के)\s+)?(अंदर|भीतर))";

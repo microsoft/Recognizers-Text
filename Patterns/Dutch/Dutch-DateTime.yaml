@@ -42,6 +42,8 @@ ReferencePrefixRegex: !simpleRegex
   def: (dezelfde|hetzelfde|dat(zelfde)?|die|overeenkomstige)\b
 FutureSuffixRegex: !simpleRegex
   def: \b(((in\s+de\s+)?toekomst)|daarna|over|na)\b
+PastSuffixRegex: !simpleRegex
+  def: ^\b$
 DayRegex: !simpleRegex
   def: (de\s*)?(?<!(\d+:|\$)\s*)(?<day>(?:3[0-1]|[1-2]\d|0?[1-9]))(?:ste|de|e)?(?=\b|t)
 # 1-31 written
@@ -632,6 +634,12 @@ LaterRegex: !simpleRegex
   def: \b(later|vanaf\s+nu|(vanaf|na|sedert)\s+(?<day>morgen|vandaag))\b
 BeforeAfterRegex: !simpleRegex
   def: ^[.]
+ModPrefixRegex: !nestedRegex
+  def: \b({RelativeRegex}|{AroundRegex}|{BeforeRegex}|{AfterRegex}|{SinceRegex})\b
+  references: [RelativeRegex, AroundRegex, BeforeRegex, AfterRegex, SinceRegex ]
+ModSuffixRegex: !nestedRegex
+  def: \b({AgoRegex}|{LaterRegex}|{BeforeAfterRegex}|{FutureSuffixRegex}|{PastSuffixRegex})\b
+  references: [AgoRegex, LaterRegex, BeforeAfterRegex, FutureSuffixRegex, PastSuffixRegex]
 InConnectorRegex: !simpleRegex
   def: \b(in|over|na)(\s+de)?\b
 SinceYearSuffixRegex: !nestedRegex

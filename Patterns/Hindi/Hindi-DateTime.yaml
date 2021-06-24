@@ -43,6 +43,8 @@ ReferencePrefixRegex: !simpleRegex
   def: (उस|उसी)
 FutureSuffixRegex: !simpleRegex
   def: \b((आने\s+वा(ले|ला)\s+)?(भविष्य|बाद)(\s+(में|मे))?|आज\s+से)
+PastSuffixRegex: !simpleRegex
+  def: ^\b$
 DayRegex: !simpleRegex
   def: (उस\s*)?(?<day>(?:3[0-1]|[1-2]\d|0?[1-9]))(?!\d+)(?:ला|ली|रा|था|वां|वीं|वें|वाँ|वा|ठा|th|nd|rd|st)?(?=तारीख|दिन)?
 ImplicitDayRegex: !simpleRegex
@@ -607,6 +609,12 @@ LaterRegex: !nestedRegex
   references: [ OneWordPeriodRegex, TimeOfDayRegex ]
 BeforeAfterRegex: !simpleRegex
   def: ^[.]
+ModPrefixRegex: !nestedRegex
+  def: \b({RelativeRegex}|{AroundRegex}|{BeforeRegex}|{AfterRegex}|{SinceRegex})\b
+  references: [RelativeRegex, AroundRegex, BeforeRegex, AfterRegex, SinceRegex ]
+ModSuffixRegex: !nestedRegex
+  def: \b({AgoRegex}|{LaterRegex}|{BeforeAfterRegex}|{FutureSuffixRegex}|{PastSuffixRegex})\b
+  references: [AgoRegex, LaterRegex, BeforeAfterRegex, FutureSuffixRegex, PastSuffixRegex]
 InConnectorRegex: !simpleRegex
   def: \b(में|को)
 SinceYearSuffixRegex: !nestedRegex
