@@ -223,8 +223,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             var unitMap = this.config.UnitMap;
             var unitValueMap = this.config.UnitValueMap;
             var unitRegex = this.config.DurationUnitRegex;
-            List<ExtractResult> ret = new List<ExtractResult>();
-            List<List<ExtractResult>> separaRet = new List<List<ExtractResult>>();
+            List<ExtractResult> results = new List<ExtractResult>();
+            List<List<ExtractResult>> separateResults = new List<List<ExtractResult>>();
 
             var firstExtractionIndex = 0;
             var timeUnit = 0;
@@ -251,7 +251,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 // Add extraction to list of separate results (needed in case the extractions should not be merged)
-                List<ExtractResult> separaList = new List<ExtractResult>() { extractorResults[firstExtractionIndex] };
+                List<ExtractResult> separateList = new List<ExtractResult>() { extractorResults[firstExtractionIndex] };
 
                 var secondExtractionIndex = firstExtractionIndex + 1;
                 while (secondExtractionIndex < extractorResults.Count)
@@ -290,7 +290,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
 
                     // Add extraction to list of separate results (needed in case the extractions should not be merged)
-                    separaList.Add(extractorResults[secondExtractionIndex]);
+                    separateList.Add(extractorResults[secondExtractionIndex]);
 
                     secondExtractionIndex++;
                 }
@@ -316,45 +316,41 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     node.Data = type;
 
-                    ret.Add(node);
+                    results.Add(node);
 
                     timeUnit = 0;
                     totalUnit = 0;
                 }
                 else
                 {
-                    ret.Add(extractorResults[firstExtractionIndex]);
+                    results.Add(extractorResults[firstExtractionIndex]);
                 }
 
-                // Add list of separate extractions to separaRet, so that there is a 1 to 1 correspondence
-                // between ret (list of merged extractions) and separaRet (list of unmerged extractions)
-                separaRet.Add(separaList);
+                // Add list of separate extractions to separateResults, so that there is a 1 to 1 correspondence
+                // between results (list of merged extractions) and separateResults (list of unmerged extractions)
+                separateResults.Add(separateList);
 
                 firstExtractionIndex = secondExtractionIndex;
             }
 
             // If the first and last elements of a group of contiguous extractions are both preceded/followed by modifiers,
             // they should not be merged, e.g. "last 2 weeks and 3 days ago"
-            List<ExtractResult> newRet = new List<ExtractResult>();
-            for (int i = 0; i < ret.Count; i++)
+            for (int i = results.Count - 1; i >= 0; i--)
             {
-                var start = (int)ret[i].Start;
-                var end = start + (int)ret[i].Length;
+                var start = (int)results[i].Start;
+                var end = start + (int)results[i].Length;
                 var beforeStr = text.Substring(0, start);
                 var afterStr = text.Substring(end);
                 var beforeMod = this.config.ModPrefixRegex.MatchEnd(beforeStr, trim: true);
                 var afterMod = this.config.ModSuffixRegex.MatchBegin(afterStr, trim: true);
                 if (beforeMod.Success && afterMod.Success)
                 {
-                    newRet.AddRange(separaRet[i]);
-                }
-                else
-                {
-                    newRet.Add(ret[i]);
+                    results.RemoveAt(i);
+                    results.InsertRange(i, separateResults[i]);
                 }
             }
 
-            return newRet;
+            return results;
         }
     }
 }

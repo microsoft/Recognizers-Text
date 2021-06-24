@@ -956,8 +956,7 @@ DurationUnitRegex: !nestedRegex
   def: (?<unit>{DateUnitRegex}|horas?|hra?s?|hs?|minutos?|mins?|segundos?|segs?|noches?)\b
   references: [ DateUnitRegex ]
 DurationConnectorRegex: !simpleRegex
-  # TODO: add this according to the related part in English
-  def: ^[.]
+  def: ^\s*(?<connector>\s+|y|,)\s*$
 RelativeDurationUnitRegex: !nestedRegex
   def: (?:(?<=({NextPrefixRegex}|{PreviousPrefixRegex}|{ThisPrefixRegex})\s+)({DurationUnitRegex}))
   references: [ NextPrefixRegex, PreviousPrefixRegex, ThisPrefixRegex, DurationUnitRegex ]

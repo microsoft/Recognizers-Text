@@ -20891,6 +20891,7 @@
   },
   {
     "Input": "They worked on the problem for the last 3 months and 2 weeks and 2 days ago they found a solution",
+    "Comment": "The middle entity '2 weeks' is not merged due to ambiguity",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },

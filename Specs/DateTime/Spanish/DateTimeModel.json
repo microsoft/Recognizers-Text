@@ -21791,5 +21791,126 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Trabajaron en el problema durante los últimos 3 meses y 2 semanas y 2 días antes de hoy encontraron una solución.",
+    "Comment": "The middle entity '2 semanas' is not merged due to ambiguity",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "últimos 3 meses",
+        "Start": 38,
+        "End": 52,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-08-07,2016-11-07,P3M)",
+              "type": "daterange",
+              "start": "2016-08-07",
+              "end": "2016-11-07"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2 semanas",
+        "Start": 56,
+        "End": 64,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P2W",
+              "type": "duration",
+              "value": "1209600"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2 días antes de hoy",
+        "Start": 68,
+        "End": 86,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-05",
+              "type": "date",
+              "value": "2016-11-05"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Durante los últimos 3 meses, trabajaron en el problema y 2 semanas y 2 días antes de hoy encontraron una solución.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "últimos 3 meses",
+        "Start": 12,
+        "End": 26,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-08-07,2016-11-07,P3M)",
+              "type": "daterange",
+              "start": "2016-08-07",
+              "end": "2016-11-07"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2 semanas y 2 días antes de hoy",
+        "Start": 57,
+        "End": 87,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-10-22",
+              "type": "date",
+              "value": "2016-10-22"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Trabajaron en el problema durante los últimos 3 meses y 2 semanas y 2 días.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "últimos 3 meses y 2 semanas y 2 días",
+        "Start": 38,
+        "End": 73,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-07-22,2016-11-07,P3M2W2D)",
+              "type": "daterange",
+              "start": "2016-07-22",
+              "end": "2016-11-07"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
