@@ -61,6 +61,8 @@ SpecialDayWithNumRegex: !simpleRegex
 WeekDayOfMonthRegex: !nestedRegex
   def: (((((이번|저번|지난|다음)\s)?{MonthRegex}|((이번|저번|지난|다음)\s)?{MonthNumRegex}월|(이번|저번|지난|다음)\s*달)의?\s*)?(?<cardinal>첫\s?번?째|두\s?번째|둘째|세\s?번째|셋째|네\s?번째|넷째|다섯\s?번?째|다섯째|여섯\s?번?째|여섯째|일곱\s?번?째|여덟\s?번?째|아홉\s?번?째|열\s?번?\s?째|마지막)\s*주?\s*{WeekDayRegex})
   references: [MonthRegex, MonthNumRegex, WeekDayRegex]
+WeekDayAndDayRegex: !simpleRegex
+  def: ^[.]
 ThisPrefixRegex: !simpleRegex
   def: 이번?|금
 LastPrefixRegex: !simpleRegex
@@ -286,7 +288,7 @@ DurationRelativeDurationUnitRegex: !simpleRegex
 DurationDuringRegex: !simpleRegex
   def: (동안)
 DurationSomeRegex: !simpleRegex
-  def: (몇|여러)
+  def: ^\b$
 DurationMoreOrLessRegex: !simpleRegex
   def: (더|이상|이하|초과|미만)
 DurationYearRegex: !nestedRegex

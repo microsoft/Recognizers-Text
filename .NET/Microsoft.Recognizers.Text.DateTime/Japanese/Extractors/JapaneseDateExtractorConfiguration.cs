@@ -29,6 +29,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         public static readonly Regex SpecialDate = new Regex(DateTimeDefinitions.SpecialDate, RegexFlags);
 
+        public static readonly Regex SpecialDayWithNumRegex = new Regex(DateTimeDefinitions.SpecialDayWithNumRegex, RegexFlags);
+
         public static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.BeforeRegex, RegexFlags);
 
         public static readonly Regex AfterRegex = new Regex(DateTimeDefinitions.AfterRegex, RegexFlags);
@@ -40,6 +42,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         public static readonly Regex DayRegexInCJK = new Regex(DateTimeDefinitions.DateDayRegexInCJK, RegexFlags);
         public static readonly Regex DayRegexNumInCJK = new Regex(DateTimeDefinitions.DayRegexNumInCJK, RegexFlags);
         public static readonly Regex MonthNumRegex = new Regex(DateTimeDefinitions.MonthNumRegex, RegexFlags);
+        public static readonly Regex WeekDayAndDayRegex = new Regex(DateTimeDefinitions.WeekDayAndDayRegex, RegexFlags);
+        public static readonly Regex DurationRelativeDurationUnitRegex = new Regex(DateTimeDefinitions.DurationRelativeDurationUnitRegex, RegexFlags);
         public static readonly Regex YearRegex = new Regex(DateTimeDefinitions.YearRegex, RegexFlags);
         public static readonly Regex RelativeRegex = new Regex(DateTimeDefinitions.RelativeRegex, RegexFlags);
         public static readonly Regex ZeroToNineIntegerRegexCJK = new Regex(DateTimeDefinitions.ZeroToNineIntegerRegexCJK, RegexFlags);
@@ -63,8 +67,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
             ImplicitDateList = new List<Regex>
             {
-                LunarRegex, SpecialDayRegex, ThisRegex, LastRegex, NextRegex,
-                WeekDayRegex, WeekDayOfMonthRegex, SpecialDate,
+                LunarRegex, SpecialDayWithNumRegex, SpecialDayRegex, ThisRegex, LastRegex, NextRegex,
+                WeekDayRegex, WeekDayOfMonthRegex, SpecialDate, WeekDayAndDayRegex,
             };
 
             // ２０１６年１２月１日

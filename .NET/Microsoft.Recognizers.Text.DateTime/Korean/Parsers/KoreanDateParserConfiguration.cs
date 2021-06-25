@@ -22,6 +22,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
 
             DateExtractor = config.DateExtractor;
             DurationExtractor = config.DurationExtractor;
+            DurationParser = config.DurationParser;
 
             DateRegexList = new KoreanDateExtractorConfiguration(this).DateRegexList;
             SpecialDate = KoreanDateExtractorConfiguration.SpecialDate;
@@ -40,6 +41,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
             ThisRegex = KoreanDateExtractorConfiguration.ThisRegex;
             LastRegex = KoreanDateExtractorConfiguration.LastRegex;
             WeekDayOfMonthRegex = KoreanDateExtractorConfiguration.WeekDayOfMonthRegex;
+            WeekDayAndDayRegex = KoreanDateExtractorConfiguration.WeekDayAndDayRegex;
+            DurationRelativeDurationUnitRegex = KoreanDateExtractorConfiguration.DurationRelativeDurationUnitRegex;
+            SpecialDayWithNumRegex = KoreanDateExtractorConfiguration.SpecialDayWithNumRegex;
 
             CardinalMap = config.CardinalMap;
             UnitMap = config.UnitMap;
@@ -58,6 +62,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
         public IDateTimeExtractor DateExtractor { get; }
 
         public IDateTimeExtractor DurationExtractor { get; }
+
+        public IDateTimeParser DurationParser { get; }
 
         public IEnumerable<Regex> DateRegexList { get; }
 
@@ -86,6 +92,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
         public Regex LastRegex { get; }
 
         public Regex WeekDayOfMonthRegex { get; }
+
+        public Regex WeekDayAndDayRegex { get; }
+
+        public Regex DurationRelativeDurationUnitRegex { get; }
+
+        public Regex SpecialDayWithNumRegex { get; }
 
         public Regex DynastyYearRegex { get; }
 

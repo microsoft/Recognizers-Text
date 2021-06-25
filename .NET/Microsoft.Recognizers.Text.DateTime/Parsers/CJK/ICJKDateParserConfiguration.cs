@@ -15,6 +15,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IDateTimeExtractor DurationExtractor { get; }
 
+        IDateTimeParser DurationParser { get; }
+
         IDateTimeExtractor DateExtractor { get; }
 
         IEnumerable<Regex> DateRegexList { get; }
@@ -28,6 +30,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex SpecialDayRegex { get; }
 
         Regex StrictWeekDayRegex { get; }
+
+        Regex SpecialDayWithNumRegex { get; }
 
         Regex LunarRegex { get; }
 
@@ -50,6 +54,10 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex LastRegex { get; }
 
         Regex WeekDayOfMonthRegex { get; }
+
+        Regex WeekDayAndDayRegex { get; }
+
+        Regex DurationRelativeDurationUnitRegex { get; }
 
         IImmutableDictionary<string, string> UnitMap { get; }
 

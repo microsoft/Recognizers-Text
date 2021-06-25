@@ -65,6 +65,8 @@ SpecialDayWithNumRegex: !simpleRegex
 WeekDayOfMonthRegex: !nestedRegex
   def: ((({MonthRegex}|{MonthNumRegex})的\s*)(?<cardinal>第一个|第二个|第三个|第四个|第五个|最后一个)\s*{WeekDayRegex})
   references: [MonthRegex, MonthNumRegex, WeekDayRegex]
+WeekDayAndDayRegex: !simpleRegex
+  def: ^[.]
 ThisPrefixRegex: !simpleRegex
   def: 这个|这一个|这|这一|本|今
 LastPrefixRegex: !simpleRegex

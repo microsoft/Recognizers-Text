@@ -3,14 +3,25 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Japanese;
+using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
     public class JapaneseDateParserConfiguration : BaseDateTimeOptionsConfiguration, ICJKDateParserConfiguration
     {
+        public static readonly Regex PlusOneDayRegex = new Regex(DateTimeDefinitions.PlusOneDayRegex, RegexFlags);
+        public static readonly Regex MinusOneDayRegex = new Regex(DateTimeDefinitions.MinusOneDayRegex, RegexFlags);
+        public static readonly Regex PlusTwoDayRegex = new Regex(DateTimeDefinitions.PlusTwoDayRegex, RegexFlags);
+        public static readonly Regex MinusTwoDayRegex = new Regex(DateTimeDefinitions.MinusTwoDayRegex, RegexFlags);
+        public static readonly Regex PlusThreeDayRegex = new Regex(DateTimeDefinitions.PlusThreeDayRegex, RegexFlags);
+        public static readonly Regex MinusThreeDayRegex = new Regex(DateTimeDefinitions.MinusThreeDayRegex, RegexFlags);
+        public static readonly Regex PlusFourDayRegex = new Regex(DateTimeDefinitions.PlusFourDayRegex, RegexFlags);
+
         public static readonly string ParserName = Constants.SYS_DATETIME_DATE; // "Date";
 
         public static readonly List<int> MonthMaxDays = new List<int> { 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         public JapaneseDateParserConfiguration(ICJKCommonDateTimeParserConfiguration config)
              : base(config)
@@ -22,6 +33,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
             DateExtractor = config.DateExtractor;
             DurationExtractor = config.DurationExtractor;
+            DurationParser = config.DurationParser;
 
             DateRegexList = new JapaneseDateExtractorConfiguration(this).DateRegexList;
             SpecialDate = JapaneseDateExtractorConfiguration.SpecialDate;
@@ -40,13 +52,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             ThisRegex = JapaneseDateExtractorConfiguration.ThisRegex;
             LastRegex = JapaneseDateExtractorConfiguration.LastRegex;
             WeekDayOfMonthRegex = JapaneseDateExtractorConfiguration.WeekDayOfMonthRegex;
+            WeekDayAndDayRegex = JapaneseDateExtractorConfiguration.WeekDayAndDayRegex;
+            DurationRelativeDurationUnitRegex = JapaneseDateExtractorConfiguration.DurationRelativeDurationUnitRegex;
+            SpecialDayWithNumRegex = JapaneseDateExtractorConfiguration.SpecialDayWithNumRegex;
 
             CardinalMap = config.CardinalMap;
             UnitMap = config.UnitMap;
             DayOfMonth = config.DayOfMonth;
             DayOfWeek = config.DayOfWeek;
             MonthOfYear = config.MonthOfYear;
-
         }
 
         public IExtractor IntegerExtractor { get; }
@@ -58,6 +72,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         public IDateTimeExtractor DateExtractor { get; }
 
         public IDateTimeExtractor DurationExtractor { get; }
+
+        public IDateTimeParser DurationParser { get; }
 
         public IEnumerable<Regex> DateRegexList { get; }
 
@@ -87,6 +103,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         public Regex WeekDayOfMonthRegex { get; }
 
+        public Regex WeekDayAndDayRegex { get; }
+
+        public Regex DurationRelativeDurationUnitRegex { get; }
+
+        public Regex SpecialDayWithNumRegex { get; }
+
         public Regex DynastyYearRegex { get; }
 
         public ImmutableDictionary<string, int> DynastyYearMap { get; }
@@ -113,49 +135,50 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         public int GetSwiftDay(string text)
         {
-            // Today: 今天, 今日, 最近, きょう, この日
-            var value = 0;
+            var swift = 0;
 
-            // @TODO move hardcoded values to resources file
-
-            if (text.StartsWith("来", StringComparison.Ordinal) ||
-                text.Equals("あす", StringComparison.Ordinal) ||
-                text.Equals("あした", StringComparison.Ordinal) ||
-                text.Equals("明日", StringComparison.Ordinal))
+            if (PlusOneDayRegex.MatchBegin(text, trim: true).Success)
             {
-                value = 1;
+                swift = 1;
             }
-            else if (text.StartsWith("昨", StringComparison.Ordinal) ||
-                     text.Equals("きのう", StringComparison.Ordinal) ||
-                     text.Equals("前日", StringComparison.Ordinal))
+            else if (MinusOneDayRegex.MatchBegin(text, trim: true).Success)
             {
-                value = -1;
-            }
-            else if (text.Equals("大后天", StringComparison.Ordinal) ||
-                     text.Equals("大後天", StringComparison.Ordinal))
-            {
-                value = 3;
-            }
-            else if (text.Equals("大前天", StringComparison.Ordinal))
-            {
-                value = -3;
-            }
-            else if (text.Equals("后天", StringComparison.Ordinal) ||
-                     text.Equals("後天", StringComparison.Ordinal) ||
-                     text.Equals("明後日", StringComparison.Ordinal) ||
-                     text.Equals("あさって", StringComparison.Ordinal))
-            {
-                value = 2;
-            }
-            else if (text.Equals("前天", StringComparison.Ordinal) ||
-                     text.Equals("一昨日", StringComparison.Ordinal) ||
-                     text.Equals("二日前", StringComparison.Ordinal) ||
-                     text.Equals("おととい", StringComparison.Ordinal))
-            {
-                value = -2;
+                swift = -1;
             }
 
-            return value;
+            if (PlusOneDayRegex.IsExactMatch(text, trim: false))
+            {
+                swift = 1;
+            }
+            else if (PlusThreeDayRegex.IsExactMatch(text, trim: false))
+            {
+                swift = 3;
+            }
+            else if (PlusFourDayRegex.IsExactMatch(text, trim: false))
+            {
+                swift = 4;
+            }
+            else if (MinusThreeDayRegex.IsExactMatch(text, trim: false))
+            {
+                swift = -3;
+            }
+            else if (MinusOneDayRegex.IsExactMatch(text, trim: false))
+            {
+                swift = -1;
+
+            }
+            else if (PlusTwoDayRegex.IsExactMatch(text, trim: false))
+            {
+                swift = 2;
+
+            }
+            else if (MinusTwoDayRegex.IsExactMatch(text, trim: false))
+            {
+                swift = -2;
+
+            }
+
+            return swift;
         }
     }
 }

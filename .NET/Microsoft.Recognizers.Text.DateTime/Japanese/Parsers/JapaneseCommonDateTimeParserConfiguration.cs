@@ -14,7 +14,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         public JapaneseCommonDateTimeParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
-            UnitMap = DateTimeDefinitions.ParserConfigurationUnitMap.ToImmutableDictionary(k => k.Key, k => k.Value.Substring(0, 1) + k.Value.Substring(1).ToLower());
+            UnitMap = DateTimeDefinitions.ParserConfigurationUnitMap.ToImmutableDictionary(k => k.Key, k => k.Value);
             UnitValueMap = DateTimeDefinitions.DurationUnitValueMap.ToImmutableDictionary();
             CardinalMap = DateTimeDefinitions.ParserConfigurationCardinalMap.ToImmutableDictionary();
             DayOfMonth = DateTimeDefinitions.ParserConfigurationDayOfMonth.ToImmutableDictionary();

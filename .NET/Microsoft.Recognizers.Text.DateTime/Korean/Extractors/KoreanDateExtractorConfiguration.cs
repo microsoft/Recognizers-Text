@@ -27,6 +27,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
 
         public static readonly Regex WeekDayOfMonthRegex = new Regex(DateTimeDefinitions.WeekDayOfMonthRegex, RegexFlags);
 
+        public static readonly Regex WeekDayAndDayRegex = new Regex(DateTimeDefinitions.WeekDayAndDayRegex, RegexFlags);
+
+        public static readonly Regex DurationRelativeDurationUnitRegex = new Regex(DateTimeDefinitions.DurationRelativeDurationUnitRegex, RegexFlags);
+
+        public static readonly Regex SpecialDayWithNumRegex = new Regex(DateTimeDefinitions.SpecialDayWithNumRegex, RegexFlags);
+
         public static readonly Regex SpecialDate = new Regex(DateTimeDefinitions.SpecialDate, RegexFlags);
 
         public static readonly Regex DurationFromSpecialDayRegex = new Regex(DateTimeDefinitions.DurationFromSpecialDayRegex, RegexFlags);

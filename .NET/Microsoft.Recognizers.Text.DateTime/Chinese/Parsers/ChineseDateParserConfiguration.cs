@@ -22,6 +22,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             DateExtractor = config.DateExtractor;
             DurationExtractor = config.DurationExtractor;
+            DurationParser = config.DurationParser;
 
             DateRegexList = new ChineseDateExtractorConfiguration(this).DateRegexList;
             SpecialDate = ChineseDateExtractorConfiguration.SpecialDate;
@@ -40,6 +41,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             ThisRegex = ChineseDateExtractorConfiguration.ThisRegex;
             LastRegex = ChineseDateExtractorConfiguration.LastRegex;
             WeekDayOfMonthRegex = ChineseDateExtractorConfiguration.WeekDayOfMonthRegex;
+            WeekDayAndDayRegex = ChineseDateExtractorConfiguration.WeekDayAndDayRegex;
+            DurationRelativeDurationUnitRegex = ChineseDateExtractorConfiguration.DurationRelativeDurationUnitRegex;
+            SpecialDayWithNumRegex = ChineseDateExtractorConfiguration.SpecialDayWithNumRegex;
 
             CardinalMap = config.CardinalMap;
             UnitMap = config.UnitMap;
@@ -58,6 +62,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public IDateTimeExtractor DateExtractor { get; }
 
         public IDateTimeExtractor DurationExtractor { get; }
+
+        public IDateTimeParser DurationParser { get; }
 
         public IEnumerable<Regex> DateRegexList { get; }
 
@@ -86,6 +92,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public Regex LastRegex { get; }
 
         public Regex WeekDayOfMonthRegex { get; }
+
+        public Regex WeekDayAndDayRegex { get; }
+
+        public Regex DurationRelativeDurationUnitRegex { get; }
+
+        public Regex SpecialDayWithNumRegex { get; }
 
         public Regex DynastyYearRegex { get; }
 

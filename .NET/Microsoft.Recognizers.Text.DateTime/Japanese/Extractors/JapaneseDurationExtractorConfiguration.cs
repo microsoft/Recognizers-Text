@@ -43,7 +43,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
             InternalExtractor = new NumberWithUnitExtractor(new DurationExtractorConfiguration());
 
-            UnitMap = DateTimeDefinitions.ParserConfigurationUnitMap.ToDictionary(k => k.Key, k => k.Value.Substring(0, 1) + k.Value.Substring(1).ToLower());
+            UnitMap = DateTimeDefinitions.ParserConfigurationUnitMap.ToDictionary(k => k.Key, k => k.Value);
             UnitValueMap = DateTimeDefinitions.DurationUnitValueMap;
         }
 

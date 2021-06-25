@@ -47,6 +47,7 @@ namespace Microsoft.Recognizers.Definitions.Korean
       public static readonly string DurationFromSpecialDayRegex = $@"({SpecialDayRegex}|지금(으로)?)\s*((부터)\s*(\d+|{ZeroToNineIntegerRegexCJK}+)\s*(?!월){DateUnitRegex})(\s*후)?";
       public const string SpecialDayWithNumRegex = @"(하루|이틀|사흘|나흘|닷새|엿새)";
       public static readonly string WeekDayOfMonthRegex = $@"(((((이번|저번|지난|다음)\s)?{MonthRegex}|((이번|저번|지난|다음)\s)?{MonthNumRegex}월|(이번|저번|지난|다음)\s*달)의?\s*)?(?<cardinal>첫\s?번?째|두\s?번째|둘째|세\s?번째|셋째|네\s?번째|넷째|다섯\s?번?째|다섯째|여섯\s?번?째|여섯째|일곱\s?번?째|여덟\s?번?째|아홉\s?번?째|열\s?번?\s?째|마지막)\s*주?\s*{WeekDayRegex})";
+      public const string WeekDayAndDayRegex = @"^[.]";
       public const string ThisPrefixRegex = @"이번?|금";
       public const string LastPrefixRegex = @"저번|지난";
       public const string NextPrefixRegex = @"다음|다가오는";
@@ -133,7 +134,7 @@ namespace Microsoft.Recognizers.Definitions.Korean
       public const string DurationHalfRegex = @"ㅂ";
       public const string DurationRelativeDurationUnitRegex = @"(지난|저번|작(?=년))";
       public const string DurationDuringRegex = @"(동안)";
-      public const string DurationSomeRegex = @"(몇|여러)";
+      public const string DurationSomeRegex = @"^\b$";
       public const string DurationMoreOrLessRegex = @"(더|이상|이하|초과|미만)";
       public static readonly string DurationYearRegex = $@"(\d+|{ZeroToNineIntegerRegexCJK})\s*년\s*간";
       public const string DurationHalfSuffixRegex = @"반";

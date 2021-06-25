@@ -49,6 +49,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public const string SpecialDayRegex = @"(最近|前天|后天|昨天|明天|今天|今日|明日|昨日|大后天|大前天|後天|大後天)";
       public const string SpecialDayWithNumRegex = @"^[.]";
       public static readonly string WeekDayOfMonthRegex = $@"((({MonthRegex}|{MonthNumRegex})的\s*)(?<cardinal>第一个|第二个|第三个|第四个|第五个|最后一个)\s*{WeekDayRegex})";
+      public const string WeekDayAndDayRegex = @"^[.]";
       public const string ThisPrefixRegex = @"这个|这一个|这|这一|本|今";
       public const string LastPrefixRegex = @"上个|上一个|上|上一|去";
       public const string NextPrefixRegex = @"下个|下一个|下|下一|明";

@@ -41,7 +41,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                 res.Add(ret);
             }
 
+            // handle "all day", "more days", "few days"
             res.AddRange(ImplicitDuration(source));
+
+            res = ExtractResultExtension.MergeAllResults(res);
 
             if (this.merge)
             {
@@ -183,6 +186,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             // handle "more day", "more year"
             ret.AddRange(Token.GetTokenFromRegex(config.MoreOrLessRegex, text));
+
+            // handle "few days", "few months"
+            ret.AddRange(Token.GetTokenFromRegex(config.SomeRegex, text));
 
             // handle "during/for the day/week/month/year"
             if ((config.Options & DateTimeOptions.CalendarMode) != 0)

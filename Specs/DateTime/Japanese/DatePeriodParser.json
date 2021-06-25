@@ -6334,5 +6334,32 @@
         "Length": 6
       }
     ]
+  },
+  {
+    "Input": "私は1月初旬に戻ります",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1月初旬",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-01",
+          "FutureResolution": {
+            "startDate": "2017-01-01",
+            "endDate": "2017-01-16"
+          },
+          "PastResolution": {
+            "startDate": "2016-01-01",
+            "endDate": "2016-01-16"
+          }
+        },
+        "Start": 2,
+        "Length": 4
+      }
+    ]
   }
 ]
