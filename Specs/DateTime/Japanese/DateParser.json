@@ -3592,7 +3592,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-21T08:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
