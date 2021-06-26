@@ -36,7 +36,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (extra != null)
             {
-                // Handle special case like '上午', '下午'
+                // Handle special case like '上午' (morning), '下午' (afternoon)
                 var parseResult = ParseTimeOfDay(er.Text, referenceTime);
 
                 if (!parseResult.Success)
@@ -106,10 +106,22 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return new DateTimeResolutionResult();
             }
 
+            // Add "early"/"late" Mod
+            if (endHour == beginHour + 2 && (beginHour == Constants.HalfDayHourCount - 4 || beginHour == Constants.HalfDayHourCount))
+            {
+                ret.Comment = Constants.Comment_Early;
+                ret.Mod = Constants.EARLY_MOD;
+            }
+            else if (beginHour == endHour - 2 && (endHour == Constants.HalfDayHourCount || endHour == Constants.HalfDayHourCount + 4))
+            {
+                ret.Comment = Constants.Comment_Late;
+                ret.Mod = Constants.LATE_MOD;
+            }
+
             ret.Timex = timex;
             ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(
                DateObject.MinValue.SafeCreateFromValue(year, month, day, beginHour, 0, 0),
-               DateObject.MinValue.SafeCreateFromValue(year, month, day, endHour, endMinSeg, 0));
+               DateObject.MinValue.SafeCreateFromValue(year, month, day, endHour, endMinSeg, endMinSeg));
             ret.Success = true;
 
             return ret;
