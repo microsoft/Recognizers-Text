@@ -82,7 +82,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             // Modify time period if "early"/"late" is present
             if (DateTimeDefinitions.EarlyHourTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)))
             {
-                endHour = beginHour + 2;
+                endHour = beginHour + Constants.HalfMidDayDurationHourCount;
 
                 // Handling special case: night ends with 23:59.
                 if (endMin == 59)
@@ -93,7 +93,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
             if (DateTimeDefinitions.LateHourTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)))
             {
-                beginHour = beginHour + 2;
+                beginHour = beginHour + Constants.HalfMidDayDurationHourCount;
             }
 
             return true;

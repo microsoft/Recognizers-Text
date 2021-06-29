@@ -107,12 +107,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // Add "early"/"late" Mod
-            if (endHour == beginHour + 2 && (beginHour == Constants.HalfDayHourCount - 4 || beginHour == Constants.HalfDayHourCount))
+            if (endHour == beginHour + Constants.HalfMidDayDurationHourCount && (beginHour == Constants.MorningBeginHour || beginHour == Constants.AfternoonBeginHour))
             {
                 ret.Comment = Constants.Comment_Early;
                 ret.Mod = Constants.EARLY_MOD;
             }
-            else if (beginHour == endHour - 2 && (endHour == Constants.HalfDayHourCount || endHour == Constants.HalfDayHourCount + 4))
+            else if (beginHour == endHour - Constants.HalfMidDayDurationHourCount && (endHour == Constants.MorningEndHour || endHour == Constants.AfternoonEndHour))
             {
                 ret.Comment = Constants.Comment_Late;
                 ret.Mod = Constants.LATE_MOD;

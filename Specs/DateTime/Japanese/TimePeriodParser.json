@@ -771,7 +771,7 @@
         "Text": "午前11時から11時50分まで",
         "Type": "timerange",
         "Value": {
-          "Timex": "(T11,T11:50,PT0H50M)",
+          "Timex": "(T11,T11:50,PT50M)",
           "FutureResolution": {
             "startTime": "11:00:00",
             "endTime": "11:50:00"
@@ -849,7 +849,7 @@
         "Text": "午後3時から午後3時30分まで",
         "Type": "timerange",
         "Value": {
-          "Timex": "(T15,T15:30,PT0H30M)",
+          "Timex": "(T15,T15:30,PT30M)",
           "FutureResolution": {
             "startTime": "15:00:00",
             "endTime": "15:30:00"
@@ -901,7 +901,7 @@
         "Text": "午前0時1分から1時まで",
         "Type": "timerange",
         "Value": {
-          "Timex": "(T00:01,T01,PT0H59M)",
+          "Timex": "(T00:01,T01,PT59M)",
           "FutureResolution": {
             "startTime": "00:01:00",
             "endTime": "01:00:00"
@@ -927,7 +927,7 @@
         "Text": "3時から3時30分まで",
         "Type": "timerange",
         "Value": {
-          "Timex": "(T03,T03:30,PT0H30M)",
+          "Timex": "(T03,T03:30,PT30M)",
           "FutureResolution": {
             "startTime": "03:00:00",
             "endTime": "03:30:00"
@@ -1291,7 +1291,7 @@
         "Text": "17時55分23秒から18時33分02秒まで",
         "Type": "timerange",
         "Value": {
-          "Timex": "(T17:55:23,T18:33:02,PT0H37M39S)",
+          "Timex": "(T17:55:23,T18:33:02,PT37M39S)",
           "FutureResolution": {
             "startTime": "17:55:23",
             "endTime": "18:33:02"
@@ -1499,7 +1499,7 @@
         "Text": "五時半から六時まで",
         "Type": "timerange",
         "Value": {
-          "Timex": "(T05:30,T06,PT0H30M)",
+          "Timex": "(T05:30,T06,PT30M)",
           "FutureResolution": {
             "startTime": "05:30:00",
             "endTime": "06:00:00"
@@ -1525,7 +1525,7 @@
         "Text": "17:55:23から18:33:02まで",
         "Type": "timerange",
         "Value": {
-          "Timex": "(T17:55:23,T18:33:02,PT0H37M39S)",
+          "Timex": "(T17:55:23,T18:33:02,PT37M39S)",
           "FutureResolution": {
             "startTime": "17:55:23",
             "endTime": "18:33:02"
@@ -1551,7 +1551,7 @@
         "Text": "午後五時十五分から六時まで",
         "Type": "timerange",
         "Value": {
-          "Timex": "(T17:15,T18,PT0H45M)",
+          "Timex": "(T17:15,T18,PT45M)",
           "FutureResolution": {
             "startTime": "17:15:00",
             "endTime": "18:00:00"

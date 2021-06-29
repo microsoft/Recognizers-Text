@@ -164,7 +164,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
             }
 
             var spanTimex = new StringBuilder();
-            spanTimex.Append($"PT{spanHour}H");
+            spanTimex.Append("PT");
+            if (spanHour > 0)
+            {
+                spanTimex.Append($"{spanHour}H");
+            }
 
             if (spanMinute != 0 && spanSecond == 0)
             {
