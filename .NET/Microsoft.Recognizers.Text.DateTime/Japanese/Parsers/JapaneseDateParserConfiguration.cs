@@ -19,8 +19,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         public static readonly string ParserName = Constants.SYS_DATETIME_DATE; // "Date";
 
-        public static readonly List<int> MonthMaxDays = new List<int> { 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         public JapaneseDateParserConfiguration(ICJKCommonDateTimeParserConfiguration config)
@@ -130,8 +128,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         public string NextMonthToken => DateTimeDefinitions.ParserConfigurationNextMonthToken;
 
         public string LastMonthToken => DateTimeDefinitions.ParserConfigurationLastMonthToken;
-
-        List<int> ICJKDateParserConfiguration.MonthMaxDays => MonthMaxDays;
 
         public int GetSwiftDay(string text)
         {

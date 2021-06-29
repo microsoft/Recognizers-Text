@@ -75,8 +75,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         string LastMonthToken { get; }
 
-        List<int> MonthMaxDays { get; }
-
         int GetSwiftDay(string text);
     }
 }

@@ -172,7 +172,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 DateObject futureDate, pastDate;
 
-                if (day > GetMonthMaxDay(year, month))
+                if (day > DateObjectExtension.GetMonthMaxDay(year, month))
                 {
                     var futureMonth = month + 1;
                     var pastMonth = month - 1;
@@ -761,18 +761,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             var match = this.config.LunarRegex.Match(trimmedText);
 
             return match.Success;
-        }
-
-        private int GetMonthMaxDay(int year, int month)
-        {
-            var maxDay = this.config.MonthMaxDays[month - 1];
-
-            if (!DateObject.IsLeapYear(year) && month == 2)
-            {
-                maxDay -= 1;
-            }
-
-            return maxDay;
         }
 
         // Handle cases like "三天前" "Three days ago"

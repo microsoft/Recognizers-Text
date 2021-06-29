@@ -10,8 +10,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_DATE; // "Date";
 
-        public static readonly List<int> MonthMaxDays = new List<int> { 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-
         public KoreanDateParserConfiguration(ICJKCommonDateTimeParserConfiguration config)
              : base(config)
         {
@@ -120,8 +118,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
         public string NextMonthToken => DateTimeDefinitions.ParserConfigurationNextMonthToken;
 
         public string LastMonthToken => DateTimeDefinitions.ParserConfigurationLastMonthToken;
-
-        List<int> ICJKDateParserConfiguration.MonthMaxDays => MonthMaxDays;
 
         public int GetSwiftDay(string text)
         {

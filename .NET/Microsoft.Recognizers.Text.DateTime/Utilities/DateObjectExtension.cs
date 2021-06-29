@@ -1,10 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
     public static class DateObjectExtension
     {
+        private const short IndexOfLeapMonth = 1;
+        private static readonly List<int> MonthValidDays = new List<int> { 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+
         public static DateObject Next(this DateObject from, DayOfWeek dayOfWeek)
         {
             var start = (int)from.DayOfWeek;
@@ -136,28 +140,28 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public static bool IsValidDate(int year, int month, int day)
         {
+            MonthValidDays[IndexOfLeapMonth] = LeapMonthDays(year);
+
             if (year < 1 || year > 9999)
             {
                 return false;
             }
 
-            int[] validDays =
-            {
-                31,
-                (year % 4 == 0 && year % 100 != 0) || year % 400 == 0 ? 29 : 28,
-                31,
-                30,
-                31,
-                30,
-                31,
-                31,
-                30,
-                31,
-                30,
-                31,
-            };
+            return month >= 1 && month <= 12 && day >= 1 && day <= MonthValidDays[month - 1];
+        }
 
-            return month >= 1 && month <= 12 && day >= 1 && day <= validDays[month - 1];
+        public static int GetMonthMaxDay(int year, int month)
+        {
+            MonthValidDays[IndexOfLeapMonth] = LeapMonthDays(year);
+
+            var maxDay = MonthValidDays[month - 1];
+
+            if (!DateObject.IsLeapYear(year) && month == 2)
+            {
+                maxDay -= 1;
+            }
+
+            return maxDay;
         }
 
         public static bool IsValidTime(int hour, int minute, int second)
@@ -168,6 +172,11 @@ namespace Microsoft.Recognizers.Text.DateTime
         public static bool IsDefaultValue(this DateObject datetime)
         {
             return datetime == default(DateObject);
+        }
+
+        private static int LeapMonthDays(int year)
+        {
+            return (year % 4 == 0 && year % 100 != 0) || year % 400 == 0 ? 29 : 28;
         }
     }
 }
