@@ -535,7 +535,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "２２日金曜",
+        "Text": "22日金曜",
         "Type": "date",
         "Value": {
           "Timex": "2017-09-22",
@@ -681,7 +681,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "１９０１年の９月１０日",
+        "Text": "1901年の9月10日",
         "Type": "date",
         "Value": {
           "Timex": "1901-09-10",
@@ -1113,7 +1113,7 @@
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "２０１６年１月１２日月曜日",
+        "Text": "2016年1月12日月曜日",
         "Type": "date",
         "Value": {
           "Timex": "2016-01-12",
@@ -1499,7 +1499,7 @@
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "６月２２日",
+        "Text": "6月22日",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-06-22",
@@ -2351,7 +2351,7 @@
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "１３日",
+        "Text": "13日",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-13",
@@ -2399,7 +2399,7 @@
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "２２日金曜",
+        "Text": "22日金曜",
         "Type": "date",
         "Value": {
           "Timex": "2017-09-22",
@@ -2423,7 +2423,7 @@
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "2３日目の土曜日",
+        "Text": "23日目の土曜日",
         "Type": "date",
         "Value": {
           "Timex": "2017-09-23",
@@ -2520,7 +2520,7 @@
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "第２の日曜日",
+        "Text": "第2の日曜日",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-09-WXX-0-#2",
@@ -3004,7 +3004,7 @@
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "２０１８年１月２１日　日曜日",
+        "Text": "2018年1月21日　日曜日",
         "Type": "date",
         "Value": {
           "Timex": "2018-01-21",
@@ -3052,7 +3052,7 @@
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "１９０１年の９月10日",
+        "Text": "1901年の9月10日",
         "Type": "date",
         "Value": {
           "Timex": "1901-09-10",
@@ -3620,7 +3620,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "昭和６２年一月十一日",
+        "Text": "昭和62年一月十一日",
         "Type": "date",
         "Value": {
           "Timex": "1987-01-11",
@@ -3644,7 +3644,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "平成２２年１月２９日",
+        "Text": "平成22年1月29日",
         "Type": "date",
         "Value": {
           "Timex": "2010-01-29",
@@ -3668,7 +3668,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "１９８９年０５月０５日",
+        "Text": "1989年05月05日",
         "Type": "date",
         "Value": {
           "Timex": "1989-05-05",
@@ -3812,7 +3812,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "平成１５年七月七日",
+        "Text": "平成15年七月七日",
         "Type": "date",
         "Value": {
           "Timex": "2003-07-07",
@@ -3836,7 +3836,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "２００４年八月十五日",
+        "Text": "2004年八月十五日",
         "Type": "date",
         "Value": {
           "Timex": "2004-08-15",
@@ -3860,7 +3860,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "２０１７年３月7日",
+        "Text": "2017年3月7日",
         "Type": "date",
         "Value": {
           "Timex": "2017-03-07",
@@ -3980,7 +3980,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "１３５７年６月１０日",
+        "Text": "1357年6月10日",
         "Type": "date",
         "Value": {
           "Timex": "1357-06-10",
@@ -4028,7 +4028,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "旧暦の２０１５年１０月１日",
+        "Text": "旧暦の2015年10月1日",
         "Type": "date",
         "Value": {
           "Timex": "2015-10-01",
@@ -4100,7 +4100,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "２９日",
+        "Text": "29日",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-29",
@@ -4124,7 +4124,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "昭和４６年０５月０５日",
+        "Text": "昭和46年05月05日",
         "Type": "date",
         "Value": {
           "Timex": "1971-05-05",
@@ -4172,7 +4172,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "旧暦の２０１５年一月一日",
+        "Text": "旧暦の2015年一月一日",
         "Type": "date",
         "Value": {
           "Timex": "2015-01-01",
@@ -4244,7 +4244,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "３６７年１月１日",
+        "Text": "367年1月1日",
         "Type": "date",
         "Value": {
           "Timex": "0367-01-01",
@@ -4268,7 +4268,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "２００３年７月２７日",
+        "Text": "2003年7月27日",
         "Type": "date",
         "Value": {
           "Timex": "2003-07-27",
@@ -4292,7 +4292,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "２９日",
+        "Text": "29日",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-29",
@@ -4340,7 +4340,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "平成１２年８月１５日",
+        "Text": "平成12年8月15日",
         "Type": "date",
         "Value": {
           "Timex": "2000-08-15",
@@ -4412,7 +4412,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "旧暦の１月３０日",
+        "Text": "旧暦の1月30日",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-01-30",
@@ -4460,7 +4460,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "寛政元年０１月２９日",
+        "Text": "寛政元年01月29日",
         "Type": "date",
         "Value": {
           "Timex": "1789-01-29",
@@ -4484,7 +4484,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "１０月１２日、月曜日",
+        "Text": "10月12日、月曜日",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-10-12",
@@ -4580,7 +4580,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "２０１５年５月１３日",
+        "Text": "2015年5月13日",
         "Type": "date",
         "Value": {
           "Timex": "2015-05-13",

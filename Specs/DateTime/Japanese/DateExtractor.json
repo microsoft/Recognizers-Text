@@ -1822,7 +1822,7 @@
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "明治元年８月１５日",
+        "Text": "明治元年8月15日",
         "Type": "date",
         "Start": 0,
         "Length": 9
@@ -1834,7 +1834,7 @@
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "明治二年８月１５日",
+        "Text": "明治二年8月15日",
         "Type": "date",
         "Start": 0,
         "Length": 9
@@ -1846,7 +1846,7 @@
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "明治13年８月１５日",
+        "Text": "明治13年8月15日",
         "Type": "date",
         "Start": 0,
         "Length": 10
@@ -1858,7 +1858,7 @@
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "大正元年８月１５日",
+        "Text": "大正元年8月15日",
         "Type": "date",
         "Start": 0,
         "Length": 9
@@ -1870,7 +1870,7 @@
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "大正二年８月１５日",
+        "Text": "大正二年8月15日",
         "Type": "date",
         "Start": 0,
         "Length": 9
@@ -1882,7 +1882,7 @@
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "大正13年８月１５日",
+        "Text": "大正13年8月15日",
         "Type": "date",
         "Start": 0,
         "Length": 10
@@ -1894,7 +1894,7 @@
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "昭和元年８月１５日",
+        "Text": "昭和元年8月15日",
         "Type": "date",
         "Start": 0,
         "Length": 9
@@ -1906,7 +1906,7 @@
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "昭和二年８月１５日",
+        "Text": "昭和二年8月15日",
         "Type": "date",
         "Start": 0,
         "Length": 9
@@ -1918,7 +1918,7 @@
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "昭和13年８月１５日",
+        "Text": "昭和13年8月15日",
         "Type": "date",
         "Start": 0,
         "Length": 10
@@ -1930,7 +1930,7 @@
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "平成元年８月１５日",
+        "Text": "平成元年8月15日",
         "Type": "date",
         "Start": 0,
         "Length": 9
@@ -1942,7 +1942,7 @@
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "平成二年８月１５日",
+        "Text": "平成二年8月15日",
         "Type": "date",
         "Start": 0,
         "Length": 9
@@ -1954,7 +1954,7 @@
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "平成13年８月１５日",
+        "Text": "平成13年8月15日",
         "Type": "date",
         "Start": 0,
         "Length": 10
@@ -2158,7 +2158,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "６月１５日",
+        "Text": "6月15日",
         "Type": "date",
         "Start": 6,
         "Length": 5
@@ -2206,7 +2206,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "寛政元年０１月２９日",
+        "Text": "寛政元年01月29日",
         "Type": "date",
         "Start": 0,
         "Length": 10
@@ -2218,7 +2218,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "６月１５日",
+        "Text": "6月15日",
         "Type": "date",
         "Start": 6,
         "Length": 5
@@ -2266,7 +2266,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "旧暦の１月３０日",
+        "Text": "旧暦の1月30日",
         "Type": "date",
         "Start": 9,
         "Length": 8
@@ -2278,7 +2278,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "３６７年１月１日",
+        "Text": "367年1月1日",
         "Type": "date",
         "Start": 0,
         "Length": 8
@@ -2290,7 +2290,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "２０１５年５月１３日",
+        "Text": "2015年5月13日",
         "Type": "date",
         "Start": 0,
         "Length": 10
@@ -2314,7 +2314,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "平成２２年１月２９日",
+        "Text": "平成22年1月29日",
         "Type": "date",
         "Start": 0,
         "Length": 10
@@ -2338,7 +2338,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "１３５７年６月１０日",
+        "Text": "1357年6月10日",
         "Type": "date",
         "Start": 0,
         "Length": 10
@@ -2374,7 +2374,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "平成２７年５月１３日",
+        "Text": "平成27年5月13日",
         "Type": "date",
         "Start": 0,
         "Length": 10
@@ -2386,7 +2386,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "１月１９日",
+        "Text": "1月19日",
         "Type": "date",
         "Start": 4,
         "Length": 5
@@ -2422,7 +2422,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "平成１２年８月１５日",
+        "Text": "平成12年8月15日",
         "Type": "date",
         "Start": 0,
         "Length": 10
@@ -2434,7 +2434,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "旧暦の２０１５年１０月１日",
+        "Text": "旧暦の2015年10月1日",
         "Type": "date",
         "Start": 0,
         "Length": 13
@@ -2470,7 +2470,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "７月４日",
+        "Text": "7月4日",
         "Type": "date",
         "Start": 0,
         "Length": 4
@@ -2494,7 +2494,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "１０月１２日、月曜日",
+        "Text": "10月12日、月曜日",
         "Type": "date",
         "Start": 0,
         "Length": 10
@@ -2530,7 +2530,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "９月８日",
+        "Text": "9月8日",
         "Type": "date",
         "Start": 0,
         "Length": 4
@@ -2614,7 +2614,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "２００４年八月十五日",
+        "Text": "2004年八月十五日",
         "Type": "date",
         "Start": 0,
         "Length": 10
@@ -2626,7 +2626,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "昭和６２年一月十一日",
+        "Text": "昭和62年一月十一日",
         "Type": "date",
         "Start": 0,
         "Length": 10

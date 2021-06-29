@@ -109,6 +109,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 new[] { dateRegex4, dateRegex5, dateRegex7, dateRegex6 } :
                 new[] { dateRegex4, dateRegex5, dateRegex6, dateRegex7 });
 
+            NormalizeCharMap = null;
+
         }
 
         public IEnumerable<Regex> DateRegexList { get; }
@@ -122,6 +124,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         Regex ICJKDateExtractorConfiguration.BeforeRegex => BeforeRegex;
 
         Regex ICJKDateExtractorConfiguration.AfterRegex => AfterRegex;
+
+        public Dictionary<char, char> NormalizeCharMap { get; }
 
     }
 }
