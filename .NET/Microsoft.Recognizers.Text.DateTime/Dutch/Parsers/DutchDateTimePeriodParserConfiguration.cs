@@ -19,6 +19,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public static readonly Regex NightStartEndRegex =
             new Regex(DateTimeDefinitions.NightStartEndRegex, RegexFlags);
 
+        public static readonly Regex PeriodTimeOfDayWithDateRegex =
+            new Regex(DateTimeDefinitions.PeriodTimeOfDayWithDateRegex, RegexFlags);
+
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         public DutchDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
@@ -51,7 +54,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             FutureSuffixRegex = DutchDatePeriodExtractorConfiguration.FutureSuffixRegex;
             NumberCombinedWithUnitRegex = DutchDateTimePeriodExtractorConfiguration.TimeNumberCombinedWithUnit;
             UnitRegex = DutchTimePeriodExtractorConfiguration.TimeUnitRegex;
-            PeriodTimeOfDayWithDateRegex = DutchDateTimePeriodExtractorConfiguration.PeriodTimeOfDayWithDateRegex;
             RelativeTimeUnitRegex = DutchDateTimePeriodExtractorConfiguration.RelativeTimeUnitRegex;
             RestOfDateTimeRegex = DutchDateTimePeriodExtractorConfiguration.RestOfDateTimeRegex;
             AmDescRegex = DutchDateTimePeriodExtractorConfiguration.AmDescRegex;
@@ -114,7 +116,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public Regex UnitRegex { get; }
 
-        public Regex PeriodTimeOfDayWithDateRegex { get; }
+        Regex IDateTimePeriodParserConfiguration.PeriodTimeOfDayWithDateRegex => PeriodTimeOfDayWithDateRegex;
 
         public Regex RelativeTimeUnitRegex { get; }
 
@@ -132,7 +134,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public Regex AfterRegex { get; }
 
-        bool IDateTimePeriodParserConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+        // CheckBothBeforeAfter normally gets its value from DateTimeDefinitions.CheckBothBeforeAfter which however for Dutch is false.
+        // It only needs to be true in DateTimePeriod.
+        bool IDateTimePeriodParserConfiguration.CheckBothBeforeAfter => true;
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 

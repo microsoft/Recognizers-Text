@@ -46,6 +46,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public static readonly Regex UnspecificDatePeriodRegex =
             new Regex(DateTimeDefinitions.UnspecificDatePeriodRegex, RegexFlags);
 
+        public static readonly Regex PotentialAmbiguousRangeRegex =
+            new Regex(DateTimeDefinitions.PotentialAmbiguousRangeRegex, RegexFlags);
+
         public static readonly Regex[] TermFilterRegexes =
         {
             // one on one
@@ -134,9 +137,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         Regex IMergedExtractorConfiguration.PrepositionSuffixRegex => PrepositionSuffixRegex;
 
-        Regex IMergedExtractorConfiguration.AmbiguousRangeModifierPrefix => null;
+        Regex IMergedExtractorConfiguration.AmbiguousRangeModifierPrefix => AmbiguousRangeModifierPrefix;
 
-        Regex IMergedExtractorConfiguration.PotentialAmbiguousRangeRegex => null;
+        Regex IMergedExtractorConfiguration.PotentialAmbiguousRangeRegex => PotentialAmbiguousRangeRegex;
 
         Regex IMergedExtractorConfiguration.NumberEndingPattern => NumberEndingPattern;
 
