@@ -574,5 +574,62 @@
         "Length": 7
       }
     ]
+  },
+  {
+    "Input": "Laten we eens per week meeten",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "eens per week",
+        "Type": "set",
+        "Start": 9,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Ik ga eens per jaar op vakantie",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "eens per jaar",
+        "Type": "set",
+        "Start": 6,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Elke andere vrijdag",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "Elke andere vrijdag",
+        "Type": "set",
+        "Start": 0,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Laten we een driemaandelijkse vergadering hebben",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "driemaandelijkse",
+        "Type": "set",
+        "Start": 13,
+        "Length": 16
+      }
+    ]
   }
 ]

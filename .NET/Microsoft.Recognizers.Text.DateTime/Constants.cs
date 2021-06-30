@@ -110,6 +110,12 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const int MaxMonth = 12;
         public const int MinMonth = 1;
 
+        // Day start hour
+        public const int DayHourStart = 0;
+
+        // hours of one day
+        public const int DayHourCount = 24;
+
         // hours of one half day
         public const int HalfDayHourCount = 12;
 
@@ -121,6 +127,35 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         // the length of four digits year, e.g., 2018
         public const int FourDigitsYearLength = 4;
+
+        // Times of day begin/end hours
+        public const int EarlyMorningBeginHour = 4;
+        public const int EarlyMorningEndHour = 8;
+        public const int MorningBeginHour = 8;
+        public const int MorningEndHour = 12;
+        public const int MidDayBeginHour = 11;
+        public const int MidDayEndHour = 13;
+        public const int AfternoonBeginHour = 12;
+        public const int AfternoonEndHour = 16;
+        public const int EveningBeginHour = 16;
+        public const int EveningEndHour = 20;
+        public const int DaytimeBeginHour = 8;
+        public const int DaytimeEndHour = 18;
+        public const int NighttimeBeginHour = 0;
+        public const int NighttimeEndHour = 8;
+        public const int BusinessBeginHour = 8;
+        public const int BusinessEndHour = 18;
+        public const int NightBeginHour = 20;
+        public const int NightEndHour = 23;
+        public const int NightEndMin = 59;
+        public const int MealtimeBreakfastBeginHour = 8;
+        public const int MealtimeBreakfastEndHour = 12;
+        public const int MealtimeBrunchBeginHour = 8;
+        public const int MealtimeBrunchEndHour = 12;
+        public const int MealtimeLunchBeginHour = 11;
+        public const int MealtimeLunchEndHour = 13;
+        public const int MealtimeDinnerBeginHour = 16;
+        public const int MealtimeDinnerEndHour = 20;
 
         // specifies the priority interpreting month and day order
         public const string DefaultLanguageFallback_MDY = "MDY";
@@ -146,6 +181,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string RightAmPmGroupName = "rightDesc";
         public const string MealTimeGroupName = "mealTime";
         public const string NegativeGroupName = "neg";
+        public const string YearCJKGroupName = "yearCJK";
+        public const string PluralUnit = "plural";
 
         // Include the date mentioned, to make "before" -> "until" or "after" -> "since". Such as "on or earlier than 1/1/2016".
         public const string IncludeGroupName = "include";
@@ -160,6 +197,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string TimexMonth = "M";
         public const string TimexMonthFull = "MON";
         public const string TimexWeek = "W";
+        public const string TimexFortnight = "W"; // Unit calculation comes from code
         public const string TimexDay = "D";
         public const string TimexBusinessDay = "BD";
         public const string TimexWeekend = "WE";
@@ -183,6 +221,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string Afternoon = "TAF";
         public const string Evening = "TEV";
         public const string Daytime = "TDT";
+        public const string Nighttime = "TNT";
         public const string Night = "TNI";
         public const string BusinessHour = "TBH";
         public const string MealtimeBreakfast = "TMEB";

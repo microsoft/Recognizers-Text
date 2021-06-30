@@ -668,7 +668,7 @@
     "NotSupported": "python",
     "Results": [
       {
-        "Text": "heute bis morgen",
+        "Text": "von heute bis morgen",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-11-07,2016-11-08,P1D)",
@@ -681,8 +681,8 @@
             "endDate": "2016-11-08"
           }
         },
-        "Start": 21,
-        "Length": 16
+        "Start": 17,
+        "Length": 20
       }
     ]
   },

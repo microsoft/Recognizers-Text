@@ -1101,7 +1101,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (bothHaveDates)
             {
-                ret.Timex = $"({pr1.TimexStr},{pr2.TimexStr},PT{Convert.ToInt32((futureEnd - futureBegin).TotalHours)}H)";
+                var duration = futureEnd - futureBegin;
+                var durationStr = Convert.ToInt32(duration.TotalHours) != 0 ? $"{Convert.ToInt32(duration.TotalHours)}H" :
+                    $"{Convert.ToInt32(duration.TotalMinutes)}M";
+                ret.Timex = $"({pr1.TimexStr},{pr2.TimexStr},PT{durationStr})";
 
                 // Do nothing
             }

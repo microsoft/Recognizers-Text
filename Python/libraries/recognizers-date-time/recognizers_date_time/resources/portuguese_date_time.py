@@ -19,6 +19,7 @@ class PortugueseDateTime:
     TillRegex = f'(?<till>\\b(at[eé]h?|[aà]s|ao?)\\b|--|-|—|——)(\\s+\\b(o|[aà](s)?)\\b)?'
     RangeConnectorRegex = f'(?<and>(e\\s*(([àa]s?)|o)?)|{BaseDateTime.RangeConnectorSymbolRegex})'
     DayRegex = f'(?<day>(?:3[0-1]|[1-2]\\d|0?[1-9]))(?=\\b|t)'
+    WrittenDayRegex = f'(?<day>(vinte\\s+e\\s+)?(um|dois|tr[eê]s|quatro|cinco|seis|sete|oito|nove)|dez|onze|doze|treze|(c|qu)atorze|quinze|dez[ae](s(seis|sete)|nove)|dezoito|vinte|trinta(\\s+e\\s+um)?)'
     MonthNumRegex = f'(?<month>1[0-2]|(0)?[1-9])\\b'
     AmDescRegex = f'({BaseDateTime.BaseAmDescRegex})'
     PmDescRegex = f'({BaseDateTime.BasePmDescRegex})'
@@ -39,9 +40,9 @@ class PortugueseDateTime:
     RelativeMonthRegex = f'(?<relmonth>([nd]?es[st]e|pr[óo]ximo|passsado|[uú]ltimo)\\s+m[eê]s)\\b'
     MonthRegex = f'(?<month>abr(il)?|ago(sto)?|dez(embro)?|fev(ereiro)?|jan(eiro)?|ju[ln](ho)?|mar([çc]o)?|maio?|nov(embro)?|out(ubro)?|sep?t(embro)?)'
     MonthSuffixRegex = f'(?<msuf>((em|no)\\s+|d[eo]\\s+)?({RelativeMonthRegex}|{MonthRegex}))'
-    DateUnitRegex = f'(?<unit>anos?|meses|m[êe]s|semanas?|dias?)\\b'
+    DateUnitRegex = f'(?<unit>m[êe]s(?<plural>es)?|(ano|semana|dia)(?<plural>s)?)\\b'
     PastRegex = f'(?<past>\\b(passad[ao](s)?|[uú]ltim[oa](s)?|anterior(es)?|h[aá]|pr[ée]vi[oa](s)?)\\b)'
-    FutureRegex = f'(?<past>\\b(seguinte(s)?|pr[oó]xim[oa](s)?|dentro\\s+de|em|daqui\\s+a)\\b)'
+    FutureRegex = f'(?<past>\\b(seguinte(s)?|pr[oó]xim[oa](s)?|daqui\\s+a)\\b)'
     SimpleCasesRegex = f'\\b((desde\\s+[oa]|desde|d[oa])\\s+)?(dia\\s+)?({DayRegex})\\s*{TillRegex}\\s*(o dia\\s+)?({DayRegex})\\s+{MonthSuffixRegex}((\\s+|\\s*,\\s*){YearRegex})?\\b'
     MonthFrontSimpleCasesRegex = f'\\b{MonthSuffixRegex}\\s+((desde\\s+[oa]|desde|d[oa])\\s+)?(dia\\s+)?({DayRegex})\\s*{TillRegex}\\s*({DayRegex})((\\s+|\\s*,\\s*){YearRegex})?\\b'
     MonthFrontBetweenRegex = f'\\b{MonthSuffixRegex}\\s+((entre|entre\\s+[oa]s?)\\s+)(dias?\\s+)?({DayRegex})\\s*{RangeConnectorRegex}\\s*({DayRegex})((\\s+|\\s*,\\s*){YearRegex})?\\b'
@@ -63,23 +64,26 @@ class PortugueseDateTime:
     MonthOfRegex = f'(mes)(\\s*)((do|da|de))'
     RangeUnitRegex = f'\\b(?<unit>anos?|meses|m[êe]s|semanas?)\\b'
     BeforeAfterRegex = f'^[.]'
+    UpcomingPrefixRegex = f'.^'
+    NextPrefixRegex = f'(pr[oó]xim[oa]s?|seguinte|{UpcomingPrefixRegex})\\b'
     InConnectorRegex = f'\\b(em)\\b'
     SinceYearSuffixRegex = f'^[.]'
-    WithinNextPrefixRegex = f'^[.]'
+    WithinNextPrefixRegex = f'\\b(dentro\\s+d(e|as)(\\s+(?<next>{NextPrefixRegex}))?)\\b'
     TodayNowRegex = f'\\b(hoje|agora)\\b'
     CenturySuffixRegex = f'^[.]'
     FromRegex = f'((desde|de)(\\s*a(s)?)?)$'
     BetweenRegex = f'(entre\\s*([oa](s)?)?)'
     WeekDayRegex = f'\\b(?<weekday>(domingos?|(segunda|ter[çc]a|quarta|quinta|sexta)s?([-\\s+]feiras?)?|s[aá]bados?|(2|3|4|5|6)[aª])\\b|(dom|seg|ter[cç]|qua|qui|sex|sab)\\b(\\.?(?=\\s|,|;|$)))'
     OnRegex = f'(?<=\\b(em|no)\\s+)({DayRegex}s?)\\b'
-    RelaxedOnRegex = f'(?<=\\b(em|n[oa]|d[oa])\\s+)(dia\\s+)?({DayRegex}s?)\\b(?!\\s*[/\\\\\\-\\.,:\\s]\\s*(\\d|{MonthRegex}))'
+    RelaxedOnRegex = f'(?<=\\b(em|n[oa]|d[oa])\\s+)(dia\\s+)?({DayRegex}s?)\\b(?!\\s*[/\\\\\\-\\.,:\\s]\\s*(\\d|(de\\s+)?{MonthRegex}))'
     ThisRegex = f'\\b(([nd]?es[st][ea]\\s*){WeekDayRegex})|({WeekDayRegex}\\s*([nd]?es[st]a\\s+semana))\\b'
     LastDateRegex = f'\\b(([uú]ltim[ao])\\s*{WeekDayRegex})|({WeekDayRegex}(\\s+(([nd]?es[st]a|na|da)\\s+([uú]ltima\\s+)?semana)))\\b'
     NextDateRegex = f'\\b(((pr[oó]xim[oa]|seguinte)\\s*){WeekDayRegex})|({WeekDayRegex}((\\s+(pr[oó]xim[oa]|seguinte))|(\\s+(da\\s+)?(semana\\s+seguinte|pr[oó]xima\\s+semana))))\\b'
     SpecialDayRegex = f'\\b((d?o\\s+)?(dia\\s+antes\\s+de\\s+ontem|antes\\s+de\\s+ontem|anteontem)|((d?o\\s+)?(dia\\s+|depois\\s+|dia\\s+depois\\s+)?de\\s+amanh[aã])|(o\\s)?dia\\s+seguinte|(o\\s)?pr[oó]ximo\\s+dia|(o\\s+)?[uú]ltimo\\s+dia|ontem|amanh[ãa]|hoje)|(do\\s+dia$)\\b'
     SpecialDayWithNumRegex = f'^[.]'
     ForTheRegex = f'.^'
-    WeekDayAndDayOfMonthRegex = f'.^'
+    FlexibleDayRegex = f'(?<DayOfMonth>([a-z]+\\s)?({WrittenDayRegex}|{DayRegex}))'
+    WeekDayAndDayOfMonthRegex = f'\\b{WeekDayRegex}\\s+(dia\\s+{FlexibleDayRegex})\\b'
     WeekDayAndDayRegex = f'\\b{WeekDayRegex}\\s+({DayRegex})(?!([-:/]|\\.\\d|(\\s+({AmDescRegex}|{PmDescRegex}|{OclockRegex}))))\\b'
     WeekDayOfMonthRegex = f'(?<wom>(n?[ao]\\s+)?(?<cardinal>primeir[ao]|1[ao]|segund[ao]|2[ao]|terceir[ao]|3[ao]|[qc]uart[ao]|4[ao]|quint[ao]|5[ao]|[uú]ltim[ao])\\s+{WeekDayRegex}\\s+{MonthSuffixRegex})'
     RelativeWeekDayRegex = f'^[.]'
@@ -115,7 +119,13 @@ class PortugueseDateTime:
     TimePrefix = f'(?<prefix>{LessThanOneHour}(\\s+(passad[ao]s)\\s+(as)?|\\s+depois\\s+(das?|do)|\\s+pras?|\\s+(para|antes)?\\s+([àa]s?))?)'
     TimeSuffix = f'(?<suffix>({LessThanOneHour}\\s+)?({AmRegex}|{PmRegex}|{OclockRegex}))'
     BasicTime = f'(?<basictime>{WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}:{BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?|{BaseDateTime.HourRegex})'
-    AtRegex = f'\\b((?<=\\b([aà]s?)\\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\\s+horas?|\\s*h\\b)?|(?<=\\b(s(er)?[aã]o|v[aã]o\\s+ser|^[eé]h?)\\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\\s+horas?|\\s*h\\b))(\\s+{OclockRegex})?\\b'
+    MidnightRegex = f'(?<midnight>meia\\s*(-\\s*)?noite)'
+    MidmorningRegex = f'(?<midmorning>meio\\s+da\\s+manhã)'
+    MidEarlyMorning = f'(?<midearlymorning>meio\\s+da\\s+madrugada)'
+    MidafternoonRegex = f'(?<midafternoon>meio\\s+da\\s+tarde)'
+    MiddayRegex = f'(?<midday>meio\\s*(-\\s*)?dia)'
+    MidTimeRegex = f'(?<mid>({MidnightRegex}|{MidmorningRegex}|{MidEarlyMorning}|{MidafternoonRegex}|{MiddayRegex}))'
+    AtRegex = f'\\b(((?<=\\b([aà]s?)\\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\\s+horas?|\\s*h\\b)?|(?<=\\b(s(er)?[aã]o|v[aã]o\\s+ser|^[eé]h?)\\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\\s+horas?|\\s*h\\b))(\\s+{OclockRegex})?|{MidTimeRegex})\\b'
     ConnectNumRegex = f'({BaseDateTime.HourRegex}(?<min>[0-5][0-9])\\s*{DescRegex})'
     TimeRegex1 = f'(\\b{TimePrefix}\\s+)?({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\\s*({DescRegex})'
     TimeRegex2 = f'(\\b{TimePrefix}\\s+)?(t)?{BaseDateTime.HourRegex}(\\s*)?:(\\s*)?{BaseDateTime.MinuteRegex}((\\s*)?:(\\s*)?{BaseDateTime.SecondRegex})?((\\s*{DescRegex})|\\b)'
@@ -126,7 +136,6 @@ class PortugueseDateTime:
     TimeRegex7 = f'\\b{TimeSuffix}\\s+[àa]s?\\s+{BasicTime}((\\s*{DescRegex})|\\b)'
     TimeRegex8 = f'\\b{TimeSuffix}\\s+{BasicTime}((\\s*{DescRegex})|\\b)'
     TimeRegex9 = f'\\b(?<writtentime>{HourNumRegex}\\s+({TensTimeRegex}\\s*)(e\\s+)?{MinuteNumRegex}?)\\b'
-    TimeRegex10 = f'(\\b([àa]|ao?)|na|de|da|pela)\\s+(madrugada|manh[ãa]|meio\\s*dia|meia\\s*noite|tarde|noite)'
     TimeRegex11 = f'\\b({WrittenTimeRegex})(\\s+{DescRegex})?\\b'
     TimeRegex12 = f'(\\b{TimePrefix}\\s+)?{BaseDateTime.HourRegex}(\\s*h\\s*){BaseDateTime.MinuteRegex}(\\s*{DescRegex})?'
     PrepositionRegex = f'(?<prep>([àa]s?|em|por|pel[ao]|n[ao]|de|d[ao]?)?$)'
@@ -148,7 +157,7 @@ class PortugueseDateTime:
     PureNumBetweenAnd = f'(entre\\s+((a|as)?\\s+)?)({BaseDateTime.HourRegex}|{TimeHourNumRegex})(\\s*(?<leftDesc>{DescRegex}))?\\s*e\\s*(a(s)?\\s+)?({BaseDateTime.HourRegex}|{TimeHourNumRegex})\\s*(?<rightDesc>{PmRegex}|{AmRegex}|{DescRegex})?'
     SpecificTimeFromTo = f'^[.]'
     SpecificTimeBetweenAnd = f'^[.]'
-    TimeUnitRegex = f'(?<unit>horas?|h|minutos?|mins?|segundos?|se[cg]s?)\\b'
+    TimeUnitRegex = f'(?<unit>(hora|minuto|min|segundo|se[cg])(?<plural>s)?|h)\\b'
     TimeFollowedUnit = f'^\\s*{TimeUnitRegex}'
     TimeNumberCombinedWithUnit = f'\\b(?<num>\\d+(\\,\\d*)?)\\s*{TimeUnitRegex}'
     DateTimePeriodNumberCombinedWithUnit = f'\\b(?<num>\\d+(\\.\\d*)?)\\s*{TimeUnitRegex}'
@@ -420,7 +429,8 @@ class PortugueseDateTime:
                     ("vinte e sete", 27),
                     ("vinte e oito", 28),
                     ("vinte e nove", 29),
-                    ("trinta", 30)])
+                    ("trinta", 30),
+                    ("trinta e um", 31)])
     HolidayNames = dict([("pai", ["diadopai", "diadospais"]),
                          ("mae", ["diadamae", "diadasmaes"]),
                          ("acaodegracas", ["diadegracas", "diadeacaodegracas", "acaodegracas"]),
@@ -445,14 +455,13 @@ class PortugueseDateTime:
     TimeTokenPrefix = 'as '
     TokenBeforeDate = 'o '
     TokenBeforeTime = 'as '
-    UpcomingPrefixRegex = f'.^'
-    NextPrefixRegex = f'(pr[oó]xim[oa]|seguinte|{UpcomingPrefixRegex})\\b'
     PastPrefixRegex = f'.^'
-    PreviousPrefixRegex = f'([uú]ltim[oa]|{PastPrefixRegex})\\b'
+    PreviousPrefixRegex = f'([uú]ltim[oa]s?|{PastPrefixRegex})\\b'
     ThisPrefixRegex = f'([nd]?es[st][ea])\\b'
     RelativeDayRegex = f'^[\\.]'
     RestOfDateRegex = f'^[\\.]'
-    RelativeDurationUnitRegex = f'^[\\.]'
+    DurationUnitRegex = f'(?<unit>{DateUnitRegex}|{TimeUnitRegex}|noites?)\\b'
+    RelativeDurationUnitRegex = f'(?:(?<=({NextPrefixRegex}|{PreviousPrefixRegex}|{ThisPrefixRegex})\\s+)({DurationUnitRegex}))'
     ReferenceDatePeriodRegex = f'^[.]'
     FromToRegex = f'\\b(from).+(to)\\b.+'
     SingleAmbiguousMonthRegex = f'^(the\\s+)?(may|march)$'
@@ -462,7 +471,6 @@ class PortugueseDateTime:
     SetWeekDayRegex = f'^[\\.]'
     NightRegex = f'\\b(meia noite|noite|de noite)\\b'
     CommonDatePrefixRegex = f'\\b(dia)\\s+$'
-    DurationUnitRegex = f'^[\\.]'
     DurationConnectorRegex = f'^[.]'
     CenturyRegex = f'^[.]'
     DecadeRegex = f'^[.]'
@@ -471,12 +479,13 @@ class PortugueseDateTime:
     YearSuffix = f'((,|\\sde)?\\s*({YearRegex}|{FullTextYearRegex}))'
     SuffixAfterRegex = f'^[.]'
     YearPeriodRegex = f'^[.]'
-    FutureSuffixRegex = f'^[.]'
+    FutureSuffixRegex = f'\\b(seguinte(s)?|pr[oó]xim[oa](s)?|no\\s+futuro)\\b'
     WrittenDecades = dict([("", 0)])
     SpecialDecadeCases = dict([("", 0)])
     DefaultLanguageFallback = 'DMY'
     DurationDateRestrictions = []
-    AmbiguityFiltersDict = dict([("^(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)$", "([$%£&!?@#])(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)|(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)([$%£&@#])")])
+    AmbiguityFiltersDict = dict([("^\\d{4}$", "(\\d\\.\\d{4}|\\d{4}\\.\\d)"),
+                                 ("^(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)$", "([$%£&!?@#])(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)|(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)([$%£&@#])")])
     EarlyMorningTermList = [r'madrugada']
     MorningTermList = [r'manha', r'manhã']
     AfternoonTermList = [r'passado o meio dia', r'depois do meio dia']
@@ -491,6 +500,7 @@ class PortugueseDateTime:
     MonthToDateTerms = [r'mes ate agora', r'mes ate hoje', r'mes ate a data']
     WeekendTerms = [r'fim de semana']
     WeekTerms = [r'semana']
+    FortnightTerms = [r'quinzena']
     YearTerms = [r'ano', r'anos']
     YearToDateTerms = [r'ano ate agora', r'ano ate hoje', r'ano ate a data', r'anos ate agora', r'anos ate hoje', r'anos ate a data']
     SpecialCharactersEquivalent = dict([("á", "a"),

@@ -2,7 +2,6 @@
   {
     "Input": "ضبط المنبه على ثمانية وأربعين",
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -25,7 +24,6 @@
   {
     "Input": "ضبط المنبه على ثمانية وأربعين صباحا",
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -48,13 +46,12 @@
   {
     "Input": "ضبط المنبه على ثمانية وأربعين مساءً",
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "الثامنة والأربعين مساءً",
-        "Start": -1,
-        "Length": 23,
+        "Text": "ثمانية وأربعين مساءً",
+        "Start": 15,
+        "Length": 20,
         "Type": "time",
         "Value": {
           "Timex": "T20:40",
@@ -71,7 +68,6 @@
   {
     "Input": "ضبط المنبه على عشرة وخمسة وأربعين",
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -92,15 +88,14 @@
     ]
   },
   {
-    "Input": "ضبط المنبه على خمسة عشر خمسة عشر  مساءً",
+    "Input": "ضبط المنبه على خمسة عشر خمسة عشر مساءً",
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "خمسة عشر خمسة عشر",
+        "Text": "خمسة عشر خمسة عشر مساءً",
         "Start": 15,
-        "Length": 17,
+        "Length": 23,
         "Type": "time",
         "Value": {
           "Timex": "T15:15",
@@ -115,15 +110,14 @@
     ]
   },
   {
-    "Input": "ضبط المنبه لخمسة عشر وثلاثين مساءً",
+    "Input": "ضبط المنبه على خمسة عشر وثلاثين مساءً",
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "خمسة عشر وثلاثين",
-        "Start": 12,
-        "Length": 16,
+        "Text": "خمسة عشر وثلاثين مساءً",
+        "Start": 15,
+        "Length": 22,
         "Type": "time",
         "Value": {
           "Timex": "T15:30",
@@ -140,7 +134,6 @@
   {
     "Input": "ضبط المنبه على عشرة عشرة",
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -163,7 +156,6 @@
   {
     "Input": "ضبط المنبه على عشرة وخمسة وخمسين  مساءً",
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -184,14 +176,12 @@
     ]
   },
   {
-    "Input": "سأعود في 7",
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
+    "Input": "سأعود في 7 صباحا",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "مساءً 7",
-        "Start": -1,
+        "Text": "7 صباحا",
+        "Start": 9,
         "Length": 7,
         "Type": "time",
         "Value": {
@@ -207,9 +197,28 @@
     ]
   },
   {
+    "Input": "سأعود عند 7",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "7",
+        "Start": 10,
+        "Length": 1,
+        "Type": "time",
+        "Value": {
+          "Timex": "T07",
+          "FutureResolution": {
+            "time": "07:00:00"
+          },
+          "PastResolution": {
+            "time": "07:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
     "Input": "سأعود في السابعة",
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -230,15 +239,14 @@
     ]
   },
   {
-    "Input": "سأعود في السابعة مساء",
+    "Input": "سأعود في 7 مساء",
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "السابعة مساء",
+        "Text": "7 مساء",
         "Start": 9,
-        "Length": 12,
+        "Length": 6,
         "Type": "time",
         "Value": {
           "Timex": "T19",
@@ -253,14 +261,13 @@
     ]
   },
   {
-    "Input": "سأعود 7:56 مساء",
+    "Input": "سأعود 7:56 مساءً",
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "7:56 مساءً",
-        "Start": -1,
+        "Start": 6,
         "Length": 10,
         "Type": "time",
         "Value": {
@@ -276,14 +283,35 @@
     ]
   },
   {
-    "Input": "سأعود 7:56:30 مساء",
+    "Input": "سأعود في 7:56:30 مساءً",
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "7:56:30 مساءً",
-        "Start": -1,
+        "Start": 9,
+        "Length": 13,
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:56:30",
+          "FutureResolution": {
+            "time": "19:56:30"
+          },
+          "PastResolution": {
+            "time": "19:56:30"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود 7:56:30 مساءً",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "7:56:30 مساءً",
+        "Start": 6,
         "Length": 13,
         "Type": "time",
         "Value": {
@@ -300,14 +328,12 @@
   },
   {
     "Input": "سأعود 12:34",
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "0.5236111111111111",
-        "Start": -1,
-        "Length": 18,
+        "Text": "12:34",
+        "Start": 6,
+        "Length": 5,
         "Type": "time",
         "Value": {
           "Timex": "T12:34",
@@ -323,14 +349,12 @@
   },
   {
     "Input": "سأعود 12:34:25",
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "0.523900462962963",
-        "Start": -1,
-        "Length": 17,
+        "Text": "12:34:25",
+        "Start": 6,
+        "Length": 8,
         "Type": "time",
         "Value": {
           "Timex": "T12:34:25",
@@ -346,13 +370,11 @@
   },
   {
     "Input": "إنها الساعة 7",
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "الساعه 7",
-        "Start": -1,
+        "Text": "الساعة 7",
+        "Start": 5,
         "Length": 8,
         "Type": "time",
         "Value": {
@@ -369,8 +391,6 @@
   },
   {
     "Input": "انها الساعة السابعة",
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -392,8 +412,6 @@
   },
   {
     "Input": "إنها 8 صباحًا",
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -415,8 +433,6 @@
   },
   {
     "Input": "إنها 8 في الليل",
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -439,7 +455,6 @@
   {
     "Input": "انها الثامنة والنصف",
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -462,7 +477,6 @@
   {
     "Input": "إنها 8 والنصف مساءً",
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -483,15 +497,13 @@
     ]
   },
   {
-    "Input": "الساعة الثامنة و 30 دقيقة",
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
+    "Input": "إنها الساعة الثامنة و 30 دقيقة",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "الثامنة و 30 دقيقة",
-        "Start": 7,
-        "Length": 18,
+        "Text": "الساعة الثامنة و 30 دقيقة",
+        "Start": 5,
+        "Length": 25,
         "Type": "time",
         "Value": {
           "Timex": "T08:30",
@@ -507,8 +519,6 @@
   },
   {
     "Input": "انها الثامنة والربع",
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -530,8 +540,6 @@
   },
   {
     "Input": "انها الثامنة وربع",
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -554,7 +562,6 @@
   {
     "Input": "إنها 9 مساءً وثلاثة أرباع",
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -577,7 +584,6 @@
   {
     "Input": "إنها ثلاث دقائق قبل الثامنة",
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -600,7 +606,6 @@
   {
     "Input": "إنها الساعة السابعة والنصف",
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -623,13 +628,12 @@
   {
     "Input": "إنها الساعة السابعة والنصف بعد الظهر",
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "السابعة والنصف بعد الظهر",
-        "Start": 12,
-        "Length": 24,
+        "Text": "الساعة السابعة والنصف بعد الظهر",
+        "Start": 5,
+        "Length": 31,
         "Type": "time",
         "Value": {
           "Timex": "T19:30",
@@ -646,13 +650,12 @@
   {
     "Input": "إنها السابعة والنصف صباحًا",
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "السابعة والنصف صباحا",
-        "Start": -1,
-        "Length": 20,
+        "Text": "السابعة والنصف صباحًا",
+        "Start": 5,
+        "Length": 21,
         "Type": "time",
         "Value": {
           "Timex": "T07:30",
@@ -669,7 +672,6 @@
   {
     "Input": "إنها الساعة 8 إلا ربع صباحًا",
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -692,7 +694,6 @@
   {
     "Input": "إنها الساعة الثامنة و20 دقيقة مساءً",
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -714,8 +715,6 @@
   },
   {
     "Input": "سأعود بعد الظهر الساعة 7",
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -737,8 +736,6 @@
   },
   {
     "Input": "سأعود الظهر الساعة 7",
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -760,8 +757,6 @@
   },
   {
     "Input": "سأعود بعد الظهر 7:00",
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -783,8 +778,6 @@
   },
   {
     "Input": "سأعود بعد الظهر 7:00:05",
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -806,8 +799,6 @@
   },
   {
     "Input": "سأعود بعد الظهر السابعة مساء",
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -830,13 +821,12 @@
   {
     "Input": "سأعود الساعة السابعة والنصف مساءً",
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "السابعة والنصف مساءً",
-        "Start": 13,
-        "Length": 20,
+        "Text": "الساعة السابعة والنصف مساءً",
+        "Start": 6,
+        "Length": 27,
         "Type": "time",
         "Value": {
           "Timex": "T19:30",
@@ -853,13 +843,12 @@
   {
     "Input": "سأعود في السابعة وخمسة وثلاثين مساء",
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "السابعة وخمس وثلاثين مساء",
-        "Start": -1,
-        "Length": 25,
+        "Text": "السابعة وخمسة وثلاثين مساء",
+        "Start": 9,
+        "Length": 26,
         "Type": "time",
         "Value": {
           "Timex": "T19:35",
@@ -874,15 +863,14 @@
     ]
   },
   {
-    "Input": "الحادية عشر وعشرين مساء",
+    "Input": "سأعود الحادية عشر وعشرين مساء",
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "سأعود الحادية عشر وعشرين مساء",
-        "Start": -1,
-        "Length": 29,
+        "Text": "الحادية عشر وعشرين مساء",
+        "Start": 6,
+        "Length": 23,
         "Type": "time",
         "Value": {
           "Timex": "T23:20",
@@ -898,8 +886,6 @@
   },
   {
     "Input": "سأعود الظهيرة",
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -921,14 +907,12 @@
   },
   {
     "Input": "سأعود الساعة 12 ظهرا",
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "12 ظهرا",
-        "Start": 13,
-        "Length": 7,
+        "Text": "الساعة 12 ظهرا",
+        "Start": 6,
+        "Length": 14,
         "Type": "time",
         "Value": {
           "Timex": "T12",
@@ -943,15 +927,13 @@
     ]
   },
   {
-    "Input": "سأعود في الحاديه عشر\n",
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
+    "Input": "سأعود في الحادية عشر",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "الحاديه عشر\n",
+        "Text": "الحادية عشر",
         "Start": 9,
-        "Length": 12,
+        "Length": 11,
         "Type": "time",
         "Value": {
           "Timex": "T11",
@@ -966,15 +948,13 @@
     ]
   },
   {
-    "Input": "سأعود الحاديه عشر\n",
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
+    "Input": "سأعود الحادية عشر",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "الحاديه عشر\n",
+        "Text": "الحادية عشر",
         "Start": 6,
-        "Length": 12,
+        "Length": 11,
         "Type": "time",
         "Value": {
           "Timex": "T11",
@@ -989,14 +969,13 @@
     ]
   },
   {
-    "Input": "سأعود 340 مساء",
+    "Input": "سأعود 340 مساءً",
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "340 مساءً",
-        "Start": -1,
+        "Start": 6,
         "Length": 9,
         "Type": "time",
         "Value": {
@@ -1012,14 +991,12 @@
     ]
   },
   {
-    "Input": "سأعود 1140 صباحا",
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
+    "Input": "سأعود 1140 صباحًا",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "1140 صباحًا",
-        "Start": -1,
+        "Start": 6,
         "Length": 11,
         "Type": "time",
         "Value": {
@@ -1036,8 +1013,6 @@
   },
   {
     "Input": "منتصف الليل",
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1058,32 +1033,7 @@
     ]
   },
   {
-    "Input": "منتصف.الليل",
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "منتصف.الليل",
-        "Start": 0,
-        "Length": 11,
-        "Type": "time",
-        "Value": {
-          "Timex": "T00",
-          "FutureResolution": {
-            "time": "00:00:00"
-          },
-          "PastResolution": {
-            "time": "00:00:00"
-          }
-        }
-      }
-    ]
-  },
-  {
     "Input": "منتصف-الليل",
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1105,8 +1055,6 @@
   },
   {
     "Input": "منتصف الصباح",
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1127,32 +1075,7 @@
     ]
   },
   {
-    "Input": "منتصف.الصباح",
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "منتصف.الصباح",
-        "Start": 0,
-        "Length": 12,
-        "Type": "time",
-        "Value": {
-          "Timex": "T10",
-          "FutureResolution": {
-            "time": "10:00:00"
-          },
-          "PastResolution": {
-            "time": "10:00:00"
-          }
-        }
-      }
-    ]
-  },
-  {
     "Input": "منتصف-الصباح",
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1175,7 +1098,6 @@
   {
     "Input": "منتصف الظهر",
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1196,32 +1118,8 @@
     ]
   },
   {
-    "Input": "منتصف.الظهر",
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "منتصف.الظهر",
-        "Start": 0,
-        "Length": 11,
-        "Type": "time",
-        "Value": {
-          "Timex": "T14",
-          "FutureResolution": {
-            "time": "14:00:00"
-          },
-          "PastResolution": {
-            "time": "14:00:00"
-          }
-        }
-      }
-    ]
-  },
-  {
     "Input": "منتصف-الظهر",
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1243,8 +1141,6 @@
   },
   {
     "Input": "منتصف النهار",
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1265,32 +1161,7 @@
     ]
   },
   {
-    "Input": "منتصف.النهار",
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "منتصف.النهار",
-        "Start": 0,
-        "Length": 12,
-        "Type": "time",
-        "Value": {
-          "Timex": "T12",
-          "FutureResolution": {
-            "time": "12:00:00"
-          },
-          "PastResolution": {
-            "time": "12:00:00"
-          }
-        }
-      }
-    ]
-  },
-  {
     "Input": "منتصف-النهار",
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1312,8 +1183,6 @@
   },
   {
     "Input": "وقت الظهيرة",
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1335,8 +1204,6 @@
   },
   {
     "Input": "سأعود 12 وقت الغداء",
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1358,8 +1225,6 @@
   },
   {
     "Input": "سأعود 12 منتصف الليل",
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1382,7 +1247,6 @@
   {
     "Input": "سأعود 12 في الليل",
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1405,7 +1269,6 @@
   {
     "Input": "سأعود 1:00 منتصف الليل",
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1427,8 +1290,6 @@
   },
   {
     "Input": "سأعود الساعة 12 ظهرا وقت الغداء",
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1450,8 +1311,6 @@
   },
   {
     "Input": "سأعود الساعة 11 صباحًا وقت الغداء",
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1474,7 +1333,6 @@
   {
     "Input": "سأعود الساعة 1 وقت الغداء",
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1496,8 +1354,6 @@
   },
   {
     "Input": "سأعود في وقت الغداء الساعة 11 صباحا",
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1520,7 +1376,6 @@
   {
     "Input": "سأعود 7:56:13 مساءً",
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1542,14 +1397,12 @@
   },
   {
     "Input": "سأعود 12:34:45",
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "0.5241319444444444",
-        "Start": -1,
-        "Length": 18,
+        "Text": "12:34:45",
+        "Start": 6,
+        "Length": 8,
         "Type": "time",
         "Value": {
           "Timex": "T12:34:45",
@@ -1565,8 +1418,6 @@
   },
   {
     "Input": "سأعود بعد الظهر 7:00:25",
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1589,13 +1440,12 @@
   {
     "Input": "سأعود الساعة السابعة والنصف صباحًا",
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "السابعة والنصف صباحا",
-        "Start": -1,
-        "Length": 20,
+        "Text": "الساعة السابعة والنصف صباحًا",
+        "Start": 6,
+        "Length": 28,
         "Type": "time",
         "Value": {
           "Timex": "T07:30",
@@ -1611,8 +1461,6 @@
   },
   {
     "Input": "سأعود أحد عشر وخمسة",
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1633,15 +1481,14 @@
     ]
   },
   {
-    "Input": "سأعود الخامسة والنصف إلا  ثلاث دقائق",
+    "Input": "سأعود الخامسة والنصف إلا ثلاث دقائق",
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "الخامسة والنصف إلا  ثلاث دقائق",
+        "Text": "الخامسة والنصف إلا ثلاث دقائق",
         "Start": 6,
-        "Length": 30,
+        "Length": 29,
         "Type": "time",
         "Value": {
           "Timex": "T05:27",
@@ -1658,7 +1505,6 @@
   {
     "Input": "سأعود خمسة وثلاثين في الليل",
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1681,7 +1527,6 @@
   {
     "Input": "سأعود في الليلة الخامسة والنصف",
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1703,8 +1548,6 @@
   },
   {
     "Input": "سأعود الظهر",
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1725,14 +1568,12 @@
     ]
   },
   {
-    "Input": "سأعود في وقت الغداء الساعة 12",
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
+    "Input": "سأعود في وقت الغداء الساعة 12 ظهرا",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "وقت الغداء الساعة 12 ظهرا",
-        "Start": -1,
+        "Start": 9,
         "Length": 25,
         "Type": "time",
         "Value": {

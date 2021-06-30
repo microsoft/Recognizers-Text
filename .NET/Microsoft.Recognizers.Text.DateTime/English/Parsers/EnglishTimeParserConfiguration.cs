@@ -22,6 +22,18 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         private static readonly Regex NightRegex =
             new Regex(DateTimeDefinitions.NightRegex, RegexFlags);
 
+        private static readonly Regex HalfTokenRegex =
+            new Regex(DateTimeDefinitions.HalfTokenRegex, RegexFlags);
+
+        private static readonly Regex QuarterTokenRegex =
+            new Regex(DateTimeDefinitions.QuarterTokenRegex, RegexFlags);
+
+        private static readonly Regex ThreeQuarterTokenRegex =
+            new Regex(DateTimeDefinitions.ThreeQuarterTokenRegex, RegexFlags);
+
+        private static readonly Regex ToTokenRegex =
+            new Regex(DateTimeDefinitions.ToTokenRegex, RegexFlags);
+
         public EnglishTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
          : base(config)
         {
@@ -51,26 +63,23 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             int deltaMin;
 
-            var trimmedPrefix = prefix.Trim();
+            var trimedPrefix = prefix.Trim();
 
-            // @TODO move hardcoded values to resources file
-
-            if (trimmedPrefix.StartsWith("half", StringComparison.Ordinal))
+            if (HalfTokenRegex.IsMatch(trimedPrefix))
             {
                 deltaMin = 30;
             }
-            else if (trimmedPrefix.StartsWith("a quarter", StringComparison.Ordinal) ||
-                     trimmedPrefix.StartsWith("quarter", StringComparison.Ordinal))
+            else if (QuarterTokenRegex.IsMatch(trimedPrefix))
             {
                 deltaMin = 15;
             }
-            else if (trimmedPrefix.StartsWith("three quarter", StringComparison.Ordinal))
+            else if (ThreeQuarterTokenRegex.IsMatch(trimedPrefix))
             {
                 deltaMin = 45;
             }
             else
             {
-                var match = EnglishTimeExtractorConfiguration.LessThanOneHour.Match(trimmedPrefix);
+                var match = EnglishTimeExtractorConfiguration.LessThanOneHour.Match(trimedPrefix);
                 var minStr = match.Groups["deltamin"].Value;
                 if (!string.IsNullOrWhiteSpace(minStr))
                 {
@@ -83,7 +92,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 }
             }
 
-            if (trimmedPrefix.EndsWith("to", StringComparison.Ordinal))
+            if (ToTokenRegex.IsMatch(trimedPrefix))
             {
                 deltaMin = -deltaMin;
             }

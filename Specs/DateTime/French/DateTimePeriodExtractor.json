@@ -966,5 +966,1138 @@
         "Length": 16
       }
     ]
+  },
+  {
+    "Input": "Je sortirai de 5 heures à 7 heures aujourd’hui",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "5 heures à 7 heures aujourd’hui",
+        "Type": "datetimerange",
+        "Start": 15,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "Je sortirai de 5 heures à 7 heures du demain",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "5 heures à 7 heures du demain",
+        "Type": "datetimerange",
+        "Start": 15,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "Je sortirai à partir de 5 heures jusqu'à 6 heures dimanche prochain",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "à partir de 5 heures jusqu'à 6 heures dimanche prochain",
+        "Type": "datetimerange",
+        "Start": 12,
+        "Length": 55
+      }
+    ]
+  },
+  {
+    "Input": "Je sortirai de 17 heures à 18 heures dimanche prochain",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 17 heures à 18 heures dimanche prochain",
+        "Type": "datetimerange",
+        "Start": 12,
+        "Length": 42
+      }
+    ]
+  },
+  {
+    "Input": "Je sortirai de 16 heures à 17 heures aujourd’hui",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 16 heures à 17 heures aujourd’hui",
+        "Type": "datetimerange",
+        "Start": 12,
+        "Length": 36
+      }
+    ]
+  },
+  {
+    "Input": "Je sortirai de 16 heures aujourd’hui à 17 heures demain",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 16 heures aujourd’hui à 17 heures demain",
+        "Type": "datetimerange",
+        "Start": 12,
+        "Length": 43
+      }
+    ]
+  },
+  {
+    "Input": "Je sortirai de 16 heures à 17 heures du demain",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 16 heures à 17 heures du demain",
+        "Type": "datetimerange",
+        "Start": 12,
+        "Length": 34
+      }
+    ]
+  },
+  {
+    "Input": "Je sortirai de 16 heures à 17 heures le 06/06/2017",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 16 heures à 17 heures le 06/06/2017",
+        "Type": "datetimerange",
+        "Start": 12,
+        "Length": 38
+      }
+    ]
+  },
+  {
+    "Input": "Je sortirai de 16 heures à 17 heures le 5 mai 2018",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 16 heures à 17 heures le 5 mai 2018",
+        "Type": "datetimerange",
+        "Start": 12,
+        "Length": 38
+      }
+    ]
+  },
+  {
+    "Input": "Je sortirai de 16 heures à 17 heures le 05/05/2018",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 16 heures à 17 heures le 05/05/2018",
+        "Type": "datetimerange",
+        "Start": 12,
+        "Length": 38
+      }
+    ]
+  },
+  {
+    "Input": "Je sortirai de 16 heures le 1er janvier 2016 à 17 heures aujourd’hui",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 16 heures le 1er janvier 2016 à 17 heures aujourd’hui",
+        "Type": "datetimerange",
+        "Start": 12,
+        "Length": 56
+      }
+    ]
+  },
+  {
+    "Input": "Je sortirai de 14 heures le 21/02/2016 à 15h32 le 23/04/2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 14 heures le 21/02/2016 à 15h32 le 23/04/2016",
+        "Type": "datetimerange",
+        "Start": 12,
+        "Length": 48
+      }
+    ]
+  },
+  {
+    "Input": "Je sortirai à partir de 4 heures d'aujourd’hui jusqu'à 17 heures mercredi prochain",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "à partir de 4 heures d'aujourd’hui jusqu'à 17 heures mercredi prochain",
+        "Type": "datetimerange",
+        "Start": 12,
+        "Length": 70
+      }
+    ]
+  },
+  {
+    "Input": "Je sortirai entre 16 heures et 17 heures aujourd’hui",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre 16 heures et 17 heures aujourd’hui",
+        "Type": "datetimerange",
+        "Start": 12,
+        "Length": 40
+      }
+    ]
+  },
+  {
+    "Input": "Je sortirai entre 16 heures le 01/01/2016 et 17 heures aujourd’hui",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre 16 heures le 01/01/2016 et 17 heures aujourd’hui",
+        "Type": "datetimerange",
+        "Start": 12,
+        "Length": 54
+      }
+    ]
+  },
+  {
+    "Input": "Je rentrerai ce soir",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "ce soir",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je rentrerai cette nuit",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "cette nuit",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer ce soir",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "ce soir",
+        "Type": "datetimerange",
+        "Start": 16,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je rentrerai ce matin",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "ce matin",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Je rentrerai cet après-midi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "cet après-midi",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je rentrerai la nuit prochaine",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "nuit prochaine",
+        "Type": "datetimerange",
+        "Start": 16,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je rentrerai la nuit dernière",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "nuit dernière",
+        "Type": "datetimerange",
+        "Start": 16,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je rentrerai demain soir",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "demain soir",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Je rentrerai lundi prochain après-midi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "lundi prochain après-midi",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Je rentrerai le 5 mai au soir",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "5 mai au soir",
+        "Type": "datetimerange",
+        "Start": 16,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens dans 3 minutes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans 3 minutes",
+        "Type": "datetimerange",
+        "Start": 11,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens après 3 minutes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "après 3 minutes",
+        "Type": "datetimerange",
+        "Start": 11,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens 3 minutes avant",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 minutes avant",
+        "Type": "datetimerange",
+        "Start": 11,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens il y a 3 minutes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "il y a 3 minutes",
+        "Type": "datetimerange",
+        "Start": 11,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je rentrerai dans 5 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans 5 heures",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je rentrerai à la dernière minute",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dernière minute",
+        "Type": "datetimerange",
+        "Start": 18,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je rentrerai dans une heure",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans une heure",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens dans quelques minutes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans quelques minutes",
+        "Type": "datetimerange",
+        "Start": 11,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Je reviens après quelques minutes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "après quelques minutes",
+        "Type": "datetimerange",
+        "Start": 11,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Je rentrerai mardi matin",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mardi matin",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Je rentrerai mardi après-midi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mardi après-midi",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je rentrerai mardi soir",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mardi soir",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "on se voit mardi en début de matin",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mardi en début de matin",
+        "Type": "datetimerange",
+        "Start": 11,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "on se voit mardi plus tard dans le matin",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mardi plus tard dans le matin",
+        "Type": "datetimerange",
+        "Start": 11,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "on se voit mardi en début d’après-midi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mardi en début d’après-midi",
+        "Type": "datetimerange",
+        "Start": 11,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "on se voit mardi en fin d’après-midi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mardi en fin d’après-midi",
+        "Type": "datetimerange",
+        "Start": 11,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "on se voit mardi en début de soirée",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mardi en début de soirée",
+        "Type": "datetimerange",
+        "Start": 11,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "on se voit mardi en fin de soirée",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mardi en fin de soirée",
+        "Type": "datetimerange",
+        "Start": 11,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "on se voit mardi en début de nuit",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mardi en début de nuit",
+        "Type": "datetimerange",
+        "Start": 11,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "on se voit mardi en fin de nuit",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mardi en fin de nuit",
+        "Type": "datetimerange",
+        "Start": 11,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "on se voit en début de nuit du mardi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "en début de nuit du mardi",
+        "Type": "datetimerange",
+        "Start": 11,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "on se voit plus tard dans la nuit du mardi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "plus tard dans la nuit du mardi",
+        "Type": "datetimerange",
+        "Start": 11,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "on se voit tôt le matin du mardi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "tôt le matin du mardi",
+        "Type": "datetimerange",
+        "Start": 11,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "on se voit plus tard dans la matinée du mardi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "plus tard dans la matinée du mardi",
+        "Type": "datetimerange",
+        "Start": 11,
+        "Length": 34
+      }
+    ]
+  },
+  {
+    "Input": "on se voit en début d’après-midi du mardi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "en début d’après-midi du mardi",
+        "Type": "datetimerange",
+        "Start": 11,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "on se voit en fin d’après-midi du mardi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "en fin d’après-midi du mardi",
+        "Type": "datetimerange",
+        "Start": 11,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "on se voit mardi en début du soir",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mardi en début du soir",
+        "Type": "datetimerange",
+        "Start": 11,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "on se voit mardi en fin du soir",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mardi en fin du soir",
+        "Type": "datetimerange",
+        "Start": 11,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "on se voit en début de nuit de mardi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "début de nuit de mardi",
+        "Type": "datetimerange",
+        "Start": 14,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "on se voit mardi à la fin de nuit",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mardi à la fin de nuit",
+        "Type": "datetimerange",
+        "Start": 11,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "on se voit tôt la nuit du mardi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "tôt la nuit du mardi",
+        "Type": "datetimerange",
+        "Start": 11,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "on se voit mardi plus tard dans la nuit",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mardi plus tard dans la nuit",
+        "Type": "datetimerange",
+        "Start": 11,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "on se voit mardi en début de matinée",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mardi en début de matinée",
+        "Type": "datetimerange",
+        "Start": 11,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "on se voit mardi à la fin de matinée",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mardi à la fin de matinée",
+        "Type": "datetimerange",
+        "Start": 11,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "on se voit mardi, en début d’après-midi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mardi, en début d’après-midi",
+        "Type": "datetimerange",
+        "Start": 11,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "on se voit mardi à la fin d’après-midi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mardi à la fin d’après-midi",
+        "Type": "datetimerange",
+        "Start": 11,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "on se voit en début de soirée de mardi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "début de soirée de mardi",
+        "Type": "datetimerange",
+        "Start": 14,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "on se voit mardi à la fin de soirée",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mardi à la fin de soirée",
+        "Type": "datetimerange",
+        "Start": 11,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "on se voit mardi en début de la nuit",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mardi en début de la nuit",
+        "Type": "datetimerange",
+        "Start": 11,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "on se voit mardi en fin de la nuit",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mardi en fin de la nuit",
+        "Type": "datetimerange",
+        "Start": 11,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "on se voit grand matin du mardi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "grand matin du mardi",
+        "Type": "datetimerange",
+        "Start": 11,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "on se voit plus tard dans la soirée du mardi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "plus tard dans la soirée du mardi",
+        "Type": "datetimerange",
+        "Start": 11,
+        "Length": 33
+      }
+    ]
+  },
+  {
+    "Input": "Je sortirai pour le reste de la journée",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "reste de la journée",
+        "Type": "datetimerange",
+        "Start": 20,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Je sortirai pour le reste de cette journée",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "reste de cette journée",
+        "Type": "datetimerange",
+        "Start": 20,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Je sortirai pour le reste du jour",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "reste du jour",
+        "Type": "datetimerange",
+        "Start": 20,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je sortirai pour le reste de ce jour-là",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "reste de ce jour-là",
+        "Type": "datetimerange",
+        "Start": 20,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, veuillez organiser une réunion d’affaires sur skype avec Wayne, vendredi entre 13 heures et 16 heures.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "vendredi entre 13 heures et 16 heures",
+        "Type": "datetimerange",
+        "Start": 73,
+        "Length": 37
+      }
+    ]
+  },
+  {
+    "Input": "Pouvez-vous dresser un programme pour nous demain entre 8 heures et 14 heures?",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "demain entre 8 heures et 14 heures",
+        "Type": "datetimerange",
+        "Start": 43,
+        "Length": 34
+      }
+    ]
+  },
+  {
+    "Input": "Pouvez-vous organiser un horaire pour nous le 9 décembre entre 8 heures et 14 heures?",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "9 décembre entre 8 heures et 14 heures",
+        "Type": "datetimerange",
+        "Start": 46,
+        "Length": 38
+      }
+    ]
+  },
+  {
+    "Input": "Salut Cortana- veuillez organiser une réunion sur skype avec Jennifer. J’ai besoin d’une réunion de 30 minutes ce vendredi, dans l’après-midi.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "ce vendredi, dans l’après-midi",
+        "Type": "datetimerange",
+        "Start": 111,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "Salut Cortana- veuillez organiser une réunion sur skype avec Jennifer. J’ai besoin d’une réunion de 30 minutes dans l’après-midi, ce vendredi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans l’après-midi, ce vendredi",
+        "Type": "datetimerange",
+        "Start": 111,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, veuillez organiser une réunion d’affaires sur skype avec Wayne, vendredi après-midi entre 13 heures et 16 heures.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "vendredi après-midi entre 13 heures et 16 heures",
+        "Type": "datetimerange",
+        "Start": 73,
+        "Length": 48
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, veuillez organiser une réunion d’affaires sur skype avec Wayne, dans l’après-midi du vendredi entre 13 heures et 16 heures.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans l’après-midi du vendredi entre 13 heures et 16 heures",
+        "Type": "datetimerange",
+        "Start": 73,
+        "Length": 58
+      }
+    ]
+  },
+  {
+    "Input": "Pouvez-vous dresser un programme pour nous le 23/09/2015 de 13 heures à 16 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "23/09/2015 de 13 heures à 16 heures",
+        "Type": "datetimerange",
+        "Start": 46,
+        "Length": 35
+      }
+    ]
+  },
+  {
+    "Input": "Pouvez-vous organiser un horaire pour nous le 23 septembre 2015 à partir de 13h30 jusqu'à 16 heures.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "23 septembre 2015 à partir de 13h30 jusqu'à 16 heures",
+        "Type": "datetimerange",
+        "Start": 46,
+        "Length": 53
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer mardi matin",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mardi matin",
+        "Type": "datetimerange",
+        "Start": 16,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer mardi après-midi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mardi après-midi",
+        "Type": "datetimerange",
+        "Start": 16,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Ça arrivera dans 2 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans 2 heures",
+        "Type": "datetimerange",
+        "Start": 12,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Ça arrivera entre 10 heures et 11h30 le 01/01/2015",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre 10 heures et 11h30 le 01/01/2015",
+        "Type": "datetimerange",
+        "Start": 12,
+        "Length": 38
+      }
+    ]
+  },
+  {
+    "Input": "Ça arrivera le 01 janvier 2015 entre 10 et 11h30",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "01 janvier 2015 entre 10 et 11h30",
+        "Type": "datetimerange",
+        "Start": 15,
+        "Length": 33
+      }
+    ]
+  },
+  {
+    "Input": "Ça arrivera de 10h30 à 15 heures le 01 janvier 2015",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 10h30 à 15 heures le 01 janvier 2015",
+        "Type": "datetimerange",
+        "Start": 12,
+        "Length": 39
+      }
+    ]
+  },
+  {
+    "Input": "Ça arrivera entre 3 heures et 5 heures le 01/01/2015",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre 3 heures et 5 heures le 01/01/2015",
+        "Type": "datetimerange",
+        "Start": 12,
+        "Length": 40
+      }
+    ]
+  },
+  {
+    "Input": "Ça se passera de 3h30 à 5h55 le 01/01/2015",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 3h30 à 5h55 le 01/01/2015",
+        "Type": "datetimerange",
+        "Start": 14,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Ça se passera le 01 janvier 2015 après 14 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "01 janvier 2015 après 14 heures",
+        "Type": "datetimerange",
+        "Start": 17,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "Ça se passera aujourd’hui avant 16 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "aujourd’hui avant 16 heures",
+        "Type": "datetimerange",
+        "Start": 14,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Ça se passera mercredi prochain plus tard que 10 heures du matin",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mercredi prochain plus tard que 10 heures du matin",
+        "Type": "datetimerange",
+        "Start": 14,
+        "Length": 50
+      }
+    ]
+  },
+  {
+    "Input": "C’est arrivé mardi dernier à 2 heures de l’après-midi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mardi dernier à 2 heures de l’après-midi",
+        "Type": "datetimerange",
+        "Start": 13,
+        "Length": 40
+      }
+    ]
+  },
+  {
+    "Input": "Allons-y le 1er février au plus tard à 6 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1er février au plus tard à 6 heures",
+        "Type": "datetimerange",
+        "Start": 12,
+        "Length": 35
+      }
+    ]
+  },
+  {
+    "Input": "Rends-moi indisponible de 6 heures le 04/12/2019 à 20 heures le 05/12/2019",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "de 6 heures le 04/12/2019 à 20 heures le 05/12/2019",
+        "Type": "datetimerange",
+        "Start": 23,
+        "Length": 51
+      }
+    ]
+  },
+  {
+    "Input": "C’est arrivé la semaine prochaine après 2 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
   }
 ]

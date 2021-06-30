@@ -114,7 +114,7 @@ namespace Microsoft.Recognizers.Text.Number
             // TODO: @Refactor this check to determine the subtype for JA and KO
             if ((Config.CultureInfo.Name == "ja-JP" || Config.CultureInfo.Name == "ko-KR") && ret != null)
             {
-                ret.Type = DetermineType(extResult);
+                ret.Type = DetermineType(extResult, ret);
                 ret.Text = ret.Text.ToLowerInvariant();
             }
 
@@ -136,13 +136,18 @@ namespace Microsoft.Recognizers.Text.Number
             var splitResult = Config.FracSplitRegex.Split(resultText);
             string intPart = string.Empty, demoPart = string.Empty, numPart = string.Empty;
 
-            // TODO: Refactor to support half (eg. KO: 반, JA: 半)
-
             if (splitResult.Length == 3)
             {
                 intPart = splitResult[0];
                 demoPart = splitResult[1];
                 numPart = splitResult[2];
+            }
+            else if (splitResult.Length == 1)
+            {
+                // Needed to support "half" (eg. KO: 반, JA: 半)
+                intPart = Config.ZeroChar.ToString(CultureInfo.InvariantCulture);
+                demoPart = "2";
+                numPart = "1";
             }
             else
             {

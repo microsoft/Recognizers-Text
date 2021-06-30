@@ -1209,7 +1209,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "de hele dag",
+        "Text": "voor de hele dag",
         "Type": "duration",
         "Value": {
           "Timex": "P1D",
@@ -1220,8 +1220,8 @@
             "duration": "86400"
           }
         },
-        "Start": 16,
-        "Length": 11
+        "Start": 11,
+        "Length": 16
       }
     ]
   },
@@ -1233,7 +1233,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "de hele week",
+        "Text": "voor de hele week",
         "Type": "duration",
         "Value": {
           "Timex": "P1W",
@@ -1244,8 +1244,8 @@
             "duration": "604800"
           }
         },
-        "Start": 16,
-        "Length": 12
+        "Start": 11,
+        "Length": 17
       }
     ]
   },
@@ -1257,7 +1257,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "de hele maand",
+        "Text": "voor de hele maand",
         "Type": "duration",
         "Value": {
           "Timex": "P1M",
@@ -1268,8 +1268,8 @@
             "duration": "2592000"
           }
         },
-        "Start": 16,
-        "Length": 13
+        "Start": 11,
+        "Length": 18
       }
     ]
   },
@@ -1281,7 +1281,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "het hele jaar",
+        "Text": "voor het hele jaar",
         "Type": "duration",
         "Value": {
           "Timex": "P1Y",
@@ -1292,8 +1292,8 @@
             "duration": "31536000"
           }
         },
-        "Start": 16,
-        "Length": 13
+        "Start": 11,
+        "Length": 18
       }
     ]
   },
@@ -1305,7 +1305,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "de gehele dag",
+        "Text": "voor de gehele dag",
         "Type": "duration",
         "Value": {
           "Timex": "P1D",
@@ -1316,8 +1316,8 @@
             "duration": "86400"
           }
         },
-        "Start": 16,
-        "Length": 13
+        "Start": 11,
+        "Length": 18
       }
     ]
   },
@@ -1329,7 +1329,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "de gehele week",
+        "Text": "voor de gehele week",
         "Type": "duration",
         "Value": {
           "Timex": "P1W",
@@ -1340,8 +1340,8 @@
             "duration": "604800"
           }
         },
-        "Start": 16,
-        "Length": 14
+        "Start": 11,
+        "Length": 19
       }
     ]
   },
@@ -1353,7 +1353,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "de gehele maand",
+        "Text": "voor de gehele maand",
         "Type": "duration",
         "Value": {
           "Timex": "P1M",
@@ -1364,8 +1364,8 @@
             "duration": "2592000"
           }
         },
-        "Start": 16,
-        "Length": 15
+        "Start": 11,
+        "Length": 20
       }
     ]
   },
@@ -1377,7 +1377,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "het gehele jaar",
+        "Text": "voor het gehele jaar",
         "Type": "duration",
         "Value": {
           "Timex": "P1Y",
@@ -1388,8 +1388,8 @@
             "duration": "31536000"
           }
         },
-        "Start": 16,
-        "Length": 15
+        "Start": 11,
+        "Length": 20
       }
     ]
   },
@@ -1425,7 +1425,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "gehele dag",
+        "Text": "voor gehele dag",
         "Type": "duration",
         "Value": {
           "Timex": "P1D",
@@ -1436,8 +1436,8 @@
             "duration": "86400"
           }
         },
-        "Start": 16,
-        "Length": 10
+        "Start": 11,
+        "Length": 15
       }
     ]
   },
@@ -1805,6 +1805,9 @@
   },
   {
     "Input": "Ik vertrek voor twee decennia",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1826,6 +1829,9 @@
   },
   {
     "Input": "Ik vertrek voor veertien dagen",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {

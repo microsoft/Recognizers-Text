@@ -953,3 +953,22 @@ export class AbstractYearExtractor {
         return year;
     }
 }
+
+export class DefinitionLoader {
+
+    public static LoadAmbiguityFilters(filters: ReadonlyMap<string, string>)
+    {
+        let ambiguityFiltersDict: Map<RegExp, RegExp> = new Map();
+
+        if (filters != null)
+        {
+            for (let [key, value] of filters) {
+                if (key) {
+                    ambiguityFiltersDict.set(RegExpUtility.getSafeRegExp(key), RegExpUtility.getSafeRegExp(value));
+                }
+            }
+        }
+
+        return ambiguityFiltersDict;
+    }
+}

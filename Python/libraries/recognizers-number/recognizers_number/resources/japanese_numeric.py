@@ -112,7 +112,7 @@ class JapaneseNumeric:
     PointRegexStr = f'[\\.．・]'
     AllFloatRegex = f'{NegativeNumberTermsRegex}?{AllIntRegex}\\s*{PointRegexStr}\\s*[一二三四五六七八九](\\s*{ZeroToNineIntegerRegex})*'
     NumbersWithAllowListRegex = f'(?<!(離は))({NegativeNumberTermsRegex}?({NotSingleRegex}|{SingleRegex})(?!({AllIntRegex}*([、.]{ZeroToNineIntegerRegex}+)*|{AllFloatRegex})*\\s*{PercentageRegex}+))(?!(\\s*{AllMultiplierLookupRegex}))'
-    NumbersAggressiveRegex = f'(({AllIntRegex})(?!({AllIntRegex}*([、.]{ZeroToNineIntegerRegex}+)*|{AllFloatRegex})*(\\s*{PercentageRegex})?))'
+    NumbersAggressiveRegex = f'(({AllIntRegex})(?!({AllIntRegex}|([、.]{ZeroToNineIntegerRegex})|{AllFloatRegex}|\\s*{PercentageRegex})))'
     PointRegex = f'{PointRegexStr}'
     DoubleSpecialsChars = f'((?<!({ZeroToNineFullHalfRegex}+[\\.．]{ZeroToNineFullHalfRegex}*))({NegativeNumberTermsRegexNum}\\s*)?{ZeroToNineFullHalfRegex}+[\\.．,]{ZeroToNineFullHalfRegex}+(?!({ZeroToNineFullHalfRegex}*[\\.．,]{ZeroToNineFullHalfRegex}+)))(?=\\b|\\D)(?!\\s*{AllMultiplierLookupRegex})'
     DoubleRoundNumberSpecialsChars = f'(?<!(({ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})+[\\.．・,]({ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})*))(({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})\\s*)?({ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})+[\\.．・,]({ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})+(?!({ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})*[\\.．・,]({ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})+)'

@@ -28,7 +28,7 @@ namespace Microsoft.Recognizers.Definitions.German
       public const string RoundNumberIntegerRegex = @"((ein)?hundert|tausend|(\s*(million(en)?|mio|milliarden?|mrd|billion(en)?)\s*))";
       public const string AnIntRegex = @"(eine?)(?=\s)";
       public const string TenToNineteenIntegerRegex = @"(siebzehn|dreizehn|vierzehn|achtzehn|neunzehn|fuenfzehn|sechzehn|elf|zwoelf|zwölf|zehn)";
-      public const string TensNumberIntegerRegex = @"(siebzig|zwanzig|dreißig|achtzig|neunzig|vierzig|fuenfzig|fünfzig|sechzig)";
+      public const string TensNumberIntegerRegex = @"(siebzig|zwanzig|dreißig|achtzig|neunzig|vierzig|fuenfzig|fünfzig|sechzig|hundert|tausend)";
       public const string NegativeNumberTermsRegex = @"^[.]";
       public static readonly string NegativeNumberSignRegex = $@"^({NegativeNumberTermsRegex}\s+).*";
       public static readonly string SeparaIntRegex = $@"((({TenToNineteenIntegerRegex}|({ZeroToNineIntegerRegex}und{TensNumberIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})(\s*{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\s*{RoundNumberIntegerRegex})+))";
@@ -54,10 +54,10 @@ namespace Microsoft.Recognizers.Definitions.German
       public const string FractionNotationWithSpacesRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))";
       public static readonly string FractionNotationRegex = $@"{BaseNumbers.FractionNotationRegex}";
       public const string FractionUnitsRegex = @"((?<onehalf>anderthalb|einundhalb)|(?<quarter>dreiviertel))";
-      public const string FractionHalfRegex = @"(einhalb)$";
-      public static readonly string[] OneHalfTokens = { @"ein", @"halb" };
-      public static readonly string FractionNounRegex = $@"(?<=\b)(({AllIntRegex})(\s*|\s*-\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))|halb(er|e|es)?|hälfte)|{FractionUnitsRegex})(?=\b)";
-      public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)(({AllIntRegex}\s+(und\s+)?)?eine?(\s+|\s*-\s*)({AllOrdinalRegex}|{RoundNumberOrdinalRegex}|{FractionUnitsRegex}|({AllIntRegex}ein)?(halb(er|e|es)?|hälfte))|{AllIntRegex}ein(halb))(?=\b)";
+      public const string FractionHalfRegex = @"(einhalb(es)?)$";
+      public static readonly string[] OneHalfTokens = { @"ein", @"halb", @"halbes" };
+      public static readonly string FractionNounRegex = $@"(?<=\b)(({AllIntRegex})(\s*|\s*-\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))|halb(e[rs]?)?|hälfte)|{FractionUnitsRegex})(?=\b)";
+      public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)(({AllIntRegex}\s+(und\s+)?)?eine?(\s+|\s*-\s*)({AllOrdinalRegex}|{RoundNumberOrdinalRegex}|{FractionUnitsRegex}|({AllIntRegex}ein)?(halb(e[rs]?)?|hälfte))|{AllIntRegex}ein(halb))(?=\b)";
       public static readonly string FractionPrepositionRegex = $@"(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<!\.)\d+))\s+over\s+(?<denominator>({AllIntRegex})|(\d+)(?!\.))(?=\b)";
       public static readonly string AllPointRegex = $@"((\s*{ZeroToNineIntegerRegex})+|(\s*{SeparaIntRegex}))";
       public static readonly string AllFloatRegex = $@"({AllIntRegex}(\s*komma\s*){AllPointRegex})";
@@ -411,7 +411,7 @@ namespace Microsoft.Recognizers.Definitions.German
         };
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {
-            { @"^[.]", @"" }
+            { @"^(tausend|hundert)$", @"(ed(ward(\s+m(\.)?)?)?|mary(\s+c(\.)?)?|joachim|claudia|franz|maria|klaus|prof(\.|essor)?|dr(\.)?|herr|fr[äa]u(lein)?|frl?\.)\s+(tausend|hundert)" }
         };
       public static readonly Dictionary<string, string> RelativeReferenceOffsetMap = new Dictionary<string, string>
         {

@@ -74,6 +74,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>BaseHashTag.tt</DependentUpon>
     </Compile>
+    <Compile Update="BaseQuotedText.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BaseQuotedText.tt</DependentUpon>
+    </Compile>
     <Compile Update="BaseIp.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

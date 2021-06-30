@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 using Microsoft.Recognizers.Definitions.Japanese;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
@@ -7,7 +8,7 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
-    public class JapaneseTimePeriodParserConfiguration : IDateTimeParser
+    public class JapaneseTimePeriodParserConfiguration : BaseDateTimeOptionsConfiguration, ICJKTimePeriodParserConfiguration
     {
         private static TimeFunctions timeFunc = new TimeFunctions
         {
@@ -16,125 +17,55 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             DayDescRegex = JapaneseTimeExtractorConfiguration.DayDescRegex,
         };
 
-        private readonly IFullDateTimeParserConfiguration config;
-
-        public JapaneseTimePeriodParserConfiguration(IFullDateTimeParserConfiguration configuration)
+        public JapaneseTimePeriodParserConfiguration(ICJKCommonDateTimeParserConfiguration config)
+            : base(config)
         {
-            config = configuration;
+            TimeExtractor = config.TimeExtractor;
+            TimeParser = config.TimeParser;
         }
 
-        public ParseResult Parse(ExtractResult extResult)
-        {
-            return this.Parse(extResult, DateObject.Now);
-        }
+        public IDateTimeExtractor TimeExtractor { get; }
 
-        public DateTimeParseResult Parse(ExtractResult er, DateObject refDate)
-        {
-            var referenceTime = refDate;
-            var extra = er.Data as DateTimeExtra<PeriodType>;
-            if (extra == null)
-            {
-                var result = new JapaneseTimeExtractorConfiguration().Extract(er.Text, refDate);
-                extra = result[0]?.Data as DateTimeExtra<PeriodType>;
-            }
+        public IDateTimeParser TimeParser { get; }
 
-            if (extra != null)
-            {
-                // Handle special case like '上午', '下午'
-                var parseResult = ParseJapaneseTimeOfDay(er.Text, referenceTime);
+        TimeFunctions ICJKTimePeriodParserConfiguration.TimeFunc => timeFunc;
 
-                if (!parseResult.Success)
-                {
-                    parseResult = TimePeriodFunctions.Handle(this.config.TimeParser, extra, referenceTime, timeFunc);
-                }
-
-                if (parseResult.Success)
-                {
-                    parseResult.FutureResolution = new Dictionary<string, string>
-                    {
-                        {
-                            TimeTypeConstants.START_TIME,
-                            DateTimeFormatUtil.FormatTime(((Tuple<DateObject, DateObject>)parseResult.FutureValue).Item1)
-                        },
-                        {
-                            TimeTypeConstants.END_TIME,
-                            DateTimeFormatUtil.FormatTime(((Tuple<DateObject, DateObject>)parseResult.FutureValue).Item2)
-                        },
-                    };
-
-                    parseResult.PastResolution = new Dictionary<string, string>
-                    {
-                        {
-                            TimeTypeConstants.START_TIME,
-                            DateTimeFormatUtil.FormatTime(((Tuple<DateObject, DateObject>)parseResult.PastValue).Item1)
-                        },
-                        {
-                            TimeTypeConstants.END_TIME,
-                            DateTimeFormatUtil.FormatTime(((Tuple<DateObject, DateObject>)parseResult.PastValue).Item2)
-                        },
-                    };
-                }
-
-                var ret = new DateTimeParseResult
-                {
-                    Start = er.Start,
-                    Text = er.Text,
-                    Type = er.Type,
-                    Length = er.Length,
-                    Value = parseResult,
-                    ResolutionStr = string.Empty,
-                    TimexStr = parseResult.Timex,
-                };
-
-                return ret;
-            }
-
-            return null;
-        }
-
-        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
-        {
-            return candidateResults;
-        }
-
-        private static bool GetMatchedTimexRange(string text, out string timex, out int beginHour, out int endHour, out int endMin)
+        public bool GetMatchedTimexRange(string text, out string timex, out int beginHour, out int endHour, out int endMin)
         {
             var trimmedText = text.Trim();
             beginHour = 0;
             endHour = 0;
             endMin = 0;
 
-            // @TODO move hardcoded values to resources file
-            if (trimmedText.EndsWith("上午", StringComparison.Ordinal))
+            var timeOfDay = string.Empty;
+
+            if (DateTimeDefinitions.MorningTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)))
             {
-                timex = "TMO";
-                beginHour = 8;
-                endHour = Constants.HalfDayHourCount;
+                timeOfDay = Constants.Morning;
             }
-            else if (trimmedText.EndsWith("下午", StringComparison.Ordinal))
+            else if (DateTimeDefinitions.MidDayTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)))
             {
-                timex = "TAF";
-                beginHour = Constants.HalfDayHourCount;
-                endHour = 16;
+                timeOfDay = Constants.MidDay;
             }
-            else if (trimmedText.EndsWith("晚上", StringComparison.Ordinal))
+            else if (DateTimeDefinitions.AfternoonTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)))
             {
-                timex = "TEV";
-                beginHour = 16;
-                endHour = 20;
+                timeOfDay = Constants.Afternoon;
             }
-            else if (trimmedText.Equals("白天", StringComparison.Ordinal))
+            else if (DateTimeDefinitions.EveningTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)))
             {
-                timex = "TDT";
-                beginHour = 8;
-                endHour = 18;
+                timeOfDay = Constants.Evening;
             }
-            else if (trimmedText.EndsWith("深夜", StringComparison.Ordinal))
+            else if (DateTimeDefinitions.DaytimeTermList.Any(o => trimmedText.Equals(o, StringComparison.Ordinal)))
             {
-                timex = "TNI";
-                beginHour = 20;
-                endHour = 23;
-                endMin = 59;
+                timeOfDay = Constants.Daytime;
+            }
+            else if (DateTimeDefinitions.NightTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)))
+            {
+                timeOfDay = Constants.Night;
+            }
+            else if (DateTimeDefinitions.BusinessHourTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)))
+            {
+                timeOfDay = Constants.BusinessHour;
             }
             else
             {
@@ -142,29 +73,30 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 return false;
             }
 
-            return true;
-        }
+            var parseResult = TimexUtility.ParseTimeOfDay(timeOfDay);
+            timex = parseResult.Timex;
+            beginHour = parseResult.BeginHour;
+            endHour = parseResult.EndHour;
+            endMin = parseResult.EndMin;
 
-        private DateTimeResolutionResult ParseJapaneseTimeOfDay(string text, DateObject referenceTime)
-        {
-            int day = referenceTime.Day,
-                month = referenceTime.Month,
-                year = referenceTime.Year;
-
-            var ret = new DateTimeResolutionResult();
-
-            if (!GetMatchedTimexRange(text, out string timex, out int beginHour, out int endHour, out int endMinSeg))
+            // Modify time period if "early"/"late" is present
+            if (DateTimeDefinitions.EarlyHourTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)))
             {
-                return new DateTimeResolutionResult();
+                endHour = beginHour + Constants.HalfMidDayDurationHourCount;
+
+                // Handling special case: night ends with 23:59.
+                if (endMin == 59)
+                {
+                    endMin = 0;
+                }
             }
 
-            ret.Timex = timex;
-            ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(
-               DateObject.MinValue.SafeCreateFromValue(year, month, day, beginHour, 0, 0),
-               DateObject.MinValue.SafeCreateFromValue(year, month, day, endHour, endMinSeg, 0));
-            ret.Success = true;
+            if (DateTimeDefinitions.LateHourTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)))
+            {
+                beginHour = beginHour + Constants.HalfMidDayDurationHourCount;
+            }
 
-            return ret;
+            return true;
         }
     }
 }

@@ -910,25 +910,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "Results": [
-      {
-        "Text": "en 3 años",
-        "Type": "daterange",
-        "Value": {
-          "Timex": "(2016-11-08,2019-11-08,P3Y)",
-          "FutureResolution": {
-            "startDate": "2016-11-08",
-            "endDate": "2019-11-08"
-          },
-          "PastResolution": {
-            "startDate": "2016-11-08",
-            "endDate": "2019-11-08"
-          }
-        },
-        "Start": 14,
-        "Length": 9
-      }
-    ]
+    "Results": []
   },
   {
     "Input": "Estuve afuera las pasadas 3 semanas",
@@ -7054,6 +7036,31 @@
         },
         "Start": 0,
         "Length": 41
+      }
+    ]
+  },
+  {
+    "Input": "Estare afuera proximos 3 años",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "proximos 3 años",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-08,2019-11-08,P3Y)",
+          "FutureResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2019-11-08"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2019-11-08"
+          }
+        },
+        "Start": 14,
+        "Length": 15
       }
     ]
   }

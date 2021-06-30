@@ -1,42 +1,46 @@
 ﻿using System;
 using System.Collections.Immutable;
+using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.German;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
     public class GermanHolidayParserConfiguration : BaseHolidayParserConfiguration
     {
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         public GermanHolidayParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
+            ThisPrefixRegex = new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
+            NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
+            PreviousPrefixRegex = new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
+
             this.HolidayRegexList = GermanHolidayExtractorConfiguration.HolidayRegexList;
             this.HolidayNames = DateTimeDefinitions.HolidayNames.ToImmutableDictionary();
         }
+
+        public Regex ThisPrefixRegex { get; }
+
+        public Regex NextPrefixRegex { get; }
+
+        public Regex PreviousPrefixRegex { get; }
 
         public override int GetSwiftYear(string text)
         {
             var trimmedText = text.Trim();
             var swift = -10;
 
-            // @TODO move hardcoded terms to resource file
-            if (trimmedText.StartsWith("nächster", StringComparison.Ordinal) ||
-                trimmedText.StartsWith("nächstes", StringComparison.Ordinal) ||
-                trimmedText.StartsWith("nächsten", StringComparison.Ordinal) ||
-                trimmedText.StartsWith("nächste", StringComparison.Ordinal))
+            if (NextPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 1;
             }
-            else if (trimmedText.StartsWith("letzter", StringComparison.Ordinal) ||
-                     trimmedText.StartsWith("letztes", StringComparison.Ordinal) ||
-                     trimmedText.StartsWith("letzten", StringComparison.Ordinal) ||
-                     trimmedText.StartsWith("letzte", StringComparison.Ordinal))
+            else if (PreviousPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }
-            else if (trimmedText.StartsWith("dieser", StringComparison.Ordinal) ||
-                     trimmedText.StartsWith("dieses", StringComparison.Ordinal) ||
-                     trimmedText.StartsWith("diesen", StringComparison.Ordinal) ||
-                     trimmedText.StartsWith("diese", StringComparison.Ordinal))
+            else if (ThisPrefixRegex.IsMatch(trimmedText))
             {
                 swift = 0;
             }
@@ -46,9 +50,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public override string SanitizeHolidayToken(string holiday)
         {
-            return holiday
-                .Replace(" ", string.Empty)
-                .Replace("'", string.Empty);
+            return holiday.Replace(" ", string.Empty)
+                          .Replace("-", string.Empty)
+                          .Replace("'", string.Empty);
         }
     }
 }

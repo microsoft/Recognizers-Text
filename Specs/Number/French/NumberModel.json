@@ -1840,5 +1840,2447 @@
         "End": 29
       }
     ]
+  },
+  {
+    "Input": "cent quatre-vingt-douze",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "cent quatre-vingt-douze",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "192"
+        },
+        "Start": 0,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "le liquide de 180,25ml",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "29km de route",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "le 4 mai",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "le liquide de 0,25ml",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "0,08",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "0,08",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "0.08"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "un/une",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "0,23456",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "0,23456",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "0.23456"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "4,8",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "4,8",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "4.8"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "cent soixante et un",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "cent soixante et un",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "161"
+        },
+        "Start": 0,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "un billionième",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "un billionième",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1E-12"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "cent trillionièmes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "cent trillionièmes",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1E-10"
+        },
+        "Start": 0,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "cent mille dollars",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "cent mille",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "100000"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "une demi-douzaine",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "une demi-douzaine",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "6"
+        },
+        "Start": 0,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "3 douzaines",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 douzaines",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "36"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "une douzaine",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "une douzaine",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "12"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "trois douzaines",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "trois douzaines",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "36"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "trois cent deux douzaines",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "trois cent deux douzaines",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "324"
+        },
+        "Start": 0,
+        "End": 25
+      }
+    ]
+  },
+  {
+    "Input": "1234567.0",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1234567.0",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1234567"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "-92321312.0",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "-92321312.0",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "-9.2321312"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "-1.0",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "-1.0",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "-1"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "-0,8",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "-0,8",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "-0.8"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "-1,8",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "-1,8",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "-1.8"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "123456789101231",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "123456789101231",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "123456789101231"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "1.0",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1.0",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "10 mille",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "10 mille",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "10000"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "100 mille",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "100 mille",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "100000"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "-10 mille",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "-10 mille",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "-10000"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "3",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "3",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "3"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "vingt et un trillions",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "vingt et un trillions",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "21000000000000"
+        },
+        "Start": 0,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "vingt et un billion trois cents",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "vingt et un billion trois cents",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "21000000000300"
+        },
+        "Start": 0,
+        "End": 31
+      }
+    ]
+  },
+  {
+    "Input": "vingt et un trillions et trois cents",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "vingt et un trillions et trois cents",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "21000000000300"
+        },
+        "Start": 0,
+        "End": 36
+      }
+    ]
+  },
+  {
+    "Input": "Trois cent trente et un",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "Trois cent trente et un",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "331"
+        },
+        "Start": 0,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "deux mille deux cents",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "deux mille deux cents",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2200"
+        },
+        "Start": 0,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "2,33k",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2,33k",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "2330"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "deux cent virgule zéro trois",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "deux cent virgule zéro trois",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "200.03"
+        },
+        "Start": 0,
+        "End": 28
+      }
+    ]
+  },
+  {
+    "Input": "deux cent virgule soixante et onze",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "deux cent virgule soixante et onze",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "200.71"
+        },
+        "Start": 0,
+        "End": 34
+      }
+    ]
+  },
+  {
+    "Input": "10000000000.0",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "10000000000.0",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "10000000000"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "322 cents",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "322 cents",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "32200"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "2,25",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2,25",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "2.25"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "43894.0",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "43894.0",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.75"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "un huitième",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "un huitième",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.125"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "cinq huitièmes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "cinq huitièmes",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.625"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "demi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "demi",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.5"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "vingt et trois cinquièmes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "vingt et trois cinquièmes",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "20.6"
+        },
+        "Start": 0,
+        "End": 25
+      }
+    ]
+  },
+  {
+    "Input": "vingt-trois cinquièmes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "vingt-trois cinquièmes",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "4.6"
+        },
+        "Start": 0,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "vingt et trois et trois cinquièmes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "vingt et trois et trois cinquièmes",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "23.6"
+        },
+        "Start": 0,
+        "End": 34
+      }
+    ]
+  },
+  {
+    "Input": "un million deux mille deux cent trois cinquièmes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "un million deux mille deux cent trois cinquièmes",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "200440.6"
+        },
+        "Start": 0,
+        "End": 48
+      }
+    ]
+  },
+  {
+    "Input": "un et demi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "un et demi",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1.5"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "un et un quatrième",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "un et un quatrième",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1.25"
+        },
+        "Start": 0,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "un centième",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "un centième",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.01"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "-0,0004",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "-0,0004",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "-0.0004"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "-8,954302433",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "-8,954302433",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "-8.95430243255239"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "-0,4",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "-0,4",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "-0.4"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "-127.32e13",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "-127.32e13",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "-1.2732E+15"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "12.32e+14",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "12.32e+14",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "1.232E+15"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "-1,2",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "-1,2",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "-1.2"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "1,2b",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1,2b",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "1200000000"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "un cinquième",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "un cinquième",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.2"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "cent mille billionièmes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "cent mille billionièmes",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1E-07"
+        },
+        "Start": 0,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "trois cinquièmes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "trois cinquièmes",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.6"
+        },
+        "Start": 0,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "vingt cinquièmes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "vingt cinquièmes",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "4"
+        },
+        "Start": 0,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "trois et un cinquième",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "trois et un cinquième",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "3.2"
+        },
+        "Start": 0,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "vingt et un cinquième",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "vingt et un cinquième",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "4.2"
+        },
+        "Start": 0,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "un vingt-et-unième",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "un vingt-et-unième",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.0476190476190476"
+        },
+        "Start": 0,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "un vingt-cinquième",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "un vingt-cinquième",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.04"
+        },
+        "Start": 0,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "trois vingt-et-unième",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "trois vingt-et-unième",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.142857142857143"
+        },
+        "Start": 0,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "trois vingt premières",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "trois vingt premières",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.142857142857143"
+        },
+        "Start": 0,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "vingt vingt cinquième",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "vingt vingt cinquième",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.8"
+        },
+        "Start": 0,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "cent et trente cinquièmes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "cent et trente cinquièmes",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "26"
+        },
+        "Start": 0,
+        "End": 25
+      }
+    ]
+  },
+  {
+    "Input": "cent trente cinquièmes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "cent trente cinquièmes",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "2.85714285714286"
+        },
+        "Start": 0,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "cent trente deux cinquièmes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "cent trente deux cinquièmes",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "26.4"
+        },
+        "Start": 0,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "cent trente-deux cinquièmes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "cent trente-deux cinquièmes",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "26.4"
+        },
+        "Start": 0,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "cent et trente-deux cinquièmes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "cent et trente-deux cinquièmes",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "26.4"
+        },
+        "Start": 0,
+        "End": 30
+      }
+    ]
+  },
+  {
+    "Input": "cent et trente et deux cinquièmes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "cent et trente et deux cinquièmes",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "130.4"
+        },
+        "Start": 0,
+        "End": 33
+      }
+    ]
+  },
+  {
+    "Input": "cent trente-cinquième",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "cent trente-cinquième",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "2.85714285714286"
+        },
+        "Start": 0,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "un cent cinquième",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "un cent cinquième",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.00952380952380952"
+        },
+        "Start": 0,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "un cent et un cinquième",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "un cent et un cinquième",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.00952380952380952"
+        },
+        "Start": 0,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "cent mille cinquièmes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "cent mille cinquièmes",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.0995024875621891"
+        },
+        "Start": 0,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "un sur vingt et un",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "un sur vingt et un",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.0476190476190476"
+        },
+        "Start": 0,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "un sur cent vingt et un",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "un sur cent vingt et un",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.00826446280991736"
+        },
+        "Start": 0,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "un sur vingt",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "un sur vingt",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.05"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "un sur cent vingt-cinq",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "un sur cent vingt-cinq",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.008"
+        },
+        "Start": 0,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "combien font quatre-vingt-quinze cent cinquièmes ?",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "quatre-vingt-quinze cent cinquièmes",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1900"
+        },
+        "Start": 13,
+        "End": 48
+      }
+    ]
+  },
+  {
+    "Input": "Réservez un siège de première classe à Seattle",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "La réponse est de négative quatre-vingt-quinze à cinq cent cinquièmes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "négative quatre-vingt-quinze à cinq cent cinquièmes",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "-1900"
+        },
+        "Start": 18,
+        "End": 69
+      }
+    ]
+  },
+  {
+    "Input": "La réponse est de négative quatre-vingt-dix-cinq cent cinquièmes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "négative quatre-vingt-dix-cinq cent cinquièmes",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "-1900"
+        },
+        "Start": 18,
+        "End": 64
+      }
+    ]
+  },
+  {
+    "Input": "La réponse est de négative un",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "négative un",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "-1"
+        },
+        "Start": 18,
+        "End": 29
+      }
+    ]
+  },
+  {
+    "Input": "La réponse est de négative cent trente cinquièmes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "négative cent trente cinquièmes",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "-2.85714285714286"
+        },
+        "Start": 18,
+        "End": 49
+      }
+    ]
+  },
+  {
+    "Input": "La réponse est de négative un sur vingt",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "négative un sur vingt",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "-0.05"
+        },
+        "Start": 18,
+        "End": 39
+      }
+    ]
+  },
+  {
+    "Input": "La réponse est de négative cinq virgule cinq",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "négative cinq virgule cinq",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "-5.5"
+        },
+        "Start": 18,
+        "End": 44
+      }
+    ]
+  },
+  {
+    "Input": "La réponse est de négative cinq",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "négative cinq",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "-5"
+        },
+        "Start": 18,
+        "End": 31
+      }
+    ]
+  },
+  {
+    "Input": "un quart",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "un quart",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.25"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "cinq-huitièmes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "cinq-huitièmes",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.625"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "quatre-vingt-dix-cinq cent cinquièmes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "quatre-vingt-dix-cinq cent cinquièmes",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1900"
+        },
+        "Start": 0,
+        "End": 37
+      }
+    ]
+  },
+  {
+    "Input": "1 sur vingt et un",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1 sur vingt et un",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.0476190476190476"
+        },
+        "Start": 0,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "cinq huitièmes de",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "cinq huitièmes",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.625"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "40000 est équivalant à 40 000",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "40 000",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "40000"
+        },
+        "Start": 23,
+        "End": 29
+      },
+      {
+        "Text": "40 000",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "40000"
+        },
+        "Start": 23,
+        "End": 29
+      }
+    ]
+  },
+  {
+    "Input": "Pour l'instant, la population chinoise est de 1414021100.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1414021100",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1414021100"
+        },
+        "Start": 46,
+        "End": 56
+      }
+    ]
+  },
+  {
+    "Input": "423 0000 sera reconnu comme deux nombres.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "423",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "423"
+        },
+        "Start": 0,
+        "End": 2
+      },
+      {
+        "Text": "0000",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "0"
+        },
+        "Start": 4,
+        "End": 7
+      },
+      {
+        "Text": "deux",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2"
+        },
+        "Start": 28,
+        "End": 32
+      }
+    ]
+  },
+  {
+    "Input": "1 234 567,89 est un format numérique valide.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1 234 567,89",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "1234567.89"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "zéro est 0",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "zéro",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "0"
+        },
+        "Start": 0,
+        "End": 3
+      },
+      {
+        "Text": "0",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "0"
+        },
+        "Start": 9,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "Avez-vous le temps de se rencontrer le 17/05/2018 ?",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "5",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "5"
+        },
+        "Start": 43,
+        "End": 44
+      },
+      {
+        "Text": "17",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "17"
+        },
+        "Start": 39,
+        "End": 41
+      },
+      {
+        "Text": "2018",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2018"
+        },
+        "Start": 45,
+        "End": 49
+      }
+    ]
+  },
+  {
+    "Input": "Mon numéro de téléphone est le +1-222-2222/2222",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1"
+        },
+        "Start": 32,
+        "End": 33
+      },
+      {
+        "Text": "222",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "222"
+        },
+        "Start": 22,
+        "End": 24
+      },
+      {
+        "Text": "2222",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2222"
+        },
+        "Start": 26,
+        "End": 29
+      },
+      {
+        "Text": "2222",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2222"
+        },
+        "Start": 31,
+        "End": 34
+      }
+    ]
+  },
+  {
+    "Input": "Je peux vous donner 10M.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "10M",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "10000000"
+        },
+        "Start": 20,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "1m n'est pas un nombre.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Je peux vous donner 3 cents et 21 yuans.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 cents et 21",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "321"
+        },
+        "Start": 20,
+        "End": 33
+      }
+    ]
+  },
+  {
+    "Input": "4 mille 3 cents et 21 est un nombre valide.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "4 mille 3 cents et 21",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4321"
+        },
+        "Start": 0,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "4 mille 3 cents et 0 sont deux nombres valides.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "4 mille 3 cents",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4300"
+        },
+        "Start": 0,
+        "End": 15
+      },
+      {
+        "Text": "0",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0"
+        },
+        "Start": 19,
+        "End": 20
+      },
+      {
+        "Text": "deux",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2"
+        },
+        "Start": 26,
+        "End": 30
+      }
+    ]
+  },
+  {
+    "Input": "4000 3 cents et 21 sont deux nombres valides.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "4000",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "4000"
+        },
+        "Start": 0,
+        "End": 3
+      },
+      {
+        "Text": "3 cents et 21",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "321"
+        },
+        "Start": 5,
+        "End": 18
+      },
+      {
+        "Text": "deux",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2"
+        },
+        "Start": 24,
+        "End": 28
+      }
+    ]
+  },
+  {
+    "Input": "3 cents et 2 cents sont deux nombres valides.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 cents",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "300"
+        },
+        "Start": 0,
+        "End": 7
+      },
+      {
+        "Text": "2 cents",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "200"
+        },
+        "Start": 11,
+        "End": 18
+      },
+      {
+        "Text": "deux",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2"
+        },
+        "Start": 24,
+        "End": 28
+      }
+    ]
+  },
+  {
+    "Input": "3 cents et 2,12 cents sont deux nombres valides.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 cents",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "300"
+        },
+        "Start": 0,
+        "End": 7
+      },
+      {
+        "Text": "2,12 cents",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "212"
+        },
+        "Start": 11,
+        "End": 21
+      },
+      {
+        "Text": "deux",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2"
+        },
+        "Start": 27,
+        "End": 31
+      }
+    ]
+  },
+  {
+    "Input": "3 cents et négatif un sont deux nombres valides.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 cents",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "300"
+        },
+        "Start": 0,
+        "End": 7
+      },
+      {
+        "Text": "négatif un",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-1"
+        },
+        "Start": 11,
+        "End": 21
+      },
+      {
+        "Text": "deux",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2"
+        },
+        "Start": 27,
+        "End": 31
+      }
+    ]
+  },
+  {
+    "Input": "3 cent un est un nombre valide.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 cent un",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "301"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "Celle que vous avez mentionnée n'est pas valable",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Celui-ci n'est pas correct",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "lequel préfères-tu ?",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Celui-là est vraiment bon",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Dans certains pays, vous pouvez écrire 5.00 ou 5,00.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "5.00",
+        "Start": 39,
+        "End": 43,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "5"
+        }
+      },
+      {
+        "Text": "5,00",
+        "Start": 47,
+        "End": 51,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Vingt-six personnes meurent dans un accident à Techiman",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "Vingt-six",
+        "Start": 0,
+        "End": 9,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "26"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "plus de la moitié des personnes sont venues ici.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "moitié",
+        "Start": 11,
+        "End": 17,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Je veux gagner 10000$ en 3 ans",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "10000",
+        "Start": 15,
+        "End": 20,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "10000"
+        }
+      },
+      {
+        "Text": "3",
+        "Start": 25,
+        "End": 25,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "3"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Je veux gagner 2000$ sur 3 ans",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2000",
+        "Start": 15,
+        "End": 19,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2000"
+        }
+      },
+      {
+        "Text": "3",
+        "Start": 25,
+        "End": 26,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "3"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "deux mille sur trois",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "deux mille sur trois",
+        "Start": 0,
+        "End": 20,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "666.666666666667"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "La réponse est de négatif un",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "négatif un",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "-1"
+        },
+        "Start": 18,
+        "End": 28
+      }
+    ]
+  },
+  {
+    "Input": "Je peux te donner treize lakh",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "treize lakh",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1300000"
+        },
+        "Start": 18,
+        "End": 29
+      }
+    ]
+  },
+  {
+    "Input": "Il y a un crore de boîtes dans ce conteneur",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "un crore",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "10000000"
+        },
+        "Start": 7,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je compte six crore et deux cents",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "six crore et deux cents",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "60000200"
+        },
+        "Start": 10,
+        "End": 33
+      }
+    ]
+  },
+  {
+    "Input": "Le total est de trois crore lakh",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "trois crore lakh",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "3000000000000"
+        },
+        "Start": 16,
+        "End": 32
+      }
+    ]
+  },
+  {
+    "Input": "L'objectif de revenus de ce compte est de 1 million USD",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1 million",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1000000"
+        },
+        "Start": 42,
+        "End": 51
+      }
+    ]
+  },
+  {
+    "Input": "2millions SEK ne peut pas t'acheter un grand appartement",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2millions",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2000000"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "Le résultat est de 12,34,567.89",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "12,34,567.89",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1234567.89",
+          "subtype": "decimal"
+        },
+        "Start": 19,
+        "End": 31
+      }
+    ]
+  },
+  {
+    "Input": "Il y a 12567 mots dans ce document",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "12567",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "12567",
+          "subtype": "integer"
+        },
+        "Start": 7,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "Le résultat est de huit sur cinq",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "huit",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "8"
+        },
+        "Start": 19,
+        "End": 23
+      },
+      {
+        "Text": "cinq",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "5"
+        },
+        "Start": 28,
+        "End": 32
+      }
+    ]
+  },
+  {
+    "Input": "il y a douze sur dix",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "douze",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "12"
+        },
+        "Start": 7,
+        "End": 12
+      },
+      {
+        "Text": "dix",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "10"
+        },
+        "Start": 17,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "Je vois cinq pièces sur trois",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "cinq",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "5"
+        },
+        "Start": 8,
+        "End": 12
+      },
+      {
+        "Text": "trois",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "3"
+        },
+        "Start": 24,
+        "End": 29
+      }
+    ]
+  },
+  {
+    "Input": "Je compte douze dans six boîtes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "douze",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "12"
+        },
+        "Start": 10,
+        "End": 15
+      },
+      {
+        "Text": "six",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "6"
+        },
+        "Start": 21,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "un demi million",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "demi million",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "500000"
+        },
+        "Start": 3,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "quart de million",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "quart de million",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "250000"
+        },
+        "Start": 0,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "deux tiers de million",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "deux tiers de million",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "666666.666666667"
+        },
+        "Start": 0,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "un milliard et trois quarts millions",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "un milliard et trois quarts millions",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1000750000"
+        },
+        "Start": 0,
+        "End": 36
+      }
+    ]
+  },
+  {
+    "Input": "le résultat est de deux sur trois",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "deux sur trois",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.666666666666667"
+        },
+        "Start": 19,
+        "End": 33
+      }
+    ]
+  },
+  {
+    "Input": "le résultat est de trois sur quatre",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "trois sur quatre",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.75"
+        },
+        "Start": 19,
+        "End": 35
+      }
+    ]
+  },
+  {
+    "Input": "le résultat est de un sur six et parfois est de un sur deux",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "un sur six",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.166666666666667"
+        },
+        "Start": 19,
+        "End": 29
+      },
+      {
+        "Text": " un sur deux",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.5"
+        },
+        "Start": 47,
+        "End": 59
+      }
+    ]
   }
 ]

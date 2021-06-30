@@ -743,8 +743,8 @@ DimensionAmbiguousValues: !list
 AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:
-    '五角': '五角大楼'
-    '普尔': '标准普尔'
+    '날': '떠날'
+    '일': '종일'
 #TemperatureExtractorConfiguration
 TemperatureSuffixList: !dictionary
   types: [string, string]
@@ -767,5 +767,5 @@ TemperatureAmbiguousValues: !list
     - 도
     - k
 HalfUnitRegex: !simpleRegex
-  def: 半
+  def: 반
 ...

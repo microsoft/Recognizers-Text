@@ -1,152 +1,122 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.Immutable;
-using System.Globalization;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Japanese;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
-    public class JapaneseDateTimeParserConfiguration : BaseDateTimeOptionsConfiguration, IFullDateTimeParserConfiguration
+    public class JapaneseDateTimeParserConfiguration : BaseDateTimeOptionsConfiguration, ICJKDateTimeParserConfiguration
     {
-        public JapaneseDateTimeParserConfiguration(IDateTimeOptionsConfiguration config)
-                : base(config)
-        {
-            DateExtractor = new JapaneseDateExtractorConfiguration();
+        public static readonly Regex LunarRegex = new Regex(DateTimeDefinitions.LunarRegex, RegexFlags);
 
-            DateParser = new JapaneseDateParserConfiguration(this);
-            TimeParser = new JapaneseTimeParserConfiguration(this);
-            DateTimeParser = new JapaneseDateTimeParser(this);
-            DatePeriodParser = new JapaneseDatePeriodParserConfiguration(this);
-            TimePeriodParser = new JapaneseTimePeriodParserConfiguration(this);
-            DateTimePeriodParser = new JapaneseDateTimePeriodParserConfiguration(this);
-            DurationParser = new JapaneseDurationParserConfiguration(this);
-            GetParser = new JapaneseSetParserConfiguration(this);
-            HolidayParser = new JapaneseHolidayParserConfiguration(this);
+        public static readonly Regex LunarHolidayRegex = new Regex(DateTimeDefinitions.LunarHolidayRegex, RegexFlags);
+
+        public static readonly Regex SimpleAmRegex = new Regex(DateTimeDefinitions.DateTimeSimpleAmRegex, RegexFlags);
+
+        public static readonly Regex SimplePmRegex = new Regex(DateTimeDefinitions.DateTimeSimplePmRegex, RegexFlags);
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
+        public JapaneseDateTimeParserConfiguration(ICJKCommonDateTimeParserConfiguration config)
+            : base(config)
+        {
+            IntegerExtractor = config.IntegerExtractor;
+            DateExtractor = config.DateExtractor;
+            TimeExtractor = config.TimeExtractor;
+            DurationExtractor = config.DurationExtractor;
+
+            DateParser = config.DateParser;
+            TimeParser = config.TimeParser;
+            NumberParser = config.NumberParser;
 
             UnitMap = DateTimeDefinitions.ParserConfigurationUnitMap.ToImmutableDictionary();
-            UnitValueMap = DateTimeDefinitions.ParserConfigurationUnitValueMap.ToImmutableDictionary();
-            SeasonMap = DateTimeDefinitions.ParserConfigurationSeasonMap.ToImmutableDictionary();
-            SeasonValueMap = DateTimeDefinitions.ParserConfigurationSeasonValueMap.ToImmutableDictionary();
-            CardinalMap = DateTimeDefinitions.ParserConfigurationCardinalMap.ToImmutableDictionary();
-            DayOfMonth = DateTimeDefinitions.ParserConfigurationDayOfMonth.ToImmutableDictionary();
-            DayOfWeek = DateTimeDefinitions.ParserConfigurationDayOfWeek.ToImmutableDictionary();
-            MonthOfYear = DateTimeDefinitions.ParserConfigurationMonthOfYear.ToImmutableDictionary();
-
-            Numbers = InitNumbers();
-
-            DateRegexList = JapaneseDateExtractorConfiguration.DateRegexList;
-            NextRegex = JapaneseDateExtractorConfiguration.NextRegex;
-            ThisRegex = JapaneseDateExtractorConfiguration.ThisRegex;
-            LastRegex = JapaneseDateExtractorConfiguration.LastRegex;
-            YearRegex = JapaneseDateExtractorConfiguration.YearRegex;
-            RelativeRegex = JapaneseDateExtractorConfiguration.RelativeRegex;
-            StrictWeekDayRegex = JapaneseDateExtractorConfiguration.WeekDayRegex;
-            WeekDayOfMonthRegex = JapaneseDateExtractorConfiguration.WeekDayOfMonthRegex;
-            BeforeRegex = JapaneseMergedExtractorConfiguration.BeforeRegex;
-            AfterRegex = JapaneseMergedExtractorConfiguration.AfterRegex;
-            UntilRegex = JapaneseMergedExtractorConfiguration.UntilRegex;
-            SincePrefixRegex = JapaneseMergedExtractorConfiguration.SincePrefixRegex;
-            SinceSuffixRegex = JapaneseMergedExtractorConfiguration.SinceSuffixRegex;
-            EqualRegex = JapaneseMergedExtractorConfiguration.EqualRegex;
+            NowRegex = JapaneseDateTimeExtractorConfiguration.NowRegex;
+            TimeOfTodayRegex = JapaneseDateTimeExtractorConfiguration.TimeOfTodayRegex;
+            DateTimePeriodUnitRegex = JapaneseDateTimeExtractorConfiguration.DateTimePeriodUnitRegex;
+            BeforeRegex = JapaneseDateTimeExtractorConfiguration.BeforeRegex;
+            AfterRegex = JapaneseDateTimeExtractorConfiguration.AfterRegex;
         }
 
-        public int TwoNumYear => int.Parse(DateTimeDefinitions.TwoNumYear, CultureInfo.InvariantCulture);
+        public IDateTimeExtractor DateExtractor { get; }
 
-        public string LastWeekDayToken => DateTimeDefinitions.ParserConfigurationLastWeekDayToken;
+        public IDateTimeExtractor TimeExtractor { get; }
 
-        public string NextMonthToken => DateTimeDefinitions.ParserConfigurationNextMonthToken;
-
-        public string LastMonthToken => DateTimeDefinitions.ParserConfigurationLastMonthToken;
-
-        public string DatePrefix => DateTimeDefinitions.ParserConfigurationDatePrefix;
-
-        public IDateExtractor DateExtractor { get; }
+        public IDateTimeExtractor DurationExtractor { get; }
 
         public IDateTimeParser DateParser { get; }
 
         public IDateTimeParser TimeParser { get; }
 
-        public IDateTimeParser DateTimeParser { get; }
+        public IExtractor IntegerExtractor { get; }
 
-        public IDateTimeParser DatePeriodParser { get; }
-
-        public IDateTimeParser TimePeriodParser { get; }
-
-        public IDateTimeParser DateTimePeriodParser { get; }
-
-        public IDateTimeParser DurationParser { get; }
-
-        public IDateTimeParser GetParser { get; }
-
-        public IDateTimeParser HolidayParser { get; }
+        public IParser NumberParser { get; }
 
         public ImmutableDictionary<string, string> UnitMap { get; }
 
-        public ImmutableDictionary<string, long> UnitValueMap { get; }
+        public Regex NowRegex { get; }
 
-        public ImmutableDictionary<string, string> SeasonMap { get; }
+        public Regex TimeOfTodayRegex { get; }
 
-        public ImmutableDictionary<string, int> SeasonValueMap { get; }
-
-        public ImmutableDictionary<string, int> CardinalMap { get; }
-
-        public ImmutableDictionary<string, int> DayOfMonth { get; }
-
-        public ImmutableDictionary<string, int> DayOfWeek { get; }
-
-        public ImmutableDictionary<string, int> MonthOfYear { get; }
-
-        public ImmutableDictionary<string, int> Numbers { get; }
-
-        public IEnumerable<Regex> DateRegexList { get; }
-
-        public Regex NextRegex { get; }
-
-        public Regex ThisRegex { get; }
-
-        public Regex LastRegex { get; }
-
-        public Regex YearRegex { get; }
-
-        public Regex DatePeriodYearRegex { get; }
-
-        public Regex RelativeRegex { get; }
-
-        public Regex StrictWeekDayRegex { get; }
-
-        public Regex WeekDayOfMonthRegex { get; }
+        public Regex DateTimePeriodUnitRegex { get; }
 
         public Regex BeforeRegex { get; }
 
         public Regex AfterRegex { get; }
 
-        public Regex UntilRegex { get; }
+        Regex ICJKDateTimeParserConfiguration.LunarRegex => LunarRegex;
 
-        public Regex SincePrefixRegex { get; }
+        Regex ICJKDateTimeParserConfiguration.LunarHolidayRegex => LunarHolidayRegex;
 
-        public Regex SinceSuffixRegex { get; }
+        Regex ICJKDateTimeParserConfiguration.SimpleAmRegex => SimpleAmRegex;
 
-        public Regex EqualRegex { get; }
+        Regex ICJKDateTimeParserConfiguration.SimplePmRegex => SimplePmRegex;
 
-        public static int GetSwiftDay(string text)
+        public bool GetMatchedNowTimex(string text, out string timex)
         {
-            // Today: 今天, 今日, 最近, きょう, この日
+            var trimmedText = text.Trim();
+
+            // @TODO move hardcoded values to resources file
+            if (trimmedText.EndsWith("现在", StringComparison.Ordinal))
+            {
+                timex = "PRESENT_REF";
+            }
+            else if (trimmedText.Equals("刚刚才", StringComparison.Ordinal) ||
+                     trimmedText.Equals("刚刚", StringComparison.Ordinal) ||
+                     trimmedText.Equals("刚才", StringComparison.Ordinal))
+            {
+                timex = "PAST_REF";
+            }
+            else if (trimmedText.Equals("立刻", StringComparison.Ordinal) ||
+                     trimmedText.Equals("马上", StringComparison.Ordinal))
+            {
+                timex = "FUTURE_REF";
+            }
+            else
+            {
+                timex = null;
+                return false;
+            }
+
+            return true;
+        }
+
+        public int GetSwiftDay(string text)
+        {
             var value = 0;
 
             // @TODO move hardcoded values to resources file
-
-            if (text.StartsWith("来", StringComparison.Ordinal) ||
-                text.Equals("あす", StringComparison.Ordinal) ||
-                text.Equals("あした", StringComparison.Ordinal) ||
-                text.Equals("明日", StringComparison.Ordinal))
+            if (text.Equals("今天", StringComparison.Ordinal) ||
+                text.Equals("今日", StringComparison.Ordinal) ||
+                text.Equals("最近", StringComparison.Ordinal))
+            {
+                value = 0;
+            }
+            else if (text.StartsWith("明", StringComparison.Ordinal))
             {
                 value = 1;
             }
-            else if (text.StartsWith("昨", StringComparison.Ordinal) ||
-                     text.Equals("きのう", StringComparison.Ordinal) ||
-                     text.Equals("前日", StringComparison.Ordinal))
+            else if (text.StartsWith("昨", StringComparison.Ordinal))
             {
                 value = -1;
             }
@@ -160,16 +130,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 value = -3;
             }
             else if (text.Equals("后天", StringComparison.Ordinal) ||
-                     text.Equals("後天", StringComparison.Ordinal) ||
-                     text.Equals("明後日", StringComparison.Ordinal) ||
-                     text.Equals("あさって", StringComparison.Ordinal))
+                     text.Equals("後天", StringComparison.Ordinal))
             {
                 value = 2;
             }
-            else if (text.Equals("前天", StringComparison.Ordinal) ||
-                     text.Equals("一昨日", StringComparison.Ordinal) ||
-                     text.Equals("二日前", StringComparison.Ordinal) ||
-                     text.Equals("おととい", StringComparison.Ordinal))
+            else if (text.Equals("前天", StringComparison.Ordinal))
             {
                 value = -2;
             }
@@ -177,58 +142,54 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             return value;
         }
 
-        public static int GetSwiftMonth(string text)
+        public void AdjustByTimeOfDay(string matchStr, ref int hour, ref int swift)
         {
-            // Current month: 今月
-            var value = 0;
-
             // @TODO move hardcoded values to resources file
-
-            if (text.Equals("来月", StringComparison.Ordinal))
+            switch (matchStr)
             {
-                value = 1;
+                case "今晚":
+                    if (hour < Constants.HalfDayHourCount)
+                    {
+                        hour += Constants.HalfDayHourCount;
+                    }
+
+                    break;
+                case "今早":
+                case "今晨":
+                    if (hour >= Constants.HalfDayHourCount)
+                    {
+                        hour -= Constants.HalfDayHourCount;
+                    }
+
+                    break;
+                case "明晚":
+                    swift = 1;
+                    if (hour < Constants.HalfDayHourCount)
+                    {
+                        hour += Constants.HalfDayHourCount;
+                    }
+
+                    break;
+                case "明早":
+                case "明晨":
+                    swift = 1;
+                    if (hour >= Constants.HalfDayHourCount)
+                    {
+                        hour -= Constants.HalfDayHourCount;
+                    }
+
+                    break;
+                case "昨晚":
+                    swift = -1;
+                    if (hour < Constants.HalfDayHourCount)
+                    {
+                        hour += Constants.HalfDayHourCount;
+                    }
+
+                    break;
+                default:
+                    break;
             }
-            else if (text.Equals("前月", StringComparison.Ordinal) ||
-                     text.Equals("先月", StringComparison.Ordinal) ||
-                     text.Equals("昨月", StringComparison.Ordinal) ||
-                     text.Equals("先々月", StringComparison.Ordinal))
-            {
-                value = -1;
-            }
-            else if (text.Equals("再来月", StringComparison.Ordinal))
-            {
-                value = 2;
-            }
-
-            return value;
-        }
-
-        public static int GetSwiftYear(string text)
-        {
-            // Current year: 今年
-            var value = 0;
-
-            // @TODO move hardcoded values to resources file
-
-            if (text.Equals("来年", StringComparison.Ordinal) ||
-                text.Equals("らいねん", StringComparison.Ordinal))
-            {
-                value = 1;
-            }
-            else if (text.Equals("昨年", StringComparison.Ordinal) ||
-                     text.Equals("前年", StringComparison.Ordinal))
-            {
-                value = -1;
-            }
-
-            return value;
-        }
-
-        private static ImmutableDictionary<string, int> InitNumbers()
-        {
-            return new Dictionary<string, int>
-            {
-            }.ToImmutableDictionary();
         }
     }
 }

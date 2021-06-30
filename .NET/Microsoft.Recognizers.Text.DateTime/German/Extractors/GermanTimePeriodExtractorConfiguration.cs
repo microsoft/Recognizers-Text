@@ -5,6 +5,7 @@ using Microsoft.Recognizers.Definitions.German;
 using Microsoft.Recognizers.Text.DateTime.German.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
@@ -60,6 +61,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public static readonly Regex GeneralEndingRegex =
             new Regex(DateTimeDefinitions.GeneralEndingRegex, RegexFlags);
+
+        public static readonly Regex AmbiguousTimePeriodRegex =
+            new Regex(DateTimeDefinitions.AmbiguousTimePeriodRegex, RegexFlags);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
@@ -144,12 +148,27 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         // It should also be solvable through the config but we do not want to introduce changes to the interface and configs for all other languages.
         public List<ExtractResult> ApplyPotentialPeriodAmbiguityHotfix(string text, List<ExtractResult> timePeriodErs)
         {
-            if (text.Equals("morgen", StringComparison.Ordinal))
+            List<ExtractResult> timePeriodErsResult = new List<ExtractResult>();
+            var matches = AmbiguousTimePeriodRegex.Matches(text);
+            foreach (var timePeriodEr in timePeriodErs)
             {
-                timePeriodErs.Clear();
+                if (matches.Count > 0)
+                {
+                    foreach (Match match in matches)
+                    {
+                        if (!(timePeriodEr.Text == match.Value && timePeriodEr.Start == match.Index && timePeriodEr.Length == match.Length))
+                        {
+                            timePeriodErsResult.Add(timePeriodEr);
+                        }
+                    }
+                }
+                else
+                {
+                    timePeriodErsResult.Add(timePeriodEr);
+                }
             }
 
-            return timePeriodErs;
+            return timePeriodErsResult;
         }
     }
 }

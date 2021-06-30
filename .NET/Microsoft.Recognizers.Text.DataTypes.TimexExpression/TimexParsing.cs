@@ -14,11 +14,11 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             {
                 timexProperty.Now = true;
             }
-            else if (timex.StartsWith("P"))
+            else if (timex.StartsWith("P", System.StringComparison.Ordinal))
             { // duration
                 ExtractDuration(timex, timexProperty);
             }
-            else if (timex.StartsWith("(") && timex.EndsWith(")"))
+            else if (timex.StartsWith("(", System.StringComparison.Ordinal) && timex.EndsWith(")", System.StringComparison.Ordinal))
             { // range indicated with start and end dates and a duration
                 ExtractStartEndRange(timex, timexProperty);
             }

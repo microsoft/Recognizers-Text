@@ -38,6 +38,7 @@
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\BaseEmail.cs" Link="BaseEmail.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\BaseGUID.cs" Link="BaseGUID.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\BaseHashTag.cs" Link="BaseHashTag.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\BaseQuotedText.cs" Link="BaseQuotedText.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\BaseIp.cs" Link="BaseIp.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\BaseMention.cs" Link="BaseMention.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\BaseNumbers.cs" Link="BaseNumbers.cs" />
@@ -49,58 +50,71 @@
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Chinese\DateTimeDefinitions.cs" Link="Chinese\DateTimeDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Chinese\NumbersDefinitions.cs" Link="Chinese\NumbersDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Chinese\NumbersWithUnitDefinitions.cs" Link="Chinese\NumbersWithUnitDefinitions.cs" />
-    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Chinese\URLDefinitions.cs" Link="Chinese\URLDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Chinese\IpDefinitions.cs" Link="Chinese\IpDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Chinese\PhoneNumbersDefinitions.cs" Link="Chinese\PhoneNumbersDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Chinese\QuotedTextDefinitions.cs" Link="Chinese\QuotedTextDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Chinese\URLDefinitions.cs" Link="Chinese\URLDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Dutch\ChoiceDefinitions.cs" Link="Dutch\ChoiceDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Dutch\DateTimeDefinitions.cs" Link="Dutch\DateTimeDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Dutch\NumbersDefinitions.cs" Link="Dutch\NumbersDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Dutch\NumbersWithUnitDefinitions.cs" Link="Dutch\NumbersWithUnitDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Dutch\TimeZoneDefinitions.cs" Link="Dutch\TimeZoneDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Dutch\QuotedTextDefinitions.cs" Link="Dutch\QuotedTextDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\English\ChoiceDefinitions.cs" Link="English\ChoiceDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\English\DateTimeDefinitions.cs" Link="English\DateTimeDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\English\NumbersDefinitions.cs" Link="English\NumbersDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\English\NumbersWithUnitDefinitions.cs" Link="English\NumbersWithUnitDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\English\QuotedTextDefinitions.cs" Link="English\QuotedTextDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\English\TimeZoneDefinitions.cs" Link="English\TimeZoneDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\French\ChoiceDefinitions.cs" Link="French\ChoiceDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\French\DateTimeDefinitions.cs" Link="French\DateTimeDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\French\NumbersDefinitions.cs" Link="French\NumbersDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\French\NumbersWithUnitDefinitions.cs" Link="French\NumbersWithUnitDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\French\QuotedTextDefinitions.cs" Link="French\QuotedTextDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\German\ChoiceDefinitions.cs" Link="German\ChoiceDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\German\DateTimeDefinitions.cs" Link="German\DateTimeDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\German\NumbersDefinitions.cs" Link="German\NumbersDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\German\NumbersWithUnitDefinitions.cs" Link="German\NumbersWithUnitDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\German\QuotedTextDefinitions.cs" Link="German\QuotedTextDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Hindi\NumbersDefinitions.cs" Link="Hindi\NumbersDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Hindi\NumbersWithUnitDefinitions.cs" Link="Hindi\NumbersWithUnitDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Hindi\ChoiceDefinitions.cs" Link="Hindi\ChoiceDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Hindi\DateTimeDefinitions.cs" Link="Hindi\DateTimeDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Hindi\QuotedTextDefinitions.cs" Link="Hindi\QuotedTextDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Italian\ChoiceDefinitions.cs" Link="Italian\ChoiceDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Italian\DateTimeDefinitions.cs" Link="Italian\DateTimeDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Italian\NumbersDefinitions.cs" Link="Italian\NumbersDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Italian\NumbersWithUnitDefinitions.cs" Link="Italian\NumbersWithUnitDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Italian\QuotedTextDefinitions.cs" Link="Italian\QuotedTextDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Japanese\ChoiceDefinitions.cs" Link="Japanese\ChoiceDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Japanese\DateTimeDefinitions.cs" Link="Japanese\DateTimeDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Japanese\NumbersDefinitions.cs" Link="Japanese\NumbersDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Japanese\NumbersWithUnitDefinitions.cs" Link="Japanese\NumbersWithUnitDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Japanese\QuotedTextDefinitions.cs" Link="Japanese\QuotedTextDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Korean\DateTimeDefinitions.cs" Link="Korean\DateTimeDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Korean\NumbersWithUnitDefinitions.cs" Link="Korean\NumbersWithUnitDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Korean\NumbersDefinitions.cs" Link="Korean\NumbersDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Korean\QuotedTextDefinitions.cs" Link="Korean\QuotedTextDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Portuguese\ChoiceDefinitions.cs" Link="Portuguese\ChoiceDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Portuguese\DateTimeDefinitions.cs" Link="Portuguese\DateTimeDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Portuguese\NumbersDefinitions.cs" Link="Portuguese\NumbersDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Portuguese\NumbersWithUnitDefinitions.cs" Link="Portuguese\NumbersWithUnitDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Portuguese\PhoneNumbersDefinitions.cs" Link="Portuguese\PhoneNumbersDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Portuguese\QuotedTextDefinitions.cs" Link="Portuguese\QuotedTextDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Spanish\ChoiceDefinitions.cs" Link="Spanish\ChoiceDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Spanish\DateTimeDefinitions.cs" Link="Spanish\DateTimeDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Spanish\NumbersDefinitions.cs" Link="Spanish\NumbersDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Spanish\NumbersWithUnitDefinitions.cs" Link="Spanish\NumbersWithUnitDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Spanish\QuotedTextDefinitions.cs" Link="Spanish\QuotedTextDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Swedish\ChoiceDefinitions.cs" Link="Swedish\ChoiceDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Swedish\NumbersDefinitions.cs" Link="Swedish\NumbersDefinitions.cs" />
-	<Compile Include="..\Microsoft.Recognizers.Definitions.Common\Swedish\NumbersWithUnitDefinitions.cs" Link="Swedish\NumbersWithUnitDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Swedish\NumbersWithUnitDefinitions.cs" Link="Swedish\NumbersWithUnitDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Bulgarian\ChoiceDefinitions.cs" Link="Bulgarian\ChoiceDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Turkish\ChoiceDefinitions.cs" Link="Turkish\ChoiceDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Turkish\DateTimeDefinitions.cs" Link="Turkish\DateTimeDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Turkish\NumbersDefinitions.cs" Link="Turkish\NumbersDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Turkish\NumbersWithUnitDefinitions.cs" Link="Turkish\NumbersWithUnitDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Turkish\QuotedTextDefinitions.cs" Link="Turkish\QuotedTextDefinitions.cs" />
   </ItemGroup>
 
   <ItemGroup>

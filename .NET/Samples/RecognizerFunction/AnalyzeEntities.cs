@@ -122,6 +122,10 @@ namespace RecognizerFunction
                 // E.g "bing.com"
                 SequenceRecognizer.RecognizeURL(query, culture),
 
+                // Quoted text recognizer
+                // E.g "I meant "no""
+                SequenceRecognizer.RecognizeQuotedText(query, culture),
+
                 // Add Boolean recognizer - This model will find yes/no like responses, including emoji -
                 // E.g "yup, I need that" will return "True"
                 ChoiceRecognizer.RecognizeBoolean(query, culture)

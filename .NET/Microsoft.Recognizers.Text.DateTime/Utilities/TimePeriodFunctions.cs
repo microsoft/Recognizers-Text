@@ -50,10 +50,24 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
                 Success = true,
             };
 
+            var spanHour = rightResult.Hour - leftResult.Hour;
+            if (spanHour < 0 || (spanHour == 0 && leftResult.Minute > rightResult.Minute))
+            {
+                spanHour += Constants.DayHourCount;
+            }
+
             // the right side doesn't contain desc while the left side does
-            if (rightResult.LowBound == -1 && leftResult.LowBound != -1 && rightResult.Hour <= leftResult.LowBound)
+            if (rightResult.LowBound == -1 && leftResult.LowBound != -1 && rightResult.Hour <= Constants.HalfDayHourCount &&
+                spanHour > Constants.HalfDayHourCount)
             {
                 rightResult.Hour += Constants.HalfDayHourCount;
+            }
+
+            // the left side doesn't contain desc while the right side does
+            if (leftResult.LowBound == -1 && rightResult.LowBound != -1 && leftResult.Hour <= Constants.HalfDayHourCount &&
+                spanHour > Constants.HalfDayHourCount)
+            {
+                leftResult.Hour += Constants.HalfDayHourCount;
             }
 
             int day = refTime.Day,
@@ -150,7 +164,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
             }
 
             var spanTimex = new StringBuilder();
-            spanTimex.Append($"PT{spanHour}H");
+            spanTimex.Append("PT");
+            if (spanHour > 0)
+            {
+                spanTimex.Append($"{spanHour}H");
+            }
 
             if (spanMinute != 0 && spanSecond == 0)
             {

@@ -30,6 +30,8 @@ public class PortugueseDateTime {
 
     public static final String DayRegex = "(?<day>(?:3[0-1]|[1-2]\\d|0?[1-9]))(?=\\b|t)";
 
+    public static final String WrittenDayRegex = "(?<day>(vinte\\s+e\\s+)?(um|dois|tr[eê]s|quatro|cinco|seis|sete|oito|nove)|dez|onze|doze|treze|(c|qu)atorze|quinze|dez[ae](s(seis|sete)|nove)|dezoito|vinte|trinta(\\s+e\\s+um)?)";
+
     public static final String MonthNumRegex = "(?<month>1[0-2]|(0)?[1-9])\\b";
 
     public static final String AmDescRegex = "({BaseDateTime.BaseAmDescRegex})"
@@ -84,11 +86,11 @@ public class PortugueseDateTime {
             .replace("{RelativeMonthRegex}", RelativeMonthRegex)
             .replace("{MonthRegex}", MonthRegex);
 
-    public static final String DateUnitRegex = "(?<unit>anos?|meses|m[êe]s|semanas?|dias?)\\b";
+    public static final String DateUnitRegex = "(?<unit>m[êe]s(?<plural>es)?|(ano|semana|dia)(?<plural>s)?)\\b";
 
     public static final String PastRegex = "(?<past>\\b(passad[ao](s)?|[uú]ltim[oa](s)?|anterior(es)?|h[aá]|pr[ée]vi[oa](s)?)\\b)";
 
-    public static final String FutureRegex = "(?<past>\\b(seguinte(s)?|pr[oó]xim[oa](s)?|dentro\\s+de|em|daqui\\s+a)\\b)";
+    public static final String FutureRegex = "(?<past>\\b(seguinte(s)?|pr[oó]xim[oa](s)?|daqui\\s+a)\\b)";
 
     public static final String SimpleCasesRegex = "\\b((desde\\s+[oa]|desde|d[oa])\\s+)?(dia\\s+)?({DayRegex})\\s*{TillRegex}\\s*(o dia\\s+)?({DayRegex})\\s+{MonthSuffixRegex}((\\s+|\\s*,\\s*){YearRegex})?\\b"
             .replace("{DayRegex}", DayRegex)
@@ -159,11 +161,17 @@ public class PortugueseDateTime {
 
     public static final String BeforeAfterRegex = "^[.]";
 
+    public static final String UpcomingPrefixRegex = ".^";
+
+    public static final String NextPrefixRegex = "(pr[oó]xim[oa]s?|seguinte|{UpcomingPrefixRegex})\\b"
+            .replace("{UpcomingPrefixRegex}", UpcomingPrefixRegex);
+
     public static final String InConnectorRegex = "\\b(em)\\b";
 
     public static final String SinceYearSuffixRegex = "^[.]";
 
-    public static final String WithinNextPrefixRegex = "^[.]";
+    public static final String WithinNextPrefixRegex = "\\b(dentro\\s+d(e|as)(\\s+(?<next>{NextPrefixRegex}))?)\\b"
+            .replace("{NextPrefixRegex}", NextPrefixRegex);
 
     public static final String TodayNowRegex = "\\b(hoje|agora)\\b";
 
@@ -178,7 +186,7 @@ public class PortugueseDateTime {
     public static final String OnRegex = "(?<=\\b(em|no)\\s+)({DayRegex}s?)\\b"
             .replace("{DayRegex}", DayRegex);
 
-    public static final String RelaxedOnRegex = "(?<=\\b(em|n[oa]|d[oa])\\s+)(dia\\s+)?({DayRegex}s?)\\b(?!\\s*[/\\\\\\-\\.,:\\s]\\s*(\\d|{MonthRegex}))"
+    public static final String RelaxedOnRegex = "(?<=\\b(em|n[oa]|d[oa])\\s+)(dia\\s+)?({DayRegex}s?)\\b(?!\\s*[/\\\\\\-\\.,:\\s]\\s*(\\d|(de\\s+)?{MonthRegex}))"
             .replace("{DayRegex}", DayRegex)
             .replace("{MonthRegex}", MonthRegex);
 
@@ -197,7 +205,13 @@ public class PortugueseDateTime {
 
     public static final String ForTheRegex = ".^";
 
-    public static final String WeekDayAndDayOfMonthRegex = ".^";
+    public static final String FlexibleDayRegex = "(?<DayOfMonth>([a-z]+\\s)?({WrittenDayRegex}|{DayRegex}))"
+            .replace("{WrittenDayRegex}", WrittenDayRegex)
+            .replace("{DayRegex}", DayRegex);
+
+    public static final String WeekDayAndDayOfMonthRegex = "\\b{WeekDayRegex}\\s+(dia\\s+{FlexibleDayRegex})\\b"
+            .replace("{WeekDayRegex}", WeekDayRegex)
+            .replace("{FlexibleDayRegex}", FlexibleDayRegex);
 
     public static final String WeekDayAndDayRegex = "\\b{WeekDayRegex}\\s+({DayRegex})(?!([-:/]|\\.\\d|(\\s+({AmDescRegex}|{PmDescRegex}|{OclockRegex}))))\\b"
             .replace("{WeekDayRegex}", WeekDayRegex)
@@ -337,11 +351,29 @@ public class PortugueseDateTime {
             .replace("{BaseDateTime.MinuteRegex}", BaseDateTime.MinuteRegex)
             .replace("{BaseDateTime.SecondRegex}", BaseDateTime.SecondRegex);
 
-    public static final String AtRegex = "\\b((?<=\\b([aà]s?)\\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\\s+horas?|\\s*h\\b)?|(?<=\\b(s(er)?[aã]o|v[aã]o\\s+ser|^[eé]h?)\\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\\s+horas?|\\s*h\\b))(\\s+{OclockRegex})?\\b"
+    public static final String MidnightRegex = "(?<midnight>meia\\s*(-\\s*)?noite)";
+
+    public static final String MidmorningRegex = "(?<midmorning>meio\\s+da\\s+manhã)";
+
+    public static final String MidEarlyMorning = "(?<midearlymorning>meio\\s+da\\s+madrugada)";
+
+    public static final String MidafternoonRegex = "(?<midafternoon>meio\\s+da\\s+tarde)";
+
+    public static final String MiddayRegex = "(?<midday>meio\\s*(-\\s*)?dia)";
+
+    public static final String MidTimeRegex = "(?<mid>({MidnightRegex}|{MidmorningRegex}|{MidEarlyMorning}|{MidafternoonRegex}|{MiddayRegex}))"
+            .replace("{MidnightRegex}", MidnightRegex)
+            .replace("{MidmorningRegex}", MidmorningRegex)
+            .replace("{MidafternoonRegex}", MidafternoonRegex)
+            .replace("{MiddayRegex}", MiddayRegex)
+            .replace("{MidEarlyMorning}", MidEarlyMorning);
+
+    public static final String AtRegex = "\\b(((?<=\\b([aà]s?)\\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\\s+horas?|\\s*h\\b)?|(?<=\\b(s(er)?[aã]o|v[aã]o\\s+ser|^[eé]h?)\\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\\s+horas?|\\s*h\\b))(\\s+{OclockRegex})?|{MidTimeRegex})\\b"
             .replace("{HourNumRegex}", HourNumRegex)
             .replace("{BaseDateTime.HourRegex}", BaseDateTime.HourRegex)
             .replace("{WrittenTimeRegex}", WrittenTimeRegex)
-            .replace("{OclockRegex}", OclockRegex);
+            .replace("{OclockRegex}", OclockRegex)
+            .replace("{MidTimeRegex}", MidTimeRegex);
 
     public static final String ConnectNumRegex = "({BaseDateTime.HourRegex}(?<min>[0-5][0-9])\\s*{DescRegex})"
             .replace("{BaseDateTime.HourRegex}", BaseDateTime.HourRegex)
@@ -402,8 +434,6 @@ public class PortugueseDateTime {
             .replace("{HourNumRegex}", HourNumRegex)
             .replace("{TensTimeRegex}", TensTimeRegex)
             .replace("{MinuteNumRegex}", MinuteNumRegex);
-
-    public static final String TimeRegex10 = "(\\b([àa]|ao?)|na|de|da|pela)\\s+(madrugada|manh[ãa]|meio\\s*dia|meia\\s*noite|tarde|noite)";
 
     public static final String TimeRegex11 = "\\b({WrittenTimeRegex})(\\s+{DescRegex})?\\b"
             .replace("{WrittenTimeRegex}", WrittenTimeRegex)
@@ -473,7 +503,7 @@ public class PortugueseDateTime {
 
     public static final String SpecificTimeBetweenAnd = "^[.]";
 
-    public static final String TimeUnitRegex = "(?<unit>horas?|h|minutos?|mins?|segundos?|se[cg]s?)\\b";
+    public static final String TimeUnitRegex = "(?<unit>(hora|minuto|min|segundo|se[cg])(?<plural>s)?|h)\\b";
 
     public static final String TimeFollowedUnit = "^\\s*{TimeUnitRegex}"
             .replace("{TimeUnitRegex}", TimeUnitRegex);
@@ -836,6 +866,7 @@ public class PortugueseDateTime {
         .put("vinte e oito", 28)
         .put("vinte e nove", 29)
         .put("trinta", 30)
+        .put("trinta e um", 31)
         .build();
 
     public static final ImmutableMap<String, String[]> HolidayNames = ImmutableMap.<String, String[]>builder()
@@ -875,14 +906,9 @@ public class PortugueseDateTime {
 
     public static final String TokenBeforeTime = "as ";
 
-    public static final String UpcomingPrefixRegex = ".^";
-
-    public static final String NextPrefixRegex = "(pr[oó]xim[oa]|seguinte|{UpcomingPrefixRegex})\\b"
-            .replace("{UpcomingPrefixRegex}", UpcomingPrefixRegex);
-
     public static final String PastPrefixRegex = ".^";
 
-    public static final String PreviousPrefixRegex = "([uú]ltim[oa]|{PastPrefixRegex})\\b"
+    public static final String PreviousPrefixRegex = "([uú]ltim[oa]s?|{PastPrefixRegex})\\b"
             .replace("{PastPrefixRegex}", PastPrefixRegex);
 
     public static final String ThisPrefixRegex = "([nd]?es[st][ea])\\b";
@@ -891,7 +917,15 @@ public class PortugueseDateTime {
 
     public static final String RestOfDateRegex = "^[\\.]";
 
-    public static final String RelativeDurationUnitRegex = "^[\\.]";
+    public static final String DurationUnitRegex = "(?<unit>{DateUnitRegex}|{TimeUnitRegex}|noites?)\\b"
+            .replace("{DateUnitRegex}", DateUnitRegex)
+            .replace("{TimeUnitRegex}", TimeUnitRegex);
+
+    public static final String RelativeDurationUnitRegex = "(?:(?<=({NextPrefixRegex}|{PreviousPrefixRegex}|{ThisPrefixRegex})\\s+)({DurationUnitRegex}))"
+            .replace("{NextPrefixRegex}", NextPrefixRegex)
+            .replace("{PreviousPrefixRegex}", PreviousPrefixRegex)
+            .replace("{ThisPrefixRegex}", ThisPrefixRegex)
+            .replace("{DurationUnitRegex}", DurationUnitRegex);
 
     public static final String ReferenceDatePeriodRegex = "^[.]";
 
@@ -911,8 +945,6 @@ public class PortugueseDateTime {
 
     public static final String CommonDatePrefixRegex = "\\b(dia)\\s+$";
 
-    public static final String DurationUnitRegex = "^[\\.]";
-
     public static final String DurationConnectorRegex = "^[.]";
 
     public static final String CenturyRegex = "^[.]";
@@ -931,7 +963,7 @@ public class PortugueseDateTime {
 
     public static final String YearPeriodRegex = "^[.]";
 
-    public static final String FutureSuffixRegex = "^[.]";
+    public static final String FutureSuffixRegex = "\\b(seguinte(s)?|pr[oó]xim[oa](s)?|no\\s+futuro)\\b";
 
     public static final ImmutableMap<String, Integer> WrittenDecades = ImmutableMap.<String, Integer>builder()
         .put("", 0)
@@ -946,6 +978,7 @@ public class PortugueseDateTime {
     public static final List<String> DurationDateRestrictions = Arrays.asList();
 
     public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
+        .put("^\\d{4}$", "(\\d\\.\\d{4}|\\d{4}\\.\\d)")
         .put("^(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)$", "([$%£&!?@#])(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)|(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)([$%£&@#])")
         .build();
 
@@ -976,6 +1009,8 @@ public class PortugueseDateTime {
     public static final List<String> WeekendTerms = Arrays.asList("fim de semana");
 
     public static final List<String> WeekTerms = Arrays.asList("semana");
+
+    public static final List<String> FortnightTerms = Arrays.asList("quinzena");
 
     public static final List<String> YearTerms = Arrays.asList("ano", "anos");
 

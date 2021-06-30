@@ -1962,5 +1962,29 @@
         "Length": 4
       }
     ]
+  },
+  {
+    "Input": "今日の１時",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T14:07:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "今日の１時",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-01T00",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 01:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 01:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 5
+      }
+    ]
   }
 ]

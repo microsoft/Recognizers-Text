@@ -73,11 +73,11 @@ MonthSuffixRegex: !nestedRegex
   def: (?<msuf>((del?|la|el)\s+)?({RelativeMonthRegex}|{MonthRegex}))
   references: [ RelativeMonthRegex, MonthRegex ]
 DateUnitRegex: !simpleRegex
-  def: (?<unit>años?|mes(es)?|semanas?|d[ií]as?(?<business>\s+(h[aá]biles|laborales))?)\b
+  def: (?<unit>(año|semana)(?<plural>s)?|mes(?<plural>es)?|d[ií]a(?<plural>s)?(?<business>\s+(h[aá]biles|laborales))?)\b
 PastRegex: !simpleRegex
   def: (?<past>\b(pasad(a|o)(s)?|[uú]ltim[oa](s)?|anterior(es)?|previo(s)?)\b)
 FutureRegex: !simpleRegex
-  def: \b(siguiente(s)?|pr[oó]xim[oa](s)?|dentro\s+de|en)\b
+  def: \b(siguiente(s)?|pr[oó]xim[oa](s)?)\b
 SimpleCasesRegex: !nestedRegex
   def: \b((desde(\s+el)?|entre|del?)\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*)((en|del?)\s+)?{YearRegex})?\b
   references: [ DayRegex, TillRegex, MonthSuffixRegex, YearRegex ]
@@ -160,12 +160,7 @@ RangeUnitRegex: !simpleRegex
 BeforeAfterRegex: !simpleRegex
   def: ^[.]
 InConnectorRegex: !simpleRegex
-  def: \b(en)\b
-SinceYearSuffixRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
-WithinNextPrefixRegex: !simpleRegex
-  def: \b(dentro\s+de)\b
+  def: \b(en)(?=\s*$)\b
 TodayNowRegex: !simpleRegex
   def: \b(hoy|ahora|este entonces)\b
 FromRegex: !simpleRegex
@@ -186,10 +181,10 @@ SpecialDayWithNumRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
 FlexibleDayRegex: !nestedRegex
-  def: (?<DayOfMonth>([A-Za-z]+\s)?({WrittenDayRegex}|{DayRegex}))
+  def: (?<DayOfMonth>([a-z]+\s)?({WrittenDayRegex}|{DayRegex}))
   references: [WrittenDayRegex, DayRegex ]
 ForTheRegex: !nestedRegex
-  def: \b((((?<=para\s+el\s+){FlexibleDayRegex})|((?<!(\b{MonthRegex},?|\bpara)\s+(el\s+)|{WeekDayRegex}\s+)((?<=(e[ln]\s+))|(\be[ln]\s+d[ií]a\s+)){FlexibleDayRegex}))(?<end>\s*(,|\.(?![º°ª])|!|\?|-|$))(?!\d))
+  def: \b((((?<=para\s+el\s+){FlexibleDayRegex})|((?<!(\b{MonthRegex},?|\bpara)\s+(el\s+)|{WeekDayRegex}\s+(el\s+)?)((?<=(e[ln]\s+))|(\be[ln]\s+d[ií]a\s+)){FlexibleDayRegex}))(?<end>\s*(,|\.(?![º°ª])|!|\?|-|$))(?!\d))
   references: [FlexibleDayRegex, MonthRegex, WeekDayRegex ]
 WeekDayAndDayOfMonthRegex: !nestedRegex
   def: \b{WeekDayRegex}\s+((el\s+(d[ií]a\s+)?){FlexibleDayRegex})\b
@@ -330,7 +325,7 @@ BasicTime: !nestedRegex
   def: (?<basictime>{WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}:{BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?|{BaseDateTime.HourRegex})
   references: [ WrittenTimeRegex, HourNumRegex, BaseDateTime.HourRegex, BaseDateTime.MinuteRegex, BaseDateTime.SecondRegex ]
 MidTimeRegex: !simpleRegex
-  def: (?<mid>((?<midnight>media\s*noche)|(?<midmorning>media\s*mañana)|(?<midafternoon>media\s*tarde)|(?<midday>medio\s*d[ií]a)))
+  def: (?<mid>((?<midnight>media\s*noche)|(?<midearlymorning>media\s*madrugada)|(?<midmorning>media\s*mañana)|(?<midafternoon>media\s*tarde)|(?<midday>medio\s*d[ií]a)))
 AtRegex: !nestedRegex
   # "a las cuatro" "a las 3 h?"
   def: \b((?<=\b((a|de(sde)?)\s+las?|al)\s+)(({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\b(\s*\bh\b)?(DescRegex)?|{MidTimeRegex})|{MidTimeRegex})
@@ -377,8 +372,6 @@ TimeRegex9: !nestedRegex
   # once (y)? veinticinco
   def: \b(?<writtentime>{HourNumRegex}\s+({TensTimeRegex}\s*)(y\s+)?{MinuteNumRegex}?)\b
   references: [ HourNumRegex, TensTimeRegex, MinuteNumRegex ]
-TimeRegex10: !simpleRegex
-  def: (a\s+la|al)\s+(madrugada|mañana|tarde|noche)
 TimeRegex11: !nestedRegex
   # (tres menos veinte) (pm)?
   def: \b({WrittenTimeRegex})(\s+{DescRegex})?\b
@@ -434,7 +427,7 @@ PeriodSpecificTimeOfDayRegex: !nestedRegex
 UnitRegex: !simpleRegex
   def: (?<unit>años?|(bi|tri|cuatri|se)mestre|mes(es)?|semanas?|fin(es)?\s+de\s+semana|finde|d[ií]as?|horas?|hra?s?|hs?|minutos?|mins?|segundos?|segs?|noches?)\b
 ConnectorRegex: !simpleRegex
-  def: ^(,|t|(para|y|a|en|por) las?|(\s*,\s*)?(cerca|alrededor) de las?)$
+  def: ^(,|t|(para|y|a|en|por) las?|(\s*,\s*)?((cerca|alrededor)\s+)?(de\s+las?|del))$
 # SpanishTimePeriodExtractorConfiguration
 TimeHourNumRegex: !simpleRegex
   def: (?<hour>veint(i(uno|dos|tres|cuatro)|e)|cero|uno|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|once|doce|trece|catorce|quince|dieci(s([eé])is|siete|ocho|nueve))
@@ -451,7 +444,7 @@ SpecificTimeBetweenAnd: !nestedRegex
   def: ({BetweenRegex}\s+)(?<time1>(({TimeRegex1}|{TimeRegex2}|{TimeRegexWithDotConnector}(\s*{DescRegex})?)|({BaseDateTime.HourRegex}|{TimeHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?))\s*{RangeConnectorRegex}\s*(?<time2>(({TimeRegex1}|{TimeRegex2}|{TimeRegexWithDotConnector}(\s*{DescRegex})?)|({BaseDateTime.HourRegex}|{TimeHourNumRegex})(\s*(?<rightDesc>{DescRegex}))?))
   references: [ BetweenRegex, TimeRegex1, TimeRegex2, TimeRegexWithDotConnector, RangeConnectorRegex, BaseDateTime.HourRegex, TimeHourNumRegex, DescRegex ]
 TimeUnitRegex: !simpleRegex
-  def: ([^A-Za-z]{1,}|\b)(?<unit>horas?|h|minutos?|mins?|segundos?|se[cg]s?)\b
+  def: ([^A-Za-z]{1,}|\b)(?<unit>(hora|minuto|min|segundo|se[cg])(?<plural>s)?|h)\b
 TimeFollowedUnit: !nestedRegex
   def: ^\s*{TimeUnitRegex}
   references: [ TimeUnitRegex ]
@@ -593,11 +586,14 @@ AmbiguousPointRangeRegex: !simpleRegex
 YearSuffix: !nestedRegex
   def: ((,|\sde)?\s*({YearRegex}|{FullTextYearRegex}))
   references: [ YearRegex, FullTextYearRegex ]
+SinceYearSuffixRegex: !nestedRegex
+  def: (^\s*{SinceRegex}(\s*(el\s+)?año\s*)?{YearSuffix})
+  references: [ SinceRegex, YearSuffix ]
 # SpanishDatetimeUtilityConfiguration
 AgoRegex: !simpleRegex
-  def: \b(antes\s+de\s+(?<day>hoy|ayer|mañana)|antes)\b
+  def: \b(antes\s+de\s+(?<day>hoy|ayer|mañana)|antes|hace)\b
 LaterRegex: !simpleRegex
-  def: \b(despu[eé]s(?!\s+de\b)|desde\s+ahora|a\s+partir\s+de\s+(?<day>hoy|ayer|mañana))\b
+  def: \b(despu[eé]s(?!\s+de\b)|desde\s+ahora|a\s+partir\s+de\s+(ahora|(?<day>hoy|ayer|mañana)))\b
 # DateTimePeriodParser
 Tomorrow: mañana
 # SpanishCommonDateTimeParserConfiguration
@@ -934,7 +930,7 @@ NextPrefixRegex: !nestedRegex
 PastPrefixRegex: !simpleRegex
   def: ((este\s+))
 PreviousPrefixRegex: !nestedRegex
-  def: \b({PastPrefixRegex}?pasad[oa](?!(\s+el)?\s+medio\s*d[ií]a)|[uú]ltim[oa]|anterior)\b
+  def: \b({PastPrefixRegex}?pasad[oa]s?(?!(\s+el)?\s+medio\s*d[ií]a)|[uú]ltim[oa]s?|anterior)\b
   references: [ PastPrefixRegex ]
 ThisPrefixRegex: !simpleRegex
   def: (est?[ea]|actual)\b
@@ -953,12 +949,14 @@ RelativeDayRegex: !simpleRegex
   def: (?<relday>((este|pr[oó]ximo|([uú]ltim(o|as|os)))\s+días)|(días\s+((que\s+viene)|pasado)))\b
 RestOfDateRegex: !simpleRegex
   def: \bresto\s+((del|de)\s+)?((la|el|est?[ae])\s+)?(?<duration>semana|mes|año|decada)(\s+actual)?\b
+WithinNextPrefixRegex: !nestedRegex
+  def: \b(dentro\s+de((\s+(el|l[ao]s?))?\s+(?<next>{NextPrefixRegex}))?)(?=\s*$)\b
+  references: [ NextPrefixRegex ]
 DurationUnitRegex: !nestedRegex
   def: (?<unit>{DateUnitRegex}|horas?|hra?s?|hs?|minutos?|mins?|segundos?|segs?|noches?)\b
   references: [ DateUnitRegex ]
 DurationConnectorRegex: !simpleRegex
-  # TODO: add this according to the related part in English
-  def: ^[.]
+  def: ^\s*(?<connector>\s+|y|,)\s*$
 RelativeDurationUnitRegex: !nestedRegex
   def: (?:(?<=({NextPrefixRegex}|{PreviousPrefixRegex}|{ThisPrefixRegex})\s+)({DurationUnitRegex}))
   references: [ NextPrefixRegex, PreviousPrefixRegex, ThisPrefixRegex, DurationUnitRegex ]
@@ -992,7 +990,15 @@ YearPeriodRegex: !nestedRegex
   def: ((((de(sde)?|durante|en)\s+)?{YearRegex}\s*({TillRegex})\s*{YearRegex})|(((entre)\s+){YearRegex}\s*({RangeConnectorRegex})\s*{YearRegex}))
   references: [ YearRegex, TillRegex, RangeConnectorRegex ]
 FutureSuffixRegex: !simpleRegex
-  def: \b(siguiente(s)?|pr[oó]xim[oa](s)?|(en\s+el\s+)?futuro|a\s+partir\s+de\s+ahora)\b
+  def: \b(siguiente(s)?|pr[oó]xim[oa](s)?|(en\s+el\s+)?futuro)\b
+PastSuffixRegex: !simpleRegex
+  def: ^\b$
+ModPrefixRegex: !nestedRegex
+  def: \b({RelativeRegex}|{AroundRegex}|{BeforeRegex}|{AfterRegex}|{SinceRegex})\b
+  references: [RelativeRegex, AroundRegex, BeforeRegex, AfterRegex, SinceRegex ]
+ModSuffixRegex: !nestedRegex
+  def: \b({AgoRegex}|{LaterRegex}|{BeforeAfterRegex}|{FutureSuffixRegex}|{PastSuffixRegex})\b
+  references: [AgoRegex, LaterRegex, BeforeAfterRegex, FutureSuffixRegex, PastSuffixRegex]
 WrittenDecades: !dictionary
   types: [ string, int ]
   # TODO: modify below dictionary according to the counterpart in English
@@ -1008,12 +1014,23 @@ DurationDateRestrictions: [ hoy ]
 AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:
-    '^mi$': '\bmi\b'
+    '^\d{4}$': '(\d\.\d{4}|\d{4}\.\d)'
+    '^(este\s+)?mi(\s+([uú]ltimo|pasado|anterior|pr[oó]ximo|siguiente|que\s+viene))?$': '\b(este\s+)?mi(\s+([uú]ltimo|pasado|anterior|pr[oó]ximo|siguiente|que\s+viene))?\b'
     '^a[nñ]o$': '(?<!el\s+)a[nñ]o'
     '^semana$': '(?<!la\s+)semana'
     '^mes$': '(?<!el\s+)mes'
     '^(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)$': '([$%£&!?@#])(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)|(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)([$%£&@#])'
 # For TimeOfDay resolution
+EarlyMorningStartEndRegex: !simpleRegex
+  def: (^(madrugada)|(madrugada)$)
+MorningStartEndRegex: !simpleRegex
+  def: (^((la\s+)?mañana))|(((la\s+)?mañana)$)
+AfternoonStartEndRegex: !simpleRegex
+  def: (^(pasado\s+(el\s+)?medio\s*dia))|((pasado\s+(el\s+)?medio\s*dia)$)
+EveningStartEndRegex: !simpleRegex
+  def: (^(tarde))|((tarde)$)
+NightStartEndRegex: !simpleRegex
+  def: (^(noche)|(noche)$)
 EarlyMorningTermList: !list
   types: [ string ]
   entries: 
@@ -1091,6 +1108,11 @@ WeekTerms: !list
   types: [ string ]
   entries:
     - semana
+FortnightTerms: !list
+  types: [ string ]
+  entries:
+    - quincena
+    - la quincena
 YearTerms: !list
   types: [ string ]
   entries:

@@ -1,0 +1,1173 @@
+[
+  {
+    "Input": "Je vais sortir dans une heure",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "heure",
+        "Start": 24,
+        "End": 29,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT1H",
+              "Mod": "after",
+              "type": "duration",
+              "value": "3600"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Je vais sortir dans 5 minutes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "5 minutes",
+        "Start": 20,
+        "End": 29,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT5M",
+              "Mod": "after",
+              "type": "duration",
+              "value": "300"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Je vais sortir trois jours plus tard",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "trois jours",
+        "Start": 15,
+        "End": 26,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P3D",
+              "Mod": "after",
+              "type": "duration",
+              "value": "259200"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion maintenant",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "maintenant",
+        "Start": 22,
+        "End": 32,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PRESENT_REF",
+              "type": "time",
+              "value": "2016-11-07 00:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion ce soir à 7 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "7 heures",
+        "Start": 32,
+        "End": 40,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07",
+              "type": "time",
+              "value": "07:00:00"
+            },
+            {
+              "timex": "T19",
+              "type": "time",
+              "value": "19:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion ce soir à 19h",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "19h",
+        "Start": 32,
+        "End": 35,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T19",
+              "type": "time",
+              "value": "19:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion 2 heures plus tard",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2 heures",
+        "Start": 22,
+        "End": 30,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT2H",
+              "Mod": "after",
+              "type": "duration",
+              "value": "7200"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion demain de 17 heures à 19 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "demain",
+        "Start": 22,
+        "End": 28,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-08",
+              "type": "date",
+              "value": "2016-11-08"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "17 heures",
+        "Start": 32,
+        "End": 41,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T17",
+              "type": "time",
+              "value": "17:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "19 heures",
+        "Start": 44,
+        "End": 53,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T19",
+              "type": "time",
+              "value": "19:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion aujourd’hui à partir de 17 heures jusqu'à 19 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "aujourd’hui",
+        "Start": 22,
+        "End": 33,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-07",
+              "type": "date",
+              "value": "2016-11-07"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "17 heures",
+        "Start": 46,
+        "End": 55,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T17",
+              "type": "time",
+              "value": "17:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "19 heures",
+        "Start": 64,
+        "End": 73,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T19",
+              "type": "time",
+              "value": "19:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion lundi prochain de 17 heures à 19 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "lundi prochain",
+        "Start": 22,
+        "End": 36,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-14",
+              "type": "date",
+              "value": "2016-11-14"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "17 heures",
+        "Start": 40,
+        "End": 49,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T17",
+              "type": "time",
+              "value": "17:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "19 heures",
+        "Start": 52,
+        "End": 61,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T19",
+              "type": "time",
+              "value": "19:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "organise une réunion demain de 17 heures à 19 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "demain",
+        "Start": 21,
+        "End": 27,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-08",
+              "type": "date",
+              "value": "2016-11-08"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "17 heures",
+        "Start": 31,
+        "End": 40,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T17",
+              "type": "time",
+              "value": "17:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "19 heures",
+        "Start": 43,
+        "End": 52,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T19",
+              "type": "time",
+              "value": "19:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion aujourd'hui de dix-sept heures à dix-neuf heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "aujourd'hui",
+        "Start": 22,
+        "End": 33,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-07",
+              "type": "date",
+              "value": "2016-11-07"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "dix-sept heures",
+        "Start": 37,
+        "End": 52,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T17",
+              "type": "time",
+              "value": "17:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "dix-neuf heures",
+        "Start": 55,
+        "End": 70,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T19",
+              "type": "time",
+              "value": "19:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion lundi prochain à partir de dix-sept heures jusqu'à dix-neuf heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "lundi prochain",
+        "Start": 22,
+        "End": 36,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-14",
+              "type": "date",
+              "value": "2016-11-14"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "dix-sept heures",
+        "Start": 49,
+        "End": 64,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T17",
+              "type": "time",
+              "value": "17:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "dix-neuf heures",
+        "Start": 73,
+        "End": 88,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T19",
+              "type": "time",
+              "value": "19:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "réservez une réunion demain de 17 heures à 19 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "demain",
+        "Start": 21,
+        "End": 27,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-08",
+              "type": "date",
+              "value": "2016-11-08"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "17 heures à 19 heures",
+        "Start": 31,
+        "End": 52,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(T17,T19,PT2H)",
+              "type": "timerange",
+              "start": "17:00:00",
+              "end": "19:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion du 1er septembre au 5 septembre",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1er septembre",
+        "Start": 25,
+        "End": 38,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-09-01",
+              "type": "date",
+              "value": "2016-09-01"
+            },
+            {
+              "timex": "XXXX-09-01",
+              "type": "date",
+              "value": "2017-09-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "5 septembre",
+        "Start": 42,
+        "End": 53,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-09-05",
+              "type": "date",
+              "value": "2016-09-05"
+            },
+            {
+              "timex": "XXXX-09-05",
+              "type": "date",
+              "value": "2017-09-05"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion du 05/07 au 08/07",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "05/07",
+        "Start": 25,
+        "End": 30,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-07-05",
+              "type": "date",
+              "value": "2016-07-05"
+            },
+            {
+              "timex": "XXXX-07-05",
+              "type": "date",
+              "value": "2017-07-05"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "08/07",
+        "Start": 34,
+        "End": 39,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-07-08",
+              "type": "date",
+              "value": "2016-07-08"
+            },
+            {
+              "timex": "XXXX-07-08",
+              "type": "date",
+              "value": "2017-07-08"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion de 5h30 à 7h",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "5h30",
+        "Start": 25,
+        "End": 29,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T05:30",
+              "type": "time",
+              "value": "05:30:00"
+            },
+            {
+              "timex": "T17:30",
+              "type": "time",
+              "value": "17:30:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "7h",
+        "Start": 32,
+        "End": 34,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07:00",
+              "type": "time",
+              "value": "07:00:00"
+            },
+            {
+              "timex": "T19:00",
+              "type": "time",
+              "value": "19:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion de 17 heures à 19 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "17 heures",
+        "Start": 25,
+        "End": 34,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T17",
+              "type": "time",
+              "value": "17:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "19 heures",
+        "Start": 37,
+        "End": 46,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T19",
+              "type": "time",
+              "value": "19:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion de 5 heures à 19 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "5 heures",
+        "Start": 25,
+        "End": 33,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T05",
+              "type": "time",
+              "value": "05:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "19 heures",
+        "Start": 36,
+        "End": 45,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T19",
+              "type": "time",
+              "value": "19:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion 2 jours plus tard",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2 jours",
+        "Start": 22,
+        "End": 29,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P2D",
+              "Mod": "after",
+              "type": "duration",
+              "value": "172800"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "J'ai eu il y a 2 minutes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2 minutes",
+        "Start": 15,
+        "End": 24,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT2M",
+              "Mod": "before",
+              "type": "duration",
+              "value": "120"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion demain à 19 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "demain",
+        "Start": 22,
+        "End": 28,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-08",
+              "type": "date",
+              "value": "2016-11-08"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "19 heures",
+        "Start": 31,
+        "End": 40,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T19",
+              "type": "time",
+              "value": "19:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "organisez une réunion demain matin à 19 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "demain",
+        "Start": 22,
+        "End": 28,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-08",
+              "type": "date",
+              "value": "2016-11-08"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "matin à 19 heures",
+        "Start": 29,
+        "End": 46,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07",
+              "type": "time",
+              "value": "07:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ça se passera entre 10h et 11h30 le 01/01/2015",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "01/01/2015",
+        "Start": 36,
+        "End": 46,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-01-01",
+              "type": "date",
+              "value": "2015-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "11h30",
+        "Start": 27,
+        "End": 32,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T11:30",
+              "type": "time",
+              "value": "11:30:00"
+            },
+            {
+              "timex": "T23:30",
+              "type": "time",
+              "value": "23:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ça se passera le 01 janvier 2015 entre 10h et 11h30",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "01 janvier 2015",
+        "Start": 17,
+        "End": 32,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-01-01",
+              "type": "date",
+              "value": "2015-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "11h30",
+        "Start": 46,
+        "End": 51,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T11:30",
+              "type": "time",
+              "value": "11:30:00"
+            },
+            {
+              "timex": "T23:30",
+              "type": "time",
+              "value": "23:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ça se passera de 10h30 à 15h le 01/01/2015",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "01/01/2015",
+        "Start": 32,
+        "End": 42,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-01-01",
+              "type": "date",
+              "value": "2015-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "10h30",
+        "Start": 17,
+        "End": 22,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T10:30",
+              "type": "time",
+              "value": "10:30:00"
+            },
+            {
+              "timex": "T22:30",
+              "type": "time",
+              "value": "22:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ça se passera entre 3 heures et 5 heures le 01 janvier 2015",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "entre 3 heures et 5 heures le 01 janvier 2015",
+        "Start": 14,
+        "End": 59,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2015-01-01T03,2015-01-01T05,PT2H)",
+              "type": "datetimerange",
+              "start": "2015-01-01 03:00:00",
+              "end": "2015-01-01 05:00:00"
+            },
+            {
+              "timex": "(2015-01-01T15,2015-01-01T17,PT2H)",
+              "type": "datetimerange",
+              "start": "2015-01-01 15:00:00",
+              "end": "2015-01-01 17:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ça se passera le 01/01/2015 après 2 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "01/01/2015",
+        "Start": 17,
+        "End": 27,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-01-01",
+              "type": "date",
+              "value": "2015-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2 heures",
+        "Start": 34,
+        "End": 42,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T02:00",
+              "type": "time",
+              "value": "02:00:00"
+            },
+            {
+              "timex": "T14:00",
+              "type": "time",
+              "value": "14:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ça se passera aujourd’hui avant 16 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "aujourd’hui",
+        "Start": 14,
+        "End": 25,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-06-26",
+              "type": "date",
+              "value": "2018-06-26"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "16 heures",
+        "Start": 32,
+        "End": 41,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T16",
+              "type": "time",
+              "value": "16:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ça se passera mercredi prochain plus tard que 10 heures du matin",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mercredi prochain",
+        "Start": 14,
+        "End": 31,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-07-04",
+              "type": "date",
+              "value": "2018-07-04"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "10 heures du matin",
+        "Start": 46,
+        "End": 64,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T10",
+              "type": "time",
+              "value": "10:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "C’est arrivé mardi dernier à 2 heures de l’après-midi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mardi dernier",
+        "Start": 13,
+        "End": 26,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-06-19",
+              "type": "date",
+              "value": "2018-06-19"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2 heures de l’après-midi",
+        "Start": 29,
+        "End": 53,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T14",
+              "type": "time",
+              "value": "14:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Allons-y le 1er février au plus tard à 6 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1er février",
+        "Start": 12,
+        "End": 23,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-02-01",
+              "type": "date",
+              "value": "2018-02-01"
+            },
+            {
+              "timex": "XXXX-02-01",
+              "type": "date",
+              "value": "2019-02-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "6 heures",
+        "Start": 39,
+        "End": 47,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T06:00",
+              "type": "time",
+              "value": "06:00:00"
+            },
+            {
+              "timex": "T18:00",
+              "type": "time",
+              "value": "18:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

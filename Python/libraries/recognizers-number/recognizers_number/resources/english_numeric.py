@@ -17,6 +17,7 @@ class EnglishNumeric:
     LangMarker = 'Eng'
     CompoundNumberLanguage = False
     MultiDecimalSeparatorCulture = True
+    NonStandardSeparatorVariants = [r'en-za', r'en-na', r'en-zw']
     RoundNumberIntegerRegex = f'(?:hundred|thousand|million|mln|billion|bln|trillion|tln|lakh|crore)s?'
     ZeroToNineIntegerRegex = f'(?:three|seven|eight|four|five|zero|nine|one|two|six)'
     TwoToNineIntegerRegex = f'(?:three|seven|eight|four|five|nine|two|six)'

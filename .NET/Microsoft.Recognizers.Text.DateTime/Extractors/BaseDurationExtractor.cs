@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-
+using System.Linq;
 using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
@@ -223,7 +223,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             var unitMap = this.config.UnitMap;
             var unitValueMap = this.config.UnitValueMap;
             var unitRegex = this.config.DurationUnitRegex;
-            List<ExtractResult> ret = new List<ExtractResult>();
+            List<ExtractResult> results = new List<ExtractResult>();
+            List<List<ExtractResult>> separateResults = new List<List<ExtractResult>>();
 
             var firstExtractionIndex = 0;
             var timeUnit = 0;
@@ -248,6 +249,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                     firstExtractionIndex++;
                     continue;
                 }
+
+                // Add extraction to list of separate results (needed in case the extractions should not be merged)
+                List<ExtractResult> separateList = new List<ExtractResult>() { extractorResults[firstExtractionIndex] };
 
                 var secondExtractionIndex = firstExtractionIndex + 1;
                 while (secondExtractionIndex < extractorResults.Count)
@@ -285,6 +289,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                         break;
                     }
 
+                    // Add extraction to list of separate results (needed in case the extractions should not be merged)
+                    separateList.Add(extractorResults[secondExtractionIndex]);
+
                     secondExtractionIndex++;
                 }
 
@@ -309,20 +316,41 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     node.Data = type;
 
-                    ret.Add(node);
+                    results.Add(node);
 
                     timeUnit = 0;
                     totalUnit = 0;
                 }
                 else
                 {
-                    ret.Add(extractorResults[firstExtractionIndex]);
+                    results.Add(extractorResults[firstExtractionIndex]);
                 }
+
+                // Add list of separate extractions to separateResults, so that there is a 1 to 1 correspondence
+                // between results (list of merged extractions) and separateResults (list of unmerged extractions)
+                separateResults.Add(separateList);
 
                 firstExtractionIndex = secondExtractionIndex;
             }
 
-            return ret;
+            // If the first and last elements of a group of contiguous extractions are both preceded/followed by modifiers,
+            // they should not be merged, e.g. "last 2 weeks and 3 days ago"
+            for (int i = results.Count - 1; i >= 0; i--)
+            {
+                var start = (int)results[i].Start;
+                var end = start + (int)results[i].Length;
+                var beforeStr = text.Substring(0, start);
+                var afterStr = text.Substring(end);
+                var beforeMod = this.config.ModPrefixRegex.MatchEnd(beforeStr, trim: true);
+                var afterMod = this.config.ModSuffixRegex.MatchBegin(afterStr, trim: true);
+                if (beforeMod.Success && afterMod.Success)
+                {
+                    results.RemoveAt(i);
+                    results.InsertRange(i, separateResults[i]);
+                }
+            }
+
+            return results;
         }
     }
 }

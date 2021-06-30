@@ -1,0 +1,170 @@
+[
+  {
+    "Input": "Tiquetes de avión baratos Madrid - Cozumel desde $ 1,234 (1234.00)",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "1,234",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1234"
+        },
+        "Start": 51,
+        "End": 55
+      },
+      {
+        "Text": "1234.00",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1234"
+        },
+        "Start": 58,
+        "End": 64
+      }
+    ]
+  },
+  {
+    "Input": "0.0638, 0,0638, 1.000, 1,000, 0,683, 0.683, 1.111,11, 1111,13, 1111.13, 1111.121, 1111,121",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "0.0638",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "0.0638"
+        },
+        "Start": 0,
+        "End": 5
+      },
+      {
+        "Text": "0,0638",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "0.0638"
+        },
+        "Start": 8,
+        "End": 13
+      },
+      {
+        "Text": "1.000",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1"
+        },
+        "Start": 16,
+        "End": 20
+      },
+      {
+        "Text": "1,000",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1000"
+        },
+        "Start": 23,
+        "End": 27
+      },
+      {
+        "Text": "0,683",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "0.683"
+        },
+        "Start": 30,
+        "End": 34
+      },
+      {
+        "Text": "0.683",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "0.683"
+        },
+        "Start": 37,
+        "End": 41
+      },
+      {
+        "Text": "1.111,11",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "1111.11"
+        },
+        "Start": 44,
+        "End": 51
+      },
+      {
+        "Text": "1111,13",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "1111.13"
+        },
+        "Start": 54,
+        "End": 60
+      },
+      {
+        "Text": "1111.13",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "1111.13"
+        },
+        "Start": 63,
+        "End": 69
+      },
+      {
+        "Text": "1111.121",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "1111.121"
+        },
+        "Start": 72,
+        "End": 79
+      },
+      {
+        "Text": "1111,121",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "1111.121"
+        },
+        "Start": 82,
+        "End": 89
+      }
+    ]
+  },
+  {
+    "Input": "1.111,11, 1,111.11",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "1.111,11",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "1111.11"
+        },
+        "Start": 0,
+        "End": 7
+      },
+      {
+        "Text": "1,111.11",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "1111.11"
+        },
+        "Start": 10,
+        "End": 17
+      }
+    ]
+  }
+]

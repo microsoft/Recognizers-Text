@@ -6,12 +6,15 @@ using System.Linq;
 using Microsoft.Recognizers.Text.Choice;
 using Microsoft.Recognizers.Text.DateTime;
 using Microsoft.Recognizers.Text.DateTime.Arabic;
+using Microsoft.Recognizers.Text.DateTime.Chinese;
 using Microsoft.Recognizers.Text.DateTime.Dutch;
 using Microsoft.Recognizers.Text.DateTime.English;
 using Microsoft.Recognizers.Text.DateTime.French;
 using Microsoft.Recognizers.Text.DateTime.German;
 using Microsoft.Recognizers.Text.DateTime.Hindi;
 using Microsoft.Recognizers.Text.DateTime.Italian;
+using Microsoft.Recognizers.Text.DateTime.Japanese;
+using Microsoft.Recognizers.Text.DateTime.Korean;
 using Microsoft.Recognizers.Text.DateTime.Portuguese;
 using Microsoft.Recognizers.Text.DateTime.Spanish;
 using Microsoft.Recognizers.Text.DateTime.Turkish;
@@ -50,6 +53,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         IpAddress,
         Mention,
         Hashtag,
+        QuotedText,
         Email,
         URL,
         GUID,
@@ -117,6 +121,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             { Models.IpAddress, (test, culture) => SequenceRecognizer.RecognizeIpAddress(test.Input, culture, fallbackToDefaultCulture: false) },
             { Models.Mention, (test, culture) => SequenceRecognizer.RecognizeMention(test.Input, culture, fallbackToDefaultCulture: false) },
             { Models.Hashtag, (test, culture) => SequenceRecognizer.RecognizeHashtag(test.Input, culture, fallbackToDefaultCulture: false) },
+            { Models.QuotedText, (test, culture) => SequenceRecognizer.RecognizeQuotedText(test.Input, culture, fallbackToDefaultCulture: false) },
             { Models.Email, (test, culture) => SequenceRecognizer.RecognizeEmail(test.Input, culture, fallbackToDefaultCulture: false) },
             { Models.URL, (test, culture) => SequenceRecognizer.RecognizeURL(test.Input, culture, fallbackToDefaultCulture: false) },
             { Models.GUID, (test, culture) => SequenceRecognizer.RecognizeGUID(test.Input, culture, fallbackToDefaultCulture: false) },
@@ -166,6 +171,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return GetHindiExtractor(extractorName);
                 case Culture.Arabic:
                     return GetArabicExtractor(extractorName);
+                case Culture.Korean:
+                    return GetKoreanExtractor(extractorName);
             }
 
             throw new Exception($"Extractor '{extractorName}' for '{culture}' not supported");
@@ -204,6 +211,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return GetHindiParser(parserName);
                 case Culture.Arabic:
                     return GetArabicParser(parserName);
+                case Culture.Korean:
+                    return GetKoreanParser(parserName);
             }
 
             throw new Exception($"Parser '{parserName}' for '{culture}' not supported");
@@ -497,27 +506,27 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             switch (extractorName)
             {
                 case DateTimeExtractors.Date:
-                    return new DateTime.Chinese.ChineseDateExtractorConfiguration();
+                    return new BaseCJKDateExtractor(new ChineseDateExtractorConfiguration(defaultConfig));
                 case DateTimeExtractors.Time:
-                    return new DateTime.Chinese.ChineseTimeExtractorConfiguration();
+                    return new BaseCJKTimeExtractor(new ChineseTimeExtractorConfiguration(defaultConfig));
                 case DateTimeExtractors.DatePeriod:
-                    return new DateTime.Chinese.ChineseDatePeriodExtractorConfiguration(defaultConfig);
+                    return new BaseCJKDatePeriodExtractor(new ChineseDatePeriodExtractorConfiguration(defaultConfig));
                 case DateTimeExtractors.TimePeriod:
-                    return new DateTime.Chinese.ChineseTimePeriodExtractorChsConfiguration();
+                    return new BaseCJKTimePeriodExtractor(new ChineseTimePeriodExtractorConfiguration(defaultConfig));
                 case DateTimeExtractors.DateTime:
-                    return new DateTime.Chinese.ChineseDateTimeExtractorConfiguration();
+                    return new BaseCJKDateTimeExtractor(new ChineseDateTimeExtractorConfiguration(defaultConfig));
                 case DateTimeExtractors.DateTimePeriod:
-                    return new DateTime.Chinese.ChineseDateTimePeriodExtractorConfiguration(defaultConfig);
+                    return new BaseCJKDateTimePeriodExtractor(new ChineseDateTimePeriodExtractorConfiguration(defaultConfig));
                 case DateTimeExtractors.Duration:
-                    return new DateTime.Chinese.ChineseDurationExtractorConfiguration();
+                    return new BaseCJKDurationExtractor(new ChineseDurationExtractorConfiguration(defaultConfig));
                 case DateTimeExtractors.Holiday:
-                    return new BaseHolidayExtractor(new DateTime.Chinese.ChineseHolidayExtractorConfiguration(defaultConfig));
+                    return new BaseCJKHolidayExtractor(new ChineseHolidayExtractorConfiguration(defaultConfig));
                 case DateTimeExtractors.Set:
-                    return new DateTime.Chinese.ChineseSetExtractorConfiguration();
+                    return new BaseCJKSetExtractor(new ChineseSetExtractorConfiguration(defaultConfig));
                 case DateTimeExtractors.Merged:
-                    return new DateTime.Chinese.ChineseMergedExtractorConfiguration(defaultConfig);
+                    return new BaseCJKMergedDateTimeExtractor(new ChineseMergedExtractorConfiguration(defaultConfig));
                 case DateTimeExtractors.MergedSkipFromTo:
-                    return new DateTime.Chinese.ChineseMergedExtractorConfiguration(skipConfig);
+                    return new BaseCJKMergedDateTimeExtractor(new ChineseMergedExtractorConfiguration(skipConfig));
             }
 
             throw new Exception($"Extractor '{extractorName}' for Chinese not supported");
@@ -525,30 +534,30 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public static IDateTimeParser GetChineseParser(DateTimeParsers parserName)
         {
-            var config = new BaseDateTimeOptionsConfiguration(Culture.Chinese, DateTimeOptions.None);
+            var config = new ChineseCommonDateTimeParserConfiguration(new BaseDateTimeOptionsConfiguration(Culture.Chinese, DateTimeOptions.None));
 
             switch (parserName)
             {
                 case DateTimeParsers.Date:
-                    return new DateTime.Chinese.ChineseDateParserConfiguration(new DateTime.Chinese.ChineseDateTimeParserConfiguration(config));
+                    return new BaseCJKDateParser(new ChineseDateParserConfiguration(config));
                 case DateTimeParsers.Time:
-                    return new DateTime.Chinese.ChineseTimeParserConfiguration(new DateTime.Chinese.ChineseDateTimeParserConfiguration(config));
+                    return new BaseCJKTimeParser(new ChineseTimeParserConfiguration(config));
                 case DateTimeParsers.DatePeriod:
-                    return new DateTime.Chinese.ChineseDatePeriodParserConfiguration(new DateTime.Chinese.ChineseDateTimeParserConfiguration(config));
+                    return new BaseCJKDatePeriodParser(new ChineseDatePeriodParserConfiguration(config));
                 case DateTimeParsers.TimePeriod:
-                    return new DateTime.Chinese.ChineseTimePeriodParserConfiguration(new DateTime.Chinese.ChineseDateTimeParserConfiguration(config));
+                    return new BaseCJKTimePeriodParser(new ChineseTimePeriodParserConfiguration(config));
                 case DateTimeParsers.DateTime:
-                    return new DateTime.Chinese.ChineseDateTimeParser(new DateTime.Chinese.ChineseDateTimeParserConfiguration(config));
+                    return new BaseCJKDateTimeParser(new ChineseDateTimeParserConfiguration(config));
                 case DateTimeParsers.DateTimePeriod:
-                    return new DateTime.Chinese.ChineseDateTimePeriodParserConfiguration(new DateTime.Chinese.ChineseDateTimeParserConfiguration(config));
+                    return new BaseCJKDateTimePeriodParser(new ChineseDateTimePeriodParserConfiguration(config));
                 case DateTimeParsers.Duration:
-                    return new DateTime.Chinese.ChineseDurationParserConfiguration(new DateTime.Chinese.ChineseDateTimeParserConfiguration(config));
+                    return new BaseCJKDurationParser(new ChineseDurationParserConfiguration(config));
                 case DateTimeParsers.Holiday:
-                    return new DateTime.Chinese.ChineseHolidayParserConfiguration(new DateTime.Chinese.ChineseDateTimeParserConfiguration(config));
+                    return new BaseCJKHolidayParser(new ChineseHolidayParserConfiguration(config));
                 case DateTimeParsers.Set:
-                    return new DateTime.Chinese.ChineseSetParserConfiguration(new DateTime.Chinese.ChineseDateTimeParserConfiguration(config));
+                    return new BaseCJKSetParser(new ChineseSetParserConfiguration(config));
                 case DateTimeParsers.Merged:
-                    return new FullDateTimeParser(new DateTime.Chinese.ChineseDateTimeParserConfiguration(config));
+                    return new BaseCJKMergedDateTimeParser(new ChineseMergedParserConfiguration(config));
             }
 
             throw new Exception($"Parser '{parserName}' for Chinese not supported");
@@ -563,27 +572,27 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             switch (extractorName)
             {
                 case DateTimeExtractors.Date:
-                    return new DateTime.Japanese.JapaneseDateExtractorConfiguration();
+                    return new BaseCJKDateExtractor(new JapaneseDateExtractorConfiguration(defaultConfig));
                 case DateTimeExtractors.Time:
-                    return new DateTime.Japanese.JapaneseTimeExtractorConfiguration();
+                    return new BaseCJKTimeExtractor(new JapaneseTimeExtractorConfiguration(defaultConfig));
                 case DateTimeExtractors.DatePeriod:
-                    return new DateTime.Japanese.JapaneseDatePeriodExtractorConfiguration();
+                    return new BaseCJKDatePeriodExtractor(new JapaneseDatePeriodExtractorConfiguration(defaultConfig));
                 case DateTimeExtractors.TimePeriod:
-                    return new DateTime.Japanese.JapaneseTimePeriodExtractorConfiguration();
+                    return new BaseCJKTimePeriodExtractor(new JapaneseTimePeriodExtractorConfiguration(defaultConfig));
                 case DateTimeExtractors.DateTime:
-                    return new DateTime.Japanese.JapaneseDateTimeExtractorConfiguration();
+                    return new BaseCJKDateTimeExtractor(new JapaneseDateTimeExtractorConfiguration(defaultConfig));
                 case DateTimeExtractors.DateTimePeriod:
-                    return new DateTime.Japanese.JapaneseDateTimePeriodExtractorConfiguration();
+                    return new BaseCJKDateTimePeriodExtractor(new JapaneseDateTimePeriodExtractorConfiguration(defaultConfig));
                 case DateTimeExtractors.Duration:
-                    return new DateTime.Japanese.JapaneseDurationExtractorConfiguration();
+                    return new BaseCJKDurationExtractor(new JapaneseDurationExtractorConfiguration(defaultConfig));
                 case DateTimeExtractors.Holiday:
-                    return new BaseHolidayExtractor(new DateTime.Japanese.JapaneseHolidayExtractorConfiguration(defaultConfig));
+                    return new BaseCJKHolidayExtractor(new JapaneseHolidayExtractorConfiguration(defaultConfig));
                 case DateTimeExtractors.Set:
-                    return new DateTime.Japanese.JapaneseSetExtractorConfiguration();
+                    return new BaseCJKSetExtractor(new JapaneseSetExtractorConfiguration(defaultConfig));
                 case DateTimeExtractors.Merged:
-                    return new DateTime.Japanese.JapaneseMergedExtractorConfiguration(defaultConfig);
+                    return new BaseCJKMergedDateTimeExtractor(new JapaneseMergedExtractorConfiguration(defaultConfig));
                 case DateTimeExtractors.MergedSkipFromTo:
-                    return new DateTime.Japanese.JapaneseMergedExtractorConfiguration(skipConfig);
+                    return new BaseCJKMergedDateTimeExtractor(new JapaneseMergedExtractorConfiguration(skipConfig));
             }
 
             throw new Exception($"Extractor '{extractorName}' for Japanese not supported");
@@ -591,31 +600,30 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public static IDateTimeParser GetJapaneseParser(DateTimeParsers parserName)
         {
-
-            var config = new BaseDateTimeOptionsConfiguration(Culture.Japanese, DateTimeOptions.None);
+            var config = new JapaneseCommonDateTimeParserConfiguration(new BaseDateTimeOptionsConfiguration(Culture.Japanese, DateTimeOptions.None));
 
             switch (parserName)
             {
                 case DateTimeParsers.Date:
-                    return new DateTime.Japanese.JapaneseDateParserConfiguration(new DateTime.Japanese.JapaneseDateTimeParserConfiguration(config));
+                    return new BaseCJKDateParser(new JapaneseDateParserConfiguration(config));
                 case DateTimeParsers.Time:
-                    return new DateTime.Japanese.JapaneseTimeParserConfiguration(new DateTime.Japanese.JapaneseDateTimeParserConfiguration(config));
+                    return new BaseCJKTimeParser(new JapaneseTimeParserConfiguration(config));
                 case DateTimeParsers.DatePeriod:
-                    return new DateTime.Japanese.JapaneseDatePeriodParserConfiguration(new DateTime.Japanese.JapaneseDateTimeParserConfiguration(config));
+                    return new BaseCJKDatePeriodParser(new JapaneseDatePeriodParserConfiguration(config));
                 case DateTimeParsers.TimePeriod:
-                    return new DateTime.Japanese.JapaneseTimePeriodParserConfiguration(new DateTime.Japanese.JapaneseDateTimeParserConfiguration(config));
+                    return new BaseCJKTimePeriodParser(new JapaneseTimePeriodParserConfiguration(config));
                 case DateTimeParsers.DateTime:
-                    return new DateTime.Japanese.JapaneseDateTimeParser(new DateTime.Japanese.JapaneseDateTimeParserConfiguration(config));
+                    return new BaseCJKDateTimeParser(new JapaneseDateTimeParserConfiguration(config));
                 case DateTimeParsers.DateTimePeriod:
-                    return new DateTime.Japanese.JapaneseDateTimePeriodParserConfiguration(new DateTime.Japanese.JapaneseDateTimeParserConfiguration(config));
+                    return new BaseCJKDateTimePeriodParser(new JapaneseDateTimePeriodParserConfiguration(config));
                 case DateTimeParsers.Duration:
-                    return new DateTime.Japanese.JapaneseDurationParserConfiguration(new DateTime.Japanese.JapaneseDateTimeParserConfiguration(config));
+                    return new BaseCJKDurationParser(new JapaneseDurationParserConfiguration(config));
                 case DateTimeParsers.Holiday:
-                    return new DateTime.Japanese.JapaneseHolidayParserConfiguration(new DateTime.Japanese.JapaneseDateTimeParserConfiguration(config));
+                    return new BaseCJKHolidayParser(new JapaneseHolidayParserConfiguration(config));
                 case DateTimeParsers.Set:
-                    return new DateTime.Japanese.JapaneseSetParserConfiguration(new DateTime.Japanese.JapaneseDateTimeParserConfiguration(config));
+                    return new BaseCJKSetParser(new JapaneseSetParserConfiguration(config));
                 case DateTimeParsers.Merged:
-                    return new FullDateTimeParser(new DateTime.Japanese.JapaneseDateTimeParserConfiguration(config));
+                    return new BaseCJKMergedDateTimeParser(new JapaneseMergedParserConfiguration(config));
             }
 
             throw new Exception($"Parser '{parserName}' for Japanese not supported");
@@ -1067,6 +1075,72 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             }
 
             throw new Exception($"Parser '{parserName}' for Hindi not supported");
+        }
+
+        public static IDateTimeExtractor GetKoreanExtractor(DateTimeExtractors extractorName)
+        {
+
+            var defaultConfig = new BaseDateTimeOptionsConfiguration(Culture.Korean, DateTimeOptions.None);
+            var skipConfig = new BaseDateTimeOptionsConfiguration(Culture.Korean, DateTimeOptions.SkipFromToMerge);
+
+            switch (extractorName)
+            {
+                case DateTimeExtractors.Date:
+                    return new BaseCJKDateExtractor(new KoreanDateExtractorConfiguration(defaultConfig));
+                case DateTimeExtractors.Time:
+                    return new BaseCJKTimeExtractor(new KoreanTimeExtractorConfiguration(defaultConfig));
+                case DateTimeExtractors.DatePeriod:
+                    return new BaseCJKDatePeriodExtractor(new KoreanDatePeriodExtractorConfiguration(defaultConfig));
+                case DateTimeExtractors.TimePeriod:
+                    return new BaseCJKTimePeriodExtractor(new KoreanTimePeriodExtractorConfiguration(defaultConfig));
+                case DateTimeExtractors.DateTime:
+                    return new BaseCJKDateTimeExtractor(new KoreanDateTimeExtractorConfiguration(defaultConfig));
+                case DateTimeExtractors.DateTimePeriod:
+                    return new BaseCJKDateTimePeriodExtractor(new KoreanDateTimePeriodExtractorConfiguration(defaultConfig));
+                case DateTimeExtractors.Duration:
+                    return new BaseCJKDurationExtractor(new KoreanDurationExtractorConfiguration(defaultConfig));
+                case DateTimeExtractors.Holiday:
+                    return new BaseCJKHolidayExtractor(new KoreanHolidayExtractorConfiguration(defaultConfig));
+                case DateTimeExtractors.Set:
+                    return new BaseCJKSetExtractor(new KoreanSetExtractorConfiguration(defaultConfig));
+                case DateTimeExtractors.Merged:
+                    return new BaseCJKMergedDateTimeExtractor(new KoreanMergedExtractorConfiguration(defaultConfig));
+                case DateTimeExtractors.MergedSkipFromTo:
+                    return new BaseCJKMergedDateTimeExtractor(new KoreanMergedExtractorConfiguration(skipConfig));
+            }
+
+            throw new Exception($"Extractor '{extractorName}' for Korean not supported");
+        }
+
+        public static IDateTimeParser GetKoreanParser(DateTimeParsers parserName)
+        {
+            var config = new KoreanCommonDateTimeParserConfiguration(new BaseDateTimeOptionsConfiguration(Culture.Korean, DateTimeOptions.None));
+
+            switch (parserName)
+            {
+                case DateTimeParsers.Date:
+                    return new BaseCJKDateParser(new KoreanDateParserConfiguration(config));
+                case DateTimeParsers.Time:
+                    return new BaseCJKTimeParser(new KoreanTimeParserConfiguration(config));
+                case DateTimeParsers.DatePeriod:
+                    return new BaseCJKDatePeriodParser(new KoreanDatePeriodParserConfiguration(config));
+                case DateTimeParsers.TimePeriod:
+                    return new BaseCJKTimePeriodParser(new KoreanTimePeriodParserConfiguration(config));
+                case DateTimeParsers.DateTime:
+                    return new BaseCJKDateTimeParser(new KoreanDateTimeParserConfiguration(config));
+                case DateTimeParsers.DateTimePeriod:
+                    return new BaseCJKDateTimePeriodParser(new KoreanDateTimePeriodParserConfiguration(config));
+                case DateTimeParsers.Duration:
+                    return new BaseCJKDurationParser(new KoreanDurationParserConfiguration(config));
+                case DateTimeParsers.Holiday:
+                    return new BaseCJKHolidayParser(new KoreanHolidayParserConfiguration(config));
+                case DateTimeParsers.Set:
+                    return new BaseCJKSetParser(new KoreanSetParserConfiguration(config));
+                case DateTimeParsers.Merged:
+                    return new BaseCJKMergedDateTimeParser(new KoreanMergedParserConfiguration(config));
+            }
+
+            throw new Exception($"Parser '{parserName}' for Korean not supported");
         }
     }
 

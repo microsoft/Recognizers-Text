@@ -12,11 +12,9 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
-    public class ChineseHolidayParserConfiguration : IDateTimeParser
+    public class ChineseHolidayParserConfiguration : BaseDateTimeOptionsConfiguration, ICJKHolidayParserConfiguration
     {
-        public static readonly string ParserName = Constants.SYS_DATETIME_DATE; // "Date";
-
-        // Move dictionaries and hardcoded terms to resource file
+        // @TODO Move dictionaries and hardcoded terms to resource file
         public static readonly Dictionary<string, Func<int, DateObject>> FixedHolidaysDict = new Dictionary<string, Func<int, DateObject>>
         {
             { "元旦", NewYear },
@@ -61,114 +59,57 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static readonly Dictionary<string, string> NoFixedTimex = DateTimeDefinitions.HolidayNoFixedTimex;
 
-        private readonly IExtractor integerExtractor;
-
-        private readonly IParser integerParser;
-
-        private readonly IFullDateTimeParserConfiguration config;
-
-        public ChineseHolidayParserConfiguration(IFullDateTimeParserConfiguration configuration)
+        public ChineseHolidayParserConfiguration(ICJKCommonDateTimeParserConfiguration config)
+            : base(config)
         {
-            config = configuration;
+            IntegerExtractor = config.IntegerExtractor;
+            NumberParser = config.NumberParser;
 
-            var numOptions = NumberOptions.None;
-            if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
+            HolidayRegexList = ChineseHolidayExtractorConfiguration.HolidayRegexList;
+            LunarHolidayRegex = ChineseHolidayExtractorConfiguration.LunarHolidayRegex;
+        }
+
+        public IExtractor IntegerExtractor { get; }
+
+        public IParser NumberParser { get; }
+
+        Dictionary<string, Func<int, DateObject>> ICJKHolidayParserConfiguration.FixedHolidaysDict => FixedHolidaysDict;
+
+        Dictionary<string, Func<int, DateObject>> ICJKHolidayParserConfiguration.HolidayFuncDict => HolidayFuncDict;
+
+        Dictionary<string, string> ICJKHolidayParserConfiguration.NoFixedTimex => NoFixedTimex;
+
+        public IEnumerable<Regex> HolidayRegexList { get; }
+
+        public Regex LunarHolidayRegex { get; }
+
+        public int GetSwiftYear(string text)
+        {
+            // @TODO move hardcoded values to resource file
+            var trimmedText = text.Trim();
+            var swift = -10;
+
+            if (text.EndsWith("去年", StringComparison.Ordinal))
             {
-                numOptions = NumberOptions.NoProtoCache;
+                swift = -1;
+            }
+            else if (text.EndsWith("明年", StringComparison.Ordinal))
+            {
+                swift = +1;
             }
 
-            var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
-
-            integerExtractor = new IntegerExtractor(numConfig);
-            integerParser = new BaseCJKNumberParser(new ChineseNumberParserConfiguration(numConfig));
-
+            return swift;
         }
 
-        public ParseResult Parse(ExtractResult extResult)
+        public string SanitizeYearToken(string yearStr)
         {
-            return this.Parse(extResult, DateObject.Now);
-        }
-
-        public DateTimeParseResult Parse(ExtractResult er, DateObject refDate)
-        {
-            var referenceDate = refDate;
-            object value = null;
-
-            if (er.Type.Equals(ParserName, StringComparison.Ordinal))
+            // @TODO move hardcoded values to resource file
+            if (yearStr.EndsWith("年", StringComparison.Ordinal))
             {
-                var innerResult = ParseHolidayRegexMatch(er.Text, referenceDate);
-
-                if (innerResult.Success)
-                {
-                    innerResult.FutureResolution = new Dictionary<string, string>
-                    {
-                        { TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject)innerResult.FutureValue) },
-                    };
-
-                    innerResult.PastResolution = new Dictionary<string, string>
-                    {
-                        { TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject)innerResult.PastValue) },
-                    };
-
-                    innerResult.IsLunar = IsLunarCalendar(er.Text);
-                    value = innerResult;
-                }
+                yearStr = yearStr.Substring(0, yearStr.Length - 1);
             }
 
-            var ret = new DateTimeParseResult
-            {
-                Text = er.Text,
-                Start = er.Start,
-                Length = er.Length,
-                Type = er.Type,
-                Data = er.Data,
-                Value = value,
-                TimexStr = value == null ? string.Empty : ((DateTimeResolutionResult)value).Timex,
-                ResolutionStr = string.Empty,
-            };
-
-            return ret;
-        }
-
-        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
-        {
-            return candidateResults;
-        }
-
-        private static DateObject GetFutureValue(DateObject value, DateObject referenceDate, string holiday)
-        {
-            if (value < referenceDate)
-            {
-                if (FixedHolidaysDict.ContainsKey(holiday))
-                {
-                    return value.AddYears(1);
-                }
-
-                if (HolidayFuncDict.ContainsKey(holiday))
-                {
-                    value = HolidayFuncDict[holiday](referenceDate.Year + 1);
-                }
-            }
-
-            return value;
-        }
-
-        private static DateObject GetPastValue(DateObject value, DateObject referenceDate, string holiday)
-        {
-            if (value >= referenceDate)
-            {
-                if (FixedHolidaysDict.ContainsKey(holiday))
-                {
-                    return value.AddYears(-1);
-                }
-
-                if (HolidayFuncDict.ContainsKey(holiday))
-                {
-                    value = HolidayFuncDict[holiday](referenceDate.Year - 1);
-                }
-            }
-
-            return value;
+            return yearStr;
         }
 
         private static DateObject NewYear(int year) => new DateObject(year, 1, 1);
@@ -278,165 +219,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             return DateObject.MinValue.SafeCreateFromValue(year, 11, (from day in Enumerable.Range(1, 30)
                 where DateObject.MinValue.SafeCreateFromValue(year, 11, day).DayOfWeek == DayOfWeek.Thursday
                 select day).ElementAt(3));
-        }
-
-        private DateTimeResolutionResult ParseHolidayRegexMatch(string text, DateObject referenceDate)
-        {
-            foreach (var regex in ChineseHolidayExtractorConfiguration.HolidayRegexList)
-            {
-                var match = regex.Match(text);
-
-                if (match.Success)
-                {
-                    // Value string will be set in Match2Date method
-                    var ret = Match2Date(match, referenceDate);
-                    return ret;
-                }
-            }
-
-            return new DateTimeResolutionResult();
-        }
-
-        private DateTimeResolutionResult Match2Date(Match match, DateObject referenceDate)
-        {
-            var ret = new DateTimeResolutionResult();
-            var holidayStr = match.Groups["holiday"].Value;
-
-            var year = referenceDate.Year;
-            var hasYear = false;
-            var yearNum = match.Groups["year"].Value;
-            var yearChs = match.Groups["yearchs"].Value;
-            var yearRel = match.Groups["yearrel"].Value;
-
-            // @TODO move hardcoded values to resource file
-            if (!string.IsNullOrEmpty(yearNum))
-            {
-                hasYear = true;
-                if (yearNum.EndsWith("年", StringComparison.Ordinal))
-                {
-                    yearNum = yearNum.Substring(0, yearNum.Length - 1);
-                }
-
-                year = int.Parse(yearNum, CultureInfo.InvariantCulture);
-            }
-            else if (!string.IsNullOrEmpty(yearChs))
-            {
-                hasYear = true;
-                if (yearChs.EndsWith("年", StringComparison.Ordinal))
-                {
-                    yearChs = yearChs.Substring(0, yearChs.Length - 1);
-                }
-
-                year = ConvertChineseToInteger(yearChs);
-            }
-            else if (!string.IsNullOrEmpty(yearRel))
-            {
-                hasYear = true;
-                if (yearRel.EndsWith("去年", StringComparison.Ordinal))
-                {
-                    year--;
-                }
-                else if (yearRel.EndsWith("明年", StringComparison.Ordinal))
-                {
-                    year++;
-                }
-            }
-
-            if (year < 100 && year >= 90)
-            {
-                year += 1900;
-            }
-            else if (year < 20)
-            {
-                year += 2000;
-            }
-
-            if (!string.IsNullOrEmpty(holidayStr))
-            {
-                DateObject value;
-                string timexStr;
-                if (FixedHolidaysDict.ContainsKey(holidayStr))
-                {
-                    value = FixedHolidaysDict[holidayStr](year);
-                    timexStr = $"-{value.Month:D2}-{value.Day:D2}";
-                }
-                else
-                {
-                    if (HolidayFuncDict.ContainsKey(holidayStr))
-                    {
-                        value = HolidayFuncDict[holidayStr](year);
-                        timexStr = NoFixedTimex[holidayStr];
-                    }
-                    else
-                    {
-                        return ret;
-                    }
-                }
-
-                if (hasYear)
-                {
-                    ret.Timex = year.ToString("D4", CultureInfo.InvariantCulture) + timexStr;
-                    ret.FutureValue = ret.PastValue = DateObject.MinValue.SafeCreateFromValue(year, value.Month, value.Day);
-                    ret.Success = true;
-                    return ret;
-                }
-
-                ret.Timex = "XXXX" + timexStr;
-                ret.FutureValue = GetFutureValue(value, referenceDate, holidayStr);
-                ret.PastValue = GetPastValue(value, referenceDate, holidayStr);
-                ret.Success = true;
-                return ret;
-            }
-
-            return ret;
-        }
-
-        private int ConvertChineseToInteger(string yearChsStr)
-        {
-            var year = 0;
-            var num = 0;
-
-            var er = integerExtractor.Extract(yearChsStr);
-            if (er.Count != 0)
-            {
-                if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER, StringComparison.Ordinal))
-                {
-                    num = Convert.ToInt32((double)(integerParser.Parse(er[0]).Value ?? 0));
-                }
-            }
-
-            if (num < 10)
-            {
-                num = 0;
-                foreach (var ch in yearChsStr)
-                {
-                    num *= 10;
-                    er = integerExtractor.Extract(ch.ToString(CultureInfo.InvariantCulture));
-                    if (er.Count != 0)
-                    {
-                        if (er[0].Type.Equals(Number.Constants.SYS_NUM_INTEGER, StringComparison.Ordinal))
-                        {
-                            num += Convert.ToInt32((double)(integerParser.Parse(er[0]).Value ?? 0));
-                        }
-                    }
-                }
-
-                year = num;
-            }
-            else
-            {
-                year = num;
-            }
-
-            return year == 0 ? -1 : year;
-        }
-
-        // parse if lunar contains
-        private bool IsLunarCalendar(string text)
-        {
-            var trimmedText = text.Trim();
-            var match = ChineseHolidayExtractorConfiguration.LunarHolidayRegex.Match(trimmedText);
-            return match.Success;
         }
     }
 }

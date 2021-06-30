@@ -653,8 +653,8 @@ namespace Microsoft.Recognizers.Definitions.Korean
         };
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {
-            { @"五角", @"五角大楼" },
-            { @"普尔", @"标准普尔" }
+            { @"날", @"떠날" },
+            { @"일", @"종일" }
         };
       public static readonly Dictionary<string, string> TemperatureSuffixList = new Dictionary<string, string>
         {
@@ -676,6 +676,6 @@ namespace Microsoft.Recognizers.Definitions.Korean
             @"도",
             @"k"
         };
-      public const string HalfUnitRegex = @"半";
+      public const string HalfUnitRegex = @"반";
     }
 }

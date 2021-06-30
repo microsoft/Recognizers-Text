@@ -337,6 +337,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
                     UnspecificEndOfRangeRegex.IsMatch(trimmedText));
         }
 
+        public bool IsFortnight(string text)
+        {
+            return false;
+        }
+
         public bool IsYearToDate(string text)
         {
             var trimmedText = text.Trim();

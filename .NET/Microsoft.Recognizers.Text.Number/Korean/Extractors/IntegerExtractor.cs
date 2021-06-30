@@ -3,6 +3,7 @@ using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Korean;
+using Microsoft.Recognizers.Text.Number.Config;
 
 namespace Microsoft.Recognizers.Text.Number.Korean
 {
@@ -11,7 +12,7 @@ namespace Microsoft.Recognizers.Text.Number.Korean
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public IntegerExtractor(KoreanNumberExtractorMode mode = KoreanNumberExtractorMode.Default)
+        public IntegerExtractor(BaseNumberOptionsConfiguration config, CJKNumberExtractorMode mode = CJKNumberExtractorMode.Default)
         {
             var regexes = new Dictionary<Regex, TypeTag>
             {
@@ -59,18 +60,21 @@ namespace Microsoft.Recognizers.Text.Number.Korean
 
             switch (mode)
             {
-                case KoreanNumberExtractorMode.Default:
+                case CJKNumberExtractorMode.Default:
                     // 일백오십오
                     regexes.Add(
                         new Regex(NumbersDefinitions.NumbersWithAllowListRegex, RegexFlags),
                         RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.KOREAN));
                     break;
 
-                case KoreanNumberExtractorMode.ExtractAll:
+                case CJKNumberExtractorMode.ExtractAll:
                     // 일백오십오, 사직구장, "사직구장" from "사(it is homonym, seems like four(4) or other chinese character)"
                     // Uses no allow lists and extracts all potential integers (useful in Units, for example).
                     regexes.Add(
                         new Regex(NumbersDefinitions.NumbersAggressiveRegex, RegexFlags),
+                        RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.KOREAN));
+                    regexes.Add(
+                        new Regex(NumbersDefinitions.InexactNumberUnitRegex, RegexFlags),
                         RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.KOREAN));
                     break;
             }

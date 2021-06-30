@@ -6,9 +6,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Arabic
 {
     public class ArabicDurationParserConfiguration : BaseDateTimeOptionsConfiguration, IDurationParserConfiguration
     {
+
+        public static readonly Regex PrefixArticleRegex =
+            new Regex(DateTimeDefinitions.PrefixArticleRegex, RegexFlags);
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         public ArabicDurationParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
         {
+
             CardinalExtractor = config.CardinalExtractor;
             NumberParser = config.NumberParser;
 
@@ -42,6 +49,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Arabic
         public Regex NumberCombinedWithUnit { get; }
 
         public Regex AnUnitRegex { get; }
+
+        Regex IDurationParserConfiguration.PrefixArticleRegex => PrefixArticleRegex;
 
         public Regex DuringRegex { get; }
 

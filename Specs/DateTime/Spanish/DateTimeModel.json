@@ -3550,20 +3550,20 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "Comment": "INWITHIN. Refine support for _in_ vs. _within_ for consistency with English.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "dentro de 5 minutos",
         "Start": 8,
         "End": 26,
-        "TypeName": "datetimeV2.datetime",
+        "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
             {
-              "timex": "2016-11-07T00:05:00",
-              "type": "datetime",
-              "value": "2016-11-07 00:05:00"
+              "timex": "(2016-11-07T00:00:00,2016-11-07T00:05:00,PT5M)",
+              "type": "datetimerange",
+              "start": "2016-11-07 00:00:00",
+              "end": "2016-11-07 00:05:00"
             }
           ]
         }
@@ -3575,8 +3575,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "Comment": "INWITHIN. Refine support for _in_ vs. _within_ for consistency with English.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "en 5 mins",
@@ -4146,8 +4145,7 @@
     "Context": {
       "ReferenceDateTime": "2018-03-23T00:00:00"
     },
-    "Comment": "INWITHIN. Refine support for _in_ vs. _within_ for consistency with English.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "dentro de 9 meses",
@@ -4188,8 +4186,7 @@
     "Context": {
       "ReferenceDateTime": "2018-03-23T00:00:00"
     },
-    "Comment": "INWITHIN. Refine support for _in_ vs. _within_ for consistency with English.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "en 2 semanas",
@@ -4210,13 +4207,14 @@
         "Text": "dentro de dos semanas",
         "Start": 95,
         "End": 115,
-        "TypeName": "datetimeV2.date",
+        "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
             {
-              "timex": "2018-04-06",
-              "type": "date",
-              "value": "2018-04-06"
+              "timex": "(2018-03-23,2018-04-06,P2W)",
+              "type": "daterange",
+              "start": "2018-03-23",
+              "end": "2018-04-06"
             }
           ]
         }
@@ -6728,20 +6726,20 @@
     "Context": {
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
-    "Comment": "INWITHIN. Refine support for _in_ vs. _within_ for consistency with English.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "dentro de dos minutos",
         "Start": 7,
         "End": 27,
-        "TypeName": "datetimeV2.datetime",
+        "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
             {
-              "timex": "2018-06-26T00:02:00",
-              "type": "datetime",
-              "value": "2018-06-26 00:02:00"
+              "timex": "(2018-06-26T00:00:00,2018-06-26T00:02:00,PT2M)",
+              "type": "datetimerange",
+              "start": "2018-06-26 00:00:00",
+              "end": "2018-06-26 00:02:00"
             }
           ]
         }
@@ -6753,8 +6751,7 @@
     "Context": {
       "ReferenceDateTime": "2018-07-05T00:00:00"
     },
-    "Comment": "INWITHIN. Refine support for _in_ vs. _within_ for consistency with English.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "en dos meses",
@@ -6778,8 +6775,7 @@
     "Context": {
       "ReferenceDateTime": "2018-07-05T00:00:00"
     },
-    "Comment": "INWITHIN. Refine support for _in_ vs. _within_ for consistency with English.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "en dos semanas",
@@ -6803,20 +6799,20 @@
     "Context": {
       "ReferenceDateTime": "2018-07-05T00:00:00"
     },
-    "Comment": "INWITHIN. Refine support for _in_ vs. _within_ for consistency with English.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "dentro de dos años",
         "Start": 7,
         "End": 24,
-        "TypeName": "datetimeV2.date",
+        "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
             {
-              "timex": "2020-07-05",
-              "type": "date",
-              "value": "2020-07-05"
+              "timex": "(2018-07-05,2020-07-05,P2Y)",
+              "type": "daterange",
+              "start": "2018-07-05",
+              "end": "2020-07-05"
             }
           ]
         }
@@ -9242,7 +9238,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "(2018-08-01,2018-10-01,P2M)",
+              "timex": "(XXXX-08-01,XXXX-10-01,P2M)",
               "type": "daterange",
               "start": "2018-08-01",
               "end": "2018-10-01"
@@ -9267,7 +9263,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "(2018-05-01,2019-03-01,P10M)",
+              "timex": "(XXXX-05-01,XXXX-03-01,P10M)",
               "type": "daterange",
               "start": "2018-05-01",
               "end": "2019-03-01"
@@ -9323,7 +9319,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "(2018-05-01,2018-09-01,P4M)",
+              "timex": "(XXXX-05-01,XXXX-09-01,P4M)",
               "type": "daterange",
               "start": "2018-05-01",
               "end": "2018-09-01"
@@ -9446,8 +9442,7 @@
     "Context": {
       "ReferenceDateTime": "2018-10-17T12:00:00"
     },
-    "Comment": "INWITHIN. Refine support for _in_ vs. _within_ for consistency with English.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "en dos días",
@@ -12421,8 +12416,7 @@
     "Context": {
       "ReferenceDateTime": "2019-03-10T00:00:00"
     },
-    "Comment": "INWITHIN. Refine support for _in_ vs. _within_ for consistency with English.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "en dos años desde 2011",
@@ -12446,8 +12440,7 @@
     "Context": {
       "ReferenceDateTime": "2019-03-10T00:00:00"
     },
-    "Comment": "INWITHIN. Refine support for _in_ vs. _within_ for consistency with English.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "en dos semanas desde el año 2011",
@@ -20976,6 +20969,944 @@
               "timex": "XXXX-WXX-5T16",
               "type": "datetime",
               "value": "2019-08-23 16:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Mi temperatura era 37.1 por la mañana",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "por la mañana",
+        "Start": 24,
+        "End": 36,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TMO",
+              "type": "timerange",
+              "start": "08:00:00",
+              "end": "12:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Mi próximo",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java",
+    "Results": []
+  },
+  {
+    "Input": "Mi pasado",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java",
+    "Results": []
+  },
+  {
+    "Input": "Este mi ultimo",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java",
+    "Results": []
+  },
+  {
+    "Input": "Mi próximo sueldo será el martes 6",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "martes 6",
+        "Start": 26,
+        "End": 33,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-2",
+              "type": "date",
+              "value": "2016-09-06"
+            },
+            {
+              "timex": "XXXX-WXX-2",
+              "type": "date",
+              "value": "2016-12-06"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Regresaré martes el dia 25",
+    "Context": {
+      "ReferenceDateTime": "2018-09-28T01:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "martes el dia 25",
+        "Start": 10,
+        "End": 25,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-09-25",
+              "type": "date",
+              "value": "2018-09-25"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Regresaré martes el veinticinco",
+    "Context": {
+      "ReferenceDateTime": "2018-09-28T01:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "martes el veinticinco",
+        "Start": 10,
+        "End": 30,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-09-25",
+              "type": "date",
+              "value": "2018-09-25"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Regresaré el martes 25",
+    "Context": {
+      "ReferenceDateTime": "2018-09-28T01:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "martes 25",
+        "Start": 13,
+        "End": 21,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-2",
+              "type": "date",
+              "value": "2018-09-25"
+            },
+            {
+              "timex": "XXXX-WXX-2",
+              "type": "date",
+              "value": "2018-12-25"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Regresaré por la tarde",
+    "Context": {
+      "ReferenceDateTime": "2019-08-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "tarde",
+        "Start": 17,
+        "End": 21,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TEV",
+              "type": "timerange",
+              "start": "16:00:00",
+              "end": "20:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Regresaré por la noche",
+    "Context": {
+      "ReferenceDateTime": "2019-08-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "noche",
+        "Start": 17,
+        "End": 21,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TNI",
+              "type": "timerange",
+              "start": "20:00:00",
+              "end": "23:59:59"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Regresaré al mediodía",
+    "Context": {
+      "ReferenceDateTime": "2019-08-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "mediodía",
+        "Start": 13,
+        "End": 20,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T12",
+              "type": "time",
+              "value": "12:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Recuerdas la noche del 21 de septiembre",
+    "Context": {
+      "ReferenceDateTime": "2019-08-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "noche del 21 de septiembre",
+        "Start": 13,
+        "End": 38,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-09-21TNI",
+              "type": "datetimerange",
+              "start": "2018-09-21 20:00:00",
+              "end": "2018-09-21 23:59:59"
+            },
+            {
+              "timex": "XXXX-09-21TNI",
+              "type": "datetimerange",
+              "start": "2019-09-21 20:00:00",
+              "end": "2019-09-21 23:59:59"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Volveré en 5 minutos",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "en 5 minutos",
+        "Start": 8,
+        "End": 19,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-07T00:05:00",
+              "type": "datetime",
+              "value": "2016-11-07 00:05:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tom y yo tendremos una reunión en 2 semanas, así que por favor ayúdame a programar una reunión en dos semanas.",
+    "Context": {
+      "ReferenceDateTime": "2018-03-23T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "en 2 semanas",
+        "Start": 31,
+        "End": 42,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-04-06",
+              "type": "date",
+              "value": "2018-04-06"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "en dos semanas",
+        "Start": 95,
+        "End": 108,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-04-06",
+              "type": "date",
+              "value": "2018-04-06"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Me iré en dos minutos",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "en dos minutos",
+        "Start": 7,
+        "End": 20,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-06-26T00:02:00",
+              "type": "datetime",
+              "value": "2018-06-26 00:02:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Me iré en dos años",
+    "Context": {
+      "ReferenceDateTime": "2018-07-05T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "en dos años",
+        "Start": 7,
+        "End": 17,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-07-05",
+              "type": "date",
+              "value": "2020-07-05"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Estare afuera en 3 años",
+    "Context": {
+      "ReferenceDateTime": "2018-07-05T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "en 3 años",
+        "Start": 14,
+        "End": 22,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-07-05",
+              "type": "date",
+              "value": "2021-07-05"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ya no estaré en dos semanas",
+    "Context": {
+      "ReferenceDateTime": "2018-07-05T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "en dos semanas",
+        "Start": 13,
+        "End": 26,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-07-19",
+              "type": "date",
+              "value": "2018-07-19"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ocurrirá en 4 semanas",
+    "Context": {
+      "ReferenceDateTime": "2018-07-05T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "en 4 semanas",
+        "Start": 9,
+        "End": 20,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-08-02",
+              "type": "date",
+              "value": "2018-08-02"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver en 3 horas",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "en 3 horas",
+        "Start": 13,
+        "End": 22,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-07T03:00:00",
+              "type": "datetime",
+              "value": "2016-11-07 03:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver en 5 h",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "en 5 h",
+        "Start": 13,
+        "End": 18,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-07T05:00:00",
+              "type": "datetime",
+              "value": "2016-11-07 05:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Terminamos nuestra clase hace 30 minutos.",
+    "Context": {
+      "ReferenceDateTime": "2021-05-20T15:30:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "hace 30 minutos",
+        "Start": 25,
+        "End": 39,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-05-20T15:00:00",
+              "type": "datetime",
+              "value": "2021-05-20 15:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ocurrirá 2 días a partir de ahora",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2 días a partir de ahora",
+        "Start": 9,
+        "End": 32,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-09",
+              "type": "date",
+              "value": "2016-11-09"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver en 3 minutos",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "en 3 minutos",
+        "Start": 13,
+        "End": 24,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-07T00:03:00",
+              "type": "datetime",
+              "value": "2016-11-07 00:03:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver 3 minutos a partir de ahora",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 minutos a partir de ahora",
+        "Start": 13,
+        "End": 39,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-07T00:03:00",
+              "type": "datetime",
+              "value": "2016-11-07 00:03:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver dentro de 3 minutos",
+    "Context": {
+      "ReferenceDateTime": "2019-07-30T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "dentro de 3 minutos",
+        "Start": 13,
+        "End": 31,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-07-30T00:00:00,2019-07-30T00:03:00,PT3M)",
+              "type": "datetimerange",
+              "start": "2019-07-30 00:00:00",
+              "end": "2019-07-30 00:03:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver desde ahora hasta 3 min después",
+    "Context": {
+      "ReferenceDateTime": "2019-07-30T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "desde ahora hasta 3 min después",
+        "Start": 13,
+        "End": 43,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(PRESENT_REF,2019-07-30T00:03:00,PT3M)",
+              "type": "datetimerange",
+              "start": "2019-07-30 00:00:00",
+              "end": "2019-07-30 00:03:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Solo seremos 3 la próxima semana.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "la próxima semana",
+        "Start": 15,
+        "End": 31,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-W46",
+              "type": "daterange",
+              "start": "2016-11-14",
+              "end": "2016-11-21"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Conté 13 en el último minuto.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T12:30:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "último minuto",
+        "Start": 15,
+        "End": 27,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-11-07T12:29:00,2016-11-07T12:30:00,PT1M)",
+              "type": "datetimerange",
+              "start": "2016-11-07 12:29:00",
+              "end": "2016-11-07 12:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Estaremos fuera solo por las 3 próximas semanas.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 próximas semanas",
+        "Start": 29,
+        "End": 46,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-11-08,2016-11-29,P3W)",
+              "type": "daterange",
+              "start": "2016-11-08",
+              "end": "2016-11-29"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Conté 3 en los 13 últimos minutos.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T12:30:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "13 últimos minutos",
+        "Start": 15,
+        "End": 32,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-11-07T12:17:00,2016-11-07T12:30:00,PT13M)",
+              "type": "datetimerange",
+              "start": "2016-11-07 12:17:00",
+              "end": "2016-11-07 12:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "El proyecto se presentó el pasado mes y 3 semanas después fue aprobado.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "el pasado mes",
+        "Start": 24,
+        "End": 36,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-10",
+              "type": "daterange",
+              "start": "2016-10-01",
+              "end": "2016-11-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "3 semanas después",
+        "Start": 40,
+        "End": 56,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-28",
+              "type": "date",
+              "value": "2016-11-28"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Trabajaron en el problema durante los últimos 3 meses y 2 días antes de hoy encontraron una solución.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "últimos 3 meses",
+        "Start": 38,
+        "End": 52,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-08-07,2016-11-07,P3M)",
+              "type": "daterange",
+              "start": "2016-08-07",
+              "end": "2016-11-07"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2 días antes de hoy",
+        "Start": 56,
+        "End": 74,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-05",
+              "type": "date",
+              "value": "2016-11-05"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Trabajaron en el problema durante los últimos 3 meses y 2 semanas y 2 días antes de hoy encontraron una solución.",
+    "Comment": "The middle entity '2 semanas' is not merged due to ambiguity",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "últimos 3 meses",
+        "Start": 38,
+        "End": 52,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-08-07,2016-11-07,P3M)",
+              "type": "daterange",
+              "start": "2016-08-07",
+              "end": "2016-11-07"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2 semanas",
+        "Start": 56,
+        "End": 64,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P2W",
+              "type": "duration",
+              "value": "1209600"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2 días antes de hoy",
+        "Start": 68,
+        "End": 86,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-05",
+              "type": "date",
+              "value": "2016-11-05"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Durante los últimos 3 meses, trabajaron en el problema y 2 semanas y 2 días antes de hoy encontraron una solución.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "últimos 3 meses",
+        "Start": 12,
+        "End": 26,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-08-07,2016-11-07,P3M)",
+              "type": "daterange",
+              "start": "2016-08-07",
+              "end": "2016-11-07"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2 semanas y 2 días antes de hoy",
+        "Start": 57,
+        "End": 87,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-10-22",
+              "type": "date",
+              "value": "2016-10-22"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Trabajaron en el problema durante los últimos 3 meses y 2 semanas y 2 días.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "últimos 3 meses y 2 semanas y 2 días",
+        "Start": 38,
+        "End": 73,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-07-22,2016-11-07,P3M2W2D)",
+              "type": "daterange",
+              "start": "2016-07-22",
+              "end": "2016-11-07"
             }
           ]
         }

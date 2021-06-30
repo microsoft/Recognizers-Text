@@ -330,6 +330,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
                    (weekTermsPadded.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText) && !weekendTermsPadded.Any(o => trimmedText.Contains(o)));
         }
 
+        public bool IsFortnight(string text)
+        {
+            return false;
+        }
+
         public bool IsYearOnly(string text)
         {
             var trimmedText = text.Trim();

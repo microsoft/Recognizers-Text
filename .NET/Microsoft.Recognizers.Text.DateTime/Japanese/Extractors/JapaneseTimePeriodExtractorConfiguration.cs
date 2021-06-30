@@ -6,12 +6,33 @@ using Microsoft.Recognizers.Definitions.Japanese;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
-    public class JapaneseTimePeriodExtractorConfiguration : JapaneseBaseDateTimeExtractorConfiguration<PeriodType>
+    public class JapaneseTimePeriodExtractorConfiguration : BaseDateTimeOptionsConfiguration, ICJKTimePeriodExtractorConfiguration
     {
+        public const string TimePeriodConnectWords = DateTimeDefinitions.TimePeriodTimePeriodConnectWords;
+
+        // 五点十分四十八秒
+        public static readonly string CJKTimeRegex = JapaneseTimeExtractorConfiguration.CJKTimeRegex;
+
+        // 6時から9時| 6時から9時
+        public static readonly string LeftCJKTimeRegex = DateTimeDefinitions.TimePeriodLeftCJKTimeRegex;
+
+        public static readonly string RightCJKTimeRegex = DateTimeDefinitions.TimePeriodRightCJKTimeRegex;
+
+        // 2:45
+        public static readonly string DigitTimeRegex = JapaneseTimeExtractorConfiguration.DigitTimeRegex;
+
+        public static readonly string LeftDigitTimeRegex = DateTimeDefinitions.TimePeriodLeftDigitTimeRegex;
+
+        public static readonly string RightDigitTimeRegex = DateTimeDefinitions.TimePeriodRightDigitTimeRegex;
+
+        public static readonly string ShortLeftCJKTimeRegex = DateTimeDefinitions.TimePeriodShortLeftCJKTimeRegex;
+
+        public static readonly string ShortLeftDigitTimeRegex = DateTimeDefinitions.TimePeriodShortLeftDigitTimeRegex;
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public JapaneseTimePeriodExtractorConfiguration()
+        public JapaneseTimePeriodExtractorConfiguration(IDateTimeOptionsConfiguration config)
+            : base(config)
         {
             var regexes = new Dictionary<Regex, PeriodType>
             {
@@ -32,8 +53,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             Regexes = regexes.ToImmutableDictionary();
         }
 
-        internal sealed override ImmutableDictionary<Regex, PeriodType> Regexes { get; }
-
-        protected sealed override string ExtractType { get; } = Constants.SYS_DATETIME_TIMEPERIOD;
+        public ImmutableDictionary<Regex, PeriodType> Regexes { get; }
     }
 }

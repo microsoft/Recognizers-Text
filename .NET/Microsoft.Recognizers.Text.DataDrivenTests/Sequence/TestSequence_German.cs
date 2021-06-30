@@ -12,5 +12,12 @@ namespace Microsoft.Recognizers.Text.Sequence.Tests
         {
             TestPhoneNumber(testSpec);
         }
+
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void QuotedTextModel(TestModel testSpec)
+        {
+            TestQuotedText(testSpec);
+        }
     }
 }

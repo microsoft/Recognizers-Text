@@ -27,6 +27,13 @@ public class TimexUtility {
             put(DatePeriodTimexType.ByYear, Constants.TimexYear);
         }
     };
+    
+    public enum UnspecificDateTimeTerms {
+        None,
+        NonspecificYear,
+        NonspecificMonth,
+        NonspecificDay,
+    }
 
     public static String generateCompoundDurationTimex(Map<String, String> unitToTimexComponents, ImmutableMap<String, Long> unitValueMap) {
         List<String> unitList = new ArrayList<>(unitToTimexComponents.keySet());
@@ -59,6 +66,31 @@ public class TimexUtility {
         }
 
         return unitCount;
+    }
+    
+    public static String generateDatePeriodTimex(LocalDateTime begin, LocalDateTime end, DatePeriodTimexType timexType, UnspecificDateTimeTerms terms) {
+        int beginYear = begin.getYear();
+        int endYear = end.getYear();
+        int beginMonth = begin.getMonthValue();
+        int endMonth = end.getMonthValue();
+        int beginDay = begin.getDayOfMonth();
+        int endDay = end.getDayOfMonth();
+        
+        if (terms == UnspecificDateTimeTerms.NonspecificYear) {
+            beginYear = endYear = -1;
+        }
+
+        if (terms == UnspecificDateTimeTerms.NonspecificMonth) {
+            beginMonth = endMonth = -1;
+        }
+
+        if (terms == UnspecificDateTimeTerms.NonspecificDay) {
+            beginDay = endDay = -1;
+        }
+
+        String unitCount = getDatePeriodTimexUnitCount(begin, end, timexType, true);
+        String datePeriodTimex = "P" + unitCount + DatePeriodTimexTypeToTimexSuffix.get(timexType);
+        return "(" + DateTimeFormatUtil.luisDate(beginYear, beginMonth, beginDay) + "," + DateTimeFormatUtil.luisDate(endYear, endMonth, endDay) + "," + datePeriodTimex + ")";
     }
 
     public static String generateDatePeriodTimex(LocalDateTime begin, LocalDateTime end, DatePeriodTimexType timexType) {

@@ -1796,5 +1796,484 @@
         }
       }
     ]
+  },
+  {
+    "Input": "estarei de volta no dia 20 de junho",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "20 de junho",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-06-20",
+              "type": "date",
+              "value": "2016-06-20"
+            },
+            {
+              "timex": "XXXX-06-20",
+              "type": "date",
+              "value": "2017-06-20"
+            }
+          ]
+        },
+        "Start": 24,
+        "End": 34
+      }
+    ]
+  },
+  {
+    "Input": "meu próximo salário será terça-feira dia 25",
+    "Context": {
+      "ReferenceDateTime": "2018-09-28T01:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "terça-feira dia 25",
+        "Start": 25,
+        "End": 42,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-09-25",
+              "type": "date",
+              "value": "2018-09-25"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "meu próximo salário será terça-feira dia vinte e cinco",
+    "Context": {
+      "ReferenceDateTime": "2018-09-28T01:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "terça-feira dia vinte e cinco",
+        "Start": 25,
+        "End": 53,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-09-25",
+              "type": "date",
+              "value": "2018-09-25"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "meu próximo salário será terça-feira 25",
+    "Context": {
+      "ReferenceDateTime": "2018-09-28T01:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "terça-feira 25",
+        "Start": 25,
+        "End": 38,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-2",
+              "type": "date",
+              "value": "2018-09-25"
+            },
+            {
+              "timex": "XXXX-WXX-2",
+              "type": "date",
+              "value": "2018-12-25"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Desfrute do nosso chá da tarde",
+    "Context": {
+      "ReferenceDateTime": "2019-08-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "tarde",
+        "Start": 25,
+        "End": 29,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TEV",
+              "type": "timerange",
+              "start": "16:00:00",
+              "end": "20:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "São ativos de tarde",
+    "Context": {
+      "ReferenceDateTime": "2019-08-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "tarde",
+        "Start": 14,
+        "End": 18,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TEV",
+              "type": "timerange",
+              "start": "16:00:00",
+              "end": "20:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Por isso passei a tarde polindo prata.",
+    "Context": {
+      "ReferenceDateTime": "2019-08-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "tarde",
+        "Start": 18,
+        "End": 22,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TEV",
+              "type": "timerange",
+              "start": "16:00:00",
+              "end": "20:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Por último, na tarde lhe daremos tempo livre",
+    "Context": {
+      "ReferenceDateTime": "2019-08-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "tarde",
+        "Start": 15,
+        "End": 19,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TEV",
+              "type": "timerange",
+              "start": "16:00:00",
+              "end": "20:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Entramos no apartamento apenas à noite.",
+    "Context": {
+      "ReferenceDateTime": "2019-08-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "noite",
+        "Start": 33,
+        "End": 37,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TNI",
+              "type": "timerange",
+              "start": "20:00:00",
+              "end": "23:59:59"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "As pessoas estavam assistindo na noite do assassinato.",
+    "Context": {
+      "ReferenceDateTime": "2019-08-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "noite",
+        "Start": 33,
+        "End": 37,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TNI",
+              "type": "timerange",
+              "start": "20:00:00",
+              "end": "23:59:59"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Era de noite quando todos dormiam.",
+    "Context": {
+      "ReferenceDateTime": "2019-08-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "noite",
+        "Start": 7,
+        "End": 11,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TNI",
+              "type": "timerange",
+              "start": "20:00:00",
+              "end": "23:59:59"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Eu voltarei ao meio dia",
+    "Context": {
+      "ReferenceDateTime": "2019-08-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "meio dia",
+        "Start": 15,
+        "End": 22,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T12",
+              "type": "time",
+              "value": "12:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Veja tudo que rolou na madrugada",
+    "Context": {
+      "ReferenceDateTime": "2019-07-17T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "madrugada",
+        "Start": 23,
+        "End": 31,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TDA",
+              "type": "timerange",
+              "start": "04:00:00",
+              "end": "08:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Eu voltarei em 2 semanas",
+    "Context": {
+      "ReferenceDateTime": "2018-09-03T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "em 2 semanas",
+        "Start": 12,
+        "End": 23,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-09-17",
+              "type": "date",
+              "value": "2018-09-17"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Eu voltarei dentro de 2 semanas",
+    "Context": {
+      "ReferenceDateTime": "2018-09-03T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "dentro de 2 semanas",
+        "Start": 12,
+        "End": 30,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2018-09-03,2018-09-17,P2W)",
+              "type": "daterange",
+              "start": "2018-09-03",
+              "end": "2018-09-17"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Seremos apenas 3 na próxima semana.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "próxima semana",
+        "Start": 20,
+        "End": 33,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-W46",
+              "type": "daterange",
+              "start": "2016-11-14",
+              "end": "2016-11-21"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Contei 13 no último minuto.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T12:30:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "último minuto",
+        "Start": 13,
+        "End": 25,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-11-07T12:29:00,2016-11-07T12:30:00,PT1M)",
+              "type": "datetimerange",
+              "start": "2016-11-07 12:29:00",
+              "end": "2016-11-07 12:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Nós será ido apenas para 3 próximas semanas.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 próximas semanas",
+        "Start": 25,
+        "End": 42,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-11-08,2016-11-29,P3W)",
+              "type": "daterange",
+              "start": "2016-11-08",
+              "end": "2016-11-29"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Contei 3 nos 13 últimos minutos.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T12:30:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "13 últimos minutos",
+        "Start": 13,
+        "End": 30,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-11-07T12:17:00,2016-11-07T12:30:00,PT13M)",
+              "type": "datetimerange",
+              "start": "2016-11-07 12:17:00",
+              "end": "2016-11-07 12:30:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

@@ -8,6 +8,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
     public class DutchDurationParserConfiguration : BaseDateTimeOptionsConfiguration, IDurationParserConfiguration
     {
+
+        public static readonly Regex PrefixArticleRegex =
+            new Regex(DateTimeDefinitions.PrefixArticleRegex, RegexFlags);
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         public DutchDurationParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
         {
@@ -50,6 +56,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public Regex NumberCombinedWithUnit { get; }
 
         public Regex AnUnitRegex { get; }
+
+        Regex IDurationParserConfiguration.PrefixArticleRegex => PrefixArticleRegex;
 
         public Regex DuringRegex { get; }
 

@@ -137,6 +137,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         bool IsWeekOnly(string text);
 
+        bool IsFortnight(string text);
+
         bool IsWeekend(string text);
 
         bool IsMonthOnly(string text);

@@ -25,6 +25,7 @@ export interface IDateExtractorConfiguration {
     numberParser: BaseNumberParser,
     durationExtractor: IDateTimeExtractor,
     utilityConfiguration: IDateTimeUtilityConfiguration,
+    rangeConnectorSymbolRegex: RegExp,
 }
 
 export class BaseDateExtractor implements IDateTimeExtractor {
@@ -55,19 +56,95 @@ export class BaseDateExtractor implements IDateTimeExtractor {
         this.config.dateRegexList.forEach(regexp => {
             let matches = RegExpUtility.getMatches(regexp, source);
             matches.forEach(match => {
-                // @TODO Implement validateMatch as in .NET
-                let preText = source.substring(0, match.index);
-                let relativeRegex = RegExpUtility.getMatchEnd(this.config.strictRelativeRegex, preText, true);
-                if (relativeRegex.success) {
-                    ret.push(new Token(relativeRegex.match.index, match.index + match.length));
+                if (this.ValidateMatch(match, source)) {
+                    let preText = source.substring(0, match.index);
+                    let relativeRegex = RegExpUtility.getMatchEnd(this.config.strictRelativeRegex, preText, true);
+                    if (relativeRegex.success) {
+                        ret.push(new Token(relativeRegex.match.index, match.index + match.length));
+                    }
+                    else {
+                        ret.push(new Token(match.index, match.index + match.length));
+                    }
                 }
-                else {
-                    ret.push(new Token(match.index, match.index + match.length));
-                }
-
             });
         });
         return ret;
+    }
+
+    // this method is to validate whether the match is part of date range and is a correct split
+    // For example: in case "10-1 - 11-7", "10-1 - 11" can be matched by some of the Regexes, but the full text is a date range, so "10-1 - 11" is not a correct split
+    protected ValidateMatch(match: Match, text: string): boolean {
+        // If the match doesn't contains "year" part, it will not be ambiguous and it's a valid match
+        let isValidMatch = match.groups('year') === undefined;
+
+        if (!isValidMatch) {
+            let yearGroup = match.groups("year");
+
+            // If the "year" part is not at the end of the match, it's a valid match
+            if (yearGroup.index + yearGroup.length != match.index + match.length) {
+                isValidMatch = true;
+            }
+            else {
+                let subText = text.substring(yearGroup.index);
+
+                // If the following text (include the "year" part) doesn't start with a Date entity, it's a valid match
+                if (!this.StartsWithBasicDate(subText)) {
+                    isValidMatch = true;
+                }
+                else {
+                    // If the following text (include the "year" part) starts with a Date entity, but the following text (doesn't include the "year" part) also starts with a valid Date entity, the current match is still valid
+                    // For example, "10-1-2018-10-2-2018". Match "10-1-2018" is valid because though "2018-10-2" a valid match (indicates the first year "2018" might belongs to the second Date entity), but "10-2-2018" is also a valid match.
+                    subText = text.substring(yearGroup.index + yearGroup.length).trim();
+                    subText = this.TrimStartRangeConnectorSymbols(subText);
+                    isValidMatch = this.StartsWithBasicDate(subText);
+                }
+            }
+
+            // Expressions with mixed separators are not considered valid dates e.g. "30/4.85" (unless one is a comma "30/4, 2016")
+            if (match.groups("day") !== undefined && match.groups("month") !== undefined) {
+                let noDateText = match.value.replace(match.groups("year").value, "")
+                    .replace(match.groups("month").value, "")
+                    .replace(match.groups("day").value, "");
+                let separators = [ '/', '\\', '-', '.' ];
+                if (separators.filter(separator => noDateText.indexOf(separator) >= 0).length > 1) {
+                    isValidMatch = false;
+                }
+            }
+        }
+
+        return isValidMatch;
+    }
+
+    // TODO: Simplify this method to improve its performance
+    protected TrimStartRangeConnectorSymbols(text: string): string {
+        let rangeConnectorSymbolMatches = RegExpUtility.getMatches(this.config.rangeConnectorSymbolRegex, text);
+
+        rangeConnectorSymbolMatches.forEach( symbolMatch => {
+            let startSymbolLength = -1;
+
+            if (symbolMatch && symbolMatch.index === 0 && symbolMatch.length > startSymbolLength) {
+                startSymbolLength = symbolMatch.length;
+            }
+
+            if (startSymbolLength > 0) {
+                text = text.substring(startSymbolLength);
+            }
+        });
+
+        return text.trim();
+    }
+
+    // TODO: Simplify this method to improve its performance
+    protected StartsWithBasicDate(text: string): boolean {
+        this.config.dateRegexList.forEach(regex => {
+            let match = RegExpUtility.getMatches(regex, text.trim()).pop();
+
+            if (match && match.index === 0) {
+                return true;
+            }
+        });
+
+        return false;
     }
 
     protected implicitDate(source: string): Token[] {

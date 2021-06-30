@@ -1263,5 +1263,1350 @@
         "Length": 18
       }
     ]
+  },
+  {
+    "Input": "Je vais rentrer maintenant",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "maintenant",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "PRESENT_REF",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 00:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 00:00:00"
+          }
+        },
+        "Start": 16,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer dès que possible",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dès que possible",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "FUTURE_REF",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 00:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 00:00:00"
+          }
+        },
+        "Start": 16,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer le quinze à 8 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "quinze à 8 heures",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-XX-15T08:00",
+          "FutureResolution": {
+            "dateTime": "2016-11-15 08:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-10-15 08:00:00"
+          }
+        },
+        "Start": 19,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer le 15 à 8 heures et 20 secondes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "15 à 8 heures et 20 secondes",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-XX-15T08:00:20",
+          "FutureResolution": {
+            "dateTime": "2016-11-15 08:00:20"
+          },
+          "PastResolution": {
+            "dateTime": "2016-10-15 08:00:20"
+          }
+        },
+        "Start": 19,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer le 15, à 20 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "15, à 20 heures",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-XX-15T20",
+          "FutureResolution": {
+            "dateTime": "2016-11-15 20:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-10-15 20:00:00"
+          }
+        },
+        "Start": 19,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer le 5 à 4h du matin",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "5 à 4h du matin",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-XX-05T04",
+          "FutureResolution": {
+            "dateTime": "2016-12-05 04:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-05 04:00:00"
+          }
+        },
+        "Start": 19,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer le 21/04/2016, à 20 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "21/04/2016, à 20 heures",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-04-21T20:00",
+          "FutureResolution": {
+            "dateTime": "2016-04-21 20:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-04-21 20:00:00"
+          }
+        },
+        "Start": 19,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer le 21 avril 2016, à 20 heures et 20 secondes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "21 avril 2016, à 20 heures et 20 secondes",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-04-21T20:00:20",
+          "FutureResolution": {
+            "dateTime": "2016-04-21 20:00:20"
+          },
+          "PastResolution": {
+            "dateTime": "2016-04-21 20:00:20"
+          }
+        },
+        "Start": 19,
+        "Length": 41
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer le 23 octobre à 7 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "23 octobre à 7 heures",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-10-23T07",
+          "FutureResolution": {
+            "dateTime": "2017-10-23 07:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-10-23 07:00:00"
+          }
+        },
+        "Start": 19,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer le 14-octobre à 8 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "14-octobre à 8 heures",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-10-14T08:00",
+          "FutureResolution": {
+            "dateTime": "2017-10-14 08:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-10-14 08:00:00"
+          }
+        },
+        "Start": 19,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer le 14 octobre à 8 heures et 31 secondes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "14 octobre à 8 heures et 31 secondes",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-10-14T08:00:31",
+          "FutureResolution": {
+            "dateTime": "2017-10-14 08:00:31"
+          },
+          "PastResolution": {
+            "dateTime": "2016-10-14 08:00:31"
+          }
+        },
+        "Start": 19,
+        "Length": 36
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer le 14/10 environ 8 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "14/10 environ 8 heures",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-10-14T08:00",
+          "FutureResolution": {
+            "dateTime": "2017-10-14 08:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-10-14 08:00:00"
+          }
+        },
+        "Start": 19,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer le 10.14 à 8 heures et 31 secondes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "10.14 à 8 heures et 31 secondes",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-10-14T08:00:31",
+          "FutureResolution": {
+            "dateTime": "2017-10-14 08:00:31"
+          },
+          "PastResolution": {
+            "dateTime": "2016-10-14 08:00:31"
+          }
+        },
+        "Start": 19,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer le 10-14, à 8 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "10-14, à 8 heures",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-10-14T08:00",
+          "FutureResolution": {
+            "dateTime": "2017-10-14 08:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-10-14 08:00:00"
+          }
+        },
+        "Start": 19,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer le 14 octobre, à 8 heures et 25 secondes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "14 octobre, à 8 heures et 25 secondes",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-10-14T08:00:25",
+          "FutureResolution": {
+            "dateTime": "2017-10-14 08:00:25"
+          },
+          "PastResolution": {
+            "dateTime": "2016-10-14 08:00:25"
+          }
+        },
+        "Start": 19,
+        "Length": 37
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer le 5 mai 2016, à 20h20",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "5 mai 2016, à 20h20",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-05-05T20:20",
+          "FutureResolution": {
+            "dateTime": "2016-05-05 20:20:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-05-05 20:20:00"
+          }
+        },
+        "Start": 19,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer le 15 à 20 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "15 à 20 heures",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-XX-15T20",
+          "FutureResolution": {
+            "dateTime": "2016-11-15 20:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-10-15 20:00:00"
+          }
+        },
+        "Start": 19,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer le quinze à 20 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "quinze à 20 heures",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-XX-15T20",
+          "FutureResolution": {
+            "dateTime": "2016-11-15 20:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-10-15 20:00:00"
+          }
+        },
+        "Start": 19,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer le 15 à 7 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "15 à 7 heures",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-XX-15T07",
+          "FutureResolution": {
+            "dateTime": "2016-11-15 07:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-10-15 07:00:00"
+          }
+        },
+        "Start": 19,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer à 20 heures aujourd’hui",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "20 heures aujourd’hui",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-07T20",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 20:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 20:00:00"
+          }
+        },
+        "Start": 18,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer à 6h45 demain",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "6h45 demain",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-08T06:45",
+          "FutureResolution": {
+            "dateTime": "2016-11-08 06:45:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-08 06:45:00"
+          }
+        },
+        "Start": 18,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer à 19 heures, le 22/12/2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "9 heures, le 22/12/2016",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-12-22T19:00",
+          "FutureResolution": {
+            "dateTime": "2016-12-22 19:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-12-22 19:00:00"
+          }
+        },
+        "Start": 19,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer demain à 8 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "demain à 8 heures",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-08T08:00",
+          "FutureResolution": {
+            "dateTime": "2016-11-08 08:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-08 08:00:00"
+          }
+        },
+        "Start": 16,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer demain matin à 7 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "demain matin à 7 heures",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-08T07",
+          "FutureResolution": {
+            "dateTime": "2016-11-08 07:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-08 07:00:00"
+          }
+        },
+        "Start": 16,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer vers 19 heures de ce soir",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "vers 19 heures de ce soir",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-07T19",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 19:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 19:00:00"
+          }
+        },
+        "Start": 16,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer à 19 heures du dimanche prochain",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "19 heures du dimanche prochain",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-20T19:00",
+          "FutureResolution": {
+            "dateTime": "2016-11-20 19:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-20 19:00:00"
+          }
+        },
+        "Start": 18,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer à 5h20 demain matin",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "5h20 demain matin",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-08T05:20",
+          "FutureResolution": {
+            "dateTime": "2016-11-08 05:20:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-08 05:20:00"
+          }
+        },
+        "Start": 18,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer à 7 heures, ce matin",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "7 heures, ce matin",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-07T07",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 07:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 07:00:00"
+          }
+        },
+        "Start": 18,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer à 10 heures, ce soir",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "10 heures, ce soir",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-07T22",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 22:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 22:00:00"
+          }
+        },
+        "Start": 18,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer à 20 heures du dimanche soir",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "20 heures du dimanche soir",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-WXX-7T20",
+          "FutureResolution": {
+            "dateTime": "2016-11-13 20:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-06 20:00:00"
+          }
+        },
+        "Start": 18,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer à 20 heures, le 1er janvier",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "20 heures, le 1er janvier",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-01-01T20",
+          "FutureResolution": {
+            "dateTime": "2017-01-01 20:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-01-01 20:00:00"
+          }
+        },
+        "Start": 18,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer à 20 heures, le 01/01",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "20 heures, le 01/01",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-01-01T20",
+          "FutureResolution": {
+            "dateTime": "2017-01-01 20:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-01-01 20:00:00"
+          }
+        },
+        "Start": 18,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer à 22 heures ce soir",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "22 heures ce soir",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-07T22",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 22:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 22:00:00"
+          }
+        },
+        "Start": 18,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer à 8 heures ce matin",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "8 heures ce matin",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-07T08",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 08:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 08:00:00"
+          }
+        },
+        "Start": 18,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer à 20 heures ce soir",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "20 heures ce soir",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-07T20",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 20:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 20:00:00"
+          }
+        },
+        "Start": 18,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer à la fin de la journée",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "la fin de la journée",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-07T23:59:59",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 23:59:59"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 23:59:59"
+          }
+        },
+        "Start": 18,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer à la fin de demain",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "fin de demain",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-08T23:59:59",
+          "FutureResolution": {
+            "dateTime": "2016-11-08 23:59:59"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-08 23:59:59"
+          }
+        },
+        "Start": 21,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer à la fin de ce dimanche",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "fin de ce dimanche",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-WXX-7T23:59:59",
+          "FutureResolution": {
+            "dateTime": "2016-11-13 23:59:59"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-06 23:59:59"
+          }
+        },
+        "Start": 21,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer dans 5 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans 5 heures",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-07T05:00:00",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 05:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 05:00:00"
+          }
+        },
+        "Start": 16,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer le 15 à 8 heures et 24 secondes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "15 à 8 heures et 24 secondes",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-XX-15T08:00:24",
+          "FutureResolution": {
+            "dateTime": "2016-11-15 08:00:24"
+          },
+          "PastResolution": {
+            "dateTime": "2016-10-15 08:00:24"
+          }
+        },
+        "Start": 19,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer le 21/04/2016, à 20 heures et 24 secondes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "21/04/2016, à 20 heures et 24 secondes",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-04-21T20:00:24",
+          "FutureResolution": {
+            "dateTime": "2016-04-21 20:00:24"
+          },
+          "PastResolution": {
+            "dateTime": "2016-04-21 20:00:24"
+          }
+        },
+        "Start": 19,
+        "Length": 38
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer le 14 octobre à 8 heures et 13 secondes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "14 octobre à 8 heures et 13 secondes",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-10-14T08:00:13",
+          "FutureResolution": {
+            "dateTime": "2017-10-14 08:00:13"
+          },
+          "PastResolution": {
+            "dateTime": "2016-10-14 08:00:13"
+          }
+        },
+        "Start": 19,
+        "Length": 36
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer ce matin à 7 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "ce matin à 7 heures",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-07T07",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 07:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 07:00:00"
+          }
+        },
+        "Start": 16,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer à 7 heures ce matin",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "7 heures ce matin",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-07T07",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 07:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 07:00:00"
+          }
+        },
+        "Start": 18,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer ce matin à sept heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "ce matin à sept heures",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-07T07",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 07:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 07:00:00"
+          }
+        },
+        "Start": 16,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer ce matin à 7h",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "ce matin à 7h",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-07T07:00",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 07:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 07:00:00"
+          }
+        },
+        "Start": 16,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer ce soir à 19 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "ce soir à 19 heures",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-07T19",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 19:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 19:00:00"
+          }
+        },
+        "Start": 16,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer à 19 heures ce soir ",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "19 heures ce soir ",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-07T19",
+          "FutureResolution": {
+            "dateTime": "2016-11-07 19:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-07 19:00:00"
+          }
+        },
+        "Start": 18,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer le 16/12/2016 T à 12h23min59s ",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "16/12/2016 T à 12h23min59s",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-12-16T12:23:59",
+          "FutureResolution": {
+            "dateTime": "2016-12-16 12:23:59"
+          },
+          "PastResolution": {
+            "dateTime": "2016-12-16 12:23:59"
+          }
+        },
+        "Start": 19,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer le 6 janvier 2017 à 6h37",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "6 janvier 2017 à 6h37",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2017-01-06T06:37",
+          "FutureResolution": {
+            "dateTime": "2017-01-06 06:37:00"
+          },
+          "PastResolution": {
+            "dateTime": "2017-01-06 06:37:00"
+          }
+        },
+        "Start": 19,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "16/11/2016 à 10h38  ",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "16/11/2016 à 10h38 ",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-11-16T10:38",
+          "FutureResolution": {
+            "dateTime": "2016-11-16 10:38:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-11-16 10:38:00"
+          }
+        },
+        "Start": 0,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai 1 jour et 2 heures plus tard",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1 jour et 2 heures plus tard",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2017-11-24T21:00:00",
+          "FutureResolution": {
+            "dateTime": "2017-11-24 21:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2017-11-24 21:00:00"
+          }
+        },
+        "Start": 12,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "On s’est rencontrés il y a 1 mois, 2 jours, 2 heures et 30 minutes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "il y a 1 mois, 2 jours, 2 heures et 30 minutes",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2017-10-21T16:45:00",
+          "FutureResolution": {
+            "dateTime": "2017-10-21 16:45:00"
+          },
+          "PastResolution": {
+            "dateTime": "2017-10-21 16:45:00"
+          }
+        },
+        "Start": 20,
+        "Length": 46
+      }
+    ]
+  },
+  {
+    "Input": "Je serai occupé dans une heure, alors appelle-moi plus tard",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans une heure",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2017-11-23T01:00:00",
+          "FutureResolution": {
+            "dateTime": "2017-11-23 01:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2017-11-23 01:00:00"
+          }
+        },
+        "Start": 16,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je serai libre dans moins d’une heure, alors appelle-moi plus tard",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans moins d’une heure",
+        "Type": "datetime",
+        "Value": {
+          "Mod": "less",
+          "Timex": "2017-11-23T01:00:00",
+          "FutureResolution": {
+            "dateTime": "2017-11-23 01:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2017-11-23 01:00:00"
+          }
+        },
+        "Start": 15,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Vous ne devriez pas toujours se mettre au lit à la fin de cette journée car cela nuira à votre santé.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "fin de cette journée",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2018-11-21T23:59:59",
+          "FutureResolution": {
+            "dateTime": "2018-11-21 23:59:59"
+          },
+          "PastResolution": {
+            "dateTime": "2018-11-21 23:59:59"
+          }
+        },
+        "Start": 51,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Vous ne devriez pas toujours aller se coucher en fin de journée car cela nuira à votre santé.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "fin de journée",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2018-11-21T23:59:59",
+          "FutureResolution": {
+            "dateTime": "2018-11-21 23:59:59"
+          },
+          "PastResolution": {
+            "dateTime": "2018-11-21 23:59:59"
+          }
+        },
+        "Start": 49,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Bob et Alice échangent habituellement leurs messages cryptés à la fin de la journée.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "la fin de la journée",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2018-11-21T23:59:59",
+          "FutureResolution": {
+            "dateTime": "2018-11-21 23:59:59"
+          },
+          "PastResolution": {
+            "dateTime": "2018-11-21 23:59:59"
+          }
+        },
+        "Start": 63,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer mercredi le 26 octobre 2016 à 15h50min6s.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mercredi le 26 octobre 2016 à 15h50min6s",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-10-26T15:50:06",
+          "FutureResolution": {
+            "dateTime": "2016-10-26 15:50:06"
+          },
+          "PastResolution": {
+            "dateTime": "2016-10-26 15:50:06"
+          }
+        },
+        "Start": 16,
+        "Length": 40
+      }
+    ]
+  },
+  {
+    "Input": "Mercredi le 26/10/2016 à 15h50min6s n’est pas un jour en 2019.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "Mercredi le 26/10/2016 à 15h50min6s",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-10-26T15:50:06",
+          "FutureResolution": {
+            "dateTime": "2016-10-26 15:50:06"
+          },
+          "PastResolution": {
+            "dateTime": "2016-10-26 15:50:06"
+          }
+        },
+        "Start": 0,
+        "Length": 35
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer à 20h30 aujourd’hui",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "à 20h30 aujourd’hui",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2018-12-26T20:30",
+          "FutureResolution": {
+            "dateTime": "2018-12-26 20:30:00"
+          },
+          "PastResolution": {
+            "dateTime": "2018-12-26 20:30:00"
+          }
+        },
+        "Start": 16,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer aujourd’hui à 20h30",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "aujourd’hui à 20h30",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2018-12-26T20:30",
+          "FutureResolution": {
+            "dateTime": "2018-12-26 20:30:00"
+          },
+          "PastResolution": {
+            "dateTime": "2018-12-26 20:30:00"
+          }
+        },
+        "Start": 16,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer à 20h30 ce jour",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "20h30 ce jour",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2018-12-26T20:30",
+          "FutureResolution": {
+            "dateTime": "2018-12-26 20:30:00"
+          },
+          "PastResolution": {
+            "dateTime": "2018-12-26 20:30:00"
+          }
+        },
+        "Start": 18,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer à 8h30 du soir aujourd’hui",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "8h30 du soir aujourd’hui",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2018-12-26T20:30",
+          "FutureResolution": {
+            "dateTime": "2018-12-26 20:30:00"
+          },
+          "PastResolution": {
+            "dateTime": "2018-12-26 20:30:00"
+          }
+        },
+        "Start": 18,
+        "Length": 24
+      }
+    ]
   }
 ]

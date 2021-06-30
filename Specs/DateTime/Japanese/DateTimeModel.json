@@ -15386,5 +15386,434 @@
         }
       }
     ]
+  },
+  {
+    "Input": "次の十二日",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+	"NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "次の十二日",
+        "Start": 0,
+        "End": 4,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-11-08,2016-11-20,P12D)",
+              "type": "daterange",
+              "start": "2016-11-08",
+              "end": "2016-11-20"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "平成13年",
+    "Context": {
+      "ReferenceDateTime": "2018-06-28T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "平成13年",
+        "Start": 0,
+        "End": 4,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2001",
+              "type": "daterange",
+              "start": "2001-01-01",
+              "end": "2002-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "平成二年",
+    "Context": {
+      "ReferenceDateTime": "2018-06-28T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "平成二年",
+        "Start": 0,
+        "End": 3,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1990",
+              "type": "daterange",
+              "start": "1990-01-01",
+              "end": "1991-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "平成元年",
+    "Context": {
+      "ReferenceDateTime": "2018-06-28T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "平成元年",
+        "Start": 0,
+        "End": 3,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1989",
+              "type": "daterange",
+              "start": "1989-01-01",
+              "end": "1990-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "昭和13年",
+    "Context": {
+      "ReferenceDateTime": "2018-06-28T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "昭和13年",
+        "Start": 0,
+        "End": 4,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1938",
+              "type": "daterange",
+              "start": "1938-01-01",
+              "end": "1939-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "昭和二年",
+    "Context": {
+      "ReferenceDateTime": "2018-06-28T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "昭和二年",
+        "Start": 0,
+        "End": 3,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1927",
+              "type": "daterange",
+              "start": "1927-01-01",
+              "end": "1928-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "昭和元年",
+    "Context": {
+      "ReferenceDateTime": "2018-06-28T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "昭和元年",
+        "Start": 0,
+        "End": 3,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1926",
+              "type": "daterange",
+              "start": "1926-01-01",
+              "end": "1927-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "大正13年",
+    "Context": {
+      "ReferenceDateTime": "2018-06-28T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "大正13年",
+        "Start": 0,
+        "End": 4,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1924",
+              "type": "daterange",
+              "start": "1924-01-01",
+              "end": "1925-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "大正二年",
+    "Context": {
+      "ReferenceDateTime": "2018-06-28T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "大正二年",
+        "Start": 0,
+        "End": 3,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1913",
+              "type": "daterange",
+              "start": "1913-01-01",
+              "end": "1914-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "大正元年",
+    "Context": {
+      "ReferenceDateTime": "2018-06-28T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "大正元年",
+        "Start": 0,
+        "End": 3,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1912",
+              "type": "daterange",
+              "start": "1912-01-01",
+              "end": "1913-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "明治13年",
+    "Context": {
+      "ReferenceDateTime": "2018-06-28T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "明治13年",
+        "Start": 18,
+        "End": 26,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1880",
+              "type": "daterange",
+              "start": "1880-01-01",
+              "end": "1881-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "明治二年",
+    "Context": {
+      "ReferenceDateTime": "2018-06-28T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "明治二年",
+        "Start": 18,
+        "End": 26,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1869",
+              "type": "daterange",
+              "start": "1869-01-01",
+              "end": "1870-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "明治元年",
+    "Context": {
+      "ReferenceDateTime": "2018-06-28T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "明治元年",
+        "Start": 18,
+        "End": 26,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1868",
+              "type": "daterange",
+              "start": "1868-01-01",
+              "end": "1869-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "すみません、６月１５日の朝出発の航空便を予約しました。",
+    "Context": {
+      "ReferenceDateTime": "2019-09-03T08:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "６月１５日の朝",
+        "Start": 6,
+        "End": 12,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-06-15TMO",
+              "type": "datetimerange",
+              "start": "2019-06-15 08:00:00",
+              "end": "2019-06-15 12:00:00"
+            },
+            {
+              "timex": "XXXX-06-15TMO",
+              "type": "datetimerange",
+              "start": "2020-06-15 08:00:00",
+              "end": "2020-06-15 12:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "旧暦の２０１５年お正月の１日は春節です。",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "旧暦の２０１５年お正月の１日",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-01-01",
+              "type": "date",
+              "value": "2015-01-01"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "元旦に帰省します。",
+    "Context": {
+      "ReferenceDateTime": "2019-07-12T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "元旦",
+        "Start": 0,
+        "End": 1,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-01-01",
+              "type": "date",
+              "value": "2020-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "大晦日",
+    "Context": {
+      "ReferenceDateTime": "2019-07-12T00:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "大晦日",
+        "Start": 0,
+        "End": 2,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-12-31",
+              "type": "date",
+              "value": "2019-12-31"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

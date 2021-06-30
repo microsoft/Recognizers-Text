@@ -8,7 +8,7 @@ using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
-    public class ChineseDateTimeExtractorConfiguration : IDateTimeExtractor
+    public class ChineseDateTimeExtractorConfiguration : BaseDateTimeOptionsConfiguration, ICJKDateTimeExtractorConfiguration
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_DATETIME; // "DateTime";
 
@@ -28,166 +28,31 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        private static readonly ChineseDateExtractorConfiguration DatePointExtractor = new ChineseDateExtractorConfiguration();
-
-        private static readonly ChineseTimeExtractorConfiguration TimePointExtractor = new ChineseTimeExtractorConfiguration();
-
-        private static readonly ChineseDurationExtractorConfiguration DurationExtractor = new ChineseDurationExtractorConfiguration();
-
-        // Match now
-        public static List<Token> BasicRegexMatch(string text)
+        public ChineseDateTimeExtractorConfiguration(IDateTimeOptionsConfiguration config)
+            : base(config)
         {
-            var ret = new List<Token>();
-            text = text.Trim();
 
-            // handle "now"
-            var matches = NowRegex.Matches(text);
-            foreach (Match match in matches)
-            {
-                ret.Add(new Token(match.Index, match.Index + match.Length));
-            }
-
-            return ret;
+            DatePointExtractor = new BaseCJKDateExtractor(new ChineseDateExtractorConfiguration(this));
+            TimePointExtractor = new BaseCJKTimeExtractor(new ChineseTimeExtractorConfiguration(this));
+            DurationExtractor = new BaseCJKDurationExtractor(new ChineseDurationExtractorConfiguration(this));
         }
 
-        // Merge a Date entity and a Time entity, like "明天早上七点"
-        public static List<Token> MergeDateAndTime(string text, DateObject referenceTime)
-        {
-            var ret = new List<Token>();
-            var ers = DatePointExtractor.Extract(text, referenceTime);
-            if (ers.Count == 0)
-            {
-                return ret;
-            }
+        public IDateTimeExtractor DatePointExtractor { get; }
 
-            ers.AddRange(TimePointExtractor.Extract(text, referenceTime));
-            if (ers.Count < 2)
-            {
-                return ret;
-            }
+        public IDateTimeExtractor TimePointExtractor { get; }
 
-            ers = ers.OrderBy(o => o.Start).ToList();
+        public IDateTimeExtractor DurationExtractor { get; }
 
-            var i = 0;
-            while (i < ers.Count - 1)
-            {
-                var j = i + 1;
-                while (j < ers.Count && ers[i].IsOverlap(ers[j]))
-                {
-                    j++;
-                }
+        Regex ICJKDateTimeExtractorConfiguration.NowRegex => NowRegex;
 
-                if (j >= ers.Count)
-                {
-                    break;
-                }
+        Regex ICJKDateTimeExtractorConfiguration.PrepositionRegex => PrepositionRegex;
 
-                if (ers[i].Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.Ordinal) &&
-                    ers[j].Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.Ordinal))
-                {
-                    var middleBegin = ers[i].Start + ers[i].Length ?? 0;
-                    var middleEnd = ers[j].Start ?? 0;
-                    if (middleBegin > middleEnd)
-                    {
-                        break;
-                    }
+        Regex ICJKDateTimeExtractorConfiguration.NightRegex => NightRegex;
 
-                    var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim();
-                    if (string.IsNullOrEmpty(middleStr) || middleStr.Equals(",", StringComparison.Ordinal) || PrepositionRegex.IsMatch(middleStr))
-                    {
-                        var begin = ers[i].Start ?? 0;
-                        var end = (ers[j].Start ?? 0) + (ers[j].Length ?? 0);
-                        ret.Add(new Token(begin, end));
-                    }
+        Regex ICJKDateTimeExtractorConfiguration.TimeOfTodayRegex => TimeOfTodayRegex;
 
-                    i = j + 1;
-                    continue;
-                }
+        Regex ICJKDateTimeExtractorConfiguration.BeforeRegex => BeforeRegex;
 
-                i = j;
-            }
-
-            return ret;
-        }
-
-        // Parse a specific time of today, tonight, this afternoon, "今天下午七点"
-        public static List<Token> TimeOfToday(string text, DateObject referenceTime)
-        {
-            var ret = new List<Token>();
-            var ers = TimePointExtractor.Extract(text, referenceTime);
-            foreach (var er in ers)
-            {
-                var beforeStr = text.Substring(0, er.Start ?? 0);
-
-                // handle "今晚7点"
-                var innerMatch = NightRegex.MatchBegin(er.Text, trim: true);
-
-                if (innerMatch.Success)
-                {
-                    beforeStr = text.Substring(0, (er.Start ?? 0) + innerMatch.Length);
-                }
-
-                if (string.IsNullOrEmpty(beforeStr))
-                {
-                    continue;
-                }
-
-                var match = TimeOfTodayRegex.MatchEnd(beforeStr, trim: true);
-
-                if (match.Success)
-                {
-                    var begin = match.Index;
-                    var end = er.Start + er.Length ?? 0;
-                    ret.Add(new Token(begin, end));
-                }
-            }
-
-            return ret;
-        }
-
-        public List<ExtractResult> Extract(string text)
-        {
-            return Extract(text, DateObject.Now);
-        }
-
-        public List<ExtractResult> Extract(string text, DateObject referenceTime)
-        {
-            var tokens = new List<Token>();
-            tokens.AddRange(MergeDateAndTime(text, referenceTime));
-            tokens.AddRange(BasicRegexMatch(text));
-            tokens.AddRange(TimeOfToday(text, referenceTime));
-            tokens.AddRange(DurationWithAgoAndLater(text, referenceTime));
-
-            return Token.MergeAllTokens(tokens, text, ExtractorName);
-        }
-
-        // Process case like "5分钟前" "二小时后"
-        private List<Token> DurationWithAgoAndLater(string text, DateObject referenceTime)
-        {
-            var ret = new List<Token>();
-
-            var durationEr = DurationExtractor.Extract(text, referenceTime);
-
-            foreach (var er in durationEr)
-            {
-                var pos = (int)er.Start + (int)er.Length;
-
-                if (pos < text.Length)
-                {
-                    var suffix = text.Substring(pos);
-                    var beforeMatch = BeforeRegex.Match(suffix);
-                    var afterMatch = AfterRegex.Match(suffix);
-
-                    if ((beforeMatch.Success && suffix.StartsWith(beforeMatch.Value, StringComparison.Ordinal)) ||
-                        (afterMatch.Success && suffix.StartsWith(afterMatch.Value, StringComparison.Ordinal)))
-                    {
-                        var metadata = new Metadata() { IsDurationWithAgoAndLater = true };
-                        ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + 1, metadata));
-                    }
-                }
-            }
-
-            return ret;
-        }
+        Regex ICJKDateTimeExtractorConfiguration.AfterRegex => AfterRegex;
     }
 }

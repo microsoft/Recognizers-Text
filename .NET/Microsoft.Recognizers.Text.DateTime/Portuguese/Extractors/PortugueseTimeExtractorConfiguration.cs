@@ -95,8 +95,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             // once (y)? veinticinco
             new Regex(DateTimeDefinitions.TimeRegex9, RegexFlags),
 
-            new Regex(DateTimeDefinitions.TimeRegex10, RegexFlags),
-
             // (tres menos veinte) (pm)?
             new Regex(DateTimeDefinitions.TimeRegex11, RegexFlags),
 

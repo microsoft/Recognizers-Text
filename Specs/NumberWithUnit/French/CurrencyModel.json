@@ -1369,16 +1369,6 @@
     "NotSupported": "java, javascript, python",
     "Results": [
       {
-        "Text": "livre",
-        "TypeName": "currency",
-        "Resolution": {
-          "value": null,
-          "unit": "Livre"
-        },
-        "Start": 58,
-        "End": 62
-      },
-      {
         "Text": "3 millions $",
         "TypeName": "currency",
         "Resolution": {

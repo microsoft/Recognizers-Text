@@ -32,7 +32,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Korean
 
             var numConfig = new BaseNumberOptionsConfiguration(ci.Name, NumberOptions.None);
 
-            this.UnitNumExtractor = new NumberExtractor(KoreanNumberExtractorMode.ExtractAll);
+            this.UnitNumExtractor = new NumberExtractor(numConfig, CJKNumberExtractorMode.ExtractAll);
 
             this.BuildPrefix = NumbersWithUnitDefinitions.BuildPrefix;
             this.BuildSuffix = NumbersWithUnitDefinitions.BuildSuffix;
@@ -94,7 +94,10 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Korean
                         var match_suffix = new List<ExtractResult>();
                         foreach (var mr in match)
                         {
-                            if (mr.Start == (start + length))
+                            // Take into account possible whitespaces between result and half unit.
+                            var subLength = (int)mr.Start - (start + length) >= 0 ? (int)mr.Start - (start + length) : 0;
+                            var midStr = source.Substring(start + length, subLength);
+                            if (string.IsNullOrWhiteSpace(midStr) && (int)mr.Start - (start + length) >= 0)
                             {
                                 match_suffix.Add(mr);
                             }
@@ -103,8 +106,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Korean
                         if (match_suffix.Count == 1)
                         {
                             var mr = match_suffix[0];
-                            er.Length += mr.Length;
-                            er.Text += mr.Text;
+                            var suffixLength = (int)(mr.Start + mr.Length) - (start + length);
+                            er.Length += suffixLength;
+                            er.Text += source.Substring(start + length, suffixLength);
                             var tmp = new List<ExtractResult>();
                             tmp.Add((ExtractResult)er.Data);
                             tmp.Add(mr);

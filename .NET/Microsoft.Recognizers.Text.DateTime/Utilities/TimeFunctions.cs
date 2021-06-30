@@ -76,7 +76,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
                 noDesc = false;
             }
 
-            int hour = timeResult.Hour > 0 ? timeResult.Hour : 0,
+            int hour = timeResult.Hour > 0 ? timeResult.Hour % Constants.DayHourCount : 0,
                 min = timeResult.Minute > 0 ? timeResult.Minute : 0,
                 second = timeResult.Second > 0 ? timeResult.Second : 0,
                 day = referenceTime.Day,
@@ -88,30 +88,31 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
             var build = new StringBuilder("T");
             if (timeResult.Hour >= 0)
             {
-                build.Append(timeResult.Hour.ToString("D2", CultureInfo.InvariantCulture));
+                build.Append(hour.ToString("D2", CultureInfo.InvariantCulture));
             }
 
             if (timeResult.Minute >= 0)
             {
-                build.Append(":" + timeResult.Minute.ToString("D2", CultureInfo.InvariantCulture));
+                build.Append(":" + min.ToString("D2", CultureInfo.InvariantCulture));
             }
 
             if (timeResult.Second >= 0)
             {
-                build.Append(":" + timeResult.Second.ToString("D2", CultureInfo.InvariantCulture));
+                if (timeResult.Minute < 0)
+                {
+                    build.Append(":" + min.ToString("D2", CultureInfo.InvariantCulture));
+                }
+
+                build.Append(":" + second.ToString("D2", CultureInfo.InvariantCulture));
             }
 
-            if (noDesc)
+            if (noDesc && hour <= Constants.HalfDayHourCount)
             {
                 // build.Append("ampm");
                 dateTimeResult.Comment = Constants.Comment_AmPm;
             }
 
             dateTimeResult.Timex = build.ToString();
-            if (hour == 24)
-            {
-                hour = 0;
-            }
 
             dateTimeResult.FutureValue = dateTimeResult.PastValue =
                 DateObject.MinValue.SafeCreateFromValue(year, month, day, hour, min, second);
@@ -158,6 +159,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
             return tempValue;
         }
 
+        // Handle am/pm modifiers (e.g. "1 in the afternoon") and time of day (e.g. "mid-morning")
         public void AddDesc(TimeResult result, string dayDesc)
         {
             if (string.IsNullOrEmpty(dayDesc))
@@ -167,10 +169,18 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
 
             dayDesc = NormalizeDayDesc(dayDesc);
 
-            if (LowBoundDesc.ContainsKey(dayDesc) && result.Hour < LowBoundDesc[dayDesc])
+            if (result.Hour >= 0 && LowBoundDesc.ContainsKey(dayDesc) && (result.Hour < LowBoundDesc[dayDesc] ||
+                (result.Hour == Constants.HalfDayHourCount && LowBoundDesc[dayDesc] == Constants.DayHourStart)))
             {
+                // cases like "1 in the afternoon", "12 midnight"
                 result.Hour += Constants.HalfDayHourCount;
                 result.LowBound = LowBoundDesc[dayDesc];
+            }
+            else if (result.Hour < 0 && LowBoundDesc.ContainsKey(dayDesc))
+            {
+                // cases like "mid-morning", "mid-afternoon"
+                result.LowBound = LowBoundDesc[dayDesc];
+                result.Hour = result.LowBound;
             }
             else
             {

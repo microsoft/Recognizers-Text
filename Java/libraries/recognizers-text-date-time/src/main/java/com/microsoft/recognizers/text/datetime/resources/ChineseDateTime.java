@@ -27,10 +27,10 @@ public class ChineseDateTime {
 
     public static final String OneToNineIntegerRegex = "[一二三四五六七八九壹贰叁肆伍陆柒捌玖]";
 
-    public static final String DateDayRegexInChinese = "(?<day>(([12][0-9]|3[01]|[1-9]|[三叁][十拾][一壹]?|[二贰貳]?[十拾]({OneToNineIntegerRegex})?|{OneToNineIntegerRegex})[日号]|初一|三十))"
+    public static final String DateDayRegexInCJK = "(?<day>(([12][0-9]|3[01]|[1-9]|[三叁][十拾][一壹]?|[二贰貳]?[十拾]({OneToNineIntegerRegex})?|{OneToNineIntegerRegex})[日号]|初一|三十))"
             .replace("{OneToNineIntegerRegex}", OneToNineIntegerRegex);
 
-    public static final String DayRegexNumInChinese = "(?<day>[12][0-9]|3[01]|[1-9]|[三叁][十拾][一壹]?|[二贰貳]?[十拾]({OneToNineIntegerRegex})?|{OneToNineIntegerRegex}|廿|卅)"
+    public static final String DayRegexNumInCJK = "(?<day>[12][0-9]|3[01]|[1-9]|[三叁][十拾][一壹]?|[二贰貳]?[十拾]({OneToNineIntegerRegex})?|{OneToNineIntegerRegex}|廿|卅)"
             .replace("{OneToNineIntegerRegex}", OneToNineIntegerRegex);
 
     public static final String MonthNumRegex = "(?<month>01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)";
@@ -41,19 +41,19 @@ public class ChineseDateTime {
 
     public static final String SimpleYearRegex = "(?<year>(\\d{2,4}))";
 
-    public static final String ZeroToNineIntegerRegexChs = "[一二三四五六七八九零壹贰叁肆伍陆柒捌玖〇两千俩倆仨]";
+    public static final String ZeroToNineIntegerRegexCJK = "[一二三四五六七八九零壹贰叁肆伍陆柒捌玖〇两千俩倆仨]";
 
     public static final String DynastyStartYear = "元";
 
     public static final String RegionTitleRegex = "(贞观|开元|神龙|洪武|建文|永乐|景泰|天顺|成化|嘉靖|万历|崇祯|顺治|康熙|雍正|乾隆|嘉庆|道光|咸丰|同治|光绪|宣统|民国)";
 
-    public static final String DynastyYearRegex = "(?<dynasty>{RegionTitleRegex})(?<biasYear>({DynastyStartYear}|\\d{1,3}|[十拾]?({ZeroToNineIntegerRegexChs}[十百拾佰]?){0,3}))"
+    public static final String DynastyYearRegex = "(?<dynasty>{RegionTitleRegex})(?<biasYear>({DynastyStartYear}|\\d{1,3}|[十拾]?({ZeroToNineIntegerRegexCJK}[十百拾佰]?){0,3}))"
             .replace("{RegionTitleRegex}", RegionTitleRegex)
             .replace("{DynastyStartYear}", DynastyStartYear)
-            .replace("{ZeroToNineIntegerRegexChs}", ZeroToNineIntegerRegexChs);
+            .replace("{ZeroToNineIntegerRegexCJK}", ZeroToNineIntegerRegexCJK);
 
-    public static final String DateYearInChineseRegex = "(?<yearchs>({ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}{ZeroToNineIntegerRegexChs}|{DynastyYearRegex}))"
-            .replace("{ZeroToNineIntegerRegexChs}", ZeroToNineIntegerRegexChs)
+    public static final String DateYearInCJKRegex = "(?<yearCJK>({ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}|{ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}|{ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}|{DynastyYearRegex}))"
+            .replace("{ZeroToNineIntegerRegexCJK}", ZeroToNineIntegerRegexCJK)
             .replace("{DynastyYearRegex}", DynastyYearRegex);
 
     public static final String WeekDayRegex = "(?<weekday>周日|周天|周一|周二|周三|周四|周五|周六|星期一|星期二|星期三|星期四|星期五|星期六|星期日|星期天|礼拜一|礼拜二|礼拜三|礼拜四|礼拜五|礼拜六|礼拜日|礼拜天|禮拜一|禮拜二|禮拜三|禮拜四|禮拜五|禮拜六|禮拜日|禮拜天|週日|週天|週一|週二|週三|週四|週五|週六)";
@@ -68,6 +68,10 @@ public class ChineseDateTime {
 
     public static final String DateNextRegex = "(下一个|下个|下一|下)(的)?{WeekDayRegex}"
             .replace("{WeekDayRegex}", WeekDayRegex);
+
+    public static final String SpecialMonthRegex = "^[.]";
+
+    public static final String SpecialYearRegex = "^[.]";
 
     public static final String SpecialDayRegex = "(最近|前天|后天|昨天|明天|今天|今日|明日|昨日|大后天|大前天|後天|大後天)";
 
@@ -89,11 +93,11 @@ public class ChineseDateTime {
             .replace("{LastPrefixRegex}", LastPrefixRegex)
             .replace("{NextPrefixRegex}", NextPrefixRegex);
 
-    public static final String SpecialDate = "(?<thisyear>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex})年)?(?<thismonth>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex})月)?{DateDayRegexInChinese}"
+    public static final String SpecialDate = "(?<thisyear>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex})年)?(?<thismonth>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex})月)?{DateDayRegexInCJK}"
             .replace("{ThisPrefixRegex}", ThisPrefixRegex)
             .replace("{LastPrefixRegex}", LastPrefixRegex)
             .replace("{NextPrefixRegex}", NextPrefixRegex)
-            .replace("{DateDayRegexInChinese}", DateDayRegexInChinese);
+            .replace("{DateDayRegexInCJK}", DateDayRegexInCJK);
 
     public static final String DateUnitRegex = "(?<unit>年|个月|周|日|天)";
 
@@ -101,29 +105,29 @@ public class ChineseDateTime {
 
     public static final String AfterRegex = "以后|以後|之后|之後|后|後";
 
-    public static final String DateRegexList1 = "({LunarRegex}(\\s*))?((({SimpleYearRegex}|{DateYearInChineseRegex})年)(\\s*))?{MonthRegex}(\\s*){DateDayRegexInChinese}((\\s*|,|，){WeekDayRegex})?"
+    public static final String DateRegexList1 = "({LunarRegex}(\\s*))?((({SimpleYearRegex}|{DateYearInCJKRegex})年)(\\s*))?{MonthRegex}(\\s*){DateDayRegexInCJK}((\\s*|,|，){WeekDayRegex})?"
             .replace("{LunarRegex}", LunarRegex)
             .replace("{SimpleYearRegex}", SimpleYearRegex)
-            .replace("{DateYearInChineseRegex}", DateYearInChineseRegex)
+            .replace("{DateYearInCJKRegex}", DateYearInCJKRegex)
             .replace("{MonthRegex}", MonthRegex)
-            .replace("{DateDayRegexInChinese}", DateDayRegexInChinese)
+            .replace("{DateDayRegexInCJK}", DateDayRegexInCJK)
             .replace("{WeekDayRegex}", WeekDayRegex);
 
-    public static final String DateRegexList2 = "((({SimpleYearRegex}|{DateYearInChineseRegex})年)(\\s*))?({LunarRegex}(\\s*))?{MonthRegex}(\\s*){DateDayRegexInChinese}((\\s*|,|，){WeekDayRegex})?"
+    public static final String DateRegexList2 = "((({SimpleYearRegex}|{DateYearInCJKRegex})年)(\\s*))?({LunarRegex}(\\s*))?{MonthRegex}(\\s*){DateDayRegexInCJK}((\\s*|,|，){WeekDayRegex})?"
             .replace("{MonthRegex}", MonthRegex)
-            .replace("{DateDayRegexInChinese}", DateDayRegexInChinese)
+            .replace("{DateDayRegexInCJK}", DateDayRegexInCJK)
             .replace("{SimpleYearRegex}", SimpleYearRegex)
             .replace("{LunarRegex}", LunarRegex)
             .replace("{WeekDayRegex}", WeekDayRegex)
-            .replace("{DateYearInChineseRegex}", DateYearInChineseRegex);
+            .replace("{DateYearInCJKRegex}", DateYearInCJKRegex);
 
-    public static final String DateRegexList3 = "((({SimpleYearRegex}|{DateYearInChineseRegex})年)(\\s*))?({LunarRegex}(\\s*))?{MonthRegex}(\\s*)({DayRegexNumInChinese}|{DayRegex})((\\s*|,|，){WeekDayRegex})?"
+    public static final String DateRegexList3 = "((({SimpleYearRegex}|{DateYearInCJKRegex})年)(\\s*))?({LunarRegex}(\\s*))?{MonthRegex}(\\s*)({DayRegexNumInCJK}|{DayRegex})((\\s*|,|，){WeekDayRegex})?"
             .replace("{MonthRegex}", MonthRegex)
-            .replace("{DayRegexNumInChinese}", DayRegexNumInChinese)
+            .replace("{DayRegexNumInCJK}", DayRegexNumInCJK)
             .replace("{SimpleYearRegex}", SimpleYearRegex)
             .replace("{LunarRegex}", LunarRegex)
             .replace("{WeekDayRegex}", WeekDayRegex)
-            .replace("{DateYearInChineseRegex}", DateYearInChineseRegex)
+            .replace("{DateYearInCJKRegex}", DateYearInCJKRegex)
             .replace("{DayRegex}", DayRegex);
 
     public static final String DateRegexList4 = "{MonthNumRegex}\\s*/\\s*{DayRegex}"
@@ -153,7 +157,7 @@ public class ChineseDateTime {
 
     public static final String DatePeriodTillSuffixRequiredRegex = "(?<till>与|和)";
 
-    public static final String DatePeriodDayRegexInChinese = "(?<day>初一|三十|一日|十一日|二十一日|三十一日|二日|三日|四日|五日|六日|七日|八日|九日|十二日|十三日|十四日|十五日|十六日|十七日|十八日|十九日|二十二日|二十三日|二十四日|二十五日|二十六日|二十七日|二十八日|二十九日|一日|十一日|十日|二十一日|二十日|三十一日|三十日|二日|三日|四日|五日|六日|七日|八日|九日|十二日|十三日|十四日|十五日|十六日|十七日|十八日|十九日|二十二日|二十三日|二十四日|二十五日|二十六日|二十七日|二十八日|二十九日|十日|二十日|三十日|10日|11日|12日|13日|14日|15日|16日|17日|18日|19日|1日|20日|21日|22日|23日|24日|25日|26日|27日|28日|29日|2日|30日|31日|3日|4日|5日|6日|7日|8日|9日|一号|十一号|二十一号|三十一号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|一号|十一号|十号|二十一号|二十号|三十一号|三十号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|十号|二十号|三十号|10号|11号|12号|13号|14号|15号|16号|17号|18号|19号|1号|20号|21号|22号|23号|24号|25号|26号|27号|28号|29号|2号|30号|31号|3号|4号|5号|6号|7号|8号|9号|一|十一|二十一|三十一|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|一|十一|十|二十一|二十|三十一|三十|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|十|二十|三十|廿|卅)";
+    public static final String DatePeriodDayRegexInCJK = "(?<day>初一|三十|一日|十一日|二十一日|三十一日|二日|三日|四日|五日|六日|七日|八日|九日|十二日|十三日|十四日|十五日|十六日|十七日|十八日|十九日|二十二日|二十三日|二十四日|二十五日|二十六日|二十七日|二十八日|二十九日|一日|十一日|十日|二十一日|二十日|三十一日|三十日|二日|三日|四日|五日|六日|七日|八日|九日|十二日|十三日|十四日|十五日|十六日|十七日|十八日|十九日|二十二日|二十三日|二十四日|二十五日|二十六日|二十七日|二十八日|二十九日|十日|二十日|三十日|10日|11日|12日|13日|14日|15日|16日|17日|18日|19日|1日|20日|21日|22日|23日|24日|25日|26日|27日|28日|29日|2日|30日|31日|3日|4日|5日|6日|7日|8日|9日|一号|十一号|二十一号|三十一号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|一号|十一号|十号|二十一号|二十号|三十一号|三十号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|十号|二十号|三十号|10号|11号|12号|13号|14号|15号|16号|17号|18号|19号|1号|20号|21号|22号|23号|24号|25号|26号|27号|28号|29号|2号|30号|31号|3号|4号|5号|6号|7号|8号|9号|一|十一|二十一|三十一|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|一|十一|十|二十一|二十|三十一|三十|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|十|二十|三十|廿|卅)";
 
     public static final String DatePeriodThisRegex = "这个|这一个|这|这一|本";
 
@@ -178,26 +182,30 @@ public class ChineseDateTime {
 
     public static final String YearRegexInNumber = "(?<year>(\\d{4}))";
 
-    public static final String DatePeriodYearInChineseRegex = "{DateYearInChineseRegex}年{HalfYearRegex}?"
-            .replace("{DateYearInChineseRegex}", DateYearInChineseRegex)
+    public static final String DatePeriodYearInCJKRegex = "{DateYearInCJKRegex}年{HalfYearRegex}?"
+            .replace("{DateYearInCJKRegex}", DateYearInCJKRegex)
             .replace("{HalfYearRegex}", HalfYearRegex);
 
     public static final String MonthSuffixRegex = "(?<msuf>({RelativeMonthRegex}|{MonthRegex}))"
             .replace("{RelativeMonthRegex}", RelativeMonthRegex)
             .replace("{MonthRegex}", MonthRegex);
 
-    public static final String SimpleCasesRegex = "((从)\\s*)?(({YearRegex}|{DatePeriodYearInChineseRegex})\\s*)?{MonthSuffixRegex}({DatePeriodDayRegexInChinese}|{DayRegex})\\s*{DatePeriodTillRegex}\\s*({DatePeriodDayRegexInChinese}|{DayRegex})((\\s+|\\s*,\\s*){YearRegex})?"
+    public static final String SimpleCasesRegex = "((从)\\s*)?(({YearRegex}|{DatePeriodYearInCJKRegex})\\s*)?{MonthSuffixRegex}({DatePeriodDayRegexInCJK}|{DayRegex})\\s*{DatePeriodTillRegex}\\s*({DatePeriodDayRegexInCJK}|{DayRegex})((\\s+|\\s*,\\s*){YearRegex})?"
             .replace("{YearRegex}", YearRegex)
-            .replace("{DatePeriodYearInChineseRegex}", DatePeriodYearInChineseRegex)
+            .replace("{DatePeriodYearInCJKRegex}", DatePeriodYearInCJKRegex)
             .replace("{MonthSuffixRegex}", MonthSuffixRegex)
-            .replace("{DatePeriodDayRegexInChinese}", DatePeriodDayRegexInChinese)
+            .replace("{DatePeriodDayRegexInCJK}", DatePeriodDayRegexInCJK)
             .replace("{DayRegex}", DayRegex)
             .replace("{DatePeriodTillRegex}", DatePeriodTillRegex);
 
-    public static final String YearAndMonth = "({DatePeriodYearInChineseRegex}|{YearRegex})\\s*{MonthRegex}"
-            .replace("{DatePeriodYearInChineseRegex}", DatePeriodYearInChineseRegex)
+    public static final String YearAndMonth = "({DatePeriodYearInCJKRegex}|{YearRegex})\\s*{MonthRegex}"
+            .replace("{DatePeriodYearInCJKRegex}", DatePeriodYearInCJKRegex)
             .replace("{YearRegex}", YearRegex)
             .replace("{MonthRegex}", MonthRegex);
+
+    public static final String SimpleYearAndMonth = "({YearNumRegex}[/\\\\\\-]{MonthNumRegex}\\b$)"
+            .replace("{YearNumRegex}", YearNumRegex)
+            .replace("{MonthNumRegex}", MonthNumRegex);
 
     public static final String PureNumYearAndMonth = "({YearRegexInNumber}\\s*[-\\.\\/]\\s*{MonthNumRegex})|({MonthNumRegex}\\s*\\/\\s*{YearRegexInNumber})"
             .replace("{YearRegexInNumber}", YearRegexInNumber)
@@ -223,14 +231,14 @@ public class ChineseDateTime {
 
     public static final String DateRangePrepositions = "((从|在|自)\\s*)?";
 
-    public static final String YearToYear = "({DateRangePrepositions})({DatePeriodYearInChineseRegex}|{YearRegex})\\s*({DatePeriodTillRegex}|后|後|之后|之後)\\s*({DatePeriodYearInChineseRegex}|{YearRegex})(\\s*((之间|之内|期间|中间|间)|前|之前))?"
-            .replace("{DatePeriodYearInChineseRegex}", DatePeriodYearInChineseRegex)
+    public static final String YearToYear = "({DateRangePrepositions})({DatePeriodYearInCJKRegex}|{YearRegex})\\s*({DatePeriodTillRegex}|后|後|之后|之後)\\s*({DatePeriodYearInCJKRegex}|{YearRegex})(\\s*((之间|之内|期间|中间|间)|前|之前))?"
+            .replace("{DatePeriodYearInCJKRegex}", DatePeriodYearInCJKRegex)
             .replace("{YearRegex}", YearRegex)
             .replace("{DatePeriodTillRegex}", DatePeriodTillRegex)
             .replace("{DateRangePrepositions}", DateRangePrepositions);
 
-    public static final String YearToYearSuffixRequired = "({DateRangePrepositions})({DatePeriodYearInChineseRegex}|{YearRegex})\\s*({DatePeriodTillSuffixRequiredRegex})\\s*({DatePeriodYearInChineseRegex}|{YearRegex})\\s*(之间|之内|期间|中间|间)"
-            .replace("{DatePeriodYearInChineseRegex}", DatePeriodYearInChineseRegex)
+    public static final String YearToYearSuffixRequired = "({DateRangePrepositions})({DatePeriodYearInCJKRegex}|{YearRegex})\\s*({DatePeriodTillSuffixRequiredRegex})\\s*({DatePeriodYearInCJKRegex}|{YearRegex})\\s*(之间|之内|期间|中间|间)"
+            .replace("{DatePeriodYearInCJKRegex}", DatePeriodYearInCJKRegex)
             .replace("{YearRegex}", YearRegex)
             .replace("{DatePeriodTillSuffixRequiredRegex}", DatePeriodTillSuffixRequiredRegex)
             .replace("{DateRangePrepositions}", DateRangePrepositions);
@@ -245,37 +253,41 @@ public class ChineseDateTime {
             .replace("{DatePeriodTillSuffixRequiredRegex}", DatePeriodTillSuffixRequiredRegex)
             .replace("{DateRangePrepositions}", DateRangePrepositions);
 
+    public static final String DayToDay = "^[.]";
+
+    public static final String DayRegexForPeriod = "^[.]";
+
     public static final String PastRegex = "(?<past>(之前|前|上|近|过去))";
 
     public static final String FutureRegex = "(?<future>(之后|之後|后|後|(?<![一两几]\\s*)下|未来(的)?))";
 
     public static final String SeasonRegex = "(?<season>春|夏|秋|冬)(天|季)?";
 
-    public static final String SeasonWithYear = "(({YearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?{SeasonRegex}"
+    public static final String SeasonWithYear = "(({YearRegex}|{DatePeriodYearInCJKRegex}|(?<yearrel>明年|今年|去年))(的)?)?{SeasonRegex}"
             .replace("{YearRegex}", YearRegex)
-            .replace("{DatePeriodYearInChineseRegex}", DatePeriodYearInChineseRegex)
+            .replace("{DatePeriodYearInCJKRegex}", DatePeriodYearInCJKRegex)
             .replace("{SeasonRegex}", SeasonRegex);
 
-    public static final String QuarterRegex = "(({YearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(第(?<cardinal>1|2|3|4|一|二|三|四)季度)"
+    public static final String QuarterRegex = "(({YearRegex}|{DatePeriodYearInCJKRegex}|(?<yearrel>明年|今年|去年))(的)?)?(第(?<cardinal>1|2|3|4|一|二|三|四)季度)"
             .replace("{YearRegex}", YearRegex)
-            .replace("{DatePeriodYearInChineseRegex}", DatePeriodYearInChineseRegex);
+            .replace("{DatePeriodYearInCJKRegex}", DatePeriodYearInCJKRegex);
 
     public static final String CenturyRegex = "(?<century>\\d|1\\d|2\\d)世纪";
 
-    public static final String CenturyRegexInChinese = "(?<century>一|二|三|四|五|六|七|八|九|十|十一|十二|十三|十四|十五|十六|十七|十八|十九|二十|二十一|二十二)世纪";
+    public static final String CenturyRegexInCJK = "(?<century>一|二|三|四|五|六|七|八|九|十|十一|十二|十三|十四|十五|十六|十七|十八|十九|二十|二十一|二十二)世纪";
 
     public static final String RelativeCenturyRegex = "(?<relcentury>({DatePeriodLastRegex}|{DatePeriodThisRegex}|{DatePeriodNextRegex}))世纪"
             .replace("{DatePeriodLastRegex}", DatePeriodLastRegex)
             .replace("{DatePeriodThisRegex}", DatePeriodThisRegex)
             .replace("{DatePeriodNextRegex}", DatePeriodNextRegex);
 
-    public static final String DecadeRegexInChinese = "(?<decade>十|一十|二十|三十|四十|五十|六十|七十|八十|九十)";
+    public static final String DecadeRegexInCJK = "(?<decade>十|一十|二十|三十|四十|五十|六十|七十|八十|九十)";
 
-    public static final String DecadeRegex = "(?<centurysuf>({CenturyRegex}|{CenturyRegexInChinese}|{RelativeCenturyRegex}))?(?<decade>(\\d0|{DecadeRegexInChinese}))年代"
+    public static final String DecadeRegex = "(?<centurysuf>({CenturyRegex}|{CenturyRegexInCJK}|{RelativeCenturyRegex}))?(?<decade>(\\d0|{DecadeRegexInCJK}))年代"
             .replace("{CenturyRegex}", CenturyRegex)
-            .replace("{CenturyRegexInChinese}", CenturyRegexInChinese)
+            .replace("{CenturyRegexInCJK}", CenturyRegexInCJK)
             .replace("{RelativeCenturyRegex}", RelativeCenturyRegex)
-            .replace("{DecadeRegexInChinese}", DecadeRegexInChinese);
+            .replace("{DecadeRegexInCJK}", DecadeRegexInCJK);
 
     public static final String PrepositionRegex = "(?<prep>^的|在$)";
 
@@ -320,6 +332,18 @@ public class ChineseDateTime {
     public static final String DateTimePeriodNumberCombinedWithUnit = "\\b(?<num>\\d+(\\.\\d*)?){DateTimePeriodUnitRegex}"
             .replace("{DateTimePeriodUnitRegex}", DateTimePeriodUnitRegex);
 
+    public static final String DurationAllRegex = "^[.]";
+
+    public static final String DurationHalfRegex = "^[.]";
+
+    public static final String DurationRelativeDurationUnitRegex = "^[.]";
+
+    public static final String DurationDuringRegex = "^[.]";
+
+    public static final String DurationSomeRegex = "^[.]";
+
+    public static final String DurationMoreOrLessRegex = "^[.]";
+
     public static final String DurationYearRegex = "((\\d{3,4})|0\\d|两千)\\s*年";
 
     public static final String DurationHalfSuffixRegex = "半";
@@ -341,17 +365,17 @@ public class ChineseDateTime {
 
     public static final String DurationConnectorRegex = "^\\s*(?<connector>[多又余零]?)\\s*$";
 
-    public static final String LunarHolidayRegex = "(({YearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>除夕|春节|中秋节|中秋|元宵节|端午节|端午|重阳节)"
+    public static final String LunarHolidayRegex = "(({YearRegex}|{DatePeriodYearInCJKRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>除夕|春节|中秋节|中秋|元宵节|端午节|端午|重阳节)"
             .replace("{YearRegex}", YearRegex)
-            .replace("{DatePeriodYearInChineseRegex}", DatePeriodYearInChineseRegex);
+            .replace("{DatePeriodYearInCJKRegex}", DatePeriodYearInCJKRegex);
 
-    public static final String HolidayRegexList1 = "(({YearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>新年|五一|劳动节|元旦节|元旦|愚人节|平安夜|圣诞节|植树节|国庆节|情人节|教师节|儿童节|妇女节|青年节|建军节|女生节|光棍节|双十一|清明节|清明)"
+    public static final String HolidayRegexList1 = "(({YearRegex}|{DatePeriodYearInCJKRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>新年|五一|劳动节|元旦节|元旦|愚人节|平安夜|圣诞节|植树节|国庆节|情人节|教师节|儿童节|妇女节|青年节|建军节|女生节|光棍节|双十一|清明节|清明)"
             .replace("{YearRegex}", YearRegex)
-            .replace("{DatePeriodYearInChineseRegex}", DatePeriodYearInChineseRegex);
+            .replace("{DatePeriodYearInCJKRegex}", DatePeriodYearInCJKRegex);
 
-    public static final String HolidayRegexList2 = "(({YearRegex}|{DatePeriodYearInChineseRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>母亲节|父亲节|感恩节|万圣节)"
+    public static final String HolidayRegexList2 = "(({YearRegex}|{DatePeriodYearInCJKRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>母亲节|父亲节|感恩节|万圣节)"
             .replace("{YearRegex}", YearRegex)
-            .replace("{DatePeriodYearInChineseRegex}", DatePeriodYearInChineseRegex);
+            .replace("{DatePeriodYearInCJKRegex}", DatePeriodYearInCJKRegex);
 
     public static final String SetUnitRegex = "(?<unit>年|月|周|星期|日|天|小时|时|分钟|分|秒钟|秒)";
 
@@ -370,12 +394,12 @@ public class ChineseDateTime {
 
     public static final String TimeSecondNumRegex = "(00|01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59|0|1|2|3|4|5|6|7|8|9)";
 
-    public static final String TimeHourChsRegex = "([零〇一二两三四五六七八九]|二十[一二三四]?|十[一二三四五六七八九]?)";
+    public static final String TimeHourCJKRegex = "([零〇一二两三四五六七八九]|二十[一二三四]?|十[一二三四五六七八九]?)";
 
-    public static final String TimeMinuteChsRegex = "([二三四五]?十[一二三四五六七八九]?|六十|[零〇一二三四五六七八九])";
+    public static final String TimeMinuteCJKRegex = "([二三四五]?十[一二三四五六七八九]?|六十|[零〇一二三四五六七八九])";
 
-    public static final String TimeSecondChsRegex = "{TimeMinuteChsRegex}"
-            .replace("{TimeMinuteChsRegex}", TimeMinuteChsRegex);
+    public static final String TimeSecondCJKRegex = "{TimeMinuteCJKRegex}"
+            .replace("{TimeMinuteCJKRegex}", TimeMinuteCJKRegex);
 
     public static final String TimeClockDescRegex = "(点\\s*整|点\\s*钟|点|时)";
 
@@ -385,19 +409,19 @@ public class ChineseDateTime {
 
     public static final String TimeBanHourPrefixRegex = "(第)";
 
-    public static final String TimeHourRegex = "(?<!{TimeBanHourPrefixRegex})(?<hour>{TimeHourChsRegex}|{TimeHourNumRegex}){TimeClockDescRegex}"
+    public static final String TimeHourRegex = "(?<!{TimeBanHourPrefixRegex})(?<hour>{TimeHourCJKRegex}|{TimeHourNumRegex}){TimeClockDescRegex}"
             .replace("{TimeBanHourPrefixRegex}", TimeBanHourPrefixRegex)
-            .replace("{TimeHourChsRegex}", TimeHourChsRegex)
+            .replace("{TimeHourCJKRegex}", TimeHourCJKRegex)
             .replace("{TimeHourNumRegex}", TimeHourNumRegex)
             .replace("{TimeClockDescRegex}", TimeClockDescRegex);
 
-    public static final String TimeMinuteRegex = "(?<min>{TimeMinuteChsRegex}|{TimeMinuteNumRegex}){TimeMinuteDescRegex}"
-            .replace("{TimeMinuteChsRegex}", TimeMinuteChsRegex)
+    public static final String TimeMinuteRegex = "(?<min>{TimeMinuteCJKRegex}|{TimeMinuteNumRegex}){TimeMinuteDescRegex}"
+            .replace("{TimeMinuteCJKRegex}", TimeMinuteCJKRegex)
             .replace("{TimeMinuteNumRegex}", TimeMinuteNumRegex)
             .replace("{TimeMinuteDescRegex}", TimeMinuteDescRegex);
 
-    public static final String TimeSecondRegex = "(?<sec>{TimeSecondChsRegex}|{TimeSecondNumRegex}){TimeSecondDescRegex}"
-            .replace("{TimeSecondChsRegex}", TimeSecondChsRegex)
+    public static final String TimeSecondRegex = "(?<sec>{TimeSecondCJKRegex}|{TimeSecondNumRegex}){TimeSecondDescRegex}"
+            .replace("{TimeSecondCJKRegex}", TimeSecondCJKRegex)
             .replace("{TimeSecondNumRegex}", TimeSecondNumRegex)
             .replace("{TimeSecondDescRegex}", TimeSecondDescRegex);
 
@@ -405,7 +429,7 @@ public class ChineseDateTime {
 
     public static final String TimeQuarterRegex = "(?<quarter>[一两二三四1-4])\\s*(刻钟|刻)";
 
-    public static final String TimeChineseTimeRegex = "{TimeHourRegex}({TimeQuarterRegex}|{TimeHalfRegex}|((过|又)?{TimeMinuteRegex})({TimeSecondRegex})?)?"
+    public static final String TimeCJKTimeRegex = "{TimeHourRegex}({TimeQuarterRegex}|{TimeHalfRegex}|((过|又)?{TimeMinuteRegex})({TimeSecondRegex})?)?"
             .replace("{TimeHourRegex}", TimeHourRegex)
             .replace("{TimeQuarterRegex}", TimeQuarterRegex)
             .replace("{TimeHalfRegex}", TimeHalfRegex)
@@ -423,10 +447,10 @@ public class ChineseDateTime {
 
     public static final String TimeApproximateDescSuffixRegex = "(左右)";
 
-    public static final String TimeRegexes1 = "{TimeApproximateDescPreffixRegex}?{TimeDayDescRegex}?{TimeChineseTimeRegex}{TimeApproximateDescSuffixRegex}?"
+    public static final String TimeRegexes1 = "{TimeApproximateDescPreffixRegex}?{TimeDayDescRegex}?{TimeCJKTimeRegex}{TimeApproximateDescSuffixRegex}?"
             .replace("{TimeApproximateDescPreffixRegex}", TimeApproximateDescPreffixRegex)
             .replace("{TimeDayDescRegex}", TimeDayDescRegex)
-            .replace("{TimeChineseTimeRegex}", TimeChineseTimeRegex)
+            .replace("{TimeCJKTimeRegex}", TimeCJKTimeRegex)
             .replace("{TimeApproximateDescSuffixRegex}", TimeApproximateDescSuffixRegex);
 
     public static final String TimeRegexes2 = "{TimeApproximateDescPreffixRegex}?{TimeDayDescRegex}?{TimeDigitTimeRegex}{TimeApproximateDescSuffixRegex}?(\\s*{AmPmDescRegex}?)"
@@ -436,20 +460,20 @@ public class ChineseDateTime {
             .replace("{TimeApproximateDescSuffixRegex}", TimeApproximateDescSuffixRegex)
             .replace("{AmPmDescRegex}", AmPmDescRegex);
 
-    public static final String TimeRegexes3 = "差{TimeMinuteRegex}{TimeChineseTimeRegex}"
+    public static final String TimeRegexes3 = "差{TimeMinuteRegex}{TimeCJKTimeRegex}"
             .replace("{TimeMinuteRegex}", TimeMinuteRegex)
-            .replace("{TimeChineseTimeRegex}", TimeChineseTimeRegex);
+            .replace("{TimeCJKTimeRegex}", TimeCJKTimeRegex);
 
     public static final String TimePeriodTimePeriodConnectWords = "(起|至|到|–|-|—|~|～)";
 
-    public static final String TimePeriodLeftChsTimeRegex = "(从)?(?<left>{TimeDayDescRegex}?({TimeChineseTimeRegex}))"
+    public static final String TimePeriodLeftCJKTimeRegex = "(从)?(?<left>{TimeDayDescRegex}?({TimeCJKTimeRegex}))"
             .replace("{TimeDayDescRegex}", TimeDayDescRegex)
-            .replace("{TimeChineseTimeRegex}", TimeChineseTimeRegex);
+            .replace("{TimeCJKTimeRegex}", TimeCJKTimeRegex);
 
-    public static final String TimePeriodRightChsTimeRegex = "{TimePeriodTimePeriodConnectWords}(?<right>{TimeDayDescRegex}?{TimeChineseTimeRegex})(之间)?"
+    public static final String TimePeriodRightCJKTimeRegex = "{TimePeriodTimePeriodConnectWords}(?<right>{TimeDayDescRegex}?{TimeCJKTimeRegex})(之间)?"
             .replace("{TimePeriodTimePeriodConnectWords}", TimePeriodTimePeriodConnectWords)
             .replace("{TimeDayDescRegex}", TimeDayDescRegex)
-            .replace("{TimeChineseTimeRegex}", TimeChineseTimeRegex);
+            .replace("{TimeCJKTimeRegex}", TimeCJKTimeRegex);
 
     public static final String TimePeriodLeftDigitTimeRegex = "(从)?(?<left>{TimeDayDescRegex}?({TimeDigitTimeRegex}))"
             .replace("{TimeDayDescRegex}", TimeDayDescRegex)
@@ -460,25 +484,25 @@ public class ChineseDateTime {
             .replace("{TimeDayDescRegex}", TimeDayDescRegex)
             .replace("{TimeDigitTimeRegex}", TimeDigitTimeRegex);
 
-    public static final String TimePeriodShortLeftChsTimeRegex = "(从)?(?<left>{TimeDayDescRegex}?({TimeHourChsRegex}))"
+    public static final String TimePeriodShortLeftCJKTimeRegex = "(从)?(?<left>{TimeDayDescRegex}?({TimeHourCJKRegex}))"
             .replace("{TimeDayDescRegex}", TimeDayDescRegex)
-            .replace("{TimeHourChsRegex}", TimeHourChsRegex);
+            .replace("{TimeHourCJKRegex}", TimeHourCJKRegex);
 
     public static final String TimePeriodShortLeftDigitTimeRegex = "(从)?(?<left>{TimeDayDescRegex}?({TimeHourNumRegex}))"
             .replace("{TimeDayDescRegex}", TimeDayDescRegex)
             .replace("{TimeHourNumRegex}", TimeHourNumRegex);
 
-    public static final String TimePeriodRegexes1 = "({TimePeriodLeftDigitTimeRegex}{TimePeriodRightDigitTimeRegex}|{TimePeriodLeftChsTimeRegex}{TimePeriodRightChsTimeRegex})"
+    public static final String TimePeriodRegexes1 = "({TimePeriodLeftDigitTimeRegex}{TimePeriodRightDigitTimeRegex}|{TimePeriodLeftCJKTimeRegex}{TimePeriodRightCJKTimeRegex})"
             .replace("{TimePeriodLeftDigitTimeRegex}", TimePeriodLeftDigitTimeRegex)
             .replace("{TimePeriodRightDigitTimeRegex}", TimePeriodRightDigitTimeRegex)
-            .replace("{TimePeriodLeftChsTimeRegex}", TimePeriodLeftChsTimeRegex)
-            .replace("{TimePeriodRightChsTimeRegex}", TimePeriodRightChsTimeRegex);
+            .replace("{TimePeriodLeftCJKTimeRegex}", TimePeriodLeftCJKTimeRegex)
+            .replace("{TimePeriodRightCJKTimeRegex}", TimePeriodRightCJKTimeRegex);
 
-    public static final String TimePeriodRegexes2 = "({TimePeriodShortLeftDigitTimeRegex}{TimePeriodRightDigitTimeRegex}|{TimePeriodShortLeftChsTimeRegex}{TimePeriodRightChsTimeRegex})"
+    public static final String TimePeriodRegexes2 = "({TimePeriodShortLeftDigitTimeRegex}{TimePeriodRightDigitTimeRegex}|{TimePeriodShortLeftCJKTimeRegex}{TimePeriodRightCJKTimeRegex})"
             .replace("{TimePeriodShortLeftDigitTimeRegex}", TimePeriodShortLeftDigitTimeRegex)
             .replace("{TimePeriodRightDigitTimeRegex}", TimePeriodRightDigitTimeRegex)
-            .replace("{TimePeriodShortLeftChsTimeRegex}", TimePeriodShortLeftChsTimeRegex)
-            .replace("{TimePeriodRightChsTimeRegex}", TimePeriodRightChsTimeRegex);
+            .replace("{TimePeriodShortLeftCJKTimeRegex}", TimePeriodShortLeftCJKTimeRegex)
+            .replace("{TimePeriodRightCJKTimeRegex}", TimePeriodRightCJKTimeRegex);
 
     public static final String FromToRegex = "(从|自).+([至到]).+";
 

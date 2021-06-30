@@ -123,6 +123,10 @@ namespace SimpleConsole
                 // E.g "{123e4567-e89b-12d3-a456-426655440000}"
                 SequenceRecognizer.RecognizeGUID(query, culture),
 
+                // Quoted text recognizer
+                // E.g "I meant "no""
+                SequenceRecognizer.RecognizeQuotedText(query, culture),
+
                 // Add Boolean recognizer - This model will find yes/no like responses, including emoji -
                 // E.g "yup, I need that" will return "True"
                 ChoiceRecognizer.RecognizeBoolean(query, culture),

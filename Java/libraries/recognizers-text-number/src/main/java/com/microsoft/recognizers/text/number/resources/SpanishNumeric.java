@@ -25,17 +25,19 @@ public class SpanishNumeric {
 
     public static final Boolean MultiDecimalSeparatorCulture = true;
 
+    public static final List<String> NonStandardSeparatorVariants = Arrays.asList("es-mx", "es-do", "es-sv", "es-gt", "es-hn", "es-ni", "es-pa", "es-pr");
+
     public static final String HundredsNumberIntegerRegex = "(cuatrocient[ao]s|trescient[ao]s|seiscient[ao]s|setecient[ao]s|ochocient[ao]s|novecient[ao]s|doscient[ao]s|quinient[ao]s|(?<!por\\s+)(cien(to)?))";
 
-    public static final String RoundNumberIntegerRegex = "(mil millones|millones|mill[oó]n|mil|billones|bill[oó]n|trillones|trill[oó]n|cuatrillones|cuatrill[oó]n|quintillones|quintill[oó]n|sextillones|sextill[oó]n|septillones|septill[oó]n)";
+    public static final String RoundNumberIntegerRegex = "(mil millones|mill[oó]n(es)?|mil|bill[oó]n(es)?|trill[oó]n(es)?|cuatrill[oó]n(es)?|quintill[oó]n(es)?|sextill[oó]n(es)?|septill[oó]n(es)?)";
 
     public static final String ZeroToNineIntegerRegex = "(cuatro|cinco|siete|nueve|cero|tres|seis|ocho|dos|un[ao]?)";
 
     public static final String TenToNineteenIntegerRegex = "(diecisiete|diecinueve|diecis[eé]is|dieciocho|catorce|quince|trece|diez|once|doce)";
 
-    public static final String TwentiesIntegerRegex = "(veinticuatro|veinticinco|veintisiete|veintinueve|veintitr[eé]s|veintis[eé]is|veintiocho|veintid[oó]s|ventiun[ao]|veinti[uú]n[oa]?|veinte)";
+    public static final String TwentiesIntegerRegex = "(veinti(cuatro|cinco|siete|nueve|tr[eé]s|s[eé]is|ocho|d[oó]s|[uú]n[oa]?)|ventiun[ao]|veinte)";
 
-    public static final String TensNumberIntegerRegex = "(cincuenta|cuarenta|treinta|sesenta|setenta|ochenta|noventa)";
+    public static final String TensNumberIntegerRegex = "(cincuenta|cuarenta|treinta|se[st]enta|ochenta|noventa)";
 
     public static final String NegativeNumberTermsRegex = "(?<negTerm>(?<!(al|lo)\\s+)menos\\s+)";
 
