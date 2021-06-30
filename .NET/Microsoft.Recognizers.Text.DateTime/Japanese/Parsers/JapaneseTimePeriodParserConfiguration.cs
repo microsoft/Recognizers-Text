@@ -63,6 +63,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             {
                 timeOfDay = Constants.Night;
             }
+            else if (DateTimeDefinitions.BusinessHourTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)))
+            {
+                timeOfDay = Constants.BusinessHour;
+            }
             else
             {
                 timex = null;
@@ -74,6 +78,23 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             beginHour = parseResult.BeginHour;
             endHour = parseResult.EndHour;
             endMin = parseResult.EndMin;
+
+            // Modify time period if "early"/"late" is present
+            if (DateTimeDefinitions.EarlyHourTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)))
+            {
+                endHour = beginHour + Constants.HalfMidDayDurationHourCount;
+
+                // Handling special case: night ends with 23:59.
+                if (endMin == 59)
+                {
+                    endMin = 0;
+                }
+            }
+
+            if (DateTimeDefinitions.LateHourTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)))
+            {
+                beginHour = beginHour + Constants.HalfMidDayDurationHourCount;
+            }
 
             return true;
         }

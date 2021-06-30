@@ -188,21 +188,21 @@ namespace Microsoft.Recognizers.Definitions.Japanese
       public const string TimeQuarterRegex = @"(?<quarter>[一两二三四1-4])\s*(刻钟|刻)";
       public static readonly string TimeCJKTimeRegex = $@"{TimeHourRegex}({TimeQuarterRegex}|{TimeHalfRegex}|((((过|又)?{TimeMinuteRegex})({TimeSecondRegex})?)|({TimeSecondRegex})))?";
       public static readonly string TimeDigitTimeRegex = $@"(?<hour>{TimeHourNumRegex}):(?<min>{TimeMinuteNumRegex})(:(?<sec>{TimeSecondNumRegex}))?";
-      public static readonly string TimeDayDescRegex = $@"(?<daydesc>((?<=({TimeDigitTimeRegex}|{TimeCJKTimeRegex})(の)?)(夜明け|朝|早く|午後|夜|午前|日中|未明|白昼))|((夜明け|朝|早く|午後|夜|午前|日中|未明|白昼)(?=(の)?({TimeDigitTimeRegex}|{TimeCJKTimeRegex})))|(正午|深夜|夜中|午前半ば|(昼(食時)?)|真昼))";
+      public static readonly string TimeDayDescRegex = $@"(?<daydesc>(正午|夜中|午前半ば|(昼食時)|真昼)|((?<=({TimeDigitTimeRegex}|{TimeCJKTimeRegex})(の)?)(早朝(に)?|午後(に)?|(深)?夜(に)?|未明|午前(中)?|日中|白昼|(未|早)?朝(に)?|昼前に|昼すぎに|夕方前に|夕方に|営業時間内に|昼))|((早朝(に)?|午後(に)?|(深)?夜(に)?|未明|午前(中)?|日中|白昼|(未|早)?朝(に)?|昼前に|昼すぎに|夕方前に|夕方に|営業時間内に|昼)(?=(の)?({TimeDigitTimeRegex}|{TimeCJKTimeRegex}))))";
       public const string TimeApproximateDescPreffixRegex = @"(ぐらい|おそらく|多分|ほとんど|まもなく|昨日の|昨日|明日の|明日|来週の|来週|昼食時|昼食|真)";
       public const string TimeApproximateDescSuffixRegex = @"(ごろに|ごろ|過ぎに|過ぎ|丁度に|丁度|きっかりに|きっかり|を過ぎた頃に|を過ぎた頃|ちょっと前に|ちょっと前|近くに|近く|昼食時|昼食|ぐらい|時かっきり|頃|かっきり)";
       public static readonly string TimeRegexes1 = $@"{TimeApproximateDescPreffixRegex}?({TimeDayDescRegex}(の)?)?({TimeDigitTimeRegex}|{TimeCJKTimeRegex})((の)?{TimeDayDescRegex})?{TimeApproximateDescSuffixRegex}?";
       public static readonly string TimeRegexes2 = $@"({TimeApproximateDescPreffixRegex}(の)?)?{TimeDayDescRegex}((の)?{TimeApproximateDescSuffixRegex})?";
       public static readonly string TimeRegexes3 = $@"({TimeDayDescRegex}(の)?)?({TimeDigitTimeRegex}|{TimeCJKTimeRegex})前((の)?{TimeDayDescRegex})?";
-      public const string TimePeriodTimePeriodConnectWords = @"(起|至|到|–|-|—|~|～)";
-      public static readonly string TimePeriodLeftCJKTimeRegex = $@"(从)?(?<left>{TimeDayDescRegex}?({TimeCJKTimeRegex}))";
-      public static readonly string TimePeriodRightCJKTimeRegex = $@"{TimePeriodTimePeriodConnectWords}(?<right>{TimeDayDescRegex}?{TimeCJKTimeRegex})(之间)?";
-      public static readonly string TimePeriodLeftDigitTimeRegex = $@"(从)?(?<left>{TimeDayDescRegex}?({TimeDigitTimeRegex}))";
-      public static readonly string TimePeriodRightDigitTimeRegex = $@"{TimePeriodTimePeriodConnectWords}(?<right>{TimeDayDescRegex}?{TimeDigitTimeRegex})(之间)?";
-      public static readonly string TimePeriodShortLeftCJKTimeRegex = $@"(从)?(?<left>{TimeDayDescRegex}?({TimeHourCJKRegex}))";
-      public static readonly string TimePeriodShortLeftDigitTimeRegex = $@"(从)?(?<left>{TimeDayDescRegex}?({TimeHourNumRegex}))";
+      public const string TimePeriodTimePeriodConnectWords = @"(まで(の間)?|の間|–|-|—|~|～)";
+      public static readonly string TimePeriodLeftCJKTimeRegex = $@"(?<left>{TimeDayDescRegex}?({TimeCJKTimeRegex}))(から)?";
+      public static readonly string TimePeriodRightCJKTimeRegex = $@"{TimePeriodTimePeriodConnectWords}?(?<right>{TimeDayDescRegex}?{TimeCJKTimeRegex}){TimePeriodTimePeriodConnectWords}?";
+      public static readonly string TimePeriodLeftDigitTimeRegex = $@"(?<left>{TimeDayDescRegex}?({TimeDigitTimeRegex}))(から)?";
+      public static readonly string TimePeriodRightDigitTimeRegex = $@"{TimePeriodTimePeriodConnectWords}?(?<right>{TimeDayDescRegex}?{TimeDigitTimeRegex}){TimePeriodTimePeriodConnectWords}?";
+      public static readonly string TimePeriodShortLeftCJKTimeRegex = $@"(?<left>{TimeDayDescRegex}?({TimeHourCJKRegex}))(から)?";
+      public static readonly string TimePeriodShortLeftDigitTimeRegex = $@"(?<left>{TimeDayDescRegex}?({TimeHourNumRegex}))(から)?";
       public static readonly string TimePeriodRegexes1 = $@"({TimePeriodLeftDigitTimeRegex}{TimePeriodRightDigitTimeRegex}|{TimePeriodLeftCJKTimeRegex}{TimePeriodRightCJKTimeRegex})";
-      public static readonly string TimePeriodRegexes2 = $@"({TimePeriodShortLeftDigitTimeRegex}{TimePeriodRightDigitTimeRegex}|{TimePeriodShortLeftCJKTimeRegex}{TimePeriodRightCJKTimeRegex})";
+      public static readonly string TimePeriodRegexes2 = $@"(((早朝(に)?|午後(に)?|(深)?夜(に)?|未明|午前(中)?|日中|白昼|(未|早)?朝(に)?|昼前に|昼すぎに|夕方前に|夕方に|営業時間内に|昼)({TimePeriodShortLeftDigitTimeRegex}{TimePeriodRightDigitTimeRegex}|{TimePeriodShortLeftCJKTimeRegex}{TimePeriodRightCJKTimeRegex}))|((早朝(に)?|午後(に)?|(深)?夜(に)?|未明|午前(中)?|日中|白昼|(未|早)?朝(に)?|昼前に|昼すぎに|夕方前に|夕方に|営業時間内に|昼)(?=((?!({TimeCJKTimeRegex}|{TimeDigitTimeRegex})(から)?)))))";
       public const string FromToRegex = @"^[.]";
       public const string AmbiguousRangeModifierPrefix = @"^[.]";
       public const string ParserConfigurationBefore = @"(之前|以前|前)";
@@ -602,32 +602,42 @@ namespace Microsoft.Recognizers.Definitions.Japanese
             { @"午前半ば", 10 },
             { @"正午", 12 },
             { @"真昼", 12 },
-            { @"昼", 12 },
             { @"夜中", 0 },
             { @"深夜", 0 },
-            { @"昼食時", 11 }
+            { @"昼食時", 11 },
+            { @"夕方に", 12 }
         };
       public const string DefaultLanguageFallback = @"DMY";
       public static readonly IList<string> MorningTermList = new List<string>
         {
             @"午前半ば",
+            @"午前中",
             @"午前",
             @"朝",
-            @"未明"
+            @"未明",
+            @"昼前に",
+            @"昼前",
+            @"早朝に",
+            @"早朝"
         };
       public static readonly IList<string> MidDayTermList = new List<string>
         {
             @"正午",
-            @"真昼",
-            @"昼"
+            @"真昼"
         };
       public static readonly IList<string> AfternoonTermList = new List<string>
         {
             @"午后",
-            @"午後"
+            @"午後",
+            @"午後に",
+            @"夕方前に",
+            @"昼すぎに",
+            @"昼すぎ"
         };
       public static readonly IList<string> EveningTermList = new List<string>
         {
+            @"夕方に",
+            @"夕方",
             @"晚",
             @"晚上",
             @"夜里",
@@ -637,14 +647,33 @@ namespace Microsoft.Recognizers.Definitions.Japanese
       public static readonly IList<string> DaytimeTermList = new List<string>
         {
             @"日中",
-            @"昼食時"
+            @"昼食時",
+            @"昼"
         };
       public static readonly IList<string> NightTermList = new List<string>
         {
             @"深夜",
+            @"夜に",
             @"夜",
             @"夜中",
             @"夜間"
+        };
+      public static readonly IList<string> BusinessHourTermList = new List<string>
+        {
+            @"営業時間内に",
+            @"営業時間内"
+        };
+      public static readonly IList<string> EarlyHourTermList = new List<string>
+        {
+            @"早朝に",
+            @"早朝",
+            @"昼すぎに",
+            @"昼すぎ"
+        };
+      public static readonly IList<string> LateHourTermList = new List<string>
+        {
+            @"昼前に",
+            @"夕方前に"
         };
       public static readonly Dictionary<string, int> DynastyYearMap = new Dictionary<string, int>
         {

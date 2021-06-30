@@ -269,7 +269,10 @@ export class ChineseTimePeriodParser extends BaseTimePeriodParser {
         if (spanHour < 0) {
             spanHour += 24;
         }
-        let spanTimex = `PT${spanHour}H`;
+        let spanTimex = `PT`;
+        if (spanHour > 0 ) {
+            spanTimex = spanTimex + `${spanHour}H`;
+        }
         if (spanMin !== 0 && spanSec === 0) {
             spanTimex = spanTimex + `${spanMin}M`;
         }

@@ -1462,7 +1462,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "(T17:15,T18,PT0H45M)",
+              "timex": "(T17:15,T18,PT45M)",
               "type": "timerange",
               "start": "17:15:00",
               "end": "18:00:00"
@@ -1486,7 +1486,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "(T17:55:23,T18:33:02,PT0H37M39S)",
+              "timex": "(T17:55:23,T18:33:02,PT37M39S)",
               "type": "timerange",
               "start": "17:55:23",
               "end": "18:33:02"
@@ -1510,7 +1510,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "(T17:55:23,T18:33:02,PT0H37M39S)",
+              "timex": "(T17:55:23,T18:33:02,PT37M39S)",
               "type": "timerange",
               "start": "17:55:23",
               "end": "18:33:02"
