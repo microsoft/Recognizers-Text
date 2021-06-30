@@ -111,7 +111,7 @@ FullDescRegex: !nestedRegex
 # Exclude cases that include the "Am/Pm" suffix
 # Exclude when preceded by "$" symbol
 TwoDigitYearRegex: !nestedRegex
-  def: \b(?<!\$)(?<year>([0-24-9]\d))(?!(\s*(([:.]\d)|keer|uurs?|{AmDescRegex}|{PmDescRegex})))\b
+  def: \b(?<!\$)(?<year>([0-24-9]\d))(?!(\s*(([:\.]\d)|keer|uurs?|{AmDescRegex}|{PmDescRegex})))\b
   references: [ AmDescRegex, PmDescRegex, ApostrofsRegex]
 YearRegex: !nestedRegex
   def: ({BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})

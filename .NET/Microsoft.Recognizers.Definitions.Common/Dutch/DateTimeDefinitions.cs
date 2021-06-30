@@ -65,7 +65,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public static readonly string PmRegexFull = $@"(?<pm>(({ApostrofsRegex}|des)\s+(\bmiddags|avonds|nachts)|((in|tegen|op|om|met)\s+(de\s+)?)?(((na)?middag|avond|(midder)?nacht|lunchtijd))))";
       public static readonly string AmRegex = $@"(?<am>(({ApostrofsRegex}|des)\s+(ochtends|morgens)|((in|tegen|op)\s+de)(\s+(ochtend|morgen))|(?<=gisteren|morgen|vandaag|(maan|dins|woens|donder|vrij|zater|zon)dag)(ochtend|morgen)|^?ochtend))";
       public static readonly string FullDescRegex = $@"({DescRegex}|{AmRegex}|{PmRegexFull})";
-      public static readonly string TwoDigitYearRegex = $@"\b(?<!\$)(?<year>([0-24-9]\d))(?!(\s*(([:.]\d)|keer|uurs?|{AmDescRegex}|{PmDescRegex})))\b";
+      public static readonly string TwoDigitYearRegex = $@"\b(?<!\$)(?<year>([0-24-9]\d))(?!(\s*(([:\.]\d)|keer|uurs?|{AmDescRegex}|{PmDescRegex})))\b";
       public static readonly string YearRegex = $@"({BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})";
       public const string WeekDayRegex = @"\b(?<weekday>((ma|di(ns)?|wo(e(ns)?)?|do|vr(ij)?|zat?|zo)(\.|\b))|((?:maan|dins|woens|donder|vrij|zater|zon)(dag(en)?)?(middag)?)\b)";
       public const string SingleWeekDayRegex = @"\b(?<weekday>(((ma|di(ns)?|wo(e(ns)?)?|do|vr|za)\b(\.)?)|(vrij|zat|zon?)\.(?!$)|(((?<!in\s+de\s+)(maan|dins|woens|donder|zater)(dag(en)?)?|(?<=(op|voor)\s+)(vrij|zon?|zat)|vrij(dag(en)?))\b))|zondag|maandag|dinsdag|woensdag|donderdag|vrijdag|zaterdag)";
