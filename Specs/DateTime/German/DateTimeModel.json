@@ -875,8 +875,8 @@
     "NotSupported": "python",
     "Results": [
       {
-        "Text": "mittwochs",
-        "Start": 22,
+        "Text": "immer mittwochs",
+        "Start": 16,
         "End": 30,
         "TypeName": "datetimeV2.set",
         "Resolution": {
@@ -4818,6 +4818,30 @@
               "timex": "2016-11-28",
               "type": "date",
               "value": "2016-11-28"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Kinderflohmarkt immer Sonnabends",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "immer sonnabends",
+        "Start": 16,
+        "End": 31,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-6",
+              "type": "set",
+              "value": "not resolved"
             }
           ]
         }
