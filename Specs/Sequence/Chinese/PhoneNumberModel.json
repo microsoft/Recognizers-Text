@@ -1750,7 +1750,7 @@
   },
   {
     "Input": "我的电话号是+55 15 3702-7523.",
-    "NotSupported": "dotnet,javascript,python",
+    "NotSupported": "dotnet,javascript,python,java",
     "Results": [
       {
         "Text": "+55 15 3702-7523",
@@ -1763,7 +1763,7 @@
   },
   {
     "Input": "我的电话号是(+55) 15 3702-7523.",
-    "NotSupported": "dotnet,javascript,python",
+    "NotSupported": "dotnet,javascript,python,java",
     "Results": [
       {
         "Text": "(+55) 15 3702-7523",
@@ -1776,7 +1776,7 @@
   },
   {
     "Input": "我的电话号是(+55)1537027523.",
-    "NotSupported": "dotnet,javascript,python",
+    "NotSupported": "dotnet,javascript,python,java",
     "Results": [
       {
         "Text": "(+55)1537027523",
@@ -1789,7 +1789,7 @@
   },
   {
     "Input": "我的电话号是(+55)(15)3702-7523.",
-    "NotSupported": "dotnet,javascript,python",
+    "NotSupported": "dotnet,javascript,python,java",
     "Results": [
       {
         "Text": "(+55)(15)3702-7523",
@@ -1802,7 +1802,7 @@
   },
   {
     "Input": "我的电话号是(+55) 15 99202-7523.",
-    "NotSupported": "dotnet,javascript,python",
+    "NotSupported": "dotnet,javascript,python,java",
     "Results": [
       {
         "Text": "(+55) 15 99202-7523",
@@ -2222,7 +2222,7 @@
   },
   {
     "Input": "我的电话号是+420 123 456 789.",
-    "NotSupported": "dotnet,javascript,python",
+    "NotSupported": "dotnet,javascript,python,java",
     "Results": [
       {
         "Text": "+420 123 456 789",
@@ -3163,7 +3163,7 @@
   },
   {
     "Input": "我的电话号是+421 123 456 789.",
-    "NotSupported": "dotnet,javascript,python",
+    "NotSupported": "dotnet,javascript,python,java",
     "Results": [
       {
         "Text": "+421 123 456 789",
@@ -3204,7 +3204,7 @@
   },
   {
     "Input": "我的电话号是(0161) 123 4567.",
-    "NotSupported": "dotnet,javascript,python",
+    "NotSupported": "dotnet,javascript,python,java",
     "Results": [
       {
         "Text": "(0161) 123 4567",
@@ -3231,7 +3231,7 @@
   },
   {
     "Input": "我的电话号是+44 161 123 4567.",
-    "NotSupported": "dotnet,javascript,python",
+    "NotSupported": "dotnet,javascript,python,java",
     "Results": [
       {
         "Text": "+44 161 123 4567",

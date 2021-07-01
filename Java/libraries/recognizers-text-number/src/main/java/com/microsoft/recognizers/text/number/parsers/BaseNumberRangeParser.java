@@ -71,12 +71,12 @@ public class BaseNumberRangeParser implements IParser {
         char rightBracket;
 
         String type = (String)extractResult.getData();
-        if (type.contains(NumberRangeConstants.TWONUMBETWEEN)) {
-            // between 20 and 30: (20,30)
-            leftBracket = NumberRangeConstants.LEFT_OPEN;
-            rightBracket = NumberRangeConstants.RIGHT_OPEN;
-        } else if (type.contains(NumberRangeConstants.TWONUMTILL)) {
+        if (type.contains(NumberRangeConstants.TWONUMCLOSED)) {
+            leftBracket = NumberRangeConstants.LEFT_CLOSED;
+            rightBracket = NumberRangeConstants.RIGHT_CLOSED;
+        } else if (type.contains(NumberRangeConstants.TWONUMTILL) || type.contains(NumberRangeConstants.TWONUMBETWEEN)) {
             // 20~30: [20,30)
+            // between 20 and 30: [20,30)
             leftBracket = NumberRangeConstants.LEFT_CLOSED;
             rightBracket = NumberRangeConstants.RIGHT_OPEN;
         } else {

@@ -2059,7 +2059,7 @@
   },
   {
     "Input": "1 in twenty-one",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "1",

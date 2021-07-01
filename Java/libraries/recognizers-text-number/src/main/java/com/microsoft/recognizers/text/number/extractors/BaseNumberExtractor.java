@@ -2,6 +2,8 @@ package com.microsoft.recognizers.text.number.extractors;
 
 import com.microsoft.recognizers.text.ExtractResult;
 import com.microsoft.recognizers.text.IExtractor;
+import com.microsoft.recognizers.text.Metadata;
+import com.microsoft.recognizers.text.number.Constants;
 import com.microsoft.recognizers.text.number.LongFormatType;
 import com.microsoft.recognizers.text.number.NumberOptions;
 import com.microsoft.recognizers.text.number.resources.BaseNumbers;
@@ -102,6 +104,11 @@ public abstract class BaseNumberExtractor implements IExtractor {
                                 subStr,
                                 getExtractType(),
                                 matchSource.containsKey(srcMatch) ? matchSource.get(srcMatch) : null);
+
+                        // Add Metadata information for Ordinal
+                        if (getExtractType().contains(Constants.MODEL_ORDINAL)) {
+                            er.setMetadata(new Metadata());
+                        }
 
                         result.add(er);
                     }

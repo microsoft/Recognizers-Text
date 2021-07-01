@@ -3,6 +3,7 @@ package com.microsoft.recognizers.text.number.parsers;
 import com.microsoft.recognizers.text.CultureInfo;
 import com.microsoft.recognizers.text.ExtractResult;
 import com.microsoft.recognizers.text.IParser;
+import com.microsoft.recognizers.text.Metadata;
 import com.microsoft.recognizers.text.ParseResult;
 import com.microsoft.recognizers.text.number.Constants;
 import com.microsoft.recognizers.text.utilities.QueryProcessor;
@@ -18,6 +19,8 @@ import java.util.Set;
 import java.util.Stack;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import org.apache.commons.lang3.StringUtils;
 
 public class BaseNumberParser implements IParser {
 
@@ -116,6 +119,13 @@ public class BaseNumberParser implements IParser {
             ret.setResolutionStr(resolutionStr);
         }
 
+        // Add "offset" and "relativeTo" for ordinal
+        if (StringUtils.isNotBlank(ret.getType()) && ret.getType().contains(Constants.MODEL_ORDINAL)) {
+            ret.getMetadata().setOffset(ret.getResolutionStr());
+            // Every ordinal number is relative to the start
+            ret.getMetadata().setRelativeTo(Constants.RELATIVE_START);
+        }
+
         if (ret != null) {
             ret.setText(ret.getText().toLowerCase(Locale.ROOT));
         }
@@ -133,6 +143,8 @@ public class BaseNumberParser implements IParser {
 
         ParseResult result = new ParseResult(extractResult.getStart(), extractResult.getLength(), extractResult.getText(),
                 extractResult.getType(),null,null,null);
+        Metadata metadata = extractResult.getMetadata() != null ? extractResult.getMetadata() : new Metadata();
+        result.setMetadata(metadata);
 
         //[1] 24
         //[2] 12 32/33
@@ -298,6 +310,7 @@ public class BaseNumberParser implements IParser {
     private ParseResult textNumberParse(ExtractResult extractResult) {
 
         ParseResult result = new ParseResult(extractResult.getStart(), extractResult.getLength(), extractResult.getText(), extractResult.getType(), null, null, null);
+        result.setMetadata(extractResult.getMetadata());
         String handle = extractResult.getText().toLowerCase();
 
         //region Special case for "dozen"

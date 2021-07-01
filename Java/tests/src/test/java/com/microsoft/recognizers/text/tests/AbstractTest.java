@@ -148,21 +148,25 @@ public abstract class AbstractTest {
                 .forEach(t -> {
                     ModelResult expected = t.getValue0();
                     ModelResult actual = t.getValue1();
-
-                    Assert.assertEquals(getMessage(currentCase, "typeName"), expected.typeName, actual.typeName);
-                    Assert.assertEquals(getMessage(currentCase, "text"), expected.text, actual.text);
-
-                    // If both properties are equal to 0, it means they don't exist, so it will skip the validation
-                    if (expected.start != 0 && expected.end != 0) {
-                        Assert.assertEquals(getMessage(currentCase, "start"), expected.start, actual.start);
-                        Assert.assertEquals(getMessage(currentCase, "end"), expected.end, actual.end);
-                    }
-                    assertModel(expected, actual, currentCase, testResolutionKeys);
+                    // Validate common properties of models
+                    assertModel(expected, actual);
+                    // Validate Resolution keys
+                    assertResolutionKeys(expected, actual, currentCase, testResolutionKeys);
                 });
     }
 
-    public static Collection<TestCase> enumerateTestCases(String recognizerType, String modelName) {
+    protected void assertModel(ModelResult expected, ModelResult actual){
+        Assert.assertEquals(getMessage(currentCase, "typeName"), expected.typeName, actual.typeName);
+        Assert.assertEquals(getMessage(currentCase, "text"), expected.text, actual.text);
+        if (expected.start != null) {
+            Assert.assertEquals(getMessage(currentCase, "start"), expected.start, actual.start);
+        }
+        if (expected.end != null) {
+            Assert.assertEquals(getMessage(currentCase, "end"), expected.end, actual.end);
+        }
+    }
 
+    public static Collection<TestCase> enumerateTestCases(String recognizerType, String modelName) {
         String recognizerTypePath = String.format(File.separator + recognizerType + File.separator);
 
         // Deserializer
@@ -304,9 +308,9 @@ public abstract class AbstractTest {
         return "Does not match " + propName + " on Input: \"" + testCase.input + "\"";
     }
 
-    protected void assertModel(ModelResult expected, ModelResult actual, TestCase currentCase, List<String> testResolutionKeys) {
+    protected void assertResolutionKeys(ModelResult expected, ModelResult actual, TestCase currentCase, List<String> testResolutionKeys) {
         for (String key : testResolutionKeys) {
-            Assert.assertEquals(getMessage(currentCase, key), expected.resolution.get(key), actual.resolution.get(key));
+            Assert.assertEquals(getMessage(currentCase, key), String.valueOf(expected.resolution.get(key)), String.valueOf(actual.resolution.get(key)));
         }
     }
 

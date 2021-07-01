@@ -21,7 +21,7 @@
   },
   {
     "Input": "The number is between 20 and 30.",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "between 20 and 30",
@@ -36,7 +36,7 @@
   },
   {
     "Input": "He ranks between the tenth and the fifteenth.",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "between the tenth and the fifteenth",
@@ -51,7 +51,7 @@
   },
   {
     "Input": "He scores between negative ten and fifteen.",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "between negative ten and fifteen",
@@ -810,7 +810,7 @@
   },
   {
     "Input": "The number range is 1000-5000",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "1000-5000",
@@ -825,7 +825,7 @@
   },
   {
     "Input": "The number range is 1000 - 5000",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "1000 - 5000",
@@ -840,7 +840,7 @@
   },
   {
     "Input": "The number range is 1000–5000",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "1000–5000",
@@ -855,7 +855,7 @@
   },
   {
     "Input": "The number range is 1000 – 5000",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "1000 – 5000",
@@ -870,7 +870,7 @@
   },
   {
     "Input": "How about 2 in 5 or more",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "2 in 5 or more",
@@ -931,7 +931,7 @@
   },
   {
     "Input": "Is it still the case when >30",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": ">30",
@@ -946,7 +946,7 @@
   },
   {
     "Input": "Is it still the case when >= 30",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": ">= 30",
@@ -961,7 +961,7 @@
   },
   {
     "Input": "Is it still the case when <-30",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "<-30",
@@ -976,7 +976,7 @@
   },
   {
     "Input": "Is it still the case when <=  -30",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "<=  -30",
@@ -991,17 +991,17 @@
   },
   {
     "Input": "<>30",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": []
   },
   {
     "Input": "=>30",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": []
   },
   {
     "Input": "=<30",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": []
   },
   {
@@ -1021,7 +1021,7 @@
   },
   {
     "Input": "The number is from 200 to 300 in 2008",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": []
   },
   {
@@ -1350,7 +1350,7 @@
   },
   {
     "Input": "find sales greater than 30 and less than or equal to 40",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "greater than 30 and less than or equal to 40",

@@ -5,6 +5,7 @@ public abstract class NumberRangeConstants {
     public static final String TWONUM = "TwoNum";
     public static final String TWONUMBETWEEN = "TwoNumBetween";
     public static final String TWONUMTILL = "TwoNumTill";
+    public static final String TWONUMCLOSED = "TwoNumClosed";
     public static final String MORE = "More";
     public static final String LESS = "Less";
     public static final String EQUAL = "Equal";

@@ -10,6 +10,8 @@ import com.microsoft.recognizers.text.sequence.resources.BasePhoneNumbers;
 import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
+import java.math.BigDecimal;
+import java.math.MathContext;
 import java.util.Arrays;
 import java.util.regex.Pattern;
 
@@ -34,7 +36,7 @@ public class PhoneNumberParser extends BaseSequenceParser {
 
     // @TODO move regexes to base resource files
     private static String COMPLETE_BRACKET_REGEX = "\\(.*\\)";
-    private static String SINGLE_BRACKER_REGEX = "\\(|\\)";
+    private static String SINGLE_BRACKET_REGEX = "\\(|\\)";
     private static String TAIL_SAME_DIGIT_REGEX = "([\\d])\\1{2,10}$";
     private static String PURE_DIGIT_REGEX = "^\\d*$";
     private static String CONTINUE_DIGIT_REGEX = "\\d{5}\\d*";
@@ -46,7 +48,7 @@ public class PhoneNumberParser extends BaseSequenceParser {
     private static final Pattern NO_AREA_CODE_US_PHONE_NUMBER_REGEX = Pattern
             .compile(BasePhoneNumbers.NoAreaCodeUSPhoneNumberRegex);
 
-    public static Double scorePhoneNumber(String phoneNumberText) {
+    public static BigDecimal scorePhoneNumber(String phoneNumberText) {
         Double score = BASE_SCORE;
 
         // Country code score or area code score
@@ -60,7 +62,7 @@ public class PhoneNumberParser extends BaseSequenceParser {
             score += Math.min(formatIndicatorCount, MAX_FORMAT_INDICATOR_NUM) * FORMATTED_AWARD;
             Boolean anyMatch = Arrays.stream(formatMatches).anyMatch(match -> match.value.length() > 1);
             score -= anyMatch ? CONTINUE_FORMAT_INDICATOR_DEDUCTION_SCORE : 0;
-            if (Pattern.matches(SINGLE_BRACKER_REGEX, phoneNumberText) && !Pattern.matches(COMPLETE_BRACKET_REGEX, phoneNumberText)) {
+            if (Pattern.compile(SINGLE_BRACKET_REGEX).matcher(phoneNumberText).find() && !Pattern.compile(COMPLETE_BRACKET_REGEX).matcher(phoneNumberText).find()) {
                 score -= WRONG_FORMAT_DEDUCTION_SCORE;
             }
         }
@@ -96,8 +98,9 @@ public class PhoneNumberParser extends BaseSequenceParser {
             score += LENGTH_AWARD * 1.5;
         }
 
-        return Math.max(Math.min(score, SCORE_UPPER_LIMIT), SCORE_LOWER_LIMIT)
+        Double result = Math.max(Math.min(score, SCORE_UPPER_LIMIT), SCORE_LOWER_LIMIT)
                 / (SCORE_UPPER_LIMIT - SCORE_LOWER_LIMIT);
+        return new BigDecimal(result, new MathContext(2)).stripTrailingZeros();
     }
 
     @Override

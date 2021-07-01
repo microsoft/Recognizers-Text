@@ -2,6 +2,7 @@ package com.microsoft.recognizers.text.number.parsers;
 
 import com.microsoft.recognizers.text.ExtractResult;
 import com.microsoft.recognizers.text.ParseResult;
+import com.microsoft.recognizers.text.number.Constants;
 import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import com.microsoft.recognizers.text.utilities.StringUtility;
@@ -9,6 +10,8 @@ import com.microsoft.recognizers.text.utilities.StringUtility;
 import java.util.Locale;
 import java.util.Map;
 import java.util.regex.Pattern;
+
+import org.apache.commons.lang3.StringUtils;
 
 public class BaseCJKNumberParser extends BaseNumberParser {
 
@@ -31,6 +34,7 @@ public class BaseCJKNumberParser extends BaseNumberParser {
         ParseResult ret = null;
 
         ExtractResult getExtResult = new ExtractResult(extResult.getStart(), extResult.getLength(), extResult.getText(), extResult.getType(), extResult.getData());
+        getExtResult.setMetadata(extResult.getMetadata());
 
         if (config.getCultureInfo().cultureCode.equalsIgnoreCase("zh-CN")) {
             getExtResult.setText(replaceTraWithSim(getExtResult.getText()));
@@ -62,6 +66,13 @@ public class BaseCJKNumberParser extends BaseNumberParser {
             ret = parseInteger(getExtResult);
         } else if (extra.contains("Ordinal")) {
             ret = parseOrdinal(getExtResult);
+        }
+
+        // Add "offset" and "relativeTo" for ordinal
+        if (StringUtils.isNotBlank(ret.getType()) && ret.getType().contains(Constants.MODEL_ORDINAL)) {
+            ret.getMetadata().setOffset(ret.getResolutionStr());
+            // Every ordinal number is relative to the start
+            ret.getMetadata().setRelativeTo(Constants.RELATIVE_START);
         }
 
         if (ret != null) {
@@ -261,6 +272,7 @@ public class BaseCJKNumberParser extends BaseNumberParser {
     // Parse ordinal phrase.
     protected ParseResult parseOrdinal(ExtractResult extResult) {
         ParseResult result = new ParseResult(extResult.getStart(), extResult.getLength(), extResult.getText(), extResult.getType(), null, null, null);
+        result.setMetadata(extResult.getMetadata());
 
         String resultText = extResult.getText();
         resultText = resultText.substring(1);

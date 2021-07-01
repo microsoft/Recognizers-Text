@@ -627,8 +627,25 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
             String timex = (String)resolutionDic.get(DateTimeResolutionKey.Timex);
             timex = timex != null ? timex : "";
 
-            resolutionDic.remove(keyName);
-            resolutionDic.put(keyName + "Am", resolution);
+            // As resolutionDic is a LinkedHashMap and once a new value is set
+            // it goes as the last value, we need to keep the position after the replacement.
+            // Here it copies the resolutionDic map but appending the correct with Am
+            // to populate again the received LinkedHashMap.
+            // This is implemented because LinkedHashMap differs to Dictionary just in Java.
+            LinkedHashMap<String, Object> resolutionDicDuplicated = resolutionDic
+                    .entrySet()
+                    .stream()
+                    .collect(Collectors.toMap(e ->
+                        e.getKey() == keyName ? keyName + "Am" : e.getKey(),
+                        Map.Entry<String, Object>::getValue,
+                        (existing, replacement) -> existing,
+                        LinkedHashMap::new
+                    ));
+
+            resolutionDic.clear();
+            resolutionDicDuplicated.entrySet().stream().forEach(e -> {
+                resolutionDic.put(e.getKey(), e.getValue());
+            });
 
             switch ((String)resolutionDic.get(ResolutionKey.Type)) {
                 case Constants.SYS_DATETIME_TIME:

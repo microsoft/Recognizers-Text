@@ -3,6 +3,7 @@ package com.microsoft.recognizers.text.number.extractors;
 import com.microsoft.recognizers.text.ExtractResult;
 import com.microsoft.recognizers.text.IExtractor;
 import com.microsoft.recognizers.text.ParseResult;
+import com.microsoft.recognizers.text.number.NumberOptions;
 import com.microsoft.recognizers.text.number.NumberRangeConstants;
 import com.microsoft.recognizers.text.number.parsers.BaseNumberParser;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
@@ -31,6 +32,10 @@ public abstract class BaseNumberRangeExtractor implements IExtractor {
 
     protected abstract Map<Pattern, String> getRegexes();
 
+    protected NumberOptions getOptions() {
+        return NumberOptions.None;
+    }
+
     protected String getExtractType() {
         return "";
     }
@@ -47,7 +52,7 @@ public abstract class BaseNumberRangeExtractor implements IExtractor {
             return Collections.emptyList();
         }
 
-        List<ExtractResult> result = new ArrayList<>();
+        List<ExtractResult> results = new ArrayList<>();
         Map<Pair<Integer, Integer>, String> matchSource = new HashMap<>();
         boolean[] matched = new boolean[source.length()];
         Arrays.fill(matched, false);
@@ -94,7 +99,7 @@ public abstract class BaseNumberRangeExtractor implements IExtractor {
                     if (srcMatches.isPresent()) {
                         Pair<Integer, Integer> srcMatch = srcMatches.get();
                         ExtractResult er = new ExtractResult(start, length, substr, getExtractType(), matchSource.containsKey(srcMatch) ? matchSource.get(srcMatch) : null);
-                        result.add(er);
+                        results.add(er);
                     }
                 }
             } else {
@@ -102,7 +107,17 @@ public abstract class BaseNumberRangeExtractor implements IExtractor {
             }
         }
 
-        return result;
+        // In ExperimentalMode, cases like "from 3 to 5" and "between 10 and 15" are set to closed at both start and end
+        if ((getOptions().ordinal() & NumberOptions.ExperimentalMode.ordinal()) != 0) {
+            for (ExtractResult result: results) {
+                String data = (String)result.getData();
+                if (data == NumberRangeConstants.TWONUMBETWEEN ||
+                    data == NumberRangeConstants.TWONUMTILL) {
+                    result.setData(NumberRangeConstants.TWONUMCLOSED);
+                }
+            }
+        }
+        return results;
     }
 
     private Pair<Integer, Integer> getMatchedStartAndLength(Matcher match, String type, String source, int start, int length) {

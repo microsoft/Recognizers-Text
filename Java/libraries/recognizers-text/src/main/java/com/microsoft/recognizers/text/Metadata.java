@@ -31,6 +31,26 @@ public class Metadata {
         this.hasMod = hasMod;
     }
 
+    public String offset = "";
+
+    public String getOffset() {
+        return offset;
+    }
+
+    public void setOffset(String offset) {
+        this.offset = offset;
+    }
+
+    public String relativeTo = "";
+
+    public String getRelativeTo() {
+        return relativeTo;
+    }
+
+    public void setRelativeTo(String relativeTo) {
+        this.relativeTo = relativeTo;
+    }
+
     public boolean getIsPossiblyIncludePeriodEnd() {
         return possiblyIncludePeriodEnd;
     }

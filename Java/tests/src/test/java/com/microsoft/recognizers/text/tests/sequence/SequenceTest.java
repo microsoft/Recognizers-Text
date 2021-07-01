@@ -36,7 +36,18 @@ public class SequenceTest extends AbstractTest {
         List<ModelResult> results = recognize(currentCase);
 
         // assert
-        assertResults(currentCase, results, Arrays.asList(ResolutionKey.Value));
+        assertResults(currentCase, results, getKeysToTest(currentCase));
+    }
+    private List<String> getKeysToTest(TestCase currentCase) {
+        switch (currentCase.modelName) {
+            case "GUIDModel":
+            case "PhoneNumberModel":
+                return Arrays.asList(ResolutionKey.Value, ResolutionKey.Score);
+            case "IpAddressModel":
+                return Arrays.asList(ResolutionKey.Value, ResolutionKey.Type);
+            default:
+                return Arrays.asList(ResolutionKey.Value);
+        }
     }
 
     @Override
