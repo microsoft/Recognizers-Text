@@ -1133,7 +1133,7 @@
         "Start": 44,
         "Length": 21
       },
-	  {
+      {
         "Text": "deze week op zondag",
         "Type": "date",
         "Start": 69,
@@ -2655,6 +2655,61 @@
         "Type": "date",
         "Start": 15,
         "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "ik zal tweeëntwintig juni 2017 teruggaan",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "tweeëntwintig juni 2017",
+        "Type": "date",
+        "Start": 7,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "6,107.31 augustus 2019 moet het decimaal niet bevatten",
+    "Comment": "Only August 2019 should be extracted as a DateRange, so no output in Date only. Java disabled due to issue in lookbehind.",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "ik zal 1-sep-2019 teruggaan",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "1-sep-2019",
+        "Type": "date",
+        "Start": 7,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "ik zal 01/sep/2019 teruggaan",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "01/sep/2019",
+        "Type": "date",
+        "Start": 7,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Boek een reis voor me op 26 juni van 2020",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "26 juni van 2020",
+        "Type": "date",
+        "Start": 25,
+        "Length": 16
       }
     ]
   }

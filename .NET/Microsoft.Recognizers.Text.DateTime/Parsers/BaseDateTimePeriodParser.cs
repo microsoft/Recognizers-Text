@@ -593,20 +593,28 @@ namespace Microsoft.Recognizers.Text.DateTime
             var dateResult = this.Config.DateExtractor.Extract(text, referenceTime);
             if (dateResult.Count > 0)
             {
+                DateTimeParseResult pr = new DateTimeParseResult();
                 var beforeString = text.Substring(0, (int)dateResult.Last().Start).TrimEnd();
                 var match = Config.PrefixDayRegex.Match(beforeString);
+                if (match.Success)
+                {
+                    pr = this.Config.DateParser.Parse(dateResult.Last(), referenceTime);
+                }
 
                 // Check also afterString
                 if (!match.Success && this.Config.CheckBothBeforeAfter)
                 {
-                    var afterString = text.Substring((int)(dateResult.Last().Start + dateResult.Last().Length),
-                        text.Length - ((int)(dateResult.Last().Start + dateResult.Last().Length))).TrimStart();
+                    var afterString = text.Substring((int)(dateResult.First().Start + dateResult.First().Length),
+                        text.Length - ((int)(dateResult.First().Start + dateResult.First().Length))).TrimStart();
                     match = Config.PrefixDayRegex.Match(afterString);
+                    if (match.Success)
+                    {
+                        pr = this.Config.DateParser.Parse(dateResult.First(), referenceTime);
+                    }
                 }
 
                 if (match.Success)
                 {
-                    var pr = this.Config.DateParser.Parse(dateResult.Last(), referenceTime);
                     if (pr.Value != null)
                     {
                         var startTime = (DateObject)((DateTimeResolutionResult)pr.Value).FutureValue;
@@ -1101,7 +1109,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (bothHaveDates)
             {
-                ret.Timex = $"({pr1.TimexStr},{pr2.TimexStr},PT{Convert.ToInt32((futureEnd - futureBegin).TotalHours)}H)";
+                var duration = futureEnd - futureBegin;
+                var durationStr = Convert.ToInt32(duration.TotalHours) != 0 ? $"{Convert.ToInt32(duration.TotalHours)}H" :
+                    $"{Convert.ToInt32(duration.TotalMinutes)}M";
+                ret.Timex = $"({pr1.TimexStr},{pr2.TimexStr},PT{durationStr})";
 
                 // Do nothing
             }

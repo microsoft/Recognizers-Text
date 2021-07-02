@@ -688,9 +688,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var endTimex = hasYear || beginYearForPastResolution == endYearForFutureResolution ? DateTimeFormatUtil.LuisDate(endDateForPastResolution, endDateForFutureResolution) :
                         DateTimeFormatUtil.LuisDate(-1, endMonth, 1);*/
 
-                    var beginTimex = DateTimeFormatUtil.LuisDate(beginDateForPastResolution, beginDateForFutureResolution);
-                    var endTimex = DateTimeFormatUtil.LuisDate(endDateForPastResolution, endDateForFutureResolution);
-                    ret.Timex = $"({beginTimex},{endTimex},P{durationMonths}M)";
+                    // If the year is not specified, the combined range timex will use fuzzy years.
+                    ret.Timex = TimexUtility.GenerateDatePeriodTimex(beginDateForFutureResolution, endDateForFutureResolution, DatePeriodTimexType.ByMonth, beginDateForPastResolution, endDateForPastResolution, hasYear);
                     ret.PastValue = new Tuple<DateObject, DateObject>(beginDateForPastResolution, endDateForPastResolution);
                     ret.FutureValue = new Tuple<DateObject, DateObject>(beginDateForFutureResolution, endDateForFutureResolution);
                     ret.Success = true;
@@ -1196,7 +1195,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 hasHalf = true;
             }
 
-            return text;
+            return text.Trim();
         }
 
         private DateTimeResolutionResult HandleYearResult(DateTimeResolutionResult ret, bool hasHalf, bool isFirstHalf, int year)
@@ -1508,7 +1507,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             int year;
 
             int cardinal;
-            if (cardinalStr.Equals("最后一", StringComparison.Ordinal))
+            if (config.WoMLastRegex.IsExactMatch(cardinalStr, trim: true))
             {
                 cardinal = 5;
             }
@@ -1521,11 +1520,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (string.IsNullOrEmpty(monthStr))
             {
                 var swift = 0;
-                if (trimmedText.StartsWith("下个", StringComparison.Ordinal))
+                if (config.WoMNextRegex.MatchBegin(trimmedText, trim: true).Success)
                 {
                     swift = 1;
                 }
-                else if (trimmedText.StartsWith("上个", StringComparison.Ordinal))
+                else if (config.WoMPreviousRegex.MatchBegin(trimmedText, trim: true).Success)
                 {
                     swift = -1;
                 }

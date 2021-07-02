@@ -9,7 +9,7 @@
         "Text": "从五点半到六点",
         "Type": "timerange",
         "Value": {
-          "Timex": "(T05:30,T06,PT0H30M)",
+          "Timex": "(T05:30,T06,PT30M)",
           "FutureResolution": {
             "startTime": "05:30:00",
             "endTime": "06:00:00"
@@ -34,7 +34,7 @@
         "Text": "从下午五点一刻到六点",
         "Type": "timerange",
         "Value": {
-          "Timex": "(T17:15,T18,PT0H45M)",
+          "Timex": "(T17:15,T18,PT45M)",
           "FutureResolution": {
             "startTime": "17:15:00",
             "endTime": "18:00:00"
@@ -59,7 +59,7 @@
         "Text": "17:55:23-18:33:02",
         "Type": "timerange",
         "Value": {
-          "Timex": "(T17:55:23,T18:33:02,PT0H37M39S)",
+          "Timex": "(T17:55:23,T18:33:02,PT37M39S)",
           "FutureResolution": {
             "startTime": "17:55:23",
             "endTime": "18:33:02"
@@ -84,7 +84,7 @@
         "Text": "从17点55分23秒至18点33分02秒",
         "Type": "timerange",
         "Value": {
-          "Timex": "(T17:55:23,T18:33:02,PT0H37M39S)",
+          "Timex": "(T17:55:23,T18:33:02,PT37M39S)",
           "FutureResolution": {
             "startTime": "17:55:23",
             "endTime": "18:33:02"

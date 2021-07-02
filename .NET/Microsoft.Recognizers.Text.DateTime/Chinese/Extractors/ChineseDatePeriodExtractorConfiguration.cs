@@ -13,6 +13,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
     {
         public static readonly Regex TillRegex = new Regex(DateTimeDefinitions.DatePeriodTillRegex, RegexFlags);
 
+        public static readonly Regex RangePrefixRegex = new Regex(DateTimeDefinitions.DatePeriodRangePrefixRegex, RegexFlags);
+
+        public static readonly Regex RangeSuffixRegex = new Regex(DateTimeDefinitions.DatePeriodRangeSuffixRegex, RegexFlags);
+
         public static readonly Regex StrictYearRegex = new Regex(DateTimeDefinitions.StrictYearRegex, RegexFlags);
 
         public static readonly Regex YearInCJKRegex = new Regex(DateTimeDefinitions.DatePeriodYearInCJKRegex, RegexFlags);
@@ -129,5 +133,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         Regex ICJKDatePeriodExtractorConfiguration.NumberCombinedWithUnit => NumberCombinedWithUnit;
 
         Regex ICJKDatePeriodExtractorConfiguration.FollowedUnit => FollowedUnit;
+
+        Regex ICJKDatePeriodExtractorConfiguration.RangePrefixRegex => RangePrefixRegex;
+
+        Regex ICJKDatePeriodExtractorConfiguration.RangeSuffixRegex => RangeSuffixRegex;
     }
 }

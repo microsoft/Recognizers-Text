@@ -47,9 +47,9 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public const string RelativeMonthRegex = @"(?<relmonth>([nd]?es[st]e|pr[óo]ximo|passsado|[uú]ltimo)\s+m[eê]s)\b";
       public const string MonthRegex = @"(?<month>abr(il)?|ago(sto)?|dez(embro)?|fev(ereiro)?|jan(eiro)?|ju[ln](ho)?|mar([çc]o)?|maio?|nov(embro)?|out(ubro)?|sep?t(embro)?)";
       public static readonly string MonthSuffixRegex = $@"(?<msuf>((em|no)\s+|d[eo]\s+)?({RelativeMonthRegex}|{MonthRegex}))";
-      public const string DateUnitRegex = @"(?<unit>anos?|meses|m[êe]s|semanas?|dias?)\b";
+      public const string DateUnitRegex = @"(?<unit>m[êe]s(?<plural>es)?|(ano|semana|dia)(?<plural>s)?)\b";
       public const string PastRegex = @"(?<past>\b(passad[ao](s)?|[uú]ltim[oa](s)?|anterior(es)?|h[aá]|pr[ée]vi[oa](s)?)\b)";
-      public const string FutureRegex = @"(?<past>\b(seguinte(s)?|pr[oó]xim[oa](s)?|dentro\s+de|em|daqui\s+a)\b)";
+      public const string FutureRegex = @"(?<past>\b(seguinte(s)?|pr[oó]xim[oa](s)?|daqui\s+a)\b)";
       public static readonly string SimpleCasesRegex = $@"\b((desde\s+[oa]|desde|d[oa])\s+)?(dia\s+)?({DayRegex})\s*{TillRegex}\s*(o dia\s+)?({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*){YearRegex})?\b";
       public static readonly string MonthFrontSimpleCasesRegex = $@"\b{MonthSuffixRegex}\s+((desde\s+[oa]|desde|d[oa])\s+)?(dia\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex})((\s+|\s*,\s*){YearRegex})?\b";
       public static readonly string MonthFrontBetweenRegex = $@"\b{MonthSuffixRegex}\s+((entre|entre\s+[oa]s?)\s+)(dias?\s+)?({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})((\s+|\s*,\s*){YearRegex})?\b";
@@ -71,9 +71,11 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public const string MonthOfRegex = @"(mes)(\s*)((do|da|de))";
       public const string RangeUnitRegex = @"\b(?<unit>anos?|meses|m[êe]s|semanas?)\b";
       public const string BeforeAfterRegex = @"^[.]";
+      public const string UpcomingPrefixRegex = @".^";
+      public static readonly string NextPrefixRegex = $@"(pr[oó]xim[oa]s?|seguinte|{UpcomingPrefixRegex})\b";
       public const string InConnectorRegex = @"\b(em)\b";
       public const string SinceYearSuffixRegex = @"^[.]";
-      public const string WithinNextPrefixRegex = @"^[.]";
+      public static readonly string WithinNextPrefixRegex = $@"\b(dentro\s+d(e|as)(\s+(?<next>{NextPrefixRegex}))?)\b";
       public const string TodayNowRegex = @"\b(hoje|agora)\b";
       public const string CenturySuffixRegex = @"^[.]";
       public const string FromRegex = @"((desde|de)(\s*a(s)?)?)$";
@@ -162,7 +164,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public static readonly string PureNumBetweenAnd = $@"(entre\s+((a|as)?\s+)?)({BaseDateTime.HourRegex}|{TimeHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?\s*e\s*(a(s)?\s+)?({BaseDateTime.HourRegex}|{TimeHourNumRegex})\s*(?<rightDesc>{PmRegex}|{AmRegex}|{DescRegex})?";
       public const string SpecificTimeFromTo = @"^[.]";
       public const string SpecificTimeBetweenAnd = @"^[.]";
-      public const string TimeUnitRegex = @"(?<unit>horas?|h|minutos?|mins?|segundos?|se[cg]s?)\b";
+      public const string TimeUnitRegex = @"(?<unit>(hora|minuto|min|segundo|se[cg])(?<plural>s)?|h)\b";
       public static readonly string TimeFollowedUnit = $@"^\s*{TimeUnitRegex}";
       public static readonly string TimeNumberCombinedWithUnit = $@"\b(?<num>\d+(\,\d*)?)\s*{TimeUnitRegex}";
       public static readonly string DateTimePeriodNumberCombinedWithUnit = $@"\b(?<num>\d+(\.\d*)?)\s*{TimeUnitRegex}";
@@ -496,14 +498,13 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public const string TimeTokenPrefix = @"as ";
       public const string TokenBeforeDate = @"o ";
       public const string TokenBeforeTime = @"as ";
-      public const string UpcomingPrefixRegex = @".^";
-      public static readonly string NextPrefixRegex = $@"(pr[oó]xim[oa]|seguinte|{UpcomingPrefixRegex})\b";
       public const string PastPrefixRegex = @".^";
-      public static readonly string PreviousPrefixRegex = $@"([uú]ltim[oa]|{PastPrefixRegex})\b";
+      public static readonly string PreviousPrefixRegex = $@"([uú]ltim[oa]s?|{PastPrefixRegex})\b";
       public const string ThisPrefixRegex = @"([nd]?es[st][ea])\b";
       public const string RelativeDayRegex = @"^[\.]";
       public const string RestOfDateRegex = @"^[\.]";
-      public const string RelativeDurationUnitRegex = @"^[\.]";
+      public static readonly string DurationUnitRegex = $@"(?<unit>{DateUnitRegex}|{TimeUnitRegex}|noites?)\b";
+      public static readonly string RelativeDurationUnitRegex = $@"(?:(?<=({NextPrefixRegex}|{PreviousPrefixRegex}|{ThisPrefixRegex})\s+)({DurationUnitRegex}))";
       public const string ReferenceDatePeriodRegex = @"^[.]";
       public const string FromToRegex = @"\b(from).+(to)\b.+";
       public const string SingleAmbiguousMonthRegex = @"^(the\s+)?(may|march)$";
@@ -513,7 +514,6 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public const string SetWeekDayRegex = @"^[\.]";
       public const string NightRegex = @"\b(meia noite|noite|de noite)\b";
       public const string CommonDatePrefixRegex = @"\b(dia)\s+$";
-      public const string DurationUnitRegex = @"^[\.]";
       public const string DurationConnectorRegex = @"^[.]";
       public const string CenturyRegex = @"^[.]";
       public const string DecadeRegex = @"^[.]";
@@ -522,7 +522,10 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public static readonly string YearSuffix = $@"((,|\sde)?\s*({YearRegex}|{FullTextYearRegex}))";
       public const string SuffixAfterRegex = @"^[.]";
       public const string YearPeriodRegex = @"^[.]";
-      public const string FutureSuffixRegex = @"^[.]";
+      public const string FutureSuffixRegex = @"\b(seguinte(s)?|pr[oó]xim[oa](s)?|no\s+futuro)\b";
+      public const string PastSuffixRegex = @"^\b$";
+      public static readonly string ModPrefixRegex = $@"\b({RelativeRegex}|{AroundRegex}|{BeforeRegex}|{AfterRegex}|{SinceRegex})\b";
+      public static readonly string ModSuffixRegex = $@"\b({AgoRegex}|{LaterRegex}|{BeforeAfterRegex}|{FutureSuffixRegex}|{PastSuffixRegex})\b";
       public static readonly Dictionary<string, int> WrittenDecades = new Dictionary<string, int>
         {
             { @"", 0 }

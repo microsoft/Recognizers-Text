@@ -62,11 +62,11 @@ MonthSuffixRegex: !nestedRegex
   def: (?<msuf>((em|no)\s+|d[eo]\s+)?({RelativeMonthRegex}|{MonthRegex}))
   references: [ RelativeMonthRegex, MonthRegex ]
 DateUnitRegex: !simpleRegex
-  def: (?<unit>anos?|meses|m[êe]s|semanas?|dias?)\b
+  def: (?<unit>m[êe]s(?<plural>es)?|(ano|semana|dia)(?<plural>s)?)\b
 PastRegex: !simpleRegex
   def: (?<past>\b(passad[ao](s)?|[uú]ltim[oa](s)?|anterior(es)?|h[aá]|pr[ée]vi[oa](s)?)\b)
 FutureRegex: !simpleRegex
-  def: (?<past>\b(seguinte(s)?|pr[oó]xim[oa](s)?|dentro\s+de|em|daqui\s+a)\b)
+  def: (?<past>\b(seguinte(s)?|pr[oó]xim[oa](s)?|daqui\s+a)\b)
 SimpleCasesRegex: !nestedRegex
   def: \b((desde\s+[oa]|desde|d[oa])\s+)?(dia\s+)?({DayRegex})\s*{TillRegex}\s*(o dia\s+)?({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*){YearRegex})?\b
   references: [ DayRegex, TillRegex, MonthSuffixRegex, YearRegex ]
@@ -124,14 +124,20 @@ RangeUnitRegex: !simpleRegex
   def: \b(?<unit>anos?|meses|m[êe]s|semanas?)\b
 BeforeAfterRegex: !simpleRegex
   def: ^[.]
+UpcomingPrefixRegex: !simpleRegex
+  def: .^
+# TODO: modify below regex according to the counterpart in English
+NextPrefixRegex: !nestedRegex
+  def: (pr[oó]xim[oa]s?|seguinte|{UpcomingPrefixRegex})\b
+  references: [ UpcomingPrefixRegex ]
 InConnectorRegex: !simpleRegex
   def: \b(em)\b
 SinceYearSuffixRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
-WithinNextPrefixRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
+WithinNextPrefixRegex: !nestedRegex
+  def: \b(dentro\s+d(e|as)(\s+(?<next>{NextPrefixRegex}))?)\b
+  references: [ NextPrefixRegex ]
 TodayNowRegex: !simpleRegex
   def: \b(hoje|agora)\b
 CenturySuffixRegex: !simpleRegex
@@ -401,7 +407,7 @@ SpecificTimeBetweenAnd: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
 TimeUnitRegex: !simpleRegex
-  def: (?<unit>horas?|h|minutos?|mins?|segundos?|se[cg]s?)\b
+  def: (?<unit>(hora|minuto|min|segundo|se[cg])(?<plural>s)?|h)\b
 TimeFollowedUnit: !nestedRegex
   def: ^\s*{TimeUnitRegex}
   references: [ TimeUnitRegex ]
@@ -821,17 +827,11 @@ DateTokenPrefix: 'em '
 TimeTokenPrefix: 'as '
 TokenBeforeDate: 'o '
 TokenBeforeTime: 'as '
-UpcomingPrefixRegex: !simpleRegex
-  def: .^
-# TODO: modify below regex according to the counterpart in English
-NextPrefixRegex: !nestedRegex
-  def: (pr[oó]xim[oa]|seguinte|{UpcomingPrefixRegex})\b
-  references: [ UpcomingPrefixRegex ]
 PastPrefixRegex: !simpleRegex
   def: .^
 # TODO: modify below regex according to the counterpart in English
 PreviousPrefixRegex: !nestedRegex
-  def: ([uú]ltim[oa]|{PastPrefixRegex})\b
+  def: ([uú]ltim[oa]s?|{PastPrefixRegex})\b
   references: [PastPrefixRegex]
 ThisPrefixRegex: !simpleRegex
   def: ([nd]?es[st][ea])\b
@@ -841,9 +841,12 @@ RelativeDayRegex: !simpleRegex
 RestOfDateRegex: !simpleRegex
   # TODO: add this regex, let it correspond to the one in English
   def: ^[\.]
-RelativeDurationUnitRegex: !simpleRegex
-  # TODO: change to Portuguese according to corresponding Regex
-  def: ^[\.]
+DurationUnitRegex: !nestedRegex
+  def: (?<unit>{DateUnitRegex}|{TimeUnitRegex}|noites?)\b
+  references: [ DateUnitRegex, TimeUnitRegex ]
+RelativeDurationUnitRegex: !nestedRegex
+  def: (?:(?<=({NextPrefixRegex}|{PreviousPrefixRegex}|{ThisPrefixRegex})\s+)({DurationUnitRegex}))
+  references: [ NextPrefixRegex, PreviousPrefixRegex, ThisPrefixRegex, DurationUnitRegex ]
 ReferenceDatePeriodRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
@@ -869,9 +872,6 @@ NightRegex: !simpleRegex
   def: \b(meia noite|noite|de noite)\b
 CommonDatePrefixRegex: !simpleRegex
   def: \b(dia)\s+$
-DurationUnitRegex: !simpleRegex
-  # TODO: add this according to the related part in English
-  def: ^[\.]
 DurationConnectorRegex: !simpleRegex
   # TODO: add this according to the related part in English
   def: ^[.]
@@ -897,8 +897,15 @@ YearPeriodRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
 FutureSuffixRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
+  def: \b(seguinte(s)?|pr[oó]xim[oa](s)?|no\s+futuro)\b
+PastSuffixRegex: !simpleRegex
+  def: ^\b$
+ModPrefixRegex: !nestedRegex
+  def: \b({RelativeRegex}|{AroundRegex}|{BeforeRegex}|{AfterRegex}|{SinceRegex})\b
+  references: [RelativeRegex, AroundRegex, BeforeRegex, AfterRegex, SinceRegex ]
+ModSuffixRegex: !nestedRegex
+  def: \b({AgoRegex}|{LaterRegex}|{BeforeAfterRegex}|{FutureSuffixRegex}|{PastSuffixRegex})\b
+  references: [AgoRegex, LaterRegex, BeforeAfterRegex, FutureSuffixRegex, PastSuffixRegex]
 WrittenDecades: !dictionary
   types: [ string, int ]
   # TODO: modify below dictionary according to the counterpart in English

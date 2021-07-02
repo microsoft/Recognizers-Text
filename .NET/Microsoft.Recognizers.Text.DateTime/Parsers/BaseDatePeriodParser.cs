@@ -492,8 +492,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                             datePeriodTimexType = DatePeriodTimexType.ByWeek;
                         }
 
-                        ret.Timex = TimexUtility.GenerateDatePeriodTimex(futureBegin, futureEnd, datePeriodTimexType, pastBegin, pastEnd);
+                        var hasYear = !startResolution.Timex.StartsWith(Constants.TimexFuzzyYear, StringComparison.Ordinal) ||
+                            !endResolution.Timex.StartsWith(Constants.TimexFuzzyYear, StringComparison.Ordinal);
 
+                        // If the year is not specified, the combined range timex will use fuzzy years.
+                        ret.Timex = TimexUtility.GenerateDatePeriodTimex(futureBegin, futureEnd, datePeriodTimexType, pastBegin, pastEnd, hasYear);
                         ret.FutureValue = new Tuple<DateObject, DateObject>(futureBegin, futureEnd);
                         ret.PastValue = new Tuple<DateObject, DateObject>(pastBegin, pastEnd);
                         ret.Success = true;
@@ -2365,7 +2368,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 beginLuisStr = DateTimeFormatUtil.LuisDate(-1, 1, 1);
                 beginLuisStr = beginLuisStr.Replace("XXXX", beginYearStr);
 
-                var endYearStr = "XX" + (decade + totalLastYear);
+                var endYearStr = "XX" + ((decade + totalLastYear) % 100).ToString("D2", CultureInfo.InvariantCulture);
                 endLuisStr = DateTimeFormatUtil.LuisDate(-1, 1, 1);
                 endLuisStr = endLuisStr.Replace("XXXX", endYearStr);
             }

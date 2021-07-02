@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
@@ -442,6 +443,26 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             // DurationExtractor without parameter will not extract merged duration
             var ers = durationExtractor.Extract(text, referenceTime);
+
+            // If the duration extractions do not start at 0, check if the input starts with an isolated unit.
+            // This happens for example with patterns like "next week and 3 days" where "next" is not part of the extraction.
+            var minStart = ers.Min(er => er.Start);
+            if (minStart > 0)
+            {
+                var match = config.FollowedUnit.Match(text);
+                if (match.Success)
+                {
+                    var er = new ExtractResult
+                    {
+                        Start = match.Index,
+                        Length = match.Length,
+                        Text = match.Value,
+                        Type = ParserName,
+                        Data = null,
+                    };
+                    ers.Insert(0, er);
+                }
+            }
 
             // only handle merged duration cases like "1 month 21 days"
             if (ers.Count <= 1)

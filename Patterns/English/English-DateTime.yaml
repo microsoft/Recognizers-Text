@@ -42,7 +42,9 @@ CenturySuffixRegex: !simpleRegex
 ReferencePrefixRegex: !simpleRegex
   def: (that|same)\b
 FutureSuffixRegex: !simpleRegex
-  def: \b(in\s+the\s+)?(future|hence)\b
+  def: \b((in\s+the\s+)?future|hence)\b
+PastSuffixRegex: !simpleRegex
+  def: \b((in\s+the\s+)past)\b
 DayRegex: !simpleRegex
   def: (the\s*)?(?<!(\d+:?|\$)\s*)(?<day>(?:3[0-1]|[1-2]\d|0?[1-9])(?:th|nd|rd|st)?)(?=\b|t)
 ImplicitDayRegex: !simpleRegex
@@ -113,7 +115,7 @@ MonthSuffixRegex: !nestedRegex
   def: (?<msuf>(?:(in|of|on)\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))
   references: [ RelativeMonthRegex, WrittenMonthRegex ]
 DateUnitRegex: !simpleRegex
-  def: (?<unit>decades?|years?|months?|weeks?|(?<business>(business\s+|week\s*))?days?|fortnights?|weekends?|(?<=\s+\d{1,4})[ymwd])\b
+  def: (?<unit>(decade|year|month|week|(?<business>(business\s+|week\s*))?day|fortnight|weekend)(?<plural>s)?|(?<=\s+\d{1,4})[ymwd])\b
 DateTokenPrefix: 'on '
 TimeTokenPrefix: 'at '
 TokenBeforeDate: 'on '
@@ -369,7 +371,7 @@ IshRegex: !nestedRegex
   def: '\b({BaseDateTime.HourRegex}(-|——)?ish|noon(ish)?)\b'
   references: [ BaseDateTime.HourRegex ]
 TimeUnitRegex: !simpleRegex
-  def: ([^a-z]{1,}|\b)(?<unit>h(ou)?rs?|h|min(ute)?s?|sec(ond)?s?)\b
+  def: ([^a-z]{1,}|\b)(?<unit>(h(ou)?r|min(ute)?|sec(ond)?)(?<plural>s)?|h)\b
 RestrictedTimeUnitRegex: !simpleRegex
   def: (?<unit>hour|minute)\b
 FivesRegex: !simpleRegex
@@ -445,7 +447,7 @@ UnspecificTimePeriodRegex: !nestedRegex
   def: ({MealTimeRegex})
   references: [ MealTimeRegex ]
 TimeOfDayRegex: !nestedRegex
-  def: \b(?<timeOfDay>((((in\s+the\s+)?{LaterEarlyRegex}?(in(\s+the)?\s+)?(morning|afternoon|night|evening)))|{MealTimeRegex}|(((in\s+(the)?\s+)?)(daytime|business\s+hour)))s?)\b
+  def: \b(?<timeOfDay>((((in\s+the\s+)?{LaterEarlyRegex}?(in(\s+the)?\s+)?(morning|afternoon|night(-?time)?|evening)))|{MealTimeRegex}|(((in\s+(the)?\s+)?)(daytime|business\s+hour)))s?)\b
   references: [ LaterEarlyRegex, MealTimeRegex ]
 SpecificTimeOfDayRegex: !nestedRegex
   def: \b(({StrictRelativeRegex}\s+{TimeOfDayRegex})\b|\btoni(ght|te))s?\b
@@ -548,10 +550,13 @@ HolidayList2: !simpleRegex
 # General holidays (must be followed by "day")
 HolidayList3: !simpleRegex
   def: (?<holiday>(?:independence|presidents(?:')?|mlk|martin luther king( jr)?|canberra|ascension|columbus|tree( planting)?|arbor|labou?r|((international|int'?l)\s+)?workers'?|mother'?s?|father'?s?|female|women('s)?|single|teacher'?s|youth|children|girls|lovers?|earth|inauguration|groundhog|valentine'?s|baptiste|bastille|veterans(?:')?|memorial|mid[ \-]autumn|moon|spring|lantern)\s+day)
+# Islamic holidays
+HolidayList4: !simpleRegex
+  def: (?<holiday>ramad(h)?an|ram(a)?zan|ramathan|eid al(-|\s+)adha|eid al(-|\s+)azha|eidul(-|\s+)azha|feast of the sacrifice|(islamic|arabic|hijri) new year|eid al(-|\s+)fitr|festival of breaking the fast)
 # Combined holiday regex
 HolidayRegex: !nestedRegex
-  def: \b(({StrictRelativeRegex}\s+({HolidayList1}|{HolidayList2}|{HolidayList3}))|(({HolidayList1}|{HolidayList2}|{HolidayList3})(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?))\b
-  references: [ HolidayList1, HolidayList2, HolidayList3, YearRegex, RelativeRegex, StrictRelativeRegex ]
+  def: \b(({StrictRelativeRegex}\s+({HolidayList1}|{HolidayList2}|{HolidayList3}|{HolidayList4}))|(({HolidayList1}|{HolidayList2}|{HolidayList3}|{HolidayList4})(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?))\b
+  references: [ HolidayList1, HolidayList2, HolidayList3, HolidayList4, YearRegex, RelativeRegex, StrictRelativeRegex ]
 AMTimeRegex: !simpleRegex
   def: (?<am>morning)
 PMTimeRegex: !simpleRegex
@@ -581,12 +586,18 @@ SinceRegexExp: !nestedRegex
   def: ({SinceRegex}|\bfrom(\s+the)?\b)
   references: [ SinceRegex ]
 AgoRegex: !simpleRegex
-  def: \b(ago|before\s+(?<day>yesterday|today))\b
+  def: \b(ago|earlier|before\s+(?<day>yesterday|today))\b
 LaterRegex: !nestedRegex
   def: \b(?:later(?!((\s+in)?\s*{OneWordPeriodRegex})|(\s+{TimeOfDayRegex})|\s+than\b)|from now|(from|after)\s+(?<day>tomorrow|tmr|today))\b
   references: [ OneWordPeriodRegex, TimeOfDayRegex ]
 BeforeAfterRegex: !simpleRegex
   def: \b((?<before>before)|(?<after>from|after))\b
+ModPrefixRegex: !nestedRegex
+  def: \b({RelativeRegex}|{AroundRegex}|{BeforeRegex}|{AfterRegex}|{SinceRegex})\b
+  references: [RelativeRegex, AroundRegex, BeforeRegex, AfterRegex, SinceRegex ]
+ModSuffixRegex: !nestedRegex
+  def: \b({AgoRegex}|{LaterRegex}|{BeforeAfterRegex}|{FutureSuffixRegex}|{PastSuffixRegex})\b
+  references: [AgoRegex, LaterRegex, BeforeAfterRegex, FutureSuffixRegex, PastSuffixRegex]
 InConnectorRegex: !simpleRegex
   def: \b(in)\b
 SinceYearSuffixRegex: !nestedRegex
@@ -1121,6 +1132,11 @@ HolidayNames: !dictionary
     christmaseve: [ christmaseve ]
     newyeareve: [ newyearseve, newyeareve ]
     juneteenth: [ juneteenth, freedomday, jubileeday]
+    # Islamic Holidays
+    ramadan: [ ramadan, ramazan, ramzan, ramadhan, ramathan ]
+    sacrifice: [ eidaladha, eidalazha, eidulazha, feastofthesacrifice ] 
+    islamicnewyear: [ islamicnewyear, hijrinewyear, arabicnewyear ]
+    eidalfitr: [ eidalfitr, festivalofbreakingthefast ] 
 WrittenDecades: !dictionary
   types: [ string, int ]
   entries:
@@ -1204,6 +1220,11 @@ NightTermList: !list
   types: [ string ]
   entries: 
     - night
+NighttimeTermList: !list
+  types: [ string ]
+  entries: 
+    - nighttime
+    - night-time
 SameDayTerms: !list
   types: [ string ]
   entries: 

@@ -27,8 +27,8 @@ namespace Microsoft.Recognizers.Definitions.French
       public const string RangeConnectorRegex = @"(?<and>de la|au|[aà]|et(\s*la)?|--|-|—|——)";
       public const string RelativeRegex = @"(?<order>prochaine?|de|du|ce(tte)?|l[ae]|derni[eè]re|hier|pr[eé]c[eé]dente|au\s+cours+(de|du\s*))";
       public const string StrictRelativeRegex = @"(?<order>prochaine?|derni[eè]re|hier|pr[eé]c[eé]dente|au\s+cours+(de|du\s*))";
-      public const string NextSuffixRegex = @"(?<order>prochaines?|prochain|suivante)\b";
-      public const string PastSuffixRegex = @"(?<order>derni[eè]re?|pr[eé]c[eé]dente)\b";
+      public const string NextSuffixRegex = @"(?<order>prochain(es?)?|suivante)\b";
+      public const string PastSuffixRegex = @"(?<order>derni[eè]r(es?)?|pr[eé]c[eé]dente)\b";
       public const string ThisPrefixRegex = @"(?<order>ce(tte)?|au\s+cours+(du|de))\b";
       public const string RangePrefixRegex = @"(du|depuis|des?|entre)";
       public const string DayRegex = @"(?<day>(?:3[0-1]|[1-2]\d|0?[1-9])(e(r)?)?)(?=\b|t)";
@@ -46,7 +46,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public static readonly string RelativeMonthRegex = $@"(?<relmonth>({ThisPrefixRegex}\s+mois)|(mois\s+{PastSuffixRegex})|(mois\s+{NextSuffixRegex}))\b";
       public const string WrittenMonthRegex = @"(?<month>avril|avr(\.)?|ao[uû]t|d[eé]cembre|d[eé]c(\.)?|f[eé]vrier|f[eé]vr?(\.)?|janvier|janv?(\.)?|juillet|jui?[ln](\.)?|mars?(\.)?|mai|novembre|nov(\.)?|octobre|oct(\.)?|septembre|sept?(\.)?(?!\s+heures))";
       public static readonly string MonthSuffixRegex = $@"(?<msuf>(en\s*|le\s*|de\s*|dans\s*)?({RelativeMonthRegex}|{WrittenMonthRegex}))";
-      public const string DateUnitRegex = @"(?<unit>(l')?ann[eé]es?|an|mois|semaines?|journ[eé]es?|jours?)\b";
+      public const string DateUnitRegex = @"(?<unit>an|mois|((l')?ann[eé]e|semaine|journ[eé]e|jour)(?<plural>s)?)\b";
       public static readonly string SimpleCasesRegex = $@"\b((d[ue])|entre\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*){YearRegex})?\b";
       public static readonly string MonthFrontSimpleCasesRegex = $@"\b((d[ue]|entre)\s+)?{MonthSuffixRegex}\s+((d[ue]|entre)\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex})((\s+|\s*,\s*){YearRegex})?\b";
       public static readonly string MonthFrontBetweenRegex = $@"\b{MonthSuffixRegex}\s+(entre|d[ue]\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})((\s+|\s*,\s*){YearRegex})?\b";
@@ -120,7 +120,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public static readonly string MidTimeRegex = $@"(?<mid>({MidnightRegex}|{MidmorningRegex}|{MidafternoonRegex}|{MiddayRegex}))";
       public static readonly string AtRegex = $@"\b(((?<=\b[àa]\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}|{MidTimeRegex}))|{MidTimeRegex})\b";
       public static readonly string IshRegex = $@"\b(peu\s*pr[èe]s\s*{BaseDateTime.HourRegex}|peu\s*pr[èe]s\s*{WrittenTimeRegex}|peu\s*pr[èe]s\s*[àa]\s*{BaseDateTime.HourRegex}|peu pr[èe]s midi)\b";
-      public const string TimeUnitRegex = @"(?<unit>heures?|hrs?|h|minutes?|mins?|secondes?|secs?)\b";
+      public const string TimeUnitRegex = @"(?<unit>h|(heure|hr|minute|min|seconde|sec)(?<plural>s)?)\b";
       public const string RestrictedTimeUnitRegex = @"(?<unit>huere|minute)\b";
       public static readonly string ConnectNumRegex = $@"{BaseDateTime.HourRegex}(?<min>[0-5][0-9])\s*{DescRegex}";
       public const string FivesRegex = @"(?<tens>(quinze|vingt(\s*|-*(cinq))?|trente(\s*|-*(cinq))?|quarante(\s*|-*(cinq))??|cinquante(\s*|-*(cinq))?|dix|cinq))\b";
@@ -213,7 +213,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public const string InexactNumberRegex = @"\b(quel qu[ée]s|quelqu[ée]s?|plusieurs?|divers)\b";
       public static readonly string InexactNumberUnitRegex = $@"({InexactNumberRegex})\s+({DurationUnitRegex})";
       public static readonly string RelativeTimeUnitRegex = $@"(((({ThisPrefixRegex})?)\s+({TimeUnitRegex}(\s*{NextSuffixRegex}|{PastSuffixRegex})?))|((le))\s+({RestrictedTimeUnitRegex}))";
-      public static readonly string RelativeDurationUnitRegex = $@"((\b({DurationUnitRegex})(\s+{NextSuffixRegex}|{PastSuffixRegex})?)|((le|my))\s+({RestrictedTimeUnitRegex}))";
+      public static readonly string RelativeDurationUnitRegex = $@"\b(((?<=({NextSuffixRegex}|{PastSuffixRegex})\s+)({DurationUnitRegex}))|(({DurationUnitRegex})(\s+({NextSuffixRegex}|{PastSuffixRegex}))?)|((le|my))\s+({RestrictedTimeUnitRegex}))\b";
       public const string ReferenceDatePeriodRegex = @"^\b$";
       public const string UpcomingPrefixRegex = @".^";
       public const string NextPrefixRegex = @".^";
@@ -253,6 +253,8 @@ namespace Microsoft.Recognizers.Definitions.French
       public const string SuffixAfterRegex = @"^\b$";
       public const string YearPeriodRegex = @"^\b$";
       public const string FutureSuffixRegex = @"\b(dans\s+le\s+futur)\b";
+      public static readonly string ModPrefixRegex = $@"\b({RelativeRegex}|{AroundRegex}|{BeforeRegex}|{AfterRegex}|{SinceRegex})\b";
+      public static readonly string ModSuffixRegex = $@"\b({AgoRegex}|{LaterRegex}|{BeforeAfterRegex}|{FutureSuffixRegex}|{PastSuffixRegex})\b";
       public const string ComplexDatePeriodRegex = @"^\b$";
       public const string AmbiguousPointRangeRegex = @"^(mar\.?)$";
       public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>

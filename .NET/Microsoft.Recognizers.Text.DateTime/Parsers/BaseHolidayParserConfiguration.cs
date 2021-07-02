@@ -64,7 +64,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 { "fathers", FathersDay },
                 { "mothers", MothersDay },
-                { "thanksgivingday", ThanksgivingDay },
                 { "thanksgiving", ThanksgivingDay },
                 { "blackfriday", BlackFriday },
                 { "cybermonday", CyberMonday },

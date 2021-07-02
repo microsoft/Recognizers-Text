@@ -45,6 +45,13 @@ DateLastRegex: !nestedRegex
 DateNextRegex: !nestedRegex
   def: (下一个|下个|下一|下|来週)(的|の)?{WeekDayRegex}
   references: [WeekDayRegex]
+# TODO: Modify the 3 regex according to the counterpart in Korean
+WoMLastRegex: !simpleRegex
+  def: ^\b$
+WoMPreviousRegex: !simpleRegex
+  def: ^\b$
+WoMNextRegex: !simpleRegex
+  def: ^\b$
 SpecialMonthRegex: !simpleRegex
   def: (先月|来月|今月|前月|再来月|昨月|先々月|ぜんげつ|(せん)?せんげつ|さくげつ|らいげつ|こんげつ)
 SpecialYearRegex: !simpleRegex
@@ -122,6 +129,12 @@ DateRegexList11: !nestedRegex
 # DatePeriodExtractorCJK
 DatePeriodTillRegex: !simpleRegex
   def: (?<till>到|至|--|-|—|——|~|–)
+DatePeriodRangeSuffixRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Korean
+  def: ^\b$
+DatePeriodRangePrefixRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Korean
+  def: ^\b$
 # DatePeriodExtractorCJK
 # Note that these "Till" connector can only be used with some suffix like "之间|之内|期间|中间|间"
 DatePeriodTillSuffixRequiredRegex: !simpleRegex
@@ -386,7 +399,7 @@ TimeDigitTimeRegex: !nestedRegex
   def: (?<hour>{TimeHourNumRegex}):(?<min>{TimeMinuteNumRegex})(:(?<sec>{TimeSecondNumRegex}))?
   references: [TimeHourNumRegex, TimeMinuteNumRegex, TimeSecondNumRegex]
 TimeDayDescRegex: !nestedRegex
-  def: (?<daydesc>((?<=({TimeDigitTimeRegex}|{TimeCJKTimeRegex})(の)?)(夜明け|朝|早く|午後|夜|午前|日中|未明|白昼))|((夜明け|朝|早く|午後|夜|午前|日中|未明|白昼)(?=(の)?({TimeDigitTimeRegex}|{TimeCJKTimeRegex})))|(正午|深夜|夜中|午前半ば|(昼(食時)?)|真昼))
+  def: (?<daydesc>(正午|夜中|午前半ば|(昼食時)|真昼)|((?<=({TimeDigitTimeRegex}|{TimeCJKTimeRegex})(の)?)(早朝(に)?|午後(に)?|(深)?夜(に)?|未明|午前(中)?|日中|白昼|(未|早)?朝(に)?|昼前に|昼すぎに|夕方前に|夕方に|営業時間内に|昼))|((早朝(に)?|午後(に)?|(深)?夜(に)?|未明|午前(中)?|日中|白昼|(未|早)?朝(に)?|昼前に|昼すぎに|夕方前に|夕方に|営業時間内に|昼)(?=(の)?({TimeDigitTimeRegex}|{TimeCJKTimeRegex}))))
   references: [TimeDigitTimeRegex, TimeCJKTimeRegex]
 TimeApproximateDescPreffixRegex: !simpleRegex
   def: (ぐらい|おそらく|多分|ほとんど|まもなく|昨日の|昨日|明日の|明日|来週の|来週|昼食時|昼食|真)
@@ -403,31 +416,31 @@ TimeRegexes3: !nestedRegex
   references: [TimeDigitTimeRegex, TimeCJKTimeRegex, TimeDayDescRegex]
 #TimePeriodExtractorCJK
 TimePeriodTimePeriodConnectWords: !simpleRegex
-  def: (起|至|到|–|-|—|~|～)
+  def: (まで(の間)?|の間|–|-|—|~|～)
 TimePeriodLeftCJKTimeRegex: !nestedRegex
-  def: (从)?(?<left>{TimeDayDescRegex}?({TimeCJKTimeRegex}))
+  def: (?<left>{TimeDayDescRegex}?({TimeCJKTimeRegex}))(から)?
   references: [TimeDayDescRegex, TimeCJKTimeRegex]
 TimePeriodRightCJKTimeRegex: !nestedRegex
-  def: '{TimePeriodTimePeriodConnectWords}(?<right>{TimeDayDescRegex}?{TimeCJKTimeRegex})(之间)?'
+  def: '{TimePeriodTimePeriodConnectWords}?(?<right>{TimeDayDescRegex}?{TimeCJKTimeRegex}){TimePeriodTimePeriodConnectWords}?'
   references: [TimePeriodTimePeriodConnectWords, TimeDayDescRegex, TimeCJKTimeRegex]
 TimePeriodLeftDigitTimeRegex: !nestedRegex
-  def: (从)?(?<left>{TimeDayDescRegex}?({TimeDigitTimeRegex}))
+  def: (?<left>{TimeDayDescRegex}?({TimeDigitTimeRegex}))(から)?
   references: [TimeDayDescRegex, TimeDigitTimeRegex]
 TimePeriodRightDigitTimeRegex: !nestedRegex
-  def: '{TimePeriodTimePeriodConnectWords}(?<right>{TimeDayDescRegex}?{TimeDigitTimeRegex})(之间)?'
+  def: '{TimePeriodTimePeriodConnectWords}?(?<right>{TimeDayDescRegex}?{TimeDigitTimeRegex}){TimePeriodTimePeriodConnectWords}?'
   references: [TimePeriodTimePeriodConnectWords, TimeDayDescRegex, TimeDigitTimeRegex]
 TimePeriodShortLeftCJKTimeRegex: !nestedRegex
-  def: (从)?(?<left>{TimeDayDescRegex}?({TimeHourCJKRegex}))
+  def: (?<left>{TimeDayDescRegex}?({TimeHourCJKRegex}))(から)?
   references: [TimeDayDescRegex, TimeHourCJKRegex]
 TimePeriodShortLeftDigitTimeRegex: !nestedRegex
-  def: (从)?(?<left>{TimeDayDescRegex}?({TimeHourNumRegex}))
+  def: (?<left>{TimeDayDescRegex}?({TimeHourNumRegex}))(から)?
   references: [TimeDayDescRegex, TimeHourNumRegex]
 TimePeriodRegexes1: !nestedRegex
   def: ({TimePeriodLeftDigitTimeRegex}{TimePeriodRightDigitTimeRegex}|{TimePeriodLeftCJKTimeRegex}{TimePeriodRightCJKTimeRegex})
   references: [TimePeriodLeftDigitTimeRegex, TimePeriodRightDigitTimeRegex, TimePeriodLeftCJKTimeRegex, TimePeriodRightCJKTimeRegex]
 TimePeriodRegexes2: !nestedRegex
-  def: ({TimePeriodShortLeftDigitTimeRegex}{TimePeriodRightDigitTimeRegex}|{TimePeriodShortLeftCJKTimeRegex}{TimePeriodRightCJKTimeRegex})
-  references: [TimePeriodShortLeftDigitTimeRegex, TimePeriodRightDigitTimeRegex, TimePeriodShortLeftCJKTimeRegex, TimePeriodRightCJKTimeRegex]
+  def: (((早朝(に)?|午後(に)?|(深)?夜(に)?|未明|午前(中)?|日中|白昼|(未|早)?朝(に)?|昼前に|昼すぎに|夕方前に|夕方に|営業時間内に|昼)({TimePeriodShortLeftDigitTimeRegex}{TimePeriodRightDigitTimeRegex}|{TimePeriodShortLeftCJKTimeRegex}{TimePeriodRightCJKTimeRegex}))|((早朝(に)?|午後(に)?|(深)?夜(に)?|未明|午前(中)?|日中|白昼|(未|早)?朝(に)?|昼前に|昼すぎに|夕方前に|夕方に|営業時間内に|昼)(?=((?!({TimeCJKTimeRegex}|{TimeDigitTimeRegex})(から)?)))))
+  references: [TimePeriodShortLeftDigitTimeRegex, TimePeriodRightDigitTimeRegex, TimePeriodShortLeftCJKTimeRegex, TimePeriodRightCJKTimeRegex, TimeCJKTimeRegex, TimeDigitTimeRegex]
 #CJKDateTimeParserConfiguration
 FromToRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in Chinese
@@ -850,34 +863,43 @@ TimeLowBoundDesc: !dictionary
     午前半ば: 10
     正午: 12
     真昼: 12
-    昼: 12
     夜中: 0
     深夜: 0
     昼食時: 11
+    夕方に: 12
 DefaultLanguageFallback: DMY
 # For TimeOfDay resolution
-# TODO: modify below dictionaries according to the counterpart in Chinese
 MorningTermList: !list
   types: [ string ]
   entries: 
     - 午前半ば
+    - 午前中
     - 午前
     - 朝
     - 未明
+    - 昼前に
+    - 昼前
+    - 早朝に
+    - 早朝
 MidDayTermList: !list
   types: [ string ]
   entries: 
     - 正午
     - 真昼
-    - 昼
 AfternoonTermList: !list
   types: [ string ]
   entries: 
     - 午后
     - 午後
+    - 午後に
+    - 夕方前に
+    - 昼すぎに
+    - 昼すぎ
 EveningTermList: !list
   types: [ string ]
   entries: 
+    - 夕方に
+    - 夕方
     - 晚
     - 晚上
     - 夜里
@@ -888,13 +910,32 @@ DaytimeTermList: !list
   entries: 
     - 日中
     - 昼食時
+    - 昼
 NightTermList: !list
   types: [ string ]
   entries: 
     - 深夜
+    - 夜に
     - 夜
     - 夜中
     - 夜間
+BusinessHourTermList: !list
+  types: [ string ]
+  entries: 
+    - 営業時間内に
+    - 営業時間内
+EarlyHourTermList: !list
+  types: [ string ]
+  entries: 
+    - 早朝に
+    - 早朝
+    - 昼すぎに
+    - 昼すぎ
+LateHourTermList: !list
+  types: [ string ]
+  entries: 
+    - 昼前に
+    - 夕方前に
 DynastyYearMap: !dictionary
   types: [string, int]
   # TODO: populate dictionary according to the counterpart in Chinese
