@@ -292,12 +292,12 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                             if (!string.IsNullOrEmpty(matchAmStr) || rightAmValid)
                             {
-                                if (endHour >= Constants.HalfDayHourCount)
+                                if (endHour > Constants.HalfDayHourCount)
                                 {
                                     endHour -= Constants.HalfDayHourCount;
                                 }
 
-                                if (beginHour >= Constants.HalfDayHourCount && beginHour - Constants.HalfDayHourCount < endHour)
+                                if (beginHour > Constants.HalfDayHourCount && beginHour - Constants.HalfDayHourCount < endHour)
                                 {
                                     beginHour -= Constants.HalfDayHourCount;
                                 }
@@ -312,7 +312,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             }
                             else if (!string.IsNullOrEmpty(matchPmStr) || rightPmValid)
                             {
-                                if (endHour < Constants.HalfDayHourCount)
+                                if (endHour <= Constants.HalfDayHourCount)
                                 {
                                     endHour += Constants.HalfDayHourCount;
                                 }
@@ -555,7 +555,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     if (hasRightAm)
                     {
-                        if (endHour >= Constants.HalfDayHourCount)
+                        if (endHour > Constants.HalfDayHourCount)
                         {
                             endDateTime = endDateTime.AddHours(-Constants.HalfDayHourCount);
                         }
@@ -570,7 +570,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                     else if (hasRightPm)
                     {
-                        if (endHour < Constants.HalfDayHourCount)
+                        if (endHour <= Constants.HalfDayHourCount)
                         {
                             endDateTime = endDateTime.AddHours(Constants.HalfDayHourCount);
                         }

@@ -52,7 +52,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (potentialAmbiguity && this.config.AmbiguousRangeModifierPrefix != null && this.config.AmbiguousRangeModifierPrefix.IsMatch(beforeStr))
             {
                 var matches = this.config.PotentialAmbiguousRangeRegex.Matches(text).Cast<Match>();
-                if (matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start))
+
+                // Weak ambiguous matches are considered only if the extraction is of type range
+                if (matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start && !(m.Groups[Constants.AmbiguousPattern].Success && !er.Type.EndsWith("range"))))
                 {
                     return false;
                 }
@@ -333,7 +335,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 // AroundRegex is matched non-exclusively before the other relative regexes in order to catch also combined modifiers e.g. "before around 1pm"
                 TryMergeModifierToken(er, config.AroundRegex, text);
-                var success = TryMergeModifierToken(er, config.BeforeRegex, text);
+
+                // BeforeRegex in Dutch contains the term "voor" which is ambiguous (meaning both "for" and "before")
+                var success = TryMergeModifierToken(er, config.BeforeRegex, text, potentialAmbiguity: true);
 
                 if (!success)
                 {
