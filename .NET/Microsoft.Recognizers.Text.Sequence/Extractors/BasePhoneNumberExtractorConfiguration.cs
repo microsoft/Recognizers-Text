@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions;
+using Microsoft.Recognizers.Definitions.Utilities;
 
 namespace Microsoft.Recognizers.Text.Sequence
 {
@@ -16,6 +17,7 @@ namespace Microsoft.Recognizers.Text.Sequence
             ColonMarkers = (List<char>)BasePhoneNumbers.ColonMarkers;
             ForbiddenPrefixMarkers = (List<char>)BasePhoneNumbers.ForbiddenPrefixMarkers;
             ForbiddenSuffixMarkers = (List<char>)BasePhoneNumbers.ForbiddenSuffixMarkers;
+            AmbiguityFiltersDict = AmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(BasePhoneNumbers.AmbiguityFiltersDict);
         }
     }
 }

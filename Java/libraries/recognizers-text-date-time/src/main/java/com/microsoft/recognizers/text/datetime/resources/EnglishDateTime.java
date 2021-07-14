@@ -58,7 +58,9 @@ public class EnglishDateTime {
 
     public static final String ReferencePrefixRegex = "(that|same)\\b";
 
-    public static final String FutureSuffixRegex = "\\b(in\\s+the\\s+)?(future|hence)\\b";
+    public static final String FutureSuffixRegex = "\\b((in\\s+the\\s+)?future|hence)\\b";
+
+    public static final String PastSuffixRegex = "\\b((in\\s+the\\s+)past)\\b";
 
     public static final String DayRegex = "(the\\s*)?(?<!(\\d+:?|\\$)\\s*)(?<day>(?:3[0-1]|[1-2]\\d|0?[1-9])(?:th|nd|rd|st)?)(?=\\b|t)";
 
@@ -315,10 +317,10 @@ public class EnglishDateTime {
             .replace("{WeekDayRegex}", WeekDayRegex)
             .replace("{PrefixWeekDayRegex}", PrefixWeekDayRegex);
 
-    public static final String SpecialDayRegex = "\\b((the\\s+)?day before yesterday|(the\\s+)?day after (tomorrow|tmr)|the\\s+day\\s+(before|after)(?!=\\s+day)|((the\\s+)?({RelativeRegex}|my)\\s+day)|yesterday|tomorrow|tmr|today|otd)\\b"
+    public static final String SpecialDayRegex = "\\b((the\\s+)?day before yesterday|(the\\s+)?day after (tomorrow|tmr)|the\\s+day\\s+(before|after)(?!=\\s+day)|((the\\s+)?({RelativeRegex}|my)\\s+day)|yesterday|tomorrow|tmr|today|otd|current date)\\b"
             .replace("{RelativeRegex}", RelativeRegex);
 
-    public static final String SpecialDayWithNumRegex = "\\b((?<number>{WrittenNumRegex})\\s+days?\\s+from\\s+(?<day>yesterday|tomorrow|tmr|today))\\b"
+    public static final String SpecialDayWithNumRegex = "\\b((?<number>{WrittenNumRegex})\\s+days?\\s+from\\s+(?<day>yesterday|tomorrow|tmr|today|current date))\\b"
             .replace("{WrittenNumRegex}", WrittenNumRegex);
 
     public static final String RelativeDayRegex = "\\b(((the\\s+)?{RelativeRegex}\\s+day))\\b"
@@ -770,7 +772,7 @@ public class EnglishDateTime {
 
     public static final String NightTimeRegex = "(night)";
 
-    public static final String NowTimeRegex = "(now|at\\s+(present|this\\s+time|th(e|is)\\s+minute|the\\s+(moment|present\\s+time)))";
+    public static final String NowTimeRegex = "(now|at\\s+(present|this\\s+time|th(e|is)\\s+minute|the\\s+(moment|(current|present)\\s+time)))";
 
     public static final String RecentlyTimeRegex = "(recently|previously)";
 
@@ -791,13 +793,27 @@ public class EnglishDateTime {
     public static final String SinceRegexExp = "({SinceRegex}|\\bfrom(\\s+the)?\\b)"
             .replace("{SinceRegex}", SinceRegex);
 
-    public static final String AgoRegex = "\\b(ago|before\\s+(?<day>yesterday|today))\\b";
+    public static final String AgoRegex = "\\b(ago|earlier|before\\s+(?<day>yesterday|today))\\b";
 
     public static final String LaterRegex = "\\b(?:later(?!((\\s+in)?\\s*{OneWordPeriodRegex})|(\\s+{TimeOfDayRegex})|\\s+than\\b)|from now|(from|after)\\s+(?<day>tomorrow|tmr|today))\\b"
             .replace("{OneWordPeriodRegex}", OneWordPeriodRegex)
             .replace("{TimeOfDayRegex}", TimeOfDayRegex);
 
     public static final String BeforeAfterRegex = "\\b((?<before>before)|(?<after>from|after))\\b";
+
+    public static final String ModPrefixRegex = "\\b({RelativeRegex}|{AroundRegex}|{BeforeRegex}|{AfterRegex}|{SinceRegex})\\b"
+            .replace("{RelativeRegex}", RelativeRegex)
+            .replace("{AroundRegex}", AroundRegex)
+            .replace("{BeforeRegex}", BeforeRegex)
+            .replace("{AfterRegex}", AfterRegex)
+            .replace("{SinceRegex}", SinceRegex);
+
+    public static final String ModSuffixRegex = "\\b({AgoRegex}|{LaterRegex}|{BeforeAfterRegex}|{FutureSuffixRegex}|{PastSuffixRegex})\\b"
+            .replace("{AgoRegex}", AgoRegex)
+            .replace("{LaterRegex}", LaterRegex)
+            .replace("{BeforeAfterRegex}", BeforeAfterRegex)
+            .replace("{FutureSuffixRegex}", FutureSuffixRegex)
+            .replace("{PastSuffixRegex}", PastSuffixRegex);
 
     public static final String InConnectorRegex = "\\b(in)\\b";
 
@@ -808,7 +824,7 @@ public class EnglishDateTime {
     public static final String WithinNextPrefixRegex = "\\b(within(\\s+the)?(\\s+(?<next>{NextPrefixRegex}))?)\\b"
             .replace("{NextPrefixRegex}", NextPrefixRegex);
 
-    public static final String TodayNowRegex = "\\b(today|now)\\b";
+    public static final String TodayNowRegex = "\\b(today|now|current (date|time))\\b";
 
     public static final String MorningStartEndRegex = "(^(morning|{AmDescRegex}))|((morning|{AmDescRegex})$)"
             .replace("{AmDescRegex}", AmDescRegex);
@@ -1404,17 +1420,18 @@ public class EnglishDateTime {
 
     public static final List<String> SuperfluousWordList = Arrays.asList("preferably", "how about", "maybe", "perhaps", "say", "like");
 
-    public static final List<String> DurationDateRestrictions = Arrays.asList("today", "now");
+    public static final List<String> DurationDateRestrictions = Arrays.asList("today", "now", "current date");
 
     public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
         .put("^\\d{4}$", "(\\d\\.\\d{4}|\\d{4}\\.\\d)")
         .put("^(morning|afternoon|evening|night|day)\\b", "\\b(good\\s+(morning|afternoon|evening|night|day))|(nighty\\s+night)\\b")
         .put("\\bnow\\b", "\\b(^now,)|\\b((is|are)\\s+now\\s+for|for\\s+now)\\b")
-        .put("\\bmay\\b", "\\b((((!|\\.|\\?|,|;|)\\s+|^)may i)|(i|you|he|she|we|they)\\s+may|(may\\s+((((also|not|(also not)|well)\\s+)?(be|ask|contain|constitute|e-?mail|take|have|result|involve|get|work|reply|differ))|(or may not))))\\b")
-        .put("\\b(a|one) second\\b", "\\b(?<!an?\\s+)(a|one) second (round|time)\\b")
+        .put("\\bmay$", "\\b((((!|\\.|\\?|,|;|)\\s+|^)may i)|(i|you|he|she|we|they)\\s+may|(may\\s+((((also|not|(also not)|well)\\s+)?(be|ask|contain|constitute|e-?mail|take|have|result|involve|get|work|reply|differ))|(or may not)))|(?<!(in|during|through)\\s+)may,? at (its|h(is|er)|y?our|my))\\b")
+        .put("^(a|one) second$", "\\b(?<!an?\\s+)(a|one) second (round|time|wave|turn|chance|thought|opinion|cycle|take|meaning|life|job|home|hand|language|display|monitor|stimulus|dose|vaccination|shot|jab)\\b")
         .put("\\b(breakfast|brunch|lunch(time)?|dinner(time)?|supper)$", "(?<!\\b(at|before|after|around|circa)\\b\\s)(breakfast|brunch|lunch|dinner|supper)(?!\\s*time)")
         .put("^\\d+m$", "^\\d+m$")
         .put("^(apr|aug|dec|feb|jan|jul|jun|mar|may|nov|oct|sept?)$", "([$%£&!?@#])(apr|aug|dec|feb|jan|jul|jun|mar|may|nov|oct|sept?)|(apr|aug|dec|feb|jan|jul|jun|mar|may|nov|oct|sept?)([$%£&@#])")
+        .put("^(to\\s+date)$", "\\b((equals?|up)\\s+to\\s+date)\\b")
         .build();
 
     public static final List<String> MorningTermList = Arrays.asList("morning");
@@ -1437,7 +1454,7 @@ public class EnglishDateTime {
 
     public static final List<String> NighttimeTermList = Arrays.asList("nighttime", "night-time");
 
-    public static final List<String> SameDayTerms = Arrays.asList("today", "otd");
+    public static final List<String> SameDayTerms = Arrays.asList("today", "current date", "otd");
 
     public static final List<String> PlusOneDayTerms = Arrays.asList("tomorrow", "tmr", "day after");
 

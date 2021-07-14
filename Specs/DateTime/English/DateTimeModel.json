@@ -21170,5 +21170,20 @@
         }
       }
     ]
+  },
+  {
+    "Input": "The Employer operates a policy of job flexibility and the Employer may, at its discretion, require you to perform additional or other duties, whether skilled or unskilled, not within the scope of your normal duties and may at its discretion amend your Job Description at any time.",
+    "Context": {
+        "ReferenceDateTime": "2021-06-18T18:00:00"
+    },
+	"NotSupported": "python",
+    "Results": []
+  },
+  {
+    "Input": "What we have witnessed is the dawn of a second wave of digital transformation sweeping every company and every industry.",
+    "Context": {
+        "ReferenceDateTime": "2021-06-18T18:00:00"
+    },
+    "Results": []
   }
 ]
