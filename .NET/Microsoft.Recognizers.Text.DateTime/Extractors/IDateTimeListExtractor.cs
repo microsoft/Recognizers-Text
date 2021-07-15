@@ -1,4 +1,5 @@
-﻿// A type of Extractors receiving ExtractResult List as its input
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
 
 using System.Collections.Generic;
 

@@ -1,4 +1,7 @@
-﻿namespace Microsoft.Recognizers.Text.DateTime.Hindi
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+namespace Microsoft.Recognizers.Text.DateTime.Hindi
 {
     public class HindiDateTimeAltParserConfiguration : IDateTimeAltParserConfiguration
     {
