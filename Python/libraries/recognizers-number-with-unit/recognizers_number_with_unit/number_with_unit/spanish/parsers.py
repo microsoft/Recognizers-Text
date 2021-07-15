@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 from recognizers_text.culture import Culture
 from recognizers_text.extractor import Extractor
 from recognizers_text.parser import Parser

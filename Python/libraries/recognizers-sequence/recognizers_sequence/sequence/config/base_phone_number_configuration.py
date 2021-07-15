@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 from recognizers_sequence.sequence.config import *
 from recognizers_sequence.resources import *
 from recognizers_text.culture import Culture

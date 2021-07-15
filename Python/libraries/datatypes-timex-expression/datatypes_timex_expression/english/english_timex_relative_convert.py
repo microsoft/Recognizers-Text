@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 from datetime import datetime
 from .english_timex_convert import *
 from ..timex_date_helpers import *
