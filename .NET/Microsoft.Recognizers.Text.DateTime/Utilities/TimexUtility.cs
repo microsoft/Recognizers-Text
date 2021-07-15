@@ -278,7 +278,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return comment.Equals(Constants.Comment_DoubleTimex, StringComparison.Ordinal);
         }
 
-        public static TimeOfDayResolutionResult ParseTimeOfDay(string tod)
+        public static TimeOfDayResolutionResult ResolveTimeOfDay(string tod)
         {
             var result = new TimeOfDayResolutionResult();
             switch (tod)
@@ -359,6 +359,36 @@ namespace Microsoft.Recognizers.Text.DateTime
         public static string CombineDateAndTimeTimex(string dateTimex, string timeTimex)
         {
             return $"{dateTimex}{timeTimex}";
+        }
+
+        public static string GenerateEndInclusiveTimex(string originalTimex, DatePeriodTimexType datePeriodTimexType,
+            DateObject startDate, DateObject endDate)
+        {
+
+            var timexEndInclusive = GenerateDatePeriodTimex(startDate, endDate, datePeriodTimexType);
+
+            // Sometimes the original timex contains fuzzy part like "XXXX-05-31"
+            // The fuzzy part needs to stay the same in the new end-inclusive timex
+            if (originalTimex.Contains(Constants.TimexFuzzy) && originalTimex.Length == timexEndInclusive.Length)
+            {
+                var timexCharSet = new char[timexEndInclusive.Length];
+
+                for (int i = 0; i < originalTimex.Length; i++)
+                {
+                    if (originalTimex[i] != Constants.TimexFuzzy)
+                    {
+                        timexCharSet[i] = timexEndInclusive[i];
+                    }
+                    else
+                    {
+                        timexCharSet[i] = Constants.TimexFuzzy;
+                    }
+                }
+
+                timexEndInclusive = new string(timexCharSet);
+            }
+
+            return timexEndInclusive;
         }
 
         public static string GenerateWeekOfYearTimex(int year, int weekNum)

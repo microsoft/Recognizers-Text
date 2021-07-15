@@ -32,6 +32,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        bool GetMatchedTimexRange(string text, out string timex, out int beginHour, out int endHour, out int endMin);
+        bool GetMatchedTimeRange(string text, out string timex, out int beginHour, out int endHour, out int endMin);
     }
 }

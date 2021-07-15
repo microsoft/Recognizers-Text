@@ -69,7 +69,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 return false;
             }
 
-            var parseResult = TimexUtility.ParseTimeOfDay(timeOfDay);
+            var parseResult = TimexUtility.ResolveTimeOfDay(timeOfDay);
             timex = parseResult.Timex;
             beginHour = parseResult.BeginHour;
             endHour = parseResult.EndHour;

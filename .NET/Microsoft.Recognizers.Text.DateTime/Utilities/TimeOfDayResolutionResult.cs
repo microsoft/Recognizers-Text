@@ -9,5 +9,7 @@
         public int EndHour { get; set; }
 
         public int EndMin { get; set; }
+
+        public int Swift { get; set; }
     }
 }

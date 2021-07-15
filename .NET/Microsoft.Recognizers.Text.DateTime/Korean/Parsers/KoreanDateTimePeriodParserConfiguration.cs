@@ -102,101 +102,82 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 
-        public bool GetMatchedTimeRangeAndSwift(string text, out string timeStr, out int beginHour, out int endHour, out int swift)
+        public bool GetMatchedTimeRangeAndSwift(string text, out string todSymbol, out int beginHour, out int endHour, out int endMinute, out int swift)
         {
             var trimmedText = text.Trim();
 
             // @TODO move hardcoded values to resources file
             beginHour = 0;
             endHour = 0;
+            endMinute = 0;
             swift = 0;
+
+            var tod = string.Empty;
+
             switch (trimmedText)
             {
                 case "今晚":
                     swift = 0;
-                    timeStr = "TEV";
-                    beginHour = 16;
-                    endHour = 20;
+                    tod = Constants.Evening;
                     break;
                 case "今早":
                 case "今晨":
                     swift = 0;
-                    timeStr = "TMO";
-                    beginHour = 8;
-                    endHour = Constants.HalfDayHourCount;
+                    tod = Constants.Morning;
                     break;
                 case "明晚":
                     swift = 1;
-                    timeStr = "TEV";
-                    beginHour = 16;
-                    endHour = 20;
+                    tod = Constants.Evening;
                     break;
                 case "明早":
                 case "明晨":
                     swift = 1;
-                    timeStr = "TMO";
-                    beginHour = 8;
-                    endHour = Constants.HalfDayHourCount;
+                    tod = Constants.Morning;
                     break;
                 case "昨晚":
                     swift = -1;
-                    timeStr = "TEV";
-                    beginHour = 16;
-                    endHour = 20;
+                    tod = Constants.Evening;
                     break;
-                default:
-                    timeStr = null;
-                    return false;
             }
+
+            if (MORegex.IsMatch(trimmedText))
+            {
+                tod = Constants.Morning;
+            }
+            else if (MIRegex.IsMatch(trimmedText))
+            {
+                tod = Constants.MidDay;
+            }
+            else if (AFRegex.IsMatch(trimmedText))
+            {
+                tod = Constants.Afternoon;
+            }
+            else if (EVRegex.IsMatch(trimmedText))
+            {
+                tod = Constants.Evening;
+            }
+            else if (NIRegex.IsMatch(trimmedText))
+            {
+                tod = Constants.Night;
+            }
+            else if (string.IsNullOrEmpty(tod))
+            {
+                todSymbol = null;
+                return false;
+            }
+
+            var parseResult = TimexUtility.ResolveTimeOfDay(tod);
+            todSymbol = parseResult.Timex;
+            beginHour = parseResult.BeginHour;
+            endHour = parseResult.EndHour;
+            endMinute = parseResult.EndMin;
 
             return true;
         }
 
-        public bool GetMatchedTimeRange(string text, out string timeStr, out int beginHour, out int endHour, out int endMin)
+        public bool GetMatchedTimeRange(string text, out string todSymbol, out int beginHour, out int endHour, out int endMin)
         {
-            var trimmedText = text.Trim();
-
-            beginHour = 0;
-            endHour = 0;
-            endMin = 0;
-            if (MORegex.IsMatch(trimmedText))
-            {
-                timeStr = "TMO";
-                beginHour = 8;
-                endHour = Constants.HalfDayHourCount;
-            }
-            else if (MIRegex.IsMatch(trimmedText))
-            {
-                timeStr = "TMI";
-                beginHour = 11;
-                endHour = 13;
-            }
-            else if (AFRegex.IsMatch(trimmedText))
-            {
-                timeStr = "TAF";
-                beginHour = Constants.HalfDayHourCount;
-                endHour = 16;
-            }
-            else if (EVRegex.IsMatch(trimmedText))
-            {
-                timeStr = "TEV";
-                beginHour = 16;
-                endHour = 20;
-            }
-            else if (NIRegex.IsMatch(trimmedText))
-            {
-                timeStr = "TNI";
-                beginHour = 20;
-                endHour = 23;
-                endMin = 59;
-            }
-            else
-            {
-                timeStr = null;
-                return false;
-            }
-
-            return true;
+            return GetMatchedTimeRangeAndSwift(text, out todSymbol, out beginHour, out endHour, out endMin, out int swift);
         }
     }
 }

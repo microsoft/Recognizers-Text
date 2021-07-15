@@ -60,7 +60,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public bool GetMatchedTimexRange(string text, out string timex, out int beginHour, out int endHour, out int endMin)
+        public bool GetMatchedTimeRange(string text, out string timex, out int beginHour, out int endHour, out int endMin)
         {
             var trimmedText = text.Trim();
             if (PluralTokenRegex.IsMatch(trimmedText))
@@ -108,7 +108,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
                 return false;
             }
 
-            var parseResult = TimexUtility.ParseTimeOfDay(timeOfDay);
+            var parseResult = TimexUtility.ResolveTimeOfDay(timeOfDay);
             timex = parseResult.Timex;
             beginHour = parseResult.BeginHour;
             endHour = parseResult.EndHour;
