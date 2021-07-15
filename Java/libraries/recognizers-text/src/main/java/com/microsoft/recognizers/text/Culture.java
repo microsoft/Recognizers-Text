@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 package com.microsoft.recognizers.text;
 
 import java.util.Arrays;
@@ -13,7 +16,7 @@ public class Culture {
     public static final String Dutch = "nl-nl";
     public static final String Italian = "it-it";
 
-    public static final Culture[] SupportedCultures = new Culture[]{
+    public static final Culture[] SupportedCultures = new Culture[] {
         new Culture("English", English),
         new Culture("Chinese", Chinese),
         new Culture("Spanish", Spanish),

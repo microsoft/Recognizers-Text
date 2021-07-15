@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 package com.microsoft.recognizers.text.number.spanish.extractors;
 
 import static com.microsoft.recognizers.text.number.NumberMode.Default;
