@@ -746,5 +746,22 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Nineth Meeting of the Research Partnership Platform on Competition and Consumer Protection.",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "nineth",
+        "Start": 0,
+        "End": 5,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "9",
+          "relativeTo": "start",
+          "value": "9"
+        }
+      }
+    ]
   }
 ]
