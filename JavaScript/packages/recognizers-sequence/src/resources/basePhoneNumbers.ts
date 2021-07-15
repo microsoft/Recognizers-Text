@@ -34,6 +34,7 @@ export namespace BasePhoneNumbers {
     export const FormatIndicatorRegex = `(\\s|-|/|\\.)+`;
     export const ColonMarkers = [ ":" ];
     export const ColonPrefixCheckRegex = `(([a-z])\\s*$)`;
+    export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["^\\d{4}-\\d{4}$", "omb(\\s*(no(\\.)?|number|#))?:?\\s+\\d{4}-?\\d{4}"]]);
     export const SpecialBoundaryMarkers = [ "-"," " ];
     export const BoundaryMarkers = [ "-",".","/","+","#","*" ];
     export const ForbiddenPrefixMarkers = [ ",",":","%" ];

@@ -144,7 +144,7 @@ CenturySuffixRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
 FromRegex: !simpleRegex
-  def: ((desde|de)(\s*a(s)?)?)$
+  def: (de(sde)?(\s*a(s)?)?)$
 BetweenRegex: !simpleRegex
   def: (entre\s*([oa](s)?)?)
 WeekDayRegex: !simpleRegex
@@ -153,13 +153,13 @@ OnRegex: !nestedRegex
   def: (?<=\b(em|no)\s+)({DayRegex}s?)\b
   references: [ DayRegex ]
 RelaxedOnRegex: !nestedRegex
-  def: (?<=\b(em|n[oa]|d[oa])\s+)(dia\s+)?({DayRegex}s?)\b(?!\s*[/\\\-\.,:\s]\s*(\d|(de\s+)?{MonthRegex}))
+  def: ((?<=\b(em|[nd][oa])\s+)(dia\s+)?({DayRegex}s?)|dia\s+{DayRegex}s?)\b(?!\s*[/\\\-\.,:\s]\s*(\d|(de\s+)?{MonthRegex}))
   references: [ DayRegex, MonthRegex ]
 ThisRegex: !nestedRegex
   def: \b(([nd]?es[st][ea]\s*){WeekDayRegex})|({WeekDayRegex}\s*([nd]?es[st]a\s+semana))\b
   references: [ WeekDayRegex ]
 LastDateRegex: !nestedRegex
-  def: \b(([uú]ltim[ao])\s*{WeekDayRegex})|({WeekDayRegex}(\s+(([nd]?es[st]a|na|da)\s+([uú]ltima\s+)?semana)))\b
+  def: \b(([uú]ltim[ao])\s*{WeekDayRegex})|({WeekDayRegex}(\s+(([nd]?es[st]a|[nd]a)\s+([uú]ltima\s+)?semana)))\b
   references: [ WeekDayRegex ]
 NextDateRegex: !nestedRegex
   def: \b(((pr[oó]xim[oa]|seguinte)\s*){WeekDayRegex})|({WeekDayRegex}((\s+(pr[oó]xim[oa]|seguinte))|(\s+(da\s+)?(semana\s+seguinte|pr[oó]xima\s+semana))))\b
@@ -363,7 +363,7 @@ NowRegex: !simpleRegex
 SuffixRegex: !simpleRegex
   def: ^\s*((e|a|em|por|pel[ao]|n[ao]|de)\s+)?(manh[ãa]|madrugada|meio\s*dia|tarde|noite)\b
 TimeOfDayRegex: !simpleRegex
-  def: \b(?<timeOfDay>manh[ãa]|madrugada|tarde|noite|((depois\s+do|ap[óo]s\s+o)\s+(almo[çc]o|meio dia|meio-dia)))\b
+  def: \b(?<timeOfDay>manh[ãa]|madrugada|tarde|noite|((depois\s+do|ap[óo]s\s+o)\s+(almo[çc]o|meio[ -]dia)))\b
 SpecificTimeOfDayRegex: !nestedRegex
   def: \b(((((a)?\s+|[nd]?es[st]a|seguinte|pr[oó]xim[oa]|[uú]ltim[oa])\s+)?{TimeOfDayRegex}))\b
   references: [ TimeOfDayRegex ]
@@ -380,7 +380,7 @@ SimpleTimeOfTodayBeforeRegex: !nestedRegex
   def: ({SpecificTimeOfDayRegex}(\s*,)?(\s+([àa]s|((cerca|perto|ao\s+redor|por\s+volta)\s+(de|das))))?\s*({HourNumRegex}|{BaseDateTime.HourRegex}))
   references: [ SpecificTimeOfDayRegex, HourNumRegex, BaseDateTime.HourRegex ]
 SpecificEndOfRegex: !simpleRegex
-  def: ((no|ao)\s+)?(fi(m|nal)|t[ée]rmin(o|ar))(\s+d?o(\s+dia)?(\s+de)?)?\s*$
+  def: ([na]o\s+)?(fi(m|nal)|t[ée]rmin(o|ar))(\s+d?o(\s+dia)?(\s+de)?)?\s*$
 UnspecificEndOfRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
@@ -468,16 +468,16 @@ HolidayRegex3: !nestedRegex
   references: [ YearRegex ]
 # PortugueseMergedExtractorConfiguration
 BeforeRegex: !simpleRegex
-  def: (antes(\s+(de|dos?|das?)?)?)
+  def: (antes(\s+(d[aeo]s?)?)?|at[ée]h?(\s+[oàa]s?\b)?)
 AfterRegex: !simpleRegex
-  def: ((depois|ap[óo]s)(\s*(de|d?os?|d?as?)?)?)
+  def: ((depois|ap[óo]s|a\s+partir)(\s*(de|d?[oa]s?)?)?)
 SinceRegex: !simpleRegex
   def: (desde(\s+(as?|o))?)
 AroundRegex: !simpleRegex
   def: (?:\b(?:cerca|perto|ao\s+redor|por\s+volta)\s*?\b)(\s+(de|das))?
 # PortugueseSetExtractorConfiguration
 PeriodicRegex: !simpleRegex
-  def: \b(?<periodic>di[áa]ri[ao]|diariamente|mensalmente|semanalmente|quinzenalmente|anualmente)\b
+  def: \b(?<periodic>di[áa]ri[ao]|(diaria|mensal|semanal|quinzenal|anual)mente)\b
 EachExpression: !simpleRegex
   def: cada|tod[oa]s?\s*([oa]s)?
 EachUnitRegex: !nestedRegex
@@ -490,7 +490,7 @@ EachDayRegex: !nestedRegex
   def: \s*({EachExpression})\s*dias\s*\b
   references: [ EachExpression ]
 BeforeEachDayRegex: !nestedRegex
-  def: ({EachExpression})\s*dias(\s+(as|ao))?\s*\b
+  def: ({EachExpression})\s*dias(\s+a[so])?\s*\b
   references: [ EachExpression ]
 SetEachRegex: !nestedRegex
   def: (?<each>({EachExpression})\s*)

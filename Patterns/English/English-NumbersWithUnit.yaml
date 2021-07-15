@@ -973,4 +973,5 @@ AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:
     \bm\b: ((('|’)\s*m)|(m\s*('|’)))
+    ^\d{5} f$: \b([a-z]{2} \d{5} f)\b
 ...

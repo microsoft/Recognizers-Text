@@ -207,7 +207,7 @@ namespace Microsoft.Recognizers.Text.Sequence
                 }
             }
 
-            // filter hexadecimal address like 00 10 00 31 46 D9 E9 11
+            // Filter hexadecimal address like 00 10 00 31 46 D9 E9 11
             var maskMatchCollection = Regex.Matches(text, BasePhoneNumbers.PhoneNumberMaskRegex);
 
             for (var index = ers.Count - 1; index >= 0; --index)
@@ -222,6 +222,9 @@ namespace Microsoft.Recognizers.Text.Sequence
                     }
                 }
             }
+
+            // Remove common ambiguous cases
+            ers = FilterAmbiguity(ers, text);
 
             return ers;
         }
@@ -243,6 +246,27 @@ namespace Microsoft.Recognizers.Text.Sequence
             }
 
             return count;
+        }
+
+        private List<ExtractResult> FilterAmbiguity(List<ExtractResult> extractResults, string text)
+        {
+            if (this.config.AmbiguityFiltersDict != null)
+            {
+                foreach (var regex in this.config.AmbiguityFiltersDict)
+                {
+                    foreach (var extractResult in extractResults)
+                    {
+                        if (regex.Key.IsMatch(extractResult.Text))
+                        {
+                            var matches = regex.Value.Matches(text).Cast<Match>();
+                            extractResults = extractResults.Where(er => !matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start))
+                                .ToList();
+                        }
+                    }
+                }
+            }
+
+            return extractResults;
         }
     }
 }

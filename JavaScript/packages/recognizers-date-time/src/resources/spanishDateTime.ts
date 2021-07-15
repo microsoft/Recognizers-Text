@@ -193,7 +193,7 @@ export namespace SpanishDateTime {
     export const HolidayRegex1 = `\\b(?<holiday>viernes santo|mi[eé]rcoles de ceniza|martes de carnaval|d[ií]a (de|de los) presidentes?|clebraci[oó]n de mao|año nuevo chino|año nuevo|noche vieja|(festividad de )?los mayos|d[ií]a de los inocentes|navidad|noche buena|d[ií]a de acci[oó]n de gracias|acci[oó]n de gracias|yuandan|halloween|noches de brujas|pascuas)(\\s+(del?\\s+)?(${YearRegex}|(?<order>(pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?|en))\\s+año))?\\b`;
     export const HolidayRegex2 = `\\b(?<holiday>(d[ií]a( del?( la)?)? )?(martin luther king|todos los santos|blanco|san patricio|san valent[ií]n|san jorge|cinco de mayo|independencia|raza|trabajador))(\\s+(del?\\s+)?(${YearRegex}|(?<order>(pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?|en))\\s+año))?\\b`;
     export const HolidayRegex3 = `\\b(?<holiday>(d[ií]a( internacional)?( del?( l[ao]s?)?)? )(trabajador(es)?|madres?|padres?|[aá]rbol|mujer(es)?|solteros?|niños?|marmota|san valent[ií]n|maestro))(\\s+(del?\\s+)?(${YearRegex}|(?<order>(pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?|en))\\s+año))?\\b`;
-    export const BeforeRegex = `(\\b((ante(s|rior)|m[aá]s\\s+temprano|no\\s+m[aá]s\\s+tard(e|ar)|(?<include>tan\\s+tarde\\s+como))(\\s+(del?|a|que)(\\s+(el|las?|los?))?)?)|(?<!\\w|>)((?<include><\\s*=)|<))`;
+    export const BeforeRegex = `(\\b((ante(s|rior)|m[aá]s\\s+temprano|no\\s+m[aá]s\\s+tard(e|ar)|hasta|(?<include>tan\\s+tarde\\s+como))(\\s+(del?|a|que)(\\s+(el|las?|los?))?)?)|(?<!\\w|>)((?<include><\\s*=)|<))`;
     export const AfterRegex = `((\\b(despu[eé]s|(año\\s+)?posterior|m[aá]s\\s+tarde|a\\s+primeros)(\\s*(del?|en|a)(\\s+(el|las?|los?))?)?|(empi?en?zando|comenzando)(\\s+(el|las?|los?))?)\\b|(?<!\\w|<)((?<include>>\\s*=)|>))`;
     export const SinceRegex = `\\b(((cualquier\\s+tiempo\\s+)?(desde|a\\s+partir\\s+del?)|tan\\s+(temprano|pronto)\\s+como(\\s+(de|a))?)(\\s+(el|las?|los?))?)\\b`;
     export const SinceRegexExp = `(${SinceRegex}|\\bde\\b)`;
@@ -253,7 +253,7 @@ export namespace SpanishDateTime {
     export const RestOfDateRegex = `\\bresto\\s+((del|de)\\s+)?((la|el|est?[ae])\\s+)?(?<duration>semana|mes|año|decada)(\\s+actual)?\\b`;
     export const WithinNextPrefixRegex = `\\b(dentro\\s+de((\\s+(el|l[ao]s?))?\\s+(?<next>${NextPrefixRegex}))?)(?=\\s*$)\\b`;
     export const DurationUnitRegex = `(?<unit>${DateUnitRegex}|horas?|hra?s?|hs?|minutos?|mins?|segundos?|segs?|noches?)\\b`;
-    export const DurationConnectorRegex = `^[.]`;
+    export const DurationConnectorRegex = `^\\s*(?<connector>\\s+|y|,)\\s*$`;
     export const RelativeDurationUnitRegex = `(?:(?<=(${NextPrefixRegex}|${PreviousPrefixRegex}|${ThisPrefixRegex})\\s+)(${DurationUnitRegex}))`;
     export const ReferencePrefixRegex = `(mism[ao]|aquel|est?e)\\b`;
     export const ReferenceDatePeriodRegex = `\\b${ReferencePrefixRegex}\\s+(${DateUnitRegex}|fin\\s+de\\s+semana)\\b`;
@@ -268,6 +268,9 @@ export namespace SpanishDateTime {
     export const SuffixAfterRegex = `\\b((a\\s+)?(o|y)\\s+(arriba|despu[eé]s|posterior|mayor|m[aá]s\\s+tarde)(?!\\s+(que|de)))\\b`;
     export const YearPeriodRegex = `((((de(sde)?|durante|en)\\s+)?${YearRegex}\\s*(${TillRegex})\\s*${YearRegex})|(((entre)\\s+)${YearRegex}\\s*(${RangeConnectorRegex})\\s*${YearRegex}))`;
     export const FutureSuffixRegex = `\\b(siguiente(s)?|pr[oó]xim[oa](s)?|(en\\s+el\\s+)?futuro)\\b`;
+    export const PastSuffixRegex = `^\\b$`;
+    export const ModPrefixRegex = `\\b(${RelativeRegex}|${AroundRegex}|${BeforeRegex}|${AfterRegex}|${SinceRegex})\\b`;
+    export const ModSuffixRegex = `\\b(${AgoRegex}|${LaterRegex}|${BeforeAfterRegex}|${FutureSuffixRegex}|${PastSuffixRegex})\\b`;
     export const WrittenDecades: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
     export const SpecialDecadeCases: ReadonlyMap<string, number> = new Map<string, number>([["", 0]]);
     export const DefaultLanguageFallback = `DMY`;

@@ -28,5 +28,7 @@ namespace Microsoft.Recognizers.Text.Sequence
 
         public List<char> ForbiddenSuffixMarkers { get; set; }
 
+        public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; set; }
+
     }
 }

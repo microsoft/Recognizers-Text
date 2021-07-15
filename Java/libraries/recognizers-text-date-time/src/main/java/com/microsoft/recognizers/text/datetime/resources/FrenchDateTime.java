@@ -432,7 +432,7 @@ public class FrenchDateTime {
 
     public static final String PeriodAmRegex = "(?<am>d[eu] matin|matin([ée]e)s?";
 
-    public static final String PureNumFromTo = "((du|depuis|des?)\\s+)?({HourRegex}|{PeriodHourNumRegex})(\\s*(?<leftDesc>{PeriodDescRegex}))?\\s*{TillRegex}\\s*({HourRegex}|{PeriodHourNumRegex})\\s*(?<rightDesc>{PmRegex}|{AmRegex}|{PeriodDescRegex})?"
+    public static final String PureNumFromTo = "((du|depuis|des?)\\s+)?(?<!\\d[\\/.,:\\-])({HourRegex}|{PeriodHourNumRegex})(\\s*(?<leftDesc>{PeriodDescRegex}))?\\s*{TillRegex}\\s*({HourRegex}|{PeriodHourNumRegex})\\s*(?<rightDesc>{PmRegex}|{AmRegex}|{PeriodDescRegex})?"
             .replace("{HourRegex}", HourRegex)
             .replace("{PeriodHourNumRegex}", PeriodHourNumRegex)
             .replace("{PeriodDescRegex}", PeriodDescRegex)
@@ -614,7 +614,7 @@ public class FrenchDateTime {
 
     public static final String SinceYearSuffixRegex = "^\\b$";
 
-    public static final String WithinNextPrefixRegex = "^\\b$";
+    public static final String WithinNextPrefixRegex = "\\b(dans\\s+les)\\b";
 
     public static final String TodayNowRegex = "\\b(aujourd'hui|maintenant)\\b";
 
@@ -736,6 +736,20 @@ public class FrenchDateTime {
     public static final String YearPeriodRegex = "^\\b$";
 
     public static final String FutureSuffixRegex = "\\b(dans\\s+le\\s+futur)\\b";
+
+    public static final String ModPrefixRegex = "\\b({RelativeRegex}|{AroundRegex}|{BeforeRegex}|{AfterRegex}|{SinceRegex})\\b"
+            .replace("{RelativeRegex}", RelativeRegex)
+            .replace("{AroundRegex}", AroundRegex)
+            .replace("{BeforeRegex}", BeforeRegex)
+            .replace("{AfterRegex}", AfterRegex)
+            .replace("{SinceRegex}", SinceRegex);
+
+    public static final String ModSuffixRegex = "\\b({AgoRegex}|{LaterRegex}|{BeforeAfterRegex}|{FutureSuffixRegex}|{PastSuffixRegex})\\b"
+            .replace("{AgoRegex}", AgoRegex)
+            .replace("{LaterRegex}", LaterRegex)
+            .replace("{BeforeAfterRegex}", BeforeAfterRegex)
+            .replace("{FutureSuffixRegex}", FutureSuffixRegex)
+            .replace("{PastSuffixRegex}", PastSuffixRegex);
 
     public static final String ComplexDatePeriodRegex = "^\\b$";
 
