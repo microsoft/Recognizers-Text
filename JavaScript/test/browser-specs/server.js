@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 // web server to host browser specs
 const fs = require('fs');
 const path = require('path');

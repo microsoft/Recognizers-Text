@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { BaseUnits } from "../resources/baseUnits";
 
 export class Constants {

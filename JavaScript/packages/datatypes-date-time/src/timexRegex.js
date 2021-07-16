@@ -1,4 +1,5 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
 
 const value = function (s) { return s; };
 const isTrue = function () { return true; };

@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 export { default as ChoiceRecognizer, ChoiceOptions, recognizeBoolean } from "./choice/choiceRecognizer";
 export { Culture } from "@microsoft/recognizers-text";
 export { Constants } from "./choice/constants";

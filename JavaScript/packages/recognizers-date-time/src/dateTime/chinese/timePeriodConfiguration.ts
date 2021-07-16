@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { RegExpUtility, ExtractResult, IExtractor } from "@microsoft/recognizers-text";
 import { CultureInfo, Culture, EnglishIntegerExtractor } from "@microsoft/recognizers-text-number";
 import { NumberWithUnitExtractor, ChineseNumberWithUnitExtractorConfiguration } from "@microsoft/recognizers-text-number-with-unit";

@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { IExtractor, ExtractResult, RegExpUtility, Match, StringUtility } from "@microsoft/recognizers-text";
 import { Culture, CultureInfo, Constants as NumberConstants } from "@microsoft/recognizers-text-number";
 import { Constants } from "./constants";

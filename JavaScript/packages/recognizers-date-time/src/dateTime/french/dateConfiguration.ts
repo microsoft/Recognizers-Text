@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { RegExpUtility } from "@microsoft/recognizers-text";
 import { BaseNumberExtractor, BaseNumberParser, FrenchOrdinalExtractor, FrenchIntegerExtractor, FrenchNumberParserConfiguration } from "@microsoft/recognizers-text-number";
 import { FrenchDateTime } from "../../resources/frenchDateTime";

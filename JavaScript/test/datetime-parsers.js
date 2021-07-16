@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 var _ = require('lodash');
 var Constants = require('./constants');
 var SupportedCultures = require('./cultures');

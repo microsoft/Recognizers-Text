@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { IModel, ModelResult, ParseResult, IExtractor, IParser, QueryProcessor } from "@microsoft/recognizers-text";
 import { UnitValue, UnitValueIso } from "./parsers";
 

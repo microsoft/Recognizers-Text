@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { IExtractor, ExtractResult, RegExpUtility, StringUtility, MetaData } from "@microsoft/recognizers-text";
 import { AgnosticNumberParserFactory, BaseNumberParser, BaseNumberExtractor, ChineseIntegerExtractor, AgnosticNumberParserType, ChineseNumberParserConfiguration } from "@microsoft/recognizers-text-number";
 import { Constants as NumberConstants  } from "@microsoft/recognizers-text-number";
