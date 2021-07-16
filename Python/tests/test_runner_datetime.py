@@ -176,7 +176,7 @@ def single_assert(actual, expected, prop, spec_info):
             "Actual: {} | Expected: {} | Context: {}".format(actual, expected, spec_info)
     else:
         assert actual.get(prop) is None, \
-            "Actual: 'None' | Expected: {} | Context: {}".format(actual, expected, spec_info)
+            "Actual: 'None' | Expected: {} | Context: {}".format(expected, spec_info)
 
 
 def assert_verbose(actual, expected, spec_info):
