@@ -24,7 +24,10 @@ namespace Microsoft.Recognizers.Text.Matcher
 
             set
             {
-                Children ??= new Dictionary<T, Node<T>>();
+                if (Children == null)
+                {
+                    Children = new Dictionary<T, Node<T>>();
+                }
 
                 Children[c] = value;
             }
@@ -37,7 +40,10 @@ namespace Microsoft.Recognizers.Text.Matcher
 
         public void AddValue(string value)
         {
-            Values ??= new HashSet<string>();
+            if (Values == null)
+            {
+                Values = new HashSet<string>();
+            }
 
             Values.Add(value);
         }

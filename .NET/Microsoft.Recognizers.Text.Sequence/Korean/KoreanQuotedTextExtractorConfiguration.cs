@@ -8,7 +8,7 @@ namespace Microsoft.Recognizers.Text.Sequence.Korean
 {
     public class KoreanQuotedTextExtractorConfiguration : QuotedTextConfiguration
     {
-        public KoreanQuotedTextExtractorConfiguration(SequenceOptions options) 
+        public KoreanQuotedTextExtractorConfiguration(SequenceOptions options)
             : base(options)
         {
             QuotedTextRegex1 = new Regex(QuotedTextDefinitions.QuotedTextRegex1, RegexOptions.Compiled);
