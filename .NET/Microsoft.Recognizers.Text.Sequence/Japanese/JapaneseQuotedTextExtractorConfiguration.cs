@@ -8,7 +8,7 @@ namespace Microsoft.Recognizers.Text.Sequence.Japanese
 {
     public class JapaneseQuotedTextExtractorConfiguration : QuotedTextConfiguration
     {
-        public JapaneseQuotedTextExtractorConfiguration(SequenceOptions options) 
+        public JapaneseQuotedTextExtractorConfiguration(SequenceOptions options)
             : base(options)
         {
             QuotedTextRegex1 = new Regex(QuotedTextDefinitions.QuotedTextRegex1, RegexOptions.Compiled);
