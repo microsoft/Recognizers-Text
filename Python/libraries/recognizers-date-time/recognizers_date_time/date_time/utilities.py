@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 from enum import Enum, IntEnum, IntFlag
 from abc import ABC, abstractmethod
 from typing import List, Dict, Pattern, Union, Match

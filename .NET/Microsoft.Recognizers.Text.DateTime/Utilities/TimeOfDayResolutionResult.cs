@@ -1,4 +1,7 @@
-﻿namespace Microsoft.Recognizers.Text.DateTime
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+namespace Microsoft.Recognizers.Text.DateTime
 {
     public class TimeOfDayResolutionResult
     {
@@ -9,5 +12,7 @@
         public int EndHour { get; set; }
 
         public int EndMin { get; set; }
+
+        public int Swift { get; set; }
     }
 }

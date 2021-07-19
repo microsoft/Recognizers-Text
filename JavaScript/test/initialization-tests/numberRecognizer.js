@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 var Recognizer = require('@microsoft/recognizers-text-number');
 var NumberRecognizer = require('@microsoft/recognizers-text-number').NumberRecognizer;
 var NumberOptions = require('@microsoft/recognizers-text-number').NumberOptions;

@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { IModel, ModelResult } from "@microsoft/recognizers-text";
 import { Recognizer } from "@microsoft/recognizers-text";
 import { Culture } from "../culture";

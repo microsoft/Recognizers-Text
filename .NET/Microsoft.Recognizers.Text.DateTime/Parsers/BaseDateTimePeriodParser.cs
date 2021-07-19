@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -234,9 +237,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             // the first 2 hours represent early, the later 2 hours represent late
             if (hasEarly)
             {
-                endHour = beginHour + 2;
+                endHour = beginHour + Constants.EARLY_LATE_TIME_DELTA;
 
-                // Handling special case: night ends with 23:59 due to C# issues.
+                // Handling special case: night ends at 23:59 due to .NET issues.
                 if (endMin == 59)
                 {
                     endMin = 0;
@@ -244,7 +247,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else if (hasLate)
             {
-                beginHour = beginHour + 2;
+                beginHour += Constants.EARLY_LATE_TIME_DELTA;
             }
 
             if (Config.SpecificTimeOfDayRegex.IsExactMatch(trimmedText, trim: true))

@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 class MetaData:
     def __init__(self):
         self.has_mod: bool = False

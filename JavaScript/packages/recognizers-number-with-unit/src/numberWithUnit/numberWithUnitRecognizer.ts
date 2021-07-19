@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { IModel, ModelResult, Recognizer, IExtractor, IParser } from "@microsoft/recognizers-text";
 import { Culture } from "@microsoft/recognizers-text-number";
 import { CurrencyModel, TemperatureModel, DimensionModel, AgeModel } from "./models";

@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
+using System.Globalization;
 
 namespace Microsoft.Recognizers.Text.Utilities
 {
@@ -28,7 +32,7 @@ namespace Microsoft.Recognizers.Text.Utilities
             }
             else
             {
-                throw new ArgumentOutOfRangeException(value.ToString(), "Bad configuration parameter value.");
+                throw new ArgumentOutOfRangeException(value.ToString(CultureInfo.InvariantCulture), "Bad configuration parameter value.");
             }
         }
     }

@@ -1,4 +1,5 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
 
 const timexInference = require('./timexInference.js');
 const fixedFormatNumber = require('./timexDateHelpers.js').fixedFormatNumber;

@@ -1,4 +1,7 @@
-﻿using System.Collections.Immutable;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Italian;
@@ -145,42 +148,41 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public IImmutableDictionary<string, int> Numbers { get; }
 
-        public bool GetMatchedTimeRange(string text, out string timeStr, out int beginHour, out int endHour, out int endMin)
+        public bool GetMatchedTimeRange(string text, out string todSymbol, out int beginHour, out int endHour, out int endMin)
         {
             var trimmedText = text.Trim();
+
             beginHour = 0;
             endHour = 0;
             endMin = 0;
+
             if (MorningStartEndRegex.IsMatch(trimmedText))
             {
-                timeStr = "TMO";
-                beginHour = 8;
-                endHour = 12;
+                todSymbol = Constants.Morning;
             }
             else if (AfternoonStartEndRegex.IsMatch(trimmedText))
             {
-                timeStr = "TAF";
-                beginHour = 12;
-                endHour = 16;
+                todSymbol = Constants.Afternoon;
             }
             else if (EveningStartEndRegex.IsMatch(trimmedText))
             {
-                timeStr = "TEV";
-                beginHour = 16;
-                endHour = 20;
+                todSymbol = Constants.Evening;
             }
             else if (NightStartEndRegex.IsMatch(trimmedText))
             {
-                timeStr = "TNI";
-                beginHour = 20;
-                endHour = 23;
-                endMin = 59;
+                todSymbol = Constants.Night;
             }
             else
             {
-                timeStr = null;
+                todSymbol = null;
                 return false;
             }
+
+            var parseResult = TimexUtility.ResolveTimeOfDay(todSymbol);
+            todSymbol = parseResult.Timex;
+            beginHour = parseResult.BeginHour;
+            endHour = parseResult.EndHour;
+            endMin = parseResult.EndMin;
 
             return true;
         }

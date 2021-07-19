@@ -1,4 +1,7 @@
-﻿using System.Collections.Immutable;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -43,8 +46,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IImmutableDictionary<string, string> UnitMap { get; }
 
-        bool GetMatchedTimeRange(string text, out string timeStr, out int beginHour, out int endHour, out int endMin);
+        bool GetMatchedTimeRange(string text, out string todSymbol, out int beginHour, out int endHour, out int endMinute);
 
-        bool GetMatchedTimeRangeAndSwift(string text, out string timeStr, out int beginHour, out int endHour, out int endMin);
+        bool GetMatchedTimeRangeAndSwift(string text, out string todSymbol, out int beginHour, out int endHour, out int endMinute, out int swift);
     }
 }

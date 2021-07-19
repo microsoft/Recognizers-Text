@@ -1,4 +1,7 @@
-﻿namespace Microsoft.Recognizers.Text.DateTime.Turkish
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+namespace Microsoft.Recognizers.Text.DateTime.Turkish
 {
     public class TurkishDateTimeAltParserConfiguration : IDateTimeAltParserConfiguration
     {

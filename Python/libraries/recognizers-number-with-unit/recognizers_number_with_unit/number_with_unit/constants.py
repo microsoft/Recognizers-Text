@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 from recognizers_number_with_unit.resources.base_units import BaseUnits
 
 

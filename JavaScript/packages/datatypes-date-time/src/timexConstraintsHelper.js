@@ -1,4 +1,5 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
 
 const isOverlapping = function (r1, r2) {
     return r1.end.getTime() > r2.start.getTime() && r1.start.getTime() <= r2.start.getTime()

@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 import abc
 import json
 from .yaml_parser import SimpleRegex, NestedRegex, ParamsRegex, Dictionary, List

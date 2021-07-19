@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 class Constants:
     IP_REGEX_IPV4: str = "ipv4"
     IP_REGEX_IPV6: str = "ipv6"

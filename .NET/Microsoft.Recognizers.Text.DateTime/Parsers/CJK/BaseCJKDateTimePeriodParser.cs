@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -309,7 +312,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        // parse "this night"
+        // Parse cases like "this night"
         private DateTimeResolutionResult ParseSpecificNight(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
@@ -317,10 +320,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             int beginHour, endHour, endMin = 0;
             string timeStr;
 
-            // handle 昨晚，今晨
+            // Handle 昨晚 (last night)，今晨 (this morning)
             if (this.config.SpecificTimeOfDayRegex.IsExactMatch(trimmedText, trim: true))
             {
-                if (!this.config.GetMatchedTimeRangeAndSwift(trimmedText, out timeStr, out beginHour, out endHour, out int swift))
+                if (!this.config.GetMatchedTimeRangeAndSwift(trimmedText, out timeStr, out beginHour, out endHour, out endMin, out int swift))
                 {
                     return ret;
                 }
@@ -338,7 +341,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return ret;
             }
 
-            // handle morning, afternoon..
+            // Handle cases like morning, afternoon
             if (!this.config.GetMatchedTimeRange(trimmedText, out timeStr, out beginHour, out endHour, out endMin))
             {
                 return ret;

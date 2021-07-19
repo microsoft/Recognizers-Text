@@ -1,4 +1,7 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 
 using Microsoft.Recognizers.Definitions;
@@ -113,22 +116,22 @@ namespace Microsoft.Recognizers.Text.DateTime
         // Day start hour
         public const int DayHourStart = 0;
 
-        // hours of one day
+        // Hours in a day
         public const int DayHourCount = 24;
 
-        // hours of one half day
+        // Hours in a half day
         public const int HalfDayHourCount = 12;
 
-        // hours of one quarter day
+        // Hours in a quarter of a day
         public const int QuarterDayHourCount = 6;
 
-        // hours of a half mid-day-duration
+        // Hours is a half mid-day-duration
         public const int HalfMidDayDurationHourCount = 2;
 
-        // the length of four digits year, e.g., 2018
+        // Char length of four digits year, e.g., 2018
         public const int FourDigitsYearLength = 4;
 
-        // Times of day begin/end hours
+        // Default boundaries for time of day resolution
         public const int EarlyMorningBeginHour = 4;
         public const int EarlyMorningEndHour = 8;
         public const int MorningBeginHour = 8;
@@ -157,7 +160,10 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const int MealtimeDinnerBeginHour = 16;
         public const int MealtimeDinnerEndHour = 20;
 
-        // specifies the priority interpreting month and day order
+        // Default period range modifier deltas
+        public const int EARLY_LATE_TIME_DELTA = 2;
+
+        // Constants specifying the priority of interpreting month and day order
         public const string DefaultLanguageFallback_MDY = "MDY";
         public const string DefaultLanguageFallback_DMY = "DMY";
         public const string DefaultLanguageFallback_YMD = "YMD"; // ZH

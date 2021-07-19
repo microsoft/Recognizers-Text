@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 var Recognizers = require('@microsoft/recognizers-text-suite');
 
 // Use English for the Recognizers culture

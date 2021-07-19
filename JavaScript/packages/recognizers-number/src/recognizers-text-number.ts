@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 export { default as NumberRecognizer, NumberOptions, recognizeNumber, recognizeOrdinal, recognizePercentage } from "./number/numberRecognizer";
 export { Culture, CultureInfo } from "./culture";
 export { QueryProcessor, StringUtility, Match, RegExpUtility } from "@microsoft/recognizers-text";
