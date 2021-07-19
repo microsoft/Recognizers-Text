@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -34,6 +37,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var tokens = new List<Token>();
             tokens.AddRange(MatchSimpleCases(text));
+            var simpleCasesResults = Token.MergeAllTokens(tokens, text, ExtractorName);
+            tokens.AddRange(MatchComplexCases(text, simpleCasesResults, referenceTime));
             tokens.AddRange(MergeTwoTimePoints(text, referenceTime));
             tokens.AddRange(MatchNumberWithUnit(text));
 
@@ -85,11 +90,20 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var periodBegin = er[idx].Start ?? 0;
                     var periodEnd = (er[idx + 1].Start ?? 0) + (er[idx + 1].Length ?? 0);
 
-                    // handle "从"
-                    var beforeStr = text.Substring(0, periodBegin);
-                    if (beforeStr.Trim().EndsWith("从", StringComparison.Ordinal))
+                    // handle suffix
+                    var afterStr = text.Substring(periodEnd);
+                    var match = this.config.RangeSuffixRegex.MatchBegin(afterStr, true);
+                    if (match.Success)
                     {
-                        periodBegin = beforeStr.LastIndexOf("从", StringComparison.Ordinal);
+                        periodEnd = periodEnd + match.Index + match.Length;
+                    }
+
+                    // handle prefix
+                    var beforeStr = text.Substring(0, periodBegin);
+                    match = this.config.RangePrefixRegex.MatchEnd(beforeStr, true);
+                    if (match.Success)
+                    {
+                        periodBegin = match.Index;
                     }
 
                     ret.Add(new Token(periodBegin, periodEnd));
@@ -153,6 +167,90 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     ret.Add(new Token(match.Index, duration.End));
                 }
+            }
+
+            return ret;
+        }
+
+        // Complex cases refer to the combination of daterange and datepoint
+        // For Example: from|between {DateRange|DatePoint} to|till|and {DateRange|DatePoint}
+        private List<Token> MatchComplexCases(string text, List<ExtractResult> simpleDateRangeResults, DateObject reference)
+        {
+            var er = this.config.DatePointExtractor.Extract(text, reference);
+
+            // Filter out DateRange results that are part of DatePoint results
+            // For example, "Feb 1st 2018" => "Feb" and "2018" should be filtered out here
+            er.AddRange(simpleDateRangeResults
+                .Where(simpleDateRange => !er.Any(datePoint => (datePoint.Start <= simpleDateRange.Start && datePoint.Start + datePoint.Length >= simpleDateRange.Start + simpleDateRange.Length))));
+
+            er = er.OrderBy(t => t.Start).ToList();
+
+            return MergeMultipleExtractions(text, er);
+        }
+
+        private List<Token> MergeMultipleExtractions(string text, List<ExtractResult> extractionResults)
+        {
+            var ret = new List<Token>();
+            var metadata = new Metadata
+            {
+                PossiblyIncludePeriodEnd = true,
+            };
+
+            if (extractionResults.Count <= 1)
+            {
+                return ret;
+            }
+
+            var idx = 0;
+
+            while (idx < extractionResults.Count - 1)
+            {
+                var middleBegin = extractionResults[idx].Start + extractionResults[idx].Length ?? 0;
+                var middleEnd = extractionResults[idx + 1].Start ?? 0;
+                if (middleBegin >= middleEnd)
+                {
+                    idx++;
+                    continue;
+                }
+
+                var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim();
+                var endPointStr = extractionResults[idx + 1].Text;
+
+                if (config.TillRegex.IsExactMatch(middleStr, trim: true) || (string.IsNullOrEmpty(middleStr) &&
+                    config.TillRegex.MatchBegin(endPointStr, trim: true).Success))
+                {
+                    var periodBegin = extractionResults[idx].Start ?? 0;
+                    var periodEnd = (extractionResults[idx + 1].Start ?? 0) + (extractionResults[idx + 1].Length ?? 0);
+
+                    // handle "from/between" together with till words (till/until/through...)
+                    var beforeStr = text.Substring(0, periodBegin);
+
+                    var beforeMatch = this.config.RangePrefixRegex.MatchEnd(beforeStr, trim: true);
+
+                    if (beforeMatch.Success)
+                    {
+                        periodBegin = beforeMatch.Index;
+                    }
+                    else
+                    {
+                        var afterStr = text.Substring(periodEnd);
+
+                        var afterMatch = this.config.RangeSuffixRegex.MatchBegin(afterStr, trim: true);
+
+                        if (afterMatch.Success)
+                        {
+                            periodEnd += afterMatch.Index + afterMatch.Length;
+                        }
+                    }
+
+                    ret.Add(new Token(periodBegin, periodEnd, metadata));
+
+                    // merge two tokens here, increase the index by two
+                    idx += 2;
+                    continue;
+                }
+
+                idx++;
             }
 
             return ret;

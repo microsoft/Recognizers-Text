@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { BasePhoneNumbers } from "../../resources/basePhoneNumbers";
 import { BaseSequenceParser, BaseIpParser } from "../parsers";
 import { ExtractResult, ParseResult, Match } from "@microsoft/recognizers-text";

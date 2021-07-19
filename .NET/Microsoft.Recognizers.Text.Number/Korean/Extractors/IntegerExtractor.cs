@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
@@ -72,6 +75,9 @@ namespace Microsoft.Recognizers.Text.Number.Korean
                     // Uses no allow lists and extracts all potential integers (useful in Units, for example).
                     regexes.Add(
                         new Regex(NumbersDefinitions.NumbersAggressiveRegex, RegexFlags),
+                        RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.KOREAN));
+                    regexes.Add(
+                        new Regex(NumbersDefinitions.InexactNumberUnitRegex, RegexFlags),
                         RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.KOREAN));
                     break;
             }

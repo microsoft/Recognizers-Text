@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -162,36 +165,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
         }
 
-        public static string GenerateEndInclusiveTimex(string originalTimex, DatePeriodTimexType datePeriodTimexType,
-                                                       DateObject startDate, DateObject endDate)
-        {
-
-            var timexEndInclusive = TimexUtility.GenerateDatePeriodTimex(startDate, endDate, datePeriodTimexType);
-
-            // Sometimes the original timex contains fuzzy part like "XXXX-05-31"
-            // The fuzzy part needs to stay the same in the new end-inclusive timex
-            if (originalTimex.Contains(Constants.TimexFuzzy) && originalTimex.Length == timexEndInclusive.Length)
-            {
-                var timexCharSet = new char[timexEndInclusive.Length];
-
-                for (int i = 0; i < originalTimex.Length; i++)
-                {
-                    if (originalTimex[i] != Constants.TimexFuzzy)
-                    {
-                        timexCharSet[i] = timexEndInclusive[i];
-                    }
-                    else
-                    {
-                        timexCharSet[i] = Constants.TimexFuzzy;
-                    }
-                }
-
-                timexEndInclusive = new string(timexCharSet);
-            }
-
-            return timexEndInclusive;
-        }
-
         public static DateTimeParseResult SetInclusivePeriodEnd(DateTimeParseResult slot)
         {
             if (slot.Type == $"{ParserTypeName}.{Constants.SYS_DATETIME_DATEPERIOD}")
@@ -222,7 +195,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                                     endDate = TimexUtility.OffsetDateObject(endDate, offset: 1, timexType: datePeriodTimexType);
                                     values[DateTimeResolutionKey.End] = DateTimeFormatUtil.LuisDate(endDate);
                                     values[DateTimeResolutionKey.Timex] =
-                                        GenerateEndInclusiveTimex(slot.TimexStr, datePeriodTimexType, startDate, endDate);
+                                        TimexUtility.GenerateEndInclusiveTimex(slot.TimexStr, datePeriodTimexType, startDate, endDate);
 
                                     if (string.IsNullOrEmpty(altTimex))
                                     {
@@ -431,8 +404,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     er.Text = matchIsAfter ? er.Text.Substring(0, (int)er.Length) : er.Text.Substring(equalMatch.Length);
                     modStr = equalMatch.Value;
                 }
-                else if ((er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD, StringComparison.Ordinal) &&
-                          Config.YearRegex.Match(er.Text).Success) ||
+                else if ((er.Type.Equals(Constants.SYS_DATETIME_DATEPERIOD, StringComparison.Ordinal) && Config.YearRegex.Match(er.Text).Success) ||
                          er.Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.Ordinal) ||
                          er.Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.Ordinal))
                 {
@@ -532,7 +504,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (hasDateAfter && pr.Value != null)
             {
                 pr.Length += modStr.Length;
-                pr.Text = pr.Text + modStr;
+                pr.Text += modStr;
                 var val = (DateTimeResolutionResult)pr.Value;
                 val.Mod = CombineMod(val.Mod, Constants.SINCE_MOD);
                 pr.Value = val;
@@ -980,14 +952,14 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else if (type.Equals(Constants.SYS_DATETIME_DATETIMEALT, StringComparison.Ordinal))
             {
-                // for a period
+                // For a period
                 if (resolutionDic.Count > 2 || !string.IsNullOrEmpty(mod))
                 {
                     AddAltPeriodToResolution(resolutionDic, mod, res);
                 }
                 else
                 {
-                    // for a datetime point
+                    // For a datetime point
                     AddAltSingleDateTimeToResolution(resolutionDic, TimeTypeConstants.DATETIMEALT, mod, res);
                 }
             }
@@ -999,7 +971,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var combinedMod = newMod;
 
-            if (!string.IsNullOrEmpty(originalMod))
+            if (!string.IsNullOrEmpty(originalMod) && !originalMod.Equals(newMod, StringComparison.Ordinal))
             {
                 combinedMod = $"{newMod}-{originalMod}";
             }
@@ -1076,6 +1048,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     break;
                 case Constants.SYS_DATETIME_TIMEZONE:
+
                     if ((Config.Options & DateTimeOptions.EnablePreview) != 0)
                     {
                         parseResult = this.Config.TimeZoneParser.Parse(extractResult, referenceTime);

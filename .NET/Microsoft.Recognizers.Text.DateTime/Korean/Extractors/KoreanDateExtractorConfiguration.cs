@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
@@ -28,6 +31,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
         public static readonly Regex WeekDayOfMonthRegex = new Regex(DateTimeDefinitions.WeekDayOfMonthRegex, RegexFlags);
 
         public static readonly Regex SpecialDate = new Regex(DateTimeDefinitions.SpecialDate, RegexFlags);
+
+        public static readonly Regex DurationFromSpecialDayRegex = new Regex(DateTimeDefinitions.DurationFromSpecialDayRegex, RegexFlags);
 
         public static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.BeforeRegex, RegexFlags);
 
@@ -64,7 +69,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
             ImplicitDateList = new List<Regex>
             {
                 LunarRegex, SpecialDayRegex, ThisRegex, LastRegex, NextRegex,
-                WeekDayRegex, WeekDayOfMonthRegex, SpecialDate,
+                WeekDayRegex, WeekDayOfMonthRegex, SpecialDate, DurationFromSpecialDayRegex,
             };
 
             // (음력)? (2016)? 1 월 3 일 (수)?
@@ -78,6 +83,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
 
             // 2015-12-23
             var dateRegex8 = new Regex(DateTimeDefinitions.DateRegexList8, RegexFlags);
+
+            var dateRegex9 = new Regex(DateTimeDefinitions.DateRegexList9, RegexFlags);
 
             // 23/7
             var dateRegex5 = new Regex(DateTimeDefinitions.DateRegexList5, RegexFlags);
@@ -95,7 +102,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
             var enableDmy = DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY;
             var enableYmd = DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_YMD;
 
-            DateRegexList = new List<Regex> { dateRegex1, dateRegex2, dateRegex3, dateRegex8 };
+            DateRegexList = new List<Regex> { dateRegex1, dateRegex2, dateRegex3, dateRegex8, dateRegex9 };
             DateRegexList = DateRegexList.Concat(
                 enableDmy ?
                 new[] { dateRegex5, dateRegex4, dateRegex7, dateRegex6 } :

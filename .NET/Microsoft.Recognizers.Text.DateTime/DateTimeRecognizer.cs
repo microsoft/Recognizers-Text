@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Generic;
 
 using Microsoft.Recognizers.Text.DateTime.Arabic;
 using Microsoft.Recognizers.Text.DateTime.Chinese;
@@ -84,6 +87,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                         new SpanishMergedExtractorConfiguration(new BaseDateTimeOptionsConfiguration(Culture.Spanish, options)))));
 
             RegisterModel<DateTimeModel>(
+                Culture.SpanishMexican,
+                options => new DateTimeModel(
+                    new BaseMergedDateTimeParser(
+                        new SpanishMergedParserConfiguration(new BaseDateTimeOptionsConfiguration(Culture.SpanishMexican, options))),
+                    new BaseMergedDateTimeExtractor(
+                        new SpanishMergedExtractorConfiguration(new BaseDateTimeOptionsConfiguration(Culture.SpanishMexican, options)))));
+
+            RegisterModel<DateTimeModel>(
                 Culture.French,
                 options => new DateTimeModel(
                     new BaseMergedDateTimeParser(
@@ -131,14 +142,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                     new BaseMergedDateTimeExtractor(
                         new HindiMergedExtractorConfiguration(new BaseDateTimeOptionsConfiguration(Culture.Hindi, options)))));
 
-            // TODO to be uncommented when all tests for Dutch are green.
-            // RegisterModel<DateTimeModel>(
-            //     Culture.Dutch,
-            //     options => new DateTimeModel(
-            //         new BaseMergedDateTimeParser(
-            //             new DutchMergedParserConfiguration(new BaseDateTimeOptionsConfiguration(Culture.Dutch, options))),
-            //         new BaseMergedDateTimeExtractor(
-            //             new DutchMergedExtractorConfiguration(new BaseDateTimeOptionsConfiguration(Culture.Dutch, options)))));
+            RegisterModel<DateTimeModel>(
+                Culture.Dutch,
+                options => new DateTimeModel(
+                    new BaseMergedDateTimeParser(
+                        new DutchMergedParserConfiguration(new BaseDateTimeOptionsConfiguration(Culture.Dutch, options))),
+                    new BaseMergedDateTimeExtractor(
+                        new DutchMergedExtractorConfiguration(new BaseDateTimeOptionsConfiguration(Culture.Dutch, options)))));
 
             // TODO to be uncommented when all tests for Japanese are green.
             // RegisterModel<DateTimeModel>(

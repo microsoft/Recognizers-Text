@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -10,6 +13,18 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex DurationConnectorRegex { get; }
 
         Regex YearRegex { get; }
+
+        Regex AllRegex { get; }
+
+        Regex HalfRegex { get; }
+
+        Regex RelativeDurationUnitRegex { get; }
+
+        Regex DuringRegex { get; }
+
+        Regex SomeRegex { get; }
+
+        Regex MoreOrLessRegex { get; }
 
         IExtractor InternalExtractor { get; }
 

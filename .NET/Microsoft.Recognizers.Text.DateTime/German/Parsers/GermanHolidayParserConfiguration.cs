@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.German;
@@ -16,6 +19,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             ThisPrefixRegex = new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
             NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
             PreviousPrefixRegex = new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
+
             this.HolidayRegexList = GermanHolidayExtractorConfiguration.HolidayRegexList;
             this.HolidayNames = DateTimeDefinitions.HolidayNames.ToImmutableDictionary();
         }
@@ -49,9 +53,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public override string SanitizeHolidayToken(string holiday)
         {
-            return holiday
-                .Replace(" ", string.Empty)
-                .Replace("'", string.Empty);
+            return holiday.Replace(" ", string.Empty)
+                          .Replace("-", string.Empty)
+                          .Replace("'", string.Empty);
         }
     }
 }

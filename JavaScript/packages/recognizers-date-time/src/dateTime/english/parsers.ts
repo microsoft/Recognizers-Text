@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { BaseTimeParser, ITimeParserConfiguration } from "../baseTime";
 import { EnglishTimeExtractorConfiguration } from "./timeConfiguration";
 import { DateTimeResolutionResult, DateTimeFormatUtil } from "../utilities";

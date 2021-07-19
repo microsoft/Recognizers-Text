@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
@@ -19,6 +22,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             ThisPrefixRegex = new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
             NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
             PreviousPrefixRegex = new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
+
             this.HolidayRegexList = EnglishHolidayExtractorConfiguration.HolidayRegexList;
             this.HolidayNames = DateTimeDefinitions.HolidayNames.ToImmutableDictionary();
         }
@@ -56,7 +60,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 .Replace("saint ", "st ")
                 .Replace(" ", string.Empty)
                 .Replace("'", string.Empty)
-                .Replace(".", string.Empty);
+                .Replace(".", string.Empty)
+                .Replace("-", string.Empty);
         }
 
         // @TODO Change to auto-generate.
@@ -115,6 +120,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 { "trinitysunday", TrinitySunday },
                 { "corpuschristi", CorpusChristi },
                 { "juneteenth", Juneteenth },
+                { "ramadan", Ramadan },
+                { "sacrifice", Sacrifice },
+                { "eidalfitr", EidAlFitr },
+                { "islamicnewyear", IslamicNewYear },
             };
         }
 
@@ -204,5 +213,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         private static DateObject CorpusChristi(int year) => EasterDay(year).AddDays(60);
 
+        private static DateObject Ramadan(int year) => HolidayFunctions.IslamicHoliday(year, HolidayFunctions.IslamicHolidayType.Ramadan);
+
+        private static DateObject Sacrifice(int year) => HolidayFunctions.IslamicHoliday(year, HolidayFunctions.IslamicHolidayType.Sacrifice);
+
+        private static DateObject EidAlFitr(int year) => HolidayFunctions.IslamicHoliday(year, HolidayFunctions.IslamicHolidayType.EidAlFitr);
+
+        private static DateObject IslamicNewYear(int year) => HolidayFunctions.IslamicHoliday(year, HolidayFunctions.IslamicHolidayType.NewYear);
     }
 }

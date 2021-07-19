@@ -69,6 +69,12 @@ public class ChineseDateTime {
     public static final String DateNextRegex = "(下一个|下个|下一|下)(的)?{WeekDayRegex}"
             .replace("{WeekDayRegex}", WeekDayRegex);
 
+    public static final String WoMLastRegex = "最后一";
+
+    public static final String WoMPreviousRegex = "上个";
+
+    public static final String WoMNextRegex = "下个";
+
     public static final String SpecialMonthRegex = "^[.]";
 
     public static final String SpecialYearRegex = "^[.]";
@@ -154,6 +160,10 @@ public class ChineseDateTime {
             .replace("{DayRegex}", DayRegex);
 
     public static final String DatePeriodTillRegex = "(?<till>到|至|--|-|—|——|~|–)";
+
+    public static final String DatePeriodRangeSuffixRegex = "^\\b$";
+
+    public static final String DatePeriodRangePrefixRegex = "从";
 
     public static final String DatePeriodTillSuffixRequiredRegex = "(?<till>与|和)";
 
@@ -331,6 +341,18 @@ public class ChineseDateTime {
 
     public static final String DateTimePeriodNumberCombinedWithUnit = "\\b(?<num>\\d+(\\.\\d*)?){DateTimePeriodUnitRegex}"
             .replace("{DateTimePeriodUnitRegex}", DateTimePeriodUnitRegex);
+
+    public static final String DurationAllRegex = "^[.]";
+
+    public static final String DurationHalfRegex = "^[.]";
+
+    public static final String DurationRelativeDurationUnitRegex = "^[.]";
+
+    public static final String DurationDuringRegex = "^[.]";
+
+    public static final String DurationSomeRegex = "^[.]";
+
+    public static final String DurationMoreOrLessRegex = "^[.]";
 
     public static final String DurationYearRegex = "((\\d{3,4})|0\\d|两千)\\s*年";
 

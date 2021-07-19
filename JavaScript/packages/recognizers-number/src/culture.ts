@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { Culture as BaseCulture, CultureInfo as BaseCultureInfo } from "@microsoft/recognizers-text";
 import trimEnd = require("lodash.trimend");
 import { BigNumber } from 'bignumber.js/bignumber';

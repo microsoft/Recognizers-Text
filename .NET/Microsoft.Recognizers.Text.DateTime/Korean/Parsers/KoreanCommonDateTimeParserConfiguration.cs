@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
 using Microsoft.Recognizers.Definitions;
@@ -14,7 +17,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
         public KoreanCommonDateTimeParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
-            UnitMap = DateTimeDefinitions.ParserConfigurationUnitMap.ToImmutableDictionary(k => k.Key, k => k.Value.Substring(0, 1) + k.Value.Substring(1).ToLower());
+            UnitMap = DateTimeDefinitions.ParserConfigurationUnitMap.ToImmutableDictionary(k => k.Key, k => k.Value);
             UnitValueMap = DateTimeDefinitions.DurationUnitValueMap.ToImmutableDictionary();
             CardinalMap = DateTimeDefinitions.ParserConfigurationCardinalMap.ToImmutableDictionary();
             DayOfMonth = DateTimeDefinitions.ParserConfigurationDayOfMonth.ToImmutableDictionary();

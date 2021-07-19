@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 export class Constants {
     static readonly IP_REGEX_IPV4: string = "ipv4";
     static readonly IP_REGEX_IPV6: string = "ipv6";

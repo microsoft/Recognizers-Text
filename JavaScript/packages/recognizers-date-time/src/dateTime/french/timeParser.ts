@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { RegExpUtility } from "@microsoft/recognizers-text";
 import { BaseTimeParser, ITimeParserConfiguration } from "../baseTime";
 import { DateTimeResolutionResult, DateUtils, DateTimeFormatUtil } from "../utilities";

@@ -5097,12 +5097,12 @@
   },
   {
     "Input": "Je retournerair à midi",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "midi",
         "Start": 18,
-        "End": 22,
+        "End": 21,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
@@ -20773,6 +20773,462 @@
               "type": "daterange",
               "start": "2015-01-01",
               "end": "2016-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Je serai de retour le samedi 23/06/18",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "samedi 23/06/18",
+        "Start": 22,
+        "End": 36,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-06-23",
+              "type": "date",
+              "value": "2018-06-23"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Mon prochain salaire sera le 25 Mardi",
+    "Context": {
+      "ReferenceDateTime": "2018-09-28T01:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "le 25 mardi",
+        "Start": 26,
+        "End": 36,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-09-25",
+              "type": "date",
+              "value": "2018-09-25"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Mon prochain salaire sera le vingt-cinq Mardi",
+    "Context": {
+      "ReferenceDateTime": "2018-09-28T01:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "le vingt-cinq mardi",
+        "Start": 26,
+        "End": 44,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-09-25",
+              "type": "date",
+              "value": "2018-09-25"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "le déjeuner sera prêt à midi",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "midi",
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T12",
+              "type": "time",
+              "value": "12:00:00"
+            }
+          ]
+        },
+        "Start": 24,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "Il y a une fête programmée pour Vendredi à midi.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "vendredi à midi",
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-5T12",
+              "type": "datetime",
+              "value": "2016-11-04 12:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-5T12",
+              "type": "datetime",
+              "value": "2016-11-11 12:00:00"
+            }
+          ]
+        },
+        "Start": 32,
+        "End": 46
+      }
+    ]
+  },
+  {
+    "Input": "Nous avons terminé notre cours il y a 30 minutes.",
+    "Context": {
+      "ReferenceDateTime": "2021-05-20T15:30:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "il y a 30 minutes",
+        "Start": 31,
+        "End": 47,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-05-20T15:00:00",
+              "type": "datetime",
+              "value": "2021-05-20 15:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Je l'ai commandé il y a 24 heures.",
+    "Context": {
+      "ReferenceDateTime": "2021-05-20T15:30:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "il y a 24 heures",
+        "Start": 17,
+        "End": 32,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-05-19T15:30:00",
+              "type": "datetime",
+              "value": "2021-05-19 15:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Je suis revenu dans mon pays il ya 2 jours.",
+    "Context": {
+      "ReferenceDateTime": "2021-05-20T15:30:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "il ya 2 jours",
+        "Start": 29,
+        "End": 41,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-05-18",
+              "type": "date",
+              "value": "2021-05-18"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Il y a à peu près un mois.",
+    "Context": {
+      "ReferenceDateTime": "2021-05-20T15:30:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "il y a à peu près un mois",
+        "Start": 0,
+        "End": 24,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-04-20",
+              "type": "date",
+              "value": "2021-04-20"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Il est parti depuis trois semaines.",
+    "Context": {
+      "ReferenceDateTime": "2021-05-20T15:30:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "depuis trois semaines",
+        "Start": 13,
+        "End": 33,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-04-29",
+              "type": "date",
+              "value": "2021-04-29"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Nous ne serons que 3 la semaine prochaine.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "la semaine prochaine",
+        "Start": 21,
+        "End": 40,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-W46",
+              "type": "daterange",
+              "start": "2016-11-14",
+              "end": "2016-11-21"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "J'en ai compté 13 dernière minute.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T12:30:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "dernière minute",
+        "Start": 18,
+        "End": 32,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-11-07T12:29:00,2016-11-07T12:30:00,PT1M)",
+              "type": "datetimerange",
+              "start": "2016-11-07 12:29:00",
+              "end": "2016-11-07 12:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Nous ne serons absents que les 3 prochaines semaines.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 prochaines semaines",
+        "Start": 31,
+        "End": 51,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-11-08,2016-11-29,P3W)",
+              "type": "daterange",
+              "start": "2016-11-08",
+              "end": "2016-11-29"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "J'en ai compté 3 dans les 13 dernières minutes.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T12:30:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "13 dernières minutes",
+        "Start": 26,
+        "End": 45,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-11-07T12:17:00,2016-11-07T12:30:00,PT13M)",
+              "type": "datetimerange",
+              "start": "2016-11-07 12:17:00",
+              "end": "2016-11-07 12:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Je serai de retour Jeudi avant 17h",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "jeudi avant 17h",
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-4T17",
+              "type": "datetimerange",
+              "Mod": "before",
+              "end": "2016-11-03 17:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-4T17",
+              "type": "datetimerange",
+              "Mod": "before",
+              "end": "2016-11-10 17:00:00"
+            }
+          ]
+        },
+        "Start": 19,
+        "End": 33
+      }
+    ]
+  },
+  {
+    "Input": "Je serai de retour demain avant 17h",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "demain avant 17h",
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-08T17",
+              "type": "datetimerange",
+              "Mod": "before",
+              "end": "2016-11-08 17:00:00"
+            }
+          ]
+        },
+        "Start": 19,
+        "End": 34
+      }
+    ]
+  },
+  {
+    "Input": "Je serai de retour 23/12 avant 17h",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "23/12 avant 17h",
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-12-23T17",
+              "type": "datetimerange",
+              "Mod": "before",
+              "end": "2015-12-23 17:00:00"
+            },
+            {
+              "timex": "XXXX-12-23T17",
+              "type": "datetimerange",
+              "Mod": "before",
+              "end": "2016-12-23 17:00:00"
+            }
+          ]
+        },
+        "Start": 19,
+        "End": 33
+      }
+    ]
+  },
+  {
+    "Input": "Je serai de retour dans les 2h",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "dans les 2h",
+        "Start": 19,
+        "End": 29,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-11-07T16:12:00,2016-11-07T18:12:00,PT2H)",
+              "type": "datetimerange",
+              "start": "2016-11-07 16:12:00",
+              "end": "2016-11-07 18:12:00"
             }
           ]
         }

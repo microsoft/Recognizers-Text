@@ -1,4 +1,7 @@
-﻿namespace Microsoft.Recognizers.Text.Sequence
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+namespace Microsoft.Recognizers.Text.Sequence
 {
     public class BaseIpParser : BaseSequenceParser
     {

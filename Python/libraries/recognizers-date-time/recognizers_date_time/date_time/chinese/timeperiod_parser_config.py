@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 from recognizers_text import Extractor
 from recognizers_number import ChineseIntegerExtractor
 

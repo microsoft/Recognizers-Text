@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Generic;
 using Microsoft.Recognizers.Text.Number.Arabic;
 using Microsoft.Recognizers.Text.Number.Chinese;
@@ -193,6 +196,34 @@ namespace Microsoft.Recognizers.Text.Number
                     new BaseNumberRangeParser(new SpanishNumberRangeParserConfiguration(
                                                   new BaseNumberOptionsConfiguration(Culture.Spanish, options))),
                     new Spanish.NumberRangeExtractor(new BaseNumberOptionsConfiguration(Culture.Spanish, options))));
+
+            RegisterModel<NumberModel>(
+                Culture.SpanishMexican,
+                (options) => new NumberModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number, new SpanishNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.SpanishMexican, options))),
+                    Spanish.NumberExtractor.GetInstance(new BaseNumberOptionsConfiguration(Culture.SpanishMexican, options, NumberMode.PureNumber))));
+
+            RegisterModel<OrdinalModel>(
+                Culture.SpanishMexican,
+                (options) => new OrdinalModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new SpanishNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.SpanishMexican, options))),
+                    Spanish.OrdinalExtractor.GetInstance(new BaseNumberOptionsConfiguration(Culture.SpanishMexican, options))));
+
+            RegisterModel<PercentModel>(
+                Culture.SpanishMexican,
+                (options) => new PercentModel(
+                    AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Percentage, new SpanishNumberParserConfiguration(
+                                                              new BaseNumberOptionsConfiguration(Culture.SpanishMexican, options))),
+                    new Spanish.PercentageExtractor(new BaseNumberOptionsConfiguration(Culture.SpanishMexican, options))));
+
+            RegisterModel<NumberRangeModel>(
+                Culture.SpanishMexican,
+                (options) => new NumberRangeModel(
+                    new BaseNumberRangeParser(new SpanishNumberRangeParserConfiguration(
+                                                  new BaseNumberOptionsConfiguration(Culture.SpanishMexican, options))),
+                    new Spanish.NumberRangeExtractor(new BaseNumberOptionsConfiguration(Culture.SpanishMexican, options))));
 
             RegisterModel<NumberModel>(
                 Culture.Portuguese,

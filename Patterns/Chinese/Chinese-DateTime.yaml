@@ -45,6 +45,12 @@ DateLastRegex: !nestedRegex
 DateNextRegex: !nestedRegex
   def: (下一个|下个|下一|下)(的)?{WeekDayRegex}
   references: [WeekDayRegex]
+WoMLastRegex: !simpleRegex
+  def: 最后一
+WoMPreviousRegex: !simpleRegex
+  def: 上个
+WoMNextRegex: !simpleRegex
+  def: 下个
 SpecialMonthRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in Japanese
   def: ^[.]
@@ -113,6 +119,11 @@ DateRegexList8: !nestedRegex
 # DatePeriodExtractorCJK
 DatePeriodTillRegex: !simpleRegex
   def: (?<till>到|至|--|-|—|——|~|–)
+DatePeriodRangeSuffixRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Korean
+  def: ^\b$
+DatePeriodRangePrefixRegex: !simpleRegex
+  def: 从
 # DatePeriodExtractorCJK
 # Note that these "Till" connector can only be used with some suffix like "之间|之内|期间|中间|间"
 DatePeriodTillSuffixRequiredRegex: !simpleRegex
@@ -257,6 +268,24 @@ DateTimePeriodNumberCombinedWithUnit: !nestedRegex
   def: \b(?<num>\d+(\.\d*)?){DateTimePeriodUnitRegex}
   references: [DateTimePeriodUnitRegex]
 #DurationExtractorCJK
+DurationAllRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Korean
+  def: ^[.]
+DurationHalfRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Korean
+  def: ^[.]
+DurationRelativeDurationUnitRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Korean
+  def: ^[.]
+DurationDuringRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Korean
+  def: ^[.]
+DurationSomeRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Korean
+  def: ^[.]
+DurationMoreOrLessRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Korean
+  def: ^[.]
 DurationYearRegex: !simpleRegex
   def: ((\d{3,4})|0\d|两千)\s*年
 DurationHalfSuffixRegex: !simpleRegex

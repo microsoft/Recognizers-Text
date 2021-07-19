@@ -24,12 +24,23 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public const string LangMarker = @"Spa";
       public const bool CompoundNumberLanguage = false;
       public const bool MultiDecimalSeparatorCulture = true;
+      public static readonly IList<string> NonStandardSeparatorVariants = new List<string>
+        {
+            @"es-mx",
+            @"es-do",
+            @"es-sv",
+            @"es-gt",
+            @"es-hn",
+            @"es-ni",
+            @"es-pa",
+            @"es-pr"
+        };
       public const string HundredsNumberIntegerRegex = @"(cuatrocient[ao]s|trescient[ao]s|seiscient[ao]s|setecient[ao]s|ochocient[ao]s|novecient[ao]s|doscient[ao]s|quinient[ao]s|(?<!por\s+)(cien(to)?))";
-      public const string RoundNumberIntegerRegex = @"(mil millones|millones|mill[oó]n|mil|billones|bill[oó]n|trillones|trill[oó]n|cuatrillones|cuatrill[oó]n|quintillones|quintill[oó]n|sextillones|sextill[oó]n|septillones|septill[oó]n)";
+      public const string RoundNumberIntegerRegex = @"(mil millones|mill[oó]n(es)?|mil|bill[oó]n(es)?|trill[oó]n(es)?|cuatrill[oó]n(es)?|quintill[oó]n(es)?|sextill[oó]n(es)?|septill[oó]n(es)?)";
       public const string ZeroToNineIntegerRegex = @"(cuatro|cinco|siete|nueve|cero|tres|seis|ocho|dos|un[ao]?)";
       public const string TenToNineteenIntegerRegex = @"(diecisiete|diecinueve|diecis[eé]is|dieciocho|catorce|quince|trece|diez|once|doce)";
-      public const string TwentiesIntegerRegex = @"(veinticuatro|veinticinco|veintisiete|veintinueve|veintitr[eé]s|veintis[eé]is|veintiocho|veintid[oó]s|ventiun[ao]|veinti[uú]n[oa]?|veinte)";
-      public const string TensNumberIntegerRegex = @"(cincuenta|cuarenta|treinta|sesenta|setenta|ochenta|noventa)";
+      public const string TwentiesIntegerRegex = @"(veinti(cuatro|cinco|siete|nueve|tr[eé]s|s[eé]is|ocho|d[oó]s|[uú]n[oa]?)|ventiun[ao]|veinte)";
+      public const string TensNumberIntegerRegex = @"(cincuenta|cuarenta|treinta|se[st]enta|ochenta|noventa)";
       public const string NegativeNumberTermsRegex = @"(?<negTerm>(?<!(al|lo)\s+)menos\s+)";
       public static readonly string NegativeNumberSignRegex = $@"^{NegativeNumberTermsRegex}.*";
       public const string DigitsNumberRegex = @"\d|\d{1,3}(\.\d{3})";

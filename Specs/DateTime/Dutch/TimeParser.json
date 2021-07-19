@@ -693,10 +693,10 @@
     "NotSupportedByDesign": "javascript,python,java"
   },
   {
-    "Input": "Ik ben om 7 uur vanavond terug",
+    "Input": "Ik ben om 7 uur 's avonds terug",
     "Results": [
       {
-        "Text": "7 uur vanavond",
+        "Text": "7 uur 's avonds",
         "Type": "time",
         "Value": {
           "Timex": "T19",
@@ -708,7 +708,7 @@
           }
         },
         "Start": 10,
-        "Length": 14
+        "Length": 15
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
@@ -2768,6 +2768,136 @@
         },
         "Start": 10,
         "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "15.00 : Ik zal op deze week weg zijn",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "15.00",
+        "Type": "time",
+        "Value": {
+          "Timex": "T15:00",
+          "FutureResolution": {
+            "time": "15:00:00"
+          },
+          "PastResolution": {
+            "time": "15:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "deze week 8.00 zou een datumreeks en een tijd moeten zijn",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "8.00",
+        "Type": "time",
+        "Value": {
+          "Timex": "T08",
+          "FutureResolution": {
+            "time": "08:00:00"
+          },
+          "PastResolution": {
+            "time": "08:00:00"
+          }
+        },
+        "Start": 10,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "deze week 20.00 zou een datumreeks en een tijd moeten zijn",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "20.00",
+        "Type": "time",
+        "Value": {
+          "Timex": "T20",
+          "FutureResolution": {
+            "time": "20:00:00"
+          },
+          "PastResolution": {
+            "time": "20:00:00"
+          }
+        },
+        "Start": 10,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "week 10 20.00 zou een datumreeks en een tijd moeten zijn",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "20.00",
+        "Type": "time",
+        "Value": {
+          "Timex": "T20",
+          "FutureResolution": {
+            "time": "20:00:00"
+          },
+          "PastResolution": {
+            "time": "20:00:00"
+          }
+        },
+        "Start": 8,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "week 10 10.20 zou een datumreeks en een tijd moeten zijn",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "10.20",
+        "Type": "time",
+        "Value": {
+          "Timex": "T10:20",
+          "FutureResolution": {
+            "time": "10:20:00"
+          },
+          "PastResolution": {
+            "time": "10:20:00"
+          }
+        },
+        "Start": 8,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "De doeltijd is 20.10",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "20.10",
+        "Type": "time",
+        "Value": {
+          "Timex": "T20:10",
+          "FutureResolution": {
+            "time": "20:10:00"
+          },
+          "PastResolution": {
+            "time": "20:10:00"
+          }
+        },
+        "Start": 15,
+        "Length": 5
       }
     ]
   }

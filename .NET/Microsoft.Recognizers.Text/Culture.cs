@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Linq;
 
 namespace Microsoft.Recognizers.Text
@@ -10,6 +13,7 @@ namespace Microsoft.Recognizers.Text
         public const string EnglishOthers = "en-*";
         public const string Chinese = "zh-cn";
         public const string Spanish = "es-es";
+        public const string SpanishMexican = "es-mx"; // Temporary workaround for language variant config issue
         public const string Portuguese = "pt-br";
         public const string French = "fr-fr";
         public const string German = "de-de";
@@ -29,6 +33,7 @@ namespace Microsoft.Recognizers.Text
             new Culture("English", English),
             new Culture("Chinese", Chinese),
             new Culture("Spanish", Spanish),
+            new Culture("SpanishMexican", SpanishMexican),
             new Culture("Portuguese", Portuguese),
             new Culture("French", French),
             new Culture("German", German),

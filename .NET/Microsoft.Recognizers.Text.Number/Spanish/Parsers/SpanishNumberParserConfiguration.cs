@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
@@ -52,6 +55,8 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
         }
 
         public string NonDecimalSeparatorText { get; private set; }
+
+        public override IEnumerable<string> NonStandardSeparatorVariants => NumbersDefinitions.NonStandardSeparatorVariants;
 
         public override IEnumerable<string> NormalizeTokenSet(IEnumerable<string> tokens, ParseResult context)
         {

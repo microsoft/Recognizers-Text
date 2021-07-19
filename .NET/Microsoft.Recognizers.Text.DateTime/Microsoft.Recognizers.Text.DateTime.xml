@@ -14,6 +14,11 @@
             Represents a week Period
             </summary>
         </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.DatePeriodTimexType.ByFortnight">
+            <summary>
+            Represents a fortnight Period
+            </summary>
+        </member>
         <member name="F:Microsoft.Recognizers.Text.DateTime.DatePeriodTimexType.ByMonth">
             <summary>
             Represents a month Period
@@ -128,7 +133,13 @@
             <summary>Ramadan</summary>
         </member>
         <member name="F:Microsoft.Recognizers.Text.DateTime.HolidayFunctions.IslamicHolidayType.Sacrifice">
-            <summary>Sacrifice</summary>
+            <summary>Eid al-Adha (Feast of the Sacrifice)</summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.HolidayFunctions.IslamicHolidayType.EidAlFitr">
+            <summary>Eid al-Fitr (Festival of Breaking the Fast)</summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.HolidayFunctions.IslamicHolidayType.NewYear">
+            <summary>Islamic New Year</summary>
         </member>
         <member name="F:Microsoft.Recognizers.Text.DateTime.UnspecificDateTimeTerms.None">
             <summary>

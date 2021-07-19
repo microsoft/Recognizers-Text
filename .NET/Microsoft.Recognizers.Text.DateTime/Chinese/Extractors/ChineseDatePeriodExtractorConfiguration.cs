@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Chinese;
@@ -12,6 +15,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
     public class ChineseDatePeriodExtractorConfiguration : BaseDateTimeOptionsConfiguration, ICJKDatePeriodExtractorConfiguration
     {
         public static readonly Regex TillRegex = new Regex(DateTimeDefinitions.DatePeriodTillRegex, RegexFlags);
+
+        public static readonly Regex RangePrefixRegex = new Regex(DateTimeDefinitions.DatePeriodRangePrefixRegex, RegexFlags);
+
+        public static readonly Regex RangeSuffixRegex = new Regex(DateTimeDefinitions.DatePeriodRangeSuffixRegex, RegexFlags);
 
         public static readonly Regex StrictYearRegex = new Regex(DateTimeDefinitions.StrictYearRegex, RegexFlags);
 
@@ -129,5 +136,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         Regex ICJKDatePeriodExtractorConfiguration.NumberCombinedWithUnit => NumberCombinedWithUnit;
 
         Regex ICJKDatePeriodExtractorConfiguration.FollowedUnit => FollowedUnit;
+
+        Regex ICJKDatePeriodExtractorConfiguration.RangePrefixRegex => RangePrefixRegex;
+
+        Regex ICJKDatePeriodExtractorConfiguration.RangeSuffixRegex => RangeSuffixRegex;
     }
 }

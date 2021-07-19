@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text.RegularExpressions;
@@ -12,8 +15,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         public static readonly string ParserName = Constants.SYS_DATETIME_DATEPERIOD; // "DatePeriod";
 
         private static bool inclusiveEndPeriod = false;
-
-        private static readonly Calendar Cal = DateTimeFormatInfo.InvariantInfo.Calendar;
 
         private readonly ICJKDatePeriodParserConfiguration config;
 
@@ -690,9 +691,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var endTimex = hasYear || beginYearForPastResolution == endYearForFutureResolution ? DateTimeFormatUtil.LuisDate(endDateForPastResolution, endDateForFutureResolution) :
                         DateTimeFormatUtil.LuisDate(-1, endMonth, 1);*/
 
-                    var beginTimex = DateTimeFormatUtil.LuisDate(beginDateForPastResolution, beginDateForFutureResolution);
-                    var endTimex = DateTimeFormatUtil.LuisDate(endDateForPastResolution, endDateForFutureResolution);
-                    ret.Timex = $"({beginTimex},{endTimex},P{durationMonths}M)";
+                    // If the year is not specified, the combined range timex will use fuzzy years.
+                    ret.Timex = TimexUtility.GenerateDatePeriodTimex(beginDateForFutureResolution, endDateForFutureResolution, DatePeriodTimexType.ByMonth, beginDateForPastResolution, endDateForPastResolution, hasYear);
                     ret.PastValue = new Tuple<DateObject, DateObject>(beginDateForPastResolution, endDateForPastResolution);
                     ret.FutureValue = new Tuple<DateObject, DateObject>(beginDateForFutureResolution, endDateForFutureResolution);
                     ret.Success = true;
@@ -978,7 +978,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     if (swift >= -1)
                     {
-                        year = year + swift;
+                        year += swift;
                         ret.Timex = DateTimeFormatUtil.LuisDate(year, month);
                         futureYear = pastYear = year;
                     }
@@ -1198,7 +1198,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 hasHalf = true;
             }
 
-            return text;
+            return text.Trim();
         }
 
         private DateTimeResolutionResult HandleYearResult(DateTimeResolutionResult ret, bool hasHalf, bool isFirstHalf, int year)
@@ -1296,7 +1296,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             ret.Timex = TimexUtility.GenerateDatePeriodTimex(futureBegin, futureEnd, DatePeriodTimexType.ByDay, pr1.TimexStr, pr2.TimexStr);
 
-            if (pr1.TimexStr.StartsWith(Constants.TimexFuzzyYear) &&
+            if (pr1.TimexStr.StartsWith(Constants.TimexFuzzyYear, StringComparison.Ordinal) &&
                 futureBegin.CompareTo(DateObject.MinValue.SafeCreateFromValue(futureBegin.Year, 2, 28)) <= 0 &&
                 futureEnd.CompareTo(DateObject.MinValue.SafeCreateFromValue(futureBegin.Year, 3, 1)) >= 0)
             {
@@ -1340,19 +1340,19 @@ namespace Microsoft.Recognizers.Text.DateTime
                         switch (unitStr)
                         {
                             case Constants.TimexDay:
-                                beginDate = referenceDate.AddDays(-double.Parse(numStr));
+                                beginDate = referenceDate.AddDays(-double.Parse(numStr, CultureInfo.InvariantCulture));
                                 endDate = referenceDate;
                                 break;
                             case Constants.TimexWeek:
-                                beginDate = referenceDate.AddDays(-7 * double.Parse(numStr));
+                                beginDate = referenceDate.AddDays(-7 * double.Parse(numStr, CultureInfo.InvariantCulture));
                                 endDate = referenceDate;
                                 break;
                             case Constants.TimexMonthFull:
-                                beginDate = referenceDate.AddMonths(-Convert.ToInt32(double.Parse(numStr)));
+                                beginDate = referenceDate.AddMonths(-Convert.ToInt32(double.Parse(numStr, CultureInfo.InvariantCulture)));
                                 endDate = referenceDate;
                                 break;
                             case Constants.TimexYear:
-                                beginDate = referenceDate.AddYears(-Convert.ToInt32(double.Parse(numStr)));
+                                beginDate = referenceDate.AddYears(-Convert.ToInt32(double.Parse(numStr, CultureInfo.InvariantCulture)));
                                 endDate = referenceDate;
                                 break;
                             default:
@@ -1510,7 +1510,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             int year;
 
             int cardinal;
-            if (cardinalStr.Equals("最后一", StringComparison.Ordinal))
+            if (config.WoMLastRegex.IsExactMatch(cardinalStr, trim: true))
             {
                 cardinal = 5;
             }
@@ -1523,11 +1523,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (string.IsNullOrEmpty(monthStr))
             {
                 var swift = 0;
-                if (trimmedText.StartsWith("下个", StringComparison.Ordinal))
+                if (config.WoMNextRegex.MatchBegin(trimmedText, trim: true).Success)
                 {
                     swift = 1;
                 }
-                else if (trimmedText.StartsWith("上个", StringComparison.Ordinal))
+                else if (config.WoMPreviousRegex.MatchBegin(trimmedText, trim: true).Success)
                 {
                     swift = -1;
                 }

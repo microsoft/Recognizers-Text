@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Dutch;
@@ -45,6 +48,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public static readonly Regex UnspecificDatePeriodRegex =
             new Regex(DateTimeDefinitions.UnspecificDatePeriodRegex, RegexFlags);
+
+        public static readonly Regex PotentialAmbiguousRangeRegex =
+            new Regex(DateTimeDefinitions.PotentialAmbiguousRangeRegex, RegexFlags);
 
         public static readonly Regex[] TermFilterRegexes =
         {
@@ -134,9 +140,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         Regex IMergedExtractorConfiguration.PrepositionSuffixRegex => PrepositionSuffixRegex;
 
-        Regex IMergedExtractorConfiguration.AmbiguousRangeModifierPrefix => null;
+        Regex IMergedExtractorConfiguration.AmbiguousRangeModifierPrefix => AmbiguousRangeModifierPrefix;
 
-        Regex IMergedExtractorConfiguration.PotentialAmbiguousRangeRegex => null;
+        Regex IMergedExtractorConfiguration.PotentialAmbiguousRangeRegex => PotentialAmbiguousRangeRegex;
 
         Regex IMergedExtractorConfiguration.NumberEndingPattern => NumberEndingPattern;
 

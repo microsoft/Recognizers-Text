@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2026
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31402.337
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{ED7B6456-AB0A-48CE-8F85-711FE87F09C2}"
 EndProject
@@ -76,8 +76,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Patterns", "Patterns", "{23
 		..\Patterns\Japanese\Japanese-QuotedText.yaml = ..\Patterns\Japanese\Japanese-QuotedText.yaml
 		..\Patterns\Korean\Korean-DateTime.yaml = ..\Patterns\Korean\Korean-DateTime.yaml
 		..\Patterns\Korean\Korean-Numbers.yaml = ..\Patterns\Korean\Korean-Numbers.yaml
-		..\Patterns\Korean\Korean-QuotedText.yaml = ..\Patterns\Korean\Korean-QuotedText.yaml
 		..\Patterns\Korean\Korean-NumbersWithUnit.yaml = ..\Patterns\Korean\Korean-NumbersWithUnit.yaml
+		..\Patterns\Korean\Korean-QuotedText.yaml = ..\Patterns\Korean\Korean-QuotedText.yaml
 		..\Patterns\Portuguese\Portuguese-Choice.yaml = ..\Patterns\Portuguese\Portuguese-Choice.yaml
 		..\Patterns\Portuguese\Portuguese-DateTime.yaml = ..\Patterns\Portuguese\Portuguese-DateTime.yaml
 		..\Patterns\Portuguese\Portuguese-Numbers.yaml = ..\Patterns\Portuguese\Portuguese-Numbers.yaml
@@ -740,8 +740,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Korean", "Korean", "{2F41FB
 		..\Specs\DateTime\Korean\DatePeriodExtractor.json = ..\Specs\DateTime\Korean\DatePeriodExtractor.json
 		..\Specs\DateTime\Korean\DatePeriodParser.json = ..\Specs\DateTime\Korean\DatePeriodParser.json
 		..\Specs\DateTime\Korean\DateTimeExtractor.json = ..\Specs\DateTime\Korean\DateTimeExtractor.json
-		..\Specs\DateTime\Korean\DateTimeParser.json = ..\Specs\DateTime\Korean\DateTimeParser.json
 		..\Specs\DateTime\Korean\DateTimeModel.json = ..\Specs\DateTime\Korean\DateTimeModel.json
+		..\Specs\DateTime\Korean\DateTimeParser.json = ..\Specs\DateTime\Korean\DateTimeParser.json
 		..\Specs\DateTime\Korean\DateTimePeriodExtractor.json = ..\Specs\DateTime\Korean\DateTimePeriodExtractor.json
 		..\Specs\DateTime\Korean\DateTimePeriodParser.json = ..\Specs\DateTime\Korean\DateTimePeriodParser.json
 		..\Specs\DateTime\Korean\DurationExtractor.json = ..\Specs\DateTime\Korean\DurationExtractor.json

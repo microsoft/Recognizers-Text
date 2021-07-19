@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 import copy
 
 from datatypes_timex_expression import Timex, Constants, TimexHelpers, TimeRange, Time, DateRange, TimexDateHelpers

@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 package com.microsoft.recognizers.text.datetime.spanish.extractors;
 
 import com.microsoft.recognizers.text.datetime.DateTimeOptions;
@@ -78,8 +81,6 @@ public class SpanishTimeExtractorConfiguration extends BaseOptionsConfiguration
 
             // once (y)? veinticinco
             add(RegExpUtility.getSafeRegExp(SpanishDateTime.TimeRegex9));
-
-            add(RegExpUtility.getSafeRegExp(SpanishDateTime.TimeRegex10));
 
             // (tres menos veinte) (pm)?
             add(RegExpUtility.getSafeRegExp(SpanishDateTime.TimeRegex11));

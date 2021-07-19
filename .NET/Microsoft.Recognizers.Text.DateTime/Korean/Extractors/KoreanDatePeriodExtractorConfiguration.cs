@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Korean;
@@ -12,6 +15,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
     public class KoreanDatePeriodExtractorConfiguration : BaseDateTimeOptionsConfiguration, ICJKDatePeriodExtractorConfiguration
     {
         public static readonly Regex TillRegex = new Regex(DateTimeDefinitions.DatePeriodTillRegex, RegexFlags);
+
+        public static readonly Regex RangePrefixRegex = new Regex(DateTimeDefinitions.DatePeriodRangePrefixRegex, RegexFlags);
+
+        public static readonly Regex RangeSuffixRegex = new Regex(DateTimeDefinitions.DatePeriodRangeSuffixRegex, RegexFlags);
 
         public static readonly Regex StrictYearRegex = new Regex(DateTimeDefinitions.StrictYearRegex, RegexFlags);
 
@@ -31,6 +38,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
 
         public static readonly Regex WeekOfMonthRegex = new Regex(DateTimeDefinitions.WeekOfMonthRegex, RegexFlags);
 
+        public static readonly Regex WeekOfYearRegex = new Regex(DateTimeDefinitions.WeekOfYearRegex, RegexFlags);
+
         public static readonly Regex FollowedUnit = new Regex(DateTimeDefinitions.FollowedUnit, RegexFlags);
 
         public static readonly Regex NumberCombinedWithUnit = new Regex(DateTimeDefinitions.NumberCombinedWithUnit, RegexFlags);
@@ -45,6 +54,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
 
         public static readonly Regex DayToDay = new Regex(DateTimeDefinitions.DayToDay, RegexFlags);
 
+        public static readonly Regex WeekToWeek = new Regex(DateTimeDefinitions.WeekToWeek, RegexFlags);
+
         public static readonly Regex DayRegexForPeriod = new Regex(DateTimeDefinitions.DayRegexForPeriod, RegexFlags);
 
         public static readonly Regex PastRegex = new Regex(DateTimeDefinitions.PastRegex, RegexFlags);
@@ -56,6 +67,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
         public static readonly Regex QuarterRegex = new Regex(DateTimeDefinitions.QuarterRegex, RegexFlags);
 
         public static readonly Regex DecadeRegex = new Regex(DateTimeDefinitions.DecadeRegex, RegexFlags);
+
+        public static readonly Regex RelativePeriodRegex = new Regex(DateTimeDefinitions.RelativePeriodRegex, RegexFlags);
 
         public static readonly Regex SpecialMonthRegex = new Regex(DateTimeDefinitions.SpecialMonthRegex, RegexFlags);
 
@@ -82,20 +95,20 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
         {
             SimpleCasesRegex,
             OneWordPeriodRegex,
+            YearRegex,
             StrictYearRegex,
-            YearToYear,
-            YearToYearSuffixRequired,
-            MonthToMonth,
-            MonthToMonthSuffixRequired,
             YearAndMonth,
             PureNumYearAndMonth,
             YearInCJKRegex,
             SpecialMonthRegex,
             SpecialYearRegex,
             WeekOfMonthRegex,
+            WeekOfYearRegex,
+            WeekToWeek,
             SeasonWithYear,
             QuarterRegex,
             DecadeRegex,
+            RelativePeriodRegex,
         };
 
         public KoreanDatePeriodExtractorConfiguration(IDateTimeOptionsConfiguration config)
@@ -129,5 +142,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
         Regex ICJKDatePeriodExtractorConfiguration.NumberCombinedWithUnit => NumberCombinedWithUnit;
 
         Regex ICJKDatePeriodExtractorConfiguration.FollowedUnit => FollowedUnit;
+
+        Regex ICJKDatePeriodExtractorConfiguration.RangePrefixRegex => RangePrefixRegex;
+
+        Regex ICJKDatePeriodExtractorConfiguration.RangeSuffixRegex => RangeSuffixRegex;
     }
 }

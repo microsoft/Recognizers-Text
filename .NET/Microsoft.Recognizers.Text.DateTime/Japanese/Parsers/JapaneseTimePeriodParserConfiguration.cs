@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -63,17 +66,38 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             {
                 timeOfDay = Constants.Night;
             }
+            else if (DateTimeDefinitions.BusinessHourTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)))
+            {
+                timeOfDay = Constants.BusinessHour;
+            }
             else
             {
                 timex = null;
                 return false;
             }
 
-            var parseResult = TimexUtility.ParseTimeOfDay(timeOfDay);
+            var parseResult = TimexUtility.ResolveTimeOfDay(timeOfDay);
             timex = parseResult.Timex;
             beginHour = parseResult.BeginHour;
             endHour = parseResult.EndHour;
             endMin = parseResult.EndMin;
+
+            // Modify time period if "early"/"late" is present
+            if (DateTimeDefinitions.EarlyHourTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)))
+            {
+                endHour = beginHour + Constants.HalfMidDayDurationHourCount;
+
+                // Handling special case: night ends with 23:59.
+                if (endMin == 59)
+                {
+                    endMin = 0;
+                }
+            }
+
+            if (DateTimeDefinitions.LateHourTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)))
+            {
+                beginHour = beginHour + Constants.HalfMidDayDurationHourCount;
+            }
 
             return true;
         }

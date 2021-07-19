@@ -626,6 +626,7 @@ RelativeReferenceOffsetMap: !dictionary
     القبل الأخير: -1
     قبلا الأخي: -1
     التالي: 1
+    بعد التالي: 2
     قادم: 1
     قادمة: 1
     القادم: 1
@@ -665,6 +666,7 @@ RelativeReferenceRelativeToMap: !dictionary
     القبل الأخير: current
     الذي قبلا الأخي: end
     التالي: current
+    بعد التالي: current
     قادم: current
     قادمة: current
     القادم: current

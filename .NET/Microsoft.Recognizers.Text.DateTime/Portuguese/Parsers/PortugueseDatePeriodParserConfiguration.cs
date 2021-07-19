@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -299,6 +302,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             var trimmedText = text.Trim();
             return DateTimeDefinitions.WeekTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)) &&
                    !DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal));
+        }
+
+        public bool IsFortnight(string text)
+        {
+            var trimmedText = text.Trim();
+            return DateTimeDefinitions.FortnightTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal));
         }
 
         public bool IsYearOnly(string text)

@@ -1,4 +1,7 @@
-﻿using System.Collections.Immutable;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.German;
@@ -48,6 +51,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public Regex NumberCombinedWithUnit { get; }
 
         public Regex AnUnitRegex { get; }
+
+        public Regex PrefixArticleRegex { get; } = null;
 
         public Regex DuringRegex { get; }
 

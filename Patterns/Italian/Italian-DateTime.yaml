@@ -117,7 +117,7 @@ YearRegex: !nestedRegex
   def: ({BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})
   references: [ BaseDateTime.FourDigitYearRegex, FullTextYearRegex ]
 DateUnitRegex: !simpleRegex
-  def: \b(?<unit>decennio?|ann[oi]|mes[ei]|settiman[ae]|giorn[oi])\b
+  def: \b(?<unit>decennio|mese|settimana|(ann|giorn)(o|(?<plural>i))|(?<plural>decenni|mesi|settimane))\b
 SimpleCasesRegex: !nestedRegex
   def: \b((dal?|[tf]ra)\s+)?({DayRegex})(\s+{MonthSuffixRegex})?\s*{TillRegex}\s*({DayRegex}\s+{MonthSuffixRegex}|{MonthSuffixRegex}\s+{DayRegex})((\s+|\s*,\s*){YearRegex})?\b
   references: [ DayRegex, TillRegex, MonthSuffixRegex, YearRegex ]
@@ -235,11 +235,11 @@ DateExtractor3: !nestedRegex
   references: [ WeekDayRegex, DayRegex, MonthRegex, DateYearRegex, BaseDateTime.FourDigitYearRegex ]
 # The final lookahead in DateExtractor4|5|7|A avoids extracting as date "10/1-11" from an input like "10/1-11/2/2017"  
 DateExtractor4: !nestedRegex
-  def: \b((il|l')\s*)?{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}(\.)?\s*[/\\\-]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)
-  references: [ MonthNumRegex, DayRegex, DateYearRegex ]
+  def: \b({WeekDayRegex}(\s+|\s*,\s*))?((il|l')\s*)?{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}(\.)?\s*[/\\\-]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)
+  references: [ MonthNumRegex, DayRegex, DateYearRegex, WeekDayRegex ]
 DateExtractor5: !nestedRegex
-  def: \b{DayRegex}\s*[/\\\-]\s*({MonthNumRegex}|{MonthRegex}(\.)?)\s*[/\\\-]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)
-  references: [ DayRegex, MonthNumRegex, MonthRegex, DateYearRegex ]
+  def: \b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}\s*[/\\\-]\s*({MonthNumRegex}|{MonthRegex}(\.)?)\s*[/\\\-]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)
+  references: [ DayRegex, MonthNumRegex, MonthRegex, DateYearRegex, WeekDayRegex ]
 DateExtractor6: !nestedRegex
   def: (?<!([\-\.\/]|all[e']\s*|l[e']\s*))\b{MonthNumRegex}[\-\.\/]{DayRegex}{BaseDateTime.CheckDecimalRegex}(?!(%|\s*{DescRegex}))\b
   references: [MonthNumRegex, DayRegex, BaseDateTime.CheckDecimalRegex ]
@@ -338,7 +338,7 @@ IshRegex: !nestedRegex
   def: \b(((poco\s+(prima|dopo)(\s+(di|dell[e']))?)|circa(\s+a(ll['e])?)?|più o meno(\s+a(ll['e])?)?)\s*(({BaseDateTime.HourRegex}|{PeriodHourNumRegex})(?!\s*({DescRegex}|[:\.,/e]\s*\d+))|mezzogiorno)|(({BaseDateTime.HourRegex}|{PeriodHourNumRegex})(?!\s*({DescRegex}|[:\.,/e]\s*\d+))(\s+circa)|mezzogiorno(\s+circa)|verso\s+mezzogiorno))\b
   references: [ BaseDateTime.HourRegex, PeriodHourNumRegex, DescRegex ]
 TimeUnitRegex: !simpleRegex
-  def: (\b\d+([\.,]\d*)?|\b)(?<unit>or[ae]|hrs|hr|h|minut[oi]|mins|min|second[oi]|secs|sec)\b
+  def: (\b\d+([\.,]\d*)?|\b)(?<unit>or(a|(?<plural>e))|(minut|second)(o|(?<plural>i))|h|(hr|min|sec)(?<plural>s)?)\b
 RestrictedTimeUnitRegex: !simpleRegex
   def: (?<unit>ore|minuti)\b
 ConnectNumRegex: !nestedRegex
@@ -637,6 +637,12 @@ YearPeriodRegex: !nestedRegex
   references: [ YearRegex, TillRegex ]
 FutureSuffixRegex: !simpleRegex
   def: \b(((in|nel)\s+)?(futuro|seguito))|(da\s+questo\s+momento)\b
+ModPrefixRegex: !nestedRegex
+  def: \b({RelativeRegex}|{AroundRegex}|{BeforeRegex}|{AfterRegex}|{SinceRegex})\b
+  references: [RelativeRegex, AroundRegex, BeforeRegex, AfterRegex, SinceRegex ]
+ModSuffixRegex: !nestedRegex
+  def: \b({AgoRegex}|{LaterRegex}|{BeforeAfterRegex}|{FutureSuffixRegex}|{PastSuffixRegex})\b
+  references: [AgoRegex, LaterRegex, BeforeAfterRegex, FutureSuffixRegex, PastSuffixRegex]
 ComplexDatePeriodRegex: !nestedRegex
   def: (((da(l(l[aeo'])?|i)?|durante|in|nel(l[aeo'])?|negli)\s*)?(?<start>.+)\s*({TillRegex})\s*(?<end>.+)|(([tf]ra)\s+)(?<start>.+)\s*({RangeConnectorRegex})\s*(?<end>.+))
   references: [ YearRegex, TillRegex, RangeConnectorRegex ]
@@ -1018,6 +1024,7 @@ DurationDateRestrictions: []
 AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:
+    '^\d{4}$': '(\d\.\d{4}|\d{4}\.\d)'
     '\bgiorno|pomeriggio|sera|notte\b': '\b(buona?\s*(giorno|pomeriggio|sera|notte))\b'
     '^(apr|ago|dic|feb|gen|lug|giu|mar|mag|nov|ott|sett?)$': '([$%£&!?@#])(apr|ago|dic|feb|gen|lug|giu|mar|mag|nov|ott|sett?)|(apr|ago|dic|feb|gen|lug|giu|mar|mag|nov|ott|sett?)([$%£&@#])'
 # For TimeOfDay resolution

@@ -1,4 +1,5 @@
-﻿// Enable a reference time pass to the extractor
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
 
 using System.Collections.Generic;
 using DateObject = System.DateTime;

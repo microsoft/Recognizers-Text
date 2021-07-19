@@ -525,5 +525,266 @@
         "Length": 7
       }
     ]
+  },
+  {
+    "Input": "Ramadan, also spelled Ramazan, Ramzan, Ramadhan or Ramathan, is the ninth month of the Islamic calendar, observed by Muslims worldwide as a month of fasting (sawm), prayer, reflection and community..",
+    "Context": {
+      "ReferenceDateTime": "2020-08-17T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Ramadan",
+        "Type": "date",
+        "Value": {
+          "timex": "XXXX-04-23",
+          "FutureResolution": {
+            "date": "2021-04-12"
+          },
+          "PastResolution": {
+            "date": "2020-04-23"
+          }
+        },
+        "Start": 0,
+        "Length": 7
+      },
+      {
+        "Text": "Ramazan",
+        "Type": "date",
+        "Value": {
+          "timex": "XXXX-04-23",
+          "FutureResolution": {
+            "date": "2021-04-12"
+          },
+          "PastResolution": {
+            "date": "2020-04-23"
+          }
+        },
+        "Start": 22,
+        "Length": 7
+      },
+      {
+        "Text": "Ramzan",
+        "Type": "date",
+        "Value": {
+          "timex": "XXXX-04-23",
+          "FutureResolution": {
+            "date": "2021-04-12"
+          },
+          "PastResolution": {
+            "date": "2020-04-23"
+          }
+        },
+        "Start": 31,
+        "Length": 6
+      },
+      {
+        "Text": "Ramadhan",
+        "Type": "date",
+        "Value": {
+          "timex": "XXXX-04-23",
+          "FutureResolution": {
+            "date": "2021-04-12"
+          },
+          "PastResolution": {
+            "date": "2020-04-23"
+          }
+        },
+        "Start": 39,
+        "Length": 8
+      },
+      {
+        "Text": "Ramathan",
+        "Type": "date",
+        "Value": {
+          "timex": "XXXX-04-23",
+          "FutureResolution": {
+            "date": "2021-04-12"
+          },
+          "PastResolution": {
+            "date": "2020-04-23"
+          }
+        },
+        "Start": 51,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Eid al-Fitr, also called the 'Festival of Breaking the Fast', is a religious holiday celebrated by Muslims worldwide that marks the end of the month-long dawn-to-sunset fasting of Ramadan.",
+    "Context": {
+      "ReferenceDateTime": "2021-06-09T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Eid al-Fitr",
+        "Type": "date",
+        "Value": {
+          "timex": "XXXX-05-12",
+          "FutureResolution": {
+            "date": "2022-05-02"
+          },
+          "PastResolution": {
+            "date": "2021-05-12"
+          }
+        },
+        "Start": 0,
+        "Length": 11
+      },
+      {
+        "Text": "Festival of Breaking the Fast",
+        "Type": "date",
+        "Value": {
+          "timex": "XXXX-05-12",
+          "FutureResolution": {
+            "date": "2022-05-02"
+          },
+          "PastResolution": {
+            "date": "2021-05-12"
+          }
+        },
+        "Start": 30,
+        "Length": 29
+      },
+      {
+        "Text": "ramadan",
+        "Type": "date",
+        "Value": {
+          "timex": "XXXX-04-12",
+          "FutureResolution": {
+            "date": "2022-04-02"
+          },
+          "PastResolution": {
+            "date": "2021-04-12"
+          }
+        },
+        "Start": 180,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "The Islamic New Year, also called the Hijri New Year or Arabic New Year, is the day that marks the beginning of a new lunar Hijri year, and is the day on which the year count is incremented.",
+    "Context": {
+      "ReferenceDateTime": "2021-06-09T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Islamic New Year",
+        "Type": "date",
+        "Value": {
+          "timex": "XXXX-08-09",
+          "FutureResolution": {
+            "date": "2021-08-09"
+          },
+          "PastResolution": {
+            "date": "2020-08-19"
+          }
+        },
+        "Start": 4,
+        "Length": 16
+      },
+      {
+        "Text": "Hijri New Year",
+        "Type": "date",
+        "Value": {
+          "timex": "XXXX-08-09",
+          "FutureResolution": {
+            "date": "2021-08-09"
+          },
+          "PastResolution": {
+            "date": "2020-08-19"
+          }
+        },
+        "Start": 38,
+        "Length": 14
+      },
+      {
+        "Text": "Arabic New Year",
+        "Type": "date",
+        "Value": {
+          "timex": "XXXX-08-09",
+          "FutureResolution": {
+            "date": "2021-08-09"
+          },
+          "PastResolution": {
+            "date": "2020-08-19"
+          }
+        },
+        "Start": 56,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Eid al-Adha (or Eid al-Azha and Eidul Azha) is the latter of the two Islamic holidays celebrated worldwide each year (the other being Eid al-Fitr).",
+    "Context": {
+      "ReferenceDateTime": "2021-06-09T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Eid al-Adha",
+        "Type": "date",
+        "Value": {
+          "timex": "XXXX-07-19",
+          "FutureResolution": {
+            "date": "2021-07-19"
+          },
+          "PastResolution": {
+            "date": "2020-07-30"
+          }
+        },
+        "Start": 0,
+        "Length": 11
+      },
+      {
+        "Text": "Eid al-Azha",
+        "Type": "date",
+        "Value": {
+          "timex": "XXXX-07-19",
+          "FutureResolution": {
+            "date": "2021-07-19"
+          },
+          "PastResolution": {
+            "date": "2020-07-30"
+          }
+        },
+        "Start": 16,
+        "Length": 11
+      },
+      {
+        "Text": "Eidul Azha",
+        "Type": "date",
+        "Value": {
+          "timex": "XXXX-07-19",
+          "FutureResolution": {
+            "date": "2021-07-19"
+          },
+          "PastResolution": {
+            "date": "2020-07-30"
+          }
+        },
+        "Start": 32,
+        "Length": 10
+      },
+      {
+        "Text": "Eid al-Fitr",
+        "Type": "date",
+        "Value": {
+          "timex": "XXXX-05-12",
+          "FutureResolution": {
+            "date": "2022-05-02"
+          },
+          "PastResolution": {
+            "date": "2021-05-12"
+          }
+        },
+        "Start": 134,
+        "Length": 11
+      }
+    ]
   }
 ]

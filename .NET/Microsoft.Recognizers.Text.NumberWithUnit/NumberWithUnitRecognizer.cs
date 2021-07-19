@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Generic;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit
@@ -519,6 +522,46 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
             RegisterModel<AgeModel>(
                 Culture.Spanish,
+                (options) => new AgeModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Spanish.AgeExtractorConfiguration()),
+                        new NumberWithUnitParser(new Spanish.AgeParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<CurrencyModel>(
+                Culture.SpanishMexican,
+                (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new BaseMergedUnitExtractor(new Spanish.CurrencyExtractorConfiguration()),
+                        new BaseMergedUnitParser(new Spanish.CurrencyParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<TemperatureModel>(
+                Culture.SpanishMexican,
+                (options) => new TemperatureModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Spanish.TemperatureExtractorConfiguration()),
+                        new NumberWithUnitParser(new Spanish.TemperatureParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<DimensionModel>(
+                Culture.SpanishMexican,
+                (options) => new DimensionModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Spanish.DimensionExtractorConfiguration()),
+                        new NumberWithUnitParser(new Spanish.DimensionParserConfiguration())
+                    },
+                }));
+
+            RegisterModel<AgeModel>(
+                Culture.SpanishMexican,
                 (options) => new AgeModel(new Dictionary<IExtractor, IParser>
                 {
                     {

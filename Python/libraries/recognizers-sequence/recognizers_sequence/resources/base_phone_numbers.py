@@ -57,6 +57,7 @@ class BasePhoneNumbers:
     FormatIndicatorRegex = f'(\\s|-|/|\\.)+'
     ColonMarkers = [r':']
     ColonPrefixCheckRegex = f'(([a-z])\\s*$)'
+    AmbiguityFiltersDict = dict([("^\\d{4}-\\d{4}$", "omb(\\s*(no(\\.)?|number|#))?:?\\s+\\d{4}-?\\d{4}")])
     SpecialBoundaryMarkers = [r'-', r' ']
     BoundaryMarkers = [r'-', r'.', r'/', r'+', r'#', r'*']
     ForbiddenPrefixMarkers = [r',', r':', r'%']

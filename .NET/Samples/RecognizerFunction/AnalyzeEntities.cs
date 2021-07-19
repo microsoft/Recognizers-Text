@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -121,6 +124,10 @@ namespace RecognizerFunction
                 // URL recognizer will find all the urls
                 // E.g "bing.com"
                 SequenceRecognizer.RecognizeURL(query, culture),
+
+                // Quoted text recognizer
+                // E.g "I meant "no""
+                SequenceRecognizer.RecognizeQuotedText(query, culture),
 
                 // Add Boolean recognizer - This model will find yes/no like responses, including emoji -
                 // E.g "yup, I need that" will return "True"

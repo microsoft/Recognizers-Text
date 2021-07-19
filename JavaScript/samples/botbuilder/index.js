@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 // Our Number and DateTime Recognizer models
 var Recognizers = require('@microsoft/recognizers-text-suite');
 var recognizeNumber = (query) => Recognizers.recognizeNumber(query, Recognizers.Culture.English);

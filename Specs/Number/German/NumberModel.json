@@ -880,5 +880,35 @@
         "End": 32
       }
     ]
+  },
+  {
+    "Input": "sie wusste hundert Neuigkeiten zu berichten",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "hundert",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "100"
+        },
+        "Start": 11,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "Claudia Tausend wuchs in einer Arbeiterfamilie in Niederbayern auf",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "einer",
+        "Start": 25,
+        "End": 29,
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        }
+      }
+    ]
   }
 ]

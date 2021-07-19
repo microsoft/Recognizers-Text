@@ -5,7 +5,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -28,17 +27,16 @@
     ]
   },
   {
-    "Input": "سأخرج من 4 إلى 23 في الشهر المقبل",
+    "Input": "سأخرج من 4-23 في الشهر المقبل",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "من 4-23 في الشهر المقبل",
-        "Start": -1,
+        "Start": 6,
         "Length": 23,
         "Type": "daterange",
         "Value": {
@@ -61,7 +59,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -89,13 +86,12 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "من الجمعة 11 حتى الثلاثاء 15",
-        "Start": 6,
-        "Length": 28,
+        "Text": "الجمعة 11 حتى الثلاثاء 15",
+        "Start": 9,
+        "Length": 25,
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-11-11,2016-11-15,P4D)",
@@ -117,13 +113,12 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "4 إلى 23 الشهر المقبل",
-        "Start": 9,
-        "Length": 21,
+        "Text": "من 4 إلى 23 الشهر المقبل",
+        "Start": 6,
+        "Length": 24,
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-12-04,2016-12-23,P19D)",
@@ -145,13 +140,12 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "4 حتى 23 من هذا الشهر",
-        "Start": 9,
-        "Length": 21,
+        "Text": "من 4 حتى 23 من هذا الشهر",
+        "Start": 6,
+        "Length": 24,
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-11-04,2016-11-23,P19D)",
@@ -173,7 +167,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -201,7 +194,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -229,7 +221,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -257,7 +248,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -285,7 +275,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -313,12 +302,11 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "هذا الاسبوع",
-        "Start": -1,
+        "Text": "هذا الأسبوع",
+        "Start": 9,
         "Length": 11,
         "Type": "daterange",
         "Value": {
@@ -341,12 +329,11 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "الاسبوع القادم",
-        "Start": -1,
+        "Text": "الأسبوع القادم",
+        "Start": 9,
         "Length": 14,
         "Type": "daterange",
         "Value": {
@@ -369,7 +356,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -396,8 +382,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "false",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -425,7 +410,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -452,8 +436,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "false",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -480,8 +463,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "false",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -509,7 +491,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -537,7 +518,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -565,7 +545,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -588,18 +567,17 @@
     ]
   },
   {
-    "Input": "شهر سبتمبر 16",
+    "Input": "من شهر سبتمبر 16",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "false",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "شهر سبتمبر 17",
-        "Start": -1,
-        "Length": 13,
+        "Text": "من شهر سبتمبر 16",
+        "Start": 0,
+        "Length": 16,
         "Type": "daterange",
         "Value": {
           "Timex": "XXXX-09-16",
@@ -620,8 +598,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "false",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -648,13 +625,12 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "false",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "2015-3",
-        "Start": -1,
+        "Text": "3-2015",
+        "Start": 6,
         "Length": 6,
         "Type": "daterange",
         "Value": {
@@ -676,8 +652,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "false",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -704,8 +679,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "false",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -733,7 +707,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -761,7 +734,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -789,7 +761,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -817,7 +788,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -845,7 +815,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -873,7 +842,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -901,7 +869,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -929,7 +896,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -957,7 +923,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -985,7 +950,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1008,18 +972,17 @@
     ]
   },
   {
-    "Input": "سأخرج في 12  يناير2016 - 2016/01/22",
+    "Input": "سأخرج في 12  يناير, 2016 - 2016/01/22",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "false",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "يناير12 ,2016 - 2016/01/22",
-        "Start": -1,
-        "Length": 26,
+        "Text": "12  يناير, 2016 - 2016/01/22",
+        "Start": 9,
+        "Length": 28,
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-01-12,2016-01-22,P10D)",
@@ -1041,13 +1004,12 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": " الأول من  يناير حتى الأربعاء ، 22  يناير",
-        "Start": 8,
-        "Length": 41,
+        "Text": "الأول من  يناير حتى الأربعاء ، 22  يناير",
+        "Start": 9,
+        "Length": 40,
         "Type": "daterange",
         "Value": {
           "Timex": "(XXXX-01-01,XXXX-01-22,P21D)",
@@ -1069,7 +1031,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1092,12 +1053,38 @@
     ]
   },
   {
+    "Input": "سأخرج 2 أكتوبر إلى 22 أكتوبر",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2 أكتوبر إلى 22 أكتوبر",
+        "Start": 6,
+        "Length": 22,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XXXX-10-02,XXXX-10-22,P20D)",
+          "FutureResolution": {
+            "startDate": "2017-10-02",
+            "endDate": "2017-10-22"
+          },
+          "PastResolution": {
+            "startDate": "2016-10-02",
+            "endDate": "2016-10-22"
+          }
+        }
+      }
+    ]
+  },
+  {
     "Input": "سأخرج بين 2 أكتوبر و 22 أكتوبر",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1125,13 +1112,12 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": " 19-20 نوفمبر",
-        "Start": 5,
-        "Length": 13,
+        "Text": "19-20 نوفمبر",
+        "Start": 6,
+        "Length": 12,
         "Type": "daterange",
         "Value": {
           "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
@@ -1153,7 +1139,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1181,13 +1166,12 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "نوفمبر بين 19 و 20",
-        "Start": 13,
-        "Length": 18,
+        "Text": "شهر نوفمبر بين 19 و 20",
+        "Start": 9,
+        "Length": 22,
         "Type": "daterange",
         "Value": {
           "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
@@ -1209,13 +1193,12 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "بقية  الأسبوع",
-        "Start": -1,
-        "Length": 13,
+        "Text": "بقية الأسبوع",
+        "Start": 6,
+        "Length": 12,
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-11-07,2016-11-13,P6D)",
@@ -1232,18 +1215,17 @@
     ]
   },
   {
-    "Input": "سأخرج بقية الأسبوع",
+    "Input": "سأخرج باقي الأسبوع",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "بقية  الأسبوع",
-        "Start": -1,
-        "Length": 13,
+        "Text": "باقي الأسبوع",
+        "Start": 6,
+        "Length": 12,
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-11-07,2016-11-13,P6D)",
@@ -1265,7 +1247,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1293,7 +1274,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1321,12 +1301,11 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "بقية اسبوعي",
-        "Start": -1,
+        "Text": "بقية أسبوعي",
+        "Start": 6,
         "Length": 11,
         "Type": "daterange",
         "Value": {
@@ -1349,7 +1328,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1377,7 +1355,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1405,7 +1382,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1433,12 +1409,11 @@
       "ReferenceDateTime": "2016-11-13T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "باقي اسبوعي",
-        "Start": -1,
+        "Text": "باقي أسبوعي",
+        "Start": 6,
         "Length": 11,
         "Type": "daterange",
         "Value": {
@@ -1461,12 +1436,11 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "عطلة نهاية الاسبوع",
-        "Start": -1,
+        "Text": "عطلة نهاية الأسبوع",
+        "Start": 17,
         "Length": 18,
         "Type": "daterange",
         "Value": {
@@ -1489,7 +1463,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1516,8 +1489,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "false",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1544,8 +1516,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "false",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1573,12 +1544,11 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "العام القادم",
-        "Start": -1,
+        "Text": "العام المقبل",
+        "Start": 6,
         "Length": 12,
         "Type": "daterange",
         "Value": {
@@ -1600,8 +1570,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "false",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1629,13 +1598,12 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "الأشهر الثلاثة القادمة",
-        "Start": 9,
-        "Length": 22,
+        "Text": "في الأشهر الثلاثة القادمة",
+        "Start": 6,
+        "Length": 25,
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-11-08,2017-02-08,P3M)",
@@ -1657,7 +1625,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1685,7 +1652,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1713,7 +1679,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1741,13 +1706,12 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "الأسابيع الثلاثة الماضية",
-        "Start": 9,
-        "Length": 24,
+        "Text": "في الأسابيع الثلاثة الماضية",
+        "Start": 6,
+        "Length": 27,
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-10-17,2016-11-07,P3W)",
@@ -1769,7 +1733,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1797,7 +1760,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1825,7 +1787,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1852,8 +1813,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "false",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1881,7 +1841,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1904,18 +1863,17 @@
     ]
   },
   {
-    "Input": "الربع الثالث 2016",
+    "Input": "سأخرج في الربع الثالث 2016",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "false",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "سأخرج في الربع الثالث 2017",
-        "Start": -1,
-        "Length": 26,
+        "Text": "الربع الثالث 2016",
+        "Start": 9,
+        "Length": 17,
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-07-01,2016-10-01,P3M)",
@@ -1937,7 +1895,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1958,8 +1915,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "false",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1980,8 +1936,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "false",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -2002,8 +1957,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "false",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -2024,8 +1978,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "false",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -2046,8 +1999,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "false",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -2069,7 +2021,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -2097,7 +2048,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -2125,13 +2075,12 @@
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "في وقت لاحق هذا الشهر",
-        "Start": -1,
-        "Length": 21,
+        "Text": "في وقت لاحق من هذا الشهر",
+        "Start": 23,
+        "Length": 24,
         "Type": "daterange",
         "Value": {
           "Timex": "2017-11",
@@ -2153,7 +2102,6 @@
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -2181,7 +2129,6 @@
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -2209,7 +2156,6 @@
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -2237,7 +2183,6 @@
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -2265,7 +2210,6 @@
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -2293,7 +2237,6 @@
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -2321,7 +2264,6 @@
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -2349,7 +2291,6 @@
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -2377,7 +2318,6 @@
       "ReferenceDateTime": "2017-11-14T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -2405,7 +2345,6 @@
       "ReferenceDateTime": "2017-11-14T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -2433,7 +2372,6 @@
       "ReferenceDateTime": "2017-11-14T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -2461,12 +2399,11 @@
       "ReferenceDateTime": "2017-11-17T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "هذا الاسبوع",
-        "Start": -1,
+        "Text": "هذا الأسبوع",
+        "Start": 17,
         "Length": 11,
         "Type": "daterange",
         "Value": {
@@ -2489,7 +2426,6 @@
       "ReferenceDateTime": "2017-11-17T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -2517,7 +2453,6 @@
       "ReferenceDateTime": "2017-11-20T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -2545,7 +2480,6 @@
       "ReferenceDateTime": "2017-11-20T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -2573,7 +2507,6 @@
       "ReferenceDateTime": "2017-11-20T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -2601,7 +2534,6 @@
       "ReferenceDateTime": "2017-11-20T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -2628,8 +2560,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-18T00:00:00"
     },
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "false",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -2657,13 +2588,12 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "في السبعينيات",
-        "Start": 0,
-        "Length": 13,
+        "Text": "السبعينيات",
+        "Start": 3,
+        "Length": 10,
         "Type": "daterange",
         "Value": {
           "Timex": "(1970-01-01,1980-01-01,P10Y)",
@@ -2685,7 +2615,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -2713,13 +2642,12 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "1970.0",
-        "Start": -1,
-        "Length": 6,
+        "Text": "1970",
+        "Start": 3,
+        "Length": 4,
         "Type": "daterange",
         "Value": {
           "Timex": "(1970-01-01,1980-01-01,P10Y)",
@@ -2736,12 +2664,38 @@
     ]
   },
   {
+    "Input": "في سبعينيات",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "سبعينيات",
+        "Start": 3,
+        "Length": 8,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XX70-01-01,XX80-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2070-01-01",
+            "endDate": "2080-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1970-01-01",
+            "endDate": "1980-01-01"
+          }
+        }
+      }
+    ]
+  },
+  {
     "Input": "السبعينيات",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -2769,7 +2723,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -2797,7 +2750,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -2825,13 +2777,12 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "السبعينات",
-        "Start": -1,
-        "Length": 9,
+        "Text": "السبعينيات",
+        "Start": 3,
+        "Length": 10,
         "Type": "daterange",
         "Value": {
           "Timex": "(XX70-01-01,XX80-01-01,P10Y)",
@@ -2853,13 +2804,12 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "السبعينيات",
+        "Text": "السبعينيات القرن التاسع عشر",
         "Start": 3,
-        "Length": 10,
+        "Length": 27,
         "Type": "daterange",
         "Value": {
           "Timex": "(1970-01-01,1980-01-01,P10Y)",
@@ -2881,7 +2831,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -2909,7 +2858,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -2937,13 +2885,12 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": " الألفين ",
-        "Start": 2,
-        "Length": 9,
+        "Text": "الألفين",
+        "Start": 3,
+        "Length": 7,
         "Type": "daterange",
         "Value": {
           "Timex": "(2000-01-01,2010-01-01,P10Y)",
@@ -2965,7 +2912,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -2993,7 +2939,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -3021,7 +2966,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -3044,18 +2988,17 @@
     ]
   },
   {
-    "Input": "حدث ذلك في يونيو من عام تسعة وتسعين وتسعين",
+    "Input": "حدث ذلك في يونيو من عام تسعة عشر تسعة وتسعون",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "يونيو من عام تسعة وتسعين وتسعين",
+        "Text": "يونيو من عام تسعة عشر تسعة وتسعون",
         "Start": 11,
-        "Length": 31,
+        "Length": 33,
         "Type": "daterange",
         "Value": {
           "Timex": "1999-06",
@@ -3077,7 +3020,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -3105,12 +3047,11 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "ألف وسبعمائة وتسعة وثمانون",
-        "Start": -1,
+        "Text": "ألف وسبعمائة وتسعة وثمانين",
+        "Start": 3,
         "Length": 26,
         "Type": "daterange",
         "Value": {
@@ -3133,7 +3074,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -3161,7 +3101,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -3189,7 +3128,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -3211,7 +3149,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -3239,7 +3176,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -3267,7 +3203,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -3295,7 +3230,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -3318,18 +3252,17 @@
     ]
   },
   {
-    "Input": "سأخرج في عطلة نهاية الأسبوع بعد اليوم التالي",
+    "Input": "سأخرج في عطلة نهاية الأسبوع بعد التالي",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "عطلة نهاية الأسبوع بعد اليوم التالي",
+        "Text": "عطلة نهاية الأسبوع بعد التالي",
         "Start": 9,
-        "Length": 35,
+        "Length": 29,
         "Type": "daterange",
         "Value": {
           "Timex": "2016-W47-WE",
@@ -3351,12 +3284,11 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "2018-2014",
-        "Start": -1,
+        "Text": "2014-2018",
+        "Start": 10,
         "Length": 9,
         "Type": "daterange",
         "Value": {
@@ -3379,7 +3311,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -3407,7 +3338,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -3435,13 +3365,12 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "من 2014 حتى 2018.",
+        "Text": "من 2014 حتى 2018",
         "Start": 7,
-        "Length": 17,
+        "Length": 16,
         "Type": "daterange",
         "Value": {
           "Timex": "(2014-01-01,2018-01-01,P4Y)",
@@ -3463,7 +3392,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -3486,12 +3414,38 @@
     ]
   },
   {
+    "Input": "حدث ذلك في 2 العقود الماضية",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2 العقود الماضية",
+        "Start": 11,
+        "Length": 16,
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(1990-01-01,2010-01-01,P20Y)",
+          "FutureResolution": {
+            "startDate": "1990-01-01",
+            "endDate": "2010-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1990-01-01",
+            "endDate": "2010-01-01"
+          }
+        }
+      }
+    ]
+  },
+  {
     "Input": "حدث ذلك في العقدين الماضيين.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -3518,8 +3472,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "false",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -3547,7 +3500,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -3575,7 +3527,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -3603,7 +3554,6 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -3631,7 +3581,6 @@
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -3660,7 +3609,6 @@
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -3689,7 +3637,6 @@
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -3717,8 +3664,7 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "false",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -3747,13 +3693,12 @@
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "منتصف الأسبوع المقبل",
-        "Start": 33,
-        "Length": 20,
+        "Text": "في منتصف الأسبوع المقبل",
+        "Start": 30,
+        "Length": 23,
         "Type": "daterange",
         "Value": {
           "Timex": "2017-W46",
@@ -3776,7 +3721,6 @@
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -3805,7 +3749,6 @@
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {

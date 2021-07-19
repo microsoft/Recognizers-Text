@@ -2,12 +2,12 @@
 NumberReplaceToken: '@builtin.num'
 FractionNumberReplaceToken: '@builtin.num.fraction'
 IntegerRegexDefinition: !paramsRegex
-  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!(\d+\.|\d+,))))\d{1,3}({thousandsmark}\d{3})+(?={placeholder})
+  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))\d{1,3}({thousandsmark}\d{3})+(?={placeholder})
   params: [ placeholder, thousandsmark  ]
 FractionNotationRegex: !simpleRegex
   def: ((((?<=\W|^)-\s*)|(?<![/-])(?<=\b))\d+[/]\d+(?=(\b[^/]|$))|[\u00BC-\u00BE\u2150-\u215E])
 DoubleRegexDefinition: !paramsRegex
-  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\.|\d+,)))\d{1,3}({thousandsmark}\d{3})+{decimalmark}\d+(?={placeholder})
+  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))\d{1,3}(({thousandsmark}\d{3})+{decimalmark}|({decimalmark}\d{3})+{thousandsmark})\d+(?={placeholder})
   params: [ placeholder, thousandsmark, decimalmark ]
 PlaceHolderDefault: \D|\b
 # Not directly in use in QueryProcessor due to inter-dependency issue with different .NET targets

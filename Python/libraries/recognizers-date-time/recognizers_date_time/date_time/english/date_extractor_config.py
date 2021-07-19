@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 from typing import Pattern, List, Dict
 from recognizers_number import (BaseNumberExtractor, BaseNumberParser,
                                 EnglishOrdinalExtractor, EnglishIntegerExtractor, EnglishNumberParserConfiguration)

@@ -5051,7 +5051,7 @@
         "Text": "Ocak ile Ağustos arası",
         "Type": "daterange",
         "Value": {
-          "Timex": "(XXXX-01-01,XXXX-08-01,PXXM)",
+          "Timex": "(XXXX-01-01,XXXX-08-01,P7M)",
           "FutureResolution": {
            "startDate": "2020-01-01",
             "endDate": "2020-08-01"
@@ -5079,7 +5079,7 @@
         "Text": "Ocaktan ağustosa",
         "Type": "daterange",
         "Value": {
-          "Timex": "(XXXX-01-01,XXXX-08-01,PXXM)",
+          "Timex": "(XXXX-01-01,XXXX-08-01,P7M)",
           "FutureResolution": {
            "startDate": "2020-01-01",
             "endDate": "2020-08-01"
@@ -5106,7 +5106,7 @@
         "Text": "Ocakla Ağustos arasında",
         "Type": "daterange",
         "Value": {
-          "Timex": "(XXXX-01-01,XXXX-08-01,PXXM)",
+          "Timex": "(XXXX-01-01,XXXX-08-01,P7M)",
           "FutureResolution": {
             "startDate": "2020-01-01",
             "endDate": "2020-08-01"
