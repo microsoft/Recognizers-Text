@@ -124,7 +124,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private static bool IsMultipleDurationDate(ExtractResult er)
         {
-            return er.Data != null && er.Data.ToString() == Constants.MultipleDuration_Date;
+            return er.Data?.ToString() is Constants.MultipleDuration_Date;
         }
 
         private static bool IsMultipleDuration(ExtractResult er)
@@ -135,7 +135,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         // Cases like "more than 3 days", "less than 4 weeks"
         private static bool IsInequalityDuration(ExtractResult er)
         {
-            return er.Data != null && (er.Data.ToString() == Constants.MORE_THAN_MOD || er.Data.ToString() == Constants.LESS_THAN_MOD);
+            return er.Data?.ToString() is Constants.MORE_THAN_MOD or Constants.LESS_THAN_MOD;
         }
 
         private List<ExtractResult> ExtractImpl(string text, DateObject reference)
@@ -228,7 +228,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                         .Replace(match.Groups["month"].Value, string.Empty)
                         .Replace(match.Groups["day"].Value, string.Empty);
                     var separators = new List<char> { '/', '\\', '-', '.' };
-                    if (separators.Where(separator => noDateText.Contains(separator)).Count() > 1)
+
+                    if (separators.Count(separator => noDateText.Contains(separator)) > 1)
                     {
                         isValidMatch = false;
                     }
