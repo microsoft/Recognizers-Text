@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 from .base_date_time_extractor import *
 from .duration_extractor_config import *
 from .duration_extractor import *

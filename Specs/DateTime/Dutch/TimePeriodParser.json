@@ -1806,5 +1806,86 @@
         "Length": 19
       }
     ]
+  },
+  {
+    "Input": "Ik zal lunchtijd weg zijn.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "lunchtijd",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TMEL",
+          "FutureResolution": {
+            "startTime": "11:00:00",
+            "endTime": "13:00:00"
+          },
+          "PastResolution": {
+            "startTime": "11:00:00",
+            "endTime": "13:00:00"
+          }
+        },
+        "Start": 7,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Hij heeft lunchpauze",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "lunchpauze",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TMEL",
+          "FutureResolution": {
+            "startTime": "11:00:00",
+            "endTime": "13:00:00"
+          },
+          "PastResolution": {
+            "startTime": "11:00:00",
+            "endTime": "13:00:00"
+          }
+        },
+        "Start": 10,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Dit populaire, familievriendelijke concert komt terug naar de Hall voor weer een lunchconcert vol met traditionele kerstliederen en feestfavorieten",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "lunchconcert",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TMEL",
+          "FutureResolution": {
+            "startTime": "11:00:00",
+            "endTime": "13:00:00"
+          },
+          "PastResolution": {
+            "startTime": "11:00:00",
+            "endTime": "13:00:00"
+          }
+        },
+        "Start": 81,
+        "Length": 12
+      }
+    ]
   }
 ]

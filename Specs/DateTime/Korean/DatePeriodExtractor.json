@@ -1,7 +1,6 @@
 [
   {
     "Input": "1월에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -14,7 +13,6 @@
   },
   {
     "Input": "이번 1월에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -27,7 +25,6 @@
   },
   {
     "Input": "1월 달에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -40,7 +37,6 @@
   },
   {
     "Input": "2001년 1월을 그리워했어요. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -53,7 +49,6 @@
   },
   {
     "Input": "2월에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -66,7 +61,6 @@
   },
   {
     "Input": "이번 2월에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -79,7 +73,6 @@
   },
   {
     "Input": "2월 달에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -92,7 +85,6 @@
   },
   {
     "Input": "2001년 2월을 그리워했어요. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -105,7 +97,6 @@
   },
   {
     "Input": "3월에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -118,7 +109,6 @@
   },
   {
     "Input": "이번 3월에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -131,7 +121,6 @@
   },
   {
     "Input": "3월 달에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -144,7 +133,6 @@
   },
   {
     "Input": "2001년 3월을 그리워했어요. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -157,7 +145,6 @@
   },
   {
     "Input": "4월에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -170,7 +157,6 @@
   },
   {
     "Input": "이번 4월에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -183,7 +169,6 @@
   },
   {
     "Input": "4월 달에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -196,7 +181,6 @@
   },
   {
     "Input": "2001년 4월을 그리워했어요. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -209,7 +193,6 @@
   },
   {
     "Input": "5월에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -222,7 +205,6 @@
   },
   {
     "Input": "이번 5월에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -235,7 +217,6 @@
   },
   {
     "Input": "5월 달에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -248,7 +229,6 @@
   },
   {
     "Input": "2001년 5월을 그리워했어요. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -261,7 +241,6 @@
   },
   {
     "Input": "6월에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -274,7 +253,6 @@
   },
   {
     "Input": "이번 6월에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -287,7 +265,6 @@
   },
   {
     "Input": "6월 달에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -300,7 +277,6 @@
   },
   {
     "Input": "2001년 6월을 그리워했어요. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -313,7 +289,6 @@
   },
   {
     "Input": "7월에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -326,7 +301,6 @@
   },
   {
     "Input": "이번 7월에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -339,7 +313,6 @@
   },
   {
     "Input": "7월 달에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -352,7 +325,6 @@
   },
   {
     "Input": "2001년 7월을 그리워했어요. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -365,7 +337,6 @@
   },
   {
     "Input": "8월에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -378,7 +349,6 @@
   },
   {
     "Input": "이번 8월에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -391,7 +361,6 @@
   },
   {
     "Input": "8월 달에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -404,7 +373,6 @@
   },
   {
     "Input": "2001년 8월을 그리워했어요. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -417,7 +385,6 @@
   },
   {
     "Input": "9월에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -430,7 +397,6 @@
   },
   {
     "Input": "이번 9월에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -443,7 +409,6 @@
   },
   {
     "Input": "9월 달에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -456,7 +421,6 @@
   },
   {
     "Input": "2001년 9월을 그리워했어요. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -469,7 +433,6 @@
   },
   {
     "Input": "10월에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -482,7 +445,6 @@
   },
   {
     "Input": "이번 10월에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -495,7 +457,6 @@
   },
   {
     "Input": "10월 달에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -508,7 +469,6 @@
   },
   {
     "Input": "2001년 10월을 그리워했어요. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -521,7 +481,6 @@
   },
   {
     "Input": "11월에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -534,7 +493,6 @@
   },
   {
     "Input": "이번 11월에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -547,7 +505,6 @@
   },
   {
     "Input": "11월 달에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -560,7 +517,6 @@
   },
   {
     "Input": "2001년 11월을 그리워했어요. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -573,7 +529,6 @@
   },
   {
     "Input": "12월에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -586,7 +541,6 @@
   },
   {
     "Input": "이번 12월에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -599,7 +553,6 @@
   },
   {
     "Input": "12월 달에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -612,7 +565,6 @@
   },
   {
     "Input": "2001년 12월을 그리워했어요. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -625,46 +577,42 @@
   },
   {
     "Input": "9월 달 달력",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "9월 달 달력",
+        "Text": "9월 달",
         "Type": "daterange",
         "Start": 0,
-        "Length": 7
+        "Length": 4
       }
     ]
   },
   {
     "Input": "이번 달 4일에서 22일까지 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "4일에서 22일까지",
+        "Text": "이번 달 4일에서 22일까지",
         "Type": "daterange",
-        "Start": 5,
-        "Length": 10
+        "Start": 0,
+        "Length": 15
       }
     ]
   },
   {
     "Input": "다음 달 4일에서 23일까지 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "4일에서 23일까지",
+        "Text": "다음 달 4일에서 23일까지",
         "Type": "daterange",
-        "Start": 5,
-        "Length": 10
+        "Start": 0,
+        "Length": 15
       }
     ]
   },
   {
     "Input": "9월 3일에서 12일까지 자리를 비울 예정입니다. 하하하",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -677,7 +625,6 @@
   },
   {
     "Input": "이번 달 4일에서 23일까지 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -690,37 +637,22 @@
   },
   {
     "Input": "이번 달 4일과 22일 사이에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "이번 달 4일과 22일 사이에",
+        "Text": "이번 달 4일과 22일 사이",
         "Type": "daterange",
         "Start": 0,
-        "Length": 16
+        "Length": 15
       }
     ]
   },
   {
     "Input": "9월 3일과 12일 사이에 자리를 비울 예정입니다. 하하하",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "9월 3일과 12일 사이에",
-        "Type": "daterange",
-        "Start": 0,
-        "Length": 14
-      }
-    ]
-  },
-  {
-    "Input": "9월 4일과 8일 사이에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "9월 4일과 8일 사이에",
+        "Text": "9월 3일과 12일 사이",
         "Type": "daterange",
         "Start": 0,
         "Length": 13
@@ -728,21 +660,31 @@
     ]
   },
   {
-    "Input": "11월 15일과 19일 사이에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
+    "Input": "9월 4일과 8일 사이에 자리를 비울 예정입니다. ",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "11월 15일과 19일 사이에",
+        "Text": "9월 4일과 8일 사이",
         "Type": "daterange",
         "Start": 0,
-        "Length": 16
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "11월 15일과 19일 사이에 자리를 비울 예정입니다. ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "11월 15일과 19일 사이",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 15
       }
     ]
   },
   {
     "Input": "2017년 1월 4일부터 22일까지 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -755,20 +697,18 @@
   },
   {
     "Input": "2017년 1월 4일과 22일 사이에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2017년 1월 4일과 22일 사이에",
+        "Text": "2017년 1월 4일과 22일 사이",
         "Type": "daterange",
         "Start": 0,
-        "Length": 20
+        "Length": 19
       }
     ]
   },
   {
     "Input": "이번 주에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -781,7 +721,6 @@
   },
   {
     "Input": "다가오는 주에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -794,7 +733,6 @@
   },
   {
     "Input": "지난 9월에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -807,7 +745,6 @@
   },
   {
     "Input": "다음 6월에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -820,7 +757,6 @@
   },
   {
     "Input": "2016년 6월에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -833,7 +769,6 @@
   },
   {
     "Input": "다음 해 6월에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -846,7 +781,6 @@
   },
   {
     "Input": "이번 주말에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -859,7 +793,6 @@
   },
   {
     "Input": "이번 달 세 번째 주에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -872,7 +805,6 @@
   },
   {
     "Input": "7월 마지막 주에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -885,7 +817,6 @@
   },
   {
     "Input": "금요일부터 일요일까지 캠핑 일정 잡아. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -898,20 +829,18 @@
   },
   {
     "Input": "앞으로 사흘 동안 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "앞으로 사흘",
+        "Text": "앞으로 사흘 동안",
         "Type": "daterange",
         "Start": 0,
-        "Length": 6
+        "Length": 9
       }
     ]
   },
   {
     "Input": "앞으로 세 달 동안 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -924,25 +853,21 @@
   },
   {
     "Input": "3년 동안 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
     "Input": "3주 동안 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
     "Input": "세 달 동안 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
     "Input": "지난 3주 동안 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -955,7 +880,6 @@
   },
   {
     "Input": "지난 3년 동안 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -968,7 +892,6 @@
   },
   {
     "Input": "지난 해에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -981,7 +904,6 @@
   },
   {
     "Input": "지난 달에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -994,7 +916,6 @@
   },
   {
     "Input": "지난 몇 주",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1007,7 +928,6 @@
   },
   {
     "Input": "지난 며칠",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1020,7 +940,6 @@
   },
   {
     "Input": "10월 2일부터 22일까지 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1033,7 +952,6 @@
   },
   {
     "Input": "2016년 1월 12일부터 2월 22일까지 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1046,7 +964,6 @@
   },
   {
     "Input": "1월 1일부터 1월 22일 수요일까지 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1059,7 +976,6 @@
   },
   {
     "Input": "오늘부터 내일까지 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1072,7 +988,6 @@
   },
   {
     "Input": "오늘부터 10월 22일까지 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1085,7 +1000,6 @@
   },
   {
     "Input": "10월 2일부터 내일모레까지 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1098,7 +1012,6 @@
   },
   {
     "Input": "오늘부터 다음 주 일요일까지 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1111,7 +1024,6 @@
   },
   {
     "Input": "이번 주 금요일부터 다음 주 일요일까지 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1124,7 +1036,6 @@
   },
   {
     "Input": "10월 2일부터 10월 22일까지 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1137,7 +1048,6 @@
   },
   {
     "Input": "2015년 8월 12일부터 10월 22일까지 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1153,7 +1063,6 @@
     "Context": {
       "ReferenceDateTime": "2018-03-01T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1166,7 +1075,6 @@
   },
   {
     "Input": "11월 19일부터 20일까지 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1179,7 +1087,6 @@
   },
   {
     "Input": "11월 19일에서 20일까지 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1192,7 +1099,6 @@
   },
   {
     "Input": "2016년 3사분기에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1205,7 +1111,6 @@
   },
   {
     "Input": "올 해 3사분기에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1218,7 +1123,6 @@
   },
   {
     "Input": "1사분기 중에 돌아올 거예요. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1231,7 +1135,6 @@
   },
   {
     "Input": "3사분기에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1244,7 +1147,6 @@
   },
   {
     "Input": "2015년 3월에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1257,7 +1159,6 @@
   },
   {
     "Input": "2027년 셋째 주에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1270,7 +1171,6 @@
   },
   {
     "Input": "내년 셋째 주에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1283,7 +1183,6 @@
   },
   {
     "Input": "이번 여름에 떠날 거예요. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1296,7 +1195,6 @@
   },
   {
     "Input": "다음 봄에 떠날 거예요. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1309,7 +1207,6 @@
   },
   {
     "Input": "이 여름에 떠날 거예요. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1322,7 +1219,6 @@
   },
   {
     "Input": "여름에 떠날 거예요. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1335,7 +1231,6 @@
   },
   {
     "Input": "2016년 여름에 떠날 거예요. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1348,7 +1243,6 @@
   },
   {
     "Input": "11월 30일이 있는 주에 뭐가 있지요?",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1361,7 +1255,6 @@
   },
   {
     "Input": "9월 15일이 있는 주 ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1374,7 +1267,6 @@
   },
   {
     "Input": "9월 15일의 달 ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1387,7 +1279,6 @@
   },
   {
     "Input": "주말 동안에 떠날 거예요. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1400,7 +1291,6 @@
   },
   {
     "Input": "이 주 안에 떠날 거예요. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1413,7 +1303,6 @@
   },
   {
     "Input": "금주 안에 떠날 거예요. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1426,7 +1315,6 @@
   },
   {
     "Input": "이번 달 안에 떠날 거예요. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1439,7 +1327,6 @@
   },
   {
     "Input": "올 해 안에 떠날 거예요. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1452,7 +1339,6 @@
   },
   {
     "Input": "이 달 말에 한번 만나요. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1465,7 +1351,6 @@
   },
   {
     "Input": "이번 주 후반에 한번 만나요. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1478,7 +1363,6 @@
   },
   {
     "Input": "다음 주 후반에 한번 만나요. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1491,7 +1375,6 @@
   },
   {
     "Input": "내년 후반기에 한번 만나요. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1504,7 +1387,6 @@
   },
   {
     "Input": "우리는 지난 주 후반에 만났어요. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1517,7 +1399,6 @@
   },
   {
     "Input": "이번 달 초에 한번 만나요. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1530,7 +1411,6 @@
   },
   {
     "Input": "이번 주 초에 한번 만나요. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1543,7 +1423,6 @@
   },
   {
     "Input": "다음 주 초에 한번 만나요. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1556,7 +1435,6 @@
   },
   {
     "Input": "내년 초에 한번 만나요. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1569,20 +1447,18 @@
   },
   {
     "Input": "코르타나, 다음 주 수요일과 금요일 사이에 안토니오와 25분짜리 미팅을 조정해줘.   ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "다음 주 수요일과 금요일 사이에",
+        "Text": "다음 주 수요일과 금요일 사이",
         "Type": "daterange",
         "Start": 6,
-        "Length": 17
+        "Length": 16
       }
     ]
   },
   {
     "Input": "247년에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1595,7 +1471,6 @@
   },
   {
     "Input": "1970년대에",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1608,7 +1483,6 @@
   },
   {
     "Input": "그는 2000년대에 태어났다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1621,7 +1495,6 @@
   },
   {
     "Input": "70년대에",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1634,7 +1507,6 @@
   },
   {
     "Input": "40년대에",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1647,7 +1519,6 @@
   },
   {
     "Input": "2010년대에",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1660,7 +1531,6 @@
   },
   {
     "Input": "2000년대에",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1673,7 +1543,6 @@
   },
   {
     "Input": "2018년 2월 2일부터 7일까지 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1686,20 +1555,18 @@
   },
   {
     "Input": "2018년 2월 2일과 7일 사이에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2018년 2월 2일과 7일 사이에",
+        "Text": "2018년 2월 2일과 7일 사이",
         "Type": "daterange",
         "Start": 0,
-        "Length": 19
+        "Length": 18
       }
     ]
   },
   {
     "Input": "이것은 1999년 6월에 일어났습니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1712,7 +1579,6 @@
   },
   {
     "Input": "1928년에",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1725,7 +1591,6 @@
   },
   {
     "Input": "2027년 첫째 주에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1738,7 +1603,6 @@
   },
   {
     "Input": "2020년 1사분기에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1751,7 +1615,6 @@
   },
   {
     "Input": "1978년 봄에",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1764,7 +1627,6 @@
   },
   {
     "Input": "다다음주에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1777,7 +1639,6 @@
   },
   {
     "Input": "이것은 지난 20년간 일어났습니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1790,7 +1651,6 @@
   },
   {
     "Input": "이것은 지난 10년간 일어났습니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1803,7 +1663,6 @@
   },
   {
     "Input": "이것은 다음 10년 안에 일어났습니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1816,7 +1675,6 @@
   },
   {
     "Input": "이것은 앞으로  4주간 일어날 것입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1829,20 +1687,18 @@
   },
   {
     "Input": "이것은 지금부터 이틀간 일어날 것입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "지금부터 이틀",
+        "Text": "지금부터 이틀간",
         "Type": "daterange",
         "Start": 4,
-        "Length": 7
+        "Length": 8
       }
     ]
   },
   {
     "Input": "코르타나가 다음 주 초에 시간을 잡아 줄 거예요. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1855,7 +1711,6 @@
   },
   {
     "Input": "좋아요, 다음 주 후반에 스카이프 해요. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1868,7 +1723,6 @@
   },
   {
     "Input": "한여름까지 어떠세요?",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1881,7 +1735,6 @@
   },
   {
     "Input": "나는 다음 주 초에 시간이 나요. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1893,21 +1746,19 @@
     ]
   },
   {
-    "Input": " 2016년 11월부터 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
+    "Input": "2016년 11월부터 자리를 비울 예정입니다. ",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": " 2016년 11월",
+        "Text": "2016년 11월",
         "Type": "daterange",
         "Start": 0,
-        "Length": 10
+        "Length": 9
       }
     ]
   },
   {
     "Input": "1월 1일과 4월 5일 사이에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1920,46 +1771,42 @@
   },
   {
     "Input": "2015년 1월 1일과 2018년 2월 5일 사이에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2015년 1월 1일과 2018년 2월 5일 사이에",
+        "Text": "2015년 1월 1일과 2018년 2월 5일 사이",
         "Type": "daterange",
         "Start": 0,
-        "Length": 28
+        "Length": 27
       }
     ]
   },
   {
     "Input": "2015년 1월 1일과 2018년 2월 사이에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2015년 1월 1일과 2018년 2월 사이에",
+        "Text": "2015년 1월 1일과 2018년 2월 사이",
         "Type": "daterange",
         "Start": 0,
-        "Length": 25
+        "Length": 24
       }
     ]
   },
   {
     "Input": "2015년과 2018년 2월 사이에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2015년과 2018년 2월 사이에",
+        "Text": "2015년과 2018년 2월 사이",
         "Type": "daterange",
         "Start": 0,
-        "Length": 19
+        "Length": 18
       }
     ]
   },
   {
     "Input": "2월 1일에서 2019년 3월까지 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1972,72 +1819,66 @@
   },
   {
     "Input": "2월 1일과 2019년 3월 사이에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2월 1일과 2019년 3월 사이에",
+        "Text": "2월 1일과 2019년 3월 사이",
         "Type": "daterange",
         "Start": 0,
-        "Length": 19
+        "Length": 18
       }
     ]
   },
   {
     "Input": "2015년 6월과 2018년 5월 사이에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2015년 6월과 2018년 5월 사이에",
+        "Text": "2015년 6월과 2018년 5월 사이",
         "Type": "daterange",
         "Start": 0,
-        "Length": 22
+        "Length": 21
       }
     ]
   },
   {
     "Input": "2015년 5월과 2018년 사이에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2015년 5월과 2018년 사이에",
+        "Text": "2015년 5월과 2018년 사이",
         "Type": "daterange",
         "Start": 0,
-        "Length": 19
+        "Length": 18
       }
     ]
   },
   {
     "Input": "2015년 5월과 2018년 6월 사이에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2015년 5월과 2018년 6월 사이에",
+        "Text": "2015년 5월과 2018년 6월 사이",
         "Type": "daterange",
         "Start": 0,
-        "Length": 22
+        "Length": 21
       }
     ]
   },
   {
     "Input": "2015년과 2018년 1월 5일 사이에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2015년과 2018년 1월 5일 사이에",
+        "Text": "2015년과 2018년 1월 5일 사이",
         "Type": "daterange",
         "Start": 0,
-        "Length": 22
+        "Length": 21
       }
     ]
   },
   {
     "Input": "2015년부터 2017년 5월 5일까지 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2050,7 +1891,6 @@
   },
   {
     "Input": "4월 마지막 월요일부터 2019년까지 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2063,7 +1903,6 @@
   },
   {
     "Input": "31주부터 35주까지 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2076,20 +1915,18 @@
   },
   {
     "Input": "31주와 35주 사이에 자리를 비울 예정입니다.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "31주와 35주 사이에",
+        "Text": "31주와 35주 사이",
         "Type": "daterange",
         "Start": 0,
-        "Length": 12
+        "Length": 11
       }
     ]
   },
   {
     "Input": "오늘부터 이틀 반 후까지 여기에 머물 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2102,7 +1939,6 @@
   },
   {
     "Input": "2017년 4월 제 보너스는 무엇입니까?",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2115,7 +1951,6 @@
   },
   {
     "Input": "그 사건이 발생한 같은 달에 거기에 없었습니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2128,7 +1963,6 @@
   },
   {
     "Input": "그 사건이 발생한 같은 주에 거기에 없었습니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2141,7 +1975,6 @@
   },
   {
     "Input": "그 해에 거기에 없었습니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2154,50 +1987,58 @@
   },
   {
     "Input": "오늘로부터 2주 이전에 모든 일들을 다 끝냈습니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "오늘로부터 2주 이전에",
+        "Text": "오늘로부터 2주 이전",
         "Type": "daterange",
         "Start": 0,
-        "Length": 12
+        "Length": 11
       }
     ]
   },
   {
     "Input": "오늘로부터 2주 이내에 돌아오겠습니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "오늘로부터 2주 이내에",
+        "Text": "오늘로부터 2주 이내",
         "Type": "daterange",
         "Start": 0,
-        "Length": 12
+        "Length": 11
       }
     ]
   },
   {
     "Input": "오늘로부터 2주 안에 돌아오겠습니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "오늘로부터 2주 안에",
+        "Text": "오늘로부터 2주 안",
         "Type": "daterange",
         "Start": 0,
-        "Length": 11
+        "Length": 10
       }
     ]
   },
   {
     "Input": "어제로부터 이틀 전에 이 일을 끝냈어야 했다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "어제로부터 이틀 전에",
+        "Text": "어제로부터 이틀 전",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "내일로부터 3일 이내에 이 일을 끝낼 것입니다. ",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "내일로부터 3일 이내",
         "Type": "daterange",
         "Start": 0,
         "Length": 11
@@ -2205,27 +2046,12 @@
     ]
   },
   {
-    "Input": "내일로부터 3일 이내에 이 일을 끝낼 것입니다. ",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "내일로부터 3일 이내에",
-        "Type": "daterange",
-        "Start": 0,
-        "Length": 12
-      }
-    ]
-  },
-  {
     "Input": "North Kedvale Avenue 4832 https://t.co/Jzruq4pTxp",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
     "Input": "2001년 10월을 그리워했습니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2238,7 +2064,6 @@
   },
   {
     "Input": "이번 10년",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2251,7 +2076,6 @@
   },
   {
     "Input": "내년 3사분기에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2264,7 +2088,6 @@
   },
   {
     "Input": "내년 4사분기에 자리를 비울 예정입니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2278,13 +2101,11 @@
   {
     "Input": "2000 미국 달러를 영국 파운드로 변화하십시오. ",
     "Comment": "2000 shouldn't recognized as year here",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
     "Input": "이 은행주는 올 해 들어 지금까지 20% 하락했습니다. ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2297,7 +2118,6 @@
   },
   {
     "Input": "10월 1일부터 11월 7일까지 ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {

@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 from .base_numbers import BaseNumbers
 from .chinese_numeric import ChineseNumeric
 from .english_numeric import EnglishNumeric

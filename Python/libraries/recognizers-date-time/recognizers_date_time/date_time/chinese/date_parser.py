@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 from numbers import Number
 from typing import List, Dict, Optional
 from datedelta import datedelta
@@ -269,7 +272,7 @@ class ChineseDateParser(BaseDateParser):
     def match_to_date(self, match, reference: datetime) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()
         year_str = RegExpUtility.get_group(match, 'year')
-        year_chs = RegExpUtility.get_group(match, 'yearchs')
+        year_chs = RegExpUtility.get_group(match, Constants.YEAR_CJK_GROUP_NAME)
         month_str = RegExpUtility.get_group(match, 'month')
         day_str = RegExpUtility.get_group(match, 'day')
         month = 0

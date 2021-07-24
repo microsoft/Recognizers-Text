@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
 using System.Text.RegularExpressions;
@@ -54,5 +58,7 @@ namespace Microsoft.Recognizers.Text.Number.English
         }
 
         public string NonDecimalSeparatorText { get; private set; }
+
+        public override IEnumerable<string> NonStandardSeparatorVariants => NumbersDefinitions.NonStandardSeparatorVariants;
     }
 }

@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 from typing import Optional
 from datetime import datetime, timedelta
 from datedelta import datedelta
@@ -23,7 +26,7 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
         self.number_parser = CJKNumberParser(
             ChineseNumberParserConfiguration())
         self.year_in_chinese_regex = RegExpUtility.get_safe_reg_exp(
-            ChineseDateTime.DatePeriodYearInChineseRegex)
+            ChineseDateTime.DatePeriodYearInCJKRegex)
         self.number_combined_with_unit_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.NumberCombinedWithUnit)
         self.unit_regex = RegExpUtility.get_safe_reg_exp(
@@ -37,7 +40,7 @@ class ChineseDatePeriodParser(BaseDatePeriodParser):
         self.year_to_year_suffix_required = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.YearToYearSuffixRequired)
         self.chinese_year_regex = RegExpUtility.get_safe_reg_exp(
-            ChineseDateTime.DatePeriodYearInChineseRegex)
+            ChineseDateTime.DatePeriodYearInCJKRegex)
         self.season_with_year_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.SeasonWithYear)
         self.decade_regex = RegExpUtility.get_safe_reg_exp(

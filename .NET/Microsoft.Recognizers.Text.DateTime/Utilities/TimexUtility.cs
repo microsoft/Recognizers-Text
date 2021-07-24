@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
@@ -46,6 +49,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             { DatePeriodTimexType.ByDay, Constants.TimexDay },
             { DatePeriodTimexType.ByWeek, Constants.TimexWeek },
+            { DatePeriodTimexType.ByFortnight, Constants.TimexFortnight },
             { DatePeriodTimexType.ByMonth, Constants.TimexMonth },
             { DatePeriodTimexType.ByYear, Constants.TimexYear },
         };
@@ -59,8 +63,14 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         // TODO: Unify this two methods. This one here detect if "begin/end" have same year, month and day with "alter begin/end" and make them nonspecific.
-        public static string GenerateDatePeriodTimex(DateObject begin, DateObject end, DatePeriodTimexType timexType, DateObject alternativeBegin = default(DateObject), DateObject alternativeEnd = default(DateObject))
+        public static string GenerateDatePeriodTimex(DateObject begin, DateObject end, DatePeriodTimexType timexType, DateObject alternativeBegin = default(DateObject), DateObject alternativeEnd = default(DateObject), bool hasYear = true)
         {
+            // If the year is not specified, the combined range timex will use fuzzy years.
+            if (!hasYear)
+            {
+                return GenerateDatePeriodTimex(begin, end, timexType, UnspecificDateTimeTerms.NonspecificYear);
+            }
+
             var equalDurationLength = (end - begin) == (alternativeEnd - alternativeBegin);
 
             if (alternativeBegin.IsDefaultValue() || alternativeEnd.IsDefaultValue())
@@ -271,71 +281,76 @@ namespace Microsoft.Recognizers.Text.DateTime
             return comment.Equals(Constants.Comment_DoubleTimex, StringComparison.Ordinal);
         }
 
-        public static TimeOfDayResolutionResult ParseTimeOfDay(string tod)
+        public static TimeOfDayResolutionResult ResolveTimeOfDay(string tod)
         {
             var result = new TimeOfDayResolutionResult();
             switch (tod)
             {
                 case Constants.EarlyMorning:
                     result.Timex = Constants.EarlyMorning;
-                    result.BeginHour = 4;
-                    result.EndHour = 8;
+                    result.BeginHour = Constants.EarlyMorningBeginHour;
+                    result.EndHour = Constants.EarlyMorningEndHour;
                     break;
                 case Constants.Morning:
                     result.Timex = Constants.Morning;
-                    result.BeginHour = 8;
-                    result.EndHour = 12;
+                    result.BeginHour = Constants.MorningBeginHour;
+                    result.EndHour = Constants.MorningEndHour;
                     break;
                 case Constants.MidDay:
                     result.Timex = Constants.MidDay;
-                    result.BeginHour = 11;
-                    result.EndHour = 13;
+                    result.BeginHour = Constants.MidDayBeginHour;
+                    result.EndHour = Constants.MidDayEndHour;
                     break;
                 case Constants.Afternoon:
                     result.Timex = Constants.Afternoon;
-                    result.BeginHour = 12;
-                    result.EndHour = 16;
+                    result.BeginHour = Constants.AfternoonBeginHour;
+                    result.EndHour = Constants.AfternoonEndHour;
                     break;
                 case Constants.Evening:
                     result.Timex = Constants.Evening;
-                    result.BeginHour = 16;
-                    result.EndHour = 20;
+                    result.BeginHour = Constants.EveningBeginHour;
+                    result.EndHour = Constants.EveningEndHour;
                     break;
                 case Constants.Daytime:
                     result.Timex = Constants.Daytime;
-                    result.BeginHour = 8;
-                    result.EndHour = 18;
+                    result.BeginHour = Constants.DaytimeBeginHour;
+                    result.EndHour = Constants.DaytimeEndHour;
+                    break;
+                case Constants.Nighttime:
+                    result.Timex = Constants.Nighttime;
+                    result.BeginHour = Constants.NighttimeBeginHour;
+                    result.EndHour = Constants.NighttimeEndHour;
                     break;
                 case Constants.BusinessHour:
                     result.Timex = Constants.BusinessHour;
-                    result.BeginHour = 8;
-                    result.EndHour = 18;
+                    result.BeginHour = Constants.BusinessBeginHour;
+                    result.EndHour = Constants.BusinessEndHour;
                     break;
                 case Constants.Night:
                     result.Timex = Constants.Night;
-                    result.BeginHour = 20;
-                    result.EndHour = 23;
-                    result.EndMin = 59;
+                    result.BeginHour = Constants.NightBeginHour;
+                    result.EndHour = Constants.NightEndHour;
+                    result.EndMin = Constants.NightEndMin;
                     break;
                 case Constants.MealtimeBreakfast:
                     result.Timex = Constants.MealtimeBreakfast;
-                    result.BeginHour = 8;
-                    result.EndHour = 12;
+                    result.BeginHour = Constants.MealtimeBreakfastBeginHour;
+                    result.EndHour = Constants.MealtimeBreakfastEndHour;
                     break;
                 case Constants.MealtimeBrunch:
                     result.Timex = Constants.MealtimeBrunch;
-                    result.BeginHour = 8;
-                    result.EndHour = 12;
+                    result.BeginHour = Constants.MealtimeBrunchBeginHour;
+                    result.EndHour = Constants.MealtimeBrunchEndHour;
                     break;
                 case Constants.MealtimeLunch:
                     result.Timex = Constants.MealtimeLunch;
-                    result.BeginHour = 11;
-                    result.EndHour = 13;
+                    result.BeginHour = Constants.MealtimeLunchBeginHour;
+                    result.EndHour = Constants.MealtimeLunchEndHour;
                     break;
                 case Constants.MealtimeDinner:
                     result.Timex = Constants.MealtimeDinner;
-                    result.BeginHour = 16;
-                    result.EndHour = 20;
+                    result.BeginHour = Constants.MealtimeDinnerBeginHour;
+                    result.EndHour = Constants.MealtimeDinnerEndHour;
                     break;
                 default:
                     break;
@@ -347,6 +362,36 @@ namespace Microsoft.Recognizers.Text.DateTime
         public static string CombineDateAndTimeTimex(string dateTimex, string timeTimex)
         {
             return $"{dateTimex}{timeTimex}";
+        }
+
+        public static string GenerateEndInclusiveTimex(string originalTimex, DatePeriodTimexType datePeriodTimexType,
+            DateObject startDate, DateObject endDate)
+        {
+
+            var timexEndInclusive = GenerateDatePeriodTimex(startDate, endDate, datePeriodTimexType);
+
+            // Sometimes the original timex contains fuzzy part like "XXXX-05-31"
+            // The fuzzy part needs to stay the same in the new end-inclusive timex
+            if (originalTimex.Contains(Constants.TimexFuzzy) && originalTimex.Length == timexEndInclusive.Length)
+            {
+                var timexCharSet = new char[timexEndInclusive.Length];
+
+                for (int i = 0; i < originalTimex.Length; i++)
+                {
+                    if (originalTimex[i] != Constants.TimexFuzzy)
+                    {
+                        timexCharSet[i] = timexEndInclusive[i];
+                    }
+                    else
+                    {
+                        timexCharSet[i] = Constants.TimexFuzzy;
+                    }
+                }
+
+                timexEndInclusive = new string(timexCharSet);
+            }
+
+            return timexEndInclusive;
         }
 
         public static string GenerateWeekOfYearTimex(int year, int weekNum)
@@ -427,6 +472,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                     unitCount = (end - begin).TotalDays.ToString(CultureInfo.InvariantCulture);
                     break;
                 case DatePeriodTimexType.ByWeek:
+                    unitCount = ((end - begin).TotalDays / 7).ToString(CultureInfo.InvariantCulture);
+                    break;
+                case DatePeriodTimexType.ByFortnight:
                     unitCount = ((end - begin).TotalDays / 7).ToString(CultureInfo.InvariantCulture);
                     break;
                 case DatePeriodTimexType.ByMonth:

@@ -4,7 +4,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -31,7 +30,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -58,7 +56,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -85,7 +82,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -112,7 +108,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -139,7 +134,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -166,7 +160,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -193,14 +186,13 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "4時から7時まで",
         "Type": "timerange",
         "Value": {
-          "Timex": "(T04:00,T07,PT3H)",
+          "Timex": "(T04,T07,PT3H)",
           "FutureResolution": {
             "startTime": "04:00:00",
             "endTime": "07:00:00"
@@ -220,7 +212,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -247,7 +238,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -275,7 +265,6 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "Comment": "'今日の' shouldn't be annotated by TimePeriodParser",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -302,7 +291,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -329,11 +317,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "午後",
+        "Text": "午後に",
         "Type": "timerange",
         "Value": {
           "Timex": "TAF",
@@ -347,7 +334,7 @@
           }
         },
         "Start": 0,
-        "Length": 2
+        "Length": 3
       }
     ]
   },
@@ -356,7 +343,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -383,7 +369,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -391,6 +376,7 @@
         "Type": "timerange",
         "Value": {
           "Timex": "TMO",
+          "Mod": "start",
           "FutureResolution": {
             "startTime": "08:00:00",
             "endTime": "10:00:00"
@@ -410,7 +396,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -418,6 +403,7 @@
         "Type": "timerange",
         "Value": {
           "Timex": "TMO",
+          "Mod": "end",
           "FutureResolution": {
             "startTime": "10:00:00",
             "endTime": "12:00:00"
@@ -437,7 +423,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -445,6 +430,7 @@
         "Type": "timerange",
         "Value": {
           "Timex": "TMO",
+          "Mod": "start",
           "FutureResolution": {
             "startTime": "08:00:00",
             "endTime": "10:00:00"
@@ -464,7 +450,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -472,6 +457,7 @@
         "Type": "timerange",
         "Value": {
           "Timex": "TAF",
+          "Mod": "start",
           "FutureResolution": {
             "startTime": "12:00:00",
             "endTime": "14:00:00"
@@ -491,7 +477,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -499,6 +484,7 @@
         "Type": "timerange",
         "Value": {
           "Timex": "TAF",
+          "Mod": "end",
           "FutureResolution": {
             "startTime": "14:00:00",
             "endTime": "16:00:00"
@@ -518,7 +504,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -528,11 +513,11 @@
           "Timex": "TEV",
           "FutureResolution": {
             "startTime": "16:00:00",
-            "endTime": "18:00:00"
+            "endTime": "20:00:00"
           },
           "PastResolution": {
             "startTime": "16:00:00",
-            "endTime": "18:00:00"
+            "endTime": "20:00:00"
           }
         },
         "Start": 0,
@@ -546,7 +531,6 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "Comment": "TBD: Need to find 'early evening' in Japanese. 深夜 is night.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -556,11 +540,11 @@
           "Timex": "TNI",
           "FutureResolution": {
             "startTime": "20:00:00",
-            "endTime": "23:59:00"
+            "endTime": "23:59:59"
           },
           "PastResolution": {
             "startTime": "20:00:00",
-            "endTime": "23:59:00"
+            "endTime": "23:59:59"
           }
         },
         "Start": 0,
@@ -573,7 +557,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -600,7 +583,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -627,7 +609,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -654,7 +635,6 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -681,7 +661,6 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -708,7 +687,6 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -735,7 +713,6 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -762,7 +739,6 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -789,7 +765,6 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -816,7 +791,6 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -843,7 +817,6 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -870,7 +843,6 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -897,7 +869,6 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -924,7 +895,6 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -951,7 +921,6 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -978,7 +947,6 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1005,7 +973,6 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1032,7 +999,6 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1059,7 +1025,6 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1086,7 +1051,6 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1113,7 +1077,6 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1140,7 +1103,6 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1167,7 +1129,6 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1194,7 +1155,6 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1221,7 +1181,6 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1248,7 +1207,6 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1275,7 +1233,6 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1302,7 +1259,6 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1329,13 +1285,13 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "17時55分23秒から18時33分02秒まで",
         "Type": "timerange",
         "Value": {
-          "Timex": "(T17:55:23,T18:33:02,PT0H37M39S)",
+          "Timex": "(T17:55:23,T18:33:02,PT37M39S)",
           "FutureResolution": {
             "startTime": "17:55:23",
             "endTime": "18:33:02"
@@ -1355,13 +1311,13 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午後五時から午前三時まで",
         "Type": "timerange",
         "Value": {
-          "Timex": "(T17:00,T03:00,PT10H)",
+          "Timex": "(T17,T03,PT10H)",
           "FutureResolution": {
             "startTime": "17:00:00",
             "endTime": "03:00:00"
@@ -1381,20 +1337,20 @@
     "Context": {
       "ReferenceDateTime": "2018-10-11T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "夜",
         "Type": "timerange",
         "Value": {
-          "Timex": "TEV",
+          "Timex": "TNI",
           "FutureResolution": {
-            "startTime": "16:00:00",
-            "endTime": "20:00:00"
+            "startTime": "20:00:00",
+            "endTime": "23:59:59"
           },
           "PastResolution": {
-            "startTime": "16:00:00",
-            "endTime": "20:00:00"
+            "startTime": "20:00:00",
+            "endTime": "23:59:59"
           }
         },
         "Start": 0,
@@ -1407,7 +1363,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午後五時から夜七時半まで",
@@ -1433,20 +1389,20 @@
     "Context": {
       "ReferenceDateTime": "2018-10-11T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "昼",
         "Type": "timerange",
         "Value": {
-          "Timex": "TMI",
+          "Timex": "TDT",
           "FutureResolution": {
-            "startTime": "11:00:00",
-            "endTime": "13:00:00"
+            "startTime": "08:00:00",
+            "endTime": "18:00:00"
           },
           "PastResolution": {
-            "startTime": "11:00:00",
-            "endTime": "13:00:00"
+            "startTime": "08:00:00",
+            "endTime": "18:00:00"
           }
         },
         "Start": 0,
@@ -1459,13 +1415,13 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午後五時から6時まで",
         "Type": "timerange",
         "Value": {
-          "Timex": "(T17:00,T18:00,PT1H)",
+          "Timex": "(T17,T18,PT1H)",
           "FutureResolution": {
             "startTime": "17:00:00",
             "endTime": "18:00:00"
@@ -1485,13 +1441,13 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "5時から6時まで",
         "Type": "timerange",
         "Value": {
-          "Timex": "(T05:00,T06:00,PT1H)",
+          "Timex": "(T05,T06,PT1H)",
           "FutureResolution": {
             "startTime": "05:00:00",
             "endTime": "06:00:00"
@@ -1511,7 +1467,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "朝五時から六時まで",
@@ -1537,13 +1493,13 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "五時半から六時まで",
         "Type": "timerange",
         "Value": {
-          "Timex": "(T05:30,T06,PT0H30M)",
+          "Timex": "(T05:30,T06,PT30M)",
           "FutureResolution": {
             "startTime": "05:30:00",
             "endTime": "06:00:00"
@@ -1563,13 +1519,13 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "17:55:23から18:33:02まで",
         "Type": "timerange",
         "Value": {
-          "Timex": "(T17:55:23,T18:33:02,PT0H37M39S)",
+          "Timex": "(T17:55:23,T18:33:02,PT37M39S)",
           "FutureResolution": {
             "startTime": "17:55:23",
             "endTime": "18:33:02"
@@ -1589,13 +1545,13 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午後五時十五分から六時まで",
         "Type": "timerange",
         "Value": {
-          "Timex": "(T17:15,T18,PT0H45M)",
+          "Timex": "(T17:15,T18,PT45M)",
           "FutureResolution": {
             "startTime": "17:15:00",
             "endTime": "18:00:00"
@@ -1615,7 +1571,7 @@
     "Context": {
       "ReferenceDateTime": "2018-10-11T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午前",
@@ -1641,7 +1597,7 @@
     "Context": {
       "ReferenceDateTime": "2018-10-11T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "午後",
@@ -1659,6 +1615,58 @@
         },
         "Start": 0,
         "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "日中",
+    "Context": {
+      "ReferenceDateTime": "2018-10-11T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "日中",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TDT",
+          "FutureResolution": {
+            "startTime": "08:00:00",
+            "endTime": "18:00:00"
+          },
+          "PastResolution": {
+            "startTime": "08:00:00",
+            "endTime": "18:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "5時から午後6時まで不在にします。",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5時から午後6時まで",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T17,T18,PT1H)",
+          "FutureResolution": {
+            "startTime": "17:00:00",
+            "endTime": "18:00:00"
+          },
+          "PastResolution": {
+            "startTime": "17:00:00",
+            "endTime": "18:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 10
       }
     ]
   }

@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.Sequence
@@ -27,6 +30,8 @@ namespace Microsoft.Recognizers.Text.Sequence
         public List<char> ForbiddenPrefixMarkers { get; set; }
 
         public List<char> ForbiddenSuffixMarkers { get; set; }
+
+        public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; set; }
 
     }
 }

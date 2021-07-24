@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 package com.microsoft.recognizers.text;
 
 public class Metadata {
@@ -29,6 +32,26 @@ public class Metadata {
 
     public void setHasMod(boolean hasMod) {
         this.hasMod = hasMod;
+    }
+
+    public String offset = "";
+
+    public String getOffset() {
+        return offset;
+    }
+
+    public void setOffset(String offset) {
+        this.offset = offset;
+    }
+
+    public String relativeTo = "";
+
+    public String getRelativeTo() {
+        return relativeTo;
+    }
+
+    public void setRelativeTo(String relativeTo) {
+        this.relativeTo = relativeTo;
     }
 
     public boolean getIsPossiblyIncludePeriodEnd() {

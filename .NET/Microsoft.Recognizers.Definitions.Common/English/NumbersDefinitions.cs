@@ -24,6 +24,12 @@ namespace Microsoft.Recognizers.Definitions.English
       public const string LangMarker = @"Eng";
       public const bool CompoundNumberLanguage = false;
       public const bool MultiDecimalSeparatorCulture = true;
+      public static readonly IList<string> NonStandardSeparatorVariants = new List<string>
+        {
+            @"en-za",
+            @"en-na",
+            @"en-zw"
+        };
       public const string RoundNumberIntegerRegex = @"(?:hundred|thousand|million|mln|billion|bln|trillion|tln|lakh|crore)s?";
       public const string ZeroToNineIntegerRegex = @"(?:three|seven|eight|four|five|zero|nine|one|two|six)";
       public const string TwoToNineIntegerRegex = @"(?:three|seven|eight|four|five|nine|two|six)";
@@ -44,7 +50,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly string AllIntRegexWithLocks = $@"((?<=\b){AllIntRegex}(?=\b))";
       public static readonly string AllIntRegexWithDozenSuffixLocks = $@"(?<=\b)(((half\s+)?a\s+dozen)|({AllIntRegex}\s+dozen(s)?))(?=\b)";
       public const string RoundNumberOrdinalRegex = @"(?:hundredth|thousandth|millionth|billionth|trillionth)";
-      public const string NumberOrdinalRegex = @"(?:first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)";
+      public const string NumberOrdinalRegex = @"(?:first|second|third|fourth|fifth|sixth|seventh|eighth|nine?th|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)";
       public const string RelativeOrdinalRegex = @"(?<relativeOrdinal>(next|previous|current)\s+one|(the\s+second|next)\s+to\s+last|the\s+one\s+before\s+the\s+last(\s+one)?|the\s+last\s+but\s+one|(ante)?penultimate|last|next|previous|current)";
       public static readonly string BasicOrdinalRegex = $@"({NumberOrdinalRegex}|{RelativeOrdinalRegex})";
       public static readonly string SuffixBasicOrdinalRegex = $@"(?:(((({TensNumberIntegerRegex}(\s+(and\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(and\s+)?)*({TensNumberIntegerRegex}(\s+|\s*-\s*))?{BasicOrdinalRegex})";
@@ -174,6 +180,7 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"seventh", 7 },
             { @"eighth", 8 },
             { @"ninth", 9 },
+            { @"nineth", 9 },
             { @"tenth", 10 },
             { @"eleventh", 11 },
             { @"twelfth", 12 },
@@ -207,6 +214,7 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"sevenths", 7 },
             { @"eighths", 8 },
             { @"ninths", 9 },
+            { @"nineths", 9 },
             { @"tenths", 10 },
             { @"elevenths", 11 },
             { @"twelfths", 12 },

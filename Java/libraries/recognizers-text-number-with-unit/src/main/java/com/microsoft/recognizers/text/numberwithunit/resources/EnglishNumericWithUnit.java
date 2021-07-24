@@ -747,5 +747,6 @@ public class EnglishNumericWithUnit {
 
     public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
         .put("\\bm\\b", "((('|’)\\s*m)|(m\\s*('|’)))")
+        .put("^\\d{5} [cf]$", "\\b([a-z]{2} \\d{5} [cf])\\b")
         .build();
 }

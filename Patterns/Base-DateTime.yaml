@@ -29,6 +29,8 @@ BaseAmPmDescRegex: !simpleRegex
   def: (ampm)
 EqualRegex: !simpleRegex
   def: (?<!<|>)=
+BracketRegex: !simpleRegex
+  def: ^\s*[\)\]]|[\[\(]\s*$
 MinYearNum: 1500
 MaxYearNum: 2100
 MaxTwoDigitYearFutureNum: 30

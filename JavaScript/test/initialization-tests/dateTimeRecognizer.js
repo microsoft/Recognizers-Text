@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 var Recognizer = require('@microsoft/recognizers-text-date-time');
 var DateTimeRecognizer = require('@microsoft/recognizers-text-date-time').DateTimeRecognizer;
 var DateTimeOptions = require('@microsoft/recognizers-text-date-time').DateTimeOptions;

@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Generic;
 using DateObject = System.DateTime;
 
@@ -86,6 +89,24 @@ namespace Microsoft.Recognizers.Text.DateTime
         public static bool IsFeb29th(int year, int month, int day)
         {
             return month == 2 && day == 29;
+        }
+
+        // Used in CJK implementation
+        public static DateObject ComputeDate(int cardinal, int weekday, int month, int year)
+        {
+            var firstDay = DateObject.MinValue.SafeCreateFromValue(year, month, 1);
+            var firstWeekday = firstDay.This((DayOfWeek)weekday);
+            if (weekday == 0)
+            {
+                weekday = 7;
+            }
+
+            if (weekday < (int)firstDay.DayOfWeek)
+            {
+                firstWeekday = firstDay.Next((DayOfWeek)weekday);
+            }
+
+            return firstWeekday.AddDays(7 * (cardinal - 1));
         }
 
         // This method is to ensure the year of begin date is same with the end date in no year situation.

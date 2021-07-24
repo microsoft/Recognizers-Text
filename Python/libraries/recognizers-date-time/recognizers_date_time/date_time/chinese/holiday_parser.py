@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 from typing import Optional, Match
 from datetime import datetime, timedelta
 from datedelta import datedelta
@@ -189,7 +192,7 @@ class ChineseHolidayParser(BaseHolidayParser):
 
         year = reference.year
         year_num = match.group('year')
-        year_chinese = match.group('yearchs')
+        year_chinese = match.group('yearCJK')
         year_relative = match.group('yearrel')
         has_year = False
 

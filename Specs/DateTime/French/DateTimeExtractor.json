@@ -482,5 +482,977 @@
         "Length": 8
       }
     ]
+  },
+  {
+    "Input": "Je vais rentrer maintenant",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "maintenant",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer le plus tôt possible",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "le plus tôt possible",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer tout de suite",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "tout de suite",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer le 15 à 8h00",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "15 à 8h00",
+        "Type": "datetime",
+        "Start": 19,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer le 15 à 8:00:30",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "15 à 8:00:30",
+        "Type": "datetime",
+        "Start": 19,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer le 15, 20h",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "15, 20h",
+        "Type": "datetime",
+        "Start": 19,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer 21/04/2016, 20h00",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "21/04/2016, 20h00",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je vais revenir 21/04/2016, 20:00:13",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "21/04/2016, 20:00:13",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer le 23 octobre à sept heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "23 octobre à sept heures",
+        "Type": "datetime",
+        "Start": 19,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer le 14 octobre à 8:00am",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "14 octobre à 8:00am",
+        "Type": "datetime",
+        "Start": 19,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer le 14 octobre à 8:00:00am",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "14 octobre à 8:00:00am",
+        "Type": "datetime",
+        "Start": 19,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer le 14 octobre, 8:00am",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "14 octobre, 8:00am",
+        "Type": "datetime",
+        "Start": 19,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer le 14 octobre à 8:00:01 ",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "14 octobre à 8:00:01",
+        "Type": "datetime",
+        "Start": 19,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer demain à 8:00am",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "demain à 8:00am",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer demain à environ 8:00am",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "demain à environ 8:00am",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer demain pour 8:00am",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "demain pour 8:00am",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer demain à 8:00:05",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "demain à 8:00:05",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer vendredi prochain à 3 heures et demie",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "vendredi prochain à 3 heures et demie",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 37
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer le 5 mai 2016, 20 min après huit heures du soir",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "5 mai 2016, 20 min après huit heures du soir",
+        "Type": "datetime",
+        "Start": 19,
+        "Length": 44
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer à 20h le 15",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "20h le 15",
+        "Type": "datetime",
+        "Start": 18,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer à sept heures le 15",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "sept heures le 15",
+        "Type": "datetime",
+        "Start": 18,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer à 20h dimanche prochain",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "20h dimanche prochain",
+        "Type": "datetime",
+        "Start": 18,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer à 20h aujourd'hui",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "20h aujourd'hui",
+        "Type": "datetime",
+        "Start": 18,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer un quart à sept heures demain",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "un quart à sept heures demain",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer 19:00, 22/12/2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "19:00, 22/12/2016",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer à sept heures demain",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "sept heures demain",
+        "Type": "datetime",
+        "Start": 18,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer demain matin à 7h",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "demain matin à 7h",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer à 7h dimanche après-midi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "7h dimanche après-midi",
+        "Type": "datetime",
+        "Start": 18,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai vingt minutes après cinq heures demain matin",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "vingt minutes après cinq heures demain matin",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 44
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer le 14 octobre à 8h00, le 14 octobre",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "le 14 octobre à 8h00, le 14 octobre",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 35
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer à 7h, ce matin",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "7h, ce matin",
+        "Type": "datetime",
+        "Start": 18,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Je rentre à 20h le soir, lundi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "20h le soir, lundi",
+        "Type": "datetime",
+        "Start": 12,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer à 20h le soir, 1er janvier",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "20h le soir, 1er janvier",
+        "Type": "datetime",
+        "Start": 18,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Je rentre à 20h le soir, le 1er janvier",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "20h le soir, le 1er janvier",
+        "Type": "datetime",
+        "Start": 12,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer à 22h ce soir",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "22h ce soir",
+        "Type": "datetime",
+        "Start": 18,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer à 8h ce matin",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "8h ce matin",
+        "Type": "datetime",
+        "Start": 18,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer à 20h ce soir",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "20h ce soir",
+        "Type": "datetime",
+        "Start": 18,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer ce soir à environ 7 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "ce soir à environ 7 heures",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer ce matin à 7 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "ce matin à 7 heures",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer ce matin à 19h",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "ce matin à 19h",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer ce matin à sept heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "ce matin à sept heures",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer ce matin à 7h00",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "ce matin à 7h00",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer cette nuit à 7 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "cette nuit à 7 heures",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer ce soir à 7 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "ce soir à 7 heures",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "pour 2 personnes ce soir à 21h30",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "ce soir à 21h30",
+        "Type": "datetime",
+        "Start": 17,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "pour 2 personnes ce soir à 21h30:31",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "ce soir à 21h30:31",
+        "Type": "datetime",
+        "Start": 17,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai à la fin de la journée",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "la fin de la journée",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Je retournerai à la fin de demain",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "fin de demain",
+        "Type": "datetime",
+        "Start": 20,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer à la fin du dimanche",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "fin du dimanche",
+        "Type": "datetime",
+        "Start": 21,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer le 5 à 4 heures du matin",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "le 5 à 4 heures du matin",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai à 12: 23: 59 le 2016-12-16",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "à 12: 23: 59 le 2016-12-16",
+        "Type": "datetime",
+        "Start": 14,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer dans 5 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans 5 heures",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "voir si je suis disponible pour 15h le dimanche",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "15h le dimanche",
+        "Type": "datetime",
+        "Start": 32,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Fixez un rendez-vous pour demain matin à 9 heures.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "demain matin à 9 heures",
+        "Type": "datetime",
+        "Start": 26,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer demain matin à 9 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "demain matin à 9 heures",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer demain matin à 9 h",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "demain matin à 9 h",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer demain à 9 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "demain à 9 heures",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer demain à 9 h",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "demain à 9 h",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "ce vendredi à 1:00 pm.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "ce vendredi à 1:00 pm.",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "AJOUTER LE DÉJEUNER À 12 H 30 LE VEN.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "12 H 30 LE VEN.",
+        "Type": "datetime",
+        "Start": 22,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Ajouter 649 minuit ce soir",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "minuit ce soir",
+        "Type": "datetime",
+        "Start": 12,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer le 1er août à 11h",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1er août à 11h",
+        "Type": "datetime",
+        "Start": 19,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer le 1er août à 23h",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1er août à 23h",
+        "Type": "datetime",
+        "Start": 19,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer le 1er août à 11pm",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1er août à 11pm",
+        "Type": "datetime",
+        "Start": 19,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer 25/02 à 11h",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "25/02 à 11h",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai le 6 janvier 2017 à 6h37",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "6 janvier 2017 à 6h37",
+        "Type": "datetime",
+        "Start": 17,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "le 10:38 16 novembre 2016 ",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "10:38 16 novembre 2016",
+        "Type": "datetime",
+        "Start": 3,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai 1 jour 2 heures plus tard",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1 jour 2 heures plus tard",
+        "Type": "datetime",
+        "Start": 12,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Je serai occupé dans une heure, alors appelle-moi plus tard",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans une heure",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Je l'ai rencontré il y a 2 mois 1 jour 2 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "il y a 2 mois 1 jour 2 heures",
+        "Type": "datetime",
+        "Start": 18,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai 1 jour 30 minutes plus tard",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1 jour 30 minutes plus tard",
+        "Type": "datetime",
+        "Start": 12,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai dans 2 minutes",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans 2 minutes",
+        "Type": "datetime",
+        "Start": 12,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Veuillez réserver un appel Skype aujourd'hui à 9 h.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "aujourd'hui à 9 h",
+        "Type": "datetime",
+        "Start": 33,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Veuillez réserver un appel Skype aujourd'hui à 21 heures.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "aujourd'hui à 21 heures",
+        "Type": "datetime",
+        "Start": 33,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai dans 2 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans 2 heures",
+        "Type": "datetime",
+        "Start": 12,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer le mercredi 26 octobre 2016 à 15:50:06.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "le mercredi 26 octobre 2016 à 15:50:06",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 38
+      }
+    ]
+  },
+  {
+    "Input": "Le 15:50:06 mer. 26 octobre 2016 n'est pas un jour en 2019.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "15:50:06 mer. 26 octobre 2016",
+        "Type": "datetime",
+        "Start": 3,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer à 20h30 aujourd'hui",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "à 20h30 aujourd'hui",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer aujourd'hui à 20h30",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "aujourd'hui à 20h30",
+        "Type": "datetime",
+        "Start": 16,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Je rentre à 20h30 aujourd'hui",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "20h30 aujourd'hui",
+        "Type": "datetime",
+        "Start": 12,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Je rentre à 8:30pm aujourd'hui",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "8:30pm aujourd'hui",
+        "Type": "datetime",
+        "Start": 12,
+        "Length": 18
+      }
+    ]
   }
 ]

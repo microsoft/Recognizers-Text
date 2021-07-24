@@ -533,56 +533,21 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "Results": [
-      {
-        "Text": "en 3 horas",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "(2016-11-07T16:12:00,2016-11-07T19:12:00,PT3H)",
-          "FutureResolution": {
-            "startDateTime": "2016-11-07 16:12:00",
-            "endDateTime": "2016-11-07 19:12:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-07 16:12:00",
-            "endDateTime": "2016-11-07 19:12:00"
-          }
-        },
-        "Start": 13,
-        "Length": 10
-      }
-    ]
+    "Results": []
   },
   {
     "Input": "Voy a volver en 5 h",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "Results": [
-      {
-        "Text": "en 5 h",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "(2016-11-07T16:12:00,2016-11-07T21:12:00,PT5H)",
-          "FutureResolution": {
-            "startDateTime": "2016-11-07 16:12:00",
-            "endDateTime": "2016-11-07 21:12:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-07 16:12:00",
-            "endDateTime": "2016-11-07 21:12:00"
-          }
-        },
-        "Start": 13,
-        "Length": 6
-      }
-    ]
+    "Results": []
   },
   {
     "Input": "Voy a volver dentro de 5 horas",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "dentro de 5 horas",
@@ -2889,6 +2854,108 @@
         },
         "Start": 12,
         "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver las próximas 3 horas",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "próximas 3 horas",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T19:12:00,PT3H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 19:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 19:12:00"
+          }
+        },
+        "Start": 17,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver próximas 5 h",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "próximas 5 h",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T21:12:00,PT5H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 21:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 21:12:00"
+          }
+        },
+        "Start": 13,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver dentro de 3 minutos",
+    "Context": {
+      "ReferenceDateTime": "2019-07-30T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "dentro de 3 minutos",
+        "Start": 13,
+        "Length": 19,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2019-07-30T00:00:00,2019-07-30T00:03:00,PT3M)",
+          "FutureResolution": {
+            "startDateTime": "2019-07-30 00:00:00",
+            "endDateTime": "2019-07-30 00:03:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2019-07-30 00:00:00",
+            "endDateTime": "2019-07-30 00:03:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver desde ahora hasta 3 min después",
+    "Context": {
+      "ReferenceDateTime": "2019-07-30T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "desde ahora hasta 3 min después",
+        "Start": 13,
+        "Length": 31,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(PRESENT_REF,2019-07-30T00:03:00,PT3M)",
+          "FutureResolution": {
+            "startDateTime": "2019-07-30 00:00:00",
+            "endDateTime": "2019-07-30 00:03:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2019-07-30 00:00:00",
+            "endDateTime": "2019-07-30 00:03:00"
+          }
+        }
       }
     ]
   }

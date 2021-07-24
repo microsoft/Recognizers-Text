@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 from typing import List, Pattern
 from recognizers_text.matcher.string_matcher import StringMatcher
 from ..base_timezone import TimeZoneExtractorConfiguration

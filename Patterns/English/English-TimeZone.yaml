@@ -496,7 +496,7 @@ AbbrToMinMapping: !dictionary
    psat: -240
    pst: -480
    pstm: -480
-   pt: -420
+   pt: -480
    #pyst: -180
    #pyst: -510
    pyst: -10000
@@ -561,8 +561,6 @@ FullToMinMapping: !dictionary
    redmond: -480
    seattle: -480
    bellevue: -480
-   pacific daylight: -420
-   pacific: -480
    afghanistan standard: 270
    alaskan standard: -540
    anywhere on earth: -720
@@ -590,10 +588,12 @@ FullToMinMapping: !dictionary
    central america standard: -360
    central asia standard: 360
    central brazilian standard: -240
+   central: -360
    #central daylight: -240
    #central daylight: -300
    #central daylight: 630
    central daylight: -10000
+   central daylight saving: -10000
    central europe: 60
    central european: 60
    central europe std: 60
@@ -613,11 +613,11 @@ FullToMinMapping: !dictionary
    e. south america standard: -180
    europe central: 60
    european central: 60
-   central: -300
-   eastern: -240
+   eastern: -300
    #eastern daylight: -240
    #eastern daylight: 660
    eastern daylight: -10000
+   eastern daylight saving: -10000
    eastern standard time (mexico): -300
    eastern standard: -300
    egypt standard: 120
@@ -645,7 +645,9 @@ FullToMinMapping: !dictionary
    middle east standard: 120
    montevideo standard: -180
    morocco standard: 0
-   mountain: -360
+   mountain: -420
+   mountain daylight: -360
+   mountain daylight saving: -360
    mountain standard: -420
    mountain standard time (mexico): -420
    myanmar standard: 390
@@ -658,9 +660,12 @@ FullToMinMapping: !dictionary
    north asia standard: 420
    north korea standard: 510
    west coast: -420
-   pacific sa standard: -240
+   pacific: -480
+   pacific daylight: -420
+   pacific daylight saving: -420
    pacific standard: -480
    pacific standard time (mexico): -480
+   pacific sa standard: -240
    pakistan standard: 300
    paraguay standard: -240
    romance standard: 60
@@ -710,11 +715,14 @@ FullToMinMapping: !dictionary
    west asia standard: 300
    west pacific standard: 600
    yakutsk standard: 540
-   pacific daylight saving: -420
    australian western daylight: 540
    australian west daylight: 540
    austrialian western daylight: 540
    austrialian west daylight: 540
+   australian western daylight saving: 540
+   australian west daylight saving: 540
+   austrialian western daylight saving: 540
+   austrialian west daylight saving: 540
    colombia: -300
    hong kong: 480
    madrid: 60

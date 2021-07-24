@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Generic;
 using System.Globalization;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Korean;
@@ -13,7 +16,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Korean
 
             var numConfig = new BaseNumberOptionsConfiguration(ci.Name, NumberOptions.None);
 
-            this.InternalNumberExtractor = new NumberExtractor();
+            this.InternalNumberExtractor = new NumberExtractor(numConfig);
             this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number,
                                                                               new KoreanNumberParserConfiguration(numConfig));
             this.ConnectorToken = string.Empty;

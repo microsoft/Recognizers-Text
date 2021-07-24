@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
@@ -21,6 +24,24 @@ namespace Microsoft.Recognizers.Text.DateTime.Arabic
 
         private static readonly Regex NightRegex =
             new Regex(DateTimeDefinitions.NightRegex, RegexFlags);
+
+        private static readonly Regex HalfTokenRegex =
+            new Regex(DateTimeDefinitions.HalfTokenRegex, RegexFlags);
+
+        private static readonly Regex QuarterTokenRegex =
+            new Regex(DateTimeDefinitions.QuarterTokenRegex, RegexFlags);
+
+        private static readonly Regex ThreeQuarterTokenRegex =
+            new Regex(DateTimeDefinitions.ThreeQuarterTokenRegex, RegexFlags);
+
+        private static readonly Regex ToTokenRegex =
+            new Regex(DateTimeDefinitions.ToTokenRegex, RegexFlags);
+
+        private static readonly Regex ToHalfTokenRegex =
+            new Regex(DateTimeDefinitions.ToHalfTokenRegex, RegexFlags);
+
+        private static readonly Regex ForHalfTokenRegex =
+            new Regex(DateTimeDefinitions.ForHalfTokenRegex, RegexFlags);
 
         public ArabicTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
          : base(config)
@@ -53,18 +74,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Arabic
 
             var trimmedPrefix = prefix.Trim();
 
-            // @TODO move hardcoded values to resources file
-
-            if (trimmedPrefix.StartsWith("half", StringComparison.Ordinal))
+            if (HalfTokenRegex.IsMatch(trimmedPrefix))
             {
-                deltaMin = 30;
+                deltaMin = -30;
             }
-            else if (trimmedPrefix.StartsWith("a quarter", StringComparison.Ordinal) ||
-                     trimmedPrefix.StartsWith("quarter", StringComparison.Ordinal))
+            else if (QuarterTokenRegex.IsMatch(trimmedPrefix))
             {
                 deltaMin = 15;
             }
-            else if (trimmedPrefix.StartsWith("three quarter", StringComparison.Ordinal))
+            else if (ThreeQuarterTokenRegex.IsMatch(trimmedPrefix))
             {
                 deltaMin = 45;
             }
@@ -83,7 +101,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Arabic
                 }
             }
 
-            if (trimmedPrefix.EndsWith("to", StringComparison.Ordinal))
+            if (ToHalfTokenRegex.IsMatch(trimmedPrefix))
+            {
+                deltaMin = deltaMin - 30;
+            }
+            else if (ForHalfTokenRegex.IsMatch(trimmedPrefix))
+            {
+                deltaMin = -deltaMin - 30;
+            }
+            else if (ToTokenRegex.IsMatch(trimmedPrefix))
             {
                 deltaMin = -deltaMin;
             }

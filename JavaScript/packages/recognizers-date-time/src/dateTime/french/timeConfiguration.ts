@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { IExtractor } from "@microsoft/recognizers-text";
 import { RegExpUtility } from "@microsoft/recognizers-text";
 import { ITimeExtractorConfiguration, ITimeParserConfiguration } from "../baseTime";
@@ -66,6 +69,7 @@ export class FrenchTimeParserConfiguration implements ITimeParserConfiguration {
         let deltaMin = 0;
         let trimedPrefix = prefix.trim().toLowerCase();
 
+        // @todo Move hardcoded strings to resource YAML file.
         if (trimedPrefix.endsWith("demie")) {
             deltaMin = 30;
         }
@@ -92,7 +96,7 @@ export class FrenchTimeParserConfiguration implements ITimeParserConfiguration {
             }
         }
 
-        if (trimedPrefix.endsWith("à")) {
+        if (trimedPrefix.endsWith("à") || trimedPrefix.includes("moins")) {
             deltaMin = -deltaMin;
         }
 

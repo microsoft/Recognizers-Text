@@ -1462,7 +1462,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "(T17:15,T18,PT0H45M)",
+              "timex": "(T17:15,T18,PT45M)",
               "type": "timerange",
               "start": "17:15:00",
               "end": "18:00:00"
@@ -1486,7 +1486,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "(T17:55:23,T18:33:02,PT0H37M39S)",
+              "timex": "(T17:55:23,T18:33:02,PT37M39S)",
               "type": "timerange",
               "start": "17:55:23",
               "end": "18:33:02"
@@ -1510,7 +1510,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "(T17:55:23,T18:33:02,PT0H37M39S)",
+              "timex": "(T17:55:23,T18:33:02,PT37M39S)",
               "type": "timerange",
               "start": "17:55:23",
               "end": "18:33:02"
@@ -2474,7 +2474,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "(2018-03-01,2018-09-01,P6M)",
+              "timex": "(XXXX-03-01,XXXX-09-01,P6M)",
               "type": "daterange",
               "start": "2018-03-01",
               "end": "2018-09-01"
@@ -2499,7 +2499,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "(2018-05-01,2018-10-01,P5M)",
+              "timex": "(XXXX-05-01,XXXX-10-01,P5M)",
               "type": "daterange",
               "start": "2018-05-01",
               "end": "2018-10-01"
@@ -2524,7 +2524,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "(2018-08-01,2019-02-01,P6M)",
+              "timex": "(XXXX-08-01,XXXX-02-01,P6M)",
               "type": "daterange",
               "start": "2018-08-01",
               "end": "2019-02-01"
@@ -2580,13 +2580,13 @@
         "Resolution": {
           "values": [
             {
-              "timex": "(XXXX-10-01,XXXX-05-01,P5M)",
+              "timex": "(XXXX-10-01,XXXX-05-01,P7M)",
               "type": "daterange",
               "start": "2017-10-01",
               "end": "2018-05-01"
             },
             {
-              "timex": "(XXXX-10-01,XXXX-05-01,P5M)",
+              "timex": "(XXXX-10-01,XXXX-05-01,P7M)",
               "type": "daterange",
               "start": "2018-10-01",
               "end": "2019-05-01"
@@ -6545,6 +6545,107 @@
               "timex": "(2019-02-29,2019-03-01,PXD)",
               "type": "daterange",
               "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "13点",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "13点",
+        "Start": 0,
+        "End": 2,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T13",
+              "type": "time",
+              "value": "13:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "15时20分",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "15时20分",
+        "Start": 0,
+        "End": 5,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T15:20",
+              "type": "time",
+              "value": "15:20:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "16时40分50秒",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "16时40分50秒",
+        "Start": 0,
+        "End": 8,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T16:40:50",
+              "type": "time",
+              "value": "16:40:50"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "9点",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "9点",
+        "Start": 0,
+        "End": 1,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T09",
+              "type": "time",
+              "value": "09:00:00"
+            },
+            {
+              "timex": "T21",
+              "type": "time",
+              "value": "21:00:00"
             }
           ]
         }

@@ -5,6 +5,13 @@ LangMarker: Eng
 CompoundNumberLanguage: !bool false
 #Does this culture uses period and comma intercheangeably as decimal separator?
 MultiDecimalSeparatorCulture: !bool true
+#List of culture variants that don't follow the default decimal separator
+NonStandardSeparatorVariants: !list
+  types: [ string ]
+  entries:
+    - en-za
+    - en-na
+    - en-zw
 #Integer Regex
 RoundNumberIntegerRegex: !simpleRegex
   def: (?:hundred|thousand|million|mln|billion|bln|trillion|tln|lakh|crore)s?
@@ -58,7 +65,7 @@ AllIntRegexWithDozenSuffixLocks: !nestedRegex
 RoundNumberOrdinalRegex: !simpleRegex
   def: (?:hundredth|thousandth|millionth|billionth|trillionth)
 NumberOrdinalRegex: !simpleRegex
-  def: (?:first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)
+  def: (?:first|second|third|fourth|fifth|sixth|seventh|eighth|nine?th|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)
 RelativeOrdinalRegex: !simpleRegex
   def: (?<relativeOrdinal>(next|previous|current)\s+one|(the\s+second|next)\s+to\s+last|the\s+one\s+before\s+the\s+last(\s+one)?|the\s+last\s+but\s+one|(ante)?penultimate|last|next|previous|current)
 BasicOrdinalRegex: !nestedRegex
@@ -301,6 +308,7 @@ OrdinalNumberMap: !dictionary
     seventh: 7
     eighth: 8
     ninth: 9
+    nineth: 9
     tenth: 10
     eleventh: 11
     twelfth: 12
@@ -334,6 +342,7 @@ OrdinalNumberMap: !dictionary
     sevenths: 7
     eighths: 8
     ninths: 9
+    nineths: 9
     tenths: 10
     elevenths: 11
     twelfths: 12

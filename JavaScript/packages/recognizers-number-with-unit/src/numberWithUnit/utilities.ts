@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { StringUtility } from "@microsoft/recognizers-text";
 
 export class DictionaryUtils {

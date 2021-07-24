@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { RegExpUtility } from "@microsoft/recognizers-text";
 import { SpanishCardinalExtractor, SpanishIntegerExtractor, SpanishOrdinalExtractor, BaseNumberParser, SpanishNumberParserConfiguration } from "@microsoft/recognizers-text-number";
 import { IDateTimeUtilityConfiguration } from "../utilities";

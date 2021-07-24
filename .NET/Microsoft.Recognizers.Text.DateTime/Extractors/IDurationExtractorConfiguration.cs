@@ -1,4 +1,7 @@
-﻿using System.Collections.Immutable;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -34,6 +37,10 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex LessThanRegex { get; }
 
         Regex MoreThanRegex { get; }
+
+        Regex ModPrefixRegex { get; }
+
+        Regex ModSuffixRegex { get; }
 
         Regex SpecialNumberUnitRegex { get; }
 

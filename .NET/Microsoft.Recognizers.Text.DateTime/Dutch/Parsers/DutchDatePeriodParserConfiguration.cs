@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
@@ -335,6 +338,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
                    (YearTermsPadded.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText)) ||
                    (DateTimeDefinitions.GenericYearTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)) &&
                     UnspecificEndOfRangeRegex.IsMatch(trimmedText));
+        }
+
+        public bool IsFortnight(string text)
+        {
+            return false;
         }
 
         public bool IsYearToDate(string text)

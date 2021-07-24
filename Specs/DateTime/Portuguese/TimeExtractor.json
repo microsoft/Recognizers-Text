@@ -564,50 +564,50 @@
     ]
   },
   {
-    "Input": "Voltarei de madrugada",
+    "Input": "Voltarei no meio da madrugada",
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "de madrugada",
+        "Text": "meio da madrugada",
         "Type": "time",
-        "Start": 9,
-        "Length": 12
+        "Start": 12,
+        "Length": 17
       }
     ]
   },
   {
-    "Input": "Voltarei na madrugada",
+    "Input": "É mais de meio da madrugada.",
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "na madrugada",
+        "Text": "meio da madrugada",
         "Type": "time",
-        "Start": 9,
-        "Length": 12
+        "Start": 10,
+        "Length": 17
       }
     ]
   },
   {
-    "Input": "Voltarei de manhã",
+    "Input": "Voltarei no meio da manhã",
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "de manhã",
+        "Text": "meio da manhã",
         "Type": "time",
-        "Start": 9,
-        "Length": 8
+        "Start": 12,
+        "Length": 13
       }
     ]
   },
   {
-    "Input": "Voltarei pela manhã",
+    "Input": "Voltarei pelo meio da manhã",
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "pela manhã",
+        "Text": "meio da manhã",
         "Type": "time",
-        "Start": 9,
-        "Length": 10
+        "Start": 14,
+        "Length": 13
       }
     ]
   },
@@ -616,10 +616,10 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "ao meio dia",
+        "Text": "meio dia",
         "Type": "time",
-        "Start": 9,
-        "Length": 11
+        "Start": 12,
+        "Length": 8
       }
     ]
   },
@@ -628,34 +628,34 @@
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "de meio dia",
+        "Text": "meio dia",
         "Type": "time",
-        "Start": 9,
-        "Length": 11
+        "Start": 12,
+        "Length": 8
       }
     ]
   },
   {
-    "Input": "Voltarei a tarde",
+    "Input": "Voltarei ao meio da tarde",
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "a tarde",
+        "Text": "meio da tarde",
         "Type": "time",
-        "Start": 9,
-        "Length": 7
+        "Start": 12,
+        "Length": 13
       }
     ]
   },
   {
-    "Input": "Voltarei a noite",
+    "Input": "Voltarei a meia-noite",
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "a noite",
+        "Text": "meia-noite",
         "Type": "time",
-        "Start": 9,
-        "Length": 7
+        "Start": 11,
+        "Length": 10
       }
     ]
   },

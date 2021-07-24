@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
@@ -121,7 +124,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private static bool IsMultipleDurationDate(ExtractResult er)
         {
-            return er.Data != null && er.Data.ToString() == Constants.MultipleDuration_Date;
+            return er.Data?.ToString() is Constants.MultipleDuration_Date;
         }
 
         private static bool IsMultipleDuration(ExtractResult er)
@@ -132,7 +135,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         // Cases like "more than 3 days", "less than 4 weeks"
         private static bool IsInequalityDuration(ExtractResult er)
         {
-            return er.Data != null && (er.Data.ToString() == Constants.MORE_THAN_MOD || er.Data.ToString() == Constants.LESS_THAN_MOD);
+            return er.Data?.ToString() is Constants.MORE_THAN_MOD or Constants.LESS_THAN_MOD;
         }
 
         private List<ExtractResult> ExtractImpl(string text, DateObject reference)
@@ -225,7 +228,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                         .Replace(match.Groups["month"].Value, string.Empty)
                         .Replace(match.Groups["day"].Value, string.Empty);
                     var separators = new List<char> { '/', '\\', '-', '.' };
-                    if (separators.Where(separator => noDateText.Contains(separator)).Count() > 1)
+
+                    if (separators.Count(separator => noDateText.Contains(separator)) > 1)
                     {
                         isValidMatch = false;
                     }
@@ -369,7 +373,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         if (matchCase.Success)
                         {
                             var ordinalNum = matchCase.Groups["DayOfMonth"].Value;
-                            if (ordinalNum == result.Text)
+                            if (ordinalNum == result.Text && matchCase.Groups["DayOfMonth"].Index == result.Start)
                             {
                                 // Get week of day for the ordinal number which is regarded as a date of reference month
                                 var date = DateObject.MinValue.SafeCreateFromValue(reference.Year, reference.Month, num);
@@ -379,24 +383,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 // to see whether they refer to the same week day
                                 var extractedWeekDayStr = matchCase.Groups["weekday"].Value;
 
-                                // Calculate matchLength considering that matchCase can precede or follow result
-                                var matchLength = matchCase.Index < result.Start ?
-                                                      result.Start + result.Length - matchCase.Index :
-                                                      matchCase.Index + matchCase.Length - result.Start;
-
                                 if (!date.Equals(DateObject.MinValue) &&
-                                    numWeekDayInt == Config.DayOfWeek[extractedWeekDayStr] &&
-                                    matchCase.Length == matchLength)
+                                    numWeekDayInt == Config.DayOfWeek[extractedWeekDayStr])
                                 {
-
-                                    if (matchCase.Index < result.Start)
-                                    {
-                                        ret.Add(new Token(matchCase.Index, result.Start + result.Length ?? 0));
-                                    }
-                                    else
-                                    {
-                                        ret.Add(new Token((int)result.Start, matchCase.Index + matchCase.Length));
-                                    }
+                                    ret.Add(new Token(matchCase.Index, matchCase.Index + matchCase.Length));
 
                                     isFound = true;
                                 }

@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -85,7 +88,7 @@ namespace Microsoft.Recognizers.Text.Sequence
 
         protected virtual List<ExtractResult> PostFilter(List<ExtractResult> results)
         {
-            return results;
+            return results.OrderBy(p => p.Start).ToList();
         }
     }
 }

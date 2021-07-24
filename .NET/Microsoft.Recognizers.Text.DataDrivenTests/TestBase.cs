@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Diagnostics;
@@ -337,6 +340,12 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
         }
 
         public void TestHashtag(TestModel testSpec)
+        {
+            TestPreValidation(testSpec);
+            ValidateResults(testSpec);
+        }
+
+        public void TestQuotedText(TestModel testSpec)
         {
             TestPreValidation(testSpec);
             ValidateResults(testSpec);

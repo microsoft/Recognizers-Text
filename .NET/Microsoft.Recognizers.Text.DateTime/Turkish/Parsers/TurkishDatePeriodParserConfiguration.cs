@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
@@ -328,6 +331,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
             var trimmedText = text.Trim();
             return DateTimeDefinitions.WeekTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)) ||
                    (weekTermsPadded.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText) && !weekendTermsPadded.Any(o => trimmedText.Contains(o)));
+        }
+
+        public bool IsFortnight(string text)
+        {
+            return false;
         }
 
         public bool IsYearOnly(string text)

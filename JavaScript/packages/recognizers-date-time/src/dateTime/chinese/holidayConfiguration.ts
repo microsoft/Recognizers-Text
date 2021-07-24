@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { RegExpUtility, Match, StringUtility, IExtractor, IParser, ExtractResult } from "@microsoft/recognizers-text";
 import { IHolidayExtractorConfiguration, BaseHolidayParserConfiguration, BaseHolidayParser } from "../baseHoliday";
 import { ChineseIntegerExtractor, AgnosticNumberParserFactory, AgnosticNumberParserType, ChineseNumberParserConfiguration } from "@microsoft/recognizers-text-number";
@@ -216,7 +219,7 @@ export class ChineseHolidayParser extends BaseHolidayParser {
         // get year (if exist)
         let year = referenceDate.getFullYear();
         let yearNum = match.groups('year').value;
-        let yearChinese = match.groups('yearchs').value;
+        let yearChinese = match.groups(Constants.yearCJK).value;
         let yearRelative = match.groups('yearrel').value;
         let hasYear = false;
 

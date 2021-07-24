@@ -2010,7 +2010,7 @@
     "Input": "Ik ben de afgelopen 3 jaar weg",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
-    {
+      {
         "Text": "afgelopen 3 jaar",
         "Type": "daterange",
         "Start": 10,
@@ -3075,14 +3075,14 @@
     ]
   },
   {
-    "Input": "Het zal 2 dagen vanaf nu gebeuren",
+    "Input": "Het zal 2 dagen daarna gebeuren",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2 dagen vanaf nu",
+        "Text": "2 dagen daarna",
         "Type": "daterange",
         "Start": 8,
-        "Length": 16
+        "Length": 14
       }
     ]
   },
@@ -3486,7 +3486,7 @@
     "Input": "Ik kom binnen minder dan 2 weken vanaf vandaag terug",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
-    {
+      {
         "Text": "binnen minder dan 2 weken vanaf vandaag",
         "Type": "daterange",
         "Start": 7,
@@ -3604,6 +3604,205 @@
         "Type": "daterange",
         "Start": 0,
         "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal mijn werk doen tussen nu en november 15e",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "tussen nu en november 15e",
+        "Type": "daterange",
+        "Start": 22,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Ik heb mijn werk tussen 22 jan en nu afgerond",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "tussen 22 jan en nu",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "15.00 : ik ben deze week weg",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "deze week",
+        "Type": "daterange",
+        "Start": 15,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "deze week 8.00 zou een datumreeks en een tijdstip moeten zijn",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "deze week",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "deze week 20.00 zou een datumreeks en een tijdstip moeten zijn",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "deze week",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "week 10 20.00 zou een datumreeks en een tijdstip moeten zijn",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "week 10",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "week 10 10:20 zou een datumreeks en een tijdstip moeten zijn",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "week 10",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "6,107.31 augustus 2019 zou het decimaal niet moeten bevatten",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "augustus 2019",
+        "Type": "daterange",
+        "Start": 9,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Ik was daar niet van 01/aug/2019 tot vandaag",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "van 01/aug/2019 tot vandaag",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Ik was daar niet van 01-aug-2019 tot vandaag",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "van 01-aug-2019 tot vandaag",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "plan alsjeblieft een meeting in voor de week die 4 februari aanvangt",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "de week die 4 februari aanvangt",
+        "Type": "daterange",
+        "Start": 37,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "plan alsjeblieft een meeting in voor de week die 4 februari start",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "de week die 4 februari start",
+        "Type": "daterange",
+        "Start": 37,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "plan alsjeblieft een meeting in voor de week die op 4 februari start",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "de week die op 4 februari start",
+        "Type": "daterange",
+        "Start": 37,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "plan alsjeblieft een meeting in voor de week die op 4 februari begint",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "de week die op 4 februari begint",
+        "Type": "daterange",
+        "Start": 37,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "plan alsjeblieft een meeting in voor de week die 4 februari begint",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "de week die 4 februari begint",
+        "Type": "daterange",
+        "Start": 37,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "Boek een reis van 26e juni van 2020 tot 28e juni van 2020",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "van 26e juni van 2020 tot 28e juni van 2020",
+        "Type": "daterange",
+        "Start": 14,
+        "Length": 43
       }
     ]
   }

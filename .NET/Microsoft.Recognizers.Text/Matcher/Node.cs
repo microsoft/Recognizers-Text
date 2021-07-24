@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Microsoft.Recognizers.Text.Matcher
@@ -21,10 +24,7 @@ namespace Microsoft.Recognizers.Text.Matcher
 
             set
             {
-                if (Children == null)
-                {
-                    Children = new Dictionary<T, Node<T>>();
-                }
+                Children ??= new Dictionary<T, Node<T>>();
 
                 Children[c] = value;
             }
@@ -37,10 +37,7 @@ namespace Microsoft.Recognizers.Text.Matcher
 
         public void AddValue(string value)
         {
-            if (Values == null)
-            {
-                Values = new HashSet<string>();
-            }
+            Values ??= new HashSet<string>();
 
             Values.Add(value);
         }

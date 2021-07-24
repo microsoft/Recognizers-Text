@@ -1,22 +1,25 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 package com.microsoft.recognizers.text.tests.datetime;
 
-import com.microsoft.recognizers.text.ExtendedModelResult;
 import com.microsoft.recognizers.text.ModelResult;
 import com.microsoft.recognizers.text.ResolutionKey;
 import com.microsoft.recognizers.text.datetime.DateTimeOptions;
 import com.microsoft.recognizers.text.datetime.DateTimeRecognizer;
+import com.microsoft.recognizers.text.datetime.DateTimeResolutionKey;
 import com.microsoft.recognizers.text.tests.AbstractTest;
 import com.microsoft.recognizers.text.tests.DependencyConstants;
 import com.microsoft.recognizers.text.tests.NotSupportedException;
 import com.microsoft.recognizers.text.tests.TestCase;
 
 import java.time.LocalDateTime;
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.IntStream;
 
-import org.javatuples.Pair;
 import org.junit.Assert;
 import org.junit.AssumptionViolatedException;
 import org.junit.runners.Parameterized;
@@ -41,68 +44,40 @@ public class DateTimeTest extends AbstractTest {
         List<ModelResult> results = recognize(currentCase);
 
         // assert
-        assertResultsDateTime(currentCase, results);
+        assertResults(currentCase, results, getKeysToTest(currentCase));
     }
 
-    public static <T extends ModelResult> void assertResultsDateTime(TestCase currentCase, List<T> results) {
-
-        List<ExtendedModelResult> expectedResults = readExpectedResults(ExtendedModelResult.class, currentCase.results);
-        Assert.assertEquals(getMessage(currentCase, "\"Result Count\""), expectedResults.size(), results.size());
-
-        IntStream.range(0, expectedResults.size())
-                .mapToObj(i -> Pair.with(expectedResults.get(i), results.get(i)))
-                .forEach(t -> {
-                    ExtendedModelResult expected = t.getValue0();
-                    T actual = t.getValue1();
-
-                    Assert.assertEquals(getMessage(currentCase, "typeName"), expected.typeName, actual.typeName);
-                    Assert.assertEquals(getMessage(currentCase, "text"), expected.text, actual.text);
-                    if (actual instanceof ExtendedModelResult) {
-                        Assert.assertEquals(getMessage(currentCase, "parentText"),
-                                            expected.parentText, ((ExtendedModelResult)actual).parentText);
-                    }
-
-                    if (expected.resolution.containsKey(ResolutionKey.ValueSet)) {
-
-                        Assert.assertNotNull(getMessage(currentCase, "resolution"), actual.resolution);
-
-                        Assert.assertNotNull(getMessage(currentCase,
-                                             ResolutionKey.ValueSet), actual.resolution.get(ResolutionKey.ValueSet));
-
-                        assertValueSet(currentCase,
-                            (List<Map<String, Object>>)expected.resolution.get(ResolutionKey.ValueSet),
-                            (List<Map<String, Object>>)actual.resolution.get(ResolutionKey.ValueSet));
-                    }
-                });
+    private List<String> getKeysToTest(TestCase currentCase) {
+        switch (currentCase.modelName) {
+            case "DateTimeModelExtendedTypes":
+            case "DateTimeModelSplitDateAndTime":
+                return Arrays.asList(DateTimeResolutionKey.Timex, ResolutionKey.Type, ResolutionKey.Value, DateTimeResolutionKey.START, DateTimeResolutionKey.END, DateTimeResolutionKey.Mod);
+            default:
+                return Arrays.asList(DateTimeResolutionKey.Timex, ResolutionKey.Type, ResolutionKey.Value, DateTimeResolutionKey.START, DateTimeResolutionKey.END, DateTimeResolutionKey.Mod, DateTimeResolutionKey.SourceEntity);
+        }
     }
 
-    private static void assertValueSet(TestCase currentCase, List<Map<String, Object>> expected, List<Map<String, Object>> actual) {
+    @Override
+    protected void assertResolutionKeys(ModelResult expected, ModelResult actual, TestCase currentCase, List<String> testResolutionKeys) {
+        if (expected.resolution.get(ResolutionKey.ValueSet) instanceof List) {
+            List<HashMap<String, String>> expectedValueSet = (List<HashMap<String, String>>) expected.resolution.get(ResolutionKey.ValueSet);
+            List<HashMap<String, String>> actualValueSet = (List<HashMap<String, String>>) actual.resolution.get(ResolutionKey.ValueSet);
 
-        Assert.assertEquals(getMessage(currentCase, "\"Result Count\""), expected.size(), actual.size());
-
-        expected.sort((a, b) -> {
-            String timexA = (String)a.getOrDefault("timex", "");
-            String timexB = (String)b.getOrDefault("timex", "");
-            return timexA.compareTo(timexB);
-        });
-
-        actual.sort((a, b) -> {
-            String timexA = (String)a.getOrDefault("timex", "");
-            String timexB = (String)b.getOrDefault("timex", "");
-            return timexA.compareTo(timexB);
-        });
-
-        IntStream.range(0, expected.size())
-                .mapToObj(i -> Pair.with(expected.get(i), actual.get(i)))
-                .forEach(t -> {
-                    Map<String, Object> expectedMap = t.getValue0();
-                    Map<String, Object> actualMap = t.getValue1();
-
-                    expectedMap.keySet().forEach(key -> {
-                        Assert.assertTrue(getMessage(currentCase, key), actualMap.containsKey(key));
-                        Assert.assertEquals(getMessage(currentCase, key), expectedMap.get(key), actualMap.get(key));
-                    });
-                });
+            IntStream.range(0, expectedValueSet.size())
+                .forEach(idx -> {
+                    // Here we assign the index of the expected and actual lists of values
+                    // Inside the 2 new variables
+                    HashMap<String, String> expectedValues = expectedValueSet.get(idx);
+                    HashMap<String, String> actualValues = actualValueSet.get(idx);
+                    for (String key: testResolutionKeys) {
+                        Assert.assertEquals(
+                            getMessage(currentCase, key),
+                            expectedValues.get(key),
+                            actualValues.get(key));
+                    }
+                }
+            );
+        }
     }
 
     @Override

@@ -14,12 +14,13 @@ export namespace SpanishNumeric {
     export const LangMarker = `Spa`;
     export const CompoundNumberLanguage = false;
     export const MultiDecimalSeparatorCulture = true;
+    export const NonStandardSeparatorVariants = [ "es-mx","es-do","es-sv","es-gt","es-hn","es-ni","es-pa","es-pr" ];
     export const HundredsNumberIntegerRegex = `(cuatrocient[ao]s|trescient[ao]s|seiscient[ao]s|setecient[ao]s|ochocient[ao]s|novecient[ao]s|doscient[ao]s|quinient[ao]s|(?<!por\\s+)(cien(to)?))`;
-    export const RoundNumberIntegerRegex = `(mil millones|millones|mill[oó]n|mil|billones|bill[oó]n|trillones|trill[oó]n|cuatrillones|cuatrill[oó]n|quintillones|quintill[oó]n|sextillones|sextill[oó]n|septillones|septill[oó]n)`;
+    export const RoundNumberIntegerRegex = `(mil millones|mill[oó]n(es)?|mil|bill[oó]n(es)?|trill[oó]n(es)?|cuatrill[oó]n(es)?|quintill[oó]n(es)?|sextill[oó]n(es)?|septill[oó]n(es)?)`;
     export const ZeroToNineIntegerRegex = `(cuatro|cinco|siete|nueve|cero|tres|seis|ocho|dos|un[ao]?)`;
     export const TenToNineteenIntegerRegex = `(diecisiete|diecinueve|diecis[eé]is|dieciocho|catorce|quince|trece|diez|once|doce)`;
-    export const TwentiesIntegerRegex = `(veinticuatro|veinticinco|veintisiete|veintinueve|veintitr[eé]s|veintis[eé]is|veintiocho|veintid[oó]s|ventiun[ao]|veinti[uú]n[oa]?|veinte)`;
-    export const TensNumberIntegerRegex = `(cincuenta|cuarenta|treinta|sesenta|setenta|ochenta|noventa)`;
+    export const TwentiesIntegerRegex = `(veinti(cuatro|cinco|siete|nueve|tr[eé]s|s[eé]is|ocho|d[oó]s|[uú]n[oa]?)|ventiun[ao]|veinte)`;
+    export const TensNumberIntegerRegex = `(cincuenta|cuarenta|treinta|se[st]enta|ochenta|noventa)`;
     export const NegativeNumberTermsRegex = `(?<negTerm>(?<!(al|lo)\\s+)menos\\s+)`;
     export const NegativeNumberSignRegex = `^${NegativeNumberTermsRegex}.*`;
     export const DigitsNumberRegex = `\\d|\\d{1,3}(\\.\\d{3})`;

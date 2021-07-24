@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 from datetime import datetime, timedelta
 
 from datatypes_timex_expression import Timex, TimexInference, Constants, TimexValue, TimexHelpers, TimexDateHelpers

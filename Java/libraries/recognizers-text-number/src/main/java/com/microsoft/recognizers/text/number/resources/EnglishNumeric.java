@@ -25,6 +25,8 @@ public class EnglishNumeric {
 
     public static final Boolean MultiDecimalSeparatorCulture = true;
 
+    public static final List<String> NonStandardSeparatorVariants = Arrays.asList("en-za", "en-na", "en-zw");
+
     public static final String RoundNumberIntegerRegex = "(?:hundred|thousand|million|mln|billion|bln|trillion|tln|lakh|crore)s?";
 
     public static final String ZeroToNineIntegerRegex = "(?:three|seven|eight|four|five|zero|nine|one|two|six)";
@@ -85,7 +87,7 @@ public class EnglishNumeric {
 
     public static final String RoundNumberOrdinalRegex = "(?:hundredth|thousandth|millionth|billionth|trillionth)";
 
-    public static final String NumberOrdinalRegex = "(?:first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)";
+    public static final String NumberOrdinalRegex = "(?:first|second|third|fourth|fifth|sixth|seventh|eighth|nine?th|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)";
 
     public static final String RelativeOrdinalRegex = "(?<relativeOrdinal>(next|previous|current)\\s+one|(the\\s+second|next)\\s+to\\s+last|the\\s+one\\s+before\\s+the\\s+last(\\s+one)?|the\\s+last\\s+but\\s+one|(ante)?penultimate|last|next|previous|current)";
 
@@ -380,6 +382,7 @@ public class EnglishNumeric {
         .put("seventh", 7L)
         .put("eighth", 8L)
         .put("ninth", 9L)
+        .put("nineth", 9L)
         .put("tenth", 10L)
         .put("eleventh", 11L)
         .put("twelfth", 12L)
@@ -413,6 +416,7 @@ public class EnglishNumeric {
         .put("sevenths", 7L)
         .put("eighths", 8L)
         .put("ninths", 9L)
+        .put("nineths", 9L)
         .put("tenths", 10L)
         .put("elevenths", 11L)
         .put("twelfths", 12L)

@@ -1,0 +1,29 @@
+[
+  {
+    "Input": " 这个“数字是『123』或者『456』”",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "“数字是『123』或者『456』”",
+        "TypeName": "quotedText",
+        "Resolution": {
+          "value": "“数字是『123』或者『456』”"
+        }
+      },
+      {
+        "Text": "『123』",
+        "TypeName": "quotedText",
+        "Resolution": {
+          "value": "『123』"
+        }
+      },
+      {
+        "Text": "『456』",
+        "TypeName": "quotedText",
+        "Resolution": {
+          "value": "『456』"
+        }
+      }
+    ]
+  }
+]

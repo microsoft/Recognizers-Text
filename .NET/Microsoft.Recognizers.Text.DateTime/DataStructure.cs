@@ -1,4 +1,7 @@
-﻿namespace Microsoft.Recognizers.Text.DateTime
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+namespace Microsoft.Recognizers.Text.DateTime
 {
     public enum DatePeriodTimexType
     {
@@ -11,6 +14,11 @@
         /// Represents a week Period
         /// </summary>
         ByWeek,
+
+        /// <summary>
+        /// Represents a fortnight Period
+        /// </summary>
+        ByFortnight,
 
         /// <summary>
         /// Represents a month Period

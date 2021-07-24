@@ -43,6 +43,8 @@ ReferencePrefixRegex: !simpleRegex
   def: (उस|उसी)
 FutureSuffixRegex: !simpleRegex
   def: \b((आने\s+वा(ले|ला)\s+)?(भविष्य|बाद)(\s+(में|मे))?|आज\s+से)
+PastSuffixRegex: !simpleRegex
+  def: ^\b$
 DayRegex: !simpleRegex
   def: (उस\s*)?(?<day>(?:3[0-1]|[1-2]\d|0?[1-9]))(?!\d+)(?:ला|ली|रा|था|वां|वीं|वें|वाँ|वा|ठा|th|nd|rd|st)?(?=तारीख|दिन)?
 ImplicitDayRegex: !simpleRegex
@@ -129,7 +131,7 @@ MonthSuffixRegex: !nestedRegex
   def: (?<msuf>({RelativeMonthRegex}|{WrittenMonthRegex})(\s*(का|के|की))?)
   references: [ RelativeMonthRegex, WrittenMonthRegex ]
 DateUnitRegex: !simpleRegex
-  def: (?<unit>(?<decade>decades?|दशकों|दशक)|(?<year>साल|वर्षों|वर्ष?)|(?<month>माह|महीनों|महीना|महीने?)|(?<week>हफ़्तों|हफ़्ते|हफ्ता|(?!सप्ताहांत)सप्ताह?|हफ्तों|हफ्ते)|(?<business>(व्यावसायिक|कार्य|व्यापारिक|व्यापार\s+के)\s?)?(?<day>(दिवस|दिनों|दिन)|(?<=रो)ज|^ज$)|(?<fortnight>fortnights?|पखवाड़े|पखवाड़ा|पखवाड़े))
+  def: (?<unit>(?<decade>decade|(?<plural>दशकों)|दशक|decades)|(?<year>साल|(?<plural>वर्षों)|वर्ष?)|(?<month>माह|(?<plural>महीनों|महीना)|महीने?)|(?<week>(?<plural>हफ़्तों|हफ्तों)|हफ़्ते|हफ्ता|(?!सप्ताहांत)सप्ताह?|हफ्ते)|(?<business>(व्यावसायिक|कार्य|व्यापारिक|व्यापार\s+के)\s?)?(?<day>(दिवस|(?<plural>दिनों)|दिन)|(?<=रो)ज|^ज$)|(?<fortnight>(?<plural>fortnights)fortnight|पखवाड़े|पखवाड़ा|पखवाड़े))
 DateTokenPrefix: 'को '
 TimeTokenPrefix: 'at '
 TokenBeforeDate: 'को|की'
@@ -388,7 +390,7 @@ IshRegex: !nestedRegex
   def: '\b({BaseDateTime.HourRegex}((-|——)?ish|दोपहर(\s*((के\s*आसपास)|देर))?|(\s+बजे)?\s+के\s+आसपास)|लगभग\s+लंच\s+के\s+समय)'
   references: [ BaseDateTime.HourRegex ]
 TimeUnitRegex: !simpleRegex
-  def: ([\u0900-\u097f]{1,}|\b)(?<unit>h(ou)?rs?|h|घंटों|घंटे|घंटा|आर्स|मिनट|सेकंड्स|सेकंड|घण्टों|sec(ond)?s?)
+  def: ([\u0900-\u097f]{1,}|\b)(?<unit>h(ou)?r|h|(?<plural>घंटों|घंटे|घंटा|आर्स|सेकंड्स|घण्टों|मिनटों|seconds|hours)|मिनट|सेकंड|sec(ond)?)
 RestrictedTimeUnitRegex: !simpleRegex
   def: (?<unit>hour|घंटे|घंटा|घंटों|घण्टे|घण्टों|मिनट|आर्स|minute|मि|घण्टे)
 FivesRegex: !simpleRegex
@@ -607,6 +609,12 @@ LaterRegex: !nestedRegex
   references: [ OneWordPeriodRegex, TimeOfDayRegex ]
 BeforeAfterRegex: !simpleRegex
   def: ^[.]
+ModPrefixRegex: !nestedRegex
+  def: \b({RelativeRegex}|{AroundRegex}|{BeforeRegex}|{AfterRegex}|{SinceRegex})\b
+  references: [RelativeRegex, AroundRegex, BeforeRegex, AfterRegex, SinceRegex ]
+ModSuffixRegex: !nestedRegex
+  def: \b({AgoRegex}|{LaterRegex}|{BeforeAfterRegex}|{FutureSuffixRegex}|{PastSuffixRegex})\b
+  references: [AgoRegex, LaterRegex, BeforeAfterRegex, FutureSuffixRegex, PastSuffixRegex]
 InConnectorRegex: !simpleRegex
   def: \b(में|को)
 SinceYearSuffixRegex: !nestedRegex

@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 from .base_configs import *
 from .common_configs import *
 from .duration_extractor_config import *

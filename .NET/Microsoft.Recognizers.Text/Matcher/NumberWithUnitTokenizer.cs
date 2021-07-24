@@ -1,10 +1,13 @@
-﻿using System.Collections.Generic;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Generic;
 
 namespace Microsoft.Recognizers.Text.Matcher
 {
     public class NumberWithUnitTokenizer : SimpleTokenizer
     {
-        private static HashSet<char> specialTokenCharacters = new HashSet<char> { '$' };
+        private static readonly HashSet<char> SpecialTokenCharacters = new HashSet<char> { '$' };
 
         /* The main difference between this strategy and SimpleTokenizer is for cases like
          * 'Bob's $ 100 cash'. 's' and '$' are independent tokens in SimpleTokenizer.
@@ -24,7 +27,9 @@ namespace Microsoft.Recognizers.Text.Matcher
 
             bool inToken = false;
             int tokenStart = 0;
+
             var chars = input.ToCharArray();
+
             for (int i = 0; i < chars.Length; i++)
             {
                 var c = chars[i];
@@ -36,7 +41,7 @@ namespace Microsoft.Recognizers.Text.Matcher
                         inToken = false;
                     }
                 }
-                else if ((!specialTokenCharacters.Contains(c) && !char.IsLetterOrDigit(c)) || IsCjk(c))
+                else if ((!SpecialTokenCharacters.Contains(c) && !char.IsLetterOrDigit(c)) || IsCjk(c))
                 {
                     // Non-splittable currency units (as "$") are treated as regular letters. For instance, 'us$' should be a single token
                     if (inToken)
@@ -85,7 +90,7 @@ namespace Microsoft.Recognizers.Text.Matcher
             }
 
             // Non-splittable currency units can't be mixed with digits. For example, '$100' or '100$' will be tokenized to '$' and '100', '1$50' will be tokenized to '1', '$', and '50'
-            if ((char.IsDigit(curChar) && specialTokenCharacters.Contains(preChar)) || (specialTokenCharacters.Contains(curChar) && char.IsDigit(preChar)))
+            if ((char.IsDigit(curChar) && SpecialTokenCharacters.Contains(preChar)) || (SpecialTokenCharacters.Contains(curChar) && char.IsDigit(preChar)))
             {
                 return true;
             }

@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { IExtractor, ExtractResult, StringUtility, Match, RegExpUtility, MetaData } from "@microsoft/recognizers-text";
 import { ChineseIntegerExtractor, AgnosticNumberParserFactory, ChineseNumberParserConfiguration, AgnosticNumberParserType, BaseNumberParser, BaseNumberExtractor } from "@microsoft/recognizers-text-number";
 import { Constants as NumberConstants } from "@microsoft/recognizers-text-number";
@@ -26,6 +29,7 @@ class ChineseDateExtractorConfiguration implements IDateExtractorConfiguration {
     readonly numberParser: BaseNumberParser;
     readonly durationExtractor: BaseDurationExtractor;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
+    readonly rangeConnectorSymbolRegex : RegExp;
 
     constructor(dmyDateFormat: boolean) {
 
@@ -498,13 +502,13 @@ export class ChineseDateParser extends BaseDateParser {
     protected matchToDate(match: Match, referenceDate: Date): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
         let yearStr = match.groups('year').value;
-        let yearChs = match.groups('yearchs').value;
+        let yearCJK = match.groups(Constants.yearCJK).value;
         let monthStr = match.groups('month').value;
         let dayStr = match.groups('day').value;
         let month = 0;
         let day = 0;
         let year = 0;
-        let yearTemp = this.convertChineseYearToNumber(yearChs);
+        let yearTemp = this.convertChineseYearToNumber(yearCJK);
         year = yearTemp === -1 ? 0 : yearTemp;
 
         if (this.config.monthOfYear.has(monthStr) && this.config.dayOfMonth.has(dayStr)) {

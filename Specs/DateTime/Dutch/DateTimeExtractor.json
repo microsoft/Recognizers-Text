@@ -348,26 +348,26 @@
     ]
   },
   {
-    "Input": "Ik ga terug om 20u vanavond, maandag",
+    "Input": "Ik ga terug om 20u 's avonds, maandag",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "20u vanavond, maandag",
+        "Text": "20u 's avonds, maandag",
         "Type": "datetime",
         "Start": 15,
-        "Length": 21
+        "Length": 22
       }
     ]
   },
   {
-    "Input": "Ik ga terug 20u vanavond, 1 jan",
+    "Input": "Ik ga terug 20u in de avond, 1 jan",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "20u vanavond, 1 jan",
+        "Text": "20u in de avond, 1 jan",
         "Type": "datetime",
         "Start": 12,
-        "Length": 19
+        "Length": 22
       }
     ]
   },
@@ -1544,6 +1544,66 @@
         "Type": "datetime",
         "Start": 11,
         "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal teruggaan op woens. 26 okt. 15:50:06 2016.",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "woens. 26 okt. 15:50:06 2016",
+        "Type": "datetime",
+        "Start": 20,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Woens. 26 okt. 15:50:06 2016 is geen dag in 2019.",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "woens. 26 okt. 15:50:06 2016",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal om 20.30 vandaag teruggaan.",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "20.30 vandaag",
+        "Type": "datetime",
+        "Start": 10,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal vandaag om 20.30 teruggaan.",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "vandaag om 20.30",
+        "Type": "datetime",
+        "Start": 7,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Ik zal 20.30 vandaag teruggaan.",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "20.30 vandaag",
+        "Type": "datetime",
+        "Start": 7,
+        "Length": 13
       }
     ]
   }

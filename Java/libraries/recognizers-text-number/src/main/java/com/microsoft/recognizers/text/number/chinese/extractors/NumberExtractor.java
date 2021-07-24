@@ -1,7 +1,11 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 package com.microsoft.recognizers.text.number.chinese.extractors;
 
 import com.microsoft.recognizers.text.number.Constants;
 import com.microsoft.recognizers.text.number.NumberMode;
+import com.microsoft.recognizers.text.number.NumberOptions;
 import com.microsoft.recognizers.text.number.chinese.ChineseNumberExtractorMode;
 import com.microsoft.recognizers.text.number.extractors.BaseNumberExtractor;
 import com.microsoft.recognizers.text.number.resources.ChineseNumeric;
@@ -16,6 +20,7 @@ public class NumberExtractor extends BaseNumberExtractor {
 
     private final Map<Pattern, String> regexes;
     private final Map<Pattern, Pattern> ambiguityFiltersDict;
+    private final NumberOptions options;
 
     @Override
     protected Map<Pattern, String> getRegexes() {
@@ -33,11 +38,15 @@ public class NumberExtractor extends BaseNumberExtractor {
     }
 
     public NumberExtractor() {
-        this(ChineseNumberExtractorMode.Default);
+        this(ChineseNumberExtractorMode.Default, NumberOptions.None);
     }
 
     public NumberExtractor(ChineseNumberExtractorMode mode) {
+        this(mode, NumberOptions.None);
+    }
 
+    public NumberExtractor(ChineseNumberExtractorMode mode, NumberOptions options) {
+        this.options = options;
         HashMap<Pattern, String> builder = new HashMap<>();
 
         // Add Cardinal

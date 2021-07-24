@@ -1,4 +1,7 @@
-﻿using Microsoft.Recognizers.Text.DataDrivenTests;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using Microsoft.Recognizers.Text.DataDrivenTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Microsoft.Recognizers.Text.Sequence.Tests
@@ -18,6 +21,13 @@ namespace Microsoft.Recognizers.Text.Sequence.Tests
         public void IpAddressModel(TestModel testSpec)
         {
             TestIpAddress(testSpec);
+        }
+
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void QuotedTextModel(TestModel testSpec)
+        {
+            TestQuotedText(testSpec);
         }
     }
 }

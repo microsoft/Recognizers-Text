@@ -33,7 +33,7 @@ public class GermanNumeric {
 
     public static final String TenToNineteenIntegerRegex = "(siebzehn|dreizehn|vierzehn|achtzehn|neunzehn|fuenfzehn|sechzehn|elf|zwoelf|zwölf|zehn)";
 
-    public static final String TensNumberIntegerRegex = "(siebzig|zwanzig|dreißig|achtzig|neunzig|vierzig|fuenfzig|fünfzig|sechzig)";
+    public static final String TensNumberIntegerRegex = "(siebzig|zwanzig|dreißig|achtzig|neunzig|vierzig|fuenfzig|fünfzig|sechzig|hundert|tausend)";
 
     public static final String NegativeNumberTermsRegex = "^[.]";
 
@@ -117,17 +117,17 @@ public class GermanNumeric {
 
     public static final String FractionUnitsRegex = "((?<onehalf>anderthalb|einundhalb)|(?<quarter>dreiviertel))";
 
-    public static final String FractionHalfRegex = "(einhalb)$";
+    public static final String FractionHalfRegex = "(einhalb(es)?)$";
 
-    public static final List<String> OneHalfTokens = Arrays.asList("ein", "halb");
+    public static final List<String> OneHalfTokens = Arrays.asList("ein", "halb", "halbes");
 
-    public static final String FractionNounRegex = "(?<=\\b)(({AllIntRegex})(\\s*|\\s*-\\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))|halb(er|e|es)?|hälfte)|{FractionUnitsRegex})(?=\\b)"
+    public static final String FractionNounRegex = "(?<=\\b)(({AllIntRegex})(\\s*|\\s*-\\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))|halb(e[rs]?)?|hälfte)|{FractionUnitsRegex})(?=\\b)"
             .replace("{AllIntRegex}", AllIntRegex)
             .replace("{AllOrdinalRegex}", AllOrdinalRegex)
             .replace("{RoundNumberOrdinalRegex}", RoundNumberOrdinalRegex)
             .replace("{FractionUnitsRegex}", FractionUnitsRegex);
 
-    public static final String FractionNounWithArticleRegex = "(?<=\\b)(({AllIntRegex}\\s+(und\\s+)?)?eine?(\\s+|\\s*-\\s*)({AllOrdinalRegex}|{RoundNumberOrdinalRegex}|{FractionUnitsRegex}|({AllIntRegex}ein)?(halb(er|e|es)?|hälfte))|{AllIntRegex}ein(halb))(?=\\b)"
+    public static final String FractionNounWithArticleRegex = "(?<=\\b)(({AllIntRegex}\\s+(und\\s+)?)?eine?(\\s+|\\s*-\\s*)({AllOrdinalRegex}|{RoundNumberOrdinalRegex}|{FractionUnitsRegex}|({AllIntRegex}ein)?(halb(e[rs]?)?|hälfte))|{AllIntRegex}ein(halb))(?=\\b)"
             .replace("{AllIntRegex}", AllIntRegex)
             .replace("{AllOrdinalRegex}", AllOrdinalRegex)
             .replace("{RoundNumberOrdinalRegex}", RoundNumberOrdinalRegex)
@@ -596,7 +596,7 @@ public class GermanNumeric {
         .build();
 
     public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
-        .put("^[.]", "")
+        .put("^(tausend|hundert)$", "(ed(ward(\\s+m(\\.)?)?)?|mary(\\s+c(\\.)?)?|joachim|claudia|franz|maria|klaus|prof(\\.|essor)?|dr(\\.)?|herr|fr[äa]u(lein)?|frl?\\.)\\s+(tausend|hundert)")
         .build();
 
     public static final ImmutableMap<String, String> RelativeReferenceOffsetMap = ImmutableMap.<String, String>builder()

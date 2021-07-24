@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { IExtractor, ExtractResult, RegExpUtility, Match, StringUtility } from "@microsoft/recognizers-text";
 import { Constants, TimeTypeConstants } from "./constants";
 import { BaseNumberExtractor, BaseNumberParser } from "@microsoft/recognizers-text-number";
@@ -168,15 +171,6 @@ export class BaseDatePeriodExtractor implements IDateTimeExtractor {
             match = RegExpUtility.getMatches(this.config.futureRegex, beforeStr).pop();
             if (this.matchRegexInPrefix(beforeStr, match)) {
                 tokens.push(new Token(match.index, duration.end));
-                return;
-            }
-            match = RegExpUtility.getMatches(this.config.inConnectorRegex, beforeStr).pop();
-            if (this.matchRegexInPrefix(beforeStr, match)) {
-                let rangeStr = source.substr(duration.start, duration.length);
-                let rangeMatch = RegExpUtility.getMatches(this.config.rangeUnitRegex, rangeStr).pop();
-                if (rangeMatch) {
-                    tokens.push(new Token(match.index, duration.end));
-                }
                 return;
             }
         });

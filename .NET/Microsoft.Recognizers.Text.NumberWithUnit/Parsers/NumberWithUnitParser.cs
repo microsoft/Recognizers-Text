@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -99,7 +102,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             var lastUnit = unitKeys.Last();
             if (halfResult != null)
             {
-                lastUnit = lastUnit.Substring(0, lastUnit.Length - halfResult.Text.Length);
+                lastUnit = lastUnit.Substring(0, lastUnit.Length - halfResult.Text.Length).Trim();
             }
 
             var normalizedLastUnit = lastUnit.ToLowerInvariant();

@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 package com.microsoft.recognizers.text.number;
 
 import com.microsoft.recognizers.text.Culture;
@@ -147,7 +150,7 @@ public class NumberRecognizer extends Recognizer<NumberOptions> {
                 new com.microsoft.recognizers.text.number.english.extractors.PercentageExtractor(options)));
         registerModel(NumberRangeModel.class, Culture.English, (options) -> new NumberRangeModel(
                 new BaseNumberRangeParser(new EnglishNumberRangeParserConfiguration()),
-                new com.microsoft.recognizers.text.number.english.extractors.NumberRangeExtractor()));
+                new com.microsoft.recognizers.text.number.english.extractors.NumberRangeExtractor(options)));
 
         //endregion
 
@@ -211,7 +214,7 @@ public class NumberRecognizer extends Recognizer<NumberOptions> {
                 new com.microsoft.recognizers.text.number.chinese.extractors.PercentageExtractor()));
         registerModel(NumberRangeModel.class, Culture.Chinese, (options) -> new NumberRangeModel(
                 new BaseNumberRangeParser(new ChineseNumberRangeParserConfiguration()),
-                new com.microsoft.recognizers.text.number.chinese.extractors.NumberRangeExtractor()));
+                new com.microsoft.recognizers.text.number.chinese.extractors.NumberRangeExtractor(options)));
         //endregion
     }
 }
