@@ -27,7 +27,8 @@ export namespace EnglishDateTime {
     export const RangePrefixRegex = `(from|between)`;
     export const CenturySuffixRegex = `(^century)\\b`;
     export const ReferencePrefixRegex = `(that|same)\\b`;
-    export const FutureSuffixRegex = `\\b(in\\s+the\\s+)?(future|hence)\\b`;
+    export const FutureSuffixRegex = `\\b((in\\s+the\\s+)?future|hence)\\b`;
+    export const PastSuffixRegex = `\\b((in\\s+the\\s+)past)\\b`;
     export const DayRegex = `(the\\s*)?(?<!(\\d+:?|\\$)\\s*)(?<day>(?:3[0-1]|[1-2]\\d|0?[1-9])(?:th|nd|rd|st)?)(?=\\b|t)`;
     export const ImplicitDayRegex = `(the\\s*)?(?<day>(?:3[0-1]|[0-2]?\\d)(?:th|nd|rd|st))\\b`;
     export const MonthNumRegex = `(?<month>1[0-2]|(0)?[1-9])\\b`;
@@ -105,8 +106,8 @@ export namespace EnglishDateTime {
     export const ThisRegex = `\\b(this(\\s*week${PrefixWeekDayRegex}?)?\\s*${WeekDayRegex})|(${WeekDayRegex}((\\s+of)?\\s+this\\s*week))\\b`;
     export const LastDateRegex = `\\b(${PreviousPrefixRegex}(\\s*week${PrefixWeekDayRegex}?)?\\s*${WeekDayRegex})|(${WeekDayRegex}(\\s+(of\\s+)?last\\s*week))\\b`;
     export const NextDateRegex = `\\b(${NextPrefixRegex}(\\s*week${PrefixWeekDayRegex}?)?\\s*${WeekDayRegex})|((on\\s+)?${WeekDayRegex}((\\s+of)?\\s+(the\\s+following|(the\\s+)?next)\\s*week))\\b`;
-    export const SpecialDayRegex = `\\b((the\\s+)?day before yesterday|(the\\s+)?day after (tomorrow|tmr)|the\\s+day\\s+(before|after)(?!=\\s+day)|((the\\s+)?(${RelativeRegex}|my)\\s+day)|yesterday|tomorrow|tmr|today|otd)\\b`;
-    export const SpecialDayWithNumRegex = `\\b((?<number>${WrittenNumRegex})\\s+days?\\s+from\\s+(?<day>yesterday|tomorrow|tmr|today))\\b`;
+    export const SpecialDayRegex = `\\b((the\\s+)?day before yesterday|(the\\s+)?day after (tomorrow|tmr)|the\\s+day\\s+(before|after)(?!=\\s+day)|((the\\s+)?(${RelativeRegex}|my)\\s+day)|yesterday|tomorrow|tmr|today|otd|current date)\\b`;
+    export const SpecialDayWithNumRegex = `\\b((?<number>${WrittenNumRegex})\\s+days?\\s+from\\s+(?<day>yesterday|tomorrow|tmr|today|current date))\\b`;
     export const RelativeDayRegex = `\\b(((the\\s+)?${RelativeRegex}\\s+day))\\b`;
     export const SetWeekDayRegex = `\\b(?<prefix>on\\s+)?(?<weekday>morning|afternoon|evening|night|(sun|mon|tues|wednes|thurs|fri|satur)day)s\\b`;
     export const WeekDayOfMonthRegex = `(?<wom>(the\\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\\s+(week\\s+${MonthSuffixRegex}[\\.]?\\s+(on\\s+)?${WeekDayRegex}|${WeekDayRegex}\\s+${MonthSuffixRegex}))`;
@@ -227,7 +228,7 @@ export namespace EnglishDateTime {
     export const AMTimeRegex = `(?<am>morning)`;
     export const PMTimeRegex = `\\b(?<pm>afternoon|evening|night)\\b`;
     export const NightTimeRegex = `(night)`;
-    export const NowTimeRegex = `(now|at\\s+(present|this\\s+time|th(e|is)\\s+minute|the\\s+(moment|present\\s+time)))`;
+    export const NowTimeRegex = `(now|at\\s+(present|this\\s+time|th(e|is)\\s+minute|the\\s+(moment|(current|present)\\s+time)))`;
     export const RecentlyTimeRegex = `(recently|previously)`;
     export const AsapTimeRegex = `(as soon as possible|asap)`;
     export const InclusiveModPrepositions = `(?<include>((on|in|at)\\s+or\\s+)|(\\s+or\\s+(on|in|at)))`;
@@ -236,13 +237,15 @@ export namespace EnglishDateTime {
     export const AfterRegex = `((\\b${InclusiveModPrepositions}?((after|(starting|beginning)(\\s+on)?(?!\\sfrom)|(?<!no\\s+)later than)|(year greater than))(?!\\s+or equal to)${InclusiveModPrepositions}?\\b\\s*?)|(?<!\\w|<)((?<include>>\\s*=)|>))(\\s+the)?`;
     export const SinceRegex = `(?:(?:\\b(?:since|after\\s+or\\s+equal\\s+to|starting\\s+(?:from|on|with)|as\\s+early\\s+as|(any\\s+time\\s+)from)\\b\\s*?)|(?<!\\w|<)(>=))(\\s+the)?`;
     export const SinceRegexExp = `(${SinceRegex}|\\bfrom(\\s+the)?\\b)`;
-    export const AgoRegex = `\\b(ago|before\\s+(?<day>yesterday|today))\\b`;
+    export const AgoRegex = `\\b(ago|earlier|before\\s+(?<day>yesterday|today))\\b`;
     export const LaterRegex = `\\b(?:later(?!((\\s+in)?\\s*${OneWordPeriodRegex})|(\\s+${TimeOfDayRegex})|\\s+than\\b)|from now|(from|after)\\s+(?<day>tomorrow|tmr|today))\\b`;
     export const BeforeAfterRegex = `\\b((?<before>before)|(?<after>from|after))\\b`;
+    export const ModPrefixRegex = `\\b(${RelativeRegex}|${AroundRegex}|${BeforeRegex}|${AfterRegex}|${SinceRegex})\\b`;
+    export const ModSuffixRegex = `\\b(${AgoRegex}|${LaterRegex}|${BeforeAfterRegex}|${FutureSuffixRegex}|${PastSuffixRegex})\\b`;
     export const InConnectorRegex = `\\b(in)\\b`;
     export const SinceYearSuffixRegex = `(^\\s*${SinceRegex}(\\s*(the\\s+)?year\\s*)?${YearSuffix})`;
     export const WithinNextPrefixRegex = `\\b(within(\\s+the)?(\\s+(?<next>${NextPrefixRegex}))?)\\b`;
-    export const TodayNowRegex = `\\b(today|now)\\b`;
+    export const TodayNowRegex = `\\b(today|now|current (date|time))\\b`;
     export const MorningStartEndRegex = `(^(morning|${AmDescRegex}))|((morning|${AmDescRegex})$)`;
     export const AfternoonStartEndRegex = `(^(afternoon|${PmDescRegex}))|((afternoon|${PmDescRegex})$)`;
     export const EveningStartEndRegex = `(^(evening))|((evening)$)`;
@@ -304,8 +307,8 @@ export namespace EnglishDateTime {
     export const SpecialDecadeCases: ReadonlyMap<string, number> = new Map<string, number>([["noughties", 2000],["aughts", 2000],["two thousands", 2000]]);
     export const DefaultLanguageFallback = `MDY`;
     export const SuperfluousWordList = [ "preferably","how about","maybe","perhaps","say","like" ];
-    export const DurationDateRestrictions = [ "today","now" ];
-    export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["^\\d{4}$", "(\\d\\.\\d{4}|\\d{4}\\.\\d)"],["^(morning|afternoon|evening|night|day)\\b", "\\b(good\\s+(morning|afternoon|evening|night|day))|(nighty\\s+night)\\b"],["\\bnow\\b", "\\b(^now,)|\\b((is|are)\\s+now\\s+for|for\\s+now)\\b"],["\\bmay\\b", "\\b((((!|\\.|\\?|,|;|)\\s+|^)may i)|(i|you|he|she|we|they)\\s+may|(may\\s+((((also|not|(also not)|well)\\s+)?(be|ask|contain|constitute|e-?mail|take|have|result|involve|get|work|reply|differ))|(or may not))))\\b"],["\\b(a|one) second\\b", "\\b(?<!an?\\s+)(a|one) second (round|time)\\b"],["\\b(breakfast|brunch|lunch(time)?|dinner(time)?|supper)$", "(?<!\\b(at|before|after|around|circa)\\b\\s)(breakfast|brunch|lunch|dinner|supper)(?!\\s*time)"],["^\\d+m$", "^\\d+m$"],["^(apr|aug|dec|feb|jan|jul|jun|mar|may|nov|oct|sept?)$", "([$%£&!?@#])(apr|aug|dec|feb|jan|jul|jun|mar|may|nov|oct|sept?)|(apr|aug|dec|feb|jan|jul|jun|mar|may|nov|oct|sept?)([$%£&@#])"]]);
+    export const DurationDateRestrictions = [ "today","now","current date" ];
+    export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["^\\d{4}$", "(\\d\\.\\d{4}|\\d{4}\\.\\d)"],["^(morning|afternoon|evening|night|day)\\b", "\\b(good\\s+(morning|afternoon|evening|night|day))|(nighty\\s+night)\\b"],["\\bnow\\b", "\\b(^now,)|\\b((is|are)\\s+now\\s+for|for\\s+now)\\b"],["\\bmay$", "\\b((((!|\\.|\\?|,|;|)\\s+|^)may i)|(i|you|he|she|we|they)\\s+may|(may\\s+((((also|not|(also not)|well)\\s+)?(be|ask|contain|constitute|e-?mail|take|have|result|involve|get|work|reply|differ))|(or may not)))|(?<!(in|during|through)\\s+)may,? at (its|h(is|er)|y?our|my))\\b"],["^(a|one) second$", "\\b(?<!an?\\s+)(a|one) second (round|time|wave|turn|chance|thought|opinion|cycle|take|meaning|life|job|home|hand|language|display|monitor|stimulus|dose|vaccination|shot|jab)\\b"],["\\b(breakfast|brunch|lunch(time)?|dinner(time)?|supper)$", "(?<!\\b(at|before|after|around|circa)\\b\\s)(breakfast|brunch|lunch|dinner|supper)(?!\\s*time)"],["^\\d+m$", "^\\d+m$"],["^(apr|aug|dec|feb|jan|jul|jun|mar|may|nov|oct|sept?)$", "([$%£&!?@#])(apr|aug|dec|feb|jan|jul|jun|mar|may|nov|oct|sept?)|(apr|aug|dec|feb|jan|jul|jun|mar|may|nov|oct|sept?)([$%£&@#])"],["^(to\\s+date)$", "\\b((equals?|up)\\s+to\\s+date)\\b"]]);
     export const MorningTermList = [ "morning" ];
     export const AfternoonTermList = [ "afternoon" ];
     export const EveningTermList = [ "evening" ];
@@ -316,7 +319,7 @@ export namespace EnglishDateTime {
     export const DaytimeTermList = [ "daytime" ];
     export const NightTermList = [ "night" ];
     export const NighttimeTermList = [ "nighttime","night-time" ];
-    export const SameDayTerms = [ "today","otd" ];
+    export const SameDayTerms = [ "today","current date","otd" ];
     export const PlusOneDayTerms = [ "tomorrow","tmr","day after" ];
     export const MinusOneDayTerms = [ "yesterday","day before" ];
     export const PlusTwoDayTerms = [ "day after tomorrow","day after tmr" ];

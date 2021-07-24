@@ -1,4 +1,7 @@
-﻿namespace Microsoft.Recognizers.Text.Sequence.English
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+namespace Microsoft.Recognizers.Text.Sequence.English
 {
     public class MentionParser : BaseSequenceParser
     {

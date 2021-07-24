@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -61,7 +64,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public bool GetMatchedTimexRange(string text, out string timex, out int beginHour, out int endHour, out int endMin)
+        public bool GetMatchedTimeRange(string text, out string timex, out int beginHour, out int endHour, out int endMin)
         {
             var trimmedText = text.Trim();
             var pluralMatch = PluralTokenRegex.MatchBegin(trimmedText, trim: true);
@@ -105,7 +108,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
                 return false;
             }
 
-            var parseResult = TimexUtility.ParseTimeOfDay(timeOfDay);
+            var parseResult = TimexUtility.ResolveTimeOfDay(timeOfDay);
             timex = parseResult.Timex;
             beginHour = parseResult.BeginHour;
             endHour = parseResult.EndHour;

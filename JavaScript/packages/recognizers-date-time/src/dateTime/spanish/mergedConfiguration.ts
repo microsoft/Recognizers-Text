@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { RegExpUtility } from "@microsoft/recognizers-text";
 import { BaseNumberExtractor, SpanishIntegerExtractor } from "@microsoft/recognizers-text-number";
 import { IMergedExtractorConfiguration, IMergedParserConfiguration } from "../baseMerged";

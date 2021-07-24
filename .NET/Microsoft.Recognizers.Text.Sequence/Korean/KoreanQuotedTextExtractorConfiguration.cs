@@ -1,5 +1,7 @@
-﻿using System.Text.RegularExpressions;
-using Microsoft.Recognizers.Definitions;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Korean;
 
 namespace Microsoft.Recognizers.Text.Sequence.Korean
@@ -7,7 +9,7 @@ namespace Microsoft.Recognizers.Text.Sequence.Korean
     public class KoreanQuotedTextExtractorConfiguration : QuotedTextConfiguration
     {
         public KoreanQuotedTextExtractorConfiguration(SequenceOptions options)
-     : base(options)
+            : base(options)
         {
             QuotedTextRegex1 = new Regex(QuotedTextDefinitions.QuotedTextRegex1, RegexOptions.Compiled);
             QuotedTextRegex2 = new Regex(QuotedTextDefinitions.QuotedTextRegex2, RegexOptions.Compiled);

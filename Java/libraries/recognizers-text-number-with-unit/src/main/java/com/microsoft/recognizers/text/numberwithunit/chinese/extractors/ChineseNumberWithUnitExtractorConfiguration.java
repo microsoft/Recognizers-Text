@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 package com.microsoft.recognizers.text.numberwithunit.chinese.extractors;
 
 import com.microsoft.recognizers.text.CultureInfo;
@@ -95,7 +98,7 @@ public abstract class ChineseNumberWithUnitExtractorConfiguration implements INu
                     }
                     if (matchSuffix.size() == 1) {
                         ExtractResult mr = matchSuffix.get(0);
-                        er.setStart(er.getLength() + mr.getLength());
+                        er.setLength(er.getLength() + mr.getLength());
                         er.setText(er.getText() + mr.getText());
                         List<ExtractResult> tmp = new ArrayList<>();
                         tmp.add((ExtractResult)er.getData());

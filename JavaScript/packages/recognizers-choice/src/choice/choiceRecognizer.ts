@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { Recognizer, IModel, Culture, ModelResult } from "@microsoft/recognizers-text";
 import { BooleanModel } from "./models";
 import { BooleanExtractor } from "./extractors";

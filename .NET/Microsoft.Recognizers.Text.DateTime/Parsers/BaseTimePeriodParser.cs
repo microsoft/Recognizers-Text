@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 
@@ -292,12 +295,12 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                             if (!string.IsNullOrEmpty(matchAmStr) || rightAmValid)
                             {
-                                if (endHour >= Constants.HalfDayHourCount)
+                                if (endHour > Constants.HalfDayHourCount)
                                 {
                                     endHour -= Constants.HalfDayHourCount;
                                 }
 
-                                if (beginHour >= Constants.HalfDayHourCount && beginHour - Constants.HalfDayHourCount < endHour)
+                                if (beginHour > Constants.HalfDayHourCount && beginHour - Constants.HalfDayHourCount < endHour)
                                 {
                                     beginHour -= Constants.HalfDayHourCount;
                                 }
@@ -312,7 +315,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             }
                             else if (!string.IsNullOrEmpty(matchPmStr) || rightPmValid)
                             {
-                                if (endHour < Constants.HalfDayHourCount)
+                                if (endHour <= Constants.HalfDayHourCount)
                                 {
                                     endHour += Constants.HalfDayHourCount;
                                 }
@@ -555,7 +558,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     if (hasRightAm)
                     {
-                        if (endHour >= Constants.HalfDayHourCount)
+                        if (endHour > Constants.HalfDayHourCount)
                         {
                             endDateTime = endDateTime.AddHours(-Constants.HalfDayHourCount);
                         }
@@ -570,7 +573,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                     else if (hasRightPm)
                     {
-                        if (endHour < Constants.HalfDayHourCount)
+                        if (endHour <= Constants.HalfDayHourCount)
                         {
                             endDateTime = endDateTime.AddHours(Constants.HalfDayHourCount);
                         }
@@ -787,7 +790,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        // parse "morning", "afternoon", "night"
+        // Parse "morning", "afternoon", "night"
         private DateTimeResolutionResult ParseTimeOfDay(string text, DateObject referenceTime)
         {
             int day = referenceTime.Day,
@@ -795,7 +798,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 year = referenceTime.Year;
             var ret = new DateTimeResolutionResult();
 
-            // extract early/late prefix from text
+            // Extract early/late prefix from text
             var match = this.config.TimeOfDayRegex.Match(text);
             bool hasEarly = false, hasLate = false;
             if (match.Success)
@@ -819,17 +822,17 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
-            if (!this.config.GetMatchedTimexRange(text, out string timex, out int beginHour, out int endHour, out int endMinSeg))
+            if (!this.config.GetMatchedTimeRange(text, out string timex, out int beginHour, out int endHour, out int endMinSeg))
             {
                 return new DateTimeResolutionResult();
             }
 
-            // modify time period if "early" or "late" is existed
+            // Modify time period if "early" or "late" modifiers exist
             if (hasEarly)
             {
-                endHour = beginHour + 2;
+                endHour = beginHour + Constants.EARLY_LATE_TIME_DELTA;
 
-                // handling case: night end with 23:59
+                // Handling case: night ends at 23:59, due to .NET limitation
                 if (endMinSeg == 59)
                 {
                     endMinSeg = 0;
@@ -837,7 +840,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else if (hasLate)
             {
-                beginHour = beginHour + 2;
+                beginHour += Constants.EARLY_LATE_TIME_DELTA;
             }
 
             ret.Timex = timex;

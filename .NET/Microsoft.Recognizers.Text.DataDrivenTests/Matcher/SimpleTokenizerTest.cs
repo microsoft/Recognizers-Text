@@ -1,4 +1,7 @@
-﻿using Microsoft.Recognizers.Text.Matcher;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using Microsoft.Recognizers.Text.Matcher;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Microsoft.Recognizers.Text.DataDrivenTests.Matcher
@@ -6,7 +9,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests.Matcher
     [TestClass]
     public class SimpleTokenizerTest
     {
-        private ITokenizer tokenizer = new SimpleTokenizer();
+        private readonly ITokenizer tokenizer = new SimpleTokenizer();
 
         [TestMethod]
         public void EnglishTokenizedTest()

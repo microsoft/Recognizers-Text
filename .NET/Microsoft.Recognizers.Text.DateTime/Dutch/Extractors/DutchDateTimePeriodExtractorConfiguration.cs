@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions;
@@ -44,8 +47,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public static readonly Regex HyphenDateRegex =
             new Regex(BaseDateTime.HyphenDateRegex, RegexFlags);
 
+        // Anchors needed to correctly handle patterns when multiple TimeOfDay entities are present.
         public static readonly Regex PeriodTimeOfDayWithDateRegex =
-            new Regex(DateTimeDefinitions.PeriodTimeOfDayWithDateRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.PeriodTimeOfDayWithDateRegexWithAnchors, RegexFlags);
 
         public static readonly Regex RelativeTimeUnitRegex =
             new Regex(DateTimeDefinitions.RelativeTimeUnitRegex, RegexFlags);
@@ -135,7 +139,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public Regex FollowedUnit => TimeFollowedUnit;
 
-        bool IDateTimePeriodExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+        // CheckBothBeforeAfter normally gets its value from DateTimeDefinitions.CheckBothBeforeAfter which however for Dutch is false.
+        // It only needs to be true in DateTimePeriod.
+        bool IDateTimePeriodExtractorConfiguration.CheckBothBeforeAfter => true;
 
         Regex IDateTimePeriodExtractorConfiguration.PrefixDayRegex => PrefixDayRegex;
 

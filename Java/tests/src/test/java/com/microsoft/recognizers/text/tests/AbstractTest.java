@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 package com.microsoft.recognizers.text.tests;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -6,7 +9,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.microsoft.recognizers.text.*;
 import com.microsoft.recognizers.text.datetime.parsers.DateTimeParseResult;
 import com.microsoft.recognizers.text.tests.helpers.DateTimeParseResultMixIn;
-import com.microsoft.recognizers.text.tests.helpers.ExtendedModelResultMixIn;
 import com.microsoft.recognizers.text.tests.helpers.ExtractResultMixIn;
 import com.microsoft.recognizers.text.tests.helpers.ModelResultMixIn;
 import org.apache.commons.io.FileUtils;
@@ -137,15 +139,10 @@ public abstract class AbstractTest {
 
     protected void recognizeAndAssert(TestCase currentCase) {
         List<ModelResult> results = recognize(currentCase);
-        assertResults(currentCase, results);
+        assertResults(currentCase, results, Collections.emptyList());
     }
 
-    public static void assertResults(TestCase currentCase, List<ModelResult> results) {
-        assertResultsWithKeys(currentCase, results, Collections.emptyList());
-    }
-
-    public static void assertResultsWithKeys(TestCase currentCase, List<ModelResult> results, List<String> testResolutionKeys) {
-
+    public void assertResults(TestCase currentCase, List<ModelResult> results, List<String> testResolutionKeys) {
         List<ModelResult> expectedResults = readExpectedResults(ModelResult.class, currentCase.results);
         Assert.assertEquals(getMessage(currentCase, "\"Result Count\""), expectedResults.size(), results.size());
 
@@ -154,23 +151,25 @@ public abstract class AbstractTest {
                 .forEach(t -> {
                     ModelResult expected = t.getValue0();
                     ModelResult actual = t.getValue1();
-
-                    Assert.assertEquals(getMessage(currentCase, "typeName"), expected.typeName, actual.typeName);
-                    Assert.assertEquals(getMessage(currentCase, "text"), expected.text, actual.text);
-
-                    if (expected.resolution.containsKey(ResolutionKey.Value)) {
-                        Assert.assertEquals(getMessage(currentCase, "resolution.value"),
-                                            expected.resolution.get(ResolutionKey.Value), actual.resolution.get(ResolutionKey.Value));
-                    }
-
-                    for (String key : testResolutionKeys) {
-                        Assert.assertEquals(getMessage(currentCase, key), expected.resolution.get(key), actual.resolution.get(key));
-                    }
+                    // Validate common properties of models
+                    assertModel(expected, actual);
+                    // Validate Resolution keys
+                    assertResolutionKeys(expected, actual, currentCase, testResolutionKeys);
                 });
     }
 
-    public static Collection<TestCase> enumerateTestCases(String recognizerType, String modelName) {
+    protected void assertModel(ModelResult expected, ModelResult actual){
+        Assert.assertEquals(getMessage(currentCase, "typeName"), expected.typeName, actual.typeName);
+        Assert.assertEquals(getMessage(currentCase, "text"), expected.text, actual.text);
+        if (expected.start != null) {
+            Assert.assertEquals(getMessage(currentCase, "start"), expected.start, actual.start);
+        }
+        if (expected.end != null) {
+            Assert.assertEquals(getMessage(currentCase, "end"), expected.end, actual.end);
+        }
+    }
 
+    public static Collection<TestCase> enumerateTestCases(String recognizerType, String modelName) {
         String recognizerTypePath = String.format(File.separator + recognizerType + File.separator);
 
         // Deserializer
@@ -265,7 +264,6 @@ public abstract class AbstractTest {
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);
         mapper.addMixIn(ModelResult.class, ModelResultMixIn.class);
-        mapper.addMixIn(ExtendedModelResult.class, ExtendedModelResultMixIn.class);
 
         try {
             String json = mapper.writeValueAsString(result);
@@ -311,6 +309,12 @@ public abstract class AbstractTest {
 
     public static String getMessage(TestCase testCase, String propName) {
         return "Does not match " + propName + " on Input: \"" + testCase.input + "\"";
+    }
+
+    protected void assertResolutionKeys(ModelResult expected, ModelResult actual, TestCase currentCase, List<String> testResolutionKeys) {
+        for (String key : testResolutionKeys) {
+            Assert.assertEquals(getMessage(currentCase, key), String.valueOf(expected.resolution.get(key)), String.valueOf(actual.resolution.get(key)));
+        }
     }
 
     private static String StringUtf8Bom(String input) {

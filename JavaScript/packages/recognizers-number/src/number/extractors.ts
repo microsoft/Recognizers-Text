@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { IExtractor, ExtractResult } from "@microsoft/recognizers-text";
 import { Constants } from "./constants";
 import { BaseNumbers } from "../resources/baseNumbers";

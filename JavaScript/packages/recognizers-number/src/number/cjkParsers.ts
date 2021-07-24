@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { ExtractResult, IParser, ParseResult } from "@microsoft/recognizers-text";
 import { BaseNumberParser, INumberParserConfiguration } from "./parsers";
 import { Constants } from "./constants";

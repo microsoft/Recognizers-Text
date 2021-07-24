@@ -21009,5 +21009,181 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I'll be back Thursday before 5pm",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "thursday before 5pm",
+        "Start": 13,
+        "End": 31,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-4T17",
+              "type": "datetimerange",
+              "Mod": "before",
+              "end": "2016-11-03 17:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-4T17",
+              "type": "datetimerange",
+              "Mod": "before",
+              "end": "2016-11-10 17:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be back tomorrow before 5pm",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "tomorrow before 5pm",
+        "Start": 13,
+        "End": 31,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-08T17",
+              "type": "datetimerange",
+              "Mod": "before",
+              "end": "2016-11-08 17:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be back 23/12 before 5pm",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "23/12 before 5pm",
+        "Start": 13,
+        "End": 28,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-12-23T17",
+              "type": "datetimerange",
+              "Mod": "before",
+              "end": "2015-12-23 17:00:00"
+            },
+            {
+              "timex": "XXXX-12-23T17",
+              "type": "datetimerange",
+              "Mod": "before",
+              "end": "2016-12-23 17:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be back within 2h",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "within 2h",
+        "Start": 13,
+        "End": 21,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-11-07T16:12:00,2016-11-07T18:12:00,PT2H)",
+              "type": "datetimerange",
+              "start": "2016-11-07 16:12:00",
+              "end": "2016-11-07 18:12:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "dates which are greater than or equals to date 1",
+    "Context": {
+        "ReferenceDateTime": "2021-06-18T18:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "My dentist uses the most up to date equipment",
+    "Context": {
+        "ReferenceDateTime": "2021-06-18T18:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "I've kept it up-to-date.",
+    "Context": {
+        "ReferenceDateTime": "2021-06-18T18:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "rows equals to date from 2010-01-01 till current date",
+    "Context": {
+        "ReferenceDateTime": "2021-06-18T18:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "from 2010-01-01 till current date",
+        "Start": 20,
+        "End": 52,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2010-01-01,2021-06-18,P4186D)",
+              "type": "daterange",
+              "start": "2010-01-01",
+              "end": "2021-06-18"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The Employer operates a policy of job flexibility and the Employer may, at its discretion, require you to perform additional or other duties, whether skilled or unskilled, not within the scope of your normal duties and may at its discretion amend your Job Description at any time.",
+    "Context": {
+        "ReferenceDateTime": "2021-06-18T18:00:00"
+    },
+	"NotSupported": "python",
+    "Results": []
+  },
+  {
+    "Input": "What we have witnessed is the dawn of a second wave of digital transformation sweeping every company and every industry.",
+    "Context": {
+        "ReferenceDateTime": "2021-06-18T18:00:00"
+    },
+    "Results": []
   }
 ]

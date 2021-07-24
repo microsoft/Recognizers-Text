@@ -129,7 +129,7 @@ export namespace FrenchDateTime {
     export const PeriodDescRegex = `(?<desc>pm|am|p\\.m\\.|a\\.m\\.|p)`;
     export const PeriodPmRegex = `(?<pm>dans l'apr[eè]s-midi|ce soir|d[eu] soir|dans l[ea] soir[eé]e|dans la nuit|d[eu] soir[ée]e)s?`;
     export const PeriodAmRegex = `(?<am>d[eu] matin|matin([ée]e)s?`;
-    export const PureNumFromTo = `((du|depuis|des?)\\s+)?(${HourRegex}|${PeriodHourNumRegex})(\\s*(?<leftDesc>${PeriodDescRegex}))?\\s*${TillRegex}\\s*(${HourRegex}|${PeriodHourNumRegex})\\s*(?<rightDesc>${PmRegex}|${AmRegex}|${PeriodDescRegex})?`;
+    export const PureNumFromTo = `((du|depuis|des?)\\s+)?(?<!\\d[\\/.,:\\-])(${HourRegex}|${PeriodHourNumRegex})(\\s*(?<leftDesc>${PeriodDescRegex}))?\\s*${TillRegex}\\s*(${HourRegex}|${PeriodHourNumRegex})\\s*(?<rightDesc>${PmRegex}|${AmRegex}|${PeriodDescRegex})?`;
     export const PureNumBetweenAnd = `(entre\\s+)(${HourRegex}|${PeriodHourNumRegex})(\\s*(?<leftDesc>${PeriodDescRegex}))?\\s*${RangeConnectorRegex}\\s*(${HourRegex}|${PeriodHourNumRegex})\\s*(?<rightDesc>${PmRegex}|${AmRegex}|${PeriodDescRegex})?`;
     export const SpecificTimeFromTo = `^\\b$`;
     export const SpecificTimeBetweenAnd = `^\\b$`;
@@ -194,7 +194,7 @@ export namespace FrenchDateTime {
     export const BeforeAfterRegex = `^\\b$`;
     export const InConnectorRegex = `\\b(dans|en|sur)\\b`;
     export const SinceYearSuffixRegex = `^\\b$`;
-    export const WithinNextPrefixRegex = `^\\b$`;
+    export const WithinNextPrefixRegex = `\\b(dans\\s+les)\\b`;
     export const TodayNowRegex = `\\b(aujourd'hui|maintenant)\\b`;
     export const MorningStartEndRegex = `(^(matin))|((matin)$)`;
     export const AfternoonStartEndRegex = `(^((d'|l')?apr[eè]s-midi))|(((d'|l')?apr[eè]s-midi)$)`;
@@ -243,6 +243,8 @@ export namespace FrenchDateTime {
     export const SuffixAfterRegex = `^\\b$`;
     export const YearPeriodRegex = `^\\b$`;
     export const FutureSuffixRegex = `\\b(dans\\s+le\\s+futur)\\b`;
+    export const ModPrefixRegex = `\\b(${RelativeRegex}|${AroundRegex}|${BeforeRegex}|${AfterRegex}|${SinceRegex})\\b`;
+    export const ModSuffixRegex = `\\b(${AgoRegex}|${LaterRegex}|${BeforeAfterRegex}|${FutureSuffixRegex}|${PastSuffixRegex})\\b`;
     export const ComplexDatePeriodRegex = `^\\b$`;
     export const AmbiguousPointRangeRegex = `^(mar\\.?)$`;
     export const UnitMap: ReadonlyMap<string, string> = new Map<string, string>([["annees", "Y"],["annee", "Y"],["an", "Y"],["ans", "Y"],["mois", "MON"],["semaines", "W"],["semaine", "W"],["journees", "D"],["journee", "D"],["jour", "D"],["jours", "D"],["heures", "H"],["heure", "H"],["hrs", "H"],["hr", "H"],["h", "H"],["minutes", "M"],["minute", "M"],["mins", "M"],["min", "M"],["secondes", "S"],["seconde", "S"],["secs", "S"],["sec", "S"]]);

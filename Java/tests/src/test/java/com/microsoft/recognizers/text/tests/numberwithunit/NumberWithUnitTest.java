@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 package com.microsoft.recognizers.text.tests.numberwithunit;
 
 import com.microsoft.recognizers.text.ModelResult;
@@ -35,15 +38,15 @@ public class NumberWithUnitTest extends AbstractTest {
         List<ModelResult> results = recognize(currentCase);
 
         // assert
-        assertResultsWithKeys(currentCase, results, getKeysToTest(currentCase));
+        assertResults(currentCase, results, getKeysToTest(currentCase));
     }
 
     private List<String> getKeysToTest(TestCase currentCase) {
         switch (currentCase.modelName) {
             case "CurrencyModel":
-                return Arrays.asList(ResolutionKey.Unit, ResolutionKey.Unit, ResolutionKey.IsoCurrency);
+                return Arrays.asList(ResolutionKey.Value, ResolutionKey.Unit, ResolutionKey.IsoCurrency);
             default:
-                return Arrays.asList(ResolutionKey.Unit);
+                return Arrays.asList(ResolutionKey.Value, ResolutionKey.Unit);
         }
     }
 

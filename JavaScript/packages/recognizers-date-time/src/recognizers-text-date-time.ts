@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 export { default as DateTimeRecognizer, DateTimeOptions, recognizeDateTime } from "./dateTime/dateTimeRecognizer";
 export { Culture, CultureInfo } from "@microsoft/recognizers-text-number";
 export { IDateExtractorConfiguration, IDateParserConfiguration, BaseDateExtractor, BaseDateParser } from "./dateTime/baseDate";

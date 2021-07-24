@@ -650,7 +650,7 @@ public class SpanishDateTime {
     public static final String HolidayRegex3 = "\\b(?<holiday>(d[ií]a( internacional)?( del?( l[ao]s?)?)? )(trabajador(es)?|madres?|padres?|[aá]rbol|mujer(es)?|solteros?|niños?|marmota|san valent[ií]n|maestro))(\\s+(del?\\s+)?({YearRegex}|(?<order>(pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?|en))\\s+año))?\\b"
             .replace("{YearRegex}", YearRegex);
 
-    public static final String BeforeRegex = "(\\b((ante(s|rior)|m[aá]s\\s+temprano|no\\s+m[aá]s\\s+tard(e|ar)|(?<include>tan\\s+tarde\\s+como))(\\s+(del?|a|que)(\\s+(el|las?|los?))?)?)|(?<!\\w|>)((?<include><\\s*=)|<))";
+    public static final String BeforeRegex = "(\\b((ante(s|rior)|m[aá]s\\s+temprano|no\\s+m[aá]s\\s+tard(e|ar)|hasta|(?<include>tan\\s+tarde\\s+como))(\\s+(del?|a|que)(\\s+(el|las?|los?))?)?)|(?<!\\w|>)((?<include><\\s*=)|<))";
 
     public static final String AfterRegex = "((\\b(despu[eé]s|(año\\s+)?posterior|m[aá]s\\s+tarde|a\\s+primeros)(\\s*(del?|en|a)(\\s+(el|las?|los?))?)?|(empi?en?zando|comenzando)(\\s+(el|las?|los?))?)\\b|(?<!\\w|<)((?<include>>\\s*=)|>))";
 
@@ -1114,7 +1114,7 @@ public class SpanishDateTime {
     public static final String DurationUnitRegex = "(?<unit>{DateUnitRegex}|horas?|hra?s?|hs?|minutos?|mins?|segundos?|segs?|noches?)\\b"
             .replace("{DateUnitRegex}", DateUnitRegex);
 
-    public static final String DurationConnectorRegex = "^[.]";
+    public static final String DurationConnectorRegex = "^\\s*(?<connector>\\s+|y|,)\\s*$";
 
     public static final String RelativeDurationUnitRegex = "(?:(?<=({NextPrefixRegex}|{PreviousPrefixRegex}|{ThisPrefixRegex})\\s+)({DurationUnitRegex}))"
             .replace("{NextPrefixRegex}", NextPrefixRegex)
@@ -1152,6 +1152,22 @@ public class SpanishDateTime {
             .replace("{RangeConnectorRegex}", RangeConnectorRegex);
 
     public static final String FutureSuffixRegex = "\\b(siguiente(s)?|pr[oó]xim[oa](s)?|(en\\s+el\\s+)?futuro)\\b";
+
+    public static final String PastSuffixRegex = "^\\b$";
+
+    public static final String ModPrefixRegex = "\\b({RelativeRegex}|{AroundRegex}|{BeforeRegex}|{AfterRegex}|{SinceRegex})\\b"
+            .replace("{RelativeRegex}", RelativeRegex)
+            .replace("{AroundRegex}", AroundRegex)
+            .replace("{BeforeRegex}", BeforeRegex)
+            .replace("{AfterRegex}", AfterRegex)
+            .replace("{SinceRegex}", SinceRegex);
+
+    public static final String ModSuffixRegex = "\\b({AgoRegex}|{LaterRegex}|{BeforeAfterRegex}|{FutureSuffixRegex}|{PastSuffixRegex})\\b"
+            .replace("{AgoRegex}", AgoRegex)
+            .replace("{LaterRegex}", LaterRegex)
+            .replace("{BeforeAfterRegex}", BeforeAfterRegex)
+            .replace("{FutureSuffixRegex}", FutureSuffixRegex)
+            .replace("{PastSuffixRegex}", PastSuffixRegex);
 
     public static final ImmutableMap<String, Integer> WrittenDecades = ImmutableMap.<String, Integer>builder()
         .put("", 0)

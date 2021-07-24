@@ -10,6 +10,8 @@ import com.microsoft.recognizers.text.sequence.resources.BaseGUID;
 import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
+import java.math.BigDecimal;
+import java.math.MathContext;
 import java.util.regex.Pattern;
 
 public class GUIDParser extends BaseSequenceParser {
@@ -24,7 +26,7 @@ public class GUIDParser extends BaseSequenceParser {
 
     private static final Pattern GUID_ELEMENT_REGEX = Pattern.compile(BaseGUID.GUIDRegexElement);
 
-    public static Double scoreGUID(String textGUID) {
+    public static BigDecimal scoreGUID(String textGUID) {
         Double score = BASE_SCORE;
 
         Match[] elementMatch = RegExpUtility.getMatches(GUID_ELEMENT_REGEX, textGUID);
@@ -36,8 +38,9 @@ public class GUIDParser extends BaseSequenceParser {
             score -= Pattern.compile(PURE_DIGIT_REGEX).matcher(textGUID).find() ? PURE_DIGIT_PENALTY : 0;
         }
 
-        return Math.max(Math.min(score, SCORE_UPPER_LIMIT), SCORE_LOWER_LIMIT)
+        Double result =  Math.max(Math.min(score, SCORE_UPPER_LIMIT), SCORE_LOWER_LIMIT)
                 / (SCORE_UPPER_LIMIT - SCORE_LOWER_LIMIT);
+        return new BigDecimal(result, new MathContext(2)).stripTrailingZeros();
     }
 
     @Override

@@ -1,4 +1,7 @@
-﻿namespace Microsoft.Recognizers.Text.Number
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+namespace Microsoft.Recognizers.Text.Number
 {
     public static class RegexTagGenerator
     {

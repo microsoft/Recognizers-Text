@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 export class Constants {
     static readonly SYS_NUM_CARDINAL: string = "builtin.num.cardinal";
     static readonly SYS_NUM_DOUBLE: string = "builtin.num.double";

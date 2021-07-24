@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Generic;
 
 using Microsoft.Recognizers.Text.DateTime.Arabic;
 using Microsoft.Recognizers.Text.DateTime.Chinese;

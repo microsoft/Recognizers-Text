@@ -139,7 +139,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public const string PeriodDescRegex = @"(?<desc>pm|am|p\.m\.|a\.m\.|p)";
       public const string PeriodPmRegex = @"(?<pm>dans l'apr[eè]s-midi|ce soir|d[eu] soir|dans l[ea] soir[eé]e|dans la nuit|d[eu] soir[ée]e)s?";
       public const string PeriodAmRegex = @"(?<am>d[eu] matin|matin([ée]e)s?";
-      public static readonly string PureNumFromTo = $@"((du|depuis|des?)\s+)?({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{PeriodDescRegex}))?\s*{TillRegex}\s*({HourRegex}|{PeriodHourNumRegex})\s*(?<rightDesc>{PmRegex}|{AmRegex}|{PeriodDescRegex})?";
+      public static readonly string PureNumFromTo = $@"((du|depuis|des?)\s+)?(?<!\d[\/.,:\-])({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{PeriodDescRegex}))?\s*{TillRegex}\s*({HourRegex}|{PeriodHourNumRegex})\s*(?<rightDesc>{PmRegex}|{AmRegex}|{PeriodDescRegex})?";
       public static readonly string PureNumBetweenAnd = $@"(entre\s+)({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{PeriodDescRegex}))?\s*{RangeConnectorRegex}\s*({HourRegex}|{PeriodHourNumRegex})\s*(?<rightDesc>{PmRegex}|{AmRegex}|{PeriodDescRegex})?";
       public const string SpecificTimeFromTo = @"^\b$";
       public const string SpecificTimeBetweenAnd = @"^\b$";
@@ -204,7 +204,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public const string BeforeAfterRegex = @"^\b$";
       public const string InConnectorRegex = @"\b(dans|en|sur)\b";
       public const string SinceYearSuffixRegex = @"^\b$";
-      public const string WithinNextPrefixRegex = @"^\b$";
+      public const string WithinNextPrefixRegex = @"\b(dans\s+les)\b";
       public const string TodayNowRegex = @"\b(aujourd'hui|maintenant)\b";
       public const string MorningStartEndRegex = @"(^(matin))|((matin)$)";
       public const string AfternoonStartEndRegex = @"(^((d'|l')?apr[eè]s-midi))|(((d'|l')?apr[eè]s-midi)$)";

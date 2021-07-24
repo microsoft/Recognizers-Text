@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 from .aa_node import AaNode
 from .abstract_matcher import AbstractMatcher
 from queue import Queue
