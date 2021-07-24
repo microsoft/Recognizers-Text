@@ -3,24 +3,21 @@
 
 package com.microsoft.recognizers.text.tests.number;
 
-import com.microsoft.recognizers.text.ExtendedModelResult;
 import com.microsoft.recognizers.text.ModelResult;
+import com.microsoft.recognizers.text.ResolutionKey;
 import com.microsoft.recognizers.text.number.NumberOptions;
 import com.microsoft.recognizers.text.number.NumberRecognizer;
 import com.microsoft.recognizers.text.tests.AbstractTest;
 import com.microsoft.recognizers.text.tests.DependencyConstants;
 import com.microsoft.recognizers.text.tests.NotSupportedException;
 import com.microsoft.recognizers.text.tests.TestCase;
-import org.javatuples.Pair;
 import org.junit.Assert;
 import org.junit.AssumptionViolatedException;
 import org.junit.runners.Parameterized;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
-import java.util.stream.IntStream;
 
 public class NumberTest extends AbstractTest {
 
@@ -41,31 +38,16 @@ public class NumberTest extends AbstractTest {
         List<ModelResult> results = recognize(currentCase);
 
         // assert
-        assertResultsNumber(currentCase, results, new ArrayList() {{ add("value");}});
+        assertResults(currentCase, results, getKeysToTest(currentCase));
     }
 
-    public static <T extends ModelResult> void assertResultsNumber(TestCase currentCase, List<T> results, List<String> testResolutionKeys) {
-
-        List<ExtendedModelResult> expectedResults = readExpectedResults(ExtendedModelResult.class, currentCase.results);
-        Assert.assertEquals(getMessage(currentCase, "\"Result Count\""), expectedResults.size(), results.size());
-
-        IntStream.range(0, expectedResults.size())
-                .mapToObj(i -> Pair.with(expectedResults.get(i), results.get(i)))
-                .forEach(t -> {
-                    ExtendedModelResult expected = t.getValue0();
-                    T actual = t.getValue1();
-
-                    Assert.assertEquals(getMessage(currentCase, "typeName"), expected.typeName, actual.typeName);
-                    Assert.assertEquals(getMessage(currentCase, "text"), expected.text, actual.text);
-
-                    // Number and NumberWithUnit are supported currently.
-                    Assert.assertEquals(getMessage(currentCase, "start"), expected.start, actual.start);
-                    Assert.assertEquals(getMessage(currentCase, "end"), expected.end, actual.end);
-
-                    for (String key : testResolutionKeys) {
-                        Assert.assertEquals(getMessage(currentCase, key), expected.resolution.get(key), actual.resolution.get(key));
-                    }
-                });
+    private List<String> getKeysToTest(TestCase currentCase) {
+        switch (currentCase.modelName) {
+            case "OrdinalModel":
+                return Arrays.asList(ResolutionKey.Value, ResolutionKey.Offset, ResolutionKey.RelativeTo);
+            default:
+                return Arrays.asList(ResolutionKey.Value);
+        }
     }
 
     @Override
@@ -76,16 +58,21 @@ public class NumberTest extends AbstractTest {
             switch (currentCase.modelName) {
                 case "NumberModel":
                     return NumberRecognizer.recognizeNumber(currentCase.input, culture, NumberOptions.None, false);
+                case "NumberModelExperimentalMode":
+                    return NumberRecognizer.recognizeNumber(currentCase.input, culture, NumberOptions.ExperimentalMode, false);
                 case "NumberModelPercentMode":
                     return NumberRecognizer.recognizeNumber(currentCase.input, culture, NumberOptions.PercentageMode, false);
+                case "NumberRangeModel":
+                    return NumberRecognizer.recognizeNumberRange(currentCase.input, culture, NumberOptions.None, false);
+                case "NumberRangeModelExperimentalMode":
+                    return NumberRecognizer.recognizeNumberRange(currentCase.input, culture, NumberOptions.ExperimentalMode, false);
                 case "OrdinalModel":
+                case "OrdinalModelSuppressExtendedTypes":
                     return NumberRecognizer.recognizeOrdinal(currentCase.input, culture, NumberOptions.None, false);
                 case "PercentModel":
                     return NumberRecognizer.recognizePercentage(currentCase.input, culture, NumberOptions.None, false);
                 case "PercentModelPercentMode":
                     return NumberRecognizer.recognizePercentage(currentCase.input, culture, NumberOptions.PercentageMode, false);
-                case "NumberRangeModel":
-                    return NumberRecognizer.recognizeNumberRange(currentCase.input, culture, NumberOptions.None, false);
                 default:
                     throw new NotSupportedException("Model Type/Name not supported: " + currentCase.modelName + " in " + culture);
             }

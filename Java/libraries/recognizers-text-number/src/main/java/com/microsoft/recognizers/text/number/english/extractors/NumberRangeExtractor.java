@@ -3,6 +3,8 @@
 
 package com.microsoft.recognizers.text.number.english.extractors;
 
+import com.microsoft.recognizers.text.number.NumberMode;
+import com.microsoft.recognizers.text.number.NumberOptions;
 import com.microsoft.recognizers.text.number.NumberRangeConstants;
 import com.microsoft.recognizers.text.number.english.parsers.EnglishNumberParserConfiguration;
 import com.microsoft.recognizers.text.number.extractors.BaseNumberRangeExtractor;
@@ -17,10 +19,22 @@ import java.util.regex.Pattern;
 
 public class NumberRangeExtractor extends BaseNumberRangeExtractor {
 
+    private final NumberOptions options;
     private final Map<Pattern, String> regexes;
 
+    @Override
+    public NumberOptions getOptions() {
+        return options;
+    }
+
     public NumberRangeExtractor() {
-        super(NumberExtractor.getInstance(), OrdinalExtractor.getInstance(), new BaseNumberParser(new EnglishNumberParserConfiguration()));
+        this(NumberOptions.None);
+    }
+
+    public NumberRangeExtractor(NumberOptions options) {
+        super(NumberExtractor.getInstance(NumberMode.Default, options), OrdinalExtractor.getInstance(), new BaseNumberParser(new EnglishNumberParserConfiguration()));
+
+        this.options = options;
 
         HashMap<Pattern, String> builder = new HashMap<>();
 

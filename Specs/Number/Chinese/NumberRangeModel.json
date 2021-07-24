@@ -16,7 +16,7 @@
   },
   {
     "Input": "这个数字是位于20和30之间的",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "位于20和30之间",
@@ -31,7 +31,7 @@
   },
   {
     "Input": "他的排名在第十和第十五之间",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "在第十和第十五之间",
@@ -469,7 +469,7 @@
   },
   {
     "Input": "这些苹果大概有20 - 100个",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "20 - 100",
@@ -484,7 +484,7 @@
   },
   {
     "Input": "10000与20000间",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "10000与20000间",
@@ -499,7 +499,7 @@
   },
   {
     "Input": "10000与20000之间",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "10000与20000之间",
@@ -514,7 +514,7 @@
   },
   {
     "Input": "-10000与20000间",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "-10000与20000间",
@@ -529,7 +529,7 @@
   },
   {
     "Input": "薪酬中位数≥50的公司和在不同国家相应的最低薪酬",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "≥50",
@@ -544,7 +544,7 @@
   },
   {
     "Input": "哪个学院的语文总成绩超过了80？",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "超过了80",
@@ -559,7 +559,7 @@
   },
   {
     "Input": "负荷量超过300且滚动负荷量等于1535的信息。",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "超过300",
@@ -583,7 +583,7 @@
   },
   {
     "Input": "高度至少是3的产品。",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "至少是3",
@@ -598,7 +598,7 @@
   },
   {
     "Input": "什么州9217商店的面积至少有2252平方英尺？",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "至少有2252",
@@ -613,7 +613,7 @@
   },
   {
     "Input": "哪个品牌至少有10个型号",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "至少有10",
@@ -628,7 +628,7 @@
   },
   {
     "Input": "平均数为5.83933518、经度低于100的信息。",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "低于100",
@@ -643,7 +643,7 @@
   },
   {
     "Input": "招聘人数中位数最多为5的微软职位。",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "最多为5",
@@ -658,7 +658,7 @@
   },
   {
     "Input": "至少有10次攻击的国家",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "至少有10",
@@ -673,7 +673,7 @@
   },
   {
     "Input": "哪种类别的价格超过了一千？",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "超过了一千",
@@ -688,7 +688,7 @@
   },
   {
     "Input": "人口大于4865并少于20793的信息。",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "大于4865并少于20793",
@@ -703,7 +703,7 @@
   },
   {
     "Input": "大于等于0并小于230.3964",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "大于等于0并小于230.3964",

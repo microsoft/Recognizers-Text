@@ -3,7 +3,6 @@
 
 package com.microsoft.recognizers.text.datetime.models;
 
-import com.microsoft.recognizers.text.ExtendedModelResult;
 import com.microsoft.recognizers.text.ExtractResult;
 import com.microsoft.recognizers.text.IModel;
 import com.microsoft.recognizers.text.ModelResult;
@@ -83,7 +82,14 @@ public class DateTimeModel implements IModel {
         String[] types = parsedDateTime.getType().split("\\.");
         String type = types[types.length - 1];
         if (type.equals(Constants.SYS_DATETIME_DATETIMEALT)) {
-            result = new ExtendedModelResult(result, getParentText(parsedDateTime));
+            result = new ModelResult(
+                    result.text,
+                    result.start,
+                    result.end,
+                    result.typeName,
+                    result.resolution,
+                    getParentText(parsedDateTime)
+            );
         }
         
         return result;
@@ -91,7 +97,7 @@ public class DateTimeModel implements IModel {
 
     private String getParentText(DateTimeParseResult parsedDateTime) {
         Map<String, Object> map = (Map<String, Object>)parsedDateTime.getData();
-        Object result = map.get(ExtendedModelResult.ParentTextKey);
+        Object result = map.get(ModelResult.ParentTextKey);
         return String.valueOf(result);
     }
 }

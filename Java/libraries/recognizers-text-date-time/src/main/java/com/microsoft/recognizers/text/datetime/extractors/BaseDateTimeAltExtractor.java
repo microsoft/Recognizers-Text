@@ -3,8 +3,8 @@
 
 package com.microsoft.recognizers.text.datetime.extractors;
 
-import com.microsoft.recognizers.text.ExtendedModelResult;
 import com.microsoft.recognizers.text.ExtractResult;
+import com.microsoft.recognizers.text.ModelResult;
 import com.microsoft.recognizers.text.datetime.Constants;
 import com.microsoft.recognizers.text.datetime.extractors.config.IDateTimeAltExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.utilities.RegexExtension;
@@ -236,7 +236,7 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
 
                             Map<String, Object> customData = new LinkedHashMap<>();
                             customData.put(Constants.SubType, result.getType());
-                            customData.put(ExtendedModelResult.ParentTextKey, parentText);
+                            customData.put(ModelResult.ParentTextKey, parentText);
                             customData.put(Constants.Context, contextErs);
 
                             relativeDatePeriodErs.add(new ExtractResult(
@@ -248,7 +248,7 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
 
                             Map<String, Object> resultData = new LinkedHashMap<>();
                             resultData.put(Constants.SubType, result.getType());
-                            resultData.put(ExtendedModelResult.ParentTextKey, parentText);
+                            resultData.put(ModelResult.ParentTextKey, parentText);
 
                             result.setData(resultData);
                             result.setType(Constants.SYS_DATETIME_DATETIMEALT);
@@ -490,7 +490,7 @@ public class BaseDateTimeAltExtractor implements IDateTimeListExtractor {
         }
 
         if (!StringUtility.isNullOrEmpty(parentText)) {
-            data.put(ExtendedModelResult.ParentTextKey, parentText);
+            data.put(ModelResult.ParentTextKey, parentText);
         }
 
         if (contextEr != null) {

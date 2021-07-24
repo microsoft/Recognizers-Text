@@ -939,7 +939,7 @@
   },
   {
     "Input": "My phone number is 246.555.8888.",
-    "NotSupported": "dotnet,javascript,python",
+    "NotSupported": "dotnet,javascript,python,java",
     "Results": [
       {
         "Text": "246.555.8888",
@@ -1459,7 +1459,7 @@
   },
   {
     "Input": "My phone number is 0800-000-00-00.",
-    "NotSupported": "dotnet,javascript,python",
+    "NotSupported": "dotnet,javascript,python,java",
     "Results": [
       {
         "Text": "0800-000-00-00",
@@ -1485,7 +1485,7 @@
   },
   {
     "Input": "My phone number is 0800-00-00-00.",
-    "NotSupported": "dotnet,javascript,python",
+    "NotSupported": "dotnet,javascript,python,java",
     "Results": [
       {
         "Text": "0800-00-00-00",
@@ -1654,7 +1654,7 @@
   },
   {
     "Input": "My phone number is +55 15 3702-7523.",
-    "NotSupported": "dotnet,javascript,python",
+    "NotSupported": "dotnet,javascript,python,java",
     "Results": [
       {
         "Text": "+55 15 3702-7523",
@@ -1667,7 +1667,7 @@
   },
   {
     "Input": "My phone number is (+55) 15 3702-7523.",
-    "NotSupported": "dotnet,javascript,python",
+    "NotSupported": "dotnet,javascript,python,java",
     "Results": [
       {
         "Text": "(+55) 15 3702-7523",
@@ -1680,7 +1680,7 @@
   },
   {
     "Input": "My phone number is (+55)1537027523.",
-    "NotSupported": "dotnet,javascript,python",
+    "NotSupported": "dotnet,javascript,python,java",
     "Results": [
       {
         "Text": "(+55)1537027523",
@@ -1693,7 +1693,7 @@
   },
   {
     "Input": "My phone number is (+55)(15)3702-7523.",
-    "NotSupported": "dotnet,javascript,python",
+    "NotSupported": "dotnet,javascript,python,java",
     "Results": [
       {
         "Text": "(+55)(15)3702-7523",
@@ -1706,7 +1706,7 @@
   },
   {
     "Input": "My phone number is (+55) 15 99202-7523.",
-    "NotSupported": "dotnet,javascript,python",
+    "NotSupported": "dotnet,javascript,python,java",
     "Results": [
       {
         "Text": "(+55) 15 99202-7523",
@@ -1719,7 +1719,7 @@
   },
   {
     "Input": "My phone number is 99202-4635.",
-    "NotSupported": "dotnet,javascript,python",
+    "NotSupported": "dotnet,javascript,python,java",
     "Results": [
       {
         "Text": "99202-4635",
@@ -2109,7 +2109,7 @@
   },
   {
     "Input": "My phone number is +420 123 456 789.",
-    "NotSupported": "dotnet,javascript,python",
+    "NotSupported": "dotnet,javascript,python,java",
     "Results": [
       {
         "Text": "+420 123 456 789",
@@ -2174,7 +2174,7 @@
   },
   {
     "Input": "My phone number is 06-44-44-44-44.",
-    "NotSupported": "dotnet,javascript,python",
+    "NotSupported": "dotnet,javascript,python,java",
     "Results": [
       {
         "Text": "06-44-44-44-44",
@@ -2226,7 +2226,7 @@
   },
   {
     "Input": "My phone number is +33 (0) 644444444.",
-    "NotSupported": "dotnet,javascript,python",
+    "NotSupported": "dotnet,javascript,python,java",
     "Results": [
       {
         "Text": "+33 (0) 644444444",
@@ -2278,7 +2278,7 @@
   },
   {
     "Input": "My phone number is 0049-89-123456.",
-    "NotSupported": "dotnet,javascript,python",
+    "NotSupported": "dotnet,javascript,python,java",
     "Results": [
       {
         "Text": "0049-89-123456",
@@ -2759,7 +2759,7 @@
   },
   {
     "Input": "My phone number is +40213-564-864.",
-    "NotSupported": "dotnet,javascript,python",
+    "NotSupported": "dotnet,javascript,python,java",
     "Results": [
       {
         "Text": "+40213-564-864",
@@ -3006,7 +3006,7 @@
   },
   {
     "Input": "My phone number is +421 123 456 789.",
-    "NotSupported": "dotnet,javascript,python",
+    "NotSupported": "dotnet,javascript,python,java",
     "Results": [
       {
         "Text": "+421 123 456 789",
@@ -3045,7 +3045,7 @@
   },
   {
     "Input": "My phone number is (0161) 123 4567.",
-    "NotSupported": "dotnet,javascript,python",
+    "NotSupported": "dotnet,javascript,python,java",
     "Results": [
       {
         "Text": "(0161) 123 4567",
@@ -3071,7 +3071,7 @@
   },
   {
     "Input": "My phone number is +44 161 123 4567.",
-    "NotSupported": "dotnet,javascript,python",
+    "NotSupported": "dotnet,javascript,python,java",
     "Results": [
       {
         "Text": "+44 161 123 4567",

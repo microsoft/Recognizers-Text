@@ -9,9 +9,10 @@ import java.util.SortedMap;
 
 public abstract class ModelResultMixIn {
     ModelResultMixIn(@JsonProperty("text") String text,
-                     @JsonProperty("start") int start,
-                     @JsonProperty("end") int end,
+                     @JsonProperty("start") Integer start,
+                     @JsonProperty("end") Integer end,
                      @JsonProperty("typeName") String typeName,
-                     @JsonProperty("resolution") SortedMap<String, Object> resolution) {
+                     @JsonProperty("resolution") SortedMap<String, Object> resolution,
+                     @JsonProperty("parentText") String parentText) {
     }
 }
