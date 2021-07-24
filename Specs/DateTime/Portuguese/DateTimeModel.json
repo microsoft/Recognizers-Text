@@ -2275,5 +2275,285 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Os EUA manterão as taxas em 0% até 2010",
+    "Context": {
+        "ReferenceDateTime": "2021-07-14T19:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "até 2010",
+        "Start": 31,
+        "End": 38,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2010",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "end": "2010-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Até amanhã",
+    "Context": {
+        "ReferenceDateTime": "2021-07-14T19:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "até amanhã",
+        "Start": 0,
+        "End": 9,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-07-15",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "end": "2021-07-15"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Vai chover ateh a manha",
+    "Context": {
+        "ReferenceDateTime": "2021-07-14T19:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "ateh a manha",
+        "Start": 11,
+        "End": 22,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TMO",
+              "Mod": "before",
+              "type": "timerange",
+              "end": "08:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Vai chover ateh a proxima manha",
+    "Context": {
+        "ReferenceDateTime": "2021-07-14T19:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "ateh a proxima manha",
+        "Start": 11,
+        "End": 30,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-07-15TMO",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2021-07-15 08:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Nao nos veremos ate agosto",
+    "Context": {
+        "ReferenceDateTime": "2021-07-14T19:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "ate agosto",
+        "Start": 16,
+        "End": 25,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-08",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "end": "2020-08-01"
+            },
+            {
+              "timex": "XXXX-08",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "end": "2021-08-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "vamos nos encontrar dia 12",
+    "Context": {
+        "ReferenceDateTime": "2021-07-14T19:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "dia 12",
+        "Start": 20,
+        "End": 25,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-XX-12",
+              "type": "date",
+              "value": "2021-07-12"
+            },
+            {
+              "timex": "XXXX-XX-12",
+              "type": "date",
+              "value": "2021-08-12"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Preciso disso ateh amanha de manha",
+    "Context": {
+        "ReferenceDateTime": "2021-07-14T19:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "ateh amanha de manha",
+        "Start": 14,
+        "End": 33,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-07-15TMO",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2021-07-15 08:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ateh amanha pela manha vai ser difícil",
+    "Context": {
+        "ReferenceDateTime": "2021-07-14T19:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "ateh amanha pela manha",
+        "Start": 0,
+        "End": 21,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-07-15TMO",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2021-07-15 08:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Todos os adolescentes serão vacinados até o dia 30.",
+    "Context": {
+        "ReferenceDateTime": "2021-07-14T19:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "até o dia 30",
+        "Start": 38,
+        "End": 49,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-XX-30",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "end": "2021-06-30"
+            },
+            {
+              "timex": "XXXX-XX-30",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "end": "2021-07-30"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "A partir do dia 12, vacinação da gripe será ampliada.",
+    "Context": {
+        "ReferenceDateTime": "2021-07-14T19:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "a partir do dia 12",
+        "Start": 0,
+        "End": 17,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-XX-12",
+              "Mod": "after",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "start": "2021-07-12"
+            },
+            {
+              "timex": "XXXX-XX-12",
+              "Mod": "after",
+              "type": "daterange",
+              "sourceEntity": "datetimepoint",
+              "start": "2021-08-12"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

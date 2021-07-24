@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 class Culture:
     Chinese: str = 'zh-cn'
     Dutch: str = 'nl-nl'

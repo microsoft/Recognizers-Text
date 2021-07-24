@@ -6,7 +6,7 @@
     <members>
         <member name="F:Microsoft.Recognizers.Text.Matcher.MatchStrategy.AcAutomaton">
             <summary>
-            AcAtomaton
+            AcAutomaton
             </summary>
         </member>
         <member name="F:Microsoft.Recognizers.Text.Matcher.MatchStrategy.TrieTree">

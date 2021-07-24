@@ -1,4 +1,7 @@
-﻿namespace BotBuilderRecognizerBot
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+namespace BotBuilderRecognizerBot
 {
     public class DeliveryState
     {

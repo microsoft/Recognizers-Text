@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { IParser, ParseResult, ExtractResult, RegExpUtility, Match, StringUtility } from "@microsoft/recognizers-text";
 import { BaseNumberParser, BaseNumberExtractor } from "@microsoft/recognizers-text-number";
 import { IDateTimeUtilityConfiguration, DateTimeFormatUtil, DateTimeResolutionResult, DateUtils, DayOfWeek, MatchingUtil, AgoLaterUtil } from "./utilities";

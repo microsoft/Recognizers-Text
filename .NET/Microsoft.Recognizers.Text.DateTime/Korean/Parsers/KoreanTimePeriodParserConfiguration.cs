@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -69,7 +72,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
                 return false;
             }
 
-            var parseResult = TimexUtility.ParseTimeOfDay(timeOfDay);
+            var parseResult = TimexUtility.ResolveTimeOfDay(timeOfDay);
             timex = parseResult.Timex;
             beginHour = parseResult.BeginHour;
             endHour = parseResult.EndHour;

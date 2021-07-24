@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 from abc import abstractmethod
 from typing import List, Optional, Pattern, Dict, Match
 from datetime import datetime, timedelta
@@ -194,7 +197,7 @@ class BaseDateTimeExtractor(DateTimeExtractor):
             if ((extract_results[i].type is Constants.SYS_DATETIME_DATE and extract_results[j].type is
                  Constants.SYS_DATETIME_TIME) or
                     (extract_results[i].type is Constants.SYS_DATETIME_TIME and extract_results[j].type is
-                     Constants.SYS_DATETIME_DATE)or
+                     Constants.SYS_DATETIME_DATE) or
                     (extract_results[i].type is Constants.SYS_DATETIME_DATE and extract_results[j] is
                      NumConstants.SYS_NUM_INTEGER)):
                 middle_begin = extract_results[i].start + (extract_results[i].length or 0)
@@ -748,7 +751,7 @@ class BaseDateTimeParser(DateTimeParser):
         extract_result = next(iter(extract_results), None)
         before_str = source[0:extract_result.start]
         after_str = source[:extract_result.start + extract_result.end]
-        if regex.search(self.config.specific_end_of_regex, before_str)or regex.search(
+        if regex.search(self.config.specific_end_of_regex, before_str) or regex.search(
                 self.config.specific_end_of_regex, after_str):
             parse_result = self.config.date_parser.parse(extract_result, reference)
             result.timex = parse_result.timex_str + 'T23:59:59'

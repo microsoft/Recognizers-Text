@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 var _ = require('lodash');
 var Recognizer = require('@microsoft/recognizers-text-suite');
 var NumberOptions = require('@microsoft/recognizers-text-suite').NumberOptions;

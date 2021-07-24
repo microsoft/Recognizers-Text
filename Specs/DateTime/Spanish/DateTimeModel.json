@@ -7842,17 +7842,17 @@
         }
       },
       {
-        "Text": "mañana por la mañana",
-        "Start": 49,
+        "Text": "hasta mañana por la mañana",
+        "Start": 43,
         "End": 68,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
             {
               "timex": "2018-08-01TMO",
+              "Mod": "before",
               "type": "datetimerange",
-              "start": "2018-08-01 08:00:00",
-              "end": "2018-08-01 12:00:00"
+              "end": "2018-08-01 08:00:00"
             }
           ]
         }
@@ -21907,6 +21907,32 @@
               "type": "daterange",
               "start": "2016-07-22",
               "end": "2016-11-07"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "EE UU mantendrá los tipos en el 0% hasta 2010.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "hasta 2010",
+        "Start": 35,
+        "End": 44,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2010",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "end": "2010-01-01"
             }
           ]
         }

@@ -4860,5 +4860,10 @@
     "Input": "Her credit card is: Discover 6011-0000-0000-0004",
     "NotSupported": "java",
     "Results": []
+  },
+  {
+    "Input": "Form Approved - OMB No. 0560-0155",
+    "NotSupported": "javascript,python,java",
+    "Results": []
   }
 ]

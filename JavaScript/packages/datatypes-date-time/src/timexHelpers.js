@@ -1,4 +1,5 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
 
 const Time = require('./time.js').Time;
 const timexInference = require('./timexInference.js');

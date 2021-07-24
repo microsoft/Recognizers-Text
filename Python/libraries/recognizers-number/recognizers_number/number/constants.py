@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 class Constants:
     SYS_NUM_CARDINAL: str = 'builtin.num.cardinal'
     SYS_NUM_DOUBLE: str = 'builtin.num.double'

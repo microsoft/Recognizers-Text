@@ -53,6 +53,10 @@ namespace Microsoft.Recognizers.Definitions
             ':'
         };
       public const string ColonPrefixCheckRegex = @"(([a-z])\s*$)";
+      public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
+        {
+            { @"^\d{4}-\d{4}$", @"omb(\s*(no(\.)?|number|#))?:?\s+\d{4}-?\d{4}" }
+        };
       public static readonly IList<char> SpecialBoundaryMarkers = new List<char>
         {
             '-',

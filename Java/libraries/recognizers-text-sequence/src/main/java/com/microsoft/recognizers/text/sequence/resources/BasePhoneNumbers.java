@@ -13,6 +13,9 @@ package com.microsoft.recognizers.text.sequence.resources;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+
+import com.google.common.collect.ImmutableMap;
 
 public class BasePhoneNumbers {
 
@@ -106,6 +109,10 @@ public class BasePhoneNumbers {
     public static final List<Character> ColonMarkers = Arrays.asList(':');
 
     public static final String ColonPrefixCheckRegex = "(([a-z])\\s*$)";
+
+    public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
+        .put("^\\d{4}-\\d{4}$", "omb(\\s*(no(\\.)?|number|#))?:?\\s+\\d{4}-?\\d{4}")
+        .build();
 
     public static final List<Character> SpecialBoundaryMarkers = Arrays.asList('-', ' ');
 

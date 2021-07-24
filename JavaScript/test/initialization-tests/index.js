@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 var numberRecognizerInitialization = require('./numberRecognizer');
 var numberWithUnitRecognizerInitialization = require('./numberWithUnitRecognizer');
 var dateTimeRecognizerInitialization = require('./dateTimeRecognizer');

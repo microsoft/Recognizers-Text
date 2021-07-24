@@ -1,4 +1,7 @@
 
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { INumberParserConfiguration, BaseNumberParser, BasePercentageParser } from "./parsers";
 import { Culture } from "../culture";
 import { Constants } from "./constants";

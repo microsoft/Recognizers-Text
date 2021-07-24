@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 from abc import abstractmethod, ABC
 from typing import List, Optional, Pattern, Dict, Match
 from datetime import datetime

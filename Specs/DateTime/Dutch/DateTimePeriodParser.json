@@ -1723,14 +1723,14 @@
         "Text": "vrijdag tussen 1 en 4 uur ‘s middags",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "(XXXX-WXX-5T01,XXXX-WXX-5T04,PT3H)",
+          "Timex": "(XXXX-WXX-5T13,XXXX-WXX-5T16,PT3H)",
           "FutureResolution": {
-            "startDateTime": "2017-11-10 01:00:00",
-            "endDateTime": "2017-11-10 04:00:00"
+            "startDateTime": "2017-11-10 13:00:00",
+            "endDateTime": "2017-11-10 16:00:00"
           },
           "PastResolution": {
-            "startDateTime": "2017-11-03 01:00:00",
-            "endDateTime": "2017-11-03 04:00:00"
+            "startDateTime": "2017-11-03 13:00:00",
+            "endDateTime": "2017-11-03 16:00:00"
           }
         },
         "Start": 58,

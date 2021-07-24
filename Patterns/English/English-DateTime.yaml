@@ -239,10 +239,10 @@ NextDateRegex: !nestedRegex
   def: \b({NextPrefixRegex}(\s*week{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|((on\s+)?{WeekDayRegex}((\s+of)?\s+(the\s+following|(the\s+)?next)\s*week))\b
   references: [ NextPrefixRegex, WeekDayRegex, PrefixWeekDayRegex ]
 SpecialDayRegex: !nestedRegex
-  def: \b((the\s+)?day before yesterday|(the\s+)?day after (tomorrow|tmr)|the\s+day\s+(before|after)(?!=\s+day)|((the\s+)?({RelativeRegex}|my)\s+day)|yesterday|tomorrow|tmr|today|otd)\b
+  def: \b((the\s+)?day before yesterday|(the\s+)?day after (tomorrow|tmr)|the\s+day\s+(before|after)(?!=\s+day)|((the\s+)?({RelativeRegex}|my)\s+day)|yesterday|tomorrow|tmr|today|otd|current date)\b
   references: [ RelativeRegex ]
 SpecialDayWithNumRegex: !nestedRegex
-  def: \b((?<number>{WrittenNumRegex})\s+days?\s+from\s+(?<day>yesterday|tomorrow|tmr|today))\b
+  def: \b((?<number>{WrittenNumRegex})\s+days?\s+from\s+(?<day>yesterday|tomorrow|tmr|today|current date))\b
   references: [ WrittenNumRegex ]
 RelativeDayRegex: !nestedRegex
   def: \b(((the\s+)?{RelativeRegex}\s+day))\b
@@ -564,7 +564,7 @@ PMTimeRegex: !simpleRegex
 NightTimeRegex: !simpleRegex
   def: (night)
 NowTimeRegex: !simpleRegex
-  def: (now|at\s+(present|this\s+time|th(e|is)\s+minute|the\s+(moment|present\s+time)))
+  def: (now|at\s+(present|this\s+time|th(e|is)\s+minute|the\s+(moment|(current|present)\s+time)))
 RecentlyTimeRegex: !simpleRegex
   def: (recently|previously)
 AsapTimeRegex: !simpleRegex
@@ -607,7 +607,7 @@ WithinNextPrefixRegex: !nestedRegex
   def: \b(within(\s+the)?(\s+(?<next>{NextPrefixRegex}))?)\b
   references: [ NextPrefixRegex ]
 TodayNowRegex: !simpleRegex  # Added to remove hard coded strings in BaseDatePeriodParser
-  def: \b(today|now)\b
+  def: \b(today|now|current (date|time))\b
 # "next" group here is used to judge uncommon unsupported cases like "within the next 5 days before today"
 MorningStartEndRegex: !nestedRegex
   def: (^(morning|{AmDescRegex}))|((morning|{AmDescRegex})$)
@@ -1167,7 +1167,7 @@ SuperfluousWordList: !list
     - say
     - like
 # For DurationDateRestrictions, only translate these terms if this particular circumstance applies in the target language. If not, keep it empty. 
-DurationDateRestrictions: [ today, now ]
+DurationDateRestrictions: [ today, now, 'current date' ]
 # Cases collected from mined data
 AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
@@ -1175,11 +1175,12 @@ AmbiguityFiltersDict: !dictionary
     '^\d{4}$': '(\d\.\d{4}|\d{4}\.\d)'
     '^(morning|afternoon|evening|night|day)\b': '\b(good\s+(morning|afternoon|evening|night|day))|(nighty\s+night)\b'
     '\bnow\b': '\b(^now,)|\b((is|are)\s+now\s+for|for\s+now)\b'
-    '\bmay\b': '\b((((!|\.|\?|,|;|)\s+|^)may i)|(i|you|he|she|we|they)\s+may|(may\s+((((also|not|(also not)|well)\s+)?(be|ask|contain|constitute|e-?mail|take|have|result|involve|get|work|reply|differ))|(or may not))))\b'
-    '\b(a|one) second\b': '\b(?<!an?\s+)(a|one) second (round|time)\b'
+    '\bmay$': '\b((((!|\.|\?|,|;|)\s+|^)may i)|(i|you|he|she|we|they)\s+may|(may\s+((((also|not|(also not)|well)\s+)?(be|ask|contain|constitute|e-?mail|take|have|result|involve|get|work|reply|differ))|(or may not)))|(?<!(in|during|through)\s+)may,? at (its|h(is|er)|y?our|my))\b'
+    '^(a|one) second$': '\b(?<!an?\s+)(a|one) second (round|time|wave|turn|chance|thought|opinion|cycle|take|meaning|life|job|home|hand|language|display|monitor|stimulus|dose|vaccination|shot|jab)\b'
     '\b(breakfast|brunch|lunch(time)?|dinner(time)?|supper)$': '(?<!\b(at|before|after|around|circa)\b\s)(breakfast|brunch|lunch|dinner|supper)(?!\s*time)'
     '^\d+m$': '^\d+m$'
     '^(apr|aug|dec|feb|jan|jul|jun|mar|may|nov|oct|sept?)$': '([$%£&!?@#])(apr|aug|dec|feb|jan|jul|jun|mar|may|nov|oct|sept?)|(apr|aug|dec|feb|jan|jul|jun|mar|may|nov|oct|sept?)([$%£&@#])'
+    '^(to\s+date)$': '\b((equals?|up)\s+to\s+date)\b'
 # For TimeOfDay resolution
 MorningTermList: !list
   types: [ string ]
@@ -1229,6 +1230,7 @@ SameDayTerms: !list
   types: [ string ]
   entries: 
     - today
+    - current date
     - otd
 PlusOneDayTerms: !list
   types: [ string ]

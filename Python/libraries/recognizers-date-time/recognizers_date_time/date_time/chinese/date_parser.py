@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 from numbers import Number
 from typing import List, Dict, Optional
 from datedelta import datedelta

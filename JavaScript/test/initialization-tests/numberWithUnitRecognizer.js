@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 var Recognizer = require('@microsoft/recognizers-text-number-with-unit');
 var NumberWithUnitRecognizer = require('@microsoft/recognizers-text-number-with-unit').NumberWithUnitRecognizer;
 var NumberWithUnitOptions = require('@microsoft/recognizers-text-number-with-unit').NumberWithUnitOptions;

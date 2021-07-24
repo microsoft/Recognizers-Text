@@ -689,5 +689,6 @@ class EnglishNumericWithUnit:
                              ("Stone", "stone"),
                              ("Dram", "dram|drachm|drachma|roman drachma|greek drachma")])
     AmbiguousWeightUnitList = [r'g', r'oz', r'stone', r'dram', r'lbs', r'gal', r'grain', r'grains']
-    AmbiguityFiltersDict = dict([("\\bm\\b", "((('|’)\\s*m)|(m\\s*('|’)))")])
+    AmbiguityFiltersDict = dict([("\\bm\\b", "((('|’)\\s*m)|(m\\s*('|’)))"),
+                                 ("^\\d{5} [cf]$", "\\b([a-z]{2} \\d{5} [cf])\\b")])
 # pylint: enable=line-too-long

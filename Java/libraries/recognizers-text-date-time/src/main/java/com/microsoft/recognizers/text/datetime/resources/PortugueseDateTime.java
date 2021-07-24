@@ -177,7 +177,7 @@ public class PortugueseDateTime {
 
     public static final String CenturySuffixRegex = "^[.]";
 
-    public static final String FromRegex = "((desde|de)(\\s*a(s)?)?)$";
+    public static final String FromRegex = "(de(sde)?(\\s*a(s)?)?)$";
 
     public static final String BetweenRegex = "(entre\\s*([oa](s)?)?)";
 
@@ -186,14 +186,14 @@ public class PortugueseDateTime {
     public static final String OnRegex = "(?<=\\b(em|no)\\s+)({DayRegex}s?)\\b"
             .replace("{DayRegex}", DayRegex);
 
-    public static final String RelaxedOnRegex = "(?<=\\b(em|n[oa]|d[oa])\\s+)(dia\\s+)?({DayRegex}s?)\\b(?!\\s*[/\\\\\\-\\.,:\\s]\\s*(\\d|(de\\s+)?{MonthRegex}))"
+    public static final String RelaxedOnRegex = "((?<=\\b(em|[nd][oa])\\s+)(dia\\s+)?({DayRegex}s?)|dia\\s+{DayRegex}s?)\\b(?!\\s*[/\\\\\\-\\.,:\\s]\\s*(\\d|(de\\s+)?{MonthRegex}))"
             .replace("{DayRegex}", DayRegex)
             .replace("{MonthRegex}", MonthRegex);
 
     public static final String ThisRegex = "\\b(([nd]?es[st][ea]\\s*){WeekDayRegex})|({WeekDayRegex}\\s*([nd]?es[st]a\\s+semana))\\b"
             .replace("{WeekDayRegex}", WeekDayRegex);
 
-    public static final String LastDateRegex = "\\b(([uú]ltim[ao])\\s*{WeekDayRegex})|({WeekDayRegex}(\\s+(([nd]?es[st]a|na|da)\\s+([uú]ltima\\s+)?semana)))\\b"
+    public static final String LastDateRegex = "\\b(([uú]ltim[ao])\\s*{WeekDayRegex})|({WeekDayRegex}(\\s+(([nd]?es[st]a|[nd]a)\\s+([uú]ltima\\s+)?semana)))\\b"
             .replace("{WeekDayRegex}", WeekDayRegex);
 
     public static final String NextDateRegex = "\\b(((pr[oó]xim[oa]|seguinte)\\s*){WeekDayRegex})|({WeekDayRegex}((\\s+(pr[oó]xim[oa]|seguinte))|(\\s+(da\\s+)?(semana\\s+seguinte|pr[oó]xima\\s+semana))))\\b"
@@ -451,7 +451,7 @@ public class PortugueseDateTime {
 
     public static final String SuffixRegex = "^\\s*((e|a|em|por|pel[ao]|n[ao]|de)\\s+)?(manh[ãa]|madrugada|meio\\s*dia|tarde|noite)\\b";
 
-    public static final String TimeOfDayRegex = "\\b(?<timeOfDay>manh[ãa]|madrugada|tarde|noite|((depois\\s+do|ap[óo]s\\s+o)\\s+(almo[çc]o|meio dia|meio-dia)))\\b";
+    public static final String TimeOfDayRegex = "\\b(?<timeOfDay>manh[ãa]|madrugada|tarde|noite|((depois\\s+do|ap[óo]s\\s+o)\\s+(almo[çc]o|meio[ -]dia)))\\b";
 
     public static final String SpecificTimeOfDayRegex = "\\b(((((a)?\\s+|[nd]?es[st]a|seguinte|pr[oó]xim[oa]|[uú]ltim[oa])\\s+)?{TimeOfDayRegex}))\\b"
             .replace("{TimeOfDayRegex}", TimeOfDayRegex);
@@ -472,7 +472,7 @@ public class PortugueseDateTime {
             .replace("{HourNumRegex}", HourNumRegex)
             .replace("{BaseDateTime.HourRegex}", BaseDateTime.HourRegex);
 
-    public static final String SpecificEndOfRegex = "((no|ao)\\s+)?(fi(m|nal)|t[ée]rmin(o|ar))(\\s+d?o(\\s+dia)?(\\s+de)?)?\\s*$";
+    public static final String SpecificEndOfRegex = "([na]o\\s+)?(fi(m|nal)|t[ée]rmin(o|ar))(\\s+d?o(\\s+dia)?(\\s+de)?)?\\s*$";
 
     public static final String UnspecificEndOfRegex = "^[.]";
 
@@ -558,15 +558,15 @@ public class PortugueseDateTime {
     public static final String HolidayRegex3 = "\\b(?<holiday>(dia\\s+d[eoa]s?\\s+)(trabalh(o|ador(es)?)|m[ãa]es?|pais?|mulher(es)?|crian[çc]as?|marmota|professor(es)?))(\\s+(d[eo]?\\s+)?({YearRegex}|(?<order>(pr[oó]xim[oa]?|[nd]?es[st][ea]|[uú]ltim[oa]?|em))\\s+ano))?\\b"
             .replace("{YearRegex}", YearRegex);
 
-    public static final String BeforeRegex = "(antes(\\s+(de|dos?|das?)?)?)";
+    public static final String BeforeRegex = "(antes(\\s+(d[aeo]s?)?)?|at[ée]h?(\\s+[oàa]s?\\b)?)";
 
-    public static final String AfterRegex = "((depois|ap[óo]s)(\\s*(de|d?os?|d?as?)?)?)";
+    public static final String AfterRegex = "((depois|ap[óo]s|a\\s+partir)(\\s*(de|d?[oa]s?)?)?)";
 
     public static final String SinceRegex = "(desde(\\s+(as?|o))?)";
 
     public static final String AroundRegex = "(?:\\b(?:cerca|perto|ao\\s+redor|por\\s+volta)\\s*?\\b)(\\s+(de|das))?";
 
-    public static final String PeriodicRegex = "\\b(?<periodic>di[áa]ri[ao]|diariamente|mensalmente|semanalmente|quinzenalmente|anualmente)\\b";
+    public static final String PeriodicRegex = "\\b(?<periodic>di[áa]ri[ao]|(diaria|mensal|semanal|quinzenal|anual)mente)\\b";
 
     public static final String EachExpression = "cada|tod[oa]s?\\s*([oa]s)?";
 
@@ -580,7 +580,7 @@ public class PortugueseDateTime {
     public static final String EachDayRegex = "\\s*({EachExpression})\\s*dias\\s*\\b"
             .replace("{EachExpression}", EachExpression);
 
-    public static final String BeforeEachDayRegex = "({EachExpression})\\s*dias(\\s+(as|ao))?\\s*\\b"
+    public static final String BeforeEachDayRegex = "({EachExpression})\\s*dias(\\s+a[so])?\\s*\\b"
             .replace("{EachExpression}", EachExpression);
 
     public static final String SetEachRegex = "(?<each>({EachExpression})\\s*)"
@@ -964,6 +964,22 @@ public class PortugueseDateTime {
     public static final String YearPeriodRegex = "^[.]";
 
     public static final String FutureSuffixRegex = "\\b(seguinte(s)?|pr[oó]xim[oa](s)?|no\\s+futuro)\\b";
+
+    public static final String PastSuffixRegex = "^\\b$";
+
+    public static final String ModPrefixRegex = "\\b({RelativeRegex}|{AroundRegex}|{BeforeRegex}|{AfterRegex}|{SinceRegex})\\b"
+            .replace("{RelativeRegex}", RelativeRegex)
+            .replace("{AroundRegex}", AroundRegex)
+            .replace("{BeforeRegex}", BeforeRegex)
+            .replace("{AfterRegex}", AfterRegex)
+            .replace("{SinceRegex}", SinceRegex);
+
+    public static final String ModSuffixRegex = "\\b({AgoRegex}|{LaterRegex}|{BeforeAfterRegex}|{FutureSuffixRegex}|{PastSuffixRegex})\\b"
+            .replace("{AgoRegex}", AgoRegex)
+            .replace("{LaterRegex}", LaterRegex)
+            .replace("{BeforeAfterRegex}", BeforeAfterRegex)
+            .replace("{FutureSuffixRegex}", FutureSuffixRegex)
+            .replace("{PastSuffixRegex}", PastSuffixRegex);
 
     public static final ImmutableMap<String, Integer> WrittenDecades = ImmutableMap.<String, Integer>builder()
         .put("", 0)

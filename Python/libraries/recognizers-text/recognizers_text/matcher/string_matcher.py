@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 from .tokenizer import Tokenizer
 from .match_strategy import MatchStrategy
 from .simple_tokenizer import SimpleTokenizer

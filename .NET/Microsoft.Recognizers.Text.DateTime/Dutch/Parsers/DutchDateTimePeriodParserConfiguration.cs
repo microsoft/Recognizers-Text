@@ -1,4 +1,7 @@
-﻿using System.Collections.Immutable;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Dutch;
@@ -18,6 +21,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public static readonly Regex NightStartEndRegex =
             new Regex(DateTimeDefinitions.NightStartEndRegex, RegexFlags);
+
+        public static readonly Regex PeriodTimeOfDayWithDateRegex =
+            new Regex(DateTimeDefinitions.PeriodTimeOfDayWithDateRegex, RegexFlags);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
@@ -51,7 +57,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             FutureSuffixRegex = DutchDatePeriodExtractorConfiguration.FutureSuffixRegex;
             NumberCombinedWithUnitRegex = DutchDateTimePeriodExtractorConfiguration.TimeNumberCombinedWithUnit;
             UnitRegex = DutchTimePeriodExtractorConfiguration.TimeUnitRegex;
-            PeriodTimeOfDayWithDateRegex = DutchDateTimePeriodExtractorConfiguration.PeriodTimeOfDayWithDateRegex;
             RelativeTimeUnitRegex = DutchDateTimePeriodExtractorConfiguration.RelativeTimeUnitRegex;
             RestOfDateTimeRegex = DutchDateTimePeriodExtractorConfiguration.RestOfDateTimeRegex;
             AmDescRegex = DutchDateTimePeriodExtractorConfiguration.AmDescRegex;
@@ -114,7 +119,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public Regex UnitRegex { get; }
 
-        public Regex PeriodTimeOfDayWithDateRegex { get; }
+        Regex IDateTimePeriodParserConfiguration.PeriodTimeOfDayWithDateRegex => PeriodTimeOfDayWithDateRegex;
 
         public Regex RelativeTimeUnitRegex { get; }
 
@@ -132,49 +137,49 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public Regex AfterRegex { get; }
 
-        bool IDateTimePeriodParserConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+        // CheckBothBeforeAfter normally gets its value from DateTimeDefinitions.CheckBothBeforeAfter which however for Dutch is false.
+        // It only needs to be true in DateTimePeriod.
+        bool IDateTimePeriodParserConfiguration.CheckBothBeforeAfter => true;
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
 
-        public bool GetMatchedTimeRange(string text, out string timeStr, out int beginHour, out int endHour, out int endMin)
+        public bool GetMatchedTimeRange(string text, out string todSymbol, out int beginHour, out int endHour, out int endMin)
         {
             var trimmedText = text.Trim();
 
             beginHour = 0;
             endHour = 0;
             endMin = 0;
+
             if (MorningStartEndRegex.IsMatch(trimmedText))
             {
-                timeStr = "TMO";
-                beginHour = 8;
-                endHour = Constants.HalfDayHourCount;
+                todSymbol = Constants.Morning;
             }
             else if (AfternoonStartEndRegex.IsMatch(trimmedText))
             {
-                timeStr = "TAF";
-                beginHour = Constants.HalfDayHourCount;
-                endHour = 16;
+                todSymbol = Constants.Afternoon;
             }
             else if (EveningStartEndRegex.IsMatch(trimmedText))
             {
-                timeStr = "TEV";
-                beginHour = 16;
-                endHour = 20;
+                todSymbol = Constants.Evening;
             }
             else if (NightStartEndRegex.IsMatch(trimmedText))
             {
-                timeStr = "TNI";
-                beginHour = 20;
-                endHour = 23;
-                endMin = 59;
+                todSymbol = Constants.Night;
             }
             else
             {
-                timeStr = null;
+                todSymbol = null;
                 return false;
             }
+
+            var parseResult = TimexUtility.ResolveTimeOfDay(todSymbol);
+            todSymbol = parseResult.Timex;
+            beginHour = parseResult.BeginHour;
+            endHour = parseResult.EndHour;
+            endMin = parseResult.EndMin;
 
             return true;
         }

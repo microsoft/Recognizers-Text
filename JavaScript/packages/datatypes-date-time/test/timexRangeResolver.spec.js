@@ -1,4 +1,5 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
 
 const chai = require('chai');
 const { TimexProperty, creator, resolver } = require('../index.js');

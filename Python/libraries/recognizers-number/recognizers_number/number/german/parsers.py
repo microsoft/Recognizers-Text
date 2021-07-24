@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 from typing import Dict, Pattern, List
 
 from recognizers_text.utilities import RegExpUtility

@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Linq;
 using Microsoft.Recognizers.Text.Number.English;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

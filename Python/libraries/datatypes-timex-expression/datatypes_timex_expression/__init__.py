@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 from .timex_constants import *
 from .timex_parsing import *
 from .timex_regex import *
