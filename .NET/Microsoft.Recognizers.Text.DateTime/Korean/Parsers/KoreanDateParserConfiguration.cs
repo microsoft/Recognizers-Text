@@ -13,8 +13,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_DATE; // "Date";
 
-        public static readonly List<int> MonthMaxDays = new List<int> { 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-
         public KoreanDateParserConfiguration(ICJKCommonDateTimeParserConfiguration config)
              : base(config)
         {
@@ -25,6 +23,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
 
             DateExtractor = config.DateExtractor;
             DurationExtractor = config.DurationExtractor;
+            DurationParser = config.DurationParser;
 
             DateRegexList = new KoreanDateExtractorConfiguration(this).DateRegexList;
             SpecialDate = KoreanDateExtractorConfiguration.SpecialDate;
@@ -43,6 +42,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
             ThisRegex = KoreanDateExtractorConfiguration.ThisRegex;
             LastRegex = KoreanDateExtractorConfiguration.LastRegex;
             WeekDayOfMonthRegex = KoreanDateExtractorConfiguration.WeekDayOfMonthRegex;
+            WeekDayAndDayRegex = KoreanDateExtractorConfiguration.WeekDayAndDayRegex;
+            DurationRelativeDurationUnitRegex = KoreanDateExtractorConfiguration.DurationRelativeDurationUnitRegex;
+            SpecialDayWithNumRegex = KoreanDateExtractorConfiguration.SpecialDayWithNumRegex;
 
             CardinalMap = config.CardinalMap;
             UnitMap = config.UnitMap;
@@ -61,6 +63,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
         public IDateTimeExtractor DateExtractor { get; }
 
         public IDateTimeExtractor DurationExtractor { get; }
+
+        public IDateTimeParser DurationParser { get; }
 
         public IEnumerable<Regex> DateRegexList { get; }
 
@@ -90,6 +94,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
 
         public Regex WeekDayOfMonthRegex { get; }
 
+        public Regex WeekDayAndDayRegex { get; }
+
+        public Regex DurationRelativeDurationUnitRegex { get; }
+
+        public Regex SpecialDayWithNumRegex { get; }
+
         public Regex DynastyYearRegex { get; }
 
         public ImmutableDictionary<string, int> DynastyYearMap { get; }
@@ -111,8 +121,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
         public string NextMonthToken => DateTimeDefinitions.ParserConfigurationNextMonthToken;
 
         public string LastMonthToken => DateTimeDefinitions.ParserConfigurationLastMonthToken;
-
-        List<int> ICJKDateParserConfiguration.MonthMaxDays => MonthMaxDays;
 
         public int GetSwiftDay(string text)
         {

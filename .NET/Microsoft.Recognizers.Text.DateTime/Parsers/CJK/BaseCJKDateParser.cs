@@ -63,12 +63,12 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (!innerResult.Success)
             {
-                innerResult = ParseImplicitDate(text, reference);
+                innerResult = ParseWeekdayOfMonth(text, reference);
             }
 
             if (!innerResult.Success)
             {
-                innerResult = ParseWeekdayOfMonth(text, reference);
+                innerResult = ParseImplicitDate(text, reference);
             }
 
             if (!innerResult.Success)
@@ -173,7 +173,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 DateObject futureDate, pastDate;
 
-                if (day > GetMonthMaxDay(year, month))
+                if (day > DateObjectExtension.GetMonthMaxDay(year, month))
                 {
                     var futureMonth = month + 1;
                     var pastMonth = month - 1;
@@ -282,6 +282,72 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return ret;
             }
 
+            // Handle "今から2日曜日" (2 Sundays from now)
+            var exactMatch = this.config.SpecialDayWithNumRegex.MatchExact(text, trim: true);
+
+            if (exactMatch.Success)
+            {
+                var numErs = this.config.IntegerExtractor.Extract(text);
+                var weekdayStr = exactMatch.Groups["weekday"].Value;
+
+                if (!string.IsNullOrEmpty(weekdayStr) && numErs.Count > 0)
+                {
+                    var num = Convert.ToInt32((double)(this.config.NumberParser.Parse(numErs[0]).Value ?? 0));
+                    var value = referenceDate;
+
+                    // Check whether the determined day of this week has passed.
+                    if (value.DayOfWeek > (DayOfWeek)this.config.DayOfWeek[weekdayStr])
+                    {
+                        num--;
+                    }
+
+                    while (num-- > 0)
+                    {
+                        value = value.Next((DayOfWeek)this.config.DayOfWeek[weekdayStr]);
+                    }
+
+                    ret.Timex = DateTimeFormatUtil.LuisDate(value);
+                    ret.FutureValue = ret.PastValue = DateObject.MinValue.SafeCreateFromValue(value.Year, value.Month, value.Day);
+                    ret.Success = true;
+
+                    return ret;
+                }
+
+            }
+
+            // handle "明日から3週間" (3 weeks from tomorrow)
+            var durationResult = this.config.DurationExtractor.Extract(text, referenceDate);
+            var unitMatch = this.config.DurationRelativeDurationUnitRegex.Match(text);
+
+            if (exactMatch.Success && unitMatch.Success && (durationResult.Count > 0) &&
+                string.IsNullOrEmpty(unitMatch.Groups["few"].Value))
+            {
+                var pr = this.config.DurationParser.Parse(durationResult[0], referenceDate);
+                var dayStr = unitMatch.Groups["later"].Value;
+                var future = true;
+                int swift = 0;
+
+                if (pr != null)
+                {
+                    if (!string.IsNullOrEmpty(dayStr))
+                    {
+                        swift = this.config.GetSwiftDay(dayStr);
+                    }
+
+                    var resultDateTime = DurationParsingUtil.ShiftDateTime(pr.TimexStr, referenceDate.AddDays(swift), future);
+                    ret.Timex = $"{DateTimeFormatUtil.LuisDate(resultDateTime)}";
+                    ret.FutureValue = ret.PastValue = resultDateTime;
+                    ret.Success = true;
+                    return ret;
+                }
+
+            }
+
+            if (!ret.Success)
+            {
+                ret = MatchWeekdayAndDay(text, referenceDate);
+            }
+
             if (!ret.Success)
             {
                 ret = MatchThisWeekday(text, referenceDate);
@@ -300,6 +366,112 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (!ret.Success)
             {
                 ret = MatchWeekdayAlone(text, referenceDate);
+            }
+
+            return ret;
+        }
+
+        protected DateTimeResolutionResult MatchWeekdayAndDay(string text, DateObject reference)
+        {
+            var ret = new DateTimeResolutionResult();
+
+            // Handling cases like 'Monday 21', which both 'Monday' and '21' refer to the same date.
+            // The year of expected date can be different to the year of referenceDate.
+            var match = this.config.WeekDayAndDayRegex.Match(text);
+
+            if (match.Success)
+            {
+                int month = reference.Month, year = reference.Year;
+
+                // Create a extract result which content ordinal string of text
+                ExtractResult ertmp = new ExtractResult
+                {
+                    Text = match.Groups["day"].Value,
+                    Start = match.Groups["day"].Index,
+                    Length = match.Groups["day"].Length,
+                };
+
+                // Parse the day in text into number
+                var day = ConvertCJKToNum(match.Groups["day"].Value);
+
+                // Firstly, find a latest date with the "day" as pivotDate.
+                // Secondly, if the pivotDate equals the referenced date, in other word, the day of the referenced date is exactly the "day".
+                // In this way, check if the pivotDate is the weekday. If so, then the futureDate and the previousDate are the same date (referenced date).
+                // Otherwise, increase the pivotDate month by month to find the latest futureDate and decrease the pivotDate month
+                // by month to the latest previousDate.
+                // Notice: if the "day" is larger than 28, some months should be ignored in the increase or decrease procedure.
+                var pivotDate = new DateObject(year, month, 1);
+                var daysInMonth = DateObject.DaysInMonth(year, month);
+                if (daysInMonth >= day)
+                {
+                    pivotDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
+                }
+                else
+                {
+                    // Add 1 month is enough, since 1, 3, 5, 7, 8, 10, 12 months has 31 days
+                    pivotDate = pivotDate.AddMonths(1);
+                    pivotDate = DateObject.MinValue.SafeCreateFromValue(pivotDate.Year, pivotDate.Month, day);
+                }
+
+                var numWeekDayInt = (int)pivotDate.DayOfWeek;
+                var extractedWeekDayStr = match.Groups["weekday"].Value;
+                var weekDay = this.config.DayOfWeek[extractedWeekDayStr];
+                if (!pivotDate.Equals(DateObject.MinValue))
+                {
+                    if (numWeekDayInt == weekDay)
+                    {
+                        // The referenceDate is the weekday and with the "day".
+                        ret.FutureValue = new DateObject(year, month, day);
+                        ret.PastValue = new DateObject(year, month, day);
+                        ret.Timex = DateTimeFormatUtil.LuisDate(year, month, day);
+                    }
+                    else
+                    {
+                        var futureDate = pivotDate;
+                        var pastDate = pivotDate;
+
+                        while ((int)futureDate.DayOfWeek != weekDay || futureDate.Day != day || futureDate < reference)
+                        {
+                            // Increase the futureDate month by month to find the expected date (the "day" is the weekday) and
+                            // make sure the futureDate not less than the referenceDate.
+                            futureDate = futureDate.AddMonths(1);
+                            var tmp = DateObject.DaysInMonth(futureDate.Year, futureDate.Month);
+                            if (tmp >= day)
+                            {
+                                // For months like January 31, after add 1 month, February 31 won't be returned, so the day should be revised ASAP.
+                                futureDate = futureDate.SafeCreateFromValue(futureDate.Year, futureDate.Month, day);
+                            }
+                        }
+
+                        ret.FutureValue = futureDate;
+
+                        while ((int)pastDate.DayOfWeek != weekDay || pastDate.Day != day || pastDate > reference)
+                        {
+                            // Decrease the pastDate month by month to find the expected date (the "day" is the weekday) and
+                            // make sure the pastDate not larger than the referenceDate.
+                            pastDate = pastDate.AddMonths(-1);
+                            var tmp = DateObject.DaysInMonth(pastDate.Year, pastDate.Month);
+                            if (tmp >= day)
+                            {
+                                // For months like March 31, after minus 1 month, February 31 won't be returned, so the day should be revised ASAP.
+                                pastDate = pastDate.SafeCreateFromValue(pastDate.Year, pastDate.Month, day);
+                            }
+                        }
+
+                        ret.PastValue = pastDate;
+
+                        if (weekDay == 0)
+                        {
+                            weekDay = 7;
+                        }
+
+                        ret.Timex = DateTimeFormatUtil.LuisDate(pastDate);
+                    }
+                }
+
+                ret.Success = true;
+
+                return ret;
             }
 
             return ret;
@@ -545,12 +717,19 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var firstDay = DateObject.MinValue.SafeCreateFromValue(year, month, 1);
             var firstWeekday = firstDay.This((DayOfWeek)weekday);
+            int dayOfWeekOfFirstDay = (int)firstDay.DayOfWeek;
+
             if (weekday == 0)
             {
                 weekday = 7;
             }
 
-            if (weekday < (int)firstDay.DayOfWeek)
+            if (dayOfWeekOfFirstDay == 0)
+            {
+                dayOfWeekOfFirstDay = 7;
+            }
+
+            if (weekday < dayOfWeekOfFirstDay)
             {
                 firstWeekday = firstDay.Next((DayOfWeek)weekday);
             }
@@ -585,19 +764,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return match.Success;
         }
 
-        private int GetMonthMaxDay(int year, int month)
-        {
-            var maxDay = this.config.MonthMaxDays[month - 1];
-
-            if (!DateObject.IsLeapYear(year) && month == 2)
-            {
-                maxDay -= 1;
-            }
-
-            return maxDay;
-        }
-
-        // Handle cases like "三天前"
+        // Handle cases like "三天前" "Three days ago"
         private DateTimeResolutionResult ParserDurationWithAgoAndLater(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();
@@ -615,7 +782,30 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var srcUnit = match.Groups["unit"].Value;
 
                     var numberStr = text.Substring((int)durationRes[0].Start, match.Index - (int)durationRes[0].Start).Trim();
-                    var number = ConvertCJKToNum(numberStr);
+
+                    var unitMatch = this.config.DurationRelativeDurationUnitRegex.Match(text);
+
+                    // set the inexact number "数" (few) to 3 for now
+                    var number = numberStr.Equals(unitMatch.Groups["few"].Value, StringComparison.Ordinal) ? 3 : ConvertCJKToNum(numberStr);
+
+                    if (!numberStr.Equals(unitMatch.Groups["few"].Value, StringComparison.Ordinal))
+                    {
+                        if (suffix.Equals(unitMatch.Value, StringComparison.Ordinal))
+                        {
+                            var pr = this.config.DurationParser.Parse(durationRes[0], referenceDate);
+                            var future = suffix.Equals(unitMatch.Groups["later"].Value, StringComparison.Ordinal);
+                            int swift = 0;
+
+                            if (pr != null)
+                            {
+                                var resultDateTime = DurationParsingUtil.ShiftDateTime(pr.TimexStr, referenceDate.AddDays(swift), future);
+                                ret.Timex = $"{DateTimeFormatUtil.LuisDate(resultDateTime)}";
+                                ret.FutureValue = ret.PastValue = resultDateTime;
+                                ret.Success = true;
+                                return ret;
+                            }
+                        }
+                    }
 
                     if (this.config.UnitMap.ContainsKey(srcUnit))
                     {

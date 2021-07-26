@@ -21,5 +21,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex AfterRegex { get; }
 
         IDateTimeExtractor DurationExtractor { get; }
+
+        Dictionary<char, char> NormalizeCharMap { get; }
     }
 }

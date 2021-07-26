@@ -1022,5 +1022,29 @@
         "Length": 3
       }
     ]
+  },
+  {
+    "Input": "旧暦の正月初一",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "旧暦の正月初一",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-01",
+          "FutureResolution": {
+            "date": "2018-01-01"
+          },
+          "PastResolution": {
+            "date": "2017-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 7
+      }
+    ]
   }
 ]

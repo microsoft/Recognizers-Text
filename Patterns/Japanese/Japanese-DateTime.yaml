@@ -3,47 +3,49 @@
 LangMarker: Jpn
 #DateExtractorCJK
 MonthRegex: !simpleRegex
-  def: (?<month>(正|一|二|三|四|五|六|七|八|九|十|十一|十二|[1１][012０１２]|[0０]?[\d１２３４５６７８９])\s*月)
+  def: (?<month>(正|一|二|三|四|五|六|七|八|九|十|十一|十二|1[012]|0?\d)\s*月)
 MonthRegexForPeriod: !simpleRegex
   def: (?<month>正月|一月|二月|三月|四月|五月|六月|七月|八月|九月|十月|十一月|十二月|(0?[1-9]|1[0-2])月)(?=\b|t|まで|から)?
 MonthNumRegexForPeriod: !simpleRegex
   def: (?<month>0?[1-9]|1[0-2])(?=\b|t|まで|から)?
 DayRegex: !simpleRegex
-  def: (?<day>[0-2]?[1-9]|[1-3]0|31)日?
+  def: (?<day>[0-2]?[1-9]|[1-3]0|31)日?目?
 DayRegexForPeriod: !simpleRegex
-  def: (?<day>[3３][01０１]|[012０１２]?[\d０１２３４５６７８９]|(三十一?|(一|二)?十?[一二三四五六七八九]))(\s*日)?(?=\b|t|まで|から)?
+  def: (?<day>3[01]|[0-2]?\d|(三十一?|(一|二)?十?[一二三四五六七八九]))(\s*日目?)?(?=\b|t|まで|から)?
 DateDayRegexInCJK: !simpleRegex
-  def: (?<day>初一|三十|(一|十一|二十一|三十一|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|一|十一|十|二十一|二十|三十一|三十|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|十|二十|三十|[1-2]?[1-9]|[1-3]0|31)\s*日|一号|十一号|二十一号|三十一号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|一号|十一号|十号|二十一号|二十号|三十一号|三十号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|十号|二十号|三十号|([1-2]?[1-9]|[1-3]0|31)号)
+  def: (?<day>初一|((二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|十一|二十一|三十一|十二|十三|十四|十五|十六|十七|十八|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|十一|十|二十一|二十|三十一|三十|十二|十三|十四|十五|十六|十七|十八|十九|十|二十|三十|一|二|三|四|五|六|七|八|九|10|11|12|13|14|15\s*|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)|3[01]|[0-2]?\d)\s*日|一号|十一号|二十一号|三十一号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|一号|十一号|十号|二十一号|二十号|三十一号|三十号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|十号|二十号|三十号|10号|11号|12号|13号|14号|15号|16号|17号|18号|19号|1号|20号|21号|22号|23号|24号|25号|26号|27号|28号|29号|2号|30号|31号|3号|4号|5号|6号|7号|8号|9号)目?
 DayRegexNumInCJK: !simpleRegex
   def: (?<day>一|十一|二十一|三十一|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|一|十一|十|二十一|二十|三十一|三十|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|十|二十|廿|卅)
 MonthNumRegex: !simpleRegex
   def: (?<month>0?[1-9]|1[0-2])
 TwoNumYear: '50'
 YearNumRegex: !simpleRegex
-  def: (?<year>((昭和|平成|令和|大正|明治|寛政|享和|文化|文政|天保|弘化|嘉永|安政|万延|文久|元治|慶応)(元|[0123456０１２３４５６]?[\d０１２３４５６７８９]|(三十一?|(一|二)?十?[一二三四五六七八九])))|((1[5-9]|20)\d{2})|2100|((一[五六七八九]|二〇)[〇一二三四五六七八九]{2}))年?
+  def: (?<year>((1[5-9]|20)[0-9]{2})|2100)年?
 SimpleYearRegex: !simpleRegex
-  def: (?<year>(((昭和|平成|令和|大正|明治|寛政|享和|文化|文政|天保|弘化|嘉永|安政|万延|文久|元治|慶応)(元|[0123456０１２３４５６]?[\d０１２３４５６７８９]|(三十一?|(一|二)?十?[一二三四五六七八九])))|((一[五六七八九]|二〇)[〇一二三四五六七八九]{2})|\d{2,4}))(\s*年)?
+  def: (?<year>([0-9]{2,4}))(\s*年)?
 ZeroToNineIntegerRegexCJK: !simpleRegex
-  def: '[一二三四五六七八九零壹贰叁肆伍陆柒捌玖〇两千俩倆仨]'
-DynastyStartYear: ''
-DynastyYearRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in Chinese
-  def: ^[.]
+  def: '[一二三四五六七八九十零壹贰叁肆伍陆柒捌玖〇两千俩倆仨]'
+DynastyStartYear: '元'
+RegionTitleRegex: !simpleRegex
+  def: (昭和|平成|令和|大正|明治|寛政|享和|文化|文政|天保|弘化|嘉永|安政|万延|文久|元治|慶応)
+DynastyYearRegex: !nestedRegex
+  def: (?<dynasty>{RegionTitleRegex})(?<biasYear>({DynastyStartYear}|\d{1,2}|({ZeroToNineIntegerRegexCJK}){1,3}))年?
+  references: [RegionTitleRegex, DynastyStartYear, ZeroToNineIntegerRegexCJK]
 DateYearInCJKRegex: !nestedRegex
-  def: (?<yearCJK>({ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}|{ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}|{ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}))
-  references: [ZeroToNineIntegerRegexCJK]
+  def: (?<yearCJK>({ZeroToNineIntegerRegexCJK}{2,4}|{DynastyYearRegex}))年?
+  references: [ZeroToNineIntegerRegexCJK, DynastyYearRegex]
 WeekDayRegex: !simpleRegex
   def: (?<weekday>日曜日?|月曜日?|火曜日?|水曜日?|木曜日?|金曜日?|土曜日?)\s?
 LunarRegex: !simpleRegex
   def: (农历|初一|正月|大年|旧暦)
 DateThisRegex: !nestedRegex
-  def: (这个|这一个|这|这一|本|今週|そ)(的|の)?({WeekDayRegex}|日)
+  def: (这个|这一个|这|这一|本|今週|そ|こ)(的|の)?({WeekDayRegex}|日)
   references: [WeekDayRegex]
 DateLastRegex: !nestedRegex
   def: (上一个|上个|上一|上|最后一个|最后|先週|最後)(的|の)?({WeekDayRegex}|日)
   references: [WeekDayRegex]
 DateNextRegex: !nestedRegex
-  def: (下一个|下个|下一|下|来週)(的|の)?{WeekDayRegex}
+  def: (下一个|下个|下一|下|来週|次)(的|の)?{WeekDayRegex}
   references: [WeekDayRegex]
 # TODO: Modify the 3 regex according to the counterpart in Korean
 WoMLastRegex: !simpleRegex
@@ -57,15 +59,17 @@ SpecialMonthRegex: !simpleRegex
 SpecialYearRegex: !simpleRegex
   def: (昨年|再?来年|今年|前年|ことし|さ?らいねん|きょねん|さくねん|去年)
 SpecialDayRegex: !simpleRegex
-  def: ((いっ)?さくじつ|おとつい|最近|前天|后天|昨天|明天|今天|今日?|明日|一?昨?昨日|一昨日|大后天|大前天|後天|大後天|きょう|あす|あした|きのう|明々後日|(弥)?明後日|この日|前日|二日前|おととい|し?あさって)((から|の)([\d１２３４５６７８９十一二三四五六七八九]*)(日|週)間?(先|後|前)?(の(日曜日?|月曜日?|火曜日?|水曜日?|木曜日?|金曜日?|土曜日?))?)?
+  def: ((いっ)?さくじつ|おとつい|最近|前天|后天|明日から二日|昨日の2日前|昨日から4日|今日から二日|今日から4日|昨日から2日間|昨天|明天|今天|今日|明日|一?昨?昨日|一昨日|大后天|大前天|後天|大後天|きょう|あす|あした|きのう|明々後日|(弥)?明後日|この日|前日|二日前|おととい|し?あさって|私の一日|この間|次の日|その日|最後の日)
 SpecialDayWithNumRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
+  def: ((いっ)?さくじつ|おとつい|最近|前天|后天|昨天|明天|今天|今日?|明日|一?昨?昨日|一昨日|大后天|大前天|後天|大後天|きょう|あす|あした|きのう|明々後日|(弥)?明後日|この日|前日|二日前|おととい|し?あさって|私の一日|この間|次の日|その日)(から|の)?([\d十一二三四五六七八九]*|数)(日|月|週|個)間?(先|後|前|以内)?(の(?<weekday>日曜日?|月曜日?|火曜日?|水曜日?|木曜日?|金曜日?|土曜日?))?
 WeekDayOfMonthRegex: !nestedRegex
-  def: ((({MonthRegex}|{MonthNumRegex}|((这个|这一个|这|这一|本|今|上个|上一个|上|上一|去|下个|下一个|下|下一|明)月))(的|の)\s*)(?<cardinal>(第[一二三四五]个?)|(第[12345１２３４５])|最后一个?)\s*{WeekDayRegex})
-  references: [MonthRegex, MonthNumRegex, WeekDayRegex]
+  def: ((({SpecialMonthRegex}|{MonthRegex}|{MonthNumRegex}|((这个|这一个|这|这一|本|今|上个|上一个|上|上一|去|下个|下一个|下|下一|明)月))(的|の)\s*)?(第|最)?(?<cardinal>([初一二三四五])|([1-5])|最后一)(个|の|\s)*{WeekDayRegex})
+  references: [SpecialMonthRegex, MonthRegex, MonthNumRegex, WeekDayRegex]
+WeekDayAndDayRegex: !nestedRegex
+  def: ({DayRegexForPeriod}(の|的)?(\s|,|，|、)*{WeekDayRegex})
+  references: [DayRegexForPeriod, WeekDayRegex]
 ThisPrefixRegex: !simpleRegex
-  def: 这个|这一个|这|这一|本|今
+  def: 这个|这一个|这|这一|本|今|こ
 LastPrefixRegex: !simpleRegex
   def: 上个|上一个|上|上一|去
 NextPrefixRegex: !simpleRegex
@@ -74,37 +78,37 @@ RelativeRegex: !nestedRegex
   def: (?<order>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex}))
   references: [ThisPrefixRegex, LastPrefixRegex, NextPrefixRegex]
 SpecialDate: !nestedRegex
-  def: (?<thisyear>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex})年)?(の|的)?(?<thismonth>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex})月)?(の|的)?{DateDayRegexInCJK}
+  def: (?<thisyear>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex})年)?(の|的)?(?<thismonth>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex})(の|的)?月)?(の|的)?{DateDayRegexInCJK}
   references: [ThisPrefixRegex, LastPrefixRegex, NextPrefixRegex, DateDayRegexInCJK]
 DateUnitRegex: !simpleRegex
-  def: (?<unit>年|个月|周|(営業)?日|天|週間?|星期|个星期|か月)
+  def: (?<unit>年|个月|月|周|(?<business>営業)日|(?<!(明|昨|今))日|天|週間?|星期|个星期|か月)
 BeforeRegex: !simpleRegex
-  def: 以前|之前|前|以内
+  def: 以前|之前|前
 AfterRegex: !simpleRegex
-  def: 以后|以後|之后|之後|后|後|先|で(?!す)
+  def: 以内|以后|以後|之后|之後|后|後|先|で(?!す)
 DateRegexList1: !nestedRegex
   # ２０１６年１２月１日
-  def: ({LunarRegex}(的|の|\s)*)?({SimpleYearRegex}[/\\\-]?(\s*{MonthRegex})[/\\\-]?(\s*{DayRegexForPeriod})((\s|,|，|、)*{WeekDayRegex})?)
-  references: [ MonthRegex, DayRegexForPeriod, SimpleYearRegex, WeekDayRegex, LunarRegex ]
+  def: ({LunarRegex}(的|の|\s)*)?(({SimpleYearRegex}|{DateYearInCJKRegex})[/\\\-の的]?(\s*{MonthRegex})[/\\\-の的]?(\s*{DayRegexForPeriod})((\s|,|，|、)*{WeekDayRegex})?)
+  references: [ MonthRegex, DayRegexForPeriod, SimpleYearRegex, WeekDayRegex, LunarRegex, DateYearInCJKRegex ]
 DateRegexList2: !nestedRegex
   # ２０１６年１２月
-  def: ({SimpleYearRegex}{MonthRegexForPeriod}\s*)
-  references: [ MonthRegexForPeriod, SimpleYearRegex ]
+  def: (({SimpleYearRegex}|{DateYearInCJKRegex}){MonthRegexForPeriod}\s*)
+  references: [ MonthRegexForPeriod, SimpleYearRegex, DateYearInCJKRegex ]
 DateRegexList3: !nestedRegex
-  def: ((({SimpleYearRegex}|{DateYearInCJKRegex})年)(\s*))?({LunarRegex}(的|の|\s)*)?{MonthRegex}(\s*)({DateDayRegexInCJK}|{DayRegex})((\s|,|，|、)*{WeekDayRegex})?({BeforeRegex}|{AfterRegex})?
+  def: ((({SimpleYearRegex}|{DateYearInCJKRegex})年)(的|の|\s)*)?({LunarRegex}(的|の|\s)*)?{MonthRegex}(\s*)({DateDayRegexInCJK}|{DayRegex})((\s|,|，|、)*{WeekDayRegex})?({BeforeRegex}|{AfterRegex})?
   references: [MonthRegex, DateDayRegexInCJK, SimpleYearRegex, LunarRegex, WeekDayRegex, DateYearInCJKRegex, BeforeRegex, AfterRegex, DayRegex]
 # 7/23
 DateRegexList4: !nestedRegex
-  def: '(?<!\d){MonthNumRegex}\s*[/\\\-\.]\s*{DayRegex}(?!\d*%)((\s+|\s*,\s*){SimpleYearRegex})?((\s|,|，|、)*{WeekDayRegex})?(?!\d)'
-  references: [MonthNumRegex, DayRegex, SimpleYearRegex, WeekDayRegex]
+  def: '(?<!\d){MonthNumRegex}\s*[/\\\-\.]\s*{DayRegex}(?!\d*%)((\s+|\s*,\s*)({SimpleYearRegex}|{DateYearInCJKRegex}))?((\s|,|，|、)*{WeekDayRegex})?(?!\d)'
+  references: [MonthNumRegex, DayRegex, SimpleYearRegex, WeekDayRegex, DateYearInCJKRegex ]
 # 23/7
 DateRegexList5: !nestedRegex
-  def: '(?<!\d){DayRegex}\s*[/\\\-\.]\s*{MonthNumRegex}(?!\d*%)((\s+|\s*,\s*){SimpleYearRegex})?((\s|,|，|、)*{WeekDayRegex})?(?!\d)'
-  references: [DayRegex, MonthNumRegex, SimpleYearRegex, WeekDayRegex]
+  def: '(?<!\d){DayRegex}\s*[/\\\-\.]\s*{MonthNumRegex}(?!\d*%)((\s+|\s*,\s*)({SimpleYearRegex}|{DateYearInCJKRegex}))?((\s|,|，|、)*{WeekDayRegex})?(?!\d)'
+  references: [DayRegex, MonthNumRegex, SimpleYearRegex, WeekDayRegex, DateYearInCJKRegex]
 # 3-23-2017
 DateRegexList6: !nestedRegex
-  def: '{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}\s*[/\\\-]\s*{SimpleYearRegex}'
-  references: [DayRegex, MonthNumRegex, SimpleYearRegex]
+  def: '{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}\s*[/\\\-]\s*({SimpleYearRegex}|{DateYearInCJKRegex})'
+  references: [DayRegex, MonthNumRegex, SimpleYearRegex, DateYearInCJKRegex ]
 # 23-3-2015
 DateRegexList7: !nestedRegex
   def: '{DayRegex}\s*[/\\\-\.]\s*{MonthNumRegex}\s*[/\\\-\.]\s*{YearNumRegex}'
@@ -115,16 +119,16 @@ DateRegexList8: !nestedRegex
   references: [YearNumRegex, MonthNumRegex, DayRegexForPeriod, WeekDayRegex]
 DateRegexList9: !nestedRegex
   # １２月/１日
-  def: ({LunarRegex}(的|の|\s)*)?((\s*{MonthRegex}[/\\\-]?{DayRegexForPeriod}((\s|,|，|、)*{WeekDayRegex})?)|((\s*{MonthRegex}[/\\\-]?)?{DayRegexForPeriod}(の|的)?((\s|,|，|、)*{WeekDayRegex})))
+  def: ({LunarRegex}(的|の|\s)*)?((\s*{MonthRegex}[/\\\-の的]?{DayRegexForPeriod}((\s|,|，|、)*{WeekDayRegex})?)|((\s*{MonthRegex}[/\\\-の的]?){DayRegexForPeriod}(の|的)?((\s|,|，|、)*{WeekDayRegex})))
   references: [ MonthRegex, DayRegexForPeriod, WeekDayRegex, LunarRegex ]
 DateRegexList10: !nestedRegex
   # 2016/12/23
-  def: ({SimpleYearRegex}[/\\\-]{MonthNumRegex}[/\\\-]{DayRegexForPeriod})
-  references: [ MonthNumRegex, DayRegexForPeriod, SimpleYearRegex ]
+  def: (({SimpleYearRegex}|{DateYearInCJKRegex})[/\\\-]{MonthNumRegex}[/\\\-]{DayRegexForPeriod})
+  references: [ MonthNumRegex, DayRegexForPeriod, SimpleYearRegex, DateYearInCJKRegex ]
 DateRegexList11: !nestedRegex
   # 2016/12
-  def: ({SimpleYearRegex}[/\\\-]{MonthNumRegexForPeriod})
-  references: [ MonthNumRegexForPeriod, SimpleYearRegex ]
+  def: (({SimpleYearRegex}|{DateYearInCJKRegex})[/\\\-]{MonthNumRegexForPeriod})
+  references: [ MonthNumRegexForPeriod, SimpleYearRegex, DateYearInCJKRegex ]
 # Note that these "Till" connector can be used without any suffix like "之间|之内|期间|中间|间"
 # DatePeriodExtractorCJK
 DatePeriodTillRegex: !simpleRegex
@@ -140,7 +144,7 @@ DatePeriodRangePrefixRegex: !simpleRegex
 DatePeriodTillSuffixRequiredRegex: !simpleRegex
   def: (?<till>与|和)
 DatePeriodDayRegexInCJK: !simpleRegex
-  def: (?<day>初一|三十|一日|十一日|二十一日|三十一日|二日|三日|四日|五日|六日|七日|八日|九日|十二日|十三日|十四日|十五日|十六日|十七日|十八日|十九日|二十二日|二十三日|二十四日|二十五日|二十六日|二十七日|二十八日|二十九日|一日|十一日|十日|二十一日|二十日|三十一日|三十日|二日|三日|四日|五日|六日|七日|八日|九日|十二日|十三日|十四日|十五日|十六日|十七日|十八日|十九日|二十二日|二十三日|二十四日|二十五日|二十六日|二十七日|二十八日|二十九日|十日|二十日|三十日|10日|11日|12日|13日|14日|15日|16日|17日|18日|19日|1日|20日|21日|22日|23日|24日|25日|26日|27日|28日|29日|2日|30日|31日|3日|4日|5日|6日|7日|8日|9日|一号|十一号|二十一号|三十一号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|一号|十一号|十号|二十一号|二十号|三十一号|三十号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|十号|二十号|三十号|10号|11号|12号|13号|14号|15号|16号|17号|18号|19号|1号|20号|21号|22号|23号|24号|25号|26号|27号|28号|29号|2号|30号|31号|3号|4号|5号|6号|7号|8号|9号|一|十一|二十一|三十一|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|一|十一|十|二十一|二十|三十一|三十|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|十|二十|三十|廿|卅)
+  def: (?<day>二十二日|二十三日|二十四日|二十五日|二十六日|二十七日|二十八日|二十九日|二十二日|二十三日|二十一日|十一日|三十一日|十二日|十三日|十四日|十五日|十六日|十七日|十八日|十九日|十日|二十日|三十日|一日|十日|初一|三十|二日|三日|四日|五日|六日|七日|八日|九日|(3[0-1]|[1-2]\d|0?[1-9])日|一号|十一号|二十一号|三十一号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|一号|十一号|十号|二十一号|二十号|三十一号|三十号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|十号|二十号|三十号|(3[0-1]|[1-2]\d|0?[1-9])号|一|十一|二十一|三十一|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|一|十一|十|二十一|二十|三十一|三十|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|十|二十|三十|廿|卅)目?
 DatePeriodThisRegex: !simpleRegex
   def: 这个|这一个|这|这一|本
 DatePeriodLastRegex: !simpleRegex
@@ -159,7 +163,7 @@ StrictYearRegex: !nestedRegex
 YearRegexInNumber: !simpleRegex
   def: (?<year>(\d{3,4}))
 DatePeriodYearInCJKRegex: !nestedRegex
-  def: (?<yearCJK>({ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}|{ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}|{ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}))年
+  def: (?<yearCJK>({ZeroToNineIntegerRegexCJK}{2,4}))年
   references: [ZeroToNineIntegerRegexCJK]
 MonthSuffixRegex: !nestedRegex
   def: (?<msuf>({RelativeMonthRegex}|{MonthRegex}))
@@ -180,7 +184,7 @@ OneWordPeriodRegex: !nestedRegex
   def: (((明年|今年|去年)\s*)?{MonthRegex}|({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})\s*(周末|周|月|年)|周末|今年|明年|去年|前年|后年)
   references: [MonthRegex, DatePeriodThisRegex, DatePeriodLastRegex, DatePeriodNextRegex]
 WeekOfMonthRegex: !nestedRegex
-  def: (?<wom>{MonthSuffixRegex}(的|の)(?<cardinal>第一|第二|第三|第四|第五|最后一)\s*周\s*)
+  def: ((?<wom>{MonthSuffixRegex}(的|の))第?(?<cardinal>一|二|三|四|五|最后一)\s*周\s*)
   references: [MonthSuffixRegex]
 UnitRegex: !simpleRegex
   def: (?<unit>年|(个)?月|周|日|天)
@@ -280,6 +284,20 @@ DateTimePeriodFollowedUnit: !nestedRegex
 DateTimePeriodNumberCombinedWithUnit: !nestedRegex
   def: \b(?<num>\d+(\.\d*)?){DateTimePeriodUnitRegex}
   references: [DateTimePeriodUnitRegex]
+PlusOneDayRegex: !simpleRegex
+  def: あす|あした|明日|来|次
+MinusOneDayRegex: !simpleRegex
+  def: きのう|最後の日|前日|昨
+PlusTwoDayRegex: !simpleRegex
+  def: 后天|後天|明後日|あさって|今日から二日
+MinusTwoDayRegex: !simpleRegex
+  def: 前天|一昨日|二日前|おととい
+PlusThreeDayRegex: !simpleRegex
+  def: 大后天|大後天|明日から二日|昨日から4日
+MinusThreeDayRegex: !simpleRegex
+  def: 大前天|昨日の2日前|昨日から2日間
+PlusFourDayRegex: !simpleRegex
+  def: 今日から4日
 #DurationExtractorCJK
 DurationAllRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in Korean
@@ -288,14 +306,12 @@ DurationHalfRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in Korean
   def: ^[.]
 DurationRelativeDurationUnitRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in Korean
-  def: ^[.]
+  def: (?<few>数ヶ|数)|(?<ago>前|昨日)|(?<later>後|明日)
 DurationDuringRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in Korean
   def: ^[.]
 DurationSomeRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in Korean
-  def: ^[.]
+  def: (数ヶ|数)(月|日|週間|年)
 DurationMoreOrLessRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in Korean
   def: ^[.]
@@ -311,7 +327,7 @@ DurationSuffixList: !dictionary
     H: 个小时|小时
     D: 営業日|天|日
     W: 星期|个星期|周|週間|週
-    Mon: 个月|か月|月
+    MON: 个月|か月|月
     Y: 年
 DurationAmbiguousUnits: !list
   types: [string]
@@ -332,9 +348,9 @@ DurationUnitRegex: !nestedRegex
   def: (?<unit>{DateUnitRegex}|分|秒|時間)
   references: [DateUnitRegex]
 DurationConnectorRegex: !simpleRegex
-  def: ^\s*(?<connector>[と]?)\s*$
+  def: ^\s*(?<connector>[と]?|,|、)\s*$
 LunarHolidayRegex: !nestedRegex
-  def: (({YearRegex}|{DatePeriodYearInCJKRegex}|(?<yearrel>明年|今年|去年|来年))(的)?)?(?<holiday>除夕|春节|中秋(節|节)?|元宵(节|節)|端午(节|の節句)?|重(阳节|陽節))
+  def: (({YearRegex}|{DatePeriodYearInCJKRegex}|(?<yearrel>明年|今年|去年|来年))(的)?)?(?<holiday>除夕|春节|旧暦の正月初一|中秋(節|节)?|元宵(节|節)|端午(节|の節句)?|重(阳节|陽節))
   references: [YearRegex, DatePeriodYearInCJKRegex]
 HolidayRegexList1: !nestedRegex
   def: (({YearRegex}|{DatePeriodYearInCJKRegex}|(?<yearrel>明年|今年|去年|来年))(的|の)?)?(?<holiday>新年|五一|劳动节|国際的な労働者の日|メーデー|元旦节|元旦|大晦日|愚人节|エイプリルフール|圣诞节|クリスマス(の日|イブ)?|感謝祭(の日)?|クリーンマンデイ|父の日|植树节|国庆节|国慶節|情人节|バレンタインデー|教(师节|師の日)|儿童节|妇女节|青年(节|の日)|建军节|建軍節|女生节|光棍节|双十一|清明(节|節)?|キング牧師記念日|旧正月|ガールズデー|(こども|子ども|子供)の日|お正月|植樹祭|シングルデー|シングルズデー|国際婦人デー|ダブル十一|復活祭|イースター)
@@ -459,8 +475,8 @@ ParserConfigurationSincePrefix: !simpleRegex
 ParserConfigurationSinceSuffix: !simpleRegex
   def: (以来|开始)
 ParserConfigurationLastWeekDayToken: 最后一个
-ParserConfigurationNextMonthToken: 下一个
-ParserConfigurationLastMonthToken: 上一个
+ParserConfigurationNextMonthToken: 来月
+ParserConfigurationLastMonthToken: 先月
 ParserConfigurationDatePrefix: ' '
 ParserConfigurationUnitMap: !dictionary
   types: [string, string]
@@ -563,6 +579,7 @@ ParserConfigurationCardinalMap: !dictionary
   types: [string, int]
   entries:
     一: 1
+    初: 1
     二: 2
     三: 3
     四: 4
@@ -625,6 +642,15 @@ ParserConfigurationDayOfMonth: !dictionary
     '29': 29
     '30': 30
     '31': 31
+    '01日': 1
+    '02日': 2
+    '03日': 3
+    '04日': 4
+    '05日': 5
+    '06日': 6
+    '07日': 7
+    '08日': 8
+    '09日': 9
     1日: 1
     2日: 2
     3日: 3
@@ -735,6 +761,7 @@ ParserConfigurationDayOfWeek: !dictionary
     金曜日: 5
     土曜日: 6
     日曜日: 0
+    最後の日: 6
 ParserConfigurationMonthOfYear: !dictionary
   types: [string, int]
   entries:
@@ -816,7 +843,7 @@ DurationUnitValueMap: !dictionary
   types: [string, long]
   entries:
     Y: 31536000
-    Mon: 2592000
+    MON: 2592000
     W: 604800
     D: 86400
     H: 3600
@@ -941,4 +968,43 @@ DynastyYearMap: !dictionary
   # TODO: populate dictionary according to the counterpart in Chinese
   entries:
     贞观: 627
+    昭和: 1926
+    平成: 1989
+    令和: 2019
+    大正: 1912
+    明治: 1868
+    寛政: 1789
+    享和: 1801
+    文化: 1804
+    文政: 1818
+    天保: 1830
+    弘化: 1844
+    嘉永: 1848
+    安政: 1854
+    万延: 1860
+    文久: 1861
+    元治: 1864
+    慶応: 1865
+NormalizeCharMap: !dictionary
+  types: [char, char]
+  entries:
+    ０: '0'
+    １: '1'
+    ２: '2'
+    ３: '3'
+    ４: '4'
+    ５: '5'
+    ６: '6'
+    ７: '7'
+    ８: '8'
+    ９: '9'
+    ／: '/'
+    －: '-'
+    ，: "'"
+    Ｇ: G
+    Ｍ: M
+    Ｔ: T
+    Ｋ: K
+    ｋ: k
+    ．: '.'
 ...

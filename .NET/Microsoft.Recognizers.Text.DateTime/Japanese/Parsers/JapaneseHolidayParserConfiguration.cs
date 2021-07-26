@@ -24,6 +24,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             { "旧正月", NewYear },
             { "元旦节", NewYear },
             { "お正月", NewYear },
+            { "旧暦の正月初一", SpringDay },
             { "教师节", TeacherDay },
             { "教師の日", TeacherDay },
             { "青年节", YouthDay },
