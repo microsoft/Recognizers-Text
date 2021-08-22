@@ -1,0 +1,445 @@
+---
+#ISO 639-2 Code
+LangMarker: Heb
+#Does this language use non-whitespace-separated numbers?
+CompoundNumberLanguage: !bool false
+#Does this culture uses period and comma intercheangeably as decimal separator?
+MultiDecimalSeparatorCulture: !bool true
+#Integer Regex
+RoundNumberIntegerRegex: !simpleRegex
+  def: (?:מאתיים|טריליון|טריליון|אלפים|טריליון|טריליונים|מיליארד|מיליארדים|מיליון|אלף|מאה|אלפיים|אלף)
+ZeroToNineIntegerRegex: !simpleRegex
+  def: (:?אחד|שניים|שלוש|ארבע|חמש|שש|שבע|שמונה|תשע|אחת|שתיים|שלושה|ארבעה|חמישה|ששה|שישה|שבעה|שמונה|תשעה|רביעית|חמישית|שישית|שבעית|שמינית|תשעית|תישעית|רביעי|חמישי|שישי|שביעי|שמיני|תשעי|תישעי|אפס)
+TwoToNineIntegerRegex: !simpleRegex
+  def: (:?שניים|שלוש|ארבע|חמש|שש|שבע|שמונה|תשע|שתיים|שלושה|ארבעה|חמישה|ששה|שישה|שבעה|שמונה|תשעה|רביעית|חמישית|שישית|שבעית|שמינית|תשעית|תישעית|רביעי|חמישי|שישי|שביעי|שמיני|תשעי|תישעי)
+NegativeNumberTermsRegex: !simpleRegex
+  def: (?<negTerm>(מינוס)(\s+)?)
+NegativeNumberSignRegex: !nestedRegex
+  def: ^{NegativeNumberTermsRegex}.*
+  references: [NegativeNumberTermsRegex]
+AnIntRegex: !simpleRegex
+  def: (אחד|אחת)(?=\s)
+TenToNineteenIntegerRegex: !simpleRegex
+  def: (?:((אחד|שנים|שלוש|ארבע|חמש|שש|שבע|שמונה|תשע|אחת|שתיים|שלושה|ארבעה|חמישה|ששה|שבעה|שמונה|תשעה)(\s|-)(עשר|עשרה)))
+TensNumberIntegerRegex: !simpleRegex
+  def: (?:עשר|עשרים|שלושים|ארבעים|חמישים|שישים|שבעים|שמונים|תשעים)
+SeparaIntRegex: !nestedRegex
+  def: (?:((({RoundNumberIntegerRegex}\s{RoundNumberIntegerRegex})|{TenToNineteenIntegerRegex}|({ZeroToNineIntegerRegex}(((و)?)\s+(و)?|\s*-\s*){TensNumberIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})(\s+{RoundNumberIntegerRegex})*))|(((\s+{RoundNumberIntegerRegex})+))
+  references:
+    [
+      TenToNineteenIntegerRegex,
+      TensNumberIntegerRegex,
+      ZeroToNineIntegerRegex,
+      RoundNumberIntegerRegex
+    ]
+AllIntRegex: !nestedRegex
+  def: (?:({SeparaIntRegex})((\s+(و)?)({SeparaIntRegex})(\s+{RoundNumberIntegerRegex})?)*|((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(و)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})?(\s+{RoundNumberIntegerRegex})+)\s+(و)?)*{SeparaIntRegex})
+  references:
+    [
+      TenToNineteenIntegerRegex,
+      TensNumberIntegerRegex,
+      ZeroToNineIntegerRegex,
+      RoundNumberIntegerRegex,
+      SeparaIntRegex,
+    ]
+PlaceHolderPureNumber: !simpleRegex
+  def: \b
+PlaceHolderDefault: !simpleRegex
+  def: \D|\b
+NumbersWithPlaceHolder: !paramsRegex
+  def: (((?<!\d+\s*)([-]\s*)?)|(?<=\b))\d+(?!([\.،,]\d+[\u0621-\u064A]))(?={placeholder})
+  params: [placeholder]
+NumbersWithSuffix: !nestedRegex
+  def: (((?<!\d+\s*)([-]\s*)?)|(?<=\b))\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)
+  references: [BaseNumbers.NumberMultiplierRegex]
+RoundNumberIntegerRegexWithLocks: !nestedRegex
+  def: (?<=\b)(\d+\s*({RoundNumberIntegerRegex})(\s|و\s|\sو))?\d+(\s|و\s|\sو)+{RoundNumberIntegerRegex}((\s*و\s*)+\d+)?(?=\b)
+  references: [RoundNumberIntegerRegex]
+NumbersWithDozenSuffix: !simpleRegex
+  def: (((?<!\d+\s*)([-]\s*)?)|(?<=\b))(\d+\s+)?(תריסר|עשרות)(?=\b)  
+AllIntRegexWithLocks: !nestedRegex
+  def: ((?<=\b){AllIntRegex}(?=\b))
+  references: [AllIntRegex]
+AllIntRegexWithDozenSuffixLocks: !nestedRegex
+  def: (?<=\b)(((חצי\s+)(תריסר))|({AllIntRegex}(و)?\s+((و)?))(תריסר))(?=\b)
+  references: [AllIntRegex]
+#Ordinal Regex
+RoundNumberOrdinalRegex: !nestedRegex
+  def: (?:((מ|ואילך)\s+)({RoundNumberIntegerRegex}))
+  references: [RoundNumberIntegerRegex]  
+NumberOrdinalRegex: !simpleRegex
+  def: (?:ראשון|שני|שלישי|רביעי|חמישי|שישי|ששי|שביעי|שמיני|תשעי|עשירי|ראשונה|שנייה|שלישית|רביעית|חמישית|שישית|שביעית|שמינית|עשירית)
+RelativeOrdinalRegex: !simpleRegex
+  def: (?<relativeOrdinal>)הקודם|הנוכחי|הבא|לפני אחרון|אחרון)
+BasicOrdinalRegex: !nestedRegex
+  def: ({NumberOrdinalRegex}|{RelativeOrdinalRegex})
+  references: [NumberOrdinalRegex, RelativeOrdinalRegex]
+SuffixBasicOrdinalRegex: !nestedRegex
+  def: (?:(((({TensNumberIntegerRegex}(\s+(و)?|\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|({RoundNumberIntegerRegex}|מאה(\s+(و)?)))((\s+{RoundNumberIntegerRegex}|מאה)+|({BasicOrdinalRegex})))\s+(و)?)*({TensNumberIntegerRegex}(\s+|\s*))?{BasicOrdinalRegex}|({TensNumberIntegerRegex}))
+  references:
+    [
+      TensNumberIntegerRegex,
+      ZeroToNineIntegerRegex,
+      RoundNumberIntegerRegex,
+      BasicOrdinalRegex
+    ]
+SuffixRoundNumberOrdinalRegex: !nestedRegex
+  def: (?:({AllIntRegex}\s+){RoundNumberOrdinalRegex})
+  references: [AllIntRegex, RoundNumberOrdinalRegex]
+AllOrdinalRegex: !nestedRegex
+  def: (?:{SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})
+  references: [SuffixBasicOrdinalRegex, SuffixRoundNumberOrdinalRegex]
+OrdinalNumericRegex: !simpleRegex
+  def: (?<=\b)(?:\d{1,3}(\s*,\s*\d{3})*\s*th)(?=\b)
+OrdinalRoundNumberRegex: !nestedRegex
+  def: ({RoundNumberOrdinalRegex})
+  references: [RoundNumberOrdinalRegex]
+OrdinalEnglishRegex: !nestedRegex
+  def: (?<=\b){AllOrdinalRegex}(?=\b)
+  references: [AllOrdinalRegex]
+#Fraction Regex
+FractionNotationWithSpacesRegex: !simpleRegex
+  def: (((?<={?[\u0600-\u06ff]}|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))
+FractionNotationWithSpacesRegex2: !simpleRegex
+  def: (((?<={?[\u0600-\u06ff]}|^)-\s*)|(?<![/-])(?<=\b))\d+[/]\d+(?=(\b[^/]|$))(\s*\d+)
+FractionNotationRegex: !simpleRegex
+  def: (((?<={?[\u0600-\u06ff]}|^)-\s*)|(?<![/-])(?<=\b))\d+[/]\d+(?=(\b[^/]|$))
+HebrewBuiltInFraction: !simpleRegex
+  def: (?:חצי|עשירית|רבע|שליש)
+FractionOrdinalPrefix: !simpleRegex
+  def: (الوزن|المحتوى:?)  
+FractionNounRegex: !nestedRegex
+  def: (?<=\b){HebrewBuiltInFraction}|{AllIntRegex}\s(و\s|و){HebrewBuiltInFraction}|(({AllIntRegex}\s(و\s|و)?)?({AllIntRegex})(\s+|\s*)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|רבעים|ורבע|חצאיים|חצאים|וחצי|שליש|ושליש|רבע|רביעיות|חמישיות|עשיריות|חצי|רבע|חצי|שני שליש)(?=\b)
+  references: [AllIntRegex, HebrewBuiltInFraction, AllOrdinalRegex, RoundNumberOrdinalRegex]
+FractionNounWithArticleRegex: !nestedRegex
+  def: (?<=\b)((({AllIntRegex}(\s|(\s*-\s*)|و\s+)?)(({AllOrdinalRegex})|{NumberOrdinalRegex}|וחצי|ושליש|ורבע))|(החצי|השליש|הרבע|))(?=\b)
+  references: [AllIntRegex, AllOrdinalRegex, NumberOrdinalRegex]
+FractionPrepositionRegex: !nestedRegex
+  def: (?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<![\.,])\d+))\s+(חלקי)\s+(?<denominator>({AllIntRegex})|(\d+)(?![\.,]))(?=\b)  
+  references: [AllIntRegex, BaseNumbers.CommonCurrencySymbol]
+FractionPrepositionWithinPercentModeRegex: !nestedRegex
+  def: (?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<![\.,])\d+))\s+על\s+(?<denominator>({AllIntRegex})|(\d+)(?![\.,]))(?=\b)  
+  references: [AllIntRegex, BaseNumbers.CommonCurrencySymbol]
+FractionWithOrdinalPrefix: !nestedRegex
+  def: ({AllOrdinalRegex})(?=\s*({FractionOrdinalPrefix}))
+  references: [AllOrdinalRegex, FractionOrdinalPrefix]
+FractionWithPartOfPrefix: !nestedRegex
+  def: ((جزء من)\s+)({AllIntRegexWithLocks})
+  references: [AllIntRegexWithLocks]
+#Double Regex
+AllPointRegex: !nestedRegex
+  def: ((\s+{ZeroToNineIntegerRegex})+|(\s+{SeparaIntRegex}))
+  references: [ZeroToNineIntegerRegex, SeparaIntRegex]
+AllFloatRegex: !nestedRegex
+  def: '{AllIntRegex}(\s+(נקודה)){AllPointRegex}'
+  references: [AllIntRegex, AllPointRegex]
+DoubleWithMultiplierRegex: !nestedRegex
+  def: (((?<!\d+\s*)([-]\s*)?)|((?<=\b)(?<!\d+[\.,])))\d+\u202A?[\.,]\u202A?\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)  
+  references: [BaseNumbers.NumberMultiplierRegex]
+DoubleExponentialNotationRegex: !simpleRegex
+  def: (((?<!\d+\s*)([-]\s*)?)|((?<=\b)(?<!\d+[\.,])))(\d+(\u202A?[\.,]\u202A?\d+)?)e([+-]*[\u0660-\u0669]\d*)(?=\b)
+DoubleCaretExponentialNotationRegex: !simpleRegex
+  def: (((?<!\d+\s*)([-]\s*)?)|((?<=\b)(?<!\d+[\.,])))(\d+(\u202A?[\.,]\u202A?\d+)?)[+-]*\^([+-]*[\u0660-\u0669]([\.,])?\d*)(?=\b)
+DoubleDecimalPointRegex: !paramsRegex
+  def: (((?<!\d+\s*)([-]\s*)?)|((?<=\b)(?<!\d+[\.,])))((?<!\d.)(\d+\u202A?[\.,]\u202A?\d+))(?!([\.,]\d+))(?={placeholder})
+  params: [placeholder]
+DoubleWithoutIntegralRegex: !paramsRegex
+  def: (?<=\s|^)(?<!(\d+))\u202A?[\.,]\u202A?\d+(?!([\.,]\d+))(?={placeholder})
+  params: [placeholder]
+DoubleWithRoundNumber: !nestedRegex
+  def: (((?<!\d+\s*)([-]\s*)?)|((?<=\b)(?<!\d+[\.,])))\d+\u202A?[\.,]\u202A?\d+\s+{RoundNumberIntegerRegex}(?=\b)
+  references: [RoundNumberIntegerRegex]
+DoubleWithThousandMarkRegex: !paramsRegex
+  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\.|\d+,)))\d{1,3}(\u202A?[،]\u202A?\d{3})+\u202A?[\.,]\u202A?\d+(?={placeholder})
+  params: [ placeholder ]
+DoubleAllFloatRegex: !nestedRegex
+  def: ((?<=\b){AllFloatRegex}(?=\b))
+  references: [AllFloatRegex]
+ConnectorRegex: !simpleRegex
+  def: (?<spacer>و)
+#Percentage Regex
+NumberWithSuffixPercentage: !nestedRegex
+  def: ((?<!(٪|%))({BaseNumbers.NumberReplaceToken})(\s*)((٪|%)(?!{BaseNumbers.NumberReplaceToken})|(אחוזים|אחוז)))
+  references: [BaseNumbers.NumberReplaceToken]
+FractionNumberWithSuffixPercentage: !nestedRegex
+  def: (({BaseNumbers.FractionNumberReplaceToken})\s+(מ))
+  references: [BaseNumbers.FractionNumberReplaceToken]
+NumberWithPrefixPercentage: !nestedRegex
+  def: (אחוזים|אחוז)(\s*)({BaseNumbers.NumberReplaceToken})
+  references: [BaseNumbers.NumberReplaceToken]
+NumberWithPrepositionPercentage: !nestedRegex
+  def: ({BaseNumbers.NumberReplaceToken})\s*(מ)\s*({BaseNumbers.NumberReplaceToken})
+  references: [BaseNumbers.NumberReplaceToken]
+#NumberRange Regex
+TillRegex: !simpleRegex
+  def: (ל|--|-|—|——|~|–)
+MoreRegex: !simpleRegex
+  def: (?:(יותר)|(?<!<|=)>)
+LessRegex: !simpleRegex
+  def: (?:(פחות)(\s*מ)?|(?<!>|=)<)
+EqualRegex: !simpleRegex
+  def: (שווה|(?<!<|>)=)
+MoreOrEqualPrefix: !nestedRegex
+  def: (((לא)\s+{LessRegex})|(على\s+الأقل))
+  references: [LessRegex]
+MoreOrEqual: !nestedRegex
+  def: (?:(({MoreRegex}(\s+من)?)\s+(أو|او)?\s+{EqualRegex})|(({MoreOrEqualPrefix}|(تفوق))(\s+(أو|او)?\s+{EqualRegex})?)|(({EqualRegex}\s+(أو|او)?\s+)?({MoreOrEqualPrefix}|تفوق))|>\s*=)
+  references: [MoreRegex, EqualRegex, MoreOrEqualPrefix]
+MoreOrEqualSuffix: !simpleRegex
+  def: ((أو|او)\s+(((أكبر|أعظم|أطول|فوق|اكثر|اكثر|اكبر|أكثر)((?!\s+من)|(\s+من(?!(\s*\d+)))))|((فوق|أكبر|أطول|اكثر)(?!\s+من))))
+LessOrEqualPrefix: !nestedRegex
+  def: ((ليس\s+{MoreRegex})|(at\s+most)|(بحد أقصى)|(يصل الى))
+  references: [MoreRegex]
+LessOrEqual: !nestedRegex
+  def: (((لا\s*)?{LessRegex}\s+(أو|او)?\s+{EqualRegex})|({EqualRegex}\s+(أو|او)?\s+(((أقل|اقل|أدنى|اصغر|أصغر|ادنى)(\s+من))|تحت|(?<!>|=)<))|({LessOrEqualPrefix}(\s+(أو|او)?\s+{EqualRegex})?)|(({EqualRegex}\s+(أو|او)?\s+)?{LessOrEqualPrefix})|<\s*=)
+  references: [LessRegex, EqualRegex, MoreRegex, LessOrEqualPrefix]
+LessOrEqualSuffix: !simpleRegex
+  def: ((أ|ا)?و\s+(أقل)((?!\s+من)|(\s+من(?!(\s*\d+)))))
+NumberSplitMark: !simpleRegex
+  def: (?![.،](?!\d+))
+MoreRegexNoNumberSucceed: !simpleRegex
+  def: ((أكبر|أعظم|أطول|فوق|اكثر)((?!\s+من)|\s+(من(?!(\s*\d+))))|(فوق|أكبر|أعظم)(?!(\s*\d+)))
+LessRegexNoNumberSucceed: !simpleRegex
+  def: ((أقل|أصغر)((?!\s+من)|\s+(من(?!(\s*\d+))))|(تحت|اقل|أقل|أصغر)(?!((\s*\d+)|\s*من)))
+EqualRegexNoNumberSucceed: !simpleRegex
+  def: ((يساوي)(?!(\s*\d+)))
+OneNumberRangeMoreRegex1: !nestedRegex
+  def: ({MoreOrEqual})\s*(ال)?(?<number1>({NumberSplitMark}.)+)|({EqualRegex}\s*(أو|او)?\s+({MoreRegex}))(\s+(من))\s*(?<number1>({NumberSplitMark}.)+)|({EqualRegex}\s+(أو|او)?\s+({MoreRegex}))\s*(?<number1>({NumberSplitMark}.)+)|({MoreRegex})(\s+(من))\s*(?<number1>({NumberSplitMark}.)+)|({MoreRegex})\s*(?<number1>({NumberSplitMark}.)+)
+  references: [MoreOrEqual, MoreRegex, NumberSplitMark,EqualRegex]
+OneNumberRangeMoreRegex3: !nestedRegex
+  def: (?<number1>({NumberSplitMark}.)+)\s*(و|أو)\s*({MoreRegex})
+  references: [MoreRegex, NumberSplitMark]
+OneNumberRangeMoreRegex2: !nestedRegex
+  def: (?<number1>({NumberSplitMark}.)+)\s*{MoreOrEqualSuffix}
+  references: [MoreOrEqualSuffix, NumberSplitMark]
+OneNumberRangeMoreSeparateRegex: !nestedRegex
+  def: ({MoreRegex}\s*(من)\s+(?<number1>({NumberSplitMark}.)+)\s+(أو|او)\s+{EqualRegexNoNumberSucceed})|({EqualRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+(أو|او)\s+){MoreRegexNoNumberSucceed})|({MoreRegex}\s+(?<number1>({NumberSplitMark}.)+)(\s+(أو|او)\s+){EqualRegexNoNumberSucceed})
+  references:
+    [
+      EqualRegex,
+      MoreRegex,
+      EqualRegexNoNumberSucceed,
+      MoreRegexNoNumberSucceed,
+      NumberSplitMark,
+    ]
+OneNumberRangeLessRegex1: !nestedRegex
+  def: (({LessOrEqual})\s*(ال)?(?<number2>({NumberSplitMark}.)+))|(لا\s*)?((((أقل|اقل|أدنى|اصغر|أصغر|ادنى)(\s+من))|تحت|(?<!>|=)<))\s*(ال)?(?<number2>({NumberSplitMark}.)+)|(لا\s*)?(({LessRegex})\s*(ال)?(?<number2>({NumberSplitMark}.)+))
+  references: [LessOrEqual, LessRegex, NumberSplitMark]
+OneNumberRangeLessRegex2: !nestedRegex
+  def: (?<number2>({NumberSplitMark}.)+)\s*{LessOrEqualSuffix}
+  references: [LessOrEqualSuffix, NumberSplitMark]
+OneNumberRangeLessSeparateRegex: !nestedRegex
+  def: ({EqualRegex}\s+(?<number1>({NumberSplitMark}.)+)\s*(أو|او)\s+{LessRegexNoNumberSucceed})|(((((أقل|اقل|أدنى|اصغر|أصغر|ادنى)(\s+من))|تحت|(?<!>|=)<))\s+(?<number1>({NumberSplitMark}.)+)(\s+(أو|او)\s+){EqualRegexNoNumberSucceed})
+  references:
+    [
+      EqualRegex,
+      LessRegex,
+      EqualRegexNoNumberSucceed,
+      LessRegexNoNumberSucceed,
+      NumberSplitMark,
+    ]
+OneNumberRangeEqualRegex: !nestedRegex
+  def: '{EqualRegex}\s*(ال)?(?<number1>({NumberSplitMark}.)+)'
+  references: [EqualRegex, NumberSplitMark]
+TwoNumberRangeRegex1: !nestedRegex
+  def: بين\s*(ال)?(?<number1>({NumberSplitMark}.)+)\s*و\s*(ال)?(?<number2>({NumberSplitMark}.)+)
+  references: [NumberSplitMark]
+TwoNumberRangeRegex2: !nestedRegex
+  def: ({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})\s*(،)?\s*((أ|ا)?و|لكن|,)\s*({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})
+  references:
+    [
+      OneNumberRangeMoreRegex1,
+      OneNumberRangeMoreRegex2,
+      OneNumberRangeLessRegex1,
+      OneNumberRangeLessRegex2,
+    ]
+TwoNumberRangeRegex3: !nestedRegex
+  def: ({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})\s*(،)?\s*((أ|ا)?و|لكن|,)\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})
+  references:
+    [
+      OneNumberRangeMoreRegex1,
+      OneNumberRangeMoreRegex2,
+      OneNumberRangeLessRegex1,
+      OneNumberRangeLessRegex2,
+    ]
+TwoNumberRangeRegex4: !nestedRegex
+  def: ((من\s)(?<number1>({NumberSplitMark}(?!\bمن\b).)+)\s*{TillRegex}\s*(ال\s+)?(?<number2>({NumberSplitMark}.)+))|((من\s)?(?<number1>({NumberSplitMark}(?!\bمن\b).)+)\s*{TillRegex}\s*(ال\s+)?(?<number2>({NumberSplitMark}.)+))
+  references: [TillRegex, NumberSplitMark]
+AmbiguousFractionConnectorsRegex: !simpleRegex
+  def: (\bمن|بين|من|بين\b)
+# "in" is ambiguous for cases like "more than 30000 in 2009", other connector "out of", "over" is not ambiguous in English
+#Parser
+DecimalSeparatorChar: !char ","
+FractionMarkerToken: על
+NonDecimalSeparatorChar: !char "،"
+HalfADozenText: שש
+WordSeparatorToken: ו
+WrittenDecimalSeparatorTexts: [נקודה | פסיק]
+WrittenGroupSeparatorTexts: [punto]
+WrittenIntegerSeparatorTexts: [ו]
+WrittenFractionSeparatorTexts: [ו]
+HalfADozenRegex: !simpleRegex
+  def: نصف?\sدستة
+DigitalNumberRegex: !nestedRegex
+  def: ((?<=\b)(مائة|مائتان|دست|دستات|ألف|ألفين|مائتين|ألفين|ثلاثمائة|أربعمائة|خمسمائة|ستمائة|سبعمائة|تسعمائة|ثمانمائة|مليون|مليار|ترليون)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))
+  references: [BaseNumbers.MultiplierLookupRegex]
+CardinalNumberMap: !dictionary
+  types: [string, long]
+  entries:
+    אחד: 1
+    אפס: 0
+    שתיים: 2
+    שניים: 2
+    שלוש: 3
+    שלושה: 3
+    ארבע: 4
+    ארבעה: 4
+    חמש: 5
+    חמשה: 5
+    שש: 6
+    ששה: 6
+    שבע: 7
+    שבעה: 7
+    שמונה: 8
+    תשע: 9
+    תשעה: 9
+    עשר: 10
+    עשרה: 10
+    אחת עשרה: 11
+    שנים עשר: 12
+    תריסר: 12
+    שלוש עשרה: 13
+    ארבעה עשר: 14
+    חמש עשרה: 15
+    שש עשרה: 16
+    שבע עשרה: 17
+    שמונה עשרה: 18
+    תשע עשרה: 19
+    עשרים: 20
+    שלושים: 30
+    ארבעים: 40
+    חמישים: 50
+    שישים: 60
+    שבעים: 70
+    שיבעים: 70
+    שמונים: 80
+    תשעים: 90
+    תישעים: 90
+    מאה: 100
+    מאתיים: 200
+    שלוש מאות: 300
+    ארבע מאות: 400
+    חמש מאות: 500
+    שש מאות: 600
+    שבע מאות: 700
+    שמונה מאות: 800
+    תשע מאות: 900
+    אלף: 1000
+    אלפיים: 2000
+    מיליון: 1000000
+    מיליארד: 1000000000
+    ביליון: 1000000000
+    טריליון: 1000000000000
+OrdinalNumberMap: !dictionary
+  types: [string, long]
+  entries:
+    הראשון: 1
+    ראשית: 1
+    שני: 2
+    שנית: 2
+    שלישית: 3
+    רבע: 4
+    רביעית: 4
+    חמש: 5
+    חמישית: 5
+    שישית: 6
+    השישית: 6
+    שבע: 7
+    שביעי: 7
+    שמינית: 8
+    שמונה: 8
+    תשע: 9
+    תשיעי: 9
+    עשירית: 10
+    אחת עשרה: 11
+    שתיים עשרה: 12
+    שלוש עשרה: 13
+    ארבעה עשר: 14
+    ארבע עשרה: 14
+    חמש עשרה: 15
+    שש עשרה: 16
+    שישה עשר: 16
+    שבע עשרה: 17
+    שמונה עשרה: 18
+    תשע עשרה: 19
+    עשר: 10
+    עשרים: 20
+    עשרים ואחד: 21
+    עשרים ושניים: 22
+    עשרים ושלוש: 23
+    עשרים וארבע: 24
+    עשרים וחמישה: 25
+    עשרים ושישה: 26
+    עשרים ושבע: 27
+    עשרים ושמונה: 28
+    עשרים ותשע: 29
+    שלושים: 30
+    ארבעים: 40
+    חמישים: 50
+    שישים: 60
+    שבעים: 70
+    שמונים: 80
+    תשעים: 90
+    מאה: 100
+    מאתיים: 200
+    שלוש מאות: 300
+    ארבע מאות: 400
+    חמש מאות: 500
+    שש מאות: 600
+    שבע מאות: 700
+    שמונה מאות: 800
+    תשע מאות: 100
+    אלף: 1000
+    מיליון: 1000000
+    מיליארד: 1000000000
+    טריליון: 1000000000000
+RoundNumberMap: !dictionary
+  types: [string, long]
+  entries:
+    מאה: 100
+    אלף: 1000
+    מיליון: 1000000
+    מיליארד: 1000000000
+    טריליון: 1000000000000
+    מאתיים: 200
+    שלוש מאות: 300
+    ארבע מאות: 400
+    חמש מאות: 500
+    שש מאות: 600
+    שבע מאות: 700
+    שמונה מאות: 800
+    תשע מאות: 900
+AmbiguityFiltersDict: !dictionary
+  types: [string, string]
+  entries:
+    '\bאחד\b': '\b(איזה)\s+(אחד)\b'
+RelativeReferenceOffsetMap: !dictionary
+  types: [string, string]
+  entries:
+     אחרונה: 0
+     אחרון: 0
+     נוכחי: 0
+     הקודם: -1
+     הלפני אחרון: -1
+     הבא: 1
+     אחרי הבא: 2
+     הראשון: 1
+     ראשית: 1
+RelativeReferenceRelativeToMap: !dictionary
+  types: [string, string]
+  entries:
+    נוכחי: current
+    אחרון: end
+    לפני אחרון: end
+
+...

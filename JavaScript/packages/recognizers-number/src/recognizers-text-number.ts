@@ -27,3 +27,5 @@ export { ChineseCardinalExtractor, ChineseDoubleExtractor, ChineseFractionExtrac
 export { ChineseNumberParserConfiguration } from "./number/chinese/parserConfiguration";
 export { JapaneseCardinalExtractor, JapaneseDoubleExtractor, JapaneseFractionExtractor, JapaneseIntegerExtractor, JapaneseNumberExtractor, JapaneseOrdinalExtractor, JapanesePercentageExtractor, JapaneseNumberExtractorMode } from "./number/japanese/extractors";
 export { JapaneseNumberParserConfiguration } from "./number/japanese/parserConfiguration";
+export { HebrewCardinalExtractor, HebrewDoubleExtractor, HebrewFractionExtractor, HebrewIntegerExtractor, HebrewNumberExtractor, HebrewOrdinalExtractor, HebrewPercentageExtractor } from "./number/hebrew/extractors";
+export { HebrewNumberParserConfiguration } from "./number/hebrew/parserConfiguration";
