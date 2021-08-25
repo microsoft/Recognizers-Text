@@ -10,6 +10,7 @@ export { SpanishNumeric } from "./resources/spanishNumeric";
 export { FrenchNumeric } from "./resources/frenchNumeric";
 export { ChineseNumeric } from "./resources/chineseNumeric";
 export { JapaneseNumeric } from "./resources/japaneseNumeric";
+export { HebrewNumeric } from "./resources/hebrewNumeric";
 export { Constants } from "./number/constants";
 export { RegExpValue, BaseNumberExtractor, BasePercentageExtractor } from "./number/extractors";
 export { NumberMode, LongFormatType, AbstractNumberModel, NumberModel, OrdinalModel, PercentModel } from "./number/models";

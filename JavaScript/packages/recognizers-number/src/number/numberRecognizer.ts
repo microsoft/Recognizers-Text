@@ -12,12 +12,14 @@ import { PortugueseNumberParserConfiguration } from "./portuguese/parserConfigur
 import { FrenchNumberParserConfiguration } from "./french/parserConfiguration";
 import { ChineseNumberParserConfiguration } from "./chinese/parserConfiguration";
 import { JapaneseNumberParserConfiguration } from "./japanese/parserConfiguration";
+import { HebrewNumberParserConfiguration } from "./hebrew/parserConfiguration";
 import { EnglishNumberExtractor, EnglishOrdinalExtractor, EnglishPercentageExtractor } from "./english/extractors";
 import { SpanishNumberExtractor, SpanishOrdinalExtractor, SpanishPercentageExtractor } from "./spanish/extractors";
 import { PortugueseNumberExtractor, PortugueseOrdinalExtractor, PortuguesePercentageExtractor } from "./portuguese/extractors";
 import { FrenchNumberExtractor, FrenchOrdinalExtractor, FrenchPercentageExtractor } from "./french/extractors";
 import { ChineseNumberExtractor, ChineseOrdinalExtractor, ChinesePercentageExtractor } from "./chinese/extractors";
 import { JapaneseNumberExtractor, JapaneseOrdinalExtractor, JapanesePercentageExtractor } from "./japanese/extractors";
+import { HebrewNumberExtractor, HebrewOrdinalExtractor, HebrewPercentageExtractor } from "./hebrew/extractors";
 
 export enum NumberOptions {
     None = 0,
@@ -118,6 +120,20 @@ export default class NumberRecognizer extends Recognizer<NumberOptions> {
             AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Percentage, new FrenchNumberParserConfiguration()),
             new FrenchPercentageExtractor()));
         // #endregion
+
+
+        // #region Hebrew
+        this.registerModel("NumberModel", Culture.Hebrew, (options) => new NumberModel(
+            AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Number, new HebrewNumberParserConfiguration()),
+            new HebrewNumberExtractor(NumberMode.PureNumber)));
+        this.registerModel("OrdinalModel", Culture.Hebrew, (options) => new OrdinalModel(
+            AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Ordinal, new HebrewNumberParserConfiguration()),
+            new HebrewOrdinalExtractor()));
+        this.registerModel("PercentModel", Culture.Hebrew, (options) => new PercentModel(
+            AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Percentage, new HebrewNumberParserConfiguration()),
+            new HebrewPercentageExtractor()));
+        // #endregion
+
     }
 
     protected IsValidOptions(options: number): boolean {
