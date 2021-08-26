@@ -24,7 +24,7 @@ TenToNineteenIntegerRegex: !simpleRegex
 TensNumberIntegerRegex: !simpleRegex
   def: (?:עשר|עשרים|שלושים|ארבעים|חמישים|שישים|שבעים|שמונים|תשעים)
 SeparaIntRegex: !nestedRegex
-  def: (?:((({RoundNumberIntegerRegex}\s{RoundNumberIntegerRegex})|{TenToNineteenIntegerRegex}|({ZeroToNineIntegerRegex}(((و)?)\s+(و)?|\s*-\s*){TensNumberIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})(\s+{RoundNumberIntegerRegex})*))|(((\s+{RoundNumberIntegerRegex})+))
+  def: (?:((({RoundNumberIntegerRegex}\s{RoundNumberIntegerRegex})|{TenToNineteenIntegerRegex}|({ZeroToNineIntegerRegex}(((ו)?)\s+(ו)?|\s*-\s*){TensNumberIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})(\s+{RoundNumberIntegerRegex})*))|(((\s+{RoundNumberIntegerRegex})+))
   references:
     [
       TenToNineteenIntegerRegex,
@@ -33,7 +33,7 @@ SeparaIntRegex: !nestedRegex
       RoundNumberIntegerRegex
     ]
 AllIntRegex: !nestedRegex
-  def: (?:({SeparaIntRegex})((\s+(و)?)({SeparaIntRegex})(\s+{RoundNumberIntegerRegex})?)*|((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(و)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})?(\s+{RoundNumberIntegerRegex})+)\s+(و)?)*{SeparaIntRegex})
+  def: (?:({SeparaIntRegex})((\s+(ו)?)({SeparaIntRegex})(\s+{RoundNumberIntegerRegex})?)*|((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(ו)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})?(\s+{RoundNumberIntegerRegex})+)\s+(ו)?)*{SeparaIntRegex})
   references:
     [
       TenToNineteenIntegerRegex,
@@ -61,7 +61,7 @@ AllIntRegexWithLocks: !nestedRegex
   def: ((?<=\b){AllIntRegex}(?=\b))
   references: [AllIntRegex]
 AllIntRegexWithDozenSuffixLocks: !nestedRegex
-  def: (?<=\b)(((חצי\s+)(תריסר))|({AllIntRegex}(و)?\s+((و)?))(תריסר))(?=\b)
+  def: (?<=\b)(((חצי\s+)(תריסר))|({AllIntRegex}(ו)?\s+((ו)?))(תריסר))(?=\b)
   references: [AllIntRegex]
 #Ordinal Regex
 RoundNumberOrdinalRegex: !nestedRegex
@@ -70,12 +70,12 @@ RoundNumberOrdinalRegex: !nestedRegex
 NumberOrdinalRegex: !simpleRegex
   def: (?:ראשון|שני|שלישי|רביעי|חמישי|שישי|ששי|שביעי|שמיני|תשעי|עשירי|ראשונה|שנייה|שלישית|רביעית|חמישית|שישית|שביעית|שמינית|עשירית)
 RelativeOrdinalRegex: !simpleRegex
-  def: (?<relativeOrdinal>)הקודם|הנוכחי|הבא|לפני אחרון|אחרון)
+  def: (?<relativeOrdinal>הקודם|הנוכחי|הבא|לפני אחרון|אחרון)
 BasicOrdinalRegex: !nestedRegex
   def: ({NumberOrdinalRegex}|{RelativeOrdinalRegex})
   references: [NumberOrdinalRegex, RelativeOrdinalRegex]
 SuffixBasicOrdinalRegex: !nestedRegex
-  def: (?:(((({TensNumberIntegerRegex}(\s+(و)?|\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|({RoundNumberIntegerRegex}|מאה(\s+(و)?)))((\s+{RoundNumberIntegerRegex}|מאה)+|({BasicOrdinalRegex})))\s+(و)?)*({TensNumberIntegerRegex}(\s+|\s*))?{BasicOrdinalRegex}|({TensNumberIntegerRegex}))
+  def: (?:(((({TensNumberIntegerRegex}(\s+(ו)?|\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|({RoundNumberIntegerRegex}|מאה(\s+(ו)?)))((\s+{RoundNumberIntegerRegex}|מאה)+|({BasicOrdinalRegex})))\s+(ו)?)*({TensNumberIntegerRegex}(\s+|\s*))?{BasicOrdinalRegex}|({TensNumberIntegerRegex}))
   references:
     [
       TensNumberIntegerRegex,
