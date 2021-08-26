@@ -20,9 +20,9 @@ NegativeNumberSignRegex: !nestedRegex
 AnIntRegex: !simpleRegex
   def: (אחד|אחת)(?=\s)
 TenToNineteenIntegerRegex: !simpleRegex
-  def: (?:((אחד|שנים|שלוש|ארבע|חמש|שש|שבע|שמונה|תשע|אחת|שתיים|שלושה|ארבעה|חמישה|ששה|שבעה|שמונה|תשעה)(\s|-)(עשר|עשרה)))
+  def: (?:((אחד|שנים|שלוש|ארבע|חמש|שש|שבע|שמונה|תשע|אחת|שתיים|שלושה|ארבעה|חמישה|שישה|ששה|שבעה|שמונה|תשעה)(\s|-)(עשר|עשרה)))
 TensNumberIntegerRegex: !simpleRegex
-  def: (?:עשר|עשרים|שלושים|ארבעים|חמישים|שישים|שבעים|שמונים|תשעים)
+  def: (?:עשר|עשרה|עשרים|שלושים|ארבעים|חמישים|שישים|שבעים|שמונים|תשעים)
 SeparaIntRegex: !nestedRegex
   def: (?:((({RoundNumberIntegerRegex}\s{RoundNumberIntegerRegex})|{TenToNineteenIntegerRegex}|({ZeroToNineIntegerRegex}(((ו)?)\s+(ו)?|\s*-\s*){TensNumberIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})(\s+{RoundNumberIntegerRegex})*))|(((\s+{RoundNumberIntegerRegex})+))
   references:
@@ -137,9 +137,9 @@ DoubleWithMultiplierRegex: !nestedRegex
   def: (((?<!\d+\s*)([-]\s*)?)|((?<=\b)(?<!\d+[\.,])))\d+\u202A?[\.,]\u202A?\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)  
   references: [BaseNumbers.NumberMultiplierRegex]
 DoubleExponentialNotationRegex: !simpleRegex
-  def: (((?<!\d+\s*)([-]\s*)?)|((?<=\b)(?<!\d+[\.,])))(\d+(\u202A?[\.,]\u202A?\d+)?)e([+-]*[\u0660-\u0669]\d*)(?=\b)
+  def: (((?<!\d+\s*)([-]\s*)?)|((?<=\b)(?<!\d+[\.,])))(\d+(\u202A?[\.,]\u202A?\d+)?)e([+-]*[0-9]\d*)(?=\b)
 DoubleCaretExponentialNotationRegex: !simpleRegex
-  def: (((?<!\d+\s*)([-]\s*)?)|((?<=\b)(?<!\d+[\.,])))(\d+(\u202A?[\.,]\u202A?\d+)?)[+-]*\^([+-]*[\u0660-\u0669]([\.,])?\d*)(?=\b)
+  def: (((?<!\d+\s*)([-]\s*)?)|((?<=\b)(?<!\d+[\.,])))(\d+(\u202A?[\.,]\u202A?\d+)?)[+-]*\^([+-]*[0-9]([\.,])?\d*)(?=\b)
 DoubleDecimalPointRegex: !paramsRegex
   def: (((?<!\d+\s*)([-]\s*)?)|((?<=\b)(?<!\d+[\.,])))((?<!\d.)(\d+\u202A?[\.,]\u202A?\d+))(?!([\.,]\d+))(?={placeholder})
   params: [placeholder]
@@ -271,10 +271,10 @@ AmbiguousFractionConnectorsRegex: !simpleRegex
 #Parser
 DecimalSeparatorChar: !char ","
 FractionMarkerToken: על
-NonDecimalSeparatorChar: !char "،"
+NonDecimalSeparatorChar: !char "."
 HalfADozenText: שש
 WordSeparatorToken: ו
-WrittenDecimalSeparatorTexts: [נקודה | פסיק]
+WrittenDecimalSeparatorTexts: [נקודה]
 WrittenGroupSeparatorTexts: [punto]
 WrittenIntegerSeparatorTexts: [ו]
 WrittenFractionSeparatorTexts: [ו]

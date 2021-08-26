@@ -9,8 +9,8 @@
           "subtype": "integer",
           "value": "192"
         },
-        "Start": 17,
-        "End": 19
+        "Start": 22,
+        "End": 24
       }
     ]
   },
@@ -24,8 +24,8 @@
           "subtype": "integer",
           "value": "192"
         },
-        "Start": 19,
-        "End": 21
+        "Start": 16,
+        "End": 18
       },
       {
         "Text": "168",
@@ -34,8 +34,8 @@
           "subtype": "integer",
           "value": "168"
         },
-        "Start": 23,
-        "End": 25
+        "Start": 20,
+        "End": 22
       },
       {
         "Text": "1",
@@ -44,8 +44,8 @@
           "subtype": "integer",
           "value": "1"
         },
-        "Start": 27,
-        "End": 27
+        "Start": 24,
+        "End": 24
       },
       {
         "Text": "2",
@@ -54,8 +54,8 @@
           "subtype": "integer",
           "value": "2"
         },
-        "Start": 29,
-        "End": 29
+        "Start": 26,
+        "End": 26
       }
     ]
   },
@@ -94,8 +94,8 @@
           "subtype": "decimal",
           "value": "0.08"
         },
-        "Start": 5,
-        "End": 8
+        "Start": 6,
+        "End": 9
       }
     ]
   },
@@ -109,8 +109,8 @@
           "subtype": "decimal",
           "value": "0.23456"
         },
-        "Start": 5,
-        "End": 11
+        "Start": 6,
+        "End": 12
       }
     ]
   },
@@ -161,10 +161,10 @@
     ]
   },
   {
-    "Input": "מאה ושש עשרה עמודים",
+    "Input": "מאה וששה עשר עמודים",
     "Results": [
       {
-        "Text": "מאה ושש עשרה",
+        "Text": "מאה וששה עשר",
         "TypeName": "number",
         "Resolution": {
           "subtype": "integer",
