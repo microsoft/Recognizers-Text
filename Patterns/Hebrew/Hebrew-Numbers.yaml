@@ -109,7 +109,7 @@ HebrewBuiltInFraction: !simpleRegex
 FractionOrdinalPrefix: !simpleRegex
   def: (الوزن|المحتوى:?)  
 FractionNounRegex: !nestedRegex
-  def: (?<=\b){HebrewBuiltInFraction}|{AllIntRegex}\s(و\s|و){HebrewBuiltInFraction}|(({AllIntRegex}\s(و\s|و)?)?({AllIntRegex})(\s+|\s*)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|רבעים|ורבע|חצאיים|חצאים|וחצי|שליש|ושליש|רבע|רביעיות|חמישיות|עשיריות|חצי|רבע|חצי|שני שליש)(?=\b)
+  def: (?<=\b){HebrewBuiltInFraction}|{AllIntRegex}(\s+|\s*)ו{HebrewBuiltInFraction}|(({AllIntRegex}(\s+|\s*)ו?)?({AllIntRegex})(\s+|\s*)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|רבעים|ורבע|חצאיים|חצאים|וחצי|שליש|ושליש|רבע|רביעיות|חמישיות|עשיריות|חצי|רבע|חצי|שני שליש))(?=\b)
   references: [AllIntRegex, HebrewBuiltInFraction, AllOrdinalRegex, RoundNumberOrdinalRegex]
 FractionNounWithArticleRegex: !nestedRegex
   def: (?<=\b)((({AllIntRegex}(\s|(\s*-\s*)|و\s+)?)(({AllOrdinalRegex})|{NumberOrdinalRegex}|וחצי|ושליש|ורבע))|(החצי|השליש|הרבע|))(?=\b)
