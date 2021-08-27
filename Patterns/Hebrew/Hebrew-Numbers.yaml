@@ -105,11 +105,11 @@ FractionNotationWithSpacesRegex2: !simpleRegex
 FractionNotationRegex: !simpleRegex
   def: (((?<={?[\u0600-\u06ff]}|^)-\s*)|(?<![/-])(?<=\b))\d+[/]\d+(?=(\b[^/]|$))
 HebrewBuiltInFraction: !simpleRegex
-  def: (?:חצי|עשירית|רבע|שליש)
+  def: (?:חצי|חציים|עשירית|עשיריות|רבע|רבעים|שלישים|שליש)
 FractionOrdinalPrefix: !simpleRegex
   def: (الوزن|المحتوى:?)  
 FractionNounRegex: !nestedRegex
-  def: (?<=\b){HebrewBuiltInFraction}|{AllIntRegex}(\s+|\s*)ו{HebrewBuiltInFraction}|(({AllIntRegex}(\s+|\s*)ו?)?({AllIntRegex})(\s+|\s*)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|רבעים|ורבע|חצאיים|חצאים|וחצי|שליש|ושליש|רבע|רביעיות|חמישיות|עשיריות|חצי|רבע|חצי|שני שליש))(?=\b)
+  def: (?<=\b){HebrewBuiltInFraction}|{AllIntRegex}(\s+|\s*)ו{HebrewBuiltInFraction}|(({AllIntRegex}(\s+|\s*)ו?)?({AllIntRegex})(\s+|\s*)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|רבעים|ורבע|חצאיים|חצאים|וחצי|שליש|שלישים|ושליש|רבע|רביעיות|חמישיות|עשיריות|חצי|רבע|חצי|שני שלישים|שני שליש))(?=\b)
   references: [AllIntRegex, HebrewBuiltInFraction, AllOrdinalRegex, RoundNumberOrdinalRegex]
 FractionNounWithArticleRegex: !nestedRegex
   def: (?<=\b)((({AllIntRegex}(\s|(\s*-\s*)|ו\s+)?)(({AllOrdinalRegex})|{NumberOrdinalRegex}|וחצי|ושליש|ורבע))|(החצי|השליש|הרבע|))(?=\b)
@@ -269,9 +269,9 @@ AmbiguousFractionConnectorsRegex: !simpleRegex
   def: (\bבין|מ|של\b)
 # "in" is ambiguous for cases like "more than 30000 in 2009", other connector "out of", "over" is not ambiguous in English
 #Parser
-DecimalSeparatorChar: !char ","
+DecimalSeparatorChar: !char "."
 FractionMarkerToken: על
-NonDecimalSeparatorChar: !char "."
+NonDecimalSeparatorChar: !char ","
 HalfADozenText: שש
 WordSeparatorToken: ו
 WrittenDecimalSeparatorTexts: [נקודה]
