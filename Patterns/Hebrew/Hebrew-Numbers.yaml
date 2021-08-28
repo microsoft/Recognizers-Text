@@ -105,7 +105,7 @@ FractionNotationWithSpacesRegex2: !simpleRegex
 FractionNotationRegex: !simpleRegex
   def: (((?<={?[\u0600-\u06ff]}|^)-\s*)|(?<![/-])(?<=\b))\d+[/]\d+(?=(\b[^/]|$))
 HebrewBuiltInFraction: !simpleRegex
-  def: (?:חצי|חציים|עשירית|עשיריות|רבע|רבעים|שלישים|שליש)
+  def: (?:חצי|חציים|חמישית|עשירית|עשיריות|רבע|רבעים|שלישים|שליש)
 FractionOrdinalPrefix: !simpleRegex
   def: (الوزن|المحتوى:?)  
 FractionNounRegex: !nestedRegex
