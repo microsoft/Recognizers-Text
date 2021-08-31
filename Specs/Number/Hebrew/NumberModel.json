@@ -1,5 +1,20 @@
 [
   {
+    "Input": "שמונת אלפים תשע מאות שמונים ושבע.",
+    "Results": [
+      {
+        "Text": "שמונת אלפים תשע מאות שמונים ושבע",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "8987"
+        },
+        "Start": 0,
+        "End": 31
+      }
+    ]
+  },
+  {
     "Input": "תוכל למצוא אותו בעמוד 192",
     "Results": [
       {
@@ -75,7 +90,7 @@
     "Results": []
   },
   {
-    "Input": "תאריך 4 במאי",
+    "Input": "התאריך הוא 4 במאי",
     "NotSupportedByDesign": "javascript, java, python",
     "Results": []
   },
@@ -131,7 +146,6 @@
   },
   {
     "Input": "ישנם שישה עשר תפוחים.",
-    "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
         "Text": "שישה עשר",
@@ -141,7 +155,7 @@
           "value": "16"
         },
         "Start": 5,
-        "End": 11
+        "End": 12
       }
     ]
   },
@@ -171,7 +185,7 @@
           "value": "116"
         },
         "Start": 0,
-        "End": 12
+        "End": 11
       }
     ]
   },
@@ -207,10 +221,9 @@
   },
   {
     "Input": "אחד מכל טריליון דפים נחתך",
-    "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
-        "Text": "טריליון",
+        "Text": "אחד מכל טריליון",
         "TypeName": "number",
         "Resolution": {
           "subtype": "fraction",
@@ -225,7 +238,7 @@
     "Input": "השמש היא אחת ממאה טריליון כוכבים",
     "Results": [
       {
-        "Text": "ממאה טריליון",
+        "Text": "אחת ממאה טריליון",
         "TypeName": "number",
         "Resolution": {
           "subtype": "fraction",
@@ -247,7 +260,7 @@
           "value": "100000"
         },
         "Start": 0,
-        "End": 8
+        "End": 6
       }
     ]
   },
@@ -276,8 +289,8 @@
           "subtype": "integer",
           "value": "36"
         },
-        "Start": 5,
-        "End": 12
+        "Start": 9,
+        "End": 16
       }
     ]
   },
@@ -291,8 +304,8 @@
           "subtype": "integer",
           "value": "12"
         },
-        "Start": 5,
-        "End": 9
+        "Start": 9,
+        "End": 13
       }
     ]
   },
@@ -306,7 +319,7 @@
           "subtype": "integer",
           "value": "36"
         },
-        "Start": 7,
+        "Start": 6,
         "End": 17
       }
     ]
@@ -322,7 +335,7 @@
           "value": "324"
         },
         "Start": 0,
-        "End": 17
+        "End": 21
       }
     ]
   },
@@ -336,8 +349,8 @@
           "subtype": "integer",
           "value": "1234567"
         },
-        "Start": 20,
-        "End": 28
+        "Start": 19,
+        "End": 27
       }
     ]
   },
@@ -351,8 +364,8 @@
           "subtype": "decimal",
           "value": "9.2321312"
         },
-        "Start": 16,
-        "End": 24
+        "Start": 12,
+        "End": 20
       }
     ]
   },
@@ -403,7 +416,6 @@
   },
   {
     "Input": "יש לה שלושה עטים",
-    "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
         "Text": "שלושה",
@@ -479,7 +491,6 @@
   },
   {
     "Input": "ישנם שלושה עצים בגינה",
-    "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
         "Text": "שלושה",
@@ -488,8 +499,8 @@
           "subtype": "integer",
           "value": "3"
         },
-        "Start": 11,
-        "End": 15
+        "Start": 5,
+        "End": 9
       }
     ]
   },
@@ -533,8 +544,8 @@
           "subtype": "integer",
           "value": "21000000000300"
         },
-        "Start": 17,
-        "End": 46
+        "Start": 20,
+        "End": 47
       }
     ]
   },
@@ -554,10 +565,10 @@
     ]
   },
   {
-    "Input": "הסל מכיל חמישים ושניים פירות",
+    "Input": "הסל מכיל חמישים ושתיים פירות",
     "Results": [
       {
-        "Text": "חמישים ושניים",
+        "Text": "חמישים ושתיים",
         "TypeName": "number",
         "Resolution": {
           "subtype": "integer",
@@ -584,17 +595,17 @@
     ]
   },
   {
-    "Input": "קניתי שמלה לאלפיים מאתיים דירהם.",
+    "Input": "קניתי שמלה באלפיים שש מאות חמישים וארבע שקל.",
     "Results": [
       {
-        "Text": "לאלפיים מאתיים",
+        "Text": "באלפיים שש מאות חמישים וארבע",
         "TypeName": "number",
         "Resolution": {
           "subtype": "integer",
-          "value": "2200"
+          "value": "2654"
         },
         "Start": 11,
-        "End": 24
+        "End": 38
       }
     ]
   },
@@ -638,8 +649,8 @@
           "subtype": "integer",
           "value": "32200"
         },
-        "Start": 12,
-        "End": 18
+        "Start": 0,
+        "End": 7
       }
     ]
   },
@@ -689,8 +700,7 @@
     ]
   },
   {
-    "Input": "שתיתי חצי מיץ",
-    "NotSupportedByDesign": "javascript, java, python",
+    "Input": "שתיתי חצי כוס מיץ",
     "Results": [
       {
         "Text": "חצי",
@@ -699,8 +709,8 @@
           "subtype": "fraction",
           "value": "0.5"
         },
-        "Start": 5,
-        "End": 7
+        "Start": 6,
+        "End": 8
       }
     ]
   },
@@ -714,8 +724,8 @@
           "subtype": "fraction",
           "value": "0.75"
         },
-        "Start": 5,
-        "End": 14
+        "Start": 6,
+        "End": 16
       }
     ]
   },
@@ -729,16 +739,16 @@
           "subtype": "fraction",
           "value": "20.6"
         },
-        "Start": 7,
-        "End": 24
+        "Start": 0,
+        "End": 19
       }
     ]
   },
   {
-    "Input": "קראתי עשרים ושלושה מתוך הספר",
+    "Input": "קראתי עשרים ושלושה חמישיות מתוך הספר",
     "Results": [
       {
-        "Text": "עשרים ושלושה",
+        "Text": "עשרים ושלושה חמישיות",
         "TypeName": "number",
         "Resolution": {
           "subtype": "fraction",
@@ -775,7 +785,7 @@
           "value": "200440.6"
         },
         "Start": 0,
-        "End": 32
+        "End": 33
       }
     ]
   },
@@ -789,8 +799,8 @@
           "subtype": "fraction",
           "value": "1.5"
         },
-        "Start": 10,
-        "End": 18
+        "Start": 7,
+        "End": 14
       }
     ]
   },
@@ -819,8 +829,8 @@
           "subtype": "fraction",
           "value": "5.25"
         },
-        "Start": 14,
-        "End": 22
+        "Start": 9,
+        "End": 16
       }
     ]
   },
@@ -946,7 +956,6 @@
   },
   {
     "Input": "אכלתי חמישית מהעוגה.",
-    "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
         "Text": "חמישית",
@@ -955,8 +964,8 @@
           "subtype": "fraction",
           "value": "0.2"
         },
-        "Start": 5,
-        "End": 7
+        "Start": 6,
+        "End": 11
       }
     ]
   },
@@ -977,7 +986,6 @@
   },
   {
     "Input": "עברה  חמישית שעה מאז ניקיתי.",
-    "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
         "Text": "חמישית",
@@ -986,13 +994,13 @@
           "subtype": "fraction",
           "value": "0.2"
         },
-        "Start": 4,
-        "End": 6
+        "Start": 6,
+        "End": 10
       }
     ]
   },
   {
-    "Input": "אני רוצה ש -3 חמישיות מהעבודה יבוצעו בזמן.",
+    "Input": "אני רוצה ש-3 חמישיות מהעבודה יבוצעו בזמן.",
     "Results": [
       {
         "Text": "3 חמישיות",
@@ -1016,8 +1024,8 @@
           "subtype": "fraction",
           "value": "4"
         },
-        "Start": 11,
-        "End": 21
+        "Start": 6,
+        "End": 18
       }
     ]
   },
@@ -1031,8 +1039,8 @@
           "subtype": "fraction",
           "value": "3.2"
         },
-        "Start": 10,
-        "End": 18
+        "Start": 12,
+        "End": 23
       }
     ]
   },
@@ -1218,7 +1226,6 @@
   },
   {
     "Input": "אחד למאה",
-    "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
         "Text": "אחד למאה",
@@ -1236,7 +1243,7 @@
     "Input": "כמה זה 9500 חלקי חמש",
     "Results": [
       {
-        "Text": "כמה זה 9500 חלקי חמש",
+        "Text": "9500 חלקי חמש",
         "TypeName": "number",
         "Resolution": {
           "subtype": "fraction",
@@ -1249,12 +1256,10 @@
   },
   {
     "Input": "הזמנתי את הטיסה שלי במחלקה ראשונה",
-    "NotSupportedByDesign": "javascript, java, python",
     "Results": []
   },
   {
     "Input": "הטמפרטורה היא מינוס אחת",
-    "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
         "Text": "מינוס אחת",
@@ -1263,8 +1268,8 @@
           "subtype": "integer",
           "value": "-1"
         },
-        "Start": 13,
-        "End": 21
+        "Start": 14,
+        "End": 22
       }
     ]
   },
@@ -1279,13 +1284,12 @@
           "value": "-0.05"
         },
         "Start": 0,
-        "End": 15
+        "End": 19
       }
     ]
   },
   {
     "Input": "רביעית אחת",
-    "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
         "Text": "רביעית",
@@ -1301,7 +1305,6 @@
   },
   {
     "Input": "שמינית אחת",
-    "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
         "Text": "שמינית",
@@ -1317,7 +1320,6 @@
   },
   {
     "Input": "חמש שמיניות",
-    "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
         "Text": "חמש שמיניות",
@@ -1333,7 +1335,6 @@
   },
   {
     "Input": "אחד מתוך שלוש",
-    "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
         "Text": "אחד מתוך שלוש",
@@ -1364,7 +1365,6 @@
   },
   {
     "Input": "חמש שמיניות של",
-    "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
         "Text": "חמש שמיניות של",
@@ -1380,7 +1380,6 @@
   },
   {
     "Input": "אפס הוא 0",
-    "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
         "Text": "אפס",
@@ -1447,7 +1446,6 @@
   {
     "Input": "מספר לוחית הרישוי הוא שלוש מאות ואחת.",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
         "Text": "שלוש מאות ואחת",
