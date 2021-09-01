@@ -169,8 +169,8 @@
           "subtype": "fraction",
           "value": "0.666666666666667"
         },
-        "Start": 8,
-        "End": 12
+        "Start": 9,
+        "End": 18
       }
     ]
   },
@@ -190,10 +190,10 @@
     ]
   },
   {
-    "Input": "מאה וששה עמודים.",
+    "Input": "מאה ושישה עטים.",
     "Results": [
       {
-        "Text": "מאה וששה",
+        "Text": "מאה ושישה",
         "TypeName": "number",
         "Resolution": {
           "subtype": "integer",
@@ -214,8 +214,8 @@
           "subtype": "integer",
           "value": "161"
         },
-        "Start": 20,
-        "End": 36
+        "Start": 18,
+        "End": 31
       }
     ]
   },
@@ -265,7 +265,7 @@
     ]
   },
   {
-    "Input": "חצי תריסר תפוחים",
+    "Input": "חצי תריסר תפוזים",
     "Results": [
       {
         "Text": "חצי תריסר",
@@ -280,7 +280,7 @@
     ]
   },
   {
-    "Input": "אני רוצה 3 תריסר תפוחים",
+    "Input": "אני רוצה 3 תריסר אפרסקים",
     "Results": [
       {
         "Text": "3 תריסר",
@@ -290,12 +290,12 @@
           "value": "36"
         },
         "Start": 9,
-        "End": 16
+        "End": 15
       }
     ]
   },
   {
-    "Input": "אני רוצה תריסר תפוחים",
+    "Input": "אני רוצה תריסר בננות",
     "Results": [
       {
         "Text": "תריסר",
@@ -310,7 +310,7 @@
     ]
   },
   {
-    "Input": "קניתי שלושה תריסר תפוחים",
+    "Input": "קניתי שלושה תריסר ספרים",
     "Results": [
       {
         "Text": "שלושה תריסר",
@@ -320,7 +320,7 @@
           "value": "36"
         },
         "Start": 6,
-        "End": 17
+        "End": 16
       }
     ]
   },
@@ -484,8 +484,8 @@
           "subtype": "integer",
           "value": "1000000000000"
         },
-        "Start": 9,
-        "End": 16
+        "Start": 13,
+        "End": 19
       }
     ]
   },
@@ -508,14 +508,14 @@
     "Input": "יש יותר מטריליון כוכבים בשמיים",
     "Results": [
       {
-        "Text": "מטריליון",
+        "Text": "טריליון",
         "TypeName": "number",
         "Resolution": {
           "subtype": "integer",
           "value": "1000000000000"
         },
-        "Start": 18,
-        "End": 28
+        "Start": 8,
+        "End": 14
       }
     ]
   },
@@ -529,8 +529,8 @@
           "subtype": "integer",
           "value": "21000000000000"
         },
-        "Start": 17,
-        "End": 35
+        "Start": 21,
+        "End": 38
       }
     ]
   },
@@ -574,8 +574,8 @@
           "subtype": "integer",
           "value": "52"
         },
-        "Start": 16,
-        "End": 27
+        "Start": 9,
+        "End": 21
       }
     ]
   },
@@ -589,8 +589,8 @@
           "subtype": "integer",
           "value": "331"
         },
-        "Start": 16,
-        "End": 38
+        "Start": 3,
+        "End": 24
       }
     ]
   },
@@ -598,7 +598,7 @@
     "Input": "קניתי שמלה באלפיים שש מאות חמישים וארבע שקל.",
     "Results": [
       {
-        "Text": "באלפיים שש מאות חמישים וארבע",
+        "Text": "אלפיים שש מאות חמישים וארבע",
         "TypeName": "number",
         "Resolution": {
           "subtype": "integer",
@@ -805,10 +805,11 @@
     ]
   },
   {
-    "Input": "אחמד ​​ישן שעה ורבע",
+    "Input": "אחמד ​​ישן שלוש שעות ורבע",
+    "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
-        "Text": "שעה ורבע",
+        "Text": "שלוש שעות ורבע",
         "TypeName": "number",
         "Resolution": {
           "subtype": "fraction",
@@ -820,7 +821,7 @@
     ]
   },
   {
-    "Input": "שתו ביום חמש ורבע כוס מים",
+    "Input": "שתו ביום חמש ורבע כוסות מים",
     "Results": [
       {
         "Text": "חמש ורבע",
@@ -970,22 +971,22 @@
     ]
   },
   {
-    "Input": "ההסתברות לתשובה היא מאה אלף טריליון.",
+    "Input": "ההסתברות לתשובה היא מאה אלף חלקי טריליון.",
     "Results": [
       {
-        "Text": "מאה אלף טריליון",
+        "Text": "מאה אלף חלקי טריליון",
         "TypeName": "number",
         "Resolution": {
           "subtype": "fraction",
           "value": "1E-07"
         },
-        "Start": 15,
-        "End": 38
+        "Start": 20,
+        "End": 29
       }
     ]
   },
   {
-    "Input": "עברה  חמישית שעה מאז ניקיתי.",
+    "Input": "עברה חמישית שעה מאז ניקיתי.",
     "Results": [
       {
         "Text": "חמישית",
@@ -994,7 +995,7 @@
           "subtype": "fraction",
           "value": "0.2"
         },
-        "Start": 6,
+        "Start": 5,
         "End": 10
       }
     ]
@@ -1099,8 +1100,8 @@
           "subtype": "fraction",
           "value": "26.4"
         },
-        "Start": 4,
-        "End": 23
+        "Start": 0,
+        "End": 25
       }
     ]
   },
@@ -1145,7 +1146,7 @@
           "value": "0.0995024875621891"
         },
         "Start": 0,
-        "End": 21
+        "End": 16
       }
     ]
   },
@@ -1249,8 +1250,8 @@
           "subtype": "fraction",
           "value": "1900"
         },
-        "Start": 6,
-        "End": 30
+        "Start": 7,
+        "End": 19
       }
     ]
   },
@@ -1454,8 +1455,8 @@
           "subtype": "integer",
           "value": "301"
         },
-        "Start": 17,
-        "End": 30
+        "Start": 22,
+        "End": 35
       }
     ]
   }

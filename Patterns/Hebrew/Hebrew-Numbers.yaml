@@ -8,10 +8,16 @@ MultiDecimalSeparatorCulture: !bool true
 #Integer Regex
 RoundNumberIntegerRegex: !simpleRegex
   def: (?:מאתיים|אלפים|טריליון|טריליונים|מיליארד|מיליארדים|מיליון|אלף|מאה|מאות|אלפים|אלפיים|אלף)
-ZeroToNineIntegerRegex: !simpleRegex
-  def: (:?אחד|שניים|שלוש|ארבע|חמש|שש|שבע|שמונה|תשע|שלושת|ארבעת|חמשת|ששת|שבעת|שמונת|תשעת|אחת|שתיים|שלושה|ארבעה|חמישה|ששה|שישה|שבעה|שמונה|תשעה|רביעית|חמישית|שישית|שבעית|שמינית|תשעית|תישעית|רביעי|חמישי|שישי|שביעי|שמיני|תשעי|תישעי|אפס)
 TwoToNineIntegerRegex: !simpleRegex
-  def: (:?שניים|שלוש|ארבע|חמש|שש|שבע|שמונה|תשע|שתיים|שלושה|ארבעה|חמישה|ששה|שישה|שבעה|שמונה|תשעה|שלושת|ארבעת|חמשת|ששת|שבעת|שמונת|תשעת|רביעית|חמישית|שישית|שבעית|שמינית|תשעית|תישעית|רביעי|חמישי|שישי|שביעי|שמיני|תשעי|תישעי)
+  def: (:?שניים|שלושה|ארבעה|חמישה|ששה|שישה|שבעה|שמונה|תשעה|שתיים|שלוש|ארבע|חמש|שש|שבע|שמונה|תשע|שלושת|ארבעת|חמשת|ששת|שבעת|שמונת|תשעת)
+NumberOrdinalRegex: !simpleRegex
+  def: (?:ראשון|שני|שלישי|רביעי|חמישי|שישי|ששי|שביעי|שמיני|תשעי|עשירי|ראשונה|שנייה|שלישית|רביעית|חמישית|שישית|שביעית|שמינית|עשירית)
+OneToNineIntegerRegex: !nestedRegex
+  def: (:?{TwoToNineIntegerRegex}|אחד|אחת)
+  references: [TwoToNineIntegerRegex]
+ZeroToNineIntegerRegex: !nestedRegex
+  def: (:?{OneToNineIntegerRegex}|אפס)
+  references: [OneToNineIntegerRegex]
 NegativeNumberTermsRegex: !simpleRegex
   def: (?<negTerm>(מינוס)(\s+)?)
 NegativeNumberSignRegex: !nestedRegex
@@ -19,10 +25,11 @@ NegativeNumberSignRegex: !nestedRegex
   references: [NegativeNumberTermsRegex]
 AnIntRegex: !simpleRegex
   def: (אחד|אחת)(?=\s)
-TenToNineteenIntegerRegex: !simpleRegex
-  def: (?:((אחד|שנים|שלוש|ארבע|חמש|שש|שבע|שמונה|תשע|אחת|שתיים|שלושה|ארבעה|חמישה|שישה|ששה|שבעה|שמונה|תשעה)(\s|-)(עשר|עשרה)))
+TenToNineteenIntegerRegex: !nestedRegex
+  def: (?:({OneToNineIntegerRegex}(\s|-)(עשר|עשרה)))
+  references: [OneToNineIntegerRegex]
 TensNumberIntegerRegex: !simpleRegex
-  def: (?:עשר|עשרה|עשרים|שלושים|ארבעים|חמישים|ששים|שישים|שבעים|שמונים|תשעים)
+  def: (?:עשרים|עשרה|עשר|שלושים|ארבעים|חמישים|ששים|שישים|שבעים|שמונים|תשעים)
 SeparaIntRegex: !nestedRegex
   def: (?:((({RoundNumberIntegerRegex}\s{RoundNumberIntegerRegex})|{TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(((ו)?)\s+(ו)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})(\s+{RoundNumberIntegerRegex})*))|(((\s+{RoundNumberIntegerRegex})+))
   references:
@@ -33,7 +40,7 @@ SeparaIntRegex: !nestedRegex
       RoundNumberIntegerRegex
     ]
 AllIntRegex: !nestedRegex
-  def: (?:((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(ו)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})?(\s+{RoundNumberIntegerRegex})+)\s+(ו)?)*{SeparaIntRegex})
+  def: (?:((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(ו)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})?(\s*{RoundNumberIntegerRegex})+)\s+(ו)?)*{SeparaIntRegex})
   references:
     [
       TenToNineteenIntegerRegex,
@@ -58,7 +65,7 @@ RoundNumberIntegerRegexWithLocks: !nestedRegex
 NumbersWithDozenSuffix: !simpleRegex
   def: (((?<!\d+\s*)([-]\s*)?)|(?<=\s|^))(\d+\s+)?(תריסר|עשרות)(?=\s|$)  
 AllIntRegexWithLocks: !nestedRegex
-  def: ((?<=\s|^|\.|,|;){AllIntRegex}(?=\s|$|\.|,|;))
+  def: ((?=[אבגדהוזחטיכלמנסעפקצרשת]){AllIntRegex}(?<=[אבגדהוזחטיכלמנסעפקצרשתםץןף]))
   references: [AllIntRegex]
 AllIntRegexWithDozenSuffixLocks: !nestedRegex
   def: (?<=\s|^)(((חצי\s+)(תריסר))|({AllIntRegex}(ו)?\s+((ו)?))(תריסר))(?=\s|$)
@@ -67,8 +74,6 @@ AllIntRegexWithDozenSuffixLocks: !nestedRegex
 RoundNumberOrdinalRegex: !nestedRegex
   def: (?:((מ|ואילך)\s+)({RoundNumberIntegerRegex}))
   references: [RoundNumberIntegerRegex]  
-NumberOrdinalRegex: !simpleRegex
-  def: (?:ראשון|שני|שלישי|רביעי|חמישי|שישי|ששי|שביעי|שמיני|תשעי|עשירי|ראשונה|שנייה|שלישית|רביעית|חמישית|שישית|שביעית|שמינית|עשירית)
 RelativeOrdinalRegex: !simpleRegex
   def: (?<relativeOrdinal>הקודם|הנוכחי|הבא|לפני אחרון|אחרון)
 BasicOrdinalRegex: !nestedRegex
@@ -105,11 +110,11 @@ FractionNotationWithSpacesRegex2: !simpleRegex
 FractionNotationRegex: !simpleRegex
   def: (((?<={?[\u0600-\u06ff]}|^)-\s*)|(?<![/-])(?<=\s|^))\d+[/]\d+(?=(\b[^/]|$))
 HebrewBuiltInFraction: !simpleRegex
-  def: (?:חצי|חציים|חמישית|עשירית|עשיריות|רבע|רבעים|שלישים|שליש)
+  def: (?:חצי|חציים|חמישית|עשירית|עשיריות|רבע|רבעים|שלישים|שליש|רבעים|ורבע|חצאיים|חצאים|וחצי|שליש|שלישים|שליש|רבע|רביעיות|חמישיות|עשיריות|חצי|רבע|חצי|שני שלישים|שני שליש)
 FractionOrdinalPrefix: !simpleRegex
   def: (الوزن|المحتوى:?)  
 FractionNounRegex: !nestedRegex
-  def: (?<=\s|^){HebrewBuiltInFraction}|{AllIntRegex}(\s+|\s*)ו{HebrewBuiltInFraction}|(({AllIntRegex}(\s+|\s*)ו?)?({AllIntRegex})(\s+|\s*)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|רבעים|ורבע|חצאיים|חצאים|וחצי|שליש|שלישים|ושליש|רבע|רביעיות|חמישיות|עשיריות|חצי|רבע|חצי|שני שלישים|שני שליש))(?=\s|$)
+  def: (?<=\s|^){HebrewBuiltInFraction}|{AllIntRegex}(\s+|\s*)ו{HebrewBuiltInFraction}|({RoundNumberOrdinalRegex})(?=\s|$)
   references: [AllIntRegex, HebrewBuiltInFraction, AllOrdinalRegex, RoundNumberOrdinalRegex]
 FractionNounWithArticleRegex: !nestedRegex
   def: (?<=\s|^)((({AllIntRegex}(\s|(\s*-\s*)|ו\s+)?)(({AllOrdinalRegex})|{NumberOrdinalRegex}|וחצי|ושליש|ורבע))|(החצי|השליש|הרבע|))(?=\s|$)
@@ -294,26 +299,48 @@ CardinalNumberMap: !dictionary
     שלוש: 3
     שלושה: 3
     שלושת: 3
-    ארבע: 4
     ארבעה: 4
     ארבעת: 4
-    חמש: 5
+    ארבע: 4
     חמשה: 5
+    חמש: 5
+    חמישה: 5
     חמשת: 5
-    שש: 6
+    שישה: 6
     ששה: 6
+    שש: 6
     ששת: 6
-    שבע: 7
     שבעה: 7
+    שבע: 7
     שבעת: 7
     שמונה: 8
     שמונת: 8
-    תשע: 9
     תשעה: 9
+    תשע: 9
     תשעת: 9
-    עשר: 10
     עשרה: 10
+    עשר: 10
     עשרת: 10
+    אחת עשרה: 11
+    אחד עשר: 11
+    שתיים עשרה: 12
+    שניים עשר: 12
+    שלוש עשרה: 13
+    שלושה עשר: 13
+    ארבע עשרה: 14
+    ארבעה עשר: 14
+    חמש עשרה: 15
+    חמשה עשר: 15
+    חמישה עשר: 15
+    שש עשרה: 16
+    ששה עשר: 16
+    שישה עשר: 16
+    שבע עשרה: 17
+    שבעה עשר: 17
+    שמונה עשרה: 18
+    שמונה עשר: 18
+    תשע עשרה: 19    
+    תשעה עשר: 19    
     תריסר: 12
     עשרים: 20
     שלושים: 30
@@ -383,9 +410,9 @@ OrdinalNumberMap: !dictionary
 RoundNumberMap: !dictionary
   types: [string, long]
   entries:
-    עשר: 10
     עשרה: 10
     עשרת: 10
+    עשר: 10
     מאה: 100
     מאות: 100
     אלף: 1000
