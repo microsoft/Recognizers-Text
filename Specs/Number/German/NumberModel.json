@@ -910,5 +910,35 @@
         }
       }
     ]
+  },
+  {
+    "Input": "fünfzehn",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "fünfzehn",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "15"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "fünfzehntausend",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "fünfzehntausend",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "15000"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
   }
 ]

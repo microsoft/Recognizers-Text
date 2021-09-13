@@ -20,7 +20,7 @@ class GermanNumeric:
     ZeroToNineIntegerRegex = f'(drei|sieben|acht|vier|fuenf|fünf|null|neun|eins|(ein(?!($|\\.|,|!|\\?)))|eine[rn]?|zwei|zwo|sechs)'
     RoundNumberIntegerRegex = f'((ein)?hundert|tausend|(\\s*(million(en)?|mio|milliarden?|mrd|billion(en)?)\\s*))'
     AnIntRegex = f'(eine?)(?=\\s)'
-    TenToNineteenIntegerRegex = f'(siebzehn|dreizehn|vierzehn|achtzehn|neunzehn|fuenfzehn|sechzehn|elf|zwoelf|zwölf|zehn)'
+    TenToNineteenIntegerRegex = f'(siebzehn|dreizehn|vierzehn|achtzehn|neunzehn|fünfzehn|fuenfzehn|sechzehn|elf|zwoelf|zwölf|zehn)'
     TensNumberIntegerRegex = f'(siebzig|zwanzig|dreißig|achtzig|neunzig|vierzig|fuenfzig|fünfzig|sechzig|hundert|tausend)'
     NegativeNumberTermsRegex = f'^[.]'
     NegativeNumberSignRegex = f'^({NegativeNumberTermsRegex}\\s+).*'
