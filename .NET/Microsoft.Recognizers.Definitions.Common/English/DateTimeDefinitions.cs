@@ -244,9 +244,9 @@ namespace Microsoft.Recognizers.Definitions.English
       public const string InclusiveModPrepositions = @"(?<include>((on|in|at)\s+or\s+)|(\s+or\s+(on|in|at)))";
       public const string AroundRegex = @"(?:\b(?:around|circa)\s*?\b)(\s+the)?";
       public static readonly string BeforeRegex = $@"((\b{InclusiveModPrepositions}?(?:before|in\s+advance\s+of|prior\s+to|(no\s+later|earlier|sooner)\s+than|ending\s+(with|on)|by|(un)?till?|(?<include>as\s+late\s+as)){InclusiveModPrepositions}?\b\s*?)|(?<!\w|>)((?<include><\s*=)|<))(\s+the)?";
-      public static readonly string AfterRegex = $@"((\b{InclusiveModPrepositions}?((after|(starting|beginning)(\s+on)?(?!\sfrom)|(?<!no\s+)later than)|(year greater than))(?!\s+or equal to){InclusiveModPrepositions}?\b\s*?)|(?<!\w|<)((?<include>>\s*=)|>))(\s+the)?";
-      public const string SinceRegex = @"(?:(?:\b(?:since|after\s+or\s+equal\s+to|starting\s+(?:from|on|with)|as\s+early\s+as|(any\s+time\s+)from)\b\s*?)|(?<!\w|<)(>=))(\s+the)?";
-      public static readonly string SinceRegexExp = $@"({SinceRegex}|\bfrom(\s+the)?\b)";
+      public static readonly string AfterRegex = $@"((\b{InclusiveModPrepositions}?((after(\s+on)?(?!\sfrom)|(?<!no\s+)later than)|(year greater than))(?!\s+or equal to){InclusiveModPrepositions}?\b\s*?)|(?<!\w|<)((?<include>>\s*=)|>))(\s+the)?";
+      public const string SinceRegex = @"(?:(?:\b(?:since|after\s+or\s+equal\s+to|(starting|beginning)(\s)?(?:from|on|with)?|as\s+early\s+as|(any\s+time\s+)from)\b\s*?)|(?<!\w|<)(>=))(\s+the)?";
+       public static readonly string SinceRegexExp = $@"({SinceRegex}|\bfrom(\s+the)?\b)";
       public const string AgoRegex = @"\b(ago|earlier|before\s+(?<day>yesterday|today))\b";
       public static readonly string LaterRegex = $@"\b(?:later(?!((\s+in)?\s*{OneWordPeriodRegex})|(\s+{TimeOfDayRegex})|\s+than\b)|from now|(from|after)\s+(?<day>tomorrow|tmr|today))\b";
       public const string BeforeAfterRegex = @"\b((?<before>before)|(?<after>from|after))\b";
@@ -301,7 +301,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public const string StartMiddleEndRegex = @"\b((?<StartOf>((the\s+)?(start|beginning)\s+of\s+)?)(?<MiddleOf>((the\s+)?middle\s+of\s+)?)(?<EndOf>((the\s+)?end\s+of\s+)?))";
       public static readonly string ComplexDatePeriodRegex = $@"(?:((from|during|in)\s+)?{StartMiddleEndRegex}(?<start>.+)\s*({StrictTillRegex})\s*{StartMiddleEndRegex}(?<end>.+)|((between)\s+){StartMiddleEndRegex}(?<start>.+)\s*({StrictRangeConnectorRegex})\s*{StartMiddleEndRegex}(?<end>.+))";
       public static readonly string FailFastRegex = $@"{BaseDateTime.DeltaMinuteRegex}|\b(?:{BaseDateTime.BaseAmDescRegex}|{BaseDateTime.BasePmDescRegex})|{BaseDateTime.BaseAmPmDescRegex}|\b(?:zero|{WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|{WrittenTensRegex}|{WrittenMonthRegex}|{SeasonDescRegex}|{DecadeRegex}|centur(y|ies)|weekends?|quarters?|hal(f|ves)|yesterday|to(morrow|day|night)|tmr|noonish|\d(-|——)?ish|((the\s+\w*)|\d)(th|rd|nd|st)|(mid\s*(-\s*)?)?(night|morning|afternoon|day)s?|evenings?|noon|lunch(time)?|dinner(time)?|(day|night)time|overnight|dawn|dusk|sunset|hours?|hrs?|h|minutes?|mins?|seconds?|secs?|eo[dmy]|mardi[ -]?gras|birthday|eve|christmas|xmas|thanksgiving|halloween|yuandan|easter|yuan dan|april fools|cinco de mayo|all (hallow|souls)|guy fawkes|(st )?patrick|hundreds?|noughties|aughts|thousands?)\b|{WeekDayRegex}|{SetWeekDayRegex}|{NowRegex}|{PeriodicRegex}|\b({DateUnitRegex}|{ImplicitDayRegex})";
-      public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>
+        public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>
         {
             { @"decades", @"10Y" },
             { @"decade", @"10Y" },
