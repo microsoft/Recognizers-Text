@@ -694,8 +694,8 @@
           "subtype": "fraction",
           "value": "0.625"
         },
-        "Start": 19,
-        "End": 28
+        "Start": 14,
+        "End": 24
       }
     ]
   },
@@ -1320,17 +1320,17 @@
     ]
   },
   {
-    "Input": "חמש שמיניות",
+    "Input": "שלוש שמיניות",
     "Results": [
       {
-        "Text": "חמש שמיניות",
+        "Text": "שלוש שמיניות",
         "TypeName": "number",
         "Resolution": {
           "subtype": "fraction",
-          "value": "0.625"
+          "value": "0.375"
         },
-        "Start": 11,
-        "End": 20
+        "Start": 0,
+        "End": 11
       }
     ]
   },
@@ -1365,17 +1365,17 @@
     ]
   },
   {
-    "Input": "חמש שמיניות של",
+    "Input": "שבע שמיניות של",
     "Results": [
       {
-        "Text": "חמש שמיניות של",
+        "Text": "שבע שמיניות",
         "TypeName": "number",
         "Resolution": {
           "subtype": "fraction",
-          "value": "0.625"
+          "value": "0.875"
         },
         "Start": 0,
-        "End": 9
+        "End": 10
       }
     ]
   },

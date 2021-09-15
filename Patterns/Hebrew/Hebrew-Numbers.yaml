@@ -9,7 +9,7 @@ MultiDecimalSeparatorCulture: !bool true
 RoundNumberIntegerRegex: !simpleRegex
   def: (?:מאתיים|אלפים|טריליון|טריליונים|מיליארד|מיליארדים|מיליון|אלף|מאה|מאות|אלפים|אלפיים|אלף)
 TwoToNineIntegerRegex: !simpleRegex
-  def: (:?שניים|שלושה|ארבעה|חמישה|ששה|שישה|שבעה|שמונה|תשעה|שתיים|שלוש|ארבע|חמש|שש|שבע|שמונה|תשע|שלושת|ארבעת|חמשת|ששת|שבעת|שמונת|תשעת)
+  def: (:?שניים|שני|שלושה|ארבעה|חמישה|ששה|שישה|שבעה|שמונה|תשעה|שתיים|שתי|שלוש|ארבע|חמש|שש|שבע|שמונה|תשע|שלושת|ארבעת|חמשת|ששת|שבעת|שמונת|תשעת)
 NumberOrdinalRegex: !simpleRegex
   def: (?:ראשון|שני|שלישי|רביעי|חמישי|שישי|ששי|שביעי|שמיני|תשעי|עשירי|ראשונה|שנייה|שלישית|רביעית|חמישית|שישית|שביעית|שמינית|עשירית)
 OneToNineIntegerRegex: !nestedRegex
@@ -110,11 +110,11 @@ FractionNotationWithSpacesRegex2: !simpleRegex
 FractionNotationRegex: !simpleRegex
   def: (((?<={?[\u0600-\u06ff]}|^)-\s*)|(?<![/-])(?<=\s|^))\d+[/]\d+(?=(\b[^/]|$))
 HebrewBuiltInFraction: !simpleRegex
-  def: (?:חצי|חציים|חמישית|עשירית|עשיריות|רבע|רבעים|שלישים|שליש|רבעים|ורבע|חצאיים|חצאים|וחצי|שליש|שלישים|שליש|רבע|רביעיות|חמישיות|עשיריות|חצי|רבע|חצי|שני שלישים|שני שליש)
+  def: (?:חצי|חציים|חמישית|עשירית|עשיריות|רבע|רבעים|שלישים|שליש|רבעים|רבע|חצאיים|חצאים|חצי|שליש|שלישים|שליש|רבע|רביעיות|חמישיות|שישיות|שביעיות|שמיניות|תשיעיות|עשיריות|חצי|רבע|חצי)
 FractionOrdinalPrefix: !simpleRegex
   def: (الوزن|المحتوى:?)  
 FractionNounRegex: !nestedRegex
-  def: (?<=\s|^){HebrewBuiltInFraction}|{AllIntRegex}(\s+|\s*)ו{HebrewBuiltInFraction}|({RoundNumberOrdinalRegex})(?=\s|$)
+  def: (?<=\s|^){HebrewBuiltInFraction}|{AllIntRegex}(\s+|\s*){HebrewBuiltInFraction}|({RoundNumberOrdinalRegex})(?=\s|$)
   references: [AllIntRegex, HebrewBuiltInFraction, AllOrdinalRegex, RoundNumberOrdinalRegex]
 FractionNounWithArticleRegex: !nestedRegex
   def: (?<=\s|^)((({AllIntRegex}(\s|(\s*-\s*)|ו\s+)?)(({AllOrdinalRegex})|{NumberOrdinalRegex}|וחצי|ושליש|ורבע))|(החצי|השליש|הרבע|))(?=\s|$)
@@ -378,20 +378,33 @@ OrdinalNumberMap: !dictionary
     שני: 2
     שנית: 2
     שלישית: 3
+    שליש: 3
+    שלישים: 3
     רבע: 4
     רביעית: 4
+    רבעים: 4
     חמש: 5
     חמישית: 5
+    חמישיות: 5
+    ששי: 6
+    שישי: 6
     שישית: 6
-    השישית: 6
+    שישיות: 6
     שבע: 7
     שביעי: 7
+    שביעיות: 7
+    שביעית: 7
+    שמיני: 8
     שמינית: 8
+    שמיניות: 8
     שמונה: 8
     תשע: 9
     תשיעי: 9
+    תשיעית: 9
+    תשיעיות: 9
     עשירית: 10
     עשירי: 10
+    עשיריות: 10
     עשר: 10
     עשרים: 20
     שלושים: 30
