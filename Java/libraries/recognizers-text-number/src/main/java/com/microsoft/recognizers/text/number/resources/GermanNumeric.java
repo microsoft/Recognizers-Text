@@ -31,7 +31,7 @@ public class GermanNumeric {
 
     public static final String AnIntRegex = "(eine?)(?=\\s)";
 
-    public static final String TenToNineteenIntegerRegex = "(siebzehn|dreizehn|vierzehn|achtzehn|neunzehn|fuenfzehn|sechzehn|elf|zwoelf|zwölf|zehn)";
+    public static final String TenToNineteenIntegerRegex = "(siebzehn|dreizehn|vierzehn|achtzehn|neunzehn|fünfzehn|fuenfzehn|sechzehn|elf|zwoelf|zwölf|zehn)";
 
     public static final String TensNumberIntegerRegex = "(siebzig|zwanzig|dreißig|achtzig|neunzig|vierzig|fuenfzig|fünfzig|sechzig|hundert|tausend)";
 
