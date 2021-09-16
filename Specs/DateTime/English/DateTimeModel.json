@@ -10872,17 +10872,17 @@
           "values": [
             {
               "timex": "XXXX-01-07",
-              "Mod": "after",
+              "Mod": "since",
               "type": "daterange",
-              "start": "2019-01-07",
-              "sourceEntity": "datetimepoint"
+              "sourceEntity": "datetimepoint",
+              "start": "2019-01-07"
             },
             {
               "timex": "XXXX-01-07",
-              "Mod": "after",
+              "Mod": "since",
               "type": "daterange",
-              "start": "2020-01-07",
-              "sourceEntity": "datetimepoint"
+              "sourceEntity": "datetimepoint",
+              "start": "2020-01-07"
             }
           ]
         }
@@ -10904,17 +10904,17 @@
           "values": [
             {
               "timex": "XXXX-01-07",
-              "Mod": "after",
+              "Mod": "since",
               "type": "daterange",
-              "start": "2019-01-07",
-              "sourceEntity": "datetimepoint"
+              "sourceEntity": "datetimepoint",
+              "start": "2019-01-07"
             },
             {
               "timex": "XXXX-01-07",
-              "Mod": "after",
+              "Mod": "since",
               "type": "daterange",
-              "start": "2020-01-07",
-              "sourceEntity": "datetimepoint"
+              "sourceEntity": "datetimepoint",
+              "start": "2020-01-07"
             }
           ]
         }
@@ -11012,17 +11012,17 @@
           "values": [
             {
               "timex": "XXXX-01-07",
-              "Mod": "after",
+              "Mod": "since",
               "type": "daterange",
-              "start": "2019-01-07",
-              "sourceEntity": "datetimepoint"
+              "sourceEntity": "datetimepoint",
+              "start": "2019-01-07"
             },
             {
               "timex": "XXXX-01-07",
-              "Mod": "after",
+              "Mod": "since",
               "type": "daterange",
-              "start": "2020-01-07",
-              "sourceEntity": "datetimepoint"
+              "sourceEntity": "datetimepoint",
+              "start": "2020-01-07"
             }
           ]
         }
@@ -11044,17 +11044,17 @@
           "values": [
             {
               "timex": "XXXX-01-07",
-              "Mod": "after",
+              "Mod": "since",
               "type": "daterange",
-              "start": "2019-01-07",
-              "sourceEntity": "datetimepoint"
+              "sourceEntity": "datetimepoint",
+              "start": "2019-01-07"
             },
             {
               "timex": "XXXX-01-07",
-              "Mod": "after",
+              "Mod": "since",
               "type": "daterange",
-              "start": "2020-01-07",
-              "sourceEntity": "datetimepoint"
+              "sourceEntity": "datetimepoint",
+              "start": "2020-01-07"
             }
           ]
         }
