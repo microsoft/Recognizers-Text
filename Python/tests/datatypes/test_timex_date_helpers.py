@@ -1,9 +1,7 @@
 #  Copyright (c) Microsoft Corporation. All rights reserved.
 #  Licensed under the MIT License.
 
-from datetime import datetime
-
-from datatypes_timex_expression import TimexDateHelpers, Constants
+from datatypes_timex_expression import datetime, TimexDateHelpers, Constants
 
 
 def test_datatypes_datehelpers_tomorrow():
@@ -43,16 +41,18 @@ def test_datatypes_datehelpers_islastweek():
 
 
 def test_datatypes_datehelpers_weekofyear():
-    assert TimexDateHelpers.week_of_year(datetime(2017, 1, 1)) == 1
-    assert TimexDateHelpers.week_of_year(datetime(2017, 1, 2)) == 2
-    assert TimexDateHelpers.week_of_year(datetime(2017, 2, 23)) == 9
-    assert TimexDateHelpers.week_of_year(datetime(2017, 3, 15)) == 12
-    assert TimexDateHelpers.week_of_year(datetime(2017, 9, 25)) == 40
-    assert TimexDateHelpers.week_of_year(datetime(2017, 12, 31)) == 53
+    assert TimexDateHelpers.week_of_year(datetime(2017, 1, 1)) == 52
+    assert TimexDateHelpers.week_of_year(datetime(2017, 1, 2)) == 1
+    assert TimexDateHelpers.week_of_year(datetime(2017, 2, 23)) == 8
+    assert TimexDateHelpers.week_of_year(datetime(2017, 3, 15)) == 11
+    assert TimexDateHelpers.week_of_year(datetime(2017, 9, 25)) == 39
+    assert TimexDateHelpers.week_of_year(datetime(2017, 12, 31)) == 52
     assert TimexDateHelpers.week_of_year(datetime(2018, 1, 1)) == 1
     assert TimexDateHelpers.week_of_year(datetime(2018, 1, 2)) == 1
     assert TimexDateHelpers.week_of_year(datetime(2018, 1, 7)) == 1
     assert TimexDateHelpers.week_of_year(datetime(2018, 1, 8)) == 2
+    assert TimexDateHelpers.week_of_year(datetime(2018, 12, 31)) == 1
+    assert TimexDateHelpers.week_of_year(datetime(2021, 4, 20)) == 16
 
 
 def test_datatypes_datehelpers_invariance():
