@@ -164,7 +164,7 @@ class TimexResolver:
             Constants.DAYS['MONDAY'], date_in_week + timedelta(days=7))
 
         return TimexValue.date_value(Timex(year=start.year, month=start.month, day_of_month=start.day)), TimexValue.date_value(
-            Timex(year=start.year, month=start.month, day_of_month=end.day))
+            Timex(year=end.year, month=end.month, day_of_month=end.day))
 
     @staticmethod
     def resolve_date_range(timex: Timex, date: datetime):

@@ -202,6 +202,17 @@ def test_datatypes_resolver_dateRange_winter():
     assert resolution.values[0].end is None
 
 
+def test_datatypes_resolver_dateRange_first_week():
+    today = datetime(2021, 1, 1)
+    resolution = TimexResolver.resolve(["2021-W01"], today)
+
+    assert len(resolution.values) == 1
+    assert resolution.values[0].timex == "2021-W01"
+    assert resolution.values[0].type == "daterange"
+    assert resolution.values[0].start == "2020-12-28"
+    assert resolution.values[0].end == "2021-01-04"
+
+
 def test_datatypes_resolver_dateRange_last_week():
     today = datetime(2017, 4, 30)
     resolution = TimexResolver.resolve(["2019-W17"], today)
