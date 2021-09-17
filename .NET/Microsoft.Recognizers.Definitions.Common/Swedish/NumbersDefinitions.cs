@@ -43,7 +43,7 @@ namespace Microsoft.Recognizers.Definitions.Swedish
       public static readonly string AllIntRegexWithLocks = $@"((?<=\b){AllIntRegex}(?=\b))";
       public static readonly string AllIntRegexWithDozenSuffixLocks = $@"(?<=\b)(((ett\s+)?halvt\s+dussin)|({AllIntRegex}\s+dussin))(?=\b)";
       public const string RoundNumberOrdinalRegex = @"(hundrade|tusende|miljonte|miljardte|biljonte|biljardte|triljonte|triljardte)";
-      public const string NumberOrdinalRegex = @"(först(e|a)|andr(a|e)|tredje|fjärde|femte|sjätte|sjunde|åttonde|nionde|tioende|elfte|tolfte|trettonde|fjortonde|femtonde|sextonde|sjuttonde|artonde|nittonde|tjugonde|trettionde|fyrtionde|femtionde|sextionde|sjuttionde|åttionde|nittionde)";
+      public const string NumberOrdinalRegex = @"(först(e|a)(del(ar(nas?)?|s)?)?|andr(a|e)|tredje|fjärde|femte|sjätte|sjunde|åttonde|nionde|tioende|elfte|tolfte|trettonde|fjortonde|femtonde|sextonde|sjuttonde|artonde|nittonde|tjugonde|trettionde|fyrtionde|femtionde|sextionde|sjuttionde|åttionde|nittionde)";
       public const string RelativeOrdinalRegex = @"(?<relativeOrdinal>(\bnäst(a|e)|\bföregående|\bnäst\s+sist(a|e)|\bsist(a|e)|\bnuvarande|\b(före|efter)\s+nuvarande|\bförr(a|e)|\btredje\s+från\s+slutet|\bsenaste|\btidigare|\bföre\s+den\s+sist(a|e)|\b(innan|efter|före)\s+sist(a|e)))";
       public static readonly string BasicOrdinalRegex = $@"({NumberOrdinalRegex}|{RelativeOrdinalRegex})";
       public static readonly string SuffixBasicOrdinalRegex = $@"((((({TensNumberIntegerRegex}(\s+(och\s+)?|\s*-?\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(och\s+)?)*({TensNumberIntegerRegex}(\s+|\s*-?\s*))?{BasicOrdinalRegex})";
@@ -56,7 +56,7 @@ namespace Microsoft.Recognizers.Definitions.Swedish
       public const string RoundNumberFractionSwedishRegex = @"(hundradel(s|ar)?|tusendel(s|ar)?|miljon(te)?del(s|ar)?|miljarddel(s|ar)?|biljon(te)?del(s|ar)?|biljarddel(s|ar)?|triljon(te)?del(s|ar)?|triljarddel(s|ar)?)";
       public const string FractionNotationWithSpacesRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))";
       public static readonly string FractionNotationRegex = $@"{BaseNumbers.FractionNotationRegex}";
-      public static readonly string FractionNounRegex = $@"(?<=\b)({AllIntRegex}\s+(och\s+)?)?({AllIntRegex})(\s*|\s*-\s*)((({AllOrdinalRegex})|({RoundNumberFractionSwedishRegex}))((de)?l(s|ar)?)?|halvor|kvart(ar|s))(?=\b)";
+      public static readonly string FractionNounRegex = $@"(?<=\b)({AllIntRegex}\s+(och\s+)?)?({AllIntRegex})(\s*|\s*-\s*)((({AllOrdinalRegex})|({RoundNumberFractionSwedishRegex}))((de)?l(s|ar(nas)?)?)?|halvor(nas?)?|kvart(ar|s))(?=\b)";
       public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)((({AllIntRegex}\s+(och\s+)?)?(en|ett)?(\s+|\s*-\s*)(?!\bförsta\b|\bandra\b)(({AllOrdinalRegex})|({RoundNumberFractionSwedishRegex})|halv(t)?|kvart(s)?))|(halva|hälften))(?=\b)";
       public const string FractionOverRegex = @"(genom|delat\s+(med|på)|delad\s+(med|på)|dividerat\s+(med|på)|dividerad\s+(med|på)|(ut)?av|på)";
       public static readonly string FractionPrepositionRegex = $@"(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<![\.,])\d+))\s+{FractionOverRegex}\s+(?<denominator>({AllIntRegex})|(\d+)(?![\.,]))(?=\b)";
@@ -220,9 +220,61 @@ namespace Microsoft.Recognizers.Definitions.Swedish
             { @"miljardte", 1000000000 },
             { @"biljonte", 1000000000000 },
             { @"biljardte", 1000000000000000 },
+            { @"triljonte", 1000000000000000000 }
+        };
+      public static readonly Dictionary<string, long> RoundNumberMap = new Dictionary<string, long>
+        {
+            { @"hundra", 100 },
+            { @"tusen", 1000 },
+            { @"miljon", 1000000 },
+            { @"milj", 1000000 },
+            { @"miljoner", 1000000 },
+            { @"miljard", 1000000000 },
+            { @"miljarder", 1000000000 },
+            { @"biljon", 1000000000000 },
+            { @"biljoner", 1000000000000 },
+            { @"biljard", 1000000000000000 },
+            { @"bijarder", 1000000000000000 },
+            { @"triljon", 1000000000000000000 },
+            { @"triljoner", 1000000000000000000 },
+            { @"hundrade", 100 },
+            { @"tusende", 1000 },
+            { @"miljonte", 1000000 },
+            { @"miljardte", 1000000000 },
+            { @"biljonte", 1000000000000 },
+            { @"biljardte", 1000000000000000 },
             { @"triljonte", 1000000000000000000 },
+            { @"hundratals", 100 },
+            { @"tusentals", 1000 },
+            { @"miljontals", 1000000 },
+            { @"miljardtals", 1000000000 },
+            { @"biljontals", 1000000000000 },
+            { @"biljardtals", 1000000000000000 },
+            { @"triljontals", 1000000000000000000 },
+            { @"dussin", 12 },
+            { @"tjog", 20 },
+            { @"dussintals", 12 },
+            { @"k", 1000 },
+            { @"m", 1000000 },
+            { @"g", 1000000000 },
+            { @"b", 1000000000 },
+            { @"t", 1000000000000 }
+        };
+      public static readonly Dictionary<string, long> SwedishWrittenFractionLookupMap = new Dictionary<string, long>
+        {
+            { @"tjugoförst", 21 },
+            { @"tjugoandr", 22 },
+            { @"tjugotred", 23 },
+            { @"tjugofjärd", 24 },
+            { @"tjugofemt", 25 },
+            { @"tjugosjätted", 26 },
+            { @"tjugosjund", 27 },
+            { @"tjugoåttond", 28 },
+            { @"tjugoniond", 29 },
             { @"förstadelar", 1 },
             { @"förstedelar", 1 },
+            { @"förstedel", 1 },
+            { @"förstadel", 1 },
             { @"andradelar", 2 },
             { @"andredelar", 2 },
             { @"tredjedelar", 3 },
@@ -232,6 +284,8 @@ namespace Microsoft.Recognizers.Definitions.Swedish
             { @"fjärdedel", 4 },
             { @"fjärdedels", 4 },
             { @"kvartar", 4 },
+            { @"kvart", 4 },
+            { @"kvarts", 4 },
             { @"femtedelar", 5 },
             { @"femtedel", 5 },
             { @"femtedels", 5 },
@@ -388,44 +442,6 @@ namespace Microsoft.Recognizers.Definitions.Swedish
             { @"triljontedels", 1000000000000000000 },
             { @"triljondels", 1000000000000000000 },
             { @"triljondel", 1000000000000000000 }
-        };
-      public static readonly Dictionary<string, long> RoundNumberMap = new Dictionary<string, long>
-        {
-            { @"hundra", 100 },
-            { @"tusen", 1000 },
-            { @"miljon", 1000000 },
-            { @"milj", 1000000 },
-            { @"miljoner", 1000000 },
-            { @"miljard", 1000000000 },
-            { @"miljarder", 1000000000 },
-            { @"biljon", 1000000000000 },
-            { @"biljoner", 1000000000000 },
-            { @"biljard", 1000000000000000 },
-            { @"bijarder", 1000000000000000 },
-            { @"triljon", 1000000000000000000 },
-            { @"triljoner", 1000000000000000000 },
-            { @"hundrade", 100 },
-            { @"tusende", 1000 },
-            { @"miljonte", 1000000 },
-            { @"miljardte", 1000000000 },
-            { @"biljonte", 1000000000000 },
-            { @"biljardte", 1000000000000000 },
-            { @"triljonte", 1000000000000000000 },
-            { @"hundratals", 100 },
-            { @"tusentals", 1000 },
-            { @"miljontals", 1000000 },
-            { @"miljardtals", 1000000000 },
-            { @"biljontals", 1000000000000 },
-            { @"biljardtals", 1000000000000000 },
-            { @"triljontals", 1000000000000000000 },
-            { @"dussin", 12 },
-            { @"tjog", 20 },
-            { @"dussintals", 12 },
-            { @"k", 1000 },
-            { @"m", 1000000 },
-            { @"g", 1000000000 },
-            { @"b", 1000000000 },
-            { @"t", 1000000000000 }
         };
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {

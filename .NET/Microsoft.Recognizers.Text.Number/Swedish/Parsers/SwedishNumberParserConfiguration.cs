@@ -16,6 +16,8 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
+        private static ImmutableDictionary<string, long> swedishWrittenFractionLookupMap;
+
         public SwedishNumberParserConfiguration(INumberOptionsConfiguration config)
         {
 
@@ -47,6 +49,8 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
             this.DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexFlags);
             this.NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexFlags);
             this.FractionPrepositionRegex = new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexFlags);
+
+            swedishWrittenFractionLookupMap = NumbersDefinitions.SwedishWrittenFractionLookupMap.ToImmutableDictionary();
         }
 
         public string NonDecimalSeparatorText { get; private set; }
@@ -71,6 +75,37 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
             }
 
             return fracWords;
+        }
+
+        public override long ResolveCompositeNumber(string numberStr)
+        {
+            // Swedish Ordinals can't be used for denoting fractions as in other languages, e.g. English.
+            // The default method uses the OrdinalNumberMap map to find a fraction expression.
+            // When parsing swedish fractions, such as "en tjugoförstedel" (1/21) this method
+            // fails to find the corresponding Ordinal since this doesn't exist.
+            var resolvedNumber = base.ResolveCompositeNumber(numberStr);
+
+            // So, if resolvedNumber == 0 we test for fractions and thus choose to
+            // use the fallback swedishWrittenFractionLookupMap map to try to
+            // find the corresponding value.
+            if (resolvedNumber == 0)
+            {
+                // The swedishWrittenFractionLookupMap map contains the leading parts of all
+                // tenths fractions, e.g.
+                // 21: "tjugoförst" -> "tjugoförst(a|e)del(s|ar(na)?s?)"
+                // 26: "tjugosjätted" -> "tjugosjätted(el(s|ar(na)?s?)"
+                var tempResult = swedishWrittenFractionLookupMap.FirstOrDefault(k =>
+                    {
+                        // Try to find an entry in the map matching the start of numberStr
+                        // E.g. "tjugoförstedel" starts w/ "tjugoförst" -> return 21
+                        return numberStr.StartsWith(k.Key);
+                    });
+
+                resolvedNumber = tempResult.Value;
+            }
+
+            return resolvedNumber;
+
         }
     }
 }
