@@ -39,6 +39,7 @@ export namespace ChineseDateTime {
     export const SpecialDayRegex = `(最近|前天|后天|昨天|明天|今天|今日|明日|昨日|大后天|大前天|後天|大後天)`;
     export const SpecialDayWithNumRegex = `^[.]`;
     export const WeekDayOfMonthRegex = `(((${MonthRegex}|${MonthNumRegex})的\\s*)(?<cardinal>第一个|第二个|第三个|第四个|第五个|最后一个)\\s*${WeekDayRegex})`;
+    export const WeekDayAndDayRegex = `^[.]`;
     export const ThisPrefixRegex = `这个|这一个|这|这一|本|今`;
     export const LastPrefixRegex = `上个|上一个|上|上一|去`;
     export const NextPrefixRegex = `下个|下一个|下|下一|明`;
