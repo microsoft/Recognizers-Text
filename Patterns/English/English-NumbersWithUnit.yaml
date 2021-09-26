@@ -314,7 +314,7 @@ CurrencySuffixList: !dictionary
     Cuban convertible peso: cuban convertible pesos|cuban convertible peso|cuc|cuba convertible pesos|cuba convertible peso
     Cuban peso: cuban pesos|cuban peso|cup|cuba pesos|cuba peso
     Dominican peso: dominican pesos|dominican peso|dop|dominica pesos|dominica peso
-    Mexican peso: mexican pesos|mexican peso|mxn|mexico pesos|mexico peso
+    Mexican peso: mexican pesos|mexican peso|mxn|mexico pesos|mexico peso|mxn$
     Philippine peso: piso|philippine pesos|philippine peso|₱|php
     Uruguayan peso: uruguayan pesos|uruguayan peso|uyu
     Peso: pesos|peso
@@ -664,8 +664,9 @@ CurrencyPrefixList: !dictionary
     Dobra: db|std
     Dollar: $
     Brazilian Real: R$
-    United States dollar: united states $|us$|us $|u.s. $|u.s $| usd$
+    United States dollar: united states $|us$|us $|u.s. $|u.s $|usd$
     East Caribbean dollar: east caribbean $
+    Mexican peso: mxn$
     Australian dollar: australian $|australia $
     Bahamian dollar: bahamian $|bahamia $
     Barbadian dollar: barbadian $|barbadin $
