@@ -2482,5 +2482,39 @@
         "End": 26
       }
     ]
+  },
+  {
+    "Input": "usd$ 15",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "usd$ 15",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "15",
+          "unit": "United States dollar",
+          "isoCurrency": "USD"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "mxn$ 15",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "mxn$ 15",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "15",
+          "unit": "Mexican peso",
+          "isoCurrency": "MXN"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
   }
 ]
