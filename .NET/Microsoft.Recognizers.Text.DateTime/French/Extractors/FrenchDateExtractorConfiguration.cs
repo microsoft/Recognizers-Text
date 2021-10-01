@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -151,11 +154,12 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
             var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
 
-            IntegerExtractor = Number.French.IntegerExtractor.GetInstance();
-            OrdinalExtractor = Number.French.OrdinalExtractor.GetInstance();
+            IntegerExtractor = Number.French.IntegerExtractor.GetInstance(numConfig);
+            OrdinalExtractor = Number.French.OrdinalExtractor.GetInstance(numConfig);
             NumberParser = new BaseNumberParser(new FrenchNumberParserConfiguration(numConfig));
 
             DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new FrenchHolidayExtractorConfiguration(this));
             UtilityConfiguration = new FrenchDatetimeUtilityConfiguration();
 
             // 3-23-2017
@@ -208,6 +212,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public IParser NumberParser { get; }
 
         public IDateTimeExtractor DurationExtractor { get; }
+
+        public IDateTimeExtractor HolidayExtractor { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 

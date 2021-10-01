@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import * as YamlParser from "./yaml-parser";
 import { GenerateCode, CodeWriter } from "./code-writers";
 import { readFileSync, createWriteStream, write, WriteStream } from "fs";

@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -9,10 +12,28 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
     public class SpanishDateTimePeriodParserConfiguration : BaseDateTimeOptionsConfiguration, IDateTimePeriodParserConfiguration
     {
+        public static readonly Regex EarlyMorningStartEndRegex =
+            new Regex(DateTimeDefinitions.EarlyMorningStartEndRegex, RegexFlags);
+
+        public static readonly Regex MorningStartEndRegex =
+            new Regex(DateTimeDefinitions.MorningStartEndRegex, RegexFlags);
+
+        public static readonly Regex AfternoonStartEndRegex =
+            new Regex(DateTimeDefinitions.AfternoonStartEndRegex, RegexFlags);
+
+        public static readonly Regex EveningStartEndRegex =
+            new Regex(DateTimeDefinitions.EveningStartEndRegex, RegexFlags);
+
+        public static readonly Regex NightStartEndRegex =
+            new Regex(DateTimeDefinitions.NightStartEndRegex, RegexFlags);
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         public SpanishDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
         {
-            TokenBeforeDate = Definitions.Spanish.DateTimeDefinitions.TokenBeforeDate;
+            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
+            TokenBeforeTime = DateTimeDefinitions.TokenBeforeTime;
 
             DateExtractor = config.DateExtractor;
             TimeExtractor = config.TimeExtractor;
@@ -53,6 +74,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         }
 
         public string TokenBeforeDate { get; }
+
+        public string TokenBeforeTime { get; }
 
         public IDateExtractor DateExtractor { get; }
 
@@ -124,49 +147,45 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IImmutableDictionary<string, int> Numbers { get; }
 
-        public bool GetMatchedTimeRange(string text, out string timeStr, out int beginHour, out int endHour, out int endMin)
+        public bool GetMatchedTimeRange(string text, out string todSymbol, out int beginHour, out int endHour, out int endMin)
         {
             var trimmedText = text.Trim();
+
             beginHour = 0;
             endHour = 0;
             endMin = 0;
 
-            if (DateTimeDefinitions.EarlyMorningTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)))
+            if (EarlyMorningStartEndRegex.IsMatch(trimmedText))
             {
-                timeStr = Constants.EarlyMorning;
-                beginHour = 4;
-                endHour = 8;
+                todSymbol = Constants.EarlyMorning;
             }
-            else if (DateTimeDefinitions.MorningTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)))
+            else if (AfternoonStartEndRegex.IsMatch(trimmedText))
             {
-                timeStr = Constants.Morning;
-                beginHour = 8;
-                endHour = Constants.HalfDayHourCount;
+                todSymbol = Constants.Afternoon;
             }
-            else if (DateTimeDefinitions.AfternoonTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)))
+            else if (EveningStartEndRegex.IsMatch(trimmedText))
             {
-                timeStr = Constants.Afternoon;
-                beginHour = Constants.HalfDayHourCount;
-                endHour = 16;
+                todSymbol = Constants.Evening;
             }
-            else if (DateTimeDefinitions.EveningTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)))
+            else if (NightStartEndRegex.IsMatch(trimmedText))
             {
-                timeStr = Constants.Evening;
-                beginHour = 16;
-                endHour = 20;
+                todSymbol = Constants.Night;
             }
-            else if (DateTimeDefinitions.NightTermList.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)))
+            else if (MorningStartEndRegex.IsMatch(trimmedText))
             {
-                timeStr = Constants.Night;
-                beginHour = 20;
-                endHour = 23;
-                endMin = 59;
+                todSymbol = Constants.Morning;
             }
             else
             {
-                timeStr = null;
+                todSymbol = null;
                 return false;
             }
+
+            var parseResult = TimexUtility.ResolveTimeOfDay(todSymbol);
+            todSymbol = parseResult.Timex;
+            beginHour = parseResult.BeginHour;
+            endHour = parseResult.EndHour;
+            endMin = parseResult.EndMin;
 
             return true;
         }
@@ -178,7 +197,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
             // @TODO move hardcoded values to resources file
             if (SpanishDatePeriodParserConfiguration.PreviousPrefixRegex.IsMatch(trimmedText) ||
-                trimmedText.Equals("anoche", StringComparison.Ordinal))
+                trimmedText.StartsWith("anoche", StringComparison.Ordinal))
             {
                 swift = -1;
             }

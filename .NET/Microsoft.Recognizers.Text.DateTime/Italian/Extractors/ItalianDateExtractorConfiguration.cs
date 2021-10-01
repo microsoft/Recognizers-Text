@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -152,6 +155,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             NumberParser = new BaseNumberParser(new ItalianNumberParserConfiguration(numConfig));
 
             DurationExtractor = new BaseDurationExtractor(new ItalianDurationExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new ItalianHolidayExtractorConfiguration(this));
             UtilityConfiguration = new ItalianDatetimeUtilityConfiguration();
 
             const RegexOptions dateRegexOption = RegexOptions.Singleline;
@@ -206,6 +210,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public IParser NumberParser { get; }
 
         public IDateTimeExtractor DurationExtractor { get; }
+
+        public IDateTimeExtractor HolidayExtractor { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 

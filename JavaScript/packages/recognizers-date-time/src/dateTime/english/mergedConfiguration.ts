@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { IMergedExtractorConfiguration, IMergedParserConfiguration } from "../baseMerged";
 import { BaseDateExtractor, BaseDateParser } from "../baseDate";
 import { BaseTimeExtractor, BaseTimeParser } from "../baseTime";
@@ -21,6 +24,7 @@ import { EnglishDatePeriodExtractorConfiguration } from "./datePeriodConfigurati
 import { EnglishDateTimePeriodExtractorConfiguration } from "./dateTimePeriodConfiguration";
 import { EnglishSetExtractorConfiguration, EnglishSetParserConfiguration } from "./setConfiguration";
 import { EnglishHolidayExtractorConfiguration, EnglishHolidayParserConfiguration } from "./holidayConfiguration";
+import { DefinitionLoader } from "../utilities";
 
 export class EnglishMergedExtractorConfiguration implements IMergedExtractorConfiguration {
     readonly dateExtractor: IDateTimeExtractor
@@ -44,6 +48,7 @@ export class EnglishMergedExtractorConfiguration implements IMergedExtractorConf
     readonly numberEndingPattern: RegExp
     readonly unspecificDatePeriodRegex: RegExp
     readonly filterWordRegexList: RegExp[]
+    readonly AmbiguityFiltersDict: Map<RegExp, RegExp>
 
     constructor(dmyDateFormat: boolean = false) {
         this.dateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(dmyDateFormat));
@@ -69,6 +74,7 @@ export class EnglishMergedExtractorConfiguration implements IMergedExtractorConf
         this.filterWordRegexList = [
             RegExpUtility.getSafeRegExp(EnglishDateTime.OneOnOneRegex)
         ];
+        this.AmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(EnglishDateTime.AmbiguityFiltersDict);
     }
 }
 

@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -14,6 +17,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public static readonly Regex PreviousPrefixRegex =
             new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
+
+        public static readonly Regex PenultimatePrefixRegex =
+            new Regex(DateTimeDefinitions.PenultimatePrefixRegex, RegexFlags);
 
         public static readonly Regex ThisPrefixRegex =
             new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
@@ -206,6 +212,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         Regex IDatePeriodParserConfiguration.UnspecificEndOfRangeRegex => UnspecificEndOfRangeRegex;
 
+        Regex IDatePeriodParserConfiguration.AmbiguousPointRangeRegex => null;
+
         bool IDatePeriodParserConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 
         public IImmutableDictionary<string, string> UnitMap { get; }
@@ -247,6 +255,10 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             {
                 swift = -1;
             }
+            else if (PenultimatePrefixRegex.IsMatch(trimmedText))
+            {
+                swift = -2;
+            }
 
             return swift;
         }
@@ -262,6 +274,10 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             else if (PreviousPrefixRegex.IsMatch(trimmedText))
             {
                 swift = -1;
+            }
+            else if (PenultimatePrefixRegex.IsMatch(trimmedText))
+            {
+                swift = -2;
             }
             else if (ThisPrefixRegex.IsMatch(trimmedText))
             {
@@ -305,6 +321,11 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         {
             var trimmedText = text.Trim();
             return DateTimeDefinitions.WeekTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal));
+        }
+
+        public bool IsFortnight(string text)
+        {
+            return false;
         }
 
         public bool IsYearOnly(string text)

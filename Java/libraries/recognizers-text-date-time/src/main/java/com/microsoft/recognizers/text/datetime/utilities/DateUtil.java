@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 package com.microsoft.recognizers.text.datetime.utilities;
 
 import java.time.LocalDate;
@@ -81,6 +84,10 @@ public class DateUtil {
         return 0 <= hour && hour <= 23 &&
                 0 <= minute && minute <= 59 &&
                 0 <= second && second <= 59;
+    }
+
+    public static boolean isDefaultValue(LocalDateTime date) {
+        return date.equals(DateUtil.minValue());
     }
 
     private static final DateTimeFormatter DATE_TIME_FORMATTER = new DateTimeFormatterBuilder()

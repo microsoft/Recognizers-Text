@@ -1,4 +1,7 @@
-﻿using System.Collections.Concurrent;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
@@ -58,6 +61,10 @@ namespace Microsoft.Recognizers.Text.Number.Arabic
                 },
                 {
                     GenerateLongFormatNumberRegexes(LongFormatType.DoubleNumNoBreakSpaceDot, config.Placeholder, RegexFlags),
+                    RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
+                },
+                {
+                    new Regex(NumbersDefinitions.DoubleWithThousandMarkRegex(config.Placeholder), RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
             };

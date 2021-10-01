@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { CultureInfo, Culture } from "@microsoft/recognizers-text-number";
 import { Constants } from "../constants";
 import { EnglishNumberWithUnitExtractorConfiguration, EnglishNumberWithUnitParserConfiguration } from "./base";
@@ -19,8 +22,8 @@ export class EnglishAgeExtractorConfiguration extends EnglishNumberWithUnitExtra
         this.extractType = Constants.SYS_UNIT_AGE;
 
         this.suffixList = EnglishNumericWithUnit.AgeSuffixList;
-        this.prefixList = new Map<string, string>();
-        this.ambiguousUnitList = new Array<string>();
+        this.prefixList = EnglishNumericWithUnit.AgePrefixList;
+        this.ambiguousUnitList = EnglishNumericWithUnit.AmbiguousAgeUnitList;
     }
 }
 
@@ -33,5 +36,6 @@ export class EnglishAgeParserConfiguration extends EnglishNumberWithUnitParserCo
         super(ci);
 
         this.BindDictionary(EnglishNumericWithUnit.AgeSuffixList);
+        this.BindDictionary(EnglishNumericWithUnit.AgePrefixList);
     }
 }

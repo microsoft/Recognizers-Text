@@ -12,6 +12,7 @@
 export namespace GermanChoice {
     export const LangMarker = `Ger`;
     export const TokenizerRegex = `[^\\w\\d\\u00E0-\\u00FC]`;
-    export const TrueRegex = `\\b(wahr|ja|jep|j|sicher|ok|einverstanden|mit\\s+Sicherheit|sicherlich|jap|mache ich)\\b|(\\uD83D\\uDC4D|\\uD83D\\uDC4C)`;
-    export const FalseRegex = `\\b(falsch|nein|ne|nö|nicht\\s+ok|nicht\\s+einverstanden|n)\\b|(\\uD83D\\uDC4E|\\u270B|\\uD83D\\uDD90)`;
+    export const SkinToneRegex = `(\\uD83C\\uDFFB|\\uD83C\\uDFFC|\\uD83C\\uDFFD|\\uD83C\\uDFFE|\\uD83C\\uDFFF)`;
+    export const TrueRegex = `\\b(wahr|ja|jep|j|sicher|ok|einverstanden|mit\\s+Sicherheit|sicherlich|jap|mache ich)\\b|(\\uD83D\\uDC4D|\\uD83D\\uDC4C)${SkinToneRegex}?`;
+    export const FalseRegex = `\\b(falsch|nein|ne|nö|nicht\\s+ok|nicht\\s+einverstanden|n)\\b|(\\uD83D\\uDC4E|\\u270B|\\uD83D\\uDD90)${SkinToneRegex}?`;
 }

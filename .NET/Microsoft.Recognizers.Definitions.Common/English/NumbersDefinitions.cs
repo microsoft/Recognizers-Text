@@ -24,7 +24,13 @@ namespace Microsoft.Recognizers.Definitions.English
       public const string LangMarker = @"Eng";
       public const bool CompoundNumberLanguage = false;
       public const bool MultiDecimalSeparatorCulture = true;
-      public const string RoundNumberIntegerRegex = @"(?:hundred|thousand|million|billion|trillion|lakh|crore)";
+      public static readonly IList<string> NonStandardSeparatorVariants = new List<string>
+        {
+            @"en-za",
+            @"en-na",
+            @"en-zw"
+        };
+      public const string RoundNumberIntegerRegex = @"(?:hundred|thousand|million|mln|billion|bln|trillion|tln|lakh|crore)s?";
       public const string ZeroToNineIntegerRegex = @"(?:three|seven|eight|four|five|zero|nine|one|two|six)";
       public const string TwoToNineIntegerRegex = @"(?:three|seven|eight|four|five|nine|two|six)";
       public const string NegativeNumberTermsRegex = @"(?<negTerm>(minus|negative)\s+)";
@@ -44,7 +50,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly string AllIntRegexWithLocks = $@"((?<=\b){AllIntRegex}(?=\b))";
       public static readonly string AllIntRegexWithDozenSuffixLocks = $@"(?<=\b)(((half\s+)?a\s+dozen)|({AllIntRegex}\s+dozen(s)?))(?=\b)";
       public const string RoundNumberOrdinalRegex = @"(?:hundredth|thousandth|millionth|billionth|trillionth)";
-      public const string NumberOrdinalRegex = @"(?:first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)";
+      public const string NumberOrdinalRegex = @"(?:first|second|third|fourth|fifth|sixth|seventh|eighth|nine?th|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)";
       public const string RelativeOrdinalRegex = @"(?<relativeOrdinal>(next|previous|current)\s+one|(the\s+second|next)\s+to\s+last|the\s+one\s+before\s+the\s+last(\s+one)?|the\s+last\s+but\s+one|(ante)?penultimate|last|next|previous|current)";
       public static readonly string BasicOrdinalRegex = $@"({NumberOrdinalRegex}|{RelativeOrdinalRegex})";
       public static readonly string SuffixBasicOrdinalRegex = $@"(?:(((({TensNumberIntegerRegex}(\s+(and\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(and\s+)?)*({TensNumberIntegerRegex}(\s+|\s*-\s*))?{BasicOrdinalRegex})";
@@ -77,7 +83,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly string NumberWithPrefixPercentage = $@"(per\s*cents?\s+of)(\s*)({BaseNumbers.NumberReplaceToken})";
       public static readonly string NumberWithPrepositionPercentage = $@"({BaseNumbers.NumberReplaceToken})\s*(in|out\s+of)\s*({BaseNumbers.NumberReplaceToken})";
       public const string TillRegex = @"((?<!\bequal\s+)to|through|--|-|—|——|~|–)";
-      public const string MoreRegex = @"(?:(bigger|greater|more|higher|larger)(\s+than)?|above|over|exceed(ed|ing)?|surpass(ed|ing)?|(?<!<|=)>)";
+      public const string MoreRegex = @"(?:(bigger|greater|more|higher|larger)(\s+than)?|above|over|beyond|exceed(ed|ing)?|surpass(ed|ing)?|(?<!<|=)>)";
       public const string LessRegex = @"(?:(less|lower|smaller|fewer)(\s+than)?|below|under|(?<!>|=)<)";
       public const string EqualRegex = @"(equal(s|ing)?(\s+(to|than))?|(?<!<|>)=)";
       public static readonly string MoreOrEqualPrefix = $@"((no\s+{LessRegex})|(at\s+least))";
@@ -114,7 +120,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly string[] WrittenIntegerSeparatorTexts = { @"and" };
       public static readonly string[] WrittenFractionSeparatorTexts = { @"and" };
       public const string HalfADozenRegex = @"half\s+a\s+dozen";
-      public static readonly string DigitalNumberRegex = $@"((?<=\b)(hundred|thousand|[mb]illion|trillion|lakh|crore|dozen(s)?)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
+      public static readonly string DigitalNumberRegex = $@"((?<=\b)(hundred|thousand|[mb]illion|trillion|[mbt]ln|lakh|crore|dozen(s)?)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
       public static readonly Dictionary<string, long> CardinalNumberMap = new Dictionary<string, long>
         {
             { @"a", 1 },
@@ -152,8 +158,11 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"hundred", 100 },
             { @"thousand", 1000 },
             { @"million", 1000000 },
+            { @"mln", 1000000 },
             { @"billion", 1000000000 },
+            { @"bln", 1000000000 },
             { @"trillion", 1000000000000 },
+            { @"tln", 1000000000000 },
             { @"lakh", 100000 },
             { @"crore", 10000000 }
         };
@@ -171,6 +180,7 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"seventh", 7 },
             { @"eighth", 8 },
             { @"ninth", 9 },
+            { @"nineth", 9 },
             { @"tenth", 10 },
             { @"eleventh", 11 },
             { @"twelfth", 12 },
@@ -204,6 +214,7 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"sevenths", 7 },
             { @"eighths", 8 },
             { @"ninths", 9 },
+            { @"nineths", 9 },
             { @"tenths", 10 },
             { @"elevenths", 11 },
             { @"twelfths", 12 },
@@ -233,8 +244,11 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"hundred", 100 },
             { @"thousand", 1000 },
             { @"million", 1000000 },
+            { @"mln", 1000000 },
             { @"billion", 1000000000 },
+            { @"bln", 1000000000 },
             { @"trillion", 1000000000000 },
+            { @"tln", 1000000000000 },
             { @"lakh", 100000 },
             { @"crore", 10000000 },
             { @"hundredth", 100 },

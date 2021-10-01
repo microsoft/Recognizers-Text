@@ -1,0 +1,704 @@
+[
+  {
+    "Input": "سأغادر أسبوعيا",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.2744475+08:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "أسبوعيا",
+        "Start": 7,
+        "Length": 7,
+        "Type": "set",
+        "Value": {
+          "Timex": "P1W",
+          "FutureResolution": {
+            "set": "Set: P1W"
+          },
+          "PastResolution": {
+            "set": "Set: P1W"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر كل أسبوعين",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.2754476+08:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "كل أسبوعين",
+        "Start": 7,
+        "Length": 10,
+        "Type": "set",
+        "Value": {
+          "Timex": "P2W",
+          "FutureResolution": {
+            "set": "Set: P2W"
+          },
+          "PastResolution": {
+            "set": "Set: P2W"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر يوميا",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.2779449+08:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يوميا",
+        "Start": 7,
+        "Length": 5,
+        "Type": "set",
+        "Value": {
+          "Timex": "P1D",
+          "FutureResolution": {
+            "set": "Set: P1D"
+          },
+          "PastResolution": {
+            "set": "Set: P1D"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأرحل كل يوم",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.2794445+08:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "كل يوم",
+        "Start": 6,
+        "Length": 6,
+        "Type": "set",
+        "Value": {
+          "Timex": "P1D",
+          "FutureResolution": {
+            "set": "Set: P1D"
+          },
+          "PastResolution": {
+            "set": "Set: P1D"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر كل شهر",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.2829445+08:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "كل شهر",
+        "Start": 7,
+        "Length": 6,
+        "Type": "set",
+        "Value": {
+          "Timex": "P1M",
+          "FutureResolution": {
+            "set": "Set: P1M"
+          },
+          "PastResolution": {
+            "set": "Set: P1M"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر سنويا",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.2844439+08:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "سنويا",
+        "Start": 7,
+        "Length": 5,
+        "Type": "set",
+        "Value": {
+          "Timex": "P1Y",
+          "FutureResolution": {
+            "set": "Set: P1Y"
+          },
+          "PastResolution": {
+            "set": "Set: P1Y"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر سنويًا",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.2854444+08:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "سنويًا",
+        "Start": 7,
+        "Length": 6,
+        "Type": "set",
+        "Value": {
+          "Timex": "P1Y",
+          "FutureResolution": {
+            "set": "Set: P1Y"
+          },
+          "PastResolution": {
+            "set": "Set: P1Y"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر كل يومين",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.2909444+08:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "كل يومين",
+        "Start": 7,
+        "Length": 8,
+        "Type": "set",
+        "Value": {
+          "Timex": "P2D",
+          "FutureResolution": {
+            "set": "Set: P2D"
+          },
+          "PastResolution": {
+            "set": "Set: P2D"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر كل ثلاثة أسابيع",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.2959472+08:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "كل ثلاثة أسابيع",
+        "Start": 7,
+        "Length": 15,
+        "Type": "set",
+        "Value": {
+          "Timex": "P3W",
+          "FutureResolution": {
+            "set": "Set: P3W"
+          },
+          "PastResolution": {
+            "set": "Set: P3W"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر الساعة 3 مساءً كل يوم",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.2989494+08:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الساعة 3 مساءً كل يوم",
+        "Start": 7,
+        "Length": 21,
+        "Type": "set",
+        "Value": {
+          "Timex": "T15",
+          "FutureResolution": {
+            "set": "Set: T15"
+          },
+          "PastResolution": {
+            "set": "Set: T15"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر الساعة 3 مساءً كل يوم",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.3039501+08:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الساعة 3 مساءً كل يوم",
+        "Start": 7,
+        "Length": 21,
+        "Type": "set",
+        "Value": {
+          "Timex": "T15",
+          "FutureResolution": {
+            "set": "Set: T15"
+          },
+          "PastResolution": {
+            "set": "Set: T15"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر كل 4/15",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.3109498+08:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "كل 4/15",
+        "Start": 7,
+        "Length": 7,
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-04-15",
+          "FutureResolution": {
+            "set": "Set: XXXX-04-15"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-04-15"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر كل يوم اثنين",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.3259514+08:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "كل يوم اثنين",
+        "Start": 7,
+        "Length": 12,
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-1",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-1"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-1"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر كل يوم اثنين الساعة 4 مساءً",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.3379507+08:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "كل يوم اثنين الساعة 4 مساءً",
+        "Start": 7,
+        "Length": 27,
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-1T16",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-1T16"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-1T16"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر كل صباح",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.3429518+08:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "كل صباح",
+        "Start": 7,
+        "Length": 7,
+        "Type": "set",
+        "Value": {
+          "Timex": "TMO",
+          "FutureResolution": {
+            "set": "Set: TMO"
+          },
+          "PastResolution": {
+            "set": "Set: TMO"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر كل صباح في الساعة 9 صباحًا",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.3609535+08:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "كل صباح في الساعة 9 صباحًا",
+        "Start": 7,
+        "Length": 26,
+        "Type": "set",
+        "Value": {
+          "Timex": "T09",
+          "FutureResolution": {
+            "set": "Set: T09"
+          },
+          "PastResolution": {
+            "set": "Set: T09"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر بعد ظهر كل يوم في الساعة 4 مساءً",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.3730732+08:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بعد ظهر كل يوم في الساعة 4 مساءً",
+        "Start": 7,
+        "Length": 32,
+        "Type": "set",
+        "Value": {
+          "Timex": "T16",
+          "FutureResolution": {
+            "set": "Set: T16"
+          },
+          "PastResolution": {
+            "set": "Set: T16"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر كل ليلة في الساعة 9 مساءً",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.3840706+08:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "كل ليلة في الساعة 9 مساءً",
+        "Start": 7,
+        "Length": 25,
+        "Type": "set",
+        "Value": {
+          "Timex": "T21",
+          "FutureResolution": {
+            "set": "Set: T21"
+          },
+          "PastResolution": {
+            "set": "Set: T21"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر كل ليلة في 9",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.3930718+08:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "كل ليلة في 9",
+        "Start": 7,
+        "Length": 12,
+        "Type": "set",
+        "Value": {
+          "Timex": "T21",
+          "FutureResolution": {
+            "set": "Set: T21"
+          },
+          "PastResolution": {
+            "set": "Set: T21"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر كل صباح في الساعة 9 صباحًا",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.4065719+08:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "كل صباح في الساعة 9 صباحًا",
+        "Start": 7,
+        "Length": 26,
+        "Type": "set",
+        "Value": {
+          "Timex": "T09",
+          "FutureResolution": {
+            "set": "Set: T09"
+          },
+          "PastResolution": {
+            "set": "Set: T09"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر في الصباح في التاسعة",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.4170727+08:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "في الصباح في التاسعة",
+        "Start": 7,
+        "Length": 20,
+        "Type": "set",
+        "Value": {
+          "Timex": "T09",
+          "FutureResolution": {
+            "set": "Set: T09"
+          },
+          "PastResolution": {
+            "set": "Set: T09"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر الساعة 9 صباحًا كل يوم أحد",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.4295727+08:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الساعة 9 صباحًا كل يوم أحد",
+        "Start": 7,
+        "Length": 26,
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-7T09",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-7T09"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-7T09"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر الساعة 9 صباحًا أيام الأحد",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.438575+08:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الساعة 9 صباحًا أيام الأحد",
+        "Start": 7,
+        "Length": 26,
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-7T09",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-7T09"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-7T09"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر الساعة 9 صباحًا أيام الأحد",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.4505726+08:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الساعة 9 صباحًا أيام الأحد",
+        "Start": 7,
+        "Length": 26,
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-7T09",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-7T09"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-7T09"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر أيام الاثنين",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.4570731+08:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "أيام الاثنين",
+        "Start": 7,
+        "Length": 12,
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-1",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-1"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-1"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر يوم الأحد",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.4635727+08:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يوم الأحد",
+        "Start": 7,
+        "Length": 9,
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-7",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-7"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-7"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر أيام الأحد",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.4710739+08:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "أيام الأحد",
+        "Start": 7,
+        "Length": 10,
+        "Type": "set",
+        "Value": {
+          "Timex": "XXXX-WXX-7",
+          "FutureResolution": {
+            "set": "Set: XXXX-WXX-7"
+          },
+          "PastResolution": {
+            "set": "Set: XXXX-WXX-7"
+          }
+        }
+      }
+    ]
+  }
+]

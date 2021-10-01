@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 from typing import List, Pattern
 from recognizers_text.utilities import RegExpUtility
 from ...resources.spanish_date_time import SpanishDateTime
@@ -60,7 +63,6 @@ class SpanishTimeExtractorConfiguration(TimeExtractorConfiguration):
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.TimeRegex7),
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.TimeRegex8),
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.TimeRegex9),
-            RegExpUtility.get_safe_reg_exp(SpanishDateTime.TimeRegex10),
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.TimeRegex11),
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.TimeRegex12),
             RegExpUtility.get_safe_reg_exp(SpanishDateTime.ConnectNumRegex)

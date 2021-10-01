@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,7 +38,7 @@ namespace Microsoft.Recognizers.Text
         public void InitializeModels(string targetCulture, TModelOptions options)
         {
             this.Keys
-                .Where(key => string.IsNullOrEmpty(targetCulture) || key.culture.Equals(targetCulture))
+                .Where(key => string.IsNullOrEmpty(targetCulture) || key.culture.Equals(targetCulture, StringComparison.Ordinal))
                 .ToList()
                 .ForEach(key => this.InitializeModel(key.modelType, key.culture, options));
         }
@@ -58,15 +61,15 @@ namespace Microsoft.Recognizers.Text
             return result;
         }
 
-        private bool TryGetModel(Type modelType, string culture, TModelOptions options, out IModel model)
+        private bool TryGetModel(Type modelType, string reqCulture, TModelOptions options, out IModel model)
         {
             model = default(IModel);
-            if (string.IsNullOrEmpty(culture))
+            if (string.IsNullOrEmpty(reqCulture))
             {
                 return false;
             }
 
-            culture = Culture.MapToNearestLanguage(culture);
+            var culture = Culture.MapToNearestLanguage(reqCulture);
 
             // Look in cache
             var cacheKey = (culture, modelType, options.ToString());

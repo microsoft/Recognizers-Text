@@ -1,0 +1,29 @@
+[
+ {
+  "Input": "この`番号`は `123`または`456`です",
+  "NotSupportedByDesign": "javascript, python, java",
+  "Results": [
+   {
+    "Text": "`番号`",
+    "TypeName": "quotedText",
+    "Resolution": {
+     "value": "`番号`"
+    }
+   },
+   {
+    "Text": "`123`",
+    "TypeName": "quotedText",
+    "Resolution": {
+     "value": "`123`"
+    }
+   },
+   {
+    "Text": "`456`",
+    "TypeName": "quotedText",
+    "Resolution": {
+     "value": "`456`"
+    }
+   }
+  ]
+ }
+]

@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
 using System.Linq;
@@ -42,6 +45,10 @@ namespace Microsoft.Recognizers.Text.Number
 
         char DecimalSeparatorChar { get; }
 
+        bool IsMultiDecimalSeparatorCulture { get; }
+
+        IEnumerable<string> NonStandardSeparatorVariants { get; }
+
         string WordSeparatorToken { get; }
 
         IEnumerable<string> WrittenDecimalSeparatorTexts { get; }
@@ -55,8 +62,6 @@ namespace Microsoft.Recognizers.Text.Number
         Regex NegativeNumberSignRegex { get; }
 
         bool IsCompoundNumberLanguage { get; }
-
-        bool IsMultiDecimalSeparatorCulture { get; }
 
         /// <summary>
         /// Used when requiring to normalize a token to a valid expression supported by the ImmutableDictionaries (language dictionaries).
@@ -121,6 +126,10 @@ namespace Microsoft.Recognizers.Text.Number
 
         public char DecimalSeparatorChar { get; set; }
 
+        public bool IsMultiDecimalSeparatorCulture { get; set; }
+
+        public virtual IEnumerable<string> NonStandardSeparatorVariants => Enumerable.Empty<string>();
+
         public string WordSeparatorToken { get; set; }
 
         public IEnumerable<string> WrittenDecimalSeparatorTexts { get; set; }
@@ -134,8 +143,6 @@ namespace Microsoft.Recognizers.Text.Number
         public Regex NegativeNumberSignRegex { get; set; }
 
         public bool IsCompoundNumberLanguage { get; set; }
-
-        public bool IsMultiDecimalSeparatorCulture { get; set; }
 
         public virtual long ResolveCompositeNumber(string numberStr)
         {

@@ -1,7 +1,7 @@
 [
   {
     "Input": "erster",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "erster",
@@ -18,7 +18,7 @@
   },
   {
     "Input": "zweiter",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "zweiter",
@@ -35,7 +35,7 @@
   },
   {
     "Input": "fünfundzwanzigster",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "fünfundzwanzigster",
@@ -52,7 +52,7 @@
   },
   {
     "Input": "Sie ist die einhunderteinunddreißigste.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "einhunderteinunddreißigste",
@@ -69,7 +69,7 @@
   },
   {
     "Input": "Ich bin erster!",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "erster",
@@ -86,7 +86,7 @@
   },
   {
     "Input": "Sie saßen dort zu dritt",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "dritt",
@@ -103,7 +103,7 @@
   },
   {
     "Input": "Ein kleines Auto kann man zu viert auch schleppen.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "viert",
@@ -120,7 +120,7 @@
   },
   {
     "Input": "Sind wir Samstag zu elft oder zu zwoelft?",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "elft",
@@ -148,7 +148,7 @@
   },
   {
     "Input": "Karl war zuerst da, Bob war zweiter und Hans vierter. Den Dritten kannte ich nicht.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "zuerst",
@@ -198,7 +198,7 @@
   },
   {
     "Input": "Zuerst schleppen wir den Schrank da hinter dem dritten Auto.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "zuerst",
@@ -226,7 +226,7 @@
   },
   {
     "Input": "Das müsste dann der tausendste sein.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "tausendste",
@@ -244,7 +244,7 @@
   {
     "Input": "Der hiernach folgende Text wird lang. Hier werden ein dutzend Zahlen benutzt um zu schauen wie sich das Programm bei längeren Strings verhält. Das Wort Ein wird als Zahl erkannt, was hier die erste wäre. Womit wir jetzt schon bei Zahl Nummer 3 wären. Zwei Millionen dreihundertsiebenundsiebzigtausendneunhundertachtundachtzig ist mit Leerzeichen 74 Zeichen lang. Schon ist die Hälfte durch. Jetzt folgt nur noch ein halbes dutzend Zahlen. Die Summe aus 2 und 6 ist acht. Das hier ist momentan Zeile Nummer vierhundertachtundachtzig und der Test müsste 13 Zahlen angeben. Was noch nicht ganz stimmt, da sich hier zwei Ordinale eingeschlichen haben, es sind also erst jetzt dreizehn.",
     "Comment": "'acht' is falsely detected as ordinal because it can be either an ordinal or a number, depending on context",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "erste",
@@ -272,7 +272,7 @@
   },
   {
     "Input": "das ist dann die 3. Banane",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "3.",
@@ -289,7 +289,7 @@
   },
   {
     "Input": "das ist dann die dritte Banane",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "dritte",
@@ -306,7 +306,7 @@
   },
   {
     "Input": "Er ist siebenundzwanzigster in der Thronfolge, es wäre schon sehr unwahrscheinlich das die anderen sechsundzwanzig im Bälde das zeitliche segnen",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "siebenundzwanzigster",
@@ -323,7 +323,7 @@
   },
   {
     "Input": "Das Licht sollte nach dem Milliardsten Signal anspringen.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "milliardsten",
@@ -340,7 +340,7 @@
   },
   {
     "Input": "erster, zweiter. achter Fisch von Achtern, sinnloses dritten!!! Wortsalat die siebte und Random stuff an der siebenundzwanzigsten Ampel links hinterm neunten Haus.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "erster",
@@ -423,7 +423,7 @@
   },
   {
     "Input": "Das erste Spiel war langweilig und wenn es keine dastischen Änderungen gibt, wird auch das siebzigste Spiel langweilig sein.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "erste",
@@ -451,7 +451,7 @@
   },
   {
     "Input": "Die Tauchglocke war das erste funktionierende U-Boot.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "erste",
@@ -468,12 +468,12 @@
   },
   {
     "Input": "Der Vergleich muss an einer Begrenzung zwischen einem (backslash)w (alphanumerischen) und einem (backslash)W (nicht alphanumerischen) Zeichen erfolgen.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": []
   },
   {
     "Input": "Beim zweiten mal ist für gewöhnlich alles leichter.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "zweiten",
@@ -490,7 +490,7 @@
   },
   {
     "Input": "Zum hundertsten mal, das ist eine schlechte Idee!",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "hundertsten",
@@ -507,7 +507,7 @@
   },
   {
     "Input": "Wäre unsere Sonne der jüngste Stern der Milchstraße, so wäre sie mindestens der einhundert Milliardste und höchstens der dreihundert Milliardste Stern.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "einhundert milliardste",
@@ -535,7 +535,7 @@
   },
   {
     "Input": "Wäre unsere Sonne der jüngste Stern der Milchstraße, so wäre sie mindestens der einhundert Millionste und höchstens der dreihundert Millionste Stern. Diese Aussage ist nicht korrekt.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "einhundert millionste",
@@ -563,7 +563,7 @@
   },
   {
     "Input": "Wäre unsere Sonne der jüngste Stern der Milchstraße, so wäre sie mindestens der einhundert Billionste und höchstens der dreihundert Billionste Stern. Diese Aussage ist nicht korrekt.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "einhundert billionste",
@@ -591,7 +591,7 @@
   },
   {
     "Input": "Zahnprotesen werden oftmals als 'die Dritten' beziehungsweise als die dritten Zähne bezeichnet.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "dritten",
@@ -619,7 +619,7 @@
   },
   {
     "Input": "Sie sind der einhunderttausendste Besucher.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "einhunderttausendste",
@@ -636,7 +636,7 @@
   },
   {
     "Input": "Die US-Botschaft befindet sich in Clayallee 170, 14191 Berlin.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": []
   }
 ]

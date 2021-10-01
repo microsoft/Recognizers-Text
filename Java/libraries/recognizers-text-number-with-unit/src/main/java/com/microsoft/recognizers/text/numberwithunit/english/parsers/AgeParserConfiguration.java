@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 package com.microsoft.recognizers.text.numberwithunit.english.parsers;
 
 import com.microsoft.recognizers.text.Culture;
@@ -14,5 +17,6 @@ public class AgeParserConfiguration extends EnglishNumberWithUnitParserConfigura
         super(cultureInfo);
 
         this.bindDictionary(AgeExtractorConfiguration.AgeSuffixList);
+        this.bindDictionary(AgeExtractorConfiguration.AgePrefixList);
     }
 }

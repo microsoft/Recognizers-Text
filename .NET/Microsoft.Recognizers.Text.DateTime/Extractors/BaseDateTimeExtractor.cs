@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -32,7 +35,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             tokens.AddRange(TimeOfTodayAfter(text, reference));
             tokens.AddRange(SpecialTimeOfDate(text, reference));
             tokens.AddRange(DurationWithBeforeAndAfter(text, reference));
-            tokens.AddRange(SpecialTimeOfDay(text, reference));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }
@@ -307,19 +309,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        // Special case for 'the end of today'
-        public List<Token> SpecialTimeOfDay(string text, DateObject reference)
-        {
-            var ret = new List<Token>();
-            var match = this.config.SpecificEndOfRegex.Match(text);
-            if (match.Success)
-            {
-                ret.Add(new Token(match.Index, text.Length));
-            }
-
-            return ret;
-        }
-
         // Process case like "two minutes ago" "three hours later"
         private List<Token> DurationWithBeforeAndAfter(string text, DateObject reference)
         {
@@ -329,7 +318,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             foreach (var er in durationEr)
             {
                 // if it is a multiple duration and its type is equal to Date then skip it.
-                if (er.Data != null && er.Data.ToString() == Constants.MultipleDuration_Date)
+                if (er.Data != null && er.Data.ToString() is Constants.MultipleDuration_Date)
                 {
                     continue;
                 }

@@ -220,5 +220,61 @@
         }
       }
     ]
+  },
+  {
+    "Input": "👌🏾 It's ok",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "👌🏾",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.64
+        }
+      }
+    ]
+  },
+  {
+    "Input": "👌🏿 It's ok",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "👌🏿",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.64
+        }
+      }
+    ]
+  },
+  {
+    "Input": "👌🏻 It's ok",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "👌🏻",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.64
+        }
+      }
+    ]
+  },
+  {
+    "Input": "👌🏼👌🏻👌🏽",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "👌🏼",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.6
+        }
+      }
+    ]
   }
 ]

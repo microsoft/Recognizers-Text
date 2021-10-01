@@ -1,4 +1,5 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
 
 const timexHelpers = require('./timexHelpers.js');
 const timexDateHelpers = require('./timexDateHelpers.js');

@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 from typing import Pattern, Dict
 
 from recognizers_text.utilities import RegExpUtility
@@ -35,6 +38,14 @@ class FrenchTimePeriodParserConfiguration(TimePeriodParserConfiguration):
         return self._pure_number_between_and_regex
 
     @property
+    def specific_time_from_to_regex(self) -> Pattern:
+        return self._specific_time_from_to_regex
+
+    @property
+    def specific_time_between_and_regex(self) -> Pattern:
+        return self._specific_time_between_and_regex
+
+    @property
     def time_of_day_regex(self) -> Pattern:
         return self._time_of_day_regex
 
@@ -64,6 +75,10 @@ class FrenchTimePeriodParserConfiguration(TimePeriodParserConfiguration):
             FrenchDateTime.PureNumFromTo)
         self._pure_number_between_and_regex = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.PureNumBetweenAnd)
+        self._specific_time_from_to_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.SpecificTimeFromTo)
+        self._specific_time_between_and_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.SpecificTimeBetweenAnd)
         self._time_of_day_regex = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.TimeOfDayRegex)
         self._till_regex = RegExpUtility.get_safe_reg_exp(

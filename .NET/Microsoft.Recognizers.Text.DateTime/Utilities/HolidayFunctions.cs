@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
 
@@ -19,8 +22,14 @@ namespace Microsoft.Recognizers.Text.DateTime
             /// <summary>Ramadan</summary>
             Ramadan = 0,
 
-            /// <summary>Sacrifice</summary>
+            /// <summary>Eid al-Adha (Feast of the Sacrifice)</summary>
             Sacrifice,
+
+            /// <summary>Eid al-Fitr (Festival of Breaking the Fast)</summary>
+            EidAlFitr,
+
+            /// <summary>Islamic New Year</summary>
+            NewYear,
         }
 
         public static DateObject CalculateHolidayByEaster(int year, int days = 0)
@@ -125,15 +134,24 @@ namespace Microsoft.Recognizers.Text.DateTime
             var gregorian = new GregorianCalendar();
             var hijri = new HijriCalendar();
 
-            if (holidayType == IslamicHolidayType.Ramadan)
+            switch (holidayType)
             {
-                hijriDay = 1;
-                hijriMonth = 10;
-            }
-            else if (holidayType == IslamicHolidayType.Sacrifice)
-            {
-                hijriDay = 10;
-                hijriMonth = 12;
+                case IslamicHolidayType.Ramadan:
+                    hijriDay = 1;
+                    hijriMonth = 9;
+                    break;
+                case IslamicHolidayType.Sacrifice:
+                    hijriDay = 10;
+                    hijriMonth = 12;
+                    break;
+                case IslamicHolidayType.EidAlFitr:
+                    hijriDay = 1;
+                    hijriMonth = 10;
+                    break;
+                case IslamicHolidayType.NewYear:
+                    hijriDay = 1;
+                    hijriMonth = 1;
+                    break;
             }
 
             for (hijriYear = 1; hijriYear <= 9999; hijriYear++)

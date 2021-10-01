@@ -1,4 +1,7 @@
-﻿using Microsoft.Recognizers.Text.DataDrivenTests;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using Microsoft.Recognizers.Text.DataDrivenTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
@@ -13,12 +16,12 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
             TestNumberWithUnit(testSpec);
         }
 
-        // [NetCoreTestDataSource]
-        // [TestMethod]
-        // public void CurrencyModel(TestModel testSpec)
-        // {
-        //    TestNumberWithUnit(testSpec);
-        // }
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void CurrencyModel(TestModel testSpec)
+        {
+            TestCurrency(testSpec);
+        }
 
         [NetCoreTestDataSource]
         [TestMethod]

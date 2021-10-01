@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
@@ -26,6 +29,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             : base(config)
         {
             TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
+            TokenBeforeTime = DateTimeDefinitions.TokenBeforeTime;
 
             DateExtractor = config.DateExtractor;
             TimeExtractor = config.TimeExtractor;
@@ -66,6 +70,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         }
 
         public string TokenBeforeDate { get; }
+
+        public string TokenBeforeTime { get; }
 
         public IDateExtractor DateExtractor { get; }
 
@@ -139,7 +145,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         // @TODO Move time range resolution to common policy
 
-        public bool GetMatchedTimeRange(string text, out string timeStr, out int beginHour, out int endHour, out int endMin)
+        public bool GetMatchedTimeRange(string text, out string todSymbol, out int beginHour, out int endHour, out int endMin)
         {
             var trimmedText = text.Trim();
 
@@ -148,32 +154,32 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             endMin = 0;
             if (MorningStartEndRegex.IsMatch(trimmedText))
             {
-                timeStr = "TMO";
+                todSymbol = "TMO";
                 beginHour = 8;
                 endHour = Constants.HalfDayHourCount;
             }
             else if (AfternoonStartEndRegex.IsMatch(trimmedText))
             {
-                timeStr = "TAF";
+                todSymbol = "TAF";
                 beginHour = Constants.HalfDayHourCount;
                 endHour = 16;
             }
             else if (EveningStartEndRegex.IsMatch(trimmedText))
             {
-                timeStr = "TEV";
+                todSymbol = "TEV";
                 beginHour = 16;
                 endHour = 20;
             }
             else if (NightStartEndRegex.IsMatch(trimmedText))
             {
-                timeStr = "TNI";
+                todSymbol = "TNI";
                 beginHour = 20;
                 endHour = 23;
                 endMin = 59;
             }
             else
             {
-                timeStr = null;
+                todSymbol = null;
                 return false;
             }
 

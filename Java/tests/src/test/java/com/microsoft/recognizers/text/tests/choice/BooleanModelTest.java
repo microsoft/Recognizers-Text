@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 package com.microsoft.recognizers.text.tests.choice;
 
 import com.microsoft.recognizers.text.ModelResult;
@@ -5,6 +8,8 @@ import com.microsoft.recognizers.text.ResolutionKey;
 import com.microsoft.recognizers.text.choice.ChoiceOptions;
 import com.microsoft.recognizers.text.choice.ChoiceRecognizer;
 import com.microsoft.recognizers.text.tests.AbstractTest;
+import com.microsoft.recognizers.text.tests.DependencyConstants;
+import com.microsoft.recognizers.text.tests.NotSupportedException;
 import com.microsoft.recognizers.text.tests.TestCase;
 
 import java.util.Arrays;
@@ -32,16 +37,7 @@ public class BooleanModelTest extends AbstractTest {
         // parse
         List<ModelResult> results = recognize(currentCase);
         // assert
-        assertResultsWithKeys(currentCase, results, getKeysToTest(currentCase));
-    }
-
-    private List<String> getKeysToTest(TestCase currentCase) {
-        switch (currentCase.modelName) {
-            case "BooleanModel":
-                return Arrays.asList(ResolutionKey.Value, ResolutionKey.Score);
-            default:
-                return Arrays.asList(ResolutionKey.Value, ResolutionKey.Score);
-        }
+        assertResults(currentCase, results, Arrays.asList(ResolutionKey.Value, ResolutionKey.Score));
     }
 
     @Override
@@ -56,12 +52,18 @@ public class BooleanModelTest extends AbstractTest {
                 }
 
                 default: {
-                    throw new AssumptionViolatedException("Model Type/Name not supported.");
+                    throw new NotSupportedException("Model Type/Name not supported: " + currentCase.modelName + " in " + culture);
                 }
             }
 
         } catch (IllegalArgumentException ex) {
-            throw new AssumptionViolatedException(ex.getMessage(), ex);
+
+            // Model not existing can be considered a skip. Other exceptions should fail tests.
+            if (ex.getMessage().toLowerCase().contains(DependencyConstants.BASE_RECOGNIZERS_MODEL_UNAVAILABLE)) {
+                throw new AssumptionViolatedException(ex.getMessage(), ex);
+            } else throw new IllegalArgumentException(ex.getMessage(), ex);
+        } catch (NotSupportedException nex) {
+            throw new AssumptionViolatedException(nex.getMessage(), nex);
         }
     }
 }

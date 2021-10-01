@@ -3,7 +3,11 @@ LangMarker: Spa
 #Boolean Recognizers
 TokenizerRegex: !simpleRegex
   def: '[^\w\d\u00E0-\u00FC]'
-TrueRegex: !simpleRegex
-  def: \b(verdad|verdadero|sí|sip|s|si|cierto|por supuesto|ok)\b|(\uD83D\uDC4D|\uD83D\uDC4C)
-FalseRegex: !simpleRegex
-  def: \b(falso|no|nop|n|no)\b|(\uD83D\uDC4E|\u270B|\uD83D\uDD90)
+SkinToneRegex: !simpleRegex
+  def: '(\uD83C\uDFFB|\uD83C\uDFFC|\uD83C\uDFFD|\uD83C\uDFFE|\uD83C\uDFFF)'
+TrueRegex: !nestedRegex
+  def: \b(verdad|verdadero|sí|sip|s|si|cierto|por supuesto|ok)\b|(\uD83D\uDC4D|\uD83D\uDC4C){SkinToneRegex}?
+  references: [ SkinToneRegex ]
+FalseRegex: !nestedRegex
+  def: \b(falso|no|nop|n|no)\b|(\uD83D\uDC4E|\u270B|\uD83D\uDD90){SkinToneRegex}?
+  references: [ SkinToneRegex ]

@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 export { Culture, NumberOptions, recognizeNumber, recognizeOrdinal, recognizePercentage } from "@microsoft/recognizers-text-number";
 export { NumberWithUnitOptions, recognizeAge, recognizeCurrency, recognizeDimension, recognizeTemperature } from "@microsoft/recognizers-text-number-with-unit";
 export { DateTimeOptions, recognizeDateTime } from "@microsoft/recognizers-text-date-time";

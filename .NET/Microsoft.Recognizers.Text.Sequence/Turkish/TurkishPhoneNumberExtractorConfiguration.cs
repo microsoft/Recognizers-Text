@@ -1,5 +1,5 @@
-﻿using System.Text.RegularExpressions;
-using Microsoft.Recognizers.Definitions.Turkish;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
 
 namespace Microsoft.Recognizers.Text.Sequence.Turkish
 {

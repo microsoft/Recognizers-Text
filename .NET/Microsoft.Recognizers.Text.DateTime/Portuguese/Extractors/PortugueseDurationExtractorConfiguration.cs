@@ -1,4 +1,7 @@
-﻿using System.Collections.Immutable;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Portuguese;
 using Microsoft.Recognizers.Text.Number;
@@ -50,6 +53,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public static readonly Regex DurationConnectorRegex =
             new Regex(DateTimeDefinitions.DurationConnectorRegex, RegexFlags);
+
+        public static readonly Regex ModPrefixRegex =
+            new Regex(DateTimeDefinitions.ModPrefixRegex, RegexFlags);
+
+        public static readonly Regex ModSuffixRegex =
+            new Regex(DateTimeDefinitions.ModSuffixRegex, RegexFlags);
 
         public static readonly Regex SpecialNumberUnitRegex = null;
 
@@ -117,5 +126,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         Regex IDurationExtractorConfiguration.MoreThanRegex => MoreThanRegex;
 
         Regex IDurationExtractorConfiguration.LessThanRegex => LessThanRegex;
+
+        Regex IDurationExtractorConfiguration.ModPrefixRegex => ModPrefixRegex;
+
+        Regex IDurationExtractorConfiguration.ModSuffixRegex => ModSuffixRegex;
     }
 }

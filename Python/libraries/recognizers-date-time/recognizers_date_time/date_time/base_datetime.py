@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 from abc import abstractmethod
 from typing import List, Optional, Pattern, Dict, Match
 from datetime import datetime, timedelta
@@ -137,18 +140,9 @@ class BaseDateTimeExtractor(DateTimeExtractor):
         tokens.extend(self.time_of_today_after(source, reference))
         tokens.extend(self.special_time_of_date(source, reference))
         tokens.extend(self.duration_with_before_and_after(source, reference))
-        tokens.extend(self.special_time_of_day(source, reference))
 
         result = merge_all_tokens(tokens, source, self.extractor_type_name)
         return result
-
-    def special_time_of_day(self, text: str, reference: datetime):
-        ret = []
-        match = self.config.specific_end_of_regex.search(text)
-        if match:
-            ret.append(Token(text.index(match.group()), len(text)))
-
-        return ret
 
     # merge a Date entity and a Time entity, like "at 7 tomorrow"
     def merge_date_and_time(self, source: str, reference: datetime) -> List[Token]:
@@ -203,7 +197,7 @@ class BaseDateTimeExtractor(DateTimeExtractor):
             if ((extract_results[i].type is Constants.SYS_DATETIME_DATE and extract_results[j].type is
                  Constants.SYS_DATETIME_TIME) or
                     (extract_results[i].type is Constants.SYS_DATETIME_TIME and extract_results[j].type is
-                     Constants.SYS_DATETIME_DATE)or
+                     Constants.SYS_DATETIME_DATE) or
                     (extract_results[i].type is Constants.SYS_DATETIME_DATE and extract_results[j] is
                      NumConstants.SYS_NUM_INTEGER)):
                 middle_begin = extract_results[i].start + (extract_results[i].length or 0)
@@ -757,7 +751,7 @@ class BaseDateTimeParser(DateTimeParser):
         extract_result = next(iter(extract_results), None)
         before_str = source[0:extract_result.start]
         after_str = source[:extract_result.start + extract_result.end]
-        if regex.search(self.config.specific_end_of_regex, before_str)or regex.search(
+        if regex.search(self.config.specific_end_of_regex, before_str) or regex.search(
                 self.config.specific_end_of_regex, after_str):
             parse_result = self.config.date_parser.parse(extract_result, reference)
             result.timex = parse_result.timex_str + 'T23:59:59'

@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 class Culture:
     Chinese: str = 'zh-cn'
     Dutch: str = 'nl-nl'
@@ -9,6 +12,7 @@ class Culture:
     Portuguese: str = 'pt-br'
     Spanish: str = 'es-es'
     Turkish: str = 'tr-tr'
+    German: str = 'de-de'
 
 
 class BaseCultureInfo:

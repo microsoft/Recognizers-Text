@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -361,7 +364,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     // in which "18" is wrongly recognized as time without context.
                     var nextEr = originalErs[i + 1];
                     if (nextEr.Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.Ordinal) &&
-                        originalErs[i].Text.Equals(dateEr.Text) &&
+                        originalErs[i].Text.Equals(dateEr.Text, StringComparison.Ordinal) &&
                         IsConnectorOrWhiteSpace((int)(dateEr.Start + dateEr.Length), (int)nextEr.Start, text))
                     {
                         ret.Add(dateEr);

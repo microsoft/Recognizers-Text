@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { RegExpUtility } from "@microsoft/recognizers-text";
 import { BaseNumberExtractor, BaseNumberParser, FrenchOrdinalExtractor, FrenchIntegerExtractor, FrenchNumberParserConfiguration } from "@microsoft/recognizers-text-number";
 import { FrenchDateTime } from "../../resources/frenchDateTime";
@@ -27,6 +30,7 @@ export class FrenchDateExtractorConfiguration implements IDateExtractorConfigura
     readonly numberParser: BaseNumberParser;
     readonly durationExtractor: IDateTimeExtractor;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
+    readonly rangeConnectorSymbolRegex : RegExp;
 
     constructor(dmyDateFormat: boolean) {
 
@@ -45,8 +49,14 @@ export class FrenchDateExtractorConfiguration implements IDateExtractorConfigura
                 RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor4, "gis") :
                 RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor5, "gis"),
 
-            RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor6, "gis"),
-            RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor7, "gis"),
+            enableDmy ?
+                RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor7, "gis") :
+                RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor6, "gis"),
+
+            enableDmy ?
+                RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor6, "gis") :
+                RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor7, "gis"),
+
             RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor8, "gis"),
             RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor9, "gis"),
             RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractorA, "gis"),
@@ -78,6 +88,7 @@ export class FrenchDateExtractorConfiguration implements IDateExtractorConfigura
         this.durationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration());
         this.utilityConfiguration = new FrenchDateTimeUtilityConfiguration();
         this.nonDateUnitRegex = RegExpUtility.getSafeRegExp("(?<unit>heure|heures|hrs|secondes|seconde|secs|sec|minutes|minute|mins)\b", "gis");
+        this.rangeConnectorSymbolRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.RangeConnectorRegex);
     }
 }
 

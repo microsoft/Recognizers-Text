@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import pkg from './package.json';
 import camelCase from 'lodash.camelcase';
 import resolve from 'rollup-plugin-node-resolve';

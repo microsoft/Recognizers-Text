@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 package com.microsoft.recognizers.text.tests.numberwithunit;
 
 import com.microsoft.recognizers.text.ModelResult;
@@ -5,6 +8,8 @@ import com.microsoft.recognizers.text.ResolutionKey;
 import com.microsoft.recognizers.text.numberwithunit.NumberWithUnitOptions;
 import com.microsoft.recognizers.text.numberwithunit.NumberWithUnitRecognizer;
 import com.microsoft.recognizers.text.tests.AbstractTest;
+import com.microsoft.recognizers.text.tests.DependencyConstants;
+import com.microsoft.recognizers.text.tests.NotSupportedException;
 import com.microsoft.recognizers.text.tests.TestCase;
 import org.junit.AssumptionViolatedException;
 import org.junit.runners.Parameterized;
@@ -28,24 +33,26 @@ public class NumberWithUnitTest extends AbstractTest {
 
     @Override
     protected void recognizeAndAssert(TestCase currentCase) {
+
         // parse
         List<ModelResult> results = recognize(currentCase);
 
         // assert
-        assertResultsWithKeys(currentCase, results, getKeysToTest(currentCase));
+        assertResults(currentCase, results, getKeysToTest(currentCase));
     }
 
     private List<String> getKeysToTest(TestCase currentCase) {
         switch (currentCase.modelName) {
             case "CurrencyModel":
-                return Arrays.asList(ResolutionKey.Unit, ResolutionKey.Unit, ResolutionKey.IsoCurrency);
+                return Arrays.asList(ResolutionKey.Value, ResolutionKey.Unit, ResolutionKey.IsoCurrency);
             default:
-                return Arrays.asList(ResolutionKey.Unit);
+                return Arrays.asList(ResolutionKey.Value, ResolutionKey.Unit);
         }
     }
 
     @Override
     protected List<ModelResult> recognize(TestCase currentCase) {
+
         try {
             String culture = getCultureCode(currentCase.language);
             switch (currentCase.modelName) {
@@ -58,10 +65,16 @@ public class NumberWithUnitTest extends AbstractTest {
                 case "TemperatureModel":
                     return NumberWithUnitRecognizer.recognizeTemperature(currentCase.input, culture, NumberWithUnitOptions.None, false);
                 default:
-                    throw new AssumptionViolatedException("Model Type/Name not supported.");
+                    throw new NotSupportedException("Model Type/Name not supported: " + currentCase.modelName + " in " + culture);
             }
         } catch (IllegalArgumentException ex) {
-            throw new AssumptionViolatedException(ex.getMessage(), ex);
+
+            // Model not existing can be considered a skip. Other exceptions should fail tests.
+            if (ex.getMessage().toLowerCase().contains(DependencyConstants.BASE_RECOGNIZERS_MODEL_UNAVAILABLE)) {
+                throw new AssumptionViolatedException(ex.getMessage(), ex);
+            } else throw new IllegalArgumentException(ex.getMessage(), ex);
+        } catch (NotSupportedException nex) {
+            throw new AssumptionViolatedException(nex.getMessage(), nex);
         }
     }
 }

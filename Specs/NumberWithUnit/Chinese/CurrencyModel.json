@@ -555,5 +555,37 @@
         }
       }
     ]
+  },
+  {
+    "Input": "包括在金融市场中管理的基金管理业务在内的FILP总额也减少了二％，为四十九兆九千五百九十二億元，是有史以来最大的。",
+    "Results": [
+      {
+        "Text": "四十九兆九千五百九十二億元",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CNY",
+          "unit": "Chinese yuan",
+          "value": "49959200000000"
+        },
+        "Start": 34,
+        "End": 46
+      }
+    ]
+  }
+  ,
+  {
+    "Input": "我有20个比特币",
+    "Results": [
+      {
+        "Text": "20个比特币",
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Bitcoin",
+          "value": "20"
+        },
+        "Start": 2,
+        "End": 7
+      }
+    ]
   }
 ]

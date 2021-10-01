@@ -1,4 +1,7 @@
-﻿using System.Collections.Immutable;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Immutable;
 using System.Globalization;
 
 using Microsoft.Recognizers.Definitions.English;
@@ -9,6 +12,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
     {
         public static readonly ImmutableDictionary<string, string> SpeedSuffixList =
             NumbersWithUnitDefinitions.SpeedSuffixList.ToImmutableDictionary();
+
+        public static readonly ImmutableList<string> AmbiguousUnits =
+            NumbersWithUnitDefinitions.AmbiguousSpeedUnitList.ToImmutableList();
 
         public SpeedExtractorConfiguration()
                : base(new CultureInfo(Culture.English))
@@ -24,7 +30,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
 
         public override ImmutableDictionary<string, string> PrefixList => null;
 
-        public override ImmutableList<string> AmbiguousUnitList => null;
+        public override ImmutableList<string> AmbiguousUnitList => AmbiguousUnits;
 
         public override string ExtractType => Constants.SYS_UNIT_SPEED;
     }

@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 from typing import Dict, List, Pattern
 
 from recognizers_text.culture import Culture
@@ -88,8 +91,8 @@ class EnglishAgeExtractorConfiguration(EnglishNumberWithUnitExtractorConfigurati
     def __init__(self, culture_info: CultureInfo = None):
         super().__init__(culture_info)
         self._suffix_list = EnglishNumericWithUnit.AgeSuffixList
-        self._prefix_list = dict()
-        self._ambiguous_unit_list = list()
+        self._prefix_list = EnglishNumericWithUnit.AgePrefixList
+        self._ambiguous_unit_list = EnglishNumericWithUnit.AmbiguousAgeUnitList
 
 
 class EnglishCurrencyExtractorConfiguration(EnglishNumberWithUnitExtractorConfiguration):

@@ -1,4 +1,7 @@
-﻿using System.Collections.Immutable;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -14,6 +17,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex NumberCombinedWithUnit { get; }
 
         Regex AnUnitRegex { get; }
+
+        Regex PrefixArticleRegex { get; }
 
         Regex DuringRegex { get; }
 

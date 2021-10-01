@@ -57,6 +57,11 @@
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
+    	    <groupId>com.microsoft.recognizers.text.datatypes.timex.expression</groupId>
+            <artifactId>recognizers-text-datatypes-timex-expression</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>24.1-jre</version>

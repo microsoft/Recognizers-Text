@@ -1,4 +1,7 @@
-﻿using Microsoft.Recognizers.Definitions;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using Microsoft.Recognizers.Definitions;
 
 namespace Microsoft.Recognizers.Text.Number
 {

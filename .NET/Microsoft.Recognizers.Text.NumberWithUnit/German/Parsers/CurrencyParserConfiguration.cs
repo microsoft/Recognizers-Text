@@ -1,4 +1,9 @@
-﻿using System.Globalization;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Immutable;
+using System.Globalization;
+using Microsoft.Recognizers.Definitions.German;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.German
 {
@@ -14,6 +19,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.German
         {
             this.BindDictionary(CurrencyExtractorConfiguration.CurrencySuffixList);
             this.BindDictionary(CurrencyExtractorConfiguration.CurrencyPrefixList);
+            this.CurrencyNameToIsoCodeMap = NumbersWithUnitDefinitions.CurrencyNameToIsoCodeMap.ToImmutableDictionary();
+            this.CurrencyFractionCodeList = NumbersWithUnitDefinitions.FractionalUnitNameToCodeMap.ToImmutableDictionary();
         }
     }
 }

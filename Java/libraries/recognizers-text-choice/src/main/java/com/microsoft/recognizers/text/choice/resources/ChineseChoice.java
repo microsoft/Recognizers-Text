@@ -17,7 +17,11 @@ public class ChineseChoice {
 
     public static final String TokenizerRegex = "[^\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uf900-\\ufaff\\uff66-\\uff9f]";
 
-    public static final String TrueRegex = "(好[的啊呀嘞哇]|没问题|可以|中|好|同意|行|是的|是|对)|(\\uD83D\\uDC4D|\\uD83D\\uDC4C)";
+    public static final String SkinToneRegex = "(\\uD83C\\uDFFB|\\uD83C\\uDFFC|\\uD83C\\uDFFD|\\uD83C\\uDFFE|\\uD83C\\uDFFF)";
 
-    public static final String FalseRegex = "(不行|不好|拒绝|否定|不中|不可以|不是的|不是|不对|不)|(\\uD83D\\uDC4E|\\u270B|\\uD83D\\uDD90)";
+    public static final String TrueRegex = "(好[的啊呀嘞哇]|没问题|可以|中|好|同意|行|是的|是|对)|(\\uD83D\\uDC4D|\\uD83D\\uDC4C){SkinToneRegex}?"
+            .replace("{SkinToneRegex}", SkinToneRegex);
+
+    public static final String FalseRegex = "(不行|不好|拒绝|否定|不中|不可以|不是的|不是|不对|不)|(\\uD83D\\uDC4E|\\u270B|\\uD83D\\uDD90){SkinToneRegex}?"
+            .replace("{SkinToneRegex}", SkinToneRegex);
 }

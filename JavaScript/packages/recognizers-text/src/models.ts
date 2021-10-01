@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { Culture } from "./culture";
 import { match, cache } from "xregexp";
 import { StringUtility } from "./utilities";

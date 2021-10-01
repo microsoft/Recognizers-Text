@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 from recognizers_text import Culture
 from recognizers_text.extractor import Extractor
 from recognizers_text.parser import Parser
@@ -36,6 +39,7 @@ class EnglishAgeParserConfiguration(EnglishNumberWithUnitParserConfiguration):
     def __init__(self, culture_info: CultureInfo = None):
         super().__init__(culture_info)
         self.add_dict_to_unit_map(EnglishNumericWithUnit.AgeSuffixList)
+        self.add_dict_to_unit_map(EnglishNumericWithUnit.AgePrefixList)
 
 
 class EnglishCurrencyParserConfiguration(EnglishNumberWithUnitParserConfiguration):

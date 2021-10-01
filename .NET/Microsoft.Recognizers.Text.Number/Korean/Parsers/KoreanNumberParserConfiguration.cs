@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
 using System.Linq;
@@ -43,7 +46,7 @@ namespace Microsoft.Recognizers.Text.Number.Korean
             this.ZeroToNineMap = NumbersDefinitions.ZeroToNineMap.ToImmutableDictionary();
             this.RoundNumberMapChar = NumbersDefinitions.RoundNumberMapChar.ToImmutableDictionary();
             this.FullToHalfMap = NumbersDefinitions.FullToHalfMap.ToImmutableDictionary();
-            this.UnitMap = NumbersDefinitions.UnitMap.ToImmutableDictionary();
+            this.UnitMap = NumbersDefinitions.UnitMap.ToImmutableSortedDictionary();
             this.RoundDirectList = NumbersDefinitions.RoundDirectList.ToImmutableList();
             this.TenChars = NumbersDefinitions.TenChars.ToImmutableList();
 
@@ -99,7 +102,7 @@ namespace Microsoft.Recognizers.Text.Number.Korean
 
         public ImmutableDictionary<char, char> FullToHalfMap { get; private set; }
 
-        public ImmutableDictionary<string, string> UnitMap { get; private set; }
+        public ImmutableSortedDictionary<string, string> UnitMap { get; private set; }
 
         public ImmutableDictionary<char, char> TratoSimMap { get; private set; }
 

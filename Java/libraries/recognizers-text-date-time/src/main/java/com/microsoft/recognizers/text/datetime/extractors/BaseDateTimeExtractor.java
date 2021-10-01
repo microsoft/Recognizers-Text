@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 package com.microsoft.recognizers.text.datetime.extractors;
 
 import com.microsoft.recognizers.text.ExtractResult;
@@ -43,7 +46,6 @@ public class BaseDateTimeExtractor implements IDateTimeExtractor {
         tokens.addAll(timeOfTodayAfter(input, reference));
         tokens.addAll(specialTimeOfDate(input, reference));
         tokens.addAll(durationWithBeforeAndAfter(input, reference));
-        tokens.addAll(specialTimeOfDay(input, reference));
 
         return Token.mergeAllTokens(tokens, input, getExtractorName());
     }
@@ -51,17 +53,6 @@ public class BaseDateTimeExtractor implements IDateTimeExtractor {
     @Override
     public List<ExtractResult> extract(String input) {
         return this.extract(input, LocalDateTime.now());
-    }
-
-    // Special case for 'the end of today'
-    public List<Token> specialTimeOfDay(String input, LocalDateTime reference) {
-        List<Token> ret = new ArrayList<>();
-        Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(this.config.getSpecificEndOfRegex(), input)).findFirst();
-        if (match.isPresent()) {
-            ret.add(new Token(match.get().index, input.length()));
-        }
-
-        return ret;
     }
 
     private List<Token> durationWithBeforeAndAfter(String input, LocalDateTime reference) {
@@ -140,10 +131,26 @@ public class BaseDateTimeExtractor implements IDateTimeExtractor {
 
         Match[] matches = RegExpUtility.getMatches(this.config.getSimpleTimeOfTodayAfterRegex(), input);
         for (Match match : matches) {
+            // @TODO Remove when lookbehinds are handled correctly
+            if (isDecimal(match, input)) {
+                continue;
+            }
+            
             ret.add(new Token(match.index, match.index + match.length));
         }
 
         return ret;
+    }
+    
+    // Check if the match is part of a decimal number (e.g. 123.24)
+    private boolean isDecimal(Match match, String text) {
+        boolean isDecimal = false;
+        if (match.index > 1 && (text.charAt(match.index - 1) == ',' ||
+                text.charAt(match.index - 1) == '.') && Character.isDigit(text.charAt(match.index - 2)) && Character.isDigit(match.value.charAt(0))) {
+            isDecimal = true;
+        }
+        
+        return isDecimal;
     }
 
     public List<Token> timeOfTodayBefore(String input, LocalDateTime reference) {

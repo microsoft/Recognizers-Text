@@ -747,6 +747,7 @@
   },
   {
     "Input": "二三十个百分点",
+    "NotSupported":"java",
     "Results": []
   },
   {
@@ -1703,6 +1704,7 @@
   },
   {
     "Input": "二三十個百分點",
+    "NotSupported":"java",
     "Results": []
   },
   {

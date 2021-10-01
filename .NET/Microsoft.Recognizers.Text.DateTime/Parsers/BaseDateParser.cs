@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
@@ -791,6 +794,20 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 innerResult = ParseSingleNumber(dateString, referenceDate);
                             }
 
+                            if (!innerResult.Success)
+                            {
+                                var holidayEr = new ExtractResult
+                                {
+                                    Start = 0,
+                                    Length = dateString.Length,
+                                    Text = dateString,
+                                    Type = Constants.SYS_DATETIME_DATE,
+                                    Data = null,
+                                    Metadata = new Metadata { IsHoliday = true },
+                                };
+                                innerResult = (DateTimeResolutionResult)config.HolidayParser.Parse(holidayEr, referenceDate).Value;
+                            }
+
                             // Combine parsed results Duration + Date
                             if (innerResult.Success)
                             {
@@ -822,6 +839,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var weekdayStr = match.Groups["weekday"].Value;
             var yearStr = match.Groups["year"].Value;
             var writtenYear = match.Groups["fullyear"].Value;
+            var ambiguousCentury = false;
 
             if (this.config.MonthOfYear.ContainsKey(monthStr) && this.config.DayOfMonth.ContainsKey(dayStr))
             {
@@ -837,11 +855,16 @@ namespace Microsoft.Recognizers.Text.DateTime
                     year = int.Parse(yearStr, CultureInfo.InvariantCulture);
                     if (year < 100 && year >= Constants.MinTwoDigitYearPastNum)
                     {
-                        year += 1900;
+                        year += Constants.BASE_YEAR_PAST_CENTURY;
                     }
                     else if (year >= 0 && year < Constants.MaxTwoDigitYearFutureNum)
                     {
-                        year += 2000;
+                        year += Constants.BASE_YEAR_CURRENT_CENTURY;
+                    }
+                    else if (year >= Constants.MaxTwoDigitYearFutureNum && year < Constants.MinTwoDigitYearPastNum)
+                    {
+                        // Two-digit years in the range [30, 40) are ambiguos
+                        ambiguousCentury = true;
                     }
                 }
             }
@@ -874,22 +897,18 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret.Timex = DateTimeFormatUtil.LuisDate(year, month, day);
             }
 
-            var futureDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
-            var pastDate = DateObject.MinValue.SafeCreateFromValue(year, month, day);
-
-            if (noYear && futureDate < referenceDate && !futureDate.IsDefaultValue())
-            {
-                futureDate = futureDate.AddYears(+1);
-            }
-
-            if (noYear && pastDate >= referenceDate && !pastDate.IsDefaultValue())
-            {
-                pastDate = pastDate.AddYears(-1);
-            }
-
-            ret.FutureValue = futureDate;
-            ret.PastValue = pastDate;
+            var futurePastDates = DateContext.GenerateDates(noYear, referenceDate, year, month, day);
+            ret.FutureValue = futurePastDates.future;
+            ret.PastValue = futurePastDates.past;
             ret.Success = true;
+
+            // Ambiguous two-digit years are assigned values in both centuries (e.g. 35 -> 1935, 2035)
+            if (ambiguousCentury)
+            {
+                ret.PastValue = futurePastDates.past.AddYears(Constants.BASE_YEAR_PAST_CENTURY);
+                ret.FutureValue = futurePastDates.future.AddYears(Constants.BASE_YEAR_CURRENT_CENTURY);
+                ret.Timex = TimexUtility.ModifyAmbiguousCenturyTimex(ret.Timex);
+            }
 
             return ret;
         }

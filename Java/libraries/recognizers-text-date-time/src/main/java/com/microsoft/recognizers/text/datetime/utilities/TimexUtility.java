@@ -1,8 +1,13 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 package com.microsoft.recognizers.text.datetime.utilities;
 
 import com.google.common.collect.ImmutableMap;
+import com.microsoft.recognizers.datatypes.timex.expression.TimexHelpers;
 import com.microsoft.recognizers.text.datetime.Constants;
 import com.microsoft.recognizers.text.datetime.DatePeriodTimexType;
+import com.microsoft.recognizers.text.datetime.DateTimeResolutionKey;
 import com.microsoft.recognizers.text.utilities.StringUtility;
 
 import java.math.BigDecimal;
@@ -11,8 +16,10 @@ import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class TimexUtility {
     private static final HashMap<DatePeriodTimexType, String> DatePeriodTimexTypeToTimexSuffix = new HashMap<DatePeriodTimexType, String>() {
@@ -23,58 +30,32 @@ public class TimexUtility {
             put(DatePeriodTimexType.ByYear, Constants.TimexYear);
         }
     };
+    
+    public enum UnspecificDateTimeTerms {
+        None,
+        NonspecificYear,
+        NonspecificMonth,
+        NonspecificDay,
+    }
 
     public static String generateCompoundDurationTimex(Map<String, String> unitToTimexComponents, ImmutableMap<String, Long> unitValueMap) {
         List<String> unitList = new ArrayList<>(unitToTimexComponents.keySet());
         unitList.sort((x, y) -> unitValueMap.get(x) < unitValueMap.get(y) ? 1 : -1);
-        boolean isTimeDurationAlreadyExist = false;
-        StringBuilder timexBuilder = new StringBuilder(Constants.GeneralPeriodPrefix);
-
-        for (String unitKey : unitList) {
-            String timexComponent = unitToTimexComponents.get(unitKey);
-
-            // The Time Duration component occurs first time
-            if (!isTimeDurationAlreadyExist && isTimeDurationTimex(timexComponent)) {
-                timexBuilder.append(Constants.TimeTimexPrefix);
-                timexBuilder.append(getDurationTimexWithoutPrefix(timexComponent));
-                isTimeDurationAlreadyExist = true;
-            } else {
-                timexBuilder.append(getDurationTimexWithoutPrefix(timexComponent));
-            }
-        }
-        return timexBuilder.toString();
+        unitList = unitList.stream().map(t -> unitToTimexComponents.get(t)).collect(Collectors.toList());
+        return TimexHelpers.generateCompoundDurationTimex(unitList);
     }
 
-    private static boolean isTimeDurationTimex(String timex) {
+    private static Boolean isTimeDurationTimex(String timex) {
         return timex.startsWith(Constants.GeneralPeriodPrefix + Constants.TimeTimexPrefix);
     }
 
-    private static String getDurationTimexWithoutPrefix(String timex) {
-        // Remove "PT" prefix for TimeDuration, Remove "P" prefix for DateDuration
-        return timex.substring(isTimeDurationTimex(timex) ? 2 : 1);
-    }
-
-    public static String generateDatePeriodTimex(LocalDateTime begin, LocalDateTime end, DatePeriodTimexType timexType) {
-
-        return generateDatePeriodTimex(begin, end, timexType, null, null);
-    }
-
-    public static String generateDatePeriodTimex(LocalDateTime begin, LocalDateTime end, DatePeriodTimexType timexType,
-                                                 LocalDateTime alternativeBegin, LocalDateTime alternativeEnd) {
-
-        Boolean equalDurationLength;
-        if (alternativeBegin == null || alternativeEnd == null) {
-            equalDurationLength = true;
-        } else {
-            equalDurationLength = Duration.between(begin, end).equals(Duration.between(alternativeBegin, alternativeEnd));
-        }
-
+    public static String getDatePeriodTimexUnitCount(LocalDateTime begin, LocalDateTime end,
+                                                     DatePeriodTimexType timexType, Boolean equalDurationLength) {
         String unitCount = "XX";
-
         if (equalDurationLength) {
             switch (timexType) {
                 case ByDay:
-                    unitCount = Long.toString(ChronoUnit.DAYS.between(begin, end));
+                    unitCount = StringUtility.format((double)ChronoUnit.HOURS.between(begin, end) / 24);
                     break;
                 case ByWeek:
                     unitCount = Long.toString(ChronoUnit.WEEKS.between(begin, end));
@@ -87,8 +68,59 @@ public class TimexUtility {
             }
         }
 
+        return unitCount;
+    }
+    
+    public static String generateDatePeriodTimex(LocalDateTime begin, LocalDateTime end, DatePeriodTimexType timexType, UnspecificDateTimeTerms terms) {
+        int beginYear = begin.getYear();
+        int endYear = end.getYear();
+        int beginMonth = begin.getMonthValue();
+        int endMonth = end.getMonthValue();
+        int beginDay = begin.getDayOfMonth();
+        int endDay = end.getDayOfMonth();
+        
+        if (terms == UnspecificDateTimeTerms.NonspecificYear) {
+            beginYear = endYear = -1;
+        }
+
+        if (terms == UnspecificDateTimeTerms.NonspecificMonth) {
+            beginMonth = endMonth = -1;
+        }
+
+        if (terms == UnspecificDateTimeTerms.NonspecificDay) {
+            beginDay = endDay = -1;
+        }
+
+        String unitCount = getDatePeriodTimexUnitCount(begin, end, timexType, true);
+        String datePeriodTimex = "P" + unitCount + DatePeriodTimexTypeToTimexSuffix.get(timexType);
+        return "(" + DateTimeFormatUtil.luisDate(beginYear, beginMonth, beginDay) + "," + DateTimeFormatUtil.luisDate(endYear, endMonth, endDay) + "," + datePeriodTimex + ")";
+    }
+
+    public static String generateDatePeriodTimex(LocalDateTime begin, LocalDateTime end, DatePeriodTimexType timexType) {
+
+        return generateDatePeriodTimex(begin, end, timexType, null, null);
+    }
+
+    public static String generateDatePeriodTimex(LocalDateTime begin, LocalDateTime end, DatePeriodTimexType timexType,
+                                                 LocalDateTime alternativeBegin, LocalDateTime alternativeEnd) {
+        Boolean equalDurationLength;
+        if (alternativeBegin == null || alternativeEnd == null) {
+            equalDurationLength = true;
+        } else {
+            equalDurationLength = Duration.between(begin, end).equals(Duration.between(alternativeBegin, alternativeEnd));
+        }
+
+        String unitCount = getDatePeriodTimexUnitCount(begin, end, timexType, equalDurationLength);
         String datePeriodTimex = "P" + unitCount + DatePeriodTimexTypeToTimexSuffix.get(timexType);
         return "(" + DateTimeFormatUtil.luisDate(begin, alternativeBegin) + "," + DateTimeFormatUtil.luisDate(end, alternativeEnd) + "," + datePeriodTimex + ")";
+    }
+
+    public static String generateDatePeriodTimexStr(LocalDateTime begin, LocalDateTime end, DatePeriodTimexType timexType,
+                                                    String timex1, String timex2) {
+        boolean boundaryValid = !DateUtil.isDefaultValue(begin) && !DateUtil.isDefaultValue(end);
+        String unitCount = boundaryValid ? getDatePeriodTimexUnitCount(begin, end, timexType, true) : "X";
+        String datePeriodTimex = "P" + unitCount + DatePeriodTimexTypeToTimexSuffix.get(timexType);
+        return String.format("(%s,%s,%s)", timex1, timex2, datePeriodTimex);
     }
 
     public static String generateWeekTimex() {
@@ -272,5 +304,30 @@ public class TimexUtility {
 
     public static String setTimexWithContext(String timex, DateContext context) {
         return timex.replace(Constants.TimexFuzzyYear, String.format("%04d", context.getYear()));
+    }
+
+    public static boolean hasDoubleTimex(String comment) {
+        return comment.equals(Constants.Comment_DoubleTimex);
+    }
+
+    public static String mergeTimexAlternatives(String timex1, String timex2) {
+        if (timex1.equals(timex2)) {
+            return timex1;
+        }
+        return timex1 + Constants.CompositeTimexDelimiter + timex2;
+    }
+
+    public static LinkedHashMap<String, Object> processDoubleTimex(LinkedHashMap<String, Object> resolutionDic, String futureKey, String pastKey, String originTimex) {
+        String[] timexes = originTimex.split(Constants.CompositeTimexSplit);
+
+        if (!resolutionDic.containsKey(futureKey) || !resolutionDic.containsKey(pastKey) || timexes.length != 2) {
+            return resolutionDic;
+        }
+
+        HashMap<String, String> futureResolution = (HashMap<String, String>)resolutionDic.get(futureKey);
+        HashMap<String, String> pastResolution = (HashMap<String, String>)resolutionDic.get(pastKey);
+        futureResolution.put(DateTimeResolutionKey.Timex, timexes[0]);
+        pastResolution.put(DateTimeResolutionKey.Timex, timexes[1]);
+        return resolutionDic;
     }
 }

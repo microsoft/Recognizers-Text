@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text.RegularExpressions;
@@ -194,6 +197,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (!string.IsNullOrEmpty(match.Groups["midnight"].Value))
                 {
                     hour = 0;
+                    min = 0;
+                    second = 0;
+                }
+                else if (!string.IsNullOrEmpty(match.Groups["midearlymorning"].Value))
+                {
+                    hour = 6;
                     min = 0;
                     second = 0;
                 }

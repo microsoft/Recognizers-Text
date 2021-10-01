@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 from typing import Pattern, Dict
 
 from recognizers_text.utilities import RegExpUtility
@@ -196,6 +199,14 @@ class FrenchDatePeriodParserConfiguration(DatePeriodParserConfiguration):
     @property
     def relative_decade_regex(self) -> Pattern:
         return self._relative_decade_regex
+
+    @property
+    def dynasty_year_regex(self) -> Pattern:
+        return None
+
+    @property
+    def dynasty_year_map(self) -> Dict[str, int]:
+        return None
 
     def __init__(self, config: BaseDateParserConfiguration):
         self._relative_regex = RegExpUtility.get_safe_reg_exp(

@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 import glob
 import os
 import json
@@ -79,6 +82,7 @@ CULTURES = {
     'Portuguese': Culture.Portuguese,
     'Spanish': Culture.Spanish,
     'Turkish': Culture.Turkish,
+    # 'German': Culture.German,
 }
 
 SPECS = get_all_specs()

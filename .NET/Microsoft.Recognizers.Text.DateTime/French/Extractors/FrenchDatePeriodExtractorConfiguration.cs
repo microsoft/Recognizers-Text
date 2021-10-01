@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.French;
@@ -230,8 +233,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
             var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
 
-            CardinalExtractor = Number.French.CardinalExtractor.GetInstance();
-            OrdinalExtractor = Number.French.OrdinalExtractor.GetInstance();
+            CardinalExtractor = Number.French.CardinalExtractor.GetInstance(numConfig);
+            OrdinalExtractor = Number.French.OrdinalExtractor.GetInstance(numConfig);
 
             NumberParser = new BaseNumberParser(new FrenchNumberParserConfiguration(numConfig));
         }

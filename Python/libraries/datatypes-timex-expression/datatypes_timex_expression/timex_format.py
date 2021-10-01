@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 from . import timex_helpers
 from .timex_constants import Constants
 from .timex_date_helpers import TimexDateHelpers

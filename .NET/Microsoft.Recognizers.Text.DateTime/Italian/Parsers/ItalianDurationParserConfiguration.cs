@@ -1,4 +1,7 @@
-﻿using System.Collections.Immutable;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Italian;
@@ -7,7 +10,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
     public class ItalianDurationParserConfiguration : BaseDateTimeOptionsConfiguration, IDurationParserConfiguration
     {
-        public static readonly Regex InexactNumberUnitRegex2 = new Regex(DateTimeDefinitions.InexactNumberUnitRegex2, RegexFlags);
+        public static readonly Regex InexactNumberUnitRegex2 =
+            new Regex(DateTimeDefinitions.InexactNumberUnitRegex2, RegexFlags);
+
+        public static readonly Regex PrefixArticleRegex =
+            new Regex(DateTimeDefinitions.PrefixArticleRegex, RegexFlags);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
@@ -16,7 +23,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         {
             CardinalExtractor = config.CardinalExtractor;
             NumberParser = config.NumberParser;
+
             DurationExtractor = new BaseDurationExtractor(new ItalianDurationExtractorConfiguration(this), false);
+
             NumberCombinedWithUnit = ItalianDurationExtractorConfiguration.NumberCombinedWithDurationUnit;
 
             AnUnitRegex = ItalianDurationExtractorConfiguration.AnUnitRegex;
@@ -46,6 +55,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public Regex NumberCombinedWithUnit { get; }
 
         public Regex AnUnitRegex { get; }
+
+        Regex IDurationParserConfiguration.PrefixArticleRegex => PrefixArticleRegex;
 
         public Regex DuringRegex { get; }
 

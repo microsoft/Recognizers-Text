@@ -1,0 +1,1990 @@
+[
+  {
+    "Input": "سأخرج اليوم من الخامسة إلى السابعة",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "اليوم من الخامسة إلى السابعة",
+        "Start": 6,
+        "Length": 28,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T05,2016-11-07T07,PT2H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 05:00:00",
+            "endDateTime": "2016-11-07 07:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 05:00:00",
+            "endDateTime": "2016-11-07 07:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج من 5 إلى 6 من 4/22/2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من 5 إلى 6 من 4/22/2016",
+        "Start": 6,
+        "Length": 23,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-04-22T05,2016-04-22T06,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2016-04-22 05:00:00",
+            "endDateTime": "2016-04-22 06:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-04-22 05:00:00",
+            "endDateTime": "2016-04-22 06:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج من 5 إلى 6 من 22 أبريل",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من 5 إلى 6 من 22 أبريل",
+        "Start": 6,
+        "Length": 22,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-04-22T05,XXXX-04-22T06,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2017-04-22 05:00:00",
+            "endDateTime": "2017-04-22 06:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-04-22 05:00:00",
+            "endDateTime": "2016-04-22 06:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج من 5 إلى 6 مساءً من 22 أبريل",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من 5 إلى 6 مساءً من 22 أبريل",
+        "Start": 6,
+        "Length": 28,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-04-22T17,XXXX-04-22T18,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2017-04-22 17:00:00",
+            "endDateTime": "2017-04-22 18:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-04-22 17:00:00",
+            "endDateTime": "2016-04-22 18:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج من 5 إلى 6 في 1 يناير",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من 5 إلى 6 في 1 يناير",
+        "Start": 6,
+        "Length": 21,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-01-01T05,XXXX-01-01T06,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2017-01-01 05:00:00",
+            "endDateTime": "2017-01-01 06:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-01-01 05:00:00",
+            "endDateTime": "2016-01-01 06:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج من الساعة 3 مساءً حتى 4 مساءً غدًا",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من الساعة 3 مساءً حتى 4 مساءً غدًا",
+        "Start": 6,
+        "Length": 34,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-08T15,2016-11-08T16,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 15:00:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-08 15:00:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج من 3:00 إلى 4:00 غدًا",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من 3:00 إلى 4:00 غدًا",
+        "Start": 6,
+        "Length": 21,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-08T03:00,2016-11-08T04:00,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 03:00:00",
+            "endDateTime": "2016-11-08 04:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-08 03:00:00",
+            "endDateTime": "2016-11-08 04:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج من السابعة والنصف إلى 4 مساءً غدًا",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من السابعة والنصف إلى 4 مساءً غدًا",
+        "Start": 6,
+        "Length": 34,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-08T07:30,2016-11-08T16,PT8H30M)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 07:30:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-08 07:30:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج من الساعة 4 مساءً اليوم حتى 5 مساءً غدًا",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من الساعة 4 مساءً اليوم حتى 5 مساءً غدًا",
+        "Start": 6,
+        "Length": 40,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16,2016-11-08T17,PT25H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-08 17:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-08 17:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج من الساعة 2:00 مساءً ، 2016-2-21 إلى 3:32 ، 4/23/2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من الساعة 2:00 مساءً ، 2016-2-21 إلى 3:32 ، 4/23/2016",
+        "Start": 6,
+        "Length": 53,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-02-21T14:00,2016-04-23T03:32,PT1478H)",
+          "FutureResolution": {
+            "startDateTime": "2016-02-21 14:00:00",
+            "endDateTime": "2016-04-23 03:32:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-02-21 14:00:00",
+            "endDateTime": "2016-04-23 03:32:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج بين الساعة 4 مساءً و 5 مساءً اليوم",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بين الساعة 4 مساءً و 5 مساءً اليوم",
+        "Start": 6,
+        "Length": 34,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16,2016-11-07T17,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-07 17:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-07 17:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج بين الساعة 4 مساءً في 1  يناير 2016 و 5 مساءً اليوم",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بين الساعة 4 مساءً في 1  يناير 2016 و 5 مساءً اليوم",
+        "Start": 6,
+        "Length": 51,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-01-01T16,2016-11-07T17,PT7465H)",
+          "FutureResolution": {
+            "startDateTime": "2016-01-01 16:00:00",
+            "endDateTime": "2016-11-07 17:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-01-01 16:00:00",
+            "endDateTime": "2016-11-07 17:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود الليلة",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الليلة",
+        "Start": 6,
+        "Length": 6,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-07TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 20:00:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 20:00:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود الليلة في 8",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الليلة ",
+        "Start": 6,
+        "Length": 7,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-07TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 20:00:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 20:00:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود هذه الليلة",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "هذه الليلة",
+        "Start": 6,
+        "Length": 10,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-07TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 20:00:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 20:00:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود هذا المساء",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "هذا المساء",
+        "Start": 6,
+        "Length": 10,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-07TEV",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-07 20:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:00:00",
+            "endDateTime": "2016-11-07 20:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود هذا الصباح",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "هذا الصباح",
+        "Start": 6,
+        "Length": 10,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-07TMO",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 08:00:00",
+            "endDateTime": "2016-11-07 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 08:00:00",
+            "endDateTime": "2016-11-07 12:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود ظهر اليوم",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "ظهر اليوم",
+        "Start": 6,
+        "Length": 9,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-07TAF",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 12:00:00",
+            "endDateTime": "2016-11-07 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 12:00:00",
+            "endDateTime": "2016-11-07 16:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود الليلة القادمة",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الليلة القادمة",
+        "Start": 6,
+        "Length": 14,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-08TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 20:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-08 20:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود الليلة الماضية",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الليلة الماضية",
+        "Start": 6,
+        "Length": 14,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-06TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-06 20:00:00",
+            "endDateTime": "2016-11-06 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-06 20:00:00",
+            "endDateTime": "2016-11-06 23:59:59"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود ليلة الغد",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "ليلة الغد",
+        "Start": 6,
+        "Length": 9,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-08TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 20:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-08 20:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود بعد ظهر الاثنين المقبل",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بعد ظهر الاثنين المقبل",
+        "Start": 6,
+        "Length": 22,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-14TAF",
+          "FutureResolution": {
+            "startDateTime": "2016-11-14 12:00:00",
+            "endDateTime": "2016-11-14 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-14 12:00:00",
+            "endDateTime": "2016-11-14 16:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود آخر 3 دقائق",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "آخر 3 دقائق",
+        "Start": 6,
+        "Length": 11,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:09:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:09:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود بعد 3 دقائق",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بعد 3 دقائق",
+        "Start": 6,
+        "Length": 11,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:09:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:09:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود 3 دقائق السابقة",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3 دقائق السابقة",
+        "Start": 6,
+        "Length": 15,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:09:00,2016-11-07T16:12:00,PT3M)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:09:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:09:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود بعد 5 ساعات",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بعد 5 ساعات",
+        "Start": 6,
+        "Length": 11,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T21:12:00,PT5H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 21:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 21:12:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود اللحظة الأخيرة",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "اللحظة الأخيرة",
+        "Start": 6,
+        "Length": 14,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:11:00,2016-11-07T16:12:00,PT1M)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:11:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:11:00",
+            "endDateTime": "2016-11-07 16:12:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود في الساعة القادمة",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "في الساعة القادمة",
+        "Start": 6,
+        "Length": 17,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T17:12:00,PT1H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 17:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 17:12:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود بضع ساعات القادمة",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بضع ساعات القادمة",
+        "Start": 6,
+        "Length": 17,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T19:12:00,PT3H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 19:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 19:12:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود الثلاثاء في الصباح",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الثلاثاء في الصباح",
+        "Start": 6,
+        "Length": 18,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TMO",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 08:00:00",
+            "endDateTime": "2016-11-08 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 08:00:00",
+            "endDateTime": "2016-11-01 12:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "هل يمكنك مساعدتنا في العثور على وقت في صباح هذا الثلاثاء من فضلك؟",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "في صباح هذا الثلاثاء من فضلك؟",
+        "Start": 36,
+        "Length": 29,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2016-11-08TMO",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 08:00:00",
+            "endDateTime": "2016-11-08 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-08 08:00:00",
+            "endDateTime": "2016-11-08 12:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "يرجى تنظيم اجتماع لمدة 30 دقيقة يوم الثلاثاء ، في الصباح.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يوم الثلاثاء ، في الصباح.",
+        "Start": 32,
+        "Length": 25,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TMO",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 08:00:00",
+            "endDateTime": "2016-11-08 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 08:00:00",
+            "endDateTime": "2016-11-01 12:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود الثلاثاء بعد الظهر",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الثلاثاء بعد الظهر",
+        "Start": 6,
+        "Length": 18,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TAF",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 12:00:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 12:00:00",
+            "endDateTime": "2016-11-01 16:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود الثلاثاء في المساء",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الثلاثاء في المساء",
+        "Start": 6,
+        "Length": 18,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TEV",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 16:00:00",
+            "endDateTime": "2016-11-08 20:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 16:00:00",
+            "endDateTime": "2016-11-01 20:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "دعونا نجتمع في الصباح الباكر الثلاثاء",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "في الصباح الباكر الثلاثاء",
+        "Start": 12,
+        "Length": 25,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TMO",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 08:00:00",
+            "endDateTime": "2016-11-08 10:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 08:00:00",
+            "endDateTime": "2016-11-01 10:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "دعونا نجتمع في الصباح الباكر يوم الثلاثاء",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "في الصباح الباكر يوم الثلاثاء",
+        "Start": 12,
+        "Length": 29,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TMO",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 08:00:00",
+            "endDateTime": "2016-11-08 10:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 08:00:00",
+            "endDateTime": "2016-11-01 10:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "دعونا نجتمع في وقت متأخر من صباح الثلاثاء",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "في وقت متأخر من صباح الثلاثاء",
+        "Start": 12,
+        "Length": 29,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TMO",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 10:00:00",
+            "endDateTime": "2016-11-08 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 10:00:00",
+            "endDateTime": "2016-11-01 12:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "دعونا نجتمع في وقت مبكر من بعد ظهر يوم الثلاثاء",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "في وقت مبكر من بعد ظهر يوم الثلاثاء",
+        "Start": 12,
+        "Length": 35,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TAF",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 12:00:00",
+            "endDateTime": "2016-11-08 14:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 12:00:00",
+            "endDateTime": "2016-11-01 14:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "دعونا نجتمع في وقت متأخر من بعد ظهر الثلاثاء",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "في وقت متأخر من بعد ظهر الثلاثاء",
+        "Start": 12,
+        "Length": 32,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TAF",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 14:00:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 14:00:00",
+            "endDateTime": "2016-11-01 16:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "دعونا نجتمع في وقت مبكر من مساء الثلاثاء",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "في وقت مبكر من مساء الثلاثاء",
+        "Start": 12,
+        "Length": 28,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TEV",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 16:00:00",
+            "endDateTime": "2016-11-08 18:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 16:00:00",
+            "endDateTime": "2016-11-01 18:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "دعونا نجتمع في وقت متأخر من مساء الثلاثاء",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "في وقت متأخر من مساء الثلاثاء",
+        "Start": 12,
+        "Length": 29,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TEV",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 18:00:00",
+            "endDateTime": "2016-11-08 20:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 18:00:00",
+            "endDateTime": "2016-11-01 20:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "دعونا نجتمع في وقت مبكر من ليلة الثلاثاء",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "في وقت مبكر من ليلة الثلاثاء",
+        "Start": 12,
+        "Length": 28,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 20:00:00",
+            "endDateTime": "2016-11-08 22:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 20:00:00",
+            "endDateTime": "2016-11-01 22:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "دعونا نجتمع في وقت متأخر من ليلة الثلاثاء",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "في وقت متأخر من ليلة الثلاثاء",
+        "Start": 12,
+        "Length": 29,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 22:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 22:00:00",
+            "endDateTime": "2016-11-01 23:59:59"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "دعونا نجتمع يوم الثلاثاء في الصباح الباكر",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يوم الثلاثاء في الصباح الباكر",
+        "Start": 12,
+        "Length": 29,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TMO",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 08:00:00",
+            "endDateTime": "2016-11-08 10:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 08:00:00",
+            "endDateTime": "2016-11-01 10:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "دعونا نجتمع يوم الثلاثاء في وقت متأخر من الصباح",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يوم الثلاثاء في وقت متأخر من الصباح",
+        "Start": 12,
+        "Length": 35,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TMO",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 10:00:00",
+            "endDateTime": "2016-11-08 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 10:00:00",
+            "endDateTime": "2016-11-01 12:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "دعونا نجتمع يوم الثلاثاء في وقت مبكر بعد الظهر",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يوم الثلاثاء في وقت مبكر بعد الظهر",
+        "Start": 12,
+        "Length": 34,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TAF",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 12:00:00",
+            "endDateTime": "2016-11-08 14:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 12:00:00",
+            "endDateTime": "2016-11-01 14:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "دعونا نجتمع يوم الثلاثاء في وقت متأخر من بعد الظهر",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يوم الثلاثاء في وقت متأخر من بعد الظهر",
+        "Start": 12,
+        "Length": 38,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TAF",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 14:00:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 14:00:00",
+            "endDateTime": "2016-11-01 16:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "دعونا نجتمع يوم الثلاثاء في وقت مبكر من المساء",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يوم الثلاثاء في وقت مبكر من المساء",
+        "Start": 12,
+        "Length": 34,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TEV",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 16:00:00",
+            "endDateTime": "2016-11-08 18:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 16:00:00",
+            "endDateTime": "2016-11-01 18:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "دعونا نجتمع يوم الثلاثاء في وقت متأخر من المساء",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يوم الثلاثاء في وقت متأخر من المساء",
+        "Start": 12,
+        "Length": 35,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TEV",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 18:00:00",
+            "endDateTime": "2016-11-08 20:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 18:00:00",
+            "endDateTime": "2016-11-01 20:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "دعونا نجتمع يوم الثلاثاء في وقت مبكر من الليل",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يوم الثلاثاء في وقت مبكر من الليل",
+        "Start": 12,
+        "Length": 33,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 20:00:00",
+            "endDateTime": "2016-11-08 22:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 20:00:00",
+            "endDateTime": "2016-11-01 22:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "دعونا نجتمع يوم الثلاثاء في وقت متأخر من الليل",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يوم الثلاثاء في وقت متأخر من الليل",
+        "Start": 12,
+        "Length": 34,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TNI",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 22:00:00",
+            "endDateTime": "2016-11-08 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 22:00:00",
+            "endDateTime": "2016-11-01 23:59:59"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "دعنا نتقابل بقية اليوم",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بقية اليوم",
+        "Start": 12,
+        "Length": 10,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "دعنا نتقابل بقية اليوم الحالي",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بقية اليوم الحالي",
+        "Start": 12,
+        "Length": 17,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "دعنا نلتقي بقية يومي",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بقية يومي",
+        "Start": 11,
+        "Length": 9,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "دعنا نتقابل بقية هذا اليوم",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بقية هذا اليوم",
+        "Start": 12,
+        "Length": 14,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "دعنا نتقابل بقية يوم",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": " بقية يوم",
+        "Start": 11,
+        "Length": 9,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T23:59:59,PT28079S)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 23:59:59"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Cortana ، يرجى تحديد موعد اجتماع سكايب مع واين يوم الجمعة بين 1 مساءً و 4 مساءً.",
+    "Context": {
+      "ReferenceDateTime": "2017-11-09T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يوم الجمعة بين 1 مساءً و 4 مساءً.",
+        "Start": 47,
+        "Length": 33,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-WXX-5T13,XXXX-WXX-5T16,PT3H)",
+          "FutureResolution": {
+            "startDateTime": "2017-11-10 13:00:00",
+            "endDateTime": "2017-11-10 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2017-11-03 13:00:00",
+            "endDateTime": "2017-11-03 16:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "هل يمكنك تحديد موعد لنا غدًا بين الساعة 8 صباحًا و 2 مساءً؟",
+    "Context": {
+      "ReferenceDateTime": "2017-11-09T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "غدًا بين الساعة 8 صباحًا و 2 مساء",
+        "Start": 24,
+        "Length": 33,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2017-11-10T08,2017-11-10T14,PT6H)",
+          "FutureResolution": {
+            "startDateTime": "2017-11-10 08:00:00",
+            "endDateTime": "2017-11-10 14:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2017-11-10 08:00:00",
+            "endDateTime": "2017-11-10 14:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "هل يمكنك تحديد موعد 9 ديسمبر بين الساعة 8 صباحًا و 2 مساءً؟",
+    "Context": {
+      "ReferenceDateTime": "2017-11-09T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "9 ديسمبر بين الساعة 8 صباحًا و 2 مساء",
+        "Start": 20,
+        "Length": 37,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-12-09T08,XXXX-12-09T14,PT6H)",
+          "FutureResolution": {
+            "startDateTime": "2017-12-09 08:00:00",
+            "endDateTime": "2017-12-09 14:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-12-09 08:00:00",
+            "endDateTime": "2016-12-09 14:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "مرحبًا كورتانا - يرجى تحديد موعد لقاء سكايب مع جينيفر. أحتاج إلى اجتماع مدته 30 دقيقة يوم الجمعة بعد الظهر.",
+    "Context": {
+      "ReferenceDateTime": "2017-11-13T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يوم الجمعة بعد الظهر",
+        "Start": 86,
+        "Length": 20,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2017-11-17TAF",
+          "FutureResolution": {
+            "startDateTime": "2017-11-17 12:00:00",
+            "endDateTime": "2017-11-17 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2017-11-17 12:00:00",
+            "endDateTime": "2017-11-17 16:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "مرحبًا كورتانا - يرجى تحديد موعد لقاء سكايب مع جينيفر. أحتاج إلى اجتماع مدته 30 دقيقة بعد ظهر يوم الجمعة!",
+    "Context": {
+      "ReferenceDateTime": "2017-11-13T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بعد ظهر يوم الجمعة",
+        "Start": 86,
+        "Length": 18,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2017-11-17TAF",
+          "FutureResolution": {
+            "startDateTime": "2017-11-17 12:00:00",
+            "endDateTime": "2017-11-17 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2017-11-17 12:00:00",
+            "endDateTime": "2017-11-17 16:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "مرحبًا كورتانا - يرجى تحديد موعد لقاء سكايب مع جينيفر. أحتاج إلى اجتماع مدته 30 دقيقة بعد ظهر يوم الجمعة القادم!",
+    "Context": {
+      "ReferenceDateTime": "2017-11-13T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بعد ظهر يوم الجمعة القادم",
+        "Start": 86,
+        "Length": 25,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2017-11-24TAF",
+          "FutureResolution": {
+            "startDateTime": "2017-11-24 12:00:00",
+            "endDateTime": "2017-11-24 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2017-11-24 12:00:00",
+            "endDateTime": "2017-11-24 16:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "مرحبًا كورتانا - يرجى تحديد موعد لقاء سكايب مع جينيفر. أحتاج إلى اجتماع لمدة 30 دقيقة بعد ظهر يوم الجمعة الماضي!",
+    "Context": {
+      "ReferenceDateTime": "2017-11-13T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بعد ظهر يوم الجمعة الماضي",
+        "Start": 86,
+        "Length": 25,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "2017-11-10TAF",
+          "FutureResolution": {
+            "startDateTime": "2017-11-10 12:00:00",
+            "endDateTime": "2017-11-10 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2017-11-10 12:00:00",
+            "endDateTime": "2017-11-10 16:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "كورتانا ، يرجى تحديد موعد اجتماع سكايب مع واين ، يوم الجمعة بعد الظهر بين 1 مساءً و 4 مساءً.",
+    "Context": {
+      "ReferenceDateTime": "2017-11-14T19:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يوم الجمعة بعد الظهر بين 1 مساءً و 4 مساء",
+        "Start": 49,
+        "Length": 41,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-5T13,XXXX-WXX-5T16,PT3H",
+          "FutureResolution": {
+            "startDateTime": "2017-11-17 13:00:00",
+            "endDateTime": "2017-11-17 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2017-11-10 13:00:00",
+            "endDateTime": "2017-11-10 16:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "كورتانا ، يرجى تحديد موعد اجتماع سكايب مع واين ، بعد ظهر يوم الجمعة بين 1 مساءً و 4 مساءً.",
+    "Context": {
+      "ReferenceDateTime": "2017-11-14T19:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بعد ظهر يوم الجمعة بين 1 مساءً و 4 مساء",
+        "Start": 49,
+        "Length": 39,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-5T13,XXXX-WXX-5T16,PT3H",
+          "FutureResolution": {
+            "startDateTime": "2017-11-17 13:00:00",
+            "endDateTime": "2017-11-17 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2017-11-10 13:00:00",
+            "endDateTime": "2017-11-10 16:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "كورتانا ، يرجى تحديد موعد اجتماع سكايب 2018-09-23 الساعة الواحدة ظهراً. ل 4",
+    "Context": {
+      "ReferenceDateTime": "2017-11-17T19:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2015-09-23 الساعة 1 مساء إلى 4",
+        "Start": -1,
+        "Length": 30,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2018-09-23T13,2018-09-23T16,PT3H)",
+          "FutureResolution": {
+            "startDateTime": "2018-09-23 13:00:00",
+            "endDateTime": "2018-09-23 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2018-09-23 13:00:00",
+            "endDateTime": "2018-09-23 16:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "كورتانا ، يرجى تحديد موعد اجتماع سكايب 2018-09-23 1:30 مساءً. ل 4.",
+    "Context": {
+      "ReferenceDateTime": "2017-11-17T19:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2015-09-23 الساعة 1:30 مساء إلى 4",
+        "Start": -1,
+        "Length": 33,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2018-09-23T13:30,2018-09-23T16,PT2H30M)",
+          "FutureResolution": {
+            "startDateTime": "2018-09-23 13:30:00",
+            "endDateTime": "2018-09-23 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2018-09-23 13:30:00",
+            "endDateTime": "2018-09-23 16:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "دعنا نتقابل في 5 فبراير صباحًا",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "دعنا نتقابل في 5 فبراير صباحًا",
+        "Start": 0,
+        "Length": 30,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-02-05TMO",
+          "FutureResolution": {
+            "startDateTime": "2017-02-05 08:00:00",
+            "endDateTime": "2017-02-05 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-02-05 08:00:00",
+            "endDateTime": "2016-02-05 12:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود الثلاثاء صباحا",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الثلاثاء صباحا",
+        "Start": 6,
+        "Length": 14,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TMO",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 08:00:00",
+            "endDateTime": "2016-11-08 12:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 08:00:00",
+            "endDateTime": "2016-11-01 12:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سأعود الثلاثاء مساء",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الثلاثاء مساء",
+        "Start": 6,
+        "Length": 13,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "XXXX-WXX-2TAF",
+          "FutureResolution": {
+            "startDateTime": "2016-11-08 12:00:00",
+            "endDateTime": "2016-11-08 16:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-01 12:00:00",
+            "endDateTime": "2016-11-01 16:00:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "سيحدث بعد ساعتين في المستقبل",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "سيحدث بعد ساعتين في المستقبل",
+        "Start": 0,
+        "Length": 28,
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T18:12:00,PT2H)",
+          "FutureResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 18:12:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-11-07 16:12:00",
+            "endDateTime": "2016-11-07 18:12:00"
+          }
+        }
+      }
+    ]
+  }
+]

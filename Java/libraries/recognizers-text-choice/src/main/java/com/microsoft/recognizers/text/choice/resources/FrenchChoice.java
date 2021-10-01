@@ -17,7 +17,11 @@ public class FrenchChoice {
 
     public static final String TokenizerRegex = "[^\\w\\d\\u00E0-\\u00FC]";
 
-    public static final String TrueRegex = "\\b(s[uû]r|ouais|oui|yep|y|sure|approuver|accepter|consentir|d'accord|ça march[eé])\\b|(\\uD83D\\uDC4D|\\uD83D\\uDC4C)";
+    public static final String SkinToneRegex = "(\\uD83C\\uDFFB|\\uD83C\\uDFFC|\\uD83C\\uDFFD|\\uD83C\\uDFFE|\\uD83C\\uDFFF)";
 
-    public static final String FalseRegex = "\\b(faux|nan|non|pas\\s+d'accord|pas\\s+concorder|n'est\\s+pas\\s+(correct|ok)|pas)\\b|(\\uD83D\\uDC4E|\\u270B|\\uD83D\\uDD90)";
+    public static final String TrueRegex = "\\b(s[uû]r|ouais|oui|yep|y|sure|approuver|accepter|consentir|d'accord|ça march[eé])\\b|(\\uD83D\\uDC4D|\\uD83D\\uDC4C){SkinToneRegex}?"
+            .replace("{SkinToneRegex}", SkinToneRegex);
+
+    public static final String FalseRegex = "\\b(faux|nan|non|pas\\s+d'accord|pas\\s+concorder|n'est\\s+pas\\s+(correct|ok)|pas)\\b|(\\uD83D\\uDC4E|\\u270B|\\uD83D\\uDD90){SkinToneRegex}?"
+            .replace("{SkinToneRegex}", SkinToneRegex);
 }

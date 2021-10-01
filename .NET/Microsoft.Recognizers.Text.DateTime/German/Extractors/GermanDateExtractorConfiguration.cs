@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -143,11 +146,12 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
             var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
 
-            IntegerExtractor = Number.German.IntegerExtractor.GetInstance();
-            OrdinalExtractor = Number.German.OrdinalExtractor.GetInstance();
+            IntegerExtractor = Number.German.IntegerExtractor.GetInstance(numConfig);
+            OrdinalExtractor = Number.German.OrdinalExtractor.GetInstance(numConfig);
             NumberParser = new BaseNumberParser(new GermanNumberParserConfiguration(new BaseNumberOptionsConfiguration(numConfig)));
 
             DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new GermanHolidayExtractorConfiguration(this));
             UtilityConfiguration = new GermanDatetimeUtilityConfiguration();
 
             // 3-23-2017
@@ -203,6 +207,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public IParser NumberParser { get; }
 
         public IDateTimeExtractor DurationExtractor { get; }
+
+        public IDateTimeExtractor HolidayExtractor { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 

@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -155,16 +158,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (!innerResult.Success)
             {
-                innerResult = ParseDuration(entityText, referenceTime);
-            }
-
-            if (!innerResult.Success)
-            {
-                innerResult = ParseRelativeUnit(entityText, referenceTime);
-            }
-
-            if (!innerResult.Success)
-            {
                 innerResult = ParseDateWithPeriodPrefix(entityText, referenceTime);
             }
 
@@ -172,6 +165,16 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 // Cases like "today after 2:00pm", "1/1/2015 before 2:00 in the afternoon"
                 innerResult = ParseDateWithTimePeriodSuffix(entityText, referenceTime);
+            }
+
+            if (!innerResult.Success)
+            {
+                innerResult = ParseDuration(entityText, referenceTime);
+            }
+
+            if (!innerResult.Success)
+            {
+                innerResult = ParseRelativeUnit(entityText, referenceTime);
             }
 
             return innerResult;
@@ -234,9 +237,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             // the first 2 hours represent early, the later 2 hours represent late
             if (hasEarly)
             {
-                endHour = beginHour + 2;
+                endHour = beginHour + Constants.EARLY_LATE_TIME_DELTA;
 
-                // Handling special case: night ends with 23:59 due to C# issues.
+                // Handling special case: night ends at 23:59 due to .NET issues.
                 if (endMin == 59)
                 {
                     endMin = 0;
@@ -244,7 +247,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else if (hasLate)
             {
-                beginHour = beginHour + 2;
+                beginHour += Constants.EARLY_LATE_TIME_DELTA;
             }
 
             if (Config.SpecificTimeOfDayRegex.IsExactMatch(trimmedText, trim: true))
@@ -593,20 +596,28 @@ namespace Microsoft.Recognizers.Text.DateTime
             var dateResult = this.Config.DateExtractor.Extract(text, referenceTime);
             if (dateResult.Count > 0)
             {
+                DateTimeParseResult pr = new DateTimeParseResult();
                 var beforeString = text.Substring(0, (int)dateResult.Last().Start).TrimEnd();
                 var match = Config.PrefixDayRegex.Match(beforeString);
+                if (match.Success)
+                {
+                    pr = this.Config.DateParser.Parse(dateResult.Last(), referenceTime);
+                }
 
                 // Check also afterString
                 if (!match.Success && this.Config.CheckBothBeforeAfter)
                 {
-                    var afterString = text.Substring((int)(dateResult.Last().Start + dateResult.Last().Length),
-                        text.Length - ((int)(dateResult.Last().Start + dateResult.Last().Length))).TrimStart();
+                    var afterString = text.Substring((int)(dateResult.First().Start + dateResult.First().Length),
+                        text.Length - ((int)(dateResult.First().Start + dateResult.First().Length))).TrimStart();
                     match = Config.PrefixDayRegex.Match(afterString);
+                    if (match.Success)
+                    {
+                        pr = this.Config.DateParser.Parse(dateResult.First(), referenceTime);
+                    }
                 }
 
                 if (match.Success)
                 {
-                    var pr = this.Config.DateParser.Parse(dateResult.Last(), referenceTime);
                     if (pr.Value != null)
                     {
                         var startTime = (DateObject)((DateTimeResolutionResult)pr.Value).FutureValue;
@@ -682,8 +693,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                         dateResult = this.Config.DateExtractor.Extract(Config.TokenBeforeDate + trimmedText.Substring(0, (int)ers[0].Start), referenceTime);
                     }
 
-                    // check if TokenBeforeDate is null
-                    var dateText = !string.IsNullOrEmpty(Config.TokenBeforeDate) ? trimmedText.Replace(ers[0].Text, string.Empty).Replace(Config.TokenBeforeDate, string.Empty).Trim() : trimmedText.Replace(ers[0].Text, string.Empty).Trim();
+                    // check if TokenBeforeDate and TokenBeforeTime are null
+                    var dateText = trimmedText.Replace(ers[0].Text, string.Empty).Trim();
+                    dateText = !string.IsNullOrEmpty(Config.TokenBeforeDate) ? dateText.Replace(Config.TokenBeforeDate, string.Empty).Trim() : dateText;
+                    dateText = !string.IsNullOrEmpty(Config.TokenBeforeTime) ? dateText.Replace(Config.TokenBeforeTime.Trim(), string.Empty).Trim() : dateText;
                     if (this.Config.CheckBothBeforeAfter)
                     {
                         List<string> tokenListBeforeDate = Config.TokenBeforeDate.Split('|').ToList();
@@ -694,7 +707,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
 
                     // If only one Date is extracted and the Date text equals to the rest part of source text
-                    if (dateResult.Count == 1 && dateText.Equals(dateResult[0].Text))
+                    if (dateResult.Count == 1 && dateText.Equals(dateResult[0].Text, StringComparison.Ordinal))
                     {
                         string dateTimex;
                         DateObject futureTime;
@@ -1099,7 +1112,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (bothHaveDates)
             {
-                ret.Timex = $"({pr1.TimexStr},{pr2.TimexStr},PT{Convert.ToInt32((futureEnd - futureBegin).TotalHours)}H)";
+                var duration = futureEnd - futureBegin;
+                var durationStr = Convert.ToInt32(duration.TotalHours) != 0 ? $"{Convert.ToInt32(duration.TotalHours)}H" :
+                    $"{Convert.ToInt32(duration.TotalMinutes)}M";
+                ret.Timex = $"({pr1.TimexStr},{pr2.TimexStr},PT{durationStr})";
 
                 // Do nothing
             }

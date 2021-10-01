@@ -910,25 +910,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "Results": [
-      {
-        "Text": "en 3 años",
-        "Type": "daterange",
-        "Value": {
-          "Timex": "(2016-11-08,2019-11-08,P3Y)",
-          "FutureResolution": {
-            "startDate": "2016-11-08",
-            "endDate": "2019-11-08"
-          },
-          "PastResolution": {
-            "startDate": "2016-11-08",
-            "endDate": "2019-11-08"
-          }
-        },
-        "Start": 14,
-        "Length": 9
-      }
-    ]
+    "Results": []
   },
   {
     "Input": "Estuve afuera las pasadas 3 semanas",
@@ -5875,6 +5857,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "Comment": "Compound timex represent value dependency and will be split at the model level",
     "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
@@ -5882,7 +5865,7 @@
         "Text": "entre 1 de enero y 5 de abril",
         "Type": "daterange",
         "Value": {
-          "Timex": "(XXXX-01-01,XXXX-04-05,P94D)",
+          "Timex": "(XXXX-01-01,XXXX-04-05,P94D)|(XXXX-01-01,XXXX-04-05,P95D)",
           "FutureResolution": {
             "startDate": "2017-01-01",
             "endDate": "2017-04-05"
@@ -7053,6 +7036,31 @@
         },
         "Start": 0,
         "Length": 41
+      }
+    ]
+  },
+  {
+    "Input": "Estare afuera proximos 3 años",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "proximos 3 años",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2016-11-08,2019-11-08,P3Y)",
+          "FutureResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2019-11-08"
+          },
+          "PastResolution": {
+            "startDate": "2016-11-08",
+            "endDate": "2019-11-08"
+          }
+        },
+        "Start": 14,
+        "Length": 15
       }
     ]
   }

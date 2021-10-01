@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
@@ -21,6 +24,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             DurationExtractor = config.DurationExtractor;
             DateExtractor = config.DateExtractor;
             DurationParser = config.DurationParser;
+            HolidayParser = new BaseHolidayParser(new FrenchHolidayParserConfiguration(this));
 
             DateRegexes = new FrenchDateExtractorConfiguration(this).DateRegexList;
             OnRegex = FrenchDateExtractorConfiguration.OnRegex;
@@ -76,6 +80,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public IDateExtractor DateExtractor { get; }
 
         public IDateTimeParser DurationParser { get; }
+
+        public IDateTimeParser HolidayParser { get; }
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 

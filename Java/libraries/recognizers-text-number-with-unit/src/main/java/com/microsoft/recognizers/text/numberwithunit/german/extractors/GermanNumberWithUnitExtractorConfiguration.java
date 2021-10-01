@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 package com.microsoft.recognizers.text.numberwithunit.german.extractors;
 
 import com.microsoft.recognizers.text.CultureInfo;
@@ -46,7 +49,7 @@ public abstract class GermanNumberWithUnitExtractorConfiguration implements INum
     }
 
     public String getConnectorToken() {
-        return "";
+        return GermanNumericWithUnit.ConnectorToken;
     }
 
     public Pattern getCompoundUnitConnectorRegex() {

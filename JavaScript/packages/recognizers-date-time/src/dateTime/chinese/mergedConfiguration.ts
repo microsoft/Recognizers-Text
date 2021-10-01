@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { IMergedExtractorConfiguration, BaseMergedExtractor, IMergedParserConfiguration, BaseMergedParser } from "../baseMerged";
 import { BaseDateExtractor, BaseDateParser } from "../baseDate";
 import { BaseTimeExtractor, BaseTimeParser } from "../baseTime";
@@ -48,6 +51,7 @@ class ChineseMergedExtractorConfiguration implements IMergedExtractorConfigurati
     readonly numberEndingPattern: RegExp
     readonly unspecificDatePeriodRegex: RegExp
     readonly filterWordRegexList: RegExp[]
+    readonly AmbiguityFiltersDict: Map<RegExp, RegExp>
 
     constructor(dmyDateFormat: boolean) {
         this.dateExtractor = new ChineseDateExtractor(dmyDateFormat);

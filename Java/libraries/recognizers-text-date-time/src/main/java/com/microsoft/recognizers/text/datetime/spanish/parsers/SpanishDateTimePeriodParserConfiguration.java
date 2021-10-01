@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 package com.microsoft.recognizers.text.datetime.spanish.parsers;
 
 import com.google.common.collect.ImmutableMap;
@@ -332,7 +335,7 @@ public class SpanishDateTimePeriodParserConfiguration extends BaseOptionsConfigu
         Matcher regexMatcher = regex.matcher(trimmedText);
 
         int swift = 0;
-        if (regexMatcher.find() || trimmedText.equals("anoche")) {
+        if (regexMatcher.find() || trimmedText.startsWith("anoche")) {
             swift = -1;
         } else {
             regex = Pattern.compile(SpanishDateTime.NextPrefixRegex);

@@ -5,9 +5,16 @@ LangMarker: Eng
 CompoundNumberLanguage: !bool false
 #Does this culture uses period and comma intercheangeably as decimal separator?
 MultiDecimalSeparatorCulture: !bool true
+#List of culture variants that don't follow the default decimal separator
+NonStandardSeparatorVariants: !list
+  types: [ string ]
+  entries:
+    - en-za
+    - en-na
+    - en-zw
 #Integer Regex
 RoundNumberIntegerRegex: !simpleRegex
-  def: (?:hundred|thousand|million|billion|trillion|lakh|crore)
+  def: (?:hundred|thousand|million|mln|billion|bln|trillion|tln|lakh|crore)s?
 ZeroToNineIntegerRegex: !simpleRegex
   def: (?:three|seven|eight|four|five|zero|nine|one|two|six)
 TwoToNineIntegerRegex: !simpleRegex
@@ -58,7 +65,7 @@ AllIntRegexWithDozenSuffixLocks: !nestedRegex
 RoundNumberOrdinalRegex: !simpleRegex
   def: (?:hundredth|thousandth|millionth|billionth|trillionth)
 NumberOrdinalRegex: !simpleRegex
-  def: (?:first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)
+  def: (?:first|second|third|fourth|fifth|sixth|seventh|eighth|nine?th|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)
 RelativeOrdinalRegex: !simpleRegex
   def: (?<relativeOrdinal>(next|previous|current)\s+one|(the\s+second|next)\s+to\s+last|the\s+one\s+before\s+the\s+last(\s+one)?|the\s+last\s+but\s+one|(ante)?penultimate|last|next|previous|current)
 BasicOrdinalRegex: !nestedRegex
@@ -154,7 +161,7 @@ NumberWithPrepositionPercentage: !nestedRegex
 TillRegex: !simpleRegex
   def: ((?<!\bequal\s+)to|through|--|-|—|——|~|–)
 MoreRegex: !simpleRegex
-  def: (?:(bigger|greater|more|higher|larger)(\s+than)?|above|over|exceed(ed|ing)?|surpass(ed|ing)?|(?<!<|=)>)
+  def: (?:(bigger|greater|more|higher|larger)(\s+than)?|above|over|beyond|exceed(ed|ing)?|surpass(ed|ing)?|(?<!<|=)>)
 LessRegex: !simpleRegex
   def: (?:(less|lower|smaller|fewer)(\s+than)?|below|under|(?<!>|=)<)
 EqualRegex: !simpleRegex
@@ -239,7 +246,7 @@ WrittenFractionSeparatorTexts: [and]
 HalfADozenRegex: !simpleRegex
   def: half\s+a\s+dozen
 DigitalNumberRegex: !nestedRegex
-  def: ((?<=\b)(hundred|thousand|[mb]illion|trillion|lakh|crore|dozen(s)?)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))
+  def: ((?<=\b)(hundred|thousand|[mb]illion|trillion|[mbt]ln|lakh|crore|dozen(s)?)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))
   references: [ BaseNumbers.MultiplierLookupRegex ]
 CardinalNumberMap: !dictionary
   types: [ string, long ]
@@ -279,8 +286,11 @@ CardinalNumberMap: !dictionary
     hundred: 100
     thousand: 1000
     million: 1000000
+    mln: 1000000
     billion: 1000000000
+    bln: 1000000000
     trillion: 1000000000000
+    tln: 1000000000000
     lakh: 100000
     crore: 10000000
 OrdinalNumberMap: !dictionary
@@ -298,6 +308,7 @@ OrdinalNumberMap: !dictionary
     seventh: 7
     eighth: 8
     ninth: 9
+    nineth: 9
     tenth: 10
     eleventh: 11
     twelfth: 12
@@ -331,6 +342,7 @@ OrdinalNumberMap: !dictionary
     sevenths: 7
     eighths: 8
     ninths: 9
+    nineths: 9
     tenths: 10
     elevenths: 11
     twelfths: 12
@@ -360,8 +372,11 @@ RoundNumberMap: !dictionary
     hundred: 100
     thousand: 1000
     million: 1000000
+    mln: 1000000
     billion: 1000000000
+    bln: 1000000000
     trillion: 1000000000000
+    tln: 1000000000000
     lakh: 100000
     crore: 10000000
     hundredth: 100

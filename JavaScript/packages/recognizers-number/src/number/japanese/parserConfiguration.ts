@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { ParseResult } from "@microsoft/recognizers-text";
 import { ICJKNumberParserConfiguration } from "../cjkParsers";
 import { CultureInfo, Culture } from "../../culture";

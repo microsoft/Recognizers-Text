@@ -1,4 +1,7 @@
-﻿using System.Collections.Immutable;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Immutable;
 using System.Globalization;
 using System.Linq;
 
@@ -26,8 +29,15 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
             .Concat(WeightExtractorConfiguration.WeightSuffixList.ToDictionary(x => x.Key, x => Constants.WEIGHT))
             .ToImmutableDictionary(x => x.Key, x => x.Value);
 
-        private static readonly ImmutableList<string> AmbiguousValues =
-            NumbersWithUnitDefinitions.AmbiguousDimensionUnitList.ToImmutableList();
+        private static readonly ImmutableList<string> AmbiguousUnits =
+            NumbersWithUnitDefinitions.AmbiguousDimensionUnitList
+            .Concat(AreaExtractorConfiguration.AmbiguousUnits)
+            .Concat(LengthExtractorConfiguration.AmbiguousUnits)
+            .Concat(SpeedExtractorConfiguration.AmbiguousUnits)
+            .Concat(VolumeExtractorConfiguration.AmbiguousUnits)
+            .Concat(WeightExtractorConfiguration.AmbiguousUnits)
+            .Distinct()
+            .ToImmutableList();
 
         public DimensionExtractorConfiguration()
             : base(new CultureInfo(Culture.English))
@@ -43,7 +53,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
 
         public override ImmutableDictionary<string, string> PrefixList => null;
 
-        public override ImmutableList<string> AmbiguousUnitList => AmbiguousValues;
+        public override ImmutableList<string> AmbiguousUnitList => AmbiguousUnits;
 
         public override string ExtractType => Constants.SYS_UNIT_DIMENSION;
     }

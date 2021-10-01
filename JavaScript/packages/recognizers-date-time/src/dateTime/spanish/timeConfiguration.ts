@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { IExtractor } from "@microsoft/recognizers-text";
 import { RegExpUtility } from "@microsoft/recognizers-text";
 import { ITimeExtractorConfiguration, ITimeParserConfiguration } from "../baseTime";
@@ -34,7 +37,6 @@ export class SpanishTimeExtractorConfiguration implements ITimeExtractorConfigur
             RegExpUtility.getSafeRegExp(SpanishDateTime.TimeRegex7, "gis"),
             RegExpUtility.getSafeRegExp(SpanishDateTime.TimeRegex8, "gis"),
             RegExpUtility.getSafeRegExp(SpanishDateTime.TimeRegex9, "gis"),
-            RegExpUtility.getSafeRegExp(SpanishDateTime.TimeRegex10, "gis"),
             RegExpUtility.getSafeRegExp(SpanishDateTime.TimeRegex11, "gis"),
             RegExpUtility.getSafeRegExp(SpanishDateTime.TimeRegex12, "gis"),
             RegExpUtility.getSafeRegExp(SpanishDateTime.ConnectNumRegex, "gis")

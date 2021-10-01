@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 from enum import IntFlag
 from typing import List
 from recognizers_text import Culture, Recognizer, Model
@@ -15,6 +18,8 @@ from recognizers_number.number.portuguese.extractors import PortugueseNumberExtr
 from recognizers_number.number.portuguese.parsers import PortugueseNumberParserConfiguration
 from recognizers_number.number.french.extractors import FrenchNumberExtractor, FrenchOrdinalExtractor, FrenchPercentageExtractor
 from recognizers_number.number.french.parsers import FrenchNumberParserConfiguration
+from recognizers_number.number.german.extractors import GermanNumberExtractor, GermanOrdinalExtractor, GermanPercentageExtractor
+from recognizers_number.number.german.parsers import GermanNumberParserConfiguration
 
 
 class NumberOptions(IntFlag):
@@ -44,6 +49,24 @@ class NumberRecognizer(Recognizer[NumberOptions]):
                 ParserType.PERCENTAGE, EnglishNumberParserConfiguration()),
             EnglishPercentageExtractor()
         ))
+        # endregion
+
+        # region German
+        # self.register_model('NumberModel', Culture.German, lambda options: NumberModel(
+        #    AgnosticNumberParserFactory.get_parser(
+        #        ParserType.NUMBER, GermanNumberParserConfiguration()),
+        #    GermanNumberExtractor(NumberMode.PURE_NUMBER)
+        # ))
+        # self.register_model('OrdinalModel', Culture.German, lambda options: OrdinalModel(
+        #    AgnosticNumberParserFactory.get_parser(
+        #        ParserType.ORDINAL, GermanNumberParserConfiguration()),
+        #    GermanOrdinalExtractor()
+        # ))
+        # self.register_model('PercentModel', Culture.German, lambda options: PercentModel(
+        #    AgnosticNumberParserFactory.get_parser(
+        #        ParserType.PERCENTAGE, GermanNumberParserConfiguration()),
+        #    GermanPercentageExtractor()
+        # ))
         # endregion
 
         # region Chinese

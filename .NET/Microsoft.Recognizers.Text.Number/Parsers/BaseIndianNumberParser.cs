@@ -1,6 +1,8 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -46,12 +48,12 @@ namespace Microsoft.Recognizers.Text.Number
                 var denominator = match.Groups["denominator"].Value;
 
                 var smallValue = char.IsDigit(numerator[0]) ?
-                    GetDigitalValue(numerator, 1) :
-                    GetIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, numerator));
+                                 GetDigitalValue(numerator, 1) :
+                                 GetIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, numerator));
 
                 var bigValue = char.IsDigit(denominator[0]) ?
-                    GetDigitalValue(denominator, 1) :
-                    GetIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, denominator));
+                               GetDigitalValue(denominator, 1) :
+                               GetIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, denominator));
 
                 result.Value = smallValue / bigValue;
             }
@@ -65,12 +67,12 @@ namespace Microsoft.Recognizers.Text.Number
                 var denominator = match.Groups["denominator"].Value;
 
                 var smallValue = char.IsDigit(numerator[0]) ?
-                    GetDigitalValue(numerator, 1) :
-                    GetIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, numerator));
+                                 GetDigitalValue(numerator, 1) :
+                                 GetIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, numerator));
 
                 var bigValue = char.IsDigit(denominator[0]) ?
-                    GetDigitalValue(denominator, 1) :
-                    GetIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, denominator));
+                               GetDigitalValue(denominator, 1) :
+                               GetIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, denominator));
 
                 result.Value = smallValue / bigValue;
             }
@@ -275,17 +277,23 @@ namespace Microsoft.Recognizers.Text.Number
         {
             double temp = 0;
             double scale = 10;
-            var decimalSeparator = false;
+            var decimalSeparatorFound = false;
             var strLength = digitsStr.Length;
             var isNegative = false;
+
             var isFrac = digitsStr.Contains('/');
+
+            var hasSingleSeparator = false;
 
             var calStack = new Stack<double>();
 
             for (var i = 0; i < digitsStr.Length; i++)
             {
                 var ch = digitsStr[i];
-                var skippableNonDecimal = SkipNonDecimalSeparator(ch, strLength - i);
+                var prevCh = (i > 0) ? digitsStr[i - 1] : '\0';
+
+                var skippableNonDecimal = SkipNonDecimalSeparator(ch, strLength - i, i, hasSingleSeparator, prevCh, Config.NonDecimalSeparatorChar);
+
                 if (!isFrac && (ch == ' ' || ch == Constants.NO_BREAK_SPACE || skippableNonDecimal))
                 {
                     continue;
@@ -298,9 +306,9 @@ namespace Microsoft.Recognizers.Text.Number
                 }
                 else if (ch >= '0' && ch <= '9')
                 {
-                    if (decimalSeparator)
+                    if (decimalSeparatorFound)
                     {
-                        temp = temp + (scale * (ch - '0'));
+                        temp += scale * (ch - '0');
                         scale *= 0.1;
                     }
                     else
@@ -310,7 +318,7 @@ namespace Microsoft.Recognizers.Text.Number
                 }
                 else if (ch == Config.DecimalSeparatorChar || (!skippableNonDecimal && ch == Config.NonDecimalSeparatorChar))
                 {
-                    decimalSeparator = true;
+                    decimalSeparatorFound = true;
                     scale = 0.1;
                 }
                 else if (ch == '-')
@@ -322,9 +330,9 @@ namespace Microsoft.Recognizers.Text.Number
                     // handle Devanagari numerals defined in ZeroToNineMap
                     if (char.IsDigit(ch))
                     {
-                        if (decimalSeparator)
+                        if (decimalSeparatorFound)
                         {
-                            temp = temp + (Config.ZeroToNineMap[ch] * scale);
+                            temp += Config.ZeroToNineMap[ch] * scale;
                             scale *= 0.1;
                         }
                         else
@@ -410,7 +418,7 @@ namespace Microsoft.Recognizers.Text.Number
                             Config.CardinalNumberMap[matchStr] :
                             Config.OrdinalNumberMap[matchStr];
 
-                        // This is just for ordinal now. Not for fraction ever.
+                        // This is just for ordinal now. Not for fractions.
                         if (isOrdinal)
                         {
                             double fracPart = Config.OrdinalNumberMap[matchStr];
@@ -450,11 +458,11 @@ namespace Microsoft.Recognizers.Text.Number
                                 var sum = tempStack.Pop() + matchValue;
                                 tempStack.Push(sum);
                             }
-                            else if (oldSym.Equals(Config.WrittenIntegerSeparatorTexts.First(), StringComparison.Ordinal) || tempStack.Count() < 2)
+                            else if (oldSym.Equals(Config.WrittenIntegerSeparatorTexts.First(), StringComparison.Ordinal) || tempStack.Count < 2)
                             {
                                 tempStack.Push(matchValue);
                             }
-                            else if (tempStack.Count() >= 2)
+                            else if (tempStack.Count >= 2)
                             {
                                 var sum = tempStack.Pop() + matchValue;
                                 sum = tempStack.Pop() + sum;

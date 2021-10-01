@@ -1,7 +1,11 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 package com.microsoft.recognizers.text.number.parsers;
 
 import com.microsoft.recognizers.text.ExtractResult;
 import com.microsoft.recognizers.text.ParseResult;
+import com.microsoft.recognizers.text.number.Constants;
 import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import com.microsoft.recognizers.text.utilities.StringUtility;
@@ -9,6 +13,8 @@ import com.microsoft.recognizers.text.utilities.StringUtility;
 import java.util.Locale;
 import java.util.Map;
 import java.util.regex.Pattern;
+
+import org.apache.commons.lang3.StringUtils;
 
 public class BaseCJKNumberParser extends BaseNumberParser {
 
@@ -31,6 +37,7 @@ public class BaseCJKNumberParser extends BaseNumberParser {
         ParseResult ret = null;
 
         ExtractResult getExtResult = new ExtractResult(extResult.getStart(), extResult.getLength(), extResult.getText(), extResult.getType(), extResult.getData());
+        getExtResult.setMetadata(extResult.getMetadata());
 
         if (config.getCultureInfo().cultureCode.equalsIgnoreCase("zh-CN")) {
             getExtResult.setText(replaceTraWithSim(getExtResult.getText()));
@@ -62,6 +69,13 @@ public class BaseCJKNumberParser extends BaseNumberParser {
             ret = parseInteger(getExtResult);
         } else if (extra.contains("Ordinal")) {
             ret = parseOrdinal(getExtResult);
+        }
+
+        // Add "offset" and "relativeTo" for ordinal
+        if (StringUtils.isNotBlank(ret.getType()) && ret.getType().contains(Constants.MODEL_ORDINAL)) {
+            ret.getMetadata().setOffset(ret.getResolutionStr());
+            // Every ordinal number is relative to the start
+            ret.getMetadata().setRelativeTo(Constants.RELATIVE_START);
         }
 
         if (ret != null) {
@@ -261,6 +275,7 @@ public class BaseCJKNumberParser extends BaseNumberParser {
     // Parse ordinal phrase.
     protected ParseResult parseOrdinal(ExtractResult extResult) {
         ParseResult result = new ParseResult(extResult.getStart(), extResult.getLength(), extResult.getText(), extResult.getType(), null, null, null);
+        result.setMetadata(extResult.getMetadata());
 
         String resultText = extResult.getText();
         resultText = resultText.substring(1);
@@ -380,6 +395,7 @@ public class BaseCJKNumberParser extends BaseNumberParser {
         long roundBefore = -1;
         long roundDefault = 1;
         boolean isNegative = false;
+        boolean hasPreviousDigits = false;
 
         boolean isDozen = false;
         boolean isPair = false;
@@ -435,15 +451,30 @@ public class BaseCJKNumberParser extends BaseNumberParser {
                         beforeValue = 1;
                         roundDefault = 1;
                     } else {
-                        beforeValue = cjkConfig.getZeroToNineMap().get(intStr.charAt(i));
+                        double currentDigit = cjkConfig.getZeroToNineMap().get(intStr.charAt(i));
+                        if (hasPreviousDigits) {
+                            beforeValue = beforeValue * 10 + currentDigit;
+                        } else {
+                            beforeValue = currentDigit;
+                        }
                         isRoundBefore = false;
                     }
                 } else {
-                    partValue += cjkConfig.getZeroToNineMap().get(intStr.charAt(i)) * roundDefault;
+                    if (Character.isDigit(intStr.charAt(i))) {
+                        roundDefault = 1;
+                    }
+                    double currentDigit = cjkConfig.getZeroToNineMap().get(intStr.charAt(i));
+                    if (hasPreviousDigits) {
+                        beforeValue = beforeValue * 10 + currentDigit;
+                    } else {
+                        beforeValue = currentDigit;
+                    }
+                    partValue += beforeValue * roundDefault;
                     intValue += partValue;
                     partValue = 0;
                 }
             }
+            hasPreviousDigits = Character.isDigit(intStr.charAt(i));
         }
 
         if (isNegative) {

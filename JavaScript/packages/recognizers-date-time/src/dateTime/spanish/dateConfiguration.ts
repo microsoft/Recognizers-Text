@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { RegExpUtility } from "@microsoft/recognizers-text";
 import { BaseNumberExtractor, BaseNumberParser, SpanishOrdinalExtractor, SpanishIntegerExtractor, SpanishNumberParserConfiguration } from "@microsoft/recognizers-text-number";
 import { SpanishDateTime } from "../../resources/spanishDateTime";
@@ -26,6 +29,7 @@ export class SpanishDateExtractorConfiguration implements IDateExtractorConfigur
     readonly numberParser: BaseNumberParser;
     readonly durationExtractor: IDateTimeExtractor;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
+    readonly rangeConnectorSymbolRegex : RegExp;
 
     constructor(dmyDateFormat: boolean) {
 
@@ -88,6 +92,7 @@ export class SpanishDateExtractorConfiguration implements IDateExtractorConfigur
         this.numberParser = new BaseNumberParser(new SpanishNumberParserConfiguration());
         this.durationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration());
         this.utilityConfiguration = new SpanishDateTimeUtilityConfiguration();
+        this.rangeConnectorSymbolRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RangeConnectorRegex);
     }
 }
 

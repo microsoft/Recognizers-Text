@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 var Recognizer = require('@microsoft/recognizers-text-choice');
 var ChoiceRecognizer = require('@microsoft/recognizers-text-choice').ChoiceRecognizer;
 var ChoiceOptions = require('@microsoft/recognizers-text-choice').ChoiceOptions;

@@ -12538,5 +12538,90 @@
         "End": 7
       }
     ]
+  },
+  {
+    "Input": "一千零三",
+    "Comment" : "Not common in Japanese. Represented here for completeness of spec parity with Chinese specs, but won't happen in practice",
+    "Results": [
+      {
+        "Text": "一千零三",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1003"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "一千三",
+    "Results": [
+      {
+        "Text": "一千三",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1003"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "一千三百",
+    "Results": [
+      {
+        "Text": "一千三百",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1300"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "千三百",
+    "Results": [
+      {
+        "Text": "千三百",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1300"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "金融市場で運用する資金運用事業を合わせた財投総額も過去最大の同二％減の四十九兆九千五百九十二億円となっている。",
+    "Results": [
+      {
+        "Text": "四十九兆九千五百九十二億",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "49959200000000"
+        },
+        "Start": 35,
+        "End": 46
+      }
+    ]
+  },
+  {
+    "Input": "日本貿易振興会（ジェトロ）が十二日発表したジェトロ投資白書によると、世界の一九九九年対外直接投資額（日本は一九九九年度）は、前年比四％増の七千九百九十九億二千八百万ドルと、過去最高を更新した。",
+    "Results": [
+      {
+        "Text": "七千九百九十九億二千八百",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "799900002800"
+        },
+        "Start": 69,
+        "End": 80
+      }
+    ]
   }
 ]

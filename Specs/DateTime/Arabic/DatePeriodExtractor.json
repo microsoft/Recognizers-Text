@@ -1,0 +1,3662 @@
+[
+  {
+    "Input": "سأخرج في يناير",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يناير",
+        "Start": 9,
+        "Length": 5,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج هذا يناير",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "هذا يناير",
+        "Start": 6,
+        "Length": 9,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج شهر يناير",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر يناير",
+        "Start": 6,
+        "Length": 9,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في شهر يناير",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر يناير",
+        "Start": 9,
+        "Length": 9,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني يناير 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يناير 2001",
+        "Start": 10,
+        "Length": 10,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني يناير, 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يناير, 2001",
+        "Start": 10,
+        "Length": 11,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في فبراير",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "فبراير",
+        "Start": 9,
+        "Length": 6,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج هذا فبراير",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "هذا فبراير",
+        "Start": 6,
+        "Length": 10,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج شهر فبراير",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر فبراير",
+        "Start": 6,
+        "Length": 10,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في شهر فبراير",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر فبراير",
+        "Start": 9,
+        "Length": 10,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني فبراير 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "فبراير 2001",
+        "Start": 10,
+        "Length": 11,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني فبراير, 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "فبراير, 2001",
+        "Start": 10,
+        "Length": 12,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في مارس",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "مارس",
+        "Start": 9,
+        "Length": 4,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج هذا مارس",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "هذا مارس",
+        "Start": 6,
+        "Length": 8,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج شهر مارس",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر مارس",
+        "Start": 6,
+        "Length": 8,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في شهر مارس",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر مارس",
+        "Start": 9,
+        "Length": 8,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني مارس 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "مارس 2001",
+        "Start": 10,
+        "Length": 9,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني مارس, 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "مارس, 2001",
+        "Start": 10,
+        "Length": 10,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في أبريل",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "أبريل",
+        "Start": 9,
+        "Length": 5,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج هذا أبريل",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "هذا أبريل",
+        "Start": 6,
+        "Length": 9,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج شهر أبريل",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر أبريل",
+        "Start": 6,
+        "Length": 9,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في شهر أبريل",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر أبريل",
+        "Start": 9,
+        "Length": 9,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني أبريل 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "أبريل 2001",
+        "Start": 10,
+        "Length": 10,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني أبريل, 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "أبريل, 2001",
+        "Start": 10,
+        "Length": 11,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في مايو",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "مايو",
+        "Start": 9,
+        "Length": 4,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج هذا مايو",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "هذا مايو",
+        "Start": 6,
+        "Length": 8,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج شهر مايو",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر مايو",
+        "Start": 6,
+        "Length": 8,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في شهر مايو",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر مايو",
+        "Start": 9,
+        "Length": 8,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني مايو 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "مايو 2001",
+        "Start": 10,
+        "Length": 9,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني مايو, 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "مايو, 2001",
+        "Start": 10,
+        "Length": 10,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في يونيو",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يونيو",
+        "Start": 9,
+        "Length": 5,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج هذا يونيو",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "هذا يونيو",
+        "Start": 6,
+        "Length": 9,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج شهر يونيو",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر يونيو",
+        "Start": 6,
+        "Length": 9,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في شهر يونيو",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر يونيو",
+        "Start": 9,
+        "Length": 9,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني يونيو 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يونيو 2001",
+        "Start": 10,
+        "Length": 10,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني يونيو, 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يونيو, 2001",
+        "Start": 10,
+        "Length": 11,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في يوليو",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يوليو",
+        "Start": 9,
+        "Length": 5,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج هذا يوليو",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "هذا يوليو",
+        "Start": 6,
+        "Length": 9,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج شهر يوليو",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر يوليو",
+        "Start": 6,
+        "Length": 9,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في شهر يوليو",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر يوليو",
+        "Start": 9,
+        "Length": 9,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني يوليو 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يوليو 2001",
+        "Start": 10,
+        "Length": 10,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني يوليو, 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يوليو, 2001",
+        "Start": 10,
+        "Length": 11,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في أغسطس",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "أغسطس",
+        "Start": 9,
+        "Length": 5,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج هذا أغسطس",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "هذا أغسطس",
+        "Start": 6,
+        "Length": 9,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج شهر أغسطس",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر أغسطس",
+        "Start": 6,
+        "Length": 9,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في شهر أغسطس",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر أغسطس",
+        "Start": 9,
+        "Length": 9,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني أغسطس 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "أغسطس 2001",
+        "Start": 10,
+        "Length": 10,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني أغسطس, 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "أغسطس, 2001",
+        "Start": 10,
+        "Length": 11,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في سبتمبر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "سبتمبر",
+        "Start": 9,
+        "Length": 6,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج هذا سبتمبر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "هذا سبتمبر",
+        "Start": 6,
+        "Length": 10,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج شهر سبتمبر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر سبتمبر",
+        "Start": 6,
+        "Length": 10,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في شهر سبتمبر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر سبتمبر",
+        "Start": 9,
+        "Length": 10,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني سبتمبر 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "سبتمبر 2001",
+        "Start": 10,
+        "Length": 11,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني سبتمبر, 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "سبتمبر, 2001",
+        "Start": 10,
+        "Length": 12,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في أكتوبر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "أكتوبر",
+        "Start": 9,
+        "Length": 6,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج هذا أكتوبر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "هذا أكتوبر",
+        "Start": 6,
+        "Length": 10,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج شهر أكتوبر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر أكتوبر",
+        "Start": 6,
+        "Length": 10,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في شهر أكتوبر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر أكتوبر",
+        "Start": 9,
+        "Length": 10,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني أكتوبر 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "أكتوبر 2001",
+        "Start": 10,
+        "Length": 11,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني أكتوبر, 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "أكتوبر, 2001",
+        "Start": 10,
+        "Length": 12,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في نوفمبر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "نوفمبر",
+        "Start": 9,
+        "Length": 6,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج هذا نوفمبر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "هذا نوفمبر",
+        "Start": 6,
+        "Length": 10,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج شهر نوفمبر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر نوفمبر",
+        "Start": 6,
+        "Length": 10,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في شهر نوفمبر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر نوفمبر",
+        "Start": 9,
+        "Length": 10,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني نوفمبر 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "نوفمبر 2001",
+        "Start": 10,
+        "Length": 11,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني نوفمبر, 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "نوفمبر, 2001",
+        "Start": 10,
+        "Length": 12,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في ديسمبر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "ديسمبر",
+        "Start": 9,
+        "Length": 6,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج هذا ديسمبر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "هذا ديسمبر",
+        "Start": 6,
+        "Length": 10,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج شهر ديسمبر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر ديسمبر",
+        "Start": 6,
+        "Length": 10,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في شهر ديسمبر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر ديسمبر",
+        "Start": 9,
+        "Length": 10,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني ديسمبر 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "ديسمبر 2001",
+        "Start": 10,
+        "Length": 11,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني ديسمبر, 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "ديسمبر, 2001",
+        "Start": 10,
+        "Length": 12,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في كانون الثاني",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "كانون الثاني",
+        "Start": 9,
+        "Length": 12,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج هذا شهر كانون الثاني",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "هذا شهر كانون الثاني",
+        "Start": 6,
+        "Length": 20,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج شهر كانون الثاني",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر كانون الثاني",
+        "Start": 6,
+        "Length": 16,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في شهر كانون الثاني",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر كانون الثاني",
+        "Start": 9,
+        "Length": 16,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني كانون الثاني 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "كانون الثاني 2001",
+        "Start": 10,
+        "Length": 17,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني كانون الثاني, 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "كانون الثاني, 2001",
+        "Start": 10,
+        "Length": 18,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في شباط",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شباط",
+        "Start": 9,
+        "Length": 4,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج هذا شباط",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "هذا شباط",
+        "Start": 6,
+        "Length": 8,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج شهر شباط",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر شباط",
+        "Start": 6,
+        "Length": 8,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في شهر شباط",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر شباط",
+        "Start": 9,
+        "Length": 8,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني شباط 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شباط 2001",
+        "Start": 10,
+        "Length": 9,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني شباط, 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شباط, 2001",
+        "Start": 10,
+        "Length": 10,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في آذار",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "آذار",
+        "Start": 9,
+        "Length": 4,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج هذا شهر آذار",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "هذا شهر آذار",
+        "Start": 6,
+        "Length": 12,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج شهر آذار",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر آذار",
+        "Start": 6,
+        "Length": 8,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في شهر آذار",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر آذار",
+        "Start": 9,
+        "Length": 8,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني آذار 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "آذار 2001",
+        "Start": 10,
+        "Length": 9,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني آذار, 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "آذار, 2001",
+        "Start": 10,
+        "Length": 10,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في نيسان",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "نيسان",
+        "Start": 9,
+        "Length": 5,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج هذا نيسان ",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "هذا نيسان",
+        "Start": 6,
+        "Length": 9,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج شهر نيسان",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر نيسان",
+        "Start": 6,
+        "Length": 9,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في شهر نيسان",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر نيسان",
+        "Start": 9,
+        "Length": 9,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني نيسان 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "نيسان 2001",
+        "Start": 10,
+        "Length": 10,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني نيسان, 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "نيسان, 2001",
+        "Start": 10,
+        "Length": 11,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في حزيران",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "حزيران",
+        "Start": 9,
+        "Length": 6,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج هذا  حزيران",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "هذا  حزيران",
+        "Start": 6,
+        "Length": 11,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج شهر حزيران",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر حزيران",
+        "Start": 6,
+        "Length": 10,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في شهر حزيران",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر حزيران",
+        "Start": 9,
+        "Length": 10,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني حزيران 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "حزيران 2001",
+        "Start": 10,
+        "Length": 11,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني حزيران, 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "حزيران, 2001",
+        "Start": 10,
+        "Length": 12,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في تموز",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "تموز",
+        "Start": 9,
+        "Length": 4,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج هذا تموز",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "هذا تموز",
+        "Start": 6,
+        "Length": 8,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج شهر تموز",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر تموز",
+        "Start": 6,
+        "Length": 8,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في شهر تموز",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر تموز",
+        "Start": 9,
+        "Length": 8,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني تموز 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "تموز 2001",
+        "Start": 10,
+        "Length": 9,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني تموز, 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "تموز, 2001",
+        "Start": 10,
+        "Length": 10,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في آب",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "آب",
+        "Start": 9,
+        "Length": 2,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج هذا آب",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "هذا آب",
+        "Start": 6,
+        "Length": 6,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج شهر آب",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر آب",
+        "Start": 6,
+        "Length": 6,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في شهر آب",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر آب",
+        "Start": 9,
+        "Length": 6,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني آب 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "آب 2001",
+        "Start": 10,
+        "Length": 7,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني آب, 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "آب, 2001",
+        "Start": 10,
+        "Length": 8,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في أيلول",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "أيلول",
+        "Start": 9,
+        "Length": 5,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج هذا أيلول",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "هذا أيلول",
+        "Start": 6,
+        "Length": 9,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج شهر أيلول",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر أيلول",
+        "Start": 6,
+        "Length": 9,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في شهر أيلول",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر أيلول",
+        "Start": 9,
+        "Length": 9,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني أيلول 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "أيلول 2001",
+        "Start": 10,
+        "Length": 10,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني أيلول, 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "أيلول, 2001",
+        "Start": 10,
+        "Length": 11,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في تشرين الأول",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "تشرين الأول",
+        "Start": 9,
+        "Length": 11,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج هذا تشرين الأول",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "هذا تشرين الأول",
+        "Start": 6,
+        "Length": 15,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج شهر تشرين الأول",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر تشرين الأول",
+        "Start": 6,
+        "Length": 15,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في شهر تشرين الأول",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر تشرين الأول",
+        "Start": 9,
+        "Length": 15,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني تشرين الأول 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "تشرين الأول 2001",
+        "Start": 10,
+        "Length": 16,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني تشرين الأول, 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "تشرين الأول, 2001",
+        "Start": 10,
+        "Length": 17,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في تشرين الثاني",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "تشرين الثاني",
+        "Start": 9,
+        "Length": 12,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج هذا تشرين الثاني",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "هذا تشرين الثاني",
+        "Start": 6,
+        "Length": 16,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج شهر تشرين الثاني",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر تشرين الثاني",
+        "Start": 6,
+        "Length": 16,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في شهر تشرين الثاني",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر تشرين الثاني",
+        "Start": 9,
+        "Length": 16,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني تشرين الثاني 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "تشرين الثاني 2001",
+        "Start": 10,
+        "Length": 17,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني تشرين الثاني, 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "تشرين الثاني, 2001",
+        "Start": 10,
+        "Length": 18,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في كانون الأول",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "كانون الأول",
+        "Start": 9,
+        "Length": 11,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج هذا كانون الأول",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "هذا كانون الأول",
+        "Start": 6,
+        "Length": 15,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج شهر كانون الأول",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر كانون الأول",
+        "Start": 6,
+        "Length": 15,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في شهر كانون الأول",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر كانون الأول",
+        "Start": 9,
+        "Length": 15,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني كانون الأول 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "كانون الأول 2001",
+        "Start": 10,
+        "Length": 16,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني كانون الأول, 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "كانون الأول, 2001",
+        "Start": 10,
+        "Length": 17,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "تقويم شهر سبتمبر.",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر سبتمبر",
+        "Start": 6,
+        "Length": 10,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج من 4 إلى 22 هذا الشهر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من 4 إلى 22 هذا الشهر",
+        "Start": 6,
+        "Length": 21,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج من 4 إلى 23 في الشهر المقبل",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من 4 إلى 23 في الشهر المقبل",
+        "Start": 6,
+        "Length": 27,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج من 3 حتى 12 سبتمبر هاهاها",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من 3 حتى 12 سبتمبر",
+        "Start": 6,
+        "Length": 18,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج من 4 إلى 23 الشهر المقبل",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من 4 إلى 23 الشهر المقبل",
+        "Start": 6,
+        "Length": 24,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأكون خارج 4 حتى 23 من هذا الشهر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "4 حتى 23 من هذا الشهر",
+        "Start": 11,
+        "Length": 21,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج ما بين 4 و 22 هذا الشهر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بين 4 و 22 هذا الشهر",
+        "Start": 9,
+        "Length": 20,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج بين 3 و 12 سبتمبر هاهاها",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بين 3 و 12 سبتمبر",
+        "Start": 6,
+        "Length": 17,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج بين 4 سبتمبر و 8 سبتمبر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بين 4 سبتمبر و 8 سبتمبر",
+        "Start": 6,
+        "Length": 23,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج بين 15 و 19  نوفمبر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بين 15 و 19  نوفمبر",
+        "Start": 6,
+        "Length": 19,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج بين 15 و 19 تشرين الثاني ",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بين 15 و 19 تشرين الثاني",
+        "Start": 6,
+        "Length": 24,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج بين الخامس عشر والتاسع عشر من  نوفمبر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بين الخامس عشر والتاسع عشر من  نوفمبر",
+        "Start": 6,
+        "Length": 37,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج من 4 إلى 22 يناير 2017",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من 4 إلى 22 يناير 2017",
+        "Start": 6,
+        "Length": 22,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في الفترة ما بين 4-22  يناير 2017",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بين 4-22  يناير 2017",
+        "Start": 19,
+        "Length": 20,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في هذا الأسبوع",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "هذا الأسبوع",
+        "Start": 9,
+        "Length": 11,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج الأسبوع القادم",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الأسبوع القادم",
+        "Start": 6,
+        "Length": 14,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج سبتمبر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "سبتمبر",
+        "Start": 6,
+        "Length": 6,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في سبتمبر الماضي",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "سبتمبر الماضي",
+        "Start": 9,
+        "Length": 13,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في يونيو القادم",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يونيو القادم",
+        "Start": 9,
+        "Length": 12,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في يونيو 2016",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يونيو 2016",
+        "Start": 9,
+        "Length": 10,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج يونيو العام المقبل",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يونيو العام المقبل",
+        "Start": 6,
+        "Length": 18,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في عطلة نهاية الأسبوع",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "عطلة نهاية الأسبوع",
+        "Start": 9,
+        "Length": 18,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج الأسبوع الثالث من هذا الشهر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الأسبوع الثالث من هذا الشهر",
+        "Start": 6,
+        "Length": 27,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج الأسبوع الأخير من شهر يوليو",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الأسبوع الأخير من شهر يوليو",
+        "Start": 6,
+        "Length": 27,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "جدولة التخييم ليوم الجمعة حتى الأحد",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الجمعة حتى الأحد",
+        "Start": 19,
+        "Length": 16,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج 3 أيام القادمة",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3 أيام القادمة",
+        "Start": 6,
+        "Length": 14,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في الأشهر 3 القادمة",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "في الأشهر 3 القادمة",
+        "Start": 6,
+        "Length": 19,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج بعد 3 سنوات",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بعد 3 سنوات",
+        "Start": 6,
+        "Length": 11,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في 3 سنوات",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "في 3 سنوات",
+        "Start": 6,
+        "Length": 10,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج بعد 3 أسابيع",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بعد 3 أسابيع",
+        "Start": 6,
+        "Length": 12,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في 3 أشهر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "في 3 أشهر",
+        "Start": 6,
+        "Length": 9,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في 3 أسابيع",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "في 3 أسابيع",
+        "Start": 6,
+        "Length": 11,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج آخر 3 سنوات",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "آخر 3 سنوات",
+        "Start": 6,
+        "Length": 11,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج العام الماضي",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "العام الماضي",
+        "Start": 6,
+        "Length": 12,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج الشهر الماضي",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الشهر الماضي",
+        "Start": 6,
+        "Length": 12,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في الأسابيع الثلاثة الماضية",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "في الأسابيع الثلاثة الماضية",
+        "Start": 6,
+        "Length": 27,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "الأسابيع القليلة الماضية",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الأسابيع القليلة الماضية",
+        "Start": 0,
+        "Length": 24,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "الأيام العديدة الماضية",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الأيام العديدة الماضية",
+        "Start": 0,
+        "Length": 22,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج 2 أكتوبر إلى 22 أكتوبر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2 أكتوبر إلى 22 أكتوبر",
+        "Start": 6,
+        "Length": 22,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في 12  يناير, 2016 - 2016/02/22",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "12  يناير, 2016 - 2016/02/22",
+        "Start": 9,
+        "Length": 28,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في الأول من  يناير حتى الأربعاء ، 22  يناير",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الأول من  يناير حتى الأربعاء ، 22  يناير",
+        "Start": 9,
+        "Length": 40,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج اليوم حتى الغد",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "اليوم حتى الغد",
+        "Start": 6,
+        "Length": 14,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج اليوم حتى 22 أكتوبر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "اليوم حتى 22 أكتوبر",
+        "Start": 6,
+        "Length": 19,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في 2 أكتوبر حتى بعد غد",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2 أكتوبر حتى بعد غد",
+        "Start": 9,
+        "Length": 19,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج اليوم حتى الأحد المقبل",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "اليوم حتى الأحد المقبل",
+        "Start": 6,
+        "Length": 22,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج يوم الجمعة حتى الأحد القادم",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الجمعة حتى الأحد القادم",
+        "Start": 10,
+        "Length": 23,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج من 2 أكتوبر إلى 22 أكتوبر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من 2 أكتوبر إلى 22 أكتوبر",
+        "Start": 6,
+        "Length": 25,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج من 2015/08/12 حتى 22 أكتوبر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2015/08/12 حتى 22 أكتوبر",
+        "Start": 9,
+        "Length": 24,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج من يوم الجمعة في الثاني حتى يوم الثلاثاء في السادس",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الجمعة في الثاني حتى يوم الثلاثاء في السادس",
+        "Start": 13,
+        "Length": 43,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج من اليوم حتى الغد",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "اليوم حتى الغد",
+        "Start": 9,
+        "Length": 14,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج من يوم الجمعة حتى الأحد القادم",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الجمعة حتى الأحد القادم",
+        "Start": 13,
+        "Length": 23,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج بين 2 أكتوبر و 22 أكتوبر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بين 2 أكتوبر و 22 أكتوبر",
+        "Start": 6,
+        "Length": 24,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج 19-20 نوفمبر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "19-20 نوفمبر",
+        "Start": 6,
+        "Length": 12,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج من 19 إلى 20 نوفمبر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من 19 إلى 20 نوفمبر",
+        "Start": 6,
+        "Length": 19,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج شهر نوفمبر بين 19 و 20",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر نوفمبر بين 19 و 20",
+        "Start": 6,
+        "Length": 22,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في الربع الثالث من عام 2016",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الربع الثالث من عام 2016",
+        "Start": 9,
+        "Length": 24,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في الربع الثالث من هذا العام",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الربع الثالث من هذا العام",
+        "Start": 9,
+        "Length": 25,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج 2016 الربع الثالث",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2016 الربع الثالث",
+        "Start": 6,
+        "Length": 17,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج 2015.3",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2015.3",
+        "Start": 6,
+        "Length": 6,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج 3-2015 ",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3-2015",
+        "Start": 6,
+        "Length": 6,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج 2015/3",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2015/3",
+        "Start": 6,
+        "Length": 6,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج 3/2015",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3/2015",
+        "Start": 6,
+        "Length": 6,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج الأسبوع الثالث من عام 2027",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الأسبوع الثالث من عام 2027",
+        "Start": 6,
+        "Length": 26,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج الأسبوع الثالث العام المقبل",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الأسبوع الثالث العام المقبل",
+        "Start": 6,
+        "Length": 27,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأرحل هذا الصيف",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "هذا الصيف",
+        "Start": 6,
+        "Length": 9,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأرحل الربيع القادم",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الربيع القادم",
+        "Start": 6,
+        "Length": 13,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأرحل الصيف",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الصيف",
+        "Start": 6,
+        "Length": 5,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأرحل صيف",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "صيف",
+        "Start": 6,
+        "Length": 3,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأرحل صيف 2016",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "صيف 2016",
+        "Start": 6,
+        "Length": 8,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأرحل الصيف 2016",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الصيف 2016",
+        "Start": 6,
+        "Length": 10,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "عطلات الشهر القادم",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الشهر القادم",
+        "Start": 6,
+        "Length": 12,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "عطلة الشهر المقبل",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الشهر المقبل",
+        "Start": 5,
+        "Length": 12,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "ماذا لدي أسبوع 30 نوفمبر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "أسبوع 30 نوفمبر",
+        "Start": 9,
+        "Length": 15,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "الأسبوع  في 15 سبتمبر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الأسبوع  في 15 سبتمبر",
+        "Start": 0,
+        "Length": 21,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "أسبوع 15 سبتمبر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "أسبوع 15 سبتمبر",
+        "Start": 0,
+        "Length": 15,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "من شهر سبتمبر 15",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من شهر سبتمبر 15",
+        "Start": 0,
+        "Length": 16,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأغادر خلال عطلة نهاية الأسبوع",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "عطلة نهاية الأسبوع",
+        "Start": 12,
+        "Length": 18,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأرحل باقي الأسبوع",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "باقي الأسبوع",
+        "Start": 6,
+        "Length": 12,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأرحل بقية أسبوعي",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بقية أسبوعي",
+        "Start": 6,
+        "Length": 11,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأرحل بقية الأسبوع",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بقية الأسبوع",
+        "Start": 6,
+        "Length": 12,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأرحل نهاية الأسبوع",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "نهاية الأسبوع",
+        "Start": 6,
+        "Length": 13,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأرحل بقية هذا الأسبوع",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بقية هذا الأسبوع",
+        "Start": 6,
+        "Length": 16,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأرحل نهاية الأسبوع الحالي",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "نهاية الأسبوع الحالي",
+        "Start": 6,
+        "Length": 20,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأرحل بقية الشهر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بقية الشهر",
+        "Start": 6,
+        "Length": 10,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأرحل بقية العام",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بقية العام",
+        "Start": 6,
+        "Length": 10,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "يرجى تحديد موعد لقاءنا في وقت لاحق هذا الشهر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "في وقت لاحق هذا الشهر",
+        "Start": 23,
+        "Length": 21,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "يرجى تحديد موعد لقاءنا في وقت لاحق من هذا الأسبوع",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "في وقت لاحق من هذا الأسبوع",
+        "Start": 23,
+        "Length": 26,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "يرجى تحديد موعد لقاءنا في أواخر الأسبوع المقبل",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "أواخر الأسبوع المقبل",
+        "Start": 26,
+        "Length": 20,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "من فضلك حدد لنا وقتًا للقاء أواخر العام المقبل",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "أواخر العام المقبل",
+        "Start": 28,
+        "Length": 18,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "التقينا أواخر الأسبوع الماضي",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "أواخر الأسبوع الماضي",
+        "Start": 8,
+        "Length": 20,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "يرجى تحديد موعد لقاءنا في وقت مبكر من هذا الشهر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "وقت مبكر من هذا الشهر",
+        "Start": 26,
+        "Length": 21,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "يرجى تحديد موعد لقاءنا وقت مبكر هذا الأسبوع",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "وقت مبكر هذا الأسبوع",
+        "Start": 23,
+        "Length": 20,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "يرجى تحديد موعد لقاءنا مطلع الاسبوع المقبل",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "مطلع الاسبوع المقبل",
+        "Start": 23,
+        "Length": 19,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "يرجى تحديد موعد لقاءنا مطلع العام المقبل",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "مطلع العام المقبل",
+        "Start": 23,
+        "Length": 17,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "كورتانا ، يرجى تنسيق اجتماع مدته 25 دقيقة مع أنطونيو الأسبوع المقبل بين الأربعاء والجمعة.",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الأسبوع المقبل بين الأربعاء والجمعة",
+        "Start": 53,
+        "Length": 35,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "كورتانا ، يرجى تنسيق اجتماع مدته 25 دقيقة مع أنطونيو الأسبوع المقبل من الأربعاء إلى الجمعة.",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الأسبوع المقبل من الأربعاء إلى الجمعة",
+        "Start": 53,
+        "Length": 37,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "كورتانا ، يرجى تنسيق اجتماع مدته 25 دقيقة مع أنطونيو الأسبوع الماضي من الأربعاء إلى الجمعة.",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الأسبوع الماضي من الأربعاء إلى الجمعة",
+        "Start": 53,
+        "Length": 37,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "كورتانا ، يرجى تنسيق اجتماع مدته 25 دقيقة مع أنطونيو هذا الأسبوع بين الأربعاء والجمعة.",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "هذا الأسبوع بين الأربعاء والجمعة",
+        "Start": 53,
+        "Length": 32,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج عام 247",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "عام 247",
+        "Start": 6,
+        "Length": 7,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "في السبعينيات",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "السبعينيات",
+        "Start": 3,
+        "Length": 10,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "من مواليد ألفين",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "ألفين",
+        "Start": 10,
+        "Length": 5,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "في 1970",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "1970",
+        "Start": 3,
+        "Length": 4,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "السبعينيات",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "السبعينيات",
+        "Start": 0,
+        "Length": 10,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سبعينيات",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "سبعينيات",
+        "Start": 0,
+        "Length": 8,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "في الأربعينيات",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الأربعينيات",
+        "Start": 3,
+        "Length": 11,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "من السبعينيات",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "السبعينيات",
+        "Start": 3,
+        "Length": 10,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "في السبعينيات القرن التاسع عشر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "السبعينيات القرن التاسع عشر",
+        "Start": 3,
+        "Length": 27,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "في الألفين والعشرات",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الألفين والعشرات",
+        "Start": 3,
+        "Length": 16,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "في العشرينيات",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "العشرينيات",
+        "Start": 3,
+        "Length": 10,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "في الألفين ",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الألفين",
+        "Start": 3,
+        "Length": 7,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج من 2 إلى 7 فبراير ، ألفان وثمانية عشر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "من 2 إلى 7 فبراير ، ألفان وثمانية عشر",
+        "Start": 6,
+        "Length": 37,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "بين 2 و 7 فبراير ألفين وثمانية عشر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بين 2 و 7 فبراير ألفين وثمانية عشر",
+        "Start": 0,
+        "Length": 34,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج ما بين 2-7 فبراير ألفين وثمانية عشر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بين 2-7 فبراير ألفين وثمانية عشر",
+        "Start": 9,
+        "Length": 32,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "حدث ذلك في يونيو من عام تسعة عشر تسعة وتسعون",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يونيو من عام تسعة عشر تسعة وتسعون",
+        "Start": 11,
+        "Length": 33,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "تسعة عشر ثمانية وعشرون",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "تسعة عشر ثمانية وعشرون",
+        "Start": 0,
+        "Length": 22,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج الأسبوع الأول من عام ألفين وسبعة وعشرين",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الأسبوع الأول من عام ألفين وسبعة وعشرين",
+        "Start": 6,
+        "Length": 39,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في الربع الأول من عام ألفين وعشرين",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الربع الأول من عام ألفين وعشرين",
+        "Start": 9,
+        "Length": 31,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "في ربيع عام تسعة عشر وثمانية وسبعين",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "ربيع عام تسعة عشر وثمانية وسبعين",
+        "Start": 3,
+        "Length": 32,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "عام مائتين وسبعة وستين",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "عام مائتين وسبعة وستين",
+        "Start": 0,
+        "Length": 22,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "الاسبوع بعد القادم",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الاسبوع بعد القادم",
+        "Start": 0,
+        "Length": 18,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "حدث ذلك العقدين الماضيين",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "العقدين الماضيين",
+        "Start": 8,
+        "Length": 16,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "حدث ذلك في العقدين الماضيين",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "العقدين الماضيين",
+        "Start": 11,
+        "Length": 16,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "حدث ذلك في العقد القادم",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "العقد القادم",
+        "Start": 11,
+        "Length": 12,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سيحدث بعد 4 أسابيع في المستقبل",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بعد 4 أسابيع في المستقبل",
+        "Start": 6,
+        "Length": 24,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سيحدث بعد يومين",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بعد يومين",
+        "Start": 6,
+        "Length": 9,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "يمكن أن تجدنا كورتانا موعدًا بداية الأسبوع المقبل",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بداية الأسبوع المقبل",
+        "Start": 29,
+        "Length": 20,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "بالتأكيد ، لنبدأ سكايب نهاية الأسبوع المقبل",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "نهاية الأسبوع المقبل",
+        "Start": 23,
+        "Length": 20,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "بالتأكيد ، لنبدأ سكايب بداية الأسبوع المقبل",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بداية الأسبوع المقبل",
+        "Start": 23,
+        "Length": 20,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "كورتانا ، تجد لنا الوقت نهاية شهر مارس",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "نهاية شهر مارس",
+        "Start": 24,
+        "Length": 14,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "كورتانا ، يرجى تحديد موعد لنا في منتصف الأسبوع المقبل",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "في منتصف الأسبوع المقبل",
+        "Start": 30,
+        "Length": 23,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "يمكن أن يرتب لنا كورتانا لقاء منتصف مارس",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "منتصف مارس",
+        "Start": 30,
+        "Length": 10,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "ماذا عن منتصف الصيف؟",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "منتصف الصيف",
+        "Start": 8,
+        "Length": 11,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "يمكنني أن أجد لنا موعدًا بداية الأسبوع المقبل",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "بداية الأسبوع المقبل",
+        "Start": 25,
+        "Length": 20,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في أيار",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "أيار",
+        "Start": 9,
+        "Length": 4,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج هذا أيار",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "هذا أيار",
+        "Start": 6,
+        "Length": 8,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج شهر أيار",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر أيار",
+        "Start": 6,
+        "Length": 8,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في شهر أيار",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شهر أيار",
+        "Start": 9,
+        "Length": 8,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني أيار 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "أيار 2001",
+        "Start": 10,
+        "Length": 9,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني أيار, 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "أيار, 2001",
+        "Start": 10,
+        "Length": 10,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في محرم",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "محرم",
+        "Start": 9,
+        "Length": 4,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني محرم 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "محرم 2001",
+        "Start": 10,
+        "Length": 9,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في صفر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "صفر",
+        "Start": 9,
+        "Length": 3,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني صفر 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "صفر 2001",
+        "Start": 10,
+        "Length": 8,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في ربيع الأول",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "ربيع الأول",
+        "Start": 9,
+        "Length": 10,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني ربيع الأول 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "ربيع الأول 2001",
+        "Start": 10,
+        "Length": 15,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في ربيع الثاني",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "ربيع الثاني",
+        "Start": 9,
+        "Length": 11,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني ربيع الثاني 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "ربيع الثاني 2001",
+        "Start": 10,
+        "Length": 16,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في جمادى الأول",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "جمادى الأول",
+        "Start": 9,
+        "Length": 11,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني جمادى الأول 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "جمادى الأول 2001",
+        "Start": 10,
+        "Length": 16,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في جمادى الثاني",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "جمادى الثاني",
+        "Start": 9,
+        "Length": 12,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني جمادى الثاني 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "جمادى الثاني 2001",
+        "Start": 10,
+        "Length": 17,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في رجب",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "رجب",
+        "Start": 9,
+        "Length": 3,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني رجب 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "رجب 2001",
+        "Start": 10,
+        "Length": 8,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في شعبان",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شعبان",
+        "Start": 9,
+        "Length": 5,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني شعبان 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شعبان 2001",
+        "Start": 10,
+        "Length": 10,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في رمضان",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "رمضان",
+        "Start": 9,
+        "Length": 5,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني رمضان 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "رمضان 2001",
+        "Start": 10,
+        "Length": 10,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في شوال",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شوال",
+        "Start": 9,
+        "Length": 4,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني شوال 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "شوال 2001",
+        "Start": 10,
+        "Length": 9,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في ذو القعدة",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "ذو القعدة",
+        "Start": 9,
+        "Length": 9,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني ذو القعدة 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "ذو القعدة 2001",
+        "Start": 10,
+        "Length": 14,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج في ذو الحجة",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "ذو الحجة",
+        "Start": 9,
+        "Length": 8,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "لقد فاتني ذو الحجة 2001",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "ذو الحجة 2001",
+        "Start": 10,
+        "Length": 13,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج نوفمبر بين 15 و 19",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "نوفمبر بين 15 و 19",
+        "Start": 6,
+        "Length": 18,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج تشرين الثاني بين 15 و 19",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "تشرين الثاني بين 15 و 19",
+        "Start": 6,
+        "Length": 24,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "سأخرج نوفمبر بين الخامس عشر والتاسع عشر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "نوفمبر بين الخامس عشر والتاسع عشر",
+        "Start": 6,
+        "Length": 33,
+        "Type": "daterange"
+      }
+    ]
+  },
+  {
+    "Input": "يونايتد يسعى لإنهاء مهمته أمام روما | يلاكورة | 2021",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2021",
+        "Start": 48,
+        "Length": 4,
+        "Type": "daterange"
+      }
+    ]
+  }
+]

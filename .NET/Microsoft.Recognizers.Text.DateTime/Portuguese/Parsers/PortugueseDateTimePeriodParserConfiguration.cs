@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
@@ -12,7 +15,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public PortugueseDateTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
         {
-            TokenBeforeDate = Definitions.Portuguese.DateTimeDefinitions.TokenBeforeDate;
+            TokenBeforeDate = DateTimeDefinitions.TokenBeforeDate;
+            TokenBeforeTime = DateTimeDefinitions.TokenBeforeTime;
 
             DateExtractor = config.DateExtractor;
             TimeExtractor = config.TimeExtractor;
@@ -52,6 +56,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         }
 
         public string TokenBeforeDate { get; }
+
+        public string TokenBeforeTime { get; }
 
         public IDateExtractor DateExtractor { get; }
 
@@ -123,7 +129,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public IImmutableDictionary<string, int> Numbers { get; }
 
-        public bool GetMatchedTimeRange(string text, out string timeStr, out int beginHour, out int endHour, out int endMin)
+        public bool GetMatchedTimeRange(string text, out string todSymbol, out int beginHour, out int endHour, out int endMin)
         {
             var trimmedText = text.Trim().Normalized(DateTimeDefinitions.SpecialCharactersEquivalent);
 
@@ -134,40 +140,35 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             // @TODO move hardcoded values to resources file
             if (trimmedText.EndsWith("madrugada", StringComparison.Ordinal))
             {
-                timeStr = "TDA";
-                beginHour = 4;
-                endHour = 8;
+                todSymbol = Constants.EarlyMorning;
             }
             else if (trimmedText.EndsWith("manha", StringComparison.Ordinal))
             {
-                timeStr = "TMO";
-                beginHour = 8;
-                endHour = Constants.HalfDayHourCount;
+                todSymbol = Constants.Morning;
             }
             else if (trimmedText.Contains("passado o meio dia") || trimmedText.Contains("depois do meio dia"))
             {
-                timeStr = "TAF";
-                beginHour = Constants.HalfDayHourCount;
-                endHour = 16;
+                todSymbol = Constants.Afternoon;
             }
             else if (trimmedText.EndsWith("tarde", StringComparison.Ordinal))
             {
-                timeStr = "TEV";
-                beginHour = 16;
-                endHour = 20;
+                todSymbol = Constants.Evening;
             }
             else if (trimmedText.EndsWith("noite", StringComparison.Ordinal))
             {
-                timeStr = "TNI";
-                beginHour = 20;
-                endHour = 23;
-                endMin = 59;
+                todSymbol = Constants.Night;
             }
             else
             {
-                timeStr = null;
+                todSymbol = null;
                 return false;
             }
+
+            var parseResult = TimexUtility.ResolveTimeOfDay(todSymbol);
+            todSymbol = parseResult.Timex;
+            beginHour = parseResult.BeginHour;
+            endHour = parseResult.EndHour;
+            endMin = parseResult.EndMin;
 
             return true;
         }

@@ -1,4 +1,4 @@
-[
+﻿[
   {
     "Input": "Je reviendrai le 2 décembre",
     "Results": [
@@ -951,7 +951,9 @@
     "Results": [
       {
         "Text": "un mois il y a",
-        "Type": "date"
+        "Type": "date",
+        "Start": 17,
+        "Length": 14
       }
     ]
   },
@@ -974,6 +976,1650 @@
         "Type": "date",
         "Start": 19,
         "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le 15",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "15",
+        "Type": "date",
+        "Start": 19,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le 22 avril",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "22 avril",
+        "Type": "date",
+        "Start": 19,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le 1-jan.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1-jan",
+        "Type": "date",
+        "Start": 19,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le 01 jan.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "01 jan",
+        "Type": "date",
+        "Start": 19,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le 2 octobre",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2 octobre",
+        "Type": "date",
+        "Start": 19,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le 12/01/2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "12/01/2016",
+        "Type": "date",
+        "Start": 19,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le 12 janvier 2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "12 janvier 2016",
+        "Type": "date",
+        "Start": 19,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer lundi 12 janvier 2016 ",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "lundi 12 janvier 2016",
+        "Type": "date",
+        "Start": 16,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le 22 février 2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "22 février 2016",
+        "Type": "date",
+        "Start": 19,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le 21 avril 2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "21 avril 2016",
+        "Type": "date",
+        "Start": 19,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le 16 avril 2021",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "16 avril 2021",
+        "Type": "date",
+        "Start": 19,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le 18/9/15",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "18/9/15",
+        "Type": "date",
+        "Start": 19,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le 22-avril",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "22-avril",
+        "Type": "date",
+        "Start": 19,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le 22/04",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "22/04",
+        "Type": "date",
+        "Start": 19,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le 4.22",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "4.22",
+        "Type": "date",
+        "Start": 19,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le 4-22",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "4-22",
+        "Type": "date",
+        "Start": 19,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le 22 avr.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "22 avr.",
+        "Type": "date",
+        "Start": 19,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le 12 août 2015",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "12 août 2015",
+        "Type": "date",
+        "Start": 19,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le 11 decembre 2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "11 decembre 2016",
+        "Type": "date",
+        "Start": 19,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le 11/12/2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "11/12/2016",
+        "Type": "date",
+        "Start": 19,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le premier jan.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "premier jan.",
+        "Type": "date",
+        "Start": 19,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le 1-Jan.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1-Jan.",
+        "Type": "date",
+        "Start": 19,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le 28-Nov.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "28-Nov.",
+        "Type": "date",
+        "Start": 19,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer mercredi, le 22 jan",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mercredi, le 22 jan",
+        "Type": "date",
+        "Start": 16,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le premier vendredi de juillet",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "premier vendredi de juillet",
+        "Type": "date",
+        "Start": 19,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le premier vendredi de ce mois",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "premier vendredi de ce mois",
+        "Type": "date",
+        "Start": 19,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer dans deux semaines",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans deux semaines",
+        "Type": "date",
+        "Start": 16,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer vendredi prochain",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "vendredi prochain",
+        "Type": "date",
+        "Start": 16,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer vendredi de la semaine prochaine",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "vendredi de la semaine prochaine",
+        "Type": "date",
+        "Start": 16,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "lundi passé",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "lundi passé",
+        "Type": "date",
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer mardi.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mardi",
+        "Type": "date",
+        "Start": 16,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer mardi. bonnes nouvelles.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mardi",
+        "Type": "date",
+        "Start": 16,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer mardi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mardi",
+        "Type": "date",
+        "Start": 16,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer vendredi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "vendredi",
+        "Type": "date",
+        "Start": 16,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer aujourd'hui",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "aujourd'hui",
+        "Type": "date",
+        "Start": 16,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer demain",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "demain",
+        "Type": "date",
+        "Start": 16,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer hier",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "hier",
+        "Type": "date",
+        "Start": 16,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer avant-hier",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "avant-hier",
+        "Type": "date",
+        "Start": 16,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer après-demain",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "après-demain",
+        "Type": "date",
+        "Start": 16,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le lendemain",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "lendemain",
+        "Type": "date",
+        "Start": 19,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le jour suivant",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "jour suivant",
+        "Type": "date",
+        "Start": 19,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer ce vendredi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "ce vendredi",
+        "Type": "date",
+        "Start": 16,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le dimanche prochain",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dimanche prochain",
+        "Type": "date",
+        "Start": 19,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le dimanche dernier",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dimanche dernier",
+        "Type": "date",
+        "Start": 19,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le dernier jour",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dernier jour",
+        "Type": "date",
+        "Start": 19,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer ce dernier jour",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "ce dernier jour",
+        "Type": "date",
+        "Start": 16,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer ce jour",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "ce jour",
+        "Type": "date",
+        "Start": 16,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer vendredi de cette semaine",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "vendredi de cette semaine",
+        "Type": "date",
+        "Start": 16,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer dimanche prochain",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dimanche prochain",
+        "Type": "date",
+        "Start": 16,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer dimanche de la semaine dernière",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dimanche de la semaine dernière",
+        "Type": "date",
+        "Start": 16,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le 15 juin 2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "15 juin 2016",
+        "Type": "date",
+        "Start": 19,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "le base-ball le 11 mai",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "11 mai",
+        "Type": "date",
+        "Start": 16,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le 4 mai",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "4 mai",
+        "Type": "date",
+        "Start": 19,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le 4 mars",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "4 mars",
+        "Type": "date",
+        "Start": 19,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le premier janvier",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "premier janvier",
+        "Type": "date",
+        "Start": 19,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le 21 mai",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "21 mai",
+        "Type": "date",
+        "Start": 19,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le 21/05",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "21/05",
+        "Type": "date",
+        "Start": 19,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le 02/08",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "02/08",
+        "Type": "date",
+        "Start": 19,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le 22 juin",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "22 juin",
+        "Type": "date",
+        "Start": 19,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "je suis rentré deux mois auparavant",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "deux mois auparavant",
+        "Type": "date",
+        "Start": 15,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer deux jours plus tard",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "deux jours plus tard",
+        "Type": "date",
+        "Start": 16,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "à qui ai-je envoyé un e-mail il y a un mois",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "il y a un mois",
+        "Type": "date",
+        "Start": 29,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "je suis rentré pour le 27",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "le 27",
+        "Type": "date",
+        "Start": 20,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "je suis rentré pour le vingt-sept",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "le vingt-sept",
+        "Type": "date",
+        "Start": 20,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "je suis rentré pour le 27.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "le 27",
+        "Type": "date",
+        "Start": 20,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "je suis rentré pour le 27!",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "le 27",
+        "Type": "date",
+        "Start": 20,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "je suis rentré pour le 27 .",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "le 27",
+        "Type": "date",
+        "Start": 20,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "je suis rentré pour le 21er",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "le 21er",
+        "Type": "date",
+        "Start": 20,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "je suis rentré pour le 22ème",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "le 22ème",
+        "Type": "date",
+        "Start": 20,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "je suis rentré pour le deux",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "le deux",
+        "Type": "date",
+        "Start": 20,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "je suis rentré pour le vingt-deux",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "le vingt-deux",
+        "Type": "date",
+        "Start": 20,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "je suis rentré pour le trente et un",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "le trente et un",
+        "Type": "date",
+        "Start": 20,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "je suis rentré le 27",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "le 27",
+        "Type": "date",
+        "Start": 15,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "je suis rentré le 21er",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "le 21er",
+        "Type": "date",
+        "Start": 15,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "je suis rentré le 22ème",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "22ème",
+        "Type": "date",
+        "Start": 18,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "je suis rentré le deuxième!",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "le deuxième",
+        "Type": "date",
+        "Start": 15,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "je suis rentré le vingt-deux?",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "vingt-deux",
+        "Type": "date",
+        "Start": 18,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "le premier prix",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "j'irai au 27ème étage",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Commémoration du 25ème anniversaire de l'établissement des relations diplomatiques entre le Singapour et la Chine",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Achetez des billets pour l'Expérience de la 17ème Porte Hantée",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Qu'est-ce que je vais faire samedi le 2",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "samedi le 2",
+        "Type": "date",
+        "Start": 28,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Une réunion pour mercredi le 27 avec Joe Smith",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "mercredi le 27",
+        "Type": "date",
+        "Start": 17,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer jeudi le 21",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "jeudi le 21",
+        "Type": "date",
+        "Start": 16,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer vendredi le 22",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "vendredi le 22",
+        "Type": "date",
+        "Start": 16,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer samedi le 23",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "samedi le 23",
+        "Type": "date",
+        "Start": 16,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer vendredi le 15",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "vendredi le 15",
+        "Type": "date",
+        "Start": 16,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer jeudi le vingt et un",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "jeudi le vingt et un",
+        "Type": "date",
+        "Start": 16,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer vendredi le vingt-deux",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "vendredi le vingt-deux",
+        "Type": "date",
+        "Start": 16,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer vendredi le quinze",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "vendredi le quinze",
+        "Type": "date",
+        "Start": 16,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer jeudi le 17",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "jeudi le 17",
+        "Type": "date",
+        "Start": 16,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le deuxième dimanche",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "deuxième dimanche",
+        "Type": "date",
+        "Start": 19,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le premier dimanche",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "premier dimanche",
+        "Type": "date",
+        "Start": 19,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le troisième mardi",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "troisième mardi",
+        "Type": "date",
+        "Start": 19,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le cinquième dimanche",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "cinquième dimanche",
+        "Type": "date",
+        "Start": 19,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le sixième dimanche",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "sixième dimanche",
+        "Type": "date",
+        "Start": 19,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le dixième dimanche",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dixième dimanche",
+        "Type": "date",
+        "Start": 19,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le 20 du mois prochain",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "20 du mois prochain",
+        "Type": "date",
+        "Start": 19,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le 31 de ce mois",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "31 de ce mois",
+        "Type": "date",
+        "Start": 19,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Cortana pourrait essayer d'arranger un appel sur Skype vendredi cette semaine ou mardi de la semaine prochaine",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "vendredi cette semaine",
+        "Type": "date",
+        "Start": 55,
+        "Length": 22
+      },
+      {
+        "Text": "mardi de la semaine prochaine",
+        "Type": "date",
+        "Start": 81,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "Cortana pourrait essayer d'arranger un appel sur Skype soit vendredi de cette semaine, soit samedi cette semaine",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "vendredi de cette semaine",
+        "Type": "date",
+        "Start": 60,
+        "Length": 25
+      },
+      {
+        "Text": "samedi cette semaine",
+        "Type": "date",
+        "Start": 92,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "16/11/2016",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "16/11/2016",
+        "Type": "date",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "On a eu une réunion il y a un mois et vingt-et-un jours",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "il y a un mois et vingt-et-un jours",
+        "Type": "date",
+        "Start": 20,
+        "Length": 35
+      }
+    ]
+  },
+  {
+    "Input": "je suis parti d'ici il y a deux ans, un mois et vingt-et-un jours",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "il y a deux ans, un mois et vingt-et-un jours",
+        "Type": "date",
+        "Start": 20,
+        "Length": 45
+      }
+    ]
+  },
+  {
+    "Input": "je vais partir d'ici 2 ans et 21 jours plus tard",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "2 ans et 21 jours plus tard",
+        "Type": "date",
+        "Start": 21,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "je suis parti d'ici il y a 25 mois et 21 jours",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "il y a 25 mois et 21 jours",
+        "Type": "date",
+        "Start": 20,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "je suis parti d'ici le 20 du mois prochain",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "le 20 du mois prochain",
+        "Type": "date",
+        "Start": 20,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "je suis parti d'ici le 5 décembre 1391",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "5 décembre 1391",
+        "Type": "date",
+        "Start": 23,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "lundi, 22 janvier 2018",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "lundi, 22 janvier 2018",
+        "Type": "date",
+        "Start": 0,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "le dimanche 21/01/2018",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dimanche 21/01/2018",
+        "Type": "date",
+        "Start": 3,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "le 21 septembre 1978",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "21 septembre 1978",
+        "Type": "date",
+        "Start": 3,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "le 10 septembre 1901",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "10 septembre 1901",
+        "Type": "date",
+        "Start": 3,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "le 10/09/2000",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "10/09/2000",
+        "Type": "date",
+        "Start": 3,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Vous êtes libre le 13/05/2015?",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "13/05/2015",
+        "Type": "date",
+        "Start": 19,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Vous êtes disponible le 13 mai 2015?",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "13 mai 2015",
+        "Type": "date",
+        "Start": 24,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Vous êtes libre deux dimanches à partir de maintenant?",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "deux dimanches à partir de maintenant",
+        "Type": "date",
+        "Start": 16,
+        "Length": 37
+      }
+    ]
+  },
+  {
+    "Input": "Vous êtes libre deux lundi plus tard?",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "deux lundi plus tard",
+        "Type": "date",
+        "Start": 16,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Vous êtes libre deux jours après aujourd’hui?",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "deux jours après aujourd’hui",
+        "Type": "date",
+        "Start": 16,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Vous êtes libre trois semaines à partir de demain?",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "trois semaines à partir de demain",
+        "Type": "date",
+        "Start": 16,
+        "Length": 33
+      }
+    ]
+  },
+  {
+    "Input": "Où étiez-vous il y a trois jours?",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "il y a trois jours",
+        "Type": "date",
+        "Start": 14,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, préparez un appel sur Skype ce vendredi 15 juin avec Jim",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "ce vendredi 15 juin",
+        "Type": "date",
+        "Start": 37,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, préparez un appel sur Skype ce vendredi (15/06) avec Jim",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "ce vendredi (15/06)",
+        "Type": "date",
+        "Start": 37,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, préparez un appel sur Skype ce vendredi (15-juin) avec Jim",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "ce vendredi (15-juin)",
+        "Type": "date",
+        "Start": 37,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, préparez un appel sur Skype ce vendredi 22 juin avec Jim",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "ce vendredi 22 juin",
+        "Type": "date",
+        "Start": 37,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, préparez un appel sur Skype ce vendredi 23-juin avec Jim",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "ce vendredi",
+        "Type": "date",
+        "Start": 37,
+        "Length": 11
+      },
+      {
+        "Text": "23-juin ",
+        "Type": "date",
+        "Start": 49,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "je pars dans trois semaines",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans trois semaines",
+        "Type": "date",
+        "Start": 8,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, préparez un appel sur Skype vendredi 06 juillet avec Jim.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "vendredi 06 juillet",
+        "Type": "date",
+        "Start": 37,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, préparez un appel sur Skype vendredi 06/07 avec Jim.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "vendredi 06/07",
+        "Type": "date",
+        "Start": 37,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, préparez un appel sur Skype vendredi 06-juillet avec Jim.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "vendredi 06-juillet",
+        "Type": "date",
+        "Start": 37,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, préparez un appel sur Skype vendredi 06/07/2018 avec Jim.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "vendredi 06/07/2018",
+        "Type": "date",
+        "Start": 37,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, préparez un appel sur Skype dans deux jours ouvrés.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans deux jours ouvrés",
+        "Type": "date",
+        "Start": 37,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, tu peux préparer quelque chose pour le 1er octobre?",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1er octobre",
+        "Type": "date",
+        "Start": 48,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "la valeur nominale de ses 6 1/4% …",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "je vais rentrer le 22 juin 2017",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "22 juin 2017",
+        "Type": "date",
+        "Start": 19,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le 22/06/2017",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "22/06/2017",
+        "Type": "date",
+        "Start": 19,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "6 107,31 août 2019 ne doit pas inclure la décimale",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "je vais rentrer le 01/09/2019",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "01/09/2019",
+        "Type": "date",
+        "Start": 19,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "je vais rentrer le 01 septembre 2019",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "01 septembre 2019",
+        "Type": "date",
+        "Start": 19,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Réserve un voyage pour moi le 26 juin 2020",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "26 juin 2020",
+        "Type": "date",
+        "Start": 30,
+        "Length": 12
       }
     ]
   }

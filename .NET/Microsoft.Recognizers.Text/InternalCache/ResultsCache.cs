@@ -1,4 +1,7 @@
-﻿// ReSharper disable StaticMemberInGenericType
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+// ReSharper disable StaticMemberInGenericType
 
 using System;
 using System.Collections.Generic;

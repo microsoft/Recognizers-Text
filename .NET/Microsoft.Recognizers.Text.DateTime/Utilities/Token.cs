@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -58,7 +61,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ret = new List<ExtractResult>();
 
             tokens = tokens.OrderBy(s => s.Start).ThenByDescending(s => s.Length).ToList();
+
             var mergedTokens = new List<Token>();
+
             foreach (var token in tokens)
             {
                 if (token != null)

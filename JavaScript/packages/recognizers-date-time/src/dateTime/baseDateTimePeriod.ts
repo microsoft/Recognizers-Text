@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { IExtractor, ExtractResult, RegExpUtility, StringUtility } from "@microsoft/recognizers-text";
 import { Constants, TimeTypeConstants } from "./constants";
 import { BaseNumberExtractor } from "@microsoft/recognizers-text-number";
@@ -541,9 +544,12 @@ export class BaseDateTimePeriodParser implements IDateTimeParser {
                 prs = this.getTwoPoints(timeErs[0], datetimeErs[0], this.config.timeParser, this.config.dateTimeParser, referenceDate);
                 endHasDate = true;
             }
-            else {
+            else if (timeErs[0].start >= datetimeErs[0].start + datetimeErs[0].length) {
                 prs = this.getTwoPoints(datetimeErs[0], timeErs[0], this.config.dateTimeParser, this.config.timeParser, referenceDate);
                 beginHasDate = true;
+            }
+            else {
+                return result;
             }
         }
         if (!prs || !prs.begin.value || !prs.end.value) {

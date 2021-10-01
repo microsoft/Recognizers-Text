@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 var Culture = require('@microsoft/recognizers-text-number').Culture;
 
 // List of supported cultures

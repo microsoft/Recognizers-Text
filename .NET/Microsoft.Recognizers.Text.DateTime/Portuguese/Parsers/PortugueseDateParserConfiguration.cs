@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
@@ -54,6 +57,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             DateExtractor = config.DateExtractor;
             DurationExtractor = config.DurationExtractor;
             DurationParser = config.DurationParser;
+            HolidayParser = new BaseHolidayParser(new PortugueseHolidayParserConfiguration(this));
             UnitMap = config.UnitMap;
             UtilityConfiguration = config.UtilityConfiguration;
 
@@ -79,6 +83,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public IDateExtractor DateExtractor { get; }
 
         public IDateTimeParser DurationParser { get; }
+
+        public IDateTimeParser HolidayParser { get; }
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 

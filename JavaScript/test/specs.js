@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 var fs = require('fs');
 var path = require('path');
 var keys = require('lodash.keys');

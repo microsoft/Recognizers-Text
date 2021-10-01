@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 package com.microsoft.recognizers.text.datetime.parsers;
 
 import com.microsoft.recognizers.text.ExtractResult;
@@ -73,7 +76,7 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
         String originText = er.getText();
         if (this.config.getOptions().match(DateTimeOptions.EnablePreview)) {
             String newText = MatchingUtil.preProcessTextRemoveSuperfluousWords(er.getText(), config.getSuperfluousWordMatcher()).getText();
-            int newLength = er.getLength() + er.getText().length() - originText.length();
+            int newLength = er.getLength() + newText.length() - originText.length();
             er = new ExtractResult(er.getStart(), newLength, newText, er.getType(), er.getData(), er.getMetadata());
         }
 
@@ -438,7 +441,7 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
         }
 
         List<Map<String, String>> resolutions = new ArrayList<>();
-        Map<String, Object> res = new HashMap<>();
+        LinkedHashMap<String, Object> res = new LinkedHashMap<>();
 
         DateTimeResolutionResult val = (DateTimeResolutionResult)slot.getValue();
         if (val == null) {
@@ -537,6 +540,10 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
             resolveWeekOf(res, Constants.ResolveToPast);
         }
 
+        if (comment != null && !comment.isEmpty() && TimexUtility.hasDoubleTimex(comment)) {
+            res = TimexUtility.processDoubleTimex(res, Constants.ResolveToFuture, Constants.ResolveToPast, timex);
+        }
+
         for (Map.Entry<String,Object> p : res.entrySet()) {
             if (p.getValue() instanceof Map) {
                 Map<String, String> value = new LinkedHashMap<>();
@@ -623,8 +630,25 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
             String timex = (String)resolutionDic.get(DateTimeResolutionKey.Timex);
             timex = timex != null ? timex : "";
 
-            resolutionDic.remove(keyName);
-            resolutionDic.put(keyName + "Am", resolution);
+            // As resolutionDic is a LinkedHashMap and once a new value is set
+            // it goes as the last value, we need to keep the position after the replacement.
+            // Here it copies the resolutionDic map but appending the correct with Am
+            // to populate again the received LinkedHashMap.
+            // This is implemented because LinkedHashMap differs to Dictionary just in Java.
+            LinkedHashMap<String, Object> resolutionDicDuplicated = resolutionDic
+                    .entrySet()
+                    .stream()
+                    .collect(Collectors.toMap(e ->
+                        e.getKey() == keyName ? keyName + "Am" : e.getKey(),
+                        Map.Entry<String, Object>::getValue,
+                        (existing, replacement) -> existing,
+                        LinkedHashMap::new
+                    ));
+
+            resolutionDic.clear();
+            resolutionDicDuplicated.entrySet().stream().forEach(e -> {
+                resolutionDic.put(e.getKey(), e.getValue());
+            });
 
             switch ((String)resolutionDic.get(ResolutionKey.Type)) {
                 case Constants.SYS_DATETIME_TIME:
@@ -769,10 +793,16 @@ public class BaseMergedDateTimeParser implements IDateTimeParser {
         String end = "";
 
         if (resolutionDic.containsKey(startType)) {
+            if (resolutionDic.get(startType).startsWith(dateMinString)) {
+                return;
+            }
             start = resolutionDic.get(startType);
         }
 
         if (resolutionDic.containsKey(endType)) {
+            if (resolutionDic.get(endType).startsWith(dateMinString)) {
+                return;
+            }
             end = resolutionDic.get(endType);
         }
 

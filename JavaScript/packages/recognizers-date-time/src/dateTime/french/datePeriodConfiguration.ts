@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { IExtractor, IParser, RegExpUtility } from "@microsoft/recognizers-text";
 import { BaseNumberParser, BaseNumberExtractor, FrenchIntegerExtractor, FrenchNumberParserConfiguration } from "@microsoft/recognizers-text-number";
 import { IDatePeriodExtractorConfiguration, IDatePeriodParserConfiguration } from "../baseDatePeriod";
@@ -106,6 +109,7 @@ export class FrenchDatePeriodParserConfiguration implements IDatePeriodParserCon
     readonly monthWithYear: RegExp;
     readonly monthNumWithYear: RegExp;
     readonly yearRegex: RegExp;
+    readonly relativeRegex: RegExp;
     readonly pastRegex: RegExp;
     readonly futureRegex: RegExp;
     readonly inConnectorRegex: RegExp;
@@ -137,7 +141,7 @@ export class FrenchDatePeriodParserConfiguration implements IDatePeriodParserCon
     readonly weekWithWeekDayRangeRegex: RegExp;
 
     readonly cardinalExtractor: IExtractor;
-    readonly numberParser: IParser;
+    readonly numberParser: BaseNumberParser;
     readonly nowRegex: RegExp
 
     constructor(config: ICommonDateTimeParserConfiguration) {
@@ -157,6 +161,7 @@ export class FrenchDatePeriodParserConfiguration implements IDatePeriodParserCon
         this.monthWithYear = RegExpUtility.getSafeRegExp(FrenchDateTime.MonthWithYear);
         this.monthNumWithYear = RegExpUtility.getSafeRegExp(FrenchDateTime.MonthNumWithYear);
         this.yearRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.YearRegex);
+        this.relativeRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.RelativeRegex);
         this.pastRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.PastSuffixRegex);
         this.futureRegex = RegExpUtility.getSafeRegExp(FrenchDateTime.NextSuffixRegex);
         this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(FrenchDateTime.NumberCombinedWithDurationUnit);

@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
@@ -23,7 +26,7 @@ namespace Microsoft.Recognizers.Text.Number.Arabic
             var culture = config.Culture;
             if (culture.IndexOf("*", StringComparison.Ordinal) != -1)
             {
-                culture = config.Culture.Replace("*", "ms");
+                culture = config.Culture.Replace("*", "sa");
             }
 
             this.CultureInfo = new CultureInfo(culture);

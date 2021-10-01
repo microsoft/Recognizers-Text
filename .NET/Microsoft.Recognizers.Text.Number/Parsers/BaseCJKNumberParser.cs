@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -114,7 +117,7 @@ namespace Microsoft.Recognizers.Text.Number
             // TODO: @Refactor this check to determine the subtype for JA and KO
             if ((Config.CultureInfo.Name == "ja-JP" || Config.CultureInfo.Name == "ko-KR") && ret != null)
             {
-                ret.Type = DetermineType(extResult);
+                ret.Type = DetermineType(extResult, ret);
                 ret.Text = ret.Text.ToLowerInvariant();
             }
 
@@ -136,13 +139,18 @@ namespace Microsoft.Recognizers.Text.Number
             var splitResult = Config.FracSplitRegex.Split(resultText);
             string intPart = string.Empty, demoPart = string.Empty, numPart = string.Empty;
 
-            // TODO: Refactor to support half (eg. KO: 반, JA: 半)
-
             if (splitResult.Length == 3)
             {
                 intPart = splitResult[0];
                 demoPart = splitResult[1];
                 numPart = splitResult[2];
+            }
+            else if (splitResult.Length == 1)
+            {
+                // Needed to support "half" (eg. KO: 반, JA: 半)
+                intPart = Config.ZeroChar.ToString(CultureInfo.InvariantCulture);
+                demoPart = "2";
+                numPart = "1";
             }
             else
             {
@@ -513,6 +521,7 @@ namespace Microsoft.Recognizers.Text.Number
             var isRoundBefore = false;
             long roundBefore = -1, roundDefault = 1;
             var isNegative = false;
+            var hasPreviousDigits = false;
 
             var isDozen = false;
             var isPair = false;
@@ -596,22 +605,45 @@ namespace Microsoft.Recognizers.Text.Number
                         }
                         else
                         {
-                            beforeValue = Config.ZeroToNineMap[intStr[i]];
+                            double currentDigit = Config.ZeroToNineMap[intStr[i]];
+                            if (hasPreviousDigits)
+                            {
+                                beforeValue = (beforeValue * 10) + currentDigit;
+                            }
+                            else
+                            {
+                                beforeValue = currentDigit;
+                            }
+
                             isRoundBefore = false;
                         }
                     }
                     else
                     {
-                        if (i == intStr.Length - 1 && (Config.CultureInfo.Name == "ja-JP" || Config.CultureInfo.Name == "ko-KR"))
+                        // In colloquial Chinese, 百 may be omitted from the end of a number, similarly to how 一 can be dropped
+                        // from the beginning. Japanese doesn't have such behaviour.
+                        if ((Config.CultureInfo.Name == "ja-JP" || Config.CultureInfo.Name == "ko-KR") || char.IsDigit(intStr[i]))
                         {
                             roundDefault = 1;
                         }
 
-                        partValue += Config.ZeroToNineMap[intStr[i]] * roundDefault;
+                        double currentDigit = Config.ZeroToNineMap[intStr[i]];
+                        if (hasPreviousDigits)
+                        {
+                            beforeValue = (beforeValue * 10) + currentDigit;
+                        }
+                        else
+                        {
+                            beforeValue = currentDigit;
+                        }
+
+                        partValue += beforeValue * roundDefault;
                         intValue += partValue;
                         partValue = 0;
                     }
                 }
+
+                hasPreviousDigits = char.IsDigit(intStr[i]);
             }
 
             if (isNegative)

@@ -293,6 +293,7 @@
   },
   {
     "Input": "以下皆为合法地址：bit.ly, nyti.ms, sound.academy, pep.si, lero.aws...",
+    "NotSupported": "java",
     "Results": [
       {
         "Text": "bit.ly",
@@ -383,6 +384,7 @@
   },
   {
     "Input": "请访问27.pm和s7.am以获取更多信息。",
+    "NotSupported": "java",
     "Results": [
       {
         "Text": "27.pm",
@@ -406,7 +408,6 @@
   },
   {
     "Input": "百度.com 是不合法地址",
-    "NotSupported": "java",
     "Results": []
   },
   {
@@ -456,7 +457,6 @@
   },
   {
     "Input": "微软的官网是：www.microsoft.com",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "www.microsoft.com",
@@ -471,7 +471,6 @@
   },
   {
     "Input": "微软的官网是：http://www.microsoft.com",
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "http://www.microsoft.com",

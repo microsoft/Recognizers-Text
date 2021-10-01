@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 package com.microsoft.recognizers.text.datetime.french.extractors;
 
 import com.microsoft.recognizers.text.IExtractor;
@@ -24,6 +27,8 @@ import com.microsoft.recognizers.text.matcher.StringMatcher;
 import com.microsoft.recognizers.text.number.french.extractors.IntegerExtractor;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+
 import org.javatuples.Pair;
 
 public class FrenchMergedExtractorConfiguration extends BaseOptionsConfiguration implements IMergedExtractorConfiguration {
@@ -44,7 +49,11 @@ public class FrenchMergedExtractorConfiguration extends BaseOptionsConfiguration
     public static final Pattern UnspecificDatePeriodRegex = RegExpUtility
         .getSafeRegExp(FrenchDateTime.UnspecificDatePeriodRegex);
     public static final StringMatcher SuperfluousWordMatcher = new StringMatcher();
-    public final Iterable<Pair<Pattern, Pattern>> ambiguityFiltersDict = null;
+    public final Iterable<Pair<Pattern, Pattern>> ambiguityFiltersDict = FrenchDateTime.AmbiguityFiltersDict.entrySet().stream().map(pair -> {
+        Pattern key = RegExpUtility.getSafeRegExp(pair.getKey());
+        Pattern val = RegExpUtility.getSafeRegExp(pair.getValue());
+        return new Pair<Pattern, Pattern>(key, val);
+    }).collect(Collectors.toList());
     private final IDateExtractor dateExtractor;
     private final IDateTimeExtractor timeExtractor;
     private final IDateTimeExtractor dateTimeExtractor;

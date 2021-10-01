@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { RegExpUtility } from "@microsoft/recognizers-text";
 import { IBooleanExtractorConfiguration } from "../extractors";
 import { ChineseChoice } from "../../resources/chineseChoice";
@@ -6,9 +9,11 @@ export class ChineseBooleanExtractorConfiguration implements IBooleanExtractorCo
     readonly regexTrue: RegExp;
     readonly regexFalse: RegExp;
     readonly tokenRegex: RegExp;
+    readonly emojiSkinToneRegex: RegExp;
     readonly onlyTopMatch: boolean;
 
     constructor(onlyTopMatch: boolean = true) {
+        this.emojiSkinToneRegex = RegExpUtility.getSafeRegExp(ChineseChoice.SkinToneRegex);
         this.regexTrue = RegExpUtility.getSafeRegExp(ChineseChoice.TrueRegex);
         this.regexFalse = RegExpUtility.getSafeRegExp(ChineseChoice.FalseRegex);
         this.tokenRegex = RegExpUtility.getSafeRegExp(ChineseChoice.TokenizerRegex, 'is');

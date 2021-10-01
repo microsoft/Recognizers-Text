@@ -1,19 +1,25 @@
-﻿using System.Collections.Concurrent;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Concurrent;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
-using Microsoft.Recognizers.Definitions.Swedish;
-
 namespace Microsoft.Recognizers.Text.Number.Swedish
 {
-    public class CardinalExtractor : BaseNumberExtractor
+    public class CardinalExtractor : CachedNumberExtractor
     {
         private static readonly ConcurrentDictionary<string, CardinalExtractor> Instances =
             new ConcurrentDictionary<string, CardinalExtractor>();
 
+        private readonly string keyPrefix;
+
         private CardinalExtractor(BaseNumberOptionsConfiguration config)
             : base(config.Options)
         {
+
+            keyPrefix = string.Intern(ExtractType + "_" + config.Options + "_" + config.Placeholder + "_" + config.Culture);
+
             var builder = ImmutableDictionary.CreateBuilder<Regex, TypeTag>();
 
             // Add Integer Regexes
@@ -29,11 +35,11 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
 
         internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
 
-        // "Cardinal";
-        protected sealed override string ExtractType { get; } = Constants.SYS_NUM_CARDINAL;
+        protected sealed override string ExtractType { get; } = Constants.SYS_NUM_CARDINAL; // "Cardinal";
 
         public static CardinalExtractor GetInstance(BaseNumberOptionsConfiguration config)
         {
+
             var extractorKey = config.Placeholder;
 
             if (!Instances.ContainsKey(extractorKey))
@@ -43,6 +49,11 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
             }
 
             return Instances[extractorKey];
+        }
+
+        protected override object GenKey(string input)
+        {
+            return (keyPrefix, input);
         }
     }
 }
