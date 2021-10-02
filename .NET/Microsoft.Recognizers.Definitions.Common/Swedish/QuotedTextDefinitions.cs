@@ -25,7 +25,7 @@ namespace Microsoft.Recognizers.Definitions.Swedish
       public const string QuotedTextRegex1 = @"(“([^“”]+)”)";
       public const string QuotedTextRegex2 = @"(‘([^‘’]+)’)";
       public const string QuotedTextRegex3 = @"(""([^""]+)"")";
-      public const string QuotedTextRegex4 = @"(\\'([^\']+)\\')";
+      public const string QuotedTextRegex4 = @"('([^']+)')";
       public const string QuotedTextRegex5 = @"(`([^`]+)`)";
       public const string QuotedTextRegex6 = @"(123456)";
       public const string QuotedTextRegex7 = @"(123456)";
