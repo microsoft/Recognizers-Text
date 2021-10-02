@@ -1,0 +1,29 @@
+[
+  {
+    "Input": "Det här \"numret\" är '123' eller '456'",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "\"numret\"",
+        "TypeName": "quotedText",
+        "Resolution": {
+          "value": "\"numret\""
+        }
+      },
+      {
+        "Text": "'123'",
+        "TypeName": "quotedText",
+        "Resolution": {
+          "value": "'123'"
+        }
+      },
+      {
+        "Text": "'456'",
+        "TypeName": "quotedText",
+        "Resolution": {
+          "value": "'456'"
+        }
+      }
+    ]
+  }
+]

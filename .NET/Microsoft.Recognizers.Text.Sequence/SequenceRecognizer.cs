@@ -14,6 +14,7 @@ using Microsoft.Recognizers.Text.Sequence.Japanese;
 using Microsoft.Recognizers.Text.Sequence.Korean;
 using Microsoft.Recognizers.Text.Sequence.Portuguese;
 using Microsoft.Recognizers.Text.Sequence.Spanish;
+using Microsoft.Recognizers.Text.Sequence.Swedish;
 using Microsoft.Recognizers.Text.Sequence.Turkish;
 
 namespace Microsoft.Recognizers.Text.Sequence
@@ -306,6 +307,12 @@ namespace Microsoft.Recognizers.Text.Sequence
                     new QuotedTextParser(),
                     new BaseQuotedTextExtractor(new TurkishQuotedTextExtractorConfiguration(options))));
 
+            RegisterModel<QuotedTextModel>(
+                Culture.Swedish,
+                (options) => new QuotedTextModel(
+                    new QuotedTextParser(),
+                    new BaseQuotedTextExtractor(new SwedishQuotedTextExtractorConfiguration(options))));
+
             RegisterModel<EmailModel>(
                 Culture.English,
                 (options) => new EmailModel(new EmailParser(new BaseSequenceConfiguration(options)),
@@ -326,6 +333,7 @@ namespace Microsoft.Recognizers.Text.Sequence
             RegisterModel<GUIDModel>(
                 Culture.English,
                 (options) => new GUIDModel(new GUIDParser(), new GUIDExtractor()));
+
         }
 
         private static List<ModelResult> RecognizeByModel(Func<SequenceRecognizer, IModel> getModelFunc, string query, SequenceOptions options)
