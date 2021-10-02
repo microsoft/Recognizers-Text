@@ -209,6 +209,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Spanish", "Spanish", "{D64B
 		..\Specs\Sequence\Spanish\PhoneNumberModel.json = ..\Specs\Sequence\Spanish\PhoneNumberModel.json
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Swedish", "Swedish", "{C99691DA-6E5B-4194-972E-7992F4CC4486}"
+	ProjectSection(SolutionItems) = preProject
+		..\Specs\Sequence\Swedish\QuotedTextModel.json = ..\Specs\Sequence\Swedish\QuotedTextModel.json
+	EndProjectSection
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Turkish", "Turkish", "{18C2DA46-BF61-4F87-B645-443D6525545A}"
 	ProjectSection(SolutionItems) = preProject
 		..\Specs\Sequence\Turkish\PhoneNumberModel.json = ..\Specs\Sequence\Turkish\PhoneNumberModel.json
@@ -1015,6 +1020,7 @@ Global
 		{2F41FB40-EA08-469A-A676-138F2E7C627F} = {5DB5E281-52B2-4F4B-A316-7F9DAD32FF2E}
 		{28FE2836-58CE-48E6-B657-0A3A836AEC14} = {21E1D26A-635F-4965-A56E-20263D2A09FF}
 		{E93CDEDA-0221-42F2-9408-896CE5FEE69D} = {5DB5E281-52B2-4F4B-A316-7F9DAD32FF2E}
+		{C99691DA-6E5B-4194-972E-7992F4CC4486} = {59FC2C0D-BF12-4A99-BC50-A104948DB1DC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FCFA9AFA-4914-4449-A66D-AE20900F0AA5}

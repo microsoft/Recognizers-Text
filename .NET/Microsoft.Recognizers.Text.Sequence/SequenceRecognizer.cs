@@ -302,16 +302,16 @@ namespace Microsoft.Recognizers.Text.Sequence
                     new BaseQuotedTextExtractor(new SpanishQuotedTextExtractorConfiguration(options))));
 
             RegisterModel<QuotedTextModel>(
-                Culture.Turkish,
-                (options) => new QuotedTextModel(
-                    new QuotedTextParser(),
-                    new BaseQuotedTextExtractor(new TurkishQuotedTextExtractorConfiguration(options))));
-
-            RegisterModel<QuotedTextModel>(
                 Culture.Swedish,
                 (options) => new QuotedTextModel(
                     new QuotedTextParser(),
                     new BaseQuotedTextExtractor(new SwedishQuotedTextExtractorConfiguration(options))));
+
+            RegisterModel<QuotedTextModel>(
+                Culture.Turkish,
+                (options) => new QuotedTextModel(
+                    new QuotedTextParser(),
+                    new BaseQuotedTextExtractor(new TurkishQuotedTextExtractorConfiguration(options))));
 
             RegisterModel<EmailModel>(
                 Culture.English,
