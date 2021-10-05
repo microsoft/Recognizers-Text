@@ -96,6 +96,10 @@ class NumberWithUnitParser(Parser):
             normalized_last_unit = normalized_last_unit[len(
                 self.config.connector_token):].strip()
             last_unit = last_unit[len(self.config.connector_token):].strip()
+        
+        last_unit = self.__delete_brackets_if_exists(last_unit)
+        normalized_last_unit = self.__delete_brackets_if_exists(normalized_last_unit)
+
         if key and self.config.unit_map:
             unit_value = None
             if last_unit in self.config.unit_map:
@@ -123,6 +127,23 @@ class NumberWithUnitParser(Parser):
     def __add_if_not_contained(self, keys: List[str], new_key: str):
         if not [x for x in keys if new_key in x]:
             keys.append(new_key)
+
+    def __delete_brackets_if_exists(self, unit: str):
+        has_brackets = False
+
+        if (unit.startswith('(') and unit.endswith(')')):
+            has_brackets = True
+
+        if (unit.startswith('[') and unit.endswith(']')):
+            has_brackets = True
+
+        if (unit.startswith('{') and unit.endswith('}')):
+            has_brackets = True
+
+        if  has_brackets is True:
+            unit = unit[1 : len(unit) - 1]
+            
+        return unit       
 
 
 class BaseCurrencyParser(Parser):
