@@ -1808,7 +1808,13 @@ class BaseDatePeriodParser(DateTimeParser):
         cardinal = 5 if self.config.is_last_cardinal(cardinal_str) else self.config.cardinal_map.get(cardinal_str)
 
         if not month_str:
-            swift = self.config.get_swift_day_or_month(source)
+            rel_month_text = RegExpUtility.get_group(match, Constants.REL_MONTH)
+            month_text = rel_month_text
+            
+            if not rel_month_text:
+                month_text = source
+
+            swift = self.config.get_swift_day_or_month(month_text)
             temp_data = reference + datedelta(months=swift)
             year, month = temp_data.year, temp_data.month
 
