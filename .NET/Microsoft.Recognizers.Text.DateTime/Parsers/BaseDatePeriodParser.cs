@@ -1817,7 +1817,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             int month;
             if (string.IsNullOrEmpty(monthStr))
             {
-                var swift = this.config.GetSwiftDayOrMonth(trimmedText);
+                var monthText = !string.IsNullOrEmpty(match.Groups["relmonth"].Value) ? match.Groups["relmonth"].Value : trimmedText;
+                var swift = this.config.GetSwiftDayOrMonth(monthText);
 
                 month = referenceDate.AddMonths(swift).Month;
                 year = referenceDate.AddMonths(swift).Year;
