@@ -1,6 +1,7 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
+using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
@@ -13,10 +14,7 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
 {
     public class SwedishNumberParserConfiguration : BaseNumberParserConfiguration
     {
-
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
-
-        private static ImmutableDictionary<string, long> swedishWrittenFractionLookupMap;
 
         public SwedishNumberParserConfiguration(INumberOptionsConfiguration config)
         {
@@ -50,10 +48,12 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
             this.NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexFlags);
             this.FractionPrepositionRegex = new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexFlags);
 
-            swedishWrittenFractionLookupMap = NumbersDefinitions.SwedishWrittenFractionLookupMap.ToImmutableDictionary();
+            SwedishWrittenFractionLookupMap = NumbersDefinitions.SwedishWrittenFractionLookupMap.ToImmutableDictionary();
         }
 
         public string NonDecimalSeparatorText { get; private set; }
+
+        private static ImmutableDictionary<string, long> SwedishWrittenFractionLookupMap { get; set; }
 
         public override IEnumerable<string> NormalizeTokenSet(IEnumerable<string> tokens, ParseResult context)
         {
@@ -94,11 +94,11 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
                 // tenths fractions, e.g.
                 // 21: "tjugoförst" -> "tjugoförst(a|e)del(s|ar(na)?s?)"
                 // 26: "tjugosjätted" -> "tjugosjätted(el(s|ar(na)?s?)"
-                var tempResult = swedishWrittenFractionLookupMap.FirstOrDefault(k =>
+                var tempResult = SwedishWrittenFractionLookupMap.FirstOrDefault(k =>
                     {
                         // Try to find an entry in the map matching the start of numberStr
                         // E.g. "tjugoförstedel" starts w/ "tjugoförst" -> return 21
-                        return numberStr.StartsWith(k.Key);
+                        return numberStr.StartsWith(k.Key, StringComparison.OrdinalIgnoreCase);
                     });
 
                 resolvedNumber = tempResult.Value;
