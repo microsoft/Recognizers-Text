@@ -227,13 +227,12 @@
   },
   {
     "Input": "etthundratjugofemte",
-    "Comment": "Currently this case doesn't resolve",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "etthundratjugofemte",
         "Start": 0,
-        "End": 23,
+        "End": 18,
         "TypeName": "ordinal",
         "Resolution": {
           "offset": "125",
@@ -628,14 +627,12 @@
   },
   {
     "Input": "Det är den hundratjugosjätte gången hittills i år.",
-    "Comment": "Currently this case doesn't resolve",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "etthundratjugosjätte",
-        "Start": 0,
-        "End": 4,
+        "Text": " hundratjugosjätte",
+        "Start": 10,
+        "End": 27,
         "TypeName": "ordinal",
         "Resolution": {
           "offset": "126",
