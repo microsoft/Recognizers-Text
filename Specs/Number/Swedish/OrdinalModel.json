@@ -630,9 +630,9 @@
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "etthundratjugosjätte",
-        "Start": 11,
-        "End": 30,
+        "Text": " hundratjugosjätte",
+        "Start": 10,
+        "End": 27,
         "TypeName": "ordinal",
         "Resolution": {
           "offset": "126",

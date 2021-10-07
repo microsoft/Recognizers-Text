@@ -61,7 +61,7 @@ BasicOrdinalRegex: !nestedRegex
   def: (?#BasicOrdinalRegex)({NumberOrdinalRegex}|{RelativeOrdinalRegex})
   references: [ NumberOrdinalRegex, RelativeOrdinalRegex ]
 SuffixBasicOrdinalRegex: !nestedRegex
-  def: (?#SuffixBasicOrdinalRegex)((((({TensNumberIntegerRegex}(\s+(och\s+)?|\s*-?\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s*{RoundNumberIntegerRegex})+)\s*(och\s+)?)*({TensNumberIntegerRegex}(\s+|\s*-?\s*))?{BasicOrdinalRegex})
+  def: (?#SuffixBasicOrdinalRegex)((((({TensNumberIntegerRegex}(\s+(och\s+)?|\s*-?\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}?|{AnIntRegex})(\s*{RoundNumberIntegerRegex})+)\s*(och\s+)?)*({TensNumberIntegerRegex}(\s+|\s*-?\s*))?{BasicOrdinalRegex})
   references: [ TensNumberIntegerRegex, ZeroToNineIntegerRegex, AnIntRegex, RoundNumberIntegerRegex, BasicOrdinalRegex ]
 SuffixRoundNumberOrdinalRegex: !nestedRegex
   def: (?#SuffixRoundNumberOrdinalRegex)(({AllIntRegex}\s*){RoundNumberOrdinalRegex})
