@@ -228,7 +228,6 @@
   {
     "Input": "etthundratjugofemte",
     "Comment": "Currently this case doesn't resolve",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {

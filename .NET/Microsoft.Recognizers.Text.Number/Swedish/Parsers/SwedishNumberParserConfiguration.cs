@@ -82,7 +82,7 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
             // Swedish Ordinals can't be used for denoting fractions as in other languages, e.g. English.
             // The default method uses the OrdinalNumberMap map to find a fraction expression.
             // When parsing swedish fractions, such as "en tjugoförstedel" (1/21) this method
-            // fails to find the corresponding Ordinal since this doesn't exist.
+            // fails to find the corresponding Ordinal since this doesn't exists in the OrdinalNumberMap.
             var resolvedNumber = base.ResolveCompositeNumber(numberStr);
 
             // So, if resolvedNumber == 0 we test for fractions and thus choose to
