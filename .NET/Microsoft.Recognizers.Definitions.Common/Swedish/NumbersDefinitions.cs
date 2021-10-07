@@ -55,14 +55,14 @@ namespace Microsoft.Recognizers.Definitions.Swedish
       public static readonly string OrdinalSwedishRegex = $@"(?#OrdinalSwedishRegex)(?<=\b){AllOrdinalRegex}(?=\b)";
       public const string RoundNumberFractionSwedishRegex = @"(?#RoundNumberFractionSwedishRegex)(hundradel(s|ar)?|tusendel(s|ar)?|miljon(te)?del(s|ar)?|miljarddel(s|ar)?|biljon(te)?del(s|ar)?|biljarddel(s|ar)?|triljon(te)?del(s|ar)?|triljarddel(s|ar)?)";
       public const string FractionNotationWithSpacesRegex = @"(?#FractionNotationWithSpacesRegex)(((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))";
-      public static readonly string FractionNotationRegex = $@"(?#FractionNotationRegex)'{BaseNumbers.FractionNotationRegex}'";
+      public static readonly string FractionNotationRegex = $@"(?#FractionNotationRegex){BaseNumbers.FractionNotationRegex}";
       public static readonly string FractionNounRegex = $@"(?#FractionNounRegex)(?<=\b)({AllIntRegex}\s+(och\s+)?)?({AllIntRegex})(\s*|\s*-\s*)((({AllOrdinalRegex})|({RoundNumberFractionSwedishRegex}))((de)?l(s|ar)?)?|halvor|kvart(ar|s))(?=\b)";
       public static readonly string FractionNounWithArticleRegex = $@"(?#FractionNounWithArticleRegex)(?<=\b)((({AllIntRegex}\s+(och\s+)?)?(en|ett)?(\s+|\s*-\s*)(?!\bförsta\b|\bandra\b)(({AllOrdinalRegex})|({RoundNumberFractionSwedishRegex})|halv(t)?|kvart(s)?))|(halva|hälften))(?=\b)";
       public const string FractionOverRegex = @"(?#FractionOverRegex)(genom|delat\s+(med|på)|delad\s+(med|på)|dividerat\s+(med|på)|dividerad\s+(med|på)|(ut)?av|på)";
       public static readonly string FractionPrepositionRegex = $@"(?#FractionPrepositionRegex)(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<![\.,])\d+))\s+{FractionOverRegex}\s+(?<denominator>({AllIntRegex})|(\d+)(?![\.,]))(?=\b)";
       public static readonly string FractionPrepositionWithinPercentModeRegex = $@"(?#FractionPrepositionWithinPercentModeRegex)(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<![\.,])\d+))\s+genom\s+(?<denominator>({AllIntRegex})|(\d+)(?![\.,]))(?=\b)";
       public static readonly string AllPointRegex = $@"(?#AllPointRegex)((\s+{ZeroToNineIntegerRegex})+|(\s+{SeparaIntRegex}))";
-      public static readonly string AllFloatRegex = $@"(?#AllFloatRegex)'{AllIntRegex}(\s+komma){AllPointRegex}'";
+      public static readonly string AllFloatRegex = $@"(?#AllFloatRegex){AllIntRegex}(\s+komma){AllPointRegex}";
       public static readonly string DoubleWithMultiplierRegex = $@"(?#DoubleWithMultiplierRegex)(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)";
       public const string DoubleExponentialNotationRegex = @"(?#DoubleExponentialNotationRegex)(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))(\d+([\.,]\d+)?)e([+-]*[1-9]\d*)(?=\b)";
       public const string DoubleCaretExponentialNotationRegex = @"(?#DoubleCaretExponentialNotationRegex)(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))(\d+([\.,]\d+)?)\^([+-]*[1-9]\d*)(?=\b)";

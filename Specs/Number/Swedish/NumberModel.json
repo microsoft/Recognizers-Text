@@ -498,6 +498,38 @@
     ]
   },
   {
+    "Input": "4/5",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "4/5",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0,8"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "- 4/5",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "- 4/5",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "-0,8"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
     "Input": "-4/5",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
@@ -1363,20 +1395,20 @@
     ]
   },
   {
-    "Input": "en tjugoförstedel",
+    "Input": "två tjugoförstedelar",
     "Comment": "Correspons to writing 'A twentyfirsts'. Compound fraction expressions are currently not resolved correctly.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
+    "Debug": true,
     "Results": [
       {
-        "Text": "en tjugoförstedel",
+        "Text": "två tjugoförstedelar",
         "TypeName": "number",
         "Resolution": {
           "subtype": "fraction",
-          "value": "0,0476190476190476"
+          "value": "0,0952380952380952"
         },
         "Start": 0,
-        "End": 17
+        "End": 19
       }
     ]
   },

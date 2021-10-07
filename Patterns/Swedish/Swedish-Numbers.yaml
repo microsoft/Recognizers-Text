@@ -87,7 +87,7 @@ RoundNumberFractionSwedishRegex: !simpleRegex
 FractionNotationWithSpacesRegex: !simpleRegex
   def: (?#FractionNotationWithSpacesRegex)(((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))
 FractionNotationRegex: !nestedRegex
-  def: (?#FractionNotationRegex)'{BaseNumbers.FractionNotationRegex}'
+  def: (?#FractionNotationRegex){BaseNumbers.FractionNotationRegex}
   references: [ BaseNumbers.FractionNotationRegex ]
 FractionNounRegex: !nestedRegex
   def: (?#FractionNounRegex)(?<=\b)({AllIntRegex}\s+(och\s+)?)?({AllIntRegex})(\s*|\s*-\s*)((({AllOrdinalRegex})|({RoundNumberFractionSwedishRegex}))((de)?l(s|ar)?)?|halvor|kvart(ar|s))(?=\b)
@@ -108,7 +108,7 @@ AllPointRegex: !nestedRegex
   def: (?#AllPointRegex)((\s+{ZeroToNineIntegerRegex})+|(\s+{SeparaIntRegex}))
   references: [ ZeroToNineIntegerRegex, SeparaIntRegex ]
 AllFloatRegex: !nestedRegex
-  def: (?#AllFloatRegex)'{AllIntRegex}(\s+komma){AllPointRegex}'
+  def: (?#AllFloatRegex){AllIntRegex}(\s+komma){AllPointRegex}
   references: [ AllIntRegex, AllPointRegex ]
 DoubleWithMultiplierRegex: !nestedRegex
   def: (?#DoubleWithMultiplierRegex)(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)
