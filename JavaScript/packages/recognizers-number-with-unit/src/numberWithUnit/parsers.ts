@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { IExtractor, ExtractResult, IParser, ParseResult, StringUtility } from "@microsoft/recognizers-text";
 import { CultureInfo, Constants as NumberConstants } from "@microsoft/recognizers-text-number";
 import last = require("lodash.last");

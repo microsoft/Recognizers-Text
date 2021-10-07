@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 from recognizers_text.matcher.string_matcher import StringMatcher
 from recognizers_text.matcher.match_result import MatchResult
 

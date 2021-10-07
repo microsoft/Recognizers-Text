@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 from typing import List, Pattern
 
 from recognizers_text import Extractor, Parser, RegExpUtility
@@ -221,13 +224,13 @@ class ChineseDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
             ChineseDateTime.MonthRegex
         )
         self._zero_to_nine_integer_regex_chinese = RegExpUtility.get_safe_reg_exp(
-            ChineseDateTime.ZeroToNineIntegerRegexChs
+            ChineseDateTime.ZeroToNineIntegerRegexCJK
         )
         self._relative_month_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.RelativeMonthRegex
         )
         self._day_regex_in_chinese = RegExpUtility.get_safe_reg_exp(
-            ChineseDateTime.DatePeriodDayRegexInChinese
+            ChineseDateTime.DatePeriodDayRegexInCJK
         )
         self._day_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.DayRegex
@@ -245,7 +248,7 @@ class ChineseDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
             RegExpUtility.get_safe_reg_exp(
                 ChineseDateTime.PureNumYearAndMonth),
             RegExpUtility.get_safe_reg_exp(
-                ChineseDateTime.DatePeriodYearInChineseRegex),
+                ChineseDateTime.DatePeriodYearInCJKRegex),
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.WeekOfMonthRegex),
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.SeasonWithYear),
             RegExpUtility.get_safe_reg_exp(ChineseDateTime.QuarterRegex),

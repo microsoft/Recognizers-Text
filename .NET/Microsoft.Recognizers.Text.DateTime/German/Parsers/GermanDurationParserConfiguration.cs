@@ -1,6 +1,11 @@
-﻿using System.Collections.Immutable;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
+
 using Microsoft.Recognizers.Definitions.German;
+using Microsoft.Recognizers.Text.Number;
 
 namespace Microsoft.Recognizers.Text.DateTime.German
 {
@@ -9,10 +14,15 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public GermanDurationParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
         {
-            CardinalExtractor = Number.German.NumberExtractor.GetInstance();
+
+            var numOptions = ((BaseNumberExtractor)config.CardinalExtractor).Options;
+            var numConfig = new BaseNumberOptionsConfiguration(Text.Culture.German, numOptions, NumberMode.PureNumber);
+
+            CardinalExtractor = Number.German.NumberExtractor.GetInstance(numConfig);
             NumberParser = config.NumberParser;
 
             DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration(this), false);
+
             NumberCombinedWithUnit = GermanDurationExtractorConfiguration.NumberCombinedWithDurationUnit;
 
             AnUnitRegex = GermanDurationExtractorConfiguration.AnUnitRegex;
@@ -41,6 +51,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public Regex NumberCombinedWithUnit { get; }
 
         public Regex AnUnitRegex { get; }
+
+        public Regex PrefixArticleRegex { get; } = null;
 
         public Regex DuringRegex { get; }
 

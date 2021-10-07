@@ -420,7 +420,10 @@ namespace Microsoft.Recognizers.Definitions.Dutch
             { @"Fen", @"fen" },
             { @"Jiao", @"jiao|mao" },
             { @"Finnish markka", @"finse mark|finse markka|suomen markka|finnish markka|finsk mark|fim|markkaa|markka" },
-            { @"Penni", @"penniä|penni" }
+            { @"Penni", @"penniä|penni" },
+            { @"Bitcoin", @"bitcoin|bitcoins|btc|xbt|₿" },
+            { @"Millibitcoin", @"millibitcoin|millibitcoins|milibitcoin|milibitcoins" },
+            { @"Satoshi", @"satoshi|satoshis" }
         };
       public static readonly Dictionary<string, string> CurrencyNameToIsoCodeMap = new Dictionary<string, string>
         {
@@ -609,7 +612,8 @@ namespace Microsoft.Recognizers.Definitions.Dutch
             { @"British Virgin Islands dollar", @"_BD" },
             { @"Ascension pound", @"_AP" },
             { @"Alderney pound", @"_ALP" },
-            { @"Abkhazian apsar", @"_AA" }
+            { @"Abkhazian apsar", @"_AA" },
+            { @"Bitcoin", @"_XBT" }
         };
       public static readonly Dictionary<string, string> FractionalUnitNameToCodeMap = new Dictionary<string, string>
         {
@@ -688,7 +692,9 @@ namespace Microsoft.Recognizers.Definitions.Dutch
             { @"Ngwee", @"NGWEE" },
             { @"Kwartje", @"KWARTJE" },
             { @"Dubbeltje", @"DUBBELTJE" },
-            { @"Stuiver", @"STUIVER" }
+            { @"Stuiver", @"STUIVER" },
+            { @"Millibitcoin", @"MILLIBITCOIN" },
+            { @"Satoshi", @"SATOSHI" }
         };
       public const string CompoundUnitConnectorRegex = @"(?<spacer>en)";
       public static readonly Dictionary<string, string> CurrencyPrefixList = new Dictionary<string, string>
@@ -732,7 +738,8 @@ namespace Microsoft.Recognizers.Definitions.Dutch
             { @"Euro", @"€|eur" },
             { @"Pound", @"£" },
             { @"Costa Rican colón", @"₡" },
-            { @"Turkish lira", @"₺" }
+            { @"Turkish lira", @"₺" },
+            { @"Bitcoin", @"₿|btc|xbt" }
         };
       public static readonly IList<string> AmbiguousCurrencyUnitList = new List<string>
         {

@@ -1,7 +1,11 @@
-﻿using System.Collections.Generic;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Dutch;
+using Microsoft.Recognizers.Definitions.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
@@ -149,6 +153,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public string TimeTokenPrefix => DateTimeDefinitions.TimeTokenPrefix;
 
-        public Dictionary<Regex, Regex> AmbiguityFiltersDict => null;
+        public Dictionary<Regex, Regex> AmbiguityFiltersDict => DefinitionLoader.LoadAmbiguityFilters(DateTimeDefinitions.AmbiguityTimeFiltersDict);
     }
 }

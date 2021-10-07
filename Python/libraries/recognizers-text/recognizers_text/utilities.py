@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 import re
 import unicodedata
 from typing import Pattern, Union, List, Match, Dict
@@ -9,7 +12,7 @@ from multipledispatch import dispatch
 class StringUtility:
     @staticmethod
     def is_emoji(letter):
-        return letter in UNICODE_EMOJI
+        return letter in UNICODE_EMOJI["en"]
 
     @staticmethod
     def remove_unicode_matches(string: Pattern):

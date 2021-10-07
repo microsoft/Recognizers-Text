@@ -246,7 +246,8 @@ namespace Microsoft.Recognizers.Definitions.Chinese
             { @"Fen", @"分钱|分" },
             { @"Jiao", @"毛钱|毛|角钱|角" },
             { @"Finnish markka", @"芬兰马克" },
-            { @"Penni", @"盆尼" }
+            { @"Penni", @"盆尼" },
+            { @"Bitcoin", @"₿|btc|xbt|个比特币|比特币" }
         };
       public static readonly Dictionary<string, string> CurrencyNameToIsoCodeMap = new Dictionary<string, string>
         {
@@ -536,7 +537,8 @@ namespace Microsoft.Recognizers.Definitions.Chinese
             { @"Turkish lira", @"₺" },
             { @"Euro", @"€" },
             { @"Pound", @"£" },
-            { @"Costa Rican colón", @"₡" }
+            { @"Costa Rican colón", @"₡" },
+            { @"Bitcoin", @"₿|btc|xbt" }
         };
       public static readonly IList<string> CurrencyAmbiguousValues = new List<string>
         {
@@ -608,13 +610,19 @@ namespace Microsoft.Recognizers.Definitions.Chinese
             { @"Ton", @"公吨|吨|t" },
             { @"Pound", @"磅" },
             { @"Ounce", @"盎司" },
-            { @"Bit", @"比特|位|b" },
-            { @"Byte", @"字节|byte" },
-            { @"Kilobyte", @"千字节|kb" },
-            { @"Megabyte", @"兆字节|mb" },
-            { @"Gigabyte", @"十亿字节|千兆字节|gb" },
-            { @"Terabyte", @"万亿字节|兆兆字节|tb" },
-            { @"Petabyte", @"千兆兆|千万亿字节|pb" }
+            { @"Liang", @"两" },
+            { @"Bit", @"比特|位|b|bit" },
+            { @"Kilobit", @"千比特|千位|kb|Kb" },
+            { @"Megabit", @"兆比特|兆位|mb|Mb" },
+            { @"Gigabit", @"十亿比特|千兆比特|十亿位|千兆位|gb|Gb" },
+            { @"Terabit", @"万亿比特|兆兆比特|万亿位|兆兆位|tb|Tb" },
+            { @"Petabit", @"千兆兆比特|千万亿比特|千兆兆位|千万亿位|pb|Pb" },
+            { @"Byte", @"字节|byte|Byte" },
+            { @"Kilobyte", @"千字节|kB|KB" },
+            { @"Megabyte", @"兆字节|mB|MB" },
+            { @"Gigabyte", @"十亿字节|千兆字节|gB|GB" },
+            { @"Terabyte", @"万亿字节|兆兆字节|tB|TB" },
+            { @"Petabyte", @"千兆兆字节|千万亿字节|pB|PB" }
         };
       public static readonly IList<string> DimensionAmbiguousValues = new List<string>
         {

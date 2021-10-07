@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { IExtractor, ExtractResult } from "@microsoft/recognizers-text";
 import { Constants, TimeTypeConstants } from "./constants";
 import { RegExpUtility, Match, StringUtility } from "@microsoft/recognizers-text-number";
@@ -48,7 +51,6 @@ export class BaseTimeExtractor implements IDateTimeExtractor {
                 if (!lth ||
                     (lth.length != match.length && !(match.length == lth.length + 1 && match.value.endsWith(" "))))
                 {
-
                     ret.push(new Token(match.index, match.index + match.length));
                 }
             });

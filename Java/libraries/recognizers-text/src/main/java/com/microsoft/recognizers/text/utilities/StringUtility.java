@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 package com.microsoft.recognizers.text.utilities;
 
 public abstract class StringUtility {
@@ -10,7 +13,11 @@ public abstract class StringUtility {
     }
 
     public static String trimStart(String source) {
-        return source.replaceFirst("^\\s+", "");
+        return trimStart(source, "^\\s+", "");
+    }
+
+    public static String trimStart(String source, String regex, String replacement) {
+        return source.replaceFirst(regex, replacement);
     }
 
     public static String trimEnd(String source) {

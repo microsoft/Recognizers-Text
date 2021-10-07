@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -144,6 +147,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             NumberParser = new BaseNumberParser(new PortugueseNumberParserConfiguration(numConfig));
 
             DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new PortugueseHolidayExtractorConfiguration(this));
             UtilityConfiguration = new PortugueseDatetimeUtilityConfiguration();
 
             // 3-23-2017
@@ -178,7 +182,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
                 // (domingo,)? 5 de Abril 5, 2016
                 new Regex(DateTimeDefinitions.DateExtractor2, RegexFlags),
 
-                // (domingo,)? 6 de Abril
+                // (domingo,)? Abril 6
                 new Regex(DateTimeDefinitions.DateExtractor3, RegexFlags),
             };
 
@@ -199,6 +203,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public IParser NumberParser { get; }
 
         public IDateTimeExtractor DurationExtractor { get; }
+
+        public IDateTimeExtractor HolidayExtractor { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 

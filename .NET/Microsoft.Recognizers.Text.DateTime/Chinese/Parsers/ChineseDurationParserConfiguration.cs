@@ -1,91 +1,52 @@
-﻿using System;
-using System.Collections.Generic;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Immutable;
 using System.Globalization;
-using Microsoft.Recognizers.Definitions.Chinese;
+using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.NumberWithUnit;
 using Microsoft.Recognizers.Text.NumberWithUnit.Chinese;
 using static Microsoft.Recognizers.Text.DateTime.Chinese.ChineseDurationExtractorConfiguration;
-using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
-    public class ChineseDurationParserConfiguration : IDateTimeParser
+    public class ChineseDurationParserConfiguration : BaseDateTimeOptionsConfiguration, ICJKDurationParserConfiguration
     {
-        public static readonly string ParserName = Constants.SYS_DATETIME_DURATION; // "Duration";
 
-        public static readonly Dictionary<string, int> UnitValueMap = DateTimeDefinitions.DurationUnitValueMap;
-
-        private static readonly IParser InternalParser = new NumberWithUnitParser(new DurationParserConfiguration());
-
-        private readonly IFullDateTimeParserConfiguration config;
-
-        public ChineseDurationParserConfiguration(IFullDateTimeParserConfiguration configuration)
+        public ChineseDurationParserConfiguration(ICJKCommonDateTimeParserConfiguration config)
+            : base(config)
         {
-            config = configuration;
+            InternalParser = new NumberWithUnitParser(new DurationParserConfiguration());
+
+            var durationConfig = new BaseDateTimeOptionsConfiguration(config.Culture, DateTimeOptions.None);
+            DurationExtractor = new BaseCJKDurationExtractor(new ChineseDurationExtractorConfiguration(durationConfig), false);
+
+            YearRegex = ChineseDurationExtractorConfiguration.YearRegex;
+            DurationUnitRegex = ChineseDurationExtractorConfiguration.DurationUnitRegex;
+            DurationConnectorRegex = ChineseDurationExtractorConfiguration.DurationConnectorRegex;
+
+            UnitMap = config.UnitMap;
+            UnitValueMap = config.UnitValueMap;
         }
 
-        public ParseResult Parse(ExtractResult extResult)
-        {
-            return this.Parse(extResult, DateObject.Now);
-        }
+        public IDateTimeExtractor DurationExtractor { get; }
 
-        public DateTimeParseResult Parse(ExtractResult er, DateObject refDate)
-        {
-            var referenceTime = refDate;
+        public IParser InternalParser { get; }
 
-            var parseResult = InternalParser.Parse(er);
-            var unitResult = parseResult.Value as UnitValue;
+        public Regex YearRegex { get; }
 
-            if (unitResult == null)
-            {
-                return null;
-            }
+        public Regex DurationUnitRegex { get; }
 
-            var dateTimeParseResult = new DateTimeResolutionResult();
-            var unitStr = unitResult.Unit;
-            var numStr = unitResult.Number;
+        public Regex DurationConnectorRegex { get; }
 
-            dateTimeParseResult.Timex = "P" + (BaseDurationParser.IsLessThanDay(unitStr) ? "T" : string.Empty) + numStr + unitStr[0];
-            dateTimeParseResult.FutureValue = dateTimeParseResult.PastValue = double.Parse(numStr) * UnitValueMap[unitStr];
-            dateTimeParseResult.Success = true;
+        public IImmutableDictionary<string, string> UnitMap { get; }
 
-            if (dateTimeParseResult.Success)
-            {
-                dateTimeParseResult.FutureResolution = new Dictionary<string, string>
-                {
-                    { TimeTypeConstants.DURATION, dateTimeParseResult.FutureValue.ToString() },
-                };
-
-                dateTimeParseResult.PastResolution = new Dictionary<string, string>
-                {
-                    { TimeTypeConstants.DURATION, dateTimeParseResult.PastValue.ToString() },
-                };
-            }
-
-            var ret = new DateTimeParseResult
-            {
-                Text = er.Text,
-                Start = er.Start,
-                Length = er.Length,
-                Type = er.Type,
-                Data = er.Data,
-                Value = dateTimeParseResult,
-                TimexStr = dateTimeParseResult.Timex,
-                ResolutionStr = string.Empty,
-            };
-
-            return ret;
-        }
-
-        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
-        {
-            return candidateResults;
-        }
+        public IImmutableDictionary<string, long> UnitValueMap { get; }
 
         internal class DurationParserConfiguration : ChineseNumberWithUnitParserConfiguration
         {
             public DurationParserConfiguration()
-                : base(new CultureInfo(Culture.Chinese))
+                : base(new CultureInfo(Text.Culture.Chinese))
             {
                 this.BindDictionary(DurationExtractorConfiguration.DurationSuffixList);
             }

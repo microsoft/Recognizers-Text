@@ -12,6 +12,7 @@
 export namespace JapaneseChoice {
     export const LangMarker = `Jpn`;
     export const TokenizerRegex = `[^\\w\\d\\u3040-\\u309f\\u30a0-\\u30ff\\uff00-\\uff9f\\u4e00-\\u9faf\\u3400-\\u4dbf]`;
-    export const TrueRegex = `(はい(！)*|そうです|よい(です)*)|(\\uD83D\\uDC4D|\\uD83D\\uDC4C)`;
-    export const FalseRegex = `(いいえ|ではありません|ではない|じゃない|じゃありません)|(\\uD83D\\uDC4E|\\u270B|\\uD83D\\uDD90)`;
+    export const SkinToneRegex = `(\\uD83C\\uDFFB|\\uD83C\\uDFFC|\\uD83C\\uDFFD|\\uD83C\\uDFFE|\\uD83C\\uDFFF)`;
+    export const TrueRegex = `(はい(！)*|そうです|よい(です)*)|(\\uD83D\\uDC4D|\\uD83D\\uDC4C)${SkinToneRegex}?`;
+    export const FalseRegex = `(いいえ|ではありません|ではない|じゃない|じゃありません)|(\\uD83D\\uDC4E|\\u270B|\\uD83D\\uDD90)${SkinToneRegex}?`;
 }

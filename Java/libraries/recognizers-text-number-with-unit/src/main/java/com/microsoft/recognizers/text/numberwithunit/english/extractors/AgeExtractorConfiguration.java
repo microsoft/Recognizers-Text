@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 package com.microsoft.recognizers.text.numberwithunit.english.extractors;
 
 import com.microsoft.recognizers.text.Culture;
@@ -31,7 +34,7 @@ public class AgeExtractorConfiguration extends EnglishNumberWithUnitExtractorCon
 
     @Override
     public Map<String, String> getPrefixList() {
-        return Collections.emptyMap();
+        return AgePrefixList;
     }
 
     @Override
@@ -40,4 +43,6 @@ public class AgeExtractorConfiguration extends EnglishNumberWithUnitExtractorCon
     }
 
     public static Map<String, String> AgeSuffixList = EnglishNumericWithUnit.AgeSuffixList;
+
+    public static Map<String, String> AgePrefixList = EnglishNumericWithUnit.AgePrefixList;
 }

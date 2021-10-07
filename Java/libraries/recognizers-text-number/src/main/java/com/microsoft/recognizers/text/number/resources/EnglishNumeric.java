@@ -25,7 +25,9 @@ public class EnglishNumeric {
 
     public static final Boolean MultiDecimalSeparatorCulture = true;
 
-    public static final String RoundNumberIntegerRegex = "(?:hundred|thousand|million|billion|trillion|lakh|crore)";
+    public static final List<String> NonStandardSeparatorVariants = Arrays.asList("en-za", "en-na", "en-zw");
+
+    public static final String RoundNumberIntegerRegex = "(?:hundred|thousand|million|mln|billion|bln|trillion|tln|lakh|crore)s?";
 
     public static final String ZeroToNineIntegerRegex = "(?:three|seven|eight|four|five|zero|nine|one|two|six)";
 
@@ -85,7 +87,7 @@ public class EnglishNumeric {
 
     public static final String RoundNumberOrdinalRegex = "(?:hundredth|thousandth|millionth|billionth|trillionth)";
 
-    public static final String NumberOrdinalRegex = "(?:first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)";
+    public static final String NumberOrdinalRegex = "(?:first|second|third|fourth|fifth|sixth|seventh|eighth|nine?th|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)";
 
     public static final String RelativeOrdinalRegex = "(?<relativeOrdinal>(next|previous|current)\\s+one|(the\\s+second|next)\\s+to\\s+last|the\\s+one\\s+before\\s+the\\s+last(\\s+one)?|the\\s+last\\s+but\\s+one|(ante)?penultimate|last|next|previous|current)";
 
@@ -198,7 +200,7 @@ public class EnglishNumeric {
 
     public static final String TillRegex = "((?<!\\bequal\\s+)to|through|--|-|—|——|~|–)";
 
-    public static final String MoreRegex = "(?:(bigger|greater|more|higher|larger)(\\s+than)?|above|over|exceed(ed|ing)?|surpass(ed|ing)?|(?<!<|=)>)";
+    public static final String MoreRegex = "(?:(bigger|greater|more|higher|larger)(\\s+than)?|above|over|beyond|exceed(ed|ing)?|surpass(ed|ing)?|(?<!<|=)>)";
 
     public static final String LessRegex = "(?:(less|lower|smaller|fewer)(\\s+than)?|below|under|(?<!>|=)<)";
 
@@ -319,7 +321,7 @@ public class EnglishNumeric {
 
     public static final String HalfADozenRegex = "half\\s+a\\s+dozen";
 
-    public static final String DigitalNumberRegex = "((?<=\\b)(hundred|thousand|[mb]illion|trillion|lakh|crore|dozen(s)?)(?=\\b))|((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))"
+    public static final String DigitalNumberRegex = "((?<=\\b)(hundred|thousand|[mb]illion|trillion|[mbt]ln|lakh|crore|dozen(s)?)(?=\\b))|((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))"
             .replace("{BaseNumbers.MultiplierLookupRegex}", BaseNumbers.MultiplierLookupRegex);
 
     public static final ImmutableMap<String, Long> CardinalNumberMap = ImmutableMap.<String, Long>builder()
@@ -358,8 +360,11 @@ public class EnglishNumeric {
         .put("hundred", 100L)
         .put("thousand", 1000L)
         .put("million", 1000000L)
+        .put("mln", 1000000L)
         .put("billion", 1000000000L)
+        .put("bln", 1000000000L)
         .put("trillion", 1000000000000L)
+        .put("tln", 1000000000000L)
         .put("lakh", 100000L)
         .put("crore", 10000000L)
         .build();
@@ -377,6 +382,7 @@ public class EnglishNumeric {
         .put("seventh", 7L)
         .put("eighth", 8L)
         .put("ninth", 9L)
+        .put("nineth", 9L)
         .put("tenth", 10L)
         .put("eleventh", 11L)
         .put("twelfth", 12L)
@@ -410,6 +416,7 @@ public class EnglishNumeric {
         .put("sevenths", 7L)
         .put("eighths", 8L)
         .put("ninths", 9L)
+        .put("nineths", 9L)
         .put("tenths", 10L)
         .put("elevenths", 11L)
         .put("twelfths", 12L)
@@ -439,8 +446,11 @@ public class EnglishNumeric {
         .put("hundred", 100L)
         .put("thousand", 1000L)
         .put("million", 1000000L)
+        .put("mln", 1000000L)
         .put("billion", 1000000000L)
+        .put("bln", 1000000000L)
         .put("trillion", 1000000000000L)
+        .put("tln", 1000000000000L)
         .put("lakh", 100000L)
         .put("crore", 10000000L)
         .put("hundredth", 100L)

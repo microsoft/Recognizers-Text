@@ -4,11 +4,6 @@
         <name>Microsoft.Recognizers.Text.DateTime</name>
     </assembly>
     <members>
-        <member name="F:Microsoft.Recognizers.Text.DateTime.Chinese.DurationType.WithNumber">
-            <summary>
-            Types of DurationType.
-            </summary>
-        </member>
         <member name="F:Microsoft.Recognizers.Text.DateTime.DatePeriodTimexType.ByDay">
             <summary>
             Represents a day Period
@@ -17,6 +12,11 @@
         <member name="F:Microsoft.Recognizers.Text.DateTime.DatePeriodTimexType.ByWeek">
             <summary>
             Represents a week Period
+            </summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.DatePeriodTimexType.ByFortnight">
+            <summary>
+            Represents a fortnight Period
             </summary>
         </member>
         <member name="F:Microsoft.Recognizers.Text.DateTime.DatePeriodTimexType.ByMonth">
@@ -99,11 +99,6 @@
             EnablePreview
             </summary>
         </member>
-        <member name="F:Microsoft.Recognizers.Text.DateTime.Japanese.DurationType.WithNumber">
-            <summary>
-            Types of DurationType.
-            </summary>
-        </member>
         <member name="F:Microsoft.Recognizers.Text.DateTime.AgoLaterMode.Date">
             <summary>
             Date
@@ -138,7 +133,13 @@
             <summary>Ramadan</summary>
         </member>
         <member name="F:Microsoft.Recognizers.Text.DateTime.HolidayFunctions.IslamicHolidayType.Sacrifice">
-            <summary>Sacrifice</summary>
+            <summary>Eid al-Adha (Feast of the Sacrifice)</summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.HolidayFunctions.IslamicHolidayType.EidAlFitr">
+            <summary>Eid al-Fitr (Festival of Breaking the Fast)</summary>
+        </member>
+        <member name="F:Microsoft.Recognizers.Text.DateTime.HolidayFunctions.IslamicHolidayType.NewYear">
+            <summary>Islamic New Year</summary>
         </member>
         <member name="F:Microsoft.Recognizers.Text.DateTime.UnspecificDateTimeTerms.None">
             <summary>

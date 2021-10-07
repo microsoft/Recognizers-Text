@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 
@@ -347,6 +350,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     return ret;
                 }
+
+                // Add timezone
+                ret.TimeZoneResolution = ((DateTimeResolutionResult)pr.Value).TimeZoneResolution;
 
                 var time = (DateObject)((DateTimeResolutionResult)pr.Value).FutureValue;
 

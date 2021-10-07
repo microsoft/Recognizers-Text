@@ -1,0 +1,913 @@
+[
+  {
+    "Input": "Réservez-moi une chambre à l'heure de Beijing",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "heure de Beijing",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+08:00",
+            "UtcOffsetMins": 480
+          }
+        },
+        "Start": 29,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Réservez-moi une chambre à utc 4h30",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "utc 4h30",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+04:30",
+            "UtcOffsetMins": 270
+          }
+        },
+        "Start": 27,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Réservez-moi une chambre à gmt 3 heures",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "gmt 3 heures",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC-03:00",
+            "UtcOffsetMins": -180
+          }
+        },
+        "Start": 27,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Réservez-moi une chambre à l’heure normale d’Afghanistan",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "heure normale d’Afghanistan",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+04:30",
+            "UtcOffsetMins": 270
+          }
+        },
+        "Start": 29,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Réservez-moi une chambre à l’heure d'Afghanistan",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "heure d'Afghanistan",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+04:30",
+            "UtcOffsetMins": 270
+          }
+        },
+        "Start": 29,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Réservez-moi une chambre à l'utc+/-0",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "utc+/-0",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+00:00",
+            "UtcOffsetMins": 0
+          }
+        },
+        "Start": 29,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Réservez-moi une chambre à l’heure d’été du pacifique",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "heure d’été du pacifique",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC-07:00",
+            "UtcOffsetMins": -420
+          }
+        },
+        "Start": 29,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Réservez-moi une chambre à awdt",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "awdt",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+09:00",
+            "UtcOffsetMins": 540
+          }
+        },
+        "Start": 27,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Réservez-moi une chambre à l’heure de la Colombie",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "heure de la Colombie",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC-05:00",
+            "UtcOffsetMins": -300
+          }
+        },
+        "Start": 29,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Réservez-moi une chambre à l'heure de Hong Kong",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "heure de Hong Kong",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+08:00",
+            "UtcOffsetMins": 480
+          }
+        },
+        "Start": 29,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Réserve-moi une chambre à l’heure d’été du pacifique",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "heure d’été du pacifique",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC-07:00",
+            "UtcOffsetMins": -420
+          }
+        },
+        "Start": 28,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Réservez-moi une chambre à l’heure avancée de l’ouest de l'australie",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "heure avancée de l’ouest de l'australie",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+09:00",
+            "UtcOffsetMins": 540
+          }
+        },
+        "Start": 29,
+        "Length": 39
+      }
+    ]
+  },
+  {
+    "Input": "Réserve-moi une chambre à l’heure avancée de l’ouest de l'australie",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "heure avancée de l’ouest de l'australie",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+09:00",
+            "UtcOffsetMins": 540
+          }
+        },
+        "Start": 28,
+        "Length": 39
+      }
+    ]
+  },
+  {
+    "Input": "Réserve-moi une chambre à l’heure de la Colombie",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "heure de la Colombie",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC-05:00",
+            "UtcOffsetMins": -300
+          }
+        },
+        "Start": 28,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Réserve-moi une chambre à l'heure de Hong Kong",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "heure de Hong Kong",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+08:00",
+            "UtcOffsetMins": 480
+          }
+        },
+        "Start": 28,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Réservez-moi une chambre à l’heure avancée de l’est de l'australie",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "heure avancée de l’est de l'australie",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+11:00",
+            "UtcOffsetMins": 660
+          }
+        },
+        "Start": 29,
+        "Length": 37
+      }
+    ]
+  },
+  {
+    "Input": "Réserve-moi une chambre à l’heure avancée du pacifique",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "heure avancée du pacifique",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC-07:00",
+            "UtcOffsetMins": -420
+          }
+        },
+        "Start": 28,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Réservez-moi une chambre à tost",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "tost",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+14:00",
+            "UtcOffsetMins": 840
+          }
+        },
+        "Start": 27,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Réservez-moi une chambre à l’heure avancée du pacifique",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "heure avancée du pacifique",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC-07:00",
+            "UtcOffsetMins": -420
+          }
+        },
+        "Start": 29,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Réservez-moi une chambre à 10h30, l'heure de Montréal.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "heure de Montréal",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+XX:XX",
+            "UtcOffsetMins": -10000
+          }
+        },
+        "Start": 36,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Réservez-moi une chambre à l'heure de Saint-Barthélemy.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "heure de Saint-Barthélemy",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+XX:XX",
+            "UtcOffsetMins": -10000
+          }
+        },
+        "Start": 29,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Réservez-moi une chambre à 16h30, l'heure de l'ouest de l'Europe.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "heure de l'ouest de l'Europe",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+00:00",
+            "UtcOffsetMins": 0
+          }
+        },
+        "Start": 36,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Réservez-moi une chambre à 16h30, l'heure standard de l'Europe Centrale.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "heure standard de l'Europe Centrale",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+01:00",
+            "UtcOffsetMins": 60
+          }
+        },
+        "Start": 36,
+        "Length": 35
+      }
+    ]
+  },
+  {
+    "Input": "On peut faire soit à l'heure de New York, soit à l'heure de Sao Paolo.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "heure de New York",
+        "Start": 23,
+        "Length": 17,
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+XX:XX",
+            "UtcOffsetMins": "-10000"
+          }
+        }
+      },
+      {
+        "Text": "heure de Sao Paolo",
+        "Start": 51,
+        "Length": 18,
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+XX:XX",
+            "UtcOffsetMins": "-10000"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Assurez-vous d’accueillir le fuseau horaire de la côte ouest.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "fuseau horaire de la côte ouest",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC-07:00",
+            "UtcOffsetMins": -420
+          }
+        },
+        "Start": 29,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "ce soir à 18 heures, l'heure avancée du Centre",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "heure avancée du Centre",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+XX:XX",
+            "UtcOffsetMins": "-10000"
+          }
+        },
+        "Start": 23,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Préparez les appels des équipes de 30 minutes pendant les heures centrales d’ouverture",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "heures centrales",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC-05:00",
+            "UtcOffsetMins": -300
+          }
+        },
+        "Start": 58,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Je m'ouvre à 11h30 aujourd'hui, l'heure avancée du pacifique/l'heure normale du Central",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "heure avancée du pacifique",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC-07:00",
+            "UtcOffsetMins": -420
+          }
+        },
+        "Start": 34,
+        "Length": 26
+      },
+      {
+        "Text": "heure normale du Central",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+XX:XX",
+            "UtcOffsetMins": -10000
+          }
+        },
+        "Start": 63,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Je suis dans le fuseau pacifique",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "fuseau pacifique",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "value": "UTC-08:00",
+            "utcOffsetMins": "-480"
+          }
+        },
+        "Start": 16,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "On se voit à 13 heures dans le fuseau horaire de Rocheusse",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "fuseau horaire de Rocheusse",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "utcOffsetMins": "-360",
+            "value": "UTC-06:00"
+          }
+        },
+        "Start": 31,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Je suis à l’heure de Madrid",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "heure de Madrid",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "utcOffsetMins": "60",
+            "value": "UTC+01:00"
+          }
+        },
+        "Start": 12,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je suis dans le fuseau horaire de Madrid",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "fuseau horaire de Madrid",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "utcOffsetMins": "60",
+            "value": "UTC+01:00"
+          }
+        },
+        "Start": 16,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Je me trouve dans le fuseau horaire de Madrid",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "fuseau horaire de Madrid",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "utcOffsetMins": "60",
+            "value": "UTC+01:00"
+          }
+        },
+        "Start": 21,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Je suis à Madrid.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Je suis dans le fuseau horaire de Russie 3",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "fuseau horaire de Russie 3",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "utcOffsetMins": "240",
+            "value": "UTC+04:00"
+          }
+        },
+        "Start": 16,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Tout moment à l'heure normale du Central (Mexico)",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "heure normale du Central",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "utcOffsetMins": "-360",
+            "value": "UTC-06:00"
+          }
+        },
+        "Start": 16,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Je suis dans le fuseau horaire de Russie 10",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "fuseau horaire de Russie 10",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "utcOffsetMins": "660",
+            "value": "UTC+11:00"
+          }
+        },
+        "Start": 16,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Je suis à MSK+7, pas MSK",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "MSK+7",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "utcOffsetMins": "600",
+            "value": "UTC+10:00"
+          }
+        },
+        "Start": 10,
+        "Length": 5
+      },
+      {
+        "Text": "MSK",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "utcOffsetMins": "180",
+            "value": "UTC+03:00"
+          }
+        },
+        "Start": 18,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "Je suis à MSK-1.",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "MSK-1",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "utcOffsetMins": "120",
+            "value": "UTC+02:00"
+          }
+        },
+        "Start": 10,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Réservez-moi une chambre à UTC + 4",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "UTC + 4",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+04:00",
+            "UtcOffsetMins": 240
+          }
+        },
+        "Start": 27,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Réservez-moi une chambre à UTC -4",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "UTC -4",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC-04:00",
+            "UtcOffsetMins": -240
+          }
+        },
+        "Start": 27,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Je suis à l’heure d’été de l'Ouest",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "heure d’été de l'Ouest",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+XX:XX",
+            "UtcOffsetMins": -10000
+          }
+        },
+        "Start": 12,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Je suis à l'heure avancée du Centre",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "heure avancée du Centre",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+XX:XX",
+            "UtcOffsetMins": -10000
+          }
+        },
+        "Start": 12,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Il est environ 13 heures de l'heure avancée du centre de l'australie",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "heure avancée du centre de l'australie",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+10:30",
+            "UtcOffsetMins": 630
+          }
+        },
+        "Start": 30,
+        "Length": 38
+      }
+    ]
+  },
+  {
+    "Input": "Les îles de la ligne de Kiribati sont à UTC+14",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "UTC+14",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+14:00",
+            "UtcOffsetMins": 840
+          }
+        },
+        "Start": 40,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Tous les délais sont à 23h59 UTC -12 heures («n’importe où sur terre/AoE»).",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "UTC -12 heures",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC-12:00",
+            "UtcOffsetMins": -720
+          }
+        },
+        "Start": 29,
+        "Length": 14
+      },
+      {
+        "Text": "n’importe où sur terre",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC-12:00",
+            "UtcOffsetMins": -720
+          }
+        },
+        "Start": 46,
+        "Length": 22
+      },
+      {
+        "Text": "AoE",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC-12:00",
+            "UtcOffsetMins": -720
+          }
+        },
+        "Start": 69,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "N’oublie pas qu’on est à l’heure anglaise",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "heure anglaise",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+XX:XX",
+            "UtcOffsetMins": -10000
+          }
+        },
+        "Start": 27,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Pouvez-vous trouver une place dans un moment de convivialité des Etats-Unis?",
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "moment de convivialité des Etats-Unis",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+XX:XX",
+            "UtcOffsetMins": -10000
+          }
+        },
+        "Start": 38,
+        "Length": 37
+      }
+    ]
+  }
+]

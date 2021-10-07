@@ -5195,5 +5195,37 @@
         "End": 1
       }
     ]
+  },
+  {
+    "Input": "两",
+    "Results": [
+      {
+        "Text": "两",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2"
+        },
+        "Start": 0,
+        "End": 0
+      }
+    ]
+  },
+  {
+    "Input": "两两",
+    "Results": []
+  },
+  {
+    "Input": "包括在金融市场中管理的基金管理业务在内的FILP总额也减少了二％，为四十九兆九千五百九十二億元，是有史以来最大的。",
+    "Results": [
+      {
+        "Text": "四十九兆九千五百九十二億",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "49959200000000"
+        },
+        "Start": 34,
+        "End": 45
+      }
+    ]
   }
 ]

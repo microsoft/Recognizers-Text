@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -57,17 +60,14 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             foreach (var durationExtraction in durationExtractions)
             {
-                var match = config.DateUnitRegex.Match(durationExtraction.Text);
-                if (match.Success)
+                var dateUnitMatch = config.DateUnitRegex.Match(durationExtraction.Text);
+                if (!dateUnitMatch.Success)
                 {
-                    durations.Add(new Token(
-                        durationExtraction.Start ?? 0,
-                        durationExtraction.Start + durationExtraction.Length ?? 0));
+                    continue;
                 }
-            }
 
-            foreach (var duration in durations)
-            {
+                var isPlurarUnit = dateUnitMatch.Groups[Constants.PluralUnit].Success;
+                var duration = new Token(durationExtraction.Start ?? 0, durationExtraction.Start + durationExtraction.Length ?? 0);
                 var beforeStr = text.Substring(0, duration.Start);
                 var afterStr = text.Substring(duration.Start + duration.Length);
 
@@ -127,7 +127,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     // Cases like "2 upcoming days", should be supported here
                     // Cases like "2 upcoming 3 days" is invalid, only extract "upcoming 3 days" by default
-                    if (numbersInPrefix.Any() && !numbersInDuration.Any())
+                    if (numbersInPrefix.Any() && !numbersInDuration.Any() && isPlurarUnit)
                     {
                         var lastNumber = numbersInPrefix.OrderBy(t => t.Start + t.Length).Last();
 
@@ -154,14 +154,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                     continue;
                 }
 
-                match = this.config.FutureRegex.MatchBegin(afterStr, trim: true);
-
-                if (match.Success)
-                {
-                    ret.Add(new Token(duration.Start, duration.End + match.Index + match.Length));
-                    continue;
-                }
-
                 match = this.config.FutureSuffixRegex.MatchBegin(afterStr, trim: true);
 
                 if (match.Success)
@@ -180,12 +172,12 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             var match = regex.Match(text);
             bool isMatchAtEdge = inPrefix ?
-                                 text.Trim().EndsWith(match.Value.Trim()) :
-                                 text.Trim().StartsWith(match.Value.Trim());
+                                 text.Trim().EndsWith(match.Value.Trim(), StringComparison.Ordinal) :
+                                 text.Trim().StartsWith(match.Value.Trim(), StringComparison.Ordinal);
 
             if (match.Success && isMatchAtEdge)
             {
-                var startIndex = inPrefix ? text.LastIndexOf(match.Value) : (int)er.Start;
+                var startIndex = inPrefix ? text.LastIndexOf(match.Value, StringComparison.Ordinal) : (int)er.Start;
                 var endIndex = (int)er.Start + (int)er.Length;
                 endIndex += inPrefix ? 0 : match.Index + match.Length;
 

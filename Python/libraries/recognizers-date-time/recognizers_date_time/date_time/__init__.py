@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 from .date_time_recognizer import *
 from .constants import *
 from .models import *

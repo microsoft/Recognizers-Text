@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 var Recognizer = require('@microsoft/recognizers-text-sequence');
 var SequenceRecognizer = require('@microsoft/recognizers-text-sequence').SequenceRecognizer;
 var SequenceOptions = require('@microsoft/recognizers-text-sequence').SequenceOptions;

@@ -1,7 +1,9 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
+using System.Collections.Generic;
 using System.Globalization;
+using System.Text;
 
 namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 {
@@ -63,42 +65,43 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
         private static string FormatDuration(TimexProperty timex)
         {
+            var timexList = new List<string> { };
             if (timex.Years != null)
             {
-                return $"P{timex.Years}Y";
+                timexList.Add(TimexHelpers.GenerateDurationTimex(TimexUnit.Year, timex.Years ?? Constants.InvalidValue));
             }
 
             if (timex.Months != null)
             {
-                return $"P{timex.Months}M";
+                timexList.Add(TimexHelpers.GenerateDurationTimex(TimexUnit.Month, timex.Months ?? Constants.InvalidValue));
             }
 
             if (timex.Weeks != null)
             {
-                return $"P{timex.Weeks}W";
+                timexList.Add(TimexHelpers.GenerateDurationTimex(TimexUnit.Week, timex.Weeks ?? Constants.InvalidValue));
             }
 
             if (timex.Days != null)
             {
-                return $"P{timex.Days}D";
+                timexList.Add(TimexHelpers.GenerateDurationTimex(TimexUnit.Day, timex.Days ?? Constants.InvalidValue));
             }
 
             if (timex.Hours != null)
             {
-                return $"PT{timex.Hours}H";
+                timexList.Add(TimexHelpers.GenerateDurationTimex(TimexUnit.Hour, timex.Hours ?? Constants.InvalidValue));
             }
 
             if (timex.Minutes != null)
             {
-                return $"PT{timex.Minutes}M";
+                timexList.Add(TimexHelpers.GenerateDurationTimex(TimexUnit.Minute, timex.Minutes ?? Constants.InvalidValue));
             }
 
             if (timex.Seconds != null)
             {
-                return $"PT{timex.Seconds}S";
+                timexList.Add(TimexHelpers.GenerateDurationTimex(TimexUnit.Second, timex.Seconds ?? Constants.InvalidValue));
             }
 
-            return string.Empty;
+            return TimexHelpers.GenerateCompoundDurationTimex(timexList);
         }
 
         private static string FormatTime(TimexProperty timex)
@@ -118,22 +121,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
         private static string FormatDate(TimexProperty timex)
         {
-            if (timex.Year != null && timex.Month != null && timex.DayOfMonth != null)
-            {
-                return $"{TimexDateHelpers.FixedFormatNumber(timex.Year, 4)}-{TimexDateHelpers.FixedFormatNumber(timex.Month, 2)}-{TimexDateHelpers.FixedFormatNumber(timex.DayOfMonth, 2)}";
-            }
-
-            if (timex.Month != null && timex.DayOfMonth != null)
-            {
-                return $"XXXX-{TimexDateHelpers.FixedFormatNumber(timex.Month, 2)}-{TimexDateHelpers.FixedFormatNumber(timex.DayOfMonth, 2)}";
-            }
-
-            if (timex.DayOfWeek != null)
-            {
-                return $"XXXX-WXX-{timex.DayOfWeek}";
-            }
-
-            return string.Empty;
+            return TimexHelpers.GenerateDateTimex(timex.Year ?? Constants.InvalidValue, timex.WeekOfYear ?? (timex.Month ?? Constants.InvalidValue), timex.DayOfWeek != null ? timex.DayOfWeek.Value : timex.DayOfMonth ?? Constants.InvalidValue, timex.WeekOfMonth ?? Constants.InvalidValue, timex.DayOfWeek != null);
         }
 
         private static string FormatDateRange(TimexProperty timex)
@@ -146,6 +134,11 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             if (timex.Year != null && timex.WeekOfYear != null)
             {
                 return $"{TimexDateHelpers.FixedFormatNumber(timex.Year, 4)}-W{TimexDateHelpers.FixedFormatNumber(timex.WeekOfYear, 2)}";
+            }
+
+            if (timex.Year != null && timex.Month != null && timex.WeekOfMonth != null)
+            {
+                return $"{TimexDateHelpers.FixedFormatNumber(timex.Year, 4)}-{TimexDateHelpers.FixedFormatNumber(timex.Month, 2)}-W{TimexDateHelpers.FixedFormatNumber(timex.WeekOfMonth, 2)}";
             }
 
             if (timex.Year != null && timex.Season != null)
@@ -170,17 +163,17 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
             if (timex.Month != null && timex.WeekOfMonth != null && timex.DayOfWeek != null)
             {
-                return $"XXXX-{TimexDateHelpers.FixedFormatNumber(timex.Month, 2)}-WXX-{timex.WeekOfMonth}-{timex.DayOfWeek}";
+                return $"{Constants.TimexFuzzyYear}-{TimexDateHelpers.FixedFormatNumber(timex.Month, 2)}-{Constants.TimexFuzzyWeek}-{timex.WeekOfMonth}-{timex.DayOfWeek}";
             }
 
             if (timex.Month != null && timex.WeekOfMonth != null)
             {
-                return $"XXXX-{TimexDateHelpers.FixedFormatNumber(timex.Month, 2)}-W{timex.WeekOfMonth?.ToString("D2", CultureInfo.InvariantCulture)}";
+                return $"{Constants.TimexFuzzyYear}-{TimexDateHelpers.FixedFormatNumber(timex.Month, 2)}-W{timex.WeekOfMonth?.ToString("D2", CultureInfo.InvariantCulture)}";
             }
 
             if (timex.Month != null)
             {
-                return $"XXXX-{TimexDateHelpers.FixedFormatNumber(timex.Month, 2)}";
+                return $"{Constants.TimexFuzzyYear}-{TimexDateHelpers.FixedFormatNumber(timex.Month, 2)}";
             }
 
             return string.Empty;

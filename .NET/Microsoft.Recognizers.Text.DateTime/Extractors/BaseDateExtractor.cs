@@ -1,6 +1,10 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Text.InternalCache;
@@ -120,7 +124,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private static bool IsMultipleDurationDate(ExtractResult er)
         {
-            return er.Data != null && er.Data.ToString() == Constants.MultipleDuration_Date;
+            return er.Data?.ToString() is Constants.MultipleDuration_Date;
         }
 
         private static bool IsMultipleDuration(ExtractResult er)
@@ -131,7 +135,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         // Cases like "more than 3 days", "less than 4 weeks"
         private static bool IsInequalityDuration(ExtractResult er)
         {
-            return er.Data != null && (er.Data.ToString() == Constants.MORE_THAN_MOD || er.Data.ToString() == Constants.LESS_THAN_MOD);
+            return er.Data?.ToString() is Constants.MORE_THAN_MOD or Constants.LESS_THAN_MOD;
         }
 
         private List<ExtractResult> ExtractImpl(string text, DateObject reference)
@@ -216,6 +220,20 @@ namespace Microsoft.Recognizers.Text.DateTime
                         isValidMatch = StartsWithBasicDate(subText);
                     }
                 }
+
+                // Expressions with mixed separators are not considered valid dates e.g. "30/4.85" (unless one is a comma "30/4, 2016")
+                if (match.Groups["day"].Success && match.Groups["month"].Success)
+                {
+                    var noDateText = match.Value.Replace(match.Groups["year"].Value, string.Empty)
+                        .Replace(match.Groups["month"].Value, string.Empty)
+                        .Replace(match.Groups["day"].Value, string.Empty);
+                    var separators = new List<char> { '/', '\\', '-', '.' };
+
+                    if (separators.Count(separator => noDateText.Contains(separator)) > 1)
+                    {
+                        isValidMatch = false;
+                    }
+                }
             }
 
             return isValidMatch;
@@ -287,6 +305,13 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             foreach (var result in er)
             {
+                // Check that the extracted number is not part of a decimal number (e.g. 123.24)
+                if (result.Start > 1 && (text[(int)result.Start - 1].Equals(',') || text[(int)result.Start - 1].Equals('.')) &&
+                    char.IsDigit(text[(int)result.Start - 2]))
+                {
+                    continue;
+                }
+
                 var parsed = int.TryParse((this.Config.NumberParser.Parse(result).Value ?? 0).ToString(), out int num);
 
                 if (!parsed || (num < 1 || num > 31))
@@ -348,7 +373,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         if (matchCase.Success)
                         {
                             var ordinalNum = matchCase.Groups["DayOfMonth"].Value;
-                            if (ordinalNum == result.Text)
+                            if (ordinalNum == result.Text && matchCase.Groups["DayOfMonth"].Index == result.Start)
                             {
                                 // Get week of day for the ordinal number which is regarded as a date of reference month
                                 var date = DateObject.MinValue.SafeCreateFromValue(reference.Year, reference.Month, num);
@@ -358,24 +383,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 // to see whether they refer to the same week day
                                 var extractedWeekDayStr = matchCase.Groups["weekday"].Value;
 
-                                // Calculate matchLength considering that matchCase can precede or follow result
-                                var matchLength = matchCase.Index < result.Start ?
-                                                      result.Start + result.Length - matchCase.Index :
-                                                      matchCase.Index + matchCase.Length - result.Start;
-
                                 if (!date.Equals(DateObject.MinValue) &&
-                                    numWeekDayInt == Config.DayOfWeek[extractedWeekDayStr] &&
-                                    matchCase.Length == matchLength)
+                                    numWeekDayInt == Config.DayOfWeek[extractedWeekDayStr])
                                 {
-
-                                    if (matchCase.Index < result.Start)
-                                    {
-                                        ret.Add(new Token(matchCase.Index, result.Start + result.Length ?? 0));
-                                    }
-                                    else
-                                    {
-                                        ret.Add(new Token((int)result.Start, matchCase.Index + matchCase.Length));
-                                    }
+                                    ret.Add(new Token(matchCase.Index, matchCase.Index + matchCase.Length));
 
                                     isFound = true;
                                 }
@@ -535,6 +546,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         private List<Token> ExtractRelativeDurationDate(string text, List<Token> tokens, DateObject reference)
         {
             var ret = new List<Token>();
+            var tempTokens = new List<Token>(tokens);
             var durationEr = Config.DurationExtractor.Extract(text, reference);
 
             foreach (var er in durationEr)
@@ -561,14 +573,24 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     ret.AddRange(AgoLaterUtil.ExtractorDurationWithBeforeAndAfter(text, er, ret, Config.UtilityConfiguration));
 
+                    // Take into account also holiday dates
+                    if (ret.Count < 1)
+                    {
+                        var holidayEr = Config.HolidayExtractor.Extract(text, reference);
+                        foreach (var holiday in holidayEr)
+                        {
+                            tempTokens.Add(new Token((int)holiday.Start, (int)(holiday.Start + holiday.Length)));
+                        }
+                    }
+
                     // Check for combined patterns Duration + Date, e.g. '3 days before Monday', '4 weeks after January 15th'
-                    if (ret.Count < 1 && tokens.Count > 0 && er.Text != match.Value)
+                    if (ret.Count < 1 && tempTokens.Count > 0 && er.Text != match.Value)
                     {
                         var afterStr = text.Substring((int)er.Start + (int)er.Length);
                         var connector = Config.BeforeAfterRegex.MatchBegin(afterStr, trim: true);
                         if (connector.Success)
                         {
-                            foreach (var token in tokens)
+                            foreach (var token in tempTokens)
                             {
                                 var start = (int)er.Start + (int)er.Length + connector.Index + connector.Length;
                                 var length = token.Start - start;

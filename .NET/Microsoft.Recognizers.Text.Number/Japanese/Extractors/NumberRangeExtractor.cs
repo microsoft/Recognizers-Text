@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Japanese;
@@ -11,8 +14,8 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         public NumberRangeExtractor(INumberOptionsConfiguration config)
-            : base(new NumberExtractor(),
-                   new OrdinalExtractor(),
+            : base(new NumberExtractor(new BaseNumberOptionsConfiguration(config)),
+                   new OrdinalExtractor(new BaseNumberOptionsConfiguration(config)),
                    new BaseCJKNumberParser(new JapaneseNumberParserConfiguration(config)),
                    config)
         {

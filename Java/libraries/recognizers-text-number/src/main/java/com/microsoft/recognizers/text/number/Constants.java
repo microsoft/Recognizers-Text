@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 package com.microsoft.recognizers.text.number;
 
 public class Constants {
@@ -18,4 +21,9 @@ public class Constants {
 
     // NARROW NO-BREAK SPACE
     public static final char NO_BREAK_SPACE = '\u202f';
+
+    // Ordinal.relative attribute values
+    public static final String RELATIVE_START = "start";
+    public static final String RELATIVE_END = "end";
+    public static final String RELATIVE_CURRENT = "current";
 }

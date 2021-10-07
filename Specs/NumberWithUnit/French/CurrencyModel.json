@@ -1366,6 +1366,7 @@
   },
   {
     "Input": "Rolling Stone a noté, harpercollins a acquis le projet de livre pour 3 millions $ en 2008.",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "3 millions $",
@@ -1376,16 +1377,6 @@
         },
         "Start": 69,
         "End": 80
-      },
-      {
-        "Text": "livre",
-        "TypeName": "currency",
-        "Resolution": {
-          "value": null,
-          "unit": "Livre"
-        },
-        "Start": 58,
-        "End": 62
       }
     ]
   },
@@ -1506,17 +1497,8 @@
   },
   {
     "Input": "Dollar: 143,80 yens, en haut 0. 95; 1. 8500 marques, en haut 0. 0085.",
+    "NotSupported": "java, javascript, python",
     "Results": [
-      {
-        "Text": "143,80 yens",
-        "TypeName": "currency",
-        "Resolution": {
-          "value": "143,8",
-          "unit": "Yen Japonais"
-        },
-        "Start": 8,
-        "End": 18
-      },
       {
         "Text": "dollar",
         "TypeName": "currency",
@@ -1526,6 +1508,16 @@
         },
         "Start": 0,
         "End": 5
+      },
+      {
+        "Text": "143,80 yens",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "143,8",
+          "unit": "Yen Japonais"
+        },
+        "Start": 8,
+        "End": 18
       }
     ]
   },
@@ -1561,6 +1553,100 @@
           "unit": "Euro",
           "value": "1000"
         }
+      }
+    ]
+  },
+  {
+    "Input": "100 roupies indiennes",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "100 roupies indiennes",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100",
+          "unit": "Roupie indienne"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1000 roupies",
+    "NotSupportedByDesign": "python",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "1000 roupies",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "1000",
+          "unit": "Roupie"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ça ne coûte que 15 dollars et 15 cents.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "15 dollars et 15 cents",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "15,15",
+          "unit": "Dollar"
+        },
+        "Start": 16,
+        "End": 37
+      }
+    ]
+  },
+  {
+    "Input": "ça ne coûte que treize euros et quarante-cinq cents.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "treize euros et quarante-cinq cents",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "13,45",
+          "unit": "Euro"
+        },
+        "Start": 16,
+        "End": 50
+      }
+    ]
+  },
+  {
+    "Input": "ça ne coûte que 15 dollars et 15.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "15 dollars et 15",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "15,15",
+          "unit": "Dollar"
+        },
+        "Start": 16,
+        "End": 31
+      }
+    ]
+  },
+  {
+    "Input": "ça ne coûte que 15 dollars 50.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "15 dollars 50",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "15,5",
+          "unit": "Dollar"
+        },
+        "Start": 16,
+        "End": 28
       }
     ]
   }

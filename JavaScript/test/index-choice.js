@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 var describe = require('ava-spec').describe;
 var SpecRunner = require('./runner');
 var specs = require('./specs');

@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -143,6 +146,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             NumberParser = new BaseNumberParser(new DutchNumberParserConfiguration(numConfig));
 
             DurationExtractor = new BaseDurationExtractor(new DutchDurationExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new DutchHolidayExtractorConfiguration(this));
             UtilityConfiguration = new DutchDatetimeUtilityConfiguration();
 
             ImplicitDateList = new List<Regex>
@@ -239,6 +243,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public IParser NumberParser { get; }
 
         public IDateTimeExtractor DurationExtractor { get; }
+
+        public IDateTimeExtractor HolidayExtractor { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 

@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 from recognizers_number import CultureInfo
 from recognizers_sequence import *
 from recognizers_sequence.sequence.extractors import *

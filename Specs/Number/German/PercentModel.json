@@ -1,7 +1,7 @@
 [
   {
     "Input": "100%",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "100%",
@@ -16,7 +16,7 @@
   },
   {
     "Input": " 100% ",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "100%",
@@ -31,7 +31,7 @@
   },
   {
     "Input": " 100 Prozent",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "100 prozent",
@@ -46,7 +46,7 @@
   },
   {
     "Input": "240 Prozent",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "240 prozent",
@@ -61,7 +61,7 @@
   },
   {
     "Input": "zwanzig Prozent",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "zwanzig prozent",
@@ -76,7 +76,7 @@
   },
   {
     "Input": "dreißig Prozent",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "dreißig prozent",
@@ -91,7 +91,7 @@
   },
   {
     "Input": "einhundert Prozent",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "einhundert prozent",
@@ -106,7 +106,7 @@
   },
   {
     "Input": "10 Prozent",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "10 prozent",
@@ -121,7 +121,7 @@
   },
   {
     "Input": "siebenunddreißig Prozent",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "siebenunddreißig prozent",
@@ -136,7 +136,7 @@
   },
   {
     "Input": "einhundertneunundneunzig Prozent",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "einhundertneunundneunzig prozent",
@@ -151,7 +151,7 @@
   },
   {
     "Input": "Wenn er nicht einhundert Prozent gibt, wird er damit nicht mehr rechtzeitig fertig",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "einhundert prozent",
@@ -166,7 +166,7 @@
   },
   {
     "Input": "Der Umsatz sank in der zweiten Jahreshälfte um 27% auf 300 000 GBP",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "27%",
@@ -181,17 +181,17 @@
   },
   {
     "Input": "Sie können zu http://proquest.umi.com/pqdweb?RQT=305&SQ=issn%280024%2D9114%29%20and%20%28ti%28Using%203D%20CAD%20to%20design%20a%20dog%29%20or%20startpage%28158%29%29%20and%20volume%2872%29%20and%20issue%289%29%20and%20pdn%28%3E01%2F01%2F2000%20AND%20%3C12%2F31%2F2000%29&clientId=17859 für mehr Details gehen",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": []
   },
   {
     "Input": "Sie können zu https://www.test.com/search?q=30%25%2020% für mehr Details gehen",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": []
   },
   {
     "Input": "Diese 15 Prozentpunkte stellen den stärksten Rückgang in diesem Jahr dar.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "15 prozentpunkte",

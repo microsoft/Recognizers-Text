@@ -141,5 +141,142 @@
         "Length": 14
       }
     ]
+  },
+  {
+    "Input": "J'y retournerai à Noël",
+    "NotSupported":"dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "Noël",
+        "Type": "date",
+        "Start": 16,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "J'y retournerai le jour de Noël",
+    "NotSupported":"dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "jour de Noël",
+        "Type": "date",
+        "Start": 16,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "J'y retournerai le 1er janvier",
+    "NotSupported":"dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1er janvier",
+        "Type": "date",
+        "Start": 16,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "J'y retournerai sur le jour de l'action de grâce",
+    "NotSupported":"dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "jour de l'action de grâce",
+        "Type": "date",
+        "Start": 16,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "J'y retournerai à la fête des pères",
+    "NotSupported":"dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "fête des pères",
+        "Type": "date",
+        "Start": 16,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "J'y retournerai le 1er janvier de cette année",
+    "NotSupported":"dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1er janvier de cette année",
+        "Type": "date",
+        "Start": 16,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "J'y retournerai le 1er janvier de 2016",
+    "NotSupported":"dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1er janvier de 2016",
+        "Type": "date",
+        "Start": 16,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "J'y retournerai le 1er janvier en 2016",
+    "NotSupported":"dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "1er janvier en 2016",
+        "Type": "date",
+        "Start": 16,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "J'y retournerai à lundi pur",
+    "NotSupported":"dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "lundi pur",
+        "Type": "date",
+        "Start": 16,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Le jour de Martin Luther King est une fête fédérale américaine.",
+    "NotSupported":"dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "jour de Martin Luther King",
+        "Type": "date",
+        "Start": 0,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Le jour de MLK est une fête fédérale américaine.",
+    "NotSupported":"dotnet, javascript, python, java",
+    "Results": [
+      {
+        "Text": "jour de MLK",
+        "Type": "date",
+        "Start": 0,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Martin Luther King possède une fête sous son nom",
+    "NotSupported":"dotnet, javascript, python, java",
+    "Results": []
   }
 ]

@@ -4,7 +4,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2744475+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -29,7 +28,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2754476+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -54,7 +52,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2779449+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -79,7 +76,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2794445+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -104,7 +100,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2829445+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -129,7 +124,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2844439+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -154,11 +148,10 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2909444+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "elke twee dagen ",
+        "Text": "elke twee dagen",
         "Type": "set",
         "Value": {
           "Timex": "P2D",
@@ -170,7 +163,7 @@
           }
         },
         "Start": 7,
-        "Length": 16
+        "Length": 15
       }
     ]
   },
@@ -179,7 +172,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2959472+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -204,19 +196,18 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2989494+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "15.00 elke dag",
         "Type": "set",
         "Value": {
-          "Timex": "T15",
+          "Timex": "T15:00",
           "FutureResolution": {
-            "set": "Set: T15"
+            "set": "Set: T15:00"
           },
           "PastResolution": {
-            "set": "Set: T15"
+            "set": "Set: T15:00"
           }
         },
         "Start": 7,
@@ -229,19 +220,18 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3039501+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "15.00 iedere dag",
         "Type": "set",
         "Value": {
-          "Timex": "T15",
+          "Timex": "T15:00",
           "FutureResolution": {
-            "set": "Set: T15"
+            "set": "Set: T15:00"
           },
           "PastResolution": {
-            "set": "Set: T15"
+            "set": "Set: T15:00"
           }
         },
         "Start": 7,
@@ -254,7 +244,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3109498+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -279,7 +268,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3259514+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -304,19 +292,18 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3379507+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "elke maandag 16.00",
         "Type": "set",
         "Value": {
-          "Timex": "XXXX-WXX-1T16",
+          "Timex": "XXXX-WXX-1T16:00",
           "FutureResolution": {
-            "set": "Set: XXXX-WXX-1T16"
+            "set": "Set: XXXX-WXX-1T16:00"
           },
           "PastResolution": {
-            "set": "Set: XXXX-WXX-1T16"
+            "set": "Set: XXXX-WXX-1T16:00"
           }
         },
         "Start": 7,
@@ -329,7 +316,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3429518+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -354,23 +340,22 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3609535+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "iedere ochtend om 9.00 ",
+        "Text": "iedere ochtend om 9.00",
         "Type": "set",
         "Value": {
-          "Timex": "T09",
+          "Timex": "T09:00",
           "FutureResolution": {
-            "set": "Set: T09"
+            "set": "Set: T09:00"
           },
           "PastResolution": {
-            "set": "Set: T09"
+            "set": "Set: T09:00"
           }
         },
         "Start": 7,
-        "Length": 23
+        "Length": 22
       }
     ]
   },
@@ -379,23 +364,22 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3730732+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "iedere middag  om 16.00 ",
+        "Text": "iedere middag  om 16.00",
         "Type": "set",
         "Value": {
-          "Timex": "T16",
+          "Timex": "T16:00",
           "FutureResolution": {
-            "set": "Set: T16"
+            "set": "Set: T16:00"
           },
           "PastResolution": {
-            "set": "Set: T16"
+            "set": "Set: T16:00"
           }
         },
         "Start": 7,
-        "Length": 24
+        "Length": 23
       }
     ]
   },
@@ -404,23 +388,22 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3840706+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "iedere avond om 21.00 ",
+        "Text": "iedere avond om 21.00",
         "Type": "set",
         "Value": {
-          "Timex": "T21",
+          "Timex": "T21:00",
           "FutureResolution": {
-            "set": "Set: T21"
+            "set": "Set: T21:00"
           },
           "PastResolution": {
-            "set": "Set: T21"
+            "set": "Set: T21:00"
           }
         },
         "Start": 7,
-        "Length": 22
+        "Length": 21
       }
     ]
   },
@@ -429,23 +412,22 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3930718+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "iedere avond om 21.00 ",
+        "Text": "iedere avond om 21.00",
         "Type": "set",
         "Value": {
-          "Timex": "T21",
+          "Timex": "T21:00",
           "FutureResolution": {
-            "set": "Set: T21"
+            "set": "Set: T21:00"
           },
           "PastResolution": {
-            "set": "Set: T21"
+            "set": "Set: T21:00"
           }
         },
         "Start": 7,
-        "Length": 22
+        "Length": 21
       }
     ]
   },
@@ -454,19 +436,18 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.4065719+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "ochtenden om 9.00",
         "Type": "set",
         "Value": {
-          "Timex": "T09",
+          "Timex": "T09:00",
           "FutureResolution": {
-            "set": "Set: T09"
+            "set": "Set: T09:00"
           },
           "PastResolution": {
-            "set": "Set: T09"
+            "set": "Set: T09:00"
           }
         },
         "Start": 7,
@@ -479,19 +460,18 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.4170727+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "op ochtenden om 9.00",
         "Type": "set",
         "Value": {
-          "Timex": "T09",
+          "Timex": "T09:00",
           "FutureResolution": {
-            "set": "Set: T09"
+            "set": "Set: T09:00"
           },
           "PastResolution": {
-            "set": "Set: T09"
+            "set": "Set: T09:00"
           }
         },
         "Start": 7,
@@ -504,23 +484,22 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.4295727+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": " 9.00 iedere zondag ",
+        "Text": "9.00 iedere zondag",
         "Type": "set",
         "Value": {
-          "Timex": "XXXX-WXX-7T09",
+          "Timex": "XXXX-WXX-7T09:00",
           "FutureResolution": {
-            "set": "Set: XXXX-WXX-7T09"
+            "set": "Set: XXXX-WXX-7T09:00"
           },
           "PastResolution": {
-            "set": "Set: XXXX-WXX-7T09"
+            "set": "Set: XXXX-WXX-7T09:00"
           }
         },
-        "Start": 9,
-        "Length": 20
+        "Start": 10,
+        "Length": 18
       }
     ]
   },
@@ -529,23 +508,22 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.438575+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "9.00 op zondagen ",
+        "Text": "9.00 op zondagen",
         "Type": "set",
         "Value": {
-          "Timex": "XXXX-WXX-7T09",
+          "Timex": "XXXX-WXX-7T09:00",
           "FutureResolution": {
-            "set": "Set: XXXX-WXX-7T09"
+            "set": "Set: XXXX-WXX-7T09:00"
           },
           "PastResolution": {
-            "set": "Set: XXXX-WXX-7T09"
+            "set": "Set: XXXX-WXX-7T09:00"
           }
         },
         "Start": 10,
-        "Length": 17
+        "Length": 16
       }
     ]
   },
@@ -554,19 +532,18 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.4505726+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "zondagen 9.00",
         "Type": "set",
         "Value": {
-          "Timex": "XXXX-WXX-7T09",
+          "Timex": "XXXX-WXX-7T09:00",
           "FutureResolution": {
-            "set": "Set: XXXX-WXX-7T09"
+            "set": "Set: XXXX-WXX-7T09:00"
           },
           "PastResolution": {
-            "set": "Set: XXXX-WXX-7T09"
+            "set": "Set: XXXX-WXX-7T09:00"
           }
         },
         "Start": 7,
@@ -579,7 +556,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.4570731+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -604,7 +580,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.4635727+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -629,7 +604,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.4710739+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -654,7 +628,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -679,7 +652,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -701,6 +673,7 @@
   },
   {
     "Input": "Laten we vrijdag om de week afspreken",
+    "Comment": "The English counterpart is 'Every other Friday' and in Dutch the different structure (Friday every other week) prevents the case to be parsed.",
     "Context": {
       "ReferenceDateTime": "2019-11-25T17:00:00"
     },
@@ -729,7 +702,6 @@
     "Context": {
       "ReferenceDateTime": "2019-11-25T17:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -754,7 +726,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2794445+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -779,7 +750,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2829445+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -804,11 +774,10 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2909444+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "iedere twee dagen ",
+        "Text": "iedere twee dagen",
         "Type": "set",
         "Value": {
           "Timex": "P2D",
@@ -820,7 +789,7 @@
           }
         },
         "Start": 7,
-        "Length": 18
+        "Length": 17
       }
     ]
   },
@@ -829,19 +798,18 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2989494+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "15.00 iedere dag",
         "Type": "set",
         "Value": {
-          "Timex": "T15",
+          "Timex": "T15:00",
           "FutureResolution": {
-            "set": "Set: T15"
+            "set": "Set: T15:00"
           },
           "PastResolution": {
-            "set": "Set: T15"
+            "set": "Set: T15:00"
           }
         },
         "Start": 7,
@@ -854,19 +822,18 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3039501+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "15.00 elke dag",
         "Type": "set",
         "Value": {
-          "Timex": "T15",
+          "Timex": "T15:00",
           "FutureResolution": {
-            "set": "Set: T15"
+            "set": "Set: T15:00"
           },
           "PastResolution": {
-            "set": "Set: T15"
+            "set": "Set: T15:00"
           }
         },
         "Start": 7,
@@ -879,7 +846,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3109498+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -904,7 +870,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3259514+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -929,19 +894,18 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3379507+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "iedere maandag 16.00",
         "Type": "set",
         "Value": {
-          "Timex": "XXXX-WXX-1T16",
+          "Timex": "XXXX-WXX-1T16:00",
           "FutureResolution": {
-            "set": "Set: XXXX-WXX-1T16"
+            "set": "Set: XXXX-WXX-1T16:00"
           },
           "PastResolution": {
-            "set": "Set: XXXX-WXX-1T16"
+            "set": "Set: XXXX-WXX-1T16:00"
           }
         },
         "Start": 7,
@@ -954,7 +918,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3429518+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -979,23 +942,22 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3609535+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "elke ochtend om 9.00 ",
+        "Text": "elke ochtend om 9.00",
         "Type": "set",
         "Value": {
-          "Timex": "T09",
+          "Timex": "T09:00",
           "FutureResolution": {
-            "set": "Set: T09"
+            "set": "Set: T09:00"
           },
           "PastResolution": {
-            "set": "Set: T09"
+            "set": "Set: T09:00"
           }
         },
         "Start": 7,
-        "Length": 21
+        "Length": 20
       }
     ]
   },
@@ -1004,23 +966,22 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3730732+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "elke middag  om 16.00 ",
+        "Text": "elke middag  om 16.00",
         "Type": "set",
         "Value": {
-          "Timex": "T16",
+          "Timex": "T16:00",
           "FutureResolution": {
-            "set": "Set: T16"
+            "set": "Set: T16:00"
           },
           "PastResolution": {
-            "set": "Set: T16"
+            "set": "Set: T16:00"
           }
         },
         "Start": 7,
-        "Length": 22
+        "Length": 21
       }
     ]
   },
@@ -1029,23 +990,22 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3840706+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "elke avond om 21.00 ",
+        "Text": "elke avond om 21.00",
         "Type": "set",
         "Value": {
-          "Timex": "T21",
+          "Timex": "T21:00",
           "FutureResolution": {
-            "set": "Set: T21"
+            "set": "Set: T21:00"
           },
           "PastResolution": {
-            "set": "Set: T21"
+            "set": "Set: T21:00"
           }
         },
         "Start": 7,
-        "Length": 20
+        "Length": 19
       }
     ]
   },
@@ -1054,23 +1014,22 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3930718+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "elke avond om 21.00 ",
+        "Text": "elke avond om 21.00",
         "Type": "set",
         "Value": {
-          "Timex": "T21",
+          "Timex": "T21:00",
           "FutureResolution": {
-            "set": "Set: T21"
+            "set": "Set: T21:00"
           },
           "PastResolution": {
-            "set": "Set: T21"
+            "set": "Set: T21:00"
           }
         },
         "Start": 7,
-        "Length": 20
+        "Length": 19
       }
     ]
   },
@@ -1079,28 +1038,28 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.4295727+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": " 9.00 elke zondag ",
+        "Text": "9.00 elke zondag",
         "Type": "set",
         "Value": {
-          "Timex": "XXXX-WXX-7T09",
+          "Timex": "XXXX-WXX-7T09:00",
           "FutureResolution": {
-            "set": "Set: XXXX-WXX-7T09"
+            "set": "Set: XXXX-WXX-7T09:00"
           },
           "PastResolution": {
-            "set": "Set: XXXX-WXX-7T09"
+            "set": "Set: XXXX-WXX-7T09:00"
           }
         },
-        "Start": 9,
-        "Length": 18
+        "Start": 10,
+        "Length": 16
       }
     ]
   },
   {
     "Input": "Laten we vrijdag om de andere week afspreken",
+    "Comment": "The English counterpart is 'Every other Friday' and in Dutch the different structure (Friday every other week) prevents the case to be parsed.",
     "Context": {
       "ReferenceDateTime": "2019-11-25T17:00:00"
     },
@@ -1129,11 +1088,10 @@
     "Context": {
       "ReferenceDateTime": "2019-11-25T17:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": " kwartaal",
+        "Text": "kwartaal",
         "Type": "set",
         "Value": {
           "Timex": "P3M",
@@ -1144,8 +1102,56 @@
             "set": "Set: P3M"
           }
         },
-        "Start": 12,
-        "Length": 9
+        "Start": 13,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Lees de beste artikelen op het gebied van Contoso via onze wekelijkse nieuwsbrief!",
+    "Context": {
+      "ReferenceDateTime": "2019-11-25T17:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "wekelijkse",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1W",
+          "FutureResolution": {
+            "set": "Set: P1W"
+          },
+          "PastResolution": {
+            "set": "Set: P1W"
+          }
+        },
+        "Start": 59,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Laten we een driemaandelijkse vergadering houden.",
+    "Context": {
+      "ReferenceDateTime": "2019-11-25T17:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "driemaandelijkse",
+        "Type": "set",
+        "Value": {
+          "Timex": "P3M",
+          "FutureResolution": {
+            "set": "Set: P3M"
+          },
+          "PastResolution": {
+            "set": "Set: P3M"
+          }
+        },
+        "Start": 13,
+        "Length": 16
       }
     ]
   }

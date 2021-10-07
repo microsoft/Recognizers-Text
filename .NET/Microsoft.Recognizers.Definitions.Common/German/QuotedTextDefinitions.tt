@@ -1,0 +1,7 @@
+<#@ template debug="true" hostspecific="true" language="C#" #>
+<#
+	this.DataFilename = @"Patterns\German\German-QuotedText.yaml";
+	this.Language = "German";
+	this.ClassName = "QuotedTextDefinitions";
+#>
+<#@ include file="..\CommonDefinitions.ttinclude"#>

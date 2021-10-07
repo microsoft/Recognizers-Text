@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
@@ -73,7 +76,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
             var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
 
-            IntegerExtractor = Number.English.IntegerExtractor.GetInstance(numConfig);
+            IntegerExtractor = Number.Spanish.IntegerExtractor.GetInstance(numConfig);
 
             TimeZoneExtractor = new BaseTimeZoneExtractor(new SpanishTimeZoneExtractorConfiguration(this));
         }
@@ -141,7 +144,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                 {
                     if (timePeriodEr.Text.Equals(tomorrowStr, StringComparison.Ordinal))
                     {
-                        if (text.Substring(0, (int)timePeriodEr.Start + (int)timePeriodEr.Length).EndsWith(morningStr))
+                        if (text.Substring(0, (int)timePeriodEr.Start + (int)timePeriodEr.Length).EndsWith(morningStr, StringComparison.Ordinal))
                         {
                             timePeriodErsResult.Add(timePeriodEr);
                         }

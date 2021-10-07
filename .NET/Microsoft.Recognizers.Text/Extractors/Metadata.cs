@@ -1,4 +1,7 @@
-﻿namespace Microsoft.Recognizers.Text
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+namespace Microsoft.Recognizers.Text
 {
     public class Metadata
     {
@@ -23,6 +26,9 @@
         public string RelativeTo { get; set; } = string.Empty;
 
         public bool IsMealtime { get; set; } = false;
+
+        // For cases where a language has variations in handling decimal separators
+        public bool TreatAsInteger { get; set; } = false;
 
         public Metadata Clone()
         {

@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 from abc import ABC, abstractmethod
 from typing import List, Optional, Pattern, Dict, Match
 from datetime import datetime, timedelta
@@ -302,6 +305,20 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
                     sub_text = text[text.index(year_group) + len(year_group):].strip()
                     sub_text = self.trim_start_range_connector_symbols(sub_text)
                     is_valid_match = self.starts_with_basic_date(sub_text)
+
+            # Expressions with mixed separators are not considered valid dates e.g. "30/4.85" (unless one is a comma "30/4, 2016")
+            day_group = RegExpUtility.get_group(match, Constants.DAY_GROUP_NAME)
+            month_group = RegExpUtility.get_group(match, Constants.MONTH_GROUP_NAME)
+            if day_group and month_group:
+                no_date_text = match.group().replace(year_group, "").replace(month_group, "").replace(day_group, "")
+                separators = ["/", "\\", "-", "."]
+                separator_count = 0
+                for separator in separators:
+                    if separator in no_date_text:
+                        separator_count += 1
+                    if separator_count > 1:
+                        is_valid_match = False
+                        break
 
         return is_valid_match
 
@@ -956,16 +973,9 @@ class BaseDateParser(DateTimeParser):
         else:
             result.timex = DateTimeFormatUtil.luis_date(year, month, day)
 
-        future_date = DateUtils.safe_create_from_min_value(year, month, day)
-        past_date = DateUtils.safe_create_from_min_value(year, month, day)
-
-        if no_year and future_date < reference:
-            future_date = DateUtils.safe_create_from_min_value(
-                year + 1, month, day)
-
-        if no_year and past_date >= reference:
-            past_date = DateUtils.safe_create_from_min_value(
-                year - 1, month, day)
+        future_date, past_date = DateUtils.generate_dates(no_year, reference, year, month, day)
+        #future_date = DateUtils.safe_create_from_min_value(no_year, reference, year, month, day)
+        #past_date = DateUtils.safe_create_from_min_value(no_year, reference, year, month, day)
 
         result.future_value = future_date
         result.past_value = past_date

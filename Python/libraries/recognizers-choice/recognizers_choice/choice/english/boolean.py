@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 import regex
 from recognizers_choice.choice.extractors import BooleanExtractorConfiguration
 from recognizers_choice.resources.english_choice import EnglishChoice

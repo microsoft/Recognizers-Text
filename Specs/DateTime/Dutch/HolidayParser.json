@@ -931,7 +931,7 @@
           }
         },
         "Start": 36,
-        "Length": 19      
+        "Length": 19
       }
     ]
   },
@@ -1213,16 +1213,103 @@
         "Text": "Ramadan",
         "Type": "date",
         "Value": {
-          "timex": "XXXX-05-23",
+          "timex": "XXXX-04-23",
           "FutureResolution": {
-            "date": "2021-05-12"
+            "date": "2021-04-12"
           },
           "PastResolution": {
-            "date": "2020-05-23"
+            "date": "2020-04-23"
           }
         },
         "Start": 0,
         "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Het Suikerfeest is een islamitische feestdag waarop het einde van de vastenmaand ramadan gevierd wordt.",
+    "Context": {
+      "ReferenceDateTime": "2021-06-09T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Suikerfeest",
+        "Type": "date",
+        "Value": {
+          "timex": "XXXX-05-12",
+          "FutureResolution": {
+            "date": "2022-05-02"
+          },
+          "PastResolution": {
+            "date": "2021-05-12"
+          }
+        },
+        "Start": 4,
+        "Length": 11
+      },
+      {
+        "Text": "ramadan",
+        "Type": "date",
+        "Value": {
+          "timex": "XXXX-04-12",
+          "FutureResolution": {
+            "date": "2022-04-02"
+          },
+          "PastResolution": {
+            "date": "2021-04-12"
+          }
+        },
+        "Start": 81,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Het offerfeest vindt altijd plaats op tiende dag van de laatste maand van de islamitische kalender.",
+    "Context": {
+      "ReferenceDateTime": "2021-06-09T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "offerfeest",
+        "Type": "date",
+        "Value": {
+          "timex": "XXXX-07-19",
+          "FutureResolution": {
+            "date": "2021-07-19"
+          },
+          "PastResolution": {
+            "date": "2020-07-30"
+          }
+        },
+        "Start": 4,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Het Islamitisch Nieuwjaar is de eerste dag van het nieuwe jaar volgens de islamitische kalender. Het is de eerste dag van de muharram, de eerste maand van het jaar.",
+    "Context": {
+      "ReferenceDateTime": "2021-06-09T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "Islamitisch Nieuwjaar",
+        "Type": "date",
+        "Value": {
+          "timex": "XXXX-08-09",
+          "FutureResolution": {
+            "date": "2021-08-09"
+          },
+          "PastResolution": {
+            "date": "2020-08-19"
+          }
+        },
+        "Start": 4,
+        "Length": 21
       }
     ]
   }

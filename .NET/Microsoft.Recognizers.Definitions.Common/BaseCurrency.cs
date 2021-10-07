@@ -190,7 +190,8 @@ namespace Microsoft.Recognizers.Definitions
             { @"UYU", @"CENTESIMO" },
             { @"VEF", @"CENTIMO" },
             { @"YER", @"FILS" },
-            { @"ZMW", @"NGWEE" }
+            { @"ZMW", @"NGWEE" },
+            { @"_XBT", @"MILLIBITCOIN|SATOSHI" }
         };
       public static readonly Dictionary<string, long> CurrencyFractionalRatios = new Dictionary<string, long>
         {
@@ -269,7 +270,9 @@ namespace Microsoft.Recognizers.Definitions
             { @"Ngwee", 100 },
             { @"Kwartje", 4 },
             { @"Dubbeltje", 10 },
-            { @"Stuiver", 20 }
+            { @"Stuiver", 20 },
+            { @"Millibitcoin", 1000 },
+            { @"Satoshi", 100000000 }
         };
       public static readonly Dictionary<string, long> NonStandardFractionalSubunits = new Dictionary<string, long>
         {
@@ -279,7 +282,8 @@ namespace Microsoft.Recognizers.Definitions
             { @"OMR", 1000 },
             { @"YDD", 1000 },
             { @"TND", 1000 },
-            { @"MRO", 5 }
+            { @"MRO", 5 },
+            { @"_XBT", 1000 }
         };
     }
 }

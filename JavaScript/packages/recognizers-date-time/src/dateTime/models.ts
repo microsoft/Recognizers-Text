@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { IModel, ModelResult, IExtractor, ParseResult, QueryProcessor } from "@microsoft/recognizers-text";
 import { IDateTimeParser, DateTimeParseResult } from "./parsers";
 import { IDateTimeExtractor } from "./baseDateTime";

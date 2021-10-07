@@ -1,4 +1,7 @@
-﻿namespace Microsoft.Recognizers.Text.DateTime.English
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+namespace Microsoft.Recognizers.Text.DateTime.English
 {
     public class EnglishDateTimeAltParserConfiguration : IDateTimeAltParserConfiguration
     {

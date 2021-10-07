@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -9,9 +12,11 @@ namespace Microsoft.Recognizers.Text.Number
     public class BaseNumberParser : IParser
     {
         private static readonly Regex LongFormRegex =
-            new Regex(@"\d+", RegexOptions.Singleline);
+            new Regex(@"\d+", RegexOptions.Singleline | RegexOptions.Compiled);
 
         private readonly bool isMultiDecimalSeparatorCulture = false;
+
+        private readonly bool isNonStandardSeparatorVariant = false;
 
         private readonly bool isCompoundNumberLanguage = false;
 
@@ -29,6 +34,8 @@ namespace Microsoft.Recognizers.Text.Number
             {
                 RoundNumberSet.Add(roundNumber);
             }
+
+            isNonStandardSeparatorVariant = Config.NonStandardSeparatorVariants.Contains(Config.CultureInfo.Name.ToLowerInvariant());
         }
 
         internal IEnumerable<string> SupportedTypes { get; set; }
@@ -131,6 +138,7 @@ namespace Microsoft.Recognizers.Text.Number
             }
             else if (ret?.Value != null)
             {
+
                 if (isNegative)
                 {
                     // Recover the original extracted Text
@@ -168,7 +176,7 @@ namespace Microsoft.Recognizers.Text.Number
 
             if (ret != null)
             {
-                ret.Type = DetermineType(extResult);
+                ret.Type = DetermineType(extResult, ret);
                 ret.Text = ret.Text.ToLowerInvariant();
             }
 
@@ -193,7 +201,7 @@ namespace Microsoft.Recognizers.Text.Number
             var calStack = new Queue<double>();
 
             double scale = 10;
-            var dot = false;
+            var decimalSeparatorFound = false;
             var isNegative = false;
             double tmp = 0;
             for (var i = 0; i < handle.Length; i++)
@@ -212,14 +220,14 @@ namespace Microsoft.Recognizers.Text.Number
 
                     tmp = 0;
                     scale = 10;
-                    dot = false;
+                    decimalSeparatorFound = false;
                     isNegative = false;
                 }
                 else if (ch >= '0' && ch <= '9')
                 {
-                    if (dot)
+                    if (decimalSeparatorFound)
                     {
-                        tmp = tmp + (scale * (ch - '0'));
+                        tmp += scale * (ch - '0');
                         scale *= 0.1;
                     }
                     else
@@ -229,7 +237,7 @@ namespace Microsoft.Recognizers.Text.Number
                 }
                 else if (ch == Config.DecimalSeparatorChar)
                 {
-                    dot = true;
+                    decimalSeparatorFound = true;
                     scale = 0.1;
                 }
                 else if (ch == '-')
@@ -352,12 +360,12 @@ namespace Microsoft.Recognizers.Text.Number
                 var denominator = match.Groups["denominator"].Value;
 
                 var smallValue = char.IsDigit(numerator[0]) ?
-                    GetDigitalValue(numerator, 1) :
-                    GetIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, numerator));
+                                 GetDigitalValue(numerator, 1) :
+                                 GetIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, numerator));
 
                 var bigValue = char.IsDigit(denominator[0]) ?
-                    GetDigitalValue(denominator, 1) :
-                    GetIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, denominator));
+                               GetDigitalValue(denominator, 1) :
+                               GetIntValue(Utilities.RegExpUtility.GetMatches(this.TextNumberRegex, denominator));
 
                 result.Value = smallValue / bigValue;
             }
@@ -516,7 +524,7 @@ namespace Microsoft.Recognizers.Text.Number
                 Length = extResult.Length,
                 Text = extResult.Text,
                 Type = extResult.Type,
-                Metadata = extResult.Metadata,
+                Metadata = extResult.Metadata != null ? extResult.Metadata : new Metadata(),
             };
 
             // [1] 24
@@ -551,7 +559,9 @@ namespace Microsoft.Recognizers.Text.Number
             }
 
             // Scale used in calculating double
-            result.Value = GetDigitalValue(extText, power);
+            var value = GetDigitalValue(extText, power);
+            result.Value = value;
+            result.Metadata.TreatAsInteger = (value % 1) == 0;
 
             return result;
         }
@@ -560,15 +570,69 @@ namespace Microsoft.Recognizers.Text.Number
         {
             double temp = 0;
             double scale = 10;
-            var decimalSeparator = false;
-            var strLength = digitsStr.Length;
+            var hasDecimalSeparator = false;
             var isNegative = false;
+
+            var strLength = digitsStr.Length;
             var isFrac = digitsStr.Contains('/');
 
-            // Try to parse vulgar fraction chars
-            if (digitsStr.Length == 1 && !char.IsDigit(digitsStr.ToCharArray()[0]))
+            // As some languages use different separators depending on variant, some pre-processing is required to allow for unified processing.
+
+            // Default separators from general language config
+            var decimalSeparator = Config.DecimalSeparatorChar;
+            var nonDecimalSeparator = Config.NonDecimalSeparatorChar;
+
+            var lastDecimalSeparator = -1;
+            var lastNonDecimalSeparator = -1;
+            var firstNonDecimalSeparator = int.MaxValue;
+            var hasSingleSeparator = false;
+
+            if (Config.IsMultiDecimalSeparatorCulture)
             {
-                double fracResult = char.GetNumericValue(digitsStr.ToCharArray()[0]);
+
+                if (isNonStandardSeparatorVariant)
+                {
+                    // Reverse separators
+                    decimalSeparator = Config.NonDecimalSeparatorChar;
+                    nonDecimalSeparator = Config.DecimalSeparatorChar;
+                }
+
+                for (int i = 0; i < strLength; i++)
+                {
+                    var ch = digitsStr[i];
+                    if (ch == decimalSeparator)
+                    {
+                        lastDecimalSeparator = i;
+                    }
+                    else if (ch == nonDecimalSeparator)
+                    {
+                        lastNonDecimalSeparator = i;
+                        if (firstNonDecimalSeparator == int.MaxValue)
+                        {
+                            firstNonDecimalSeparator = i;
+                        }
+                    }
+                }
+
+                if (((lastDecimalSeparator < 0 && lastNonDecimalSeparator >= 0) || (lastNonDecimalSeparator < 0 && lastDecimalSeparator >= 0)) &&
+                    firstNonDecimalSeparator == lastNonDecimalSeparator)
+                {
+                    hasSingleSeparator = true;
+                }
+                else if ((lastDecimalSeparator < lastNonDecimalSeparator) && !(lastDecimalSeparator == -1 || lastNonDecimalSeparator == -1))
+                {
+                    // Switch separators
+                    var aux = decimalSeparator;
+                    decimalSeparator = nonDecimalSeparator;
+                    nonDecimalSeparator = aux;
+                }
+
+            }
+
+            // Try to parse vulgar fraction chars
+            if (!isFrac && strLength == 1 && !char.IsDigit(digitsStr[0]))
+            {
+                double fracResult = char.GetNumericValue(digitsStr, 0);
 
                 if (fracResult != -1.0)
                 {
@@ -578,10 +642,13 @@ namespace Microsoft.Recognizers.Text.Number
 
             var calStack = new Stack<double>();
 
-            for (var i = 0; i < digitsStr.Length; i++)
+            for (var i = 0; i < strLength; i++)
             {
                 var ch = digitsStr[i];
-                var skippableNonDecimal = SkipNonDecimalSeparator(ch, strLength - i);
+                var prevCh = (i > 0) ? digitsStr[i - 1] : '\0';
+
+                var skippableNonDecimal = SkipNonDecimalSeparator(ch, strLength - i, i, hasSingleSeparator, prevCh, nonDecimalSeparator);
+
                 if (!isFrac && (ch == ' ' || ch == Constants.NO_BREAK_SPACE || skippableNonDecimal))
                 {
                     continue;
@@ -594,9 +661,9 @@ namespace Microsoft.Recognizers.Text.Number
                 }
                 else if (ch >= '0' && ch <= '9')
                 {
-                    if (decimalSeparator)
+                    if (hasDecimalSeparator)
                     {
-                        temp = temp + (scale * (ch - '0'));
+                        temp += scale * (ch - '0');
                         scale *= 0.1;
                     }
                     else
@@ -604,9 +671,9 @@ namespace Microsoft.Recognizers.Text.Number
                         temp = (temp * scale) + (ch - '0');
                     }
                 }
-                else if (ch == Config.DecimalSeparatorChar || (!skippableNonDecimal && ch == Config.NonDecimalSeparatorChar))
+                else if (ch == decimalSeparator || (!skippableNonDecimal && ch == nonDecimalSeparator))
                 {
-                    decimalSeparator = true;
+                    hasDecimalSeparator = true;
                     scale = 0.1;
                 }
                 else if (ch == '-')
@@ -718,7 +785,7 @@ namespace Microsoft.Recognizers.Text.Number
                                     // e.g. three hundredth
                                     while (tempStack.Any())
                                     {
-                                        intPart = intPart + tempStack.Pop();
+                                        intPart += tempStack.Pop();
                                     }
 
                                     tempStack.Push(intPart * fracPart);
@@ -736,14 +803,14 @@ namespace Microsoft.Recognizers.Text.Number
                                 var sum = tempStack.Pop() + matchValue;
                                 tempStack.Push(sum);
                             }
-                            else if (oldSym.Equals(Config.WrittenIntegerSeparatorTexts.First(), StringComparison.Ordinal) || tempStack.Count() < 2)
+                            else if (oldSym.Equals(Config.WrittenIntegerSeparatorTexts.First(), StringComparison.Ordinal) || tempStack.Count < 2)
                             {
                                 tempStack.Push(matchValue);
                             }
-                            else if (tempStack.Count() >= 2)
+                            else if (tempStack.Count >= 2)
                             {
                                 var sum = tempStack.Pop() + matchValue;
-                                sum = tempStack.Pop() + sum;
+                                sum += tempStack.Pop();
                                 tempStack.Push(sum);
                             }
                         }
@@ -770,6 +837,7 @@ namespace Microsoft.Recognizers.Text.Number
                 var lastIndex = 0;
                 double mulValue = 1;
                 double partValue = 1;
+
                 for (var i = 0; i < isEnd.Length; i++)
                 {
                     if (isEnd[i])
@@ -806,7 +874,7 @@ namespace Microsoft.Recognizers.Text.Number
             return string.Join("|", sortKeys);
         }
 
-        protected static string DetermineType(ExtractResult er)
+        protected static string DetermineType(ExtractResult er, ParseResult pr)
         {
             if (!string.IsNullOrEmpty(er.Type) && er.Type.Contains(Constants.MODEL_ORDINAL))
             {
@@ -828,11 +896,11 @@ namespace Microsoft.Recognizers.Text.Number
                 }
                 else if (data.StartsWith(Constants.INTEGER_PREFIX, StringComparison.Ordinal))
                 {
-                    subType = Constants.INTEGER;
+                    subType = (pr.Metadata == null || pr.Metadata.TreatAsInteger) ? Constants.INTEGER : Constants.DECIMAL;
                 }
                 else if (data.StartsWith(Constants.DOUBLE_PREFIX, StringComparison.Ordinal))
                 {
-                    subType = Constants.DECIMAL;
+                    subType = (pr.Metadata == null || !pr.Metadata.TreatAsInteger) ? Constants.DECIMAL : Constants.INTEGER;
                 }
             }
 
@@ -842,12 +910,13 @@ namespace Microsoft.Recognizers.Text.Number
         protected static bool IsMergeable(double former, double later)
         {
             // The former number is an order of magnitude larger than the later number, and they must be integers
-            return Math.Abs(former % 1) < double.Epsilon && Math.Abs(later % 1) < double.Epsilon &&
-                   former > later && former.ToString("G15", CultureInfo.InvariantCulture).Length > later.ToString("G15", CultureInfo.InvariantCulture).Length && later > 0;
+            return Math.Abs(former % 1) < double.Epsilon && Math.Abs(later % 1) < double.Epsilon && former > later &&
+                   former.ToString("G15", CultureInfo.InvariantCulture).Length > later.ToString("G15", CultureInfo.InvariantCulture).Length &&
+                   later > 0;
         }
 
         // Test if big and combine with small.
-        // e.g. "hundred" can combine with "thirty" but "twenty" can't combine with "thirty".
+        // e.g. "hundred" can combine with "thirty" but "twenty" can't be combined with "thirty".
         protected static bool IsComposable(long big, long small)
         {
             var baseNumber = small > 10 ? 100 : 10;
@@ -870,11 +939,27 @@ namespace Microsoft.Recognizers.Text.Number
         // Special cases for multi-language countries where decimal separators can be used interchangeably. Mostly informally.
         // Ex: South Africa, Namibia; Puerto Rico in ES; or in Canada for EN and FR.
         // "me pidio $5.00 prestados" and "me pidio $5,00 prestados" -> currency $5
-        protected bool SkipNonDecimalSeparator(char ch, int distance)
+        // "1.000" can be ambiguous and should return "1000" by default
+        // If only one separator and not three digits to the right, interpret as decimal separator
+        // "100.00" = "100,00" -> "100"
+        protected bool SkipNonDecimalSeparator(char ch, int distanceEnd, int distanceStart, bool hasSingleSeparator, char prevCh, char nonDecimalSeparator)
         {
-            const int decimalLength = 3;
+            bool result = false;
 
-            return ch == Config.NonDecimalSeparatorChar && !(distance <= decimalLength && isMultiDecimalSeparatorCulture);
+            const int decimalLength = 1 + 3;
+
+            if (ch == nonDecimalSeparator)
+            {
+                result = true;
+
+                if (isMultiDecimalSeparatorCulture && hasSingleSeparator &&
+                    (distanceEnd != decimalLength || (prevCh == '0' && distanceStart == 1) || distanceStart > 3))
+                {
+                    result = false;
+                }
+            }
+
+            return result;
         }
 
         protected double GetPointValue(List<string> matchStrs)
@@ -884,9 +969,8 @@ namespace Microsoft.Recognizers.Text.Number
 
             if (Config.CardinalNumberMap.ContainsKey(firstMatch) && Config.CardinalNumberMap[firstMatch] >= 10)
             {
-                var prefix = "0.";
                 var tempInt = GetIntValue(matchStrs);
-                var all = prefix + tempInt;
+                var all = $"0.{tempInt}";
                 ret = double.Parse(all, CultureInfo.InvariantCulture);
             }
             else
@@ -921,7 +1005,8 @@ namespace Microsoft.Recognizers.Text.Number
 
             string textNumberPattern;
 
-            // Checks for languages that use "compound numbers". I.e. written number parts are not separated by whitespaces or special characters (e.g., dreihundert in German).
+            // Checks for languages that use "compound numbers". I.e. written number parts are not separated by whitespaces or
+            // special characters (e.g., dreihundert in German).
             if (isCompoundNumberLanguage)
             {
                 textNumberPattern = @"(" + singleIntFrac + @")";

@@ -1,4 +1,7 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 
 using Microsoft.Recognizers.Definitions;
@@ -59,6 +62,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string Comment_WeekOf = "WeekOf";
         public const string Comment_MonthOf = "MonthOf";
 
+        // Tag to mark cases where the specifc resolution timex depends on future or past values.
+        public const string Comment_DoubleTimex = "DoubleTimex";
+
         // MOD Value
         // "before" -> To mean "preceding in time". I.e. Does not include the extracted datetime entity in the resolution's ending point. Equivalent to "<"
         public const string BEFORE_MOD = "before";
@@ -107,20 +113,60 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const int MaxMonth = 12;
         public const int MinMonth = 1;
 
-        // hours of one half day
+        // Day start hour
+        public const int DayHourStart = 0;
+
+        // Hours in a day
+        public const int DayHourCount = 24;
+
+        // Hours in a half day
         public const int HalfDayHourCount = 12;
 
-        // hours of one quarter day
+        // Hours in a quarter of a day
         public const int QuarterDayHourCount = 6;
 
-        // hours of a half mid-day-duration
+        // Hours is a half mid-day-duration
         public const int HalfMidDayDurationHourCount = 2;
 
-        // the length of four digits year, e.g., 2018
+        // Char length of four digits year, e.g., 2018
         public const int FourDigitsYearLength = 4;
 
+        // Default boundaries for time of day resolution
+        public const int EarlyMorningBeginHour = 4;
+        public const int EarlyMorningEndHour = 8;
+        public const int MorningBeginHour = 8;
+        public const int MorningEndHour = 12;
+        public const int MidDayBeginHour = 11;
+        public const int MidDayEndHour = 13;
+        public const int AfternoonBeginHour = 12;
+        public const int AfternoonEndHour = 16;
+        public const int EveningBeginHour = 16;
+        public const int EveningEndHour = 20;
+        public const int DaytimeBeginHour = 8;
+        public const int DaytimeEndHour = 18;
+        public const int NighttimeBeginHour = 0;
+        public const int NighttimeEndHour = 8;
+        public const int BusinessBeginHour = 8;
+        public const int BusinessEndHour = 18;
+        public const int NightBeginHour = 20;
+        public const int NightEndHour = 23;
+        public const int NightEndMin = 59;
+        public const int MealtimeBreakfastBeginHour = 8;
+        public const int MealtimeBreakfastEndHour = 12;
+        public const int MealtimeBrunchBeginHour = 8;
+        public const int MealtimeBrunchEndHour = 12;
+        public const int MealtimeLunchBeginHour = 11;
+        public const int MealtimeLunchEndHour = 13;
+        public const int MealtimeDinnerBeginHour = 16;
+        public const int MealtimeDinnerEndHour = 20;
+
+        // Default period range modifier deltas
+        public const int EARLY_LATE_TIME_DELTA = 2;
+
+        // Constants specifying the priority of interpreting month and day order
         public const string DefaultLanguageFallback_MDY = "MDY";
         public const string DefaultLanguageFallback_DMY = "DMY";
+        public const string DefaultLanguageFallback_YMD = "YMD"; // ZH
 
         // Groups' names for named groups in regexes
         public const string NextGroupName = "next";
@@ -140,6 +186,10 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string LeftAmPmGroupName = "leftDesc";
         public const string RightAmPmGroupName = "rightDesc";
         public const string MealTimeGroupName = "mealTime";
+        public const string NegativeGroupName = "neg";
+        public const string YearCJKGroupName = "yearCJK";
+        public const string PluralUnit = "plural";
+        public const string AmbiguousPattern = "ambiguous";
 
         // Include the date mentioned, to make "before" -> "until" or "after" -> "since". Such as "on or earlier than 1/1/2016".
         public const string IncludeGroupName = "include";
@@ -154,6 +204,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string TimexMonth = "M";
         public const string TimexMonthFull = "MON";
         public const string TimexWeek = "W";
+        public const string TimexFortnight = "W"; // Unit calculation comes from code
         public const string TimexDay = "D";
         public const string TimexBusinessDay = "BD";
         public const string TimexWeekend = "WE";
@@ -177,12 +228,17 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string Afternoon = "TAF";
         public const string Evening = "TEV";
         public const string Daytime = "TDT";
+        public const string Nighttime = "TNT";
         public const string Night = "TNI";
         public const string BusinessHour = "TBH";
         public const string MealtimeBreakfast = "TMEB";
         public const string MealtimeBrunch = "TMER";
         public const string MealtimeLunch = "TMEL";
         public const string MealtimeDinner = "TMED";
+
+        public const string InvalidDateString = "0001-01-01";
+
+        public const char CompositeTimexDelimiter = '|';
 
         // Invalid year
         public const int InvalidYear = int.MinValue;
@@ -202,6 +258,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         public static readonly int MaxTwoDigitYearFutureNum = int.Parse(BaseDateTime.MaxTwoDigitYearFutureNum, CultureInfo.InvariantCulture);
         public static readonly int MinTwoDigitYearPastNum = int.Parse(BaseDateTime.MinTwoDigitYearPastNum, CultureInfo.InvariantCulture);
         public static readonly System.DateTime InvalidDate = default(System.DateTime);
+        public static readonly int BASE_YEAR_PAST_CENTURY = 1900;
+        public static readonly int BASE_YEAR_CURRENT_CENTURY = 2000;
 
         // Timex non-constant
         public static readonly string[] DatePeriodTimexSplitter = { ",", "(", ")" };

@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -22,6 +25,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             DurationExtractor = config.DurationExtractor;
             DateExtractor = config.DateExtractor;
             DurationParser = config.DurationParser;
+            HolidayParser = new BaseHolidayParser(new DutchHolidayParserConfiguration(this));
             DateRegexes = new DutchDateExtractorConfiguration(this).DateRegexList;
             OnRegex = DutchDateExtractorConfiguration.OnRegex;
             SpecialDayRegex = DutchDateExtractorConfiguration.SpecialDayRegex;
@@ -74,6 +78,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public IDateExtractor DateExtractor { get; }
 
         public IDateTimeParser DurationParser { get; }
+
+        public IDateTimeParser HolidayParser { get; }
 
         public IEnumerable<Regex> DateRegexes { get; }
 

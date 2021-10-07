@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 export { default as SequenceRecognizer, SequenceOptions, recognizePhoneNumber, recognizeIpAddress, recognizeMention, recognizeHashtag, recognizeEmail, recognizeURL, recognizeGUID } from "./sequence/sequenceRecognizer";
 export { Culture } from "@microsoft/recognizers-text";
 export { AbstractSequenceModel, PhoneNumberModel, IpAddressModel, MentionModel, HashtagModel, EmailModel, URLModel, GUIDModel } from "./sequence/models";

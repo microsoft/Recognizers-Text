@@ -1,4 +1,7 @@
-﻿using System.Collections.Immutable;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.Number
@@ -11,7 +14,8 @@ namespace Microsoft.Recognizers.Text.Number
 
         ImmutableDictionary<char, char> FullToHalfMap { get; }
 
-        ImmutableDictionary<string, string> UnitMap { get; }
+        // A UnitMap sorted by key length is required to ensure the correct replacement order.
+        ImmutableSortedDictionary<string, string> UnitMap { get; }
 
         ImmutableDictionary<char, char> TratoSimMap { get; }
 

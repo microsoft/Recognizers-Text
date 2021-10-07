@@ -1,4 +1,7 @@
-﻿using Microsoft.Recognizers.Text.DataDrivenTests;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using Microsoft.Recognizers.Text.DataDrivenTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Microsoft.Recognizers.Text.Number.Tests
@@ -33,5 +36,21 @@ namespace Microsoft.Recognizers.Text.Number.Tests
         {
             TestNumber(testSpec);
         }
+
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void NumberRangeModel(TestModel testSpec)
+        {
+            TestNumber(testSpec);
+        }
+
+        /*
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void NumberRangeModelExperimentalMode(TestModel testSpec)
+        {
+            TestNumber(testSpec);
+        }
+        */
     }
 }

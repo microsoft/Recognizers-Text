@@ -1,4 +1,7 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Diagnostics.CodeAnalysis;
 
 namespace Microsoft.Recognizers.Text.Choice
 {

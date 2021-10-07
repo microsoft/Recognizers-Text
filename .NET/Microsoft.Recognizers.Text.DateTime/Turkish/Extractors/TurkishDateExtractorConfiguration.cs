@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -143,6 +146,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 
             NumberParser = new BaseNumberParser(new TurkishNumberParserConfiguration(new BaseNumberOptionsConfiguration(numConfig)));
             DurationExtractor = new BaseDurationExtractor(new TurkishDurationExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new TurkishHolidayExtractorConfiguration(this));
             UtilityConfiguration = new TurkishDatetimeUtilityConfiguration();
 
             ImplicitDateList = new List<Regex>
@@ -245,6 +249,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
         public IParser NumberParser { get; }
 
         public IDateTimeExtractor DurationExtractor { get; }
+
+        public IDateTimeExtractor HolidayExtractor { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 

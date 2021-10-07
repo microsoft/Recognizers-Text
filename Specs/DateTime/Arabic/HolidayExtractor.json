@@ -1,0 +1,218 @@
+[
+  {
+    "Input": "سأعود في عيد الميلاد",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "عيد الميلاد",
+        "Start": 9,
+        "Length": 11,
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود في يوم عيد الميلاد",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يوم عيد الميلاد",
+        "Start": 9,
+        "Length": 15,
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود في يواندان",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يواندان",
+        "Start": 9,
+        "Length": 7,
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود في يوم الشكر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يوم الشكر",
+        "Start": 9,
+        "Length": 9,
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود في يوم الأب",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يوم الأب",
+        "Start": 9,
+        "Length": 8,
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود في يواندان هذا العام",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يواندان هذا العام",
+        "Start": 9,
+        "Length": 17,
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود في يواندان لعام 2016",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يواندان لعام 2016",
+        "Start": 9,
+        "Length": 17,
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود في يواندان 2016",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يواندان 2016",
+        "Start": 9,
+        "Length": 12,
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود يوم إثنين الرماد",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يوم إثنين الرماد",
+        "Start": 6,
+        "Length": 16,
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود في رأس السنة الهجرية",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "رأس السنة الهجرية",
+        "Start": 9,
+        "Length": 17,
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود في عيد الأضحى",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "عيد الأضحى",
+        "Start": 9,
+        "Length": 10,
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود في عيد الفطر",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "عيد الفطر",
+        "Start": 9,
+        "Length": 9,
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "سأذهب إلى الحج",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الحج",
+        "Start": 10,
+        "Length": 4,
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود في المولد النبوي",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "المولد النبوي",
+        "Start": 9,
+        "Length": 13,
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "سأذهب في يوم الأرض",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "يوم الأرض",
+        "Start": 9,
+        "Length": 9,
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود في عيد الاستقلال",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "عيد الاستقلال",
+        "Start": 9,
+        "Length": 13,
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "سأعود في الخريف",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الخريف",
+        "Start": 9,
+        "Length": 6,
+        "Type": "date"
+      }
+    ]
+  },
+  {
+    "Input": "سأذهب في الحج سنة 2016",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "الحج سنة 2016",
+        "Start": 9,
+        "Length": 13,
+        "Type": "date"
+      }
+    ]
+  }
+]

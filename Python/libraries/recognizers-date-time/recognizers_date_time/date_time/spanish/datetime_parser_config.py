@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 from typing import Pattern, Dict
 
 from recognizers_text.utilities import RegExpUtility
@@ -126,6 +129,8 @@ class SpanishDateTimeParserConfiguration(DateTimeParserConfiguration):
             SpanishDateTime.NextPrefixRegex)
         self.previous_prefix_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.PreviousPrefixRegex)
+        self.last_night_time_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.LastNightTimeRegex)
 
         self._date_extractor = config.date_extractor
         self._time_extractor = config.time_extractor
@@ -150,8 +155,8 @@ class SpanishDateTimeParserConfiguration(DateTimeParserConfiguration):
             timex = 'PRESENT_REF'
         elif (
             source.endswith('posible') or source.endswith('pueda') or
-            source.endswith('puedas') or source.endswith(
-                'podamos') or source.endswith('puedan')
+            source.endswith('puedas') or source.endswith('podamos') or
+            source.endswith('puedan')
         ):
             timex = 'FUTURE_REF'
         elif source.endswith('mente'):
@@ -165,7 +170,7 @@ class SpanishDateTimeParserConfiguration(DateTimeParserConfiguration):
         source = source.strip().lower()
         swift = 0
 
-        if self.previous_prefix_regex.search(source):
+        if self.previous_prefix_regex.search(source) or self.last_night_time_regex.search(source):
             swift = -1
         elif self.next_prefix_regex.search(source):
             swift = 1

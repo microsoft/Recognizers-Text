@@ -1,4 +1,7 @@
-﻿using System.Collections.Immutable;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Portuguese;
 
@@ -6,6 +9,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
     public class PortugueseDurationParserConfiguration : BaseDateTimeOptionsConfiguration, IDurationParserConfiguration
     {
+        public static readonly Regex PrefixArticleRegex =
+            new Regex(DateTimeDefinitions.PrefixArticleRegex, RegexFlags);
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
         public PortugueseDurationParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
         {
@@ -42,6 +50,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public Regex NumberCombinedWithUnit { get; }
 
         public Regex AnUnitRegex { get; }
+
+        Regex IDurationParserConfiguration.PrefixArticleRegex => PrefixArticleRegex;
 
         public Regex DuringRegex { get; }
 

@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { CultureInfo, Culture, RegExpUtility } from "@microsoft/recognizers-text-number";
 import { Constants } from "../constants";
 import { SpanishNumberWithUnitExtractorConfiguration, SpanishNumberWithUnitParserConfiguration } from "./base";

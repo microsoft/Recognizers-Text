@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
@@ -158,6 +161,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                             if (match.Groups[Constants.PrefixGroupName].ToString().Length > 0)
                             {
                                 len += match.Groups[Constants.PrefixGroupName].ToString().Length;
+                            }
+
+                            if (match.Groups[Constants.SuffixGroupName].ToString().Length > 0)
+                            {
+                                len += match.Groups[Constants.SuffixGroupName].ToString().Length;
                             }
 
                             ret.Add(new Token(er.Start ?? 0, er.Start + len ?? 0));

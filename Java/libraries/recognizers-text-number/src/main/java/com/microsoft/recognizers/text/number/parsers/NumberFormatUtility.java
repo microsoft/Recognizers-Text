@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 package com.microsoft.recognizers.text.number.parsers;
 
 import com.microsoft.recognizers.text.Culture;
@@ -37,11 +40,15 @@ public final class NumberFormatUtility {
 
         // EXPONENTIAL_AT: [-5, 15] });
         // For small positive decimal places. E.g.: 0,000015 or 0,0000015 -> 1.5E-05 or 1.5E-06
-        if (doubleValue > 0 && doubleValue != Math.round(doubleValue) && doubleValue < 1E-4) {
-            result = doubleValue.toString();
-        } else {
-            BigDecimal bc = new BigDecimal(doubleValue, new MathContext(15, RoundingMode.HALF_EVEN));
-            result = bc.toString();
+        try {
+            if (doubleValue > 0 && doubleValue != Math.round(doubleValue) && doubleValue < 1E-4) {
+                result = doubleValue.toString();
+            } else {
+                BigDecimal bc = new BigDecimal(doubleValue, new MathContext(15, RoundingMode.HALF_EVEN));
+                result = bc.toString();
+            }
+        } catch (NumberFormatException ex) {
+            return value.toString();
         }
 
         result = result.replace('e', 'E');

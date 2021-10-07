@@ -17,7 +17,8 @@ class EnglishNumeric:
     LangMarker = 'Eng'
     CompoundNumberLanguage = False
     MultiDecimalSeparatorCulture = True
-    RoundNumberIntegerRegex = f'(?:hundred|thousand|million|billion|trillion|lakh|crore)'
+    NonStandardSeparatorVariants = [r'en-za', r'en-na', r'en-zw']
+    RoundNumberIntegerRegex = f'(?:hundred|thousand|million|mln|billion|bln|trillion|tln|lakh|crore)s?'
     ZeroToNineIntegerRegex = f'(?:three|seven|eight|four|five|zero|nine|one|two|six)'
     TwoToNineIntegerRegex = f'(?:three|seven|eight|four|five|nine|two|six)'
     NegativeNumberTermsRegex = f'(?<negTerm>(minus|negative)\\s+)'
@@ -39,7 +40,7 @@ class EnglishNumeric:
     AllIntRegexWithLocks = f'((?<=\\b){AllIntRegex}(?=\\b))'
     AllIntRegexWithDozenSuffixLocks = f'(?<=\\b)(((half\\s+)?a\\s+dozen)|({AllIntRegex}\\s+dozen(s)?))(?=\\b)'
     RoundNumberOrdinalRegex = f'(?:hundredth|thousandth|millionth|billionth|trillionth)'
-    NumberOrdinalRegex = f'(?:first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)'
+    NumberOrdinalRegex = f'(?:first|second|third|fourth|fifth|sixth|seventh|eighth|nine?th|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)'
     RelativeOrdinalRegex = f'(?<relativeOrdinal>(next|previous|current)\\s+one|(the\\s+second|next)\\s+to\\s+last|the\\s+one\\s+before\\s+the\\s+last(\\s+one)?|the\\s+last\\s+but\\s+one|(ante)?penultimate|last|next|previous|current)'
     BasicOrdinalRegex = f'({NumberOrdinalRegex}|{RelativeOrdinalRegex})'
     SuffixBasicOrdinalRegex = f'(?:(((({TensNumberIntegerRegex}(\\s+(and\\s+)?|\\s*-\\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\\s+{RoundNumberIntegerRegex})+)\\s+(and\\s+)?)*({TensNumberIntegerRegex}(\\s+|\\s*-\\s*))?{BasicOrdinalRegex})'
@@ -76,7 +77,7 @@ class EnglishNumeric:
     NumberWithPrefixPercentage = f'(per\\s*cents?\\s+of)(\\s*)({BaseNumbers.NumberReplaceToken})'
     NumberWithPrepositionPercentage = f'({BaseNumbers.NumberReplaceToken})\\s*(in|out\\s+of)\\s*({BaseNumbers.NumberReplaceToken})'
     TillRegex = f'((?<!\\bequal\\s+)to|through|--|-|—|——|~|–)'
-    MoreRegex = f'(?:(bigger|greater|more|higher|larger)(\\s+than)?|above|over|exceed(ed|ing)?|surpass(ed|ing)?|(?<!<|=)>)'
+    MoreRegex = f'(?:(bigger|greater|more|higher|larger)(\\s+than)?|above|over|beyond|exceed(ed|ing)?|surpass(ed|ing)?|(?<!<|=)>)'
     LessRegex = f'(?:(less|lower|smaller|fewer)(\\s+than)?|below|under|(?<!>|=)<)'
     EqualRegex = f'(equal(s|ing)?(\\s+(to|than))?|(?<!<|>)=)'
     MoreOrEqualPrefix = f'((no\\s+{LessRegex})|(at\\s+least))'
@@ -113,7 +114,7 @@ class EnglishNumeric:
     WrittenIntegerSeparatorTexts = [r'and']
     WrittenFractionSeparatorTexts = [r'and']
     HalfADozenRegex = f'half\\s+a\\s+dozen'
-    DigitalNumberRegex = f'((?<=\\b)(hundred|thousand|[mb]illion|trillion|lakh|crore|dozen(s)?)(?=\\b))|((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))'
+    DigitalNumberRegex = f'((?<=\\b)(hundred|thousand|[mb]illion|trillion|[mbt]ln|lakh|crore|dozen(s)?)(?=\\b))|((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))'
     CardinalNumberMap = dict([("a", 1),
                               ("zero", 0),
                               ("an", 1),
@@ -149,8 +150,11 @@ class EnglishNumeric:
                               ("hundred", 100),
                               ("thousand", 1000),
                               ("million", 1000000),
+                              ("mln", 1000000),
                               ("billion", 1000000000),
+                              ("bln", 1000000000),
                               ("trillion", 1000000000000),
+                              ("tln", 1000000000000),
                               ("lakh", 100000),
                               ("crore", 10000000)])
     OrdinalNumberMap = dict([("first", 1),
@@ -165,6 +169,7 @@ class EnglishNumeric:
                              ("seventh", 7),
                              ("eighth", 8),
                              ("ninth", 9),
+                             ("nineth", 9),
                              ("tenth", 10),
                              ("eleventh", 11),
                              ("twelfth", 12),
@@ -198,6 +203,7 @@ class EnglishNumeric:
                              ("sevenths", 7),
                              ("eighths", 8),
                              ("ninths", 9),
+                             ("nineths", 9),
                              ("tenths", 10),
                              ("elevenths", 11),
                              ("twelfths", 12),
@@ -224,8 +230,11 @@ class EnglishNumeric:
     RoundNumberMap = dict([("hundred", 100),
                            ("thousand", 1000),
                            ("million", 1000000),
+                           ("mln", 1000000),
                            ("billion", 1000000000),
+                           ("bln", 1000000000),
                            ("trillion", 1000000000000),
+                           ("tln", 1000000000000),
                            ("lakh", 100000),
                            ("crore", 10000000),
                            ("hundredth", 100),

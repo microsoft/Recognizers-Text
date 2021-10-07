@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -36,6 +39,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public static readonly Regex UnspecificEndOfRangeRegex =
             new Regex(DateTimeDefinitions.UnspecificEndOfRangeRegex, RegexFlags);
+
+        public static readonly Regex AmbiguousPointRangeRegex =
+            new Regex(DateTimeDefinitions.AmbiguousPointRangeRegex, RegexFlags);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
@@ -216,6 +222,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         Regex IDatePeriodParserConfiguration.UnspecificEndOfRangeRegex => UnspecificEndOfRangeRegex;
 
+        Regex IDatePeriodParserConfiguration.AmbiguousPointRangeRegex => AmbiguousPointRangeRegex;
+
         bool IDatePeriodParserConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 
         public IImmutableDictionary<string, string> UnitMap { get; }
@@ -319,6 +327,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             return (DateTimeDefinitions.WeekTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)) ||
                    (DateTimeDefinitions.WeekTerms.Any(o => trimmedText.Contains(o)) && RelativeSuffixRegex.IsMatch(trimmedText))) &&
                    !DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.Contains(o));
+        }
+
+        public bool IsFortnight(string text)
+        {
+            var trimmedText = text.Trim();
+            return DateTimeDefinitions.FortnightTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal));
         }
 
         public bool IsYearOnly(string text)

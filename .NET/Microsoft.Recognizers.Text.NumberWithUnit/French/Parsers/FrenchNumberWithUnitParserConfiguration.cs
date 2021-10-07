@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Generic;
 using System.Globalization;
 
 using Microsoft.Recognizers.Definitions.French;
@@ -15,7 +18,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.French
 
             var numConfig = new BaseNumberOptionsConfiguration(Culture.French, NumberOptions.None);
 
-            this.InternalNumberExtractor = NumberExtractor.GetInstance();
+            this.InternalNumberExtractor = NumberExtractor.GetInstance(numConfig);
             this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number,
                                                                               new FrenchNumberParserConfiguration(numConfig));
             this.ConnectorToken = NumbersWithUnitDefinitions.ConnectorToken;

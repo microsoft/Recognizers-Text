@@ -88,7 +88,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
         public static string FixedFormatNumber(int? n, int size)
         {
-            return n.Value.ToString().PadLeft(size, '0');
+            return n.Value.ToString(System.Globalization.CultureInfo.InvariantCulture).PadLeft(size, '0');
         }
 
         public static DateObject DateOfLastDay(DayOfWeek day, DateObject referenceDate)

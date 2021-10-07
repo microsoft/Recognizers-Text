@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { RegExpUtility, ExtractResult, IExtractor } from "@microsoft/recognizers-text";
 import { CultureInfo, Culture, EnglishIntegerExtractor } from "@microsoft/recognizers-text-number";
 import { NumberWithUnitExtractor, ChineseNumberWithUnitExtractorConfiguration } from "@microsoft/recognizers-text-number-with-unit";
@@ -269,7 +272,10 @@ export class ChineseTimePeriodParser extends BaseTimePeriodParser {
         if (spanHour < 0) {
             spanHour += 24;
         }
-        let spanTimex = `PT${spanHour}H`;
+        let spanTimex = `PT`;
+        if (spanHour > 0 ) {
+            spanTimex = spanTimex + `${spanHour}H`;
+        }
         if (spanMin !== 0 && spanSec === 0) {
             spanTimex = spanTimex + `${spanMin}M`;
         }

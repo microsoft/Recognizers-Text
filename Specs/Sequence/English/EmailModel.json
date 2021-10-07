@@ -113,7 +113,7 @@
   },
   {
     "Input": "j_9@[129.126.118.1] is a valid email address",
-    "NotSupportedByDesign": "javascript, python",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "j_9@[129.126.118.1]",
@@ -149,7 +149,7 @@
   {
     "Input": "Periods at the end of addresses can be ambiguous. Contact webmaster@contoso.com.",
 	"Comment": "By default the current system is strict. If a relavex match is needed (to catch the period), enable the Relaxed option.",
-    "NotSupportedByDesign": "javascript, python",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "webmaster@contoso.com",

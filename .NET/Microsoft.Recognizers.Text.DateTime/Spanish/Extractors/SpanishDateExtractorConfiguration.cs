@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -144,6 +147,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             NumberParser = new BaseNumberParser(new SpanishNumberParserConfiguration(numConfig));
 
             DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new SpanishHolidayExtractorConfiguration(this));
             UtilityConfiguration = new SpanishDatetimeUtilityConfiguration();
 
             // 3-23-2017
@@ -196,6 +200,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public IParser NumberParser { get; }
 
         public IDateTimeExtractor DurationExtractor { get; }
+
+        public IDateTimeExtractor HolidayExtractor { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 

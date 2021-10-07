@@ -194,5 +194,61 @@
         }
       }
     ]
+  },
+  {
+    "Input": "👌🏾 यह ठीक है",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "👌🏾",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.64
+        }
+      }
+    ]
+  },
+  {
+    "Input": "👌🏿 यह ठीक है",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "👌🏿",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.64
+        }
+      }
+    ]
+  },
+  {
+    "Input": "👌🏻 यह ठीक है",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "👌🏻",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.64
+        }
+      }
+    ]
+  },
+  {
+    "Input": "👌🏼👌🏻👌🏽",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "👌🏼",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.6
+        }
+      }
+    ]
   }
 ]

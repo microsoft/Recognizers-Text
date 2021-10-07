@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { IExtractor, ExtractResult } from "@microsoft/recognizers-text";
 import { StringUtility, Match, RegExpUtility } from "@microsoft/recognizers-text-number";
 import { IDateTimeExtractor } from "../baseDateTime";

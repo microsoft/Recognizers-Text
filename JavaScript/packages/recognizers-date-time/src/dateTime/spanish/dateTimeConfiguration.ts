@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { RegExpUtility } from "@microsoft/recognizers-text";
 import { IDateTimeExtractorConfiguration, IDateTimeParserConfiguration, IDateTimeExtractor } from "../baseDateTime";
 import { BaseNumberExtractor, BaseNumberParser } from "@microsoft/recognizers-text-number";
@@ -90,6 +93,7 @@ export class SpanishDateTimeParserConfiguration implements IDateTimeParserConfig
 
     readonly nextPrefixRegex: RegExp;
     readonly previousPrefixRegex: RegExp;
+    readonly lastNightTimeRegex: RegExp;
 
     constructor(config: ICommonDateTimeParserConfiguration) {
         this.tokenBeforeDate = SpanishDateTime.TokenBeforeDate;
@@ -106,6 +110,7 @@ export class SpanishDateTimeParserConfiguration implements IDateTimeParserConfig
 
         this.nextPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.NextPrefixRegex, "gis");
         this.previousPrefixRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PreviousPrefixRegex, "gis");
+        this.lastNightTimeRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.LastNightTimeRegex, "gis");
 
         this.dateExtractor = config.dateExtractor;
         this.timeExtractor = config.timeExtractor;
@@ -155,7 +160,8 @@ export class SpanishDateTimeParserConfiguration implements IDateTimeParserConfig
         let trimedText = text.trim().toLowerCase();
         let swift = 0;
 
-        if (RegExpUtility.getFirstMatchIndex(this.previousPrefixRegex, trimedText).matched) {
+        if (RegExpUtility.getFirstMatchIndex(this.previousPrefixRegex, trimedText).matched ||
+            RegExpUtility.getFirstMatchIndex(this.lastNightTimeRegex, trimedText).matched) {
             swift = -1;
         }
         else if (RegExpUtility.getFirstMatchIndex(this.nextPrefixRegex, trimedText).matched) {

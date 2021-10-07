@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -99,11 +102,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             var lastUnit = unitKeys.Last();
             if (halfResult != null)
             {
-                lastUnit = lastUnit.Substring(0, lastUnit.Length - halfResult.Text.Length);
+                lastUnit = lastUnit.Substring(0, lastUnit.Length - halfResult.Text.Length).Trim();
             }
 
             var normalizedLastUnit = lastUnit.ToLowerInvariant();
-            if (!string.IsNullOrEmpty(Config.ConnectorToken) && normalizedLastUnit.StartsWith(Config.ConnectorToken))
+            if (!string.IsNullOrEmpty(Config.ConnectorToken) && normalizedLastUnit.StartsWith(Config.ConnectorToken, StringComparison.Ordinal))
             {
                 normalizedLastUnit = normalizedLastUnit.Substring(Config.ConnectorToken.Length).Trim();
                 lastUnit = lastUnit.Substring(Config.ConnectorToken.Length).Trim();
@@ -131,7 +134,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     };
                     ret.ResolutionStr = $"{numValue?.ResolutionStr} {unitValue}".Trim();
 
-                    if (extResult.Type.Equals(Constants.SYS_UNIT_DIMENSION, StringComparison.Ordinal) && this.Config.TypeList.TryGetValue(unitValue, out var unitType))
+                    if (extResult.Type.Equals(Constants.SYS_UNIT_DIMENSION, StringComparison.Ordinal) &&
+                        this.Config.TypeList.TryGetValue(unitValue, out var unitType))
                     {
                         ret.Type = unitType;
                     }

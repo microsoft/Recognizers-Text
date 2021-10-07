@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 package com.microsoft.recognizers.text.number.models;
 
 import com.microsoft.recognizers.text.ExtractResult;
@@ -7,6 +10,7 @@ import com.microsoft.recognizers.text.IParser;
 import com.microsoft.recognizers.text.ModelResult;
 import com.microsoft.recognizers.text.ParseResult;
 import com.microsoft.recognizers.text.ResolutionKey;
+import com.microsoft.recognizers.text.number.Constants;
 import com.microsoft.recognizers.text.utilities.QueryProcessor;
 
 import java.util.ArrayList;
@@ -51,10 +55,17 @@ public abstract class AbstractNumberModel implements IModel {
             SortedMap<String, Object> sortedMap = new TreeMap<String, Object>();
             sortedMap.put(ResolutionKey.Value, o.getResolutionStr());
 
+            // For ordinal and ordinal.relative - "ordinal.relative" only available in English for now
+            if (getModelTypeName().equals(Constants.MODEL_ORDINAL)) {
+                sortedMap.put(ResolutionKey.Offset, o.getMetadata().getOffset());
+                sortedMap.put(ResolutionKey.RelativeTo, o.getMetadata().getRelativeTo());
+            }
+
+            // We decreased the end property by 1 in order to keep parity with other platforms (C#/JS).
             return new ModelResult(
                     o.getText(),
                     o.getStart(),
-                o.getStart() + o.getLength(),
+                o.getStart() + o.getLength() - 1,
                 getModelTypeName(),
                 sortedMap
             );                

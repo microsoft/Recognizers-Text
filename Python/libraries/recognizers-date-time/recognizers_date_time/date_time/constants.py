@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 from ..resources import BaseDateTime
 
 
@@ -44,6 +47,7 @@ class Constants:
 
     COMMENT_KEY: str = 'Comment'
     COMMENT_AMPM = 'ampm'
+    COMMENT_DOUBLETIMEX = "doubleTimex"
 
     # Failed connector extraction
     INVALID_CONNECTOR_CODE = -1
@@ -54,8 +58,10 @@ class Constants:
     HALF_DAY_HOUR_COUNT = 12
     HALF_MID_DAY_DURATION_HOUR_COUNT = 2
 
+    # specifies the priority interpreting month and day order
     DEFAULT_LANGUAGE_FALLBACK_MDY: str = 'MDY'
     DEFAULT_LANGUAGE_FALLBACK_DMY: str = 'DMY'
+    DEFAULT_LANGUAGE_FALLBACK_YMD: str = 'YMD'  # ZH
 
     MAX_TWO_DIGIT_YEAR_FUTURE_NUM: int = int(BaseDateTime.MaxTwoDigitYearFutureNum)
     MIN_TWO_DIGIT_YEAR_PAST_NUM: int = int(BaseDateTime.MinTwoDigitYearPastNum)
@@ -90,6 +96,9 @@ class Constants:
     NIGHT: str = "TNI"
     BUSINESS_HOUR = "TBH"
 
+    INVALID_DATE_STRING = "0001-01-01"
+    COMPOSTIE_TIMEX_DELIMITER = "|"
+
     # Groups' names for named groups in regexes
     NEXT_GROUP_NAME = "next"
     AM_GROUP_NAME = 'am'
@@ -114,6 +123,7 @@ class Constants:
     FULL_YEAR_GROUP_NAME = 'fullyear'
     HOUR_NUM_GROUP_NAME = 'hournum'
     TENS_GROUP_NAME = 'tens'
+    YEAR_CJK_GROUP_NAME = 'yearCJK'
 
     TIME_OF_DAY_GROUP_NAME = 'timeOfDay'
     BUSINESS_DAY_GROUP_NAME = 'business'
@@ -124,7 +134,7 @@ class Constants:
     REL_MONTH = 'relmonth'
     FIRST_TWO_YEAR_NUM = 'firsttwoyearnum'
     LAST_TWO_YEAR_NUM = 'lasttwoyearnum'
-    YEAR_CHINESE = 'yearchs'
+    YEAR_CHINESE = 'yearCJK'
     OTHER = 'other'
     YEAR_RELATIVE = 'yearrel'
     DAY_OF_MONTH = 'DayOfMonth'
@@ -149,6 +159,10 @@ class Constants:
     MID_NIGHT = 'midnight'
 
     CARDINAL = 'cardinal'
+
+    DECADE = 'decade'
+    CENTURY = 'century'
+    REL_CENTURY = 'relcentury'
 
     SEAS = 'seas'
     SEASON = 'season'

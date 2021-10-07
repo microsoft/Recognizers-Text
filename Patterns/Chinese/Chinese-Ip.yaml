@@ -4,7 +4,7 @@ Ipv4Regex: !nestedRegex
   references: [ PhoneNumbersDefinitions.WordBoundariesRegex, PhoneNumbersDefinitions.EndWordBoundariesRegex ]
 Ipv6EllipsisRegexOther: !nestedRegex
   def: ({PhoneNumbersDefinitions.NonWordBoundariesRegex}::{PhoneNumbersDefinitions.NonWordBoundariesRegex}|{PhoneNumbersDefinitions.NonWordBoundariesRegex}:(:{BaseIp.BasicIpv6Element}){1,7}{PhoneNumbersDefinitions.WordBoundariesRegex}|{PhoneNumbersDefinitions.WordBoundariesRegex}({BaseIp.BasicIpv6Element}:){1,7}:{PhoneNumbersDefinitions.NonWordBoundariesRegex})
-  references: [PhoneNumbersDefinitions.NonWordBoundariesRegex, PhoneNumbersDefinitions.WordBoundariesRegex, BasicIpv6Element, BaseIp.BasicIpv6Element]
+  references: [PhoneNumbersDefinitions.NonWordBoundariesRegex, PhoneNumbersDefinitions.WordBoundariesRegex, BaseIp.BasicIpv6Element]
 Ipv6Regex: !nestedRegex
   def: ({PhoneNumbersDefinitions.WordBoundariesRegex}{BaseIp.MergedIpv6Regex}{PhoneNumbersDefinitions.WordBoundariesRegex})|({Ipv6EllipsisRegexOther})
   references: [ PhoneNumbersDefinitions.WordBoundariesRegex, BaseIp.MergedIpv6Regex, Ipv6EllipsisRegexOther ]

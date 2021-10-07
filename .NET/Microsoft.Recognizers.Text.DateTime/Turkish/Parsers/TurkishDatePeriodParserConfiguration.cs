@@ -1,4 +1,8 @@
-﻿using System.Collections.Generic;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -218,6 +222,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 
         Regex IDatePeriodParserConfiguration.UnspecificEndOfRangeRegex => UnspecificEndOfRangeRegex;
 
+        Regex IDatePeriodParserConfiguration.AmbiguousPointRangeRegex => null;
+
         bool IDatePeriodParserConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 
         public IImmutableDictionary<string, string> UnitMap { get; }
@@ -291,54 +297,59 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
         public bool IsFuture(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.FutureTerms.Any(o => trimmedText.StartsWith(o));
+            return DateTimeDefinitions.FutureTerms.Any(o => trimmedText.StartsWith(o, StringComparison.Ordinal));
         }
 
         public bool IsLastCardinal(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.LastCardinalTerms.Any(o => trimmedText.Equals(o));
+            return DateTimeDefinitions.LastCardinalTerms.Any(o => trimmedText.Equals(o, StringComparison.Ordinal));
         }
 
         public bool IsMonthOnly(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.MonthTerms.Any(o => trimmedText.EndsWith(o)) ||
+            return DateTimeDefinitions.MonthTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)) ||
                    (monthTermsPadded.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText));
         }
 
         public bool IsMonthToDate(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.MonthToDateTerms.Any(o => trimmedText.Equals(o));
+            return DateTimeDefinitions.MonthToDateTerms.Any(o => trimmedText.Equals(o, StringComparison.Ordinal));
         }
 
         public bool IsWeekend(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.EndsWith(o)) ||
+            return DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)) ||
                    (weekendTermsPadded.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText));
         }
 
         public bool IsWeekOnly(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.WeekTerms.Any(o => trimmedText.EndsWith(o)) ||
+            return DateTimeDefinitions.WeekTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)) ||
                    (weekTermsPadded.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText) && !weekendTermsPadded.Any(o => trimmedText.Contains(o)));
+        }
+
+        public bool IsFortnight(string text)
+        {
+            return false;
         }
 
         public bool IsYearOnly(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.YearTerms.Any(o => trimmedText.EndsWith(o)) ||
+            return DateTimeDefinitions.YearTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)) ||
                    (yearTermsPadded.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText)) ||
-                   (DateTimeDefinitions.GenericYearTerms.Any(o => trimmedText.EndsWith(o)) && UnspecificEndOfRangeRegex.IsMatch(trimmedText));
+                   (DateTimeDefinitions.GenericYearTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)) && UnspecificEndOfRangeRegex.IsMatch(trimmedText));
         }
 
         public bool IsYearToDate(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.YearToDateTerms.Any(o => trimmedText.Equals(o));
+            return DateTimeDefinitions.YearToDateTerms.Any(o => trimmedText.Equals(o, StringComparison.Ordinal));
         }
     }
 }

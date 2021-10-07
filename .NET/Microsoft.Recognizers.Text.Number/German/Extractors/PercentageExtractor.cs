@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
@@ -8,10 +11,10 @@ namespace Microsoft.Recognizers.Text.Number.German
 {
     public sealed class PercentageExtractor : BasePercentageExtractor
     {
-        public PercentageExtractor(NumberOptions options = NumberOptions.None)
-            : base(NumberExtractor.GetInstance(options: options))
+        public PercentageExtractor(BaseNumberOptionsConfiguration config)
+            : base(NumberExtractor.GetInstance(config))
         {
-            Options = options;
+            Options = config.Options;
             Regexes = InitRegexes();
         }
 

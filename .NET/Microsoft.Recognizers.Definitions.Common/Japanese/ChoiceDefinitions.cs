@@ -23,7 +23,8 @@ namespace Microsoft.Recognizers.Definitions.Japanese
     {
       public const string LangMarker = @"Jpn";
       public const string TokenizerRegex = @"[^\w\d\u3040-\u309f\u30a0-\u30ff\uff00-\uff9f\u4e00-\u9faf\u3400-\u4dbf]";
-      public const string TrueRegex = @"(はい(！)*|そうです|よい(です)*)|(\uD83D\uDC4D|\uD83D\uDC4C)";
-      public const string FalseRegex = @"(いいえ|ではありません|ではない|じゃない|じゃありません)|(\uD83D\uDC4E|\u270B|\uD83D\uDD90)";
+      public const string SkinToneRegex = @"(\uD83C\uDFFB|\uD83C\uDFFC|\uD83C\uDFFD|\uD83C\uDFFE|\uD83C\uDFFF)";
+      public static readonly string TrueRegex = $@"(はい(！)*|そうです|よい(です)*)|(\uD83D\uDC4D|\uD83D\uDC4C){SkinToneRegex}?";
+      public static readonly string FalseRegex = $@"(いいえ|ではありません|ではない|じゃない|じゃありません)|(\uD83D\uDC4E|\u270B|\uD83D\uDD90){SkinToneRegex}?";
     }
 }

@@ -2,6 +2,7 @@
 // Licensed under the MIT License.
 
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
@@ -18,22 +19,18 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             {
                 DateCollectionName, new Regex[]
                 {
-                    // date
-                    new Regex(@"^(?<year>\d\d\d\d)-(?<month>\d\d)-(?<dayOfMonth>\d\d)"),
+                   // date
+                    new Regex(@"^(XXXX|(?<year>\d\d\d\d))-(?<month>\d\d)(-(?<dayOfMonth>\d\d))?"),
                     new Regex(@"^XXXX-WXX-(?<dayOfWeek>\d)"),
-                    new Regex(@"^XXXX-(?<month>\d\d)-(?<dayOfMonth>\d\d)"),
+                    new Regex(@"^XXXX-XX-(?<dayOfMonth>\d\d)"),
 
                     // daterange
                     new Regex(@"^(?<year>\d\d\d\d)"),
-                    new Regex(@"^(?<year>\d\d\d\d)-(?<month>\d\d)"),
+                    new Regex(@"^(XXXX|(?<year>\d\d\d\d))-(?<month>\d\d)-W(?<weekOfMonth>\d\d)"),
+                    new Regex(@"^(XXXX|(?<year>\d\d\d\d))-(?<month>\d\d)-WXX-(?<weekOfMonth>\d{1,2})(-(?<dayOfWeek>\d))?"),
                     new Regex(@"^(?<season>SP|SU|FA|WI)"),
-                    new Regex(@"^(?<year>\d\d\d\d)-(?<season>SP|SU|FA|WI)"),
-                    new Regex(@"^(?<year>\d\d\d\d)-W(?<weekOfYear>\d\d)"),
-                    new Regex(@"^(?<year>\d\d\d\d)-W(?<weekOfYear>\d\d)-(?<weekend>WE)"),
-                    new Regex(@"^XXXX-(?<month>\d\d)"),
-                    new Regex(@"^XXXX-(?<month>\d\d)-W(?<weekOfMonth>\d\d)"),
-                    new Regex(@"^XXXX-(?<month>\d\d)-WXX-(?<weekOfMonth>\d{1,2})"),
-                    new Regex(@"^XXXX-(?<month>\d\d)-WXX-(?<weekOfMonth>\d)-(?<dayOfWeek>\d)"),
+                    new Regex(@"^(XXXX|(?<year>\d\d\d\d))-(?<season>SP|SU|FA|WI)"),
+                    new Regex(@"^(XXXX|(?<year>\d\d\d\d))-W(?<weekOfYear>\d\d)(-(?<dayOfWeek>\d)|-(?<weekend>WE))?"),
                 }
             },
             {
@@ -52,14 +49,16 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                 PeriodCollectionName, new Regex[]
                 {
                     new Regex(@"^P(?<amount>\d*\.?\d+)(?<dateUnit>Y|M|W|D)$"),
-                    new Regex(@"^PT(?<amount>\d*\.?\d+)(?<timeUnit>H|M|S)$"),
+                    new Regex(@"^PT(?<hourAmount>\d*\.?\d+)H(\d*\.?\d+(M|S)){0,2}$"),
+                    new Regex(@"^PT(\d*\.?\d+H)?(?<minuteAmount>\d*\.?\d+)M(\d*\.?\d+S)?$"),
+                    new Regex(@"^PT(\d*\.?\d+(H|M)){0,2}(?<secondAmount>\d*\.?\d+)S$"),
                 }
             },
         };
 
         public static bool Extract(string name, string timex, IDictionary<string, string> result)
         {
-            var lowerName = name.ToLower();
+            var lowerName = name.ToLower(CultureInfo.InvariantCulture);
             var nameGroup = new string[lowerName == DateTimeCollectionName ? 2 : 1];
 
             if (lowerName == DateTimeCollectionName)

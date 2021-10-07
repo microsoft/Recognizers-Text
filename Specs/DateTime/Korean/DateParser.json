@@ -4,11 +4,11 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "15",
+        "Text": "15일",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-15",
@@ -19,8 +19,8 @@
             "date": "2016-10-15"
           }
         },
-        "Start": 16,
-        "Length": 2
+        "Start": 0,
+        "Length": 3
       }
     ]
   },
@@ -29,7 +29,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -44,7 +43,7 @@
             "date": "2016-10-02"
           }
         },
-        "Start": 13,
+        "Start": 0,
         "Length": 6
       }
     ]
@@ -54,7 +53,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -69,8 +67,8 @@
             "date": "2016-01-12"
           }
         },
-        "Start": 13,
-        "Length": 16
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
@@ -79,7 +77,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -94,8 +91,8 @@
             "date": "2016-01-12"
           }
         },
-        "Start": 13,
-        "Length": 25
+        "Start": 0,
+        "Length": 16
       }
     ]
   },
@@ -104,7 +101,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -119,8 +115,8 @@
             "date": "2016-02-22"
           }
         },
-        "Start": 13,
-        "Length": 10
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
@@ -129,7 +125,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -144,8 +139,8 @@
             "date": "2016-04-21"
           }
         },
-        "Start": 13,
-        "Length": 10
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
@@ -154,7 +149,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -169,8 +163,8 @@
             "date": "2016-04-22"
           }
         },
-        "Start": 16,
-        "Length": 4
+        "Start": 0,
+        "Length": 6
       }
     ]
   },
@@ -179,7 +173,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -194,8 +187,8 @@
             "date": "2015-08-12"
           }
         },
-        "Start": 13,
-        "Length": 10
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
@@ -204,7 +197,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -219,8 +211,8 @@
             "date": "2016-01-01"
           }
         },
-        "Start": 13,
-        "Length": 7
+        "Start": 0,
+        "Length": 5
       }
     ]
   },
@@ -229,7 +221,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -244,8 +235,8 @@
             "date": "2016-01-22"
           }
         },
-        "Start": 13,
-        "Length": 14
+        "Start": 0,
+        "Length": 10
       }
     ]
   },
@@ -254,7 +245,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -269,8 +259,8 @@
             "date": "2016-05-21"
           }
         },
-        "Start": 13,
-        "Length": 16
+        "Start": 0,
+        "Length": 6
       }
     ]
   },
@@ -279,7 +269,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -294,8 +283,8 @@
             "date": "2016-08-02"
           }
         },
-        "Start": 13,
-        "Length": 13
+        "Start": 0,
+        "Length": 5
       }
     ]
   },
@@ -304,11 +293,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "6월 22일 ",
+        "Text": "6월 22일",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-06-22",
@@ -319,8 +307,8 @@
             "date": "2016-06-22"
           }
         },
-        "Start": 13,
-        "Length": 21
+        "Start": 0,
+        "Length": 6
       }
     ]
   },
@@ -329,11 +317,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "금요일 ",
+        "Text": "금요일",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-WXX-5",
@@ -344,8 +331,8 @@
             "date": "2016-11-04"
           }
         },
-        "Start": 16,
-        "Length": 6
+        "Start": 0,
+        "Length": 3
       }
     ]
   },
@@ -354,7 +341,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -369,8 +355,8 @@
             "date": "2016-11-07"
           }
         },
-        "Start": 13,
-        "Length": 5
+        "Start": 0,
+        "Length": 2
       }
     ]
   },
@@ -379,7 +365,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -394,8 +380,8 @@
             "date": "2016-11-08"
           }
         },
-        "Start": 13,
-        "Length": 8
+        "Start": 0,
+        "Length": 2
       }
     ]
   },
@@ -404,7 +390,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -419,8 +405,8 @@
             "date": "2016-11-06"
           }
         },
-        "Start": 13,
-        "Length": 9
+        "Start": 0,
+        "Length": 2
       }
     ]
   },
@@ -429,7 +415,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -444,8 +430,8 @@
             "date": "2016-11-05"
           }
         },
-        "Start": 13,
-        "Length": 24
+        "Start": 0,
+        "Length": 3
       }
     ]
   },
@@ -454,36 +440,11 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "내일 모레 ",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-11-09",
-          "FutureResolution": {
-            "date": "2016-11-09"
-          },
-          "PastResolution": {
-            "date": "2016-11-09"
-          }
-        },
-        "Start": 13,
-        "Length": 22
-      }
-    ]
-  },
-  {
-    "Input": "내일 모레 ",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "내일 모레 ",
+        "Text": "내일 모레",
         "Type": "date",
         "Value": {
           "Timex": "2016-11-09",
@@ -495,7 +456,32 @@
           }
         },
         "Start": 0,
-        "Length": 22
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "내일 모레 ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "내일 모레",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-09",
+          "FutureResolution": {
+            "date": "2016-11-09"
+          },
+          "PastResolution": {
+            "date": "2016-11-09"
+          }
+        },
+        "Start": 0,
+        "Length": 5
       }
     ]
   },
@@ -504,7 +490,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -519,8 +505,8 @@
             "date": "2016-11-08"
           }
         },
-        "Start": 13,
-        "Length": 12
+        "Start": 0,
+        "Length": 4
       }
     ]
   },
@@ -529,7 +515,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -544,8 +529,8 @@
             "date": "2016-11-11"
           }
         },
-        "Start": 13,
-        "Length": 11
+        "Start": 0,
+        "Length": 6
       }
     ]
   },
@@ -554,7 +539,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -569,8 +553,8 @@
             "date": "2016-11-20"
           }
         },
-        "Start": 13,
-        "Length": 11
+        "Start": 0,
+        "Length": 6
       }
     ]
   },
@@ -579,7 +563,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -594,8 +577,8 @@
             "date": "2016-11-06"
           }
         },
-        "Start": 13,
-        "Length": 11
+        "Start": 0,
+        "Length": 6
       }
     ]
   },
@@ -604,7 +587,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -619,8 +601,8 @@
             "date": "2016-11-11"
           }
         },
-        "Start": 13,
-        "Length": 16
+        "Start": 0,
+        "Length": 8
       }
     ]
   },
@@ -629,7 +611,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -644,8 +625,8 @@
             "date": "2016-11-20"
           }
         },
-        "Start": 13,
-        "Length": 16
+        "Start": 0,
+        "Length": 8
       }
     ]
   },
@@ -654,7 +635,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -669,8 +649,8 @@
             "date": "2016-11-06"
           }
         },
-        "Start": 13,
-        "Length": 16
+        "Start": 0,
+        "Length": 8
       }
     ]
   },
@@ -679,7 +659,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -694,8 +674,8 @@
             "date": "2016-11-06"
           }
         },
-        "Start": 13,
-        "Length": 8
+        "Start": 0,
+        "Length": 4
       }
     ]
   },
@@ -704,7 +684,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -719,8 +699,8 @@
             "date": "2016-11-07"
           }
         },
-        "Start": 13,
-        "Length": 7
+        "Start": 0,
+        "Length": 3
       }
     ]
   },
@@ -729,7 +709,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -744,7 +723,7 @@
             "date": "2016-06-15"
           }
         },
-        "Start": 13,
+        "Start": 0,
         "Length": 12
       }
     ]
@@ -754,7 +733,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -769,8 +747,8 @@
             "date": "2016-07-01"
           }
         },
-        "Start": 13,
-        "Length": 24
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
@@ -779,7 +757,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -794,8 +771,8 @@
             "date": "2016-11-04"
           }
         },
-        "Start": 13,
-        "Length": 30
+        "Start": 0,
+        "Length": 13
       }
     ]
   },
@@ -804,7 +781,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -819,8 +795,8 @@
             "date": "2016-11-18"
           }
         },
-        "Start": 13,
-        "Length": 19
+        "Start": 0,
+        "Length": 8
       }
     ]
   },
@@ -829,7 +805,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -844,8 +820,8 @@
             "date": "2016-11-07"
           }
         },
-        "Start": 10,
-        "Length": 6
+        "Start": 0,
+        "Length": 5
       }
     ]
   },
@@ -854,11 +830,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "지금으로부터 2주",
+        "Text": "지금으로부터 2주 후",
         "Type": "date",
         "Value": {
           "Timex": "2016-11-21",
@@ -869,8 +844,8 @@
             "date": "2016-11-21"
           }
         },
-        "Start": 13,
-        "Length": 18
+        "Start": 0,
+        "Length": 11
       }
     ]
   },
@@ -879,11 +854,11 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "한 달 전에 ",
+        "Text": "한 달 전",
         "Type": "date",
         "Value": {
           "Timex": "2016-10-07",
@@ -894,8 +869,8 @@
             "date": "2016-10-07"
           }
         },
-        "Start": 16,
-        "Length": 11
+        "Start": 0,
+        "Length": 5
       }
     ]
   },
@@ -904,11 +879,11 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "몇 달 전에 ",
+        "Text": "몇 달 전",
         "Type": "date",
         "Value": {
           "Timex": "2016-08-07",
@@ -919,8 +894,8 @@
             "date": "2016-08-07"
           }
         },
-        "Start": 16,
-        "Length": 13
+        "Start": 0,
+        "Length": 5
       }
     ]
   },
@@ -929,11 +904,11 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "며칠 전에 ",
+        "Text": "며칠 전",
         "Type": "date",
         "Value": {
           "Timex": "2016-11-04",
@@ -944,8 +919,8 @@
             "date": "2016-11-04"
           }
         },
-        "Start": 16,
-        "Length": 13
+        "Start": 0,
+        "Length": 4
       }
     ]
   },
@@ -954,11 +929,11 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "27일 ",
+        "Text": "27일",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-27",
@@ -969,8 +944,8 @@
             "date": "2016-10-27"
           }
         },
-        "Start": 16,
-        "Length": 6
+        "Start": 3,
+        "Length": 3
       }
     ]
   },
@@ -979,11 +954,11 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "27일 ",
+        "Text": "27일",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-27",
@@ -994,8 +969,8 @@
             "date": "2016-10-27"
           }
         },
-        "Start": 16,
-        "Length": 6
+        "Start": 3,
+        "Length": 3
       }
     ]
   },
@@ -1004,11 +979,11 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "21일 ",
+        "Text": "21일",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-21",
@@ -1019,8 +994,8 @@
             "date": "2016-10-21"
           }
         },
-        "Start": 16,
-        "Length": 8
+        "Start": 3,
+        "Length": 3
       }
     ]
   },
@@ -1029,11 +1004,11 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "22일 ",
+        "Text": "22일",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-22",
@@ -1044,8 +1019,8 @@
             "date": "2016-10-22"
           }
         },
-        "Start": 16,
-        "Length": 8
+        "Start": 3,
+        "Length": 3
       }
     ]
   },
@@ -1054,11 +1029,11 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2일 ",
+        "Text": "2일",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-02",
@@ -1069,8 +1044,8 @@
             "date": "2016-11-02"
           }
         },
-        "Start": 16,
-        "Length": 10
+        "Start": 3,
+        "Length": 2
       }
     ]
   },
@@ -1079,11 +1054,11 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "27일 ",
+        "Text": "27일",
         "Type": "date",
         "Value": {
           "Timex": "2017-09-21",
@@ -1094,8 +1069,8 @@
             "date": "2017-09-21"
           }
         },
-        "Start": 12,
-        "Length": 17
+        "Start": 3,
+        "Length": 3
       }
     ]
   },
@@ -1104,7 +1079,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1119,8 +1094,8 @@
             "date": "2017-09-10"
           }
         },
-        "Start": 13,
-        "Length": 13
+        "Start": 0,
+        "Length": 8
       }
     ]
   },
@@ -1129,7 +1104,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1144,8 +1119,8 @@
             "date": "2017-09-03"
           }
         },
-        "Start": 13,
-        "Length": 12
+        "Start": 0,
+        "Length": 8
       }
     ]
   },
@@ -1154,7 +1129,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1169,8 +1144,8 @@
             "date": "2017-09-19"
           }
         },
-        "Start": 13,
-        "Length": 13
+        "Start": 0,
+        "Length": 8
       }
     ]
   },
@@ -1179,7 +1154,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1194,8 +1169,8 @@
             "date": "0001-01-01"
           }
         },
-        "Start": 13,
-        "Length": 12
+        "Start": 0,
+        "Length": 9
       }
     ]
   },
@@ -1204,7 +1179,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1219,8 +1194,8 @@
             "date": "2016-12-20"
           }
         },
-        "Start": 12,
-        "Length": 18
+        "Start": 3,
+        "Length": 8
       }
     ]
   },
@@ -1229,11 +1204,11 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "이번 달 31일 ",
+        "Text": "이번 달 31일",
         "Type": "date",
         "Value": {
           "Timex": "2016-11-31",
@@ -1244,8 +1219,8 @@
             "date": "0001-01-01"
           }
         },
-        "Start": 12,
-        "Length": 18
+        "Start": 3,
+        "Length": 8
       }
     ]
   },
@@ -1254,7 +1229,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1269,8 +1243,8 @@
             "date": "2018-01-12"
           }
         },
-        "Start": 13,
-        "Length": 16
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
@@ -1279,7 +1253,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1294,8 +1267,8 @@
             "date": "2015-09-18"
           }
         },
-        "Start": 13,
-        "Length": 7
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
@@ -1304,11 +1277,11 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "이틀 전 ",
+        "Text": "이틀 전",
         "Type": "date",
         "Value": {
           "Timex": "2016-11-05",
@@ -1319,8 +1292,8 @@
             "date": "2016-11-05"
           }
         },
-        "Start": 12,
-        "Length": 12
+        "Start": 3,
+        "Length": 4
       }
     ]
   },
@@ -1329,11 +1302,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2년 전 ",
+        "Text": "2년 전",
         "Type": "date",
         "Value": {
           "Timex": "2014-11-07",
@@ -1344,8 +1316,8 @@
             "date": "2014-11-07"
           }
         },
-        "Start": 12,
-        "Length": 13
+        "Start": 3,
+        "Length": 4
       }
     ]
   },
@@ -1354,11 +1326,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-14T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2016년 11월 16일 ",
+        "Text": "2016년 11월 16일",
         "Type": "date",
         "Value": {
           "Timex": "2016-11-16",
@@ -1379,11 +1350,11 @@
     "Context": {
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "1개월 21일 전에",
+        "Text": "1개월 21일 전",
         "Type": "date",
         "Value": {
           "Timex": "2017-10-02",
@@ -1394,8 +1365,8 @@
             "date": "2017-10-02"
           }
         },
-        "Start": 17,
-        "Length": 19
+        "Start": 4,
+        "Length": 9
       }
     ]
   },
@@ -1404,11 +1375,11 @@
     "Context": {
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2년 1개월 21일 전에",
+        "Text": "2년 1개월 21일 전",
         "Type": "date",
         "Value": {
           "Timex": "2015-10-02",
@@ -1419,8 +1390,8 @@
             "date": "2015-10-02"
           }
         },
-        "Start": 12,
-        "Length": 27
+        "Start": 3,
+        "Length": 12
       }
     ]
   },
@@ -1429,11 +1400,11 @@
     "Context": {
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": " 2년 21일 지나서",
+        "Text": "2년 21일 지나서",
         "Type": "date",
         "Value": {
           "Timex": "2019-12-14",
@@ -1444,8 +1415,8 @@
             "date": "2019-12-14"
           }
         },
-        "Start": 17,
-        "Length": 21
+        "Start": 3,
+        "Length": 10
       }
     ]
   },
@@ -1454,7 +1425,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-07T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1469,8 +1440,8 @@
             "date": "2018-01-20"
           }
         },
-        "Start": 17,
-        "Length": 22
+        "Start": 4,
+        "Length": 8
       }
     ]
   },
@@ -1479,7 +1450,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-18T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1494,8 +1465,8 @@
             "date": "1391-12-05"
           }
         },
-        "Start": 17,
-        "Length": 15
+        "Start": 4,
+        "Length": 12
       }
     ]
   },
@@ -1504,7 +1475,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1520,7 +1490,7 @@
           }
         },
         "Start": 0,
-        "Length": 28
+        "Length": 16
       }
     ]
   },
@@ -1529,7 +1499,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1544,8 +1513,8 @@
             "date": "2018-01-21"
           }
         },
-        "Start": 3,
-        "Length": 47
+        "Start": 0,
+        "Length": 16
       }
     ]
   },
@@ -1554,7 +1523,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1569,8 +1537,8 @@
             "date": "1978-09-21"
           }
         },
-        "Start": 3,
-        "Length": 49
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
@@ -1579,7 +1547,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1594,8 +1561,8 @@
             "date": "1901-09-10"
           }
         },
-        "Start": 3,
-        "Length": 31
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
@@ -1604,7 +1571,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1619,8 +1585,8 @@
             "date": "2000-09-10"
           }
         },
-        "Start": 7,
-        "Length": 32
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
@@ -1629,7 +1595,7 @@
     "Context": {
       "ReferenceDateTime": "2018-03-20T09:58:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1644,8 +1610,8 @@
             "date": "2018-04-06"
           }
         },
-        "Start": 13,
-        "Length": 30
+        "Start": 3,
+        "Length": 13
       }
     ]
   },
@@ -1654,7 +1620,7 @@
     "Context": {
       "ReferenceDateTime": "2018-03-20T10:45:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1669,8 +1635,8 @@
             "date": "2018-04-09"
           }
         },
-        "Start": 12,
-        "Length": 31
+        "Start": 4,
+        "Length": 13
       }
     ]
   },
@@ -1679,7 +1645,7 @@
     "Context": {
       "ReferenceDateTime": "2018-03-20T10:45:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1694,8 +1660,8 @@
             "date": "2018-02-21"
           }
         },
-        "Start": 12,
-        "Length": 37
+        "Start": 0,
+        "Length": 13
       }
     ]
   },
@@ -1704,7 +1670,6 @@
     "Context": {
       "ReferenceDateTime": "2018-03-20T22:16:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1719,8 +1684,8 @@
             "date": "2018-03-27"
           }
         },
-        "Start": 19,
-        "Length": 17
+        "Start": 0,
+        "Length": 8
       }
     ]
   },
@@ -1729,11 +1694,10 @@
     "Context": {
       "ReferenceDateTime": "2018-03-20T22:16:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "다음 주 일요일에",
+        "Text": "다음 주 일요일",
         "Type": "date",
         "Value": {
           "Timex": "2018-04-01",
@@ -1744,8 +1708,8 @@
             "date": "2018-04-01"
           }
         },
-        "Start": 16,
-        "Length": 22
+        "Start": 0,
+        "Length": 8
       }
     ]
   },
@@ -1754,7 +1718,7 @@
     "Context": {
       "ReferenceDateTime": "2018-04-20T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1769,8 +1733,8 @@
             "date": "2018-04-23"
           }
         },
-        "Start": 13,
-        "Length": 22
+        "Start": 0,
+        "Length": 2
       }
     ]
   },
@@ -1779,11 +1743,11 @@
     "Context": {
       "ReferenceDateTime": "2018-04-20T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "어제로부터 4일",
+        "Text": "어제로부터 4일 후",
         "Type": "date",
         "Value": {
           "Timex": "2018-04-23",
@@ -1794,8 +1758,8 @@
             "date": "2018-04-23"
           }
         },
-        "Start": 13,
-        "Length": 24
+        "Start": 0,
+        "Length": 10
       }
     ]
   },
@@ -1804,7 +1768,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1819,8 +1782,8 @@
             "date": "2015-05-13"
           }
         },
-        "Start": 16,
-        "Length": 9
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
@@ -1829,7 +1792,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1844,8 +1806,8 @@
             "date": "2015-05-13"
           }
         },
-        "Start": 21,
-        "Length": 9
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
@@ -1854,7 +1816,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1869,8 +1830,8 @@
             "date": "2017-03-07"
           }
         },
-        "Start": 13,
-        "Length": 8
+        "Start": 0,
+        "Length": 11
       }
     ]
   },
@@ -1879,7 +1840,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1894,8 +1854,8 @@
             "date": "2027-03-07"
           }
         },
-        "Start": 13,
-        "Length": 6
+        "Start": 0,
+        "Length": 11
       }
     ]
   },
@@ -1904,7 +1864,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1919,83 +1879,8 @@
             "date": "1989-05-05"
           }
         },
-        "Start": 13,
-        "Length": 8
-      }
-    ]
-  },
-  {
-    "Input": "2071년 3월 7일에 돌아갈 거야. ",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "2017년 3월 7일",
-        "Type": "date",
-        "Value": {
-          "Timex": "1971-05-05",
-          "FutureResolution": {
-            "date": "1971-05-05"
-          },
-          "PastResolution": {
-            "date": "1971-05-05"
-          }
-        },
-        "Start": 13,
-        "Length": 8
-      }
-    ]
-  },
-  {
-    "Input": "너는 지금부터 한 달에 두 번씩 일요일마다 시간 괜찮니? ",
-    "Context": {
-      "ReferenceDateTime": "2018-05-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "지금부터 한 달에 두 번씩 일요일마다",
-        "Type": "date",
-        "Value": {
-          "Timex": "2018-05-20",
-          "FutureResolution": {
-            "date": "2018-05-20"
-          },
-          "PastResolution": {
-            "date": "2018-05-20"
-          }
-        },
-        "Start": 18,
-        "Length": 20
-      }
-    ]
-  },
-  {
-    "Input": "너는 후에 두 번의 월요일에 시간 괜찮니?",
-    "Context": {
-      "ReferenceDateTime": "2018-05-07T00:00:00"
-    },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "후에 두 번의 월요일",
-        "Type": "date",
-        "Value": {
-          "Timex": "2018-05-21",
-          "FutureResolution": {
-            "date": "2018-05-21"
-          },
-          "PastResolution": {
-            "date": "2018-05-21"
-          }
-        },
-        "Start": 18,
-        "Length": 16
+        "Start": 0,
+        "Length": 11
       }
     ]
   },
@@ -2004,7 +1889,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2019,8 +1904,8 @@
             "date": "2018-06-02"
           }
         },
-        "Start": 18,
-        "Length": 20
+        "Start": 2,
+        "Length": 2
       }
     ]
   },
@@ -2029,7 +1914,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2044,8 +1929,8 @@
             "date": "2018-06-22"
           }
         },
-        "Start": 18,
-        "Length": 25
+        "Start": 3,
+        "Length": 7
       }
     ]
   },
@@ -2054,11 +1939,11 @@
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "그끄저께 ",
+        "Text": "그끄저께",
         "Type": "date",
         "Value": {
           "Timex": "2018-05-28",
@@ -2069,8 +1954,8 @@
             "date": "2018-05-28"
           }
         },
-        "Start": 15,
-        "Length": 25
+        "Start": 3,
+        "Length": 4
       }
     ]
   },
@@ -2079,11 +1964,10 @@
     "Context": {
       "ReferenceDateTime": "2018-07-05T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "3주 후에",
+        "Text": "3주 후",
         "Type": "date",
         "Value": {
           "Timex": "2018-07-26",
@@ -2094,8 +1978,8 @@
             "date": "2018-07-26"
           }
         },
-        "Start": 13,
-        "Length": 10
+        "Start": 3,
+        "Length": 4
       }
     ]
   },
@@ -2104,7 +1988,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-21T08:00:00"
     },
-    "NotSupported": "dotnet",
+    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2119,8 +2003,8 @@
             "date": "2018-08-27"
           }
         },
-        "Start": 45,
-        "Length": 21
+        "Start": 6,
+        "Length": 13
       }
     ]
   },
@@ -2129,7 +2013,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "15일",
@@ -2142,51 +2027,9 @@
           "PastResolution": {
             "date": "2016-10-15"
           }
-        }
-      }
-    ]
-  },
-  {
-    "Input": "10.2에 돌아갈게요",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
-    "Results": [
-      {
-        "Text": "10.2",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-10-02",
-          "FutureResolution": {
-            "date": "2017-10-02"
-          },
-          "PastResolution": {
-            "date": "2016-10-02"
-          }
-        }
-      }
-    ]
-  },
-  {
-    "Input": "10-2에 돌아갈게요",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
-    "Results": [
-      {
-        "Text": "10-2",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-10-02",
-          "FutureResolution": {
-            "date": "2017-10-02"
-          },
-          "PastResolution": {
-            "date": "2016-10-02"
-          }
-        }
+        },
+        "Start": 0,
+        "Length": 3
       }
     ]
   },
@@ -2195,7 +2038,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "10/2",
@@ -2208,7 +2051,9 @@
           "PastResolution": {
             "date": "2016-10-02"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 4
       }
     ]
   },
@@ -2217,7 +2062,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "10월 2일",
@@ -2230,7 +2075,9 @@
           "PastResolution": {
             "date": "2016-10-02"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 6
       }
     ]
   },
@@ -2239,7 +2086,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "1월 12일, 2016년",
@@ -2252,7 +2099,9 @@
           "PastResolution": {
             "date": "2016-01-12"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 13
       }
     ]
   },
@@ -2261,7 +2110,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2016년 1월 12일 월요일",
@@ -2274,7 +2123,9 @@
           "PastResolution": {
             "date": "2016-01-12"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 16
       }
     ]
   },
@@ -2283,7 +2134,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "02/22/2016",
@@ -2296,7 +2147,9 @@
           "PastResolution": {
             "date": "2016-02-22"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 10
       }
     ]
   },
@@ -2305,7 +2158,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "21/04/2016",
@@ -2318,7 +2171,9 @@
           "PastResolution": {
             "date": "2016-04-21"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 10
       }
     ]
   },
@@ -2327,7 +2182,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "21/04/16",
@@ -2340,7 +2196,9 @@
           "PastResolution": {
             "date": "2016-04-21"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 8
       }
     ]
   },
@@ -2349,7 +2207,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "21-04-2016",
@@ -2362,51 +2220,9 @@
           "PastResolution": {
             "date": "2016-04-21"
           }
-        }
-      }
-    ]
-  },
-  {
-    "Input": "4.22에 돌아가겠습니다",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
-    "Results": [
-      {
-        "Text": "4.22",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-04-22",
-          "FutureResolution": {
-            "date": "2017-04-22"
-          },
-          "PastResolution": {
-            "date": "2016-04-22"
-          }
-        }
-      }
-    ]
-  },
-  {
-    "Input": "4-22에 돌아가겠습니다",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
-    "Results": [
-      {
-        "Text": "4-22",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-04-22",
-          "FutureResolution": {
-            "date": "2017-04-22"
-          },
-          "PastResolution": {
-            "date": "2016-04-22"
-          }
-        }
+        },
+        "Start": 0,
+        "Length": 10
       }
     ]
   },
@@ -2415,7 +2231,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "4/22",
@@ -2428,19 +2244,21 @@
           "PastResolution": {
             "date": "2016-04-22"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 4
       }
     ]
   },
   {
-    "Input": "22/04에 돌아가겠습니다",
+    "Input": "04/22에 돌아가겠습니다",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "22/04",
+        "Text": "04/22",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-04-22",
@@ -2450,7 +2268,9 @@
           "PastResolution": {
             "date": "2016-04-22"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 5
       }
     ]
   },
@@ -2459,7 +2279,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2015/08/12",
@@ -2472,7 +2292,9 @@
           "PastResolution": {
             "date": "2015-08-12"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 10
       }
     ]
   },
@@ -2481,7 +2303,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "08/12,2015",
@@ -2494,7 +2317,9 @@
           "PastResolution": {
             "date": "2015-08-12"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 10
       }
     ]
   },
@@ -2503,7 +2328,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "1월 1일",
@@ -2516,7 +2341,9 @@
           "PastResolution": {
             "date": "2016-01-01"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 5
       }
     ]
   },
@@ -2525,7 +2352,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "1월-1일",
@@ -2538,7 +2365,9 @@
           "PastResolution": {
             "date": "2016-01-01"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 5
       }
     ]
   },
@@ -2547,7 +2376,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "1월 22일, 수요일",
@@ -2560,7 +2389,9 @@
           "PastResolution": {
             "date": "2016-01-22"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 11
       }
     ]
   },
@@ -2569,7 +2400,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "1월 1일",
@@ -2582,7 +2413,9 @@
           "PastResolution": {
             "date": "2016-01-01"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 5
       }
     ]
   },
@@ -2591,7 +2424,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "오월 이십일일",
@@ -2604,7 +2437,9 @@
           "PastResolution": {
             "date": "2016-05-21"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 7
       }
     ]
   },
@@ -2613,7 +2448,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "5월 이십일일",
@@ -2626,7 +2461,9 @@
           "PastResolution": {
             "date": "2016-05-21"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 7
       }
     ]
   },
@@ -2635,7 +2472,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "8월 2일",
@@ -2648,7 +2485,9 @@
           "PastResolution": {
             "date": "2016-08-02"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 5
       }
     ]
   },
@@ -2657,7 +2496,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "6월 22일",
@@ -2670,7 +2509,9 @@
           "PastResolution": {
             "date": "2016-06-22"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 6
       }
     ]
   },
@@ -2679,7 +2520,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "금요일",
@@ -2692,7 +2533,9 @@
           "PastResolution": {
             "date": "2016-11-04"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 3
       }
     ]
   },
@@ -2701,7 +2544,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "금요일",
@@ -2714,7 +2557,9 @@
           "PastResolution": {
             "date": "2016-11-04"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 3
       }
     ]
   },
@@ -2723,7 +2568,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "오늘",
@@ -2736,7 +2581,9 @@
           "PastResolution": {
             "date": "2016-11-07"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 2
       }
     ]
   },
@@ -2745,7 +2592,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "내일",
@@ -2758,7 +2606,9 @@
           "PastResolution": {
             "date": "2016-11-08"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 2
       }
     ]
   },
@@ -2767,7 +2617,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "어제",
@@ -2780,7 +2631,9 @@
           "PastResolution": {
             "date": "2016-11-06"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 2
       }
     ]
   },
@@ -2789,7 +2642,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "그제",
@@ -2802,7 +2656,9 @@
           "PastResolution": {
             "date": "2016-11-05"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 2
       }
     ]
   },
@@ -2811,7 +2667,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "모레",
@@ -2824,7 +2681,9 @@
           "PastResolution": {
             "date": "2016-11-09"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 2
       }
     ]
   },
@@ -2833,7 +2692,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "모레",
@@ -2846,7 +2706,9 @@
           "PastResolution": {
             "date": "2016-11-09"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 2
       }
     ]
   },
@@ -2855,7 +2717,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "그 다음날",
@@ -2868,7 +2731,9 @@
           "PastResolution": {
             "date": "2016-11-08"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 5
       }
     ]
   },
@@ -2877,7 +2742,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "다음날",
@@ -2890,7 +2756,9 @@
           "PastResolution": {
             "date": "2016-11-08"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 3
       }
     ]
   },
@@ -2899,7 +2767,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "이번 금요일",
@@ -2912,7 +2780,9 @@
           "PastResolution": {
             "date": "2016-11-11"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 6
       }
     ]
   },
@@ -2921,7 +2791,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "다음주 일요일",
@@ -2934,7 +2804,9 @@
           "PastResolution": {
             "date": "2016-11-20"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 7
       }
     ]
   },
@@ -2943,7 +2815,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "저번주 일요일",
@@ -2956,7 +2828,9 @@
           "PastResolution": {
             "date": "2016-11-06"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 7
       }
     ]
   },
@@ -2965,7 +2839,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "이번주 금요일",
@@ -2978,7 +2852,9 @@
           "PastResolution": {
             "date": "2016-11-11"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 7
       }
     ]
   },
@@ -2987,7 +2863,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "다음주 일요일",
@@ -3000,7 +2876,9 @@
           "PastResolution": {
             "date": "2016-11-20"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 7
       }
     ]
   },
@@ -3009,7 +2887,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "저번주 일요일",
@@ -3022,7 +2900,9 @@
           "PastResolution": {
             "date": "2016-11-06"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 7
       }
     ]
   },
@@ -3031,7 +2911,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "전날",
@@ -3044,7 +2925,9 @@
           "PastResolution": {
             "date": "2016-11-06"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 2
       }
     ]
   },
@@ -3053,7 +2936,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "그 전날",
@@ -3066,7 +2950,9 @@
           "PastResolution": {
             "date": "2016-11-06"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 4
       }
     ]
   },
@@ -3075,7 +2961,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "그 날",
@@ -3088,19 +2975,21 @@
           "PastResolution": {
             "date": "2016-11-07"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 3
       }
     ]
   },
   {
-    "Input": "15 6월 2016에 돌아올게요",
+    "Input": "2016년 6월 15일에 돌아올게요",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "15 6월 2016",
+        "Text": "2016년 6월 15일",
         "Type": "date",
         "Value": {
           "Timex": "2016-06-15",
@@ -3110,7 +2999,9 @@
           "PastResolution": {
             "date": "2016-06-15"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
@@ -3119,7 +3010,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "7월 첫째주 금요일",
@@ -3132,7 +3023,9 @@
           "PastResolution": {
             "date": "2016-07-01"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 10
       }
     ]
   },
@@ -3141,7 +3034,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "이번달 첫째주 금요일",
@@ -3154,7 +3047,9 @@
           "PastResolution": {
             "date": "2016-11-04"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 11
       }
     ]
   },
@@ -3163,7 +3058,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "다음주 금요일",
@@ -3176,7 +3071,9 @@
           "PastResolution": {
             "date": "2016-11-18"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 7
       }
     ]
   },
@@ -3185,7 +3082,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "다음 금요일",
@@ -3198,7 +3095,9 @@
           "PastResolution": {
             "date": "2016-11-18"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 6
       }
     ]
   },
@@ -3207,7 +3106,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "이 날",
@@ -3220,7 +3120,9 @@
           "PastResolution": {
             "date": "2016-11-07"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 3
       }
     ]
   },
@@ -3229,7 +3131,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "지난 날",
@@ -3242,7 +3145,9 @@
           "PastResolution": {
             "date": "2016-11-06"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 4
       }
     ]
   },
@@ -3251,7 +3156,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2주 후",
@@ -3264,7 +3169,9 @@
           "PastResolution": {
             "date": "2016-11-21"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 4
       }
     ]
   },
@@ -3273,7 +3180,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "한달 전",
@@ -3286,7 +3194,9 @@
           "PastResolution": {
             "date": "2016-10-07"
           }
-        }
+        },
+        "Start": 3,
+        "Length": 4
       }
     ]
   },
@@ -3295,7 +3205,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "몇달 전",
@@ -3308,7 +3219,9 @@
           "PastResolution": {
             "date": "2016-08-07"
           }
-        }
+        },
+        "Start": 3,
+        "Length": 4
       }
     ]
   },
@@ -3317,7 +3230,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "몇일 전",
@@ -3330,7 +3244,9 @@
           "PastResolution": {
             "date": "2016-11-04"
           }
-        }
+        },
+        "Start": 3,
+        "Length": 4
       }
     ]
   },
@@ -3339,73 +3255,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
-    "Results": [
-      {
-        "Text": "27일에",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-XX-27",
-          "FutureResolution": {
-            "date": "2016-11-27"
-          },
-          "PastResolution": {
-            "date": "2016-11-27"
-          }
-        }
-      }
-    ]
-  },
-  {
-    "Input": "27일에 돌아왔어요.",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
-    "Results": [
-      {
-        "Text": "27일에",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-XX-27",
-          "FutureResolution": {
-            "date": "2016-11-27"
-          },
-          "PastResolution": {
-            "date": "2016-11-27"
-          }
-        }
-      }
-    ]
-  },
-  {
-    "Input": "나 27일에 돌아왔어요!",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
-    "Results": [
-      {
-        "Text": "27일에",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-XX-27",
-          "FutureResolution": {
-            "date": "2016-11-27"
-          },
-          "PastResolution": {
-            "date": "2016-11-27"
-          }
-        }
-      }
-    ]
-  },
-  {
-    "Input": "나 27일에 돌아왔어.",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "27일",
@@ -3418,7 +3269,84 @@
           "PastResolution": {
             "date": "2016-11-27"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "27일에 돌아왔어요.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "27일",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-XX-27",
+          "FutureResolution": {
+            "date": "2016-11-27"
+          },
+          "PastResolution": {
+            "date": "2016-11-27"
+          }
+        },
+        "Start": 0,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "나 27일에 돌아왔어요!",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "27일",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-XX-27",
+          "FutureResolution": {
+            "date": "2016-11-27"
+          },
+          "PastResolution": {
+            "date": "2016-11-27"
+          }
+        },
+        "Start": 2,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "나 27일에 돌아왔어.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "27일",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-XX-27",
+          "FutureResolution": {
+            "date": "2016-11-27"
+          },
+          "PastResolution": {
+            "date": "2016-11-27"
+          }
+        },
+        "Start": 2,
+        "Length": 3
       }
     ]
   },
@@ -3427,10 +3355,11 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "21일에",
+        "Text": "21일",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-21",
@@ -3440,7 +3369,9 @@
           "PastResolution": {
             "date": "2016-11-21"
           }
-        }
+        },
+        "Start": 2,
+        "Length": 3
       }
     ]
   },
@@ -3449,10 +3380,11 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "for the 22nd",
+        "Text": "22일",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-22",
@@ -3462,7 +3394,9 @@
           "PastResolution": {
             "date": "2016-11-22"
           }
-        }
+        },
+        "Start": 2,
+        "Length": 3
       }
     ]
   },
@@ -3471,10 +3405,11 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2일에",
+        "Text": "2일",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-02",
@@ -3484,7 +3419,9 @@
           "PastResolution": {
             "date": "2016-11-02"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 2
       }
     ]
   },
@@ -3493,10 +3430,11 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "21일에",
+        "Text": "21일",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-22",
@@ -3506,7 +3444,9 @@
           "PastResolution": {
             "date": "2016-11-22"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 3
       }
     ]
   },
@@ -3515,10 +3455,11 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "30일에",
+        "Text": "30일",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-30",
@@ -3528,7 +3469,9 @@
           "PastResolution": {
             "date": "2016-11-30"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 3
       }
     ]
   },
@@ -3537,7 +3480,8 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:49.8080661+03:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "21일 목요일",
@@ -3550,7 +3494,9 @@
           "PastResolution": {
             "date": "2017-09-21"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 7
       }
     ]
   },
@@ -3559,7 +3505,8 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:49.8110663+03:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "22일 금요일",
@@ -3572,7 +3519,9 @@
           "PastResolution": {
             "date": "2017-09-22"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 7
       }
     ]
   },
@@ -3581,7 +3530,8 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:49.8120465+03:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "23일 토요일",
@@ -3594,7 +3544,9 @@
           "PastResolution": {
             "date": "2017-09-23"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 7
       }
     ]
   },
@@ -3603,7 +3555,8 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:49.8130455+03:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "15일 금요일",
@@ -3616,7 +3569,9 @@
           "PastResolution": {
             "date": "2017-09-15"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 7
       }
     ]
   },
@@ -3625,7 +3580,8 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:49.8140457+03:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "이십일일 목요일",
@@ -3638,7 +3594,9 @@
           "PastResolution": {
             "date": "2017-09-21"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 8
       }
     ]
   },
@@ -3647,7 +3605,8 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:49.8150456+03:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "이십이일 금요일",
@@ -3660,7 +3619,9 @@
           "PastResolution": {
             "date": "2017-09-22"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 8
       }
     ]
   },
@@ -3669,7 +3630,8 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:49.8160454+03:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "십오일 금요일",
@@ -3682,7 +3644,9 @@
           "PastResolution": {
             "date": "2017-09-15"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 7
       }
     ]
   },
@@ -3691,7 +3655,8 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:49.8200463+03:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "둘째주 일요일",
@@ -3704,7 +3669,9 @@
           "PastResolution": {
             "date": "2017-09-10"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 7
       }
     ]
   },
@@ -3713,7 +3680,8 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:49.8200463+03:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "첫째주 일요일",
@@ -3726,7 +3694,9 @@
           "PastResolution": {
             "date": "2017-09-03"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 7
       }
     ]
   },
@@ -3735,7 +3705,8 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:49.8210454+03:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "셋째주 화요일",
@@ -3748,7 +3719,9 @@
           "PastResolution": {
             "date": "2017-09-19"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 7
       }
     ]
   },
@@ -3757,7 +3730,8 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:49.8225493+03:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "다섯째 주 일요일",
@@ -3770,7 +3744,9 @@
           "PastResolution": {
             "date": "0001-01-01"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 9
       }
     ]
   },
@@ -3779,7 +3755,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "다음 달 20일",
@@ -3792,7 +3769,9 @@
           "PastResolution": {
             "date": "2016-12-20"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 8
       }
     ]
   },
@@ -3801,7 +3780,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "이번 달 31일",
@@ -3814,7 +3794,9 @@
           "PastResolution": {
             "date": "0001-01-01"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 8
       }
     ]
   },
@@ -3823,7 +3805,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "9-18-15",
@@ -3836,7 +3818,9 @@
           "PastResolution": {
             "date": "2015-09-18"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 7
       }
     ]
   },
@@ -3845,7 +3829,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "이틀 전",
@@ -3858,7 +3843,9 @@
           "PastResolution": {
             "date": "2016-11-05"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 4
       }
     ]
   },
@@ -3867,7 +3854,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2년 전",
@@ -3880,19 +3867,21 @@
           "PastResolution": {
             "date": "2014-11-07"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 4
       }
     ]
   },
   {
-    "Input": "16. 11월. 2016",
+    "Input": "2016년 11월 16일",
     "Context": {
       "ReferenceDateTime": "2016-11-14T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "16. 11월. 2016",
+        "Text": "2016년 11월 16일",
         "Type": "date",
         "Value": {
           "Timex": "2016-11-16",
@@ -3902,7 +3891,9 @@
           "PastResolution": {
             "date": "2016-11-16"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 13
       }
     ]
   },
@@ -3911,8 +3902,8 @@
     "Context": {
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "1개월 21일 전",
@@ -3925,7 +3916,9 @@
           "PastResolution": {
             "date": "2017-10-02"
           }
-        }
+        },
+        "Start": 4,
+        "Length": 9
       }
     ]
   },
@@ -3934,8 +3927,8 @@
     "Context": {
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2년 1개월 21일 전",
@@ -3948,7 +3941,9 @@
           "PastResolution": {
             "date": "2015-10-02"
           }
-        }
+        },
+        "Start": 3,
+        "Length": 12
       }
     ]
   },
@@ -3957,8 +3952,8 @@
     "Context": {
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2년 21일 후",
@@ -3971,20 +3966,22 @@
           "PastResolution": {
             "date": "2019-12-14"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 8
       }
     ]
   },
   {
-    "Input": "한달 2년 21일 전에 여기를 떠났어요",
+    "Input": "2년 1개월 21일 전에 여기를 떠났어요", 
     "Context": {
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "한달 2년 21일 전",
+        "Text": "2년 1개월 21일 전",
         "Type": "date",
         "Value": {
           "Timex": "2015-10-02",
@@ -3994,7 +3991,9 @@
           "PastResolution": {
             "date": "2015-10-02"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
@@ -4003,8 +4002,8 @@
     "Context": {
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "1개월 하고 21일 전",
@@ -4017,7 +4016,9 @@
           "PastResolution": {
             "date": "2017-10-02"
           }
-        }
+        },
+        "Start": 4,
+        "Length": 12
       }
     ]
   },
@@ -4026,8 +4027,8 @@
     "Context": {
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "1개월, 21일 전",
@@ -4040,7 +4041,9 @@
           "PastResolution": {
             "date": "2017-10-02"
           }
-        }
+        },
+        "Start": 4,
+        "Length": 10
       }
     ]
   },
@@ -4049,8 +4052,8 @@
     "Context": {
       "ReferenceDateTime": "2017-12-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "다음 달 20일",
@@ -4063,19 +4066,21 @@
           "PastResolution": {
             "date": "2018-01-20"
           }
-        }
+        },
+        "Start": 4,
+        "Length": 8
       }
     ]
   },
   {
-    "Input": "우리는 5 12월 1391에 회의했어요",
+    "Input": "우리는 1391년 12월 5일에 회의했어요",
     "Context": {
       "ReferenceDateTime": "2017-12-18T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "5 12월 1391",
+        "Text": "1391년 12월 5일",
         "Type": "date",
         "Value": {
           "Timex": "1391-12-05",
@@ -4085,7 +4090,9 @@
           "PastResolution": {
             "date": "1391-12-05"
           }
-        }
+        },
+        "Start": 4,
+        "Length": 12
       }
     ]
   },
@@ -4094,8 +4101,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "월요일, 1월 22일, 2018",
@@ -4108,20 +4114,22 @@
           "PastResolution": {
             "date": "2018-01-22"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 17
       }
     ]
   },
   {
-    "Input": "일요일 1월 이십일일 이천팔년에",
+    "Input": "일요일 1월 이십일일 이천십팔년에",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "일요일 1월 이십일일 이천팔년",
+        "Text": "일요일 1월 이십일일 이천십팔년",
         "Type": "date",
         "Value": {
           "Timex": "2018-01-21",
@@ -4131,7 +4139,9 @@
           "PastResolution": {
             "date": "2018-01-21"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 17
       }
     ]
   },
@@ -4140,8 +4150,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "9월 21일 1978",
@@ -4154,7 +4163,9 @@
           "PastResolution": {
             "date": "1978-09-21"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 11
       }
     ]
   },
@@ -4163,8 +4174,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "9월 10일, 1901",
@@ -4177,7 +4187,9 @@
           "PastResolution": {
             "date": "1901-09-10"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
@@ -4186,8 +4198,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "구월 십일, 2000",
@@ -4200,7 +4212,9 @@
           "PastResolution": {
             "date": "2000-09-10"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 11
       }
     ]
   },
@@ -4209,7 +4223,8 @@
     "Context": {
       "ReferenceDateTime": "2018-03-20T09:58:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "다음 달 첫째주 금요일",
@@ -4222,7 +4237,9 @@
           "PastResolution": {
             "date": "2018-04-06"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
@@ -4231,7 +4248,8 @@
     "Context": {
       "ReferenceDateTime": "2018-03-20T10:45:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "다음 달 둘째주 월요일",
@@ -4244,7 +4262,9 @@
           "PastResolution": {
             "date": "2018-04-09"
           }
-        }
+        },
+        "Start": 4,
+        "Length": 12
       }
     ]
   },
@@ -4253,7 +4273,8 @@
     "Context": {
       "ReferenceDateTime": "2018-03-20T10:45:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "저번 달 셋째주 수요일",
@@ -4266,7 +4287,9 @@
           "PastResolution": {
             "date": "2018-02-21"
           }
-        }
+        },
+        "Start": 3,
+        "Length": 12
       }
     ]
   },
@@ -4275,7 +4298,7 @@
     "Context": {
       "ReferenceDateTime": "2018-03-20T22:16:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "다음 주 화요일",
@@ -4288,7 +4311,9 @@
           "PastResolution": {
             "date": "2018-03-27"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 8
       }
     ]
   },
@@ -4297,7 +4322,7 @@
     "Context": {
       "ReferenceDateTime": "2018-03-20T22:16:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "다음 주 일요일",
@@ -4310,7 +4335,9 @@
           "PastResolution": {
             "date": "2018-04-01"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 8
       }
     ]
   },
@@ -4319,7 +4346,8 @@
     "Context": {
       "ReferenceDateTime": "2018-04-20T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "삼일 후",
@@ -4332,7 +4360,9 @@
           "PastResolution": {
             "date": "2018-04-23"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 4
       }
     ]
   },
@@ -4341,7 +4371,8 @@
     "Context": {
       "ReferenceDateTime": "2018-04-20T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "어제부터 4일 후",
@@ -4354,7 +4385,9 @@
           "PastResolution": {
             "date": "2018-04-23"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 9
       }
     ]
   },
@@ -4363,7 +4396,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "13.5.2015",
@@ -4376,7 +4409,9 @@
           "PastResolution": {
             "date": "2015-05-13"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 9
       }
     ]
   },
@@ -4385,7 +4420,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2015.5.13",
@@ -4398,7 +4433,9 @@
           "PastResolution": {
             "date": "2015-05-13"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 9
       }
     ]
   },
@@ -4407,7 +4444,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3-7-2017",
@@ -4420,7 +4458,9 @@
           "PastResolution": {
             "date": "2017-03-07"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 8
       }
     ]
   },
@@ -4429,7 +4469,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3-7-07",
@@ -4442,7 +4483,9 @@
           "PastResolution": {
             "date": "2007-03-07"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 6
       }
     ]
   },
@@ -4451,7 +4494,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "3-7-27",
@@ -4464,7 +4508,9 @@
           "PastResolution": {
             "date": "2027-03-07"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 6
       }
     ]
   },
@@ -4473,7 +4519,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "89/05/05",
@@ -4486,7 +4532,9 @@
           "PastResolution": {
             "date": "1989-05-05"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 8
       }
     ]
   },
@@ -4495,7 +4543,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "71/05/05",
@@ -4508,7 +4556,9 @@
           "PastResolution": {
             "date": "1971-05-05"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 8
       }
     ]
   },
@@ -4517,7 +4567,8 @@
     "Context": {
       "ReferenceDateTime": "2018-05-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "오늘부터 2주간 일요일",
@@ -4530,7 +4581,9 @@
           "PastResolution": {
             "date": "2018-05-20"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 12
       }
     ]
   },
@@ -4539,7 +4592,8 @@
     "Context": {
       "ReferenceDateTime": "2018-05-07T00:00:00"
     },
-    "NotSupportedByDesign": "dotNet,javascript,python,java,",
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2주 후 월요일",
@@ -4552,7 +4606,34 @@
           "PastResolution": {
             "date": "2018-05-21"
           }
-        }
+        },
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "2008년 1월 21일 일요일에",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "IgnoreResolution": "true",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2008년 1월 21일 일요일",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-01-21",
+          "FutureResolution": {
+            "date": "2018-01-21"
+          },
+          "PastResolution": {
+            "date": "2018-01-21"
+          }
+        },
+        "Start": 0,
+        "Length": 16
       }
     ]
   }

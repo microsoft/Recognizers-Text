@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -8,12 +11,20 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
     public abstract class AbstractNumberWithUnitModel : IModel
     {
+        private string culture;
+
+        private string requestedCulture;
+
         protected AbstractNumberWithUnitModel(Dictionary<IExtractor, IParser> extractorParserDic)
         {
             this.ExtractorParserDic = extractorParserDic;
         }
 
         public abstract string ModelTypeName { get; }
+
+        public string Culture => this.culture;
+
+        public string RequestedCulture => this.requestedCulture;
 
         protected Dictionary<IExtractor, IParser> ExtractorParserDic { get; }
 
@@ -103,6 +114,12 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             }
 
             return extractionResults;
+        }
+
+        public void SetCultureInfo(string culture, string requestedCulture = null)
+        {
+            this.culture = culture;
+            this.requestedCulture = requestedCulture;
         }
     }
 }

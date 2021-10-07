@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 package com.microsoft.recognizers.text.numberwithunit.german.parsers;
 
 import com.microsoft.recognizers.text.CultureInfo;
@@ -8,6 +11,7 @@ import com.microsoft.recognizers.text.number.german.parsers.GermanNumberParserCo
 import com.microsoft.recognizers.text.number.parsers.AgnosticNumberParserFactory;
 import com.microsoft.recognizers.text.number.parsers.AgnosticNumberParserType;
 import com.microsoft.recognizers.text.numberwithunit.parsers.BaseNumberWithUnitParserConfiguration;
+import com.microsoft.recognizers.text.numberwithunit.resources.GermanNumericWithUnit;
 
 public abstract class GermanNumberWithUnitParserConfiguration extends BaseNumberWithUnitParserConfiguration {
 
@@ -26,7 +30,7 @@ public abstract class GermanNumberWithUnitParserConfiguration extends BaseNumber
 
     @Override
     public String getConnectorToken() {
-        return "";
+        return GermanNumericWithUnit.ConnectorToken;
     }
 
     public GermanNumberWithUnitParserConfiguration(CultureInfo ci) {

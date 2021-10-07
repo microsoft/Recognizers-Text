@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
@@ -64,7 +67,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 { "fathers", FathersDay },
                 { "mothers", MothersDay },
-                { "thanksgivingday", ThanksgivingDay },
                 { "thanksgiving", ThanksgivingDay },
                 { "blackfriday", BlackFriday },
                 { "cybermonday", CyberMonday },

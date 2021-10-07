@@ -939,5 +939,17 @@
     "Input": "Het gebeurde op volgende week na 2:00",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
+  },
+  {
+    "Input": "Maak me onbeschikbaar van 04-12-2019 6.00 tot 05-12-2019 20.00",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "van 04-12-2019 6.00 tot 05-12-2019 20.00",
+        "Type": "datetimerange",
+        "Start": 22,
+        "Length": 40
+      }
+    ]
   }
 ]

@@ -8,7 +8,7 @@ This sample demonstrate the combination of all Recognizers to extract possible v
 
 First, install its dependencies:
 
-```
+```bash
 cd .\samples\simple_console\
 pip install -r .\requirements.txt
 ```
@@ -33,7 +33,7 @@ So far, the available models are:
 
 ```Python
 # Use English for the Recognizers culture
-DEFAULT_CULTURE = Culture.English
+culture = Culture.English
 
 # Number recognizer - This function will find any number from the input
 # E.g "I have two apples" will return "2".
@@ -66,12 +66,21 @@ Recognizers.recognize_temperature(user_input, culture),
 # DateTime recognizer - This function will find any Date even if its write in colloquial language
 # E.g "I'll go back 8pm today" will return "2017-10-04 20:00:00"
 Recognizers.recognize_datetime(user_input, culture)
-````
+```
 
-All these models accept `user_input: str` as a string and returns a **List** of [ModelResult](../libraries/recognizers-text/recognizers_text/model.py#L10-L16):
+All these models accept `user_input: str`, `culture: str` and returns a **List** of [`ModelResult`](../libraries/recognizers-text/recognizers_text/model.py#L11-L48) object:
 
-````Python
-result = Recognizers.recognize_number("I have twenty apples")
+```Python
+results = Recognizers.recognize_number("I have twenty apples", culture)
+
+print(
+    'Returns:\n',
+    json.dumps(
+        results,
+        default=lambda o: o.__dict__,
+        indent='\t',
+        ensure_ascii=False)
+)
 
 # Returns:
 # [
@@ -82,7 +91,7 @@ result = Recognizers.recognize_number("I have twenty apples")
 # 			"value": "20"
 # 		},
 # 		"text": "twenty",
-# 		"typeName": "number"
+# 		"type_name": "number"
 # 	}
 # ]
-````
+```

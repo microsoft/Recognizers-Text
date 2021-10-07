@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>net462</TargetFrameworks>
+    <LangVersion>9</LangVersion>
     <!-- Disable GenerateAssemblyInfo to use the existing AssemblyInfo.cs -->
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
@@ -39,6 +40,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
     </Compile>
+    <Compile Update="Arabic\DateTimeDefinitions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DateTimeDefinitions.tt</DependentUpon>
+    </Compile>
     <Compile Update="Arabic\NumbersDefinitions.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -68,6 +74,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>BaseHashTag.tt</DependentUpon>
+    </Compile>
+    <Compile Update="BaseQuotedText.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BaseQuotedText.tt</DependentUpon>
     </Compile>
     <Compile Update="BaseIp.cs">
       <DesignTime>True</DesignTime>
@@ -299,6 +310,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>NumbersDefinitions.tt</DependentUpon>
     </Compile>
+    <Compile Update="Korean\NumbersWithUnitDefinitions.cs">
+      <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Update="Portuguese\ChoiceDefinitions.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -383,6 +399,8 @@
 
   <ItemGroup>
     <None Update="Arabic\ChoiceDefinitions.tt">
+    </None>
+    <None Update="Arabic\DateTimeDefinitions.tt">
     </None>
     <None Update="Arabic\NumbersDefinitions.tt">
     </None>
@@ -487,6 +505,8 @@
     <None Update="Japanese\NumbersWithUnitDefinitions.tt">
     </None>
     <None Update="Korean\NumbersDefinitions.tt">
+    </None>
+    <None Update="Korean\NumbersWithUnitDefinitions.tt">
     </None>
     <None Update="Portuguese\ChoiceDefinitions.tt">
     </None>

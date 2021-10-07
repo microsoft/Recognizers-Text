@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 package com.microsoft.recognizers.text.datetime.extractors;
 
 import com.microsoft.recognizers.text.ExtractResult;
@@ -267,13 +270,6 @@ public class BaseDatePeriodExtractor implements IDateTimeExtractor {
 
             // Match suffix
             match = RegexExtension.matchBegin(config.getPastRegex(), afterStr, true);
-            if (match.getSuccess()) {
-                int matchLength = match.getMatch().get().index + match.getMatch().get().length;
-                results.add(new Token(duration.getStart(), duration.getEnd() + matchLength));
-                continue;
-            }
-
-            match = RegexExtension.matchBegin(config.getFutureRegex(), afterStr, true);
             if (match.getSuccess()) {
                 int matchLength = match.getMatch().get().index + match.getMatch().get().length;
                 results.add(new Token(duration.getStart(), duration.getEnd() + matchLength));

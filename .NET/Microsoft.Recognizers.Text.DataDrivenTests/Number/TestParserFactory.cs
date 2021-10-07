@@ -1,4 +1,7 @@
-﻿using Microsoft.Recognizers.Text.Number.Chinese;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using Microsoft.Recognizers.Text.Number.Chinese;
 using Microsoft.Recognizers.Text.Number.English;
 using Microsoft.Recognizers.Text.Number.French;
 using Microsoft.Recognizers.Text.Number.German;

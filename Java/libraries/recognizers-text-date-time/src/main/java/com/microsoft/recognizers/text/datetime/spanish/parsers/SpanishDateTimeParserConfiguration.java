@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 package com.microsoft.recognizers.text.datetime.spanish.parsers;
 
 import com.google.common.collect.ImmutableMap;
@@ -40,6 +43,7 @@ public class SpanishDateTimeParserConfiguration extends BaseOptionsConfiguration
     public final Pattern nowRegex;
     public final Pattern amTimeRegex;
     public final Pattern pmTimeRegex;
+    public final Pattern lastNightTimeRegex;
     public final Pattern simpleTimeOfTodayAfterRegex;
     public final Pattern simpleTimeOfTodayBeforeRegex;
     public final Pattern specificTimeOfDayRegex;
@@ -80,6 +84,7 @@ public class SpanishDateTimeParserConfiguration extends BaseOptionsConfiguration
 
         pmTimeRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PmRegex);
         amTimeRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.AmTimeRegex);
+        lastNightTimeRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.LastNightTimeRegex);
     }
 
     @Override
@@ -122,12 +127,18 @@ public class SpanishDateTimeParserConfiguration extends BaseOptionsConfiguration
         Matcher regexMatcher = SpanishDatePeriodParserConfiguration.previousPrefixRegex.matcher(trimmedText);
 
         int swift = 0;
+
         if (regexMatcher.find()) {
-            swift = 1;
+            swift = -1;
         } else {
-            regexMatcher = SpanishDatePeriodParserConfiguration.nextPrefixRegex.matcher(trimmedText);
+            regexMatcher = this.lastNightTimeRegex.matcher(trimmedText);
             if (regexMatcher.find()) {
                 swift = -1;
+            } else {
+                regexMatcher = SpanishDatePeriodParserConfiguration.nextPrefixRegex.matcher(trimmedText);
+                if (regexMatcher.find()) {
+                    swift = 1;
+                }
             }
         }
 

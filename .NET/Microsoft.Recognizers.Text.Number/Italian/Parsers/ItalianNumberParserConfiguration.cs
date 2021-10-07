@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
 using System.Linq;
@@ -120,6 +123,7 @@ namespace Microsoft.Recognizers.Text.Number.Italian
             long prevValue = 0;
 
             long finalValue = 0;
+
             var strBuilder = new StringBuilder();
             int lastGoodChar = 0;
             for (int i = 0; i < numberStr.Length; i++)

@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 from typing import Pattern, Dict
 
 from recognizers_text.utilities import RegExpUtility
@@ -36,7 +39,7 @@ class EnglishTimePeriodParserConfiguration(TimePeriodParserConfiguration):
     @property
     def pure_number_between_and_regex(self) -> Pattern:
         return self._pure_number_between_and_regex
-    
+
     @property
     def specific_time_from_to_regex(self) -> Pattern:
         return self._specific_time_from_to_regex

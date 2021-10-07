@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -27,14 +30,14 @@ namespace Microsoft.Recognizers.Text.DateTime.German
                 { "austriannationalday", AustrianNationalDay }, // 26. Oktober
                 { "immaculateconception", ImmaculateConception }, // 8. Dezember
                 { "secondchristmasday", SecondChristmasDay }, // 26. Dezember
-                { "berchtoldsday", BerchtoldsDay }, // 2. Januar
+                { "berchtoldsday", BerchtoldDay }, // 2. Januar
                 { "saintjosephsday", SaintJosephsDay }, // 19. März
                 { "swissnationalday", SwissNationalDay }, // 1. August
                 { "maosbirthday", MaoBirthday },
                 { "yuandan", NewYear },
                 { "teachersday", TeacherDay },
                 { "singleday", SinglesDay },
-                { "allsaintsday", HalloweenDay },
+                { "allsaintsday", AllHallowDay },
                 { "youthday", YouthDay },
                 { "childrenday", ChildrenDay },
                 { "femaleday", FemaleDay },
@@ -43,11 +46,16 @@ namespace Microsoft.Recognizers.Text.DateTime.German
                 { "girlsday", GirlsDay },
                 { "whiteloverday", WhiteLoverDay },
                 { "loverday", ValentinesDay },
+                { "barbaratag", BarbaraTag },
+                { "augsburgerfriedensfest", AugsburgerFriedensFest },
+                { "johannistag", JohannisTag },
+                { "peterundpaul", PeterUndPaul },
                 { "firstchristmasday", ChristmasDay },
                 { "xmas", ChristmasDay },
                 { "newyear", NewYear },
                 { "newyearday", NewYear },
                 { "newyearsday", NewYear },
+                { "heiligedreikönige", HeiligeDreiKönige },
                 { "inaugurationday", InaugurationDay },
                 { "groundhougday", GroundhogDay },
                 { "valentinesday", ValentinesDay },
@@ -55,16 +63,17 @@ namespace Microsoft.Recognizers.Text.DateTime.German
                 { "aprilfools", FoolDay },
                 { "stgeorgeday", StGeorgeDay },
                 { "mayday", Mayday },
-                { "cincodemayoday", CincoDeMayoday },
+                { "labour", LaborDay },
+                { "cincodemayoday", CincoDeMayo },
                 { "baptisteday", BaptisteDay },
                 { "usindependenceday", UsaIndependenceDay },
                 { "independenceday", UsaIndependenceDay },
                 { "bastilleday", BastilleDay },
                 { "halloweenday", HalloweenDay },
                 { "allhallowday", AllHallowDay },
-                { "allsoulsday", AllSoulsday },
+                { "allsoulsday", AllSoulsDay },
                 { "guyfawkesday", GuyFawkesDay },
-                { "veteransday", Veteransday },
+                { "veteransday", VeteransDay },
                 { "christmaseve", ChristmasEve },
                 { "newyeareve", NewYearEve },
                 { "piday", PiDay },
@@ -81,17 +90,20 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             { "easterday", GetEasterDay },
             { "eastersunday", GetEasterDay },
             { "eastermonday", GetEasterMondayOfYear },
+            { "eastersaturday", GetEasterSaturday },
             { "weiberfastnacht", GetWeiberfastnacht },
             { "carnival", GetCarnival },
-            { "ashwednesday", GetAshwednesday },
-            { "palmsunday", GetPalmsunday },
-            { "goodfriday", GetGoodfriday },
+            { "ashwednesday", GetAshWednesday },
+            { "palmsunday", GetPalmSunday },
+            { "goodfriday", GetGoodFriday },
             { "ascensionofchrist", GetAscensionOfChrist },
-            { "whitsunday", GetWhitsunday },
-            { "whitemonday", GetWhitMonday },
+            { "whitesunday", GetWhiteSunday },
+            { "whitemonday", GetWhiteMonday },
             { "corpuschristi", GetCorpusChristi },
             { "rosenmontag", GetRosenmontag },
             { "fastnacht", GetFastnacht },
+            { "fastnachtssamstag", GetFastnachtSaturday },
+            { "fastnachtssonntag", GetFastnachtSunday },
             { "holythursday", GetHolyThursday },
             { "memorialdaygermany", GetMemorialDayGermany },
             { "dayofrepentance", GetDayOfRepentance },
@@ -102,6 +114,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             { "fourthadvent", GetFourthAdvent },
             { "chedayofrepentance", GetCheDayOfRepentance },
             { "mothers", GetMothersDayOfYear },
+            { "thanksgiving", GetThanksgivingDayOfYear },
         };
 
         private readonly IHolidayParserConfiguration config;
@@ -216,7 +229,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         private static DateObject SecondChristmasDay(int year) => new DateObject(year, 12, 26);
 
-        private static DateObject BerchtoldsDay(int year) => new DateObject(year, 1, 2);
+        private static DateObject BerchtoldDay(int year) => new DateObject(year, 1, 2);
 
         private static DateObject SaintJosephsDay(int year) => new DateObject(year, 3, 19);
 
@@ -226,7 +239,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         private static DateObject LaborDay(int year) => new DateObject(year, 5, 1);
 
-        private static DateObject MidautumnDay(int year) => new DateObject(year, 8, 15);
+        private static DateObject MidAutumnDay(int year) => new DateObject(year, 8, 15);
 
         private static DateObject SpringDay(int year) => new DateObject(year, 1, 1);
 
@@ -282,7 +295,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         private static DateObject Mayday(int year) => new DateObject(year, 5, 1);
 
-        private static DateObject CincoDeMayoday(int year) => new DateObject(year, 5, 5);
+        private static DateObject CincoDeMayo(int year) => new DateObject(year, 5, 5);
 
         private static DateObject BaptisteDay(int year) => new DateObject(year, 6, 24);
 
@@ -294,11 +307,11 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         private static DateObject AllHallowDay(int year) => new DateObject(year, 11, 1);
 
-        private static DateObject AllSoulsday(int year) => new DateObject(year, 11, 2);
+        private static DateObject AllSoulsDay(int year) => new DateObject(year, 11, 2);
 
         private static DateObject GuyFawkesDay(int year) => new DateObject(year, 11, 5);
 
-        private static DateObject Veteransday(int year) => new DateObject(year, 11, 11);
+        private static DateObject VeteransDay(int year) => new DateObject(year, 11, 11);
 
         private static DateObject PiDay(int year) => new DateObject(year, 3, 14);
 
@@ -308,7 +321,17 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         private static DateObject BeginningOfSpring(int year) => new DateObject(year, 3, 20);
 
-        private static DateObject BeginningOfFall(int year) => new DateObject(year, 9, 23);
+        private static DateObject BeginningOfFall(int year) => new DateObject(year, 9, 22);
+
+        private static DateObject BarbaraTag(int year) => new DateObject(year, 12, 4);
+
+        private static DateObject AugsburgerFriedensFest(int year) => new DateObject(year, 8, 8);
+
+        private static DateObject PeterUndPaul(int year) => new DateObject(year, 6, 29);
+
+        private static DateObject JohannisTag(int year) => new DateObject(year, 6, 24);
+
+        private static DateObject HeiligeDreiKönige(int year) => new DateObject(year, 1, 6);
 
         private static DateObject GetMothersDayOfYear(int year)
         {
@@ -366,9 +389,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         private static DateObject GetThanksgivingDayOfYear(int year)
         {
-            return DateObject.MinValue.SafeCreateFromValue(year, 11, (from day in Enumerable.Range(1, 30)
-                                                                      where DateObject.MinValue.SafeCreateFromValue(year, 11, day).DayOfWeek == DayOfWeek.Thursday
-                                                                      select day).ElementAt(3));
+            return DateObject.MinValue.SafeCreateFromValue(year, 10, (from day in Enumerable.Range(1, 31)
+                                                                      where DateObject.MinValue.SafeCreateFromValue(year, 10, day).DayOfWeek == DayOfWeek.Sunday
+                                                                      select day).ElementAt(0));
         }
 
         private static DateObject GetEasterDay(int year)
@@ -445,12 +468,12 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             return HolidayFunctions.CalculateHolidayByEaster(year, 60);
         }
 
-        private static DateObject GetWhitsunday(int year)
+        private static DateObject GetWhiteSunday(int year)
         {
             return HolidayFunctions.CalculateHolidayByEaster(year, 49);
         }
 
-        private static DateObject GetWhitMonday(int year)
+        private static DateObject GetWhiteMonday(int year)
         {
             return HolidayFunctions.CalculateHolidayByEaster(year, 50);
         }
@@ -460,17 +483,17 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             return HolidayFunctions.CalculateHolidayByEaster(year, 39);
         }
 
-        private static DateObject GetGoodfriday(int year)
+        private static DateObject GetGoodFriday(int year)
         {
             return HolidayFunctions.CalculateHolidayByEaster(year, -2);
         }
 
-        private static DateObject GetPalmsunday(int year)
+        private static DateObject GetPalmSunday(int year)
         {
             return HolidayFunctions.CalculateHolidayByEaster(year, -7);
         }
 
-        private static DateObject GetAshwednesday(int year)
+        private static DateObject GetAshWednesday(int year)
         {
             return HolidayFunctions.CalculateHolidayByEaster(year, -46);
         }
@@ -483,6 +506,21 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         private static DateObject GetWeiberfastnacht(int year)
         {
             return HolidayFunctions.CalculateHolidayByEaster(year, -52);
+        }
+
+        private static DateObject GetEasterSaturday(int year)
+        {
+            return HolidayFunctions.CalculateHolidayByEaster(year, -1);
+        }
+
+        private static DateObject GetFastnachtSaturday(int year)
+        {
+            return HolidayFunctions.CalculateHolidayByEaster(year, -50);
+        }
+
+        private static DateObject GetFastnachtSunday(int year)
+        {
+            return HolidayFunctions.CalculateHolidayByEaster(year, -49);
         }
 
         private DateTimeResolutionResult ParseHolidayRegexMatch(string text, DateObject referenceDate)

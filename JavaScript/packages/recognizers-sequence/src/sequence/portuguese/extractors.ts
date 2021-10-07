@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { BasePhoneNumberExtractorConfiguration, IIpExtractorConfiguration, BaseMentionExtractor, BaseHashtagExtractor, BaseEmailExtractor, IURLExtractorConfiguration, BaseGUIDExtractor, IPhoneNumberExtractorConfiguration } from "../extractors";
 import { ExtractResult, RegExpUtility } from "@microsoft/recognizers-text";
 import { BasePhoneNumbers } from "../../resources/basePhoneNumbers";

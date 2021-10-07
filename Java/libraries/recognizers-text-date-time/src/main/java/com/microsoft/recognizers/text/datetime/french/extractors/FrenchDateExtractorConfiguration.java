@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 package com.microsoft.recognizers.text.datetime.french.extractors;
 
 import com.google.common.collect.ImmutableMap;
@@ -58,10 +61,18 @@ public class FrenchDateExtractorConfiguration extends BaseOptionsConfiguration i
             add(RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor1));
             add(RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor2));
             add(RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor3));
-            add(RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor5));
-            add(RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor4));
-            add(RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor6));
-            add(RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor7));
+            add(FrenchDateTime.DefaultLanguageFallback == "DMY" ?
+                    RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor5) :
+                    RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor4));
+            add(FrenchDateTime.DefaultLanguageFallback == "DMY" ?
+                    RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor4) :
+                    RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor5));
+            add(FrenchDateTime.DefaultLanguageFallback == "DMY" ?
+                    RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor7) :
+                    RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor6));
+            add(FrenchDateTime.DefaultLanguageFallback == "DMY" ?
+                    RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor6) :
+                    RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor7));
             add(RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor8));
             add(RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractor9));
             add(RegExpUtility.getSafeRegExp(FrenchDateTime.DateExtractorA));

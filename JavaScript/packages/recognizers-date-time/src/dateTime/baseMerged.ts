@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { IExtractor, ExtractResult, MetaData } from "@microsoft/recognizers-text";
 import { Constants, TimeTypeConstants } from "./constants";
 import { RegExpUtility, StringUtility, BaseNumberExtractor } from "@microsoft/recognizers-text-number";
@@ -37,11 +40,14 @@ export interface IMergedExtractorConfiguration {
     numberEndingPattern: RegExp
     unspecificDatePeriodRegex: RegExp
     filterWordRegexList: RegExp[]
+    AmbiguityFiltersDict: Map<RegExp, RegExp>
 }
 
 export class BaseMergedExtractor implements IDateTimeExtractor {
     protected readonly config: IMergedExtractorConfiguration;
     protected readonly options: DateTimeOptions;
+
+    private static readonly NumberOrConnectorRegex: RegExp = new RegExp('^[0-9-]+$');
 
     constructor(config: IMergedExtractorConfiguration, options: DateTimeOptions) {
         this.config = config;
@@ -69,6 +75,9 @@ export class BaseMergedExtractor implements IDateTimeExtractor {
         this.addTo(result, this.numberEndingRegexMatch(source, result), source);
 
         result = this.filterUnspecificDatePeriod(result);
+
+        // Remove common ambiguous cases
+        result = this.filterAmbiguity(result, source);
 
         this.addMod(result, source);
 
@@ -167,6 +176,25 @@ export class BaseMergedExtractor implements IDateTimeExtractor {
         ers = ers.filter(er => !RegExpUtility.isMatch(this.config.unspecificDatePeriodRegex, er.text));
         return ers;
     }
+
+    private filterAmbiguity(extractResults: ExtractResult[], text: string): ExtractResult[] {
+            if (this.config.AmbiguityFiltersDict != null) {
+                for (let [regexKey, regexValue] of this.config.AmbiguityFiltersDict) {
+                    extractResults.forEach(extractResult => {
+                        if (RegExpUtility.isMatch(regexKey, extractResult.text)) {
+                            let matches = RegExpUtility.getMatches(regexValue, text);
+                            extractResults = extractResults.filter(er => !matches.some(m => m.index < er.start + er.length && m.index + m.length > er.start));
+                        }
+                    });
+                }
+            }
+
+            // @TODO: Refactor to remove this method and use the general ambiguity filter approach
+            extractResults = extractResults.filter(er => !(RegExpUtility.isMatch(BaseMergedExtractor.NumberOrConnectorRegex, er.text) &&
+                    (text.substring(0, er.start).trim().endsWith("-") || text.substring((er.start + er.length)).trim().startsWith("-"))));
+
+            return extractResults;
+        }
 
     private filterAmbiguousSingleWord(er: ExtractResult, text: string): boolean {
         let matches = RegExpUtility.getMatches(this.config.singleAmbiguousMonthRegex, er.text.toLowerCase());
@@ -552,6 +580,10 @@ export class BaseMergedParser implements IDateTimeParser {
             }
         }
 
+        if (comment && this.HasDoubleTimex(comment)) {
+            this.processDoubleTimex(result, Constants.ResolveToFutureKey, Constants.ResolveToPastKey, timex);
+        }
+
         result.forEach((value, key) => {
             if (this.isObject(value)) {
                 // is "StringMap"
@@ -666,6 +698,10 @@ export class BaseMergedParser implements IDateTimeParser {
     private addPeriodToResolution(resolutions: StringMap, startType: string, endType: string, mod: string, result: StringMap) {
         let start = resolutions[startType];
         let end = resolutions[endType];
+        if (start === Constants.InvalidDateString || end === Constants.InvalidDateString) {
+            return;
+        }
+
         if (!StringUtility.isNullOrEmpty(mod)) {
             // For the 'before' mod
             // 1. Cases like "Before December", the start of the period should be the end of the new period, not the start
@@ -708,6 +744,24 @@ export class BaseMergedParser implements IDateTimeParser {
 
     protected getValues(obj: any): any[] {
         return Object.keys(obj).map(key => obj[key]);
+    }
+
+    protected processDoubleTimex(resolutionDic: Map<string, any>, futureKey: string, pastKey: string, originTimex: string) {
+        let timexes = originTimex.split(Constants.CompositeTimexDelimiter);
+
+        if (!resolutionDic.has(futureKey) || !resolutionDic.has(pastKey) || timexes.length != 2)
+        {
+            return;
+        }
+
+        let futureResolution: StringMap = resolutionDic.get(futureKey);
+        let pastResolution: StringMap = resolutionDic.get(pastKey);
+        futureResolution[Constants.TimexKey] = timexes[0];
+        pastResolution[Constants.TimexKey] = timexes[1];
+    }
+    
+    private HasDoubleTimex(comment: string): boolean {
+        return comment === Constants.Comment_DoubleTimex;
     }
 
     protected resolveAMPM(valuesMap: Map<string, any>, keyName: string) {

@@ -1,4 +1,7 @@
-﻿using System.Collections.Immutable;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Immutable;
 using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.German;
 using Microsoft.Recognizers.Text.DateTime.German.Utilities;
@@ -34,9 +37,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
             var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
 
-            CardinalExtractor = Number.German.CardinalExtractor.GetInstance();
-            IntegerExtractor = Number.German.IntegerExtractor.GetInstance();
-            OrdinalExtractor = Number.German.OrdinalExtractor.GetInstance();
+            CardinalExtractor = Number.German.CardinalExtractor.GetInstance(numConfig);
+            IntegerExtractor = Number.German.IntegerExtractor.GetInstance(numConfig);
+            OrdinalExtractor = Number.German.OrdinalExtractor.GetInstance(numConfig);
 
             NumberParser = new BaseNumberParser(new GermanNumberParserConfiguration(numConfig));
 

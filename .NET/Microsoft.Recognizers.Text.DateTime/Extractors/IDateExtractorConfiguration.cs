@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
@@ -60,6 +63,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         IParser NumberParser { get; }
 
         IDateTimeExtractor DurationExtractor { get; }
+
+        IDateTimeExtractor HolidayExtractor { get; }
 
         IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 

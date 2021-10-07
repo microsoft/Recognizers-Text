@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { IExtractor, ExtractResult, StringUtility, Match, RegExpUtility, MetaData } from "@microsoft/recognizers-text";
 import { ChineseIntegerExtractor, AgnosticNumberParserFactory, ChineseNumberParserConfiguration, AgnosticNumberParserType, BaseNumberParser, BaseNumberExtractor } from "@microsoft/recognizers-text-number";
 import { Constants as NumberConstants } from "@microsoft/recognizers-text-number";
@@ -26,27 +29,40 @@ class ChineseDateExtractorConfiguration implements IDateExtractorConfiguration {
     readonly numberParser: BaseNumberParser;
     readonly durationExtractor: BaseDurationExtractor;
     readonly utilityConfiguration: IDateTimeUtilityConfiguration;
+    readonly rangeConnectorSymbolRegex : RegExp;
 
     constructor(dmyDateFormat: boolean) {
 
         let enableDmy = dmyDateFormat || ChineseDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_DMY;
+        let enableYmd= ChineseDateTime.DefaultLanguageFallback === Constants.DefaultLanguageFallback_YMD;
 
         this.dateRegexList = [
             RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList1),
             RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList2),
             RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList3),
-            RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList4),
-            RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList5),
+            // 2015-12-23 - This regex represents the standard format in Chinese dates (YMD) and has precedence over other orderings
+            RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList8),
+
+            // Regex precedence where the order between D and M varies is controlled by DefaultLanguageFallback
+            enableDmy ?
+                RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList5) :
+                RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList4),
+
+            enableDmy ?
+                RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList4) :
+                RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList5),
 
             enableDmy ?
                 RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList7) :
-                RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList6),
+                (enableYmd ?
+                    RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList7) :
+                    RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList6)),
 
             enableDmy ?
                 RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList6) :
-                RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList7),
-
-            RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList8)
+                (enableYmd ?
+                    RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList6) :
+                    RegExpUtility.getSafeRegExp(ChineseDateTime.DateRegexList7)),
         ];
         this.implicitDateList = [
             RegExpUtility.getSafeRegExp(ChineseDateTime.LunarRegex),
@@ -202,7 +218,6 @@ class ChineseDateParserConfiguration implements IDateParserConfiguration {
         this.weekDayRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.WeekDayRegex);
         this.integerExtractor = new ChineseIntegerExtractor();
         this.numberParser = AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Number, new ChineseNumberParserConfiguration());
-
     }
 }
 
@@ -213,6 +228,9 @@ export class ChineseDateParser extends BaseDateParser {
     private readonly tokenLastRegex: RegExp
     private readonly monthMaxDays: number[];
     private readonly durationExtractor: ChineseDurationExtractor;
+    readonly dynastyStartYear: string;
+    readonly dynastyYearRegex: RegExp;
+    readonly dynastyYearMap: ReadonlyMap<string, number>;
 
     constructor(dmyDateFormat: boolean) {
         let config = new ChineseDateParserConfiguration(dmyDateFormat);
@@ -223,6 +241,9 @@ export class ChineseDateParser extends BaseDateParser {
         this.tokenLastRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.LastPrefixRegex);
         this.monthMaxDays = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
         this.durationExtractor = new ChineseDurationExtractor();
+        this.dynastyStartYear = ChineseDateTime.DynastyStartYear;
+        this.dynastyYearRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DynastyYearRegex);
+        this.dynastyYearMap = ChineseDateTime.DynastyYearMap;
     }
 
     parse(extractorResult: ExtractResult, referenceDate?: Date): DateTimeParseResult | null {
@@ -369,7 +390,7 @@ export class ChineseDateParser extends BaseDateParser {
                         if (this.isValidDate(year, month - 1, day)) {
                             pastDate = DateUtils.addMonths(pastDate, -1);
                         }
-                        else if (this.isNonleapYearFeb29th(year, month - 1, day)) {
+                        else if (DateUtils.isFeb29th(year, month - 1, day)) {
                             pastDate = DateUtils.addMonths(pastDate, -2);
                         }
                     }
@@ -481,13 +502,13 @@ export class ChineseDateParser extends BaseDateParser {
     protected matchToDate(match: Match, referenceDate: Date): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
         let yearStr = match.groups('year').value;
-        let yearChs = match.groups('yearchs').value;
+        let yearCJK = match.groups(Constants.yearCJK).value;
         let monthStr = match.groups('month').value;
         let dayStr = match.groups('day').value;
         let month = 0;
         let day = 0;
         let year = 0;
-        let yearTemp = this.convertChineseYearToNumber(yearChs);
+        let yearTemp = this.convertChineseYearToNumber(yearCJK);
         year = yearTemp === -1 ? 0 : yearTemp;
 
         if (this.config.monthOfYear.has(monthStr) && this.config.dayOfMonth.has(dayStr)) {
@@ -512,16 +533,11 @@ export class ChineseDateParser extends BaseDateParser {
         else {
             result.timex = DateTimeFormatUtil.luisDate(year, month, day);
         }
-        let futureDate = DateUtils.safeCreateFromMinValue(year, month, day);
-        let pastDate = DateUtils.safeCreateFromMinValue(year, month, day);
-        if (noYear && futureDate < referenceDate) {
-            futureDate = DateUtils.safeCreateFromMinValue(year + 1, month, day);
-        }
-        if (noYear && pastDate >= referenceDate) {
-            pastDate = DateUtils.safeCreateFromMinValue(year - 1, month, day);
-        }
-        result.futureValue = futureDate;
-        result.pastValue = pastDate;
+
+        let futurePastDates = DateUtils.generateDates(noYear, referenceDate, year, month, day);
+
+        result.futureValue = futurePastDates.future;
+        result.pastValue = futurePastDates.past;
         result.success = true;
         return result;
     }
@@ -539,6 +555,12 @@ export class ChineseDateParser extends BaseDateParser {
 
     private convertChineseYearToNumber(source: string): number {
         let year = 0;
+        
+        let dynastyYear = DateUtils.parseChineseDynastyYear(source, this.dynastyYearRegex, this.dynastyYearMap, this.dynastyStartYear, this.config.integerExtractor, this.config.numberParser);
+        if (dynastyYear > 0) {
+            return dynastyYear;
+        }
+
         let er = this.config.integerExtractor.extract(source).pop();
         if (er && er.type === NumberConstants.SYS_NUM_INTEGER) {
             year = Number.parseInt(this.config.numberParser.parse(er).value);
@@ -593,10 +615,6 @@ export class ChineseDateParser extends BaseDateParser {
         return DateUtils.isValidDate(year, month, day);
     }
 
-    private isNonleapYearFeb29th(year: number, month: number, day: number): boolean {
-        return !DateUtils.isLeapYear(year) && month === 1 && day === 29;
-    }
-    
     // Handle cases like "三天前"
     protected parserDurationWithAgoAndLater(source: string, referenceDate: Date): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();

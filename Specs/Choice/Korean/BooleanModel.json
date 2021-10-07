@@ -178,5 +178,65 @@
         }
       }
     ]
+  },
+  {
+    "Input": "👌🏾",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "👌🏾",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.64
+        }
+      }
+    ]
+  },
+  {
+    "Input": "👌🏿",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",    
+    "Results": [
+      {
+        "Text": "👌🏿",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.64
+        }
+      }
+    ]
+  },
+  {
+    "Input": "👌🏻",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",    
+    "Results": [
+      {
+        "Text": "👌🏻",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.64
+        }
+      }
+    ]
+  },
+  {
+    "Input": "👌🏼👌🏻👌🏽",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",   
+    "Results": [
+      {
+        "Text": "👌🏼",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 0.6
+        }
+      }
+    ]
   }
 ]

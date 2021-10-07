@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -52,7 +55,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (potentialAmbiguity && this.config.AmbiguousRangeModifierPrefix != null && this.config.AmbiguousRangeModifierPrefix.IsMatch(beforeStr))
             {
                 var matches = this.config.PotentialAmbiguousRangeRegex.Matches(text).Cast<Match>();
-                if (matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start))
+
+                // Weak ambiguous matches are considered only if the extraction is of type range
+                if (matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start && !(m.Groups[Constants.AmbiguousPattern].Success && !er.Type.EndsWith("range"))))
                 {
                     return false;
                 }
@@ -290,7 +295,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // @TODO: Refactor to remove this method and use the general ambiguity filter approach
-            extractResults = extractResults.Where(er => !(NumberOrConnectorRegex.IsMatch(er.Text) && (text.Substring(0, (int)er.Start).Trim().EndsWith("-") || text.Substring((int)(er.Start + er.Length)).Trim().StartsWith("-"))))
+            extractResults = extractResults.Where(er => !(NumberOrConnectorRegex.IsMatch(er.Text) &&
+                    (text.Substring(0, (int)er.Start).Trim().EndsWith("-", StringComparison.Ordinal) || text.Substring((int)(er.Start + er.Length)).Trim().StartsWith("-", StringComparison.Ordinal))))
                     .ToList();
 
             return extractResults;
@@ -332,7 +338,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 // AroundRegex is matched non-exclusively before the other relative regexes in order to catch also combined modifiers e.g. "before around 1pm"
                 TryMergeModifierToken(er, config.AroundRegex, text);
-                var success = TryMergeModifierToken(er, config.BeforeRegex, text);
+
+                // BeforeRegex in Dutch contains the term "voor" which is ambiguous (meaning both "for" and "before")
+                var success = TryMergeModifierToken(er, config.BeforeRegex, text, potentialAmbiguity: true);
 
                 if (!success)
                 {
@@ -375,7 +383,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 var nextStr = afterStr.Trim().Substring(match.Length).Trim();
                                 var nextEr = ers.FirstOrDefault(t => t.Start > er.Start);
 
-                                if (nextEr == null || !nextStr.StartsWith(nextEr.Text))
+                                if (nextEr == null || !nextStr.StartsWith(nextEr.Text, StringComparison.Ordinal))
                                 {
                                     isFollowedByOtherEntity = false;
                                 }

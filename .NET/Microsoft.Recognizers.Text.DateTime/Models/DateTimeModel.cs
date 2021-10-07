@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Recognizers.Text.Utilities;
@@ -8,6 +11,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public class DateTimeModel : IModel
     {
+
+        private string culture;
+
+        private string requestedCulture;
+
         public DateTimeModel(IDateTimeParser parser, IDateTimeExtractor extractor)
         {
             this.Parser = parser;
@@ -15,6 +23,10 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         public string ModelTypeName => Constants.MODEL_DATETIME;
+
+        public string Culture => this.culture;
+
+        public string RequestedCulture => this.requestedCulture;
 
         protected IDateTimeExtractor Extractor { get; private set; }
 
@@ -63,6 +75,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             return parsedDateTimes.Select(o => GetModelResult(o)).ToList();
         }
 
+        public void SetCultureInfo(string culture, string requestedCulture = null)
+        {
+            this.culture = culture;
+            this.requestedCulture = requestedCulture;
+        }
+
         private static string GetParentText(DateTimeParseResult parsedDateTime)
         {
             return ((Dictionary<string, object>)parsedDateTime.Data)[ExtendedModelResult.ParentTextKey].ToString();
@@ -95,5 +113,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             return ret;
         }
+
     }
 }

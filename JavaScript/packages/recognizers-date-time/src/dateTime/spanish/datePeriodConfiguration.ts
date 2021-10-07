@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { IExtractor, IParser, RegExpUtility } from "@microsoft/recognizers-text";
 import { BaseNumberParser, BaseNumberExtractor, SpanishIntegerExtractor, SpanishNumberParserConfiguration } from "@microsoft/recognizers-text-number";
 import { IDatePeriodExtractorConfiguration, IDatePeriodParserConfiguration } from "../baseDatePeriod";
@@ -107,6 +110,7 @@ export class SpanishDatePeriodParserConfiguration implements IDatePeriodParserCo
     readonly monthNumWithYear: RegExp;
     readonly yearRegex: RegExp;
     readonly pastRegex: RegExp;
+    readonly relativeRegex: RegExp;
     readonly futureRegex: RegExp;
     readonly inConnectorRegex: RegExp;
     readonly weekOfMonthRegex: RegExp;
@@ -135,7 +139,7 @@ export class SpanishDatePeriodParserConfiguration implements IDatePeriodParserCo
     readonly numberCombinedWithUnit: RegExp;
 
     readonly cardinalExtractor: IExtractor;
-    readonly numberParser: IParser;
+    readonly numberParser: BaseNumberParser;
     readonly nowRegex: RegExp
 
     constructor(config: ICommonDateTimeParserConfiguration) {
@@ -155,6 +159,7 @@ export class SpanishDatePeriodParserConfiguration implements IDatePeriodParserCo
         this.monthWithYear = RegExpUtility.getSafeRegExp(SpanishDateTime.MonthWithYearRegex);
         this.monthNumWithYear = RegExpUtility.getSafeRegExp(SpanishDateTime.MonthNumWithYearRegex);
         this.yearRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.YearRegex);
+        this.relativeRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.RelativeRegex);
         this.pastRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.PastRegex);
         this.futureRegex = RegExpUtility.getSafeRegExp(SpanishDateTime.FutureRegex);
         this.numberCombinedWithUnit = RegExpUtility.getSafeRegExp(SpanishDateTime.DurationNumberCombinedWithUnit);

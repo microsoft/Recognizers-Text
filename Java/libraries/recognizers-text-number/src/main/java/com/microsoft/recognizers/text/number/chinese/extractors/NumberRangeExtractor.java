@@ -1,6 +1,10 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 package com.microsoft.recognizers.text.number.chinese.extractors;
 
 import com.microsoft.recognizers.text.number.Constants;
+import com.microsoft.recognizers.text.number.NumberOptions;
 import com.microsoft.recognizers.text.number.NumberRangeConstants;
 import com.microsoft.recognizers.text.number.chinese.ChineseNumberExtractorMode;
 import com.microsoft.recognizers.text.number.chinese.parsers.ChineseNumberParserConfiguration;
@@ -16,6 +20,7 @@ import java.util.regex.Pattern;
 
 public class NumberRangeExtractor extends BaseNumberRangeExtractor {
 
+    private final NumberOptions options;
     private final Map<Pattern, String> regexes;
 
     @Override
@@ -24,17 +29,32 @@ public class NumberRangeExtractor extends BaseNumberRangeExtractor {
     }
 
     @Override
+    public NumberOptions getOptions() {
+        return options;
+    }
+
+    @Override
     protected String getExtractType() {
         return Constants.SYS_NUMRANGE;
     }
 
     public NumberRangeExtractor() {
-        this(ChineseNumberExtractorMode.Default);
+        this(ChineseNumberExtractorMode.Default, NumberOptions.None);
+    }
+
+    public NumberRangeExtractor(NumberOptions options) {
+        this(ChineseNumberExtractorMode.Default, options);
     }
 
     public NumberRangeExtractor(ChineseNumberExtractorMode mode) {
+        this(mode, NumberOptions.None);
+    }
 
-        super(new NumberExtractor(), new OrdinalExtractor(), new BaseCJKNumberParser(new ChineseNumberParserConfiguration()));
+    public NumberRangeExtractor(ChineseNumberExtractorMode mode, NumberOptions options) {
+
+        super(new NumberExtractor(mode, options), new OrdinalExtractor(), new BaseCJKNumberParser(new ChineseNumberParserConfiguration()));
+
+        this.options = options;
 
         HashMap<Pattern, String> builder = new HashMap<>();
 

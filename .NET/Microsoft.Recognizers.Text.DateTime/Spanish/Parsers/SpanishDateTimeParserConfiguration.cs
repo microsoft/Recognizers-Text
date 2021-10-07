@@ -1,9 +1,13 @@
-﻿using System;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Spanish;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
+using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Spanish
 {
@@ -26,6 +30,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
             AMTimeRegex = new Regex(DateTimeDefinitions.AmTimeRegex, RegexFlags);
             PMTimeRegex = new Regex(DateTimeDefinitions.PmTimeRegex, RegexFlags);
+            NightTimeRegex = new Regex(DateTimeDefinitions.NightTimeRegex, RegexFlags);
+            LastNightTimeRegex = new Regex(DateTimeDefinitions.LastNightTimeRegex, RegexFlags);
+            NowTimeRegex = new Regex(DateTimeDefinitions.NowTimeRegex, RegexFlags);
+            RecentlyTimeRegex = new Regex(DateTimeDefinitions.RecentlyTimeRegex, RegexFlags);
+            AsapTimeRegex = new Regex(DateTimeDefinitions.AsapTimeRegex, RegexFlags);
 
             SimpleTimeOfTodayAfterRegex = SpanishDateTimeExtractorConfiguration.SimpleTimeOfTodayAfterRegex;
             SimpleTimeOfTodayBeforeRegex = SpanishDateTimeExtractorConfiguration.SimpleTimeOfTodayBeforeRegex;
@@ -76,6 +85,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public Regex PMTimeRegex { get; }
 
+        public Regex NightTimeRegex { get; }
+
+        public Regex LastNightTimeRegex { get; }
+
+        public Regex NowTimeRegex { get; }
+
+        public Regex RecentlyTimeRegex { get; }
+
+        public Regex AsapTimeRegex { get; }
+
         public Regex SimpleTimeOfTodayAfterRegex { get; }
 
         public Regex SimpleTimeOfTodayBeforeRegex { get; }
@@ -102,17 +121,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public int GetHour(string text, int hour)
         {
-            var trimmedText = text.Trim();
             int result = hour;
 
-            // @TODO: move hardcoded values to resources file
-            if ((trimmedText.EndsWith("mañana", StringComparison.Ordinal) || trimmedText.EndsWith("madrugada", StringComparison.Ordinal)) &&
-                hour >= Constants.HalfDayHourCount)
+            var trimmedText = text.Trim();
+
+            if (AMTimeRegex.MatchEnd(trimmedText, trim: true).Success && hour >= Constants.HalfDayHourCount)
             {
                 result -= Constants.HalfDayHourCount;
             }
-            else if (!(trimmedText.EndsWith("mañana", StringComparison.Ordinal) || trimmedText.EndsWith("madrugada", StringComparison.Ordinal)) &&
-                     hour < Constants.HalfDayHourCount)
+            else if (!AMTimeRegex.MatchEnd(trimmedText, trim: true).Success && hour < Constants.HalfDayHourCount &&
+                !(NightTimeRegex.MatchEnd(trimmedText, trim: true).Success && hour < Constants.QuarterDayHourCount))
             {
                 result += Constants.HalfDayHourCount;
             }
@@ -122,22 +140,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public bool GetMatchedNowTimex(string text, out string timex)
         {
-
             var trimmedText = text.Trim();
 
-            // @TODO move hardcoded values to resources file
-            if (trimmedText.EndsWith("ahora", StringComparison.Ordinal) || trimmedText.EndsWith("mismo", StringComparison.Ordinal) || trimmedText.EndsWith("momento", StringComparison.Ordinal))
+            if (NowTimeRegex.MatchEnd(trimmedText, trim: true).Success)
             {
                 timex = "PRESENT_REF";
             }
-            else if (trimmedText.EndsWith("posible", StringComparison.Ordinal) || trimmedText.EndsWith("pueda", StringComparison.Ordinal) ||
-                     trimmedText.EndsWith("puedas", StringComparison.Ordinal) || trimmedText.EndsWith("podamos", StringComparison.Ordinal) || trimmedText.EndsWith("puedan", StringComparison.Ordinal))
-            {
-                timex = "FUTURE_REF";
-            }
-            else if (trimmedText.EndsWith("mente", StringComparison.Ordinal))
+            else if (RecentlyTimeRegex.MatchEnd(trimmedText, trim: true).Success)
             {
                 timex = "PAST_REF";
+            }
+            else if (AsapTimeRegex.MatchEnd(trimmedText, trim: true).Success)
+            {
+                timex = "FUTURE_REF";
             }
             else
             {
@@ -153,7 +168,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             var trimmedText = text.Trim();
             var swift = 0;
 
-            if (SpanishDatePeriodParserConfiguration.PreviousPrefixRegex.IsMatch(trimmedText))
+            if (SpanishDatePeriodParserConfiguration.PreviousPrefixRegex.IsMatch(trimmedText) ||
+                LastNightTimeRegex.IsMatch(trimmedText))
             {
                 swift = -1;
             }
@@ -167,6 +183,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public bool ContainsAmbiguousToken(string text, string matchedText)
         {
+            // @TODO move hardcoded values to resources file
             return text.Contains("esta mañana") && matchedText.Contains("mañana");
         }
     }

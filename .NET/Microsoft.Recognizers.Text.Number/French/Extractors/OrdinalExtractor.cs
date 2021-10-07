@@ -1,4 +1,7 @@
-﻿using System.Collections.Concurrent;
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
@@ -7,7 +10,7 @@ using Microsoft.Recognizers.Definitions.French;
 
 namespace Microsoft.Recognizers.Text.Number.French
 {
-    public class OrdinalExtractor : BaseNumberExtractor
+    public class OrdinalExtractor : CachedNumberExtractor
     {
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
@@ -15,8 +18,18 @@ namespace Microsoft.Recognizers.Text.Number.French
         private static readonly ConcurrentDictionary<string, OrdinalExtractor> Instances =
             new ConcurrentDictionary<string, OrdinalExtractor>();
 
-        private OrdinalExtractor()
+        private readonly string keyPrefix;
+
+        private OrdinalExtractor(BaseNumberOptionsConfiguration config)
+            : base(config.Options)
         {
+
+            keyPrefix = string.Intern(ExtractType + "_" + config.Options.ToString() + "_" + config.Culture);
+
+            AmbiguousFractionConnectorsRegex = new Regex(NumbersDefinitions.AmbiguousFractionConnectorsRegex, RegexFlags);
+
+            // RelativeReferenceRegex = new Regex(NumbersDefinitions.RelativeOrdinalRegex, RegexFlags);
+
             this.Regexes = new Dictionary<Regex, TypeTag>
             {
                 {
@@ -34,15 +47,26 @@ namespace Microsoft.Recognizers.Text.Number.French
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM_ORDINAL; // "Ordinal";
 
-        public static OrdinalExtractor GetInstance(string placeholder = "")
+        protected sealed override Regex AmbiguousFractionConnectorsRegex { get; }
+
+        protected sealed override Regex RelativeReferenceRegex { get; }
+
+        public static OrdinalExtractor GetInstance(BaseNumberOptionsConfiguration config)
         {
-            if (!Instances.ContainsKey(placeholder))
+            var extractorKey = config.Options.ToString();
+
+            if (!Instances.ContainsKey(extractorKey))
             {
-                var instance = new OrdinalExtractor();
-                Instances.TryAdd(placeholder, instance);
+                var instance = new OrdinalExtractor(config);
+                Instances.TryAdd(extractorKey, instance);
             }
 
-            return Instances[placeholder];
+            return Instances[extractorKey];
+        }
+
+        protected override object GenKey(string input)
+        {
+            return (keyPrefix, input);
         }
     }
 }

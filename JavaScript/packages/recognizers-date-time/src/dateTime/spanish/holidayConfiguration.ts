@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
 import { IHolidayExtractorConfiguration, BaseHolidayParserConfiguration } from "../baseHoliday";
 import { RegExpUtility } from "@microsoft/recognizers-text";
 import { DateUtils, HolidayFunctions } from "../utilities";

@@ -1,3 +1,6 @@
+#  Copyright (c) Microsoft Corporation. All rights reserved.
+#  Licensed under the MIT License.
+
 from datatypes_timex_expression import Timex, datetime, Time
 
 
@@ -51,6 +54,7 @@ def test_datatypes_timex_roundtrip_daterange_start_end_duration():
     roundtrip('(XXXX-01-01,XXXX-08-05,P216D)')
     roundtrip('(2017-01-01,2017-08-05,P216D)')
     roundtrip('(2016-01-01,2016-08-05,P217D)')
+    roundtrip('(2011-01-01,2014-01-01,P3Y)')
 
 
 def test_datatypes_timex_roundtrip_timerange():
