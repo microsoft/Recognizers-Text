@@ -21123,6 +21123,56 @@
     ]
   },
   {
+    "Input": "show statistics from the last week of this month",
+    "Context": {
+      "ReferenceDateTime": "2021-10-10T12:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "the last week of this month",
+        "Start": 21,
+        "End": 47,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-10-W05",
+              "type": "daterange",
+              "start": "2021-10-25",
+              "end": "2021-11-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "show statistics from the last week of last month",
+    "Context": {
+      "ReferenceDateTime": "2021-10-10T12:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "the last week of last month",
+        "Start": 21,
+        "End": 47,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-09-W05",
+              "type": "daterange",
+              "start": "2021-09-27",
+              "end": "2021-10-04"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "dates which are greater than or equals to date 1",
     "Context": {
         "ReferenceDateTime": "2021-06-18T18:00:00"
