@@ -1810,7 +1810,7 @@ class BaseDatePeriodParser(DateTimeParser):
         if not month_str:
             rel_month_text = RegExpUtility.get_group(match, Constants.REL_MONTH)
             month_text = rel_month_text
-            
+
             if not rel_month_text:
                 month_text = source
 
