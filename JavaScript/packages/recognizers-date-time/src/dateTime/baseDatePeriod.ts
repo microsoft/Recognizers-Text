@@ -983,7 +983,10 @@ export class BaseDatePeriodParser implements IDateTimeParser {
         let cardinal = this.config.isLastCardinal(cardinalStr) ? 5
             : this.config.cardinalMap.get(cardinalStr);
         if (StringUtility.isNullOrEmpty(monthStr)) {
-            let swift = this.config.getSwiftDayOrMonth(source);
+            let relMonthValue = match.groups('relmonth').value;
+            let monthStr =  !StringUtility.isNullOrEmpty(relMonthValue) ? relMonthValue : source;
+
+            let swift = this.config.getSwiftDayOrMonth(monthStr);
             let tempDate = new Date(referenceDate);
             tempDate.setMonth(referenceDate.getMonth() + swift);
             month = tempDate.getMonth();
