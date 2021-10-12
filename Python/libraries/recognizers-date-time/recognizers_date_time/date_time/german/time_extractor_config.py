@@ -164,7 +164,7 @@ class GermanTimeExtractorConfiguration(TimeExtractorConfiguration):
             RegExpUtility.get_safe_reg_exp(GermanDateTime.TimeRegex8),
             RegExpUtility.get_safe_reg_exp(GermanDateTime.TimeRegex9),
             RegExpUtility.get_safe_reg_exp(GermanDateTime.TimeRegex10),
-            RegExpUtility.get_safe_reg_exp(GermanDateTime.TimeRegex11),
+            # RegExpUtility.get_safe_reg_exp(GermanDateTime.TimeRegex11),
             RegExpUtility.get_safe_reg_exp(GermanDateTime.ConnectNumRegex)
         ]
         self._at_regex: Pattern = RegExpUtility.get_safe_reg_exp(

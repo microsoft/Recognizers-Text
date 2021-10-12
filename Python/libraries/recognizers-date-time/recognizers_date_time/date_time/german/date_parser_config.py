@@ -156,11 +156,10 @@ class GermanDateParserConfiguration(DateParserConfiguration):
             RegExpUtility.get_safe_reg_exp(GermanDateTime.DateExtractor4),
             RegExpUtility.get_safe_reg_exp(GermanDateTime.DateExtractor5),
             RegExpUtility.get_safe_reg_exp(GermanDateTime.DateExtractor6),
-            RegExpUtility.get_safe_reg_exp(GermanDateTime.DateExtractor7L),
-            RegExpUtility.get_safe_reg_exp(GermanDateTime.DateExtractor7S),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.DateExtractor7),
             RegExpUtility.get_safe_reg_exp(GermanDateTime.DateExtractor8),
-            RegExpUtility.get_safe_reg_exp(GermanDateTime.DateExtractor9L),
-            RegExpUtility.get_safe_reg_exp(GermanDateTime.DateExtractor9S),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.DateExtractor9),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.DateExtractor10),
             RegExpUtility.get_safe_reg_exp(GermanDateTime.DateExtractorA),
         ]
         self._on_regex = RegExpUtility.get_safe_reg_exp(

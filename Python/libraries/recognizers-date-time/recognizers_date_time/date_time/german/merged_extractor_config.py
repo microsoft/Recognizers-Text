@@ -191,7 +191,7 @@ class GermanMergedExtractorConfiguration(MergedExtractorConfiguration):
             GermanDateTime.NumberEndingPattern)
         self._term_filter_regexes = [
             RegExpUtility.get_safe_reg_exp(GermanDateTime.OneOnOneRegex),
-            RegExpUtility.get_safe_reg_exp(GermanDateTime.SingleAmbiguousTermsRegex)
+            # RegExpUtility.get_safe_reg_exp(GermanDateTime.SingleAmbiguousTermsRegex)
         ]
         self._unspecified_date_period_regex = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.UnspecificDatePeriodRegex
@@ -202,10 +202,10 @@ class GermanMergedExtractorConfiguration(MergedExtractorConfiguration):
         self._suffix_after_regex = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.SuffixAfterRegex
         )
-        self._superfluous_word_matcher = GermanDateTime.SuperfluousWordList
-        self._fail_fast_regex = RegExpUtility.get_safe_reg_exp(
-            GermanDateTime.FailFastRegex
-        )
+        # self._superfluous_word_matcher = GermanDateTime.SuperfluousWordList
+        # self._fail_fast_regex = RegExpUtility.get_safe_reg_exp(
+        #     GermanDateTime.FailFastRegex
+        # )
         self._check_both_before_after = GermanDateTime.CheckBothBeforeAfter
         self._time_zone_extractor = BaseTimeZoneExtractor(
             GermanTimeZoneExtractorConfiguration())

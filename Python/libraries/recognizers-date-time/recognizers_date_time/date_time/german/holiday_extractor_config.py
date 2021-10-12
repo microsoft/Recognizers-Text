@@ -25,5 +25,7 @@ class GermanHolidayExtractorConfiguration(HolidayExtractorConfiguration):
     def __init__(self):
         self._year_regex = RegExpUtility.get_safe_reg_exp(GermanDateTime.YearRegex)
         self._holiday_regexes = [
-            RegExpUtility.get_safe_reg_exp(GermanDateTime.HolidayRegex)
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.HolidayRegex1),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.HolidayRegex2),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.HolidayRegex3)
         ]

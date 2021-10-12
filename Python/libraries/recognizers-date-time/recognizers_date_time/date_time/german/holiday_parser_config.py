@@ -41,7 +41,9 @@ class GermanHolidayParserConfiguration(BaseHolidayParserConfiguration):
     def __init__(self, config):
         super().__init__()
         self._holiday_regexes = [
-            RegExpUtility.get_safe_reg_exp(GermanDateTime.HolidayRegex)
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.HolidayRegex1),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.HolidayRegex2),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.HolidayRegex3)
         ]
         self._holiday_names = GermanDateTime.HolidayNames
 
