@@ -82,6 +82,18 @@
                 "class TimeZoneDefinitions:"
             ],
             "footer": [ "# pylint: enable=line-too-long" ]
+        },
+        {
+            "input": [ "German", "German-DateTime" ],
+            "output": "german_date_time",
+            "header": [
+                "from .base_date_time import BaseDateTime",
+                "# pylint: disable=line-too-long",
+                "",
+                "",
+                "class GermanDateTime:"
+            ],
+            "footer": [ "# pylint: enable=line-too-long" ]
         }
     ]
 }
