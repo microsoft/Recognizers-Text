@@ -6,8 +6,8 @@ from typing import Pattern
 from ...resources.base_date_time import BaseDateTime
 from recognizers_text.utilities import RegExpUtility
 
-from .holiday_parser_config import germanHolidayParserConfiguration
-from .set_parser_config import germanSetParserConfiguration
+from .holiday_parser_config import GermanHolidayParserConfiguration
+from .set_parser_config import GermanSetParserConfiguration
 from ..base_date import BaseDateParser
 from ..base_time import BaseTimeParser
 from ..base_datetime import BaseDateTimeParser
@@ -18,10 +18,10 @@ from ..base_datetimeperiod import BaseDateTimePeriodParser
 from ..base_duration import BaseDurationParser
 from ..base_set import BaseSetParser
 from ..base_merged import MergedParserConfiguration
-from ...resources.german_date_time import germanDateTime
+from ...resources.german_date_time import GermanDateTime
 
 
-class germanMergedParserConfiguration(MergedParserConfiguration):
+class GermanMergedParserConfiguration(MergedParserConfiguration):
     @property
     def around_regex(self) -> Pattern:
         return self._around_regex
@@ -90,19 +90,19 @@ class germanMergedParserConfiguration(MergedParserConfiguration):
         self._equal_regex = RegExpUtility.get_safe_reg_exp(
             BaseDateTime.EqualRegex)
         self._suffix_after = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.SuffixAfterRegex)
+            GermanDateTime.SuffixAfterRegex)
         self._year_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.YearRegex)
+            GermanDateTime.YearRegex)
         self._around_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.AroundRegex)
+            GermanDateTime.AroundRegex)
         self.__before_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.BeforeRegex)
+            GermanDateTime.BeforeRegex)
         self.__after_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.AfterRegex)
+            GermanDateTime.AfterRegex)
         self.__since_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.SinceRegex)
+            GermanDateTime.SinceRegex)
         self.__holiday_parser = BaseHolidayParser(
-            germanHolidayParserConfiguration(config))
+            GermanHolidayParserConfiguration(config))
         self.__date_parser = config.date_parser
         self.__time_parser = config.time_parser
         self.__date_time_parser = config.date_time_parser
@@ -111,4 +111,4 @@ class germanMergedParserConfiguration(MergedParserConfiguration):
         self.__date_time_period_parser = config.date_time_period_parser
         self.__duration_parser = config.duration_parser
         self.__set_parser = BaseSetParser(
-            germanSetParserConfiguration(config))
+            GermanSetParserConfiguration(config))

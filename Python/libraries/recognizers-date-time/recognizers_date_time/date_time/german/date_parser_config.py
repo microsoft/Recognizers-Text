@@ -6,7 +6,7 @@ import regex
 
 from recognizers_text.utilities import RegExpUtility
 from recognizers_number import BaseNumberExtractor, BaseNumberParser
-from ...resources.german_date_time import germanDateTime
+from ...resources.german_date_time import GermanDateTime
 from ..extractors import DateTimeExtractor
 from ..parsers import DateTimeParser
 from ..utilities import DateTimeUtilityConfiguration
@@ -14,7 +14,7 @@ from ..base_date import DateParserConfiguration
 from ..base_configs import BaseDateParserConfiguration
 
 
-class germanDateParserConfiguration(DateParserConfiguration):
+class GermanDateParserConfiguration(DateParserConfiguration):
     @property
     def check_both_before_after(self) -> bool:
         return self._check_both_before_after
@@ -131,11 +131,11 @@ class germanDateParserConfiguration(DateParserConfiguration):
     # They are not used in the base parser, therefore they are not extracted
     # If the spanish date parser need the same regexes, they should be extracted
     _relative_day_regex = RegExpUtility.get_safe_reg_exp(
-        germanDateTime.RelativeDayRegex)
+        GermanDateTime.RelativeDayRegex)
     _next_prefix_regex = RegExpUtility.get_safe_reg_exp(
-        germanDateTime.NextPrefixRegex)
+        GermanDateTime.NextPrefixRegex)
     _past_prefix_regex = RegExpUtility.get_safe_reg_exp(
-        germanDateTime.PreviousPrefixRegex)
+        GermanDateTime.PreviousPrefixRegex)
 
     def __init__(self, config: BaseDateParserConfiguration):
         self._ordinal_extractor = config.ordinal_extractor
@@ -151,51 +151,51 @@ class germanDateParserConfiguration(DateParserConfiguration):
         self._unit_map = config.unit_map
         self._cardinal_map = config.cardinal_map
         self._date_regex = [
-            RegExpUtility.get_safe_reg_exp(germanDateTime.DateExtractor1),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.DateExtractor3),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.DateExtractor4),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.DateExtractor5),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.DateExtractor6),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.DateExtractor7L),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.DateExtractor7S),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.DateExtractor8),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.DateExtractor9L),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.DateExtractor9S),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.DateExtractorA),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.DateExtractor1),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.DateExtractor3),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.DateExtractor4),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.DateExtractor5),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.DateExtractor6),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.DateExtractor7L),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.DateExtractor7S),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.DateExtractor8),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.DateExtractor9L),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.DateExtractor9S),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.DateExtractorA),
         ]
         self._on_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.OnRegex)
+            GermanDateTime.OnRegex)
         self._special_day_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.SpecialDayRegex)
+            GermanDateTime.SpecialDayRegex)
         self._next_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.NextDateRegex)
+            GermanDateTime.NextDateRegex)
         self._unit_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.DateUnitRegex)
+            GermanDateTime.DateUnitRegex)
         self._month_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.MonthRegex)
+            GermanDateTime.MonthRegex)
         self._week_day_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.WeekDayRegex)
+            GermanDateTime.WeekDayRegex)
         self._last_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.LastDateRegex)
+            GermanDateTime.LastDateRegex)
         self._this_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.ThisRegex)
+            GermanDateTime.ThisRegex)
         self._week_day_of_month_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.WeekDayOfMonthRegex)
+            GermanDateTime.WeekDayOfMonthRegex)
         self._for_the_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.ForTheRegex)
+            GermanDateTime.ForTheRegex)
         self._week_day_and_day_of_month_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.WeekDayAndDayOfMonthRegex)
+            GermanDateTime.WeekDayAndDayOfMonthRegex)
         self._relative_month_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.RelativeMonthRegex)
+            GermanDateTime.RelativeMonthRegex)
         self._utility_configuration = config.utility_configuration
-        self._date_token_prefix = germanDateTime.DateTokenPrefix
-        self._check_both_before_after = germanDateTime.CheckBothBeforeAfter
+        self._date_token_prefix = GermanDateTime.DateTokenPrefix
+        self._check_both_before_after = GermanDateTime.CheckBothBeforeAfter
 
     def get_swift_day(self, source: str) -> int:
         trimmed_text = source.strip().lower()
         swift = 0
         matches = regex.search(
-            germanDateParserConfiguration._relative_day_regex, source)
+            GermanDateParserConfiguration._relative_day_regex, source)
         if trimmed_text == 'today':
             swift = 0
         elif trimmed_text == 'tomorrow' or trimmed_text == 'tmr':
@@ -222,9 +222,9 @@ class germanDateParserConfiguration(DateParserConfiguration):
         trimmed_text = source.strip().lower()
         swift = 0
         next_prefix_matches = regex.search(
-            germanDateParserConfiguration._next_prefix_regex, trimmed_text)
+            GermanDateParserConfiguration._next_prefix_regex, trimmed_text)
         past_prefix_matches = regex.search(
-            germanDateParserConfiguration._past_prefix_regex, trimmed_text)
+            GermanDateParserConfiguration._past_prefix_regex, trimmed_text)
         if next_prefix_matches:
             swift = 1
         elif past_prefix_matches:

@@ -4,14 +4,14 @@
 from typing import List, Pattern
 
 from recognizers_text.utilities import RegExpUtility
-from ...resources.german_date_time import germanDateTime
+from ...resources.german_date_time import GermanDateTime
 from ..base_time import TimeExtractorConfiguration
 from ..base_timezone import BaseTimeZoneExtractor
 from ..extractors import DateTimeExtractor
-from .timezone_extractor_config import germanTimeZoneExtractorConfiguration
+from .timezone_extractor_config import GermanTimeZoneExtractorConfiguration
 
 
-class germanTimeExtractorConfiguration(TimeExtractorConfiguration):
+class GermanTimeExtractorConfiguration(TimeExtractorConfiguration):
     @property
     def time_regex_list(self) -> List[Pattern]:
         return self._time_regex_list
@@ -103,75 +103,75 @@ class germanTimeExtractorConfiguration(TimeExtractorConfiguration):
     def __init__(self):
         super().__init__()
         self._desc_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.DescRegex
+            GermanDateTime.DescRegex
         )
         self._hour_num_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.HourNumRegex
+            GermanDateTime.HourNumRegex
         )
         self._minute_num_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.MinuteNumRegex
+            GermanDateTime.MinuteNumRegex
         )
         self._oclock_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.OclockRegex
+            GermanDateTime.OclockRegex
         )
         self._pm_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.PmRegex
+            GermanDateTime.PmRegex
         )
         self._am_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.AmRegex
+            GermanDateTime.AmRegex
         )
         self._less_than_one_hour = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.LessThanOneHour
+            GermanDateTime.LessThanOneHour
         )
         self._written_time_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.WrittenTimeRegex
+            GermanDateTime.WrittenTimeRegex
         )
         self._time_prefix = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.TimePrefix
+            GermanDateTime.TimePrefix
         )
         self._time_suffix = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.TimeSuffix
+            GermanDateTime.TimeSuffix
         )
         self._basic_time = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.BasicTime
+            GermanDateTime.BasicTime
         )
         self._midnight_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.MidnightRegex
+            GermanDateTime.MidnightRegex
         )
         self._midmorning_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.MidmorningRegex
+            GermanDateTime.MidmorningRegex
         )
         self._midafternoon_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.MidafternoonRegex
+            GermanDateTime.MidafternoonRegex
         )
         self._midday_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.MiddayRegex
+            GermanDateTime.MiddayRegex
         )
         self._midtime_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.MidTimeRegex
+            GermanDateTime.MidTimeRegex
         )
         self._time_unit_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.TimeUnitRegex
+            GermanDateTime.TimeUnitRegex
         )
         self._time_regex_list: List[Pattern] = [
-            RegExpUtility.get_safe_reg_exp(germanDateTime.TimeRegex1),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.TimeRegex2),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.TimeRegex3),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.TimeRegex4),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.TimeRegex5),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.TimeRegex6),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.TimeRegex7),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.TimeRegex8),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.TimeRegex9),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.TimeRegex10),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.TimeRegex11),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.ConnectNumRegex)
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.TimeRegex1),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.TimeRegex2),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.TimeRegex3),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.TimeRegex4),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.TimeRegex5),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.TimeRegex6),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.TimeRegex7),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.TimeRegex8),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.TimeRegex9),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.TimeRegex10),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.TimeRegex11),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.ConnectNumRegex)
         ]
         self._at_regex: Pattern = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.AtRegex)
+            GermanDateTime.AtRegex)
         self._ish_regex: Pattern = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.IshRegex)
+            GermanDateTime.IshRegex)
         self._time_before_after_regex: Pattern = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.TimeBeforeAfterRegex)
+            GermanDateTime.TimeBeforeAfterRegex)
         self._time_zone_extractor = BaseTimeZoneExtractor(
-            germanTimeZoneExtractorConfiguration())
+            GermanTimeZoneExtractorConfiguration())

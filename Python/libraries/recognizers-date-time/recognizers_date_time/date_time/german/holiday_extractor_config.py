@@ -5,10 +5,10 @@ from typing import List, Pattern
 from recognizers_text.utilities import RegExpUtility
 
 from ..base_holiday import HolidayExtractorConfiguration
-from ...resources.german_date_time import germanDateTime
+from ...resources.german_date_time import GermanDateTime
 
 
-class germanHolidayExtractorConfiguration(HolidayExtractorConfiguration):
+class GermanHolidayExtractorConfiguration(HolidayExtractorConfiguration):
 
     @property
     def year_regex(self) -> Pattern:
@@ -23,7 +23,7 @@ class germanHolidayExtractorConfiguration(HolidayExtractorConfiguration):
         return self._holiday_regexes
 
     def __init__(self):
-        self._year_regex = RegExpUtility.get_safe_reg_exp(germanDateTime.YearRegex)
+        self._year_regex = RegExpUtility.get_safe_reg_exp(GermanDateTime.YearRegex)
         self._holiday_regexes = [
-            RegExpUtility.get_safe_reg_exp(germanDateTime.HolidayRegex)
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.HolidayRegex)
         ]

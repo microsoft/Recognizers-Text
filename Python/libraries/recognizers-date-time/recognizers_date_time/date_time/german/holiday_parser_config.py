@@ -8,10 +8,10 @@ from datetime import datetime
 from recognizers_text.utilities import RegExpUtility
 from ..utilities import DateUtils
 from ..base_holiday import BaseHolidayParserConfiguration
-from ...resources.german_date_time import germanDateTime
+from ...resources.german_date_time import GermanDateTime
 
 
-class germanHolidayParserConfiguration(BaseHolidayParserConfiguration):
+class GermanHolidayParserConfiguration(BaseHolidayParserConfiguration):
     @property
     def holiday_names(self) -> Dict[str, List[str]]:
         return self._holiday_names
@@ -41,51 +41,51 @@ class germanHolidayParserConfiguration(BaseHolidayParserConfiguration):
     def __init__(self, config):
         super().__init__()
         self._holiday_regexes = [
-            RegExpUtility.get_safe_reg_exp(germanDateTime.HolidayRegex)
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.HolidayRegex)
         ]
-        self._holiday_names = germanDateTime.HolidayNames
+        self._holiday_names = GermanDateTime.HolidayNames
 
     def _init_holiday_funcs(self) -> Dict[str, Callable[[int], datetime]]:
         local = dict([
-            ('maosbirthday', germanHolidayParserConfiguration.mao_birthday),
-            ('yuandan', germanHolidayParserConfiguration.new_year),
-            ('teachersday', germanHolidayParserConfiguration.teacher_day),
-            ('singleday', germanHolidayParserConfiguration.singles_day),
-            ('allsaintsday', germanHolidayParserConfiguration.halloween_day),
-            ('youthday', germanHolidayParserConfiguration.youth_day),
-            ('childrenday', germanHolidayParserConfiguration.children_day),
-            ('femaleday', germanHolidayParserConfiguration.female_day),
-            ('treeplantingday', germanHolidayParserConfiguration.tree_plant_day),
-            ('arborday', germanHolidayParserConfiguration.tree_plant_day),
-            ('girlsday', germanHolidayParserConfiguration.girls_day),
-            ('whiteloverday', germanHolidayParserConfiguration.white_lover_day),
-            ('loverday', germanHolidayParserConfiguration.valentines_day),
-            ('christmas', germanHolidayParserConfiguration.christmas_day),
-            ('xmas', germanHolidayParserConfiguration.christmas_day),
-            ('newyear', germanHolidayParserConfiguration.new_year),
-            ('newyearday', germanHolidayParserConfiguration.new_year),
-            ('newyearsday', germanHolidayParserConfiguration.new_year),
-            ('inaugurationday', germanHolidayParserConfiguration.inauguration_day),
-            ('groundhougday', germanHolidayParserConfiguration.groundhog_day),
-            ('valentinesday', germanHolidayParserConfiguration.valentines_day),
-            ('stpatrickday', germanHolidayParserConfiguration.st_patrick_day),
-            ('aprilfools', germanHolidayParserConfiguration.fool_day),
-            ('stgeorgeday', germanHolidayParserConfiguration.st_george_day),
-            ('mayday', germanHolidayParserConfiguration.may_day),
-            ('cincodemayoday', germanHolidayParserConfiguration.cinco_de_mayo_day),
-            ('baptisteday', germanHolidayParserConfiguration.baptiste_day),
-            ('usindependenceday', germanHolidayParserConfiguration.usa_independence_day),
-            ('independenceday', germanHolidayParserConfiguration.usa_independence_day),
-            ('bastilleday', germanHolidayParserConfiguration.bastille_day),
-            ('halloweenday', germanHolidayParserConfiguration.halloween_day),
-            ('allhallowday', germanHolidayParserConfiguration.all_hallow_day),
-            ('allsoulsday', germanHolidayParserConfiguration.all_souls_day),
-            ('guyfawkesday', germanHolidayParserConfiguration.guy_fawkes_day),
-            ('veteransday', germanHolidayParserConfiguration.veterans_day),
-            ('christmaseve', germanHolidayParserConfiguration.christmas_eve),
-            ('newyeareve', germanHolidayParserConfiguration.new_year_eve),
-            ('easterday', germanHolidayParserConfiguration.easter_day),
-            ('juneteenth', germanHolidayParserConfiguration.juneteenth),
+            ('maosbirthday', GermanHolidayParserConfiguration.mao_birthday),
+            ('yuandan', GermanHolidayParserConfiguration.new_year),
+            ('teachersday', GermanHolidayParserConfiguration.teacher_day),
+            ('singleday', GermanHolidayParserConfiguration.singles_day),
+            ('allsaintsday', GermanHolidayParserConfiguration.halloween_day),
+            ('youthday', GermanHolidayParserConfiguration.youth_day),
+            ('childrenday', GermanHolidayParserConfiguration.children_day),
+            ('femaleday', GermanHolidayParserConfiguration.female_day),
+            ('treeplantingday', GermanHolidayParserConfiguration.tree_plant_day),
+            ('arborday', GermanHolidayParserConfiguration.tree_plant_day),
+            ('girlsday', GermanHolidayParserConfiguration.girls_day),
+            ('whiteloverday', GermanHolidayParserConfiguration.white_lover_day),
+            ('loverday', GermanHolidayParserConfiguration.valentines_day),
+            ('christmas', GermanHolidayParserConfiguration.christmas_day),
+            ('xmas', GermanHolidayParserConfiguration.christmas_day),
+            ('newyear', GermanHolidayParserConfiguration.new_year),
+            ('newyearday', GermanHolidayParserConfiguration.new_year),
+            ('newyearsday', GermanHolidayParserConfiguration.new_year),
+            ('inaugurationday', GermanHolidayParserConfiguration.inauguration_day),
+            ('groundhougday', GermanHolidayParserConfiguration.groundhog_day),
+            ('valentinesday', GermanHolidayParserConfiguration.valentines_day),
+            ('stpatrickday', GermanHolidayParserConfiguration.st_patrick_day),
+            ('aprilfools', GermanHolidayParserConfiguration.fool_day),
+            ('stgeorgeday', GermanHolidayParserConfiguration.st_george_day),
+            ('mayday', GermanHolidayParserConfiguration.may_day),
+            ('cincodemayoday', GermanHolidayParserConfiguration.cinco_de_mayo_day),
+            ('baptisteday', GermanHolidayParserConfiguration.baptiste_day),
+            ('usindependenceday', GermanHolidayParserConfiguration.usa_independence_day),
+            ('independenceday', GermanHolidayParserConfiguration.usa_independence_day),
+            ('bastilleday', GermanHolidayParserConfiguration.bastille_day),
+            ('halloweenday', GermanHolidayParserConfiguration.halloween_day),
+            ('allhallowday', GermanHolidayParserConfiguration.all_hallow_day),
+            ('allsoulsday', GermanHolidayParserConfiguration.all_souls_day),
+            ('guyfawkesday', GermanHolidayParserConfiguration.guy_fawkes_day),
+            ('veteransday', GermanHolidayParserConfiguration.veterans_day),
+            ('christmaseve', GermanHolidayParserConfiguration.christmas_eve),
+            ('newyeareve', GermanHolidayParserConfiguration.new_year_eve),
+            ('easterday', GermanHolidayParserConfiguration.easter_day),
+            ('juneteenth', GermanHolidayParserConfiguration.juneteenth),
         ])
 
         return {**super()._init_holiday_funcs(), **local}

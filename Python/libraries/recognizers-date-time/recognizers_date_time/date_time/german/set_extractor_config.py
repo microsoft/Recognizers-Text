@@ -4,7 +4,7 @@
 from typing import Pattern
 
 from recognizers_text.utilities import RegExpUtility
-from ...resources.german_date_time import germanDateTime
+from ...resources.german_date_time import GermanDateTime
 from ..extractors import DateTimeExtractor
 from ..base_set import SetExtractorConfiguration
 from ..base_date import BaseDateExtractor
@@ -14,16 +14,16 @@ from ..base_dateperiod import BaseDatePeriodExtractor
 from ..base_timeperiod import BaseTimePeriodExtractor
 from ..base_datetime import BaseDateTimeExtractor
 from ..base_datetimeperiod import BaseDateTimePeriodExtractor
-from .date_extractor_config import germanDateExtractorConfiguration
-from .time_extractor_config import germanTimeExtractorConfiguration
-from .duration_extractor_config import germanDurationExtractorConfiguration
-from .dateperiod_extractor_config import germanDatePeriodExtractorConfiguration
-from .timeperiod_extractor_config import germanTimePeriodExtractorConfiguration
-from .datetime_extractor_config import germanDateTimeExtractorConfiguration
-from .datetimeperiod_extractor_config import germanDateTimePeriodExtractorConfiguration
+from .date_extractor_config import GermanDateExtractorConfiguration
+from .time_extractor_config import GermanTimeExtractorConfiguration
+from .duration_extractor_config import GermanDurationExtractorConfiguration
+from .dateperiod_extractor_config import GermanDatePeriodExtractorConfiguration
+from .timeperiod_extractor_config import GermanTimePeriodExtractorConfiguration
+from .datetime_extractor_config import GermanDateTimeExtractorConfiguration
+from .datetimeperiod_extractor_config import GermanDateTimePeriodExtractorConfiguration
 
 
-class germanSetExtractorConfiguration(SetExtractorConfiguration):
+class GermanSetExtractorConfiguration(SetExtractorConfiguration):
     @property
     def last_regex(self) -> Pattern:
         return self._last_regex
@@ -90,34 +90,34 @@ class germanSetExtractorConfiguration(SetExtractorConfiguration):
 
     def __init__(self):
         self._duration_extractor = BaseDurationExtractor(
-            germanDurationExtractorConfiguration())
+            GermanDurationExtractorConfiguration())
         self._time_extractor = BaseTimeExtractor(
-            germanTimeExtractorConfiguration())
+            GermanTimeExtractorConfiguration())
         self._date_extractor = BaseDateExtractor(
-            germanDateExtractorConfiguration())
+            GermanDateExtractorConfiguration())
         self._date_time_extractor = BaseDateTimeExtractor(
-            germanDateTimeExtractorConfiguration())
+            GermanDateTimeExtractorConfiguration())
         self._date_period_extractor = BaseDatePeriodExtractor(
-            germanDatePeriodExtractorConfiguration())
+            GermanDatePeriodExtractorConfiguration())
         self._time_period_extractor = BaseTimePeriodExtractor(
-            germanTimePeriodExtractorConfiguration())
+            GermanTimePeriodExtractorConfiguration())
         self._date_time_period_extractor = BaseDateTimePeriodExtractor(
-            germanDateTimePeriodExtractorConfiguration())
+            GermanDateTimePeriodExtractorConfiguration())
         self._last_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.SetLastRegex)
+            GermanDateTime.SetLastRegex)
         self._each_prefix_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.EachPrefixRegex)
+            GermanDateTime.EachPrefixRegex)
         self._periodic_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.PeriodicRegex)
+            GermanDateTime.PeriodicRegex)
         self._each_unit_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.EachUnitRegex)
+            GermanDateTime.EachUnitRegex)
         self._each_day_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.EachDayRegex)
+            GermanDateTime.EachDayRegex)
         self._set_week_day_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.SetWeekDayRegex)
+            GermanDateTime.SetWeekDayRegex)
         self._set_each_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.SetEachRegex)
+            GermanDateTime.SetEachRegex)
         self._duration_unit_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.DurationUnitRegex
+            GermanDateTime.DurationUnitRegex
         )
         self._before_each_day_regex = None

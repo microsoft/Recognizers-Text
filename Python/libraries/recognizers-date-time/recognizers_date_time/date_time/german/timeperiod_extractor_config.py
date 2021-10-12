@@ -5,18 +5,18 @@ from typing import List, Pattern
 
 from recognizers_text.utilities import RegExpUtility
 from recognizers_text.extractor import Extractor
-from recognizers_number.number.german.extractors import germanIntegerExtractor
-from ...resources.german_date_time import germanDateTime
+from recognizers_number.number.german.extractors import GermanIntegerExtractor
+from ...resources.german_date_time import GermanDateTime
 from ..extractors import DateTimeExtractor
 from ..base_timeperiod import TimePeriodExtractorConfiguration, MatchedIndex
 from ..base_time import BaseTimeExtractor
 from ..base_timezone import BaseTimeZoneExtractor
-from .time_extractor_config import germanTimeExtractorConfiguration
-from .timezone_extractor_config import germanTimeZoneExtractorConfiguration
+from .time_extractor_config import GermanTimeExtractorConfiguration
+from .timezone_extractor_config import GermanTimeZoneExtractorConfiguration
 from ..utilities import DateTimeOptions
 
 
-class germanTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
+class GermanTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
 
     @property
     def check_both_before_after(self) -> bool:
@@ -104,26 +104,26 @@ class germanTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
 
     def __init__(self):
         super().__init__()
-        self._check_both_before_after = germanDateTime.CheckBothBeforeAfter
+        self._check_both_before_after = GermanDateTime.CheckBothBeforeAfter
         self._simple_cases_regex: List[Pattern] = [
-            RegExpUtility.get_safe_reg_exp(germanDateTime.PureNumFromTo),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.PureNumBetweenAnd),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.SpecificTimeFromTo),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.SpecificTimeBetweenAnd)
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.PureNumFromTo),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.PureNumBetweenAnd),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.SpecificTimeFromTo),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.SpecificTimeBetweenAnd)
         ]
         self._till_regex: Pattern = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.TillRegex)
+            GermanDateTime.TillRegex)
         self._time_of_day_regex: Pattern = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.TimeOfDayRegex)
+            GermanDateTime.TimeOfDayRegex)
         self._general_ending_regex: Pattern = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.GeneralEndingRegex)
+            GermanDateTime.GeneralEndingRegex)
         self._single_time_extractor = BaseTimeExtractor(
-            germanTimeExtractorConfiguration())
-        self._integer_extractor = germanIntegerExtractor()
+            GermanTimeExtractorConfiguration())
+        self._integer_extractor = GermanIntegerExtractor()
         self._time_zone_extractor = BaseTimeZoneExtractor(
-            germanTimeZoneExtractorConfiguration())
-        self._token_before_date = germanDateTime.TokenBeforeDate
-        self._pure_number_regex = [germanDateTime.PureNumFromTo, germanDateTime.PureNumFromTo]
+            GermanTimeZoneExtractorConfiguration())
+        self._token_before_date = GermanDateTime.TokenBeforeDate
+        self._pure_number_regex = [GermanDateTime.PureNumFromTo, GermanDateTime.PureNumFromTo]
         self._options = DateTimeOptions.NONE
 
     def get_from_token_index(self, source: str) -> MatchedIndex:

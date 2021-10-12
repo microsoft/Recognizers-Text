@@ -6,7 +6,7 @@ from typing import Pattern, Dict
 from recognizers_text.utilities import RegExpUtility
 from recognizers_number.number.extractors import BaseNumberExtractor
 from recognizers_number.number.parsers import BaseNumberParser
-from ...resources.german_date_time import germanDateTime
+from ...resources.german_date_time import GermanDateTime
 from ..extractors import DateTimeExtractor
 from ..parsers import DateTimeParser
 from ..utilities import DateTimeUtilityConfiguration
@@ -14,7 +14,7 @@ from ..base_configs import BaseDateParserConfiguration
 from ..base_datetime import DateTimeParserConfiguration, MatchedTimex
 
 
-class germanDateTimeParserConfiguration(DateTimeParserConfiguration):
+class GermanDateTimeParserConfiguration(DateTimeParserConfiguration):
     @property
     def token_before_date(self) -> str:
         return self._token_before_date
@@ -104,30 +104,30 @@ class germanDateTimeParserConfiguration(DateTimeParserConfiguration):
         return self._utility_configuration
 
     def __init__(self, config: BaseDateParserConfiguration):
-        self._token_before_date = germanDateTime.TokenBeforeDate
-        self._token_before_time = germanDateTime.TokenBeforeTime
+        self._token_before_date = GermanDateTime.TokenBeforeDate
+        self._token_before_time = GermanDateTime.TokenBeforeTime
         self._date_extractor = config.date_extractor
         self._time_extractor = config.time_extractor
         self._date_parser = config.date_parser
         self._time_parser = config.time_parser
         self._now_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.NowRegex)
+            GermanDateTime.NowRegex)
         self._am_time_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.AMTimeRegex)
+            GermanDateTime.AMTimeRegex)
         self._pm_time_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.PMTimeRegex)
+            GermanDateTime.PMTimeRegex)
         self._simple_time_of_today_after_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.SimpleTimeOfTodayAfterRegex)
+            GermanDateTime.SimpleTimeOfTodayAfterRegex)
         self._simple_time_of_today_before_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.SimpleTimeOfTodayBeforeRegex)
+            GermanDateTime.SimpleTimeOfTodayBeforeRegex)
         self._specific_time_of_day_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.SpecificTimeOfDayRegex)
+            GermanDateTime.SpecificTimeOfDayRegex)
         self._specific_end_of_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.SpecificEndOfRegex)
+            GermanDateTime.SpecificEndOfRegex)
         self._unspecific_end_of_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.UnspecificEndOfRegex)
+            GermanDateTime.UnspecificEndOfRegex)
         self._unit_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.TimeUnitRegex)
+            GermanDateTime.TimeUnitRegex)
         self._numbers = config.numbers
         self._cardinal_extractor = config.cardinal_extractor
         self._number_parser = config.number_parser

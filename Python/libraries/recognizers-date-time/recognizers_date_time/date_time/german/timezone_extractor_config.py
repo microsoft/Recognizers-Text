@@ -9,7 +9,7 @@ from ...resources.german_time_zone import TimeZoneDefinitions
 from ..utilities import TimeZoneUtility, RegExpUtility
 
 
-class germanTimeZoneExtractorConfiguration(TimeZoneExtractorConfiguration):
+class GermanTimeZoneExtractorConfiguration(TimeZoneExtractorConfiguration):
     @property
     def timezone_matcher(self):
         return self._timezone_matcher

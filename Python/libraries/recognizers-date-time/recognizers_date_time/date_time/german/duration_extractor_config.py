@@ -5,12 +5,12 @@ from typing import Pattern
 
 from recognizers_text.utilities import RegExpUtility
 from recognizers_number.number.extractors import BaseNumberExtractor
-from recognizers_number.number.german.extractors import germanCardinalExtractor
-from ...resources.german_date_time import germanDateTime
+from recognizers_number.number.german.extractors import GermanCardinalExtractor
+from ...resources.german_date_time import GermanDateTime
 from ..base_duration import DurationExtractorConfiguration
 
 
-class germanDurationExtractorConfiguration(DurationExtractorConfiguration):
+class GermanDurationExtractorConfiguration(DurationExtractorConfiguration):
 
     @property
     def special_number_unit_regex(self):
@@ -94,49 +94,49 @@ class germanDurationExtractorConfiguration(DurationExtractorConfiguration):
 
     def __init__(self):
         super().__init__()
-        self._check_both_before_after = germanDateTime.CheckBothBeforeAfter
+        self._check_both_before_after = GermanDateTime.CheckBothBeforeAfter
         self._all_regex: Pattern = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.AllRegex)
+            GermanDateTime.AllRegex)
         self._half_regex: Pattern = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.HalfRegex)
+            GermanDateTime.HalfRegex)
         self._followed_unit: Pattern = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.DurationFollowedUnit)
+            GermanDateTime.DurationFollowedUnit)
         self._number_combined_with_unit: Pattern = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.NumberCombinedWithDurationUnit)
+            GermanDateTime.NumberCombinedWithDurationUnit)
         self._an_unit_regex: Pattern = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.AnUnitRegex)
+            GermanDateTime.AnUnitRegex)
         self._inexact_number_unit_regex: Pattern = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.InexactNumberUnitRegex)
+            GermanDateTime.InexactNumberUnitRegex)
         self._suffix_and_regex: Pattern = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.SuffixAndRegex)
+            GermanDateTime.SuffixAndRegex)
         self._relative_duration_unit_regex: Pattern = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.RelativeDurationUnitRegex
+            GermanDateTime.RelativeDurationUnitRegex
         )
         self._during_regex: Pattern = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.DuringRegex
+            GermanDateTime.DuringRegex
         )
-        self._cardinal_extractor: BaseNumberExtractor = germanCardinalExtractor()
-        self._unit_map = germanDateTime.UnitMap
-        self._unit_value_map = germanDateTime.UnitValueMap
+        self._cardinal_extractor: BaseNumberExtractor = GermanCardinalExtractor()
+        self._unit_map = GermanDateTime.UnitMap
+        self._unit_value_map = GermanDateTime.UnitValueMap
         self._duration_unit_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.DurationUnitRegex
+            GermanDateTime.DurationUnitRegex
         )
         self._duration_connector_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.DurationConnectorRegex
+            GermanDateTime.DurationConnectorRegex
         )
         self._more_than_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.MoreThanRegex
+            GermanDateTime.MoreThanRegex
         )
         self._less_than_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.LessThanRegex
+            GermanDateTime.LessThanRegex
         )
         self._conjunction_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.ConjunctionRegex
+            GermanDateTime.ConjunctionRegex
         )
         self._inexact_number_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.InexactNumberRegex
+            GermanDateTime.InexactNumberRegex
         )
         self._special_number_with_unit_regex = None
-        self._check_both_before_after = germanDateTime.CheckBothBeforeAfter
+        self._check_both_before_after = GermanDateTime.CheckBothBeforeAfter
         # TODO When the implementation for these properties is added, change the None values to their respective Regexps
         self._special_number_unit_regex = None

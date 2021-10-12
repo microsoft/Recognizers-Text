@@ -4,10 +4,10 @@
 from typing import Pattern
 from recognizers_text.utilities import RegExpUtility
 from recognizers_date_time.date_time.base_date import DateTimeUtilityConfiguration
-from recognizers_date_time.resources.german_date_time import germanDateTime
+from recognizers_date_time.resources.german_date_time import GermanDateTime
 
 
-class germanDateTimeUtilityConfiguration(DateTimeUtilityConfiguration):
+class GermanDateTimeUtilityConfiguration(DateTimeUtilityConfiguration):
     @property
     def date_unit_regex(self) -> Pattern:
         return self._date_unit_regex
@@ -62,29 +62,29 @@ class germanDateTimeUtilityConfiguration(DateTimeUtilityConfiguration):
 
     def __init__(self):
         self._later_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.LaterRegex)
+            GermanDateTime.LaterRegex)
         self._ago_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.AgoRegex)
+            GermanDateTime.AgoRegex)
         self._in_connector_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.InConnectorRegex)
+            GermanDateTime.InConnectorRegex)
         self._range_unit_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.RangeUnitRegex)
+            GermanDateTime.RangeUnitRegex)
         self._am_desc_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.AmDescRegex)
+            GermanDateTime.AmDescRegex)
         self._pm_desc__regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.PmDescRegex)
+            GermanDateTime.PmDescRegex)
         self._am_pm_desc_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.AmPmDescRegex)
+            GermanDateTime.AmPmDescRegex)
         self._time_unit_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.TimeUnitRegex)
+            GermanDateTime.TimeUnitRegex)
         self._within_next_prefix_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.WithinNextPrefixRegex)
+            GermanDateTime.WithinNextPrefixRegex)
         self._common_date_prefix_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.CommonDatePrefixRegex)
-        self._check_both_before_after = germanDateTime.CheckBothBeforeAfter
+            GermanDateTime.CommonDatePrefixRegex)
+        self._check_both_before_after = GermanDateTime.CheckBothBeforeAfter
         self._range_prefix_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.RangePrefixRegex
+            GermanDateTime.RangePrefixRegex
         )
         self._date_unit_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.DateUnitRegex
+            GermanDateTime.DateUnitRegex
         )

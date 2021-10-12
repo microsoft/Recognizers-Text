@@ -5,8 +5,8 @@ from typing import List, Pattern
 
 from recognizers_text.extractor import Extractor
 from recognizers_text.utilities import RegExpUtility
-from recognizers_number import germanIntegerExtractor
-from ...resources.german_date_time import germanDateTime
+from recognizers_number import GermanIntegerExtractor
+from ...resources.german_date_time import GermanDateTime
 from ..extractors import DateTimeExtractor
 from ..base_merged import MergedExtractorConfiguration
 from ..base_date import BaseDateExtractor
@@ -18,21 +18,21 @@ from ..base_datetime import BaseDateTimeExtractor
 from ..base_datetimeperiod import BaseDateTimePeriodExtractor
 from ..base_set import BaseSetExtractor
 from ..base_holiday import BaseHolidayExtractor
-from .date_extractor_config import germanDateExtractorConfiguration
-from .time_extractor_config import germanTimeExtractorConfiguration
-from .duration_extractor_config import germanDurationExtractorConfiguration
-from .dateperiod_extractor_config import germanDatePeriodExtractorConfiguration
-from .timeperiod_extractor_config import germanTimePeriodExtractorConfiguration
-from .datetime_extractor_config import germanDateTimeExtractorConfiguration
-from .datetimeperiod_extractor_config import germanDateTimePeriodExtractorConfiguration
-from .set_extractor_config import germanSetExtractorConfiguration
-from .holiday_extractor_config import germanHolidayExtractorConfiguration
+from .date_extractor_config import GermanDateExtractorConfiguration
+from .time_extractor_config import GermanTimeExtractorConfiguration
+from .duration_extractor_config import GermanDurationExtractorConfiguration
+from .dateperiod_extractor_config import GermanDatePeriodExtractorConfiguration
+from .timeperiod_extractor_config import GermanTimePeriodExtractorConfiguration
+from .datetime_extractor_config import GermanDateTimeExtractorConfiguration
+from .datetimeperiod_extractor_config import GermanDateTimePeriodExtractorConfiguration
+from .set_extractor_config import GermanSetExtractorConfiguration
+from .holiday_extractor_config import GermanHolidayExtractorConfiguration
 from ...resources.base_date_time import BaseDateTime
 from ..base_timezone import BaseTimeZoneExtractor
-from .timezone_extractor_config import germanTimeZoneExtractorConfiguration
+from .timezone_extractor_config import GermanTimeZoneExtractorConfiguration
 
 
-class germanMergedExtractorConfiguration(MergedExtractorConfiguration):
+class GermanMergedExtractorConfiguration(MergedExtractorConfiguration):
     @property
     def check_both_before_after(self):
         return self._check_both_before_after
@@ -154,60 +154,60 @@ class germanMergedExtractorConfiguration(MergedExtractorConfiguration):
         return self._term_filter_regexes
 
     def __init__(self):
-        self._integer_extractor = germanIntegerExtractor()
+        self._integer_extractor = GermanIntegerExtractor()
         self._date_extractor = BaseDateExtractor(
-            germanDateExtractorConfiguration())
+            GermanDateExtractorConfiguration())
         self._time_extractor = BaseTimeExtractor(
-            germanTimeExtractorConfiguration())
+            GermanTimeExtractorConfiguration())
         self._duration_extractor = BaseDurationExtractor(
-            germanDurationExtractorConfiguration())
+            GermanDurationExtractorConfiguration())
         self._date_period_extractor = BaseDatePeriodExtractor(
-            germanDatePeriodExtractorConfiguration())
+            GermanDatePeriodExtractorConfiguration())
         self._time_period_extractor = BaseTimePeriodExtractor(
-            germanTimePeriodExtractorConfiguration())
+            GermanTimePeriodExtractorConfiguration())
         self._date_time_extractor = BaseDateTimeExtractor(
-            germanDateTimeExtractorConfiguration())
+            GermanDateTimeExtractorConfiguration())
         self._date_time_period_extractor = BaseDateTimePeriodExtractor(
-            germanDateTimePeriodExtractorConfiguration())
+            GermanDateTimePeriodExtractorConfiguration())
         self._set_extractor = BaseSetExtractor(
-            germanSetExtractorConfiguration())
+            GermanSetExtractorConfiguration())
         self._holiday_extractor = BaseHolidayExtractor(
-            germanHolidayExtractorConfiguration())
+            GermanHolidayExtractorConfiguration())
         self._after_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.AfterRegex)
+            GermanDateTime.AfterRegex)
         self._before_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.BeforeRegex)
+            GermanDateTime.BeforeRegex)
         self._since_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.SinceRegex)
+            GermanDateTime.SinceRegex)
         self._from_to_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.FromToRegex)
+            GermanDateTime.FromToRegex)
         self._single_ambiguous_month_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.SingleAmbiguousMonthRegex)
+            GermanDateTime.SingleAmbiguousMonthRegex)
         self._preposition_suffix_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.PrepositionSuffixRegex)
+            GermanDateTime.PrepositionSuffixRegex)
         self._ambiguous_range_modifier_prefix = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.AmbiguousRangeModifierPrefix)
+            GermanDateTime.AmbiguousRangeModifierPrefix)
         self._number_ending_pattern = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.NumberEndingPattern)
+            GermanDateTime.NumberEndingPattern)
         self._term_filter_regexes = [
-            RegExpUtility.get_safe_reg_exp(germanDateTime.OneOnOneRegex),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.SingleAmbiguousTermsRegex)
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.OneOnOneRegex),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.SingleAmbiguousTermsRegex)
         ]
         self._unspecified_date_period_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.UnspecificDatePeriodRegex
+            GermanDateTime.UnspecificDatePeriodRegex
         )
-        self._ambiguity_filters_dict = germanDateTime.AmbiguityFiltersDict
-        self._around_regex = germanDateTime.AroundRegex
+        self._ambiguity_filters_dict = GermanDateTime.AmbiguityFiltersDict
+        self._around_regex = GermanDateTime.AroundRegex
         self._equal_regex = BaseDateTime.EqualRegex
         self._suffix_after_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.SuffixAfterRegex
+            GermanDateTime.SuffixAfterRegex
         )
-        self._superfluous_word_matcher = germanDateTime.SuperfluousWordList
+        self._superfluous_word_matcher = GermanDateTime.SuperfluousWordList
         self._fail_fast_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.FailFastRegex
+            GermanDateTime.FailFastRegex
         )
-        self._check_both_before_after = germanDateTime.CheckBothBeforeAfter
+        self._check_both_before_after = GermanDateTime.CheckBothBeforeAfter
         self._time_zone_extractor = BaseTimeZoneExtractor(
-            germanTimeZoneExtractorConfiguration())
+            GermanTimeZoneExtractorConfiguration())
         # TODO When the implementation for these properties is added, change the None values to their respective Regexps
         self._datetime_alt_extractor = None

@@ -3,19 +3,19 @@
 
 from typing import Pattern, List, Dict
 from recognizers_number import (BaseNumberExtractor, BaseNumberParser,
-                                germanOrdinalExtractor, germanIntegerExtractor, germanNumberParserConfiguration)
+                                GermanOrdinalExtractor, GermanIntegerExtractor, GermanNumberParserConfiguration)
 from recognizers_text.utilities import RegExpUtility
-from ...resources.german_date_time import germanDateTime
+from ...resources.german_date_time import GermanDateTime
 from ..extractors import DateTimeExtractor
 from ..base_duration import BaseDurationExtractor
 from ..base_date import DateExtractorConfiguration
 from ..utilities import DateTimeUtilityConfiguration
-from .duration_extractor_config import germanDurationExtractorConfiguration
-from .base_configs import germanDateTimeUtilityConfiguration
+from .duration_extractor_config import GermanDurationExtractorConfiguration
+from .base_configs import GermanDateTimeUtilityConfiguration
 from ...resources.base_date_time import BaseDateTime
 
 
-class germanDateExtractorConfiguration(DateExtractorConfiguration):
+class GermanDateExtractorConfiguration(DateExtractorConfiguration):
     @property
     def week_day_start(self) -> Pattern:
         return self._week_day_start
@@ -157,113 +157,113 @@ class germanDateExtractorConfiguration(DateExtractorConfiguration):
         return self._month_suffix_regex
 
     def __init__(self):
-        self._check_both_before_after = germanDateTime.CheckBothBeforeAfter
+        self._check_both_before_after = GermanDateTime.CheckBothBeforeAfter
         self._date_regex_list = [
-            RegExpUtility.get_safe_reg_exp(germanDateTime.DateExtractor1),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.DateExtractor3),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.DateExtractor4),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.DateExtractor5),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.DateExtractor6),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.DateExtractor7L),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.DateExtractor7S),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.DateExtractor8),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.DateExtractor9L),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.DateExtractor9S),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.DateExtractorA),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.DateExtractor1),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.DateExtractor3),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.DateExtractor4),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.DateExtractor5),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.DateExtractor6),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.DateExtractor7L),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.DateExtractor7S),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.DateExtractor8),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.DateExtractor9L),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.DateExtractor9S),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.DateExtractorA),
         ]
         self._implicit_date_list = [
-            RegExpUtility.get_safe_reg_exp(germanDateTime.OnRegex),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.RelaxedOnRegex),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.SpecialDayRegex),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.ThisRegex),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.LastDateRegex),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.NextDateRegex),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.SingleWeekDayRegex),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.OnRegex),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.RelaxedOnRegex),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.SpecialDayRegex),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.ThisRegex),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.LastDateRegex),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.NextDateRegex),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.SingleWeekDayRegex),
             RegExpUtility.get_safe_reg_exp(
-                germanDateTime.WeekDayOfMonthRegex),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.SpecialDate),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.SpecialDayWithNumRegex),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.RelativeWeekDayRegex)
+                GermanDateTime.WeekDayOfMonthRegex),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.SpecialDate),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.SpecialDayWithNumRegex),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.RelativeWeekDayRegex)
         ]
         self._month_end = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.MonthEnd)
+            GermanDateTime.MonthEnd)
         self._of_month = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.OfMonth)
+            GermanDateTime.OfMonth)
         self._date_unit_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.DateUnitRegex)
+            GermanDateTime.DateUnitRegex)
         self._for_the_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.ForTheRegex)
+            GermanDateTime.ForTheRegex)
         self._week_day_and_day_of_month_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.WeekDayAndDayOfMonthRegex)
+            GermanDateTime.WeekDayAndDayOfMonthRegex)
         self._relative_month_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.RelativeMonthRegex)
+            GermanDateTime.RelativeMonthRegex)
         self._week_day_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.WeekDayRegex)
-        self._day_of_week = germanDateTime.DayOfWeek
-        self._ordinal_extractor = germanOrdinalExtractor()
-        self._integer_extractor = germanIntegerExtractor()
+            GermanDateTime.WeekDayRegex)
+        self._day_of_week = GermanDateTime.DayOfWeek
+        self._ordinal_extractor = GermanOrdinalExtractor()
+        self._integer_extractor = GermanIntegerExtractor()
         self._number_parser = BaseNumberParser(
-            germanNumberParserConfiguration())
+            GermanNumberParserConfiguration())
         self._duration_extractor = BaseDurationExtractor(
-            germanDurationExtractorConfiguration())
-        self._utility_configuration = germanDateTimeUtilityConfiguration()
+            GermanDurationExtractorConfiguration())
+        self._utility_configuration = GermanDateTimeUtilityConfiguration()
         self._range_connector_symbol_regex = RegExpUtility.get_safe_reg_exp(
             BaseDateTime.RangeConnectorSymbolRegex
         )
         self._strict_relative_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.StrictRelativeRegex
+            GermanDateTime.StrictRelativeRegex
         )
         self._year_suffix = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.YearSuffix
+            GermanDateTime.YearSuffix
         )
-        self._month_of_year = germanDateTime.MonthOfYear
+        self._month_of_year = GermanDateTime.MonthOfYear
         self._prefix_article_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.PrefixArticleRegex
+            GermanDateTime.PrefixArticleRegex
         )
         self._week_day_end = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.WeekDayEnd
+            GermanDateTime.WeekDayEnd
         )
         self._week_day_start = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.WeekDayStart
+            GermanDateTime.WeekDayStart
         )
         self._more_than_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.MoreThanRegex
+            GermanDateTime.MoreThanRegex
         )
         self._less_than_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.LessThanRegex
+            GermanDateTime.LessThanRegex
         )
         self._in_connector_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.InConnectorRegex
+            GermanDateTime.InConnectorRegex
         )
         self._range_unit_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.RangeUnitRegex
+            GermanDateTime.RangeUnitRegex
         )
         self._since_year_suffix_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.SinceYearSuffixRegex
+            GermanDateTime.SinceYearSuffixRegex
         )
         self._week_day_and_day_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.WeekDayAndDayRegex
+            GermanDateTime.WeekDayAndDayRegex
         )
         self._week_day_start = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.WeekDayStart
+            GermanDateTime.WeekDayStart
         )
-        self._check_both_before_after = germanDateTime.CheckBothBeforeAfter
+        self._check_both_before_after = GermanDateTime.CheckBothBeforeAfter
 
         self._month_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.MonthRegex
+            GermanDateTime.MonthRegex
         )
         self._month_num_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.MonthNumRegex
+            GermanDateTime.MonthNumRegex
         )
         self._year_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.YearRegex
+            GermanDateTime.YearRegex
         )
         self._day_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.DayRegex
+            GermanDateTime.DayRegex
         )
         self._written_month_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.WrittenMonthRegex
+            GermanDateTime.WrittenMonthRegex
         )
         self._month_suffix_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.MonthSuffixRegex
+            GermanDateTime.MonthSuffixRegex
         )

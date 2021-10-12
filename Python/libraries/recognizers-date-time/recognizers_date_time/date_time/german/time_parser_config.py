@@ -6,12 +6,12 @@ import regex
 from ..parsers import DateTimeParser
 
 from recognizers_text.utilities import RegExpUtility
-from ...resources.german_date_time import germanDateTime
+from ...resources.german_date_time import GermanDateTime
 from ..base_time import TimeParserConfiguration, AdjustParams
 from ..base_configs import BaseDateParserConfiguration, DateTimeUtilityConfiguration
 
 
-class germanTimeParserConfiguration(TimeParserConfiguration):
+class GermanTimeParserConfiguration(TimeParserConfiguration):
     @property
     def time_token_prefix(self) -> str:
         return self._time_token_prefix
@@ -37,36 +37,36 @@ class germanTimeParserConfiguration(TimeParserConfiguration):
         return self._time_zone_parser
 
     def __init__(self, config: BaseDateParserConfiguration):
-        self._time_token_prefix: str = germanDateTime.TimeTokenPrefix
+        self._time_token_prefix: str = GermanDateTime.TimeTokenPrefix
         self._at_regex: Pattern = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.AtRegex)
+            GermanDateTime.AtRegex)
         self._time_regexes: List[Pattern] = [
-            RegExpUtility.get_safe_reg_exp(germanDateTime.TimeRegex1),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.TimeRegex2),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.TimeRegex3),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.TimeRegex4),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.TimeRegex5),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.TimeRegex6),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.TimeRegex7),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.TimeRegex8),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.TimeRegex9),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.TimeRegex10),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.TimeRegex11),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.ConnectNumRegex)
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.TimeRegex1),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.TimeRegex2),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.TimeRegex3),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.TimeRegex4),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.TimeRegex5),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.TimeRegex6),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.TimeRegex7),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.TimeRegex8),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.TimeRegex9),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.TimeRegex10),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.TimeRegex11),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.ConnectNumRegex)
         ]
-        self._numbers: Dict[str, int] = germanDateTime.Numbers
+        self._numbers: Dict[str, int] = GermanDateTime.Numbers
         self._time_zone_parser = config.time_zone_parser
         self._utility_configuration = config.utility_configuration
         self.less_than_one_hour = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.LessThanOneHour)
+            GermanDateTime.LessThanOneHour)
         self.time_suffix_full = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.TimeSuffixFull)
+            GermanDateTime.TimeSuffixFull)
         self.lunch_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.LunchRegex)
+            GermanDateTime.LunchRegex)
         self.night_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.NightRegex)
+            GermanDateTime.NightRegex)
         self.ish_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.IshRegex)
+            GermanDateTime.IshRegex)
 
     def adjust_by_prefix(self, prefix: str, adjust: AdjustParams):
         delta_min = 0

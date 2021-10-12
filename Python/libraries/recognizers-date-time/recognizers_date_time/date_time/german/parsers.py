@@ -7,11 +7,11 @@ import regex
 from recognizers_text.utilities import RegExpUtility
 from ..utilities import DateTimeResolutionResult
 from ..base_time import BaseTimeParser
-from .time_parser_config import germanTimeParserConfiguration
+from .time_parser_config import GermanTimeParserConfiguration
 
 
-class germanTimeParser(BaseTimeParser):
-    def __init__(self, config: germanTimeParserConfiguration):
+class GermanTimeParser(BaseTimeParser):
+    def __init__(self, config: GermanTimeParserConfiguration):
         super().__init__(config)
 
     def internal_parser(self, source: str, reference: datetime) -> DateTimeResolutionResult:

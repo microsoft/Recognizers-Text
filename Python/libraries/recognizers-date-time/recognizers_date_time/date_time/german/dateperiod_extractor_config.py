@@ -6,20 +6,20 @@ from typing import List, Pattern
 from recognizers_text.extractor import Extractor
 from recognizers_text.utilities import RegExpUtility
 from recognizers_number.number import BaseNumberParser, BaseNumberExtractor
-from recognizers_number.number.german.extractors import germanIntegerExtractor
-from recognizers_number.number.german.parsers import germanNumberParserConfiguration
+from recognizers_number.number.german.extractors import GermanIntegerExtractor
+from recognizers_number.number.german.parsers import GermanNumberParserConfiguration
 from ...resources.base_date_time import BaseDateTime
-from ...resources.german_date_time import germanDateTime
+from ...resources.german_date_time import GermanDateTime
 from ..extractors import DateTimeExtractor
 from ..base_duration import BaseDurationExtractor
 from ..base_date import BaseDateExtractor
 from ..base_dateperiod import DatePeriodExtractorConfiguration, MatchedIndex
-from .duration_extractor_config import germanDurationExtractorConfiguration
-from .date_extractor_config import germanDateExtractorConfiguration
-from .common_configs import germanOrdinalExtractor, germanCardinalExtractor
+from .duration_extractor_config import GermanDurationExtractorConfiguration
+from .date_extractor_config import GermanDateExtractorConfiguration
+from .common_configs import GermanOrdinalExtractor, GermanCardinalExtractor
 
 
-class germanDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
+class GermanDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
     @property
     def previous_prefix_regex(self) -> Pattern:
         return self._previous_prefix_regex
@@ -166,114 +166,114 @@ class germanDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
 
     def __init__(self):
         self._previous_prefix_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.PreviousPrefixRegex)
-        self._check_both_before_after = germanDateTime.CheckBothBeforeAfter
+            GermanDateTime.PreviousPrefixRegex)
+        self._check_both_before_after = GermanDateTime.CheckBothBeforeAfter
         self._simple_cases_regexes = [
-            RegExpUtility.get_safe_reg_exp(germanDateTime.SimpleCasesRegex),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.BetweenRegex),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.OneWordPeriodRegex),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.MonthWithYear),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.MonthNumWithYear),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.YearRegex),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.DecadeWithCenturyRegex),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.WeekOfMonthRegex),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.WeekOfYearRegex),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.SimpleCasesRegex),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.BetweenRegex),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.OneWordPeriodRegex),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.MonthWithYear),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.MonthNumWithYear),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.YearRegex),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.DecadeWithCenturyRegex),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.WeekOfMonthRegex),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.WeekOfYearRegex),
             RegExpUtility.get_safe_reg_exp(
-                germanDateTime.MonthFrontBetweenRegex),
+                GermanDateTime.MonthFrontBetweenRegex),
             RegExpUtility.get_safe_reg_exp(
-                germanDateTime.MonthFrontSimpleCasesRegex),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.QuarterRegex),
+                GermanDateTime.MonthFrontSimpleCasesRegex),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.QuarterRegex),
             RegExpUtility.get_safe_reg_exp(
-                germanDateTime.QuarterRegexYearFront),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.AllHalfYearRegex),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.SeasonRegex),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.WhichWeekRegex),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.RestOfDateRegex),
+                GermanDateTime.QuarterRegexYearFront),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.AllHalfYearRegex),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.SeasonRegex),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.WhichWeekRegex),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.RestOfDateRegex),
             RegExpUtility.get_safe_reg_exp(
-                germanDateTime.LaterEarlyPeriodRegex),
+                GermanDateTime.LaterEarlyPeriodRegex),
             RegExpUtility.get_safe_reg_exp(
-                germanDateTime.WeekWithWeekDayRangeRegex),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.YearPlusNumberRegex),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.DecadeWithCenturyRegex),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.RelativeDecadeRegex),
-            RegExpUtility.get_safe_reg_exp(germanDateTime.ReferenceDatePeriodRegex)
+                GermanDateTime.WeekWithWeekDayRangeRegex),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.YearPlusNumberRegex),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.DecadeWithCenturyRegex),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.RelativeDecadeRegex),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.ReferenceDatePeriodRegex)
         ]
-        self._check_both_before_after = germanDateTime.CheckBothBeforeAfter
+        self._check_both_before_after = GermanDateTime.CheckBothBeforeAfter
         self._illegal_year_regex = RegExpUtility.get_safe_reg_exp(
             BaseDateTime.IllegalYearRegex)
         self._year_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.YearRegex)
+            GermanDateTime.YearRegex)
         self._till_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.TillRegex)
+            GermanDateTime.TillRegex)
         self._followed_unit = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.FollowedDateUnit)
+            GermanDateTime.FollowedDateUnit)
         self._number_combined_with_unit = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.NumberCombinedWithDateUnit)
+            GermanDateTime.NumberCombinedWithDateUnit)
         self._past_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.PreviousPrefixRegex)
+            GermanDateTime.PreviousPrefixRegex)
         self._future_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.NextPrefixRegex)
+            GermanDateTime.NextPrefixRegex)
         self._week_of_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.WeekOfRegex)
+            GermanDateTime.WeekOfRegex)
         self._month_of_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.MonthOfRegex)
+            GermanDateTime.MonthOfRegex)
         self._date_unit_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.DateUnitRegex)
+            GermanDateTime.DateUnitRegex)
         self._in_connector_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.InConnectorRegex)
+            GermanDateTime.InConnectorRegex)
         self._range_unit_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.RangeUnitRegex)
+            GermanDateTime.RangeUnitRegex)
         self._date_point_extractor = BaseDateExtractor(
-            germanDateExtractorConfiguration())
-        self._integer_extractor = germanIntegerExtractor()
+            GermanDateExtractorConfiguration())
+        self._integer_extractor = GermanIntegerExtractor()
         self._number_parser = BaseNumberParser(
-            germanNumberParserConfiguration())
+            GermanNumberParserConfiguration())
         self._duration_extractor = BaseDurationExtractor(
-            germanDurationExtractorConfiguration())
+            GermanDurationExtractorConfiguration())
         self._range_connector_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.RangeConnectorRegex)
+            GermanDateTime.RangeConnectorRegex)
         self._now_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.NowRegex
+            GermanDateTime.NowRegex
         )
         self._within_next_prefix_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.WithinNextPrefixRegex
+            GermanDateTime.WithinNextPrefixRegex
         )
         self._time_unit_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.TimeUnitRegex
+            GermanDateTime.TimeUnitRegex
         )
         self._future_suffix_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.FutureSuffixRegex
+            GermanDateTime.FutureSuffixRegex
         )
         self._ago_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.AgoRegex
+            GermanDateTime.AgoRegex
         )
         self._later_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.LaterRegex
+            GermanDateTime.LaterRegex
         )
         self._less_than_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.LessThanRegex
+            GermanDateTime.LessThanRegex
         )
         self._more_than_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.MoreThanRegex
+            GermanDateTime.MoreThanRegex
         )
-        self._duration_date_restrictions = germanDateTime.DurationDateRestrictions
+        self._duration_date_restrictions = GermanDateTime.DurationDateRestrictions
         self._year_period_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.YearPeriodRegex
+            GermanDateTime.YearPeriodRegex
         )
         self._decade_with_century_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.DecadeWithCenturyRegex
+            GermanDateTime.DecadeWithCenturyRegex
         )
         self._month_num_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.MonthNumRegex
+            GermanDateTime.MonthNumRegex
         )
         self._century_suffix_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.CenturySuffixRegex
+            GermanDateTime.CenturySuffixRegex
         )
-        self._ordinal_extractor = germanOrdinalExtractor()
+        self._ordinal_extractor = GermanOrdinalExtractor()
         self._previous_prefix_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.PreviousPrefixRegex
+            GermanDateTime.PreviousPrefixRegex
         )
-        self._cardinal_extractor = germanCardinalExtractor()
+        self._cardinal_extractor = GermanCardinalExtractor()
 
     def get_from_token_index(self, source: str) -> MatchedIndex:
         return MatchedIndex(True, source.rfind('from')) if source.endswith('from') else MatchedIndex(False, -1)

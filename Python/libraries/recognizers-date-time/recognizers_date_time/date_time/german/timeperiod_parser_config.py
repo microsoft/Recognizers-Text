@@ -5,8 +5,8 @@ from typing import Pattern, Dict
 
 from recognizers_text.utilities import RegExpUtility
 from recognizers_text.extractor import Extractor
-from recognizers_number.number.german.extractors import germanIntegerExtractor
-from ...resources.german_date_time import germanDateTime
+from recognizers_number.number.german.extractors import GermanIntegerExtractor
+from ...resources.german_date_time import GermanDateTime
 from ..extractors import DateTimeExtractor
 from ..parsers import DateTimeParser
 from ..base_configs import BaseDateParserConfiguration, DateTimeUtilityConfiguration
@@ -15,7 +15,7 @@ from ..utilities import TimexUtil
 from ..constants import Constants
 
 
-class germanTimePeriodParserConfiguration(TimePeriodParserConfiguration):
+class GermanTimePeriodParserConfiguration(TimePeriodParserConfiguration):
     @property
     def time_extractor(self) -> DateTimeExtractor:
         return self._time_extractor
@@ -68,20 +68,20 @@ class germanTimePeriodParserConfiguration(TimePeriodParserConfiguration):
         self._time_extractor = config.time_extractor
         self._time_parser = config.time_parser
         self._time_zone_parser = config.time_zone_parser
-        self._integer_extractor = germanIntegerExtractor()
+        self._integer_extractor = GermanIntegerExtractor()
         self._pure_number_from_to_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.PureNumFromTo)
+            GermanDateTime.PureNumFromTo)
         self._pure_number_between_and_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.PureNumBetweenAnd)
+            GermanDateTime.PureNumBetweenAnd)
         self._specific_time_from_to_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.SpecificTimeFromTo)
+            GermanDateTime.SpecificTimeFromTo)
         self._specific_time_between_and_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.SpecificTimeBetweenAnd)
+            GermanDateTime.SpecificTimeBetweenAnd)
         self._time_of_day_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.TimeOfDayRegex)
+            GermanDateTime.TimeOfDayRegex)
         self._till_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.TillRegex)
-        self._numbers = germanDateTime.Numbers
+            GermanDateTime.TillRegex)
+        self._numbers = GermanDateTime.Numbers
         self._utility_configuration = config.utility_configuration
 
     def get_matched_timex_range(self, source: str) -> MatchedTimeRegex:
@@ -95,15 +95,15 @@ class germanTimePeriodParserConfiguration(TimePeriodParserConfiguration):
         end_min = 0
 
         time_of_day = ""
-        if any(trimmed_text.endswith(o) for o in germanDateTime.MorningTermList):
+        if any(trimmed_text.endswith(o) for o in GermanDateTime.MorningTermList):
             time_of_day = Constants.MORNING
-        elif any(trimmed_text.endswith(o) for o in germanDateTime.AfternoonTermList):
+        elif any(trimmed_text.endswith(o) for o in GermanDateTime.AfternoonTermList):
             time_of_day = Constants.AFTERNOON
-        elif any(trimmed_text.endswith(o) for o in germanDateTime.EveningTermList):
+        elif any(trimmed_text.endswith(o) for o in GermanDateTime.EveningTermList):
             time_of_day = Constants.EVENING
-        elif any(trimmed_text == o for o in germanDateTime.DaytimeTermList):
+        elif any(trimmed_text == o for o in GermanDateTime.DaytimeTermList):
             time_of_day = Constants.DAYTIME
-        elif any(trimmed_text.endswith(o) for o in germanDateTime.NightTermList):
+        elif any(trimmed_text.endswith(o) for o in GermanDateTime.NightTermList):
             time_of_day = Constants.NIGHT
         else:
             return MatchedTimeRegex(

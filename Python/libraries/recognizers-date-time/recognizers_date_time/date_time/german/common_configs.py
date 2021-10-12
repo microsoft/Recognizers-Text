@@ -4,10 +4,10 @@
 from typing import Dict, Pattern
 
 from recognizers_number import BaseNumberExtractor, BaseNumberParser
-from recognizers_number.number.german.parsers import germanNumberParserConfiguration
-from recognizers_number.number.german.extractors import germanCardinalExtractor, germanIntegerExtractor, germanOrdinalExtractor
+from recognizers_number.number.german.parsers import GermanNumberParserConfiguration
+from recognizers_number.number.german.extractors import GermanCardinalExtractor, GermanIntegerExtractor, GermanOrdinalExtractor
 
-from ...resources.german_date_time import BaseDateTime, germanDateTime
+from ...resources.german_date_time import BaseDateTime, GermanDateTime
 from ..extractors import DateTimeExtractor
 from ..parsers import DateTimeParser
 from ..base_configs import BaseDateParserConfiguration, DateTimeUtilityConfiguration
@@ -19,26 +19,26 @@ from ..base_timeperiod import BaseTimePeriodExtractor, BaseTimePeriodParser
 from ..base_datetime import BaseDateTimeExtractor, BaseDateTimeParser
 from ..base_datetimeperiod import BaseDateTimePeriodExtractor, BaseDateTimePeriodParser
 
-from .base_configs import germanDateTimeUtilityConfiguration
-from .date_extractor_config import germanDateExtractorConfiguration
-from .date_parser_config import germanDateParserConfiguration
-from .time_extractor_config import germanTimeExtractorConfiguration
-from .time_parser_config import germanTimeParserConfiguration
-from .parsers import germanTimeParser
-from .duration_extractor_config import germanDurationExtractorConfiguration
-from .duration_parser_config import germanDurationParserConfiguration
-from .dateperiod_extractor_config import germanDatePeriodExtractorConfiguration
-from .dateperiod_parser_config import germanDatePeriodParserConfiguration
-from .timeperiod_extractor_config import germanTimePeriodExtractorConfiguration
-from .timeperiod_parser_config import germanTimePeriodParserConfiguration
-from .datetime_extractor_config import germanDateTimeExtractorConfiguration
-from .datetime_parser_config import germanDateTimeParserConfiguration
-from .datetimeperiod_extractor_config import germanDateTimePeriodExtractorConfiguration
-from .datetimeperiod_parser_config import germanDateTimePeriodParserConfiguration
+from .base_configs import GermanDateTimeUtilityConfiguration
+from .date_extractor_config import GermanDateExtractorConfiguration
+from .date_parser_config import GermanDateParserConfiguration
+from .time_extractor_config import GermanTimeExtractorConfiguration
+from .time_parser_config import GermanTimeParserConfiguration
+from .parsers import GermanTimeParser
+from .duration_extractor_config import GermanDurationExtractorConfiguration
+from .duration_parser_config import GermanDurationParserConfiguration
+from .dateperiod_extractor_config import GermanDatePeriodExtractorConfiguration
+from .dateperiod_parser_config import GermanDatePeriodParserConfiguration
+from .timeperiod_extractor_config import GermanTimePeriodExtractorConfiguration
+from .timeperiod_parser_config import GermanTimePeriodParserConfiguration
+from .datetime_extractor_config import GermanDateTimeExtractorConfiguration
+from .datetime_parser_config import GermanDateTimeParserConfiguration
+from .datetimeperiod_extractor_config import GermanDateTimePeriodExtractorConfiguration
+from .datetimeperiod_parser_config import GermanDateTimePeriodParserConfiguration
 from ..base_timezone import BaseTimeZoneParser
 
 
-class germanCommonDateTimeParserConfiguration(BaseDateParserConfiguration):
+class GermanCommonDateTimeParserConfiguration(BaseDateParserConfiguration):
     @property
     def check_both_before_after(self) -> Pattern:
         return self._check_both_before_after
@@ -158,49 +158,49 @@ class germanCommonDateTimeParserConfiguration(BaseDateParserConfiguration):
     def __init__(self):
         BaseDateParserConfiguration.__init__(self)
 
-        self._utility_configuration = germanDateTimeUtilityConfiguration()
-        self._unit_map = germanDateTime.UnitMap
-        self._unit_value_map = germanDateTime.UnitValueMap
-        self._season_map = germanDateTime.SeasonMap
-        self._cardinal_map = germanDateTime.CardinalMap
-        self._day_of_week = germanDateTime.DayOfWeek
-        self._month_of_year = germanDateTime.MonthOfYear
-        self._numbers = germanDateTime.Numbers
-        self._double_numbers = germanDateTime.DoubleNumbers
-        self._cardinal_extractor = germanCardinalExtractor()
-        self._integer_extractor = germanIntegerExtractor()
-        self._ordinal_extractor = germanOrdinalExtractor()
-        self._check_both_before_after = germanDateTime.CheckBothBeforeAfter
+        self._utility_configuration = GermanDateTimeUtilityConfiguration()
+        self._unit_map = GermanDateTime.UnitMap
+        self._unit_value_map = GermanDateTime.UnitValueMap
+        self._season_map = GermanDateTime.SeasonMap
+        self._cardinal_map = GermanDateTime.CardinalMap
+        self._day_of_week = GermanDateTime.DayOfWeek
+        self._month_of_year = GermanDateTime.MonthOfYear
+        self._numbers = GermanDateTime.Numbers
+        self._double_numbers = GermanDateTime.DoubleNumbers
+        self._cardinal_extractor = GermanCardinalExtractor()
+        self._integer_extractor = GermanIntegerExtractor()
+        self._ordinal_extractor = GermanOrdinalExtractor()
+        self._check_both_before_after = GermanDateTime.CheckBothBeforeAfter
         self._day_of_month = {
-            **BaseDateTime.DayOfMonthDictionary, **germanDateTime.DayOfMonth}
+            **BaseDateTime.DayOfMonthDictionary, **GermanDateTime.DayOfMonth}
         self._time_zone_parser = BaseTimeZoneParser()
         self._number_parser = BaseNumberParser(
-            germanNumberParserConfiguration())
+            GermanNumberParserConfiguration())
         self._date_extractor = BaseDateExtractor(
-            germanDateExtractorConfiguration())
+            GermanDateExtractorConfiguration())
         self._time_extractor = BaseTimeExtractor(
-            germanTimeExtractorConfiguration())
+            GermanTimeExtractorConfiguration())
         self._duration_extractor = BaseDurationExtractor(
-            germanDurationExtractorConfiguration())
+            GermanDurationExtractorConfiguration())
         self._date_period_extractor = BaseDatePeriodExtractor(
-            germanDatePeriodExtractorConfiguration())
+            GermanDatePeriodExtractorConfiguration())
         self._time_period_extractor = BaseTimePeriodExtractor(
-            germanTimePeriodExtractorConfiguration())
+            GermanTimePeriodExtractorConfiguration())
         self._date_time_extractor = BaseDateTimeExtractor(
-            germanDateTimeExtractorConfiguration())
+            GermanDateTimeExtractorConfiguration())
         self._date_time_period_extractor = BaseDateTimePeriodExtractor(
-            germanDateTimePeriodExtractorConfiguration())
+            GermanDateTimePeriodExtractorConfiguration())
         self._duration_parser = BaseDurationParser(
-            germanDurationParserConfiguration(self))
+            GermanDurationParserConfiguration(self))
         self._date_parser = BaseDateParser(
-            germanDateParserConfiguration(self))
-        self._time_parser = germanTimeParser(
-            germanTimeParserConfiguration(self))
+            GermanDateParserConfiguration(self))
+        self._time_parser = GermanTimeParser(
+            GermanTimeParserConfiguration(self))
         self._date_period_parser = BaseDatePeriodParser(
-            germanDatePeriodParserConfiguration(self))
+            GermanDatePeriodParserConfiguration(self))
         self._time_period_parser = BaseTimePeriodParser(
-            germanTimePeriodParserConfiguration(self))
+            GermanTimePeriodParserConfiguration(self))
         self._date_time_parser = BaseDateTimeParser(
-            germanDateTimeParserConfiguration(self))
+            GermanDateTimeParserConfiguration(self))
         self._date_time_period_parser = BaseDateTimePeriodParser(
-            germanDateTimePeriodParserConfiguration(self))
+            GermanDateTimePeriodParserConfiguration(self))

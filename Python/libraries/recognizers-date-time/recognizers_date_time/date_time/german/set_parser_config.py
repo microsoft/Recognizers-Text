@@ -4,14 +4,14 @@
 from typing import Pattern, Dict
 
 from recognizers_text.utilities import RegExpUtility
-from ...resources.german_date_time import germanDateTime
+from ...resources.german_date_time import GermanDateTime
 from ..extractors import DateTimeExtractor
 from ..parsers import DateTimeParser
 from ..base_set import SetParserConfiguration, MatchedTimex
 from ..base_configs import BaseDateParserConfiguration
 
 
-class germanSetParserConfiguration(SetParserConfiguration):
+class GermanSetParserConfiguration(SetParserConfiguration):
     @property
     def duration_extractor(self) -> DateTimeExtractor:
         return self._duration_extractor
@@ -111,19 +111,19 @@ class germanSetParserConfiguration(SetParserConfiguration):
         self._time_period_parser = config.time_period_parser
         self._date_time_period_extractor = config.date_time_period_extractor
         self._date_time_period_parser = config.date_time_period_parser
-        self._unit_map = germanDateTime.UnitMap
+        self._unit_map = GermanDateTime.UnitMap
         self._each_prefix_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.EachPrefixRegex)
+            GermanDateTime.EachPrefixRegex)
         self._periodic_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.PeriodicRegex)
+            GermanDateTime.PeriodicRegex)
         self._each_unit_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.EachUnitRegex)
+            GermanDateTime.EachUnitRegex)
         self._each_day_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.EachDayRegex)
+            GermanDateTime.EachDayRegex)
         self._set_week_day_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.SetWeekDayRegex)
+            GermanDateTime.SetWeekDayRegex)
         self._set_each_regex = RegExpUtility.get_safe_reg_exp(
-            germanDateTime.SetEachRegex)
+            GermanDateTime.SetEachRegex)
 
     def get_matched_daily_timex(self, text: str) -> MatchedTimex:
         trimmed_text = text.strip().lower()
