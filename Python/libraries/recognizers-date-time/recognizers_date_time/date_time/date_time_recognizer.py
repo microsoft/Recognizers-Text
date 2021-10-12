@@ -19,6 +19,9 @@ from .chinese.merged_parser import ChineseMergedParser
 from .french.common_configs import FrenchCommonDateTimeParserConfiguration
 from .french.merged_extractor_config import FrenchMergedExtractorConfiguration
 from .french.merged_parser_config import FrenchMergedParserConfiguration
+from .german.merged_parser_config import GermanMergedParserConfiguration
+from .german.common_configs import GermanCommonDateTimeParserConfiguration
+from .german.merged_extractor_config import GermanMergedExtractorConfiguration
 
 
 class DateTimeRecognizer(Recognizer[DateTimeOptions]):
