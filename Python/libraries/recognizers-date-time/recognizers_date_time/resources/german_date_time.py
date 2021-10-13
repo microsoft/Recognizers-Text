@@ -118,7 +118,7 @@ class GermanDateTime:
     TimeSuffix = f'(?<suffix>{AmRegex}|{PmRegex}|{OclockRegex})'
     TimeSuffixFull = f'(?<suffix>{AmRegex}|{PmRegex}|{OclockRegex}|\\b(?<pm>nachmittag(s)?|nacht(s)?|abend(s)?))'
     BasicTime = f'(?<basictime>{WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}(:|\\s+uhr(\\s+und)?\\s+){BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?|\\b{BaseDateTime.HourRegex}(?![%\\d]))'
-    MidnightRegex = f'(?<midnight>mitte(r|n in der )nachts?)'
+    MidnightRegex = f'(?<midnight>(mitte(r|n in der )nachts?|mitternacht))'
     MidmorningRegex = f'(?<midmorning>mitten am vormittag)'
     MidafternoonRegex = f'(?<midafternoon>mitten am nachmittag)'
     MiddayRegex = f'((?<midday>(am\\s+)?mittag(s(zeit)?)?)|(?<midday>(?<=montag|dienstag|mittwoch|donnerstag|freitag|samstag|sonnabend|sonntag)(mittags?)))'
