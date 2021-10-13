@@ -276,10 +276,10 @@ class GermanDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         self._cardinal_extractor = GermanCardinalExtractor()
 
     def get_from_token_index(self, source: str) -> MatchedIndex:
-        return MatchedIndex(True, source.rfind('from')) if source.endswith('from') else MatchedIndex(False, -1)
+        return MatchedIndex(True, source.rfind('von')) if source.endswith('von') else MatchedIndex(False, -1)
 
     def get_between_token_index(self, source: str) -> MatchedIndex:
-        return MatchedIndex(True, source.rfind('between')) if source.endswith('between') else MatchedIndex(False, -1)
+        return MatchedIndex(True, source.rfind('zwischen')) if source.endswith('zwischen') else MatchedIndex(False, -1)
 
     def has_connector_token(self, source: str) -> bool:
         match = self.range_connector_regex.search(source)
