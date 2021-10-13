@@ -250,7 +250,7 @@ class GermanHolidayParserConfiguration(BaseHolidayParserConfiguration):
         return DateUtils.min_value
     
     @staticmethod
-    def foodfriday(year: int) -> datetime:
+    def goodfriday(year: int) -> datetime:
         return DateUtils.min_value
 
     @staticmethod
