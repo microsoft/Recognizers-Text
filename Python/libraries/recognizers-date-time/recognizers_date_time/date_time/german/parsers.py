@@ -27,7 +27,7 @@ class GermanTimeParser(BaseTimeParser):
         if match is None or match.group() != source:
             return result
 
-        hour_str = RegExpUtility.get_group(match, 'hour')
+        hour_str = RegExpUtility.get_group(match, 'stunde')
         hour = 12
         if hour_str:
             hour = int(hour_str)
