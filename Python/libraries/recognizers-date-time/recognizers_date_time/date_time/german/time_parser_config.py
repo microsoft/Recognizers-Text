@@ -72,11 +72,17 @@ class GermanTimeParserConfiguration(TimeParserConfiguration):
         delta_min = 0
         prefix = prefix.strip().lower()
         if prefix.startswith('halb'):
-            delta_min = 30
-        elif prefix.startswith('viertel') or prefix.startswith('ein viertel'):
-            delta_min = 15
+            delta_min = -30
         elif prefix.startswith('dreiviertel') or prefix.startswith('drei viertel'):
-            delta_min = 45
+            delta_min = -15
+        elif prefix.startswith('viertel') or prefix.startswith('ein viertel'):
+            if prefix.endswith('nach'):
+                delta_min = 15
+            elif prefix.endswith('vor'):
+                delta_min = -15
+            else:
+                delta_min = -45
+        
         else:
             match = regex.search(self.less_than_one_hour, prefix)
             min_str = RegExpUtility.get_group(match, 'deltamin')
@@ -85,8 +91,9 @@ class GermanTimeParserConfiguration(TimeParserConfiguration):
             else:
                 min_str = RegExpUtility.get_group(match, 'deltaminnum').lower()
                 delta_min = self.numbers[min_str]
-        if prefix.endswith('to'):
-            delta_min = delta_min * -1
+        # if prefix.endswith('vor'):
+        #     delta_min = delta_min * -1
+        
         adjust.minute += delta_min
         if adjust.minute < 0:
             adjust.minute += 60
