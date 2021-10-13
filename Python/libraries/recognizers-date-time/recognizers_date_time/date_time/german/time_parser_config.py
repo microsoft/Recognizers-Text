@@ -115,10 +115,11 @@ class GermanTimeParserConfiguration(TimeParserConfiguration):
                         adjust.has_am = True
                 pm_str = RegExpUtility.get_group(match, 'nachmittags')
                 pm_str_2 = RegExpUtility.get_group(match, 'abends')
+                pm_str_3 = RegExpUtility.get_group(match, 'nachts')
                 if pm_str or pm_str_2:
                     if adjust.hour < 12:
                         delta_hour = 12
-                    if regex.search(self.lunch_regex, pm_str) or regex.search(self.lunch_regex, pm_str_2):
+                    if regex.search(self.lunch_regex, pm_str) or regex.search(self.lunch_regex, pm_str_2) or regex.search(self.lunch_regex, pm_str_3):
                         # for hour >= 10 and < 12
                         if 10 <= adjust.hour <= 12:
                             delta_hour = 0
@@ -128,7 +129,7 @@ class GermanTimeParserConfiguration(TimeParserConfiguration):
                                 adjust.has_am = True
                         else:
                             adjust.has_pm = True
-                    elif regex.search(self.night_regex, pm_str) or regex.search(self.night_regex, pm_str_2):
+                    elif regex.search(self.night_regex, pm_str) or regex.search(self.night_regex, pm_str_2) or regex.search(self.lunch_regex, pm_str_3):
                         if adjust.hour <= 3 or adjust.hour == 12:
                             if adjust.hour == 12:
                                 adjust.hour = 0
