@@ -87,10 +87,39 @@ class GermanHolidayParserConfiguration(BaseHolidayParserConfiguration):
             ('christmaseve', GermanHolidayParserConfiguration.christmas_eve),
             ('newyeareve', GermanHolidayParserConfiguration.new_year_eve),
             ('easterday', GermanHolidayParserConfiguration.easter_day),
+            ('eastermonday', GermanHolidayParserConfiguration.eastermonday),
+            ('eastersunday', GermanHolidayParserConfiguration.eastersunday),
             ('juneteenth', GermanHolidayParserConfiguration.juneteenth),
+            ('reformationday', GermanHolidayParserConfiguration.reformationday),
+            ('stmartinsday', GermanHolidayParserConfiguration.stmartinsday),
+            ('biblicalmagiday', GermanHolidayParserConfiguration.biblicalmagiday),
+            ('firstchristmasday', GermanHolidayParserConfiguration.firstchristmasday),
+            ('secondchristmasday', GermanHolidayParserConfiguration.secondchristmasday),
+            ('goodfriday', GermanHolidayParserConfiguration.goodfriday)
+
         ])
 
         return {**super()._init_holiday_funcs(), **local}
+    
+    @staticmethod
+    def firstchristmasday(year: int) -> datetime:
+        return datetime(year, 12, 25)
+
+    @staticmethod
+    def secondchristmasday(year: int) -> datetime:
+        return datetime(year, 12, 26)
+
+    @staticmethod
+    def biblicalmagiday(year: int) -> datetime:
+        return datetime(year, 1, 6)
+
+    @staticmethod
+    def stmartinsday(year: int) -> datetime:
+        return datetime(year, 11, 11)
+
+    @staticmethod
+    def reformationday(year: int) -> datetime:
+        return datetime(year, 10, 31)
 
     @staticmethod
     def mao_birthday(year: int) -> datetime:
@@ -210,6 +239,18 @@ class GermanHolidayParserConfiguration(BaseHolidayParserConfiguration):
 
     @staticmethod
     def easter_day(year: int) -> datetime:
+        return DateUtils.min_value
+    
+    @staticmethod
+    def eastermonday(year: int) -> datetime:
+        return DateUtils.min_value
+
+    @staticmethod
+    def eastersunday(year: int) -> datetime:
+        return DateUtils.min_value
+    
+    @staticmethod
+    def foodfriday(year: int) -> datetime:
         return DateUtils.min_value
 
     @staticmethod
