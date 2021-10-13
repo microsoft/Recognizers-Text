@@ -247,14 +247,14 @@ class GermanDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigur
         self._check_both_before_after = GermanDateTime.CheckBothBeforeAfter
 
     def get_from_token_index(self, source: str) -> MatchedIndex:
-        if source.endswith('from'):
-            return MatchedIndex(matched=True, index=source.rfind('from'))
+        if source.endswith('von'):
+            return MatchedIndex(matched=True, index=source.rfind('von'))
 
         return MatchedIndex(matched=False, index=-1)
 
     def get_between_token_index(self, source: str) -> MatchedIndex:
-        if source.endswith('between'):
-            return MatchedIndex(matched=True, index=source.rfind('between'))
+        if source.endswith('zwischen'):
+            return MatchedIndex(matched=True, index=source.rfind('zwischen'))
 
         return MatchedIndex(matched=False, index=-1)
 

@@ -142,11 +142,11 @@ class GermanDateTimeParserConfiguration(DateTimeParserConfiguration):
     def get_matched_now_timex(self, source: str) -> MatchedTimex:
         source = source.strip().lower()
 
-        if source.endswith('now'):
+        if source.endswith('jetzt'):
             return MatchedTimex(True, 'PRESENT_REF')
-        elif source in ['recently', 'previously']:
+        elif source in ['kürzlich', 'neulich']:
             return MatchedTimex(True, 'PAST_REF')
-        elif source in ['as soon as possible', 'asap']:
+        elif source in ['so bald wie möglich', 'asap']:
             return MatchedTimex(True, 'FUTURE_REF')
 
         return MatchedTimex(False, None)
@@ -154,9 +154,9 @@ class GermanDateTimeParserConfiguration(DateTimeParserConfiguration):
     def get_swift_day(self, source: str) -> int:
         source = source.strip().lower()
 
-        if source.startswith('next'):
+        if source.startswith('nächste'):
             return 1
-        elif source.startswith('last'):
+        elif source.startswith('letzte') or source.startswith('vergangene'):
             return -1
 
         return 0
@@ -164,9 +164,9 @@ class GermanDateTimeParserConfiguration(DateTimeParserConfiguration):
     def get_hour(self, source: str, hour: int) -> int:
         source = source.strip().lower()
 
-        if source.endswith('morning') and hour >= 12:
+        if source.endswith('morgen') and hour >= 12:
             return hour - 12
-        elif not source.endswith('morning') and hour < 12 and not (source.endswith('night') and hour < 6):
+        elif not source.endswith('morgen') and hour < 12 and not (source.endswith('nacht') and hour < 6):
             return hour + 12
 
         return hour

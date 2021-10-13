@@ -128,17 +128,17 @@ class GermanTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
 
     def get_from_token_index(self, source: str) -> MatchedIndex:
         index = -1
-        if source.endswith('from'):
-            index = source.rfind('from')
+        if source.endswith('von'):
+            index = source.rfind('von')
             return MatchedIndex(matched=True, index=index)
         return MatchedIndex(matched=False, index=index)
 
     def get_between_token_index(self, source: str) -> MatchedIndex:
         index = -1
-        if source.endswith('between'):
-            index = source.rfind('between')
+        if source.endswith('zwischen'):
+            index = source.rfind('zwischen')
             return MatchedIndex(matched=True, index=index)
         return MatchedIndex(matched=False, index=index)
 
     def is_connector_token(self, source: str):
-        return source == "and"
+        return source == "und"

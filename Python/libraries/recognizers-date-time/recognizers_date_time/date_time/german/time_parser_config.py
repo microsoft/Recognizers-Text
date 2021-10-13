@@ -71,11 +71,11 @@ class GermanTimeParserConfiguration(TimeParserConfiguration):
     def adjust_by_prefix(self, prefix: str, adjust: AdjustParams):
         delta_min = 0
         prefix = prefix.strip().lower()
-        if prefix.startswith('half'):
+        if prefix.startswith('halb'):
             delta_min = 30
-        elif prefix.startswith('a quarter') or prefix.startswith('quarter'):
+        elif prefix.startswith('viertel') or prefix.startswith('ein viertel'):
             delta_min = 15
-        elif prefix.startswith('three quarter'):
+        elif prefix.startswith('dreiviertel') or prefix.startswith('drei viertel'):
             delta_min = 45
         else:
             match = regex.search(self.less_than_one_hour, prefix)
@@ -98,19 +98,20 @@ class GermanTimeParserConfiguration(TimeParserConfiguration):
         delta_hour = 0
         match = regex.search(self.time_suffix_full, suffix)
         if match is not None and match.start() == 0 and match.group() == suffix:
-            oclock_str = RegExpUtility.get_group(match, 'oclock')
+            oclock_str = RegExpUtility.get_group(match, 'uhr')
             if not oclock_str:
-                am_str = RegExpUtility.get_group(match, 'am')
+                am_str = RegExpUtility.get_group(match, 'morgens')
                 if am_str:
                     if adjust.hour >= 12:
                         delta_hour -= 12
                     else:
                         adjust.has_am = True
-                pm_str = RegExpUtility.get_group(match, 'pm')
-                if pm_str:
+                pm_str = RegExpUtility.get_group(match, 'nachmittags')
+                pm_str_2 = RegExpUtility.get_group(match, 'abends')
+                if pm_str or pm_str_2:
                     if adjust.hour < 12:
                         delta_hour = 12
-                    if regex.search(self.lunch_regex, pm_str):
+                    if regex.search(self.lunch_regex, pm_str) or regex.search(self.lunch_regex, pm_str_2):
                         # for hour >= 10 and < 12
                         if 10 <= adjust.hour <= 12:
                             delta_hour = 0
@@ -120,7 +121,7 @@ class GermanTimeParserConfiguration(TimeParserConfiguration):
                                 adjust.has_am = True
                         else:
                             adjust.has_pm = True
-                    elif regex.search(self.night_regex, pm_str):
+                    elif regex.search(self.night_regex, pm_str) or regex.search(self.night_regex, pm_str_2):
                         if adjust.hour <= 3 or adjust.hour == 12:
                             if adjust.hour == 12:
                                 adjust.hour = 0

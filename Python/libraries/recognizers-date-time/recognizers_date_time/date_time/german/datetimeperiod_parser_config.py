@@ -236,10 +236,10 @@ class GermanDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration)
         return MatchedTimeRange(time_str, begin_hour, end_hour, end_min, True)
 
     def get_swift_prefix(self, source: str) -> int:
-        if source.startswith('next'):
+        if source.startswith('nächste'):
             return 1
 
-        if source.startswith('last'):
+        if source.startswith('letzte') or source.startswith('vergangene'):
             return -1
 
         return 0

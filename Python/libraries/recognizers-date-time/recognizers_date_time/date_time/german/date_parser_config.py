@@ -195,19 +195,19 @@ class GermanDateParserConfiguration(DateParserConfiguration):
         swift = 0
         matches = regex.search(
             GermanDateParserConfiguration._relative_day_regex, source)
-        if trimmed_text == 'today':
+        if trimmed_text == 'heute':
             swift = 0
-        elif trimmed_text == 'tomorrow' or trimmed_text == 'tmr':
+        elif trimmed_text == 'morgen' or trimmed_text == 'tmr':
             swift = 1
-        elif trimmed_text == 'yesterday':
+        elif trimmed_text == 'gestern':
             swift = -1
-        elif trimmed_text.endswith('day after tomorrow') or trimmed_text.endswith('day after tmr'):
+        elif trimmed_text.endswith('übermorgen'):
             swift = 2
-        elif trimmed_text.endswith('day before yesterday'):
+        elif trimmed_text.endswith('vorgestern'):
             swift = -2
-        elif trimmed_text.endswith('day after'):
+        elif trimmed_text.endswith('tag davor'):
             swift = 1
-        elif trimmed_text.endswith('day before'):
+        elif trimmed_text.endswith('tag danach'):
             swift = -1
         elif matches:
             swift = self.get_swift(source)
@@ -233,4 +233,4 @@ class GermanDateParserConfiguration(DateParserConfiguration):
 
     def is_cardinal_last(self, source: str) -> bool:
         trimmed_text = source.strip().lower()
-        return trimmed_text == 'last'
+        return trimmed_text == 'letzte' or trimmed_text == 'letzter' or trimmed_text == 'letzten' or trimmed_text == 'letztem' or trimmed_text == 'letztem'

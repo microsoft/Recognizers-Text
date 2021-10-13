@@ -27,11 +27,11 @@ class GermanHolidayParserConfiguration(BaseHolidayParserConfiguration):
     def get_swift_year(self, text: str) -> int:
         trimmed_text = text.strip().lower()
         swift = -10
-        if trimmed_text.startswith('next'):
+        if trimmed_text.startswith('nächste'):
             swift = 1
-        if trimmed_text.startswith('last'):
+        if trimmed_text.startswith('letzte') or trimmed_text.startswith('vergangene'):
             swift = -1
-        if trimmed_text.startswith('this'):
+        if trimmed_text.startswith('diese'):
             swift = 0
         return swift
 

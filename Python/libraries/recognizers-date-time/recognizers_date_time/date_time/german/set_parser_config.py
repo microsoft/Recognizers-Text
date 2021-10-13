@@ -127,17 +127,17 @@ class GermanSetParserConfiguration(SetParserConfiguration):
 
     def get_matched_daily_timex(self, text: str) -> MatchedTimex:
         trimmed_text = text.strip().lower()
-        if trimmed_text == 'daily':
+        if trimmed_text == 'täglich':
             timex = 'P1D'
-        elif trimmed_text == 'weekly':
+        elif trimmed_text == 'wöchentlich':
             timex = 'P1W'
-        elif trimmed_text == 'biweekly':
+        elif trimmed_text == 'zweiwöchentlich':
             timex = 'P2W'
-        elif trimmed_text == 'monthly':
+        elif trimmed_text == 'monatlich':
             timex = 'P1M'
-        elif trimmed_text == 'quarterly':
+        elif trimmed_text == 'quartalsmäßig':
             timex = 'P3M'
-        elif trimmed_text in ('yearly', 'annually', 'annual'):
+        elif trimmed_text in ('jährlich'):
             timex = 'P1Y'
         else:
             return MatchedTimex(False, None)
@@ -146,13 +146,13 @@ class GermanSetParserConfiguration(SetParserConfiguration):
 
     def get_matched_unit_timex(self, text: str) -> MatchedTimex:
         trimmed_text = text.strip().lower()
-        if trimmed_text == 'day':
+        if trimmed_text == 'tag':
             timex = 'P1D'
-        elif trimmed_text == 'week':
+        elif trimmed_text == 'woche':
             timex = 'P1W'
-        elif trimmed_text == 'month':
+        elif trimmed_text == 'monat':
             timex = 'P1M'
-        elif trimmed_text == 'year':
+        elif trimmed_text == 'jahr':
             timex = 'P1Y'
         else:
             return MatchedTimex(False, None)
