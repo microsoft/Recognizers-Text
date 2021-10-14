@@ -78,6 +78,7 @@ class GermanTimeExtractorConfiguration(TimeExtractorConfiguration):
 
     @property
     def midnight_regex(self) -> Pattern:
+        # print(self._midnight_regex)
         return self._midnight_regex
 
     @property

@@ -164,9 +164,9 @@ class GermanDateTimeParserConfiguration(DateTimeParserConfiguration):
     def get_hour(self, source: str, hour: int) -> int:
         source = source.strip().lower()
 
-        if source.endswith('morgen') and hour >= 12:
+        if (source.endswith('morgens') or source.endswith('vormittags')) and hour >= 12:
             return hour - 12
-        elif not source.endswith('morgen') and hour < 12 and not (source.endswith('nacht') and hour < 6):
+        elif not source.endswith('morgens') and hour < 12 and not (source.endswith('nachts') and hour < 6):
             return hour + 12
 
         return hour

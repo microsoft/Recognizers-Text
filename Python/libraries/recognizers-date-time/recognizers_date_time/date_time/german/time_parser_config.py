@@ -105,21 +105,19 @@ class GermanTimeParserConfiguration(TimeParserConfiguration):
         delta_hour = 0
         match = regex.search(self.time_suffix_full, suffix)
         if match is not None and match.start() == 0 and match.group() == suffix:
-            oclock_str = RegExpUtility.get_group(match, 'uhr')
+            oclock_str = RegExpUtility.get_group(match, 'oclock')
             if not oclock_str:
-                am_str = RegExpUtility.get_group(match, 'morgens')
+                am_str = RegExpUtility.get_group(match, 'am')
                 if am_str:
                     if adjust.hour >= 12:
                         delta_hour -= 12
                     else:
                         adjust.has_am = True
-                pm_str = RegExpUtility.get_group(match, 'nachmittags')
-                pm_str_2 = RegExpUtility.get_group(match, 'abends')
-                pm_str_3 = RegExpUtility.get_group(match, 'nachts')
-                if pm_str or pm_str_2:
+                pm_str = RegExpUtility.get_group(match, 'pm')
+                if pm_str:
                     if adjust.hour < 12:
                         delta_hour = 12
-                    if regex.search(self.lunch_regex, pm_str) or regex.search(self.lunch_regex, pm_str_2) or regex.search(self.lunch_regex, pm_str_3):
+                    if regex.search(self.lunch_regex, pm_str):
                         # for hour >= 10 and < 12
                         if 10 <= adjust.hour <= 12:
                             delta_hour = 0
@@ -129,7 +127,7 @@ class GermanTimeParserConfiguration(TimeParserConfiguration):
                                 adjust.has_am = True
                         else:
                             adjust.has_pm = True
-                    elif regex.search(self.night_regex, pm_str) or regex.search(self.night_regex, pm_str_2) or regex.search(self.lunch_regex, pm_str_3):
+                    elif regex.search(self.night_regex, pm_str):
                         if adjust.hour <= 3 or adjust.hour == 12:
                             if adjust.hour == 12:
                                 adjust.hour = 0

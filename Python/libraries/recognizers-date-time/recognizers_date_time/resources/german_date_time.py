@@ -118,7 +118,7 @@ class GermanDateTime:
     TimeSuffix = f'(?<suffix>{AmRegex}|{PmRegex}|{OclockRegex})'
     TimeSuffixFull = f'(?<suffix>{AmRegex}|{PmRegex}|{OclockRegex}|\\b(?<pm>nachmittag(s)?|nacht(s)?|abend(s)?))'
     BasicTime = f'(?<basictime>{WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}(:|\\s+uhr(\\s+und)?\\s+){BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?|\\b{BaseDateTime.HourRegex}(?![%\\d]))'
-    MidnightRegex = f'(?<midnight>(mitte(r|n in der )nachts?|mitternacht))'
+    MidnightRegex = f'(?<midnight>(mitternachts?|mitte(r|n in der )nachts?))'
     MidmorningRegex = f'(?<midmorning>mitten am vormittag)'
     MidafternoonRegex = f'(?<midafternoon>mitten am nachmittag)'
     MiddayRegex = f'((?<midday>(am\\s+)?mittag(s(zeit)?)?)|(?<midday>(?<=montag|dienstag|mittwoch|donnerstag|freitag|samstag|sonnabend|sonntag)(mittags?)))'
@@ -714,11 +714,11 @@ class GermanDateTime:
                                  ("^(mo|di|mi|do|fr|sa|so)$", "\\b(mo|di|mi|do|fr|sa|so)\\b"),
                                  ("^((früh|spät)(\\s+am|er)?\\s*)?(abends?|morgens?|nachts?|(vor|nach)mittags?|früh|primetime)$", "((?<!(frü|spä))[a-z0-9])((früh|spät)(\\s+am|er)?\\s*)?(abends?|morgens?|nachts?|(vor|nach)mittags?|früh|primetime)\\b")])
     AmbiguousTimePeriodRegex = f'\\b((?<!{RelativeRegex}\\s+)morgen|früh(?!(\\s*morgens?)))\\b'
-    MorningTermList = [r'morgen', r'vormittag', r'früh']
-    AfternoonTermList = [r'nachmittag']
-    EveningTermList = [r'abend']
-    DaytimeTermList = [r'tag']
-    NightTermList = [r'nacht', r'nacths', r'primetime']
+    MorningTermList = [r'morgen', r'vormittag', r'früh', r'morgens', r'vormittags', r'frühs', r'in der frühe', r'in der früh']
+    AfternoonTermList = [r'nachmittag', r'nachmittags']
+    EveningTermList = [r'abend', r'abends']
+    DaytimeTermList = [r'tag', r'tagsüber']
+    NightTermList = [r'nacht', r'nachts', r'primetime']
     SameDayTerms = [r'heute', r'heutige datum', r'heutige tag', r'aktuelles datum', r'aktuelle datum', r'aktueller tag', r'aktuellen tag', r'aktuelle tag', r'dieser morgen', r'diesem morgen', r'diesen morgen', r'aktuelle morgen', r'aktuellen morgen', r'jetzige morgen', r'jetzigen morgen']
     PlusOneDayTerms = [r'morgen', r'morgiger tag', r'morgigen tag', r'morgigen tages']
     MinusOneDayTerms = [r'gestern', r'gestriger tag', r'gestrigen tag', r'gestrigen tages']

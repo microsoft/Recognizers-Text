@@ -270,7 +270,7 @@ BasicTime: !nestedRegex
   def: (?<basictime>{WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}(:|\s+uhr(\s+und)?\s+){BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?|\b{BaseDateTime.HourRegex}(?![%\d]))
   references: [ WrittenTimeRegex, HourNumRegex, BaseDateTime.HourRegex, BaseDateTime.MinuteRegex, BaseDateTime.SecondRegex ]
 MidnightRegex: !simpleRegex
-  def: (?<midnight>(mitte(r|n in der )nachts?|mitternacht))
+  def: (?<midnight>(mitternachts?|mitte(r|n in der )nachts?))
 MidmorningRegex: !simpleRegex
   def: (?<midmorning>mitten am vormittag)
 MidafternoonRegex: !simpleRegex
@@ -1116,23 +1116,31 @@ MorningTermList: !list
     - morgen
     - vormittag
     - früh
+    - morgens
+    - vormittags
+    - frühs
+    - in der frühe
+    - in der früh
 AfternoonTermList: !list
   types: [ string ] 
   entries: 
     - nachmittag
+    - nachmittags
 EveningTermList: !list
   types: [ string ] 
   entries: 
     - abend
+    - abends
 DaytimeTermList: !list
   types: [ string ] 
   entries: 
     - tag
+    - tagsüber
 NightTermList: !list
   types: [ string ] 
   entries: 
     - nacht
-    - nacths
+    - nachts
     - primetime
 SameDayTerms: !list
   types: [ string ]
