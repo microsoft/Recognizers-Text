@@ -35,6 +35,10 @@ class GermanDateExtractorConfiguration(DateExtractorConfiguration):
     @property
     def month_end(self) -> Pattern:
         return self._month_end
+    
+    @property
+    def month_end(self) -> Pattern:
+        return self._before_after_regex
 
     @property
     def week_day_end(self) -> Pattern:
@@ -91,6 +95,8 @@ class GermanDateExtractorConfiguration(DateExtractorConfiguration):
     @property
     def number_parser(self) -> BaseNumberParser:
         return self._number_parser
+
+    # add BaseHolidayExtractor here? Or GermanHolidayExtractorConfiguration?
 
     @property
     def duration_extractor(self) -> DateTimeExtractor:
@@ -160,6 +166,7 @@ class GermanDateExtractorConfiguration(DateExtractorConfiguration):
         self._check_both_before_after = GermanDateTime.CheckBothBeforeAfter
         self._date_regex_list = [
             RegExpUtility.get_safe_reg_exp(GermanDateTime.DateExtractor1),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.DateExtractor2),
             RegExpUtility.get_safe_reg_exp(GermanDateTime.DateExtractor3),
             RegExpUtility.get_safe_reg_exp(GermanDateTime.DateExtractor4),
             RegExpUtility.get_safe_reg_exp(GermanDateTime.DateExtractor5),
@@ -178,12 +185,14 @@ class GermanDateExtractorConfiguration(DateExtractorConfiguration):
             RegExpUtility.get_safe_reg_exp(GermanDateTime.LastDateRegex),
             RegExpUtility.get_safe_reg_exp(GermanDateTime.NextDateRegex),
             RegExpUtility.get_safe_reg_exp(GermanDateTime.SingleWeekDayRegex),
-            RegExpUtility.get_safe_reg_exp(
-                GermanDateTime.WeekDayOfMonthRegex),
+            RegExpUtility.get_safe_reg_exp(GermanDateTime.WeekDayOfMonthRegex),
             RegExpUtility.get_safe_reg_exp(GermanDateTime.SpecialDate),
+            # the following two are not in german .NET:
             RegExpUtility.get_safe_reg_exp(GermanDateTime.SpecialDayWithNumRegex),
             RegExpUtility.get_safe_reg_exp(GermanDateTime.RelativeWeekDayRegex)
         ]
+        self._before_after_regex = RegExpUtility.get_safe_reg_exp(
+            GermanDateTime.BeforeAfterRegex)
         self._month_end = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.MonthEnd)
         self._of_month = RegExpUtility.get_safe_reg_exp(
