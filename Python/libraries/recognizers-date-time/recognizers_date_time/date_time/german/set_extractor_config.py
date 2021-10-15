@@ -120,4 +120,6 @@ class GermanSetExtractorConfiguration(SetExtractorConfiguration):
         self._duration_unit_regex = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.DurationUnitRegex
         )
-        self._before_each_day_regex = None
+        self._before_each_day_regex = RegExpUtility.get_safe_reg_exp(
+            GermanDateTime.BeforeEachDayRegex
+        )
