@@ -77,6 +77,15 @@ class GermanDurationExtractorConfiguration(DurationExtractorConfiguration):
         return self._duration_connector_regex
 
     @property
+    def mod_prefix_regex(self) -> Pattern:
+        return self._mod_prefix_regex
+    
+    @property
+    def mod_suffix_regex(self) -> Pattern:
+        return self._mod_suffix_regex
+
+
+    @property
     def more_than_regex(self) -> Pattern:
         return self._more_than_regex
 
@@ -124,6 +133,12 @@ class GermanDurationExtractorConfiguration(DurationExtractorConfiguration):
         self._duration_connector_regex = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.DurationConnectorRegex
         )
+        self._mod_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            GermanDateTime.ModPrefixRegex
+        )
+        self._mod_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            GermanDateTime.ModSuffixRegex
+        )
         self._more_than_regex = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.MoreThanRegex
         )
@@ -136,7 +151,9 @@ class GermanDurationExtractorConfiguration(DurationExtractorConfiguration):
         self._inexact_number_regex = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.InexactNumberRegex
         )
-        self._special_number_with_unit_regex = None
+        self._special_number_with_unit_regex = RegExpUtility.get_safe_reg_exp(
+            GermanDateTime.SpecialNumberUnitRegex
+        )
         self._check_both_before_after = GermanDateTime.CheckBothBeforeAfter
         # TODO When the implementation for these properties is added, change the None values to their respective Regexps
         self._special_number_unit_regex = None
