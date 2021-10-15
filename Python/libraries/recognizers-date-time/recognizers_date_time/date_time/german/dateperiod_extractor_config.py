@@ -21,6 +21,34 @@ from .common_configs import GermanOrdinalExtractor, GermanCardinalExtractor
 
 class GermanDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
     @property
+    def day_regex(self) -> Pattern:
+        return self._day_regex
+
+    @property
+    def relative_month_regex(self) -> Pattern:
+        return self._relative_month_regex
+    
+    @property
+    def between_token_regex(self) -> Pattern:
+        return self._between_token_regex
+
+    @property
+    def month_suffix_regex(self) -> Pattern:
+        return self._month_suffix_regex
+
+    @property
+    def from_regex(self) -> Pattern:
+        return self._from_regex
+
+    @property
+    def written_month_regex(self) -> Pattern:
+        return self._written_month_regex
+
+    @property
+    def week_day_regex(self) -> Pattern:
+        return self._week_day_regex
+
+    @property
     def previous_prefix_regex(self) -> Pattern:
         return self._previous_prefix_regex
 
@@ -145,7 +173,7 @@ class GermanDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         return self._more_than_regex
 
     @property
-    def duration_date_restrictions(self) -> [str]:
+    def duration_date_restrictions(self) -> List[ str ]:
         return self._duration_date_restrictions
 
     @property
@@ -165,6 +193,20 @@ class GermanDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         return self._century_suffix_regex
 
     def __init__(self):
+        self._month_suffix_regex = RegExpUtility.get_safe_reg_exp(
+            GermanDateTime.MonthSuffixRegex)
+        self._from_regex = RegExpUtility.get_safe_reg_exp(
+            GermanDateTime.FromRegex)
+        self._day_regex = RegExpUtility.get_safe_reg_exp(
+            GermanDateTime.DayRegex)
+        self._relative_month_regex = RegExpUtility.get_safe_reg_exp(
+            GermanDateTime.RelativeMonthRegex)
+        self._between_token_regex = RegExpUtility.get_safe_reg_exp(
+            GermanDateTime.BetweenTokenRegex)
+        self._written_month_regex = RegExpUtility.get_safe_reg_exp(
+            GermanDateTime.WrittenMonthRegex)
+        self._week_day_regex = RegExpUtility.get_safe_reg_exp(
+            GermanDateTime.WeekDayRegex)
         self._previous_prefix_regex = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.PreviousPrefixRegex)
         self._check_both_before_after = GermanDateTime.CheckBothBeforeAfter
@@ -180,6 +222,8 @@ class GermanDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
             RegExpUtility.get_safe_reg_exp(GermanDateTime.WeekOfYearRegex),
             RegExpUtility.get_safe_reg_exp(
                 GermanDateTime.MonthFrontBetweenRegex),
+            RegExpUtility.get_safe_reg_exp(
+                GermanDateTime.ComplexDatePeriodRegex),
             RegExpUtility.get_safe_reg_exp(
                 GermanDateTime.MonthFrontSimpleCasesRegex),
             RegExpUtility.get_safe_reg_exp(GermanDateTime.QuarterRegex),
@@ -276,10 +320,12 @@ class GermanDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         self._cardinal_extractor = GermanCardinalExtractor()
 
     def get_from_token_index(self, source: str) -> MatchedIndex:
-        return MatchedIndex(True, source.rfind('von')) if source.endswith('von') else MatchedIndex(False, -1)
+        return MatchedIndex(True, self.from_regex.match(source)) if self.from_regex.match(source) else MatchedIndex(False, -1)
+       
 
     def get_between_token_index(self, source: str) -> MatchedIndex:
-        return MatchedIndex(True, source.rfind('zwischen')) if source.endswith('zwischen') else MatchedIndex(False, -1)
+        # return MatchedIndex(True, source.rfind('zwischen')) if source.endswith('zwischen') else MatchedIndex(False, -1)
+        return MatchedIndex(True, self.between_token_regex.match(source)) if self.between_token_regex.match(source) else MatchedIndex(False, -1)
 
     def has_connector_token(self, source: str) -> bool:
         match = self.range_connector_regex.search(source)
