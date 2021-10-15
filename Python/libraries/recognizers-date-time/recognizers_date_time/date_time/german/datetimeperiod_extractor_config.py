@@ -208,8 +208,8 @@ class GermanDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigur
         self._till_regex = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.TillRegex)
         # waraning, not in YAML:
-        self._hyphen_date_regex = RegExpUtility.get_safe_reg_exp(
-            GermanDateTime.HyphenDateRegex)
+        # self._hyphen_date_regex = RegExpUtility.get_safe_reg_exp(
+        #     GermanDateTime.HyphenDateRegex)
 
         self._date_unit_regex = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.DateUnitRegex)
