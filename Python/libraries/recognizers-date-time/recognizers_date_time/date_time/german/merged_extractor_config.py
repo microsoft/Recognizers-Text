@@ -6,6 +6,7 @@ from typing import List, Pattern
 from recognizers_text.extractor import Extractor
 from recognizers_text.utilities import RegExpUtility
 from recognizers_number import GermanIntegerExtractor
+from recognizers_text.matcher.string_matcher import StringMatcher
 from ...resources.german_date_time import GermanDateTime
 from ..extractors import DateTimeExtractor
 from ..base_merged import MergedExtractorConfiguration
@@ -202,10 +203,12 @@ class GermanMergedExtractorConfiguration(MergedExtractorConfiguration):
         self._suffix_after_regex = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.SuffixAfterRegex
         )
-        # self._superfluous_word_matcher = GermanDateTime.SuperfluousWordList
+        self._superfluous_word_matcher = StringMatcher()
         # self._fail_fast_regex = RegExpUtility.get_safe_reg_exp(
         #     GermanDateTime.FailFastRegex
         # )
+        self._fail_fast_regex = None
+        
         self._check_both_before_after = GermanDateTime.CheckBothBeforeAfter
         self._time_zone_extractor = BaseTimeZoneExtractor(
             GermanTimeZoneExtractorConfiguration())
