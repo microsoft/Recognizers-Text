@@ -71,6 +71,14 @@ class GermanDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigur
         return self._till_regex
 
     @property
+    def hyphen_date_regex(self) -> Pattern:
+        return self._hyphen_date_regex
+
+    @property
+    def date_unit_regex(self) -> Pattern:
+        return self._date_unit_regex
+
+    @property
     def specific_time_of_day_regex(self) -> Pattern:
         return self._specific_time_of_day_regex
 
@@ -117,6 +125,16 @@ class GermanDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigur
     @property
     def middle_pause_regex(self) -> Pattern:
         return self._middle_pause_regex
+
+    @property
+    def from_regex(self) -> Pattern:
+        return self._from_regex
+    
+    @property
+    def between_token_regex(self) -> Pattern:
+        return self._between_token_regex
+
+
 
     @property
     def token_before_date(self) -> str:
@@ -189,6 +207,13 @@ class GermanDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigur
             GermanDateTime.PrepositionRegex)
         self._till_regex = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.TillRegex)
+        # waraning, not in YAML:
+        self._hyphen_date_regex = RegExpUtility.get_safe_reg_exp(
+            GermanDateTime.HyphenDateRegex)
+
+        self._date_unit_regex = RegExpUtility.get_safe_reg_exp(
+            GermanDateTime.DateUnitRegex)
+
         self._specific_time_of_day_regex = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.PeriodSpecificTimeOfDayRegex)
         self._time_of_day_regex = RegExpUtility.get_safe_reg_exp(
@@ -213,6 +238,10 @@ class GermanDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigur
             GermanDateTime.GeneralEndingRegex)
         self._middle_pause_regex = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.MiddlePauseRegex)
+        self._from_regex = RegExpUtility.get_safe_reg_exp(
+            GermanDateTime.FromRegex)
+        self._between_token_regex = RegExpUtility.get_safe_reg_exp(
+            GermanDateTime.BetweenTokenRegex)
         self.range_connector_regex = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.RangeConnectorRegex)
         self._token_before_date = GermanDateTime.TokenBeforeDate
@@ -247,14 +276,16 @@ class GermanDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigur
         self._check_both_before_after = GermanDateTime.CheckBothBeforeAfter
 
     def get_from_token_index(self, source: str) -> MatchedIndex:
-        if source.endswith('von'):
-            return MatchedIndex(matched=True, index=source.rfind('von'))
+        # if source.endswith('von'):
+        if self.from_regex.match(source):
+            return MatchedIndex(matched=True, index=self.from_regex.match(source))
 
         return MatchedIndex(matched=False, index=-1)
 
     def get_between_token_index(self, source: str) -> MatchedIndex:
-        if source.endswith('zwischen'):
-            return MatchedIndex(matched=True, index=source.rfind('zwischen'))
+        if self.between_token_regex.match(source):
+        # if source.endswith('zwischen'):
+            return MatchedIndex(matched=True, index=self.between_token_regex.match(source))
 
         return MatchedIndex(matched=False, index=-1)
 
