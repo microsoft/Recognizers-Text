@@ -5,7 +5,7 @@ from typing import List, Pattern
 from recognizers_text.matcher.string_matcher import StringMatcher
 from recognizers_text.utilities import QueryProcessor
 from ..base_timezone import TimeZoneExtractorConfiguration
-# from ...resources.german_time_zone import TimeZoneDefinitions
+from ...resources.german_time_zone import TimeZoneDefinitions
 from ..utilities import TimeZoneUtility, RegExpUtility
 
 
@@ -41,12 +41,12 @@ class GermanTimeZoneExtractorConfiguration(TimeZoneExtractorConfiguration):
     def __init__(self):
         super().__init__()
 
-        # self._direct_utc_regex = RegExpUtility.get_safe_reg_exp(TimeZoneDefinitions.DirectUtcRegex)
+        self._direct_utc_regex = RegExpUtility.get_safe_reg_exp(TimeZoneDefinitions.DirectUtcRegex)
         # self._abbreviations_list = list(TimeZoneDefinitions.AbbreviationsList)
         # self._full_name_list = list(TimeZoneDefinitions.FullNameList)
         # self._timezone_matcher = TimeZoneUtility.build_matcher_from_lists(self.full_name_list, self.abbreviations_list)
-        # self._location_time_suffix_regex = RegExpUtility.get_safe_reg_exp(TimeZoneDefinitions.LocationTimeSuffixRegex)
+        self._location_time_suffix_regex = RegExpUtility.get_safe_reg_exp(TimeZoneDefinitions.LocationTimeSuffixRegex)
         self._location_matcher = StringMatcher()
-        # self._ambiguous_timezone_list = list(TimeZoneDefinitions.AmbiguousTimezoneList)
+        self._ambiguous_timezone_list = list(TimeZoneDefinitions.AmbiguousTimezoneList)
 
         # self._location_matcher.init(list(map(lambda o: QueryProcessor.remove_diacritics(o.lower()), TimeZoneDefinitions.MajorLocations)))
