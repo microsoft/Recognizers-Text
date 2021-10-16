@@ -77,6 +77,10 @@ class GermanTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
     @property
     def pm_regex(self) -> Pattern:
         return self._pm_regex
+    
+    @property
+    def ambiguous_time_period_regex(self) -> Pattern:
+        return self._pm_regex
 
     @property
     def am_regex(self) -> Pattern:
@@ -111,8 +115,30 @@ class GermanTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
             RegExpUtility.get_safe_reg_exp(GermanDateTime.SpecificTimeFromTo),
             RegExpUtility.get_safe_reg_exp(GermanDateTime.SpecificTimeBetweenAnd)
         ]
+        self._ambiguous_time_period_regex: Pattern = RegExpUtility.get_safe_reg_exp(
+            GermanDateTime.AmbiguousTimePeriodRegex)
+        self._time_followed_unit: Pattern = RegExpUtility.get_safe_reg_exp(
+            GermanDateTime.TimeFollowedUnit)
         self._till_regex: Pattern = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.TillRegex)
+        self._time_number_combined_with_unit: Pattern = RegExpUtility.get_safe_reg_exp(
+            GermanDateTime.TimeNumberCombinedWithUnit)
+        self._time_unit_regex: Pattern = RegExpUtility.get_safe_reg_exp(
+            GermanDateTime.TimeUnitRegex)
+        self._specific_time_of_day_regex: Pattern = RegExpUtility.get_safe_reg_exp(
+            GermanDateTime.SpecificTimeOfDayRegex)
+        self._preposition_regex: Pattern = RegExpUtility.get_safe_reg_exp(
+            GermanDateTime.PrepositionRegex)
+        self._pm_regex: Pattern = RegExpUtility.get_safe_reg_exp(
+            GermanDateTime.PmRegex)
+        self._am_regex: Pattern = RegExpUtility.get_safe_reg_exp(
+            GermanDateTime.AmRegex)
+        self._desc_regex: Pattern = RegExpUtility.get_safe_reg_exp(
+            GermanDateTime.DescRegex)
+        self._hour_regex: Pattern = RegExpUtility.get_safe_reg_exp(
+            GermanDateTime.HourRegex)
+        self._period_hour_num_regex: Pattern = RegExpUtility.get_safe_reg_exp(
+            GermanDateTime.PeriodHourNumRegex)
         self._time_of_day_regex: Pattern = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.TimeOfDayRegex)
         self._general_ending_regex: Pattern = RegExpUtility.get_safe_reg_exp(
@@ -142,3 +168,15 @@ class GermanTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
 
     def is_connector_token(self, source: str):
         return source == "und"
+
+    def ApplyPotentialPeriodAmbiguityHotfix(self, text, timePeriodErs):
+        timePeriodErsResult = []
+        matches = self._ambiguous_time_period_regex.findall(text)
+        for timePeriodEr in timePeriodErs:
+            if len(matches) > 0:
+                for match in matches:
+                    if not (timePeriodEr.Text == match.Value and timePeriodEr.Start == match.Index and len(timePeriodEr) == len(match)):
+                        timePeriodErsResult.append(timePeriodEr)
+            else:
+                timePeriodErsResult.append(timePeriodEr)
+        return timePeriodErsResult
