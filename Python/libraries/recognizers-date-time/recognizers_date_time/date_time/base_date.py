@@ -847,10 +847,6 @@ class DateParserConfiguration(ABC):
         raise NotImplementedError
 
     @abstractmethod
-    def get_swift_month_or_year(self, source: str) -> int:
-        raise NotImplementedError
-
-    @abstractmethod
     def get_swift_month(self, source: str) -> int:
         raise NotImplementedError
 
