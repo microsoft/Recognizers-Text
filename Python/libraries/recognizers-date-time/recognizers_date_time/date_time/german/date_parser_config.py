@@ -297,22 +297,25 @@ class GermanDateParserConfiguration(DateParserConfiguration):
 
         return swift
 
-    # def get_swift_month(self, source: str) -> int:
-    #     return self.get_swift(source)
+    def get_swift_month(self, source: str) -> int:
+        return self.get_swift(source)
 
-    # def get_swift(self, source: str) -> int:
-    #     trimmed_text = source.strip().lower()
-    #     swift = 0
-    #     next_prefix_matches = regex.search(
-    #         GermanDateParserConfiguration._next_prefix_regex, trimmed_text)
-    #     past_prefix_matches = regex.search(
-    #         GermanDateParserConfiguration._past_prefix_regex, trimmed_text)
-    #     if next_prefix_matches:
-    #         swift = 1
-    #     elif past_prefix_matches:
-    #         swift = -1
+    def get_swift(self, source: str) -> int:
+        trimmed_text = source.strip().lower()
+        swift = 0
+        next_prefix_matches = regex.search(
+            GermanDateParserConfiguration._next_prefix_regex, trimmed_text)
+        past_prefix_matches = regex.search(
+            GermanDateParserConfiguration._past_prefix_regex, trimmed_text)
+        if next_prefix_matches:
+            swift = 1
+        elif past_prefix_matches:
+            swift = -1
 
-    #     return swift
+        return swift
+
+    def get_swift_day(self, source: str) -> int:
+        return super().get_swift_day(source)
 
     def is_cardinal_last(self, source: str) -> bool:
         trimmed_text = source.strip().lower()

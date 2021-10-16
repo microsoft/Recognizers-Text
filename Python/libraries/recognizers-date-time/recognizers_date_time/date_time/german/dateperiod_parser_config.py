@@ -69,6 +69,10 @@ class GermanDatePeriodParserConfiguration(DatePeriodParserConfiguration):
         return self._month_num_with_year
 
     @property
+    def number_combined_with_unit(self) -> Pattern:
+        return self._number_combined_with_unit
+
+    @property
     def year_regex(self) -> Pattern:
         return self._year_regex
 
@@ -83,6 +87,10 @@ class GermanDatePeriodParserConfiguration(DatePeriodParserConfiguration):
     @property
     def future_regex(self) -> Pattern:
         return self._future_regex
+    
+    @property
+    def future_suffix_regex(self) -> Pattern:
+        return self._future_suffix_regex
 
     @property
     def in_connector_regex(self) -> Pattern:
@@ -139,6 +147,11 @@ class GermanDatePeriodParserConfiguration(DatePeriodParserConfiguration):
     @property
     def rest_of_date_regex(self) -> Pattern:
         return self._rest_of_date_regex
+    
+    property
+    def late_early_period_regex(self) -> Pattern:
+        return self._later_early_period_regex
+
 
     @property
     def later_early_period_regex(self) -> Pattern:
@@ -181,8 +194,20 @@ class GermanDatePeriodParserConfiguration(DatePeriodParserConfiguration):
         return self._now_regex
 
     @property
+    def year_period_regex(self) -> Pattern:
+        return self._year_period_regex
+
+    @property
     def ago_regex(self) -> Pattern:
         return self._ago_regex
+
+    @property
+    def in_connector_regex(self) -> Pattern:
+        return self._in_connector_regex
+
+    @property
+    def year_plus_number_regex(self) -> Pattern:
+        return self._year_plus_number_regex
 
     @property
     def later_regex(self) -> Pattern:
@@ -206,6 +231,14 @@ class GermanDatePeriodParserConfiguration(DatePeriodParserConfiguration):
             GermanDateTime.LaterRegex)
         self._ago_regex = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.AgoRegex)
+        self._in_connector_regex = RegExpUtility.get_safe_reg_exp(
+            GermanDateTime.InConnectorRegex)
+        self._year_period_regex = RegExpUtility.get_safe_reg_exp(
+            GermanDateTime.YearPeriodRegex)
+        self._late_early_period_regex = RegExpUtility.get_safe_reg_exp(
+            GermanDateTime.LaterEarlyPeriodRegex)
+        self._year_plus_number_regex = RegExpUtility.get_safe_reg_exp(
+            GermanDateTime.YearPlusNumberRegex)
         self._date_extractor = config.date_extractor
         self._date_parser = config.date_parser
         self._duration_extractor = config.duration_extractor
@@ -224,12 +257,16 @@ class GermanDatePeriodParserConfiguration(DatePeriodParserConfiguration):
             GermanDateTime.MonthWithYear)
         self._month_num_with_year = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.MonthNumWithYear)
+        self._number_combined_with_unit = RegExpUtility.get_safe_reg_exp(
+            GermanDateTime.NumberCombinedWithDurationUnit)
         self._year_regex = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.YearRegex)
         self._past_regex = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.PreviousPrefixRegex)
         self._future_regex = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.NextPrefixRegex)
+        self._future_suffix_regex = RegExpUtility.get_safe_reg_exp(
+            GermanDateTime.FutureSuffixRegex)
         self._in_connector_regex = config.utility_configuration.in_connector_regex
         self._week_of_month_regex = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.WeekOfMonthRegex)
