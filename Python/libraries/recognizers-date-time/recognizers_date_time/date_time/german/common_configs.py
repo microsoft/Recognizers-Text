@@ -6,7 +6,6 @@ from typing import Dict, Pattern
 from recognizers_number import BaseNumberExtractor, BaseNumberParser
 from recognizers_number.number.german.parsers import GermanNumberParserConfiguration
 from recognizers_number.number.german.extractors import GermanCardinalExtractor, GermanIntegerExtractor, GermanOrdinalExtractor
-
 from ...resources.german_date_time import BaseDateTime, GermanDateTime
 from ..extractors import DateTimeExtractor
 from ..parsers import DateTimeParser
@@ -130,6 +129,11 @@ class GermanCommonDateTimeParserConfiguration(BaseDateParserConfiguration):
     @property
     def unit_value_map(self) -> Dict[str, int]:
         return self._unit_value_map
+    
+    @property
+    def special_year_prefixes_map(self) -> Dict[str, int]:
+        return self._special_year_prefixes_map
+
 
     @property
     def season_map(self) -> Dict[str, str]:
@@ -138,6 +142,14 @@ class GermanCommonDateTimeParserConfiguration(BaseDateParserConfiguration):
     @property
     def unit_map(self) -> Dict[str, str]:
         return self._unit_map
+
+    @property
+    def written_decades(self) -> Dict[str, str]:
+        return self._written_decades
+
+    @property
+    def special_decade_cases(self) -> Dict[str, str]:
+        return self._special_decade_cases
 
     @property
     def cardinal_map(self) -> Dict[str, int]:
@@ -160,6 +172,9 @@ class GermanCommonDateTimeParserConfiguration(BaseDateParserConfiguration):
 
         self._utility_configuration = GermanDateTimeUtilityConfiguration()
         self._unit_map = GermanDateTime.UnitMap
+        self._written_decades = GermanDateTime.WrittenDecades
+        self._special_decade_cases = GermanDateTime.SpecialDecadeCases
+        self._special_year_prefixes_map = GermanDateTime.SpecialYearPrefixesMap
         self._unit_value_map = GermanDateTime.UnitValueMap
         self._season_map = GermanDateTime.SeasonMap
         self._cardinal_map = GermanDateTime.CardinalMap
