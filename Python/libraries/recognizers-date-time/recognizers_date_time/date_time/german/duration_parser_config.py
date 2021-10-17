@@ -30,6 +30,10 @@ class GermanDurationParserConfiguration(DurationParserConfiguration):
     @property
     def followed_unit(self) -> Pattern:
         return self._followed_unit
+    
+    @property
+    def conjunction_regex(self) -> Pattern:
+        return self._conjunction_regex
 
     @property
     def suffix_and_regex(self) -> Pattern:
@@ -42,6 +46,11 @@ class GermanDurationParserConfiguration(DurationParserConfiguration):
     @property
     def an_unit_regex(self) -> Pattern:
         return self._an_unit_regex
+    
+    @property
+    def during_regex(self) -> Pattern:
+        return self._during_regex
+
 
     @property
     def all_date_unit_regex(self) -> Pattern:
@@ -54,6 +63,18 @@ class GermanDurationParserConfiguration(DurationParserConfiguration):
     @property
     def inexact_number_unit_regex(self) -> Pattern:
         return self._inexact_number_unit_regex
+
+    @property
+    def duration_unit_regex(self) -> Pattern:
+        return self._duration_unit_regex
+
+    @property
+    def special_number_unit_regex(self) -> Pattern:
+        return self._special_number_unit_regex
+
+    @property
+    def inexact_number_unit_regex(self) -> Pattern:
+        return self._inexact_number_regex
 
     @property
     def unit_map(self) -> Dict[str, str]:
@@ -79,18 +100,28 @@ class GermanDurationParserConfiguration(DurationParserConfiguration):
             GermanNumberParserConfiguration())
         self._followed_unit: Pattern = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.DurationFollowedUnit)
+        self._conjunction_regex: Pattern = RegExpUtility.get_safe_reg_exp(
+            GermanDateTime.ConjunctionRegex)
         self._suffix_and_regex: Pattern = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.SuffixAndRegex)
         self._number_combined_with_unit: Pattern = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.NumberCombinedWithDurationUnit)
         self._an_unit_regex: Pattern = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.AnUnitRegex)
+        self._during_regex: Pattern = RegExpUtility.get_safe_reg_exp(
+            GermanDateTime.DuringRegex)
         self._all_date_unit_regex: Pattern = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.AllRegex)
         self._half_date_unit_regex: Pattern = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.HalfRegex)
+        self._duration_unit_regex: Pattern = RegExpUtility.get_safe_reg_exp(
+            GermanDateTime.DurationUnitRegex)
         self._inexact_number_unit_regex: Pattern = RegExpUtility.get_safe_reg_exp(
+            GermanDateTime.InexactNumberRegex)
+        self._inexact_number_regex: Pattern = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.InexactNumberUnitRegex)
+        self._special_number_unit_regex: Pattern = RegExpUtility.get_safe_reg_exp(
+            GermanDateTime.SpecialNumberUnitRegex)
         self._unit_map: Dict[str, str] = GermanDateTime.UnitMap
         self._unit_value_map: Dict[str, int] = GermanDateTime.UnitValueMap
         self._double_numbers: Dict[str, float] = GermanDateTime.DoubleNumbers
