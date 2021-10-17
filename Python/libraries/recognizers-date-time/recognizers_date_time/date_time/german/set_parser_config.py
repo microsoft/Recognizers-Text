@@ -127,17 +127,17 @@ class GermanSetParserConfiguration(SetParserConfiguration):
 
     def get_matched_daily_timex(self, text: str) -> MatchedTimex:
         trimmed_text = text.strip().lower()
-        if trimmed_text == 'täglich':
+        if trimmed_text in ['täglich', "täglicher", "tägliches", "tägliche", "täglichen", "alltäglich", "alltäglicher", "alltägliches", "alltägliche", "alltäglichen", "jeden Tag"]:
             timex = 'P1D'
-        elif trimmed_text == 'wöchentlich':
+        elif trimmed_text in ['wöchentlich', "wöchentliche", "wöchentliches", "wöchentlicher", "wöchentlichen"]:
             timex = 'P1W'
-        elif trimmed_text == 'zweiwöchentlich':
+        elif trimmed_text in ['zweiwöchentlich', "zweiwöchentlichen", "zweiwöchentliche", "zweiwöchentliches"]:
             timex = 'P2W'
-        elif trimmed_text == 'monatlich':
+        elif trimmed_text in ['monatlich', "monatliche", "monatlicher", "monatlichen", "monatliches"]:
             timex = 'P1M'
-        elif trimmed_text == 'quartalsmäßig':
+        elif trimmed_text in ['quartalsmäßig', "quartalsmäßige", "quartalsmäßigen", "quartalsmäßiges", "quartalsmäßiger"]:
             timex = 'P3M'
-        elif trimmed_text in ('jährlich'):
+        elif trimmed_text in ["jährlich", "jährliche", "jährliches", "jährlichen", "jährlicher"]:
             timex = 'P1Y'
         else:
             return MatchedTimex(False, None)
@@ -158,3 +158,7 @@ class GermanSetParserConfiguration(SetParserConfiguration):
             return MatchedTimex(False, None)
 
         return MatchedTimex(True, timex)
+
+    def week_day_group_match_string(match):
+        # TO DO
+        pass
