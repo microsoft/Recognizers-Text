@@ -118,8 +118,8 @@ class GermanDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration)
         return self._prefix_day_regex
 
     @property
-    def number_combined_with_unit(self):
-        return self._number_combined_with_unit
+    def number_combined_with_unit_regex(self):
+        return self._number_combined_with_unit_regex
 
     @property
     def token_before_date(self) -> str:
