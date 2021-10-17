@@ -104,7 +104,7 @@ class GermanDateTimeParserConfiguration(DateTimeParserConfiguration):
     def unit_map(self) -> Dict[str, str]:
         return self._unit_map
 
-    @propertyutility
+    @property
     def numbers(self) -> Dict[str, int]:
         return self._numbers
 
