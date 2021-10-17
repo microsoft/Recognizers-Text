@@ -231,19 +231,20 @@ class GermanDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration)
         begin_hour = 0
         end_hour = 0
         end_min = 0
-        if regex.search(self.morning_start_end_regex, source):
+
+        if regex.search(self.morning_start_end_regex, trimmed_source):
             time_str = 'TMO'
             begin_hour = 8
             end_hour = Constants.HALF_DAY_HOUR_COUNT
-        elif regex.search(self.afternoon_start_end_regex, source):
+        elif regex.search(self.afternoon_start_end_regex, trimmed_source):
             time_str = 'TAF'
             begin_hour = Constants.HALF_DAY_HOUR_COUNT
             end_hour = 16
-        elif regex.search(self.evening_start_end_regex, source):
+        elif regex.search(self.evening_start_end_regex, trimmed_source):
             time_str = 'TEV'
             begin_hour = 16
             end_hour = 20
-        elif regex.search(self.night_start_end_regex, source):
+        elif regex.search(self.night_start_end_regex, trimmed_source):
             time_str = 'TNI'
             begin_hour = 20
             end_hour = 23
@@ -255,10 +256,9 @@ class GermanDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration)
         return MatchedTimeRange(time_str, begin_hour, end_hour, end_min, True)
 
     def get_swift_prefix(self, source: str) -> int:
-        if source.startswith('nächste'):
+        if source.startswith('nächste') or source.startswith('nächsten') or source.startswith('nächstes') or source.startswith('nächster'):
             return 1
-
-        if source.startswith('letzte') or source.startswith('vergangene'):
+        elif source.startswith('letzte') or source.startswith('vergangene') or source.startswith('letzten') or source.startswith('vergangenen') or source.startswith('letztes') or source.startswith('vergangenes') or source.startswith('letzter') or source.startswith('vergangener'):
             return -1
 
         return 0
