@@ -1,7 +1,7 @@
 #  Copyright (c) Microsoft Corporation. All rights reserved.
 #  Licensed under the MIT License.
 
-from typing import List, Dict, Callable
+from typing import List, Dict, Callable, Pattern
 import re
 from datetime import datetime
 
