@@ -17,6 +17,18 @@ class GermanHolidayParserConfiguration(BaseHolidayParserConfiguration):
         return self._holiday_names
 
     @property
+    def this_prefix_regex(self) -> Pattern:
+        return self._this_prefix_regex
+
+    @property
+    def next_prefix_regex(self) -> Pattern:
+        return self._next_prefix_regex
+    
+    @property
+    def previous_prefix_regex(self) -> Pattern:
+        return self._previous_prefix_regex
+
+    @property
     def holiday_regex_list(self) -> List[str]:
         return self._holiday_regexes
 
@@ -40,6 +52,12 @@ class GermanHolidayParserConfiguration(BaseHolidayParserConfiguration):
 
     def __init__(self, config):
         super().__init__()
+        self._this_prefix_regex = RegExpUtility.get_safe_reg_exp(GermanDateTime.ThisPrefixRegex)
+        self._next_prefix_regex = RegExpUtility.get_safe_reg_exp(GermanDateTime.NextPrefixRegex)
+        self._previous_prefix_regex = RegExpUtility.get_safe_reg_exp(GermanDateTime.PreviousPrefixRegex)
+
+
+
         self._holiday_regexes = [
             RegExpUtility.get_safe_reg_exp(GermanDateTime.HolidayRegex1),
             RegExpUtility.get_safe_reg_exp(GermanDateTime.HolidayRegex2),
