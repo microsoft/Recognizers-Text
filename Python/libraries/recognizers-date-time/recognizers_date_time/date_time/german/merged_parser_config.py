@@ -31,6 +31,10 @@ class GermanMergedParserConfiguration(MergedParserConfiguration):
         return self._equal_regex
 
     @property
+    def superfluous(self) -> Pattern:
+        return self._superfluous
+
+    @property
     def year_regex(self) -> Pattern:
         return self._year_regex
 
@@ -101,6 +105,8 @@ class GermanMergedParserConfiguration(MergedParserConfiguration):
             GermanDateTime.AfterRegex)
         self.__since_regex = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.SinceRegex)
+        self.__superfluous = RegExpUtility.get_safe_reg_exp(
+            GermanMergedParserConfiguration.superfluous_word_matcher)
         self.__holiday_parser = BaseHolidayParser(
             GermanHolidayParserConfiguration(config))
         self.__date_parser = config.date_parser
@@ -112,3 +118,5 @@ class GermanMergedParserConfiguration(MergedParserConfiguration):
         self.__duration_parser = config.duration_parser
         self.__set_parser = BaseSetParser(
             GermanSetParserConfiguration(config))
+        # TO DO : timezone
+        # self.__time_zone_parser
