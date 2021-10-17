@@ -2,6 +2,7 @@
 #  Licensed under the MIT License.
 
 from typing import Pattern, Dict
+from recognizers_number.number.parsers import NumberParserConfiguration
 import regex
 
 from recognizers_text.utilities import RegExpUtility
@@ -30,6 +31,7 @@ class GermanDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration)
     def __init__(self, config: BaseDateParserConfiguration):
         self._time_of_day_regex = RegExpUtility.get_safe_reg_exp(GermanDateTime.TimeOfDayRegex)
         self._future_suffix_regex = RegExpUtility.get_safe_reg_exp(GermanDateTime.FutureSuffixRegex)
+        self._number_combined_with_unit_regex = RegExpUtility.get_safe_reg_exp(GermanDateTime.TimeNumberCombinedWithUnit)
         self._within_next_prefix_regex = RegExpUtility.get_safe_reg_exp(GermanDateTime.WithinNextPrefixRegex)
         self._previous_prefix_regex = RegExpUtility.get_safe_reg_exp(GermanDateTime.PreviousPrefixRegex)
         self._cardinal_extractor = config.cardinal_extractor
@@ -40,6 +42,8 @@ class GermanDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration)
         self._check_both_before_after = GermanDateTime.CheckBothBeforeAfter
         self._pure_number_from_to_regex = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.PureNumFromTo)
+        # self._hyphen_date_regex = RegExpUtility.get_safe_reg_exp(
+        #     GermanDateTime.HyphenDateRegex)
         self._pure_number_between_and_regex = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.PureNumBetweenAnd)
         self._period_time_of_day_with_date_regex = RegExpUtility.get_safe_reg_exp(
@@ -52,6 +56,8 @@ class GermanDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration)
             GermanDateTime.NextPrefixRegex)
         self._relative_time_unit_regex = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.RelativeTimeUnitRegex)
+        self._unit_regex = RegExpUtility.get_safe_reg_exp(
+            GermanDateTime.TimeUnitRegex)
         self._rest_of_date_time_regex = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.RestOfDateTimeRegex)
         self._numbers = config.numbers
@@ -61,6 +67,7 @@ class GermanDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration)
         self._date_time_extractor = config.date_time_extractor
         self._time_period_extractor = config.time_period_extractor
         self._duration_extractor = config.duration_extractor
+        self._number_parser = config.number_parser
         self._date_parser = config.date_parser
         self._time_parser = config.time_parser
         self._date_time_parser = config.date_time_parser
@@ -111,6 +118,10 @@ class GermanDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration)
         return self._prefix_day_regex
 
     @property
+    def number_combined_with_unit(self):
+        return self._number_combined_with_unit
+
+    @property
     def token_before_date(self) -> str:
         return self._token_before_date
 
@@ -149,6 +160,10 @@ class GermanDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration)
     @property
     def relative_time_unit_regex(self) -> Pattern:
         return self._relative_time_unit_regex
+    
+    @property
+    def unit_regex(self) -> Pattern:
+        return self._unit_regex
 
     @property
     def rest_of_date_time_regex(self) -> Pattern:
@@ -181,6 +196,10 @@ class GermanDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration)
     @property
     def duration_extractor(self) -> DateTimeExtractor:
         return self._duration_extractor
+
+    @property
+    def number_parser(self) -> NumberParserConfiguration:
+        return self._number_parser
 
     @property
     def date_parser(self) -> DateTimeParser:
