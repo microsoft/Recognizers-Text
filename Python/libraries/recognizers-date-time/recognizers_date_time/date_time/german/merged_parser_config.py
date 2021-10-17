@@ -5,6 +5,7 @@ from typing import Pattern
 
 from ...resources.base_date_time import BaseDateTime
 from recognizers_text.utilities import RegExpUtility
+from .merged_extractor_config import GermanMergedExtractorConfiguration
 
 from .holiday_parser_config import GermanHolidayParserConfiguration
 from .set_parser_config import GermanSetParserConfiguration
@@ -30,9 +31,9 @@ class GermanMergedParserConfiguration(MergedParserConfiguration):
     def equal_regex(self) -> Pattern:
         return self._equal_regex
 
-    @property
-    def superfluous(self) -> Pattern:
-        return self._superfluous
+    # @property
+    # def superfluous(self) -> Pattern:
+    #     return self._superfluous
 
     @property
     def year_regex(self) -> Pattern:
@@ -105,8 +106,8 @@ class GermanMergedParserConfiguration(MergedParserConfiguration):
             GermanDateTime.AfterRegex)
         self.__since_regex = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.SinceRegex)
-        self.__superfluous = RegExpUtility.get_safe_reg_exp(
-            GermanMergedParserConfiguration.superfluous_word_matcher)
+        # self.__superfluous = RegExpUtility.get_safe_reg_exp(
+        #     GermanMergedExtractorConfiguration.superfluous_word_matcher)
         self.__holiday_parser = BaseHolidayParser(
             GermanHolidayParserConfiguration(config))
         self.__date_parser = config.date_parser

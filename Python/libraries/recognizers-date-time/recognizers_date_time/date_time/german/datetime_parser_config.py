@@ -120,27 +120,27 @@ class GermanDateTimeParserConfiguration(DateTimeParserConfiguration):
         self._date_parser = config.date_parser
         self._time_parser = config.time_parser
         self._now_regex = RegExpUtility.get_safe_reg_exp(
-            GermanDateTimeExtractorConfiguration.NowRegex)
+            GermanDateTime.NowRegex)
         self._am_time_regex = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.AMTimeRegex)
         self._pm_time_regex = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.PMTimeRegex)
         self._simple_time_of_today_after_regex = RegExpUtility.get_safe_reg_exp(
-            GermanDateTimeExtractorConfiguration.SimpleTimeOfTodayAfterRegex)
+            GermanDateTime.SimpleTimeOfTodayAfterRegex)
         self._simple_time_of_today_before_regex = RegExpUtility.get_safe_reg_exp(
-            GermanDateTimeExtractorConfiguration.SimpleTimeOfTodayBeforeRegex)
+            GermanDateTime.SimpleTimeOfTodayBeforeRegex)
         self._specific_time_of_day_regex = RegExpUtility.get_safe_reg_exp(
-            GermanDateTimeExtractorConfiguration.SpecificTimeOfDayRegex)
+            GermanDateTime.SpecificTimeOfDayRegex)
         self._specific_end_of_regex = RegExpUtility.get_safe_reg_exp(
-            GermanDateTimeExtractorConfiguration.SpecificEndOfRegex)
+            GermanDateTime.SpecificEndOfRegex)
         self._unspecific_end_of_regex = RegExpUtility.get_safe_reg_exp(
-            GermanDateTimeExtractorConfiguration.UnspecificEndOfRegex)
+            GermanDateTime.UnspecificEndOfRegex)
         self._unit_regex = RegExpUtility.get_safe_reg_exp(
-            GermanDateTimeExtractorConfiguration.TimeUnitRegex)
+            GermanDateTime.TimeUnitRegex)
         self._date_number_connector_regex = RegExpUtility.get_safe_reg_exp(
-            GermanDateTimeExtractorConfiguration.DateNumberConnectorRegex)
+            GermanDateTime.DateNumberConnectorRegex)
         self._year_regex = RegExpUtility.get_safe_reg_exp(
-            GermanDateTimeExtractorConfiguration.YearRegex)
+            GermanDateTime.YearRegex)
         self._numbers = config.numbers
         self._cardinal_extractor = config.cardinal_extractor
         self._integer_extractor = config.integer_extractor
