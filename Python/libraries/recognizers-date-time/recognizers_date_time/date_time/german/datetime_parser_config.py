@@ -2,6 +2,7 @@
 #  Licensed under the MIT License.
 
 from typing import Pattern, Dict
+from recognizers_date_time.date_time.german.datetime_extractor_config import GermanDateTimeExtractorConfiguration
 
 from recognizers_text.utilities import RegExpUtility
 from recognizers_number.number.extractors import BaseNumberExtractor
@@ -11,7 +12,7 @@ from ..extractors import DateTimeExtractor
 from ..parsers import DateTimeParser
 from ..utilities import DateTimeUtilityConfiguration
 from ..base_configs import BaseDateParserConfiguration
-from ..base_datetime import DateTimeParserConfiguration, MatchedTimex
+from ..base_datetime import DateTimeExtractorConfiguration, DateTimeParserConfiguration, MatchedTimex
 
 
 class GermanDateTimeParserConfiguration(DateTimeParserConfiguration):
@@ -92,10 +93,18 @@ class GermanDateTimeParserConfiguration(DateTimeParserConfiguration):
         return self._unit_regex
 
     @property
+    def date_number_connector_regex(self) -> Pattern:
+        return self._date_number_connector_regex
+
+    @property
+    def year_regex(self) -> Pattern:
+        return self._year_regex
+
+    @property
     def unit_map(self) -> Dict[str, str]:
         return self._unit_map
 
-    @property
+    @propertyutility
     def numbers(self) -> Dict[str, int]:
         return self._numbers
 
@@ -111,42 +120,47 @@ class GermanDateTimeParserConfiguration(DateTimeParserConfiguration):
         self._date_parser = config.date_parser
         self._time_parser = config.time_parser
         self._now_regex = RegExpUtility.get_safe_reg_exp(
-            GermanDateTime.NowRegex)
+            GermanDateTimeExtractorConfiguration.NowRegex)
         self._am_time_regex = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.AMTimeRegex)
         self._pm_time_regex = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.PMTimeRegex)
         self._simple_time_of_today_after_regex = RegExpUtility.get_safe_reg_exp(
-            GermanDateTime.SimpleTimeOfTodayAfterRegex)
+            GermanDateTimeExtractorConfiguration.SimpleTimeOfTodayAfterRegex)
         self._simple_time_of_today_before_regex = RegExpUtility.get_safe_reg_exp(
-            GermanDateTime.SimpleTimeOfTodayBeforeRegex)
+            GermanDateTimeExtractorConfiguration.SimpleTimeOfTodayBeforeRegex)
         self._specific_time_of_day_regex = RegExpUtility.get_safe_reg_exp(
-            GermanDateTime.SpecificTimeOfDayRegex)
+            GermanDateTimeExtractorConfiguration.SpecificTimeOfDayRegex)
         self._specific_end_of_regex = RegExpUtility.get_safe_reg_exp(
-            GermanDateTime.SpecificEndOfRegex)
+            GermanDateTimeExtractorConfiguration.SpecificEndOfRegex)
         self._unspecific_end_of_regex = RegExpUtility.get_safe_reg_exp(
-            GermanDateTime.UnspecificEndOfRegex)
+            GermanDateTimeExtractorConfiguration.UnspecificEndOfRegex)
         self._unit_regex = RegExpUtility.get_safe_reg_exp(
-            GermanDateTime.TimeUnitRegex)
+            GermanDateTimeExtractorConfiguration.TimeUnitRegex)
+        self._date_number_connector_regex = RegExpUtility.get_safe_reg_exp(
+            GermanDateTimeExtractorConfiguration.DateNumberConnectorRegex)
+        self._year_regex = RegExpUtility.get_safe_reg_exp(
+            GermanDateTimeExtractorConfiguration.YearRegex)
         self._numbers = config.numbers
         self._cardinal_extractor = config.cardinal_extractor
+        self._integer_extractor = config.integer_extractor
         self._number_parser = config.number_parser
         self._duration_extractor = config.duration_extractor
         self._duration_parser = config.duration_parser
         self._unit_map = config.unit_map
         self._utility_configuration = config.utility_configuration
 
-    def have_ambiguous_token(self, source: str, matched_text: str) -> bool:
+    def contains_ambiguous_token(self, source: str, matched_text: str) -> bool:
         return False
 
     def get_matched_now_timex(self, source: str) -> MatchedTimex:
         source = source.strip().lower()
 
-        if source.endswith('jetzt'):
+        if (source.endswith('jetzt') or source in ["momentan", "gerade", "aktuell", "aktuelle", "im moment", "in diesem moment", "derzeit"]):
             return MatchedTimex(True, 'PRESENT_REF')
-        elif source in ['kürzlich', 'neulich']:
+        elif source in ['neulich', 'vorher', 'vorhin']:
             return MatchedTimex(True, 'PAST_REF')
-        elif source in ['so bald wie möglich', 'asap']:
+        elif source in ['so bald wie möglich', 'so früh wie möglich', 'asap']:
             return MatchedTimex(True, 'FUTURE_REF')
 
         return MatchedTimex(False, None)
@@ -154,9 +168,9 @@ class GermanDateTimeParserConfiguration(DateTimeParserConfiguration):
     def get_swift_day(self, source: str) -> int:
         source = source.strip().lower()
 
-        if source.startswith('nächste'):
+        if source.startswith('nächste') or source.startswith('nächsten') or source.startswith('nächstes') or source.startswith('nächster'):
             return 1
-        elif source.startswith('letzte') or source.startswith('vergangene'):
+        elif source.startswith('letzte') or source.startswith('vergangene') or source.startswith('letzten') or source.startswith('vergangenen') or source.startswith('letztes') or source.startswith('vergangenes') or source.startswith('letzter') or source.startswith('vergangener'):
             return -1
 
         return 0
@@ -164,9 +178,9 @@ class GermanDateTimeParserConfiguration(DateTimeParserConfiguration):
     def get_hour(self, source: str, hour: int) -> int:
         source = source.strip().lower()
 
-        if (source.endswith('morgens') or source.endswith('vormittags')) and hour >= 12:
+        if (source.endswith('morgens') or source.endswith('morgen') or source.endswith('vormittags') or source.endswith('vormittag')) and hour >= 12:
             return hour - 12
-        elif not source.endswith('morgens') and hour < 12 and not (source.endswith('nachts') and hour < 6):
+        elif not (source.endswith('morgens') or source.endswith('morgen') or source.endswith('vormittags') or source.endswith('vormittag')) and hour < 12 and not (source.endswith('nachts') and hour < 6):
             return hour + 12
 
         return hour
