@@ -170,6 +170,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 hasBrackets = true;
             }
 
+            if (unit.StartsWith("<") && unit.EndsWith(">"))
+            {
+                hasBrackets = true;
+            }
+
             if (hasBrackets)
             {
                 unit = unit.Substring(1, unit.Length - 2);
