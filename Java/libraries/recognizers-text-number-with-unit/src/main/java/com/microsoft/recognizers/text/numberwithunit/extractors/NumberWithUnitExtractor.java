@@ -360,6 +360,8 @@ public class NumberWithUnitExtractor implements IExtractor {
                     String.join("|", regexTokens),
                     this.config.getBuildSuffix());
 
+            pattern += getRegexWithBrackets(String.format("(%s)", String.join("|", regexTokens)));
+
             int options = Pattern.UNICODE_CHARACTER_CLASS | (ignoreCase ? Pattern.CASE_INSENSITIVE : 0);
 
             Pattern regex = Pattern.compile(pattern, options);
@@ -367,6 +369,21 @@ public class NumberWithUnitExtractor implements IExtractor {
         }
 
         return regexes;
+    }
+
+    protected String getRegexWithBrackets(String regex) { 
+        String result = "";
+        String[] openingBrackets = new String[] {"(\\()", "(\\[)", "(\\{)", "(\\<)"};
+        String[] closingBrackets = new String[] {"(\\))", "(\\])", "(\\})", "(\\>)"};
+        int i = 0;
+        while (i < 4) {
+            result += "|";
+            result += openingBrackets[i];
+            result += regex;
+            result += closingBrackets[i];
+            i++;
+        }
+        return result;
     }
 
     protected Pattern buildSeparateRegexFromSet() {
