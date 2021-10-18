@@ -3026,5 +3026,21 @@
         }
       }
     ]
+  },
+  {
+    "Input": "forty two and a next",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "forty two",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "42"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
   }
 ]
