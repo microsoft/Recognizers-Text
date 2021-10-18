@@ -39,8 +39,10 @@ export namespace EnglishNumeric {
     export const RelativeOrdinalRegex = `(?<relativeOrdinal>(next|previous|current)\\s+one|(the\\s+second|next)\\s+to\\s+last|the\\s+one\\s+before\\s+the\\s+last(\\s+one)?|the\\s+last\\s+but\\s+one|(ante)?penultimate|last|next|previous|current)`;
     export const BasicOrdinalRegex = `(${NumberOrdinalRegex}|${RelativeOrdinalRegex})`;
     export const SuffixBasicOrdinalRegex = `(?:((((${TensNumberIntegerRegex}(\\s+(and\\s+)?|\\s*-\\s*)${ZeroToNineIntegerRegex})|${TensNumberIntegerRegex}|${ZeroToNineIntegerRegex}|${AnIntRegex})(\\s+${RoundNumberIntegerRegex})+)\\s+(and\\s+)?)*(${TensNumberIntegerRegex}(\\s+|\\s*-\\s*))?${BasicOrdinalRegex})`;
+    export const SuffixNumberOrdinalRegex = `(?:((((${TensNumberIntegerRegex}(\\s+(and\\s+)?|\\s*-\\s*)${ZeroToNineIntegerRegex})|${TensNumberIntegerRegex}|${ZeroToNineIntegerRegex}|${AnIntRegex})(\\s+${RoundNumberIntegerRegex})+)\\s+(and\\s+)?)*(${TensNumberIntegerRegex}(\\s+|\\s*-\\s*))?${NumberOrdinalRegex})`;
     export const SuffixRoundNumberOrdinalRegex = `(?:(${AllIntRegex}\\s+)${RoundNumberOrdinalRegex})`;
     export const AllOrdinalRegex = `(?:${SuffixBasicOrdinalRegex}|${SuffixRoundNumberOrdinalRegex})`;
+    export const AllNumberOrdinalRegex = `(?:${SuffixNumberOrdinalRegex}|${SuffixRoundNumberOrdinalRegex})`;
     export const OrdinalSuffixRegex = `(?<=\\b)(?:(\\d*(1st|2nd|3rd|[4-90]th))|(1[1-2]th))(?=\\b)`;
     export const OrdinalNumericRegex = `(?<=\\b)(?:\\d{1,3}(\\s*,\\s*\\d{3})*\\s*th)(?=\\b)`;
     export const OrdinalRoundNumberRegex = `(?<!an?\\s+)${RoundNumberOrdinalRegex}`;
@@ -49,7 +51,7 @@ export namespace EnglishNumeric {
     export const FractionNotationRegex = `${BaseNumbers.FractionNotationRegex}`;
     export const RoundMultiplierRegex = `\\b\\s*((of\\s+)?a\\s+)?(?<multiplier>${RoundNumberIntegerRegex})$`;
     export const FractionNounRegex = `(?<=\\b)(${AllIntRegex}\\s+(and\\s+)?)?((${AllIntRegex})(\\s+|\\s*-\\s*)(((${AllOrdinalRegex})|(${RoundNumberOrdinalRegex}))s|halves|quarters)((\\s+of\\s+a)?\\s+${RoundNumberIntegerRegex})?|(half(\\s+a)?|quarter(\\s+of\\s+a)?)\\s+${RoundNumberIntegerRegex})(?=\\b)`;
-    export const FractionNounWithArticleRegex = `(?<=\\b)(((${AllIntRegex}\\s+(and\\s+)?)?(an?|one)(\\s+|\\s*-\\s*)(?!\\bfirst\\b|\\bsecond\\b)((${AllOrdinalRegex})|(${RoundNumberOrdinalRegex})|(half|quarter)(((\\s+of)?\\s+a)?\\s+${RoundNumberIntegerRegex})?))|(half))(?=\\b)`;
+    export const FractionNounWithArticleRegex = `(?<=\\b)(((${AllIntRegex}\\s+(and\\s+)?)?(an?|one)(\\s+|\\s*-\\s*)(?!\\bfirst\\b|\\bsecond\\b)((${AllNumberOrdinalRegex})|(${RoundNumberOrdinalRegex})|(half|quarter)(((\\s+of)?\\s+a)?\\s+${RoundNumberIntegerRegex})?))|(half))(?=\\b)`;
     export const FractionPrepositionRegex = `(?<!${BaseNumbers.CommonCurrencySymbol}\\s*)(?<=\\b)(?<numerator>(${AllIntRegex})|((?<![\\.,])\\d+))\\s+(over|(?<ambiguousSeparator>in|out\\s+of))\\s+(?<denominator>(${AllIntRegex})|(\\d+)(?![\\.,]))(?=\\b)`;
     export const FractionPrepositionWithinPercentModeRegex = `(?<!${BaseNumbers.CommonCurrencySymbol}\\s*)(?<=\\b)(?<numerator>(${AllIntRegex})|((?<![\\.,])\\d+))\\s+over\\s+(?<denominator>(${AllIntRegex})|(\\d+)(?![\\.,]))(?=\\b)`;
     export const AllPointRegex = `((\\s+${ZeroToNineIntegerRegex})+|(\\s+${SeparaIntRegex}))`;
