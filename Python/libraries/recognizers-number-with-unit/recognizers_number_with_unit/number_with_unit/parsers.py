@@ -140,6 +140,9 @@ class NumberWithUnitParser(Parser):
         if (unit.startswith('{') and unit.endswith('}')):
             has_brackets = True
 
+        if (unit.startswith('<') and unit.endswith('>')):
+            has_brackets = True
+
         if  has_brackets is True:
             unit = unit[1 : len(unit) - 1]
             

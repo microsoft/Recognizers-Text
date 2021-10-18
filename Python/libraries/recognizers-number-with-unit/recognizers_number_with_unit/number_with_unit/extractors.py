@@ -249,7 +249,8 @@ class NumberWithUnitExtractor(Extractor):
                                 if m.end < len(source) and ( \
                                     (mid_str.endswith('(') and source[m.end] == ')') or
                                     (mid_str.endswith('[') and source[m.end] == ']') or 
-                                    (mid_str.endswith('{') and source[m.end] == '}')):
+                                    (mid_str.endswith('{') and source[m.end] == '}') or 
+                                    (mid_str.endswith('<') and source[m.end] == '>')):
                                     max_len = m.end - first_index + 1
 
                                 
