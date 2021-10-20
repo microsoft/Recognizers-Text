@@ -110,6 +110,7 @@
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Swedish\ChoiceDefinitions.cs" Link="Swedish\ChoiceDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Swedish\NumbersDefinitions.cs" Link="Swedish\NumbersDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Swedish\NumbersWithUnitDefinitions.cs" Link="Swedish\NumbersWithUnitDefinitions.cs" />
+    <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Swedish\QuotedTextDefinitions.cs" Link="Swedish\QuotedTextDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Bulgarian\ChoiceDefinitions.cs" Link="Bulgarian\ChoiceDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Turkish\ChoiceDefinitions.cs" Link="Turkish\ChoiceDefinitions.cs" />
     <Compile Include="..\Microsoft.Recognizers.Definitions.Common\Turkish\DateTimeDefinitions.cs" Link="Turkish\DateTimeDefinitions.cs" />
