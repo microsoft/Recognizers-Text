@@ -1364,9 +1364,7 @@
   },
   {
     "Input": "två tjugoförstedelar",
-    "Comment": "Correspons to writing 'A twentyfirsts'. Compound fraction expressions are currently not resolved correctly.",
     "NotSupportedByDesign": "javascript, python, java",
-    "Debug": true,
     "Results": [
       {
         "Text": "två tjugoförstedelar",
@@ -1376,7 +1374,7 @@
           "value": "0,0952380952380952"
         },
         "Start": 0,
-        "End": 17
+        "End": 19
       }
     ]
   },
@@ -1416,7 +1414,6 @@
   {
     "Input": "hans andel var de resterande tre tjugoförstedelarna",
     "NotSupportedByDesign": "javascript, python, java",
-    "Debug": true,
     "Results": [
       {
         "Text": "tre tjugoförstedelarna",
