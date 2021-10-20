@@ -54,6 +54,11 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
                     NumberRangeConstants.MORE
                 },
                 {
+                  // ...三万余
+                  new Regex(NumbersDefinitions.OneNumberRangeMoreRegex4, RegexOptions.Singleline),
+                  NumberRangeConstants.ABOUT
+                },
+                {
                     // 小于/少于/低于...
                     new Regex(NumbersDefinitions.OneNumberRangeLessRegex1, RegexOptions.Singleline),
                     NumberRangeConstants.LESS
