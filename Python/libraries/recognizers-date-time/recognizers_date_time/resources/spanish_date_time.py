@@ -226,7 +226,7 @@ class SpanishDateTime:
     RelativeDecadeRegex = f'\\b(((el|las?)\\s+)?{RelativeRegex}\\s+(((?<number>[\\d]+)|{WrittenOneToNineRegex})\\s+)?d[eé]cadas?)\\b'
     ComplexDatePeriodRegex = f'(?:((de(sde)?)\\s+)?(?<start>.+)\\s*({StrictTillRegex})\\s*(?<end>.+)|((entre)\\s+)(?<start>.+)\\s*({RangeConnectorRegex})\\s*(?<end>.+))'
     AmbiguousPointRangeRegex = f'^(mar\\.?)$'
-    YearSuffix = f'((,|\\sde)?\\s*({YearRegex}|{FullTextYearRegex}))'
+    YearSuffix = f'((,|\\sdel?)?\\s*({YearRegex}|{FullTextYearRegex}))'
     SinceYearSuffixRegex = f'(^\\s*{SinceRegex}(\\s*(el\\s+)?año\\s*)?{YearSuffix})'
     AgoRegex = f'\\b(antes\\s+de\\s+(?<day>hoy|ayer|mañana)|antes|hace)\\b'
     LaterRegex = f'\\b(despu[eé]s(?!\\s+de\\b)|desde\\s+ahora|a\\s+partir\\s+de\\s+(ahora|(?<day>hoy|ayer|mañana)))\\b'
