@@ -112,6 +112,10 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 lastUnit = lastUnit.Substring(Config.ConnectorToken.Length).Trim();
             }
 
+            // Delete brackets
+            normalizedLastUnit = DeleteBracketsIfExisted(normalizedLastUnit);
+            lastUnit = DeleteBracketsIfExisted(lastUnit);
+
             if (!string.IsNullOrWhiteSpace(key) && Config.UnitMap != null)
             {
                 if (Config.UnitMap.TryGetValue(lastUnit, out var unitValue) ||
@@ -145,6 +149,38 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             ret.Text = ret.Text.ToLowerInvariant();
 
             return ret;
+        }
+
+        private string DeleteBracketsIfExisted(string unit)
+        {
+            bool hasBrackets = false;
+
+            if (unit.StartsWith("(") && unit.EndsWith(")"))
+            {
+                hasBrackets = true;
+            }
+
+            if (unit.StartsWith("[") && unit.EndsWith("]"))
+            {
+                hasBrackets = true;
+            }
+
+            if (unit.StartsWith("{") && unit.EndsWith("}"))
+            {
+                hasBrackets = true;
+            }
+
+            if (unit.StartsWith("<") && unit.EndsWith(">"))
+            {
+                hasBrackets = true;
+            }
+
+            if (hasBrackets)
+            {
+                unit = unit.Substring(1, unit.Length - 2);
+            }
+
+            return unit;
         }
     }
 }
