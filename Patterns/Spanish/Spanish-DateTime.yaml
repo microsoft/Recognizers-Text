@@ -584,7 +584,7 @@ ComplexDatePeriodRegex: !nestedRegex
 AmbiguousPointRangeRegex: !simpleRegex
   def: ^(mar\.?)$
 YearSuffix: !nestedRegex
-  def: ((,|\sde)?\s*({YearRegex}|{FullTextYearRegex}))
+  def: ((,|\sdel?)?\s*({YearRegex}|{FullTextYearRegex}))
   references: [ YearRegex, FullTextYearRegex ]
 SinceYearSuffixRegex: !nestedRegex
   def: (^\s*{SinceRegex}(\s*(el\s+)?año\s*)?{YearSuffix})

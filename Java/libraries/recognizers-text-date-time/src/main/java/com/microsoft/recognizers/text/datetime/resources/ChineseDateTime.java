@@ -88,6 +88,8 @@ public class ChineseDateTime {
             .replace("{MonthNumRegex}", MonthNumRegex)
             .replace("{WeekDayRegex}", WeekDayRegex);
 
+    public static final String WeekDayAndDayRegex = "^[.]";
+
     public static final String ThisPrefixRegex = "这个|这一个|这|这一|本|今";
 
     public static final String LastPrefixRegex = "上个|上一个|上|上一|去";
