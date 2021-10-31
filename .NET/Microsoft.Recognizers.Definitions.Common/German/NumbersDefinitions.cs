@@ -27,7 +27,7 @@ namespace Microsoft.Recognizers.Definitions.German
       public const string ZeroToNineIntegerRegex = @"(drei|sieben|acht|vier|fuenf|fünf|null|neun|eins|(ein(?!($|\.|,|!|\?)))|eine[rn]?|zwei|zwo|sechs)";
       public const string RoundNumberIntegerRegex = @"((ein)?hundert|tausend|(\s*(million(en)?|mio|milliarden?|mrd|billion(en)?)\s*))";
       public const string AnIntRegex = @"(eine?)(?=\s)";
-      public const string TenToNineteenIntegerRegex = @"(siebzehn|dreizehn|vierzehn|achtzehn|neunzehn|fuenfzehn|sechzehn|elf|zwoelf|zwölf|zehn)";
+      public const string TenToNineteenIntegerRegex = @"(siebzehn|dreizehn|vierzehn|achtzehn|neunzehn|fünfzehn|fuenfzehn|sechzehn|elf|zwoelf|zwölf|zehn)";
       public const string TensNumberIntegerRegex = @"(siebzig|zwanzig|dreißig|achtzig|neunzig|vierzig|fuenfzig|fünfzig|sechzig|hundert|tausend)";
       public const string NegativeNumberTermsRegex = @"^[.]";
       public static readonly string NegativeNumberSignRegex = $@"^({NegativeNumberTermsRegex}\s+).*";

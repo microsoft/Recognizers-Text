@@ -13,7 +13,7 @@ RoundNumberIntegerRegex: !simpleRegex
 AnIntRegex: !simpleRegex
   def: (eine?)(?=\s)
 TenToNineteenIntegerRegex: !simpleRegex
-  def: (siebzehn|dreizehn|vierzehn|achtzehn|neunzehn|fuenfzehn|sechzehn|elf|zwoelf|zwölf|zehn)
+  def: (siebzehn|dreizehn|vierzehn|achtzehn|neunzehn|fünfzehn|fuenfzehn|sechzehn|elf|zwoelf|zwölf|zehn)
 TensNumberIntegerRegex: !simpleRegex
   def: (siebzig|zwanzig|dreißig|achtzig|neunzig|vierzig|fuenfzig|fünfzig|sechzig|hundert|tausend)
 NegativeNumberTermsRegex: !simpleRegex

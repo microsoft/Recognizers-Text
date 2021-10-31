@@ -1,0 +1,44 @@
+[
+  {
+    "Input": "2021-W01",
+    "Context": {
+      "ReferenceDateTime": "2021-11-01T00:00:00"
+    },
+    "Comment": "Showcase correct ISO week resolution for 1st week starting past 1st day of year.",
+    "Results": [
+      {
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-W01",
+              "type": "daterange",
+              "start": "2021-01-04",
+              "end": "2021-01-11"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2020-W01",
+    "Context": {
+      "ReferenceDateTime": "2021-11-01T00:00:00"
+    },
+    "Comment": "Showcase correct ISO week resolution for 1st week starting in previous year.",
+    "Results": [
+      {
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-W01",
+              "type": "daterange",
+              "start": "2019-12-30",
+              "end": "2020-01-06"
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

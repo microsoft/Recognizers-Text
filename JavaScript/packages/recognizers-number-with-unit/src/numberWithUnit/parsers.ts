@@ -121,6 +121,9 @@ export class NumberWithUnitParser implements IParser {
             lastUnit = lastUnit.substring(this.config.connectorToken.length).trim();
         }
 
+        lastUnit = this.deleteBracketsIfExisted(lastUnit);
+        normalizedLastUnit = this.deleteBracketsIfExisted(normalizedLastUnit);
+
         if (key && key.length && (this.config.unitMap !== null)) {
             let unitValue = null;
             if (this.config.unitMap.has(lastUnit)) {
@@ -151,6 +154,32 @@ export class NumberWithUnitParser implements IParser {
         if (!keys.some(key => key.includes(newKey))) {
             keys.push(newKey);
         }
+    }
+
+    private deleteBracketsIfExisted(unit: string) { 
+        let hasBrackets = false;
+
+        if (unit.startsWith('(') && unit.endsWith(')')) { 
+            hasBrackets = true;
+        }
+
+        if (unit.startsWith('[') && unit.endsWith(']')) { 
+            hasBrackets = true;
+        }
+
+        if (unit.startsWith('{') && unit.endsWith('}')) { 
+            hasBrackets = true;
+        }
+
+        if (unit.startsWith('<') && unit.endsWith('>')) {
+            hasBrackets = true;
+        }
+
+        if (hasBrackets) { 
+            unit = unit.substr(1, unit.length - 2)
+        }
+
+        return unit;
     }
 
 }

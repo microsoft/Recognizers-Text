@@ -21938,5 +21938,53 @@
         }
       }
     ]
+  },
+  {
+    "Input": "veintiocho de marzo de mil novecientos noventa y dos",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": [
+      {
+        "Text": "veintiocho de marzo de mil novecientos noventa y dos",
+        "Start": 0,
+        "End": 51,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1992-03-28",
+              "type": "date",
+              "value": "1992-03-28"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "veintiocho de marzo del mil novecientos noventa y dos",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": [
+      {
+        "Text": "veintiocho de marzo del mil novecientos noventa y dos",
+        "Start": 0,
+        "End": 52,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1992-03-28",
+              "type": "date",
+              "value": "1992-03-28"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

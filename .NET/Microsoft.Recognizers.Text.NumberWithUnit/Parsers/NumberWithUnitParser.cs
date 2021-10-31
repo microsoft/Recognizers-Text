@@ -112,6 +112,10 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 lastUnit = lastUnit.Substring(Config.ConnectorToken.Length).Trim();
             }
 
+            // Delete brackets
+            normalizedLastUnit = DeleteBracketsIfExisted(normalizedLastUnit);
+            lastUnit = DeleteBracketsIfExisted(lastUnit);
+
             if (!string.IsNullOrWhiteSpace(key) && Config.UnitMap != null)
             {
                 if (Config.UnitMap.TryGetValue(lastUnit, out var unitValue) ||
@@ -120,7 +124,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     var numValue = string.IsNullOrEmpty(numberResult.Text) ?
                         null :
                         this.Config.InternalNumberParser.Parse(numberResult);
+
                     var resolution_str = numValue?.ResolutionStr;
+
                     if (halfResult != null)
                     {
                         var halfValue = this.Config.InternalNumberParser.Parse(halfResult);
@@ -132,6 +138,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         Number = resolution_str,
                         Unit = unitValue,
                     };
+
                     ret.ResolutionStr = $"{numValue?.ResolutionStr} {unitValue}".Trim();
 
                     if (extResult.Type.Equals(Constants.SYS_UNIT_DIMENSION, StringComparison.Ordinal) &&
@@ -145,6 +152,38 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             ret.Text = ret.Text.ToLowerInvariant();
 
             return ret;
+        }
+
+        private string DeleteBracketsIfExisted(string unit)
+        {
+            bool hasBrackets = false;
+
+            if (unit.StartsWith("(") && unit.EndsWith(")"))
+            {
+                hasBrackets = true;
+            }
+
+            if (unit.StartsWith("[") && unit.EndsWith("]"))
+            {
+                hasBrackets = true;
+            }
+
+            if (unit.StartsWith("{") && unit.EndsWith("}"))
+            {
+                hasBrackets = true;
+            }
+
+            if (unit.StartsWith("<") && unit.EndsWith(">"))
+            {
+                hasBrackets = true;
+            }
+
+            if (hasBrackets)
+            {
+                unit = unit.Substring(1, unit.Length - 2);
+            }
+
+            return unit;
         }
     }
 }

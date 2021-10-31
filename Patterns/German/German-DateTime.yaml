@@ -7,22 +7,22 @@ TillRegex: !simpleRegex
 RangeConnectorRegex : !simpleRegex
   def: (?<and>und|--|-|—|——)
 RelativeRegex: !simpleRegex
-  def: \b(?<order>(über)?nächste[rns]?|kommende[rns]?|diese[rmns]?|vorletzte[snm]?|letzte[rns]?|vergangene[rns]?|vorherige[rns]?|vorige[rns]?|jetzige[rns]?|heutige[rns]?|aktuelle[rns]?|gestrige[rns]?|morgige[rns]?|de[rmsn]|das(?!\s+tag)|am)
+  def: \b(?<order>(über)?nächste[rmns]?|kommende[rns]?|diese[rmns]?|vorletzte[snm]?|letzte[rmns]?|vergangene[rns]?|vorherige[rns]?|vorige[rns]?|jetzige[rns]?|heutige[rns]?|aktuelle[rns]?|gestrige[rns]?|morgige[rns]?|de[rmsn]|das(?!\s+tag)|am)
 StrictRelativeRegex: !simpleRegex
-  def: \b(?<order>(über)?nächste[rns]?|kommende[rns]?|diese[rmns]?|letzte[rns]?|vergangene[rns]?|vorherige[rns]?|vorige[rns]?|jetzige[rns]?|heutige[rns]?|aktuelle[rns]?|gestrige[rns]?|morgige[rns]?)
+  def: \b(?<order>(über)?nächste[rmns]?|kommende[rns]?|diese[rmns]?|letzte[rmns]?|vergangene[rns]?|vorherige[rns]?|vorige[rns]?|jetzige[rns]?|heutige[rns]?|aktuelle[rns]?|gestrige[rns]?|morgige[rns]?)
 UpcomingPrefixRegex: !simpleRegex
   def: .^
 # TODO: modify below regex according to the counterpart in English
 NextPrefixRegex: !nestedRegex
-  def: \b((über)?nächste[rns]?|kommende[rns]?|{UpcomingPrefixRegex})\b
+  def: \b((über)?nächste[rmns]?|kommende[rns]?|{UpcomingPrefixRegex})\b
   references: [ UpcomingPrefixRegex ]
 AfterNextPrefixRegex: !simpleRegex
-  def: \bübernächste[rns]?\b
+  def: \bübernächste[rmns]?\b
 PastPrefixRegex: !simpleRegex
   def: .^
 # TODO: modify below regex according to the counterpart in English
 PreviousPrefixRegex: !nestedRegex
-  def: \b(letzte[rns]?|vergangene[rns]?|vorherige[rns]?|vor(ige[rns]?)?|{PastPrefixRegex})\b
+  def: \b(letzte[rmns]?|vergangene[rns]?|vorherige[rns]?|vor(ige[rns]?)?|{PastPrefixRegex})\b
   references: [ PastPrefixRegex ]
 ThisPrefixRegex: !simpleRegex
   def: \b(diese[rnms]?|jetzige[rns]?|heutige[rns]?|aktuelle[rns]?)\b
@@ -92,7 +92,7 @@ BetweenRegex: !nestedRegex
   def: ((zwischen\s+)({DayRegex})(\s+{MonthSuffixRegex})?\s*{RangeConnectorRegex}\s*({DayRegex})(\s+{MonthSuffixRegex})((\s+|\s*,\s*){YearRegex})?|(zwischen\s+)({DayRegex})(\s+{MonthSuffixRegex})?\s*{RangeConnectorRegex}\s*({DayRegex})(\s+{MonthSuffixRegex})?((\s+|\s*,\s*){YearRegex})?)
   references: [ DayRegex, RangeConnectorRegex , MonthSuffixRegex, YearRegex ]
 MonthWithYear: !nestedRegex
-  def: \b((?<month>apr(il|\.)|aug(ust|\.)|dez(ember|\.)|feb(ruar|ber|\.)|januar|j[äa]n(ner|\.)|jul(e?i|l\.)|jun([io]|\.)|märz|mai|nov(ember|\.)|okt(ober|\.)|sept?(ember|\.))(\s*),?(\s+des)?(\s*)({YearRegex}|(?<order>nächsten|letzten|diese(s|n))\s+jahres))
+  def: \b((?<month>apr(il|\.)|aug(ust|\.)|dez(ember|\.)|feb(ruar|ber|\.)|januar|j[äa]n(ner|\.)|jul(e?i|l\.)|jun([io]|\.)|märz|mai|nov(ember|\.)|okt(ober|\.)|sept?(ember|\.))(\s*),?(\s+des)?(\s*)({YearRegex}|(?<order>nächste[mn]|letzte[mn]|diese(s|n))\s+jahres))
   references: [ YearRegex ]
 OneWordPeriodRegex: !nestedRegex
   def: \b((((im\s+)?monat\s+)?({RelativeRegex}\s*(jahr\s*(im\s*)?)?)?(?<month>apr(il|\.)|aug(ust|\.)|dez(ember|\.)|feb(ruar|ber|\.)|j[äa]n(uar|ner|\.)|jul(e?i|l\.)|jun([io]|\.)|märz|mai|nov(ember|\.)|okt(ober|\.)|sept?(ember|\.)))|(?<business>unter\s+der\s+woche)|({RelativeRegex}\s+)?((?<business>werktags|arbeitswoche)|woche(nende)?|monat(s)?|jahr|jahres)(?!(\s+\d+(?!({BaseDateTime.BaseAmDescRegex}|{BaseDateTime.BasePmDescRegex}))|\s+bis\s+heute)))\b
@@ -101,10 +101,10 @@ MonthNumWithYear: !nestedRegex
   def: ({YearRegex}(\s*)[/\-\.](\s*){MonthNumRegex})|({MonthNumRegex}(\s*)[/\-\.](\s*){YearRegex})
   references: [ YearRegex, MonthNumRegex ]
 WeekOfMonthRegex: !nestedRegex
-  def: (?<wom>((die|der)\s+)(?<cardinal>erste[rns]?|1\.|zweite[rns]?|2\.|dritte[rns]?|3\.|vierte[rns]?|4\.|fünfte[rns]?|5\.|letzte[rns]?)\s+woche\s+(des|diese(s|n)|im)\s+({MonthSuffixRegex}|monat(s)?))
+  def: (?<wom>((die|der)\s+)(?<cardinal>erste[rns]?|1\.|zweite[rns]?|2\.|dritte[rns]?|3\.|vierte[rns]?|4\.|fünfte[rns]?|5\.|letzte[rmns]?)\s+woche\s+(des|diese(s|n)|im)\s+({MonthSuffixRegex}|monat(s)?))
   references: [ MonthSuffixRegex ]
 WeekOfYearRegex: !nestedRegex
-  def: (?<woy>((die|der)\s+)?(?<cardinal>(erste[rns]?|1\.|zweite[rns]?|2\.|dritte[rns]?|3\.|vierte[rns]?|4\.|fünfte[rns]?|5\.|letzte[rns]?)\s+woche\s+(im|diese(s|n)|\s+des)?\s+({YearRegex}|{RelativeRegex}\s+jahr(en|es|e)?)))
+  def: (?<woy>((die|der)\s+)?(?<cardinal>(erste[rns]?|1\.|zweite[rns]?|2\.|dritte[rns]?|3\.|vierte[rns]?|4\.|fünfte[rns]?|5\.|letzte[rmns]?)\s+woche\s+(im|diese(s|n)|\s+des)?\s+({YearRegex}|{RelativeRegex}\s+jahr(en|es|e)?)))
   references: [ YearRegex, RelativeRegex ]
 FollowedDateUnit: !nestedRegex
   def: ^\s*{DateUnitRegex}
@@ -169,7 +169,7 @@ RelativeDayRegex: !nestedRegex
 SetWeekDayRegex: !simpleRegex
   def: \b(?<prefix>(an|immer)\s+)?(?<weekday>sonntag|montag|dienstag|mittwoch|donnerstag|freitag|samstag|sonnabend)(s|en)\b
 WeekDayOfMonthRegex: !nestedRegex
-  def: \b(?<wom>((an( dem)?|de[rs]|am)\s+)?(?<cardinal>erste[rns]?|1\.|zweite[rns]?|2\.|dritte[rns]?|3\.|vierte[rns]?|4\.|fünfte[rns]?|5\.|letzte[rns]?)\s+{WeekDayRegex}\s+{MonthSuffixRegex})\b
+  def: \b(?<wom>((an( dem)?|de[rs]|am)\s+)?(?<cardinal>erste[rns]?|1\.|zweite[rns]?|2\.|dritte[rns]?|3\.|vierte[rns]?|4\.|fünfte[rns]?|5\.|letzte[rmns]?)\s+{WeekDayRegex}\s+{MonthSuffixRegex})\b
   references: [ WeekDayRegex, MonthSuffixRegex ]
 RelativeWeekDayRegex: !nestedRegex
   def: \b({WrittenNumRegex}\s+{WeekDayRegex}e\s+(von\s+jetzt|später))\b
@@ -401,7 +401,7 @@ SpecialNumberUnitRegex: !simpleRegex
 SuffixAndRegex: !simpleRegex
   def: (?<suffix>\s*und\s+(eine\s+)?(?<suffix_num>halbe|viertel))
 PeriodicRegex: !simpleRegex
-  def: (?<periodic>(all)?täglich(e(r|n|s)?)?|(all)?monatlich(e(r|n|s)?)?|(all)?wöchentlich(e(r|n|s)?)?|(all)?jährlich(e(r|n|s)?)?)\b
+  def: (?<periodic>(all)?täglich(e(r|n|s)?)?|(all)?monatlich(e[rns]?)?|(all)?wöchentlich(e[rns]?)?|(all)?jährlich(e[rns]?)?)\b
 EachUnitRegex: !nestedRegex
   def: (?<each>(jede(s|r|n|m)?|alle)(?<other>\s+andere(n)?)?\s*{DurationUnitRegex})
   references: [ DurationUnitRegex ]
@@ -410,7 +410,7 @@ EachPrefixRegex: !simpleRegex
 SetEachRegex: !simpleRegex
   def: \b(?<each>(jede(r|n|s|m)?|alle|immer)\s*)
 SetLastRegex: !simpleRegex
-  def: (?<last>(über)?nächste(r|n|s)?|kommende(r|n|s)?|diese(r|n|m|s)?|letzte(r|n|s)?|vorige(r|n|s)?|vorherige(r|n|s)?|jetzige(r|n|s)?|derzeitige(r|n|s)?)\b
+  def: (?<last>(über)?nächste[rmns]?|kommende[rns]?|diese[rnms]?|letzte[rmns]?|vorige[rns]?|vorherige[rns]?|jetzige[rns]?|derzeitige[rns]?)\b
 EachDayRegex: !simpleRegex
   def: \s*(jeden)\s*tag\s*\b
 BeforeEachDayRegex: !simpleRegex
@@ -422,18 +422,18 @@ NumberCombinedWithDurationUnit: !nestedRegex
   def: \b(?<num>\d+(\.\d*)?)(-)?{DurationUnitRegex}
   references: [ DurationUnitRegex ]
 AnUnitRegex: !nestedRegex
-  def: \b(((((ein(e(r|s|n|m)?)?)(?<half>\s+halb(e(s|r|n)?))?))\s+{DurationUnitRegex})|((ein(e(r|s|n|m)?)?)\s+((?<quarter>viertel)|(?<threequarter>dreiviertel))(?<unit>stunde)))
+  def: \b(((((ein(e[rsnm]?)?)(?<half>\s+halb(e[srn]?))?))\s+{DurationUnitRegex})|((ein(e[rsnm]?)?)\s+((?<quarter>viertel)|(?<threequarter>dreiviertel))(?<unit>stunde)))
   references: [ DurationUnitRegex ]
 DuringRegex: !simpleRegex
   def: \b(während|im\slaufe)\s+(de[sr])\s+(?<unit>jahres|monats|woche|tages)\b
 AllRegex: !simpleRegex
-  def: \b(?<all>ganz(e(n|s|r)?)\s+(?<unit>jahr|monat|woche|tag))\b
+  def: \b(?<all>ganz(e[nsr]?)\s+(?<unit>jahr|monat|woche|tag))\b
 HalfRegex: !simpleRegex
-  def: (((ein(e(n|r|s)?)?)\s*)|\b)(?<half>halb(e(n|r|s)?)?\s+(?<unit>jahr(e(r|s)?)?|monat(s|e)?|woch(en?)?|tag(e(n|r|s)?)?|stund(en?)?))\b
+  def: (((ein(e[nrs]?)?)\s*)|\b)(?<half>halb(e[nrs]?)?\s+(?<unit>jahr(e[rs]?)?|monat[se]?|woch(en?)?|tag(e[nrs]?)?|stund(en?)?))\b
 ConjunctionRegex: !simpleRegex
   def: \b((und(\s+für)?)|mit|für)\b
 HolidayRegex1: !nestedRegex
-  def: \b((dieses jahr)\s*)?(?<holiday>reformations(tag|fest)|gedenktag der reformation|martinstag|st. martin|sankt martin|martinsfest|martini|nikolaustag|dreikönigstag|dreikönigsfest|walpurgisnacht|nationalfeiertag|mariä empfängnis|weihnachten|weihnachts(feier)?tag|erste(r|n)? weihnachtstag|1. weihnachtstag|erste(r|n)? weihnachtsfeiertag|1\. weihnachtsfeiertag|zweite(r|n)? weihnachtstag|zweite(r|n)? weihnachtsfeiertag|2\. weihnachtstag|zweite(r|n)? weihnachtsfeiertag|stefanitag|stafanstag|berchtoldstag|bechtelistag|bächtelistag|berchtelistag|bärzelistag|josefstag|joseftag|josefitag|pfingsten|ostermontag|ostersonntag|bundesfeiertag|bundesfeier|mariä himmelfahrt|tag der deutschen einheit|ostern|vatertag|muttertag|erntedank(fest)?|thanksgiving|martin luther king day|martin luther king jr day|washington's birthday|washington birthday|canberraday|tag der arbeit|columbus day|memorial day|yuandan|mao's birthday|teachersday|teacher day|single day|tag der jugend|kindertag|(Internationaler\s+)?frauentag|treeplanting day|tag des baumes|girlsday|white lover day|loverday|weihnachten|weihnachtstag|xmas|neujahr|neujahrstag|neujahr|neujahrstag|neujahr|inauguration day|murmeltiertag|sommeranfang|winteranfang|frühlingsanfang|herbstanfang|valentinstag|st patrick day|erster april|april scherz|georgstag|mayday|maitag|maifeiertag|geburt johannes des täufers|us unabhängigkeitstag|unabhängigkeitstag|sturm auf die bastille|halloween|guy fawkes day|guy fawkes night|veterans day|heiligabend|silvester|pi-tag|pitag|pi (tag|day))(\s+((diesen)\s+)?(im jahr {YearRegex}|{YearRegex}|(im\s+)?{RelativeRegex}\s+jahr(es)?))?\b
+  def: \b((dieses jahr)\s*)?(?<holiday>reformations(tag|fest)|gedenktag der reformation|martinstag|st. martin|sankt martin|martinsfest|martini|nikolaustag|dreikönigstag|dreikönigsfest|walpurgisnacht|nationalfeiertag|mariä empfängnis|weihnachten|weihnachts(feier)?tag|erste(r|n)? weihnachtstag|1\. weihnachtstag|erste(r|n)? weihnachtsfeiertag|1\. weihnachtsfeiertag|zweite(r|n)? weihnachtstag|zweite(r|n)? weihnachtsfeiertag|2\. weihnachtstag|zweite(r|n)? weihnachtsfeiertag|2\. weihnachtsfeiertag|stefanitag|stafanstag|berchtoldstag|bechtelistag|bächtelistag|berchtelistag|bärzelistag|josefstag|joseftag|josefitag|pfingsten|ostermontag|ostersonntag|bundesfeiertag|bundesfeier|mariä himmelfahrt|tag der deutschen einheit|ostern|vatertag|muttertag|erntedank(fest)?|thanksgiving|martin luther king day|martin luther king jr day|washington's birthday|washington birthday|canberraday|tag der arbeit|columbus day|memorial day|yuandan|mao's birthday|teachersday|teacher day|single day|tag der jugend|kindertag|(Internationaler\s+)?frauentag|treeplanting day|tag des baumes|girlsday|white lover day|loverday|weihnachten|weihnachtstag|xmas|neujahr|neujahrstag|neujahr|neujahrstag|neujahr|inauguration day|murmeltiertag|sommeranfang|winteranfang|frühlingsanfang|herbstanfang|valentinstag|st patrick day|erster april|april scherz|georgstag|mayday|maitag|maifeiertag|geburt johannes des täufers|us unabhängigkeitstag|unabhängigkeitstag|sturm auf die bastille|halloween|guy fawkes day|guy fawkes night|veterans day|heiligabend|silvester|pi-tag|pitag|pi (tag|day))(\s+((diesen)\s+)?(im jahr {YearRegex}|{YearRegex}|(im\s+)?{RelativeRegex}\s+jahr(es)?))?\b
   references: [ YearRegex, RelativeRegex ]
 HolidayRegex2: !nestedRegex
   def: \b((dieses jahr)\s*)?(?<holiday>martin luther king|martin luther king jr|allerheiligen|tree planting day|white lover|st patrick|st george|independence|us independence|allerseelen|guy fawkes|silvester|weiberfastnacht|karneval|aschermittwoch|palm(en)?sonntag|karsamstag|fastnachtssamstag|fastnachtssonntag|heilige drei könige|barbaratag|reformationstag|weltkindertag|augsburger friedensfest|johannistag|peter und paul|karfreitag|christi himmelfahrt|pfingstsonntag|pfingstmontag|fronleichnam|rosenmontag|fastnacht|gründonnerstag|himmelfahrt|volkstrauertag|buß und bettag|buß- und bettag|buss- und bettag|buss und bettag|toten(sonntag|fest)|ewigkeitssonntag|erste(r|n)? advent|1\. advent|zweite(r|n)? advent|2\. advent|dritte(r|n)? advent|3\. advent|vierte(r|n)? advent|4\. advent|schweizer buss- und bettag|schweizer buss und bettag|schweizer buß und bettag|schweizer buß- und bettag)(\s+((diesen)\s+)?(im jahr {YearRegex}|{YearRegex}|(im\s+)?{RelativeRegex}\s+jahr(es)?))?\b
@@ -1185,6 +1185,7 @@ FutureTerms: !list
     - nächster
     - nächstes
     - nächsten
+    - nächstem
     - nächste
 LastCardinalTerms: !list
   types: [ string ]
@@ -1192,6 +1193,7 @@ LastCardinalTerms: !list
     - letzter
     - letztes
     - letzten
+    - letztem
 MonthTerms: !list
   types: [ string ]
   entries:
