@@ -4,7 +4,6 @@
 from abc import ABC, abstractmethod
 from typing import Dict, List, Optional
 from collections import namedtuple
-from decimal import Decimal
 
 from .constants import *
 from .utilities import DictionaryUtility
@@ -96,7 +95,7 @@ class NumberWithUnitParser(Parser):
             normalized_last_unit = normalized_last_unit[len(
                 self.config.connector_token):].strip()
             last_unit = last_unit[len(self.config.connector_token):].strip()
-        
+
         last_unit = self.__delete_brackets_if_exists(last_unit)
         normalized_last_unit = self.__delete_brackets_if_exists(normalized_last_unit)
 
@@ -143,10 +142,10 @@ class NumberWithUnitParser(Parser):
         if (unit.startswith('<') and unit.endswith('>')):
             has_brackets = True
 
-        if  has_brackets is True:
-            unit = unit[1 : len(unit) - 1]
-            
-        return unit       
+        if has_brackets is True:
+            unit = unit[1: len(unit) - 1]
+
+        return unit
 
 
 class BaseCurrencyParser(Parser):
