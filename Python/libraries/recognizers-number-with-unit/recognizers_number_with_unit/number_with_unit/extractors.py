@@ -246,14 +246,12 @@ class NumberWithUnitExtractor(Extractor):
                                 if mid_str is None or not mid_str or str.isspace(mid_str) \
                                         or mid_str.strip() == self.config.connector_token:
                                     max_len = end_pos
-                                if m.end < len(source) and ( \
+                                if m.end < len(source) and (
                                     (mid_str.endswith('(') and source[m.end] == ')') or
-                                    (mid_str.endswith('[') and source[m.end] == ']') or 
-                                    (mid_str.endswith('{') and source[m.end] == '}') or 
-                                    (mid_str.endswith('<') and source[m.end] == '>')):
+                                    (mid_str.endswith('[') and source[m.end] == ']') or
+                                    (mid_str.endswith('{') and source[m.end] == '}') or
+                                        (mid_str.endswith('<') and source[m.end] == '>')):
                                     max_len = m.end - first_index + 1
-
-                                
 
                     if max_len != 0:
                         substr = source[start: start + length + max_len]
@@ -290,7 +288,7 @@ class NumberWithUnitExtractor(Extractor):
 
                         if is_not_unit:
                             continue
-                        
+
                         result.append(er)
 
                 if prefix_unit and prefix_unit is not None and not prefix_matched:
