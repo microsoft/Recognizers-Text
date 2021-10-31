@@ -124,63 +124,63 @@ def test_datatypes_relativeconvert_datetime_yesterday():
 
 
 def test_datatypes_relativeconvert_daterange_this_week():
-    timex = Timex(timex='2017-W40')
+    timex = Timex(timex='2017-W39')
     today = datetime(2017, 9, 25)
 
     assert TimexRelativeConvert.convert_timex_to_string_relative(timex, today) == 'this week'
 
 
 def test_datatypes_relativeconvert_daterange_next_week():
-    timex = Timex(timex='2017-W41')
+    timex = Timex(timex='2017-W40')
     today = datetime(2017, 9, 25)
 
     assert TimexRelativeConvert.convert_timex_to_string_relative(timex, today) == 'next week'
 
 
 def test_datatypes_relativeconvert_daterange_last_week():
-    timex = Timex(timex='2017-W39')
+    timex = Timex(timex='2017-W38')
     today = datetime(2017, 9, 25)
 
     assert TimexRelativeConvert.convert_timex_to_string_relative(timex, today) == 'last week'
 
 
 def test_datatypes_relativeconvert_daterange_this_week_2():
-    timex = Timex(timex='2017-W41')
+    timex = Timex(timex='2017-W40')
     today = datetime(2017, 10, 4)
 
     assert TimexRelativeConvert.convert_timex_to_string_relative(timex, today) == 'this week'
 
 
 def test_datatypes_relativeconvert_daterange_next_week_2():
-    timex = Timex(timex='2017-W42')
+    timex = Timex(timex='2017-W41')
     today = datetime(2017, 10, 4)
 
     assert TimexRelativeConvert.convert_timex_to_string_relative(timex, today) == 'next week'
 
 
 def test_datatypes_relativeconvert_daterange_last_week_2():
-    timex = Timex(timex='2017-W40')
+    timex = Timex(timex='2017-W39')
     today = datetime(2017, 10, 4)
 
     assert TimexRelativeConvert.convert_timex_to_string_relative(timex, today) == 'last week'
 
 
 def test_datatypes_relativeconvert_daterange_this_weekend():
-    timex = Timex(timex='2017-W40-WE')
+    timex = Timex(timex='2017-W39-WE')
     today = datetime(2017, 9, 25)
 
     assert TimexRelativeConvert.convert_timex_to_string_relative(timex, today) == 'this weekend'
 
 
 def test_datatypes_relativeconvert_daterange_next_weekend():
-    timex = Timex(timex='2017-W41-WE')
+    timex = Timex(timex='2017-W40-WE')
     today = datetime(2017, 9, 25)
 
     assert TimexRelativeConvert.convert_timex_to_string_relative(timex, today) == 'next weekend'
 
 
 def test_datatypes_relativeconvert_daterange_last_weekend():
-    timex = Timex(timex='2017-W39-WE')
+    timex = Timex(timex='2017-W38-WE')
     today = datetime(2017, 9, 25)
 
     assert TimexRelativeConvert.convert_timex_to_string_relative(timex, today) == 'last weekend'
