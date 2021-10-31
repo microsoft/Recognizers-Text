@@ -4905,5 +4905,53 @@
         }
       }
     ]
+  },
+  {
+    "Input": "nächstem Jahr.",
+    "Context": {
+      "ReferenceDateTime": "2021-11-01T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "nächstem jahr",
+        "Start": 0,
+        "End": 12,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2022",
+              "type": "daterange",
+              "start": "2022-01-01",
+              "end": "2023-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "letztem Jahr.",
+    "Context": {
+      "ReferenceDateTime": "2021-11-01T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "letztem jahr",
+        "Start": 0,
+        "End": 11,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020",
+              "type": "daterange",
+              "start": "2020-01-01",
+              "end": "2021-01-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

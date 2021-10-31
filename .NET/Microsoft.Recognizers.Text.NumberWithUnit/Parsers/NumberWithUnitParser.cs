@@ -124,7 +124,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     var numValue = string.IsNullOrEmpty(numberResult.Text) ?
                         null :
                         this.Config.InternalNumberParser.Parse(numberResult);
+
                     var resolution_str = numValue?.ResolutionStr;
+
                     if (halfResult != null)
                     {
                         var halfValue = this.Config.InternalNumberParser.Parse(halfResult);
@@ -136,6 +138,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         Number = resolution_str,
                         Unit = unitValue,
                     };
+
                     ret.ResolutionStr = $"{numValue?.ResolutionStr} {unitValue}".Trim();
 
                     if (extResult.Type.Equals(Constants.SYS_UNIT_DIMENSION, StringComparison.Ordinal) &&
