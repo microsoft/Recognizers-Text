@@ -440,6 +440,28 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         }
 
         [TestMethod]
+        public void DataTypes_Resolver_DateRange_First_Week()
+        {
+            var today = new System.DateTime(2021, 1, 1);
+
+            var resolution = TimexResolver.Resolve(new[] { "2021-W01" }, today);
+            Assert.AreEqual(1, resolution.Values.Count);
+
+            Assert.AreEqual("2021-W01", resolution.Values[0].Timex);
+            Assert.AreEqual("daterange", resolution.Values[0].Type);
+            Assert.AreEqual("2021-01-04", resolution.Values[0].Start);
+            Assert.AreEqual("2021-01-11", resolution.Values[0].End);
+
+            resolution = TimexResolver.Resolve(new[] { "2020-W01" }, today);
+            Assert.AreEqual(1, resolution.Values.Count);
+
+            Assert.AreEqual("2020-W01", resolution.Values[0].Timex);
+            Assert.AreEqual("daterange", resolution.Values[0].Type);
+            Assert.AreEqual("2019-12-30", resolution.Values[0].Start);
+            Assert.AreEqual("2020-01-06", resolution.Values[0].End);
+        }
+
+        [TestMethod]
         public void DataTypes_Resolver_DateRange_Last_Week()
         {
             var today = new System.DateTime(2019, 4, 30);
