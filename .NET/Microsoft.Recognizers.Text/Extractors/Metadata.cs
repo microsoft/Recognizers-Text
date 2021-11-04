@@ -30,6 +30,9 @@ namespace Microsoft.Recognizers.Text
         // For cases where a language has variations in handling decimal separators
         public bool TreatAsInteger { get; set; } = false;
 
+        // Used to split dates when the weekday does not agree with the day
+        public int SplitIndex { get; set; } = 0;
+
         public Metadata Clone()
         {
             return (Metadata)MemberwiseClone();

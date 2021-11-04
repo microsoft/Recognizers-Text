@@ -146,6 +146,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             tokens.AddRange(NumberWithMonth(text, reference));
             tokens.AddRange(ExtractRelativeDurationDate(text, tokens, reference));
 
+            tokens = TruncateInconsistentDates(tokens);
+
             var results = Token.MergeAllTokens(tokens, text, ExtractorName);
 
             return results;
@@ -179,6 +181,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                             results.Add(new Token(match.Index, match.Index + match.Length));
                         }
 
+                        // Check if prefix weekday and date agree
+                        results = ValidateWeekdayPrefix(match, results);
                     }
                 }
             }
@@ -191,11 +195,11 @@ namespace Microsoft.Recognizers.Text.DateTime
         private bool ValidateMatch(Match match, string text)
         {
             // If the match doesn't contains "year" part, it will not be ambiguous and it's a valid match
-            var isValidMatch = !match.Groups["year"].Success;
+            var isValidMatch = !match.Groups[Constants.YearGroupName].Success;
 
             if (!isValidMatch)
             {
-                var yearGroup = match.Groups["year"];
+                var yearGroup = match.Groups[Constants.YearGroupName];
 
                 // If the "year" part is not at the end of the match, it's a valid match
                 if (yearGroup.Index + yearGroup.Length != match.Index + match.Length)
@@ -222,11 +226,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 // Expressions with mixed separators are not considered valid dates e.g. "30/4.85" (unless one is a comma "30/4, 2016")
-                if (match.Groups["day"].Success && match.Groups["month"].Success)
+                if (match.Groups[Constants.DayGroupName].Success && match.Groups[Constants.MonthGroupName].Success)
                 {
-                    var noDateText = match.Value.Replace(match.Groups["year"].Value, string.Empty)
-                        .Replace(match.Groups["month"].Value, string.Empty)
-                        .Replace(match.Groups["day"].Value, string.Empty);
+                    var noDateText = match.Value.Replace(match.Groups[Constants.YearGroupName].Value, string.Empty)
+                        .Replace(match.Groups[Constants.MonthGroupName].Value, string.Empty)
+                        .Replace(match.Groups[Constants.DayGroupName].Value, string.Empty);
                     var separators = new List<char> { '/', '\\', '-', '.' };
 
                     if (separators.Count(separator => noDateText.Contains(separator)) > 1)
@@ -331,7 +335,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         var endIndex = match.Index + match.Length + (result.Length ?? 0);
 
                         ExtendWithWeekdayAndYear(
-                            ref startIndex, ref endIndex, Config.MonthOfYear.GetValueOrDefault(match.Groups["month"].Value, reference.Month),
+                            ref startIndex, ref endIndex, Config.MonthOfYear.GetValueOrDefault(match.Groups[Constants.MonthGroupName].Value, reference.Month),
                             num, text, reference);
 
                         ret.Add(new Token(startIndex, endIndex));
@@ -345,7 +349,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         if (matchCase.Success)
                         {
-                            var ordinalNum = matchCase.Groups["DayOfMonth"].Value;
+                            var ordinalNum = matchCase.Groups[Constants.DayOfMonthGroupName].Value;
                             if (ordinalNum == result.Text)
                             {
                                 var endLength = 0;
@@ -372,8 +376,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         if (matchCase.Success)
                         {
-                            var ordinalNum = matchCase.Groups["DayOfMonth"].Value;
-                            if (ordinalNum == result.Text && matchCase.Groups["DayOfMonth"].Index == result.Start)
+                            var ordinalNum = matchCase.Groups[Constants.DayOfMonthGroupName].Value;
+                            if (ordinalNum == result.Text && matchCase.Groups[Constants.DayOfMonthGroupName].Index == result.Start)
                             {
                                 // Get week of day for the ordinal number which is regarded as a date of reference month
                                 var date = DateObject.MinValue.SafeCreateFromValue(reference.Year, reference.Month, num);
@@ -381,7 +385,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                                 // Get week day from text directly, compare it with the weekday generated above
                                 // to see whether they refer to the same week day
-                                var extractedWeekDayStr = matchCase.Groups["weekday"].Value;
+                                var extractedWeekDayStr = matchCase.Groups[Constants.WeekdayGroupName].Value;
 
                                 if (!date.Equals(DateObject.MinValue) &&
                                     numWeekDayInt == Config.DayOfWeek[extractedWeekDayStr])
@@ -455,7 +459,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     if (beginMatch.Success && num >= 1 && num <= 5
                         && result.Type.Equals(Number.Constants.SYS_NUM_ORDINAL, StringComparison.Ordinal))
                     {
-                        var weekDayStr = beginMatch.Groups["weekday"].Value;
+                        var weekDayStr = beginMatch.Groups[Constants.WeekdayGroupName].Value;
                         if (this.Config.DayOfWeek.ContainsKey(weekDayStr))
                         {
                             var spaceLen = suffixStr.Length - suffixStr.Trim().Length;
@@ -476,7 +480,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         var endIndex = (result.Start + result.Length ?? 0) + match.Length;
 
                         ExtendWithWeekdayAndYear(ref startIndex, ref endIndex,
-                                                 Config.MonthOfYear.GetValueOrDefault(match.Groups["month"].Value, reference.Month),
+                                                 Config.MonthOfYear.GetValueOrDefault(match.Groups[Constants.MonthGroupName].Value, reference.Month),
                                                  num, text, reference);
 
                         ret.Add(new Token(startIndex, endIndex));
@@ -520,7 +524,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 // Get weekday from context directly, compare it with the weekday extraction above
                 // to see whether they reference the same weekday
-                var extractedWeekDayStr = matchWeekDay.Groups["weekday"].Value;
+                var extractedWeekDayStr = matchWeekDay.Groups[Constants.WeekdayGroupName].Value;
                 var numWeekDayStr = date.DayOfWeek.ToString().ToLowerInvariant();
 
                 if (Config.DayOfWeek.TryGetValue(numWeekDayStr, out var weekDay1) &&
@@ -691,6 +695,121 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return index;
+        }
+
+        // Remove weekday prefix when it does not agree with date
+        private List<Token> TruncateInconsistentDates(List<Token> tokens)
+        {
+            var newTokens = new List<Token>();
+            var splitIndices = tokens.Select(o => o.Metadata != null ? o.Metadata.SplitIndex : 0).ToList();
+            splitIndices.RemoveAll(i => i == 0);
+
+            foreach (var token in tokens)
+            {
+                var newToken = token;
+                foreach (var index in splitIndices)
+                {
+                    if (index < token.End && index > token.Start)
+                    {
+                        newToken = new Token(index, token.End);
+                        break;
+                    }
+                }
+
+                newTokens.Add(newToken);
+            }
+
+            return newTokens;
+        }
+
+        // Check if weekday prefix agrees with date
+        private List<Token> ValidateWeekdayPrefix(Match match, List<Token> results)
+        {
+            if (match.Groups[Constants.WeekdayGroupName].Success && match.Groups[Constants.DayPrefixGroupName].Success)
+            {
+                // If a span has already been checked, skip
+                for (int i = 0; i < results.Count - 1; i++)
+                {
+                    if (match.Index == results[i].Start && match.Index + match.Length == results[i].End)
+                    {
+                        return results;
+                    }
+                }
+
+                var date = ParseDate(match);
+                if (date > DateObject.MinValue)
+                {
+                    // Get weekday from date
+                    var numWeekDayInt = (int)date.DayOfWeek;
+
+                    // Get weekday from text directly, compare it with the weekday generated above
+                    // to see whether they refer to the same day
+                    var extractedWeekDayStr = match.Groups[Constants.WeekdayGroupName].Value;
+
+                    // If weekdays do not agree, add metadata to token so that prefix will be removed
+                    if (numWeekDayInt != Config.DayOfWeek[extractedWeekDayStr])
+                    {
+                        var startPrefix = match.Groups[Constants.DayPrefixGroupName].Index;
+                        var endPrefix = startPrefix + match.Groups[Constants.DayPrefixGroupName].Length;
+                        var splitIndex = match.Groups[Constants.DayGroupName].Index >= endPrefix ? endPrefix : 0;
+
+                        var metadata = new Metadata { SplitIndex = splitIndex };
+                        var newToken = new Token(results[results.Count - 1].Start, results[results.Count - 1].End, metadata);
+                        results[results.Count - 1] = newToken;
+                    }
+                }
+            }
+
+            return results;
+        }
+
+        // Parse date from match
+        private DateObject ParseDate(Match match)
+        {
+            // Get year
+            var isYearParsed = int.TryParse(match.Groups[Constants.YearGroupName].Value, out var year);
+
+            // Get month
+            var isMonthParsed = int.TryParse(match.Groups[Constants.MonthGroupName].Value, out var month);
+            if (!isMonthParsed)
+            {
+                isMonthParsed = Config.MonthOfYear.TryGetValue(match.Groups[Constants.MonthGroupName].Value, out month);
+            }
+
+            // Get day
+            var day = 0;
+            if (isYearParsed && isMonthParsed)
+            {
+                var dayStr = match.Groups[Constants.DayGroupName].Value;
+
+                var isDayParsed = int.TryParse(dayStr, out day);
+                if (!isDayParsed)
+                {
+                    var dayErs = Config.OrdinalExtractor.Extract(dayStr);
+                    if (dayErs.Count == 0)
+                    {
+                        dayErs.AddRange(this.Config.IntegerExtractor.Extract(dayStr));
+                    }
+
+                    foreach (var er in dayErs)
+                    {
+                        isDayParsed = int.TryParse((this.Config.NumberParser.Parse(er).Value ?? 0).ToString(), out day);
+                        if (isDayParsed)
+                        {
+                            break;
+                        }
+                    }
+                }
+            }
+
+            // Create date
+            var date = DateObject.MinValue;
+            if (day > 0 && day <= 31)
+            {
+                date = date.SafeCreateFromValue(year, month, day);
+            }
+
+            return date;
         }
     }
 }

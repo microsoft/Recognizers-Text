@@ -21356,5 +21356,147 @@
         }
       }
     ]
+  },
+  {
+    "Input": "This task must be completed on Monday, 9/2/2021 is the delivery date.",
+    "Context": {
+      "ReferenceDateTime": "2019-05-20T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "monday",
+        "Start": 31,
+        "End": 36,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-1",
+              "type": "date",
+              "value": "2019-05-13"
+            },
+            {
+              "timex": "XXXX-WXX-1",
+              "type": "date",
+              "value": "2019-05-20"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "9/2/2021",
+        "Start": 39,
+        "End": 46,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-09-02",
+              "type": "date",
+              "value": "2021-09-02"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "This task must be completed on Thursday, 9/2/2021.",
+    "Context": {
+      "ReferenceDateTime": "2019-05-20T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "thursday, 9/2/2021",
+        "Start": 31,
+        "End": 48,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-09-02",
+              "type": "date",
+              "value": "2021-09-02"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Summer ends Tuesday, September the 22nd 2021 is the first day of Autumn.",
+    "Context": {
+      "ReferenceDateTime": "2021-09-17T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "summer",
+        "Start": 0,
+        "End": 5,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "SU",
+              "type": "daterange",
+              "value": "not resolved"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "tuesday",
+        "Start": 12,
+        "End": 18,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-2",
+              "type": "date",
+              "value": "2021-09-14"
+            },
+            {
+              "timex": "XXXX-WXX-2",
+              "type": "date",
+              "value": "2021-09-21"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "september the 22nd 2021",
+        "Start": 21,
+        "End": 43,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-09-22",
+              "type": "date",
+              "value": "2021-09-22"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "autumn",
+        "Start": 65,
+        "End": 70,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "FA",
+              "type": "daterange",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
