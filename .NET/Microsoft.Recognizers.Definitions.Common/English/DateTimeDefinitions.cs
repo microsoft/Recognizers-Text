@@ -755,6 +755,14 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"^(apr|aug|dec|feb|jan|jul|jun|mar|may|nov|oct|sept?)$", @"([$%£&!?@#])(apr|aug|dec|feb|jan|jul|jun|mar|may|nov|oct|sept?)|(apr|aug|dec|feb|jan|jul|jun|mar|may|nov|oct|sept?)([$%£&@#])" },
             { @"^(to\s+date)$", @"\b((equals?|up)\s+to\s+date)\b" }
         };
+      public static readonly Dictionary<string, string> AmbiguityTimeFiltersDict = new Dictionary<string, string>
+        {
+            { @"^(\p{L}+|\d{1,2})(\s+(morning|afternoon|evening|night))?$", @"\b(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|\d{1,2})\s+(morning|afternoon|evening|night)\b" }
+        };
+      public static readonly Dictionary<string, string> AmbiguityDurationFiltersDict = new Dictionary<string, string>
+        {
+            { @"night$", @"\bnight(\s*|-)(club|light|market|shift|work(er)?)s?\b" }
+        };
       public static readonly IList<string> MorningTermList = new List<string>
         {
             @"morning"

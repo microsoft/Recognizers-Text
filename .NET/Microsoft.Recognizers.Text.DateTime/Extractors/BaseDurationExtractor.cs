@@ -3,6 +3,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
@@ -37,6 +38,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             tokens.AddRange(ImplicitDuration(text));
 
             var rets = Token.MergeAllTokens(tokens, text, ExtractorName);
+
+            // Remove common ambiguous cases
+            rets = FilterAmbiguity(rets, text);
 
             // First MergeMultipleDuration then ResolveMoreThanOrLessThanPrefix so cases like "more than 4 days and less than 1 week" will not be merged into one "multipleDuration"
             if (this.merge)
@@ -354,6 +358,27 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return results;
+        }
+
+        private List<ExtractResult> FilterAmbiguity(List<ExtractResult> extractResults, string text)
+        {
+            if (this.config.AmbiguityFiltersDict != null)
+            {
+                foreach (var regex in this.config.AmbiguityFiltersDict)
+                {
+                    foreach (var extractResult in extractResults)
+                    {
+                        if (regex.Key.IsMatch(extractResult.Text))
+                        {
+                            var matches = regex.Value.Matches(text).Cast<Match>();
+                            extractResults = extractResults.Where(er => !matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start))
+                                .ToList();
+                        }
+                    }
+                }
+            }
+
+            return extractResults;
         }
     }
 }
