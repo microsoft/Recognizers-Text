@@ -1207,8 +1207,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-30T12:00:00"
     },
-    "Comment": "Currently not supported because 'three night' is extracted as duration.",
-    "NotSupported": "dotnet, java, javascript, python",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "night",

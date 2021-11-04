@@ -1184,7 +1184,11 @@ AmbiguityFiltersDict: !dictionary
 AmbiguityTimeFiltersDict: !dictionary
   types: [ string, string ]
   entries:
-    '^(\p{L}+|\d{1,2})\s+(morning|afternoon|evening|night)$': '\b(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|\d{1,2})\s+(morning|afternoon|evening|night)\b'
+    '^(\p{L}+|\d{1,2})(\s+(morning|afternoon|evening|night))?$': '\b(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|\d{1,2})\s+(morning|afternoon|evening|night)\b'
+AmbiguityDurationFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    'night$': '\bnight(\s*|-)(club|light|market|shift|work(er)?)s?\b'
 # For TimeOfDay resolution
 MorningTermList: !list
   types: [ string ]
