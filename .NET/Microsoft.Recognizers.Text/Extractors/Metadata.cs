@@ -23,6 +23,9 @@ namespace Microsoft.Recognizers.Text
 
         public string Offset { get; set; } = string.Empty;
 
+        // For extractions that contain a holiday substring
+        public string HolidayName { get; set; } = string.Empty;
+
         public string RelativeTo { get; set; } = string.Empty;
 
         public bool IsMealtime { get; set; } = false;

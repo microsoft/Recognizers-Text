@@ -166,6 +166,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex CenturySuffixRegex =
             new Regex(DateTimeDefinitions.CenturySuffixRegex, RegexFlags);
 
+        public static readonly Regex HolidayWeekendRegex =
+            new Regex(DateTimeDefinitions.HolidayWeekendRegex, RegexFlags);
+
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly Regex FromTokenRegex =
@@ -241,6 +244,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
             // "this week", "same year"
             ReferenceDatePeriodRegex,
+
+            // "thanksgiving weekend", "halloween weekend"
+            HolidayWeekendRegex,
         };
 
         public EnglishDatePeriodExtractorConfiguration(IDateTimeOptionsConfiguration config)

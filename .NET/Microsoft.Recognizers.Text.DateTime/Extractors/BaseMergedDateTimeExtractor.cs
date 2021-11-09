@@ -242,6 +242,17 @@ namespace Microsoft.Recognizers.Text.DateTime
                         }
                         else
                         {
+                            if (result.Metadata?.IsHoliday ?? false)
+                            {
+                                if (dst[i].Metadata is null)
+                                {
+                                    dst[i].Metadata = new Metadata();
+                                }
+
+                                dst[i].Metadata.IsHoliday = true;
+                                dst[i].Metadata.HolidayName = result.Text;
+                            }
+
                             break;
                         }
                     }

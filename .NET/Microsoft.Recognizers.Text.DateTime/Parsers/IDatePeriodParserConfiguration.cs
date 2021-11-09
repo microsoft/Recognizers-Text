@@ -22,6 +22,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IDateTimeParser DurationParser { get; }
 
+        IDateTimeParser HolidayParser { get; }
+
         IDateTimeParser DateParser { get; }
 
         Regex MonthFrontBetweenRegex { get; }

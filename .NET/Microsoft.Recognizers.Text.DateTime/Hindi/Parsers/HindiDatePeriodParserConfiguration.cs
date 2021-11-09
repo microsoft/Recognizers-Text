@@ -134,6 +134,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
 
         public IDateTimeParser DurationParser { get; }
 
+        public IDateTimeParser HolidayParser { get; }
+
         public Regex MonthFrontBetweenRegex { get; }
 
         public Regex BetweenRegex { get; }
