@@ -21172,6 +21172,118 @@
     ]
   },
   {
+    "Input": "I want to book a flight for the weekend of halloween",
+    "Context": {
+        "ReferenceDateTime": "2021-11-09T18:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "the weekend of halloween",
+        "Start": 28,
+        "End": 51,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-10-31",
+              "type": "daterange",
+              "start": "2021-10-30",
+              "end": "2021-11-01"
+            },
+            {
+              "timex": "XXXX-10-31",
+              "type": "daterange",
+              "start": "2022-10-29",
+              "end": "2022-11-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I want to book a flight for halloween weekend 2021",
+    "Context": {
+        "ReferenceDateTime": "2021-11-09T18:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "halloween weekend 2021",
+        "Start": 28,
+        "End": 49,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-W43-WE",
+              "type": "daterange",
+              "start": "2021-10-30",
+              "end": "2021-11-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I need to prepare for labor day weekend",
+    "Context": {
+        "ReferenceDateTime": "2021-11-09T18:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "labor day weekend",
+        "Start": 22,
+        "End": 38,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-09-WXX-1-1",
+              "type": "daterange",
+              "start": "2021-09-04",
+              "end": "2021-09-07"
+            },
+            {
+              "timex": "XXXX-09-WXX-1-1",
+              "type": "daterange",
+              "start": "2022-09-03",
+              "end": "2022-09-06"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "We'll take weekend of thanksgiving 2023 off",
+    "Context": {
+        "ReferenceDateTime": "2021-11-09T18:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "weekend of thanksgiving 2023",
+        "Start": 11,
+        "End": 38,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2023-W47-WE",
+              "type": "daterange",
+              "start": "2023-11-23",
+              "end": "2023-11-27"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "The Employer operates a policy of job flexibility and the Employer may, at its discretion, require you to perform additional or other duties, whether skilled or unskilled, not within the scope of your normal duties and may at its discretion amend your Job Description at any time.",
     "Context": {
         "ReferenceDateTime": "2021-06-18T18:00:00"

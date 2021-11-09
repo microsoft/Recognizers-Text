@@ -1806,7 +1806,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ret = new DateTimeResolutionResult();
             var text = er.Text;
 
-            if (!(string.IsNullOrEmpty(er.Metadata?.HolidayName) && this.config.IsWeekend(text)))
+            if (string.IsNullOrEmpty(er.Metadata?.HolidayName) || !this.config.IsWeekend(text))
             {
                 return ret;
             }
