@@ -249,7 +249,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                                     dst[i].Metadata = new Metadata();
                                 }
 
-                                dst[i].Metadata.IsHoliday = true;
                                 dst[i].Metadata.HolidayName = result.Text;
                             }
 
