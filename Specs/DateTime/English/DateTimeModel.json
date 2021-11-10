@@ -21356,5 +21356,79 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I was born in April of 1987",
+    "Context": {
+      "ReferenceDateTime": "2018-01-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "april of 1987",
+        "Start": 14,
+        "End": 26,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1987-04",
+              "type": "daterange",
+              "start": "1987-04-01",
+              "end": "1987-05-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I was born in April of 87",
+    "Context": {
+      "ReferenceDateTime": "2018-01-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "april of 87",
+        "Start": 14,
+        "End": 24,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1987-04",
+              "type": "daterange",
+              "start": "1987-04-01",
+              "end": "1987-05-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I was born on 15 April of 87",
+    "Context": {
+      "ReferenceDateTime": "2018-01-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "15 april of 87",
+        "Start": 14,
+        "End": 27,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1987-04-15",
+              "type": "date",
+              "value": "1987-04-15"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
