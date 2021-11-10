@@ -1811,17 +1811,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return ret;
             }
 
-            var trimmedText = text.Trim();
             var holidayName = er.Metadata.HolidayName;
-
-            // for cases like "halloween weekend 2021"
-            var yearCapturedInText = this.config.YearRegex.Match(trimmedText);
-            var yearCapturedInHoliday = this.config.YearRegex.Match(er.Metadata.HolidayName);
-
-            if (yearCapturedInText.Value != yearCapturedInHoliday.Value)
-            {
-                holidayName += " " + yearCapturedInText.Value;
-            }
 
             // resolve holiday
             var holidayEr = new ExtractResult

@@ -242,21 +242,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                         }
                         else
                         {
-                            // The objective here is to not lose the information of the holiday name when choosing
-                            // to disregard an extracted holiday date entity.
-                            // The 'result' variable may for example be "christmas", while dst[i] is "christams 2021 weekend".
-                            // Before disregarding "christmas", we can add the holiday name in dst[i]'s metadata to
-                            // help with parsing later.
-                            if (result.Metadata?.IsHoliday ?? false)
-                            {
-                                if (dst[i].Metadata is null)
-                                {
-                                    dst[i].Metadata = new Metadata();
-                                }
-
-                                dst[i].Metadata.HolidayName = result.Text;
-                            }
-
                             break;
                         }
                     }

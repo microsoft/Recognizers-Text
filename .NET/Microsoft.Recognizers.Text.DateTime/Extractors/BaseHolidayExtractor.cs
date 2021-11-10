@@ -10,6 +10,7 @@ namespace Microsoft.Recognizers.Text.DateTime
     public class BaseHolidayExtractor : IDateTimeExtractor
     {
         private const string ExtractorName = Constants.SYS_DATETIME_DATE; // "Date";
+        private const string WeekendExtractorName = Constants.SYS_DATETIME_DATEPERIOD; // "Daterange";
 
         private readonly IHolidayExtractorConfiguration config;
 
@@ -30,10 +31,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ers = Token.MergeAllTokens(tokens, text, ExtractorName);
             foreach (var er in ers)
             {
-                er.Metadata = new Metadata
+                if (!string.IsNullOrEmpty(er.Metadata.HolidayName))
                 {
-                    IsHoliday = true,
-                };
+                    er.Type = WeekendExtractorName;
+                }
             }
 
             return ers;
@@ -45,9 +46,29 @@ namespace Microsoft.Recognizers.Text.DateTime
             foreach (var regex in this.config.HolidayRegexes)
             {
                 var matches = regex.Matches(text);
+
                 foreach (Match match in matches)
                 {
-                    ret.Add(new Token(match.Index, match.Index + match.Length));
+                    var metaData = new Metadata();
+
+                    // The objective here is to not lose the information of the holiday name
+                    // and year (if captured) when choosing. The data is extracted from the match
+                    // groups.
+
+                    if (match.Groups["holidayWeekend"].Success)
+                    {
+                        metaData.HolidayName = match.Groups["holiday"].Value;
+                        if (match.Groups["year"].Success)
+                        {
+                            metaData.HolidayName = metaData.HolidayName + " " + match.Groups["year"].Value;
+                        }
+                    }
+                    else
+                    {
+                        metaData.IsHoliday = true;
+                    }
+
+                    ret.Add(new Token(match.Index, match.Index + match.Length, metaData));
                 }
             }
 
