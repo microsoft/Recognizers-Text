@@ -116,7 +116,7 @@ namespace Microsoft.Recognizers.Definitions.German
       public const string AmRegex = @"(?<am>(((am|gegen)\s+)?(früh|vormittags?)|(morgens|(am|gegen) morgen)))";
       public const string LunchRegex = @"\b(mittag(essen|s)?)\b";
       public const string NightRegex = @"\b(mitternacht|(nachts?|primetime|abends?))\b";
-      public const string AmPmPrefixRegex = @"\b((((um|gegen)\s*)?((am morgen)|morgens|(vor|nach)mittags?|abends?|früh|mitternachts?)|(in der\s*)?nachts?)\s*(um|gegen|von)\s*)";
+      public const string AmPmPrefixRegex = @"\b((((um|gegen)\s*)?(?<suffix>(((?<am>am morgen)|morgens|(vor|nach)mittags?)|(?<pm>abends?|früh|mitternachts?))|(in der\s*)?(?<pm>nachts?)))\s*(um|gegen|von)\s*)";
       public const string CommonDatePrefixRegex = @"^[\.]";
       public static readonly string LessThanOneHour = $@"\b(?<lth>(ein(er?)?\s+)?((drei)?viertel|halb(en?)?)(\s*stunden?)?)|{BaseDateTime.DeltaMinuteRegex}(\s+(min(uten?)?))|{DeltaMinuteNumRegex}(\s+(min(uten?)?))";
       public static readonly string WrittenTimeRegex = $@"(um\s*)?(?<writtentime>{HourNumRegex}(\s*{OclockRegex}\s*)({MinuteNumRegex}|{MinuteNumRegex}und(?<tens>zwanzig|dreißig|vierzig|fünfzig)))";

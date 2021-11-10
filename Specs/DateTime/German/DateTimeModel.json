@@ -4953,5 +4953,77 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Was morgens um 7 Uhr machen?",
+    "Context": {
+      "ReferenceDateTime": "2017-12-04T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "morgens um 7 uhr",
+        "Start": 4,
+        "End": 19,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07",
+              "type": "time",
+              "value": "07:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Die Feier beginnt um 9 Uhr morgens",
+    "Context": {
+      "ReferenceDateTime": "2017-12-04T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "9 uhr morgens",
+        "Start": 21,
+        "End": 33,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T09",
+              "type": "time",
+              "value": "09:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Nehmen Sie abends um 8 Uhr einen Tropfen",
+    "Context": {
+      "ReferenceDateTime": "2017-12-04T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "abends um 8 uhr",
+        "Start": 11,
+        "End": 25,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T20",
+              "type": "time",
+              "value": "20:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
