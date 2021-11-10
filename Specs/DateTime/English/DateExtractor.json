@@ -77,13 +77,13 @@
     ]
   },
   {
-    "Input": "i'll go back monday january 12th, 2016",
+    "Input": "i'll go back tuesday january 12th, 2016",
     "Results": [
       {
-        "Text": "monday january 12th, 2016",
+        "Text": "tuesday january 12th, 2016",
         "Type": "date",
         "Start": 13,
-        "Length": 25
+        "Length": 26
       }
     ]
   },
