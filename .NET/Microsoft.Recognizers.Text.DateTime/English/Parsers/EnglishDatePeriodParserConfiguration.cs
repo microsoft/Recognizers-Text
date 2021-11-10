@@ -63,7 +63,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             DurationExtractor = config.DurationExtractor;
             DurationParser = config.DurationParser;
             DateParser = config.DateParser;
-            HolidayParser = new BaseHolidayParser(new EnglishHolidayParserConfiguration(this));
 
             MonthFrontBetweenRegex = EnglishDatePeriodExtractorConfiguration.MonthFrontBetweenRegex;
             BetweenRegex = EnglishDatePeriodExtractorConfiguration.BetweenRegex;
@@ -138,8 +137,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public IDateTimeParser DateParser { get; }
 
         public IDateTimeParser DurationParser { get; }
-
-        public IDateTimeParser HolidayParser { get; }
 
         public Regex MonthFrontBetweenRegex { get; }
 
@@ -331,8 +328,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public bool IsWeekend(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal) || trimmedText.StartsWith(o, StringComparison.Ordinal)) ||
-                   weekendTermsPadded.Any(o => trimmedText.Contains(o));
+            return DateTimeDefinitions.WeekendTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)) ||
+                   (weekendTermsPadded.Any(o => trimmedText.Contains(o)) && AfterNextSuffixRegex.IsMatch(trimmedText));
         }
 
         public bool IsWeekOnly(string text)

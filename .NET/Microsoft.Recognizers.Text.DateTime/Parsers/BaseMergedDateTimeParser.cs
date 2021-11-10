@@ -1024,7 +1024,14 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     break;
                 case Constants.SYS_DATETIME_DATEPERIOD:
-                    parseResult = this.Config.DatePeriodParser.Parse(extractResult, referenceTime);
+                    if (extractResult.Metadata != null && !string.IsNullOrEmpty(extractResult.Metadata?.HolidayName))
+                    {
+                        parseResult = this.Config.HolidayParser.Parse(extractResult, referenceTime);
+                    }
+                    else
+                    {
+                        parseResult = this.Config.DatePeriodParser.Parse(extractResult, referenceTime);
+                    }
 
                     break;
                 case Constants.SYS_DATETIME_TIMEPERIOD:

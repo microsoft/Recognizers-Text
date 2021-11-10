@@ -91,11 +91,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                     innerResult = ParseComplexDatePeriod(er.Text, refDate);
                 }
 
-                if (!innerResult.Success)
-                {
-                    innerResult = ParseHolidayWeekend(er, refDate);
-                }
-
                 if (innerResult.Success)
                 {
                     if (innerResult.Mod == Constants.BEFORE_MOD)
@@ -1797,80 +1792,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return ret;
-        }
-
-        // This will parse to a date ranging between the holiday and the closest weekend
-        // cases: "Thanksgiving weekend", "weekend of Halloween"
-        private DateTimeResolutionResult ParseHolidayWeekend(ExtractResult er, DateObject referenceDate)
-        {
-            var ret = new DateTimeResolutionResult();
-            var text = er.Text;
-
-            if (string.IsNullOrEmpty(er.Metadata?.HolidayName) || !this.config.IsWeekend(text))
-            {
-                return ret;
-            }
-
-            var holidayName = er.Metadata.HolidayName;
-
-            // resolve holiday
-            var holidayEr = new ExtractResult
-            {
-                Start = 0,
-                Length = holidayName.Length,
-                Text = holidayName,
-                Type = Constants.SYS_DATETIME_DATE,
-                Data = null,
-                Metadata = new Metadata { IsHoliday = true },
-            };
-            var result = (DateTimeResolutionResult)this.config.HolidayParser.Parse(holidayEr, referenceDate).Value;
-
-            if (!result.Success)
-            {
-                return ret;
-            }
-
-            // get closest weekend to the holiday(s)
-            var futureWeekend = GetClosestHolidayWeekend((DateObject)result.FutureValue);
-            var pastWeekend = futureWeekend;
-
-            if (result.FutureValue == result.PastValue)
-            {
-                ret.Timex = TimexUtility.GenerateWeekendTimex(futureWeekend.Item1);
-            }
-            else
-            {
-                ret.Timex = result.Timex;
-                pastWeekend = GetClosestHolidayWeekend((DateObject)result.PastValue);
-            }
-
-            ret.Success = true;
-            ret.FutureValue = futureWeekend;
-            ret.PastValue = pastWeekend;
-
-            return ret;
-        }
-
-        private Tuple<DateObject, DateObject> GetClosestHolidayWeekend(DateObject dateTimeObject)
-        {
-            // this week's Saturday
-            var startDate = dateTimeObject.This(DayOfWeek.Saturday);
-            var endDate = dateTimeObject.This(DayOfWeek.Sunday);
-
-            // is last weekend closer than this one? i.e. is the input Monday or Tuesday?
-            if (dateTimeObject.DayOfWeek == DayOfWeek.Monday || dateTimeObject.DayOfWeek == DayOfWeek.Tuesday)
-            {
-                startDate = startDate.AddDays(-7);
-                endDate = dateTimeObject;
-            }
-            else if (dateTimeObject.DayOfWeek != DayOfWeek.Sunday)
-            {
-                startDate = dateTimeObject;
-            }
-
-            endDate = inclusiveEndPeriod ? endDate : endDate.AddDays(1);
-
-            return new Tuple<DateObject, DateObject>(startDate, endDate);
         }
 
         // To be consistency, we follow the definition of "week of year":

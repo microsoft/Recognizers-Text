@@ -125,8 +125,6 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IDateTimeParser DateParser { get; }
 
-        public IDateTimeParser HolidayParser { get; }
-
         public IDateTimeParser DurationParser { get; }
 
         public Regex MonthFrontBetweenRegex { get; }

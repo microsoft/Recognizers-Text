@@ -128,8 +128,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public IDateTimeParser DateParser { get; }
 
-        public IDateTimeParser HolidayParser { get; }
-
         public IDateTimeParser DurationParser { get; }
 
         public Regex MonthFrontBetweenRegex { get; }
