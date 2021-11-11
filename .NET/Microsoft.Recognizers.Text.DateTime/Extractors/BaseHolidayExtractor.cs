@@ -31,6 +31,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ers = Token.MergeAllTokens(tokens, text, ExtractorName);
             foreach (var er in ers)
             {
+                // If this is a daterange that contains a holiday, we should change its
+                // type to indicate that.
+
                 if (!string.IsNullOrEmpty(er.Metadata.HolidayName))
                 {
                     er.Type = WeekendExtractorName;
