@@ -1645,5 +1645,90 @@
         "End": 35
       }
     ]
+  },
+  {
+    "Input": "usd$ 15",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "usd$ 15",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "15",
+          "unit": "Dólar estadunidense",
+          "isoCurrency": "USD"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "mxn$ 15",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "mxn$ 15",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "15",
+          "unit": "Peso mexicano",
+          "isoCurrency": "MXN"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "aud$ 15",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "aud$ 15",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "15",
+          "unit": "Dólar australiano",
+          "isoCurrency": "AUD"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "cad$ 15",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "cad$ 15",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "15",
+          "unit": "Dólar canadense",
+          "isoCurrency": "CAD"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "nzd$15",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "nzd$15",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "15",
+          "unit": "Dólar neozelandês",
+          "isoCurrency": "NZD"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
   }
 ]
