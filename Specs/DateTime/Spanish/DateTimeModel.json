@@ -22032,5 +22032,30 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Nací en abril del 87",
+    "Context": {
+      "ReferenceDateTime": "2018-01-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "abril del 87",
+        "Start": 8,
+        "End": 19,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1987-04",
+              "type": "daterange",
+              "start": "1987-04-01",
+              "end": "1987-05-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
