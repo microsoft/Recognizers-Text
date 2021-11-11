@@ -21186,13 +21186,13 @@
         "Resolution": {
           "values": [
             {
-              "timex": "XXXX-10-31",
+              "timex": "2021-W43-WE",
               "type": "daterange",
               "start": "2021-10-30",
               "end": "2021-11-01"
             },
             {
-              "timex": "XXXX-10-31",
+              "timex": "2022-W43-WE",
               "type": "daterange",
               "start": "2022-10-29",
               "end": "2022-11-01"
@@ -21242,13 +21242,13 @@
         "Resolution": {
           "values": [
             {
-              "timex": "XXXX-09-WXX-1-1",
+              "timex": "2021-W35-WE",
               "type": "daterange",
               "start": "2021-09-04",
               "end": "2021-09-07"
             },
             {
-              "timex": "XXXX-09-WXX-1-1",
+              "timex": "2022-W35-WE",
               "type": "daterange",
               "start": "2022-09-03",
               "end": "2022-09-06"

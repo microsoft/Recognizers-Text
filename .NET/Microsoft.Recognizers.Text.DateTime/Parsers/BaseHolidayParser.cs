@@ -141,6 +141,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                             TimeTypeConstants.END_DATE,
                             DateTimeFormatUtil.FormatDate(((Tuple<DateObject, DateObject>)dateTimeRes.FutureValue).Item2)
                         },
+                        {
+                            DateTimeResolutionKey.Timex,
+                            TimexUtility.GenerateWeekendTimex(futureWeekend.Item1)
+                        },
                     };
 
                     dateTimeRes.PastResolution = new Dictionary<string, string>
@@ -152,6 +156,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                         {
                             TimeTypeConstants.END_DATE,
                             DateTimeFormatUtil.FormatDate(((Tuple<DateObject, DateObject>)dateTimeRes.PastValue).Item2)
+                        },
+                        {
+                            DateTimeResolutionKey.Timex,
+                            TimexUtility.GenerateWeekendTimex(pastWeekend.Item1)
                         },
                     };
                 }

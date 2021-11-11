@@ -162,6 +162,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 res.Add(DateTimeResolutionKey.Start, start);
                 res.Add(DateTimeResolutionKey.End, end);
+
+                if (resolutionDic.ContainsKey(DateTimeResolutionKey.Timex))
+                {
+                    res.Add(DateTimeResolutionKey.Timex, resolutionDic[DateTimeResolutionKey.Timex]);
+                }
             }
         }
 
