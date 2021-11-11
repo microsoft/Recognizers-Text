@@ -788,7 +788,7 @@ FractionalUnitNameToCodeMap: !dictionary
     Millibitcoin: MILLIBITCOIN
     Satoshi: SATOSHI
 CompoundUnitConnectorRegex: !simpleRegex
-    def: (?<spacer>e)
+    def: (?<spacer>e|com)
 CurrencyPrefixList: !dictionary
   types: [ string, string ]
   entries:
