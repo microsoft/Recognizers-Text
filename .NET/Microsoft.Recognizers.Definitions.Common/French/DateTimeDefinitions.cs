@@ -221,7 +221,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public const string PreviousPrefixRegex = @".^";
       public static readonly string RelativeDayRegex = $@"\b(((la\s+)?{RelativeRegex}\s+journ[ée]e))\b";
       public const string ConnectorRegex = @"^(,|pour|t|vers|le)$";
-      public const string ConnectorAndRegex = @"\b(et\s*(le|las?)?)\b.+";
+      public const string ConnectorAndRegex = @"\b(et\s*(le|las?)?)\b";
       public const string FromRegex = @"((de|du)?)$";
       public const string FromRegex2 = @"((depuis|de)(\s*las?)?)$";
       public const string FromToRegex = @"\b(du|depuis|des?).+(au|à|a)\b.+";
