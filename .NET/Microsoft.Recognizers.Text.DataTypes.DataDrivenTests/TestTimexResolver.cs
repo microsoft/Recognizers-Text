@@ -533,7 +533,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         public void DataTypes_Resolver_DateRange_Demaical_Period_EN()
         {
             var sourceLanguage = CultureInfo.CurrentCulture;
-            var testLanguage = new CultureInfo("en-En", false);
+            var testLanguage = new CultureInfo("en-US", false);
             CultureInfo.CurrentCulture = testLanguage;
             var today = new System.DateTime(2019, 4, 30);
             var resolution = TimexResolver.Resolve(new[] { "(2019-04-05,XXXX-04-11,P5.54701493625231D)" }, today);

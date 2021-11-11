@@ -56,12 +56,12 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         [TestMethod]
         public void DataTypes_DateHelpers_weekOfyear()
         {
-            Assert.AreEqual(1, TimexDateHelpers.WeekOfYear(new System.DateTime(2017, 1, 1)));
-            Assert.AreEqual(2, TimexDateHelpers.WeekOfYear(new System.DateTime(2017, 1, 2)));
-            Assert.AreEqual(9, TimexDateHelpers.WeekOfYear(new System.DateTime(2017, 2, 23)));
-            Assert.AreEqual(12, TimexDateHelpers.WeekOfYear(new System.DateTime(2017, 3, 15)));
-            Assert.AreEqual(40, TimexDateHelpers.WeekOfYear(new System.DateTime(2017, 9, 25)));
-            Assert.AreEqual(53, TimexDateHelpers.WeekOfYear(new System.DateTime(2017, 12, 31)));
+            Assert.AreEqual(52, TimexDateHelpers.WeekOfYear(new System.DateTime(2017, 1, 1)));
+            Assert.AreEqual(1, TimexDateHelpers.WeekOfYear(new System.DateTime(2017, 1, 2)));
+            Assert.AreEqual(8, TimexDateHelpers.WeekOfYear(new System.DateTime(2017, 2, 23)));
+            Assert.AreEqual(11, TimexDateHelpers.WeekOfYear(new System.DateTime(2017, 3, 15)));
+            Assert.AreEqual(39, TimexDateHelpers.WeekOfYear(new System.DateTime(2017, 9, 25)));
+            Assert.AreEqual(52, TimexDateHelpers.WeekOfYear(new System.DateTime(2017, 12, 31)));
             Assert.AreEqual(1, TimexDateHelpers.WeekOfYear(new System.DateTime(2018, 1, 1)));
             Assert.AreEqual(1, TimexDateHelpers.WeekOfYear(new System.DateTime(2018, 1, 2)));
             Assert.AreEqual(1, TimexDateHelpers.WeekOfYear(new System.DateTime(2018, 1, 7)));
