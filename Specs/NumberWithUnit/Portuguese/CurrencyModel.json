@@ -1597,5 +1597,53 @@
         "End": 25
       }
     ]
+  },
+  {
+    "Input": "custa apenas 15 dólares com 50.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "15 dólares com 50",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "15,5",
+          "unit": "Dólar"
+        },
+        "Start": 13,
+        "End": 29
+      }
+    ]
+  },
+  {
+    "Input": "custa apenas 25 euros com 50.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "25 euros com 50",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "25,5",
+          "unit": "Euro"
+        },
+        "Start": 13,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "custa apenas 3 euros com 99 centavos.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 euros com 99 centavos",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "3,99",
+          "unit": "Euro"
+        },
+        "Start": 13,
+        "End": 35
+      }
+    ]
   }
 ]

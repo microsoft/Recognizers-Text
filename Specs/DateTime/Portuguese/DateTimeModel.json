@@ -2555,5 +2555,149 @@
         }
       }
     ]
+  },
+  {
+    "Input": "eles se conheceram em 9 de agosto de 1971",
+    "Context": {
+      "ReferenceDateTime": "2018-10-15T01:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": [
+      {
+        "Text": "9 de agosto de 1971",
+        "Start": 22,
+        "End": 40,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1971-08-09",
+              "type": "date",
+              "value": "1971-08-09"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "eles se conheceram em 9 de 8 de 1971",
+    "Context": {
+      "ReferenceDateTime": "2018-10-15T01:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": [
+      {
+        "Text": "9 de 8 de 1971",
+        "Start": 22,
+        "End": 35,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1971-08-09",
+              "type": "date",
+              "value": "1971-08-09"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Eu nasci em 23 de novembro 1982",
+    "Context": {
+      "ReferenceDateTime": "2020-05-05T01:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": [
+      {
+        "Text": "23 de novembro 1982",
+        "Start": 12,
+        "End": 30,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1982-11-23",
+              "type": "date",
+              "value": "1982-11-23"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Eu nasci em 23 de novembro 82",
+    "Context": {
+      "ReferenceDateTime": "2020-05-05T01:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": [
+      {
+        "Text": "23 de novembro 82",
+        "Start": 12,
+        "End": 28,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1982-11-23",
+              "type": "date",
+              "value": "1982-11-23"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Eu nasci em 23 novembro 1982",
+    "Context": {
+      "ReferenceDateTime": "2020-05-05T01:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": [
+      {
+        "Text": "23 novembro 1982",
+        "Start": 12,
+        "End": 27,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1982-11-23",
+              "type": "date",
+              "value": "1982-11-23"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Eu nasci em 23 novembro 82",
+    "Context": {
+      "ReferenceDateTime": "2020-05-05T01:00:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": [
+      {
+        "Text": "23 novembro 82",
+        "Start": 12,
+        "End": 25,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1982-11-23",
+              "type": "date",
+              "value": "1982-11-23"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

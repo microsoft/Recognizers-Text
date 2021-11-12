@@ -1,6 +1,7 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
@@ -126,5 +127,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         Regex IDurationExtractorConfiguration.ModPrefixRegex => ModPrefixRegex;
 
         Regex IDurationExtractorConfiguration.ModSuffixRegex => ModSuffixRegex;
+
+        public Dictionary<Regex, Regex> AmbiguityFiltersDict => null;
     }
 }

@@ -69,7 +69,7 @@ def get_specs(recognizer, entity):
     return ret_specs
 
 
-ENTITY_PATTERN = re.compile('(.*)(Model|Parser|Extractor)(.*)')
+ENTITY_PATTERN = re.compile('(.*)(Model|Parser|Extractor|Resolver)(.*)')
 
 CULTURES = {
     'Chinese': Culture.Chinese,
@@ -86,3 +86,7 @@ CULTURES = {
 }
 
 SPECS = get_all_specs()
+
+if __name__ == "__main__":
+
+    print("OK")

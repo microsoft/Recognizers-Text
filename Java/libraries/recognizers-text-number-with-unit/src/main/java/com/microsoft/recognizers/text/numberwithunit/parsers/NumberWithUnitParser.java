@@ -91,6 +91,9 @@ public class NumberWithUnitParser implements IParser {
             lastUnit = lastUnit.substring(connectorToken.length()).trim();
         }
 
+        normalizedLastUnit = deleteBracketsIfExisted(normalizedLastUnit);
+        lastUnit = deleteBracketsIfExisted(lastUnit);
+
         if (key != null && !key.isEmpty() && unitMap != null) {
 
             String unitValue = null;
@@ -141,6 +144,32 @@ public class NumberWithUnitParser implements IParser {
         if (add) {
             unitKeys.add(unit);
         }
+    }
+
+    private String deleteBracketsIfExisted(String unit) { 
+        boolean hasBrackets = false;
+
+        if (unit.startsWith("(") && unit.endsWith(")")) { 
+            hasBrackets = true;
+        }
+
+        if (unit.startsWith("[") && unit.endsWith("]")) { 
+            hasBrackets = true;
+        }
+
+        if (unit.startsWith("{") && unit.endsWith("}")) { 
+            hasBrackets = true;
+        }
+
+        if (unit.startsWith("<") && unit.endsWith(">")) { 
+            hasBrackets = true;
+        }
+
+        if (hasBrackets) { 
+            unit = unit.substring(1, unit.length() - 1);
+        }
+
+        return unit;
     }
 
 }

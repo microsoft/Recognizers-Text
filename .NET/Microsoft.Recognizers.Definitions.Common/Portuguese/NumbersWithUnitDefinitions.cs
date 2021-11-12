@@ -632,7 +632,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
             { @"Millibitcoin", @"MILLIBITCOIN" },
             { @"Satoshi", @"SATOSHI" }
         };
-      public const string CompoundUnitConnectorRegex = @"(?<spacer>e)";
+      public const string CompoundUnitConnectorRegex = @"(?<spacer>e|com)";
       public static readonly Dictionary<string, string> CurrencyPrefixList = new Dictionary<string, string>
         {
             { @"Dólar", @"$" },

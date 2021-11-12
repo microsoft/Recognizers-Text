@@ -3011,5 +3011,20 @@
         "End": 17
       }
     ]
+  },
+  {
+    "Input": "The weight is 45{kg)",
+    "Results": [
+      {
+        "Text": "45",
+        "Start": 14,
+        "End": 15,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "45"
+        }
+      }
+    ]
   }
 ]

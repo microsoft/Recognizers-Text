@@ -216,8 +216,8 @@ DateExtractor1: !nestedRegex
   references: [ WeekDayRegex, DayRegex, MonthRegex ]
 DateExtractor2: !nestedRegex
   # (domingo,)? 5 de Abril 5, 2016
-  def: \b({WeekDayRegex}(\s+|\s*,\s*))?({DayRegex}\s*([/\.\-]|de)?\s*{MonthRegex}(\s*([,./-]|de)\s*){DateYearRegex}|{BaseDateTime.FourDigitYearRegex}\s*[/\.\- ]\s*{DayRegex}\s*[/\.\- ]\s*{MonthRegex})\b
-  references: [ MonthRegex, DayRegex, DateYearRegex, WeekDayRegex, BaseDateTime.FourDigitYearRegex ]
+  def: \b({WeekDayRegex}(\s+|\s*,\s*))?({DayRegex}(\s*([/\.\-]|de)?\s*{MonthRegex}|\s+de\s+{MonthNumRegex})(\s*([,./-]|de|\s+)\s*){DateYearRegex}|{BaseDateTime.FourDigitYearRegex}\s*[/\.\- ]\s*{DayRegex}\s*[/\.\- ]\s*{MonthRegex})\b
+  references: [ MonthRegex, MonthNumRegex, DayRegex, DateYearRegex, WeekDayRegex, BaseDateTime.FourDigitYearRegex ]
 DateExtractor3: !nestedRegex
   # (domingo,)? Abril 6
   def: \b({WeekDayRegex}(\s+|\s*,\s*))?{MonthRegex}(\s*[/\.\- ]\s*|\s+de\s+){DayRegex}((\s*[/\.\- ]\s*|\s+de\s+){DateYearRegex})?\b

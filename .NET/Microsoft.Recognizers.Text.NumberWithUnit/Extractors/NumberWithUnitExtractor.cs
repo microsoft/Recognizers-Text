@@ -223,6 +223,16 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                     {
                                         maxlen = endpos;
                                     }
+
+                                    // Check for brackets
+                                    if (m.End < source.Length && (
+                                        (midStr.EndsWith("(") && source[m.End] == ')') ||
+                                        (midStr.EndsWith("[") && source[m.End] == ']') ||
+                                        (midStr.EndsWith("{") && source[m.End] == '}') ||
+                                        (midStr.EndsWith("<") && source[m.End] == '>')))
+                                    {
+                                        maxlen = m.End - firstIndex + 1;
+                                    }
                                 }
                             }
                         }

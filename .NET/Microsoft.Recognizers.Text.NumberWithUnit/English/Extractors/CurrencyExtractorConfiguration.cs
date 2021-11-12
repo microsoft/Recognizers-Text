@@ -16,12 +16,23 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
         public static readonly ImmutableDictionary<string, string> CurrencySuffixList =
             NumbersWithUnitDefinitions.CurrencySuffixList.ToImmutableDictionary();
 
-        // Merge CurrencyNameToIsoCodeMap with CurrencyPrefixList (excluding fake and unofficial Iso codes starting with underscore)
-        public static readonly Dictionary<string, string> CurrencyPrefixDict = NumbersWithUnitDefinitions.CurrencyPrefixList
-            .Concat(NumbersWithUnitDefinitions.CurrencyNameToIsoCodeMap.Where(x => !x.Value.StartsWith("_", StringComparison.Ordinal))
-                .ToDictionary(x => x.Key, x => x.Value.ToLower(CultureInfo.InvariantCulture)))
-            .GroupBy(x => x.Key)
-            .ToDictionary(x => x.Key, y => y.Count() > 1 ? string.Join("|", new string[] { y.First().Value, y.Last().Value }) : y.First().Value);
+        // CurrencyNameToIsoCodeMap dictionary (excluding fake and unofficial Iso codes starting with underscore)
+        public static readonly Dictionary<string, string> IsoCodeDict =
+            NumbersWithUnitDefinitions.CurrencyNameToIsoCodeMap.Where(x => !x.Value.StartsWith("_", StringComparison.Ordinal))
+                .ToDictionary(x => x.Key, x => x.Value.ToLower(CultureInfo.InvariantCulture));
+
+        // CurrencyNameToIsoCodeMap followed by '$' symbol (e.g. 'AUD$')
+        public static readonly Dictionary<string, string> IsoCodeWithSymbolDict =
+            NumbersWithUnitDefinitions.CurrencyNameToIsoCodeMap.Where(x => !x.Value.StartsWith("_", StringComparison.Ordinal))
+                .ToDictionary(x => x.Key, x => x.Value.ToLower(CultureInfo.InvariantCulture) + "$");
+
+        // Merge IsoCodeDict and IsoCodeWithSymbolDict
+        public static readonly Dictionary<string, string> IsoCodeCombinedDict = IsoCodeDict.Concat(IsoCodeWithSymbolDict)
+            .GroupBy(x => x.Key).ToDictionary(x => x.Key, y => y.Count() > 1 ? string.Join("|", new string[] { y.First().Value, y.Last().Value }) : y.First().Value);
+
+        // Merge IsoCodeCombinedDict with CurrencyPrefixList (excluding fake and unofficial Iso codes starting with underscore)
+        public static readonly Dictionary<string, string> CurrencyPrefixDict = NumbersWithUnitDefinitions.CurrencyPrefixList.Concat(IsoCodeCombinedDict)
+            .GroupBy(x => x.Key).ToDictionary(x => x.Key, y => y.Count() > 1 ? string.Join("|", new string[] { y.First().Value, y.Last().Value }) : y.First().Value);
 
         public static readonly ImmutableDictionary<string, string> CurrencyPrefixList = CurrencyPrefixDict.ToImmutableDictionary();
 

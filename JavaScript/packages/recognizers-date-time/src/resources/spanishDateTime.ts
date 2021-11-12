@@ -223,7 +223,7 @@ export namespace SpanishDateTime {
     export const RelativeDecadeRegex = `\\b(((el|las?)\\s+)?${RelativeRegex}\\s+(((?<number>[\\d]+)|${WrittenOneToNineRegex})\\s+)?d[eé]cadas?)\\b`;
     export const ComplexDatePeriodRegex = `(?:((de(sde)?)\\s+)?(?<start>.+)\\s*(${StrictTillRegex})\\s*(?<end>.+)|((entre)\\s+)(?<start>.+)\\s*(${RangeConnectorRegex})\\s*(?<end>.+))`;
     export const AmbiguousPointRangeRegex = `^(mar\\.?)$`;
-    export const YearSuffix = `((,|\\sde)?\\s*(${YearRegex}|${FullTextYearRegex}))`;
+    export const YearSuffix = `((,|\\sdel?)?\\s*(${YearRegex}|${FullTextYearRegex}))`;
     export const SinceYearSuffixRegex = `(^\\s*${SinceRegex}(\\s*(el\\s+)?año\\s*)?${YearSuffix})`;
     export const AgoRegex = `\\b(antes\\s+de\\s+(?<day>hoy|ayer|mañana)|antes|hace)\\b`;
     export const LaterRegex = `\\b(despu[eé]s(?!\\s+de\\b)|desde\\s+ahora|a\\s+partir\\s+de\\s+(ahora|(?<day>hoy|ayer|mañana)))\\b`;

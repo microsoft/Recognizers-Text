@@ -639,7 +639,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
             { @"Millibitcoin", @"MILLIBITCOIN" },
             { @"Satoshi", @"SATOSHI" }
         };
-      public const string CompoundUnitConnectorRegex = @"(?<spacer>y)";
+      public const string CompoundUnitConnectorRegex = @"(?<spacer>y|con)";
       public static readonly Dictionary<string, string> CurrencyPrefixList = new Dictionary<string, string>
         {
             { @"Dobra", @"db|std" },

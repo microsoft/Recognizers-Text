@@ -737,7 +737,7 @@ public class SpanishDateTime {
 
     public static final String AmbiguousPointRangeRegex = "^(mar\\.?)$";
 
-    public static final String YearSuffix = "((,|\\sde)?\\s*({YearRegex}|{FullTextYearRegex}))"
+    public static final String YearSuffix = "((,|\\sdel?)?\\s*({YearRegex}|{FullTextYearRegex}))"
             .replace("{YearRegex}", YearRegex)
             .replace("{FullTextYearRegex}", FullTextYearRegex);
 

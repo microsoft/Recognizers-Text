@@ -347,12 +347,28 @@ export class NumberWithUnitExtractor implements IExtractor {
             collection.map(regexString => {
                 let regexTokens = regexString.split('|').map(escapeRegExp);
                 let pattern = `${this.config.buildPrefix}(${regexTokens.join('|')})${this.config.buildSuffix}`;
+                pattern += this.getRegexWithBrackets(`(${regexTokens.join('|')})`);
                 let options = "gs";
                 if (ignoreCase) {
                     options += "i";
                 }
                 return RegExpUtility.getSafeRegExp(pattern, options);
             }));
+    }
+
+    protected  getRegexWithBrackets(regex: string): string { 
+        let result = "";
+        let openingBrackets = ['(\\()', '(\\[)', '(\\{)', '(\\<)'];
+        let closingBrackets = ['(\\))', '(\\])', '(\\})', '(\\>)'];
+        let i = 0;
+        while (i < 4) {
+            result += "|";
+            result += openingBrackets[i];
+            result += regex;
+            result += closingBrackets[i];
+            i++;
+        }
+        return result;
     }
 
     protected buildSeparateRegexFromSet(ignoreCase: boolean = true): RegExp {
