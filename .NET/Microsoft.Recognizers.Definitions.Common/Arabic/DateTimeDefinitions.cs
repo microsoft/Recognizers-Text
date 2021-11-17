@@ -91,6 +91,8 @@ namespace Microsoft.Recognizers.Definitions.Arabic
       public static readonly string MonthNumWithYear = $@"\b(({BaseDateTime.FourDigitYearRegex}(\s*)[/\-\.](\s*){MonthNumRegex})|({MonthNumRegex}(\s*)[/\-](\s*){BaseDateTime.FourDigitYearRegex}))\b";
       public static readonly string WeekOfMonthRegex = $@"(\b(?<wom>(الأسبوع)\s+((?<cardinal>الأول|الثاني|الثالث|الرابع|الخامس|الأخير)\s+)((من هذا|هذا|من)\s+)?(شهر\s+)?(الشهر|{SolarMonthRegex}|{LunarMonthRegex}|{ArabicMonthRegex})[,]?(\s+{YearRegex})?)\b)|(((الأسبوع|أسبوع)\s+)(في\s+)?{DayRegex}\s+({SolarMonthRegex}|{LunarMonthRegex}|{ArabicMonthRegex}))";
       public static readonly string WeekOfYearRegex = $@"(?<woy>(الأسبوع)\s+(?<cardinal>الأول|الثاني|الثالث|الرابع|الخامس|الأخير)\s+((من هذا|هذا|من)\s+)?(العام|من عام|عام)\s*({YearRegex}|{RelativeRegex})?)";
+      public static readonly string OfYearRegex = $@"\b((of|in)\s+({YearRegex}|{StrictRelativeRegex}\s+year))\b";
+      public const string FirstLastRegex = @"\b(the\s+)?((?<first>first)|(?<last>last))\b";
       public static readonly string FollowedDateUnit = $@"^\s*{DateUnitRegex}";
       public static readonly string NumberCombinedWithDateUnit = $@"\b(?<num>\d+(\.\d*)?)(\s)?(-)?{DateUnitRegex}";
       public const string QuarterTermRegex = @"(الربع[- ]+(?<cardinal>الأول|الثاني|الثالث|الرابع))";

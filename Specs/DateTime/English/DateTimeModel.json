@@ -22096,5 +22096,205 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Created On is in the first week of 2021",
+    "Context": {
+      "ReferenceDateTime": "2018-11-29T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "the first week of 2021",
+        "Start": 17,
+        "End": 38,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-W01",
+              "type": "daterange",
+              "start": "2021-01-04",
+              "end": "2021-01-11"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Created On is in the second week of 2021",
+    "Context": {
+      "ReferenceDateTime": "2018-11-29T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "the second week of 2021",
+        "Start": 17,
+        "End": 39,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-W02",
+              "type": "daterange",
+              "start": "2021-01-11",
+              "end": "2021-01-18"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Created On is in the third month of 2021",
+    "Context": {
+      "ReferenceDateTime": "2018-11-29T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "the third month of 2021",
+        "Start": 17,
+        "End": 39,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-03",
+              "type": "daterange",
+              "start": "2021-03-01",
+              "end": "2021-04-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Created On is in the 9th month of next year",
+    "Context": {
+      "ReferenceDateTime": "2021-11-29T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "the 9th month of next year",
+        "Start": 17,
+        "End": 42,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2022-09",
+              "type": "daterange",
+              "start": "2022-09-01",
+              "end": "2022-10-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Created On is in the first 2 weeks of 2021",
+    "Context": {
+      "ReferenceDateTime": "2018-11-29T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "the first 2 weeks of 2021",
+        "Start": 17,
+        "End": 41,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2021-01-04,2021-01-18,P2W)",
+              "type": "daterange",
+              "start": "2021-01-04",
+              "end": "2021-01-18"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Created On is in the last 3 weeks of this year",
+    "Context": {
+      "ReferenceDateTime": "2019-11-29T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "the last 3 weeks of this year",
+        "Start": 17,
+        "End": 45,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-12-09,2019-12-30,P3W)",
+              "type": "daterange",
+              "start": "2019-12-09",
+              "end": "2019-12-30"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Created On is in the last four months of 2021",
+    "Context": {
+      "ReferenceDateTime": "2018-11-29T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "the last four months of 2021",
+        "Start": 17,
+        "End": 44,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2021-09-01,2022-01-01,P4M)",
+              "type": "daterange",
+              "start": "2021-09-01",
+              "end": "2022-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Created On is first ten days of last year",
+    "Context": {
+      "ReferenceDateTime": "2021-11-29T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "first ten days of last year",
+        "Start": 14,
+        "End": 40,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2020-01-01,2020-01-11,P10D)",
+              "type": "daterange",
+              "start": "2020-01-01",
+              "end": "2020-01-11"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

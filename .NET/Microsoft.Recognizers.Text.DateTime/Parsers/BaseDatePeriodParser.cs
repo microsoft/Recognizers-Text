@@ -1330,8 +1330,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 var monthStr = match.Groups["month"].Value;
                 var orderStr = match.Groups["order"].Value;
+                var cardinalStr = match.Groups["cardinal"].Value;
 
-                var month = this.config.MonthOfYear[monthStr];
+                var month = match.Groups["month"].Success ? this.config.MonthOfYear[monthStr] :
+                    this.config.IsLastCardinal(cardinalStr) ? 12 : this.config.CardinalMap[cardinalStr];
 
                 var year = config.DateExtractor.GetYearFromText(match.Match);
 
@@ -1630,7 +1632,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var restNowSunday = false;
 
             var durationErs = config.DurationExtractor.Extract(text, referenceDate);
-            if (durationErs.Count == 1)
+            if (durationErs.Count > 0)
             {
                 var durationPr = config.DurationParser.Parse(durationErs[0]);
                 var beforeStr = text.Substring(0, durationPr.Start ?? 0).Trim();
@@ -1730,6 +1732,49 @@ namespace Microsoft.Recognizers.Text.DateTime
                         durationResult.Timex = "P1" + unit;
                         beginDate = DurationParsingUtil.ShiftDateTime(durationResult.Timex, modAndDateResult.EndDate, false);
                         endDate = modAndDateResult.EndDate;
+                    }
+
+                    // Handle cases like "first 2 weeks of 2019", "last 3 months of this year"
+                    var matchBefore = this.config.FirstLastRegex.Match(beforeStr);
+                    var matchAfter = this.config.OfYearRegex.Match(afterStr);
+                    if (matchBefore.Success && matchAfter.Success)
+                    {
+                        // Get year
+                        var year = config.DateExtractor.GetYearFromText(matchAfter);
+                        if (year == Constants.InvalidYear)
+                        {
+                            var orderStr = matchAfter.Groups["order"].Value;
+                            var swift = this.config.GetSwiftYear(orderStr);
+                            if (swift < -1)
+                            {
+                                return ret;
+                            }
+
+                            year = referenceDate.Year + swift;
+                        }
+
+                        // Get begin/end dates for year
+                        if (durationResult.Timex.EndsWith(Constants.TimexWeek, StringComparison.Ordinal))
+                        {
+                            // First/last week of the year is calculated according to ISO definition
+                            beginDate = GetFirstThursday(year).This(DayOfWeek.Monday);
+                            endDate = GetLastThursday(year).This(DayOfWeek.Monday).AddDays(7);
+                        }
+                        else
+                        {
+                            beginDate = DateObject.MinValue.SafeCreateFromValue(year, 1, 1);
+                            endDate = DateObject.MinValue.SafeCreateFromValue(year, 12, 31).AddDays(1);
+                        }
+
+                        // Shift begin/end dates by duration span
+                        if (matchBefore.Groups[Constants.FirstGroupName].Success)
+                        {
+                            endDate = DurationParsingUtil.ShiftDateTime(durationResult.Timex, beginDate, true);
+                        }
+                        else
+                        {
+                            beginDate = DurationParsingUtil.ShiftDateTime(durationResult.Timex, endDate, false);
+                        }
                     }
 
                     if (!string.IsNullOrEmpty(modAndDateResult.Mod))

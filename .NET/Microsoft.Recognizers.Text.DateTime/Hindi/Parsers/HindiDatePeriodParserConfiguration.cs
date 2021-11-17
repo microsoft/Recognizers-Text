@@ -98,6 +98,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
             MoreThanRegex = HindiDatePeriodExtractorConfiguration.MoreThanRegex;
             CenturySuffixRegex = HindiDatePeriodExtractorConfiguration.CenturySuffixRegex;
             NowRegex = HindiDatePeriodExtractorConfiguration.NowRegex;
+            FirstLastRegex = HindiDatePeriodExtractorConfiguration.FirstLastRegex;
+            OfYearRegex = HindiDatePeriodExtractorConfiguration.OfYearRegex;
             SpecialDayRegex = HindiDateExtractorConfiguration.SpecialDayRegex;
             TodayNowRegex = new Regex(DateTimeDefinitions.TodayNowRegex, RegexOptions.Singleline);
 
@@ -213,6 +215,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
         public Regex SpecialDayRegex { get; }
 
         public Regex TodayNowRegex { get; }
+
+        public Regex FirstLastRegex { get; }
+
+        public Regex OfYearRegex { get; }
 
         Regex ISimpleDatePeriodParserConfiguration.RelativeRegex => RelativeRegex;
 
