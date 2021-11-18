@@ -21430,5 +21430,175 @@
         }
       }
     ]
+  },
+  {
+    "Input": "The event starts on Christmas early morning at 8:00",
+    "Context": {
+      "ReferenceDateTime": "2019-08-05T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "christmas",
+        "Start": 20,
+        "End": 28,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-12-25",
+              "type": "date",
+              "value": "2018-12-25"
+            },
+            {
+              "timex": "XXXX-12-25",
+              "type": "date",
+              "value": "2019-12-25"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "early morning at 8:00",
+        "Start": 30,
+        "End": 50,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T08:00",
+              "type": "time",
+              "value": "08:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The event starts on Sunday early morning at 8:00",
+    "Context": {
+      "ReferenceDateTime": "2019-08-05T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "sunday early morning at 8:00",
+        "Start": 20,
+        "End": 47,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-7T08:00",
+              "type": "datetime",
+              "value": "2019-08-04 08:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-7T08:00",
+              "type": "datetime",
+              "value": "2019-08-11 08:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The event starts on Christmas at 8:00 early morning",
+    "Context": {
+      "ReferenceDateTime": "2019-08-05T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "christmas",
+        "Start": 20,
+        "End": 28,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-12-25",
+              "type": "date",
+              "value": "2018-12-25"
+            },
+            {
+              "timex": "XXXX-12-25",
+              "type": "date",
+              "value": "2019-12-25"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "8:00 early morning",
+        "Start": 33,
+        "End": 50,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T08:00",
+              "type": "time",
+              "value": "08:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The event starts on Sunday at 8:00 early morning",
+    "Context": {
+      "ReferenceDateTime": "2019-08-05T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "sunday at 8:00 early morning",
+        "Start": 20,
+        "End": 47,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-7T08:00",
+              "type": "datetime",
+              "value": "2019-08-04 08:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-7T08:00",
+              "type": "datetime",
+              "value": "2019-08-11 08:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The event starts on Sunday late evening at 10:00",
+    "Context": {
+      "ReferenceDateTime": "2019-08-05T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "sunday late evening at 10:00",
+        "Start": 20,
+        "End": 47,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-7T22:00",
+              "type": "datetime",
+              "value": "2019-08-04 22:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-7T22:00",
+              "type": "datetime",
+              "value": "2019-08-11 22:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
