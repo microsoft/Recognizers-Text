@@ -44,6 +44,9 @@
   {
     "Input": "Sairei diariamente",
     "NotSupported": "javascript, python",
+    "Context": {
+      "ReferenceDateTime": "2019-11-25T17:00:00"
+    },
     "Results": [
       {
         "Text": "diariamente",
@@ -51,10 +54,10 @@
         "Value": {
           "Timex": "P1D",
           "FutureResolution": {
-            "set": "Set: P1D"
+            "date": "2019-11-25"
           },
           "PastResolution": {
-            "set": "Set: P1D"
+            "date": "2019-11-25"
           }
         },
         "Start": 7,
@@ -65,6 +68,9 @@
   {
     "Input": "Minha saída diária",
     "NotSupported": "javascript, python",
+    "Context": {
+      "ReferenceDateTime": "2019-11-25T17:00:00"
+    },
     "Results": [
       {
         "Text": "diária",
@@ -72,10 +78,10 @@
         "Value": {
           "Timex": "P1D",
           "FutureResolution": {
-            "set": "Set: P1D"
+            "date": "2019-11-25"
           },
           "PastResolution": {
-            "set": "Set: P1D"
+            "date": "2019-11-25"
           }
         },
         "Start": 12,
@@ -86,6 +92,9 @@
   {
     "Input": "Sairei todos os dias",
     "NotSupported": "javascript, python",
+    "Context": {
+      "ReferenceDateTime": "2019-11-25T17:00:00"
+    },
     "Results": [
       {
         "Text": "todos os dias",
@@ -93,10 +102,10 @@
         "Value": {
           "Timex": "P1D",
           "FutureResolution": {
-            "set": "Set: P1D"
+            "date": "2019-11-25"
           },
           "PastResolution": {
-            "set": "Set: P1D"
+            "date": "2019-11-25"
           }
         },
         "Start": 7,

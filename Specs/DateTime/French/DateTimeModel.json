@@ -655,7 +655,7 @@
             {
               "timex": "P1D",
               "type": "set",
-              "value": "not resolved"
+              "value": "2016-11-07"
             }
           ]
         },
@@ -2015,7 +2015,7 @@
             {
               "timex": "P1D",
               "type": "set",
-              "value": "not resolved"
+              "value": "2019-08-12"
             }
           ]
         }
@@ -2125,7 +2125,7 @@
             {
               "timex": "P1D",
               "type": "set",
-              "value": "not resolved"
+              "value": "2019-08-12"
             }
           ]
         }

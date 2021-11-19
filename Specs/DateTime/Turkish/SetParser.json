@@ -60,10 +60,10 @@
         "Value": {
           "Timex": "P1D",
           "FutureResolution": {
-            "set": "Set: P1D"
+            "date": "2017-09-27"
           },
           "PastResolution": {
-            "set": "Set: P1D"
+            "date": "2017-09-27"
           }
         },
         "Start": 0,
@@ -84,10 +84,10 @@
         "Value": {
           "Timex": "P1D",
           "FutureResolution": {
-            "set": "Set: P1D"
+            "date": "2017-09-27"
           },
           "PastResolution": {
-            "set": "Set: P1D"
+            "date": "2017-09-27"
           }
         },
         "Start": 0,

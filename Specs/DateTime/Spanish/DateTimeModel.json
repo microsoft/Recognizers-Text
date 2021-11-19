@@ -2931,7 +2931,7 @@
             {
               "timex": "P1D",
               "type": "set",
-              "value": "not resolved"
+              "value": "2016-11-07"
             }
           ]
         }
@@ -18498,7 +18498,7 @@
             {
               "timex": "P1WE",
               "type": "set",
-              "value": "not resolved"
+              "value": "2020-06-13"
             }
           ]
         }

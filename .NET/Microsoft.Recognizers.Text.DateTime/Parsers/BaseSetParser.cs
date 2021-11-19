@@ -77,15 +77,66 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (innerResult.Success)
                 {
-                    innerResult.FutureResolution = new Dictionary<string, string>
+                    if (innerResult.Timex.EndsWith("WE"))
                     {
-                        { TimeTypeConstants.SET, (string)innerResult.FutureValue },
-                    };
+                        var innerResult1 = ParseEach(config.DatePeriodExtractor, config.DatePeriodParser, er.Text, refDate);
+                        if (innerResult1.FutureValue != null)
+                        {
+                            innerResult.FutureResolution = new Dictionary<string, string>
+                            {
+                                {
+                                    TimeTypeConstants.DATE,
+                                    DateTimeFormatUtil.FormatDate((DateObject)innerResult1.FutureValue)
+                                },
+                            };
 
-                    innerResult.PastResolution = new Dictionary<string, string>
+                            innerResult.PastResolution = new Dictionary<string, string>
+                            {
+                                {
+                                    TimeTypeConstants.DATE,
+                                    DateTimeFormatUtil.FormatDate((DateObject)innerResult1.PastValue)
+                                },
+                            };
+                        }
+                        else
+                        {
+                            innerResult.FutureResolution = new Dictionary<string, string>
+                            {
+                                { TimeTypeConstants.SET, (string)innerResult.FutureValue },
+                            };
+
+                            innerResult.PastResolution = new Dictionary<string, string>
+                            {
+                                { TimeTypeConstants.SET, (string)innerResult.PastValue },
+                            };
+                        }
+                    }
+                    else if (innerResult.Timex.Equals("P1D"))
                     {
-                        { TimeTypeConstants.SET, (string)innerResult.PastValue },
-                    };
+                        Console.WriteLine(DateTimeFormatUtil.FormatDate((DateObject)refDate));
+                        innerResult.FutureResolution = new Dictionary<string, string>
+                        {
+                            { TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject)refDate) },
+                        };
+
+                        innerResult.PastResolution = new Dictionary<string, string>
+                        {
+                            { TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject)refDate) },
+                        };
+                    }
+                    else
+                    {
+                        innerResult.FutureResolution = new Dictionary<string, string>
+                        {
+                            { TimeTypeConstants.SET, (string)innerResult.FutureValue },
+                        };
+
+                        innerResult.PastResolution = new Dictionary<string, string>
+                        {
+                            { TimeTypeConstants.SET, (string)innerResult.PastValue },
+                        };
+
+                    }
 
                     value = innerResult;
                 }
@@ -111,10 +162,21 @@ namespace Microsoft.Recognizers.Text.DateTime
             return candidateResults;
         }
 
-        private DateTimeResolutionResult ResolveSet(ref DateTimeResolutionResult result, string innerTimex)
+        private DateTimeResolutionResult ResolveSet(ref DateTimeResolutionResult result, string innerTimex, DateTimeParseResult pr = null)
         {
             result.Timex = innerTimex;
             result.FutureValue = result.PastValue = "Set: " + innerTimex;
+
+            if (pr != null && pr.TimexStr.EndsWith("WE"))
+            {
+                DateTimeResolutionResult value = (DateTimeResolutionResult)pr.Value;
+                if (value.FutureValue != null)
+                {
+                    result.FutureValue = ((Tuple<DateObject, DateObject>)value.FutureValue).Item1;
+                    result.PastValue = ((Tuple<DateObject, DateObject>)value.PastValue).Item1;
+                }
+            }
+
             result.Success = true;
 
             return result;
@@ -256,7 +318,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 var pr = parser.Parse(ers[0], refDate);
 
-                ret = ResolveSet(ref ret, pr.TimexStr);
+                ret = ResolveSet(ref ret, pr.TimexStr, pr);
             }
 
             return ret;

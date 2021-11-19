@@ -1336,7 +1336,7 @@
             {
               "timex": "P1D",
               "type": "set",
-              "value": "not resolved"
+              "value": "2016-11-07"
             }
           ]
         }
@@ -16365,30 +16365,6 @@
     ]
   },
   {
-    "Input": "Let's make sure that happens every weekday",
-    "Context": {
-      "ReferenceDateTime": "2020-06-12T00:00:00"
-    },
-    "NotSupported": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "every weekday",
-        "Start": 29,
-        "End": 41,
-        "TypeName": "datetimeV2.set",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "P1D",
-              "type": "set",
-              "value": "not resolved"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  {
     "Input": "why don't you take the remaining of the week off?",
     "Context": {
       "ReferenceDateTime": "2020-06-12T00:00:00"
@@ -18539,7 +18515,7 @@
             {
               "timex": "P1D",
               "type": "set",
-              "value": "not resolved"
+              "value": "2016-11-07"
             }
           ]
         }
@@ -20086,7 +20062,7 @@
             {
               "timex": "P1D",
               "type": "set",
-              "value": "not resolved"
+              "value": "2018-05-22"
             }
           ]
         }
@@ -20374,7 +20350,7 @@
             {
               "timex": "P1D",
               "type": "set",
-              "value": "not resolved"
+              "value": "2021-05-20"
             }
           ]
         }

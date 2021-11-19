@@ -931,6 +931,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 AddSingleDateTimeToResolution(resolutionDic, TimeTypeConstants.DATE, mod, res);
             }
+            else if (type.Equals(Constants.SYS_DATETIME_SET, StringComparison.Ordinal))
+            {
+                AddSingleDateTimeToResolution(resolutionDic, TimeTypeConstants.DATE, mod, res);
+            }
             else if (type.Equals(Constants.SYS_DATETIME_DURATION, StringComparison.Ordinal))
             {
                 if (resolutionDic.ContainsKey(TimeTypeConstants.DURATION))

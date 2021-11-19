@@ -184,6 +184,7 @@
       <DependentUpon>DateTimeDefinitions.tt</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <Generator>true</Generator>
     </Compile>
     <Compile Update="English\NumbersDefinitions.cs">
       <DependentUpon>NumbersDefinitions.tt</DependentUpon>
@@ -455,6 +456,7 @@
     <None Update="English\ChoiceDefinitions.tt">
     </None>
     <None Update="English\DateTimeDefinitions.tt">
+      <Generator>true</Generator>
     </None>
     <None Update="English\NumbersDefinitions.tt">
     </None>

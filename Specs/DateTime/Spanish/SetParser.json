@@ -41,6 +41,9 @@
   },
   {
     "Input": "Saldré diariamente",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T17:25:54.2744475+08:00"
+    },
     "Results": [
       {
         "Text": "diariamente",
@@ -48,10 +51,10 @@
         "Value": {
           "Timex": "P1D",
           "FutureResolution": {
-            "set": "Set: P1D"
+            "date": "2017-09-27"
           },
           "PastResolution": {
-            "set": "Set: P1D"
+            "date": "2017-09-27"
           }
         },
         "Start": 7,
@@ -61,6 +64,9 @@
   },
   {
     "Input": "Saldré a diario",
+    "Context": {
+      "ReferenceDateTime": "2019-11-25T17:00:00"
+    },
     "Results": [
       {
         "Text": "a diario",
@@ -68,10 +74,10 @@
         "Value": {
           "Timex": "P1D",
           "FutureResolution": {
-            "set": "Set: P1D"
+            "date": "2019-11-25"
           },
           "PastResolution": {
-            "set": "Set: P1D"
+            "date": "2019-11-25"
           }
         },
         "Start": 7,
@@ -81,6 +87,9 @@
   },
   {
     "Input": "Saldré todos los dias",
+    "Context": {
+      "ReferenceDateTime": "2019-11-25T17:00:00"
+    },
     "Results": [
       {
         "Text": "todos los dias",
@@ -88,10 +97,10 @@
         "Value": {
           "Timex": "P1D",
           "FutureResolution": {
-            "set": "Set: P1D"
+            "date": "2019-11-25"
           },
           "PastResolution": {
-            "set": "Set: P1D"
+            "date": "2019-11-25"
           }
         },
         "Start": 7,
