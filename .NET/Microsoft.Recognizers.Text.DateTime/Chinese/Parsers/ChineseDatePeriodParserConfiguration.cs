@@ -57,6 +57,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             FutureRegex = ChineseDatePeriodExtractorConfiguration.FutureRegex;
             UnitRegex = ChineseDatePeriodExtractorConfiguration.UnitRegex;
             WeekOfMonthRegex = ChineseDatePeriodExtractorConfiguration.WeekOfMonthRegex;
+            WeekOfYearRegex = ChineseDatePeriodExtractorConfiguration.WeekOfYearRegex;
+            FirstLastOfYearRegex = ChineseDatePeriodExtractorConfiguration.FirstLastOfYearRegex;
             SeasonWithYear = ChineseDatePeriodExtractorConfiguration.SeasonWithYear;
             QuarterRegex = ChineseDatePeriodExtractorConfiguration.QuarterRegex;
             DecadeRegex = ChineseDatePeriodExtractorConfiguration.DecadeRegex;
@@ -135,6 +137,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public Regex UnitRegex { get; }
 
         public Regex WeekOfMonthRegex { get; }
+
+        public Regex WeekOfYearRegex { get; }
+
+        public Regex FirstLastOfYearRegex { get; }
 
         public Regex SeasonWithYear { get; }
 

@@ -80,7 +80,7 @@ SpecialDate: !nestedRegex
   def: (?<thisyear>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex})年)?(?<thismonth>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex})月)?{DateDayRegexInCJK}
   references: [ThisPrefixRegex, LastPrefixRegex, NextPrefixRegex, DateDayRegexInCJK]
 DateUnitRegex: !simpleRegex
-  def: (?<unit>年|个月|周|日|天)
+  def: (?<unit>年|个月|周|週|日|天)
 BeforeRegex: !simpleRegex
   def: 以前|之前|前
 AfterRegex: !simpleRegex
@@ -161,7 +161,7 @@ SimpleCasesRegex: !nestedRegex
   def: ((从)\s*)?(({YearRegex}|{DatePeriodYearInCJKRegex})\s*)?{MonthSuffixRegex}({DatePeriodDayRegexInCJK}|{DayRegex})\s*{DatePeriodTillRegex}\s*({DatePeriodDayRegexInCJK}|{DayRegex})((\s+|\s*,\s*){YearRegex})?
   references: [YearRegex, DatePeriodYearInCJKRegex, MonthSuffixRegex, DatePeriodDayRegexInCJK, DayRegex, DatePeriodTillRegex]
 YearAndMonth: !nestedRegex
-  def: ({DatePeriodYearInCJKRegex}|{YearRegex})\s*{MonthRegex}
+  def: ({DatePeriodYearInCJKRegex}|{YearRegex}|(?<yearrel>明年|今年|去年))\s*({MonthRegex}|的?(?<cardinal>第一|第二|第三|第四|第五|第六|第七|第八|第九|第十|第十一|第十二|最后一)\s*个月\s*)
   references: [DatePeriodYearInCJKRegex, YearRegex, MonthRegex]
 SimpleYearAndMonth: !nestedRegex
   def: ({YearNumRegex}[/\\\-]{MonthNumRegex}\b$)
@@ -175,8 +175,11 @@ OneWordPeriodRegex: !nestedRegex
 WeekOfMonthRegex: !nestedRegex
   def: (?<wom>{MonthSuffixRegex}的(?<cardinal>第一|第二|第三|第四|第五|最后一)\s*周\s*)
   references: [MonthSuffixRegex]
+WeekOfYearRegex: !nestedRegex
+  def: (?<woy>({YearRegex}|{RelativeRegex}年)的(?<cardinal>第一|第二|第三|第四|第五|最后一)\s*周\s*)
+  references: [ YearRegex, RelativeRegex ]
 UnitRegex: !simpleRegex
-  def: (?<unit>年|(个)?月|周|日|天)
+  def: (?<unit>年|(?<uoy>(个)?月|周|週|日|天))
 FollowedUnit: !nestedRegex
   def: ^\s*{UnitRegex}
   references: [UnitRegex]
@@ -203,6 +206,9 @@ DayToDay: !simpleRegex
 DayRegexForPeriod: !simpleRegex
   # TODO: modify below regex according to the counterpart in Japanese
   def: ^[.]
+FirstLastOfYearRegex: !nestedRegex
+  def: (({DatePeriodYearInCJKRegex}|{YearRegex}|(?<yearrel>明年|今年|去年))的?)((?<first>前)|(?<last>(最后|最後)))
+  references: [YearRegex,DatePeriodYearInCJKRegex]
 PastRegex: !simpleRegex
   def: (?<past>(之前|前|上|近|过去))
 FutureRegex: !simpleRegex
@@ -299,7 +305,7 @@ DurationSuffixList: !dictionary
     S: 秒钟|秒
     H: 个小时|小时|个钟头|钟头|时
     D: 天
-    W: 星期|个星期|周
+    W: 星期|个星期|周|週
     Mon: 个月
     Y: 年
 DurationAmbiguousUnits: !list
@@ -314,11 +320,12 @@ DurationAmbiguousUnits: !list
     - 星期
     - 个星期
     - 周
+    - 週
     - 个月
     - 年
     - 时
 DurationUnitRegex: !nestedRegex
-  def: (?<unit>{DateUnitRegex}|分钟?|秒钟?|个?小时|时|个?钟头|天|个?星期|周|个?月|年)
+  def: (?<unit>{DateUnitRegex}|分钟?|秒钟?|个?小时|时|个?钟头|天|个?星期|周|週|个?月|年)
   references: [DateUnitRegex]
 DurationConnectorRegex: !simpleRegex
   def: ^\s*(?<connector>[多又余零]?)\s*$
@@ -456,6 +463,7 @@ ParserConfigurationUnitMap: !dictionary
     个月: MON
     日: D
     周: W
+    週: W
     天: D
     小时: H
     个小时: H
@@ -502,6 +510,7 @@ WeekTerms: !list
   types: [ string ]
   entries:
     - 周
+    - 週
     - 星期
 YearTerms: !list
   types: [ string ]
@@ -564,6 +573,13 @@ ParserConfigurationCardinalMap: !dictionary
     第三: 3
     第四: 4
     第五: 5
+    第六: 6
+    第七: 7
+    第八: 8
+    第九: 9
+    第十: 10
+    第十一: 11
+    第十二: 12
 ParserConfigurationDayOfMonth: !dictionary
   types: [string, int]
   entries:

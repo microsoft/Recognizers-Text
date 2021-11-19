@@ -186,6 +186,10 @@ OneWordPeriodRegex: !nestedRegex
 WeekOfMonthRegex: !nestedRegex
   def: ((?<wom>{MonthSuffixRegex}(的|の))第?(?<cardinal>一|二|三|四|五|最后一)\s*周\s*)
   references: [MonthSuffixRegex]
+WeekOfYearRegex: !nestedRegex
+  # TODO: modify below regex according to the counterpart in Chinese
+  def: (?<woy>({YearRegex}|{RelativeRegex}年)的(?<cardinal>第一|第二|第三|第四|第五|最后一)\s*周\s*)
+  references: [ YearRegex, RelativeRegex ]
 UnitRegex: !simpleRegex
   def: (?<unit>年|(个)?月|周|日|天)
 FollowedUnit: !nestedRegex
@@ -218,6 +222,10 @@ MonthToMonthSuffixRequired: !simpleRegex
 DayToDay: !nestedRegex
   def: ({DayRegex}から{DayRegex}まで)
   references: [DayRegex]
+FirstLastOfYearRegex: !nestedRegex
+  # TODO: modify below regex according to the counterpart in Chinese
+  def: (({DatePeriodYearInCJKRegex}|{YearRegex}|(?<yearrel>明年|今年|去年))的?)((?<first>前)|(?<last>(最后|最後)))
+  references: [YearRegex,DatePeriodYearInCJKRegex]
 PastRegex: !simpleRegex
   def: (?<past>(前|上|之前|近|过去))
 FutureRegex: !simpleRegex

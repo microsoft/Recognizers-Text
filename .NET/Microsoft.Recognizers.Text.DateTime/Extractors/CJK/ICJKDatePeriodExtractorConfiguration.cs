@@ -20,6 +20,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex PastRegex { get; }
 
+        Regex FirstLastOfYearRegex { get; }
+
+        Regex UnitRegex { get; }
+
         Regex NumberCombinedWithUnit { get; }
 
         Regex FollowedUnit { get; }

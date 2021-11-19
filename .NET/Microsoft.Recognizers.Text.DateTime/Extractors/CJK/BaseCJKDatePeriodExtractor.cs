@@ -153,7 +153,22 @@ namespace Microsoft.Recognizers.Text.DateTime
                     continue;
                 }
 
-                var match = this.config.PastRegex.MatchEnd(beforeStr, trim: true);
+                // Cases like 'first 2 weeks of 2018' (2021年的前2周)
+                var match = this.config.FirstLastOfYearRegex.MatchEnd(beforeStr, trim: true);
+
+                if (match.Success)
+                {
+                    // Check if the unit is compatible (day, week,  month)
+                    var durationStr = text.Substring(duration.Start, duration.Length);
+                    var unitMatch = this.config.UnitRegex.Match(durationStr);
+                    if (unitMatch.Groups[Constants.UnitOfYearGroupName].Success)
+                    {
+                        ret.Add(new Token(match.Index, duration.End));
+                        continue;
+                    }
+                }
+
+                match = this.config.PastRegex.MatchEnd(beforeStr, trim: true);
 
                 if (match.Success)
                 {
