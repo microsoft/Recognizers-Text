@@ -513,12 +513,12 @@ SuffixAndRegex: !simpleRegex
 PeriodicRegex: !simpleRegex
   def: \b(?<periodic>((?<multiplier>semi|bi|tri)(\s*|-))?(daily|monthly|weekly|quarterly|yearly|annual(ly)?))\b
 EachUnitRegex: !nestedRegex
-  def: \b(?<each>(each|every|any|once an?)(?<other>\s+other)?\s+({DurationUnitRegex}|(?<specialUnit>quarters?|weekends?)|{WeekDayRegex})|(?<specialUnit>weekends))
+  def: \b(?<each>(every|(each|any|once an|one a|once a)\s?)(?<other>\s+(other|alternate|second))?\s*({DurationUnitRegex}|(?<specialUnit>quarters?|weekends?)|{WeekDayRegex})|(?<specialUnit>weekends))
   references: [ DurationUnitRegex, WeekDayRegex ]
 EachPrefixRegex: !simpleRegex
   def: \b(?<each>(each|every|once an?)\s*$)
 SetEachRegex: !simpleRegex
-  def: \b(?<each>(each|every)(?<other>\s+other)?\s*)(?!the|that)\b
+  def: \b(?<each>(each|every)(?<other>\s+(other|alternate))?\s*)(?!the|that)\b
 SetLastRegex: !nestedRegex
   def: (?<last>following|next|upcoming|this|{LastNegPrefix}last|past|previous|current)
   references: [ LastNegPrefix ]

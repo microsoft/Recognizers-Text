@@ -218,9 +218,9 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly string DurationUnitRegex = $@"(?<unit>{DateUnitRegex}|h(ou)?rs?|h|min(ute)?s?|sec(ond)?s?|nights?)\b";
       public const string SuffixAndRegex = @"(?<suffix>\s*(and)\s+(an?\s+)?(?<suffix_num>half|quarter))";
       public const string PeriodicRegex = @"\b(?<periodic>((?<multiplier>semi|bi|tri)(\s*|-))?(daily|monthly|weekly|quarterly|yearly|annual(ly)?))\b";
-      public static readonly string EachUnitRegex = $@"\b(?<each>(each|every|any|once an?)(?<other>\s+other)?\s+({DurationUnitRegex}|(?<specialUnit>quarters?|weekends?)|{WeekDayRegex})|(?<specialUnit>weekends))";
+      public static readonly string EachUnitRegex = $@"\b(?<each>(every|(each|any|once an|one a|once a)\s?)(?<other>\s+(other|alternate|second))?\s*({DurationUnitRegex}|(?<specialUnit>quarters?|weekends?)|{WeekDayRegex})|(?<specialUnit>weekends))";
       public const string EachPrefixRegex = @"\b(?<each>(each|every|once an?)\s*$)";
-      public const string SetEachRegex = @"\b(?<each>(each|every)(?<other>\s+other)?\s*)(?!the|that)\b";
+      public const string SetEachRegex = @"\b(?<each>(each|every)(?<other>\s+(other|alternate))?\s*)(?!the|that)\b";
       public static readonly string SetLastRegex = $@"(?<last>following|next|upcoming|this|{LastNegPrefix}last|past|previous|current)";
       public const string EachDayRegex = @"^\s*(each|every)\s*day\b";
       public static readonly string DurationFollowedUnit = $@"(^\s*{DurationUnitRegex}\s+{SuffixAndRegex})|(^\s*{SuffixAndRegex}?(\s+|-)?{DurationUnitRegex})";
