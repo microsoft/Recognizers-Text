@@ -1233,6 +1233,29 @@
     ]
   },
   {
+    "Input": "I'll leave everyday",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "everyday",
+        "Start": 11,
+        "End": 18,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1D",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "I'll leave annually",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -2171,7 +2194,7 @@
   },
   {
     "Input": "Book this lunch in my calendar on Tue May 9. Don't contact people.",
-    "Comment":"Disable this for now because of new features in .NET",
+    "Comment": "Disable this for now because of new features in .NET",
     "NotSupported": "javascript, python, Java",
     "Context": {
       "ReferenceDateTime": "2018-01-07T00:00:00"
@@ -7588,6 +7611,29 @@
           "values": [
             {
               "timex": "P1W",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Have vitamins one a day",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "one a day",
+        "Start": 14,
+        "End": 22,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1D",
               "type": "set",
               "value": "not resolved"
             }

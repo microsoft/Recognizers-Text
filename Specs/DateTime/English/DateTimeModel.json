@@ -1344,6 +1344,29 @@
     ]
   },
   {
+    "Input": "I'll leave everyday",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "everyday",
+        "Start": 11,
+        "End": 18,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1D",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "I'll leave annually",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -14216,6 +14239,29 @@
     ]
   },
   {
+    "Input": "Have vitamins one a day",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "one a day",
+        "Start": 14,
+        "End": 22,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1D",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "I go on vacation once a year",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -16649,7 +16695,7 @@
           ]
         }
       },
-     {
+      {
         "Text": "1st quarter of 2013",
         "Start": 30,
         "End": 48,
@@ -21125,7 +21171,7 @@
   {
     "Input": "dates which are greater than or equals to date 1",
     "Context": {
-        "ReferenceDateTime": "2021-06-18T18:00:00"
+      "ReferenceDateTime": "2021-06-18T18:00:00"
     },
     "NotSupported": "java, javascript, python",
     "Results": []
@@ -21133,7 +21179,7 @@
   {
     "Input": "My dentist uses the most up to date equipment",
     "Context": {
-        "ReferenceDateTime": "2021-06-18T18:00:00"
+      "ReferenceDateTime": "2021-06-18T18:00:00"
     },
     "NotSupported": "java, javascript, python",
     "Results": []
@@ -21141,7 +21187,7 @@
   {
     "Input": "I've kept it up-to-date.",
     "Context": {
-        "ReferenceDateTime": "2021-06-18T18:00:00"
+      "ReferenceDateTime": "2021-06-18T18:00:00"
     },
     "NotSupported": "java, javascript, python",
     "Results": []
@@ -21149,7 +21195,7 @@
   {
     "Input": "rows equals to date from 2010-01-01 till current date",
     "Context": {
-        "ReferenceDateTime": "2021-06-18T18:00:00"
+      "ReferenceDateTime": "2021-06-18T18:00:00"
     },
     "NotSupported": "java, javascript, python",
     "Results": [
@@ -21174,15 +21220,15 @@
   {
     "Input": "The Employer operates a policy of job flexibility and the Employer may, at its discretion, require you to perform additional or other duties, whether skilled or unskilled, not within the scope of your normal duties and may at its discretion amend your Job Description at any time.",
     "Context": {
-        "ReferenceDateTime": "2021-06-18T18:00:00"
+      "ReferenceDateTime": "2021-06-18T18:00:00"
     },
-	"NotSupported": "python",
+    "NotSupported": "python",
     "Results": []
   },
   {
     "Input": "What we have witnessed is the dawn of a second wave of digital transformation sweeping every company and every industry.",
     "Context": {
-        "ReferenceDateTime": "2021-06-18T18:00:00"
+      "ReferenceDateTime": "2021-06-18T18:00:00"
     },
     "Results": []
   },
