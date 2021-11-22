@@ -145,9 +145,9 @@ namespace Microsoft.Recognizers.Definitions.English
       public const string HourNumRegex = @"\b(?<hournum>zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)\b";
       public const string MinuteNumRegex = @"(((?<tens>twenty|thirty|fou?rty|fifty)(\s*-?\s*))?(?<minnum>one|two|three|four|five|six|seven|eight|nine)|(?<minnum>ten|eleven|twelve|thirteen|fifteen|eighteen|(four|six|seven|nine)(teen)|twenty|thirty|forty|fifty))";
       public const string DeltaMinuteNumRegex = @"(((?<tens>twenty|thirty|fou?rty|fifty)(\s*-?\s*))?(?<deltaminnum>one|two|three|four|five|six|seven|eight|nine)|(?<deltaminnum>ten|eleven|twelve|thirteen|fifteen|eighteen|(four|six|seven|nine)(teen)|twenty|thirty|forty|fifty))";
-      public const string PmRegex = @"(?<pm>(((?:at|in|around|circa|on|for)\s+(the\s+)?)?(afternoon|evening|midnight|lunchtime))|((at|in|around|on|for)\s+(the\s+)?night))";
-      public const string PmRegexFull = @"(?<pm>((?:at|in|around|circa|on|for)\s+(the\s+)?)?(afternoon|evening|(mid)?night|lunchtime))";
-      public const string AmRegex = @"(?<am>((?:at|in|around|circa|on|for)\s+(the\s+)?)?(morning))";
+      public const string PmRegex = @"(?<pm>(((?:at|in|around|circa|on|for)\s+(the\s+)?)?(((early|late)\s+)?(afternoon|evening)|midnight|lunchtime))|((at|in|around|on|for)\s+(the\s+)?night))";
+      public const string PmRegexFull = @"(?<pm>((?:at|in|around|circa|on|for)\s+(the\s+)?)?(((early|late)\s+)?(afternoon|evening)|(mid)?night|lunchtime))";
+      public const string AmRegex = @"(?<am>((?:at|in|around|circa|on|for)\s+(the\s+)?)?((early|late)\s+)?(morning))";
       public const string LunchRegex = @"\blunchtime\b";
       public const string NightRegex = @"\b(mid)?night\b";
       public const string CommonDatePrefixRegex = @"^[\.]";
