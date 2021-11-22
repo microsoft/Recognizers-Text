@@ -248,7 +248,7 @@ RelativeDayRegex: !nestedRegex
   def: \b(((the\s+)?{RelativeRegex}\s+day))\b
   references: [ RelativeRegex ]
 SetWeekDayRegex: !simpleRegex
-  def: \b(?<prefix>on\s+)?(?<weekday>morning|afternoon|evening|night|(sun|mon|tues|wednes|thurs|fri|satur)day)(s|(?<routine>\s+routine))\b
+  def: \b(?<prefix>on\s+)?(?<weekday>morning|afternoon|evening|night|(sun|mon|tues|wednes|thurs|fri|satur)day)s\b
 WeekDayOfMonthRegex: !nestedRegex
   def: (?<wom>(the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\s+(week\s+{MonthSuffixRegex}[\.]?\s+(on\s+)?{WeekDayRegex}|{WeekDayRegex}\s+{MonthSuffixRegex}))
   references: [ WeekDayRegex, MonthSuffixRegex ]
@@ -513,7 +513,7 @@ SuffixAndRegex: !simpleRegex
 PeriodicRegex: !simpleRegex
   def: \b(?<periodic>((?<multiplier>semi|bi|tri)(\s*|-))?(daily|monthly|weekly|quarterly|yearly|annual(ly)?))\b
 EachUnitRegex: !nestedRegex
-  def: \b(?<each>(each\s|every|any\s|once an\s|one a\s|once a\s?)(?<other>\s+(other|alternate|second))?\s*({DurationUnitRegex}|(?<specialUnit>quarters?|weekends?)|{WeekDayRegex})|(?<specialUnit>weekends))
+  def: \b(?<each>(every|(each|any|once an|one a|once a)\s?)(?<other>\s+(other|alternate|second))?\s*({DurationUnitRegex}|(?<specialUnit>quarters?|weekends?)|{WeekDayRegex})|(?<specialUnit>weekends))
   references: [ DurationUnitRegex, WeekDayRegex ]
 EachPrefixRegex: !simpleRegex
   def: \b(?<each>(each|every|once an?)\s*$)
