@@ -296,63 +296,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             return year;
         }
 
-        private static DateObject GetFirstThursday(int year, int month = Constants.InvalidMonth)
-        {
-            var targetMonth = month;
-
-            if (month == Constants.InvalidMonth)
-            {
-                targetMonth = 1;
-            }
-
-            var firstDay = DateObject.MinValue.SafeCreateFromValue(year, targetMonth, 1);
-            DateObject firstThursday = firstDay.This(DayOfWeek.Thursday);
-
-            // Thursday falls into previous year or previous month
-            if (firstThursday.Month != targetMonth)
-            {
-                firstThursday = firstDay.AddDays(Constants.WeekDayCount);
-            }
-
-            return firstThursday;
-        }
-
-        private static DateObject GetLastThursday(int year, int month = Constants.InvalidMonth)
-        {
-            var targetMonth = month;
-
-            if (month == Constants.InvalidMonth)
-            {
-                targetMonth = 12;
-            }
-
-            var lastDay = GetLastDay(year, targetMonth);
-            DateObject lastThursday = lastDay.This(DayOfWeek.Thursday);
-
-            // Thursday falls into next year or next month
-            if (lastThursday.Month != targetMonth)
-            {
-                lastThursday = lastThursday.AddDays(-Constants.WeekDayCount);
-            }
-
-            return lastThursday;
-        }
-
-        private static DateObject GetLastDay(int year, int month)
-        {
-            month++;
-
-            if (month == 13)
-            {
-                year++;
-                month = 1;
-            }
-
-            var firstDayOfNextMonth = DateObject.MinValue.SafeCreateFromValue(year, month, 1);
-
-            return firstDayOfNextMonth.AddDays(-1);
-        }
-
         // convert CJK Number to Integer
         private int ConvertCJKToNum(string numStr)
         {
@@ -1530,8 +1473,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                             if (unitStr == Constants.TimexWeek)
                             {
                                 // First/last week of the year is calculated according to ISO definition
-                                beginDate = GetFirstThursday(year).This(DayOfWeek.Monday);
-                                endDate = GetLastThursday(year).This(DayOfWeek.Monday).AddDays(7);
+                                beginDate = DateObjectExtension.GetFirstThursday(year).This(DayOfWeek.Monday);
+                                endDate = DateObjectExtension.GetLastThursday(year).This(DayOfWeek.Monday).AddDays(7);
                             }
                             else
                             {
@@ -1714,14 +1657,14 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (config.WoMLastRegex.IsExactMatch(cardinalStr, trim: true))
             {
-                targetWeekMonday = GetLastThursday(year).This(DayOfWeek.Monday);
+                targetWeekMonday = DateObjectExtension.GetLastThursday(year).This(DayOfWeek.Monday);
 
                 ret.Timex = TimexUtility.GenerateWeekTimex(targetWeekMonday);
             }
             else
             {
                 var weekNum = this.config.CardinalMap[cardinalStr];
-                targetWeekMonday = GetFirstThursday(year).This(DayOfWeek.Monday)
+                targetWeekMonday = DateObjectExtension.GetFirstThursday(year).This(DayOfWeek.Monday)
                     .AddDays(Constants.WeekDayCount * (weekNum - 1));
 
                 ret.Timex = TimexUtility.GenerateWeekOfYearTimex(year, weekNum);

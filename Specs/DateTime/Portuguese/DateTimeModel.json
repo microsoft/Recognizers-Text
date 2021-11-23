@@ -2751,16 +2751,16 @@
     ]
   },
   {
-    "Input": "Created On é no terceiro mês de 2021",
+    "Input": "Eles sairão do terceiro mês de 2021",
     "Context": {
       "ReferenceDateTime": "2018-11-29T12:00:00"
     },
     "NotSupported": "java, javascript, python",
     "Results": [
       {
-        "Text": "no terceiro mês de 2021",
-        "Start": 13,
-        "End": 35,
+        "Text": "terceiro mês de 2021",
+        "Start": 15,
+        "End": 34,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -2776,7 +2776,7 @@
     ]
   },
   {
-    "Input": "Created On é no 9o mês do próximo ano",
+    "Input": "No 9o mês do próximo ano faremos uma revisão do progresso.",
     "Context": {
       "ReferenceDateTime": "2021-11-29T12:00:00"
     },
@@ -2784,8 +2784,8 @@
     "Results": [
       {
         "Text": "no 9o mês do próximo ano",
-        "Start": 13,
-        "End": 36,
+        "Start": 0,
+        "End": 23,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -2801,16 +2801,16 @@
     ]
   },
   {
-    "Input": "Created On está nas primeiras 2 semanas de 2021",
+    "Input": "Quartos já totalmente reservados para as primeiras 2 semanas de 2021",
     "Context": {
       "ReferenceDateTime": "2018-11-29T12:00:00"
     },
     "NotSupported": "java, javascript, python",
     "Results": [
       {
-        "Text": "nas primeiras 2 semanas de 2021",
-        "Start": 16,
-        "End": 46,
+        "Text": "as primeiras 2 semanas de 2021",
+        "Start": 38,
+        "End": 67,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -2826,16 +2826,16 @@
     ]
   },
   {
-    "Input": "Created On está nas últimas 3 semanas deste ano",
+    "Input": "A manutenção está programada para as últimas 3 semanas deste ano",
     "Context": {
       "ReferenceDateTime": "2019-11-29T12:00:00"
     },
     "NotSupported": "java, javascript, python",
     "Results": [
       {
-        "Text": "nas últimas 3 semanas deste ano",
-        "Start": 16,
-        "End": 46,
+        "Text": "as últimas 3 semanas deste ano",
+        "Start": 34,
+        "End": 63,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -2851,16 +2851,16 @@
     ]
   },
   {
-    "Input": "Created On é nos últimos quatro meses de 2021",
+    "Input": "Os resultados dos últimos quatro meses de 2021 foram listados",
     "Context": {
       "ReferenceDateTime": "2018-11-29T12:00:00"
     },
     "NotSupported": "java, javascript, python",
     "Results": [
       {
-        "Text": "nos últimos quatro meses de 2021",
-        "Start": 13,
-        "End": 44,
+        "Text": "últimos quatro meses de 2021",
+        "Start": 18,
+        "End": 45,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -2876,16 +2876,16 @@
     ]
   },
   {
-    "Input": "Created On são os primeiros dez dias do último ano",
+    "Input": "Eles visitaram Paris nos primeiros dez dias do último ano",
     "Context": {
       "ReferenceDateTime": "2021-11-29T12:00:00"
     },
     "NotSupported": "java, javascript, python",
     "Results": [
       {
-        "Text": "os primeiros dez dias do último ano",
-        "Start": 15,
-        "End": 49,
+        "Text": "nos primeiros dez dias do último ano",
+        "Start": 21,
+        "End": 56,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [

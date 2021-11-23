@@ -22109,16 +22109,16 @@
     ]
   },
   {
-    "Input": "Created On es en el tercer mes de 2021",
+    "Input": "Ellos saldrán del tercer mes de 2021",
     "Context": {
       "ReferenceDateTime": "2018-11-29T12:00:00"
     },
     "NotSupported": "java, javascript, python",
     "Results": [
       {
-        "Text": "el tercer mes de 2021",
-        "Start": 17,
-        "End": 37,
+        "Text": "tercer mes de 2021",
+        "Start": 18,
+        "End": 35,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -22134,7 +22134,7 @@
     ]
   },
   {
-    "Input": "Created On es en el noveno mes del próximo año",
+    "Input": "El noveno mes del próximo año realizaremos una revisión del progreso. ",
     "Context": {
       "ReferenceDateTime": "2021-11-29T12:00:00"
     },
@@ -22142,8 +22142,8 @@
     "Results": [
       {
         "Text": "el noveno mes del próximo año",
-        "Start": 17,
-        "End": 45,
+        "Start": 0,
+        "End": 28,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -22159,7 +22159,7 @@
     ]
   },
   {
-    "Input": "Created On es en las primeras 2 semanas de 2021",
+    "Input": "Habitaciones ya completamente reservadas para las primeras 2 semanas de 2021",
     "Context": {
       "ReferenceDateTime": "2018-11-29T12:00:00"
     },
@@ -22167,8 +22167,8 @@
     "Results": [
       {
         "Text": "las primeras 2 semanas de 2021",
-        "Start": 17,
-        "End": 46,
+        "Start": 46,
+        "End": 75,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -22184,7 +22184,7 @@
     ]
   },
   {
-    "Input": "Created On es en las últimas 3 semanas de este año",
+    "Input": "El mantenimiento está programado para las últimas 3 semanas de este año",
     "Context": {
       "ReferenceDateTime": "2019-11-29T12:00:00"
     },
@@ -22192,8 +22192,8 @@
     "Results": [
       {
         "Text": "las últimas 3 semanas de este año",
-        "Start": 17,
-        "End": 49,
+        "Start": 38,
+        "End": 70,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -22209,7 +22209,7 @@
     ]
   },
   {
-    "Input": "Created On es en los últimos cuatro meses de 2021",
+    "Input": "Se enumeran los resultados de los últimos cuatro meses de 2021",
     "Context": {
       "ReferenceDateTime": "2018-11-29T12:00:00"
     },
@@ -22217,8 +22217,8 @@
     "Results": [
       {
         "Text": "los últimos cuatro meses de 2021",
-        "Start": 17,
-        "End": 48,
+        "Start": 30,
+        "End": 61,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -22234,7 +22234,7 @@
     ]
   },
   {
-    "Input": "Created On es los primeros diez días del último año",
+    "Input": "Ellos visitaron París los primeros diez días del último año",
     "Context": {
       "ReferenceDateTime": "2021-11-29T12:00:00"
     },
@@ -22242,8 +22242,8 @@
     "Results": [
       {
         "Text": "los primeros diez días del último año",
-        "Start": 14,
-        "End": 50,
+        "Start": 22,
+        "End": 58,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [

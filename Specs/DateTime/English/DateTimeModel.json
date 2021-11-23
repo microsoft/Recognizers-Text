@@ -22148,7 +22148,7 @@
     ]
   },
   {
-    "Input": "Created On is in the third month of 2021",
+    "Input": "They will leave the third month of 2021",
     "Context": {
       "ReferenceDateTime": "2018-11-29T12:00:00"
     },
@@ -22156,8 +22156,8 @@
     "Results": [
       {
         "Text": "the third month of 2021",
-        "Start": 17,
-        "End": 39,
+        "Start": 16,
+        "End": 38,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -22173,7 +22173,7 @@
     ]
   },
   {
-    "Input": "Created On is in the 9th month of next year",
+    "Input": "The 9th month of next year we will conduct a review of the progress.",
     "Context": {
       "ReferenceDateTime": "2021-11-29T12:00:00"
     },
@@ -22181,8 +22181,8 @@
     "Results": [
       {
         "Text": "the 9th month of next year",
-        "Start": 17,
-        "End": 42,
+        "Start": 0,
+        "End": 25,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -22198,7 +22198,7 @@
     ]
   },
   {
-    "Input": "Created On is in the first 2 weeks of 2021",
+    "Input": "Rooms already fully booked for the first 2 weeks of 2021",
     "Context": {
       "ReferenceDateTime": "2018-11-29T12:00:00"
     },
@@ -22206,8 +22206,8 @@
     "Results": [
       {
         "Text": "the first 2 weeks of 2021",
-        "Start": 17,
-        "End": 41,
+        "Start": 31,
+        "End": 55,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -22223,7 +22223,7 @@
     ]
   },
   {
-    "Input": "Created On is in the last 3 weeks of this year",
+    "Input": "Maintenance is scheduled for the last 3 weeks of this year",
     "Context": {
       "ReferenceDateTime": "2019-11-29T12:00:00"
     },
@@ -22231,8 +22231,8 @@
     "Results": [
       {
         "Text": "the last 3 weeks of this year",
-        "Start": 17,
-        "End": 45,
+        "Start": 29,
+        "End": 57,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -22248,7 +22248,7 @@
     ]
   },
   {
-    "Input": "Created On is in the last four months of 2021",
+    "Input": "The results for the last four months of 2021 have been listed",
     "Context": {
       "ReferenceDateTime": "2018-11-29T12:00:00"
     },
@@ -22256,8 +22256,8 @@
     "Results": [
       {
         "Text": "the last four months of 2021",
-        "Start": 17,
-        "End": 44,
+        "Start": 16,
+        "End": 43,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -22273,7 +22273,7 @@
     ]
   },
   {
-    "Input": "Created On is first ten days of last year",
+    "Input": "They visited Paris first ten days of last year",
     "Context": {
       "ReferenceDateTime": "2021-11-29T12:00:00"
     },
@@ -22281,8 +22281,8 @@
     "Results": [
       {
         "Text": "first ten days of last year",
-        "Start": 14,
-        "End": 40,
+        "Start": 19,
+        "End": 45,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
