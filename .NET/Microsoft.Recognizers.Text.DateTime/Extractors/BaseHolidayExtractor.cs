@@ -10,7 +10,7 @@ namespace Microsoft.Recognizers.Text.DateTime
     public class BaseHolidayExtractor : IDateTimeExtractor
     {
         private const string ExtractorName = Constants.SYS_DATETIME_DATE; // "Date";
-        private const string WeekendExtractorName = Constants.SYS_DATETIME_DATEPERIOD; // "Daterange";
+        private const string RangeExtractorName = Constants.SYS_DATETIME_DATEPERIOD; // "Daterange";
 
         private readonly IHolidayExtractorConfiguration config;
 
@@ -36,7 +36,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (!string.IsNullOrEmpty(er.Metadata.HolidayName))
                 {
-                    er.Type = WeekendExtractorName;
+                    er.Type = RangeExtractorName;
                 }
             }
 
