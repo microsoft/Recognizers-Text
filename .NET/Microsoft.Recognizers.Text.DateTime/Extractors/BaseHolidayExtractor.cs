@@ -67,10 +67,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                             metaData.HolidayName = metaData.HolidayName + " " + match.Groups["year"].Value;
                         }
                     }
-                    else
-                    {
-                        metaData.IsHoliday = true;
-                    }
+
+                    metaData.IsHoliday = true;
 
                     ret.Add(new Token(match.Index, match.Index + match.Length, metaData));
                 }

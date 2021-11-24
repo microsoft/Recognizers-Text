@@ -1011,7 +1011,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             switch (extractResult.Type)
             {
                 case Constants.SYS_DATETIME_DATE:
-                    if (extractResult.Metadata != null && extractResult.Metadata.IsHoliday)
+                    if (extractResult.Metadata != null && extractResult.Metadata.IsHoliday && !extractResult.Metadata.IsHolidayRange)
                     {
                         parseResult = Config.HolidayParser.Parse(extractResult, referenceTime);
                     }
@@ -1030,7 +1030,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     break;
                 case Constants.SYS_DATETIME_DATEPERIOD:
-                    if (extractResult.Metadata != null && (extractResult.Metadata?.IsHolidayRange ?? false))
+                    if (extractResult.Metadata != null && extractResult.Metadata.IsHolidayRange)
                     {
                         parseResult = this.Config.HolidayParser.Parse(extractResult, referenceTime);
                     }
