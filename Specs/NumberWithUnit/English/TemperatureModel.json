@@ -596,6 +596,7 @@
   },
   {
     "Input": "SCP-173C",
+    "NotSupported": "javascript",
     "Results": []
   }
 ]

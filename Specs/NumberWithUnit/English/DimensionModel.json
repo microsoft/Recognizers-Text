@@ -1240,6 +1240,7 @@
   },
   {
     "Input": "24703 L-202",
+    "NotSupported": "javascript",
     "Results": []
   },
   {
@@ -1268,14 +1269,17 @@
   },
   {
     "Input": "scp-173m",
+    "NotSupported": "javascript",
     "Results": []
   },
   {
     "Input": "scp2-173m",
+    "NotSupported": "javascript",
     "Results": []
   },
   {
     "Input": "scp-173 m",
+    "NotSupported": "javascript",
     "Results": []
   },
   {
