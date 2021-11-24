@@ -21259,6 +21259,31 @@
     ]
   },
   {
+    "Input": "I need to prepare for labor day 2021 weekend",
+    "Context": {
+        "ReferenceDateTime": "2021-11-09T18:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "labor day 2021 weekend",
+        "Start": 22,
+        "End": 43,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-W35-WE",
+              "type": "daterange",
+              "start": "2021-09-04",
+              "end": "2021-09-07"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "We'll take weekend of thanksgiving 2023 off",
     "Context": {
         "ReferenceDateTime": "2021-11-09T18:00:00"
