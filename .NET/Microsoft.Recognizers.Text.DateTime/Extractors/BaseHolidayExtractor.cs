@@ -58,7 +58,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     // and year (if captured) when choosing. The data is extracted from the match
                     // groups.
 
-                    if (match.Groups["holidayWeekend"].Success)
+                    if (match.Groups[Constants.HolidayWeekend].Success)
                     {
                         metaData.HolidayName = match.Groups["holiday"].Value;
                         if (match.Groups["year"].Success)
