@@ -31,13 +31,13 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public DateTimeParseResult Parse(ExtractResult er, DateObject refDate)
         {
-            if (string.IsNullOrEmpty(er.Metadata?.HolidayName))
+            if (er.Metadata?.IsHolidayWeekend ?? false)
             {
-                return ParseSingleDate(er, refDate);
+                return ParseHolidayWeekend(er, refDate);
             }
             else
             {
-                return ParseHolidayWeekend(er, refDate);
+                return ParseSingleDate(er, refDate);
             }
         }
 

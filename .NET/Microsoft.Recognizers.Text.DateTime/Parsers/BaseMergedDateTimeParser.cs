@@ -1030,7 +1030,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     break;
                 case Constants.SYS_DATETIME_DATEPERIOD:
-                    if (extractResult.Metadata != null && !string.IsNullOrEmpty(extractResult.Metadata?.HolidayName))
+                    if (extractResult.Metadata != null && (extractResult.Metadata?.IsHolidayRange ?? false))
                     {
                         parseResult = this.Config.HolidayParser.Parse(extractResult, referenceTime);
                     }

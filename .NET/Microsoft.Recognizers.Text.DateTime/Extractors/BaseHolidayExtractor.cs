@@ -34,7 +34,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 // If this is a daterange that contains a holiday, we should change its
                 // type to indicate that.
 
-                if (!string.IsNullOrEmpty(er.Metadata.HolidayName))
+                if (er.Metadata?.IsHolidayRange ?? false)
                 {
                     er.Type = RangeExtractorName;
                 }
@@ -60,6 +60,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     if (match.Groups[Constants.HolidayWeekend].Success)
                     {
+                        metaData.IsHolidayRange = metaData.IsHolidayWeekend = true;
                         metaData.HolidayName = match.Groups["holiday"].Value;
                         if (match.Groups["year"].Success)
                         {
