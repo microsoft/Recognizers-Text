@@ -496,7 +496,7 @@ public class SpanishNumericWithUnit {
         .put("Dólar beliceño", "BZD")
         .put("Dólar bermudeño", "BMD")
         .put("Dólar de Brunéi", "BND")
-        .put("Singapore dollar", "SGD")
+        .put("Dólar de Singapur", "SGD")
         .put("Dólar canadiense", "CAD")
         .put("Dólar de las Islas Caimán", "KYD")
         .put("Dólar neozelandés", "NZD")
@@ -623,7 +623,7 @@ public class SpanishNumericWithUnit {
         .put("Satoshi", "SATOSHI")
         .build();
 
-    public static final String CompoundUnitConnectorRegex = "(?<spacer>y)";
+    public static final String CompoundUnitConnectorRegex = "(?<spacer>y|con)";
 
     public static final ImmutableMap<String, String> CurrencyPrefixList = ImmutableMap.<String, String>builder()
         .put("Dobra", "db|std")

@@ -391,15 +391,15 @@ class FrenchNumericWithUnit:
                                      ("Dollar États-Unis", "USD"),
                                      ("Dollar Australien", "AUD"),
                                      ("Dollar des bahamas", "BSD"),
-                                     ("Barbadian dollar", "BBD"),
+                                     ("Dollar barbadien", "BBD"),
                                      ("Dollar de belize", "BZD"),
                                      ("Dollar des bermudes", "BMD"),
                                      ("Dollar de brunei", "BND"),
                                      ("Dollar de Singapour", "SGD"),
                                      ("Dollar Canadien", "CAD"),
                                      ("Dollar des îles Caïmans", "KYD"),
-                                     ("New Zealand dollar", "NZD"),
-                                     ("Fijian dollar", "FJD"),
+                                     ("Dollar néo-zélandais", "NZD"),
+                                     ("Dollar de Fidji", "FJD"),
                                      ("Dollar guyanien", "GYD"),
                                      ("Dollar de Hong Kong", "HKD"),
                                      ("Dollar jamaïcain", "JMD"),
@@ -549,7 +549,7 @@ class FrenchNumericWithUnit:
                                ("Euro", "€|eur"),
                                ("Livre", "£"),
                                ("Bitcoin", "₿|btc|xbt")])
-    AmbiguousCurrencyUnitList = [r'din.', r'kina', r'lari', r'taka', r'tala', r'vatu', r'yuan', r'bob', r'btn', r'cop', r'cup', r'dop', r'gip', r'jod', r'kgs', r'lak', r'mga', r'mop', r'nad', r'omr', r'sar', r'sbd', r'scr', r'sdg', r'sek', r'sos', r'std', r'try', r'yer', r'livre']
+    AmbiguousCurrencyUnitList = [r'din.', r'kina', r'lari', r'taka', r'tala', r'vatu', r'yuan', r'bob', r'btn', r'cop', r'cup', r'dop', r'gip', r'jod', r'kgs', r'lak', r'mga', r'mop', r'nad', r'omr', r'sar', r'sbd', r'scr', r'sdg', r'sek', r'sos', r'std', r'try', r'yer', r'livre', r'ils']
     InformationSuffixList = dict([("Bit", "-bit|bit|bits"),
                                   ("Kilobit", "kilobit|kilobits|kb|kbit|kbits"),
                                   ("Megabit", "megabit|megabits|Mb|Mbit|mégabit|mégabits"),

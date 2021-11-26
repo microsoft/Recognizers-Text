@@ -138,9 +138,10 @@ public class SpanishDateTime {
             .replace("{RelativeSuffixRegex}", RelativeSuffixRegex)
             .replace("{DateUnitRegex}", DateUnitRegex);
 
-    public static final String MonthWithYearRegex = "\\b(((pr[oó]xim[oa](s)?|est?[ae]|[uú]ltim[oa]?)\\s+)?({MonthRegex})(\\s+|(\\s*[,-]\\s*))((de(l|\\s+la)?|en)\\s+)?({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\\s+año))\\b"
+    public static final String MonthWithYearRegex = "\\b(((pr[oó]xim[oa](s)?|est?[ae]|[uú]ltim[oa]?)\\s+)?({MonthRegex})((\\s+|(\\s*[,-]\\s*))((de(l|\\s+la)?|en)\\s+)?({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\\s+año)|\\s+(del?|en)\\s+{TwoDigitYearRegex}))\\b"
             .replace("{MonthRegex}", MonthRegex)
-            .replace("{YearRegex}", YearRegex);
+            .replace("{YearRegex}", YearRegex)
+            .replace("{TwoDigitYearRegex}", TwoDigitYearRegex);
 
     public static final String MonthNumWithYearRegex = "\\b(({YearRegex}(\\s*?)[/\\-\\.~](\\s*?){MonthNumRegex})|({MonthNumRegex}(\\s*?)[/\\-\\.~](\\s*?){YearRegex}))\\b"
             .replace("{YearRegex}", YearRegex)
@@ -304,9 +305,10 @@ public class SpanishDateTime {
             .replace("{DayRegex}", DayRegex)
             .replace("{MonthRegex}", MonthRegex);
 
-    public static final String DateExtractor2 = "\\b((el\\s+d[ií]a|{WeekDayRegex})(\\s+|\\s*,\\s*))?(?<!\\d[.,])(({DayRegex}(\\s+(d[eo]\\s+)?|\\s*[.,/-]\\s*){MonthRegex}((\\s+(del?\\s+)?|\\s*[.,/-]\\s*){DateYearRegex}\\b)?)|{BaseDateTime.FourDigitYearRegex}\\s*[.,/-]?\\s*(el\\s+d[ií]a\\s+)?{DayRegex}(\\s+(d[eo]\\s+)?|\\s*[.,/-]\\s*){MonthRegex})"
+    public static final String DateExtractor2 = "\\b((el\\s+d[ií]a|{WeekDayRegex})(\\s+|\\s*,\\s*))?(?<!\\d[.,])(({DayRegex}((\\s+(d[eo]\\s+)?|\\s*[.,/-]\\s*){MonthRegex}((\\s+(del?\\s+)?|\\s*[.,/-]\\s*){DateYearRegex}\\b)?|\\s+(d[eo]\\s+){MonthNumRegex}\\s+(del?\\s+{DateYearRegex}\\b)))|{BaseDateTime.FourDigitYearRegex}\\s*[.,/-]?\\s*(el\\s+d[ií]a\\s+)?{DayRegex}(\\s+(d[eo]\\s+)?|\\s*[.,/-]\\s*){MonthRegex})"
             .replace("{DayRegex}", DayRegex)
             .replace("{MonthRegex}", MonthRegex)
+            .replace("{MonthNumRegex}", MonthNumRegex)
             .replace("{WeekDayRegex}", WeekDayRegex)
             .replace("{DateYearRegex}", DateYearRegex)
             .replace("{BaseDateTime.FourDigitYearRegex}", BaseDateTime.FourDigitYearRegex);
