@@ -5,7 +5,7 @@ import { ExtractResult, RegExpUtility, Match, StringUtility } from "@microsoft/r
 import { Constants, TimeTypeConstants } from "./constants";
 import { Constants as NumberConstants } from "@microsoft/recognizers-text-number";
 import { BaseNumberExtractor, BaseNumberParser } from "@microsoft/recognizers-text-number";
-import { Token, DateTimeFormatUtil, DateTimeResolutionResult, IDateTimeUtilityConfiguration, AgoLaterUtil, AgoLaterMode, DateUtils, DayOfWeek } from "./utilities";
+import { Token, DateTimeFormatUtil, DateTimeResolutionResult, IDateTimeUtilityConfiguration, AgoLaterUtil, AgoLaterMode, DateUtils, DayOfWeek, MatchingUtil } from "./utilities";
 import { IDateTimeExtractor } from "./baseDateTime";
 import { BaseDurationExtractor, BaseDurationParser } from "./baseDuration";
 import { IDateTimeParser, DateTimeParseResult } from "./parsers";
@@ -171,6 +171,13 @@ export class BaseDateExtractor implements IDateTimeExtractor {
             }
             if (result.start >= 0) {
                 let frontString = source.substring(0, result.start | 0);
+
+                // Check that the extracted number is not part of a decimal number, time expression or currency
+                // (e.g. '123.24', '12:24', '$12')
+                if (MatchingUtil.isInvalidDayNumberPrefix(frontString)) {
+                    return;
+                }
+
                 let match = RegExpUtility.getMatches(this.config.monthEnd, frontString)[0];
                 if (match && match.length) {
                     ret.push(new Token(match.index, match.index + match.length + result.length));

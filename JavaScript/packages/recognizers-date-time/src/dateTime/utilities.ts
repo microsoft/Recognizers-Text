@@ -7,6 +7,7 @@ import { IDateTimeParser, DateTimeParseResult } from "../dateTime/parsers";
 import { Constants, TimeTypeConstants } from "../dateTime/constants";
 import { IDateTimeExtractor } from "./baseDateTime";
 import { BaseNumberParser } from "@microsoft/recognizers-text-number";
+import { BaseDateTime } from "../resources/baseDateTime";
 
 export class Token {
     constructor(start: number, end: number, metaData: MetaData = null) {
@@ -188,6 +189,11 @@ export interface MatchedIndex {
 }
 
 export class MatchingUtil {
+    private static readonly InvalidDayNumberPrefix = RegExpUtility.getSafeRegExp(BaseDateTime.InvalidDayNumberPrefix);
+    public static isInvalidDayNumberPrefix(prefix: string): boolean {
+        return RegExpUtility.isMatch(this.InvalidDayNumberPrefix, prefix);
+    }
+
     public static getAgoLaterIndex(source: string, regex: RegExp): MatchedIndex {
         let result: MatchedIndex = { matched: false, index: -1 };
         let referencedMatches = RegExpUtility.getMatches(regex, source.trim().toLowerCase());

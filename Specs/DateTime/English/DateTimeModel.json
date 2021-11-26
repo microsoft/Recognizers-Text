@@ -21783,5 +21783,222 @@
         }
       }
     ]
+  },
+  {
+    "Input": "She was born on January twenty five nineteen eighty six",
+    "Context": {
+      "ReferenceDateTime": "2019-05-30T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "january twenty five nineteen eighty six",
+        "Start": 16,
+        "End": 54,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1986-01-25",
+              "type": "date",
+              "value": "1986-01-25"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "She was born on twenty five January nineteen eighty six",
+    "Context": {
+      "ReferenceDateTime": "2019-05-30T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "twenty five january nineteen eighty six",
+        "Start": 16,
+        "End": 54,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1986-01-25",
+              "type": "date",
+              "value": "1986-01-25"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "On fifteen August nineteen hundred ninety three, the plant started operations.",
+    "Context": {
+      "ReferenceDateTime": "2019-05-30T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "fifteen august nineteen hundred ninety three",
+        "Start": 3,
+        "End": 46,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1993-08-15",
+              "type": "date",
+              "value": "1993-08-15"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "They arrived 13 Sept nineteen seventy two",
+    "Context": {
+      "ReferenceDateTime": "2019-05-30T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "13 sept nineteen seventy two",
+        "Start": 13,
+        "End": 40,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1972-09-13",
+              "type": "date",
+              "value": "1972-09-13"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The ship set sails on 6 April seventeen hundred thirty three",
+    "Context": {
+      "ReferenceDateTime": "2019-05-30T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "6 april seventeen hundred thirty three",
+        "Start": 22,
+        "End": 59,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1733-04-06",
+              "type": "date",
+              "value": "1733-04-06"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out August two thousand and fifteen",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "august two thousand and fifteen",
+        "Start": 12,
+        "End": 42,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015-08",
+              "type": "daterange",
+              "start": "2015-08-01",
+              "end": "2015-09-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The conference was in October two thousand and five",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "october two thousand and five",
+        "Start": 22,
+        "End": 50,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2005-10",
+              "type": "daterange",
+              "start": "2005-10-01",
+              "end": "2005-11-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "They left in October two thousand and returned in December",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "october two thousand",
+        "Start": 13,
+        "End": 32,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2000-10",
+              "type": "daterange",
+              "start": "2000-10-01",
+              "end": "2000-11-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "december",
+        "Start": 50,
+        "End": 57,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-12",
+              "type": "daterange",
+              "start": "2015-12-01",
+              "end": "2016-01-01"
+            },
+            {
+              "timex": "XXXX-12",
+              "type": "daterange",
+              "start": "2016-12-01",
+              "end": "2017-01-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

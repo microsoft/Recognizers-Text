@@ -13,6 +13,15 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public static class MatchingUtil
     {
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+        private static readonly Regex InvalidDayNumberPrefix =
+            new Regex(Definitions.BaseDateTime.InvalidDayNumberPrefix, RegexFlags);
+
+        public static bool IsInvalidDayNumberPrefix(string prefix)
+        {
+            return InvalidDayNumberPrefix.IsMatch(prefix);
+        }
+
         public static bool GetAgoLaterIndex(string text, Regex regex, out int index, bool inSuffix)
         {
             index = -1;
