@@ -927,8 +927,10 @@ export class AbstractYearExtractor {
                     lastTwoYearNum = Number.parseInt(numberParser.parse(er).value, 10);
                 }
 
+                // Exclude pure number like "nineteen", "twenty four"
                 if (firstTwoYearNum < 100 && lastTwoYearNum === 0 || firstTwoYearNum < 100 && firstTwoYearNum % 10 === 0 && lastTwoYearNumStr.trim().split(' ').length === 1) {
                     year = -1;
+                    return year;
                 }
 
                 if (firstTwoYearNum >= 100) {
