@@ -15,6 +15,8 @@ namespace Microsoft.Recognizers.Text.DateTime
     {
         public static readonly string ParserName = Constants.SYS_DATETIME_DATE; // "Date"
 
+        private static bool inclusiveEndPeriod = false;
+
         private readonly IHolidayParserConfiguration config;
 
         public BaseHolidayParser(IHolidayParserConfiguration config)
@@ -28,6 +30,24 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         public DateTimeParseResult Parse(ExtractResult er, DateObject refDate)
+        {
+            if (er.Metadata?.IsHolidayWeekend ?? false)
+            {
+                return ParseHolidayWeekend(er, refDate);
+            }
+            else
+            {
+                return ParseSingleDate(er, refDate);
+            }
+        }
+
+        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
+        {
+            return candidateResults;
+        }
+
+        // This will parse a holiday to the date of a single day
+        private DateTimeParseResult ParseSingleDate(ExtractResult er, DateObject refDate)
         {
             var referenceDate = refDate;
             object value = null;
@@ -65,9 +85,126 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
+        // This will parse to a date ranging between the holiday and the closest weekend
+        // cases: "Thanksgiving weekend", "weekend of Halloween"
+        private DateTimeParseResult ParseHolidayWeekend(ExtractResult er, DateObject referenceDate)
         {
-            return candidateResults;
+            var dateTimeRes = new DateTimeResolutionResult();
+
+            if (!string.IsNullOrEmpty(er.Metadata?.HolidayName))
+            {
+                var holidayName = er.Metadata.HolidayName;
+
+                // resolve holiday
+                var holidayEr = new ExtractResult
+                {
+                    Start = 0,
+                    Length = holidayName.Length,
+                    Text = holidayName,
+                    Type = Constants.SYS_DATETIME_DATE,
+                    Data = null,
+                    Metadata = new Metadata { IsHoliday = true },
+                };
+                var result = (DateTimeResolutionResult)this.Parse(holidayEr, referenceDate).Value;
+
+                if (!result.Success)
+                {
+                    dateTimeRes.FutureResolution = dateTimeRes.PastResolution = new Dictionary<string, string>();
+                }
+                else
+                {
+                    // get closest weekend to the holiday(s)
+                    var futureWeekend = GetClosestHolidayWeekend((DateObject)result.FutureValue);
+                    var pastWeekend = futureWeekend;
+
+                    if (result.FutureValue == result.PastValue)
+                    {
+                        dateTimeRes.Timex = TimexUtility.GenerateWeekendTimex(futureWeekend.Item1);
+                    }
+                    else
+                    {
+                        dateTimeRes.Timex = result.Timex;
+                        pastWeekend = GetClosestHolidayWeekend((DateObject)result.PastValue);
+                    }
+
+                    dateTimeRes.Success = true;
+                    dateTimeRes.FutureValue = futureWeekend;
+                    dateTimeRes.PastValue = pastWeekend;
+
+                    dateTimeRes.FutureResolution = new Dictionary<string, string>
+                    {
+                        {
+                            TimeTypeConstants.START_DATE,
+                            DateTimeFormatUtil.FormatDate(((Tuple<DateObject, DateObject>)dateTimeRes.FutureValue).Item1)
+                        },
+                        {
+                            TimeTypeConstants.END_DATE,
+                            DateTimeFormatUtil.FormatDate(((Tuple<DateObject, DateObject>)dateTimeRes.FutureValue).Item2)
+                        },
+                        {
+                            DateTimeResolutionKey.Timex,
+                            TimexUtility.GenerateWeekendTimex(futureWeekend.Item1)
+                        },
+                    };
+
+                    dateTimeRes.PastResolution = new Dictionary<string, string>
+                    {
+                        {
+                            TimeTypeConstants.START_DATE,
+                            DateTimeFormatUtil.FormatDate(((Tuple<DateObject, DateObject>)dateTimeRes.PastValue).Item1)
+                        },
+                        {
+                            TimeTypeConstants.END_DATE,
+                            DateTimeFormatUtil.FormatDate(((Tuple<DateObject, DateObject>)dateTimeRes.PastValue).Item2)
+                        },
+                        {
+                            DateTimeResolutionKey.Timex,
+                            TimexUtility.GenerateWeekendTimex(pastWeekend.Item1)
+                        },
+                    };
+                }
+            }
+            else
+            {
+                dateTimeRes.FutureResolution = dateTimeRes.PastResolution = new Dictionary<string, string>();
+            }
+
+            var ret = new DateTimeParseResult
+            {
+                Text = er.Text,
+                Start = er.Start,
+                Length = er.Length,
+                Type = er.Type,
+                Data = er.Data,
+                Metadata = er.Metadata,
+                Value = dateTimeRes,
+                TimexStr = dateTimeRes == null ? string.Empty : ((DateTimeResolutionResult)dateTimeRes).Timex,
+                ResolutionStr = string.Empty,
+            };
+
+            return ret;
+        }
+
+        private Tuple<DateObject, DateObject> GetClosestHolidayWeekend(DateObject dateTimeObject)
+        {
+            // this week's Saturday
+            var startDate = dateTimeObject.This(DayOfWeek.Saturday);
+            var endDate = dateTimeObject.This(DayOfWeek.Sunday);
+
+            // is last weekend closer than this one? i.e. is the input Monday or Tuesday?
+            if (dateTimeObject.DayOfWeek == DayOfWeek.Monday || dateTimeObject.DayOfWeek == DayOfWeek.Tuesday)
+            {
+                startDate = startDate.AddDays(-7);
+                endDate = dateTimeObject;
+            }
+            else if (dateTimeObject.DayOfWeek != DayOfWeek.Sunday)
+            {
+                startDate = dateTimeObject;
+            }
+
+            endDate = inclusiveEndPeriod ? endDate : endDate.AddDays(1);
+
+            return new Tuple<DateObject, DateObject>(startDate, endDate);
         }
 
         private DateTimeResolutionResult ParseHolidayRegexMatch(string text, DateObject referenceDate)
