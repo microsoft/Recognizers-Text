@@ -214,7 +214,7 @@ class FrenchDateTime:
     PreviousPrefixRegex = f'.^'
     RelativeDayRegex = f'\\b(((la\\s+)?{RelativeRegex}\\s+journ[ée]e))\\b'
     ConnectorRegex = f'^(,|pour|t|vers|le)$'
-    ConnectorAndRegex = f'\\b(et\\s*(le|las?)?)\\b.+'
+    ConnectorAndRegex = f'\\b(et\\s*(le|las?)?)\\b'
     FromRegex = f'((de|du)?)$'
     FromRegex2 = f'((depuis|de)(\\s*las?)?)$'
     FromToRegex = f'\\b(du|depuis|des?).+(au|à|a)\\b.+'
