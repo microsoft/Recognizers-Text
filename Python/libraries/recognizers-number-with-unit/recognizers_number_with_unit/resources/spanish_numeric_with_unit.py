@@ -479,7 +479,7 @@ class SpanishNumericWithUnit:
                                      ("Dólar beliceño", "BZD"),
                                      ("Dólar bermudeño", "BMD"),
                                      ("Dólar de Brunéi", "BND"),
-                                     ("Singapore dollar", "SGD"),
+                                     ("Dólar de Singapur", "SGD"),
                                      ("Dólar canadiense", "CAD"),
                                      ("Dólar de las Islas Caimán", "KYD"),
                                      ("Dólar neozelandés", "NZD"),
@@ -601,7 +601,7 @@ class SpanishNumericWithUnit:
                                         ("Ngwee", "NGWEE"),
                                         ("Millibitcoin", "MILLIBITCOIN"),
                                         ("Satoshi", "SATOSHI")])
-    CompoundUnitConnectorRegex = f'(?<spacer>y)'
+    CompoundUnitConnectorRegex = f'(?<spacer>y|con)'
     CurrencyPrefixList = dict([("Dobra", "db|std"),
                                ("Dólar", "$"),
                                ("Dólar estadounidense", "us$|u$d|usd"),

@@ -324,11 +324,11 @@ MinuteNumRegex: !simpleRegex
 DeltaMinuteNumRegex: !simpleRegex
   def: (((?<tens>twenty|thirty|fou?rty|fifty)(\s*-?\s*))?(?<deltaminnum>one|two|three|four|five|six|seven|eight|nine)|(?<deltaminnum>ten|eleven|twelve|thirteen|fifteen|eighteen|(four|six|seven|nine)(teen)|twenty|thirty|forty|fifty))
 PmRegex: !simpleRegex
-  def: (?<pm>(((?:at|in|around|circa|on|for)\s+(the\s+)?)?(afternoon|evening|midnight|lunchtime))|((at|in|around|on|for)\s+(the\s+)?night))
+  def: (?<pm>(((?:at|in|around|circa|on|for)\s+(the\s+)?)?(((early|late)\s+)?(afternoon|evening)|midnight|lunchtime))|((at|in|around|on|for)\s+(the\s+)?night))
 PmRegexFull: !simpleRegex
-  def: (?<pm>((?:at|in|around|circa|on|for)\s+(the\s+)?)?(afternoon|evening|(mid)?night|lunchtime))
+  def: (?<pm>((?:at|in|around|circa|on|for)\s+(the\s+)?)?(((early|late)\s+)?(afternoon|evening)|(mid)?night|lunchtime))
 AmRegex: !simpleRegex
-  def: (?<am>((?:at|in|around|circa|on|for)\s+(the\s+)?)?(morning))
+  def: (?<am>((?:at|in|around|circa|on|for)\s+(the\s+)?)?((early|late)\s+)?(morning))
 LunchRegex: !simpleRegex
   def: \blunchtime\b
 NightRegex: !simpleRegex
@@ -513,12 +513,12 @@ SuffixAndRegex: !simpleRegex
 PeriodicRegex: !simpleRegex
   def: \b(?<periodic>((?<multiplier>semi|bi|tri)(\s*|-))?(daily|monthly|weekly|quarterly|yearly|annual(ly)?))\b
 EachUnitRegex: !nestedRegex
-  def: \b(?<each>(each|every|any|once an?)(?<other>\s+other)?\s+({DurationUnitRegex}|(?<specialUnit>quarters?|weekends?)|{WeekDayRegex})|(?<specialUnit>weekends))
+  def: \b(?<each>(every|(each|any|once an|one a|once a)\s?)(?<other>\s+(other|alternate|second))?\s*({DurationUnitRegex}|(?<specialUnit>quarters?|weekends?)|{WeekDayRegex})|(?<specialUnit>weekends))
   references: [ DurationUnitRegex, WeekDayRegex ]
 EachPrefixRegex: !simpleRegex
   def: \b(?<each>(each|every|once an?)\s*$)
 SetEachRegex: !simpleRegex
-  def: \b(?<each>(each|every)(?<other>\s+other)?\s*)(?!the|that)\b
+  def: \b(?<each>(each|every)(?<other>\s+(other|alternate))?\s*)(?!the|that)\b
 SetLastRegex: !nestedRegex
   def: (?<last>following|next|upcoming|this|{LastNegPrefix}last|past|previous|current)
   references: [ LastNegPrefix ]
@@ -555,7 +555,7 @@ HolidayList4: !simpleRegex
   def: (?<holiday>ramad(h)?an|ram(a)?zan|ramathan|eid al(-|\s+)adha|eid al(-|\s+)azha|eidul(-|\s+)azha|feast of the sacrifice|(islamic|arabic|hijri) new year|eid al(-|\s+)fitr|festival of breaking the fast)
 # Combined holiday regex
 HolidayRegex: !nestedRegex
-  def: \b(({StrictRelativeRegex}\s+({HolidayList1}|{HolidayList2}|{HolidayList3}|{HolidayList4}))|(({HolidayList1}|{HolidayList2}|{HolidayList3}|{HolidayList4})(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year))?))\b
+  def: \b(({StrictRelativeRegex}\s+({HolidayList1}|{HolidayList2}|{HolidayList3}|{HolidayList4}))|(?<holidayWeekend>((the\s+)?weekend\s+of\s+)({HolidayList1}|{HolidayList2}|{HolidayList3}|{HolidayList4})(\s+((of\s+)?({YearRegex}|{RelativeRegex}\s+year)))?)|(({HolidayList1}|{HolidayList2}|{HolidayList3}|{HolidayList4})((?<holidayWeekend>(\s+weekend)(\s+((of\s+)?({YearRegex}|{RelativeRegex}\s+year)))?)|(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year)(?<holidayWeekend>\s+weekend)?))?))\b
   references: [ HolidayList1, HolidayList2, HolidayList3, HolidayList4, YearRegex, RelativeRegex, StrictRelativeRegex ]
 AMTimeRegex: !simpleRegex
   def: (?<am>morning)

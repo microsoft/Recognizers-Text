@@ -1,16 +1,19 @@
 {
-    "version": "0.1.0",
+    "version": "2.0.0",
 
     // The command is tsc. Assumes that tsc has been installed using npm install -g typescript
     "command": "tsc",
 
-    // The command is a shell script
-    "isShellCommand": true,
-
-    // Show the output window only if unrecognized errors occur.
-    "showOutput": "always",
-
     // use the standard tsc problem matcher to find compile problems
     // in the output.
-    "problemMatcher": "$tsc"
+    "problemMatcher": "$tsc",
+    "tasks": [
+        {
+            "label": "tsc",
+            "type": "shell",
+            "command": "tsc",
+            "problemMatcher": "$tsc",
+            "group": "build"
+        }
+    ]
 }

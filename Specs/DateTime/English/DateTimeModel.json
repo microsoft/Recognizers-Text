@@ -1344,6 +1344,29 @@
     ]
   },
   {
+    "Input": "I'll leave everyday",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "everyday",
+        "Start": 11,
+        "End": 18,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1D",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "I'll leave annually",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -14216,6 +14239,29 @@
     ]
   },
   {
+    "Input": "Have vitamins one a day",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "one a day",
+        "Start": 14,
+        "End": 22,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1D",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "I go on vacation once a year",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -16649,7 +16695,7 @@
           ]
         }
       },
-     {
+      {
         "Text": "1st quarter of 2013",
         "Start": 30,
         "End": 48,
@@ -21125,7 +21171,7 @@
   {
     "Input": "dates which are greater than or equals to date 1",
     "Context": {
-        "ReferenceDateTime": "2021-06-18T18:00:00"
+      "ReferenceDateTime": "2021-06-18T18:00:00"
     },
     "NotSupported": "java, javascript, python",
     "Results": []
@@ -21133,7 +21179,7 @@
   {
     "Input": "My dentist uses the most up to date equipment",
     "Context": {
-        "ReferenceDateTime": "2021-06-18T18:00:00"
+      "ReferenceDateTime": "2021-06-18T18:00:00"
     },
     "NotSupported": "java, javascript, python",
     "Results": []
@@ -21141,7 +21187,7 @@
   {
     "Input": "I've kept it up-to-date.",
     "Context": {
-        "ReferenceDateTime": "2021-06-18T18:00:00"
+      "ReferenceDateTime": "2021-06-18T18:00:00"
     },
     "NotSupported": "java, javascript, python",
     "Results": []
@@ -21149,7 +21195,7 @@
   {
     "Input": "rows equals to date from 2010-01-01 till current date",
     "Context": {
-        "ReferenceDateTime": "2021-06-18T18:00:00"
+      "ReferenceDateTime": "2021-06-18T18:00:00"
     },
     "NotSupported": "java, javascript, python",
     "Results": [
@@ -21172,17 +21218,154 @@
     ]
   },
   {
+    "Input": "I want to book a flight for the weekend of halloween",
+    "Context": {
+        "ReferenceDateTime": "2021-11-09T18:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "the weekend of halloween",
+        "Start": 28,
+        "End": 51,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-W43-WE",
+              "type": "daterange",
+              "start": "2021-10-30",
+              "end": "2021-11-01"
+            },
+            {
+              "timex": "2022-W43-WE",
+              "type": "daterange",
+              "start": "2022-10-29",
+              "end": "2022-11-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I want to book a flight for halloween weekend 2021",
+    "Context": {
+        "ReferenceDateTime": "2021-11-09T18:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "halloween weekend 2021",
+        "Start": 28,
+        "End": 49,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-W43-WE",
+              "type": "daterange",
+              "start": "2021-10-30",
+              "end": "2021-11-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I need to prepare for labor day weekend",
+    "Context": {
+        "ReferenceDateTime": "2021-11-09T18:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "labor day weekend",
+        "Start": 22,
+        "End": 38,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-W35-WE",
+              "type": "daterange",
+              "start": "2021-09-04",
+              "end": "2021-09-07"
+            },
+            {
+              "timex": "2022-W35-WE",
+              "type": "daterange",
+              "start": "2022-09-03",
+              "end": "2022-09-06"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I need to prepare for labor day 2021 weekend",
+    "Context": {
+        "ReferenceDateTime": "2021-11-09T18:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "labor day 2021 weekend",
+        "Start": 22,
+        "End": 43,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-W35-WE",
+              "type": "daterange",
+              "start": "2021-09-04",
+              "end": "2021-09-07"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "We'll take weekend of thanksgiving 2023 off",
+    "Context": {
+        "ReferenceDateTime": "2021-11-09T18:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "weekend of thanksgiving 2023",
+        "Start": 11,
+        "End": 38,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2023-W47-WE",
+              "type": "daterange",
+              "start": "2023-11-23",
+              "end": "2023-11-27"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "The Employer operates a policy of job flexibility and the Employer may, at its discretion, require you to perform additional or other duties, whether skilled or unskilled, not within the scope of your normal duties and may at its discretion amend your Job Description at any time.",
     "Context": {
-        "ReferenceDateTime": "2021-06-18T18:00:00"
+      "ReferenceDateTime": "2021-06-18T18:00:00"
     },
-	"NotSupported": "python",
+    "NotSupported": "python",
     "Results": []
   },
   {
     "Input": "What we have witnessed is the dawn of a second wave of digital transformation sweeping every company and every industry.",
     "Context": {
-        "ReferenceDateTime": "2021-06-18T18:00:00"
+      "ReferenceDateTime": "2021-06-18T18:00:00"
     },
     "Results": []
   },
@@ -21425,6 +21608,176 @@
               "timex": "1987-04-15",
               "type": "date",
               "value": "1987-04-15"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The event starts on Christmas early morning at 8:00",
+    "Context": {
+      "ReferenceDateTime": "2019-08-05T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "christmas",
+        "Start": 20,
+        "End": 28,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-12-25",
+              "type": "date",
+              "value": "2018-12-25"
+            },
+            {
+              "timex": "XXXX-12-25",
+              "type": "date",
+              "value": "2019-12-25"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "early morning at 8:00",
+        "Start": 30,
+        "End": 50,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T08:00",
+              "type": "time",
+              "value": "08:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The event starts on Sunday early morning at 8:00",
+    "Context": {
+      "ReferenceDateTime": "2019-08-05T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "sunday early morning at 8:00",
+        "Start": 20,
+        "End": 47,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-7T08:00",
+              "type": "datetime",
+              "value": "2019-08-04 08:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-7T08:00",
+              "type": "datetime",
+              "value": "2019-08-11 08:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The event starts on Christmas at 8:00 early morning",
+    "Context": {
+      "ReferenceDateTime": "2019-08-05T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "christmas",
+        "Start": 20,
+        "End": 28,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-12-25",
+              "type": "date",
+              "value": "2018-12-25"
+            },
+            {
+              "timex": "XXXX-12-25",
+              "type": "date",
+              "value": "2019-12-25"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "8:00 early morning",
+        "Start": 33,
+        "End": 50,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T08:00",
+              "type": "time",
+              "value": "08:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The event starts on Sunday at 8:00 early morning",
+    "Context": {
+      "ReferenceDateTime": "2019-08-05T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "sunday at 8:00 early morning",
+        "Start": 20,
+        "End": 47,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-7T08:00",
+              "type": "datetime",
+              "value": "2019-08-04 08:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-7T08:00",
+              "type": "datetime",
+              "value": "2019-08-11 08:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The event starts on Sunday late evening at 10:00",
+    "Context": {
+      "ReferenceDateTime": "2019-08-05T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "sunday late evening at 10:00",
+        "Start": 20,
+        "End": 47,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-7T22:00",
+              "type": "datetime",
+              "value": "2019-08-04 22:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-7T22:00",
+              "type": "datetime",
+              "value": "2019-08-11 22:00:00"
             }
           ]
         }

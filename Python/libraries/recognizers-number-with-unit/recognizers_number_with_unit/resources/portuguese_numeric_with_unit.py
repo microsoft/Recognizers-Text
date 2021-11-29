@@ -409,7 +409,7 @@ class PortugueseNumericWithUnit:
                                      ("Bolívar forte venezuelano", "VEF"),
                                      ("Kwacha zambiano", "ZMW"),
                                      ("Dirame marroquino", "MAD"),
-                                     ("Dirame dos Emirados Árabes Unidos", "AED"),
+                                     ("Dirham dos Emirados Árabes Unidos", "AED"),
                                      ("Manat azeri", "AZN"),
                                      ("Manat turcomeno", "TMT"),
                                      ("Xelim somali", "SOS"),
@@ -476,7 +476,7 @@ class PortugueseNumericWithUnit:
                                      ("Dólar de Belize", "BZD"),
                                      ("Dólar bermudense", "BMD"),
                                      ("Dólar de Brunei", "BND"),
-                                     ("Singapore dólar", "SGD"),
+                                     ("Dólar de Cingapura", "SGD"),
                                      ("Dólar canadense", "CAD"),
                                      ("Dólar das Ilhas Cayman", "KYD"),
                                      ("Dólar neozelandês", "NZD"),
@@ -599,7 +599,7 @@ class PortugueseNumericWithUnit:
                                         ("Ngwee", "NGWEE"),
                                         ("Millibitcoin", "MILLIBITCOIN"),
                                         ("Satoshi", "SATOSHI")])
-    CompoundUnitConnectorRegex = f'(?<spacer>e)'
+    CompoundUnitConnectorRegex = f'(?<spacer>e|com)'
     CurrencyPrefixList = dict([("Dólar", "$"),
                                ("Dólar estadunidense", "us$|u$d|usd$|usd"),
                                ("Dólar do Caribe Oriental", "ec$|xcd"),

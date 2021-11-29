@@ -406,15 +406,15 @@ public class FrenchNumericWithUnit {
         .put("Dollar États-Unis", "USD")
         .put("Dollar Australien", "AUD")
         .put("Dollar des bahamas", "BSD")
-        .put("Barbadian dollar", "BBD")
+        .put("Dollar barbadien", "BBD")
         .put("Dollar de belize", "BZD")
         .put("Dollar des bermudes", "BMD")
         .put("Dollar de brunei", "BND")
         .put("Dollar de Singapour", "SGD")
         .put("Dollar Canadien", "CAD")
         .put("Dollar des îles Caïmans", "KYD")
-        .put("New Zealand dollar", "NZD")
-        .put("Fijian dollar", "FJD")
+        .put("Dollar néo-zélandais", "NZD")
+        .put("Dollar de Fidji", "FJD")
         .put("Dollar guyanien", "GYD")
         .put("Dollar de Hong Kong", "HKD")
         .put("Dollar jamaïcain", "JMD")
@@ -573,7 +573,7 @@ public class FrenchNumericWithUnit {
         .put("Bitcoin", "₿|btc|xbt")
         .build();
 
-    public static final List<String> AmbiguousCurrencyUnitList = Arrays.asList("din.", "kina", "lari", "taka", "tala", "vatu", "yuan", "bob", "btn", "cop", "cup", "dop", "gip", "jod", "kgs", "lak", "mga", "mop", "nad", "omr", "sar", "sbd", "scr", "sdg", "sek", "sos", "std", "try", "yer", "livre");
+    public static final List<String> AmbiguousCurrencyUnitList = Arrays.asList("din.", "kina", "lari", "taka", "tala", "vatu", "yuan", "bob", "btn", "cop", "cup", "dop", "gip", "jod", "kgs", "lak", "mga", "mop", "nad", "omr", "sar", "sbd", "scr", "sdg", "sek", "sos", "std", "try", "yer", "livre", "ils");
 
     public static final ImmutableMap<String, String> InformationSuffixList = ImmutableMap.<String, String>builder()
         .put("Bit", "-bit|bit|bits")

@@ -513,7 +513,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
             { @"Dólar beliceño", @"BZD" },
             { @"Dólar bermudeño", @"BMD" },
             { @"Dólar de Brunéi", @"BND" },
-            { @"Singapore dollar", @"SGD" },
+            { @"Dólar de Singapur", @"SGD" },
             { @"Dólar canadiense", @"CAD" },
             { @"Dólar de las Islas Caimán", @"KYD" },
             { @"Dólar neozelandés", @"NZD" },

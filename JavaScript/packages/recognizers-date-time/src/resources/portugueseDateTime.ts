@@ -93,7 +93,7 @@ export namespace PortugueseDateTime {
     export const WeekDayStart = `^[\\.]`;
     export const DateYearRegex = `(?<year>${YearRegex}|${TwoDigitYearRegex})`;
     export const DateExtractor1 = `\\b(${WeekDayRegex}(\\s+|\\s*,\\s*))?${DayRegex}((\\s*(de)|[/\\\\\\.\\- ])\\s*)?${MonthRegex}\\b`;
-    export const DateExtractor2 = `\\b(${WeekDayRegex}(\\s+|\\s*,\\s*))?(${DayRegex}\\s*([/\\.\\-]|de)?\\s*${MonthRegex}(\\s*([,./-]|de)\\s*)${DateYearRegex}|${BaseDateTime.FourDigitYearRegex}\\s*[/\\.\\- ]\\s*${DayRegex}\\s*[/\\.\\- ]\\s*${MonthRegex})\\b`;
+    export const DateExtractor2 = `\\b(${WeekDayRegex}(\\s+|\\s*,\\s*))?(${DayRegex}(\\s*([/\\.\\-]|de)?\\s*${MonthRegex}|\\s+de\\s+${MonthNumRegex})(\\s*([,./-]|de|\\s+)\\s*)${DateYearRegex}|${BaseDateTime.FourDigitYearRegex}\\s*[/\\.\\- ]\\s*${DayRegex}\\s*[/\\.\\- ]\\s*${MonthRegex})\\b`;
     export const DateExtractor3 = `\\b(${WeekDayRegex}(\\s+|\\s*,\\s*))?${MonthRegex}(\\s*[/\\.\\- ]\\s*|\\s+de\\s+)${DayRegex}((\\s*[/\\.\\- ]\\s*|\\s+de\\s+)${DateYearRegex})?\\b`;
     export const DateExtractor4 = `\\b${MonthNumRegex}\\s*[/\\\\\\-]\\s*${DayRegex}\\s*[/\\\\\\-]\\s*${DateYearRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)`;
     export const DateExtractor5 = `\\b${DayRegex}\\s*[/\\\\\\-\\.]\\s*(${MonthNumRegex}|${MonthRegex})\\s*[/\\\\\\-\\.]\\s*${DateYearRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)`;

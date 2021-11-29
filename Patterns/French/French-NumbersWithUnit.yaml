@@ -489,15 +489,15 @@ CurrencyNameToIsoCodeMap: !dictionary
     Dollar États-Unis: USD
     Dollar Australien: AUD
     Dollar des bahamas: BSD
-    Barbadian dollar: BBD
+    Dollar barbadien: BBD
     Dollar de belize: BZD
     Dollar des bermudes: BMD
     Dollar de brunei: BND
     Dollar de Singapour: SGD
     Dollar Canadien: CAD
     Dollar des îles Caïmans: KYD
-    New Zealand dollar: NZD
-    Fijian dollar: FJD
+    Dollar néo-zélandais: NZD
+    Dollar de Fidji: FJD
     Dollar guyanien: GYD
     Dollar de Hong Kong: HKD
     Dollar jamaïcain: JMD
@@ -690,6 +690,7 @@ AmbiguousCurrencyUnitList: !list
     - try
     - yer
     - livre
+    - ils
 #DimensionExtractorConfiguration
 InformationSuffixList: !dictionary
   types: [ string, string ]
