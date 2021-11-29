@@ -49,6 +49,11 @@ namespace Microsoft.Recognizers.Text.Number
                     ((double)ret.Value).ToString("G15", Config.CultureInfo) + "%" :
                     ret.Value + "%";
             }
+            else if (extResult.Data is null)
+            {
+                // for case where only symbol is present
+                ret = new ParseResult(extResult) { Value = "null", ResolutionStr = "null" };
+            }
             else
             {
                 // for case like "one percent" or "1%".
