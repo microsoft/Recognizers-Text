@@ -409,15 +409,15 @@ namespace Microsoft.Recognizers.Definitions.French
             { @"Dollar États-Unis", @"USD" },
             { @"Dollar Australien", @"AUD" },
             { @"Dollar des bahamas", @"BSD" },
-            { @"Barbadian dollar", @"BBD" },
+            { @"Dollar barbadien", @"BBD" },
             { @"Dollar de belize", @"BZD" },
             { @"Dollar des bermudes", @"BMD" },
             { @"Dollar de brunei", @"BND" },
             { @"Dollar de Singapour", @"SGD" },
             { @"Dollar Canadien", @"CAD" },
             { @"Dollar des îles Caïmans", @"KYD" },
-            { @"New Zealand dollar", @"NZD" },
-            { @"Fijian dollar", @"FJD" },
+            { @"Dollar néo-zélandais", @"NZD" },
+            { @"Dollar de Fidji", @"FJD" },
             { @"Dollar guyanien", @"GYD" },
             { @"Dollar de Hong Kong", @"HKD" },
             { @"Dollar jamaïcain", @"JMD" },
@@ -605,7 +605,8 @@ namespace Microsoft.Recognizers.Definitions.French
             @"std",
             @"try",
             @"yer",
-            @"livre"
+            @"livre",
+            @"ils"
         };
       public static readonly Dictionary<string, string> InformationSuffixList = new Dictionary<string, string>
         {

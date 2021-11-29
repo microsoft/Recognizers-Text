@@ -193,9 +193,10 @@ public class EnglishDateTime {
             .replace("{MonthSuffixRegex}", MonthSuffixRegex)
             .replace("{YearRegex}", YearRegex);
 
-    public static final String MonthWithYear = "\\b(({WrittenMonthRegex}[\\.]?(\\s*)[/\\\\\\-\\.,]?(\\s+(of|in))?(\\s*)({YearRegex}|(?<order>following|next|last|this)\\s+year))|(({YearRegex}|(?<order>following|next|last|this)\\s+year)(\\s*),?(\\s*){WrittenMonthRegex}))\\b"
+    public static final String MonthWithYear = "\\b(({WrittenMonthRegex}[\\.]?((\\s*)[/\\\\\\-\\.,]?(\\s+(of|in))?(\\s*)({YearRegex}|(?<order>following|next|last|this)\\s+year)|\\s+(of|in)\\s+{TwoDigitYearRegex}))|(({YearRegex}|(?<order>following|next|last|this)\\s+year)(\\s*),?(\\s*){WrittenMonthRegex}))\\b"
             .replace("{WrittenMonthRegex}", WrittenMonthRegex)
-            .replace("{YearRegex}", YearRegex);
+            .replace("{YearRegex}", YearRegex)
+            .replace("{TwoDigitYearRegex}", TwoDigitYearRegex);
 
     public static final String SpecialYearPrefixes = "(calendar|(?<special>fiscal|school))";
 
@@ -439,11 +440,11 @@ public class EnglishDateTime {
 
     public static final String DeltaMinuteNumRegex = "(((?<tens>twenty|thirty|fou?rty|fifty)(\\s*-?\\s*))?(?<deltaminnum>one|two|three|four|five|six|seven|eight|nine)|(?<deltaminnum>ten|eleven|twelve|thirteen|fifteen|eighteen|(four|six|seven|nine)(teen)|twenty|thirty|forty|fifty))";
 
-    public static final String PmRegex = "(?<pm>(((?:at|in|around|circa|on|for)\\s+(the\\s+)?)?(afternoon|evening|midnight|lunchtime))|((at|in|around|on|for)\\s+(the\\s+)?night))";
+    public static final String PmRegex = "(?<pm>(((?:at|in|around|circa|on|for)\\s+(the\\s+)?)?(((early|late)\\s+)?(afternoon|evening)|midnight|lunchtime))|((at|in|around|on|for)\\s+(the\\s+)?night))";
 
-    public static final String PmRegexFull = "(?<pm>((?:at|in|around|circa|on|for)\\s+(the\\s+)?)?(afternoon|evening|(mid)?night|lunchtime))";
+    public static final String PmRegexFull = "(?<pm>((?:at|in|around|circa|on|for)\\s+(the\\s+)?)?(((early|late)\\s+)?(afternoon|evening)|(mid)?night|lunchtime))";
 
-    public static final String AmRegex = "(?<am>((?:at|in|around|circa|on|for)\\s+(the\\s+)?)?(morning))";
+    public static final String AmRegex = "(?<am>((?:at|in|around|circa|on|for)\\s+(the\\s+)?)?((early|late)\\s+)?(morning))";
 
     public static final String LunchRegex = "\\blunchtime\\b";
 
@@ -718,13 +719,13 @@ public class EnglishDateTime {
 
     public static final String PeriodicRegex = "\\b(?<periodic>((?<multiplier>semi|bi|tri)(\\s*|-))?(daily|monthly|weekly|quarterly|yearly|annual(ly)?))\\b";
 
-    public static final String EachUnitRegex = "\\b(?<each>(each|every|any|once an?)(?<other>\\s+other)?\\s+({DurationUnitRegex}|(?<specialUnit>quarters?|weekends?)|{WeekDayRegex})|(?<specialUnit>weekends))"
+    public static final String EachUnitRegex = "\\b(?<each>(every|(each|any|once an|one a|once a)\\s?)(?<other>\\s+(other|alternate|second))?\\s*({DurationUnitRegex}|(?<specialUnit>quarters?|weekends?)|{WeekDayRegex})|(?<specialUnit>weekends))"
             .replace("{DurationUnitRegex}", DurationUnitRegex)
             .replace("{WeekDayRegex}", WeekDayRegex);
 
     public static final String EachPrefixRegex = "\\b(?<each>(each|every|once an?)\\s*$)";
 
-    public static final String SetEachRegex = "\\b(?<each>(each|every)(?<other>\\s+other)?\\s*)(?!the|that)\\b";
+    public static final String SetEachRegex = "\\b(?<each>(each|every)(?<other>\\s+(other|alternate))?\\s*)(?!the|that)\\b";
 
     public static final String SetLastRegex = "(?<last>following|next|upcoming|this|{LastNegPrefix}last|past|previous|current)"
             .replace("{LastNegPrefix}", LastNegPrefix);
@@ -757,7 +758,7 @@ public class EnglishDateTime {
 
     public static final String HolidayList4 = "(?<holiday>ramad(h)?an|ram(a)?zan|ramathan|eid al(-|\\s+)adha|eid al(-|\\s+)azha|eidul(-|\\s+)azha|feast of the sacrifice|(islamic|arabic|hijri) new year|eid al(-|\\s+)fitr|festival of breaking the fast)";
 
-    public static final String HolidayRegex = "\\b(({StrictRelativeRegex}\\s+({HolidayList1}|{HolidayList2}|{HolidayList3}|{HolidayList4}))|(({HolidayList1}|{HolidayList2}|{HolidayList3}|{HolidayList4})(\\s+(of\\s+)?({YearRegex}|{RelativeRegex}\\s+year))?))\\b"
+    public static final String HolidayRegex = "\\b(({StrictRelativeRegex}\\s+({HolidayList1}|{HolidayList2}|{HolidayList3}|{HolidayList4}))|(?<holidayWeekend>((the\\s+)?weekend\\s+of\\s+)({HolidayList1}|{HolidayList2}|{HolidayList3}|{HolidayList4})(\\s+((of\\s+)?({YearRegex}|{RelativeRegex}\\s+year)))?)|(({HolidayList1}|{HolidayList2}|{HolidayList3}|{HolidayList4})((?<holidayWeekend>(\\s+weekend)(\\s+((of\\s+)?({YearRegex}|{RelativeRegex}\\s+year)))?)|(\\s+(of\\s+)?({YearRegex}|{RelativeRegex}\\s+year)(?<holidayWeekend>\\s+weekend)?))?))\\b"
             .replace("{HolidayList1}", HolidayList1)
             .replace("{HolidayList2}", HolidayList2)
             .replace("{HolidayList3}", HolidayList3)
@@ -1432,6 +1433,14 @@ public class EnglishDateTime {
         .put("^\\d+m$", "^\\d+m$")
         .put("^(apr|aug|dec|feb|jan|jul|jun|mar|may|nov|oct|sept?)$", "([$%£&!?@#])(apr|aug|dec|feb|jan|jul|jun|mar|may|nov|oct|sept?)|(apr|aug|dec|feb|jan|jul|jun|mar|may|nov|oct|sept?)([$%£&@#])")
         .put("^(to\\s+date)$", "\\b((equals?|up)\\s+to\\s+date)\\b")
+        .build();
+
+    public static final ImmutableMap<String, String> AmbiguityTimeFiltersDict = ImmutableMap.<String, String>builder()
+        .put("^(\\p{L}+|\\d{1,2})(\\s+(morning|afternoon|evening|night))?$", "\\b(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|\\d{1,2})\\s+(morning|afternoon|evening|night)\\b")
+        .build();
+
+    public static final ImmutableMap<String, String> AmbiguityDurationFiltersDict = ImmutableMap.<String, String>builder()
+        .put("night$", "\\bnight(\\s*|-)(club|light|market|shift|work(er)?)s?\\b")
         .build();
 
     public static final List<String> MorningTermList = Arrays.asList("morning");

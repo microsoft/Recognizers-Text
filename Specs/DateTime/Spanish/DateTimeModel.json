@@ -21938,5 +21938,124 @@
         }
       }
     ]
+  },
+  {
+    "Input": "veintiocho de marzo de mil novecientos noventa y dos",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": [
+      {
+        "Text": "veintiocho de marzo de mil novecientos noventa y dos",
+        "Start": 0,
+        "End": 51,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1992-03-28",
+              "type": "date",
+              "value": "1992-03-28"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "veintiocho de marzo del mil novecientos noventa y dos",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": [
+      {
+        "Text": "veintiocho de marzo del mil novecientos noventa y dos",
+        "Start": 0,
+        "End": 52,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1992-03-28",
+              "type": "date",
+              "value": "1992-03-28"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "se conocieron el 9 de agosto de 1971",
+    "Context": {
+      "ReferenceDateTime": "2018-10-15T01:00:00"
+    },
+    "Results": [
+      {
+        "Text": "9 de agosto de 1971",
+        "Start": 17,
+        "End": 35,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1971-08-09",
+              "type": "date",
+              "value": "1971-08-09"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "se conocieron el 9 de 8 de 1971",
+    "Context": {
+      "ReferenceDateTime": "2018-10-15T01:00:00"
+    },
+    "Results": [
+      {
+        "Text": "9 de 8 de 1971",
+        "Start": 17,
+        "End": 30,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1971-08-09",
+              "type": "date",
+              "value": "1971-08-09"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Nací en abril del 87",
+    "Context": {
+      "ReferenceDateTime": "2018-01-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "abril del 87",
+        "Start": 8,
+        "End": 19,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1987-04",
+              "type": "daterange",
+              "start": "1987-04-01",
+              "end": "1987-05-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

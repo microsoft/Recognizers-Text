@@ -213,6 +213,17 @@ def test_datatypes_resolver_dateRange_last_week():
     assert resolution.values[0].end == "2019-04-29"
 
 
+def test_datatypes_resolver_dateRange_week_of_year():
+    today = datetime(2017, 4, 30)
+    resolution = TimexResolver.resolve(["2021-W16"], today)
+
+    assert len(resolution.values) == 1
+    assert resolution.values[0].timex == "2021-W16"
+    assert resolution.values[0].type == "daterange"
+    assert resolution.values[0].start == "2021-04-19"
+    assert resolution.values[0].end == "2021-04-26"
+
+
 def test_datatypes_resolver_dateRange_last_month():
     today = datetime(2017, 4, 30)
     resolution = TimexResolver.resolve(["2019-03"], today)
@@ -244,6 +255,16 @@ def test_datatypes_resolver_dateRange_last_three_weeks():
     assert resolution.values[0].type == "daterange"
     assert resolution.values[0].start == "2019-04-10"
     assert resolution.values[0].end == "2019-05-01"
+
+
+def test_datatypes_resolver_dateRange_last_six_months():
+    today = datetime(2021, 1, 1)
+    resolution = TimexResolver.resolve(["(2021-01-01,2021-07-01,P6M)"], today)
+    assert len(resolution.values) == 1
+    assert resolution.values[0].timex == "(2021-01-01,2021-07-01,P6M)"
+    assert resolution.values[0].type == "daterange"
+    assert resolution.values[0].start == "2021-01-01"
+    assert resolution.values[0].end == "2021-07-01"
 
 
 def test_datatypes_resolver_dateRange_last_ten_years():

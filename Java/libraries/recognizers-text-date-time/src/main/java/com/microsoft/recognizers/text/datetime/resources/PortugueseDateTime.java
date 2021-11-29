@@ -253,8 +253,9 @@ public class PortugueseDateTime {
             .replace("{DayRegex}", DayRegex)
             .replace("{MonthRegex}", MonthRegex);
 
-    public static final String DateExtractor2 = "\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?({DayRegex}\\s*([/\\.\\-]|de)?\\s*{MonthRegex}(\\s*([,./-]|de)\\s*){DateYearRegex}|{BaseDateTime.FourDigitYearRegex}\\s*[/\\.\\- ]\\s*{DayRegex}\\s*[/\\.\\- ]\\s*{MonthRegex})\\b"
+    public static final String DateExtractor2 = "\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?({DayRegex}(\\s*([/\\.\\-]|de)?\\s*{MonthRegex}|\\s+de\\s+{MonthNumRegex})(\\s*([,./-]|de|\\s+)\\s*){DateYearRegex}|{BaseDateTime.FourDigitYearRegex}\\s*[/\\.\\- ]\\s*{DayRegex}\\s*[/\\.\\- ]\\s*{MonthRegex})\\b"
             .replace("{MonthRegex}", MonthRegex)
+            .replace("{MonthNumRegex}", MonthNumRegex)
             .replace("{DayRegex}", DayRegex)
             .replace("{DateYearRegex}", DateYearRegex)
             .replace("{WeekDayRegex}", WeekDayRegex)

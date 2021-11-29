@@ -70,7 +70,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
         };
       public static readonly Dictionary<string, string> CurrencySuffixList = new Dictionary<string, string>
         {
-            { @"Afganistan afganisi", @"afganistan afganisi|afgani|؋|afn|af|afs|afganistan afganisine|afganistan afganisinde|afganistan afganisinden|afganistan afganisini|afganistan afganisinin|afganistan afganisidir|afganistan afganisiydi|afganistan afganisiymiş" },
+            { @"Afghan afghani", @"afganistan afganisi|afgani|؋|afn|af|afs|afganistan afganisine|afganistan afganisinde|afganistan afganisinden|afganistan afganisini|afganistan afganisinin|afganistan afganisidir|afganistan afganisiydi|afganistan afganisiymiş" },
             { @"Pul", @"pul|pula|pulda|puldan|pulu|pulun|puldur|puldu|pulmuş|pulluk" },
             { @"Euro", @"euro|€|eur|avro|avroya|avroda|avrodan|avroyu|avronun|avrodur|avroydu|avroymuş|avroluk" },
             { @"Cent", @"sent|s|sentte|sentten|senti|sentin|senttir|sentti|sentmiş|sentlik" },
@@ -417,7 +417,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
             { @"Rwandan franc", @"RWF" },
             { @"Russian ruble", @"RUB" },
             { @"Transnistrian ruble", @"PRB" },
-            { @"Belarusian ruble", @"BYN" },
+            { @"New Belarusian ruble", @"BYN" },
             { @"Algerian dinar", @"DZD" },
             { @"Bahraini dinar", @"BHD" },
             { @"Iraqi dinar", @"IQD" },

@@ -530,7 +530,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
             { @"Rwandan franc", @"RWF" },
             { @"Russian ruble", @"RUB" },
             { @"Transnistrian ruble", @"PRB" },
-            { @"Belarusian ruble", @"BYN" },
+            { @"New Belarusian ruble", @"BYN" },
             { @"Algerian dinar", @"DZD" },
             { @"Bahraini dinar", @"BHD" },
             { @"Iraqi dinar", @"IQD" },

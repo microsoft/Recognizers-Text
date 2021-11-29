@@ -1078,5 +1078,176 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Let's find one morning together",
+    "Context": {
+      "ReferenceDateTime": "2018-11-30T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "morning",
+        "Start": 15,
+        "End": 21,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TMO",
+              "type": "timerange",
+              "start": "08:00:00",
+              "end": "12:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Let's meet one in the morning together",
+    "Context": {
+      "ReferenceDateTime": "2018-11-30T12:00:00"
+    },
+    "Results": [
+      {
+        "Text": "one in the morning",
+        "Start": 11,
+        "End": 28,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T01",
+              "type": "time",
+              "value": "01:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Let's go out 1 evening",
+    "Context": {
+      "ReferenceDateTime": "2018-11-30T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "evening",
+        "Start": 15,
+        "End": 21,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TEV",
+              "type": "timerange",
+              "start": "16:00:00",
+              "end": "20:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Students must attend all four afternoon classes",
+    "Context": {
+      "ReferenceDateTime": "2018-11-30T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "afternoon",
+        "Start": 30,
+        "End": 38,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TAF",
+              "type": "timerange",
+              "start": "12:00:00",
+              "end": "16:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I met them at 2 morning sessions",
+    "Context": {
+      "ReferenceDateTime": "2018-11-30T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "morning",
+        "Start": 16,
+        "End": 22,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TMO",
+              "type": "timerange",
+              "start": "08:00:00",
+              "end": "12:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "They work at three night markets.",
+    "Context": {
+      "ReferenceDateTime": "2018-11-30T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "night",
+        "Start": 19,
+        "End": 23,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TNI",
+              "type": "timerange",
+              "start": "20:00:00",
+              "end": "23:59:59"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "We should go back at mid night.",
+    "Context": {
+      "ReferenceDateTime": "2018-11-30T12:00:00"
+    },
+    "Results": [
+      {
+        "Text": "mid night",
+        "Start": 21,
+        "End": 29,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T00",
+              "type": "time",
+              "value": "00:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

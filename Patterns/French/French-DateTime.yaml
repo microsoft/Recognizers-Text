@@ -505,7 +505,7 @@ RelativeDayRegex: !nestedRegex
 ConnectorRegex: !simpleRegex
   def: ^(,|pour|t|vers|le)$
 ConnectorAndRegex: !simpleRegex
-  def: \b(et\s*(le|las?)?)\b.+
+  def: \b(et\s*(le|las?)?)\b
 FromRegex: !simpleRegex
   def: ((de|du)?)$
 FromRegex2: !simpleRegex

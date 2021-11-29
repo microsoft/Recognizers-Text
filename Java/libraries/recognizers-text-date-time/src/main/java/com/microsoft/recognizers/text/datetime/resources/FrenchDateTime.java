@@ -661,7 +661,7 @@ public class FrenchDateTime {
 
     public static final String ConnectorRegex = "^(,|pour|t|vers|le)$";
 
-    public static final String ConnectorAndRegex = "\\b(et\\s*(le|las?)?)\\b.+";
+    public static final String ConnectorAndRegex = "\\b(et\\s*(le|las?)?)\\b";
 
     public static final String FromRegex = "((de|du)?)$";
 

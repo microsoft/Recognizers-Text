@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.French;
 using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
@@ -207,7 +208,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public bool HasConnectorToken(string text)
         {
-            return ConnectorAndRegex.IsMatch(text);
+            return ConnectorAndRegex.IsExactMatch(text, trim: true);
         }
     }
 }

@@ -1169,5 +1169,69 @@
         }
       }
     ]
+  },
+  {
+    "Input": "The weight is 20 (kg)",
+    "Results": [
+      {
+        "Text": "20 (kg)",
+        "Start": 14,
+        "End": 20,
+        "TypeName": "dimension",
+        "Resolution": {
+          "subtype": "Weight",
+          "unit": "Kilogram",
+          "value": "20"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The weight is 20 [kg]",
+    "Results": [
+      {
+        "Text": "20 [kg]",
+        "Start": 14,
+        "End": 20,
+        "TypeName": "dimension",
+        "Resolution": {
+          "subtype": "Weight",
+          "unit": "Kilogram",
+          "value": "20"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The weight is 20 {kg}",
+    "Results": [
+      {
+        "Text": "20 {kg}",
+        "Start": 14,
+        "End": 20,
+        "TypeName": "dimension",
+        "Resolution": {
+          "subtype": "Weight",
+          "unit": "Kilogram",
+          "value": "20"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The weight is 20 <kg>",
+    "Results": [
+      {
+        "Text": "20 <kg>",
+        "Start": 14,
+        "End": 20,
+        "TypeName": "dimension",
+        "Resolution": {
+          "subtype": "Weight",
+          "unit": "Kilogram",
+          "value": "20"
+        }
+      }
+    ]
   }
 ]
