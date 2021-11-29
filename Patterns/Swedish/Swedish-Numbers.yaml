@@ -90,7 +90,7 @@ FractionNotationRegex: !nestedRegex
   def: (?#FractionNotationRegex){BaseNumbers.FractionNotationRegex}
   references: [ BaseNumbers.FractionNotationRegex ]
 FractionNounRegex: !nestedRegex
-  def: (?#FractionNounRegex)(?<=\b)({AllIntRegex}\s+(och\s+)?)?({AllIntRegex})(\s*|\s*-\s*)((({AllOrdinalRegex})|({RoundNumberFractionSwedishRegex}))((de)?l(s|ar)?)?|halvor|kvart(ar|s))(?=\b)
+  def: (?#FractionNounRegex)(?<=\b)({AllIntRegex}\s+(och\s+)?)?({AllIntRegex})(\s*|\s*-\s*)((({AllOrdinalRegex})|({RoundNumberFractionSwedishRegex}))((de)?l(s|ar(na)?)?)?|halvor|kvart(ar|s))(?=\b)
   references: [ AllIntRegex, AllOrdinalRegex, RoundNumberFractionSwedishRegex ]
 FractionNounWithArticleRegex: !nestedRegex
   def: (?#FractionNounWithArticleRegex)(?<=\b)((({AllIntRegex}\s+(och\s+)?)?(en|ett)?(\s+|\s*-\s*)(?!\bförsta\b|\bandra\b)(({AllOrdinalRegex})|({RoundNumberFractionSwedishRegex})|halv(t)?|kvart(s)?))|(halva|hälften))(?=\b)

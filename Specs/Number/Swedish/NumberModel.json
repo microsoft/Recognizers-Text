@@ -1395,9 +1395,24 @@
     ]
   },
   {
+    "Input": "en tjugo femtedel",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "en tjugo femtedel",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0,04"
+        },
+        "Start": 0,
+        "End": 16
+      }
+    ]
+  },
+  {
     "Input": "tre tjugoförstedelar",
     "NotSupportedByDesign": "javascript, python, java",
-    "Debug": true,
     "Results": [
       {
         "Text": "tre tjugoförstedelar",
