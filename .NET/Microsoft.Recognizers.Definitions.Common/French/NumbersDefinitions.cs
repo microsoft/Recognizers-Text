@@ -25,9 +25,9 @@ namespace Microsoft.Recognizers.Definitions.French
       public const bool CompoundNumberLanguage = false;
       public const bool MultiDecimalSeparatorCulture = true;
       public const string RoundNumberIntegerRegex = @"(cent|mille|millions?|milliards?|billions?)";
-      public const string ZeroToNineIntegerRegex = @"(une?|deux|trois|quatre|cinq|six|sept|huit|neuf)";
+      public const string ZeroToNineIntegerRegex = @"(une?|deux|trois|quatre|cinq|six|sept|huit|neuf|z[ée]ro)";
       public const string TenToNineteenIntegerRegex = @"((seize|quinze|quatorze|treize|douze|onze)|dix(\Wneuf|\Whuit|\Wsept)?)";
-      public const string TensNumberIntegerRegex = @"(quatre\Wvingt(s|\Wdix)?|soixante\Wdix|vingt|trente|quarante|cinquante|soixante|septante|octante|huitante|nonante)";
+      public const string TensNumberIntegerRegex = @"(quatre\Wvingt(s|\Wdix)?|soixante(\Wdix)?|vingt|trente|quarante|cinquante|septante|octante|huitante|nonante)";
       public const string DigitsNumberRegex = @"\d|\d{1,3}(\.\d{3})";
       public const string NegativeNumberTermsRegex = @"^[.]";
       public static readonly string NegativeNumberSignRegex = $@"^({NegativeNumberTermsRegex}\s+).*";

@@ -27,11 +27,11 @@ public class FrenchNumeric {
 
     public static final String RoundNumberIntegerRegex = "(cent|mille|millions?|milliards?|billions?)";
 
-    public static final String ZeroToNineIntegerRegex = "(une?|deux|trois|quatre|cinq|six|sept|huit|neuf)";
+    public static final String ZeroToNineIntegerRegex = "(une?|deux|trois|quatre|cinq|six|sept|huit|neuf|z[ée]ro)";
 
     public static final String TenToNineteenIntegerRegex = "((seize|quinze|quatorze|treize|douze|onze)|dix(\\Wneuf|\\Whuit|\\Wsept)?)";
 
-    public static final String TensNumberIntegerRegex = "(quatre\\Wvingt(s|\\Wdix)?|soixante\\Wdix|vingt|trente|quarante|cinquante|soixante|septante|octante|huitante|nonante)";
+    public static final String TensNumberIntegerRegex = "(quatre\\Wvingt(s|\\Wdix)?|soixante(\\Wdix)?|vingt|trente|quarante|cinquante|septante|octante|huitante|nonante)";
 
     public static final String DigitsNumberRegex = "\\d|\\d{1,3}(\\.\\d{3})";
 
