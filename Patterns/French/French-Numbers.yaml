@@ -9,11 +9,11 @@ MultiDecimalSeparatorCulture: !bool true
 RoundNumberIntegerRegex: !simpleRegex
   def: (cent|mille|millions?|milliards?|billions?)
 ZeroToNineIntegerRegex: !simpleRegex
-  def: (une?|deux|trois|quatre|cinq|six|sept|huit|neuf)
+  def: (une?|deux|trois|quatre|cinq|six|sept|huit|neuf|z[ée]ro)
 TenToNineteenIntegerRegex: !simpleRegex
   def: ((seize|quinze|quatorze|treize|douze|onze)|dix(\Wneuf|\Whuit|\Wsept)?)
 TensNumberIntegerRegex: !simpleRegex
-  def: (quatre\Wvingt(s|\Wdix)?|soixante\Wdix|vingt|trente|quarante|cinquante|soixante|septante|octante|huitante|nonante)
+  def: (quatre\Wvingt(s|\Wdix)?|soixante(\Wdix)?|vingt|trente|quarante|cinquante|septante|octante|huitante|nonante)
 DigitsNumberRegex: !simpleRegex
   def: \d|\d{1,3}(\.\d{3})
 NegativeNumberTermsRegex: !simpleRegex
