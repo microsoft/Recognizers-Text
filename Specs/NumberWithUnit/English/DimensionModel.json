@@ -1233,5 +1233,57 @@
         }
       }
     ]
+  },
+  {
+    "Input": "24703L202",
+    "Results": []
+  },
+  {
+    "Input": "24703 L-202",
+    "NotSupported": "javascript",
+    "Results": []
+  },
+  {
+    "Input": "24703m212",
+    "Results": []
+  },
+  {
+    "Input": "24703 m212",
+    "Results": []
+  },
+  {
+    "Input": "24703m2",
+    "Results": [
+      {
+        "Text": "24703m2",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "24703",
+          "subtype": "Area",
+          "unit": "Square meter"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "scp-173m",
+    "NotSupported": "javascript",
+    "Results": []
+  },
+  {
+    "Input": "scp2-173m",
+    "NotSupported": "javascript",
+    "Results": []
+  },
+  {
+    "Input": "scp-173 m",
+    "NotSupported": "javascript",
+    "Results": []
+  },
+  {
+    "Input": "scp173m",
+    "Results": []
   }
 ]

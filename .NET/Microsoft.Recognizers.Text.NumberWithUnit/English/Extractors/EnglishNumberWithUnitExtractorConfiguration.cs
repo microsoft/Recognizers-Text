@@ -30,7 +30,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
         {
             this.CultureInfo = ci;
 
-            var unitNumConfig = new BaseNumberOptionsConfiguration(ci.Name, NumberOptions.None, NumberMode.Unit);
+            // PlaceHolderMixed allows to extract numbers from expressions like 'USD15', '15USD' where there is no space between
+            // alphabetic and numeric characters (PlaeHolderDefault does not extract numbers from expressions like 'USD15').
+            var unitNumConfig = new BaseNumberOptionsConfiguration(ci.Name, NumberOptions.None, NumberMode.Unit, BaseNumbers.PlaceHolderMixed);
             this.UnitNumExtractor = NumberExtractor.GetInstance(unitNumConfig);
 
             this.BuildPrefix = NumbersWithUnitDefinitions.BuildPrefix;

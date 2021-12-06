@@ -39,9 +39,11 @@ AllIntRegex: !nestedRegex
 PlaceHolderPureNumber: !simpleRegex
   def: \b
 PlaceHolderDefault: !simpleRegex
+  def: (?=\D)|\b
+PlaceHolderMixed: !simpleRegex
   def: \D|\b
 NumbersWithPlaceHolder: !paramsRegex
-  def: (((?<!\d+(\s*(K|k|MM?|mil|G|T|B|b))?\s*)-\s*)|(?<=\b))\d+(?!([\.,]\d+[a-zA-Z]))(?={placeholder})
+  def: (((?<!(\d+(\s*(K|k|MM?|mil|G|T|B|b))?\s*|\p{L}))-\s*)|(?<={placeholder}))\d+(?!([\.,]\d+[a-zA-Z]))(?={placeholder})
   params: [ placeholder ]
 #Below Regex is used to catch comma separated digits in Hindi numbering system
 IndianNumberingSystemRegex: !simpleRegex
@@ -128,7 +130,7 @@ DoubleCaretExponentialNotationRegex: !nestedRegex
   def: (((?<!\d+(\s*{BaseNumbers.NumberMultiplierRegex})?\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))(\d+([\.,]\d+)?)\^([+-]*[1-9]\d*)(?=\b)
   references: [ BaseNumbers.NumberMultiplierRegex ]
 DoubleDecimalPointRegex: !paramsRegex
-  def: (((?<!\d+(\s*(K|k|MM?|mil|G|T|B|b))?\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+(?!([\.,]\d+))(?={placeholder})
+  def: (((?<!(\d+(\s*(K|k|MM?|mil|G|T|B|b))?\s*|\p{L}))-\s*)|((?<={placeholder})(?<!\d+[\.,])))\d+[\.,]\d+(?!([\.,]\d+))(?={placeholder})
   params: [ placeholder ]
 #Below Regex is used to catch comma separated digits in Hindi numbering system
 DoubleIndianDecimalPointRegex: !simpleRegex

@@ -3026,5 +3026,20 @@
         }
       }
     ]
+  },
+  {
+    "Input": "SCP-173",
+    "Results": [
+      {
+        "Text": "173",
+        "Start": 4,
+        "End": 6,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "173"
+        }
+      }
+    ]
   }
 ]
