@@ -22000,5 +22000,51 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I'll go back 20161016.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "20161016",
+        "Start": 13,
+        "End": 20,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-10-16",
+              "type": "date",
+              "value": "2016-10-16"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "On 2016 10 16, the conference started.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2016 10 16",
+        "Start": 3,
+        "End": 12,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-10-16",
+              "type": "date",
+              "value": "2016-10-16"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
