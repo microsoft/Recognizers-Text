@@ -106,14 +106,14 @@ namespace Microsoft.Recognizers.Definitions.French
       public static readonly string WeekDayEnd = $@"{WeekDayRegex}\s*,?\s*$";
       public const string WeekDayStart = @"^[\.]";
       public const string RangeUnitRegex = @"\b(?<unit>(l')?ann[eé]e(s)?|mois|semaines?)\b";
-      public const string HourNumRegex = @"\b(?<hournum>zero|[aá]\s+une?|deux|trois|quatre|cinq|six|sept|huit|neuf|onze|douze|treize|quatorze|quinze|dix-six|dix-sept|dix-huit|dix-neuf|vingt|vingt-et-un|vingt-deux|vingt-trois|dix)\b";
+      public const string HourNumRegex = @"\b(?<hournum>zero|une?(?=\s+heure)|deux|trois|quatre|cinq|six|sept|huit|neuf|onze|douze|treize|quatorze|quinze|dix-six|seize|dix(-|\s+)sept|dix(-|\s+)huit|dix(-|\s+)neuf|vingt|vingt(-|\s+)et(-|\s+)un|vingt(-|\s+)deux|vingt(-|\s+)trois|dix)\b";
       public const string MinuteNumRegex = @"(?<minnum>((vingt|trente|quarante|cinquante)(\s*(et|-)?\s*))?(un|deux|trois|quatre|cinq|six|sept|huit|neuf)|onze|douze|treize|quatorze|quinze|seize|dix-sept|dix-huit|dix-neuf|vingt|trente|quarante|cinquante|dix)";
       public const string DeltaMinuteNumRegex = @"(?<deltaminnum>((vingt|trente|quarante|cinquante)(\s*(et|-)?\s*))?(un|deux|trois|quatre|cinq|six|sept|huit|neuf)|onze|douze|treize|quatorze|quinze|seize|dix-sept|dix-huit|dix-neuf|vingt|trente|quarante|cinquante|dix)";
       public const string OclockRegex = @"(?<oclock>heures?|h)";
       public const string PmRegex = @"(?<pm>(dans l'\s*)?apr[eè]s(\s*|-)midi|(du|ce|de|le)\s*(soir([ée]e)?)|(dans l[ea]\s+)?(nuit|soir[eé]e))";
       public const string AmRegex = @"(?<am>(du|de|ce|(du|de|dans)\s*l[ea]|le)?\s*matin[ée]e|(du|de|ce|dans l[ea]|le)?\s*matin)";
       public static readonly string LessThanOneHour = $@"(?<lth>(une\s+)?quart|trois quart(s)?|demie( heure)?|({BaseDateTime.DeltaMinuteRegex}|{DeltaMinuteNumRegex})(\s+(minutes?|mins?))|(?<=heures?\s+((et|moins)\s+)?)({BaseDateTime.DeltaMinuteRegex}|{DeltaMinuteNumRegex}))";
-      public static readonly string WrittenTimeRegex = $@"(?<writtentime>{HourNumRegex}\s+(heures\s+)?(et\s+)?{MinuteNumRegex}(\s+(minutes?|mins?))?)";
+      public static readonly string WrittenTimeRegex = $@"(?<writtentime>{HourNumRegex}\s+(heures\s+)?(et\s+)?{MinuteNumRegex}(?!\s+heures)(\s+(minutes?|mins?))?)";
       public static readonly string TimePrefix = $@"(?<prefix>(heures?\s+((et|moins)\s+)?{LessThanOneHour}|(et|moins)\s+{LessThanOneHour}|{LessThanOneHour}\s+[àa]))";
       public static readonly string TimeSuffix = $@"(?<suffix>{AmRegex}|{PmRegex}|{OclockRegex})";
       public static readonly string BasicTime = $@"(?<basictime>{WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}(:|\s*h\s*){BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?|{BaseDateTime.HourRegex})";
@@ -125,7 +125,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public const string MiddayRegex = @"(?<midday>milieu(\s*|-)d[eu]\s*(jour|midi)|apr[eè]s(-|\s*)midi|(?<=\bà\s+)midi)";
       public static readonly string MidafternoonRegex = $@"(?<midafternoon>milieu\s*d'+{AfternoonRegex})";
       public static readonly string MidTimeRegex = $@"(?<mid>({MidnightRegex}|{MidmorningRegex}|{MidafternoonRegex}|{MiddayRegex}))";
-      public static readonly string AtRegex = $@"\b(((?<=\b[àa]\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}|{MidTimeRegex}))|{MidTimeRegex})\b";
+      public static readonly string AtRegex = $@"\b(((?<=\b[àa]\s+)({WrittenTimeRegex}|{HourNumRegex}(\s+heures)?|{BaseDateTime.HourRegex}|{MidTimeRegex}))|{MidTimeRegex})\b";
       public static readonly string IshRegex = $@"\b(peu\s*pr[èe]s\s*{BaseDateTime.HourRegex}|peu\s*pr[èe]s\s*{WrittenTimeRegex}|peu\s*pr[èe]s\s*[àa]\s*{BaseDateTime.HourRegex}|peu pr[èe]s midi)\b";
       public const string TimeUnitRegex = @"(?<unit>h|(heure|hr|minute|min|seconde|sec)(?<plural>s)?)\b";
       public const string RestrictedTimeUnitRegex = @"(?<unit>huere|minute)\b";
