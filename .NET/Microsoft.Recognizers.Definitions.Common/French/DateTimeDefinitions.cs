@@ -40,7 +40,14 @@ namespace Microsoft.Recognizers.Definitions.French
       public static readonly string AmPmDescRegex = $@"(h\b|{BaseDateTime.BaseAmPmDescRegex})";
       public static readonly string DescRegex = $@"(?<desc>{AmPmDescRegex}|{AmDescRegex}|{PmDescRegex}|{SpecialDescRegex})";
       public static readonly string TwoDigitYearRegex = $@"\b(?<![$])(?<year>([0-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b";
-      public const string FullTextYearRegex = @"^[\*]";
+      public const string WrittenOneToNineRegex = @"(?:une?|deux|trois|quatre|cinq|six|sept|huit|neuf)";
+      public const string WrittenElevenToNineteenRegex = @"(?:(seize|quinze|quatorze|treize|douze|onze)|dix\W(neuf|huit|sept))";
+      public const string WrittenTensRegex = @"(?:quatre\Wvingt(s|\Wdix)?|soixante(\Wdix)?|dix|vingt|trente|quarante|cinquante|septante|octante|huitante|nonante)";
+      public static readonly string WrittenCenturyFullYearRegex = $@"(?:(deux\s+)?mille((\s+{WrittenOneToNineRegex})?\s+cents?)?)";
+      public static readonly string WrittenCenturyOrdinalYearRegex = $@"({WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|dix)";
+      public static readonly string CenturyRegex = $@"\b(?<century>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}(\s+cents?)?)\b";
+      public static readonly string LastTwoYearNumRegex = $@"(({WrittenTensRegex}(\s+|-))?({WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex})|{WrittenTensRegex})";
+      public static readonly string FullTextYearRegex = $@"\b(?<fullyear>(?<firsttwoyearnum>{CenturyRegex})\s+(?<lasttwoyearnum>{LastTwoYearNumRegex})\b|\b(?<firsttwoyearnum>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}\s+cents))\b";
       public static readonly string YearRegex = $@"({BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})";
       public const string WeekDayRegex = @"(?<weekday>dimanche|lundi|mardi|mercredi|jeudi|vendredi|samedi|lun(\.)?|mar(\.)?|mer(\.)?|jeu(\.)?|ven(\.)?|sam(\.)?|dim(\.)?)";
       public static readonly string RelativeMonthRegex = $@"(?<relmonth>({ThisPrefixRegex}\s+mois)|(mois\s+{PastSuffixRegex})|(mois\s+{NextSuffixRegex}))\b";
@@ -94,7 +101,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public static readonly string DateExtractor8 = $@"(?<=\b(le)\s+){DayRegex}[\\\-]{MonthNumRegex}{BaseDateTime.CheckDecimalRegex}\b";
       public static readonly string DateExtractor9 = $@"\b{DayRegex}\s*/\s*{MonthNumRegex}((\s+|\s*,\s*){DateYearRegex})?{BaseDateTime.CheckDecimalRegex}\b";
       public static readonly string DateExtractorA = $@"\b({DateYearRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DayRegex}|{MonthRegex}\s*[/\\\-\.]\s*{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]\s*{DayRegex}|{DayRegex}\s*[/\\\-\.]\s*{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]\s*{MonthRegex})(?!\s*[/\\\-\.:]\s*\d+)";
-      public static readonly string OfMonth = $@"^\s*de\s*{MonthRegex}";
+      public static readonly string OfMonth = $@"^(\s*de)?\s*{MonthRegex}\b";
       public static readonly string MonthEnd = $@"{MonthRegex}\s*(le)?\s*$";
       public static readonly string WeekDayEnd = $@"{WeekDayRegex}\s*,?\s*$";
       public const string WeekDayStart = @"^[\.]";
@@ -245,11 +252,10 @@ namespace Microsoft.Recognizers.Definitions.French
       public const string NumberAsTimeRegex = @"^\b$";
       public const string TimeBeforeAfterRegex = @"^\b$";
       public const string DateNumberConnectorRegex = @"^\s*(?<connector>\s+[aà])\s*$";
-      public const string CenturyRegex = @"^\b$";
       public const string DecadeRegex = @"^\b$";
       public const string DecadeWithCenturyRegex = @"^\b$";
       public const string RelativeDecadeRegex = @"^\b$";
-      public static readonly string YearSuffix = $@"(,?\s*({DateYearRegex}|{FullTextYearRegex}))";
+      public static readonly string YearSuffix = $@"(,?(\s*à)?\s*({DateYearRegex}|{FullTextYearRegex}))";
       public const string SuffixAfterRegex = @"^\b$";
       public const string YearPeriodRegex = @"^\b$";
       public const string FutureSuffixRegex = @"\b(dans\s+le\s+futur)\b";
