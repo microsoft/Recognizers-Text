@@ -170,6 +170,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public const string HalfUnitRegex = @"半";
       public const string NegativeNumberTermsRegex = @"[负負]";
       public static readonly string NegativeNumberTermsRegexNum = $@"((?<!(\d+(\s*{BaseNumbers.NumberMultiplierRegex})?\s*)|[-－])[-－])";
+      public static readonly string NegativeNumberTermsRegexAll = $@"({NegativeNumberTermsRegex}|{NegativeNumberTermsRegexNum})";
       public static readonly string NegativeNumberSignRegex = $@"^{NegativeNumberTermsRegex}.*|^{NegativeNumberTermsRegexNum}.*";
       public static readonly string SpeGetNumberRegex = $@"{ZeroToNineFullHalfRegex}|{ZeroToNineIntegerRegex}|[十拾半对對]";
       public const string PairRegex = @".*[双对雙對]$";
@@ -195,14 +196,14 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public static readonly string NumbersWithAllowListRegex = $@"(?<![百佰]\s*分\s*之\s*({AllIntRegex}[点點]*|{AllFloatRegex})*){NegativeNumberTermsRegex}?({NotSingleRegex}|{SingleRegex})(?!({AllIntRegex}*([点點]{ZeroToNineIntegerRegex}+)*|{AllFloatRegex})*\s*[个個]\s*[百佰]\s*分\s*[点點])";
       public static readonly string NumbersAggressiveRegex = $@"(?<![百佰]\s*分\s*之\s*({AllIntRegex}[点點]*|{AllFloatRegex})*){NegativeNumberTermsRegex}?{AllIntRegex}(?!({AllIntRegex}*([点點]{ZeroToNineIntegerRegex}+)*|{AllFloatRegex})*\s*[个個]\s*[百佰]\s*分\s*[点點])";
       public static readonly string PointRegex = $@"{PointRegexStr}";
-      public static readonly string DoubleSpecialsChars = $@"(?<!({ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}*))({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}+(?!{ZeroToNineFullHalfRegex}*[\.．]{ZeroToNineFullHalfRegex}+)";
-      public static readonly string DoubleSpecialsCharsWithNegatives = $@"(?<!({ZeroToNineFullHalfRegex}+|\.\.|．．))({NegativeNumberTermsRegexNum}\s*)?[\.．]{ZeroToNineFullHalfRegex}+(?!{ZeroToNineFullHalfRegex}*([\.．]{ZeroToNineFullHalfRegex}+))";
-      public static readonly string SimpleDoubleSpecialsChars = $@"({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}{{1,3}}([,，]{ZeroToNineFullHalfRegex}{{3}})+[\.．]{ZeroToNineFullHalfRegex}+";
-      public static readonly string DoubleWithMultiplierRegex = $@"({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}+\s*{BaseNumbers.NumberMultiplierRegex}";
+      public static readonly string DoubleSpecialsChars = $@"(?<!({ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}*))({NegativeNumberTermsRegexAll}\s*)?{ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}+(?!{ZeroToNineFullHalfRegex}*[\.．]{ZeroToNineFullHalfRegex}+)";
+      public static readonly string DoubleSpecialsCharsWithNegatives = $@"(?<!({ZeroToNineFullHalfRegex}+|\.\.|．．))({NegativeNumberTermsRegexAll}\s*)?[\.．]{ZeroToNineFullHalfRegex}+(?!{ZeroToNineFullHalfRegex}*([\.．]{ZeroToNineFullHalfRegex}+))";
+      public static readonly string SimpleDoubleSpecialsChars = $@"({NegativeNumberTermsRegexAll}\s*)?{ZeroToNineFullHalfRegex}{{1,3}}([,，]{ZeroToNineFullHalfRegex}{{3}})+[\.．]{ZeroToNineFullHalfRegex}+";
+      public static readonly string DoubleWithMultiplierRegex = $@"({NegativeNumberTermsRegexAll}\s*)?{ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}+\s*{BaseNumbers.NumberMultiplierRegex}";
       public static readonly string DoubleWithThousandsRegex = $@"{NegativeNumberTermsRegex}?(({ZeroToNineFullHalfRegex}+)|({ZeroToNineFullHalfRegex}{{1,3}}(,{ZeroToNineFullHalfRegex}{{3}})+))([\.．]{ZeroToNineFullHalfRegex}+)?\s*[多几幾余]?[万亿萬億]{{1,2}}";
       public static readonly string DoubleAllFloatRegex = $@"(?<![百佰]\s*分\s*之\s*(({AllIntRegex}[点點]*)|{AllFloatRegex})*){AllFloatRegex}(?!{ZeroToNineIntegerRegex}*\s*[个個]\s*[百佰]\s*分\s*[点點])";
-      public static readonly string DoubleExponentialNotationRegex = $@"(?<!{ZeroToNineFullHalfRegex}+[\.．])({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?e(([-－+＋]*[1-9]{ZeroToNineFullHalfRegex}*)|0(?!{ZeroToNineFullHalfRegex}+))";
-      public static readonly string DoubleScientificNotationRegex = $@"(?<!{ZeroToNineFullHalfRegex}+[\.．])({NegativeNumberTermsRegexNum}\s*)?({ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?)\^([-－+＋]*[1-9]{ZeroToNineFullHalfRegex}*)";
+      public static readonly string DoubleExponentialNotationRegex = $@"(?<!{ZeroToNineFullHalfRegex}+[\.．])({NegativeNumberTermsRegexAll}\s*)?{ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?e(([-－+＋]*[1-9]{ZeroToNineFullHalfRegex}*)|0(?!{ZeroToNineFullHalfRegex}+))";
+      public static readonly string DoubleScientificNotationRegex = $@"(?<!{ZeroToNineFullHalfRegex}+[\.．])({NegativeNumberTermsRegexAll}\s*)?({ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?)\^([-－+＋]*[1-9]{ZeroToNineFullHalfRegex}*)";
       public static readonly string OrdinalRegex = $@"第{AllIntRegex}";
       public static readonly string OrdinalNumbersRegex = $@"第{ZeroToNineFullHalfRegex}+";
       public static readonly string AllFractionNumber = $@"{NegativeNumberTermsRegex}?(({ZeroToNineFullHalfRegex}+|{AllIntRegex})\s*又\s*)?{NegativeNumberTermsRegex}?({ZeroToNineFullHalfRegex}+|{AllIntRegex})\s*分\s*之\s*{NegativeNumberTermsRegex}?({ZeroToNineFullHalfRegex}+|{AllIntRegex})({PointRegexStr}{AllIntRegex}*)?";
@@ -222,7 +223,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public static readonly string IntegerPercentageRegex = $@"{ZeroToNineFullHalfRegex}+\s*[个個]\s*{RoundNumberIntegerRegex}{{1,3}}\s*分\s*[点點]";
       public static readonly string IntegerPercentageWithMultiplierRegex = $@"{ZeroToNineFullHalfRegex}+\s*{BaseNumbers.NumberMultiplierRegex}\s*[个個]\s*{RoundNumberIntegerRegex}{{1,3}}\s*分\s*[点點]";
       public static readonly string NumbersFractionPercentageRegex = $@"{ZeroToNineFullHalfRegex}{{1,3}}([,，]{ZeroToNineFullHalfRegex}{{3}})+\s*[个個]\s*{RoundNumberIntegerRegex}{{1,3}}\s*分\s*[点點]";
-      public static readonly string SimpleIntegerPercentageRegex = $@"(?<!%|\d){NegativeNumberTermsRegexNum}?{ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?(\s*)[％%](?!\d)";
+      public static readonly string SimpleIntegerPercentageRegex = $@"(?<!%|\d){NegativeNumberTermsRegexAll}?{ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?(\s*)[％%](?!\d)";
       public static readonly string NumbersFoldsPercentageRegex = $@"{ZeroToNineFullHalfRegex}(([\.．]?|\s*){ZeroToNineFullHalfRegex})?\s*折";
       public static readonly string FoldsPercentageRegex = $@"{ZeroToNineIntegerRegex}(\s*[点點]?\s*{ZeroToNineIntegerRegex})?\s*折";
       public static readonly string SimpleFoldsPercentageRegex = $@"{ZeroToNineFullHalfRegex}\s*成(\s*(半|{ZeroToNineFullHalfRegex}))?";

@@ -19,6 +19,7 @@ export namespace BaseDateTime {
     export const FourDigitYearRegex = `\\b(?<![$])(?<year>((1\\d|20)\\d{2})|2100)(?!\\.0\\b)\\b`;
     export const HyphenDateRegex = `((?<year1>[0-9]{4})-?(?<month1>1[0-2]|0[1-9])-?(?<day1>3[01]|0[1-9]|[12][0-9]))|((?<month2>1[0-2]|0[1-9])-?(?<day2>3[01]|0[1-9]|[12][0-9])-?(?<year2>[0-9]{4}))|((?<day3>3[01]|0[1-9]|[12][0-9])-?(?<month3>1[0-2]|0[1-9])-?(?<year3>[0-9]{4}))`;
     export const IllegalYearRegex = `([-])(${FourDigitYearRegex})([-])`;
+    export const InvalidDayNumberPrefix = `(\\d[.,:]|[$£€]\\s*)$`;
     export const CheckDecimalRegex = `(?![,.]\\d)`;
     export const RangeConnectorSymbolRegex = `(--|-|—|——|~|–)`;
     export const BaseAmDescRegex = `(am\\b|a\\s*\\.\\s*m\\s*\\.|a[\\.]?\\s*m\\b)`;

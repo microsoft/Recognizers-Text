@@ -1303,7 +1303,9 @@ public class BaseDatePeriodParser implements IDateTimeParser {
 
         int month;
         if (StringUtility.isNullOrEmpty(monthStr)) {
-            int swift = this.config.getSwiftDayOrMonth(trimmedText);
+            String relMonth = match.getMatch().get().getGroup("relmonth").value;
+            String monthText = !StringUtility.isNullOrEmpty(relMonth) ? relMonth : trimmedText;
+            int swift = this.config.getSwiftDayOrMonth(monthText);
 
             month = referenceDate.plusMonths(swift).getMonthValue();
             year = referenceDate.plusMonths(swift).getYear();

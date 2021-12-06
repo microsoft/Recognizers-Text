@@ -71,7 +71,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly string AllPointRegex = $@"((\s+{ZeroToNineIntegerRegex})+|(\s+{SeparaIntRegex}))";
       public static readonly string AllFloatRegex = $@"{AllIntRegex}(\s+point){AllPointRegex}";
       public static readonly string DoubleWithMultiplierRegex = $@"(((?<!\d+(\s*{BaseNumbers.NumberMultiplierRegex})?\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)";
-      public static readonly string DoubleExponentialNotationRegex = $@"(((?<!\d+(\s*{BaseNumbers.NumberMultiplierRegex})?\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))(\d+([\.,]\d+)?)e([+-]*[1-9]\d*)(?=\b)";
+      public static readonly string DoubleExponentialNotationRegex = $@"(((?<!\d+(\s*{BaseNumbers.NumberMultiplierRegex})?\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))(\d+([\.,]\d+)?)(e|x10\^)([+-]*[1-9]\d*)(?=\b)";
       public static readonly string DoubleCaretExponentialNotationRegex = $@"(((?<!\d+(\s*{BaseNumbers.NumberMultiplierRegex})?\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))(\d+([\.,]\d+)?)\^([+-]*[1-9]\d*)(?=\b)";
       public static readonly Func<string, string> DoubleDecimalPointRegex = (placeholder) => $@"(((?<!(\d+(\s*(K|k|MM?|mil|G|T|B|b))?\s*|\p{{L}}))-\s*)|((?<={placeholder})(?<!\d+[\.,])))\d+[\.,]\d+(?!([\.,]\d+))(?={placeholder})";
       public const string DoubleIndianDecimalPointRegex = @"(?<=\b)((?:\d{1,2},(?:\d{2},)*\d{3})(?:\.\d{2})(?=\b))";

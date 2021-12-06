@@ -2185,5 +2185,33 @@
         }
       }
     ]
+  },
+  {
+    "Input": "负3.9%",
+    "Results": [
+      {
+        "Text": "负3.9%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "-3.9%"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "负40%",
+    "Results": [
+      {
+        "Text": "负40%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "-40%"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
   }
 ]
