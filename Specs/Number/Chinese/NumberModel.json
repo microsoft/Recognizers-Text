@@ -5227,5 +5227,33 @@
         "End": 45
       }
     ]
+  },
+  {
+    "Input": "负1.1",
+    "Results": [
+      {
+        "Text": "负1.1",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-1.1"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "负0.2",
+    "Results": [
+      {
+        "Text": "负0.2",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "-0.2"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
   }
 ]

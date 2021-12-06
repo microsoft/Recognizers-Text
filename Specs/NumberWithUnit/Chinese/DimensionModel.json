@@ -476,5 +476,35 @@
         "End": 4
       }
     ]
+  },
+  {
+    "Input": "负0.2千米",
+    "Results": [
+      {
+        "Text": "负0.2千米",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "-0.2",
+          "unit": "Kilometer"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "负13.5千米",
+    "Results": [
+      {
+        "Text": "负13.5千米",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "-13.5",
+          "unit": "Kilometer"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
   }
 ]
