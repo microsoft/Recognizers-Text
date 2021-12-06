@@ -472,7 +472,7 @@ class NumberWithUnitExtractor(Extractor):
 
                             if len(reg_match) > 0:
                                 ers = list(filter(lambda x: not any([m.start() < x.start + x.length and m.start() +
-                                                                            len(m.group()) > x.start for m in reg_match]), ers))  
+                                                                     len(m.group()) > x.start for m in reg_match]), ers))
                         except Exception:
                             pass
 

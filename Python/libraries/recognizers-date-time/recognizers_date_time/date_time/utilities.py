@@ -608,7 +608,7 @@ class MatchedIndex:
 class MatchingUtil:
 
     invalid_day_number_prefix = RegExpUtility.get_safe_reg_exp(
-            BaseDateTime.InvalidDayNumberPrefix)
+        BaseDateTime.InvalidDayNumberPrefix)
 
     @staticmethod
     def is_invalid_day_number_prefix(prefix: str) -> bool:
