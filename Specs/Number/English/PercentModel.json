@@ -218,5 +218,50 @@
     "Input": "You can go to https://www.test.com/search?q=30%25%2020%",
     "NotSupported": "javascript",
     "Results": []
+  },
+  {
+    "Input": "Only a small percent attain the top ranks",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "percent",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "null"
+        },
+        "Start": 13,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "The table shows the % of increase in the last month",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "%",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "null"
+        },
+        "Start": 20,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "How do I calculate a percentage?",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "percentage",
+        "TypeName": "percentage",
+        "Resolution": {
+          "value": "null"
+        },
+        "Start": 21,
+        "End": 30
+      }
+    ]
   }
 ]
