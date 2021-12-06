@@ -3041,5 +3041,52 @@
         }
       }
     ]
+  },
+  {
+    "Input": "1.3x10^6",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "1.3x10^6",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "1300000"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "1.3e6",
+    "Results": [
+      {
+        "Text": "1.3e6",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "1300000"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "6.23x10^-4",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "6.23x10^-4",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "0.000623"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
   }
 ]
