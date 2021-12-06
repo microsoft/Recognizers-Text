@@ -14,6 +14,10 @@ namespace Microsoft.Recognizers.Text.Number
         public const string TWONUMTILL = "TwoNumTill";
         public const string TWONUMCLOSED = "TwoNumClosed";
         public const string MORE = "More";
+
+        // 以下为中文的“三万多”构造一个专门的属性
+        public const string ABOUT = "About";
+
         public const string LESS = "Less";
         public const string EQUAL = "Equal";
 

@@ -44,13 +44,24 @@ namespace SimpleConsole
                 // Validate input
                 if (input?.Length > 0)
                 {
-                    // Retrieve all the parsers and call 'Parse' to recognize all the values from the user input
-                    var results = ParseAll(input, DefaultCulture);
+                    if (input == "ChineseNumberSample")
+                    {
+                        ChineseNumberSample();
+                    }
 
-                    // Write output
-                    Console.WriteLine(results.Any() ? $"I found the following entities ({results.Count():d}):" : "I found no entities.");
-                    results.ToList().ForEach(result => Console.WriteLine(JsonConvert.SerializeObject(result, Formatting.Indented)));
-                    Console.WriteLine();
+                    // Retrieve all the parsers and call 'Parse' to recognize all the values from the user input
+                    else
+                    {
+                        var results = ParseAll(input, DefaultCulture);
+
+                        // Write output
+                        Console.WriteLine(results.Any()
+                            ? $"I found the following entities ({results.Count():d}):"
+                            : "I found no entities.");
+                        results.ToList().ForEach(result =>
+                            Console.WriteLine(JsonConvert.SerializeObject(result, Formatting.Indented)));
+                        Console.WriteLine();
+                    }
                 }
             }
         }
@@ -158,6 +169,34 @@ namespace SimpleConsole
             Console.WriteLine("\" The temperature this night will be of 40 deg celsius\"");
             Console.WriteLine("\" The american stock exchange said a seat was sold for down $ 5,000 from the previous sale last friday\"");
             Console.WriteLine("\" It happened when the baby was only ten months old\"");
+            Console.WriteLine("You can also input \"ChineseNumberSample to get a Recognizer to extract some Chinese numbers.\"");
+            Console.WriteLine();
+        }
+
+        private static void ChineseNumberSample()
+        {
+            var results = NumberRecognizer.RecognizeNumberRange("我有三十几万元", Culture.Chinese);
+            Console.WriteLine("Input is '我有三十几万元'");
+            results.ToList().ForEach(result =>
+                Console.WriteLine(JsonConvert.SerializeObject(result, Formatting.Indented)));
+            Console.WriteLine();
+
+            results = NumberRecognizer.RecognizeNumberRange("二百余万元", Culture.Chinese);
+            Console.WriteLine("Input is '二百余万元'");
+            results.ToList().ForEach(result =>
+                Console.WriteLine(JsonConvert.SerializeObject(result, Formatting.Indented)));
+            Console.WriteLine();
+
+            results = NumberRecognizer.RecognizeNumberRange("一千两百多万元", Culture.Chinese);
+            Console.WriteLine("Input is '一千两百多万元'");
+            results.ToList().ForEach(result =>
+                Console.WriteLine(JsonConvert.SerializeObject(result, Formatting.Indented)));
+            Console.WriteLine();
+
+            results = NumberRecognizer.RecognizeNumberRange("十几个人", Culture.Chinese);
+            Console.WriteLine("Input is '十几个人'");
+            results.ToList().ForEach(result =>
+                Console.WriteLine(JsonConvert.SerializeObject(result, Formatting.Indented)));
             Console.WriteLine();
         }
     }

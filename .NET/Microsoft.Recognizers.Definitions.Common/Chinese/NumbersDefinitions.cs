@@ -241,7 +241,10 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public const string LessOrEqualSuffix = @"(或|或者)\s*(以下|之下|更[小少低])";
       public static readonly string OneNumberRangeMoreRegex1 = $@"({MoreOrEqual}|{MoreRegex})\s*(?<number1>((?!([并且而並的同時时]|([,，](?!\d+))|。)).)+)";
       public const string OneNumberRangeMoreRegex2 = @"比\s*(?<number1>((?!(([,，](?!\d+))|。)).)+)\s*更?[大多高]";
-      public const string OneNumberRangeMoreRegex3 = @"(?<number1>((?!(([,，](?!\d+))|。|[或者])).)+)\s*(或|或者)?\s*([多几余幾餘]|次?以上|之上|更[大多高])([万亿萬億]{0,2})";
+      // public const string OneNumberRangeMoreRegex3 = @"(?<number1>((?!(([,，](?!\d+))|。|[或者])).)+)\s*(或|或者)?\s*([多几余幾餘]|次?以上|之上|更[大多高])([万亿萬億]{0,2})";
+      // regex above should be devided into two different conditions:上述的regex实际上应该分成两种情况，而对这两种情况的处理方式应当不同
+      public const string OneNumberRangeMoreRegex3 = @"(?<number1>((?!(([,，](?!\d+))|。|[或者])).)+)\s*(或|或者)?\s*(次?以上|之上|更[大多高])([万亿萬億]{0,2})";
+      public const string OneNumberRangeMoreRegex4 = @"(?<number1>((?!(([,，](?!\d+))|。|[或者])).)+)\s*(或|或者)?\s*([来多几余幾餘])([万亿萬億]{0,2})";
       public static readonly string OneNumberRangeLessRegex1 = $@"({LessOrEqual}|{LessRegex})\s*(?<number2>((?!([并且而並的同時时]|([,，](?!\d+))|。)).)+)";
       public const string OneNumberRangeLessRegex2 = @"比\s*(?<number2>((?!(([,，](?!\d+))|。)).)+)\s*更?[小少低]";
       public const string OneNumberRangeLessRegex3 = @"(?<number2>((?!(([,，](?!\d+))|。|[或者])).)+)\s*(或|或者)?\s*(以下|之下|更[小少低])";

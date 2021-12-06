@@ -1,6 +1,6 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
-
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -194,6 +194,52 @@ namespace Microsoft.Recognizers.Text.Number
 
                 startValueStr = num[0].ToString("G15", CultureInfo.InvariantCulture);
 
+                result.Value = new Dictionary<string, double>()
+                {
+                    { "StartValue", num[0] },
+                };
+            }
+            else if (type.Contains(NumberRangeConstants.ABOUT))
+            {
+                rightBracket = NumberRangeConstants.RIGHT_OPEN;
+                var match = Config.MoreOrEqual.Match(extResult.Text);
+                if (!match.Success)
+                {
+                    match = Config.MoreOrEqualSuffix.Match(extResult.Text);
+                }
+
+                if (!match.Success)
+                {
+                    match = Config.MoreOrEqualSeparate.Match(extResult.Text);
+                }
+
+                if (match.Success)
+                {
+                    leftBracket = NumberRangeConstants.LEFT_CLOSED;
+                }
+                else
+                {
+                    leftBracket = NumberRangeConstants.LEFT_OPEN;
+                }
+
+                startValueStr = num[0].ToString("G15", CultureInfo.InvariantCulture);
+                long startValue = Convert.ToInt64(startValueStr);
+                long endValue = startValue;
+                int i = 0;
+                for (i = 0; i < startValueStr.Length; i++)
+                {
+                    if (startValue % 10 != 0)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        startValue /= 10;
+                    }
+                }
+
+                endValue += Convert.ToInt64(Math.Pow(10, i));
+                endValueStr = Convert.ToString(endValue);
                 result.Value = new Dictionary<string, double>()
                 {
                     { "StartValue", num[0] },
