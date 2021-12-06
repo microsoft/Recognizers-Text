@@ -983,7 +983,10 @@ export class BaseDatePeriodParser implements IDateTimeParser {
         let cardinal = this.config.isLastCardinal(cardinalStr) ? 5
             : this.config.cardinalMap.get(cardinalStr);
         if (StringUtility.isNullOrEmpty(monthStr)) {
-            let swift = this.config.getSwiftDayOrMonth(source);
+            let relMonthValue = match.groups('relmonth').value;
+            let monthStr =  !StringUtility.isNullOrEmpty(relMonthValue) ? relMonthValue : source;
+
+            let swift = this.config.getSwiftDayOrMonth(monthStr);
             let tempDate = new Date(referenceDate);
             tempDate.setMonth(referenceDate.getMonth() + swift);
             month = tempDate.getMonth();
@@ -999,6 +1002,8 @@ export class BaseDatePeriodParser implements IDateTimeParser {
     protected getWeekOfMonth(cardinal: number, month: number, year: number, referenceDate: Date, noYear: boolean): DateTimeResolutionResult {
         let result = new DateTimeResolutionResult();
         let seedDate = this.computeDate(cardinal, 1, month, year);
+        let isLastCardinal = cardinal == 5;
+
         if (seedDate.getMonth() !== month) {
             cardinal--;
             seedDate.setDate(seedDate.getDate() - 7);
@@ -1017,9 +1022,11 @@ export class BaseDatePeriodParser implements IDateTimeParser {
                 pastDate.setDate(pastDate.getDate() - 7);
             }
         }
+
+        let adjustedCardinal = isLastCardinal ? 5 : cardinal;
         result.timex = noYear ?
-            `XXXX-${DateTimeFormatUtil.toString(month + 1, 2)}-W${DateTimeFormatUtil.toString(cardinal, 2)}` :
-            `${DateTimeFormatUtil.toString(year, 4)}-${DateTimeFormatUtil.toString(month + 1, 2)}-W${DateTimeFormatUtil.toString(cardinal, 2)}`;
+            `XXXX-${DateTimeFormatUtil.toString(month + 1, 2)}-W${DateTimeFormatUtil.toString(adjustedCardinal, 2)}` :
+            `${DateTimeFormatUtil.toString(year, 4)}-${DateTimeFormatUtil.toString(month + 1, 2)}-W${DateTimeFormatUtil.toString(adjustedCardinal, 2)}`;
         result.futureValue = [futureDate, DateUtils.addDays(futureDate, this.inclusiveEndPeriod ? 6 : 7)];
         result.pastValue = [pastDate, DateUtils.addDays(pastDate, this.inclusiveEndPeriod ? 6 : 7)];
         result.success = true;
