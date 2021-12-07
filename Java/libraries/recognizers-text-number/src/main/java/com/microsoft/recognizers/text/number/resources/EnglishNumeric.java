@@ -158,17 +158,17 @@ public class EnglishNumeric {
             .replace("{AllIntRegex}", AllIntRegex)
             .replace("{AllPointRegex}", AllPointRegex);
 
-    public static final String DoubleWithMultiplierRegex = "(((?<!\\d+(\\s*{BaseNumbers.NumberMultiplierRegex})?\\s*)-\\s*)|((?<=\\b)(?<!\\d+[\\.,])))\\d+[\\.,]\\d+\\s*{BaseNumbers.NumberMultiplierRegex}(?=\\b)"
+    public static final String DoubleWithMultiplierRegex = "(((?<!\\d+(\\s*{BaseNumbers.NumberMultiplierRegex})?\\s*)-\\s*)|((?<=\\b)(?<!\\d+[\\.,])))(\\d{1,3}(,\\d{3})+(\\.\\d+)?|\\d+[\\.,]\\d+)\\s*{BaseNumbers.NumberMultiplierRegex}(?=\\b)"
             .replace("{BaseNumbers.NumberMultiplierRegex}", BaseNumbers.NumberMultiplierRegex);
 
-    public static final String DoubleExponentialNotationRegex = "(((?<!\\d+(\\s*{BaseNumbers.NumberMultiplierRegex})?\\s*)-\\s*)|((?<=\\b)(?<!\\d+[\\.,])))(\\d+([\\.,]\\d+)?)e([+-]*[1-9]\\d*)(?=\\b)"
+    public static final String DoubleExponentialNotationRegex = "(((?<!\\d+(\\s*{BaseNumbers.NumberMultiplierRegex})?\\s*)-\\s*)|((?<=\\b)(?<!\\d+[\\.,])))(\\d+([\\.,]\\d+)?)(e|x10\\^)([+-]*[1-9]\\d*)(?=\\b)"
             .replace("{BaseNumbers.NumberMultiplierRegex}", BaseNumbers.NumberMultiplierRegex);
 
     public static final String DoubleCaretExponentialNotationRegex = "(((?<!\\d+(\\s*{BaseNumbers.NumberMultiplierRegex})?\\s*)-\\s*)|((?<=\\b)(?<!\\d+[\\.,])))(\\d+([\\.,]\\d+)?)\\^([+-]*[1-9]\\d*)(?=\\b)"
             .replace("{BaseNumbers.NumberMultiplierRegex}", BaseNumbers.NumberMultiplierRegex);
 
     public static String DoubleDecimalPointRegex(String placeholder) {
-        return "(((?<!(\\d+(\\s*(K|k|MM?|mil|G|T|B|b))?\\s*|\\p{L}))-\\s*)|((?<={placeholder})(?<!\\d+[\\.,])))\\d+[\\.,]\\d+(?!([\\.,]\\d+))(?={placeholder})"
+        return "(((?<!(\\d+(\\s*(K|k|MM?|mil|G|T|B|b))?\\s*|\\p{L}))-\\s*)|((?<={placeholder})(?<!\\d+[\\.,])))(\\d{1,3}(,\\d{3})+(\\.\\d+)?|\\d+[\\.,]\\d+)(?!([\\.,]\\d+))(?={placeholder})"
             .replace("{placeholder}", placeholder);
     }
 
@@ -179,7 +179,7 @@ public class EnglishNumeric {
             .replace("{placeholder}", placeholder);
     }
 
-    public static final String DoubleWithRoundNumber = "(((?<!\\d+(\\s*{BaseNumbers.NumberMultiplierRegex})?\\s*)-\\s*)|((?<=\\b)(?<!\\d+[\\.,])))\\d+[\\.,]\\d+\\s+{RoundNumberIntegerRegex}(?=\\b)"
+    public static final String DoubleWithRoundNumber = "(((?<!\\d+(\\s*{BaseNumbers.NumberMultiplierRegex})?\\s*)-\\s*)|((?<=\\b)(?<!\\d+[\\.,])))(\\d{1,3}(,\\d{3})+(\\.\\d+)?|\\d+[\\.,]\\d+)\\s+{RoundNumberIntegerRegex}(?=\\b)"
             .replace("{RoundNumberIntegerRegex}", RoundNumberIntegerRegex)
             .replace("{BaseNumbers.NumberMultiplierRegex}", BaseNumbers.NumberMultiplierRegex);
 

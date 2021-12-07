@@ -163,6 +163,12 @@ public class FrenchDateTime {
             .replace("{YearRegex}", YearRegex)
             .replace("{RelativeRegex}", RelativeRegex);
 
+    public static final String OfYearRegex = "\\b((of|in)\\s+({YearRegex}|{StrictRelativeRegex}\\s+year))\\b"
+            .replace("{YearRegex}", YearRegex)
+            .replace("{StrictRelativeRegex}", StrictRelativeRegex);
+
+    public static final String FirstLastRegex = "\\b(the\\s+)?((?<first>first)|(?<last>last))\\b";
+
     public static final String FollowedDateUnit = "^\\s*{DateUnitRegex}"
             .replace("{DateUnitRegex}", DateUnitRegex);
 
@@ -240,13 +246,13 @@ public class FrenchDateTime {
             .replace("{YearRegex}", YearRegex)
             .replace("{TwoDigitYearRegex}", TwoDigitYearRegex);
 
-    public static final String DateExtractor1 = "\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{MonthRegex}\\s*[/\\\\\\.\\-]?\\s*{DayRegex}(\\s*[/\\\\\\.\\-]?\\s*{BaseDateTime.FourDigitYearRegex})?\\b"
+    public static final String DateExtractor1 = "\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{MonthRegex}\\s*[/\\\\\\.\\-]?\\s*{DayRegex}(\\s*([/\\\\\\.\\-]|\\bde\\b)?\\s*{BaseDateTime.FourDigitYearRegex})?\\b"
             .replace("{WeekDayRegex}", WeekDayRegex)
             .replace("{MonthRegex}", MonthRegex)
             .replace("{DayRegex}", DayRegex)
             .replace("{BaseDateTime.FourDigitYearRegex}", BaseDateTime.FourDigitYearRegex);
 
-    public static final String DateExtractor2 = "\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{DayRegex}(\\s+|\\s*,\\s*|\\s+){MonthRegex}\\s*[\\.\\-]?\\s*{DateYearRegex}\\b"
+    public static final String DateExtractor2 = "\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{DayRegex}(\\s+|\\s*,\\s*|\\s+){MonthRegex}\\s*([\\.\\-]|\\bde\\b)?\\s*{DateYearRegex}\\b"
             .replace("{WeekDayRegex}", WeekDayRegex)
             .replace("{MonthRegex}", MonthRegex)
             .replace("{DayRegex}", DayRegex)
@@ -313,7 +319,7 @@ public class FrenchDateTime {
 
     public static final String RangeUnitRegex = "\\b(?<unit>(l')?ann[eé]e(s)?|mois|semaines?)\\b";
 
-    public static final String HourNumRegex = "\\b(?<hournum>zero|[aá]\\s+une?|deux|trois|quatre|cinq|six|sept|huit|neuf|onze|douze|treize|quatorze|quinze|dix-six|dix-sept|dix-huit|dix-neuf|vingt|vingt-et-un|vingt-deux|vingt-trois|dix)\\b";
+    public static final String HourNumRegex = "\\b(?<hournum>zero|une?(?=\\s+heure)|deux|trois|quatre|cinq|six|sept|huit|neuf|onze|douze|treize|quatorze|quinze|dix-six|seize|dix(-|\\s+)sept|dix(-|\\s+)huit|dix(-|\\s+)neuf|vingt|vingt(-|\\s+)et(-|\\s+)un|vingt(-|\\s+)deux|vingt(-|\\s+)trois|dix)\\b";
 
     public static final String MinuteNumRegex = "(?<minnum>((vingt|trente|quarante|cinquante)(\\s*(et|-)?\\s*))?(un|deux|trois|quatre|cinq|six|sept|huit|neuf)|onze|douze|treize|quatorze|quinze|seize|dix-sept|dix-huit|dix-neuf|vingt|trente|quarante|cinquante|dix)";
 
@@ -329,7 +335,7 @@ public class FrenchDateTime {
             .replace("{BaseDateTime.DeltaMinuteRegex}", BaseDateTime.DeltaMinuteRegex)
             .replace("{DeltaMinuteNumRegex}", DeltaMinuteNumRegex);
 
-    public static final String WrittenTimeRegex = "(?<writtentime>{HourNumRegex}\\s+(heures\\s+)?(et\\s+)?{MinuteNumRegex}(\\s+(minutes?|mins?))?)"
+    public static final String WrittenTimeRegex = "(?<writtentime>{HourNumRegex}\\s+(heures\\s+)?(et\\s+)?{MinuteNumRegex}(?!\\s+heures)(\\s+(minutes?|mins?))?)"
             .replace("{HourNumRegex}", HourNumRegex)
             .replace("{MinuteNumRegex}", MinuteNumRegex);
 
@@ -370,7 +376,7 @@ public class FrenchDateTime {
             .replace("{MidafternoonRegex}", MidafternoonRegex)
             .replace("{MiddayRegex}", MiddayRegex);
 
-    public static final String AtRegex = "\\b(((?<=\\b[àa]\\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}|{MidTimeRegex}))|{MidTimeRegex})\\b"
+    public static final String AtRegex = "\\b(((?<=\\b[àa]\\s+)({WrittenTimeRegex}|{HourNumRegex}(\\s+heures)?|{BaseDateTime.HourRegex}|{MidTimeRegex}))|{MidTimeRegex})\\b"
             .replace("{WrittenTimeRegex}", WrittenTimeRegex)
             .replace("{HourNumRegex}", HourNumRegex)
             .replace("{BaseDateTime.HourRegex}", BaseDateTime.HourRegex)

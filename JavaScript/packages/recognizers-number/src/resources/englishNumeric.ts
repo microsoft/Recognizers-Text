@@ -55,13 +55,13 @@ export namespace EnglishNumeric {
     export const FractionPrepositionWithinPercentModeRegex = `(?<!${BaseNumbers.CommonCurrencySymbol}\\s*)(?<=\\b)(?<numerator>(${AllIntRegex})|((?<![\\.,])\\d+))\\s+over\\s+(?<denominator>(${AllIntRegex})|(\\d+)(?![\\.,]))(?=\\b)`;
     export const AllPointRegex = `((\\s+${ZeroToNineIntegerRegex})+|(\\s+${SeparaIntRegex}))`;
     export const AllFloatRegex = `${AllIntRegex}(\\s+point)${AllPointRegex}`;
-    export const DoubleWithMultiplierRegex = `(((?<!\\d+(\\s*${BaseNumbers.NumberMultiplierRegex})?\\s*)-\\s*)|((?<=\\b)(?<!\\d+[\\.,])))\\d+[\\.,]\\d+\\s*${BaseNumbers.NumberMultiplierRegex}(?=\\b)`;
-    export const DoubleExponentialNotationRegex = `(((?<!\\d+(\\s*${BaseNumbers.NumberMultiplierRegex})?\\s*)-\\s*)|((?<=\\b)(?<!\\d+[\\.,])))(\\d+([\\.,]\\d+)?)e([+-]*[1-9]\\d*)(?=\\b)`;
+    export const DoubleWithMultiplierRegex = `(((?<!\\d+(\\s*${BaseNumbers.NumberMultiplierRegex})?\\s*)-\\s*)|((?<=\\b)(?<!\\d+[\\.,])))(\\d{1,3}(,\\d{3})+(\\.\\d+)?|\\d+[\\.,]\\d+)\\s*${BaseNumbers.NumberMultiplierRegex}(?=\\b)`;
+    export const DoubleExponentialNotationRegex = `(((?<!\\d+(\\s*${BaseNumbers.NumberMultiplierRegex})?\\s*)-\\s*)|((?<=\\b)(?<!\\d+[\\.,])))(\\d+([\\.,]\\d+)?)(e|x10\\^)([+-]*[1-9]\\d*)(?=\\b)`;
     export const DoubleCaretExponentialNotationRegex = `(((?<!\\d+(\\s*${BaseNumbers.NumberMultiplierRegex})?\\s*)-\\s*)|((?<=\\b)(?<!\\d+[\\.,])))(\\d+([\\.,]\\d+)?)\\^([+-]*[1-9]\\d*)(?=\\b)`;
-    export const DoubleDecimalPointRegex = (placeholder: string) => { return `(((?<!(\\d+(\\s*(K|k|MM?|mil|G|T|B|b))?\\s*|\\p{L}))-\\s*)|((?<=${placeholder})(?<!\\d+[\\.,])))\\d+[\\.,]\\d+(?!([\\.,]\\d+))(?=${placeholder})`; }
+    export const DoubleDecimalPointRegex = (placeholder: string) => { return `(((?<!(\\d+(\\s*(K|k|MM?|mil|G|T|B|b))?\\s*|\\p{L}))-\\s*)|((?<=${placeholder})(?<!\\d+[\\.,])))(\\d{1,3}(,\\d{3})+(\\.\\d+)?|\\d+[\\.,]\\d+)(?!([\\.,]\\d+))(?=${placeholder})`; }
     export const DoubleIndianDecimalPointRegex = `(?<=\\b)((?:\\d{1,2},(?:\\d{2},)*\\d{3})(?:\\.\\d{2})(?=\\b))`;
     export const DoubleWithoutIntegralRegex = (placeholder: string) => { return `(?<=\\s|^)(?<!(\\d+))[\\.,]\\d+(?!([\\.,]\\d+))(?=${placeholder})`; }
-    export const DoubleWithRoundNumber = `(((?<!\\d+(\\s*${BaseNumbers.NumberMultiplierRegex})?\\s*)-\\s*)|((?<=\\b)(?<!\\d+[\\.,])))\\d+[\\.,]\\d+\\s+${RoundNumberIntegerRegex}(?=\\b)`;
+    export const DoubleWithRoundNumber = `(((?<!\\d+(\\s*${BaseNumbers.NumberMultiplierRegex})?\\s*)-\\s*)|((?<=\\b)(?<!\\d+[\\.,])))(\\d{1,3}(,\\d{3})+(\\.\\d+)?|\\d+[\\.,]\\d+)\\s+${RoundNumberIntegerRegex}(?=\\b)`;
     export const DoubleAllFloatRegex = `((?<=\\b)${AllFloatRegex}(?=\\b))`;
     export const ConnectorRegex = `(?<spacer>and)`;
     export const NumberWithSuffixPercentage = `(?<!%(${BaseNumbers.NumberReplaceToken})?)(${BaseNumbers.NumberReplaceToken}(\\s*))?(%(?!${BaseNumbers.NumberReplaceToken})|(per\\s*cents?|percentage|cents?)\\b)`;

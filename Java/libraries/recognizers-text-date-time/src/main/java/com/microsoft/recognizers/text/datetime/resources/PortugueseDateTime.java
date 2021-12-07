@@ -59,9 +59,9 @@ public class PortugueseDateTime {
             .replace("{AmDescRegex}", AmDescRegex)
             .replace("{PmDescRegex}", PmDescRegex);
 
-    public static final String RelativeRegex = "(?<rela>((est[ae]|pr[oó]xim[oa]|([uú]ltim(o|as|os)))(\\s+fina(l|is)\\s+d[eao])?)|(fina(l|is)\\s+d[eao]))\\b";
+    public static final String RelativeRegex = "(?<order>((est[ae]|pr[oó]xim[oa]|([uú]ltim(o|as|os)))(\\s+fina(l|is)\\s+d[eao])?)|(fina(l|is)\\s+d[eao]))\\b";
 
-    public static final String StrictRelativeRegex = "(?<rela>((est[ae]|pr[oó]xim[oa]|([uú]ltim(o|as|os)))(\\s+fina(l|is)\\s+d[eao])?)|(fina(l|is)\\s+d[eao]))\\b";
+    public static final String StrictRelativeRegex = "(?<order>((est[ae]|pr[oó]xim[oa]|([uú]ltim(o|as|os)))(\\s+fina(l|is)\\s+d[eao])?)|(fina(l|is)\\s+d[eao]))\\b";
 
     public static final String WrittenOneToNineRegex = "(uma?|dois|duas|tr[eê]s|quatro|cinco|seis|sete|oito|nove)";
 
@@ -86,7 +86,7 @@ public class PortugueseDateTime {
             .replace("{RelativeMonthRegex}", RelativeMonthRegex)
             .replace("{MonthRegex}", MonthRegex);
 
-    public static final String DateUnitRegex = "(?<unit>m[êe]s(?<plural>es)?|(ano|semana|dia)(?<plural>s)?)\\b";
+    public static final String DateUnitRegex = "(?<unit>(?<uoy>m[êe]s)(?<plural>es)?|(ano|(?<uoy>semana|dia))(?<plural>s)?)\\b";
 
     public static final String PastRegex = "(?<past>\\b(passad[ao](s)?|[uú]ltim[oa](s)?|anterior(es)?|h[aá]|pr[ée]vi[oa](s)?)\\b)";
 
@@ -118,7 +118,8 @@ public class PortugueseDateTime {
 
     public static final String OneWordPeriodRegex = "\\b(((pr[oó]xim[oa]?|[nd]?es[st]e|aquel[ea]|[uú]ltim[oa]?|em)\\s+)?(?<month>abr(il)?|ago(sto)?|dez(embro)?|fev(ereiro)?|jan(eiro)?|ju[ln](ho)?|mar([çc]o)?|maio?|nov(embro)?|out(ubro)?|sep?t(embro)?)|(?<=\\b(de|do|da|o|a)\\s+)?(pr[oó]xim[oa](s)?|[uú]ltim[oa]s?|est(e|a))\\s+(fim de semana|fins de semana|semana|m[êe]s|ano)|fim de semana|fins de semana|(m[êe]s|anos)? [àa] data)\\b";
 
-    public static final String MonthWithYearRegex = "\\b(((pr[oó]xim[oa](s)?|[nd]?es[st]e|aquele|[uú]ltim[oa]?|em)\\s+)?(?<month>abr(il)?|ago(sto)?|dez(embro)?|fev(ereiro)?|jan(eiro)?|ju[ln](ho)?|mar([çc]o)?|maio?|nov(embro)?|out(ubro)?|sep?t(embro)?)\\s+((de|do|da|o|a)\\s+)?({YearRegex}|{TwoDigitYearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|[nd]?es[st]e)\\s+ano))\\b"
+    public static final String MonthWithYearRegex = "\\b((((pr[oó]xim[oa](s)?|[nd]?es[st]e|aquele|[uú]ltim[oa]?|em)\\s+)?{MonthRegex}|((n?o\\s+)?(?<cardinal>primeiro|1o|segundo|2o|terceiro|3o|[cq]uarto|4o|quinto|5o|sexto|6o|s[eé]timo|7o|oitavo|8o|nono|9o|d[eé]cimo(\\s+(primeiro|segundo))?|10o|11o|12o|[uú]ltimo)\\s+m[eê]s(?=\\s+(d[aeo]|[ao]))))\\s+((d[aeo]|[ao])\\s+)?({YearRegex}|{TwoDigitYearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|[nd]?es[st]e)\\s+ano))\\b"
+            .replace("{MonthRegex}", MonthRegex)
             .replace("{YearRegex}", YearRegex)
             .replace("{TwoDigitYearRegex}", TwoDigitYearRegex);
 
@@ -131,6 +132,12 @@ public class PortugueseDateTime {
 
     public static final String WeekOfYearRegex = "(?<woy>(a|na\\s+)?(?<cardinal>primeira?|1a|segunda|2a|terceira|3a|[qc]uarta|4a|quinta|5a|[uú]ltima?)\\s+semana(\\s+d[oe]?)?\\s+({YearRegex}|(?<order>pr[oó]ximo|[uú]ltimo|[nd]?es[st]e)\\s+ano))"
             .replace("{YearRegex}", YearRegex);
+
+    public static final String OfYearRegex = "\\b((d[aeo]?|[ao])\\s*({YearRegex}|{StrictRelativeRegex}\\s+ano))\\b"
+            .replace("{YearRegex}", YearRegex)
+            .replace("{StrictRelativeRegex}", StrictRelativeRegex);
+
+    public static final String FirstLastRegex = "\\b(n?[ao]s?\\s+)?((?<first>primeir[ao]s?)|(?<last>[uú]ltim[ao]s?))\\b";
 
     public static final String FollowedDateUnit = "^\\s*{DateUnitRegex}"
             .replace("{DateUnitRegex}", DateUnitRegex);
@@ -707,6 +714,42 @@ public class PortugueseDateTime {
         .put("quinta", 5)
         .put("5o", 5)
         .put("5a", 5)
+        .put("sexto", 6)
+        .put("sexta", 6)
+        .put("6o", 6)
+        .put("6a", 6)
+        .put("setimo", 7)
+        .put("sétimo", 7)
+        .put("setima", 7)
+        .put("sétima", 7)
+        .put("7o", 7)
+        .put("7a", 7)
+        .put("oitavo", 8)
+        .put("oitava", 8)
+        .put("8o", 8)
+        .put("8a", 8)
+        .put("nono", 9)
+        .put("nona", 9)
+        .put("9o", 9)
+        .put("9a", 9)
+        .put("decimo", 10)
+        .put("décimo", 10)
+        .put("decima", 10)
+        .put("décima", 10)
+        .put("10o", 10)
+        .put("10a", 10)
+        .put("decimo primeiro", 11)
+        .put("décimo primeiro", 11)
+        .put("decima primeira", 11)
+        .put("décima primeira", 11)
+        .put("11o", 11)
+        .put("11a", 11)
+        .put("decimo segundo", 12)
+        .put("décimo segundo", 12)
+        .put("decima segunda", 12)
+        .put("décima segunda", 12)
+        .put("12o", 12)
+        .put("12a", 12)
         .build();
 
     public static final ImmutableMap<String, Integer> DayOfWeek = ImmutableMap.<String, Integer>builder()
