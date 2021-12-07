@@ -179,10 +179,10 @@ DateYearRegex: !nestedRegex
   def: (?<year>{YearRegex}|{TwoDigitYearRegex})
   references: [ YearRegex, TwoDigitYearRegex ]
 DateExtractor1: !nestedRegex
-  def: \b({WeekDayRegex}(\s+|\s*,\s*))?{MonthRegex}\s*[/\\\.\-]?\s*{DayRegex}(\s*[/\\\.\-]?\s*{BaseDateTime.FourDigitYearRegex})?\b
+  def: \b({WeekDayRegex}(\s+|\s*,\s*))?{MonthRegex}\s*[/\\\.\-]?\s*{DayRegex}(\s*([/\\\.\-]|\bde\b)?\s*{BaseDateTime.FourDigitYearRegex})?\b
   references: [ WeekDayRegex, MonthRegex, DayRegex, BaseDateTime.FourDigitYearRegex ]
 DateExtractor2: !nestedRegex
-  def: \b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}(\s+|\s*,\s*|\s+){MonthRegex}\s*[\.\-]?\s*{DateYearRegex}\b
+  def: \b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}(\s+|\s*,\s*|\s+){MonthRegex}\s*([\.\-]|\bde\b)?\s*{DateYearRegex}\b
   references: [ WeekDayRegex, MonthRegex, DayRegex, DateYearRegex ]
 DateExtractor3: !nestedRegex
   def: \b({WeekDayRegex}(\s+|\s*,\s*))?((?<!\d\s)(?<!\d){DayRegex}(\s+|\s*[.,/-])({MonthRegex}((\s+|\s*[.,/-]\s*){DateYearRegex}(?!\s*\d))?|{MonthNumRegex}(\s+|\s*[.,/-]\s*){DateYearRegex}(?!\s*\d))|{BaseDateTime.FourDigitYearRegex}\s*[.,/-]?\s*{DayRegex}\s*[.,/-]?\s*{MonthRegex})\b
