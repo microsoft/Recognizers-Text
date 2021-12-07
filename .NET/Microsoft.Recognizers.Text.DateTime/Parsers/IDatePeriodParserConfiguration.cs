@@ -112,6 +112,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex TodayNowRegex { get; }
 
+        Regex FirstLastRegex { get; }
+
+        Regex OfYearRegex { get; }
+
         IImmutableDictionary<string, string> UnitMap { get; }
 
         IImmutableDictionary<string, int> CardinalMap { get; }

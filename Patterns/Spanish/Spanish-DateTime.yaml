@@ -49,9 +49,9 @@ TwoDigitYearRegex: !nestedRegex
   def: \b(?<![$])(?<year>([0-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d))|\.?[º°ª])\b
   references: [ AmDescRegex, PmDescRegex]
 RelativeRegex: !simpleRegex
-  def: (?<rela>est[ae]|pr[oó]xim[oa]|siguiente|(([uú]ltim|pasad)(o|as|os)))\b
+  def: (?<order>est[ae]|pr[oó]xim[oa]|siguiente|(([uú]ltim|pasad)(o|as|os)))\b
 StrictRelativeRegex: !simpleRegex
-  def: (?<rela>est[ae]|pr[oó]xim[oa]|siguiente|(([uú]ltim|pasad)(o|as|os)))\b
+  def: (?<order>est[ae]|pr[oó]xim[oa]|siguiente|(([uú]ltim|pasad)(o|as|os)))\b
 WrittenOneToNineRegex: !simpleRegex
   def: (un[ao]?|dos|tres|cuatro|cinco|seis|siete|ocho|nueve)
 WrittenOneHundredToNineHundredRegex: !simpleRegex
@@ -73,7 +73,7 @@ MonthSuffixRegex: !nestedRegex
   def: (?<msuf>((del?|la|el)\s+)?({RelativeMonthRegex}|{MonthRegex}))
   references: [ RelativeMonthRegex, MonthRegex ]
 DateUnitRegex: !simpleRegex
-  def: (?<unit>(año|semana)(?<plural>s)?|mes(?<plural>es)?|d[ií]a(?<plural>s)?(?<business>\s+(h[aá]biles|laborales))?)\b
+  def: (?<unit>(año|(?<uoy>semana))(?<plural>s)?|(?<uoy>mes)(?<plural>es)?|(?<uoy>d[ií]a)(?<plural>s)?(?<business>\s+(h[aá]biles|laborales))?)\b
 PastRegex: !simpleRegex
   def: (?<past>\b(pasad(a|o)(s)?|[uú]ltim[oa](s)?|anterior(es)?|previo(s)?)\b)
 FutureRegex: !simpleRegex
@@ -96,7 +96,7 @@ OneWordPeriodRegex: !nestedRegex
   def: \b(((((la|el)\s+)?mes\s+(({OfPrepositionRegex})\s+)?)|((pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?)\s+))?({MonthRegex})|(((la|el)\s+)?((({RelativeRegex}\s+)({DateUnitRegex}|(fin\s+de\s+)?semana|finde)(\s+{RelativeSuffixRegex})?)|{DateUnitRegex}(\s+{RelativeSuffixRegex}))|va\s+de\s+{DateUnitRegex}|((año|mes)|((el\s+)?fin\s+de\s+)?semana|(el\s+)?finde))\b)
   references: [MonthRegex, RelativeRegex, OfPrepositionRegex, RelativeSuffixRegex, DateUnitRegex]
 MonthWithYearRegex: !nestedRegex
-  def: \b(((pr[oó]xim[oa](s)?|est?[ae]|[uú]ltim[oa]?)\s+)?({MonthRegex})((\s+|(\s*[,-]\s*))((de(l|\s+la)?|en)\s+)?({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\s+año)|\s+(del?|en)\s+{TwoDigitYearRegex}))\b
+  def: \b((((pr[oó]xim[oa](s)?|est?[ae]|[uú]ltim[oa]?)\s+)?{MonthRegex}|((el\s+)?(?<cardinal>primero?|1(er|ro)|segundo|2do|tercero?|3(er|ro)|uarto|4to|quinto|5to|sexto|6to|s[eé]ptimo|7mo|octavo|8vo|noveno|9no|d[eé]cimo|10mo|und[eé]cimo|11mo|duod[eé]cimo|12mo|[uú]ltimo)\s+mes(?=\s+(del?|en))))((\s+|(\s*[,-]\s*))((de(l|\s+la)?|en)\s+)?({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\s+año)|\s+(del?|en)\s+{TwoDigitYearRegex}))\b
   references: [ MonthRegex, YearRegex, TwoDigitYearRegex ]
 MonthNumWithYearRegex: !nestedRegex
   def: \b(({YearRegex}(\s*?)[/\-\.~](\s*?){MonthNumRegex})|({MonthNumRegex}(\s*?)[/\-\.~](\s*?){YearRegex}))\b
@@ -107,6 +107,11 @@ WeekOfMonthRegex: !nestedRegex
 WeekOfYearRegex: !nestedRegex
   def: (?<woy>(la\s+)?(?<cardinal>primera?|1ra|segunda|2da|tercera?|3ra|cuarta|4ta|quinta|5ta|[uú]ltima?|([12345]ª))\s+semana(\s+(del?|en))?\s+({YearRegex}|(?<order>pr[oó]ximo|[uú]ltimo|este)\s+año))
   references: [ YearRegex ]
+OfYearRegex: !nestedRegex
+  def: \b((del?)\s+({YearRegex}|{StrictRelativeRegex}\s+año))\b
+  references: [ YearRegex, StrictRelativeRegex ]
+FirstLastRegex: !simpleRegex
+  def: \b((el|las?|los?)\s+)?((?<first>primer([ao]s?)?)|(?<last>[uú]ltim[ao]s?))\b
 FollowedDateUnit: !nestedRegex
   def: ^\s*{DateUnitRegex}
   references: [ DateUnitRegex ]
@@ -733,6 +738,42 @@ CardinalMap: !dictionary
     5.º: 5
     5º: 5
     5ª: 5
+    sexto: 6
+    sexta: 6
+    6to: 6
+    6ta: 6
+    septimo: 7
+    séptimo: 7
+    septima: 7
+    séptima: 7
+    7mo: 7
+    7ma: 7
+    octavo: 8
+    octava: 8
+    8vo: 8
+    8va: 8
+    noveno: 9
+    novena: 9
+    9no: 9
+    9na: 9
+    decimo: 10
+    décimo: 10
+    decima: 10
+    décima: 10
+    10mo: 10
+    10ma: 10
+    undecimo: 11
+    undécimo: 11
+    undecima: 11
+    undécima: 11
+    11mo: 11
+    11ma: 11
+    duodecimo: 12
+    duodécimo: 12
+    duodecima: 12
+    duodécima: 12
+    12mo: 12
+    12ma: 12
 DayOfWeek: !dictionary
   types: [ string, int ]
   entries:

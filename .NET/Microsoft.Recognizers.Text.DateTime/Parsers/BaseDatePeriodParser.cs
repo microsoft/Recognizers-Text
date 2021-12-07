@@ -266,63 +266,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             return new Tuple<DateObject, DateObject>(startDate, endDate);
         }
 
-        private static DateObject GetFirstThursday(int year, int month = Constants.InvalidMonth)
-        {
-            var targetMonth = month;
-
-            if (month == Constants.InvalidMonth)
-            {
-                targetMonth = 1;
-            }
-
-            var firstDay = DateObject.MinValue.SafeCreateFromValue(year, targetMonth, 1);
-            DateObject firstThursday = firstDay.This(DayOfWeek.Thursday);
-
-            // Thursday falls into previous year or previous month
-            if (firstThursday.Month != targetMonth)
-            {
-                firstThursday = firstDay.AddDays(Constants.WeekDayCount);
-            }
-
-            return firstThursday;
-        }
-
-        private static DateObject GetLastThursday(int year, int month = Constants.InvalidMonth)
-        {
-            var targetMonth = month;
-
-            if (month == Constants.InvalidMonth)
-            {
-                targetMonth = 12;
-            }
-
-            var lastDay = GetLastDay(year, targetMonth);
-            DateObject lastThursday = lastDay.This(DayOfWeek.Thursday);
-
-            // Thursday falls into next year or next month
-            if (lastThursday.Month != targetMonth)
-            {
-                lastThursday = lastThursday.AddDays(-Constants.WeekDayCount);
-            }
-
-            return lastThursday;
-        }
-
-        private static DateObject GetLastDay(int year, int month)
-        {
-            month++;
-
-            if (month == 13)
-            {
-                year++;
-                month = 1;
-            }
-
-            var firstDayOfNextMonth = DateObject.MinValue.SafeCreateFromValue(year, month, 1);
-
-            return firstDayOfNextMonth.AddDays(-1);
-        }
-
         // Shift resolution when a modifier like "end of" or "middle of" is present.
         private static DateObject ShiftResolution(Tuple<DateObject, DateObject> date, Match match, bool start)
         {
@@ -1330,8 +1273,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 var monthStr = match.Groups["month"].Value;
                 var orderStr = match.Groups["order"].Value;
+                var cardinalStr = match.Groups["cardinal"].Value;
 
-                var month = this.config.MonthOfYear[monthStr];
+                // Get month number from MonthOfYear dictionary if month name is defined (e.g. 'May 2018'),
+                // otherwise use CardinalMap (e.g. 'third month of 2018').
+                var month = match.Groups["month"].Success ? this.config.MonthOfYear[monthStr] :
+                    this.config.IsLastCardinal(cardinalStr) ? 12 : this.config.CardinalMap[cardinalStr];
 
                 var year = config.DateExtractor.GetYearFromText(match.Match);
 
@@ -1630,7 +1577,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var restNowSunday = false;
 
             var durationErs = config.DurationExtractor.Extract(text, referenceDate);
-            if (durationErs.Count == 1)
+            if (durationErs.Count > 0)
             {
                 var durationPr = config.DurationParser.Parse(durationErs[0]);
                 var beforeStr = text.Substring(0, durationPr.Start ?? 0).Trim();
@@ -1730,6 +1677,53 @@ namespace Microsoft.Recognizers.Text.DateTime
                         durationResult.Timex = "P1" + unit;
                         beginDate = DurationParsingUtil.ShiftDateTime(durationResult.Timex, modAndDateResult.EndDate, false);
                         endDate = modAndDateResult.EndDate;
+                    }
+
+                    // Handle cases like "first 2 weeks of 2019", "last 3 months of this year"
+                    var matchBefore = this.config.FirstLastRegex.Match(beforeStr);
+                    if (matchBefore.Success)
+                    {
+                        var matchAfter = this.config.OfYearRegex.Match(afterStr);
+
+                        if (matchAfter.Success)
+                        {
+                            // Get year
+                            var year = config.DateExtractor.GetYearFromText(matchAfter);
+                            if (year == Constants.InvalidYear)
+                            {
+                                var orderStr = matchAfter.Groups["order"].Value;
+                                var swift = this.config.GetSwiftYear(orderStr);
+                                if (swift < -1)
+                                {
+                                    return ret;
+                                }
+
+                                year = referenceDate.Year + swift;
+                            }
+
+                            // Get begin/end dates for year
+                            if (durationResult.Timex.EndsWith(Constants.TimexWeek, StringComparison.Ordinal))
+                            {
+                                // First/last week of the year is calculated according to ISO definition
+                                beginDate = DateObjectExtension.GetFirstThursday(year).This(DayOfWeek.Monday);
+                                endDate = DateObjectExtension.GetLastThursday(year).This(DayOfWeek.Monday).AddDays(7);
+                            }
+                            else
+                            {
+                                beginDate = DateObject.MinValue.SafeCreateFromValue(year, 1, 1);
+                                endDate = DateObject.MinValue.SafeCreateFromValue(year, 12, 31).AddDays(1);
+                            }
+
+                            // Shift begin/end dates by duration span
+                            if (matchBefore.Groups[Constants.FirstGroupName].Success)
+                            {
+                                endDate = DurationParsingUtil.ShiftDateTime(durationResult.Timex, beginDate, true);
+                            }
+                            else
+                            {
+                                beginDate = DurationParsingUtil.ShiftDateTime(durationResult.Timex, endDate, false);
+                            }
+                        }
                     }
 
                     if (!string.IsNullOrEmpty(modAndDateResult.Mod))
@@ -1874,14 +1868,14 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (this.config.IsLastCardinal(cardinalStr))
             {
-                targetWeekMonday = GetLastThursday(year).This(DayOfWeek.Monday);
+                targetWeekMonday = DateObjectExtension.GetLastThursday(year).This(DayOfWeek.Monday);
 
                 ret.Timex = TimexUtility.GenerateWeekTimex(targetWeekMonday);
             }
             else
             {
                 var weekNum = this.config.CardinalMap[cardinalStr];
-                targetWeekMonday = GetFirstThursday(year).This(DayOfWeek.Monday)
+                targetWeekMonday = DateObjectExtension.GetFirstThursday(year).This(DayOfWeek.Monday)
                     .AddDays(Constants.WeekDayCount * (weekNum - 1));
 
                 ret.Timex = TimexUtility.GenerateWeekOfYearTimex(year, weekNum);
@@ -2235,13 +2229,13 @@ namespace Microsoft.Recognizers.Text.DateTime
             DateObject result;
             if (config.IsLastCardinal(cardinalStr))
             {
-                var lastThursday = GetLastThursday(year, month);
+                var lastThursday = DateObjectExtension.GetLastThursday(year, month);
                 result = lastThursday.This(DayOfWeek.Monday);
             }
             else
             {
                 int cardinal = GetWeekNumberForMonth(cardinalStr);
-                var firstThursday = GetFirstThursday(year, month);
+                var firstThursday = DateObjectExtension.GetFirstThursday(year, month);
 
                 result = firstThursday.This(DayOfWeek.Monday)
                     .AddDays(Constants.WeekDayCount * (cardinal - 1));

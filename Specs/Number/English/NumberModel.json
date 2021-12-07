@@ -3088,5 +3088,155 @@
         "End": 9
       }
     ]
+  },
+  {
+    "Input": "1,674.5 G",
+    "Results": [
+      {
+        "Text": "1,674.5 g",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1674500000000"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "1,674,200.5 M",
+    "Results": [
+      {
+        "Text": "1,674,200.5 m",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1674200500000"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "1,674,200.5",
+    "Results": [
+      {
+        "Text": "1,674,200.5",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "1674200.5"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "1,674,200",
+    "Results": [
+      {
+        "Text": "1,674,200",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1674200"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "1,674.5 million",
+    "Results": [
+      {
+        "Text": "1,674.5 million",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1674500000"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "Exercises nrs. 22,24,26,31.",
+    "Results": [
+      {
+        "Text": "22",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "22"
+        },
+        "Start": 15,
+        "End": 16
+      },
+      {
+        "Text": "24",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "24"
+        },
+        "Start": 18,
+        "End": 19
+      },
+      {
+        "Text": "26",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "26"
+        },
+        "Start": 21,
+        "End": 22
+      },
+      {
+        "Text": "31",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "31"
+        },
+        "Start": 24,
+        "End": 25
+      }
+    ]
+  },
+  {
+    "Input": "Exercise nr. 22,240,260,310.",
+    "Results": [
+      {
+        "Text": "22,240,260,310",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "22240260310"
+        },
+        "Start": 13,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "The number is 1,3.",
+    "Results": [
+      {
+        "Text": "1,3",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "1.3"
+        },
+        "Start": 14,
+        "End": 16
+      }
+    ]
   }
 ]

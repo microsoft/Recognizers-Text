@@ -62,6 +62,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             FutureRegex = JapaneseDatePeriodExtractorConfiguration.FutureRegex;
             UnitRegex = JapaneseDatePeriodExtractorConfiguration.UnitRegex;
             WeekOfMonthRegex = JapaneseDatePeriodExtractorConfiguration.WeekOfMonthRegex;
+            WeekOfYearRegex = JapaneseDatePeriodExtractorConfiguration.WeekOfYearRegex;
+            FirstLastOfYearRegex = JapaneseDatePeriodExtractorConfiguration.FirstLastOfYearRegex;
             SeasonWithYear = JapaneseDatePeriodExtractorConfiguration.SeasonWithYear;
             QuarterRegex = JapaneseDatePeriodExtractorConfiguration.QuarterRegex;
             DecadeRegex = JapaneseDatePeriodExtractorConfiguration.DecadeRegex;
@@ -140,6 +142,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         public Regex UnitRegex { get; }
 
         public Regex WeekOfMonthRegex { get; }
+
+        public Regex WeekOfYearRegex { get; }
+
+        public Regex FirstLastOfYearRegex { get; }
 
         public Regex SeasonWithYear { get; }
 

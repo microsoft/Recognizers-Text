@@ -21434,5 +21434,53 @@
         "End": 39
       }
     ]
+  },
+  {
+    "Input": "Je suis né le 23 novembre de 1987",
+    "Context": {
+      "ReferenceDateTime": "2019-05-30T12:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "23 novembre de 1987",
+        "Start": 14,
+        "End": 32,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1987-11-23",
+              "type": "date",
+              "value": "1987-11-23"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Je suis né novembre 23 de 1987",
+    "Context": {
+      "ReferenceDateTime": "2019-05-30T12:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "novembre 23 de 1987",
+        "Start": 11,
+        "End": 29,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1987-11-23",
+              "type": "date",
+              "value": "1987-11-23"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

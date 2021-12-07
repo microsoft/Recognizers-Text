@@ -3,10 +3,10 @@
     "Input": "@BotSys, let's go for the meeting.",
     "Results": [
       {
-        "Text": "@BotSys",
+        "Text": "@botsys",
         "TypeName": "mention",
         "Resolution": {
-          "value": "@BotSys"
+          "value": "@botsys"
         }
       }
     ]
@@ -15,10 +15,10 @@
     "Input": "@Alice, please respond.",
     "Results": [
       {
-        "Text": "@Alice",
+        "Text": "@alice",
         "TypeName": "mention",
         "Resolution": {
-          "value": "@Alice"
+          "value": "@alice"
         }
       }
     ]
@@ -27,10 +27,10 @@
     "Input": "You can contact @Bob for more information",
     "Results": [
       {
-        "Text": "@Bob",
+        "Text": "@bob",
         "TypeName": "mention",
         "Resolution": {
-          "value": "@Bob"
+          "value": "@bob"
         }
       }
     ]
@@ -39,10 +39,10 @@
     "Input": "This is @Carol_2.",
     "Results": [
       {
-        "Text": "@Carol_2",
+        "Text": "@carol_2",
         "TypeName": "mention",
         "Resolution": {
-          "value": "@Carol_2"
+          "value": "@carol_2"
         }
       }
     ]
@@ -51,10 +51,10 @@
     "Input": "@DaveDaveDaveDaveDave can be longer",
     "Results": [
       {
-        "Text": "@DaveDaveDaveDaveDave",
+        "Text": "@davedavedavedavedave",
         "TypeName": "mention",
         "Resolution": {
-          "value": "@DaveDaveDaveDaveDave"
+          "value": "@davedavedavedavedave"
         }
       }
     ]
@@ -63,10 +63,10 @@
     "Input": "Hello, @Carol, please write to me at Dave@abc.com for more information on task #A1",
     "Results": [
       {
-        "Text": "@Carol",
+        "Text": "@carol",
         "TypeName": "mention",
         "Resolution": {
-          "value": "@Carol"
+          "value": "@carol"
         }
       }
     ]
@@ -75,10 +75,10 @@
     "Input": "Hi, @Eve, you can find my CV at https://frank.website.com/CV/#cite_2",
     "Results": [
       {
-        "Text": "@Eve",
+        "Text": "@eve",
         "TypeName": "mention",
         "Resolution": {
-          "value": "@Eve"
+          "value": "@eve"
         }
       }
     ]
@@ -100,10 +100,10 @@
     "Input": "Hi@HowardsCreekFD, please respond.",
     "Results": [
       {
-        "Text": "@HowardsCreekFD",
+        "Text": "@howardscreekfd",
         "TypeName": "mention",
         "Resolution": {
-          "value": "@HowardsCreekFD"
+          "value": "@howardscreekfd"
         }
       }
     ]
@@ -112,10 +112,10 @@
     "Input": "I talked to:@Howard",
     "Results": [
       {
-        "Text": "@Howard",
+        "Text": "@howard",
         "TypeName": "mention",
         "Resolution": {
-          "value": "@Howard"
+          "value": "@howard"
         }
       }
     ]
