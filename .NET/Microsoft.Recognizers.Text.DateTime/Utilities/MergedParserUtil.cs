@@ -22,7 +22,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var combinedMod = newMod;
 
-            if (!string.IsNullOrEmpty(originalMod))
+            if (!string.IsNullOrEmpty(originalMod) && !originalMod.Equals(newMod, StringComparison.Ordinal))
             {
                 combinedMod = $"{newMod}-{originalMod}";
             }
@@ -156,6 +156,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 res.Add(DateTimeResolutionKey.Start, start);
                 res.Add(DateTimeResolutionKey.End, end);
+
+                // Preserving any present timex values. Useful for Holiday weekend where the timex is known during parsing.
+                if (resolutionDic.ContainsKey(DateTimeResolutionKey.Timex))
+                {
+                    res.Add(DateTimeResolutionKey.Timex, resolutionDic[DateTimeResolutionKey.Timex]);
+                }
             }
         }
 
@@ -199,36 +205,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                    endDate.StartsWith(DateMinString, StringComparison.Ordinal);
         }
 
-        public static string GenerateEndInclusiveTimex(string originalTimex, DatePeriodTimexType datePeriodTimexType,
-                                                       DateObject startDate, DateObject endDate)
-        {
-
-            var timexEndInclusive = TimexUtility.GenerateDatePeriodTimex(startDate, endDate, datePeriodTimexType);
-
-            // Sometimes the original timex contains fuzzy part like "XXXX-05-31"
-            // The fuzzy part needs to stay the same in the new end-inclusive timex
-            if (originalTimex.Contains(Constants.TimexFuzzy) && originalTimex.Length == timexEndInclusive.Length)
-            {
-                var timexCharSet = new char[timexEndInclusive.Length];
-
-                for (int i = 0; i < originalTimex.Length; i++)
-                {
-                    if (originalTimex[i] != Constants.TimexFuzzy)
-                    {
-                        timexCharSet[i] = timexEndInclusive[i];
-                    }
-                    else
-                    {
-                        timexCharSet[i] = Constants.TimexFuzzy;
-                    }
-                }
-
-                timexEndInclusive = new string(timexCharSet);
-            }
-
-            return timexEndInclusive;
-        }
-
         public static DateTimeParseResult SetInclusivePeriodEnd(DateTimeParseResult slot)
         {
             if (slot.Type == $"{ParserTypeName}.{Constants.SYS_DATETIME_DATEPERIOD}")
@@ -259,7 +235,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                                     endDate = TimexUtility.OffsetDateObject(endDate, offset: 1, timexType: datePeriodTimexType);
                                     values[DateTimeResolutionKey.End] = DateTimeFormatUtil.LuisDate(endDate);
                                     values[DateTimeResolutionKey.Timex] =
-                                        GenerateEndInclusiveTimex(slot.TimexStr, datePeriodTimexType, startDate, endDate);
+                                        TimexUtility.GenerateEndInclusiveTimex(slot.TimexStr, datePeriodTimexType, startDate, endDate);
 
                                     if (string.IsNullOrEmpty(altTimex))
                                     {
@@ -687,14 +663,14 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else if (type.Equals(Constants.SYS_DATETIME_DATETIMEALT, StringComparison.Ordinal))
             {
-                // for a period
+                // For a period
                 if (resolutionDic.Count > 2 || !string.IsNullOrEmpty(mod))
                 {
                     AddAltPeriodToResolution(resolutionDic, mod, res);
                 }
                 else
                 {
-                    // for a datetime point
+                    // For a datetime point
                     AddAltSingleDateTimeToResolution(resolutionDic, TimeTypeConstants.DATETIMEALT, mod, res);
                 }
             }
