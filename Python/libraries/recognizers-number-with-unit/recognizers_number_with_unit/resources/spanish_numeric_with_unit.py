@@ -601,7 +601,7 @@ class SpanishNumericWithUnit:
                                         ("Ngwee", "NGWEE"),
                                         ("Millibitcoin", "MILLIBITCOIN"),
                                         ("Satoshi", "SATOSHI")])
-    CompoundUnitConnectorRegex = f'(?<spacer>y)'
+    CompoundUnitConnectorRegex = f'(?<spacer>y|con)'
     CurrencyPrefixList = dict([("Dobra", "db|std"),
                                ("Dólar", "$"),
                                ("Dólar estadounidense", "us$|u$d|usd"),

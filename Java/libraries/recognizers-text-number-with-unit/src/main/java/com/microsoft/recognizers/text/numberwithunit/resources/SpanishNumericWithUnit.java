@@ -623,7 +623,7 @@ public class SpanishNumericWithUnit {
         .put("Satoshi", "SATOSHI")
         .build();
 
-    public static final String CompoundUnitConnectorRegex = "(?<spacer>y)";
+    public static final String CompoundUnitConnectorRegex = "(?<spacer>y|con)";
 
     public static final ImmutableMap<String, String> CurrencyPrefixList = ImmutableMap.<String, String>builder()
         .put("Dobra", "db|std")

@@ -620,7 +620,7 @@ public class PortugueseNumericWithUnit {
         .put("Satoshi", "SATOSHI")
         .build();
 
-    public static final String CompoundUnitConnectorRegex = "(?<spacer>e)";
+    public static final String CompoundUnitConnectorRegex = "(?<spacer>e|com)";
 
     public static final ImmutableMap<String, String> CurrencyPrefixList = ImmutableMap.<String, String>builder()
         .put("Dólar", "$")

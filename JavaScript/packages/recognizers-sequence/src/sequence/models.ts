@@ -15,6 +15,7 @@ export abstract class AbstractSequenceModel implements IModel {
     }
 
     parse(query: string): ModelResult[] {
+        query = QueryProcessor.preProcess(query, true);
         let parseResults = new Array<ParseResult>();
 
         try {
