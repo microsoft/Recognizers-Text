@@ -93,6 +93,8 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public static readonly string MonthNumWithYear = $@"\b(({BaseDateTime.FourDigitYearRegex}(\s*)[/\-\.](\s*){MonthNumRegex})|({MonthNumRegex}(\s*)[/\-](\s*){BaseDateTime.FourDigitYearRegex}))";
       public static readonly string WeekOfMonthRegex = $@"\b(?<wom>{MonthSuffixRegex}(\s+({BaseDateTime.FourDigitYearRegex}|{RelativeRegex}\s*साल)\s*)?(\s*(का|के|की)\s*)?(?<cardinal>पहला|पहली|पहले|1st|दूसरा|दूसरे|दूसरी|2nd|तीसरा|तीसरे|तीसरी|3rd|चौथा|चौथी|4th|पाँचवाँ|पांचवां|5th|आखिरी|अंतिम)\s+(हफ़्ते|हफ्ते|(?!सप्ताहांत)सप्ताह))(\s+में)?";
       public static readonly string WeekOfYearRegex = $@"\b(?<woy>({YearRegex}|{RelativeRegex}\s+(साल|वर्ष)))(\s+(का|की|के))?\s+(?<cardinal>पहला|पहली|पहले|1st|दूसरा|दूसरे|दूसरी|2nd|तीसरा|तीसरे|तीसरी|3rd|चौथा|चौथी|4th|पाँचवाँ|पांचवां|5th|आखिरी|अंतिम)\s+(हफ़्ते|हफ्ते|(?!सप्ताहांत)सप्ताह)";
+      public static readonly string OfYearRegex = $@"\b((of|in)\s+({YearRegex}|{StrictRelativeRegex}\s+year))\b";
+      public const string FirstLastRegex = @"\b(the\s+)?((?<first>first)|(?<last>last))\b";
       public static readonly string FollowedDateUnit = $@"^\s*{DateUnitRegex}";
       public static readonly string NumberCombinedWithDateUnit = $@"\b(?<num>\d+(\.\d*)?){DateUnitRegex}";
       public static readonly string QuarterTermRegex = $@"\b(((?<cardinal>पहला|पहली|पहले|1st|दूसरा|दूसरे|दूसरी|2nd|तीसरा|तीसरे|तीसरी|3rd|चौथा|चौथी|4th)[ -]+तिमाही)(\s*{BaseDateTime.FourDigitYearRegex})?)";

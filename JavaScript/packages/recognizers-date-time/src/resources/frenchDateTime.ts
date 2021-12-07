@@ -30,7 +30,14 @@ export namespace FrenchDateTime {
     export const AmPmDescRegex = `(h\\b|${BaseDateTime.BaseAmPmDescRegex})`;
     export const DescRegex = `(?<desc>${AmPmDescRegex}|${AmDescRegex}|${PmDescRegex}|${SpecialDescRegex})`;
     export const TwoDigitYearRegex = `\\b(?<![$])(?<year>([0-9]\\d))(?!(\\s*((\\:\\d)|${AmDescRegex}|${PmDescRegex}|\\.\\d)))\\b`;
-    export const FullTextYearRegex = `^[\\*]`;
+    export const WrittenOneToNineRegex = `(?:une?|deux|trois|quatre|cinq|six|sept|huit|neuf)`;
+    export const WrittenElevenToNineteenRegex = `(?:(seize|quinze|quatorze|treize|douze|onze)|dix\\W(neuf|huit|sept))`;
+    export const WrittenTensRegex = `(?:quatre\\Wvingt(s|\\Wdix)?|soixante(\\Wdix)?|dix|vingt|trente|quarante|cinquante|septante|octante|huitante|nonante)`;
+    export const WrittenCenturyFullYearRegex = `(?:(deux\\s+)?mille((\\s+${WrittenOneToNineRegex})?\\s+cents?)?)`;
+    export const WrittenCenturyOrdinalYearRegex = `(${WrittenOneToNineRegex}|${WrittenElevenToNineteenRegex}|dix)`;
+    export const CenturyRegex = `\\b(?<century>${WrittenCenturyFullYearRegex}|${WrittenCenturyOrdinalYearRegex}(\\s+cents?)?)\\b`;
+    export const LastTwoYearNumRegex = `((${WrittenTensRegex}(\\s+|-))?(${WrittenOneToNineRegex}|${WrittenElevenToNineteenRegex})|${WrittenTensRegex})`;
+    export const FullTextYearRegex = `\\b(?<fullyear>(?<firsttwoyearnum>${CenturyRegex})\\s+(?<lasttwoyearnum>${LastTwoYearNumRegex})\\b|\\b(?<firsttwoyearnum>${WrittenCenturyFullYearRegex}|${WrittenCenturyOrdinalYearRegex}\\s+cents))\\b`;
     export const YearRegex = `(${BaseDateTime.FourDigitYearRegex}|${FullTextYearRegex})`;
     export const WeekDayRegex = `(?<weekday>dimanche|lundi|mardi|mercredi|jeudi|vendredi|samedi|lun(\\.)?|mar(\\.)?|mer(\\.)?|jeu(\\.)?|ven(\\.)?|sam(\\.)?|dim(\\.)?)`;
     export const RelativeMonthRegex = `(?<relmonth>(${ThisPrefixRegex}\\s+mois)|(mois\\s+${PastSuffixRegex})|(mois\\s+${NextSuffixRegex}))\\b`;
@@ -84,7 +91,7 @@ export namespace FrenchDateTime {
     export const DateExtractor8 = `(?<=\\b(le)\\s+)${DayRegex}[\\\\\\-]${MonthNumRegex}${BaseDateTime.CheckDecimalRegex}\\b`;
     export const DateExtractor9 = `\\b${DayRegex}\\s*/\\s*${MonthNumRegex}((\\s+|\\s*,\\s*)${DateYearRegex})?${BaseDateTime.CheckDecimalRegex}\\b`;
     export const DateExtractorA = `\\b(${DateYearRegex}\\s*[/\\\\\\-\\.]\\s*(${MonthNumRegex}|${MonthRegex})\\s*[/\\\\\\-\\.]\\s*${DayRegex}|${MonthRegex}\\s*[/\\\\\\-\\.]\\s*${BaseDateTime.FourDigitYearRegex}\\s*[/\\\\\\-\\.]\\s*${DayRegex}|${DayRegex}\\s*[/\\\\\\-\\.]\\s*${BaseDateTime.FourDigitYearRegex}\\s*[/\\\\\\-\\.]\\s*${MonthRegex})(?!\\s*[/\\\\\\-\\.:]\\s*\\d+)`;
-    export const OfMonth = `^\\s*de\\s*${MonthRegex}`;
+    export const OfMonth = `^(\\s*de)?\\s*${MonthRegex}\\b`;
     export const MonthEnd = `${MonthRegex}\\s*(le)?\\s*$`;
     export const WeekDayEnd = `${WeekDayRegex}\\s*,?\\s*$`;
     export const WeekDayStart = `^[\\.]`;
@@ -235,11 +242,10 @@ export namespace FrenchDateTime {
     export const NumberAsTimeRegex = `^\\b$`;
     export const TimeBeforeAfterRegex = `^\\b$`;
     export const DateNumberConnectorRegex = `^\\s*(?<connector>\\s+[aà])\\s*$`;
-    export const CenturyRegex = `^\\b$`;
     export const DecadeRegex = `^\\b$`;
     export const DecadeWithCenturyRegex = `^\\b$`;
     export const RelativeDecadeRegex = `^\\b$`;
-    export const YearSuffix = `(,?\\s*(${DateYearRegex}|${FullTextYearRegex}))`;
+    export const YearSuffix = `(,?(\\s*à)?\\s*(${DateYearRegex}|${FullTextYearRegex}))`;
     export const SuffixAfterRegex = `^\\b$`;
     export const YearPeriodRegex = `^\\b$`;
     export const FutureSuffixRegex = `\\b(dans\\s+le\\s+futur)\\b`;

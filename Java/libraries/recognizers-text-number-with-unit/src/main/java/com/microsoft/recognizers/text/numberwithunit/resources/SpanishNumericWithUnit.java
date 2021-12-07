@@ -496,7 +496,7 @@ public class SpanishNumericWithUnit {
         .put("Dólar beliceño", "BZD")
         .put("Dólar bermudeño", "BMD")
         .put("Dólar de Brunéi", "BND")
-        .put("Singapore dollar", "SGD")
+        .put("Dólar de Singapur", "SGD")
         .put("Dólar canadiense", "CAD")
         .put("Dólar de las Islas Caimán", "KYD")
         .put("Dólar neozelandés", "NZD")

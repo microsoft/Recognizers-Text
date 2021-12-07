@@ -116,6 +116,63 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
         }
 
+        public static DateObject GetFirstThursday(int year, int month = Constants.InvalidMonth)
+        {
+            var targetMonth = month;
+
+            if (month == Constants.InvalidMonth)
+            {
+                targetMonth = 1;
+            }
+
+            var firstDay = DateObject.MinValue.SafeCreateFromValue(year, targetMonth, 1);
+            DateObject firstThursday = firstDay.This(DayOfWeek.Thursday);
+
+            // Thursday falls into previous year or previous month
+            if (firstThursday.Month != targetMonth)
+            {
+                firstThursday = firstDay.AddDays(Constants.WeekDayCount);
+            }
+
+            return firstThursday;
+        }
+
+        public static DateObject GetLastThursday(int year, int month = Constants.InvalidMonth)
+        {
+            var targetMonth = month;
+
+            if (month == Constants.InvalidMonth)
+            {
+                targetMonth = 12;
+            }
+
+            var lastDay = GetLastDay(year, targetMonth);
+            DateObject lastThursday = lastDay.This(DayOfWeek.Thursday);
+
+            // Thursday falls into next year or next month
+            if (lastThursday.Month != targetMonth)
+            {
+                lastThursday = lastThursday.AddDays(-Constants.WeekDayCount);
+            }
+
+            return lastThursday;
+        }
+
+        public static DateObject GetLastDay(int year, int month)
+        {
+            month++;
+
+            if (month == 13)
+            {
+                year++;
+                month = 1;
+            }
+
+            var firstDayOfNextMonth = DateObject.MinValue.SafeCreateFromValue(year, month, 1);
+
+            return firstDayOfNextMonth.AddDays(-1);
+        }
+
         public static DateObject SafeCreateFromValue(this DateObject datetime, int year, int month, int day)
         {
             if (IsValidDate(year, month, day))

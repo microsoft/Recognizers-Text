@@ -62,6 +62,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex NowRegex { get; }
 
+        Regex FirstLastRegex { get; }
+
+        Regex OfYearRegex { get; }
+
         bool CheckBothBeforeAfter { get; }
 
         IDateExtractor DatePointExtractor { get; }

@@ -61,10 +61,12 @@ public class EnglishNumeric {
 
     public static final String PlaceHolderPureNumber = "\\b";
 
-    public static final String PlaceHolderDefault = "\\D|\\b";
+    public static final String PlaceHolderDefault = "(?=\\D)|\\b";
+
+    public static final String PlaceHolderMixed = "\\D|\\b";
 
     public static String NumbersWithPlaceHolder(String placeholder) {
-        return "(((?<!\\d+(\\s*(K|k|MM?|mil|G|T|B|b))?\\s*)-\\s*)|(?<=\\b))\\d+(?!([\\.,]\\d+[a-zA-Z]))(?={placeholder})"
+        return "(((?<!(\\d+(\\s*(K|k|MM?|mil|G|T|B|b))?\\s*|\\p{L}))-\\s*)|(?<={placeholder}))\\d+(?!([\\.,]\\d+[a-zA-Z]))(?={placeholder})"
             .replace("{placeholder}", placeholder);
     }
 
@@ -166,7 +168,7 @@ public class EnglishNumeric {
             .replace("{BaseNumbers.NumberMultiplierRegex}", BaseNumbers.NumberMultiplierRegex);
 
     public static String DoubleDecimalPointRegex(String placeholder) {
-        return "(((?<!\\d+(\\s*(K|k|MM?|mil|G|T|B|b))?\\s*)-\\s*)|((?<=\\b)(?<!\\d+[\\.,])))\\d+[\\.,]\\d+(?!([\\.,]\\d+))(?={placeholder})"
+        return "(((?<!(\\d+(\\s*(K|k|MM?|mil|G|T|B|b))?\\s*|\\p{L}))-\\s*)|((?<={placeholder})(?<!\\d+[\\.,])))\\d+[\\.,]\\d+(?!([\\.,]\\d+))(?={placeholder})"
             .replace("{placeholder}", placeholder);
     }
 
@@ -186,7 +188,7 @@ public class EnglishNumeric {
 
     public static final String ConnectorRegex = "(?<spacer>and)";
 
-    public static final String NumberWithSuffixPercentage = "(?<!%)({BaseNumbers.NumberReplaceToken})(\\s*)(%(?!{BaseNumbers.NumberReplaceToken})|(per\\s*cents?|percentage|cents?)\\b)"
+    public static final String NumberWithSuffixPercentage = "(?<!%({BaseNumbers.NumberReplaceToken})?)({BaseNumbers.NumberReplaceToken}(\\s*))?(%(?!{BaseNumbers.NumberReplaceToken})|(per\\s*cents?|percentage|cents?)\\b)"
             .replace("{BaseNumbers.NumberReplaceToken}", BaseNumbers.NumberReplaceToken);
 
     public static final String FractionNumberWithSuffixPercentage = "(({BaseNumbers.FractionNumberReplaceToken})\\s+of)"

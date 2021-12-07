@@ -64,6 +64,8 @@ namespace Microsoft.Recognizers.Definitions.German
       public static readonly string MonthNumWithYear = $@"({YearRegex}(\s*)[/\-\.](\s*){MonthNumRegex})|({MonthNumRegex}(\s*)[/\-\.](\s*){YearRegex})";
       public static readonly string WeekOfMonthRegex = $@"(?<wom>((die|der)\s+)(?<cardinal>erste[rns]?|1\.|zweite[rns]?|2\.|dritte[rns]?|3\.|vierte[rns]?|4\.|fünfte[rns]?|5\.|letzte[rmns]?)\s+woche\s+(des|diese(s|n)|im)\s+({MonthSuffixRegex}|monat(s)?))";
       public static readonly string WeekOfYearRegex = $@"(?<woy>((die|der)\s+)?(?<cardinal>(erste[rns]?|1\.|zweite[rns]?|2\.|dritte[rns]?|3\.|vierte[rns]?|4\.|fünfte[rns]?|5\.|letzte[rmns]?)\s+woche\s+(im|diese(s|n)|\s+des)?\s+({YearRegex}|{RelativeRegex}\s+jahr(en|es|e)?)))";
+      public static readonly string OfYearRegex = $@"\b((of|in)\s+({YearRegex}|{StrictRelativeRegex}\s+year))\b";
+      public const string FirstLastRegex = @"\b(the\s+)?((?<first>first)|(?<last>last))\b";
       public static readonly string FollowedDateUnit = $@"^\s*{DateUnitRegex}";
       public static readonly string NumberCombinedWithDateUnit = $@"\b(?<num>\d+(\.\d*)?){DateUnitRegex}";
       public static readonly string QuarterRegex = $@"((das|im|in dem|dem)\s+)?(?<cardinal>erste[rns]?|1\.|zweite[rns]?|2\.|dritte[rns]?|3\.|vierte[rns]?|4\.)\s+quartal(\s+(von|des jahres)?|\s*,\s*)?\s+({YearRegex}|{RelativeRegex})";
@@ -111,12 +113,12 @@ namespace Microsoft.Recognizers.Definitions.German
       public const string HourNumRegex = @"\b(?<hournum>einundzwanzig|zweiundzwanzig|dreiundzwanzig|vierundzwanzig|zw(ö|oe)lf|dreizehn|vierzehn|fünfzehn|sechzehn|siebzehn|achtzehn|neunzehn|zwanzig|'null'|eins?|zw(een|ei|o)|drei|vier|fünf|fuenf|sechs|sieben|acht|neun|zehn|elf)\b";
       public const string MinuteNumRegex = @"(?<minnum>zwanzig|dreißig|vierzig|fünfzig|zw(ö|oe)lf|dreizehn|vierzehn|fünfzehn|fuenfzehn|sechzehn|siebzehn|achtzehn|neunzehn|eins?|zw(een|ei|o)|drei|vier|fünf|fuenf|sechs|sieben|acht|neun|zehn|elf)";
       public const string DeltaMinuteNumRegex = @"(?<deltaminnum>zwanzig|dreißig|vierzig|fünfzig|zw(ö|oe)lf|dreizehn|vierzehn|fünfzehn|fuenfzehn|sechzehn|siebzehn|achtzehn|neunzehn|eins?|zw(een|ei|o)|drei|vier|fünf|fuenf|sechs|sieben|acht|neun|zehn|elf)";
-      public const string PmRegex = @"\b((am|gegen|in der)\s+)?(?<pm>(nachmittags?|abends?|mitternachts?|\bmittags?|((in der )?nachts?)))";
-      public const string PmRegexFull = @"\b((am|gegen|in der)\s+)?(?<pm>(nachmittags?|abends?|mitternachts?|\bmittags?|((in der )?nachts?)))";
-      public const string AmRegex = @"(?<am>(((am|gegen)\s+)?(früh|vormittags?)|(morgens|(am|gegen) morgen)))";
+      public const string PmRegex = @"\b((am|gegen|in der)\s+)?(?<pm>(((früh|spät)\s*)?(nachmittags?|abends?)|mitternachts?|\bmittags?|((in der )?nachts?)))";
+      public const string PmRegexFull = @"\b((am|gegen|in der)\s+)?(?<pm>(((früh|spät)\s*)?(nachmittags?|abends?)|mitternachts?|\bmittags?|((in der )?nachts?)))";
+      public const string AmRegex = @"(?<am>(((früh|spät)\s*)?morgens|((am|gegen)\s+)?(früh|vormittags?)|(am|gegen)\s+morgen))";
       public const string LunchRegex = @"\b(mittag(essen|s)?)\b";
       public const string NightRegex = @"\b(mitternacht|(nachts?|primetime|abends?))\b";
-      public const string AmPmPrefixRegex = @"\b((((um|gegen)\s*)?(?<suffix>(((?<am>am morgen)|morgens|(vor|nach)mittags?)|(?<pm>abends?|früh|mitternachts?))|(in der\s*)?(?<pm>nachts?)))\s*(um|gegen|von)\s*)";
+      public const string AmPmPrefixRegex = @"\b((((um|gegen)\s*)?(?<suffix>(((?<am>am morgen)|((früh|spät)\s*)?morgens|früh|(vor|nach)mittags?)|(?<pm>((früh|spät)\s*)?(nachmittags?|abends?)|mitternachts?))|(in der\s*)?(?<pm>nachts?)))\s*(um|gegen|von)\s*)";
       public const string CommonDatePrefixRegex = @"^[\.]";
       public static readonly string LessThanOneHour = $@"\b(?<lth>(ein(er?)?\s+)?((drei)?viertel|halb(en?)?)(\s*stunden?)?)|{BaseDateTime.DeltaMinuteRegex}(\s+(min(uten?)?))|{DeltaMinuteNumRegex}(\s+(min(uten?)?))";
       public static readonly string WrittenTimeRegex = $@"(um\s*)?(?<writtentime>{HourNumRegex}(\s*{OclockRegex}\s*)({MinuteNumRegex}|{MinuteNumRegex}und(?<tens>zwanzig|dreißig|vierzig|fünfzig)))";

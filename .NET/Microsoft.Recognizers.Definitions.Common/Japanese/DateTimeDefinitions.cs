@@ -91,6 +91,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
       public static readonly string PureNumYearAndMonth = $@"({YearRegexInNumber}\s*[-\.\/]\s*{MonthNumRegex})|({MonthNumRegex}\s*\/\s*{YearRegexInNumber})";
       public static readonly string OneWordPeriodRegex = $@"(((明年|今年|去年)\s*)?{MonthRegex}|({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})\s*(周末|周|月|年)|周末|今年|明年|去年|前年|后年)";
       public static readonly string WeekOfMonthRegex = $@"((?<wom>{MonthSuffixRegex}(的|の))第?(?<cardinal>一|二|三|四|五|最后一)\s*周\s*)";
+      public static readonly string WeekOfYearRegex = $@"(?<woy>({YearRegex}|{RelativeRegex}年)的(?<cardinal>第一|第二|第三|第四|第五|最后一)\s*周\s*)";
       public const string UnitRegex = @"(?<unit>年|(个)?月|周|日|天)";
       public static readonly string FollowedUnit = $@"^\s*{UnitRegex}";
       public static readonly string NumberCombinedWithUnit = $@"(?<num>\d+(\.\d*)?){UnitRegex}";
@@ -102,6 +103,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
       public static readonly string MonthToMonth = $@"(({MonthRegex}から{MonthRegex}まで)|({SimpleYearRegex}{MonthRegexForPeriod}から{SimpleYearRegex}{MonthRegexForPeriod}まで)|({SimpleYearRegex}[/\\\-](?<monthFrom>{MonthNumRegexForPeriod})から{SimpleYearRegex}[/\\\-](?<monthTo>{MonthNumRegexForPeriod})まで))";
       public const string MonthToMonthSuffixRequired = @"^[.]";
       public static readonly string DayToDay = $@"({DayRegex}から{DayRegex}まで)";
+      public static readonly string FirstLastOfYearRegex = $@"(({DatePeriodYearInCJKRegex}|{YearRegex}|(?<yearrel>明年|今年|去年))的?)((?<first>前)|(?<last>(最后|最後)))";
       public const string PastRegex = @"(?<past>(前|上|之前|近|过去))";
       public const string FutureRegex = @"(?<future>(后|後|(?<![一两几]\s*)下|之后|之後|未来(的|の)?))";
       public const string SeasonRegex = @"(?<season>春|夏|秋|冬)(天|季)?";

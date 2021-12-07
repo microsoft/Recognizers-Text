@@ -880,7 +880,8 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {
             { @"\bm\b", @"((('|’)\s*m)|(m\s*('|’)))" },
-            { @"^\d{5} [cf]$", @"\b([a-z]{2} \d{5} [cf])\b" }
+            { @"^\d{5} [cf]$", @"\b([a-z]{2} \d{5} [cf])\b" },
+            { @"\b\d+\s*\p{L}+$", @"((\d+\s*\p{L}+[-—–-]?\d+)|((\p{L}[-—–-]?|\d[-—–-])\d+\s*\p{L}+))" }
         };
     }
 }

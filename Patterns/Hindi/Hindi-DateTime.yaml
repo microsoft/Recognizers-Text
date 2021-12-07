@@ -175,6 +175,13 @@ WeekOfMonthRegex: !nestedRegex
 WeekOfYearRegex: !nestedRegex
   def: \b(?<woy>({YearRegex}|{RelativeRegex}\s+(साल|वर्ष)))(\s+(का|की|के))?\s+(?<cardinal>पहला|पहली|पहले|1st|दूसरा|दूसरे|दूसरी|2nd|तीसरा|तीसरे|तीसरी|3rd|चौथा|चौथी|4th|पाँचवाँ|पांचवां|5th|आखिरी|अंतिम)\s+(हफ़्ते|हफ्ते|(?!सप्ताहांत)सप्ताह)
   references: [ YearRegex, RelativeRegex ]
+OfYearRegex: !nestedRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: \b((of|in)\s+({YearRegex}|{StrictRelativeRegex}\s+year))\b
+  references: [ YearRegex, StrictRelativeRegex ]
+FirstLastRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: \b(the\s+)?((?<first>first)|(?<last>last))\b
 FollowedDateUnit: !nestedRegex
   def: ^\s*{DateUnitRegex}
   references: [ DateUnitRegex ]

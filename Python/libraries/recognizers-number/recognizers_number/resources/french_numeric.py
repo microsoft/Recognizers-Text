@@ -18,9 +18,9 @@ class FrenchNumeric:
     CompoundNumberLanguage = False
     MultiDecimalSeparatorCulture = True
     RoundNumberIntegerRegex = f'(cent|mille|millions?|milliards?|billions?)'
-    ZeroToNineIntegerRegex = f'(une?|deux|trois|quatre|cinq|six|sept|huit|neuf)'
+    ZeroToNineIntegerRegex = f'(une?|deux|trois|quatre|cinq|six|sept|huit|neuf|z[ée]ro)'
     TenToNineteenIntegerRegex = f'((seize|quinze|quatorze|treize|douze|onze)|dix(\\Wneuf|\\Whuit|\\Wsept)?)'
-    TensNumberIntegerRegex = f'(quatre\\Wvingt(s|\\Wdix)?|soixante\\Wdix|vingt|trente|quarante|cinquante|soixante|septante|octante|huitante|nonante)'
+    TensNumberIntegerRegex = f'(quatre\\Wvingt(s|\\Wdix)?|soixante(\\Wdix)?|vingt|trente|quarante|cinquante|septante|octante|huitante|nonante)'
     DigitsNumberRegex = f'\\d|\\d{{1,3}}(\\.\\d{{3}})'
     NegativeNumberTermsRegex = f'^[.]'
     NegativeNumberSignRegex = f'^({NegativeNumberTermsRegex}\\s+).*'

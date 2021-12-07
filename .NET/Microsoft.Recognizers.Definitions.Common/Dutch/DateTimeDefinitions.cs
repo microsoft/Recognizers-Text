@@ -95,6 +95,8 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public static readonly string MonthNumWithYear = $@"\b(({BaseDateTime.FourDigitYearRegex}(\s*)[/\-\.](\s*){MonthNumRegex})|({MonthNumRegex}(\s*)[/\-](\s*){BaseDateTime.FourDigitYearRegex}))\b";
       public static readonly string WeekOfMonthRegex = $@"\b(?<wom>(de\s+)?(?<cardinal>eerste|tweede|derde|vierde|vijfde|1e|1ste|2e|2de|3e|3de|4e|4de|5e|5de|laatste)\s+week\s+{MonthSuffixRegex}(\s+{BaseDateTime.FourDigitYearRegex}|{RelativeRegex}\s+year)?)\b";
       public static readonly string WeekOfYearRegex = $@"(\b(?<woy>(de\s+)?(?<cardinal>eerste|tweede|derde|vierde|vijfde|1e|1ste|2e|2de|3e|3de|4e|4de|5e|5de|laatste)\s+week(\s+van)?\s+({YearRegex}|{RelativeRegex}\s+jaar))\b)|(\b({YearRegex}|{RelativeRegex}\s+jaar)\s(?<woy>(de\s+)?(?<cardinal>eerste|tweede|derde|vierde|vijfde|1e|1ste|2e|2de|3e|3de|4e|4de|5e|5de|laatste)\s+week)\b)";
+      public static readonly string OfYearRegex = $@"\b((of|in)\s+({YearRegex}|{StrictRelativeRegex}\s+year))\b";
+      public const string FirstLastRegex = @"\b(the\s+)?((?<first>first)|(?<last>last))\b";
       public static readonly string FollowedDateUnit = $@"^\s*{DateUnitRegex}";
       public static readonly string NumberCombinedWithDateUnit = $@"\b(?<num>\d+(\.\d*)?){DateUnitRegex}";
       public const string QuarterTermRegex = @"\b(((?<cardinal>eerste|1e|1ste|tweede|2e|2de|derde|3e|3de|vierde|4e|4de)[ -]+kwartaal)|(k(?<number>[1-4])))\b";

@@ -102,6 +102,7 @@ namespace Microsoft.Recognizers.Definitions.Korean
       public const string DayRegexForPeriod = @"^[.]";
       public static readonly string WeekToWeek = $@"(\d+\s*주{DatePeriodTillRegex}\s+\d+\s*주\s*{DatePeriodRangeSuffixRegex})";
       public static readonly string RelativePeriodRegex = $@"(({SpecialDayRegex}|지금|올 해)\s*{DatePeriodTillRegex}\s*((\d+\s*주)|(하루|이틀|사흘|나흘|닷새|엿새|이흐레|여드레|아흐레|열흘)|(지금))(\s*반)?(\s*[전후뒤앞])?\s*{DatePeriodRangeSuffixRegex})";
+      public static readonly string FirstLastOfYearRegex = $@"(({DatePeriodYearInCJKRegex}|{YearRegex}|(?<yearrel>明年|今年|去年))的?)((?<first>前)|(?<last>(最后|最後)))";
       public const string PastRegex = @"(?<past>지난|과거)";
       public const string FutureRegex = @"(?<future>앞으로|지금부터)";
       public const string SeasonRegex = @"(한\s*)?(?<season>봄|여름|가을|겨울)";

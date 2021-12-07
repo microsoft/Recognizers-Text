@@ -594,7 +594,7 @@ CurrencyNameToIsoCodeMap: !dictionary
     Bolívar forte venezuelano: VEF
     Kwacha zambiano: ZMW
     Dirame marroquino: MAD
-    Dirame dos Emirados Árabes Unidos: AED
+    Dirham dos Emirados Árabes Unidos: AED
     Manat azeri: AZN
     Manat turcomeno: TMT
     Xelim somali: SOS
@@ -661,7 +661,7 @@ CurrencyNameToIsoCodeMap: !dictionary
     Dólar de Belize: BZD
     Dólar bermudense: BMD
     Dólar de Brunei: BND
-    Singapore dólar: SGD
+    Dólar de Cingapura: SGD
     Dólar canadense: CAD
     Dólar das Ilhas Cayman: KYD
     Dólar neozelandês: NZD

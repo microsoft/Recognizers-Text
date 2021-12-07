@@ -101,6 +101,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             LessThanRegex = EnglishDatePeriodExtractorConfiguration.LessThanRegex;
             MoreThanRegex = EnglishDatePeriodExtractorConfiguration.MoreThanRegex;
             CenturySuffixRegex = EnglishDatePeriodExtractorConfiguration.CenturySuffixRegex;
+            FirstLastRegex = EnglishDatePeriodExtractorConfiguration.FirstLastRegex;
+            OfYearRegex = EnglishDatePeriodExtractorConfiguration.OfYearRegex;
             NowRegex = NowParseRegex;
             SpecialDayRegex = EnglishDateExtractorConfiguration.SpecialDayRegex;
             TodayNowRegex = new Regex(DateTimeDefinitions.TodayNowRegex, RegexOptions.Singleline);
@@ -217,6 +219,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public Regex SpecialDayRegex { get; }
 
         public Regex TodayNowRegex { get; }
+
+        public Regex FirstLastRegex { get; }
+
+        public Regex OfYearRegex { get; }
 
         Regex ISimpleDatePeriodParserConfiguration.RelativeRegex => RelativeRegex;
 

@@ -2567,5 +2567,73 @@
         "End": 5
       }
     ]
+  },
+  {
+    "Input": "USD115",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "usd115",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "115",
+          "unit": "United States dollar",
+          "isoCurrency": "USD"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "USD115.5",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "usd115.5",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "115.5",
+          "unit": "United States dollar",
+          "isoCurrency": "USD"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "115USD",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "115usd",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "115",
+          "unit": "United States dollar",
+          "isoCurrency": "USD"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "115.5USD",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "115.5usd",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "115.5",
+          "unit": "United States dollar",
+          "isoCurrency": "USD"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
   }
 ]

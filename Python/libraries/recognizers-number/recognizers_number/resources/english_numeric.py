@@ -29,10 +29,11 @@ class EnglishNumeric:
     SeparaIntRegex = f'(?:(({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\\s+(and\\s+)?|\\s*-\\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})(\\s+{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\\s+{RoundNumberIntegerRegex})+))'
     AllIntRegex = f'(?:((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\\s+(and\\s+)?|\\s*-\\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\\s+{RoundNumberIntegerRegex})+)\\s+(and\\s+)?)*{SeparaIntRegex})'
     PlaceHolderPureNumber = f'\\b'
-    PlaceHolderDefault = f'\\D|\\b'
+    PlaceHolderDefault = f'(?=\\D)|\\b'
+    PlaceHolderMixed = f'\\D|\\b'
 
     def NumbersWithPlaceHolder(placeholder):
-        return f'(((?<!\\d+(\\s*(K|k|MM?|mil|G|T|B|b))?\\s*)-\\s*)|(?<=\\b))\\d+(?!([\\.,]\\d+[a-zA-Z]))(?={placeholder})'
+        return f'(((?<!(\\d+(\\s*(K|k|MM?|mil|G|T|B|b))?\\s*|\\p{{L}}))-\\s*)|(?<={placeholder}))\\d+(?!([\\.,]\\d+[a-zA-Z]))(?={placeholder})'
     IndianNumberingSystemRegex = f'(?<=\\b)((?:\\d{{1,2}},(?:\\d{{2}},)*\\d{{3}})(?=\\b))'
     NumbersWithSuffix = f'(((?<!\\d+(\\s*{BaseNumbers.NumberMultiplierRegex})?\\s*)-\\s*)|(?<=\\b))\\d+\\s*{BaseNumbers.NumberMultiplierRegex}(?=\\b)'
     RoundNumberIntegerRegexWithLocks = f'(?<=\\b)\\d+\\s+{RoundNumberIntegerRegex}(?=\\b)'
@@ -64,7 +65,7 @@ class EnglishNumeric:
     DoubleCaretExponentialNotationRegex = f'(((?<!\\d+(\\s*{BaseNumbers.NumberMultiplierRegex})?\\s*)-\\s*)|((?<=\\b)(?<!\\d+[\\.,])))(\\d+([\\.,]\\d+)?)\\^([+-]*[1-9]\\d*)(?=\\b)'
 
     def DoubleDecimalPointRegex(placeholder):
-        return f'(((?<!\\d+(\\s*(K|k|MM?|mil|G|T|B|b))?\\s*)-\\s*)|((?<=\\b)(?<!\\d+[\\.,])))\\d+[\\.,]\\d+(?!([\\.,]\\d+))(?={placeholder})'
+        return f'(((?<!(\\d+(\\s*(K|k|MM?|mil|G|T|B|b))?\\s*|\\p{{L}}))-\\s*)|((?<={placeholder})(?<!\\d+[\\.,])))\\d+[\\.,]\\d+(?!([\\.,]\\d+))(?={placeholder})'
     DoubleIndianDecimalPointRegex = f'(?<=\\b)((?:\\d{{1,2}},(?:\\d{{2}},)*\\d{{3}})(?:\\.\\d{{2}})(?=\\b))'
 
     def DoubleWithoutIntegralRegex(placeholder):
@@ -72,7 +73,7 @@ class EnglishNumeric:
     DoubleWithRoundNumber = f'(((?<!\\d+(\\s*{BaseNumbers.NumberMultiplierRegex})?\\s*)-\\s*)|((?<=\\b)(?<!\\d+[\\.,])))\\d+[\\.,]\\d+\\s+{RoundNumberIntegerRegex}(?=\\b)'
     DoubleAllFloatRegex = f'((?<=\\b){AllFloatRegex}(?=\\b))'
     ConnectorRegex = f'(?<spacer>and)'
-    NumberWithSuffixPercentage = f'(?<!%)({BaseNumbers.NumberReplaceToken})(\\s*)(%(?!{BaseNumbers.NumberReplaceToken})|(per\\s*cents?|percentage|cents?)\\b)'
+    NumberWithSuffixPercentage = f'(?<!%({BaseNumbers.NumberReplaceToken})?)({BaseNumbers.NumberReplaceToken}(\\s*))?(%(?!{BaseNumbers.NumberReplaceToken})|(per\\s*cents?|percentage|cents?)\\b)'
     FractionNumberWithSuffixPercentage = f'(({BaseNumbers.FractionNumberReplaceToken})\\s+of)'
     NumberWithPrefixPercentage = f'(per\\s*cents?\\s+of)(\\s*)({BaseNumbers.NumberReplaceToken})'
     NumberWithPrepositionPercentage = f'({BaseNumbers.NumberReplaceToken})\\s*(in|out\\s+of)\\s*({BaseNumbers.NumberReplaceToken})'

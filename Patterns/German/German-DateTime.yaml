@@ -106,6 +106,13 @@ WeekOfMonthRegex: !nestedRegex
 WeekOfYearRegex: !nestedRegex
   def: (?<woy>((die|der)\s+)?(?<cardinal>(erste[rns]?|1\.|zweite[rns]?|2\.|dritte[rns]?|3\.|vierte[rns]?|4\.|fünfte[rns]?|5\.|letzte[rmns]?)\s+woche\s+(im|diese(s|n)|\s+des)?\s+({YearRegex}|{RelativeRegex}\s+jahr(en|es|e)?)))
   references: [ YearRegex, RelativeRegex ]
+OfYearRegex: !nestedRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: \b((of|in)\s+({YearRegex}|{StrictRelativeRegex}\s+year))\b
+  references: [ YearRegex, StrictRelativeRegex ]
+FirstLastRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: \b(the\s+)?((?<first>first)|(?<last>last))\b
 FollowedDateUnit: !nestedRegex
   def: ^\s*{DateUnitRegex}
   references: [ DateUnitRegex ]
@@ -236,17 +243,17 @@ MinuteNumRegex: !simpleRegex
 DeltaMinuteNumRegex: !simpleRegex
   def: (?<deltaminnum>zwanzig|dreißig|vierzig|fünfzig|zw(ö|oe)lf|dreizehn|vierzehn|fünfzehn|fuenfzehn|sechzehn|siebzehn|achtzehn|neunzehn|eins?|zw(een|ei|o)|drei|vier|fünf|fuenf|sechs|sieben|acht|neun|zehn|elf)
 PmRegex: !simpleRegex
-  def: \b((am|gegen|in der)\s+)?(?<pm>(nachmittags?|abends?|mitternachts?|\bmittags?|((in der )?nachts?)))
+  def: \b((am|gegen|in der)\s+)?(?<pm>(((früh|spät)\s*)?(nachmittags?|abends?)|mitternachts?|\bmittags?|((in der )?nachts?)))
 PmRegexFull: !simpleRegex
-  def: \b((am|gegen|in der)\s+)?(?<pm>(nachmittags?|abends?|mitternachts?|\bmittags?|((in der )?nachts?)))
+  def: \b((am|gegen|in der)\s+)?(?<pm>(((früh|spät)\s*)?(nachmittags?|abends?)|mitternachts?|\bmittags?|((in der )?nachts?)))
 AmRegex: !simpleRegex
-  def: (?<am>(((am|gegen)\s+)?(früh|vormittags?)|(morgens|(am|gegen) morgen)))
+  def: (?<am>(((früh|spät)\s*)?morgens|((am|gegen)\s+)?(früh|vormittags?)|(am|gegen)\s+morgen))
 LunchRegex: !simpleRegex
   def: \b(mittag(essen|s)?)\b
 NightRegex: !simpleRegex
   def: \b(mitternacht|(nachts?|primetime|abends?))\b
 AmPmPrefixRegex: !simpleRegex
-  def: \b((((um|gegen)\s*)?(?<suffix>(((?<am>am morgen)|morgens|(vor|nach)mittags?)|(?<pm>abends?|früh|mitternachts?))|(in der\s*)?(?<pm>nachts?)))\s*(um|gegen|von)\s*)
+  def: \b((((um|gegen)\s*)?(?<suffix>(((?<am>am morgen)|((früh|spät)\s*)?morgens|früh|(vor|nach)mittags?)|(?<pm>((früh|spät)\s*)?(nachmittags?|abends?)|mitternachts?))|(in der\s*)?(?<pm>nachts?)))\s*(um|gegen|von)\s*)
 CommonDatePrefixRegex: !simpleRegex
   def: ^[\.]
 LessThanOneHour: !nestedRegex
