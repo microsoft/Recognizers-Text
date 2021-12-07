@@ -70,13 +70,13 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly string FractionPrepositionWithinPercentModeRegex = $@"(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<![\.,])\d+))\s+over\s+(?<denominator>({AllIntRegex})|(\d+)(?![\.,]))(?=\b)";
       public static readonly string AllPointRegex = $@"((\s+{ZeroToNineIntegerRegex})+|(\s+{SeparaIntRegex}))";
       public static readonly string AllFloatRegex = $@"{AllIntRegex}(\s+point){AllPointRegex}";
-      public static readonly string DoubleWithMultiplierRegex = $@"(((?<!\d+(\s*{BaseNumbers.NumberMultiplierRegex})?\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)";
+      public static readonly string DoubleWithMultiplierRegex = $@"(((?<!\d+(\s*{BaseNumbers.NumberMultiplierRegex})?\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))(\d{{1,3}}(,\d{{3}})+(\.\d+)?|\d+[\.,]\d+)\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)";
       public static readonly string DoubleExponentialNotationRegex = $@"(((?<!\d+(\s*{BaseNumbers.NumberMultiplierRegex})?\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))(\d+([\.,]\d+)?)(e|x10\^)([+-]*[1-9]\d*)(?=\b)";
       public static readonly string DoubleCaretExponentialNotationRegex = $@"(((?<!\d+(\s*{BaseNumbers.NumberMultiplierRegex})?\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))(\d+([\.,]\d+)?)\^([+-]*[1-9]\d*)(?=\b)";
-      public static readonly Func<string, string> DoubleDecimalPointRegex = (placeholder) => $@"(((?<!(\d+(\s*(K|k|MM?|mil|G|T|B|b))?\s*|\p{{L}}))-\s*)|((?<={placeholder})(?<!\d+[\.,])))\d+[\.,]\d+(?!([\.,]\d+))(?={placeholder})";
+      public static readonly Func<string, string> DoubleDecimalPointRegex = (placeholder) => $@"(((?<!(\d+(\s*(K|k|MM?|mil|G|T|B|b))?\s*|\p{{L}}))-\s*)|((?<={placeholder})(?<!\d+[\.,])))(\d{{1,3}}(,\d{{3}})+(\.\d+)?|\d+[\.,]\d+)(?!([\.,]\d+))(?={placeholder})";
       public const string DoubleIndianDecimalPointRegex = @"(?<=\b)((?:\d{1,2},(?:\d{2},)*\d{3})(?:\.\d{2})(?=\b))";
       public static readonly Func<string, string> DoubleWithoutIntegralRegex = (placeholder) => $@"(?<=\s|^)(?<!(\d+))[\.,]\d+(?!([\.,]\d+))(?={placeholder})";
-      public static readonly string DoubleWithRoundNumber = $@"(((?<!\d+(\s*{BaseNumbers.NumberMultiplierRegex})?\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+\s+{RoundNumberIntegerRegex}(?=\b)";
+      public static readonly string DoubleWithRoundNumber = $@"(((?<!\d+(\s*{BaseNumbers.NumberMultiplierRegex})?\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))(\d{{1,3}}(,\d{{3}})+(\.\d+)?|\d+[\.,]\d+)\s+{RoundNumberIntegerRegex}(?=\b)";
       public static readonly string DoubleAllFloatRegex = $@"((?<=\b){AllFloatRegex}(?=\b))";
       public const string ConnectorRegex = @"(?<spacer>and)";
       public static readonly string NumberWithSuffixPercentage = $@"(?<!%({BaseNumbers.NumberReplaceToken})?)({BaseNumbers.NumberReplaceToken}(\s*))?(%(?!{BaseNumbers.NumberReplaceToken})|(per\s*cents?|percentage|cents?)\b)";
