@@ -123,10 +123,10 @@
     "Input": "http://abc.com/search?id=123&name=Alice",
     "Results": [
       {
-        "Text": "http://abc.com/search?id=123&name=Alice",
+        "Text": "http://abc.com/search?id=123&name=alice",
         "TypeName": "url",
         "Resolution": {
-          "value": "http://abc.com/search?id=123&name=Alice"
+          "value": "http://abc.com/search?id=123&name=alice"
         }
       }
     ]
@@ -159,10 +159,10 @@
     "Input": "你好，@伊芙，你可以在这里看到我的简历https://frank.website.com/CV/#cite_2",
     "Results": [
       {
-        "Text": "https://frank.website.com/CV/#cite_2",
+        "Text": "https://frank.website.com/cv/#cite_2",
         "TypeName": "url",
         "Resolution": {
-          "value": "https://frank.website.com/CV/#cite_2"
+          "value": "https://frank.website.com/cv/#cite_2"
         }
       }
     ]
@@ -251,10 +251,10 @@
     "Input": "['http://twitter.com/#!/KCGtechnoly/status/9042443475840', None]",
     "Results": [
       {
-        "Text": "http://twitter.com/#!/KCGtechnoly/status/9042443475840",
+        "Text": "http://twitter.com/#!/kcgtechnoly/status/9042443475840",
         "TypeName": "url",
         "Resolution": {
-          "value": "http://twitter.com/#!/KCGtechnoly/status/9042443475840"
+          "value": "http://twitter.com/#!/kcgtechnoly/status/9042443475840"
         }
       }
     ]
@@ -281,12 +281,12 @@
     "Input": "五月五.https://t.co/YCUZfuyyHZ",
     "Results": [
       {
-        "Text": "https://t.co/YCUZfuyyHZ",
+        "Text": "https://t.co/ycuzfuyyhz",
         "Start": 4,
         "End": 26,
         "TypeName": "url",
         "Resolution": {
-          "value": "https://t.co/YCUZfuyyHZ"
+          "value": "https://t.co/ycuzfuyyhz"
         }
       }
     ]

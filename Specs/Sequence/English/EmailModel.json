@@ -51,10 +51,10 @@
     "Input": "Alice_1@outlook.com",
     "Results": [
       {
-        "Text": "Alice_1@outlook.com",
+        "Text": "alice_1@outlook.com",
         "TypeName": "email",
         "Resolution": {
-          "value": "Alice_1@outlook.com"
+          "value": "alice_1@outlook.com"
         }
       }
     ]
@@ -63,10 +63,10 @@
     "Input": "Bob@try1989.com",
     "Results": [
       {
-        "Text": "Bob@try1989.com",
+        "Text": "bob@try1989.com",
         "TypeName": "email",
         "Resolution": {
-          "value": "Bob@try1989.com"
+          "value": "bob@try1989.com"
         }
       }
     ]
@@ -75,10 +75,10 @@
     "Input": "Hello, @Carol, please write to me at Dave@abc.com for more information on task #A1",
     "Results": [
       {
-        "Text": "Dave@abc.com",
+        "Text": "dave@abc.com",
         "TypeName": "email",
         "Resolution": {
-          "value": "Dave@abc.com"
+          "value": "dave@abc.com"
         }
       }
     ]
@@ -142,13 +142,13 @@
   },
   {
     "Input": "Both a..bc@outlook.com and .abc@hotmail.com are not valid e-mail addresses.",
-	"Comment": "By default the current system is strict. If a relavex match is needed (to catch these), enable the Relaxed option.",
+	"Comment": "By default the current system is strict. If a relaxed match is needed (to catch these), enable the Relaxed option.",
     "NotSupportedByDesign": "javascript, python",
     "Results": []
   },
   {
     "Input": "Periods at the end of addresses can be ambiguous. Contact webmaster@contoso.com.",
-	"Comment": "By default the current system is strict. If a relavex match is needed (to catch the period), enable the Relaxed option.",
+	"Comment": "By default the current system is strict. If a relaxed match is needed (to catch the period), enable the Relaxed option.",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -156,6 +156,30 @@
         "TypeName": "email",
         "Resolution": {
           "value": "webmaster@contoso.com"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "my.name@base.Contoso.com  is a valid email address",
+    "Results": [
+      {
+        "Text": "my.name@base.contoso.com",
+        "TypeName": "email",
+        "Resolution": {
+          "value": "my.name@base.contoso.com"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Is mytestUser1234@CRM99.on.misfit.com a valid email address?",
+    "Results": [
+      {
+        "Text": "mytestuser1234@crm99.on.misfit.com",
+        "TypeName": "email",
+        "Resolution": {
+          "value": "mytestuser1234@crm99.on.misfit.com"
         }
       }
     ]

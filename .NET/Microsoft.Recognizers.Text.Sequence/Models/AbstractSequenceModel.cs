@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text.Sequence
 {
@@ -33,6 +34,9 @@ namespace Microsoft.Recognizers.Text.Sequence
         public virtual List<ModelResult> Parse(string query)
         {
             var parsedSequences = new List<ParseResult>();
+
+            // Preprocess the query
+            query = QueryProcessor.Preprocess(query);
 
             try
             {
