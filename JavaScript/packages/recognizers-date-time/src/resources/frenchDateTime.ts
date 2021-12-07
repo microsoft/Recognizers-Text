@@ -54,6 +54,8 @@ export namespace FrenchDateTime {
     export const MonthNumWithYear = `(${YearRegex}(\\s*)[/\\-\\.](\\s*)${MonthNumRegex})|(${MonthNumRegex}(\\s*)[/\\-](\\s*)${YearRegex})`;
     export const WeekOfMonthRegex = `(?<wom>(le\\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4|cinqi[èe]me|5)\\s+semaine(\\s+de)?\\s+${MonthSuffixRegex})`;
     export const WeekOfYearRegex = `(?<woy>(le\\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4|cinqi[èe]me|5)\\s+semaine(\\s+de)?\\s+(${YearRegex}|${RelativeRegex}\\s+ann[ée]e))`;
+    export const OfYearRegex = `\\b((of|in)\\s+(${YearRegex}|${StrictRelativeRegex}\\s+year))\\b`;
+    export const FirstLastRegex = `\\b(the\\s+)?((?<first>first)|(?<last>last))\\b`;
     export const FollowedDateUnit = `^\\s*${DateUnitRegex}`;
     export const NumberCombinedWithDateUnit = `\\b(?<num>\\d+(\\.\\d*)?)${DateUnitRegex}`;
     export const QuarterRegex = `(le\\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4)\\s+quart(\\s+de|\\s*,\\s*)?\\s+(${YearRegex}|${RelativeRegex}\\s+l'ann[eé]e)`;
@@ -81,8 +83,8 @@ export namespace FrenchDateTime {
     export const NumberEndingPattern = `^\\b$`;
     export const SpecialDate = `(?<=\\b(au|le)\\s+)${DayRegex}(?!:)\\b`;
     export const DateYearRegex = `(?<year>${YearRegex}|${TwoDigitYearRegex})`;
-    export const DateExtractor1 = `\\b(${WeekDayRegex}(\\s+|\\s*,\\s*))?${MonthRegex}\\s*[/\\\\\\.\\-]?\\s*${DayRegex}(\\s*[/\\\\\\.\\-]?\\s*${BaseDateTime.FourDigitYearRegex})?\\b`;
-    export const DateExtractor2 = `\\b(${WeekDayRegex}(\\s+|\\s*,\\s*))?${DayRegex}(\\s+|\\s*,\\s*|\\s+)${MonthRegex}\\s*[\\.\\-]?\\s*${DateYearRegex}\\b`;
+    export const DateExtractor1 = `\\b(${WeekDayRegex}(\\s+|\\s*,\\s*))?${MonthRegex}\\s*[/\\\\\\.\\-]?\\s*${DayRegex}(\\s*([/\\\\\\.\\-]|\\bde\\b)?\\s*${BaseDateTime.FourDigitYearRegex})?\\b`;
+    export const DateExtractor2 = `\\b(${WeekDayRegex}(\\s+|\\s*,\\s*))?${DayRegex}(\\s+|\\s*,\\s*|\\s+)${MonthRegex}\\s*([\\.\\-]|\\bde\\b)?\\s*${DateYearRegex}\\b`;
     export const DateExtractor3 = `\\b(${WeekDayRegex}(\\s+|\\s*,\\s*))?((?<!\\d\\s)(?<!\\d)${DayRegex}(\\s+|\\s*[.,/-])(${MonthRegex}((\\s+|\\s*[.,/-]\\s*)${DateYearRegex}(?!\\s*\\d))?|${MonthNumRegex}(\\s+|\\s*[.,/-]\\s*)${DateYearRegex}(?!\\s*\\d))|${BaseDateTime.FourDigitYearRegex}\\s*[.,/-]?\\s*${DayRegex}\\s*[.,/-]?\\s*${MonthRegex})\\b`;
     export const DateExtractor4 = `\\b${MonthNumRegex}\\s*[/\\\\\\-]\\s*${DayRegex}\\s*[/\\\\\\-]\\s*${DateYearRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)`;
     export const DateExtractor5 = `\\b${DayRegex}\\s*[/\\\\\\-\\.]\\s*(${MonthNumRegex}|${MonthRegex})\\s*[/\\\\\\-\\.]\\s*${DateYearRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)`;
@@ -96,14 +98,14 @@ export namespace FrenchDateTime {
     export const WeekDayEnd = `${WeekDayRegex}\\s*,?\\s*$`;
     export const WeekDayStart = `^[\\.]`;
     export const RangeUnitRegex = `\\b(?<unit>(l')?ann[eé]e(s)?|mois|semaines?)\\b`;
-    export const HourNumRegex = `\\b(?<hournum>zero|[aá]\\s+une?|deux|trois|quatre|cinq|six|sept|huit|neuf|onze|douze|treize|quatorze|quinze|dix-six|dix-sept|dix-huit|dix-neuf|vingt|vingt-et-un|vingt-deux|vingt-trois|dix)\\b`;
+    export const HourNumRegex = `\\b(?<hournum>zero|une?(?=\\s+heure)|deux|trois|quatre|cinq|six|sept|huit|neuf|onze|douze|treize|quatorze|quinze|dix-six|seize|dix(-|\\s+)sept|dix(-|\\s+)huit|dix(-|\\s+)neuf|vingt|vingt(-|\\s+)et(-|\\s+)un|vingt(-|\\s+)deux|vingt(-|\\s+)trois|dix)\\b`;
     export const MinuteNumRegex = `(?<minnum>((vingt|trente|quarante|cinquante)(\\s*(et|-)?\\s*))?(un|deux|trois|quatre|cinq|six|sept|huit|neuf)|onze|douze|treize|quatorze|quinze|seize|dix-sept|dix-huit|dix-neuf|vingt|trente|quarante|cinquante|dix)`;
     export const DeltaMinuteNumRegex = `(?<deltaminnum>((vingt|trente|quarante|cinquante)(\\s*(et|-)?\\s*))?(un|deux|trois|quatre|cinq|six|sept|huit|neuf)|onze|douze|treize|quatorze|quinze|seize|dix-sept|dix-huit|dix-neuf|vingt|trente|quarante|cinquante|dix)`;
     export const OclockRegex = `(?<oclock>heures?|h)`;
     export const PmRegex = `(?<pm>(dans l'\\s*)?apr[eè]s(\\s*|-)midi|(du|ce|de|le)\\s*(soir([ée]e)?)|(dans l[ea]\\s+)?(nuit|soir[eé]e))`;
     export const AmRegex = `(?<am>(du|de|ce|(du|de|dans)\\s*l[ea]|le)?\\s*matin[ée]e|(du|de|ce|dans l[ea]|le)?\\s*matin)`;
     export const LessThanOneHour = `(?<lth>(une\\s+)?quart|trois quart(s)?|demie( heure)?|(${BaseDateTime.DeltaMinuteRegex}|${DeltaMinuteNumRegex})(\\s+(minutes?|mins?))|(?<=heures?\\s+((et|moins)\\s+)?)(${BaseDateTime.DeltaMinuteRegex}|${DeltaMinuteNumRegex}))`;
-    export const WrittenTimeRegex = `(?<writtentime>${HourNumRegex}\\s+(heures\\s+)?(et\\s+)?${MinuteNumRegex}(\\s+(minutes?|mins?))?)`;
+    export const WrittenTimeRegex = `(?<writtentime>${HourNumRegex}\\s+(heures\\s+)?(et\\s+)?${MinuteNumRegex}(?!\\s+heures)(\\s+(minutes?|mins?))?)`;
     export const TimePrefix = `(?<prefix>(heures?\\s+((et|moins)\\s+)?${LessThanOneHour}|(et|moins)\\s+${LessThanOneHour}|${LessThanOneHour}\\s+[àa]))`;
     export const TimeSuffix = `(?<suffix>${AmRegex}|${PmRegex}|${OclockRegex})`;
     export const BasicTime = `(?<basictime>${WrittenTimeRegex}|${HourNumRegex}|${BaseDateTime.HourRegex}(:|\\s*h\\s*)${BaseDateTime.MinuteRegex}(:${BaseDateTime.SecondRegex})?|${BaseDateTime.HourRegex})`;
@@ -115,7 +117,7 @@ export namespace FrenchDateTime {
     export const MiddayRegex = `(?<midday>milieu(\\s*|-)d[eu]\\s*(jour|midi)|apr[eè]s(-|\\s*)midi|(?<=\\bà\\s+)midi)`;
     export const MidafternoonRegex = `(?<midafternoon>milieu\\s*d'+${AfternoonRegex})`;
     export const MidTimeRegex = `(?<mid>(${MidnightRegex}|${MidmorningRegex}|${MidafternoonRegex}|${MiddayRegex}))`;
-    export const AtRegex = `\\b(((?<=\\b[àa]\\s+)(${WrittenTimeRegex}|${HourNumRegex}|${BaseDateTime.HourRegex}|${MidTimeRegex}))|${MidTimeRegex})\\b`;
+    export const AtRegex = `\\b(((?<=\\b[àa]\\s+)(${WrittenTimeRegex}|${HourNumRegex}(\\s+heures)?|${BaseDateTime.HourRegex}|${MidTimeRegex}))|${MidTimeRegex})\\b`;
     export const IshRegex = `\\b(peu\\s*pr[èe]s\\s*${BaseDateTime.HourRegex}|peu\\s*pr[èe]s\\s*${WrittenTimeRegex}|peu\\s*pr[èe]s\\s*[àa]\\s*${BaseDateTime.HourRegex}|peu pr[èe]s midi)\\b`;
     export const TimeUnitRegex = `(?<unit>h|(heure|hr|minute|min|seconde|sec)(?<plural>s)?)\\b`;
     export const RestrictedTimeUnitRegex = `(?<unit>huere|minute)\\b`;

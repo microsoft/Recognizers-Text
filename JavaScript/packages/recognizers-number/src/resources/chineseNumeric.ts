@@ -41,6 +41,7 @@ export namespace ChineseNumeric {
     export const HalfUnitRegex = `半`;
     export const NegativeNumberTermsRegex = `[负負]`;
     export const NegativeNumberTermsRegexNum = `((?<!(\\d+(\\s*${BaseNumbers.NumberMultiplierRegex})?\\s*)|[-－])[-－])`;
+    export const NegativeNumberTermsRegexAll = `(${NegativeNumberTermsRegex}|${NegativeNumberTermsRegexNum})`;
     export const NegativeNumberSignRegex = `^${NegativeNumberTermsRegex}.*|^${NegativeNumberTermsRegexNum}.*`;
     export const SpeGetNumberRegex = `${ZeroToNineFullHalfRegex}|${ZeroToNineIntegerRegex}|[十拾半对對]`;
     export const PairRegex = `.*[双对雙對]$`;
@@ -66,14 +67,14 @@ export namespace ChineseNumeric {
     export const NumbersWithAllowListRegex = `(?<![百佰]\\s*分\\s*之\\s*(${AllIntRegex}[点點]*|${AllFloatRegex})*)${NegativeNumberTermsRegex}?(${NotSingleRegex}|${SingleRegex})(?!(${AllIntRegex}*([点點]${ZeroToNineIntegerRegex}+)*|${AllFloatRegex})*\\s*[个個]\\s*[百佰]\\s*分\\s*[点點])`;
     export const NumbersAggressiveRegex = `(?<![百佰]\\s*分\\s*之\\s*(${AllIntRegex}[点點]*|${AllFloatRegex})*)${NegativeNumberTermsRegex}?${AllIntRegex}(?!(${AllIntRegex}*([点點]${ZeroToNineIntegerRegex}+)*|${AllFloatRegex})*\\s*[个個]\\s*[百佰]\\s*分\\s*[点點])`;
     export const PointRegex = `${PointRegexStr}`;
-    export const DoubleSpecialsChars = `(?<!(${ZeroToNineFullHalfRegex}+[\\.．]${ZeroToNineFullHalfRegex}*))(${NegativeNumberTermsRegexNum}\\s*)?${ZeroToNineFullHalfRegex}+[\\.．]${ZeroToNineFullHalfRegex}+(?!${ZeroToNineFullHalfRegex}*[\\.．]${ZeroToNineFullHalfRegex}+)`;
-    export const DoubleSpecialsCharsWithNegatives = `(?<!(${ZeroToNineFullHalfRegex}+|\\.\\.|．．))(${NegativeNumberTermsRegexNum}\\s*)?[\\.．]${ZeroToNineFullHalfRegex}+(?!${ZeroToNineFullHalfRegex}*([\\.．]${ZeroToNineFullHalfRegex}+))`;
-    export const SimpleDoubleSpecialsChars = `(${NegativeNumberTermsRegexNum}\\s*)?${ZeroToNineFullHalfRegex}{1,3}([,，]${ZeroToNineFullHalfRegex}{3})+[\\.．]${ZeroToNineFullHalfRegex}+`;
-    export const DoubleWithMultiplierRegex = `(${NegativeNumberTermsRegexNum}\\s*)?${ZeroToNineFullHalfRegex}+[\\.．]${ZeroToNineFullHalfRegex}+\\s*${BaseNumbers.NumberMultiplierRegex}`;
+    export const DoubleSpecialsChars = `(?<!(${ZeroToNineFullHalfRegex}+[\\.．]${ZeroToNineFullHalfRegex}*))(${NegativeNumberTermsRegexAll}\\s*)?${ZeroToNineFullHalfRegex}+[\\.．]${ZeroToNineFullHalfRegex}+(?!${ZeroToNineFullHalfRegex}*[\\.．]${ZeroToNineFullHalfRegex}+)`;
+    export const DoubleSpecialsCharsWithNegatives = `(?<!(${ZeroToNineFullHalfRegex}+|\\.\\.|．．))(${NegativeNumberTermsRegexAll}\\s*)?[\\.．]${ZeroToNineFullHalfRegex}+(?!${ZeroToNineFullHalfRegex}*([\\.．]${ZeroToNineFullHalfRegex}+))`;
+    export const SimpleDoubleSpecialsChars = `(${NegativeNumberTermsRegexAll}\\s*)?${ZeroToNineFullHalfRegex}{1,3}([,，]${ZeroToNineFullHalfRegex}{3})+[\\.．]${ZeroToNineFullHalfRegex}+`;
+    export const DoubleWithMultiplierRegex = `(${NegativeNumberTermsRegexAll}\\s*)?${ZeroToNineFullHalfRegex}+[\\.．]${ZeroToNineFullHalfRegex}+\\s*${BaseNumbers.NumberMultiplierRegex}`;
     export const DoubleWithThousandsRegex = `${NegativeNumberTermsRegex}?((${ZeroToNineFullHalfRegex}+)|(${ZeroToNineFullHalfRegex}{1,3}(,${ZeroToNineFullHalfRegex}{3})+))([\\.．]${ZeroToNineFullHalfRegex}+)?\\s*[多几幾余]?[万亿萬億]{1,2}`;
     export const DoubleAllFloatRegex = `(?<![百佰]\\s*分\\s*之\\s*((${AllIntRegex}[点點]*)|${AllFloatRegex})*)${AllFloatRegex}(?!${ZeroToNineIntegerRegex}*\\s*[个個]\\s*[百佰]\\s*分\\s*[点點])`;
-    export const DoubleExponentialNotationRegex = `(?<!${ZeroToNineFullHalfRegex}+[\\.．])(${NegativeNumberTermsRegexNum}\\s*)?${ZeroToNineFullHalfRegex}+([\\.．]${ZeroToNineFullHalfRegex}+)?e(([-－+＋]*[1-9]${ZeroToNineFullHalfRegex}*)|0(?!${ZeroToNineFullHalfRegex}+))`;
-    export const DoubleScientificNotationRegex = `(?<!${ZeroToNineFullHalfRegex}+[\\.．])(${NegativeNumberTermsRegexNum}\\s*)?(${ZeroToNineFullHalfRegex}+([\\.．]${ZeroToNineFullHalfRegex}+)?)\\^([-－+＋]*[1-9]${ZeroToNineFullHalfRegex}*)`;
+    export const DoubleExponentialNotationRegex = `(?<!${ZeroToNineFullHalfRegex}+[\\.．])(${NegativeNumberTermsRegexAll}\\s*)?${ZeroToNineFullHalfRegex}+([\\.．]${ZeroToNineFullHalfRegex}+)?e(([-－+＋]*[1-9]${ZeroToNineFullHalfRegex}*)|0(?!${ZeroToNineFullHalfRegex}+))`;
+    export const DoubleScientificNotationRegex = `(?<!${ZeroToNineFullHalfRegex}+[\\.．])(${NegativeNumberTermsRegexAll}\\s*)?(${ZeroToNineFullHalfRegex}+([\\.．]${ZeroToNineFullHalfRegex}+)?)\\^([-－+＋]*[1-9]${ZeroToNineFullHalfRegex}*)`;
     export const OrdinalRegex = `第${AllIntRegex}`;
     export const OrdinalNumbersRegex = `第${ZeroToNineFullHalfRegex}+`;
     export const AllFractionNumber = `${NegativeNumberTermsRegex}?((${ZeroToNineFullHalfRegex}+|${AllIntRegex})\\s*又\\s*)?${NegativeNumberTermsRegex}?(${ZeroToNineFullHalfRegex}+|${AllIntRegex})\\s*分\\s*之\\s*${NegativeNumberTermsRegex}?(${ZeroToNineFullHalfRegex}+|${AllIntRegex})(${PointRegexStr}${AllIntRegex}*)?`;
@@ -93,7 +94,7 @@ export namespace ChineseNumeric {
     export const IntegerPercentageRegex = `${ZeroToNineFullHalfRegex}+\\s*[个個]\\s*${RoundNumberIntegerRegex}{1,3}\\s*分\\s*[点點]`;
     export const IntegerPercentageWithMultiplierRegex = `${ZeroToNineFullHalfRegex}+\\s*${BaseNumbers.NumberMultiplierRegex}\\s*[个個]\\s*${RoundNumberIntegerRegex}{1,3}\\s*分\\s*[点點]`;
     export const NumbersFractionPercentageRegex = `${ZeroToNineFullHalfRegex}{1,3}([,，]${ZeroToNineFullHalfRegex}{3})+\\s*[个個]\\s*${RoundNumberIntegerRegex}{1,3}\\s*分\\s*[点點]`;
-    export const SimpleIntegerPercentageRegex = `(?<!%|\\d)${NegativeNumberTermsRegexNum}?${ZeroToNineFullHalfRegex}+([\\.．]${ZeroToNineFullHalfRegex}+)?(\\s*)[％%](?!\\d)`;
+    export const SimpleIntegerPercentageRegex = `(?<!%|\\d)${NegativeNumberTermsRegexAll}?${ZeroToNineFullHalfRegex}+([\\.．]${ZeroToNineFullHalfRegex}+)?(\\s*)[％%](?!\\d)`;
     export const NumbersFoldsPercentageRegex = `${ZeroToNineFullHalfRegex}(([\\.．]?|\\s*)${ZeroToNineFullHalfRegex})?\\s*折`;
     export const FoldsPercentageRegex = `${ZeroToNineIntegerRegex}(\\s*[点點]?\\s*${ZeroToNineIntegerRegex})?\\s*折`;
     export const SimpleFoldsPercentageRegex = `${ZeroToNineFullHalfRegex}\\s*成(\\s*(半|${ZeroToNineFullHalfRegex}))?`;
