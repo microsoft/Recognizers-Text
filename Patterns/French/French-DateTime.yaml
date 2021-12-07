@@ -226,7 +226,7 @@ WeekDayEnd: !nestedRegex
   def: '{WeekDayRegex}\s*,?\s*$'
   references: [ WeekDayRegex ]
 WeekDayStart: !simpleRegex
-  def: ^[\.]
+  def: ^\b$
 RangeUnitRegex: !simpleRegex
   def: \b(?<unit>(l')?ann[eé]e(s)?|mois|semaines?)\b
 HourNumRegex: !simpleRegex

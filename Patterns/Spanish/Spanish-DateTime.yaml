@@ -234,7 +234,7 @@ WeekDayEnd: !nestedRegex
   def: '{WeekDayRegex}\s*,?\s*$'
   references: [ WeekDayRegex ]
 WeekDayStart: !simpleRegex
-  def: ^[\.]
+  def: ^\b$
 DateYearRegex: !nestedRegex
   def: (?<year>{YearRegex}|(?<!,\s?){TwoDigitYearRegex}|{TwoDigitYearRegex}(?=(\.(?!\d)|[?!;]|$)))
   references: [ YearRegex, TwoDigitYearRegex ]

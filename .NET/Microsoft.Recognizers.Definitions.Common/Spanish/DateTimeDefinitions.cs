@@ -114,7 +114,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public static readonly string OfMonthRegex = $@"^\s*((d[ií]a\s+)?d[eo]\s+)?{MonthSuffixRegex}";
       public static readonly string MonthEndRegex = $@"({MonthRegex}\s*(el)?\s*$)";
       public static readonly string WeekDayEnd = $@"{WeekDayRegex}\s*,?\s*$";
-      public const string WeekDayStart = @"^[\.]";
+      public const string WeekDayStart = @"^\b$";
       public static readonly string DateYearRegex = $@"(?<year>{YearRegex}|(?<!,\s?){TwoDigitYearRegex}|{TwoDigitYearRegex}(?=(\.(?!\d)|[?!;]|$)))";
       public static readonly string DateExtractor1 = $@"\b({WeekDayRegex}(\s+|\s*,\s*))?(?<!\d[.,]){DayRegex}((\s*(d[eo])|[/\\\.\-])\s*)?{MonthRegex}\b";
       public static readonly string DateExtractor2 = $@"\b((el\s+d[ií]a|{WeekDayRegex})(\s+|\s*,\s*))?(?<!\d[.,])(({DayRegex}((\s+(d[eo]\s+)?|\s*[.,/-]\s*){MonthRegex}((\s+(del?\s+)?|\s*[.,/-]\s*){DateYearRegex}\b)?|\s+(d[eo]\s+){MonthNumRegex}\s+(del?\s+{DateYearRegex}\b)))|{BaseDateTime.FourDigitYearRegex}\s*[.,/-]?\s*(el\s+d[ií]a\s+)?{DayRegex}(\s+(d[eo]\s+)?|\s*[.,/-]\s*){MonthRegex})";
