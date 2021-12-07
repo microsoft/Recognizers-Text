@@ -24,57 +24,57 @@ namespace Microsoft.Recognizers.Definitions.Swedish
       public const string LangMarker = @"Swe";
       public const bool CompoundNumberLanguage = true;
       public const bool MultiDecimalSeparatorCulture = true;
-      public const string RoundNumberIntegerRegex = @"(hundra|tusen|miljon(er)?|miljard(er)?|biljon(er)?|biljard(er)?|triljon(er)?)";
-      public const string ZeroToNineIntegerRegex = @"(tre|sju|åtta|fyra|fem|noll|nio|ett|en|två|sex)";
-      public const string TwoToNineIntegerRegex = @"(tre|sju|åtta|fyra|fem|nio|två|sex)";
-      public const string NegativeNumberTermsRegex = @"(?<negTerm>((minus|negativ(t)?)\s+))";
-      public static readonly string NegativeNumberSignRegex = $@"^({NegativeNumberTermsRegex}).*";
-      public const string AnIntRegex = @"(e(n|tt))(?=\s)";
-      public const string TenToNineteenIntegerRegex = @"(sjutton|tretton|fjorton|arton|nitton|femton|sexton|elva|tolv|tio)";
-      public const string TensNumberIntegerRegex = @"(sjuttio|tjugo|trettio|åttio|nittio|fyrtio|femtio|sextio)";
-      public static readonly string SeparaIntRegex = $@"((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(och\s+)?|\s*-\s*)?{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})(\s*{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\s*{RoundNumberIntegerRegex})+))";
-      public static readonly string AllIntRegex = $@"(((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(och\s+)?|\s*-\s*)?{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|({ZeroToNineIntegerRegex}|{AnIntRegex}))?(\s*{RoundNumberIntegerRegex})))*{SeparaIntRegex})";
-      public const string PlaceHolderPureNumber = @"\b";
-      public const string PlaceHolderDefault = @"\D|\b";
-      public static readonly Func<string, string> NumbersWithPlaceHolder = (placeholder) => $@"(((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!([\.,]\d+[a-zA-Z]))(?={placeholder})";
-      public static readonly string NumbersWithSuffix = $@"(((?<!\d+\s*)-\s*)|(?<=\b))\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)";
-      public static readonly string RoundNumberIntegerRegexWithLocks = $@"(?<=\b)\d+\s*{RoundNumberIntegerRegex}(?=\b)";
-      public const string NumbersWithDozenSuffix = @"(((?<!\d+\s*)-\s*)|(?<=\b))\d+\s+dussin(?=\b)";
-      public static readonly string AllIntRegexWithLocks = $@"((?<=\b){AllIntRegex}(?=\b))";
-      public static readonly string AllIntRegexWithDozenSuffixLocks = $@"(?<=\b)(((ett\s+)?halvt\s+dussin)|({AllIntRegex}\s+dussin))(?=\b)";
-      public const string RoundNumberOrdinalRegex = @"(hundrade|tusende|miljonte|miljardte|biljonte|biljardte|triljonte|triljardte)";
-      public const string NumberOrdinalRegex = @"(först(e|a)|andr(a|e)|tredje|fjärde|femte|sjätte|sjunde|åttonde|nionde|tioende|elfte|tolfte|trettonde|fjortonde|femtonde|sextonde|sjuttonde|artonde|nittonde|tjugonde|trettionde|fyrtionde|femtionde|sextionde|sjuttionde|åttionde|nittionde)";
-      public const string RelativeOrdinalRegex = @"(?<relativeOrdinal>(\bnäst(a|e)|\bföregående|\bnäst\s+sist(a|e)|\bsist(a|e)|\bnuvarande|\b(före|efter)\s+nuvarande|\bförr(a|e)|\btredje\s+från\s+slutet|\bsenaste|\btidigare|\bföre\s+den\s+sist(a|e)|\b(innan|efter|före)\s+sist(a|e)))";
-      public static readonly string BasicOrdinalRegex = $@"({NumberOrdinalRegex}|{RelativeOrdinalRegex})";
-      public static readonly string SuffixBasicOrdinalRegex = $@"((((({TensNumberIntegerRegex}(\s+(och\s+)?|\s*-?\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(och\s+)?)*({TensNumberIntegerRegex}(\s+|\s*-?\s*))?{BasicOrdinalRegex})";
-      public static readonly string SuffixRoundNumberOrdinalRegex = $@"(({AllIntRegex}\s*){RoundNumberOrdinalRegex})";
-      public static readonly string AllOrdinalRegex = $@"({SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})";
-      public const string OrdinalSuffixRegex = @"(?<=\b)(?:(\d*(1:(e|a)|2:(a|e)|3:e|4:e|5:e|6:e|7:e|8:e|9:e|0:e))|(11:e|12:e))(?=\b)";
-      public const string OrdinalNumericRegex = @"(?<=\b)(?:\d{1,3}(\s*,\s*\d{3})*\s*(:(e|a)))(?=\b)";
-      public static readonly string OrdinalRoundNumberRegex = $@"(?<!(en|ett)\s+)?{RoundNumberOrdinalRegex}";
-      public static readonly string OrdinalSwedishRegex = $@"(?<=\b){AllOrdinalRegex}(?=\b)";
-      public const string RoundNumberFractionSwedishRegex = @"(hundradel(s|ar)?|tusendel(s|ar)?|miljon(te)?del(s|ar)?|miljarddel(s|ar)?|biljon(te)?del(s|ar)?|biljarddel(s|ar)?|triljon(te)?del(s|ar)?|triljarddel(s|ar)?)";
-      public const string FractionNotationWithSpacesRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))";
-      public static readonly string FractionNotationRegex = $@"{BaseNumbers.FractionNotationRegex}";
-      public static readonly string FractionNounRegex = $@"(?<=\b)({AllIntRegex}\s+(och\s+)?)?({AllIntRegex})(\s*|\s*-\s*)((({AllOrdinalRegex})|({RoundNumberFractionSwedishRegex}))((de)?l(s|ar)?)?|halvor|kvart(ar|s))(?=\b)";
-      public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)((({AllIntRegex}\s+(och\s+)?)?(en|ett)?(\s+|\s*-\s*)(?!\bförsta\b|\bandra\b)(({AllOrdinalRegex})|({RoundNumberFractionSwedishRegex})|halv(t)?|kvart(s)?))|(halva|hälften))(?=\b)";
-      public const string FractionOverRegex = @"(genom|delat\s+(med|på)|delad\s+(med|på)|dividerat\s+(med|på)|dividerad\s+(med|på)|(ut)?av|på)";
-      public static readonly string FractionPrepositionRegex = $@"(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<![\.,])\d+))\s+{FractionOverRegex}\s+(?<denominator>({AllIntRegex})|(\d+)(?![\.,]))(?=\b)";
-      public static readonly string FractionPrepositionWithinPercentModeRegex = $@"(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<![\.,])\d+))\s+genom\s+(?<denominator>({AllIntRegex})|(\d+)(?![\.,]))(?=\b)";
-      public static readonly string AllPointRegex = $@"((\s+{ZeroToNineIntegerRegex})+|(\s+{SeparaIntRegex}))";
-      public static readonly string AllFloatRegex = $@"{AllIntRegex}(\s+komma){AllPointRegex}";
-      public static readonly string DoubleWithMultiplierRegex = $@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)";
-      public const string DoubleExponentialNotationRegex = @"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))(\d+([\.,]\d+)?)e([+-]*[1-9]\d*)(?=\b)";
-      public const string DoubleCaretExponentialNotationRegex = @"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))(\d+([\.,]\d+)?)\^([+-]*[1-9]\d*)(?=\b)";
-      public static readonly Func<string, string> DoubleDecimalPointRegex = (placeholder) => $@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+(?!([\.,]\d+))(?={placeholder})";
-      public static readonly Func<string, string> DoubleWithoutIntegralRegex = (placeholder) => $@"(?<=\s|^)(?<!(\d+))[\.,]\d+(?!([\.,]\d+))(?={placeholder})";
-      public static readonly string DoubleWithRoundNumber = $@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+\s+{RoundNumberIntegerRegex}(?=\b)";
-      public static readonly string DoubleAllFloatRegex = $@"((?<=\b){AllFloatRegex}(?=\b))";
-      public const string ConnectorRegex = @"(?<spacer>och)";
-      public static readonly string NumberWithSuffixPercentage = $@"(?<!%)({BaseNumbers.NumberReplaceToken})(\s*)(%(?!{BaseNumbers.NumberReplaceToken})|(procent|procentenheter)\b)";
-      public static readonly string FractionNumberWithSuffixPercentage = $@"(({BaseNumbers.FractionNumberReplaceToken})\s+av)";
-      public static readonly string NumberWithPrefixPercentage = $@"(procent\s+av)(\s*)({BaseNumbers.NumberReplaceToken})";
-      public static readonly string NumberWithPrepositionPercentage = $@"({BaseNumbers.NumberReplaceToken})\s*(ut\s+av)\s*({BaseNumbers.NumberReplaceToken})";
+      public const string RoundNumberIntegerRegex = @"(?#RoundNumberIntegerRegex)(hundra|tusen|miljon(er)?|miljard(er)?|biljon(er)?|biljard(er)?|triljon(er)?)";
+      public const string ZeroToNineIntegerRegex = @"(?#ZeroToNineIntegerRegex)(tre|sju|åtta|fyra|fem|noll|nio|ett|en|två|sex)";
+      public const string TwoToNineIntegerRegex = @"(?#TwoToNineIntegerRegex)(tre|sju|åtta|fyra|fem|nio|två|sex)";
+      public const string NegativeNumberTermsRegex = @"(?#NegativeNumberTermsRegex)(?<negTerm>((minus|negativ(t)?)\s+))";
+      public static readonly string NegativeNumberSignRegex = $@"(?#NegativeNumberSignRegex)^({NegativeNumberTermsRegex}).*";
+      public const string AnIntRegex = @"(?#AnIntRegex)(e(n|tt))(?=\s)";
+      public const string TenToNineteenIntegerRegex = @"(?#TenToNineteenIntegerRegex)(sjutton|tretton|fjorton|arton|nitton|femton|sexton|elva|tolv|tio)";
+      public const string TensNumberIntegerRegex = @"(?#TensNumberIntegerRegex)(sjuttio|tjugo|trettio|åttio|nittio|fyrtio|femtio|sextio)";
+      public static readonly string SeparaIntRegex = $@"(?#SeparaIntRegex)((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(och\s+)?|\s*-\s*)?{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})(\s*{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\s*{RoundNumberIntegerRegex})+))";
+      public static readonly string AllIntRegex = $@"(?#AllIntRegex)(((({TenToNineteenIntegerRegex}|({TensNumberIntegerRegex}(\s+(och\s+)?|\s*-\s*)?{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|({ZeroToNineIntegerRegex}|{AnIntRegex}))?(\s*{RoundNumberIntegerRegex})))*{SeparaIntRegex})";
+      public const string PlaceHolderPureNumber = @"(?#PlaceHolderPureNumber)\b";
+      public const string PlaceHolderDefault = @"(?#PlaceHolderDefault)\D|\b";
+      public static readonly Func<string, string> NumbersWithPlaceHolder = (placeholder) => $@"(?#NumbersWithPlaceHolder)(((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!([\.,]\d+[a-zA-Z]))(?={placeholder})";
+      public static readonly string NumbersWithSuffix = $@"(?#NumbersWithSuffix)(((?<!\d+\s*)-\s*)|(?<=\b))\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)";
+      public static readonly string RoundNumberIntegerRegexWithLocks = $@"(?#RoundNumberIntegerRegexWithLocks)(?<=\b)\d+\s*{RoundNumberIntegerRegex}(?=\b)";
+      public const string NumbersWithDozenSuffix = @"(?#NumbersWithDozenSuffix)(((?<!\d+\s*)-\s*)|(?<=\b))\d+\s+dussin(?=\b)";
+      public static readonly string AllIntRegexWithLocks = $@"(?#AllIntRegexWithLocks)((?<=\b){AllIntRegex}(?=\b))";
+      public static readonly string AllIntRegexWithDozenSuffixLocks = $@"(?#AllIntRegexWithDozenSuffixLocks)(?<=\b)(((ett\s+)?halvt\s+dussin)|({AllIntRegex}\s+dussin))(?=\b)";
+      public const string RoundNumberOrdinalRegex = @"(?#RoundNumberOrdinalRegex)(hundrade|tusende|miljonte|miljardte|biljonte|biljardte|triljonte|triljardte)";
+      public const string NumberOrdinalRegex = @"(?#NumberOrdinalRegex)(först(e|a)|andr(a|e)|tredje|fjärde|femte|sjätte|sjunde|åttonde|nionde|tioende|elfte|tolfte|trettonde|fjortonde|femtonde|sextonde|sjuttonde|artonde|nittonde|tjugonde|trettionde|fyrtionde|femtionde|sextionde|sjuttionde|åttionde|nittionde)";
+      public const string RelativeOrdinalRegex = @"(?#RelativeOrdinalRegex)(?<relativeOrdinal>(\bnäst(a|e)|\bföregående|\bnäst\s+sist(a|e)|\bsist(a|e)|\bnuvarande|\b(före|efter)\s+nuvarande|\bförr(a|e)|\btredje\s+från\s+slutet|\bsenaste|\btidigare|\bföre\s+den\s+sist(a|e)|\b(innan|efter|före)\s+sist(a|e)))";
+      public static readonly string BasicOrdinalRegex = $@"(?#BasicOrdinalRegex)({NumberOrdinalRegex}|{RelativeOrdinalRegex})";
+      public static readonly string SuffixBasicOrdinalRegex = $@"(?#SuffixBasicOrdinalRegex)((((({TensNumberIntegerRegex}(\s+(och\s+)?|\s*-?\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}?|{AnIntRegex})(\s*{RoundNumberIntegerRegex})+)\s*(och\s+)?)*({TensNumberIntegerRegex}(\s+|\s*-?\s*))?{BasicOrdinalRegex})";
+      public static readonly string SuffixRoundNumberOrdinalRegex = $@"(?#SuffixRoundNumberOrdinalRegex)(({AllIntRegex}\s*){RoundNumberOrdinalRegex})";
+      public static readonly string AllOrdinalRegex = $@"(?#AllOrdinalRegex)({SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})";
+      public const string OrdinalSuffixRegex = @"(?#OrdinalSuffixRegex)(?<=\b)(?:(\d*(1:(e|a)|2:(a|e)|3:e|4:e|5:e|6:e|7:e|8:e|9:e|0:e))|(11:e|12:e))(?=\b)";
+      public const string OrdinalNumericRegex = @"(?#OrdinalNumericRegex)(?<=\b)(?:\d{1,3}(\s*,\s*\d{3})*\s*(:(e|a)))(?=\b)";
+      public static readonly string OrdinalRoundNumberRegex = $@"(?#OrdinalRoundNumberRegex)(?<!(en|ett)\s+)?{RoundNumberOrdinalRegex}";
+      public static readonly string OrdinalSwedishRegex = $@"(?#OrdinalSwedishRegex)(?<=\b){AllOrdinalRegex}(?=\b)";
+      public const string RoundNumberFractionSwedishRegex = @"(?#RoundNumberFractionSwedishRegex)(hundradel(s|ar)?|tusendel(s|ar)?|miljon(te)?del(s|ar)?|miljarddel(s|ar)?|biljon(te)?del(s|ar)?|biljarddel(s|ar)?|triljon(te)?del(s|ar)?|triljarddel(s|ar)?)";
+      public const string FractionNotationWithSpacesRegex = @"(?#FractionNotationWithSpacesRegex)(((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))";
+      public static readonly string FractionNotationRegex = $@"(?#FractionNotationRegex){BaseNumbers.FractionNotationRegex}";
+      public static readonly string FractionNounRegex = $@"(?#FractionNounRegex)(?<=\b)({AllIntRegex}\s+(och\s+)?)?({AllIntRegex})(\s*|\s*-\s*)((({AllOrdinalRegex})|({RoundNumberFractionSwedishRegex}))((de)?l(s|ar(na)?)?)?|halvor|kvart(ar|s))(?=\b)";
+      public static readonly string FractionNounWithArticleRegex = $@"(?#FractionNounWithArticleRegex)(?<=\b)((({AllIntRegex}\s+(och\s+)?)?(en|ett)?(\s+|\s*-\s*)(?!\bförsta\b|\bandra\b)(({AllOrdinalRegex})|({RoundNumberFractionSwedishRegex})|halv(t)?|kvart(s)?))|(halva|hälften))(?=\b)";
+      public const string FractionOverRegex = @"(?#FractionOverRegex)(genom|delat\s+(med|på)|delad\s+(med|på)|dividerat\s+(med|på)|dividerad\s+(med|på)|(ut)?av|på)";
+      public static readonly string FractionPrepositionRegex = $@"(?#FractionPrepositionRegex)(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<![\.,])\d+))\s+{FractionOverRegex}\s+(?<denominator>({AllIntRegex})|(\d+)(?![\.,]))(?=\b)";
+      public static readonly string FractionPrepositionWithinPercentModeRegex = $@"(?#FractionPrepositionWithinPercentModeRegex)(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<![\.,])\d+))\s+genom\s+(?<denominator>({AllIntRegex})|(\d+)(?![\.,]))(?=\b)";
+      public static readonly string AllPointRegex = $@"(?#AllPointRegex)((\s+{ZeroToNineIntegerRegex})+|(\s+{SeparaIntRegex}))";
+      public static readonly string AllFloatRegex = $@"(?#AllFloatRegex){AllIntRegex}(\s+komma){AllPointRegex}";
+      public static readonly string DoubleWithMultiplierRegex = $@"(?#DoubleWithMultiplierRegex)(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)";
+      public const string DoubleExponentialNotationRegex = @"(?#DoubleExponentialNotationRegex)(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))(\d+([\.,]\d+)?)e([+-]*[1-9]\d*)(?=\b)";
+      public const string DoubleCaretExponentialNotationRegex = @"(?#DoubleCaretExponentialNotationRegex)(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))(\d+([\.,]\d+)?)\^([+-]*[1-9]\d*)(?=\b)";
+      public static readonly Func<string, string> DoubleDecimalPointRegex = (placeholder) => $@"(?#DoubleDecimalPointRegex)(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+(?!([\.,]\d+))(?={placeholder})";
+      public static readonly Func<string, string> DoubleWithoutIntegralRegex = (placeholder) => $@"(?#DoubleWithoutIntegralRegex)(?<=\s|^)(?<!(\d+))[\.,]\d+(?!([\.,]\d+))(?={placeholder})";
+      public static readonly string DoubleWithRoundNumber = $@"(?#DoubleWithRoundNumber)(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))\d+[\.,]\d+\s+{RoundNumberIntegerRegex}(?=\b)";
+      public static readonly string DoubleAllFloatRegex = $@"(?#DoubleAllFloatRegex)((?<=\b){AllFloatRegex}(?=\b))";
+      public const string ConnectorRegex = @"(?#ConnectorRegex)(?<spacer>och)";
+      public static readonly string NumberWithSuffixPercentage = $@"(?#NumberWithSuffixPercentage)(?<!%)({BaseNumbers.NumberReplaceToken})(\s*)(%(?!{BaseNumbers.NumberReplaceToken})|(procent|procentenheter)\b)";
+      public static readonly string FractionNumberWithSuffixPercentage = $@"(?#FractionNumberWithSuffixPercentage)(({BaseNumbers.FractionNumberReplaceToken})\s+av)";
+      public static readonly string NumberWithPrefixPercentage = $@"(?#NumberWithPrefixPercentage)(procent\s+av)(\s*)({BaseNumbers.NumberReplaceToken})";
+      public static readonly string NumberWithPrepositionPercentage = $@"(?#NumberWithPrepositionPercentage)({BaseNumbers.NumberReplaceToken})\s*(ut\s+av)\s*({BaseNumbers.NumberReplaceToken})";
       public const string TillRegex = @"(to|through|--|-|—|——|~|–)";
       public const string MoreRegex = @"(?:(bigger|greater|more|higher|larger)(\s+than)?|above|over|exceed(ed|ing)?|surpass(ed|ing)?|(?<!<|=)>)";
       public const string LessRegex = @"(?:(less|lower|smaller|fewer)(\s+than)?|below|under|(?<!>|=)<)";
@@ -220,9 +220,124 @@ namespace Microsoft.Recognizers.Definitions.Swedish
             { @"miljardte", 1000000000 },
             { @"biljonte", 1000000000000 },
             { @"biljardte", 1000000000000000 },
+            { @"triljonte", 1000000000000000000 }
+        };
+      public static readonly Dictionary<string, long> RoundNumberMap = new Dictionary<string, long>
+        {
+            { @"hundra", 100 },
+            { @"tusen", 1000 },
+            { @"miljon", 1000000 },
+            { @"milj", 1000000 },
+            { @"miljoner", 1000000 },
+            { @"miljard", 1000000000 },
+            { @"miljarder", 1000000000 },
+            { @"biljon", 1000000000000 },
+            { @"biljoner", 1000000000000 },
+            { @"biljard", 1000000000000000 },
+            { @"bijarder", 1000000000000000 },
+            { @"triljon", 1000000000000000000 },
+            { @"triljoner", 1000000000000000000 },
+            { @"hundrade", 100 },
+            { @"tusende", 1000 },
+            { @"miljonte", 1000000 },
+            { @"miljardte", 1000000000 },
+            { @"biljonte", 1000000000000 },
+            { @"biljardte", 1000000000000000 },
             { @"triljonte", 1000000000000000000 },
+            { @"hundratals", 100 },
+            { @"tusentals", 1000 },
+            { @"miljontals", 1000000 },
+            { @"miljardtals", 1000000000 },
+            { @"biljontals", 1000000000000 },
+            { @"biljardtals", 1000000000000000 },
+            { @"triljontals", 1000000000000000000 },
+            { @"dussin", 12 },
+            { @"tjog", 20 },
+            { @"dussintals", 12 },
+            { @"k", 1000 },
+            { @"m", 1000000 },
+            { @"g", 1000000000 },
+            { @"b", 1000000000 },
+            { @"t", 1000000000000 }
+        };
+      public static readonly Dictionary<string, long> SwedishWrittenFractionLookupMap = new Dictionary<string, long>
+        {
+            { @"tjugoförst", 21 },
+            { @"tjugoandr", 22 },
+            { @"tjugotred", 23 },
+            { @"tjugofjärd", 24 },
+            { @"tjugofemt", 25 },
+            { @"tjugosjätted", 26 },
+            { @"tjugosjund", 27 },
+            { @"tjugoåttond", 28 },
+            { @"tjugoniond", 29 },
+            { @"trettioförst", 31 },
+            { @"trettoiandr", 32 },
+            { @"trettiotred", 33 },
+            { @"trettiofjärd", 34 },
+            { @"trettiofemt", 35 },
+            { @"trettiosjätted", 36 },
+            { @"trettiosjund", 37 },
+            { @"trettioåttond", 38 },
+            { @"trettioniond", 39 },
+            { @"fyrtioförst", 41 },
+            { @"fyrtioandr", 42 },
+            { @"fyrtiotred", 43 },
+            { @"fyrtiofjärd", 44 },
+            { @"fyrtiofemt", 45 },
+            { @"fyrtiosjätted", 46 },
+            { @"fyrtiosjund", 47 },
+            { @"fyrtioåttond", 48 },
+            { @"fyrtioniond", 49 },
+            { @"femtioförst", 51 },
+            { @"femtioandr", 52 },
+            { @"femtiotred", 53 },
+            { @"femtiofjärd", 54 },
+            { @"femtiofemt", 55 },
+            { @"femtiosjätted", 56 },
+            { @"femtiosjund", 57 },
+            { @"femtioåttond", 58 },
+            { @"femtioniond", 59 },
+            { @"sextioförst", 61 },
+            { @"sextioandr", 62 },
+            { @"sextiotred", 63 },
+            { @"sextiofjärd", 64 },
+            { @"sextiofemt", 65 },
+            { @"sextiosjätted", 66 },
+            { @"sextiosjund", 67 },
+            { @"sextioåttond", 68 },
+            { @"sextioniond", 69 },
+            { @"sjuttioförst", 71 },
+            { @"sjuttioandr", 72 },
+            { @"sjuttiotred", 73 },
+            { @"sjuttiofjärd", 74 },
+            { @"sjuttiofemt", 75 },
+            { @"sjuttiosjätted", 76 },
+            { @"sjuttiosjund", 77 },
+            { @"sjuttioåttond", 78 },
+            { @"sjuttioniond", 79 },
+            { @"åttioförst", 81 },
+            { @"åttioandr", 82 },
+            { @"åttiotred", 83 },
+            { @"åttiofjärd", 84 },
+            { @"åttiofemt", 85 },
+            { @"åttiosjätted", 86 },
+            { @"åttiosjund", 87 },
+            { @"åttioåttond", 88 },
+            { @"åttioniond", 89 },
+            { @"nittioförst", 91 },
+            { @"nittioandr", 92 },
+            { @"nittiotred", 93 },
+            { @"nittiofjärd", 94 },
+            { @"nittiofemt", 95 },
+            { @"nittiosjätted", 96 },
+            { @"nittiosjund", 97 },
+            { @"nittioåttond", 98 },
+            { @"nittioniond", 99 },
             { @"förstadelar", 1 },
             { @"förstedelar", 1 },
+            { @"förstedel", 1 },
+            { @"förstadel", 1 },
             { @"andradelar", 2 },
             { @"andredelar", 2 },
             { @"tredjedelar", 3 },
@@ -232,6 +347,8 @@ namespace Microsoft.Recognizers.Definitions.Swedish
             { @"fjärdedel", 4 },
             { @"fjärdedels", 4 },
             { @"kvartar", 4 },
+            { @"kvart", 4 },
+            { @"kvarts", 4 },
             { @"femtedelar", 5 },
             { @"femtedel", 5 },
             { @"femtedels", 5 },
@@ -388,44 +505,6 @@ namespace Microsoft.Recognizers.Definitions.Swedish
             { @"triljontedels", 1000000000000000000 },
             { @"triljondels", 1000000000000000000 },
             { @"triljondel", 1000000000000000000 }
-        };
-      public static readonly Dictionary<string, long> RoundNumberMap = new Dictionary<string, long>
-        {
-            { @"hundra", 100 },
-            { @"tusen", 1000 },
-            { @"miljon", 1000000 },
-            { @"milj", 1000000 },
-            { @"miljoner", 1000000 },
-            { @"miljard", 1000000000 },
-            { @"miljarder", 1000000000 },
-            { @"biljon", 1000000000000 },
-            { @"biljoner", 1000000000000 },
-            { @"biljard", 1000000000000000 },
-            { @"bijarder", 1000000000000000 },
-            { @"triljon", 1000000000000000000 },
-            { @"triljoner", 1000000000000000000 },
-            { @"hundrade", 100 },
-            { @"tusende", 1000 },
-            { @"miljonte", 1000000 },
-            { @"miljardte", 1000000000 },
-            { @"biljonte", 1000000000000 },
-            { @"biljardte", 1000000000000000 },
-            { @"triljonte", 1000000000000000000 },
-            { @"hundratals", 100 },
-            { @"tusentals", 1000 },
-            { @"miljontals", 1000000 },
-            { @"miljardtals", 1000000000 },
-            { @"biljontals", 1000000000000 },
-            { @"biljardtals", 1000000000000000 },
-            { @"triljontals", 1000000000000000000 },
-            { @"dussin", 12 },
-            { @"tjog", 20 },
-            { @"dussintals", 12 },
-            { @"k", 1000 },
-            { @"m", 1000000 },
-            { @"g", 1000000000 },
-            { @"b", 1000000000 },
-            { @"t", 1000000000000 }
         };
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {
