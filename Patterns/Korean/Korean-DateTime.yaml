@@ -212,6 +212,10 @@ WeekToWeek: !nestedRegex
 RelativePeriodRegex: !nestedRegex
   def: (({SpecialDayRegex}|지금|올 해)\s*{DatePeriodTillRegex}\s*((\d+\s*주)|(하루|이틀|사흘|나흘|닷새|엿새|이흐레|여드레|아흐레|열흘)|(지금))(\s*반)?(\s*[전후뒤앞])?\s*{DatePeriodRangeSuffixRegex})
   references: [SpecialDayRegex, DatePeriodTillRegex, DatePeriodRangeSuffixRegex]
+FirstLastOfYearRegex: !nestedRegex
+  # TODO: modify below regex according to the counterpart in Chinese
+  def: (({DatePeriodYearInCJKRegex}|{YearRegex}|(?<yearrel>明年|今年|去年))的?)((?<first>前)|(?<last>(最后|最後)))
+  references: [YearRegex,DatePeriodYearInCJKRegex]
 PastRegex: !simpleRegex
   def: (?<past>지난|과거)
 FutureRegex: !simpleRegex

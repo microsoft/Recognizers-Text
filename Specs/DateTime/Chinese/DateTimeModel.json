@@ -6651,5 +6651,205 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Created On 是在 2021年的第一周",
+    "Context": {
+      "ReferenceDateTime": "2018-11-29T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2021年的第一周",
+        "Start": 14,
+        "End": 22,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-W01",
+              "type": "daterange",
+              "start": "2021-01-04",
+              "end": "2021-01-11"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Created On 是在 2021年的第二周",
+    "Context": {
+      "ReferenceDateTime": "2018-11-29T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2021年的第二周",
+        "Start": 14,
+        "End": 22,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-W02",
+              "type": "daterange",
+              "start": "2021-01-11",
+              "end": "2021-01-18"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "他们将在2021年的第三个月离开",
+    "Context": {
+      "ReferenceDateTime": "2018-11-29T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2021年的第三个月",
+        "Start": 4,
+        "End": 13,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-03",
+              "type": "daterange",
+              "start": "2021-03-01",
+              "end": "2021-04-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "明年第九个月我们将进行进度审查",
+    "Context": {
+      "ReferenceDateTime": "2021-11-29T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "明年第九个月",
+        "Start": 0,
+        "End": 5,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2022-09",
+              "type": "daterange",
+              "start": "2022-09-01",
+              "end": "2022-10-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2021年的前2周的客房已被订满",
+    "Context": {
+      "ReferenceDateTime": "2018-11-29T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2021年的前2周",
+        "Start": 0,
+        "End": 8,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2021-01-04,2021-01-18,P2W)",
+              "type": "daterange",
+              "start": "2021-01-04",
+              "end": "2021-01-18"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "维护计划在今年的最後 3 週进行",
+    "Context": {
+      "ReferenceDateTime": "2019-11-29T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "今年的最後 3 週",
+        "Start": 5,
+        "End": 13,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-12-09,2019-12-30,P3W)",
+              "type": "daterange",
+              "start": "2019-12-09",
+              "end": "2019-12-30"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "2021 年的最後 4 个月的结果已经上市",
+    "Context": {
+      "ReferenceDateTime": "2018-11-29T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2021 年的最後 4 个月",
+        "Start": 0,
+        "End": 13,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2021-09-01,2022-01-01,P4M)",
+              "type": "daterange",
+              "start": "2021-09-01",
+              "end": "2022-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "他们在去年的前10天访问了巴黎",
+    "Context": {
+      "ReferenceDateTime": "2021-11-29T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "去年的前10天",
+        "Start": 3,
+        "End": 9,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2020-01-01,2020-01-11,P10D)",
+              "type": "daterange",
+              "start": "2020-01-01",
+              "end": "2020-01-11"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

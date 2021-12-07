@@ -62,6 +62,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
 
         public static readonly Regex FutureRegex = new Regex(DateTimeDefinitions.FutureRegex, RegexFlags);
 
+        public static readonly Regex FirstLastOfYearRegex = new Regex(DateTimeDefinitions.FirstLastOfYearRegex, RegexFlags);
+
         public static readonly Regex SeasonWithYear = new Regex(DateTimeDefinitions.SeasonWithYear, RegexFlags);
 
         public static readonly Regex QuarterRegex = new Regex(DateTimeDefinitions.QuarterRegex, RegexFlags);
@@ -138,6 +140,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
         Regex ICJKDatePeriodExtractorConfiguration.FutureRegex => FutureRegex;
 
         Regex ICJKDatePeriodExtractorConfiguration.PastRegex => PastRegex;
+
+        Regex ICJKDatePeriodExtractorConfiguration.FirstLastOfYearRegex => FirstLastOfYearRegex;
+
+        Regex ICJKDatePeriodExtractorConfiguration.UnitRegex => UnitRegex;
 
         Regex ICJKDatePeriodExtractorConfiguration.NumberCombinedWithUnit => NumberCombinedWithUnit;
 
