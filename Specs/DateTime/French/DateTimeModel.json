@@ -21332,5 +21332,107 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Je dois être de retour au bureau à seize heures",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "seize heures",
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T16",
+              "type": "time",
+              "value": "16:00:00"
+            }
+          ]
+        },
+        "Start": 35,
+        "End": 46
+      }
+    ]
+  },
+  {
+    "Input": "Je dois être de retour au bureau à huit heures",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "huit heures",
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T08",
+              "type": "time",
+              "value": "08:00:00"
+            },
+			{
+              "timex": "T20",
+              "type": "time",
+              "value": "20:00:00"
+            }
+          ]
+        },
+        "Start": 35,
+        "End": 45
+      }
+    ]
+  },
+  {
+    "Input": "Je vais partir à une heures",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "une heures",
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T01",
+              "type": "time",
+              "value": "01:00:00"
+            },
+			{
+              "timex": "T13",
+              "type": "time",
+              "value": "13:00:00"
+            }
+          ]
+        },
+        "Start": 17,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "la réunion commence à vingt et un heures",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "vingt et un heures",
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T21",
+              "type": "time",
+              "value": "21:00:00"
+            }
+          ]
+        },
+        "Start": 22,
+        "End": 39
+      }
+    ]
   }
 ]
