@@ -54,7 +54,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (er.Type.Equals(ParserName, StringComparison.Ordinal))
             {
-                var innerResult = ParseHolidayRegexMatch(er.Text, referenceDate);
+                var innerResult = ParseHolidayRegexMatch(er, referenceDate);
 
                 if (innerResult.Success)
                 {
@@ -207,16 +207,25 @@ namespace Microsoft.Recognizers.Text.DateTime
             return new Tuple<DateObject, DateObject>(startDate, endDate);
         }
 
-        private DateTimeResolutionResult ParseHolidayRegexMatch(string text, DateObject referenceDate)
+        private DateTimeResolutionResult ParseHolidayRegexMatch(ExtractResult er, DateObject referenceDate)
         {
             foreach (var regex in this.config.HolidayRegexList)
             {
-                var match = regex.MatchExact(text, trim: true);
+                Match match;
+                if (er.Metadata != null && er.Metadata.IsHoliday)
+                {
+                    match = regex.Match(er.Text);
+                }
+                else
+                {
+                    var exacMatch = regex.MatchExact(er.Text, trim: true);
+                    match = exacMatch.Match;
+                }
 
                 if (match.Success)
                 {
                     // Value string will be set in Match2Date method
-                    var ret = Match2Date(match.Match, referenceDate);
+                    var ret = Match2Date(match, referenceDate);
                     return ret;
                 }
             }

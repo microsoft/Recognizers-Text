@@ -152,7 +152,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public static readonly string OfMonth = $@"(^\s*((van|in)\s+)?)({MonthRegex})";
       public static readonly string MonthEnd = $@"{MonthRegex}(\s+de\s*)?$";
       public static readonly string WeekDayEnd = $@"(deze\s+)?{WeekDayRegex}\s*,?\s*$";
-      public const string WeekDayStart = @"^[\.]";
+      public static readonly string WeekDayStart = $@"^\s+(op\s+)?{WeekDayRegex}\b";
       public const string RangeUnitRegex = @"\b(?<unit>ja(ren|ar)|maand(en)?|we(ken|ek)|dag(en)?)\b";
       public const string HourNumRegex = @"\b(?<hournum>nul|een|één|twee|drie|vier|vijf|zes|zeven|acht|negen|tien|elf|elven|twaalf|dertien|veertien|vijftien|zestien|zeventien|achttien|negentien|twintig|eenentwintig|éénentwintig|tweeentwintig|tweeëntwintig|drieëntwintig|vierentwintig)\b";
       public const string MinuteNumRegex = @"(?<minnum>nul|een(?=\s+min(uut)?)|één|twee|drie|vier|vijf|zes|zeven|acht|negen|tien|elf|elven|twaalf|dertien|veertien|vijftien|zestien|zeventien|achttien|negentien|twintig|eenentwintig|éénentwintig|tweeentwintig|tweeëntwintig|drieëntwintig|vierentwintig|vij[fv]entwintig|ze(s|ven)entwintig|achtentwintig|negenentwintig|dertig|eenendertig|tweeëndertig|drieëndertig|vierendertig|vijfendertig|ze(s|ven)endertig|achtendertig|negenendertig|veertig|eenenveertig|tweeënveertig|drieënveertig|vierenveertig|vijfenveertig|ze(s|ven)enveertig|achtenveertig|negenenveertig|eenenvijftig|vijftig|tweeënvijftig|drieënvijftig|vierenvijftig|vijfenvijftig|ze(s|ven)envijftig|achtenvijftig|negenenvijftig)";

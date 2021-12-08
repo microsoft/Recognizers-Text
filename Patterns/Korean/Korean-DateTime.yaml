@@ -34,6 +34,9 @@ DateYearInCJKRegex: !nestedRegex
   references: [ZeroToNineIntegerRegexCJK]
 WeekDayRegex: !simpleRegex
   def: (?<weekday>일요일|월요일|화요일|수요일|목요일|금요일|토요일)
+WeekDayStartEnd: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Japanese
+  def: ^[.]
 LunarRegex: !simpleRegex
   def: 음력
 DateThisRegex: !nestedRegex

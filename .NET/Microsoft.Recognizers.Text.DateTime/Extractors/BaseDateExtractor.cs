@@ -617,6 +617,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
+            // Extend extraction with weekdays like in "Friday two weeks from now", "in 3 weeks on Monday"
+            ret.AddRange(ExtendWithWeekDay(ret, text));
+
             return ret;
         }
 
@@ -691,6 +694,28 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return index;
+        }
+
+        private List<Token> ExtendWithWeekDay(List<Token> ret, string text)
+        {
+            var newRet = new List<Token>();
+            foreach (var er in ret)
+            {
+                var beforeStr = text.Substring(0, er.Start);
+                var afterStr = text.Substring(er.End);
+                var beforeMatch = Config.WeekDayEnd.Match(beforeStr);
+                var afterMatch = Config.WeekDayStart.Match(afterStr);
+                if (beforeMatch.Success || afterMatch.Success)
+                {
+                    var start = beforeMatch.Success ? beforeMatch.Index : er.Start;
+                    var end = beforeMatch.Success ? er.End : er.End + afterMatch.Index + afterMatch.Length;
+                    Metadata metadata = new Metadata { IsDurationDateWithWeekday = true };
+                    Token tok = new Token(start, end, metadata);
+                    newRet.Add(tok);
+                }
+            }
+
+            return newRet;
         }
     }
 }
