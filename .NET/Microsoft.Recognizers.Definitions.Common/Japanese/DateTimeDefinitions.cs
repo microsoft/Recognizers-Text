@@ -38,7 +38,8 @@ namespace Microsoft.Recognizers.Definitions.Japanese
       public const string RegionTitleRegex = @"(昭和|平成|令和|大正|明治|寛政|享和|文化|文政|天保|弘化|嘉永|安政|万延|文久|元治|慶応)";
       public static readonly string DynastyYearRegex = $@"(?<dynasty>{RegionTitleRegex})(?<biasYear>({DynastyStartYear}|\d{{1,2}}|({ZeroToNineIntegerRegexCJK}){{1,3}}))年?";
       public static readonly string DateYearInCJKRegex = $@"(?<yearCJK>({ZeroToNineIntegerRegexCJK}{{2,4}}|{DynastyYearRegex}))年?";
-      public const string WeekDayRegex = @"(?<weekday>日曜日?|月曜日?|火曜日?|水曜日?|木曜日?|金曜日?|土曜日?)\s?";
+      public const string WeekDayRegex = @"(?<weekday>日曜日?|月曜日?|火曜日?|水曜日?|木曜日?|金曜日?|土曜日?)";
+      public static readonly string WeekDayStartEnd = $@"(^(の)?{WeekDayRegex}|{WeekDayRegex}$)";
       public const string LunarRegex = @"(农历|初一|正月|大年|旧暦)";
       public static readonly string DateThisRegex = $@"(这个|这一个|这|这一|本|今週|そ|こ)(的|の)?({WeekDayRegex}|日)";
       public static readonly string DateLastRegex = $@"(上一个|上个|上一|上|最后一个|最后|先週|最後)(的|の)?({WeekDayRegex}|日)";

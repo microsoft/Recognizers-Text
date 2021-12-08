@@ -143,7 +143,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly string OfMonth = $@"^(\s*(day\s+)?of)?\s*{MonthRegex}";
       public static readonly string MonthEnd = $@"{MonthRegex}\s*(the)?\s*$";
       public static readonly string WeekDayEnd = $@"(this\s+)?{WeekDayRegex}\s*,?\s*$";
-      public const string WeekDayStart = @"^[\.]";
+      public static readonly string WeekDayStart = $@"^\s+(on\s+)?{WeekDayRegex}\b";
       public const string RangeUnitRegex = @"\b(?<unit>years?|months?|weeks?|fortnights?)\b";
       public const string HourNumRegex = @"\b(?<hournum>zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)\b";
       public const string MinuteNumRegex = @"(((?<tens>twenty|thirty|fou?rty|fifty)(\s*-?\s*))?(?<minnum>one|two|three|four|five|six|seven|eight|nine)|(?<minnum>ten|eleven|twelve|thirteen|fifteen|eighteen|(four|six|seven|nine)(teen)|twenty|thirty|forty|fifty))";

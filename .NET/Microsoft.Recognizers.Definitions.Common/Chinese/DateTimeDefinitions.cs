@@ -37,6 +37,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public static readonly string DynastyYearRegex = $@"(?<dynasty>{RegionTitleRegex})(?<biasYear>({DynastyStartYear}|\d{{1,3}}|[十拾]?({ZeroToNineIntegerRegexCJK}[十百拾佰]?){{0,3}}))";
       public static readonly string DateYearInCJKRegex = $@"(?<yearCJK>({ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}|{ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}|{ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}|{DynastyYearRegex}))";
       public const string WeekDayRegex = @"(?<weekday>周日|周天|周一|周二|周三|周四|周五|周六|星期一|星期二|星期三|星期四|星期五|星期六|星期日|星期天|礼拜一|礼拜二|礼拜三|礼拜四|礼拜五|礼拜六|礼拜日|礼拜天|禮拜一|禮拜二|禮拜三|禮拜四|禮拜五|禮拜六|禮拜日|禮拜天|週日|週天|週一|週二|週三|週四|週五|週六)";
+      public const string WeekDayStartEnd = @"^[.]";
       public const string LunarRegex = @"(农历|初一|正月|大年(?!龄|纪|级))";
       public static readonly string DateThisRegex = $@"(这个|这一个|这|这一|本){WeekDayRegex}";
       public static readonly string DateLastRegex = $@"(上一个|上个|上一|上|最后一个|最后)(的)?{WeekDayRegex}";

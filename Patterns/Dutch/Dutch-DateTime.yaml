@@ -349,8 +349,9 @@ MonthEnd: !nestedRegex
 WeekDayEnd: !nestedRegex
   def: '(deze\s+)?{WeekDayRegex}\s*,?\s*$'
   references: [ WeekDayRegex ]
-WeekDayStart: !simpleRegex
-  def: ^[\.]
+WeekDayStart: !nestedRegex
+  def: ^\s+(op\s+)?{WeekDayRegex}\b
+  references: [ WeekDayRegex ]
 RangeUnitRegex: !simpleRegex
   def: \b(?<unit>ja(ren|ar)|maand(en)?|we(ken|ek)|dag(en)?)\b
 HourNumRegex: !simpleRegex

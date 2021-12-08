@@ -320,8 +320,9 @@ MonthEnd: !nestedRegex
 WeekDayEnd: !nestedRegex
   def: '(this\s+)?{WeekDayRegex}\s*,?\s*$'
   references: [ WeekDayRegex ]
-WeekDayStart: !simpleRegex
-  def: ^[\.]
+WeekDayStart: !nestedRegex
+  def: ^\s+(on\s+)?{WeekDayRegex}\b
+  references: [ WeekDayRegex ]
 RangeUnitRegex: !simpleRegex
   def: \b(?<unit>years?|months?|weeks?|fortnights?)\b
 HourNumRegex: !simpleRegex
