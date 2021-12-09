@@ -593,6 +593,7 @@
   },
   {
     "Input": "我们有 202107211321363588510367 美元",
+    "NotSupported":"java, javascript, python",
     "Results": [
       {
         "Text": "202107211321363588510367 美元",
