@@ -22464,5 +22464,46 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Schedule a meeting every week starting next week",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "every week",
+        "Start": 19,
+        "End": 28,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1W",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "starting next week",
+        "Start": 30,
+        "End": 47,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-W46",
+              "Mod": "after",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "start": "2016-11-21"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
