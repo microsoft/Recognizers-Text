@@ -5300,6 +5300,7 @@
     "Input": "四千五百六十九万八千三百一十一亿四千八百七十二万五千三百八十二",
     "Comment": "Resolution of long numbers is not correct",
     "IgnoreResolution": true,
+    "NotSupported":"java, javascript, python",
     "Results": [
       {
         "Text": "四千五百六十九万八千三百一十一亿四千八百七十二万五千三百八十二",
