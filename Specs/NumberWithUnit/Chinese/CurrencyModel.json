@@ -571,8 +571,7 @@
         "End": 46
       }
     ]
-  }
-  ,
+  },
   {
     "Input": "我有20个比特币",
     "Results": [
@@ -585,6 +584,27 @@
         },
         "Start": 2,
         "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "发议时，订单号 A202107211321363588510367 可用作",
+    "Results": []
+  },
+  {
+    "Input": "我们有 202107211321363588510367 美元",
+    "NotSupported":"java, javascript, python",
+    "Results": [
+      {
+        "Text": "202107211321363588510367 美元",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "unit": "United States dollar",
+          "value": "2.02107211321364E+23"
+        },
+        "Start": 4,
+        "End": 30
       }
     ]
   }
