@@ -35,6 +35,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
       public const string BuildPrefix = @"";
       public const string BuildSuffix = @"";
       public const string ConnectorToken = @"";
+      public const bool CheckFirstSuffix = true;
       public static readonly Dictionary<string, string> CurrencySuffixList = new Dictionary<string, string>
         {
             { @"Afghan afghani", @"アフガニ" },
@@ -550,7 +551,29 @@ namespace Microsoft.Recognizers.Definitions.Japanese
         };
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {
-            { @"null", @"null" }
+            { @"五角", @"五角大楼" },
+            { @"普尔", @"标准普尔" }
         };
+      public static readonly Dictionary<string, string> TemperatureSuffixList = new Dictionary<string, string>
+        {
+            { @"F", @"華氏|華氏温度|華氏温度の|°f" },
+            { @"K", @"开尔文温度|开氏度|凯氏度|K|k" },
+            { @"R", @"兰氏温度|°r" },
+            { @"C", @"摂氏|摂氏温度|°c|℃" },
+            { @"Degree", @"度" }
+        };
+      public static readonly Dictionary<string, string> TemperaturePrefixList = new Dictionary<string, string>
+        {
+            { @"F", @"華氏|華氏温度|華氏温度の|华氏" },
+            { @"K", @"开氏温度|开氏" },
+            { @"R", @"兰氏温度|兰氏" },
+            { @"C", @"摂氏温度|摂氏" }
+        };
+      public static readonly IList<string> TemperatureAmbiguousValues = new List<string>
+        {
+            @"度",
+            @"k"
+        };
+      public const string HalfUnitRegex = @"半";
     }
 }
