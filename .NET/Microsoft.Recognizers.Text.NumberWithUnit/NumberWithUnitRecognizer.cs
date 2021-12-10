@@ -394,6 +394,20 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     },
                 }));
 
+            RegisterModel<TemperatureModel>(
+                Culture.Japanese,
+                (options) => new TemperatureModel(new Dictionary<IExtractor, IParser>
+                    {
+                    {
+                        new NumberWithUnitExtractor(new Japanese.TemperatureExtractorConfiguration()),
+                        new NumberWithUnitParser(new Japanese.TemperatureParserConfiguration())
+                    },
+                    {
+                        new NumberWithUnitExtractor(new English.TemperatureExtractorConfiguration()),
+                        new NumberWithUnitParser(new English.TemperatureParserConfiguration())
+                    },
+                    }));
+
             RegisterModel<CurrencyModel>(
                 Culture.Korean,
                 (options) => new CurrencyModel(new Dictionary<IExtractor, IParser>
