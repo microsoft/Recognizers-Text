@@ -11,6 +11,7 @@ SUPPORTED_CULTURES = {
     Culture.German: LongFormatMode.DOUBLE_DOT_COMMA,
     Culture.Portuguese: LongFormatMode.DOUBLE_DOT_COMMA,
     Culture.French: LongFormatMode.DOUBLE_DOT_COMMA,
+    Culture.Italian: LongFormatMode.DOUBLE_DOT_COMMA,
     Culture.Japanese: LongFormatMode.DOUBLE_COMMA_DOT
 }
 

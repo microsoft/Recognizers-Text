@@ -9,6 +9,7 @@ from .german import *
 from .spanish import *
 from .chinese import *
 from .french import *
+from .italian import *
 from .japanese import *
 from .number_recognizer import *
 from .parser_factory import *
