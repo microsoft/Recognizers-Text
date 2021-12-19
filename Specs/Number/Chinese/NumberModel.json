@@ -2615,12 +2615,32 @@
   {
     "Input": "百分之五十五点五七九",
     "NotSupported":"java",
-    "Results": []
+    "Results": [
+      {
+        "Text": "五十五点五七九",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "55.579"
+        },
+        "Start": 3,
+        "End": 9
+      }
+    ]
   },
   {
     "Input": "百分之十万零六百五十一",
     "NotSupported":"java",
-    "Results": []
+    "Results": [
+      {
+        "Text": "十万零六百五十一",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "100651"
+        },
+        "Start": 3,
+        "End": 10
+      }
+    ]
   },
   {
     "Input": "一百分之五十五点五七九",
@@ -2745,11 +2765,31 @@
   },
   {
     "Input": "六千零五十一个百分点",
-    "Results": []
+    "Results": [
+      {
+        "Text": "六千零五十一",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "6051"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
   },
   {
     "Input": "六百一十一点二五五个百分点",
-    "Results": []
+    "Results": [
+      {
+        "Text": "六百一十一点二五五",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "611.255"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
   },
   {
     "Input": "负六点六",
@@ -5253,6 +5293,23 @@
         },
         "Start": 0,
         "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "四千五百六十九万八千三百一十一亿四千八百七十二万五千三百八十二",
+    "Comment": "Resolution of long numbers is not correct",
+    "IgnoreResolution": true,
+    "NotSupported":"java, javascript, python",
+    "Results": [
+      {
+        "Text": "四千五百六十九万八千三百一十一亿四千八百七十二万五千三百八十二",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4569831148725382"
+        },
+        "Start": 0,
+        "End": 30
       }
     ]
   }
