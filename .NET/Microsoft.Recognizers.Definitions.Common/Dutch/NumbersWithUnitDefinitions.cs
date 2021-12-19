@@ -154,6 +154,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
             { @"Kilogram", @"kg|kilogram|kilo" },
             { @"Gram", @"g|gram" },
             { @"Milligram", @"mg|milligram" },
+            { @"Microgram", @"μg|microgram" },
             { @"Barrel", @"vat|vaten" },
             { @"Gallon", @"-gallon|gallon" },
             { @"Metric ton", @"metrische ton" },

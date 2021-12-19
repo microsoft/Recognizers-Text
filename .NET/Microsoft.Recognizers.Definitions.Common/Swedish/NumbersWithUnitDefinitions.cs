@@ -150,6 +150,7 @@ namespace Microsoft.Recognizers.Definitions.Swedish
             { @"Barrel", @"-fats|fat" },
             { @"Gram", @"g|gram|-grams" },
             { @"Milligram", @"mg|milligram|-milligrams" },
+            { @"Microgram", @"μg|mikrogram|-mikrograms" },
             { @"Gallon", @"-gallon|gallons|gallon" },
             { @"Metric ton", @"metric tons|metric ton" },
             { @"Ton", @"-ton|ton|-tons|tons|ton" },

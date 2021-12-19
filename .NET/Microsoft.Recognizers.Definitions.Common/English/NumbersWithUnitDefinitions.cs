@@ -853,6 +853,7 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"Kilogram", @"kg|kilogram|kilograms|kilo|kilos" },
             { @"Gram", @"g|gram|grams|gm" },
             { @"Milligram", @"mg|milligram|milligrams" },
+            { @"Microgram", @"μg|microgram|micrograms|micro gram|micro grams" },
             { @"Gallon", @"-gallon|gallons|gallon|gal" },
             { @"Metric ton", @"metric tons|metric ton" },
             { @"Ton", @"-ton|ton|tons|tonne|tonnes" },
