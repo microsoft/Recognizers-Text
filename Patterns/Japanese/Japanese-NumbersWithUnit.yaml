@@ -16,6 +16,7 @@ AgeSuffixList: !dictionary
 BuildPrefix: ''
 BuildSuffix: ''
 ConnectorToken: ''
+CheckFirstSuffix: !bool true
 #CurrencyExtractorConfiguration
 CurrencySuffixList: !dictionary
   types: [string, string]
@@ -619,5 +620,29 @@ CurrencyAmbiguousValues: !list
 AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:
-    'null': 'null'
-...
+    '五角': '五角大楼'
+    '普尔': '标准普尔'
+#TemperatureExtractorConfiguration
+TemperatureSuffixList: !dictionary
+  types: [string, string]
+  entries:
+    F: 華氏|華氏温度|華氏温度の|°f
+    K: 开尔文温度|开氏度|凯氏度|K|k
+    R: 兰氏温度|°r
+    C: 摂氏|摂氏温度|°c|℃
+    Degree: 度
+TemperaturePrefixList: !dictionary
+  types: [string, string]
+  entries:
+#华氏十三度
+    F: 華氏|華氏温度|華氏温度の|华氏
+    K: 开氏温度|开氏
+    R: 兰氏温度|兰氏
+    C: 摂氏温度|摂氏
+TemperatureAmbiguousValues: !list
+  types: [string]
+  entries:
+    - 度
+    - k
+HalfUnitRegex: !simpleRegex
+  def: 半

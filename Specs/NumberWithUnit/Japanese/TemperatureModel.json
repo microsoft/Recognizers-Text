@@ -1,7 +1,6 @@
 [
   {
     "Input": "外の気温は、摂氏 40度です。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -18,7 +17,6 @@
   },
   {
     "Input": "テキサスは、気温華氏 90度です。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -35,7 +33,6 @@
   },
   {
     "Input": "華氏 マイナス 5度",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -52,7 +49,6 @@
   },
   {
     "Input": "摂氏6度",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -69,7 +65,6 @@
   },
   {
     "Input": "華氏98.6度は、平熱です。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -86,7 +81,6 @@
   },
   {
     "Input": "温度を摂氏30度に設定する。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -103,7 +97,6 @@
   },
   {
     "Input": "平熱は、華氏98.6度です。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -120,7 +113,6 @@
   },
   {
     "Input": "華氏100度",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -137,7 +129,6 @@
   },
   {
     "Input": "摂氏20度",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -154,7 +145,6 @@
   },
   {
     "Input": "華氏100.2度は、低いです。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -171,7 +161,6 @@
   },
   {
     "Input": "摂氏 10.5度",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -188,7 +177,6 @@
   },
   {
     "Input": "摂氏 20.3度",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -205,7 +193,6 @@
   },
   {
     "Input": "摂氏 34.5度",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -222,7 +209,6 @@
   },
   {
     "Input": "外の気温は、華氏98度です。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -230,7 +216,7 @@
         "TypeName": "temperature",
         "Resolution": {
           "value": "98",
-          "unit": "Degree"
+          "unit": "F"
         },
         "Start": 6,
         "End": 10
@@ -239,7 +225,6 @@
   },
   {
     "Input": "サーモスタットを85度に設定する。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -256,7 +241,6 @@
   },
   {
     "Input": "温度を5度上げる。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -273,7 +257,6 @@
   },
   {
     "Input": "温度を華氏70度に設定する。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -290,7 +273,6 @@
   },
   {
     "Input": "温度を20度上げる。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -307,7 +289,6 @@
   },
   {
     "Input": "温度を100度に設定する。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -324,7 +305,6 @@
   },
   {
     "Input": "温度を華氏75度に保つ。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -341,7 +321,6 @@
   },
   {
     "Input": "温度を摂氏40度にする。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -358,7 +337,6 @@
   },
   {
     "Input": "温度を50度にする。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -375,7 +353,6 @@
   },
   {
     "Input": "摂氏10度を華氏に変換する。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -402,7 +379,6 @@
   },
   {
     "Input": "華氏から摂氏に。華氏101度は摂氏で何度か。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -449,7 +425,6 @@
   },
   {
     "Input": "華氏51度を摂氏に変換してもらえますか。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -476,7 +451,6 @@
   },
   {
     "Input": "華氏106度を摂氏に変換する。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -503,7 +477,6 @@
   },
   {
     "Input": "華氏45度を摂氏に変換する。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -530,7 +503,6 @@
   },
   {
     "Input": "華氏マイナス20度を摂氏に変換する方法",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -557,7 +529,7 @@
   },
   {
     "Input": "外の気温は98度です",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "98度",
@@ -574,12 +546,12 @@
   {
     "Input": "アンナトークで数をいつかください",
     "Comment": "Temporary regression",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
     "Input": "サーモスタットを八十五度まで設置しましょう",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "八十五度",
@@ -595,7 +567,7 @@
   },
   {
     "Input": "通常は華氏温度98.6度となります",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "華氏温度98.6度",
@@ -611,14 +583,14 @@
   },
   {
     "Input": "彼は三十九度まで高熱があるよ",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "三十九度",
         "TypeName": "temperature",
         "Resolution": {
           "value": "39",
-          "unit": "C"
+          "unit": "Degree"
         },
         "Start": 2,
         "End": 5
@@ -627,7 +599,7 @@
   },
   {
     "Input": "温度を5度上げましょう",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "5度",
@@ -643,7 +615,7 @@
   },
   {
     "Input": "温度の単位って℃ですか",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "℃",
@@ -659,23 +631,33 @@
   },
   {
     "Input": "華氏温度とすれば100度です",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "100度",
         "TypeName": "temperature",
         "Resolution": {
           "value": "100",
-          "unit": "F"
+          "unit": "Degree"
         },
         "Start": 8,
         "End": 11
+      },
+      {
+        "Text": "華氏温度",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": null,
+          "unit": "F"
+        },
+        "Start": 0,
+        "End": 3
       }
     ]
   },
   {
     "Input": "華氏温度の51度を摂氏温度に変換できるか",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "華氏温度の51度",
@@ -701,7 +683,7 @@
   },
   {
     "Input": "20℃",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "20℃",

@@ -24,6 +24,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
         string ConnectorToken { get; }
 
+        bool CheckFirstSuffix { get; set; }
+
         IDictionary<string, string> TypeList { get; }
 
         void BindDictionary(IDictionary<string, string> dictionary);
@@ -41,6 +43,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             this.CurrencyNameToIsoCodeMap = new Dictionary<string, string>();
             this.CurrencyFractionCodeList = new Dictionary<string, string>();
             this.TypeList = new Dictionary<string, string>();
+            this.CheckFirstSuffix = false;
         }
 
         public IDictionary<string, string> UnitMap { get; }
@@ -58,6 +61,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         public abstract IExtractor InternalNumberExtractor { get; }
 
         public abstract string ConnectorToken { get; }
+
+        public bool CheckFirstSuffix { get; set; }
 
         public IDictionary<string, string> CurrencyNameToIsoCodeMap { get; set; }
 

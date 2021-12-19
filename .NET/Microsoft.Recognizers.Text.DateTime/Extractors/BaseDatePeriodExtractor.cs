@@ -681,7 +681,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var datePoints = this.config.DatePointExtractor.Extract(text, reference);
 
             // For cases like "week of the 18th"
-            datePoints.AddRange(ordinalExtractions.Where(o => !datePoints.Any(er => er.IsOverlap(o))));
+            datePoints.AddRange(ordinalExtractions.Where(o => !datePoints.Any(er => er.IsOverlap(o)) && !o.Metadata.IsOrdinalRelative));
 
             if (datePoints.Count < 1)
             {

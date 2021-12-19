@@ -232,11 +232,11 @@ AllFloatRegex: !nestedRegex
   def: '{NegativeNumberTermsRegex}?{AllIntRegex}\s*{PointRegexStr}\s*[一二三四五六七八九零壹贰貳叁肆伍陆陸柒捌玖〇](\s*{ZeroToNineIntegerRegex})*'
   references: [NegativeNumberTermsRegex, AllIntRegex, PointRegexStr, ZeroToNineIntegerRegex]
 NumbersWithAllowListRegex: !nestedRegex
-  def: (?<![百佰]\s*分\s*之\s*({AllIntRegex}[点點]*|{AllFloatRegex})*){NegativeNumberTermsRegex}?({NotSingleRegex}|{SingleRegex})(?!({AllIntRegex}*([点點]{ZeroToNineIntegerRegex}+)*|{AllFloatRegex})*\s*[个個]\s*[百佰]\s*分\s*[点點])
+  def: '{NegativeNumberTermsRegex}?({NotSingleRegex}|{SingleRegex})'
   references: [AllIntRegex, AllFloatRegex, NegativeNumberTermsRegex, NotSingleRegex, SingleRegex, ZeroToNineIntegerRegex]
 NumbersAggressiveRegex: !nestedRegex
-  def: (?<![百佰]\s*分\s*之\s*({AllIntRegex}[点點]*|{AllFloatRegex})*){NegativeNumberTermsRegex}?{AllIntRegex}(?!({AllIntRegex}*([点點]{ZeroToNineIntegerRegex}+)*|{AllFloatRegex})*\s*[个個]\s*[百佰]\s*分\s*[点點])
-  references: [AllIntRegex, AllFloatRegex, NegativeNumberTermsRegex, ZeroToNineIntegerRegex]
+  def: '{NegativeNumberTermsRegex}?{AllIntRegex}'
+  references: [AllIntRegex, NegativeNumberTermsRegex ]
 #DoubleExtractor
 PointRegex: !nestedRegex
   def: '{PointRegexStr}'
@@ -257,7 +257,7 @@ DoubleWithThousandsRegex: !nestedRegex
   def: '{NegativeNumberTermsRegex}?(({ZeroToNineFullHalfRegex}+)|({ZeroToNineFullHalfRegex}{1,3}(,{ZeroToNineFullHalfRegex}{3})+))([\.．]{ZeroToNineFullHalfRegex}+)?\s*[多几幾余]?[万亿萬億]{1,2}'
   references: [NegativeNumberTermsRegex, ZeroToNineFullHalfRegex]
 DoubleAllFloatRegex: !nestedRegex
-  def: (?<![百佰]\s*分\s*之\s*(({AllIntRegex}[点點]*)|{AllFloatRegex})*){AllFloatRegex}(?!{ZeroToNineIntegerRegex}*\s*[个個]\s*[百佰]\s*分\s*[点點])
+  def: '{AllFloatRegex}'
   references: [AllIntRegex, AllFloatRegex, ZeroToNineIntegerRegex]
 DoubleExponentialNotationRegex: !nestedRegex
   def: (?<!{ZeroToNineFullHalfRegex}+[\.．])({NegativeNumberTermsRegexAll}\s*)?{ZeroToNineFullHalfRegex}+([\.．]{ZeroToNineFullHalfRegex}+)?e(([-－+＋]*[1-9]{ZeroToNineFullHalfRegex}*)|0(?!{ZeroToNineFullHalfRegex}+))
