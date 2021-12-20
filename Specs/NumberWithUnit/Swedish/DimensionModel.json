@@ -259,8 +259,8 @@
     "Results": [
       {
         "Text": "150 mikrogram",
-        "Start": 11,
-        "End": 23,
+        "Start": 10,
+        "End": 22,
         "TypeName": "dimension",
         "Resolution": {
           "subtype": "Weight",
@@ -275,8 +275,8 @@
     "Results": [
       {
         "Text": "120 μg",
-        "Start": 11,
-        "End": 16,
+        "Start": 10,
+        "End": 15,
         "TypeName": "dimension",
         "Resolution": {
           "subtype": "Weight",
