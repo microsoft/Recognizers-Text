@@ -91,12 +91,15 @@ FractionNotationWithSpacesRegex: !simpleRegex
 FractionNotationRegex: !nestedRegex
   def: '{BaseNumbers.FractionNotationRegex}'
   references: [ BaseNumbers.FractionNotationRegex ]
+RoundMultiplierRegex: !nestedRegex
+  def: \b\s*(?<multiplier>{RoundNumberIntegerRegex})(?=(?<half>\s+e\s+mezzo)?$)
+  references: [ RoundNumberIntegerRegex ]
 FractionNounRegex: !nestedRegex
-  def: (?<=\b)({AllIntRegex}\s+(e\s+)?)?({AllIntRegex})(\s+|\s*-\s*)(?!\bprimo\b|\bsecondo\b)(mezzi|({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))(?=\b)
-  references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex]
+  def: (?<=\b)({AllIntRegex}\s+(e\s+)?)?(({AllIntRegex})(\s+|\s*-\s*)(?!\bprimo\b|\bsecondo\b)(mezzi|({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))|(mezzo|un\s+quarto\s+di)\s+{RoundNumberIntegerRegex})(?=\b)
+  references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex, RoundNumberIntegerRegex ]
 FractionNounWithArticleRegex: !nestedRegex
-  def: (?<=\b)(({AllIntRegex}\s+e\s+mezzo)|(({AllIntRegex}\s+(e\s+)?)?(un)(\s+|\s*-\s*)(?!\bprimo\b|\bsecondo\b)(mezzo|({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))))(?=\b)
-  references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex]
+  def: (?<=\b)((({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\s+(e\s+)?)?((un)(\s+|\s*-\s*)(?!\bprimo\b|\bsecondo\b)({AllOrdinalRegex}|{RoundNumberOrdinalRegex})|(un\s+)?mezzo))(?=\b)
+  references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex, RoundNumberIntegerRegexWithLocks]
 FractionPrepositionRegex: !nestedRegex
   def: (?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<!\.)\d+))\s+su\s+(?<denominator>({AllIntRegex})|(\d+)(?!\.))(?=\b)
   references: [ AllIntRegex, BaseNumbers.CommonCurrencySymbol ]

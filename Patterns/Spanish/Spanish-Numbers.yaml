@@ -119,12 +119,15 @@ FractionNotationRegex: !nestedRegex
   references: [ BaseNumbers.FractionNotationRegex ]
 FractionNotationWithSpacesRegex: !simpleRegex
   def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))
+RoundMultiplierRegex: !nestedRegex
+  def: \b\s*(?<multiplier>{RoundNumberIntegerRegex})(?=(?<half>\s+y\s+medio)?$)
+  references: [ RoundNumberIntegerRegex ]
 FractionNounRegex: !nestedRegex
-  def: (?<=\b)({AllIntRegex}\s+((y|con)\s+)?)?({AllIntRegex})(\s+((y|con)\s)?)((({AllOrdinalRegex})s?|({SpecialFractionInteger})|({SufixRoundOrdinalRegex})s?)|medi[oa]s?|tercios?)(?=\b)
-  references: [ AllIntRegex, AllOrdinalRegex, SpecialFractionInteger, SufixRoundOrdinalRegex ]
+  def: (?<=\b)({AllIntRegex}\s+((y|con)\s+)?)?(({AllIntRegex})(\s+((y|con)\s)?)((({AllOrdinalRegex})s?|({SpecialFractionInteger})|({SufixRoundOrdinalRegex})s?)|medi[oa]s?|tercios?)|(medio|un\s+cuarto\s+de)\s+{RoundNumberIntegerRegex})(?=\b)
+  references: [ AllIntRegex, AllOrdinalRegex, SpecialFractionInteger, SufixRoundOrdinalRegex, RoundNumberIntegerRegex ]
 FractionNounWithArticleRegex: !nestedRegex
-  def: (?<=\b)({AllIntRegex}\s+(y\s+)?)?(un|un[oa])(\s+)(({AllOrdinalRegex})|({SufixRoundOrdinalRegex})|(y\s+)?medi[oa]s?)(?=\b)
-  references: [ AllIntRegex, AllOrdinalRegex, SufixRoundOrdinalRegex ]
+  def: (?<=\b)(({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\s+(y\s+)?)?((un|un[oa])(\s+)(({AllOrdinalRegex})|({SufixRoundOrdinalRegex}))|(un[ao]?\s+)?medi[oa]s?)(?=\b)
+  references: [ AllIntRegex, AllOrdinalRegex, SufixRoundOrdinalRegex, RoundNumberIntegerRegexWithLocks ]
 FractionPrepositionRegex: !nestedRegex
   def: (?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<!\.)\d+))\s+sobre\s+(?<denominator>({AllIntRegex})|((\d+)(?!\.)))(?=\b)
   references: [ AllIntRegex, BaseNumbers.CommonCurrencySymbol ]
