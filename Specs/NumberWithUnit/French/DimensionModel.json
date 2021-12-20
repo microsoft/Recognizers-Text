@@ -272,40 +272,6 @@
     ]
   },
   {
-    "Input": "Le poids est de 150 microgrammes",
-    "Results": [
-      {
-        "Text": "150 microgrammes",
-        "Start": 16,
-        "End": 31,
-        "TypeName": "dimension",
-        "Resolution": {
-          "subtype": "Weight",
-          "unit": "Microgramme",
-          "value": "150"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "Le poids est de 120 μg",
-    "NotSupported": "javascript, python",
-    "Results": [
-      {
-        "Text": "120 μg",
-        "Start": 16,
-        "End": 21,
-        "TypeName": "dimension",
-        "Resolution": {
-          "subtype": "Weight",
-          "unit": "Microgramme",
-          "value": "120"
-        }
-      }
-    ]
-  },
-
-  {
     "Input": "On permettra la coquille, une filiale de hollandais royal / le groupe de coquille(d'obus), exporter 0,9 billion de pieds cubes et le golfe, une unité d'Olympie et on permettra aux développements york ltd. d'exporter",
     "Results": [
       {
