@@ -294,7 +294,7 @@
         "Text": "120 μg",
         "TypeName": "dimension",
         "Resolution": {
-          "subtype": "wWeight",
+          "subtype": "Weight",
           "unit": "Microgramme",
           "value": "120"
         },
