@@ -288,17 +288,17 @@
     ]
   },
   {
-    "Input": "Le poids est de 150 ug",
+    "Input": "Le poids est de 120 μg",
     "Results": [
       {
-        "Text": "150 microgrammes",
+        "Text": "120 μg",
         "Start": 16,
         "End": 21,
         "TypeName": "dimension",
         "Resolution": {
           "subtype": "Weight",
           "unit": "Microgramme",
-          "value": "150"
+          "value": "120"
         }
       }
     ]
