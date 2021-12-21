@@ -288,10 +288,10 @@
     ]
   },
   {
-    "Input": "Le poids est de 120 μg",
+    "Input": "Le poids est de 120 ug",
     "Results": [
       {
-        "Text": "120 μg",
+        "Text": "120 ug",
         "TypeName": "dimension",
         "Resolution": {
           "subtype": "Weight",
