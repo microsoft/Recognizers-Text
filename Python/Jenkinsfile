@@ -1,0 +1,148 @@
+@Library('pipeline-library@master')
+import com.genesys.jenkins.CI
+
+timeout(150) {
+    node('dev_mesos_v2||dev_shared_v2') {
+        LIBRARY_FOLDER = "Python/libraries"
+
+        stage('Clean Checkout') {
+        retry(3){
+          checkout scm
+          COMMIT_ID = sh(returnStdout: true, script: 'git rev-parse --short HEAD').trim()
+          BRANCH = sh(returnStdout: true, script: "git branch -r --contains ${COMMIT_ID}").trim().split('/')[-1]
+          COMMIT_TAG = sh(returnStdout: true, script: "(git describe --exact-match ${COMMIT_ID}) 2> /dev/null || git show-ref --tags -d | grep ^${COMMIT_ID} | sed -e 's,.* refs/tags/,,' -e 's/\\^{}//' | xargs || echo ''").trim()
+          if(BRANCH.equals("master")) {
+            NICKNAME = 'main'
+          } else {
+            NICKNAME = 'PR'
+          }
+          sh "echo ${NICKNAME}"
+          sh """
+          rm -rf allure-results
+          mkdir allure-results
+          """
+          withCredentials([usernamePassword(credentialsId: params.CREDENTIALSID, usernameVariable: 'user', passwordVariable: 'password')]) {
+            sh """
+            rm -rf pip.conf
+            echo '[global]' >> pip.conf
+            echo 'extra-index-url = https://$user:$password@purecloud.jfrog.io/purecloud/api/pypi/inin-pypi/simple' >> pip.conf
+            """
+          }
+
+        }
+      }
+
+        stage("Test install package and run tests") {
+            dir('Python') {
+                sh """
+                    virtualenv -p python3.8 --clear venv
+                    . venv/bin/activate
+                    sh build.sh venv
+                    """
+            }
+        }
+
+        stage("Publish Build Artifacts") {
+            dir(LIBRARY_FOLDER){
+            try {
+                    sh """
+                    virtualenv -p python3.8 --clear venv
+                    . venv/bin/activate
+                    """
+                } catch(Exception e) {
+                    echo "Skipping publish of artifact version ${ARTIFACT_VERSION}. Exception is ${e}"
+                }
+            }
+            dir(LIBRARY_FOLDER + "/recognizers-text"){
+
+                try {
+                    sh """
+                    . ../venv/bin/activate
+                    python setup.py sdist upload -r inin-pypi
+                    """
+                } catch(Exception e) {
+                    echo "Skipping publish of artifact version ${ARTIFACT_VERSION}. Exception is ${e}"
+                }
+            }
+            dir(LIBRARY_FOLDER + "/recognizers-number"){
+
+                try {
+                    sh """
+                    . ../venv/bin/activate
+                    python setup.py sdist upload -r inin-pypi
+                    """
+                } catch(Exception e) {
+                    echo "Skipping publish of artifact version ${ARTIFACT_VERSION}. Exception is ${e}"
+                }
+            }
+            dir(LIBRARY_FOLDER + "/recognizers-number-with-unit"){
+
+                try {
+                    sh """
+                    . ../venv/bin/activate
+                    python setup.py sdist upload -r inin-pypi
+                    """
+                } catch(Exception e) {
+                    echo "Skipping publish of artifact version ${ARTIFACT_VERSION}. Exception is ${e}"
+                }
+            }
+            dir(LIBRARY_FOLDER + "/datatypes-timex-expression"){
+
+                try {
+                    sh """
+                    . ../venv/bin/activate
+                    python setup.py sdist upload -r inin-pypi
+                    """
+                } catch(Exception e) {
+                    echo "Skipping publish of artifact version ${ARTIFACT_VERSION}. Exception is ${e}"
+                }
+            }
+            dir(LIBRARY_FOLDER + "/recognizers-date-time"){
+
+                try {
+                    sh """
+                    . ../venv/bin/activate
+                    python setup.py sdist upload -r inin-pypi
+                    """
+                } catch(Exception e) {
+                    echo "Skipping publish of artifact version ${ARTIFACT_VERSION}. Exception is ${e}"
+                }
+            }
+            dir(LIBRARY_FOLDER + "/recognizers-sequence"){
+
+                try {
+                    sh """
+                    . ../venv/bin/activate
+                    python setup.py sdist upload -r inin-pypi
+                    """
+                } catch(Exception e) {
+                    echo "Skipping publish of artifact version ${ARTIFACT_VERSION}. Exception is ${e}"
+                }
+            }
+            dir(LIBRARY_FOLDER + "/recognizers-choice"){
+
+                try {
+                    sh """
+                    . ../venv/bin/activate
+                    python setup.py sdist upload -r inin-pypi
+                    """
+                } catch(Exception e) {
+                    echo "Skipping publish of artifact version ${ARTIFACT_VERSION}. Exception is ${e}"
+                }
+            }
+            dir(LIBRARY_FOLDER + "/recognizers-suite"){
+
+                try {
+                    sh """
+                    . ../venv/bin/activate
+                    python setup.py sdist upload -r inin-pypi
+                    """
+                } catch(Exception e) {
+                    echo "Skipping publish of artifact version ${ARTIFACT_VERSION}. Exception is ${e}"
+                }
+            }
+
+        }
+
+    }
+}

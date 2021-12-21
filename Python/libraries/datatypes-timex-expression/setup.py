@@ -10,8 +10,8 @@ def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 
-NAME = 'datatypes_timex_expression'
-VERSION = '1.0.0.a0'
+NAME = 'datatypes_timex_expression_genesys'
+VERSION = '1.0.0a1'
 REQUIRES = []
 
 setup(
