@@ -23,8 +23,8 @@ namespace Microsoft.Recognizers.Definitions.French
     {
       public const string LangMarker = @"Fre";
       public const bool CheckBothBeforeAfter = false;
-      public const string TillRegex = @"(?<till>\b(au|et|(jusqu')?[aà]|avant)\b|--|-|—|——)";
-      public const string RangeConnectorRegex = @"(?<and>\b(de\s+la|au|[aà]|et(\s*la)?)\b|--|-|—|——)";
+      public const string TillRegex = @"(?<till>\b(au|et|(jusqu')?a|avant)\b|(jusqu')?à|--|-|—|——)";
+      public const string RangeConnectorRegex = @"(?<and>\b(de\s+la|au|(jusqu')?a|et(\s*la)?)\b|(jusqu')?à|--|-|—|——)";
       public const string RelativeRegex = @"(?<order>prochaine?|de|du|ce(tte)?|l[ae]|derni[eè]re|hier|pr[eé]c[eé]dente|au\s+cours+(de|du\s*))";
       public const string StrictRelativeRegex = @"(?<order>prochaine?|derni[eè]re|hier|pr[eé]c[eé]dente|au\s+cours+(de|du\s*))";
       public const string NextSuffixRegex = @"(?<order>prochain(es?)?|suivante)\b";
