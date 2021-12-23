@@ -119,6 +119,8 @@ namespace Microsoft.Recognizers.Definitions.Korean
         };
       public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>
         {
+            { @"첫", @"일" },
+            { @"처음", @"일" },
             { @"여섯", @"육" },
             { @"하나", @"일" },
             { @"둘", @"이" },
@@ -139,13 +141,18 @@ namespace Microsoft.Recognizers.Definitions.Korean
             { @"온", @"백" },
             { @"즈믄", @"천" },
             { @"다스", @"십이" },
+            { @"이십오일", @"이십오" },
+            { @"스무", @"이십" },
+            { @"번째", @"" },
+            { @"등", @"" },
             { @" ", @"" }
         };
       public static readonly IList<char> RoundDirectList = new List<char>
         {
             '빵',
             '열',
-            '조'
+            '조',
+            '번'
         };
       public static readonly IList<char> TenChars = new List<char>
         {
