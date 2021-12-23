@@ -4174,21 +4174,22 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "1E-12"
-        }
       }
     ]
   },
   {
-    "Input": "일백조 번째분의일",
+    "Input": "일백조 분의 일",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "일백조 번째분의일",
+        "Text": "일백조 분의 일",
         "TypeName": "number",
         "Resolution": {
           "subtype": "fraction",
           "value": "1E-14"
-        }
+        },
+        "Start": 0,
+        "End": 7
       }
     ]
   }
