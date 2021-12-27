@@ -1,0 +1,4391 @@
+[
+  {
+    "Input": "\"Within 3 years\", he said this 5 years ago.",
+    "Context": {
+      "ReferenceDateTime": "2018-03-14T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Within 3 years",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2018-03-14,2021-03-14,P3Y)",
+              "type": "daterange",
+              "start": "2018-03-14",
+              "end": "2021-03-14"
+            }
+          ]
+        },
+        "Start": 1,
+        "Length": 14
+      },
+      {
+        "Text": "5 years ago",
+        "Start": 31,
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2013-03-14",
+              "type": "date",
+              "value": "2013-03-14"
+            }
+          ]
+        },
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "at 715ampm",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "715ampm",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T07:15",
+              "type": "time",
+              "value": "07:15:00"
+            },
+            {
+              "timex": "T19:15",
+              "type": "time",
+              "value": "19:15:00"
+            }
+          ]
+        },
+        "Start": 3,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "ADD LUNCH AT 12:30 PM ON FRI ",
+    "Comment":"Disable this for now because of new features in .NET",
+    "NotSupported": "javascript, Java, python",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "12:30 PM ON FRI",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-5T12:30",
+              "type": "datetime",
+              "value": "2016-11-04 12:30:00"
+            },
+            {
+              "timex": "XXXX-WXX-5T12:30",
+              "type": "datetime",
+              "value": "2016-11-11 12:30:00"
+            }
+          ]
+        },
+        "Start": 13,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "What do I have the week of November 30th",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "the week of November 30th",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-11-30",
+              "type": "daterange",
+              "start": "2015-11-30",
+              "end": "2015-12-07"
+            },
+            {
+              "timex": "XXXX-11-30",
+              "type": "daterange",
+              "start": "2016-11-28",
+              "end": "2016-12-05"
+            }
+          ]
+        },
+        "Start": 15,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "For four Monday at noon ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "Monday at noon",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-1T12",
+              "type": "datetime",
+              "value": "2016-10-31 12:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-1T12",
+              "type": "datetime",
+              "value": "2016-11-07 12:00:00"
+            }
+          ]
+        },
+        "Start": 9,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Add 649 midnight tonight",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "midnight tonight",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-07T00",
+              "type": "datetime",
+              "value": "2016-11-07 00:00:00"
+            }
+          ]
+        },
+        "Start": 8,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "i need a reserve for 3 peeps at a pizza joint in seattle for tonight around 8 pm",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "tonight around 8 pm",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-07T20",
+              "type": "datetime",
+              "value": "2016-11-07 20:00:00"
+            }
+          ]
+        },
+        "Start": 61,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Set an appointment for Easter",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "Easter",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-03-27",
+              "type": "date",
+              "value": "2016-03-27"
+            },
+            {
+              "timex": "XXXX-03-27",
+              "type": "date",
+              "value": "2017-04-16"
+            }
+          ]
+        },
+        "Start": 23,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Set an appointment for Easter 2019",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "Easter 2019",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2019-04-21",
+              "type": "date",
+              "value": "2019-04-21"
+            }
+          ]
+        },
+        "Start": 23,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "day after tomorrow",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "day after tomorrow",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-09",
+              "type": "date",
+              "value": "2016-11-09"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "day after tomorrow at 8am",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "day after tomorrow at 8am",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-09T08",
+              "type": "datetime",
+              "value": "2016-11-09 08:00:00"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "on Friday in the afternoon",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "Friday in the afternoon",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-5TAF",
+              "type": "datetimerange",
+              "start": "2016-11-04 12:00:00",
+              "end": "2016-11-04 16:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-5TAF",
+              "type": "datetimerange",
+              "start": "2016-11-11 12:00:00",
+              "end": "2016-11-11 16:00:00"
+            }
+          ]
+        },
+        "Start": 3,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "on Friday for 3 in the afternoon",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "Friday for 3 in the afternoon",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-5T15",
+              "type": "datetime",
+              "value": "2016-11-04 15:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-5T15",
+              "type": "datetime",
+              "value": "2016-11-11 15:00:00"
+            }
+          ]
+        },
+        "Start": 3,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "Set appointment for tomorrow morning at 9 o'clock.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "tomorrow morning at 9 o'clock",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-08T09",
+              "type": "datetime",
+              "value": "2016-11-08 09:00:00"
+            }
+          ]
+        },
+        "Start": 20,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "put make cable's wedding in my calendar for wednesday the thirty first",
+    "Context": {
+      "ReferenceDateTime": "2017-09-15T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "wednesday",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-3",
+              "type": "date",
+              "value": "2017-09-13"
+            },
+            {
+              "timex": "XXXX-WXX-3",
+              "type": "date",
+              "value": "2017-09-20"
+            }
+          ]
+        },
+        "Start": 44,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "put make cable's wedding in my calendar for tuesday the thirty first",
+    "Context": {
+      "ReferenceDateTime": "2017-10-15T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "tuesday the thirty first",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2017-10-31",
+              "type": "date",
+              "value": "2017-10-31"
+            }
+          ]
+        },
+        "Start": 44,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "schedule a meeting in 8 minutes",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "in 8 minutes",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-07T00:08:00",
+              "type": "datetime",
+              "value": "2016-11-07 00:08:00"
+            }
+          ]
+        },
+        "Start": 19,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "schedule a meeting in 10 hours",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "in 10 hours",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-07T10:00:00",
+              "type": "datetime",
+              "value": "2016-11-07 10:00:00"
+            }
+          ]
+        },
+        "Start": 19,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "schedule a meeting in 10 days",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "in 10 days",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-17",
+              "type": "date",
+              "value": "2016-11-17"
+            }
+          ]
+        },
+        "Start": 19,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "schedule a meeting in 3 weeks",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "in 3 weeks",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-28",
+              "type": "date",
+              "value": "2016-11-28"
+            }
+          ]
+        },
+        "Start": 19,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "schedule a meeting in 3 months",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "in 3 months",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2017-02-07",
+              "type": "date",
+              "value": "2017-02-07"
+            }
+          ]
+        },
+        "Start": 19,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out in 3 years",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "in 3 years",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2019-11-07",
+              "type": "date",
+              "value": "2019-11-07"
+            }
+          ]
+        },
+        "Start": 12,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "after 8pm",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "after 8pm",
+        "Type": "datetimeV2.timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "T20",
+              "Mod": "after",
+              "type": "timerange",
+              "start": "20:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "before 8pm",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "before 8pm",
+        "Type": "datetimeV2.timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "T20",
+              "Mod": "before",
+              "type": "timerange",
+              "end": "20:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "since 8pm",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "since 8pm",
+        "Type": "datetimeV2.timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "T20",
+              "Mod": "since",
+              "type": "timerange",
+              "start": "20:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "2016-2-30",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2016-2-30",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-02-30",
+              "type": "date",
+              "value": "not resolved"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "2015-1-32",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "Results": []
+  },
+  {
+    "Input": "2017-13-12",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "Results": []
+  },
+  {
+    "Input": "add yoga to personal calendar on monday and wednesday at 3pm",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "monday",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-1",
+              "type": "date",
+              "value": "2016-10-31"
+            },
+            {
+              "timex": "XXXX-WXX-1",
+              "type": "date",
+              "value": "2016-11-07"
+            }
+          ]
+        },
+        "Start": 33,
+        "Length": 6
+      },
+      {
+        "Text": "wednesday at 3pm",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-3T15",
+              "type": "datetime",
+              "value": "2016-11-02 15:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-3T15",
+              "type": "datetime",
+              "value": "2016-11-09 15:00:00"
+            }
+          ]
+        },
+        "Start": 44,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "schedule a meeting at 8 am every week ",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "8 am",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T08",
+              "type": "time",
+              "value": "08:00:00"
+            }
+          ]
+        },
+        "Start": 22,
+        "Length": 4
+      },
+      {
+        "Text": "every week",
+        "Type": "datetimeV2.set",
+        "Value": {
+          "values": [
+            {
+              "timex": "P1W",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        },
+        "Start": 27,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "schedule second saturday of each month",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "second saturday",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-12",
+              "type": "date",
+              "value": "2016-11-12"
+            }
+          ]
+        },
+        "Start": 9,
+        "Length": 15
+      },
+      {
+        "Text": "each month",
+        "Type": "datetimeV2.set",
+        "Value": {
+          "values": [
+            {
+              "timex": "P1M",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        },
+        "Start": 28,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Set an appointment for Easter Sunday",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "Easter Sunday",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-03-27",
+              "type": "date",
+              "value": "2016-03-27"
+            },
+            {
+              "timex": "XXXX-03-27",
+              "type": "date",
+              "value": "2017-04-16"
+            }
+          ]
+        },
+        "Start": 23,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Set an appointment for Easter Monday 2017",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "Easter Monday 2017",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2017-04-17",
+              "type": "date",
+              "value": "2017-04-17"
+            }
+          ]
+        },
+        "Start": 23,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "block 1 hour on my calendar tomorrow morning",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "1 hour",
+        "Type": "datetimeV2.duration",
+        "Value": {
+          "values": [
+            {
+              "timex": "PT1H",
+              "type": "duration",
+              "value": "3600"
+            }
+          ]
+        },
+        "Start": 6,
+        "Length": 6
+      },
+      {
+        "Text": "tomorrow morning",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-08TMO",
+              "type": "datetimerange",
+              "start": "2016-11-08 08:00:00",
+              "end": "2016-11-08 12:00:00"
+            }
+          ]
+        },
+        "Start": 28,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Change July 22nd meeting in Bellevue to August 22nd",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "July 22nd",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-07-22",
+              "type": "date",
+              "value": "2016-07-22"
+            },
+            {
+              "timex": "XXXX-07-22",
+              "type": "date",
+              "value": "2017-07-22"
+            }
+          ]
+        },
+        "Start": 7,
+        "Length": 9
+      },
+      {
+        "Text": "August 22nd",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-08-22",
+              "type": "date",
+              "value": "2016-08-22"
+            },
+            {
+              "timex": "XXXX-08-22",
+              "type": "date",
+              "value": "2017-08-22"
+            }
+          ]
+        },
+        "Start": 40,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "on Friday for 3 in Bellevue in the afternoon",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "Friday",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-5",
+              "type": "date",
+              "value": "2016-11-04"
+            },
+            {
+              "timex": "XXXX-WXX-5",
+              "type": "date",
+              "value": "2016-11-11"
+            }
+          ]
+        },
+        "Start": 3,
+        "Length": 6
+      },
+      {
+        "Text": "in the afternoon",
+        "Type": "datetimeV2.timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "TAF",
+              "type": "timerange",
+              "start": "12:00:00",
+              "end": "16:00:00"
+            }
+          ]
+        },
+        "Start": 28,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "pick up jordan's medicine at the costco pharmacy on havana sometime before next tuesday at 12:00",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "before next tuesday at 12:00",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-15T12:00",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2016-11-15 12:00:00",
+              "sourceEntity": "datetimepoint"
+            },
+            {
+              "timex": "2016-11-15T00:00",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2016-11-15 00:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 68,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "schedule a meeting in advance of 2pm",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "in advance of 2pm",
+        "Type": "datetimeV2.timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "T14",
+              "Mod": "before",
+              "type": "timerange",
+              "end": "14:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 19,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "schedule a meeting prior to 2pm",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "prior to 2pm",
+        "Type": "datetimeV2.timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "T14",
+              "Mod": "before",
+              "type": "timerange",
+              "end": "14:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 19,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "I'll change the ten am appointment to twenty!",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "ten am",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T10",
+              "type": "time",
+              "value": "10:00:00"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 6
+      },
+      {
+        "Text": "twenty",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T20",
+              "type": "time",
+              "value": "20:00:00"
+            }
+          ]
+        },
+        "Start": 38,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "I'll change the ten am appointment to 20!",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "ten am",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T10",
+              "type": "time",
+              "value": "10:00:00"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 6
+      },
+      {
+        "Text": "20",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T20",
+              "type": "time",
+              "value": "20:00:00"
+            }
+          ]
+        },
+        "Start": 38,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "I'll change the ten am appointment to nine!",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "ten am",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T10",
+              "type": "time",
+              "value": "10:00:00"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 6
+      },
+      {
+        "Text": "nine",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T09",
+              "type": "time",
+              "value": "09:00:00"
+            },
+            {
+              "timex": "T21",
+              "type": "time",
+              "value": "21:00:00"
+            }
+          ]
+        },
+        "Start": 38,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "I'll change the ten am appointment to 26!",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "ten am",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T10",
+              "type": "time",
+              "value": "10:00:00"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "I'll change the ten am appointment to twenty six.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "ten am",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T10",
+              "type": "time",
+              "value": "10:00:00"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "I'll be back in 5 minutes",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "in 5 minutes",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-07T00:05:00",
+              "type": "datetime",
+              "value": "2016-11-07 00:05:00"
+            }
+          ]
+        },
+        "Start": 13,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "in 5 minutes",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "in 5 minutes",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-07T00:05:00",
+              "type": "datetime",
+              "value": "2016-11-07 00:05:00"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Schedule during the morning",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "morning",
+        "Type": "datetimeV2.timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "TMO",
+              "type": "timerange",
+              "start": "08:00:00",
+              "end": "12:00:00"
+            }
+          ]
+        },
+        "Start": 20,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "I'll leave by tomorrow",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "by tomorrow",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-08",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2016-11-08",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 11,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "I'll leave before tomorrow",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "before tomorrow",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-08",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2016-11-08",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 11,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "I'll leave no later than tomorrow",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "no later than tomorrow",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-08",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2016-11-08",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 11,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "give me all open spots with dates after or equal to 1/1/2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "after or equal to 1/1/2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "since",
+              "type": "daterange",
+              "start": "2016-01-01",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 34,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "I'll leave later than 1/1/2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "later than 1/1/2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2016-01-01",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 11,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "I'll leave after 1/1/2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "after 1/1/2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2016-01-01",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 11,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "I'll leave earlier than 1/1/2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "earlier than 1/1/2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2016-01-01",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 11,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "It will close starting from 1/1/2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "starting from 1/1/2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "since",
+              "type": "daterange",
+              "start": "2016-01-01",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 14,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "ending with 1/1/2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "ending with 1/1/2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2016-01-01",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "I'll leave sooner than 2020",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "sooner than 2020",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2020",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2020-01-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 11,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "The range is until 2012",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "until 2012",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2012",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2012-01-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 13,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "The range is 2012 or after",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "2012 or after",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2012",
+              "Mod": "since",
+              "type": "daterange",
+              "start": "2012-01-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 13,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "I will be back within 5 days",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "within 5 days",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2017-11-08,2017-11-13,P5D)",
+              "type": "daterange",
+              "start": "2017-11-08",
+              "end": "2017-11-13"
+            }
+          ]
+        },
+        "Start": 15,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "I will be back within 10 months",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "within 10 months",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2017-11-08,2018-09-08,P10M)",
+              "type": "daterange",
+              "start": "2017-11-08",
+              "end": "2018-09-08"
+            }
+          ]
+        },
+        "Start": 15,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "I will be back within 3 years",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "within 3 years",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2017-11-08,2020-11-08,P3Y)",
+              "type": "daterange",
+              "start": "2017-11-08",
+              "end": "2020-11-08"
+            }
+          ]
+        },
+        "Start": 15,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "I will be back within 5 years 1 month 12 days",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "within 5 years 1 month 12 days",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2017-11-08,2022-12-20,P5Y1M12D)",
+              "type": "daterange",
+              "start": "2017-11-08",
+              "end": "2022-12-20"
+            }
+          ]
+        },
+        "Start": 15,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "I will be back within 15 seconds",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "within 15 seconds",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2016-11-07T16:12:00,2016-11-07T16:12:15,PT15S)",
+              "type": "datetimerange",
+              "start": "2016-11-07 16:12:00",
+              "end": "2016-11-07 16:12:15"
+            }
+          ]
+        },
+        "Start": 15,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "I will be back within 5 minutes",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "within 5 minutes",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2016-11-07T16:12:00,2016-11-07T16:17:00,PT5M)",
+              "type": "datetimerange",
+              "start": "2016-11-07 16:12:00",
+              "end": "2016-11-07 16:17:00"
+            }
+          ]
+        },
+        "Start": 15,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "I will be back within 5 hours",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "within 5 hours",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2016-11-07T16:12:00,2016-11-07T21:12:00,PT5H)",
+              "type": "datetimerange",
+              "start": "2016-11-07 16:12:00",
+              "end": "2016-11-07 21:12:00"
+            }
+          ]
+        },
+        "Start": 15,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "I will be back within 1 day and 5 hours",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "within 1 day and 5 hours",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2016-11-07T16:12:00,2016-11-08T21:12:00,P1DT5H)",
+              "type": "datetimerange",
+              "start": "2016-11-07 16:12:00",
+              "end": "2016-11-08 21:12:00"
+            }
+          ]
+        },
+        "Start": 15,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "This task would complete within 2 days 1 hour 5 minutes 30 seconds",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "within 2 days 1 hour 5 minutes 30 seconds",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2016-11-07T16:12:00,2016-11-09T17:17:30,P2DT1H5M30S)",
+              "type": "datetimerange",
+              "start": "2016-11-07 16:12:00",
+              "end": "2016-11-09 17:17:30"
+            }
+          ]
+        },
+        "Start": 25,
+        "Length": 41
+      }
+    ]
+  },
+  {
+    "Input": "I will be back within the next 1 day and 5 hours",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "within the next 1 day and 5 hours",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2016-11-07T16:12:00,2016-11-08T21:12:00,P1DT5H)",
+              "type": "datetimerange",
+              "start": "2016-11-07 16:12:00",
+              "end": "2016-11-08 21:12:00"
+            }
+          ]
+        },
+        "Start": 15,
+        "Length": 33
+      }
+    ]
+  },
+  {
+    "Input": "This task would complete within the upcoming 2 days 1 hour 5 minutes 30 seconds",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "within the upcoming 2 days 1 hour 5 minutes 30 seconds",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2016-11-07T16:12:00,2016-11-09T17:17:30,P2DT1H5M30S)",
+              "type": "datetimerange",
+              "start": "2016-11-07 16:12:00",
+              "end": "2016-11-09 17:17:30"
+            }
+          ]
+        },
+        "Start": 25,
+        "Length": 54
+      }
+    ]
+  },
+  {
+    "Input": "I will be back within the next 15 seconds",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "within the next 15 seconds",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2016-11-07T16:12:00,2016-11-07T16:12:15,PT15S)",
+              "type": "datetimerange",
+              "start": "2016-11-07 16:12:00",
+              "end": "2016-11-07 16:12:15"
+            }
+          ]
+        },
+        "Start": 15,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "I will be back within next 10 months",
+    "Context": {
+      "ReferenceDateTime": "2017-11-08T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "within next 10 months",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2017-11-08,2018-09-08,P10M)",
+              "type": "daterange",
+              "start": "2017-11-08",
+              "end": "2018-09-08"
+            }
+          ]
+        },
+        "Start": 15,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out 2016, nov",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2016, nov",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 12,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out 2016 , nov",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2016 , nov",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 12,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out November , 2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "November , 2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 12,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out 2016 November",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2016 November",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 12,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out 2016-11",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2016-11",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 12,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out 2016 - 11",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2016 - 11",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 12,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out 2016- 11",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2016- 11",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 12,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out 2016 -11",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2016 -11",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 12,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out 2016/11",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2016/11",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 12,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out 2016 / 11",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2016 / 11",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 12,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out 2016/ 11",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2016/ 11",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 12,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out 2016 /11",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2016 /11",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 12,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out 11-2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "11-2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 12,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out 11 - 2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "11 - 2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 12,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out 11- 2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "11- 2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 12,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out 11 -2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "11 -2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 12,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out 11/2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "11/2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 12,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out 11 / 2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "11 / 2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11",
+              "type": "daterange",
+              "start": "2016-11-01",
+              "end": "2016-12-01"
+            }
+          ]
+        },
+        "Start": 12,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "He will arrive later than or at 1/1/2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "later than or at 1/1/2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "since",
+              "type": "daterange",
+              "start": "2016-01-01",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 15,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "He will arrive later than 1/1/2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "later than 1/1/2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2016-01-01",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 15,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "He will arrive on 1/1/2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "1/1/2016",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "type": "date",
+              "value": "2016-01-01"
+            }
+          ]
+        },
+        "Start": 18,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "He will leave before or on 1/1/2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "before or on 1/1/2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "until",
+              "type": "daterange",
+              "end": "2016-01-01",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 14,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "He will leave before 1/1/2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "before 1/1/2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2016-01-01",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 14,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "This task will complete on or earlier than 1/1/2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "on or earlier than 1/1/2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "until",
+              "type": "daterange",
+              "end": "2016-01-01",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 24,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "This task will complete on 1/1/2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "1/1/2016",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "type": "date",
+              "value": "2016-01-01"
+            }
+          ]
+        },
+        "Start": 27,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "This task will complete earlier than 1/1/2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "earlier than 1/1/2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-01-01",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2016-01-01",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 24,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "This task will complete before or in Feb 2018",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "before or in Feb 2018",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-02",
+              "Mod": "until",
+              "type": "daterange",
+              "end": "2018-03-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 24,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "This task will complete before Feb 2018",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "before Feb 2018",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-02",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2018-02-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 24,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "This task will complete in Feb 2018",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "Feb 2018",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-02",
+              "type": "daterange",
+              "start": "2018-02-01",
+              "end": "2018-03-01"
+            }
+          ]
+        },
+        "Start": 27,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "You can't leave later than or in 2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "later than or in 2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016",
+              "Mod": "since",
+              "type": "daterange",
+              "start": "2016-01-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "You can't leave later than 2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "later than 2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2017-01-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "You can't leave in 2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2016",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016",
+              "type": "daterange",
+              "start": "2016-01-01",
+              "end": "2017-01-01"
+            }
+          ]
+        },
+        "Start": 19,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "You can leave office at or after 6:30PM today",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "at or after 6:30PM today",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-07T18:30",
+              "Mod": "since",
+              "type": "datetimerange",
+              "start": "2016-11-07 18:30:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 21,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "You can leave office after 6:30PM today",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "after 6:30PM today",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-07T18:30",
+              "Mod": "after",
+              "type": "datetimerange",
+              "start": "2016-11-07 18:30:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 21,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "You can leave office at 6:30PM today",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "6:30PM today",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-07T18:30",
+              "type": "datetime",
+              "value": "2016-11-07 18:30:00"
+            }
+          ]
+        },
+        "Start": 24,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "You need to leave on or before the day after tomorrow",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "on or before the day after tomorrow",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-09",
+              "Mod": "until",
+              "type": "daterange",
+              "end": "2016-11-09",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 18,
+        "Length": 35
+      }
+    ]
+  },
+  {
+    "Input": "You need to leave on the day after tomorrow",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "the day after tomorrow",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-09",
+              "type": "date",
+              "value": "2016-11-09"
+            }
+          ]
+        },
+        "Start": 21,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "You need to leave before the day after tomorrow",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "before the day after tomorrow",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016-11-09",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2016-11-09",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 18,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "You need to leave on or earlier than 3pm 5/15/2018",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "on or earlier than 3pm 5/15/2018",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-05-15T15",
+              "Mod": "until",
+              "type": "datetimerange",
+              "end": "2018-05-15 15:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 18,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "You need to leave earlier than 3pm 5/15/2018",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "earlier than 3pm 5/15/2018",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-05-15T15",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2018-05-15 15:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 18,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "You need to leave on 3pm 5/15/2018",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "3pm 5/15/2018",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-05-15T15",
+              "type": "datetime",
+              "value": "2018-05-15 15:00:00"
+            }
+          ]
+        },
+        "Start": 21,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Are you available two days after today?",
+    "Context": {
+      "ReferenceDateTime": "2018-05-31T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "two days after today",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-06-02",
+              "type": "date",
+              "value": "2018-06-02"
+            }
+          ]
+        },
+        "Start": 18,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Are you available three weeks from tomorrow?",
+    "Context": {
+      "ReferenceDateTime": "2018-05-31T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "three weeks from tomorrow",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-06-22",
+              "type": "date",
+              "value": "2018-06-22"
+            }
+          ]
+        },
+        "Start": 18,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Where were you two days before yesterday?",
+    "Context": {
+      "ReferenceDateTime": "2018-05-31T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "two days before yesterday",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-05-28",
+              "type": "date",
+              "value": "2018-05-28"
+            }
+          ]
+        },
+        "Start": 15,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "show me sales before 2010 or after 2018",
+    "Context": {
+      "ReferenceDateTime": "2018-05-31T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "before 2010",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2010",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2010-01-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 14,
+        "Length": 11
+      },
+      {
+        "Text": "after 2018",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2019-01-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 29,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "show me sales after 2010 and before 2018 or before 2000 but not 1998",
+    "Context": {
+      "ReferenceDateTime": "2018-05-31T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "after 2010",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2010",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2011-01-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 14,
+        "Length": 10
+      },
+      {
+        "Text": "before 2018",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2018-01-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 29,
+        "Length": 11
+      },
+      {
+        "Text": "before 2000",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2000",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2000-01-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 44,
+        "Length": 11
+      },
+      {
+        "Text": "1998",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "1998",
+              "type": "daterange",
+              "start": "1998-01-01",
+              "end": "1999-01-01"
+            }
+          ]
+        },
+        "Start": 64,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "show me records more than 4 days and less than 1 week",
+    "Context": {
+      "ReferenceDateTime": "2018-05-31T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "more than 4 days",
+        "Type": "datetimeV2.duration",
+        "Value": {
+          "values": [
+            {
+              "timex": "P4D",
+              "Mod": "more",
+              "type": "duration",
+              "value": "345600"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 16
+      },
+      {
+        "Text": "less than 1 week",
+        "Type": "datetimeV2.duration",
+        "Value": {
+          "values": [
+            {
+              "timex": "P1W",
+              "Mod": "less",
+              "type": "duration",
+              "value": "604800"
+            }
+          ]
+        },
+        "Start": 37,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "show me records more than 1 hour and 30 minutes",
+    "Context": {
+      "ReferenceDateTime": "2018-05-31T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "more than 1 hour and 30 minutes",
+        "Type": "datetimeV2.duration",
+        "Value": {
+          "values": [
+            {
+              "timex": "PT1H30M",
+              "Mod": "more",
+              "type": "duration",
+              "value": "5400"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "I have already finished all my work more than 2 weeks before today",
+    "Context": {
+      "ReferenceDateTime": "2018-06-12T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "more than 2 weeks before today",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-05-29",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2018-05-29"
+            }
+          ]
+        },
+        "Start": 36,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "I have already finished all my work more than 2 weeks before today",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "more than 2 weeks before today",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-05-15",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2018-05-15"
+            }
+          ]
+        },
+        "Start": 36,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "This task should have been done more than 2 days before yesterday",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "more than 2 days before yesterday",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-05-26",
+              "Mod": "before",
+              "type": "daterange",
+              "end": "2018-05-26"
+            }
+          ]
+        },
+        "Start": 32,
+        "Length": 33
+      }
+    ]
+  },
+  {
+    "Input": "This task will be done less than 3 days after tomorrow",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "less than 3 days after tomorrow",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2018-05-30,2018-06-02,P3D)",
+              "type": "daterange",
+              "start": "2018-05-30",
+              "end": "2018-06-02"
+            }
+          ]
+        },
+        "Start": 23,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "This task will start more than 2 weeks after today",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "more than 2 weeks after today",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-06-12",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2018-06-12"
+            }
+          ]
+        },
+        "Start": 21,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "Let's start 3 minutes from now",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "3 minutes from now",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-05-29T00:03:00",
+              "type": "datetime",
+              "value": "2018-05-29 00:03:00"
+            }
+          ]
+        },
+        "Start": 12,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Let's start 3 minutes from today",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3 minutes",
+        "Type": "datetimeV2.duration",
+        "Value": {
+          "values": [
+            {
+              "timex": "PT3M",
+              "type": "duration",
+              "value": "180"
+            }
+          ]
+        },
+        "Start": 12,
+        "Length": 9
+      },
+      {
+        "Text": "today",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-05-29",
+              "type": "date",
+              "value": "2018-05-29"
+            }
+          ]
+        },
+        "Start": 27,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "This task will start within 2 weeks after today",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "within 2 weeks after today",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2018-05-29,2018-06-12,P2W)",
+              "type": "daterange",
+              "start": "2018-05-29",
+              "end": "2018-06-12"
+            }
+          ]
+        },
+        "Start": 21,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "This task will start within the next 2 weeks after today",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "within the next 2 weeks after today",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2018-05-29,2018-06-12,P2W)",
+              "type": "daterange",
+              "start": "2018-05-29",
+              "end": "2018-06-12"
+            }
+          ]
+        },
+        "Start": 21,
+        "Length": 35
+      }
+    ]
+  },
+  {
+    "Input": "This task will start within the next 2 weeks before today",
+    "Context": {
+      "ReferenceDateTime": "2018-06-22T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "2 weeks before today",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-06-08",
+              "type": "date",
+              "value": "2018-06-08"
+            }
+          ]
+        },
+        "Start": 37,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "This task will start within the next 2 weeks after tomorrow",
+    "Context": {
+      "ReferenceDateTime": "2018-06-22T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "2 weeks after tomorrow",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-07-07",
+              "type": "date",
+              "value": "2018-07-07"
+            }
+          ]
+        },
+        "Start": 37,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "This task will start within 2 weeks before yesterday",
+    "Context": {
+      "ReferenceDateTime": "2018-06-22T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "2 weeks before yesterday",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-06-07",
+              "type": "date",
+              "value": "2018-06-07"
+            }
+          ]
+        },
+        "Start": 28,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "show me sales from 2010 – 2020 and not 2015",
+    "Context": {
+      "ReferenceDateTime": "2018-05-31T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "from 2010 – 2020",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2010-01-01,2020-01-01,P10Y)",
+              "type": "daterange",
+              "start": "2010-01-01",
+              "end": "2020-01-01"
+            }
+          ]
+        },
+        "Start": 14,
+        "Length": 16
+      },
+      {
+        "Text": "2015",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2015",
+              "type": "daterange",
+              "start": "2015-01-01",
+              "end": "2016-01-01"
+            }
+          ]
+        },
+        "Start": 39,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Maybe we can leave after 2018",
+    "Context": {
+      "ReferenceDateTime": "2018-06-22T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "after 2018",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2019-01-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 19,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Maybe we can leave after Feb 2018",
+    "Context": {
+      "ReferenceDateTime": "2018-06-22T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "after Feb 2018",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-02",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2018-03-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 19,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Maybe we can leave after Feb",
+    "Context": {
+      "ReferenceDateTime": "2018-06-22T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "after Feb",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-02",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2018-03-01",
+              "sourceEntity": "datetimerange"
+            },
+            {
+              "timex": "XXXX-02",
+              "Mod": "after",
+              "type": "daterange",
+              "start": "2019-03-01",
+              "sourceEntity": "datetimerange"
+            }
+          ]
+        },
+        "Start": 19,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "It will happen 1/1/2015 after 2:00",
+    "Context": {
+      "ReferenceDateTime": "2018-06-22T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "1/1/2015 after 2:00",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2015-01-01T02:00",
+              "Mod": "after",
+              "type": "datetimerange",
+              "start": "2015-01-01 02:00:00"
+            },
+            {
+              "timex": "2015-01-01T14:00",
+              "Mod": "after",
+              "type": "datetimerange",
+              "start": "2015-01-01 14:00:00"
+            }
+          ]
+        },
+        "Start": 15,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "It will happen today before 4pm",
+    "Context": {
+      "ReferenceDateTime": "2018-06-22T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "today before 4pm",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-06-22T16",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2018-06-22 16:00:00"
+            }
+          ]
+        },
+        "Start": 15,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "It will happen next Wednesday later than 10 in the morning",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "next Wednesday later than 10 in the morning",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-07-04T10",
+              "Mod": "after",
+              "type": "datetimerange",
+              "start": "2018-07-04 10:00:00"
+            }
+          ]
+        },
+        "Start": 15,
+        "Length": 43
+      }
+    ]
+  },
+  {
+    "Input": "It happened on previous Tuesday by 2 in the afternoon",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "previous Tuesday by 2 in the afternoon",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-06-19T14",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2018-06-19 14:00:00"
+            }
+          ]
+        },
+        "Start": 15,
+        "Length": 38
+      }
+    ]
+  },
+  {
+    "Input": "Let's go on Feb 1st no later than 6:00",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "Feb 1st no later than 6:00",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "XXXX-02-01T06:00",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2018-02-01 06:00:00"
+            },
+            {
+              "timex": "XXXX-02-01T06:00",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2019-02-01 06:00:00"
+            },
+            {
+              "timex": "XXXX-02-01T18:00",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2018-02-01 18:00:00"
+            },
+            {
+              "timex": "XXXX-02-01T18:00",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2019-02-01 18:00:00"
+            }
+          ]
+        },
+        "Start": 12,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "It happened on next week after 2:00",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "next week",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-W27",
+              "type": "daterange",
+              "start": "2018-07-02",
+              "end": "2018-07-09"
+            }
+          ]
+        },
+        "Start": 15,
+        "Length": 9
+      },
+      {
+        "Text": "after 2:00",
+        "Type": "datetimeV2.timerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "T02:00",
+              "Mod": "after",
+              "type": "timerange",
+              "start": "02:00:00",
+              "sourceEntity": "datetimepoint"
+            },
+            {
+              "timex": "T14:00",
+              "Mod": "after",
+              "type": "timerange",
+              "start": "14:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 25,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Show sales in 2007 and 2009",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "2007",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2007",
+              "type": "daterange",
+              "start": "2007-01-01",
+              "end": "2008-01-01"
+            }
+          ]
+        },
+        "Start": 14,
+        "Length": 4
+      },
+      {
+        "Text": "2009",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2009",
+              "type": "daterange",
+              "start": "2009-01-01",
+              "end": "2010-01-01"
+            }
+          ]
+        },
+        "Start": 23,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Show sales between 2007 and 2009",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "between 2007 and 2009",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "(2007-01-01,2009-01-01,P2Y)",
+              "type": "daterange",
+              "start": "2007-01-01",
+              "end": "2009-01-01"
+            }
+          ]
+        },
+        "Start": 11,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Show sales in the year 2008",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "year 2008",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2008",
+              "type": "daterange",
+              "start": "2008-01-01",
+              "end": "2009-01-01"
+            }
+          ]
+        },
+        "Start": 18,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Show sales in the year",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "the year",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018",
+              "type": "daterange",
+              "start": "2018-01-01",
+              "end": "2019-01-01"
+            }
+          ]
+        },
+        "Start": 14,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Show sales in the week",
+    "Context": {
+      "ReferenceDateTime": "2018-07-02T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "the week",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-W27",
+              "type": "daterange",
+              "start": "2018-07-02",
+              "end": "2018-07-09"
+            }
+          ]
+        },
+        "Start": 14,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Show sales in the week after next",
+    "Context": {
+      "ReferenceDateTime": "2018-07-02T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "the week after next",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-W29",
+              "type": "daterange",
+              "start": "2018-07-16",
+              "end": "2018-07-23"
+            }
+          ]
+        },
+        "Start": 14,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Show sales in the week 31",
+    "Context": {
+      "ReferenceDateTime": "2018-07-02T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "week 31",
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-W31",
+              "type": "daterange",
+              "start": "2018-07-30",
+              "end": "2018-08-06"
+            }
+          ]
+        },
+        "Start": 18,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "I will leave in 3 hours",
+    "Context": {
+      "ReferenceDateTime": "2018-07-05T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "in 3 hours",
+        "Type": "datetimeV2.datetime",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-07-05T03:00:00",
+              "type": "datetime",
+              "value": "2018-07-05 03:00:00"
+            }
+          ]
+        },
+        "Start": 13,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "I will leave in 2 weeks",
+    "Context": {
+      "ReferenceDateTime": "2018-07-05T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "in 2 weeks",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-07-19",
+              "type": "date",
+              "value": "2018-07-19"
+            }
+          ]
+        },
+        "Start": 13,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "I will leave in 2 days",
+    "Context": {
+      "ReferenceDateTime": "2018-07-05T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "in 2 days",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-07-07",
+              "type": "date",
+              "value": "2018-07-07"
+            }
+          ]
+        },
+        "Start": 13,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "I will leave in 2 months",
+    "Context": {
+      "ReferenceDateTime": "2018-07-05T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "in 2 months",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-09-05",
+              "type": "date",
+              "value": "2018-09-05"
+            }
+          ]
+        },
+        "Start": 13,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "I will leave in 2 years",
+    "Context": {
+      "ReferenceDateTime": "2018-07-05T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "in 2 years",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2020-07-05",
+              "type": "date",
+              "value": "2020-07-05"
+            }
+          ]
+        },
+        "Start": 13,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "I will leave in 2 days from today",
+    "Context": {
+      "ReferenceDateTime": "2018-07-05T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "NotSupportedByDesign": "python",
+    "Results": [
+      {
+        "Text": "2 days from today",
+        "Type": "datetimeV2.date",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-07-07",
+              "type": "date",
+              "value": "2018-07-07"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Will you leave > 6pm today?",
+    "Context": {
+      "ReferenceDateTime": "2018-08-10T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "> 6pm today",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-08-10T18",
+              "Mod": "after",
+              "type": "datetimerange",
+              "start": "2018-08-10 18:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 15,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Will you leave >= 6pm today?",
+    "Context": {
+      "ReferenceDateTime": "2018-08-10T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": ">= 6pm today",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-08-10T18",
+              "Mod": "since",
+              "type": "datetimerange",
+              "start": "2018-08-10 18:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 15,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Will you arrive <6pm today?",
+    "Context": {
+      "ReferenceDateTime": "2018-08-10T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "<6pm today",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-08-10T18",
+              "Mod": "before",
+              "type": "datetimerange",
+              "end": "2018-08-10 18:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Will you arrive <=6pm today?",
+    "Context": {
+      "ReferenceDateTime": "2018-08-10T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "<=6pm today",
+        "Type": "datetimeV2.datetimerange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018-08-10T18",
+              "Mod": "until",
+              "type": "datetimerange",
+              "end": "2018-08-10 18:00:00",
+              "sourceEntity": "datetimepoint"
+            }
+          ]
+        },
+        "Start": 16,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "<div>6pm</div>",
+    "Context": {
+      "ReferenceDateTime": "2018-08-10T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "6pm",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T18",
+              "type": "time",
+              "value": "18:00:00"
+            }
+          ]
+        },
+        "Start": 5,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "The time is <>6pm",
+    "Context": {
+      "ReferenceDateTime": "2018-08-10T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "6pm",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T18",
+              "type": "time",
+              "value": "18:00:00"
+            }
+          ]
+        },
+        "Start": 14,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "He will leave after 2016 and before 2018, or before 2019",
+    "Context": {
+      "ReferenceDateTime": "2015-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "after 2016",
+        "Start": 14,
+        "Length": 10,
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2016",
+              "Mod": "after",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "start": "2017-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "before 2018",
+        "Start": 29,
+        "Length": 11,
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2018",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "end": "2018-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "before 2019",
+        "Start": 45,
+        "Length": 11,
+        "Type": "datetimeV2.daterange",
+        "Value": {
+          "values": [
+            {
+              "timex": "2019",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "end": "2019-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

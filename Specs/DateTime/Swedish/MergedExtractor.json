@@ -1,0 +1,1202 @@
+[
+  {
+    "Input": "this is 2 days",
+    "Results": [
+      {
+        "Text": "2 days",
+        "Type": "duration",
+        "Start": 8,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "this is before 4pm",
+    "Results": [
+      {
+        "Text": "before 4pm",
+        "Type": "time",
+        "Start": 8,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "this is before 4pm tomorrow",
+    "Results": [
+      {
+        "Text": "before 4pm tomorrow",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "this is before tomorrow 4pm ",
+    "Results": [
+      {
+        "Text": "before tomorrow 4pm",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "this is after 4pm",
+    "Results": [
+      {
+        "Text": "after 4pm",
+        "Type": "time",
+        "Start": 8,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "this is after 4pm tomorrow",
+    "Results": [
+      {
+        "Text": "after 4pm tomorrow",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "this is after tomorrow 4pm ",
+    "Results": [
+      {
+        "Text": "after tomorrow 4pm",
+        "Type": "datetime",
+        "Start": 8,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "I'll be back in 5 minutes",
+    "Results": [
+      {
+        "Text": "in 5 minutes",
+        "Type": "datetime",
+        "Start": 13,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "past week",
+    "Results": [
+      {
+        "Text": "past week",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "schedule a meeting in 10 hours",
+    "Results": [
+      {
+        "Text": "in 10 hours",
+        "Type": "datetime",
+        "Start": 19,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "What's this day look like?",
+    "Results": [
+      {
+        "Text": "this day",
+        "Type": "date",
+        "Start": 7,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "What's this week look like?",
+    "Results": [
+      {
+        "Text": "this week",
+        "Type": "daterange",
+        "Start": 7,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "What's my week look like?",
+    "Results": [
+      {
+        "Text": "my week",
+        "Type": "daterange",
+        "Start": 7,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "What's the week look like?",
+    "Results": [
+      {
+        "Text": "the week",
+        "Type": "daterange",
+        "Start": 7,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "What's my day look like?",
+    "Results": [
+      {
+        "Text": "my day",
+        "Type": "date",
+        "Start": 7,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "What's the day look like?",
+    "Results": [
+      {
+        "Text": "the day",
+        "Type": "date",
+        "Start": 7,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Schedule a meeting from 9am to 11am",
+    "Results": [
+      {
+        "Text": "from 9am to 11am",
+        "Type": "timerange",
+        "Start": 19,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Schedule a meeting from 9am to 11am tomorrow",
+    "Results": [
+      {
+        "Text": "from 9am to 11am tomorrow",
+        "Type": "datetimerange",
+        "Start": 19,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Change July 22nd meeting in Bellevue to August 22nd",
+    "Results": [
+      {
+        "Text": "July 22nd",
+        "Type": "date",
+        "Start": 7,
+        "Length": 9
+      },
+      {
+        "Text": "August 22nd",
+        "Type": "date",
+        "Start": 40,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "after 7/2 ",
+    "Results": [
+      {
+        "Text": "after 7/2",
+        "Type": "date",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "since 7/2 ",
+    "Results": [
+      {
+        "Text": "since 7/2",
+        "Type": "date",
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "before 7/2 ",
+    "Results": [
+      {
+        "Text": "before 7/2",
+        "Type": "date",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "06/06 12:15",
+    "Results": [
+      {
+        "Text": "06/06 12:15",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "06/06/12 15:15",
+    "Results": [
+      {
+        "Text": "06/06/12 15:15",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "06/06, 2015",
+    "Results": [
+      {
+        "Text": "06/06, 2015",
+        "Type": "date",
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "May 29th",
+    "Results": [
+      {
+        "Text": "May 29th",
+        "Type": "date",
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "March 29th",
+    "Results": [
+      {
+        "Text": "March 29th",
+        "Type": "date",
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "I born in March",
+    "Results": [
+      {
+        "Text": "March",
+        "Type": "daterange",
+        "Start": 10,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "I born in the March",
+    "Results": [
+      {
+        "Text": "March",
+        "Type": "daterange",
+        "Start": 14,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "what happend at the May",
+    "Results": [
+      {
+        "Text": "May",
+        "Type": "daterange",
+        "Start": 20,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "What are the hours of Palomino? ",
+    "Results": []
+  },
+  {
+    "Input": "in the sun",
+    "Results": []
+  },
+  {
+    "Input": "which email have gotten a reply",
+    "Results": []
+  },
+  {
+    "Input": "He is often alone",
+    "Results": []
+  },
+  {
+    "Input": "often a bird",
+    "Results": []
+  },
+  {
+    "Input": "michigan hours",
+    "Results": []
+  },
+  {
+    "Input": "I'll change the 3pm appointment to 4.",
+    "Results": [
+      {
+        "Text": "3pm",
+        "Type": "time",
+        "Start": 16,
+        "Length": 3
+      },
+      {
+        "Text": "4",
+        "Type": "time",
+        "Start": 35,
+        "Length": 1
+      }
+    ]
+  },
+  {
+    "Input": "I'll change the 3pm appointment to 4,",
+    "Results": [
+      {
+        "Text": "3pm",
+        "Type": "time",
+        "Start": 16,
+        "Length": 3
+      },
+      {
+        "Text": "4",
+        "Type": "time",
+        "Start": 35,
+        "Length": 1
+      }
+    ]
+  },
+  {
+    "Input": "I'll change the three pm appointment to four",
+    "Results": [
+      {
+        "Text": "three pm",
+        "Type": "time",
+        "Start": 16,
+        "Length": 8
+      },
+      {
+        "Text": "four",
+        "Type": "time",
+        "Start": 40,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "I'll change the ten am appointment to eleven",
+    "Results": [
+      {
+        "Text": "ten am",
+        "Type": "time",
+        "Start": 16,
+        "Length": 6
+      },
+      {
+        "Text": "eleven",
+        "Type": "time",
+        "Start": 38,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "I'll change the ten am appointment to 4.,",
+    "Results": [
+      {
+        "Text": "ten am",
+        "Type": "time",
+        "Start": 16,
+        "Length": 6
+      },
+      {
+        "Text": "4",
+        "Type": "time",
+        "Start": 38,
+        "Length": 1
+      }
+    ]
+  },
+  {
+    "Input": "I'll change the ten am appointment to eleven!",
+    "Results": [
+      {
+        "Text": "ten am",
+        "Type": "time",
+        "Start": 16,
+        "Length": 6
+      },
+      {
+        "Text": "eleven",
+        "Type": "time",
+        "Start": 38,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "I'll change the ten am appointment to eleven?",
+    "Results": [
+      {
+        "Text": "ten am",
+        "Type": "time",
+        "Start": 16,
+        "Length": 6
+      },
+      {
+        "Text": "eleven",
+        "Type": "time",
+        "Start": 38,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "I'll change the ten am appointment to 20!",
+    "Results": [
+      {
+        "Text": "ten am",
+        "Type": "time",
+        "Start": 16,
+        "Length": 6
+      },
+      {
+        "Text": "20",
+        "Type": "time",
+        "Start": 38,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "I'll change the ten am appointment to twenty!",
+    "Results": [
+      {
+        "Text": "ten am",
+        "Type": "time",
+        "Start": 16,
+        "Length": 6
+      },
+      {
+        "Text": "twenty",
+        "Type": "time",
+        "Start": 38,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "I'll change the ten am appointment to thirteen!",
+    "Results": [
+      {
+        "Text": "ten am",
+        "Type": "time",
+        "Start": 16,
+        "Length": 6
+      },
+      {
+        "Text": "thirteen",
+        "Type": "time",
+        "Start": 38,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "I'll change the ten am appointment to 13!",
+    "Results": [
+      {
+        "Text": "ten am",
+        "Type": "time",
+        "Start": 16,
+        "Length": 6
+      },
+      {
+        "Text": "13",
+        "Type": "time",
+        "Start": 38,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "I'll change the ten am appointment to 0!",
+    "Results": [
+      {
+        "Text": "ten am",
+        "Type": "time",
+        "Start": 16,
+        "Length": 6
+      },
+      {
+        "Text": "0",
+        "Type": "time",
+        "Start": 38,
+        "Length": 1
+      }
+    ]
+  },
+  {
+    "Input": "I'll change the ten am appointment to 24!",
+    "Results": [
+      {
+        "Text": "ten am",
+        "Type": "time",
+        "Start": 16,
+        "Length": 6
+      },
+      {
+        "Text": "24",
+        "Type": "time",
+        "Start": 38,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "I'll change the ten am appointment to zero.",
+    "Results": [
+      {
+        "Text": "ten am",
+        "Type": "time",
+        "Start": 16,
+        "Length": 6
+      },
+      {
+        "Text": "zero",
+        "Type": "time",
+        "Start": 38,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "I'll change the ten am appointment to twenty four.",
+    "Results": [
+      {
+        "Text": "ten am",
+        "Type": "time",
+        "Start": 16,
+        "Length": 6
+      },
+      {
+        "Text": "twenty four",
+        "Type": "time",
+        "Start": 38,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "I'll change the ten am appointment to 4, how do you think?",
+    "Results": [
+      {
+        "Text": "ten am",
+        "Type": "time",
+        "Start": 16,
+        "Length": 6
+      },
+      {
+        "Text": "4",
+        "Type": "time",
+        "Start": 38,
+        "Length": 1
+      }
+    ]
+  },
+  {
+    "Input": "I'll change the ten am appointment to 4.3",
+    "Results": [
+      {
+        "Text": "ten am",
+        "Type": "time",
+        "Start": 16,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "I'll change the ten am appointment to twenty six",
+    "Results": [
+      {
+        "Text": "ten am",
+        "Type": "time",
+        "Start": 16,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "I'll change the ten am appointment to 4 or later",
+    "Results": [
+      {
+        "Text": "ten am",
+        "Type": "time",
+        "Start": 16,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "I'll change the ten am appointment to 25",
+    "Results": [
+      {
+        "Text": "ten am",
+        "Type": "time",
+        "Start": 16,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "I'll change the ten am appointment to twenty five",
+    "Results": [
+      {
+        "Text": "ten am",
+        "Type": "time",
+        "Start": 16,
+        "Length": 6
+      },
+      {
+        "Text": "twenty five",
+        "Type": "time",
+        "Start": 38,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "next meeting will be held on March 16th, 2017, how about we have a discussion at 2pm this afternoon?",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "March 16th, 2017",
+        "Type": "date",
+        "Start": 29,
+        "Length": 16
+      },
+      {
+        "Text": "2pm this afternoon",
+        "Type": "datetime",
+        "Start": 81,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "April 1st, 2018, we can plan it 2pm this afternoon",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "April 1st, 2018",
+        "Type": "date",
+        "Start": 0,
+        "Length": 15
+      },
+      {
+        "Text": "2pm this afternoon",
+        "Type": "datetime",
+        "Start": 32,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "The range is before 2012",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "before 2012",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "The range is until 2012",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "until 2012",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "The range is 2012 or after",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "2012 or after",
+        "Type": "daterange",
+        "Start": 13,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out 11 -2016",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "11 -2016",
+        "Type": "daterange",
+        "Start": 12,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out 11- 2016",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "11- 2016",
+        "Type": "daterange",
+        "Start": 12,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out 11 / 2016",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "11 / 2016",
+        "Type": "daterange",
+        "Start": 12,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out 11/2016",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "11/2016",
+        "Type": "daterange",
+        "Start": 12,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out 11 - 2016",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "11 - 2016",
+        "Type": "daterange",
+        "Start": 12,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out 11-2016",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "11-2016",
+        "Type": "daterange",
+        "Start": 12,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out 2016 /11",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "2016 /11",
+        "Type": "daterange",
+        "Start": 12,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out 2016/ 11",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "2016/ 11",
+        "Type": "daterange",
+        "Start": 12,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out 2016 / 11",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "2016 / 11",
+        "Type": "daterange",
+        "Start": 12,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out 2016/11",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "2016/11",
+        "Type": "daterange",
+        "Start": 12,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out 2016 -11",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "2016 -11",
+        "Type": "daterange",
+        "Start": 12,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out 2016- 11",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "2016- 11",
+        "Type": "daterange",
+        "Start": 12,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out 2016 - 11",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "2016 - 11",
+        "Type": "daterange",
+        "Start": 12,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out 2016-11",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "2016-11",
+        "Type": "daterange",
+        "Start": 12,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out 2016 November",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "2016 November",
+        "Type": "daterange",
+        "Start": 12,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out November , 2016",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "November , 2016",
+        "Type": "daterange",
+        "Start": 12,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out 2016 , nov",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "2016 , nov",
+        "Type": "daterange",
+        "Start": 12,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out 2016, nov",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "2016, nov",
+        "Type": "daterange",
+        "Start": 12,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "He will arrive later than or at 1/1/2016",
+    "Results": [
+      {
+        "Text": "later than or at 1/1/2016",
+        "Type": "date",
+        "Start": 15,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "He will leave before or on 1/1/2016",
+    "Results": [
+      {
+        "Text": "before or on 1/1/2016",
+        "Type": "date",
+        "Start": 14,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "This task will complete on or earlier than 1/1/2016",
+    "Results": [
+      {
+        "Text": "on or earlier than 1/1/2016",
+        "Type": "date",
+        "Start": 24,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "This task will complete before or in Feb 2018",
+    "Results": [
+      {
+        "Text": "before or in Feb 2018",
+        "Type": "daterange",
+        "Start": 24,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "You can't leave earlier than or in 2016",
+    "Results": [
+      {
+        "Text": "earlier than or in 2016",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "You can leave office at or after 6:30PM today",
+    "Results": [
+      {
+        "Text": "at or after 6:30PM today",
+        "Type": "datetime",
+        "Start": 21,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "You need to leave on or before the day after tomorrow",
+    "Results": [
+      {
+        "Text": "on or before the day after tomorrow",
+        "Type": "date",
+        "Start": 18,
+        "Length": 35
+      }
+    ]
+  },
+  {
+    "Input": "You need to leave on or earlier than 3pm 5/15/2018",
+    "Results": [
+      {
+        "Text": "on or earlier than 3pm 5/15/2018",
+        "Type": "datetime",
+        "Start": 18,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "Are you available two days after today?",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "two days after today",
+        "Type": "date",
+        "Start": 18,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Are you available three weeks from tomorrow?",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "three weeks from tomorrow",
+        "Type": "date",
+        "Start": 18,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Where were you two days before yesterday?",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "two days before yesterday",
+        "Type": "date",
+        "Start": 15,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "What the sale by year?",
+    "NotSupported": "javascript",
+    "Results": []
+  },
+  {
+    "Input": "I have already finished all my work more than 2 weeks before today",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "more than 2 weeks before today",
+        "Type": "daterange",
+        "Start": 36,
+        "Length": 30
+      }
+    ]
+  },
+  {
+    "Input": "I will come back within 2 weeks from today",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "within 2 weeks from today",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "I will come back less than 2 weeks from today",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "less than 2 weeks from today",
+        "Type": "daterange",
+        "Start": 17,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "This task should have been done more than 2 days before yesterday",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "more than 2 days before yesterday",
+        "Type": "daterange",
+        "Start": 32,
+        "Length": 33
+      }
+    ]
+  },
+  {
+    "Input": "This task will be done less than 3 days after tomorrow",
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "less than 3 days after tomorrow",
+        "Type": "daterange",
+        "Start": 23,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "Let's start 3 minutes from now",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "3 minutes from now",
+        "Type": "datetime",
+        "Start": 12,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Let's start 3 minutes from today",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3 minutes",
+        "Type": "duration",
+        "Start": 12,
+        "Length": 9
+      },
+      {
+        "Text": "today",
+        "Type": "date",
+        "Start": 27,
+        "Length": 5
+      }
+    ]
+  }
+]
