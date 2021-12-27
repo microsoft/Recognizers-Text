@@ -24,6 +24,7 @@ class AbstractSequenceModel(Model):
     def parse(self, query: str) -> List[ModelResult]:
         model_results: List[ModelResult] = list()
         parse_results = []
+        query = QueryProcessor.preprocess(query)
 
         try:
             extract_results = self.extractor.extract(query)

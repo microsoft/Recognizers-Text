@@ -106,6 +106,13 @@ WeekOfMonthRegex: !nestedRegex
 WeekOfYearRegex: !nestedRegex
   def: (?<woy>((die|der)\s+)?(?<cardinal>(erste[rns]?|1\.|zweite[rns]?|2\.|dritte[rns]?|3\.|vierte[rns]?|4\.|fünfte[rns]?|5\.|letzte[rmns]?)\s+woche\s+(im|diese(s|n)|\s+des)?\s+({YearRegex}|{RelativeRegex}\s+jahr(en|es|e)?)))
   references: [ YearRegex, RelativeRegex ]
+OfYearRegex: !nestedRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: \b((of|in)\s+({YearRegex}|{StrictRelativeRegex}\s+year))\b
+  references: [ YearRegex, StrictRelativeRegex ]
+FirstLastRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: \b(the\s+)?((?<first>first)|(?<last>last))\b
 FollowedDateUnit: !nestedRegex
   def: ^\s*{DateUnitRegex}
   references: [ DateUnitRegex ]
@@ -223,8 +230,9 @@ MonthEnd: !nestedRegex
 WeekDayEnd: !nestedRegex
   def: '{WeekDayRegex}\s*,?\s*$'
   references: [ WeekDayRegex ]
-WeekDayStart: !simpleRegex
-  def: ^[\.]
+WeekDayStart: !nestedRegex
+  def: ^\s+(am\s+)?{WeekDayRegex}\b
+  references: [ WeekDayRegex ]
 RangeUnitRegex: !simpleRegex
   def: (?<unit>jahren?|jahr|monaten?|monat|wochen?|tagen?|tag)
 OclockRegex: !simpleRegex

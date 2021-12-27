@@ -463,22 +463,18 @@ class NumberWithUnitExtractor(Extractor):
         if self.config.ambiguity_filters_dict is not None:
             for regex_var in self.config.ambiguity_filters_dict:
                 regexvar_value = self.config.ambiguity_filters_dict[regex_var]
+                for er in ers:
+                    match = list(filter(lambda x: x.group(), regex.finditer(regex_var, ers[0].text)))
 
-                try:
-                    reg_match = list(filter(lambda x: x.group(), regex.finditer(regexvar_value, text)))
+                    if match and len(match) > 0:
+                        try:
+                            reg_match = list(filter(lambda x: x.group(), regex.finditer(regexvar_value, text)))
 
-                    if len(reg_match) > 0:
-
-                        matches = reg_match
-                        new_ers = list(filter(lambda x: list(filter(lambda m: m.start() < x.start + x.length and m.start() +
-                                                                    len(m.group()) > x.start, matches)), ers))
-                        if len(new_ers) > 0:
-                            for item in ers:
-                                for i in new_ers:
-                                    if item is i:
-                                        ers.remove(item)
-                except Exception:
-                    pass
+                            if len(reg_match) > 0:
+                                ers = list(filter(lambda x: not any([m.start() < x.start + x.length and m.start() +
+                                                                     len(m.group()) > x.start for m in reg_match]), ers))
+                        except Exception:
+                            pass
 
         # filter single-char units if not exact match
         try:

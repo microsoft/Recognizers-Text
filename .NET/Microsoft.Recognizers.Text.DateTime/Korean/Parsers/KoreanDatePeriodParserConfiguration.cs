@@ -62,6 +62,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
             FutureRegex = KoreanDatePeriodExtractorConfiguration.FutureRegex;
             UnitRegex = KoreanDatePeriodExtractorConfiguration.UnitRegex;
             WeekOfMonthRegex = KoreanDatePeriodExtractorConfiguration.WeekOfMonthRegex;
+            WeekOfYearRegex = KoreanDatePeriodExtractorConfiguration.WeekOfYearRegex;
+            FirstLastOfYearRegex = KoreanDatePeriodExtractorConfiguration.FirstLastOfYearRegex;
             SeasonWithYear = KoreanDatePeriodExtractorConfiguration.SeasonWithYear;
             QuarterRegex = KoreanDatePeriodExtractorConfiguration.QuarterRegex;
             DecadeRegex = KoreanDatePeriodExtractorConfiguration.DecadeRegex;
@@ -140,6 +142,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
         public Regex UnitRegex { get; }
 
         public Regex WeekOfMonthRegex { get; }
+
+        public Regex WeekOfYearRegex { get; }
+
+        public Regex FirstLastOfYearRegex { get; }
 
         public Regex SeasonWithYear { get; }
 

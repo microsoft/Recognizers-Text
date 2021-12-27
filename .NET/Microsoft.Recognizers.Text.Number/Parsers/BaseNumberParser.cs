@@ -194,7 +194,10 @@ namespace Microsoft.Recognizers.Text.Number
             };
 
             var handle = extResult.Text.ToUpperInvariant();
-            var isE = !extResult.Text.Contains("^");
+
+            // Process cases like '1x10^6' as '1e6'
+            handle = handle.Replace("X10^", "E");
+            var isE = !handle.Contains("^");
 
             // [1] 1e10
             // [2] 1.1^-23

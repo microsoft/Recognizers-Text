@@ -23,5 +23,19 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Tests
         {
             TestCurrency(testSpec);
         }
+
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void DimensionModel(TestModel testSpec)
+        {
+            TestNumberWithUnit(testSpec);
+        }
+
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void TemperatureModel(TestModel testSpec)
+        {
+            TestNumberWithUnit(testSpec);
+        }
     }
 }

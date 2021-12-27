@@ -13,7 +13,7 @@ from recognizers_number.number import Constants as NumberConstants
 from .constants import Constants, TimeTypeConstants
 from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
-from .utilities import Token
+from .utilities import Token, MatchingUtil
 import regex
 import calendar
 
@@ -373,6 +373,12 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
 
             if result.start >= 0:
                 front_string = source[0:result.start or 0]
+
+                # Check that the extracted number is not part of a decimal number, time expression or currency
+                # (e.g. '123.24', '12:24', '$12')
+                if MatchingUtil.is_invalid_day_number_prefix(front_string):
+                    continue
+
                 match = regex.search(self.config.month_end, front_string)
 
                 if match is not None:

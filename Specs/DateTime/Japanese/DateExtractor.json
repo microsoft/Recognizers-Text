@@ -788,7 +788,6 @@
   },
   {
     "Input": "2週先の月曜日のご都合はいかがでしょうか？",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {

@@ -801,22 +801,6 @@
     ]
   },
   {
-    "Input": "femtio - två",
-    "NotSupportedByDesign": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "femtio - två",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "52"
-        },
-        "Start": 0,
-        "End": 11
-      }
-    ]
-  },
-  {
     "Input": "femtio   två",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
@@ -911,22 +895,6 @@
         },
         "Start": 0,
         "End": 6
-      }
-    ]
-  },
-  {
-    "Input": "femtio-två",
-    "NotSupportedByDesign": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "femtio-två",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "integer",
-          "value": "52"
-        },
-        "Start": 0,
-        "End": 9
       }
     ]
   },
@@ -1396,9 +1364,7 @@
   },
   {
     "Input": "två tjugoförstedelar",
-    "Comment": "Correspons to writing 'A twentyfirsts'. Compound fraction expressions are currently not resolved correctly.",
     "NotSupportedByDesign": "javascript, python, java",
-    "Debug": true,
     "Results": [
       {
         "Text": "två tjugoförstedelar",
@@ -1413,7 +1379,25 @@
     ]
   },
   {
+    "Input": "en tjugoförstedels andel",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Debug": true,
+    "Results": [
+      {
+        "Text": "en tjugoförstedels",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0,0952380952380952"
+        },
+        "Start": 0,
+        "End": 19
+      }
+    ]
+  },
+  {
     "Input": "en tjugo femtedel",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "en tjugo femtedel",
@@ -1429,8 +1413,6 @@
   },
   {
     "Input": "tre tjugoförstedelar",
-    "Comment": "Correspons to writing 'Three twentyfirsts'. Compound fraction expressions are currently not handled.",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -1442,6 +1424,22 @@
         },
         "Start": 0,
         "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "hans andel var de resterande tre tjugoförstedelarna",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "tre tjugoförstedelarna",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0,142857142857143"
+        },
+        "Start": 29,
+        "End": 50
       }
     ]
   },

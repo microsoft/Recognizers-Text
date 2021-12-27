@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
@@ -66,29 +67,24 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
         public static int WeekOfYear(DateObject date)
         {
-            var ds = new DateObject(date.Year, 1, 1);
-            var de = new DateObject(date.Year, date.Month, date.Day);
-            int weeks = 1;
+            CultureInfo culture = CultureInfo.InvariantCulture;
 
-            while (ds < de)
+            // Workaround to get ISO 8601 week number.
+            // (A better solution would be to use ISOWeek.GetWeekOfYear but it seems currently unsupported)
+            DayOfWeek day = culture.Calendar.GetDayOfWeek(date);
+            if (day >= DayOfWeek.Monday && day <= DayOfWeek.Wednesday)
             {
-                var dayOfWeek = ds.DayOfWeek;
-
-                var isoDayOfWeek = (dayOfWeek == 0) ? 7 : (int)dayOfWeek;
-                if (isoDayOfWeek == 7)
-                {
-                    weeks++;
-                }
-
-                ds = ds.AddDays(1);
+                date = date.AddDays(3);
             }
+
+            int weeks = culture.Calendar.GetWeekOfYear(date, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
 
             return weeks;
         }
 
         public static string FixedFormatNumber(int? n, int size)
         {
-            return n.Value.ToString(System.Globalization.CultureInfo.InvariantCulture).PadLeft(size, '0');
+            return n.Value.ToString(CultureInfo.InvariantCulture).PadLeft(size, '0');
         }
 
         public static DateObject DateOfLastDay(DayOfWeek day, DateObject referenceDate)

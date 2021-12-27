@@ -66,7 +66,33 @@ public class FrenchDateTime {
             .replace("{AmDescRegex}", AmDescRegex)
             .replace("{PmDescRegex}", PmDescRegex);
 
-    public static final String FullTextYearRegex = "^[\\*]";
+    public static final String WrittenOneToNineRegex = "(?:une?|deux|trois|quatre|cinq|six|sept|huit|neuf)";
+
+    public static final String WrittenElevenToNineteenRegex = "(?:(seize|quinze|quatorze|treize|douze|onze)|dix\\W(neuf|huit|sept))";
+
+    public static final String WrittenTensRegex = "(?:quatre\\Wvingt(s|\\Wdix)?|soixante(\\Wdix)?|dix|vingt|trente|quarante|cinquante|septante|octante|huitante|nonante)";
+
+    public static final String WrittenCenturyFullYearRegex = "(?:(deux\\s+)?mille((\\s+{WrittenOneToNineRegex})?\\s+cents?)?)"
+            .replace("{WrittenOneToNineRegex}", WrittenOneToNineRegex);
+
+    public static final String WrittenCenturyOrdinalYearRegex = "({WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|dix)"
+            .replace("{WrittenOneToNineRegex}", WrittenOneToNineRegex)
+            .replace("{WrittenElevenToNineteenRegex}", WrittenElevenToNineteenRegex);
+
+    public static final String CenturyRegex = "\\b(?<century>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}(\\s+cents?)?)\\b"
+            .replace("{WrittenCenturyFullYearRegex}", WrittenCenturyFullYearRegex)
+            .replace("{WrittenCenturyOrdinalYearRegex}", WrittenCenturyOrdinalYearRegex);
+
+    public static final String LastTwoYearNumRegex = "(({WrittenTensRegex}(\\s+|-))?({WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex})|{WrittenTensRegex})"
+            .replace("{WrittenOneToNineRegex}", WrittenOneToNineRegex)
+            .replace("{WrittenElevenToNineteenRegex}", WrittenElevenToNineteenRegex)
+            .replace("{WrittenTensRegex}", WrittenTensRegex);
+
+    public static final String FullTextYearRegex = "\\b(?<fullyear>(?<firsttwoyearnum>{CenturyRegex})\\s+(?<lasttwoyearnum>{LastTwoYearNumRegex})\\b|\\b(?<firsttwoyearnum>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}\\s+cents))\\b"
+            .replace("{CenturyRegex}", CenturyRegex)
+            .replace("{WrittenCenturyFullYearRegex}", WrittenCenturyFullYearRegex)
+            .replace("{WrittenCenturyOrdinalYearRegex}", WrittenCenturyOrdinalYearRegex)
+            .replace("{LastTwoYearNumRegex}", LastTwoYearNumRegex);
 
     public static final String YearRegex = "({BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})"
             .replace("{BaseDateTime.FourDigitYearRegex}", BaseDateTime.FourDigitYearRegex)
@@ -136,6 +162,12 @@ public class FrenchDateTime {
     public static final String WeekOfYearRegex = "(?<woy>(le\\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4|cinqi[èe]me|5)\\s+semaine(\\s+de)?\\s+({YearRegex}|{RelativeRegex}\\s+ann[ée]e))"
             .replace("{YearRegex}", YearRegex)
             .replace("{RelativeRegex}", RelativeRegex);
+
+    public static final String OfYearRegex = "\\b((of|in)\\s+({YearRegex}|{StrictRelativeRegex}\\s+year))\\b"
+            .replace("{YearRegex}", YearRegex)
+            .replace("{StrictRelativeRegex}", StrictRelativeRegex);
+
+    public static final String FirstLastRegex = "\\b(the\\s+)?((?<first>first)|(?<last>last))\\b";
 
     public static final String FollowedDateUnit = "^\\s*{DateUnitRegex}"
             .replace("{DateUnitRegex}", DateUnitRegex);
@@ -214,13 +246,13 @@ public class FrenchDateTime {
             .replace("{YearRegex}", YearRegex)
             .replace("{TwoDigitYearRegex}", TwoDigitYearRegex);
 
-    public static final String DateExtractor1 = "\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{MonthRegex}\\s*[/\\\\\\.\\-]?\\s*{DayRegex}(\\s*[/\\\\\\.\\-]?\\s*{BaseDateTime.FourDigitYearRegex})?\\b"
+    public static final String DateExtractor1 = "\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{MonthRegex}\\s*[/\\\\\\.\\-]?\\s*{DayRegex}(\\s*([/\\\\\\.\\-]|\\bde\\b)?\\s*{BaseDateTime.FourDigitYearRegex})?\\b"
             .replace("{WeekDayRegex}", WeekDayRegex)
             .replace("{MonthRegex}", MonthRegex)
             .replace("{DayRegex}", DayRegex)
             .replace("{BaseDateTime.FourDigitYearRegex}", BaseDateTime.FourDigitYearRegex);
 
-    public static final String DateExtractor2 = "\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{DayRegex}(\\s+|\\s*,\\s*|\\s+){MonthRegex}\\s*[\\.\\-]?\\s*{DateYearRegex}\\b"
+    public static final String DateExtractor2 = "\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{DayRegex}(\\s+|\\s*,\\s*|\\s+){MonthRegex}\\s*([\\.\\-]|\\bde\\b)?\\s*{DateYearRegex}\\b"
             .replace("{WeekDayRegex}", WeekDayRegex)
             .replace("{MonthRegex}", MonthRegex)
             .replace("{DayRegex}", DayRegex)
@@ -274,7 +306,7 @@ public class FrenchDateTime {
             .replace("{DayRegex}", DayRegex)
             .replace("{BaseDateTime.FourDigitYearRegex}", BaseDateTime.FourDigitYearRegex);
 
-    public static final String OfMonth = "^\\s*de\\s*{MonthRegex}"
+    public static final String OfMonth = "^(\\s*de)?\\s*{MonthRegex}\\b"
             .replace("{MonthRegex}", MonthRegex);
 
     public static final String MonthEnd = "{MonthRegex}\\s*(le)?\\s*$"
@@ -287,7 +319,7 @@ public class FrenchDateTime {
 
     public static final String RangeUnitRegex = "\\b(?<unit>(l')?ann[eé]e(s)?|mois|semaines?)\\b";
 
-    public static final String HourNumRegex = "\\b(?<hournum>zero|[aá]\\s+une?|deux|trois|quatre|cinq|six|sept|huit|neuf|onze|douze|treize|quatorze|quinze|dix-six|dix-sept|dix-huit|dix-neuf|vingt|vingt-et-un|vingt-deux|vingt-trois|dix)\\b";
+    public static final String HourNumRegex = "\\b(?<hournum>zero|une?(?=\\s+heure)|deux|trois|quatre|cinq|six|sept|huit|neuf|onze|douze|treize|quatorze|quinze|dix-six|seize|dix(-|\\s+)sept|dix(-|\\s+)huit|dix(-|\\s+)neuf|vingt|vingt(-|\\s+)et(-|\\s+)un|vingt(-|\\s+)deux|vingt(-|\\s+)trois|dix)\\b";
 
     public static final String MinuteNumRegex = "(?<minnum>((vingt|trente|quarante|cinquante)(\\s*(et|-)?\\s*))?(un|deux|trois|quatre|cinq|six|sept|huit|neuf)|onze|douze|treize|quatorze|quinze|seize|dix-sept|dix-huit|dix-neuf|vingt|trente|quarante|cinquante|dix)";
 
@@ -303,7 +335,7 @@ public class FrenchDateTime {
             .replace("{BaseDateTime.DeltaMinuteRegex}", BaseDateTime.DeltaMinuteRegex)
             .replace("{DeltaMinuteNumRegex}", DeltaMinuteNumRegex);
 
-    public static final String WrittenTimeRegex = "(?<writtentime>{HourNumRegex}\\s+(heures\\s+)?(et\\s+)?{MinuteNumRegex}(\\s+(minutes?|mins?))?)"
+    public static final String WrittenTimeRegex = "(?<writtentime>{HourNumRegex}\\s+(heures\\s+)?(et\\s+)?{MinuteNumRegex}(?!\\s+heures)(\\s+(minutes?|mins?))?)"
             .replace("{HourNumRegex}", HourNumRegex)
             .replace("{MinuteNumRegex}", MinuteNumRegex);
 
@@ -344,7 +376,7 @@ public class FrenchDateTime {
             .replace("{MidafternoonRegex}", MidafternoonRegex)
             .replace("{MiddayRegex}", MiddayRegex);
 
-    public static final String AtRegex = "\\b(((?<=\\b[àa]\\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}|{MidTimeRegex}))|{MidTimeRegex})\\b"
+    public static final String AtRegex = "\\b(((?<=\\b[àa]\\s+)({WrittenTimeRegex}|{HourNumRegex}(\\s+heures)?|{BaseDateTime.HourRegex}|{MidTimeRegex}))|{MidTimeRegex})\\b"
             .replace("{WrittenTimeRegex}", WrittenTimeRegex)
             .replace("{HourNumRegex}", HourNumRegex)
             .replace("{BaseDateTime.HourRegex}", BaseDateTime.HourRegex)
@@ -719,15 +751,13 @@ public class FrenchDateTime {
 
     public static final String DateNumberConnectorRegex = "^\\s*(?<connector>\\s+[aà])\\s*$";
 
-    public static final String CenturyRegex = "^\\b$";
-
     public static final String DecadeRegex = "^\\b$";
 
     public static final String DecadeWithCenturyRegex = "^\\b$";
 
     public static final String RelativeDecadeRegex = "^\\b$";
 
-    public static final String YearSuffix = "(,?\\s*({DateYearRegex}|{FullTextYearRegex}))"
+    public static final String YearSuffix = "(,?(\\s*à)?\\s*({DateYearRegex}|{FullTextYearRegex}))"
             .replace("{DateYearRegex}", DateYearRegex)
             .replace("{FullTextYearRegex}", FullTextYearRegex);
 

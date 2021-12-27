@@ -92,6 +92,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             MoreThanRegex = FrenchDatePeriodExtractorConfiguration.MoreThanRegex;
             CenturySuffixRegex = FrenchDatePeriodExtractorConfiguration.CenturySuffixRegex;
             NowRegex = FrenchDatePeriodExtractorConfiguration.NowRegex;
+            FirstLastRegex = FrenchDatePeriodExtractorConfiguration.FirstLastRegex;
+            OfYearRegex = FrenchDatePeriodExtractorConfiguration.OfYearRegex;
             SpecialDayRegex = FrenchDateExtractorConfiguration.SpecialDayRegex;
             TodayNowRegex = new Regex(DateTimeDefinitions.TodayNowRegex, RegexOptions.Singleline);
 
@@ -206,6 +208,10 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public Regex SpecialDayRegex { get; }
 
         public Regex TodayNowRegex { get; }
+
+        public Regex FirstLastRegex { get; }
+
+        public Regex OfYearRegex { get; }
 
         Regex ISimpleDatePeriodParserConfiguration.RelativeRegex => RelativeRegex;
 

@@ -37,6 +37,7 @@ namespace Microsoft.Recognizers.Definitions.Korean
       public static readonly string DynastyYearRegex = $@"(?<dynasty>{RegionTitleRegex})(?<biasYear>({DynastyStartYear}|\d{{1,3}}|[十拾]?({ZeroToNineIntegerRegexCJK}[十百拾佰]?){{0,3}}))";
       public static readonly string DateYearInCJKRegex = $@"(?<yearCJK>({ZeroToNineIntegerRegexCJK}{{2,4}}|[일이]천{ZeroToNineIntegerRegexCJK}{{1,2}}))";
       public const string WeekDayRegex = @"(?<weekday>일요일|월요일|화요일|수요일|목요일|금요일|토요일)";
+      public const string WeekDayStartEnd = @"^[.]";
       public const string LunarRegex = @"음력";
       public static readonly string DateThisRegex = $@"(이번(\s+)?(주\s+)?){WeekDayRegex}";
       public static readonly string DateLastRegex = $@"((저번|지난)(\s+)?(주\s+)?){WeekDayRegex}";
@@ -102,6 +103,7 @@ namespace Microsoft.Recognizers.Definitions.Korean
       public const string DayRegexForPeriod = @"^[.]";
       public static readonly string WeekToWeek = $@"(\d+\s*주{DatePeriodTillRegex}\s+\d+\s*주\s*{DatePeriodRangeSuffixRegex})";
       public static readonly string RelativePeriodRegex = $@"(({SpecialDayRegex}|지금|올 해)\s*{DatePeriodTillRegex}\s*((\d+\s*주)|(하루|이틀|사흘|나흘|닷새|엿새|이흐레|여드레|아흐레|열흘)|(지금))(\s*반)?(\s*[전후뒤앞])?\s*{DatePeriodRangeSuffixRegex})";
+      public static readonly string FirstLastOfYearRegex = $@"(({DatePeriodYearInCJKRegex}|{YearRegex}|(?<yearrel>明年|今年|去年))的?)((?<first>前)|(?<last>(最后|最後)))";
       public const string PastRegex = @"(?<past>지난|과거)";
       public const string FutureRegex = @"(?<future>앞으로|지금부터)";
       public const string SeasonRegex = @"(한\s*)?(?<season>봄|여름|가을|겨울)";

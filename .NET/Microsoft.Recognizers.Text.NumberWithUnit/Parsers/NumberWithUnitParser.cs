@@ -98,8 +98,10 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 }
             }
 
-            // Unit type depends on last unit in suffix
-            var lastUnit = unitKeys.Last();
+            // By default, unit type depends on last unit in suffix,
+            // but in certain cultures (e.g. Japanese) it depends on first unit in suffix
+            var lastUnit = Config.CheckFirstSuffix ? unitKeys.First() : unitKeys.Last();
+
             if (halfResult != null)
             {
                 lastUnit = lastUnit.Substring(0, lastUnit.Length - halfResult.Text.Length).Trim();

@@ -44,6 +44,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
 
         public static readonly Regex AfterRegex = new Regex(DateTimeDefinitions.AfterRegex, RegexFlags);
 
+        public static readonly Regex WeekDayStartEnd = new Regex(DateTimeDefinitions.WeekDayStartEnd, RegexFlags);
+
         public static readonly Regex DateTimePeriodUnitRegex = new Regex(DateTimeDefinitions.DateTimePeriodUnitRegex, RegexFlags);
 
         public static readonly Regex MonthRegex = new Regex(DateTimeDefinitions.MonthRegex, RegexFlags);
@@ -134,5 +136,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
 
         public Dictionary<char, char> NormalizeCharMap { get; }
 
+        Regex ICJKDateExtractorConfiguration.WeekDayStartEnd => WeekDayStartEnd;
     }
 }

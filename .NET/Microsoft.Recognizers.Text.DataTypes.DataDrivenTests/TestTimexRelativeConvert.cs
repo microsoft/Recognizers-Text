@@ -147,7 +147,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         [TestMethod]
         public void DataTypes_RelativeConvert_DateRange_this_week()
         {
-            var timex = new TimexProperty("2017-W40");
+            var timex = new TimexProperty("2017-W39");
             var today = new System.DateTime(2017, 9, 25);
             Assert.AreEqual("this week", TimexRelativeConvert.ConvertTimexToStringRelative(timex, today));
         }
@@ -155,7 +155,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         [TestMethod]
         public void DataTypes_RelativeConvert_DateRange_next_week()
         {
-            var timex = new TimexProperty("2017-W41");
+            var timex = new TimexProperty("2017-W40");
             var today = new System.DateTime(2017, 9, 25);
             Assert.AreEqual("next week", TimexRelativeConvert.ConvertTimexToStringRelative(timex, today));
         }
@@ -163,7 +163,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         [TestMethod]
         public void DataTypes_RelativeConvert_DateRange_last_week()
         {
-            var timex = new TimexProperty("2017-W39");
+            var timex = new TimexProperty("2017-W38");
             var today = new System.DateTime(2017, 9, 25);
             Assert.AreEqual("last week", TimexRelativeConvert.ConvertTimexToStringRelative(timex, today));
         }
@@ -171,7 +171,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         [TestMethod]
         public void DataTypes_RelativeConvert_DateRange_this_week_2()
         {
-            var timex = new TimexProperty("2017-W41");
+            var timex = new TimexProperty("2017-W40");
             var today = new System.DateTime(2017, 10, 4);
             Assert.AreEqual("this week", TimexRelativeConvert.ConvertTimexToStringRelative(timex, today));
         }
@@ -179,7 +179,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         [TestMethod]
         public void DataTypes_RelativeConvert_DateRange_next_week_2()
         {
-            var timex = new TimexProperty("2017-W42");
+            var timex = new TimexProperty("2017-W41");
             var today = new System.DateTime(2017, 10, 4);
             Assert.AreEqual("next week", TimexRelativeConvert.ConvertTimexToStringRelative(timex, today));
         }
@@ -187,7 +187,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         [TestMethod]
         public void DataTypes_RelativeConvert_DateRange_last_week_2()
         {
-            var timex = new TimexProperty("2017-W40");
+            var timex = new TimexProperty("2017-W39");
             var today = new System.DateTime(2017, 10, 4);
             Assert.AreEqual("last week", TimexRelativeConvert.ConvertTimexToStringRelative(timex, today));
         }
@@ -195,7 +195,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         [TestMethod]
         public void DataTypes_RelativeConvert_Weekend_this_weekend()
         {
-            var timex = new TimexProperty("2017-W40-WE");
+            var timex = new TimexProperty("2017-W39-WE");
             var today = new System.DateTime(2017, 9, 25);
             Assert.AreEqual("this weekend", TimexRelativeConvert.ConvertTimexToStringRelative(timex, today));
         }
@@ -203,7 +203,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         [TestMethod]
         public void DataTypes_RelativeConvert_Weekend_next_weekend()
         {
-            var timex = new TimexProperty("2017-W41-WE");
+            var timex = new TimexProperty("2017-W40-WE");
             var today = new System.DateTime(2017, 9, 25);
             Assert.AreEqual("next weekend", TimexRelativeConvert.ConvertTimexToStringRelative(timex, today));
         }
@@ -211,7 +211,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         [TestMethod]
         public void DataTypes_RelativeConvert_Weekend_last_weekend()
         {
-            var timex = new TimexProperty("2017-W39-WE");
+            var timex = new TimexProperty("2017-W38-WE");
             var today = new System.DateTime(2017, 9, 25);
             Assert.AreEqual("last weekend", TimexRelativeConvert.ConvertTimexToStringRelative(timex, today));
         }

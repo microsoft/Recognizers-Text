@@ -70,6 +70,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                     innerResult = ParseSingleNumber(er.Text, referenceDate);
                 }
 
+                // In cases like "Monday two weeks from now", the resolution of "two weeks from now" needs to be shifted
+                // to correspond to the weekday "Monday".
+                if (innerResult.Success && er.Metadata != null && er.Metadata.IsDurationDateWithWeekday)
+                {
+                    innerResult = SwiftResolutionByWeekday(innerResult, er.Text);
+                }
+
                 if (innerResult.Success)
                 {
                     innerResult.FutureResolution = new Dictionary<string, string>
@@ -485,6 +492,13 @@ namespace Microsoft.Recognizers.Text.DateTime
             match = this.config.WeekDayAndDayRegex.Match(text);
             if (match.Success)
             {
+                // avoid parsing "Monday 3" from "Monday 3 weeks from now"
+                var afterStr = text.Substring(match.Index + match.Length);
+                if (config.UnitRegex.MatchBegin(afterStr, trim: true).Success)
+                {
+                    return ret;
+                }
+
                 int month = referenceDate.Month, year = referenceDate.Year;
 
                 // Create a extract result which content ordinal string of text
@@ -1050,6 +1064,53 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ambiguous = false;
                 }
             }
+        }
+
+        private DateTimeResolutionResult SwiftResolutionByWeekday(DateTimeResolutionResult ret, string text)
+        {
+            var match = config.WeekDayRegex.MatchBegin(text, trim: true);
+            if (!match.Success)
+            {
+                match = config.WeekDayRegex.MatchEnd(text, trim: true);
+            }
+
+            if (match.Success)
+            {
+                DateObject futureValue = (DateObject)ret.FutureValue;
+                var weekDayNr = (int)futureValue.DayOfWeek;
+                var extractedWeekDayStr = match.Groups["weekday"].Value;
+                var extractedWeekDayNr = this.config.DayOfWeek[extractedWeekDayStr];
+                if (weekDayNr != extractedWeekDayNr)
+                {
+                    var diffDay = extractedWeekDayNr - weekDayNr;
+                    if (ret.SubDateTimeEntities.Count > 0)
+                    {
+                        var retDuration = (DateTimeParseResult)ret.SubDateTimeEntities[0];
+                        if (retDuration.TimexStr.EndsWith("M"))
+                        {
+                            // In cases like "two months/years from now", the returned date cannot be less than 2 months/years from now.
+                            if (futureValue.Day + diffDay < 1)
+                            {
+                                diffDay += 7;
+                            }
+                        }
+                        else if (retDuration.TimexStr.EndsWith("Y"))
+                        {
+                            if (futureValue.DayOfYear + diffDay < 1)
+                            {
+                                diffDay += 7;
+                            }
+                        }
+                    }
+
+                    var newFutureValue = futureValue.AddDays(diffDay);
+                    ret.FutureValue = newFutureValue;
+                    ret.PastValue = newFutureValue;
+                    ret.Timex = DateTimeFormatUtil.LuisDate(newFutureValue.Year, newFutureValue.Month, newFutureValue.Day);
+                }
+            }
+
+            return ret;
         }
     }
 }

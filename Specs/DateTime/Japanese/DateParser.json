@@ -3460,7 +3460,7 @@
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "2週後",
+        "Text": "2週後の月曜日",
         "Type": "date",
         "Value": {
           "Timex": "2018-05-21",
@@ -3472,22 +3472,7 @@
           }
         },
         "Start": 0,
-        "Length": 3
-      },
-      {
-        "Text": "月曜日",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-WXX-1",
-          "FutureResolution": {
-            "date": "2018-05-07"
-          },
-          "PastResolution": {
-            "date": "2018-04-30"
-          }
-        },
-        "Start": 4,
-        "Length": 3
+        "Length": 7
       }
     ]
   },

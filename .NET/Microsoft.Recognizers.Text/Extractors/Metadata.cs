@@ -40,6 +40,8 @@ namespace Microsoft.Recognizers.Text
         // For cases where a language has variations in handling decimal separators
         public bool TreatAsInteger { get; set; } = false;
 
+        public bool IsDurationDateWithWeekday { get; set; } = false;
+
         public Metadata Clone()
         {
             return (Metadata)MemberwiseClone();

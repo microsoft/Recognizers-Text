@@ -10,6 +10,7 @@ import com.microsoft.recognizers.text.datetime.extractors.config.IDateExtractorC
 import com.microsoft.recognizers.text.datetime.utilities.AgoLaterUtil;
 import com.microsoft.recognizers.text.datetime.utilities.ConditionalMatch;
 import com.microsoft.recognizers.text.datetime.utilities.DateUtil;
+import com.microsoft.recognizers.text.datetime.utilities.MatchingUtil;
 import com.microsoft.recognizers.text.datetime.utilities.RegexExtension;
 import com.microsoft.recognizers.text.datetime.utilities.Token;
 import com.microsoft.recognizers.text.utilities.Match;
@@ -206,6 +207,14 @@ public class BaseDateExtractor extends AbstractYearExtractor implements IDateTim
             if (result.getStart() >= 0) {
                 // Handling cases like '(Monday,) Jan twenty two'
                 String frontStr = text.substring(0, result.getStart());
+
+                // Check that the extracted number is not part of a decimal number, time
+                // expression or currency
+                // (e.g. '123.24', '12:24', '$12')
+                if (MatchingUtil.isInvalidDayNumberPrefix(frontStr)) {
+                    continue;
+                }
+
 
                 Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(config.getMonthEnd(), frontStr)).findFirst();
                 if (match.isPresent()) {

@@ -79,21 +79,21 @@ public class EnglishDateTime {
             .replace("{WrittenElevenToNineteenRegex}", WrittenElevenToNineteenRegex)
             .replace("{WrittenTensRegex}", WrittenTensRegex);
 
-    public static final String WrittenCenturyFullYearRegex = "(?:(one|two)\\s+thousand(\\s+and)?(\\s+{WrittenOneToNineRegex}\\s+hundred(\\s+and)?)?)"
+    public static final String WrittenCenturyFullYearRegex = "(?:(one|two)\\s+thousand((\\s+and)?\\s+{WrittenOneToNineRegex}\\s+hundred)?)"
             .replace("{WrittenOneToNineRegex}", WrittenOneToNineRegex);
 
-    public static final String WrittenCenturyOrdinalYearRegex = "(?:twenty(\\s+(one|two))?|ten|eleven|twelve|thirteen|fifteen|eigthteen|(?:four|six|seven|nine)(teen)?|one|two|three|five|eight)";
+    public static final String WrittenCenturyOrdinalYearRegex = "(?:twenty(\\s+(one|two))?|ten|eleven|twelve|thirteen|fifteen|eighteen|(?:four|six|seven|nine)(teen)?|one|two|three|five|eight)";
 
-    public static final String CenturyRegex = "\\b(?<century>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}(\\s+hundred)?(\\s+and)?)\\b"
+    public static final String CenturyRegex = "\\b(?<century>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}(\\s+hundred)?)\\b"
             .replace("{WrittenCenturyFullYearRegex}", WrittenCenturyFullYearRegex)
             .replace("{WrittenCenturyOrdinalYearRegex}", WrittenCenturyOrdinalYearRegex);
 
-    public static final String LastTwoYearNumRegex = "(?:zero\\s+{WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|{WrittenTensRegex}(\\s+{WrittenOneToNineRegex})?)"
+    public static final String LastTwoYearNumRegex = "(?:(zero\\s+)?{WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|{WrittenTensRegex}(\\s+{WrittenOneToNineRegex})?)"
             .replace("{WrittenOneToNineRegex}", WrittenOneToNineRegex)
             .replace("{WrittenElevenToNineteenRegex}", WrittenElevenToNineteenRegex)
             .replace("{WrittenTensRegex}", WrittenTensRegex);
 
-    public static final String FullTextYearRegex = "\\b((?<firsttwoyearnum>{CenturyRegex})\\s+(?<lasttwoyearnum>{LastTwoYearNumRegex})\\b|\\b(?<firsttwoyearnum>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}\\s+hundred(\\s+and)?))\\b"
+    public static final String FullTextYearRegex = "\\b((?<firsttwoyearnum>{CenturyRegex})(\\s+and)?\\s+(?<lasttwoyearnum>{LastTwoYearNumRegex})\\b|\\b(?<firsttwoyearnum>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}\\s+hundred))\\b"
             .replace("{CenturyRegex}", CenturyRegex)
             .replace("{WrittenCenturyFullYearRegex}", WrittenCenturyFullYearRegex)
             .replace("{WrittenCenturyOrdinalYearRegex}", WrittenCenturyOrdinalYearRegex)
@@ -145,7 +145,7 @@ public class EnglishDateTime {
             .replace("{RelativeMonthRegex}", RelativeMonthRegex)
             .replace("{WrittenMonthRegex}", WrittenMonthRegex);
 
-    public static final String DateUnitRegex = "(?<unit>(decade|year|month|week|(?<business>(business\\s+|week\\s*))?day|fortnight|weekend)(?<plural>s)?|(?<=\\s+\\d{1,4})[ymwd])\\b";
+    public static final String DateUnitRegex = "(?<unit>(decade|year|(?<uoy>month|week)|(?<business>(business\\s+|week\\s*))?(?<uoy>day)|fortnight|weekend)(?<plural>s)?|(?<=\\s+\\d{1,4})[ymwd])\\b";
 
     public static final String DateTokenPrefix = "on ";
 
@@ -193,7 +193,7 @@ public class EnglishDateTime {
             .replace("{MonthSuffixRegex}", MonthSuffixRegex)
             .replace("{YearRegex}", YearRegex);
 
-    public static final String MonthWithYear = "\\b(({WrittenMonthRegex}[\\.]?((\\s*)[/\\\\\\-\\.,]?(\\s+(of|in))?(\\s*)({YearRegex}|(?<order>following|next|last|this)\\s+year)|\\s+(of|in)\\s+{TwoDigitYearRegex}))|(({YearRegex}|(?<order>following|next|last|this)\\s+year)(\\s*),?(\\s*){WrittenMonthRegex}))\\b"
+    public static final String MonthWithYear = "\\b((({WrittenMonthRegex}[\\.]?|((the\\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|sixth|6th|seventh|7th|eighth|8th|ninth|9th|tenth|10th|eleventh|11th|twelfth|12th|last)\\s+month(?=\\s+(of|in))))((\\s*)[/\\\\\\-\\.,]?(\\s+(of|in))?(\\s*)({YearRegex}|(?<order>following|next|last|this)\\s+year)|\\s+(of|in)\\s+{TwoDigitYearRegex}))|(({YearRegex}|(?<order>following|next|last|this)\\s+year)(\\s*),?(\\s*){WrittenMonthRegex}))\\b"
             .replace("{WrittenMonthRegex}", WrittenMonthRegex)
             .replace("{YearRegex}", YearRegex)
             .replace("{TwoDigitYearRegex}", TwoDigitYearRegex);
@@ -221,6 +221,12 @@ public class EnglishDateTime {
     public static final String WeekOfYearRegex = "\\b(?<woy>(the\\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\\s+week(\\s+of)?\\s+({YearRegex}|{RelativeRegex}\\s+year))\\b"
             .replace("{YearRegex}", YearRegex)
             .replace("{RelativeRegex}", RelativeRegex);
+
+    public static final String OfYearRegex = "\\b((of|in)\\s+({YearRegex}|{StrictRelativeRegex}\\s+year))\\b"
+            .replace("{YearRegex}", YearRegex)
+            .replace("{StrictRelativeRegex}", StrictRelativeRegex);
+
+    public static final String FirstLastRegex = "\\b(the\\s+)?((?<first>first)|(?<last>last))\\b";
 
     public static final String FollowedDateUnit = "^\\s*{DateUnitRegex}"
             .replace("{DateUnitRegex}", DateUnitRegex);
@@ -414,14 +420,17 @@ public class EnglishDateTime {
             .replace("{DayPrefix}", DayPrefix)
             .replace("{BaseDateTime.CheckDecimalRegex}", BaseDateTime.CheckDecimalRegex);
 
-    public static final String DateExtractorA = "\\b({DayPrefix}(\\s*,)?\\s+)?(({BaseDateTime.FourDigitYearRegex}\\s*[/\\\\\\-\\.]\\s*({MonthNumRegex}|{MonthRegex})\\s*[/\\\\\\-\\.]\\s*{DayRegex})|({MonthRegex}\\s*[/\\\\\\-\\.]\\s*{BaseDateTime.FourDigitYearRegex}\\s*[/\\\\\\-\\.]\\s*(the\\s+)?(?<day>(?:3[0-1]|[1-2]\\d|0?[1-9])(?:th|nd|rd|st)?))|({DayRegex}\\s*[/\\\\\\-\\.]\\s*{BaseDateTime.FourDigitYearRegex}\\s*[/\\\\\\-\\.]\\s*{MonthRegex}))"
+    public static final String DateExtractorNoSep = "\\b((?<![$])(?<year>((1\\d|20)\\d{2})|2100)(\\s+(?<month>1[0-2]|(0)?[1-9])\\s+(?<day>(?:3[0-1]|[1-2]\\d|0?[1-9]))|(?<month>1[0-2]|(0)?[1-9])(?<day>(?:3[0-1]|[1-2]\\d|0?[1-9])))\\b)";
+
+    public static final String DateExtractorA = "\\b({DayPrefix}(\\s*,)?\\s+)?(({BaseDateTime.FourDigitYearRegex}\\s*[/\\\\\\-\\.]\\s*({MonthNumRegex}|{MonthRegex})\\s*[/\\\\\\-\\.]\\s*{DayRegex})|({MonthRegex}\\s*[/\\\\\\-\\.]\\s*{BaseDateTime.FourDigitYearRegex}\\s*[/\\\\\\-\\.]\\s*(the\\s+)?(?<day>(?:3[0-1]|[1-2]\\d|0?[1-9])(?:th|nd|rd|st)?))|({DayRegex}\\s*[/\\\\\\-\\.]\\s*{BaseDateTime.FourDigitYearRegex}\\s*[/\\\\\\-\\.]\\s*{MonthRegex})|{DateExtractorNoSep})"
             .replace("{BaseDateTime.FourDigitYearRegex}", BaseDateTime.FourDigitYearRegex)
             .replace("{MonthNumRegex}", MonthNumRegex)
             .replace("{MonthRegex}", MonthRegex)
             .replace("{DayRegex}", DayRegex)
-            .replace("{DayPrefix}", DayPrefix);
+            .replace("{DayPrefix}", DayPrefix)
+            .replace("{DateExtractorNoSep}", DateExtractorNoSep);
 
-    public static final String OfMonth = "^\\s*(day\\s+)?of\\s*{MonthRegex}"
+    public static final String OfMonth = "^(\\s*(day\\s+)?of)?\\s*{MonthRegex}"
             .replace("{MonthRegex}", MonthRegex);
 
     public static final String MonthEnd = "{MonthRegex}\\s*(the)?\\s*$"
@@ -1091,6 +1100,20 @@ public class EnglishDateTime {
         .put("4th", 4)
         .put("fifth", 5)
         .put("5th", 5)
+        .put("sixth", 6)
+        .put("6th", 6)
+        .put("seventh", 7)
+        .put("7th", 7)
+        .put("eighth", 8)
+        .put("8th", 8)
+        .put("ninth", 9)
+        .put("9th", 9)
+        .put("tenth", 10)
+        .put("10th", 10)
+        .put("eleventh", 11)
+        .put("11th", 11)
+        .put("twelfth", 12)
+        .put("12th", 12)
         .build();
 
     public static final ImmutableMap<String, Integer> DayOfWeek = ImmutableMap.<String, Integer>builder()

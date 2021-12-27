@@ -305,13 +305,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             foreach (var result in er)
             {
-                // Check that the extracted number is not part of a decimal number (e.g. 123.24)
-                if (result.Start > 1 && (text[(int)result.Start - 1].Equals(',') || text[(int)result.Start - 1].Equals('.')) &&
-                    char.IsDigit(text[(int)result.Start - 2]))
-                {
-                    continue;
-                }
-
                 var parsed = int.TryParse((this.Config.NumberParser.Parse(result).Value ?? 0).ToString(), out int num);
 
                 if (!parsed || (num < 1 || num > 31))
@@ -323,6 +316,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     // Handling cases like '(Monday,) Jan twenty two'
                     var prefixStr = text.Substring(0, result.Start ?? 0);
+
+                    // Check that the extracted number is not part of a decimal number, time expression or currency
+                    // (e.g. '123.24', '12:24', '$12')
+                    if (MatchingUtil.IsInvalidDayNumberPrefix(prefixStr))
+                    {
+                        continue;
+                    }
 
                     var match = this.Config.MonthEnd.Match(prefixStr);
                     if (match.Success)
@@ -617,6 +617,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
+            // Extend extraction with weekdays like in "Friday two weeks from now", "in 3 weeks on Monday"
+            ret.AddRange(ExtendWithWeekDay(ret, text));
+
             return ret;
         }
 
@@ -691,6 +694,28 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return index;
+        }
+
+        private List<Token> ExtendWithWeekDay(List<Token> ret, string text)
+        {
+            var newRet = new List<Token>();
+            foreach (var er in ret)
+            {
+                var beforeStr = text.Substring(0, er.Start);
+                var afterStr = text.Substring(er.End);
+                var beforeMatch = Config.WeekDayEnd.Match(beforeStr);
+                var afterMatch = Config.WeekDayStart.Match(afterStr);
+                if (beforeMatch.Success || afterMatch.Success)
+                {
+                    var start = beforeMatch.Success ? beforeMatch.Index : er.Start;
+                    var end = beforeMatch.Success ? er.End : er.End + afterMatch.Index + afterMatch.Length;
+                    Metadata metadata = new Metadata { IsDurationDateWithWeekday = true };
+                    Token tok = new Token(start, end, metadata);
+                    newRet.Add(tok);
+                }
+            }
+
+            return newRet;
         }
     }
 }

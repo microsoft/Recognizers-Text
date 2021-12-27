@@ -78,6 +78,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex WeekOfMonthRegex { get; }
 
+        Regex WeekOfYearRegex { get; }
+
+        Regex FirstLastOfYearRegex { get; }
+
         Regex SeasonWithYear { get; }
 
         Regex QuarterRegex { get; }

@@ -20,6 +20,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex AfterRegex { get; }
 
+        Regex WeekDayStartEnd { get; }
+
         IDateTimeExtractor DurationExtractor { get; }
 
         Dictionary<char, char> NormalizeCharMap { get; }

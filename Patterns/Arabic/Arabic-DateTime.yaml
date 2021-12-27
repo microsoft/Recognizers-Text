@@ -171,6 +171,13 @@ WeekOfMonthRegex: !nestedRegex
 WeekOfYearRegex: !nestedRegex
   def: (?<woy>(الأسبوع)\s+(?<cardinal>الأول|الثاني|الثالث|الرابع|الخامس|الأخير)\s+((من هذا|هذا|من)\s+)?(العام|من عام|عام)\s*({YearRegex}|{RelativeRegex})?)
   references: [ YearRegex, RelativeRegex ]
+OfYearRegex: !nestedRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: \b((of|in)\s+({YearRegex}|{StrictRelativeRegex}\s+year))\b
+  references: [ YearRegex, StrictRelativeRegex ]
+FirstLastRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in English
+  def: \b(the\s+)?((?<first>first)|(?<last>last))\b
 FollowedDateUnit: !nestedRegex
   def: ^\s*{DateUnitRegex}
   references: [ DateUnitRegex ]

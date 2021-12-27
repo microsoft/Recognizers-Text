@@ -168,6 +168,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Arabic
         public static readonly Regex CenturySuffixRegex =
             new Regex(DateTimeDefinitions.CenturySuffixRegex, RegexFlags);
 
+        public static readonly Regex FirstLastRegex =
+            new Regex(DateTimeDefinitions.FirstLastRegex, RegexFlags);
+
+        public static readonly Regex OfYearRegex =
+            new Regex(DateTimeDefinitions.OfYearRegex, RegexFlags);
+
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture | RegexOptions.RightToLeft;
 
         private static readonly Regex FromTokenRegex =
@@ -329,6 +335,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Arabic
         Regex IDatePeriodExtractorConfiguration.MonthNumRegex => MonthNumRegex;
 
         Regex IDatePeriodExtractorConfiguration.NowRegex => NowRegex;
+
+        Regex IDatePeriodExtractorConfiguration.FirstLastRegex => FirstLastRegex;
+
+        Regex IDatePeriodExtractorConfiguration.OfYearRegex => OfYearRegex;
 
         bool IDatePeriodExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 
