@@ -3,123 +3,123 @@
 LangMarker: Swe
 CheckBothBeforeAfter: !bool false
 TillRegex: !nestedRegex
-  def: (?<till>\b(to|(un)?till?|thru|through)\b(\s+the\b)?|{BaseDateTime.RangeConnectorSymbolRegex})
+  def: (?#TillRegex)(?<till>\b(till|tom)\b(\s+den\b)?|{BaseDateTime.RangeConnectorSymbolRegex})
   references: [ BaseDateTime.RangeConnectorSymbolRegex ]
 RangeConnectorRegex: !nestedRegex
-  def: (?<and>\b(and|through|to)\b(\s+the\b)?|{BaseDateTime.RangeConnectorSymbolRegex})
+  def: (?#RangeConnectorRegex)(?<and>\b(och|tom)\b(\s+den\b)?|{BaseDateTime.RangeConnectorSymbolRegex})
   references: [ BaseDateTime.RangeConnectorSymbolRegex ]
 # Filter regex, no need to localize
 LastNegPrefix: !simpleRegex
-  def: (?<!(w(ill|ould|on\s*'\s*t)|m(ay|ight|ust)|sh(all|ould(n\s*'\s*t)?)|c(an(\s*'\s*t|not)?|ould(n\s*'\s*t)?))(\s+not)?\s+)
+  def: (?#LastNegPrefix)(?<!(w(ill|ould|on\s*'\s*t)|m(ay|ight|ust)|sh(all|ould(n\s*'\s*t)?)|c(an(\s*'\s*t|not)?|ould(n\s*'\s*t)?))(\s+not)?\s+)
 RelativeRegex: !nestedRegex
-  def: \b(?<order>following|next|(up)?coming|this|{LastNegPrefix}last|past|previous|current|the)\b
+  def: (?#RelativeRegex)\b(?<order>efter|nästa|kommande|de(nn|tt)a|de(n|t)\s+här|{LastNegPrefix}senaste|förra|tidigare|innevarande)\b
   references: [ LastNegPrefix ]
 StrictRelativeRegex: !nestedRegex
-  def: \b(?<order>following|next|(up)?coming|this|{LastNegPrefix}last|past|previous|current)\b
+  def: (?#StrictRelativeRegex)\b(?<order>efter|nästa|kommande|de(nn|tt)a|de(n|t)\s+här|{LastNegPrefix}senaste|förra|tidigare|innevarande)\b
   references: [ LastNegPrefix ]
 UpcomingPrefixRegex: !simpleRegex
-  def: ((this\s+)?((up)?coming))
+  def: (?#UpcomingPrefixRegex)((de(n|t)\s+)?(kommande))
 NextPrefixRegex: !nestedRegex 
-  def: \b(following|next|{UpcomingPrefixRegex})\b
+  def: (?#NextPrefixRegex)\b(efter|nästa|{UpcomingPrefixRegex})\b
   references: [ UpcomingPrefixRegex ]
 # We make "next" and "upcoming" separately as when parsing, some behaviours are different
 # "next Friday" might be different from "upcoming Friday"
 AfterNextSuffixRegex: !simpleRegex
-  def: \b(after\s+(the\s+)?next)\b
+  def: (?#AfterNextSuffixRegex)\b(efter\s+nästa)\b
 PastPrefixRegex: !simpleRegex
-  def: ((this\s+)?past)\b
+  def: (?#PastPrefixRegex)((de(n|t)\s+)?förra)\b
 PreviousPrefixRegex: !nestedRegex
-  def: ({LastNegPrefix}last|previous|{PastPrefixRegex})\b
+  def: (?#PreviousPrefixRegex)({LastNegPrefix}förra|föregående|{PastPrefixRegex})\b
   references: [ LastNegPrefix, PastPrefixRegex ]
 # We make "past" and "previous" separately as when parsing, some behaviours are different
 # "last Tuesday" might be different from "past Tuesday"
 ThisPrefixRegex: !simpleRegex
-  def: (this|current)\b
+  def: (?#ThisPrefixRegex)(innevarande)\b
 RangePrefixRegex: !simpleRegex
-  def: (from|between)
+  def: (?#RangePrefixRegex)(från|mellan)
 CenturySuffixRegex: !simpleRegex
-  def: (^century)\b
+  def: (?#CenturySuffixRegex)(^sekel)\b
 ReferencePrefixRegex: !simpleRegex
-  def: (that|same)\b
+  def: (?#ReferencePrefixRegex)(samma)\b
 FutureSuffixRegex: !simpleRegex
-  def: \b((in\s+the\s+)?future|hence)\b
+  def: (?#FutureSuffixRegex)\b((i\s+)?framtiden)\b
 PastSuffixRegex: !simpleRegex
-  def: \b((in\s+the\s+)past)\b
+  def: (?#PastSuffixRegex)\b((i\s+)dåtid(en)?)\b
 DayRegex: !simpleRegex
-  def: (the\s*)?(?<!(\d+:?|\$)\s*)(?<day>(?:3[0-1]|[1-2]\d|0?[1-9])(?:th|nd|rd|st)?)(?=\b|t)
+  def: (?#DayRegex)(den\s*)?(?<!(\d+:?|\$)\s*)(?<day>(?:3[0-1]|[1-2]\d|0?[1-9])(?:(a|e))?)(?=\b|t)
 ImplicitDayRegex: !simpleRegex
-  def: (the\s*)?(?<day>(?:3[0-1]|[0-2]?\d)(?:th|nd|rd|st))\b
+  def: (?#ImplicitDayRegex)(den\s*)?(?<day>(?:3[0-1]|[0-2]?\d)(?:(a|e)))\b
 MonthNumRegex: !simpleRegex
-  def: (?<month>1[0-2]|(0)?[1-9])\b
+  def: (?#MonthNumRegex)(?<month>1[0-2]|(0)?[1-9])\b
 WrittenOneToNineRegex: !simpleRegex
-  def: (?:one|two|three|four|five|six|seven|eight|nine)
+  def: (?#WrittenOneToNineRegex)(?:e(n|tt)|två|tre|fyra|fem|sex|sju|åtta|nio)
 WrittenElevenToNineteenRegex: !simpleRegex
-  def: (?:eleven|twelve|(?:thir|four|fif|six|seven|eigh|nine)teen)
+  def: (?#WrittenElevenToNineteenRegex)(?:elva|tolv|(?:tret|fjor|fem|sex|sjut|ar|nit)ton)
 WrittenTensRegex: !simpleRegex
-  def: (?:ten|twenty|thirty|fou?rty|fifty|sixty|seventy|eighty|ninety)
+  def: (?#WrittenTensRegex)(?:tio|tjugo|trettio|fyrtio|femtio|sextio|sjuttio|åttio|nittio)
 WrittenNumRegex: !nestedRegex
-  def: (?:{WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|{WrittenTensRegex}(\s+{WrittenOneToNineRegex})?)
+  def: (?#WrittenNumRegex)(?:{WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|{WrittenTensRegex}(\s+{WrittenOneToNineRegex})?)
   references: [ WrittenOneToNineRegex, WrittenElevenToNineteenRegex, WrittenTensRegex ]
 WrittenCenturyFullYearRegex: !nestedRegex
-  def: (?:(one|two)\s+thousand((\s+and)?\s+{WrittenOneToNineRegex}\s+hundred)?)
+  def: (?#WrittenCenturyFullYearRegex)(?:(ett|två)\s+tusen((\s+och)?\s+{WrittenOneToNineRegex}\s+hundra)?)
   references: [ WrittenOneToNineRegex]
 WrittenCenturyOrdinalYearRegex: !simpleRegex
-  def: (?:twenty(\s+(one|two))?|ten|eleven|twelve|thirteen|fifteen|eighteen|(?:four|six|seven|nine)(teen)?|one|two|three|five|eight)
+  def: (?#WrittenCenturyOrdinalYearRegex)(?:tjugo(\s+(ett|två))?|tio|elva|tolv|tretton|femton|arton|(?:fjor|sex|sjut|nit)(ton)?|ett|två|tre|fyra|fem|sju|åtta|nio)
 CenturyRegex: !nestedRegex
-  def: \b(?<century>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}(\s+hundred)?)\b
+  def: (?#CenturyRegex)\b(?<century>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}(\s+hundra)?)\b
   references: [WrittenCenturyFullYearRegex, WrittenCenturyOrdinalYearRegex ]
 LastTwoYearNumRegex: !nestedRegex
-  def: (?:(zero\s+)?{WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|{WrittenTensRegex}(\s+{WrittenOneToNineRegex})?)
+  def: (?#LastTwoYearNumRegex)(?:(noll\s+)?{WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|{WrittenTensRegex}(\s+{WrittenOneToNineRegex})?)
   references: [ WrittenOneToNineRegex, WrittenElevenToNineteenRegex, WrittenTensRegex ]
 FullTextYearRegex: !nestedRegex
-  def: \b((?<firsttwoyearnum>{CenturyRegex})(\s+and)?\s+(?<lasttwoyearnum>{LastTwoYearNumRegex})\b|\b(?<firsttwoyearnum>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}\s+hundred))\b
+  def: (?#FullTextYearRegex)\b((?<firsttwoyearnum>{CenturyRegex})(\s+och)?\s+(?<lasttwoyearnum>{LastTwoYearNumRegex})\b|\b(?<firsttwoyearnum>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}\s+hundra))\b
   references: [ CenturyRegex, WrittenCenturyFullYearRegex, WrittenCenturyOrdinalYearRegex, LastTwoYearNumRegex ]
 OclockRegex: !simpleRegex
-  def: (?<oclock>o\s*((’|‘|')\s*)?clock|sharp)
+  def: (?#OclockRegex)(?<oclock>o\s*((’|‘|')\s*)?clock|sharp)
 SpecialDescRegex: !simpleRegex
-  def: ((?<ipm>)p\b)
+  def: (?#SpecialDescRegex)((?<ipm>)p\b)
 AmDescRegex: !nestedRegex
-  def: (?:{BaseDateTime.BaseAmDescRegex})
+  def: (?#AmDescRegex)(?:{BaseDateTime.BaseAmDescRegex})
   references: [BaseDateTime.BaseAmDescRegex]
 PmDescRegex: !nestedRegex
-  def: (:?{BaseDateTime.BasePmDescRegex})
+  def: (?#PmDescRegex)(:?{BaseDateTime.BasePmDescRegex})
   references: [BaseDateTime.BasePmDescRegex]
 AmPmDescRegex: !nestedRegex
-  def: (:?{BaseDateTime.BaseAmPmDescRegex})
+  def: (?#AmPmDescRegex)(:?{BaseDateTime.BaseAmPmDescRegex})
   references: [BaseDateTime.BaseAmPmDescRegex]
 DescRegex: !nestedRegex
-  def: (:?(:?({OclockRegex}\s+)?(?<desc>({AmPmDescRegex}|{AmDescRegex}|{PmDescRegex}|{SpecialDescRegex})))|{OclockRegex})
+  def: (?#DescRegex)(:?(:?({OclockRegex}\s+)?(?<desc>({AmPmDescRegex}|{AmDescRegex}|{PmDescRegex}|{SpecialDescRegex})))|{OclockRegex})
   references: [ OclockRegex, AmDescRegex, PmDescRegex, AmPmDescRegex, SpecialDescRegex ]
 OfPrepositionRegex: !simpleRegex
-  def: (\bof\b)
+  def: (?#OfPrepositionRegex)(\bof\b)
 # Exclude cases that include the "Am/Pm" suffix
 TwoDigitYearRegex: !nestedRegex
-  def: \b(?<![$])(?<year>([0-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b
+  def: (?#TwoDigitYearRegex)\b(?<![$])(?<year>([0-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b
   references: [ AmDescRegex, PmDescRegex]
 YearRegex: !nestedRegex
-  def: (?:{BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})
+  def: (?#YearRegex)(?:{BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})
   references: [ BaseDateTime.FourDigitYearRegex, FullTextYearRegex ]
 WeekDayRegex: !simpleRegex
-  def: \b(?<weekday>(?:sun|mon|tues?|thurs?|fri)(day)?|thu|wedn(esday)?|weds?|sat(urday)?)s?\b
+  def: (?#WeekDayRegex)\b(?<weekday>(?:sö(n)?|må(n)?|ti(s)?|on(s)?|to(rs)?|fr(e)?|lö(r)?)(d(ag)?)?)s?\b
 SingleWeekDayRegex: !simpleRegex
-  def: \b(?<weekday>(?<!(easter|palm)\s+)sunday|(?<!easter\s+)saturday|(?<!(easter|cyber)\s+)monday|mon|(?<!black\s+)friday|fri|(?:tues?|thurs?)(day)?|thu|wedn(esday)?|weds?|((?<=on\s+)(sat|sun)))\b
+  def: (?#SingleWeekDayRegex)\b(?<weekday>(?<!(easter|palm)\s+)sunday|(?<!easter\s+)saturday|(?<!(easter|cyber)\s+)monday|mon|(?<!black\s+)friday|fri|(?:tues?|thurs?)(day)?|thu|wedn(esday)?|weds?|((?<=on\s+)(sat|sun)))\b
 RelativeMonthRegex: !nestedRegex
-  def: (?<relmonth>((day\s+)?of\s+)?{RelativeRegex}\s+month)\b
+  def: (?#RelativeMonthRegex)(?<relmonth>((dag\s+)?i\s+)?{RelativeRegex}\s+månad(en)?)\b
   references: [RelativeRegex]
 MonthRegex: !simpleRegex
-  def: \b(?<month>apr(il)?|aug(ust)?|dec(ember)?|feb(ruary)?|jan(uary)?|july?|june?|mar(ch)?|may|nov(ember)?|oct(ober)?|sept(ember)?|sep)(?!\p{L})
+  def: (?#MonthRegex)\b(?<month>apr(il)?|aug(usti)?|dec(ember)?|feb(ruari)?|jan(uari)?|juli?|june?|mar(s)?|maj|nov(ember)?|okt(ober)?|sept(ember)?|sep)(?!\p{L})
 WrittenMonthRegex: !nestedRegex
-  def: (((the\s+)?month of\s+)?{MonthRegex})
+  def: (?#WrittenMonthRegex)((i\s+)?{MonthRegex}(\s+månad)?)
   references: [ MonthRegex ]
 MonthSuffixRegex: !nestedRegex
-  def: (?<msuf>(?:(in|of|on)\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))
+  def: (?#MonthSuffixRegex)(?<msuf>(?:(i)\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))
   references: [ RelativeMonthRegex, WrittenMonthRegex ]
 DateUnitRegex: !simpleRegex
-  def: (?<unit>(decade|year|(?<uoy>month|week)|(?<business>(business\s+|week\s*))?(?<uoy>day)|fortnight|weekend)(?<plural>s)?|(?<=\s+\d{1,4})[ymwd])\b
-DateTokenPrefix: 'on '
-TimeTokenPrefix: 'at '
-TokenBeforeDate: 'on '
-TokenBeforeTime: 'at '
+  def: (?#DateUnitRegex)(?<unit>(decenni(um)?|år|(?<uoy>månad|veck(a)?|(?<business>(arbets\s+|veck(a)?\s*))?(?<uoy>dag)|fortnight|helg|weekend|veckoslut)(?<plural>(or|en|ar|er))?|(?<=\s+\d{1,4})[ymwd])\b
+DateTokenPrefix: 'den '
+TimeTokenPrefix: 'kl '
+TokenBeforeDate: 'den '
+TokenBeforeTime: 'kl '
 HalfTokenRegex: !simpleRegex
   def: ^(half)
 QuarterTokenRegex: !simpleRegex
