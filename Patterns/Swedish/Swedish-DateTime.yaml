@@ -203,60 +203,60 @@ EarlyPrefixRegex: !simpleRegex
 MidPrefixRegex: !simpleRegex
   def: (?#MidPrefixRegex)\b(?<MidPrefix>mitten av)\b
 LaterPrefixRegex: !simpleRegex
-  def: \b(?<LatePrefix>late|end of|(?<RelLate>later(\s+in)?))\b
+  def: (?#LaterPrefixRegex)\b(?<LatePrefix>slutet på|slutet av|(?<RelLate>senare(\s+under)?))\b
 PrefixPeriodRegex: !nestedRegex
-  def: ({EarlyPrefixRegex}|{MidPrefixRegex}|{LaterPrefixRegex})
+  def: (?#PrefixPeriodRegex)({EarlyPrefixRegex}|{MidPrefixRegex}|{LaterPrefixRegex})
   references: [EarlyPrefixRegex, MidPrefixRegex, LaterPrefixRegex]
 PrefixDayRegex: !simpleRegex
-  def: \b((?<EarlyPrefix>earl(y|ier))|(?<MidPrefix>mid(dle)?)|(?<LatePrefix>later?))(\s+in)?(\s+the\s+day)?$
+  def: (?#PrefixDayRegex)\b((?<EarlyPrefix>tidig(t|are))|(?<MidPrefix>mitt på)|(?<LatePrefix>senare?))(\s+på)?(\s+dagen)?$
 SeasonDescRegex: !simpleRegex
-  def: (?<seas>spring|summer|fall|autumn|winter)
+  def: (?#SeasonDescRegex)(?<seas>våren|sommaren|hösten|vintern)
 SeasonRegex: !nestedRegex
-  def: \b(?<season>({PrefixPeriodRegex}\s+)?({RelativeRegex}\s+)?{SeasonDescRegex}((\s+of|\s*,\s*)?\s+({YearRegex}|{RelativeRegex}\s+year))?)\b
+  def: (?#SeasonRegex)\b(?<season>({PrefixPeriodRegex}\s+)?({RelativeRegex}\s+)?{SeasonDescRegex}((\s+|\s*,\s*)?\s+({YearRegex}|{RelativeRegex}\s+året))?)\b
   references: [ YearRegex, RelativeRegex, SeasonDescRegex, PrefixPeriodRegex ]
 WhichWeekRegex: !simpleRegex
-  def: \b(week)(\s*)(?<number>5[0-3]|[1-4]\d|0?[1-9])\b
+  def: (?#WhichWeekRegex)\b(vecka)(\s*)(?<number>5[0-3]|[1-4]\d|0?[1-9])\b
 WeekOfRegex: !simpleRegex
-  def: (the\s+)?((week)(\s+(of|(commencing|starting|beginning)(\s+on)?))|w/c)(\s+the)?
+  def: (?#WeekOfRegex)((veckan)(\s+(som|(börjar|startar|inleds)(\s+den)?))|w/c)(\s+den)?
 MonthOfRegex: !simpleRegex
-  def: (month)(\s*)(of)
+  def: (?#MonthOfRegex)(månaden)(\s*)(i)
 # This is a look-behind assertion. Some cases should extract two digits as year like 11/25/16, where 16 means 2016. 
 # The assertion determines if not connected with am/pm or hour separator (:), which should be a time.
 DateYearRegex: !nestedRegex
-  def: (?<year>{BaseDateTime.FourDigitYearRegex}|(?<!,\s?){TwoDigitYearRegex}|{TwoDigitYearRegex}(?=(\.(?!\d)|[?!;]|$)))
+  def: (?#DateYearRegex)(?<year>{BaseDateTime.FourDigitYearRegex}|(?<!,\s?){TwoDigitYearRegex}|{TwoDigitYearRegex}(?=(\.(?!\d)|[?!;]|$)))
   references: [ BaseDateTime.FourDigitYearRegex, TwoDigitYearRegex ]
 YearSuffix: !nestedRegex
-  def: ((,|\sof)?\s*({DateYearRegex}|{FullTextYearRegex}))
+  def: (?#YearSuffix)((,|\si)?\s*({DateYearRegex}|{FullTextYearRegex}))
   references: [ DateYearRegex, FullTextYearRegex ]
 OnRegex: !nestedRegex
-  def: (?<=\bon\s+)({DayRegex}s?)\b
+  def: (?#OnRegex)(?<=\bden\s+)({DayRegex}s?)\b
   references: [ DayRegex ]
 RelaxedOnRegex: !simpleRegex
-  def: (?<=\b(on|at|in)\s+)((?<day>(3[0-1]|[0-2]?\d)(?:th|nd|rd|st))s?)\b
+  def: (?#RelaxedOnRegex)(?<=\b(den|om|på)\s+)((?<day>(3[0-1]|[0-2]?\d)(?:(a|e)))s?)\b
 PrefixWeekDayRegex: !simpleRegex
-  def: (\s*((,?\s*on)|[-—–]))
+  def: (?#PrefixWeekDayRegex)(\s*((,?\s*på)|[-—–]))
 ThisRegex: !nestedRegex
-  def: \b(this(\s*week{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|({WeekDayRegex}((\s+of)?\s+this\s*week))\b
+  def: (?#ThisRegex)\b(denna(\s*vecka{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|({WeekDayRegex}((\s+i)?\s+denna\s*vecka))\b
   references: [ WeekDayRegex, PrefixWeekDayRegex ]
 LastDateRegex: !nestedRegex
-  def: \b({PreviousPrefixRegex}(\s*week{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|({WeekDayRegex}(\s+(of\s+)?last\s*week))\b
+  def: (?#LastDateRegex)\b({PreviousPrefixRegex}(\s*vecka{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|({WeekDayRegex}(\s+(den\s+)?senaste\s*veckan))\b
   references: [ PreviousPrefixRegex, WeekDayRegex, PrefixWeekDayRegex ]
 NextDateRegex: !nestedRegex
-  def: \b({NextPrefixRegex}(\s*week{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|((on\s+)?{WeekDayRegex}((\s+of)?\s+(the\s+following|(the\s+)?next)\s*week))\b
+  def: (?#NextDateRegex)\b({NextPrefixRegex}(\s*vecka{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|((på\s+)?{WeekDayRegex}((\s+i)?\s+(den\s+kommande|(den\s+)?nästa)\s*vecka))\b
   references: [ NextPrefixRegex, WeekDayRegex, PrefixWeekDayRegex ]
 SpecialDayRegex: !nestedRegex
-  def: \b((the\s+)?day before yesterday|(the\s+)?day after (tomorrow|tmr)|the\s+day\s+(before|after)(?!=\s+day)|((the\s+)?({RelativeRegex}|my)\s+day)|yesterday|tomorrow|tmr|today|otd|current date)\b
+  def: (?#SpecialDayRegex)\b(i förrgår|i övermorgon|dagen\s+(före|efter)(?!=\s+dag)|((den\s+)?({RelativeRegex}|min)\s+dag)|igår|imorgon|idag)\b
   references: [ RelativeRegex ]
 SpecialDayWithNumRegex: !nestedRegex
-  def: \b((?<number>{WrittenNumRegex})\s+days?\s+from\s+(?<day>yesterday|tomorrow|tmr|today|current date))\b
+  def: (?#SpecialDayWithNumRegex)\b((?<number>{WrittenNumRegex})\s+dag(ar)?\s+från\s+(?<day>igår|imorgon|idag))\b
   references: [ WrittenNumRegex ]
 RelativeDayRegex: !nestedRegex
-  def: \b(((the\s+)?{RelativeRegex}\s+day))\b
+  def: (?#RelativeDayRegex)\b(((den\s+)?{RelativeRegex}\s+dagen))\b
   references: [ RelativeRegex ]
 SetWeekDayRegex: !simpleRegex
-  def: \b(?<prefix>on\s+)?(?<weekday>morning|afternoon|evening|night|(sun|mon|tues|wednes|thurs|fri|satur)day)s\b
+  def: (?#SetWeekDayRegex)\b(?<prefix>på\s+)?(?<weekday>morgonen|eftermiddagen|kvällen|natten|(sön|mån|tis|ons|tors|fre|lör)dag)s\b
 WeekDayOfMonthRegex: !nestedRegex
-  def: (?<wom>(the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\s+(week\s+{MonthSuffixRegex}[\.]?\s+(on\s+)?{WeekDayRegex}|{WeekDayRegex}\s+{MonthSuffixRegex}))
+  def: (?#WeekDayOfMonthRegex)(?<wom>(den\s+)?(?<cardinal>första|1:a|andra|2:a|tredje|3:e|fjärde|4:e|femte|5:e|sista)\s+(veckan\s+{MonthSuffixRegex}[\.]?\s+(på\s+)?{WeekDayRegex}|{WeekDayRegex}\s+{MonthSuffixRegex}))
   references: [ WeekDayRegex, MonthSuffixRegex ]
 RelativeWeekDayRegex: !nestedRegex
   def: \b({WrittenNumRegex}\s+{WeekDayRegex}\s+(from\s+now|later))\b
