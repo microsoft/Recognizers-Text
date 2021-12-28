@@ -541,80 +541,81 @@ NumberCombinedWithDurationUnit: !nestedRegex
   def: (?#NumberCombinedWithDurationUnit)\b(?<num>\d+(\.\d*)?)(-)?{DurationUnitRegex}
   references: [ DurationUnitRegex ]
 AnUnitRegex: !nestedRegex
-  def: (\b((?<half>(half)\s+)?an?|another)|(?<half>(1/2|½|half)))\s+{DurationUnitRegex}
+  def: (?#AnUnitRegex)(\b((?<half>(en)\s+)?halv|another)|(?<half>(1/2|½|en halv)))\s+{DurationUnitRegex}
   references: [ DurationUnitRegex ]
 DuringRegex: !simpleRegex
-  def: \b(for|during)\s+the\s+(?<unit>year|month|week|day|fortnight)\b
+  def: (?#DuringRegex)\b(under|i)\s+(?<unit>år(et)?|månad(en)?|veckan?|dag(en)?)\b
 AllRegex: !simpleRegex
-  def: \b(?<all>(all|full|whole)(\s+|-)(?<unit>year|month|week|day|fortnight))\b
+  def: (?#AllRegex)\b(?<all>(hela)(\s+|-)(?<unit>år(et)?|månad(en)?|veckan?|dag(en)?))\b
 HalfRegex: !simpleRegex
-  def: ((an?\s*)|\b)(?<half>half\s+(?<unit>year|month|week|fortnight|day|hour))\b
+  def: (?#HalfRegex)((e(n|tt)\s*)|\b)(?<half>halvt?\s+(?<unit>år|månad|vecka|dag|timm(e|a)))\b
 ConjunctionRegex: !simpleRegex
-  def: \b((and(\s+for)?)|with)\b
+  def: (?#ConjunctionRegex)\b((och(\s+under)?)|med)\b
 # Major holidays + holiday w/ weekday in name
 HolidayList1: !simpleRegex
-  def: (?<holiday>mardi gras|(washington|mao)'s birthday|juneteenth|(jubilee|freedom)(\s+day)|chinese new year|(new\s+(years'|year\s*'s|years?)\s+eve)|(new\s+(years'|year\s*'s|years?)(\s+day)?)|may\s*day|yuan dan|christmas eve|(christmas|xmas)(\s+day)?|black friday|yuandan|easter(\s+(sunday|saturday|monday))?|clean monday|ash wednesday|palm sunday|maundy thursday|good friday|white\s+(sunday|monday)|trinity sunday|pentecost|corpus christi|cyber monday)
+  def: (?#HolidayList1)(?<holiday>första maj|nyårsdagen|nyårsafton|trettondedag(en|\s+jul)|julafton|juldagen|annandag\s+jul|skärtorsdag(en)?|långfredag(en)?|påskafton|påskdagen|annandag\s+påsk|mardi gras|(washington|mao)'s birthday|juneteenth|(jubilee|freedom)(\s+day)|chinese new year|(new\s+(years'|year\s*'s|years?)\s+eve)|(new\s+(years'|year\s*'s|years?)(\s+day)?)|may\s*day|yuan dan|christmas eve|(christmas|xmas)(\s+day)?|black friday|yuandan|easter(\s+(sunday|saturday|monday))?|clean monday|ash wednesday|palm sunday|maundy thursday|good friday|white\s+(sunday|monday)|trinity sunday|pentecost|corpus christi|cyber monday)
 # Extra religious or local holidays
 HolidayList2: !simpleRegex
-  def: (?<holiday>(thanks\s*giving|all saint's|white lover|s(?:ain)?t?(\.)?\s+(?:patrick|george)(?:')?(?:s)?|us independence|all hallow|all souls|guy fawkes|cinco de mayo|halloween|qingming|dragon boat|april fools|tomb\s*sweeping)(\s+day)?)
+  def: (?#HolidayList2)(?<holiday>(valborg(smässoafton)?|kristi himmelsfärdsdag|pingst(afton|dagen)|midsommar(afton|dagen)|allahelgonaafton|alla helgons dag|thanks\s*giving|all saint's|white lover|s(?:ain)?t?(\.)?\s+(?:patrick|george)(?:')?(?:s)?|us independence|all hallow|all souls|guy fawkes|cinco de mayo|halloween|qingming|dragon boat|april fools|tomb\s*sweeping)(\s+day)?)
 # General holidays (must be followed by "day")
 HolidayList3: !simpleRegex
-  def: (?<holiday>(?:independence|presidents(?:')?|mlk|martin luther king( jr)?|canberra|ascension|columbus|tree( planting)?|arbor|labou?r|((international|int'?l)\s+)?workers'?|mother'?s?|father'?s?|female|women('s)?|single|teacher'?s|youth|children|girls|lovers?|earth|inauguration|groundhog|valentine'?s|baptiste|bastille|veterans(?:')?|memorial|mid[ \-]autumn|moon|spring|lantern)\s+day)
+  def: (?#HolidayList3)(?<holiday>(nationaldagen|sveriges nationaldag|mlk|martin luther king( jr)?|canberra|ascension|columbus|tree( planting)?|arbor|labou?r|((international|int'?l)\s+)?workers'?|mother'?s?|father'?s?|female|women('s)?|single|teacher'?s|youth|children|girls|lovers?|earth|inauguration|groundhog|valentine'?s|baptiste|bastille|veterans(?:')?|memorial|mid[ \-]autumn|moon|spring|lantern)\s+day)
 # Islamic holidays
 HolidayList4: !simpleRegex
-  def: (?<holiday>ramad(h)?an|ram(a)?zan|ramathan|eid al(-|\s+)adha|eid al(-|\s+)azha|eidul(-|\s+)azha|feast of the sacrifice|(islamic|arabic|hijri) new year|eid al(-|\s+)fitr|festival of breaking the fast)
+  def: (?#HolidayList4)(?<holiday>ramad(h)?an|ram(a)?zan|ramathan|eid al(-|\s+)adha|eid al(-|\s+)azha|eidul(-|\s+)azha|feast of the sacrifice|(islamic|arabic|hijri) new year|eid al(-|\s+)fitr|festival of breaking the fast)
 # Combined holiday regex
+# TODO: Fix 'weekend of' -> ?-helgen
 HolidayRegex: !nestedRegex
-  def: \b(({StrictRelativeRegex}\s+({HolidayList1}|{HolidayList2}|{HolidayList3}|{HolidayList4}))|(?<holidayWeekend>((the\s+)?weekend\s+of\s+)({HolidayList1}|{HolidayList2}|{HolidayList3}|{HolidayList4})(\s+((of\s+)?({YearRegex}|{RelativeRegex}\s+year)))?)|(({HolidayList1}|{HolidayList2}|{HolidayList3}|{HolidayList4})((?<holidayWeekend>(\s+weekend)(\s+((of\s+)?({YearRegex}|{RelativeRegex}\s+year)))?)|(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year)(?<holidayWeekend>\s+weekend)?))?))\b
+  def: (?#HolidayRegex)\b(({StrictRelativeRegex}\s+({HolidayList1}|{HolidayList2}|{HolidayList3}|{HolidayList4}))|(?<holidayWeekend>((the\s+)?weekend\s+of\s+)({HolidayList1}|{HolidayList2}|{HolidayList3}|{HolidayList4})(\s+((of\s+)?({YearRegex}|{RelativeRegex}\s+year)))?)|(({HolidayList1}|{HolidayList2}|{HolidayList3}|{HolidayList4})((?<holidayWeekend>(\s+weekend)(\s+((of\s+)?({YearRegex}|{RelativeRegex}\s+year)))?)|(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year)(?<holidayWeekend>\s+weekend)?))?))\b
   references: [ HolidayList1, HolidayList2, HolidayList3, HolidayList4, YearRegex, RelativeRegex, StrictRelativeRegex ]
 AMTimeRegex: !simpleRegex
-  def: (?<am>morning)
+  def: (?#AMTimeRegex)(?<am>morgon(en)?|förmiddag(en)?)
 PMTimeRegex: !simpleRegex
-  def: \b(?<pm>afternoon|evening|night)\b
+  def: (?#PMTimeRegex)\b(?<pm>eftermiddag(en)?|kväll(en)?|natt(en)?)\b
 NightTimeRegex: !simpleRegex
-  def: (night)
+  def: (?#NightTimeRegex)(natten)
 NowTimeRegex: !simpleRegex
-  def: (now|at\s+(present|this\s+time|th(e|is)\s+minute|the\s+(moment|(current|present)\s+time)))
+  def: (?#NowTimeRegex)(nu|vid\s+(denna tidpunkt|denna\s+minut|(ögonblick(et)?|(aktuell|nuvarande)\s+tidpunkt)))
 RecentlyTimeRegex: !simpleRegex
-  def: (recently|previously)
+  def: (?#RecentlyTimeRegex)(senaste|tidigare)
 AsapTimeRegex: !simpleRegex
-  def: (as soon as possible|asap)
+  def: (?#AsapTimeRegex)(så\s+snart\s+(som|(som)?det\s+är)\s+möjligt|asap|snarast)
 InclusiveModPrepositions: !simpleRegex
-  def: (?<include>((on|in|at)\s+or\s+)|(\s+or\s+(on|in|at)))
+  def: (?#InclusiveModPrepositions)(?<include>((den|kl|vid)\s+eller\s+)|(\s+eller\s+(den|kl|vid)))
 AroundRegex: !simpleRegex
-  def: (?:\b(?:around|circa)\s*?\b)(\s+the)?
+  def: (?#AroundRegex)(?:\b(?:runt|cirka|omkring)\s*?\b)(\s+den)?
 BeforeRegex: !nestedRegex
-  def: ((\b{InclusiveModPrepositions}?(?:before|in\s+advance\s+of|prior\s+to|(no\s+later|earlier|sooner)\s+than|ending\s+(with|on)|by|(un)?till?|(?<include>as\s+late\s+as)){InclusiveModPrepositions}?\b\s*?)|(?<!\w|>)((?<include><\s*=)|<))(\s+the)?
+  def: (?#BeforeRegex)((\b{InclusiveModPrepositions}?(?:före|innan|(ej\s+senare\s+än|tidigare)\s+än|slutar\s+(med|den)|by|tom|till|(?<include>så\s+sent\s+som)){InclusiveModPrepositions}?\b\s*?)|(?<!\w|>)((?<include><\s*=)|<))(\s+den)?
   references: [ InclusiveModPrepositions ]
 # "starting from" is SinceRegex
 AfterRegex: !nestedRegex
-  def: ((\b{InclusiveModPrepositions}?((after|(starting|beginning)(\s+on)?(?!\sfrom)|(?<!no\s+)later than)|(year greater than))(?!\s+or equal to){InclusiveModPrepositions}?\b\s*?)|(?<!\w|<)((?<include>>\s*=)|>))(\s+the)?
+  def: (?#AfterRegex)((\b{InclusiveModPrepositions}?((efter|(\s+med)?(start|början)(?!\sfrån)|(?<!ej\s+)senare än)|(år större än))(?!\s+lika med){InclusiveModPrepositions}?\b\s*?)|(?<!\w|<)((?<include>>\s*=)|>))(\s+den)?
   references: [ InclusiveModPrepositions ]
 SinceRegex: !simpleRegex
-  def: (?:(?:\b(?:since|after\s+or\s+equal\s+to|starting\s+(?:from|on|with)|as\s+early\s+as|(any\s+time\s+)from)\b\s*?)|(?<!\w|<)(>=))(\s+the)?
+  def: (?#SinceRegex)(?:(?:\b(?:sedan|senare\s+än\s+eller\s+lika\s+med|((med|som)\s+börja(n|r)|(som)?\s+startar)\s+(?:från|den|med)|så\s+tidigt\s+som|(any\s+time\s+)from)\b\s*?)|(?<!\w|<)(>=))(\s+den)?
 SinceRegexExp: !nestedRegex
-  def: ({SinceRegex}|\bfrom(\s+the)?\b)
+  def: (?#SinceRegexExp)({SinceRegex}|\bfrån(\s+den)?\b)
   references: [ SinceRegex ]
 AgoRegex: !simpleRegex
-  def: \b(ago|earlier|before\s+(?<day>yesterday|today))\b
+  def: (?#AgoRegex)\b(sedan|tidigare|före\s+(?<day>igår|idag))\b
 LaterRegex: !nestedRegex
-  def: \b(?:later(?!((\s+in)?\s*{OneWordPeriodRegex})|(\s+{TimeOfDayRegex})|\s+than\b)|from now|(from|after)\s+(?<day>tomorrow|tmr|today))\b
+  def: (?#LaterRegex)\b(?:senare(?!((\s+under)?\s*{OneWordPeriodRegex})|(\s+{TimeOfDayRegex})|\s+än\b)|från nu|(från|efter)\s+(?<day>imorgon|idag))\b
   references: [ OneWordPeriodRegex, TimeOfDayRegex ]
 BeforeAfterRegex: !simpleRegex
-  def: \b((?<before>before)|(?<after>from|after))\b
+  def: (?#BeforeAfterRegex)\b((?<before>före)|(?<after>från|efter))\b
 ModPrefixRegex: !nestedRegex
-  def: \b({RelativeRegex}|{AroundRegex}|{BeforeRegex}|{AfterRegex}|{SinceRegex})\b
+  def: (?#ModPrefixRegex)\b({RelativeRegex}|{AroundRegex}|{BeforeRegex}|{AfterRegex}|{SinceRegex})\b
   references: [RelativeRegex, AroundRegex, BeforeRegex, AfterRegex, SinceRegex ]
 ModSuffixRegex: !nestedRegex
-  def: \b({AgoRegex}|{LaterRegex}|{BeforeAfterRegex}|{FutureSuffixRegex}|{PastSuffixRegex})\b
+  def: (?#ModSuffixRegex)\b({AgoRegex}|{LaterRegex}|{BeforeAfterRegex}|{FutureSuffixRegex}|{PastSuffixRegex})\b
   references: [AgoRegex, LaterRegex, BeforeAfterRegex, FutureSuffixRegex, PastSuffixRegex]
 InConnectorRegex: !simpleRegex
-  def: \b(in)\b
+  def: (?#InConnectorRegex)\b(i)\b
 SinceYearSuffixRegex: !nestedRegex
-  def: (^\s*{SinceRegex}(\s*(the\s+)?year\s*)?{YearSuffix})
+  def: (?#SinceYearSuffixRegex)(^\s*{SinceRegex}(\s*år(et)?\s*)?{YearSuffix})
   references: [ SinceRegex, YearSuffix ]
 WithinNextPrefixRegex: !nestedRegex
-  def: \b(within(\s+the)?(\s+(?<next>{NextPrefixRegex}))?)\b
+  def: (?#WithinNextPrefixRegex)\b(inom(\s+de(n|t))?(\s+(?<next>{NextPrefixRegex}))?)\b
   references: [ NextPrefixRegex ]
 TodayNowRegex: !simpleRegex  # Added to remove hard coded strings in BaseDatePeriodParser
   def: \b(today|now|current (date|time))\b
