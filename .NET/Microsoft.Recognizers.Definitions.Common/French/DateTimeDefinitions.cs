@@ -23,8 +23,8 @@ namespace Microsoft.Recognizers.Definitions.French
     {
       public const string LangMarker = @"Fre";
       public const bool CheckBothBeforeAfter = false;
-      public const string TillRegex = @"(?<till>au|et|(jusqu')?[aà]|avant|--|-|—|——)";
-      public const string RangeConnectorRegex = @"(?<and>de la|au|[aà]|et(\s*la)?|--|-|—|——)";
+      public const string TillRegex = @"(?<till>\b(au|et|(jusqu')?a|avant)\b|(jusqu')?à|--|-|—|——)";
+      public const string RangeConnectorRegex = @"(?<and>\b(de\s+la|au|(jusqu')?a|et(\s*la)?)\b|(jusqu')?à|--|-|—|——)";
       public const string RelativeRegex = @"(?<order>prochaine?|de|du|ce(tte)?|l[ae]|derni[eè]re|hier|pr[eé]c[eé]dente|au\s+cours+(de|du\s*))";
       public const string StrictRelativeRegex = @"(?<order>prochaine?|derni[eè]re|hier|pr[eé]c[eé]dente|au\s+cours+(de|du\s*))";
       public const string NextSuffixRegex = @"(?<order>prochain(es?)?|suivante)\b";
@@ -60,7 +60,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public static readonly string BetweenRegex = $@"\b(entre\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*){YearRegex})?\b";
       public const string YearWordRegex = @"\b(?<year>l'ann[ée]e)\b";
       public static readonly string MonthWithYear = $@"\b({WrittenMonthRegex}(\s*),?(\s+de)?(\s*)({YearRegex}|{TwoDigitYearRegex}|(?<order>cette)\s*{YearWordRegex})|{YearWordRegex}\s*({PastSuffixRegex}|{NextSuffixRegex}))";
-      public static readonly string OneWordPeriodRegex = $@"\b(({RelativeRegex}\s+)?{WrittenMonthRegex}|(la\s+)?(weekend|(fin de )?semaine|week-end|mois|ans?|l'année)\s+{StrictRelativeRegex}|{RelativeRegex}\s+(weekend|(fin de )?semaine|week-end|mois|ans?|l'année)|weekend|week-end|(mois|l'année))\b";
+      public static readonly string OneWordPeriodRegex = $@"\b(({RelativeRegex}\s+)?{WrittenMonthRegex}|(la\s+)?(weekend|(fin de )?semaine|week-end|mois|ans?|l'année)\s+{StrictRelativeRegex}|{RelativeRegex}\s+(weekend|(fin de )?semaine|week-end|mois|ans?|l'année)|weekend|week-end|mois|l'année|an)\b";
       public static readonly string MonthNumWithYear = $@"({YearRegex}(\s*)[/\-\.](\s*){MonthNumRegex})|({MonthNumRegex}(\s*)[/\-](\s*){YearRegex})";
       public static readonly string WeekOfMonthRegex = $@"(?<wom>(le\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4|cinqi[èe]me|5)\s+semaine(\s+de)?\s+{MonthSuffixRegex})";
       public static readonly string WeekOfYearRegex = $@"(?<woy>(le\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4|cinqi[èe]me|5)\s+semaine(\s+de)?\s+({YearRegex}|{RelativeRegex}\s+ann[ée]e))";
@@ -235,7 +235,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public const string FromRegex2 = @"((depuis|de)(\s*las?)?)$";
       public const string FromToRegex = @"\b(du|depuis|des?).+(au|à|a)\b.+";
       public const string SingleAmbiguousMonthRegex = @"^(le\s+)?(may|march)$";
-      public const string UnspecificDatePeriodRegex = @"^\b$";
+      public const string UnspecificDatePeriodRegex = @"^(semaine|mois|an(n[eé]e)?)$";
       public const string PrepositionSuffixRegex = @"\b(du|de|[àa]|vers|dans)$";
       public const string FlexibleDayRegex = @"(?<DayOfMonth>([A-Za-z]+\s)?[A-Za-z\d]+)";
       public static readonly string ForTheRegex = $@"\b(((pour le {FlexibleDayRegex})|(dans (le\s+)?{FlexibleDayRegex}(?<=(st|nd|rd|th))))(?<end>\s*(,|\.|!|\?|$)))";
