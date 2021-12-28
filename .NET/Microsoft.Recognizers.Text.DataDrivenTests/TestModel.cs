@@ -9,6 +9,7 @@ using Newtonsoft.Json;
 namespace Microsoft.Recognizers.Text.DataDrivenTests
 {
     [Flags]
+    [JsonConverter(typeof(PlatformEnumConverter))]
     public enum Platform
     {
         /// <summary>
@@ -54,7 +55,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
         public bool IgnoreResolution { get; set; }
 
-        public Platform NotSupported { get; set; }
+        public Platform NotSupported { get; set; } = 0;
 
         public Platform NotSupportedByDesign { get; set; }
 
