@@ -4174,6 +4174,9 @@
         "Resolution": {
           "subtype": "fraction",
           "value": "1E-12"
+        },
+        "Start": 0,
+        "End": 4
       }
     ]
   },
