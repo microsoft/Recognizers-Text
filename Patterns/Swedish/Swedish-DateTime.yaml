@@ -115,7 +115,7 @@ MonthSuffixRegex: !nestedRegex
   def: (?#MonthSuffixRegex)(?<msuf>(?:(i)\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))
   references: [ RelativeMonthRegex, WrittenMonthRegex ]
 DateUnitRegex: !simpleRegex
-  def: (?#DateUnitRegex)(?<unit>(decenni(um)?|år|(?<uoy>månad|veck(a)?|(?<business>(arbets\s+|veck(a)?\s*))?(?<uoy>dag)|fortnight|helg|weekend|veckoslut)(?<plural>(or|en|ar|er))?|(?<=\s+\d{1,4})[ymwd])\b
+  def: (?#DateUnitRegex)(?<unit>(decennium|år|(?<uoy>månad|vecka)|(?<business>(arbets\s+|vecka\s*))?(?<uoy>dag)|weekend)(?<plural>s)?|(?<=\s+\d{1,4})[ymwd])\b
 DateTokenPrefix: 'den '
 TimeTokenPrefix: 'kl '
 TokenBeforeDate: 'den '
