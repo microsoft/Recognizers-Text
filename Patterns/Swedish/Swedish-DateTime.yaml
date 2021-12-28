@@ -456,88 +456,89 @@ UnspecificTimePeriodRegex: !nestedRegex
   def: (?#UnspecificTimePeriodRegex)({MealTimeRegex})
   references: [ MealTimeRegex ]
 TimeOfDayRegex: !nestedRegex
-  def: \b(?<timeOfDay>((((in\s+the\s+)?{LaterEarlyRegex}?(in(\s+the)?\s+)?(morning|afternoon|night(-?time)?|evening)))|{MealTimeRegex}|(((in\s+(the)?\s+)?)(daytime|business\s+hour)))s?)\b
+  def: (?#TimeOfDayRegex)\b(?<timeOfDay>((((in\s+the\s+)?{LaterEarlyRegex}?(in(\s+the)?\s+)?(morgon(en)?|eftermiddag(en)?|natt(en)?|kväll(en)?)))|{MealTimeRegex}|(((in\s+(the)?\s+)?)(dagtid|kontorstid)))s?)\b
   references: [ LaterEarlyRegex, MealTimeRegex ]
 SpecificTimeOfDayRegex: !nestedRegex
-  def: \b(({StrictRelativeRegex}\s+{TimeOfDayRegex})\b|\btoni(ght|te))s?\b
+  def: (?#SpecificTimeOfDayRegex)\b(({StrictRelativeRegex}\s+{TimeOfDayRegex})\b|\bikväll)s?\b
   references: [ TimeOfDayRegex, StrictRelativeRegex ]
 TimeFollowedUnit: !nestedRegex
-  def: ^\s*{TimeUnitRegex}
+  def: (?#TimeFollowedUnit)^\s*{TimeUnitRegex}
   references: [ TimeUnitRegex ]
 TimeNumberCombinedWithUnit: !nestedRegex
-  def: \b(?<num>\d+(\.\d*)?){TimeUnitRegex}
+  def: (?#TimeNumberCombinedWithUnit)\b(?<num>\d+(\.\d*)?){TimeUnitRegex}
   references: [ TimeUnitRegex ]
 BusinessHourSplitStrings: ['business', 'hour']
 NowRegex: !simpleRegex
-  def: \b(?<now>(right\s+)?now|as\s+soon\s+as\s+possible|asap|recently|previously|at\s+(present|this\s+time|th(e|is)\s+minute|the\s+(moment|present\s+time)))\b
+  def: (?#NowRegex)\b(?<now>(just\s+)?nu|så\s+snart\s+som\s+möjligt|asap|nyligen|tidigare|i\s+(present|denna\s+stund|denna\s+minut|detta\s+(ögonblick|present\s+time)))\b
 #Used in DatePeriodParser to parse patterns like "from March to date" ("^date$" is English specific and does not need to be translated).
 NowParseRegex: !nestedRegex
-  def: \b({NowRegex}|^(date)$)\b
+  def: (?#NowParseRegex)\b({NowRegex}|^(date)$)\b
   references: [ NowRegex ]
 SuffixRegex: !simpleRegex
-  def: ^\s*(in the\s+)?(morning|afternoon|evening|night)\b
+  def: (?#SuffixRegex)^\s*(på\s+)?(morgonen|eftermiddagen|kvällen|natten)\b
 NonTimeContextTokens: !simpleRegex
-  def: (building)
+  def: (?#NonTimeContextTokens)(building)
 DateTimeTimeOfDayRegex: !simpleRegex
-  def: \b(?<timeOfDay>morning|(?<pm>afternoon|night|evening))\b
+  def: (?#DateTimeTimeOfDayRegex)\b(?<timeOfDay>morning|(?<pm>eftermiddag(en)?|natt(en)?|kväll(en)?))\b
 DateTimeSpecificTimeOfDayRegex: !nestedRegex
-  def: \b(({RelativeRegex}\s+{DateTimeTimeOfDayRegex})\b|\btoni(ght|te))\b
+  def: (?#DateTimeSpecificTimeOfDayRegex)\b(({RelativeRegex}\s+{DateTimeTimeOfDayRegex})\b|\bikväll)\b
   references: [ DateTimeTimeOfDayRegex, RelativeRegex ]
 TimeOfTodayAfterRegex: !nestedRegex
-  def: ^\s*(,\s*)?(in\s+)?{DateTimeSpecificTimeOfDayRegex}
+  def: (?#TimeOfTodayAfterRegex)^\s*(,\s*)?(på\s+)?{DateTimeSpecificTimeOfDayRegex}
   references: [ DateTimeSpecificTimeOfDayRegex ]
 TimeOfTodayBeforeRegex: !nestedRegex
-  def: '{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+(at|around|circa|in|on))?\s*$'
+  def: (?#TimeOfTodayBeforeRegex)'{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+(på|runt|omkring|vid))?\s*$'
   references: [ DateTimeSpecificTimeOfDayRegex ]
 SimpleTimeOfTodayAfterRegex: !nestedRegex
-  def: (?<!{NonTimeContextTokens}\s*)\b({HourNumRegex}|{BaseDateTime.HourRegex})\s*(,\s*)?(in\s+)?{DateTimeSpecificTimeOfDayRegex}\b
+  def: (?#SimpleTimeOfTodayAfterRegex)(?<!{NonTimeContextTokens}\s*)\b({HourNumRegex}|{BaseDateTime.HourRegex})\s*(,\s*)?(på\s+)?{DateTimeSpecificTimeOfDayRegex}\b
   references: [ NonTimeContextTokens, HourNumRegex, BaseDateTime.HourRegex, DateTimeSpecificTimeOfDayRegex ]
 SimpleTimeOfTodayBeforeRegex: !nestedRegex
-  def: '\b{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+(at|around|circa))?\s*({HourNumRegex}|{BaseDateTime.HourRegex})\b'
+  def: (?#SimpleTimeOfTodayBeforeRegex)'\b{DateTimeSpecificTimeOfDayRegex}(\s*,)?(\s+(på|runt|omkring|vid))?\s*({HourNumRegex}|{BaseDateTime.HourRegex})\b'
   references: [ DateTimeSpecificTimeOfDayRegex, HourNumRegex, BaseDateTime.HourRegex ]
 SpecificEndOfRegex: !simpleRegex
-  def: (the\s+)?end of(\s+the)?\s*$
+  def: (?#SpecificEndOfRegex)(the\s+)?slutet av\s*$
 UnspecificEndOfRegex: !simpleRegex
-  def: \b(the\s+)?(eod|(end\s+of\s+day))\b
+  def: (?#UnspecificEndOfRegex)\b(the\s+)?(eod|(slutet\s+(av|på)\s+dagen))\b
 UnspecificEndOfRangeRegex: !simpleRegex
-  def: \b(eoy)\b
+  def: (?#UnspecificEndOfRangeRegex)\b(eoy)\b
 PeriodTimeOfDayRegex: !nestedRegex
-  def: \b((in\s+(the)?\s+)?{LaterEarlyRegex}?(this\s+)?{DateTimeTimeOfDayRegex})\b
+  def: (?#PeriodTimeOfDayRegex)\b((in\s+(the)?\s+)?{LaterEarlyRegex}?(this\s+)?{DateTimeTimeOfDayRegex})\b
   references: [ DateTimeTimeOfDayRegex, LaterEarlyRegex ]
 PeriodSpecificTimeOfDayRegex: !nestedRegex
-  def: \b({LaterEarlyRegex}?this\s+{DateTimeTimeOfDayRegex}|({StrictRelativeRegex}\s+{PeriodTimeOfDayRegex})\b|\btoni(ght|te))\b
+  def: (?#PeriodSpecificTimeOfDayRegex)\b({LaterEarlyRegex}?denna\s+{DateTimeTimeOfDayRegex}|({StrictRelativeRegex}\s+{PeriodTimeOfDayRegex})\b|\bikväll)\b
   references: [ PeriodTimeOfDayRegex, StrictRelativeRegex, DateTimeTimeOfDayRegex, LaterEarlyRegex ]
 PeriodTimeOfDayWithDateRegex: !nestedRegex
- def: \b(({PeriodTimeOfDayRegex}(\s+(on|of))?))\b
+ def: (?#PeriodTimeOfDayWithDateRegex)\b(({PeriodTimeOfDayRegex}(\s+(den))?))\b
  references: [ PeriodTimeOfDayRegex ]
 LessThanRegex: !simpleRegex
-  def: \b(less\s+than)\b
+  def: (?#LessThanRegex)\b(mindre\s+än)\b
 MoreThanRegex: !simpleRegex
-  def: \b(more\s+than)\b
+  def: (?#MoreThanRegex)\b(mer\s+än)\b
 DurationUnitRegex: !nestedRegex
-  def: (?<unit>{DateUnitRegex}|h(ou)?rs?|h|min(ute)?s?|sec(ond)?s?|nights?)\b
+  def: (?#DurationUnitRegex)(?<unit>{DateUnitRegex}|tim(me|mar)?|h|min(ut(er)?)?|sek(und(er)?)?|nätter)\b
   references: [ DateUnitRegex ]
 SuffixAndRegex: !simpleRegex
-  def: (?<suffix>\s*(and)\s+(an?\s+)?(?<suffix_num>half|quarter))
+  def: (?#SuffixAndRegex)(?<suffix>\s*(och)\s+(en?\s+)?(?<suffix_num>halv|kvart))
+# Look up how to translate 'semi'and 'tri' in this context
 PeriodicRegex: !simpleRegex
-  def: \b(?<periodic>((?<multiplier>semi|bi|tri)(\s*|-))?(daily|monthly|weekly|quarterly|yearly|annual(ly)?))\b
+  def: (?#PeriodicRegex)\b(?<periodic>((?<multiplier>semi|varannan|tri)(\s*|-))?(dagligen|månatligen|veckovis|kvartalsvis|årlig(en)?))\b
 EachUnitRegex: !nestedRegex
-  def: \b(?<each>(every|(each|any|once an|one a|once a)\s?)(?<other>\s+(other|alternate|second))?\s*({DurationUnitRegex}|(?<specialUnit>quarters?|weekends?)|{WeekDayRegex})|(?<specialUnit>weekends))
+  def: (?#EachUnitRegex)\b(?<each>(varje|(varje|var|en gång\s+(i|per|varje|var)?)\s?)(?<other>\s+(annan|alternate|second))?\s*({DurationUnitRegex}|(?<specialUnit>kvartal|weekends?|veckoslut|helg)|{WeekDayRegex})|(?<specialUnit>weekends))
   references: [ DurationUnitRegex, WeekDayRegex ]
 EachPrefixRegex: !simpleRegex
-  def: \b(?<each>(each|every|once an?)\s*$)
+  def: (?#EachPrefixRegex)\b(?<each>(varje|var|en gång\s+(i|per|varje|var)?)\s*$)
 SetEachRegex: !simpleRegex
-  def: \b(?<each>(each|every)(?<other>\s+(other|alternate))?\s*)(?!the|that)\b
+  def: (?#SetEachRegex)\b(?<each>(varje|var)(?<other>\s+(annan|alternate))?\s*)(?!den|det)\b
 SetLastRegex: !nestedRegex
-  def: (?<last>following|next|upcoming|this|{LastNegPrefix}last|past|previous|current)
+  def: (?#SetLastRegex)(?<last>följande|nästa|kommande|den\s+här|{LastNegPrefix}senaste|förra|tidigare|nuvarande)
   references: [ LastNegPrefix ]
 EachDayRegex: !simpleRegex
-  def: ^\s*(each|every)\s*day\b
+  def: (?#EachDayRegex)^\s*(var|varje)\s*dag\b
 DurationFollowedUnit: !nestedRegex
-  def: (^\s*{DurationUnitRegex}\s+{SuffixAndRegex})|(^\s*{SuffixAndRegex}?(\s+|-)?{DurationUnitRegex})
+  def: (?#DurationFollowedUnit)(^\s*{DurationUnitRegex}\s+{SuffixAndRegex})|(^\s*{SuffixAndRegex}?(\s+|-)?{DurationUnitRegex})
   references: [ SuffixAndRegex, DurationUnitRegex ]
 NumberCombinedWithDurationUnit: !nestedRegex
-  def: \b(?<num>\d+(\.\d*)?)(-)?{DurationUnitRegex}
+  def: (?#NumberCombinedWithDurationUnit)\b(?<num>\d+(\.\d*)?)(-)?{DurationUnitRegex}
   references: [ DurationUnitRegex ]
 AnUnitRegex: !nestedRegex
   def: (\b((?<half>(half)\s+)?an?|another)|(?<half>(1/2|½|half)))\s+{DurationUnitRegex}
