@@ -139,7 +139,13 @@ namespace Microsoft.Recognizers.Text.Number
             var splitResult = Config.FracSplitRegex.Split(resultText);
             string intPart = string.Empty, demoPart = string.Empty, numPart = string.Empty;
 
-            if (splitResult.Length == 3)
+            if (splitResult.Length == 4)
+            {
+                intPart = splitResult[0] + splitResult[1];
+                demoPart = splitResult[2];
+                numPart = splitResult[3];
+            }
+            else if (splitResult.Length == 3)
             {
                 intPart = splitResult[0];
                 demoPart = splitResult[1];
