@@ -3,9 +3,9 @@
 LangMarker: Fre
 CheckBothBeforeAfter: !bool false
 TillRegex: !simpleRegex
-  def: (?<till>au|et|(jusqu')?[aà]|avant|--|-|—|——)
+  def: (?<till>\b(au|et|(jusqu')?a|avant)\b|(jusqu')?à|--|-|—|——)
 RangeConnectorRegex : !simpleRegex
-  def: (?<and>de la|au|[aà]|et(\s*la)?|--|-|—|——)
+  def: (?<and>\b(de\s+la|au|(jusqu')?a|et(\s*la)?)\b|(jusqu')?à|--|-|—|——)
 RelativeRegex: !simpleRegex
   def: (?<order>prochaine?|de|du|ce(tte)?|l[ae]|derni[eè]re|hier|pr[eé]c[eé]dente|au\s+cours+(de|du\s*))
 StrictRelativeRegex: !simpleRegex
@@ -95,7 +95,7 @@ MonthWithYear: !nestedRegex
   def: \b({WrittenMonthRegex}(\s*),?(\s+de)?(\s*)({YearRegex}|{TwoDigitYearRegex}|(?<order>cette)\s*{YearWordRegex})|{YearWordRegex}\s*({PastSuffixRegex}|{NextSuffixRegex}))
   references: [ WrittenMonthRegex, YearRegex, TwoDigitYearRegex, YearWordRegex, PastSuffixRegex, NextSuffixRegex ]
 OneWordPeriodRegex: !nestedRegex
-  def: \b(({RelativeRegex}\s+)?{WrittenMonthRegex}|(la\s+)?(weekend|(fin de )?semaine|week-end|mois|ans?|l'année)\s+{StrictRelativeRegex}|{RelativeRegex}\s+(weekend|(fin de )?semaine|week-end|mois|ans?|l'année)|weekend|week-end|(mois|l'année))\b
+  def: \b(({RelativeRegex}\s+)?{WrittenMonthRegex}|(la\s+)?(weekend|(fin de )?semaine|week-end|mois|ans?|l'année)\s+{StrictRelativeRegex}|{RelativeRegex}\s+(weekend|(fin de )?semaine|week-end|mois|ans?|l'année)|weekend|week-end|mois|l'année|an)\b
   references: [ WrittenMonthRegex, RelativeRegex, StrictRelativeRegex ]
 MonthNumWithYear: !nestedRegex
   def: ({YearRegex}(\s*)[/\-\.](\s*){MonthNumRegex})|({MonthNumRegex}(\s*)[/\-](\s*){YearRegex})
@@ -540,8 +540,7 @@ FromToRegex: !simpleRegex
 SingleAmbiguousMonthRegex: !simpleRegex
   def: ^(le\s+)?(may|march)$
 UnspecificDatePeriodRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^\b$
+  def: ^(semaine|mois|an(n[eé]e)?)$
 PrepositionSuffixRegex: !simpleRegex
   def: \b(du|de|[àa]|vers|dans)$
 FlexibleDayRegex: !simpleRegex
