@@ -45,10 +45,10 @@ The table below summarizes the currently supported entities. Support for English
 
 | Entity Type       | EN      | ZH-CN   | NL    | FR     | DE    | IT      | JA     | KO     | PT     | ES      |
 |:-----------------:|:-------:|:-------:|:-----:|:------:|:-----:|:-------:|:------:|:------:|:------:|:-------:| 
-| Number (cardinal)    | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | ✓      | ✓     | ✓       |
-| Ordinal              | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | PA/EO  | ✓     | ✓       |
-| Percentage           | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | PA/EO  | ✓     | ✓       |
-| Number Range         | ✓    | ✓       | ✓    | ✓     | ✓     | ✓      | PA/EO   | PA/EO  | :x:    | ✓      |
+| Number (cardinal)    | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | ✓     | ✓      | ✓       |
+| Ordinal              | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | ✓     | ✓      | ✓       |
+| Percentage           | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | ✓     | ✓      | ✓       |
+| Number Range         | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | PA/EO  | PA/EO  | :x:    | ✓       |
 | Unit - Age           | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | PA/EO  | ✓     | ✓       |
 | Unit - Currency      | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | PA/EO  | ✓     | ✓       |
 | Unit - Dimensions    | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | :x:    | PA/EO  | ✓      | ✓      | 
