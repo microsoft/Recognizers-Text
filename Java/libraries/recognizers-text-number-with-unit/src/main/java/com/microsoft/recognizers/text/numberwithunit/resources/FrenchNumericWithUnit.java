@@ -659,6 +659,7 @@ public class FrenchNumericWithUnit {
         .put("Kilogramme", "kg|kilogramme|kilogrammes|kilo|kilos")
         .put("Gram", "g|gramme|grammes")
         .put("Milligramme", "mg|milligramme|milligrammes")
+        .put("Microgramme", "µg|ug|microgramme|microgrammes")
         .put("Tonne métrique", "tonne métrique|tonnes métrique|tonnes métriques|tonne metrique|tonnes metrique")
         .put("Tonne", "tonne|tonnes|-tonnes|-tonne")
         .put("Livre", "livre|livres")

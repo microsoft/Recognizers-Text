@@ -850,9 +850,10 @@ namespace Microsoft.Recognizers.Definitions.English
         };
       public static readonly Dictionary<string, string> WeightSuffixList = new Dictionary<string, string>
         {
-            { @"Kilogram", @"kg|kilogram|kilograms|kilo|kilos" },
-            { @"Gram", @"g|gram|grams|gm" },
-            { @"Milligram", @"mg|milligram|milligrams" },
+            { @"Kilogram", @"kg|kilogram|kilograms|kilo|kilos|kilogramme|kilogrammes" },
+            { @"Gram", @"g|gram|grams|gm|gramme|grammes" },
+            { @"Milligram", @"mg|milligram|milligrams|milligramme|milligrammes" },
+            { @"Microgram", @"μg|microgram|micrograms|micro gram|micro grams|microgramme|microgrammes|mcg" },
             { @"Gallon", @"-gallon|gallons|gallon|gal" },
             { @"Metric ton", @"metric tons|metric ton" },
             { @"Ton", @"-ton|ton|tons|tonne|tonnes" },
@@ -869,6 +870,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly IList<string> AmbiguousWeightUnitList = new List<string>
         {
             @"g",
+            @"gr",
             @"oz",
             @"stone",
             @"dram",

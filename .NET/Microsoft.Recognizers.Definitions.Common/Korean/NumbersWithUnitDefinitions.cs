@@ -605,6 +605,7 @@ namespace Microsoft.Recognizers.Definitions.Korean
             { @"Kilogram", @"킬로그램|kg" },
             { @"Jin", @"市斤|斤" },
             { @"Milligram", @"밀리그램|mg" },
+            { @"Microgram", @"마이크로그램|μg" },
             { @"Barrel", @"배럴" },
             { @"Pot", @"罐" },
             { @"Gram", @"그램|g" },

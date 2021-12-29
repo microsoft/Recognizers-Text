@@ -799,6 +799,7 @@ namespace Microsoft.Recognizers.Definitions.German
             { @"Kilogram", @"kg|kilogramm|kilo" },
             { @"Gram", @"g|gramm" },
             { @"Milligram", @"mg|milligramm" },
+            { @"Microgram", @"μg|mikrogramm" },
             { @"Barrel", @"barrel" },
             { @"Gallon", @"gallone|gallonen" },
             { @"Metric ton", @"metrische tonne|metrische tonnen" },

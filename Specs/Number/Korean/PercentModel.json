@@ -79,7 +79,6 @@
   },
   {
     "Input": "이십 퍼센트",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -93,7 +92,6 @@
   },
   {
     "Input": "삼십 퍼센트",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -107,7 +105,6 @@
   },
   {
     "Input": "백퍼센트",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -121,7 +118,6 @@
   },
   {
     "Input": "백 퍼센트",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -135,7 +131,6 @@
   },
   {
     "Input": "십퍼센트",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -149,7 +144,6 @@
   },
   {
     "Input": "이십이 퍼센트",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -163,7 +157,6 @@
   },
   {
     "Input": "이백십 퍼센트",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -177,7 +170,6 @@
   },
   {
     "Input": "십 퍼센트",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -279,7 +271,6 @@
   },
   {
     "Input": "이십 퍼센트 할인 중",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -295,7 +286,6 @@
   },
   {
     "Input": "삼십 퍼센티지의 승률",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -311,7 +301,6 @@
   },
   {
     "Input": "백 퍼센트 이길 겁니다",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -327,7 +316,6 @@
   },
   {
     "Input": "십 퍼센트만 올려주세요",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -343,7 +331,6 @@
   },
   {
     "Input": "이십이 퍼센트로 앞서나가고 있습니다",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -359,7 +346,6 @@
   },
   {
     "Input": "이백십 퍼센트의 수익률",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -375,7 +361,6 @@
   },
   {
     "Input": "십 퍼센트는 내 몫이다",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -391,7 +376,6 @@
   },
   {
     "Input": "마이너스 오 퍼센트만 필요해",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {

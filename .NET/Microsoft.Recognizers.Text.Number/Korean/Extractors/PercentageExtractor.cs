@@ -32,22 +32,22 @@ namespace Microsoft.Recognizers.Text.Number.Korean
                 {
                     // 3,000퍼센트  １，１２３퍼센트
                     new Regex(NumbersDefinitions.NumbersPercentageWithSeparatorRegex, RegexFlags),
-                    RegexTagGenerator.GenerateRegexTag(Constants.PERCENT_PREFIX, Constants.NUMBER_SUFFIX)
+                    RegexTagGenerator.GenerateRegexTag(Constants.PERCENT_PREFIX, Constants.KOREAN)
                 },
                 {
                     // 3.2 k 퍼센트
                     new Regex(NumbersDefinitions.NumbersPercentageWithMultiplierRegex, RegexFlags),
-                    RegexTagGenerator.GenerateRegexTag(Constants.PERCENT_PREFIX, Constants.NUMBER_SUFFIX)
+                    RegexTagGenerator.GenerateRegexTag(Constants.PERCENT_PREFIX, Constants.KOREAN)
                 },
                 {
                     // 15k퍼센트
                     new Regex(NumbersDefinitions.SimpleNumbersPercentageWithMultiplierRegex, RegexFlags),
-                    RegexTagGenerator.GenerateRegexTag(Constants.PERCENT_PREFIX, Constants.NUMBER_SUFFIX)
+                    RegexTagGenerator.GenerateRegexTag(Constants.PERCENT_PREFIX, Constants.KOREAN)
                 },
                 {
                 // 마이너스십삼퍼센트
                 new Regex(NumbersDefinitions.SimpleIntegerPercentageRegex, RegexFlags),
-                RegexTagGenerator.GenerateRegexTag(Constants.PERCENT_PREFIX, Constants.NUMBER_SUFFIX)
+                RegexTagGenerator.GenerateRegexTag(Constants.PERCENT_PREFIX, Constants.KOREAN)
                 },
             };
 

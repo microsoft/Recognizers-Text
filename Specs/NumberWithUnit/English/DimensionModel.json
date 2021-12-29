@@ -1235,6 +1235,38 @@
     ]
   },
   {
+    "Input": "The weight is 150 microgram",
+    "Results": [
+      {
+        "Text": "150 microgram",
+        "Start": 14,
+        "End": 26,
+        "TypeName": "dimension",
+        "Resolution": {
+          "subtype": "Weight",
+          "unit": "Microgram",
+          "value": "150"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The weight is 120 μg",
+    "Results": [
+      {
+        "Text": "120 μg",
+        "Start": 14,
+        "End": 19,
+        "TypeName": "dimension",
+        "Resolution": {
+          "subtype": "Weight",
+          "unit": "Microgram",
+          "value": "120"
+        }
+      }
+    ]
+  },
+  {
     "Input": "24703L202",
     "Results": []
   },
@@ -1285,5 +1317,48 @@
   {
     "Input": "scp173m",
     "Results": []
+  },
+  {
+    "Input": "The recommended symbol in the United States and United Kingdom when communicating medical information is mcg",
+    "Results": [
+      {
+        "Text": "mcg",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": null,
+          "subtype": "Weight",
+          "unit": "Microgram"
+        },
+        "Start": 105,
+        "End": 107
+      }
+    ]
+  },
+  {
+    "Input": "Ten samples from the Camarones river valley had an average of 37.8 microgrammes per gramme",
+    "Results": [
+      {
+        "Text": "37.8 microgrammes",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "37.8",
+          "subtype": "Weight",
+          "unit": "Microgram"
+        },
+        "Start": 62,
+        "End": 78
+      },
+      {
+        "Text": "gramme",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": null,
+          "subtype": "Weight",
+          "unit": "Gram"
+        },
+        "Start": 84,
+        "End": 89
+      }
+    ]
   }
 ]

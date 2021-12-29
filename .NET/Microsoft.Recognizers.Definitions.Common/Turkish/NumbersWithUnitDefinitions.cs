@@ -841,6 +841,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
             { @"Kilogram", @"kg|kilogram|kilo|kilograma|kilogramda||kilogramdan|kilogramı|kilogramın|kilogramdır|kilogramdı|kilogrammış|kilogramlık|kiloya|kiloda|kilodan|kiloyu|kilonun|kilodur|kiloydu|kiloymuş|kiloluk" },
             { @"Gram", @"g|gram|grama|gramda||gramdan|gramı|gramın|gramdır|gramdı|grammış|gramlık" },
             { @"Milligram", @"mg|miligram|miligrama|miligramda||miligramdan|miligramı|miligramın|miligramdır|miligramdı|miligrammış|miligramlık" },
+            { @"Microgram", @"μg|mikrogram|mikrograma|mikrogramda|mikrogramdan|mikrogramı|mikrogramın|mikrogramdır|mikrogramdı|mikrogrammış|mikrogramlık" },
             { @"Barrel", @"varil|varile|varilde|varilden|varili|varilin|varildir|varildi|varilmiş|varillik" },
             { @"Gallon", @"galon|galona|galonda|galondan|galonu|galonun|galondur|galondu|galonmuş|galonluk" },
             { @"Metric ton", @"metrik ton|metrik tona|metrik tonda|metrik tondan|metrik tonu|metrik tonun|metrik tondur|metrik tondu|metrik tonmuş|metrik tonluk" },

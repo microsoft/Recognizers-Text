@@ -706,6 +706,7 @@ public class GermanNumericWithUnit {
         .put("Kilogram", "kg|kilogramm|kilo")
         .put("Gram", "g|gramm")
         .put("Milligram", "mg|milligramm")
+        .put("Microgram", "μg|mikrogramm")
         .put("Barrel", "barrel")
         .put("Gallon", "gallone|gallonen")
         .put("Metric ton", "metrische tonne|metrische tonnen")

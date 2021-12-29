@@ -727,9 +727,10 @@ public class EnglishNumericWithUnit {
     public static final List<String> AmbiguousVolumeUnitList = Arrays.asList("l", "ounce", "oz", "cup", "cups", "peck", "pecks", "cord", "cords", "gill", "gills", "barrel", "barrels", "tbl", "quart", "quarts", "pinch", "t.", "T.", "Tb.", "ts.");
 
     public static final ImmutableMap<String, String> WeightSuffixList = ImmutableMap.<String, String>builder()
-        .put("Kilogram", "kg|kilogram|kilograms|kilo|kilos")
-        .put("Gram", "g|gram|grams|gm")
-        .put("Milligram", "mg|milligram|milligrams")
+        .put("Kilogram", "kg|kilogram|kilograms|kilo|kilos|kilogramme|kilogrammes")
+        .put("Gram", "g|gram|grams|gm|gramme|grammes")
+        .put("Milligram", "mg|milligram|milligrams|milligramme|milligrammes")
+        .put("Microgram", "μg|microgram|micrograms|micro gram|micro grams|microgramme|microgrammes|mcg")
         .put("Gallon", "-gallon|gallons|gallon|gal")
         .put("Metric ton", "metric tons|metric ton")
         .put("Ton", "-ton|ton|tons|tonne|tonnes")
@@ -744,7 +745,7 @@ public class EnglishNumericWithUnit {
         .put("Dram", "dram|drachm|drachma|roman drachma|greek drachma")
         .build();
 
-    public static final List<String> AmbiguousWeightUnitList = Arrays.asList("g", "oz", "stone", "dram", "lbs", "gal", "grain", "grains");
+    public static final List<String> AmbiguousWeightUnitList = Arrays.asList("g", "gr", "oz", "stone", "dram", "lbs", "gal", "grain", "grains");
 
     public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
         .put("\\bm\\b", "((('|’)\\s*m)|(m\\s*('|’)))")
