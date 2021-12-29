@@ -3074,5 +3074,37 @@
         "End": 42
       }
     ]
+  },
+  {
+    "Input": "El número es cinco billones con tres cuartos.",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "cinco billones con tres cuartos",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "5750000000000"
+        },
+        "Start": 13,
+        "End": 43
+      }
+    ]
+  },
+  {
+    "Input": "Conté seis millones con dos tercios",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "seis millones con dos tercios",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "6666666,66666667"
+        },
+        "Start": 6,
+        "End": 34
+      }
+    ]
   }
 ]

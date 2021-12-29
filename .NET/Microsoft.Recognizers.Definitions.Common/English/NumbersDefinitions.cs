@@ -63,7 +63,9 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly string OrdinalEnglishRegex = $@"(?<=\b){AllOrdinalRegex}(?=\b)";
       public const string FractionNotationWithSpacesRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))";
       public static readonly string FractionNotationRegex = $@"{BaseNumbers.FractionNotationRegex}";
-      public static readonly string RoundMultiplierRegex = $@"\b\s*((of\s+)?a\s+)?(?<=(?<!{RoundNumberIntegerRegex})(?<half>\s+and\s+a\s+half)\s+)?(?<multiplier>{RoundNumberIntegerRegex})(?=(?<half>\s+and\s+a\s+half)?$)";
+      public static readonly string FractionMultiplierRegex = $@"(?<fracMultiplier>\s+and\s+(a|one|{TwoToNineIntegerRegex})\s+(half|quarter|third|fourth|fifth|sixth|seventh|eighth|nine?th|tenth)s?)";
+      public static readonly string RoundMultiplierWithFraction = $@"(?<=(?<!{RoundNumberIntegerRegex}){FractionMultiplierRegex}\s+)?(?<multiplier>(?:million|mln|billion|bln|trillion|tln)s?)(?={FractionMultiplierRegex}?$)";
+      public static readonly string RoundMultiplierRegex = $@"\b\s*((of\s+)?a\s+)?({RoundMultiplierWithFraction}|(?<multiplier>(?:hundred|thousand|lakh|crore)s?)$)";
       public static readonly string FractionNounRegex = $@"(?<=\b)({AllIntRegex}\s+(and\s+)?)?(({AllIntRegex})(\s+|\s*-\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))s|halves|quarters)((\s+of\s+a)?\s+{RoundNumberIntegerRegex})?|(half(\s+a)?|quarter(\s+of\s+a)?)\s+{RoundNumberIntegerRegex})(?=\b)";
       public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)(((({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\s+(and\s+)?)?(an?|one)(\s+|\s*-\s*)(?!\bfirst\b|\bsecond\b)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|(half|quarter)(((\s+of)?\s+a)?\s+{RoundNumberIntegerRegex})?))|(half))(?=\b)";
       public static readonly string FractionPrepositionRegex = $@"(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<![\.,])\d+))\s+(over|(?<ambiguousSeparator>in|out\s+of))\s+(?<denominator>({AllIntRegex})|(\d+)(?![\.,]))(?=\b)";

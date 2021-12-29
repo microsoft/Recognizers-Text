@@ -104,10 +104,10 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
             var resLen = result.Count;
             if (resLen > 2)
             {
-                if (result[resLen - 1] == "medio" && result[resLen - 2] == "y")
+                if (result[resLen - 1] == NumbersDefinitions.OneHalfTokens[1] && result[resLen - 2] == NumbersDefinitions.WordSeparatorToken)
                 {
-                    result[resLen - 2] = "con";
-                    result.Insert(resLen - 1, "un");
+                    result[resLen - 2] = NumbersDefinitions.WrittenFractionSeparatorTexts[0];
+                    result.Insert(resLen - 1, NumbersDefinitions.OneHalfTokens[0]);
                 }
             }
 

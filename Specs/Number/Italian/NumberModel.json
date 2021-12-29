@@ -1955,5 +1955,35 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Il numero è cinque miliardi e tre quarti",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "cinque miliardi e tre quarti",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5750000000"
+        },
+        "Start": 12,
+        "End": 39
+      }
+    ]
+  },
+  {
+    "Input": "Ho contato sei milioni e due terzi",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "sei milioni e due terzi",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "6666666,66666667"
+        },
+        "Start": 11,
+        "End": 33
+      }
+    ]
   }
 ]
