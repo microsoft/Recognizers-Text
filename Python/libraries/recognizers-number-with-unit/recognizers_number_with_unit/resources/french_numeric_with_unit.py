@@ -612,6 +612,7 @@ class FrenchNumericWithUnit:
     WeightSuffixList = dict([("Kilogramme", "kg|kilogramme|kilogrammes|kilo|kilos"),
                              ("Gram", "g|gramme|grammes"),
                              ("Milligramme", "mg|milligramme|milligrammes"),
+                             ("Microgramme", "µg|ug|microgramme|microgrammes"),
                              ("Tonne métrique", "tonne métrique|tonnes métrique|tonnes métriques|tonne metrique|tonnes metrique"),
                              ("Tonne", "tonne|tonnes|-tonnes|-tonne"),
                              ("Livre", "livre|livres")])

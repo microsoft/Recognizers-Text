@@ -34,6 +34,8 @@ public class JapaneseNumericWithUnit {
 
     public static final String ConnectorToken = "";
 
+    public static final Boolean CheckFirstSuffix = true;
+
     public static final ImmutableMap<String, String> CurrencySuffixList = ImmutableMap.<String, String>builder()
         .put("Afghan afghani", "アフガニ")
         .put("Pul", "プル")
@@ -541,6 +543,26 @@ public class JapaneseNumericWithUnit {
     public static final List<String> CurrencyAmbiguousValues = Arrays.asList("円", "銭", "分", "レク", "プル", "ブル", "\\");
 
     public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
-        .put("null", "null")
+        .put("五角", "五角大楼")
+        .put("普尔", "标准普尔")
         .build();
+
+    public static final ImmutableMap<String, String> TemperatureSuffixList = ImmutableMap.<String, String>builder()
+        .put("F", "華氏|華氏温度|華氏温度の|°f")
+        .put("K", "开尔文温度|开氏度|凯氏度|K|k")
+        .put("R", "兰氏温度|°r")
+        .put("C", "摂氏|摂氏温度|°c|℃")
+        .put("Degree", "度")
+        .build();
+
+    public static final ImmutableMap<String, String> TemperaturePrefixList = ImmutableMap.<String, String>builder()
+        .put("F", "華氏|華氏温度|華氏温度の|华氏")
+        .put("K", "开氏温度|开氏")
+        .put("R", "兰氏温度|兰氏")
+        .put("C", "摂氏温度|摂氏")
+        .build();
+
+    public static final List<String> TemperatureAmbiguousValues = Arrays.asList("度", "k");
+
+    public static final String HalfUnitRegex = "半";
 }

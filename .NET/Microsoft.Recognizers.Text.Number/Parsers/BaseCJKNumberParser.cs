@@ -103,6 +103,11 @@ namespace Microsoft.Recognizers.Text.Number
                     ret.Metadata.Offset = Config.RelativeReferenceOffsetMap[extResult.Text];
                     ret.Metadata.RelativeTo = Config.RelativeReferenceRelativeToMap[extResult.Text];
                     ret.Type = Constants.MODEL_ORDINAL_RELATIVE;
+
+                    // Add value for ordinal.relative
+                    string sign = ret.Metadata.Offset[0].Equals('-') ? string.Empty : "+";
+                    ret.Value = string.Concat(ret.Metadata.RelativeTo, sign, ret.Metadata.Offset);
+                    ret.ResolutionStr = GetResolutionStr(ret.Value);
                 }
                 else
                 {
@@ -384,7 +389,6 @@ namespace Microsoft.Recognizers.Text.Number
             };
 
             var resultText = extResult.Text;
-            resultText = resultText.Substring(1);
 
             result.Value = (Config.DigitNumRegex.IsMatch(resultText) && !Config.RoundNumberIntegerRegex.IsMatch(resultText))
                 ? GetDigitValue(resultText, 1)
@@ -650,6 +654,12 @@ namespace Microsoft.Recognizers.Text.Number
                 }
 
                 hasPreviousDigits = char.IsDigit(intStr[i]);
+
+                if (Config.RoundDirectList.Contains(intStr[i]))
+                {
+                    intValue += partValue;
+                    partValue = 0;
+                }
             }
 
             if (isNegative)

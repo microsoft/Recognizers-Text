@@ -11,7 +11,7 @@ NonDecimalSeparatorChar: !char ' '
 HalfADozenText: ''
 WordSeparatorToken: ''
 # TODO: modify below char according to the counterpart in Chinese
-ZeroChar: !char '0'
+ZeroChar: !char '영'
 PairChar: !char '?'
 RoundNumberMap: !dictionary
   types: [string, long]
@@ -111,6 +111,8 @@ FullToHalfMap: !dictionary
 UnitMap: !dictionary
   types: [string, string]
   entries:
+    첫: 일
+    처음: 일
     여섯: 육
     하나: 일
     둘: 이
@@ -132,6 +134,12 @@ UnitMap: !dictionary
     온: 백
     즈믄: 천
     다스: 십이
+    이십오일: 이십오
+    스무: 이십
+    번째: ''
+    등: ''
+    이백십: 백백십
+    삼백십: 백백백십
     ' ' : ''
 RoundDirectList: !list
   types: [char]
@@ -139,6 +147,7 @@ RoundDirectList: !list
     - 빵
     - 열
     - 조
+    - 번
 # TODO: modify below list according to the counterpart in Chinese
 TenChars: !list
   types: [char]
@@ -155,7 +164,7 @@ DigitNumRegex: !nestedRegex
 DozenRegex: !simpleRegex
   def: .*타$
 PercentageRegex: !simpleRegex
-  def: (?<=백\s*분\s*의).+|.+(?=퍼\s*센\s*트)|.*(?=[％%])
+  def: (?<=백\s*분\s*의).+|.+(?=퍼\s*센\s*트*)|.*(?=[％%])|.+(?=프\s*로*)
 DoubleAndRoundRegex: !nestedRegex
   def: '{ZeroToNineFullHalfRegex}+(\.{ZeroToNineFullHalfRegex}+)?{RoundNumberIntegerRegex}{1,2}(\s*(이상))?'
   references: [ZeroToNineFullHalfRegex, RoundNumberIntegerRegex]

@@ -99,7 +99,7 @@ class FrenchDateTime:
     OfMonth = f'^(\\s*de)?\\s*{MonthRegex}\\b'
     MonthEnd = f'{MonthRegex}\\s*(le)?\\s*$'
     WeekDayEnd = f'{WeekDayRegex}\\s*,?\\s*$'
-    WeekDayStart = f'^[\\.]'
+    WeekDayStart = f'^\\b$'
     RangeUnitRegex = f'\\b(?<unit>(l\')?ann[eé]e(s)?|mois|semaines?)\\b'
     HourNumRegex = f'\\b(?<hournum>zero|une?(?=\\s+heure)|deux|trois|quatre|cinq|six|sept|huit|neuf|onze|douze|treize|quatorze|quinze|dix-six|seize|dix(-|\\s+)sept|dix(-|\\s+)huit|dix(-|\\s+)neuf|vingt|vingt(-|\\s+)et(-|\\s+)un|vingt(-|\\s+)deux|vingt(-|\\s+)trois|dix)\\b'
     MinuteNumRegex = f'(?<minnum>((vingt|trente|quarante|cinquante)(\\s*(et|-)?\\s*))?(un|deux|trois|quatre|cinq|six|sept|huit|neuf)|onze|douze|treize|quatorze|quinze|seize|dix-sept|dix-huit|dix-neuf|vingt|trente|quarante|cinquante|dix)'

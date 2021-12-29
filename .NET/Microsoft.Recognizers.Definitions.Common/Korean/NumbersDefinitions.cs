@@ -29,7 +29,7 @@ namespace Microsoft.Recognizers.Definitions.Korean
       public const char NonDecimalSeparatorChar = ' ';
       public const string HalfADozenText = @"";
       public const string WordSeparatorToken = @"";
-      public const char ZeroChar = '0';
+      public const char ZeroChar = '영';
       public const char PairChar = '?';
       public static readonly Dictionary<string, long> RoundNumberMap = new Dictionary<string, long>
         {
@@ -119,6 +119,8 @@ namespace Microsoft.Recognizers.Definitions.Korean
         };
       public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>
         {
+            { @"첫", @"일" },
+            { @"처음", @"일" },
             { @"여섯", @"육" },
             { @"하나", @"일" },
             { @"둘", @"이" },
@@ -139,13 +141,20 @@ namespace Microsoft.Recognizers.Definitions.Korean
             { @"온", @"백" },
             { @"즈믄", @"천" },
             { @"다스", @"십이" },
+            { @"이십오일", @"이십오" },
+            { @"스무", @"이십" },
+            { @"번째", @"" },
+            { @"등", @"" },
+            { @"이백십", @"백백십" },
+            { @"삼백십", @"백백백십" },
             { @" ", @"" }
         };
       public static readonly IList<char> RoundDirectList = new List<char>
         {
             '빵',
             '열',
-            '조'
+            '조',
+            '번'
         };
       public static readonly IList<char> TenChars = new List<char>
         {
@@ -155,7 +164,7 @@ namespace Microsoft.Recognizers.Definitions.Korean
       public const string ZeroToNineFullHalfRegex = @"[\d１２３４５６７８９０]";
       public static readonly string DigitNumRegex = $@"{ZeroToNineFullHalfRegex}+|반";
       public const string DozenRegex = @".*타$";
-      public const string PercentageRegex = @"(?<=백\s*분\s*의).+|.+(?=퍼\s*센\s*트)|.*(?=[％%])";
+      public const string PercentageRegex = @"(?<=백\s*분\s*의).+|.+(?=퍼\s*센\s*트*)|.*(?=[％%])|.+(?=프\s*로*)";
       public static readonly string DoubleAndRoundRegex = $@"{ZeroToNineFullHalfRegex}+(\.{ZeroToNineFullHalfRegex}+)?{RoundNumberIntegerRegex}{{1,2}}(\s*(이상))?";
       public const string FracSplitRegex = @"(와|과|분\s*의|중)";
       public const string ZeroToNineIntegerRegex = @"(영|령|공|(?<!생|주|\d)(?<=십|백|천|만|억|조|\s*)일|(?<!(율|답|둘))이(?!다)|두|삼|사(?!(랑|주))|(?<!시)오(?!(월|늘))|육|(?<!며)칠|팔|구|한(?=\s*)|하나|둘|세|셋|넷|다섯|여섯|일곱|여덟|아홉)";

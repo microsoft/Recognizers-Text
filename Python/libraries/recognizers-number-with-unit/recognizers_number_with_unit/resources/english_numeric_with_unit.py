@@ -674,9 +674,10 @@ class EnglishNumericWithUnit:
                              ("Bushel", "bushel"),
                              ("Hogshead", "hogshead")])
     AmbiguousVolumeUnitList = [r'l', r'ounce', r'oz', r'cup', r'cups', r'peck', r'pecks', r'cord', r'cords', r'gill', r'gills', r'barrel', r'barrels', r'tbl', r'quart', r'quarts', r'pinch', r't.', r'T.', r'Tb.', r'ts.']
-    WeightSuffixList = dict([("Kilogram", "kg|kilogram|kilograms|kilo|kilos"),
-                             ("Gram", "g|gram|grams|gm"),
-                             ("Milligram", "mg|milligram|milligrams"),
+    WeightSuffixList = dict([("Kilogram", "kg|kilogram|kilograms|kilo|kilos|kilogramme|kilogrammes"),
+                             ("Gram", "g|gram|grams|gm|gramme|grammes"),
+                             ("Milligram", "mg|milligram|milligrams|milligramme|milligrammes"),
+                             ("Microgram", "μg|microgram|micrograms|micro gram|micro grams|microgramme|microgrammes|mcg"),
                              ("Gallon", "-gallon|gallons|gallon|gal"),
                              ("Metric ton", "metric tons|metric ton"),
                              ("Ton", "-ton|ton|tons|tonne|tonnes"),
@@ -689,7 +690,7 @@ class EnglishNumericWithUnit:
                              ("Short hundredweight (US)", "us short hundredweight|short hundredweight (us)"),
                              ("Stone", "stone"),
                              ("Dram", "dram|drachm|drachma|roman drachma|greek drachma")])
-    AmbiguousWeightUnitList = [r'g', r'oz', r'stone', r'dram', r'lbs', r'gal', r'grain', r'grains']
+    AmbiguousWeightUnitList = [r'g', r'gr', r'oz', r'stone', r'dram', r'lbs', r'gal', r'grain', r'grains']
     AmbiguityFiltersDict = dict([("\\bm\\b", "((('|’)\\s*m)|(m\\s*('|’)))"),
                                  ("^\\d{5} [cf]$", "\\b([a-z]{2} \\d{5} [cf])\\b"),
                                  ("\\b\\d+\\s*\\p{L}+$", "((\\d+\\s*\\p{L}+[-—–-]?\\d+)|((\\p{L}[-—–-]?|\\d[-—–-])\\d+\\s*\\p{L}+))")])
