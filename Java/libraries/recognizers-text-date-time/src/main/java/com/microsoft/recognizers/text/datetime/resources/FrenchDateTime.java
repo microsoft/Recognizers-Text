@@ -315,7 +315,7 @@ public class FrenchDateTime {
     public static final String WeekDayEnd = "{WeekDayRegex}\\s*,?\\s*$"
             .replace("{WeekDayRegex}", WeekDayRegex);
 
-    public static final String WeekDayStart = "^[\\.]";
+    public static final String WeekDayStart = "^\\b$";
 
     public static final String RangeUnitRegex = "\\b(?<unit>(l')?ann[eé]e(s)?|mois|semaines?)\\b";
 

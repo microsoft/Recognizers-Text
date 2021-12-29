@@ -813,6 +813,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
             { @"Kilogram", @"kg|kilogram|kilograms|kilo|kilos" },
             { @"Gram", @"g|gram|grams|ग्रा.|ग्रा|ग्राम" },
             { @"Milligram", @"mg|milligram|milligrams|मिलीग्राम|मिग्रा|मि.ग्रा|मि. ग्रा.|मीलीग्राम|एमजी|एम.जी." },
+            { @"Microgram", @"μg|microgram|micrograms|micro gram|micro grams|microgramme|microgrammes|।माइक्रोग्राम|माइक्रो ग्राम" },
             { @"Gallon", @"-gallon|gallons|gallon|गैलन|-गैलन" },
             { @"Metric ton", @"metric tons|metric ton|मीट्रिक टन" },
             { @"Ton", @"-ton|ton|tons|tonne|tonnes|टन" },

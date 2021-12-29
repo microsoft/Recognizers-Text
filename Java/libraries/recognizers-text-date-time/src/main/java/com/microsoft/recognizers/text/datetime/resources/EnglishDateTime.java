@@ -439,7 +439,8 @@ public class EnglishDateTime {
     public static final String WeekDayEnd = "(this\\s+)?{WeekDayRegex}\\s*,?\\s*$"
             .replace("{WeekDayRegex}", WeekDayRegex);
 
-    public static final String WeekDayStart = "^[\\.]";
+    public static final String WeekDayStart = "^\\s+(on\\s+)?{WeekDayRegex}\\b"
+            .replace("{WeekDayRegex}", WeekDayRegex);
 
     public static final String RangeUnitRegex = "\\b(?<unit>years?|months?|weeks?|fortnights?)\\b";
 

@@ -255,6 +255,38 @@
     ]
   },
   {
+    "Input": "Vikten är 150 mikrogram",
+    "Results": [
+      {
+        "Text": "150 mikrogram",
+        "Start": 10,
+        "End": 22,
+        "TypeName": "dimension",
+        "Resolution": {
+          "subtype": "Weight",
+          "unit": "Microgram",
+          "value": "150"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Vikten är 120 μg",
+    "Results": [
+      {
+        "Text": "120 μg",
+        "Start": 10,
+        "End": 15,
+        "TypeName": "dimension",
+        "Resolution": {
+          "subtype": "Weight",
+          "unit": "Microgram",
+          "value": "120"
+        }
+      }
+    ]
+  },
+  {
     "Input": "shell , ett dotterföretag till royal dutch / shell group , kommer att tillåtas exportera 0,9 biljoner kubikfot , och gulf , en enhet inom olympia & york developments ltd. kommer tillåtas exportera",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [

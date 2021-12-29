@@ -272,7 +272,7 @@ public class ChineseNumeric {
             .replace("{PointRegexStr}", PointRegexStr)
             .replace("{ZeroToNineIntegerRegex}", ZeroToNineIntegerRegex);
 
-    public static final String NumbersWithAllowListRegex = "(?<![百佰]\\s*分\\s*之\\s*({AllIntRegex}[点點]*|{AllFloatRegex})*){NegativeNumberTermsRegex}?({NotSingleRegex}|{SingleRegex})(?!({AllIntRegex}*([点點]{ZeroToNineIntegerRegex}+)*|{AllFloatRegex})*\\s*[个個]\\s*[百佰]\\s*分\\s*[点點])"
+    public static final String NumbersWithAllowListRegex = "{NegativeNumberTermsRegex}?({NotSingleRegex}|{SingleRegex})"
             .replace("{AllIntRegex}", AllIntRegex)
             .replace("{AllFloatRegex}", AllFloatRegex)
             .replace("{NegativeNumberTermsRegex}", NegativeNumberTermsRegex)
@@ -280,11 +280,9 @@ public class ChineseNumeric {
             .replace("{SingleRegex}", SingleRegex)
             .replace("{ZeroToNineIntegerRegex}", ZeroToNineIntegerRegex);
 
-    public static final String NumbersAggressiveRegex = "(?<![百佰]\\s*分\\s*之\\s*({AllIntRegex}[点點]*|{AllFloatRegex})*){NegativeNumberTermsRegex}?{AllIntRegex}(?!({AllIntRegex}*([点點]{ZeroToNineIntegerRegex}+)*|{AllFloatRegex})*\\s*[个個]\\s*[百佰]\\s*分\\s*[点點])"
+    public static final String NumbersAggressiveRegex = "{NegativeNumberTermsRegex}?{AllIntRegex}"
             .replace("{AllIntRegex}", AllIntRegex)
-            .replace("{AllFloatRegex}", AllFloatRegex)
-            .replace("{NegativeNumberTermsRegex}", NegativeNumberTermsRegex)
-            .replace("{ZeroToNineIntegerRegex}", ZeroToNineIntegerRegex);
+            .replace("{NegativeNumberTermsRegex}", NegativeNumberTermsRegex);
 
     public static final String PointRegex = "{PointRegexStr}"
             .replace("{PointRegexStr}", PointRegexStr);
@@ -310,7 +308,7 @@ public class ChineseNumeric {
             .replace("{NegativeNumberTermsRegex}", NegativeNumberTermsRegex)
             .replace("{ZeroToNineFullHalfRegex}", ZeroToNineFullHalfRegex);
 
-    public static final String DoubleAllFloatRegex = "(?<![百佰]\\s*分\\s*之\\s*(({AllIntRegex}[点點]*)|{AllFloatRegex})*){AllFloatRegex}(?!{ZeroToNineIntegerRegex}*\\s*[个個]\\s*[百佰]\\s*分\\s*[点點])"
+    public static final String DoubleAllFloatRegex = "{AllFloatRegex}"
             .replace("{AllIntRegex}", AllIntRegex)
             .replace("{AllFloatRegex}", AllFloatRegex)
             .replace("{ZeroToNineIntegerRegex}", ZeroToNineIntegerRegex);

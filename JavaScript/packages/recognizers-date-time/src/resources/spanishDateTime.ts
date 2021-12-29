@@ -104,7 +104,7 @@ export namespace SpanishDateTime {
     export const OfMonthRegex = `^\\s*((d[ií]a\\s+)?d[eo]\\s+)?${MonthSuffixRegex}`;
     export const MonthEndRegex = `(${MonthRegex}\\s*(el)?\\s*$)`;
     export const WeekDayEnd = `${WeekDayRegex}\\s*,?\\s*$`;
-    export const WeekDayStart = `^[\\.]`;
+    export const WeekDayStart = `^\\b$`;
     export const DateYearRegex = `(?<year>${YearRegex}|(?<!,\\s?)${TwoDigitYearRegex}|${TwoDigitYearRegex}(?=(\\.(?!\\d)|[?!;]|$)))`;
     export const DateExtractor1 = `\\b(${WeekDayRegex}(\\s+|\\s*,\\s*))?(?<!\\d[.,])${DayRegex}((\\s*(d[eo])|[/\\\\\\.\\-])\\s*)?${MonthRegex}\\b`;
     export const DateExtractor2 = `\\b((el\\s+d[ií]a|${WeekDayRegex})(\\s+|\\s*,\\s*))?(?<!\\d[.,])((${DayRegex}((\\s+(d[eo]\\s+)?|\\s*[.,/-]\\s*)${MonthRegex}((\\s+(del?\\s+)?|\\s*[.,/-]\\s*)${DateYearRegex}\\b)?|\\s+(d[eo]\\s+)${MonthNumRegex}\\s+(del?\\s+${DateYearRegex}\\b)))|${BaseDateTime.FourDigitYearRegex}\\s*[.,/-]?\\s*(el\\s+d[ií]a\\s+)?${DayRegex}(\\s+(d[eo]\\s+)?|\\s*[.,/-]\\s*)${MonthRegex})`;

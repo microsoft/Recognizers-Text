@@ -96,7 +96,7 @@ export namespace FrenchDateTime {
     export const OfMonth = `^(\\s*de)?\\s*${MonthRegex}\\b`;
     export const MonthEnd = `${MonthRegex}\\s*(le)?\\s*$`;
     export const WeekDayEnd = `${WeekDayRegex}\\s*,?\\s*$`;
-    export const WeekDayStart = `^[\\.]`;
+    export const WeekDayStart = `^\\b$`;
     export const RangeUnitRegex = `\\b(?<unit>(l')?ann[eé]e(s)?|mois|semaines?)\\b`;
     export const HourNumRegex = `\\b(?<hournum>zero|une?(?=\\s+heure)|deux|trois|quatre|cinq|six|sept|huit|neuf|onze|douze|treize|quatorze|quinze|dix-six|seize|dix(-|\\s+)sept|dix(-|\\s+)huit|dix(-|\\s+)neuf|vingt|vingt(-|\\s+)et(-|\\s+)un|vingt(-|\\s+)deux|vingt(-|\\s+)trois|dix)\\b`;
     export const MinuteNumRegex = `(?<minnum>((vingt|trente|quarante|cinquante)(\\s*(et|-)?\\s*))?(un|deux|trois|quatre|cinq|six|sept|huit|neuf)|onze|douze|treize|quatorze|quinze|seize|dix-sept|dix-huit|dix-neuf|vingt|trente|quarante|cinquante|dix)`;
