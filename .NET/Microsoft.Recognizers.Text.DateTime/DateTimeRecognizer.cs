@@ -151,13 +151,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                     new BaseMergedDateTimeExtractor(
                         new DutchMergedExtractorConfiguration(new BaseDateTimeOptionsConfiguration(Culture.Dutch, options)))));
 
-            RegisterModel<DateTimeModel>(
-                Culture.Swedish,
-                options => new DateTimeModel(
-                    new BaseMergedDateTimeParser(
-                        new SwedishMergedParserConfiguration(new BaseDateTimeOptionsConfiguration(Culture.Swedish, options))),
-                    new BaseMergedDateTimeExtractor(
-                        new SwedishMergedExtractorConfiguration(new BaseDateTimeOptionsConfiguration(Culture.Swedish, options)))));
+            // TODO: to be uncommented when all tests for Swedish are green.
+            // RegisterModel<DateTimeModel>(
+            //    Culture.Swedish,
+            //    options => new DateTimeModel(
+            //        new BaseMergedDateTimeParser(
+            //            new SwedishMergedParserConfiguration(new BaseDateTimeOptionsConfiguration(Culture.Swedish, options))),
+            //        new BaseMergedDateTimeExtractor(
+            //            new SwedishMergedExtractorConfiguration(new BaseDateTimeOptionsConfiguration(Culture.Swedish, options)))));
 
             // TODO to be uncommented when all tests for Japanese are green.
             // RegisterModel<DateTimeModel>(

@@ -869,37 +869,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Arabic", "Arabic", "{E93CDE
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Swedish", "Swedish", "{A45B902F-DE07-4502-8F8C-2671B987D72C}"
-	ProjectSection(SolutionItems) = preProject
-		..\Specs\DateTime\Swedish\DateExtractor.json = ..\Specs\DateTime\Swedish\DateExtractor.json
-		..\Specs\DateTime\Swedish\DateParser.json = ..\Specs\DateTime\Swedish\DateParser.json
-		..\Specs\DateTime\Swedish\DatePeriodExtractor.json = ..\Specs\DateTime\Swedish\DatePeriodExtractor.json
-		..\Specs\DateTime\Swedish\DatePeriodParser.json = ..\Specs\DateTime\Swedish\DatePeriodParser.json
-		..\Specs\DateTime\Swedish\DateTimeExtractor.json = ..\Specs\DateTime\Swedish\DateTimeExtractor.json
-		..\Specs\DateTime\Swedish\DateTimeModel.json = ..\Specs\DateTime\Swedish\DateTimeModel.json
-		..\Specs\DateTime\Swedish\DateTimeModelCalendarMode.json = ..\Specs\DateTime\Swedish\DateTimeModelCalendarMode.json
-		..\Specs\DateTime\Swedish\DateTimeModelComplexCalendar.json = ..\Specs\DateTime\Swedish\DateTimeModelComplexCalendar.json
-		..\Specs\DateTime\Swedish\DateTimeModelExperimentalMode.json = ..\Specs\DateTime\Swedish\DateTimeModelExperimentalMode.json
-		..\Specs\DateTime\Swedish\DateTimeModelExtendedTypes.json = ..\Specs\DateTime\Swedish\DateTimeModelExtendedTypes.json
-		..\Specs\DateTime\Swedish\DateTimeModelSplitDateAndTime.json = ..\Specs\DateTime\Swedish\DateTimeModelSplitDateAndTime.json
-		..\Specs\DateTime\Swedish\DateTimeParser.json = ..\Specs\DateTime\Swedish\DateTimeParser.json
-		..\Specs\DateTime\Swedish\DateTimePeriodExtractor.json = ..\Specs\DateTime\Swedish\DateTimePeriodExtractor.json
-		..\Specs\DateTime\Swedish\DateTimePeriodParser.json = ..\Specs\DateTime\Swedish\DateTimePeriodParser.json
-		..\Specs\DateTime\Swedish\DurationExtractor.json = ..\Specs\DateTime\Swedish\DurationExtractor.json
-		..\Specs\DateTime\Swedish\DurationParser.json = ..\Specs\DateTime\Swedish\DurationParser.json
-		..\Specs\DateTime\Swedish\HolidayExtractor.json = ..\Specs\DateTime\Swedish\HolidayExtractor.json
-		..\Specs\DateTime\Swedish\HolidayParser.json = ..\Specs\DateTime\Swedish\HolidayParser.json
-		..\Specs\DateTime\Swedish\MergedExtractor.json = ..\Specs\DateTime\Swedish\MergedExtractor.json
-		..\Specs\DateTime\Swedish\MergedExtractorSkipFromTo.json = ..\Specs\DateTime\Swedish\MergedExtractorSkipFromTo.json
-		..\Specs\DateTime\Swedish\MergedParser.json = ..\Specs\DateTime\Swedish\MergedParser.json
-		..\Specs\DateTime\Swedish\SetExtractor.json = ..\Specs\DateTime\Swedish\SetExtractor.json
-		..\Specs\DateTime\Swedish\SetParser.json = ..\Specs\DateTime\Swedish\SetParser.json
-		..\Specs\DateTime\Swedish\TimeExtractor.json = ..\Specs\DateTime\Swedish\TimeExtractor.json
-		..\Specs\DateTime\Swedish\TimeParser.json = ..\Specs\DateTime\Swedish\TimeParser.json
-		..\Specs\DateTime\Swedish\TimePeriodExtractor.json = ..\Specs\DateTime\Swedish\TimePeriodExtractor.json
-		..\Specs\DateTime\Swedish\TimePeriodParser.json = ..\Specs\DateTime\Swedish\TimePeriodParser.json
-		..\Specs\DateTime\Swedish\TimeZoneExtractor.json = ..\Specs\DateTime\Swedish\TimeZoneExtractor.json
-		..\Specs\DateTime\Swedish\TimeZoneParser.json = ..\Specs\DateTime\Swedish\TimeZoneParser.json
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
