@@ -786,7 +786,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
             { @"Chilogrammo", @"kg|kilogrammo|chilogrammo|chilogrammi|kilogrammi|kilo|kili|chilo|chili" },
             { @"Grammo", @"g|grammo|grammi|gr" },
             { @"Milligrammo", @"mg|milligrammo|milligrammi" },
-            { @"Microgrammo", @"μg|micrgrammo|microgrammi" },
+            { @"Microgrammo", @"μg|microgrammo|microgrammi" },
             { @"Tonnellata", @"tonnellata|tonnellate" },
             { @"Libbra", @"libbra|libbre" },
             { @"Oncia", @"oncia|once" }

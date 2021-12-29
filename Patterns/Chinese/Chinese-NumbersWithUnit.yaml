@@ -679,15 +679,16 @@ DimensionSuffixList: !dictionary
     Dan: 市石|石
 # Weight
     Kilogram: 千克|公斤|kg
-    Jin: 市斤|斤
-    Milligram: 毫克|mg
-    Barrel: 桶
-    Pot: 罐
     Gram: 克|g
+    Milligram: 毫克|mg
+    Microgram: 微克|μg
     Ton: 公吨|吨|t
     Pound: 磅
     Ounce: 盎司
+    Jin: 市斤|斤
     Liang: 两
+    Barrel: 桶
+    Pot: 罐
 # Information
     Bit: 比特|位|b|bit
     Kilobit: 千比特|千位|kb|Kb

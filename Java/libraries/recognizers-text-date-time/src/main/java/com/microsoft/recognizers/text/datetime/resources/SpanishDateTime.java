@@ -300,7 +300,7 @@ public class SpanishDateTime {
     public static final String WeekDayEnd = "{WeekDayRegex}\\s*,?\\s*$"
             .replace("{WeekDayRegex}", WeekDayRegex);
 
-    public static final String WeekDayStart = "^[\\.]";
+    public static final String WeekDayStart = "^\\b$";
 
     public static final String DateYearRegex = "(?<year>{YearRegex}|(?<!,\\s?){TwoDigitYearRegex}|{TwoDigitYearRegex}(?=(\\.(?!\\d)|[?!;]|$)))"
             .replace("{YearRegex}", YearRegex)

@@ -506,5 +506,20 @@
         "End": 6
       }
     ]
+  },
+  {
+    "Input": "成人每天需要摄入2.4微克的维生素B12",
+    "Results": [
+      {
+        "Text": "2.4微克",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "2.4",
+          "unit": "Microgram"
+        },
+        "Start": 8,
+        "End": 12
+      }
+    ]
   }
 ]

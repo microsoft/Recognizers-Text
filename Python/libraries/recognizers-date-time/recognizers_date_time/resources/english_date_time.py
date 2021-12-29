@@ -136,7 +136,7 @@ class EnglishDateTime:
     OfMonth = f'^(\\s*(day\\s+)?of)?\\s*{MonthRegex}'
     MonthEnd = f'{MonthRegex}\\s*(the)?\\s*$'
     WeekDayEnd = f'(this\\s+)?{WeekDayRegex}\\s*,?\\s*$'
-    WeekDayStart = f'^[\\.]'
+    WeekDayStart = f'^\\s+(on\\s+)?{WeekDayRegex}\\b'
     RangeUnitRegex = f'\\b(?<unit>years?|months?|weeks?|fortnights?)\\b'
     HourNumRegex = f'\\b(?<hournum>zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)\\b'
     MinuteNumRegex = f'(((?<tens>twenty|thirty|fou?rty|fifty)(\\s*-?\\s*))?(?<minnum>one|two|three|four|five|six|seven|eight|nine)|(?<minnum>ten|eleven|twelve|thirteen|fifteen|eighteen|(four|six|seven|nine)(teen)|twenty|thirty|forty|fifty))'
