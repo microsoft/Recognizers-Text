@@ -1381,7 +1381,6 @@
   {
     "Input": "en tjugoförstedels andel",
     "NotSupportedByDesign": "javascript, python, java",
-    "Debug": true,
     "Results": [
       {
         "Text": "en tjugoförstedels",
