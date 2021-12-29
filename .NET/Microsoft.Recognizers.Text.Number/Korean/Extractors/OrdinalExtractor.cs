@@ -20,7 +20,7 @@ namespace Microsoft.Recognizers.Text.Number.Korean
             {
                 {
                     new Regex(NumbersDefinitions.OrdinalKoreanRegex, RegexFlags),
-                    RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.NUMBER_SUFFIX)
+                    RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.KOREAN)
                 },
 
             };

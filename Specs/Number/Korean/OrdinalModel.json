@@ -1,8 +1,6 @@
 [
   {
     "Input": "3조 번째",
-    "IgnoreResolution": true,
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -17,13 +15,11 @@
     ]
   },
   {
-    "Input": "조 번째",
-    "IgnoreResolution": true,
-    "Comment": "PendingValidation",
+    "Input": "일조 번째",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "조 번째",
+        "Text": "일조 번째",
         "TypeName": "ordinal",
         "Resolution": {
           "value": "1000000000000",
@@ -35,8 +31,6 @@
   },
   {
     "Input": "백조 번째",
-    "IgnoreResolution": true,
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -52,8 +46,6 @@
   },
   {
     "Input": "열한 번째",
-    "IgnoreResolution": true,
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -69,8 +61,6 @@
   },
   {
     "Input": "스물한 번째",
-    "IgnoreResolution": true,
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -86,8 +76,6 @@
   },
   {
     "Input": "서른 번째",
-    "IgnoreResolution": true,
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -103,8 +91,6 @@
   },
   {
     "Input": "두 번째",
-    "IgnoreResolution": true,
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -120,8 +106,6 @@
   },
   {
     "Input": "스무 번째",
-    "IgnoreResolution": true,
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -137,8 +121,6 @@
   },
   {
     "Input": "스물다섯 번째",
-    "IgnoreResolution": true,
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -154,8 +136,6 @@
   },
   {
     "Input": "백스물다섯 번째",
-    "IgnoreResolution": true,
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -171,8 +151,6 @@
   },
   {
     "Input": "백이십오 번째",
-    "IgnoreResolution": true,
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -188,8 +166,6 @@
   },
   {
     "Input": "조번째",
-    "IgnoreResolution": true,
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -205,8 +181,6 @@
   },
   {
     "Input": "이십일조 삼백이십이 번째",
-    "IgnoreResolution": true,
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -222,8 +196,6 @@
   },
   {
     "Input": "이백 번째",
-    "IgnoreResolution": true,
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -239,8 +211,6 @@
   },
   {
     "Input": "시애틀로 가는 일등석을 예약해주십시오.",
-    "IgnoreResolution": true,
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -256,7 +226,6 @@
   },
   {
     "Input": "노트에 있는 마지막 문장을 지우세요",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -274,7 +243,6 @@
   },
   {
     "Input": "\"다음\"인가요 아니면 \"마지막\"인가요?",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -303,7 +271,6 @@
   },
   {
     "Input": "뒤에서 세번째를 보여주세요",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -321,7 +288,6 @@
   },
   {
     "Input": "마지막의 옆을 보여주세요",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -339,7 +305,6 @@
   },
   {
     "Input": "마지막에서 바로 전의 것을 보여주세요",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -357,7 +322,6 @@
   },
   {
     "Input": "마지막에서 두번째를 보여주세요",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -375,7 +339,6 @@
   },
   {
     "Input": "마지막 문장을 지우세요",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -393,7 +356,6 @@
   },
   {
     "Input": "이전 것을 보여주세요",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -411,7 +373,6 @@
   },
   {
     "Input": "다음 것을 보여주세요",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -429,7 +390,6 @@
   },
   {
     "Input": "마지막 두 책을 가지고 싶다",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -447,7 +407,6 @@
   },
   {
     "Input": "마지막 한 책을 가지고 싶다",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -465,7 +424,6 @@
   },
   {
     "Input": "다음 아이템을 주세요",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -483,7 +441,6 @@
   },
   {
     "Input": "마지막 쿠키를 원합니다",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -501,7 +458,6 @@
   },
   {
     "Input": "나는 마지막의 옆에 있는 걸 원합니다",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -587,7 +543,6 @@
   },
   {
     "Input": "열한번째 날",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -605,7 +560,6 @@
   },
   {
     "Input": "스무번째 밤",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -623,7 +577,6 @@
   },
   {
     "Input": "스물 다섯번째 생일",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -641,7 +594,6 @@
   },
   {
     "Input": "스물 한번째 식사",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -659,7 +611,6 @@
   },
   {
     "Input": "백스물다섯번째 생신",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -677,7 +628,6 @@
   },
   {
     "Input": "백화점을 방문한 일조번째 손님",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -695,7 +645,6 @@
   },
   {
     "Input": "이십일조 삼백스물두번째 밤",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -713,7 +662,6 @@
   },
   {
     "Input": "이백번째 개최",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -731,7 +679,6 @@
   },
   {
     "Input": "나는 처음 두권이 좋았습니다",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -749,7 +696,6 @@
   },
   {
     "Input": "나는 첫번째가 좋다",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -767,7 +713,6 @@
   },
   {
     "Input": "첫 단어를 말해봐",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -785,7 +730,6 @@
   },
   {
     "Input": "다음 세권의 책을 가지고 싶다",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -803,7 +747,6 @@
   },
   {
     "Input": "그녀는 두번째로 들어옵니다!",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -821,7 +764,6 @@
   },
   {
     "Input": "마지막에서 바로 전의 것이 맞는 거야",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -839,7 +781,6 @@
   },
   {
     "Input": "마지막에서 바로 전을 말하는 거였어",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -857,7 +798,6 @@
   },
   {
     "Input": "지금의 것을 말하는 거였어",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -875,7 +815,6 @@
   },
   {
     "Input": "현재 페이지를 보세요",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -893,7 +832,6 @@
   },
   {
     "Input": "끝에 서주세요",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -911,7 +849,6 @@
   },
   {
     "Input": "끝에서 세번째를 보여주세요",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -929,7 +866,6 @@
   },
   {
     "Input": "끝에서 바로 전의 것을 보여주세요",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -947,7 +883,6 @@
   },
   {
     "Input": "끝에서 두번째를 보여주세요",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1033,7 +968,6 @@
   },
   {
     "Input": "오월 십일일",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1051,16 +985,15 @@
   },
   {
     "Input": "유월 이십일",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "이십일",
         "TypeName": "ordinal",
         "Resolution": {
-          "offset": "20",
+          "offset": "21",
           "relativeTo": "start",
-          "value": "20"
+          "value": "21"
         },
         "Start": 3,
         "End": 5
@@ -1069,7 +1002,6 @@
   },
   {
     "Input": "칠월 이십오일",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1087,7 +1019,6 @@
   },
   {
     "Input": "BTS는 이십일일에 새 앨범을 낸다",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1105,7 +1036,6 @@
   },
   {
     "Input": "전교 백이십오등",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1123,7 +1053,6 @@
   },
   {
     "Input": "이백등은 순위에 들지 않는다",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1141,7 +1070,6 @@
   },
   {
     "Input": "그녀는 이등으로 들어옵니다!",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1159,7 +1087,6 @@
   },
   {
     "Input": "이등은 은메달을 수여받는다",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1177,7 +1104,6 @@
   },
   {
     "Input": "삼조번째",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1195,7 +1121,6 @@
   },
   {
     "Input": "백조번째",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
