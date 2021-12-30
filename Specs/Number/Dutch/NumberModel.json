@@ -2079,5 +2079,95 @@
         "End": 27
       }
     ]
+  },
+  {
+    "Input": "Er zijn vandaag een half miljoen eieren gebroken",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "een half miljoen",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "500000"
+        },
+        "Start": 16,
+        "End": 31
+      }
+    ]
+  },
+  {
+    "Input": "Er zijn anderhalf miljoen mogelijkheden",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "anderhalf miljoen",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1500000"
+        },
+        "Start": 8,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "De bevolking is 3 miljoen en een half",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3 miljoen en een half",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3500000"
+        },
+        "Start": 16,
+        "End": 36
+      }
+    ]
+  },
+  {
+    "Input": "Huidige waarde is een miljard en een half miljoen",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "een miljard en een half miljoen",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1000500000"
+        },
+        "Start": 18,
+        "End": 48
+      }
+    ]
+  },
+  {
+    "Input": "Het aantal is vijf miljard en driekwart",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "vijf miljard en driekwart",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5750000000"
+        },
+        "Start": 14,
+        "End": 38
+      }
+    ]
+  },
+  {
+    "Input": "Ik telde zes miljoen en twee derde",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "zes miljoen en twee derde",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "6666666,66666667"
+        },
+        "Start": 9,
+        "End": 33
+      }
+    ]
   }
 ]

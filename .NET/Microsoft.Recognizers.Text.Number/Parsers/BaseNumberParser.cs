@@ -374,7 +374,7 @@ namespace Microsoft.Recognizers.Text.Number
             }
             else
             {
-                var isHalfMultiplier = false;
+                var isFractionMultiplier = false;
                 long multiplier = 1;
                 if (Config.RoundMultiplierRegex != null)
                 {
@@ -383,7 +383,7 @@ namespace Microsoft.Recognizers.Text.Number
                     {
                         resultText = resultText.Replace(match.Value, string.Empty);
                         multiplier = Config.RoundNumberMap[match.Groups["multiplier"].Value];
-                        isHalfMultiplier = match.Groups[Constants.FracMultiplierGroupName].Success ? true : false;
+                        isFractionMultiplier = match.Groups[Constants.FracMultiplierGroupName].Success ? true : false;
                     }
                 }
 
@@ -505,7 +505,7 @@ namespace Microsoft.Recognizers.Text.Number
                 // Find mixed number
                 if (mixedIndex != fracWords.Count && numerValue < denominator)
                 {
-                    result.Value = isHalfMultiplier ? (intValue + (numerValue / denominator)) * multiplier :
+                    result.Value = isFractionMultiplier ? (intValue + (numerValue / denominator)) * multiplier :
                         intValue + (multiplier * numerValue / denominator);
                 }
                 else

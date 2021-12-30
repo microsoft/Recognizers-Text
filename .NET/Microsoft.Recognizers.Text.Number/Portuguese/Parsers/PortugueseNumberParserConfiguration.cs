@@ -52,6 +52,7 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
             this.DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexFlags);
             this.NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexFlags);
             this.FractionPrepositionRegex = new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexFlags);
+            this.RoundMultiplierRegex = new Regex(NumbersDefinitions.RoundMultiplierRegex, RegexFlags);
         }
 
         public string NonDecimalSeparatorText { get; private set; }
@@ -98,6 +99,20 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
                 }
 
                 result.Add(token);
+            }
+
+            // The following piece of code is needed to compute the fraction pattern number+'e meio'
+            // e.g. 'cinco e meio' ('five and a half') where the numerator is omitted in Portuguese.
+            // It works by inserting the numerator 'um' ('a') in the list fracWords
+            // so that the pattern is correctly processed.
+            var resLen = result.Count;
+            if (resLen > 2)
+            {
+                if (result[resLen - 1] == NumbersDefinitions.OneHalfTokens[1] && result[resLen - 2] == NumbersDefinitions.WordSeparatorToken)
+                {
+                    result[resLen - 2] = NumbersDefinitions.WrittenFractionSeparatorTexts[0];
+                    result.Insert(resLen - 1, NumbersDefinitions.OneHalfTokens[0]);
+                }
             }
 
             return result;

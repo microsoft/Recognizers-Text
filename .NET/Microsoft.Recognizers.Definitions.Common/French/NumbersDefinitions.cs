@@ -26,6 +26,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public const bool MultiDecimalSeparatorCulture = true;
       public const string RoundNumberIntegerRegex = @"(cent|mille|millions?|milliards?|billions?)";
       public const string ZeroToNineIntegerRegex = @"(une?|deux|trois|quatre|cinq|six|sept|huit|neuf|z[ée]ro)";
+      public const string TwoToNineIntegerRegex = @"(deux|trois|quatre|cinq|six|sept|huit|neuf)";
       public const string TenToNineteenIntegerRegex = @"((seize|quinze|quatorze|treize|douze|onze)|dix(\Wneuf|\Whuit|\Wsept)?)";
       public const string TensNumberIntegerRegex = @"(quatre\Wvingt(s|\Wdix)?|soixante(\Wdix)?|vingt|trente|quarante|cinquante|septante|octante|huitante|nonante)";
       public const string DigitsNumberRegex = @"\d|\d{1,3}(\.\d{3})";
@@ -61,8 +62,11 @@ namespace Microsoft.Recognizers.Definitions.French
       public static readonly string OrdinalFrenchRegex = $@"(?<=\b){AllOrdinalRegex}(?=\b)";
       public const string FractionNotationWithSpacesRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))";
       public static readonly string FractionNotationRegex = $@"{BaseNumbers.FractionNotationRegex}";
-      public static readonly string FractionNounRegex = $@"(?<=\b)({AllIntRegex}\s+((et)\s+)?)?({AllIntRegex})(\s+((et)\s)?)((({AllOrdinalRegex})s?|({SuffixOrdinalRegex})s?)|demi[es]?|tiers?|quarts?)(?=\b)";
-      public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)({AllIntRegex}\s+(et\s+)?)?(une?)(\s+)(({AllOrdinalRegex})|({SuffixOrdinalRegex})|(et\s+)?demi[es]?)(?=\b)";
+      public static readonly string FractionMultiplierRegex = $@"(?<fracMultiplier>\s+et\s+(demi[es]?|(une?|{TwoToNineIntegerRegex})\s+(demie?|tier|quart|(cinqui|sixi|septi|hui[tr]i|neuvi|dixi)[eè]me)s?))";
+      public static readonly string RoundMultiplierWithFraction = $@"(?<multiplier>(millions?|milliards?|billions?))(?={FractionMultiplierRegex}?$)";
+      public static readonly string RoundMultiplierRegex = $@"\b\s*({RoundMultiplierWithFraction}|(?<multiplier>(cent|mille))$)";
+      public static readonly string FractionNounRegex = $@"(?<=\b)({AllIntRegex}\s+((et)\s+)?)?({AllIntRegex}(\s+((et)\s)?)(({AllOrdinalRegex}s?|{SuffixOrdinalRegex}s?)|(demi[es]?|tiers?|quarts?))|(un\s+)?(demi|tier|quart)(\s+(de\s+)?|\s*-\s*){RoundNumberIntegerRegex})(?=\b)";
+      public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)(({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\s+(et\s+)?)?((une?)(\s+)(({AllOrdinalRegex})|({SuffixOrdinalRegex})|(et\s+)?demi[es]?)|demi[es]?)(?=\b)";
       public static readonly string FractionPrepositionRegex = $@"(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<!\.)\d+))\s+sur\s+(?<denominator>({AllIntRegex})|((\d+)(?!\.)))(?=\b)";
       public static readonly string AllPointRegex = $@"((\s+{ZeroToNineIntegerRegex})+|(\s+{SeparaIntRegex}))";
       public static readonly string AllFloatRegex = $@"({AllIntRegex}(\s+(virgule|point)){AllPointRegex})";
@@ -111,6 +115,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public static readonly string[] WrittenGroupSeparatorTexts = { @"point", @"points" };
       public static readonly string[] WrittenIntegerSeparatorTexts = { @"et", @"-" };
       public static readonly string[] WrittenFractionSeparatorTexts = { @"et", @"sur" };
+      public static readonly string[] OneHalfTokens = { @"un", @"demi" };
       public const string HalfADozenRegex = @"(?<=\b)demie?\s+douzaine";
       public static readonly string DigitalNumberRegex = $@"((?<=\b)(cent|mille|millions?|milliards?|billions?|douzaines?)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
       public const string AmbiguousFractionConnectorsRegex = @"^[.]";
