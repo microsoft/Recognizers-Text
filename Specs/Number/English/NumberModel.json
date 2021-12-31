@@ -3446,5 +3446,37 @@
         "End": 36
       }
     ]
+  },
+  {
+    "Input": "two out of five hundred tvs",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "two out of five hundred",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.004"
+        },
+        "Start": 0,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "two out of five hundreds tvs",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "two out of five hundreds",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.004"
+        },
+        "Start": 0,
+        "End": 23
+      }
+    ]
   }
 ]
