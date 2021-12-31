@@ -91,12 +91,21 @@ FractionNotationWithSpacesRegex: !simpleRegex
 FractionNotationRegex: !nestedRegex
   def: '{BaseNumbers.FractionNotationRegex}'
   references: [ BaseNumbers.FractionNotationRegex ]
+FractionMultiplierRegex: !nestedRegex
+  def: (?<fracMultiplier>\s+e\s+(mezzo|(un|{TwoToNineIntegerRegex})\s+(mezz[oi]|quart[oi]|terz[oi]|quint[oi]|sest[oi]|settim[oi]|ottav[oi]|non[oi]|decim[oi])))
+  references: [ TwoToNineIntegerRegex ]
+RoundMultiplierWithFraction: !nestedRegex
+  def: (?<multiplier>(?:milion[ei]|miliard[oi]|bilion[ei]|trillion[ei]))(?={FractionMultiplierRegex}?$)
+  references: [ FractionMultiplierRegex ]
+RoundMultiplierRegex: !nestedRegex
+  def: \b\s*({RoundMultiplierWithFraction}|(?<multiplier>(cento|mille|mila))$)
+  references: [ RoundMultiplierWithFraction ]
 FractionNounRegex: !nestedRegex
-  def: (?<=\b)({AllIntRegex}\s+(e\s+)?)?({AllIntRegex})(\s+|\s*-\s*)(?!\bprimo\b|\bsecondo\b)(mezzi|({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))(?=\b)
-  references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex]
+  def: (?<=\b)({AllIntRegex}\s+(e\s+)?)?(({AllIntRegex})(\s+|\s*-\s*)(?!\bprimo\b|\bsecondo\b)(mezzi|({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))|(mezzo|un\s+quarto\s+di)\s+{RoundNumberIntegerRegex})(?=\b)
+  references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex, RoundNumberIntegerRegex ]
 FractionNounWithArticleRegex: !nestedRegex
-  def: (?<=\b)(({AllIntRegex}\s+e\s+mezzo)|(({AllIntRegex}\s+(e\s+)?)?(un)(\s+|\s*-\s*)(?!\bprimo\b|\bsecondo\b)(mezzo|({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))))(?=\b)
-  references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex]
+  def: (?<=\b)((({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\s+(e\s+)?)?((un)(\s+|\s*-\s*)(?!\bprimo\b|\bsecondo\b)({AllOrdinalRegex}|{RoundNumberOrdinalRegex})|(un\s+)?mezzo))(?=\b)
+  references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex, RoundNumberIntegerRegexWithLocks]
 FractionPrepositionRegex: !nestedRegex
   def: (?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<!\.)\d+))\s+su\s+(?<denominator>({AllIntRegex})|(\d+)(?!\.))(?=\b)
   references: [ AllIntRegex, BaseNumbers.CommonCurrencySymbol ]
@@ -211,6 +220,7 @@ WrittenDecimalSeparatorTexts: [virgola,punto]
 WrittenGroupSeparatorTexts: [punto]
 WrittenIntegerSeparatorTexts: [e,'-']
 WrittenFractionSeparatorTexts: [e]
+OneHalfTokens: [un, mezzo]
 HalfADozenRegex: !simpleRegex
   def: mezza\s+dozzina
 DigitalNumberRegex: !nestedRegex

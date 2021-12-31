@@ -67,6 +67,7 @@ namespace Microsoft.Recognizers.Text.Number
 
         // Groups' names for named groups in regexes
         public const string RelativeOrdinalGroupName = "relativeOrdinal";
+        public const string FracMultiplierGroupName = "fracMultiplier";
 
         // Number subtypes
         public const string INTEGER = "integer";

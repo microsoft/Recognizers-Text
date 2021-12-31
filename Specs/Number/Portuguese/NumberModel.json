@@ -2632,5 +2632,85 @@
         "End": 27
       }
     ]
+  },
+  {
+    "Input": "A população é de 2 milhões e meio",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2 milhões e meio",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "2500000"
+        },
+        "Start": 17,
+        "End": 32
+      }
+    ]
+  },
+  {
+    "Input": "Eles conseguiram três milhões e meio",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "três milhões e meio",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "3500000"
+        },
+        "Start": 17,
+        "End": 35
+      }
+    ]
+  },
+  {
+    "Input": "o valor presente é um trilhão e meio milhão",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "um trilhão e meio milhão",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1000000500000"
+        },
+        "Start": 19,
+        "End": 42
+      }
+    ]
+  },
+  {
+    "Input": "O número é cinco trilhões com três quartos.",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "cinco trilhões com três quartos",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "5750000000000"
+        },
+        "Start": 11,
+        "End": 41
+      }
+    ]
+  },
+  {
+    "Input": "Eu contei seis milhões com dois terços",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "seis milhões com dois terços",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "6666666,66666667"
+        },
+        "Start": 10,
+        "End": 37
+      }
+    ]
   }
 ]

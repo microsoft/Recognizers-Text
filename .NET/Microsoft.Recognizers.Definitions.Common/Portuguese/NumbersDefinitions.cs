@@ -27,6 +27,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public const string HundredsNumberIntegerRegex = @"(quatrocent[ao]s|trezent[ao]s|seiscent[ao]s|setecent[ao]s|oitocent[ao]s|novecent[ao]s|duzent[ao]s|quinhent[ao]s|cem|(?<!por\s+)(cento))";
       public const string RoundNumberIntegerRegex = @"(mil(h([ãa]o|[õo]es))?|bilh([ãa]o|[õo]es)|trilh([ãa]o|[õo]es)|qua[td]rilh([ãa]o|[õo]es)|quintilh([ãa]o|[õo]es))";
       public const string ZeroToNineIntegerRegex = @"(quatro|cinco|sete|nove|zero|tr[êe]s|seis|oito|d(oi|ua)s|h?uma?)";
+      public const string TwoToNineIntegerRegex = @"(quatro|cinco|sete|nove|tr[êe]s|seis|oito|d(oi|ua)s)";
       public const string TenToNineteenIntegerRegex = @"(dez[ea]sseis|dez[ea]ssete|dez[ea]nove|dezoito|(c|qua)torze|quinze|treze|d[ée]z|onze|doze)";
       public const string TensNumberIntegerRegex = @"(cinquenta|quarenta|trinta|sessenta|setenta|oitenta|noventa|vinte)";
       public const string DigitsNumberRegex = @"\d|\d{1,3}(\.\d{3})";
@@ -49,7 +50,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public const string NumbersWithDozenSuffix = @"(((?<!\d+\s*)-\s*)|(?<=\b))\d+\s+dezena(s)?(?=\b)";
       public const string NumbersWithDozen2Suffix = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+d[úu]zia(s)(?=\b)";
       public const string SimpleRoundOrdinalRegex = @"(mil[eé]sim[oa]|milion[eé]sim[oa]|bilion[eé]sim[oa]|trilion[eé]sim[oa]|quatrilion[eé]sim[oa]|quintilion[eé]sim[oa])";
-      public const string OneToNineOrdinalRegex = @"(primeir[oa]|segund[oa]|terceir[oa]|quart[oa]|quint[oa]|sext[oa]|s[eé]tim[oa]|oitav[oa]|non[oa])";
+      public const string OneToNineOrdinalRegex = @"(primeir[oa]|segund[oa]|terceir[oa]|terç[oa]|quart[oa]|quint[oa]|sext[oa]|s[eé]tim[oa]|oitav[oa]|non[oa])";
       public const string TensOrdinalRegex = @"(nonag[eé]sim[oa]|octog[eé]sim[oa]|setuag[eé]sim[oa]|septuag[eé]sim[oa]|sexag[eé]sim[oa]|quinquag[eé]sim[oa]|quadrag[eé]sim[oa]|trig[eé]sim[oa]|vig[eé]sim[oa]|d[eé]cim[oa])";
       public const string HundredOrdinalRegex = @"(cent[eé]sim[oa]|ducent[eé]sim[oa]|tricent[eé]sim[oa]|cuadringent[eé]sim[oa]|quingent[eé]sim[oa]|sexcent[eé]sim[oa]|septingent[eé]sim[oa]|octingent[eé]sim[oa]|noningent[eé]sim[oa])";
       public const string SpecialUnderHundredOrdinalRegex = @"(und[eé]cim[oa]|duod[eé]cimo)";
@@ -64,8 +65,11 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public static readonly string OrdinalEnglishRegex = $@"(?<=\b){AllOrdinalRegex}(?=\b)";
       public static readonly string FractionNotationRegex = $@"{BaseNumbers.FractionNotationRegex}";
       public const string FractionNotationWithSpacesRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))";
-      public static readonly string FractionNounRegex = $@"(?<=\b)({AllIntRegex}\s+((e|com)\s+)?)?({AllIntRegex})(\s+((e|com)\s)?)((({AllOrdinalRegex})s?|({SpecialFractionInteger})|({SuffixRoundOrdinalRegex})s?)|mei[oa]?|ter[çc]o?)(?=\b)";
-      public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)({AllIntRegex}\s+(e\s+)?)?(um|um[as])(\s+)(({AllOrdinalRegex})|({SuffixRoundOrdinalRegex})|(e\s+)?mei[oa]?)(?=\b)";
+      public static readonly string FractionMultiplierRegex = $@"(?<fracMultiplier>\s+(e|com)\s+(meio|(um|{TwoToNineIntegerRegex})\s+(meio|terç[oa]|quart[oa]|quint[oa]|sext[oa]|s[eé]tim[oa]|oitav[oa]|non[oa]|d[eé]cim[oa])s?))";
+      public static readonly string RoundMultiplierWithFraction = $@"(?<multiplier>(?:(mil(h([ãa]o|[õo]es))|bilh([ãa]o|[õo]es)|trilh([ãa]o|[õo]es)|qua[td]rilh([ãa]o|[õo]es)|quintilh([ãa]o|[õo]es))))(?={FractionMultiplierRegex}?$)";
+      public static readonly string RoundMultiplierRegex = $@"\b\s*({RoundMultiplierWithFraction}|(?<multiplier>(mil))$)";
+      public static readonly string FractionNounRegex = $@"(?<=\b)({AllIntRegex}\s+((e|com)\s+)?)?(({AllIntRegex})(\s+((e|com)\s)?)((({AllOrdinalRegex})s?|({SpecialFractionInteger})|({SuffixRoundOrdinalRegex})s?)|mei[oa]?|ter[çc]o?)|(meio|um\s+quarto\s+de)\s+{RoundNumberIntegerRegex})(?=\b)";
+      public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)(({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\s+(e\s+)?)?((um|um[as])(\s+)(({AllOrdinalRegex})|({SuffixRoundOrdinalRegex})|(e\s+)?mei[oa]?)|mei[oa]?)(?=\b)";
       public static readonly string FractionPrepositionRegex = $@"(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<!\.)\d+))\s+sobre\s+(?<denominator>({AllIntRegex})|((\d+)(?!\.)))(?=\b)";
       public static readonly string AllFloatRegex = $@"{AllIntRegex}(\s+(vírgula|virgula|e|ponto)){AllPointRegex}";
       public static readonly string DoubleWithMultiplierRegex = $@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\,)))\d+,\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)";
@@ -87,6 +91,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public static readonly string[] WrittenIntegerSeparatorTexts = { @"e" };
       public static readonly string[] WrittenFractionSeparatorTexts = { @"com" };
       public static readonly string[] WrittenFractionSuffix = { @"avo", @"ava" };
+      public static readonly string[] OneHalfTokens = { @"um", @"meio" };
       public const char PluralSuffix = 's';
       public const string HalfADozenRegex = @"meia\s+d[uú]zia";
       public static readonly string DigitalNumberRegex = $@"((?<=\b)(mil|cem|milh[oõ]es|milh[aã]o|bilh[oõ]es|bilh[aã]o|trilh[oõ]es|trilh[aã]o|milhares|centena|centenas|dezena|dezenas?)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
@@ -177,6 +182,8 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
             { @"segunda", 2 },
             { @"terceiro", 3 },
             { @"terceira", 3 },
+            { @"terço", 3 },
+            { @"terça", 3 },
             { @"quarto", 4 },
             { @"quarta", 4 },
             { @"quinto", 5 },
