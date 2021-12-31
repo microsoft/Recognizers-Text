@@ -12,6 +12,8 @@ RoundNumberIntegerRegex: !simpleRegex
   def: (honderd|duizend|miljoen|miljard|biljoen)
 ZeroToNineIntegerRegex: !simpleRegex
   def: (((een)(?!\s+((honderdste|duizendste|miljoenste|miljardste|biljoenste)|(nulde|eende|eerste|tweede|derde|vierde|vijfd(e|en)|zesde|zevende|achtst(e|en)|negende|tiend(e|en)|elfde|twaalfde|dertiende|veertiende|vijftiende|zestiende|zeventiende|achttiende|negentiende|twintigste|dertigste|veertigste|vijftigste|zestigste|zeventigste|tachtigste|negentigste))))|(één|drie|zeven|acht|vier|vijf|nul|negen|twee|zes))
+TwoToNineIntegerRegex: !simpleRegex
+  def: (drie|zeven|acht|vier|vijf|negen|twee|zes)
 NegativeNumberTermsRegex: !simpleRegex
   def: (?<negTerm>(min|negatief)\s+)
 NegativeNumberSignRegex: !nestedRegex
@@ -85,12 +87,21 @@ FractionUnitsRegex: !simpleRegex
 FractionHalfRegex: !simpleRegex
   def: ([eë]nhalf|[eë]nhalve|ëneenhal(f|ve))$
 OneHalfTokens: [een, half]
+FractionMultiplierRegex: !nestedRegex
+  def: (?<fracMultiplier>((\s+en\s+)?(anderhalve|anderhalf|driekwart)|\s+en\s+(een|{TwoToNineIntegerRegex})\s+(half|derde|kwart|vierde|vijfd(e|en)|zesde|zevende|achtst(e|en)|negende|tiend(e|en))))
+  references: [ TwoToNineIntegerRegex ]
+RoundMultiplierWithFraction: !nestedRegex
+  def: (?<=(?<!{RoundNumberIntegerRegex}){FractionMultiplierRegex}\s+)?(?<multiplier>(miljoen|miljard|biljoen))(?={FractionMultiplierRegex}?$)
+  references: [ RoundNumberIntegerRegex, FractionMultiplierRegex ]
+RoundMultiplierRegex: !nestedRegex
+  def: \b\s*(van\s+)?({RoundMultiplierWithFraction}|(?<multiplier>(honderd|duizend))$)
+  references: [ RoundMultiplierWithFraction ]
 FractionNounRegex: !nestedRegex
-  def: (?<=\b)(({AllIntRegex}\s+(en\s+)?)?(({AllIntRegex})(\s+|\s*-\s*|\s*/\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))n?|halven|vierdes|kwart)|{FractionUnitsRegex}))(?=\b)
-  references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex, FractionUnitsRegex ]
+  def: (?<=\b)(({AllIntRegex}\s+(en\s+)?)?(({AllIntRegex})(\s+|\s*-\s*|\s*/\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))n?|halven|vierdes|kwart)|(een\s+(half|kwart)\s+){RoundNumberIntegerRegex}|{FractionUnitsRegex}(\s+{RoundNumberIntegerRegex})?))(?=\b)
+  references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex, FractionUnitsRegex, RoundNumberIntegerRegex ]
 FractionNounWithArticleRegex: !nestedRegex
-  def: (?<=\b)(({AllIntRegex}\s+(en\s)?)?(een)(\s+|\s*-\s*|\s*/\s*)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|({FractionUnitsRegex}))|{AllIntRegex}[eë]n(eenhalf|half|halve|helft|kwart))(?=\b)
-  references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex, FractionUnitsRegex ]
+  def: (?<=\b)((({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\s+(en\s)?)?(een)(\s+|\s*-\s*|\s*/\s*)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|({FractionUnitsRegex}))|{AllIntRegex}[eë]n(eenhalf|half|halve|helft|kwart))(?=\b)
+  references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex, FractionUnitsRegex, RoundNumberIntegerRegexWithLocks ]
 FractionPrepositionRegex: !nestedRegex
   def: (?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<!,)\d+))\s+(op|op\s+de|van\s+de|uit|uit\s+de)\s+(?<denominator>({AllIntRegex})|(\d+)(?!,))(?=\b)
   references: [ AllIntRegex, BaseNumbers.CommonCurrencySymbol ]

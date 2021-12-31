@@ -4305,5 +4305,95 @@
         "End": 12
       }
     ]
+  },
+  {
+    "Input": "Un demi-million d'œufs ont été cassés aujourd'hui",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "un demi-million",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "500000",
+        "Start": 0,
+        "End": 14
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Il y a un million et demi de possibilités",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "un million et demi",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1500000",
+        "Start": 7,
+        "End": 24
+        }
+      }
+    ]
+  },
+  {
+    "Input": "La population est de 3 millions et demi",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 millions et demi",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3500000",
+        "Start": 21,
+        "End": 38
+        }
+      }
+    ]
+  },
+  {
+    "Input": "La valeur actuelle est d'un milliard et demi million",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "un milliard et demi million",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1000500000",
+        "Start": 25,
+        "End": 51
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Le nombre est de cinq milliards et trois quarts",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "cinq milliards et trois quarts",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5750000000"
+        },
+        "Start": 17,
+        "End": 46
+      }
+    ]
+  },
+  {
+    "Input": "J'ai compté six millions et deux tiers",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "six millions et deux tiers",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "6666666,66666667"
+        },
+        "Start": 12,
+        "End": 37
+      }
+    ]
   }
 ]

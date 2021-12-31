@@ -633,13 +633,13 @@
         "End": 58
       },
       {
-        "Text": "300 milliarden ",
+        "Text": "300 milliarden",
         "TypeName": "number",
         "Resolution": {
           "value": "300000000000"
         },
         "Start": 64,
-        "End": 78
+        "End": 77
       }
     ]
   },
@@ -938,6 +938,96 @@
         },
         "Start": 0,
         "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "Eine halbe Million Eier wurden heute zerbrochen",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "eine halbe million",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "500000",
+        "Start": 0,
+        "End": 17
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Es gibt anderthalb Millionen Möglichkeiten",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "anderthalb millionen",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1500000",
+        "Start": 8,
+        "End": 27
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Die Bevölkerung beträgt dreieinhalb Millionen",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "dreieinhalb millionen",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3500000",
+        "Start": 24,
+        "End": 44
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Der aktuelle Wert beträgt eineinhalb Milliarden",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "eineinhalb milliarden",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1500000000",
+        "Start": 26,
+        "End": 46
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Die Zahl ist fünf und drei Viertel Milliarde",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "fünf und drei viertel milliarde",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5750000000"
+        },
+        "Start": 13,
+        "End": 43
+      }
+    ]
+  },
+  {
+    "Input": "Ich habe sechs und zwei Drittel Millionen gezählt",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "sechs und zwei drittel millionen",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "6666666,66666667"
+        },
+        "Start": 9,
+        "End": 40
       }
     ]
   }
