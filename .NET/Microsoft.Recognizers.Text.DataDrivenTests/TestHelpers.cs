@@ -20,6 +20,7 @@ using Microsoft.Recognizers.Text.DateTime.Japanese;
 using Microsoft.Recognizers.Text.DateTime.Korean;
 using Microsoft.Recognizers.Text.DateTime.Portuguese;
 using Microsoft.Recognizers.Text.DateTime.Spanish;
+using Microsoft.Recognizers.Text.DateTime.Swedish;
 using Microsoft.Recognizers.Text.DateTime.Turkish;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.NumberWithUnit;
@@ -176,6 +177,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return GetArabicExtractor(extractorName);
                 case Culture.Korean:
                     return GetKoreanExtractor(extractorName);
+                case Culture.Swedish:
+                    return GetSwedishExtractor(extractorName);
             }
 
             throw new Exception($"Extractor '{extractorName}' for '{culture}' not supported");
@@ -216,6 +219,8 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                     return GetArabicParser(parserName);
                 case Culture.Korean:
                     return GetKoreanParser(parserName);
+                case Culture.Swedish:
+                    return GetSwedishParser(parserName);
             }
 
             throw new Exception($"Parser '{parserName}' for '{culture}' not supported");
@@ -1144,6 +1149,76 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
             }
 
             throw new Exception($"Parser '{parserName}' for Korean not supported");
+        }
+
+        public static IDateTimeExtractor GetSwedishExtractor(DateTimeExtractors extractorName)
+        {
+            var config = new BaseDateTimeOptionsConfiguration(Culture.Swedish);
+            var previewConfig = new BaseDateTimeOptionsConfiguration(Culture.Swedish, DateTimeOptions.EnablePreview);
+            var skipConfig = new BaseDateTimeOptionsConfiguration(Culture.Swedish, DateTimeOptions.SkipFromToMerge);
+
+            switch (extractorName)
+            {
+                case DateTimeExtractors.Date:
+                    return new BaseDateExtractor(new SwedishDateExtractorConfiguration(config));
+                case DateTimeExtractors.Time:
+                    return new BaseTimeExtractor(new SwedishTimeExtractorConfiguration(config));
+                case DateTimeExtractors.DatePeriod:
+                    return new BaseDatePeriodExtractor(new SwedishDatePeriodExtractorConfiguration(config));
+                case DateTimeExtractors.TimePeriod:
+                    return new BaseTimePeriodExtractor(new SwedishTimePeriodExtractorConfiguration(config));
+                case DateTimeExtractors.DateTime:
+                    return new BaseDateTimeExtractor(new SwedishDateTimeExtractorConfiguration(config));
+                case DateTimeExtractors.DateTimePeriod:
+                    return new BaseDateTimePeriodExtractor(new SwedishDateTimePeriodExtractorConfiguration(config));
+                case DateTimeExtractors.Duration:
+                    return new BaseDurationExtractor(new SwedishDurationExtractorConfiguration(config));
+                case DateTimeExtractors.Holiday:
+                    return new BaseHolidayExtractor(new SwedishHolidayExtractorConfiguration(config));
+                case DateTimeExtractors.TimeZone:
+                    return new BaseTimeZoneExtractor(new SwedishTimeZoneExtractorConfiguration(previewConfig));
+                case DateTimeExtractors.Set:
+                    return new BaseSetExtractor(new SwedishSetExtractorConfiguration(config));
+                case DateTimeExtractors.Merged:
+                    return new BaseMergedDateTimeExtractor(new SwedishMergedExtractorConfiguration(config));
+                case DateTimeExtractors.MergedSkipFromTo:
+                    return new BaseMergedDateTimeExtractor(new SwedishMergedExtractorConfiguration(skipConfig));
+            }
+
+            throw new Exception($"Extractor '{extractorName}' for Swedish not supported");
+        }
+
+        public static IDateTimeParser GetSwedishParser(DateTimeParsers parserName)
+        {
+            var commonConfiguration = new SwedishCommonDateTimeParserConfiguration(new BaseDateTimeOptionsConfiguration(Culture.Swedish));
+
+            switch (parserName)
+            {
+                case DateTimeParsers.Date:
+                    return new BaseDateParser(new SwedishDateParserConfiguration(commonConfiguration));
+                case DateTimeParsers.Time:
+                    return new DateTime.English.TimeParser(new SwedishTimeParserConfiguration(commonConfiguration));
+                case DateTimeParsers.DatePeriod:
+                    return new BaseDatePeriodParser(new SwedishDatePeriodParserConfiguration(commonConfiguration));
+                case DateTimeParsers.TimePeriod:
+                    return new BaseTimePeriodParser(new SwedishTimePeriodParserConfiguration(commonConfiguration));
+                case DateTimeParsers.DateTime:
+                    return new BaseDateTimeParser(new SwedishDateTimeParserConfiguration(commonConfiguration));
+                case DateTimeParsers.DateTimePeriod:
+                    return new BaseDateTimePeriodParser(new SwedishDateTimePeriodParserConfiguration(commonConfiguration));
+                case DateTimeParsers.Duration:
+                    return new BaseDurationParser(new SwedishDurationParserConfiguration(commonConfiguration));
+                case DateTimeParsers.Holiday:
+                    return new BaseHolidayParser(new SwedishHolidayParserConfiguration(commonConfiguration));
+                case DateTimeParsers.TimeZone:
+                    return new BaseTimeZoneParser();
+                case DateTimeParsers.Set:
+                    return new BaseSetParser(new SwedishSetParserConfiguration(commonConfiguration));
+                case DateTimeParsers.Merged:
+                    return new BaseMergedDateTimeParser(new SwedishMergedParserConfiguration(commonConfiguration));
+            }
+
+            throw new Exception($"Parser '{parserName}' for Swedish not supported");
         }
     }
 
