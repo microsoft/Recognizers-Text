@@ -2899,5 +2899,106 @@
         }
       }
     ]
+  },
+  {
+    "Input": "7 horas é o mais cedo que consegue me ver?",
+    "Context": {
+      "ReferenceDateTime": "2020-05-14T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "7 horas",
+        "Start": 0,
+        "End": 6,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07",
+              "type": "time",
+              "value": "07:00:00"
+            },
+            {
+              "timex": "T19",
+              "type": "time",
+              "value": "19:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "A viagem vai levar 7 horas",
+    "Context": {
+      "ReferenceDateTime": "2020-05-14T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "7 horas",
+        "Start": 19,
+        "End": 25,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT7H",
+              "type": "duration",
+              "value": "25200"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "A operação durou 7 horas.",
+    "Context": {
+      "ReferenceDateTime": "2020-05-14T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "7 horas",
+        "Start": 17,
+        "End": 23,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT7H",
+              "type": "duration",
+              "value": "25200"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "3 horas é a duração da viagem",
+    "Context": {
+      "ReferenceDateTime": "2020-05-14T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3 horas",
+        "Start": 0,
+        "End": 6,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT3H",
+              "type": "duration",
+              "value": "10800"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
