@@ -2596,13 +2596,14 @@
   },
   {
     "Input": "once con uno y medio",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "once con uno y medio",
         "TypeName": "number",
         "Resolution": {
           "subtype": "fraction",
-          "value": "11,5"
+          "value": "12,5"
         },
         "Start": 0,
         "End": 19
@@ -3007,6 +3008,102 @@
         },
         "Start": 10,
         "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "el resultado es cinco y medio",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "cinco y medio",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "5,5"
+        },
+        "Start": 16,
+        "End": 28
+      }
+    ]
+  },
+  {
+    "Input": "La población es 2 millones y medio",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2 millones y medio",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "2500000"
+        },
+        "Start": 16,
+        "End": 33
+      }
+    ]
+  },
+  {
+    "Input": "Ellos obtuvieron tres millones y medio",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "tres millones y medio",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "3500000"
+        },
+        "Start": 17,
+        "End": 37
+      }
+    ]
+  },
+  {
+    "Input": "el valor actual es un billón y medio millon",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "un billón y medio millon",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1000000500000"
+        },
+        "Start": 19,
+        "End": 42
+      }
+    ]
+  },
+  {
+    "Input": "El número es cinco billones con tres cuartos.",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "cinco billones con tres cuartos",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "5750000000000"
+        },
+        "Start": 13,
+        "End": 43
+      }
+    ]
+  },
+  {
+    "Input": "Conté seis millones con dos tercios",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "seis millones con dos tercios",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "6666666,66666667"
+        },
+        "Start": 6,
+        "End": 34
       }
     ]
   }

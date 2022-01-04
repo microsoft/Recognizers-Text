@@ -98,15 +98,21 @@ FractionNotationWithSpacesRegex: !simpleRegex
 FractionNotationRegex: !nestedRegex
   def: '{BaseNumbers.FractionNotationRegex}'
   references: [ BaseNumbers.FractionNotationRegex ]
+FractionMultiplierRegex: !nestedRegex
+  def: (?<fracMultiplier>\s+and\s+(a|one|{TwoToNineIntegerRegex})\s+(half|quarter|third|fourth|fifth|sixth|seventh|eighth|nine?th|tenth)s?)
+  references: [ TwoToNineIntegerRegex ]
+RoundMultiplierWithFraction: !nestedRegex
+  def: (?<=(?<!{RoundNumberIntegerRegex}){FractionMultiplierRegex}\s+)?(?<multiplier>(?:million|mln|billion|bln|trillion|tln)s?)(?={FractionMultiplierRegex}?$)
+  references: [ RoundNumberIntegerRegex, FractionMultiplierRegex ]
 RoundMultiplierRegex: !nestedRegex
-  def: \b\s*((of\s+)?a\s+)?(?<multiplier>{RoundNumberIntegerRegex})$
-  references: [ RoundNumberIntegerRegex ]
+  def: \b\s*((of\s+)?a\s+)?({RoundMultiplierWithFraction}|(?<multiplier>(?:hundred|thousand|lakh|crore)s?)$)
+  references: [ RoundMultiplierWithFraction ]
 FractionNounRegex: !nestedRegex
   def: (?<=\b)({AllIntRegex}\s+(and\s+)?)?(({AllIntRegex})(\s+|\s*-\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))s|halves|quarters)((\s+of\s+a)?\s+{RoundNumberIntegerRegex})?|(half(\s+a)?|quarter(\s+of\s+a)?)\s+{RoundNumberIntegerRegex})(?=\b)
   references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex, RoundNumberIntegerRegex ]
 FractionNounWithArticleRegex: !nestedRegex
-  def: (?<=\b)((({AllIntRegex}\s+(and\s+)?)?(an?|one)(\s+|\s*-\s*)(?!\bfirst\b|\bsecond\b)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|(half|quarter)(((\s+of)?\s+a)?\s+{RoundNumberIntegerRegex})?))|(half))(?=\b)
-  references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex, RoundNumberIntegerRegex ]
+  def: (?<=\b)(((({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\s+(and\s+)?)?(an?|one)(\s+|\s*-\s*)(?!\bfirst\b|\bsecond\b)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|(half|quarter)(((\s+of)?\s+a)?\s+{RoundNumberIntegerRegex})?))|(half))(?=\b)
+  references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex, RoundNumberIntegerRegex, RoundNumberIntegerRegexWithLocks ]
 FractionPrepositionRegex: !nestedRegex
   def: (?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<![\.,])\d+))\s+(over|(?<ambiguousSeparator>in|out\s+of))\s+(?<denominator>({AllIntRegex})|(\d+)(?![\.,]))(?=\b)
   references: [ AllIntRegex, BaseNumbers.CommonCurrencySymbol ]
@@ -295,6 +301,13 @@ CardinalNumberMap: !dictionary
     tln: 1000000000000
     lakh: 100000
     crore: 10000000
+    hundreds: 100
+    thousands: 1000
+    millions: 1000000
+    billions: 1000000000
+    trillions: 1000000000000
+    lakhs: 100000
+    crores: 10000000
 OrdinalNumberMap: !dictionary
   types: [ string, long ]
   entries:
@@ -381,6 +394,13 @@ RoundNumberMap: !dictionary
     tln: 1000000000000
     lakh: 100000
     crore: 10000000
+    hundreds: 100
+    thousands: 1000
+    millions: 1000000
+    billions: 1000000000
+    trillions: 1000000000000
+    lakhs: 100000
+    crores: 10000000
     hundredth: 100
     thousandth: 1000
     millionth: 1000000

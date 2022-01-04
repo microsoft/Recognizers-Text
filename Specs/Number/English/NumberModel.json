@@ -3238,5 +3238,245 @@
         "End": 16
       }
     ]
+  },
+  {
+    "Input": "There are one million and a half possibilities",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "one million and a half",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1500000"
+        },
+        "Start": 10,
+        "End": 31
+      }
+    ]
+  },
+  {
+    "Input": "The population is 3 million and a half",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3 million and a half",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "3500000"
+        },
+        "Start": 18,
+        "End": 37
+      }
+    ]
+  },
+  {
+    "Input": "They have two million and one half",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "two million and one half",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "2500000"
+        },
+        "Start": 10,
+        "End": 33
+      }
+    ]
+  },
+  {
+    "Input": "Half million eggs have been broken today",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "half million",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "500000"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "There are five and a half million fishes in this lake",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "five and a half million",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "5500000"
+        },
+        "Start": 10,
+        "End": 32
+      }
+    ]
+  },
+  {
+    "Input": "Current value is one billion and a half million",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "one billion and a half million",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1000500000"
+        },
+        "Start": 17,
+        "End": 46
+      }
+    ]
+  },
+  {
+    "Input": "Last value was one billion and a quarter million",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "one billion and a quarter million",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1000250000"
+        },
+        "Start": 15,
+        "End": 47
+      }
+    ]
+  },
+  {
+    "Input": "The result is three and one fourth",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "three and one fourth",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "3.25"
+        },
+        "Start": 14,
+        "End": 33
+      }
+    ]
+  },
+  {
+    "Input": "They have 3 million and a quarter",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3 million and a quarter",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "3250000"
+        },
+        "Start": 10,
+        "End": 32
+      }
+    ]
+  },
+  {
+    "Input": "The number is five billion and three quarters",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "five billion and three quarters",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "5750000000"
+        },
+        "Start": 14,
+        "End": 44
+      }
+    ]
+  },
+  {
+    "Input": "I counted six million and two thirds",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "six million and two thirds",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "6666666.66666667"
+        },
+        "Start": 10,
+        "End": 35
+      }
+    ]
+  },
+  {
+    "Input": "They have two million and three fifths",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "two million and three fifths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "2600000"
+        },
+        "Start": 10,
+        "End": 37
+      }
+    ]
+  },
+  {
+    "Input": "We spent nine million and five ninths",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "nine million and five ninths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "9555555.55555556"
+        },
+        "Start": 9,
+        "End": 36
+      }
+    ]
+  },
+  {
+    "Input": "two out of five hundred tvs",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "two out of five hundred",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.004"
+        },
+        "Start": 0,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "two out of five hundreds tvs",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "two out of five hundreds",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.004"
+        },
+        "Start": 0,
+        "End": 23
+      }
+    ]
   }
 ]

@@ -225,7 +225,7 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-	<Compile Update="German\ChoiceDefinitions.cs">
+    <Compile Update="German\ChoiceDefinitions.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
@@ -365,16 +365,26 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Update="Swedish\DateTimeDefinitions.cs">
+      <DependentUpon>DateTimeDefinitions.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Update="Swedish\NumbersDefinitions.cs">
       <DependentUpon>NumbersDefinitions.tt</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-	<Compile Update="Swedish\NumbersWithUnitDefinitions.cs">
-	  <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
-	  <DesignTime>True</DesignTime>
-	  <AutoGen>True</AutoGen>
-	</Compile>
+    <Compile Update="Swedish\NumbersWithUnitDefinitions.cs">
+      <DependentUpon>NumbersWithUnitDefinitions.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Swedish\TimeZoneDefinitions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TimeZoneDefinitions.tt</DependentUpon>
+    </Compile>
     <Compile Update="Turkish\ChoiceDefinitions.cs">
       <DependentUpon>ChoiceDefinitions.tt</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -528,9 +538,13 @@
     </None>
     <None Update="Swedish\ChoiceDefinitions.tt">
     </None>
+    <None Update="Swedish\DateTimeDefinitions.tt">
+    </None>
     <None Update="Swedish\NumbersDefinitions.tt">
     </None>
     <None Update="Swedish\NumbersWithUnitDefinitions.tt">
+    </None>
+    <None Update="Swedish\TimeZoneDefinitions.tt">
     </None>
     <None Update="Turkish\ChoiceDefinitions.tt">
     </None>

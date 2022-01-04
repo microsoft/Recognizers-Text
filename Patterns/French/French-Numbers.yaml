@@ -10,6 +10,8 @@ RoundNumberIntegerRegex: !simpleRegex
   def: (cent|mille|millions?|milliards?|billions?)
 ZeroToNineIntegerRegex: !simpleRegex
   def: (une?|deux|trois|quatre|cinq|six|sept|huit|neuf|z[ée]ro)
+TwoToNineIntegerRegex: !simpleRegex
+  def: (deux|trois|quatre|cinq|six|sept|huit|neuf)
 TenToNineteenIntegerRegex: !simpleRegex
   def: ((seize|quinze|quatorze|treize|douze|onze)|dix(\Wneuf|\Whuit|\Wsept)?)
 TensNumberIntegerRegex: !simpleRegex
@@ -107,12 +109,21 @@ FractionNotationWithSpacesRegex: !simpleRegex
 FractionNotationRegex: !nestedRegex
   def: '{BaseNumbers.FractionNotationRegex}'
   references: [ BaseNumbers.FractionNotationRegex ]
+FractionMultiplierRegex: !nestedRegex
+  def: (?<fracMultiplier>\s+et\s+(demi[es]?|(une?|{TwoToNineIntegerRegex})\s+(demie?|tier|quart|(cinqui|sixi|septi|hui[tr]i|neuvi|dixi)[eè]me)s?))
+  references: [ TwoToNineIntegerRegex ]
+RoundMultiplierWithFraction: !nestedRegex
+  def: (?<multiplier>(millions?|milliards?|billions?))(?={FractionMultiplierRegex}?$)
+  references: [ FractionMultiplierRegex ]
+RoundMultiplierRegex: !nestedRegex
+  def: \b\s*({RoundMultiplierWithFraction}|(?<multiplier>(cent|mille))$)
+  references: [ RoundMultiplierWithFraction ]
 FractionNounRegex: !nestedRegex
-  def: (?<=\b)({AllIntRegex}\s+((et)\s+)?)?({AllIntRegex})(\s+((et)\s)?)((({AllOrdinalRegex})s?|({SuffixOrdinalRegex})s?)|demi[es]?|tiers?|quarts?)(?=\b)
-  references: [ AllIntRegex, AllOrdinalRegex, SuffixOrdinalRegex ]
+  def: (?<=\b)({AllIntRegex}\s+((et)\s+)?)?({AllIntRegex}(\s+((et)\s)?)(({AllOrdinalRegex}s?|{SuffixOrdinalRegex}s?)|(demi[es]?|tiers?|quarts?))|(un\s+)?(demi|tier|quart)(\s+(de\s+)?|\s*-\s*){RoundNumberIntegerRegex})(?=\b)
+  references: [ AllIntRegex, AllOrdinalRegex, SuffixOrdinalRegex, RoundNumberIntegerRegex ]
 FractionNounWithArticleRegex: !nestedRegex
-  def: (?<=\b)({AllIntRegex}\s+(et\s+)?)?(une?)(\s+)(({AllOrdinalRegex})|({SuffixOrdinalRegex})|(et\s+)?demi[es]?)(?=\b)
-  references: [ AllIntRegex, AllOrdinalRegex, SuffixOrdinalRegex ]
+  def: (?<=\b)(({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\s+(et\s+)?)?((une?)(\s+)(({AllOrdinalRegex})|({SuffixOrdinalRegex})|(et\s+)?demi[es]?)|demi[es]?)(?=\b)
+  references: [ AllIntRegex, AllOrdinalRegex, SuffixOrdinalRegex, RoundNumberIntegerRegexWithLocks ]
 FractionPrepositionRegex: !nestedRegex
   def: (?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<!\.)\d+))\s+sur\s+(?<denominator>({AllIntRegex})|((\d+)(?!\.)))(?=\b)
   references: [ AllIntRegex, BaseNumbers.CommonCurrencySymbol ]
@@ -232,6 +243,7 @@ WrittenDecimalSeparatorTexts: [virgule]
 WrittenGroupSeparatorTexts: [point, points]
 WrittenIntegerSeparatorTexts: [et, '-']
 WrittenFractionSeparatorTexts: [et, sur]
+OneHalfTokens: [un, demi]
 HalfADozenRegex: !simpleRegex
   def: (?<=\b)demie?\s+douzaine
 DigitalNumberRegex: !nestedRegex

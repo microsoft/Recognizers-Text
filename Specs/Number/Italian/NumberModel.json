@@ -1895,5 +1895,95 @@
         "End": 28
       }
     ]
+  },
+  {
+    "Input": "Oggi sono state rotte mezzo milione di uova",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "mezzo milione",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "500000",
+        "Start": 22,
+        "End": 34
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ci sono un milione e mezzo di possibilità",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "un milione e mezzo",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1500000",
+        "Start": 8,
+        "End": 25
+        }
+      }
+    ]
+  },
+  {
+    "Input": "La popolazione è di 3 milioni e mezzo",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "3 milioni e mezzo",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3500000",
+        "Start": 20,
+        "End": 36
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Il valore attuale è un miliardo e mezzo milione",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "un miliardo e mezzo milione",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1000500000",
+        "Start": 20,
+        "End": 46
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Il numero è cinque miliardi e tre quarti",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "cinque miliardi e tre quarti",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5750000000"
+        },
+        "Start": 12,
+        "End": 39
+      }
+    ]
+  },
+  {
+    "Input": "Ho contato sei milioni e due terzi",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "sei milioni e due terzi",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "6666666,66666667"
+        },
+        "Start": 11,
+        "End": 33
+      }
+    ]
   }
 ]

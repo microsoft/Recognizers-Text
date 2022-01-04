@@ -27,6 +27,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public const string DigitsNumberRegex = @"-?(\d+|\d{1,3}(\.\d{3})*)";
       public const string RoundNumberIntegerRegex = @"(honderd|duizend|miljoen|miljard|biljoen)";
       public const string ZeroToNineIntegerRegex = @"(((een)(?!\s+((honderdste|duizendste|miljoenste|miljardste|biljoenste)|(nulde|eende|eerste|tweede|derde|vierde|vijfd(e|en)|zesde|zevende|achtst(e|en)|negende|tiend(e|en)|elfde|twaalfde|dertiende|veertiende|vijftiende|zestiende|zeventiende|achttiende|negentiende|twintigste|dertigste|veertigste|vijftigste|zestigste|zeventigste|tachtigste|negentigste))))|(één|drie|zeven|acht|vier|vijf|nul|negen|twee|zes))";
+      public const string TwoToNineIntegerRegex = @"(drie|zeven|acht|vier|vijf|negen|twee|zes)";
       public const string NegativeNumberTermsRegex = @"(?<negTerm>(min|negatief)\s+)";
       public static readonly string NegativeNumberSignRegex = $@"^{NegativeNumberTermsRegex}.*";
       public const string AnIntRegex = @"(een|één)(?=\s)";
@@ -56,8 +57,11 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public const string FractionUnitsRegex = @"((?<onehalf>anderhalve|anderhalf)|(?<quarter>driekwart)|half|halve|helft|kwart)";
       public const string FractionHalfRegex = @"([eë]nhalf|[eë]nhalve|ëneenhal(f|ve))$";
       public static readonly string[] OneHalfTokens = { @"een", @"half" };
-      public static readonly string FractionNounRegex = $@"(?<=\b)(({AllIntRegex}\s+(en\s+)?)?(({AllIntRegex})(\s+|\s*-\s*|\s*/\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))n?|halven|vierdes|kwart)|{FractionUnitsRegex}))(?=\b)";
-      public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)(({AllIntRegex}\s+(en\s)?)?(een)(\s+|\s*-\s*|\s*/\s*)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|({FractionUnitsRegex}))|{AllIntRegex}[eë]n(eenhalf|half|halve|helft|kwart))(?=\b)";
+      public static readonly string FractionMultiplierRegex = $@"(?<fracMultiplier>((\s+en\s+)?(anderhalve|anderhalf|driekwart)|\s+en\s+(een|{TwoToNineIntegerRegex})\s+(half|derde|kwart|vierde|vijfd(e|en)|zesde|zevende|achtst(e|en)|negende|tiend(e|en))))";
+      public static readonly string RoundMultiplierWithFraction = $@"(?<=(?<!{RoundNumberIntegerRegex}){FractionMultiplierRegex}\s+)?(?<multiplier>(miljoen|miljard|biljoen))(?={FractionMultiplierRegex}?$)";
+      public static readonly string RoundMultiplierRegex = $@"\b\s*(van\s+)?({RoundMultiplierWithFraction}|(?<multiplier>(honderd|duizend))$)";
+      public static readonly string FractionNounRegex = $@"(?<=\b)(({AllIntRegex}\s+(en\s+)?)?(({AllIntRegex})(\s+|\s*-\s*|\s*/\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))n?|halven|vierdes|kwart)|(een\s+(half|kwart)\s+){RoundNumberIntegerRegex}|{FractionUnitsRegex}(\s+{RoundNumberIntegerRegex})?))(?=\b)";
+      public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)((({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\s+(en\s)?)?(een)(\s+|\s*-\s*|\s*/\s*)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|({FractionUnitsRegex}))|{AllIntRegex}[eë]n(eenhalf|half|halve|helft|kwart))(?=\b)";
       public static readonly string FractionPrepositionRegex = $@"(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<!,)\d+))\s+(op|op\s+de|van\s+de|uit|uit\s+de)\s+(?<denominator>({AllIntRegex})|(\d+)(?!,))(?=\b)";
       public static readonly string FractionPrepositionWithinPercentModeRegex = $@"(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<!,)\d+))\s+over\s+(?<denominator>({AllIntRegex})|(\d+)(?!,))(?=\b)";
       public static readonly string AllPointRegex = $@"((\s+{ZeroToNineIntegerRegex})+|(\s+{SeparaIntRegex}))";

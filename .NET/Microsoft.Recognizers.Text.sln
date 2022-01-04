@@ -89,9 +89,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Patterns", "Patterns", "{23
 		..\Patterns\Spanish\Spanish-NumbersWithUnit.yaml = ..\Patterns\Spanish\Spanish-NumbersWithUnit.yaml
 		..\Patterns\Spanish\Spanish-QuotedText.yaml = ..\Patterns\Spanish\Spanish-QuotedText.yaml
 		..\Patterns\Swedish\Swedish-Choice.yaml = ..\Patterns\Swedish\Swedish-Choice.yaml
+		..\Patterns\Swedish\Swedish-DateTime.yaml = ..\Patterns\Swedish\Swedish-DateTime.yaml
 		..\Patterns\Swedish\Swedish-Numbers.yaml = ..\Patterns\Swedish\Swedish-Numbers.yaml
 		..\Patterns\Swedish\Swedish-NumbersWithUnit.yaml = ..\Patterns\Swedish\Swedish-NumbersWithUnit.yaml
 		..\Patterns\Swedish\Swedish-QuotedText.yaml = ..\Patterns\Swedish\Swedish-QuotedText.yaml
+		..\Patterns\Swedish\Swedish-TimeZone.yaml = ..\Patterns\Swedish\Swedish-TimeZone.yaml
 		..\Patterns\Turkish\Turkish-DateTime.yaml = ..\Patterns\Turkish\Turkish-DateTime.yaml
 		..\Patterns\Turkish\Turkish-Numbers.yaml = ..\Patterns\Turkish\Turkish-Numbers.yaml
 		..\Patterns\Turkish\Turkish-NumbersWithUnit.yaml = ..\Patterns\Turkish\Turkish-NumbersWithUnit.yaml
@@ -866,6 +868,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Arabic", "Arabic", "{E93CDE
 		..\Specs\DateTime\Arabic\TimePeriodParser.json = ..\Specs\DateTime\Arabic\TimePeriodParser.json
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Swedish", "Swedish", "{A45B902F-DE07-4502-8F8C-2671B987D72C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -962,6 +966,7 @@ Global
 		{93CE72CE-A624-4075-B2DD-392F4D42DC77} = {59FC2C0D-BF12-4A99-BC50-A104948DB1DC}
 		{C47CD83C-F6DC-4580-A143-A5C11EA9377A} = {59FC2C0D-BF12-4A99-BC50-A104948DB1DC}
 		{D64B181C-B07E-4531-A016-14E9D827EB87} = {59FC2C0D-BF12-4A99-BC50-A104948DB1DC}
+		{C99691DA-6E5B-4194-972E-7992F4CC4486} = {59FC2C0D-BF12-4A99-BC50-A104948DB1DC}
 		{18C2DA46-BF61-4F87-B645-443D6525545A} = {59FC2C0D-BF12-4A99-BC50-A104948DB1DC}
 		{78A33B3C-6340-4EE8-B802-63618D008AFF} = {55DDEF35-167D-45A5-B6D0-3747532E8314}
 		{39E7797E-768E-4170-9C29-5DAEE70D86E2} = {55DDEF35-167D-45A5-B6D0-3747532E8314}
@@ -1020,7 +1025,7 @@ Global
 		{2F41FB40-EA08-469A-A676-138F2E7C627F} = {5DB5E281-52B2-4F4B-A316-7F9DAD32FF2E}
 		{28FE2836-58CE-48E6-B657-0A3A836AEC14} = {21E1D26A-635F-4965-A56E-20263D2A09FF}
 		{E93CDEDA-0221-42F2-9408-896CE5FEE69D} = {5DB5E281-52B2-4F4B-A316-7F9DAD32FF2E}
-		{C99691DA-6E5B-4194-972E-7992F4CC4486} = {59FC2C0D-BF12-4A99-BC50-A104948DB1DC}
+		{A45B902F-DE07-4502-8F8C-2671B987D72C} = {5DB5E281-52B2-4F4B-A316-7F9DAD32FF2E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FCFA9AFA-4914-4449-A66D-AE20900F0AA5}

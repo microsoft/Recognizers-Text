@@ -63,9 +63,11 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly string OrdinalEnglishRegex = $@"(?<=\b){AllOrdinalRegex}(?=\b)";
       public const string FractionNotationWithSpacesRegex = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))";
       public static readonly string FractionNotationRegex = $@"{BaseNumbers.FractionNotationRegex}";
-      public static readonly string RoundMultiplierRegex = $@"\b\s*((of\s+)?a\s+)?(?<multiplier>{RoundNumberIntegerRegex})$";
+      public static readonly string FractionMultiplierRegex = $@"(?<fracMultiplier>\s+and\s+(a|one|{TwoToNineIntegerRegex})\s+(half|quarter|third|fourth|fifth|sixth|seventh|eighth|nine?th|tenth)s?)";
+      public static readonly string RoundMultiplierWithFraction = $@"(?<=(?<!{RoundNumberIntegerRegex}){FractionMultiplierRegex}\s+)?(?<multiplier>(?:million|mln|billion|bln|trillion|tln)s?)(?={FractionMultiplierRegex}?$)";
+      public static readonly string RoundMultiplierRegex = $@"\b\s*((of\s+)?a\s+)?({RoundMultiplierWithFraction}|(?<multiplier>(?:hundred|thousand|lakh|crore)s?)$)";
       public static readonly string FractionNounRegex = $@"(?<=\b)({AllIntRegex}\s+(and\s+)?)?(({AllIntRegex})(\s+|\s*-\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))s|halves|quarters)((\s+of\s+a)?\s+{RoundNumberIntegerRegex})?|(half(\s+a)?|quarter(\s+of\s+a)?)\s+{RoundNumberIntegerRegex})(?=\b)";
-      public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)((({AllIntRegex}\s+(and\s+)?)?(an?|one)(\s+|\s*-\s*)(?!\bfirst\b|\bsecond\b)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|(half|quarter)(((\s+of)?\s+a)?\s+{RoundNumberIntegerRegex})?))|(half))(?=\b)";
+      public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)(((({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\s+(and\s+)?)?(an?|one)(\s+|\s*-\s*)(?!\bfirst\b|\bsecond\b)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|(half|quarter)(((\s+of)?\s+a)?\s+{RoundNumberIntegerRegex})?))|(half))(?=\b)";
       public static readonly string FractionPrepositionRegex = $@"(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<![\.,])\d+))\s+(over|(?<ambiguousSeparator>in|out\s+of))\s+(?<denominator>({AllIntRegex})|(\d+)(?![\.,]))(?=\b)";
       public static readonly string FractionPrepositionWithinPercentModeRegex = $@"(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<![\.,])\d+))\s+over\s+(?<denominator>({AllIntRegex})|(\d+)(?![\.,]))(?=\b)";
       public static readonly string AllPointRegex = $@"((\s+{ZeroToNineIntegerRegex})+|(\s+{SeparaIntRegex}))";
@@ -165,7 +167,14 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"trillion", 1000000000000 },
             { @"tln", 1000000000000 },
             { @"lakh", 100000 },
-            { @"crore", 10000000 }
+            { @"crore", 10000000 },
+            { @"hundreds", 100 },
+            { @"thousands", 1000 },
+            { @"millions", 1000000 },
+            { @"billions", 1000000000 },
+            { @"trillions", 1000000000000 },
+            { @"lakhs", 100000 },
+            { @"crores", 10000000 }
         };
       public static readonly Dictionary<string, long> OrdinalNumberMap = new Dictionary<string, long>
         {
@@ -252,6 +261,13 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"tln", 1000000000000 },
             { @"lakh", 100000 },
             { @"crore", 10000000 },
+            { @"hundreds", 100 },
+            { @"thousands", 1000 },
+            { @"millions", 1000000 },
+            { @"billions", 1000000000 },
+            { @"trillions", 1000000000000 },
+            { @"lakhs", 100000 },
+            { @"crores", 10000000 },
             { @"hundredth", 100 },
             { @"thousandth", 1000 },
             { @"millionth", 1000000 },
