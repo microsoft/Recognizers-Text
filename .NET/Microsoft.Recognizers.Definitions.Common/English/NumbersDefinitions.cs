@@ -167,7 +167,14 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"trillion", 1000000000000 },
             { @"tln", 1000000000000 },
             { @"lakh", 100000 },
-            { @"crore", 10000000 }
+            { @"crore", 10000000 },
+            { @"hundreds", 100 },
+            { @"thousands", 1000 },
+            { @"millions", 1000000 },
+            { @"billions", 1000000000 },
+            { @"trillions", 1000000000000 },
+            { @"lakhs", 100000 },
+            { @"crores", 10000000 }
         };
       public static readonly Dictionary<string, long> OrdinalNumberMap = new Dictionary<string, long>
         {
@@ -254,6 +261,13 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"tln", 1000000000000 },
             { @"lakh", 100000 },
             { @"crore", 10000000 },
+            { @"hundreds", 100 },
+            { @"thousands", 1000 },
+            { @"millions", 1000000 },
+            { @"billions", 1000000000 },
+            { @"trillions", 1000000000000 },
+            { @"lakhs", 100000 },
+            { @"crores", 10000000 },
             { @"hundredth", 100 },
             { @"thousandth", 1000 },
             { @"millionth", 1000000 },
