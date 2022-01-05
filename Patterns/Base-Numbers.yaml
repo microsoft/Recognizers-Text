@@ -9,7 +9,8 @@ FractionNotationRegex: !simpleRegex
 DoubleRegexDefinition: !paramsRegex
   def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))\d{1,3}(({thousandsmark}\d{3})+{decimalmark}|({decimalmark}\d{3})+{thousandsmark})\d+(?={placeholder})
   params: [ placeholder, thousandsmark, decimalmark ]
-PlaceHolderDefault: \D|\b
+PlaceHolderDefault: (?=\D)|\b
+PlaceHolderMixed: \D|\b
 # Not directly in use in QueryProcessor due to inter-dependency issue with different .NET targets
 CaseSensitiveTerms: !simpleRegex
   def: (?<=(\s|\d))(kB|K[Bb]?|M[BbM]?|G[Bb]?|B)\b
