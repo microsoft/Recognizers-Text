@@ -696,6 +696,12 @@ AmbiguousTimezoneList: !list
 AbbrToMinMapping: !dictionary
  types: [ string , int ]
  entries:
+   acdt: 630
+   acst: 570
+   act: -300
+   acwst: 525
+   adt: -180
+   aedt: 660
    aest: 600
    aft: 270
    akdt: -480
