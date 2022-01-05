@@ -185,14 +185,18 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
            TestDateTimeParser(testSpec);
        }
 
-       [NetCoreTestDataSource]
-       [TestMethod]
-       public void TimeZoneParser(TestModel testSpec)
-       {
+        */
+
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void TimeZoneParser(TestModel testSpec)
+        {
            ExtractorInitialize(Extractors);
            ParserInitialize(Parsers);
            TestDateTimeParser(testSpec);
-       }
+        }
+
+        /*
 
        [NetCoreTestDataSource]
        [TestMethod]
