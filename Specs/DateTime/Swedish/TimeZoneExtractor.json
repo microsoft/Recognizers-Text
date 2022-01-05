@@ -12,18 +12,6 @@
     ]
   },
   {
-    "Input": "Boka ett rum åt mig afghansk tid",
-    "NotSupportedByDesign": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "afghansk tid",
-        "Type": "timezone",
-        "Start": 20,
-        "Length": 12
-      }
-    ]
-  },
-  {
     "Input": "Jag befinner mig i Amerikansk-Stillahavs normaltid",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
@@ -36,16 +24,26 @@
     ]
   },
   {
-    "Input": "Klockan är  Östamerikansk sommartid",
-    "Comment": "This currently doesn't work since diacritics are processed (removed) for all cultures. Line 34 in BaseTimeZoneExtractor.cs. Östamerikansk -> Ostamerikansk.",
+    "Input": "Jag befinner mig i Aqtöbe/Aktiubinsk tid",
     "NotSupportedByDesign": "javascript, python, java",
-    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "Östamerikansk sommartid",
+        "Text": "aqtöbe/aktiubinsk tid",
         "Type": "timezone",
-        "Start": 9,
+        "Start": 19,
         "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Klockan är 13:00 Östamerikansk sommartid",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "östamerikansk sommartid",
+        "Type": "timezone",
+        "Start": 17,
+        "Length": 23
       }
     ]
   },

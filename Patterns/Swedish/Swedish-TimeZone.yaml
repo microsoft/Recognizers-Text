@@ -339,9 +339,12 @@ FullNameList: !list
     - Centralaustralisk normaltid
     - Acretid
     - Central västaustralisk normaltid
+    - Central vastaustralisk normaltid
     - Atlantisk sommartid
     - Östaustralisk sommartid
+    - Ostaustralisk sommartid
     - Östaustralisk normaltid
+    - Ostaustralisk normaltid
     - Afghansk tid
     - Alaska sommartid
     - Alaska normaltid
@@ -351,10 +354,12 @@ FullNameList: !list
     - Amazonsk tid
     - Anadyrtid
     - Aqtöbe/Aktiubinsk tid
+    - Aqtobe/Aktiubinsk tid
     - Argentinsk tid
     - Arabisk normaltid
     - Atlantisk normaltid
     - Västaustralisk normaltid
+    - Vastaustralisk normaltid
     - Azorisk sommartid
     - Azorisk tid
     - Azerbaijansk sommartid
@@ -368,16 +373,20 @@ FullNameList: !list
     - Bhutansk tid
     - Centralafrikansk tid
     - Kokosöarnas tid
+    - Kokosoarnas tid
     - Centralamerikansk sommartid
     - Kubansk sommartid
     - Centraleuropeisk sommartid
     - Centraleuropeisk tid
     - Chathamöarnas sommartid
+    - Chathamoarnas sommartid
     - Chathamöarna normaltid
+    - Chathamoarna normaltid
     - Tjojbalsantid
     - Chamorro normaltid
     - Chuuktid
     - Cooköarnas tid
+    - Cookoarnas tid
     - Chilensk sommartid
     - Chilensk normaltid
     - Colombiansk tid
@@ -386,26 +395,39 @@ FullNameList: !list
     - Kinesisk normaltid
     - Kapverdiansk tid
     - Julötid
+    - Julotid
     - Påsköns sommartid
+    - Paskons sommartid
     - Påsköns normaltid
+    - Paskons normaltid
     - Östafrikansk tid
+    - Ostafrikansk tid
     - Equadoriansk tid
     - Östamerikansk sommartid
+    - Ostamerikansk sommartid
     - Östeuropeisk sommartid
+    - Osteuropeisk sommartid
     - Östeuropeisk tid
+    - Osteuropeisk tid
     - Östgrönländsk sommartid
+    - Ostgronlandsk sommartid
     - Östgrönländsk tid
+    - Ostgronlandsk tid
     - Östamerikansk normaltid
+    - Ostamerikansk normaltid
     - Ytterligare-östeuropeisk tid
+    - Ytterligare-osteuropeisk tid
     - Fiji sommartid
     - Fijitid
     - Falklandsöarnas sommartid
+    - Falklandsoarnas sommartid
     - Fernando de Noronha tid
     - Galápagostid
     - Gambierstid
     - Georgisk normaltid
     - Franska Guyana tid
     - Gilbertöarnas tid
+    - Gilbertoarnas tid
     - Greenwichtid
     - Gulf normaltid
     - Guyanatid
@@ -419,6 +441,7 @@ FullNameList: !list
     - Irkutsktid
     - Iransk normaltid
     - Irländsk normaltid
+    - Irlandsk normaltid
     - Indisk normaltid
     - Israelisk normaltid
     - Japansk normaltid
@@ -429,10 +452,12 @@ FullNameList: !list
     - Lord Howe sommartid
     - Lord Howe normaltid
     - Linjeöarnas tid
+    - Linjeoarnas tid
     - Magadantid
     - Marquesastid
     - Amerikansk-Mountain sommartid
     - Marshallöarnas tid
+    - Marshalloarnas tid
     - Burmesisk tid
     - Moskva normaltid
     - Amerikansk-Mountain normaltid
@@ -447,7 +472,9 @@ FullNameList: !list
     - Newfoundland normaltid
     - Niuetid
     - Nyzeeländsk sommartid
+    - Nyzeelandsk sommartid
     - Nyzeeländsk normaltid
+    - Nyzeelandsk normaltid
     - Omsk normaltid
     - Oraltid
     - Amerikansk-Stillahavs sommartid
@@ -455,12 +482,14 @@ FullNameList: !list
     - Kamchatka tid
     - Papua Nya Guineansk tid
     - Phoenixöarnas tid
+    - Phoenixoarnas tid
     - Filippinsk tid
     - Pakistansk normaltid
     - Saint-Pierre och Miquelon sommartid
     - Saint-Pierre och Miquelon normaltid
     - Pohnpei normaltid
     - Pitcairnöarnas normaltid
+    - Pitcairnoarnas normaltid
     - Amerikansk-Stillahavs normaltid
     - Palauisk tid
     - Paraguayansk sommartid
@@ -468,10 +497,12 @@ FullNameList: !list
     - Paraguayansk tid
     - Qyzylordatid
     - Réuniontid
+    - Reuniontid
     - Sachalintid
     - Samaratid
     - Sydafrikansk normaltid
     - Solomonöarnas tid
+    - Solomonoarnas tid
     - Seychellisk tid
     - Singaporiansk tid
     - Surinamesisk tid
@@ -479,6 +510,7 @@ FullNameList: !list
     - Tahitisk tid
     - Tadzjikisk tid
     - Östtimorstid
+    - Osttimorstid
     - Turkmenistansk tid
     - Tongatid
     - Turkisk tid
@@ -492,18 +524,29 @@ FullNameList: !list
     - Vladivostoktid
     - Vanuatuansk tid
     - Västafrikansk sommartid
+    - Vastafrikansk sommartid
     - Västafrikansk tid
+    - Vastafrikansk tid
     - Västeuropeisk sommartid
+    - Vasteuropeisk sommartid
     - Västeuropeisk tid
+    - Vasteuropeisk tid
     - Wallis och Futuna tid
     - Västgrönländsk sommartid
+    - Vastgronlandsk sommartid
     - Västgrönländsk tid
+    - Vastgronlandsk tid
     - Västindonesisk tid
+    - Vastindonesisk tid
     - Östindonesisk tid
+    - Ostindonesisk tid
     - Centralindonesisk tid
     - Västsahara sommartid
+    - Vastsahara sommartid
     - Västsamoansk tid
+    - Vastsamoansk tid
     - Västsahara normaltid
+    - Vastsahara normaltid
     - Jakutsktid
     - Yekaterinburgtid
     # Default (English) implementation
@@ -1070,6 +1113,7 @@ FullToMinMapping: !dictionary
    Östamerikansk normaltid: -300
    Ostamerikansk normaltid: -300
    Ytterligare-östeuropeisk tid: 180
+   Ytterligare-osteuropeisk tid: 180
    Fiji sommartid: 780
    Fijitid: 720
    Falklandsöarnas sommartid: -180
