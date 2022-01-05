@@ -5,7 +5,7 @@ DirectUtcRegex: !simpleRegex
 AbbreviationsList: !list
   types: [string]
   entries:
-    # Swedish implementation
+    # Swedish extensions
     - ACDT
     - ACST
     - ACT
@@ -431,7 +431,6 @@ FullNameList: !list
     - Linjeöarnas tid
     - Magadantid
     - Marquesastid
-    - Marquesastid
     - Amerikansk-Mountain sommartid
     - Marshallöarnas tid
     - Burmesisk tid
@@ -696,43 +695,25 @@ AmbiguousTimezoneList: !list
 AbbrToMinMapping: !dictionary
  types: [ string , int ]
  entries:
-   acdt: 630
-   acst: 570
-   act: -300
+   # Swedish extensions
    acwst: 525
-   adt: -180
-   aedt: 660
-   aest: 600
-   aft: 270
-   akdt: -480
-   akst: -540
    almt: 360
-   amst: -180
    #amt: 240
    #amt: -240
    anat: 720
    aqtt: 300
-   art: -180
    #ast: 180
    #ast: -240
-   awst: 480
-   azost: 0
-   azot: -60
-   azst: 300
-   azt: 240
    bnt: 480
    bot: -240
    brst: -120
    brt: -180
    #bst: 60
    #bst: 360
-   btt: 360
    cat: 120
    cct: 390
    #cdt: -300
    #cdt: -240
-   cest: 120
-   cet: 60
    chadt: 825
    chast: 765
    chot: 480
@@ -741,122 +722,64 @@ AbbrToMinMapping: !dictionary
    ckt: -600
    clst: -180
    clt: -240
-   cot: -300
-   #cst: -360
-   #cst: -300
-   #cst: 480
-   cvt: -60
    cxt: 420
    easst: -300
    east: -360
-   eat: 180
-   ect: -300
-   edt: -240
-   eest: 180
-   eet: 120
-   egst: 0
    egt: -60
-   est: -300
    fet: 180
-   fjst: 780
-   fjt: 720
    fkst: -180
    fnt: -120
    galt: -360
    gamt: -540
-   get: 240
    gft: -180
    gilt: 720
-   gmt: 0
-   gst: 240
    gyt: -240
-   hdt: -540
-   hkt: 480
    hovt: 420
-   hst: -600
    ict: 420
    idt: 180
-   irdt: 270
-   irkt: 480
-   irst: 210
-   #ist: 60
-   #ist: 330
-   #ist: 120
-   jst: 540
    kgt: 360
    kost: 660
-   krat: 420
-   kst: 540
    lhdt: 660
    lhst: 630
-   lint: 840
-   magt: 660
    #mart: 570
-   #mart: -570
-   mdt: -360
+   # Used mart entry is for Marquesas Islands (French Polynesia) in the Pacific Ocean
+   mart: -570
    mht: 720
    mmt: 390
-   msk: 180
-   mst: -420
-   mut: 240
    mvt: 300
    myt: 480
    nct: 660
-   ndt: -150
    nft: 660
-   npt: 345
    nrt: 720
-   nst: -210
    nut: -660
-   nzdt: 780
-   nzst: 720
    omst: 360
    orat: 300
-   pdt: -420
    pet: -300
-   pett: 720
    pgt: 600
    phot: 780
    pht: 480
-   pkt: 300
    pmdt: -120
    pmst: -180
    pont: 660
-   #pst: -480
-   #pst: -480
    pwt: 540
-   pyst: -180
    #pyt: 510
    #pyt: -240
    qyzt: 360
    ret: 240
    sakt: 660
    samt: 240
-   sast: 120
-   sbt: 660
    sct: 240
-   sgt: 480
    srt: -180
-   sst: -660
    taht: -600
    tjt: 300
    tlt: 540
    tmt: 300
-   tot: 780
-   trt: 180
    tvt: 720
    ulast: 540
-   ulat: 480
    uyst: -120
    uyt: -180
    uzt: 300
-   vet: -240
-   vlat: 600
    vut: 660
-   wast: 120
-   wat: 60
-   west: 60
-   wet: 0
    wft: 720
    wgst: -120
    wgt: -180
@@ -866,8 +789,6 @@ AbbrToMinMapping: !dictionary
    #wst: 60
    #wst: 780
    wt: 0
-   yakt: 540
-   yekt: 300
    # Default (English) implementation 
    abst: 180
    acdt: 630
@@ -1163,7 +1084,8 @@ FullToMinMapping: !dictionary
    Lord Howe normaltid: 630
    Linjeöarnas tid: 840
    Magadantid: 660
-   Marquesastid: 570
+   #Marquesastid: 570
+   # Used mart entry is for Marquesas Islands (French Polynesia) in the Pacific Ocean
    Marquesastid: -570
    Amerikansk-Mountain sommartid: -360
    Marshallöarnas tid: 720

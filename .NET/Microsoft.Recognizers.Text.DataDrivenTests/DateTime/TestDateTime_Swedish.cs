@@ -78,14 +78,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Tests
            ExtractorInitialize(Extractors);
            TestDateTimeExtractor(testSpec);
        }
+       */
 
-       [NetCoreTestDataSource]
-       [TestMethod]
-       public void TimeZoneExtractor(TestModel testSpec)
-       {
+        [NetCoreTestDataSource]
+        [TestMethod]
+        public void TimeZoneExtractor(TestModel testSpec)
+        {
            ExtractorInitialize(Extractors);
            TestDateTimeExtractor(testSpec);
-       }
+        }
+
+        /*
 
        [NetCoreTestDataSource]
        [TestMethod]
