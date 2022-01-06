@@ -22505,5 +22505,208 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I'll go back Mon 13th",
+    "Context": {
+      "ReferenceDateTime": "2022-05-01T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "mon 13th",
+        "Start": 13,
+        "End": 20,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-1",
+              "type": "date",
+              "value": "2021-12-13"
+            },
+            {
+              "timex": "XXXX-WXX-1",
+              "type": "date",
+              "value": "2022-06-13"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back Tue 13th",
+    "Context": {
+      "ReferenceDateTime": "2022-05-01T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "tue 13th",
+        "Start": 13,
+        "End": 20,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-2",
+              "type": "date",
+              "value": "2021-07-13"
+            },
+            {
+              "timex": "XXXX-WXX-2",
+              "type": "date",
+              "value": "2022-09-13"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back Wed 13th",
+    "Context": {
+      "ReferenceDateTime": "2022-05-01T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "wed 13th",
+        "Start": 13,
+        "End": 20,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-3",
+              "type": "date",
+              "value": "2022-04-13"
+            },
+            {
+              "timex": "XXXX-WXX-3",
+              "type": "date",
+              "value": "2022-07-13"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back Thu 14th",
+    "Context": {
+      "ReferenceDateTime": "2022-05-01T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "thu 14th",
+        "Start": 13,
+        "End": 20,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-4",
+              "type": "date",
+              "value": "2022-04-14"
+            },
+            {
+              "timex": "XXXX-WXX-4",
+              "type": "date",
+              "value": "2022-07-14"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back Fri 14th",
+    "Context": {
+      "ReferenceDateTime": "2022-05-01T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "fri 14th",
+        "Start": 13,
+        "End": 20,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-5",
+              "type": "date",
+              "value": "2022-01-14"
+            },
+            {
+              "timex": "XXXX-WXX-5",
+              "type": "date",
+              "value": "2022-10-14"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back Sat 14th",
+    "Context": {
+      "ReferenceDateTime": "2022-05-01T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "sat 14th",
+        "Start": 13,
+        "End": 20,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-6",
+              "type": "date",
+              "value": "2021-08-14"
+            },
+            {
+              "timex": "XXXX-WXX-6",
+              "type": "date",
+              "value": "2022-05-14"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back Sun 14th",
+    "Context": {
+      "ReferenceDateTime": "2022-05-01T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "sun 14th",
+        "Start": 13,
+        "End": 20,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-7",
+              "type": "date",
+              "value": "2021-11-14"
+            },
+            {
+              "timex": "XXXX-WXX-7",
+              "type": "date",
+              "value": "2022-08-14"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
