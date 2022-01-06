@@ -6,7 +6,6 @@ AbbreviationsList: !list
   types: [string]
   entries:
     # Swedish extensions
-    - ACDT
     - ACST
     - ACT
     - ACWST
@@ -19,11 +18,9 @@ AbbreviationsList: !list
     - ALMT
     - AMST
     - AMT
-    - AMT
     - ANAT
     - AQTT
     - ART
-    - AST
     - AST
     - AWST
     - AZOST
@@ -35,11 +32,9 @@ AbbreviationsList: !list
     - BRST
     - BRT
     - BST
-    - BST
     - BTT
     - CAT
     - CCT
-    - CDT
     - CDT
     - CEST
     - CET
@@ -52,8 +47,6 @@ AbbreviationsList: !list
     - CLST
     - CLT
     - COT
-    - CST
-    - CST
     - CST
     - CVT
     - CXT
@@ -90,8 +83,6 @@ AbbreviationsList: !list
     - IRKT
     - IRST
     - IST
-    - IST
-    - IST
     - JST
     - KGT
     - KOST
@@ -101,7 +92,6 @@ AbbreviationsList: !list
     - LHST
     - LINT
     - MAGT
-    - MART
     - MART
     - MDT
     - MHT
@@ -133,10 +123,8 @@ AbbreviationsList: !list
     - PMST
     - PONT
     - PST
-    - PST
     - PWT
     - PYST
-    - PYT
     - PYT
     - QYZT
     - RET
@@ -174,97 +162,44 @@ AbbreviationsList: !list
     - WIT
     - WITA
     - WST
-    - WST
     - WT
     - YAKT
     - YEKT
     # Default (English) implementation
     - ABST
     - ACDT
-    - ACST
-    - ACT
-    - ADT
-    - AEDT
-    - AEST
     - AET
-    - AFT
-    - AKDT
-    - AKST
-    - AMST
-    - AMT
     - AOE
-    - AoE
     - ARBST
     - ARST
-    - ART
-    - AST
     - AWDT
-    - AWST
-    - AZOST
-    - AZOT
-    - AZST
-    - AZT
     - BIT
-    - BST
-    - BTT
     - CADT
     - CAST
     - CBST
     - CBT
     - CCST
-    - CDT
     - CDTM
-    - CEST
-    - CET
-    - COT
-    - CST
     - CSTM
     - CT
-    - CVT
-    - EAT
-    - ECT
-    - EDT
     - EDTM
-    - EEST
-    - EET
-    - EGST
     - ESAST
     - ESAT
-    - EST
     - ESTM
     - ET
-    - FJST
-    - FJT
-    - GET
-    - GMT
     - GNDT
     - GNST
-    - GST
     - GTBST
     - HADT
     - HAST
-    - HDT
-    - HKT
-    - HST
-    - IRDT
-    - IRKT
-    - IRST
     - ISDT
     - ISST
-    - IST
     - JDT
-    - JST
-    - KRAT
-    - KST
-    - LINT
     - MAGST
-    - MAGT
     - MAT
-    - MDT
     - MDTM
     - MEST
     - MOST
-    - MSK
     - MSK+1
     - MSK+2
     - MSK+3
@@ -275,62 +210,34 @@ AbbreviationsList: !list
     - MSK+8
     - MSK+9
     - MSK-1
-    - MST
     - MSTM
-    - MUT
     - MVST
     - MYST
     - NCAST
-    - NDT
     - NMDT
     - NMST
-    - NPT
-    - NST
-    - NZDT
-    - NZST
     - NZT
     - PDST
-    - PDT
     - PDTM
-    - PETT
-    - PKT
     - PSAST
     - PSAT
-    - PST
     - PSTM
     - PT
-    - PYST
-    - PYT
     - RST
     - SAEST
     - SAPST
-    - SAST
     - SAWST
-    - SBT
-    - SGT
     - SLT
     - SMST
     - SNST
-    - SST
     - TADT
     - TAST
     - THA
     - TIST
     - TOST
-    - TOT
-    - TRT
     - TST
-    - ULAT
     - UTC
-    - VET
-    - VLAT
-    - WAST
-    - WAT
-    - WEST
-    - WET
     - WPST
-    - YAKT
-    - YEKT
 FullNameList: !list
   types: [string]
   entries:
@@ -704,7 +611,7 @@ FullNameList: !list
     - Pacific
     - Eastern
 BaseTimeZoneSuffixRegex: !simpleRegex
-  def: ((\s+|-)(friendly|compatible))?(\s+|-)time(zone)?
+  def: ((\s+|-)(friendly|compatible))?(\s+|-)(ti(d|me))(zone)?
 LocationTimeSuffixRegex: !nestedRegex
   def: ({BaseTimeZoneSuffixRegex})\b
   references: [BaseTimeZoneSuffixRegex]
@@ -1042,7 +949,7 @@ FullToMinMapping: !dictionary
    Ostaustralisk sommartid: 660
    Östaustralisk normaltid: 600
    Ostaustralisk normaltid: 600
-   Afghansk tid: 270
+   afghansk tid: 270
    Alaska sommartid: -480
    Alaska normaltid: -540
    Almatytid: 360

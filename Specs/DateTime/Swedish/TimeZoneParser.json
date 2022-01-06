@@ -1,5 +1,27 @@
 [
   {
+    "Input": "Boka ett rum åt mig Amazonsk sommartid",
+    "Debug": true,
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "amazonsk sommartid",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+04:30",
+            "UtcOffsetMins": 270
+          }
+        },
+        "Start": 20,
+        "Length": 18
+      }
+    ]
+  },
+  {
     "Input": "Book me a room at beijing time",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -619,7 +641,7 @@
         "Start": 20,
         "Length": 3
       },
-	  {
+      {
         "Text": "CST",
         "Type": "timezone",
         "Value": {
