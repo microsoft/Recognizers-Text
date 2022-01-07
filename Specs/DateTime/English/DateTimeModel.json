@@ -22808,5 +22808,128 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I'll be out tuesday afternoon",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "tuesday afternoon",
+        "Start": 12,
+        "End": 28,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-2TAF",
+              "type": "datetimerange",
+              "start": "2016-11-01 12:00:00",
+              "end": "2016-11-01 16:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-2TAF",
+              "type": "datetimerange",
+              "start": "2016-11-08 12:00:00",
+              "end": "2016-11-08 16:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out tuesday afternoons",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "tuesday afternoons",
+        "Start": 12,
+        "End": 29,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-2TAF",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out Friday mornings",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "friday mornings",
+        "Start": 12,
+        "End": 26,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-5TMO",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out mornings",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "mornings",
+        "Start": 12,
+        "End": 19,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TMO",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out in the mornings",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "in the mornings",
+        "Start": 12,
+        "End": 26,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TMO",
+              "type": "timerange",
+              "start": "08:00:00",
+              "end": "12:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
