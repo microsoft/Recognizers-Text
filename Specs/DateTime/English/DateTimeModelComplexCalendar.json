@@ -13528,7 +13528,7 @@
     "Context": {
       "ReferenceDateTime": "2022-01-07T18:55:00"
     },
-    "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "in half an hour",
@@ -13552,7 +13552,7 @@
     "Context": {
       "ReferenceDateTime": "2022-01-07T18:56:00"
     },
-    "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
         "Text": "half an hour from now",
