@@ -711,5 +711,28 @@
         "Length": 9
       }
     ]
+  },
+  {
+    "Input": "It's an everyday routine.",
+    "Context": {
+      "ReferenceDateTime": "2018-11-30T12:00:00"
+    },
+    "Results": [
+      {
+        "Text": "everyday",
+        "Type": "set",
+        "Value": {
+          "Timex": "P1D",
+          "FutureResolution": {
+            "set": "Set: P1D"
+          },
+          "PastResolution": {
+            "set": "Set: P1D"
+          }
+        },
+        "Start": 8,
+        "Length": 8
+      }
+    ]
   }
 ]

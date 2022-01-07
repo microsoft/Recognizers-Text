@@ -53,9 +53,11 @@ class EnglishNumeric:
     OrdinalEnglishRegex = f'(?<=\\b){AllOrdinalRegex}(?=\\b)'
     FractionNotationWithSpacesRegex = f'(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s+\\d+[/]\\d+(?=(\\b[^/]|$))'
     FractionNotationRegex = f'{BaseNumbers.FractionNotationRegex}'
-    RoundMultiplierRegex = f'\\b\\s*((of\\s+)?a\\s+)?(?<multiplier>{RoundNumberIntegerRegex})$'
+    FractionMultiplierRegex = f'(?<fracMultiplier>\\s+and\\s+(a|one|{TwoToNineIntegerRegex})\\s+(half|quarter|third|fourth|fifth|sixth|seventh|eighth|nine?th|tenth)s?)'
+    RoundMultiplierWithFraction = f'(?<=(?<!{RoundNumberIntegerRegex}){FractionMultiplierRegex}\\s+)?(?<multiplier>(?:million|mln|billion|bln|trillion|tln)s?)(?={FractionMultiplierRegex}?$)'
+    RoundMultiplierRegex = f'\\b\\s*((of\\s+)?a\\s+)?({RoundMultiplierWithFraction}|(?<multiplier>(?:hundred|thousand|lakh|crore)s?)$)'
     FractionNounRegex = f'(?<=\\b)({AllIntRegex}\\s+(and\\s+)?)?(({AllIntRegex})(\\s+|\\s*-\\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))s|halves|quarters)((\\s+of\\s+a)?\\s+{RoundNumberIntegerRegex})?|(half(\\s+a)?|quarter(\\s+of\\s+a)?)\\s+{RoundNumberIntegerRegex})(?=\\b)'
-    FractionNounWithArticleRegex = f'(?<=\\b)((({AllIntRegex}\\s+(and\\s+)?)?(an?|one)(\\s+|\\s*-\\s*)(?!\\bfirst\\b|\\bsecond\\b)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|(half|quarter)(((\\s+of)?\\s+a)?\\s+{RoundNumberIntegerRegex})?))|(half))(?=\\b)'
+    FractionNounWithArticleRegex = f'(?<=\\b)(((({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\\s+(and\\s+)?)?(an?|one)(\\s+|\\s*-\\s*)(?!\\bfirst\\b|\\bsecond\\b)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|(half|quarter)(((\\s+of)?\\s+a)?\\s+{RoundNumberIntegerRegex})?))|(half))(?=\\b)'
     FractionPrepositionRegex = f'(?<!{BaseNumbers.CommonCurrencySymbol}\\s*)(?<=\\b)(?<numerator>({AllIntRegex})|((?<![\\.,])\\d+))\\s+(over|(?<ambiguousSeparator>in|out\\s+of))\\s+(?<denominator>({AllIntRegex})|(\\d+)(?![\\.,]))(?=\\b)'
     FractionPrepositionWithinPercentModeRegex = f'(?<!{BaseNumbers.CommonCurrencySymbol}\\s*)(?<=\\b)(?<numerator>({AllIntRegex})|((?<![\\.,])\\d+))\\s+over\\s+(?<denominator>({AllIntRegex})|(\\d+)(?![\\.,]))(?=\\b)'
     AllPointRegex = f'((\\s+{ZeroToNineIntegerRegex})+|(\\s+{SeparaIntRegex}))'
@@ -157,7 +159,14 @@ class EnglishNumeric:
                               ("trillion", 1000000000000),
                               ("tln", 1000000000000),
                               ("lakh", 100000),
-                              ("crore", 10000000)])
+                              ("crore", 10000000),
+                              ("hundreds", 100),
+                              ("thousands", 1000),
+                              ("millions", 1000000),
+                              ("billions", 1000000000),
+                              ("trillions", 1000000000000),
+                              ("lakhs", 100000),
+                              ("crores", 10000000)])
     OrdinalNumberMap = dict([("first", 1),
                              ("second", 2),
                              ("secondary", 2),
@@ -238,6 +247,13 @@ class EnglishNumeric:
                            ("tln", 1000000000000),
                            ("lakh", 100000),
                            ("crore", 10000000),
+                           ("hundreds", 100),
+                           ("thousands", 1000),
+                           ("millions", 1000000),
+                           ("billions", 1000000000),
+                           ("trillions", 1000000000000),
+                           ("lakhs", 100000),
+                           ("crores", 10000000),
                            ("hundredth", 100),
                            ("thousandth", 1000),
                            ("millionth", 1000000),
