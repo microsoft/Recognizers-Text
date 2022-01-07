@@ -275,7 +275,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public const string UnspecificDatePeriodRegex = @"^(week|fortnight|month|year)$";
       public const string PrepositionSuffixRegex = @"\b(on|in|at|around|circa|from|to)$";
       public const string FlexibleDayRegex = @"(?<DayOfMonth>([A-Za-z]+\s)?[A-Za-z\d]+)";
-      public static readonly string ForTheRegex = $@"\b((((?<=for\s+)the\s+{FlexibleDayRegex})|((?<=on\s+)(the\s+)?{FlexibleDayRegex}(?<=(st|nd|rd|th))))(?<end>\s*(,|\.(?!\d)|!|\?|$)))";
+      public static readonly string ForTheRegex = $@"\b((((?<=\bfor\s+)the\s+{FlexibleDayRegex})|((?<=\bon\s+)(the\s+)?{FlexibleDayRegex}(?<=(st|nd|rd|th))))(?<end>\s*(,|\.(?!\d)|!|\?|$)))";
       public static readonly string WeekDayAndDayOfMonthRegex = $@"\b{WeekDayRegex}\s+(the\s+{FlexibleDayRegex})\b";
       public static readonly string WeekDayAndDayRegex = $@"\b{WeekDayRegex}\s+(?!(the)){DayRegex}(?!([-:]|(\s+({AmDescRegex}|{PmDescRegex}|{OclockRegex}))))\b";
       public const string RestOfDateRegex = @"\b(rest|remaining)\s+(of\s+)?((the|my|this|current)\s+)?(?<duration>week|fortnight|month|year|decade)\b";
