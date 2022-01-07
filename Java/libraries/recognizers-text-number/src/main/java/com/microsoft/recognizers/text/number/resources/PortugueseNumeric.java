@@ -31,6 +31,8 @@ public class PortugueseNumeric {
 
     public static final String ZeroToNineIntegerRegex = "(quatro|cinco|sete|nove|zero|tr[êe]s|seis|oito|d(oi|ua)s|h?uma?)";
 
+    public static final String TwoToNineIntegerRegex = "(quatro|cinco|sete|nove|tr[êe]s|seis|oito|d(oi|ua)s)";
+
     public static final String TenToNineteenIntegerRegex = "(dez[ea]sseis|dez[ea]ssete|dez[ea]nove|dezoito|(c|qua)torze|quinze|treze|d[ée]z|onze|doze)";
 
     public static final String TensNumberIntegerRegex = "(cinquenta|quarenta|trinta|sessenta|setenta|oitenta|noventa|vinte)";
@@ -100,7 +102,7 @@ public class PortugueseNumeric {
 
     public static final String SimpleRoundOrdinalRegex = "(mil[eé]sim[oa]|milion[eé]sim[oa]|bilion[eé]sim[oa]|trilion[eé]sim[oa]|quatrilion[eé]sim[oa]|quintilion[eé]sim[oa])";
 
-    public static final String OneToNineOrdinalRegex = "(primeir[oa]|segund[oa]|terceir[oa]|quart[oa]|quint[oa]|sext[oa]|s[eé]tim[oa]|oitav[oa]|non[oa])";
+    public static final String OneToNineOrdinalRegex = "(primeir[oa]|segund[oa]|terceir[oa]|terç[oa]|quart[oa]|quint[oa]|sext[oa]|s[eé]tim[oa]|oitav[oa]|non[oa])";
 
     public static final String TensOrdinalRegex = "(nonag[eé]sim[oa]|octog[eé]sim[oa]|setuag[eé]sim[oa]|septuag[eé]sim[oa]|sexag[eé]sim[oa]|quinquag[eé]sim[oa]|quadrag[eé]sim[oa]|trig[eé]sim[oa]|vig[eé]sim[oa]|d[eé]cim[oa])";
 
@@ -147,16 +149,27 @@ public class PortugueseNumeric {
 
     public static final String FractionNotationWithSpacesRegex = "(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s+\\d+[/]\\d+(?=(\\b[^/]|$))";
 
-    public static final String FractionNounRegex = "(?<=\\b)({AllIntRegex}\\s+((e|com)\\s+)?)?({AllIntRegex})(\\s+((e|com)\\s)?)((({AllOrdinalRegex})s?|({SpecialFractionInteger})|({SuffixRoundOrdinalRegex})s?)|mei[oa]?|ter[çc]o?)(?=\\b)"
+    public static final String FractionMultiplierRegex = "(?<fracMultiplier>\\s+(e|com)\\s+(meio|(um|{TwoToNineIntegerRegex})\\s+(meio|terç[oa]|quart[oa]|quint[oa]|sext[oa]|s[eé]tim[oa]|oitav[oa]|non[oa]|d[eé]cim[oa])s?))"
+            .replace("{TwoToNineIntegerRegex}", TwoToNineIntegerRegex);
+
+    public static final String RoundMultiplierWithFraction = "(?<multiplier>(?:(mil(h([ãa]o|[õo]es))|bilh([ãa]o|[õo]es)|trilh([ãa]o|[õo]es)|qua[td]rilh([ãa]o|[õo]es)|quintilh([ãa]o|[õo]es))))(?={FractionMultiplierRegex}?$)"
+            .replace("{FractionMultiplierRegex}", FractionMultiplierRegex);
+
+    public static final String RoundMultiplierRegex = "\\b\\s*({RoundMultiplierWithFraction}|(?<multiplier>(mil))$)"
+            .replace("{RoundMultiplierWithFraction}", RoundMultiplierWithFraction);
+
+    public static final String FractionNounRegex = "(?<=\\b)({AllIntRegex}\\s+((e|com)\\s+)?)?(({AllIntRegex})(\\s+((e|com)\\s)?)((({AllOrdinalRegex})s?|({SpecialFractionInteger})|({SuffixRoundOrdinalRegex})s?)|mei[oa]?|ter[çc]o?)|(meio|um\\s+quarto\\s+de)\\s+{RoundNumberIntegerRegex})(?=\\b)"
             .replace("{AllIntRegex}", AllIntRegex)
             .replace("{AllOrdinalRegex}", AllOrdinalRegex)
             .replace("{SpecialFractionInteger}", SpecialFractionInteger)
-            .replace("{SuffixRoundOrdinalRegex}", SuffixRoundOrdinalRegex);
+            .replace("{SuffixRoundOrdinalRegex}", SuffixRoundOrdinalRegex)
+            .replace("{RoundNumberIntegerRegex}", RoundNumberIntegerRegex);
 
-    public static final String FractionNounWithArticleRegex = "(?<=\\b)({AllIntRegex}\\s+(e\\s+)?)?(um|um[as])(\\s+)(({AllOrdinalRegex})|({SuffixRoundOrdinalRegex})|(e\\s+)?mei[oa]?)(?=\\b)"
+    public static final String FractionNounWithArticleRegex = "(?<=\\b)(({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\\s+(e\\s+)?)?((um|um[as])(\\s+)(({AllOrdinalRegex})|({SuffixRoundOrdinalRegex})|(e\\s+)?mei[oa]?)|mei[oa]?)(?=\\b)"
             .replace("{AllIntRegex}", AllIntRegex)
             .replace("{AllOrdinalRegex}", AllOrdinalRegex)
-            .replace("{SuffixRoundOrdinalRegex}", SuffixRoundOrdinalRegex);
+            .replace("{SuffixRoundOrdinalRegex}", SuffixRoundOrdinalRegex)
+            .replace("{RoundNumberIntegerRegexWithLocks}", RoundNumberIntegerRegexWithLocks);
 
     public static final String FractionPrepositionRegex = "(?<!{BaseNumbers.CommonCurrencySymbol}\\s*)(?<=\\b)(?<numerator>({AllIntRegex})|((?<!\\.)\\d+))\\s+sobre\\s+(?<denominator>({AllIntRegex})|((\\d+)(?!\\.)))(?=\\b)"
             .replace("{AllIntRegex}", AllIntRegex)
@@ -213,6 +226,8 @@ public class PortugueseNumeric {
     public static final List<String> WrittenFractionSeparatorTexts = Arrays.asList("com");
 
     public static final List<String> WrittenFractionSuffix = Arrays.asList("avo", "ava");
+
+    public static final List<String> OneHalfTokens = Arrays.asList("um", "meio");
 
     public static final Character PluralSuffix = 's';
 
@@ -307,6 +322,8 @@ public class PortugueseNumeric {
         .put("segunda", 2L)
         .put("terceiro", 3L)
         .put("terceira", 3L)
+        .put("terço", 3L)
+        .put("terça", 3L)
         .put("quarto", 4L)
         .put("quarta", 4L)
         .put("quinto", 5L)

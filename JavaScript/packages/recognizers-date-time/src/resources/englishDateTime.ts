@@ -265,7 +265,7 @@ export namespace EnglishDateTime {
     export const UnspecificDatePeriodRegex = `^(week|fortnight|month|year)$`;
     export const PrepositionSuffixRegex = `\\b(on|in|at|around|circa|from|to)$`;
     export const FlexibleDayRegex = `(?<DayOfMonth>([A-Za-z]+\\s)?[A-Za-z\\d]+)`;
-    export const ForTheRegex = `\\b((((?<=for\\s+)the\\s+${FlexibleDayRegex})|((?<=on\\s+)(the\\s+)?${FlexibleDayRegex}(?<=(st|nd|rd|th))))(?<end>\\s*(,|\\.(?!\\d)|!|\\?|$)))`;
+    export const ForTheRegex = `\\b((((?<=\\bfor\\s+)the\\s+${FlexibleDayRegex})|((?<=\\bon\\s+)(the\\s+)?${FlexibleDayRegex}(?<=(st|nd|rd|th))))(?<end>\\s*(,|\\.(?!\\d)|!|\\?|$)))`;
     export const WeekDayAndDayOfMonthRegex = `\\b${WeekDayRegex}\\s+(the\\s+${FlexibleDayRegex})\\b`;
     export const WeekDayAndDayRegex = `\\b${WeekDayRegex}\\s+(?!(the))${DayRegex}(?!([-:]|(\\s+(${AmDescRegex}|${PmDescRegex}|${OclockRegex}))))\\b`;
     export const RestOfDateRegex = `\\b(rest|remaining)\\s+(of\\s+)?((the|my|this|current)\\s+)?(?<duration>week|fortnight|month|year|decade)\\b`;

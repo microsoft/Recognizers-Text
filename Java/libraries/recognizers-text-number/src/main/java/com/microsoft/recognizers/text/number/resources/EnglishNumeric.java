@@ -127,8 +127,15 @@ public class EnglishNumeric {
     public static final String FractionNotationRegex = "{BaseNumbers.FractionNotationRegex}"
             .replace("{BaseNumbers.FractionNotationRegex}", BaseNumbers.FractionNotationRegex);
 
-    public static final String RoundMultiplierRegex = "\\b\\s*((of\\s+)?a\\s+)?(?<multiplier>{RoundNumberIntegerRegex})$"
-            .replace("{RoundNumberIntegerRegex}", RoundNumberIntegerRegex);
+    public static final String FractionMultiplierRegex = "(?<fracMultiplier>\\s+and\\s+(a|one|{TwoToNineIntegerRegex})\\s+(half|quarter|third|fourth|fifth|sixth|seventh|eighth|nine?th|tenth)s?)"
+            .replace("{TwoToNineIntegerRegex}", TwoToNineIntegerRegex);
+
+    public static final String RoundMultiplierWithFraction = "(?<=(?<!{RoundNumberIntegerRegex}){FractionMultiplierRegex}\\s+)?(?<multiplier>(?:million|mln|billion|bln|trillion|tln)s?)(?={FractionMultiplierRegex}?$)"
+            .replace("{RoundNumberIntegerRegex}", RoundNumberIntegerRegex)
+            .replace("{FractionMultiplierRegex}", FractionMultiplierRegex);
+
+    public static final String RoundMultiplierRegex = "\\b\\s*((of\\s+)?a\\s+)?({RoundMultiplierWithFraction}|(?<multiplier>(?:hundred|thousand|lakh|crore)s?)$)"
+            .replace("{RoundMultiplierWithFraction}", RoundMultiplierWithFraction);
 
     public static final String FractionNounRegex = "(?<=\\b)({AllIntRegex}\\s+(and\\s+)?)?(({AllIntRegex})(\\s+|\\s*-\\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))s|halves|quarters)((\\s+of\\s+a)?\\s+{RoundNumberIntegerRegex})?|(half(\\s+a)?|quarter(\\s+of\\s+a)?)\\s+{RoundNumberIntegerRegex})(?=\\b)"
             .replace("{AllIntRegex}", AllIntRegex)
@@ -136,11 +143,12 @@ public class EnglishNumeric {
             .replace("{RoundNumberOrdinalRegex}", RoundNumberOrdinalRegex)
             .replace("{RoundNumberIntegerRegex}", RoundNumberIntegerRegex);
 
-    public static final String FractionNounWithArticleRegex = "(?<=\\b)((({AllIntRegex}\\s+(and\\s+)?)?(an?|one)(\\s+|\\s*-\\s*)(?!\\bfirst\\b|\\bsecond\\b)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|(half|quarter)(((\\s+of)?\\s+a)?\\s+{RoundNumberIntegerRegex})?))|(half))(?=\\b)"
+    public static final String FractionNounWithArticleRegex = "(?<=\\b)(((({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\\s+(and\\s+)?)?(an?|one)(\\s+|\\s*-\\s*)(?!\\bfirst\\b|\\bsecond\\b)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|(half|quarter)(((\\s+of)?\\s+a)?\\s+{RoundNumberIntegerRegex})?))|(half))(?=\\b)"
             .replace("{AllIntRegex}", AllIntRegex)
             .replace("{AllOrdinalRegex}", AllOrdinalRegex)
             .replace("{RoundNumberOrdinalRegex}", RoundNumberOrdinalRegex)
-            .replace("{RoundNumberIntegerRegex}", RoundNumberIntegerRegex);
+            .replace("{RoundNumberIntegerRegex}", RoundNumberIntegerRegex)
+            .replace("{RoundNumberIntegerRegexWithLocks}", RoundNumberIntegerRegexWithLocks);
 
     public static final String FractionPrepositionRegex = "(?<!{BaseNumbers.CommonCurrencySymbol}\\s*)(?<=\\b)(?<numerator>({AllIntRegex})|((?<![\\.,])\\d+))\\s+(over|(?<ambiguousSeparator>in|out\\s+of))\\s+(?<denominator>({AllIntRegex})|(\\d+)(?![\\.,]))(?=\\b)"
             .replace("{AllIntRegex}", AllIntRegex)
@@ -369,6 +377,13 @@ public class EnglishNumeric {
         .put("tln", 1000000000000L)
         .put("lakh", 100000L)
         .put("crore", 10000000L)
+        .put("hundreds", 100L)
+        .put("thousands", 1000L)
+        .put("millions", 1000000L)
+        .put("billions", 1000000000L)
+        .put("trillions", 1000000000000L)
+        .put("lakhs", 100000L)
+        .put("crores", 10000000L)
         .build();
 
     public static final ImmutableMap<String, Long> OrdinalNumberMap = ImmutableMap.<String, Long>builder()
@@ -455,6 +470,13 @@ public class EnglishNumeric {
         .put("tln", 1000000000000L)
         .put("lakh", 100000L)
         .put("crore", 10000000L)
+        .put("hundreds", 100L)
+        .put("thousands", 1000L)
+        .put("millions", 1000000L)
+        .put("billions", 1000000000L)
+        .put("trillions", 1000000000000L)
+        .put("lakhs", 100000L)
+        .put("crores", 10000000L)
         .put("hundredth", 100L)
         .put("thousandth", 1000L)
         .put("millionth", 1000000L)

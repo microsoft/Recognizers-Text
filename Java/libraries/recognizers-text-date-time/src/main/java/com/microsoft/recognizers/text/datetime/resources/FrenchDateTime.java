@@ -23,9 +23,9 @@ public class FrenchDateTime {
 
     public static final Boolean CheckBothBeforeAfter = false;
 
-    public static final String TillRegex = "(?<till>au|et|(jusqu')?[aà]|avant|--|-|—|——)";
+    public static final String TillRegex = "(?<till>\\b(au|et|(jusqu')?a|avant)\\b|(jusqu')?à|--|-|—|——)";
 
-    public static final String RangeConnectorRegex = "(?<and>de la|au|[aà]|et(\\s*la)?|--|-|—|——)";
+    public static final String RangeConnectorRegex = "(?<and>\\b(de\\s+la|au|(jusqu')?a|et(\\s*la)?)\\b|(jusqu')?à|--|-|—|——)";
 
     public static final String RelativeRegex = "(?<order>prochaine?|de|du|ce(tte)?|l[ae]|derni[eè]re|hier|pr[eé]c[eé]dente|au\\s+cours+(de|du\\s*))";
 
@@ -147,7 +147,7 @@ public class FrenchDateTime {
             .replace("{PastSuffixRegex}", PastSuffixRegex)
             .replace("{NextSuffixRegex}", NextSuffixRegex);
 
-    public static final String OneWordPeriodRegex = "\\b(({RelativeRegex}\\s+)?{WrittenMonthRegex}|(la\\s+)?(weekend|(fin de )?semaine|week-end|mois|ans?|l'année)\\s+{StrictRelativeRegex}|{RelativeRegex}\\s+(weekend|(fin de )?semaine|week-end|mois|ans?|l'année)|weekend|week-end|(mois|l'année))\\b"
+    public static final String OneWordPeriodRegex = "\\b(({RelativeRegex}\\s+)?{WrittenMonthRegex}|(la\\s+)?(weekend|(fin de )?semaine|week-end|mois|ans?|l'année)\\s+{StrictRelativeRegex}|{RelativeRegex}\\s+(weekend|(fin de )?semaine|week-end|mois|ans?|l'année)|weekend|week-end|mois|l'année|an)\\b"
             .replace("{WrittenMonthRegex}", WrittenMonthRegex)
             .replace("{RelativeRegex}", RelativeRegex)
             .replace("{StrictRelativeRegex}", StrictRelativeRegex);
@@ -703,7 +703,7 @@ public class FrenchDateTime {
 
     public static final String SingleAmbiguousMonthRegex = "^(le\\s+)?(may|march)$";
 
-    public static final String UnspecificDatePeriodRegex = "^\\b$";
+    public static final String UnspecificDatePeriodRegex = "^(semaine|mois|an(n[eé]e)?)$";
 
     public static final String PrepositionSuffixRegex = "\\b(du|de|[àa]|vers|dans)$";
 
