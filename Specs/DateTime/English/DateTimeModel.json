@@ -22468,7 +22468,7 @@
   {
     "Input": "Schedule a meeting every week starting next week",
     "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
+      "ReferenceDateTime": "2022-01-10T00:00:00"
     },
     "NotSupported": "java, javascript, python",
     "Results": [
@@ -22495,11 +22495,11 @@
         "Resolution": {
           "values": [
             {
-              "timex": "2016-W46",
-              "Mod": "after",
+              "timex": "2022-W03",
+              "Mod": "since",
               "type": "daterange",
               "sourceEntity": "datetimerange",
-              "start": "2016-11-21"
+              "start": "2022-01-17"
             }
           ]
         }
@@ -22926,6 +22926,31 @@
               "type": "timerange",
               "start": "08:00:00",
               "end": "12:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I wish all my students the best of luck and success for their academic studies starting on Sep 2019",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "Results": [
+      {
+        "Text": "starting on sep 2019",
+        "Start": 79,
+        "End": 98,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-09",
+              "Mod": "since",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "start": "2019-09-01"
             }
           ]
         }
