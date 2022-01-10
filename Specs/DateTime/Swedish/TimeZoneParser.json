@@ -1,7 +1,6 @@
 [
   {
     "Input": "Boka ett rum åt mig afghansk tid",
-    "debug": true,
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
