@@ -20,6 +20,7 @@ class PortugueseNumeric:
     HundredsNumberIntegerRegex = f'(quatrocent[ao]s|trezent[ao]s|seiscent[ao]s|setecent[ao]s|oitocent[ao]s|novecent[ao]s|duzent[ao]s|quinhent[ao]s|cem|(?<!por\\s+)(cento))'
     RoundNumberIntegerRegex = f'(mil(h([ãa]o|[õo]es))?|bilh([ãa]o|[õo]es)|trilh([ãa]o|[õo]es)|qua[td]rilh([ãa]o|[õo]es)|quintilh([ãa]o|[õo]es))'
     ZeroToNineIntegerRegex = f'(quatro|cinco|sete|nove|zero|tr[êe]s|seis|oito|d(oi|ua)s|h?uma?)'
+    TwoToNineIntegerRegex = f'(quatro|cinco|sete|nove|tr[êe]s|seis|oito|d(oi|ua)s)'
     TenToNineteenIntegerRegex = f'(dez[ea]sseis|dez[ea]ssete|dez[ea]nove|dezoito|(c|qua)torze|quinze|treze|d[ée]z|onze|doze)'
     TensNumberIntegerRegex = f'(cinquenta|quarenta|trinta|sessenta|setenta|oitenta|noventa|vinte)'
     DigitsNumberRegex = f'\\d|\\d{{1,3}}(\\.\\d{{3}})'
@@ -44,7 +45,7 @@ class PortugueseNumeric:
     NumbersWithDozenSuffix = f'(((?<!\\d+\\s*)-\\s*)|(?<=\\b))\\d+\\s+dezena(s)?(?=\\b)'
     NumbersWithDozen2Suffix = f'(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s+d[úu]zia(s)(?=\\b)'
     SimpleRoundOrdinalRegex = f'(mil[eé]sim[oa]|milion[eé]sim[oa]|bilion[eé]sim[oa]|trilion[eé]sim[oa]|quatrilion[eé]sim[oa]|quintilion[eé]sim[oa])'
-    OneToNineOrdinalRegex = f'(primeir[oa]|segund[oa]|terceir[oa]|quart[oa]|quint[oa]|sext[oa]|s[eé]tim[oa]|oitav[oa]|non[oa])'
+    OneToNineOrdinalRegex = f'(primeir[oa]|segund[oa]|terceir[oa]|terç[oa]|quart[oa]|quint[oa]|sext[oa]|s[eé]tim[oa]|oitav[oa]|non[oa])'
     TensOrdinalRegex = f'(nonag[eé]sim[oa]|octog[eé]sim[oa]|setuag[eé]sim[oa]|septuag[eé]sim[oa]|sexag[eé]sim[oa]|quinquag[eé]sim[oa]|quadrag[eé]sim[oa]|trig[eé]sim[oa]|vig[eé]sim[oa]|d[eé]cim[oa])'
     HundredOrdinalRegex = f'(cent[eé]sim[oa]|ducent[eé]sim[oa]|tricent[eé]sim[oa]|cuadringent[eé]sim[oa]|quingent[eé]sim[oa]|sexcent[eé]sim[oa]|septingent[eé]sim[oa]|octingent[eé]sim[oa]|noningent[eé]sim[oa])'
     SpecialUnderHundredOrdinalRegex = f'(und[eé]cim[oa]|duod[eé]cimo)'
@@ -59,8 +60,11 @@ class PortugueseNumeric:
     OrdinalEnglishRegex = f'(?<=\\b){AllOrdinalRegex}(?=\\b)'
     FractionNotationRegex = f'{BaseNumbers.FractionNotationRegex}'
     FractionNotationWithSpacesRegex = f'(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s+\\d+[/]\\d+(?=(\\b[^/]|$))'
-    FractionNounRegex = f'(?<=\\b)({AllIntRegex}\\s+((e|com)\\s+)?)?({AllIntRegex})(\\s+((e|com)\\s)?)((({AllOrdinalRegex})s?|({SpecialFractionInteger})|({SuffixRoundOrdinalRegex})s?)|mei[oa]?|ter[çc]o?)(?=\\b)'
-    FractionNounWithArticleRegex = f'(?<=\\b)({AllIntRegex}\\s+(e\\s+)?)?(um|um[as])(\\s+)(({AllOrdinalRegex})|({SuffixRoundOrdinalRegex})|(e\\s+)?mei[oa]?)(?=\\b)'
+    FractionMultiplierRegex = f'(?<fracMultiplier>\\s+(e|com)\\s+(meio|(um|{TwoToNineIntegerRegex})\\s+(meio|terç[oa]|quart[oa]|quint[oa]|sext[oa]|s[eé]tim[oa]|oitav[oa]|non[oa]|d[eé]cim[oa])s?))'
+    RoundMultiplierWithFraction = f'(?<multiplier>(?:(mil(h([ãa]o|[õo]es))|bilh([ãa]o|[õo]es)|trilh([ãa]o|[õo]es)|qua[td]rilh([ãa]o|[õo]es)|quintilh([ãa]o|[õo]es))))(?={FractionMultiplierRegex}?$)'
+    RoundMultiplierRegex = f'\\b\\s*({RoundMultiplierWithFraction}|(?<multiplier>(mil))$)'
+    FractionNounRegex = f'(?<=\\b)({AllIntRegex}\\s+((e|com)\\s+)?)?(({AllIntRegex})(\\s+((e|com)\\s)?)((({AllOrdinalRegex})s?|({SpecialFractionInteger})|({SuffixRoundOrdinalRegex})s?)|mei[oa]?|ter[çc]o?)|(meio|um\\s+quarto\\s+de)\\s+{RoundNumberIntegerRegex})(?=\\b)'
+    FractionNounWithArticleRegex = f'(?<=\\b)(({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\\s+(e\\s+)?)?((um|um[as])(\\s+)(({AllOrdinalRegex})|({SuffixRoundOrdinalRegex})|(e\\s+)?mei[oa]?)|mei[oa]?)(?=\\b)'
     FractionPrepositionRegex = f'(?<!{BaseNumbers.CommonCurrencySymbol}\\s*)(?<=\\b)(?<numerator>({AllIntRegex})|((?<!\\.)\\d+))\\s+sobre\\s+(?<denominator>({AllIntRegex})|((\\d+)(?!\\.)))(?=\\b)'
     AllFloatRegex = f'{AllIntRegex}(\\s+(vírgula|virgula|e|ponto)){AllPointRegex}'
     DoubleWithMultiplierRegex = f'(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\,)))\\d+,\\d+\\s*{BaseNumbers.NumberMultiplierRegex}(?=\\b)'
@@ -86,6 +90,7 @@ class PortugueseNumeric:
     WrittenIntegerSeparatorTexts = [r'e']
     WrittenFractionSeparatorTexts = [r'com']
     WrittenFractionSuffix = [r'avo', r'ava']
+    OneHalfTokens = [r'um', r'meio']
     PluralSuffix = 's'
     HalfADozenRegex = f'meia\\s+d[uú]zia'
     DigitalNumberRegex = f'((?<=\\b)(mil|cem|milh[oõ]es|milh[aã]o|bilh[oõ]es|bilh[aã]o|trilh[oõ]es|trilh[aã]o|milhares|centena|centenas|dezena|dezenas?)(?=\\b))|((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))'
@@ -171,6 +176,8 @@ class PortugueseNumeric:
                              ("segunda", 2),
                              ("terceiro", 3),
                              ("terceira", 3),
+                             ("terço", 3),
+                             ("terça", 3),
                              ("quarto", 4),
                              ("quarta", 4),
                              ("quinto", 5),

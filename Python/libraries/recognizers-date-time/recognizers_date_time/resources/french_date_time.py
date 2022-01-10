@@ -16,8 +16,8 @@ from .base_date_time import BaseDateTime
 class FrenchDateTime:
     LangMarker = 'Fre'
     CheckBothBeforeAfter = False
-    TillRegex = f'(?<till>au|et|(jusqu\')?[aà]|avant|--|-|—|——)'
-    RangeConnectorRegex = f'(?<and>de la|au|[aà]|et(\\s*la)?|--|-|—|——)'
+    TillRegex = f'(?<till>\\b(au|et|(jusqu\')?a|avant)\\b|(jusqu\')?à|--|-|—|——)'
+    RangeConnectorRegex = f'(?<and>\\b(de\\s+la|au|(jusqu\')?a|et(\\s*la)?)\\b|(jusqu\')?à|--|-|—|——)'
     RelativeRegex = f'(?<order>prochaine?|de|du|ce(tte)?|l[ae]|derni[eè]re|hier|pr[eé]c[eé]dente|au\\s+cours+(de|du\\s*))'
     StrictRelativeRegex = f'(?<order>prochaine?|derni[eè]re|hier|pr[eé]c[eé]dente|au\\s+cours+(de|du\\s*))'
     NextSuffixRegex = f'(?<order>prochain(es?)?|suivante)\\b'
@@ -53,7 +53,7 @@ class FrenchDateTime:
     BetweenRegex = f'\\b(entre\\s+)({DayRegex})\\s*{RangeConnectorRegex}\\s*({DayRegex})\\s+{MonthSuffixRegex}((\\s+|\\s*,\\s*){YearRegex})?\\b'
     YearWordRegex = f'\\b(?<year>l\'ann[ée]e)\\b'
     MonthWithYear = f'\\b({WrittenMonthRegex}(\\s*),?(\\s+de)?(\\s*)({YearRegex}|{TwoDigitYearRegex}|(?<order>cette)\\s*{YearWordRegex})|{YearWordRegex}\\s*({PastSuffixRegex}|{NextSuffixRegex}))'
-    OneWordPeriodRegex = f'\\b(({RelativeRegex}\\s+)?{WrittenMonthRegex}|(la\\s+)?(weekend|(fin de )?semaine|week-end|mois|ans?|l\'année)\\s+{StrictRelativeRegex}|{RelativeRegex}\\s+(weekend|(fin de )?semaine|week-end|mois|ans?|l\'année)|weekend|week-end|(mois|l\'année))\\b'
+    OneWordPeriodRegex = f'\\b(({RelativeRegex}\\s+)?{WrittenMonthRegex}|(la\\s+)?(weekend|(fin de )?semaine|week-end|mois|ans?|l\'année)\\s+{StrictRelativeRegex}|{RelativeRegex}\\s+(weekend|(fin de )?semaine|week-end|mois|ans?|l\'année)|weekend|week-end|mois|l\'année|an)\\b'
     MonthNumWithYear = f'({YearRegex}(\\s*)[/\\-\\.](\\s*){MonthNumRegex})|({MonthNumRegex}(\\s*)[/\\-](\\s*){YearRegex})'
     WeekOfMonthRegex = f'(?<wom>(le\\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4|cinqi[èe]me|5)\\s+semaine(\\s+de)?\\s+{MonthSuffixRegex})'
     WeekOfYearRegex = f'(?<woy>(le\\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4|cinqi[èe]me|5)\\s+semaine(\\s+de)?\\s+({YearRegex}|{RelativeRegex}\\s+ann[ée]e))'
@@ -228,7 +228,7 @@ class FrenchDateTime:
     FromRegex2 = f'((depuis|de)(\\s*las?)?)$'
     FromToRegex = f'\\b(du|depuis|des?).+(au|à|a)\\b.+'
     SingleAmbiguousMonthRegex = f'^(le\\s+)?(may|march)$'
-    UnspecificDatePeriodRegex = f'^\\b$'
+    UnspecificDatePeriodRegex = f'^(semaine|mois|an(n[eé]e)?)$'
     PrepositionSuffixRegex = f'\\b(du|de|[àa]|vers|dans)$'
     FlexibleDayRegex = f'(?<DayOfMonth>([A-Za-z]+\\s)?[A-Za-z\\d]+)'
     ForTheRegex = f'\\b(((pour le {FlexibleDayRegex})|(dans (le\\s+)?{FlexibleDayRegex}(?<=(st|nd|rd|th))))(?<end>\\s*(,|\\.|!|\\?|$)))'

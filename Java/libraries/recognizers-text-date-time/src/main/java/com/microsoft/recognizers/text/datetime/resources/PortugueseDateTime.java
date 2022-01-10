@@ -376,7 +376,7 @@ public class PortugueseDateTime {
             .replace("{MiddayRegex}", MiddayRegex)
             .replace("{MidEarlyMorning}", MidEarlyMorning);
 
-    public static final String AtRegex = "\\b(((?<=\\b([aà]s?)\\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\\s+horas?|\\s*h\\b)?|(?<=\\b(s(er)?[aã]o|v[aã]o\\s+ser|^[eé]h?)\\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\\s+horas?|\\s*h\\b))(\\s+{OclockRegex})?|{MidTimeRegex})\\b"
+    public static final String AtRegex = "\\b(((?<=\\b([aà]s?)\\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\\s+horas?|\\s*h\\b)?|(?<=\\b(s(er)?[aã]o|v[aã]o\\s+ser|^[eé]h?)\\s+|^\\s*)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\\s+horas?|\\s*h\\b))(\\s+{OclockRegex})?|{MidTimeRegex})\\b"
             .replace("{HourNumRegex}", HourNumRegex)
             .replace("{BaseDateTime.HourRegex}", BaseDateTime.HourRegex)
             .replace("{WrittenTimeRegex}", WrittenTimeRegex)
@@ -1040,6 +1040,10 @@ public class PortugueseDateTime {
     public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
         .put("^\\d{4}$", "(\\d\\.\\d{4}|\\d{4}\\.\\d)")
         .put("^(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)$", "([$%£&!?@#])(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)|(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)([$%£&@#])")
+        .build();
+
+    public static final ImmutableMap<String, String> AmbiguityTimeFiltersDict = ImmutableMap.<String, String>builder()
+        .put("horas?$", "\\b((por|duração\\s+de|durante)\\s+(\\S+\\s+){1,2}horas?|horas?\\s+(\\S+\\s+){0,2}dur(ação|ou|a(rá|va)?))\\b")
         .build();
 
     public static final List<String> EarlyMorningTermList = Arrays.asList("madrugada");

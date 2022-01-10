@@ -127,7 +127,7 @@ class PortugueseDateTime:
     MidafternoonRegex = f'(?<midafternoon>meio\\s+da\\s+tarde)'
     MiddayRegex = f'(?<midday>meio\\s*(-\\s*)?dia)'
     MidTimeRegex = f'(?<mid>({MidnightRegex}|{MidmorningRegex}|{MidEarlyMorning}|{MidafternoonRegex}|{MiddayRegex}))'
-    AtRegex = f'\\b(((?<=\\b([aà]s?)\\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\\s+horas?|\\s*h\\b)?|(?<=\\b(s(er)?[aã]o|v[aã]o\\s+ser|^[eé]h?)\\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\\s+horas?|\\s*h\\b))(\\s+{OclockRegex})?|{MidTimeRegex})\\b'
+    AtRegex = f'\\b(((?<=\\b([aà]s?)\\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\\s+horas?|\\s*h\\b)?|(?<=\\b(s(er)?[aã]o|v[aã]o\\s+ser|^[eé]h?)\\s+|^\\s*)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\\s+horas?|\\s*h\\b))(\\s+{OclockRegex})?|{MidTimeRegex})\\b'
     ConnectNumRegex = f'({BaseDateTime.HourRegex}(?<min>[0-5][0-9])\\s*{DescRegex})'
     TimeRegex1 = f'(\\b{TimePrefix}\\s+)?({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\\s*({DescRegex})'
     TimeRegex2 = f'(\\b{TimePrefix}\\s+)?(t)?{BaseDateTime.HourRegex}(\\s*)?:(\\s*)?{BaseDateTime.MinuteRegex}((\\s*)?:(\\s*)?{BaseDateTime.SecondRegex})?((\\s*{DescRegex})|\\b)'
@@ -527,6 +527,7 @@ class PortugueseDateTime:
     DurationDateRestrictions = []
     AmbiguityFiltersDict = dict([("^\\d{4}$", "(\\d\\.\\d{4}|\\d{4}\\.\\d)"),
                                  ("^(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)$", "([$%£&!?@#])(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)|(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)([$%£&@#])")])
+    AmbiguityTimeFiltersDict = dict([("horas?$", "\\b((por|duração\\s+de|durante)\\s+(\\S+\\s+){1,2}horas?|horas?\\s+(\\S+\\s+){0,2}dur(ação|ou|a(rá|va)?))\\b")])
     EarlyMorningTermList = [r'madrugada']
     MorningTermList = [r'manha', r'manhã']
     AfternoonTermList = [r'passado o meio dia', r'depois do meio dia']

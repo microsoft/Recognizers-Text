@@ -29,9 +29,11 @@ public class SpanishNumeric {
 
     public static final String HundredsNumberIntegerRegex = "(cuatrocient[ao]s|trescient[ao]s|seiscient[ao]s|setecient[ao]s|ochocient[ao]s|novecient[ao]s|doscient[ao]s|quinient[ao]s|(?<!por\\s+)(cien(to)?))";
 
-    public static final String RoundNumberIntegerRegex = "(mil millones|mill[oó]n(es)?|mil|bill[oó]n(es)?|trill[oó]n(es)?|cuatrill[oó]n(es)?|quintill[oó]n(es)?|sextill[oó]n(es)?|septill[oó]n(es)?)";
+    public static final String RoundNumberIntegerRegex = "(mil\\s+millones|mill[oó]n(es)?|mil|bill[oó]n(es)?|trill[oó]n(es)?|cuatrill[oó]n(es)?|quintill[oó]n(es)?|sextill[oó]n(es)?|septill[oó]n(es)?)";
 
     public static final String ZeroToNineIntegerRegex = "(cuatro|cinco|siete|nueve|cero|tres|seis|ocho|dos|un[ao]?)";
+
+    public static final String TwoToNineIntegerRegex = "(cuatro|cinco|siete|nueve|tres|seis|ocho|dos)";
 
     public static final String TenToNineteenIntegerRegex = "(diecisiete|diecinueve|diecis[eé]is|dieciocho|catorce|quince|trece|diez|once|doce)";
 
@@ -146,16 +148,27 @@ public class SpanishNumeric {
 
     public static final String FractionNotationWithSpacesRegex = "(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s+\\d+[/]\\d+(?=(\\b[^/]|$))";
 
-    public static final String FractionNounRegex = "(?<=\\b)({AllIntRegex}\\s+((y|con)\\s+)?)?({AllIntRegex})(\\s+((y|con)\\s)?)((({AllOrdinalRegex})s?|({SpecialFractionInteger})|({SufixRoundOrdinalRegex})s?)|medi[oa]s?|tercios?)(?=\\b)"
+    public static final String FractionMultiplierRegex = "(?<fracMultiplier>\\s+(y|con)\\s+(medio|(un|{TwoToNineIntegerRegex})\\s+(medio|terci[oa]?|cuart[oa]|quint[oa]|sext[oa]|s[eé]ptim[oa]|octav[oa]|noven[oa]|d[eé]cim[oa])s?))"
+            .replace("{TwoToNineIntegerRegex}", TwoToNineIntegerRegex);
+
+    public static final String RoundMultiplierWithFraction = "(?<multiplier>(?:(mil\\s+millones|mill[oó]n(es)?|bill[oó]n(es)?|trill[oó]n(es)?|cuatrill[oó]n(es)?|quintill[oó]n(es)?|sextill[oó]n(es)?|septill[oó]n(es)?)))(?={FractionMultiplierRegex}?$)"
+            .replace("{FractionMultiplierRegex}", FractionMultiplierRegex);
+
+    public static final String RoundMultiplierRegex = "\\b\\s*({RoundMultiplierWithFraction}|(?<multiplier>(mil))$)"
+            .replace("{RoundMultiplierWithFraction}", RoundMultiplierWithFraction);
+
+    public static final String FractionNounRegex = "(?<=\\b)({AllIntRegex}\\s+((y|con)\\s+)?)?(({AllIntRegex})(\\s+((y|con)\\s)?)((({AllOrdinalRegex})s?|({SpecialFractionInteger})|({SufixRoundOrdinalRegex})s?)|medi[oa]s?|tercios?)|(medio|un\\s+cuarto\\s+de)\\s+{RoundNumberIntegerRegex})(?=\\b)"
             .replace("{AllIntRegex}", AllIntRegex)
             .replace("{AllOrdinalRegex}", AllOrdinalRegex)
             .replace("{SpecialFractionInteger}", SpecialFractionInteger)
-            .replace("{SufixRoundOrdinalRegex}", SufixRoundOrdinalRegex);
+            .replace("{SufixRoundOrdinalRegex}", SufixRoundOrdinalRegex)
+            .replace("{RoundNumberIntegerRegex}", RoundNumberIntegerRegex);
 
-    public static final String FractionNounWithArticleRegex = "(?<=\\b)({AllIntRegex}\\s+(y\\s+)?)?(un|un[oa])(\\s+)(({AllOrdinalRegex})|({SufixRoundOrdinalRegex})|(y\\s+)?medi[oa]s?)(?=\\b)"
+    public static final String FractionNounWithArticleRegex = "(?<=\\b)(({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\\s+(y\\s+)?)?((un|un[oa])(\\s+)(({AllOrdinalRegex})|({SufixRoundOrdinalRegex}))|(un[ao]?\\s+)?medi[oa]s?)(?=\\b)"
             .replace("{AllIntRegex}", AllIntRegex)
             .replace("{AllOrdinalRegex}", AllOrdinalRegex)
-            .replace("{SufixRoundOrdinalRegex}", SufixRoundOrdinalRegex);
+            .replace("{SufixRoundOrdinalRegex}", SufixRoundOrdinalRegex)
+            .replace("{RoundNumberIntegerRegexWithLocks}", RoundNumberIntegerRegexWithLocks);
 
     public static final String FractionPrepositionRegex = "(?<!{BaseNumbers.CommonCurrencySymbol}\\s*)(?<=\\b)(?<numerator>({AllIntRegex})|((?<!\\.)\\d+))\\s+sobre\\s+(?<denominator>({AllIntRegex})|((\\d+)(?!\\.)))(?=\\b)"
             .replace("{AllIntRegex}", AllIntRegex)
@@ -316,6 +329,8 @@ public class SpanishNumeric {
     public static final List<String> WrittenIntegerSeparatorTexts = Arrays.asList("y");
 
     public static final List<String> WrittenFractionSeparatorTexts = Arrays.asList("con");
+
+    public static final List<String> OneHalfTokens = Arrays.asList("un", "medio");
 
     public static final String HalfADozenRegex = "media\\s+docena";
 

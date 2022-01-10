@@ -22,7 +22,8 @@ class BaseNumbers:
 
     def DoubleRegexDefinition(placeholder, thousandsmark, decimalmark):
         return f'(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+[\\.,])))\\d{{1,3}}(({thousandsmark}\\d{{3}})+{decimalmark}|({decimalmark}\\d{{3}})+{thousandsmark})\\d+(?={placeholder})'
-    PlaceHolderDefault = '\\D|\\b'
+    PlaceHolderDefault = '(?=\\D)|\\b'
+    PlaceHolderMixed = '\\D|\\b'
     CaseSensitiveTerms = f'(?<=(\\s|\\d))(kB|K[Bb]?|M[BbM]?|G[Bb]?|B)\\b'
     NumberMultiplierRegex = f'(K|k|MM?|mil|G|T|B|b)'
     MultiplierLookupRegex = f'(k|m(il|m)?|t|g|b)'
