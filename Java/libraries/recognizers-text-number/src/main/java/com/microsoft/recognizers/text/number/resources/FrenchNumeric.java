@@ -29,6 +29,8 @@ public class FrenchNumeric {
 
     public static final String ZeroToNineIntegerRegex = "(une?|deux|trois|quatre|cinq|six|sept|huit|neuf|z[ée]ro)";
 
+    public static final String TwoToNineIntegerRegex = "(deux|trois|quatre|cinq|six|sept|huit|neuf)";
+
     public static final String TenToNineteenIntegerRegex = "((seize|quinze|quatorze|treize|douze|onze)|dix(\\Wneuf|\\Whuit|\\Wsept)?)";
 
     public static final String TensNumberIntegerRegex = "(quatre\\Wvingt(s|\\Wdix)?|soixante(\\Wdix)?|vingt|trente|quarante|cinquante|septante|octante|huitante|nonante)";
@@ -146,15 +148,26 @@ public class FrenchNumeric {
     public static final String FractionNotationRegex = "{BaseNumbers.FractionNotationRegex}"
             .replace("{BaseNumbers.FractionNotationRegex}", BaseNumbers.FractionNotationRegex);
 
-    public static final String FractionNounRegex = "(?<=\\b)({AllIntRegex}\\s+((et)\\s+)?)?({AllIntRegex})(\\s+((et)\\s)?)((({AllOrdinalRegex})s?|({SuffixOrdinalRegex})s?)|demi[es]?|tiers?|quarts?)(?=\\b)"
-            .replace("{AllIntRegex}", AllIntRegex)
-            .replace("{AllOrdinalRegex}", AllOrdinalRegex)
-            .replace("{SuffixOrdinalRegex}", SuffixOrdinalRegex);
+    public static final String FractionMultiplierRegex = "(?<fracMultiplier>\\s+et\\s+(demi[es]?|(une?|{TwoToNineIntegerRegex})\\s+(demie?|tier|quart|(cinqui|sixi|septi|hui[tr]i|neuvi|dixi)[eè]me)s?))"
+            .replace("{TwoToNineIntegerRegex}", TwoToNineIntegerRegex);
 
-    public static final String FractionNounWithArticleRegex = "(?<=\\b)({AllIntRegex}\\s+(et\\s+)?)?(une?)(\\s+)(({AllOrdinalRegex})|({SuffixOrdinalRegex})|(et\\s+)?demi[es]?)(?=\\b)"
+    public static final String RoundMultiplierWithFraction = "(?<multiplier>(millions?|milliards?|billions?))(?={FractionMultiplierRegex}?$)"
+            .replace("{FractionMultiplierRegex}", FractionMultiplierRegex);
+
+    public static final String RoundMultiplierRegex = "\\b\\s*({RoundMultiplierWithFraction}|(?<multiplier>(cent|mille))$)"
+            .replace("{RoundMultiplierWithFraction}", RoundMultiplierWithFraction);
+
+    public static final String FractionNounRegex = "(?<=\\b)({AllIntRegex}\\s+((et)\\s+)?)?({AllIntRegex}(\\s+((et)\\s)?)(({AllOrdinalRegex}s?|{SuffixOrdinalRegex}s?)|(demi[es]?|tiers?|quarts?))|(un\\s+)?(demi|tier|quart)(\\s+(de\\s+)?|\\s*-\\s*){RoundNumberIntegerRegex})(?=\\b)"
             .replace("{AllIntRegex}", AllIntRegex)
             .replace("{AllOrdinalRegex}", AllOrdinalRegex)
-            .replace("{SuffixOrdinalRegex}", SuffixOrdinalRegex);
+            .replace("{SuffixOrdinalRegex}", SuffixOrdinalRegex)
+            .replace("{RoundNumberIntegerRegex}", RoundNumberIntegerRegex);
+
+    public static final String FractionNounWithArticleRegex = "(?<=\\b)(({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\\s+(et\\s+)?)?((une?)(\\s+)(({AllOrdinalRegex})|({SuffixOrdinalRegex})|(et\\s+)?demi[es]?)|demi[es]?)(?=\\b)"
+            .replace("{AllIntRegex}", AllIntRegex)
+            .replace("{AllOrdinalRegex}", AllOrdinalRegex)
+            .replace("{SuffixOrdinalRegex}", SuffixOrdinalRegex)
+            .replace("{RoundNumberIntegerRegexWithLocks}", RoundNumberIntegerRegexWithLocks);
 
     public static final String FractionPrepositionRegex = "(?<!{BaseNumbers.CommonCurrencySymbol}\\s*)(?<=\\b)(?<numerator>({AllIntRegex})|((?<!\\.)\\d+))\\s+sur\\s+(?<denominator>({AllIntRegex})|((\\d+)(?!\\.)))(?=\\b)"
             .replace("{AllIntRegex}", AllIntRegex)
@@ -315,6 +328,8 @@ public class FrenchNumeric {
     public static final List<String> WrittenIntegerSeparatorTexts = Arrays.asList("et", "-");
 
     public static final List<String> WrittenFractionSeparatorTexts = Arrays.asList("et", "sur");
+
+    public static final List<String> OneHalfTokens = Arrays.asList("un", "demi");
 
     public static final String HalfADozenRegex = "(?<=\\b)demie?\\s+douzaine";
 

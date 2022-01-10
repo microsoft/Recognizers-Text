@@ -13499,5 +13499,76 @@
         }
       }
     ]
+  },
+  {
+    "Input": "It's an everyday routine.",
+    "Context": {
+      "ReferenceDateTime": "2018-11-30T12:00:00"
+    },
+    "Results": [
+      {
+        "Text": "everyday",
+        "Start": 8,
+        "End": 15,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1D",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "We meet in half an hour",
+    "Context": {
+      "ReferenceDateTime": "2022-01-07T18:55:00"
+    },
+    "NotSupportedByDesign": "javascript, python",
+    "Results": [
+      {
+        "Text": "in half an hour",
+        "Start": 8,
+        "End": 22,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2022-01-07T19:25:00",
+              "type": "datetime",
+              "value": "2022-01-07 19:25:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "What about half an hour from now?",
+    "Context": {
+      "ReferenceDateTime": "2022-01-07T18:56:00"
+    },
+    "NotSupportedByDesign": "javascript, python",
+    "Results": [
+      {
+        "Text": "half an hour from now",
+        "Start": 11,
+        "End": 31,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2022-01-07T19:26:00",
+              "type": "datetime",
+              "value": "2022-01-07 19:26:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
