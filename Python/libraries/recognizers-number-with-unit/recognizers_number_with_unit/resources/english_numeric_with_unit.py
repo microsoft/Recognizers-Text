@@ -218,7 +218,7 @@ class EnglishNumericWithUnit:
                                ("Cuban convertible peso", "cuban convertible pesos|cuban convertible peso|cuc|cuba convertible pesos|cuba convertible peso"),
                                ("Cuban peso", "cuban pesos|cuban peso|cup|cuba pesos|cuba peso"),
                                ("Dominican peso", "dominican pesos|dominican peso|dop|dominica pesos|dominica peso"),
-                               ("Mexican peso", "mexican pesos|mexican peso|mxn|mexico pesos|mexico peso"),
+                               ("Mexican peso", "mexican pesos|mexican peso|mxn|mexico pesos|mexico peso|mxn$"),
                                ("Philippine peso", "piso|philippine pesos|philippine peso|₱|php"),
                                ("Uruguayan peso", "uruguayan pesos|uruguayan peso|uyu"),
                                ("Peso", "pesos|peso"),
@@ -243,7 +243,7 @@ class EnglishNumericWithUnit:
                                ("Pence", "pence"),
                                ("Shilling", "shillings|shilling|shilingi|sh"),
                                ("Penny", "pennies|penny"),
-                               ("United States dollar", "united states dollars|united states dollar|united states $|u.s. dollars|u.s. dollar|u s dollar|u s dollars|usd|american dollars|american dollar|us$|us dollar|us dollars|u.s dollar|u.s dollars"),
+                               ("United States dollar", "united states dollars|united states dollar|united states $|u.s. dollars|u.s. dollar|u s dollar|u s dollars|usd|american dollars|american dollar|us$|us dollar|us dollars|u.s dollar|u.s dollars|usd$"),
                                ("East Caribbean dollar", "east caribbean dollars|east caribbean dollar|east Caribbean $|xcd"),
                                ("Australian dollar", "australian dollars|australian dollar|australian $|australian$|aud|australia dollars|australia dollar|australia $|australia$"),
                                ("Bahamian dollar", "bahamian dollars|bahamian dollar|bahamian $|bahamian$|bsd|bahamia dollars|bahamia dollar|bahamia $|bahamia$"),
@@ -549,8 +549,9 @@ class EnglishNumericWithUnit:
     CurrencyPrefixList = dict([("Dobra", "db|std"),
                                ("Dollar", "$"),
                                ("Brazilian Real", "R$"),
-                               ("United States dollar", "united states $|us$|us $|u.s. $|u.s $"),
+                               ("United States dollar", "united states $|us$|us $|u.s. $|u.s $|usd$"),
                                ("East Caribbean dollar", "east caribbean $"),
+                               ("Mexican peso", "mxn$"),
                                ("Australian dollar", "australian $|australia $"),
                                ("Bahamian dollar", "bahamian $|bahamia $"),
                                ("Barbadian dollar", "barbadian $|barbadin $"),
@@ -673,9 +674,10 @@ class EnglishNumericWithUnit:
                              ("Bushel", "bushel"),
                              ("Hogshead", "hogshead")])
     AmbiguousVolumeUnitList = [r'l', r'ounce', r'oz', r'cup', r'cups', r'peck', r'pecks', r'cord', r'cords', r'gill', r'gills', r'barrel', r'barrels', r'tbl', r'quart', r'quarts', r'pinch', r't.', r'T.', r'Tb.', r'ts.']
-    WeightSuffixList = dict([("Kilogram", "kg|kilogram|kilograms|kilo|kilos"),
-                             ("Gram", "g|gram|grams|gm"),
-                             ("Milligram", "mg|milligram|milligrams"),
+    WeightSuffixList = dict([("Kilogram", "kg|kilogram|kilograms|kilo|kilos|kilogramme|kilogrammes"),
+                             ("Gram", "g|gram|grams|gm|gramme|grammes"),
+                             ("Milligram", "mg|milligram|milligrams|milligramme|milligrammes"),
+                             ("Microgram", "μg|microgram|micrograms|micro gram|micro grams|microgramme|microgrammes|mcg"),
                              ("Gallon", "-gallon|gallons|gallon|gal"),
                              ("Metric ton", "metric tons|metric ton"),
                              ("Ton", "-ton|ton|tons|tonne|tonnes"),
@@ -688,7 +690,8 @@ class EnglishNumericWithUnit:
                              ("Short hundredweight (US)", "us short hundredweight|short hundredweight (us)"),
                              ("Stone", "stone"),
                              ("Dram", "dram|drachm|drachma|roman drachma|greek drachma")])
-    AmbiguousWeightUnitList = [r'g', r'oz', r'stone', r'dram', r'lbs', r'gal', r'grain', r'grains']
+    AmbiguousWeightUnitList = [r'g', r'gr', r'oz', r'stone', r'dram', r'lbs', r'gal', r'grain', r'grains']
     AmbiguityFiltersDict = dict([("\\bm\\b", "((('|’)\\s*m)|(m\\s*('|’)))"),
-                                 ("^\\d{5} [cf]$", "\\b([a-z]{2} \\d{5} [cf])\\b")])
+                                 ("^\\d{5} [cf]$", "\\b([a-z]{2} \\d{5} [cf])\\b"),
+                                 ("\\b\\d+\\s*\\p{L}+$", "((\\d+\\s*\\p{L}+[-—–-]?\\d+)|((\\p{L}[-—–-]?|\\d[-—–-])\\d+\\s*\\p{L}+))")])
 # pylint: enable=line-too-long

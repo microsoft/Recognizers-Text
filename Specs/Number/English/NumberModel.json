@@ -3011,5 +3011,472 @@
         "End": 17
       }
     ]
+  },
+  {
+    "Input": "The weight is 45{kg)",
+    "Results": [
+      {
+        "Text": "45",
+        "Start": 14,
+        "End": 15,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "45"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "SCP-173",
+    "Results": [
+      {
+        "Text": "173",
+        "Start": 4,
+        "End": 6,
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "173"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "1.3x10^6",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "1.3x10^6",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "1300000"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "1.3e6",
+    "Results": [
+      {
+        "Text": "1.3e6",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "1300000"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "6.23x10^-4",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "6.23x10^-4",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "0.000623"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "1,674.5 G",
+    "Results": [
+      {
+        "Text": "1,674.5 g",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1674500000000"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "1,674,200.5 M",
+    "Results": [
+      {
+        "Text": "1,674,200.5 m",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1674200500000"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "1,674,200.5",
+    "Results": [
+      {
+        "Text": "1,674,200.5",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "1674200.5"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "1,674,200",
+    "Results": [
+      {
+        "Text": "1,674,200",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1674200"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "1,674.5 million",
+    "Results": [
+      {
+        "Text": "1,674.5 million",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1674500000"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "Exercises nrs. 22,24,26,31.",
+    "Results": [
+      {
+        "Text": "22",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "22"
+        },
+        "Start": 15,
+        "End": 16
+      },
+      {
+        "Text": "24",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "24"
+        },
+        "Start": 18,
+        "End": 19
+      },
+      {
+        "Text": "26",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "26"
+        },
+        "Start": 21,
+        "End": 22
+      },
+      {
+        "Text": "31",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "31"
+        },
+        "Start": 24,
+        "End": 25
+      }
+    ]
+  },
+  {
+    "Input": "Exercise nr. 22,240,260,310.",
+    "Results": [
+      {
+        "Text": "22,240,260,310",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "22240260310"
+        },
+        "Start": 13,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "The number is 1,3.",
+    "Results": [
+      {
+        "Text": "1,3",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "1.3"
+        },
+        "Start": 14,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "There are one million and a half possibilities",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "one million and a half",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1500000"
+        },
+        "Start": 10,
+        "End": 31
+      }
+    ]
+  },
+  {
+    "Input": "The population is 3 million and a half",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3 million and a half",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "3500000"
+        },
+        "Start": 18,
+        "End": 37
+      }
+    ]
+  },
+  {
+    "Input": "They have two million and one half",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "two million and one half",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "2500000"
+        },
+        "Start": 10,
+        "End": 33
+      }
+    ]
+  },
+  {
+    "Input": "Half million eggs have been broken today",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "half million",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "500000"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "There are five and a half million fishes in this lake",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "five and a half million",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "5500000"
+        },
+        "Start": 10,
+        "End": 32
+      }
+    ]
+  },
+  {
+    "Input": "Current value is one billion and a half million",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "one billion and a half million",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1000500000"
+        },
+        "Start": 17,
+        "End": 46
+      }
+    ]
+  },
+  {
+    "Input": "Last value was one billion and a quarter million",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "one billion and a quarter million",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1000250000"
+        },
+        "Start": 15,
+        "End": 47
+      }
+    ]
+  },
+  {
+    "Input": "The result is three and one fourth",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "three and one fourth",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "3.25"
+        },
+        "Start": 14,
+        "End": 33
+      }
+    ]
+  },
+  {
+    "Input": "They have 3 million and a quarter",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3 million and a quarter",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "3250000"
+        },
+        "Start": 10,
+        "End": 32
+      }
+    ]
+  },
+  {
+    "Input": "The number is five billion and three quarters",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "five billion and three quarters",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "5750000000"
+        },
+        "Start": 14,
+        "End": 44
+      }
+    ]
+  },
+  {
+    "Input": "I counted six million and two thirds",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "six million and two thirds",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "6666666.66666667"
+        },
+        "Start": 10,
+        "End": 35
+      }
+    ]
+  },
+  {
+    "Input": "They have two million and three fifths",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "two million and three fifths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "2600000"
+        },
+        "Start": 10,
+        "End": 37
+      }
+    ]
+  },
+  {
+    "Input": "We spent nine million and five ninths",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "nine million and five ninths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "9555555.55555556"
+        },
+        "Start": 9,
+        "End": 36
+      }
+    ]
+  },
+  {
+    "Input": "two out of five hundred tvs",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "two out of five hundred",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.004"
+        },
+        "Start": 0,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "two out of five hundreds tvs",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "two out of five hundreds",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.004"
+        },
+        "Start": 0,
+        "End": 23
+      }
+    ]
   }
 ]

@@ -169,7 +169,7 @@ Internally, both methods will cache the instance models to avoid extra costs.
 
     Or you can obtain a model instance using:
 
-    `new DateTimeRecognizers(Recognizers.Culture.English).getDateTimeModel()`
+    `new DateTimeRecognizers.DateTimeRecognizer(Recognizers.Culture.English).getDateTimeModel()`
 
 ### Microsoft.Recognizers.Text.Sequence
 
@@ -181,7 +181,7 @@ Internally, both methods will cache the instance models to avoid extra costs.
 
     Or you can obtain a model instance using:
 
-    `new SequenceRecognizer(Culture.English).GetPhoneNumberModel()`
+    `new SequenceRecognizers.SequenceRecognizer(Culture.English).GetPhoneNumberModel()`
 
 * **IP Address**
 
@@ -192,7 +192,7 @@ Internally, both methods will cache the instance models to avoid extra costs.
 
     Or you can obtain a model instance using:
 
-    `new SequenceRecognizer(Culture.English).GetPhoneNumberModel()`
+    `new SequenceRecognizers.SequenceRecognizer(Culture.English).IpAddressModel()`
 
 ### Microsoft.Recognizers.Text.Choice
 
@@ -205,7 +205,7 @@ Internally, both methods will cache the instance models to avoid extra costs.
 
     Or you can obtain a model instance using:
 
-    `new ChoiceRecognizers(Recognizers.Culture.English).getBooleanModel()`
+    `new ChoiceRecognizers.ChoiceRecognizer(Recognizers.Culture.English).getBooleanModel()`
 
 ## Samples
 

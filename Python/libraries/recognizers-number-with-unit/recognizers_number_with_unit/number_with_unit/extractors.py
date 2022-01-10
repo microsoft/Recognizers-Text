@@ -246,6 +246,12 @@ class NumberWithUnitExtractor(Extractor):
                                 if mid_str is None or not mid_str or str.isspace(mid_str) \
                                         or mid_str.strip() == self.config.connector_token:
                                     max_len = end_pos
+                                if m.end < len(source) and (
+                                    (mid_str.endswith('(') and source[m.end] == ')') or
+                                    (mid_str.endswith('[') and source[m.end] == ']') or
+                                    (mid_str.endswith('{') and source[m.end] == '}') or
+                                        (mid_str.endswith('<') and source[m.end] == '>')):
+                                    max_len = m.end - first_index + 1
 
                     if max_len != 0:
                         substr = source[start: start + length + max_len]
@@ -457,22 +463,18 @@ class NumberWithUnitExtractor(Extractor):
         if self.config.ambiguity_filters_dict is not None:
             for regex_var in self.config.ambiguity_filters_dict:
                 regexvar_value = self.config.ambiguity_filters_dict[regex_var]
+                for er in ers:
+                    match = list(filter(lambda x: x.group(), regex.finditer(regex_var, ers[0].text)))
 
-                try:
-                    reg_match = list(filter(lambda x: x.group(), regex.finditer(regexvar_value, text)))
+                    if match and len(match) > 0:
+                        try:
+                            reg_match = list(filter(lambda x: x.group(), regex.finditer(regexvar_value, text)))
 
-                    if len(reg_match) > 0:
-
-                        matches = reg_match
-                        new_ers = list(filter(lambda x: list(filter(lambda m: m.start() < x.start + x.length and m.start() +
-                                                                    len(m.group()) > x.start, matches)), ers))
-                        if len(new_ers) > 0:
-                            for item in ers:
-                                for i in new_ers:
-                                    if item is i:
-                                        ers.remove(item)
-                except Exception:
-                    pass
+                            if len(reg_match) > 0:
+                                ers = list(filter(lambda x: not any([m.start() < x.start + x.length and m.start() +
+                                                                     len(m.group()) > x.start for m in reg_match]), ers))
+                        except Exception:
+                            pass
 
         # filter single-char units if not exact match
         try:

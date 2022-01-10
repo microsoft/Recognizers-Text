@@ -162,6 +162,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 res.Add(DateTimeResolutionKey.Start, start);
                 res.Add(DateTimeResolutionKey.End, end);
+
+                // Preserving any present timex values. Useful for Holiday weekend where the timex is known during parsing.
+                if (resolutionDic.ContainsKey(DateTimeResolutionKey.Timex))
+                {
+                    res.Add(DateTimeResolutionKey.Timex, resolutionDic[DateTimeResolutionKey.Timex]);
+                }
             }
         }
 
@@ -1005,7 +1011,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             switch (extractResult.Type)
             {
                 case Constants.SYS_DATETIME_DATE:
-                    if (extractResult.Metadata != null && extractResult.Metadata.IsHoliday)
+                    if (extractResult.Metadata != null && extractResult.Metadata.IsHoliday && !extractResult.Metadata.IsHolidayRange)
                     {
                         parseResult = Config.HolidayParser.Parse(extractResult, referenceTime);
                     }
@@ -1024,7 +1030,14 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     break;
                 case Constants.SYS_DATETIME_DATEPERIOD:
-                    parseResult = this.Config.DatePeriodParser.Parse(extractResult, referenceTime);
+                    if (extractResult.Metadata != null && extractResult.Metadata.IsHolidayRange)
+                    {
+                        parseResult = this.Config.HolidayParser.Parse(extractResult, referenceTime);
+                    }
+                    else
+                    {
+                        parseResult = this.Config.DatePeriodParser.Parse(extractResult, referenceTime);
+                    }
 
                     break;
                 case Constants.SYS_DATETIME_TIMEPERIOD:

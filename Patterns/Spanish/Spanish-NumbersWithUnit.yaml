@@ -738,7 +738,7 @@ CurrencyNameToIsoCodeMap: !dictionary
     Dólar beliceño: BZD
     Dólar bermudeño: BMD
     Dólar de Brunéi: BND
-    Singapore dollar: SGD
+    Dólar de Singapur: SGD
     Dólar canadiense: CAD
     Dólar de las Islas Caimán: KYD
     Dólar neozelandés: NZD
@@ -865,7 +865,7 @@ FractionalUnitNameToCodeMap: !dictionary
     Millibitcoin: MILLIBITCOIN
     Satoshi: SATOSHI
 CompoundUnitConnectorRegex: !simpleRegex
-    def: (?<spacer>y)
+    def: (?<spacer>y|con)
 CurrencyPrefixList: !dictionary
   types: [ string, string ]
   entries:

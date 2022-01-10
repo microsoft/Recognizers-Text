@@ -18,6 +18,7 @@ from recognizers_date_time.date_time.constants import TimeTypeConstants, Constan
 from recognizers_date_time.date_time.extractors import DateTimeExtractor
 from recognizers_date_time.date_time.parsers import DateTimeParser, DateTimeParseResult
 from recognizers_text.matcher.string_matcher import StringMatcher, MatchResult
+from ..resources.base_date_time import BaseDateTime
 
 
 class TimeZoneUtility:
@@ -605,6 +606,13 @@ class MatchedIndex:
 
 
 class MatchingUtil:
+
+    invalid_day_number_prefix = RegExpUtility.get_safe_reg_exp(
+        BaseDateTime.InvalidDayNumberPrefix)
+
+    @staticmethod
+    def is_invalid_day_number_prefix(prefix: str) -> bool:
+        return MatchingUtil.invalid_day_number_prefix.search(prefix)
 
     @staticmethod
     def pre_process_text_remove_superfluous_words(text: str, matcher: Pattern):

@@ -49,6 +49,7 @@ namespace Microsoft.Recognizers.Text.Number.Italian
             this.NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexFlags);
             this.FractionPrepositionRegex = new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexFlags);
             this.OneToNineOrdinalRegex = new Regex(NumbersDefinitions.OneToNineOrdinalRegex, RegexFlags);
+            this.RoundMultiplierRegex = new Regex(NumbersDefinitions.RoundMultiplierRegex, RegexFlags);
         }
 
         public string NonDecimalSeparatorText { get; private set; }
@@ -74,8 +75,6 @@ namespace Microsoft.Recognizers.Text.Number.Italian
                 }
             }
 
-            // @TODO "mezzo" and "e" should be moved to the Italian YAML file
-
             // The following piece of code is needed in Italian to correctly compute some fraction patterns
             // e.g. 'due milioni duemiladuecento quinti' (=2002200/5) which is otherwise interpreted as
             // 2000000/2205 (in Italian, isolated ordinals <10 have a different form respect to when
@@ -84,7 +83,7 @@ namespace Microsoft.Recognizers.Text.Number.Italian
             var fracLen = fracWords.Count;
             if (fracLen > 2 && this.OneToNineOrdinalRegex.Match(fracWords[fracLen - 1]).Success)
             {
-                if (fracWords[fracLen - 3] != "e" && fracWords[fracLen - 2] != "e")
+                if (fracWords[fracLen - 3] != NumbersDefinitions.WordSeparatorToken && fracWords[fracLen - 2] != NumbersDefinitions.WordSeparatorToken)
                 {
                     fracWords[fracLen - 3] += fracWords[fracLen - 2];
                     fracWords.RemoveAt(fracLen - 2);
@@ -98,9 +97,9 @@ namespace Microsoft.Recognizers.Text.Number.Italian
             fracLen = fracWords.Count;
             if (fracLen > 2)
             {
-                if (fracWords[fracLen - 1] == "mezzo" && fracWords[fracLen - 2] == "e")
+                if (fracWords[fracLen - 1] == NumbersDefinitions.OneHalfTokens[1] && fracWords[fracLen - 2] == NumbersDefinitions.WordSeparatorToken)
                 {
-                    fracWords.Insert(fracLen - 1, "un");
+                    fracWords.Insert(fracLen - 1, NumbersDefinitions.OneHalfTokens[0]);
                 }
             }
 

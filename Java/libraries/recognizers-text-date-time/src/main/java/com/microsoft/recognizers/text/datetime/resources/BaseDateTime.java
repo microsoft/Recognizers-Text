@@ -36,6 +36,8 @@ public class BaseDateTime {
     public static final String IllegalYearRegex = "([-])({FourDigitYearRegex})([-])"
             .replace("{FourDigitYearRegex}", FourDigitYearRegex);
 
+    public static final String InvalidDayNumberPrefix = "(\\d[.,:]|[$£€]\\s*)$";
+
     public static final String CheckDecimalRegex = "(?![,.]\\d)";
 
     public static final String RangeConnectorSymbolRegex = "(--|-|—|——|~|–)";

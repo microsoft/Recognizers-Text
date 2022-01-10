@@ -1808,7 +1808,13 @@ class BaseDatePeriodParser(DateTimeParser):
         cardinal = 5 if self.config.is_last_cardinal(cardinal_str) else self.config.cardinal_map.get(cardinal_str)
 
         if not month_str:
-            swift = self.config.get_swift_day_or_month(source)
+            rel_month_text = RegExpUtility.get_group(match, Constants.REL_MONTH)
+            month_text = rel_month_text
+
+            if not rel_month_text:
+                month_text = source
+
+            swift = self.config.get_swift_day_or_month(month_text)
             temp_data = reference + datedelta(months=swift)
             year, month = temp_data.year, temp_data.month
 
@@ -1821,6 +1827,7 @@ class BaseDatePeriodParser(DateTimeParser):
     def _get_week_of_month(self, cardinal, month, year, reference, no_year) -> DateTimeResolutionResult:
         result = DateTimeResolutionResult()
         seed_date = self._compute_date(cardinal, 1, month, year)
+        is_last_cardinal = cardinal == 5
 
         if not seed_date.month == month:
             cardinal -= 1
@@ -1843,7 +1850,9 @@ class BaseDatePeriodParser(DateTimeParser):
         # the StartDate and EndDate of the resolution would always be correct (following ISO week definition).
         # But week number for "last week" might be inconsistent with the resolution as we only have one Timex,
         # but we may have past and future resolutions which may have different week numbers
-        result.timex = ('XXXX' if no_year else f'{year:04d}') + f'-{month:02d}-W{cardinal:02d}'
+        adjustedCardinal = 5 if is_last_cardinal else cardinal
+        result.timex = ('XXXX' if no_year else f'{year:04d}') + f'-{month:02d}-W{adjustedCardinal:02d}'
+
         days_to_add = 6 if self._inclusive_end_period else 7
         result.future_value = [future_date, future_date + datedelta(days=days_to_add)]
         result.past_value = [past_date, past_date + datedelta(days=days_to_add)]

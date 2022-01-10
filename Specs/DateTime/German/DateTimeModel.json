@@ -4905,5 +4905,329 @@
         }
       }
     ]
+  },
+  {
+    "Input": "nächstem Jahr.",
+    "Context": {
+      "ReferenceDateTime": "2021-11-01T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "nächstem jahr",
+        "Start": 0,
+        "End": 12,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2022",
+              "type": "daterange",
+              "start": "2022-01-01",
+              "end": "2023-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "letztem Jahr.",
+    "Context": {
+      "ReferenceDateTime": "2021-11-01T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "letztem jahr",
+        "Start": 0,
+        "End": 11,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020",
+              "type": "daterange",
+              "start": "2020-01-01",
+              "end": "2021-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Was morgens um 7 Uhr machen?",
+    "Context": {
+      "ReferenceDateTime": "2017-12-04T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "morgens um 7 uhr",
+        "Start": 4,
+        "End": 19,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07",
+              "type": "time",
+              "value": "07:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Die Feier beginnt um 9 Uhr morgens",
+    "Context": {
+      "ReferenceDateTime": "2017-12-04T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "9 uhr morgens",
+        "Start": 21,
+        "End": 33,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T09",
+              "type": "time",
+              "value": "09:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Nehmen Sie abends um 8 Uhr einen Tropfen",
+    "Context": {
+      "ReferenceDateTime": "2017-12-04T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "abends um 8 uhr",
+        "Start": 11,
+        "End": 25,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T20",
+              "type": "time",
+              "value": "20:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Die Veranstaltung beginnt am Weihnachten frühmorgens um 8:00",
+    "Context": {
+      "ReferenceDateTime": "2019-08-05T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "weihnachten",
+        "Start": 29,
+        "End": 39,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-12-25",
+              "type": "date",
+              "value": "2018-12-25"
+            },
+            {
+              "timex": "XXXX-12-25",
+              "type": "date",
+              "value": "2019-12-25"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "frühmorgens um 8:00",
+        "Start": 41,
+        "End": 59,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T08:00",
+              "type": "time",
+              "value": "08:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Die Veranstaltung beginnt am sonntag frühmorgens um 8:00",
+    "Context": {
+      "ReferenceDateTime": "2019-08-05T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "sonntag frühmorgens um 8:00",
+        "Start": 29,
+        "End": 55,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-7T08:00",
+              "type": "datetime",
+              "value": "2019-08-04 08:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-7T08:00",
+              "type": "datetime",
+              "value": "2019-08-11 08:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Die Veranstaltung beginnt am mittwochfrühmorgens um 8:00",
+    "Context": {
+      "ReferenceDateTime": "2019-08-05T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "mittwochfrühmorgens um 8:00",
+        "Start": 29,
+        "End": 55,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-3T08:00",
+              "type": "datetime",
+              "value": "2019-07-31 08:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-3T08:00",
+              "type": "datetime",
+              "value": "2019-08-07 08:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Die Veranstaltung beginnt am Weihnachten um 8:00 frühmorgens",
+    "Context": {
+      "ReferenceDateTime": "2019-08-05T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "weihnachten",
+        "Start": 29,
+        "End": 39,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-12-25",
+              "type": "date",
+              "value": "2018-12-25"
+            },
+            {
+              "timex": "XXXX-12-25",
+              "type": "date",
+              "value": "2019-12-25"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "8:00 frühmorgens",
+        "Start": 44,
+        "End": 59,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T08:00",
+              "type": "time",
+              "value": "08:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Die Veranstaltung beginnt am sonntag um 8:00 frühmorgens",
+    "Context": {
+      "ReferenceDateTime": "2019-08-05T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "sonntag um 8:00 frühmorgens",
+        "Start": 29,
+        "End": 55,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-7T08:00",
+              "type": "datetime",
+              "value": "2019-08-04 08:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-7T08:00",
+              "type": "datetime",
+              "value": "2019-08-11 08:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Die Veranstaltung beginnt am sonntag spätabend um 10:00",
+    "Context": {
+      "ReferenceDateTime": "2019-08-05T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "sonntag spätabend um 10:00",
+        "Start": 29,
+        "End": 54,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-7T22:00",
+              "type": "datetime",
+              "value": "2019-08-04 22:00:00"
+            },
+            {
+              "timex": "XXXX-WXX-7T22:00",
+              "type": "datetime",
+              "value": "2019-08-11 22:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

@@ -18,14 +18,15 @@ class GermanNumeric:
     CompoundNumberLanguage = True
     MultiDecimalSeparatorCulture = False
     ZeroToNineIntegerRegex = f'(drei|sieben|acht|vier|fuenf|fünf|null|neun|eins|(ein(?!($|\\.|,|!|\\?)))|eine[rn]?|zwei|zwo|sechs)'
-    RoundNumberIntegerRegex = f'((ein)?hundert|tausend|(\\s*(million(en)?|mio|milliarden?|mrd|billion(en)?)\\s*))'
+    TwoToNineIntegerRegex = f'(drei|sieben|acht|vier|fuenf|fünf|neun|zwei|zwo|sechs)'
+    RoundNumberIntegerRegex = f'((ein)?hundert|tausend|((million(en)?|mio|milliarden?|mrd|billion(en)?)))'
     AnIntRegex = f'(eine?)(?=\\s)'
-    TenToNineteenIntegerRegex = f'(siebzehn|dreizehn|vierzehn|achtzehn|neunzehn|fuenfzehn|sechzehn|elf|zwoelf|zwölf|zehn)'
+    TenToNineteenIntegerRegex = f'(siebzehn|dreizehn|vierzehn|achtzehn|neunzehn|fünfzehn|fuenfzehn|sechzehn|elf|zwoelf|zwölf|zehn)'
     TensNumberIntegerRegex = f'(siebzig|zwanzig|dreißig|achtzig|neunzig|vierzig|fuenfzig|fünfzig|sechzig|hundert|tausend)'
     NegativeNumberTermsRegex = f'^[.]'
     NegativeNumberSignRegex = f'^({NegativeNumberTermsRegex}\\s+).*'
     SeparaIntRegex = f'((({TenToNineteenIntegerRegex}|({ZeroToNineIntegerRegex}und{TensNumberIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex})(\\s*{RoundNumberIntegerRegex})*))|(({AnIntRegex}(\\s*{RoundNumberIntegerRegex})+))'
-    AllIntRegex = f'(((({TenToNineteenIntegerRegex}|({ZeroToNineIntegerRegex}und{TensNumberIntegerRegex})|{TensNumberIntegerRegex}|({ZeroToNineIntegerRegex}|{AnIntRegex}))?(\\s*{RoundNumberIntegerRegex})))*{SeparaIntRegex})'
+    AllIntRegex = f'(((({TenToNineteenIntegerRegex}|({ZeroToNineIntegerRegex}und{TensNumberIntegerRegex})|{TensNumberIntegerRegex}|({ZeroToNineIntegerRegex}|{AnIntRegex}))?(\\s*{RoundNumberIntegerRegex}\\s*)))*{SeparaIntRegex})'
     PlaceHolderPureNumber = f'\\b'
     PlaceHolderDefault = f'\\D|\\b'
 
@@ -51,8 +52,11 @@ class GermanNumeric:
     FractionUnitsRegex = f'((?<onehalf>anderthalb|einundhalb)|(?<quarter>dreiviertel))'
     FractionHalfRegex = f'(einhalb(es)?)$'
     OneHalfTokens = [r'ein', r'halb', r'halbes']
-    FractionNounRegex = f'(?<=\\b)(({AllIntRegex})(\\s*|\\s*-\\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))|halb(e[rs]?)?|hälfte)|{FractionUnitsRegex})(?=\\b)'
-    FractionNounWithArticleRegex = f'(?<=\\b)(({AllIntRegex}\\s+(und\\s+)?)?eine?(\\s+|\\s*-\\s*)({AllOrdinalRegex}|{RoundNumberOrdinalRegex}|{FractionUnitsRegex}|({AllIntRegex}ein)?(halb(e[rs]?)?|hälfte))|{AllIntRegex}ein(halb))(?=\\b)'
+    FractionMultiplierRegex = f'(?<fracMultiplier>(\\s+und\\s+)?(anderthalb|einundhalb|dreiviertel)|(\\s+und\\s+)?(eine?|{TwoToNineIntegerRegex})\\s*(halbe?|(dritt|viert|fünft|fuenft|sechst|siebt|acht|neunt|zehnt)(er|es|en|el|e)?))'
+    RoundMultiplierWithFraction = f'(?<=(?<!{RoundNumberIntegerRegex}){FractionMultiplierRegex}\\s+)?(?<multiplier>(million(en)?|mio|milliarden?|mrd|billion(en)?))(?={FractionMultiplierRegex}?$)'
+    RoundMultiplierRegex = f'\\b\\s*((von\\s+)?ein(er|es|en|el|e)?\\s+)?({RoundMultiplierWithFraction}|(?<multiplier>(?:hundert|tausend))$)'
+    FractionNounRegex = f'(?<=\\b)({AllIntRegex}\\s+(und\\s+)?)?(({AllIntRegex})(\\s*|\\s*-\\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))|halb(e[rs]?)?|hälfte)(\\s+{RoundNumberIntegerRegex})?|(eine\\s+(halbe|viertel)\\s+){RoundNumberIntegerRegex}|{FractionUnitsRegex}(\\s+{RoundNumberIntegerRegex})?)(?=\\b)'
+    FractionNounWithArticleRegex = f'(?<=\\b)((({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\\s+(und\\s+)?)?eine?(\\s+|\\s*-\\s*)({AllOrdinalRegex}|{RoundNumberOrdinalRegex}|{FractionUnitsRegex}|({AllIntRegex}ein)?(halb(e[rs]?)?|hälfte))|{AllIntRegex}ein(halb)(\\s+{RoundNumberIntegerRegex})?)(?=\\b)'
     FractionPrepositionRegex = f'(?<!{BaseNumbers.CommonCurrencySymbol}\\s*)(?<=\\b)(?<numerator>({AllIntRegex})|((?<!\\.)\\d+))\\s+over\\s+(?<denominator>({AllIntRegex})|(\\d+)(?!\\.))(?=\\b)'
     AllPointRegex = f'((\\s*{ZeroToNineIntegerRegex})+|(\\s*{SeparaIntRegex}))'
     AllFloatRegex = f'({AllIntRegex}(\\s*komma\\s*){AllPointRegex})'
@@ -104,7 +108,7 @@ class GermanNumeric:
     WrittenDecimalSeparatorTexts = [r'komma']
     WrittenGroupSeparatorTexts = [r'punkt']
     WrittenIntegerSeparatorTexts = [r'und']
-    WrittenFractionSeparatorTexts = [r'durch']
+    WrittenFractionSeparatorTexts = [r'durch', r'und']
     HalfADozenRegex = f'ein\\s+halbes\\s+dutzend'
     DigitalNumberRegex = f'((?<=\\b)(hundert|tausend|million(en)?|mio|milliarde(n)?|mrd|billion(en)?|dutzend(e)?)(?=\\b))|((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))'
     CardinalNumberMap = dict([("ein", 1),

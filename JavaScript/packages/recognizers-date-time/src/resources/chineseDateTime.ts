@@ -27,6 +27,7 @@ export namespace ChineseDateTime {
     export const DynastyYearRegex = `(?<dynasty>${RegionTitleRegex})(?<biasYear>(${DynastyStartYear}|\\d{1,3}|[十拾]?(${ZeroToNineIntegerRegexCJK}[十百拾佰]?){0,3}))`;
     export const DateYearInCJKRegex = `(?<yearCJK>(${ZeroToNineIntegerRegexCJK}${ZeroToNineIntegerRegexCJK}${ZeroToNineIntegerRegexCJK}${ZeroToNineIntegerRegexCJK}|${ZeroToNineIntegerRegexCJK}${ZeroToNineIntegerRegexCJK}|${ZeroToNineIntegerRegexCJK}${ZeroToNineIntegerRegexCJK}${ZeroToNineIntegerRegexCJK}|${DynastyYearRegex}))`;
     export const WeekDayRegex = `(?<weekday>周日|周天|周一|周二|周三|周四|周五|周六|星期一|星期二|星期三|星期四|星期五|星期六|星期日|星期天|礼拜一|礼拜二|礼拜三|礼拜四|礼拜五|礼拜六|礼拜日|礼拜天|禮拜一|禮拜二|禮拜三|禮拜四|禮拜五|禮拜六|禮拜日|禮拜天|週日|週天|週一|週二|週三|週四|週五|週六)`;
+    export const WeekDayStartEnd = `^[.]`;
     export const LunarRegex = `(农历|初一|正月|大年(?!龄|纪|级))`;
     export const DateThisRegex = `(这个|这一个|这|这一|本)${WeekDayRegex}`;
     export const DateLastRegex = `(上一个|上个|上一|上|最后一个|最后)(的)?${WeekDayRegex}`;
@@ -45,7 +46,7 @@ export namespace ChineseDateTime {
     export const NextPrefixRegex = `下个|下一个|下|下一|明`;
     export const RelativeRegex = `(?<order>(${ThisPrefixRegex}|${LastPrefixRegex}|${NextPrefixRegex}))`;
     export const SpecialDate = `(?<thisyear>(${ThisPrefixRegex}|${LastPrefixRegex}|${NextPrefixRegex})年)?(?<thismonth>(${ThisPrefixRegex}|${LastPrefixRegex}|${NextPrefixRegex})月)?${DateDayRegexInCJK}`;
-    export const DateUnitRegex = `(?<unit>年|个月|周|日|天)`;
+    export const DateUnitRegex = `(?<unit>年|个月|周|週|日|天)`;
     export const BeforeRegex = `以前|之前|前`;
     export const AfterRegex = `以后|以後|之后|之後|后|後`;
     export const DateRegexList1 = `(${LunarRegex}(\\s*))?(((${SimpleYearRegex}|${DateYearInCJKRegex})年)(\\s*))?${MonthRegex}(\\s*)${DateDayRegexInCJK}((\\s*|,|，)${WeekDayRegex})?`;
@@ -72,12 +73,13 @@ export namespace ChineseDateTime {
     export const DatePeriodYearInCJKRegex = `${DateYearInCJKRegex}年${HalfYearRegex}?`;
     export const MonthSuffixRegex = `(?<msuf>(${RelativeMonthRegex}|${MonthRegex}))`;
     export const SimpleCasesRegex = `((从)\\s*)?((${YearRegex}|${DatePeriodYearInCJKRegex})\\s*)?${MonthSuffixRegex}(${DatePeriodDayRegexInCJK}|${DayRegex})\\s*${DatePeriodTillRegex}\\s*(${DatePeriodDayRegexInCJK}|${DayRegex})((\\s+|\\s*,\\s*)${YearRegex})?`;
-    export const YearAndMonth = `(${DatePeriodYearInCJKRegex}|${YearRegex})\\s*${MonthRegex}`;
+    export const YearAndMonth = `(${DatePeriodYearInCJKRegex}|${YearRegex}|(?<yearrel>明年|今年|去年))\\s*(${MonthRegex}|的?(?<cardinal>第一|第二|第三|第四|第五|第六|第七|第八|第九|第十|第十一|第十二|最后一)\\s*个月\\s*)`;
     export const SimpleYearAndMonth = `(${YearNumRegex}[/\\\\\\-]${MonthNumRegex}\\b$)`;
     export const PureNumYearAndMonth = `(${YearRegexInNumber}\\s*[-\\.\\/]\\s*${MonthNumRegex})|(${MonthNumRegex}\\s*\\/\\s*${YearRegexInNumber})`;
     export const OneWordPeriodRegex = `(((?<yearrel>(明|今|去)年)\\s*)?${MonthRegex}|(${DatePeriodThisRegex}|${DatePeriodLastRegex}|${DatePeriodNextRegex})(?<halfTag>半)?\\s*(周末|周|月|年)|周末|(今|明|去|前|后)年(\\s*${HalfYearRegex})?)`;
     export const WeekOfMonthRegex = `(?<wom>${MonthSuffixRegex}的(?<cardinal>第一|第二|第三|第四|第五|最后一)\\s*周\\s*)`;
-    export const UnitRegex = `(?<unit>年|(个)?月|周|日|天)`;
+    export const WeekOfYearRegex = `(?<woy>(${YearRegex}|${RelativeRegex}年)的(?<cardinal>第一|第二|第三|第四|第五|最后一)\\s*周\\s*)`;
+    export const UnitRegex = `(?<unit>年|(?<uoy>(个)?月|周|週|日|天))`;
     export const FollowedUnit = `^\\s*${UnitRegex}`;
     export const NumberCombinedWithUnit = `(?<num>\\d+(\\.\\d*)?)${UnitRegex}`;
     export const DateRangePrepositions = `((从|在|自)\\s*)?`;
@@ -87,6 +89,7 @@ export namespace ChineseDateTime {
     export const MonthToMonthSuffixRequired = `(${DateRangePrepositions})(${MonthRegex})${DatePeriodTillSuffixRequiredRegex}(${MonthRegex})\\s*(之间|之内|期间|中间|间)`;
     export const DayToDay = `^[.]`;
     export const DayRegexForPeriod = `^[.]`;
+    export const FirstLastOfYearRegex = `((${DatePeriodYearInCJKRegex}|${YearRegex}|(?<yearrel>明年|今年|去年))的?)((?<first>前)|(?<last>(最后|最後)))`;
     export const PastRegex = `(?<past>(之前|前|上|近|过去))`;
     export const FutureRegex = `(?<future>(之后|之後|后|後|(?<![一两几]\\s*)下|未来(的)?))`;
     export const SeasonRegex = `(?<season>春|夏|秋|冬)(天|季)?`;
@@ -123,9 +126,9 @@ export namespace ChineseDateTime {
     export const DurationMoreOrLessRegex = `^[.]`;
     export const DurationYearRegex = `((\\d{3,4})|0\\d|两千)\\s*年`;
     export const DurationHalfSuffixRegex = `半`;
-    export const DurationSuffixList: ReadonlyMap<string, string> = new Map<string, string>([["M", "分钟"],["S", "秒钟|秒"],["H", "个小时|小时|个钟头|钟头|时"],["D", "天"],["W", "星期|个星期|周"],["Mon", "个月"],["Y", "年"]]);
-    export const DurationAmbiguousUnits = [ "分钟","秒钟","秒","个小时","小时","天","星期","个星期","周","个月","年","时" ];
-    export const DurationUnitRegex = `(?<unit>${DateUnitRegex}|分钟?|秒钟?|个?小时|时|个?钟头|天|个?星期|周|个?月|年)`;
+    export const DurationSuffixList: ReadonlyMap<string, string> = new Map<string, string>([["M", "分钟"],["S", "秒钟|秒"],["H", "个小时|小时|个钟头|钟头|时"],["D", "天"],["W", "星期|个星期|周|週"],["Mon", "个月"],["Y", "年"]]);
+    export const DurationAmbiguousUnits = [ "分钟","秒钟","秒","个小时","小时","天","星期","个星期","周","週","个月","年","时" ];
+    export const DurationUnitRegex = `(?<unit>${DateUnitRegex}|分钟?|秒钟?|个?小时|时|个?钟头|天|个?星期|周|週|个?月|年)`;
     export const DurationConnectorRegex = `^\\s*(?<connector>[多又余零]?)\\s*$`;
     export const LunarHolidayRegex = `((${YearRegex}|${DatePeriodYearInCJKRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>除夕|春节|中秋节|中秋|元宵节|端午节|端午|重阳节)`;
     export const HolidayRegexList1 = `((${YearRegex}|${DatePeriodYearInCJKRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>新年|五一|劳动节|元旦节|元旦|愚人节|平安夜|圣诞节|植树节|国庆节|情人节|教师节|儿童节|妇女节|青年节|建军节|女生节|光棍节|双十一|清明节|清明)`;
@@ -178,11 +181,11 @@ export namespace ChineseDateTime {
     export const ParserConfigurationNextMonthToken = `下一个`;
     export const ParserConfigurationLastMonthToken = `上一个`;
     export const ParserConfigurationDatePrefix = ` `;
-    export const ParserConfigurationUnitMap: ReadonlyMap<string, string> = new Map<string, string>([["年", "Y"],["月", "MON"],["个月", "MON"],["日", "D"],["周", "W"],["天", "D"],["小时", "H"],["个小时", "H"],["时", "H"],["分钟", "M"],["分", "M"],["秒钟", "S"],["秒", "S"],["星期", "W"],["个星期", "W"]]);
+    export const ParserConfigurationUnitMap: ReadonlyMap<string, string> = new Map<string, string>([["年", "Y"],["月", "MON"],["个月", "MON"],["日", "D"],["周", "W"],["週", "W"],["天", "D"],["小时", "H"],["个小时", "H"],["时", "H"],["分钟", "M"],["分", "M"],["秒钟", "S"],["秒", "S"],["星期", "W"],["个星期", "W"]]);
     export const ParserConfigurationUnitValueMap: ReadonlyMap<string, number> = new Map<string, number>([["years", 31536000],["year", 31536000],["months", 2592000],["month", 2592000],["weeks", 604800],["week", 604800],["days", 86400],["day", 86400],["hours", 3600],["hour", 3600],["hrs", 3600],["hr", 3600],["h", 3600],["minutes", 60],["minute", 60],["mins", 60],["min", 60],["seconds", 1],["second", 1],["secs", 1],["sec", 1]]);
     export const MonthTerms = [ "月" ];
     export const WeekendTerms = [ "周末" ];
-    export const WeekTerms = [ "周","星期" ];
+    export const WeekTerms = [ "周","週","星期" ];
     export const YearTerms = [ "年" ];
     export const ThisYearTerms = [ "今年" ];
     export const LastYearTerms = [ "去年" ];
@@ -191,7 +194,7 @@ export namespace ChineseDateTime {
     export const YearBeforeLastTerms = [ "前年" ];
     export const ParserConfigurationSeasonMap: ReadonlyMap<string, string> = new Map<string, string>([["春", "SP"],["夏", "SU"],["秋", "FA"],["冬", "WI"]]);
     export const ParserConfigurationSeasonValueMap: ReadonlyMap<string, number> = new Map<string, number>([["SP", 3],["SU", 6],["FA", 9],["WI", 12]]);
-    export const ParserConfigurationCardinalMap: ReadonlyMap<string, number> = new Map<string, number>([["1", 1],["2", 2],["3", 3],["4", 4],["5", 5],["一", 1],["二", 2],["三", 3],["四", 4],["五", 5],["第一个", 1],["第二个", 2],["第三个", 3],["第四个", 4],["第五个", 5],["第一", 1],["第二", 2],["第三", 3],["第四", 4],["第五", 5]]);
+    export const ParserConfigurationCardinalMap: ReadonlyMap<string, number> = new Map<string, number>([["1", 1],["2", 2],["3", 3],["4", 4],["5", 5],["一", 1],["二", 2],["三", 3],["四", 4],["五", 5],["第一个", 1],["第二个", 2],["第三个", 3],["第四个", 4],["第五个", 5],["第一", 1],["第二", 2],["第三", 3],["第四", 4],["第五", 5],["第六", 6],["第七", 7],["第八", 8],["第九", 9],["第十", 10],["第十一", 11],["第十二", 12]]);
     export const ParserConfigurationDayOfMonth: ReadonlyMap<string, number> = new Map<string, number>([["1", 1],["2", 2],["3", 3],["4", 4],["5", 5],["6", 6],["7", 7],["8", 8],["9", 9],["10", 10],["11", 11],["12", 12],["13", 13],["14", 14],["15", 15],["16", 16],["17", 17],["18", 18],["19", 19],["20", 20],["21", 21],["22", 22],["23", 23],["24", 24],["25", 25],["26", 26],["27", 27],["28", 28],["29", 29],["30", 30],["31", 31],["01", 1],["02", 2],["03", 3],["04", 4],["05", 5],["06", 6],["07", 7],["08", 8],["09", 9],["1日", 1],["2日", 2],["3日", 3],["4日", 4],["5日", 5],["6日", 6],["7日", 7],["8日", 8],["9日", 9],["10日", 10],["11日", 11],["12日", 12],["13日", 13],["14日", 14],["15日", 15],["16日", 16],["17日", 17],["18日", 18],["19日", 19],["20日", 20],["21日", 21],["22日", 22],["23日", 23],["24日", 24],["25日", 25],["26日", 26],["27日", 27],["28日", 28],["29日", 29],["30日", 30],["31日", 31],["一日", 1],["十一日", 11],["二十日", 20],["十日", 10],["二十一日", 21],["三十一日", 31],["二日", 2],["三日", 3],["四日", 4],["五日", 5],["六日", 6],["七日", 7],["八日", 8],["九日", 9],["十二日", 12],["十三日", 13],["十四日", 14],["十五日", 15],["十六日", 16],["十七日", 17],["十八日", 18],["十九日", 19],["二十二日", 22],["二十三日", 23],["二十四日", 24],["二十五日", 25],["二十六日", 26],["二十七日", 27],["二十八日", 28],["二十九日", 29],["三十日", 30],["1号", 1],["2号", 2],["3号", 3],["4号", 4],["5号", 5],["6号", 6],["7号", 7],["8号", 8],["9号", 9],["10号", 10],["11号", 11],["12号", 12],["13号", 13],["14号", 14],["15号", 15],["16号", 16],["17号", 17],["18号", 18],["19号", 19],["20号", 20],["21号", 21],["22号", 22],["23号", 23],["24号", 24],["25号", 25],["26号", 26],["27号", 27],["28号", 28],["29号", 29],["30号", 30],["31号", 31],["一号", 1],["十一号", 11],["二十号", 20],["十号", 10],["二十一号", 21],["三十一号", 31],["二号", 2],["三号", 3],["四号", 4],["五号", 5],["六号", 6],["七号", 7],["八号", 8],["九号", 9],["十二号", 12],["十三号", 13],["十四号", 14],["十五号", 15],["十六号", 16],["十七号", 17],["十八号", 18],["十九号", 19],["二十二号", 22],["二十三号", 23],["二十四号", 24],["二十五号", 25],["二十六号", 26],["二十七号", 27],["二十八号", 28],["二十九号", 29],["三十号", 30],["初一", 32],["三十", 30],["一", 1],["十一", 11],["二十", 20],["十", 10],["二十一", 21],["三十一", 31],["二", 2],["三", 3],["四", 4],["五", 5],["六", 6],["七", 7],["八", 8],["九", 9],["十二", 12],["十三", 13],["十四", 14],["十五", 15],["十六", 16],["十七", 17],["十八", 18],["十九", 19],["二十二", 22],["二十三", 23],["二十四", 24],["二十五", 25],["二十六", 26],["二十七", 27],["二十八", 28],["二十九", 29]]);
     export const ParserConfigurationDayOfWeek: ReadonlyMap<string, number> = new Map<string, number>([["星期一", 1],["星期二", 2],["星期三", 3],["星期四", 4],["星期五", 5],["星期六", 6],["星期天", 0],["星期日", 0],["礼拜一", 1],["礼拜二", 2],["礼拜三", 3],["礼拜四", 4],["礼拜五", 5],["礼拜六", 6],["礼拜天", 0],["礼拜日", 0],["周一", 1],["周二", 2],["周三", 3],["周四", 4],["周五", 5],["周六", 6],["周日", 0],["周天", 0],["禮拜一", 1],["禮拜二", 2],["禮拜三", 3],["禮拜四", 4],["禮拜五", 5],["禮拜六", 6],["禮拜天", 0],["禮拜日", 0],["週一", 1],["週二", 2],["週三", 3],["週四", 4],["週五", 5],["週六", 6],["週日", 0],["週天", 0]]);
     export const ParserConfigurationMonthOfYear: ReadonlyMap<string, number> = new Map<string, number>([["1", 1],["2", 2],["3", 3],["4", 4],["5", 5],["6", 6],["7", 7],["8", 8],["9", 9],["10", 10],["11", 11],["12", 12],["01", 1],["02", 2],["03", 3],["04", 4],["05", 5],["06", 6],["07", 7],["08", 8],["09", 9],["一月", 1],["二月", 2],["三月", 3],["四月", 4],["五月", 5],["六月", 6],["七月", 7],["八月", 8],["九月", 9],["十月", 10],["十一月", 11],["十二月", 12],["1月", 1],["2月", 2],["3月", 3],["4月", 4],["5月", 5],["6月", 6],["7月", 7],["8月", 8],["9月", 9],["10月", 10],["11月", 11],["12月", 12],["01月", 1],["02月", 2],["03月", 3],["04月", 4],["05月", 5],["06月", 6],["07月", 7],["08月", 8],["09月", 9],["正月", 13],["大年", 13]]);

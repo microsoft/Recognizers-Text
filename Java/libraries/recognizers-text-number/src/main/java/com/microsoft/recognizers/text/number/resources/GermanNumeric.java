@@ -27,11 +27,13 @@ public class GermanNumeric {
 
     public static final String ZeroToNineIntegerRegex = "(drei|sieben|acht|vier|fuenf|fünf|null|neun|eins|(ein(?!($|\\.|,|!|\\?)))|eine[rn]?|zwei|zwo|sechs)";
 
-    public static final String RoundNumberIntegerRegex = "((ein)?hundert|tausend|(\\s*(million(en)?|mio|milliarden?|mrd|billion(en)?)\\s*))";
+    public static final String TwoToNineIntegerRegex = "(drei|sieben|acht|vier|fuenf|fünf|neun|zwei|zwo|sechs)";
+
+    public static final String RoundNumberIntegerRegex = "((ein)?hundert|tausend|((million(en)?|mio|milliarden?|mrd|billion(en)?)))";
 
     public static final String AnIntRegex = "(eine?)(?=\\s)";
 
-    public static final String TenToNineteenIntegerRegex = "(siebzehn|dreizehn|vierzehn|achtzehn|neunzehn|fuenfzehn|sechzehn|elf|zwoelf|zwölf|zehn)";
+    public static final String TenToNineteenIntegerRegex = "(siebzehn|dreizehn|vierzehn|achtzehn|neunzehn|fünfzehn|fuenfzehn|sechzehn|elf|zwoelf|zwölf|zehn)";
 
     public static final String TensNumberIntegerRegex = "(siebzig|zwanzig|dreißig|achtzig|neunzig|vierzig|fuenfzig|fünfzig|sechzig|hundert|tausend)";
 
@@ -47,7 +49,7 @@ public class GermanNumeric {
             .replace("{RoundNumberIntegerRegex}", RoundNumberIntegerRegex)
             .replace("{AnIntRegex}", AnIntRegex);
 
-    public static final String AllIntRegex = "(((({TenToNineteenIntegerRegex}|({ZeroToNineIntegerRegex}und{TensNumberIntegerRegex})|{TensNumberIntegerRegex}|({ZeroToNineIntegerRegex}|{AnIntRegex}))?(\\s*{RoundNumberIntegerRegex})))*{SeparaIntRegex})"
+    public static final String AllIntRegex = "(((({TenToNineteenIntegerRegex}|({ZeroToNineIntegerRegex}und{TensNumberIntegerRegex})|{TensNumberIntegerRegex}|({ZeroToNineIntegerRegex}|{AnIntRegex}))?(\\s*{RoundNumberIntegerRegex}\\s*)))*{SeparaIntRegex})"
             .replace("{TenToNineteenIntegerRegex}", TenToNineteenIntegerRegex)
             .replace("{TensNumberIntegerRegex}", TensNumberIntegerRegex)
             .replace("{ZeroToNineIntegerRegex}", ZeroToNineIntegerRegex)
@@ -121,17 +123,30 @@ public class GermanNumeric {
 
     public static final List<String> OneHalfTokens = Arrays.asList("ein", "halb", "halbes");
 
-    public static final String FractionNounRegex = "(?<=\\b)(({AllIntRegex})(\\s*|\\s*-\\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))|halb(e[rs]?)?|hälfte)|{FractionUnitsRegex})(?=\\b)"
-            .replace("{AllIntRegex}", AllIntRegex)
-            .replace("{AllOrdinalRegex}", AllOrdinalRegex)
-            .replace("{RoundNumberOrdinalRegex}", RoundNumberOrdinalRegex)
-            .replace("{FractionUnitsRegex}", FractionUnitsRegex);
+    public static final String FractionMultiplierRegex = "(?<fracMultiplier>(\\s+und\\s+)?(anderthalb|einundhalb|dreiviertel)|(\\s+und\\s+)?(eine?|{TwoToNineIntegerRegex})\\s*(halbe?|(dritt|viert|fünft|fuenft|sechst|siebt|acht|neunt|zehnt)(er|es|en|el|e)?))"
+            .replace("{TwoToNineIntegerRegex}", TwoToNineIntegerRegex);
 
-    public static final String FractionNounWithArticleRegex = "(?<=\\b)(({AllIntRegex}\\s+(und\\s+)?)?eine?(\\s+|\\s*-\\s*)({AllOrdinalRegex}|{RoundNumberOrdinalRegex}|{FractionUnitsRegex}|({AllIntRegex}ein)?(halb(e[rs]?)?|hälfte))|{AllIntRegex}ein(halb))(?=\\b)"
+    public static final String RoundMultiplierWithFraction = "(?<=(?<!{RoundNumberIntegerRegex}){FractionMultiplierRegex}\\s+)?(?<multiplier>(million(en)?|mio|milliarden?|mrd|billion(en)?))(?={FractionMultiplierRegex}?$)"
+            .replace("{RoundNumberIntegerRegex}", RoundNumberIntegerRegex)
+            .replace("{FractionMultiplierRegex}", FractionMultiplierRegex);
+
+    public static final String RoundMultiplierRegex = "\\b\\s*((von\\s+)?ein(er|es|en|el|e)?\\s+)?({RoundMultiplierWithFraction}|(?<multiplier>(?:hundert|tausend))$)"
+            .replace("{RoundMultiplierWithFraction}", RoundMultiplierWithFraction);
+
+    public static final String FractionNounRegex = "(?<=\\b)({AllIntRegex}\\s+(und\\s+)?)?(({AllIntRegex})(\\s*|\\s*-\\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))|halb(e[rs]?)?|hälfte)(\\s+{RoundNumberIntegerRegex})?|(eine\\s+(halbe|viertel)\\s+){RoundNumberIntegerRegex}|{FractionUnitsRegex}(\\s+{RoundNumberIntegerRegex})?)(?=\\b)"
             .replace("{AllIntRegex}", AllIntRegex)
             .replace("{AllOrdinalRegex}", AllOrdinalRegex)
             .replace("{RoundNumberOrdinalRegex}", RoundNumberOrdinalRegex)
-            .replace("{FractionUnitsRegex}", FractionUnitsRegex);
+            .replace("{FractionUnitsRegex}", FractionUnitsRegex)
+            .replace("{RoundNumberIntegerRegex}", RoundNumberIntegerRegex);
+
+    public static final String FractionNounWithArticleRegex = "(?<=\\b)((({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\\s+(und\\s+)?)?eine?(\\s+|\\s*-\\s*)({AllOrdinalRegex}|{RoundNumberOrdinalRegex}|{FractionUnitsRegex}|({AllIntRegex}ein)?(halb(e[rs]?)?|hälfte))|{AllIntRegex}ein(halb)(\\s+{RoundNumberIntegerRegex})?)(?=\\b)"
+            .replace("{AllIntRegex}", AllIntRegex)
+            .replace("{AllOrdinalRegex}", AllOrdinalRegex)
+            .replace("{RoundNumberOrdinalRegex}", RoundNumberOrdinalRegex)
+            .replace("{FractionUnitsRegex}", FractionUnitsRegex)
+            .replace("{RoundNumberIntegerRegexWithLocks}", RoundNumberIntegerRegexWithLocks)
+            .replace("{RoundNumberIntegerRegex}", RoundNumberIntegerRegex);
 
     public static final String FractionPrepositionRegex = "(?<!{BaseNumbers.CommonCurrencySymbol}\\s*)(?<=\\b)(?<numerator>({AllIntRegex})|((?<!\\.)\\d+))\\s+over\\s+(?<denominator>({AllIntRegex})|(\\d+)(?!\\.))(?=\\b)"
             .replace("{AllIntRegex}", AllIntRegex)
@@ -287,7 +302,7 @@ public class GermanNumeric {
 
     public static final List<String> WrittenIntegerSeparatorTexts = Arrays.asList("und");
 
-    public static final List<String> WrittenFractionSeparatorTexts = Arrays.asList("durch");
+    public static final List<String> WrittenFractionSeparatorTexts = Arrays.asList("durch", "und");
 
     public static final String HalfADozenRegex = "ein\\s+halbes\\s+dutzend";
 

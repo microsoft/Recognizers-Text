@@ -125,19 +125,13 @@
   },
   {
     "Input": "Ich bin am Sonntag in 2 Wochen wieder da.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
-        "Text": "Sonntag",
+        "Text": "Sonntag in 2 Wochen",
         "Type": "date",
-        "Start": 11,
-        "Length": 7
-      },
-      {
-        "Text": "in 2 Wochen",
-        "Type": "date",
-        "Start": 19,
-        "Length": 11
+        "Start": 11 ,
+        "Length": 19
       }
     ]
   },

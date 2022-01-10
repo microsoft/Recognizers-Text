@@ -21938,5 +21938,324 @@
         }
       }
     ]
+  },
+  {
+    "Input": "veintiocho de marzo de mil novecientos noventa y dos",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": [
+      {
+        "Text": "veintiocho de marzo de mil novecientos noventa y dos",
+        "Start": 0,
+        "End": 51,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1992-03-28",
+              "type": "date",
+              "value": "1992-03-28"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "veintiocho de marzo del mil novecientos noventa y dos",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript,python",
+    "Results": [
+      {
+        "Text": "veintiocho de marzo del mil novecientos noventa y dos",
+        "Start": 0,
+        "End": 52,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1992-03-28",
+              "type": "date",
+              "value": "1992-03-28"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "se conocieron el 9 de agosto de 1971",
+    "Context": {
+      "ReferenceDateTime": "2018-10-15T01:00:00"
+    },
+    "Results": [
+      {
+        "Text": "9 de agosto de 1971",
+        "Start": 17,
+        "End": 35,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1971-08-09",
+              "type": "date",
+              "value": "1971-08-09"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "se conocieron el 9 de 8 de 1971",
+    "Context": {
+      "ReferenceDateTime": "2018-10-15T01:00:00"
+    },
+    "Results": [
+      {
+        "Text": "9 de 8 de 1971",
+        "Start": 17,
+        "End": 30,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1971-08-09",
+              "type": "date",
+              "value": "1971-08-09"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Nací en abril del 87",
+    "Context": {
+      "ReferenceDateTime": "2018-01-07T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "abril del 87",
+        "Start": 8,
+        "End": 19,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1987-04",
+              "type": "daterange",
+              "start": "1987-04-01",
+              "end": "1987-05-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Created On es en la primera semana de 2021",
+    "Context": {
+      "ReferenceDateTime": "2018-11-29T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "la primera semana de 2021",
+        "Start": 17,
+        "End": 41,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-W01",
+              "type": "daterange",
+              "start": "2021-01-04",
+              "end": "2021-01-11"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Created On es en la segunda semana de 2021",
+    "Context": {
+      "ReferenceDateTime": "2018-11-29T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "la segunda semana de 2021",
+        "Start": 17,
+        "End": 41,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-W02",
+              "type": "daterange",
+              "start": "2021-01-11",
+              "end": "2021-01-18"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ellos saldrán del tercer mes de 2021",
+    "Context": {
+      "ReferenceDateTime": "2018-11-29T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "tercer mes de 2021",
+        "Start": 18,
+        "End": 35,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-03",
+              "type": "daterange",
+              "start": "2021-03-01",
+              "end": "2021-04-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "El noveno mes del próximo año realizaremos una revisión del progreso. ",
+    "Context": {
+      "ReferenceDateTime": "2021-11-29T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "el noveno mes del próximo año",
+        "Start": 0,
+        "End": 28,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2022-09",
+              "type": "daterange",
+              "start": "2022-09-01",
+              "end": "2022-10-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Habitaciones ya completamente reservadas para las primeras 2 semanas de 2021",
+    "Context": {
+      "ReferenceDateTime": "2018-11-29T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "las primeras 2 semanas de 2021",
+        "Start": 46,
+        "End": 75,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2021-01-04,2021-01-18,P2W)",
+              "type": "daterange",
+              "start": "2021-01-04",
+              "end": "2021-01-18"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "El mantenimiento está programado para las últimas 3 semanas de este año",
+    "Context": {
+      "ReferenceDateTime": "2019-11-29T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "las últimas 3 semanas de este año",
+        "Start": 38,
+        "End": 70,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-12-09,2019-12-30,P3W)",
+              "type": "daterange",
+              "start": "2019-12-09",
+              "end": "2019-12-30"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Se enumeran los resultados de los últimos cuatro meses de 2021",
+    "Context": {
+      "ReferenceDateTime": "2018-11-29T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "los últimos cuatro meses de 2021",
+        "Start": 30,
+        "End": 61,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2021-09-01,2022-01-01,P4M)",
+              "type": "daterange",
+              "start": "2021-09-01",
+              "end": "2022-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ellos visitaron París los primeros diez días del último año",
+    "Context": {
+      "ReferenceDateTime": "2021-11-29T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "los primeros diez días del último año",
+        "Start": 22,
+        "End": 58,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2020-01-01,2020-01-11,P10D)",
+              "type": "daterange",
+              "start": "2020-01-01",
+              "end": "2020-01-11"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

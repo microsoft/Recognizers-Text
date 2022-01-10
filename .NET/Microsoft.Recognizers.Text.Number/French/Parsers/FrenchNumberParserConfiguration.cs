@@ -4,6 +4,7 @@
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -48,13 +49,44 @@ namespace Microsoft.Recognizers.Text.Number.French
             this.DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexFlags);
             this.NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexFlags);
             this.FractionPrepositionRegex = new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexFlags);
+            this.RoundMultiplierRegex = new Regex(NumbersDefinitions.RoundMultiplierRegex, RegexFlags);
         }
 
         public string NonDecimalSeparatorText { get; private set; }
 
         public override IEnumerable<string> NormalizeTokenSet(IEnumerable<string> tokens, ParseResult context)
         {
-            return tokens;
+            var fracWords = new List<string>();
+            var tokenList = tokens.ToList();
+            var tokenLen = tokenList.Count;
+
+            for (var i = 0; i < tokenLen; i++)
+            {
+                if ((i < tokenLen - 2) && tokenList[i + 1] == "-")
+                {
+                    fracWords.Add(tokenList[i] + tokenList[i + 1] + tokenList[i + 2]);
+                    i += 2;
+                }
+                else
+                {
+                    fracWords.Add(tokenList[i]);
+                }
+            }
+
+            // The following piece of code is needed to compute the fraction pattern number+'et demi'
+            // e.g. 'deux et demi' ('two and a half') where the numerator is omitted in French.
+            // It works by inserting the numerator 'un' ('a') in the list fracWords
+            // so that the pattern is correctly processed.
+            var fracLen = fracWords.Count;
+            if (fracLen > 2)
+            {
+                if (fracWords[fracLen - 1] == NumbersDefinitions.OneHalfTokens[1] && fracWords[fracLen - 2] == NumbersDefinitions.WordSeparatorToken)
+                {
+                    fracWords.Insert(fracLen - 1, NumbersDefinitions.OneHalfTokens[0]);
+                }
+            }
+
+            return fracWords;
         }
 
         public override long ResolveCompositeNumber(string numberStr)

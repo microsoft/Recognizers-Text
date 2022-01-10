@@ -16,6 +16,13 @@ namespace Microsoft.Recognizers.Text
         // For Holiday cases as they are special cases of Date
         public bool IsHoliday { get; set; } = false;
 
+        // For special cases of holidays entities that should resolve to holiday ranges.
+        // This includes but is not exclusive to HolidayWeekends.
+        public bool IsHolidayRange { get; set; } = false;
+
+        // For special cases of holidays entities that include weekend terms such as "Halloween weekend"
+        public bool IsHolidayWeekend { get; set; } = false;
+
         // For Ordinal.relative, a subtype of Ordinal
         public bool IsOrdinalRelative { get; set; } = false;
 
@@ -23,12 +30,17 @@ namespace Microsoft.Recognizers.Text
 
         public string Offset { get; set; } = string.Empty;
 
+        // For extractions that contain a Holiday substring
+        public string HolidayName { get; set; } = string.Empty;
+
         public string RelativeTo { get; set; } = string.Empty;
 
         public bool IsMealtime { get; set; } = false;
 
         // For cases where a language has variations in handling decimal separators
         public bool TreatAsInteger { get; set; } = false;
+
+        public bool IsDurationDateWithWeekday { get; set; } = false;
 
         public Metadata Clone()
         {

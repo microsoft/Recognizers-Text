@@ -5,6 +5,7 @@ package com.microsoft.recognizers.text.datetime.utilities;
 
 import com.microsoft.recognizers.text.ExtractResult;
 import com.microsoft.recognizers.text.datetime.extractors.config.ProcessedSuperfluousWords;
+import com.microsoft.recognizers.text.datetime.resources.BaseDateTime;
 import com.microsoft.recognizers.text.matcher.MatchResult;
 import com.microsoft.recognizers.text.matcher.StringMatcher;
 import com.microsoft.recognizers.text.utilities.Match;
@@ -19,6 +20,14 @@ import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
 public class MatchingUtil {
+    
+    private static final Pattern InvalidDayNumberPrefix = RegExpUtility
+            .getSafeRegExp(BaseDateTime.InvalidDayNumberPrefix);
+
+    public static boolean isInvalidDayNumberPrefix(String prefix) {
+        Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(InvalidDayNumberPrefix, prefix)).findFirst();
+        return match.isPresent();
+    }
 
     public static MatchingUtilResult getAgoLaterIndex(String text, Pattern pattern) {
         int index = -1;

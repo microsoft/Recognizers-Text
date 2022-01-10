@@ -12,6 +12,8 @@ RoundNumberIntegerRegex: !simpleRegex
   def: (mil(h([ãa]o|[õo]es))?|bilh([ãa]o|[õo]es)|trilh([ãa]o|[õo]es)|qua[td]rilh([ãa]o|[õo]es)|quintilh([ãa]o|[õo]es))
 ZeroToNineIntegerRegex: !simpleRegex
   def: (quatro|cinco|sete|nove|zero|tr[êe]s|seis|oito|d(oi|ua)s|h?uma?)
+TwoToNineIntegerRegex: !simpleRegex
+  def: (quatro|cinco|sete|nove|tr[êe]s|seis|oito|d(oi|ua)s)
 TenToNineteenIntegerRegex: !simpleRegex
   def: (dez[ea]sseis|dez[ea]ssete|dez[ea]nove|dezoito|(c|qua)torze|quinze|treze|d[ée]z|onze|doze)
 TensNumberIntegerRegex: !simpleRegex
@@ -72,7 +74,7 @@ NumbersWithDozen2Suffix: !simpleRegex
 SimpleRoundOrdinalRegex: !simpleRegex
   def: (mil[eé]sim[oa]|milion[eé]sim[oa]|bilion[eé]sim[oa]|trilion[eé]sim[oa]|quatrilion[eé]sim[oa]|quintilion[eé]sim[oa])
 OneToNineOrdinalRegex: !simpleRegex
-  def: (primeir[oa]|segund[oa]|terceir[oa]|quart[oa]|quint[oa]|sext[oa]|s[eé]tim[oa]|oitav[oa]|non[oa])
+  def: (primeir[oa]|segund[oa]|terceir[oa]|terç[oa]|quart[oa]|quint[oa]|sext[oa]|s[eé]tim[oa]|oitav[oa]|non[oa])
 TensOrdinalRegex: !simpleRegex
   def: (nonag[eé]sim[oa]|octog[eé]sim[oa]|setuag[eé]sim[oa]|septuag[eé]sim[oa]|sexag[eé]sim[oa]|quinquag[eé]sim[oa]|quadrag[eé]sim[oa]|trig[eé]sim[oa]|vig[eé]sim[oa]|d[eé]cim[oa])
 HundredOrdinalRegex: !simpleRegex
@@ -111,12 +113,21 @@ FractionNotationRegex: !nestedRegex
   references: [ BaseNumbers.FractionNotationRegex ]
 FractionNotationWithSpacesRegex: !simpleRegex
   def: (((?<=\W|^)-\s*)|(?<=\b))\d+\s+\d+[/]\d+(?=(\b[^/]|$))
+FractionMultiplierRegex: !nestedRegex
+  def: (?<fracMultiplier>\s+(e|com)\s+(meio|(um|{TwoToNineIntegerRegex})\s+(meio|terç[oa]|quart[oa]|quint[oa]|sext[oa]|s[eé]tim[oa]|oitav[oa]|non[oa]|d[eé]cim[oa])s?))
+  references: [ TwoToNineIntegerRegex ]
+RoundMultiplierWithFraction: !nestedRegex
+  def: (?<multiplier>(?:(mil(h([ãa]o|[õo]es))|bilh([ãa]o|[õo]es)|trilh([ãa]o|[õo]es)|qua[td]rilh([ãa]o|[õo]es)|quintilh([ãa]o|[õo]es))))(?={FractionMultiplierRegex}?$)
+  references: [ FractionMultiplierRegex ]
+RoundMultiplierRegex: !nestedRegex
+  def: \b\s*({RoundMultiplierWithFraction}|(?<multiplier>(mil))$)
+  references: [ RoundMultiplierWithFraction ]
 FractionNounRegex: !nestedRegex
-  def: (?<=\b)({AllIntRegex}\s+((e|com)\s+)?)?({AllIntRegex})(\s+((e|com)\s)?)((({AllOrdinalRegex})s?|({SpecialFractionInteger})|({SuffixRoundOrdinalRegex})s?)|mei[oa]?|ter[çc]o?)(?=\b)
-  references: [ AllIntRegex, AllOrdinalRegex, SpecialFractionInteger, SuffixRoundOrdinalRegex ]
+  def: (?<=\b)({AllIntRegex}\s+((e|com)\s+)?)?(({AllIntRegex})(\s+((e|com)\s)?)((({AllOrdinalRegex})s?|({SpecialFractionInteger})|({SuffixRoundOrdinalRegex})s?)|mei[oa]?|ter[çc]o?)|(meio|um\s+quarto\s+de)\s+{RoundNumberIntegerRegex})(?=\b)
+  references: [ AllIntRegex, AllOrdinalRegex, SpecialFractionInteger, SuffixRoundOrdinalRegex, RoundNumberIntegerRegex ]
 FractionNounWithArticleRegex: !nestedRegex
-  def: (?<=\b)({AllIntRegex}\s+(e\s+)?)?(um|um[as])(\s+)(({AllOrdinalRegex})|({SuffixRoundOrdinalRegex})|(e\s+)?mei[oa]?)(?=\b)
-  references: [ AllIntRegex, AllOrdinalRegex, SuffixRoundOrdinalRegex ]
+  def: (?<=\b)(({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\s+(e\s+)?)?((um|um[as])(\s+)(({AllOrdinalRegex})|({SuffixRoundOrdinalRegex})|(e\s+)?mei[oa]?)|mei[oa]?)(?=\b)
+  references: [ AllIntRegex, AllOrdinalRegex, SuffixRoundOrdinalRegex, RoundNumberIntegerRegexWithLocks ]
 FractionPrepositionRegex: !nestedRegex
   def: (?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<!\.)\d+))\s+sobre\s+(?<denominator>({AllIntRegex})|((\d+)(?!\.)))(?=\b)
   references: [ AllIntRegex, BaseNumbers.CommonCurrencySymbol ]
@@ -161,6 +172,7 @@ WrittenGroupSeparatorTexts: [ponto]
 WrittenIntegerSeparatorTexts: [e]
 WrittenFractionSeparatorTexts: [com]
 WrittenFractionSuffix: [avo, ava]
+OneHalfTokens: [um, meio]
 PluralSuffix: !char 's'
 HalfADozenRegex: !simpleRegex
   def: meia\s+d[uú]zia
@@ -255,6 +267,8 @@ OrdinalNumberMap: !dictionary
     segunda: 2
     terceiro: 3
     terceira: 3
+    terço: 3
+    terça: 3
     quarto: 4
     quarta: 4
     quinto: 5

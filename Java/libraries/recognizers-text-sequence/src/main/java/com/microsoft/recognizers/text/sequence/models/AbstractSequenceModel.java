@@ -10,6 +10,7 @@ import com.microsoft.recognizers.text.IParser;
 import com.microsoft.recognizers.text.ModelResult;
 import com.microsoft.recognizers.text.ParseResult;
 import com.microsoft.recognizers.text.ResolutionKey;
+import com.microsoft.recognizers.text.utilities.QueryProcessor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +29,9 @@ public abstract class AbstractSequenceModel implements IModel {
 
     public List<ModelResult> parse(String query) {
         List<ParseResult> parsedSequences = new ArrayList<ParseResult>();
+
+        // Preprocess the query
+        query = QueryProcessor.preprocess(query);
 
         try {
             List<ExtractResult> extractResults = extractor.extract(query);

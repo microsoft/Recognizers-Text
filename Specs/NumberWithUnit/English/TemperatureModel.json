@@ -593,5 +593,10 @@
     "Input": "Jane Doe, 123 Random Street, Cloud City, PA 23456 F Block",
 	"NotSupported": "javascript,python,java",
     "Results": []
+  },
+  {
+    "Input": "SCP-173C",
+    "NotSupported": "javascript",
+    "Results": []
   }
 ]

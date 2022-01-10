@@ -425,7 +425,7 @@ public class PortugueseNumericWithUnit {
         .put("Bolívar forte venezuelano", "VEF")
         .put("Kwacha zambiano", "ZMW")
         .put("Dirame marroquino", "MAD")
-        .put("Dirame dos Emirados Árabes Unidos", "AED")
+        .put("Dirham dos Emirados Árabes Unidos", "AED")
         .put("Manat azeri", "AZN")
         .put("Manat turcomeno", "TMT")
         .put("Xelim somali", "SOS")
@@ -492,7 +492,7 @@ public class PortugueseNumericWithUnit {
         .put("Dólar de Belize", "BZD")
         .put("Dólar bermudense", "BMD")
         .put("Dólar de Brunei", "BND")
-        .put("Singapore dólar", "SGD")
+        .put("Dólar de Cingapura", "SGD")
         .put("Dólar canadense", "CAD")
         .put("Dólar das Ilhas Cayman", "KYD")
         .put("Dólar neozelandês", "NZD")
@@ -620,7 +620,7 @@ public class PortugueseNumericWithUnit {
         .put("Satoshi", "SATOSHI")
         .build();
 
-    public static final String CompoundUnitConnectorRegex = "(?<spacer>e)";
+    public static final String CompoundUnitConnectorRegex = "(?<spacer>e|com)";
 
     public static final ImmutableMap<String, String> CurrencyPrefixList = ImmutableMap.<String, String>builder()
         .put("Dólar", "$")

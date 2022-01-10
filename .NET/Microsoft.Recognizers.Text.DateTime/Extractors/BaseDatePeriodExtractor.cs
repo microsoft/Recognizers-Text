@@ -76,6 +76,21 @@ namespace Microsoft.Recognizers.Text.DateTime
                     continue;
                 }
 
+                // Patterns like 'first 3 weeks of 2018', 'last two months of 2020'
+                if (dateUnitMatch.Groups[Constants.UnitOfYearGroupName].Success)
+                {
+                    var beforeMatch = this.config.FirstLastRegex.MatchEnd(beforeStr, trim: true);
+                    if (beforeMatch.Success)
+                    {
+                        var afterMatch = this.config.OfYearRegex.MatchBegin(afterStr, trim: true);
+                        if (afterMatch.Success)
+                        {
+                            ret.Add(new Token(beforeMatch.Index, duration.End + afterMatch.Index + afterMatch.Length));
+                            continue;
+                        }
+                    }
+                }
+
                 // within "Days/Weeks/Months/Years" should be handled as dateRange here
                 // if duration contains "Seconds/Minutes/Hours", it should be treated as datetimeRange
                 Token matchToken = MatchWithinNextAffixRegex(text, duration, inPrefix: true);
@@ -666,7 +681,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var datePoints = this.config.DatePointExtractor.Extract(text, reference);
 
             // For cases like "week of the 18th"
-            datePoints.AddRange(ordinalExtractions.Where(o => !datePoints.Any(er => er.IsOverlap(o))));
+            datePoints.AddRange(ordinalExtractions.Where(o => !datePoints.Any(er => er.IsOverlap(o)) && !o.Metadata.IsOrdinalRelative));
 
             if (datePoints.Count < 1)
             {

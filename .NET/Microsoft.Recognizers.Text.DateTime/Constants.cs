@@ -188,8 +188,12 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string MealTimeGroupName = "mealTime";
         public const string NegativeGroupName = "neg";
         public const string YearCJKGroupName = "yearCJK";
+        public const string UnitOfYearGroupName = "uoy";
+        public const string FirstGroupName = "first";
+        public const string LastGroupName = "last";
         public const string PluralUnit = "plural";
         public const string AmbiguousPattern = "ambiguous";
+        public const string HolidayWeekend = "holidayWeekend";
 
         // Include the date mentioned, to make "before" -> "until" or "after" -> "since". Such as "on or earlier than 1/1/2016".
         public const string IncludeGroupName = "include";

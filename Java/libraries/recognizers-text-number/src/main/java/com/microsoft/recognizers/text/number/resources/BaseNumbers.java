@@ -34,7 +34,9 @@ public class BaseNumbers {
             .replace("{decimalmark}", decimalmark);
     }
 
-    public static final String PlaceHolderDefault = "\\D|\\b";
+    public static final String PlaceHolderDefault = "(?=\\D)|\\b";
+
+    public static final String PlaceHolderMixed = "\\D|\\b";
 
     public static final String CaseSensitiveTerms = "(?<=(\\s|\\d))(kB|K[Bb]?|M[BbM]?|G[Bb]?|B)\\b";
 

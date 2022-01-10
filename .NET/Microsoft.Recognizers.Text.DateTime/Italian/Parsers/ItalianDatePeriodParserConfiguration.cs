@@ -98,6 +98,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             MoreThanRegex = ItalianDatePeriodExtractorConfiguration.MoreThanRegex;
             CenturySuffixRegex = ItalianDatePeriodExtractorConfiguration.CenturySuffixRegex;
             NowRegex = ItalianDatePeriodExtractorConfiguration.NowRegex;
+            FirstLastRegex = ItalianDatePeriodExtractorConfiguration.FirstLastRegex;
+            OfYearRegex = ItalianDatePeriodExtractorConfiguration.OfYearRegex;
             SpecialDayRegex = ItalianDateExtractorConfiguration.SpecialDayRegex;
             TodayNowRegex = new Regex(DateTimeDefinitions.TodayNowRegex, RegexOptions.Singleline);
 
@@ -213,6 +215,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public Regex SpecialDayRegex { get; }
 
         public Regex TodayNowRegex { get; }
+
+        public Regex FirstLastRegex { get; }
+
+        public Regex OfYearRegex { get; }
 
         Regex ISimpleDatePeriodParserConfiguration.RelativeRegex => RelativeRegex;
 

@@ -58,6 +58,8 @@ public class ChineseDateTime {
 
     public static final String WeekDayRegex = "(?<weekday>周日|周天|周一|周二|周三|周四|周五|周六|星期一|星期二|星期三|星期四|星期五|星期六|星期日|星期天|礼拜一|礼拜二|礼拜三|礼拜四|礼拜五|礼拜六|礼拜日|礼拜天|禮拜一|禮拜二|禮拜三|禮拜四|禮拜五|禮拜六|禮拜日|禮拜天|週日|週天|週一|週二|週三|週四|週五|週六)";
 
+    public static final String WeekDayStartEnd = "^[.]";
+
     public static final String LunarRegex = "(农历|初一|正月|大年(?!龄|纪|级))";
 
     public static final String DateThisRegex = "(这个|这一个|这|这一|本){WeekDayRegex}"
@@ -107,7 +109,7 @@ public class ChineseDateTime {
             .replace("{NextPrefixRegex}", NextPrefixRegex)
             .replace("{DateDayRegexInCJK}", DateDayRegexInCJK);
 
-    public static final String DateUnitRegex = "(?<unit>年|个月|周|日|天)";
+    public static final String DateUnitRegex = "(?<unit>年|个月|周|週|日|天)";
 
     public static final String BeforeRegex = "以前|之前|前";
 
@@ -210,7 +212,7 @@ public class ChineseDateTime {
             .replace("{DayRegex}", DayRegex)
             .replace("{DatePeriodTillRegex}", DatePeriodTillRegex);
 
-    public static final String YearAndMonth = "({DatePeriodYearInCJKRegex}|{YearRegex})\\s*{MonthRegex}"
+    public static final String YearAndMonth = "({DatePeriodYearInCJKRegex}|{YearRegex}|(?<yearrel>明年|今年|去年))\\s*({MonthRegex}|的?(?<cardinal>第一|第二|第三|第四|第五|第六|第七|第八|第九|第十|第十一|第十二|最后一)\\s*个月\\s*)"
             .replace("{DatePeriodYearInCJKRegex}", DatePeriodYearInCJKRegex)
             .replace("{YearRegex}", YearRegex)
             .replace("{MonthRegex}", MonthRegex);
@@ -233,7 +235,11 @@ public class ChineseDateTime {
     public static final String WeekOfMonthRegex = "(?<wom>{MonthSuffixRegex}的(?<cardinal>第一|第二|第三|第四|第五|最后一)\\s*周\\s*)"
             .replace("{MonthSuffixRegex}", MonthSuffixRegex);
 
-    public static final String UnitRegex = "(?<unit>年|(个)?月|周|日|天)";
+    public static final String WeekOfYearRegex = "(?<woy>({YearRegex}|{RelativeRegex}年)的(?<cardinal>第一|第二|第三|第四|第五|最后一)\\s*周\\s*)"
+            .replace("{YearRegex}", YearRegex)
+            .replace("{RelativeRegex}", RelativeRegex);
+
+    public static final String UnitRegex = "(?<unit>年|(?<uoy>(个)?月|周|週|日|天))";
 
     public static final String FollowedUnit = "^\\s*{UnitRegex}"
             .replace("{UnitRegex}", UnitRegex);
@@ -268,6 +274,10 @@ public class ChineseDateTime {
     public static final String DayToDay = "^[.]";
 
     public static final String DayRegexForPeriod = "^[.]";
+
+    public static final String FirstLastOfYearRegex = "(({DatePeriodYearInCJKRegex}|{YearRegex}|(?<yearrel>明年|今年|去年))的?)((?<first>前)|(?<last>(最后|最後)))"
+            .replace("{YearRegex}", YearRegex)
+            .replace("{DatePeriodYearInCJKRegex}", DatePeriodYearInCJKRegex);
 
     public static final String PastRegex = "(?<past>(之前|前|上|近|过去))";
 
@@ -365,14 +375,14 @@ public class ChineseDateTime {
         .put("S", "秒钟|秒")
         .put("H", "个小时|小时|个钟头|钟头|时")
         .put("D", "天")
-        .put("W", "星期|个星期|周")
+        .put("W", "星期|个星期|周|週")
         .put("Mon", "个月")
         .put("Y", "年")
         .build();
 
-    public static final List<String> DurationAmbiguousUnits = Arrays.asList("分钟", "秒钟", "秒", "个小时", "小时", "天", "星期", "个星期", "周", "个月", "年", "时");
+    public static final List<String> DurationAmbiguousUnits = Arrays.asList("分钟", "秒钟", "秒", "个小时", "小时", "天", "星期", "个星期", "周", "週", "个月", "年", "时");
 
-    public static final String DurationUnitRegex = "(?<unit>{DateUnitRegex}|分钟?|秒钟?|个?小时|时|个?钟头|天|个?星期|周|个?月|年)"
+    public static final String DurationUnitRegex = "(?<unit>{DateUnitRegex}|分钟?|秒钟?|个?小时|时|个?钟头|天|个?星期|周|週|个?月|年)"
             .replace("{DateUnitRegex}", DateUnitRegex);
 
     public static final String DurationConnectorRegex = "^\\s*(?<connector>[多又余零]?)\\s*$";
@@ -544,6 +554,7 @@ public class ChineseDateTime {
         .put("个月", "MON")
         .put("日", "D")
         .put("周", "W")
+        .put("週", "W")
         .put("天", "D")
         .put("小时", "H")
         .put("个小时", "H")
@@ -584,7 +595,7 @@ public class ChineseDateTime {
 
     public static final List<String> WeekendTerms = Arrays.asList("周末");
 
-    public static final List<String> WeekTerms = Arrays.asList("周", "星期");
+    public static final List<String> WeekTerms = Arrays.asList("周", "週", "星期");
 
     public static final List<String> YearTerms = Arrays.asList("年");
 
@@ -633,6 +644,13 @@ public class ChineseDateTime {
         .put("第三", 3)
         .put("第四", 4)
         .put("第五", 5)
+        .put("第六", 6)
+        .put("第七", 7)
+        .put("第八", 8)
+        .put("第九", 9)
+        .put("第十", 10)
+        .put("第十一", 11)
+        .put("第十二", 12)
         .build();
 
     public static final ImmutableMap<String, Integer> ParserConfigurationDayOfMonth = ImmutableMap.<String, Integer>builder()

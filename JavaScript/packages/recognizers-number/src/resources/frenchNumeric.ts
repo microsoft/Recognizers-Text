@@ -15,9 +15,10 @@ export namespace FrenchNumeric {
     export const CompoundNumberLanguage = false;
     export const MultiDecimalSeparatorCulture = true;
     export const RoundNumberIntegerRegex = `(cent|mille|millions?|milliards?|billions?)`;
-    export const ZeroToNineIntegerRegex = `(une?|deux|trois|quatre|cinq|six|sept|huit|neuf)`;
+    export const ZeroToNineIntegerRegex = `(une?|deux|trois|quatre|cinq|six|sept|huit|neuf|z[ée]ro)`;
+    export const TwoToNineIntegerRegex = `(deux|trois|quatre|cinq|six|sept|huit|neuf)`;
     export const TenToNineteenIntegerRegex = `((seize|quinze|quatorze|treize|douze|onze)|dix(\\Wneuf|\\Whuit|\\Wsept)?)`;
-    export const TensNumberIntegerRegex = `(quatre\\Wvingt(s|\\Wdix)?|soixante\\Wdix|vingt|trente|quarante|cinquante|soixante|septante|octante|huitante|nonante)`;
+    export const TensNumberIntegerRegex = `(quatre\\Wvingt(s|\\Wdix)?|soixante(\\Wdix)?|vingt|trente|quarante|cinquante|septante|octante|huitante|nonante)`;
     export const DigitsNumberRegex = `\\d|\\d{1,3}(\\.\\d{3})`;
     export const NegativeNumberTermsRegex = `^[.]`;
     export const NegativeNumberSignRegex = `^(${NegativeNumberTermsRegex}\\s+).*`;
@@ -51,8 +52,11 @@ export namespace FrenchNumeric {
     export const OrdinalFrenchRegex = `(?<=\\b)${AllOrdinalRegex}(?=\\b)`;
     export const FractionNotationWithSpacesRegex = `(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s+\\d+[/]\\d+(?=(\\b[^/]|$))`;
     export const FractionNotationRegex = `${BaseNumbers.FractionNotationRegex}`;
-    export const FractionNounRegex = `(?<=\\b)(${AllIntRegex}\\s+((et)\\s+)?)?(${AllIntRegex})(\\s+((et)\\s)?)(((${AllOrdinalRegex})s?|(${SuffixOrdinalRegex})s?)|demi[es]?|tiers?|quarts?)(?=\\b)`;
-    export const FractionNounWithArticleRegex = `(?<=\\b)(${AllIntRegex}\\s+(et\\s+)?)?(une?)(\\s+)((${AllOrdinalRegex})|(${SuffixOrdinalRegex})|(et\\s+)?demi[es]?)(?=\\b)`;
+    export const FractionMultiplierRegex = `(?<fracMultiplier>\\s+et\\s+(demi[es]?|(une?|${TwoToNineIntegerRegex})\\s+(demie?|tier|quart|(cinqui|sixi|septi|hui[tr]i|neuvi|dixi)[eè]me)s?))`;
+    export const RoundMultiplierWithFraction = `(?<multiplier>(millions?|milliards?|billions?))(?=${FractionMultiplierRegex}?$)`;
+    export const RoundMultiplierRegex = `\\b\\s*(${RoundMultiplierWithFraction}|(?<multiplier>(cent|mille))$)`;
+    export const FractionNounRegex = `(?<=\\b)(${AllIntRegex}\\s+((et)\\s+)?)?(${AllIntRegex}(\\s+((et)\\s)?)((${AllOrdinalRegex}s?|${SuffixOrdinalRegex}s?)|(demi[es]?|tiers?|quarts?))|(un\\s+)?(demi|tier|quart)(\\s+(de\\s+)?|\\s*-\\s*)${RoundNumberIntegerRegex})(?=\\b)`;
+    export const FractionNounWithArticleRegex = `(?<=\\b)((${AllIntRegex}|${RoundNumberIntegerRegexWithLocks})\\s+(et\\s+)?)?((une?)(\\s+)((${AllOrdinalRegex})|(${SuffixOrdinalRegex})|(et\\s+)?demi[es]?)|demi[es]?)(?=\\b)`;
     export const FractionPrepositionRegex = `(?<!${BaseNumbers.CommonCurrencySymbol}\\s*)(?<=\\b)(?<numerator>(${AllIntRegex})|((?<!\\.)\\d+))\\s+sur\\s+(?<denominator>(${AllIntRegex})|((\\d+)(?!\\.)))(?=\\b)`;
     export const AllPointRegex = `((\\s+${ZeroToNineIntegerRegex})+|(\\s+${SeparaIntRegex}))`;
     export const AllFloatRegex = `(${AllIntRegex}(\\s+(virgule|point))${AllPointRegex})`;
@@ -101,6 +105,7 @@ export namespace FrenchNumeric {
     export const WrittenGroupSeparatorTexts = [ "point","points" ];
     export const WrittenIntegerSeparatorTexts = [ "et","-" ];
     export const WrittenFractionSeparatorTexts = [ "et","sur" ];
+    export const OneHalfTokens = [ "un","demi" ];
     export const HalfADozenRegex = `(?<=\\b)demie?\\s+douzaine`;
     export const DigitalNumberRegex = `((?<=\\b)(cent|mille|millions?|milliards?|billions?|douzaines?)(?=\\b))|((?<=(\\d|\\b))${BaseNumbers.MultiplierLookupRegex}(?=\\b))`;
     export const AmbiguousFractionConnectorsRegex = `^[.]`;

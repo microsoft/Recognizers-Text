@@ -30,6 +30,7 @@ class ChineseDateTime:
     DynastyYearRegex = f'(?<dynasty>{RegionTitleRegex})(?<biasYear>({DynastyStartYear}|\\d{{1,3}}|[十拾]?({ZeroToNineIntegerRegexCJK}[十百拾佰]?){{0,3}}))'
     DateYearInCJKRegex = f'(?<yearCJK>({ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}|{ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}|{ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}{ZeroToNineIntegerRegexCJK}|{DynastyYearRegex}))'
     WeekDayRegex = f'(?<weekday>周日|周天|周一|周二|周三|周四|周五|周六|星期一|星期二|星期三|星期四|星期五|星期六|星期日|星期天|礼拜一|礼拜二|礼拜三|礼拜四|礼拜五|礼拜六|礼拜日|礼拜天|禮拜一|禮拜二|禮拜三|禮拜四|禮拜五|禮拜六|禮拜日|禮拜天|週日|週天|週一|週二|週三|週四|週五|週六)'
+    WeekDayStartEnd = f'^[.]'
     LunarRegex = f'(农历|初一|正月|大年(?!龄|纪|级))'
     DateThisRegex = f'(这个|这一个|这|这一|本){WeekDayRegex}'
     DateLastRegex = f'(上一个|上个|上一|上|最后一个|最后)(的)?{WeekDayRegex}'
@@ -48,7 +49,7 @@ class ChineseDateTime:
     NextPrefixRegex = f'下个|下一个|下|下一|明'
     RelativeRegex = f'(?<order>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex}))'
     SpecialDate = f'(?<thisyear>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex})年)?(?<thismonth>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex})月)?{DateDayRegexInCJK}'
-    DateUnitRegex = f'(?<unit>年|个月|周|日|天)'
+    DateUnitRegex = f'(?<unit>年|个月|周|週|日|天)'
     BeforeRegex = f'以前|之前|前'
     AfterRegex = f'以后|以後|之后|之後|后|後'
     DateRegexList1 = f'({LunarRegex}(\\s*))?((({SimpleYearRegex}|{DateYearInCJKRegex})年)(\\s*))?{MonthRegex}(\\s*){DateDayRegexInCJK}((\\s*|,|，){WeekDayRegex})?'
@@ -75,12 +76,13 @@ class ChineseDateTime:
     DatePeriodYearInCJKRegex = f'{DateYearInCJKRegex}年{HalfYearRegex}?'
     MonthSuffixRegex = f'(?<msuf>({RelativeMonthRegex}|{MonthRegex}))'
     SimpleCasesRegex = f'((从)\\s*)?(({YearRegex}|{DatePeriodYearInCJKRegex})\\s*)?{MonthSuffixRegex}({DatePeriodDayRegexInCJK}|{DayRegex})\\s*{DatePeriodTillRegex}\\s*({DatePeriodDayRegexInCJK}|{DayRegex})((\\s+|\\s*,\\s*){YearRegex})?'
-    YearAndMonth = f'({DatePeriodYearInCJKRegex}|{YearRegex})\\s*{MonthRegex}'
+    YearAndMonth = f'({DatePeriodYearInCJKRegex}|{YearRegex}|(?<yearrel>明年|今年|去年))\\s*({MonthRegex}|的?(?<cardinal>第一|第二|第三|第四|第五|第六|第七|第八|第九|第十|第十一|第十二|最后一)\\s*个月\\s*)'
     SimpleYearAndMonth = f'({YearNumRegex}[/\\\\\\-]{MonthNumRegex}\\b$)'
     PureNumYearAndMonth = f'({YearRegexInNumber}\\s*[-\\.\\/]\\s*{MonthNumRegex})|({MonthNumRegex}\\s*\\/\\s*{YearRegexInNumber})'
     OneWordPeriodRegex = f'(((?<yearrel>(明|今|去)年)\\s*)?{MonthRegex}|({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})(?<halfTag>半)?\\s*(周末|周|月|年)|周末|(今|明|去|前|后)年(\\s*{HalfYearRegex})?)'
     WeekOfMonthRegex = f'(?<wom>{MonthSuffixRegex}的(?<cardinal>第一|第二|第三|第四|第五|最后一)\\s*周\\s*)'
-    UnitRegex = f'(?<unit>年|(个)?月|周|日|天)'
+    WeekOfYearRegex = f'(?<woy>({YearRegex}|{RelativeRegex}年)的(?<cardinal>第一|第二|第三|第四|第五|最后一)\\s*周\\s*)'
+    UnitRegex = f'(?<unit>年|(?<uoy>(个)?月|周|週|日|天))'
     FollowedUnit = f'^\\s*{UnitRegex}'
     NumberCombinedWithUnit = f'(?<num>\\d+(\\.\\d*)?){UnitRegex}'
     DateRangePrepositions = f'((从|在|自)\\s*)?'
@@ -90,6 +92,7 @@ class ChineseDateTime:
     MonthToMonthSuffixRequired = f'({DateRangePrepositions})({MonthRegex}){DatePeriodTillSuffixRequiredRegex}({MonthRegex})\\s*(之间|之内|期间|中间|间)'
     DayToDay = f'^[.]'
     DayRegexForPeriod = f'^[.]'
+    FirstLastOfYearRegex = f'(({DatePeriodYearInCJKRegex}|{YearRegex}|(?<yearrel>明年|今年|去年))的?)((?<first>前)|(?<last>(最后|最後)))'
     PastRegex = f'(?<past>(之前|前|上|近|过去))'
     FutureRegex = f'(?<future>(之后|之後|后|後|(?<![一两几]\\s*)下|未来(的)?))'
     SeasonRegex = f'(?<season>春|夏|秋|冬)(天|季)?'
@@ -130,11 +133,11 @@ class ChineseDateTime:
                                ("S", "秒钟|秒"),
                                ("H", "个小时|小时|个钟头|钟头|时"),
                                ("D", "天"),
-                               ("W", "星期|个星期|周"),
+                               ("W", "星期|个星期|周|週"),
                                ("Mon", "个月"),
                                ("Y", "年")])
-    DurationAmbiguousUnits = [r'分钟', r'秒钟', r'秒', r'个小时', r'小时', r'天', r'星期', r'个星期', r'周', r'个月', r'年', r'时']
-    DurationUnitRegex = f'(?<unit>{DateUnitRegex}|分钟?|秒钟?|个?小时|时|个?钟头|天|个?星期|周|个?月|年)'
+    DurationAmbiguousUnits = [r'分钟', r'秒钟', r'秒', r'个小时', r'小时', r'天', r'星期', r'个星期', r'周', r'週', r'个月', r'年', r'时']
+    DurationUnitRegex = f'(?<unit>{DateUnitRegex}|分钟?|秒钟?|个?小时|时|个?钟头|天|个?星期|周|週|个?月|年)'
     DurationConnectorRegex = f'^\\s*(?<connector>[多又余零]?)\\s*$'
     LunarHolidayRegex = f'(({YearRegex}|{DatePeriodYearInCJKRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>除夕|春节|中秋节|中秋|元宵节|端午节|端午|重阳节)'
     HolidayRegexList1 = f'(({YearRegex}|{DatePeriodYearInCJKRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>新年|五一|劳动节|元旦节|元旦|愚人节|平安夜|圣诞节|植树节|国庆节|情人节|教师节|儿童节|妇女节|青年节|建军节|女生节|光棍节|双十一|清明节|清明)'
@@ -192,6 +195,7 @@ class ChineseDateTime:
                                        ("个月", "MON"),
                                        ("日", "D"),
                                        ("周", "W"),
+                                       ("週", "W"),
                                        ("天", "D"),
                                        ("小时", "H"),
                                        ("个小时", "H"),
@@ -225,7 +229,7 @@ class ChineseDateTime:
                                             ("sec", 1)])
     MonthTerms = [r'月']
     WeekendTerms = [r'周末']
-    WeekTerms = [r'周', r'星期']
+    WeekTerms = [r'周', r'週', r'星期']
     YearTerms = [r'年']
     ThisYearTerms = [r'今年']
     LastYearTerms = [r'去年']
@@ -259,7 +263,14 @@ class ChineseDateTime:
                                            ("第二", 2),
                                            ("第三", 3),
                                            ("第四", 4),
-                                           ("第五", 5)])
+                                           ("第五", 5),
+                                           ("第六", 6),
+                                           ("第七", 7),
+                                           ("第八", 8),
+                                           ("第九", 9),
+                                           ("第十", 10),
+                                           ("第十一", 11),
+                                           ("第十二", 12)])
     ParserConfigurationDayOfMonth = dict([("01", 1),
                                           ("02", 2),
                                           ("03", 3),

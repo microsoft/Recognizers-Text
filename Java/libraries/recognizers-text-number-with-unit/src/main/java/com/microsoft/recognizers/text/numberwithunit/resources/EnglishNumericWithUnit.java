@@ -235,7 +235,7 @@ public class EnglishNumericWithUnit {
         .put("Cuban convertible peso", "cuban convertible pesos|cuban convertible peso|cuc|cuba convertible pesos|cuba convertible peso")
         .put("Cuban peso", "cuban pesos|cuban peso|cup|cuba pesos|cuba peso")
         .put("Dominican peso", "dominican pesos|dominican peso|dop|dominica pesos|dominica peso")
-        .put("Mexican peso", "mexican pesos|mexican peso|mxn|mexico pesos|mexico peso")
+        .put("Mexican peso", "mexican pesos|mexican peso|mxn|mexico pesos|mexico peso|mxn$")
         .put("Philippine peso", "piso|philippine pesos|philippine peso|₱|php")
         .put("Uruguayan peso", "uruguayan pesos|uruguayan peso|uyu")
         .put("Peso", "pesos|peso")
@@ -260,7 +260,7 @@ public class EnglishNumericWithUnit {
         .put("Pence", "pence")
         .put("Shilling", "shillings|shilling|shilingi|sh")
         .put("Penny", "pennies|penny")
-        .put("United States dollar", "united states dollars|united states dollar|united states $|u.s. dollars|u.s. dollar|u s dollar|u s dollars|usd|american dollars|american dollar|us$|us dollar|us dollars|u.s dollar|u.s dollars")
+        .put("United States dollar", "united states dollars|united states dollar|united states $|u.s. dollars|u.s. dollar|u s dollar|u s dollars|usd|american dollars|american dollar|us$|us dollar|us dollars|u.s dollar|u.s dollars|usd$")
         .put("East Caribbean dollar", "east caribbean dollars|east caribbean dollar|east Caribbean $|xcd")
         .put("Australian dollar", "australian dollars|australian dollar|australian $|australian$|aud|australia dollars|australia dollar|australia $|australia$")
         .put("Bahamian dollar", "bahamian dollars|bahamian dollar|bahamian $|bahamian$|bsd|bahamia dollars|bahamia dollar|bahamia $|bahamia$")
@@ -576,8 +576,9 @@ public class EnglishNumericWithUnit {
         .put("Dobra", "db|std")
         .put("Dollar", "$")
         .put("Brazilian Real", "R$")
-        .put("United States dollar", "united states $|us$|us $|u.s. $|u.s $")
+        .put("United States dollar", "united states $|us$|us $|u.s. $|u.s $|usd$")
         .put("East Caribbean dollar", "east caribbean $")
+        .put("Mexican peso", "mxn$")
         .put("Australian dollar", "australian $|australia $")
         .put("Bahamian dollar", "bahamian $|bahamia $")
         .put("Barbadian dollar", "barbadian $|barbadin $")
@@ -726,9 +727,10 @@ public class EnglishNumericWithUnit {
     public static final List<String> AmbiguousVolumeUnitList = Arrays.asList("l", "ounce", "oz", "cup", "cups", "peck", "pecks", "cord", "cords", "gill", "gills", "barrel", "barrels", "tbl", "quart", "quarts", "pinch", "t.", "T.", "Tb.", "ts.");
 
     public static final ImmutableMap<String, String> WeightSuffixList = ImmutableMap.<String, String>builder()
-        .put("Kilogram", "kg|kilogram|kilograms|kilo|kilos")
-        .put("Gram", "g|gram|grams|gm")
-        .put("Milligram", "mg|milligram|milligrams")
+        .put("Kilogram", "kg|kilogram|kilograms|kilo|kilos|kilogramme|kilogrammes")
+        .put("Gram", "g|gram|grams|gm|gramme|grammes")
+        .put("Milligram", "mg|milligram|milligrams|milligramme|milligrammes")
+        .put("Microgram", "μg|microgram|micrograms|micro gram|micro grams|microgramme|microgrammes|mcg")
         .put("Gallon", "-gallon|gallons|gallon|gal")
         .put("Metric ton", "metric tons|metric ton")
         .put("Ton", "-ton|ton|tons|tonne|tonnes")
@@ -743,10 +745,11 @@ public class EnglishNumericWithUnit {
         .put("Dram", "dram|drachm|drachma|roman drachma|greek drachma")
         .build();
 
-    public static final List<String> AmbiguousWeightUnitList = Arrays.asList("g", "oz", "stone", "dram", "lbs", "gal", "grain", "grains");
+    public static final List<String> AmbiguousWeightUnitList = Arrays.asList("g", "gr", "oz", "stone", "dram", "lbs", "gal", "grain", "grains");
 
     public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
         .put("\\bm\\b", "((('|’)\\s*m)|(m\\s*('|’)))")
         .put("^\\d{5} [cf]$", "\\b([a-z]{2} \\d{5} [cf])\\b")
+        .put("\\b\\d+\\s*\\p{L}+$", "((\\d+\\s*\\p{L}+[-—–-]?\\d+)|((\\p{L}[-—–-]?|\\d[-—–-])\\d+\\s*\\p{L}+))")
         .build();
 }

@@ -38,6 +38,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         public static readonly Regex WeekOfMonthRegex = new Regex(DateTimeDefinitions.WeekOfMonthRegex, RegexFlags);
 
+        public static readonly Regex WeekOfYearRegex = new Regex(DateTimeDefinitions.WeekOfYearRegex, RegexFlags);
+
         public static readonly Regex FollowedUnit = new Regex(DateTimeDefinitions.FollowedUnit, RegexFlags);
 
         public static readonly Regex NumberCombinedWithUnit = new Regex(DateTimeDefinitions.NumberCombinedWithUnit, RegexFlags);
@@ -63,6 +65,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         public static readonly Regex PastRegex = new Regex(DateTimeDefinitions.PastRegex, RegexFlags);
 
         public static readonly Regex FutureRegex = new Regex(DateTimeDefinitions.FutureRegex, RegexFlags);
+
+        public static readonly Regex FirstLastOfYearRegex = new Regex(DateTimeDefinitions.FirstLastOfYearRegex, RegexFlags);
 
         public static readonly Regex SeasonWithYear = new Regex(DateTimeDefinitions.SeasonWithYear, RegexFlags);
 
@@ -111,6 +115,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             SpecialMonthRegex,
             SpecialYearRegex,
             WeekOfMonthRegex,
+            WeekOfYearRegex,
             SeasonWithYear,
             QuarterRegex,
             DecadeRegex,
@@ -143,6 +148,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         Regex ICJKDatePeriodExtractorConfiguration.FutureRegex => FutureRegex;
 
         Regex ICJKDatePeriodExtractorConfiguration.PastRegex => PastRegex;
+
+        Regex ICJKDatePeriodExtractorConfiguration.FirstLastOfYearRegex => FirstLastOfYearRegex;
+
+        Regex ICJKDatePeriodExtractorConfiguration.UnitRegex => UnitRegex;
 
         Regex ICJKDatePeriodExtractorConfiguration.NumberCombinedWithUnit => NumberCombinedWithUnit;
 

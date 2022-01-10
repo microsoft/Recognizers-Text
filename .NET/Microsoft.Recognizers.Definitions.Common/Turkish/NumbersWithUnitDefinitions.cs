@@ -70,7 +70,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
         };
       public static readonly Dictionary<string, string> CurrencySuffixList = new Dictionary<string, string>
         {
-            { @"Afganistan afganisi", @"afganistan afganisi|afgani|؋|afn|af|afs|afganistan afganisine|afganistan afganisinde|afganistan afganisinden|afganistan afganisini|afganistan afganisinin|afganistan afganisidir|afganistan afganisiydi|afganistan afganisiymiş" },
+            { @"Afghan afghani", @"afganistan afganisi|afgani|؋|afn|af|afs|afganistan afganisine|afganistan afganisinde|afganistan afganisinden|afganistan afganisini|afganistan afganisinin|afganistan afganisidir|afganistan afganisiydi|afganistan afganisiymiş" },
             { @"Pul", @"pul|pula|pulda|puldan|pulu|pulun|puldur|puldu|pulmuş|pulluk" },
             { @"Euro", @"euro|€|eur|avro|avroya|avroda|avrodan|avroyu|avronun|avrodur|avroydu|avroymuş|avroluk" },
             { @"Cent", @"sent|s|sentte|sentten|senti|sentin|senttir|sentti|sentmiş|sentlik" },
@@ -417,7 +417,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
             { @"Rwandan franc", @"RWF" },
             { @"Russian ruble", @"RUB" },
             { @"Transnistrian ruble", @"PRB" },
-            { @"Belarusian ruble", @"BYN" },
+            { @"New Belarusian ruble", @"BYN" },
             { @"Algerian dinar", @"DZD" },
             { @"Bahraini dinar", @"BHD" },
             { @"Iraqi dinar", @"IQD" },
@@ -841,6 +841,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
             { @"Kilogram", @"kg|kilogram|kilo|kilograma|kilogramda||kilogramdan|kilogramı|kilogramın|kilogramdır|kilogramdı|kilogrammış|kilogramlık|kiloya|kiloda|kilodan|kiloyu|kilonun|kilodur|kiloydu|kiloymuş|kiloluk" },
             { @"Gram", @"g|gram|grama|gramda||gramdan|gramı|gramın|gramdır|gramdı|grammış|gramlık" },
             { @"Milligram", @"mg|miligram|miligrama|miligramda||miligramdan|miligramı|miligramın|miligramdır|miligramdı|miligrammış|miligramlık" },
+            { @"Microgram", @"μg|mikrogram|mikrograma|mikrogramda|mikrogramdan|mikrogramı|mikrogramın|mikrogramdır|mikrogramdı|mikrogrammış|mikrogramlık" },
             { @"Barrel", @"varil|varile|varilde|varilden|varili|varilin|varildir|varildi|varilmiş|varillik" },
             { @"Gallon", @"galon|galona|galonda|galondan|galonu|galonun|galondur|galondu|galonmuş|galonluk" },
             { @"Metric ton", @"metrik ton|metrik tona|metrik tonda|metrik tondan|metrik tonu|metrik tonun|metrik tondur|metrik tondu|metrik tonmuş|metrik tonluk" },

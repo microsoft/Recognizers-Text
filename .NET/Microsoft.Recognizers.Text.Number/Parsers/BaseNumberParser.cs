@@ -194,7 +194,10 @@ namespace Microsoft.Recognizers.Text.Number
             };
 
             var handle = extResult.Text.ToUpperInvariant();
-            var isE = !extResult.Text.Contains("^");
+
+            // Process cases like '1x10^6' as '1e6'
+            handle = handle.Replace("X10^", "E");
+            var isE = !handle.Contains("^");
 
             // [1] 1e10
             // [2] 1.1^-23
@@ -371,6 +374,7 @@ namespace Microsoft.Recognizers.Text.Number
             }
             else
             {
+                var isFractionMultiplier = false;
                 long multiplier = 1;
                 if (Config.RoundMultiplierRegex != null)
                 {
@@ -379,6 +383,7 @@ namespace Microsoft.Recognizers.Text.Number
                     {
                         resultText = resultText.Replace(match.Value, string.Empty);
                         multiplier = Config.RoundNumberMap[match.Groups["multiplier"].Value];
+                        isFractionMultiplier = match.Groups[Constants.FracMultiplierGroupName].Success ? true : false;
                     }
                 }
 
@@ -500,7 +505,8 @@ namespace Microsoft.Recognizers.Text.Number
                 // Find mixed number
                 if (mixedIndex != fracWords.Count && numerValue < denominator)
                 {
-                    result.Value = intValue + (multiplier * numerValue / denominator);
+                    result.Value = isFractionMultiplier ? (intValue + (numerValue / denominator)) * multiplier :
+                        intValue + (multiplier * numerValue / denominator);
                 }
                 else
                 {
@@ -815,6 +821,10 @@ namespace Microsoft.Recognizers.Text.Number
                             }
                         }
                     }
+                    else if (int.TryParse(matchStr, out int digitValue))
+                    {
+                        tempStack.Push(digitValue);
+                    }
                     else
                     {
                         var complexValue = Config.ResolveCompositeNumber(matchStr);
@@ -990,7 +1000,7 @@ namespace Microsoft.Recognizers.Text.Number
         {
             var singleIntFrac = $"{this.Config.WordSeparatorToken}| -|" +
                                 GetKeyRegex(this.Config.CardinalNumberMap.Keys) + "|" +
-                                GetKeyRegex(this.Config.OrdinalNumberMap.Keys);
+                                GetKeyRegex(this.Config.OrdinalNumberMap.Keys) + "|\\d+";
 
             // @TODO consider remodeling the creation of this regex
             // For Italian, we invert the order of Cardinal and Ordinal in singleIntFrac in order to correctly extract
@@ -1000,7 +1010,7 @@ namespace Microsoft.Recognizers.Text.Number
             {
                 singleIntFrac = $"{this.Config.WordSeparatorToken}| -|" +
                                     GetKeyRegex(this.Config.OrdinalNumberMap.Keys) + "|" +
-                                    GetKeyRegex(this.Config.CardinalNumberMap.Keys);
+                                    GetKeyRegex(this.Config.CardinalNumberMap.Keys) + "|\\d+";
             }
 
             string textNumberPattern;

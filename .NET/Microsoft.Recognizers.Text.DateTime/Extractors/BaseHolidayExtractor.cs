@@ -10,6 +10,7 @@ namespace Microsoft.Recognizers.Text.DateTime
     public class BaseHolidayExtractor : IDateTimeExtractor
     {
         private const string ExtractorName = Constants.SYS_DATETIME_DATE; // "Date";
+        private const string RangeExtractorName = Constants.SYS_DATETIME_DATEPERIOD; // "Daterange";
 
         private readonly IHolidayExtractorConfiguration config;
 
@@ -30,10 +31,13 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ers = Token.MergeAllTokens(tokens, text, ExtractorName);
             foreach (var er in ers)
             {
-                er.Metadata = new Metadata
+                // If this is a daterange that contains a holiday, we should change its
+                // type to indicate that.
+
+                if (er.Metadata?.IsHolidayRange ?? false)
                 {
-                    IsHoliday = true,
-                };
+                    er.Type = RangeExtractorName;
+                }
             }
 
             return ers;
@@ -45,9 +49,28 @@ namespace Microsoft.Recognizers.Text.DateTime
             foreach (var regex in this.config.HolidayRegexes)
             {
                 var matches = regex.Matches(text);
+
                 foreach (Match match in matches)
                 {
-                    ret.Add(new Token(match.Index, match.Index + match.Length));
+                    var metaData = new Metadata();
+
+                    // The objective here is to not lose the information of the holiday name
+                    // and year (if captured) when choosing. The data is extracted from the match
+                    // groups.
+
+                    if (match.Groups[Constants.HolidayWeekend].Success)
+                    {
+                        metaData.IsHolidayRange = metaData.IsHolidayWeekend = true;
+                        metaData.HolidayName = match.Groups["holiday"].Value;
+                        if (match.Groups["year"].Success)
+                        {
+                            metaData.HolidayName = metaData.HolidayName + " " + match.Groups["year"].Value;
+                        }
+                    }
+
+                    metaData.IsHoliday = true;
+
+                    ret.Add(new Token(match.Index, match.Index + match.Length, metaData));
                 }
             }
 
