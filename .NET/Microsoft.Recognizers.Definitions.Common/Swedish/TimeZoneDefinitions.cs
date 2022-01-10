@@ -626,8 +626,8 @@ namespace Microsoft.Recognizers.Definitions.Swedish
             @"Pacific",
             @"Eastern"
         };
-      public const string BaseTimeZoneSuffixRegex = @"((\s*|-)(friendly|compatible))?(\s+|-)(ti(d|me))(zone)?";
-      public static readonly string LocationTimeSuffixRegex = $@"((\s*|-)(tidzon|tid|sommartid|normaltid|timezone|time)\b)";
+      public const string BaseTimeZoneSuffixRegex = @"((\s+|-)(friendly|compatible))?(\s+|-)?(ti(d|me))(zone?)?";
+      public static readonly string LocationTimeSuffixRegex = $@"({BaseTimeZoneSuffixRegex})\b";
       public static readonly string TimeZoneEndRegex = $@"({BaseTimeZoneSuffixRegex})$";
       public static readonly IList<string> AmbiguousTimezoneList = new List<string>
         {
@@ -896,11 +896,11 @@ namespace Microsoft.Recognizers.Definitions.Swedish
             { @"Ostaustralisk sommartid", 660 },
             { @"Östaustralisk normaltid", 600 },
             { @"Ostaustralisk normaltid", 600 },
-            { @"afghansk", 270 },
+            { @"afghansk tid", 270 },
             { @"Alaska sommartid", -480 },
             { @"Alaska normaltid", -540 },
             { @"Almatytid", 360 },
-            { @"Amazonsk sommartid", -180 },
+            { @"Amazonsk sommar", -180 },
             { @"Armenisk tid", 240 },
             { @"Amazonsk tid", -240 },
             { @"Anadyrtid", 720 },
@@ -1290,12 +1290,15 @@ namespace Microsoft.Recognizers.Definitions.Swedish
       public static readonly IList<string> MajorLocations = new List<string>
         {
             @"Dominican Republic",
+            @"Dominikanska republiken",
             @"Dominica",
             @"Guinea Bissau",
             @"Guinea-Bissau",
             @"Guinea",
             @"Equatorial Guinea",
+            @"Ekvatorialguinea",
             @"Papua New Guinea",
+            @"Papua Nya Guinea",
             @"New York City",
             @"New York",
             @"York",
@@ -1342,6 +1345,7 @@ namespace Microsoft.Recognizers.Definitions.Swedish
             @"El Paso",
             @"Glasgow",
             @"Gold Coast",
+            @"Guldkusten",
             @"Hamilton",
             @"Hialeah",
             @"Houston",
@@ -1370,6 +1374,7 @@ namespace Microsoft.Recognizers.Definitions.Swedish
             @"Miami",
             @"Middlesbrough",
             @"Milan",
+            @"Milano",
             @"Milton Keynes",
             @"Minneapolis",
             @"Montréal",
@@ -1404,6 +1409,7 @@ namespace Microsoft.Recognizers.Definitions.Swedish
             @"Redmond",
             @"Richmond",
             @"Rome",
+            @"Rom",
             @"San Antonio",
             @"San Diego",
             @"San Francisco",
@@ -1450,6 +1456,7 @@ namespace Microsoft.Recognizers.Definitions.Swedish
             @"Arlington",
             @"Arvada",
             @"Athens",
+            @"Athen",
             @"Augusta",
             @"Aurora",
             @"Bakersfield",
@@ -1679,7 +1686,6 @@ namespace Microsoft.Recognizers.Definitions.Swedish
             @"Yonkers",
             @"Bentonville",
             @"Afghanistan",
-            @"Afghansk",
             @"AK",
             @"AL",
             @"Alabama",
@@ -1687,6 +1693,7 @@ namespace Microsoft.Recognizers.Definitions.Swedish
             @"Åland Islands",
             @"Alaska",
             @"Albania",
+            @"Albansk",
             @"Algeria",
             @"American Samoa",
             @"Andorra",

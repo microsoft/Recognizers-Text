@@ -611,7 +611,7 @@ FullNameList: !list
     - Pacific
     - Eastern
 BaseTimeZoneSuffixRegex: !simpleRegex
-  def: ((\s+|-)(friendly|compatible))?(\s+|-)(ti(d|me))(zone)?
+  def: ((\s+|-)(friendly|compatible))?(\s+|-)?(ti(d|me))(zone?)?
 LocationTimeSuffixRegex: !nestedRegex
   def: ({BaseTimeZoneSuffixRegex})\b
   references: [BaseTimeZoneSuffixRegex]
@@ -949,11 +949,11 @@ FullToMinMapping: !dictionary
    Ostaustralisk sommartid: 660
    Östaustralisk normaltid: 600
    Ostaustralisk normaltid: 600
-   afghansk tid: 270
+   afghansk: 270
    Alaska sommartid: -480
    Alaska normaltid: -540
    Almatytid: 360
-   Amazonsk sommartid: -180
+   Amazonsk sommar: -180
    Armenisk tid: 240
    Amazonsk tid: -240
    Anadyrtid: 720
@@ -1352,12 +1352,15 @@ MajorLocations: !list
   entries:
     # top due to conflict
     - Dominican Republic
+    - Dominikanska republiken
     - Dominica
     - Guinea Bissau
     - Guinea-Bissau
     - Guinea
     - Equatorial Guinea
+    - Ekvatorialguinea
     - Papua New Guinea
+    - Papua Nya Guinea
     - New York City
     - New York
     - York
@@ -1405,6 +1408,7 @@ MajorLocations: !list
     - El Paso
     - Glasgow
     - Gold Coast
+    - Guldkusten
     - Hamilton
     - Hialeah
     - Houston
@@ -1433,6 +1437,7 @@ MajorLocations: !list
     - Miami
     - Middlesbrough
     - Milan
+    - Milano
     - Milton Keynes
     - Minneapolis
     - Montréal
@@ -1467,6 +1472,7 @@ MajorLocations: !list
     - Redmond
     - Richmond
     - Rome
+    - Rom
     - San Antonio
     - San Diego
     - San Francisco
@@ -1513,6 +1519,7 @@ MajorLocations: !list
     - Arlington
     - Arvada
     - Athens
+    - Athen
     - Augusta
     - Aurora
     - Bakersfield
@@ -1750,6 +1757,7 @@ MajorLocations: !list
     - Åland Islands
     - Alaska
     - Albania
+    - Albansk
     - Algeria
     - American Samoa
     - Andorra
