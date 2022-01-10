@@ -28,7 +28,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Arabic
             DateTimePeriodParser = new BaseDateTimePeriodParser(new ArabicDateTimePeriodParserConfiguration(this));
             SetParser = new BaseSetParser(new ArabicSetParserConfiguration(this));
             HolidayParser = new BaseHolidayParser(new ArabicHolidayParserConfiguration(this));
-            TimeZoneParser = new BaseTimeZoneParser();
+            TimeZoneParser = new BaseTimeZoneParser(new ArabicTimeZoneParserConfiguration(this));
         }
 
         public Regex BeforeRegex { get; }

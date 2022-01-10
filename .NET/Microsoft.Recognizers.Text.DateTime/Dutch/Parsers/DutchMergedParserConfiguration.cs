@@ -26,7 +26,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             DateTimePeriodParser = new BaseDateTimePeriodParser(new DutchDateTimePeriodParserConfiguration(this));
             SetParser = new BaseSetParser(new DutchSetParserConfiguration(this));
             HolidayParser = new BaseHolidayParser(new DutchHolidayParserConfiguration(this));
-            TimeZoneParser = new BaseTimeZoneParser();
+            TimeZoneParser = new BaseTimeZoneParser(new DutchTimeZoneParserConfiguration(this));
         }
 
         public Regex BeforeRegex { get; }

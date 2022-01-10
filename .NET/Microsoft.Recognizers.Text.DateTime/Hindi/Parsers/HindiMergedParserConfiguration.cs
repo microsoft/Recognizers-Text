@@ -27,7 +27,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
             DateTimePeriodParser = new BaseDateTimePeriodParser(new HindiDateTimePeriodParserConfiguration(this));
             SetParser = new BaseSetParser(new HindiSetParserConfiguration(this));
             HolidayParser = new BaseHolidayParser(new HindiHolidayParserConfiguration(this));
-            TimeZoneParser = new BaseTimeZoneParser();
+            TimeZoneParser = new BaseTimeZoneParser(new HindiTimeZoneParserConfiguration(this));
         }
 
         public Regex BeforeRegex { get; }
