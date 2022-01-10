@@ -7,6 +7,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Arabic
 {
     public class ArabicTimeZoneParserConfiguration : BaseDateTimeOptionsConfiguration, ITimeZoneParserConfiguration
     {
+        public static readonly string TimeZoneEndRegex = TimeZoneDefinitions.TimeZoneEndRegex;
+
         public static readonly Dictionary<string, int> FullToMinMapping = TimeZoneDefinitions.FullToMinMapping;
 
         public static readonly Regex DirectUtcRegex =
@@ -18,6 +20,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Arabic
             : base(config)
         {
         }
+
+        string ITimeZoneParserConfiguration.TimeZoneEndRegex => TimeZoneEndRegex;
 
         Dictionary<string, int> ITimeZoneParserConfiguration.FullToMinMapping => FullToMinMapping;
 

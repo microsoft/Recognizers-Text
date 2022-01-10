@@ -8,6 +8,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 {
     public class DutchTimeZoneParserConfiguration : BaseDateTimeOptionsConfiguration, ITimeZoneParserConfiguration
     {
+        public static readonly string TimeZoneEndRegex = TimeZoneDefinitions.TimeZoneEndRegex;
+
         public static readonly Dictionary<string, int> FullToMinMapping = TimeZoneDefinitions.FullToMinMapping;
 
         public static readonly Regex DirectUtcRegex =
@@ -19,6 +21,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             : base(config)
         {
         }
+
+        string ITimeZoneParserConfiguration.TimeZoneEndRegex => TimeZoneEndRegex;
 
         Dictionary<string, int> ITimeZoneParserConfiguration.FullToMinMapping => FullToMinMapping;
 

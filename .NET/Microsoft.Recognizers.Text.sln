@@ -15,12 +15,16 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Recognizers.Text.DateTime", "Microsoft.Recognizers.Text.DateTime\Microsoft.Recognizers.Text.DateTime.csproj", "{19522B81-C63F-4DD5-AB4C-674CD44D67D6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data Files", "Data Files", "{F070C131-80C0-4B0E-A462-2F6DB796759D}"
+	ProjectSection(SolutionItems) = preProject
+		..\Patterns\Turkish\Turkish-TimeZone.yaml = ..\Patterns\Turkish\Turkish-TimeZone.yaml
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Patterns", "Patterns", "{23084BAE-6EB0-439A-BD71-31A783680711}"
 	ProjectSection(SolutionItems) = preProject
 		..\Patterns\Arabic\Arabic-Choice.yaml = ..\Patterns\Arabic\Arabic-Choice.yaml
 		..\Patterns\Arabic\Arabic-DateTime.yaml = ..\Patterns\Arabic\Arabic-DateTime.yaml
 		..\Patterns\Arabic\Arabic-Numbers.yaml = ..\Patterns\Arabic\Arabic-Numbers.yaml
+		..\Patterns\Arabic\Arabic-TimeZone.yaml = ..\Patterns\Arabic\Arabic-TimeZone.yaml
 		..\Patterns\Base-Currency.yaml = ..\Patterns\Base-Currency.yaml
 		..\Patterns\Base-DateTime.yaml = ..\Patterns\Base-DateTime.yaml
 		..\Patterns\Base-Email.yaml = ..\Patterns\Base-Email.yaml
@@ -64,6 +68,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Patterns", "Patterns", "{23
 		..\Patterns\Hindi\Hindi-Numbers.yaml = ..\Patterns\Hindi\Hindi-Numbers.yaml
 		..\Patterns\Hindi\Hindi-NumbersWithUnit.yaml = ..\Patterns\Hindi\Hindi-NumbersWithUnit.yaml
 		..\Patterns\Hindi\Hindi-QuotedText.yaml = ..\Patterns\Hindi\Hindi-QuotedText.yaml
+		..\Patterns\Hindi\Hindi-TimeZone.yaml = ..\Patterns\Hindi\Hindi-TimeZone.yaml
 		..\Patterns\Italian\Italian-Choice.yaml = ..\Patterns\Italian\Italian-Choice.yaml
 		..\Patterns\Italian\Italian-DateTime.yaml = ..\Patterns\Italian\Italian-DateTime.yaml
 		..\Patterns\Italian\Italian-Numbers.yaml = ..\Patterns\Italian\Italian-Numbers.yaml
@@ -98,6 +103,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Patterns", "Patterns", "{23
 		..\Patterns\Turkish\Turkish-Numbers.yaml = ..\Patterns\Turkish\Turkish-Numbers.yaml
 		..\Patterns\Turkish\Turkish-NumbersWithUnit.yaml = ..\Patterns\Turkish\Turkish-NumbersWithUnit.yaml
 		..\Patterns\Turkish\Turkish-QuotedText.yaml = ..\Patterns\Turkish\Turkish-QuotedText.yaml
+		..\Patterns\Turkish\Turkish-TimeZone.yaml = ..\Patterns\Turkish\Turkish-TimeZone.yaml
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Recognizers.Text.DataDrivenTests", "Microsoft.Recognizers.Text.DataDrivenTests\Microsoft.Recognizers.Text.DataDrivenTests.csproj", "{2783050D-97E2-4F10-99F0-E2D970FD996A}"

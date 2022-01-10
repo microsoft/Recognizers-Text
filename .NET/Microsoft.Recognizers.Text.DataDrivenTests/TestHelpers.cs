@@ -284,7 +284,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeParsers.Holiday:
                     return new BaseHolidayParser(new ArabicHolidayParserConfiguration(commonConfiguration));
                 case DateTimeParsers.TimeZone:
-                    return new BaseTimeZoneParser();
+                    return new BaseTimeZoneParser(new ArabicTimeZoneParserConfiguration(commonConfiguration));
                 case DateTimeParsers.Set:
                     return new BaseSetParser(new ArabicSetParserConfiguration(commonConfiguration));
                 case DateTimeParsers.Merged:
@@ -354,7 +354,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeParsers.Holiday:
                     return new BaseHolidayParser(new DutchHolidayParserConfiguration(commonConfiguration));
                 case DateTimeParsers.TimeZone:
-                    return new BaseTimeZoneParser();
+                    return new BaseTimeZoneParser(new DutchTimeZoneParserConfiguration(commonConfiguration));
                 case DateTimeParsers.Set:
                     return new BaseSetParser(new DutchSetParserConfiguration(commonConfiguration));
                 case DateTimeParsers.Merged:
@@ -424,7 +424,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeParsers.Holiday:
                     return new BaseHolidayParser(new EnglishHolidayParserConfiguration(commonConfiguration));
                 case DateTimeParsers.TimeZone:
-                    return new BaseTimeZoneParser();
+                    return new BaseTimeZoneParser(new EnglishTimeZoneParserConfiguration(commonConfiguration));
                 case DateTimeParsers.Set:
                     return new BaseSetParser(new EnglishSetParserConfiguration(commonConfiguration));
                 case DateTimeParsers.Merged:
@@ -495,7 +495,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeParsers.Holiday:
                     return new BaseHolidayParser(new EnglishHolidayParserConfiguration(commonConfiguration));
                 case DateTimeParsers.TimeZone:
-                    return new BaseTimeZoneParser();
+                    return new BaseTimeZoneParser(new EnglishTimeZoneParserConfiguration(commonConfiguration));
                 case DateTimeParsers.Set:
                     return new BaseSetParser(new EnglishSetParserConfiguration(commonConfiguration));
                 case DateTimeParsers.Merged:
@@ -1211,7 +1211,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
                 case DateTimeParsers.Holiday:
                     return new BaseHolidayParser(new SwedishHolidayParserConfiguration(commonConfiguration));
                 case DateTimeParsers.TimeZone:
-                    return new BaseTimeZoneParser();
+                    return new BaseTimeZoneParser(new SwedishTimeZoneParserConfiguration(commonConfiguration));
                 case DateTimeParsers.Set:
                     return new BaseSetParser(new SwedishSetParserConfiguration(commonConfiguration));
                 case DateTimeParsers.Merged:

@@ -12,5 +12,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         Dictionary<string, int> FullToMinMapping { get; }
 
         Regex DirectUtcRegex { get; }
+
+        string TimeZoneEndRegex { get; }
     }
 }
