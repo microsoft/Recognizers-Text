@@ -38,6 +38,7 @@ namespace Microsoft.Recognizers.Definitions.Korean
       public const string BuildPrefix = @"";
       public const string BuildSuffix = @"";
       public const string ConnectorToken = @"";
+      public const bool CheckFirstSuffix = true;
       public static readonly Dictionary<string, string> CurrencySuffixList = new Dictionary<string, string>
         {
             { @"Afghan afghani", @"아프가니" },

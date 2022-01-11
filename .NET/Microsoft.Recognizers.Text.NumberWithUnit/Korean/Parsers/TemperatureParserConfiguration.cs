@@ -19,6 +19,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Korean
         {
             this.BindDictionary(NumbersWithUnitDefinitions.TemperaturePrefixList);
             this.BindDictionary(NumbersWithUnitDefinitions.TemperatureSuffixList);
+            this.CheckFirstSuffix = NumbersWithUnitDefinitions.CheckFirstSuffix;
         }
     }
 }
