@@ -43,7 +43,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Swedish
 
             NumberParser = new BaseNumberParser(new SwedishNumberParserConfiguration(numConfig));
 
-            TimeZoneParser = new BaseTimeZoneParser();
+            TimeZoneParser = new BaseTimeZoneParser(new SwedishTimeZoneParserConfiguration(this));
 
             // Do not change order. The order of initialization can lead to side-effects
             DateExtractor = new BaseDateExtractor(new SwedishDateExtractorConfiguration(this));

@@ -18,6 +18,7 @@ AgeSuffixList: !dictionary
 BuildPrefix: ''
 BuildSuffix: ''
 ConnectorToken: ''
+CheckFirstSuffix: !bool true
 #CurrencyExtractorConfiguration
 CurrencySuffixList: !dictionary
   types: [string, string]

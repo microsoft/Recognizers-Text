@@ -1,0 +1,7 @@
+﻿﻿﻿<#@ template debug="true" hostspecific="true" language="C#" #>
+<#
+	this.DataFilename = @"Patterns\Hindi\Hindi-TimeZone.yaml";
+	this.Language = "Hindi";
+	this.ClassName = "TimeZoneDefinitions";
+#>
+<#@ include file="..\CommonDefinitions.ttinclude"#>

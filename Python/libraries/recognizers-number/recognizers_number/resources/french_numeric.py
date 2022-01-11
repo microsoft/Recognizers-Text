@@ -19,6 +19,7 @@ class FrenchNumeric:
     MultiDecimalSeparatorCulture = True
     RoundNumberIntegerRegex = f'(cent|mille|millions?|milliards?|billions?)'
     ZeroToNineIntegerRegex = f'(une?|deux|trois|quatre|cinq|six|sept|huit|neuf|z[ée]ro)'
+    TwoToNineIntegerRegex = f'(deux|trois|quatre|cinq|six|sept|huit|neuf)'
     TenToNineteenIntegerRegex = f'((seize|quinze|quatorze|treize|douze|onze)|dix(\\Wneuf|\\Whuit|\\Wsept)?)'
     TensNumberIntegerRegex = f'(quatre\\Wvingt(s|\\Wdix)?|soixante(\\Wdix)?|vingt|trente|quarante|cinquante|septante|octante|huitante|nonante)'
     DigitsNumberRegex = f'\\d|\\d{{1,3}}(\\.\\d{{3}})'
@@ -56,8 +57,11 @@ class FrenchNumeric:
     OrdinalFrenchRegex = f'(?<=\\b){AllOrdinalRegex}(?=\\b)'
     FractionNotationWithSpacesRegex = f'(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s+\\d+[/]\\d+(?=(\\b[^/]|$))'
     FractionNotationRegex = f'{BaseNumbers.FractionNotationRegex}'
-    FractionNounRegex = f'(?<=\\b)({AllIntRegex}\\s+((et)\\s+)?)?({AllIntRegex})(\\s+((et)\\s)?)((({AllOrdinalRegex})s?|({SuffixOrdinalRegex})s?)|demi[es]?|tiers?|quarts?)(?=\\b)'
-    FractionNounWithArticleRegex = f'(?<=\\b)({AllIntRegex}\\s+(et\\s+)?)?(une?)(\\s+)(({AllOrdinalRegex})|({SuffixOrdinalRegex})|(et\\s+)?demi[es]?)(?=\\b)'
+    FractionMultiplierRegex = f'(?<fracMultiplier>\\s+et\\s+(demi[es]?|(une?|{TwoToNineIntegerRegex})\\s+(demie?|tier|quart|(cinqui|sixi|septi|hui[tr]i|neuvi|dixi)[eè]me)s?))'
+    RoundMultiplierWithFraction = f'(?<multiplier>(millions?|milliards?|billions?))(?={FractionMultiplierRegex}?$)'
+    RoundMultiplierRegex = f'\\b\\s*({RoundMultiplierWithFraction}|(?<multiplier>(cent|mille))$)'
+    FractionNounRegex = f'(?<=\\b)({AllIntRegex}\\s+((et)\\s+)?)?({AllIntRegex}(\\s+((et)\\s)?)(({AllOrdinalRegex}s?|{SuffixOrdinalRegex}s?)|(demi[es]?|tiers?|quarts?))|(un\\s+)?(demi|tier|quart)(\\s+(de\\s+)?|\\s*-\\s*){RoundNumberIntegerRegex})(?=\\b)'
+    FractionNounWithArticleRegex = f'(?<=\\b)(({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\\s+(et\\s+)?)?((une?)(\\s+)(({AllOrdinalRegex})|({SuffixOrdinalRegex})|(et\\s+)?demi[es]?)|demi[es]?)(?=\\b)'
     FractionPrepositionRegex = f'(?<!{BaseNumbers.CommonCurrencySymbol}\\s*)(?<=\\b)(?<numerator>({AllIntRegex})|((?<!\\.)\\d+))\\s+sur\\s+(?<denominator>({AllIntRegex})|((\\d+)(?!\\.)))(?=\\b)'
     AllPointRegex = f'((\\s+{ZeroToNineIntegerRegex})+|(\\s+{SeparaIntRegex}))'
     AllFloatRegex = f'({AllIntRegex}(\\s+(virgule|point)){AllPointRegex})'
@@ -110,6 +114,7 @@ class FrenchNumeric:
     WrittenGroupSeparatorTexts = [r'point', r'points']
     WrittenIntegerSeparatorTexts = [r'et', r'-']
     WrittenFractionSeparatorTexts = [r'et', r'sur']
+    OneHalfTokens = [r'un', r'demi']
     HalfADozenRegex = f'(?<=\\b)demie?\\s+douzaine'
     DigitalNumberRegex = f'((?<=\\b)(cent|mille|millions?|milliards?|billions?|douzaines?)(?=\\b))|((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))'
     AmbiguousFractionConnectorsRegex = f'^[.]'

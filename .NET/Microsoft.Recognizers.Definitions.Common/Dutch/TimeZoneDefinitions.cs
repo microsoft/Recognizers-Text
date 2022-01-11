@@ -30,7 +30,9 @@ namespace Microsoft.Recognizers.Definitions.Dutch
         {
             @"Afghanistan Standard Time"
         };
+      public const string BaseTimeZoneSuffixRegex = @"((\s+|-)(friendly|compatible))?(\s+|-)time(zone)?";
       public const string LocationTimeSuffixRegex = @"((\s+|-)(tijdzone|tijd|timezone|time)\b)";
+      public static readonly string TimeZoneEndRegex = $@"({BaseTimeZoneSuffixRegex})$";
       public static readonly IList<string> AmbiguousTimezoneList = new List<string>
         {
             @"bit",

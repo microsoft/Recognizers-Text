@@ -124,7 +124,7 @@ export namespace PortugueseDateTime {
     export const MidafternoonRegex = `(?<midafternoon>meio\\s+da\\s+tarde)`;
     export const MiddayRegex = `(?<midday>meio\\s*(-\\s*)?dia)`;
     export const MidTimeRegex = `(?<mid>(${MidnightRegex}|${MidmorningRegex}|${MidEarlyMorning}|${MidafternoonRegex}|${MiddayRegex}))`;
-    export const AtRegex = `\\b(((?<=\\b([aà]s?)\\s+)(${WrittenTimeRegex}|${HourNumRegex}|${BaseDateTime.HourRegex})(\\s+horas?|\\s*h\\b)?|(?<=\\b(s(er)?[aã]o|v[aã]o\\s+ser|^[eé]h?)\\s+)(${WrittenTimeRegex}|${HourNumRegex}|${BaseDateTime.HourRegex})(\\s+horas?|\\s*h\\b))(\\s+${OclockRegex})?|${MidTimeRegex})\\b`;
+    export const AtRegex = `\\b(((?<=\\b([aà]s?)\\s+)(${WrittenTimeRegex}|${HourNumRegex}|${BaseDateTime.HourRegex})(\\s+horas?|\\s*h\\b)?|(?<=\\b(s(er)?[aã]o|v[aã]o\\s+ser|^[eé]h?)\\s+|^\\s*)(${WrittenTimeRegex}|${HourNumRegex}|${BaseDateTime.HourRegex})(\\s+horas?|\\s*h\\b))(\\s+${OclockRegex})?|${MidTimeRegex})\\b`;
     export const ConnectNumRegex = `(${BaseDateTime.HourRegex}(?<min>[0-5][0-9])\\s*${DescRegex})`;
     export const TimeRegex1 = `(\\b${TimePrefix}\\s+)?(${WrittenTimeRegex}|${HourNumRegex}|${BaseDateTime.HourRegex})\\s*(${DescRegex})`;
     export const TimeRegex2 = `(\\b${TimePrefix}\\s+)?(t)?${BaseDateTime.HourRegex}(\\s*)?:(\\s*)?${BaseDateTime.MinuteRegex}((\\s*)?:(\\s*)?${BaseDateTime.SecondRegex})?((\\s*${DescRegex})|\\b)`;
@@ -251,6 +251,7 @@ export namespace PortugueseDateTime {
     export const DefaultLanguageFallback = `DMY`;
     export const DurationDateRestrictions = [  ];
     export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["^\\d{4}$", "(\\d\\.\\d{4}|\\d{4}\\.\\d)"],["^(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)$", "([$%£&!?@#])(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)|(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)([$%£&@#])"]]);
+    export const AmbiguityTimeFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["horas?$", "\\b((por|duração\\s+de|durante)\\s+(\\S+\\s+){1,2}horas?|horas?\\s+(\\S+\\s+){0,2}dur(ação|ou|a(rá|va)?))\\b"]]);
     export const EarlyMorningTermList = [ "madrugada" ];
     export const MorningTermList = [ "manha","manhã" ];
     export const AfternoonTermList = [ "passado o meio dia","depois do meio dia" ];

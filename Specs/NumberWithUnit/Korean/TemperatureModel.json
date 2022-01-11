@@ -1,8 +1,6 @@
 [
   {
     "Input": "외부 온도는 섭씨 40도입니다. ",
-    "Comment": "The unit is split around the number (e.g. '섭씨 40도' = 'Celsius 40 degree') but only the last unit in the suffix is used to determine the unit type.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -19,8 +17,6 @@
   },
   {
     "Input": "텍사스는 화씨 90도입니다. ",
-    "Comment": "The unit is split around the number (e.g. '섭씨 40도' = 'Celsius 40 degree') but only the last unit in the suffix is used to determine the unit type.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -37,8 +33,6 @@
   },
   {
     "Input": "화씨 마이너스 5도",
-    "Comment": "The unit is split around the number (e.g. '섭씨 40도' = 'Celsius 40 degree') but only the last unit in the suffix is used to determine the unit type.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -55,8 +49,6 @@
   },
   {
     "Input": "섭씨 6도",
-    "Comment": "The unit is split around the number (e.g. '섭씨 40도' = 'Celsius 40 degree') but only the last unit in the suffix is used to determine the unit type.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -73,8 +65,6 @@
   },
   {
     "Input": "화씨 98.6도는 정상 온도입니다. ",
-    "Comment": "The unit is split around the number (e.g. '섭씨 40도' = 'Celsius 40 degree') but only the last unit in the suffix is used to determine the unit type.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -91,8 +81,6 @@
   },
   {
     "Input": "온도를 섭씨 30도로 설정하십시오. ",
-    "Comment": "The unit is split around the number (e.g. '섭씨 40도' = 'Celsius 40 degree') but only the last unit in the suffix is used to determine the unit type.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -109,8 +97,6 @@
   },
   {
     "Input": "정상 온도는 화씨 98.6도입니다. ",
-    "Comment": "The unit is split around the number (e.g. '섭씨 40도' = 'Celsius 40 degree') but only the last unit in the suffix is used to determine the unit type.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -127,8 +113,6 @@
   },
   {
     "Input": "화씨 100 도 ",
-    "Comment": "The unit is split around the number (e.g. '섭씨 40도' = 'Celsius 40 degree') but only the last unit in the suffix is used to determine the unit type.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -145,8 +129,6 @@
   },
   {
     "Input": "섭씨 20 도 ",
-    "Comment": "The unit is split around the number (e.g. '섭씨 40도' = 'Celsius 40 degree') but only the last unit in the suffix is used to determine the unit type.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -163,8 +145,6 @@
   },
   {
     "Input": "화씨 100.2도는 낮다. ",
-    "Comment": "The unit is split around the number (e.g. '섭씨 40도' = 'Celsius 40 degree') but only the last unit in the suffix is used to determine the unit type.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -181,8 +161,6 @@
   },
   {
     "Input": "10.5도 ",
-    "Comment": "The unit is split around the number (e.g. '섭씨 40도' = 'Celsius 40 degree') but only the last unit in the suffix is used to determine the unit type.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -190,7 +168,7 @@
         "TypeName": "temperature",
         "Resolution": {
           "value": "10.5",
-          "unit": "C"
+          "unit": "Degree"
         },
         "Start": 0,
         "End": 4
@@ -199,8 +177,6 @@
   },
   {
     "Input": "섭씨 20도 ",
-    "Comment": "The unit is split around the number (e.g. '섭씨 40도' = 'Celsius 40 degree') but only the last unit in the suffix is used to determine the unit type.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -297,8 +273,6 @@
   },
   {
     "Input": "온도를 화씨 70도로 설정하세요. ",
-    "Comment": "The unit is split around the number (e.g. '섭씨 40도' = 'Celsius 40 degree') but only the last unit in the suffix is used to determine the unit type.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -347,8 +321,6 @@
   },
   {
     "Input": "온도를 화씨 75도로 유지하세요. ",
-    "Comment": "The unit is split around the number (e.g. '섭씨 40도' = 'Celsius 40 degree') but only the last unit in the suffix is used to determine the unit type.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -365,8 +337,6 @@
   },
   {
     "Input": "온도를 섭씨 40도로 하세요.",
-    "Comment": "The unit is split around the number (e.g. '섭씨 40도' = 'Celsius 40 degree') but only the last unit in the suffix is used to determine the unit type.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -399,8 +369,6 @@
   },
   {
     "Input": "섭씨 10도를 화씨로 변환하세요. ",
-    "Comment": "The unit is split around the number (e.g. '섭씨 40도' = 'Celsius 40 degree') but only the last unit in the suffix is used to determine the unit type.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -427,8 +395,6 @@
   },
   {
     "Input": "섭씨 34.9도를 화씨로",
-    "Comment": "The unit is split around the number (e.g. '섭씨 40도' = 'Celsius 40 degree') but only the last unit in the suffix is used to determine the unit type.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -455,8 +421,6 @@
   },
   {
     "Input": "섭씨 200도를 화씨로 변환하세요. ",
-    "Comment": "The unit is split around the number (e.g. '섭씨 40도' = 'Celsius 40 degree') but only the last unit in the suffix is used to determine the unit type.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -483,8 +447,6 @@
   },
   {
     "Input": "화씨를 섭씨로 화씨 101도는 섭씨 몇 도입니까? ",
-    "Comment": "The unit is split around the number (e.g. '섭씨 40도' = 'Celsius 40 degree') but only the last unit in the suffix is used to determine the unit type.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -531,8 +493,6 @@
   },
   {
     "Input": "섭씨 50도 섭씨를 화씨로 ",
-    "Comment": "The unit is split around the number (e.g. '섭씨 40도' = 'Celsius 40 degree') but only the last unit in the suffix is used to determine the unit type.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -569,8 +529,6 @@
   },
   {
     "Input": "화씨 51도를 섭씨로 변환해 주시겠습니까?",
-    "Comment": "The unit is split around the number (e.g. '섭씨 40도' = 'Celsius 40 degree') but only the last unit in the suffix is used to determine the unit type.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -597,8 +555,6 @@
   },
   {
     "Input": "화씨 106도를 섭씨로 변환하세요. ",
-    "Comment": "The unit is split around the number (e.g. '섭씨 40도' = 'Celsius 40 degree') but only the last unit in the suffix is used to determine the unit type.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -625,8 +581,6 @@
   },
   {
     "Input": "화씨 45도를 섭씨로 변환하세요. ",
-    "Comment": "The unit is split around the number (e.g. '섭씨 40도' = 'Celsius 40 degree') but only the last unit in the suffix is used to determine the unit type.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -653,8 +607,6 @@
   },
   {
     "Input": "화씨 마이너스 20도를 섭씨로 어떻게 변환하나요?",
-    "Comment": "The unit is split around the number (e.g. '섭씨 40도' = 'Celsius 40 degree') but only the last unit in the suffix is used to determine the unit type.",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {

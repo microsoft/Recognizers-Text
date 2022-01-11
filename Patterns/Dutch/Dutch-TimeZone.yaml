@@ -10,8 +10,13 @@ FullNameList: !list
   types: [string]
   entries:
     - Afghanistan Standard Time
+BaseTimeZoneSuffixRegex: !simpleRegex
+  def: ((\s+|-)(friendly|compatible))?(\s+|-)time(zone)?
 LocationTimeSuffixRegex: !simpleRegex
   def: ((\s+|-)(tijdzone|tijd|timezone|time)\b)
+TimeZoneEndRegex: !nestedRegex
+  def: ({BaseTimeZoneSuffixRegex})$
+  references: [BaseTimeZoneSuffixRegex]
 # For filtering ambiguous single timezone words
 AmbiguousTimezoneList: !list
   types: [string]

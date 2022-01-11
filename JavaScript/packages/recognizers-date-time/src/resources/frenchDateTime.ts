@@ -13,8 +13,8 @@ import { BaseDateTime } from "./baseDateTime";
 export namespace FrenchDateTime {
     export const LangMarker = `Fre`;
     export const CheckBothBeforeAfter = false;
-    export const TillRegex = `(?<till>au|et|(jusqu')?[aà]|avant|--|-|—|——)`;
-    export const RangeConnectorRegex = `(?<and>de la|au|[aà]|et(\\s*la)?|--|-|—|——)`;
+    export const TillRegex = `(?<till>\\b(au|et|(jusqu')?a|avant)\\b|(jusqu')?à|--|-|—|——)`;
+    export const RangeConnectorRegex = `(?<and>\\b(de\\s+la|au|(jusqu')?a|et(\\s*la)?)\\b|(jusqu')?à|--|-|—|——)`;
     export const RelativeRegex = `(?<order>prochaine?|de|du|ce(tte)?|l[ae]|derni[eè]re|hier|pr[eé]c[eé]dente|au\\s+cours+(de|du\\s*))`;
     export const StrictRelativeRegex = `(?<order>prochaine?|derni[eè]re|hier|pr[eé]c[eé]dente|au\\s+cours+(de|du\\s*))`;
     export const NextSuffixRegex = `(?<order>prochain(es?)?|suivante)\\b`;
@@ -50,7 +50,7 @@ export namespace FrenchDateTime {
     export const BetweenRegex = `\\b(entre\\s+)(${DayRegex})\\s*${RangeConnectorRegex}\\s*(${DayRegex})\\s+${MonthSuffixRegex}((\\s+|\\s*,\\s*)${YearRegex})?\\b`;
     export const YearWordRegex = `\\b(?<year>l'ann[ée]e)\\b`;
     export const MonthWithYear = `\\b(${WrittenMonthRegex}(\\s*),?(\\s+de)?(\\s*)(${YearRegex}|${TwoDigitYearRegex}|(?<order>cette)\\s*${YearWordRegex})|${YearWordRegex}\\s*(${PastSuffixRegex}|${NextSuffixRegex}))`;
-    export const OneWordPeriodRegex = `\\b((${RelativeRegex}\\s+)?${WrittenMonthRegex}|(la\\s+)?(weekend|(fin de )?semaine|week-end|mois|ans?|l'année)\\s+${StrictRelativeRegex}|${RelativeRegex}\\s+(weekend|(fin de )?semaine|week-end|mois|ans?|l'année)|weekend|week-end|(mois|l'année))\\b`;
+    export const OneWordPeriodRegex = `\\b((${RelativeRegex}\\s+)?${WrittenMonthRegex}|(la\\s+)?(weekend|(fin de )?semaine|week-end|mois|ans?|l'année)\\s+${StrictRelativeRegex}|${RelativeRegex}\\s+(weekend|(fin de )?semaine|week-end|mois|ans?|l'année)|weekend|week-end|mois|l'année|an)\\b`;
     export const MonthNumWithYear = `(${YearRegex}(\\s*)[/\\-\\.](\\s*)${MonthNumRegex})|(${MonthNumRegex}(\\s*)[/\\-](\\s*)${YearRegex})`;
     export const WeekOfMonthRegex = `(?<wom>(le\\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4|cinqi[èe]me|5)\\s+semaine(\\s+de)?\\s+${MonthSuffixRegex})`;
     export const WeekOfYearRegex = `(?<woy>(le\\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4|cinqi[èe]me|5)\\s+semaine(\\s+de)?\\s+(${YearRegex}|${RelativeRegex}\\s+ann[ée]e))`;
@@ -225,7 +225,7 @@ export namespace FrenchDateTime {
     export const FromRegex2 = `((depuis|de)(\\s*las?)?)$`;
     export const FromToRegex = `\\b(du|depuis|des?).+(au|à|a)\\b.+`;
     export const SingleAmbiguousMonthRegex = `^(le\\s+)?(may|march)$`;
-    export const UnspecificDatePeriodRegex = `^\\b$`;
+    export const UnspecificDatePeriodRegex = `^(semaine|mois|an(n[eé]e)?)$`;
     export const PrepositionSuffixRegex = `\\b(du|de|[àa]|vers|dans)$`;
     export const FlexibleDayRegex = `(?<DayOfMonth>([A-Za-z]+\\s)?[A-Za-z\\d]+)`;
     export const ForTheRegex = `\\b(((pour le ${FlexibleDayRegex})|(dans (le\\s+)?${FlexibleDayRegex}(?<=(st|nd|rd|th))))(?<end>\\s*(,|\\.|!|\\?|$)))`;
