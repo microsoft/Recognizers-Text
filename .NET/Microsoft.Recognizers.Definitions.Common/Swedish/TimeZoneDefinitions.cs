@@ -21,6 +21,7 @@ namespace Microsoft.Recognizers.Definitions.Swedish
 
     public static class TimeZoneDefinitions
     {
+      public const string LangMarker = @"Swe";
       public const string DirectUtcRegex = @"\b(utc|gmt)(\s*[+\-\u00B1]?\s*[\d]{1,2}h?(\s*:\s*[\d]{1,2})?)?\b";
       public static readonly IList<string> AbbreviationsList = new List<string>
         {
