@@ -649,22 +649,14 @@ AbbrToMinMapping: !dictionary
    # Swedish extensions
    acwst: 525
    almt: 360
-   #amt: 240
-   #amt: -240
    anat: 720
    aqtt: 300
-   #ast: 180
-   #ast: -240
    bnt: 480
    bot: -240
    brst: -120
    brt: -180
-   #bst: 60
-   #bst: 360
    cat: 120
    cct: 390
-   #cdt: -300
-   #cdt: -240
    chadt: 825
    chast: 765
    chot: 480
@@ -692,9 +684,7 @@ AbbrToMinMapping: !dictionary
    kost: 660
    lhdt: 660
    lhst: 630
-   #mart: 570
-   # Used mart entry is for Marquesas Islands (French Polynesia) in the Pacific Ocean
-   mart: -570
+   mart: -10000
    mht: 720
    mmt: 390
    mvt: 300
@@ -713,8 +703,6 @@ AbbrToMinMapping: !dictionary
    pmst: -180
    pont: 660
    pwt: 540
-   #pyt: 510
-   #pyt: -240
    qyzt: 360
    ret: 240
    sakt: 660
@@ -737,8 +725,6 @@ AbbrToMinMapping: !dictionary
    wib: 420
    wit: 540
    wita: 480
-   #wst: 60
-   #wst: 780
    wst: -10000
    wt: 0
    # Default (English) implementation 
@@ -1060,9 +1046,7 @@ FullToMinMapping: !dictionary
    linjeöarnas: 840
    linjeoarnas: 840
    magadan: 660
-   #marquesas: 570
-   # used mart entry is for marquesas islands (french polynesia) in the pacific ocean
-   marquesas: -570
+   marquesas: -10000
    amerikansk-mountain sommar: -360
    marshallöarnas: 720
    marshalloarnas: 720
