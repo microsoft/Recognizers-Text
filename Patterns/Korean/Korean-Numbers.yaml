@@ -431,7 +431,7 @@ TwoNumberRangeRegex7: !nestedRegex
   def: ({OneNumberRangeMoreRegex2}\s*{OneNumberRangeLessRegex5})
   references: [OneNumberRangeMoreRegex2, OneNumberRangeLessRegex5]
 InexactNumberUnitRegex: !simpleRegex
-  def: (몇|며|여러)
+  def: (몇(?!.+\?)|며|여러)
 RelativeReferenceOffsetMap: !dictionary
   types: [ string, string ]
   entries:

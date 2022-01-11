@@ -43,7 +43,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
 
             NumberParser = new BaseIndianNumberParser(new HindiNumberParserConfiguration(numConfig));
 
-            TimeZoneParser = new BaseTimeZoneParser();
+            TimeZoneParser = new BaseTimeZoneParser(new HindiTimeZoneParserConfiguration(this));
 
             DateExtractor = new BaseDateExtractor(new HindiDateExtractorConfiguration(this));
             TimeExtractor = new BaseTimeExtractor(new HindiTimeExtractorConfiguration(this));

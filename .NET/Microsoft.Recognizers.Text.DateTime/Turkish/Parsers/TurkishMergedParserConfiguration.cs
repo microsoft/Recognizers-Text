@@ -35,7 +35,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
             DateTimePeriodParser = new BaseDateTimePeriodParser(new TurkishDateTimePeriodParserConfiguration(this));
             SetParser = new BaseSetParser(new TurkishSetParserConfiguration(this));
             HolidayParser = new BaseHolidayParser(new TurkishHolidayParserConfiguration(this));
-            TimeZoneParser = new BaseTimeZoneParser();
+            TimeZoneParser = new BaseTimeZoneParser(new TurkishTimeZoneParserConfiguration(this));
         }
 
         Regex IMergedParserConfiguration.BeforeRegex => BeforeRegex;

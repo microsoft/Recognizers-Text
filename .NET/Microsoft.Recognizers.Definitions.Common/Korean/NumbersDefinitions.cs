@@ -258,7 +258,7 @@ namespace Microsoft.Recognizers.Definitions.Korean
       public static readonly string TwoNumberRangeRegex5 = $@"(?<number1>([십백천만억조경열]|(영|령|공|일|이(?!다)|두|삼|사|오|육|(?<!며)칠|팔|구))+)\s*{TillRegex}\s*(?<number2>([십백천만억조경열]|(영|령|공|일|이(?!다)|두|삼|사|오|육|칠|팔|구))+)\s*([십백천만억조경열]|((미만|적|낮|작|더적|더낮|더적|이하이다|까지|아래))+)";
       public static readonly string TwoNumberRangeRegex6 = $@"((?<number1>((?!((，(?!\d+))|(,(?!\d+))|。|\D)).)+)\s*{TillRegex}+\s*(?<number2>((?!((，(?!\d+))|(,(?!\d+))|。)).)+)\s*(까지))";
       public static readonly string TwoNumberRangeRegex7 = $@"({OneNumberRangeMoreRegex2}\s*{OneNumberRangeLessRegex5})";
-      public const string InexactNumberUnitRegex = @"(몇|며|여러)";
+      public const string InexactNumberUnitRegex = @"(몇(?!.+\?)|며|여러)";
       public static readonly Dictionary<string, string> RelativeReferenceOffsetMap = new Dictionary<string, string>
         {
             { @"마지막", @"0" },

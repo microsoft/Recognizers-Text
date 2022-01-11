@@ -43,7 +43,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 
             NumberParser = new BaseNumberParser(new TurkishNumberParserConfiguration(numConfig));
 
-            TimeZoneParser = new BaseTimeZoneParser();
+            TimeZoneParser = new BaseTimeZoneParser(new TurkishTimeZoneParserConfiguration(this));
 
             DateExtractor = new BaseDateExtractor(new TurkishDateExtractorConfiguration(this));
             TimeExtractor = new BaseTimeExtractor(new TurkishTimeExtractorConfiguration(this));

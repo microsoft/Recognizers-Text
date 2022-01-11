@@ -28,7 +28,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             DateTimePeriodParser = new BaseDateTimePeriodParser(new EnglishDateTimePeriodParserConfiguration(this));
             SetParser = new BaseSetParser(new EnglishSetParserConfiguration(this));
             HolidayParser = new BaseHolidayParser(new EnglishHolidayParserConfiguration(this));
-            TimeZoneParser = new BaseTimeZoneParser();
+            TimeZoneParser = new BaseTimeZoneParser(new EnglishTimeZoneParserConfiguration(this));
         }
 
         public Regex BeforeRegex { get; }
