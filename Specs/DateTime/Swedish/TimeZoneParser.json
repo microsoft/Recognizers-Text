@@ -21,11 +21,74 @@
     ]
   },
   {
+    "Input": "Boka ett rum åt mig amazonsk sommartid",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "amazonsk sommartid",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC-03:00",
+            "UtcOffsetMins": -180
+          }
+        },
+        "Start": 20,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Boka ett rum åt mig central västaustralisk normaltid",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "central västaustralisk normaltid",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+08:45",
+            "UtcOffsetMins": 525
+          }
+        },
+        "Start": 20,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "Boka ett rum åt mig beijingtid",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "beijingtid",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC+08:00",
+            "UtcOffsetMins": 480
+          }
+        },
+        "Start": 20,
+        "Length": 10
+      }
+    ]
+  },
+  {
     "Input": "Book me a room at beijing time",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "beijing time",
@@ -46,7 +109,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "utc4:30",
@@ -67,7 +130,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "gmt-3",
@@ -88,7 +151,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "afghanistan standard time",
@@ -109,7 +172,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "aft",
@@ -130,7 +193,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "utc±0",
@@ -151,7 +214,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "pdst",
@@ -172,7 +235,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "awdt",
@@ -193,7 +256,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "cot",
@@ -214,7 +277,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "hkt",
@@ -235,7 +298,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "pacific daylight saving time",
@@ -256,7 +319,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "austrialian western daylight time",
@@ -277,7 +340,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "australian western daylight time",
@@ -298,7 +361,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "australian west daylight time",
@@ -319,7 +382,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "colombia time",
@@ -340,7 +403,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "hong kong time",
@@ -361,7 +424,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "aedt",
@@ -382,7 +445,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "pdt",
@@ -403,7 +466,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "tost",
@@ -424,7 +487,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "pacific daylight time",
@@ -445,7 +508,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "montreal time",
@@ -466,7 +529,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "Saint Barthélemy time",
@@ -487,7 +550,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "WET",
@@ -508,7 +571,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "Central Europe Std Time",
@@ -529,7 +592,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "New York time",
@@ -562,7 +625,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "west coast timezone",
@@ -583,7 +646,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "CDT",
@@ -605,7 +668,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "Comment": "Central by default resolves to standard time, not daylight. Returning both options is in the roadmap.",
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "central time",
@@ -656,7 +719,7 @@
   },
   {
     "Input": "I'm in the pacific timezone",
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "pacific timezone",
@@ -674,7 +737,7 @@
   },
   {
     "Input": "Let's meet at 1pm mountain timezone",
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Comment": "Mountain by default resolves to standard time, not daylight. Returning both options is in the roadmap.",
     "Results": [
       {
@@ -693,7 +756,7 @@
   },
   {
     "Input": "I'm in the Madrid time",
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "Madrid time",
@@ -711,7 +774,7 @@
   },
   {
     "Input": "I'm in the Madrid timezone",
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "Madrid timezone",
@@ -729,7 +792,7 @@
   },
   {
     "Input": "I'm in the Madrid  timezone",
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "Madrid  timezone",
@@ -747,12 +810,12 @@
   },
   {
     "Input": "I'm in Madrid.",
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": []
   },
   {
     "Input": "I'm on Russia time zone 3",
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "russia time zone 3",
@@ -770,7 +833,7 @@
   },
   {
     "Input": "All times in central standard time (mexico)",
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "central standard time (mexico)",
@@ -788,7 +851,7 @@
   },
   {
     "Input": "I'm on Russia time zone 10",
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "russia time zone 10",
@@ -806,7 +869,7 @@
   },
   {
     "Input": "I'm at MSK+7, not MSK",
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "MSK+7",
@@ -836,7 +899,7 @@
   },
   {
     "Input": "I'm at MSK-1.",
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "MSK-1",
@@ -857,7 +920,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "utc + 4",
@@ -878,7 +941,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "UTC -4",
@@ -896,7 +959,7 @@
   },
   {
     "Input": "I'm at Eastern Daylight Time",
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "eastern daylight time",
@@ -914,7 +977,7 @@
   },
   {
     "Input": "I'm at Central Daylight Time",
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "central daylight Time",
@@ -932,7 +995,7 @@
   },
   {
     "Input": "It's about 1pm ACDT",
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "acdt",
@@ -950,7 +1013,7 @@
   },
   {
     "Input": "Kiribati's Line Islands is in UTC+14",
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "utc+14",
@@ -968,7 +1031,7 @@
   },
   {
     "Input": "All deadlines are 11.59 pm UTC -12h (\"anywhere on Earth / AoE\")",
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "UTC -12h",
@@ -1010,7 +1073,7 @@
   },
   {
     "Input": "Don't forget we're in UK time",
-    "NotSupported": "javascript",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "uk time",
