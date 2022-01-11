@@ -43,7 +43,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Arabic
 
             NumberParser = new BaseNumberParser(new ArabicNumberParserConfiguration(numConfig));
 
-            TimeZoneParser = new BaseTimeZoneParser();
+            TimeZoneParser = new BaseTimeZoneParser(new ArabicTimeZoneParserConfiguration(this));
 
             // Do not change order. The order of initialization can lead to side-effects
             DateExtractor = new BaseDateExtractor(new ArabicDateExtractorConfiguration(this));
