@@ -896,7 +896,7 @@ namespace Microsoft.Recognizers.Definitions.Swedish
             { @"Ostaustralisk sommartid", 660 },
             { @"Östaustralisk normaltid", 600 },
             { @"Ostaustralisk normaltid", 600 },
-            { @"afghansk tid", 270 },
+            { @"afghansk", 270 },
             { @"Alaska sommartid", -480 },
             { @"Alaska normaltid", -540 },
             { @"Almatytid", 360 },
