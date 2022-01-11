@@ -42,6 +42,27 @@
     ]
   },
   {
+    "Input": "Boka ett rum åt mig acretid",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "acretid",
+        "Type": "timezone",
+        "Value": {
+          "TimeZoneResolution": {
+            "Value": "UTC-05:00",
+            "UtcOffsetMins": -300
+          }
+        },
+        "Start": 20,
+        "Length": 7
+      }
+    ]
+  },
+  {
     "Input": "Boka ett rum åt mig central västaustralisk normaltid",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
