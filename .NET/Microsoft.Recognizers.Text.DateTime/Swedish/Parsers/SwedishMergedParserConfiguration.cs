@@ -28,7 +28,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Swedish
             DateTimePeriodParser = new BaseDateTimePeriodParser(new SwedishDateTimePeriodParserConfiguration(this));
             SetParser = new BaseSetParser(new SwedishSetParserConfiguration(this));
             HolidayParser = new BaseHolidayParser(new SwedishHolidayParserConfiguration(this));
-            TimeZoneParser = new BaseTimeZoneParser();
+            TimeZoneParser = new BaseTimeZoneParser(new SwedishTimeZoneParserConfiguration(this));
         }
 
         public Regex BeforeRegex { get; }

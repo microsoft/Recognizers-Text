@@ -43,7 +43,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
             NumberParser = new BaseNumberParser(new DutchNumberParserConfiguration(numConfig));
 
-            TimeZoneParser = new BaseTimeZoneParser();
+            TimeZoneParser = new BaseTimeZoneParser(new DutchTimeZoneParserConfiguration(this));
             DateExtractor = new BaseDateExtractor(new DutchDateExtractorConfiguration(this));
             TimeExtractor = new BaseTimeExtractor(new DutchTimeExtractorConfiguration(this));
             DateTimeExtractor = new BaseDateTimeExtractor(new DutchDateTimeExtractorConfiguration(this));

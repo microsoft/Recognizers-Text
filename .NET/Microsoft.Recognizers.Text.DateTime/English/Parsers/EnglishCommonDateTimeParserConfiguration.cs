@@ -43,7 +43,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
             NumberParser = new BaseNumberParser(new EnglishNumberParserConfiguration(numConfig));
 
-            TimeZoneParser = new BaseTimeZoneParser();
+            TimeZoneParser = new BaseTimeZoneParser(new EnglishTimeZoneParserConfiguration(this));
 
             // Do not change order. The order of initialization can lead to side-effects
             DateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(this));
