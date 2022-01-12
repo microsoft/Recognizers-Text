@@ -14,6 +14,7 @@ public class GermanDatetimeUtilityConfiguration implements IDateTimeUtilityConfi
     public static final Pattern AgoRegex = RegExpUtility.getSafeRegExp(GermanDateTime.AgoRegex);
     public static final Pattern LaterRegex = RegExpUtility.getSafeRegExp(GermanDateTime.LaterRegex);
     public static final Pattern InConnectorRegex = RegExpUtility.getSafeRegExp(GermanDateTime.InConnectorRegex);
+    public static final Pattern SinceYearSuffixRegex = RegExpUtility.getSafeRegExp(GermanDateTime.SinceYearSuffixRegex);
     public static final Pattern WithinNextPrefixRegex = RegExpUtility.getSafeRegExp(GermanDateTime.WithinNextPrefixRegex);
     public static final Pattern AmDescRegex = RegExpUtility.getSafeRegExp(GermanDateTime.AmDescRegex);
     public static final Pattern PmDescRegex = RegExpUtility.getSafeRegExp(GermanDateTime.PmDescRegex);
@@ -22,6 +23,7 @@ public class GermanDatetimeUtilityConfiguration implements IDateTimeUtilityConfi
     public static final Pattern TimeUnitRegex = RegExpUtility.getSafeRegExp(GermanDateTime.TimeUnitRegex);
     public static final Pattern DateUnitRegex = RegExpUtility.getSafeRegExp(GermanDateTime.DateUnitRegex);
     public static final Pattern CommonDatePrefixRegex = RegExpUtility.getSafeRegExp(GermanDateTime.CommonDatePrefixRegex);
+    public static final Pattern RangePrefixRegex = RegExpUtility.getSafeRegExp(GermanDateTime.RangePrefixRegex);
 
     @Override
     public Pattern getAgoRegex() {
@@ -36,6 +38,10 @@ public class GermanDatetimeUtilityConfiguration implements IDateTimeUtilityConfi
     @Override
     public Pattern getInConnectorRegex() {
         return InConnectorRegex;
+    }
+
+    public Pattern getSinceYearSuffixRegex() {
+        return SinceYearSuffixRegex;
     }
 
     @Override
@@ -76,5 +82,9 @@ public class GermanDatetimeUtilityConfiguration implements IDateTimeUtilityConfi
     @Override
     public Pattern getCommonDatePrefixRegex() {
         return CommonDatePrefixRegex;
+    }
+
+    public Pattern getRangePrefixRegex() {
+        return RangePrefixRegex;
     }
 }
