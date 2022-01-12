@@ -27,16 +27,16 @@ public class GermanTimePeriodParserConfiguration extends BaseOptionsConfiguratio
     private final IExtractor integerExtractor;
     private final IDateTimeParser timeZoneParser;
 
-    private final Pattern specificTimeFromToRegex;
-    private final Pattern specificTimeBetweenAndRegex;
     private final Pattern pureNumberFromToRegex;
     private final Pattern pureNumberBetweenAndRegex;
+    private final Pattern specificTimeFromToRegex;
+    private final Pattern specificTimeBetweenAndRegex;
     private final Pattern timeOfDayRegex;
     private final Pattern generalEndingRegex;
     private final Pattern tillRegex;
 
-    private final IDateTimeUtilityConfiguration utilityConfiguration;
     private final ImmutableMap<String, Integer> numbers;
+    private final IDateTimeUtilityConfiguration utilityConfiguration;
 
     public GermanTimePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) {
 
@@ -54,7 +54,6 @@ public class GermanTimePeriodParserConfiguration extends BaseOptionsConfiguratio
         specificTimeFromToRegex = GermanTimePeriodExtractorConfiguration.SpecificTimeFromTo;
         specificTimeBetweenAndRegex = GermanTimePeriodExtractorConfiguration.SpecificTimeBetweenAnd;
         timeOfDayRegex = GermanTimePeriodExtractorConfiguration.TimeOfDayRegex;
-
         generalEndingRegex = GermanTimePeriodExtractorConfiguration.GeneralEndingRegex;
         tillRegex = GermanTimePeriodExtractorConfiguration.TillRegex;
     }
@@ -136,7 +135,7 @@ public class GermanTimePeriodParserConfiguration extends BaseOptionsConfiguratio
         endHour = 0;
         endMin = 0;
 
-        String timeOfDay = "";
+        String timeOfDay;
 
         if (GermanDateTime.MorningTermList.stream().anyMatch(trimmedText::endsWith)) {
             timeOfDay = Constants.Morning;
@@ -148,8 +147,6 @@ public class GermanTimePeriodParserConfiguration extends BaseOptionsConfiguratio
             timeOfDay = Constants.Daytime;
         } else if (GermanDateTime.NightTermList.stream().anyMatch(trimmedText::endsWith)) {
             timeOfDay = Constants.Night;
-        } else if (GermanDateTime.BusinessHourSplitStrings.stream().allMatch(trimmedText::contains)) {
-            timeOfDay = Constants.BusinessHour;
         } else {
             timex = null;
             return new MatchedTimeRangeResult(false, timex, beginHour, endHour, endMin);
