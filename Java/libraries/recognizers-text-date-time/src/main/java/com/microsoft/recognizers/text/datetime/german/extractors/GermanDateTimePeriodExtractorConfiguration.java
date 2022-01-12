@@ -15,12 +15,14 @@ import com.microsoft.recognizers.text.datetime.extractors.BaseTimeZoneExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.config.IDateTimePeriodExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.config.ResultIndex;
+import com.microsoft.recognizers.text.datetime.resources.BaseDateTime;
 import com.microsoft.recognizers.text.datetime.resources.GermanDateTime;
 import com.microsoft.recognizers.text.datetime.utilities.RegexExtension;
 import com.microsoft.recognizers.text.number.german.extractors.CardinalExtractor;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
 import java.util.ArrayList;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class GermanDateTimePeriodExtractorConfiguration extends BaseOptionsConfiguration implements IDateTimePeriodExtractorConfiguration {
@@ -50,6 +52,9 @@ public class GermanDateTimePeriodExtractorConfiguration extends BaseOptionsConfi
     public static final Pattern SuffixRegex = RegExpUtility.getSafeRegExp(GermanDateTime.SuffixRegex);
     public static final Pattern BeforeRegex = RegExpUtility.getSafeRegExp(GermanDateTime.BeforeRegex);
     public static final Pattern AfterRegex = RegExpUtility.getSafeRegExp(GermanDateTime.AfterRegex);
+    public static final Pattern HyphenDateRegex = RegExpUtility.getSafeRegExp(BaseDateTime.HyphenDateRegex);
+    public static final Pattern FromTokenRegex = RegExpUtility.getSafeRegExp(GermanDateTime.FromRegex);
+    public static final Pattern BetweenTokenRegex = RegExpUtility.getSafeRegExp(GermanDateTime.BetweenTokenRegex);
 
     private final String tokenBeforeDate;
 
@@ -69,10 +74,8 @@ public class GermanDateTimePeriodExtractorConfiguration extends BaseOptionsConfi
     }
 
     public GermanDateTimePeriodExtractorConfiguration(DateTimeOptions options) {
-
         super(options);
 
-        //TODO add english implementations
         tokenBeforeDate = GermanDateTime.TokenBeforeDate;
 
         cardinalExtractor = CardinalExtractor.getInstance();
@@ -249,14 +252,14 @@ public class GermanDateTimePeriodExtractorConfiguration extends BaseOptionsConfi
         return timeZoneExtractor;
     }
 
-    // TODO: these three methods are the same in DatePeriod, should be abstracted
     @Override
     public ResultIndex getFromTokenIndex(String text) {
         int index = -1;
         boolean result = false;
-        if (text.endsWith("from")) {
+        Matcher matcher = FromTokenRegex.matcher(text);
+        if (matcher.find()) {
             result = true;
-            index = text.lastIndexOf("from");
+            index = matcher.start();
         }
 
         return new ResultIndex(result, index);
@@ -266,9 +269,10 @@ public class GermanDateTimePeriodExtractorConfiguration extends BaseOptionsConfi
     public ResultIndex getBetweenTokenIndex(String text) {
         int index = -1;
         boolean result = false;
-        if (text.endsWith("between")) {
+        Matcher matcher = BetweenTokenRegex.matcher(text);
+        if (matcher.find()) {
             result = true;
-            index = text.lastIndexOf("between");
+            index = matcher.start();
         }
 
         return new ResultIndex(result, index);
