@@ -124,7 +124,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public const string PmTimeRegex = @"(?<pm>(([dn]?es[st]a|\b[àa]\b|(pela|de|da|na))\s+(tarde|noite)))|((depois\s+do|ap[óo]s\s+o)\s+(almo[çc]o|meio dia|meio-dia))";
       public static readonly string LessThanOneHour = $@"(?<lth>((\s+e\s+)?(quinze|(um\s+|dois\s+|tr[êes]\s+)?quartos?)|quinze|(\s*)(um\s+|dois\s+|tr[êes]\s+)?quartos?|(\s+e\s+)(meia|trinta)|{BaseDateTime.DeltaMinuteRegex}(\s+(minuto|minutos|min|mins))|{DeltaMinuteNumRegex}(\s+(minuto|minutos|min|mins))))";
       public const string TensTimeRegex = @"(?<tens>dez|vinte|trinta|[qc]uarenta|cin[qc]uenta)";
-      public static readonly string WrittenTimeRegex = $@"(?<writtentime>({HourNumRegex}\s*((e|menos)\s+)?({MinuteNumRegex}|({TensTimeRegex}((\s*e\s+)?{MinuteNumRegex}))))|(({MinuteNumRegex}|({TensTimeRegex}((\s*e\s+)?{MinuteNumRegex})?))\s*((para as|pras|antes da|antes das)\s+)?({HourNumRegex}|{BaseDateTime.HourRegex})))";
+      public static readonly string WrittenTimeRegex = $@"(?<writtentime>({HourNumRegex}\s*((e|menos)\s+)?(({TensTimeRegex}((\s*e\s+)?{MinuteNumRegex}))|{MinuteNumRegex}))|(({MinuteNumRegex}|({TensTimeRegex}((\s*e\s+)?{MinuteNumRegex})?))\s*((para as|pras|antes da|antes das)\s+)?({HourNumRegex}|{BaseDateTime.HourRegex})))";
       public static readonly string TimePrefix = $@"(?<prefix>{LessThanOneHour}(\s+(passad[ao]s)\s+(as)?|\s+depois\s+(das?|do)|\s+pras?|\s+(para|antes)?\s+([àa]s?))?)";
       public static readonly string TimeSuffix = $@"(?<suffix>({LessThanOneHour}\s+)?({AmRegex}|{PmRegex}|{OclockRegex}))";
       public static readonly string BasicTime = $@"(?<basictime>{WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}:{BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?|{BaseDateTime.HourRegex})";
@@ -501,7 +501,9 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
             { @"vinte e oito", 28 },
             { @"vinte e nove", 29 },
             { @"trinta", 30 },
-            { @"trinta e um", 31 }
+            { @"trinta e um", 31 },
+            { @"quarenta", 40 },
+            { @"cinquenta", 50 }
         };
       public static readonly Dictionary<string, IEnumerable<string>> HolidayNames = new Dictionary<string, IEnumerable<string>>
         {

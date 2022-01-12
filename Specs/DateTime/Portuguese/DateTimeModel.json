@@ -3029,5 +3029,96 @@
         }
       }
     ]
+  },
+  {
+    "Input": "o valor deve estar entre 3 e 10",
+    "Context": {
+      "ReferenceDateTime": "2020-05-14T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "palestras estão marcadas entre as 5 e as 7 da manha",
+    "Context": {
+      "ReferenceDateTime": "2019-08-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "entre as 5 e as 7 da manha",
+        "Start": 25,
+        "End": 50,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(T05,T07,PT2H)",
+              "type": "timerange",
+              "start": "05:00:00",
+              "end": "07:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "O alarme está definido para as seis e meia",
+    "Context": {
+      "ReferenceDateTime": "2020-05-14T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "seis e meia",
+        "Start": 31,
+        "End": 41,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T06:30",
+              "type": "time",
+              "value": "06:30:00"
+            },
+            {
+              "timex": "T18:30",
+              "type": "time",
+              "value": "18:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "O alarme está definido para as oito e quarenta e cinco",
+    "Context": {
+      "ReferenceDateTime": "2020-05-14T12:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "oito e quarenta e cinco",
+        "Start": 31,
+        "End": 53,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T08:45",
+              "type": "time",
+              "value": "08:45:00"
+            },
+            {
+              "timex": "T20:45",
+              "type": "time",
+              "value": "20:45:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

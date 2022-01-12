@@ -285,7 +285,7 @@ TensTimeRegex: !simpleRegex
   def: (?<tens>dez|vinte|trinta|[qc]uarenta|cin[qc]uenta)
 WrittenTimeRegex: !nestedRegex
   # "seis e trinta", "seis e vinte um", "dez pras seis"
-  def: (?<writtentime>({HourNumRegex}\s*((e|menos)\s+)?({MinuteNumRegex}|({TensTimeRegex}((\s*e\s+)?{MinuteNumRegex}))))|(({MinuteNumRegex}|({TensTimeRegex}((\s*e\s+)?{MinuteNumRegex})?))\s*((para as|pras|antes da|antes das)\s+)?({HourNumRegex}|{BaseDateTime.HourRegex})))
+  def: (?<writtentime>({HourNumRegex}\s*((e|menos)\s+)?(({TensTimeRegex}((\s*e\s+)?{MinuteNumRegex}))|{MinuteNumRegex}))|(({MinuteNumRegex}|({TensTimeRegex}((\s*e\s+)?{MinuteNumRegex})?))\s*((para as|pras|antes da|antes das)\s+)?({HourNumRegex}|{BaseDateTime.HourRegex})))
   references: [ HourNumRegex, MinuteNumRegex, TensTimeRegex, BaseDateTime.HourRegex ]
 TimePrefix: !nestedRegex
   def: (?<prefix>{LessThanOneHour}(\s+(passad[ao]s)\s+(as)?|\s+depois\s+(das?|do)|\s+pras?|\s+(para|antes)?\s+([àa]s?))?)
@@ -833,6 +833,8 @@ Numbers: !dictionary
     'vinte e nove': 29
     trinta: 30
     'trinta e um': 31
+    quarenta: 40
+    cinquenta: 50
 HolidayNames: !dictionary
   types: [ string, 'string[]' ]
   entries:
