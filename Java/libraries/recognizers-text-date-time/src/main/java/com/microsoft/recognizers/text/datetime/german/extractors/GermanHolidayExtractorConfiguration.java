@@ -16,11 +16,15 @@ public class GermanHolidayExtractorConfiguration extends BaseOptionsConfiguratio
 
     public static final Pattern YearPattern = RegExpUtility.getSafeRegExp(GermanDateTime.YearRegex);
 
-    public static final Pattern H = RegExpUtility.getSafeRegExp(GermanDateTime.HolidayRegex);
+    public static final Pattern H1 = RegExpUtility.getSafeRegExp(GermanDateTime.HolidayRegex1);
+    public static final Pattern H2 = RegExpUtility.getSafeRegExp(GermanDateTime.HolidayRegex2);
+    public static final Pattern H3 = RegExpUtility.getSafeRegExp(GermanDateTime.HolidayRegex3);
 
     public static final Iterable<Pattern> HolidayRegexList = new ArrayList<Pattern>() {
         {
-            add(H);
+            add(H1);
+            add(H2);
+            add(H3);
         }
     };
 
