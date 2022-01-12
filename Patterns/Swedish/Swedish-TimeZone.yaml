@@ -1,96 +1,206 @@
 ---
+LangMarker: Swe
 # Direct UTC Expression
 DirectUtcRegex: !simpleRegex
   def: \b(utc|gmt)(\s*[+\-\u00B1]?\s*[\d]{1,2}h?(\s*:\s*[\d]{1,2})?)?\b
 AbbreviationsList: !list
   types: [string]
   entries:
-    - ABST
-    - ACDT
+    # Swedish extensions
     - ACST
     - ACT
+    - ACWST
     - ADT
     - AEDT
     - AEST
-    - AET
     - AFT
     - AKDT
     - AKST
+    - ALMT
     - AMST
     - AMT
-    - AOE
-    - AoE
-    - ARBST
-    - ARST
+    - ANAT
+    - AQTT
     - ART
     - AST
-    - AWDT
     - AWST
     - AZOST
     - AZOT
     - AZST
     - AZT
-    - BIT
+    - BNT
+    - BOT
+    - BRST
+    - BRT
     - BST
     - BTT
+    - CAT
+    - CCT
+    - CDT
+    - CEST
+    - CET
+    - CHADT
+    - CHAST
+    - CHOT
+    - ChST
+    - CHUT
+    - CKT
+    - CLST
+    - CLT
+    - COT
+    - CST
+    - CVT
+    - CXT
+    - EASST
+    - EAST
+    - EAT
+    - ECT
+    - EDT
+    - EEST
+    - EET
+    - EGST
+    - EGT
+    - EST
+    - FET
+    - FJST
+    - FJT
+    - FKST
+    - FNT
+    - GALT
+    - GAMT
+    - GET
+    - GFT
+    - GILT
+    - GMT
+    - GST
+    - GYT
+    - HDT
+    - HKT
+    - HOVT
+    - HST
+    - ICT
+    - IDT
+    - IRDT
+    - IRKT
+    - IRST
+    - IST
+    - JST
+    - KGT
+    - KOST
+    - KRAT
+    - KST
+    - LHDT
+    - LHST
+    - LINT
+    - MAGT
+    - MART
+    - MDT
+    - MHT
+    - MMT
+    - MSK
+    - MST
+    - MUT
+    - MVT
+    - MYT
+    - NCT
+    - NDT
+    - NFT
+    - NPT
+    - NRT
+    - NST
+    - NUT
+    - NZDT
+    - NZST
+    - OMST
+    - ORAT
+    - PDT
+    - PET
+    - PETT
+    - PGT
+    - PHOT
+    - PHT
+    - PKT
+    - PMDT
+    - PMST
+    - PONT
+    - PST
+    - PWT
+    - PYST
+    - PYT
+    - QYZT
+    - RET
+    - SAKT
+    - SAMT
+    - SAST
+    - SBT
+    - SCT
+    - SGT
+    - SRT
+    - SST
+    - TAHT
+    - TJT
+    - TLT
+    - TMT
+    - TOT
+    - TRT
+    - TVT
+    - ULAST
+    - ULAT
+    - UYST
+    - UYT
+    - UZT
+    - VET
+    - VLAT
+    - VUT
+    - WAST
+    - WAT
+    - WEST
+    - WET
+    - WFT
+    - WGST
+    - WGT
+    - WIB
+    - WIT
+    - WITA
+    - WST
+    - WT
+    - YAKT
+    - YEKT
+    # Default (English) implementation
+    - ABST
+    - ACDT
+    - AET
+    - AOE
+    - ARBST
+    - ARST
+    - AWDT
+    - BIT
     - CADT
     - CAST
     - CBST
     - CBT
     - CCST
-    - CDT
     - CDTM
-    - CEST
-    - CET
-    - COT
-    - CST
     - CSTM
     - CT
-    - CVT
-    - EAT
-    - ECT
-    - EDT
     - EDTM
-    - EEST
-    - EET
-    - EGST
     - ESAST
     - ESAT
-    - EST
     - ESTM
     - ET
-    - FJST
-    - FJT
-    - GET
-    - GMT
     - GNDT
     - GNST
-    - GST
     - GTBST
     - HADT
     - HAST
-    - HDT
-    - HKT
-    - HST
-    - IRDT
-    - IRKT
-    - IRST
     - ISDT
     - ISST
-    - IST
     - JDT
-    - JST
-    - KRAT
-    - KST
-    - LINT
     - MAGST
-    - MAGT
     - MAT
-    - MDT
     - MDTM
     - MEST
     - MOST
-    - MSK
     - MSK+1
     - MSK+2
     - MSK+3
@@ -101,65 +211,253 @@ AbbreviationsList: !list
     - MSK+8
     - MSK+9
     - MSK-1
-    - MST
     - MSTM
-    - MUT
     - MVST
     - MYST
     - NCAST
-    - NDT
     - NMDT
     - NMST
-    - NPT
-    - NST
-    - NZDT
-    - NZST
     - NZT
     - PDST
-    - PDT
     - PDTM
-    - PETT
-    - PKT
     - PSAST
     - PSAT
-    - PST
     - PSTM
     - PT
-    - PYST
-    - PYT
     - RST
     - SAEST
     - SAPST
-    - SAST
     - SAWST
-    - SBT
-    - SGT
     - SLT
     - SMST
     - SNST
-    - SST
     - TADT
     - TAST
     - THA
     - TIST
     - TOST
-    - TOT
-    - TRT
     - TST
-    - ULAT
     - UTC
-    - VET
-    - VLAT
-    - WAST
-    - WAT
-    - WEST
-    - WET
     - WPST
-    - YAKT
-    - YEKT
 FullNameList: !list
   types: [string]
   entries:
+  # Swedish implementation
+    - Centralaustralisk sommartid
+    - Centralaustralisk normaltid
+    - Acretid
+    - Central västaustralisk normaltid
+    - Central vastaustralisk normaltid
+    - Atlantisk sommartid
+    - Östaustralisk sommartid
+    - Ostaustralisk sommartid
+    - Östaustralisk normaltid
+    - Ostaustralisk normaltid
+    - Afghansk tid
+    - Alaska sommartid
+    - Alaska normaltid
+    - Almatytid
+    - Amazonsk sommartid
+    - Armenisk tid
+    - Amazonsk tid
+    - Anadyrtid
+    - Aqtöbe/Aktiubinsk tid
+    - Aqtobe/Aktiubinsk tid
+    - Argentinsk tid
+    - Arabisk normaltid
+    - Atlantisk normaltid
+    - Västaustralisk normaltid
+    - Vastaustralisk normaltid
+    - Azorisk sommartid
+    - Azorisk tid
+    - Azerbaijansk sommartid
+    - Azerbaijansk tid
+    - Bruneisk tid
+    - Boliviansk tid
+    - Brasiliansk sommartid
+    - Brasiliansk tid
+    - Brittisk sommartid
+    - Bangladeshisk normaltid
+    - Bhutansk tid
+    - Centralafrikansk tid
+    - Kokosöarnas tid
+    - Kokosoarnas tid
+    - Centralamerikansk sommartid
+    - Kubansk sommartid
+    - Centraleuropeisk sommartid
+    - Centraleuropeisk tid
+    - Chathamöarnas sommartid
+    - Chathamoarnas sommartid
+    - Chathamöarna normaltid
+    - Chathamoarna normaltid
+    - Tjojbalsantid
+    - Chamorro normaltid
+    - Chuuktid
+    - Cooköarnas tid
+    - Cookoarnas tid
+    - Chilensk sommartid
+    - Chilensk normaltid
+    - Colombiansk tid
+    - Centralamerikansk normaltid
+    - Kubansk normaltid
+    - Kinesisk normaltid
+    - Kapverdiansk tid
+    - Julötid
+    - Julotid
+    - Påsköns sommartid
+    - Paskons sommartid
+    - Påsköns normaltid
+    - Paskons normaltid
+    - Östafrikansk tid
+    - Ostafrikansk tid
+    - Equadoriansk tid
+    - Östamerikansk sommartid
+    - Ostamerikansk sommartid
+    - Östeuropeisk sommartid
+    - Osteuropeisk sommartid
+    - Östeuropeisk tid
+    - Osteuropeisk tid
+    - Östgrönländsk sommartid
+    - Ostgronlandsk sommartid
+    - Östgrönländsk tid
+    - Ostgronlandsk tid
+    - Östamerikansk normaltid
+    - Ostamerikansk normaltid
+    - Ytterligare-östeuropeisk tid
+    - Ytterligare-osteuropeisk tid
+    - Fiji sommartid
+    - Fijitid
+    - Falklandsöarnas sommartid
+    - Falklandsoarnas sommartid
+    - Fernando de Noronha tid
+    - Galápagostid
+    - Gambierstid
+    - Georgisk normaltid
+    - Franska Guyana tid
+    - Gilbertöarnas tid
+    - Gilbertoarnas tid
+    - Greenwichtid
+    - Gulf normaltid
+    - Guyanatid
+    - Hawaiisk sommartid
+    - Hongkongtid
+    - Hovdtid
+    - Hawaiisk normaltid
+    - Indokinesisk normaltid
+    - Israelisk sommartid
+    - Iransk sommartid
+    - Irkutsktid
+    - Iransk normaltid
+    - Irländsk normaltid
+    - Irlandsk normaltid
+    - Indisk normaltid
+    - Israelisk normaltid
+    - Japansk normaltid
+    - Kirgizistansk tid
+    - Kosraetid
+    - Krasnoyarsk tid
+    - Koreansk normaltid
+    - Lord Howe sommartid
+    - Lord Howe normaltid
+    - Linjeöarnas tid
+    - Linjeoarnas tid
+    - Magadantid
+    - Marquesastid
+    - Amerikansk-Mountain sommartid
+    - Marshallöarnas tid
+    - Marshalloarnas tid
+    - Burmesisk tid
+    - Moskva normaltid
+    - Amerikansk-Mountain normaltid
+    - Mauritisk tid
+    - Maldivisk tid
+    - Malaysisk tid
+    - Nykaledonsk tid
+    - Newfoundland sommartid
+    - Norfolktid
+    - Nepalesisk tid
+    - Naurutid
+    - Newfoundland normaltid
+    - Niuetid
+    - Nyzeeländsk sommartid
+    - Nyzeelandsk sommartid
+    - Nyzeeländsk normaltid
+    - Nyzeelandsk normaltid
+    - Omsk normaltid
+    - Oraltid
+    - Amerikansk-Stillahavs sommartid
+    - Peruansk tid
+    - Kamchatka tid
+    - Papua Nya Guineansk tid
+    - Phoenixöarnas tid
+    - Phoenixoarnas tid
+    - Filippinsk tid
+    - Pakistansk normaltid
+    - Saint-Pierre och Miquelon sommartid
+    - Saint-Pierre och Miquelon normaltid
+    - Pohnpei normaltid
+    - Pitcairnöarnas normaltid
+    - Pitcairnoarnas normaltid
+    - Amerikansk-Stillahavs normaltid
+    - Palauisk tid
+    - Paraguayansk sommartid
+    - Pyongyang tid
+    - Paraguayansk tid
+    - Qyzylordatid
+    - Réuniontid
+    - Reuniontid
+    - Sachalintid
+    - Samaratid
+    - Sydafrikansk normaltid
+    - Solomonöarnas tid
+    - Solomonoarnas tid
+    - Seychellisk tid
+    - Singaporiansk tid
+    - Surinamesisk tid
+    - Samoansk normaltid
+    - Tahitisk tid
+    - Tadzjikisk tid
+    - Östtimorstid
+    - Osttimorstid
+    - Turkmenistansk tid
+    - Tongatid
+    - Turkisk tid
+    - Tuvalutid
+    - Ulaanbaatar sommartid
+    - Ulaanbaatartid
+    - Uruguayansk sommartid
+    - Uruguayansk tid
+    - Uzbekistansk tid
+    - Venezuelansk normaltid
+    - Vladivostoktid
+    - Vanuatuansk tid
+    - Västafrikansk sommartid
+    - Vastafrikansk sommartid
+    - Västafrikansk tid
+    - Vastafrikansk tid
+    - Västeuropeisk sommartid
+    - Vasteuropeisk sommartid
+    - Västeuropeisk tid
+    - Vasteuropeisk tid
+    - Wallis och Futuna tid
+    - Västgrönländsk sommartid
+    - Vastgronlandsk sommartid
+    - Västgrönländsk tid
+    - Vastgronlandsk tid
+    - Västindonesisk tid
+    - Vastindonesisk tid
+    - Östindonesisk tid
+    - Ostindonesisk tid
+    - Centralindonesisk tid
+    - Västsahara sommartid
+    - Vastsahara sommartid
+    - Västsamoansk tid
+    - Vastsamoansk tid
+    - Västsahara normaltid
+    - Vastsahara normaltid
+    - Jakutsktid
+    - Yekaterinburgtid
+    # Default (English) implementation
     - Acre Time
     - Afghanistan Standard Time
     - Alaskan Standard Time
@@ -314,7 +612,7 @@ FullNameList: !list
     - Pacific
     - Eastern
 BaseTimeZoneSuffixRegex: !simpleRegex
-  def: ((\s+|-)(friendly|compatible))?(\s+|-)time(zone)?
+  def: ((\s+|-)(friendly|compatible))?(\s*|-)?(ti(d|me))(zone?)?
 LocationTimeSuffixRegex: !nestedRegex
   def: ({BaseTimeZoneSuffixRegex})\b
   references: [BaseTimeZoneSuffixRegex]
@@ -348,6 +646,90 @@ AmbiguousTimezoneList: !list
 AbbrToMinMapping: !dictionary
  types: [ string , int ]
  entries:
+   # Swedish extensions
+   acwst: 525
+   almt: 360
+   anat: 720
+   aqtt: 300
+   bnt: 480
+   bot: -240
+   brst: -120
+   brt: -180
+   cat: 120
+   cct: 390
+   chadt: 825
+   chast: 765
+   chot: 480
+   chst: 600
+   chut: 600
+   ckt: -600
+   clst: -180
+   clt: -240
+   cxt: 420
+   easst: -300
+   east: -360
+   egt: -60
+   fet: 180
+   fkst: -180
+   fnt: -120
+   galt: -360
+   gamt: -540
+   gft: -180
+   gilt: 720
+   gyt: -240
+   hovt: 420
+   ict: 420
+   idt: 180
+   kgt: 360
+   kost: 660
+   lhdt: 660
+   lhst: 630
+   #mart: 570
+   #mart: -570
+   mart: -10000
+   mht: 720
+   mmt: 390
+   mvt: 300
+   myt: 480
+   nct: 660
+   nft: 660
+   nrt: 720
+   nut: -660
+   omst: 360
+   orat: 300
+   pet: -300
+   pgt: 600
+   phot: 780
+   pht: 480
+   pmdt: -120
+   pmst: -180
+   pont: 660
+   pwt: 540
+   qyzt: 360
+   ret: 240
+   sakt: 660
+   samt: 240
+   sct: 240
+   srt: -180
+   taht: -600
+   tjt: 300
+   tlt: 540
+   tmt: 300
+   tvt: 720
+   ulast: 540
+   uyst: -120
+   uyt: -180
+   uzt: 300
+   vut: 660
+   wft: 720
+   wgst: -120
+   wgt: -180
+   wib: 420
+   wit: 540
+   wita: 480
+   wst: -10000
+   wt: 0
+   # Default (English) implementation 
    abst: 180
    acdt: 630
    acst: 570
@@ -546,6 +928,222 @@ AbbrToMinMapping: !dictionary
 FullToMinMapping: !dictionary
  types: [ string , int ]
  entries:
+ # Swedish implementation
+   centralaustralisk sommar: 630
+   centralaustralisk normal: 570
+   acre: -300
+   central västaustralisk normal: 525
+   central vastaustralisk normal: 525
+   atlantisk sommar: -180
+   östaustralisk sommar: 660
+   ostaustralisk sommar: 660
+   östaustralisk normal: 600
+   ostaustralisk normal: 600
+   afghansk: 270
+   alaska sommar: -480
+   alaska normal: -540
+   almaty: 360
+   amazonsk sommar: -180
+   armenisk: 240
+   amazonsk: -240
+   anadyr: 720
+   aqtöbe/aktiubinsk: 300
+   aqtobe/aktiubinsk: 300
+   argentinsk: -180
+   arabisk normal: 180
+   atlantisk normal: -240
+   västaustralisk normal: 480
+   vastaustralisk normal: 480
+   azorisk sommar: 0
+   azorisk: -60
+   azerbaijansk sommar: 300
+   azerbaijansk: 240
+   bruneisk: 480
+   boliviansk: -240
+   brasiliansk sommar: -120
+   brasiliansk: -180
+   brittisk sommar: 60
+   bangladeshisk normal: 360
+   bhutansk: 360
+   centralafrikansk: 120
+   kokosöarnas: 390
+   kokosoarnas: 390
+   centralamerikansk sommar: -300
+   kubansk sommar: -240
+   centraleuropeisk sommar: 120
+   centraleuropeisk: 60
+   chathamöarnas sommar: 825
+   chathamoarnas sommar: 825
+   chathamöarna normal: 765
+   chathamoarna normal: 765
+   tjojbalsan: 480
+   chamorro normal: 600
+   chuuk: 600
+   cooköarnas: -600
+   cookoarnas: -600
+   chilensk sommar: -180
+   chilensk normal: -240
+   colombiansk: -300
+   centralamerikansk normal: -360
+   kubansk normal: -300
+   kinesisk normal: 480
+   kapverdiansk: -60
+   julö: 420
+   julo: 420
+   påsköns sommar: -300
+   paskons sommar: -300
+   påsköns normal: -360
+   paskons normal: -360
+   östafrikansk: 180
+   ostafrikansk: 180
+   equadoriansk: -300
+   östamerikansk sommar: -240
+   ostamerikansk sommar: -240
+   östeuropeisk sommar: 180
+   osteuropeisk sommar: 180
+   östeuropeisk: 120
+   osteuropeisk: 120
+   östgrönländsk sommar: 0
+   ostgronlandsk sommar: 0
+   östgrönländsk: -60
+   ostgronlandsk: -60
+   östamerikansk normal: -300
+   ostamerikansk normal: -300
+   ytterligare-östeuropeisk: 180
+   ytterligare-osteuropeisk: 180
+   fiji sommar: 780
+   fiji: 720
+   falklandsöarnas sommar: -180
+   falklandsoarnas sommar: -180
+   fernando de noronha: -120
+   galápagos: -360
+   gambiers: -540
+   georgisk normal: 240
+   franska guyana: -180
+   gilbertöarnas: 720
+   gilbertoarnas: 720
+   greenwich: 0
+   gulf normal: 240
+   guyana: -240
+   hawaiisk sommar: -540
+   hongkong: 480
+   hovd: 420
+   hawaiisk normal: -600
+   indokinesisk normal: 420
+   israelisk sommar: 180
+   iransk sommar: 270
+   irkutsk: 480
+   iransk normal: 210
+   irländsk normal: 60
+   irlandsk normal: 60
+   indisk normal: 330
+   israelisk normal: 120
+   japansk normal: 540
+   kirgizistansk: 360
+   kosrae: 660
+   krasnoyarsk: 420
+   koreansk normal: 540
+   lord howe sommar: 660
+   lord howe normal: 630
+   linjeöarnas: 840
+   linjeoarnas: 840
+   magadan: 660
+   marquesas: -10000
+   amerikansk-mountain sommar: -360
+   marshallöarnas: 720
+   marshalloarnas: 720
+   burmesisk: 390
+   moskva normal: 180
+   amerikansk-mountain normal: -420
+   mauritisk: 240
+   maldivisk: 300
+   malaysisk: 480
+   nykaledonsk: 660
+   newfoundland sommar: -150
+   norfolk: 660
+   nepalesisk: 345
+   nauru: 720
+   newfoundland normal: -210
+   niue: -660
+   nyzeeländsk sommar: 780
+   nyzeelandsk sommar: 780
+   nyzeeländsk normal: 720
+   nyzeelandsk normal: 720
+   omsk normal: 360
+   oral: 300
+   amerikansk-stillahavs sommar: -420
+   peruansk: -300
+   kamchatka: 720
+   papua nya guineansk: 600
+   phoenixöarnas: 780
+   phoenixoarnas: 780
+   filippinsk: 480
+   pakistansk normal: 300
+   saint-pierre och miquelon sommar: -120
+   saint-pierre och miquelon normal: -180
+   pohnpei normal: 660
+   pitcairnöarnas normal: -480
+   pitcairnoarnas normal: -480
+   amerikansk-stillahavs normal: -480
+   palauisk: 540
+   paraguayansk sommar: -180
+   pyongyang: 510
+   paraguayansk: -240
+   qyzylorda: 360
+   réunion: 240
+   reunion: 240
+   sachalin: 660
+   samara: 240
+   sydafrikansk normal: 120
+   solomonöarnas: 660
+   solomonoarnas: 660
+   seychellisk: 240
+   singaporiansk: 480
+   surinamesisk: -180
+   samoansk normal: -660
+   tahitisk: -600
+   tadzjikisk: 300
+   östtimors: 540
+   osttimors: 540
+   turkmenistansk: 300
+   tonga: 780
+   turkisk: 180
+   tuvalu: 720
+   ulaanbaatar sommar: 540
+   ulaanbaatar: 480
+   uruguayansk sommar: -120
+   uruguayansk: -180
+   uzbekistansk: 300
+   venezuelansk normal: -240
+   vladivostok: 600
+   vanuatuansk: 660
+   västafrikansk sommar: 120
+   vastafrikansk sommar: 120
+   västafrikansk: 60
+   vastafrikansk: 60
+   västeuropeisk sommar: 60
+   vasteuropeisk sommar: 60
+   västeuropeisk: 0
+   vasteuropeisk: 0
+   wallis och futuna: 720
+   västgrönländsk sommar: -120
+   vastgronlandsk sommar: -120
+   västgrönländsk: -180
+   vastgronlandsk: -180
+   västindonesisk: 420
+   vastindonesisk: 420
+   östindonesisk: 540
+   ostindonesisk: 540
+   centralindonesisk: 480
+   västsahara sommar: 60
+   vastsahara sommar: 60
+   västsamoansk: 780
+   vastsamoansk: 780
+   västsahara normal: 0
+   vastsahara normal: 0
+   jakutsk: 540
+   yekaterinburg: 300
+   # Default (English) implementation
    beijing: 480
    shanghai: 480
    shenzhen: 480
@@ -742,12 +1340,15 @@ MajorLocations: !list
   entries:
     # top due to conflict
     - Dominican Republic
+    - Dominikanska republiken
     - Dominica
     - Guinea Bissau
     - Guinea-Bissau
     - Guinea
     - Equatorial Guinea
+    - Ekvatorialguinea
     - Papua New Guinea
+    - Papua Nya Guinea
     - New York City
     - New York
     - York
@@ -795,6 +1396,7 @@ MajorLocations: !list
     - El Paso
     - Glasgow
     - Gold Coast
+    - Guldkusten
     - Hamilton
     - Hialeah
     - Houston
@@ -823,6 +1425,7 @@ MajorLocations: !list
     - Miami
     - Middlesbrough
     - Milan
+    - Milano
     - Milton Keynes
     - Minneapolis
     - Montréal
@@ -857,6 +1460,7 @@ MajorLocations: !list
     - Redmond
     - Richmond
     - Rome
+    - Rom
     - San Antonio
     - San Diego
     - San Francisco
@@ -903,6 +1507,7 @@ MajorLocations: !list
     - Arlington
     - Arvada
     - Athens
+    - Athen
     - Augusta
     - Aurora
     - Bakersfield
@@ -1140,6 +1745,7 @@ MajorLocations: !list
     - Åland Islands
     - Alaska
     - Albania
+    - Albansk
     - Algeria
     - American Samoa
     - Andorra
