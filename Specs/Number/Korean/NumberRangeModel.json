@@ -1,16 +1,12 @@
 [
   {
     "Input": "1995-01",
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
     "Input": "이 숫자는 이십보다 크고 삼십오보다 작거나 같다.",
-    "IgnoreResolution": true,
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "이십보다 크고 삼십오보다 작거나 같다",
@@ -23,10 +19,7 @@
   },
   {
     "Input": "이 숫자는 스물보다 크고 서른다섯보다 작거나 같다.",
-    "IgnoreResolution": true,
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "스물보다 크고 서른다섯보다 작거나 같다",
@@ -39,74 +32,62 @@
   },
   {
     "Input": "이 숫자는 20과 30 사이에 있다.",
-    "IgnoreResolution": true,
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "20과 30 사이",
         "TypeName": "numberrange",
         "Resolution": {
-          "value": "(20,30)"
+          "value": "[20,30)"
         }
       }
     ]
   },
   {
     "Input": "그는 십등에서 십오등 사이에 위치했다.",
-    "IgnoreResolution": true,
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "십등에서 십오등 사이",
         "TypeName": "numberrange",
         "Resolution": {
-          "value": "(10,15)"
+          "value": "[10,15)"
         }
       }
     ]
   },
   {
     "Input": "그는 열 번째에서 열다섯 번째 사이에 위치했다.",
-    "IgnoreResolution": true,
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "열 번째에서 열다섯 번째 사이",
         "TypeName": "numberrange",
         "Resolution": {
-          "value": "(10,15)"
+          "value": "[10,15)"
         }
       }
     ]
   },
   {
     "Input": "그는 마이너스 십점에서 십오점 사이의 점수를 얻었다.",
-    "IgnoreResolution": true,
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotNet",
     "Results": [
       {
-        "Text": "마이너스 십점에서 십오점",
+        "Text": "마이너스 십점에서 십오점 사이",
         "TypeName": "numberrange",
         "Resolution": {
-          "value": "(-10,15)"
+          "value": "[-10,15)"
         }
       }
     ]
   },
   {
     "Input": "그는 십보다 높고 십오보다 낮은 등수이다.",
-    "IgnoreResolution": true,
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotNet",
     "Results": [
       {
-        "Text": "십보다는 높고 십오보다는 낮은",
+        "Text": "십보다 높고 십오보다 낮은",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(10,15)"
@@ -116,10 +97,7 @@
   },
   {
     "Input": "그는 십 등 보다 높고 십오 등 보다 낮다.",
-    "IgnoreResolution": true,
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "십 등 보다 높고 십오 등 보다 낮다",
@@ -132,7 +110,6 @@
   },
   {
     "Input": "이 숫자는 100보다 크고 300보다 작다.",
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -146,10 +123,7 @@
   },
   {
     "Input": "이 숫자는 백보다 크거나 같고, 삼백보다는 작거나 같다.",
-    "IgnoreResolution": true,
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "백보다 크거나 같고, 삼백보다는 작거나 같다",
@@ -162,10 +136,7 @@
   },
   {
     "Input": "최대 100개에서 최소 20개의 사과가 있다.",
-    "IgnoreResolution": true,
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "최대 100개에서 최소 20개",
@@ -178,13 +149,10 @@
   },
   {
     "Input": "사과는 20~100개 이다.",
-    "IgnoreResolution": true,
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotNet",
     "Results": [
       {
-        "Text": "20~100개",
+        "Text": "20~100",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[20,100)"
@@ -194,7 +162,6 @@
   },
   {
     "Input": "숫자의 범위는 20부터 100까지 이다.",
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -208,10 +175,7 @@
   },
   {
     "Input": "숫자의 범위는 천에서 천오백이다.",
-    "IgnoreResolution": true,
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "천에서 천오백",
@@ -224,10 +188,7 @@
   },
   {
     "Input": "숫자는 1000보다 높고 1500보다 낮다.",
-    "IgnoreResolution": true,
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "1000보다 높고 1500보다 낮다",
@@ -240,10 +201,7 @@
   },
   {
     "Input": "숫자는 0.25보다 높고 0.5보다 낮다.",
-    "IgnoreResolution": true,
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "0.25보다 높고 0.5보다 낮다",
@@ -256,10 +214,7 @@
   },
   {
     "Input": "이 숫자는 삼천구백육십오보다 크거나 같다.",
-    "IgnoreResolution": true,
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "삼천구백육십오보다 크거나 같다",
@@ -272,10 +227,7 @@
   },
   {
     "Input": "이 숫자는 4,565보다 크다.",
-    "IgnoreResolution": true,
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "4,565보다 크다",
@@ -288,26 +240,20 @@
   },
   {
     "Input": "그는 삼십 세 이상이다.",
-    "IgnoreResolution": true,
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "삼십 세 이상",
         "TypeName": "numberrange",
         "Resolution": {
-          "value": "(30,)"
+          "value": "[30,)"
         }
       }
     ]
   },
   {
     "Input": "그는 서른 살이 넘는다.",
-    "IgnoreResolution": true,
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "서른 살이 넘는다",
@@ -320,29 +266,23 @@
   },
   {
     "Input": "그의 나이는 서른이 넘는다.",
-    "IgnoreResolution": true,
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotNet",
     "Results": [
       {
-        "Text": "서른이 넘는다",
+        "Text": "서른이 넘는",
         "TypeName": "numberrange",
         "Resolution": {
-          "value": "[30,)"
+          "value": "(30,)"
         }
       }
     ]
   },
   {
     "Input": "이 제품은 약 오백 개 이상의 종류가 있다.",
-    "IgnoreResolution": true,
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotNet",
     "Results": [
       {
-        "Text": "약 오백 개 이상",
+        "Text": "오백 개 이상",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[500,)"
@@ -352,13 +292,10 @@
   },
   {
     "Input": "절반이 넘는 사람들이 이곳에 왔다.",
-    "IgnoreResolution": true,
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotNet",
     "Results": [
       {
-        "Text": "절반이 넘는",
+        "Text": "반이 넘는",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(0.5,)"
@@ -368,7 +305,6 @@
   },
   {
     "Input": "100보다 작거나 같은 소수를 찾으시오.",
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -382,8 +318,6 @@
   },
   {
     "Input": "100과 같거나 작은 소수를 찾으시오.",
-    "IgnoreResolution": true,
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -397,13 +331,10 @@
   },
   {
     "Input": "이 제품은 약 오백개 이하의 종류가 있다.",
-    "IgnoreResolution": true,
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotNet",
     "Results": [
       {
-        "Text": "약 오백개 이하",
+        "Text": "오백개 이하",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,500]"
@@ -412,24 +343,20 @@
     ]
   },
   {
-    "Input": "100 > = 의 소수를 찾으시오.",
-    "IgnoreResolution": true,
-    "Comment": "PendingValidation",
+    "Input": "100 >= 의 소수를 찾으시오.",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotNet",
     "Results": [
       {
-        "Text": "100 > =",
+        "Text": "100 >=",
         "TypeName": "numberrange",
         "Resolution": {
-          "value": "(,100]"
+          "value": "[100,)"
         }
       }
     ]
   },
   {
     "Input": "그의 신장은 170 미만이다.",
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -443,7 +370,6 @@
   },
   {
     "Input": "그의 키는 170 보다 작다.",
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -457,10 +383,7 @@
   },
   {
     "Input": "천 마리 미만의 자이언트 판다가 아직 야생에 살고 있다.",
-    "IgnoreResolution": true,
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "천 마리 미만",
@@ -473,7 +396,6 @@
   },
   {
     "Input": "x는 170과 같다.",
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -487,7 +409,6 @@
   },
   {
     "Input": "x>10 그리고 y<20",
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -508,7 +429,6 @@
   },
   {
     "Input": "x는 10보다 크고 20보다 작다. y는 50 이하, 20 이상이다.",
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -529,7 +449,6 @@
   },
   {
     "Input": "그 숫자는 20과 같다.",
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -543,10 +462,7 @@
   },
   {
     "Input": "우리 학급의 학생수는 정확히 20명으로 큰 규모는 아니다.",
-    "IgnoreResolution": true,
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "정확히 20",
@@ -559,19 +475,16 @@
   },
   {
     "Input": "+1-222-2222/2222는 전화번호이다.",
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
     "Input": "+1-222-2222-2222는 전화번호다.",
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
     "Input": "그의 점수는 200 혹은 그 이상이다.",
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -585,22 +498,19 @@
   },
   {
     "Input": "그의 점수는 200 혹은 190 이상이다.",
-    "IgnoreResolution": true,
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "190 이상",
         "TypeName": "numberrange",
         "Resolution": {
-          "value": "(190,)"
+          "value": "[190,)"
         }
       }
     ]
   },
   {
     "Input": "그의 점수는 200 이상이다.",
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -614,7 +524,6 @@
   },
   {
     "Input": "그의 점수는 30 이하이다.",
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -628,7 +537,6 @@
   },
   {
     "Input": "그의 점수는 30 이하다.",
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -642,10 +550,7 @@
   },
   {
     "Input": "그의 점수는 최소 30 이상이다.",
-    "IgnoreResolution": true,
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "최소 30 이상",
@@ -658,7 +563,6 @@
   },
   {
     "Input": "그의 점수는 30 이상이다.",
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -672,7 +576,6 @@
   },
   {
     "Input": "그의 점수는 5000 이하이다.",
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -686,30 +589,19 @@
   },
   {
     "Input": "그의 점수는 5000 혹은 6000 이하이다.",
-    "IgnoreResolution": true,
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotNet",
     "Results": [
-      {
-        "Text": "5000",
-        "TypeName": "numberrange",
-        "Resolution": {
-          "value": "[5000,5000]"
-        }
-      },
       {
         "Text": "6000 이하",
         "TypeName": "numberrange",
         "Resolution": {
-          "value": "(,6000)"
+          "value": "(,6000]"
         }
       }
     ]
   },
   {
     "Input": "그의 점수는 5000 혹은 그 이상이다.",
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -723,18 +615,8 @@
   },
   {
     "Input": "그의 점수는 5000 이거나 4500 보다 높다.",
-    "IgnoreResolution": true,
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotNet",
     "Results": [
-      {
-        "Text": "5000",
-        "TypeName": "numberrange",
-        "Resolution": {
-          "value": "[5000,5000]"
-        }
-      },
       {
         "Text": "4500 보다 높다",
         "TypeName": "numberrange",
@@ -746,7 +628,6 @@
   },
   {
     "Input": "그의 점수는 5000 보다 크거나 같다.",
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -760,7 +641,6 @@
   },
   {
     "Input": "그의 점수는 5000 보다 높거나 같다.",
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -774,10 +654,7 @@
   },
   {
     "Input": "그의 점수는 5000 보다 높거나 6000이다.",
-    "IgnoreResolution": true,
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "5000 보다 높거나",
@@ -785,28 +662,13 @@
         "Resolution": {
           "value": "(5000,)"
         }
-      },
-      {
-        "Text": "6000 이다",
-        "TypeName": "numberrange",
-        "Resolution": {
-          "value": "[6000,6000]"
-        }
       }
     ]
   },
   {
     "Input": "그의 점수는 5000과 같거나 5000 보다 작다.",
-    "Comment": "PendingValidation",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
-      {
-        "Text": "5000과 같거나",
-        "TypeName": "numberrange",
-        "Resolution": {
-          "value": "[5000,5000]"
-        }
-      },
       {
         "Text": "5000 보다 작다",
         "TypeName": "numberrange",
@@ -833,7 +695,6 @@
   },
   {
     "Input": "이 숫자는 20과 30 사이에 있다",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -849,7 +710,6 @@
   },
   {
     "Input": "그는 십위와 십오위 사이에 있다",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -865,7 +725,6 @@
   },
   {
     "Input": "그는 마이너스 십과 십오 사이에서 득점을 한다",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -881,10 +740,7 @@
   },
   {
     "Input": "그는 십위보다 높지만 십오위보다 낮다",
-    "IgnoreResolution": true,
-    "Comment": "PendingImplementation",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "십위보다 높지만 십오위보다 낮다",
@@ -899,7 +755,6 @@
   },
   {
     "Input": "이 숫자는 백 이상, 삼백 이하이다",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1035,7 +890,6 @@
   },
   {
     "Input": "100 또는 그 미만의 수 중 소수를 찾아라",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1051,7 +905,6 @@
   },
   {
     "Input": "100 또는 그보다 작은 수 중 소수를 찾아라",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1067,7 +920,6 @@
   },
   {
     "Input": "이 제품에는 오백 또는 그 미만이 들어있다",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1083,7 +935,6 @@
   },
   {
     "Input": "≤100의 소수를 찾아라",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1222,7 +1073,6 @@
   },
   {
     "Input": "그의 점수는 200이거나 그보다 크다",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1253,7 +1103,6 @@
   },
   {
     "Input": "그의 점수는 30이거나 그보다 작다",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1284,16 +1133,15 @@
   },
   {
     "Input": "그의 점수는 30과 같거나 최소 30이다",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "30과 같거나 최소 30",
+        "Text": "과 같거나 최소 30",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[30,)"
         },
-        "Start": 7,
+        "Start": 9,
         "End": 19
       }
     ]
@@ -1315,7 +1163,6 @@
   },
   {
     "Input": "그의 점수는 5000과 같거나 그보다 많다",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1496,7 +1343,6 @@
   },
   {
     "Input": "아직도 ≥30인 경우인가요",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1527,7 +1373,6 @@
   },
   {
     "Input": "아직도 ≤-30인 경우인가요",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1593,10 +1438,7 @@
   },
   {
     "Input": "반이 넘는 사람들이 이곳에 왔다",
-    "IgnoreResolution": true,
-    "Comment": "PendingImplementation",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "반이 넘는",
@@ -1665,14 +1507,13 @@
   },
   {
     "Input": "이 수는 이십보다 크고 삼십오보다 작다",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "이십보다 크고 삼십오보다 작다",
         "TypeName": "numberrange",
         "Resolution": {
-          "value": "(20,35]"
+          "value": "(20,35)"
         },
         "Start": 5,
         "End": 20
@@ -1711,7 +1552,6 @@
   },
   {
     "Input": "이 제품에는 오백 또는 그보다 적게 들어있다",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1757,10 +1597,7 @@
   },
   {
     "Input": "x는 10보다 크고 20보다 작다. Y는 50보다 작거나 같고, 20보다 많거나 같다",
-    "IgnoreResolution": true,
-    "Comment": "PendingImplementation",
     "NotSupportedByDesign": "java, javascript, python",
-    "NotSupported": "dotNet",
     "Results": [
       {
         "Text": "10보다 크고 20보다 작다",
@@ -1799,23 +1636,21 @@
   },
   {
     "Input": "그의 점수는 30이거나 최소 30이다",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "30이거나 최소 30",
+        "Text": "이거나 최소 30",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[30,)"
         },
-        "Start": 7,
+        "Start": 9,
         "End": 17
       }
     ]
   },
   {
     "Input": "그의 점수는 5000이거나 그보다 많다",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -1841,6 +1676,151 @@
         },
         "Start": 0,
         "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "그의 점수가 5000과 같거나 5000 미만입니다.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "같거나 5000 미만",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,5000]"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "이 제품에는 약 5000개 이하가 있습니다.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "약 5000개 이하가",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,5000]"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "그는 서른 살이 넘었다",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "서른 살이 넘었다",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(30,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "그의 점수는 30점 이하이다",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "30점 이하",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,30]"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "호 점수가 5000보다 낮습니다",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5000보다 낮",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,5000)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "그의 점수는 5000과 같 거나 6000 미만이다",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5000과 같",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[5000,5000]"
+        }
+      },
+      {
+        "Text": "6000 미만",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,6000)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "그의 점수는 4500 보다 높거나 5000과 같다.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4500 보다 높거나",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(4500,)"
+        }
+      },
+      {
+        "Text": "5000과 같다",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[5000,5000]"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "그의 점수는 5000 보다 높거나 6000과 같다.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5000 보다 높거나",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(5000,)"
+        }
+      },
+      {
+        "Text": "6000과 같다",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[6000,6000]"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "그의 점수는 5000과 같 거나 5000 미만이다.",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "5000과 같",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[5000,5000]"
+        }
+      },
+      {
+        "Text": "5000 미만",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,5000)"
+        }
       }
     ]
   }

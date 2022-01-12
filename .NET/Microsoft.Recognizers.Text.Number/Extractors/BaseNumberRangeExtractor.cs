@@ -54,8 +54,12 @@ namespace Microsoft.Recognizers.Text.Number
 
                     if (start >= 0 && length > 0)
                     {
-                        // Keep Source Data for extra information
-                        matchSource.Add(new Tuple<int, int>(start, length), collection.Value);
+                        // Add match if not already in matchSource
+                        if (!matchSource.ContainsKey(Tuple.Create(start, length)))
+                        {
+                            // Keep Source Data for extra information
+                            matchSource.Add(new Tuple<int, int>(start, length), collection.Value);
+                        }
                     }
                 }
             }
