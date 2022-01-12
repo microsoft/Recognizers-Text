@@ -98,7 +98,7 @@ public class GermanTimePeriodExtractorConfiguration extends BaseOptionsConfigura
         return getSimpleCasesRegex;
     }
 
-    public boolean checkBeforeAndAfter() {
+    public boolean getCheckBeforeAndAfter() {
         return GermanDateTime.CheckBothBeforeAfter;
     }
 
