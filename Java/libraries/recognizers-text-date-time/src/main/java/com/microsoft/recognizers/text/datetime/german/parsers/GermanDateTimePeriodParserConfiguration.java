@@ -20,7 +20,6 @@ import com.microsoft.recognizers.text.datetime.parsers.config.MatchedTimeRangeRe
 import com.microsoft.recognizers.text.datetime.resources.GermanDateTime;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class GermanDateTimePeriodParserConfiguration extends BaseOptionsConfiguration implements IDateTimePeriodParserConfiguration {
@@ -329,18 +328,11 @@ public class GermanDateTimePeriodParserConfiguration extends BaseOptionsConfigur
 
         String trimmedText = text.trim().toLowerCase();
 
-        Pattern regex = Pattern.compile(GermanDateTime.PreviousPrefixRegex);
-        Matcher regexMatcher = regex.matcher(trimmedText);
-
         int swift = 0;
-        if (regexMatcher.find()) {
+        if (trimmedText.startsWith("next")) {
+            swift = 1;
+        } else if (trimmedText.startsWith("last")) {
             swift = -1;
-        } else {
-            regex = Pattern.compile(GermanDateTime.NextPrefixRegex);
-            regexMatcher = regex.matcher(text);
-            if (regexMatcher.find()) {
-                swift = 1;
-            }
         }
 
         return swift;
