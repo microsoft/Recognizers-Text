@@ -684,6 +684,8 @@ AbbrToMinMapping: !dictionary
    kost: 660
    lhdt: 660
    lhst: 630
+   #mart: 570
+   #mart: -570
    mart: -10000
    mht: 720
    mmt: 390
