@@ -14,7 +14,7 @@ import com.microsoft.recognizers.text.datetime.extractors.config.IDateTimeExtrac
 import com.microsoft.recognizers.text.datetime.german.utilities.GermanDatetimeUtilityConfiguration;
 import com.microsoft.recognizers.text.datetime.resources.GermanDateTime;
 import com.microsoft.recognizers.text.datetime.utilities.IDateTimeUtilityConfiguration;
-import com.microsoft.recognizers.text.number.english.extractors.IntegerExtractor;
+import com.microsoft.recognizers.text.number.german.extractors.IntegerExtractor;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import com.microsoft.recognizers.text.utilities.StringUtility;
 
@@ -50,7 +50,7 @@ public class GermanDateTimeExtractorConfiguration extends BaseOptionsConfigurati
 
         super(options);
 
-        integerExtractor = IntegerExtractor.getInstance();
+        integerExtractor = new IntegerExtractor();
         datePointExtractor = new BaseDateExtractor(new GermanDateExtractorConfiguration(this));
         timePointExtractor = new BaseTimeExtractor(new GermanTimeExtractorConfiguration(options));
         durationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration(options));

@@ -24,7 +24,7 @@ import com.microsoft.recognizers.text.datetime.extractors.IDateTimeZoneExtractor
 import com.microsoft.recognizers.text.datetime.extractors.config.IMergedExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.resources.GermanDateTime;
 import com.microsoft.recognizers.text.matcher.StringMatcher;
-import com.microsoft.recognizers.text.number.english.extractors.IntegerExtractor;
+import com.microsoft.recognizers.text.number.german.extractors.IntegerExtractor;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import org.javatuples.Pair;
 
@@ -152,7 +152,7 @@ public class GermanMergedExtractorConfiguration extends BaseOptionsConfiguration
         dateTimeAltExtractor = new BaseDateTimeAltExtractor(new GermanDateTimeAltExtractorConfiguration(this));
         timePeriodExtractor = new BaseTimePeriodExtractor(new GermanTimePeriodExtractorConfiguration(options));
         dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new GermanDateTimePeriodExtractorConfiguration(options));
-        integerExtractor = IntegerExtractor.getInstance();
+        integerExtractor = new IntegerExtractor();
 
         ambiguityFiltersDict = GermanDateTime.AmbiguityFiltersDict.entrySet().stream().map(pair -> {
             Pattern key = RegExpUtility.getSafeRegExp(pair.getKey());

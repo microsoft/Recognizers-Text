@@ -17,7 +17,7 @@ import com.microsoft.recognizers.text.datetime.extractors.config.IDateTimePeriod
 import com.microsoft.recognizers.text.datetime.extractors.config.ResultIndex;
 import com.microsoft.recognizers.text.datetime.resources.GermanDateTime;
 import com.microsoft.recognizers.text.datetime.utilities.RegexExtension;
-import com.microsoft.recognizers.text.number.english.extractors.CardinalExtractor;
+import com.microsoft.recognizers.text.number.german.extractors.CardinalExtractor;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
 import java.util.ArrayList;

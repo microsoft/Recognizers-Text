@@ -14,7 +14,7 @@ import com.microsoft.recognizers.text.datetime.extractors.config.ResultIndex;
 import com.microsoft.recognizers.text.datetime.german.utilities.GermanDatetimeUtilityConfiguration;
 import com.microsoft.recognizers.text.datetime.resources.GermanDateTime;
 import com.microsoft.recognizers.text.datetime.utilities.IDateTimeUtilityConfiguration;
-import com.microsoft.recognizers.text.number.english.extractors.IntegerExtractor;
+import com.microsoft.recognizers.text.number.german.extractors.IntegerExtractor;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
 import java.util.ArrayList;
@@ -57,7 +57,7 @@ public class GermanTimePeriodExtractorConfiguration extends BaseOptionsConfigura
         tokenBeforeDate = GermanDateTime.TokenBeforeDate;
         singleTimeExtractor = new BaseTimeExtractor(new GermanTimeExtractorConfiguration(options));
         utilityConfiguration = new GermanDatetimeUtilityConfiguration();
-        integerExtractor = IntegerExtractor.getInstance();
+        integerExtractor = new IntegerExtractor();
         timeZoneExtractor = new BaseTimeZoneExtractor(new GermanTimeZoneExtractorConfiguration(options));
     }
 

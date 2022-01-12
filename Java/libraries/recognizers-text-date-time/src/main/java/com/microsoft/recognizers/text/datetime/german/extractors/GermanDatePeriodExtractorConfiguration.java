@@ -15,9 +15,8 @@ import com.microsoft.recognizers.text.datetime.extractors.config.ResultIndex;
 import com.microsoft.recognizers.text.datetime.resources.BaseDateTime;
 import com.microsoft.recognizers.text.datetime.resources.GermanDateTime;
 import com.microsoft.recognizers.text.datetime.utilities.RegexExtension;
-import com.microsoft.recognizers.text.number.english.extractors.CardinalExtractor;
-import com.microsoft.recognizers.text.number.english.extractors.OrdinalExtractor;
-import com.microsoft.recognizers.text.number.english.parsers.GermanNumberParserConfiguration;
+import com.microsoft.recognizers.text.number.german.extractors.CardinalExtractor;
+import com.microsoft.recognizers.text.number.german.extractors.OrdinalExtractor;
 import com.microsoft.recognizers.text.number.german.parsers.GermanNumberParserConfiguration;
 import com.microsoft.recognizers.text.number.parsers.BaseNumberParser;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
@@ -115,7 +114,7 @@ public class GermanDatePeriodExtractorConfiguration extends BaseOptionsConfigura
 
         datePointExtractor = new BaseDateExtractor(new GermanDateExtractorConfiguration(this));
         cardinalExtractor = CardinalExtractor.getInstance();
-        ordinalExtractor = OrdinalExtractor.getInstance();
+        ordinalExtractor = new OrdinalExtractor();
         durationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration());
         numberParser = new BaseNumberParser(new GermanNumberParserConfiguration());
     }

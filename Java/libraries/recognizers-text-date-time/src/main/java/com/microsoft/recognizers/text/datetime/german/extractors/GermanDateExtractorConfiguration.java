@@ -16,8 +16,6 @@ import com.microsoft.recognizers.text.datetime.german.utilities.GermanDatetimeUt
 import com.microsoft.recognizers.text.datetime.resources.BaseDateTime;
 import com.microsoft.recognizers.text.datetime.resources.GermanDateTime;
 import com.microsoft.recognizers.text.datetime.utilities.IDateTimeUtilityConfiguration;
-import com.microsoft.recognizers.text.number.english.extractors.IntegerExtractor;
-import com.microsoft.recognizers.text.number.english.extractors.OrdinalExtractor;
 import com.microsoft.recognizers.text.number.german.parsers.GermanNumberParserConfiguration;
 import com.microsoft.recognizers.text.number.parsers.BaseNumberParser;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;

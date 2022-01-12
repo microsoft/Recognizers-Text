@@ -37,10 +37,9 @@ import com.microsoft.recognizers.text.datetime.parsers.config.BaseDateParserConf
 import com.microsoft.recognizers.text.datetime.parsers.config.ICommonDateTimeParserConfiguration;
 import com.microsoft.recognizers.text.datetime.resources.GermanDateTime;
 import com.microsoft.recognizers.text.datetime.utilities.IDateTimeUtilityConfiguration;
-import com.microsoft.recognizers.text.number.english.extractors.CardinalExtractor;
-import com.microsoft.recognizers.text.number.english.extractors.IntegerExtractor;
-import com.microsoft.recognizers.text.number.english.extractors.OrdinalExtractor;
-import com.microsoft.recognizers.text.number.english.parsers.GermanNumberParserConfiguration;
+import com.microsoft.recognizers.text.number.german.extractors.CardinalExtractor;
+import com.microsoft.recognizers.text.number.german.extractors.IntegerExtractor;
+import com.microsoft.recognizers.text.number.german.extractors.OrdinalExtractor;
 import com.microsoft.recognizers.text.number.german.parsers.GermanNumberParserConfiguration;
 import com.microsoft.recognizers.text.number.parsers.BaseNumberParser;
 
@@ -104,8 +103,8 @@ public class GermanCommonDateTimeParserConfiguration extends BaseDateParserConfi
         specialDecadeCases = GermanDateTime.SpecialDecadeCases;
 
         cardinalExtractor = CardinalExtractor.getInstance();
-        integerExtractor = IntegerExtractor.getInstance();
-        ordinalExtractor = OrdinalExtractor.getInstance();
+        integerExtractor = new IntegerExtractor();
+        ordinalExtractor = new OrdinalExtractor();
         numberParser = new BaseNumberParser(new GermanNumberParserConfiguration());
 
         durationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration());
