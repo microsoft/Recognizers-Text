@@ -26,7 +26,7 @@ import java.util.Optional;
 import java.util.regex.Pattern;
 
 public class GermanTimeParserConfiguration extends BaseOptionsConfiguration implements ITimeParserConfiguration {
-    
+
     private final ImmutableMap<String, Integer> numbers;
     private final IDateTimeUtilityConfiguration utilityConfiguration;
     private final IDateTimeParser timeZoneParser;
@@ -36,11 +36,16 @@ public class GermanTimeParserConfiguration extends BaseOptionsConfiguration impl
     private final Pattern timeSuffixFull = RegExpUtility.getSafeRegExp(GermanDateTime.TimeSuffixFull);
     private final Pattern lunchRegex = RegExpUtility.getSafeRegExp(GermanDateTime.LunchRegex);
     private final Pattern nightRegex = RegExpUtility.getSafeRegExp(GermanDateTime.NightRegex);
+    private final Pattern halfTokenRegex = RegExpUtility.getSafeRegExp(GermanDateTime.HalfTokenRegex);
+    private final Pattern quarterToTokenRegex = RegExpUtility.getSafeRegExp(GermanDateTime.QuarterToTokenRegex);
+    private final Pattern quarterPastTokenRegex = RegExpUtility.getSafeRegExp(GermanDateTime.QuarterPastTokenRegex);
+    private final Pattern threeQuarterToTokenRegex = RegExpUtility.getSafeRegExp(GermanDateTime.ThreeQuarterToTokenRegex);
+    private final Pattern threeQuarterPastTokenRegex = RegExpUtility.getSafeRegExp(GermanDateTime.ThreeQuarterPastTokenRegex);
 
     public GermanTimeParserConfiguration(ICommonDateTimeParserConfiguration config) {
-        
+
         super(config.getOptions());
-        
+
         numbers = config.getNumbers();
         utilityConfiguration = config.getUtilityConfiguration();
         timeZoneParser = new BaseTimeZoneParser();
@@ -81,18 +86,22 @@ public class GermanTimeParserConfiguration extends BaseOptionsConfiguration impl
 
     @Override
     public PrefixAdjustResult adjustByPrefix(String prefix, int hour, int min, boolean hasMin) {
-        
+
         int deltaMin;
         String trimmedPrefix = prefix.trim().toLowerCase();
 
-        if (trimmedPrefix.startsWith("half")) {
-            deltaMin = 30;
-        } else if (trimmedPrefix.startsWith("a quarter") || trimmedPrefix.startsWith("quarter")) {
+        if (checkMatch(halfTokenRegex, trimmedPrefix)) {
+            deltaMin = -30;
+        } else if (checkMatch(quarterToTokenRegex, trimmedPrefix)) {
+            deltaMin = -15;
+        } else if (checkMatch(quarterPastTokenRegex, trimmedPrefix)) {
             deltaMin = 15;
-        } else if (trimmedPrefix.startsWith("three quarter")) {
+        } else if (checkMatch(threeQuarterToTokenRegex, trimmedPrefix)) {
+            deltaMin = -45;
+        } else if (checkMatch(threeQuarterPastTokenRegex, trimmedPrefix)) {
             deltaMin = 45;
         } else {
-            
+
             Optional<Match> match = Arrays.stream(RegExpUtility.getMatches(GermanTimeExtractorConfiguration.LessThanOneHour, trimmedPrefix)).findFirst();
             String minStr = match.get().getGroup("deltamin").value;
             if (!StringUtility.isNullOrWhiteSpace(minStr)) {
@@ -103,7 +112,7 @@ public class GermanTimeParserConfiguration extends BaseOptionsConfiguration impl
             }
         }
 
-        if (trimmedPrefix.endsWith("to")) {
+        if (trimmedPrefix.endsWith("zum")) {
             deltaMin = -deltaMin;
         }
 
@@ -120,15 +129,15 @@ public class GermanTimeParserConfiguration extends BaseOptionsConfiguration impl
 
     @Override
     public SuffixAdjustResult adjustBySuffix(String suffix, int hour, int min, boolean hasMin, boolean hasAm, boolean hasPm) {
-        
+
         String lowerSuffix = suffix.toLowerCase();
         int deltaHour = 0;
         ConditionalMatch match = RegexExtension.matchExact(timeSuffixFull, lowerSuffix, true);
         if (match.getSuccess()) {
-            
+
             String oclockStr = match.getMatch().get().getGroup("oclock").value;
             if (StringUtility.isNullOrEmpty(oclockStr)) {
-                
+
                 String amStr = match.getMatch().get().getGroup(Constants.AmGroupName).value;
                 if (!StringUtility.isNullOrEmpty(amStr)) {
                     if (hour >= Constants.HalfDayHourCount) {
@@ -136,7 +145,7 @@ public class GermanTimeParserConfiguration extends BaseOptionsConfiguration impl
                     } else {
                         hasAm = true;
                     }
-                    
+
                 }
 
                 String pmStr = match.getMatch().get().getGroup(Constants.PmGroupName).value;
@@ -144,7 +153,7 @@ public class GermanTimeParserConfiguration extends BaseOptionsConfiguration impl
                     if (hour < Constants.HalfDayHourCount) {
                         deltaHour = Constants.HalfDayHourCount;
                     }
-                    
+
                     if (checkMatch(lunchRegex, pmStr)) {
                         // for hour >= 10, < 12
                         if (hour >= 10 && hour <= Constants.HalfDayHourCount) {
@@ -183,7 +192,7 @@ public class GermanTimeParserConfiguration extends BaseOptionsConfiguration impl
 
         return new SuffixAdjustResult(hour, min, hasMin, hasAm, hasPm);
     }
-    
+
     private boolean checkMatch(Pattern regex, String input) {
         return RegExpUtility.getMatches(regex, input).length > 0;
     }
