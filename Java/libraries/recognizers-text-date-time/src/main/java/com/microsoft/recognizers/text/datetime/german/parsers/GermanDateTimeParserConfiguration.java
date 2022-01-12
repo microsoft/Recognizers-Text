@@ -46,6 +46,7 @@ public class GermanDateTimeParserConfiguration extends BaseOptionsConfiguration 
     private final Pattern unspecificEndOfRegex;
     private final Pattern unitRegex;
     private final Pattern dateNumberConnectorRegex;
+    private final Pattern yearRegex;
 
     private final ImmutableMap<String, String> unitMap;
     private final ImmutableMap<String, Integer> numbers;
@@ -80,6 +81,7 @@ public class GermanDateTimeParserConfiguration extends BaseOptionsConfiguration 
         unspecificEndOfRegex = GermanDateTimeExtractorConfiguration.UnspecificEndOfRegex;
         unitRegex = GermanTimeExtractorConfiguration.TimeUnitRegex;
         dateNumberConnectorRegex = GermanDateTimeExtractorConfiguration.DateNumberConnectorRegex;
+        yearRegex = GermanDateTimeExtractorConfiguration.YearRegex;
 
         unitMap = config.getUnitMap();
         numbers = config.getNumbers();
@@ -216,11 +218,20 @@ public class GermanDateTimeParserConfiguration extends BaseOptionsConfiguration 
 
         String trimmedText = text.trim().toLowerCase();
         
-        if (trimmedText.endsWith("now")) {
+        if (trimmedText.endsWith("jetzt") ||
+                trimmedText.equals("momentan") ||
+                trimmedText.equals("gerade") ||
+                trimmedText.equals("aktuell") ||
+                trimmedText.equals("aktuelle") ||
+                trimmedText.equals("im moment") ||
+                trimmedText.equals("in diesem moment") ||
+                trimmedText.equals("derzeit")) {
             return new ResultTimex(true, "PRESENT_REF");
-        } else if (trimmedText.equals("recently") || trimmedText.equals("previously")) {
+        } else if (trimmedText.equals("neulich") ||
+                trimmedText.equals("vorher") ||
+                trimmedText.equals("vorhin")) {
             return new ResultTimex(true, "PAST_REF");
-        } else if (trimmedText.equals("as soon as possible") || trimmedText.equals("asap")) {
+        } else if (trimmedText.equals("so früh wie möglich")) {
             return new ResultTimex(true, "FUTURE_REF");
         }
 
@@ -233,9 +244,15 @@ public class GermanDateTimeParserConfiguration extends BaseOptionsConfiguration 
         String trimmedText = text.trim().toLowerCase();
 
         int swift = 0;
-        if (trimmedText.startsWith("next")) {
+        if (trimmedText.startsWith("nächsten") ||
+                trimmedText.startsWith("nächste") ||
+                trimmedText.startsWith("nächstes") ||
+                trimmedText.startsWith("nächster")) {
             swift = 1;
-        } else if (trimmedText.startsWith("last")) {
+        } else if (trimmedText.startsWith("letzten") ||
+                trimmedText.startsWith("letzte") ||
+                trimmedText.startsWith("letztes") ||
+                trimmedText.startsWith("letzter")) {
             swift = -1;
         }
 
@@ -248,12 +265,18 @@ public class GermanDateTimeParserConfiguration extends BaseOptionsConfiguration 
         String trimmedText = text.trim().toLowerCase();
         int result = hour;
         
-        if (trimmedText.endsWith("morning") && hour >= Constants.HalfDayHourCount) {
+        if ((trimmedText.endsWith("morgen") || trimmedText.endsWith("morgens"))
+                && hour >= Constants.HalfDayHourCount) {
             result -= Constants.HalfDayHourCount;
-        } else if (!trimmedText.endsWith("morning") && hour < Constants.HalfDayHourCount && !(trimmedText.endsWith("night") && hour < 6)) {
+        } else if (!(trimmedText.endsWith("morgen") || trimmedText.endsWith("morgens"))
+                && hour < Constants.HalfDayHourCount) {
             result += Constants.HalfDayHourCount;
         }
         
         return result;
+    }
+
+    public Pattern getYearRegex() {
+        return yearRegex;
     }
 }
