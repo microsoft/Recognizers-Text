@@ -545,170 +545,194 @@
     ]
   },
   {
-    "Input": "jag åker tillbaka 15 june 2016",
+    "Input": "jag åker tillbaka 15 juni 2016",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "15 june 2016",
+        "Text": "15 juni 2016",
         "Type": "date",
-        "Start": 13,
+        "Start": 18,
         "Length": 12
       }
     ]
   },
   {
-    "Input": "a baseball on may the eleventh",
+    "Input": "en baseball den elfte maj",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "may the eleventh",
+        "Text": "elfte maj",
         "Type": "date",
-        "Start": 14,
-        "Length": 16
-      }
-    ]
-  },
-  {
-    "Input": "jag åker tillbaka fourth of may",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "fourth of may",
-        "Type": "date",
-        "Start": 13,
-        "Length": 13
-      }
-    ]
-  },
-  {
-    "Input": "jag åker tillbaka 4th of march",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "4th of march",
-        "Type": "date",
-        "Start": 13,
-        "Length": 12
-      }
-    ]
-  },
-  {
-    "Input": "jag åker tillbaka jan first",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "jan first",
-        "Type": "date",
-        "Start": 13,
+        "Start": 16,
         "Length": 9
       }
     ]
   },
   {
-    "Input": "jag åker tillbaka may twenty-first",
+    "Input": "jag åker tillbaka fjärde maj",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "may twenty-first",
+        "Text": "fjärde maj",
         "Type": "date",
-        "Start": 13,
-        "Length": 16
+        "Start": 18,
+        "Length": 10
       }
     ]
   },
   {
-    "Input": "jag åker tillbaka may twenty one",
+    "Input": "jag åker tillbaka 4 mars",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "may twenty one",
+        "Text": "4 mars",
         "Type": "date",
-        "Start": 13,
-        "Length": 14
-      }
-    ]
-  },
-  {
-    "Input": "jag åker tillbaka second of aug",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "second of aug",
-        "Type": "date",
-        "Start": 13,
-        "Length": 13
-      }
-    ]
-  },
-  {
-    "Input": "jag åker tillbaka twenty second of june",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "twenty second of june",
-        "Type": "date",
-        "Start": 13,
-        "Length": 21
-      }
-    ]
-  },
-  {
-    "Input": "i went back two months ago",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "two months ago",
-        "Type": "date",
-        "Start": 12,
-        "Length": 14
-      }
-    ]
-  },
-  {
-    "Input": "jag åker tillbaka two days later",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "two days later",
-        "Type": "date",
-        "Start": 13,
-        "Length": 14
-      }
-    ]
-  },
-  {
-    "Input": "who did i email a month ago",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "a month ago",
-        "Type": "date",
-        "Start": 16,
-        "Length": 11
-      }
-    ]
-  },
-  {
-    "Input": "i went back for the 27",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "the 27",
-        "Type": "date",
-        "Start": 16,
+        "Start": 18,
         "Length": 6
       }
     ]
   },
   {
-    "Input": "i went back for the 27th",
+    "Input": "jag åker tillbaka den 4 mars",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "the 27th",
+        "Text": "den 4 mars",
         "Type": "date",
-        "Start": 16,
-        "Length": 8
+        "Start": 18,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka förste jan",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "förste jan",
+        "Type": "date",
+        "Start": 18,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka första jan",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "första jan",
+        "Type": "date",
+        "Start": 18,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka andra jan",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "andra jan",
+        "Type": "date",
+        "Start": 18,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka andre jan",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "andre jan",
+        "Type": "date",
+        "Start": 18,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka tjugoförste maj",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tjugoförste maj",
+        "Type": "date",
+        "Start": 18,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka tjugoförsta maj",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "tjugoförsta maj",
+        "Type": "date",
+        "Start": 18,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "jag åkte tillbaka för två månader sedan",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "två månader sedan",
+        "Type": "date",
+        "Start": 22,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka två dagar senare",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "två dagar senare",
+        "Type": "date",
+        "Start": 18,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "vem mejlade jag för en månad sedan",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "en månad sedan",
+        "Type": "date",
+        "Start": 20,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "jag åkte tillbaka den 27",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "27",
+        "Type": "date",
+        "Start": 22,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "jag åkte tillbaka den 27:e",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "27",
+        "Type": "date",
+        "Start": 22,
+        "Length": 2
       }
     ]
   },
