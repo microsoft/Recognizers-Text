@@ -3,12 +3,20 @@
 
 package com.microsoft.recognizers.text.datetime.german.parsers;
 
+import static com.microsoft.recognizers.text.datetime.resources.GermanDateTime.TodayNowRegex;
+
+import java.util.Arrays;
+import java.util.Optional;
+import java.util.regex.Pattern;
+import java.util.stream.Stream;
+
 import com.google.common.collect.ImmutableMap;
 import com.microsoft.recognizers.text.IExtractor;
 import com.microsoft.recognizers.text.IParser;
 import com.microsoft.recognizers.text.datetime.config.BaseOptionsConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.IDateExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
+import com.microsoft.recognizers.text.datetime.german.extractors.GermanDateExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.german.extractors.GermanDatePeriodExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.german.extractors.GermanDurationExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.parsers.IDateTimeParser;
@@ -18,12 +26,82 @@ import com.microsoft.recognizers.text.datetime.resources.GermanDateTime;
 import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
-import java.util.Arrays;
-import java.util.Optional;
-import java.util.regex.Pattern;
-import java.util.stream.Stream;
+public class GermanDatePeriodParserConfiguration
+        extends BaseOptionsConfiguration
+        implements IDatePeriodParserConfiguration {
+    private final String tokenBeforeDate;
+    private final IDateExtractor dateExtractor;
 
-public class GermanDatePeriodParserConfiguration extends BaseOptionsConfiguration implements IDatePeriodParserConfiguration {
+    // InternalParsers
+    private final IExtractor cardinalExtractor;
+    private final IExtractor ordinalExtractor;
+    private final IDateTimeExtractor durationExtractor;
+    private final IExtractor integerExtractor;
+    private final IParser numberParser;
+    private final IDateTimeParser dateParser;
+    private final IDateTimeParser durationParser;
+    private final Pattern monthFrontBetweenRegex;
+
+    // Regex
+    private final Pattern betweenRegex;
+    private final Pattern monthFrontSimpleCasesRegex;
+    private final Pattern simpleCasesRegex;
+    private final Pattern oneWordPeriodRegex;
+    private final Pattern monthWithYear;
+    private final Pattern monthNumWithYear;
+    private final Pattern yearRegex;
+    private final Pattern pastRegex;
+    private final Pattern futureRegex;
+    private final Pattern futureSuffixRegex;
+    private final Pattern numberCombinedWithUnit;
+    private final Pattern weekOfMonthRegex;
+    private final Pattern weekOfYearRegex;
+    private final Pattern quarterRegex;
+    private final Pattern quarterRegexYearFront;
+    private final Pattern allHalfYearRegex;
+    private final Pattern seasonRegex;
+    private final Pattern whichWeekRegex;
+    private final Pattern weekOfRegex;
+    private final Pattern monthOfRegex;
+    private final Pattern inConnectorRegex;
+    private final Pattern withinNextPrefixRegex;
+    private final Pattern restOfDateRegex;
+    private final Pattern laterEarlyPeriodRegex;
+    private final Pattern weekWithWeekDayRangeRegex;
+    private final Pattern yearPlusNumberRegex;
+    private final Pattern decadeWithCenturyRegex;
+    private final Pattern yearPeriodRegex;
+    private final Pattern complexDatePeriodRegex;
+    private final Pattern relativeDecadeRegex;
+    private final Pattern referenceDatePeriodRegex;
+    private final Pattern agoRegex;
+    private final Pattern laterRegex;
+    private final Pattern lessThanRegex;
+    private final Pattern moreThanRegex;
+    private final Pattern centurySuffixRegex;
+    private final Pattern relativeRegex;
+    private final Pattern unspecificEndOfRangeRegex;
+    private final Pattern nextPrefixRegex;
+    private final Pattern previousPrefixRegex;
+    private final Pattern thisPrefixRegex;
+    private final Pattern afterNextPrefixRegex;
+    private final Pattern nowRegex;
+    private final Pattern firstLastRegex;
+    private final Pattern ofYearRegex;
+    private final Pattern specialDayRegex;
+    private final Pattern todayNowRegex;
+    private final Pattern penultimatePrefixRegex;
+
+    // Dictionaries
+    private final ImmutableMap<String, String> unitMap;
+    private final ImmutableMap<String, Integer> cardinalMap;
+    private final ImmutableMap<String, Integer> dayOfMonth;
+    private final ImmutableMap<String, Integer> monthOfYear;
+    private final ImmutableMap<String, String> seasonMap;
+    private final ImmutableMap<String, String> specialYearPrefixesMap;
+    private final ImmutableMap<String, Integer> writtenDecades;
+    private final ImmutableMap<String, Integer> numbers;
+    private final ImmutableMap<String, Integer> specialDecadeCases;
 
     public GermanDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config) {
 
@@ -77,9 +155,14 @@ public class GermanDatePeriodParserConfiguration extends BaseOptionsConfiguratio
         lessThanRegex = GermanDatePeriodExtractorConfiguration.LessThanRegex;
         moreThanRegex = GermanDatePeriodExtractorConfiguration.MoreThanRegex;
         centurySuffixRegex = GermanDatePeriodExtractorConfiguration.CenturySuffixRegex;
+        nowRegex = GermanDatePeriodExtractorConfiguration.NowRegex;
+        firstLastRegex = GermanDatePeriodExtractorConfiguration.FirstLastRegex;
+        ofYearRegex = GermanDatePeriodExtractorConfiguration.OfYearRegex;
+        specialDayRegex = GermanDateExtractorConfiguration.SpecialDayRegex;
+        todayNowRegex = RegExpUtility.getSafeRegExp(TodayNowRegex);
         relativeRegex = RegExpUtility.getSafeRegExp(GermanDateTime.RelativeRegex);
         unspecificEndOfRangeRegex = RegExpUtility.getSafeRegExp(GermanDateTime.UnspecificEndOfRangeRegex);
-        nowRegex = GermanDatePeriodExtractorConfiguration.NowRegex;
+        penultimatePrefixRegex = RegExpUtility.getSafeRegExp(GermanDateTime.PenultimatePrefixRegex);
 
         unitMap = config.getUnitMap();
         cardinalMap = config.getCardinalMap();
@@ -94,79 +177,8 @@ public class GermanDatePeriodParserConfiguration extends BaseOptionsConfiguratio
         nextPrefixRegex = RegExpUtility.getSafeRegExp(GermanDateTime.NextPrefixRegex);
         previousPrefixRegex = RegExpUtility.getSafeRegExp(GermanDateTime.PreviousPrefixRegex);
         thisPrefixRegex = RegExpUtility.getSafeRegExp(GermanDateTime.ThisPrefixRegex);
-        afterNextSuffixRegex = RegExpUtility.getSafeRegExp(GermanDateTime.AfterNextPrefixRegex);
+        afterNextPrefixRegex = RegExpUtility.getSafeRegExp(GermanDateTime.AfterNextPrefixRegex);
     }
-
-    private final String tokenBeforeDate;
-
-    // InternalParsers
-
-    private final IDateExtractor dateExtractor;
-    private final IExtractor cardinalExtractor;
-    private final IExtractor ordinalExtractor;
-    private final IDateTimeExtractor durationExtractor;
-    private final IExtractor integerExtractor;
-    private final IParser numberParser;
-    private final IDateTimeParser dateParser;
-    private final IDateTimeParser durationParser;
-
-    // Regex
-
-    private final Pattern monthFrontBetweenRegex;
-    private final Pattern betweenRegex;
-    private final Pattern monthFrontSimpleCasesRegex;
-    private final Pattern simpleCasesRegex;
-    private final Pattern oneWordPeriodRegex;
-    private final Pattern monthWithYear;
-    private final Pattern monthNumWithYear;
-    private final Pattern yearRegex;
-    private final Pattern pastRegex;
-    private final Pattern futureRegex;
-    private final Pattern futureSuffixRegex;
-    private final Pattern numberCombinedWithUnit;
-    private final Pattern weekOfMonthRegex;
-    private final Pattern weekOfYearRegex;
-    private final Pattern quarterRegex;
-    private final Pattern quarterRegexYearFront;
-    private final Pattern allHalfYearRegex;
-    private final Pattern seasonRegex;
-    private final Pattern whichWeekRegex;
-    private final Pattern weekOfRegex;
-    private final Pattern monthOfRegex;
-    private final Pattern inConnectorRegex;
-    private final Pattern withinNextPrefixRegex;
-    private final Pattern restOfDateRegex;
-    private final Pattern laterEarlyPeriodRegex;
-    private final Pattern weekWithWeekDayRangeRegex;
-    private final Pattern yearPlusNumberRegex;
-    private final Pattern decadeWithCenturyRegex;
-    private final Pattern yearPeriodRegex;
-    private final Pattern complexDatePeriodRegex;
-    private final Pattern relativeDecadeRegex;
-    private final Pattern referenceDatePeriodRegex;
-    private final Pattern agoRegex;
-    private final Pattern laterRegex;
-    private final Pattern lessThanRegex;
-    private final Pattern moreThanRegex;
-    private final Pattern centurySuffixRegex;
-    private final Pattern relativeRegex;
-    private final Pattern unspecificEndOfRangeRegex;
-    private final Pattern nextPrefixRegex;
-    private final Pattern previousPrefixRegex;
-    private final Pattern thisPrefixRegex;
-    private final Pattern afterNextSuffixRegex;
-    private final Pattern nowRegex;
-
-    // Dictionaries
-    private final ImmutableMap<String, String> unitMap;
-    private final ImmutableMap<String, Integer> cardinalMap;
-    private final ImmutableMap<String, Integer> dayOfMonth;
-    private final ImmutableMap<String, Integer> monthOfYear;
-    private final ImmutableMap<String, String> seasonMap;
-    private final ImmutableMap<String, String> specialYearPrefixesMap;
-    private final ImmutableMap<String, Integer> writtenDecades;
-    private final ImmutableMap<String, Integer> numbers;
-    private final ImmutableMap<String, Integer> specialDecadeCases;
 
     @Override
     public String getTokenBeforeDate() {
@@ -474,104 +486,97 @@ public class GermanDatePeriodParserConfiguration extends BaseOptionsConfiguratio
     }
 
     @Override
-    public int getSwiftDayOrMonth(String text) {
+    public int getSwiftDayOrMonth(final String text) {
 
-        String trimmedText = text.trim().toLowerCase();
-        int swift = 0;
+        final String trimmedText = text.trim().toLowerCase();
 
-        Optional<Match> matchAfterNext = Arrays.stream(RegExpUtility.getMatches(afterNextSuffixRegex, trimmedText)).findFirst();
-        Optional<Match> matchNext = Arrays.stream(RegExpUtility.getMatches(nextPrefixRegex, trimmedText)).findFirst();
-        Optional<Match> matchPast = Arrays.stream(RegExpUtility.getMatches(previousPrefixRegex, trimmedText)).findFirst();
-
-        if (matchAfterNext.isPresent()) {
-            swift = 2;
-        } else if (matchNext.isPresent()) {
-            swift = 1;
-        } else if (matchPast.isPresent()) {
-            swift = -1;
+        if (afterNextPrefixRegex.matcher(trimmedText).find()) {
+            return 2;
+        }
+        else if (nextPrefixRegex.matcher(trimmedText).find()) {
+            return 1;
+        }
+        else if (previousPrefixRegex.matcher(trimmedText).find()) {
+            return -1;
+        }
+        else if (penultimatePrefixRegex.matcher(trimmedText).find()) {
+            return -2;
         }
 
-        return swift;
+        return 0;
     }
 
     @Override
-    public int getSwiftYear(String text) {
+    public int getSwiftYear(final String text) {
 
-        String trimmedText = text.trim().toLowerCase();
-        int swift = -10;
+        final String trimmedText = text.trim().toLowerCase();
 
-        Optional<Match> matchAfterNext = Arrays.stream(RegExpUtility.getMatches(afterNextSuffixRegex, trimmedText)).findFirst();
-        Optional<Match> matchNext = Arrays.stream(RegExpUtility.getMatches(nextPrefixRegex, trimmedText)).findFirst();
-        Optional<Match> matchPast = Arrays.stream(RegExpUtility.getMatches(previousPrefixRegex, trimmedText)).findFirst();
-        Optional<Match> matchThisPresent = Arrays.stream(RegExpUtility.getMatches(thisPrefixRegex, trimmedText)).findFirst();
-
-        if (matchAfterNext.isPresent()) {
-            swift = 2;
-        } else if (matchNext.isPresent()) {
-            swift = 1;
-        } else if (matchPast.isPresent()) {
-            swift = -1;
-        } else if (matchThisPresent.isPresent()) {
-            swift = 0;
+        if (nextPrefixRegex.matcher(trimmedText).find()) {
+            return 1;
+        }
+        else if (previousPrefixRegex.matcher(trimmedText).find()) {
+            return -1;
+        }
+        else if (penultimatePrefixRegex.matcher(trimmedText).find()) {
+            return -2;
+        }
+        else if (thisPrefixRegex.matcher(trimmedText).find()) {
+            return 0;
         }
 
-        return swift;
+        return -10;
     }
 
     @Override
-    public boolean isFuture(String text) {
-        String trimmedText = text.trim().toLowerCase();
-        return (trimmedText.startsWith("this") || trimmedText.startsWith("next"));
+    public boolean isFuture(final String text) {
+        final String trimmedText = text.trim().toLowerCase();
+        return thisPrefixRegex.matcher(trimmedText).find() || nextPrefixRegex.matcher(trimmedText).find();
     }
 
     @Override
-    public boolean isLastCardinal(String text) {
-        String trimmedText = text.trim().toLowerCase();
-        return trimmedText.equals("last");
+    public boolean isLastCardinal(final String text) {
+        final String trimmedText = text.trim().toLowerCase();
+        return previousPrefixRegex.matcher(trimmedText).find();
     }
 
     @Override
-    public boolean isMonthOnly(String text) {
-        String trimmedText = text.trim().toLowerCase();
-        Optional<Match> matchAfterNext = Arrays.stream(RegExpUtility.getMatches(afterNextSuffixRegex, trimmedText)).findFirst();
-        return trimmedText.endsWith("month") || trimmedText.contains(" month ") && matchAfterNext.isPresent();
+    public boolean isMonthOnly(final String text) {
+        final String trimmedText = text.trim().toLowerCase();
+        return GermanDateTime.MonthTerms.stream().anyMatch(trimmedText::endsWith);
     }
 
     @Override
-    public boolean isMonthToDate(String text) {
-        String trimmedText = text.trim().toLowerCase();
-        return trimmedText.equals("month to date");
+    public boolean isMonthToDate(final String text) {
+        final String trimmedText = text.trim().toLowerCase();
+        return GermanDateTime.MonthToDateTerms.stream().anyMatch(trimmedText::equals);
     }
 
     @Override
-    public boolean isWeekend(String text) {
-        String trimmedText = text.trim().toLowerCase();
-        Optional<Match> matchAfterNext = Arrays.stream(RegExpUtility.getMatches(afterNextSuffixRegex, trimmedText)).findFirst();
-        return trimmedText.endsWith("weekend") || trimmedText.contains(" weekend ") && matchAfterNext.isPresent();
+    public boolean isWeekend(final String text) {
+        final String trimmedText = text.trim().toLowerCase();
+        return GermanDateTime.WeekendTerms.stream().anyMatch(trimmedText::endsWith);
     }
 
     @Override
-    public boolean isWeekOnly(String text) {
-        String trimmedText = text.trim().toLowerCase();
-        Optional<Match> matchAfterNext = Arrays.stream(RegExpUtility.getMatches(afterNextSuffixRegex, trimmedText)).findFirst();
-        return trimmedText.endsWith("week") || trimmedText.contains(" week ") && matchAfterNext.isPresent();
+    public boolean isWeekOnly(final String text) {
+        final String trimmedText = text.trim().toLowerCase();
+        return GermanDateTime.WeekTerms.stream().anyMatch(trimmedText::endsWith);
     }
 
     @Override
-    public boolean isYearOnly(String text) {
-        String trimmedText = text.trim().toLowerCase();
-        return GermanDateTime.YearTerms.stream().anyMatch(o -> trimmedText.endsWith(o)) ||
-            (getYearTermsPadded().anyMatch(o -> trimmedText.contains(o)) && RegExpUtility.getMatches(afterNextSuffixRegex, trimmedText).length > 0) ||
-            (GermanDateTime.GenericYearTerms.stream().anyMatch(o -> trimmedText.endsWith(o)) && RegExpUtility.getMatches(unspecificEndOfRangeRegex, trimmedText).length > 0);
+    public boolean isYearOnly(final String text) {
+        final String trimmedText = text.trim().toLowerCase();
+        return GermanDateTime.YearTerms.stream().anyMatch(trimmedText::endsWith);
     }
 
     @Override
-    public boolean isYearToDate(String text) {
-        String trimmedText = text.trim().toLowerCase();
-        return trimmedText.equals("year to date");
+    public boolean isYearToDate(final String text) {
+        final String trimmedText = text.trim().toLowerCase();
+        return GermanDateTime.YearToDateTerms.stream().anyMatch(trimmedText::equals);
     }
 
-    private Stream<String> getYearTermsPadded() {
-        return GermanDateTime.YearTerms.stream().map(i -> String.format(" %s ", i));
+    public boolean IsFortnight(final String text)
+    {
+        return false;
     }
 }
