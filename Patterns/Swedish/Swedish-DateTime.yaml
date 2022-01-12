@@ -46,7 +46,7 @@ FutureSuffixRegex: !simpleRegex
 PastSuffixRegex: !simpleRegex
   def: (?#PastSuffixRegex)\b((i\s+)dåtid(en)?)\b
 DayRegex: !simpleRegex
-  def: (?#DayRegex)(den\s*)?(?<!(\d+:?|\$)\s*)(?<day>(?:3[0-1]|[1-2]\d|0?[1-9])(?:(a|e))?)(?=\b|t)
+  def: (?#DayRegex)(?<!(\d+:?|\$)\s*)(?<day>(?:3[0-1]|[1-2]\d|0?[1-9])(?:e|a)?)(?=\b|t)
 ImplicitDayRegex: !simpleRegex
   def: (?#ImplicitDayRegex)(den\s*)?(?<day>(?:3[0-1]|[0-2]?\d)(?:(a|e)))\b
 MonthNumRegex: !simpleRegex
@@ -658,9 +658,9 @@ UnspecificDatePeriodRegex: !simpleRegex
 PrepositionSuffixRegex: !simpleRegex
   def: \b(on|in|at|around|circa|from|to)$
 FlexibleDayRegex: !simpleRegex
-  def: (?<DayOfMonth>([A-Za-z]+\s)?[A-Za-z\d]+)
+  def: (?<DayOfMonth>([A-Öa-ö]+\s)?[A-Öa-ö\d]+)
 ForTheRegex: !nestedRegex
-  def: \b((((?<=for\s+)the\s+{FlexibleDayRegex})|((?<=på\s+)(den\s+)?{FlexibleDayRegex}(?<=(st|nd|rd|th))))(?<end>\s*(,|\.(?!\d)|!|\?|$)))
+  def: \b((((?<=till\s+)den\s+{FlexibleDayRegex})|((?<=till\s+)?(den\s+){FlexibleDayRegex}(?<=(e|a))))(?<end>\s*(,|\.(?!\d)|!|\?|$)))
   references: [FlexibleDayRegex]
 WeekDayAndDayOfMonthRegex: !nestedRegex
   def: \b{WeekDayRegex}\s+(den\s+{FlexibleDayRegex})\b

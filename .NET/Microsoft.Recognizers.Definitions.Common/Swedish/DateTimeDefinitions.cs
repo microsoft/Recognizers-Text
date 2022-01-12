@@ -39,7 +39,7 @@ namespace Microsoft.Recognizers.Definitions.Swedish
       public const string ReferencePrefixRegex = @"(?#ReferencePrefixRegex)(samma)\b";
       public const string FutureSuffixRegex = @"(?#FutureSuffixRegex)\b((i\s+)?framtiden)\b";
       public const string PastSuffixRegex = @"(?#PastSuffixRegex)\b((i\s+)dåtid(en)?)\b";
-      public const string DayRegex = @"(?#DayRegex)(den\s*)?(?<!(\d+:?|\$)\s*)(?<day>(?:3[0-1]|[1-2]\d|0?[1-9])(?:(a|e))?)(?=\b|t)";
+      public const string DayRegex = @"(?#DayRegex)(?<!(\d+:?|\$)\s*)(?<day>(?:3[0-1]|[1-2]\d|0?[1-9])(?:e|a)?)(?=\b|t)";
       public const string ImplicitDayRegex = @"(?#ImplicitDayRegex)(den\s*)?(?<day>(?:3[0-1]|[0-2]?\d)(?:(a|e)))\b";
       public const string MonthNumRegex = @"(?#MonthNumRegex)(?<month>1[0-2]|(0)?[1-9])\b";
       public const string WrittenOneToNineRegex = @"(?#WrittenOneToNineRegex)(?:e(n|tt)|två|tre|fyra|fem|sex|sju|åtta|nio)";
@@ -274,8 +274,8 @@ namespace Microsoft.Recognizers.Definitions.Swedish
       public const string SingleAmbiguousTermsRegex = @"^(the\s+)?(dag|vecka|månad|år)$";
       public const string UnspecificDatePeriodRegex = @"^(vecka|fortnight|månad|år)$";
       public const string PrepositionSuffixRegex = @"\b(on|in|at|around|circa|from|to)$";
-      public const string FlexibleDayRegex = @"(?<DayOfMonth>([A-Za-z]+\s)?[A-Za-z\d]+)";
-      public static readonly string ForTheRegex = $@"\b((((?<=for\s+)the\s+{FlexibleDayRegex})|((?<=på\s+)(den\s+)?{FlexibleDayRegex}(?<=(st|nd|rd|th))))(?<end>\s*(,|\.(?!\d)|!|\?|$)))";
+      public const string FlexibleDayRegex = @"(?<DayOfMonth>([A-Öa-ö]+\s)?[A-Öa-ö\d]+)";
+      public static readonly string ForTheRegex = $@"\b((((?<=till\s+)den\s+{FlexibleDayRegex})|((?<=till\s+)?(den\s+){FlexibleDayRegex}(?<=(e|a))))(?<end>\s*(,|\.(?!\d)|!|\?|$)))";
       public static readonly string WeekDayAndDayOfMonthRegex = $@"\b{WeekDayRegex}\s+(den\s+{FlexibleDayRegex})\b";
       public static readonly string WeekDayAndDayRegex = $@"\b{WeekDayRegex}\s+(?!(den)){DayRegex}(?!([-:]|(\s+({AmDescRegex}|{PmDescRegex}|{OclockRegex}))))\b";
       public const string RestOfDateRegex = @"\b(rest|remaining)\s+(of\s+)?((the|my|this|current)\s+)?(?<duration>vecka|fortnight|månad|år|decennium)\b";

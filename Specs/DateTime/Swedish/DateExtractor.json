@@ -28,22 +28,30 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "den 12 januari, 2016",
+        "Text": "12 januari, 2016",
         "Type": "date",
-        "Start": 18,
-        "Length": 20
+        "Start": 22,
+        "Length": 16
       }
     ]
   },
   {
     "Input": "jag åker tillbaka måndag den 12 januari, 2016",
+    "Comment": "Currently resolves as 2 results. See below. The englis version resolves as one result.",
     "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "måndag den 12 januari, 2016",
+        "Text": "måndag",
         "Type": "date",
         "Start": 18,
-        "Length": 27
+        "Length": 6
+      },
+      {
+        "Text": "12 januari, 2016",
+        "Type": "date",
+        "Start": 29,
+        "Length": 16
       }
     ]
   },
@@ -117,10 +125,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "den 22/04",
+        "Text": "22/04",
         "Type": "date",
-        "Start": 18,
-        "Length": 9
+        "Start": 22,
+        "Length": 5
       }
     ]
   },
@@ -597,10 +605,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "den 4 mars",
+        "Text": "4 mars",
         "Type": "date",
-        "Start": 18,
-        "Length": 10
+        "Start": 22,
+        "Length": 6
       }
     ]
   },
@@ -737,190 +745,170 @@
     ]
   },
   {
-    "Input": "i went back for the 27.",
+    "Input": "jag åkte tillbaka den 27.",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "the 27",
+        "Text": "27",
         "Type": "date",
-        "Start": 16,
-        "Length": 6
+        "Start": 22,
+        "Length": 2
       }
     ]
   },
   {
-    "Input": "i went back for the 27!",
+    "Input": "jag åkte tillbaka den 27!",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "the 27",
+        "Text": "27",
         "Type": "date",
-        "Start": 16,
-        "Length": 6
+        "Start": 22,
+        "Length": 2
       }
     ]
   },
   {
-    "Input": "i went back for the 27 .",
+    "Input": "jag åkte tillbaka den 27 .",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "the 27",
+        "Text": "27",
         "Type": "date",
-        "Start": 16,
-        "Length": 6
+        "Start": 22,
+        "Length": 2
       }
     ]
   },
   {
-    "Input": "i went back for the 21st",
+    "Input": "jag åker tillbaka tjugoandra maj",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "the 21st",
+        "Text": "tjugoandra maj",
         "Type": "date",
-        "Start": 16,
-        "Length": 8
+        "Start": 18,
+        "Length": 14
       }
     ]
   },
   {
-    "Input": "i went back for the 22nd",
+    "Input": "jag åker tillbaka tjugoandre maj",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "the 22nd",
+        "Text": "tjugoandre maj",
         "Type": "date",
-        "Start": 16,
-        "Length": 8
+        "Start": 18,
+        "Length": 14
       }
     ]
   },
   {
-    "Input": "i went back for the second",
+    "Input": "jag kommer tillbaka till den trettioförste",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "the second",
+        "Text": "den trettioförste",
         "Type": "date",
-        "Start": 16,
-        "Length": 10
-      }
-    ]
-  },
-  {
-    "Input": "i went back for the twenty second",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "the twenty second",
-        "Type": "date",
-        "Start": 16,
+        "Start": 25,
         "Length": 17
       }
     ]
   },
   {
-    "Input": "i went back for the thirty first",
+    "Input": "jag åkte tillbaka den 27:e",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "the thirty first",
+        "Text": "27",
         "Type": "date",
-        "Start": 16,
-        "Length": 16
+        "Start": 22,
+        "Length": 2
       }
     ]
   },
   {
-    "Input": "i went back on the 27th",
+    "Input": "jag åkte tillbaka den 21:e",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "the 27th",
+        "Text": "21",
         "Type": "date",
-        "Start": 15,
-        "Length": 8
+        "Start": 22,
+        "Length": 2
       }
     ]
   },
   {
-    "Input": "i went back on the 21st",
+    "Input": "jag åkte tillbaka den 21:a",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "the 21st",
+        "Text": "21",
         "Type": "date",
-        "Start": 15,
-        "Length": 8
+        "Start": 22,
+        "Length": 2
       }
     ]
   },
   {
-    "Input": "i went back on 22nd",
+    "Input": "jag åkte tillbaka den andre!",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "22nd",
+        "Text": "den andre",
         "Type": "date",
-        "Start": 15,
-        "Length": 4
+        "Start": 18,
+        "Length": 9
       }
     ]
   },
   {
-    "Input": "i went back on the second!",
+    "Input": "jag åkte tillbaka den tjugoandre?",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "the second",
+        "Text": "den tjugoandre",
         "Type": "date",
-        "Start": 15,
-        "Length": 10
+        "Start": 18,
+        "Length": 14
       }
     ]
   },
   {
-    "Input": "i went back on twenty second?",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "twenty second",
-        "Type": "date",
-        "Start": 15,
-        "Length": 13
-      }
-    ]
-  },
-  {
-    "Input": "the first prize",
+    "Input": "det är det första priset",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
-    "Input": "i'll go to the 27th floor",
+    "Input": "jag åker till den 27:e våningen",
+    "Comment": "Currently this resolves as a date",
+    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
+    "Results": []
+  },
+  {
+    "Input": "Minnesevenemang för 25-årsjubileet av diplomatiska förbindelser mellan Singapore och Kina",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
-    "Input": "Commemorative Events for the 25th Anniversary of Diplomatic Relations between Singapore and China",
+    "Input": "Köp biljetter till den 17:e Door Haunted Experience",
+    "Comment": "Currently this resolves as a date",
     "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": []
   },
   {
-    "Input": "Get tickets for the 17th Door Haunted Experience",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": []
-  },
-  {
-    "Input": "What do I have on saturday the second",
+    "Input": "Vad har jag söndag den andre",
     "NotSupportedByDesign": "javascript,python,java",
     "Context": {
       "ReferenceDateTime": "2017-09-01T00:00:00"
     },
     "Results": [
       {
-        "Text": "saturday the second",
+        "Text": "söndag den andre",
         "Type": "date",
         "Start": 18,
         "Length": 19
