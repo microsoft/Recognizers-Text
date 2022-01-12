@@ -6,16 +6,19 @@ package com.microsoft.recognizers.text.datetime.german.extractors;
 import com.google.common.collect.ImmutableMap;
 import com.microsoft.recognizers.text.IExtractor;
 import com.microsoft.recognizers.text.IParser;
-import com.microsoft.recognizers.text.datetime.DateTimeOptions;
 import com.microsoft.recognizers.text.datetime.config.BaseOptionsConfiguration;
 import com.microsoft.recognizers.text.datetime.config.IOptionsConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.BaseDurationExtractor;
+import com.microsoft.recognizers.text.datetime.extractors.BaseHolidayExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.config.IDateExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.german.utilities.GermanDatetimeUtilityConfiguration;
 import com.microsoft.recognizers.text.datetime.resources.BaseDateTime;
 import com.microsoft.recognizers.text.datetime.resources.GermanDateTime;
 import com.microsoft.recognizers.text.datetime.utilities.IDateTimeUtilityConfiguration;
+import com.microsoft.recognizers.text.number.NumberOptions;
+import com.microsoft.recognizers.text.number.german.extractors.IntegerExtractor;
+import com.microsoft.recognizers.text.number.german.extractors.OrdinalExtractor;
 import com.microsoft.recognizers.text.number.german.parsers.GermanNumberParserConfiguration;
 import com.microsoft.recognizers.text.number.parsers.BaseNumberParser;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
@@ -27,7 +30,7 @@ import java.util.regex.Pattern;
 public class GermanDateExtractorConfiguration extends BaseOptionsConfiguration implements IDateExtractorConfiguration {
 
     public static final Pattern MonthRegex = RegExpUtility.getSafeRegExp(GermanDateTime.MonthRegex);
-    public static final Pattern DayRegex = RegExpUtility.getSafeRegExp(GermanDateTime.ImplicitDayRegex);
+    public static final Pattern DayRegex = RegExpUtility.getSafeRegExp(GermanDateTime.DayRegex);
     public static final Pattern MonthNumRegex = RegExpUtility.getSafeRegExp(GermanDateTime.MonthNumRegex);
     public static final Pattern YearRegex = RegExpUtility.getSafeRegExp(GermanDateTime.YearRegex);
     public static final Pattern WeekDayRegex = RegExpUtility.getSafeRegExp(GermanDateTime.WeekDayRegex);
@@ -39,31 +42,33 @@ public class GermanDateExtractorConfiguration extends BaseOptionsConfiguration i
     public static final Pattern NextDateRegex = RegExpUtility.getSafeRegExp(GermanDateTime.NextDateRegex);
     public static final Pattern DateUnitRegex = RegExpUtility.getSafeRegExp(GermanDateTime.DateUnitRegex);
     public static final Pattern SpecialDayRegex = RegExpUtility.getSafeRegExp(GermanDateTime.SpecialDayRegex);
+    public static final Pattern SpecialDayWithNumRegex = RegExpUtility.getSafeRegExp(GermanDateTime.SpecialDayWithNumRegex);
     public static final Pattern WeekDayOfMonthRegex = RegExpUtility.getSafeRegExp(GermanDateTime.WeekDayOfMonthRegex);
     public static final Pattern RelativeWeekDayRegex = RegExpUtility.getSafeRegExp(GermanDateTime.RelativeWeekDayRegex);
     public static final Pattern SpecialDate = RegExpUtility.getSafeRegExp(GermanDateTime.SpecialDate);
-    public static final Pattern SpecialDayWithNumRegex = RegExpUtility.getSafeRegExp(GermanDateTime.SpecialDayWithNumRegex);
     public static final Pattern ForTheRegex = RegExpUtility.getSafeRegExp(GermanDateTime.ForTheRegex);
     public static final Pattern WeekDayAndDayOfMonthRegex = RegExpUtility.getSafeRegExp(GermanDateTime.WeekDayAndDayOfMonthRegex);
+    public static final Pattern WeekDayAndDayRegex = RegExpUtility.getSafeRegExp(GermanDateTime.WeekDayAndDayRegex);
     public static final Pattern RelativeMonthRegex = RegExpUtility.getSafeRegExp(GermanDateTime.RelativeMonthRegex);
     public static final Pattern StrictRelativeRegex = RegExpUtility.getSafeRegExp(GermanDateTime.StrictRelativeRegex);
     public static final Pattern PrefixArticleRegex = RegExpUtility.getSafeRegExp(GermanDateTime.PrefixArticleRegex);
     public static final Pattern InConnectorRegex = RegExpUtility.getSafeRegExp(GermanDateTime.InConnectorRegex);
+    public static final Pattern SinceYearSuffixRegex = RegExpUtility.getSafeRegExp(GermanDateTime.SinceYearSuffixRegex);
     public static final Pattern RangeUnitRegex = RegExpUtility.getSafeRegExp(GermanDateTime.RangeUnitRegex);
     public static final Pattern RangeConnectorSymbolRegex = RegExpUtility.getSafeRegExp(BaseDateTime.RangeConnectorSymbolRegex);
 
     public static final List<Pattern> DateRegexList = new ArrayList<Pattern>() {
         {
             add(RegExpUtility.getSafeRegExp(GermanDateTime.DateExtractor1));
+            add(RegExpUtility.getSafeRegExp(GermanDateTime.DateExtractor2));
             add(RegExpUtility.getSafeRegExp(GermanDateTime.DateExtractor3));
-            add(RegExpUtility.getSafeRegExp(GermanDateTime.DateExtractor4));
             add(RegExpUtility.getSafeRegExp(GermanDateTime.DateExtractor5));
-            add(RegExpUtility.getSafeRegExp(GermanDateTime.DateExtractor6));
-            add(RegExpUtility.getSafeRegExp(GermanDateTime.DateExtractor7L));
-            add(RegExpUtility.getSafeRegExp(GermanDateTime.DateExtractor7S));
             add(RegExpUtility.getSafeRegExp(GermanDateTime.DateExtractor8));
-            add(RegExpUtility.getSafeRegExp(GermanDateTime.DateExtractor9L));
-            add(RegExpUtility.getSafeRegExp(GermanDateTime.DateExtractor9S));
+            add(RegExpUtility.getSafeRegExp(GermanDateTime.DateExtractor9));
+            add(RegExpUtility.getSafeRegExp(GermanDateTime.DateExtractor4));
+            add(RegExpUtility.getSafeRegExp(GermanDateTime.DateExtractor6));
+            add(RegExpUtility.getSafeRegExp(GermanDateTime.DateExtractor7));
+            add(RegExpUtility.getSafeRegExp(GermanDateTime.DateExtractor10));
             add(RegExpUtility.getSafeRegExp(GermanDateTime.DateExtractorA));
         }
     };
@@ -79,14 +84,13 @@ public class GermanDateExtractorConfiguration extends BaseOptionsConfiguration i
             add(SingleWeekDayRegex);
             add(WeekDayOfMonthRegex);
             add(SpecialDate);
-            add(SpecialDayWithNumRegex);
-            add(RelativeWeekDayRegex);
         }
     };
 
     public static final Pattern OfMonth = RegExpUtility.getSafeRegExp(GermanDateTime.OfMonth);
     public static final Pattern MonthEnd = RegExpUtility.getSafeRegExp(GermanDateTime.MonthEnd);
     public static final Pattern WeekDayEnd = RegExpUtility.getSafeRegExp(GermanDateTime.WeekDayEnd);
+    public static final Pattern WeekDayStart = RegExpUtility.getSafeRegExp(GermanDateTime.WeekDayStart);
     public static final Pattern YearSuffix = RegExpUtility.getSafeRegExp(GermanDateTime.YearSuffix);
     public static final Pattern LessThanRegex = RegExpUtility.getSafeRegExp(GermanDateTime.LessThanRegex);
     public static final Pattern MoreThanRegex = RegExpUtility.getSafeRegExp(GermanDateTime.MoreThanRegex);
@@ -94,25 +98,23 @@ public class GermanDateExtractorConfiguration extends BaseOptionsConfiguration i
     public static final ImmutableMap<String, Integer> DayOfWeek = GermanDateTime.DayOfWeek;
     public static final ImmutableMap<String, Integer> MonthOfYear = GermanDateTime.MonthOfYear;
 
+    public static final Pattern BeforeAfterRegex = RegExpUtility.getSafeRegExp(GermanDateTime.BeforeAfterRegex);
+
     private final IExtractor integerExtractor;
     private final IExtractor ordinalExtractor;
     private final IParser numberParser;
     private final IDateTimeExtractor durationExtractor;
     private final IDateTimeUtilityConfiguration utilityConfiguration;
-    private final List<Pattern> implicitDateList;
+    private final BaseHolidayExtractor holidayExtractor;
 
     public GermanDateExtractorConfiguration(IOptionsConfiguration config) {
         super(config.getOptions());
-        integerExtractor = IntegerExtractor.getInstance();
-        ordinalExtractor = OrdinalExtractor.getInstance();
-        numberParser = new BaseNumberParser(new GermanNumberParserConfiguration());
-        durationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration());
+        integerExtractor = new IntegerExtractor();
+        ordinalExtractor = new OrdinalExtractor();
+        numberParser = new BaseNumberParser(new GermanNumberParserConfiguration(NumberOptions.None));
+        durationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration(config.getOptions()));
+        holidayExtractor = new BaseHolidayExtractor(new GermanHolidayExtractorConfiguration());
         utilityConfiguration = new GermanDatetimeUtilityConfiguration();
-
-        implicitDateList = new ArrayList<>(ImplicitDateList);
-        if (this.getOptions().match(DateTimeOptions.CalendarMode)) {
-            implicitDateList.add(DayRegex);
-        }
     }
 
     @Override
@@ -122,7 +124,7 @@ public class GermanDateExtractorConfiguration extends BaseOptionsConfiguration i
 
     @Override
     public Iterable<Pattern> getImplicitDateList() {
-        return implicitDateList;
+        return ImplicitDateList;
     }
 
     @Override
