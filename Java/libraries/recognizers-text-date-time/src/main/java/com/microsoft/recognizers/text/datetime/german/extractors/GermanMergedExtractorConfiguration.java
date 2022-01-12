@@ -22,6 +22,7 @@ import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeListExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeZoneExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.config.IMergedExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.resources.BaseDateTime;
 import com.microsoft.recognizers.text.datetime.resources.GermanDateTime;
 import com.microsoft.recognizers.text.matcher.StringMatcher;
 import com.microsoft.recognizers.text.number.german.extractors.IntegerExtractor;
@@ -34,27 +35,25 @@ import java.util.stream.Collectors;
 
 public class GermanMergedExtractorConfiguration extends BaseOptionsConfiguration implements IMergedExtractorConfiguration {
 
+    public static final Pattern BeforeRegex = RegExpUtility.getSafeRegExp(GermanDateTime.BeforeRegex);
     public static final Pattern AfterRegex = RegExpUtility.getSafeRegExp(GermanDateTime.AfterRegex);
     public static final Pattern SinceRegex = RegExpUtility.getSafeRegExp(GermanDateTime.SinceRegex);
     public static final Pattern AroundRegex = RegExpUtility.getSafeRegExp(GermanDateTime.AroundRegex);
-    public static final Pattern BeforeRegex = RegExpUtility.getSafeRegExp(GermanDateTime.BeforeRegex);
+    public static final Pattern EqualRegex = RegExpUtility.getSafeRegExp(BaseDateTime.EqualRegex);
     public static final Pattern FromToRegex = RegExpUtility.getSafeRegExp(GermanDateTime.FromToRegex);
-    public static final Pattern SuffixAfterRegex = RegExpUtility.getSafeRegExp(GermanDateTime.SuffixAfterRegex);
-    public static final Pattern NumberEndingPattern = RegExpUtility.getSafeRegExp(GermanDateTime.NumberEndingPattern);
+    public static final Pattern SingleAmbiguousMonthRegex = RegExpUtility.getSafeRegExp(GermanDateTime.SingleAmbiguousMonthRegex);
     public static final Pattern PrepositionSuffixRegex = RegExpUtility.getSafeRegExp(GermanDateTime.PrepositionSuffixRegex);
     public static final Pattern AmbiguousRangeModifierPrefix = RegExpUtility.getSafeRegExp(GermanDateTime.AmbiguousRangeModifierPrefix);
-    public static final Pattern SingleAmbiguousMonthRegex = RegExpUtility.getSafeRegExp(GermanDateTime.SingleAmbiguousMonthRegex);
+    public static final Pattern NumberEndingPattern = RegExpUtility.getSafeRegExp(GermanDateTime.NumberEndingPattern);
+    public static final Pattern SuffixAfterRegex = RegExpUtility.getSafeRegExp(GermanDateTime.SuffixAfterRegex);
     public static final Pattern UnspecificDatePeriodRegex = RegExpUtility.getSafeRegExp(GermanDateTime.UnspecificDatePeriodRegex);
+    public static final StringMatcher SuperfluousWordMatcher = new StringMatcher();
     private final Iterable<Pair<Pattern, Pattern>> ambiguityFiltersDict;
 
-    public static final StringMatcher SuperfluousWordMatcher = new StringMatcher();
     private static final Iterable<Pattern> filterWordRegexList = new ArrayList<Pattern>() {
         {
             // one on one
             add(RegExpUtility.getSafeRegExp(GermanDateTime.OneOnOneRegex));
-
-            // (the)? (day|week|month|year)
-            add(RegExpUtility.getSafeRegExp(GermanDateTime.SingleAmbiguousTermsRegex));
         }
     };
 
@@ -141,28 +140,24 @@ public class GermanMergedExtractorConfiguration extends BaseOptionsConfiguration
     public GermanMergedExtractorConfiguration(DateTimeOptions options) {
         super(options);
 
-        setExtractor = new BaseSetExtractor(new GermanSetExtractorConfiguration(options));
         dateExtractor = new BaseDateExtractor(new GermanDateExtractorConfiguration(this));
         timeExtractor = new BaseTimeExtractor(new GermanTimeExtractorConfiguration(options));
-        holidayExtractor = new BaseHolidayExtractor(new GermanHolidayExtractorConfiguration());
-        datePeriodExtractor = new BaseDatePeriodExtractor(new GermanDatePeriodExtractorConfiguration(this));
         dateTimeExtractor = new BaseDateTimeExtractor(new GermanDateTimeExtractorConfiguration(options));
-        durationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration(options));
-        timeZoneExtractor = new BaseTimeZoneExtractor(new GermanTimeZoneExtractorConfiguration(options));
-        dateTimeAltExtractor = new BaseDateTimeAltExtractor(new GermanDateTimeAltExtractorConfiguration(this));
+        datePeriodExtractor = new BaseDatePeriodExtractor(new GermanDatePeriodExtractorConfiguration(this));
         timePeriodExtractor = new BaseTimePeriodExtractor(new GermanTimePeriodExtractorConfiguration(options));
         dateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new GermanDateTimePeriodExtractorConfiguration(options));
+        durationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration(options));
+        setExtractor = new BaseSetExtractor(new GermanSetExtractorConfiguration(options));
+        holidayExtractor = new BaseHolidayExtractor(new GermanHolidayExtractorConfiguration());
+        timeZoneExtractor = new BaseTimeZoneExtractor(new GermanTimeZoneExtractorConfiguration(options));
+        dateTimeAltExtractor = new BaseDateTimeAltExtractor(new GermanDateTimeAltExtractorConfiguration(this));
         integerExtractor = new IntegerExtractor();
 
         ambiguityFiltersDict = GermanDateTime.AmbiguityFiltersDict.entrySet().stream().map(pair -> {
             Pattern key = RegExpUtility.getSafeRegExp(pair.getKey());
             Pattern val = RegExpUtility.getSafeRegExp(pair.getValue());
-            return new Pair<Pattern, Pattern>(key, val);
+            return new Pair<>(key, val);
         }).collect(Collectors.toList());
-
-        if (!this.getOptions().match(DateTimeOptions.EnablePreview)) {
-            getSuperfluousWordMatcher().init(GermanDateTime.SuperfluousWordList);
-        }
     }
 
     public final Pattern getAfterRegex() {
