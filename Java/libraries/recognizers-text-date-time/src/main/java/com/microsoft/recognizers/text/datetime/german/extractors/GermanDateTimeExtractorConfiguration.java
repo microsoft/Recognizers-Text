@@ -38,6 +38,8 @@ public class GermanDateTimeExtractorConfiguration extends BaseOptionsConfigurati
     public static final Pattern ConnectorRegex = RegExpUtility.getSafeRegExp(GermanDateTime.ConnectorRegex);
     public static final Pattern NumberAsTimeRegex = RegExpUtility.getSafeRegExp(GermanDateTime.NumberAsTimeRegex);
     public static final Pattern DateNumberConnectorRegex = RegExpUtility.getSafeRegExp(GermanDateTime.DateNumberConnectorRegex);
+    public static final Pattern YearSuffix = RegExpUtility.getSafeRegExp(GermanDateTime.YearSuffix);
+    public static final Pattern YearRegex = RegExpUtility.getSafeRegExp(GermanDateTime.YearRegex);
     public static final Pattern SuffixAfterRegex = RegExpUtility.getSafeRegExp(GermanDateTime.SuffixAfterRegex);
 
     public IExtractor integerExtractor;
@@ -120,6 +122,14 @@ public class GermanDateTimeExtractorConfiguration extends BaseOptionsConfigurati
     @Override
     public Pattern getDateNumberConnectorRegex() {
         return DateNumberConnectorRegex;
+    }
+
+    public Pattern getYearSuffix() {
+        return YearSuffix;
+    }
+
+    public Pattern getYearRegex() {
+        return YearRegex;
     }
 
     @Override
