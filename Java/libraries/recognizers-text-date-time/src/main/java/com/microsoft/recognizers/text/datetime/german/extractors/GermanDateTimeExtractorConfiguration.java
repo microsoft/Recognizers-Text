@@ -124,6 +124,14 @@ public class GermanDateTimeExtractorConfiguration extends BaseOptionsConfigurati
         return DateNumberConnectorRegex;
     }
 
+    public Pattern getYearSuffix() {
+        return YearSuffix;
+    }
+
+    public Pattern getYearRegex() {
+        return YearRegex;
+    }
+
     @Override
     public Pattern getSuffixAfterRegex() {
         return SuffixAfterRegex;
