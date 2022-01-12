@@ -1445,5 +1445,15 @@
         }
       }
     ]
+  },
+  {
+    "Input": "the temperature is 24 degrees",
+    "NotSupported": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "Water boils at 100° Celsius",
+    "NotSupported": "java, javascript, python",
+    "Results": []
   }
 ]
