@@ -13,7 +13,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
     {
         public static readonly ImmutableDictionary<string, string> AreaSuffixList = NumbersWithUnitDefinitions.AreaSuffixList.ToImmutableDictionary();
 
-        private static readonly ImmutableList<string> AmbiguousValues = new List<string> { }.ToImmutableList();
+        public static readonly ImmutableList<string> AmbiguousValues = new List<string> { }.ToImmutableList();
 
         public AreaExtractorConfiguration()
                : this(new CultureInfo(Culture.Portuguese))

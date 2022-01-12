@@ -718,5 +718,15 @@
         "End": 36
       }
     ]
+  },
+  {
+    "Input": "tourner à un angle de 45 degrés",
+    "NotSupported": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "Rotation 90°",
+    "NotSupported": "java, javascript, python",
+    "Results": []
   }
 ]

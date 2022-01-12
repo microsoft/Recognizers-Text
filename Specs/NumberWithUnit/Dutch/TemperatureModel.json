@@ -620,5 +620,15 @@
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "draai een hoek van 45 graden",
+    "NotSupported": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "Draai 90°",
+    "NotSupported": "java, javascript, python",
+    "Results": []
   }
 ]

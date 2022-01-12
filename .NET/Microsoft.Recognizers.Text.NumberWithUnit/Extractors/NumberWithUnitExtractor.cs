@@ -219,7 +219,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                                 if (maxlen < endpos)
                                 {
                                     var midStr = source.Substring(firstIndex, m.Start - firstIndex);
-                                    if (string.IsNullOrWhiteSpace(midStr) || midStr.Trim().Equals(this.config.ConnectorToken, StringComparison.Ordinal))
+                                    if (string.IsNullOrWhiteSpace(midStr) || midStr.Trim().Equals(this.config.ConnectorToken.Trim(), StringComparison.Ordinal))
                                     {
                                         maxlen = endpos;
                                     }

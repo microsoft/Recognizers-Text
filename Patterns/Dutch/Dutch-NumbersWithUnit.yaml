@@ -882,8 +882,30 @@ AmbiguousCurrencyUnitList: !list
     - try
     - yer
     - yen
+#AngleExtractorConfiguration
+AngleSuffixList: !dictionary
+  types: [ string, string ]
+  entries:
+    Degree: graad|graden|°
+    Radian: radiaal|radialen|rad
+    Turn: draai|draaien|slag|slagen
+AmbiguousAngleUnitList: !list
+  types: [ string ]
+  entries:
+    - draai
+    - draaien
+    - slag
+    - slagen
 AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:
     'null': 'null'
+TemperatureAmbiguityFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    \b(gra(ad|den)|°)$: \b((gra(ad|den)|°)\s*(draai(en|t)?|geroteerd|roterend|rotatie|hoek)|(draai(en|t)?|geroteerd|roterend|rotatie|hoek)(\s+(\p{L}+|\d+)){0,4}\s*(gra(ad|den)\b|°))
+DimensionAmbiguityFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    \b(gra(ad|den)|°)$: \b((gra(ad|den)|°)\s*(c(elsius)?|f(ah?renheit)?)|(temperatuur)(\s+(\p{L}+|\d+)){0,4}\s*(gra(ad|den)\b|°))
 ...

@@ -723,7 +723,7 @@ BuildPrefix: !simpleRegex
   def: (?<=(\s|^|\P{L}))
 BuildSuffix: !simpleRegex
   def: (?=(\s|\P{L}|$))
-ConnectorToken: de
+ConnectorToken: 'de '
 #LengthExtractorConfiguration
 LengthSuffixList: !dictionary
   types: [ string, string ]
@@ -813,9 +813,29 @@ AmbiguousWeightUnitList: !list
   entries:
     - g
     - oz
+#AngleExtractorConfiguration
+AngleSuffixList: !dictionary
+  types: [ string, string ]
+  entries:
+    Degree: degré|degrés|degre|degres|deg|°
+    Radian: radian|radians|rad
+    Turn: tour|tours
+AmbiguousAngleUnitList: !list
+  types: [ string ]
+  entries:
+    - tour
+    - tours
 #Additional config
 AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:
     '\bcent\b': '\bpour\s+cent\b'
+TemperatureAmbiguityFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    \b(deg(r[eé]s?)?|°)$: \b((deg(r[eé]s?)?|°)\s*(angle|rotation)|(tourn([eé]|er|ant)|rotation|angle)(\s+(\p{L}+|\d+)){0,4}\s*(deg(r[eé]s?)?\b|°))
+DimensionAmbiguityFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    \b(deg(r[eé]s?)?|°)$: \b((deg(r[eé]s?)?|°)\s*(c(elsius|entigrade)?|f(ah?renheit)?)|(temp[eé]rature)(\s+(\p{L}+|\d+)){0,4}\s*(deg(r[eé]s?)?\b|°))
 ...
