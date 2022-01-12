@@ -62,6 +62,12 @@ public class GermanDateTime {
     public static final String AmPmDescRegex = "({BaseDateTime.BaseAmPmDescRegex})"
             .replace("{BaseDateTime.BaseAmPmDescRegex}", BaseDateTime.BaseAmPmDescRegex);
 
+    public static final String OclockRegex = "(?<oclock>uhr)";
+
+    public static final String CenturyRegex = "\\b(?<century>((ein|zwei)?tausend(und)?)?((ein|zwei|drei|vier|fünf|sechs|sieben|acht|neun|zehn|elf|zwölf|dreizehn|vierzehn|fünfzehn|sechzehn|siebzehn|achtzehn|neunzehn)hundert))\\b";
+
+    public static final String WrittenNumRegex = "(zw(ö|oe)lf|dreizehn|vierzehn|fünfzehn|sechzehn|siebzehn|achtzehn|neunzehn|zwanzig|dreißig|vierzig|fünfzig|sechzig|siebzig|achtzig|neunzig|eins?|zw(een|ei|o)|drei|vier|fünf|fuenf|sechs|sieben|acht|neun|zehn|elf)";
+
     public static final String DescRegex = "({OclockRegex})"
             .replace("{OclockRegex}", OclockRegex);
 
@@ -132,7 +138,7 @@ public class GermanDateTime {
 
     public static final String OneWordPeriodRegex = "\\b((((im\\s+)?monat\\s+)?({RelativeRegex}\\s*(jahr\\s*(im\\s*)?)?)?(?<month>apr(il|\\.)|aug(ust|\\.)|dez(ember|\\.)|feb(ruar|ber|\\.)|j[äa]n(uar|ner|\\.)|jul(e?i|l\\.)|jun([io]|\\.)|märz|mai|nov(ember|\\.)|okt(ober|\\.)|sept?(ember|\\.)))|(?<business>unter\\s+der\\s+woche)|({RelativeRegex}\\s+)?((?<business>werktags|arbeitswoche)|woche(nende)?|monat(s)?|jahr|jahres)(?!(\\s+\\d+(?!({BaseDateTime.BaseAmDescRegex}|{BaseDateTime.BasePmDescRegex}))|\\s+bis\\s+heute)))\\b"
             .replace("{RelativeRegex}", RelativeRegex)
-            .replace("{AfterNextSuffixRegex}", AfterNextSuffixRegex);
+            .replace("{AfterNextSuffixRegex}", AfterNextPrefixRegex);
 
     public static final String MonthNumWithYear = "({YearRegex}(\\s*)[/\\-\\.](\\s*){MonthNumRegex})|({MonthNumRegex}(\\s*)[/\\-\\.](\\s*){YearRegex})"
             .replace("{YearRegex}", YearRegex)
@@ -226,8 +232,6 @@ public class GermanDateTime {
             .replace("{WrittenNumRegex}", WrittenNumRegex)
             .replace("{WeekDayRegex}", WeekDayRegex);
 
-    public static final String WrittenNumRegex = "(zw(ö|oe)lf|dreizehn|vierzehn|fünfzehn|sechzehn|siebzehn|achtzehn|neunzehn|zwanzig|dreißig|vierzig|fünfzig|sechzig|siebzig|achtzig|neunzig|eins?|zw(een|ei|o)|drei|vier|fünf|fuenf|sechs|sieben|acht|neun|zehn|elf)";
-
     public static final String SpecialDate = "(?=\\b(an( dem)?|am)\\s+){DayRegex}\\b"
             .replace("{DayRegex}", DayRegex);
 
@@ -306,8 +310,6 @@ public class GermanDateTime {
             .replace("{WeekDayRegex}", WeekDayRegex);
 
     public static final String RangeUnitRegex = "(?<unit>jahren?|jahr|monaten?|monat|wochen?|tagen?|tag)";
-
-    public static final String OclockRegex = "(?<oclock>uhr)";
 
     public static final String HourNumRegex = "\\b(?<hournum>einundzwanzig|zweiundzwanzig|dreiundzwanzig|vierundzwanzig|zw(ö|oe)lf|dreizehn|vierzehn|fünfzehn|sechzehn|siebzehn|achtzehn|neunzehn|zwanzig|'null'|eins?|zw(een|ei|o)|drei|vier|fünf|fuenf|sechs|sieben|acht|neun|zehn|elf)\\b";
 
@@ -743,8 +745,6 @@ public class GermanDateTime {
             .replace("{MidTimeRegex}", MidTimeRegex);
 
     public static final String DateNumberConnectorRegex = "\\s*(?<connector>am)\\s*";
-
-    public static final String CenturyRegex = "\\b(?<century>((ein|zwei)?tausend(und)?)?((ein|zwei|drei|vier|fünf|sechs|sieben|acht|neun|zehn|elf|zwölf|dreizehn|vierzehn|fünfzehn|sechzehn|siebzehn|achtzehn|neunzehn)hundert))\\b";
 
     public static final String DecadeRegex = "(?<decade>zwanziger|dreißiger|vierziger|fünfziger|sechziger|siebziger|achtziger|neunziger|zweitausender)(n)?";
 
