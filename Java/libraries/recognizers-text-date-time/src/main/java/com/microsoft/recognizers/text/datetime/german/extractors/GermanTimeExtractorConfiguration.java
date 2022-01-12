@@ -91,10 +91,6 @@ public class GermanTimeExtractorConfiguration extends BaseOptionsConfiguration i
             // (three min past)? 3h00 (pm)?
             add(RegExpUtility.getSafeRegExp(GermanDateTime.TimeRegex10));
 
-            // at 2.30, "at" prefix is required here
-            // 3.30pm, "am/pm" suffix is required here
-            add(RegExpUtility.getSafeRegExp(GermanDateTime.TimeRegex11));
-
             // 340pm
             add(ConnectNumRegex);
         }
