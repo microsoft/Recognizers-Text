@@ -1,0 +1,358 @@
+[
+  {
+    "Input": "Boka ett rum åt mig Afghansk tid",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "Afghansk tid",
+        "Type": "timezone",
+        "Start": 20,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Jag befinner mig i Amerikansk-Stillahavs normaltid",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "Amerikansk-Stillahavs normaltid",
+        "Type": "timezone",
+        "Start": 19,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "Jag befinner mig i Aqtöbe/Aktiubinsk tid",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "aqtöbe/aktiubinsk tid",
+        "Type": "timezone",
+        "Start": 19,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Klockan är 13:00 Östamerikansk sommartid",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "östamerikansk sommartid",
+        "Type": "timezone",
+        "Start": 17,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Book me a room at beijing time",
+    "Comment": "Test to ensure default (English) implementation works",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "beijing time",
+        "Type": "timezone",
+        "Start": 18,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Book me a room at utc4:30",
+    "Comment": "Test to ensure default (English) implementation works",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "utc4:30",
+        "Type": "timezone",
+        "Start": 18,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Book me a room at gmt-3",
+    "Comment": "Test to ensure default (English) implementation works",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "gmt-3",
+        "Type": "timezone",
+        "Start": 18,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Book me a room at afghanistan standard time",
+    "Comment": "Test to ensure default (English) implementation works",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "afghanistan standard time",
+        "Type": "timezone",
+        "Start": 18,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Book me a room at aft",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Comment": "Test to ensure default (English) implementation works",
+    "Results": [
+      {
+        "Text": "aft",
+        "Type": "timezone",
+        "Start": 18,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "Book me a room at beijing-time",
+    "Comment": "Test to ensure default (English) implementation works",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "beijing-time",
+        "Type": "timezone",
+        "Start": 18,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Book me a room at St. Louis-time",
+    "Comment": "Test to ensure default (English) implementation works",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "St. Louis-time",
+        "Type": "timezone",
+        "Start": 18,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Book me a room at San José Time",
+    "Comment": "Test to ensure default (English) implementation works",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "San José Time",
+        "Type": "timezone",
+        "Start": 18,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "For me, Christchurch Time, Colchester-time or Edinburgh time is OK.",
+    "Comment": "Test to ensure default (English) implementation works",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "Christchurch Time",
+        "Type": "timezone",
+        "Start": 8,
+        "Length": 17
+      },
+      {
+        "Text": "Colchester-time",
+        "Type": "timezone",
+        "Start": 27,
+        "Length": 15
+      },
+      {
+        "Text": "Edinburgh time",
+        "Type": "timezone",
+        "Start": 46,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Cortana will email you to find a time which works in the Sydney timezone.",
+    "Comment": "Test to ensure default (English) implementation works",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "Sydney timezone",
+        "Type": "timezone",
+        "Start": 57,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Cortana will email you to find a time which works in the Montréal time.",
+    "Comment": "Test to ensure default (English) implementation works",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "Montréal time",
+        "Type": "timezone",
+        "Start": 57,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Cortana will email you to find a time which works in the Montreal time.",
+    "Comment": "Test to ensure default (English) implementation works",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "Montreal time",
+        "Type": "timezone",
+        "Start": 57,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Book me a room at pt",
+    "Comment": "Test to ensure default (English) implementation works",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "pt",
+        "Type": "timezone",
+        "Start": 18,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "Book me a room at et",
+    "Comment": "Test to ensure default (English) implementation works",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "et",
+        "Type": "timezone",
+        "Start": 18,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "let's meet Saint Barthélemy time",
+    "Comment": "Test to ensure default (English) implementation works",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "Saint Barthélemy time",
+        "Type": "timezone",
+        "Start": 11,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "let's meet saint barthelemy timezone",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "saint barthelemy timezone",
+        "Type": "timezone",
+        "Start": 11,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "It is the outcome of the vote that counts.",
+    "Comment": "This case is to verify that the utc substring won't be extracted from the word outcome.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Show me times at Lincoln Square",
+    "Comment": "This case is to verify that the 'me time' substring won't be extracted from the 'me times'.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "I said New York time, not York time",
+    "Comment": "Extract longest item when there are some overlap items",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "New York time",
+        "Type": "timezone",
+        "Start": 7,
+        "Length": 13
+      },
+      {
+        "Text": "York time",
+        "Type": "timezone",
+        "Start": 26,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "I'm in the pacific timezone",
+    "Comment": "Test to ensure default (English) implementation works",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "pacific timezone",
+        "Type": "timezone",
+        "Start": 11,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Let's meet at 1pm mountain timezone",
+    "Comment": "Test to ensure default (English) implementation works",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "mountain timezone",
+        "Type": "timezone",
+        "Start": 18,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "It's 1pm Eastern Daylight Time",
+    "Comment": "Test to ensure default (English) implementation works",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "eastern daylight time",
+        "Type": "timezone",
+        "Start": 9,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "It's about 1pm ACDT",
+    "Comment": "Test to ensure default (English) implementation works",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "acdt",
+        "Type": "timezone",
+        "Start": 15,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Once upon a time...",
+    "Comment": "Test to ensure default (English) implementation works",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": []
+  }
+]
