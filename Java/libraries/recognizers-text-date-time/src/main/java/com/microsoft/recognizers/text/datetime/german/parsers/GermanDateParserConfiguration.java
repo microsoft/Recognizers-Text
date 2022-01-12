@@ -10,6 +10,7 @@ import com.microsoft.recognizers.text.datetime.config.BaseOptionsConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.IDateExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.german.extractors.GermanDateExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.parsers.BaseHolidayParser;
 import com.microsoft.recognizers.text.datetime.parsers.IDateTimeParser;
 import com.microsoft.recognizers.text.datetime.parsers.config.ICommonDateTimeParserConfiguration;
 import com.microsoft.recognizers.text.datetime.parsers.config.IDateParserConfiguration;
@@ -26,57 +27,11 @@ import java.util.regex.Pattern;
 
 public class GermanDateParserConfiguration extends BaseOptionsConfiguration implements IDateParserConfiguration {
 
-    public GermanDateParserConfiguration(ICommonDateTimeParserConfiguration config) {
-
-        super(config.getOptions());
-
-        dateTokenPrefix = GermanDateTime.DateTokenPrefix;
-
-        integerExtractor = config.getIntegerExtractor();
-        ordinalExtractor = config.getOrdinalExtractor();
-        cardinalExtractor = config.getCardinalExtractor();
-        numberParser = config.getNumberParser();
-
-        durationExtractor = config.getDurationExtractor();
-        dateExtractor = config.getDateExtractor();
-        durationParser = config.getDurationParser();
-
-        dateRegexes = Collections.unmodifiableList(GermanDateExtractorConfiguration.DateRegexList);
-        onRegex = GermanDateExtractorConfiguration.OnRegex;
-        specialDayRegex = GermanDateExtractorConfiguration.SpecialDayRegex;
-        specialDayWithNumRegex = GermanDateExtractorConfiguration.SpecialDayWithNumRegex;
-        nextRegex = GermanDateExtractorConfiguration.NextDateRegex;
-        thisRegex = GermanDateExtractorConfiguration.ThisRegex;
-        lastRegex = GermanDateExtractorConfiguration.LastDateRegex;
-        unitRegex = GermanDateExtractorConfiguration.DateUnitRegex;
-        weekDayRegex = GermanDateExtractorConfiguration.WeekDayRegex;
-        monthRegex = GermanDateExtractorConfiguration.MonthRegex;
-        weekDayOfMonthRegex = GermanDateExtractorConfiguration.WeekDayOfMonthRegex;
-        forTheRegex = GermanDateExtractorConfiguration.ForTheRegex;
-        weekDayAndDayOfMonthRegex = GermanDateExtractorConfiguration.WeekDayAndDayOfMonthRegex;
-        relativeMonthRegex = GermanDateExtractorConfiguration.RelativeMonthRegex;
-        strictRelativeRegex = GermanDateExtractorConfiguration.StrictRelativeRegex;
-        relativeWeekDayRegex = GermanDateExtractorConfiguration.RelativeWeekDayRegex;
-
-        yearSuffix = GermanDateExtractorConfiguration.YearSuffix;
-        unitMap = config.getUnitMap();
-        dayOfMonth = config.getDayOfMonth();
-        dayOfWeek = config.getDayOfWeek();
-        monthOfYear = config.getMonthOfYear();
-        cardinalMap = config.getCardinalMap();
-        utilityConfiguration = config.getUtilityConfiguration();
-
-        relativeDayRegex = RegExpUtility.getSafeRegExp(GermanDateTime.RelativeDayRegex);
-        nextPrefixRegex = RegExpUtility.getSafeRegExp(GermanDateTime.NextPrefixRegex);
-        previousPrefixRegex = RegExpUtility.getSafeRegExp(GermanDateTime.PreviousPrefixRegex);
-        sameDayTerms = Collections.unmodifiableList(GermanDateTime.SameDayTerms);
-        plusOneDayTerms = Collections.unmodifiableList(GermanDateTime.PlusOneDayTerms);
-        plusTwoDayTerms = Collections.unmodifiableList(GermanDateTime.PlusTwoDayTerms);
-        minusOneDayTerms = Collections.unmodifiableList(GermanDateTime.MinusOneDayTerms);
-        minusTwoDayTerms = Collections.unmodifiableList(GermanDateTime.MinusTwoDayTerms);
-
-    }
-
+    private final BaseHolidayParser holidayParser;
+    private final Pattern beforeAfterRegex;
+    private final Pattern afterNextPrefixRegex;
+    private final Pattern upcomingPrefixRegex;
+    private final Pattern pastPrefixRegex;
     private final String dateTokenPrefix;
     private final IExtractor integerExtractor;
     private final IExtractor ordinalExtractor;
@@ -86,7 +41,6 @@ public class GermanDateParserConfiguration extends BaseOptionsConfiguration impl
     private final IDateExtractor dateExtractor;
     private final IDateTimeParser durationParser;
     private final Iterable<Pattern> dateRegexes;
-
     private final Pattern onRegex;
     private final Pattern specialDayRegex;
     private final Pattern specialDayWithNumRegex;
@@ -103,26 +57,79 @@ public class GermanDateParserConfiguration extends BaseOptionsConfiguration impl
     private final Pattern strictRelativeRegex;
     private final Pattern yearSuffix;
     private final Pattern relativeWeekDayRegex;
-
     private final ImmutableMap<String, String> unitMap;
     private final ImmutableMap<String, Integer> dayOfMonth;
     private final ImmutableMap<String, Integer> dayOfWeek;
     private final ImmutableMap<String, Integer> monthOfYear;
     private final ImmutableMap<String, Integer> cardinalMap;
     private final IDateTimeUtilityConfiguration utilityConfiguration;
-
     private final List<String> sameDayTerms;
     private final List<String> plusOneDayTerms;
     private final List<String> plusTwoDayTerms;
     private final List<String> minusOneDayTerms;
     private final List<String> minusTwoDayTerms;
-
     // The following three regexes only used in this configuration
     // They are not used in the base parser, therefore they are not extracted
     // If the spanish date parser need the same regexes, they should be extracted
     private final Pattern relativeDayRegex;
     private final Pattern nextPrefixRegex;
     private final Pattern previousPrefixRegex;
+    public GermanDateParserConfiguration(ICommonDateTimeParserConfiguration config) {
+
+        super(config.getOptions());
+
+        dateTokenPrefix = GermanDateTime.DateTokenPrefix;
+
+        integerExtractor = config.getIntegerExtractor();
+        ordinalExtractor = config.getOrdinalExtractor();
+        cardinalExtractor = config.getCardinalExtractor();
+        numberParser = config.getNumberParser();
+
+        durationExtractor = config.getDurationExtractor();
+        dateExtractor = config.getDateExtractor();
+        durationParser = config.getDurationParser();
+        holidayParser = new BaseHolidayParser(new GermanHolidayParserConfiguration());
+
+        dateRegexes = Collections.unmodifiableList(GermanDateExtractorConfiguration.DateRegexList);
+        onRegex = GermanDateExtractorConfiguration.OnRegex;
+        specialDayRegex = GermanDateExtractorConfiguration.SpecialDayRegex;
+        specialDayWithNumRegex = GermanDateExtractorConfiguration.SpecialDayWithNumRegex;
+        nextRegex = GermanDateExtractorConfiguration.NextDateRegex;
+        thisRegex = GermanDateExtractorConfiguration.ThisRegex;
+        lastRegex = GermanDateExtractorConfiguration.LastDateRegex;
+        unitRegex = GermanDateExtractorConfiguration.DateUnitRegex;
+        weekDayRegex = GermanDateExtractorConfiguration.WeekDayRegex;
+        monthRegex = GermanDateExtractorConfiguration.MonthRegex;
+        weekDayOfMonthRegex = GermanDateExtractorConfiguration.WeekDayOfMonthRegex;
+        forTheRegex = GermanDateExtractorConfiguration.ForTheRegex;
+        weekDayAndDayOfMonthRegex = GermanDateExtractorConfiguration.WeekDayAndDayOfMonthRegex;
+        relativeMonthRegex = GermanDateExtractorConfiguration.RelativeMonthRegex;
+        strictRelativeRegex = GermanDateExtractorConfiguration.StrictRelativeRegex;
+        yearSuffix = GermanDateExtractorConfiguration.YearSuffix;
+        beforeAfterRegex = GermanDateExtractorConfiguration.BeforeAfterRegex;
+        relativeWeekDayRegex = GermanDateExtractorConfiguration.RelativeWeekDayRegex;
+        relativeDayRegex = RegExpUtility.getSafeRegExp(GermanDateTime.RelativeDayRegex);
+        nextPrefixRegex = RegExpUtility.getSafeRegExp(GermanDateTime.NextPrefixRegex);
+        afterNextPrefixRegex = RegExpUtility.getSafeRegExp(GermanDateTime.AfterNextPrefixRegex);
+        previousPrefixRegex = RegExpUtility.getSafeRegExp(GermanDateTime.PreviousPrefixRegex);
+        upcomingPrefixRegex = RegExpUtility.getSafeRegExp(GermanDateTime.UpcomingPrefixRegex);
+        pastPrefixRegex = RegExpUtility.getSafeRegExp(GermanDateTime.PastPrefixRegex);
+
+        dayOfMonth = config.getDayOfMonth();
+        dayOfWeek = config.getDayOfWeek();
+        monthOfYear = config.getMonthOfYear();
+        cardinalMap = config.getCardinalMap();
+        unitMap = config.getUnitMap();
+
+        utilityConfiguration = config.getUtilityConfiguration();
+
+        sameDayTerms = Collections.unmodifiableList(GermanDateTime.SameDayTerms);
+        plusOneDayTerms = Collections.unmodifiableList(GermanDateTime.PlusOneDayTerms);
+        plusTwoDayTerms = Collections.unmodifiableList(GermanDateTime.PlusTwoDayTerms);
+        minusOneDayTerms = Collections.unmodifiableList(GermanDateTime.MinusOneDayTerms);
+        minusTwoDayTerms = Collections.unmodifiableList(GermanDateTime.MinusTwoDayTerms);
+
+    }
 
     @Override
     public String getDateTokenPrefix() {
@@ -261,7 +268,7 @@ public class GermanDateParserConfiguration extends BaseOptionsConfiguration impl
 
     @Override
     public Pattern getPastPrefixRegex() {
-        return previousPrefixRegex;
+        return pastPrefixRegex;
     }
 
     @Override
@@ -329,10 +336,13 @@ public class GermanDateParserConfiguration extends BaseOptionsConfiguration impl
         String trimmedText = text.trim().toLowerCase();
         Integer swift = 0;
 
-        Optional<Match> matchNext = Arrays.stream(RegExpUtility.getMatches(nextPrefixRegex, trimmedText)).findFirst();
+        Optional<Match> afterNextMatch = Arrays.stream(RegExpUtility.getMatches(afterNextPrefixRegex, trimmedText)).findFirst();
+        Optional<Match> nextMatch = Arrays.stream(RegExpUtility.getMatches(nextPrefixRegex, trimmedText)).findFirst();
         Optional<Match> matchPast = Arrays.stream(RegExpUtility.getMatches(previousPrefixRegex, trimmedText)).findFirst();
 
-        if (matchNext.isPresent()) {
+        if (afterNextMatch.isPresent()) {
+            swift = 2;
+        } else if (nextMatch.isPresent()) {
             swift = 1;
         } else if (matchPast.isPresent()) {
             swift = -1;
@@ -344,7 +354,7 @@ public class GermanDateParserConfiguration extends BaseOptionsConfiguration impl
     @Override
     public Boolean isCardinalLast(String text) {
         String trimmedText = text.trim().toLowerCase();
-        return trimmedText.equals("last");
+        return trimmedText.equals("letzten");
     }
 
     @Override
