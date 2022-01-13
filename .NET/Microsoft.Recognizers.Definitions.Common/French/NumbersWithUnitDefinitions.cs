@@ -635,7 +635,6 @@ namespace Microsoft.Recognizers.Definitions.French
       public const string BuildPrefix = @"(?<=(\s|^|\P{L}))";
       public const string BuildSuffix = @"(?=(\s|\P{L}|$))";
       public const string ConnectorToken = @"de";
-      public const string ConnectorTokenWithSpace = @"de ";
       public static readonly Dictionary<string, string> LengthSuffixList = new Dictionary<string, string>
         {
             { @"Kilomètres", @"km|kilomètres|kilomètre|kilometres|kilometre|-km" },
