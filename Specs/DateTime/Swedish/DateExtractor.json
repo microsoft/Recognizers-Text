@@ -28,30 +28,22 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "12 januari, 2016",
+        "Text": "den 12 januari, 2016",
         "Type": "date",
-        "Start": 22,
-        "Length": 16
+        "Start": 18,
+        "Length": 20
       }
     ]
   },
   {
     "Input": "jag åker tillbaka måndag den 12 januari, 2016",
-    "Comment": "Currently resolves as 2 results. See below. The englis version resolves as one result.",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "måndag",
+        "Text": "måndag den 12 januari, 2016",
         "Type": "date",
         "Start": 18,
-        "Length": 6
-      },
-      {
-        "Text": "12 januari, 2016",
-        "Type": "date",
-        "Start": 29,
-        "Length": 16
+        "Length": 27
       }
     ]
   },
@@ -125,10 +117,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "22/04",
+        "Text": "den 22/04",
         "Type": "date",
-        "Start": 22,
-        "Length": 5
+        "Start": 18,
+        "Length": 9
       }
     ]
   },
@@ -605,10 +597,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "4 mars",
+        "Text": "den 4 mars",
         "Type": "date",
-        "Start": 22,
-        "Length": 6
+        "Start": 18,
+        "Length": 10
       }
     ]
   },
@@ -902,7 +894,9 @@
   },
   {
     "Input": "Vad har jag söndag den andre",
+    "Comment": "Currently resolves as 2 results; 'söndag' and 'den andre'",
     "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Context": {
       "ReferenceDateTime": "2017-09-01T00:00:00"
     },
@@ -916,89 +910,74 @@
     ]
   },
   {
-    "Input": "A meeting for wednesday the 27th with Joe Smith",
+    "Input": "Ett möte onsdagen den 27 med Joe",
     "NotSupportedByDesign": "javascript,python,java",
     "Context": {
       "ReferenceDateTime": "2017-09-01T00:00:00"
     },
     "Results": [
       {
-        "Text": "wednesday the 27th",
+        "Text": "onsdagen den 27",
         "Type": "date",
-        "Start": 14,
-        "Length": 18
-      }
-    ]
-  },
-  {
-    "Input": "jag åker tillbaka thursday the 21st",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Context": {
-      "ReferenceDateTime": "2017-09-01T00:00:00"
-    },
-    "Results": [
-      {
-        "Text": "thursday the 21st",
-        "Type": "date",
-        "Start": 13,
-        "Length": 17
-      }
-    ]
-  },
-  {
-    "Input": "jag åker tillbaka friday the 22nd",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Context": {
-      "ReferenceDateTime": "2017-09-01T00:00:00"
-    },
-    "Results": [
-      {
-        "Text": "friday the 22nd",
-        "Type": "date",
-        "Start": 13,
+        "Start": 9,
         "Length": 15
       }
     ]
   },
   {
-    "Input": "jag åker tillbaka saturday the 23rd",
+    "Input": "jag åker tillbaka på torsdag den 21",
     "NotSupportedByDesign": "javascript,python,java",
     "Context": {
       "ReferenceDateTime": "2017-09-01T00:00:00"
     },
     "Results": [
       {
-        "Text": "saturday the 23rd",
+        "Text": "torsdag den 21",
         "Type": "date",
-        "Start": 13,
-        "Length": 17
+        "Start": 21,
+        "Length": 14
       }
     ]
   },
   {
-    "Input": "jag åker tillbaka friday the 15th",
+    "Input": "jag åker tillbaka fredag den 22",
     "NotSupportedByDesign": "javascript,python,java",
     "Context": {
       "ReferenceDateTime": "2017-09-01T00:00:00"
     },
     "Results": [
       {
-        "Text": "friday the 15th",
+        "Text": "fredag den 22",
         "Type": "date",
-        "Start": 13,
-        "Length": 15
+        "Start": 18,
+        "Length": 13
       }
     ]
   },
   {
-    "Input": "jag åker tillbaka thursday the twenty first",
+    "Input": "jag åker tillbaka lördag den 23:e",
     "NotSupportedByDesign": "javascript,python,java",
     "Context": {
       "ReferenceDateTime": "2017-09-01T00:00:00"
     },
     "Results": [
       {
-        "Text": "thursday the twenty first",
+        "Text": "lördag den 23",
+        "Type": "date",
+        "Start": 18,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka på torsdagen den tjugoförste",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Context": {
+      "ReferenceDateTime": "2017-09-01T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "torsdagen den tjugoförste",
         "Type": "date",
         "Start": 13,
         "Length": 25

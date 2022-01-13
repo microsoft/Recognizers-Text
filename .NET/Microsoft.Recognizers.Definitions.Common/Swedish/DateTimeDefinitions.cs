@@ -39,7 +39,7 @@ namespace Microsoft.Recognizers.Definitions.Swedish
       public const string ReferencePrefixRegex = @"(?#ReferencePrefixRegex)(samma)\b";
       public const string FutureSuffixRegex = @"(?#FutureSuffixRegex)\b((i\s+)?framtiden)\b";
       public const string PastSuffixRegex = @"(?#PastSuffixRegex)\b((i\s+)dåtid(en)?)\b";
-      public const string DayRegex = @"(?#DayRegex)(?<!(\d+:?|\$)\s*)(?<day>(?:3[0-1]|[1-2]\d|0?[1-9])(?:e|a)?)(?=\b|t)";
+      public const string DayRegex = @"(?#DayRegex)(den\s*)?(?<!(\d+:?|\$)\s*)(?<day>(?:3[0-1]|[1-2]\d|0?[1-9])(?:(a|e))?)(?=\b|t)";
       public const string ImplicitDayRegex = @"(?#ImplicitDayRegex)(den\s*)?(?<day>(?:3[0-1]|[0-2]?\d)(?:(a|e)))\b";
       public const string MonthNumRegex = @"(?#MonthNumRegex)(?<month>1[0-2]|(0)?[1-9])\b";
       public const string WrittenOneToNineRegex = @"(?#WrittenOneToNineRegex)(?:e(n|tt)|två|tre|fyra|fem|sex|sju|åtta|nio)";
