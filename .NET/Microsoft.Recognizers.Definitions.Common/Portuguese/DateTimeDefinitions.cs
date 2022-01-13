@@ -124,7 +124,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public const string PmTimeRegex = @"(?<pm>(([dn]?es[st]a|\b[àa]\b|(pela|de|da|na))\s+(tarde|noite)))|((depois\s+do|ap[óo]s\s+o)\s+(almo[çc]o|meio dia|meio-dia))";
       public static readonly string LessThanOneHour = $@"(?<lth>((\s+e\s+)?(quinze|(um\s+|dois\s+|tr[êes]\s+)?quartos?)|quinze|(\s*)(um\s+|dois\s+|tr[êes]\s+)?quartos?|(\s+e\s+)(meia|trinta)|{BaseDateTime.DeltaMinuteRegex}(\s+(minuto|minutos|min|mins))|{DeltaMinuteNumRegex}(\s+(minuto|minutos|min|mins))))";
       public const string TensTimeRegex = @"(?<tens>dez|vinte|trinta|[qc]uarenta|cin[qc]uenta)";
-      public static readonly string WrittenTimeRegex = $@"(?<writtentime>({HourNumRegex}\s*((e|menos)\s+)?({MinuteNumRegex}|({TensTimeRegex}((\s*e\s+)?{MinuteNumRegex}))))|(({MinuteNumRegex}|({TensTimeRegex}((\s*e\s+)?{MinuteNumRegex})?))\s*((para as|pras|antes da|antes das)\s+)?({HourNumRegex}|{BaseDateTime.HourRegex})))";
+      public static readonly string WrittenTimeRegex = $@"(?<writtentime>({HourNumRegex}\s*((e|menos)\s+)?(({TensTimeRegex}((\s*e\s+)?{MinuteNumRegex}))|{MinuteNumRegex}))|(({MinuteNumRegex}|({TensTimeRegex}((\s*e\s+)?{MinuteNumRegex})?))\s*((para as|pras|antes da|antes das)\s+)?({HourNumRegex}|{BaseDateTime.HourRegex})))";
       public static readonly string TimePrefix = $@"(?<prefix>{LessThanOneHour}(\s+(passad[ao]s)\s+(as)?|\s+depois\s+(das?|do)|\s+pras?|\s+(para|antes)?\s+([àa]s?))?)";
       public static readonly string TimeSuffix = $@"(?<suffix>({LessThanOneHour}\s+)?({AmRegex}|{PmRegex}|{OclockRegex}))";
       public static readonly string BasicTime = $@"(?<basictime>{WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}:{BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?|{BaseDateTime.HourRegex})";
@@ -134,7 +134,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public const string MidafternoonRegex = @"(?<midafternoon>meio\s+da\s+tarde)";
       public const string MiddayRegex = @"(?<midday>meio\s*(-\s*)?dia)";
       public static readonly string MidTimeRegex = $@"(?<mid>({MidnightRegex}|{MidmorningRegex}|{MidEarlyMorning}|{MidafternoonRegex}|{MiddayRegex}))";
-      public static readonly string AtRegex = $@"\b(((?<=\b([aà]s?)\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\s+horas?|\s*h\b)?|(?<=\b(s(er)?[aã]o|v[aã]o\s+ser|^[eé]h?)\s+|^\s*)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\s+horas?|\s*h\b))(\s+{OclockRegex})?|{MidTimeRegex})\b";
+      public static readonly string AtRegex = $@"\b(((?<=\b([aà]s?)\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}(\s+e\s+{BaseDateTime.MinuteRegex})?)(\s+horas?|\s*h\b)?|(?<=\b(s(er)?[aã]o|v[aã]o\s+ser|^[eé]h?)\s+|^\s*)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\s+horas?|\s*h\b))(\s+{OclockRegex})?|{MidTimeRegex})\b";
       public static readonly string ConnectNumRegex = $@"({BaseDateTime.HourRegex}(?<min>[0-5][0-9])\s*{DescRegex})";
       public static readonly string TimeRegex1 = $@"(\b{TimePrefix}\s+)?({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\s*({DescRegex})";
       public static readonly string TimeRegex2 = $@"(\b{TimePrefix}\s+)?(t)?{BaseDateTime.HourRegex}(\s*)?:(\s*)?{BaseDateTime.MinuteRegex}((\s*)?:(\s*)?{BaseDateTime.SecondRegex})?((\s*{DescRegex})|\b)";
@@ -501,7 +501,9 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
             { @"vinte e oito", 28 },
             { @"vinte e nove", 29 },
             { @"trinta", 30 },
-            { @"trinta e um", 31 }
+            { @"trinta e um", 31 },
+            { @"quarenta", 40 },
+            { @"cinquenta", 50 }
         };
       public static readonly Dictionary<string, IEnumerable<string>> HolidayNames = new Dictionary<string, IEnumerable<string>>
         {
