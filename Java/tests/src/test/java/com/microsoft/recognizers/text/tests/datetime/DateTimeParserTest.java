@@ -37,6 +37,17 @@ import com.microsoft.recognizers.text.datetime.french.parsers.FrenchSetParserCon
 import com.microsoft.recognizers.text.datetime.french.parsers.FrenchTimeParser;
 import com.microsoft.recognizers.text.datetime.french.parsers.FrenchTimeParserConfiguration;
 import com.microsoft.recognizers.text.datetime.french.parsers.FrenchTimePeriodParserConfiguration;
+import com.microsoft.recognizers.text.datetime.german.parsers.GermanCommonDateTimeParserConfiguration;
+import com.microsoft.recognizers.text.datetime.german.parsers.GermanDateParserConfiguration;
+import com.microsoft.recognizers.text.datetime.german.parsers.GermanDatePeriodParserConfiguration;
+import com.microsoft.recognizers.text.datetime.german.parsers.GermanDateTimeParserConfiguration;
+import com.microsoft.recognizers.text.datetime.german.parsers.GermanDateTimePeriodParserConfiguration;
+import com.microsoft.recognizers.text.datetime.german.parsers.GermanDurationParserConfiguration;
+import com.microsoft.recognizers.text.datetime.german.parsers.GermanHolidayParserConfiguration;
+import com.microsoft.recognizers.text.datetime.german.parsers.GermanMergedParserConfiguration;
+import com.microsoft.recognizers.text.datetime.german.parsers.GermanSetParserConfiguration;
+import com.microsoft.recognizers.text.datetime.german.parsers.GermanTimeParserConfiguration;
+import com.microsoft.recognizers.text.datetime.german.parsers.GermanTimePeriodParserConfiguration;
 import com.microsoft.recognizers.text.datetime.parsers.BaseDateParser;
 import com.microsoft.recognizers.text.datetime.parsers.BaseDatePeriodParser;
 import com.microsoft.recognizers.text.datetime.parsers.BaseDateTimeAltParser;
@@ -266,6 +277,7 @@ public class DateTimeParserTest extends AbstractTest {
                 throw new NotSupportedException("Spanish parser Type/Name not supported for type: " + name);
         }
     }
+
     private static IDateTimeParser getFrenchParser(String name) throws NotSupportedException {
 
         switch (name) {
@@ -293,6 +305,36 @@ public class DateTimeParserTest extends AbstractTest {
                 return new BaseTimePeriodParser(new FrenchTimePeriodParserConfiguration(new FrenchCommonDateTimeParserConfiguration(DateTimeOptions.None)));
             default:
                 throw new NotSupportedException("French parser Type/Name not supported for type: " + name);
+        }
+    }
+
+    private static IDateTimeParser getGermanParser(String name) throws NotSupportedException {
+
+        switch (name) {
+        case "DateParser":
+            return new BaseDateParser(new GermanDateParserConfiguration(new GermanCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+        case "DatePeriodParser":
+            return new BaseDatePeriodParser(new GermanDatePeriodParserConfiguration(new GermanCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+        //case "DateTimeAltParser":
+        //    return new BaseDateTimeAltParser(new GermanDateTimeAltParserConfiguration(new EnglishCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+        case "DateTimeParser":
+            return new BaseDateTimeParser(new GermanDateTimeParserConfiguration(new GermanCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+        case "DateTimePeriodParser":
+            return new BaseDateTimePeriodParser(new GermanDateTimePeriodParserConfiguration(new GermanCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+        case "DurationParser":
+            return new BaseDurationParser(new GermanDurationParserConfiguration(new GermanCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+        case "HolidayParser":
+            return new BaseHolidayParser(new GermanHolidayParserConfiguration());
+        case "SetParser":
+            return new BaseSetParser(new GermanSetParserConfiguration(new GermanCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+        case "MergedParser":
+            return new BaseMergedDateTimeParser(new GermanMergedParserConfiguration(DateTimeOptions.None));
+        case "TimeParser":
+            return new com.microsoft.recognizers.text.datetime.german.parsers.TimeParser(new GermanTimeParserConfiguration(new GermanCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+        case "TimePeriodParser":
+            return new BaseTimePeriodParser(new GermanTimePeriodParserConfiguration(new GermanCommonDateTimeParserConfiguration(DateTimeOptions.None)));
+        default:
+            throw new NotSupportedException("German parser Type/Name not supported for type: " + name);
         }
     }
 
