@@ -39,8 +39,8 @@ namespace Microsoft.Recognizers.Definitions.Swedish
       public const string ReferencePrefixRegex = @"(?#ReferencePrefixRegex)(samma)\b";
       public const string FutureSuffixRegex = @"(?#FutureSuffixRegex)\b((i\s+)?framtiden)\b";
       public const string PastSuffixRegex = @"(?#PastSuffixRegex)\b((i\s+)dåtid(en)?)\b";
-      public const string DayRegex = @"(?#DayRegex)(den\s*)?(?<!(\d+:?|\$)\s*)(?<day>(?:3[0-1]|[1-2]\d|0?[1-9])(?:(a|e))?)(?=\b|t)";
-      public const string ImplicitDayRegex = @"(?#ImplicitDayRegex)(den\s*)?(?<day>(?:3[0-1]|[0-2]?\d)(?:(a|e)))\b";
+      public const string DayRegex = @"(?#DayRegex)(den\s*)?(?<!(\d+:?|\$)\s*)(?<day>(?:3[0-1]|[1-2]\d|0?[1-9])(?:\:(a|e))?)(?=\b|t)";
+      public const string ImplicitDayRegex = @"(?#ImplicitDayRegex)(den\s*)?(?<day>(?:3[0-1]|[0-2]?\d)(?:\:(a|e)))\b";
       public const string MonthNumRegex = @"(?#MonthNumRegex)(?<month>1[0-2]|(0)?[1-9])\b";
       public const string WrittenOneToNineRegex = @"(?#WrittenOneToNineRegex)(?:e(n|tt)|två|tre|fyra|fem|sex|sju|åtta|nio)";
       public const string WrittenElevenToNineteenRegex = @"(?#WrittenElevenToNineteenRegex)(?:elva|tolv|(?:tret|fjor|fem|sex|sjut|ar|nit)ton)";
@@ -51,7 +51,7 @@ namespace Microsoft.Recognizers.Definitions.Swedish
       public static readonly string CenturyRegex = $@"(?#CenturyRegex)\b(?<century>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}(\s+hundra)?)\b";
       public static readonly string LastTwoYearNumRegex = $@"(?#LastTwoYearNumRegex)(?:(noll\s+)?{WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|{WrittenTensRegex}(\s+{WrittenOneToNineRegex})?)";
       public static readonly string FullTextYearRegex = $@"(?#FullTextYearRegex)\b((?<firsttwoyearnum>{CenturyRegex})(\s+och)?\s+(?<lasttwoyearnum>{LastTwoYearNumRegex})\b|\b(?<firsttwoyearnum>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}\s+hundra))\b";
-      public const string OclockRegex = @"(?#OclockRegex)(?<oclock>o\s*((’|‘|')\s*)?clock|sharp)";
+      public const string OclockRegex = @"(?#OclockRegex)(?<oclock>o\s*((’|‘|')\s*)?clock|sharp|prick)";
       public const string SpecialDescRegex = @"(?#SpecialDescRegex)((?<ipm>)p\b)";
       public static readonly string AmDescRegex = $@"(?#AmDescRegex)(?:{BaseDateTime.BaseAmDescRegex})";
       public static readonly string PmDescRegex = $@"(?#PmDescRegex)(:?{BaseDateTime.BasePmDescRegex})";
@@ -275,7 +275,7 @@ namespace Microsoft.Recognizers.Definitions.Swedish
       public const string UnspecificDatePeriodRegex = @"^(vecka|fortnight|månad|år)$";
       public const string PrepositionSuffixRegex = @"\b(on|in|at|around|circa|from|to)$";
       public const string FlexibleDayRegex = @"(?<DayOfMonth>([A-Öa-ö]+\s)?[A-Öa-ö\d]+)";
-      public static readonly string ForTheRegex = $@"\b((((?<=till\s+)den\s+{FlexibleDayRegex})|((?<=till\s+)?(den\s+){FlexibleDayRegex}(?<=(e|a))))(?<end>\s*(,|\.(?!\d)|!|\?|$)))";
+      public static readonly string ForTheRegex = $@"(?#ForTheRegex)\b((((?<=till\s+)den\s+{FlexibleDayRegex})|((?<=till\s+)?(den\s+){FlexibleDayRegex}(?<=(e|a))))(?<end>\s*(,|\.(?!\d)|!|\?|$)))";
       public static readonly string WeekDayAndDayOfMonthRegex = $@"\b{WeekDayRegex}\s+(den\s+{FlexibleDayRegex})\b";
       public static readonly string WeekDayAndDayRegex = $@"\b{WeekDayRegex}\s+(?!(den)){DayRegex}(?!([-:]|(\s+({AmDescRegex}|{PmDescRegex}|{OclockRegex}))))\b";
       public const string RestOfDateRegex = @"\b(rest|remaining)\s+(of\s+)?((the|my|this|current)\s+)?(?<duration>vecka|fortnight|månad|år|decennium)\b";

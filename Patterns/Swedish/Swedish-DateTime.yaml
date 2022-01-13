@@ -46,9 +46,9 @@ FutureSuffixRegex: !simpleRegex
 PastSuffixRegex: !simpleRegex
   def: (?#PastSuffixRegex)\b((i\s+)dåtid(en)?)\b
 DayRegex: !simpleRegex
-  def: (?#DayRegex)(den\s*)?(?<!(\d+:?|\$)\s*)(?<day>(?:3[0-1]|[1-2]\d|0?[1-9])(?:(a|e))?)(?=\b|t)
+  def: (?#DayRegex)(den\s*)?(?<!(\d+:?|\$)\s*)(?<day>(?:3[0-1]|[1-2]\d|0?[1-9])(?:\:(a|e))?)(?=\b|t)
 ImplicitDayRegex: !simpleRegex
-  def: (?#ImplicitDayRegex)(den\s*)?(?<day>(?:3[0-1]|[0-2]?\d)(?:(a|e)))\b
+  def: (?#ImplicitDayRegex)(den\s*)?(?<day>(?:3[0-1]|[0-2]?\d)(?:\:(a|e)))\b
 MonthNumRegex: !simpleRegex
   def: (?#MonthNumRegex)(?<month>1[0-2]|(0)?[1-9])\b
 WrittenOneToNineRegex: !simpleRegex
@@ -75,7 +75,7 @@ FullTextYearRegex: !nestedRegex
   def: (?#FullTextYearRegex)\b((?<firsttwoyearnum>{CenturyRegex})(\s+och)?\s+(?<lasttwoyearnum>{LastTwoYearNumRegex})\b|\b(?<firsttwoyearnum>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}\s+hundra))\b
   references: [ CenturyRegex, WrittenCenturyFullYearRegex, WrittenCenturyOrdinalYearRegex, LastTwoYearNumRegex ]
 OclockRegex: !simpleRegex
-  def: (?#OclockRegex)(?<oclock>o\s*((’|‘|')\s*)?clock|sharp)
+  def: (?#OclockRegex)(?<oclock>o\s*((’|‘|')\s*)?clock|sharp|prick)
 SpecialDescRegex: !simpleRegex
   def: (?#SpecialDescRegex)((?<ipm>)p\b)
 AmDescRegex: !nestedRegex
@@ -660,7 +660,7 @@ PrepositionSuffixRegex: !simpleRegex
 FlexibleDayRegex: !simpleRegex
   def: (?<DayOfMonth>([A-Öa-ö]+\s)?[A-Öa-ö\d]+)
 ForTheRegex: !nestedRegex
-  def: \b((((?<=till\s+)den\s+{FlexibleDayRegex})|((?<=till\s+)?(den\s+){FlexibleDayRegex}(?<=(e|a))))(?<end>\s*(,|\.(?!\d)|!|\?|$)))
+  def: (?#ForTheRegex)\b((((?<=till\s+)den\s+{FlexibleDayRegex})|((?<=till\s+)?(den\s+){FlexibleDayRegex}(?<=(e|a))))(?<end>\s*(,|\.(?!\d)|!|\?|$)))
   references: [FlexibleDayRegex]
 WeekDayAndDayOfMonthRegex: !nestedRegex
   def: \b{WeekDayRegex}\s+(den\s+{FlexibleDayRegex})\b
