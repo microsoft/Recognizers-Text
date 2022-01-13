@@ -210,7 +210,7 @@ public class GermanSetParserConfiguration extends BaseOptionsConfiguration imple
             result.setTimex("P1Y");
         }
 
-        if (result.getTimex() != "") {
+        if (!"".equals(result.getTimex())) {
             result.setResult(true);
         }
 
@@ -232,7 +232,7 @@ public class GermanSetParserConfiguration extends BaseOptionsConfiguration imple
             result.setTimex("P1Y");
         }
 
-        if (result.getTimex() != "") {
+        if (!"".equals(result.getTimex())) {
             result.setResult(true);
         }
 

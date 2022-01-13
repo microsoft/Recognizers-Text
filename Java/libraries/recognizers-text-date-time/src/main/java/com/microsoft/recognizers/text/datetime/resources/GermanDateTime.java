@@ -138,7 +138,9 @@ public class GermanDateTime {
 
     public static final String OneWordPeriodRegex = "\\b((((im\\s+)?monat\\s+)?({RelativeRegex}\\s*(jahr\\s*(im\\s*)?)?)?(?<month>apr(il|\\.)|aug(ust|\\.)|dez(ember|\\.)|feb(ruar|ber|\\.)|j[äa]n(uar|ner|\\.)|jul(e?i|l\\.)|jun([io]|\\.)|märz|mai|nov(ember|\\.)|okt(ober|\\.)|sept?(ember|\\.)))|(?<business>unter\\s+der\\s+woche)|({RelativeRegex}\\s+)?((?<business>werktags|arbeitswoche)|woche(nende)?|monat(s)?|jahr|jahres)(?!(\\s+\\d+(?!({BaseDateTime.BaseAmDescRegex}|{BaseDateTime.BasePmDescRegex}))|\\s+bis\\s+heute)))\\b"
             .replace("{RelativeRegex}", RelativeRegex)
-            .replace("{AfterNextSuffixRegex}", AfterNextPrefixRegex);
+            .replace("{AfterNextSuffixRegex}", AfterNextPrefixRegex)
+            .replace("{BaseDateTime.BaseAmDescRegex}", BaseDateTime.BaseAmDescRegex)
+            .replace("{BaseDateTime.BasePmDescRegex}", BaseDateTime.BasePmDescRegex);
 
     public static final String MonthNumWithYear = "({YearRegex}(\\s*)[/\\-\\.](\\s*){MonthNumRegex})|({MonthNumRegex}(\\s*)[/\\-\\.](\\s*){YearRegex})"
             .replace("{YearRegex}", YearRegex)
