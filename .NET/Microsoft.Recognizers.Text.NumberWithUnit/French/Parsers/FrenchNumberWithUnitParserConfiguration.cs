@@ -21,7 +21,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.French
             this.InternalNumberExtractor = NumberExtractor.GetInstance(numConfig);
             this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number,
                                                                               new FrenchNumberParserConfiguration(numConfig));
-            this.ConnectorToken = NumbersWithUnitDefinitions.ConnectorToken;
+            this.ConnectorToken = NumbersWithUnitDefinitions.ConnectorTokenWithSpace;
 
             this.TypeList = DimensionExtractorConfiguration.DimensionTypeList;
         }

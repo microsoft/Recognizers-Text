@@ -723,7 +723,9 @@ BuildPrefix: !simpleRegex
   def: (?<=(\s|^|\P{L}))
 BuildSuffix: !simpleRegex
   def: (?=(\s|\P{L}|$))
-ConnectorToken: 'de '
+#ConnectorTokenWithSpace is used by the parser where otherwise 'de' in 'degré' would be extracted producing incorrect results
+ConnectorToken: de
+ConnectorTokenWithSpace: 'de '
 #LengthExtractorConfiguration
 LengthSuffixList: !dictionary
   types: [ string, string ]
