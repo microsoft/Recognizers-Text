@@ -3478,5 +3478,36 @@
         "End": 23
       }
     ]
+  },
+  {
+    "Input": "Let's try one last time",
+    "Results": [
+      {
+        "Text": "one",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1"
+        },
+        "Start": 10,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "I was a current student last semester",
+    "Results": []
+  },
+  {
+    "Input": "He was looking for a next of kin",
+    "Results": []
+  },
+  {
+    "Input": "you can restore a previous version",
+    "Results": []
+  },
+  {
+    "Input": "we'll try this new medication as a last resort.",
+    "Results": []
   }
 ]
