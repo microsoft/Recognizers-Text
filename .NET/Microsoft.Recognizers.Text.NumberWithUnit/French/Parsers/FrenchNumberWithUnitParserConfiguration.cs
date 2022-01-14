@@ -21,7 +21,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.French
             this.InternalNumberExtractor = NumberExtractor.GetInstance(numConfig);
             this.InternalNumberParser = AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Number,
                                                                               new FrenchNumberParserConfiguration(numConfig));
-            this.ConnectorToken = NumbersWithUnitDefinitions.ConnectorToken;
+
+            // A space is added to the token to avoid interpreting part of a unit as a connector (e.g. 'de' in 'degrés')
+            this.ConnectorToken = NumbersWithUnitDefinitions.ConnectorToken + " ";
 
             this.TypeList = DimensionExtractorConfiguration.DimensionTypeList;
         }

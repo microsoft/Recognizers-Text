@@ -198,5 +198,15 @@
         "End": 37
       }      
     ]
-  }    
+  },
+  {
+    "Input": "einen 45 Grad Winkel drehen",
+    "NotSupported": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "90° drehen",
+    "NotSupported": "java, javascript, python",
+    "Results": []
+  }
 ]

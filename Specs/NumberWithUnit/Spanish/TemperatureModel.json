@@ -718,5 +718,15 @@
         "End": 39
       }
     ]
+  },
+  {
+    "Input": "girar un ángulo de 45 grados",
+    "NotSupported": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "Girar 90°",
+    "NotSupported": "java, javascript, python",
+    "Results": []
   }
 ]

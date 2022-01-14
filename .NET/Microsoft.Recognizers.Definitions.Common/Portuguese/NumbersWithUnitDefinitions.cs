@@ -805,9 +805,28 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
             { @"Grão", @"grão|grao|grãos|graos|gr" },
             { @"Quilate", @"ct|quilate|quilates" }
         };
+      public static readonly Dictionary<string, string> AngleSuffixList = new Dictionary<string, string>
+        {
+            { @"Degree", @"grau|graus|°" },
+            { @"Radian", @"radiano|radianos|rad" },
+            { @"Turn", @"volta|voltas" }
+        };
+      public static readonly IList<string> AmbiguousAngleUnitList = new List<string>
+        {
+            @"volta",
+            @"voltas"
+        };
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {
             { @"null", @"null" }
+        };
+      public static readonly Dictionary<string, string> TemperatureAmbiguityFiltersDict = new Dictionary<string, string>
+        {
+            { @"\b(graus?|°)$", @"\b((graus?|°)\s*(ângulo|rotação)|(gira(r|do|ndo)?|ângulo|rotação)(\s+(\p{L}+|\d+)){0,4}\s*(graus?\b|°))" }
+        };
+      public static readonly Dictionary<string, string> DimensionAmbiguityFiltersDict = new Dictionary<string, string>
+        {
+            { @"\b(graus?|°)$", @"\b((graus?|°)\s*(c(elsius|entígrado)?|f(ah?renheit)?)|(temperatura)(\s+(\p{L}+|\d+)){0,4}\s*(graus?\b|°))" }
         };
     }
 }

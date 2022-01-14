@@ -18,6 +18,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
             .Concat(SpeedExtractorConfiguration.SpeedSuffixList)
             .Concat(VolumeExtractorConfiguration.VolumeSuffixList)
             .Concat(WeightExtractorConfiguration.WeightSuffixList)
+            .Concat(AngleExtractorConfiguration.AngleSuffixList)
             .ToImmutableDictionary(x => x.Key, x => x.Value);
 
         public static readonly ImmutableDictionary<string, string> DimensionTypeList =
@@ -27,6 +28,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
             .Concat(SpeedExtractorConfiguration.SpeedSuffixList.ToDictionary(x => x.Key, x => Constants.SPEED))
             .Concat(VolumeExtractorConfiguration.VolumeSuffixList.ToDictionary(x => x.Key, x => Constants.VOLUME))
             .Concat(WeightExtractorConfiguration.WeightSuffixList.ToDictionary(x => x.Key, x => Constants.WEIGHT))
+            .Concat(AngleExtractorConfiguration.AngleSuffixList.ToDictionary(x => x.Key, x => Constants.ANGLE))
             .ToImmutableDictionary(x => x.Key, x => x.Value);
 
         private static readonly ImmutableList<string> AmbiguousUnits =
@@ -36,6 +38,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
             .Concat(SpeedExtractorConfiguration.AmbiguousUnits)
             .Concat(VolumeExtractorConfiguration.AmbiguousUnits)
             .Concat(WeightExtractorConfiguration.AmbiguousUnits)
+            .Concat(AngleExtractorConfiguration.AmbiguousUnits)
             .Distinct()
             .ToImmutableList();
 

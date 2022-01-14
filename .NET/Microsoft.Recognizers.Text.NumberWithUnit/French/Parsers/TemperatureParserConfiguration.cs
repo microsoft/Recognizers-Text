@@ -17,7 +17,5 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.French
         {
             this.BindDictionary(TemperatureExtractorConfiguration.TemperatureSuffixList);
         }
-
-        public override string ConnectorToken => null;
     }
 }

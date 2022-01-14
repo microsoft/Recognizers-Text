@@ -711,5 +711,100 @@
         }
       }
     ]
+  },
+  {
+    "Input": "ruotare di 90 gradi",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "90 gradi",
+        "Start": 11,
+        "End": 18,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Degree",
+          "subtype": "Angle",
+          "value": "90"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "girare a sinistra di 45 gradi",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "45 gradi",
+        "Start": 21,
+        "End": 28,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Degree",
+          "subtype": "Angle",
+          "value": "45"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "L'angolo è 0,8rad",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "0,8rad",
+        "Start": 11,
+        "End": 16,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Radian",
+          "subtype": "Angle",
+          "value": "0,8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "fare mezzo giro",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "mezzo giro",
+        "Start": 5,
+        "End": 14,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Turn",
+          "subtype": "Angle",
+          "value": "0,5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "ruota di 3 giri",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3 giri",
+        "Start": 9,
+        "End": 14,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Turn",
+          "subtype": "Angle",
+          "value": "3"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "la temperatura è di 24 gradi",
+    "NotSupported": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "L'acqua bolle a 100°C",
+    "NotSupported": "java, javascript, python",
+    "Results": []
   }
 ]
