@@ -9,6 +9,7 @@ using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions;
 using Microsoft.Recognizers.Definitions.Portuguese;
+using Microsoft.Recognizers.Definitions.Utilities;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Portuguese;
 
@@ -34,6 +35,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
             this.BuildPrefix = NumbersWithUnitDefinitions.BuildPrefix;
             this.BuildSuffix = NumbersWithUnitDefinitions.BuildSuffix;
             this.ConnectorToken = NumbersWithUnitDefinitions.ConnectorToken;
+
+            TemperatureAmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(NumbersWithUnitDefinitions.TemperatureAmbiguityFiltersDict);
+            DimensionAmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(NumbersWithUnitDefinitions.DimensionAmbiguityFiltersDict);
         }
 
         public abstract string ExtractType { get; }
@@ -55,6 +59,10 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
         public virtual Regex AmbiguousUnitNumberMultiplierRegex => null;
 
         public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; } = null;
+
+        public Dictionary<Regex, Regex> TemperatureAmbiguityFiltersDict { get; } = null;
+
+        public Dictionary<Regex, Regex> DimensionAmbiguityFiltersDict { get; } = null;
 
         public abstract ImmutableDictionary<string, string> SuffixList { get; }
 

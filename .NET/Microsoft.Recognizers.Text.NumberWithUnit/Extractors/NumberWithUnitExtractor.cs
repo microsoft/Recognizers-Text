@@ -330,6 +330,16 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             // Remove common ambiguous cases
             result = FilterAmbiguity(result, source);
 
+            // Remove entity-specific ambiguous cases
+            if (CheckExtractorType(Constants.SYS_UNIT_TEMPERATURE))
+            {
+                result = FilterAmbiguity(result, source, this.config.TemperatureAmbiguityFiltersDict);
+            }
+            else if (CheckExtractorType(Constants.SYS_UNIT_DIMENSION))
+            {
+                result = FilterAmbiguity(result, source, this.config.DimensionAmbiguityFiltersDict);
+            }
+
             if (CheckExtractorType(Constants.SYS_UNIT_CURRENCY))
             {
                 result = SelectCandidates(source, result, unitIsPrefix);
@@ -513,12 +523,17 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             return isSubMatch;
         }
 
-        private List<ExtractResult> FilterAmbiguity(List<ExtractResult> extractResults, string text)
+        private List<ExtractResult> FilterAmbiguity(List<ExtractResult> extractResults, string text, Dictionary<Regex, Regex> ambiguityFiltersDict = null)
         {
-
-            if (this.config.AmbiguityFiltersDict != null)
+            // If no filter is specified, use common AmbiguityFilter
+            if (ambiguityFiltersDict == null)
             {
-                foreach (var regex in this.config.AmbiguityFiltersDict)
+                ambiguityFiltersDict = this.config.AmbiguityFiltersDict;
+            }
+
+            if (ambiguityFiltersDict != null)
+            {
+                foreach (var regex in ambiguityFiltersDict)
                 {
                     foreach (var extractResult in extractResults)
                     {

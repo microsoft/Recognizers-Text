@@ -908,8 +908,27 @@ AmbiguousWeightUnitList: !list
     - oz
     - stone
     - dram
+#AngleExtractorConfiguration
+AngleSuffixList: !dictionary
+  types: [ string, string ]
+  entries:
+    Degree: grad|°
+    Radian: radiant|rad
+    Turn: turn
+AmbiguousAngleUnitList: !list
+  types: [ string ]
+  entries:
+    - turn
 AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:
     'null': 'null'
+TemperatureAmbiguityFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    \b(grad|°)$: \b((grad|°)\s*(winkel|dreh(ung|en|t)|gedreht)|(dreh(ung|en|t)|gedreht|winkel)(\s+(\p{L}+|\d+)){0,4}\s*(grad\b|°))
+DimensionAmbiguityFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    \b(grad|°)$: \b((grad|°)\s*(c(elsius|entigrate)?|f(ah?renheit)?)|(temperatur)(\s+(\p{L}+|\d+)){0,4}\s*(grad\b|°))
 ...

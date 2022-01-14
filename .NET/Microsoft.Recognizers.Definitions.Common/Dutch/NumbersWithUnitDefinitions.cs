@@ -790,9 +790,30 @@ namespace Microsoft.Recognizers.Definitions.Dutch
             @"yer",
             @"yen"
         };
+      public static readonly Dictionary<string, string> AngleSuffixList = new Dictionary<string, string>
+        {
+            { @"Degree", @"graad|graden|°" },
+            { @"Radian", @"radiaal|radialen|rad" },
+            { @"Turn", @"draai|draaien|slag|slagen" }
+        };
+      public static readonly IList<string> AmbiguousAngleUnitList = new List<string>
+        {
+            @"draai",
+            @"draaien",
+            @"slag",
+            @"slagen"
+        };
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {
             { @"null", @"null" }
+        };
+      public static readonly Dictionary<string, string> TemperatureAmbiguityFiltersDict = new Dictionary<string, string>
+        {
+            { @"\b(gra(ad|den)|°)$", @"\b((gra(ad|den)|°)\s*(draai(en|t)?|geroteerd|roterend|rotatie|hoek)|(draai(en|t)?|geroteerd|roterend|rotatie|hoek)(\s+(\p{L}+|\d+)){0,4}\s*(gra(ad|den)\b|°))" }
+        };
+      public static readonly Dictionary<string, string> DimensionAmbiguityFiltersDict = new Dictionary<string, string>
+        {
+            { @"\b(gra(ad|den)|°)$", @"\b((gra(ad|den)|°)\s*(c(elsius)?|f(ah?renheit)?)|(temperatuur)(\s+(\p{L}+|\d+)){0,4}\s*(gra(ad|den)\b|°))" }
         };
     }
 }

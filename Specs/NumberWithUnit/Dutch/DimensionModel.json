@@ -1077,5 +1077,100 @@
       }
     ],
     "NotSupportedByDesign": "javascript,python,java"
+  },
+  {
+    "Input": "90 graden draaien",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "90 graden",
+        "Start": 0,
+        "End": 8,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Degree",
+          "subtype": "Angle",
+          "value": "90"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "draai links 45 graden",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "45 graden",
+        "Start": 12,
+        "End": 20,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Degree",
+          "subtype": "Angle",
+          "value": "45"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "De hoek is 0,8rad",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "0,8rad",
+        "Start": 11,
+        "End": 16,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Radian",
+          "subtype": "Angle",
+          "value": "0,8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "maak een halve draai",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "een halve draai",
+        "Start": 5,
+        "End": 19,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Turn",
+          "subtype": "Angle",
+          "value": "0,5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "roteer 3 slagen",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3 slagen",
+        "Start": 7,
+        "End": 14,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Turn",
+          "subtype": "Angle",
+          "value": "3"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "de temperatuur is 24 graden",
+    "NotSupported": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "Water kookt bij 100° Celsius",
+    "NotSupported": "java, javascript, python",
+    "Results": []
   }
 ]
