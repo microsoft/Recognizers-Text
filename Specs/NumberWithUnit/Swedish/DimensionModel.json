@@ -1013,5 +1013,100 @@
         "End": 19
       }
     ]
+  },
+  {
+    "Input": "rotera 90 grader",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "90 grader",
+        "Start": 7,
+        "End": 15,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Degree",
+          "subtype": "Angle",
+          "value": "90"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "sväng vänster 45 grader",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "45 grader",
+        "Start": 14,
+        "End": 22,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Degree",
+          "subtype": "Angle",
+          "value": "45"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Vinkeln är 0,8rad",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "0,8rad",
+        "Start": 11,
+        "End": 16,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Radian",
+          "subtype": "Angle",
+          "value": "0,8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "vrid ett halvt varv",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "ett halvt varv",
+        "Start": 5,
+        "End": 15,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Turn",
+          "subtype": "Angle",
+          "value": "0.5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "rotera 3 varv",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3 varv",
+        "Start": 7,
+        "End": 13,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Turn",
+          "subtype": "Angle",
+          "value": "3"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "temperaturen är 24 grader",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "Vatten kokar vid 100° Celsius",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": []
   }
 ]
