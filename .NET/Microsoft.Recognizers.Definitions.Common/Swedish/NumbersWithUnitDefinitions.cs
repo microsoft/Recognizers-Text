@@ -162,6 +162,17 @@ namespace Microsoft.Recognizers.Definitions.Swedish
         {
             @"g"
         };
+      public static readonly Dictionary<string, string> AngleSuffixList = new Dictionary<string, string>
+        {
+            { @"Degree", @"grad|grader|gr.|gr|°" },
+            { @"Radian", @"radian|radianer|rad" },
+            { @"Turn", @"turn|turns" }
+        };
+      public static readonly IList<string> AmbiguousAngleUnitList = new List<string>
+        {
+            @"turn",
+            @"turns"
+        };
       public static readonly Dictionary<string, string> CurrencySuffixList = new Dictionary<string, string>
         {
             { @"Abkhazian apsar", @"abchazisk apsar|apsar|аԥсар|āpsār" },
@@ -779,6 +790,14 @@ namespace Microsoft.Recognizers.Definitions.Swedish
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {
             { @"null", @"null" }
+        };
+      public static readonly Dictionary<string, string> TemperatureAmbiguityFiltersDict = new Dictionary<string, string>
+        {
+            { @"\b(deg(rees?)?|°)$", @"\b((deg(rees?)?|°)\s*(angle|rotation)|(rotat(ion|e[ds]?|ing)|angle)(\s+(\p{L}+|\d+)){0,4}\s*(deg(rees?)?\b|°))" }
+        };
+      public static readonly Dictionary<string, string> DimensionAmbiguityFiltersDict = new Dictionary<string, string>
+        {
+            { @"\b(deg(rees?)?|°)$", @"\b((deg(rees?)?|°)\s*(c(elsius|entigrate)?|f(ah?renheit)?)|(temperature)(\s+(\p{L}+|\d+)){0,4}\s*(deg(rees?)?\b|°))" }
         };
     }
 }

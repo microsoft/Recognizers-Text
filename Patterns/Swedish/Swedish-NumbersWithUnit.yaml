@@ -153,6 +153,18 @@ AmbiguousWeightUnitList: !list
   types: [ string ]
   entries:
   - g
+#AngleExtractorConfiguration
+AngleSuffixList: !dictionary
+  types: [ string, string ]
+  entries:
+    Degree: grad|grader|gr.|gr|°
+    Radian: radian|radianer|rad
+    Turn: turn|turns
+AmbiguousAngleUnitList: !list
+  types: [ string ]
+  entries:
+    - turn
+    - turns
 #CurrencyExtractorConfiguration
 CurrencySuffixList: !dictionary
 #Reference Source: https://sv.wikipedia.org/wiki/Lista_%C3%B6ver_l%C3%A4nders_valutor
@@ -880,4 +892,12 @@ AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:
     'null' : 'null'
+TemperatureAmbiguityFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    \b(deg(rees?)?|°)$: \b((deg(rees?)?|°)\s*(angle|rotation)|(rotat(ion|e[ds]?|ing)|angle)(\s+(\p{L}+|\d+)){0,4}\s*(deg(rees?)?\b|°))
+DimensionAmbiguityFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    \b(deg(rees?)?|°)$: \b((deg(rees?)?|°)\s*(c(elsius|entigrate)?|f(ah?renheit)?)|(temperature)(\s+(\p{L}+|\d+)){0,4}\s*(deg(rees?)?\b|°))
 ...
