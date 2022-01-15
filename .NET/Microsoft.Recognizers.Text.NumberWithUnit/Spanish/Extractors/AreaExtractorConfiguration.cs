@@ -12,7 +12,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
     {
         public static readonly ImmutableDictionary<string, string> AreaSuffixList = NumbersWithUnitDefinitions.AreaSuffixList.ToImmutableDictionary();
 
-        private static readonly ImmutableList<string> AmbiguousValues = NumbersWithUnitDefinitions.AreaAmbiguousValues.ToImmutableList();
+        public static readonly ImmutableList<string> AmbiguousValues = NumbersWithUnitDefinitions.AreaAmbiguousValues.ToImmutableList();
 
         public AreaExtractorConfiguration()
                : this(new CultureInfo(Culture.Spanish))

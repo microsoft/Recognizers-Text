@@ -417,5 +417,100 @@
         "End": 9
       }
     ]
+  },
+  {
+    "Input": "um 90 Grad drehen",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "90 grad",
+        "Start": 3,
+        "End": 9,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Degree",
+          "subtype": "Angle",
+          "value": "90"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "links abbiegen 45 Grad",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "45 grad",
+        "Start": 15,
+        "End": 21,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Degree",
+          "subtype": "Angle",
+          "value": "45"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Der Winkel beträgt 0,8rad",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "0,8rad",
+        "Start": 19,
+        "End": 24,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Radian",
+          "subtype": "Angle",
+          "value": "0,8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "eine halbe Turn machen",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "eine halbe turn",
+        "Start": 0,
+        "End": 14,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Turn",
+          "subtype": "Angle",
+          "value": "0,5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "3 Turn drehen",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3 turn",
+        "Start": 0,
+        "End": 5,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Turn",
+          "subtype": "Angle",
+          "value": "3"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "die temperatur beträgt 24 grad",
+    "NotSupported": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "Wasser kocht bei 100° Celsius",
+    "NotSupported": "java, javascript, python",
+    "Results": []
   }
 ]

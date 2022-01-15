@@ -973,8 +973,28 @@ WeightSuffixList: !dictionary
     Onça: oz|onça|onca|onças|oncas
     Grão: grão|grao|grãos|graos|gr
     Quilate: ct|quilate|quilates
+#AngleExtractorConfiguration
+AngleSuffixList: !dictionary
+  types: [ string, string ]
+  entries:
+    Degree: grau|graus|°
+    Radian: radiano|radianos|rad
+    Turn: volta|voltas
+AmbiguousAngleUnitList: !list
+  types: [ string ]
+  entries:
+    - volta
+    - voltas
 AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:
     'null': 'null'
+TemperatureAmbiguityFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    \b(graus?|°)$: \b((graus?|°)\s*(ângulo|rotação)|(gira(r|do|ndo)?|ângulo|rotação)(\s+(\p{L}+|\d+)){0,4}\s*(graus?\b|°))
+DimensionAmbiguityFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    \b(graus?|°)$: \b((graus?|°)\s*(c(elsius|entígrado)?|f(ah?renheit)?)|(temperatura)(\s+(\p{L}+|\d+)){0,4}\s*(graus?\b|°))
 ...

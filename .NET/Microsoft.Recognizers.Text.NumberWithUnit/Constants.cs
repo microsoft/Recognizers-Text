@@ -22,6 +22,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         public const string SYS_UNIT_TEMPERATURE = "builtin.unit.temperature";
         public const string SYS_UNIT_VOLUME = "builtin.unit.volume";
         public const string SYS_UNIT_WEIGHT = "builtin.unit.weight";
+        public const string SYS_UNIT_ANGLE = "builtin.unit.angle";
         public const string SYS_NUM = "builtin.num";
 
         public const string INFORMATION = "Information";
@@ -30,6 +31,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         public const string SPEED = "Speed";
         public const string VOLUME = "Volume";
         public const string WEIGHT = "Weight";
+        public const string ANGLE = "Angle";
 
         // For cases like '2:00 pm', both 'pm' and '00 pm' are not dimension
         public const string AMBIGUOUS_TIME_TERM = BaseUnits.AmbiguousTimeTerm;
@@ -46,6 +48,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             SPEED,
             VOLUME,
             WEIGHT,
+            ANGLE,
         };
     }
 }

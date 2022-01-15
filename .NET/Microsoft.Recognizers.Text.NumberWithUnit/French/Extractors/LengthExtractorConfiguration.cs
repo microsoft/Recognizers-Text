@@ -13,7 +13,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.French
         public static readonly ImmutableDictionary<string, string> LengthSuffixList =
             NumbersWithUnitDefinitions.LengthSuffixList.ToImmutableDictionary();
 
-        private static readonly ImmutableList<string> AmbiguousValues =
+        public static readonly ImmutableList<string> AmbiguousValues =
             NumbersWithUnitDefinitions.AmbiguousLengthUnitList.ToImmutableList();
 
         public LengthExtractorConfiguration()

@@ -718,5 +718,31 @@
         "End": 36
       }
     ]
+  },
+  {
+    "Input": "tourner à un angle de 45 degrés",
+    "NotSupported": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "Rotation 90°",
+    "NotSupported": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "La température l'extérieur est 4000000 de degrés",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "4000000 de degrés",
+        "TypeName": "temperature",
+        "Resolution": {
+          "value": "4000000",
+          "unit": "Degré"
+        },
+        "Start": 31,
+        "End": 47
+      }
+    ]
   }
 ]

@@ -796,9 +796,28 @@ namespace Microsoft.Recognizers.Definitions.Italian
             @"g",
             @"oz"
         };
+      public static readonly Dictionary<string, string> AngleSuffixList = new Dictionary<string, string>
+        {
+            { @"Degree", @"grado|gradi|°" },
+            { @"Radian", @"radiante|radianti|rad" },
+            { @"Turn", @"giro|giri" }
+        };
+      public static readonly IList<string> AmbiguousAngleUnitList = new List<string>
+        {
+            @"giro",
+            @"giri"
+        };
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {
             { @"\bl\b", @"l\s*('|’)" }
+        };
+      public static readonly Dictionary<string, string> TemperatureAmbiguityFiltersDict = new Dictionary<string, string>
+        {
+            { @"\b(grad[oi]|°)$", @"\b((grad[oi]|°)\s*(angolo|rotazione)|(ruota(re|t[oiae]|ndo)?|angolo|rotazioe)(\s+(\p{L}+|\d+)){0,4}\s*(grad[oi]\b|°))" }
+        };
+      public static readonly Dictionary<string, string> DimensionAmbiguityFiltersDict = new Dictionary<string, string>
+        {
+            { @"\b(grad[oi]|°)$", @"\b((grad[oi]|°)\s*(c(elsius|entigrado)?|f(ah?renheit)?)|(temperatura)(\s+(\p{L}+|\d+)){0,4}\s*(grad[oi]\b|°))" }
         };
     }
 }

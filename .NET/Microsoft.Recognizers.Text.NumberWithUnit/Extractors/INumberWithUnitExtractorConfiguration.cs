@@ -37,6 +37,10 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
         Dictionary<Regex, Regex> AmbiguityFiltersDict { get; }
 
+        Dictionary<Regex, Regex> TemperatureAmbiguityFiltersDict { get; }
+
+        Dictionary<Regex, Regex> DimensionAmbiguityFiltersDict { get; }
+
         void ExpandHalfSuffix(string source, ref List<ExtractResult> result, IOrderedEnumerable<ExtractResult> numbers);
     }
 }

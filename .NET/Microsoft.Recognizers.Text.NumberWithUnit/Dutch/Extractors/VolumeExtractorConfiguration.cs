@@ -13,7 +13,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Dutch
         public static readonly ImmutableDictionary<string, string> VolumeSuffixList =
             NumbersWithUnitDefinitions.VolumeSuffixList.ToImmutableDictionary();
 
-        private static readonly ImmutableList<string> AmbiguousValues =
+        public static readonly ImmutableList<string> AmbiguousValues =
             NumbersWithUnitDefinitions.AmbiguousVolumeUnitList.ToImmutableList();
 
         public VolumeExtractorConfiguration()

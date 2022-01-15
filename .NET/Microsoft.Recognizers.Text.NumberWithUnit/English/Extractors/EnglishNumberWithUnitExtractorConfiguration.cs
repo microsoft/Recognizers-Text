@@ -40,6 +40,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
             this.ConnectorToken = string.Empty;
 
             AmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(NumbersWithUnitDefinitions.AmbiguityFiltersDict);
+            TemperatureAmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(NumbersWithUnitDefinitions.TemperatureAmbiguityFiltersDict);
+            DimensionAmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(NumbersWithUnitDefinitions.DimensionAmbiguityFiltersDict);
         }
 
         public abstract string ExtractType { get; }
@@ -61,6 +63,10 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
         public virtual Regex AmbiguousUnitNumberMultiplierRegex => null;
 
         public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; } = null;
+
+        public Dictionary<Regex, Regex> TemperatureAmbiguityFiltersDict { get; } = null;
+
+        public Dictionary<Regex, Regex> DimensionAmbiguityFiltersDict { get; } = null;
 
         public abstract ImmutableDictionary<string, string> SuffixList { get; }
 
