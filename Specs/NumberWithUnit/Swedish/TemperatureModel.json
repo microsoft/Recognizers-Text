@@ -649,12 +649,12 @@
   },
   {
     "Input": "gör en 45 graders vinkel",
-    "NotSupported": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": []
   },
   {
     "Input": "Rotera 90°",
-    "NotSupported": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": []
   }
 ]

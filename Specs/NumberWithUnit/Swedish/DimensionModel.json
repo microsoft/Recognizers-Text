@@ -1072,12 +1072,12 @@
       {
         "Text": "ett halvt varv",
         "Start": 5,
-        "End": 15,
+        "End": 18,
         "TypeName": "dimension",
         "Resolution": {
           "unit": "Turn",
           "subtype": "Angle",
-          "value": "0.5"
+          "value": "0,5"
         }
       }
     ]
@@ -1089,7 +1089,7 @@
       {
         "Text": "3 varv",
         "Start": 7,
-        "End": 13,
+        "End": 12,
         "TypeName": "dimension",
         "Resolution": {
           "unit": "Turn",
