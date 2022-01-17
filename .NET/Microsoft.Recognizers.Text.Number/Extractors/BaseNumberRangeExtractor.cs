@@ -54,7 +54,8 @@ namespace Microsoft.Recognizers.Text.Number
 
                     if (start >= 0 && length > 0)
                     {
-                        // Add match if not already in matchSource
+                        // Add match if not already in matchSource (it can happen that a certain pattern is extracted by more than one regex,
+                        // but if the same tuple is added more than once execution breaks).
                         if (!matchSource.ContainsKey(Tuple.Create(start, length)))
                         {
                             // Keep Source Data for extra information

@@ -269,7 +269,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "서른이 넘는",
+        "Text": "서른이 넘는다",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(30,)"
@@ -1736,7 +1736,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "5000보다 낮",
+        "Text": "5000보다 낮습니다",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,5000)"
@@ -1820,6 +1820,26 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,5000)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "그의 점수는 30과 같 거나 30보다 높다.",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "30과 같",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[30,30]"
+        }
+      },
+      {
+        "Text": "30보다 높다",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(30,)"
         }
       }
     ]

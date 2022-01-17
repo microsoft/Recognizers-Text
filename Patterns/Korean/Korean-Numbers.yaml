@@ -344,9 +344,9 @@ SimpleIntegerPercentageRegex: !nestedRegex
 TillRegex: !simpleRegex
   def: (부터|에서|--|-|—|–|——|~)
 MoreRegex: !simpleRegex
-  def: (넘었(다)?|초과|많|높(고)?|더많|더높|더크|>=|>|넘는(다)?|초과이다|크고|이 넘는|(살)?이 넘는다|크고|보다 크다|보다 높(거나)?|(을 초과하는)|크(거나(\s같(다|고)?)?))
+  def: (넘었(다)?|초과|커|많|큽|높(고)?|더많|더높|더크|>=|>|(이\s)?넘는(다)?|초과이다|크고|(살)?이 넘는다|크고|보다 크다|보다 높(거나)?|(을 초과하는)|크(거나(\s같(다|고)?)?))((습)?니다|(아|네|군)?요)?
 LessRegex: !simpleRegex
-  def: (미만|마리|적|낮|작|더적|더낮|더적|<|아래|작다|같)
+  def: (미만|마리|적|낮|작|더적|더낮|더적|<|아래|작다|같)((네|아|어|군)요|습니다|은|다)?
 EqualRegex: !simpleRegex
   def: (동일|같(고)?|=|(해당하는)|작은|그와 같다)(?!거나)
 RangePrefixLessRegex: !simpleRegex
@@ -395,7 +395,7 @@ OneNumberRangeMoreRegexFraction: !nestedRegex
   def: ((?<number1>(((\d+)[/／]).)+)(이)\s*{MoreRegex})
   references: [MoreRegex]
 OneNumberRangeLessRegex1: !nestedRegex
-  def: ((?<number2>((?!(((?!\d+))|((,)(?!\d+))|。)).)+)\s*({LessOrEqual}|{LessOrEqualSuffix}|{LessRegex}))|((?<number2>((?!(((?!\d+))|((,)(?!\d+))|。)).)+[\.,]?(((?!(((?!\d+))|((,)(?!\d+))|。)).)+)?)\s*(이|보다|거나|또는)+\s*(그|그보다)?\s*{LessRegex}(은|다)?)|{OneNumberRangeLessRegex5}
+  def: ((?<number2>((?!(((?!\d+))|((,)(?!\d+))|。)).)+)\s*({LessOrEqual}|{LessOrEqualSuffix}|{LessRegex}))|((?<number2>((?!(((?!\d+))|((,)(?!\d+))|。)).)+[\.,]?(((?!(((?!\d+))|((,)(?!\d+))|。)).)+)?)\s*(이|보다|거나|또는)+\s*(그|그보다)?\s*{LessRegex})|{OneNumberRangeLessRegex5}
   references: [LessOrEqual, LessRegex, LessOrEqualSuffix, OneNumberRangeLessRegex5]
 TwoNumberRangeRegex: !nestedRegex
   def: ({RangePrefixLessRegex})\s*(?<number2>(((?!((\s(?!\d+))|((,)(?!\d+))|。)).)+))\s*({RangePrefixMoreRegex}\s*(?<number1>\s*[+-]?(\d+[\.,]?\d+)))(개)?

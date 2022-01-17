@@ -227,8 +227,8 @@ namespace Microsoft.Recognizers.Definitions.Korean
       public static readonly string NumbersFractionPercentageRegex = $@"{ZeroToNineFullHalfRegex}{{1,3}}([,，]{ZeroToNineFullHalfRegex}{{3}})+\s*개\s*백\s*분\s*점";
       public static readonly string SimpleIntegerPercentageRegex = $@"(?<!%|\d)({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})?({AllIntRegex}|{ZeroToNineFullHalfRegex}|{RoundNumberIntegerRegex})+([\.．]{ZeroToNineFullHalfRegex}+)?(\s*)([％%]|(퍼\s*센\s*트)|(프\s*로)|(퍼\s*센\s*티\s*지))(?!\d)";
       public const string TillRegex = @"(부터|에서|--|-|—|–|——|~)";
-      public const string MoreRegex = @"(넘었(다)?|초과|많|높(고)?|더많|더높|더크|>=|>|넘는(다)?|초과이다|크고|이 넘는|(살)?이 넘는다|크고|보다 크다|보다 높(거나)?|(을 초과하는)|크(거나(\s같(다|고)?)?))";
-      public const string LessRegex = @"(미만|마리|적|낮|작|더적|더낮|더적|<|아래|작다|같)";
+      public const string MoreRegex = @"(넘었(다)?|초과|커|많|큽|높(고)?|더많|더높|더크|>=|>|(이\s)?넘는(다)?|초과이다|크고|(살)?이 넘는다|크고|보다 크다|보다 높(거나)?|(을 초과하는)|크(거나(\s같(다|고)?)?))((습)?니다|(아|네|군)?요)?";
+      public const string LessRegex = @"(미만|마리|적|낮|작|더적|더낮|더적|<|아래|작다|같)((네|아|어|군)요|습니다|은|다)?";
       public const string EqualRegex = @"(동일|같(고)?|=|(해당하는)|작은|그와 같다)(?!거나)";
       public const string RangePrefixLessRegex = @"(최대|까지최소|(?<!>|=)<|≤)";
       public const string RangePrefixMoreRegex = @"((?<!<|=)>|≥|>=|개에서 최소|과 같거나 최소|이거나 최소)";
@@ -247,7 +247,7 @@ namespace Microsoft.Recognizers.Definitions.Korean
       public static readonly string OneNumberRangeMoreRegex4 = $@"((?<number1>((?!((\s(?!\d+))|(,(?!\d+))|。)).)+)\s*(과|에)+\s*{EqualRegex}){MoreOrEqual2}(다)?";
       public static readonly string OneNumberRangeMoreRegex5 = $@"(?<number1>((?![,.](?!\d+)).)+)\s*((또는)\s+(그){MoreOrEqualSuffix})";
       public static readonly string OneNumberRangeMoreRegexFraction = $@"((?<number1>(((\d+)[/／]).)+)(이)\s*{MoreRegex})";
-      public static readonly string OneNumberRangeLessRegex1 = $@"((?<number2>((?!(((?!\d+))|((,)(?!\d+))|。)).)+)\s*({LessOrEqual}|{LessOrEqualSuffix}|{LessRegex}))|((?<number2>((?!(((?!\d+))|((,)(?!\d+))|。)).)+[\.,]?(((?!(((?!\d+))|((,)(?!\d+))|。)).)+)?)\s*(이|보다|거나|또는)+\s*(그|그보다)?\s*{LessRegex}(은|다)?)|{OneNumberRangeLessRegex5}";
+      public static readonly string OneNumberRangeLessRegex1 = $@"((?<number2>((?!(((?!\d+))|((,)(?!\d+))|。)).)+)\s*({LessOrEqual}|{LessOrEqualSuffix}|{LessRegex}))|((?<number2>((?!(((?!\d+))|((,)(?!\d+))|。)).)+[\.,]?(((?!(((?!\d+))|((,)(?!\d+))|。)).)+)?)\s*(이|보다|거나|또는)+\s*(그|그보다)?\s*{LessRegex})|{OneNumberRangeLessRegex5}";
       public static readonly string TwoNumberRangeRegex = $@"({RangePrefixLessRegex})\s*(?<number2>(((?!((\s(?!\d+))|((,)(?!\d+))|。)).)+))\s*({RangePrefixMoreRegex}\s*(?<number1>\s*[+-]?(\d+[\.,]?\d+)))(개)?";
       public static readonly string OneNumberRangeLessRegex3 = $@"(?:({RangePrefixLessRegex}))\s*(?<number2>(((?!((\s(?!\d+))|((,)(?!\d+))|。)).)+))|((같거나|약)(?<number1>\s*[+-]?(\d+[\.,]?\d+))\s*(미만|개 이하가))";
       public static readonly string OneNumberRangeLessRegex4 = $@"(?<number2>(((?!((\s(?!\d+))|((,)(?!\d+))|。)).)+))\s*(에)(?:({LessOrEqualSuffix}))";
