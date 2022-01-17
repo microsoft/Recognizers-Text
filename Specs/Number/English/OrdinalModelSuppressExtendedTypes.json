@@ -149,5 +149,74 @@
     "Input": "Look at the current page",
     "NotSupported": "javascript, python, java",
     "Results": []
+  },
+  {
+    "Input": "Let's try one last time",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "I was a current student last semester",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "He was looking for a next of kin",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "you can restore a previous version",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "we'll try this new medication as a last resort.",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "placeholder name is a next generation service for translation",
+    "NotSupported": "javascript, java, python",
+    "Results": []
+  },
+  {
+    "Input": "The measurement has a value of forty two and a third",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "third",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "3",
+          "relativeTo": "start",
+          "value": "3"
+        },
+        "Start": 47,
+        "End": 51
+      }
+    ]
+  },
+  {
+    "Input": "The measurement has a value of two hundred thirty two and a thirtieth",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "thirtieth",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "30",
+          "relativeTo": "start",
+          "value": "30"
+        },
+        "Start": 60,
+        "End": 68
+      }
+    ]
+  },
+  {
+    "Input": "we will be working on releasing version two and a previous version will still be maintained",
+    "NotSupported": "javascript, java, python",
+    "Results": []
   }
 ]

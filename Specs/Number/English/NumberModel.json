@@ -3478,5 +3478,89 @@
         "End": 23
       }
     ]
+  },
+  {
+    "Input": "Let's try one last time",
+    "Results": [
+      {
+        "Text": "one",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1"
+        },
+        "Start": 10,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "I was a current student last semester",
+    "Results": []
+  },
+  {
+    "Input": "He was looking for a next of kin",
+    "Results": []
+  },
+  {
+    "Input": "you can restore a previous version",
+    "Results": []
+  },
+  {
+    "Input": "we'll try this new medication as a last resort.",
+    "Results": []
+  },
+  {
+    "Input": "placeholder name is a next generation service for translation",
+    "NotSupported": "javascript, java, python",
+    "Results": []
+  },
+  {
+    "Input": "The measurement has a value of forty two and a third",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "forty two and a third",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "42.3333333333333"
+        },
+        "Start": 31,
+        "End": 51
+      }
+    ]
+  },
+  {
+    "Input": "The measurement has a value of two hundred thirty two and a thirtieth",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "two hundred thirty two and a thirtieth",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "232.033333333333"
+        },
+        "Start": 31,
+        "End": 68
+      }
+    ]
+  },
+  {
+    "Input": "we will be working on releasing version two and a previous version will still be maintained",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "two",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2"
+        },
+        "Start": 40,
+        "End": 42
+      }
+    ]
   }
 ]
