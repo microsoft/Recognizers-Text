@@ -660,8 +660,8 @@ PrepositionSuffixRegex: !simpleRegex
 FlexibleDayRegex: !simpleRegex
   def: (?<DayOfMonth>([A-Öa-ö]+\s)?[A-Öa-ö\d]+)
 ForTheRegex: !nestedRegex
-  def: (?#ForTheRegex)\b((((?<=till\s+)den\s+{FlexibleDayRegex})|((?<=till\s+)?(den\s+){FlexibleDayRegex}(?<=(e|a))))(?<end>\s*(,|\.(?!\d)|!|\?|$)))
-  references: [FlexibleDayRegex]
+  def: (?#ForTheRegex)\b(((?<!{WeekDayRegex}\s+)den\s+{FlexibleDayRegex}))(?<end>\s*(,|\.(?!\d)|!|\?|$))
+  references: [WeekDayRegex, FlexibleDayRegex]
 WeekDayAndDayOfMonthRegex: !nestedRegex
   def: \b{WeekDayRegex}\s+(den\s+{FlexibleDayRegex})\b
   references: [WeekDayRegex, FlexibleDayRegex]

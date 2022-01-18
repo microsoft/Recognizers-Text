@@ -717,10 +717,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "27",
+        "Text": "den 27",
         "Type": "date",
-        "Start": 22,
-        "Length": 2
+        "Start": 18,
+        "Length": 6
       }
     ]
   },
@@ -741,10 +741,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "27",
+        "Text": "den 27",
         "Type": "date",
-        "Start": 22,
-        "Length": 2
+        "Start": 18,
+        "Length": 6
       }
     ]
   },
@@ -753,10 +753,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "27",
+        "Text": "den 27",
         "Type": "date",
-        "Start": 22,
-        "Length": 2
+        "Start": 18,
+        "Length": 6
       }
     ]
   },
@@ -765,10 +765,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "27",
+        "Text": "den 27",
         "Type": "date",
-        "Start": 22,
-        "Length": 2
+        "Start": 18,
+        "Length": 6
       }
     ]
   },
@@ -811,9 +811,10 @@
   {
     "Input": "jag åkte tillbaka den 27:e",
     "NotSupportedByDesign": "javascript,python,java",
+    "debug": true,
     "Results": [
       {
-        "Text": "27:e",
+        "Text": "den 27:e",
         "Type": "date",
         "Start": 22,
         "Length": 4
@@ -874,10 +875,8 @@
     "Results": []
   },
   {
-    "Input": "jag åker till den 27:e våningen",
-    "Comment": "Currently this resolves as a date",
+    "Input": "jag åker till 27:e våningen",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotnet",
     "Results": []
   },
   {
@@ -893,19 +892,17 @@
     "Results": []
   },
   {
-    "Input": "Vad har jag söndag den andre",
-    "Comment": "Currently resolves as 2 results; 'söndag' and 'den andre'",
+    "Input": "Vad har jag lördag den andre",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "dotnet",
     "Context": {
       "ReferenceDateTime": "2017-09-01T00:00:00"
     },
     "Results": [
       {
-        "Text": "söndag den andre",
+        "Text": "lördag den andre",
         "Type": "date",
-        "Start": 18,
-        "Length": 19
+        "Start": 12,
+        "Length": 16
       }
     ]
   },
@@ -956,7 +953,6 @@
   },
   {
     "Input": "jag åker tillbaka lördag den 23:e",
-    "debug": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Context": {
       "ReferenceDateTime": "2017-09-01T00:00:00"

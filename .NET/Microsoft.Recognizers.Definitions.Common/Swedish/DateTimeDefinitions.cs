@@ -275,7 +275,7 @@ namespace Microsoft.Recognizers.Definitions.Swedish
       public const string UnspecificDatePeriodRegex = @"^(vecka|fortnight|månad|år)$";
       public const string PrepositionSuffixRegex = @"\b(on|in|at|around|circa|from|to)$";
       public const string FlexibleDayRegex = @"(?<DayOfMonth>([A-Öa-ö]+\s)?[A-Öa-ö\d]+)";
-      public static readonly string ForTheRegex = $@"(?#ForTheRegex)\b((((?<=till\s+)den\s+{FlexibleDayRegex})|((?<=till\s+)?(den\s+){FlexibleDayRegex}(?<=(e|a))))(?<end>\s*(,|\.(?!\d)|!|\?|$)))";
+      public static readonly string ForTheRegex = $@"(?#ForTheRegex)\b(((?<!{WeekDayRegex}\s+)den\s+{FlexibleDayRegex}))(?<end>\s*(,|\.(?!\d)|!|\?|$))";
       public static readonly string WeekDayAndDayOfMonthRegex = $@"\b{WeekDayRegex}\s+(den\s+{FlexibleDayRegex})\b";
       public static readonly string WeekDayAndDayRegex = $@"\b{WeekDayRegex}\s+(?!(den)){DayRegex}(?!([-:]|(\s+({AmDescRegex}|{PmDescRegex}|{OclockRegex}))))\b";
       public const string RestOfDateRegex = @"\b(rest|remaining)\s+(of\s+)?((the|my|this|current)\s+)?(?<duration>vecka|fortnight|månad|år|decennium)\b";
