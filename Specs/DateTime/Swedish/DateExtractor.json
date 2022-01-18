@@ -811,10 +811,9 @@
   {
     "Input": "jag åkte tillbaka den 27:e",
     "NotSupportedByDesign": "javascript,python,java",
-    "debug": true,
     "Results": [
       {
-        "Text": "den 27:e",
+        "Text": "27:e",
         "Type": "date",
         "Start": 22,
         "Length": 4
@@ -886,7 +885,7 @@
   },
   {
     "Input": "Köp biljetter till den 17:e Door Haunted Experience",
-    "Comment": "Currently this resolves as a date",
+    "Comment": "Currently resolves as date",
     "NotSupportedByDesign": "javascript,python,java",
     "NotSupported": "dotnet",
     "Results": []
@@ -959,7 +958,7 @@
     },
     "Results": [
       {
-        "Text": "lördag den 23:e",
+        "Text": "lördag den 23",
         "Type": "date",
         "Start": 18,
         "Length": 13
@@ -976,62 +975,62 @@
       {
         "Text": "torsdagen den tjugoförste",
         "Type": "date",
-        "Start": 13,
+        "Start": 21,
         "Length": 25
       }
     ]
   },
   {
-    "Input": "jag åker tillbaka friday the twenty second",
+    "Input": "jag åker tillbaka fredag den tjugoandre",
     "NotSupportedByDesign": "javascript,python,java",
     "Context": {
       "ReferenceDateTime": "2017-09-01T00:00:00"
     },
     "Results": [
       {
-        "Text": "friday the twenty second",
+        "Text": "fredag den tjugoandre",
         "Type": "date",
-        "Start": 13,
-        "Length": 24
+        "Start": 18,
+        "Length": 21
       }
     ]
   },
   {
-    "Input": "jag åker tillbaka friday the fifteen",
+    "Input": "jag åker tillbaka fredagen den femtonde",
     "NotSupportedByDesign": "javascript,python,java",
     "Context": {
       "ReferenceDateTime": "2017-09-01T00:00:00"
     },
     "Results": [
       {
-        "Text": "friday the fifteen",
+        "Text": "fredagen den femtonde",
         "Type": "date",
-        "Start": 13,
-        "Length": 18
+        "Start": 18,
+        "Length": 21
       }
     ]
   },
   {
-    "Input": "jag åker tillbaka thursday the seventh",
+    "Input": "jag åker tillbaka torsdag den sjuttonde",
     "NotSupportedByDesign": "javascript,python,java",
     "Context": {
       "ReferenceDateTime": "2017-09-01T00:00:00"
     },
     "Results": [
       {
-        "Text": "thursday the seventh",
+        "Text": "torsdag den sjuttonde",
         "Type": "date",
-        "Start": 13,
-        "Length": 20
+        "Start": 18,
+        "Length": 21
       }
     ]
   },
   {
-    "Input": "jag åker tillbaka second sunday",
+    "Input": "jag åker tillbaka den andra söndagen",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "second sunday",
+        "Text": "den andra söndagen",
         "Type": "date",
         "Start": 13,
         "Length": 13
