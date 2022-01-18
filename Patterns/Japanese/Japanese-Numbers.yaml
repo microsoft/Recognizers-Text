@@ -135,14 +135,14 @@ RoundNumberIntegerRegex: !simpleRegex
 AllowListRegex: !simpleRegex
   def: (。|，|、|（|）|”｜国|週間|時間|時|匹|キロ|トン|年|個|足|本|で|は|\s|$|つ|月|の|と)
 NotSingleRegex: !nestedRegex
-  def: (?<!(第|だい))(({RoundNumberIntegerRegex}+(({ZeroToNineIntegerRegex}+|{RoundNumberIntegerRegex})+|{ZeroToNineFullHalfRegex}+|十)\s*(以上)?))|(({ZeroToNineIntegerRegex}+|{ZeroToNineFullHalfRegex}+|十)\s*({RoundNumberIntegerRegex}\s*){1,2})\s*(([零]?({ZeroToNineIntegerRegex}+|{ZeroToNineFullHalfRegex}+|十)\s*{RoundNumberIntegerRegex}{0,1})\s*)*\s*(\s*(以上)?)
+  def: (?<!(第|だい))({RoundNumberIntegerRegex}+(({ZeroToNineIntegerRegex}+|{RoundNumberIntegerRegex})+|{ZeroToNineFullHalfRegex}+|十)(\s*(以上))?)|(({ZeroToNineIntegerRegex}+|{ZeroToNineFullHalfRegex}+|十)(\s*{RoundNumberIntegerRegex}){1,2})(\s*([零]?({ZeroToNineIntegerRegex}+|{ZeroToNineFullHalfRegex}+|十)(\s*{RoundNumberIntegerRegex}){0,1}))*(\s*(以上)?)
   references: [ZeroToNineIntegerRegex, ZeroToNineFullHalfRegex, RoundNumberIntegerRegex]
 SingleRegex: !nestedRegex
   def: (({ZeroToNineIntegerRegex}+|{ZeroToNineFullHalfRegex}+|十)(?={AllowListRegex}))
   references: [ZeroToNineIntegerRegex, ZeroToNineFullHalfRegex, AllowListRegex]
 AllIntRegex: !nestedRegex
-  def: (?<!(ダース))((((({ZeroToNineIntegerRegex}|[十百千])\s*{RoundNumberIntegerRegex}*)|(({ZeroToNineFullHalfRegex}\s*{RoundNumberIntegerRegex})|{RoundNumberIntegerRegex})){1,2}|({RoundNumberIntegerRegex}+))(\s*[以上]+)?)
-  references: [ZeroToNineIntegerRegex, ZeroToNineFullHalfRegex, RoundNumberIntegerRegex]
+  def: (?<!(ダース))({NotSingleRegex}|({ZeroToNineIntegerRegex}+|{RoundNumberIntegerRegex}+))
+  references: [NotSingleRegex, ZeroToNineIntegerRegex, RoundNumberIntegerRegex]
 PlaceHolderPureNumber: !simpleRegex
   def: \b
 PlaceHolderDefault: !simpleRegex
