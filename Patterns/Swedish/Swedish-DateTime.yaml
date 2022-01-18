@@ -236,7 +236,7 @@ RelaxedOnRegex: !simpleRegex
 PrefixWeekDayRegex: !simpleRegex
   def: (?#PrefixWeekDayRegex)(\s*((,?\s*på)|[-—–]))
 ThisRegex: !nestedRegex
-  def: (?#ThisRegex)\b(denna(\s*vecka{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|({WeekDayRegex}((\s+i)?\s+denna\s*vecka))\b
+  def: (?#ThisRegex)\b(denna(\s*vecka{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|({WeekDayRegex}((\s+i)?\s+(denna|den\s+här)\s*veckan?))\b
   references: [ WeekDayRegex, PrefixWeekDayRegex ]
 LastDateRegex: !nestedRegex
   def: (?#LastDateRegex)\b({PreviousPrefixRegex}(\s*vecka{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|({WeekDayRegex}(\s+(den\s+)?senaste\s*veckan))\b|({WeekDayRegex}\s+(i\s+)?{PreviousPrefixRegex}\s*veckan)\b|(i\s+{WeekDayRegex})\b

@@ -1134,20 +1134,21 @@
     ]
   },
   {
-    "Input": "Cortana kan försöka arrangera ett Skypesamtal antingen på fredag den här veckan eller på torsdag nästa vecka",
+    "Input": "Cortana kan försöka arrangera ett Skypesamtal antingen på fredag i den här veckan eller på torsdag i nästa vecka",
+    "debug": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "friday this week",
+        "Text": "fredag i den här veckan",
         "Type": "date",
-        "Start": 49,
-        "Length": 16
+        "Start": 58,
+        "Length": 23
       },
       {
-        "Text": "tuesday of next week",
+        "Text": "på torsdag i nästa vecka",
         "Type": "date",
-        "Start": 69,
-        "Length": 20
+        "Start": 88,
+        "Length": 24
       }
     ]
   },

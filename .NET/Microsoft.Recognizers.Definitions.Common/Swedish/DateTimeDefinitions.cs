@@ -115,7 +115,7 @@ namespace Microsoft.Recognizers.Definitions.Swedish
       public static readonly string OnRegex = $@"(?#OnRegex)(?<=\bden\s+)({DayRegex}s?)\b";
       public const string RelaxedOnRegex = @"(?#RelaxedOnRegex)(?<=\b(den|om|på)\s+)((?<day>(3[0-1]|[0-2]?\d)(?:(a|e)))s?)\b";
       public const string PrefixWeekDayRegex = @"(?#PrefixWeekDayRegex)(\s*((,?\s*på)|[-—–]))";
-      public static readonly string ThisRegex = $@"(?#ThisRegex)\b(denna(\s*vecka{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|({WeekDayRegex}((\s+i)?\s+denna\s*vecka))\b";
+      public static readonly string ThisRegex = $@"(?#ThisRegex)\b(denna(\s*vecka{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|({WeekDayRegex}((\s+i)?\s+(denna|den\s+här)\s*veckan?))\b";
       public static readonly string LastDateRegex = $@"(?#LastDateRegex)\b({PreviousPrefixRegex}(\s*vecka{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|({WeekDayRegex}(\s+(den\s+)?senaste\s*veckan))\b|({WeekDayRegex}\s+(i\s+)?{PreviousPrefixRegex}\s*veckan)\b|(i\s+{WeekDayRegex})\b";
       public static readonly string NextDateRegex = $@"(?#NextDateRegex)\b({NextPrefixRegex}(\s*vecka{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|((på\s+)?{WeekDayRegex}((\s+i)?\s+(den\s+kommande|(den\s+)?nästa)\s*vecka))\b";
       public static readonly string SpecialDayRegex = $@"(?#SpecialDayRegex)\b(i förrgår|i övermorgon|dagen\s+(före|efter)(?!=\s+dag)|((den\s+)?({RelativeRegex}|min)\s+dag)|igår|imorgon|idag)\b";
