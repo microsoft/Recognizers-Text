@@ -169,7 +169,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
             { @"Djiboutian franc", @"ジブチ・フラン" },
             { @"CFP franc", @"CFPフラン" },
             { @"Guinean franc", @"ギニア・フラン" },
-            { @"Swiss franc", @"スイス・フラン" },
+            { @"Swiss franc", @"スイス・フラン|スイスフラン" },
             { @"Rwandan franc", @"ルワンダ・フラン" },
             { @"Belgian franc", @"ベルギー・フラン" },
             { @"Rappen", @"Rappen" },
@@ -218,7 +218,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
             { @"Pound", @"ポンド" },
             { @"Pence", @"ペンス" },
             { @"Shilling", @"シリング" },
-            { @"United States dollar", @"ドル|USドル" },
+            { @"United States dollar", @"米ドル|USドル|ドル" },
             { @"East Caribbean dollar", @"東カリブ・ドル" },
             { @"Australian dollar", @"オーストラリア・ドル|オーストラリアドル" },
             { @"Bahamian dollar", @"バハマ・ドル" },
@@ -235,7 +235,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
             { @"Guyanese dollar", @"ガイアナ・ドル|ガイアナ・ドル" },
             { @"Hong Kong dollar", @"香港ドル" },
             { @"Macau Pataca", @"マカオ・パタカ|マカオ・パタカ" },
-            { @"New Taiwan dollar", @"ニュー台湾ドル|ニュー台湾ドル" },
+            { @"New Taiwan dollar", @"ニュー台湾ドル|ニュー台湾ドル|台湾ドル" },
             { @"Jamaican dollar", @"ジャマイカ・ドル|ジャマイカドル" },
             { @"Kiribati dollar", @"キリバス・ドル" },
             { @"Liberian dollar", @"リベリア・ドル|リベリアドル" },
@@ -243,7 +243,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
             { @"Surinamese dollar", @"スリナム・ドル|スリナムドル" },
             { @"Trinidad and Tobago dollar", @"トリニダード・トバゴ・ドル|トリニダードトバゴ・ドル" },
             { @"Tuvaluan dollar", @"ツバル・ドル|ツバルドル" },
-            { @"Chinese yuan", @"人民元" },
+            { @"Chinese yuan", @"人民元|元" },
             { @"Fen", @"分" },
             { @"Jiao", @"角" },
             { @"Finnish markka", @"フィンランド・マルカ" },
@@ -532,7 +532,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
             { @"Solomon Islands dollar", @"si$|si $" },
             { @"New Taiwan dollar", @"nt$|nt $" },
             { @"Samoan tālā", @"ws$" },
-            { @"Chinese yuan", @"￥" },
+            { @"Chinese yuan", @"￥|人民元" },
             { @"Japanese yen", @"¥|\" },
             { @"Turkish lira", @"₺" },
             { @"Euro", @"€" },
@@ -547,7 +547,8 @@ namespace Microsoft.Recognizers.Definitions.Japanese
             @"レク",
             @"プル",
             @"ブル",
-            @"\"
+            @"\",
+            @"元"
         };
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {

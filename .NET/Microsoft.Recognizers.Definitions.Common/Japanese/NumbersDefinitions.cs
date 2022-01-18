@@ -129,9 +129,9 @@ namespace Microsoft.Recognizers.Definitions.Japanese
       public const string PairRegex = @".*[対膳足]$";
       public const string RoundNumberIntegerRegex = @"(十|百|千|万(?!万)|億|兆)";
       public const string AllowListRegex = @"(。|，|、|（|）|”｜国|週間|時間|時|匹|キロ|トン|年|個|足|本|で|は|\s|$|つ|月|の|と)";
-      public static readonly string NotSingleRegex = $@"(?<!(第|だい))(({RoundNumberIntegerRegex}+(({ZeroToNineIntegerRegex}+|{RoundNumberIntegerRegex})+|{ZeroToNineFullHalfRegex}+|十)\s*(以上)?))|(({ZeroToNineIntegerRegex}+|{ZeroToNineFullHalfRegex}+|十)\s*({RoundNumberIntegerRegex}\s*){{1,2}})\s*(([零]?({ZeroToNineIntegerRegex}+|{ZeroToNineFullHalfRegex}+|十)\s*{RoundNumberIntegerRegex}{{0,1}})\s*)*\s*(\s*(以上)?)";
+      public static readonly string NotSingleRegex = $@"(?<!(第|だい))({RoundNumberIntegerRegex}+(({ZeroToNineIntegerRegex}+|{RoundNumberIntegerRegex})+|{ZeroToNineFullHalfRegex}+|十)(\s*(以上))?)|(({ZeroToNineIntegerRegex}+|{ZeroToNineFullHalfRegex}+|十)(\s*{RoundNumberIntegerRegex}){{1,2}})(\s*([零]?({ZeroToNineIntegerRegex}+|{ZeroToNineFullHalfRegex}+|十)(\s*{RoundNumberIntegerRegex}){{0,1}}))*(\s*(以上)?)";
       public static readonly string SingleRegex = $@"(({ZeroToNineIntegerRegex}+|{ZeroToNineFullHalfRegex}+|十)(?={AllowListRegex}))";
-      public static readonly string AllIntRegex = $@"(?<!(ダース))((((({ZeroToNineIntegerRegex}|[十百千])\s*{RoundNumberIntegerRegex}*)|(({ZeroToNineFullHalfRegex}\s*{RoundNumberIntegerRegex})|{RoundNumberIntegerRegex})){{1,2}}|({RoundNumberIntegerRegex}+))(\s*[以上]+)?)";
+      public static readonly string AllIntRegex = $@"(?<!(ダース))({NotSingleRegex}|({ZeroToNineIntegerRegex}+|{RoundNumberIntegerRegex}+))";
       public const string PlaceHolderPureNumber = @"\b";
       public const string PlaceHolderDefault = @"\D|\b";
       public static readonly string NumbersSpecialsChars = $@"((({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})\s*)?({ZeroToNineFullHalfRegex}))+(?=\b|\D)(?!(([\.．]{ZeroToNineFullHalfRegex}+)?\s*{AllMultiplierLookupRegex}))";

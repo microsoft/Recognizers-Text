@@ -226,7 +226,7 @@ CurrencySuffixList: !dictionary
     Djiboutian franc: ジブチ・フラン
     CFP franc: CFPフラン
     Guinean franc: ギニア・フラン
-    Swiss franc: スイス・フラン
+    Swiss franc: スイス・フラン|スイスフラン
     Rwandan franc: ルワンダ・フラン
     Belgian franc: ベルギー・フラン
     Rappen: Rappen
@@ -280,7 +280,7 @@ CurrencySuffixList: !dictionary
     Pence: ペンス
     Shilling: シリング
 #Dollar
-    United States dollar: ドル|USドル
+    United States dollar: 米ドル|USドル|ドル
     East Caribbean dollar: 東カリブ・ドル
     Australian dollar: オーストラリア・ドル|オーストラリアドル
     Bahamian dollar: バハマ・ドル
@@ -297,7 +297,7 @@ CurrencySuffixList: !dictionary
     Guyanese dollar: ガイアナ・ドル|ガイアナ・ドル
     Hong Kong dollar: 香港ドル
     Macau Pataca: マカオ・パタカ|マカオ・パタカ
-    New Taiwan dollar: ニュー台湾ドル|ニュー台湾ドル
+    New Taiwan dollar: ニュー台湾ドル|ニュー台湾ドル|台湾ドル
     Jamaican dollar: ジャマイカ・ドル|ジャマイカドル
     Kiribati dollar: キリバス・ドル
     Liberian dollar: リベリア・ドル|リベリアドル
@@ -306,7 +306,7 @@ CurrencySuffixList: !dictionary
     Trinidad and Tobago dollar: トリニダード・トバゴ・ドル|トリニダードトバゴ・ドル
     Tuvaluan dollar: ツバル・ドル|ツバルドル
 #Chinese yuan
-    Chinese yuan: 人民元
+    Chinese yuan: 人民元|元
     Fen: 分
     Jiao: 角
 #Additional
@@ -601,7 +601,7 @@ CurrencyPrefixList: !dictionary
     Solomon Islands dollar: si$|si $
     New Taiwan dollar: nt$|nt $
     Samoan tālā: ws$
-    Chinese yuan: ￥
+    Chinese yuan: ￥|人民元
     Japanese yen: ¥|\
     Turkish lira: ₺
     Euro: €
@@ -617,6 +617,7 @@ CurrencyAmbiguousValues: !list
     - プル
     - ブル
     - \
+    - 元
 AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:
