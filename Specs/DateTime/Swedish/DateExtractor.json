@@ -1011,118 +1011,130 @@
     ]
   },
   {
-    "Input": "jag åker tillbaka torsdag den sjuttonde",
+    "Input": "jag åker tillbaka torsdag den sjunde",
     "NotSupportedByDesign": "javascript,python,java",
     "Context": {
       "ReferenceDateTime": "2017-09-01T00:00:00"
     },
     "Results": [
       {
-        "Text": "torsdag den sjuttonde",
+        "Text": "torsdag den sjunde",
         "Type": "date",
         "Start": 18,
-        "Length": 21
+        "Length": 18
       }
     ]
   },
   {
     "Input": "jag åker tillbaka den andra söndagen",
+    "Comment": "Currently this resolves, BUT: Should this spec test for 'sunday 2nd' or 'the second sunday'? The english spec is: 'i'll go back second sunday'",
     "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "den andra söndagen",
+        "Text": "andra söndagen",
         "Type": "date",
-        "Start": 13,
-        "Length": 13
+        "Start": 22,
+        "Length": 14
       }
     ]
   },
   {
-    "Input": "jag åker tillbaka first sunday",
+    "Input": "jag åker tillbaka första söndagen",
+    "Comment": "Currently this resolves, BUT: Should this spec test for 'sunday 1st' or 'the first sunday'? The english spec is: 'i'll go back first sunday'",
     "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "first sunday",
+        "Text": "första söndagen",
         "Type": "date",
-        "Start": 13,
-        "Length": 12
+        "Start": 18,
+        "Length": 15
       }
     ]
   },
   {
-    "Input": "jag åker tillbaka third tuesday",
+    "Input": "jag åker tillbaka tredje torsdagen",
+    "Comment": "Same as above",
     "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "third tuesday",
+        "Text": "tredje torsdagen",
         "Type": "date",
-        "Start": 13,
-        "Length": 13
+        "Start": 18,
+        "Length": 16
       }
     ]
   },
   {
-    "Input": "jag åker tillbaka fifth sunday",
+    "Input": "jag åker tillbaka femte söndagen",
+    "Comment": "Same as above",
     "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "fifth sunday",
+        "Text": "femte söndagen",
         "Type": "date",
-        "Start": 13,
-        "Length": 12
+        "Start": 18,
+        "Length": 14
       }
     ]
   },
   {
-    "Input": "jag åker tillbaka sixth sunday",
+    "Input": "jag åker tillbaka sjätte söndagen",
+    "Comment": "Same as above",
     "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "sunday",
+        "Text": "sjätte söndagen",
         "Type": "date",
-        "Start": 19,
-        "Length": 6
+        "Start": 18,
+        "Length": 15
       }
     ]
   },
   {
-    "Input": "jag åker tillbaka tenth monday",
+    "Input": "jag åker tillbaka tionde måndagen",
+    "Comment": "Same as above",
     "NotSupportedByDesign": "javascript,python,java",
+    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "monday",
+        "Text": "tionde måndagen",
         "Type": "date",
-        "Start": 19,
-        "Length": 6
+        "Start": 18,
+        "Length": 15
       }
     ]
   },
   {
-    "Input": "jag åker tillbaka 20th of next month",
+    "Input": "jag åker tillbaka den 20 nästa månad",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "20th of next month",
+        "Text": "20 nästa månad",
         "Type": "date",
-        "Start": 13,
-        "Length": 18
+        "Start": 22,
+        "Length": 14
       }
     ]
   },
   {
-    "Input": "jag åker tillbaka 31st of this month",
+    "Input": "jag åker tillbaka den 31 denna månad",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "31st of this month",
+        "Text": "31 denna månad",
         "Type": "date",
-        "Start": 13,
-        "Length": 18
+        "Start": 22,
+        "Length": 14
       }
     ]
   },
   {
-    "Input": "Cortana could try to arrange a Skype call either friday this week or tuesday of next week",
+    "Input": "Cortana kan försöka arrangera ett Skypesamtal antingen på fredag den här veckan eller på torsdag nästa vecka",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
