@@ -37,6 +37,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Swedish
             this.ConnectorToken = string.Empty;
 
             AmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(NumbersWithUnitDefinitions.AmbiguityFiltersDict);
+            TemperatureAmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(NumbersWithUnitDefinitions.TemperatureAmbiguityFiltersDict);
+            DimensionAmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(NumbersWithUnitDefinitions.DimensionAmbiguityFiltersDict);
         }
 
         public abstract string ExtractType { get; }
