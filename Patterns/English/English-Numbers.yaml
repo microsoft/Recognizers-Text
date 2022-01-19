@@ -70,18 +70,18 @@ NumberOrdinalRegex: !simpleRegex
   def: (?:first|second|third|fourth|fifth|sixth|seventh|eighth|nine?th|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)
 RelativeOrdinalRegex: !simpleRegex
   def: (?<relativeOrdinal>(next|previous|current)\s+one|(the\s+second|next)\s+to\s+last|the\s+one\s+before\s+the\s+last(\s+one)?|the\s+last\s+but\s+one|(ante)?penultimate|last|next|previous|current)
-BasicOrdinalRegex: !nestedRegex
-  def: ({NumberOrdinalRegex}|{RelativeOrdinalRegex})
-  references: [ NumberOrdinalRegex, RelativeOrdinalRegex ]
 SuffixBasicOrdinalRegex: !nestedRegex
-  def: (?:(((({TensNumberIntegerRegex}(\s+(and\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(and\s+)?)*({TensNumberIntegerRegex}(\s+|\s*-\s*))?{BasicOrdinalRegex})
-  references: [ TensNumberIntegerRegex, ZeroToNineIntegerRegex, AnIntRegex, RoundNumberIntegerRegex, BasicOrdinalRegex ]
+  def: (?:(((({TensNumberIntegerRegex}(\s+(and\s+)?|\s*-\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\s+{RoundNumberIntegerRegex})+)\s+(and\s+)?)*({TensNumberIntegerRegex}(\s+|\s*-\s*))?{NumberOrdinalRegex})
+  references: [ TensNumberIntegerRegex, ZeroToNineIntegerRegex, AnIntRegex, RoundNumberIntegerRegex, NumberOrdinalRegex ]
 SuffixRoundNumberOrdinalRegex: !nestedRegex
   def: (?:({AllIntRegex}\s+){RoundNumberOrdinalRegex})
   references: [ AllIntRegex, RoundNumberOrdinalRegex ]
-AllOrdinalRegex: !nestedRegex
+AllOrdinalNumberRegex: !nestedRegex
   def: (?:{SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})
   references: [ SuffixBasicOrdinalRegex, SuffixRoundNumberOrdinalRegex ]
+AllOrdinalRegex: !nestedRegex
+  def: (?:{AllOrdinalNumberRegex}|{RelativeOrdinalRegex})
+  references: [ AllOrdinalNumberRegex, RelativeOrdinalRegex ]
 OrdinalSuffixRegex: !simpleRegex
   def: (?<=\b)(?:(\d*(1st|2nd|3rd|[4-90]th))|(1[1-2]th))(?=\b)
 OrdinalNumericRegex: !simpleRegex
@@ -108,11 +108,11 @@ RoundMultiplierRegex: !nestedRegex
   def: \b\s*((of\s+)?a\s+)?({RoundMultiplierWithFraction}|(?<multiplier>(?:hundred|thousand|lakh|crore)s?)$)
   references: [ RoundMultiplierWithFraction ]
 FractionNounRegex: !nestedRegex
-  def: (?<=\b)({AllIntRegex}\s+(and\s+)?)?(({AllIntRegex})(\s+|\s*-\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))s|halves|quarters)((\s+of\s+a)?\s+{RoundNumberIntegerRegex})?|(half(\s+a)?|quarter(\s+of\s+a)?)\s+{RoundNumberIntegerRegex})(?=\b)
-  references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex, RoundNumberIntegerRegex ]
+  def: (?<=\b)({AllIntRegex}\s+(and\s+)?)?(({AllIntRegex})(\s+|\s*-\s*)((({AllOrdinalNumberRegex})|({RoundNumberOrdinalRegex}))s|halves|quarters)((\s+of\s+a)?\s+{RoundNumberIntegerRegex})?|(half(\s+a)?|quarter(\s+of\s+a)?)\s+{RoundNumberIntegerRegex})(?=\b)
+  references: [ AllIntRegex, AllOrdinalNumberRegex, RoundNumberOrdinalRegex, RoundNumberIntegerRegex ]
 FractionNounWithArticleRegex: !nestedRegex
-  def: (?<=\b)(((({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\s+(and\s+)?)?(an?|one)(\s+|\s*-\s*)(?!\bfirst\b|\bsecond\b)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|(half|quarter)(((\s+of)?\s+a)?\s+{RoundNumberIntegerRegex})?))|(half))(?=\b)
-  references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex, RoundNumberIntegerRegex, RoundNumberIntegerRegexWithLocks ]
+  def: (?<=\b)(((({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\s+(and\s+)?)?(an?|one)(\s+|\s*-\s*)(?!\bfirst\b|\bsecond\b)(({AllOrdinalNumberRegex})|({RoundNumberOrdinalRegex})|(half|quarter)(((\s+of)?\s+a)?\s+{RoundNumberIntegerRegex})?))|(half))(?=\b)
+  references: [ AllIntRegex, AllOrdinalNumberRegex, RoundNumberOrdinalRegex, RoundNumberIntegerRegex, RoundNumberIntegerRegexWithLocks ]
 FractionPrepositionRegex: !nestedRegex
   def: (?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<![\.,])\d+))\s+(over|(?<ambiguousSeparator>in|out\s+of))\s+(?<denominator>({AllIntRegex})|(\d+)(?![\.,]))(?=\b)
   references: [ AllIntRegex, BaseNumbers.CommonCurrencySymbol ]

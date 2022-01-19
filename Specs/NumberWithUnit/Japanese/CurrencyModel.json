@@ -502,7 +502,7 @@
   },
   {
     "Input": "十ドル",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "十ドル",
@@ -519,7 +519,7 @@
   },
   {
     "Input": "8億人民元",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "8億人民元",
@@ -535,11 +535,11 @@
     ]
   },
   {
-    "Input": "東芝の再編はもう一万憶が必要、取引銀行に借り入れを申請した。",
-    "NotSupported": "dotnet, javascript, python, java",
+    "Input": "東芝の再編はもう一万億円が必要、取引銀行に借り入れを申請した。",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "一万憶",
+        "Text": "一万億円",
         "TypeName": "currency",
         "Resolution": {
           "isoCurrency": "JPY",
@@ -547,13 +547,13 @@
           "unit": "Japanese yen"
         },
         "Start": 8,
-        "End": 10
+        "End": 11
       }
     ]
   },
   {
     "Input": "その中で、四川省の彩民一口で一千万人民元の基本大賞あたりました。",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "一千万人民元",
@@ -570,7 +570,7 @@
   },
   {
     "Input": "1.0753ドルを交換します",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "1.0753ドル",
@@ -586,8 +586,8 @@
     ]
   },
   {
-    "Input": "ある人が江蘇省に15人民元でロト引いてたら1600萬の大あたりました　賞金プールは36.57憶人民元となってます",
-    "NotSupported": "dotnet, javascript, python, java",
+    "Input": "ある人が江蘇省に15人民元でロト引いてたら1600萬の大あたりました　賞金プールは36.57億人民元となってます",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "15人民元",
@@ -599,12 +599,23 @@
         },
         "Start": 8,
         "End": 12
+      },
+	  {
+        "Text": "36.57億人民元",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CNY",
+          "value": "3657000000",
+          "unit": "Chinese yuan"
+        },
+        "Start": 41,
+        "End": 49
       }
     ]
   },
   {
     "Input": "このスマホケースはお前の5ドルと俺の三人民元かかります",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "5ドル",
@@ -632,7 +643,7 @@
   },
   {
     "Input": "10円5銭",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "10円5銭",
@@ -649,7 +660,7 @@
   },
   {
     "Input": "このパソコンは2ドル3セントとなってます",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "2ドル3セント",
@@ -666,6 +677,7 @@
   },
   {
     "Input": "人民元八千元",
+    "Comment": "Currency does not support split units (e.g. '人民元30元')",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -683,7 +695,7 @@
   },
   {
     "Input": "4人民元　5ドル",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "4人民元",
@@ -711,7 +723,7 @@
   },
   {
     "Input": "1.0092スイスフランを交換します",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "1.0092スイスフラン",
@@ -727,11 +739,11 @@
     ]
   },
   {
-    "Input": "今回抽選後、賞金プールは36.57憶人民元まで到達",
-    "NotSupported": "dotnet, javascript, python, java",
+    "Input": "今回抽選後、賞金プールは36.57億人民元まで到達",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "36.57憶人民元",
+        "Text": "36.57億人民元",
         "TypeName": "currency",
         "Resolution": {
           "isoCurrency": "CNY",
@@ -744,11 +756,11 @@
     ]
   },
   {
-    "Input": "中国人民銀行の5306憶台湾ドルの預金証書が期限切れになりました",
-    "NotSupported": "dotnet, javascript, python, java",
+    "Input": "中国人民銀行の5306億台湾ドルの預金証書が期限切れになりました",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "5306憶台湾ドル",
+        "Text": "5306億台湾ドル",
         "TypeName": "currency",
         "Resolution": {
           "isoCurrency": "TWD",
@@ -762,7 +774,7 @@
   },
   {
     "Input": "宝安テクノロジーはIPE GROUP LIMITEDの株主15人と買収契約をサインしました。一株あたり1.95香港ドル",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "1.95香港ドル",
@@ -779,15 +791,15 @@
   },
   {
     "Input": "千円あります",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "千円",
         "TypeName": "currency",
         "Resolution": {
-          "isoCurrency": "CNY",
+          "isoCurrency": "JPY",
           "value": "1000",
-          "unit": "Chinese yuan"
+          "unit": "Japanese yen"
         },
         "Start": 0,
         "End": 1
@@ -796,7 +808,7 @@
   },
   {
     "Input": "このスマホケースは五元三角で大丈夫です",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "五元三角",
@@ -813,7 +825,7 @@
   },
   {
     "Input": "appleの割引一ドル",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "一ドル",
@@ -830,7 +842,7 @@
   },
   {
     "Input": "人民元　米ドル",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "人民元",
@@ -858,7 +870,7 @@
   },
   {
     "Input": "50元6角3分",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "50元6角3分",
@@ -874,11 +886,11 @@
     ]
   },
   {
-    "Input": "二千十六年、買収などの直接投資において、中国のキャッシュアウトフロー纯额は千二百憶ドルも到達",
-    "NotSupported": "dotnet, javascript, python, java",
+    "Input": "二千十六年、買収などの直接投資において、中国のキャッシュアウトフロー纯额は千二百億ドルも到達",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "千二百憶ドル",
+        "Text": "千二百億ドル",
         "TypeName": "currency",
         "Resolution": {
           "isoCurrency": "USD",
@@ -892,7 +904,7 @@
   },
   {
     "Input": "このパソコンは2ドルとなってます",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "2ドル",
@@ -909,7 +921,7 @@
   },
   {
     "Input": "445ナイラ到達で交換できます",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "445ナイラ",
@@ -926,7 +938,7 @@
   },
   {
     "Input": "1ユーロで大丈夫です",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "1ユーロ",
@@ -943,6 +955,7 @@
   },
   {
     "Input": "人民元五十元",
+    "Comment": "Currency does not support split units (e.g. '人民元30元')",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
@@ -960,14 +973,14 @@
   },
   {
     "Input": "金融市場で運用する資金運用事業を合わせた財投総額も過去最大の同二％減の四十九兆九千五百九十二億円となっている。",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "四十九兆九千五百九十二億円",
         "TypeName": "currency",
         "Resolution": {
-          "isoCurrency": "CNY",
-          "unit": "Chinese yuan",
+          "isoCurrency": "JPY",
+          "unit": "Japanese yen",
           "value": "49959200000000"
         },
         "Start": 35,

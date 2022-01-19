@@ -9,7 +9,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.German
     {
         public static readonly ImmutableDictionary<string, string> VolumeSuffixList = NumbersWithUnitDefinitions.VolumeSuffixList.ToImmutableDictionary();
 
-        private static readonly ImmutableList<string> AmbiguousValues = NumbersWithUnitDefinitions.AmbiguousVolumeUnitList.ToImmutableList();
+        public static readonly ImmutableList<string> AmbiguousValues = NumbersWithUnitDefinitions.AmbiguousVolumeUnitList.ToImmutableList();
 
         public VolumeExtractorConfiguration()
             : this(new CultureInfo(Culture.German))

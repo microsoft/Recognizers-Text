@@ -762,5 +762,100 @@
     "Input": "2:00 pm",
     "NotSupported": "java",
     "Results": []
+  },
+  {
+    "Input": "girar 90 grados",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "90 grados",
+        "Start": 6,
+        "End": 14,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Degree",
+          "subtype": "Angle",
+          "value": "90"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "girar a la izquierda 45 grados",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "45 grados",
+        "Start": 21,
+        "End": 29,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Degree",
+          "subtype": "Angle",
+          "value": "45"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "el angulo es 0.8rad",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "0.8rad",
+        "Start": 13,
+        "End": 18,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Radian",
+          "subtype": "Angle",
+          "value": "0,8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "dar media vuelta",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "media vuelta",
+        "Start": 4,
+        "End": 15,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Turn",
+          "subtype": "Angle",
+          "value": "0,5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "girar 3 vueltas",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3 vueltas",
+        "Start": 6,
+        "End": 14,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Turn",
+          "subtype": "Angle",
+          "value": "3"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "la temperatura es de 24 grados",
+    "NotSupported": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "El agua hierve a 100° Celsius",
+    "NotSupported": "java, javascript, python",
+    "Results": []
   }
 ]

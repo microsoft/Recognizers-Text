@@ -807,5 +807,100 @@
   {
     "Input": "nous chantons l'internationale",
     "Results": []
+  },
+  {
+    "Input": "tourner à 90 degrés",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "90 degrés",
+        "Start": 10,
+        "End": 18,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Degree",
+          "subtype": "Angle",
+          "value": "90"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "tourner à gauche à 45 degrés",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "45 degrés",
+        "Start": 19,
+        "End": 27,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Degree",
+          "subtype": "Angle",
+          "value": "45"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "L'angle est de 0.8rad",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "0.8rad",
+        "Start": 15,
+        "End": 20,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Radian",
+          "subtype": "Angle",
+          "value": "0,8"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "faire un demi tour",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "un demi tour",
+        "Start": 6,
+        "End": 17,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Turn",
+          "subtype": "Angle",
+          "value": "0,5"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "faire 3 tours",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3 tours",
+        "Start": 6,
+        "End": 12,
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Turn",
+          "subtype": "Angle",
+          "value": "3"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "la température est de 24 degrés",
+    "NotSupported": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "L'eau bout à 100° Celsius",
+    "NotSupported": "java, javascript, python",
+    "Results": []
   }
 ]

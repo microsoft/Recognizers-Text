@@ -810,57 +810,23 @@ namespace Microsoft.Recognizers.Text.DateTime
                     if (this.config.UnitMap.ContainsKey(srcUnit))
                     {
                         unitStr = this.config.UnitMap[srcUnit];
+                        ret.Timex = TimexUtility.GenerateDurationTimex(number, unitStr, BaseDurationParser.IsLessThanDay(unitStr));
+                        DateObject date = Constants.InvalidDate;
 
                         var beforeMatch = this.config.BeforeRegex.Match(suffix);
                         if (beforeMatch.Success && suffix.StartsWith(beforeMatch.Value, StringComparison.Ordinal))
                         {
-                            DateObject date;
-                            switch (unitStr)
-                            {
-                                case Constants.TimexDay:
-                                    date = referenceDate.AddDays(-number);
-                                    break;
-                                case Constants.TimexWeek:
-                                    date = referenceDate.AddDays(-7 * number);
-                                    break;
-                                case Constants.TimexMonthFull:
-                                    date = referenceDate.AddMonths(-number);
-                                    break;
-                                case Constants.TimexYear:
-                                    date = referenceDate.AddYears(-number);
-                                    break;
-                                default:
-                                    return ret;
-                            }
-
-                            ret.Timex = $"{DateTimeFormatUtil.LuisDate(date)}";
-                            ret.FutureValue = ret.PastValue = date;
-                            ret.Success = true;
-                            return ret;
+                            date = DurationParsingUtil.ShiftDateTime(ret.Timex, referenceDate, future: false);
                         }
 
                         var afterMatch = this.config.AfterRegex.Match(suffix);
                         if (afterMatch.Success && suffix.StartsWith(afterMatch.Value, StringComparison.Ordinal))
                         {
-                            DateObject date;
-                            switch (unitStr)
-                            {
-                                case Constants.TimexDay:
-                                    date = referenceDate.AddDays(number);
-                                    break;
-                                case Constants.TimexWeek:
-                                    date = referenceDate.AddDays(7 * number);
-                                    break;
-                                case Constants.TimexMonthFull:
-                                    date = referenceDate.AddMonths(number);
-                                    break;
-                                case Constants.TimexYear:
-                                    date = referenceDate.AddYears(number);
-                                    break;
-                                default:
-                                    return ret;
-                            }
+                            date = DurationParsingUtil.ShiftDateTime(ret.Timex, referenceDate, future: true);
+                        }
 
+                        if (date != Constants.InvalidDate)
+                        {
                             ret.Timex = $"{DateTimeFormatUtil.LuisDate(date)}";
                             ret.FutureValue = ret.PastValue = date;
                             ret.Success = true;

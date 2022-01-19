@@ -64,6 +64,10 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Japanese
 
         public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; } = null;
 
+        public Dictionary<Regex, Regex> TemperatureAmbiguityFiltersDict { get; } = null;
+
+        public Dictionary<Regex, Regex> DimensionAmbiguityFiltersDict { get; } = null;
+
         public abstract ImmutableDictionary<string, string> SuffixList { get; }
 
         public abstract ImmutableDictionary<string, string> PrefixList { get; }

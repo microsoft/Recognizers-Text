@@ -719,9 +719,28 @@ namespace Microsoft.Recognizers.Definitions.French
             @"g",
             @"oz"
         };
+      public static readonly Dictionary<string, string> AngleSuffixList = new Dictionary<string, string>
+        {
+            { @"Degree", @"degré|degrés|degre|degres|deg|°" },
+            { @"Radian", @"radian|radians|rad" },
+            { @"Turn", @"tour|tours" }
+        };
+      public static readonly IList<string> AmbiguousAngleUnitList = new List<string>
+        {
+            @"tour",
+            @"tours"
+        };
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {
             { @"\bcent\b", @"\bpour\s+cent\b" }
+        };
+      public static readonly Dictionary<string, string> TemperatureAmbiguityFiltersDict = new Dictionary<string, string>
+        {
+            { @"\b(deg(r[eé]s?)?|°)$", @"\b((deg(r[eé]s?)?|°)\s*(angle|rotation)|(tourn([eé]|er|ant)|rotation|angle)(\s+(\p{L}+|\d+)){0,4}\s*(deg(r[eé]s?)?\b|°))" }
+        };
+      public static readonly Dictionary<string, string> DimensionAmbiguityFiltersDict = new Dictionary<string, string>
+        {
+            { @"\b(deg(r[eé]s?)?|°)$", @"\b((deg(r[eé]s?)?|°)\s*(c(elsius|entigrade)?|f(ah?renheit)?)|(temp[eé]rature)(\s+(\p{L}+|\d+)){0,4}\s*(deg(r[eé]s?)?\b|°))" }
         };
     }
 }

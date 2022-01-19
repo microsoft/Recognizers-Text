@@ -550,5 +550,15 @@
         }
       }
     ]
+  },
+  {
+    "Input": "girare un angolo di 45 gradi",
+    "NotSupported": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "Ruota di 90°",
+    "NotSupported": "java, javascript, python",
+    "Results": []
   }
 ]

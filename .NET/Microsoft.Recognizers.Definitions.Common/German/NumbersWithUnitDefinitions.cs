@@ -815,9 +815,27 @@ namespace Microsoft.Recognizers.Definitions.German
             @"stone",
             @"dram"
         };
+      public static readonly Dictionary<string, string> AngleSuffixList = new Dictionary<string, string>
+        {
+            { @"Degree", @"grad|°" },
+            { @"Radian", @"radiant|rad" },
+            { @"Turn", @"turn" }
+        };
+      public static readonly IList<string> AmbiguousAngleUnitList = new List<string>
+        {
+            @"turn"
+        };
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {
             { @"null", @"null" }
+        };
+      public static readonly Dictionary<string, string> TemperatureAmbiguityFiltersDict = new Dictionary<string, string>
+        {
+            { @"\b(grad|°)$", @"\b((grad|°)\s*(winkel|dreh(ung|en|t)|gedreht)|(dreh(ung|en|t)|gedreht|winkel)(\s+(\p{L}+|\d+)){0,4}\s*(grad\b|°))" }
+        };
+      public static readonly Dictionary<string, string> DimensionAmbiguityFiltersDict = new Dictionary<string, string>
+        {
+            { @"\b(grad|°)$", @"\b((grad|°)\s*(c(elsius|entigrate)?|f(ah?renheit)?)|(temperatur)(\s+(\p{L}+|\d+)){0,4}\s*(grad\b|°))" }
         };
     }
 }

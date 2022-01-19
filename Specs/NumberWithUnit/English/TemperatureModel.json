@@ -598,5 +598,15 @@
     "Input": "SCP-173C",
     "NotSupported": "javascript",
     "Results": []
+  },
+  {
+    "Input": "turn a 45 degrees angle",
+    "NotSupported": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "Rotate 90°",
+    "NotSupported": "java, javascript, python",
+    "Results": []
   }
 ]

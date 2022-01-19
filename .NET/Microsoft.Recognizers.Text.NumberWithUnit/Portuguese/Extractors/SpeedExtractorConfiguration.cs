@@ -12,7 +12,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
     {
         public static readonly ImmutableDictionary<string, string> SpeedSuffixList = NumbersWithUnitDefinitions.SpeedSuffixList.ToImmutableDictionary();
 
-        private static readonly ImmutableList<string> AmbiguousValues = NumbersWithUnitDefinitions.AmbiguousSpeedUnitList.ToImmutableList();
+        public static readonly ImmutableList<string> AmbiguousValues = NumbersWithUnitDefinitions.AmbiguousSpeedUnitList.ToImmutableList();
 
         public SpeedExtractorConfiguration()
                : base(new CultureInfo(Culture.Portuguese))
