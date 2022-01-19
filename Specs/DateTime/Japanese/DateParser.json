@@ -2855,8 +2855,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
-    "IgnoreResolution": "true",
-    "Comment": "Intermittent failure due to the use of an unordred collection (timexUnitMap dictionary in DurationParsingUtil)",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -3577,7 +3575,6 @@
     "Context": {
       "ReferenceDateTime": "2018-08-21T08:00:00"
     },
-    "IgnoreResolution": "true",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
