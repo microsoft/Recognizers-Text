@@ -10,6 +10,7 @@ from .spanish import *
 from .chinese import *
 from .french import *
 from .japanese import *
+from .italian import *
 from .number_recognizer import *
 from .parser_factory import *
 from .utilities import *

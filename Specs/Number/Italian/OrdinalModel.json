@@ -46,7 +46,7 @@
   },
   {
     "Input": "11°",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "11°",
@@ -61,7 +61,7 @@
   },
   {
     "Input": "21esima",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "21esima",
@@ -76,7 +76,7 @@
   },
   {
     "Input": "30mo",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "30mo",
@@ -91,7 +91,7 @@
   },
   {
     "Input": "2°",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2°",
@@ -106,7 +106,7 @@
   },
   {
     "Input": "undicesimo",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "undicesimo",
@@ -121,7 +121,7 @@
   },
   {
     "Input": "ventesimo",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "ventesimo",
@@ -151,7 +151,7 @@
   },
   {
     "Input": "ventunesimo",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "ventunesimo",
@@ -196,7 +196,7 @@
   },
   {
     "Input": "Prenota un posto in prima classe per Seattle",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "prima",
@@ -226,7 +226,7 @@
   },
   {
     "Input": "quinto",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "quinto",
@@ -241,7 +241,7 @@
   },
   {
     "Input": "cento milionesimo",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "cento milionesimo",
@@ -256,7 +256,7 @@
   },
   {
     "Input": "trentesimo",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "trentesimo",
@@ -271,7 +271,7 @@
   },
   {
     "Input": "dodicesimo",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "dodicesimo",

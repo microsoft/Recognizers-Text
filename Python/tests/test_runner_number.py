@@ -27,9 +27,11 @@ def test_number_recognizer(culture, model, options,
 
         assert_verbose(actual.type_name, expected['TypeName'], spec_info)
         assert_verbose(actual.text, expected['Text'], spec_info)
-        assert_verbose(actual.start, expected['Start'], spec_info)
-        assert_verbose(actual.end, expected['End'], spec_info)
         assert_verbose(actual.resolution['value'], expected['Resolution']['value'], spec_info)
+
+        if 'Start' in expected and 'End' in expected:
+            assert_verbose(actual.start, expected['Start'], spec_info)
+            assert_verbose(actual.end, expected['End'], spec_info)
 
 
 def get_results(culture, model, source):

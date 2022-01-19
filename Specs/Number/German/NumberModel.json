@@ -784,7 +784,7 @@
   },
   {
     "Input": "Es gibt anderthalb Stücke",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "anderthalb",
@@ -799,7 +799,7 @@
   },
   {
     "Input": "Es gibt einundhalb Stücke",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "einundhalb",
@@ -814,7 +814,7 @@
   },
   {
     "Input": "Es gibt dreiviertel Stücke",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "dreiviertel",
@@ -829,7 +829,7 @@
   },
   {
     "Input": "Es gibt zweieinhalb Stücke",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "zweieinhalb",
@@ -844,7 +844,7 @@
   },
   {
     "Input": "Es gibt dreieinhalb Stücke",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "dreieinhalb",
@@ -859,7 +859,7 @@
   },
   {
     "Input": "das Ergebnis ist ⅙ und manchmal ½",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "⅙",
@@ -883,7 +883,7 @@
   },
   {
     "Input": "sie wusste hundert Neuigkeiten zu berichten",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "hundert",
@@ -898,7 +898,7 @@
   },
   {
     "Input": "Claudia Tausend wuchs in einer Arbeiterfamilie in Niederbayern auf",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "einer",
@@ -913,7 +913,7 @@
   },
   {
     "Input": "fünfzehn",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "fünfzehn",
@@ -928,7 +928,7 @@
   },
   {
     "Input": "fünfzehntausend",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "fünfzehntausend",
