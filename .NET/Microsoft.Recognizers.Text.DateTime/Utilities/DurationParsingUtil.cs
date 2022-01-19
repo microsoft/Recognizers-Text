@@ -67,7 +67,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var dict = ResolveDurationTimex(timex);
 
-            return dict.Keys.All(unit => !IsTimeDurationUnit(unit));
+            return dict.All(unit => !IsTimeDurationUnit(unit.Item1));
         }
 
         public static DateObject ShiftDateTime(string timex, DateObject referenceDateTime, bool future)
@@ -110,15 +110,18 @@ namespace Microsoft.Recognizers.Text.DateTime
             return date;
         }
 
-        private static DateObject GetShiftResult(IImmutableDictionary<string, double> timexUnitMap, DateObject referenceDate, bool future)
+        private static DateObject GetShiftResult(List<(string, double)> timexUnitMap, DateObject referenceDate, bool future)
         {
             var result = referenceDate;
             var futureOrPast = future ? 1 : -1;
 
+            // timexUnitMap needs to be an ordered collection because the result depends on the order of the shifts.
+            // For example "1 month 21 days later" produces different results depending on whether the day or month shift is applied first
+            // (when the reference month and the following month have different numbers of days).
             foreach (var pair in timexUnitMap)
             {
-                var unitStr = pair.Key;
-                var number = pair.Value;
+                var unitStr = pair.Item1;
+                var number = pair.Item2;
 
                 switch (unitStr)
                 {
@@ -154,9 +157,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             return result;
         }
 
-        private static ImmutableDictionary<string, double> ResolveDurationTimex(string timexStr)
+        private static List<(string, double)> ResolveDurationTimex(string timexStr)
         {
-            var ret = new Dictionary<string, double>();
+            var ret = new List<(string, double)>();
 
             // Resolve duration timex, such as P21DT2H (21 days 2 hours)
             var durationStr = timexStr.Replace(Constants.GeneralPeriodPrefix, string.Empty);
@@ -168,10 +171,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 if (double.TryParse(durationStr.Substring(0, durationStr.Length - 2), out var numVal))
                 {
-                    ret.Add(Constants.TimexBusinessDay, numVal);
+                    ret.Add((Constants.TimexBusinessDay, numVal));
                 }
 
-                return ret.ToImmutableDictionary();
+                return ret;
             }
 
             for (var idx = 0; idx < durationStr.Length; idx++)
@@ -187,7 +190,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         var numStr = durationStr.Substring(numberStart, idx - numberStart);
                         if (!double.TryParse(numStr, out var number))
                         {
-                            return new Dictionary<string, double>().ToImmutableDictionary();
+                            return new List<(string, double)>();
                         }
 
                         var srcTimexUnit = durationStr.Substring(idx, 1);
@@ -196,14 +199,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                             srcTimexUnit = Constants.TimexMonthFull;
                         }
 
-                        ret.Add(srcTimexUnit, number);
+                        ret.Add((srcTimexUnit, number));
                     }
 
                     numberStart = idx + 1;
                 }
             }
 
-            return ret.ToImmutableDictionary();
+            return ret;
         }
     }
 }
