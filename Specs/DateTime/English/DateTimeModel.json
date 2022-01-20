@@ -22980,5 +22980,30 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Rating where year is greater than 2015",
+    "Context": {
+      "ReferenceDateTime": "2022-01-10T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "greater than 2015",
+        "Start": 21,
+        "End": 37,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2015",
+              "Mod": "after",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "start": "2016-01-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

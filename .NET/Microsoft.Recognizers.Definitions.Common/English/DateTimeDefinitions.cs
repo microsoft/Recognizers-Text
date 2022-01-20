@@ -247,7 +247,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public const string InclusiveModPrepositions = @"(?<include>((on|in|at)\s+or\s+)|(\s+or\s+(on|in|at)))";
       public const string AroundRegex = @"(?:\b(?:around|circa)\s*?\b)(\s+the)?";
       public static readonly string BeforeRegex = $@"((\b{InclusiveModPrepositions}?(?:before|in\s+advance\s+of|prior\s+to|(no\s+later|earlier|sooner)\s+than|ending\s+(with|on)|by|(un)?till?|(?<include>as\s+late\s+as)){InclusiveModPrepositions}?\b\s*?)|(?<!\w|>)((?<include><\s*=)|<))(\s+the)?";
-      public static readonly string AfterRegex = $@"((\b{InclusiveModPrepositions}?((after(\s+on)?(?!\sfrom)|(?<!no\s+)later than)|(year greater than))(?!\s+or equal to){InclusiveModPrepositions}?\b\s*?)|(?<!\w|<)((?<include>>\s*=)|>))(\s+the)?";
+      public static readonly string AfterRegex = $@"((\b{InclusiveModPrepositions}?((after(\s+on)?(?!\sfrom)|(?<!no\s+)later\s+than)|((year\s+)?greater\s+than))(?!\s+or\s+equal\s+to){InclusiveModPrepositions}?\b\s*?)|(?<!\w|<)((?<include>>\s*=)|>))(\s+the)?";
       public const string SinceRegex = @"(?:(?:\b(?:since|after\s+or\s+equal\s+to|(starting|beginning)(\s)?(?:from|on|with)?|as\s+early\s+as|(any\s+time\s+)from)\b\s*?)|(?<!\w|<)(>=))(\s+the)?";
       public static readonly string SinceRegexExp = $@"({SinceRegex}|\bfrom(\s+the)?\b)";
       public const string AgoRegex = @"\b(ago|earlier|before\s+(?<day>yesterday|today))\b";
