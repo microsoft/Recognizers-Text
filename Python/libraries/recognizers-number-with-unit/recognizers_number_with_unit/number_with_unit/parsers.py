@@ -13,7 +13,7 @@ from recognizers_number.culture import CultureInfo
 from recognizers_number_with_unit.resources.base_currency import BaseCurrency
 
 UnitValue = namedtuple('UnitValue', ['number', 'unit'])
-CurrencyUnitValue = namedtuple('UnitValue', ['number', 'unit', 'iso_currency'])
+CurrencyUnitValue = namedtuple('CurrencyUnitValue', ['number', 'unit', 'iso_currency'])
 
 
 class NumberWithUnitParserConfiguration(ABC):

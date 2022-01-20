@@ -21,18 +21,24 @@ def main():
             except json.JSONDecodeError as e:
                 continue
 
-            total = len(test_cases)
-            supported = 0
+            total = 0
+            python_supported = 0
             for test_case in test_cases:
                 not_supported = test_case.get('NotSupportedByDesign', '')
                 not_supported += test_case.get('NotSupported', '')
+                if 'dotnet' in not_supported:
+                    continue
                 if 'python' not in not_supported:
-                    supported += 1
+                    python_supported += 1
+                total += 1
+
+            percent = round(python_supported / total * 100) if total else None
+
             test_coverage.append({
                 'entity': entity,
                 'lang': lang,
                 'model': path.stem,
-                'percent': round(supported / total * 100) if total else None,
+                'percent': percent,
             })
 
     languages = sorted(language_set)

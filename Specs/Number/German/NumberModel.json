@@ -242,7 +242,7 @@
   },
   {
     "Input": "Das sind einhundert Leute.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript,python",
     "Results": [
       {
         "Text": "einhundert",
@@ -332,7 +332,7 @@
   },
   {
     "Input": "einhunderteinunddreißig",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript,python",
     "Results": [
       {
         "Text": "einhunderteinunddreißig",
@@ -347,7 +347,7 @@
   },
   {
     "Input": "einhundertdrei",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript,python",
     "Results": [
       {
         "Text": "einhundertdrei",
@@ -362,7 +362,7 @@
   },
   {
     "Input": "eintausendeinhundertfünfzig",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript,python",
     "Results": [
       {
         "Text": "eintausendeinhundertfünfzig",
@@ -377,7 +377,7 @@
   },
   {
     "Input": "zwei Millionen eintausendeinhundertfünfzig",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript,python",
     "Results": [
       {
         "Text": "zwei millionen eintausendeinhundertfünfzig",
@@ -392,7 +392,7 @@
   },
   {
     "Input": "Eine Million dreihundertneunundneunzigtausendfuenfhundertneun",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript,python",
     "Results": [
       {
         "Text": "eine million dreihundertneunundneunzigtausendfuenfhundertneun",
@@ -407,7 +407,7 @@
   },
   {
     "Input": "Zwei Millionen dreihundertneunundneunzigtausendfuenfhundertneunundvierzig",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript,python",
     "Results": [
       {
         "Text": "zwei millionen dreihundertneunundneunzigtausendfuenfhundertneunundvierzig",
@@ -422,7 +422,7 @@
   },
   {
     "Input": "Die dreihundert waren wohl eher zehntausend",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript,python",
     "Results": [
       {
         "Text": "dreihundert",
@@ -446,7 +446,7 @@
   },
   {
     "Input": "Eine 8 Bit Variable kann bis zu zweihundertsechsundfuenfzig verschiedene Zustände annehmen. Das reicht aus um Zahlen von null bis zweihundertfünfundfünfzig darzustellen.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript,python",
     "Results": [
       {
         "Text": "eine",
@@ -497,7 +497,7 @@
   },
   {
     "Input": "Der hiernach folgende Text wird lang. Hier werden ein dutzend Zahlen benutzt um zu schauen wie sich das Programm bei längeren Strings verhält. Das Wort Ein wird als Zahl erkannt, was hier die erste wäre. Womit wir jetzt schon bei Zahl Nummer 3 wären. Zwei Millionen dreihundertsiebenundsiebzigtausendneunhundertachtundachtzig ist mit Leerzeichen 74 Zeichen lang. Schon ist die Hälfte durch. Jetzt folgt nur noch ein halbes dutzend Zahlen. Die Summe aus 2 und 6 ist acht. Das hier ist momentan Zeile Nummer vierhundertachtundachtzig und der Test müsste 13 Zahlen angeben. Was noch nicht ganz stimmt, da sich hier zwei Ordinale eingeschlichen haben, es sind also erst jetzt dreizehn.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript,python",
     "Results": [
       {
         "Text": "ein dutzend",
@@ -621,7 +621,7 @@
   {
     "Input": "Die Milchstraße besteht nach heutiger Schätzung aus ca. 100 bis 300 Milliarden Sternen.",
     "Comment": "Whitespace at the end of second result currently necessary because of the possible follow-up-numbers. Regex needs refinement here.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript,python",
     "Results": [
       {
         "Text": "100",
@@ -756,7 +756,7 @@
   },
   {
     "Input": "1 234 567,89 ist ein gültiges Zahlenformat.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript,python",
     "Results": [
       {
         "Text": "1 234 567,89",
@@ -784,7 +784,7 @@
   },
   {
     "Input": "Es gibt anderthalb Stücke",
-    "NotSupported": "java, javascript",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "anderthalb",
@@ -799,7 +799,7 @@
   },
   {
     "Input": "Es gibt einundhalb Stücke",
-    "NotSupported": "java, javascript",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "einundhalb",
@@ -814,7 +814,7 @@
   },
   {
     "Input": "Es gibt dreiviertel Stücke",
-    "NotSupported": "java, javascript",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "dreiviertel",
@@ -829,7 +829,7 @@
   },
   {
     "Input": "Es gibt zweieinhalb Stücke",
-    "NotSupported": "java, javascript",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "zweieinhalb",
@@ -844,7 +844,7 @@
   },
   {
     "Input": "Es gibt dreieinhalb Stücke",
-    "NotSupported": "java, javascript",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "dreieinhalb",
@@ -859,7 +859,7 @@
   },
   {
     "Input": "das Ergebnis ist ⅙ und manchmal ½",
-    "NotSupported": "java, javascript",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "⅙",
@@ -898,7 +898,7 @@
   },
   {
     "Input": "Claudia Tausend wuchs in einer Arbeiterfamilie in Niederbayern auf",
-    "NotSupported": "java, javascript",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "einer",
@@ -928,7 +928,7 @@
   },
   {
     "Input": "fünfzehntausend",
-    "NotSupported": "java, javascript",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "fünfzehntausend",

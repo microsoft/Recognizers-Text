@@ -35,7 +35,7 @@
   },
   {
     "Input": "fünfundzwanzigster",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript,python",
     "Results": [
       {
         "Text": "fünfundzwanzigster",
@@ -52,7 +52,7 @@
   },
   {
     "Input": "Sie ist die einhunderteinunddreißigste.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript,python",
     "Results": [
       {
         "Text": "einhunderteinunddreißigste",
@@ -306,7 +306,7 @@
   },
   {
     "Input": "Er ist siebenundzwanzigster in der Thronfolge, es wäre schon sehr unwahrscheinlich das die anderen sechsundzwanzig im Bälde das zeitliche segnen",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript,python",
     "Results": [
       {
         "Text": "siebenundzwanzigster",
@@ -340,7 +340,7 @@
   },
   {
     "Input": "erster, zweiter. achter Fisch von Achtern, sinnloses dritten!!! Wortsalat die siebte und Random stuff an der siebenundzwanzigsten Ampel links hinterm neunten Haus.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript,python",
     "Results": [
       {
         "Text": "erster",
@@ -507,7 +507,7 @@
   },
   {
     "Input": "Wäre unsere Sonne der jüngste Stern der Milchstraße, so wäre sie mindestens der einhundert Milliardste und höchstens der dreihundert Milliardste Stern.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript,python",
     "Results": [
       {
         "Text": "einhundert milliardste",
@@ -535,7 +535,7 @@
   },
   {
     "Input": "Wäre unsere Sonne der jüngste Stern der Milchstraße, so wäre sie mindestens der einhundert Millionste und höchstens der dreihundert Millionste Stern. Diese Aussage ist nicht korrekt.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript,python",
     "Results": [
       {
         "Text": "einhundert millionste",
@@ -563,7 +563,7 @@
   },
   {
     "Input": "Wäre unsere Sonne der jüngste Stern der Milchstraße, so wäre sie mindestens der einhundert Billionste und höchstens der dreihundert Billionste Stern. Diese Aussage ist nicht korrekt.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript,python",
     "Results": [
       {
         "Text": "einhundert billionste",
@@ -619,7 +619,7 @@
   },
   {
     "Input": "Sie sind der einhunderttausendste Besucher.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript,python",
     "Results": [
       {
         "Text": "einhunderttausendste",
