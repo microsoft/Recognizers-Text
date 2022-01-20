@@ -7,7 +7,7 @@ from recognizers_number.number import NumberOptions, NumberModel, NumberRecogniz
 from recognizers_number.number.models import NumberMode
 from recognizers_number.number.parsers import BaseNumberParser
 from recognizers_number.number.parser_factory import ParserType, AgnosticNumberParserFactory
-from recognizers_number.number.english.extractors import EnglishIntegerExtractor, EnglishNumberExtractor
+from recognizers_number.number.english.extractors import EnglishIntegerExtractor, EnglishMergedNumberExtractor
 from recognizers_number.number.english.parsers import EnglishNumberParserConfiguration
 
 
@@ -15,7 +15,7 @@ class TestInitializationNumberRecognizer():
     control_model = NumberModel(
         AgnosticNumberParserFactory.get_parser(
             ParserType.NUMBER, EnglishNumberParserConfiguration()),
-        EnglishNumberExtractor(NumberMode.PURE_NUMBER))
+        EnglishMergedNumberExtractor(NumberMode.PURE_NUMBER))
     english_culture = Culture.English
     spanish_culture = Culture.Spanish
     invalid_culture = "vo-id"
