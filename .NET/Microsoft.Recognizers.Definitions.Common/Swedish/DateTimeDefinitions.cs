@@ -46,9 +46,9 @@ namespace Microsoft.Recognizers.Definitions.Swedish
       public const string WrittenElevenToNineteenRegex = @"(?#WrittenElevenToNineteenRegex)(?:elva|tolv|(?:tret|fjor|fem|sex|sjut|ar|nit)ton)";
       public const string WrittenTensRegex = @"(?#WrittenTensRegex)(?:tio|tjugo|trettio|fyrtio|femtio|sextio|sjuttio|åttio|nittio)";
       public static readonly string WrittenNumRegex = $@"(?#WrittenNumRegex)(?:{WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|{WrittenTensRegex}(\s+{WrittenOneToNineRegex})?)";
-      public static readonly string WrittenCenturyFullYearRegex = $@"(?#WrittenCenturyFullYearRegex)(?:(ett|två)\s+tusen((\s+och)?\s+{WrittenOneToNineRegex}\s+hundra)?)";
-      public const string WrittenCenturyOrdinalYearRegex = @"(?#WrittenCenturyOrdinalYearRegex)(?:tjugo(\s+(ett|två))?|tio|elva|tolv|tretton|femton|arton|(?:fjor|sex|sjut|nit)(ton)?|ett|två|tre|fyra|fem|sju|åtta|nio)";
-      public static readonly string CenturyRegex = $@"(?#CenturyRegex)\b(?<century>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}(\s+hundra)?)\b";
+      public static readonly string WrittenCenturyFullYearRegex = $@"(?#WrittenCenturyFullYearRegex)(?:(ett|två)\s+tusen(\s+{WrittenOneToNineRegex}\s+hundra)?)";
+      public const string WrittenCenturyOrdinalYearRegex = @"(?#WrittenCenturyOrdinalYearRegex)(?:tjugo(\s+(ett|två))?|tio|elva|tolv|tretton|femton|arton|tjugo|(?:fjor|sex|sjut|nit)(ton)?|ett|två|tre|fyra|fem|sju|åtta|nio)";
+      public static readonly string CenturyRegex = $@"(?#CenturyRegex)\b(?<century>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}(\s*hundra)?)\b";
       public static readonly string LastTwoYearNumRegex = $@"(?#LastTwoYearNumRegex)(?:(noll\s+)?{WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|{WrittenTensRegex}(\s+{WrittenOneToNineRegex})?)";
       public static readonly string FullTextYearRegex = $@"(?#FullTextYearRegex)\b((?<firsttwoyearnum>{CenturyRegex})(\s+och)?\s+(?<lasttwoyearnum>{LastTwoYearNumRegex})\b|\b(?<firsttwoyearnum>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}\s+hundra))\b";
       public const string OclockRegex = @"(?#OclockRegex)(?<oclock>o\s*((’|‘|')\s*)?clock|sharp|prick)";
