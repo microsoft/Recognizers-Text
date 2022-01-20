@@ -2045,7 +2045,7 @@
   },
   {
     "Input": "423 0000 will be recognized as two numbers.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "423",
@@ -2222,7 +2222,7 @@
   },
   {
     "Input": "I can give you 3 hundred and 21 yuan.",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "3 hundred and 21",
@@ -2237,7 +2237,7 @@
   },
   {
     "Input": "4 thousand 3 hundred and 21 is a valid number.",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "4 thousand 3 hundred and 21",
@@ -2286,7 +2286,7 @@
   },
   {
     "Input": "4000 3 hundred and 21 are two valid numbers.",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "4000",
@@ -2355,7 +2355,7 @@
   },
   {
     "Input": "3 hundred and 2.12 hundred are two valid numbers.",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "3 hundred",
@@ -2425,7 +2425,7 @@
   },
   {
     "Input": "3 hundred and one is a valid numbers.",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "3 hundred and one",
@@ -2440,22 +2440,22 @@
   },
   {
     "Input": "The one you mentioned is invalid",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": []
   },
   {
     "Input": "This one you is not correct",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": []
   },
   {
     "Input": "Which one do you prefer?",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": []
   },
   {
     "Input": "That one is really good",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": []
   },
   {
@@ -2642,7 +2642,7 @@
   },
   {
     "Input": "I count 6 crore and two hundred",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "6 crore and two hundred",
@@ -2672,7 +2672,7 @@
   },
   {
     "Input": "That account revenue target is US$ 1MM",
-    "NotSupported": "python",
+    "NotSupported": "ython",
     "Results": [
       {
         "Text": "1mm",
@@ -2721,7 +2721,7 @@
   {
     "Input": "There are 12,567 words in this document",
     "Comment": "Example of Indian numbering system, the format may not need to be supported in other languages.",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "12,567",

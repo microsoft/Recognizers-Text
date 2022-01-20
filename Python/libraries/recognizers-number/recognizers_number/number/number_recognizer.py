@@ -6,7 +6,8 @@ from typing import List
 from recognizers_text import Culture, Recognizer, Model
 from recognizers_number.number.models import NumberMode, NumberModel, OrdinalModel, PercentModel, ModelResult
 from recognizers_number.number.parser_factory import ParserType, AgnosticNumberParserFactory
-from recognizers_number.number.english.extractors import EnglishNumberExtractor, EnglishOrdinalExtractor, EnglishPercentageExtractor
+from recognizers_number.number.english.extractors import EnglishNumberExtractor, EnglishOrdinalExtractor, \
+    EnglishPercentageExtractor, EnglishMergedNumberExtractor
 from recognizers_number.number.english.parsers import EnglishNumberParserConfiguration
 from recognizers_number.number.spanish.extractors import SpanishNumberExtractor, SpanishOrdinalExtractor, SpanishPercentageExtractor
 from recognizers_number.number.chinese.extractors import ChineseNumberExtractor, ChineseOrdinalExtractor, ChinesePercentageExtractor
@@ -39,7 +40,7 @@ class NumberRecognizer(Recognizer[NumberOptions]):
         self.register_model('NumberModel', Culture.English, lambda options: NumberModel(
             AgnosticNumberParserFactory.get_parser(
                 ParserType.NUMBER, EnglishNumberParserConfiguration()),
-            EnglishNumberExtractor(NumberMode.PURE_NUMBER)
+            EnglishMergedNumberExtractor(NumberMode.PURE_NUMBER)
         ))
         self.register_model('OrdinalModel', Culture.English, lambda options: OrdinalModel(
             AgnosticNumberParserFactory.get_parser(
