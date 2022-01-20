@@ -48,9 +48,9 @@ namespace Microsoft.Recognizers.Definitions.Swedish
       public static readonly string WrittenNumRegex = $@"(?#WrittenNumRegex)(?:{WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|{WrittenTensRegex}(\s+{WrittenOneToNineRegex})?)";
       public static readonly string WrittenCenturyFullYearRegex = $@"(?#WrittenCenturyFullYearRegex)(?:(ett|två)\s+tusen(\s+{WrittenOneToNineRegex}\s+hundra)?)";
       public const string WrittenCenturyOrdinalYearRegex = @"(?#WrittenCenturyOrdinalYearRegex)(?:tjugo(\s+(ett|två))?|tio|elva|tolv|tretton|femton|arton|tjugo|(?:fjor|sex|sjut|nit)(ton)?|ett|två|tre|fyra|fem|sju|åtta|nio)";
-      public static readonly string CenturyRegex = $@"(?#CenturyRegex)\b(?<century>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}(\s*hundra)?)\b";
+      public static readonly string CenturyRegex = $@"(?#CenturyRegex)\b(?<century>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}(\s*hundra)?)";
       public static readonly string LastTwoYearNumRegex = $@"(?#LastTwoYearNumRegex)(?:(noll\s+)?{WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|{WrittenTensRegex}(\s+{WrittenOneToNineRegex})?)";
-      public static readonly string FullTextYearRegex = $@"(?#FullTextYearRegex)\b((?<firsttwoyearnum>{CenturyRegex})(\s+och)?\s+(?<lasttwoyearnum>{LastTwoYearNumRegex})\b|\b(?<firsttwoyearnum>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}\s+hundra))\b";
+      public static readonly string FullTextYearRegex = $@"(?#FullTextYearRegex)\b((?<firsttwoyearnum>{CenturyRegex})(\s+och)?\s*(?<lasttwoyearnum>{LastTwoYearNumRegex})\b|\b(?<firsttwoyearnum>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}\s+hundra))\b";
       public const string OclockRegex = @"(?#OclockRegex)(?<oclock>o\s*((’|‘|')\s*)?clock|sharp|prick)";
       public const string SpecialDescRegex = @"(?#SpecialDescRegex)((?<ipm>)p\b)";
       public static readonly string AmDescRegex = $@"(?#AmDescRegex)(?:{BaseDateTime.BaseAmDescRegex})";
@@ -142,7 +142,7 @@ namespace Microsoft.Recognizers.Definitions.Swedish
       public static readonly string DateExtractorA = $@"(?#DateExtractorA)\b({DayPrefix}(\s*,)?\s+)?(({BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DayRegex})|({MonthRegex}\s*[/\\\-\.]\s*{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]\s*(the\s+)?(?<day>(?:3[0-1]|[1-2]\d|0?[1-9])(?:th|nd|rd|st)?))|({DayRegex}\s*[/\\\-\.]\s*{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]\s*{MonthRegex})|{DateExtractorNoSep})";
       public static readonly string OfMonth = $@"(?#OfMonth)^(\s*(dagen\s+)?i)?\s*{MonthRegex}";
       public static readonly string MonthEnd = $@"(?#MonthEnd)'{MonthRegex}\s*(den)?\s*$'";
-      public static readonly string WeekDayEnd = $@"(?#WeekDayEnd)'(den\s+här\s+)?{WeekDayRegex}\s*,?\s*$'";
+      public static readonly string WeekDayEnd = $@"(?#WeekDayEnd)(den\s+här\s+)?{WeekDayRegex}\s*,?\s*$";
       public static readonly string WeekDayStart = $@"(?#WeekDayStart)^\s+(på\s+)?{WeekDayRegex}\b";
       public const string RangeUnitRegex = @"(?#RangeUnitRegex)\b(?<unit>år|månad(er)?|veck(a|or)?)\b";
       public const string HourNumRegex = @"(?#HourNumRegex)\b(?<hournum>noll|ett|två|tre|fyra|fem|sex|sju|åtta|nio|tio|elva|tolv)\b";

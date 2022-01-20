@@ -1295,21 +1295,19 @@
     ]
   },
   {
-    "Input": "söndag den tjugoförste januari tjugohundraarton",
-    "debug": true,
+    "Input": "på söndag tjugoförste januari tjugohundraarton",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "söndag den tjugoförste januari tvåtusenarton",
+        "Text": "söndag tjugoförste januari tjugohundraarton",
         "Type": "date",
         "Start": 3,
-        "Length": 47
+        "Length": 43
       }
     ]
   },
   {
     "Input": "söndag, tjugoförste jan, tvåtusenarton",
-    "debug": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
