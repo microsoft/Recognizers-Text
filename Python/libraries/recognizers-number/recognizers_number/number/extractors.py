@@ -360,7 +360,7 @@ class BaseMergedNumberExtractor(Extractor):
                 else:
                     result[group].data = [ers[idx + 1]]
 
-        for idx in range(len(ers) - 1):
+        for idx in range(len(result)):
             inner_data = result[idx].data
             if inner_data and len(inner_data) == 1:
                 result[idx] = inner_data[0]
