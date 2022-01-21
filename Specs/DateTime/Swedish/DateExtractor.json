@@ -1387,7 +1387,7 @@
     ]
   },
   {
-    "Input": "Är de ledig två söndagar från nu?",
+    "Input": "Är du ledig två söndagar från nu?",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1423,14 +1423,14 @@
     ]
   },
   {
-    "Input": "Var var du två dagar före igår?",
+    "Input": "Var var du fyra dagar före igår?",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "två dagar före igår",
+        "Text": "fyra dagar före igår",
         "Type": "date",
         "Start": 11,
-        "Length": 19
+        "Length": 20
       }
     ]
   },
