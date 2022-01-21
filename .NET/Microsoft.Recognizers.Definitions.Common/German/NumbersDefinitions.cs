@@ -43,7 +43,7 @@ namespace Microsoft.Recognizers.Definitions.German
       public static readonly string AllIntRegexWithLocks = $@"((?<=\b){AllIntRegex}(?=\b))";
       public static readonly string AllIntRegexWithDozenSuffixLocks = $@"(?<=\b)(((ein\s+)?halbes\s+dutzend)|({AllIntRegex}\s+dutzend(e)?))(?=\b)";
       public const string RoundNumberOrdinalRegex = @"(hundertst(er|es|en|el|e)?|tausendst(er|es|en|el|e)?|millionst(er|es|en|el|e)?|milliardst(er|es|en|el|e)?|billionst(er|es|en|el|e)?)";
-      public const string RelativeOrdinalRegex = @"(?<relativeOrdinal>letzte[nr]?|nächste[nr]?|vorherige[nr]?|aktuelle[nr]?|jetzige[nr]?|vorletzte[nr]?|zuletzt|früher)";
+      public const string RelativeOrdinalRegex = @"(?<relativeOrdinal>(nächste|vorherige|aktuelle|jetzige|(vor|dritt)?letzte)[nr]?|zuletzt|früher)";
       public const string BasicOrdinalRegex = @"(zuerst|erst(er|es|en|e)|zweit(er|es|en|e)?|dritt(er|es|en|el|e)?|viert(er|es|en|el|e)?|fünft(er|es|en|el|e)?|fuenft(er|es|en|el|e)?|sechst(er|es|en|el|e)?|siebt(er|es|en|el|e)?|acht(er|es|en|el|e)?|neunt(er|es|en|el|e)?|zehnt(er|es|en|el|e)?|elft(er|es|en|el|e)?|zwölft(er|es|en|el|e)?|zwoelft(er|es|en|el|e)?|dreizehnt(er|es|en|el|e)?|vierzehnt(er|es|en|el|e)?|fünfzehnt(er|es|en|el|e)?|fuenfzehnt(er|es|en|el|e)?|sechzehnt(er|es|en|el|e)?|siebzehnt(er|es|en|el|e)?|achtzehnt(er|es|en|el|e)?|neunzehnt(er|es|en|el|e)?|zwanzigst(er|es|en|el|e)?|dreißigst(er|es|en|el|e)?|vierziegt(er|es|en|el|e)?|fünfzigst(er|es|en|el|e)?|fuenfzigst(er|es|en|el|e)?|sechzigst(er|es|en|el|e)?|siebzigst(er|es|en|el|e)?|achtzigst(er|es|en|el|e)?|neunzigst(er|es|en|el|e)?)";
       public static readonly string SuffixBasicOrdinalRegex = $@"({BasicOrdinalRegex}|({ZeroToNineIntegerRegex}(und|\s){BasicOrdinalRegex}))";
       public static readonly string SuffixRoundNumberOrdinalRegex = $@"(({AllIntRegex}\s*){RoundNumberOrdinalRegex})";
@@ -438,6 +438,9 @@ namespace Microsoft.Recognizers.Definitions.German
             { @"vorletzte", @"-1" },
             { @"vorletzten", @"-1" },
             { @"vorletzter", @"-1" },
+            { @"drittletzte", @"-2" },
+            { @"drittletzten", @"-2" },
+            { @"drittletzter", @"-2" },
             { @"zuletzt", @"0" },
             { @"früher", @"-1" }
         };
@@ -461,6 +464,9 @@ namespace Microsoft.Recognizers.Definitions.German
             { @"vorletzte", @"end" },
             { @"vorletzten", @"end" },
             { @"vorletzter", @"end" },
+            { @"drittletzte", @"end" },
+            { @"drittletzten", @"end" },
+            { @"drittletzter", @"end" },
             { @"zuletzt", @"end" },
             { @"früher", @"current" }
         };

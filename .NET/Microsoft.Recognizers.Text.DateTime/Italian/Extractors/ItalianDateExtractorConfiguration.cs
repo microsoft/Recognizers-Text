@@ -151,7 +151,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
 
             IntegerExtractor = Number.Italian.IntegerExtractor.GetInstance();
-            OrdinalExtractor = Number.Italian.OrdinalExtractor.GetInstance();
+            OrdinalExtractor = Number.Italian.OrdinalExtractor.GetInstance(numConfig);
             NumberParser = new BaseNumberParser(new ItalianNumberParserConfiguration(numConfig));
 
             DurationExtractor = new BaseDurationExtractor(new ItalianDurationExtractorConfiguration(this));

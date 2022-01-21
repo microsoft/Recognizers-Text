@@ -1,0 +1,84 @@
+[
+  {
+    "Input": "このノートの最後の文章を消去してください。",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": []
+  },
+  {
+    "Input": "あなたが言いたいのは”次”か”最後”ですか。",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": []
+  },
+  {
+    "Input": "最後から三番目を私に見せてください。",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": []
+  },
+  {
+    "Input": "最後の文章を消去しなさい。",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": []
+  },
+  {
+    "Input": "その前のものを私に見せてください。",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": []
+  },
+  {
+    "Input": "その次のものを私に見せてください。",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": []
+  },
+  {
+    "Input": "私は最後の2冊の本がほしいです。",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": []
+  },
+  {
+    "Input": "私は最後の1冊の本がほしいです。",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": []
+  },
+  {
+    "Input": "私は次の3冊の本がほしいです。",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": []
+  },
+  {
+    "Input": "その次のアイテムを私にください。",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": []
+  },
+  {
+    "Input": "私は最後のクッキーが欲しいです。",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": []
+  },
+  {
+    "Input": "私は最後から一つ前がほしいです。",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": []
+  },
+  {
+    "Input": "前のページに戻りなさい。",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": []
+  },
+  {
+    "Input": "第二百五十",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "第二百五十",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "250",
+          "offset": "250",
+          "relativeTo": "start"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  }
+]

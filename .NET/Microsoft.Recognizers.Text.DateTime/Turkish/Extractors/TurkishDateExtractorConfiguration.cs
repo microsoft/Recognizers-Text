@@ -142,7 +142,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
             var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
 
             IntegerExtractor = Number.Turkish.IntegerExtractor.GetInstance();
-            OrdinalExtractor = Number.Turkish.OrdinalExtractor.GetInstance();
+            OrdinalExtractor = Number.Turkish.OrdinalExtractor.GetInstance(numConfig);
 
             NumberParser = new BaseNumberParser(new TurkishNumberParserConfiguration(new BaseNumberOptionsConfiguration(numConfig)));
             DurationExtractor = new BaseDurationExtractor(new TurkishDurationExtractorConfiguration(this));

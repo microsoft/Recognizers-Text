@@ -1,0 +1,80 @@
+[
+  {
+    "Input": "radera sista meningen i anteckningen",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Menar du \"nästa\" eller \"sista\"?",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Menar du \"näste\" eller \"siste\"?",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Visa mig näst sista.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Gå till föregående sida.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Visa mig den som kommer efter sista.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Visa mig den som kommer före den siste.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Visa mig nästa.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Visa mig nästa möte.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Visa de 2 sista posterna.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Jag vill ha de nästa 3 böckerna.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Jag vill ha sista kakan.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "elfte",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "elfte",
+        "Start": 0,
+        "End": 4,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "11",
+          "relativeTo": "start",
+          "value": "11"
+        }
+      }
+
+    ]
+  }
+]

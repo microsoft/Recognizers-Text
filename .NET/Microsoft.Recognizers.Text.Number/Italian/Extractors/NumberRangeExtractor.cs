@@ -16,7 +16,7 @@ namespace Microsoft.Recognizers.Text.Number.Italian
 
         public NumberRangeExtractor(INumberOptionsConfiguration config)
             : base(NumberExtractor.GetInstance(),
-                   OrdinalExtractor.GetInstance(),
+                   OrdinalExtractor.GetInstance(new BaseNumberOptionsConfiguration(config.Culture, config.Options)),
                    new BaseNumberParser(new ItalianNumberParserConfiguration(config)),
                    config)
         {

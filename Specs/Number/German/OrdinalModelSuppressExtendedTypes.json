@@ -1,0 +1,69 @@
+[
+  {
+    "Input": "lösche den letzten Satz in der Notiz",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Meinst du \"nächster\" oder \"letzter\"?",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Zeig mir das vorletzte.",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Zeig mir das drittletzte.",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Letzten Satz streichen.",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Zeig mir das vorherige.",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Zeig mir das nächste.",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Ich möchte die letzten beiden Bücher.",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Ich möchte die nächsten 3 Bücher.",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Blättern Sie zur vorherigen Seite.",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "fünfundzwanzigster",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "fünfundzwanzigster",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "25",
+          "offset":"25",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 17
+      }
+    ]
+  }
+]

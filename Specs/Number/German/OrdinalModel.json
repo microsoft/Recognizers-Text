@@ -702,6 +702,23 @@
     ]
   },
   {
+    "Input": "Zeig mir das drittletzte.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "drittletzte",
+        "Start": 13,
+        "End": 23,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-2",
+          "relativeTo": "end",
+          "value": "end-2"
+        }
+      }
+    ]
+  },
+  {
     "Input": "Letzten Satz streichen.",
     "NotSupported": "javascript, python, java",
     "Results": [

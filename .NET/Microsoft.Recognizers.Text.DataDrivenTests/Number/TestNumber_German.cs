@@ -11,6 +11,13 @@ namespace Microsoft.Recognizers.Text.Number.Tests
     {
         [NetCoreTestDataSource]
         [TestMethod]
+        public void OrdinalModelSuppressExtendedTypes(TestModel testSpec)
+        {
+            TestNumber(testSpec);
+        }
+
+        [NetCoreTestDataSource]
+        [TestMethod]
         public void NumberModel(TestModel testSpec)
         {
             TestNumber(testSpec);

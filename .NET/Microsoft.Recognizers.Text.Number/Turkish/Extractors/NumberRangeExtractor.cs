@@ -16,7 +16,7 @@ namespace Microsoft.Recognizers.Text.Number.Turkish
         public NumberRangeExtractor(INumberOptionsConfiguration config)
             : base(
                    NumberExtractor.GetInstance(),
-                   OrdinalExtractor.GetInstance(),
+                   OrdinalExtractor.GetInstance(new BaseNumberOptionsConfiguration(config.Culture, config.Options)),
                    new BaseNumberParser(new TurkishNumberParserConfiguration(config)),
                    config)
         {

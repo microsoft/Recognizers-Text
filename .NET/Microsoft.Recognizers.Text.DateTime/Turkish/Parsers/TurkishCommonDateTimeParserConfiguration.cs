@@ -39,7 +39,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 
             CardinalExtractor = Number.Turkish.CardinalExtractor.GetInstance();
             IntegerExtractor = Number.Turkish.IntegerExtractor.GetInstance();
-            OrdinalExtractor = Number.Turkish.OrdinalExtractor.GetInstance();
+            OrdinalExtractor = Number.Turkish.OrdinalExtractor.GetInstance(numConfig);
 
             NumberParser = new BaseNumberParser(new TurkishNumberParserConfiguration(numConfig));
 

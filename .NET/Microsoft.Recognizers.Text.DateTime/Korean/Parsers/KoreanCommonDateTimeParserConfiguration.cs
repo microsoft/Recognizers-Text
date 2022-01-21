@@ -34,7 +34,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
 
             IntegerExtractor = new IntegerExtractor(numConfig);
             CardinalExtractor = new CardinalExtractor(numConfig);
-            OrdinalExtractor = new OrdinalExtractor(numConfig);
+            OrdinalExtractor = Number.Korean.OrdinalExtractor.GetInstance(numConfig);
 
             NumberParser = new BaseCJKNumberParser(new KoreanNumberParserConfiguration(numConfig));
 
