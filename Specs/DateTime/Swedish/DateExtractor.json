@@ -1444,7 +1444,8 @@
     ]
   },
   {
-    "Input": "Cortana, vill du boka in ett möte på fredag(15 juni) med Jim",
+    "Input": "Cortana, vill du boka in ett möte på fredag 15 juni med Jim",
+    "debug": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Context": {
       "ReferenceDateTime": "2018-06-14T00:00:00"
@@ -1452,15 +1453,15 @@
     "NotSupported": "python",
     "Results": [
       {
-        "Text": "på fredag(15 juni)",
+        "Text": "fredag 15 juni",
         "Type": "date",
-        "Start": 45,
-        "Length": 19
+        "Start": 37,
+        "Length": 14
       }
     ]
   },
   {
-    "Input": "Cortana, please set up a Skype call sometime på fredag (15 juni) with Jim",
+    "Input": "Cortana, vill du boka in ett möte på fredag(15-jun) med Jim",
     "NotSupportedByDesign": "javascript,python,java",
     "Context": {
       "ReferenceDateTime": "2018-06-14T00:00:00"
@@ -1468,10 +1469,58 @@
     "NotSupported": "python",
     "Results": [
       {
-        "Text": "this friday (jun-15)",
+        "Text": "fredag(15-jun)",
         "Type": "date",
-        "Start": 45,
-        "Length": 20
+        "Start": 37,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, vill du boka in ett möte på fredag (15-jun) with Jim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Context": {
+      "ReferenceDateTime": "2018-06-14T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "fredag (15-jun)",
+        "Type": "date",
+        "Start": 37,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, vill du boka in ett möte på fredag(15 jun) med Jim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Context": {
+      "ReferenceDateTime": "2018-06-14T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "fredag(15 jun)",
+        "Type": "date",
+        "Start": 37,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, vill du boka in ett möte på fredag (15 jun) with Jim",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Context": {
+      "ReferenceDateTime": "2018-06-14T00:00:00"
+    },
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "fredag (15 jun)",
+        "Type": "date",
+        "Start": 37,
+        "Length": 15
       }
     ]
   },

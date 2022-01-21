@@ -128,7 +128,7 @@ namespace Microsoft.Recognizers.Definitions.Swedish
       public const string DatePreposition = @"(?#DatePreposition)\b(den|i)";
       public static readonly string DateExtractorYearTermRegex = $@"(?#DateExtractorYearTermRegex)(\s+|\s*[/\\.,-]\s*|\s+under\s+){DateYearRegex}";
       public static readonly string DayPrefix = $@"(?#DayPrefix)\b({WeekDayRegex}|{SpecialDayRegex})\b";
-      public static readonly string DateExtractor1 = $@"(?#DateExtractor1)\b({DayPrefix}\s*[,-]?\s*)?(({MonthRegex}[\.]?\s*[/\\.,-]?\s*{DayRegex})|(\({MonthRegex}\s*[-./]\s*{DayRegex}\)))(\s*\(\s*{DayPrefix}\s*\))?({DateExtractorYearTermRegex}\b)?";
+      public static readonly string DateExtractor1 = $@"(?#DateExtractor1)\b({DayPrefix}\s*[,-]?\s*)?(({DayRegex}[\.]?\s*[/\\.,-]?\s*{MonthRegex})|(\({DayRegex}\s*[-./ ]\s*{MonthRegex}\)))(\s*\(\s*{DayPrefix}\s*\))?({DateExtractorYearTermRegex}\b)?";
       public static readonly string DateExtractor3 = $@"(?#DateExtractor3)\b({DayPrefix}(\s+|\s*,\s*))?({DayRegex}[\.]?(\s+|\s*[-,/]\s*|\s+i\s+){MonthRegex}[\.]?((\s+i)?{DateExtractorYearTermRegex})?|{BaseDateTime.FourDigitYearRegex}\s*[-./]?\s*(den\s+)?(?<day>(?:3[0-1]|[1-2]\d|0?[1-9])(?:(a|e))?)[\.]?(\s+|\s*[-,/]\s*|\s+i\s+){MonthRegex}[\.]?)\b";
       public static readonly string DateExtractor4 = $@"(?#DateExtractor4)\b{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}[\.]?\s*[/\\\-]\s*{DateYearRegex}";
       public static readonly string DateExtractor5 = $@"(?#DateExtractor5)\b({DayPrefix}(\s*,)?\s+)?{DayRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)";

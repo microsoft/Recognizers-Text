@@ -273,7 +273,7 @@ DayPrefix: !nestedRegex
   def: (?#DayPrefix)\b({WeekDayRegex}|{SpecialDayRegex})\b
   references: [ WeekDayRegex, SpecialDayRegex ]
 DateExtractor1: !nestedRegex
-  def: (?#DateExtractor1)\b({DayPrefix}\s*[,-]?\s*)?(({MonthRegex}[\.]?\s*[/\\.,-]?\s*{DayRegex})|(\({MonthRegex}\s*[-./]\s*{DayRegex}\)))(\s*\(\s*{DayPrefix}\s*\))?({DateExtractorYearTermRegex}\b)?
+  def: (?#DateExtractor1)\b({DayPrefix}\s*[,-]?\s*)?(({DayRegex}[\.]?\s*[/\\.,-]?\s*{MonthRegex})|(\({DayRegex}\s*[-./ ]\s*{MonthRegex}\)))(\s*\(\s*{DayPrefix}\s*\))?({DateExtractorYearTermRegex}\b)?
   references: [ DayPrefix, MonthRegex, DayRegex, DateExtractorYearTermRegex ]
 DateExtractor3: !nestedRegex
   def: (?#DateExtractor3)\b({DayPrefix}(\s+|\s*,\s*))?({DayRegex}[\.]?(\s+|\s*[-,/]\s*|\s+i\s+){MonthRegex}[\.]?((\s+i)?{DateExtractorYearTermRegex})?|{BaseDateTime.FourDigitYearRegex}\s*[-./]?\s*(den\s+)?(?<day>(?:3[0-1]|[1-2]\d|0?[1-9])(?:(a|e))?)[\.]?(\s+|\s*[-,/]\s*|\s+i\s+){MonthRegex}[\.]?)\b
