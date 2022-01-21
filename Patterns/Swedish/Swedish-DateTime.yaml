@@ -100,7 +100,7 @@ YearRegex: !nestedRegex
   def: (?#YearRegex)(?:{BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})
   references: [ BaseDateTime.FourDigitYearRegex, FullTextYearRegex ]
 WeekDayRegex: !simpleRegex
-  def: (?#WeekDayRegex)\b(?<weekday>(?:sö(n)?|må(n)?|ti(s)?|on(s)?|to(rs)?|fr(e)?|lö(r)?)(d(ag(en)?)?)?)s?\b
+  def: (?#WeekDayRegex)\b(?<weekday>(?:sö(n)?|må(n)?|ti(s)?|on(s)?|to(rs)?|fr(e)?|lö(r)?)(d(ag(en|ar)?)?)?)s?\b
 SingleWeekDayRegex: !simpleRegex
   def: (?#SingleWeekDayRegex)\b(?<weekday>(?<!(easter|palm)\s+)söndag|(?<!easter\s+)lördag|(?<!(easter|cyber)\s+)måndag|mån|(?<!black\s+)fredag|fri|fre|(?:ti(sd?)?|tors?)(dag)?|tor|on(sdag)?|ons?|((?<=på\s+)(lör|sön)))\b
 RelativeMonthRegex: !nestedRegex
