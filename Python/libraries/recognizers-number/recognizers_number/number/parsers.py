@@ -250,7 +250,7 @@ class BaseNumberParser(Parser):
                     handle = front + handle[tmp_index + len(match):]
                     tmp_index = handle.find(match.group(), start_index)
 
-        # Scale used in the calculate of double
+        # Scale used in the calculate of double.
         result.value = self._get_digital_value(handle, power)
 
         return result
