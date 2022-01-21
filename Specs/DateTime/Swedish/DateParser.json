@@ -1,12 +1,12 @@
-[
+﻿[
   {
-    "Input": "I'll go back on 15",
+    "Input": "jag åker tillbaka den 15",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "Results": [
       {
-        "Text": "15",
+        "Text": "den 15",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-15",
@@ -17,100 +17,54 @@
             "date": "2016-10-15"
           }
         },
-        "Start": 16,
-        "Length": 2
-      }
-    ]
-  },
-  {
-    "Input": "I'll go back Oct. 2",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "Results": [
-      {
-        "Text": "Oct. 2",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-10-02",
-          "FutureResolution": {
-            "date": "2017-10-02"
-          },
-          "PastResolution": {
-            "date": "2016-10-02"
-          }
-        },
-        "Start": 13,
+        "Start": 18,
         "Length": 6
       }
     ]
   },
   {
-    "Input": "I'll go back Oct-2",
+    "Input": "jag åker tillbaka 22 april",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "Results": [
       {
-        "Text": "Oct-2",
+        "Text": "22 april",
         "Type": "date",
         "Value": {
-          "Timex": "XXXX-10-02",
+          "Timex": "XXXX-04-22",
           "FutureResolution": {
-            "date": "2017-10-02"
+            "date": "2017-04-22"
           },
           "PastResolution": {
-            "date": "2016-10-02"
+            "date": "2016-04-22"
           }
         },
-        "Start": 13,
-        "Length": 5
+        "Start": 18,
+        "Length": 8
       }
     ]
   },
   {
-    "Input": "I'll go back Oct/2",
+    "Input": "jag åker tillbaka den 12 januari, 2016",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "Results": [
       {
-        "Text": "Oct/2",
+        "Text": "den 12 januari, 2016",
         "Type": "date",
         "Value": {
-          "Timex": "XXXX-10-02",
+          "Timex": "2016-01-12",
           "FutureResolution": {
-            "date": "2017-10-02"
+            "date": "2016-01-12"
           },
           "PastResolution": {
-            "date": "2016-10-02"
+            "date": "2016-01-12"
           }
         },
-        "Start": 13,
-        "Length": 5
-      }
-    ]
-  },
-  {
-    "Input": "I'll go back October. 2",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "Results": [
-      {
-        "Text": "October. 2",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-10-02",
-          "FutureResolution": {
-            "date": "2017-10-02"
-          },
-          "PastResolution": {
-            "date": "2016-10-02"
-          }
-        },
-        "Start": 13,
-        "Length": 10
+        "Start": 18,
+        "Length": 20
       }
     ]
   },
