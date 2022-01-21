@@ -66,7 +66,7 @@ namespace Microsoft.Recognizers.Definitions.Swedish
       public const string MonthRegex = @"(?#MonthRegex)\b(?<month>apr(il)?|aug(usti)?|dec(ember)?|feb(ruari)?|jan(uari)?|juli?|juni?|mar(s)?|maj|nov(ember)?|okt(ober)?|sept(ember)?|sep)(?!\p{L})";
       public static readonly string WrittenMonthRegex = $@"(?#WrittenMonthRegex)((i\s+)?{MonthRegex}(\s+månad)?)";
       public static readonly string MonthSuffixRegex = $@"(?#MonthSuffixRegex)(?<msuf>(?:(i|på|under)\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))";
-      public const string DateUnitRegex = @"(?#DateUnitRegex)(?<unit>(decenni(um)?|år|(?<uoy>månad|vecka?)|(?<business>(arbets\s+|vecka?\s*))?(?<uoy>dag)|weekend|helg)(?<plural>(s|or|er|ar|e?n))?|(?<=\s+\d{1,4})[ymwd])\b";
+      public const string DateUnitRegex = @"(?#DateUnitRegex)(?<unit>(decenni(um)?|år|(?<uoy>månad|vecka?)|(?<business>(arbets\s*|vecka?\s*))?(?<uoy>dag)|weekend|helg)(?<plural>(s|or|er|ar|e?n))?|(?<=\s+\d{1,4})[ymwd])\b";
       public const string DateTokenPrefix = @"den ";
       public const string TimeTokenPrefix = @"kl ";
       public const string TokenBeforeDate = @"den ";
@@ -255,7 +255,7 @@ namespace Microsoft.Recognizers.Definitions.Swedish
       public const string BeforeAfterRegex = @"(?#BeforeAfterRegex)\b((?<before>före)|(?<after>från|efter))\b";
       public static readonly string ModPrefixRegex = $@"(?#ModPrefixRegex)\b({RelativeRegex}|{AroundRegex}|{BeforeRegex}|{AfterRegex}|{SinceRegex})\b";
       public static readonly string ModSuffixRegex = $@"(?#ModSuffixRegex)\b({AgoRegex}|{LaterRegex}|{BeforeAfterRegex}|{FutureSuffixRegex}|{PastSuffixRegex})\b";
-      public const string InConnectorRegex = @"(?#InConnectorRegex)\b(i)\b";
+      public const string InConnectorRegex = @"(?#InConnectorRegex)\b(om)\b";
       public static readonly string SinceYearSuffixRegex = $@"(?#SinceYearSuffixRegex)(^\s*{SinceRegex}(\s*år(et)?\s*)?{YearSuffix})";
       public static readonly string WithinNextPrefixRegex = $@"(?#WithinNextPrefixRegex)\b(inom(\s+de(n|t))?(\s+(?<next>{NextPrefixRegex}))?)\b";
       public const string TodayNowRegex = @"\b(idag|nu|nuvarande (datum|tid))\b";

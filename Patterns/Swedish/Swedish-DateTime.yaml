@@ -115,7 +115,7 @@ MonthSuffixRegex: !nestedRegex
   def: (?#MonthSuffixRegex)(?<msuf>(?:(i|på|under)\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))
   references: [ RelativeMonthRegex, WrittenMonthRegex ]
 DateUnitRegex: !simpleRegex
-  def: (?#DateUnitRegex)(?<unit>(decenni(um)?|år|(?<uoy>månad|vecka?)|(?<business>(arbets\s+|vecka?\s*))?(?<uoy>dag)|weekend|helg)(?<plural>(s|or|er|ar|e?n))?|(?<=\s+\d{1,4})[ymwd])\b
+  def: (?#DateUnitRegex)(?<unit>(decenni(um)?|år|(?<uoy>månad|vecka?)|(?<business>(arbets\s*|vecka?\s*))?(?<uoy>dag)|weekend|helg)(?<plural>(s|or|er|ar|e?n))?|(?<=\s+\d{1,4})[ymwd])\b
 DateTokenPrefix: 'den '
 TimeTokenPrefix: 'kl '
 TokenBeforeDate: 'den '
@@ -610,7 +610,7 @@ ModSuffixRegex: !nestedRegex
   def: (?#ModSuffixRegex)\b({AgoRegex}|{LaterRegex}|{BeforeAfterRegex}|{FutureSuffixRegex}|{PastSuffixRegex})\b
   references: [AgoRegex, LaterRegex, BeforeAfterRegex, FutureSuffixRegex, PastSuffixRegex]
 InConnectorRegex: !simpleRegex
-  def: (?#InConnectorRegex)\b(i)\b
+  def: (?#InConnectorRegex)\b(om)\b
 SinceYearSuffixRegex: !nestedRegex
   def: (?#SinceYearSuffixRegex)(^\s*{SinceRegex}(\s*år(et)?\s*)?{YearSuffix})
   references: [ SinceRegex, YearSuffix ]
