@@ -1233,7 +1233,6 @@
   {
     "Input": "jag lämnade här för 2 år 1 månad och 21 dagar sedan",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "2 år 1 månad och 21 dagar sedan",
@@ -1246,7 +1245,6 @@
   {
     "Input": "jag kommer att avresa härifrån 2 år och 21 dagar senare",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "2 år och 21 dagar senare",
@@ -1259,7 +1257,6 @@
   {
     "Input": "jag avreste härifrån för 1 månad 2 år och 21 dagar sedan",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "1 månad 2 år och 21 dagar sedan",
@@ -1272,7 +1269,6 @@
   {
     "Input": "jag avreste härifrån den 20 nästa månad",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "20 nästa månad",
@@ -1357,7 +1353,6 @@
   {
     "Input": "den tionde september, två tusen",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "tionde september, två tusen",
@@ -1394,7 +1389,6 @@
   {
     "Input": "Är de ledig två söndagar från nu?",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "två söndagar från nu",
@@ -1407,7 +1401,6 @@
   {
     "Input": "Är du ledig två dagar efter idag?",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "två dagar efter idag",
@@ -1420,7 +1413,6 @@
   {
     "Input": "Är du ledig om tre veckor från nu?",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "tre veckor från nu",
@@ -1433,7 +1425,6 @@
   {
     "Input": "Var var du två dagar före igår?",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "två dagar före igår",
@@ -1449,7 +1440,6 @@
     "Context": {
       "ReferenceDateTime": "2018-06-14T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "fredag 15 juni",
@@ -1465,7 +1455,6 @@
     "Context": {
       "ReferenceDateTime": "2018-06-14T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "fredag(15-jun)",
@@ -1481,7 +1470,6 @@
     "Context": {
       "ReferenceDateTime": "2018-06-14T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "fredag (15-jun)",
@@ -1497,7 +1485,6 @@
     "Context": {
       "ReferenceDateTime": "2018-06-14T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "fredag(15 jun)",
@@ -1513,7 +1500,6 @@
     "Context": {
       "ReferenceDateTime": "2018-06-14T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "fredag (15 jun)",
@@ -1559,7 +1545,6 @@
     "Context": {
       "ReferenceDateTime": "2018-06-20T00:00:00"
     },
-    "NotSupported": "python,javascript",
     "Results": [
       {
         "Text": "om 3 veckor",
@@ -1620,7 +1605,6 @@
   {
     "Input": "jag åker tillbaka den tjugoandre juni 2017",
     "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "python,javascript",
     "Results": [
       {
         "Text": "tjugoandre juni 2017",
