@@ -1296,7 +1296,6 @@
   },
   {
     "Input": "på söndag tjugoförste januari tjugohundraarton",
-    "debug": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1320,87 +1319,86 @@
     ]
   },
   {
+    "Input": "på söndag den tjugoförste januari tvåtusenarton",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "söndag den tjugoförste januari tvåtusenarton",
+        "Type": "date",
+        "Start": 3,
+        "Length": 44
+      }
+    ]
+  },
+  {
     "Input": "söndag, tjugoförste jan, tvåtusenarton",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "sunday jan twenty one two thousand and eighteen",
+        "Text": "söndag, tjugoförste jan, tvåtusenarton",
         "Type": "date",
-        "Start": 3,
-        "Length": 47
+        "Start": 0,
+        "Length": 38
       }
     ]
   },
   {
-    "Input": "on september the twenty-first nineteen seventy eight",
+    "Input": "söndag, tjugoförste jan, tjugohundraarton",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "söndag, tjugoförste jan, tjugohundraarton",
+        "Type": "date",
+        "Start": 0,
+        "Length": 41
+      }
+    ]
+  },
+  {
+    "Input": "den tionde september, två tusen",
     "NotSupportedByDesign": "javascript,python,java",
     "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "september the twenty-first nineteen seventy eight",
+        "Text": "tionde september, två tusen",
         "Type": "date",
-        "Start": 3,
-        "Length": 49
+        "Start": 4,
+        "Length": 27
       }
     ]
   },
   {
-    "Input": "on september 10, nineteen zero one",
-    "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "javascript, python",
-    "Results": [
-      {
-        "Text": "september 10, nineteen zero one",
-        "Type": "date",
-        "Start": 3,
-        "Length": 31
-      }
-    ]
-  },
-  {
-    "Input": "on the tenth of september, two thousand",
-    "NotSupportedByDesign": "javascript,python,java",
-    "NotSupported": "javascript, python",
-    "Results": [
-      {
-        "Text": "tenth of september, two thousand",
-        "Type": "date",
-        "Start": 7,
-        "Length": 32
-      }
-    ]
-  },
-  {
-    "Input": "Are you free on 13.5.2015?",
+    "Input": "Är du ledig 13.5.2015?",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "13.5.2015",
         "Type": "date",
-        "Start": 16,
+        "Start": 12,
         "Length": 9
       }
     ]
   },
   {
-    "Input": "Are you available on 2015.5.13?",
+    "Input": "Är du ledig 2015.5.13?",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "2015.5.13",
         "Type": "date",
-        "Start": 21,
+        "Start": 12,
         "Length": 9
       }
     ]
   },
   {
-    "Input": "Are you available two sundays from now?",
+    "Input": "Är de ledig två söndagar från nu?",
+    "debug": true,
     "NotSupportedByDesign": "javascript,python,java",
     "NotSupported": "python",
     "Results": [
       {
-        "Text": "two sundays from now",
+        "Text": "två söndagar från nu",
         "Type": "date",
         "Start": 18,
         "Length": 20

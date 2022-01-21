@@ -66,7 +66,7 @@ WrittenCenturyFullYearRegex: !nestedRegex
 WrittenCenturyOrdinalYearRegex: !simpleRegex
   def: (?#WrittenCenturyOrdinalYearRegex)(?:tjugo(\s+(ett|två))?|tio|elva|tolv|tretton|femton|arton|tjugo|(?:fjor|sex|sjut|nit)(ton)?|ett|två|tre|fyra|fem|sju|åtta|nio)
 CenturyRegex: !nestedRegex
-  def: (?#CenturyRegex)\b(?<century>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}(\s*hundra)?)
+  def: (?#CenturyRegex)\b(?<century>{WrittenCenturyFullYearRegex}|(ett|två)tusen|{WrittenCenturyOrdinalYearRegex}(\s*hundra)?)
   references: [WrittenCenturyFullYearRegex, WrittenCenturyOrdinalYearRegex ]
 LastTwoYearNumRegex: !nestedRegex
   def: (?#LastTwoYearNumRegex)(?:(noll\s+)?{WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|{WrittenTensRegex}(\s+{WrittenOneToNineRegex})?)
