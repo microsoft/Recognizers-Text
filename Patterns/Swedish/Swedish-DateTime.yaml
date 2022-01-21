@@ -319,10 +319,10 @@ MonthEnd: !nestedRegex
   def: (?#MonthEnd)'{MonthRegex}\s*(den)?\s*$'
   references: [ MonthRegex ]
 WeekDayEnd: !nestedRegex
-  def: (?#WeekDayEnd)(den\s+här\s+)?{WeekDayRegex}\s*,?\s*$
+  def: (?#WeekDayEnd)(den\s+här\s+)?{WeekDayRegex}\s*,?(\bden\b)?\s*$
   references: [ WeekDayRegex ]
 WeekDayStart: !nestedRegex
-  def: (?#WeekDayStart)^\s+(på\s+)?{WeekDayRegex}\b
+  def: (?#WeekDayStart)^\s+(på\s+)?{WeekDayRegex}(\s+den)?\b
   references: [ WeekDayRegex ]
 RangeUnitRegex: !simpleRegex
   def: (?#RangeUnitRegex)\b(?<unit>år|månad(er)?|veck(a|or)?)\b
