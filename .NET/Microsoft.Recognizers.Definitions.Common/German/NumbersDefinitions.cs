@@ -43,11 +43,12 @@ namespace Microsoft.Recognizers.Definitions.German
       public static readonly string AllIntRegexWithLocks = $@"((?<=\b){AllIntRegex}(?=\b))";
       public static readonly string AllIntRegexWithDozenSuffixLocks = $@"(?<=\b)(((ein\s+)?halbes\s+dutzend)|({AllIntRegex}\s+dutzend(e)?))(?=\b)";
       public const string RoundNumberOrdinalRegex = @"(hundertst(er|es|en|el|e)?|tausendst(er|es|en|el|e)?|millionst(er|es|en|el|e)?|milliardst(er|es|en|el|e)?|billionst(er|es|en|el|e)?)";
-      public const string RelativeOrdinalRegex = @"(?<relativeOrdinal>(ante)?penultimate|letzter|nächster|vorheriger|aktueller)";
+      public const string RelativeOrdinalRegex = @"(?<relativeOrdinal>letzte[nr]?|nächste[nr]?|vorherige[nr]?|aktuelle[nr]?|jetzige[nr]?|vorletzte[nr]?|zuletzt|früher)";
       public const string BasicOrdinalRegex = @"(zuerst|erst(er|es|en|e)|zweit(er|es|en|e)?|dritt(er|es|en|el|e)?|viert(er|es|en|el|e)?|fünft(er|es|en|el|e)?|fuenft(er|es|en|el|e)?|sechst(er|es|en|el|e)?|siebt(er|es|en|el|e)?|acht(er|es|en|el|e)?|neunt(er|es|en|el|e)?|zehnt(er|es|en|el|e)?|elft(er|es|en|el|e)?|zwölft(er|es|en|el|e)?|zwoelft(er|es|en|el|e)?|dreizehnt(er|es|en|el|e)?|vierzehnt(er|es|en|el|e)?|fünfzehnt(er|es|en|el|e)?|fuenfzehnt(er|es|en|el|e)?|sechzehnt(er|es|en|el|e)?|siebzehnt(er|es|en|el|e)?|achtzehnt(er|es|en|el|e)?|neunzehnt(er|es|en|el|e)?|zwanzigst(er|es|en|el|e)?|dreißigst(er|es|en|el|e)?|vierziegt(er|es|en|el|e)?|fünfzigst(er|es|en|el|e)?|fuenfzigst(er|es|en|el|e)?|sechzigst(er|es|en|el|e)?|siebzigst(er|es|en|el|e)?|achtzigst(er|es|en|el|e)?|neunzigst(er|es|en|el|e)?)";
       public static readonly string SuffixBasicOrdinalRegex = $@"({BasicOrdinalRegex}|({ZeroToNineIntegerRegex}(und|\s){BasicOrdinalRegex}))";
       public static readonly string SuffixRoundNumberOrdinalRegex = $@"(({AllIntRegex}\s*){RoundNumberOrdinalRegex})";
-      public static readonly string AllOrdinalRegex = $@"(({AllIntRegex}\s*)*{SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})";
+      public static readonly string AllOrdinalNumberRegex = $@"(({AllIntRegex}\s*)*{SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})";
+      public static readonly string AllOrdinalRegex = $@"(?:{AllOrdinalNumberRegex}|{RelativeOrdinalRegex})";
       public const string OrdinalSuffixRegex = @"^[\.]";
       public const string OrdinalNumericRegex = @"(?<=\b)(\d{1,3}\.)(?=(\s+|^))";
       public static readonly string OrdinalRoundNumberRegex = $@"(?<!eine?\s+){RoundNumberOrdinalRegex}";
@@ -60,8 +61,8 @@ namespace Microsoft.Recognizers.Definitions.German
       public static readonly string FractionMultiplierRegex = $@"(?<fracMultiplier>(\s+und\s+)?(anderthalb|einundhalb|dreiviertel)|(\s+und\s+)?(eine?|{TwoToNineIntegerRegex})\s*(halbe?|(dritt|viert|fünft|fuenft|sechst|siebt|acht|neunt|zehnt)(er|es|en|el|e)?))";
       public static readonly string RoundMultiplierWithFraction = $@"(?<=(?<!{RoundNumberIntegerRegex}){FractionMultiplierRegex}\s+)?(?<multiplier>(million(en)?|mio|milliarden?|mrd|billion(en)?))(?={FractionMultiplierRegex}?$)";
       public static readonly string RoundMultiplierRegex = $@"\b\s*((von\s+)?ein(er|es|en|el|e)?\s+)?({RoundMultiplierWithFraction}|(?<multiplier>(?:hundert|tausend))$)";
-      public static readonly string FractionNounRegex = $@"(?<=\b)({AllIntRegex}\s+(und\s+)?)?(({AllIntRegex})(\s*|\s*-\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))|halb(e[rs]?)?|hälfte)(\s+{RoundNumberIntegerRegex})?|(eine\s+(halbe|viertel)\s+){RoundNumberIntegerRegex}|{FractionUnitsRegex}(\s+{RoundNumberIntegerRegex})?)(?=\b)";
-      public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)((({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\s+(und\s+)?)?eine?(\s+|\s*-\s*)({AllOrdinalRegex}|{RoundNumberOrdinalRegex}|{FractionUnitsRegex}|({AllIntRegex}ein)?(halb(e[rs]?)?|hälfte))|{AllIntRegex}ein(halb)(\s+{RoundNumberIntegerRegex})?)(?=\b)";
+      public static readonly string FractionNounRegex = $@"(?<=\b)({AllIntRegex}\s+(und\s+)?)?(({AllIntRegex})(\s*|\s*-\s*)((({AllOrdinalNumberRegex})|({RoundNumberOrdinalRegex}))|halb(e[rs]?)?|hälfte)(\s+{RoundNumberIntegerRegex})?|(eine\s+(halbe|viertel)\s+){RoundNumberIntegerRegex}|{FractionUnitsRegex}(\s+{RoundNumberIntegerRegex})?)(?=\b)";
+      public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)((({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\s+(und\s+)?)?eine?(\s+|\s*-\s*)({AllOrdinalNumberRegex}|{RoundNumberOrdinalRegex}|{FractionUnitsRegex}|({AllIntRegex}ein)?(halb(e[rs]?)?|hälfte))|{AllIntRegex}ein(halb)(\s+{RoundNumberIntegerRegex})?)(?=\b)";
       public static readonly string FractionPrepositionRegex = $@"(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<!\.)\d+))\s+over\s+(?<denominator>({AllIntRegex})|(\d+)(?!\.))(?=\b)";
       public static readonly string AllPointRegex = $@"((\s*{ZeroToNineIntegerRegex})+|(\s*{SeparaIntRegex}))";
       public static readonly string AllFloatRegex = $@"({AllIntRegex}(\s*komma\s*){AllPointRegex})";
@@ -419,11 +420,49 @@ namespace Microsoft.Recognizers.Definitions.German
         };
       public static readonly Dictionary<string, string> RelativeReferenceOffsetMap = new Dictionary<string, string>
         {
-            { @"", @"" }
+            { @"letzte", @"0" },
+            { @"letzten", @"0" },
+            { @"letzter", @"0" },
+            { @"nächste", @"1" },
+            { @"nächsten", @"1" },
+            { @"nächster", @"1" },
+            { @"vorherige", @"-1" },
+            { @"vorherigen", @"-1" },
+            { @"vorheriger", @"-1" },
+            { @"aktuelle", @"0" },
+            { @"aktuellen", @"0" },
+            { @"aktueller", @"0" },
+            { @"jetzige", @"0" },
+            { @"jetzigen", @"0" },
+            { @"jetziger", @"0" },
+            { @"vorletzte", @"-1" },
+            { @"vorletzten", @"-1" },
+            { @"vorletzter", @"-1" },
+            { @"zuletzt", @"0" },
+            { @"früher", @"-1" }
         };
       public static readonly Dictionary<string, string> RelativeReferenceRelativeToMap = new Dictionary<string, string>
         {
-            { @"", @"" }
+            { @"letzte", @"end" },
+            { @"letzten", @"end" },
+            { @"letzter", @"end" },
+            { @"nächste", @"current" },
+            { @"nächsten", @"current" },
+            { @"nächster", @"current" },
+            { @"vorherige", @"current" },
+            { @"vorherigen", @"current" },
+            { @"vorheriger", @"current" },
+            { @"aktuelle", @"current" },
+            { @"aktuellen", @"current" },
+            { @"aktueller", @"current" },
+            { @"jetzige", @"current" },
+            { @"jetzigen", @"current" },
+            { @"jetziger", @"current" },
+            { @"vorletzte", @"end" },
+            { @"vorletzten", @"end" },
+            { @"vorletzter", @"end" },
+            { @"zuletzt", @"end" },
+            { @"früher", @"current" }
         };
     }
 }

@@ -45,9 +45,11 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public static readonly string AllIntRegexWithDozenSuffixLocks = $@"(?<=\b)(((een\s+)?half\s+dozijn)|({AllIntRegex}\s+dozijn(en)?)|{GrossRegex})(?=\b)";
       public const string RoundNumberOrdinalRegex = @"(honderdste|duizendste|miljoenste|miljardste|biljoenste)";
       public const string BasicOrdinalRegex = @"(nulde|eende|eerste|tweede|derde|vierde|vijfd(e|en)|zesde|zevende|achtst(e|en)|negende|tiend(e|en)|elfde|twaalfde|dertiende|veertiende|vijftiende|zestiende|zeventiende|achttiende|negentiende|twintigste|vijfentwintigste|vijventwintigste|dertigste|veertigste|vijftigste|zestigste|zeventigste|tachtigste|negentigste)";
+      public const string RelativeOrdinalRegex = @"(?<relativeOrdinal>volgende|vorige?|huidige|laatste?|(de\s+op\s+één\s+na\s+|de\s+een\s+voor\s+de\s+|die\s+voor\s+de\s+|twee\s+na\s+|voor)laatste)";
       public static readonly string SuffixBasicOrdinalRegex = $@"(((({ZeroToNineIntegerRegex}{RoundNumberIntegerRegex})|({RoundNumberIntegerRegex}{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})\s*)*((en|ën)\s*)*{BasicOrdinalRegex})";
       public static readonly string SuffixRoundNumberOrdinalRegex = $@"(({AllIntRegex}\s*){RoundNumberOrdinalRegex})";
-      public static readonly string AllOrdinalRegex = $@"({SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})";
+      public static readonly string AllOrdinalNumberRegex = $@"(?:{SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})";
+      public static readonly string AllOrdinalRegex = $@"(?:{AllOrdinalNumberRegex}|{RelativeOrdinalRegex})";
       public const string OrdinalSuffixRegex = @"(?<=\b)((\d*(1e|2e|3e|4e|5e|6e|7e|8e|9e|0e))|(1ste|2de|3de|4de|5de|6de|7de|8ste|9de|0de)|([0-9]*1[0-9]de)|([0-9]*[2-9][0-9]ste)|([0-9]*[0](1ste|2de|3de|4de|5de|6de|7de|8ste|9de|0de)))(?=\b)";
       public const string OrdinalNumericRegex = @"(?<=\b)(\d{1,3}(\s*.\s*\d{3})*\s*e)(?=\b)";
       public static readonly string OrdinalRoundNumberRegex = $@"(?<!(één|een)\s+){RoundNumberOrdinalRegex}";
@@ -60,8 +62,8 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public static readonly string FractionMultiplierRegex = $@"(?<fracMultiplier>((\s+en\s+)?(anderhalve|anderhalf|driekwart)|\s+en\s+(een|{TwoToNineIntegerRegex})\s+(half|derde|kwart|vierde|vijfd(e|en)|zesde|zevende|achtst(e|en)|negende|tiend(e|en))))";
       public static readonly string RoundMultiplierWithFraction = $@"(?<=(?<!{RoundNumberIntegerRegex}){FractionMultiplierRegex}\s+)?(?<multiplier>(miljoen|miljard|biljoen))(?={FractionMultiplierRegex}?$)";
       public static readonly string RoundMultiplierRegex = $@"\b\s*(van\s+)?({RoundMultiplierWithFraction}|(?<multiplier>(honderd|duizend))$)";
-      public static readonly string FractionNounRegex = $@"(?<=\b)(({AllIntRegex}\s+(en\s+)?)?(({AllIntRegex})(\s+|\s*-\s*|\s*/\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))n?|halven|vierdes|kwart)|(een\s+(half|kwart)\s+){RoundNumberIntegerRegex}|{FractionUnitsRegex}(\s+{RoundNumberIntegerRegex})?))(?=\b)";
-      public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)((({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\s+(en\s)?)?(een)(\s+|\s*-\s*|\s*/\s*)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|({FractionUnitsRegex}))|{AllIntRegex}[eë]n(eenhalf|half|halve|helft|kwart))(?=\b)";
+      public static readonly string FractionNounRegex = $@"(?<=\b)(({AllIntRegex}\s+(en\s+)?)?(({AllIntRegex})(\s+|\s*-\s*|\s*/\s*)((({AllOrdinalNumberRegex})|({RoundNumberOrdinalRegex}))n?|halven|vierdes|kwart)|(een\s+(half|kwart)\s+){RoundNumberIntegerRegex}|{FractionUnitsRegex}(\s+{RoundNumberIntegerRegex})?))(?=\b)";
+      public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)((({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\s+(en\s)?)?(een)(\s+|\s*-\s*|\s*/\s*)(({AllOrdinalNumberRegex})|({RoundNumberOrdinalRegex})|({FractionUnitsRegex}))|{AllIntRegex}[eë]n(eenhalf|half|halve|helft|kwart))(?=\b)";
       public static readonly string FractionPrepositionRegex = $@"(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<!,)\d+))\s+(op|op\s+de|van\s+de|uit|uit\s+de)\s+(?<denominator>({AllIntRegex})|(\d+)(?!,))(?=\b)";
       public static readonly string FractionPrepositionWithinPercentModeRegex = $@"(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<!,)\d+))\s+over\s+(?<denominator>({AllIntRegex})|(\d+)(?!,))(?=\b)";
       public static readonly string AllPointRegex = $@"((\s+{ZeroToNineIntegerRegex})+|(\s+{SeparaIntRegex}))";
@@ -248,11 +250,31 @@ namespace Microsoft.Recognizers.Definitions.Dutch
         };
       public static readonly Dictionary<string, string> RelativeReferenceOffsetMap = new Dictionary<string, string>
         {
-            { @"", @"" }
+            { @"laatst", @"0" },
+            { @"laatste", @"0" },
+            { @"volgende", @"1" },
+            { @"huidige", @"0" },
+            { @"vorige", @"-1" },
+            { @"vorig", @"-1" },
+            { @"de op één na laatste", @"-1" },
+            { @"de een voor de laatste", @"-1" },
+            { @"die voor de laatste", @"-1" },
+            { @"voorlaatste", @"-1" },
+            { @"twee na laatste", @"-2" }
         };
       public static readonly Dictionary<string, string> RelativeReferenceRelativeToMap = new Dictionary<string, string>
         {
-            { @"", @"" }
+            { @"laatst", @"end" },
+            { @"laatste", @"end" },
+            { @"volgende", @"current" },
+            { @"huidige", @"current" },
+            { @"vorige", @"current" },
+            { @"vorig", @"current" },
+            { @"de op één na laatste", @"end" },
+            { @"de een voor de laatste", @"end" },
+            { @"die voor de laatste", @"end" },
+            { @"voorlaatste", @"end" },
+            { @"twee na laatste", @"end" }
         };
     }
 }

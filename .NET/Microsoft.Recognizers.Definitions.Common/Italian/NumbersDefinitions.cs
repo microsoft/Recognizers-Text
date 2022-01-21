@@ -47,11 +47,12 @@ namespace Microsoft.Recognizers.Definitions.Italian
       public const string OneToNineOrdinalRegex = @"(prim[oaie]|second[oaie]|terz[oaie]|quart[oaie]|quint[oaie]|sest[oaie]|settim[oaie]|ottav[oaie]|non[oaie])";
       public const string NumberOrdinalRegex = @"(prim[oaie]|second[oaie]|terz[oaie]|quart[oaie]|quint[oaie]|sest[oaie]|settim[oaie]|ottav[oaie]|non[oaie]|decim[oaie]|undicesim[oaie]|dodicesim[oaie]|tredicesim[oaie]|quattordicesim[oaie]|quindicesim[oaie]|sedicesim[oaie]|diciassettesim[oaie]|diciottesim[oaie]|diciannovesim[oaie]|ventesim[oaie]|trentesim[oaie]|quarantesim[oaie]|cinquantesim[oaie]|sessantesim[oaie]|settantesim[oaie]|ottantesim[oaie]|novantesim[oaie])";
       public const string OneToNineOrdinalCompoundRegex = @"(un|du|tre|quattr|cinqu|sei|sett|ott|nov)esim[oaie]";
-      public const string RelativeOrdinalRegex = @"(precedente|seguente|penultim[oa]|terzultim[oa]|ultim[oa])";
-      public static readonly string BasicOrdinalRegex = $@"(({NumberOrdinalRegex}|{RelativeOrdinalRegex})(?!\s*({TwoToNineIntegerRegex}|([2-9]+))\b))";
+      public const string RelativeOrdinalRegex = @"(?<relativeOrdinal>precedent[ei]|seguent[ei]|prossim[aoei]|corrent[ei]|successiv[aoei]|penultim[oaei]|terzultim[oaei]|(l')?(ultim[oaei]|attual[ei])|quell[ao]\s+prima\s+dell'ultim[ao])";
+      public static readonly string BasicOrdinalRegex = $@"({NumberOrdinalRegex}(?!\s*({TwoToNineIntegerRegex}|([2-9]+))\b))";
       public static readonly string SuffixBasicOrdinalRegex = $@"((((({TensNumberIntegerRegex}{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|({AnIntRegex})|{RoundNumberIntegerRegex})(\s*{RoundNumberIntegerRegex})*)\s*(e\s+)?)*({TensNumberIntegerRegex}?{OneToNineOrdinalCompoundRegex}|{BasicOrdinalRegex}))";
       public static readonly string SuffixRoundNumberOrdinalRegex = $@"(({AllIntRegex}\s*)?{RoundNumberOrdinalRegex})";
-      public static readonly string AllOrdinalRegex = $@"({SuffixRoundNumberOrdinalRegex}|{SuffixBasicOrdinalRegex})";
+      public static readonly string AllOrdinalNumberRegex = $@"({SuffixRoundNumberOrdinalRegex}|{SuffixBasicOrdinalRegex})";
+      public static readonly string AllOrdinalRegex = $@"(?:{AllOrdinalNumberRegex}|{RelativeOrdinalRegex})";
       public const string OrdinalSuffixRegex = @"(?<=\b)(\d+(°|(esi)?m[oaie]))";
       public const string OrdinalNumericRegex = @"(?<=\b)(\d{1,3}(\s*,\s*\d{3})*(°|(esi)?m[oaie]))";
       public static readonly string OrdinalRoundNumberRegex = $@"(?<!(un)\s+){RoundNumberOrdinalRegex}";
@@ -61,8 +62,8 @@ namespace Microsoft.Recognizers.Definitions.Italian
       public static readonly string FractionMultiplierRegex = $@"(?<fracMultiplier>\s+e\s+(mezzo|(un|{TwoToNineIntegerRegex})\s+(mezz[oi]|quart[oi]|terz[oi]|quint[oi]|sest[oi]|settim[oi]|ottav[oi]|non[oi]|decim[oi])))";
       public static readonly string RoundMultiplierWithFraction = $@"(?<multiplier>(?:milion[ei]|miliard[oi]|bilion[ei]|trillion[ei]))(?={FractionMultiplierRegex}?$)";
       public static readonly string RoundMultiplierRegex = $@"\b\s*({RoundMultiplierWithFraction}|(?<multiplier>(cento|mille|mila))$)";
-      public static readonly string FractionNounRegex = $@"(?<=\b)({AllIntRegex}\s+(e\s+)?)?(({AllIntRegex})(\s+|\s*-\s*)(?!\bprimo\b|\bsecondo\b)(mezzi|({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))|(mezzo|un\s+quarto\s+di)\s+{RoundNumberIntegerRegex})(?=\b)";
-      public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)((({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\s+(e\s+)?)?((un)(\s+|\s*-\s*)(?!\bprimo\b|\bsecondo\b)({AllOrdinalRegex}|{RoundNumberOrdinalRegex})|(un\s+)?mezzo))(?=\b)";
+      public static readonly string FractionNounRegex = $@"(?<=\b)({AllIntRegex}\s+(e\s+)?)?(({AllIntRegex})(\s+|\s*-\s*)(?!\bprimo\b|\bsecondo\b)(mezzi|({AllOrdinalNumberRegex})|({RoundNumberOrdinalRegex}))|(mezzo|un\s+quarto\s+di)\s+{RoundNumberIntegerRegex})(?=\b)";
+      public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)((({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\s+(e\s+)?)?((un)(\s+|\s*-\s*)(?!\bprimo\b|\bsecondo\b)({AllOrdinalNumberRegex}|{RoundNumberOrdinalRegex})|(un\s+)?mezzo))(?=\b)";
       public static readonly string FractionPrepositionRegex = $@"(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<!\.)\d+))\s+su\s+(?<denominator>({AllIntRegex})|(\d+)(?!\.))(?=\b)";
       public static readonly string AllPointRegex = $@"((\s+{ZeroToNineIntegerRegex})+|(\s+{SeparaIntRegex}))";
       public static readonly string AllFloatRegex = $@"({AllIntRegex}(\s+(virgola|punto)){AllPointRegex})";
@@ -412,81 +413,75 @@ namespace Microsoft.Recognizers.Definitions.Italian
         };
       public static readonly Dictionary<string, string> RelativeReferenceOffsetMap = new Dictionary<string, string>
         {
-            { @"ultimo", @"0" },
-            { @"ultima", @"0" },
-            { @"ultimi", @"0" },
-            { @"ultime", @"0" },
-            { @"successivo", @"1" },
-            { @"successiva", @"1" },
-            { @"successivi", @"1" },
-            { @"successive", @"1" },
-            { @"prossimo", @"1" },
-            { @"prossima", @"1" },
-            { @"prossimi", @"1" },
-            { @"prossime", @"1" },
-            { @"seguente", @"1" },
-            { @"seguenti", @"1" },
             { @"precedente", @"-1" },
             { @"precedenti", @"-1" },
-            { @"penultimo", @"-1" },
+            { @"seguente", @"1" },
+            { @"seguenti", @"1" },
+            { @"prossima", @"1" },
+            { @"prossimo", @"1" },
+            { @"prossime", @"1" },
+            { @"prossimi", @"1" },
+            { @"corrente", @"0" },
+            { @"correnti", @"0" },
+            { @"attuale", @"0" },
+            { @"attuali", @"0" },
+            { @"l'attuale", @"0" },
+            { @"successiva", @"1" },
+            { @"successivo", @"1" },
+            { @"successive", @"1" },
+            { @"successivi", @"1" },
             { @"penultima", @"-1" },
-            { @"penultimi", @"-1" },
+            { @"penultimo", @"-1" },
             { @"penultime", @"-1" },
-            { @"terz'ultimo", @"-2" },
-            { @"terz'ultima", @"-2" },
-            { @"terz'ultimi", @"-2" },
-            { @"terz'ultime", @"-2" },
-            { @"terzultimo", @"-2" },
+            { @"penultimi", @"-1" },
+            { @"quello prima dell'ultimo", @"-1" },
+            { @"quella prima dell'ultima", @"-1" },
             { @"terzultima", @"-2" },
-            { @"terzultimi", @"-2" },
+            { @"terzultimo", @"-2" },
             { @"terzultime", @"-2" },
-            { @"quart'ultimo", @"-3" },
-            { @"quart'ultima", @"-3" },
-            { @"quart'ultimi", @"-3" },
-            { @"quart'ultime", @"-3" },
-            { @"quartultimo", @"-3" },
-            { @"quartultima", @"-3" },
-            { @"quartultimi", @"-3" },
-            { @"quartultime", @"-3" }
+            { @"terzultimi", @"-2" },
+            { @"ultima", @"0" },
+            { @"ultimo", @"0" },
+            { @"ultime", @"0" },
+            { @"ultimi", @"0" },
+            { @"l'ultima", @"0" },
+            { @"l'ultimo", @"0" }
         };
       public static readonly Dictionary<string, string> RelativeReferenceRelativeToMap = new Dictionary<string, string>
         {
-            { @"ultimo", @"end" },
-            { @"ultima", @"end" },
-            { @"ultimi", @"end" },
-            { @"ultime", @"end" },
-            { @"successivo", @"current" },
-            { @"successiva", @"current" },
-            { @"successivi", @"current" },
-            { @"successive", @"current" },
-            { @"prossimo", @"current" },
-            { @"prossima", @"current" },
-            { @"prossimi", @"current" },
-            { @"prossime", @"current" },
-            { @"seguente", @"current" },
-            { @"seguenti", @"current" },
             { @"precedente", @"current" },
             { @"precedenti", @"current" },
-            { @"penultimo", @"end" },
+            { @"seguente", @"current" },
+            { @"seguenti", @"current" },
+            { @"prossima", @"current" },
+            { @"prossimo", @"current" },
+            { @"prossime", @"current" },
+            { @"prossimi", @"current" },
+            { @"corrente", @"current" },
+            { @"correnti", @"current" },
+            { @"attuale", @"current" },
+            { @"attuali", @"current" },
+            { @"l'attuale", @"current" },
+            { @"successiva", @"current" },
+            { @"successivo", @"current" },
+            { @"successive", @"current" },
+            { @"successivi", @"current" },
             { @"penultima", @"end" },
-            { @"penultimi", @"end" },
+            { @"penultimo", @"end" },
             { @"penultime", @"end" },
-            { @"terz'ultimo", @"end" },
-            { @"terz'ultima", @"end" },
-            { @"terz'ultimi", @"end" },
-            { @"terz'ultime", @"end" },
-            { @"terzultimo", @"end" },
+            { @"penultimi", @"end" },
+            { @"quello prima dell'ultimo", @"end" },
+            { @"quella prima dell'ultima", @"end" },
             { @"terzultima", @"end" },
-            { @"terzultimi", @"end" },
+            { @"terzultimo", @"end" },
             { @"terzultime", @"end" },
-            { @"quart'ultimo", @"end" },
-            { @"quart'ultima", @"end" },
-            { @"quart'ultimi", @"end" },
-            { @"quart'ultime", @"end" },
-            { @"quartultimo", @"end" },
-            { @"quartultima", @"end" },
-            { @"quartultimi", @"end" },
-            { @"quartultime", @"end" }
+            { @"terzultimi", @"end" },
+            { @"ultima", @"end" },
+            { @"ultimo", @"end" },
+            { @"ultime", @"end" },
+            { @"ultimi", @"end" },
+            { @"l'ultima", @"end" },
+            { @"l'ultimo", @"end" }
         };
     }
 }

@@ -66,10 +66,12 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public static readonly string UnderHundredOrdinalRegex = $@"({SpecialUnderHundredOrdinalRegex}|(({TensOrdinalRegex}(\s)?)?{OneToNineOrdinalRegex})|{TensOrdinalRegex})";
       public static readonly string UnderThousandOrdinalRegex = $@"((({HundredOrdinalRegex}(\s)?)?{UnderHundredOrdinalRegex})|{HundredOrdinalRegex})";
       public static readonly string OverThousandOrdinalRegex = $@"(({AllIntRegex})([eé]sim[oa]))";
+      public const string RelativeOrdinalRegex = @"(?<relativeOrdinal>(antes\s+de|anterior\s+a)(l|\s+la)\s+[uú]ltim[ao]|((ante)?pen)?[uú]ltim[ao]s?|pr[oó]xim[ao]s?|anterior(es)?|actual(es)?|siguientes?)";
       public static readonly string ComplexOrdinalRegex = $@"(({OverThousandOrdinalRegex}(\s)?)?{UnderThousandOrdinalRegex}|{OverThousandOrdinalRegex})";
       public static readonly string SufixRoundOrdinalRegex = $@"(({AllIntRegex})({SimpleRoundOrdinalRegex}))";
       public static readonly string ComplexRoundOrdinalRegex = $@"((({SufixRoundOrdinalRegex}(\s)?)?{ComplexOrdinalRegex})|{SufixRoundOrdinalRegex})";
-      public static readonly string AllOrdinalRegex = $@"{ComplexOrdinalRegex}|{SimpleRoundOrdinalRegex}|{ComplexRoundOrdinalRegex}";
+      public static readonly string AllOrdinalNumberRegex = $@"{ComplexOrdinalRegex}|{SimpleRoundOrdinalRegex}|{ComplexRoundOrdinalRegex}";
+      public static readonly string AllOrdinalRegex = $@"(?:{AllOrdinalNumberRegex}|{RelativeOrdinalRegex})";
       public const string OrdinalSuffixRegex = @"(?<=\b)(\d*((1(er|r[oa])|2d[oa]|3r[oa]|4t[oa]|5t[oa]|6t[oa]|7m[oa]|8v[oa]|9n[oa]|0m[oa]|11[vm][oa]|12[vm][oa])|\d\.?[ºª]))(?=\b)";
       public static readonly string OrdinalNounRegex = $@"(?<=\b){AllOrdinalRegex}(?=\b)";
       public static readonly string SpecialFractionInteger = $@"((({AllIntRegex})i?({ZeroToNineIntegerRegex})|({AllIntRegex}))a?v[oa]s?)";
@@ -78,8 +80,8 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public static readonly string FractionMultiplierRegex = $@"(?<fracMultiplier>\s+(y|con)\s+(medio|(un|{TwoToNineIntegerRegex})\s+(medio|terci[oa]?|cuart[oa]|quint[oa]|sext[oa]|s[eé]ptim[oa]|octav[oa]|noven[oa]|d[eé]cim[oa])s?))";
       public static readonly string RoundMultiplierWithFraction = $@"(?<multiplier>(?:(mil\s+millones|mill[oó]n(es)?|bill[oó]n(es)?|trill[oó]n(es)?|cuatrill[oó]n(es)?|quintill[oó]n(es)?|sextill[oó]n(es)?|septill[oó]n(es)?)))(?={FractionMultiplierRegex}?$)";
       public static readonly string RoundMultiplierRegex = $@"\b\s*({RoundMultiplierWithFraction}|(?<multiplier>(mil))$)";
-      public static readonly string FractionNounRegex = $@"(?<=\b)({AllIntRegex}\s+((y|con)\s+)?)?(({AllIntRegex})(\s+((y|con)\s)?)((({AllOrdinalRegex})s?|({SpecialFractionInteger})|({SufixRoundOrdinalRegex})s?)|medi[oa]s?|tercios?)|(medio|un\s+cuarto\s+de)\s+{RoundNumberIntegerRegex})(?=\b)";
-      public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)(({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\s+(y\s+)?)?((un|un[oa])(\s+)(({AllOrdinalRegex})|({SufixRoundOrdinalRegex}))|(un[ao]?\s+)?medi[oa]s?)(?=\b)";
+      public static readonly string FractionNounRegex = $@"(?<=\b)({AllIntRegex}\s+((y|con)\s+)?)?(({AllIntRegex})(\s+((y|con)\s)?)((({AllOrdinalNumberRegex})s?|({SpecialFractionInteger})|({SufixRoundOrdinalRegex})s?)|medi[oa]s?|tercios?)|(medio|un\s+cuarto\s+de)\s+{RoundNumberIntegerRegex})(?=\b)";
+      public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)(({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\s+(y\s+)?)?((un|un[oa])(\s+)(({AllOrdinalNumberRegex})|({SufixRoundOrdinalRegex}))|(un[ao]?\s+)?medi[oa]s?)(?=\b)";
       public static readonly string FractionPrepositionRegex = $@"(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<!\.)\d+))\s+sobre\s+(?<denominator>({AllIntRegex})|((\d+)(?!\.)))(?=\b)";
       public static readonly string AllPointRegex = $@"((\s+{ZeroToNineIntegerRegex})+|(\s+{AllIntRegex}))";
       public static readonly string AllFloatRegex = $@"{AllIntRegex}(\s+(coma|con)){AllPointRegex}";
@@ -432,11 +434,101 @@ namespace Microsoft.Recognizers.Definitions.Spanish
         };
       public static readonly Dictionary<string, string> RelativeReferenceOffsetMap = new Dictionary<string, string>
         {
-            { @"", @"" }
+            { @"proxima", @"1" },
+            { @"proximo", @"1" },
+            { @"proximas", @"1" },
+            { @"proximos", @"1" },
+            { @"próxima", @"1" },
+            { @"próximo", @"1" },
+            { @"próximas", @"1" },
+            { @"próximos", @"1" },
+            { @"anterior", @"-1" },
+            { @"anteriores", @"-1" },
+            { @"actual", @"0" },
+            { @"actuales", @"0" },
+            { @"siguiente", @"1" },
+            { @"siguientes", @"1" },
+            { @"ultima", @"0" },
+            { @"ultimo", @"0" },
+            { @"última", @"0" },
+            { @"último", @"0" },
+            { @"ultimas", @"0" },
+            { @"ultimos", @"0" },
+            { @"últimas", @"0" },
+            { @"últimos", @"0" },
+            { @"penultima", @"-1" },
+            { @"penultimo", @"-1" },
+            { @"penúltima", @"-1" },
+            { @"penúltimo", @"-1" },
+            { @"penultimas", @"-1" },
+            { @"penultimos", @"-1" },
+            { @"penúltimas", @"-1" },
+            { @"penúltimos", @"-1" },
+            { @"antepenultima", @"-2" },
+            { @"antepenultimo", @"-2" },
+            { @"antepenúltima", @"-2" },
+            { @"antepenúltimo", @"-2" },
+            { @"antepenultimas", @"-2" },
+            { @"antepenultimos", @"-2" },
+            { @"antepenúltimas", @"-2" },
+            { @"antepenúltimos", @"-2" },
+            { @"antes de la ultima", @"-1" },
+            { @"antes del ultimo", @"-1" },
+            { @"antes de la última", @"-1" },
+            { @"antes del último", @"-1" },
+            { @"anterior al ultimo", @"-1" },
+            { @"anterior a la ultima", @"-1" },
+            { @"anterior al último", @"-1" },
+            { @"anterior a la última", @"-1" }
         };
       public static readonly Dictionary<string, string> RelativeReferenceRelativeToMap = new Dictionary<string, string>
         {
-            { @"", @"" }
+            { @"proxima", @"current" },
+            { @"proximo", @"current" },
+            { @"proximas", @"current" },
+            { @"proximos", @"current" },
+            { @"próxima", @"current" },
+            { @"próximo", @"current" },
+            { @"próximas", @"current" },
+            { @"próximos", @"current" },
+            { @"anterior", @"current" },
+            { @"anteriores", @"current" },
+            { @"actual", @"current" },
+            { @"actuales", @"current" },
+            { @"siguiente", @"current" },
+            { @"siguientes", @"current" },
+            { @"ultima", @"end" },
+            { @"ultimo", @"end" },
+            { @"última", @"end" },
+            { @"último", @"end" },
+            { @"ultimas", @"end" },
+            { @"ultimos", @"end" },
+            { @"últimas", @"end" },
+            { @"últimos", @"end" },
+            { @"penultima", @"end" },
+            { @"penultimo", @"end" },
+            { @"penúltima", @"end" },
+            { @"penúltimo", @"end" },
+            { @"penultimas", @"end" },
+            { @"penultimos", @"end" },
+            { @"penúltimas", @"end" },
+            { @"penúltimos", @"end" },
+            { @"antepenultima", @"end" },
+            { @"antepenultimo", @"end" },
+            { @"antepenúltima", @"end" },
+            { @"antepenúltimo", @"end" },
+            { @"antepenultimas", @"end" },
+            { @"antepenultimos", @"end" },
+            { @"antepenúltimas", @"end" },
+            { @"antepenúltimos", @"end" },
+            { @"antes de la ultima", @"end" },
+            { @"antes del ultimo", @"end" },
+            { @"antes de la última", @"end" },
+            { @"antes del último", @"end" },
+            { @"anterior al ultimo", @"end" },
+            { @"anterior a la ultima", @"end" },
+            { @"anterior al último", @"end" },
+            { @"anterior a la última", @"end" }
         };
     }
 }
