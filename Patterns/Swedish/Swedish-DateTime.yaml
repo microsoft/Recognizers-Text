@@ -100,7 +100,7 @@ YearRegex: !nestedRegex
   def: (?#YearRegex)(?:{BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})
   references: [ BaseDateTime.FourDigitYearRegex, FullTextYearRegex ]
 WeekDayRegex: !simpleRegex
-  def: (?#WeekDayRegex)\b(?<weekday>(?:sö(n)?|må(n)?|ti(s)?|on(s)?|to(rs)?|fr(e)?|lö(r)?)(d(ag(en|ar)?)?)?)s?\b
+  def: (?#WeekDayRegex)\b(?<weekday>(?:sö(n)?|må(n)?|ti(s)?|on(s)?|to(rs)?|fr(e)?|lö(r)?))(d(ags?(en|ar)?)?)?\b
 SingleWeekDayRegex: !simpleRegex
   def: (?#SingleWeekDayRegex)\b(?<weekday>(?<!(easter|palm)\s+)söndag|(?<!easter\s+)lördag|(?<!(easter|cyber)\s+)måndag|mån|(?<!black\s+)fredag|fri|fre|(?:ti(sd?)?|tors?)(dag)?|tor|on(sdag)?|ons?|((?<=på\s+)(lör|sön)))\b
 RelativeMonthRegex: !nestedRegex
@@ -467,7 +467,7 @@ TimeFollowedUnit: !nestedRegex
 TimeNumberCombinedWithUnit: !nestedRegex
   def: (?#TimeNumberCombinedWithUnit)\b(?<num>\d+(\.\d*)?){TimeUnitRegex}
   references: [ TimeUnitRegex ]
-BusinessHourSplitStrings: ['business', 'hour']
+BusinessHourSplitStrings: ['arbets', 'tid']
 NowRegex: !simpleRegex
   def: (?#NowRegex)\b(?<now>(just\s+)?nu|så\s+snart\s+som\s+möjligt|asap|nyligen|tidigare|i\s+(present|denna\s+stund|denna\s+minut|detta\s+(ögonblick|present\s+time)))\b
 #Used in DatePeriodParser to parse patterns like "from March to date" ("^date$" is English specific and does not need to be translated).
@@ -822,6 +822,8 @@ UnitValueMap: !dictionary
     veckoslut: 172800
     vecka: 604800
     veckor: 604800
+    arbetsdag: 86400
+    arbetsdagar: 86400
     dag: 86400
     dagar: 86400
     natt: 86400

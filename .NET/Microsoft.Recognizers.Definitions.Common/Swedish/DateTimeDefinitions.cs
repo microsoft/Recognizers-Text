@@ -60,7 +60,7 @@ namespace Microsoft.Recognizers.Definitions.Swedish
       public const string OfPrepositionRegex = @"(?#OfPrepositionRegex)(\bi\b)";
       public static readonly string TwoDigitYearRegex = $@"(?#TwoDigitYearRegex)\b(?<![$])(?<year>([0-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b";
       public static readonly string YearRegex = $@"(?#YearRegex)(?:{BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})";
-      public const string WeekDayRegex = @"(?#WeekDayRegex)\b(?<weekday>(?:sö(n)?|må(n)?|ti(s)?|on(s)?|to(rs)?|fr(e)?|lö(r)?)(d(ag(en|ar)?)?)?)s?\b";
+      public const string WeekDayRegex = @"(?#WeekDayRegex)\b(?<weekday>(?:sö(n)?|må(n)?|ti(s)?|on(s)?|to(rs)?|fr(e)?|lö(r)?))(d(ags?(en|ar)?)?)?\b";
       public const string SingleWeekDayRegex = @"(?#SingleWeekDayRegex)\b(?<weekday>(?<!(easter|palm)\s+)söndag|(?<!easter\s+)lördag|(?<!(easter|cyber)\s+)måndag|mån|(?<!black\s+)fredag|fri|fre|(?:ti(sd?)?|tors?)(dag)?|tor|on(sdag)?|ons?|((?<=på\s+)(lör|sön)))\b";
       public static readonly string RelativeMonthRegex = $@"(?#RelativeMonthRegex)(?<relmonth>((dag\s+)?i\s+)?{RelativeRegex}\s+månad(en)?)\b";
       public const string MonthRegex = @"(?#MonthRegex)\b(?<month>apr(il)?|aug(usti)?|dec(ember)?|feb(ruari)?|jan(uari)?|juli?|juni?|mar(s)?|maj|nov(ember)?|okt(ober)?|sept(ember)?|sep)(?!\p{L})";
@@ -199,7 +199,7 @@ namespace Microsoft.Recognizers.Definitions.Swedish
       public static readonly string SpecificTimeOfDayRegex = $@"(?#SpecificTimeOfDayRegex)\b(({StrictRelativeRegex}\s+{TimeOfDayRegex})\b|\bikväll)s?\b";
       public static readonly string TimeFollowedUnit = $@"(?#TimeFollowedUnit)^\s*{TimeUnitRegex}";
       public static readonly string TimeNumberCombinedWithUnit = $@"(?#TimeNumberCombinedWithUnit)\b(?<num>\d+(\.\d*)?){TimeUnitRegex}";
-      public static readonly string[] BusinessHourSplitStrings = { @"business", @"hour" };
+      public static readonly string[] BusinessHourSplitStrings = { @"arbets", @"tid" };
       public const string NowRegex = @"(?#NowRegex)\b(?<now>(just\s+)?nu|så\s+snart\s+som\s+möjligt|asap|nyligen|tidigare|i\s+(present|denna\s+stund|denna\s+minut|detta\s+(ögonblick|present\s+time)))\b";
       public static readonly string NowParseRegex = $@"(?#NowParseRegex)\b({NowRegex}|^(date)$)\b";
       public const string SuffixRegex = @"(?#SuffixRegex)^\s*(på\s+)?(morgonen|eftermiddagen|kvällen|natten)\b";
@@ -390,6 +390,8 @@ namespace Microsoft.Recognizers.Definitions.Swedish
             { @"veckoslut", 172800 },
             { @"vecka", 604800 },
             { @"veckor", 604800 },
+            { @"arbetsdag", 86400 },
+            { @"arbetsdagar", 86400 },
             { @"dag", 86400 },
             { @"dagar", 86400 },
             { @"natt", 86400 },

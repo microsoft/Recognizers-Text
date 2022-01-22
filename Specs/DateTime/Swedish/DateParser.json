@@ -1,6 +1,7 @@
 ﻿[
   {
     "Input": "jag åker tillbaka den 15",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -24,6 +25,7 @@
   },
   {
     "Input": "jag åker tillbaka 22 april",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -47,6 +49,7 @@
   },
   {
     "Input": "jag åker tillbaka den 12 januari, 2016",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -70,6 +73,7 @@
   },
   {
     "Input": "jag åker tillbaka måndag den 12 januari, 2016",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -86,36 +90,38 @@
             "date": "2016-01-12"
           }
         },
-        "Start": 13,
-        "Length": 25
+        "Start": 18,
+        "Length": 27
       }
     ]
   },
   {
     "Input": "jag åker tillbaka 2016/12/01",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "Results": [
       {
-        "Text": "02/22/2016",
+        "Text": "2016/12/01",
         "Type": "date",
         "Value": {
-          "Timex": "2016-02-22",
+          "Timex": "2016-12-01",
           "FutureResolution": {
-            "date": "2016-02-22"
+            "date": "2016-12-01"
           },
           "PastResolution": {
-            "date": "2016-02-22"
+            "date": "2016-12-01"
           }
         },
-        "Start": 13,
+        "Start": 18,
         "Length": 10
       }
     ]
   },
   {
     "Input": "jag åker tillbaka 21/04/2016",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -132,14 +138,14 @@
             "date": "2016-04-21"
           }
         },
-        "Start": 13,
+        "Start": 18,
         "Length": 10
       }
     ]
   },
   {
     "Input": "jag åker tillbaka 9-18-15",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -150,10 +156,10 @@
         "Value": {
           "Timex": "2015-09-18",
           "FutureResolution": {
-            "date": "2016-04-21"
+            "date": "2015-09-18"
           },
           "PastResolution": {
-            "date": "2016-04-21"
+            "date": "2015-09-18"
           }
         },
         "Start": 18,
@@ -163,6 +169,7 @@
   },
   {
     "Input": "jag åker tillbaka 21/04/16",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -179,59 +186,14 @@
             "date": "2016-04-21"
           }
         },
-        "Start": 13,
+        "Start": 18,
         "Length": 8
       }
     ]
   },
   {
-    "Input": "I'll go back on 4.22",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "Results": [
-      {
-        "Text": "4.22",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-04-22",
-          "FutureResolution": {
-            "date": "2017-04-22"
-          },
-          "PastResolution": {
-            "date": "2016-04-22"
-          }
-        },
-        "Start": 16,
-        "Length": 4
-      }
-    ]
-  },
-  {
-    "Input": "I'll go back on 4-22",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "Results": [
-      {
-        "Text": "4-22",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-04-22",
-          "FutureResolution": {
-            "date": "2017-04-22"
-          },
-          "PastResolution": {
-            "date": "2016-04-22"
-          }
-        },
-        "Start": 16,
-        "Length": 4
-      }
-    ]
-  },
-  {
     "Input": "jag åker tillbaka 4.22",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -239,6 +201,7 @@
   },
   {
     "Input": "jag åker tillbaka    4/22",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -262,6 +225,7 @@
   },
   {
     "Input": "jag åker tillbaka den 22/04",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -285,7 +249,7 @@
   },
   {
     "Input": "jag åker tillbaka  22/04",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -309,6 +273,7 @@
   },
   {
     "Input": "jag åker tillbaka 2015/08/12",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -332,20 +297,21 @@
   },
   {
     "Input": "jag åker tillbaka 11/12,2015",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "Results": [
       {
-        "Text": "08/12,2015",
+        "Text": "11/12,2015",
         "Type": "date",
         "Value": {
-          "Timex": "2015-08-12",
+          "Timex": "2015-11-12",
           "FutureResolution": {
-            "date": "2015-08-12"
+            "date": "2015-11-12"
           },
           "PastResolution": {
-            "date": "2015-08-12"
+            "date": "2015-11-12"
           }
         },
         "Start": 18,
@@ -354,7 +320,8 @@
     ]
   },
   {
-    "Input": "jag åker tillbaka 11/12,15",
+    "Input": "jag åker tillbaka 08/12,15",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -378,6 +345,7 @@
   },
   {
     "Input": "jag åker tillbaka 1 jan",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -401,6 +369,7 @@
   },
   {
     "Input": "jag åker tillbaka 1-jan",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -424,6 +393,7 @@
   },
   {
     "Input": "jag åker tillbaka ons, 22 jan",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -447,6 +417,7 @@
   },
   {
     "Input": "jag åker tillbaka förste jan",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -470,6 +441,7 @@
   },
   {
     "Input": "jag åker tillbaka första jan",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -493,6 +465,7 @@
   },
   {
     "Input": "jag åker tillbaka andra jan",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -501,12 +474,12 @@
         "Text": "andra jan",
         "Type": "date",
         "Value": {
-          "Timex": "XXXX-01-01",
+          "Timex": "XXXX-01-02",
           "FutureResolution": {
-            "date": "2017-01-01"
+            "date": "2017-01-02"
           },
           "PastResolution": {
-            "date": "2016-01-01"
+            "date": "2016-01-02"
           }
         },
         "Start": 18,
@@ -516,6 +489,7 @@
   },
   {
     "Input": "jag åker tillbaka andre jan",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -524,12 +498,12 @@
         "Text": "andre jan",
         "Type": "date",
         "Value": {
-          "Timex": "XXXX-01-01",
+          "Timex": "XXXX-01-02",
           "FutureResolution": {
-            "date": "2017-01-01"
+            "date": "2017-01-02"
           },
           "PastResolution": {
-            "date": "2016-01-01"
+            "date": "2016-01-02"
           }
         },
         "Start": 18,
@@ -539,6 +513,7 @@
   },
   {
     "Input": "jag åker tillbaka tjugoförste maj",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -562,6 +537,7 @@
   },
   {
     "Input": "jag åker tillbaka tjugoförsta maj",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -585,6 +561,7 @@
   },
   {
     "Input": "jag åker tillbaka på fredag",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -608,6 +585,7 @@
   },
   {
     "Input": "jag åker tillbaka idag",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -631,6 +609,7 @@
   },
   {
     "Input": "jag åker tillbaka imorgon",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -654,6 +633,7 @@
   },
   {
     "Input": "jag åkte tillbaka igår",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -677,6 +657,7 @@
   },
   {
     "Input": "jag åkte tillbaka i förrgår",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -700,6 +681,7 @@
   },
   {
     "Input": "jag åker tillbaka i övermorgon",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -723,6 +705,8 @@
   },
   {
     "Input": "jag åker tillbaka nästa dag",
+    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -746,6 +730,7 @@
   },
   {
     "Input": "jag åker tillbaka kommande fredag",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -769,6 +754,7 @@
   },
   {
     "Input": "jag åker tillbaka nästa söndag",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -792,6 +778,7 @@
   },
   {
     "Input": "jag åkte tillbaka förra söndagen",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -815,6 +802,7 @@
   },
   {
     "Input": "jag åker tillbaka på söndag i nästa vecka",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -838,6 +826,7 @@
   },
   {
     "Input": "jag åkte tillbaka söndag i förra veckan",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -855,12 +844,13 @@
           }
         },
         "Start": 18,
-        "Length": 19
+        "Length": 21
       }
     ]
   },
   {
     "Input": "jag åkte tillbaka i söndags",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -884,6 +874,7 @@
   },
   {
     "Input": "jag åker tillbaka 15 juni 2016",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -907,6 +898,7 @@
   },
   {
     "Input": "jag åker tillbaka första fredagen i juli",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -930,6 +922,7 @@
   },
   {
     "Input": "jag åker tillbaka första fredagen den här månaden",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -938,12 +931,12 @@
         "Text": "första fredagen den här månaden",
         "Type": "date",
         "Value": {
-          "Timex": "XXXX-11-WXX-5-#1",
+          "Timex": "2016-11-01",
           "FutureResolution": {
-            "date": "2016-11-04"
+            "date": "2016-11-01"
           },
           "PastResolution": {
-            "date": "2016-11-04"
+            "date": "2016-11-01"
           }
         },
         "Start": 18,
@@ -953,6 +946,7 @@
   },
   {
     "Input": "jag åker tillbaka på fredag nästa vecka",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -976,6 +970,7 @@
   },
   {
     "Input": "jag åker tillbaka på fredag i nästa vecka",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -998,13 +993,14 @@
     ]
   },
   {
-    "Input": "What does my day look like?",
+    "Input": "Hur ser min dag ut?",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "Results": [
       {
-        "Text": "my day",
+        "Text": "min dag",
         "Type": "date",
         "Value": {
           "Timex": "2016-11-07",
@@ -1015,14 +1011,14 @@
             "date": "2016-11-07"
           }
         },
-        "Start": 10,
-        "Length": 6
+        "Start": 8,
+        "Length": 7
       }
     ]
   },
   {
     "Input": "I'll go back past day",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, python, java",
     "NotSupported": "dotnet",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1047,6 +1043,7 @@
   },
   {
     "Input": "jag åker tillbaka två veckor från nu",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1070,6 +1067,7 @@
   },
   {
     "Input": "jag åker tillbaka om två veckor från nu",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1093,6 +1091,7 @@
   },
   {
     "Input": "vem mejlade jag för en månad sedan",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1116,7 +1115,7 @@
   },
   {
     "Input": "who did I email few months ago?",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, python, java",
     "NotSupported": "dotnet",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1141,7 +1140,7 @@
   },
   {
     "Input": "who did I email a few days ago?",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, python, java",
     "NotSupported": "dotnet",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1166,6 +1165,7 @@
   },
   {
     "Input": "jag åkte tillbaka den 27",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1189,6 +1189,7 @@
   },
   {
     "Input": "jag åkte tillbaka den 27:e",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1212,6 +1213,7 @@
   },
   {
     "Input": "jag åkte tillbaka den 27.",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1235,6 +1237,7 @@
   },
   {
     "Input": "jag åkte tillbaka den 27!",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1258,6 +1261,7 @@
   },
   {
     "Input": "jag åkte tillbaka den 27 .",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1281,6 +1285,7 @@
   },
   {
     "Input": "jag åkte tillbaka den 21:e",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1304,6 +1309,7 @@
   },
   {
     "Input": "jag åkte tillbaka den 21:a",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1327,6 +1333,7 @@
   },
   {
     "Input": "jag åkte tillbaka den andre!",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1350,12 +1357,13 @@
   },
   {
     "Input": "jag åkte tillbaka fredagen den 15:e",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
     "Results": [
       {
-        "Text": "fredagen den 15:e",
+        "Text": "fredagen den 15",
         "Type": "date",
         "Value": {
           "Timex": "2017-09-15",
@@ -1366,13 +1374,14 @@
             "date": "2017-09-15"
           }
         },
-        "Start": 12,
+        "Start": 18,
         "Length": 15
       }
     ]
   },
   {
     "Input": "jag åker tillbaka på torsdagen den tjugoförste",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
@@ -1396,6 +1405,7 @@
   },
   {
     "Input": "jag åker tillbaka fredag den tjugoandre",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
@@ -1419,6 +1429,7 @@
   },
   {
     "Input": "jag åker tillbaka fredagen den femtonde",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
@@ -1442,6 +1453,7 @@
   },
   {
     "Input": "ag åker tillbaka den andra söndagen",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
@@ -1458,13 +1470,14 @@
             "date": "2017-09-10"
           }
         },
-        "Start": 22,
+        "Start": 21,
         "Length": 14
       }
     ]
   },
   {
     "Input": "jag åker tillbaka första söndagen",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
@@ -1488,7 +1501,7 @@
   },
   {
     "Input": "I'll go back third Tuesday",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, python, java",
     "NotSupported": "dotnet",
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
@@ -1513,7 +1526,7 @@
   },
   {
     "Input": "I'll go back fifth Sunday",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, python, java",
     "NotSupported": "dotnet",
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
@@ -1538,6 +1551,7 @@
   },
   {
     "Input": "jag åker tillbaka den 20 nästa månad",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1561,6 +1575,7 @@
   },
   {
     "Input": "jag åker tillbaka den 31 denna månad",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1584,7 +1599,7 @@
   },
   {
     "Input": "I'll go back January 12, 2018",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, python, java",
     "NotSupported": "dotnet",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1609,7 +1624,7 @@
   },
   {
     "Input": "I'll go back 9-18-15",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, python, java",
     "NotSupported": "dotnet",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1634,7 +1649,7 @@
   },
   {
     "Input": "I went back two days ago",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, python, java",
     "NotSupported": "dotnet",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1659,7 +1674,7 @@
   },
   {
     "Input": "I went back two years ago",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, python, java",
     "NotSupported": "dotnet",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1684,6 +1699,7 @@
   },
   {
     "Input": "16. Nov. 2016",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-14T00:00:00"
     },
@@ -1707,10 +1723,10 @@
   },
   {
     "Input": "Vi hade ett möte för 1 månad och 21 dagar sedan",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "1 månad och 21 dagar sedan",
@@ -1731,10 +1747,10 @@
   },
   {
     "Input": "jag lämnade här för 2 år 1 månad och 21 dagar sedan",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "2 år 1 månad och 21 dagar sedan",
@@ -1755,10 +1771,10 @@
   },
   {
     "Input": "jag kommer att avresa härifrån 2 år och 21 dagar senare",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "2 år och 21 dagar senare",
@@ -1779,10 +1795,10 @@
   },
   {
     "Input": "jag avreste härifrån för 1 månad 2 år och 21 dagar sedan",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "1 månad 2 år och 21 dagar sedan",
@@ -1803,10 +1819,10 @@
   },
   {
     "Input": "jag avreste härifrån den 20 nästa månad",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2017-12-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "20 nästa månad",
@@ -1827,6 +1843,7 @@
   },
   {
     "Input": "jag avreste härifrån den 5 december 1391",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2017-12-18T00:00:00"
     },
@@ -1850,7 +1867,7 @@
   },
   {
     "Input": "monday, jan twenty two, 2018",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, python, java",
     "NotSupported": "dotnet",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1875,10 +1892,10 @@
   },
   {
     "Input": "på söndag tjugoförste januari tjugohundraarton",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "söndag tjugoförste januari tjugohundraarton",
@@ -1899,10 +1916,11 @@
   },
   {
     "Input": "på söndag den tjugoförste januari tjugohundraarton",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "söndag den tjugoförste januari tjugohundraarton",
@@ -1923,10 +1941,11 @@
   },
   {
     "Input": "på söndag den tjugoförste januari tvåtusenarton",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "söndag den tjugoförste januari tvåtusenarton",
@@ -1947,10 +1966,11 @@
   },
   {
     "Input": "söndag, tjugoförste jan, tvåtusenarton",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "söndag, tjugoförste jan, tvåtusenarton",
@@ -1971,10 +1991,10 @@
   },
   {
     "Input": "söndag, tjugoförste jan, tjugohundraarton",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "söndag, tjugoförste jan, tjugohundraarton",
@@ -1995,10 +2015,10 @@
   },
   {
     "Input": "den tionde september, två tusen",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "tionde september, två tusen",
@@ -2019,7 +2039,7 @@
   },
   {
     "Input": "I'll see you the first Friday of next month",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, python, java",
     "NotSupported": "dotnet",
     "Context": {
       "ReferenceDateTime": "2018-03-20T09:58:00"
@@ -2044,7 +2064,7 @@
   },
   {
     "Input": "So, make it the second Monday of next month?",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, python, java",
     "NotSupported": "dotnet",
     "Context": {
       "ReferenceDateTime": "2018-03-20T10:45:00"
@@ -2069,7 +2089,7 @@
   },
   {
     "Input": "I came back the third Wednesday of previous month",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, python, java",
     "NotSupported": "dotnet",
     "Context": {
       "ReferenceDateTime": "2018-03-20T10:45:00"
@@ -2094,7 +2114,7 @@
   },
   {
     "Input": "I'll go travelling Tuesday next week",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, python, java",
     "NotSupported": "dotnet",
     "Context": {
       "ReferenceDateTime": "2018-03-20T22:16:00"
@@ -2119,7 +2139,7 @@
   },
   {
     "Input": "Handle homework on Sunday of next week",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, python, java",
     "NotSupported": "dotnet",
     "Context": {
       "ReferenceDateTime": "2018-03-20T22:16:00"
@@ -2144,21 +2164,21 @@
   },
   {
     "Input": "Är du ledig två dagar efter idag?",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2018-04-20T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "två dagar efter idag",
         "Type": "date",
         "Value": {
-          "Timex": "2018-04-23",
+          "Timex": "2018-04-22",
           "FutureResolution": {
-            "date": "2018-04-23"
+            "date": "2018-04-22"
           },
           "PastResolution": {
-            "date": "2018-04-23"
+            "date": "2018-04-22"
           }
         },
         "Start": 12,
@@ -2168,6 +2188,7 @@
   },
   {
     "Input": "Var var du fyra dagar före igår?",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2018-04-20T00:00:00"
     },
@@ -2176,21 +2197,22 @@
         "Text": "fyra dagar före igår",
         "Type": "date",
         "Value": {
-          "Timex": "2018-04-23",
+          "Timex": "2018-04-15",
           "FutureResolution": {
-            "date": "2018-04-23"
+            "date": "2018-04-15"
           },
           "PastResolution": {
-            "date": "2018-04-23"
+            "date": "2018-04-15"
           }
         },
         "Start": 11,
-        "Length":20
+        "Length": 20
       }
     ]
   },
   {
     "Input": "Är du ledig 13.5.2015?",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
@@ -2214,6 +2236,7 @@
   },
   {
     "Input": "Är du ledig 2015.5.13?",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
@@ -2237,10 +2260,10 @@
   },
   {
     "Input": "Är du ledig två söndagar från nu?",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2018-05-07T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "två söndagar från nu",
@@ -2261,7 +2284,7 @@
   },
   {
     "Input": "Are you available two monday later?",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, python, java",
     "NotSupported": "dotnet",
     "Context": {
       "ReferenceDateTime": "2018-05-07T00:00:00"
@@ -2286,10 +2309,10 @@
   },
   {
     "Input": "Är du ledig två dagar efter idag?",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
-    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "två dagar efter idag",
@@ -2310,7 +2333,7 @@
   },
   {
     "Input": "Are you available three weeks from tomorrow?",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, python, java",
     "NotSupported": "dotnet",
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
@@ -2335,7 +2358,7 @@
   },
   {
     "Input": "Where were you two days before yesterday?",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, python, java",
     "NotSupported": "dotnet",
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
@@ -2360,13 +2383,13 @@
   },
   {
     "Input": "jag reser om 3 veckor",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2018-07-05T00:00:00"
     },
-    "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "in 3 weeks",
+        "Text": "om 3 veckor",
         "Type": "date",
         "Value": {
           "Timex": "2018-07-26",
@@ -2377,28 +2400,28 @@
             "date": "2018-07-26"
           }
         },
-        "Start": 13,
-        "Length": 10
+        "Start": 10,
+        "Length": 11
       }
     ]
   },
   {
     "Input": "Cortana, vill du boka in ett Skypemöte om två arbetsdagar.",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2018-08-21T08:00:00"
     },
-    "NotSupported": "javascript, python",
     "Results": [
       {
-        "Text": "två arbetsdagar",
+        "Text": "om två arbetsdagar",
         "Type": "date",
         "Value": {
-          "Timex": "2018-08-27",
+          "Timex": "2018-08-23",
           "FutureResolution": {
-            "date": "2018-08-27"
+            "date": "2018-08-23"
           },
           "PastResolution": {
-            "date": "2018-08-27"
+            "date": "2018-08-23"
           }
         },
         "Start": 39,
@@ -2408,10 +2431,10 @@
   },
   {
     "Input": "jag åker tillbaka den tjugoandre juni 2017",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2018-08-21T08:00:00"
     },
-    "NotSupported": "python,javascript",
     "Results": [
       {
         "Text": "tjugoandre juni 2017",
@@ -2425,13 +2448,14 @@
             "date": "2017-06-22"
           }
         },
-        "Start": 13,
-        "Length": 26
+        "Start": 22,
+        "Length": 20
       }
     ]
   },
   {
     "Input": "jag åker tillbaka 2019-sep-1",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2018-08-21T08:00:00"
     },
@@ -2455,6 +2479,7 @@
   },
   {
     "Input": "jag åker tillbaka 2019/sep/01",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2018-08-21T08:00:00"
     },
@@ -2481,7 +2506,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, python, java",
     "NotSupported": "dotnet",
     "Results": [
       {
@@ -2506,7 +2531,7 @@
     "Context": {
       "ReferenceDateTime": "2019-03-22T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, python, java",
     "NotSupported": "dotnet",
     "Results": [
       {
@@ -2531,7 +2556,7 @@
     "Context": {
       "ReferenceDateTime": "2020-03-22T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, python, java",
     "NotSupported": "dotnet",
     "Results": [
       {
@@ -2556,7 +2581,7 @@
     "Context": {
       "ReferenceDateTime": "2020-03-22T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, python, java",
     "NotSupported": "dotnet",
     "Results": [
       {
@@ -2581,7 +2606,7 @@
     "Context": {
       "ReferenceDateTime": "2020-03-22T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, python, java",
     "NotSupported": "dotnet",
     "Results": [
       {
@@ -2606,7 +2631,7 @@
     "Context": {
       "ReferenceDateTime": "2020-03-22T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, python, java",
     "NotSupported": "dotnet",
     "Results": [
       {
