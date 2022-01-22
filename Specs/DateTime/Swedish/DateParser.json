@@ -48,6 +48,30 @@
     ]
   },
   {
+    "Input": "jag åker tillbaka 2016-01-12",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2016-01-12",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-01-12",
+          "FutureResolution": {
+            "date": "2016-01-12"
+          },
+          "PastResolution": {
+            "date": "2016-01-12"
+          }
+        },
+        "Start": 18,
+        "Length": 10
+      }
+    ]
+  },
+  {
     "Input": "jag åker tillbaka den 12 januari, 2016",
     "NotSupportedByDesign": "javascript, python, java",
     "Context": {
