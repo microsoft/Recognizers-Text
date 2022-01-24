@@ -7,7 +7,7 @@
     },
     "Results": [
       {
-        "Text": "den 15",
+        "Text": "15",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-15",
@@ -18,8 +18,8 @@
             "date": "2016-10-15"
           }
         },
-        "Start": 18,
-        "Length": 6
+        "Start": 22,
+        "Length": 2
       }
     ]
   },
@@ -1195,7 +1195,7 @@
     },
     "Results": [
       {
-        "Text": "den 27",
+        "Text": "27",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-27",
@@ -1206,8 +1206,8 @@
             "date": "2016-10-27"
           }
         },
-        "Start": 18,
-        "Length": 6
+        "Start": 22,
+        "Length": 2
       }
     ]
   },
@@ -1243,7 +1243,7 @@
     },
     "Results": [
       {
-        "Text": "den 27",
+        "Text": "27",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-27",
@@ -1254,8 +1254,8 @@
             "date": "2016-10-27"
           }
         },
-        "Start": 18,
-        "Length": 6
+        "Start": 22,
+        "Length": 2
       }
     ]
   },
@@ -1267,7 +1267,7 @@
     },
     "Results": [
       {
-        "Text": "den 27",
+        "Text": "27",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-27",
@@ -1278,8 +1278,8 @@
             "date": "2016-10-27"
           }
         },
-        "Start": 18,
-        "Length": 6
+        "Start": 22,
+        "Length": 2
       }
     ]
   },
@@ -1291,7 +1291,7 @@
     },
     "Results": [
       {
-        "Text": "den 27",
+        "Text": "27",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-XX-27",
@@ -1302,8 +1302,8 @@
             "date": "2016-10-27"
           }
         },
-        "Start": 18,
-        "Length": 6
+        "Start": 22,
+        "Length": 2
       }
     ]
   },
