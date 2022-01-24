@@ -51,7 +51,7 @@
   },
   {
     "Input": "fünfundzwanzigster",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "fünfundzwanzigster",

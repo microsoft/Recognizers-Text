@@ -490,5 +490,135 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Bana sondan üçüncüyüz göster.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "sondan üçüncü",
+        "Start": 5,
+        "End": 17,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-2",
+          "relativeTo": "end",
+          "value": "end-2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Bana sondan bir öncekini göster.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "sondan bir önceki",
+        "Start": 5,
+        "End": 21,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end",
+          "value": "end-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "nottaki son cümleyi sil",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "son",
+        "Start": 8,
+        "End": 10,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end",
+          "value": "end+0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "\"sonraki\" veya \"son\"u mu kastediyorsunuz?",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "sonraki",
+        "Start": 1,
+        "End": 7,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "current",
+          "value": "current+1"
+        }
+      },
+      {
+        "Text": "son",
+        "Start": 16,
+        "End": 18,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end",
+          "value": "end+0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Son iki kitabı istiyorum.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "son",
+        "Start": 0,
+        "End": 2,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end",
+          "value": "end+0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sonraki 3 kitabı istiyorum.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "sonraki",
+        "Start": 0,
+        "End": 6,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "current",
+          "value": "current+1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Önceki sayfaya dönün.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "önceki",
+        "Start": 0,
+        "End": 5,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "current",
+          "value": "current-1"
+        }
+      }
+    ]
   }
 ]

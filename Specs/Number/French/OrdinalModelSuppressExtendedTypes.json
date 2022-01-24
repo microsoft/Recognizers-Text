@@ -132,19 +132,19 @@
     "Results": []
   },
   {
-    "Input": "vingt-et-unième",
-    "NotSupported": "dotnet, javascript, python, java",
+    "Input": "tierce",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "vingt-et-unième",
-        "Start": 0,
-        "End": 15,
+        "Text": "tierce",
         "TypeName": "ordinal",
         "Resolution": {
-          "offset": "21",
-          "relativeTo": "start",
-          "value": "21"
-        }
+          "value": "3",
+          "offset":"3",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 5
       }
     ]
   }

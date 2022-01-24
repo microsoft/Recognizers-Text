@@ -61,6 +61,7 @@
   },
   {
     "Input": "cuadragesimo septimo",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "cuadragesimo septimo",
