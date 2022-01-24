@@ -10,7 +10,6 @@ import com.microsoft.recognizers.text.datetime.config.BaseOptionsConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.IDateExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.german.extractors.GermanDateExtractorConfiguration;
-import com.microsoft.recognizers.text.datetime.parsers.BaseHolidayParser;
 import com.microsoft.recognizers.text.datetime.parsers.IDateTimeParser;
 import com.microsoft.recognizers.text.datetime.parsers.config.ICommonDateTimeParserConfiguration;
 import com.microsoft.recognizers.text.datetime.parsers.config.IDateParserConfiguration;
@@ -27,7 +26,7 @@ import java.util.regex.Pattern;
 
 public class GermanDateParserConfiguration extends BaseOptionsConfiguration implements IDateParserConfiguration {
 
-    private final BaseHolidayParser holidayParser;
+    private final HolidayParserGer holidayParser;
     private final Pattern beforeAfterRegex;
     private final Pattern afterNextPrefixRegex;
     private final Pattern upcomingPrefixRegex;
@@ -88,7 +87,7 @@ public class GermanDateParserConfiguration extends BaseOptionsConfiguration impl
         durationExtractor = config.getDurationExtractor();
         dateExtractor = config.getDateExtractor();
         durationParser = config.getDurationParser();
-        holidayParser = new BaseHolidayParser(new GermanHolidayParserConfiguration());
+        holidayParser = new HolidayParserGer(new GermanHolidayParserConfiguration());
 
         dateRegexes = Collections.unmodifiableList(GermanDateExtractorConfiguration.DateRegexList);
         onRegex = GermanDateExtractorConfiguration.OnRegex;

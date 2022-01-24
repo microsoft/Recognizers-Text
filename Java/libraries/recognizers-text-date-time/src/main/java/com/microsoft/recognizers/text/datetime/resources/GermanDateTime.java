@@ -13,7 +13,6 @@ package com.microsoft.recognizers.text.datetime.resources;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
 import com.google.common.collect.ImmutableMap;
 
@@ -1126,37 +1125,6 @@ public class GermanDateTime {
         .put("29.", 29)
         .put("30.", 30)
         .put("31.", 31)
-        .put("1", 1)
-        .put("2", 2)
-        .put("3", 3)
-        .put("4", 4)
-        .put("5", 5)
-        .put("6", 6)
-        .put("7", 7)
-        .put("8", 8)
-        .put("9", 9)
-        .put("10", 10)
-        .put("11", 11)
-        .put("12", 12)
-        .put("13", 13)
-        .put("14", 14)
-        .put("15", 15)
-        .put("16", 16)
-        .put("17", 17)
-        .put("18", 18)
-        .put("19", 19)
-        .put("20", 20)
-        .put("21", 21)
-        .put("22", 22)
-        .put("23", 23)
-        .put("24", 24)
-        .put("25", 25)
-        .put("26", 26)
-        .put("27", 27)
-        .put("28", 28)
-        .put("29", 29)
-        .put("30", 30)
-        .put("31", 31)
         .build();
 
     public static final ImmutableMap<String, Double> DoubleNumbers = ImmutableMap.<String, Double>builder()
