@@ -1944,7 +1944,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "söndag den tjugoförste januari tjugohundraarton",
@@ -2034,6 +2033,30 @@
         },
         "Start": 0,
         "Length": 41
+      }
+    ]
+  },
+  {
+    "Input": "på fredag åttonde mars nittonhundrasextioåtta",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "fredag åttonde mars nittonhundrasextioåtta",
+        "Type": "date",
+        "Value": {
+          "Timex": "1968-03-08",
+          "FutureResolution": {
+            "date": "1968-03-08"
+          },
+          "PastResolution": {
+            "date": "1968-03-08"
+          }
+        },
+        "Start": 3,
+        "Length": 42
       }
     ]
   },

@@ -1303,6 +1303,19 @@
     ]
   },
   {
+    "Input": "på fredag åttonde mars nittonhundrasextioåtta",
+    "debug": true,
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "fredag åttonde mars nittonhundrasextioåtta",
+        "Type": "date",
+        "Start": 3,
+        "Length": 42
+      }
+    ]
+  },
+  {
     "Input": "på söndag tjugoförste januari tjugohundraarton",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [

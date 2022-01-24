@@ -58,10 +58,10 @@ WrittenElevenToNineteenRegex: !simpleRegex
 WrittenTensRegex: !simpleRegex
   def: (?#WrittenTensRegex)(?:tio|tjugo|trettio|fyrtio|femtio|sextio|sjuttio|åttio|nittio)
 WrittenNumRegex: !nestedRegex
-  def: (?#WrittenNumRegex)(?:{WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|{WrittenTensRegex}(\s+{WrittenOneToNineRegex})?)
+  def: (?#WrittenNumRegex)(?:{WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|{WrittenTensRegex}(\s*{WrittenOneToNineRegex})?)
   references: [ WrittenOneToNineRegex, WrittenElevenToNineteenRegex, WrittenTensRegex ]
 WrittenCenturyFullYearRegex: !nestedRegex
-  def: (?#WrittenCenturyFullYearRegex)(?:(ett|två)\s+tusen(\s+{WrittenOneToNineRegex}\s+hundra)?)
+  def: (?#WrittenCenturyFullYearRegex)(?:(ett|två)\s+tusen(\s*{WrittenOneToNineRegex}\s*hundra)?)
   references: [ WrittenOneToNineRegex]
 WrittenCenturyOrdinalYearRegex: !simpleRegex
   def: (?#WrittenCenturyOrdinalYearRegex)(?:tjugo(\s+(ett|två))?|tio|elva|tolv|tretton|femton|arton|tjugo|(?:fjor|sex|sjut|nit)(ton)?|ett|två|tre|fyra|fem|sju|åtta|nio)
@@ -69,10 +69,10 @@ CenturyRegex: !nestedRegex
   def: (?#CenturyRegex)\b(?<century>{WrittenCenturyFullYearRegex}|(ett|två)tusen|{WrittenCenturyOrdinalYearRegex}(\s*hundra)?)
   references: [WrittenCenturyFullYearRegex, WrittenCenturyOrdinalYearRegex ]
 LastTwoYearNumRegex: !nestedRegex
-  def: (?#LastTwoYearNumRegex)(?:(noll\s+)?{WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|{WrittenTensRegex}(\s+{WrittenOneToNineRegex})?)
+  def: (?#LastTwoYearNumRegex)(?:(noll\s+)?{WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|{WrittenTensRegex}(\s*{WrittenOneToNineRegex})?)
   references: [ WrittenOneToNineRegex, WrittenElevenToNineteenRegex, WrittenTensRegex ]
 FullTextYearRegex: !nestedRegex
-  def: (?#FullTextYearRegex)\b((?<firsttwoyearnum>{CenturyRegex})(\s+och)?\s*(?<lasttwoyearnum>{LastTwoYearNumRegex})\b|\b(?<firsttwoyearnum>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}\s+hundra))\b
+  def: (?#FullTextYearRegex)\b((?<firsttwoyearnum>{CenturyRegex})(\s+och)?\s*(?<lasttwoyearnum>{LastTwoYearNumRegex})\b|\b(?<firsttwoyearnum>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}\s*hundra))\b
   references: [ CenturyRegex, WrittenCenturyFullYearRegex, WrittenCenturyOrdinalYearRegex, LastTwoYearNumRegex ]
 OclockRegex: !simpleRegex
   def: (?#OclockRegex)(?<oclock>o\s*((’|‘|')\s*)?clock|sharp|prick)
