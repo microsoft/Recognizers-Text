@@ -670,6 +670,13 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
+        "Text": "5000과 같",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[5000,5000]"
+        }
+      },
+      {
         "Text": "5000 보다 작다",
         "TypeName": "numberrange",
         "Resolution": {
@@ -1135,6 +1142,15 @@
     "Input": "그의 점수는 30과 같거나 최소 30이다",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
+      {
+        "Text": "30과 같",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[30,30]"
+        },
+        "Start": 7,
+        "End": 11
+      },
       {
         "Text": "최소 30",
         "TypeName": "numberrange",
@@ -1684,10 +1700,17 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "같거나 5000 미만",
+        "Text": "5000과 같",
         "TypeName": "numberrange",
         "Resolution": {
-          "value": "(,5000]"
+          "value": "[5000,5000]"
+        }
+      },
+      {
+        "Text": "5000 미만",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,5000)"
         }
       }
     ]
