@@ -85,8 +85,8 @@ namespace Microsoft.Recognizers.Text.Number.Korean
                     NumberRangeConstants.LESS
                 },
                 {
-                    new Regex(NumbersDefinitions.OneNumberRangeLessRegex2, RegexFlags),
-                    NumberRangeConstants.LESS
+                    new Regex(NumbersDefinitions.TwoNumberRangeRegex, RegexFlags),
+                    NumberRangeConstants.TWONUMCLOSED
                 },
                 {
                     // 까지최소|<|≤...
