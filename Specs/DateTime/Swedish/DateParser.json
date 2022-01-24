@@ -1916,6 +1916,7 @@
   },
   {
     "Input": "på söndag tjugoförste januari tjugohundraarton",
+    "debug": true,
     "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1941,6 +1942,7 @@
   {
     "Input": "på söndag den tjugoförste januari tjugohundraarton",
     "NotSupportedByDesign": "javascript, python, java",
+    "debug": true,
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },

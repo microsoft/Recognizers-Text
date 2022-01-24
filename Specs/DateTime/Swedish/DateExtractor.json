@@ -729,10 +729,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "den 27",
+        "Text": "27",
         "Type": "date",
-        "Start": 18,
-        "Length": 6
+        "Start": 22,
+        "Length": 2
       }
     ]
   },
@@ -753,10 +753,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "den 27",
+        "Text": "27",
         "Type": "date",
-        "Start": 18,
-        "Length": 6
+        "Start": 22,
+        "Length": 2
       }
     ]
   },
@@ -765,10 +765,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "den 27",
+        "Text": "27",
         "Type": "date",
-        "Start": 18,
-        "Length": 6
+        "Start": 22,
+        "Length": 2
       }
     ]
   },
@@ -777,10 +777,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "den 27",
+        "Text": "27",
         "Type": "date",
-        "Start": 18,
-        "Length": 6
+        "Start": 22,
+        "Length": 2
       }
     ]
   },
@@ -859,6 +859,7 @@
   {
     "Input": "jag åkte tillbaka den andre!",
     "NotSupportedByDesign": "javascript,python,java",
+    "debug": true,
     "Results": [
       {
         "Text": "den andre",
@@ -1304,7 +1305,6 @@
   },
   {
     "Input": "på fredag åttonde mars nittonhundrasextioåtta",
-    "debug": true,
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {

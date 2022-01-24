@@ -659,8 +659,9 @@ PrepositionSuffixRegex: !simpleRegex
   def: \b(on|in|at|around|circa|from|to)$
 FlexibleDayRegex: !simpleRegex
   def: (?<DayOfMonth>([A-Öa-ö]+\s)?[A-Öa-ö\d]+)
+# Only match expressions NOT containing weekday names => Match: 'jag åkte tillbaka den andre' Do NOT match: 'jag åkte tillbaka lördagen den andre!'
 ForTheRegex: !nestedRegex
-  def: (?#ForTheRegex)\b(((?<!{WeekDayRegex}\s+)den\s+{FlexibleDayRegex}))(?<end>\s*(,|\.(?!\d)|!|\?|$))
+  def: (?#ForTheRegex)\b((((?<=\btill\s+)den\s+{FlexibleDayRegex})|((?<!{WeekDayRegex}\s+)den\s+{FlexibleDayRegex}(?<=(ta|te|ra|re|de))))(?<end>\s*(,|\.(?!\d)|!|\?|$)))
   references: [WeekDayRegex, FlexibleDayRegex]
 WeekDayAndDayOfMonthRegex: !nestedRegex
   def: \b{WeekDayRegex}\s+(den\s+{FlexibleDayRegex})\b
