@@ -163,4 +163,19 @@ public abstract class BaseHolidayParserConfiguration extends BaseOptionsConfigur
 
         return lastDay;
     }
+
+    protected static int getDayWithinRange(int year, int month, int week, DayOfWeek dayOfWeek,
+                                         int startDateNum, int endDateNum) {
+        int weekCount = 0;
+        for (int day = startDateNum; day < endDateNum + 1; day++) {
+            if (DateUtil.safeCreateFromMinValue(year, month, day).getDayOfWeek() == dayOfWeek) {
+                weekCount++;
+                if (weekCount == week + 1) {
+                    return day;
+                }
+            }
+        }
+
+        throw new Error("day out of bound.");
+    }
 }
