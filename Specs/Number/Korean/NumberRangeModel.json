@@ -1136,12 +1136,12 @@
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "과 같거나 최소 30",
+        "Text": "최소 30",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[30,)"
         },
-        "Start": 9,
+        "Start": 15,
         "End": 19
       }
     ]
@@ -1639,12 +1639,12 @@
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "이거나 최소 30",
+        "Text": "최소 30",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[30,)"
         },
-        "Start": 9,
+        "Start": 13,
         "End": 17
       }
     ]
