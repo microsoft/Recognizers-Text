@@ -48,7 +48,7 @@ The table below summarizes the currently supported entities. Support for English
 | Number (cardinal)    | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | ✓     | ✓      | ✓       |
 | Ordinal              | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | ✓     | ✓      | ✓       |
 | Percentage           | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | ✓     | ✓      | ✓       |
-| Number Range         | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | PA/EO  | PA/EO  | :x:    | ✓       |
+| Number Range         | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | PA/EO  | ✓      | :x:    | ✓       |
 | Unit - Age           | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | PA/EO  | ✓     | ✓       |
 | Unit - Currency      | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | PA/EO  | ✓     | ✓       |
 | Unit - Dimensions    | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | :x:    | PA/EO  | ✓      | ✓      | 
