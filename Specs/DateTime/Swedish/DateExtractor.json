@@ -821,18 +821,6 @@
     ]
   },
   {
-    "Input": "jag åkte tillbaka den 27:e",
-    "NotSupportedByDesign": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "27:e",
-        "Type": "date",
-        "Start": 22,
-        "Length": 4
-      }
-    ]
-  },
-  {
     "Input": "jag åkte tillbaka den 21:e",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
