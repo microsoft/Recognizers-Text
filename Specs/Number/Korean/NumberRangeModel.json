@@ -1140,6 +1140,7 @@
   },
   {
     "Input": "그의 점수는 30과 같거나 최소 30이다",
+    "Comment": "The pattern 'X과 같거나 최소 Y' is ambiguous and can be translated as either 'is X or at least Y' or 'is equal to X or at least Y'. Here the second interpretation is used and '30과 같' (equal to 30) is extracted.",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
