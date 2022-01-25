@@ -15,7 +15,7 @@ namespace Microsoft.Recognizers.Text.Number.Korean
 
         public NumberRangeExtractor(INumberOptionsConfiguration config)
             : base(new NumberExtractor(new BaseNumberOptionsConfiguration(config)),
-                   new OrdinalExtractor(new BaseNumberOptionsConfiguration(config)),
+                   OrdinalExtractor.GetInstance(new BaseNumberOptionsConfiguration(config.Culture, config.Options)),
                    new BaseCJKNumberParser(new KoreanNumberParserConfiguration(config)),
                    config)
         {

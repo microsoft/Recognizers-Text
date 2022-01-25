@@ -255,7 +255,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
 
             CardinalExtractor = Number.Italian.CardinalExtractor.GetInstance();
-            OrdinalExtractor = Number.Italian.OrdinalExtractor.GetInstance();
+            OrdinalExtractor = Number.Italian.OrdinalExtractor.GetInstance(numConfig);
 
             NumberParser = new BaseNumberParser(new ItalianNumberParserConfiguration(numConfig));
         }

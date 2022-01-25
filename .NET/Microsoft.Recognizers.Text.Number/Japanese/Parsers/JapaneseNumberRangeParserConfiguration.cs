@@ -19,7 +19,7 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
             var numConfig = new BaseNumberOptionsConfiguration(config);
 
             NumberExtractor = new NumberExtractor(numConfig);
-            OrdinalExtractor = new OrdinalExtractor(numConfig);
+            OrdinalExtractor = Japanese.OrdinalExtractor.GetInstance(numConfig);
             NumberParser = new BaseCJKNumberParser(new JapaneseNumberParserConfiguration(config));
 
             MoreOrEqual = new Regex(NumbersDefinitions.MoreOrEqual, RegexFlags);

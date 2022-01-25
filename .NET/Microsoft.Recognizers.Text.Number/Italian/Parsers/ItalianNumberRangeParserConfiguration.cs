@@ -18,7 +18,7 @@ namespace Microsoft.Recognizers.Text.Number.Italian
             CultureInfo = new CultureInfo(config.Culture);
 
             NumberExtractor = Italian.NumberExtractor.GetInstance();
-            OrdinalExtractor = Italian.OrdinalExtractor.GetInstance();
+            OrdinalExtractor = Italian.OrdinalExtractor.GetInstance(new BaseNumberOptionsConfiguration(config.Culture, config.Options));
 
             NumberParser = new BaseNumberParser(new ItalianNumberParserConfiguration(config));
 

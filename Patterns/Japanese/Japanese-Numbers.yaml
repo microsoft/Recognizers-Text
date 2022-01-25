@@ -387,7 +387,7 @@ RelativeReferenceRelativeToMap: !dictionary
   types: [ string, string ]
   entries:   
     前: current
-    現在: end
+    現在: current
     次: current
     最後: end
     最後から三番目: end

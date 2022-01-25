@@ -502,12 +502,12 @@
   },
   {
     "Input": "supprimez la dernière phrase du mot",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "dernière",
         "Start": 13,
-        "End": 21,
+        "End": 20,
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "0",
@@ -519,12 +519,12 @@
   },
   {
     "Input": "Tu veux dire \"prochain\"ou \"dernier\"?",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "prochain",
         "Start": 14,
-        "End": 22,
+        "End": 21,
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "1",
@@ -535,7 +535,7 @@
       {
         "Text": "dernier",
         "Start": 27,
-        "End": 34,
+        "End": 33,
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "0",
@@ -547,12 +547,12 @@
   },
   {
     "Input": "Montrez-moi l’antépénultième.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "antépénultième",
         "Start": 14,
-        "End": 28,
+        "End": 27,
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "-2",
@@ -564,12 +564,12 @@
   },
   {
     "Input": "Montrez-moi l’avant-dernier.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "l’avant-dernier",
         "Start": 12,
-        "End": 27,
+        "End": 26,
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "-1",
@@ -581,12 +581,12 @@
   },
   {
     "Input": "Montrez-moi l’pénultième.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "pénultième",
         "Start": 14,
-        "End": 24,
+        "End": 23,
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "-1",
@@ -598,12 +598,12 @@
   },
   {
     "Input": "Montrez-moi celle d’avant la dernière.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "celle d’avant la dernière",
         "Start": 12,
-        "End": 37,
+        "End": 36,
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "-1",
@@ -615,12 +615,12 @@
   },
   {
     "Input": "Supprimez la dernière phrase.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "dernière",
         "Start": 13,
-        "End": 21,
+        "End": 20,
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "0",
@@ -632,12 +632,12 @@
   },
   {
     "Input": "Montrez-moi la précédente.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "précédente",
         "Start": 15,
-        "End": 25,
+        "End": 24,
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "-1",
@@ -649,12 +649,12 @@
   },
   {
     "Input": "Montrez-moi la suivante.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "suivante",
         "Start": 15,
-        "End": 23,
+        "End": 22,
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "1",
@@ -666,12 +666,12 @@
   },
   {
     "Input": "Je veux les deux derniers livres.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "derniers",
         "Start": 17,
-        "End": 25,
+        "End": 24,
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "0",
@@ -683,12 +683,12 @@
   },
   {
     "Input": "Je veux le dernier livre.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "dernier",
         "Start": 11,
-        "End": 18,
+        "End": 17,
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "0",
@@ -700,27 +700,10 @@
   },
   {
     "Input": "Je veux les 3 prochains livres.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "prochains",
-        "Start": 14,
-        "End": 23,
-        "TypeName": "ordinal.relative",
-        "Resolution": {
-          "offset": "1",
-          "relativeTo": "current",
-          "value": "current+1"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "Donnez-moi le prochain objet.",
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "prochain",
         "Start": 14,
         "End": 22,
         "TypeName": "ordinal.relative",
@@ -733,13 +716,30 @@
     ]
   },
   {
+    "Input": "Donnez-moi le prochain objet.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "prochain",
+        "Start": 14,
+        "End": 21,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "current",
+          "value": "current+1"
+        }
+      }
+    ]
+  },
+  {
     "Input": "Je veux le dernier biscuit.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "dernier",
         "Start": 11,
-        "End": 18,
+        "End": 17,
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "0",
@@ -751,12 +751,12 @@
   },
   {
     "Input": "Je veux l’avant-dernier.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "avant-dernier",
-        "Start": 10,
-        "End": 23,
+        "Text": "l’avant-dernier",
+        "Start": 8,
+        "End": 22,
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "-1",
@@ -768,12 +768,12 @@
   },
   {
     "Input": "Tournez à la page précédente.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "précédente",
         "Start": 18,
-        "End": 28,
+        "End": 27,
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "-1",
@@ -1113,12 +1113,12 @@
   },
   {
     "Input": "Celui d’avant le dernier est correct",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "Celui d’avant le dernier",
+        "Text": "celui d’avant le dernier",
         "Start": 0,
-        "End": 24,
+        "End": 23,
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "-1",
@@ -1130,12 +1130,12 @@
   },
   {
     "Input": "Je parlais de l’avant-dernier",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "l’avant-dernier",
         "Start": 14,
-        "End": 29,
+        "End": 28,
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "-1",
@@ -1147,12 +1147,12 @@
   },
   {
     "Input": "Je parlais de l’actuel un",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "actuel un",
-        "Start": 16,
-        "End": 25,
+        "Text": "l’actuel un",
+        "Start": 14,
+        "End": 24,
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "0",
@@ -1164,12 +1164,12 @@
   },
   {
     "Input": "Regardez la page actuelle",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "actuelle",
         "Start": 17,
-        "End": 25,
+        "End": 24,
         "TypeName": "ordinal.relative",
         "Resolution": {
           "offset": "0",

@@ -1023,5 +1023,220 @@
   {
     "Input": "30° C",
     "Results": []
+  },
+  {
+    "Input": "eliminar la última oración en la nota",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "última",
+        "Start": 12,
+        "End": 17,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end",
+          "value": "end+0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "¿Quieres decir \"siguiente\" o \"último\"?",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "siguiente",
+        "Start": 16,
+        "End": 24,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "current",
+          "value": "current+1"
+        }
+      },
+      {
+        "Text": "último",
+        "Start": 30,
+        "End": 35,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end",
+          "value": "end+0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Muéstrame la antepenúltima.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "antepenúltima",
+        "Start": 13,
+        "End": 25,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-2",
+          "relativeTo": "end",
+          "value": "end-2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Muéstrame el penúltimo.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "penúltimo",
+        "Start": 13,
+        "End": 21,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end",
+          "value": "end-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Muéstrame el antes del ultimo.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "antes del ultimo",
+        "Start": 13,
+        "End": 28,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end",
+          "value": "end-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Muéstrame el anterior al último.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "anterior al último",
+        "Start": 13,
+        "End": 30,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end",
+          "value": "end-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Suprímase la última oración.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "última",
+        "Start": 13,
+        "End": 18,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end",
+          "value": "end+0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Muéstrame el anterior.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "anterior",
+        "Start": 13,
+        "End": 20,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "current",
+          "value": "current-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Muéstrame el siguiente.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "siguiente",
+        "Start": 13,
+        "End": 21,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "current",
+          "value": "current+1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Quiero los dos últimos libros.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "últimos",
+        "Start": 15,
+        "End": 21,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end",
+          "value": "end+0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Quiero los próximos 3 libros.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "próximos",
+        "Start": 11,
+        "End": 18,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "current",
+          "value": "current+1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Pase a la página anterior.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "anterior",
+        "Start": 17,
+        "End": 24,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "current",
+          "value": "current-1"
+        }
+      }
+    ]
   }
 ]

@@ -19,7 +19,7 @@ namespace Microsoft.Recognizers.Text.Number.Korean
             var numConfig = new BaseNumberOptionsConfiguration(config);
 
             NumberExtractor = new NumberExtractor(numConfig);
-            OrdinalExtractor = new OrdinalExtractor(numConfig);
+            OrdinalExtractor = Japanese.OrdinalExtractor.GetInstance(numConfig);
             NumberParser = new BaseCJKNumberParser(new KoreanNumberParserConfiguration(config));
 
             MoreOrEqual = new Regex(NumbersDefinitions.MoreOrEqual, RegexFlags);

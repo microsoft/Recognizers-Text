@@ -16,8 +16,10 @@ namespace Microsoft.Recognizers.Text.Number.Turkish
         {
             CultureInfo = new CultureInfo(config.Culture);
 
+            var numConfig = new BaseNumberOptionsConfiguration(config);
+
             NumberExtractor = Turkish.NumberExtractor.GetInstance(NumberMode.Default, config.Options);
-            OrdinalExtractor = Turkish.OrdinalExtractor.GetInstance(config.Options);
+            OrdinalExtractor = Turkish.OrdinalExtractor.GetInstance(numConfig);
             NumberParser = new BaseNumberParser(new TurkishNumberParserConfiguration(config));
 
             MoreOrEqual = new Regex(NumbersDefinitions.MoreOrEqual, RegexFlags);

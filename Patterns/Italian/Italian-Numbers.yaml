@@ -62,19 +62,22 @@ NumberOrdinalRegex: !simpleRegex
 OneToNineOrdinalCompoundRegex: !simpleRegex
   def: (un|du|tre|quattr|cinqu|sei|sett|ott|nov)esim[oaie]
 RelativeOrdinalRegex: !simpleRegex
-  def: (precedente|seguente|penultim[oa]|terzultim[oa]|ultim[oa])
+  def: (?<relativeOrdinal>precedent[ei]|seguent[ei]|prossim[aoei]|corrent[ei]|successiv[aoei]|penultim[oaei]|terzultim[oaei]|(l')?(ultim[oaei]|attual[ei])|quell[ao]\s+prima\s+dell'ultim[ao])
 BasicOrdinalRegex: !nestedRegex
-  def: (({NumberOrdinalRegex}|{RelativeOrdinalRegex})(?!\s*({TwoToNineIntegerRegex}|([2-9]+))\b))
-  references: [ NumberOrdinalRegex, RelativeOrdinalRegex, TwoToNineIntegerRegex ]
+  def: ({NumberOrdinalRegex}(?!\s*({TwoToNineIntegerRegex}|([2-9]+))\b))
+  references: [ NumberOrdinalRegex, TwoToNineIntegerRegex ]
 SuffixBasicOrdinalRegex: !nestedRegex
   def: ((((({TensNumberIntegerRegex}{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|({AnIntRegex})|{RoundNumberIntegerRegex})(\s*{RoundNumberIntegerRegex})*)\s*(e\s+)?)*({TensNumberIntegerRegex}?{OneToNineOrdinalCompoundRegex}|{BasicOrdinalRegex}))
   references: [ TensNumberIntegerRegex, ZeroToNineIntegerRegex, AnIntRegex, RoundNumberIntegerRegex, BasicOrdinalRegex, OneToNineOrdinalCompoundRegex ]
 SuffixRoundNumberOrdinalRegex: !nestedRegex
   def: (({AllIntRegex}\s*)?{RoundNumberOrdinalRegex})
   references: [ AllIntRegex, RoundNumberOrdinalRegex ]
-AllOrdinalRegex: !nestedRegex
+AllOrdinalNumberRegex: !nestedRegex
   def: ({SuffixRoundNumberOrdinalRegex}|{SuffixBasicOrdinalRegex})
   references: [ SuffixRoundNumberOrdinalRegex, SuffixBasicOrdinalRegex ]
+AllOrdinalRegex: !nestedRegex
+  def: (?:{AllOrdinalNumberRegex}|{RelativeOrdinalRegex})
+  references: [ AllOrdinalNumberRegex, RelativeOrdinalRegex ]
 OrdinalSuffixRegex: !simpleRegex
   def: (?<=\b)(\d+(°|(esi)?m[oaie]))
 OrdinalNumericRegex: !simpleRegex
@@ -101,11 +104,11 @@ RoundMultiplierRegex: !nestedRegex
   def: \b\s*({RoundMultiplierWithFraction}|(?<multiplier>(cento|mille|mila))$)
   references: [ RoundMultiplierWithFraction ]
 FractionNounRegex: !nestedRegex
-  def: (?<=\b)({AllIntRegex}\s+(e\s+)?)?(({AllIntRegex})(\s+|\s*-\s*)(?!\bprimo\b|\bsecondo\b)(mezzi|({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))|(mezzo|un\s+quarto\s+di)\s+{RoundNumberIntegerRegex})(?=\b)
-  references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex, RoundNumberIntegerRegex ]
+  def: (?<=\b)({AllIntRegex}\s+(e\s+)?)?(({AllIntRegex})(\s+|\s*-\s*)(?!\bprimo\b|\bsecondo\b)(mezzi|({AllOrdinalNumberRegex})|({RoundNumberOrdinalRegex}))|(mezzo|un\s+quarto\s+di)\s+{RoundNumberIntegerRegex})(?=\b)
+  references: [ AllIntRegex, AllOrdinalNumberRegex, RoundNumberOrdinalRegex, RoundNumberIntegerRegex ]
 FractionNounWithArticleRegex: !nestedRegex
-  def: (?<=\b)((({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\s+(e\s+)?)?((un)(\s+|\s*-\s*)(?!\bprimo\b|\bsecondo\b)({AllOrdinalRegex}|{RoundNumberOrdinalRegex})|(un\s+)?mezzo))(?=\b)
-  references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex, RoundNumberIntegerRegexWithLocks]
+  def: (?<=\b)((({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\s+(e\s+)?)?((un)(\s+|\s*-\s*)(?!\bprimo\b|\bsecondo\b)({AllOrdinalNumberRegex}|{RoundNumberOrdinalRegex})|(un\s+)?mezzo))(?=\b)
+  references: [ AllIntRegex, AllOrdinalNumberRegex, RoundNumberOrdinalRegex, RoundNumberIntegerRegexWithLocks]
 FractionPrepositionRegex: !nestedRegex
   def: (?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<!\.)\d+))\s+su\s+(?<denominator>({AllIntRegex})|(\d+)(?!\.))(?=\b)
   references: [ AllIntRegex, BaseNumbers.CommonCurrencySymbol ]
@@ -527,79 +530,73 @@ AmbiguityFiltersDict: !dictionary
 RelativeReferenceOffsetMap: !dictionary
   types: [ string, string ]
   entries:
-    ultimo: 0
-    ultima: 0
-    ultimi: 0
-    ultime: 0
-    successivo: 1
-    successiva: 1
-    successivi: 1
-    successive: 1
-    prossimo: 1
-    prossima: 1
-    prossimi: 1
-    prossime: 1
-    seguente: 1
-    seguenti: 1
     precedente: -1
     precedenti: -1
-    penultimo: -1
+    seguente: 1
+    seguenti: 1
+    prossima: 1
+    prossimo: 1
+    prossime: 1
+    prossimi: 1
+    corrente: 0
+    correnti: 0
+    attuale: 0
+    attuali: 0
+    l'attuale: 0
+    successiva: 1
+    successivo: 1
+    successive: 1
+    successivi: 1
     penultima: -1
-    penultimi: -1
+    penultimo: -1
     penultime: -1
-    terz'ultimo: -2
-    terz'ultima: -2
-    terz'ultimi: -2
-    terz'ultime: -2
-    terzultimo: -2
+    penultimi: -1
+    quello prima dell'ultimo: -1
+    quella prima dell'ultima: -1
     terzultima: -2
-    terzultimi: -2
+    terzultimo: -2
     terzultime: -2
-    quart'ultimo: -3
-    quart'ultima: -3
-    quart'ultimi: -3
-    quart'ultime: -3
-    quartultimo: -3
-    quartultima: -3
-    quartultimi: -3
-    quartultime: -3
+    terzultimi: -2
+    ultima: 0
+    ultimo: 0
+    ultime: 0
+    ultimi: 0
+    l'ultima: 0
+    l'ultimo: 0
 RelativeReferenceRelativeToMap: !dictionary
   types: [ string, string ]
   entries:
-    ultimo: end
-    ultima: end
-    ultimi: end
-    ultime: end
-    successivo: current
-    successiva: current
-    successivi: current
-    successive: current
-    prossimo: current
-    prossima: current
-    prossimi: current
-    prossime: current
-    seguente: current
-    seguenti: current
     precedente: current
     precedenti: current
-    penultimo: end
+    seguente: current
+    seguenti: current
+    prossima: current
+    prossimo: current
+    prossime: current
+    prossimi: current
+    corrente: current
+    correnti: current
+    attuale: current
+    attuali: current
+    l'attuale: current
+    successiva: current
+    successivo: current
+    successive: current
+    successivi: current
     penultima: end
-    penultimi: end
+    penultimo: end
     penultime: end
-    terz'ultimo: end
-    terz'ultima: end
-    terz'ultimi: end
-    terz'ultime: end
-    terzultimo: end
+    penultimi: end
+    quello prima dell'ultimo: end
+    quella prima dell'ultima: end
     terzultima: end
-    terzultimi: end
+    terzultimo: end
     terzultime: end
-    quart'ultimo: end
-    quart'ultima: end
-    quart'ultimi: end
-    quart'ultime: end
-    quartultimo: end
-    quartultima: end
-    quartultimi: end
-    quartultime: end
+    terzultimi: end
+    ultima: end
+    ultimo: end
+    ultime: end
+    ultimi: end
+    l'ultima: end
+    l'ultimo: end
 ...

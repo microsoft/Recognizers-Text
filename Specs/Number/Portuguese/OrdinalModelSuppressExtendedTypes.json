@@ -1,0 +1,79 @@
+[
+  {
+    "Input": "excluir a última frase na nota",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Você quer dizer \"próximo\" ou \"último\"?",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Mostre-me o antepenúltimo.",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Mostre-me o penúltimo.",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Mostre-me o ultimo mas um",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Mostre-me o anterior ao último.",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Apague a última frase.",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Mostre-me o anterior.",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Mostre-me o próximo.",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Eu quero os dois últimos livros.",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Eu quero os próximos 3 livros.",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Volte para a página anterior.",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "vigesimo quinto",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "vigesimo quinto",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "25",
+          "offset":"25",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  }
+]

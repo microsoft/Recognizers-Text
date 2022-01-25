@@ -282,7 +282,6 @@
   },
   {
     "Input": "このノートの最後の文章を消去してください。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -329,7 +328,6 @@
   },
   {
     "Input": "最後から三番目を私に見せてください。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -347,7 +345,6 @@
   },
   {
     "Input": "最後の文章を消去しなさい。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -365,7 +362,6 @@
   },
   {
     "Input": "その前のものを私に見せてください。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -383,7 +379,6 @@
   },
   {
     "Input": "その次のものを私に見せてください。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -401,7 +396,6 @@
   },
   {
     "Input": "私は最後の2冊の本がほしいです。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -419,7 +413,6 @@
   },
   {
     "Input": "私は最後の1冊の本がほしいです。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -437,7 +430,6 @@
   },
   {
     "Input": "私は次の3冊の本がほしいです。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -455,7 +447,6 @@
   },
   {
     "Input": "その次のアイテムを私にください。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -473,7 +464,6 @@
   },
   {
     "Input": "私は最後のクッキーが欲しいです。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -491,7 +481,6 @@
   },
   {
     "Input": "私は最後から一つ前がほしいです。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -509,7 +498,6 @@
   },
   {
     "Input": "前のページに戻りなさい。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -743,7 +731,6 @@
   },
   {
     "Input": "私はその次の3冊の本がほしいです。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -779,7 +766,6 @@
   },
   {
     "Input": "最後から一つ前のものは正しいものです。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -797,7 +783,6 @@
   },
   {
     "Input": "私は言いたかったのは最後から一つ前のことでした。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -815,7 +800,6 @@
   },
   {
     "Input": "現在のページを見なさい。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -833,7 +817,6 @@
   },
   {
     "Input": "最後から二番目を私に見せてください。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -851,7 +834,6 @@
   },
   {
     "Input": "最後から一つ前を私に見せてください。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -940,7 +922,6 @@
   },
   {
     "Input": "私は言いたかったのは現在のことでした。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -962,7 +943,6 @@
   },
   {
     "Input": "最後から３番目を私に見せてください。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -980,7 +960,6 @@
   },
   {
     "Input": "私は最後から１つ前がほしいです。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1214,7 +1193,6 @@
   },
   {
     "Input": "最後から１つ前のものは正しいものです。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1232,7 +1210,6 @@
   },
   {
     "Input": "私は言いたかったのは最後から１つ前のことでした。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1250,7 +1227,6 @@
   },
   {
     "Input": "最後から２番目を私に見せてください。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1268,7 +1244,6 @@
   },
   {
     "Input": "最後から１つ前を私に見せてください。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1361,7 +1336,6 @@
   },
   {
     "Input": "最後から3番目を私に見せてください。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1379,7 +1353,6 @@
   },
   {
     "Input": "私は最後から1つ前がほしいです。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1613,7 +1586,6 @@
   },
   {
     "Input": "最後から1つ前のものは正しいものです。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1631,7 +1603,6 @@
   },
   {
     "Input": "私は言いたかったのは最後から1つ前のことでした。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1649,7 +1620,6 @@
   },
   {
     "Input": "最後から2番目を私に見せてください。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {
@@ -1667,7 +1637,6 @@
   },
   {
     "Input": "最後から1つ前を私に見せてください。",
-    "IgnoreResolution": true,
     "NotSupportedByDesign": "javascript, java, python",
     "Results": [
       {

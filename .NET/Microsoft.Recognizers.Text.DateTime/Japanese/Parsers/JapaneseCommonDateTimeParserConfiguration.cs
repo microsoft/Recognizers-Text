@@ -34,7 +34,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
             IntegerExtractor = new IntegerExtractor(numConfig);
             CardinalExtractor = new CardinalExtractor(numConfig);
-            OrdinalExtractor = new OrdinalExtractor(numConfig);
+            OrdinalExtractor = Number.Japanese.OrdinalExtractor.GetInstance(numConfig);
 
             NumberParser = new BaseCJKNumberParser(new JapaneseNumberParserConfiguration(numConfig));
 
