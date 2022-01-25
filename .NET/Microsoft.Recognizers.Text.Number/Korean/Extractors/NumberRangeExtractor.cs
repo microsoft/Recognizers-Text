@@ -104,7 +104,7 @@ namespace Microsoft.Recognizers.Text.Number.Korean
                 },
                 {
                     new Regex(NumbersDefinitions.OneNumberRangeMoreRegex4, RegexFlags),
-                    NumberRangeConstants.EQUAL
+                    NumberRangeConstants.MORE
                 },
                 {
                     // 700에 달하는

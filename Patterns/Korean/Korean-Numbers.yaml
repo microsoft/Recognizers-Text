@@ -348,13 +348,13 @@ MoreRegex: !simpleRegex
 LessRegex: !simpleRegex
   def: (미만|마리|적|낮|작|더적|더낮|더적|<|아래|작다|같)((네|아|어|군)요|습니다|은|다)?
 EqualRegex: !simpleRegex
-  def: (동일|같(고)?|=|(해당하는)|작은|그와 같다)(?!거나)
+  def: (동일|같(고)?|=|(해당하는)|작은|그와 같다)
 RangePrefixLessRegex: !simpleRegex
   def: (최대|까지최소|(?<!>|=)<|≤)
 RangePrefixMoreRegex: !simpleRegex
-  def: ((?<!<|=)>|≥|>=|개에서 최소|과 같거나 최소|이거나 최소)
+  def: ((?<!<|=)>|≥|>=|개에서 최소)
 MoreOrEqual: !nestedRegex
-  def: (({MoreRegex}\s*(거나)?\s*{EqualRegex}))
+  def: (({MoreRegex}\s*(거나)?\s*{EqualRegex})|최소)
   references: [ MoreRegex, EqualRegex ]
 MoreOrEqual2: !nestedRegex
   def: (\s*(거나)?\s*(그보다)\s*{MoreRegex})
@@ -371,20 +371,20 @@ OneNumberRangeMoreSeparateRegex: !simpleRegex
 OneNumberRangeLessSeparateRegex: !simpleRegex
   def: 같거나|약
 OneNumberRangeEqualRegex: !nestedRegex
-  def: ((?<number1>((?!((\s(?!\d+))|(,(?!\d+))|。)).)+)\s*(과|에)+\s*{EqualRegex})(거나|다|개)?(\s*({LessRegex})(은)?)?|((?<number1>((?!((\s(?!\d+))|(,(?!\d+))|。)).)+)\s*(년에)\s*(\d+)(은|이다))|(정확히|같음|평등|그냥|저스트)(?<number1>\s*[+-]?(\d+[\.,]?\d+))
-  references: [EqualRegex,LessRegex]
+  def: ((?<number1>((?!((\s(?!\d+))|(,(?!\d+))|。)).)+)\s*(과|에)+\s*{EqualRegex})(다|개)?|((?<number1>((?!((\s(?!\d+))|(,(?!\d+))|。)).)+)\s*(년에)\s*(\d+)(은|이다))|(정확히|같음|평등|그냥|저스트)(?<number1>\s*[+-]?(\d+[\.,]?\d+))
+  references: [EqualRegex]
 OneNumberRangeEqualRegex2: !nestedRegex
   def: ((?<number1>(((?!((\s(?!\d+))|(,(?!\d+))|。)))(?<=((는\s+))))([\d]|{AllIntRegex})+)(이다))
   references: [AllIntRegex]
 OneNumberRangeMoreRegex1: !nestedRegex
-  def: ((?<number1>((?!(((?!\d+))|((,)(?!\d+))|。)).)+[\.,]?(((?!(((?!\d+))|((,)(?!\d+))|。)).)+)?)\s*(이|보다|거나|또는)+\s*(그|그보다)?\s*({MoreOrEqual}|{MoreRegex}|{MoreOrEqualSuffix})(은|다)?)
+  def: ((?<number1>((?!(((?!\d+))|((,)(?!\d+))|。)).)+[\.,]?(((?!(((?!\d+))|((,)(?!\d+))|。)).)+)?)\s*(이|보다)+\s*(그|그보다)?\s*({MoreOrEqual}|{MoreRegex}|{MoreOrEqualSuffix})(은|다)?)
   references: [MoreOrEqual, MoreRegex, MoreOrEqualSuffix]
 OneNumberRangeMoreRegex2: !nestedRegex
   def: ((?<number1>(((?!(((?!([십백천만억조경열]|(영|령|공|일|이(?!다)|두|삼|사|오|육|(?<!며)칠|팔|구))+))))|(사분의\s)).)+)|(?<number1>(스물|서른|마흔|쉰|예순|일흔|여든|아흔|온|즈믄|다스|스무|이십오일)|(첫|처음|여섯|하나|둘|셋|넷|다섯|여섯|일곱|여덟|아홉)+))((\s등\s)?보다)?(\s살이)?\s({MoreRegex})|(최소\s*)?(?<number1>((?!((、(?!\d+))|(、(?!\d+))|。))|(?!\s+).)+)\s*(((혹은\s*그)?){MoreRegex}|((혹은\s*그)?){MoreOrEqualSuffix})
   references: [MoreRegex, MoreOrEqualSuffix] 
 OneNumberRangeMoreRegex3: !nestedRegex
-  def: (({RangePrefixMoreRegex})\s*(?<number1>(((?!(((?!\d+))|((,)(?!\d+))|。)).)+)))|((과 같거나 최소|이거나 최소)\s*(?<number1>\s*[+-]?(\d+[\.,]?\d+)))
-  references: [RangePrefixMoreRegex]
+  def: (({RangePrefixMoreRegex}|{MoreOrEqual})\s*(?<number1>(((?!(((?!\d+))|((,)(?!\d+))|。)).)+)))|(최소\s*(?<number1>\s*[+-]?(\d+[\.,]?\d+)))
+  references: [RangePrefixMoreRegex, MoreOrEqual]
 OneNumberRangeMoreRegex4: !nestedRegex
   def: ((?<number1>((?!((\s(?!\d+))|(,(?!\d+))|。)).)+)\s*(과|에)+\s*{EqualRegex}){MoreOrEqual2}(다)?
   references: [MoreOrEqual2,EqualRegex]
@@ -401,7 +401,7 @@ TwoNumberRangeRegex: !nestedRegex
   def: ({RangePrefixLessRegex})\s*(?<number2>(((?!((\s(?!\d+))|((,)(?!\d+))|。)).)+))\s*({RangePrefixMoreRegex}\s*(?<number1>\s*[+-]?(\d+[\.,]?\d+)))(개)?
   references: [RangePrefixLessRegex, RangePrefixMoreRegex] 
 OneNumberRangeLessRegex3: !nestedRegex
-  def: (?:({RangePrefixLessRegex}))\s*(?<number2>(((?!((\s(?!\d+))|((,)(?!\d+))|。)).)+))|((같거나|약)(?<number1>\s*[+-]?(\d+[\.,]?\d+))\s*(미만|개 이하가))
+  def: (?:({RangePrefixLessRegex}))\s*(?<number2>(((?!((\s(?!\d+))|((,)(?!\d+))|。)).)+))|((약)(?<number1>\s*[+-]?(\d+[\.,]?\d+))\s*(미만|개 이하가))
   references: [RangePrefixLessRegex]
 OneNumberRangeLessRegex4: !nestedRegex
   def: (?<number2>(((?!((\s(?!\d+))|((,)(?!\d+))|。)).)+))\s*(에)(?:({LessOrEqualSuffix}))
@@ -412,7 +412,7 @@ TwoNumberRangeRegex1: !nestedRegex
   def: (?<number1>((?!((，(?!\d+))|(,(?!\d+))|。)).)+)(위?)\s*(과|와|{TillRegex})\s*(?<number2>((?!((，(?!\d+))|(,(?!\d+))|。)).)+)(위?)\s*(사이)
   references: [TillRegex]
 TwoNumberRangeRegex2: !nestedRegex
-  def: (({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})\s*(과|지만|또는|，|、|,)?\s*({OneNumberRangeLessRegex1}))|({OneNumberRangeLessRegex1}|{OneNumberRangeMoreRegex2})
+  def: (({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})\s*(과|지만|또는|，|、|,)?\s*({OneNumberRangeLessRegex1}))
   references: [ OneNumberRangeMoreRegex1, OneNumberRangeMoreRegex2, OneNumberRangeLessRegex1]
 TwoNumberRangeRegex3: !nestedRegex
   def: ({OneNumberRangeLessRegex1})\s*(과|또는|，|、|,)?\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})
