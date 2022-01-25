@@ -65,7 +65,7 @@ namespace Microsoft.Recognizers.Definitions.Swedish
       public static readonly string RelativeMonthRegex = $@"(?#RelativeMonthRegex)(?<relmonth>((dag\s+)?i\s+)?{RelativeRegex}\s+månad(en)?)\b";
       public const string MonthRegex = @"(?#MonthRegex)\b(?<month>apr(il)?|aug(usti)?|dec(ember)?|feb(ruari)?|jan(uari)?|juli?|juni?|mar(s)?|maj|nov(ember)?|okt(ober)?|sept(ember)?|sep)(?!\p{L})";
       public static readonly string WrittenMonthRegex = $@"(?#WrittenMonthRegex)((i\s+)?{MonthRegex}(\s+månad)?)";
-      public static readonly string MonthSuffixRegex = $@"(?#MonthSuffixRegex)(?<msuf>(?:(i|på|under)\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))";
+      public static readonly string MonthSuffixRegex = $@"(?#MonthSuffixRegex)(?<msuf>(?:(i|under)\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))";
       public const string DateUnitRegex = @"(?#DateUnitRegex)(?<unit>(decenni(um)?|år|(?<uoy>månad|vecka?)|(?<business>(arbets\s*|vecka?\s*))?(?<uoy>dag)|weekend|helg)(?<plural>(s|or|er|ar|e?n))?|(?<=\s+\d{1,4})[ymwd])\b";
       public const string DateTokenPrefix = @"den ";
       public const string TimeTokenPrefix = @"kl ";
@@ -115,7 +115,7 @@ namespace Microsoft.Recognizers.Definitions.Swedish
       public static readonly string OnRegex = $@"(?#OnRegex)(?<=\bden\s+)({DayRegex}s?)\b";
       public const string RelaxedOnRegex = @"(?#RelaxedOnRegex)(?<=\b(den|om|på)\s+)((?<day>(3[0-1]|[0-2]?\d)(?:(a|e)))s?)\b";
       public const string PrefixWeekDayRegex = @"(?#PrefixWeekDayRegex)(\s*((,?\s*på)|[-—–]))";
-      public static readonly string ThisRegex = $@"(?#ThisRegex)\b(denna(\s*vecka{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|({WeekDayRegex}((\s+i)?\s+(denna|den\s+här)\s*veckan?))\b";
+      public static readonly string ThisRegex = $@"(?#ThisRegex)\b(denna(\s*vecka{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|({WeekDayRegex}((\s+i)?\s+(denna|den\s+här)\s*veckan?))\b|(på\s+){WeekDayRegex}$";
       public static readonly string LastDateRegex = $@"(?#LastDateRegex)\b({PreviousPrefixRegex}(\s*vecka{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|({WeekDayRegex}(\s+(den\s+)?senaste\s*veckan))\b|({WeekDayRegex}\s+(i\s+)?{PreviousPrefixRegex}\s*veckan)\b|(i\s+{WeekDayRegex})\b";
       public static readonly string NextDateRegex1 = $@"(?#NextDateRegex1)\b({NextPrefixRegex}(\s*vecka{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})";
       public static readonly string NextDateRegex2 = $@"(?#NextDateRegex2)\b((på\s+)?{WeekDayRegex}((\s+i)?\s+(den\s+kommande|nästa)\s*vecka))\b";
@@ -123,10 +123,10 @@ namespace Microsoft.Recognizers.Definitions.Swedish
       public static readonly string SpecialDayRegex = $@"(?#SpecialDayRegex)\b(i förrgår|i övermorgon|dagen\s+(före|efter)(?!=\s+dag)|((den\s+)?({RelativeRegex}|min)\s+dag)|igår|imorgon|idag)\b";
       public static readonly string SpecialDayWithNumRegex = $@"(?#SpecialDayWithNumRegex)\b((?<number>{WrittenNumRegex})\s+dag(ar)?\s+från\s+(?<day>igår|imorgon|idag))\b";
       public static readonly string RelativeDayRegex = $@"(?#RelativeDayRegex)\b(((den\s+)?{RelativeRegex}\s+dag(en)?))\b";
-      public const string SetWeekDayRegex = @"(?#SetWeekDayRegex)\b(?<prefix>på\s+)?(?<weekday>morgonen|eftermiddagen|kvällen|natten|(sön|mån|tis|ons|tors|fre|lör)dag(en)?)s\b";
+      public const string SetWeekDayRegex = @"(?#SetWeekDayRegex)\b(?<prefix>på\s+)?(?<weekday>morgonen|eftermiddagen|kvällen|natten|(sön|mån|tis|ons|tors|fre|lör)dag(en)?)\b";
       public static readonly string WeekDayOfMonthRegex = $@"(?#WeekDayOfMonthRegex)(?<wom>(den\s+)?(?<cardinal>första|1:a|andra|2:a|tredje|3:e|fjärde|4:e|femte|5:e|sista)\s+(veckan\s+{MonthSuffixRegex}[\.]?\s+(på\s+)?{WeekDayRegex}|{WeekDayRegex}\s+{MonthSuffixRegex}))";
       public static readonly string RelativeWeekDayRegex = $@"(?#RelativeWeekDayRegex)\b({WrittenNumRegex}\s+{WeekDayRegex}\s+(från\s+nu|senare))\b";
-      public static readonly string SpecialDate = $@"(?#SpecialDate)(?=\b(på|den)s+){DayRegex}\b";
+      public static readonly string SpecialDate = $@"(?#SpecialDate)(?=\b(den)s+){DayRegex}\b";
       public const string DatePreposition = @"(?#DatePreposition)\b(den|i)";
       public static readonly string DateExtractorYearTermRegex = $@"(?#DateExtractorYearTermRegex)(\s+|\s*[/\\.,-]\s*|\s+under\s+){DateYearRegex}";
       public static readonly string DayPrefix = $@"(?#DayPrefix)\b({WeekDayRegex}|{SpecialDayRegex})\b";
@@ -265,7 +265,7 @@ namespace Microsoft.Recognizers.Definitions.Swedish
       public static readonly string AfternoonStartEndRegex = $@"(^(afternoon|{PmDescRegex}))|((afternoon|{PmDescRegex})$)";
       public const string EveningStartEndRegex = @"(^(evening))|((evening)$)";
       public const string NightStartEndRegex = @"(^(over|to)?ni(ght|te))|((over|to)?ni(ght|te)$)";
-      public const string InexactNumberRegex = @"\b((a\s+)?few|some|several|(?<NumTwoTerm>(a\s+)?couple(\s+of)?))\b";
+      public const string InexactNumberRegex = @"\b((för\s+)?några|flera|(?<NumTwoTerm>(ett\s+)?(par|antal)))\b";
       public static readonly string InexactNumberUnitRegex = $@"({InexactNumberRegex})\s+({DurationUnitRegex})";
       public static readonly string RelativeTimeUnitRegex = $@"(?:(?:(?:{NextPrefixRegex}|{PreviousPrefixRegex}|{ThisPrefixRegex})\s+({TimeUnitRegex}))|((the|my))\s+({RestrictedTimeUnitRegex}))";
       public static readonly string RelativeDurationUnitRegex = $@"(?:(?:(?<=({NextPrefixRegex}|{PreviousPrefixRegex}|{ThisPrefixRegex})\s+)({DurationUnitRegex}))|((the|my))\s+({RestrictedTimeUnitRegex}))";

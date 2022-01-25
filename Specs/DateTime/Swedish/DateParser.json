@@ -1,10 +1,10 @@
 ﻿[
   {
     "Input": "jag åker tillbaka den 15",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "15",
@@ -25,10 +25,10 @@
   },
   {
     "Input": "jag åker tillbaka 22 april",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "22 april",
@@ -49,10 +49,10 @@
   },
   {
     "Input": "jag åker tillbaka 2016-01-12",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "2016-01-12",
@@ -73,10 +73,10 @@
   },
   {
     "Input": "jag åker tillbaka den 12 januari, 2016",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "den 12 januari, 2016",
@@ -97,10 +97,10 @@
   },
   {
     "Input": "jag åker tillbaka måndag den 12 januari, 2016",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "måndag den 12 januari, 2016",
@@ -121,10 +121,10 @@
   },
   {
     "Input": "jag åker tillbaka 2016/12/01",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "2016/12/01",
@@ -145,10 +145,10 @@
   },
   {
     "Input": "jag åker tillbaka 21/04/2016",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "21/04/2016",
@@ -169,10 +169,10 @@
   },
   {
     "Input": "jag åker tillbaka 9-18-15",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "9-18-15",
@@ -193,10 +193,10 @@
   },
   {
     "Input": "jag åker tillbaka 21/04/16",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "21/04/16",
@@ -217,18 +217,18 @@
   },
   {
     "Input": "jag åker tillbaka 4.22",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": []
   },
   {
     "Input": "jag åker tillbaka    4/22",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "4/22",
@@ -249,10 +249,10 @@
   },
   {
     "Input": "jag åker tillbaka den 22/04",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "den 22/04",
@@ -273,10 +273,10 @@
   },
   {
     "Input": "jag åker tillbaka  22/04",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "22/04",
@@ -297,10 +297,10 @@
   },
   {
     "Input": "jag åker tillbaka 2015/08/12",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "2015/08/12",
@@ -321,10 +321,10 @@
   },
   {
     "Input": "jag åker tillbaka 11/12,2015",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "11/12,2015",
@@ -345,10 +345,10 @@
   },
   {
     "Input": "jag åker tillbaka 08/12,15",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "08/12,15",
@@ -369,10 +369,10 @@
   },
   {
     "Input": "jag åker tillbaka 1 jan",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "1 Jan",
@@ -393,10 +393,10 @@
   },
   {
     "Input": "jag åker tillbaka 1-jan",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "1-Jan",
@@ -417,10 +417,10 @@
   },
   {
     "Input": "jag åker tillbaka ons, 22 jan",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "ons, 22 jan",
@@ -441,10 +441,10 @@
   },
   {
     "Input": "jag åker tillbaka förste jan",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "förste jan",
@@ -465,10 +465,10 @@
   },
   {
     "Input": "jag åker tillbaka första jan",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "första jan",
@@ -489,10 +489,10 @@
   },
   {
     "Input": "jag åker tillbaka andra jan",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "andra jan",
@@ -513,10 +513,10 @@
   },
   {
     "Input": "jag åker tillbaka andre jan",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "andre jan",
@@ -537,10 +537,10 @@
   },
   {
     "Input": "jag åker tillbaka tjugoförste maj",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "tjugoförste maj",
@@ -561,10 +561,10 @@
   },
   {
     "Input": "jag åker tillbaka tjugoförsta maj",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "tjugoförsta maj",
@@ -585,10 +585,10 @@
   },
   {
     "Input": "jag åker tillbaka en fredag",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "fredag",
@@ -609,10 +609,10 @@
   },
   {
     "Input": "jag åker tillbaka idag",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "idag",
@@ -633,10 +633,10 @@
   },
   {
     "Input": "jag åker tillbaka imorgon",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "imorgon",
@@ -657,10 +657,10 @@
   },
   {
     "Input": "jag åkte tillbaka igår",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "igår",
@@ -681,10 +681,10 @@
   },
   {
     "Input": "jag åkte tillbaka i förrgår",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "i förrgår",
@@ -705,10 +705,10 @@
   },
   {
     "Input": "jag åker tillbaka i övermorgon",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "i övermorgon",
@@ -729,10 +729,10 @@
   },
   {
     "Input": "jag åker tillbaka nästa dag",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "nästa dag",
@@ -753,10 +753,10 @@
   },
   {
     "Input": "jag åker tillbaka kommande fredag",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "kommande fredag",
@@ -777,13 +777,13 @@
   },
   {
     "Input": "jag åker tillbaka på söndag",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "söndag",
+        "Text": "på söndag",
         "Type": "date",
         "Value": {
           "Timex": "2016-11-13",
@@ -794,17 +794,17 @@
             "date": "2016-11-13"
           }
         },
-        "Start": 21,
-        "Length": 6
+        "Start": 18,
+        "Length": 9
       }
     ]
   },
   {
     "Input": "jag åker tillbaka den här söndagen",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "den här söndagen",
@@ -825,10 +825,10 @@
   },
   {
     "Input": "jag åker tillbaka nästa söndag",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "nästa söndag",
@@ -849,10 +849,10 @@
   },
   {
     "Input": "jag åkte tillbaka förra söndagen",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "förra söndagen",
@@ -873,10 +873,10 @@
   },
   {
     "Input": "jag åker tillbaka söndag i nästa vecka",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "söndag i nästa vecka",
@@ -897,10 +897,10 @@
   },
   {
     "Input": "jag åker tillbaka på söndag i nästa vecka",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "på söndag i nästa vecka",
@@ -921,10 +921,11 @@
   },
   {
     "Input": "jag åkte tillbaka söndag i förra veckan",
-    "NotSupportedByDesign": "javascript, python, java",
+
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "söndag i förra veckan",
@@ -945,10 +946,11 @@
   },
   {
     "Input": "jag åkte tillbaka i söndags",
-    "NotSupportedByDesign": "javascript, python, java",
+
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "i söndags",
@@ -969,10 +971,11 @@
   },
   {
     "Input": "jag åker tillbaka 15 juni 2016",
-    "NotSupportedByDesign": "javascript, python, java",
+
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "15 juni 2016",
@@ -993,10 +996,11 @@
   },
   {
     "Input": "jag åker tillbaka första fredagen i juli",
-    "NotSupportedByDesign": "javascript, python, java",
+
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "första fredagen i juli",
@@ -1017,10 +1021,11 @@
   },
   {
     "Input": "jag åker tillbaka första fredagen den här månaden",
-    "NotSupportedByDesign": "javascript, python, java",
+
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "första fredagen den här månaden",
@@ -1041,10 +1046,11 @@
   },
   {
     "Input": "jag åker tillbaka på fredag nästa vecka",
-    "NotSupportedByDesign": "javascript, python, java",
+
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "på fredag nästa vecka",
@@ -1065,10 +1071,11 @@
   },
   {
     "Input": "jag åker tillbaka på fredag i nästa vecka",
-    "NotSupportedByDesign": "javascript, python, java",
+
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "på fredag i nästa vecka",
@@ -1089,10 +1096,11 @@
   },
   {
     "Input": "Hur ser min dag ut?",
-    "NotSupportedByDesign": "javascript, python, java",
+
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "min dag",
@@ -1112,36 +1120,12 @@
     ]
   },
   {
-    "Input": "I'll go back past day",
-    "NotSupportedByDesign": "javascript, python, java",
-    "NotSupported": "dotnet",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "Results": [
-      {
-        "Text": "past day",
-        "Type": "date",
-        "Value": {
-          "Timex": "2016-11-06",
-          "FutureResolution": {
-            "date": "2016-11-06"
-          },
-          "PastResolution": {
-            "date": "2016-11-06"
-          }
-        },
-        "Start": 13,
-        "Length": 8
-      }
-    ]
-  },
-  {
     "Input": "jag åker tillbaka två veckor från nu",
-    "NotSupportedByDesign": "javascript, python, java",
+
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "två veckor från nu",
@@ -1162,10 +1146,11 @@
   },
   {
     "Input": "jag åker tillbaka om två veckor från nu",
-    "NotSupportedByDesign": "javascript, python, java",
+
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "två veckor från nu",
@@ -1186,10 +1171,11 @@
   },
   {
     "Input": "vem mejlade jag för en månad sedan",
-    "NotSupportedByDesign": "javascript, python, java",
+
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "en månad sedan",
@@ -1209,15 +1195,14 @@
     ]
   },
   {
-    "Input": "who did I email few months ago?",
-    "NotSupportedByDesign": "javascript, python, java",
-    "NotSupported": "dotnet",
+    "Input": "vem e-postade jag för några månader sedan?",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "few months ago",
+        "Text": "för några månader sedan",
         "Type": "date",
         "Value": {
           "Timex": "2016-08-07",
@@ -1228,21 +1213,20 @@
             "date": "2016-08-07"
           }
         },
-        "Start": 16,
-        "Length": 14
+        "Start": 18,
+        "Length": 23
       }
     ]
   },
   {
-    "Input": "who did I email a few days ago?",
-    "NotSupportedByDesign": "javascript, python, java",
-    "NotSupported": "dotnet",
+    "Input": "vem e-postade jag för några dagar sedan?",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "a few days ago",
+        "Text": "för några dagar sedan",
         "Type": "date",
         "Value": {
           "Timex": "2016-11-04",
@@ -1253,17 +1237,17 @@
             "date": "2016-11-04"
           }
         },
-        "Start": 16,
-        "Length": 14
+        "Start": 18,
+        "Length": 21
       }
     ]
   },
   {
     "Input": "jag åkte tillbaka den 27",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "27",
@@ -1284,10 +1268,10 @@
   },
   {
     "Input": "jag åkte tillbaka den 27:e",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "27:e",
@@ -1308,10 +1292,10 @@
   },
   {
     "Input": "jag åkte tillbaka den 27.",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "27",
@@ -1332,10 +1316,10 @@
   },
   {
     "Input": "jag åkte tillbaka den 27!",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "27",
@@ -1356,10 +1340,10 @@
   },
   {
     "Input": "jag åkte tillbaka den 27 .",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "27",
@@ -1380,10 +1364,10 @@
   },
   {
     "Input": "jag åkte tillbaka den 21:e",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "21:e",
@@ -1404,10 +1388,10 @@
   },
   {
     "Input": "jag åkte tillbaka den 21:a",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "21:a",
@@ -1428,10 +1412,10 @@
   },
   {
     "Input": "jag åkte tillbaka den andre!",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "den andre",
@@ -1452,10 +1436,10 @@
   },
   {
     "Input": "jag åkte tillbaka fredagen den 15:e",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "fredagen den 15",
@@ -1476,10 +1460,10 @@
   },
   {
     "Input": "jag åker tillbaka torsdagen den tjugoförste",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "torsdagen den tjugoförste",
@@ -1500,10 +1484,10 @@
   },
   {
     "Input": "jag åker tillbaka fredag den tjugoandre",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "fredag den tjugoandre",
@@ -1524,10 +1508,10 @@
   },
   {
     "Input": "jag åker tillbaka fredagen den femtonde",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "fredagen den femtonde",
@@ -1548,10 +1532,10 @@
   },
   {
     "Input": "ag åker tillbaka den andra söndagen",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "andra söndagen",
@@ -1572,10 +1556,10 @@
   },
   {
     "Input": "jag åker tillbaka första söndagen",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "första söndagen",
@@ -1596,10 +1580,10 @@
   },
   {
     "Input": "jag åker tillbaka tredje torsdagen",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "tredje torsdagen",
@@ -1620,11 +1604,10 @@
   },
   {
     "Input": "jag åker tillbaka femte söndagen",
-    "NotSupportedByDesign": "javascript, python, java",
-    "NotSupported": "dotnet",
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "femte söndagen",
@@ -1645,10 +1628,10 @@
   },
   {
     "Input": "jag åker tillbaka den 20 nästa månad",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "20 nästa månad",
@@ -1669,10 +1652,10 @@
   },
   {
     "Input": "jag åker tillbaka den 31 denna månad",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "31 denna månad",
@@ -1693,10 +1676,10 @@
   },
   {
     "Input": "Jag åkte tillbaka för två dagar sedan",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "två dagar sedan",
@@ -1717,10 +1700,10 @@
   },
   {
     "Input": "jag åkte tillbaka för två år sedan",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "två år sedan",
@@ -1741,10 +1724,10 @@
   },
   {
     "Input": "16. Nov. 2016",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-14T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "16. Nov. 2016",
@@ -1765,10 +1748,10 @@
   },
   {
     "Input": "16 november 2016",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-14T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "16 november 2016",
@@ -1789,10 +1772,10 @@
   },
   {
     "Input": "Vi hade ett möte för 1 månad och 21 dagar sedan",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "1 månad och 21 dagar sedan",
@@ -1813,10 +1796,10 @@
   },
   {
     "Input": "jag lämnade här för 2 år 1 månad och 21 dagar sedan",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "2 år 1 månad och 21 dagar sedan",
@@ -1837,10 +1820,10 @@
   },
   {
     "Input": "jag kommer att avresa härifrån 2 år och 21 dagar senare",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "2 år och 21 dagar senare",
@@ -1861,10 +1844,10 @@
   },
   {
     "Input": "jag avreste härifrån för 1 månad 2 år och 21 dagar sedan",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "1 månad 2 år och 21 dagar sedan",
@@ -1885,10 +1868,10 @@
   },
   {
     "Input": "jag avreste härifrån den 20 nästa månad",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2017-12-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "20 nästa månad",
@@ -1909,10 +1892,10 @@
   },
   {
     "Input": "jag avreste härifrån den 5 december 1391",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2017-12-18T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "den 5 december 1391",
@@ -1933,10 +1916,10 @@
   },
   {
     "Input": "på söndag tjugoförste januari tjugohundraarton",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "söndag tjugoförste januari tjugohundraarton",
@@ -1957,11 +1940,11 @@
   },
   {
     "Input": "på söndag den tjugoförste januari tjugohundraarton",
-    "NotSupportedByDesign": "javascript, python, java",
-    "NotSupported": "dotnet",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "söndag den tjugoförste januari tjugohundraarton",
@@ -1982,11 +1965,12 @@
   },
   {
     "Input": "på söndag den tjugoförste januari tvåtusenarton",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "NotSupported": "dotnet",
+    "Comment": "Currently doesn't resolve correctly. Ignores 'januari tvåtusenarton' => Timex: 2016-11-21",
     "Results": [
       {
         "Text": "söndag den tjugoförste januari tvåtusenarton",
@@ -2007,10 +1991,10 @@
   },
   {
     "Input": "söndag, tjugoförste jan, tvåtusenarton",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "söndag, tjugoförste jan, tvåtusenarton",
@@ -2031,10 +2015,10 @@
   },
   {
     "Input": "söndag, tjugoförste jan, tjugohundraarton",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "söndag, tjugoförste jan, tjugohundraarton",
@@ -2055,10 +2039,10 @@
   },
   {
     "Input": "på fredag åttonde mars nittonhundrasextioåtta",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "fredag åttonde mars nittonhundrasextioåtta",
@@ -2079,10 +2063,10 @@
   },
   {
     "Input": "den tionde september, två tusen",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "tionde september, två tusen",
@@ -2103,10 +2087,10 @@
   },
   {
     "Input": "den tionde september, tjugohundra",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "tionde september, tjugohundra",
@@ -2127,10 +2111,10 @@
   },
   {
     "Input": "Vi ses första fredagen i nästa månad",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2018-03-20T09:58:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "första fredagen i nästa månad",
@@ -2151,10 +2135,10 @@
   },
   {
     "Input": "Ok, ska vi säga andra måndagen i nästa månad?",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2018-03-20T10:45:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "andra måndagen i nästa månad",
@@ -2175,10 +2159,10 @@
   },
   {
     "Input": "Jag återvände tredje onsdagen i förra månaden",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2018-03-20T10:45:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "tredje onsdagen i förra månaden",
@@ -2199,10 +2183,10 @@
   },
   {
     "Input": "Jag reser på tisdag i nästa vecka",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2018-03-20T22:16:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "på tisdag i nästa vecka",
@@ -2223,10 +2207,10 @@
   },
   {
     "Input": "Gör läxan på söndag i nästa vecka",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2018-03-20T22:16:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "på söndag i nästa vecka",
@@ -2247,10 +2231,10 @@
   },
   {
     "Input": "Är du ledig två dagar efter idag?",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2018-04-20T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "två dagar efter idag",
@@ -2271,10 +2255,10 @@
   },
   {
     "Input": "Var var du fyra dagar före igår?",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2018-04-20T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "fyra dagar före igår",
@@ -2295,10 +2279,10 @@
   },
   {
     "Input": "Är du ledig 13.5.2015?",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "13.5.2015",
@@ -2319,10 +2303,10 @@
   },
   {
     "Input": "Är du ledig 2015.5.13?",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "2015.5.13",
@@ -2343,10 +2327,10 @@
   },
   {
     "Input": "Är du ledig två söndagar från nu?",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2018-05-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "två söndagar från nu",
@@ -2367,10 +2351,10 @@
   },
   {
     "Input": "Är du ledig två måndagar senare?",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2018-05-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "två måndagar senare",
@@ -2391,10 +2375,10 @@
   },
   {
     "Input": "Är du ledig två dagar efter idag?",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "två dagar efter idag",
@@ -2414,11 +2398,11 @@
     ]
   },
   {
-    "Input": "Är du tillgänglig tre veckor från imorgon?",
-    "NotSupportedByDesign": "javascript, python, java",
+    "Input": "Är du tillgänglig om tre veckor från imorgon?",
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "tre veckor från imorgon",
@@ -2432,17 +2416,17 @@
             "date": "2018-06-22"
           }
         },
-        "Start": 18,
+        "Start": 21,
         "Length": 23
       }
     ]
   },
   {
     "Input": "Var var du två dagar före igår?",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "två dagar före igår",
@@ -2463,10 +2447,10 @@
   },
   {
     "Input": "jag reser om 3 veckor",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2018-07-05T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "om 3 veckor",
@@ -2487,10 +2471,10 @@
   },
   {
     "Input": "Cortana, vill du boka in ett Skypemöte om två arbetsdagar.",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2018-08-21T08:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "om två arbetsdagar",
@@ -2511,10 +2495,10 @@
   },
   {
     "Input": "jag åker tillbaka den tjugoandre juni 2017",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2018-08-21T08:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "tjugoandre juni 2017",
@@ -2535,10 +2519,10 @@
   },
   {
     "Input": "jag åker tillbaka 2019-sep-1",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2018-08-21T08:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "2019-sep-1",
@@ -2559,10 +2543,10 @@
   },
   {
     "Input": "jag åker tillbaka 2019/sep/01",
-    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2018-08-21T08:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "2019/sep/01",

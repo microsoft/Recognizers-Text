@@ -112,7 +112,7 @@ WrittenMonthRegex: !nestedRegex
   def: (?#WrittenMonthRegex)((i\s+)?{MonthRegex}(\s+månad)?)
   references: [ MonthRegex ]
 MonthSuffixRegex: !nestedRegex
-  def: (?#MonthSuffixRegex)(?<msuf>(?:(i|på|under)\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))
+  def: (?#MonthSuffixRegex)(?<msuf>(?:(i|under)\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))
   references: [ RelativeMonthRegex, WrittenMonthRegex ]
 DateUnitRegex: !simpleRegex
   def: (?#DateUnitRegex)(?<unit>(decenni(um)?|år|(?<uoy>månad|vecka?)|(?<business>(arbets\s*|vecka?\s*))?(?<uoy>dag)|weekend|helg)(?<plural>(s|or|er|ar|e?n))?|(?<=\s+\d{1,4})[ymwd])\b
@@ -236,7 +236,7 @@ RelaxedOnRegex: !simpleRegex
 PrefixWeekDayRegex: !simpleRegex
   def: (?#PrefixWeekDayRegex)(\s*((,?\s*på)|[-—–]))
 ThisRegex: !nestedRegex
-  def: (?#ThisRegex)\b(denna(\s*vecka{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|({WeekDayRegex}((\s+i)?\s+(denna|den\s+här)\s*veckan?))\b
+  def: (?#ThisRegex)\b(denna(\s*vecka{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|({WeekDayRegex}((\s+i)?\s+(denna|den\s+här)\s*veckan?))\b|(på\s+){WeekDayRegex}$
   references: [ WeekDayRegex, PrefixWeekDayRegex ]
 LastDateRegex: !nestedRegex
   def: (?#LastDateRegex)\b({PreviousPrefixRegex}(\s*vecka{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|({WeekDayRegex}(\s+(den\s+)?senaste\s*veckan))\b|({WeekDayRegex}\s+(i\s+)?{PreviousPrefixRegex}\s*veckan)\b|(i\s+{WeekDayRegex})\b
@@ -260,7 +260,7 @@ RelativeDayRegex: !nestedRegex
   def: (?#RelativeDayRegex)\b(((den\s+)?{RelativeRegex}\s+dag(en)?))\b
   references: [ RelativeRegex ]
 SetWeekDayRegex: !simpleRegex
-  def: (?#SetWeekDayRegex)\b(?<prefix>på\s+)?(?<weekday>morgonen|eftermiddagen|kvällen|natten|(sön|mån|tis|ons|tors|fre|lör)dag(en)?)s\b
+  def: (?#SetWeekDayRegex)\b(?<prefix>på\s+)?(?<weekday>morgonen|eftermiddagen|kvällen|natten|(sön|mån|tis|ons|tors|fre|lör)dag(en)?)\b
 WeekDayOfMonthRegex: !nestedRegex
   def: (?#WeekDayOfMonthRegex)(?<wom>(den\s+)?(?<cardinal>första|1:a|andra|2:a|tredje|3:e|fjärde|4:e|femte|5:e|sista)\s+(veckan\s+{MonthSuffixRegex}[\.]?\s+(på\s+)?{WeekDayRegex}|{WeekDayRegex}\s+{MonthSuffixRegex}))
   references: [ WeekDayRegex, MonthSuffixRegex ]
@@ -268,7 +268,7 @@ RelativeWeekDayRegex: !nestedRegex
   def: (?#RelativeWeekDayRegex)\b({WrittenNumRegex}\s+{WeekDayRegex}\s+(från\s+nu|senare))\b
   references: [ WrittenNumRegex, WeekDayRegex ]
 SpecialDate: !nestedRegex
-  def: (?#SpecialDate)(?=\b(på|den)s+){DayRegex}\b
+  def: (?#SpecialDate)(?=\b(den)s+){DayRegex}\b
   references: [ DayRegex ]
 DatePreposition: !simpleRegex
   def: (?#DatePreposition)\b(den|i)
@@ -637,7 +637,7 @@ EveningStartEndRegex: !simpleRegex
 NightStartEndRegex: !simpleRegex
   def: (^(over|to)?ni(ght|te))|((over|to)?ni(ght|te)$)
 InexactNumberRegex: !simpleRegex
-  def: \b((a\s+)?few|some|several|(?<NumTwoTerm>(a\s+)?couple(\s+of)?))\b
+  def: \b((för\s+)?några|flera|(?<NumTwoTerm>(ett\s+)?(par|antal)))\b
 InexactNumberUnitRegex: !nestedRegex
   def: ({InexactNumberRegex})\s+({DurationUnitRegex})
   references: [InexactNumberRegex, DurationUnitRegex]
