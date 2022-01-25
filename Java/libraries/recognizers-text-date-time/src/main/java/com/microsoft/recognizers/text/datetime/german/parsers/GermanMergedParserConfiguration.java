@@ -47,7 +47,7 @@ public class GermanMergedParserConfiguration extends GermanCommonDateTimeParserC
         timePeriodParser = new BaseTimePeriodParser(new GermanTimePeriodParserConfiguration(this));
         dateTimePeriodParser = new BaseDateTimePeriodParser(new GermanDateTimePeriodParserConfiguration(this));
         getParser = new BaseSetParser(new GermanSetParserConfiguration(this));
-        holidayParser = new BaseHolidayParser(new GermanHolidayParserConfiguration());
+        holidayParser = new HolidayParserGer(new GermanHolidayParserConfiguration());
         timeZoneParser = new BaseTimeZoneParser();
     }
 

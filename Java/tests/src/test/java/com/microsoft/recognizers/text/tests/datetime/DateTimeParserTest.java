@@ -48,6 +48,7 @@ import com.microsoft.recognizers.text.datetime.german.parsers.GermanMergedParser
 import com.microsoft.recognizers.text.datetime.german.parsers.GermanSetParserConfiguration;
 import com.microsoft.recognizers.text.datetime.german.parsers.GermanTimeParserConfiguration;
 import com.microsoft.recognizers.text.datetime.german.parsers.GermanTimePeriodParserConfiguration;
+import com.microsoft.recognizers.text.datetime.german.parsers.HolidayParserGer;
 import com.microsoft.recognizers.text.datetime.parsers.BaseDateParser;
 import com.microsoft.recognizers.text.datetime.parsers.BaseDatePeriodParser;
 import com.microsoft.recognizers.text.datetime.parsers.BaseDateTimeAltParser;
@@ -208,6 +209,8 @@ public class DateTimeParserTest extends AbstractTest {
                     return getSpanishParser(name);
                 case Culture.French:
                     return getFrenchParser(name);
+                case Culture.German:
+                    return getGermanParser(name);
                 default:
                     throw new NotSupportedException("Parser Type/Name not supported for culture: " + culture);
             }
@@ -324,7 +327,7 @@ public class DateTimeParserTest extends AbstractTest {
         case "DurationParser":
             return new BaseDurationParser(new GermanDurationParserConfiguration(new GermanCommonDateTimeParserConfiguration(DateTimeOptions.None)));
         case "HolidayParser":
-            return new BaseHolidayParser(new GermanHolidayParserConfiguration());
+            return new HolidayParserGer(new GermanHolidayParserConfiguration());
         case "SetParser":
             return new BaseSetParser(new GermanSetParserConfiguration(new GermanCommonDateTimeParserConfiguration(DateTimeOptions.None)));
         case "MergedParser":
