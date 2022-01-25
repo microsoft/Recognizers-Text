@@ -921,7 +921,6 @@
   },
   {
     "Input": "jag åkte tillbaka söndag i förra veckan",
-
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -946,7 +945,6 @@
   },
   {
     "Input": "jag åkte tillbaka i söndags",
-
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -971,7 +969,6 @@
   },
   {
     "Input": "jag åker tillbaka 15 juni 2016",
-
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -996,7 +993,6 @@
   },
   {
     "Input": "jag åker tillbaka första fredagen i juli",
-
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1021,7 +1017,6 @@
   },
   {
     "Input": "jag åker tillbaka första fredagen den här månaden",
-
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1046,7 +1041,6 @@
   },
   {
     "Input": "jag åker tillbaka på fredag nästa vecka",
-
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1071,7 +1065,6 @@
   },
   {
     "Input": "jag åker tillbaka på fredag i nästa vecka",
-
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1096,7 +1089,6 @@
   },
   {
     "Input": "Hur ser min dag ut?",
-
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1121,7 +1113,6 @@
   },
   {
     "Input": "jag åker tillbaka två veckor från nu",
-
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1146,7 +1137,6 @@
   },
   {
     "Input": "jag åker tillbaka om två veckor från nu",
-
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1171,7 +1161,6 @@
   },
   {
     "Input": "vem mejlade jag för en månad sedan",
-
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
