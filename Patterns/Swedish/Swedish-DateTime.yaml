@@ -18,7 +18,7 @@ StrictRelativeRegex: !nestedRegex
   def: (?#StrictRelativeRegex)\b(?<order>efter|nästa|kommande|de(nn|tt)a|de(n|t)\s+här|{LastNegPrefix}senaste|förra|tidigare|innevarande)\b
   references: [ LastNegPrefix ]
 UpcomingPrefixRegex: !simpleRegex
-  def: (?#UpcomingPrefixRegex)((de(n|t)\s+)?(kommande|här|på))
+  def: (?#UpcomingPrefixRegex)((de(n|t)\s+)?(kommande|här))
 NextPrefixRegex: !nestedRegex 
   def: (?#NextPrefixRegex)\b(efter|nästa|{UpcomingPrefixRegex})\b
   references: [ UpcomingPrefixRegex ]
@@ -241,9 +241,15 @@ ThisRegex: !nestedRegex
 LastDateRegex: !nestedRegex
   def: (?#LastDateRegex)\b({PreviousPrefixRegex}(\s*vecka{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|({WeekDayRegex}(\s+(den\s+)?senaste\s*veckan))\b|({WeekDayRegex}\s+(i\s+)?{PreviousPrefixRegex}\s*veckan)\b|(i\s+{WeekDayRegex})\b
   references: [ PreviousPrefixRegex, WeekDayRegex, PrefixWeekDayRegex ]
-NextDateRegex: !nestedRegex
-  def: (?#NextDateRegex)\b({NextPrefixRegex}(\s*vecka{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|((på\s+)?{WeekDayRegex}((\s+i)?\s+(den\s+kommande|nästa)\s*vecka))\b
+NextDateRegex1: !nestedRegex
+  def: (?#NextDateRegex1)\b({NextPrefixRegex}(\s*vecka{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})
   references: [ NextPrefixRegex, WeekDayRegex, PrefixWeekDayRegex ]
+NextDateRegex2: !nestedRegex
+  def: (?#NextDateRegex2)\b((på\s+)?{WeekDayRegex}((\s+i)?\s+(den\s+kommande|nästa)\s*vecka))\b
+  references: [ NextPrefixRegex, WeekDayRegex, PrefixWeekDayRegex ]
+NextDateRegex: !nestedRegex
+  def: (?#NextDateRegex)({NextDateRegex2}|{NextDateRegex1})
+  references: [ NextDateRegex1, NextDateRegex2 ]
 SpecialDayRegex: !nestedRegex
   def: (?#SpecialDayRegex)\b(i förrgår|i övermorgon|dagen\s+(före|efter)(?!=\s+dag)|((den\s+)?({RelativeRegex}|min)\s+dag)|igår|imorgon|idag)\b
   references: [ RelativeRegex ]

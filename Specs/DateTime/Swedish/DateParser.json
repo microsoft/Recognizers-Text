@@ -783,7 +783,7 @@
     },
     "Results": [
       {
-        "Text": "på söndag",
+        "Text": "söndag",
         "Type": "date",
         "Value": {
           "Timex": "2016-11-13",
@@ -794,8 +794,8 @@
             "date": "2016-11-13"
           }
         },
-        "Start": 18,
-        "Length": 9
+        "Start": 21,
+        "Length": 6
       }
     ]
   },
@@ -873,7 +873,6 @@
   },
   {
     "Input": "jag åker tillbaka söndag i nästa vecka",
-    "debug": true,
     "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -892,13 +891,12 @@
           }
         },
         "Start": 18,
-        "Length": 23
+        "Length": 20
       }
     ]
   },
   {
     "Input": "jag åker tillbaka på söndag i nästa vecka",
-    "debug": true,
     "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
