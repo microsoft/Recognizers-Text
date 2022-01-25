@@ -28,12 +28,12 @@ namespace Microsoft.Recognizers.Definitions.Swedish
       public const string LastNegPrefix = @"(?#LastNegPrefix)(?<!(w(ill|ould|on\s*'\s*t)|m(ay|ight|ust)|sh(all|ould(n\s*'\s*t)?)|c(an(\s*'\s*t|not)?|ould(n\s*'\s*t)?))(\s+not)?\s+)";
       public static readonly string RelativeRegex = $@"(?#RelativeRegex)\b(?<order>efter|nästa|kommande|de(nn|tt)a|de(n|t)\s+här|{LastNegPrefix}senaste|förra|tidigare|innevarande)\b";
       public static readonly string StrictRelativeRegex = $@"(?#StrictRelativeRegex)\b(?<order>efter|nästa|kommande|de(nn|tt)a|de(n|t)\s+här|{LastNegPrefix}senaste|förra|tidigare|innevarande)\b";
-      public const string UpcomingPrefixRegex = @"(?#UpcomingPrefixRegex)((de(n|t)\s+)?(kommande))";
+      public const string UpcomingPrefixRegex = @"(?#UpcomingPrefixRegex)((de(n|t)\s+)?(kommande|här|på))";
       public static readonly string NextPrefixRegex = $@"(?#NextPrefixRegex)\b(efter|nästa|{UpcomingPrefixRegex})\b";
       public const string AfterNextSuffixRegex = @"(?#AfterNextSuffixRegex)\b(efter\s+nästa)\b";
       public const string PastPrefixRegex = @"(?#PastPrefixRegex)((de(n|t)\s+)?förra)\b";
       public static readonly string PreviousPrefixRegex = $@"(?#PreviousPrefixRegex)({LastNegPrefix}förra|föregående|{PastPrefixRegex})\b";
-      public const string ThisPrefixRegex = @"(?#ThisPrefixRegex)(innevarande)\b";
+      public const string ThisPrefixRegex = @"(?#ThisPrefixRegex)(innevarande|de(nn|tt)a|de(n|t)\s+här)\b";
       public const string RangePrefixRegex = @"(?#RangePrefixRegex)(från|mellan)";
       public const string CenturySuffixRegex = @"(?#CenturySuffixRegex)(^sekel)\b";
       public const string ReferencePrefixRegex = @"(?#ReferencePrefixRegex)(samma)\b";
@@ -117,10 +117,10 @@ namespace Microsoft.Recognizers.Definitions.Swedish
       public const string PrefixWeekDayRegex = @"(?#PrefixWeekDayRegex)(\s*((,?\s*på)|[-—–]))";
       public static readonly string ThisRegex = $@"(?#ThisRegex)\b(denna(\s*vecka{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|({WeekDayRegex}((\s+i)?\s+(denna|den\s+här)\s*veckan?))\b";
       public static readonly string LastDateRegex = $@"(?#LastDateRegex)\b({PreviousPrefixRegex}(\s*vecka{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|({WeekDayRegex}(\s+(den\s+)?senaste\s*veckan))\b|({WeekDayRegex}\s+(i\s+)?{PreviousPrefixRegex}\s*veckan)\b|(i\s+{WeekDayRegex})\b";
-      public static readonly string NextDateRegex = $@"(?#NextDateRegex)\b({NextPrefixRegex}(\s*vecka{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|((på\s+)?{WeekDayRegex}((\s+i)?\s+(den\s+kommande|(den\s+)?nästa)\s*vecka))\b";
+      public static readonly string NextDateRegex = $@"(?#NextDateRegex)\b({NextPrefixRegex}(\s*vecka{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|((på\s+)?{WeekDayRegex}((\s+i)?\s+(den\s+kommande|nästa)\s*vecka))\b";
       public static readonly string SpecialDayRegex = $@"(?#SpecialDayRegex)\b(i förrgår|i övermorgon|dagen\s+(före|efter)(?!=\s+dag)|((den\s+)?({RelativeRegex}|min)\s+dag)|igår|imorgon|idag)\b";
       public static readonly string SpecialDayWithNumRegex = $@"(?#SpecialDayWithNumRegex)\b((?<number>{WrittenNumRegex})\s+dag(ar)?\s+från\s+(?<day>igår|imorgon|idag))\b";
-      public static readonly string RelativeDayRegex = $@"(?#RelativeDayRegex)\b(((den\s+)?{RelativeRegex}\s+dagen))\b";
+      public static readonly string RelativeDayRegex = $@"(?#RelativeDayRegex)\b(((den\s+)?{RelativeRegex}\s+dag(en)?))\b";
       public const string SetWeekDayRegex = @"(?#SetWeekDayRegex)\b(?<prefix>på\s+)?(?<weekday>morgonen|eftermiddagen|kvällen|natten|(sön|mån|tis|ons|tors|fre|lör)dag(en)?)s\b";
       public static readonly string WeekDayOfMonthRegex = $@"(?#WeekDayOfMonthRegex)(?<wom>(den\s+)?(?<cardinal>första|1:a|andra|2:a|tredje|3:e|fjärde|4:e|femte|5:e|sista)\s+(veckan\s+{MonthSuffixRegex}[\.]?\s+(på\s+)?{WeekDayRegex}|{WeekDayRegex}\s+{MonthSuffixRegex}))";
       public static readonly string RelativeWeekDayRegex = $@"(?#RelativeWeekDayRegex)\b({WrittenNumRegex}\s+{WeekDayRegex}\s+(från\s+nu|senare))\b";
