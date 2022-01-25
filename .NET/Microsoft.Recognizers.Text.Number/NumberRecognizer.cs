@@ -323,7 +323,7 @@ namespace Microsoft.Recognizers.Text.Number
                 (options) => new OrdinalModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new ItalianNumberParserConfiguration(
                                                               new BaseNumberOptionsConfiguration(Culture.Italian, options))),
-                    Italian.OrdinalExtractor.GetInstance()));
+                    Italian.OrdinalExtractor.GetInstance(new BaseNumberOptionsConfiguration(Culture.Italian, options))));
 
             RegisterModel<PercentModel>(
                 Culture.Italian,
@@ -379,7 +379,7 @@ namespace Microsoft.Recognizers.Text.Number
                 (options) => new OrdinalModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new JapaneseNumberParserConfiguration(
                                                               new BaseNumberOptionsConfiguration(Culture.Japanese, options))),
-                    new Japanese.OrdinalExtractor(new BaseNumberOptionsConfiguration(Culture.Japanese, options))));
+                    Japanese.OrdinalExtractor.GetInstance(new BaseNumberOptionsConfiguration(Culture.Japanese, options))));
 
             RegisterModel<PercentModel>(
                 Culture.Japanese,
@@ -407,7 +407,7 @@ namespace Microsoft.Recognizers.Text.Number
                 (options) => new OrdinalModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new KoreanNumberParserConfiguration(
                                                               new BaseNumberOptionsConfiguration(Culture.Korean, options))),
-                    new Korean.OrdinalExtractor(new BaseNumberOptionsConfiguration(Culture.Korean, options))));
+                    Korean.OrdinalExtractor.GetInstance(new BaseNumberOptionsConfiguration(Culture.Japanese, options))));
 
             RegisterModel<PercentModel>(
                 Culture.Korean,
@@ -435,7 +435,7 @@ namespace Microsoft.Recognizers.Text.Number
                 (options) => new OrdinalModel(
                     AgnosticNumberParserFactory.GetParser(AgnosticNumberParserType.Ordinal, new TurkishNumberParserConfiguration(
                                                               new BaseNumberOptionsConfiguration(Culture.Turkish, options))),
-                    Turkish.OrdinalExtractor.GetInstance()));
+                    Turkish.OrdinalExtractor.GetInstance(new BaseNumberOptionsConfiguration(Culture.Japanese, options))));
 
             RegisterModel<PercentModel>(
                 Culture.Turkish,

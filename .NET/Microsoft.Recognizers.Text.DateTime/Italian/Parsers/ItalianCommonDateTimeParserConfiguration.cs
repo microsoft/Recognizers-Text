@@ -38,7 +38,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
             CardinalExtractor = Number.Italian.CardinalExtractor.GetInstance();
             IntegerExtractor = Number.Italian.IntegerExtractor.GetInstance();
-            OrdinalExtractor = Number.Italian.OrdinalExtractor.GetInstance();
+            OrdinalExtractor = Number.Italian.OrdinalExtractor.GetInstance(numConfig);
 
             NumberParser = new BaseNumberParser(new ItalianNumberParserConfiguration(numConfig));
 

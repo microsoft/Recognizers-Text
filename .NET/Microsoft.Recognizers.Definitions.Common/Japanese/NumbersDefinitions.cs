@@ -232,7 +232,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
       public static readonly Dictionary<string, string> RelativeReferenceRelativeToMap = new Dictionary<string, string>
         {
             { @"前", @"current" },
-            { @"現在", @"end" },
+            { @"現在", @"current" },
             { @"次", @"current" },
             { @"最後", @"end" },
             { @"最後から三番目", @"end" },

@@ -1,0 +1,62 @@
+[
+  {
+    "Input": "önceki",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "Sonraki",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "Bir önceki",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "ilki",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "İlki",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "Sonuncusu",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "son",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "sonuncu",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "en son",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "21'inci",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "21'inci",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "21",
+          "relativeTo": "start",
+          "value": "21"
+        }
+      }
+    ]
+  }
+]

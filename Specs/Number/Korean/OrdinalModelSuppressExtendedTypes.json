@@ -1,0 +1,87 @@
+[
+  {
+    "Input": "노트에 있는 마지막 문장을 지우세요",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "\"다음\"인가요 아니면 \"마지막\"인가요?",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "뒤에서 세번째를 보여주세요",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "마지막의 옆을 보여주세요",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "마지막에서 바로 전의 것을 보여주세요",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "마지막에서 두번째를 보여주세요",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "마지막 문장을 지우세요",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "이전 것을 보여주세요",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "다음 것을 보여주세요",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "마지막 두 책을 가지고 싶다",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "마지막 한 책을 가지고 싶다",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "다음 아이템을 주세요",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "마지막 쿠키를 원합니다",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "나는 마지막의 옆에 있는 걸 원합니다",
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": []
+  },
+  {
+    "Input": "열한 번째",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "열한 번째",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "11",
+          "offset": "11",
+          "relativeTo": "start"
+        }
+      }
+    ]
+  }
+]

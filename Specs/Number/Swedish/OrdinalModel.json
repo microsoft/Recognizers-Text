@@ -506,19 +506,17 @@
   },
   {
     "Input": "Jag vill köpa den tredje från slutet",
-    "Comment": "Currently resolves as ordinal only",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "tredje från slutet",
-        "Start": 4,
-        "End": 17,
+        "Start": 18,
+        "End": 35,
         "TypeName": "ordinal.relative",
         "Resolution": {
-          "offset": "-1",
+          "offset": "-2",
           "relativeTo": "end",
-          "value": "end-1"
+          "value": "end-2"
         }
       }
     ]
@@ -638,6 +636,108 @@
           "offset": "126",
           "relativeTo": "start",
           "value": "126"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Visa mig den tredje från slutet.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "tredje från slutet",
+        "Start": 13,
+        "End": 30,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-2",
+          "relativeTo": "end",
+          "value": "end-2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Glöm förra gången.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "förra",
+        "Start": 5,
+        "End": 9,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "current",
+          "value": "current-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Förskolebarn efter nuvarande vård",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "efter nuvarande",
+        "Start": 13,
+        "End": 27,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "current",
+          "value": "current+1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Förslaget är i linje med tidigare ställningstaganden",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "tidigare",
+        "Start": 25,
+        "End": 32,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "current",
+          "value": "current-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Jag säger till innan sista psalmen.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "innan sista",
+        "Start": 15,
+        "End": 25,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end",
+          "value": "end-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Åtminstone inte den senaste veckan.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "senaste",
+        "Start": 20,
+        "End": 26,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end",
+          "value": "end+0"
         }
       }
     ]

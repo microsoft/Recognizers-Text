@@ -57,15 +57,20 @@ RoundNumberOrdinalRegex: !simpleRegex
   def: (honderdste|duizendste|miljoenste|miljardste|biljoenste)
 BasicOrdinalRegex: !simpleRegex
   def: (nulde|eende|eerste|tweede|derde|vierde|vijfd(e|en)|zesde|zevende|achtst(e|en)|negende|tiend(e|en)|elfde|twaalfde|dertiende|veertiende|vijftiende|zestiende|zeventiende|achttiende|negentiende|twintigste|vijfentwintigste|vijventwintigste|dertigste|veertigste|vijftigste|zestigste|zeventigste|tachtigste|negentigste)
+RelativeOrdinalRegex: !simpleRegex
+  def: (?<relativeOrdinal>volgende|vorige?|huidige|laatste?|(de\s+op\s+één\s+na\s+|de\s+een\s+voor\s+de\s+|die\s+voor\s+de\s+|twee\s+na\s+|voor)laatste)
 SuffixBasicOrdinalRegex: !nestedRegex
   def: (((({ZeroToNineIntegerRegex}{RoundNumberIntegerRegex})|({RoundNumberIntegerRegex}{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{RoundNumberIntegerRegex})\s*)*((en|ën)\s*)*{BasicOrdinalRegex})
   references: [ TensNumberIntegerRegex, ZeroToNineIntegerRegex, AnIntRegex, RoundNumberIntegerRegex, BasicOrdinalRegex ]
 SuffixRoundNumberOrdinalRegex: !nestedRegex
   def: (({AllIntRegex}\s*){RoundNumberOrdinalRegex})
   references: [ AllIntRegex, RoundNumberOrdinalRegex ]
-AllOrdinalRegex: !nestedRegex
-  def: ({SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})
+AllOrdinalNumberRegex: !nestedRegex
+  def: (?:{SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})
   references: [ SuffixBasicOrdinalRegex, SuffixRoundNumberOrdinalRegex ]
+AllOrdinalRegex: !nestedRegex
+  def: (?:{AllOrdinalNumberRegex}|{RelativeOrdinalRegex})
+  references: [ AllOrdinalNumberRegex, RelativeOrdinalRegex ]
 OrdinalSuffixRegex: !simpleRegex
   def: (?<=\b)((\d*(1e|2e|3e|4e|5e|6e|7e|8e|9e|0e))|(1ste|2de|3de|4de|5de|6de|7de|8ste|9de|0de)|([0-9]*1[0-9]de)|([0-9]*[2-9][0-9]ste)|([0-9]*[0](1ste|2de|3de|4de|5de|6de|7de|8ste|9de|0de)))(?=\b)
 OrdinalNumericRegex: !simpleRegex
@@ -97,11 +102,11 @@ RoundMultiplierRegex: !nestedRegex
   def: \b\s*(van\s+)?({RoundMultiplierWithFraction}|(?<multiplier>(honderd|duizend))$)
   references: [ RoundMultiplierWithFraction ]
 FractionNounRegex: !nestedRegex
-  def: (?<=\b)(({AllIntRegex}\s+(en\s+)?)?(({AllIntRegex})(\s+|\s*-\s*|\s*/\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))n?|halven|vierdes|kwart)|(een\s+(half|kwart)\s+){RoundNumberIntegerRegex}|{FractionUnitsRegex}(\s+{RoundNumberIntegerRegex})?))(?=\b)
-  references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex, FractionUnitsRegex, RoundNumberIntegerRegex ]
+  def: (?<=\b)(({AllIntRegex}\s+(en\s+)?)?(({AllIntRegex})(\s+|\s*-\s*|\s*/\s*)((({AllOrdinalNumberRegex})|({RoundNumberOrdinalRegex}))n?|halven|vierdes|kwart)|(een\s+(half|kwart)\s+){RoundNumberIntegerRegex}|{FractionUnitsRegex}(\s+{RoundNumberIntegerRegex})?))(?=\b)
+  references: [ AllIntRegex, AllOrdinalNumberRegex, RoundNumberOrdinalRegex, FractionUnitsRegex, RoundNumberIntegerRegex ]
 FractionNounWithArticleRegex: !nestedRegex
-  def: (?<=\b)((({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\s+(en\s)?)?(een)(\s+|\s*-\s*|\s*/\s*)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|({FractionUnitsRegex}))|{AllIntRegex}[eë]n(eenhalf|half|halve|helft|kwart))(?=\b)
-  references: [ AllIntRegex, AllOrdinalRegex, RoundNumberOrdinalRegex, FractionUnitsRegex, RoundNumberIntegerRegexWithLocks ]
+  def: (?<=\b)((({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\s+(en\s)?)?(een)(\s+|\s*-\s*|\s*/\s*)(({AllOrdinalNumberRegex})|({RoundNumberOrdinalRegex})|({FractionUnitsRegex}))|{AllIntRegex}[eë]n(eenhalf|half|halve|helft|kwart))(?=\b)
+  references: [ AllIntRegex, AllOrdinalNumberRegex, RoundNumberOrdinalRegex, FractionUnitsRegex, RoundNumberIntegerRegexWithLocks ]
 FractionPrepositionRegex: !nestedRegex
   def: (?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<!,)\d+))\s+(op|op\s+de|van\s+de|uit|uit\s+de)\s+(?<denominator>({AllIntRegex})|(\d+)(?!,))(?=\b)
   references: [ AllIntRegex, BaseNumbers.CommonCurrencySymbol ]
@@ -369,12 +374,30 @@ AmbiguityFiltersDict: !dictionary
     '^[.]': ''
 RelativeReferenceOffsetMap: !dictionary
   types: [ string, string ]
-# TODO: modify below regex according to the counterpart in English
-  entries:
-    '': ''
+  entries:   
+    laatst: 0
+    laatste: 0
+    volgende: 1
+    huidige: 0
+    vorige: -1
+    vorig: -1
+    de op één na laatste: -1
+    de een voor de laatste: -1
+    die voor de laatste: -1
+    voorlaatste: -1
+    twee na laatste: -2
 RelativeReferenceRelativeToMap: !dictionary
   types: [ string, string ]
-# TODO: modify below regex according to the counterpart in English
   entries:
-    '': ''
+    laatst: end
+    laatste: end
+    volgende: current
+    huidige: current
+    vorige: current
+    vorig: current
+    de op één na laatste: end
+    de een voor de laatste: end
+    die voor de laatste: end
+    voorlaatste: end
+    twee na laatste: end
 ...

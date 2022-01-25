@@ -638,5 +638,186 @@
     "Input": "Die US-Botschaft befindet sich in Clayallee 170, 14191 Berlin.",
     "NotSupported": "javascript",
     "Results": []
+  },
+  {
+    "Input": "lösche den letzten Satz in der Notiz",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "letzten",
+        "Start": 11,
+        "End": 17,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end",
+          "value": "end+0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Meinst du \"nächster\" oder \"letzter\"?",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "nächster",
+        "Start": 11,
+        "End": 18,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "current",
+          "value": "current+1"
+        }
+      },
+      {
+        "Text": "letzter",
+        "Start": 27,
+        "End": 33,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end",
+          "value": "end+0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Zeig mir das vorletzte.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "vorletzte",
+        "Start": 13,
+        "End": 21,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end",
+          "value": "end-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Zeig mir das drittletzte.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "drittletzte",
+        "Start": 13,
+        "End": 23,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-2",
+          "relativeTo": "end",
+          "value": "end-2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Letzten Satz streichen.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "letzten",
+        "Start": 0,
+        "End": 6,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end",
+          "value": "end+0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Zeig mir das vorherige.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "vorherige",
+        "Start": 13,
+        "End": 21,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "current",
+          "value": "current-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Zeig mir das nächste.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "nächste",
+        "Start": 13,
+        "End": 19,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "current",
+          "value": "current+1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ich möchte die letzten beiden Bücher.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "letzten",
+        "Start": 15,
+        "End": 21,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end",
+          "value": "end+0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ich möchte die nächsten 3 Bücher.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "nächsten",
+        "Start": 15,
+        "End": 22,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "current",
+          "value": "current+1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Blättern Sie zur vorherigen Seite.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "vorherigen",
+        "Start": 17,
+        "End": 26,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "current",
+          "value": "current-1"
+        }
+      }
+    ]
   }
 ]

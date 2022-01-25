@@ -1,0 +1,152 @@
+[
+  {
+    "Input": "नोट में अंतिम वाक्य को डिलीट कर दें",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "मुझे आखिरी से दूसरा दिखाएं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दूसरा",
+        "Start": 14,
+        "End": 18,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "2",
+          "relativeTo": "start",
+          "value": "2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मुझे पिछला पर केवल एक दिखाएं।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "मुझे आखिरी से पहले का दिखाएं।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "पहले",
+        "Start": 14,
+        "End": 17,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "start",
+          "value": "1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मुझे आखिरी का दूसरा दिखाएं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दूसरा",
+        "Start": 14,
+        "End": 18,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "2",
+          "relativeTo": "start",
+          "value": "2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "मुझे अंतिम वाले का पिछला दिखाएं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "मुझे अंतिम से दूसरा दिखाएं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "दूसरा",
+        "Start": 14,
+        "End": 18,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "2",
+          "relativeTo": "start",
+          "value": "2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "अंतिम वाक्य को डिलीट कर दें",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "मुझे पिछला वाला दिखाएं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "मुझे अगला वाला दिखाएं",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "मुझे आखिरी की दो किताबें चाहिए",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "मुझे वो आखिरी वाली किताब चाहिए",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "मुझे अगली 3 किताबें चाहिए।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "मुझे अगली चीज दीजिए",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "आखिरी कुकी मुझे चाहिए",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "मुझे आखिरी के बगल वाला चाहिए",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "पिछले पृष्ठ पर ले जाएं।",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "ग्यारहवां",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "ग्यारहवां",
+        "Start": 0,
+        "End": 8,
+        "TypeName": "ordinal",
+        "Resolution": {
+          "offset": "11",
+          "relativeTo": "start",
+          "value": "11"
+        }
+      }
+    ]
+  }
+]

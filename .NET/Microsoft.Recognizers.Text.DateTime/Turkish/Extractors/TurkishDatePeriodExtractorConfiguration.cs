@@ -270,7 +270,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
             var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
 
             CardinalExtractor = Number.Turkish.CardinalExtractor.GetInstance();
-            OrdinalExtractor = Number.Turkish.OrdinalExtractor.GetInstance();
+            OrdinalExtractor = Number.Turkish.OrdinalExtractor.GetInstance(numConfig);
 
             NumberParser = new BaseNumberParser(new TurkishNumberParserConfiguration(numConfig));
         }

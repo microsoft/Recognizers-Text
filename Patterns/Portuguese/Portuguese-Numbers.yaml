@@ -90,6 +90,8 @@ UnderThousandOrdinalRegex: !nestedRegex
 OverThousandOrdinalRegex: !nestedRegex
   def: (({AllIntRegex})([eé]sim[oa]))
   references: [ AllIntRegex ]
+RelativeOrdinalRegex: !simpleRegex
+  def: (?<relativeOrdinal>pr[oó]xim[ao]s?|[uú]ltim[ao]\s+mas\s+um|anterior\s+ao\s+últim[ao]|(pen)?[uú]ltim[ao]s?|antepen[uú]ltim[ao]s?|seguintes?|anterior(es)?|atua(l|is))
 ComplexOrdinalRegex: !nestedRegex
   def: (({OverThousandOrdinalRegex}(\s)?)?{UnderThousandOrdinalRegex}|{OverThousandOrdinalRegex})
   references: [ OverThousandOrdinalRegex, UnderThousandOrdinalRegex ]
@@ -99,9 +101,12 @@ SuffixRoundOrdinalRegex: !nestedRegex
 ComplexRoundOrdinalRegex: !nestedRegex
   def: ((({SuffixRoundOrdinalRegex}(\s)?)?{ComplexOrdinalRegex})|{SuffixRoundOrdinalRegex})
   references: [ SuffixRoundOrdinalRegex, ComplexOrdinalRegex ]
-AllOrdinalRegex: !nestedRegex
+AllOrdinalNumberRegex: !nestedRegex
   def: '{ComplexOrdinalRegex}|{SimpleRoundOrdinalRegex}|{ComplexRoundOrdinalRegex}'
   references: [ ComplexOrdinalRegex, SimpleRoundOrdinalRegex, ComplexRoundOrdinalRegex ]
+AllOrdinalRegex: !nestedRegex
+  def: (?:{AllOrdinalNumberRegex}|{RelativeOrdinalRegex})
+  references: [ AllOrdinalNumberRegex, RelativeOrdinalRegex ]
 OrdinalSuffixRegex: !simpleRegex
   def: (?<=\b)(\d*((1|2|3|4|5|6|7|8|9|0)[oaºª]|(1|2|3|4|5|6|7|8|9)(\.[ºª])))(?=\b)
 OrdinalEnglishRegex: !nestedRegex
@@ -123,11 +128,11 @@ RoundMultiplierRegex: !nestedRegex
   def: \b\s*({RoundMultiplierWithFraction}|(?<multiplier>(mil))$)
   references: [ RoundMultiplierWithFraction ]
 FractionNounRegex: !nestedRegex
-  def: (?<=\b)({AllIntRegex}\s+((e|com)\s+)?)?(({AllIntRegex})(\s+((e|com)\s)?)((({AllOrdinalRegex})s?|({SpecialFractionInteger})|({SuffixRoundOrdinalRegex})s?)|mei[oa]?|ter[çc]o?)|(meio|um\s+quarto\s+de)\s+{RoundNumberIntegerRegex})(?=\b)
-  references: [ AllIntRegex, AllOrdinalRegex, SpecialFractionInteger, SuffixRoundOrdinalRegex, RoundNumberIntegerRegex ]
+  def: (?<=\b)({AllIntRegex}\s+((e|com)\s+)?)?(({AllIntRegex})(\s+((e|com)\s)?)((({AllOrdinalNumberRegex})s?|({SpecialFractionInteger})|({SuffixRoundOrdinalRegex})s?)|mei[oa]?|ter[çc]o?)|(meio|um\s+quarto\s+de)\s+{RoundNumberIntegerRegex})(?=\b)
+  references: [ AllIntRegex, AllOrdinalNumberRegex, SpecialFractionInteger, SuffixRoundOrdinalRegex, RoundNumberIntegerRegex ]
 FractionNounWithArticleRegex: !nestedRegex
-  def: (?<=\b)(({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\s+(e\s+)?)?((um|um[as])(\s+)(({AllOrdinalRegex})|({SuffixRoundOrdinalRegex})|(e\s+)?mei[oa]?)|mei[oa]?)(?=\b)
-  references: [ AllIntRegex, AllOrdinalRegex, SuffixRoundOrdinalRegex, RoundNumberIntegerRegexWithLocks ]
+  def: (?<=\b)(({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\s+(e\s+)?)?((um|um[as])(\s+)(({AllOrdinalNumberRegex})|({SuffixRoundOrdinalRegex})|(e\s+)?mei[oa]?)|mei[oa]?)(?=\b)
+  references: [ AllIntRegex, AllOrdinalNumberRegex, SuffixRoundOrdinalRegex, RoundNumberIntegerRegexWithLocks ]
 FractionPrepositionRegex: !nestedRegex
   def: (?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<!\.)\d+))\s+sobre\s+(?<denominator>({AllIntRegex})|((\d+)(?!\.)))(?=\b)
   references: [ AllIntRegex, BaseNumbers.CommonCurrencySymbol ]
@@ -488,12 +493,96 @@ AmbiguityFiltersDict: !dictionary
     '^[.]': ''
 RelativeReferenceOffsetMap: !dictionary
   types: [ string, string ]
-# TODO: modify below regex according to the counterpart in English
   entries:
-    '': ''
+    proxima: 1
+    proximo: 1
+    próxima: 1
+    próximo: 1
+    proximas: 1
+    proximos: 1
+    próximas: 1
+    próximos: 1
+    ultima: 0
+    ultimo: 0
+    última: 0
+    último: 0
+    ultimas: 0
+    ultimos: 0
+    últimas: 0
+    últimos: 0
+    penultima: -1
+    penultimo: -1
+    penúltima: -1
+    penúltimo: -1
+    penultimas: -1
+    penultimos: -1
+    penúltimas: -1
+    penúltimos: -1
+    ultima mas um: -1
+    ultimo mas um: -1
+    última mas um: -1
+    último mas um: -1
+    anterior ao último: -1
+    anterior ao última: -1
+    antepenultima: -2
+    antepenultimo: -2
+    antepenúltima: -2
+    antepenúltimo: -2
+    antepenultimas: -2
+    antepenultimos: -2
+    antepenúltimas: -2
+    antepenúltimos: -2
+    seguinte: 1
+    seguintes: 1
+    anterior: -1
+    anteriores: -1
+    atual: 0
+    atuais: 0
 RelativeReferenceRelativeToMap: !dictionary
   types: [ string, string ]
-# TODO: modify below regex according to the counterpart in English
   entries:
-    '': ''
+    proxima: current
+    proximo: current
+    próxima: current
+    próximo: current
+    proximas: current
+    proximos: current
+    próximas: current
+    próximos: current
+    ultima: end
+    ultimo: end
+    última: end
+    último: end
+    ultimas: end
+    ultimos: end
+    últimas: end
+    últimos: end
+    penultima: end
+    penultimo: end
+    penúltima: end
+    penúltimo: end
+    penultimas: end
+    penultimos: end
+    penúltimas: end
+    penúltimos: end
+    ultima mas um: end
+    ultimo mas um: end
+    última mas um: end
+    último mas um: end
+    anterior ao último: end
+    anterior ao última: end
+    antepenultima: end
+    antepenultimo: end
+    antepenúltima: end
+    antepenúltimo: end
+    antepenultimas: end
+    antepenultimos: end
+    antepenúltimas: end
+    antepenúltimos: end
+    seguinte: current
+    seguintes: current
+    anterior: current
+    anteriores: current
+    atual: current
+    atuais: current
 ...

@@ -1,0 +1,82 @@
+[
+  {
+    "Input": "verwijder laatste zin in de notitie",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Bedoel je \"volgende\" of \"laatste\"?",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Laat me de twee na laatste zien.",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Laat me de voorlaatste zien.",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Laat me de op één na laatste zien.",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Laat me de een voor de laatste zien.",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Laat me die voor de laatste zien.",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Laatste zin schrappen.",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Laat me de vorige zien.",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Laat me de volgende zien.",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Ik wil de laatste twee boeken.",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Ik wil volgende 3 boeken.",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Ga naar de vorige pagina.",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "derde",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "derde",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3",
+          "offset":"3",
+          "relativeTo":"start"
+        }
+      }
+    ]
+  }
+]

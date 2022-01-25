@@ -1,0 +1,72 @@
+[
+  {
+    "Input": "cancella l'ultima frase della nota",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Intendi \"prossimo\" o \"ultimo\"?",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Mostrami il terzultimo.",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Mostrami il penultimo.",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Mostrami quello prima dell'ultimo.",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Cancella l'ultima frase.",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Mostrami il precedente.",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Mostrami il prossimo.",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Voglio gli ultimi due libri.",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Voglio i prossimi 3 libri.",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Vai alla pagina precedente.",
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "undicesimo",
+    "NotSupportedByDesign": "python,javascript,java",
+    "Results": [
+      {
+        "Text": "undicesimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "11",
+          "offset":"11",
+          "relativeTo":"start"
+        }
+      }
+    ]
+  }
+]

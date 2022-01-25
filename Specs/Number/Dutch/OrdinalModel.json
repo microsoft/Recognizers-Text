@@ -518,5 +518,237 @@
         }
       }
     ]
+  },
+  {
+    "Input": "verwijder laatste zin in de notitie",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "laatste",
+        "Start": 10,
+        "End": 16,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end",
+          "value": "end+0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Bedoel je \"volgende\" of \"laatste\"?",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "volgende",
+        "Start": 11,
+        "End": 18,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "current",
+          "value": "current+1"
+        }
+      },
+      {
+        "Text": "laatste",
+        "Start": 25,
+        "End": 31,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end",
+          "value": "end+0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Laat me de twee na laatste zien.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "twee na laatste",
+        "Start": 11,
+        "End": 25,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-2",
+          "relativeTo": "end",
+          "value": "end-2"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Laat me de voorlaatste zien.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "voorlaatste",
+        "Start": 11,
+        "End": 21,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end",
+          "value": "end-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Laat me de op één na laatste zien.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "de op één na laatste",
+        "Start": 8,
+        "End": 27,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end",
+          "value": "end-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Laat me de een voor de laatste zien.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "de een voor de laatste",
+        "Start": 8,
+        "End": 29,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end",
+          "value": "end-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Laat me die voor de laatste zien.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "die voor de laatste",
+        "Start": 8,
+        "End": 26,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "end",
+          "value": "end-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Laatste zin schrappen.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "laatste",
+        "Start": 0,
+        "End": 6,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end",
+          "value": "end+0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Laat me de vorige zien.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "vorige",
+        "Start": 11,
+        "End": 16,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "current",
+          "value": "current-1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Laat me de volgende zien.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "volgende",
+        "Start": 11,
+        "End": 18,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "current",
+          "value": "current+1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ik wil de laatste twee boeken.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "laatste",
+        "Start": 10,
+        "End": 16,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "0",
+          "relativeTo": "end",
+          "value": "end+0"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ik wil volgende 3 boeken.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "volgende",
+        "Start": 7,
+        "End": 14,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "1",
+          "relativeTo": "current",
+          "value": "current+1"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ga naar de vorige pagina.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "vorige",
+        "Start": 11,
+        "End": 16,
+        "TypeName": "ordinal.relative",
+        "Resolution": {
+          "offset": "-1",
+          "relativeTo": "current",
+          "value": "current-1"
+        }
+      }
+    ]
   }
 ]

@@ -15,7 +15,7 @@ namespace Microsoft.Recognizers.Text.Number.Korean
 
         public NumberRangeExtractor(INumberOptionsConfiguration config)
             : base(new NumberExtractor(new BaseNumberOptionsConfiguration(config)),
-                   new OrdinalExtractor(new BaseNumberOptionsConfiguration(config)),
+                   OrdinalExtractor.GetInstance(new BaseNumberOptionsConfiguration(config.Culture, config.Options)),
                    new BaseCJKNumberParser(new KoreanNumberParserConfiguration(config)),
                    config)
         {
@@ -104,7 +104,7 @@ namespace Microsoft.Recognizers.Text.Number.Korean
                 },
                 {
                     new Regex(NumbersDefinitions.OneNumberRangeMoreRegex4, RegexFlags),
-                    NumberRangeConstants.EQUAL
+                    NumberRangeConstants.MORE
                 },
                 {
                     // 700에 달하는
