@@ -1524,32 +1524,31 @@
     ]
   },
   {
-    "Input": "I'll go back third Tuesday",
+    "Input": "jag åker tillbaka tredje torsdagen",
     "NotSupportedByDesign": "javascript, python, java",
-    "NotSupported": "dotnet",
     "Context": {
       "ReferenceDateTime": "2017-09-27T00:00:00"
     },
     "Results": [
       {
-        "Text": "third Tuesday",
+        "Text": "tredje torsdagen",
         "Type": "date",
         "Value": {
-          "Timex": "2017-09-19",
+          "Timex": "2017-09-21",
           "FutureResolution": {
-            "date": "2017-09-19"
+            "date": "2017-09-21"
           },
           "PastResolution": {
-            "date": "2017-09-19"
+            "date": "2017-09-21"
           }
         },
-        "Start": 13,
-        "Length": 13
+        "Start": 18,
+        "Length": 16
       }
     ]
   },
   {
-    "Input": "I'll go back fifth Sunday",
+    "Input": "jag åker tillbaka femte söndagen",
     "NotSupportedByDesign": "javascript, python, java",
     "NotSupported": "dotnet",
     "Context": {
@@ -1557,7 +1556,7 @@
     },
     "Results": [
       {
-        "Text": "fifth Sunday",
+        "Text": "femte söndagen",
         "Type": "date",
         "Value": {
           "Timex": "2017-09-31",
@@ -1568,8 +1567,8 @@
             "date": "0001-01-01"
           }
         },
-        "Start": 13,
-        "Length": 12
+        "Start": 18,
+        "Length": 14
       }
     ]
   },
@@ -1622,65 +1621,14 @@
     ]
   },
   {
-    "Input": "I'll go back January 12, 2018",
+    "Input": "Jag åkte tillbaka för två dagar sedan",
     "NotSupportedByDesign": "javascript, python, java",
-    "NotSupported": "dotnet",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "Results": [
       {
-        "Text": "January 12, 2018",
-        "Type": "date",
-        "Value": {
-          "Timex": "2018-01-12",
-          "FutureResolution": {
-            "date": "2018-01-12"
-          },
-          "PastResolution": {
-            "date": "2018-01-12"
-          }
-        },
-        "Start": 13,
-        "Length": 16
-      }
-    ]
-  },
-  {
-    "Input": "I'll go back 9-18-15",
-    "NotSupportedByDesign": "javascript, python, java",
-    "NotSupported": "dotnet",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "Results": [
-      {
-        "Text": "9-18-15",
-        "Type": "date",
-        "Value": {
-          "Timex": "2015-09-18",
-          "FutureResolution": {
-            "date": "2015-09-18"
-          },
-          "PastResolution": {
-            "date": "2015-09-18"
-          }
-        },
-        "Start": 13,
-        "Length": 7
-      }
-    ]
-  },
-  {
-    "Input": "I went back two days ago",
-    "NotSupportedByDesign": "javascript, python, java",
-    "NotSupported": "dotnet",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "Results": [
-      {
-        "Text": "two days ago",
+        "Text": "två dagar sedan",
         "Type": "date",
         "Value": {
           "Timex": "2016-11-05",
@@ -1691,21 +1639,20 @@
             "date": "2016-11-05"
           }
         },
-        "Start": 12,
-        "Length": 12
+        "Start": 22,
+        "Length": 15
       }
     ]
   },
   {
-    "Input": "I went back two years ago",
+    "Input": "jag åkte tillbaka för två år sedan",
     "NotSupportedByDesign": "javascript, python, java",
-    "NotSupported": "dotnet",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "Results": [
       {
-        "Text": "two years ago",
+        "Text": "två år sedan",
         "Type": "date",
         "Value": {
           "Timex": "2014-11-07",
@@ -1716,8 +1663,8 @@
             "date": "2014-11-07"
           }
         },
-        "Start": 12,
-        "Length": 13
+        "Start": 22,
+        "Length": 12
       }
     ]
   },
@@ -1742,6 +1689,30 @@
         },
         "Start": 0,
         "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "16 november 2016",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Context": {
+      "ReferenceDateTime": "2016-11-14T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "16 november 2016",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-16",
+          "FutureResolution": {
+            "date": "2016-11-16"
+          },
+          "PastResolution": {
+            "date": "2016-11-16"
+          }
+        },
+        "Start": 0,
+        "Length": 16
       }
     ]
   },
@@ -1890,33 +1861,7 @@
     ]
   },
   {
-    "Input": "monday, jan twenty two, 2018",
-    "NotSupportedByDesign": "javascript, python, java",
-    "NotSupported": "dotnet",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "Results": [
-      {
-        "Text": "monday, jan twenty two, 2018",
-        "Type": "date",
-        "Value": {
-          "Timex": "2018-01-22",
-          "FutureResolution": {
-            "date": "2018-01-22"
-          },
-          "PastResolution": {
-            "date": "2018-01-22"
-          }
-        },
-        "Start": 0,
-        "Length": 28
-      }
-    ]
-  },
-  {
     "Input": "på söndag tjugoförste januari tjugohundraarton",
-    "debug": true,
     "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -1942,7 +1887,7 @@
   {
     "Input": "på söndag den tjugoförste januari tjugohundraarton",
     "NotSupportedByDesign": "javascript, python, java",
-    "debug": true,
+    "NotSupported": "dotnet",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -1995,7 +1940,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "söndag, tjugoförste jan, tvåtusenarton",
@@ -2087,15 +2031,38 @@
     ]
   },
   {
-    "Input": "I'll see you the first Friday of next month",
+    "Input": "den tionde september, tjugohundra",
     "NotSupportedByDesign": "javascript, python, java",
-    "NotSupported": "dotnet",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "tionde september, tjugohundra",
+        "Type": "date",
+        "Value": {
+          "Timex": "2000-09-10",
+          "FutureResolution": {
+            "date": "2000-09-10"
+          },
+          "PastResolution": {
+            "date": "2000-09-10"
+          }
+        },
+        "Start": 4,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "Vi ses första fredagen i nästa månad",
+    "NotSupportedByDesign": "javascript, python, java",
     "Context": {
       "ReferenceDateTime": "2018-03-20T09:58:00"
     },
     "Results": [
       {
-        "Text": "the first Friday of next month",
+        "Text": "första fredagen i nästa månad",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-04-WXX-5-#1",
@@ -2106,21 +2073,20 @@
             "date": "2018-04-06"
           }
         },
-        "Start": 13,
-        "Length": 30
+        "Start": 7,
+        "Length": 29
       }
     ]
   },
   {
-    "Input": "So, make it the second Monday of next month?",
+    "Input": "Ok, ska vi säga andra måndagen i nästa månad?",
     "NotSupportedByDesign": "javascript, python, java",
-    "NotSupported": "dotnet",
     "Context": {
       "ReferenceDateTime": "2018-03-20T10:45:00"
     },
     "Results": [
       {
-        "Text": "the second Monday of next month",
+        "Text": "andra måndagen i nästa månad",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-04-WXX-1-#2",
@@ -2131,21 +2097,20 @@
             "date": "2018-04-09"
           }
         },
-        "Start": 12,
-        "Length": 31
+        "Start": 16,
+        "Length": 28
       }
     ]
   },
   {
-    "Input": "I came back the third Wednesday of previous month",
+    "Input": "Jag återvände tredje onsdagen i förra månaden",
     "NotSupportedByDesign": "javascript, python, java",
-    "NotSupported": "dotnet",
     "Context": {
       "ReferenceDateTime": "2018-03-20T10:45:00"
     },
     "Results": [
       {
-        "Text": "the third Wednesday of previous month",
+        "Text": "tredje onsdagen i förra månaden",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-02-WXX-3-#3",
@@ -2156,21 +2121,20 @@
             "date": "2018-02-21"
           }
         },
-        "Start": 12,
-        "Length": 37
+        "Start": 14,
+        "Length": 31
       }
     ]
   },
   {
-    "Input": "I'll go travelling Tuesday next week",
+    "Input": "Jag reser på tisdag i nästa vecka",
     "NotSupportedByDesign": "javascript, python, java",
-    "NotSupported": "dotnet",
     "Context": {
       "ReferenceDateTime": "2018-03-20T22:16:00"
     },
     "Results": [
       {
-        "Text": "Tuesday next week",
+        "Text": "på tisdag i nästa vecka",
         "Type": "date",
         "Value": {
           "Timex": "2018-03-27",
@@ -2181,21 +2145,20 @@
             "date": "2018-03-27"
           }
         },
-        "Start": 19,
-        "Length": 17
+        "Start": 10,
+        "Length": 23
       }
     ]
   },
   {
-    "Input": "Handle homework on Sunday of next week",
+    "Input": "Gör läxan på söndag i nästa vecka",
     "NotSupportedByDesign": "javascript, python, java",
-    "NotSupported": "dotnet",
     "Context": {
       "ReferenceDateTime": "2018-03-20T22:16:00"
     },
     "Results": [
       {
-        "Text": "on Sunday of next week",
+        "Text": "på söndag i nästa vecka",
         "Type": "date",
         "Value": {
           "Timex": "2018-04-01",
@@ -2206,8 +2169,8 @@
             "date": "2018-04-01"
           }
         },
-        "Start": 16,
-        "Length": 22
+        "Start": 10,
+        "Length": 23
       }
     ]
   },
@@ -2332,15 +2295,14 @@
     ]
   },
   {
-    "Input": "Are you available two monday later?",
+    "Input": "Är du ledig två måndagar senare?",
     "NotSupportedByDesign": "javascript, python, java",
-    "NotSupported": "dotnet",
     "Context": {
       "ReferenceDateTime": "2018-05-07T00:00:00"
     },
     "Results": [
       {
-        "Text": "two monday later",
+        "Text": "två måndagar senare",
         "Type": "date",
         "Value": {
           "Timex": "2018-05-21",
@@ -2351,8 +2313,8 @@
             "date": "2018-05-21"
           }
         },
-        "Start": 18,
-        "Length": 16
+        "Start": 12,
+        "Length": 19
       }
     ]
   },
@@ -2381,15 +2343,14 @@
     ]
   },
   {
-    "Input": "Are you available three weeks from tomorrow?",
+    "Input": "Är du tillgänglig tre veckor från imorgon?",
     "NotSupportedByDesign": "javascript, python, java",
-    "NotSupported": "dotnet",
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
     "Results": [
       {
-        "Text": "three weeks from tomorrow",
+        "Text": "tre veckor från imorgon",
         "Type": "date",
         "Value": {
           "Timex": "2018-06-22",
@@ -2401,20 +2362,19 @@
           }
         },
         "Start": 18,
-        "Length": 25
+        "Length": 23
       }
     ]
   },
   {
-    "Input": "Where were you two days before yesterday?",
+    "Input": "Var var du två dagar före igår?",
     "NotSupportedByDesign": "javascript, python, java",
-    "NotSupported": "dotnet",
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
     "Results": [
       {
-        "Text": "two days before yesterday",
+        "Text": "två dagar före igår",
         "Type": "date",
         "Value": {
           "Timex": "2018-05-28",
@@ -2425,8 +2385,8 @@
             "date": "2018-05-28"
           }
         },
-        "Start": 15,
-        "Length": 25
+        "Start": 11,
+        "Length": 19
       }
     ]
   },
@@ -2551,15 +2511,14 @@
     ]
   },
   {
-    "Input": "Feb 29",
+    "Input": "29 feb",
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
     "NotSupportedByDesign": "javascript, python, java",
-    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "Feb 29",
+        "Text": "29 feb",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-02-29",
@@ -2576,15 +2535,14 @@
     ]
   },
   {
-    "Input": "2/29",
+    "Input": "29/2",
     "Context": {
       "ReferenceDateTime": "2019-03-22T00:00:00"
     },
     "NotSupportedByDesign": "javascript, python, java",
-    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "2/29",
+        "Text": "29/2",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-02-29",
@@ -2601,40 +2559,14 @@
     ]
   },
   {
-    "Input": "Feb 29th",
+    "Input": "30 feb",
     "Context": {
       "ReferenceDateTime": "2020-03-22T00:00:00"
     },
     "NotSupportedByDesign": "javascript, python, java",
-    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "Feb 29th",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-02-29",
-          "FutureResolution": {
-            "date": "2024-02-29"
-          },
-          "PastResolution": {
-            "date": "2020-02-29"
-          }
-        },
-        "Start": 0,
-        "Length": 8
-      }
-    ]
-  },
-  {
-    "Input": "Feb 30",
-    "Context": {
-      "ReferenceDateTime": "2020-03-22T00:00:00"
-    },
-    "NotSupportedByDesign": "javascript, python, java",
-    "NotSupported": "dotnet",
-    "Results": [
-      {
-        "Text": "Feb 30",
+        "Text": "30 feb",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-02-30",
@@ -2651,15 +2583,14 @@
     ]
   },
   {
-    "Input": "2/29/2019",
+    "Input": "2019/02/29",
     "Context": {
       "ReferenceDateTime": "2020-03-22T00:00:00"
     },
     "NotSupportedByDesign": "javascript, python, java",
-    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "2/29/2019",
+        "Text": "2019/02/29",
         "Type": "date",
         "Value": {
           "Timex": "2019-02-29",
@@ -2671,20 +2602,19 @@
           }
         },
         "Start": 0,
-        "Length": 9
+        "Length": 10
       }
     ]
   },
   {
-    "Input": "2/29/2020",
+    "Input": "2020/02/29",
     "Context": {
       "ReferenceDateTime": "2020-03-22T00:00:00"
     },
     "NotSupportedByDesign": "javascript, python, java",
-    "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "2/29/2020",
+        "Text": "2020/02/29",
         "Type": "date",
         "Value": {
           "Timex": "2020-02-29",
@@ -2696,7 +2626,7 @@
           }
         },
         "Start": 0,
-        "Length": 9
+        "Length": 10
       }
     ]
   }
