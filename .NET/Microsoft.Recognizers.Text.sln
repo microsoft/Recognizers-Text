@@ -873,6 +873,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Arabic", "Arabic", "{E93CDE
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Swedish", "Swedish", "{A45B902F-DE07-4502-8F8C-2671B987D72C}"
 	ProjectSection(SolutionItems) = preProject
+		..\Specs\DateTime\Swedish\DateExtractor.json = ..\Specs\DateTime\Swedish\DateExtractor.json
+		..\Specs\DateTime\Swedish\DateParser.json = ..\Specs\DateTime\Swedish\DateParser.json
 		..\Specs\DateTime\Swedish\TimeZoneExtractor.json = ..\Specs\DateTime\Swedish\TimeZoneExtractor.json
 		..\Specs\DateTime\Swedish\TimeZoneParser.json = ..\Specs\DateTime\Swedish\TimeZoneParser.json
 	EndProjectSection
