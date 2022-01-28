@@ -58,7 +58,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
       public const string NextPrefixRegex = @"下个|下一个|下|下一|明|次|来";
       public static readonly string RelativeRegex = $@"(?<order>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex}))";
       public static readonly string SpecialDate = $@"(?<thisyear>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex})年)?(の|的)?(?<thismonth>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex})(の|的)?月)?(の|的)?{DateDayRegexInCJK}";
-      public const string DateUnitRegex = @"(?<unit>年|个月|月|周|(?<business>営業)日|(?<!(明|昨|今))日|天|週間?|星期|个星期|か月)";
+      public const string DateUnitRegex = @"(?<unit>年|个月|月|周|時間?|(?<business>営業)日|(?<!(明|昨|今))日|天|週間?|星期|个星期|か月)";
       public const string BeforeRegex = @"以前|之前|前";
       public const string AfterRegex = @"以内|以后|以後|之后|之後|后|後|先|で(?!す)";
       public static readonly string DateRegexList1 = $@"({LunarRegex}(的|の|\s)*)?(({SimpleYearRegex}|{DateYearInCJKRegex})[/\\\-の的]?(\s*{MonthRegex})[/\\\-の的]?(\s*{DayRegexForPeriod})((\s|,|，|、)*{WeekDayRegex})?)";
@@ -140,24 +140,24 @@ namespace Microsoft.Recognizers.Definitions.Japanese
       public const string PlusThreeDayRegex = @"大后天|大後天|明日から二日|昨日から4日";
       public const string MinusThreeDayRegex = @"大前天|昨日の2日前|昨日から2日間";
       public const string PlusFourDayRegex = @"今日から4日";
-      public const string DurationAllRegex = @"^[.]";
+      public const string DurationAllRegex = @"(まる(ひと)?)";
       public const string DurationHalfRegex = @"^[.]";
-      public const string DurationRelativeDurationUnitRegex = @"(?<few>数ヶ|数)|(?<ago>前|昨日)|(?<later>後|明日)";
+      public const string DurationRelativeDurationUnitRegex = @"(?<few>数ヶ|数)|(?<ago>前|昨日)|(?<later>後|明日)|(?<another>もう)";
       public const string DurationDuringRegex = @"^[.]";
-      public const string DurationSomeRegex = @"(数ヶ|数)(月|日|週間|年)";
-      public const string DurationMoreOrLessRegex = @"^[.]";
+      public const string DurationSomeRegex = @"(?<few>数(?<unit>((か|ヶ)?(時|月|日|週|年|周|週|週|秒|分|営業日|年)間?))(たらず|以上)?)";
+      public const string DurationMoreOrLessRegex = @"(?<less>たらず)|(?<more>以上)";
       public const string DurationYearRegex = @"((\d{3,4})|0\d|两千)\s*年";
       public const string DurationHalfSuffixRegex = @"半";
       public static readonly Dictionary<string, string> DurationSuffixList = new Dictionary<string, string>
         {
-            { @"M", @"分钟" },
-            { @"S", @"秒钟|秒" },
-            { @"H", @"个小时|小时" },
-            { @"D", @"天|日" },
+            { @"M", @"分|分間" },
+            { @"S", @"秒钟|秒|秒間" },
+            { @"H", @"時|時間" },
+            { @"D", @"天|日|日間" },
             { @"BD", @"営業日" },
             { @"W", @"星期|个星期|周|週間|週" },
-            { @"MON", @"个月|か月|月" },
-            { @"Y", @"年" }
+            { @"MON", @"个月|か月|月|月間|か月間|ヶ月|ヶ月間" },
+            { @"Y", @"年|年間" }
         };
       public static readonly IList<string> DurationAmbiguousUnits = new List<string>
         {
@@ -174,7 +174,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
             @"个月",
             @"年"
         };
-      public static readonly string DurationUnitRegex = $@"(?<unit>{DateUnitRegex}|分|秒|時間)";
+      public static readonly string DurationUnitRegex = $@"(?<unit>{DateUnitRegex}|分|秒|時間|まる(ひと)?|もう|数|以上|たらず)";
       public const string DurationConnectorRegex = @"^\s*(?<connector>[と]?|,|、)\s*$";
       public static readonly string LunarHolidayRegex = $@"(({YearRegex}|{DatePeriodYearInCJKRegex}|(?<yearrel>明年|今年|去年|来年))(的)?)?(?<holiday>除夕|春节|旧暦の正月初一|中秋(節|节)?|元宵(节|節)|端午(节|の節句)?|重(阳节|陽節))";
       public static readonly string HolidayRegexList1 = $@"(({YearRegex}|{DatePeriodYearInCJKRegex}|(?<yearrel>明年|今年|去年|来年))(的|の)?)?(?<holiday>新年|五一|劳动节|国際的な労働者の日|メーデー|元旦节|元旦|大晦日|愚人节|エイプリルフール|圣诞节|クリスマス(の日|イブ)?|感謝祭(の日)?|クリーンマンデイ|父の日|植树节|国庆节|国慶節|情人节|バレンタインデー|教(师节|師の日)|儿童节|妇女节|青年(节|の日)|建军节|建軍節|女生节|光棍节|双十一|清明(节|節)?|キング牧師記念日|旧正月|ガールズデー|(こども|子ども|子供)の日|お正月|植樹祭|シングルデー|シングルズデー|国際婦人デー|ダブル十一|復活祭|イースター)";
@@ -239,14 +239,22 @@ namespace Microsoft.Recognizers.Definitions.Japanese
             { @"星期", @"W" },
             { @"个星期", @"W" },
             { @"日", @"D" },
+            { @"日間", @"D" },
             { @"営業日", @"BD" },
             { @"天", @"D" },
             { @"小时", @"H" },
+            { @"時間", @"H" },
             { @"时", @"H" },
             { @"分钟", @"M" },
             { @"分", @"M" },
             { @"秒钟", @"S" },
-            { @"秒", @"S" }
+            { @"秒", @"S" },
+            { @"まる", @"whole" },
+            { @"まるひと", @"whole" },
+            { @"もう", @"another" },
+            { @"数", @"some" },
+            { @"たらず", @"less" },
+            { @"以上", @"more" }
         };
       public static readonly Dictionary<string, long> ParserConfigurationUnitValueMap = new Dictionary<string, long>
         {
@@ -584,9 +592,15 @@ namespace Microsoft.Recognizers.Definitions.Japanese
             { @"MON", 2592000 },
             { @"W", 604800 },
             { @"D", 86400 },
+            { @"BD", 86400 },
             { @"H", 3600 },
             { @"M", 60 },
-            { @"S", 1 }
+            { @"S", 1 },
+            { @"whole", 1 },
+            { @"another", 1 },
+            { @"some", 2 },
+            { @"more", 3 },
+            { @"less", 4 }
         };
       public static readonly Dictionary<string, string> HolidayNoFixedTimex = new Dictionary<string, string>
         {

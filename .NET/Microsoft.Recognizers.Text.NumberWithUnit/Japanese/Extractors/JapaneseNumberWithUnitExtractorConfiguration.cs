@@ -13,6 +13,7 @@ using Microsoft.Recognizers.Definitions.Utilities;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Config;
 using Microsoft.Recognizers.Text.Number.Japanese;
+using Microsoft.Recognizers.Text.NumberWithUnit.Utilities;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.Japanese
 {
@@ -26,6 +27,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Japanese
 
         private static readonly Regex NonUnitsRegex =
             new Regex(BaseUnits.PmNonUnitRegex, RegexFlags);
+
+        private static readonly Regex HalfUnitRegex = new Regex(NumbersWithUnitDefinitions.HalfUnitRegex, RegexFlags);
 
         protected JapaneseNumberWithUnitExtractorConfiguration(CultureInfo ci)
         {
@@ -76,6 +79,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Japanese
 
         public void ExpandHalfSuffix(string source, ref List<ExtractResult> result, IOrderedEnumerable<ExtractResult> numbers)
         {
+            // Expand Japanese phrase to the `half` patterns when it follows closely origin phrase.
+            CommonUtils.ExpandHalfSuffix(source, ref result, numbers, HalfUnitRegex);
         }
     }
 }

@@ -22,6 +22,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             DurationExtractor = new BaseCJKDurationExtractor(new JapaneseDurationExtractorConfiguration(durationConfig), false);
 
             YearRegex = JapaneseDurationExtractorConfiguration.YearRegex;
+            SomeRegex = JapaneseDurationExtractorConfiguration.SomeRegex;
+            MoreOrLessRegex = JapaneseDurationExtractorConfiguration.MoreOrLessRegex;
             DurationUnitRegex = JapaneseDurationExtractorConfiguration.DurationUnitRegex;
             DurationConnectorRegex = JapaneseDurationExtractorConfiguration.DurationConnectorRegex;
 
@@ -34,6 +36,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         public IParser InternalParser { get; }
 
         public Regex YearRegex { get; }
+
+        public Regex SomeRegex { get; }
+
+        public Regex MoreOrLessRegex { get; }
 
         public Regex DurationUnitRegex { get; }
 

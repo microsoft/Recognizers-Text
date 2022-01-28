@@ -40,6 +40,11 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.JAPANESE)
                 },
                 {
+                    // 半
+                    new Regex(NumbersDefinitions.HalfUnitRegex, RegexFlags),
+                    RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.JAPANESE)
+                },
+                {
                     // 一ダース  五十ダース
                     new Regex(NumbersDefinitions.NumbersWithDozen, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.JAPANESE)
