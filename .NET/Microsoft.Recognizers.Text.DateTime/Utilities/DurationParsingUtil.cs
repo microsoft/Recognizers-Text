@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 using DateObject = System.DateTime;
 
@@ -108,6 +109,67 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return date;
+        }
+
+        public static bool IsLessThanDay(string unit)
+        {
+            return unit.Equals("S", StringComparison.Ordinal) ||
+                   unit.Equals("M", StringComparison.Ordinal) ||
+                   unit.Equals("H", StringComparison.Ordinal);
+        }
+
+        public static DateTimeResolutionResult ParseInexactNumberUnit(string text, IDurationParserConfiguration config)
+        {
+            return ParseInexactNumberUnit(text, config.InexactNumberUnitRegex, config.UnitMap, config.UnitValueMap);
+        }
+
+        public static DateTimeResolutionResult ParseInexactNumberUnit(string text, ICJKDurationParserConfiguration config)
+        {
+            return ParseInexactNumberUnit(text, config.SomeRegex, config.UnitMap, config.UnitValueMap, isCJK: true);
+        }
+
+        private static DateTimeResolutionResult ParseInexactNumberUnit(string text, Regex inexactNumberUnitRegex, IImmutableDictionary<string, string> unitMap, IImmutableDictionary<string, long> unitValueMap, bool isCJK = false)
+        {
+            var ret = new DateTimeResolutionResult();
+
+            var match = inexactNumberUnitRegex.Match(text);
+            if (match.Success)
+            {
+                // set the inexact number "few", "some" to 3 for now
+                double numVal = match.Groups["NumTwoTerm"].Success ? 2 : 3;
+                var srcUnit = match.Groups["unit"].Value;
+
+                if (unitMap.ContainsKey(srcUnit))
+                {
+                    var unitStr = unitMap[srcUnit];
+
+                    if (numVal > 1000 && (unitStr.Equals(Constants.TimexYear, StringComparison.Ordinal) ||
+                                          unitStr.Equals(Constants.TimexMonthFull, StringComparison.Ordinal) ||
+                                          unitStr.Equals(Constants.TimexWeek, StringComparison.Ordinal)))
+                    {
+                        return ret;
+                    }
+
+                    ret.Timex = TimexUtility.GenerateDurationTimex(numVal, unitStr, IsLessThanDay(unitStr));
+
+                    // In CJK implementation unitValueMap uses the unitMap values as keys while
+                    // in standard implementation unitMap and unitValueMap have the same keys.
+                    var unitValue = isCJK ? unitValueMap[unitStr] : unitValueMap[srcUnit];
+                    ret.FutureValue = ret.PastValue = numVal * unitValue;
+                    ret.Success = true;
+                }
+                else if (match.Groups[Constants.BusinessDayGroupName].Success)
+                {
+                    ret.Timex = TimexUtility.GenerateDurationTimex(numVal, Constants.TimexBusinessDay, false);
+
+                    // The line below was containing this.config.UnitValueMap[srcUnit.Split()[1]]
+                    // it was updated to accommodate single word "business day" expressions.
+                    ret.FutureValue = ret.PastValue = numVal * unitValueMap[srcUnit.Split()[srcUnit.Split().Length - 1]];
+                    ret.Success = true;
+                }
+            }
+
+            return ret;
         }
 
         private static DateObject GetShiftResult(List<(string, double)> timexUnitMap, DateObject referenceDate, bool future)

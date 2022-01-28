@@ -13,6 +13,7 @@ using Microsoft.Recognizers.Definitions.Utilities;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Chinese;
 using Microsoft.Recognizers.Text.Number.Config;
+using Microsoft.Recognizers.Text.NumberWithUnit.Utilities;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
 {
@@ -79,51 +80,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
         public void ExpandHalfSuffix(string source, ref List<ExtractResult> result, IOrderedEnumerable<ExtractResult> numbers)
         {
             // Expand Chinese phrase to the `half` patterns when it follows closely origin phrase.
-            if (HalfUnitRegex != null && numbers != null)
-            {
-                var match = new List<ExtractResult>();
-                foreach (var number in numbers)
-                {
-                    if (HalfUnitRegex.Matches(number.Text).Count == 1)
-                    {
-                        match.Add(number);
-                    }
-
-                }
-
-                if (match.Count > 0)
-                {
-                    var res = new List<ExtractResult>();
-                    foreach (var er in result)
-                    {
-                        int start = (int)er.Start;
-                        int length = (int)er.Length;
-                        var match_suffix = new List<ExtractResult>();
-                        foreach (var mr in match)
-                        {
-                            if (mr.Start == (start + length))
-                            {
-                                match_suffix.Add(mr);
-                            }
-                        }
-
-                        if (match_suffix.Count == 1)
-                        {
-                            var mr = match_suffix[0];
-                            er.Length += mr.Length;
-                            er.Text += mr.Text;
-                            var tmp = new List<ExtractResult>();
-                            tmp.Add((ExtractResult)er.Data);
-                            tmp.Add(mr);
-                            er.Data = tmp;
-                        }
-
-                        res.Add(er);
-                    }
-
-                    result = res;
-                }
-            }
+            CommonUtils.ExpandHalfSuffix(source, ref result, numbers, HalfUnitRegex);
         }
     }
 }

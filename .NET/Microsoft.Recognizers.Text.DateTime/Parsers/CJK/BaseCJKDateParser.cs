@@ -810,7 +810,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     if (this.config.UnitMap.ContainsKey(srcUnit))
                     {
                         unitStr = this.config.UnitMap[srcUnit];
-                        ret.Timex = TimexUtility.GenerateDurationTimex(number, unitStr, BaseDurationParser.IsLessThanDay(unitStr));
+                        ret.Timex = TimexUtility.GenerateDurationTimex(number, unitStr, DurationParsingUtil.IsLessThanDay(unitStr));
                         DateObject date = Constants.InvalidDate;
 
                         var beforeMatch = this.config.BeforeRegex.Match(suffix);
