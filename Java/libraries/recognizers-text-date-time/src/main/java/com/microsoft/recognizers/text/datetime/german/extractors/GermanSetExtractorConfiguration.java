@@ -30,6 +30,7 @@ public class GermanSetExtractorConfiguration extends BaseOptionsConfiguration im
     public static final Pattern SetUnitRegex = RegExpUtility.getSafeRegExp(GermanDateTime.DurationUnitRegex);
     public static final Pattern EachPrefixRegex = RegExpUtility.getSafeRegExp(GermanDateTime.EachPrefixRegex);
     public static final Pattern SetWeekDayRegex = RegExpUtility.getSafeRegExp(GermanDateTime.SetWeekDayRegex);
+    public static final Pattern BeforeEachDayRegex = RegExpUtility.getSafeRegExp(GermanDateTime.BeforeEachDayRegex);
 
     public GermanSetExtractorConfiguration() {
         this(DateTimeOptions.None);
@@ -94,7 +95,7 @@ public class GermanSetExtractorConfiguration extends BaseOptionsConfiguration im
     }
 
     public final Pattern getBeforeEachDayRegex() {
-        return null;
+        return BeforeEachDayRegex;
     }
 
     public final Pattern getEachDayRegex() {
