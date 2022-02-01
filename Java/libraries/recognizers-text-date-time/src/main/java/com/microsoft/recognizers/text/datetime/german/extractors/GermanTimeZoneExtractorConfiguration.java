@@ -7,7 +7,6 @@ import com.microsoft.recognizers.text.datetime.DateTimeOptions;
 import com.microsoft.recognizers.text.datetime.config.BaseOptionsConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.config.ITimeZoneExtractorConfiguration;
 import com.microsoft.recognizers.text.matcher.StringMatcher;
-
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 

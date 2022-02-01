@@ -12,7 +12,6 @@ import com.microsoft.recognizers.text.datetime.utilities.DateTimeResolutionResul
 import com.microsoft.recognizers.text.datetime.utilities.DateUtil;
 import com.microsoft.recognizers.text.datetime.utilities.RegexExtension;
 import com.microsoft.recognizers.text.utilities.StringUtility;
-
 import java.time.LocalDateTime;
 
 public class TimeParser extends BaseTimeParser {

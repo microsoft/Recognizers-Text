@@ -5,11 +5,6 @@ package com.microsoft.recognizers.text.datetime.german.parsers;
 
 import static com.microsoft.recognizers.text.datetime.resources.GermanDateTime.TodayNowRegex;
 
-import java.util.Arrays;
-import java.util.Optional;
-import java.util.regex.Pattern;
-import java.util.stream.Stream;
-
 import com.google.common.collect.ImmutableMap;
 import com.microsoft.recognizers.text.IExtractor;
 import com.microsoft.recognizers.text.IParser;
@@ -23,12 +18,12 @@ import com.microsoft.recognizers.text.datetime.parsers.IDateTimeParser;
 import com.microsoft.recognizers.text.datetime.parsers.config.ICommonDateTimeParserConfiguration;
 import com.microsoft.recognizers.text.datetime.parsers.config.IDatePeriodParserConfiguration;
 import com.microsoft.recognizers.text.datetime.resources.GermanDateTime;
-import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
+import java.util.regex.Pattern;
 
 public class GermanDatePeriodParserConfiguration
-        extends BaseOptionsConfiguration
-        implements IDatePeriodParserConfiguration {
+    extends BaseOptionsConfiguration
+    implements IDatePeriodParserConfiguration {
     private final String tokenBeforeDate;
     private final IDateExtractor dateExtractor;
 
@@ -492,14 +487,11 @@ public class GermanDatePeriodParserConfiguration
 
         if (afterNextPrefixRegex.matcher(trimmedText).find()) {
             return 2;
-        }
-        else if (nextPrefixRegex.matcher(trimmedText).find()) {
+        } else if (nextPrefixRegex.matcher(trimmedText).find()) {
             return 1;
-        }
-        else if (previousPrefixRegex.matcher(trimmedText).find()) {
+        } else if (previousPrefixRegex.matcher(trimmedText).find()) {
             return -1;
-        }
-        else if (penultimatePrefixRegex.matcher(trimmedText).find()) {
+        } else if (penultimatePrefixRegex.matcher(trimmedText).find()) {
             return -2;
         }
 
@@ -513,14 +505,11 @@ public class GermanDatePeriodParserConfiguration
 
         if (nextPrefixRegex.matcher(trimmedText).find()) {
             return 1;
-        }
-        else if (previousPrefixRegex.matcher(trimmedText).find()) {
+        } else if (previousPrefixRegex.matcher(trimmedText).find()) {
             return -1;
-        }
-        else if (penultimatePrefixRegex.matcher(trimmedText).find()) {
+        } else if (penultimatePrefixRegex.matcher(trimmedText).find()) {
             return -2;
-        }
-        else if (thisPrefixRegex.matcher(trimmedText).find()) {
+        } else if (thisPrefixRegex.matcher(trimmedText).find()) {
             return 0;
         }
 
@@ -573,10 +562,5 @@ public class GermanDatePeriodParserConfiguration
     public boolean isYearToDate(final String text) {
         final String trimmedText = text.trim().toLowerCase();
         return GermanDateTime.YearToDateTerms.stream().anyMatch(trimmedText::equals);
-    }
-
-    public boolean IsFortnight(final String text)
-    {
-        return false;
     }
 }

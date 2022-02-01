@@ -17,7 +17,6 @@ import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.config.ISetExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.resources.GermanDateTime;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
-
 import java.util.regex.Pattern;
 
 public class GermanSetExtractorConfiguration extends BaseOptionsConfiguration implements ISetExtractorConfiguration {

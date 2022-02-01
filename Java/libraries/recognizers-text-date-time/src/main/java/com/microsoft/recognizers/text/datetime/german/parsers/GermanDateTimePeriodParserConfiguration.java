@@ -19,7 +19,6 @@ import com.microsoft.recognizers.text.datetime.parsers.config.IDateTimePeriodPar
 import com.microsoft.recognizers.text.datetime.parsers.config.MatchedTimeRangeResult;
 import com.microsoft.recognizers.text.datetime.resources.GermanDateTime;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 

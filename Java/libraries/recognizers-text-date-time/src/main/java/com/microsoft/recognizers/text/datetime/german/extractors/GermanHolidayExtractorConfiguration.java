@@ -8,7 +8,6 @@ import com.microsoft.recognizers.text.datetime.config.BaseOptionsConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.config.IHolidayExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.resources.GermanDateTime;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
-
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 

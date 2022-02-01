@@ -6,7 +6,6 @@ package com.microsoft.recognizers.text.datetime.german.utilities;
 import com.microsoft.recognizers.text.datetime.resources.GermanDateTime;
 import com.microsoft.recognizers.text.datetime.utilities.IDateTimeUtilityConfiguration;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
-
 import java.util.regex.Pattern;
 
 public class GermanDatetimeUtilityConfiguration implements IDateTimeUtilityConfiguration {

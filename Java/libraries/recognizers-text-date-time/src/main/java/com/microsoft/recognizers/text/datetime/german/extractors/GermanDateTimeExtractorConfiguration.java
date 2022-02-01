@@ -17,7 +17,6 @@ import com.microsoft.recognizers.text.datetime.utilities.IDateTimeUtilityConfigu
 import com.microsoft.recognizers.text.number.german.extractors.IntegerExtractor;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import com.microsoft.recognizers.text.utilities.StringUtility;
-
 import java.util.Arrays;
 import java.util.regex.Pattern;
 

@@ -12,7 +12,6 @@ import com.microsoft.recognizers.text.datetime.parsers.IDateTimeParser;
 import com.microsoft.recognizers.text.datetime.parsers.config.ICommonDateTimeParserConfiguration;
 import com.microsoft.recognizers.text.datetime.parsers.config.ISetParserConfiguration;
 import com.microsoft.recognizers.text.datetime.utilities.MatchedTimexResult;
-
 import java.util.Locale;
 import java.util.regex.Pattern;
 
@@ -164,49 +163,49 @@ public class GermanSetParserConfiguration extends BaseOptionsConfiguration imple
         String durationType;
 
         if (trimmedText.equals("täglich") ||
-                trimmedText.equals("täglicher") ||
-                trimmedText.equals("tägliches") ||
-                trimmedText.equals("tägliche") ||
-                trimmedText.equals("täglichen") ||
-                trimmedText.equals("alltäglich") ||
-                trimmedText.equals("alltäglicher") ||
-                trimmedText.equals("alltägliches") ||
-                trimmedText.equals("alltägliche") ||
-                trimmedText.equals("alltäglichen") ||
-                trimmedText.equals("jeden tag")) {
+            trimmedText.equals("täglicher") ||
+            trimmedText.equals("tägliches") ||
+            trimmedText.equals("tägliche") ||
+            trimmedText.equals("täglichen") ||
+            trimmedText.equals("alltäglich") ||
+            trimmedText.equals("alltäglicher") ||
+            trimmedText.equals("alltägliches") ||
+            trimmedText.equals("alltägliche") ||
+            trimmedText.equals("alltäglichen") ||
+            trimmedText.equals("jeden tag")) {
             result.setTimex("P1D");
         } else if (trimmedText.equals("wöchentlich") ||
-                trimmedText.equals("wöchentlicher") ||
-                trimmedText.equals("wöchentliches") ||
-                trimmedText.equals("wöchentliche") ||
-                trimmedText.equals("wöchentlichen") ||
-                trimmedText.equals("allwöchentlich") ||
-                trimmedText.equals("allwöchentlicher") ||
-                trimmedText.equals("allwöchentliches") ||
-                trimmedText.equals("allwöchentliche") ||
-                trimmedText.equals("allwöchentlichen")) {
+            trimmedText.equals("wöchentlicher") ||
+            trimmedText.equals("wöchentliches") ||
+            trimmedText.equals("wöchentliche") ||
+            trimmedText.equals("wöchentlichen") ||
+            trimmedText.equals("allwöchentlich") ||
+            trimmedText.equals("allwöchentlicher") ||
+            trimmedText.equals("allwöchentliches") ||
+            trimmedText.equals("allwöchentliche") ||
+            trimmedText.equals("allwöchentlichen")) {
             result.setTimex("P1W");
         } else if (trimmedText.equals("monatlich") ||
-                trimmedText.equals("monatlicher") ||
-                trimmedText.equals("monatliches") ||
-                trimmedText.equals("monatliche") ||
-                trimmedText.equals("monatlichen") ||
-                trimmedText.equals("allmonatlich") ||
-                trimmedText.equals("allmonatlicher") ||
-                trimmedText.equals("allmonatliches") ||
-                trimmedText.equals("allmonatliche") ||
-                trimmedText.equals("allmonatlichen")) {
+            trimmedText.equals("monatlicher") ||
+            trimmedText.equals("monatliches") ||
+            trimmedText.equals("monatliche") ||
+            trimmedText.equals("monatlichen") ||
+            trimmedText.equals("allmonatlich") ||
+            trimmedText.equals("allmonatlicher") ||
+            trimmedText.equals("allmonatliches") ||
+            trimmedText.equals("allmonatliche") ||
+            trimmedText.equals("allmonatlichen")) {
             result.setTimex("P1M");
         } else if (trimmedText.equals("jährlich") ||
-                trimmedText.equals("jährlicher") ||
-                trimmedText.equals("jährliches") ||
-                trimmedText.equals("jährliche") ||
-                trimmedText.equals("jährlichen") ||
-                trimmedText.equals("alljährlich") ||
-                trimmedText.equals("alljährlicher") ||
-                trimmedText.equals("alljährliches") ||
-                trimmedText.equals("alljährliche") ||
-                trimmedText.equals("alljährlichen")) {
+            trimmedText.equals("jährlicher") ||
+            trimmedText.equals("jährliches") ||
+            trimmedText.equals("jährliche") ||
+            trimmedText.equals("jährlichen") ||
+            trimmedText.equals("alljährlich") ||
+            trimmedText.equals("alljährlicher") ||
+            trimmedText.equals("alljährliches") ||
+            trimmedText.equals("alljährliche") ||
+            trimmedText.equals("alljährlichen")) {
             result.setTimex("P1Y");
         }
 

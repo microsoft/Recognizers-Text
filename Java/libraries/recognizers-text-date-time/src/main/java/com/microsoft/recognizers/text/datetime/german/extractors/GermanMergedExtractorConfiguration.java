@@ -27,11 +27,10 @@ import com.microsoft.recognizers.text.datetime.resources.GermanDateTime;
 import com.microsoft.recognizers.text.matcher.StringMatcher;
 import com.microsoft.recognizers.text.number.german.extractors.IntegerExtractor;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
-import org.javatuples.Pair;
-
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+import org.javatuples.Pair;
 
 public class GermanMergedExtractorConfiguration extends BaseOptionsConfiguration implements IMergedExtractorConfiguration {
 

@@ -6,11 +6,15 @@ package com.microsoft.recognizers.text.datetime.german.parsers;
 import com.microsoft.recognizers.text.datetime.DateTimeOptions;
 import com.microsoft.recognizers.text.datetime.german.extractors.GermanDatePeriodExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.german.extractors.GermanMergedExtractorConfiguration;
-import com.microsoft.recognizers.text.datetime.parsers.*;
+import com.microsoft.recognizers.text.datetime.parsers.BaseDatePeriodParser;
+import com.microsoft.recognizers.text.datetime.parsers.BaseDateTimePeriodParser;
+import com.microsoft.recognizers.text.datetime.parsers.BaseSetParser;
+import com.microsoft.recognizers.text.datetime.parsers.BaseTimePeriodParser;
+import com.microsoft.recognizers.text.datetime.parsers.BaseTimeZoneParser;
+import com.microsoft.recognizers.text.datetime.parsers.IDateTimeParser;
 import com.microsoft.recognizers.text.datetime.parsers.config.IMergedParserConfiguration;
 import com.microsoft.recognizers.text.datetime.resources.GermanDateTime;
 import com.microsoft.recognizers.text.matcher.StringMatcher;
-
 import java.util.regex.Pattern;
 
 public class GermanMergedParserConfiguration extends GermanCommonDateTimeParserConfiguration implements IMergedParserConfiguration {

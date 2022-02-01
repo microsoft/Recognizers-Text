@@ -7,14 +7,9 @@ import com.google.common.collect.ImmutableMap;
 import com.microsoft.recognizers.text.datetime.german.extractors.GermanHolidayExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.parsers.BaseHolidayParserConfiguration;
 import com.microsoft.recognizers.text.datetime.resources.GermanDateTime;
-import com.microsoft.recognizers.text.datetime.utilities.DateUtil;
-import com.microsoft.recognizers.text.datetime.utilities.HolidayFunctions;
 import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import com.microsoft.recognizers.text.utilities.StringUtility;
-
-import java.time.DayOfWeek;
-import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Locale;
@@ -48,7 +43,6 @@ public class GermanHolidayParserConfiguration extends BaseHolidayParserConfigura
     }
 
 
-
     @Override
     public int getSwiftYear(String text) {
 
@@ -71,7 +65,7 @@ public class GermanHolidayParserConfiguration extends BaseHolidayParserConfigura
 
     public String sanitizeHolidayToken(String holiday) {
         return holiday.replace(" ", "")
-                .replace("-", "")
-                .replace("'", "");
+            .replace("-", "")
+            .replace("'", "");
     }
 }

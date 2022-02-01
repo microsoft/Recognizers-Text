@@ -18,7 +18,6 @@ import com.microsoft.recognizers.text.datetime.parsers.config.IDateTimeParserCon
 import com.microsoft.recognizers.text.datetime.resources.GermanDateTime;
 import com.microsoft.recognizers.text.datetime.utilities.IDateTimeUtilityConfiguration;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
-
 import java.util.regex.Pattern;
 
 public class GermanDateTimeParserConfiguration extends BaseOptionsConfiguration implements IDateTimeParserConfiguration {
@@ -58,7 +57,7 @@ public class GermanDateTimeParserConfiguration extends BaseOptionsConfiguration 
 
         tokenBeforeDate = GermanDateTime.TokenBeforeDate;
         tokenBeforeTime = GermanDateTime.TokenBeforeTime;
-        
+
         cardinalExtractor = config.getCardinalExtractor();
         integerExtractor = config.getIntegerExtractor();
         numberParser = config.getNumberParser();
@@ -68,7 +67,7 @@ public class GermanDateTimeParserConfiguration extends BaseOptionsConfiguration 
         dateParser = config.getDateParser();
         timeParser = config.getTimeParser();
         durationParser = config.getDurationParser();
-        
+
         nowRegex = GermanDateTimeExtractorConfiguration.NowRegex;
 
         amTimeRegex = RegExpUtility.getSafeRegExp(GermanDateTime.AMTimeRegex);
@@ -217,19 +216,19 @@ public class GermanDateTimeParserConfiguration extends BaseOptionsConfiguration 
     public ResultTimex getMatchedNowTimex(String text) {
 
         String trimmedText = text.trim().toLowerCase();
-        
+
         if (trimmedText.endsWith("jetzt") ||
-                trimmedText.equals("momentan") ||
-                trimmedText.equals("gerade") ||
-                trimmedText.equals("aktuell") ||
-                trimmedText.equals("aktuelle") ||
-                trimmedText.equals("im moment") ||
-                trimmedText.equals("in diesem moment") ||
-                trimmedText.equals("derzeit")) {
+            trimmedText.equals("momentan") ||
+            trimmedText.equals("gerade") ||
+            trimmedText.equals("aktuell") ||
+            trimmedText.equals("aktuelle") ||
+            trimmedText.equals("im moment") ||
+            trimmedText.equals("in diesem moment") ||
+            trimmedText.equals("derzeit")) {
             return new ResultTimex(true, "PRESENT_REF");
         } else if (trimmedText.equals("neulich") ||
-                trimmedText.equals("vorher") ||
-                trimmedText.equals("vorhin")) {
+            trimmedText.equals("vorher") ||
+            trimmedText.equals("vorhin")) {
             return new ResultTimex(true, "PAST_REF");
         } else if (trimmedText.equals("so früh wie möglich")) {
             return new ResultTimex(true, "FUTURE_REF");
@@ -245,14 +244,14 @@ public class GermanDateTimeParserConfiguration extends BaseOptionsConfiguration 
 
         int swift = 0;
         if (trimmedText.startsWith("nächsten") ||
-                trimmedText.startsWith("nächste") ||
-                trimmedText.startsWith("nächstes") ||
-                trimmedText.startsWith("nächster")) {
+            trimmedText.startsWith("nächste") ||
+            trimmedText.startsWith("nächstes") ||
+            trimmedText.startsWith("nächster")) {
             swift = 1;
         } else if (trimmedText.startsWith("letzten") ||
-                trimmedText.startsWith("letzte") ||
-                trimmedText.startsWith("letztes") ||
-                trimmedText.startsWith("letzter")) {
+            trimmedText.startsWith("letzte") ||
+            trimmedText.startsWith("letztes") ||
+            trimmedText.startsWith("letzter")) {
             swift = -1;
         }
 
@@ -264,15 +263,15 @@ public class GermanDateTimeParserConfiguration extends BaseOptionsConfiguration 
 
         String trimmedText = text.trim().toLowerCase();
         int result = hour;
-        
-        if ((trimmedText.endsWith("morgen") || trimmedText.endsWith("morgens"))
-                && hour >= Constants.HalfDayHourCount) {
+
+        if ((trimmedText.endsWith("morgen") || trimmedText.endsWith("morgens")) &&
+            hour >= Constants.HalfDayHourCount) {
             result -= Constants.HalfDayHourCount;
-        } else if (!(trimmedText.endsWith("morgen") || trimmedText.endsWith("morgens"))
-                && hour < Constants.HalfDayHourCount) {
+        } else if (!(trimmedText.endsWith("morgen") || trimmedText.endsWith("morgens")) &&
+            hour < Constants.HalfDayHourCount) {
             result += Constants.HalfDayHourCount;
         }
-        
+
         return result;
     }
 

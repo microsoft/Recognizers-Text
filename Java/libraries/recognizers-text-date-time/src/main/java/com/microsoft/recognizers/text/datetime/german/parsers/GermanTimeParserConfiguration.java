@@ -20,7 +20,6 @@ import com.microsoft.recognizers.text.datetime.utilities.RegexExtension;
 import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import com.microsoft.recognizers.text.utilities.StringUtility;
-
 import java.util.Arrays;
 import java.util.Optional;
 import java.util.regex.Pattern;

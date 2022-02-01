@@ -11,7 +11,6 @@ import com.microsoft.recognizers.text.datetime.extractors.config.IDurationExtrac
 import com.microsoft.recognizers.text.datetime.resources.GermanDateTime;
 import com.microsoft.recognizers.text.number.german.extractors.CardinalExtractor;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
-
 import java.util.regex.Pattern;
 
 public class GermanDurationExtractorConfiguration extends BaseOptionsConfiguration implements IDurationExtractorConfiguration {

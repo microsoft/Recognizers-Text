@@ -2,16 +2,6 @@ package com.microsoft.recognizers.text.datetime.german.parsers;
 
 import static java.lang.Integer.parseInt;
 
-import java.time.DayOfWeek;
-import java.time.LocalDateTime;
-import java.time.YearMonth;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Locale;
-import java.util.function.IntFunction;
-import java.util.regex.Pattern;
-import java.util.stream.StreamSupport;
-
 import com.google.common.collect.ImmutableMap;
 import com.microsoft.recognizers.text.ExtractResult;
 import com.microsoft.recognizers.text.ParseResult;
@@ -28,8 +18,112 @@ import com.microsoft.recognizers.text.datetime.utilities.HolidayFunctions;
 import com.microsoft.recognizers.text.datetime.utilities.RegexExtension;
 import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.StringUtility;
+import java.time.DayOfWeek;
+import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.function.IntFunction;
+import java.util.regex.Pattern;
+import java.util.stream.StreamSupport;
 
 public class HolidayParserGer extends GermanHolidayParserConfiguration implements IDateTimeParser {
+    static final ImmutableMap<String, IntFunction<LocalDateTime>> FixedHolidays = ImmutableMap.<String, IntFunction<LocalDateTime>>builder()
+        .put("assumptionofmary", HolidayParserGer::assumptionOfMary) // 15. August
+        .put("germanunityday", HolidayParserGer::germanUnityDay) // 3. Oktober
+        .put("reformationday", HolidayParserGer::reformationDay) // 31. Oktober
+        .put("stmartinsday", HolidayParserGer::stMartinsDay) // 11. November
+        .put("saintnicholasday", HolidayParserGer::saintNicholasDay) // 6. Dezember
+        .put("biblicalmagiday", HolidayParserGer::biblicalMagiDay) // 6. Januar
+        .put("walpurgisnight", HolidayParserGer::walpurgisNight) // 30. April
+        .put("austriannationalday", HolidayParserGer::austrianNationalDay) // 26. Oktober
+        .put("immaculateconception", HolidayParserGer::immaculateConception) // 8. Dezember
+        .put("secondchristmasday", HolidayParserGer::secondChristmasDay) // 26. Dezember
+        .put("berchtoldsday", HolidayParserGer::berchtoldDay) // 2. Januar
+        .put("saintjosephsday", HolidayParserGer::saintJosephsDay) // 19. März
+        .put("swissnationalday", HolidayParserGer::swissNationalDay) // 1. August
+        .put("maosbirthday", HolidayParserGer::maoBirthday)
+        .put("yuandan", HolidayParserGer::newYear)
+        .put("teachersday", HolidayParserGer::teacherDay)
+        .put("singleday", HolidayParserGer::singlesDay)
+        .put("allsaintsday", HolidayParserGer::allHallowDay)
+        .put("youthday", HolidayParserGer::youthDay)
+        .put("childrenday", HolidayParserGer::childrenDay)
+        .put("femaleday", HolidayParserGer::femaleDay)
+        .put("treeplantingday", HolidayParserGer::treePlantDay)
+        .put("arborday", HolidayParserGer::treePlantDay)
+        .put("girlsday", HolidayParserGer::girlsDay)
+        .put("whiteloverday", HolidayParserGer::whiteLoverDay)
+        .put("loverday", HolidayParserGer::valentinesDay)
+        .put("barbaratag", HolidayParserGer::barbaraTag)
+        .put("augsburgerfriedensfest", HolidayParserGer::augsburgerFriedensFest)
+        .put("johannistag", HolidayParserGer::johannisTag)
+        .put("peterundpaul", HolidayParserGer::peterUndPaul)
+        .put("firstchristmasday", HolidayParserGer::christmasDay)
+        .put("xmas", HolidayParserGer::christmasDay)
+        .put("newyear", HolidayParserGer::newYear)
+        .put("newyearday", HolidayParserGer::newYear)
+        .put("newyearsday", HolidayParserGer::newYear)
+        .put("heiligedreikönige", HolidayParserGer::heiligeDreiKonige)
+        .put("inaugurationday", HolidayParserGer::inaugurationDay)
+        .put("groundhougday", HolidayParserGer::groundhogDay)
+        .put("valentinesday", HolidayParserGer::valentinesDay)
+        .put("stpatrickday", HolidayParserGer::stPatrickDay)
+        .put("aprilfools", HolidayParserGer::foolDay)
+        .put("stgeorgeday", HolidayParserGer::stGeorgeDay)
+        .put("mayday", HolidayParserGer::mayday)
+        .put("labour", HolidayParserGer::laborDay)
+        .put("cincodemayoday", HolidayParserGer::cincoDeMayo)
+        .put("baptisteday", HolidayParserGer::baptisteDay)
+        .put("usindependenceday", HolidayParserGer::usaIndependenceDay)
+        .put("independenceday", HolidayParserGer::usaIndependenceDay)
+        .put("bastilleday", HolidayParserGer::bastilleDay)
+        .put("halloweenday", HolidayParserGer::halloweenDay)
+        .put("allhallowday", HolidayParserGer::allHallowDay)
+        .put("allsoulsday", HolidayParserGer::allSoulsDay)
+        .put("guyfawkesday", HolidayParserGer::guyFawkesDay)
+        .put("veteransday", HolidayParserGer::veteransDay)
+        .put("christmaseve", HolidayParserGer::christmasEve)
+        .put("newyeareve", HolidayParserGer::newYearEve)
+        .put("piday", HolidayParserGer::piDay)
+        .put("beginningofsummer", HolidayParserGer::beginningOfSummer)
+        .put("beginningofwinter", HolidayParserGer::beginningOfWinter)
+        .put("beginningofspring", HolidayParserGer::beginningOfSpring)
+        .put("beginningoffall", HolidayParserGer::beginningOfFall)
+        .build();
+    static final ImmutableMap<String, IntFunction<LocalDateTime>> VariableHolidays = ImmutableMap.<String, IntFunction<LocalDateTime>>builder()
+        .put("fathers", HolidayParserGer::fathersDayOfYear)
+        .put("easterday", HolidayParserGer::easterDay)
+        .put("eastersunday", HolidayParserGer::easterDay)
+        .put("eastermonday", HolidayParserGer::easterMondayOfYear)
+        .put("eastersaturday", HolidayParserGer::easterSaturday)
+        .put("weiberfastnacht", HolidayParserGer::weiberfastnacht)
+        .put("carnival", HolidayParserGer::carnival)
+        .put("ashwednesday", HolidayParserGer::ashWednesday)
+        .put("palmsunday", HolidayParserGer::palmSunday)
+        .put("goodfriday", HolidayParserGer::goodFriday)
+        .put("ascensionofchrist", HolidayParserGer::ascensionOfChrist)
+        .put("whitesunday", HolidayParserGer::whiteSunday)
+        .put("whitemonday", HolidayParserGer::whiteMonday)
+        .put("corpuschristi", HolidayParserGer::corpusChristi)
+        .put("rosenmontag", HolidayParserGer::rosenmontag)
+        .put("fastnacht", HolidayParserGer::fastnacht)
+        .put("fastnachtssamstag", HolidayParserGer::fastnachtSaturday)
+        .put("fastnachtssonntag", HolidayParserGer::fastnachtSunday)
+        .put("holythursday", HolidayParserGer::holyThursday)
+        .put("memorialdaygermany", HolidayParserGer::memorialDayGermany)
+        .put("dayofrepentance", HolidayParserGer::dayOfRepentance)
+        .put("totensonntag", HolidayParserGer::totenSonntag)
+        .put("firstadvent", HolidayParserGer::firstAdvent)
+        .put("secondadvent", HolidayParserGer::secondAdvent)
+        .put("thirdadvent", HolidayParserGer::thirdAdvent)
+        .put("fourthadvent", HolidayParserGer::fourthAdvent)
+        .put("chedayofrepentance", HolidayParserGer::cheDayOfRepentance)
+        .put("mothers", HolidayParserGer::mothersDay)
+        .put("thanksgiving", HolidayParserGer::thanksgivingDay)
+        .build();
+    static final ImmutableMap<String, IntFunction<LocalDateTime>> AllHolidays = ImmutableMap
+        .<String, IntFunction<LocalDateTime>>builder().putAll(FixedHolidays).putAll(VariableHolidays).build();
     private final IHolidayParserConfiguration config;
 
     public HolidayParserGer(IHolidayParserConfiguration config) {
@@ -321,8 +415,8 @@ public class HolidayParserGer extends GermanHolidayParserConfiguration implement
     }
 
     private static LocalDateTime dayOfRepentance(int year) {
-        return DateUtil.safeCreateFromMinValue(year, 11, getDayWithinRange(year, 11, 0
-                , DayOfWeek.WEDNESDAY, 16, 22));
+        return DateUtil.safeCreateFromMinValue(year, 11, getDayWithinRange(year, 11, 0,
+            DayOfWeek.WEDNESDAY, 16, 22));
     }
 
     private static LocalDateTime memorialDayGermany(int year) {
@@ -422,14 +516,14 @@ public class HolidayParserGer extends GermanHolidayParserConfiguration implement
         }
 
         DateTimeParseResult ret = new DateTimeParseResult(
-                er.getStart(),
-                er.getLength(),
-                er.getText(),
-                er.getType(),
-                er.getData(),
-                value,
-                "",
-                value == null ? "" : ((DateTimeResolutionResult)value).getTimex()
+            er.getStart(),
+            er.getLength(),
+            er.getText(),
+            er.getType(),
+            er.getData(),
+            value,
+            "",
+            value == null ? "" : ((DateTimeResolutionResult)value).getTimex()
         );
 
         return ret;
@@ -471,7 +565,7 @@ public class HolidayParserGer extends GermanHolidayParserConfiguration implement
         } else if (!StringUtility.isNullOrEmpty(orderStr)) {
             int swift = this.config.getSwiftYear((orderStr));
             if (swift < -1) {
-                return  ret;
+                return ret;
             }
 
             year = referenceDate.getYear() + swift;
@@ -497,15 +591,13 @@ public class HolidayParserGer extends GermanHolidayParserConfiguration implement
             if (fixedHolidaysFunction != null) {
                 value = fixedHolidaysFunction.apply(year);
                 timexStr = String.format("-%02d-%02d", value.getMonthValue(), value.getDayOfMonth());
-            }
-            else {
+            } else {
                 if (variableHolidaysFunction != null) {
                     value = variableHolidaysFunction.apply(year);
                     if (hasYear) {
                         timexStr = String.format("-%02d-%02d", value.getMonthValue(), value.getDayOfMonth());
                     }
-                }
-                else {
+                } else {
                     return ret;
                 }
             }
@@ -551,103 +643,4 @@ public class HolidayParserGer extends GermanHolidayParserConfiguration implement
 
         return value;
     }
-
-    static final ImmutableMap<String, IntFunction<LocalDateTime>> FixedHolidays = ImmutableMap.<String, IntFunction<LocalDateTime>>builder()
-            .put("assumptionofmary", HolidayParserGer::assumptionOfMary) // 15. August
-            .put("germanunityday", HolidayParserGer::germanUnityDay) // 3. Oktober
-            .put("reformationday", HolidayParserGer::reformationDay) // 31. Oktober
-            .put("stmartinsday", HolidayParserGer::stMartinsDay) // 11. November
-            .put("saintnicholasday", HolidayParserGer::saintNicholasDay) // 6. Dezember
-            .put("biblicalmagiday", HolidayParserGer::biblicalMagiDay) // 6. Januar
-            .put("walpurgisnight", HolidayParserGer::walpurgisNight) // 30. April
-            .put("austriannationalday", HolidayParserGer::austrianNationalDay) // 26. Oktober
-            .put("immaculateconception", HolidayParserGer::immaculateConception) // 8. Dezember
-            .put("secondchristmasday", HolidayParserGer::secondChristmasDay) // 26. Dezember
-            .put("berchtoldsday", HolidayParserGer::berchtoldDay) // 2. Januar
-            .put("saintjosephsday", HolidayParserGer::saintJosephsDay) // 19. März
-            .put("swissnationalday", HolidayParserGer::swissNationalDay) // 1. August
-            .put("maosbirthday", HolidayParserGer::maoBirthday)
-            .put("yuandan", HolidayParserGer::newYear)
-            .put("teachersday", HolidayParserGer::teacherDay)
-            .put("singleday", HolidayParserGer::singlesDay)
-            .put("allsaintsday", HolidayParserGer::allHallowDay)
-            .put("youthday", HolidayParserGer::youthDay)
-            .put("childrenday", HolidayParserGer::childrenDay)
-            .put("femaleday", HolidayParserGer::femaleDay)
-            .put("treeplantingday", HolidayParserGer::treePlantDay)
-            .put("arborday", HolidayParserGer::treePlantDay)
-            .put("girlsday", HolidayParserGer::girlsDay)
-            .put("whiteloverday", HolidayParserGer::whiteLoverDay)
-            .put("loverday", HolidayParserGer::valentinesDay)
-            .put("barbaratag", HolidayParserGer::barbaraTag)
-            .put("augsburgerfriedensfest", HolidayParserGer::augsburgerFriedensFest)
-            .put("johannistag", HolidayParserGer::johannisTag)
-            .put("peterundpaul", HolidayParserGer::peterUndPaul)
-            .put("firstchristmasday", HolidayParserGer::christmasDay)
-            .put("xmas", HolidayParserGer::christmasDay)
-            .put("newyear", HolidayParserGer::newYear)
-            .put("newyearday", HolidayParserGer::newYear)
-            .put("newyearsday", HolidayParserGer::newYear)
-            .put("heiligedreikönige", HolidayParserGer::heiligeDreiKonige)
-            .put("inaugurationday", HolidayParserGer::inaugurationDay)
-            .put("groundhougday", HolidayParserGer::groundhogDay)
-            .put("valentinesday", HolidayParserGer::valentinesDay)
-            .put("stpatrickday", HolidayParserGer::stPatrickDay)
-            .put("aprilfools", HolidayParserGer::foolDay)
-            .put("stgeorgeday", HolidayParserGer::stGeorgeDay)
-            .put("mayday", HolidayParserGer::mayday)
-            .put("labour", HolidayParserGer::laborDay)
-            .put("cincodemayoday", HolidayParserGer::cincoDeMayo)
-            .put("baptisteday", HolidayParserGer::baptisteDay)
-            .put("usindependenceday", HolidayParserGer::usaIndependenceDay)
-            .put("independenceday", HolidayParserGer::usaIndependenceDay)
-            .put("bastilleday", HolidayParserGer::bastilleDay)
-            .put("halloweenday", HolidayParserGer::halloweenDay)
-            .put("allhallowday", HolidayParserGer::allHallowDay)
-            .put("allsoulsday", HolidayParserGer::allSoulsDay)
-            .put("guyfawkesday", HolidayParserGer::guyFawkesDay)
-            .put("veteransday", HolidayParserGer::veteransDay)
-            .put("christmaseve", HolidayParserGer::christmasEve)
-            .put("newyeareve", HolidayParserGer::newYearEve)
-            .put("piday", HolidayParserGer::piDay)
-            .put("beginningofsummer", HolidayParserGer::beginningOfSummer)
-            .put("beginningofwinter", HolidayParserGer::beginningOfWinter)
-            .put("beginningofspring", HolidayParserGer::beginningOfSpring)
-            .put("beginningoffall", HolidayParserGer::beginningOfFall)
-            .build();
-
-    static final ImmutableMap<String, IntFunction<LocalDateTime>> VariableHolidays = ImmutableMap.<String, IntFunction<LocalDateTime>>builder()
-            .put("fathers", HolidayParserGer::fathersDayOfYear)
-            .put("easterday", HolidayParserGer::easterDay)
-            .put("eastersunday", HolidayParserGer::easterDay)
-            .put("eastermonday", HolidayParserGer::easterMondayOfYear)
-            .put("eastersaturday", HolidayParserGer::easterSaturday)
-            .put("weiberfastnacht", HolidayParserGer::weiberfastnacht)
-            .put("carnival", HolidayParserGer::carnival)
-            .put("ashwednesday", HolidayParserGer::ashWednesday)
-            .put("palmsunday", HolidayParserGer::palmSunday)
-            .put("goodfriday", HolidayParserGer::goodFriday)
-            .put("ascensionofchrist", HolidayParserGer::ascensionOfChrist)
-            .put("whitesunday", HolidayParserGer::whiteSunday)
-            .put("whitemonday", HolidayParserGer::whiteMonday)
-            .put("corpuschristi", HolidayParserGer::corpusChristi)
-            .put("rosenmontag", HolidayParserGer::rosenmontag)
-            .put("fastnacht", HolidayParserGer::fastnacht)
-            .put("fastnachtssamstag", HolidayParserGer::fastnachtSaturday)
-            .put("fastnachtssonntag", HolidayParserGer::fastnachtSunday)
-            .put("holythursday", HolidayParserGer::holyThursday)
-            .put("memorialdaygermany", HolidayParserGer::memorialDayGermany)
-            .put("dayofrepentance", HolidayParserGer::dayOfRepentance)
-            .put("totensonntag", HolidayParserGer::totenSonntag)
-            .put("firstadvent", HolidayParserGer::firstAdvent)
-            .put("secondadvent", HolidayParserGer::secondAdvent)
-            .put("thirdadvent", HolidayParserGer::thirdAdvent)
-            .put("fourthadvent", HolidayParserGer::fourthAdvent)
-            .put("chedayofrepentance", HolidayParserGer::cheDayOfRepentance)
-            .put("mothers", HolidayParserGer::mothersDay)
-            .put("thanksgiving", HolidayParserGer::thanksgivingDay)
-            .build();
-
-    static final ImmutableMap<String, IntFunction<LocalDateTime>> AllHolidays = ImmutableMap
-            .<String, IntFunction<LocalDateTime>>builder().putAll(FixedHolidays).putAll(VariableHolidays).build();
 }

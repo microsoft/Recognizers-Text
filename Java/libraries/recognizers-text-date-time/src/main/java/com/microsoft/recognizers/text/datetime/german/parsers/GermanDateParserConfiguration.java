@@ -17,7 +17,6 @@ import com.microsoft.recognizers.text.datetime.resources.GermanDateTime;
 import com.microsoft.recognizers.text.datetime.utilities.IDateTimeUtilityConfiguration;
 import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
-
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -73,6 +72,7 @@ public class GermanDateParserConfiguration extends BaseOptionsConfiguration impl
     private final Pattern relativeDayRegex;
     private final Pattern nextPrefixRegex;
     private final Pattern previousPrefixRegex;
+
     public GermanDateParserConfiguration(ICommonDateTimeParserConfiguration config) {
 
         super(config.getOptions());

@@ -5,7 +5,6 @@ package com.microsoft.recognizers.text.datetime.german.extractors;
 
 import com.microsoft.recognizers.text.IExtractor;
 import com.microsoft.recognizers.text.IParser;
-import com.microsoft.recognizers.text.datetime.DateTimeOptions;
 import com.microsoft.recognizers.text.datetime.config.BaseOptionsConfiguration;
 import com.microsoft.recognizers.text.datetime.config.IOptionsConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.BaseDateExtractor;
@@ -16,13 +15,11 @@ import com.microsoft.recognizers.text.datetime.extractors.config.ResultIndex;
 import com.microsoft.recognizers.text.datetime.resources.BaseDateTime;
 import com.microsoft.recognizers.text.datetime.resources.GermanDateTime;
 import com.microsoft.recognizers.text.datetime.utilities.RegexExtension;
-import com.microsoft.recognizers.text.number.NumberOptions;
 import com.microsoft.recognizers.text.number.german.extractors.CardinalExtractor;
 import com.microsoft.recognizers.text.number.german.extractors.OrdinalExtractor;
 import com.microsoft.recognizers.text.number.german.parsers.GermanNumberParserConfiguration;
 import com.microsoft.recognizers.text.number.parsers.BaseNumberParser;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
-
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -90,7 +87,6 @@ public class GermanDatePeriodExtractorConfiguration extends BaseOptionsConfigura
     public static final Pattern BetweenTokenRegex = RegExpUtility.getSafeRegExp(GermanDateTime.BetweenTokenRegex);
 
 
-    
     public static final Iterable<Pattern> SimpleCasesRegexes = new ArrayList<Pattern>() {
         {
             add(SimpleCasesRegex);
@@ -261,16 +257,22 @@ public class GermanDatePeriodExtractorConfiguration extends BaseOptionsConfigura
         return CenturySuffixRegex;
     }
 
-    public Pattern getMonthNumRegex() {return MonthNumRegex;}
+    public Pattern getMonthNumRegex() {
+        return MonthNumRegex;
+    }
 
     @Override
     public Pattern getNowRegex() {
         return NowRegex;
     }
 
-    public Pattern getFirstLastRegex() { return FirstLastRegex; }
+    public Pattern getFirstLastRegex() {
+        return FirstLastRegex;
+    }
 
-    public Pattern getOfYearRegex() { return OfYearRegex; }
+    public Pattern getOfYearRegex() {
+        return OfYearRegex;
+    }
 
     @Override
     public IExtractor getCardinalExtractor() {
@@ -324,7 +326,7 @@ public class GermanDatePeriodExtractorConfiguration extends BaseOptionsConfigura
             result = true;
             index = betweenMatch.start();
         }
-        
+
         return new ResultIndex(result, index);
     }
 

@@ -12,7 +12,6 @@ import com.microsoft.recognizers.text.datetime.extractors.IDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.extractors.config.IDateTimeAltExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.resources.GermanDateTime;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
-
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 
@@ -87,7 +86,8 @@ public class GermanDateTimeAltExtractorConfiguration extends BaseOptionsConfigur
         return DayRegex;
     }
 
-    @Override public Pattern getRangePrefixRegex() {
+    @Override
+    public Pattern getRangePrefixRegex() {
         return RangePrefixRegex;
     }
 }

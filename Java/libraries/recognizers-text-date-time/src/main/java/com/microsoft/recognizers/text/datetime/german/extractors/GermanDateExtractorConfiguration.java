@@ -22,7 +22,6 @@ import com.microsoft.recognizers.text.number.german.extractors.OrdinalExtractor;
 import com.microsoft.recognizers.text.number.german.parsers.GermanNumberParserConfiguration;
 import com.microsoft.recognizers.text.number.parsers.BaseNumberParser;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
