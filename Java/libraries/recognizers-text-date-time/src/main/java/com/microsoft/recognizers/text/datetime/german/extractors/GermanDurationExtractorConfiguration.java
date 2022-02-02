@@ -30,6 +30,7 @@ public class GermanDurationExtractorConfiguration extends BaseOptionsConfigurati
     public static final Pattern DurationConnectorRegex = RegExpUtility.getSafeRegExp(GermanDateTime.DurationConnectorRegex);
     public static final Pattern MoreThanRegex = RegExpUtility.getSafeRegExp(GermanDateTime.MoreThanRegex);
     public static final Pattern LessThanRegex = RegExpUtility.getSafeRegExp(GermanDateTime.LessThanRegex);
+    public static final Pattern SpecialNumberUnitRegex = RegExpUtility.getSafeRegExp(GermanDateTime.SpecialNumberUnitRegex);
 
     private final IExtractor cardinalExtractor;
     private final ImmutableMap<String, String> unitMap;
@@ -121,6 +122,10 @@ public class GermanDurationExtractorConfiguration extends BaseOptionsConfigurati
     @Override
     public Pattern getMoreThanRegex() {
         return MoreThanRegex;
+    }
+
+    public Pattern getSpecialNumberUnitRegex() {
+        return SpecialNumberUnitRegex;
     }
 
     @Override

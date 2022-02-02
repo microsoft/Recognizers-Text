@@ -5,9 +5,13 @@ package com.microsoft.recognizers.text.datetime.utilities;
 
 import com.microsoft.recognizers.text.ExtractResult;
 import com.microsoft.recognizers.text.Metadata;
+import com.microsoft.recognizers.text.utilities.Match;
+import com.microsoft.recognizers.text.utilities.RegExpUtility;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class Token {
     private final int start;
@@ -83,6 +87,16 @@ public class Token {
             ExtractResult er = new ExtractResult(token.start, token.getLength(), substring, extractorName, null, token.metadata);
 
             result.add(er);
+        }
+
+        return result;
+    }
+
+    public static Collection<Token> getTokenFromRegex(Pattern pattern, String text) {
+        Collection<Token> result = new ArrayList<>();
+
+        for (Match match : RegExpUtility.getMatches(pattern, text)) {
+            result.add(new Token(match.index, match.index + match.length));
         }
 
         return result;

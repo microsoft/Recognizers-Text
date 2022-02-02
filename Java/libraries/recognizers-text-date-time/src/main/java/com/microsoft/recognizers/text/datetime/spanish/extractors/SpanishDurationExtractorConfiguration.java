@@ -125,6 +125,10 @@ public class SpanishDurationExtractorConfiguration extends BaseOptionsConfigurat
         return MoreThanRegex;
     }
 
+    @Override public Pattern getSpecialNumberUnitRegex() {
+        return null;
+    }
+
     @Override
     public IExtractor getCardinalExtractor() {
         return cardinalExtractor;
