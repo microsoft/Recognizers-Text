@@ -294,6 +294,9 @@ public class BaseDurationParser implements IDateTimeParser {
 
         if (match.isPresent()) {
             double numVal = StringUtility.isNullOrEmpty(match.get().getGroup("half").value) ? 1 : 0.5;
+            numVal = StringUtility.isNullOrEmpty(match.get().getGroup("quarter").value) ? numVal : 0.25 ;
+            numVal = StringUtility.isNullOrEmpty(match.get().getGroup("threequarter").value) ? numVal : 0.75;
+
             numVal += parseNumberWithUnitAndSuffix(suffixStr);
             String numStr = StringUtility.format(numVal);
 
