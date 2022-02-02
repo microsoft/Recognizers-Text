@@ -39,6 +39,8 @@ public interface IDurationParserConfiguration extends IOptionsConfiguration {
 
     Pattern getDurationUnitRegex();
 
+    Pattern getSpecialNumberUnitRegex();
+
     ImmutableMap<String, String> getUnitMap();
 
     ImmutableMap<String, Long> getUnitValueMap();

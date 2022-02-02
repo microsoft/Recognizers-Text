@@ -30,6 +30,7 @@ public class GermanDurationParserConfiguration extends BaseOptionsConfiguration 
     private final Pattern inexactNumberRegex;
     private final Pattern inexactNumberUnitRegex;
     private final Pattern durationUnitRegex;
+    private final Pattern specialNumberUnitRegex;
 
     private final ImmutableMap<String, String> unitMap;
     private final ImmutableMap<String, Long> unitValueMap;
@@ -54,6 +55,7 @@ public class GermanDurationParserConfiguration extends BaseOptionsConfiguration 
         inexactNumberRegex = GermanDurationExtractorConfiguration.InexactNumberRegex;
         inexactNumberUnitRegex = GermanDurationExtractorConfiguration.InexactNumberUnitRegex;
         durationUnitRegex = GermanDurationExtractorConfiguration.DurationUnitRegex;
+        specialNumberUnitRegex = GermanDurationExtractorConfiguration.SpecialNumberUnitRegex;
 
         unitMap = config.getUnitMap();
         unitValueMap = config.getUnitValueMap();
@@ -128,6 +130,11 @@ public class GermanDurationParserConfiguration extends BaseOptionsConfiguration 
     @Override
     public Pattern getDurationUnitRegex() {
         return durationUnitRegex;
+    }
+
+    @Override
+    public Pattern getSpecialNumberUnitRegex() {
+        return specialNumberUnitRegex;
     }
 
     @Override
