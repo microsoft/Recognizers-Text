@@ -1535,7 +1535,7 @@
     "Context": {
       "ReferenceDateTime": "2019-09-03T00:00:00"
     },
-    "NotSupported": "python, javascript",
+    "NotSupported": "python, javascript, java",
     "Results": [
       {
         "Text": "nächsten donnerstag bis samstag",
@@ -2521,6 +2521,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-01T00:00:00"
     },
+    "NotSupported": "java",
     "Results": [
       {
         "Text": "spätabends",
@@ -2546,6 +2547,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-01T00:00:00"
     },
+    "NotSupported": "java",
     "Results": [
       {
         "Text": "spätnachmittags",
