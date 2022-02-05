@@ -2444,6 +2444,8 @@
   },
   {
     "Input": "was läuft am morgen",
+    "Comment": "Java does not correctly handle lookbehinds.",
+    "NotSupported": "java",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
