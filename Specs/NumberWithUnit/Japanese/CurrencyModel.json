@@ -668,7 +668,7 @@
   },
   {
     "Input": "4人民元　5ドル",
-    "NotSupported": "javascript, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "4人民元",
