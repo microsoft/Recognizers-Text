@@ -177,7 +177,7 @@ class NumberWithUnitRecognizer(Recognizer[NumberWithUnitOptions]):
 
         # region Spanish
         self.register_model('CurrencyModel', Culture.Spanish, lambda options: CurrencyModel(
-            [ExtractorParserModel(BaseMergedUnitParser(SpanishCurrencyExtractorConfiguration(
+            [ExtractorParserModel(BaseMergedUnitExtractor(SpanishCurrencyExtractorConfiguration(
             )), BaseMergedUnitParser(SpanishCurrencyParserConfiguration()))]
         ))
         self.register_model('TemperatureModel', Culture.Spanish, lambda options: TemperatureModel(
