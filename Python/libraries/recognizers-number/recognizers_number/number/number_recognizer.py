@@ -126,6 +126,24 @@ class NumberRecognizer(Recognizer[NumberOptions]):
         ))
         # endregion
 
+        # region Spanish Mexican
+        self.register_model('NumberModel', Culture.SpanishMexican, lambda options: NumberModel(
+            AgnosticNumberParserFactory.get_parser(
+                ParserType.NUMBER, SpanishNumberParserConfiguration()),
+            SpanishNumberExtractor(NumberMode.PURE_NUMBER)
+        ))
+        self.register_model('OrdinalModel', Culture.SpanishMexican, lambda options: OrdinalModel(
+            AgnosticNumberParserFactory.get_parser(
+                ParserType.ORDINAL, SpanishNumberParserConfiguration()),
+            SpanishOrdinalExtractor()
+        ))
+        self.register_model('PercentModel', Culture.SpanishMexican, lambda options: PercentModel(
+            AgnosticNumberParserFactory.get_parser(
+                ParserType.PERCENTAGE, SpanishNumberParserConfiguration()),
+            SpanishPercentageExtractor()
+        ))
+        # endregion
+
         # region Portuguese
         self.register_model('NumberModel', Culture.Portuguese, lambda options: NumberModel(
             AgnosticNumberParserFactory.get_parser(
