@@ -22,13 +22,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             config = configuration;
         }
 
-        public static bool IsLessThanDay(string unit)
-        {
-            return unit.Equals("S", StringComparison.Ordinal) ||
-                   unit.Equals("M", StringComparison.Ordinal) ||
-                   unit.Equals("H", StringComparison.Ordinal);
-        }
-
         public ParseResult Parse(ExtractResult result)
         {
             return this.Parse(result, DateObject.Now);
@@ -139,7 +132,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return ret;
             }
 
-            if ((ret = ParseInexactNumberUnit(text)).Success)
+            if ((ret = DurationParsingUtil.ParseInexactNumberUnit(text, this.config)).Success)
             {
                 return ret;
             }
@@ -208,7 +201,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         numVal = double.Parse(pr.Value.ToString(), CultureInfo.InvariantCulture) + ParseNumberWithUnitAndSuffix(suffixStr);
                     }
 
-                    ret.Timex = TimexUtility.GenerateDurationTimex(numVal, unitStr, IsLessThanDay(unitStr));
+                    ret.Timex = TimexUtility.GenerateDurationTimex(numVal, unitStr, DurationParsingUtil.IsLessThanDay(unitStr));
                     ret.FutureValue = ret.PastValue = numVal * this.config.UnitValueMap[srcUnit];
                     ret.Success = true;
                     return ret;
@@ -264,7 +257,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         return ret;
                     }
 
-                    ret.Timex = TimexUtility.GenerateDurationTimex(numVal, unitStr, IsLessThanDay(unitStr));
+                    ret.Timex = TimexUtility.GenerateDurationTimex(numVal, unitStr, DurationParsingUtil.IsLessThanDay(unitStr));
                     ret.FutureValue = ret.PastValue = numVal * this.config.UnitValueMap[srcUnit];
                     ret.Success = true;
 
@@ -299,47 +292,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     var unitStr = this.config.UnitMap[srcUnit];
 
-                    ret.Timex = TimexUtility.GenerateDurationTimex(numVal, unitStr, IsLessThanDay(unitStr));
-                    ret.FutureValue = ret.PastValue = numVal * this.config.UnitValueMap[srcUnit];
-                    ret.Success = true;
-                }
-                else if (match.Groups[Constants.BusinessDayGroupName].Success)
-                {
-                    ret.Timex = TimexUtility.GenerateDurationTimex(numVal, Constants.TimexBusinessDay, false);
-
-                    // The line below was containing this.config.UnitValueMap[srcUnit.Split()[1]]
-                    // it was updated to accommodate single word "business day" expressions.
-                    ret.FutureValue = ret.PastValue = numVal * this.config.UnitValueMap[srcUnit.Split()[srcUnit.Split().Length - 1]];
-                    ret.Success = true;
-                }
-            }
-
-            return ret;
-        }
-
-        private DateTimeResolutionResult ParseInexactNumberUnit(string text)
-        {
-            var ret = new DateTimeResolutionResult();
-
-            var match = config.InexactNumberUnitRegex.Match(text);
-            if (match.Success)
-            {
-                // set the inexact number "few", "some" to 3 for now
-                double numVal = match.Groups["NumTwoTerm"].Success ? 2 : 3;
-                var srcUnit = match.Groups["unit"].Value;
-
-                if (this.config.UnitMap.ContainsKey(srcUnit))
-                {
-                    var unitStr = this.config.UnitMap[srcUnit];
-
-                    if (numVal > 1000 && (unitStr.Equals(Constants.TimexYear, StringComparison.Ordinal) ||
-                                          unitStr.Equals(Constants.TimexMonthFull, StringComparison.Ordinal) ||
-                                          unitStr.Equals(Constants.TimexWeek, StringComparison.Ordinal)))
-                    {
-                        return ret;
-                    }
-
-                    ret.Timex = TimexUtility.GenerateDurationTimex(numVal, unitStr, IsLessThanDay(unitStr));
+                    ret.Timex = TimexUtility.GenerateDurationTimex(numVal, unitStr, DurationParsingUtil.IsLessThanDay(unitStr));
                     ret.FutureValue = ret.PastValue = numVal * this.config.UnitValueMap[srcUnit];
                     ret.Success = true;
                 }
@@ -405,7 +358,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 var unitStr = this.config.UnitMap[srcUnit];
                                 var numVal = double.Parse(numStr, CultureInfo.InvariantCulture);
 
-                                ret.Timex = TimexUtility.GenerateDurationTimex(numVal, unitStr, IsLessThanDay(unitStr));
+                                ret.Timex = TimexUtility.GenerateDurationTimex(numVal, unitStr, DurationParsingUtil.IsLessThanDay(unitStr));
                                 ret.FutureValue = ret.PastValue = numVal * this.config.UnitValueMap[srcUnit];
                                 ret.Success = true;
                             }
@@ -430,7 +383,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     var unitStr = this.config.UnitMap[srcUnit];
                     var numVal = double.Parse(numStr, CultureInfo.InvariantCulture);
-                    ret.Timex = TimexUtility.GenerateDurationTimex(numVal, unitStr, IsLessThanDay(unitStr));
+                    ret.Timex = TimexUtility.GenerateDurationTimex(numVal, unitStr, DurationParsingUtil.IsLessThanDay(unitStr));
                     ret.FutureValue = ret.PastValue = numVal * this.config.UnitValueMap[srcUnit];
                     ret.Success = true;
                 }

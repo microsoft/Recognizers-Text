@@ -22,6 +22,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             DurationExtractor = new BaseCJKDurationExtractor(new ChineseDurationExtractorConfiguration(durationConfig), false);
 
             YearRegex = ChineseDurationExtractorConfiguration.YearRegex;
+            SomeRegex = ChineseDurationExtractorConfiguration.SomeRegex;
+            MoreOrLessRegex = ChineseDurationExtractorConfiguration.MoreOrLessRegex;
             DurationUnitRegex = ChineseDurationExtractorConfiguration.DurationUnitRegex;
             DurationConnectorRegex = ChineseDurationExtractorConfiguration.DurationConnectorRegex;
 
@@ -34,6 +36,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public IParser InternalParser { get; }
 
         public Regex YearRegex { get; }
+
+        public Regex SomeRegex { get; }
+
+        public Regex MoreOrLessRegex { get; }
 
         public Regex DurationUnitRegex { get; }
 

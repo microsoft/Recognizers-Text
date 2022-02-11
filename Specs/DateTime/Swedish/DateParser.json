@@ -1,0 +1,2677 @@
+﻿[
+  {
+    "Input": "jag åker tillbaka den 15",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "15",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-XX-15",
+          "FutureResolution": {
+            "date": "2016-11-15"
+          },
+          "PastResolution": {
+            "date": "2016-10-15"
+          }
+        },
+        "Start": 22,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka 22 april",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "22 april",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-04-22",
+          "FutureResolution": {
+            "date": "2017-04-22"
+          },
+          "PastResolution": {
+            "date": "2016-04-22"
+          }
+        },
+        "Start": 18,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka 2016-01-12",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "2016-01-12",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-01-12",
+          "FutureResolution": {
+            "date": "2016-01-12"
+          },
+          "PastResolution": {
+            "date": "2016-01-12"
+          }
+        },
+        "Start": 18,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka den 12 januari, 2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "den 12 januari, 2016",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-01-12",
+          "FutureResolution": {
+            "date": "2016-01-12"
+          },
+          "PastResolution": {
+            "date": "2016-01-12"
+          }
+        },
+        "Start": 18,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka måndag den 12 januari, 2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "måndag den 12 januari, 2016",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-01-12",
+          "FutureResolution": {
+            "date": "2016-01-12"
+          },
+          "PastResolution": {
+            "date": "2016-01-12"
+          }
+        },
+        "Start": 18,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka 2016/12/01",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "2016/12/01",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-12-01",
+          "FutureResolution": {
+            "date": "2016-12-01"
+          },
+          "PastResolution": {
+            "date": "2016-12-01"
+          }
+        },
+        "Start": 18,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka 21/04/2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "21/04/2016",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-04-21",
+          "FutureResolution": {
+            "date": "2016-04-21"
+          },
+          "PastResolution": {
+            "date": "2016-04-21"
+          }
+        },
+        "Start": 18,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka 9-18-15",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "9-18-15",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-09-18",
+          "FutureResolution": {
+            "date": "2015-09-18"
+          },
+          "PastResolution": {
+            "date": "2015-09-18"
+          }
+        },
+        "Start": 18,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka 21/04/16",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "21/04/16",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-04-21",
+          "FutureResolution": {
+            "date": "2016-04-21"
+          },
+          "PastResolution": {
+            "date": "2016-04-21"
+          }
+        },
+        "Start": 18,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka 4.22",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "jag åker tillbaka    4/22",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "4/22",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-04-22",
+          "FutureResolution": {
+            "date": "2017-04-22"
+          },
+          "PastResolution": {
+            "date": "2016-04-22"
+          }
+        },
+        "Start": 21,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka den 22/04",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "den 22/04",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-04-22",
+          "FutureResolution": {
+            "date": "2017-04-22"
+          },
+          "PastResolution": {
+            "date": "2016-04-22"
+          }
+        },
+        "Start": 18,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka  22/04",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "22/04",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-04-22",
+          "FutureResolution": {
+            "date": "2017-04-22"
+          },
+          "PastResolution": {
+            "date": "2016-04-22"
+          }
+        },
+        "Start": 19,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka 2015/08/12",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "2015/08/12",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-08-12",
+          "FutureResolution": {
+            "date": "2015-08-12"
+          },
+          "PastResolution": {
+            "date": "2015-08-12"
+          }
+        },
+        "Start": 18,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka 11/12,2015",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "11/12,2015",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-11-12",
+          "FutureResolution": {
+            "date": "2015-11-12"
+          },
+          "PastResolution": {
+            "date": "2015-11-12"
+          }
+        },
+        "Start": 18,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka 08/12,15",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "08/12,15",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-08-12",
+          "FutureResolution": {
+            "date": "2015-08-12"
+          },
+          "PastResolution": {
+            "date": "2015-08-12"
+          }
+        },
+        "Start": 18,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka 1 jan",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1 Jan",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-01",
+          "FutureResolution": {
+            "date": "2017-01-01"
+          },
+          "PastResolution": {
+            "date": "2016-01-01"
+          }
+        },
+        "Start": 18,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka 1-jan",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1-Jan",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-01",
+          "FutureResolution": {
+            "date": "2017-01-01"
+          },
+          "PastResolution": {
+            "date": "2016-01-01"
+          }
+        },
+        "Start": 18,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka ons, 22 jan",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "ons, 22 jan",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-22",
+          "FutureResolution": {
+            "date": "2017-01-22"
+          },
+          "PastResolution": {
+            "date": "2016-01-22"
+          }
+        },
+        "Start": 18,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka förste jan",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "förste jan",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-01",
+          "FutureResolution": {
+            "date": "2017-01-01"
+          },
+          "PastResolution": {
+            "date": "2016-01-01"
+          }
+        },
+        "Start": 18,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka första jan",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "första jan",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-01",
+          "FutureResolution": {
+            "date": "2017-01-01"
+          },
+          "PastResolution": {
+            "date": "2016-01-01"
+          }
+        },
+        "Start": 18,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka andra jan",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "andra jan",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-02",
+          "FutureResolution": {
+            "date": "2017-01-02"
+          },
+          "PastResolution": {
+            "date": "2016-01-02"
+          }
+        },
+        "Start": 18,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka andre jan",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "andre jan",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-02",
+          "FutureResolution": {
+            "date": "2017-01-02"
+          },
+          "PastResolution": {
+            "date": "2016-01-02"
+          }
+        },
+        "Start": 18,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka tjugoförste maj",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "tjugoförste maj",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-05-21",
+          "FutureResolution": {
+            "date": "2017-05-21"
+          },
+          "PastResolution": {
+            "date": "2016-05-21"
+          }
+        },
+        "Start": 18,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka tjugoförsta maj",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "tjugoförsta maj",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-05-21",
+          "FutureResolution": {
+            "date": "2017-05-21"
+          },
+          "PastResolution": {
+            "date": "2016-05-21"
+          }
+        },
+        "Start": 18,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka en fredag",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "fredag",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-WXX-5",
+          "FutureResolution": {
+            "date": "2016-11-11"
+          },
+          "PastResolution": {
+            "date": "2016-11-04"
+          }
+        },
+        "Start": 21,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka idag",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "idag",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-07",
+          "FutureResolution": {
+            "date": "2016-11-07"
+          },
+          "PastResolution": {
+            "date": "2016-11-07"
+          }
+        },
+        "Start": 18,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka imorgon",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "imorgon",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-08",
+          "FutureResolution": {
+            "date": "2016-11-08"
+          },
+          "PastResolution": {
+            "date": "2016-11-08"
+          }
+        },
+        "Start": 18,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "jag åkte tillbaka igår",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "igår",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-06",
+          "FutureResolution": {
+            "date": "2016-11-06"
+          },
+          "PastResolution": {
+            "date": "2016-11-06"
+          }
+        },
+        "Start": 18,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "jag åkte tillbaka i förrgår",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "i förrgår",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-05",
+          "FutureResolution": {
+            "date": "2016-11-05"
+          },
+          "PastResolution": {
+            "date": "2016-11-05"
+          }
+        },
+        "Start": 18,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka i övermorgon",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "i övermorgon",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-09",
+          "FutureResolution": {
+            "date": "2016-11-09"
+          },
+          "PastResolution": {
+            "date": "2016-11-09"
+          }
+        },
+        "Start": 18,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka nästa dag",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "nästa dag",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-08",
+          "FutureResolution": {
+            "date": "2016-11-08"
+          },
+          "PastResolution": {
+            "date": "2016-11-08"
+          }
+        },
+        "Start": 18,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka kommande fredag",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "kommande fredag",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-11",
+          "FutureResolution": {
+            "date": "2016-11-11"
+          },
+          "PastResolution": {
+            "date": "2016-11-11"
+          }
+        },
+        "Start": 18,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka på söndag",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "på söndag",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-13",
+          "FutureResolution": {
+            "date": "2016-11-13"
+          },
+          "PastResolution": {
+            "date": "2016-11-13"
+          }
+        },
+        "Start": 18,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka den här söndagen",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "den här söndagen",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-13",
+          "FutureResolution": {
+            "date": "2016-11-13"
+          },
+          "PastResolution": {
+            "date": "2016-11-13"
+          }
+        },
+        "Start": 18,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka nästa söndag",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "nästa söndag",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-20",
+          "FutureResolution": {
+            "date": "2016-11-20"
+          },
+          "PastResolution": {
+            "date": "2016-11-20"
+          }
+        },
+        "Start": 18,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "jag åkte tillbaka förra söndagen",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "förra söndagen",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-06",
+          "FutureResolution": {
+            "date": "2016-11-06"
+          },
+          "PastResolution": {
+            "date": "2016-11-06"
+          }
+        },
+        "Start": 18,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka söndag i nästa vecka",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "söndag i nästa vecka",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-20",
+          "FutureResolution": {
+            "date": "2016-11-20"
+          },
+          "PastResolution": {
+            "date": "2016-11-20"
+          }
+        },
+        "Start": 18,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka på söndag i nästa vecka",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "på söndag i nästa vecka",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-20",
+          "FutureResolution": {
+            "date": "2016-11-20"
+          },
+          "PastResolution": {
+            "date": "2016-11-20"
+          }
+        },
+        "Start": 18,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "jag åkte tillbaka söndag i förra veckan",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "söndag i förra veckan",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-06",
+          "FutureResolution": {
+            "date": "2016-11-06"
+          },
+          "PastResolution": {
+            "date": "2016-11-06"
+          }
+        },
+        "Start": 18,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "jag åkte tillbaka i söndags",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "i söndags",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-06",
+          "FutureResolution": {
+            "date": "2016-11-06"
+          },
+          "PastResolution": {
+            "date": "2016-11-06"
+          }
+        },
+        "Start": 18,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka 15 juni 2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "15 juni 2016",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-06-15",
+          "FutureResolution": {
+            "date": "2016-06-15"
+          },
+          "PastResolution": {
+            "date": "2016-06-15"
+          }
+        },
+        "Start": 18,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka första fredagen i juli",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "första fredagen i juli",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-07-WXX-5-#1",
+          "FutureResolution": {
+            "date": "2017-07-07"
+          },
+          "PastResolution": {
+            "date": "2016-07-01"
+          }
+        },
+        "Start": 18,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka första fredagen den här månaden",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "första fredagen den här månaden",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-01",
+          "FutureResolution": {
+            "date": "2016-11-01"
+          },
+          "PastResolution": {
+            "date": "2016-11-01"
+          }
+        },
+        "Start": 18,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka på fredag nästa vecka",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "på fredag nästa vecka",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-18",
+          "FutureResolution": {
+            "date": "2016-11-18"
+          },
+          "PastResolution": {
+            "date": "2016-11-18"
+          }
+        },
+        "Start": 18,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka på fredag i nästa vecka",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "på fredag i nästa vecka",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-18",
+          "FutureResolution": {
+            "date": "2016-11-18"
+          },
+          "PastResolution": {
+            "date": "2016-11-18"
+          }
+        },
+        "Start": 18,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Hur ser min dag ut?",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "min dag",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-07",
+          "FutureResolution": {
+            "date": "2016-11-07"
+          },
+          "PastResolution": {
+            "date": "2016-11-07"
+          }
+        },
+        "Start": 8,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka två veckor från nu",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "två veckor från nu",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-21",
+          "FutureResolution": {
+            "date": "2016-11-21"
+          },
+          "PastResolution": {
+            "date": "2016-11-21"
+          }
+        },
+        "Start": 18,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka om två veckor från nu",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "två veckor från nu",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-21",
+          "FutureResolution": {
+            "date": "2016-11-21"
+          },
+          "PastResolution": {
+            "date": "2016-11-21"
+          }
+        },
+        "Start": 21,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "vem mejlade jag för en månad sedan",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "en månad sedan",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-10-07",
+          "FutureResolution": {
+            "date": "2016-10-07"
+          },
+          "PastResolution": {
+            "date": "2016-10-07"
+          }
+        },
+        "Start": 20,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "vem e-postade jag för några månader sedan?",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "för några månader sedan",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-08-07",
+          "FutureResolution": {
+            "date": "2016-08-07"
+          },
+          "PastResolution": {
+            "date": "2016-08-07"
+          }
+        },
+        "Start": 18,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "vem e-postade jag för några dagar sedan?",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "för några dagar sedan",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-04",
+          "FutureResolution": {
+            "date": "2016-11-04"
+          },
+          "PastResolution": {
+            "date": "2016-11-04"
+          }
+        },
+        "Start": 18,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "jag åkte tillbaka den 27",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "27",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-XX-27",
+          "FutureResolution": {
+            "date": "2016-11-27"
+          },
+          "PastResolution": {
+            "date": "2016-10-27"
+          }
+        },
+        "Start": 22,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "jag åkte tillbaka den 27:e",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "27:e",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-XX-27",
+          "FutureResolution": {
+            "date": "2016-11-27"
+          },
+          "PastResolution": {
+            "date": "2016-10-27"
+          }
+        },
+        "Start": 22,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "jag åkte tillbaka den 27.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "27",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-XX-27",
+          "FutureResolution": {
+            "date": "2016-11-27"
+          },
+          "PastResolution": {
+            "date": "2016-10-27"
+          }
+        },
+        "Start": 22,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "jag åkte tillbaka den 27!",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "27",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-XX-27",
+          "FutureResolution": {
+            "date": "2016-11-27"
+          },
+          "PastResolution": {
+            "date": "2016-10-27"
+          }
+        },
+        "Start": 22,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "jag åkte tillbaka den 27 .",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "27",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-XX-27",
+          "FutureResolution": {
+            "date": "2016-11-27"
+          },
+          "PastResolution": {
+            "date": "2016-10-27"
+          }
+        },
+        "Start": 22,
+        "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "jag åkte tillbaka den 21:e",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "21:e",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-XX-21",
+          "FutureResolution": {
+            "date": "2016-11-21"
+          },
+          "PastResolution": {
+            "date": "2016-10-21"
+          }
+        },
+        "Start": 22,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "jag åkte tillbaka den 21:a",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "21:a",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-XX-21",
+          "FutureResolution": {
+            "date": "2016-11-21"
+          },
+          "PastResolution": {
+            "date": "2016-10-21"
+          }
+        },
+        "Start": 22,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "jag åkte tillbaka den andre!",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "den andre",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-XX-02",
+          "FutureResolution": {
+            "date": "2016-12-02"
+          },
+          "PastResolution": {
+            "date": "2016-11-02"
+          }
+        },
+        "Start": 18,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "jag åkte tillbaka fredagen den 15:e",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "fredagen den 15",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-09-15",
+          "FutureResolution": {
+            "date": "2017-09-15"
+          },
+          "PastResolution": {
+            "date": "2017-09-15"
+          }
+        },
+        "Start": 18,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka torsdagen den tjugoförste",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "torsdagen den tjugoförste",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-09-21",
+          "FutureResolution": {
+            "date": "2017-09-21"
+          },
+          "PastResolution": {
+            "date": "2017-09-21"
+          }
+        },
+        "Start": 18,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka fredag den tjugoandre",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "fredag den tjugoandre",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-09-22",
+          "FutureResolution": {
+            "date": "2017-09-22"
+          },
+          "PastResolution": {
+            "date": "2017-09-22"
+          }
+        },
+        "Start": 18,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka fredagen den femtonde",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "fredagen den femtonde",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-09-15",
+          "FutureResolution": {
+            "date": "2017-09-15"
+          },
+          "PastResolution": {
+            "date": "2017-09-15"
+          }
+        },
+        "Start": 18,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "ag åker tillbaka den andra söndagen",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "andra söndagen",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-09-10",
+          "FutureResolution": {
+            "date": "2017-09-10"
+          },
+          "PastResolution": {
+            "date": "2017-09-10"
+          }
+        },
+        "Start": 21,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka första söndagen",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "första söndagen",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-09-03",
+          "FutureResolution": {
+            "date": "2017-09-03"
+          },
+          "PastResolution": {
+            "date": "2017-09-03"
+          }
+        },
+        "Start": 18,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka tredje torsdagen",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "tredje torsdagen",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-09-21",
+          "FutureResolution": {
+            "date": "2017-09-21"
+          },
+          "PastResolution": {
+            "date": "2017-09-21"
+          }
+        },
+        "Start": 18,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka femte söndagen",
+    "Context": {
+      "ReferenceDateTime": "2017-09-27T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "femte söndagen",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-09-31",
+          "FutureResolution": {
+            "date": "0001-01-01"
+          },
+          "PastResolution": {
+            "date": "0001-01-01"
+          }
+        },
+        "Start": 18,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka den 20 nästa månad",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "20 nästa månad",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-12-20",
+          "FutureResolution": {
+            "date": "2016-12-20"
+          },
+          "PastResolution": {
+            "date": "2016-12-20"
+          }
+        },
+        "Start": 22,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka den 31 denna månad",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "31 denna månad",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-31",
+          "FutureResolution": {
+            "date": "0001-01-01"
+          },
+          "PastResolution": {
+            "date": "0001-01-01"
+          }
+        },
+        "Start": 22,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "Jag åkte tillbaka för två dagar sedan",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "två dagar sedan",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-05",
+          "FutureResolution": {
+            "date": "2016-11-05"
+          },
+          "PastResolution": {
+            "date": "2016-11-05"
+          }
+        },
+        "Start": 22,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "jag åkte tillbaka för två år sedan",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "två år sedan",
+        "Type": "date",
+        "Value": {
+          "Timex": "2014-11-07",
+          "FutureResolution": {
+            "date": "2014-11-07"
+          },
+          "PastResolution": {
+            "date": "2014-11-07"
+          }
+        },
+        "Start": 22,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "16. Nov. 2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-14T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "16. Nov. 2016",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-16",
+          "FutureResolution": {
+            "date": "2016-11-16"
+          },
+          "PastResolution": {
+            "date": "2016-11-16"
+          }
+        },
+        "Start": 0,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "16 november 2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-14T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "16 november 2016",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-16",
+          "FutureResolution": {
+            "date": "2016-11-16"
+          },
+          "PastResolution": {
+            "date": "2016-11-16"
+          }
+        },
+        "Start": 0,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "Vi hade ett möte för 1 månad och 21 dagar sedan",
+    "Context": {
+      "ReferenceDateTime": "2017-11-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1 månad och 21 dagar sedan",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-10-02",
+          "FutureResolution": {
+            "date": "2017-10-02"
+          },
+          "PastResolution": {
+            "date": "2017-10-02"
+          }
+        },
+        "Start": 21,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "jag lämnade här för 2 år 1 månad och 21 dagar sedan",
+    "Context": {
+      "ReferenceDateTime": "2017-11-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "2 år 1 månad och 21 dagar sedan",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-10-02",
+          "FutureResolution": {
+            "date": "2015-10-02"
+          },
+          "PastResolution": {
+            "date": "2015-10-02"
+          }
+        },
+        "Start": 20,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "jag kommer att avresa härifrån 2 år och 21 dagar senare",
+    "Context": {
+      "ReferenceDateTime": "2017-11-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "2 år och 21 dagar senare",
+        "Type": "date",
+        "Value": {
+          "Timex": "2019-12-14",
+          "FutureResolution": {
+            "date": "2019-12-14"
+          },
+          "PastResolution": {
+            "date": "2019-12-14"
+          }
+        },
+        "Start": 31,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "jag avreste härifrån för 1 månad 2 år och 21 dagar sedan",
+    "Context": {
+      "ReferenceDateTime": "2017-11-23T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "1 månad 2 år och 21 dagar sedan",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-10-02",
+          "FutureResolution": {
+            "date": "2015-10-02"
+          },
+          "PastResolution": {
+            "date": "2015-10-02"
+          }
+        },
+        "Start": 25,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "jag avreste härifrån den 20 nästa månad",
+    "Context": {
+      "ReferenceDateTime": "2017-12-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "20 nästa månad",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-01-20",
+          "FutureResolution": {
+            "date": "2018-01-20"
+          },
+          "PastResolution": {
+            "date": "2018-01-20"
+          }
+        },
+        "Start": 25,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "jag avreste härifrån den 5 december 1391",
+    "Context": {
+      "ReferenceDateTime": "2017-12-18T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "den 5 december 1391",
+        "Type": "date",
+        "Value": {
+          "Timex": "1391-12-05",
+          "FutureResolution": {
+            "date": "1391-12-05"
+          },
+          "PastResolution": {
+            "date": "1391-12-05"
+          }
+        },
+        "Start": 21,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "på söndag tjugoförste januari tjugohundraarton",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "söndag tjugoförste januari tjugohundraarton",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-01-21",
+          "FutureResolution": {
+            "date": "2018-01-21"
+          },
+          "PastResolution": {
+            "date": "2018-01-21"
+          }
+        },
+        "Start": 3,
+        "Length": 43
+      }
+    ]
+  },
+  {
+    "Input": "på söndag den tjugoförste januari tjugohundraarton",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet",
+    "Results": [
+      {
+        "Text": "söndag den tjugoförste januari tjugohundraarton",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-01-21",
+          "FutureResolution": {
+            "date": "2018-01-21"
+          },
+          "PastResolution": {
+            "date": "2018-01-21"
+          }
+        },
+        "Start": 3,
+        "Length": 47
+      }
+    ]
+  },
+  {
+    "Input": "på söndag den tjugoförste januari tvåtusenarton",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupported": "dotnet",
+    "Comment": "Currently doesn't resolve correctly. Ignores 'januari tvåtusenarton' => Timex: 2016-11-21",
+    "Results": [
+      {
+        "Text": "söndag den tjugoförste januari tvåtusenarton",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-01-21",
+          "FutureResolution": {
+            "date": "2018-01-21"
+          },
+          "PastResolution": {
+            "date": "2018-01-21"
+          }
+        },
+        "Start": 3,
+        "Length": 44
+      }
+    ]
+  },
+  {
+    "Input": "söndag, tjugoförste jan, tvåtusenarton",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "söndag, tjugoförste jan, tvåtusenarton",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-01-21",
+          "FutureResolution": {
+            "date": "2018-01-21"
+          },
+          "PastResolution": {
+            "date": "2018-01-21"
+          }
+        },
+        "Start": 0,
+        "Length": 38
+      }
+    ]
+  },
+  {
+    "Input": "söndag, tjugoförste jan, tjugohundraarton",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "söndag, tjugoförste jan, tjugohundraarton",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-01-21",
+          "FutureResolution": {
+            "date": "2018-01-21"
+          },
+          "PastResolution": {
+            "date": "2018-01-21"
+          }
+        },
+        "Start": 0,
+        "Length": 41
+      }
+    ]
+  },
+  {
+    "Input": "på fredag åttonde mars nittonhundrasextioåtta",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "fredag åttonde mars nittonhundrasextioåtta",
+        "Type": "date",
+        "Value": {
+          "Timex": "1968-03-08",
+          "FutureResolution": {
+            "date": "1968-03-08"
+          },
+          "PastResolution": {
+            "date": "1968-03-08"
+          }
+        },
+        "Start": 3,
+        "Length": 42
+      }
+    ]
+  },
+  {
+    "Input": "den tionde september, två tusen",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "tionde september, två tusen",
+        "Type": "date",
+        "Value": {
+          "Timex": "2000-09-10",
+          "FutureResolution": {
+            "date": "2000-09-10"
+          },
+          "PastResolution": {
+            "date": "2000-09-10"
+          }
+        },
+        "Start": 4,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "den tionde september, tjugohundra",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "tionde september, tjugohundra",
+        "Type": "date",
+        "Value": {
+          "Timex": "2000-09-10",
+          "FutureResolution": {
+            "date": "2000-09-10"
+          },
+          "PastResolution": {
+            "date": "2000-09-10"
+          }
+        },
+        "Start": 4,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "Vi ses första fredagen i nästa månad",
+    "Context": {
+      "ReferenceDateTime": "2018-03-20T09:58:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "första fredagen i nästa månad",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-04-WXX-5-#1",
+          "FutureResolution": {
+            "date": "2018-04-06"
+          },
+          "PastResolution": {
+            "date": "2018-04-06"
+          }
+        },
+        "Start": 7,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "Ok, ska vi säga andra måndagen i nästa månad?",
+    "Context": {
+      "ReferenceDateTime": "2018-03-20T10:45:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "andra måndagen i nästa månad",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-04-WXX-1-#2",
+          "FutureResolution": {
+            "date": "2018-04-09"
+          },
+          "PastResolution": {
+            "date": "2018-04-09"
+          }
+        },
+        "Start": 16,
+        "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Jag återvände tredje onsdagen i förra månaden",
+    "Context": {
+      "ReferenceDateTime": "2018-03-20T10:45:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "tredje onsdagen i förra månaden",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-02-WXX-3-#3",
+          "FutureResolution": {
+            "date": "2018-02-21"
+          },
+          "PastResolution": {
+            "date": "2018-02-21"
+          }
+        },
+        "Start": 14,
+        "Length": 31
+      }
+    ]
+  },
+  {
+    "Input": "Jag reser på tisdag i nästa vecka",
+    "Context": {
+      "ReferenceDateTime": "2018-03-20T22:16:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "på tisdag i nästa vecka",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-03-27",
+          "FutureResolution": {
+            "date": "2018-03-27"
+          },
+          "PastResolution": {
+            "date": "2018-03-27"
+          }
+        },
+        "Start": 10,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Gör läxan på söndag i nästa vecka",
+    "Context": {
+      "ReferenceDateTime": "2018-03-20T22:16:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "på söndag i nästa vecka",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-04-01",
+          "FutureResolution": {
+            "date": "2018-04-01"
+          },
+          "PastResolution": {
+            "date": "2018-04-01"
+          }
+        },
+        "Start": 10,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Är du ledig två dagar efter idag?",
+    "Context": {
+      "ReferenceDateTime": "2018-04-20T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "två dagar efter idag",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-04-22",
+          "FutureResolution": {
+            "date": "2018-04-22"
+          },
+          "PastResolution": {
+            "date": "2018-04-22"
+          }
+        },
+        "Start": 12,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Var var du fyra dagar före igår?",
+    "Context": {
+      "ReferenceDateTime": "2018-04-20T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "fyra dagar före igår",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-04-15",
+          "FutureResolution": {
+            "date": "2018-04-15"
+          },
+          "PastResolution": {
+            "date": "2018-04-15"
+          }
+        },
+        "Start": 11,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Är du ledig 13.5.2015?",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "13.5.2015",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-05-13",
+          "FutureResolution": {
+            "date": "2015-05-13"
+          },
+          "PastResolution": {
+            "date": "2015-05-13"
+          }
+        },
+        "Start": 12,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Är du ledig 2015.5.13?",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "2015.5.13",
+        "Type": "date",
+        "Value": {
+          "Timex": "2015-05-13",
+          "FutureResolution": {
+            "date": "2015-05-13"
+          },
+          "PastResolution": {
+            "date": "2015-05-13"
+          }
+        },
+        "Start": 12,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Är du ledig två söndagar från nu?",
+    "Context": {
+      "ReferenceDateTime": "2018-05-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "två söndagar från nu",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-05-20",
+          "FutureResolution": {
+            "date": "2018-05-20"
+          },
+          "PastResolution": {
+            "date": "2018-05-20"
+          }
+        },
+        "Start": 12,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Är du ledig två måndagar senare?",
+    "Context": {
+      "ReferenceDateTime": "2018-05-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "två måndagar senare",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-05-21",
+          "FutureResolution": {
+            "date": "2018-05-21"
+          },
+          "PastResolution": {
+            "date": "2018-05-21"
+          }
+        },
+        "Start": 12,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Är du ledig två dagar efter idag?",
+    "Context": {
+      "ReferenceDateTime": "2018-05-31T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "två dagar efter idag",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-06-02",
+          "FutureResolution": {
+            "date": "2018-06-02"
+          },
+          "PastResolution": {
+            "date": "2018-06-02"
+          }
+        },
+        "Start": 12,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Är du tillgänglig om tre veckor från imorgon?",
+    "Context": {
+      "ReferenceDateTime": "2018-05-31T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "tre veckor från imorgon",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-06-22",
+          "FutureResolution": {
+            "date": "2018-06-22"
+          },
+          "PastResolution": {
+            "date": "2018-06-22"
+          }
+        },
+        "Start": 21,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Var var du två dagar före igår?",
+    "Context": {
+      "ReferenceDateTime": "2018-05-31T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "två dagar före igår",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-05-28",
+          "FutureResolution": {
+            "date": "2018-05-28"
+          },
+          "PastResolution": {
+            "date": "2018-05-28"
+          }
+        },
+        "Start": 11,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "jag reser om 3 veckor",
+    "Context": {
+      "ReferenceDateTime": "2018-07-05T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "om 3 veckor",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-07-26",
+          "FutureResolution": {
+            "date": "2018-07-26"
+          },
+          "PastResolution": {
+            "date": "2018-07-26"
+          }
+        },
+        "Start": 10,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Cortana, vill du boka in ett Skypemöte om två arbetsdagar.",
+    "Context": {
+      "ReferenceDateTime": "2018-08-21T08:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "om två arbetsdagar",
+        "Type": "date",
+        "Value": {
+          "Timex": "2018-08-23",
+          "FutureResolution": {
+            "date": "2018-08-23"
+          },
+          "PastResolution": {
+            "date": "2018-08-23"
+          }
+        },
+        "Start": 39,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka den tjugoandre juni 2017",
+    "Context": {
+      "ReferenceDateTime": "2018-08-21T08:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "tjugoandre juni 2017",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-06-22",
+          "FutureResolution": {
+            "date": "2017-06-22"
+          },
+          "PastResolution": {
+            "date": "2017-06-22"
+          }
+        },
+        "Start": 22,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka 2019-sep-1",
+    "Context": {
+      "ReferenceDateTime": "2018-08-21T08:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "2019-sep-1",
+        "Type": "date",
+        "Value": {
+          "Timex": "2019-09-01",
+          "FutureResolution": {
+            "date": "2019-09-01"
+          },
+          "PastResolution": {
+            "date": "2019-09-01"
+          }
+        },
+        "Start": 18,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "jag åker tillbaka 2019/sep/01",
+    "Context": {
+      "ReferenceDateTime": "2018-08-21T08:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "2019/sep/01",
+        "Type": "date",
+        "Value": {
+          "Timex": "2019-09-01",
+          "FutureResolution": {
+            "date": "2019-09-01"
+          },
+          "PastResolution": {
+            "date": "2019-09-01"
+          }
+        },
+        "Start": 18,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "29 feb",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "29 feb",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-02-29",
+          "FutureResolution": {
+            "date": "2020-02-29"
+          },
+          "PastResolution": {
+            "date": "2016-02-29"
+          }
+        },
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "29/2",
+    "Context": {
+      "ReferenceDateTime": "2019-03-22T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "29/2",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-02-29",
+          "FutureResolution": {
+            "date": "2020-02-29"
+          },
+          "PastResolution": {
+            "date": "2016-02-29"
+          }
+        },
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "30 feb",
+    "Context": {
+      "ReferenceDateTime": "2020-03-22T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "30 feb",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-02-30",
+          "FutureResolution": {
+            "date": "0001-01-01"
+          },
+          "PastResolution": {
+            "date": "0001-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "2019/02/29",
+    "Context": {
+      "ReferenceDateTime": "2020-03-22T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "2019/02/29",
+        "Type": "date",
+        "Value": {
+          "Timex": "2019-02-29",
+          "FutureResolution": {
+            "date": "0001-01-01"
+          },
+          "PastResolution": {
+            "date": "0001-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "2020/02/29",
+    "Context": {
+      "ReferenceDateTime": "2020-03-22T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "2020/02/29",
+        "Type": "date",
+        "Value": {
+          "Timex": "2020-02-29",
+          "FutureResolution": {
+            "date": "2020-02-29"
+          },
+          "PastResolution": {
+            "date": "2020-02-29"
+          }
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
+  }
+]

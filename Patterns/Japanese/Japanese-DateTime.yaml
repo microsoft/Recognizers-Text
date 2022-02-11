@@ -84,7 +84,7 @@ SpecialDate: !nestedRegex
   def: (?<thisyear>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex})年)?(の|的)?(?<thismonth>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex})(の|的)?月)?(の|的)?{DateDayRegexInCJK}
   references: [ThisPrefixRegex, LastPrefixRegex, NextPrefixRegex, DateDayRegexInCJK]
 DateUnitRegex: !simpleRegex
-  def: (?<unit>年|个月|月|周|(?<business>営業)日|(?<!(明|昨|今))日|天|週間?|星期|个星期|か月)
+  def: (?<unit>年|个月|月|周|時間?|(?<business>営業)日|(?<!(明|昨|今))日|天|週間?|星期|个星期|か月)
 BeforeRegex: !simpleRegex
   def: 以前|之前|前
 AfterRegex: !simpleRegex
@@ -311,21 +311,19 @@ PlusFourDayRegex: !simpleRegex
   def: 今日から4日
 #DurationExtractorCJK
 DurationAllRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in Korean
-  def: ^[.]
+  def: (まる(ひと)?)
 DurationHalfRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in Korean
   def: ^[.]
 DurationRelativeDurationUnitRegex: !simpleRegex
-  def: (?<few>数ヶ|数)|(?<ago>前|昨日)|(?<later>後|明日)
+  def: (?<few>数ヶ|数)|(?<ago>前|昨日)|(?<later>後|明日)|(?<another>もう)
 DurationDuringRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in Korean
   def: ^[.]
 DurationSomeRegex: !simpleRegex
-  def: (数ヶ|数)(月|日|週間|年)
+  def: (?<few>数(?<unit>((か|ヶ)?(時|月|日|週|年|周|週|週|秒|分|営業日|年)間?))(たらず|以上)?)
 DurationMoreOrLessRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in Korean
-  def: ^[.]
+  def: (?<less>たらず)|(?<more>以上)
 DurationYearRegex: !simpleRegex
   def: ((\d{3,4})|0\d|两千)\s*年
 DurationHalfSuffixRegex: !simpleRegex
@@ -333,14 +331,14 @@ DurationHalfSuffixRegex: !simpleRegex
 DurationSuffixList: !dictionary
   types: [string, string]
   entries:
-    M: 分钟
-    S: 秒钟|秒
-    H: 个小时|小时
-    D: 天|日
+    M: 分|分間
+    S: 秒钟|秒|秒間
+    H: 時|時間
+    D: 天|日|日間
     BD: 営業日
     W: 星期|个星期|周|週間|週
-    MON: 个月|か月|月
-    Y: 年
+    MON: 个月|か月|月|月間|か月間|ヶ月|ヶ月間
+    Y: 年|年間
 DurationAmbiguousUnits: !list
   types: [string]
   entries:
@@ -357,7 +355,7 @@ DurationAmbiguousUnits: !list
     - 个月
     - 年
 DurationUnitRegex: !nestedRegex
-  def: (?<unit>{DateUnitRegex}|分|秒|時間)
+  def: (?<unit>{DateUnitRegex}|分|秒|時間|まる(ひと)?|もう|数|以上|たらず)
   references: [DateUnitRegex]
 DurationConnectorRegex: !simpleRegex
   def: ^\s*(?<connector>[と]?|,|、)\s*$
@@ -503,14 +501,22 @@ ParserConfigurationUnitMap: !dictionary
     星期: W
     个星期: W
     日: D
+    日間: D
     営業日: BD
     天: D
     小时: H
+    時間: H 
     时: H
     分钟: M
     分: M
     秒钟: S
     秒: S
+    まる: whole
+    まるひと: whole
+    もう: another
+    数: some
+    たらず: less
+    以上: more
 ParserConfigurationUnitValueMap: !dictionary
   types: [string, long]
   entries:
@@ -858,9 +864,15 @@ DurationUnitValueMap: !dictionary
     MON: 2592000
     W: 604800
     D: 86400
+    BD: 86400
     H: 3600
     M: 60
     S: 1
+    whole: 1
+    another: 1
+    some: 2
+    more: 3
+    less: 4
 HolidayNoFixedTimex: !dictionary
   types: [string, string]
   entries:

@@ -117,6 +117,8 @@ FracSplitRegex: !simpleRegex
   def: '[はと]|分\s*の'
 ZeroToNineIntegerRegex: !simpleRegex
   def: '[〇一二三四五六七八九]'
+HalfUnitRegex: !simpleRegex
+  def: 半
 NegativeNumberTermsRegex: !simpleRegex
   def: (マ\s*イ\s*ナ\s*ス)
 NegativeNumberTermsRegexNum: !nestedRegex

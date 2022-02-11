@@ -22,6 +22,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
             DurationExtractor = new BaseCJKDurationExtractor(new KoreanDurationExtractorConfiguration(durationConfig), false);
 
             YearRegex = KoreanDurationExtractorConfiguration.YearRegex;
+            SomeRegex = KoreanDurationExtractorConfiguration.SomeRegex;
+            MoreOrLessRegex = KoreanDurationExtractorConfiguration.MoreOrLessRegex;
             DurationUnitRegex = KoreanDurationExtractorConfiguration.DurationUnitRegex;
             DurationConnectorRegex = KoreanDurationExtractorConfiguration.DurationConnectorRegex;
 
@@ -34,6 +36,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
         public IParser InternalParser { get; }
 
         public Regex YearRegex { get; }
+
+        public Regex SomeRegex { get; }
+
+        public Regex MoreOrLessRegex { get; }
 
         public Regex DurationUnitRegex { get; }
 

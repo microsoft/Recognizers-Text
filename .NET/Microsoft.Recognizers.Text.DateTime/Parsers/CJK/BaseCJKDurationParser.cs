@@ -30,6 +30,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             var referenceTime = refDate;
 
             var dateTimeParseResult = ParseMergedDuration(er.Text, referenceTime);
+
+            if (!dateTimeParseResult.Success)
+            {
+                dateTimeParseResult = DurationParsingUtil.ParseInexactNumberUnit(er.Text, this.config);
+            }
+
             if (!dateTimeParseResult.Success)
             {
                 var parseResult = this.config.InternalParser.Parse(er);
@@ -43,7 +49,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var unitStr = unitResult.Unit;
                 var number = string.IsNullOrEmpty(unitResult.Number) ? 1 : double.Parse(unitResult.Number, CultureInfo.InvariantCulture);
 
-                dateTimeParseResult.Timex = TimexUtility.GenerateDurationTimex(number, unitStr, BaseDurationParser.IsLessThanDay(unitStr));
+                dateTimeParseResult.Timex = TimexUtility.GenerateDurationTimex(number, unitStr, DurationParsingUtil.IsLessThanDay(unitStr));
                 dateTimeParseResult.FutureValue = dateTimeParseResult.PastValue = number * this.config.UnitValueMap[unitStr];
                 dateTimeParseResult.Success = true;
             }
@@ -59,6 +65,22 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         { TimeTypeConstants.DURATION, dateTimeParseResult.PastValue.ToString() },
                     };
+            }
+
+            if (dateTimeParseResult.Success)
+            {
+                var moreOrLessMatch = config.MoreOrLessRegex.Match(er.Text);
+                if (moreOrLessMatch.Success)
+                {
+                    if (moreOrLessMatch.Groups["less"].Success)
+                    {
+                        dateTimeParseResult.Mod = Constants.LESS_THAN_MOD;
+                    }
+                    else if (moreOrLessMatch.Groups["more"].Success)
+                    {
+                        dateTimeParseResult.Mod = Constants.MORE_THAN_MOD;
+                    }
+                }
             }
 
             var ret = new DateTimeParseResult

@@ -14,6 +14,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex YearRegex { get; }
 
+        Regex SomeRegex { get; }
+
+        Regex MoreOrLessRegex { get; }
+
         Regex DurationUnitRegex { get; }
 
         Regex DurationConnectorRegex { get; }

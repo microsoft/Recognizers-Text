@@ -46,6 +46,8 @@ class SpanishCurrencyParserConfiguration(SpanishNumberWithUnitParserConfiguratio
         super().__init__(culture_info)
         self.add_dict_to_unit_map(SpanishNumericWithUnit.CurrencySuffixList)
         self.add_dict_to_unit_map(SpanishNumericWithUnit.CurrencyPrefixList)
+        self.currency_name_to_iso_code_map = SpanishNumericWithUnit.CurrencyNameToIsoCodeMap
+        self.currency_fraction_code_list = SpanishNumericWithUnit.FractionalUnitNameToCodeMap
 
 
 class SpanishDimensionParserConfiguration(SpanishNumberWithUnitParserConfiguration):
