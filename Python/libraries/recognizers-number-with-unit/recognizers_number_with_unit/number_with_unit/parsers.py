@@ -284,7 +284,8 @@ class BaseCurrencyParser(Parser):
 
     def __get_number_value(self, number_value):
         if number_value:
-            return '{:g}'.format(number_value)
+            return self.config.culture_info.format(number_value) if self.config.culture_info is not None \
+                else repr(number_value)
         else:
             return None
 
