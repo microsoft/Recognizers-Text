@@ -7,7 +7,7 @@ import regex
 from recognizers_text.utilities import RegExpUtility
 from ..utilities import DateTimeResolutionResult
 from ..base_time import BaseTimeParser
-from .time_parser_config import PortugueseTimeParserConfiguration
+from .datetimeperiod_parser_config import PortugueseDateTimePeriodParserConfiguration
 
 
 class PortugueseTimeParser(BaseTimeParser):
