@@ -9,15 +9,15 @@ def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 
-NAME = 'recognizers-text-suite'
+NAME = 'recognizers-text-suite-genesys'
 VERSION = '1.0.7a0'
 REQUIRES = [
-    'recognizers-text-genesys==1.0.7a0',
-    'recognizers-text-number-genesys==1.0.7a0',
-    'recognizers-text-number-with-unit-genesys==1.0.7a0',
-    'recognizers-text-date-time-genesys==1.0.7a0',
-    'recognizers-text-sequence-genesys==1.0.7a0',
-    'recognizers-text-choice-genesys==1.0.7a0'
+    'recognizers-text-genesys==1.0.5a3',
+    'recognizers-text-number-genesys==1.0.5a3',
+    'recognizers-text-number-with-unit-genesys==1.0.5a3',
+    'recognizers-text-date-time-genesys==1.0.5a3',
+    'recognizers-text-sequence-genesys==1.0.5a3',
+    'recognizers-text-choice-genesys==1.0.5a3'
 ]
 
 setup(
