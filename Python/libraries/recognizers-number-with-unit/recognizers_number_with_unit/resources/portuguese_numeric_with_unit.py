@@ -724,5 +724,11 @@ class PortugueseNumericWithUnit:
                              ("Onça", "oz|onça|onca|onças|oncas"),
                              ("Grão", "grão|grao|grãos|graos|gr"),
                              ("Quilate", "ct|quilate|quilates")])
+    AngleSuffixList = dict([("Degree", "grau|graus|°"),
+                            ("Radian", "radiano|radianos|rad"),
+                            ("Turn", "volta|voltas")])
+    AmbiguousAngleUnitList = [r'volta', r'voltas']
     AmbiguityFiltersDict = dict([("null", "null")])
+    TemperatureAmbiguityFiltersDict = dict([("\\b(graus?|°)$", "\\b((graus?|°)\\s*(ângulo|rotação)|(gira(r|do|ndo)?|ângulo|rotação)(\\s+(\\p{L}+|\\d+)){0,4}\\s*(graus?\\b|°))")])
+    DimensionAmbiguityFiltersDict = dict([("\\b(graus?|°)$", "\\b((graus?|°)\\s*(c(elsius|entígrado)?|f(ah?renheit)?)|(temperatura)(\\s+(\\p{L}+|\\d+)){0,4}\\s*(graus?\\b|°))")])
 # pylint: enable=line-too-long

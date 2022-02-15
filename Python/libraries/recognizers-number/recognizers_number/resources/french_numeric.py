@@ -47,10 +47,12 @@ class FrenchNumeric:
     UnderHundredOrdinalRegex = f'(((({AllIntRegex}|{TensNumberIntegerRegex})(\\W)?)?({OneToNineOrdinalRegex}|\\s+et\\s+uni[eè]me))|{SpecialUnderHundredOrdinalRegex}|{TensOrdinalRegex})'
     UnderThousandOrdinalRegex = f'((({HundredOrdinalRegex}(\\s|-)?)?{UnderHundredOrdinalRegex})|(({AllIntRegex}(\\W)?)?{SimpleRoundOrdinalRegex})|{HundredOrdinalRegex})'
     OverThousandOrdinalRegex = f'(({AllIntRegex})(-i[eè]me))'
+    RelativeOrdinalRegex = f'(?<relativeOrdinal>prochain[es]?|pr[eé]c[eé]dent[es]?|(l[’\'])?actuel(le)?(\\s+une?)?|(l[’\'])?avant(\\s+|-)derniere?|(ant[eé])?p[eé]nulti[eè]me|derni[eè]r[es]?|suivant[es]?|courant[es]?|cel(le|ui)\\s+d[\'’]avant\\s+l[ae]\\s+derni[èe]re?)'
     ComplexOrdinalRegex = f'(({OverThousandOrdinalRegex}(\\s)?)?{UnderThousandOrdinalRegex}|{OverThousandOrdinalRegex}|{UnderHundredOrdinalRegex})'
     SuffixOrdinalRegex = f'(({AllIntRegex})({SimpleRoundOrdinalRegex}))'
     ComplexRoundOrdinalRegex = f'((({SuffixOrdinalRegex}(\\s)?)?{ComplexOrdinalRegex})|{SuffixOrdinalRegex})'
-    AllOrdinalRegex = f'({ComplexOrdinalRegex}|{SimpleRoundOrdinalRegex}|{ComplexRoundOrdinalRegex})'
+    AllOrdinalNumberRegex = f'({ComplexOrdinalRegex}|{SimpleRoundOrdinalRegex}|{ComplexRoundOrdinalRegex})'
+    AllOrdinalRegex = f'(?:{AllOrdinalNumberRegex}|{RelativeOrdinalRegex})'
     PlaceHolderPureNumber = f'\\b'
     PlaceHolderDefault = f'\\D|\\b'
     OrdinalSuffixRegex = f'(?<=\\b)((\\d*(11e(me)?|1[eè]re?|[02-9]e(me)?)))(?=\\b)'
@@ -60,8 +62,8 @@ class FrenchNumeric:
     FractionMultiplierRegex = f'(?<fracMultiplier>\\s+et\\s+(demi[es]?|(une?|{TwoToNineIntegerRegex})\\s+(demie?|tier|quart|(cinqui|sixi|septi|hui[tr]i|neuvi|dixi)[eè]me)s?))'
     RoundMultiplierWithFraction = f'(?<multiplier>(millions?|milliards?|billions?))(?={FractionMultiplierRegex}?$)'
     RoundMultiplierRegex = f'\\b\\s*({RoundMultiplierWithFraction}|(?<multiplier>(cent|mille))$)'
-    FractionNounRegex = f'(?<=\\b)({AllIntRegex}\\s+((et)\\s+)?)?({AllIntRegex}(\\s+((et)\\s)?)(({AllOrdinalRegex}s?|{SuffixOrdinalRegex}s?)|(demi[es]?|tiers?|quarts?))|(un\\s+)?(demi|tier|quart)(\\s+(de\\s+)?|\\s*-\\s*){RoundNumberIntegerRegex})(?=\\b)'
-    FractionNounWithArticleRegex = f'(?<=\\b)(({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\\s+(et\\s+)?)?((une?)(\\s+)(({AllOrdinalRegex})|({SuffixOrdinalRegex})|(et\\s+)?demi[es]?)|demi[es]?)(?=\\b)'
+    FractionNounRegex = f'(?<=\\b)({AllIntRegex}\\s+((et)\\s+)?)?({AllIntRegex}(\\s+((et)\\s)?)(({AllOrdinalNumberRegex}s?|{SuffixOrdinalRegex}s?)|(demi[es]?|tiers?|quarts?))|(un\\s+)?(demi|tier|quart)(\\s+(de\\s+)?|\\s*-\\s*){RoundNumberIntegerRegex})(?=\\b)'
+    FractionNounWithArticleRegex = f'(?<=\\b)(({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\\s+(et\\s+)?)?((une?)(\\s+)(({AllOrdinalNumberRegex})|({SuffixOrdinalRegex})|(et\\s+)?demi[es]?)|demi[es]?)(?=\\b)'
     FractionPrepositionRegex = f'(?<!{BaseNumbers.CommonCurrencySymbol}\\s*)(?<=\\b)(?<numerator>({AllIntRegex})|((?<!\\.)\\d+))\\s+sur\\s+(?<denominator>({AllIntRegex})|((\\d+)(?!\\.)))(?=\\b)'
     AllPointRegex = f'((\\s+{ZeroToNineIntegerRegex})+|(\\s+{SeparaIntRegex}))'
     AllFloatRegex = f'({AllIntRegex}(\\s+(virgule|point)){AllPointRegex})'
@@ -376,6 +378,138 @@ class FrenchNumeric:
                            ("b", 1000000000),
                            ("t", 1000000000000)])
     AmbiguityFiltersDict = dict([("^[.]", "")])
-    RelativeReferenceOffsetMap = dict([("", "")])
-    RelativeReferenceRelativeToMap = dict([("", "")])
+    RelativeReferenceOffsetMap = dict([("prochain", "1"),
+                                       ("prochaine", "1"),
+                                       ("prochains", "1"),
+                                       ("precedent", "-1"),
+                                       ("precedente", "-1"),
+                                       ("precédent", "-1"),
+                                       ("precédente", "-1"),
+                                       ("précedent", "-1"),
+                                       ("précedente", "-1"),
+                                       ("précédent", "-1"),
+                                       ("précédente", "-1"),
+                                       ("actuel", "0"),
+                                       ("actuelle", "0"),
+                                       ("actuel un", "0"),
+                                       ("actuelle une", "0"),
+                                       ("l'actuel", "0"),
+                                       ("l'actuelle", "0"),
+                                       ("l’actuel", "0"),
+                                       ("l’actuelle", "0"),
+                                       ("l'actuel un", "0"),
+                                       ("l'actuelle une", "0"),
+                                       ("l’actuel un", "0"),
+                                       ("l’actuelle une", "0"),
+                                       ("avant dernier", "-1"),
+                                       ("avant derniere", "-1"),
+                                       ("avant-dernier", "-1"),
+                                       ("avant-derniere", "-1"),
+                                       ("l'avant dernier", "-1"),
+                                       ("l'avant derniere", "-1"),
+                                       ("l'avant-dernier", "-1"),
+                                       ("l'avant-derniere", "-1"),
+                                       ("l’avant dernier", "-1"),
+                                       ("l’avant derniere", "-1"),
+                                       ("l’avant-dernier", "-1"),
+                                       ("l’avant-derniere", "-1"),
+                                       ("celle d'avant la dernière", "-1"),
+                                       ("celui d'avant le dernièr", "-1"),
+                                       ("celle d'avant la derniere", "-1"),
+                                       ("celui d'avant le dernier", "-1"),
+                                       ("celle d’avant la dernière", "-1"),
+                                       ("celui d’avant le dernièr", "-1"),
+                                       ("celle d’avant la derniere", "-1"),
+                                       ("celui d’avant le dernier", "-1"),
+                                       ("penultieme", "-1"),
+                                       ("penultième", "-1"),
+                                       ("pénultieme", "-1"),
+                                       ("pénultième", "-1"),
+                                       ("antepenultieme", "-2"),
+                                       ("antépenultieme", "-2"),
+                                       ("antepenultième", "-2"),
+                                       ("antépenultième", "-2"),
+                                       ("antepénultieme", "-2"),
+                                       ("antépénultieme", "-2"),
+                                       ("antepénultième", "-2"),
+                                       ("antépénultième", "-2"),
+                                       ("dernier", "0"),
+                                       ("dernièr", "0"),
+                                       ("derniere", "0"),
+                                       ("derniers", "0"),
+                                       ("dernière", "0"),
+                                       ("dernièrs", "0"),
+                                       ("suivant", "1"),
+                                       ("suivante", "1"),
+                                       ("suivants", "1"),
+                                       ("courant", "0"),
+                                       ("courante", "0"),
+                                       ("courants", "0")])
+    RelativeReferenceRelativeToMap = dict([("prochain", "current"),
+                                           ("prochaine", "current"),
+                                           ("prochains", "current"),
+                                           ("precedent", "current"),
+                                           ("precedente", "current"),
+                                           ("precédent", "current"),
+                                           ("precédente", "current"),
+                                           ("précedent", "current"),
+                                           ("précedente", "current"),
+                                           ("précédent", "current"),
+                                           ("précédente", "current"),
+                                           ("actuel", "current"),
+                                           ("actuelle", "current"),
+                                           ("actuel un", "current"),
+                                           ("actuelle une", "current"),
+                                           ("l'actuel", "current"),
+                                           ("l'actuelle", "current"),
+                                           ("l’actuel", "current"),
+                                           ("l’actuelle", "current"),
+                                           ("l'actuel un", "current"),
+                                           ("l'actuelle une", "current"),
+                                           ("l’actuel un", "current"),
+                                           ("l’actuelle une", "current"),
+                                           ("avant dernier", "end"),
+                                           ("avant-dernier", "end"),
+                                           ("avant derniere", "end"),
+                                           ("avant-derniere", "end"),
+                                           ("l'avant dernier", "end"),
+                                           ("l'avant-dernier", "end"),
+                                           ("l'avant derniere", "end"),
+                                           ("l'avant-derniere", "end"),
+                                           ("l’avant dernier", "end"),
+                                           ("l’avant-dernier", "end"),
+                                           ("l’avant derniere", "end"),
+                                           ("l’avant-derniere", "end"),
+                                           ("celle d'avant la dernière", "end"),
+                                           ("celui d'avant le dernièr", "end"),
+                                           ("celle d'avant la derniere", "end"),
+                                           ("celui d'avant le dernier", "end"),
+                                           ("celle d’avant la dernière", "end"),
+                                           ("celui d’avant le dernièr", "end"),
+                                           ("celle d’avant la derniere", "end"),
+                                           ("celui d’avant le dernier", "end"),
+                                           ("penultieme", "end"),
+                                           ("penultième", "end"),
+                                           ("pénultieme", "end"),
+                                           ("pénultième", "end"),
+                                           ("antepenultieme", "end"),
+                                           ("antépenultieme", "end"),
+                                           ("antepenultième", "end"),
+                                           ("antépenultième", "end"),
+                                           ("antepénultieme", "end"),
+                                           ("antépénultieme", "end"),
+                                           ("antepénultième", "end"),
+                                           ("antépénultième", "end"),
+                                           ("dernier", "end"),
+                                           ("dernièr", "end"),
+                                           ("derniere", "end"),
+                                           ("derniers", "end"),
+                                           ("dernière", "end"),
+                                           ("dernièrs", "end"),
+                                           ("suivant", "current"),
+                                           ("suivante", "current"),
+                                           ("suivants", "current"),
+                                           ("courant", "current"),
+                                           ("courante", "current"),
+                                           ("courants", "current")])
 # pylint: enable=line-too-long

@@ -42,19 +42,23 @@ class ItalianNumeric:
     OneToNineOrdinalRegex = f'(prim[oaie]|second[oaie]|terz[oaie]|quart[oaie]|quint[oaie]|sest[oaie]|settim[oaie]|ottav[oaie]|non[oaie])'
     NumberOrdinalRegex = f'(prim[oaie]|second[oaie]|terz[oaie]|quart[oaie]|quint[oaie]|sest[oaie]|settim[oaie]|ottav[oaie]|non[oaie]|decim[oaie]|undicesim[oaie]|dodicesim[oaie]|tredicesim[oaie]|quattordicesim[oaie]|quindicesim[oaie]|sedicesim[oaie]|diciassettesim[oaie]|diciottesim[oaie]|diciannovesim[oaie]|ventesim[oaie]|trentesim[oaie]|quarantesim[oaie]|cinquantesim[oaie]|sessantesim[oaie]|settantesim[oaie]|ottantesim[oaie]|novantesim[oaie])'
     OneToNineOrdinalCompoundRegex = f'(un|du|tre|quattr|cinqu|sei|sett|ott|nov)esim[oaie]'
-    RelativeOrdinalRegex = f'(precedente|seguente|penultim[oa]|terzultim[oa]|ultim[oa])'
-    BasicOrdinalRegex = f'(({NumberOrdinalRegex}|{RelativeOrdinalRegex})(?!\\s*({TwoToNineIntegerRegex}|([2-9]+))\\b))'
+    RelativeOrdinalRegex = f'(?<relativeOrdinal>precedent[ei]|seguent[ei]|prossim[aoei]|corrent[ei]|successiv[aoei]|penultim[oaei]|terzultim[oaei]|(l\')?(ultim[oaei]|attual[ei])|quell[ao]\\s+prima\\s+dell\'ultim[ao])'
+    BasicOrdinalRegex = f'({NumberOrdinalRegex}(?!\\s*({TwoToNineIntegerRegex}|([2-9]+))\\b))'
     SuffixBasicOrdinalRegex = f'((((({TensNumberIntegerRegex}{ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|({AnIntRegex})|{RoundNumberIntegerRegex})(\\s*{RoundNumberIntegerRegex})*)\\s*(e\\s+)?)*({TensNumberIntegerRegex}?{OneToNineOrdinalCompoundRegex}|{BasicOrdinalRegex}))'
     SuffixRoundNumberOrdinalRegex = f'(({AllIntRegex}\\s*)?{RoundNumberOrdinalRegex})'
-    AllOrdinalRegex = f'({SuffixRoundNumberOrdinalRegex}|{SuffixBasicOrdinalRegex})'
+    AllOrdinalNumberRegex = f'({SuffixRoundNumberOrdinalRegex}|{SuffixBasicOrdinalRegex})'
+    AllOrdinalRegex = f'(?:{AllOrdinalNumberRegex}|{RelativeOrdinalRegex})'
     OrdinalSuffixRegex = f'(?<=\\b)(\\d+(°|(esi)?m[oaie]))'
     OrdinalNumericRegex = f'(?<=\\b)(\\d{{1,3}}(\\s*,\\s*\\d{{3}})*(°|(esi)?m[oaie]))'
     OrdinalRoundNumberRegex = f'(?<!(un)\\s+){RoundNumberOrdinalRegex}'
     OrdinalItalianRegex = f'(?<=\\b){AllOrdinalRegex}(?=\\b)'
     FractionNotationWithSpacesRegex = f'(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s+(e\\s+)?\\d+[/]\\d+(?=(\\b[^/]|$))'
     FractionNotationRegex = f'{BaseNumbers.FractionNotationRegex}'
-    FractionNounRegex = f'(?<=\\b)({AllIntRegex}\\s+(e\\s+)?)?({AllIntRegex})(\\s+|\\s*-\\s*)(?!\\bprimo\\b|\\bsecondo\\b)(mezzi|({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))(?=\\b)'
-    FractionNounWithArticleRegex = f'(?<=\\b)(({AllIntRegex}\\s+e\\s+mezzo)|(({AllIntRegex}\\s+(e\\s+)?)?(un)(\\s+|\\s*-\\s*)(?!\\bprimo\\b|\\bsecondo\\b)(mezzo|({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))))(?=\\b)'
+    FractionMultiplierRegex = f'(?<fracMultiplier>\\s+e\\s+(mezzo|(un|{TwoToNineIntegerRegex})\\s+(mezz[oi]|quart[oi]|terz[oi]|quint[oi]|sest[oi]|settim[oi]|ottav[oi]|non[oi]|decim[oi])))'
+    RoundMultiplierWithFraction = f'(?<multiplier>(?:milion[ei]|miliard[oi]|bilion[ei]|trillion[ei]))(?={FractionMultiplierRegex}?$)'
+    RoundMultiplierRegex = f'\\b\\s*({RoundMultiplierWithFraction}|(?<multiplier>(cento|mille|mila))$)'
+    FractionNounRegex = f'(?<=\\b)({AllIntRegex}\\s+(e\\s+)?)?(({AllIntRegex})(\\s+|\\s*-\\s*)(?!\\bprimo\\b|\\bsecondo\\b)(mezzi|({AllOrdinalNumberRegex})|({RoundNumberOrdinalRegex}))|(mezzo|un\\s+quarto\\s+di)\\s+{RoundNumberIntegerRegex})(?=\\b)'
+    FractionNounWithArticleRegex = f'(?<=\\b)((({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\\s+(e\\s+)?)?((un)(\\s+|\\s*-\\s*)(?!\\bprimo\\b|\\bsecondo\\b)({AllOrdinalNumberRegex}|{RoundNumberOrdinalRegex})|(un\\s+)?mezzo))(?=\\b)'
     FractionPrepositionRegex = f'(?<!{BaseNumbers.CommonCurrencySymbol}\\s*)(?<=\\b)(?<numerator>({AllIntRegex})|((?<!\\.)\\d+))\\s+su\\s+(?<denominator>({AllIntRegex})|(\\d+)(?!\\.))(?=\\b)'
     AllPointRegex = f'((\\s+{ZeroToNineIntegerRegex})+|(\\s+{SeparaIntRegex}))'
     AllFloatRegex = f'({AllIntRegex}(\\s+(virgola|punto)){AllPointRegex})'
@@ -106,6 +110,7 @@ class ItalianNumeric:
     WrittenGroupSeparatorTexts = [r'punto']
     WrittenIntegerSeparatorTexts = [r'e', r'-']
     WrittenFractionSeparatorTexts = [r'e']
+    OneHalfTokens = [r'un', r'mezzo']
     HalfADozenRegex = f'mezza\\s+dozzina'
     DigitalNumberRegex = f'((?<=\\b)(cento|mille|milione|milioni|miliardo|miliardi|bilione|bilioni|trilione|trilioni|dozzina|dozzine)(?=\\b))|((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))'
     AmbiguousFractionConnectorsRegex = f'(\\bnel\\b)'
@@ -393,76 +398,70 @@ class ItalianNumeric:
                            ("b", 1000000000),
                            ("t", 1000000000000)])
     AmbiguityFiltersDict = dict([("^[.]", "")])
-    RelativeReferenceOffsetMap = dict([("ultimo", "0"),
-                                       ("ultima", "0"),
-                                       ("ultimi", "0"),
-                                       ("ultime", "0"),
-                                       ("successivo", "1"),
-                                       ("successiva", "1"),
-                                       ("successivi", "1"),
-                                       ("successive", "1"),
-                                       ("prossimo", "1"),
-                                       ("prossima", "1"),
-                                       ("prossimi", "1"),
-                                       ("prossime", "1"),
+    RelativeReferenceOffsetMap = dict([("precedente", "-1"),
+                                       ("precedenti", "-1"),
                                        ("seguente", "1"),
                                        ("seguenti", "1"),
-                                       ("precedente", "-1"),
-                                       ("precedenti", "-1"),
-                                       ("penultimo", "-1"),
+                                       ("prossima", "1"),
+                                       ("prossimo", "1"),
+                                       ("prossime", "1"),
+                                       ("prossimi", "1"),
+                                       ("corrente", "0"),
+                                       ("correnti", "0"),
+                                       ("attuale", "0"),
+                                       ("attuali", "0"),
+                                       ("l'attuale", "0"),
+                                       ("successiva", "1"),
+                                       ("successivo", "1"),
+                                       ("successive", "1"),
+                                       ("successivi", "1"),
                                        ("penultima", "-1"),
-                                       ("penultimi", "-1"),
+                                       ("penultimo", "-1"),
                                        ("penultime", "-1"),
-                                       ("terz'ultimo", "-2"),
-                                       ("terz'ultima", "-2"),
-                                       ("terz'ultimi", "-2"),
-                                       ("terz'ultime", "-2"),
-                                       ("terzultimo", "-2"),
+                                       ("penultimi", "-1"),
+                                       ("quello prima dell'ultimo", "-1"),
+                                       ("quella prima dell'ultima", "-1"),
                                        ("terzultima", "-2"),
-                                       ("terzultimi", "-2"),
+                                       ("terzultimo", "-2"),
                                        ("terzultime", "-2"),
-                                       ("quart'ultimo", "-3"),
-                                       ("quart'ultima", "-3"),
-                                       ("quart'ultimi", "-3"),
-                                       ("quart'ultime", "-3"),
-                                       ("quartultimo", "-3"),
-                                       ("quartultima", "-3"),
-                                       ("quartultimi", "-3"),
-                                       ("quartultime", "-3")])
-    RelativeReferenceRelativeToMap = dict([("ultimo", "end"),
-                                           ("ultima", "end"),
-                                           ("ultimi", "end"),
-                                           ("ultime", "end"),
-                                           ("successivo", "current"),
-                                           ("successiva", "current"),
-                                           ("successivi", "current"),
-                                           ("successive", "current"),
-                                           ("prossimo", "current"),
-                                           ("prossima", "current"),
-                                           ("prossimi", "current"),
-                                           ("prossime", "current"),
+                                       ("terzultimi", "-2"),
+                                       ("ultima", "0"),
+                                       ("ultimo", "0"),
+                                       ("ultime", "0"),
+                                       ("ultimi", "0"),
+                                       ("l'ultima", "0"),
+                                       ("l'ultimo", "0")])
+    RelativeReferenceRelativeToMap = dict([("precedente", "current"),
+                                           ("precedenti", "current"),
                                            ("seguente", "current"),
                                            ("seguenti", "current"),
-                                           ("precedente", "current"),
-                                           ("precedenti", "current"),
-                                           ("penultimo", "end"),
+                                           ("prossima", "current"),
+                                           ("prossimo", "current"),
+                                           ("prossime", "current"),
+                                           ("prossimi", "current"),
+                                           ("corrente", "current"),
+                                           ("correnti", "current"),
+                                           ("attuale", "current"),
+                                           ("attuali", "current"),
+                                           ("l'attuale", "current"),
+                                           ("successiva", "current"),
+                                           ("successivo", "current"),
+                                           ("successive", "current"),
+                                           ("successivi", "current"),
                                            ("penultima", "end"),
-                                           ("penultimi", "end"),
+                                           ("penultimo", "end"),
                                            ("penultime", "end"),
-                                           ("terz'ultimo", "end"),
-                                           ("terz'ultima", "end"),
-                                           ("terz'ultimi", "end"),
-                                           ("terz'ultime", "end"),
-                                           ("terzultimo", "end"),
+                                           ("penultimi", "end"),
+                                           ("quello prima dell'ultimo", "end"),
+                                           ("quella prima dell'ultima", "end"),
                                            ("terzultima", "end"),
-                                           ("terzultimi", "end"),
+                                           ("terzultimo", "end"),
                                            ("terzultime", "end"),
-                                           ("quart'ultimo", "end"),
-                                           ("quart'ultima", "end"),
-                                           ("quart'ultimi", "end"),
-                                           ("quart'ultime", "end"),
-                                           ("quartultimo", "end"),
-                                           ("quartultima", "end"),
-                                           ("quartultimi", "end"),
-                                           ("quartultime", "end")])
+                                           ("terzultimi", "end"),
+                                           ("ultima", "end"),
+                                           ("ultimo", "end"),
+                                           ("ultime", "end"),
+                                           ("ultimi", "end"),
+                                           ("l'ultima", "end"),
+                                           ("l'ultimo", "end")])
 # pylint: enable=line-too-long
