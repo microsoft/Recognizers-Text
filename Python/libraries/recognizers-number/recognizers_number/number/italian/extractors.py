@@ -7,12 +7,12 @@ import regex
 from recognizers_text.utilities import RegExpUtility
 from recognizers_number.number.models import NumberMode, LongFormatMode
 from recognizers_number.resources import BaseNumbers
-from recognizers_number.resources.german_numeric import GermanNumeric
+from recognizers_number.resources.italian_numeric import ItalianNumeric
 from recognizers_number.number.extractors import ReVal, ReRe, BaseNumberExtractor, BasePercentageExtractor, BaseMergedNumberExtractor
 from recognizers_number.number.constants import Constants
 
 
-class GermanNumberExtractor(BaseNumberExtractor):
+class ItalianNumberExtractor(BaseNumberExtractor):
     @property
     def regexes(self) -> List[ReVal]:
         return self.__regexes
@@ -31,35 +31,35 @@ class GermanNumberExtractor(BaseNumberExtractor):
 
     def __init__(self, mode: NumberMode = NumberMode.DEFAULT):
         self.__negative_number_terms = RegExpUtility.get_safe_reg_exp(
-            GermanNumeric.NegativeNumberTermsRegex)
+            ItalianNumeric.NegativeNumberTermsRegex)
         self.__regexes: List[ReVal] = list()
-        cardinal_ex: GermanCardinalExtractor = None
+        cardinal_ex: ItalianCardinalExtractor = None
 
         if mode is NumberMode.PURE_NUMBER:
-            cardinal_ex = GermanCardinalExtractor(
-                GermanNumeric.PlaceHolderPureNumber)
+            cardinal_ex = ItalianCardinalExtractor(
+                ItalianNumeric.PlaceHolderPureNumber)
         elif mode is NumberMode.CURRENCY:
             self.__regexes.append(ReVal(re=RegExpUtility.get_safe_reg_exp(
-                GermanNumeric.CurrencyRegex), val='IntegerNum'))
+                ItalianNumeric.CurrencyRegex), val='IntegerNum'))
 
         if cardinal_ex is None:
-            cardinal_ex = GermanCardinalExtractor()
+            cardinal_ex = ItalianCardinalExtractor()
 
         self.__regexes.extend(cardinal_ex.regexes)
 
-        fraction_ex = GermanFractionExtractor(mode)
+        fraction_ex = ItalianFractionExtractor(mode)
         self.__regexes.extend(fraction_ex.regexes)
 
         ambiguity_filters_dict: List[ReRe] = list()
 
         if mode != NumberMode.Unit:
-            for key, value in GermanNumeric.AmbiguityFiltersDict.items():
+            for key, value in ItalianNumeric.AmbiguityFiltersDict.items():
                 ambiguity_filters_dict.append(ReRe(reKey=RegExpUtility.get_safe_reg_exp(key),
                                                    reVal=RegExpUtility.get_safe_reg_exp(value)))
         self.__ambiguity_filters_dict = ambiguity_filters_dict
 
 
-class GermanCardinalExtractor(BaseNumberExtractor):
+class ItalianCardinalExtractor(BaseNumberExtractor):
     @property
     def regexes(self) -> List[ReVal]:
         return self.__regexes
@@ -68,19 +68,19 @@ class GermanCardinalExtractor(BaseNumberExtractor):
     def _extract_type(self) -> str:
         return Constants.SYS_NUM_CARDINAL
 
-    def __init__(self, placeholder: str = GermanNumeric.PlaceHolderDefault):
+    def __init__(self, placeholder: str = ItalianNumeric.PlaceHolderDefault):
         self.__regexes: List[ReVal] = list()
 
         # Add integer regexes
-        integer_ex = GermanIntegerExtractor(placeholder)
+        integer_ex = ItalianIntegerExtractor(placeholder)
         self.__regexes.extend(integer_ex.regexes)
 
         # Add double regexes
-        double_ex = GermanDoubleExtractor(placeholder)
+        double_ex = ItalianDoubleExtractor(placeholder)
         self.__regexes.extend(double_ex.regexes)
 
 
-class GermanIntegerExtractor(BaseNumberExtractor):
+class ItalianIntegerExtractor(BaseNumberExtractor):
     @property
     def regexes(self) -> List[NamedTuple('re_val', [('re', Pattern), ('val', str)])]:
         return self.__regexes
@@ -89,15 +89,15 @@ class GermanIntegerExtractor(BaseNumberExtractor):
     def _extract_type(self) -> str:
         return Constants.SYS_NUM_INTEGER
 
-    def __init__(self, placeholder: str = GermanNumeric.PlaceHolderDefault):
+    def __init__(self, placeholder: str = ItalianNumeric.PlaceHolderDefault):
         self.__regexes = [
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
-                    GermanNumeric.NumbersWithPlaceHolder(placeholder)),
+                    ItalianNumeric.NumbersWithPlaceHolder(placeholder)),
                 val='IntegerNum'),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
-                    GermanNumeric.NumbersWithSuffix, regex.S),
+                    ItalianNumeric.NumbersWithSuffix, regex.S),
                 val='IntegerNum'),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(self._generate_format_regex(
@@ -113,24 +113,24 @@ class GermanIntegerExtractor(BaseNumberExtractor):
                 val='IntegerNum'),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
-                    GermanNumeric.RoundNumberIntegerRegexWithLocks),
+                    ItalianNumeric.RoundNumberIntegerRegexWithLocks),
                 val='IntegerNum'),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
-                    GermanNumeric.NumbersWithDozenSuffix),
+                    ItalianNumeric.NumbersWithDozenSuffix),
                 val='IntegerNum'),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
-                    GermanNumeric.AllIntRegexWithLocks),
-                val='IntegerGer'),
+                    ItalianNumeric.AllIntRegexWithLocks),
+                val=f'Integer{ItalianNumeric.LangMarker}'),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
-                    GermanNumeric.AllIntRegexWithDozenSuffixLocks),
-                val='IntegerGer')
+                    ItalianNumeric.AllIntRegexWithDozenSuffixLocks),
+                val=f'Integer{ItalianNumeric.LangMarker}')
         ]
 
 
-class GermanDoubleExtractor(BaseNumberExtractor):
+class ItalianDoubleExtractor(BaseNumberExtractor):
     @property
     def regexes(self) -> List[NamedTuple('re_val', [('re', Pattern), ('val', str)])]:
         return self.__regexes
@@ -143,11 +143,11 @@ class GermanDoubleExtractor(BaseNumberExtractor):
         self.__regexes = [
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
-                    GermanNumeric.DoubleDecimalPointRegex(placeholder)),
+                    ItalianNumeric.DoubleDecimalPointRegex(placeholder)),
                 val='DoubleNum'),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
-                    GermanNumeric.DoubleWithoutIntegralRegex(placeholder)),
+                    ItalianNumeric.DoubleWithoutIntegralRegex(placeholder)),
                 val='DoubleNum'),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(self._generate_format_regex(
@@ -159,28 +159,28 @@ class GermanDoubleExtractor(BaseNumberExtractor):
                 val='DoubleNum'),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
-                    GermanNumeric.DoubleWithMultiplierRegex, regex.S),
+                    ItalianNumeric.DoubleWithMultiplierRegex, regex.S),
                 val='DoubleNum'),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
-                    GermanNumeric.DoubleWithRoundNumber),
+                    ItalianNumeric.DoubleWithRoundNumber),
                 val='DoubleNum'),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
-                    GermanNumeric.DoubleAllFloatRegex),
-                val='DoubleGer'),
+                    ItalianNumeric.DoubleAllFloatRegex),
+                val=f'Double{ItalianNumeric.LangMarker}'),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
-                    GermanNumeric.DoubleExponentialNotationRegex),
+                    ItalianNumeric.DoubleExponentialNotationRegex),
                 val='DoublePow'),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
-                    GermanNumeric.DoubleCaretExponentialNotationRegex),
+                    ItalianNumeric.DoubleCaretExponentialNotationRegex),
                 val='DoublePow')
         ]
 
 
-class GermanFractionExtractor(BaseNumberExtractor):
+class ItalianFractionExtractor(BaseNumberExtractor):
     @property
     def regexes(self) -> List[NamedTuple('re_val', [('re', Pattern), ('val', str)])]:
         return self.__regexes
@@ -193,31 +193,31 @@ class GermanFractionExtractor(BaseNumberExtractor):
         self.__regexes = [
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
-                    GermanNumeric.FractionNotationWithSpacesRegex),
+                    ItalianNumeric.FractionNotationWithSpacesRegex),
                 val='FracNum'),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
-                    GermanNumeric.FractionNotationRegex),
+                    ItalianNumeric.FractionNotationRegex),
                 val='FracNum'),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
-                    GermanNumeric.FractionNounRegex),
-                val='FracGer'),
+                    ItalianNumeric.FractionNounRegex),
+                val=f'Frac{ItalianNumeric.LangMarker}'),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
-                    GermanNumeric.FractionNounWithArticleRegex),
-                val='FracGer')
+                    ItalianNumeric.FractionNounWithArticleRegex),
+                val=f'Frac{ItalianNumeric.LangMarker}')
         ]
 
         if mode != NumberMode.Unit:
             self.__regexes.append(
                 ReVal(
                     re=RegExpUtility.get_safe_reg_exp(
-                        GermanNumeric.FractionPrepositionRegex),
-                    val='FracGer'))
+                        ItalianNumeric.FractionPrepositionRegex),
+                    val=f'Frac{ItalianNumeric.LangMarker}'))
 
 
-class GermanOrdinalExtractor(BaseNumberExtractor):
+class ItalianOrdinalExtractor(BaseNumberExtractor):
     @property
     def regexes(self) -> List[NamedTuple('re_val', [('re', Pattern), ('val', str)])]:
         return self.__regexes
@@ -229,40 +229,40 @@ class GermanOrdinalExtractor(BaseNumberExtractor):
     def __init__(self):
         self.__regexes = [
             ReVal(
-                re=GermanNumeric.OrdinalSuffixRegex,
+                re=ItalianNumeric.OrdinalSuffixRegex,
                 val='OrdinalNum'),
             ReVal(
-                re=GermanNumeric.OrdinalNumericRegex,
+                re=ItalianNumeric.OrdinalNumericRegex,
                 val='OrdinalNum'),
             ReVal(
-                re=GermanNumeric.OrdinalGermanRegex,
-                val='OrdGer'),
+                re=ItalianNumeric.OrdinalItalianRegex,
+                val=f'Ord{ItalianNumeric.LangMarker}'),
             ReVal(
-                re=GermanNumeric.OrdinalRoundNumberRegex,
-                val='OrdGer')
+                re=ItalianNumeric.OrdinalRoundNumberRegex,
+                val=f'Ord{ItalianNumeric.LangMarker}')
         ]
 
 
-class GermanPercentageExtractor(BasePercentageExtractor):
+class ItalianPercentageExtractor(BasePercentageExtractor):
     def __init__(self):
-        super().__init__(GermanNumberExtractor(NumberMode.DEFAULT))
+        super().__init__(ItalianNumberExtractor(NumberMode.DEFAULT))
 
     def get_definitions(self) -> List[str]:
         return [
-            GermanNumeric.NumberWithSuffixPercentage,
-            GermanNumeric.NumberWithPrefixPercentage
+            ItalianNumeric.NumberWithSuffixPercentage,
+            ItalianNumeric.NumberWithPrefixPercentage
         ]
 
 
-class GermanMergedNumberExtractor(BaseMergedNumberExtractor):
+class ItalianMergedNumberExtractor(BaseMergedNumberExtractor):
 
     @property
     def _round_number_integer_regex_with_locks(self) -> Pattern:
-        return RegExpUtility.get_safe_reg_exp(GermanNumeric.RoundNumberIntegerRegexWithLocks)
+        return RegExpUtility.get_safe_reg_exp(ItalianNumeric.RoundNumberIntegerRegexWithLocks)
 
     @property
     def _connector_regex(self) -> Pattern:
-        return RegExpUtility.get_safe_reg_exp(GermanNumeric.ConnectorRegex)
+        return RegExpUtility.get_safe_reg_exp(ItalianNumeric.ConnectorRegex)
 
     def __init__(self, mode: NumberMode = NumberMode.DEFAULT):
-        self._number_extractor = GermanNumberExtractor(mode)
+        self._number_extractor = ItalianNumberExtractor(mode)

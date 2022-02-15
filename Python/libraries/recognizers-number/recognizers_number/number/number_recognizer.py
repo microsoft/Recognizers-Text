@@ -6,7 +6,8 @@ from typing import List
 from recognizers_text import Culture, Recognizer, Model
 from recognizers_number.number.models import NumberMode, NumberModel, OrdinalModel, PercentModel, ModelResult
 from recognizers_number.number.parser_factory import ParserType, AgnosticNumberParserFactory
-from recognizers_number.number.english.extractors import EnglishNumberExtractor, EnglishOrdinalExtractor, EnglishPercentageExtractor
+from recognizers_number.number.english.extractors import EnglishNumberExtractor, EnglishOrdinalExtractor, \
+    EnglishPercentageExtractor, EnglishMergedNumberExtractor
 from recognizers_number.number.english.parsers import EnglishNumberParserConfiguration
 from recognizers_number.number.spanish.extractors import SpanishNumberExtractor, SpanishOrdinalExtractor, SpanishPercentageExtractor
 from recognizers_number.number.chinese.extractors import ChineseNumberExtractor, ChineseOrdinalExtractor, ChinesePercentageExtractor
@@ -18,8 +19,10 @@ from recognizers_number.number.portuguese.extractors import PortugueseNumberExtr
 from recognizers_number.number.portuguese.parsers import PortugueseNumberParserConfiguration
 from recognizers_number.number.french.extractors import FrenchNumberExtractor, FrenchOrdinalExtractor, FrenchPercentageExtractor
 from recognizers_number.number.french.parsers import FrenchNumberParserConfiguration
-from recognizers_number.number.german.extractors import GermanNumberExtractor, GermanOrdinalExtractor, GermanPercentageExtractor
+from recognizers_number.number.german.extractors import GermanMergedNumberExtractor, GermanOrdinalExtractor, GermanPercentageExtractor
 from recognizers_number.number.german.parsers import GermanNumberParserConfiguration
+from recognizers_number.number.italian.extractors import ItalianMergedNumberExtractor, ItalianOrdinalExtractor, ItalianPercentageExtractor
+from recognizers_number.number.italian.parsers import ItalianNumberParserConfiguration
 
 
 class NumberOptions(IntFlag):
@@ -37,7 +40,7 @@ class NumberRecognizer(Recognizer[NumberOptions]):
         self.register_model('NumberModel', Culture.English, lambda options: NumberModel(
             AgnosticNumberParserFactory.get_parser(
                 ParserType.NUMBER, EnglishNumberParserConfiguration()),
-            EnglishNumberExtractor(NumberMode.PURE_NUMBER)
+            EnglishMergedNumberExtractor(NumberMode.PURE_NUMBER)
         ))
         self.register_model('OrdinalModel', Culture.English, lambda options: OrdinalModel(
             AgnosticNumberParserFactory.get_parser(
@@ -52,21 +55,21 @@ class NumberRecognizer(Recognizer[NumberOptions]):
         # endregion
 
         # region German
-        # self.register_model('NumberModel', Culture.German, lambda options: NumberModel(
-        #    AgnosticNumberParserFactory.get_parser(
-        #        ParserType.NUMBER, GermanNumberParserConfiguration()),
-        #    GermanNumberExtractor(NumberMode.PURE_NUMBER)
-        # ))
-        # self.register_model('OrdinalModel', Culture.German, lambda options: OrdinalModel(
-        #    AgnosticNumberParserFactory.get_parser(
-        #        ParserType.ORDINAL, GermanNumberParserConfiguration()),
-        #    GermanOrdinalExtractor()
-        # ))
-        # self.register_model('PercentModel', Culture.German, lambda options: PercentModel(
-        #    AgnosticNumberParserFactory.get_parser(
-        #        ParserType.PERCENTAGE, GermanNumberParserConfiguration()),
-        #    GermanPercentageExtractor()
-        # ))
+        self.register_model('NumberModel', Culture.German, lambda options: NumberModel(
+           AgnosticNumberParserFactory.get_parser(
+               ParserType.NUMBER, GermanNumberParserConfiguration()),
+           GermanMergedNumberExtractor(NumberMode.PURE_NUMBER)
+        ))
+        self.register_model('OrdinalModel', Culture.German, lambda options: OrdinalModel(
+           AgnosticNumberParserFactory.get_parser(
+               ParserType.ORDINAL, GermanNumberParserConfiguration()),
+           GermanOrdinalExtractor()
+        ))
+        self.register_model('PercentModel', Culture.German, lambda options: PercentModel(
+           AgnosticNumberParserFactory.get_parser(
+               ParserType.PERCENTAGE, GermanNumberParserConfiguration()),
+           GermanPercentageExtractor()
+        ))
         # endregion
 
         # region Chinese
@@ -156,6 +159,24 @@ class NumberRecognizer(Recognizer[NumberOptions]):
             AgnosticNumberParserFactory.get_parser(
                 ParserType.PERCENTAGE, FrenchNumberParserConfiguration()),
             FrenchPercentageExtractor()
+        ))
+        # endregion
+
+        # region Italian
+        self.register_model('NumberModel', Culture.Italian, lambda options: NumberModel(
+            AgnosticNumberParserFactory.get_parser(
+                ParserType.NUMBER, ItalianNumberParserConfiguration()),
+            ItalianMergedNumberExtractor(NumberMode.PURE_NUMBER)
+        ))
+        self.register_model('OrdinalModel', Culture.Italian, lambda options: OrdinalModel(
+            AgnosticNumberParserFactory.get_parser(
+                ParserType.ORDINAL, ItalianNumberParserConfiguration()),
+            ItalianOrdinalExtractor()
+        ))
+        self.register_model('PercentModel', Culture.Italian, lambda options: PercentModel(
+            AgnosticNumberParserFactory.get_parser(
+                ParserType.PERCENTAGE, ItalianNumberParserConfiguration()),
+            ItalianPercentageExtractor()
         ))
         # endregion
 

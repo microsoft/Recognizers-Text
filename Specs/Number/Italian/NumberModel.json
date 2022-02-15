@@ -1,7 +1,7 @@
 [
   {
     "Input": "cinque",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "cinque",
@@ -14,7 +14,7 @@
   },
   {
     "Input": "trenta",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "trenta",
@@ -170,7 +170,7 @@
   },
   {
     "Input": "192.",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "192",
@@ -217,7 +217,7 @@
   },
   {
     "Input": "Prenota un posto di prima classe per seattle",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "un",
@@ -230,22 +230,22 @@
   },
   {
     "Input": "il liquido da 180,25ml",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": []
   },
   {
     "Input": "il liquido da 180ml",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": []
   },
   {
     "Input": " strada di 29km",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": []
   },
   {
     "Input": " il 4 maggio ",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "4",
@@ -258,12 +258,12 @@
   },
   {
     "Input": "il liquido da 0,25ml",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": []
   },
   {
     "Input": "0,08",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "0,08",
@@ -276,7 +276,7 @@
   },
   {
     "Input": "un",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "un",
@@ -289,7 +289,7 @@
   },
   {
     "Input": "un'",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "un",
@@ -302,7 +302,7 @@
   },
   {
     "Input": "uno",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "uno",
@@ -315,7 +315,7 @@
   },
   {
     "Input": "una",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "una",
@@ -328,7 +328,7 @@
   },
   {
     "Input": "0,23456000",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "0,23456000",
@@ -341,7 +341,7 @@
   },
   {
     "Input": "4,800",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "4,800",
@@ -367,7 +367,7 @@
   },
   {
     "Input": "sedici",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "sedici",
@@ -380,7 +380,7 @@
   },
   {
     "Input": "due terzi",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "due terzi",
@@ -432,7 +432,7 @@
   },
   {
     "Input": "un bilionesimo",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "un bilionesimo",
@@ -445,7 +445,7 @@
   },
   {
     "Input": "cento bilionesimi",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "cento bilionesimi",
@@ -458,7 +458,7 @@
   },
   {
     "Input": "un miliardesimo",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "un miliardesimo",
@@ -471,7 +471,7 @@
   },
   {
     "Input": "cento miliardesimi",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "cento miliardesimi",
@@ -484,7 +484,7 @@
   },
   {
     "Input": " mezza dozzina",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "mezza dozzina",
@@ -497,7 +497,7 @@
   },
   {
     "Input": " 3 dozzine",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "3 dozzine",
@@ -510,7 +510,7 @@
   },
   {
     "Input": "una dozzina",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "una dozzina",
@@ -523,7 +523,7 @@
   },
   {
     "Input": " tre dozzine ",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "tre dozzine",
@@ -562,7 +562,7 @@
   },
   {
     "Input": "1, 234, 567",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "1",
@@ -589,7 +589,7 @@
   },
   {
     "Input": "9,2321312",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "9,2321312",
@@ -602,7 +602,7 @@
   },
   {
     "Input": " -9,2321312",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "-9,2321312",
@@ -615,7 +615,7 @@
   },
   {
     "Input": " -1",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "-1",
@@ -628,7 +628,7 @@
   },
   {
     "Input": "-4/5",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "-4/5",
@@ -641,7 +641,7 @@
   },
   {
     "Input": "-1 e 4/5",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "-1 e 4/5",
@@ -654,7 +654,7 @@
   },
   {
     "Input": "tre",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "tre",
@@ -667,7 +667,7 @@
   },
   {
     "Input": " 123456789101231",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "123456789101231",
@@ -680,7 +680,7 @@
   },
   {
     "Input": "-123456789101231",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "-123456789101231",
@@ -693,7 +693,7 @@
   },
   {
     "Input": " -123456789101231",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "-123456789101231",
@@ -706,7 +706,7 @@
   },
   {
     "Input": "1",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "1",
@@ -719,7 +719,7 @@
   },
   {
     "Input": "10k",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "10k",
@@ -732,7 +732,7 @@
   },
   {
     "Input": "10G",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "10g",
@@ -745,7 +745,7 @@
   },
   {
     "Input": "- 10  k",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "- 10  k",
@@ -758,7 +758,7 @@
   },
   {
     "Input": "2 milioni",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2 milioni",
@@ -771,7 +771,7 @@
   },
   {
     "Input": "1 bilione",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "1 bilione",
@@ -784,7 +784,7 @@
   },
   {
     "Input": "2 bilioni",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2 bilioni",
@@ -797,7 +797,7 @@
   },
   {
     "Input": "2 miliardi",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2 miliardi",
@@ -810,7 +810,7 @@
   },
   {
     "Input": " tre ",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "tre",
@@ -823,7 +823,7 @@
   },
   {
     "Input": "un bilione",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "un bilione",
@@ -914,7 +914,7 @@
   },
   {
     "Input": " 2,33 k",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2,33 k",
@@ -966,7 +966,7 @@
   },
   {
     "Input": "1e10",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "1e10",
@@ -979,7 +979,7 @@
   },
   {
     "Input": "1,1^23",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "1,1^23",
@@ -992,7 +992,7 @@
   },
   {
     "Input": "settanta",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "settanta",
@@ -1005,7 +1005,7 @@
   },
   {
     "Input": "2 e 1/4",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2 e 1/4",
@@ -1018,7 +1018,7 @@
   },
   {
     "Input": "2 1/4",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2 1/4",
@@ -1031,7 +1031,7 @@
   },
   {
     "Input": "3/4",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "3/4",
@@ -1044,7 +1044,7 @@
   },
   {
     "Input": "un ottavo",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "un ottavo",
@@ -1057,7 +1057,7 @@
   },
   {
     "Input": "un decimo",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "un decimo",
@@ -1070,7 +1070,7 @@
   },
   {
     "Input": "cinque ottavi",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "cinque ottavi",
@@ -1083,7 +1083,7 @@
   },
   {
     "Input": "un mezzo",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "un mezzo",
@@ -1096,7 +1096,7 @@
   },
   {
     "Input": "tre quarti",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "tre quarti",
@@ -1109,7 +1109,7 @@
   },
   {
     "Input": "venti e tre quinti",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "venti e tre quinti",
@@ -1213,7 +1213,7 @@
   },
   {
     "Input": "tre mezzi",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "tre mezzi",
@@ -1226,7 +1226,7 @@
   },
   {
     "Input": "due e un mezzo",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "due e un mezzo",
@@ -1239,7 +1239,7 @@
   },
   {
     "Input": "due e tre quarti",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "due e tre quarti",
@@ -1252,7 +1252,7 @@
   },
   {
     "Input": "uno e un quarto",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "uno e un quarto",
@@ -1265,7 +1265,7 @@
   },
   {
     "Input": "cinque e un quarto",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "cinque e un quarto",
@@ -1278,7 +1278,7 @@
   },
   {
     "Input": "cento e tre quarti",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "cento e tre quarti",
@@ -1291,7 +1291,7 @@
   },
   {
     "Input": "un centesimo",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "un centesimo",
@@ -1304,7 +1304,7 @@
   },
   {
     "Input": "due centesimo",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "due centesimo",
@@ -1317,7 +1317,7 @@
   },
   {
     "Input": "1,1^+23",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "1,1^+23",
@@ -1330,7 +1330,7 @@
   },
   {
     "Input": "2,5^-1",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2,5^-1",
@@ -1343,7 +1343,7 @@
   },
   {
     "Input": "-2500^-1",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "-2500^-1",
@@ -1356,7 +1356,7 @@
   },
   {
     "Input": "-1,1^+23",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "-1,1^+23",
@@ -1369,7 +1369,7 @@
   },
   {
     "Input": "-2,5^-1",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "-2,5^-1",
@@ -1382,7 +1382,7 @@
   },
   {
     "Input": "-1,1^--23",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "-1,1^--23",
@@ -1395,7 +1395,7 @@
   },
   {
     "Input": "-127,32e13",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "-127,32e13",
@@ -1408,7 +1408,7 @@
   },
   {
     "Input": "12,32e+14",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "12,32e+14",
@@ -1421,7 +1421,7 @@
   },
   {
     "Input": "-12e-1",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "-12e-1",
@@ -1434,7 +1434,7 @@
   },
   {
     "Input": "1,2b",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "1,2b",
@@ -1447,7 +1447,7 @@
   },
   {
     "Input": "un quinto",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "un quinto",
@@ -1473,7 +1473,7 @@
   },
   {
     "Input": "tre quinti",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "tre quinti",
@@ -1486,7 +1486,7 @@
   },
   {
     "Input": "venti quinti",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "venti quinti",
@@ -1499,7 +1499,7 @@
   },
   {
     "Input": "tre e un quinto",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "tre e un quinto",
@@ -1525,7 +1525,7 @@
   },
   {
     "Input": "un ventunesimo",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "un ventunesimo",
@@ -1694,7 +1694,7 @@
   },
   {
     "Input": "uno su tre",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "uno su tre",
@@ -1733,7 +1733,7 @@
   },
   {
     "Input": "1 su tre",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "1 su tre",
@@ -1746,7 +1746,7 @@
   },
   {
     "Input": "1 su 3",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "1 su 3",
@@ -1759,7 +1759,7 @@
   },
   {
     "Input": "uno su 3",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "uno su 3",
@@ -1772,7 +1772,7 @@
   },
   {
     "Input": "uno su 20",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "uno su 20",
@@ -1785,7 +1785,7 @@
   },
   {
     "Input": "uno su venti",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "uno su venti",
@@ -1798,7 +1798,7 @@
   },
   {
     "Input": "uno su cento",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "uno su cento",
@@ -1824,7 +1824,7 @@
   },
   {
     "Input": "apri un ticket",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "un",
@@ -1837,7 +1837,7 @@
   },
   {
     "Input": "apri due ticket",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "due",
@@ -1850,12 +1850,12 @@
   },
   {
     "Input": "tr",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": []
   },
   {
     "Input": "ha compiuto settant'anni",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "settant",
@@ -1868,7 +1868,7 @@
   },
   {
     "Input": "ha compiuto settant anni",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Comment": "Elided expressions (e.g. 'settant') should be recognized only in compound numbers or when followed by an apostrophe",
     "Results": []
   },
