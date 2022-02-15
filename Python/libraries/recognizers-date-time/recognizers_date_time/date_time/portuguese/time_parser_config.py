@@ -61,12 +61,8 @@ class PortugueseTimeParserConfiguration(TimeParserConfiguration):
             PortugueseDateTime.LessThanOneHour)
         self.time_suffix_full = RegExpUtility.get_safe_reg_exp(
             PortugueseDateTime.TimeSuffix)
-        self.lunch_regex = RegExpUtility.get_safe_reg_exp(
-            PortugueseDateTime.LunchRegex)
         self.night_regex = RegExpUtility.get_safe_reg_exp(
             PortugueseDateTime.NightRegex)
-        self.ish_regex = RegExpUtility.get_safe_reg_exp(
-            PortugueseDateTime.IshRegex)
 
     def adjust_by_prefix(self, prefix: str, adjust: AdjustParams):
         delta_min = 0

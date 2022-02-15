@@ -11,6 +11,7 @@ from ..extractors import DateTimeExtractor
 from ..base_timeperiod import TimePeriodExtractorConfiguration, MatchedIndex
 from ..base_time import BaseTimeExtractor
 from ..base_timezone import BaseTimeZoneExtractor
+from .base_configs import PortugueseDateTimeUtilityConfiguration
 from .time_extractor_config import PortugueseTimeExtractorConfiguration
 from .timezone_extractor_config import PortugueseTimeZoneExtractorConfiguration
 from ..utilities import DateTimeOptions

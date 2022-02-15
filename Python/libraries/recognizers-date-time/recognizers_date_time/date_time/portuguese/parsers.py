@@ -6,6 +6,7 @@ import regex
 
 from recognizers_text.utilities import RegExpUtility
 from ..utilities import DateTimeResolutionResult
+from ..base_datetimeperiod import BaseDateTimePeriodParser
 from ..base_time import BaseTimeParser
 from .datetimeperiod_parser_config import PortugueseDateTimePeriodParserConfiguration
 
