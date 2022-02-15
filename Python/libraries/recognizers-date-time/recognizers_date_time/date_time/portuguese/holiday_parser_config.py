@@ -187,3 +187,18 @@ class PortugueseHolidayParserConfiguration(BaseHolidayParserConfiguration):
     @staticmethod
     def juneteenth(year: int) -> datetime:
         return datetime(year, 6, 19)
+
+    def get_swift_year(self, text: str) -> int:
+        trimmed_text = text.strip().lower()
+        swift = -10
+
+        if self.next_prefix_regex.search(trimmed_text):
+            swift = 1
+
+        if self.previous_prefix_regex.search(trimmed_text):
+            swift = -1
+
+        if self.this_prefix_regex.search(trimmed_text):
+            swift = 0
+
+        return swift
