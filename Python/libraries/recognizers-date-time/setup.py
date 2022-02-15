@@ -11,12 +11,8 @@ def read(fname):
 
 NAME = 'recognizers-text-date-time-genesys'
 VERSION = '1.0.7a2'
-REQUIRES = [
-    'recognizers-text-genesys==1.0.7a2', 
-    'recognizers-text-number-genesys==1.0.7a2',
-    'recognizers-text-number-with-unit-genesys==1.0.7a2', 
-    'regex', 
-    'datedelta']
+REQUIRES = ['recognizers-text-genesys', 'recognizers-text-number-genesys',
+            'recognizers-text-number-with-unit-genesys', 'regex', 'datedelta']
 
 setup(
     name=NAME,
