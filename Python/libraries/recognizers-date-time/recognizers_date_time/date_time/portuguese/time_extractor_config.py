@@ -13,6 +13,18 @@ from .timezone_extractor_config import PortugueseTimeZoneExtractorConfiguration
 
 class PortugueseTimeExtractorConfiguration(TimeExtractorConfiguration):
     @property
+    def time_zone_extractor(self):
+        return self._time_zone_extractor
+
+    @property
+    def options(self):
+        return self._options
+
+    @property
+    def dmy_date_format(self) -> bool:
+        return self._dmy_date_format
+
+    @property
     def time_regex_list(self) -> List[Pattern]:
         return self._time_regex_list
 
@@ -27,78 +39,6 @@ class PortugueseTimeExtractorConfiguration(TimeExtractorConfiguration):
     @property
     def time_before_after_regex(self) -> Pattern:
         return self._time_before_after_regex
-
-    @property
-    def time_zone_extractor(self) -> DateTimeExtractor:
-        return self._time_zone_extractor
-
-    @property
-    def desc_regex(self) -> Pattern:
-        return self._desc_regex
-
-    @property
-    def hour_num_regex(self) -> Pattern:
-        return self._hour_num_regex
-
-    @property
-    def minute_num_regex(self) -> Pattern:
-        return self._minute_num_regex
-
-    @property
-    def oclock_regex(self) -> Pattern:
-        return self._oclock_regex
-
-    @property
-    def pm_regex(self) -> Pattern:
-        return self._pm_regex
-
-    @property
-    def am_regex(self) -> Pattern:
-        return self._am_regex
-
-    @property
-    def less_than_one_hour(self) -> Pattern:
-        return self._less_than_one_hour
-
-    @property
-    def written_time_regex(self) -> Pattern:
-        return self._written_time_regex
-
-    @property
-    def time_prefix(self) -> Pattern:
-        return self._time_prefix
-
-    @property
-    def time_suffix(self) -> Pattern:
-        return self._time_suffix
-
-    @property
-    def basic_time(self) -> Pattern:
-        return self._basic_time
-
-    @property
-    def midnight_regex(self) -> Pattern:
-        return self._midnight_regex
-
-    @property
-    def midmorning_regex(self) -> Pattern:
-        return self._midmorning_regex
-
-    @property
-    def midafternoon_regex(self) -> Pattern:
-        return self._midafternoon_regex
-
-    @property
-    def midday_regex(self) -> Pattern:
-        return self._midday_regex
-
-    @property
-    def midtime_regex(self) -> Pattern:
-        return self._midtime_regex
-
-    @property
-    def time_unit_regex(self) -> Pattern:
-        return self._time_unit_regex
 
     def __init__(self):
         super().__init__()

@@ -191,26 +191,23 @@ class PortugueseDateParserConfiguration(DateParserConfiguration):
         self._check_both_before_after = PortugueseDateTime.CheckBothBeforeAfter
 
     def get_swift_day(self, source: str) -> int:
-        trimmed_text = source.strip().lower()
+        trimmed_text = self.__normalize(source.strip().lower())
         swift = 0
-        matches = regex.search(
-            PortugueseDateParserConfiguration._relative_day_regex, source)
-        if trimmed_text == 'today':
+
+        # TODO: add the relative day logic if needed. If yes, the whole method should be abstracted.
+        if trimmed_text == 'hoje' or trimmed_text == 'este dia':
             swift = 0
-        elif trimmed_text == 'tomorrow' or trimmed_text == 'tmr':
+        elif trimmed_text == 'amanha' or trimmed_text == 'de amanha' or trimmed_text.endswith('dia seguinte') \
+                or trimmed_text.endswith('o dia de amanha') or trimmed_text.endswith('proximo dia'):
             swift = 1
-        elif trimmed_text == 'yesterday':
+        elif trimmed_text == 'ontem':
             swift = -1
-        elif trimmed_text.endswith('day after tomorrow') or trimmed_text.endswith('day after tmr'):
+        elif trimmed_text.endswith('dia depois de amanha') or trimmed_text.endswith('depois de amanha'):
             swift = 2
-        elif trimmed_text.endswith('day before yesterday'):
+        elif trimmed_text.endswith('anteontem') or trimmed_text.endswith('dia antes de ontem'):
             swift = -2
-        elif trimmed_text.endswith('day after'):
-            swift = 1
-        elif trimmed_text.endswith('day before'):
+        elif trimmed_text.endswith('ultimo dia'):
             swift = -1
-        elif matches:
-            swift = self.get_swift(source)
 
         return swift
 
@@ -234,3 +231,7 @@ class PortugueseDateParserConfiguration(DateParserConfiguration):
     def is_cardinal_last(self, source: str) -> bool:
         trimmed_text = source.strip().lower()
         return trimmed_text == 'last'
+
+    def __normalize(self, source: str) -> str:
+        return source.replace('á', 'a').replace('é', 'e').replace('í', 'i').replace('ó', 'o').replace('ú', 'u')\
+            .replace('ê', 'e').replace('ô', 'o').replace('ü', 'u').replace('ã', 'a').replace('õ', 'o').replace('ç', 'c')

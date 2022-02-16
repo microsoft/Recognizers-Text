@@ -135,6 +135,10 @@ class PortugueseDateTimeParserConfiguration(DateTimeParserConfiguration):
         self._duration_parser = config.duration_parser
         self._unit_map = config.unit_map
         self._utility_configuration = config.utility_configuration
+        self.previous_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            PortugueseDateTime.PreviousPrefixRegex)
+        self.next_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            PortugueseDateTime.NextPrefixRegex)
 
     def have_ambiguous_token(self, source: str, matched_text: str) -> bool:
         return False
@@ -142,31 +146,41 @@ class PortugueseDateTimeParserConfiguration(DateTimeParserConfiguration):
     def get_matched_now_timex(self, source: str) -> MatchedTimex:
         source = source.strip().lower()
 
-        if source.endswith('now'):
+        if source.endswith('agora') or source.endswith('mesmo') or source.endswith('momento'):
             return MatchedTimex(True, 'PRESENT_REF')
-        elif source in ['recently', 'previously']:
-            return MatchedTimex(True, 'PAST_REF')
-        elif source in ['as soon as possible', 'asap']:
-            return MatchedTimex(True, 'FUTURE_REF')
+        elif (
+                source.endswith('possivel') or source.endswith('possa') or
+                source.endswith('possas') or source.endswith('possamos') or
+                source.endswith('possam')
+        ):
+            timex = 'FUTURE_REF'
+        elif source.endswith('mente'):
+            timex = 'PAST_REF'
+        else:
+            return MatchedTimex(False, None)
 
-        return MatchedTimex(False, None)
+        return MatchedTimex(True, timex)
 
     def get_swift_day(self, source: str) -> int:
         source = source.strip().lower()
+        swift = 0
 
-        if source.startswith('next'):
-            return 1
-        elif source.startswith('last'):
-            return -1
+        if self.previous_prefix_regex.search(source):
+            swift = -1
+        elif self.next_prefix_regex.search(source):
+            swift = 1
 
-        return 0
+        return swift
 
     def get_hour(self, source: str, hour: int) -> int:
         source = source.strip().lower()
+        result = hour
 
-        if source.endswith('morning') and hour >= 12:
-            return hour - 12
-        elif not source.endswith('morning') and hour < 12 and not (source.endswith('night') and hour < 6):
-            return hour + 12
+        # TODO: replace with a regex
+        if (source.endswith('manha') or source.endswith('madrugada')) and hour >= 12:
+            result -= 12
+        elif not (source.endswith('manha') or source.endswith('madrugada')) and hour < 12:
+            result += 12
 
-        return hour
+        return result
+

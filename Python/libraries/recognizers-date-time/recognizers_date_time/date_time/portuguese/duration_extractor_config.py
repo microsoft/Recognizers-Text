@@ -13,12 +13,20 @@ from ..base_duration import DurationExtractorConfiguration
 class PortugueseDurationExtractorConfiguration(DurationExtractorConfiguration):
 
     @property
+    def check_both_before_after(self) -> bool:
+        return self._check_both_before_after
+
+    @property
     def special_number_unit_regex(self):
         return self._special_number_unit_regex
 
     @property
     def check_both_before_after(self):
         return self._check_both_before_after
+
+    @property
+    def dmy_date_format(self) -> bool:
+        return self._dmy_date_format
 
     @property
     def all_regex(self) -> Pattern:
@@ -53,6 +61,14 @@ class PortugueseDurationExtractorConfiguration(DurationExtractorConfiguration):
         return self._relative_duration_unit_regex
 
     @property
+    def more_than_regex(self) -> Pattern:
+        return self._more_than_regex
+
+    @property
+    def less_than_regex(self) -> Pattern:
+        return self._less_than_regex
+
+    @property
     def cardinal_extractor(self) -> BaseNumberExtractor:
         return self._cardinal_extractor
 
@@ -75,22 +91,6 @@ class PortugueseDurationExtractorConfiguration(DurationExtractorConfiguration):
     @property
     def duration_connector_regex(self) -> Pattern:
         return self._duration_connector_regex
-
-    @property
-    def more_than_regex(self) -> Pattern:
-        return self._more_than_regex
-
-    @property
-    def less_than_regex(self) -> Pattern:
-        return self._less_than_regex
-
-    @property
-    def conjunction_regex(self) -> Pattern:
-        return self._conjunction_regex
-
-    @property
-    def inexact_number_regex(self) -> Pattern:
-        return self._inexact_number_regex
 
     def __init__(self):
         super().__init__()

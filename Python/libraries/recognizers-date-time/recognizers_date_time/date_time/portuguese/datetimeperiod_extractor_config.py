@@ -25,10 +25,29 @@ from ..utilities import DateTimeOptions
 
 
 class PortugueseDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfiguration):
+    @property
+    def future_regex(self) -> BaseNumberExtractor:
+        return self._future_regex
+
+    @property
+    def past_regex(self) -> BaseNumberExtractor:
+        return self._past_regex
 
     @property
     def check_both_before_after(self) -> Pattern:
         return self._check_both_before_after
+
+    @property
+    def suffix_regex(self) -> Pattern:
+        return self._suffix_regex
+
+    @property
+    def options(self):
+        return self._options
+
+    @property
+    def dmy_date_format(self) -> bool:
+        return self._dmy_date_format
 
     @property
     def cardinal_extractor(self) -> BaseNumberExtractor:
@@ -111,6 +130,10 @@ class PortugueseDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConf
         return self._rest_of_date_time_regex
 
     @property
+    def week_day_regex(self) -> Pattern:
+        return self._week_day_regex
+
+    @property
     def general_ending_regex(self) -> Pattern:
         return self._general_ending_regex
 
@@ -119,12 +142,12 @@ class PortugueseDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConf
         return self._middle_pause_regex
 
     @property
-    def token_before_date(self) -> str:
-        return self._token_before_date
-
-    @property
     def within_next_prefix_regex(self) -> Pattern:
         return self._within_next_prefix_regex
+
+    @property
+    def token_before_date(self) -> str:
+        return self._token_before_date
 
     @property
     def future_suffix_regex(self) -> Pattern:
@@ -153,14 +176,6 @@ class PortugueseDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConf
     @property
     def after_regex(self) -> Pattern:
         return self._after_regex
-
-    @property
-    def suffix_regex(self) -> Pattern:
-        return self._suffix_regex
-
-    @property
-    def week_day_regex(self) -> Pattern:
-        return self._week_day_regex
 
     def __init__(self):
         super().__init__()

@@ -12,6 +12,7 @@ from ..base_date import DateExtractorConfiguration
 from ..utilities import DateTimeUtilityConfiguration
 from .duration_extractor_config import PortugueseDurationExtractorConfiguration
 from .base_configs import PortugueseDateTimeUtilityConfiguration
+from ..constants import Constants
 from ...resources.base_date_time import BaseDateTime
 
 
@@ -21,7 +22,7 @@ class PortugueseDateExtractorConfiguration(DateExtractorConfiguration):
         return self._week_day_start
 
     @property
-    def check_both_before_after(self) -> Pattern:
+    def check_both_before_after(self) -> bool:
         return self._check_both_before_after
 
     @property
@@ -39,10 +40,6 @@ class PortugueseDateExtractorConfiguration(DateExtractorConfiguration):
     @property
     def week_day_end(self) -> Pattern:
         return self._week_day_end
-
-    @property
-    def week_day_start(self) -> Pattern:
-        return self._week_day_start
 
     @property
     def of_month(self) -> Pattern:
@@ -136,36 +133,36 @@ class PortugueseDateExtractorConfiguration(DateExtractorConfiguration):
     def week_day_and_day_regex(self) -> Pattern:
         return self._week_day_and_day_regex
 
-    @property
-    def month_regex(self) -> Pattern:
-        return self._month_regex
-
-    @property
-    def month_num_regex(self) -> Pattern:
-        return self._month_num_regex
-
-    @property
-    def year_regex(self) -> Pattern:
-        return self._year_regex
-
-    @property
-    def month_suffix_regex(self) -> Pattern:
-        return self._month_suffix_regex
-
     def __init__(self):
-        self._check_both_before_after = PortugueseDateTime.CheckBothBeforeAfter
+        self._check_both_before_after = False
+        if PortugueseDateTime.DefaultLanguageFallback == Constants.DEFAULT_LANGUAGE_FALLBACK_DMY:
+            date_extractor_4 = PortugueseDateTime.DateExtractor5
+            date_extractor_5 = PortugueseDateTime.DateExtractor4
+            date_extractor_6 = PortugueseDateTime.DateExtractor8
+            date_extractor_8 = PortugueseDateTime.DateExtractor6
+            date_extractor_7 = PortugueseDateTime.DateExtractor9
+            date_extractor_9 = PortugueseDateTime.DateExtractor7
+        else:
+            date_extractor_4 = PortugueseDateTime.DateExtractor4
+            date_extractor_5 = PortugueseDateTime.DateExtractor5
+            date_extractor_6 = PortugueseDateTime.DateExtractor6
+            date_extractor_8 = PortugueseDateTime.DateExtractor8
+            date_extractor_7 = PortugueseDateTime.DateExtractor7
+            date_extractor_9 = PortugueseDateTime.DateExtractor9
+
         self._date_regex_list = [
             RegExpUtility.get_safe_reg_exp(PortugueseDateTime.DateExtractor1),
+            RegExpUtility.get_safe_reg_exp(PortugueseDateTime.DateExtractor2),
             RegExpUtility.get_safe_reg_exp(PortugueseDateTime.DateExtractor3),
-            RegExpUtility.get_safe_reg_exp(PortugueseDateTime.DateExtractor4),
-            RegExpUtility.get_safe_reg_exp(PortugueseDateTime.DateExtractor5),
-            RegExpUtility.get_safe_reg_exp(PortugueseDateTime.DateExtractor6),
-            RegExpUtility.get_safe_reg_exp(PortugueseDateTime.DateExtractor7),
-            RegExpUtility.get_safe_reg_exp(PortugueseDateTime.DateExtractor8),
-            RegExpUtility.get_safe_reg_exp(PortugueseDateTime.DateExtractor9),
+            RegExpUtility.get_safe_reg_exp(date_extractor_4),
+            RegExpUtility.get_safe_reg_exp(date_extractor_5),
+            RegExpUtility.get_safe_reg_exp(date_extractor_6),
+            RegExpUtility.get_safe_reg_exp(date_extractor_7),
+            RegExpUtility.get_safe_reg_exp(date_extractor_8),
+            RegExpUtility.get_safe_reg_exp(date_extractor_9),
             RegExpUtility.get_safe_reg_exp(PortugueseDateTime.DateExtractor10),
-            RegExpUtility.get_safe_reg_exp(PortugueseDateTime.DateExtractor11),
         ]
+
         self._implicit_date_list = [
             RegExpUtility.get_safe_reg_exp(PortugueseDateTime.OnRegex),
             RegExpUtility.get_safe_reg_exp(PortugueseDateTime.RelaxedOnRegex),
@@ -173,11 +170,10 @@ class PortugueseDateExtractorConfiguration(DateExtractorConfiguration):
             RegExpUtility.get_safe_reg_exp(PortugueseDateTime.ThisRegex),
             RegExpUtility.get_safe_reg_exp(PortugueseDateTime.LastDateRegex),
             RegExpUtility.get_safe_reg_exp(PortugueseDateTime.NextDateRegex),
+            RegExpUtility.get_safe_reg_exp(PortugueseDateTime.WeekDayRegex),
             RegExpUtility.get_safe_reg_exp(
                 PortugueseDateTime.WeekDayOfMonthRegex),
             RegExpUtility.get_safe_reg_exp(PortugueseDateTime.SpecialDateRegex),
-            RegExpUtility.get_safe_reg_exp(PortugueseDateTime.SpecialDayWithNumRegex),
-            RegExpUtility.get_safe_reg_exp(PortugueseDateTime.RelativeWeekDayRegex)
         ]
         self._month_end = RegExpUtility.get_safe_reg_exp(
             PortugueseDateTime.MonthEndRegex)
@@ -217,9 +213,6 @@ class PortugueseDateExtractorConfiguration(DateExtractorConfiguration):
         self._week_day_end = RegExpUtility.get_safe_reg_exp(
             PortugueseDateTime.WeekDayEnd
         )
-        self._week_day_start = RegExpUtility.get_safe_reg_exp(
-            PortugueseDateTime.WeekDayStart
-        )
         self._more_than_regex = RegExpUtility.get_safe_reg_exp(
             PortugueseDateTime.MoreThanRegex
         )
@@ -242,19 +235,3 @@ class PortugueseDateExtractorConfiguration(DateExtractorConfiguration):
             PortugueseDateTime.WeekDayStart
         )
         self._check_both_before_after = PortugueseDateTime.CheckBothBeforeAfter
-
-        self._month_regex = RegExpUtility.get_safe_reg_exp(
-            PortugueseDateTime.MonthRegex
-        )
-        self._month_num_regex = RegExpUtility.get_safe_reg_exp(
-            PortugueseDateTime.MonthNumRegex
-        )
-        self._year_regex = RegExpUtility.get_safe_reg_exp(
-            PortugueseDateTime.YearRegex
-        )
-        self._day_regex = RegExpUtility.get_safe_reg_exp(
-            PortugueseDateTime.DayRegex
-        )
-        self._month_suffix_regex = RegExpUtility.get_safe_reg_exp(
-            PortugueseDateTime.MonthSuffixRegex
-        )
