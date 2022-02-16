@@ -12,6 +12,7 @@ from ..parsers import DateTimeParser
 from ..utilities import DateTimeUtilityConfiguration
 from ..base_date import DateParserConfiguration
 from ..base_configs import BaseDateParserConfiguration
+from .date_extractor_config import PortugueseDateExtractorConfiguration
 
 
 class PortugueseDateParserConfiguration(DateParserConfiguration):
@@ -150,18 +151,8 @@ class PortugueseDateParserConfiguration(DateParserConfiguration):
         self._day_of_week = config.day_of_week
         self._unit_map = config.unit_map
         self._cardinal_map = config.cardinal_map
-        self._date_regex = [
-            RegExpUtility.get_safe_reg_exp(PortugueseDateTime.DateExtractor1),
-            RegExpUtility.get_safe_reg_exp(PortugueseDateTime.DateExtractor3),
-            RegExpUtility.get_safe_reg_exp(PortugueseDateTime.DateExtractor4),
-            RegExpUtility.get_safe_reg_exp(PortugueseDateTime.DateExtractor5),
-            RegExpUtility.get_safe_reg_exp(PortugueseDateTime.DateExtractor6),
-            RegExpUtility.get_safe_reg_exp(PortugueseDateTime.DateExtractor7),
-            RegExpUtility.get_safe_reg_exp(PortugueseDateTime.DateExtractor8),
-            RegExpUtility.get_safe_reg_exp(PortugueseDateTime.DateExtractor9),
-            RegExpUtility.get_safe_reg_exp(PortugueseDateTime.DateExtractor10),
-            RegExpUtility.get_safe_reg_exp(PortugueseDateTime.DateExtractor11),
-        ]
+        self._date_regex = (
+            PortugueseDateExtractorConfiguration()).date_regex_list
         self._on_regex = RegExpUtility.get_safe_reg_exp(
             PortugueseDateTime.OnRegex)
         self._special_day_regex = RegExpUtility.get_safe_reg_exp(
