@@ -11,7 +11,7 @@ def read(fname):
 
 
 NAME = 'datatypes_timex_expression_genesys'
-VERSION = '1.0.7a4'
+VERSION = '1.0.7a5'
 REQUIRES = []
 
 setup(

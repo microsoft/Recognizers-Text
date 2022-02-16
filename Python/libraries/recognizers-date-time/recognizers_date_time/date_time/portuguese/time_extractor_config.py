@@ -40,6 +40,14 @@ class PortugueseTimeExtractorConfiguration(TimeExtractorConfiguration):
     def time_before_after_regex(self) -> Pattern:
         return self._time_before_after_regex
 
+    @property
+    def pm_regex(self) -> Pattern:
+        return self._pm_regex
+
+    @property
+    def am_regex(self) -> Pattern:
+        return self._am_regex
+
     def __init__(self):
         super().__init__()
         self._desc_regex = RegExpUtility.get_safe_reg_exp(

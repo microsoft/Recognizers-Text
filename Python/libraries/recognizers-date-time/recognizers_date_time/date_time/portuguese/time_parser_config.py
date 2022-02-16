@@ -108,17 +108,7 @@ class PortugueseTimeParserConfiguration(TimeParserConfiguration):
                 if pm_str:
                     if adjust.hour < 12:
                         delta_hour = 12
-                    if regex.search(self.lunch_regex, pm_str):
-                        # for hour >= 10 and < 12
-                        if 10 <= adjust.hour <= 12:
-                            delta_hour = 0
-                            if adjust.hour == 12:
-                                adjust.has_pm = True
-                            else:
-                                adjust.has_am = True
-                        else:
-                            adjust.has_pm = True
-                    elif regex.search(self.night_regex, pm_str):
+                    if regex.search(self.night_regex, pm_str):
                         if adjust.hour <= 3 or adjust.hour == 12:
                             if adjust.hour == 12:
                                 adjust.hour = 0
