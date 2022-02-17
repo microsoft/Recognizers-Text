@@ -1306,7 +1306,6 @@
   },
   {
     "Input": "Rolling Stone observó, \"Harpercollins adquirió el proyecto de libro por $ 3 milhoes en 2008.",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "$ 3 milhoes",
@@ -1382,7 +1381,6 @@
   },
   {
     "Input": "Fue una de las mayores adquisiciones de Coke desde que compró Odwalla Inc. por $ 186 milhões en 2001.",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "$ 186 milhões",
