@@ -517,7 +517,7 @@ class PortugueseDateTime:
     DecadeWithCenturyRegex = f'^[.]'
     RelativeDecadeRegex = f'^[.]'
     YearSuffix = f'((,|\\sde)?\\s*({YearRegex}|{FullTextYearRegex}))'
-    SuffixAfterRegex = f'^[.]'
+    SuffixAfterRegex = f'^\\b$'
     YearPeriodRegex = f'^[.]'
     FutureSuffixRegex = f'\\b(seguinte(s)?|pr[oó]xim[oa](s)?|no\\s+futuro)\\b'
     PastSuffixRegex = f'^\\b$'
