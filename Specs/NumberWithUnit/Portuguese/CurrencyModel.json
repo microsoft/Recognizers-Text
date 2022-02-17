@@ -1216,7 +1216,6 @@
   },
   {
     "Input": "Según la firma de investigación NPD, el precio de venta promedio de todas las PC portátiles de las ventanas ha caído de $ 659 en octubre de 2008 a",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "$ 659",
@@ -1307,6 +1306,7 @@
   },
   {
     "Input": "Rolling Stone observó, \"Harpercollins adquirió el proyecto de libro por $ 3 milhoes en 2008.",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "$ 3 milhoes",
