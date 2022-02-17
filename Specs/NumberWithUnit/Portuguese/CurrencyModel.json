@@ -1216,6 +1216,7 @@
   },
   {
     "Input": "Según la firma de investigación NPD, el precio de venta promedio de todas las PC portátiles de las ventanas ha caído de $ 659 en octubre de 2008 a",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "$ 659",
@@ -1381,6 +1382,7 @@
   },
   {
     "Input": "Fue una de las mayores adquisiciones de Coke desde que compró Odwalla Inc. por $ 186 milhões en 2001.",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "$ 186 milhões",
