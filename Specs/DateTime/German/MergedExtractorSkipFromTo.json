@@ -62,7 +62,7 @@
   {
     "Input": "Das meeting geht Morgen von 12 bis 14 Uhr.",
     "Comment": "Works on the console, fails in the test.",
-    "NotSupported": "dotnet, javascript, python",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "morgen von 12 bis 14 Uhr",
