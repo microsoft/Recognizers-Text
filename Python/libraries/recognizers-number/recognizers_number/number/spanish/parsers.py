@@ -84,6 +84,8 @@ class SpanishNumberParserConfiguration(NumberParserConfiguration):
     def __init__(self, culture_info=None):
         if culture_info is None:
             culture_info = CultureInfo(Culture.Spanish)
+        else:
+            culture_info = CultureInfo(culture_info)
 
         self._culture_info = culture_info
         self._lang_marker = SpanishNumeric.LangMarker
@@ -97,6 +99,12 @@ class SpanishNumberParserConfiguration(NumberParserConfiguration):
         self._written_group_separator_texts = SpanishNumeric.WrittenGroupSeparatorTexts
         self._written_integer_separator_texts = SpanishNumeric.WrittenIntegerSeparatorTexts
         self._written_fraction_separator_texts = SpanishNumeric.WrittenFractionSeparatorTexts
+
+        self.is_non_standard_separator_variant = culture_info.code in SpanishNumeric.NonStandardSeparatorVariants
+
+        if self.is_non_standard_separator_variant:
+            self._decimal_separator_char = SpanishNumeric.NonDecimalSeparatorChar
+            self._non_decimal_separator_char = SpanishNumeric.DecimalSeparatorChar
 
         ordinal_number_map: Dict[str, int] = dict(
             SpanishNumeric.OrdinalNumberMap)
