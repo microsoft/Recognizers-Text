@@ -617,11 +617,5 @@ class FrenchNumericWithUnit:
                              ("Tonne", "tonne|tonnes|-tonnes|-tonne"),
                              ("Livre", "livre|livres")])
     AmbiguousWeightUnitList = [r'g', r'oz']
-    AngleSuffixList = dict([("Degree", "degré|degrés|degre|degres|deg|°"),
-                            ("Radian", "radian|radians|rad"),
-                            ("Turn", "tour|tours")])
-    AmbiguousAngleUnitList = [r'tour', r'tours']
     AmbiguityFiltersDict = dict([("\\bcent\\b", "\\bpour\\s+cent\\b")])
-    TemperatureAmbiguityFiltersDict = dict([("\\b(deg(r[eé]s?)?|°)$", "\\b((deg(r[eé]s?)?|°)\\s*(angle|rotation)|(tourn([eé]|er|ant)|rotation|angle)(\\s+(\\p{L}+|\\d+)){0,4}\\s*(deg(r[eé]s?)?\\b|°))")])
-    DimensionAmbiguityFiltersDict = dict([("\\b(deg(r[eé]s?)?|°)$", "\\b((deg(r[eé]s?)?|°)\\s*(c(elsius|entigrade)?|f(ah?renheit)?)|(temp[eé]rature)(\\s+(\\p{L}+|\\d+)){0,4}\\s*(deg(r[eé]s?)?\\b|°))")])
 # pylint: enable=line-too-long

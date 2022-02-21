@@ -729,11 +729,5 @@ class SpanishNumericWithUnit:
                              ("Onza", "oz|onza|onzas"),
                              ("Grano", "grano|granos"),
                              ("Quilate", "ct|quilate|quilates")])
-    AngleSuffixList = dict([("Degree", "grado|grados|°"),
-                            ("Radian", "radián|radian|radianes|rad"),
-                            ("Turn", "vuelta|vueltas")])
-    AmbiguousAngleUnitList = [r'vuelta', r'vueltas']
     AmbiguityFiltersDict = dict([("null", "null")])
-    TemperatureAmbiguityFiltersDict = dict([("\\b(grados?|°)$", "\\b((grados?|°)\\s*(angolo|rotaci[oó]n)|(gira(r|do|torio)?|angolo|rotaci[oó]n)(\\s+(\\p{L}+|\\d+)){0,4}\\s*(grados?\\b|°))")])
-    DimensionAmbiguityFiltersDict = dict([("\\b(grados?|°)$", "\\b((grados?|°)\\s*(c(elsius|entígrado)?|f(ah?renheit)?)|(temperatura)(\\s+(\\p{L}+|\\d+)){0,4}\\s*(grados?\\b|°))")])
 # pylint: enable=line-too-long

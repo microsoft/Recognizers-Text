@@ -51,12 +51,10 @@ class SpanishNumeric:
     UnderHundredOrdinalRegex = f'({SpecialUnderHundredOrdinalRegex}|(({TensOrdinalRegex}(\\s)?)?{OneToNineOrdinalRegex})|{TensOrdinalRegex})'
     UnderThousandOrdinalRegex = f'((({HundredOrdinalRegex}(\\s)?)?{UnderHundredOrdinalRegex})|{HundredOrdinalRegex})'
     OverThousandOrdinalRegex = f'(({AllIntRegex})([eé]sim[oa]))'
-    RelativeOrdinalRegex = f'(?<relativeOrdinal>(antes\\s+de|anterior\\s+a)(l|\\s+la)\\s+[uú]ltim[ao]|((ante)?pen)?[uú]ltim[ao]s?|pr[oó]xim[ao]s?|anterior(es)?|actual(es)?|siguientes?)'
     ComplexOrdinalRegex = f'(({OverThousandOrdinalRegex}(\\s)?)?{UnderThousandOrdinalRegex}|{OverThousandOrdinalRegex})'
     SufixRoundOrdinalRegex = f'(({AllIntRegex})({SimpleRoundOrdinalRegex}))'
     ComplexRoundOrdinalRegex = f'((({SufixRoundOrdinalRegex}(\\s)?)?{ComplexOrdinalRegex})|{SufixRoundOrdinalRegex})'
-    AllOrdinalNumberRegex = f'{ComplexOrdinalRegex}|{SimpleRoundOrdinalRegex}|{ComplexRoundOrdinalRegex}'
-    AllOrdinalRegex = f'(?:{AllOrdinalNumberRegex}|{RelativeOrdinalRegex})'
+    AllOrdinalRegex = f'{ComplexOrdinalRegex}|{SimpleRoundOrdinalRegex}|{ComplexRoundOrdinalRegex}'
     OrdinalSuffixRegex = f'(?<=\\b)(\\d*((1(er|r[oa])|2d[oa]|3r[oa]|4t[oa]|5t[oa]|6t[oa]|7m[oa]|8v[oa]|9n[oa]|0m[oa]|11[vm][oa]|12[vm][oa])|\\d\\.?[ºª]))(?=\\b)'
     OrdinalNounRegex = f'(?<=\\b){AllOrdinalRegex}(?=\\b)'
     SpecialFractionInteger = f'((({AllIntRegex})i?({ZeroToNineIntegerRegex})|({AllIntRegex}))a?v[oa]s?)'
@@ -65,8 +63,8 @@ class SpanishNumeric:
     FractionMultiplierRegex = f'(?<fracMultiplier>\\s+(y|con)\\s+(medio|(un|{TwoToNineIntegerRegex})\\s+(medio|terci[oa]?|cuart[oa]|quint[oa]|sext[oa]|s[eé]ptim[oa]|octav[oa]|noven[oa]|d[eé]cim[oa])s?))'
     RoundMultiplierWithFraction = f'(?<multiplier>(?:(mil\\s+millones|mill[oó]n(es)?|bill[oó]n(es)?|trill[oó]n(es)?|cuatrill[oó]n(es)?|quintill[oó]n(es)?|sextill[oó]n(es)?|septill[oó]n(es)?)))(?={FractionMultiplierRegex}?$)'
     RoundMultiplierRegex = f'\\b\\s*({RoundMultiplierWithFraction}|(?<multiplier>(mil))$)'
-    FractionNounRegex = f'(?<=\\b)({AllIntRegex}\\s+((y|con)\\s+)?)?(({AllIntRegex})(\\s+((y|con)\\s)?)((({AllOrdinalNumberRegex})s?|({SpecialFractionInteger})|({SufixRoundOrdinalRegex})s?)|medi[oa]s?|tercios?)|(medio|un\\s+cuarto\\s+de)\\s+{RoundNumberIntegerRegex})(?=\\b)'
-    FractionNounWithArticleRegex = f'(?<=\\b)(({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\\s+(y\\s+)?)?((un|un[oa])(\\s+)(({AllOrdinalNumberRegex})|({SufixRoundOrdinalRegex}))|(un[ao]?\\s+)?medi[oa]s?)(?=\\b)'
+    FractionNounRegex = f'(?<=\\b)({AllIntRegex}\\s+((y|con)\\s+)?)?(({AllIntRegex})(\\s+((y|con)\\s)?)((({AllOrdinalRegex})s?|({SpecialFractionInteger})|({SufixRoundOrdinalRegex})s?)|medi[oa]s?|tercios?)|(medio|un\\s+cuarto\\s+de)\\s+{RoundNumberIntegerRegex})(?=\\b)'
+    FractionNounWithArticleRegex = f'(?<=\\b)(({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\\s+(y\\s+)?)?((un|un[oa])(\\s+)(({AllOrdinalRegex})|({SufixRoundOrdinalRegex}))|(un[ao]?\\s+)?medi[oa]s?)(?=\\b)'
     FractionPrepositionRegex = f'(?<!{BaseNumbers.CommonCurrencySymbol}\\s*)(?<=\\b)(?<numerator>({AllIntRegex})|((?<!\\.)\\d+))\\s+sobre\\s+(?<denominator>({AllIntRegex})|((\\d+)(?!\\.)))(?=\\b)'
     AllPointRegex = f'((\\s+{ZeroToNineIntegerRegex})+|(\\s+{AllIntRegex}))'
     AllFloatRegex = f'{AllIntRegex}(\\s+(coma|con)){AllPointRegex}'
@@ -403,96 +401,6 @@ class SpanishNumeric:
                            ("b", 1000000000),
                            ("t", 1000000000000)])
     AmbiguityFiltersDict = dict([("^[.]", "")])
-    RelativeReferenceOffsetMap = dict([("proxima", "1"),
-                                       ("proximo", "1"),
-                                       ("proximas", "1"),
-                                       ("proximos", "1"),
-                                       ("próxima", "1"),
-                                       ("próximo", "1"),
-                                       ("próximas", "1"),
-                                       ("próximos", "1"),
-                                       ("anterior", "-1"),
-                                       ("anteriores", "-1"),
-                                       ("actual", "0"),
-                                       ("actuales", "0"),
-                                       ("siguiente", "1"),
-                                       ("siguientes", "1"),
-                                       ("ultima", "0"),
-                                       ("ultimo", "0"),
-                                       ("última", "0"),
-                                       ("último", "0"),
-                                       ("ultimas", "0"),
-                                       ("ultimos", "0"),
-                                       ("últimas", "0"),
-                                       ("últimos", "0"),
-                                       ("penultima", "-1"),
-                                       ("penultimo", "-1"),
-                                       ("penúltima", "-1"),
-                                       ("penúltimo", "-1"),
-                                       ("penultimas", "-1"),
-                                       ("penultimos", "-1"),
-                                       ("penúltimas", "-1"),
-                                       ("penúltimos", "-1"),
-                                       ("antepenultima", "-2"),
-                                       ("antepenultimo", "-2"),
-                                       ("antepenúltima", "-2"),
-                                       ("antepenúltimo", "-2"),
-                                       ("antepenultimas", "-2"),
-                                       ("antepenultimos", "-2"),
-                                       ("antepenúltimas", "-2"),
-                                       ("antepenúltimos", "-2"),
-                                       ("antes de la ultima", "-1"),
-                                       ("antes del ultimo", "-1"),
-                                       ("antes de la última", "-1"),
-                                       ("antes del último", "-1"),
-                                       ("anterior al ultimo", "-1"),
-                                       ("anterior a la ultima", "-1"),
-                                       ("anterior al último", "-1"),
-                                       ("anterior a la última", "-1")])
-    RelativeReferenceRelativeToMap = dict([("proxima", "current"),
-                                           ("proximo", "current"),
-                                           ("proximas", "current"),
-                                           ("proximos", "current"),
-                                           ("próxima", "current"),
-                                           ("próximo", "current"),
-                                           ("próximas", "current"),
-                                           ("próximos", "current"),
-                                           ("anterior", "current"),
-                                           ("anteriores", "current"),
-                                           ("actual", "current"),
-                                           ("actuales", "current"),
-                                           ("siguiente", "current"),
-                                           ("siguientes", "current"),
-                                           ("ultima", "end"),
-                                           ("ultimo", "end"),
-                                           ("última", "end"),
-                                           ("último", "end"),
-                                           ("ultimas", "end"),
-                                           ("ultimos", "end"),
-                                           ("últimas", "end"),
-                                           ("últimos", "end"),
-                                           ("penultima", "end"),
-                                           ("penultimo", "end"),
-                                           ("penúltima", "end"),
-                                           ("penúltimo", "end"),
-                                           ("penultimas", "end"),
-                                           ("penultimos", "end"),
-                                           ("penúltimas", "end"),
-                                           ("penúltimos", "end"),
-                                           ("antepenultima", "end"),
-                                           ("antepenultimo", "end"),
-                                           ("antepenúltima", "end"),
-                                           ("antepenúltimo", "end"),
-                                           ("antepenultimas", "end"),
-                                           ("antepenultimos", "end"),
-                                           ("antepenúltimas", "end"),
-                                           ("antepenúltimos", "end"),
-                                           ("antes de la ultima", "end"),
-                                           ("antes del ultimo", "end"),
-                                           ("antes de la última", "end"),
-                                           ("antes del último", "end"),
-                                           ("anterior al ultimo", "end"),
-                                           ("anterior a la ultima", "end"),
-                                           ("anterior al último", "end"),
-                                           ("anterior a la última", "end")])
+    RelativeReferenceOffsetMap = dict([("", "")])
+    RelativeReferenceRelativeToMap = dict([("", "")])
 # pylint: enable=line-too-long

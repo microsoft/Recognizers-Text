@@ -691,13 +691,7 @@ class EnglishNumericWithUnit:
                              ("Stone", "stone"),
                              ("Dram", "dram|drachm|drachma|roman drachma|greek drachma")])
     AmbiguousWeightUnitList = [r'g', r'gr', r'oz', r'stone', r'dram', r'lbs', r'gal', r'grain', r'grains']
-    AngleSuffixList = dict([("Degree", "degree|degrees|deg.|deg|°"),
-                            ("Radian", "radian|radians|rad"),
-                            ("Turn", "turn|turns")])
-    AmbiguousAngleUnitList = [r'turn', r'turns']
     AmbiguityFiltersDict = dict([("\\bm\\b", "((('|’)\\s*m)|(m\\s*('|’)))"),
                                  ("^\\d{5} [cf]$", "\\b([a-z]{2} \\d{5} [cf])\\b"),
                                  ("\\b\\d+\\s*\\p{L}+$", "((\\d+\\s*\\p{L}+[-—–-]?\\d+)|((\\p{L}[-—–-]?|\\d[-—–-])\\d+\\s*\\p{L}+))")])
-    TemperatureAmbiguityFiltersDict = dict([("\\b(deg(rees?)?|°)$", "\\b((deg(rees?)?|°)\\s*(angle|rotation)|(rotat(ion|e[ds]?|ing)|angle)(\\s+(\\p{L}+|\\d+)){0,4}\\s*(deg(rees?)?\\b|°))")])
-    DimensionAmbiguityFiltersDict = dict([("\\b(deg(rees?)?|°)$", "\\b((deg(rees?)?|°)\\s*(c(elsius|entigrate)?|f(ah?renheit)?)|(temperature)(\\s+(\\p{L}+|\\d+)){0,4}\\s*(deg(rees?)?\\b|°))")])
 # pylint: enable=line-too-long
