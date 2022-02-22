@@ -84,8 +84,6 @@ class SpanishNumberParserConfiguration(NumberParserConfiguration):
     def __init__(self, culture_info=None):
         if culture_info is None:
             culture_info = CultureInfo(Culture.Spanish)
-        else:
-            culture_info = CultureInfo(culture_info)
 
         self._culture_info = culture_info
         self._lang_marker = SpanishNumeric.LangMarker
