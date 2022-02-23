@@ -93,24 +93,24 @@ public class EnglishNumeric {
 
     public static final String RelativeOrdinalRegex = "(?<relativeOrdinal>(next|previous|current)\\s+one|(the\\s+second|next)\\s+to\\s+last|the\\s+one\\s+before\\s+the\\s+last(\\s+one)?|the\\s+last\\s+but\\s+one|(ante)?penultimate|last|next|previous|current)";
 
-    public static final String BasicOrdinalRegex = "({NumberOrdinalRegex}|{RelativeOrdinalRegex})"
-            .replace("{NumberOrdinalRegex}", NumberOrdinalRegex)
-            .replace("{RelativeOrdinalRegex}", RelativeOrdinalRegex);
-
-    public static final String SuffixBasicOrdinalRegex = "(?:(((({TensNumberIntegerRegex}(\\s+(and\\s+)?|\\s*-\\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\\s+{RoundNumberIntegerRegex})+)\\s+(and\\s+)?)*({TensNumberIntegerRegex}(\\s+|\\s*-\\s*))?{BasicOrdinalRegex})"
+    public static final String SuffixBasicOrdinalRegex = "(?:(((({TensNumberIntegerRegex}(\\s+(and\\s+)?|\\s*-\\s*){ZeroToNineIntegerRegex})|{TensNumberIntegerRegex}|{ZeroToNineIntegerRegex}|{AnIntRegex})(\\s+{RoundNumberIntegerRegex})+)\\s+(and\\s+)?)*({TensNumberIntegerRegex}(\\s+|\\s*-\\s*))?{NumberOrdinalRegex})"
             .replace("{TensNumberIntegerRegex}", TensNumberIntegerRegex)
             .replace("{ZeroToNineIntegerRegex}", ZeroToNineIntegerRegex)
             .replace("{AnIntRegex}", AnIntRegex)
             .replace("{RoundNumberIntegerRegex}", RoundNumberIntegerRegex)
-            .replace("{BasicOrdinalRegex}", BasicOrdinalRegex);
+            .replace("{NumberOrdinalRegex}", NumberOrdinalRegex);
 
     public static final String SuffixRoundNumberOrdinalRegex = "(?:({AllIntRegex}\\s+){RoundNumberOrdinalRegex})"
             .replace("{AllIntRegex}", AllIntRegex)
             .replace("{RoundNumberOrdinalRegex}", RoundNumberOrdinalRegex);
 
-    public static final String AllOrdinalRegex = "(?:{SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})"
+    public static final String AllOrdinalNumberRegex = "(?:{SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})"
             .replace("{SuffixBasicOrdinalRegex}", SuffixBasicOrdinalRegex)
             .replace("{SuffixRoundNumberOrdinalRegex}", SuffixRoundNumberOrdinalRegex);
+
+    public static final String AllOrdinalRegex = "(?:{AllOrdinalNumberRegex}|{RelativeOrdinalRegex})"
+            .replace("{AllOrdinalNumberRegex}", AllOrdinalNumberRegex)
+            .replace("{RelativeOrdinalRegex}", RelativeOrdinalRegex);
 
     public static final String OrdinalSuffixRegex = "(?<=\\b)(?:(\\d*(1st|2nd|3rd|[4-90]th))|(1[1-2]th))(?=\\b)";
 
@@ -137,15 +137,15 @@ public class EnglishNumeric {
     public static final String RoundMultiplierRegex = "\\b\\s*((of\\s+)?a\\s+)?({RoundMultiplierWithFraction}|(?<multiplier>(?:hundred|thousand|lakh|crore)s?)$)"
             .replace("{RoundMultiplierWithFraction}", RoundMultiplierWithFraction);
 
-    public static final String FractionNounRegex = "(?<=\\b)({AllIntRegex}\\s+(and\\s+)?)?(({AllIntRegex})(\\s+|\\s*-\\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))s|halves|quarters)((\\s+of\\s+a)?\\s+{RoundNumberIntegerRegex})?|(half(\\s+a)?|quarter(\\s+of\\s+a)?)\\s+{RoundNumberIntegerRegex})(?=\\b)"
+    public static final String FractionNounRegex = "(?<=\\b)({AllIntRegex}\\s+(and\\s+)?)?(({AllIntRegex})(\\s+|\\s*-\\s*)((({AllOrdinalNumberRegex})|({RoundNumberOrdinalRegex}))s|halves|quarters)((\\s+of\\s+a)?\\s+{RoundNumberIntegerRegex})?|(half(\\s+a)?|quarter(\\s+of\\s+a)?)\\s+{RoundNumberIntegerRegex})(?=\\b)"
             .replace("{AllIntRegex}", AllIntRegex)
-            .replace("{AllOrdinalRegex}", AllOrdinalRegex)
+            .replace("{AllOrdinalNumberRegex}", AllOrdinalNumberRegex)
             .replace("{RoundNumberOrdinalRegex}", RoundNumberOrdinalRegex)
             .replace("{RoundNumberIntegerRegex}", RoundNumberIntegerRegex);
 
-    public static final String FractionNounWithArticleRegex = "(?<=\\b)(((({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\\s+(and\\s+)?)?(an?|one)(\\s+|\\s*-\\s*)(?!\\bfirst\\b|\\bsecond\\b)(({AllOrdinalRegex})|({RoundNumberOrdinalRegex})|(half|quarter)(((\\s+of)?\\s+a)?\\s+{RoundNumberIntegerRegex})?))|(half))(?=\\b)"
+    public static final String FractionNounWithArticleRegex = "(?<=\\b)(((({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\\s+(and\\s+)?)?(an?|one)(\\s+|\\s*-\\s*)(?!\\bfirst\\b|\\bsecond\\b)(({AllOrdinalNumberRegex})|({RoundNumberOrdinalRegex})|(half|quarter)(((\\s+of)?\\s+a)?\\s+{RoundNumberIntegerRegex})?))|(half))(?=\\b)"
             .replace("{AllIntRegex}", AllIntRegex)
-            .replace("{AllOrdinalRegex}", AllOrdinalRegex)
+            .replace("{AllOrdinalNumberRegex}", AllOrdinalNumberRegex)
             .replace("{RoundNumberOrdinalRegex}", RoundNumberOrdinalRegex)
             .replace("{RoundNumberIntegerRegex}", RoundNumberIntegerRegex)
             .replace("{RoundNumberIntegerRegexWithLocks}", RoundNumberIntegerRegexWithLocks);

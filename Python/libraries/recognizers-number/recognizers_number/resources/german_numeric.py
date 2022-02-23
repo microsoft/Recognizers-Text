@@ -38,11 +38,12 @@ class GermanNumeric:
     AllIntRegexWithLocks = f'((?<=\\b){AllIntRegex}(?=\\b))'
     AllIntRegexWithDozenSuffixLocks = f'(?<=\\b)(((ein\\s+)?halbes\\s+dutzend)|({AllIntRegex}\\s+dutzend(e)?))(?=\\b)'
     RoundNumberOrdinalRegex = f'(hundertst(er|es|en|el|e)?|tausendst(er|es|en|el|e)?|millionst(er|es|en|el|e)?|milliardst(er|es|en|el|e)?|billionst(er|es|en|el|e)?)'
-    RelativeOrdinalRegex = f'(?<relativeOrdinal>(ante)?penultimate|letzter|nächster|vorheriger|aktueller)'
+    RelativeOrdinalRegex = f'(?<relativeOrdinal>(nächste|vorherige|aktuelle|jetzige|(vor|dritt)?letzte)[nr]?|zuletzt|früher)'
     BasicOrdinalRegex = f'(zuerst|erst(er|es|en|e)|zweit(er|es|en|e)?|dritt(er|es|en|el|e)?|viert(er|es|en|el|e)?|fünft(er|es|en|el|e)?|fuenft(er|es|en|el|e)?|sechst(er|es|en|el|e)?|siebt(er|es|en|el|e)?|acht(er|es|en|el|e)?|neunt(er|es|en|el|e)?|zehnt(er|es|en|el|e)?|elft(er|es|en|el|e)?|zwölft(er|es|en|el|e)?|zwoelft(er|es|en|el|e)?|dreizehnt(er|es|en|el|e)?|vierzehnt(er|es|en|el|e)?|fünfzehnt(er|es|en|el|e)?|fuenfzehnt(er|es|en|el|e)?|sechzehnt(er|es|en|el|e)?|siebzehnt(er|es|en|el|e)?|achtzehnt(er|es|en|el|e)?|neunzehnt(er|es|en|el|e)?|zwanzigst(er|es|en|el|e)?|dreißigst(er|es|en|el|e)?|vierziegt(er|es|en|el|e)?|fünfzigst(er|es|en|el|e)?|fuenfzigst(er|es|en|el|e)?|sechzigst(er|es|en|el|e)?|siebzigst(er|es|en|el|e)?|achtzigst(er|es|en|el|e)?|neunzigst(er|es|en|el|e)?)'
     SuffixBasicOrdinalRegex = f'({BasicOrdinalRegex}|({ZeroToNineIntegerRegex}(und|\\s){BasicOrdinalRegex}))'
     SuffixRoundNumberOrdinalRegex = f'(({AllIntRegex}\\s*){RoundNumberOrdinalRegex})'
-    AllOrdinalRegex = f'(({AllIntRegex}\\s*)*{SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})'
+    AllOrdinalNumberRegex = f'(({AllIntRegex}\\s*)*{SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})'
+    AllOrdinalRegex = f'(?:{AllOrdinalNumberRegex}|{RelativeOrdinalRegex})'
     OrdinalSuffixRegex = f'^[\\.]'
     OrdinalNumericRegex = f'(?<=\\b)(\\d{{1,3}}\\.)(?=(\\s+|^))'
     OrdinalRoundNumberRegex = f'(?<!eine?\\s+){RoundNumberOrdinalRegex}'
@@ -55,8 +56,8 @@ class GermanNumeric:
     FractionMultiplierRegex = f'(?<fracMultiplier>(\\s+und\\s+)?(anderthalb|einundhalb|dreiviertel)|(\\s+und\\s+)?(eine?|{TwoToNineIntegerRegex})\\s*(halbe?|(dritt|viert|fünft|fuenft|sechst|siebt|acht|neunt|zehnt)(er|es|en|el|e)?))'
     RoundMultiplierWithFraction = f'(?<=(?<!{RoundNumberIntegerRegex}){FractionMultiplierRegex}\\s+)?(?<multiplier>(million(en)?|mio|milliarden?|mrd|billion(en)?))(?={FractionMultiplierRegex}?$)'
     RoundMultiplierRegex = f'\\b\\s*((von\\s+)?ein(er|es|en|el|e)?\\s+)?({RoundMultiplierWithFraction}|(?<multiplier>(?:hundert|tausend))$)'
-    FractionNounRegex = f'(?<=\\b)({AllIntRegex}\\s+(und\\s+)?)?(({AllIntRegex})(\\s*|\\s*-\\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))|halb(e[rs]?)?|hälfte)(\\s+{RoundNumberIntegerRegex})?|(eine\\s+(halbe|viertel)\\s+){RoundNumberIntegerRegex}|{FractionUnitsRegex}(\\s+{RoundNumberIntegerRegex})?)(?=\\b)'
-    FractionNounWithArticleRegex = f'(?<=\\b)((({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\\s+(und\\s+)?)?eine?(\\s+|\\s*-\\s*)({AllOrdinalRegex}|{RoundNumberOrdinalRegex}|{FractionUnitsRegex}|({AllIntRegex}ein)?(halb(e[rs]?)?|hälfte))|{AllIntRegex}ein(halb)(\\s+{RoundNumberIntegerRegex})?)(?=\\b)'
+    FractionNounRegex = f'(?<=\\b)({AllIntRegex}\\s+(und\\s+)?)?(({AllIntRegex})(\\s*|\\s*-\\s*)((({AllOrdinalNumberRegex})|({RoundNumberOrdinalRegex}))|halb(e[rs]?)?|hälfte)(\\s+{RoundNumberIntegerRegex})?|(eine\\s+(halbe|viertel)\\s+){RoundNumberIntegerRegex}|{FractionUnitsRegex}(\\s+{RoundNumberIntegerRegex})?)(?=\\b)'
+    FractionNounWithArticleRegex = f'(?<=\\b)((({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\\s+(und\\s+)?)?eine?(\\s+|\\s*-\\s*)({AllOrdinalNumberRegex}|{RoundNumberOrdinalRegex}|{FractionUnitsRegex}|({AllIntRegex}ein)?(halb(e[rs]?)?|hälfte))|{AllIntRegex}ein(halb)(\\s+{RoundNumberIntegerRegex})?)(?=\\b)'
     FractionPrepositionRegex = f'(?<!{BaseNumbers.CommonCurrencySymbol}\\s*)(?<=\\b)(?<numerator>({AllIntRegex})|((?<!\\.)\\d+))\\s+over\\s+(?<denominator>({AllIntRegex})|(\\d+)(?!\\.))(?=\\b)'
     AllPointRegex = f'((\\s*{ZeroToNineIntegerRegex})+|(\\s*{SeparaIntRegex}))'
     AllFloatRegex = f'({AllIntRegex}(\\s*komma\\s*){AllPointRegex})'
@@ -404,6 +405,50 @@ class GermanNumeric:
                            ("b", 1000000000),
                            ("t", 1000000000000)])
     AmbiguityFiltersDict = dict([("^(tausend|hundert)$", "(ed(ward(\\s+m(\\.)?)?)?|mary(\\s+c(\\.)?)?|joachim|claudia|franz|maria|klaus|prof(\\.|essor)?|dr(\\.)?|herr|fr[äa]u(lein)?|frl?\\.)\\s+(tausend|hundert)")])
-    RelativeReferenceOffsetMap = dict([("", "")])
-    RelativeReferenceRelativeToMap = dict([("", "")])
+    RelativeReferenceOffsetMap = dict([("letzte", "0"),
+                                       ("letzten", "0"),
+                                       ("letzter", "0"),
+                                       ("nächste", "1"),
+                                       ("nächsten", "1"),
+                                       ("nächster", "1"),
+                                       ("vorherige", "-1"),
+                                       ("vorherigen", "-1"),
+                                       ("vorheriger", "-1"),
+                                       ("aktuelle", "0"),
+                                       ("aktuellen", "0"),
+                                       ("aktueller", "0"),
+                                       ("jetzige", "0"),
+                                       ("jetzigen", "0"),
+                                       ("jetziger", "0"),
+                                       ("vorletzte", "-1"),
+                                       ("vorletzten", "-1"),
+                                       ("vorletzter", "-1"),
+                                       ("drittletzte", "-2"),
+                                       ("drittletzten", "-2"),
+                                       ("drittletzter", "-2"),
+                                       ("zuletzt", "0"),
+                                       ("früher", "-1")])
+    RelativeReferenceRelativeToMap = dict([("letzte", "end"),
+                                           ("letzten", "end"),
+                                           ("letzter", "end"),
+                                           ("nächste", "current"),
+                                           ("nächsten", "current"),
+                                           ("nächster", "current"),
+                                           ("vorherige", "current"),
+                                           ("vorherigen", "current"),
+                                           ("vorheriger", "current"),
+                                           ("aktuelle", "current"),
+                                           ("aktuellen", "current"),
+                                           ("aktueller", "current"),
+                                           ("jetzige", "current"),
+                                           ("jetzigen", "current"),
+                                           ("jetziger", "current"),
+                                           ("vorletzte", "end"),
+                                           ("vorletzten", "end"),
+                                           ("vorletzter", "end"),
+                                           ("drittletzte", "end"),
+                                           ("drittletzten", "end"),
+                                           ("drittletzter", "end"),
+                                           ("zuletzt", "end"),
+                                           ("früher", "current")])
 # pylint: enable=line-too-long

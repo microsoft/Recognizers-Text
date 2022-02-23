@@ -774,7 +774,23 @@ public class PortugueseNumericWithUnit {
         .put("Quilate", "ct|quilate|quilates")
         .build();
 
+    public static final ImmutableMap<String, String> AngleSuffixList = ImmutableMap.<String, String>builder()
+        .put("Degree", "grau|graus|°")
+        .put("Radian", "radiano|radianos|rad")
+        .put("Turn", "volta|voltas")
+        .build();
+
+    public static final List<String> AmbiguousAngleUnitList = Arrays.asList("volta", "voltas");
+
     public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
         .put("null", "null")
+        .build();
+
+    public static final ImmutableMap<String, String> TemperatureAmbiguityFiltersDict = ImmutableMap.<String, String>builder()
+        .put("\\b(graus?|°)$", "\\b((graus?|°)\\s*(ângulo|rotação)|(gira(r|do|ndo)?|ângulo|rotação)(\\s+(\\p{L}+|\\d+)){0,4}\\s*(graus?\\b|°))")
+        .build();
+
+    public static final ImmutableMap<String, String> DimensionAmbiguityFiltersDict = ImmutableMap.<String, String>builder()
+        .put("\\b(graus?|°)$", "\\b((graus?|°)\\s*(c(elsius|entígrado)?|f(ah?renheit)?)|(temperatura)(\\s+(\\p{L}+|\\d+)){0,4}\\s*(graus?\\b|°))")
         .build();
 }

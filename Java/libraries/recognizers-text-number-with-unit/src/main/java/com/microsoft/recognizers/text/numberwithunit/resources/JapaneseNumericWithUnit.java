@@ -168,7 +168,7 @@ public class JapaneseNumericWithUnit {
         .put("Djiboutian franc", "ジブチ・フラン")
         .put("CFP franc", "CFPフラン")
         .put("Guinean franc", "ギニア・フラン")
-        .put("Swiss franc", "スイス・フラン")
+        .put("Swiss franc", "スイス・フラン|スイスフラン")
         .put("Rwandan franc", "ルワンダ・フラン")
         .put("Belgian franc", "ベルギー・フラン")
         .put("Rappen", "Rappen")
@@ -217,7 +217,7 @@ public class JapaneseNumericWithUnit {
         .put("Pound", "ポンド")
         .put("Pence", "ペンス")
         .put("Shilling", "シリング")
-        .put("United States dollar", "ドル|USドル")
+        .put("United States dollar", "米ドル|USドル|ドル")
         .put("East Caribbean dollar", "東カリブ・ドル")
         .put("Australian dollar", "オーストラリア・ドル|オーストラリアドル")
         .put("Bahamian dollar", "バハマ・ドル")
@@ -234,7 +234,7 @@ public class JapaneseNumericWithUnit {
         .put("Guyanese dollar", "ガイアナ・ドル|ガイアナ・ドル")
         .put("Hong Kong dollar", "香港ドル")
         .put("Macau Pataca", "マカオ・パタカ|マカオ・パタカ")
-        .put("New Taiwan dollar", "ニュー台湾ドル|ニュー台湾ドル")
+        .put("New Taiwan dollar", "ニュー台湾ドル|ニュー台湾ドル|台湾ドル")
         .put("Jamaican dollar", "ジャマイカ・ドル|ジャマイカドル")
         .put("Kiribati dollar", "キリバス・ドル")
         .put("Liberian dollar", "リベリア・ドル|リベリアドル")
@@ -242,7 +242,7 @@ public class JapaneseNumericWithUnit {
         .put("Surinamese dollar", "スリナム・ドル|スリナムドル")
         .put("Trinidad and Tobago dollar", "トリニダード・トバゴ・ドル|トリニダードトバゴ・ドル")
         .put("Tuvaluan dollar", "ツバル・ドル|ツバルドル")
-        .put("Chinese yuan", "人民元")
+        .put("Chinese yuan", "人民元|元")
         .put("Fen", "分")
         .put("Jiao", "角")
         .put("Finnish markka", "フィンランド・マルカ")
@@ -532,7 +532,7 @@ public class JapaneseNumericWithUnit {
         .put("Solomon Islands dollar", "si$|si $")
         .put("New Taiwan dollar", "nt$|nt $")
         .put("Samoan tālā", "ws$")
-        .put("Chinese yuan", "￥")
+        .put("Chinese yuan", "￥|人民元")
         .put("Japanese yen", "¥|\\")
         .put("Turkish lira", "₺")
         .put("Euro", "€")
@@ -540,7 +540,7 @@ public class JapaneseNumericWithUnit {
         .put("Costa Rican colón", "₡")
         .build();
 
-    public static final List<String> CurrencyAmbiguousValues = Arrays.asList("円", "銭", "分", "レク", "プル", "ブル", "\\");
+    public static final List<String> CurrencyAmbiguousValues = Arrays.asList("円", "銭", "分", "レク", "プル", "ブル", "\\", "元");
 
     public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
         .put("五角", "五角大楼")
