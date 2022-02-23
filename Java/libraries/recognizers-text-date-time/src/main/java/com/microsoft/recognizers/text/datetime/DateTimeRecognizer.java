@@ -11,6 +11,8 @@ import com.microsoft.recognizers.text.datetime.english.parsers.EnglishMergedPars
 import com.microsoft.recognizers.text.datetime.extractors.BaseMergedDateTimeExtractor;
 import com.microsoft.recognizers.text.datetime.french.extractors.FrenchMergedExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.french.parsers.FrenchMergedParserConfiguration;
+import com.microsoft.recognizers.text.datetime.german.extractors.GermanMergedExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.german.parsers.GermanMergedParserConfiguration;
 import com.microsoft.recognizers.text.datetime.models.DateTimeModel;
 import com.microsoft.recognizers.text.datetime.parsers.BaseMergedDateTimeParser;
 import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishMergedExtractorConfiguration;
@@ -88,9 +90,15 @@ public class DateTimeRecognizer extends Recognizer<DateTimeOptions> {
                 new BaseMergedDateTimeParser(new SpanishMergedParserConfiguration(options)),
                 new BaseMergedDateTimeExtractor(new SpanishMergedExtractorConfiguration(options))));
 
+        // French
         registerModel(DateTimeModel.class, Culture.French, dateTimeOptions -> new DateTimeModel(
                 new BaseMergedDateTimeParser(new FrenchMergedParserConfiguration(options)),
-                new BaseMergedDateTimeExtractor(new FrenchMergedExtractorConfiguration(options))
+                new BaseMergedDateTimeExtractor(new FrenchMergedExtractorConfiguration(options))));
+
+        // German
+        registerModel(DateTimeModel.class, Culture.German, dateTimeOptions -> new DateTimeModel(
+                new BaseMergedDateTimeParser(new GermanMergedParserConfiguration(options)),
+                new BaseMergedDateTimeExtractor(new GermanMergedExtractorConfiguration(options))
         ));
     }
 }

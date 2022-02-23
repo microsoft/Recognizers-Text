@@ -11,8 +11,11 @@ import com.microsoft.recognizers.text.datetime.Constants;
 import com.microsoft.recognizers.text.datetime.DateTimeOptions;
 import com.microsoft.recognizers.text.datetime.TimeTypeConstants;
 import com.microsoft.recognizers.text.datetime.parsers.config.IDurationParserConfiguration;
+import com.microsoft.recognizers.text.datetime.utilities.ConditionalMatch;
 import com.microsoft.recognizers.text.datetime.utilities.DateTimeResolutionResult;
+import com.microsoft.recognizers.text.datetime.utilities.RegexExtension;
 import com.microsoft.recognizers.text.datetime.utilities.TimexUtility;
+import com.microsoft.recognizers.text.datetime.utilities.Token;
 import com.microsoft.recognizers.text.utilities.Match;
 import com.microsoft.recognizers.text.utilities.RegExpUtility;
 import com.microsoft.recognizers.text.utilities.StringUtility;
@@ -20,6 +23,7 @@ import com.microsoft.recognizers.text.utilities.StringUtility;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -197,8 +201,8 @@ public class BaseDurationParser implements IDateTimeParser {
     private DateTimeResolutionResult parseNumberSpaceUnit(String text) {
         DateTimeResolutionResult result = new DateTimeResolutionResult();
 
-        // if there are spaces between nubmer and unit
-        List<ExtractResult> ers = config.getCardinalExtractor().extract(text);
+        // if there are spaces between number and unit
+        List<ExtractResult> ers = extractNumbersBeforeUnit(text);
         if (ers.size() == 1) {
             ExtractResult er = ers.get(0);
             ParseResult pr = config.getNumberParser().parse(er);
@@ -244,6 +248,24 @@ public class BaseDurationParser implements IDateTimeParser {
         }
 
         return result;
+    }
+
+    private List<ExtractResult> extractNumbersBeforeUnit(String text) {
+        List<ExtractResult> ers = config.getCardinalExtractor().extract(text);
+
+        // In special cases some languages will treat "both" as a number to be combined with duration units.
+        Collection<Token> specialNumberTokens = Token.getTokenFromRegex(config.getSpecialNumberUnitRegex(), text);
+
+        for (Token token: specialNumberTokens) {
+            ExtractResult er = new ExtractResult();
+            er.setStart(token.getStart());
+            er.setLength(token.getLength());
+            er.setText(text.substring(token.getStart(), token.getEnd()));
+
+            ers.add(er);
+        }
+
+        return ers;
     }
 
     private DateTimeResolutionResult parseNumberCombinedUnit(String text) {
@@ -294,6 +316,9 @@ public class BaseDurationParser implements IDateTimeParser {
 
         if (match.isPresent()) {
             double numVal = StringUtility.isNullOrEmpty(match.get().getGroup("half").value) ? 1 : 0.5;
+            numVal = StringUtility.isNullOrEmpty(match.get().getGroup("quarter").value) ? numVal : 0.25 ;
+            numVal = StringUtility.isNullOrEmpty(match.get().getGroup("threequarter").value) ? numVal : 0.75;
+
             numVal += parseNumberWithUnitAndSuffix(suffixStr);
             String numStr = StringUtility.format(numVal);
 

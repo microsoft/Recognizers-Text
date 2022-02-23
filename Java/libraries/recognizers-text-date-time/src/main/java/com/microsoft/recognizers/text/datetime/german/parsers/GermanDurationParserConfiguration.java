@@ -1,20 +1,19 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
-package com.microsoft.recognizers.text.datetime.spanish.parsers;
+package com.microsoft.recognizers.text.datetime.german.parsers;
 
 import com.google.common.collect.ImmutableMap;
 import com.microsoft.recognizers.text.IExtractor;
 import com.microsoft.recognizers.text.IParser;
 import com.microsoft.recognizers.text.datetime.config.BaseOptionsConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.BaseDurationExtractor;
+import com.microsoft.recognizers.text.datetime.german.extractors.GermanDurationExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.parsers.config.ICommonDateTimeParserConfiguration;
 import com.microsoft.recognizers.text.datetime.parsers.config.IDurationParserConfiguration;
-import com.microsoft.recognizers.text.datetime.spanish.extractors.SpanishDurationExtractorConfiguration;
-
 import java.util.regex.Pattern;
 
-public class SpanishDurationParserConfiguration extends BaseOptionsConfiguration implements IDurationParserConfiguration {
+public class GermanDurationParserConfiguration extends BaseOptionsConfiguration implements IDurationParserConfiguration {
 
     private final IExtractor cardinalExtractor;
     private final IExtractor durationExtractor;
@@ -31,30 +30,32 @@ public class SpanishDurationParserConfiguration extends BaseOptionsConfiguration
     private final Pattern inexactNumberRegex;
     private final Pattern inexactNumberUnitRegex;
     private final Pattern durationUnitRegex;
+    private final Pattern specialNumberUnitRegex;
 
     private final ImmutableMap<String, String> unitMap;
     private final ImmutableMap<String, Long> unitValueMap;
     private final ImmutableMap<String, Double> doubleNumbers;
 
-    public SpanishDurationParserConfiguration(ICommonDateTimeParserConfiguration config) {
+    public GermanDurationParserConfiguration(ICommonDateTimeParserConfiguration config) {
 
         super(config.getOptions());
 
         cardinalExtractor = config.getCardinalExtractor();
         numberParser = config.getNumberParser();
-        durationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration(), false);
-        numberCombinedWithUnit = SpanishDurationExtractorConfiguration.NumberCombinedWithUnit;
+        durationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration(), false);
+        numberCombinedWithUnit = GermanDurationExtractorConfiguration.NumberCombinedWithDurationUnit;
 
-        anUnitRegex = SpanishDurationExtractorConfiguration.AnUnitRegex;
-        duringRegex = SpanishDurationExtractorConfiguration.DuringRegex;
-        allDateUnitRegex = SpanishDurationExtractorConfiguration.AllRegex;
-        halfDateUnitRegex = SpanishDurationExtractorConfiguration.HalfRegex;
-        suffixAndRegex = SpanishDurationExtractorConfiguration.SuffixAndRegex;
-        followedUnit = SpanishDurationExtractorConfiguration.FollowedUnit;
-        conjunctionRegex = SpanishDurationExtractorConfiguration.ConjunctionRegex;
-        inexactNumberRegex = SpanishDurationExtractorConfiguration.InexactNumberRegex;
-        inexactNumberUnitRegex = SpanishDurationExtractorConfiguration.InexactNumberUnitRegex;
-        durationUnitRegex = SpanishDurationExtractorConfiguration.DurationUnitRegex;
+        anUnitRegex = GermanDurationExtractorConfiguration.AnUnitRegex;
+        duringRegex = GermanDurationExtractorConfiguration.DuringRegex;
+        allDateUnitRegex = GermanDurationExtractorConfiguration.AllRegex;
+        halfDateUnitRegex = GermanDurationExtractorConfiguration.HalfRegex;
+        suffixAndRegex = GermanDurationExtractorConfiguration.SuffixAndRegex;
+        followedUnit = GermanDurationExtractorConfiguration.DurationFollowedUnit;
+        conjunctionRegex = GermanDurationExtractorConfiguration.ConjunctionRegex;
+        inexactNumberRegex = GermanDurationExtractorConfiguration.InexactNumberRegex;
+        inexactNumberUnitRegex = GermanDurationExtractorConfiguration.InexactNumberUnitRegex;
+        durationUnitRegex = GermanDurationExtractorConfiguration.DurationUnitRegex;
+        specialNumberUnitRegex = GermanDurationExtractorConfiguration.SpecialNumberUnitRegex;
 
         unitMap = config.getUnitMap();
         unitValueMap = config.getUnitValueMap();
@@ -131,8 +132,9 @@ public class SpanishDurationParserConfiguration extends BaseOptionsConfiguration
         return durationUnitRegex;
     }
 
-    @Override public Pattern getSpecialNumberUnitRegex() {
-        return null;
+    @Override
+    public Pattern getSpecialNumberUnitRegex() {
+        return specialNumberUnitRegex;
     }
 
     @Override
