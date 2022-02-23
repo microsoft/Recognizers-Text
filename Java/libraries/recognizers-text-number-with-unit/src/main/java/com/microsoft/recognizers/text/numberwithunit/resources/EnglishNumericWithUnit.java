@@ -747,9 +747,25 @@ public class EnglishNumericWithUnit {
 
     public static final List<String> AmbiguousWeightUnitList = Arrays.asList("g", "gr", "oz", "stone", "dram", "lbs", "gal", "grain", "grains");
 
+    public static final ImmutableMap<String, String> AngleSuffixList = ImmutableMap.<String, String>builder()
+        .put("Degree", "degree|degrees|deg.|deg|°")
+        .put("Radian", "radian|radians|rad")
+        .put("Turn", "turn|turns")
+        .build();
+
+    public static final List<String> AmbiguousAngleUnitList = Arrays.asList("turn", "turns");
+
     public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
         .put("\\bm\\b", "((('|’)\\s*m)|(m\\s*('|’)))")
         .put("^\\d{5} [cf]$", "\\b([a-z]{2} \\d{5} [cf])\\b")
         .put("\\b\\d+\\s*\\p{L}+$", "((\\d+\\s*\\p{L}+[-—–-]?\\d+)|((\\p{L}[-—–-]?|\\d[-—–-])\\d+\\s*\\p{L}+))")
+        .build();
+
+    public static final ImmutableMap<String, String> TemperatureAmbiguityFiltersDict = ImmutableMap.<String, String>builder()
+        .put("\\b(deg(rees?)?|°)$", "\\b((deg(rees?)?|°)\\s*(angle|rotation)|(rotat(ion|e[ds]?|ing)|angle)(\\s+(\\p{L}+|\\d+)){0,4}\\s*(deg(rees?)?\\b|°))")
+        .build();
+
+    public static final ImmutableMap<String, String> DimensionAmbiguityFiltersDict = ImmutableMap.<String, String>builder()
+        .put("\\b(deg(rees?)?|°)$", "\\b((deg(rees?)?|°)\\s*(c(elsius|entigrate)?|f(ah?renheit)?)|(temperature)(\\s+(\\p{L}+|\\d+)){0,4}\\s*(deg(rees?)?\\b|°))")
         .build();
 }

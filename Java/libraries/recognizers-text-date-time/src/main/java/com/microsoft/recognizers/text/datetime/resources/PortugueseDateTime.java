@@ -337,7 +337,7 @@ public class PortugueseDateTime {
 
     public static final String TensTimeRegex = "(?<tens>dez|vinte|trinta|[qc]uarenta|cin[qc]uenta)";
 
-    public static final String WrittenTimeRegex = "(?<writtentime>({HourNumRegex}\\s*((e|menos)\\s+)?({MinuteNumRegex}|({TensTimeRegex}((\\s*e\\s+)?{MinuteNumRegex}))))|(({MinuteNumRegex}|({TensTimeRegex}((\\s*e\\s+)?{MinuteNumRegex})?))\\s*((para as|pras|antes da|antes das)\\s+)?({HourNumRegex}|{BaseDateTime.HourRegex})))"
+    public static final String WrittenTimeRegex = "(?<writtentime>({HourNumRegex}\\s*((e|menos)\\s+)?(({TensTimeRegex}((\\s*e\\s+)?{MinuteNumRegex}))|{MinuteNumRegex}))|(({MinuteNumRegex}|({TensTimeRegex}((\\s*e\\s+)?{MinuteNumRegex})?))\\s*((para as|pras|antes da|antes das)\\s+)?({HourNumRegex}|{BaseDateTime.HourRegex})))"
             .replace("{HourNumRegex}", HourNumRegex)
             .replace("{MinuteNumRegex}", MinuteNumRegex)
             .replace("{TensTimeRegex}", TensTimeRegex)
@@ -376,9 +376,10 @@ public class PortugueseDateTime {
             .replace("{MiddayRegex}", MiddayRegex)
             .replace("{MidEarlyMorning}", MidEarlyMorning);
 
-    public static final String AtRegex = "\\b(((?<=\\b([aà]s?)\\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\\s+horas?|\\s*h\\b)?|(?<=\\b(s(er)?[aã]o|v[aã]o\\s+ser|^[eé]h?)\\s+|^\\s*)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\\s+horas?|\\s*h\\b))(\\s+{OclockRegex})?|{MidTimeRegex})\\b"
+    public static final String AtRegex = "\\b(((?<=\\b([aà]s?)\\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}(\\s+e\\s+{BaseDateTime.MinuteRegex})?)(\\s+horas?|\\s*h\\b)?|(?<=\\b(s(er)?[aã]o|v[aã]o\\s+ser|^[eé]h?)\\s+|^\\s*)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\\s+horas?|\\s*h\\b))(\\s+{OclockRegex})?|{MidTimeRegex})\\b"
             .replace("{HourNumRegex}", HourNumRegex)
             .replace("{BaseDateTime.HourRegex}", BaseDateTime.HourRegex)
+            .replace("{BaseDateTime.MinuteRegex}", BaseDateTime.MinuteRegex)
             .replace("{WrittenTimeRegex}", WrittenTimeRegex)
             .replace("{OclockRegex}", OclockRegex)
             .replace("{MidTimeRegex}", MidTimeRegex);
@@ -911,6 +912,8 @@ public class PortugueseDateTime {
         .put("vinte e nove", 29)
         .put("trinta", 30)
         .put("trinta e um", 31)
+        .put("quarenta", 40)
+        .put("cinquenta", 50)
         .build();
 
     public static final ImmutableMap<String, String[]> HolidayNames = ImmutableMap.<String, String[]>builder()

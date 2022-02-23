@@ -37,6 +37,7 @@ export namespace JapaneseNumeric {
     export const DoubleAndRoundRegex = `${ZeroToNineFullHalfRegex}+(\\.${ZeroToNineFullHalfRegex}+)?\\s*[万億]{1,2}(\\s*(以上))?`;
     export const FracSplitRegex = `[はと]|分\\s*の`;
     export const ZeroToNineIntegerRegex = `[〇一二三四五六七八九]`;
+    export const HalfUnitRegex = `半`;
     export const NegativeNumberTermsRegex = `(マ\\s*イ\\s*ナ\\s*ス)`;
     export const NegativeNumberTermsRegexNum = `((?<!(\\d+(\\s*${BaseNumbers.NumberMultiplierRegex})?\\s*)|[-−－])[-−－])`;
     export const NegativeNumberSignRegex = `^${NegativeNumberTermsRegex}.*|^${NegativeNumberTermsRegexNum}.*`;
@@ -44,9 +45,9 @@ export namespace JapaneseNumeric {
     export const PairRegex = `.*[対膳足]$`;
     export const RoundNumberIntegerRegex = `(十|百|千|万(?!万)|億|兆)`;
     export const AllowListRegex = `(。|，|、|（|）|”｜国|週間|時間|時|匹|キロ|トン|年|個|足|本|で|は|\\s|$|つ|月|の|と)`;
-    export const NotSingleRegex = `(?<!(第|だい))((${RoundNumberIntegerRegex}+((${ZeroToNineIntegerRegex}+|${RoundNumberIntegerRegex})+|${ZeroToNineFullHalfRegex}+|十)\\s*(以上)?))|((${ZeroToNineIntegerRegex}+|${ZeroToNineFullHalfRegex}+|十)\\s*(${RoundNumberIntegerRegex}\\s*){1,2})\\s*(([零]?(${ZeroToNineIntegerRegex}+|${ZeroToNineFullHalfRegex}+|十)\\s*${RoundNumberIntegerRegex}{0,1})\\s*)*\\s*(\\s*(以上)?)`;
+    export const NotSingleRegex = `(?<!(第|だい))(${RoundNumberIntegerRegex}+((${ZeroToNineIntegerRegex}+|${RoundNumberIntegerRegex})+|${ZeroToNineFullHalfRegex}+|十)(\\s*(以上))?)|((${ZeroToNineIntegerRegex}+|${ZeroToNineFullHalfRegex}+|十)(\\s*${RoundNumberIntegerRegex}){1,2})(\\s*([零]?(${ZeroToNineIntegerRegex}+|${ZeroToNineFullHalfRegex}+|十)(\\s*${RoundNumberIntegerRegex}){0,1}))*(\\s*(以上)?)`;
     export const SingleRegex = `((${ZeroToNineIntegerRegex}+|${ZeroToNineFullHalfRegex}+|十)(?=${AllowListRegex}))`;
-    export const AllIntRegex = `(?<!(ダース))(((((${ZeroToNineIntegerRegex}|[十百千])\\s*${RoundNumberIntegerRegex}*)|((${ZeroToNineFullHalfRegex}\\s*${RoundNumberIntegerRegex})|${RoundNumberIntegerRegex})){1,2}|(${RoundNumberIntegerRegex}+))(\\s*[以上]+)?)`;
+    export const AllIntRegex = `(?<!(ダース))(${NotSingleRegex}|(${ZeroToNineIntegerRegex}+|${RoundNumberIntegerRegex}+))`;
     export const PlaceHolderPureNumber = `\\b`;
     export const PlaceHolderDefault = `\\D|\\b`;
     export const NumbersSpecialsChars = `(((${NegativeNumberTermsRegexNum}|${NegativeNumberTermsRegex})\\s*)?(${ZeroToNineFullHalfRegex}))+(?=\\b|\\D)(?!(([\\.．]${ZeroToNineFullHalfRegex}+)?\\s*${AllMultiplierLookupRegex}))`;
@@ -125,5 +126,5 @@ export namespace JapaneseNumeric {
     export const TwoNumberRangeRegex4 = `(?<number1>((?!((,(?!\\d+))|。)).)+)\\s*${TillRegex}\\s*(?<number2>((?!((,(?!\\d+))|。)).)+)`;
     export const AmbiguousFractionConnectorsRegex = `^[.]`;
     export const RelativeReferenceOffsetMap: ReadonlyMap<string, string> = new Map<string, string>([["前", ""],["現在", ""],["次", ""],["最後", ""],["最後から三番目", ""],["最後から二番目", ""],["最後から一つ前", ""],["最後から一つ前のもの", ""],["最後から一つ前のこと", ""],["最後から1つ前のこと", ""],["最後から1つ前のもの", ""],["最後から1つ前", ""],["現在のこと", ""],["前のもの", ""],["次のもの", ""],["最後から3番目", ""],["最後から2番目", ""]]);
-    export const RelativeReferenceRelativeToMap: ReadonlyMap<string, string> = new Map<string, string>([["前", "current"],["現在", "end"],["次", "current"],["最後", "end"],["最後から三番目", "end"],["最後から二番目", "end"],["最後から一つ前", "end"],["最後から一つ前のもの", "end"],["最後から一つ前のこと", "end"],["現在のこと", "current"],["最後から1つ前のこと", "end"],["最後から1つ前のもの", "end"],["最後から1つ前", "end"],["前のもの", "current"],["次のもの", "current"],["最後から3番目", "end"],["最後から2番目", "end"]]);
+    export const RelativeReferenceRelativeToMap: ReadonlyMap<string, string> = new Map<string, string>([["前", "current"],["現在", "current"],["次", "current"],["最後", "end"],["最後から三番目", "end"],["最後から二番目", "end"],["最後から一つ前", "end"],["最後から一つ前のもの", "end"],["最後から一つ前のこと", "end"],["現在のこと", "current"],["最後から1つ前のこと", "end"],["最後から1つ前のもの", "end"],["最後から1つ前", "end"],["前のもの", "current"],["次のもの", "current"],["最後から3番目", "end"],["最後から2番目", "end"]]);
 }
