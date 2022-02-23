@@ -240,7 +240,7 @@ class EnglishDateTime:
     InclusiveModPrepositions = f'(?<include>((on|in|at)\\s+or\\s+)|(\\s+or\\s+(on|in|at)))'
     AroundRegex = f'(?:\\b(?:around|circa)\\s*?\\b)(\\s+the)?'
     BeforeRegex = f'((\\b{InclusiveModPrepositions}?(?:before|in\\s+advance\\s+of|prior\\s+to|(no\\s+later|earlier|sooner)\\s+than|ending\\s+(with|on)|by|(un)?till?|(?<include>as\\s+late\\s+as)){InclusiveModPrepositions}?\\b\\s*?)|(?<!\\w|>)((?<include><\\s*=)|<))(\\s+the)?'
-    AfterRegex = f'((\\b{InclusiveModPrepositions}?((after(\\s+on)?(?!\\sfrom)|(?<!no\\s+)later than)|(year greater than))(?!\\s+or equal to){InclusiveModPrepositions}?\\b\\s*?)|(?<!\\w|<)((?<include>>\\s*=)|>))(\\s+the)?'
+    AfterRegex = f'((\\b{InclusiveModPrepositions}?((after(\\s+on)?(?!\\sfrom)|(?<!no\\s+)later\\s+than)|((year\\s+)?greater\\s+than))(?!\\s+or\\s+equal\\s+to){InclusiveModPrepositions}?\\b\\s*?)|(?<!\\w|<)((?<include>>\\s*=)|>))(\\s+the)?'
     SinceRegex = f'(?:(?:\\b(?:since|after\\s+or\\s+equal\\s+to|(starting|beginning)(\\s)?(?:from|on|with)?|as\\s+early\\s+as|(any\\s+time\\s+)from)\\b\\s*?)|(?<!\\w|<)(>=))(\\s+the)?'
     SinceRegexExp = f'({SinceRegex}|\\bfrom(\\s+the)?\\b)'
     AgoRegex = f'\\b(ago|earlier|before\\s+(?<day>yesterday|today))\\b'

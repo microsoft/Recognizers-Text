@@ -123,21 +123,22 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 if (Config.UnitMap.TryGetValue(lastUnit, out var unitValue) ||
                     Config.UnitMap.TryGetValue(normalizedLastUnit, out unitValue))
                 {
-                    var numValue = string.IsNullOrEmpty(numberResult.Text) ?
-                        null :
-                        this.Config.InternalNumberParser.Parse(numberResult);
 
-                    var resolution_str = numValue?.ResolutionStr;
+                    var numValue = string.IsNullOrEmpty(numberResult.Text) ?
+                                            null :
+                                            this.Config.InternalNumberParser.Parse(numberResult);
+
+                    var resolutionStr = numValue?.ResolutionStr;
 
                     if (halfResult != null)
                     {
                         var halfValue = this.Config.InternalNumberParser.Parse(halfResult);
-                        resolution_str += halfValue?.ResolutionStr.Substring(1);
+                        resolutionStr += halfValue?.ResolutionStr.Substring(1);
                     }
 
                     ret.Value = new UnitValue
                     {
-                        Number = resolution_str,
+                        Number = resolutionStr,
                         Unit = unitValue,
                     };
 
@@ -156,26 +157,23 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             return ret;
         }
 
-        private string DeleteBracketsIfExisted(string unit)
+        private static string DeleteBracketsIfExisted(string unit)
         {
             bool hasBrackets = false;
 
-            if (unit.StartsWith("(") && unit.EndsWith(")"))
+            if (unit.StartsWith("(", StringComparison.Ordinal) && unit.EndsWith(")", StringComparison.Ordinal))
             {
                 hasBrackets = true;
             }
-
-            if (unit.StartsWith("[") && unit.EndsWith("]"))
+            else if (unit.StartsWith("[", StringComparison.Ordinal) && unit.EndsWith("]", StringComparison.Ordinal))
             {
                 hasBrackets = true;
             }
-
-            if (unit.StartsWith("{") && unit.EndsWith("}"))
+            else if (unit.StartsWith("{", StringComparison.Ordinal) && unit.EndsWith("}", StringComparison.Ordinal))
             {
                 hasBrackets = true;
             }
-
-            if (unit.StartsWith("<") && unit.EndsWith(">"))
+            else if (unit.StartsWith("<", StringComparison.Ordinal) && unit.EndsWith(">", StringComparison.Ordinal))
             {
                 hasBrackets = true;
             }
