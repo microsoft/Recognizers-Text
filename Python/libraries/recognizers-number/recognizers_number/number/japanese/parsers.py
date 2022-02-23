@@ -158,6 +158,14 @@ class JapaneseNumberParserConfiguration(CJKNumberParserConfiguration):
     def round_number_integer_regex(self) -> Pattern:
         return self._round_number_integer_regex
 
+    @property
+    def non_standard_separator_variants(self) -> List[str]:
+        return self._non_standard_separator_variants
+
+    @property
+    def is_multi_decimal_separator_culture(self) -> bool:
+        return self._is_multi_decimal_separator_culture
+
     def __init__(self, culture_info=None):
         if culture_info is None:
             culture_info = CultureInfo(Culture.Japanese)
@@ -172,6 +180,8 @@ class JapaneseNumberParserConfiguration(CJKNumberParserConfiguration):
         self._word_separator_token = JapaneseNumeric.WordSeparatorToken
         self._zero_char = JapaneseNumeric.ZeroChar
         self._pair_char = JapaneseNumeric.PairChar
+        self._non_standard_separator_variants = []
+        self._is_multi_decimal_separator_culture = JapaneseNumeric.MultiDecimalSeparatorCulture
 
         self._round_number_map = JapaneseNumeric.RoundNumberMap
         self._digital_number_regex = RegExpUtility.get_safe_reg_exp(

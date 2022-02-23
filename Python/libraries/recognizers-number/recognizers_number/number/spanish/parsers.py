@@ -81,6 +81,14 @@ class SpanishNumberParserConfiguration(NumberParserConfiguration):
     def written_fraction_separator_texts(self) -> List[str]:
         return self._written_fraction_separator_texts
 
+    @property
+    def non_standard_separator_variants(self) -> List[str]:
+        return self._non_standard_separator_variants
+
+    @property
+    def is_multi_decimal_separator_culture(self) -> bool:
+        return self._is_multi_decimal_separator_culture
+
     def __init__(self, culture_info=None):
         if culture_info is None:
             culture_info = CultureInfo(Culture.Spanish)
@@ -97,12 +105,8 @@ class SpanishNumberParserConfiguration(NumberParserConfiguration):
         self._written_group_separator_texts = SpanishNumeric.WrittenGroupSeparatorTexts
         self._written_integer_separator_texts = SpanishNumeric.WrittenIntegerSeparatorTexts
         self._written_fraction_separator_texts = SpanishNumeric.WrittenFractionSeparatorTexts
-
-        self.is_non_standard_separator_variant = culture_info.code in SpanishNumeric.NonStandardSeparatorVariants
-
-        if self.is_non_standard_separator_variant:
-            self._decimal_separator_char = SpanishNumeric.NonDecimalSeparatorChar
-            self._non_decimal_separator_char = SpanishNumeric.DecimalSeparatorChar
+        self._non_standard_separator_variants = SpanishNumeric.NonStandardSeparatorVariants
+        self._is_multi_decimal_separator_culture = SpanishNumeric.MultiDecimalSeparatorCulture
 
         ordinal_number_map: Dict[str, int] = dict(
             SpanishNumeric.OrdinalNumberMap)

@@ -7,6 +7,7 @@ from decimal import Decimal, getcontext
 import regex
 from recognizers_text.utilities import RegExpUtility
 from recognizers_text.extractor import ExtractResult
+from recognizers_text.meta_data import MetaData
 from recognizers_text.parser import Parser, ParseResult
 from recognizers_number.culture import CultureInfo
 from recognizers_number.number.constants import Constants
@@ -109,12 +110,21 @@ class NumberParserConfiguration(ABC):
     def resolve_composite_number(self, number_str: str) -> int:
         pass
 
+    @property
+    @abstractmethod
+    def non_standard_separator_variants(self) -> List[str]:
+        pass
+
+    @property
+    @abstractmethod
+    def is_multi_decimal_separator_culture(self) -> bool:
+        pass
+
 
 class BaseNumberParser(Parser):
     def __init__(self, config: NumberParserConfiguration):
         self.config: NumberParserConfiguration = config
         self.supported_types: List[str] = list()
-
         single_int_frac = f'{self.config.word_separator_token}| -|{self._get_key_regex(self.config.cardinal_number_map.keys())}|{self._get_key_regex(self.config.ordinal_number_map.keys())}'
         self.text_number_regex: Pattern = RegExpUtility.get_safe_reg_exp(
             fr'(?=\b)({single_int_frac})(?=\b)', flags=regex.I | regex.S)
@@ -122,6 +132,8 @@ class BaseNumberParser(Parser):
             r'\d+', flags=regex.I | regex.S)
         self.round_number_set: List[str] = list(
             self.config.round_number_map.keys())
+        self.is_non_standard_separator_variant = self.config.culture_info.code in \
+            self.config.non_standard_separator_variants
 
     def parse(self, source: ExtractResult) -> Optional[ParseResult]:
         # Check if the parser is configured to support specific types
@@ -204,6 +216,7 @@ class BaseNumberParser(Parser):
                 ret.value = ret.value * -1
 
             ret.resolution_str = self.__get_resolution_string(ret.value)
+            # TODO - Determine type???
             ret.text = ret.text.lower()
 
         return ret
@@ -221,6 +234,7 @@ class BaseNumberParser(Parser):
         result.length = ext_result.length
         result.text = ext_result.text
         result.type = ext_result.type
+        result.meta_data = MetaData() if not result.meta_data else result.meta_data
 
         # [1] 24
         # [2] 12 32/33
@@ -251,7 +265,8 @@ class BaseNumberParser(Parser):
                     tmp_index = handle.find(match.group(), start_index)
 
         # Scale used in the calculate of double.
-        result.value = self._get_digital_value(handle, power)
+        value = self._get_digital_value(handle, power)
+        result.value = value
 
         return result
 
@@ -409,7 +424,7 @@ class BaseNumberParser(Parser):
         # [2] 1.1^-23
         call_stack = list()
         scale = 10
-        dot = False
+        decimal_separator_found = False
         negative = False
         tmp = 0
 
@@ -422,16 +437,16 @@ class BaseNumberParser(Parser):
                     call_stack.append(tmp)
                 tmp = 0
                 scale = 10
-                dot = False
+                decimal_separator_found = False
                 negative = False
             elif c.isdigit():
-                if dot:
+                if decimal_separator_found:
                     tmp = tmp + scale * int(c)
                     scale *= 0.1
                 else:
                     tmp = tmp * scale + int(c)
             elif c == self.config.decimal_separator_char:
-                dot = True
+                decimal_separator_found = True
                 scale = 0.1
             elif c == '-':
                 negative = not negative
@@ -575,34 +590,85 @@ class BaseNumberParser(Parser):
 
         return result
 
-    def __skip_non_decimal_separator(self, ch: str, distance: int, culture: CultureInfo) -> bool:
+    def __skip_non_decimal_separator(self, ch: str, distance_end, distance_start,
+                                     has_single_separator, prev_char, non_decimal_separator) -> bool:
 
-        decimal_length: int = 3
+        result = False
+        decimal_length: int = 1 + 3
 
         # Special cases for multi-language countries where decimal separators can be used interchangeably. Mostly informally.
         # Ex: South Africa, Namibia; Puerto Rico in ES; or in Canada for EN and FR.
         # "me pidio $5.00 prestados" and "me pidio $5,00 prestados" -> currency $5
-        culture_regex: Pattern = RegExpUtility.get_safe_reg_exp(
-            r'^(en|es|fr)(-)?\b', flags=regex.I | regex.S)
+        # culture_regex: Pattern = RegExpUtility.get_safe_reg_exp(
+        #     r'^(en|es|fr)(-)?\b', flags=regex.I | regex.S)
 
-        return ch == self.config.non_decimal_separator_char and not(distance <= decimal_length and culture_regex.match(culture.code))
+        if ch == non_decimal_separator:
+            result = True
+
+        # not (distance_end <= decimal_length and culture_regex.match(self.config.culture_info.code))):
+
+        if self.config.is_multi_decimal_separator_culture and has_single_separator:
+
+            if distance_end != decimal_length or (prev_char == '0' and distance_start == 1) or distance_start > 3:
+
+                result = False
+
+        return result
 
     @precision(prec=15)
     def _get_digital_value(self, digits_str: str, power: int) -> Decimal:
         tmp: Decimal = Decimal(0)
         scale: Decimal = Decimal(10)
-        decimal_separator: bool = False
+        has_decimal_separator: bool = False
         str_length: int = len(digits_str)
         negative: bool = False
         fraction: bool = '/' in digits_str
         index: int = 0
 
+        # As some languages use different separators depending on variant, some pre-processing is required to
+        # allow for unified processing.
+
+        # Default separators from general language config
+        last_decimal_separator = -1
+        last_non_decimal_separator = -1
+        first_non_decimal_separator = sys.maxsize
+        decimal_separator = self.config.decimal_separator_char
+        non_decimal_separator = self.config.non_decimal_separator_char
+        has_single_separator = False
+
+        if self.config.is_multi_decimal_separator_culture:
+            if self.is_non_standard_separator_variant:
+                decimal_separator = self.config.non_decimal_separator_char
+                non_decimal_separator = self.config.decimal_separator_char
+
+            for i, c in enumerate(digits_str):
+                if c == decimal_separator:
+                    last_decimal_separator = i
+                elif c == non_decimal_separator:
+                    last_non_decimal_separator = i
+                    if first_non_decimal_separator == sys.maxsize:
+                        first_non_decimal_separator = i
+
+            if (((last_decimal_separator < 0 <= last_non_decimal_separator) or (last_non_decimal_separator < 0 <= last_decimal_separator))
+                    and first_non_decimal_separator == last_non_decimal_separator):
+
+                has_single_separator = True
+
+            elif ((last_decimal_separator < last_non_decimal_separator) and
+                  not (last_decimal_separator == -1 or last_non_decimal_separator == -1)):
+
+                temp_sep = decimal_separator
+                decimal_separator = non_decimal_separator
+                non_decimal_separator = temp_sep
+
         call_stack: List[Decimal] = list()
 
-        for c in digits_str:
+        for i, c in enumerate(digits_str):
+
+            prev_char = digits_str[i - 1] if i > 0 else '\0'
 
             skippable_non_decimal = self.__skip_non_decimal_separator(
-                c, str_length - index, self.config.culture_info)
+                c, str_length - i, i, has_single_separator, prev_char, non_decimal_separator)
             index += 1
 
             if not fraction and (c == ' ' or c == Constants.NO_BREAK_SPACE or skippable_non_decimal):
@@ -612,13 +678,13 @@ class BaseNumberParser(Parser):
                 call_stack.append(tmp)
                 tmp = Decimal(0)
             elif c.isdigit():
-                if decimal_separator:
+                if has_decimal_separator:
                     tmp = getcontext().add(tmp, getcontext().multiply(scale, Decimal(c)))
                     scale = getcontext().multiply(scale, Decimal(0.1))
                 else:
                     tmp = getcontext().add(getcontext().multiply(tmp, scale), Decimal(c))
-            elif c == self.config.decimal_separator_char or (not skippable_non_decimal and c == self.config.non_decimal_separator_char):
-                decimal_separator = True
+            elif c == decimal_separator or (not skippable_non_decimal and c == non_decimal_separator):
+                has_decimal_separator = True
                 scale = Decimal(0.1)
             elif c == '-':
                 negative = True
