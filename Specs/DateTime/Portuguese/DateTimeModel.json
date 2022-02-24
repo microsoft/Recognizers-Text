@@ -4,7 +4,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript,",
     "Results": [
       {
         "Text": "dom",
@@ -79,7 +79,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript,",
     "Results": [
       {
         "Text": "dom",
@@ -154,7 +154,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript,",
     "Results": [
       {
         "Text": "amanhã",
@@ -209,7 +209,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript,",
     "Results": []
   },
   {
@@ -217,7 +217,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript,",
     "Results": []
   },
   {
@@ -225,7 +225,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript,",
     "Results": []
   },
   {
@@ -233,7 +233,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript,",
     "Results": []
   },
   {
@@ -241,7 +241,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript,",
     "Results": []
   },
   {
@@ -249,7 +249,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript,",
     "Results": []
   },
   {
@@ -257,7 +257,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript,",
     "Results": []
   },
   {
@@ -265,7 +265,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript,",
     "Results": []
   },
   {
@@ -273,7 +273,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript,",
     "Results": [
       {
         "Text": "2000",
@@ -298,7 +298,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript,",
     "Results": []
   },
   {
@@ -306,7 +306,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-05T01:00:00"
     },
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript,",
     "Results": [
       {
         "Text": "terca-feira",
@@ -355,7 +355,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-05T00:01:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, ",
     "Results": [
       {
         "Text": "terça",
@@ -469,7 +469,7 @@
     "Context": {
       "ReferenceDateTime": "2019-12-19T01:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, ",
     "Results": [
       {
         "Text": "maio de 68",
@@ -598,7 +598,7 @@
     "Context": {
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,,java",
     "Results": [
       {
         "Text": "10/1-11/2/2017",
@@ -623,7 +623,7 @@
     "Context": {
       "ReferenceDateTime": "2020-05-14T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, , java",
     "Results": [
       {
         "Text": "dia do trabalho",
@@ -652,7 +652,7 @@
     "Context": {
       "ReferenceDateTime": "2020-05-14T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, , java",
     "Results": []
   },
   {
@@ -660,7 +660,7 @@
     "Context": {
       "ReferenceDateTime": "2020-05-14T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, , java",
     "Results": [
       {
         "Text": "3 horas",
@@ -689,7 +689,7 @@
     "Context": {
       "ReferenceDateTime": "2020-05-14T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, , java",
     "Results": [
       {
         "Text": "12 h",
@@ -719,7 +719,7 @@
       "ReferenceDateTime": "2020-05-25T12:00:00"
     },
 	"Comment": "The current resolution policy design will always result in a date for such entities. Policy change mechanism is in the backlog.",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, , java",
     "Results": [
       {
         "Text": "dois meses atras",
@@ -743,7 +743,7 @@
     "Context": {
       "ReferenceDateTime": "2020-05-14T12:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, ",
     "Results": [
       {
         "Text": "30 minutos",
@@ -775,7 +775,7 @@
     "Context": {
       "ReferenceDateTime": "2020-05-30T12:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, ",
     "Results": [
       {
         "Text": "uma e trinta",
@@ -804,7 +804,7 @@
     "Context": {
       "ReferenceDateTime": "2020-05-30T12:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, ",
     "Results": [
       {
         "Text": "27/11 às 23",
@@ -833,7 +833,7 @@
     "Context": {
       "ReferenceDateTime": "2020-05-30T12:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, ",
     "Results": [
       {
         "Text": "sexta-feira em londres às 5",
@@ -872,7 +872,7 @@
     "Context": {
       "ReferenceDateTime": "2020-05-30T12:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, ",
     "Results": [
       {
         "Text": "sexta-feira em londres às 5 da tarde",
@@ -901,7 +901,7 @@
     "Context": {
       "ReferenceDateTime": "2020-05-30T12:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, ",
     "Results": [
       {
         "Text": "30 minutos",
@@ -925,7 +925,7 @@
     "Context": {
       "ReferenceDateTime": "2020-05-30T12:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, ",
     "Results": [
       {
         "Text": "sete do dia 15",
@@ -964,7 +964,7 @@
     "Context": {
       "ReferenceDateTime": "2020-05-30T12:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, ",
     "Results": [
       {
         "Text": "sete da tarde do dia 15",
@@ -1065,7 +1065,7 @@
     "Context": {
       "ReferenceDateTime": "2020-05-30T12:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, ",
     "Results": [
       {
         "Text": "10 min",
@@ -1089,7 +1089,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, ",
     "Results": [
       {
         "Text": "29/2",
@@ -1118,7 +1118,7 @@
     "Context": {
       "ReferenceDateTime": "2019-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, ",
     "Results": [
       {
         "Text": "29/2",
@@ -1147,7 +1147,7 @@
     "Context": {
       "ReferenceDateTime": "2020-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, ",
     "Results": [
       {
         "Text": "29/2",
@@ -1176,7 +1176,7 @@
     "Context": {
       "ReferenceDateTime": "2020-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, ",
     "Results": [
       {
         "Text": "30/2",
@@ -1200,7 +1200,7 @@
     "Context": {
       "ReferenceDateTime": "2020-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, ",
     "Results": [
       {
         "Text": "29/2/2019",
@@ -1224,7 +1224,7 @@
     "Context": {
       "ReferenceDateTime": "2020-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, ",
     "Results": [
       {
         "Text": "29/2/2020",
@@ -1248,7 +1248,7 @@
     "Context": {
       "ReferenceDateTime": "2019-09-18T18:00:00"
     },
-    "NotSupported": "javascript,python,java",
+    "NotSupported": "javascript,,java",
     "Results": [
       {
         "Text": "28/2-1/3",
@@ -1279,7 +1279,7 @@
     "Context": {
       "ReferenceDateTime": "2019-09-18T18:00:00"
     },
-    "NotSupported": "javascript,python,java",
+    "NotSupported": "javascript,,java",
     "Results": [
       {
         "Text": "29/2-1/3",
@@ -1310,7 +1310,7 @@
     "Context": {
       "ReferenceDateTime": "2019-09-18T18:00:00"
     },
-    "NotSupported": "javascript,python,java",
+    "NotSupported": "javascript,,java",
     "Results": [
       {
         "Text": "29/2-1/3/2019",
@@ -1406,7 +1406,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript, ",
     "Results": [
       {
         "Text": "2020/set/23",
@@ -1430,7 +1430,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript, ",
     "Results": [
       {
         "Text": "23/set/2020",
@@ -1454,7 +1454,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript, ",
     "Results": [
       {
         "Text": "23-2020-setembro",
@@ -1478,7 +1478,7 @@
     "Context": {
       "ReferenceDateTime": "2020-05-05T01:00:00"
     },
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript,",
     "Results": [
       {
         "Text": "17/11",
@@ -1546,7 +1546,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-07T00:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript, ",
     "Results": [
       {
         "Text": "sexta-feira de 23 às 4",
@@ -1577,7 +1577,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-07T00:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript, ",
     "Results": [
       {
         "Text": "sexta-feira 23 a 4",
@@ -1647,7 +1647,7 @@
     "Context": {
       "ReferenceDateTime": "2021-03-15T00:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript, ",
     "Results": [
       {
         "Text": "sexta as 4",
@@ -1802,7 +1802,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript, ",
     "Results": [
       {
         "Text": "20 de junho",
@@ -1908,7 +1908,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-07T00:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript, ",
     "Results": [
       {
         "Text": "tarde",
@@ -1933,7 +1933,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-07T00:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript, ",
     "Results": [
       {
         "Text": "tarde",
@@ -1958,7 +1958,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-07T00:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript, ",
     "Results": [
       {
         "Text": "tarde",
@@ -1983,7 +1983,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-07T00:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript, ",
     "Results": [
       {
         "Text": "tarde",
@@ -2083,7 +2083,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-07T00:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript, ",
     "Results": [
       {
         "Text": "meio dia",
@@ -2132,7 +2132,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-03T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, , java",
     "Results": [
       {
         "Text": "em 2 semanas",
@@ -2206,7 +2206,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T12:30:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, , java",
     "Results": [
       {
         "Text": "último minuto",
@@ -2281,7 +2281,7 @@
     "Context": {
         "ReferenceDateTime": "2021-07-14T19:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript, ",
     "Results": [
       {
         "Text": "até 2010",
@@ -2307,7 +2307,7 @@
     "Context": {
         "ReferenceDateTime": "2021-07-14T19:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript, ",
     "Results": [
       {
         "Text": "até amanhã",
@@ -2333,7 +2333,7 @@
     "Context": {
         "ReferenceDateTime": "2021-07-14T19:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript, ",
     "Results": [
       {
         "Text": "ateh a manha",
@@ -2383,7 +2383,7 @@
     "Context": {
         "ReferenceDateTime": "2021-07-14T19:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript, ",
     "Results": [
       {
         "Text": "ate agosto",
@@ -2416,7 +2416,7 @@
     "Context": {
         "ReferenceDateTime": "2021-07-14T19:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript, ",
     "Results": [
       {
         "Text": "dia 12",
@@ -2528,7 +2528,7 @@
     "Context": {
         "ReferenceDateTime": "2021-07-14T19:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript, ",
     "Results": [
       {
         "Text": "a partir do dia 12",
@@ -2561,7 +2561,7 @@
     "Context": {
       "ReferenceDateTime": "2018-10-15T01:00:00"
     },
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript,",
     "Results": [
       {
         "Text": "9 de agosto de 1971",
@@ -2585,7 +2585,7 @@
     "Context": {
       "ReferenceDateTime": "2018-10-15T01:00:00"
     },
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript,",
     "Results": [
       {
         "Text": "9 de 8 de 1971",
@@ -2609,7 +2609,7 @@
     "Context": {
       "ReferenceDateTime": "2020-05-05T01:00:00"
     },
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript,",
     "Results": [
       {
         "Text": "23 de novembro 1982",
@@ -2633,7 +2633,7 @@
     "Context": {
       "ReferenceDateTime": "2020-05-05T01:00:00"
     },
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript,",
     "Results": [
       {
         "Text": "23 de novembro 82",
@@ -2657,7 +2657,7 @@
     "Context": {
       "ReferenceDateTime": "2020-05-05T01:00:00"
     },
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript,",
     "Results": [
       {
         "Text": "23 novembro 1982",
@@ -2681,7 +2681,7 @@
     "Context": {
       "ReferenceDateTime": "2020-05-05T01:00:00"
     },
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript,",
     "Results": [
       {
         "Text": "23 novembro 82",
@@ -2905,7 +2905,7 @@
     "Context": {
       "ReferenceDateTime": "2020-05-14T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, , java",
     "Results": [
       {
         "Text": "7 horas",
@@ -2934,7 +2934,7 @@
     "Context": {
       "ReferenceDateTime": "2020-05-14T12:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript, ",
     "Results": [
       {
         "Text": "7 horas",
@@ -2958,7 +2958,7 @@
     "Context": {
       "ReferenceDateTime": "2020-05-14T12:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript, ",
     "Results": [
       {
         "Text": "7 horas",
@@ -3006,7 +3006,7 @@
     "Context": {
       "ReferenceDateTime": "2020-05-14T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, , java",
     "Results": [
       {
         "Text": "5 e 45",
@@ -3035,7 +3035,7 @@
     "Context": {
       "ReferenceDateTime": "2020-05-14T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, , java",
     "Results": []
   },
   {
@@ -3043,7 +3043,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-07T00:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript, ",
     "Results": [
       {
         "Text": "entre as 5 e as 7 da manha",
@@ -3068,7 +3068,7 @@
     "Context": {
       "ReferenceDateTime": "2020-05-14T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, , java",
     "Results": [
       {
         "Text": "seis e meia",
@@ -3097,7 +3097,7 @@
     "Context": {
       "ReferenceDateTime": "2020-05-14T12:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, , java",
     "Results": [
       {
         "Text": "oito e quarenta e cinco",
