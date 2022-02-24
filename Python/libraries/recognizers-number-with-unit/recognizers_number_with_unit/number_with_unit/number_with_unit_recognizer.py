@@ -4,6 +4,7 @@
 from enum import IntFlag
 from typing import List
 from recognizers_text import Culture, Recognizer
+from recognizers_number.culture import CultureInfo
 from recognizers_text.model import Model, ModelResult
 from .models import CurrencyModel, TemperatureModel, DimensionModel, AgeModel, ExtractorParserModel
 from .extractors import NumberWithUnitExtractor, BaseMergedUnitExtractor
@@ -203,19 +204,19 @@ class NumberWithUnitRecognizer(Recognizer[NumberWithUnitOptions]):
         # region Spanish Mexican
         self.register_model('CurrencyModel', Culture.SpanishMexican, lambda options: CurrencyModel(
             [ExtractorParserModel(BaseMergedUnitExtractor(SpanishCurrencyExtractorConfiguration(
-            )), BaseMergedUnitParser(SpanishCurrencyParserConfiguration()))]
+            )), BaseMergedUnitParser(SpanishCurrencyParserConfiguration(culture_info=CultureInfo(Culture.SpanishMexican))))]
         ))
         self.register_model('TemperatureModel', Culture.SpanishMexican, lambda options: TemperatureModel(
             [ExtractorParserModel(NumberWithUnitExtractor(SpanishTemperatureExtractorConfiguration(
-            )), NumberWithUnitParser(SpanishTemperatureParserConfiguration()))]
+            )), NumberWithUnitParser(SpanishTemperatureParserConfiguration(culture_info=CultureInfo(Culture.SpanishMexican))))]
         ))
         self.register_model('DimensionModel', Culture.SpanishMexican, lambda options: DimensionModel(
             [ExtractorParserModel(NumberWithUnitExtractor(SpanishDimensionExtractorConfiguration(
-            )), NumberWithUnitParser(SpanishDimensionParserConfiguration()))]
+            )), NumberWithUnitParser(SpanishDimensionParserConfiguration(culture_info=CultureInfo(Culture.SpanishMexican))))]
         ))
         self.register_model('AgeModel', Culture.SpanishMexican, lambda options: AgeModel(
             [ExtractorParserModel(NumberWithUnitExtractor(SpanishAgeExtractorConfiguration(
-            )), NumberWithUnitParser(SpanishAgeParserConfiguration()))]
+            )), NumberWithUnitParser(SpanishAgeParserConfiguration(culture_info=CultureInfo(Culture.SpanishMexican))))]
         ))
         # endregion
 
