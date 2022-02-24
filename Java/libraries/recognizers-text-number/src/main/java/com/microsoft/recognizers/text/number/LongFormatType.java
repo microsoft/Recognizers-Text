@@ -46,6 +46,8 @@ public class LongFormatType {
     // 1'234'567,89
     public static LongFormatType DoubleNumQuoteComma = new LongFormatType('\'', ',');
 
+    public static LongFormatType DoubleNumFullWidthBlankDot = new LongFormatType('　', '.');
+
     public final char decimalsMark;
     public final char thousandsMark;
 
