@@ -935,7 +935,7 @@ YearSuffix: !nestedRegex
   references: [ YearRegex, FullTextYearRegex ]
 SuffixAfterRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
+  def: ^\b$
 YearPeriodRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
