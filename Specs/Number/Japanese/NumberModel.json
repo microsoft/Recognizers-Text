@@ -12612,6 +12612,7 @@
   },
   {
     "Input": "日本貿易振興会（ジェトロ）が十二日発表したジェトロ投資白書によると、世界の一九九九年対外直接投資額（日本は一九九九年度）は、前年比四％増の七千九百九十九億二千八百万ドルと、過去最高を更新した。",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "十二",
@@ -12653,6 +12654,7 @@
   },
   {
     "Input": "29万1,890",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "29万1,890",
@@ -12667,6 +12669,7 @@
   },
   {
     "Input": "3 万 4,500",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "3 万 4,500",
@@ -12681,6 +12684,7 @@
   },
   {
     "Input": "4億23,800,000",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "4億23,800,000",
@@ -12695,6 +12699,7 @@
   },
   {
     "Input": "2,204.62",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "2,204.62",
@@ -12709,6 +12714,7 @@
   },
   {
     "Input": "一二三四五六七八九〇",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "一二三四五六七八九〇",

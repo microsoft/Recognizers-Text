@@ -95,6 +95,8 @@ TenChars: !list
   types: [char]
   entries:
     - 十
+RoundNumberIntegerRegex: !simpleRegex
+  def: '(十|百|千|万(?!万)|億|兆)'
 AllMultiplierLookupRegex: !nestedRegex
   def: ({BaseNumbers.MultiplierLookupRegex}|ミリリットル(入れら)?|キロメートル|メートル|ミリメート)
   references: [BaseNumbers.MultiplierLookupRegex]  
@@ -134,8 +136,6 @@ SpeGetNumberRegex: !nestedRegex
   references: [ZeroToNineFullHalfRegex, ZeroToNineIntegerRegex]
 PairRegex: .*[対膳足]$
 #IntegerExtractor
-RoundNumberIntegerRegex: !simpleRegex
-  def: '(十|百|千|万(?!万)|億|兆)'
 AllowListRegex: !simpleRegex
   def: (。|，|、|（|）|”｜国|週間|時間|時|匹|キロ|トン|年|個|足|本|で|は|\s|$|つ|月|の|と)
 NotSingleRegex: !nestedRegex
