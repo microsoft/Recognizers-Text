@@ -36,6 +36,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         // For cases like '2:00 pm', both 'pm' and '00 pm' are not dimension
         public const string AMBIGUOUS_TIME_TERM = BaseUnits.AmbiguousTimeTerm;
 
+        // In certain cultures the unit can be split around the number,
+        // e.g. in Japanese "秒速100メートル" ('speed per second 100 meters' = 100m/s).
+        // This flag tells the recognizer to combine prefix and suffix in order to parse the unit correctly.
+        public const string SPLIT_UNIT = "split_unit";
+
         // For currencies without ISO codes, we use internal values prefixed by '_'.
         // These values should never be present in parse output.
         public const string FAKE_ISO_CODE_PREFIX = "_";

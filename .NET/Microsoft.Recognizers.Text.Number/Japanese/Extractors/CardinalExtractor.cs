@@ -18,7 +18,7 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
             var intExtract = new IntegerExtractor(config, mode);
             builder.AddRange(intExtract.Regexes);
 
-            var douExtractor = new DoubleExtractor(config);
+            var douExtractor = new DoubleExtractor(config, mode);
             builder.AddRange(douExtractor.Regexes);
 
             Regexes = builder.ToImmutable();

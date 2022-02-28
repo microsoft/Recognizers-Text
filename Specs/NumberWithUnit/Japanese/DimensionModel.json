@@ -1,7 +1,6 @@
 [
   {
     "Input": "あなたの体重は200ポンドです。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -18,7 +17,6 @@
   },
   {
     "Input": "75ミリリットル",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -35,7 +33,6 @@
   },
   {
     "Input": "その最大の欠点は、一人のコンサルタントが扱いにくいと述べるほどの3インチの厚みかもしれない。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -52,7 +49,6 @@
   },
   {
     "Input": "竜巻が10マイルにわたってそのエリアを轟き過ぎ、少なくとも14人が亡くなり数十軒の住宅はがれきと化した。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -69,7 +65,6 @@
   },
   {
     "Input": "それを23台のコンピューターとすべて接続するためには、10.5マイル以上のケーブルと電線が必要だ。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -86,7 +81,6 @@
   },
   {
     "Input": "私が泊まる空港のホテルまでの6マイルの道のりを早朝には20分で行けたのに、3時間以上もかかった。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -103,7 +97,6 @@
   },
   {
     "Input": "それが、1 ) なぜ、やはり自分たちはボー・ジャクソンとは違うのかを説明する。2 ) 平均水深が2フィートの湖で溺れる可能性があると警告する。そして 3 ) 1万台のピアノの前に1万匹のサルを並べると1, 118 曲の出版可能なロックンロールの曲がうまれると予測する。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -120,7 +113,6 @@
   },
   {
     "Input": "ミシシッピー州、ニューヨーク州、ペンシルバニア州の100人以上が汚染されたキノコを食べ健康を害したことをうけ、5月19日に米食品医薬品局は、68オンス缶中国産キノコの拘禁を始めた。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -137,7 +129,6 @@
   },
   {
     "Input": "ハーリング市は、10月13日に市場が190ポイント暴落する一週間前にすべての株を売却したので、そのお金が45エーカーの馬牧場を購入の助けになるとほくそ笑んだ。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -154,9 +145,18 @@
   },
   {
     "Input": "そしてこれらのガーデネットを実際の部屋にするためにバートレットさんは、8フィートから10フィートの高さの窓のない壁（レンガ、格子、垣根）を急いで建ててて室内が一日中真っ暗な陰になるようにした。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
+      {
+        "Text": "8フィート",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "8",
+          "unit": "Foot"
+        },
+        "Start": 35,
+        "End": 39
+      },
       {
         "Text": "10フィート",
         "TypeName": "dimension",
@@ -171,7 +171,6 @@
   },
   {
     "Input": "アメリカン航空の燃料業務取締役として年間約24億ガロンのジェット燃料を購入するジャック・ザベスは、「経営者は不意打ちは望まない。」と言及する。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -188,7 +187,6 @@
   },
   {
     "Input": "10ガロンの冷水が床に倒れ、赤いカーペットはびしょ濡れになった。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -205,7 +203,6 @@
   },
   {
     "Input": "近くで、6 ぴきのイルカは 海水水族館の150万ガロンの水で戯れるだろう。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -222,7 +219,6 @@
   },
   {
     "Input": "そしてこの赤ちゃんは、2ポンドを超えている。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -239,7 +235,6 @@
   },
   {
     "Input": "ヴォロクさんは「私は食事しない人は信用しない。」と言ったが、彼女自身25ポンド痩せるために数年前から昼食をとらなくなった。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -256,7 +251,6 @@
   },
   {
     "Input": "ロイヤル・ダッチ・シェルグループの子会社であるシェルは、0.9兆立方フィートの輸出を許可され、また、 オリンピア・アンド・ヨーク・ディベロプメンツの一部であるガルフは輸出を許可される。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -273,7 +267,6 @@
   },
   {
     "Input": "現在枠組みされている法案の主要部は、 小さい農村部を除き国の6 大都市の場合、一家族が所有できる不動産は660平方メートルに規制されている。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -290,7 +283,6 @@
   },
   {
     "Input": "ティグレイ軍隊は現在、アジスアベバ北部 200マイルでデセの町を脅かしており、それによりアジスアベバにとってのすべての燃料やその他 の供給源であるアッサブ港からのメンギストゥ氏の原資が断ち切られることになる。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -307,7 +299,6 @@
   },
   {
     "Input": "コンピューターの一台が3フィートも床の上を滑ったと彼は言った。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -324,7 +315,6 @@
   },
   {
     "Input": "保有の中核は、東京のビジネスおよび金融の中心であり、よく「三菱村」と冗談めかして呼ばれる丸の内地区にある 19万平方メートルの巨額な土地である。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -341,7 +331,6 @@
   },
   {
     "Input": "ヒューズが国際電気通信衛生機構につくった人工衛星は、1982年に3トンの人工衛星5基を開発するためにヒューズが得た 7億ドル契約の一部であった。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -358,7 +347,6 @@
   },
   {
     "Input": "1996年の生物兵器に関する報告書によると、ワシントンにある民間の政策調査機関である戦略国際問題研究所 は、130ガロン容量の業務用機器を使用して生物兵器を形成するのは、自称テロリストたちにとっては容易であると警告した。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -375,7 +363,6 @@
   },
   {
     "Input": "一番ホールでシンは、9番アイアンでアプローチショットをカップから6フィート内に打った。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -392,7 +379,6 @@
   },
   {
     "Input": "よって、来年三月のオオバコ収穫時には、ちょうどオオバコブームが絶頂だった過去数年よりも収穫量が1万6千メートルトン少ないかもしれない。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -409,7 +395,6 @@
   },
   {
     "Input": "486 は、IBMが 初期のパソコン用に16ビット8088 チップを採用して以来、市場を支配し始めたインテルチップの長いシリーズの系列である。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -426,7 +411,6 @@
   },
   {
     "Input": "「ジオット・キャスピタ」は、時速188マイル以上で走行可能だと会社の広報担当は言った。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -443,7 +427,6 @@
   },
   {
     "Input": "海軍は、バグダッド郊外の移動式運転室から 100メートルのところにヘリコプター用の着陸ゾーンを準備した。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -460,7 +443,6 @@
   },
   {
     "Input": "カリフォルニア運輸局は、ロサンゼルスのすぐ南、メモリアルコロシアム付近のハーバーフリーウェイの中央分離帯の上に 全長2.5マイルの二つ目のバス用デッキとカープールを追加する計画をたてている。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -477,7 +459,6 @@
   },
   {
     "Input": "毎朝、農園本部に行くまでの4マイルの道のりで、4 軒の空き家を通り過ぎる。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -493,27 +474,35 @@
     ]
   },
   {
-    "Input": "我々は侮辱されたと、ブカレストの北西約 325キロにあるギリシャカトリック本部のランガは言った。",
-    "NotSupported": "dotnet",
+    "Input": "我々は侮辱されたと、ブカレストの北西約 325キロメートルにあるギリシャカトリック本部のランガは言った。",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "325キロ",
+        "Text": "325キロメートル",
         "TypeName": "dimension",
         "Resolution": {
           "value": "325",
           "unit": "Kilometer"
         },
         "Start": 20,
-        "End": 24
+        "End": 28
       }
     ]
   },
   {
     "Input": "ロティックは、3年ほど前から真剣に走り始め、今月になるまでインドア競技には出場したことのなかった小さな（5フィート4インチ）の28歳である。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
+      {
+        "Text": "5フィート",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "5",
+          "unit": "Foot"
+        },
+        "Start": 52,
+        "End": 56
+      },
       {
         "Text": "4インチ",
         "TypeName": "dimension",
@@ -528,7 +517,6 @@
   },
   {
     "Input": "ミネソタ州シャコピーのレースウェイパークは、1/4マイルの舗装されたオーバルだ。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -544,42 +532,39 @@
     ]
   },
   {
-    "Input": "キャッスルクラグ山は、モート湖の南、そしてフリンク山の西 1.6キロの同じ稜線に位置する。",
-    "NotSupported": "dotnet",
+    "Input": "キャッスルクラグ山は、モート湖の南、そしてフリンク山の西 1.6キロメートルの同じ稜線に位置する。",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "1.6キロ",
+        "Text": "1.6キロメートル",
         "TypeName": "dimension",
         "Resolution": {
           "value": "1.6",
           "unit": "Kilometer"
         },
         "Start": 29,
-        "End": 33
+        "End": 37
       }
     ]
   },
   {
-    "Input": "ジャバディヒルズは、アンブルから約 17キロのところに位置する。 ",
-    "NotSupported": "dotnet",
+    "Input": "ジャバディヒルズは、アンブルから約 17キロメートルのところに位置する。 ",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "17キロ",
+        "Text": "17キロメートル",
         "TypeName": "dimension",
         "Resolution": {
           "value": "17",
           "unit": "Kilometer"
         },
         "Start": 18,
-        "End": 21
+        "End": 25
       }
     ]
   },
   {
     "Input": "展示会場近くのミシガン湖を二時間まわった後、 ヒューゴ・エッケナー指揮官は、776フィートの飛行船をグレンビューのカーティスライト空港付近に着陸させた。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -596,7 +581,6 @@
   },
   {
     "Input": "高速道路の 35番と 115番のリンジーとピーターボロー(436番出口) へのインターチェンジは、ベネット通りの東 500メートルにある。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -613,7 +597,6 @@
   },
   {
     "Input": "1995 年にキャノンは、 内部画像安定を搭載したSLRレンズ ef 75 -300ミリ f / 4 - 5 . 6 is usm を初めて商品化した。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -630,7 +613,6 @@
   },
   {
     "Input": "ダゲナムのスターリング・アーマメンツ社は、 商業販売用に 新しい7.62ミリバレル、弾倉、エキストラクター、エジェクターで構成される変換キットを生産した。 ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -647,7 +629,6 @@
   },
   {
     "Input": "そのプロジェクトは、4680 万ドルかけて会社の生産能力を年間25 %増の銅陰極3 万 4,500メートルトンにする予定である。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -664,7 +645,6 @@
   },
   {
     "Input": "連邦政府関係機関のカナダ統計局によると、カナダ鋼地金の生産量は、10月7日終わりの週で総量29万1,890メートルトンで前の週の総生産量の14 . 8 % 増となった。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -681,7 +661,6 @@
   },
   {
     "Input": "フロリダプーマは、190平方キロメートル圏内を行動圏にして生息する。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -698,46 +677,42 @@
   },
   {
     "Input": "1メートルトンは、 2,204.62ポンドに等しい。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": " 2,204.62ポンド",
+        "Text": "1メートルトン",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "1",
+          "unit": "Metric ton"
+        },
+        "Start": 0,
+        "End": 6
+      },
+      {
+        "Text": "2,204.62ポンド",
         "TypeName": "dimension",
         "Resolution": {
           "value": "2204.62",
           "unit": "Pound"
         },
-        "Start": 9,
+        "Start": 10,
         "End": 20
-      },
-      {
-        "Text": "メートルトン",
-        "TypeName": "dimension",
-        "Resolution": {
-          "value": null,
-          "unit": "Metric ton"
-        },
-        "Start": 1,
-        "End": 6
       }
     ]
   },
   {
     "Input": "私は男だ。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
     "Input": "さっとダイレクトメールを送って、E メールアドレスをききなさい。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
     "Input": "1メートルは、10デシメートルに等しい。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -764,7 +739,6 @@
   },
   {
     "Input": "このファイルのサイズは、100メガバイトだ。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -781,13 +755,11 @@
   },
   {
     "Input": " 午後の2時に君にサプライズが用意してあるよ。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
     "Input": "2pmとは、 2 ピクトメーターのことだと彼は言った。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -801,9 +773,9 @@
         }
       },
       {
-        "Text": "2ピクトメーター",
-        "Start": 8,
-        "End": 16,
+        "Text": "2 ピクトメーター",
+        "Start": 7,
+        "End": 15,
         "TypeName": "dimension",
         "Resolution": {
           "unit": "Picometer",
@@ -814,7 +786,6 @@
   },
   {
     "Input": "それなら1マイルは準備できる。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -831,7 +802,7 @@
   },
   {
     "Input": "2pmとは、2ピクトメーターのことだと彼は言った。",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "2pm",
@@ -857,7 +828,7 @@
   },
   {
     "Input": "今の身長は百六十八センチです",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "百六十八センチ",
@@ -873,12 +844,12 @@
   },
   {
     "Input": "dimensionってどういう意味ですか",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": []
   },
   {
     "Input": "ここの水深は250メートル超え",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "250メートル",
@@ -894,7 +865,7 @@
   },
   {
     "Input": "身長はいま、168cmも到達しました",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "168cm",
@@ -910,13 +881,13 @@
   },
   {
     "Input": "去年、チンジャンの蝦米共同産業の生産額が百八十億人民元突破、十万人の就業も促進し、ロブスターの養殖農家平均で一万六千元増収し、全省のロブスター養殖業を三百八十七ムー引っ張しました。",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "三百八十七ムー",
         "TypeName": "dimension",
         "Resolution": {
-          "value": "3870000",
+          "value": "387",
           "unit": "Mu"
         },
         "Start": 75,
@@ -926,7 +897,7 @@
   },
   {
     "Input": "今となって、身長は168センチになった",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "168センチ",
@@ -942,7 +913,7 @@
   },
   {
     "Input": "オーストラリアとビクトリアの警察がモルボルンで一トン近いのメタンフェタミンを鹵獲。オーストラリア史上最大のメタンフェタミン密輸案件となっております。（オーストラリア連邦警察）",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "一トン",
@@ -958,12 +929,95 @@
   },
   {
     "Input": "今日の午後二時、サプライズがあります！",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": []
   },
   {
+    "Input": "陽西の唐辛子絶賛発売中、毎日平均で二十万キログラムも珠江デルタで完売",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "二十万キログラム",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "200000",
+          "unit": "Kilogram"
+        },
+        "Start": 17,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "速度は毎秒23メートルです",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "毎秒23メートル",
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Meter per second",
+          "value": "23"
+        },
+        "Start": 3,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "速度は時速120キロメートルです",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "時速120キロメートル",
+        "TypeName": "dimension",
+        "Resolution": {
+          "unit": "Kilometer per hour",
+          "value": "120"
+        },
+        "Start": 3,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "我々は侮辱されたと、ブカレストの北西約 325キロにあるギリシャカトリック本部のランガは言った。",
+    "Comment": "'キロ' (kilo) can be used for both 'kilometer' and 'kilogram' and its meaning is disambiguated by context.",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "Results": [
+      {
+        "Text": "325キロ",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "325",
+          "unit": "Kilometer"
+        },
+        "Start": 20,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "キャッスルクラグ山は、モート湖の南、そしてフリンク山の西 1.6キロの同じ稜線に位置する。",
+    "Comment": "'キロ' (kilo) can be used for both 'kilometer' and 'kilogram' and its meaning is disambiguated by context.",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "Results": [
+      {
+        "Text": "1.6キロ",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "1.6",
+          "unit": "Kilometer"
+        },
+        "Start": 29,
+        "End": 33
+      }
+    ]
+  },
+  {
     "Input": "陽西の唐辛子絶賛発売中、毎日平均で二十万キロも珠江デルタで完売",
-    "NotSupported": "dotnet, javascript, python, java",
+    "Comment": "'キロ' (kilo) can be used for both 'kilometer' and 'kilogram' and its meaning is disambiguated by context.",
+    "NotSupported": "dotnet,javascript, python, java",
     "Results": [
       {
         "Text": "二十万キロ",
