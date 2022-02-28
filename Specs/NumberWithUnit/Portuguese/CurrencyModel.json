@@ -1536,13 +1536,13 @@
   },
   {
     "Input": "custou apenas 15 dólares e 15 centavos.",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "15 dólares e 15 centavos",
         "TypeName": "currency",
         "Resolution": {
-          "value": "15,15",
+          "value": "15.15",
           "unit": "Dólar"
         },
         "Start": 14,
@@ -1552,13 +1552,13 @@
   },
   {
     "Input": "custou apenas treze euros e quarenta e cinco centavos.",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "treze euros e quarenta e cinco centavos",
         "TypeName": "currency",
         "Resolution": {
-          "value": "13,45",
+          "value": "13.45",
           "unit": "Euro"
         },
         "Start": 14,
@@ -1568,13 +1568,13 @@
   },
   {
     "Input": "custa apenas 15 dólares e 15.",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "15 dólares e 15",
         "TypeName": "currency",
         "Resolution": {
-          "value": "15,15",
+          "value": "15.15",
           "unit": "Dólar"
         },
         "Start": 13,
@@ -1584,13 +1584,13 @@
   },
   {
     "Input": "custa apenas 15 dólares 50.",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "15 dólares 50",
         "TypeName": "currency",
         "Resolution": {
-          "value": "15,5",
+          "value": "15.5",
           "unit": "Dólar"
         },
         "Start": 13,
@@ -1600,13 +1600,13 @@
   },
   {
     "Input": "custa apenas 15 dólares com 50.",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "15 dólares com 50",
         "TypeName": "currency",
         "Resolution": {
-          "value": "15,5",
+          "value": "15.5",
           "unit": "Dólar"
         },
         "Start": 13,
@@ -1616,13 +1616,13 @@
   },
   {
     "Input": "custa apenas 25 euros com 50.",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "25 euros com 50",
         "TypeName": "currency",
         "Resolution": {
-          "value": "25,5",
+          "value": "25.5",
           "unit": "Euro"
         },
         "Start": 13,
@@ -1632,13 +1632,13 @@
   },
   {
     "Input": "custa apenas 3 euros com 99 centavos.",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "3 euros com 99 centavos",
         "TypeName": "currency",
         "Resolution": {
-          "value": "3,99",
+          "value": "3.99",
           "unit": "Euro"
         },
         "Start": 13,
@@ -1728,6 +1728,22 @@
         },
         "Start": 0,
         "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "15 dólares e 15 centavos, por favor",
+    "NotSupported": "javascript, java",
+    "Results": [
+      {
+        "Text": "15 dólares e 15 centavos",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "15.15",
+          "unit": "Dólar"
+        },
+        "Start": 0,
+        "End": 23
       }
     ]
   }

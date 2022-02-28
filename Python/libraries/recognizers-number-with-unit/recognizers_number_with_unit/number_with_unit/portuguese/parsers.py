@@ -46,6 +46,8 @@ class PortugueseCurrencyParserConfiguration(PortugueseNumberWithUnitParserConfig
         super().__init__(culture_info)
         self.add_dict_to_unit_map(PortugueseNumericWithUnit.CurrencySuffixList)
         self.add_dict_to_unit_map(PortugueseNumericWithUnit.CurrencyPrefixList)
+        self.currency_name_to_iso_code_map = PortugueseNumericWithUnit.CurrencyNameToIsoCodeMap
+        self.currency_fraction_code_list = PortugueseNumericWithUnit.FractionalUnitNameToCodeMap
 
 
 class PortugueseDimensionParserConfiguration(PortugueseNumberWithUnitParserConfiguration):
