@@ -39,7 +39,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         // In certain cultures the unit can be split around the number,
         // e.g. in Japanese "秒速100メートル" ('speed per second 100 meters' = 100m/s).
         // This flag tells the recognizer to combine prefix and suffix in order to parse the unit correctly.
-        public const string PARTIAL_UNIT = "Partial unit";
+        public const string SPLIT_UNIT = "split_unit";
 
         // For currencies without ISO codes, we use internal values prefixed by '_'.
         // These values should never be present in parse output.

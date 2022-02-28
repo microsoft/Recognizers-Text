@@ -711,7 +711,7 @@ DimensionPrefixList: !dictionary
   types: [string, string]
   entries:
 #Speed
-    Partial unit: 時速|分速|秒速|毎秒
+    split_unit: 時速|分速|秒速|毎秒
 DimensionAmbiguousValues: !list
   types: [string]
   entries:

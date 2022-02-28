@@ -139,7 +139,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     // In certain cultures the unit can be split around the number,
                     // e.g. in Japanese "秒速100メートル" ('speed per second 100 meters' = 100m/s).
                     // Here prefix and suffix are combined in order to parse the unit correctly.
-                    if (unitValue == Constants.PARTIAL_UNIT && unitKeys.Count > 1 && this.Config.CheckFirstSuffix)
+                    if (unitValue == Constants.SPLIT_UNIT && unitKeys.Count > 1 && this.Config.CheckFirstSuffix)
                     {
                         if (Config.UnitMap.TryGetValue(lastUnit + unitKeys[1], out var allUnitValue) ||
                             Config.UnitMap.TryGetValue(unitKeys[1], out allUnitValue) ||
@@ -149,7 +149,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         }
                     }
 
-                    if (unitValue == Constants.PARTIAL_UNIT)
+                    if (unitValue == Constants.SPLIT_UNIT)
                     {
                         return ret;
                     }

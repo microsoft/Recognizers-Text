@@ -620,7 +620,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
         };
       public static readonly Dictionary<string, string> DimensionPrefixList = new Dictionary<string, string>
         {
-            { @"Partial unit", @"時速|分速|秒速|毎秒" }
+            { @"split_unit", @"時速|分速|秒速|毎秒" }
         };
       public static readonly IList<string> DimensionAmbiguousValues = new List<string>
         {
