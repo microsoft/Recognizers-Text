@@ -51,7 +51,7 @@ The table below summarizes the currently supported entities. Support for English
 | Number Range         | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | PA/EO  | ✓      | :x:    | ✓       |
 | Unit - Age           | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | PA/EO  | ✓     | ✓       |
 | Unit - Currency      | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | PA/EO  | ✓     | ✓       |
-| Unit - Dimensions    | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | :x:    | PA/EO  | ✓      | ✓      | 
+| Unit - Dimensions    | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | PA/EO  | ✓      | ✓      | 
 | Unit - Temperature   | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | ✓     | ✓      | ✓      | 
 | Choice - Boolean     | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | **SO** | ✓     | ✓       | 
 | Seq. - E-mail        | G    | G*       | G    | G      | G     | G       | G*     | G*     | G      | G       |
