@@ -979,5 +979,56 @@
         "End": 13
       }
     ]
+  },
+  {
+    "Input": "我々は侮辱されたと、ブカレストの北西約 325キロにあるギリシャカトリック本部のランガは言った。",
+    "Comment": "'キロ' (kilo) can be used for both 'kilometer' and 'kilogram' and its meaning is disambiguated by context.",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "Results": [
+      {
+        "Text": "325キロ",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "325",
+          "unit": "Kilometer"
+        },
+        "Start": 20,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "キャッスルクラグ山は、モート湖の南、そしてフリンク山の西 1.6キロの同じ稜線に位置する。",
+    "Comment": "'キロ' (kilo) can be used for both 'kilometer' and 'kilogram' and its meaning is disambiguated by context.",
+    "NotSupportedByDesign": "dotnet,javascript,python,java",
+    "Results": [
+      {
+        "Text": "1.6キロ",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "1.6",
+          "unit": "Kilometer"
+        },
+        "Start": 29,
+        "End": 33
+      }
+    ]
+  },
+  {
+    "Input": "陽西の唐辛子絶賛発売中、毎日平均で二十万キロも珠江デルタで完売",
+    "Comment": "'キロ' (kilo) can be used for both 'kilometer' and 'kilogram' and its meaning is disambiguated by context.",
+    "NotSupported": "dotnet,javascript, python, java",
+    "Results": [
+      {
+        "Text": "二十万キロ",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "200000",
+          "unit": "Kilogram"
+        },
+        "Start": 17,
+        "End": 21
+      }
+    ]
   }
 ]
