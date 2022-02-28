@@ -1542,7 +1542,7 @@
         "Text": "15 dólares e 15 centavos",
         "TypeName": "currency",
         "Resolution": {
-          "value": "15.15",
+          "value": "15,15",
           "unit": "Dólar"
         },
         "Start": 14,
@@ -1558,7 +1558,7 @@
         "Text": "treze euros e quarenta e cinco centavos",
         "TypeName": "currency",
         "Resolution": {
-          "value": "13.45",
+          "value": "13,45",
           "unit": "Euro"
         },
         "Start": 14,
@@ -1574,7 +1574,7 @@
         "Text": "15 dólares e 15",
         "TypeName": "currency",
         "Resolution": {
-          "value": "15.15",
+          "value": "15,15",
           "unit": "Dólar"
         },
         "Start": 13,
@@ -1590,7 +1590,7 @@
         "Text": "15 dólares 50",
         "TypeName": "currency",
         "Resolution": {
-          "value": "15.5",
+          "value": "15,5",
           "unit": "Dólar"
         },
         "Start": 13,
@@ -1606,7 +1606,7 @@
         "Text": "15 dólares com 50",
         "TypeName": "currency",
         "Resolution": {
-          "value": "15.5",
+          "value": "15,5",
           "unit": "Dólar"
         },
         "Start": 13,
@@ -1622,7 +1622,7 @@
         "Text": "25 euros com 50",
         "TypeName": "currency",
         "Resolution": {
-          "value": "25.5",
+          "value": "25,5",
           "unit": "Euro"
         },
         "Start": 13,
@@ -1739,7 +1739,7 @@
         "Text": "15 dólares e 15 centavos",
         "TypeName": "currency",
         "Resolution": {
-          "value": "15.15",
+          "value": "15,15",
           "unit": "Dólar"
         },
         "Start": 0,
