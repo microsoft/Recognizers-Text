@@ -240,7 +240,7 @@ export namespace PortugueseDateTime {
     export const DecadeWithCenturyRegex = `^[.]`;
     export const RelativeDecadeRegex = `^[.]`;
     export const YearSuffix = `((,|\\sde)?\\s*(${YearRegex}|${FullTextYearRegex}))`;
-    export const SuffixAfterRegex = `^[.]`;
+    export const SuffixAfterRegex = `^\\b$`;
     export const YearPeriodRegex = `^[.]`;
     export const FutureSuffixRegex = `\\b(seguinte(s)?|pr[oó]xim[oa](s)?|no\\s+futuro)\\b`;
     export const PastSuffixRegex = `^\\b$`;
