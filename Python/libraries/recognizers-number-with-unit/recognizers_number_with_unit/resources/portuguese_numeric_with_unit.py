@@ -599,7 +599,7 @@ class PortugueseNumericWithUnit:
                                         ("Ngwee", "NGWEE"),
                                         ("Millibitcoin", "MILLIBITCOIN"),
                                         ("Satoshi", "SATOSHI")])
-    CompoundUnitConnectorRegex = f'(?<spacer>e|com)'
+    CompoundUnitConnectorRegex = f'\\b(?<spacer>e|com)\\b'
     CurrencyPrefixList = dict([("Dólar", "$"),
                                ("Dólar estadunidense", "us$|u$d|usd$|usd"),
                                ("Dólar do Caribe Oriental", "ec$|xcd"),
