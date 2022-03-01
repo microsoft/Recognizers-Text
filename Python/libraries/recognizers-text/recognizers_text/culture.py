@@ -11,6 +11,7 @@ class Culture:
     Korean: str = 'ko-kr'
     Portuguese: str = 'pt-br'
     Spanish: str = 'es-es'
+    SpanishMexican: str = 'es-mx'
     Turkish: str = 'tr-tr'
     German: str = 'de-de'
 

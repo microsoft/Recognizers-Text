@@ -4,6 +4,7 @@
 from enum import IntFlag
 from typing import List
 from recognizers_text import Culture, Recognizer, Model
+from recognizers_number.culture import CultureInfo
 from recognizers_number.number.models import NumberMode, NumberModel, OrdinalModel, PercentModel, ModelResult
 from recognizers_number.number.parser_factory import ParserType, AgnosticNumberParserFactory
 from recognizers_number.number.english.extractors import EnglishNumberExtractor, EnglishOrdinalExtractor, \
@@ -122,6 +123,24 @@ class NumberRecognizer(Recognizer[NumberOptions]):
         self.register_model('PercentModel', Culture.Spanish, lambda options: PercentModel(
             AgnosticNumberParserFactory.get_parser(
                 ParserType.PERCENTAGE, SpanishNumberParserConfiguration()),
+            SpanishPercentageExtractor()
+        ))
+        # endregion
+
+        # region Spanish Mexican
+        self.register_model('NumberModel', Culture.SpanishMexican, lambda options: NumberModel(
+            AgnosticNumberParserFactory.get_parser(
+                ParserType.NUMBER, SpanishNumberParserConfiguration(CultureInfo(Culture.SpanishMexican))),
+            SpanishNumberExtractor(NumberMode.PURE_NUMBER)
+        ))
+        self.register_model('OrdinalModel', Culture.SpanishMexican, lambda options: OrdinalModel(
+            AgnosticNumberParserFactory.get_parser(
+                ParserType.ORDINAL, SpanishNumberParserConfiguration(CultureInfo(Culture.SpanishMexican))),
+            SpanishOrdinalExtractor()
+        ))
+        self.register_model('PercentModel', Culture.SpanishMexican, lambda options: PercentModel(
+            AgnosticNumberParserFactory.get_parser(
+                ParserType.PERCENTAGE, SpanishNumberParserConfiguration(CultureInfo(Culture.SpanishMexican))),
             SpanishPercentageExtractor()
         ))
         # endregion
