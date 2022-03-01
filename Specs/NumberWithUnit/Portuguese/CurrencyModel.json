@@ -1638,7 +1638,7 @@
         "Text": "3 euros com 99 centavos",
         "TypeName": "currency",
         "Resolution": {
-          "value": "3.99",
+          "value": "3,99",
           "unit": "Euro"
         },
         "Start": 13,
