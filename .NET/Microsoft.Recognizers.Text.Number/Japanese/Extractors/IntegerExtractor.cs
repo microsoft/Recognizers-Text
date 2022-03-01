@@ -20,16 +20,6 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
             var regexes = new Dictionary<Regex, TypeTag>
             {
                 {
-                    // 123456,  －１２３４５６
-                    new Regex(NumbersDefinitions.NumbersSpecialsChars, RegexFlags),
-                    RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
-                },
-                {
-                    // 15k,  16 G
-                    new Regex(NumbersDefinitions.NumbersSpecialsCharsWithSuffix, RegexFlags),
-                    RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
-                },
-                {
                     // 1,234,  ２，３３２，１１１
                     new Regex(NumbersDefinitions.DottedNumbersSpecialsChar, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
@@ -59,6 +49,16 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
                     regexes.Add(
                         new Regex(NumbersDefinitions.NumbersWithAllowListRegex, RegexFlags),
                         RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.JAPANESE));
+
+                    // 123456,  －１２３４５６
+                    regexes.Add(
+                        new Regex(NumbersDefinitions.NumbersSpecialsChars, RegexFlags),
+                        RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX));
+
+                    // 15k,  16 G
+                    regexes.Add(
+                        new Regex(NumbersDefinitions.NumbersSpecialsCharsWithSuffix, RegexFlags),
+                        RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX));
                     break;
 
                 case CJKNumberExtractorMode.ExtractAll:
@@ -67,6 +67,16 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
                     regexes.Add(
                         new Regex(NumbersDefinitions.NumbersAggressiveRegex, RegexFlags),
                         RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.JAPANESE));
+
+                    // 123456,  －１２３４５６
+                    regexes.Add(
+                        new Regex(NumbersDefinitions.NumbersSpecialsCharsAggressive, RegexFlags),
+                        RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX));
+
+                    // 15k,  16 G
+                    regexes.Add(
+                        new Regex(NumbersDefinitions.NumbersSpecialsCharsWithSuffixAggressive, RegexFlags),
+                        RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX));
                     break;
             }
 

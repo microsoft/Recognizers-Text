@@ -922,5 +922,26 @@
         "Length": 8
       }
     ]
+  },
+  {
+    "Input": "Seu vôo está marcado para 11:55.",
+    "NotSupported": "python",
+    "Results": [
+      {
+        "Text": "11:55",
+        "Type": "time",
+        "Value": {
+          "Timex": "T11:55",
+          "FutureResolution": {
+            "time": "11:55:00"
+          },
+          "PastResolution": {
+            "time": "11:55:00"
+          }
+        },
+        "Start": 12,
+        "Length": 8
+      }
+    ]
   }
 ]
