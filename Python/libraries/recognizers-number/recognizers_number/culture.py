@@ -7,6 +7,7 @@ from .number import LongFormatMode, LongFormatType
 SUPPORTED_CULTURES = {
     Culture.English: LongFormatMode.DOUBLE_COMMA_DOT,
     Culture.Chinese: None,
+    Culture.SpanishMexican: LongFormatMode.DOUBLE_COMMA_DOT,
     Culture.Spanish: LongFormatMode.DOUBLE_DOT_COMMA,
     Culture.German: LongFormatMode.DOUBLE_DOT_COMMA,
     Culture.Portuguese: LongFormatMode.DOUBLE_DOT_COMMA,

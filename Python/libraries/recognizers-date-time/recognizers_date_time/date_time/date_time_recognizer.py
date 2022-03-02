@@ -47,6 +47,12 @@ class DateTimeRecognizer(Recognizer[DateTimeOptions]):
             BaseMergedExtractor(SpanishMergedExtractorConfiguration(), options)
         ))
 
+        self.register_model('DateTimeModel', Culture.SpanishMexican, lambda options: DateTimeModel(
+            BaseMergedParser(SpanishMergedParserConfiguration(
+                SpanishCommonDateTimeParserConfiguration()), options),
+            BaseMergedExtractor(SpanishMergedExtractorConfiguration(), options)
+        ))
+
         self.register_model('DateTimeModel', Culture.French, lambda options: DateTimeModel(
             BaseMergedParser(FrenchMergedParserConfiguration(
                 FrenchCommonDateTimeParserConfiguration()), options),
