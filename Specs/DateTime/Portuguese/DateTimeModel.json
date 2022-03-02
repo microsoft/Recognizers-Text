@@ -4,7 +4,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
-    "NotSupported": "javascript,",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "dom",
@@ -79,7 +79,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
-    "NotSupported": "javascript,",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "dom",
@@ -154,7 +154,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
-    "NotSupported": "javascript,",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "amanhã",
@@ -209,7 +209,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
-    "NotSupported": "javascript,",
+    "NotSupported": "javascript",
     "Results": []
   },
   {
@@ -217,7 +217,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
-    "NotSupported": "javascript,",
+    "NotSupported": "javascript",
     "Results": []
   },
   {
@@ -225,7 +225,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
-    "NotSupported": "javascript,",
+    "NotSupported": "javascript",
     "Results": []
   },
   {
@@ -233,7 +233,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
-    "NotSupported": "javascript,",
+    "NotSupported": "javascript",
     "Results": []
   },
   {
@@ -241,7 +241,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
-    "NotSupported": "javascript,",
+    "NotSupported": "javascript",
     "Results": []
   },
   {
@@ -249,7 +249,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
-    "NotSupported": "javascript,",
+    "NotSupported": "javascript",
     "Results": []
   },
   {
@@ -257,7 +257,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
-    "NotSupported": "javascript,",
+    "NotSupported": "javascript",
     "Results": []
   },
   {
@@ -265,7 +265,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
-    "NotSupported": "javascript,",
+    "NotSupported": "javascript",
     "Results": []
   },
   {
@@ -273,7 +273,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
-    "NotSupported": "javascript,",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "2000",
@@ -298,7 +298,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-28T01:00:00"
     },
-    "NotSupported": "javascript,",
+    "NotSupported": "javascript",
     "Results": []
   },
   {
@@ -306,7 +306,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-05T01:00:00"
     },
-    "NotSupported": "javascript,",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "terca-feira",
@@ -1248,7 +1248,7 @@
     "Context": {
       "ReferenceDateTime": "2019-09-18T18:00:00"
     },
-    "NotSupported": "javascript,,java",
+    "NotSupported": "javascript,java",
     "Results": [
       {
         "Text": "28/2-1/3",
@@ -1279,7 +1279,7 @@
     "Context": {
       "ReferenceDateTime": "2019-09-18T18:00:00"
     },
-    "NotSupported": "javascript,,java",
+    "NotSupported": "javascript,java",
     "Results": [
       {
         "Text": "29/2-1/3",
@@ -1310,7 +1310,7 @@
     "Context": {
       "ReferenceDateTime": "2019-09-18T18:00:00"
     },
-    "NotSupported": "javascript,,java",
+    "NotSupported": "javascript,java",
     "Results": [
       {
         "Text": "29/2-1/3/2019",
@@ -1478,7 +1478,7 @@
     "Context": {
       "ReferenceDateTime": "2020-05-05T01:00:00"
     },
-    "NotSupported": "javascript,",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "17/11",
@@ -2561,7 +2561,7 @@
     "Context": {
       "ReferenceDateTime": "2018-10-15T01:00:00"
     },
-    "NotSupported": "javascript,",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "9 de agosto de 1971",
@@ -2585,7 +2585,7 @@
     "Context": {
       "ReferenceDateTime": "2018-10-15T01:00:00"
     },
-    "NotSupported": "javascript,",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "9 de 8 de 1971",
@@ -2609,7 +2609,7 @@
     "Context": {
       "ReferenceDateTime": "2020-05-05T01:00:00"
     },
-    "NotSupported": "javascript,",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "23 de novembro 1982",
@@ -2633,7 +2633,7 @@
     "Context": {
       "ReferenceDateTime": "2020-05-05T01:00:00"
     },
-    "NotSupported": "javascript,",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "23 de novembro 82",
@@ -2657,7 +2657,7 @@
     "Context": {
       "ReferenceDateTime": "2020-05-05T01:00:00"
     },
-    "NotSupported": "javascript,",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "23 novembro 1982",
@@ -2681,7 +2681,7 @@
     "Context": {
       "ReferenceDateTime": "2020-05-05T01:00:00"
     },
-    "NotSupported": "javascript,",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "23 novembro 82",
