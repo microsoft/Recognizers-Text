@@ -469,7 +469,7 @@
     "Context": {
       "ReferenceDateTime": "2019-12-19T01:00:00"
     },
-    "NotSupported": "javascript, ",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "maio de 68",
