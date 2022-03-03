@@ -81,6 +81,7 @@ CULTURES = {
     'Korean': Culture.Korean,
     'Portuguese': Culture.Portuguese,
     'Spanish': Culture.Spanish,
+    'SpanishMexican': Culture.SpanishMexican,
     'Turkish': Culture.Turkish,
     # 'German': Culture.German,
 }

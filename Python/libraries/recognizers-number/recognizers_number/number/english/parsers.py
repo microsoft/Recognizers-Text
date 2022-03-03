@@ -80,6 +80,13 @@ class EnglishNumberParserConfiguration(NumberParserConfiguration):
     def written_fraction_separator_texts(self) -> List[str]:
         return self._written_fraction_separator_texts
 
+    @property
+    def non_standard_separator_variants(self) -> List[str]:
+        return self._non_standard_separator_variants
+
+    def is_multi_decimal_separator_culture(self) -> bool:
+        return self._is_multi_decimal_separator_culture
+
     def __init__(self, culture_info=None):
         if culture_info is None:
             culture_info = CultureInfo(Culture.English)
@@ -96,6 +103,8 @@ class EnglishNumberParserConfiguration(NumberParserConfiguration):
         self._written_group_separator_texts = EnglishNumeric.WrittenGroupSeparatorTexts
         self._written_integer_separator_texts = EnglishNumeric.WrittenIntegerSeparatorTexts
         self._written_fraction_separator_texts = EnglishNumeric.WrittenFractionSeparatorTexts
+        self._non_standard_separator_variants = EnglishNumeric.NonStandardSeparatorVariants
+        self._is_multi_decimal_separator_culture = EnglishNumeric.MultiDecimalSeparatorCulture
 
         self._cardinal_number_map = EnglishNumeric.CardinalNumberMap
         self._ordinal_number_map = EnglishNumeric.OrdinalNumberMap
