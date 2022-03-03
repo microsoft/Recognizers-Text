@@ -2845,7 +2845,7 @@
   },
   {
     "Input": "0.0638, 0,0638, 1.000, 1,000, 0,683, 0.683, 1.111,11, 1111,13, 1111.13, 1111.121, 1111,121",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "0.0638",
@@ -2961,7 +2961,7 @@
   },
   {
     "Input": "Tiquetes de avión baratos Madrid - Cozumel desde $ 1.234 (1234,00)",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "1.234",
@@ -2987,7 +2987,7 @@
   },
   {
     "Input": "1.111,11, 1,111.11",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "1.111,11",
