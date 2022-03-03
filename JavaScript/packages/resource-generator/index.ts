@@ -31,7 +31,9 @@ class Startup {
                 generator.generate(inputFilePath, outputFilePath, config.header.join('\n'), config.footer.join('\n'));
             }
             catch (err) {
-                console.log(`Error while creating the resource ${basename(outputFilePath)}`, err.toString());
+                let msg = `Error while creating the resource ${basename(outputFilePath)} ${err.toString()}`;
+                console.log(msg);
+                throw err;
             }
         });
 

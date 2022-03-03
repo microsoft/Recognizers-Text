@@ -688,8 +688,8 @@ class PortugueseNumericWithUnit:
     AmbiguousSpeedUnitList = [r'nó', r'no', r'nós', r'nos']
     TemperatureSuffixList = dict([("Kelvin", "k|K|kelvin"),
                                   ("Grau Rankine", "r|°r|°ra|grau rankine|graus rankine| rankine"),
-                                  ("Grau Celsius", "°c|grau c|grau celsius|graus c|graus celsius|celsius|grau centígrado|grau centrigrado|graus centígrados|graus centigrados|centígrado|centígrados|centigrado|centigrados"),
-                                  ("Grau Fahrenheit", "°f|grau f|graus f|grau fahrenheit|graus fahrenheit|fahrenheit"),
+                                  ("Grau Celsius", "°c|° c|ºc|º c|grau c|grau celsius|graus c|graus celsius|celsius|grau centígrado|grau centrigrado|graus centígrados|graus centigrados|centígrado|centígrados|centigrado|centigrados"),
+                                  ("Grau Fahrenheit", "°f|° f|ºf|º f|grau f|graus f|grau fahrenheit|graus fahrenheit|fahrenheit"),
                                   ("Grau", "°|graus|grau")])
     VolumeSuffixList = dict([("Quilômetro cúbico", "quilômetro cúbico|quilómetro cúbico|quilometro cubico|quilômetros cúbicos|quilómetros cúbicos|quilometros cubicos|km3|km^3|km³"),
                              ("Hectômetro cúbico", "hectômetro cúbico|hectómetro cúbico|hectometro cubico|hectômetros cúbicos|hectómetros cúbicos|hectometros cubicos|hm3|hm^3|hm³"),
