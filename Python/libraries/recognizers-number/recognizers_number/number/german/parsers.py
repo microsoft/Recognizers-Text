@@ -80,6 +80,14 @@ class GermanNumberParserConfiguration(NumberParserConfiguration):
     def written_fraction_separator_texts(self) -> List[str]:
         return self._written_fraction_separator_texts
 
+    @property
+    def non_standard_separator_variants(self) -> List[str]:
+        return self._non_standard_separator_variants
+
+    @property
+    def is_multi_decimal_separator_culture(self) -> bool:
+        return self._is_multi_decimal_separator_culture
+
     def __init__(self, culture_info=None):
         if culture_info is None:
             culture_info = CultureInfo(Culture.German)
@@ -91,6 +99,8 @@ class GermanNumberParserConfiguration(NumberParserConfiguration):
         self._non_decimal_separator_char = GermanNumeric.NonDecimalSeparatorChar
         self._half_a_dozen_text = GermanNumeric.HalfADozenText
         self._word_separator_token = GermanNumeric.WordSeparatorToken
+        self._non_standard_separator_variants = []
+        self._is_multi_decimal_separator_culture = GermanNumeric.MultiDecimalSeparatorCulture
 
         self._written_decimal_separator_texts = GermanNumeric.WrittenDecimalSeparatorTexts
         self._written_group_separator_texts = GermanNumeric.WrittenGroupSeparatorTexts
