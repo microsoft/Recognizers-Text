@@ -883,7 +883,6 @@
   },
   {
     "Input": "Voltarei às 7h01",
-    "NotSupported": "",
     "Results": [
       {
         "Text": "7h01",
@@ -904,7 +903,6 @@
   },
   {
     "Input": "Voltarei às 10h10 pm.",
-    "NotSupported": "",
     "Results": [
       {
         "Text": "10h10 pm",

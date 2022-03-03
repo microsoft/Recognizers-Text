@@ -695,7 +695,6 @@
   },
   {
     "Input": "Você está livre em 13.5.2015",
-    "NotSupported": "",
     "Results": [
       {
         "Text": "13.5.2015",
@@ -707,7 +706,6 @@
   },
   {
     "Input": "Você está livre em 2015.5.13",
-    "NotSupported": "",
     "Results": [
       {
         "Text": "2015.5.13",
