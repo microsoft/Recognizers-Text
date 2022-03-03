@@ -577,7 +577,8 @@ namespace Microsoft.Recognizers.Definitions.Spanish
             { @"Qəpik", @"QƏPIK" },
             { @"Fils", @"FILS" },
             { @"Poisha", @"POISHA" },
-            { @"Kopiyka", @"KOPIYKA" },
+            { @"Kapyeyka", @"KAPYEYKA" },
+            { @"Kopyeyka", @"KOPYEYKA" },
             { @"Centime", @"CENTIME" },
             { @"Chetrum", @"CHETRUM" },
             { @"Paisa", @"PAISA" },
@@ -633,6 +634,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
             { @"Seniti", @"SENITI" },
             { @"Millime", @"MILLIME" },
             { @"Tennesi", @"TENNESI" },
+            { @"Kopiyka", @"KOPIYKA" },
             { @"Tiyin", @"TIYIN" },
             { @"Hào", @"HAO" },
             { @"Ngwee", @"NGWEE" },
@@ -767,8 +769,8 @@ namespace Microsoft.Recognizers.Definitions.Spanish
         {
             { @"Kelvin", @"k|K|kelvin" },
             { @"Rankine", @"r|rankine" },
-            { @"Grado Celsius", @"°c|grados c|grado celsius|grados celsius|celsius|grado centígrado|grados centígrados|centígrado|centígrados" },
-            { @"Grado Fahrenheit", @"°f|grados f|grado fahrenheit|grados fahrenheit|fahrenheit" },
+            { @"Grado Celsius", @"°c|° c|ºc|º c|grado c|grados c|grado celsius|grados celsius|celsius|grado centígrado|grados centígrados|centígrado|centígrados" },
+            { @"Grado Fahrenheit", @"°f|° f|ºf|º f|grado f|grados f|grado fahrenheit|grados fahrenheit|fahrenheit" },
             { @"Grado Réaumur", @"°r|°re|grados r|grado réaumur|grados réaumur|réaumur" },
             { @"Grado Delisle", @"°d|grados d|grado delisle|grados delisle|delisle" },
             { @"Grado", @"°|grados|grado" }
