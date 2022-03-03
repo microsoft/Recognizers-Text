@@ -730,8 +730,8 @@ public class PortugueseNumericWithUnit {
     public static final ImmutableMap<String, String> TemperatureSuffixList = ImmutableMap.<String, String>builder()
         .put("Kelvin", "k|K|kelvin")
         .put("Grau Rankine", "r|°r|°ra|grau rankine|graus rankine| rankine")
-        .put("Grau Celsius", "°c|grau c|grau celsius|graus c|graus celsius|celsius|grau centígrado|grau centrigrado|graus centígrados|graus centigrados|centígrado|centígrados|centigrado|centigrados")
-        .put("Grau Fahrenheit", "°f|grau f|graus f|grau fahrenheit|graus fahrenheit|fahrenheit")
+        .put("Grau Celsius", "°c|° c|ºc|º c|grau c|grau celsius|graus c|graus celsius|celsius|grau centígrado|grau centrigrado|graus centígrados|graus centigrados|centígrado|centígrados|centigrado|centigrados")
+        .put("Grau Fahrenheit", "°f|° f|ºf|º f|grau f|graus f|grau fahrenheit|graus fahrenheit|fahrenheit")
         .put("Grau", "°|graus|grau")
         .build();
 

@@ -728,5 +728,80 @@
     "Input": "Girar 90°",
     "NotSupported": "java, javascript, python",
     "Results": []
+  },
+  {
+    "Input": "E 100 ºC?",
+    "Results": [
+      {
+        "Text": "100 ºc",
+        "Start": 2,
+        "End": 7,
+        "TypeName": "temperature",
+        "Resolution": {
+          "unit": "Grado Celsius",
+          "value": "100"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "E 100 °C?",
+    "Results": [
+      {
+        "Text": "100 °c",
+        "Start": 2,
+        "End": 7,
+        "TypeName": "temperature",
+        "Resolution": {
+          "unit": "Grado Celsius",
+          "value": "100"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Es necesario calentar la cuajada hasta 37ºC",
+    "Results": [
+      {
+        "Text": "37ºc",
+        "Start": 39,
+        "End": 42,
+        "TypeName": "temperature",
+        "Resolution": {
+          "unit": "Grado Celsius",
+          "value": "37"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Temperatura corporal média já não é 37º C",
+    "Results": [
+      {
+        "Text": "37º c",
+        "Start": 36,
+        "End": 40,
+        "TypeName": "temperature",
+        "Resolution": {
+          "unit": "Grado Celsius",
+          "value": "37"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "E que baixou para 36,6ºC.",
+    "Results": [
+      {
+        "Text": "36,6ºc",
+        "Start": 18,
+        "End": 23,
+        "TypeName": "temperature",
+        "Resolution": {
+          "unit": "Grado Celsius",
+          "value": "36,6"
+        }
+      }
+    ]
   }
 ]
