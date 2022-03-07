@@ -85,9 +85,9 @@ class SpanishIntegerExtractor(BaseNumberExtractor):
         return Constants.SYS_NUM_INTEGER
 
     def __init__(self, placeholder: str = SpanishNumeric.PlaceHolderDefault, culture=Culture.Spanish):
-        thousandMarker = LongFormatMode.INTEGER_COMMA
-        if culture == Culture.Spanish:
-            thousandMarker = LongFormatMode.INTEGER_DOT
+        thousandMarker = LongFormatMode.INTEGER_DOT
+        if culture == Culture.SpanishMexican:
+            thousandMarker = LongFormatMode.INTEGER_COMMA
 
         self.__regexes = [
             ReVal(

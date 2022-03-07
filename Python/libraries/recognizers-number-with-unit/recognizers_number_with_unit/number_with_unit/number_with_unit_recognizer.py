@@ -201,10 +201,8 @@ class NumberWithUnitRecognizer(Recognizer[NumberWithUnitOptions]):
 
         # region Spanish Mexican
         self.register_model('CurrencyModel', Culture.SpanishMexican, lambda options: CurrencyModel(
-            [ExtractorParserModel(
-                BaseMergedUnitExtractor(SpanishCurrencyExtractorConfiguration(CultureInfo(Culture.SpanishMexican)
-                                                                              )), BaseMergedUnitParser(
-                    SpanishCurrencyParserConfiguration(culture_info=CultureInfo(Culture.SpanishMexican))))]
+            [ExtractorParserModel(BaseMergedUnitExtractor(SpanishCurrencyExtractorConfiguration(culture_info=CultureInfo(Culture.SpanishMexican)
+            )), BaseMergedUnitParser(SpanishCurrencyParserConfiguration(culture_info=CultureInfo(Culture.SpanishMexican))))]
         ))
         self.register_model('TemperatureModel', Culture.SpanishMexican, lambda options: TemperatureModel(
             [ExtractorParserModel(NumberWithUnitExtractor(SpanishTemperatureExtractorConfiguration(
@@ -262,8 +260,7 @@ class NumberWithUnitRecognizer(Recognizer[NumberWithUnitOptions]):
         return self.get_model('TemperatureModel', culture, fallback_to_default_culture)
 
 
-def recognize_age(query: str, culture: str, options: NumberWithUnitOptions = NumberWithUnitOptions.NONE,
-                  fallback_to_default_culture: bool = True) -> List[ModelResult]:
+def recognize_age(query: str, culture: str, options: NumberWithUnitOptions = NumberWithUnitOptions.NONE, fallback_to_default_culture: bool = True) -> List[ModelResult]:
     recognizer = NumberWithUnitRecognizer(culture, options)
     model = recognizer.get_age_model(culture, fallback_to_default_culture)
     return model.parse(query)
