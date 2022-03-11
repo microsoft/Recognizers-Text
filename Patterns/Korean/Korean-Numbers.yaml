@@ -172,7 +172,7 @@ DoubleAndRoundRegex: !nestedRegex
 FracSplitRegex: !simpleRegex
   def: '(와|과|분\s*의|중)'
 ZeroToNineIntegerRegex: !simpleRegex
-  def: '(영|령|공|(?<!생|주|\d)(?<=십|백|천|만|억|조|\s*)일|(?<!(율|답|둘|른|사|살))이(?!(다|하|상|무|거나))|두|삼|사(?!(이|랑|주))|(?<!시)오(?!(월|늘))|육|(?<!며)칠|팔|구|한(?=\s*)|하나|둘|세|셋|넷|다섯|여섯|일곱|여덟|아홉)'
+  def: '(영|령|공|(?<!생|주|내|\d)(?<=십|백|천|만|억|조|\s*)일|(?<!(율|답|둘|른|사|살))이(?!(다|하|상|무|거나))|두|삼|사(?!(이|랑|주))|(?<!시)오(?!(월|늘))|육|(?<!며)칠|팔|구|한(?=\s*)|하나|둘|세|셋|넷|다섯|여섯|일곱|여덟|아홉)'
 TenToNinetySinoIntegerRegex: !nestedRegex
   def: ({ZeroToNineIntegerRegex})?십
   references: [ZeroToNineIntegerRegex]
@@ -201,7 +201,7 @@ NotSingleRegex: !nestedRegex
   def: ({TenToNinetyNativeIntegerRegex})|((({ZeroToNineIntegerRegex}+|{ZeroToNineFullHalfRegex}+|[십천백셋])\s*(\s*{RoundNumberIntegerRegex}){1,2}(와)?|[십천백셋]|{RoundNumberIntegerRegex}\s*((과\s*)?{ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|영))((\s*({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex})\s*(\s*{RoundNumberIntegerRegex}){1,2}(와)?|영)\s*)*(\s*{ZeroToNineIntegerRegex})?)
   references: [TenToNinetyNativeIntegerRegex, ZeroToNineIntegerRegex, ZeroToNineFullHalfRegex, RoundNumberIntegerRegex]
 SingleRegex: !nestedRegex
-  def: (?<!((연필)|(예산)|(사람들)|(년)|(명)))((?<!{ZeroToNineIntegerRegex})(영|령|공|(?<!생)일|두|삼|사(?!(이|랑|주))|(?<![시])오(?!(월|늘))|육|(?<!며)칠|팔|구|세|한(?=(\s*개))|하나|둘|셋|넷|다섯|여섯|일곱|여덟|아홉)(?={AllowListRegex}))
+  def: (?<!((연필)|(예산)|(사람들)|(년)|(명)))((?<!{ZeroToNineIntegerRegex})(영|령|공|(?<!생|내)일|두|삼|사(?!(이|랑|주))|(?<![시])오(?!(월|늘))|육|(?<!며)칠|팔|구|세|한(?=(\s*개))|하나|둘|셋|넷|다섯|여섯|일곱|여덟|아홉)(?={AllowListRegex}))
   references: [ZeroToNineIntegerRegex, AllowListRegex]
 NativeSingleRegex: !nestedRegex
   def: (?<!((연필)|(예산)|(사람들)|(년|명|원)))({TenToNinetyNativeIntegerRegex}\s*{ZeroToNineIntegerRegex})

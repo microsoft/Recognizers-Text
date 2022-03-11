@@ -168,7 +168,7 @@ namespace Microsoft.Recognizers.Definitions.Korean
       public const string PercentageRegex = @"(?<=백\s*분\s*의).+|.+(?=퍼\s*센\s*트*)|.*(?=[％%])|.+(?=프\s*로*)";
       public static readonly string DoubleAndRoundRegex = $@"{ZeroToNineFullHalfRegex}+(\.{ZeroToNineFullHalfRegex}+)?{RoundNumberIntegerRegex}{{1,2}}(\s*(이상))?";
       public const string FracSplitRegex = @"(와|과|분\s*의|중)";
-      public const string ZeroToNineIntegerRegex = @"(영|령|공|(?<!생|주|\d)(?<=십|백|천|만|억|조|\s*)일|(?<!(율|답|둘|른|사|살))이(?!(다|하|상|무|거나))|두|삼|사(?!(이|랑|주))|(?<!시)오(?!(월|늘))|육|(?<!며)칠|팔|구|한(?=\s*)|하나|둘|세|셋|넷|다섯|여섯|일곱|여덟|아홉)";
+      public const string ZeroToNineIntegerRegex = @"(영|령|공|(?<!생|주|내|\d)(?<=십|백|천|만|억|조|\s*)일|(?<!(율|답|둘|른|사|살))이(?!(다|하|상|무|거나))|두|삼|사(?!(이|랑|주))|(?<!시)오(?!(월|늘))|육|(?<!며)칠|팔|구|한(?=\s*)|하나|둘|세|셋|넷|다섯|여섯|일곱|여덟|아홉)";
       public static readonly string TenToNinetySinoIntegerRegex = $@"({ZeroToNineIntegerRegex})?십";
       public const string TenToNinetyNativeIntegerRegex = @"(스무|열|스물|서른|마흔|쉰|예순|일흔|여든|아흔)";
       public static readonly string ElevenToNineteenSinoIntegerRegex = $@"십({ZeroToNineIntegerRegex})";
@@ -180,7 +180,7 @@ namespace Microsoft.Recognizers.Definitions.Korean
       public const string RoundNumberIntegerRegex = @"(십|백|천|(?<!(큼|\s일|다스|하|하나))만(?![큼|을])|억|조(?!각)(\s번째)?|경|열)";
       public const string AllowListRegex = @"(。|，|、|（|）|“|”|까지|가지|가치|갓|거리|국|[곳|군데]|개|그루|급|기|길|[까풀|꺼풀]|꼭지|닢|다스|대|돈|롤|리|미터|[밀리|미리]|마리|매|모|[면|페이지]|벌|박|배|부|분|살|술|승|쌈|[옴큼|웅큼]|원|일|잎|잔|장|전|점|제곱|주|종|평|평방|척|채|차|첩|켤레|쾌|탕|푼|[연|년]|은|\s|$|/|만)";
       public static readonly string NotSingleRegex = $@"({TenToNinetyNativeIntegerRegex})|((({ZeroToNineIntegerRegex}+|{ZeroToNineFullHalfRegex}+|[십천백셋])\s*(\s*{RoundNumberIntegerRegex}){{1,2}}(와)?|[십천백셋]|{RoundNumberIntegerRegex}\s*((과\s*)?{ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|영))((\s*({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex})\s*(\s*{RoundNumberIntegerRegex}){{1,2}}(와)?|영)\s*)*(\s*{ZeroToNineIntegerRegex})?)";
-      public static readonly string SingleRegex = $@"(?<!((연필)|(예산)|(사람들)|(년)|(명)))((?<!{ZeroToNineIntegerRegex})(영|령|공|(?<!생)일|두|삼|사(?!(이|랑|주))|(?<![시])오(?!(월|늘))|육|(?<!며)칠|팔|구|세|한(?=(\s*개))|하나|둘|셋|넷|다섯|여섯|일곱|여덟|아홉)(?={AllowListRegex}))";
+      public static readonly string SingleRegex = $@"(?<!((연필)|(예산)|(사람들)|(년)|(명)))((?<!{ZeroToNineIntegerRegex})(영|령|공|(?<!생|내)일|두|삼|사(?!(이|랑|주))|(?<![시])오(?!(월|늘))|육|(?<!며)칠|팔|구|세|한(?=(\s*개))|하나|둘|셋|넷|다섯|여섯|일곱|여덟|아홉)(?={AllowListRegex}))";
       public static readonly string NativeSingleRegex = $@"(?<!((연필)|(예산)|(사람들)|(년|명|원)))({TenToNinetyNativeIntegerRegex}\s*{ZeroToNineIntegerRegex})";
       public static readonly string NativeIntRegex = $@"((({ZeroToNineIntegerRegex}\s*)?({RoundNumberIntegerRegex}+\s*)?({TenToNinetyNativeIntegerRegex}\s*)?({ZeroToNineIntegerRegex}))|({TenToNinetyNativeIntegerRegex}))";
       public static readonly string AllIntRegex = $@"(((({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|십)\s*(\s*{RoundNumberIntegerRegex}){{1,2}}|[십]|{RoundNumberIntegerRegex}\s*({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex}|영))\s*((({ZeroToNineIntegerRegex}|{ZeroToNineFullHalfRegex})\s*(\s*{RoundNumberIntegerRegex}){{1,2}}|영)\s*)*{ZeroToNineIntegerRegex}?|{ZeroToNineIntegerRegex})|{NativeIntRegex}+)";
