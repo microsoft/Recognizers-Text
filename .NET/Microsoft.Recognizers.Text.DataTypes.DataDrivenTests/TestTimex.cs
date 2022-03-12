@@ -127,6 +127,17 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.AreEqual("T23:59:30", TimexProperty.FromTime(new Time(23, 59, 30)).TimexValue);
         }
 
+        [TestMethod]
+        public void DataTypes_Timex_FromDateTime_ToString()
+        {
+            var timex = new TimexProperty("2022-03-11");
+            Assert.AreEqual("11th March 2022", timex.ToString());
+            timex = new TimexProperty("2022-03-12");
+            Assert.AreEqual("12th March 2022", timex.ToString());
+            timex = new TimexProperty("2022-03-13");
+            Assert.AreEqual("13th March 2022", timex.ToString());
+        }
+
         private static void Roundtrip(string timex)
         {
             Assert.AreEqual(timex, new TimexProperty(timex).TimexValue);
