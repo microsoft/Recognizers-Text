@@ -2,6 +2,7 @@
 // Licensed under the MIT License.
 
 using System;
+using System.Collections.Generic;
 using System.Globalization;
 
 namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
@@ -216,9 +217,27 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
         private static string ConvertDateTimeRange(TimexProperty timex)
         {
-            if (timex.Types.Contains(Constants.TimexTypes.TimeRange))
+            var parts = new List<string>();
+
+            var types = timex.Types;
+            if (types.Contains(Constants.TimexTypes.Date))
             {
-                return $"{ConvertDate(timex)} {ConvertTimeRange(timex)}";
+                parts.Add(ConvertDate(timex));
+            }
+
+            if (types.Contains(Constants.TimexTypes.Time))
+            {
+                parts.Add(ConvertTime(timex));
+            }
+
+            if (timex.PartOfDay is not null)
+            {
+                parts.Add(ConvertTimeRange(timex));
+            }
+
+            if (parts.Count > 0)
+            {
+                return string.Join(" ", parts);
             }
 
             // date + time + duration
