@@ -98,7 +98,10 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             }
 
             var date = timex.DayOfMonth.Value.ToString(CultureInfo.InvariantCulture);
-            var abbreviation = TimexConstantsEnglish.DateAbbreviation[int.Parse(date[date.Length - 1].ToString(CultureInfo.InvariantCulture), CultureInfo.InvariantCulture)];
+            var dayOfMonth = int.Parse(date, CultureInfo.InvariantCulture);
+
+            // Ordinals 11 to 13 are special in english as they end in th
+            var abbreviation = TimexConstantsEnglish.DateAbbreviation[(dayOfMonth is > 9 and < 14 ? 9 : dayOfMonth) % 10];
 
             if (timex.Month != null)
             {
