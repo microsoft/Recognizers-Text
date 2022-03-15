@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
-
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 using Microsoft.Recognizers.Text.InternalCache;
 using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
@@ -35,12 +35,19 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public List<ExtractResult> Extract(string text, DateObject referenceTime)
         {
+            // Normalize input
+            if (this.config.NormalizeCharMap != null)
+            {
+                text = StringExtension.Normalized(text, this.config.NormalizeCharMap);
+            }
+
             var tokens = new List<Token>();
             tokens.AddRange(MatchSimpleCases(text));
             var simpleCasesResults = Token.MergeAllTokens(tokens, text, ExtractorName);
             tokens.AddRange(MatchComplexCases(text, simpleCasesResults, referenceTime));
             tokens.AddRange(MergeTwoTimePoints(text, referenceTime));
             tokens.AddRange(MatchNumberWithUnit(text));
+            tokens.AddRange(MatchDurations(text, referenceTime));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }
@@ -55,6 +62,46 @@ namespace Microsoft.Recognizers.Text.DateTime
                 foreach (Match match in matches)
                 {
                     ret.Add(new Token(match.Index, match.Index + match.Length));
+                }
+            }
+
+            return ret;
+        }
+
+        private List<Token> MatchDurations(string text, DateObject reference)
+        {
+            var ret = new List<Token>();
+
+            var durationExtractions = config.DurationExtractor.Extract(text, reference);
+
+            foreach (var durationExtraction in durationExtractions)
+            {
+                var dateUnitMatch = config.DateUnitRegex.Match(durationExtraction.Text);
+                if (!dateUnitMatch.Success)
+                {
+                    continue;
+                }
+
+                var duration = new Token(durationExtraction.Start ?? 0, durationExtraction.Start + durationExtraction.Length ?? 0);
+                var beforeStr = text.Substring(0, duration.Start);
+                var afterStr = text.Substring(duration.Start + duration.Length);
+
+                if (string.IsNullOrWhiteSpace(beforeStr) && string.IsNullOrWhiteSpace(afterStr))
+                {
+                    continue;
+                }
+
+                // handle cases with 'within' and 'next'
+                var matchWithin = config.FutureRegex.Match(afterStr);
+                var matchNext = config.FutureRegex.Match(beforeStr);
+
+                if (matchWithin.Success && matchNext.Success)
+                {
+                    ret.Add(new Token(duration.Start - matchNext.Value.Length, duration.End + matchWithin.Value.Length));
+                }
+                else if (matchWithin.Success)
+                {
+                    ret.Add(new Token(duration.Start, duration.End + matchWithin.Value.Length));
                 }
             }
 

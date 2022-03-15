@@ -311,8 +311,8 @@
         "Value": {
           "Timex": "XXXX-10-W01",
           "FutureResolution": {
-            "startDate": "2017-09-25",
-            "endDate": "2017-10-02"
+            "startDate": "2017-10-02",
+            "endDate": "2017-10-09"
           },
           "PastResolution": {
             "startDate": "2016-10-03",

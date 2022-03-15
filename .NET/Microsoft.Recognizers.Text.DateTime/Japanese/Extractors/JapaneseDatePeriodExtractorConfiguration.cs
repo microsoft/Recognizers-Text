@@ -40,6 +40,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         public static readonly Regex WeekOfYearRegex = new Regex(DateTimeDefinitions.WeekOfYearRegex, RegexFlags);
 
+        public static readonly Regex WeekOfDateRegex = new Regex(DateTimeDefinitions.WeekOfDateRegex, RegexFlags);
+
+        public static readonly Regex MonthOfDateRegex = new Regex(DateTimeDefinitions.MonthOfDateRegex, RegexFlags);
+
+        public static readonly Regex WhichWeekRegex = new Regex(DateTimeDefinitions.WhichWeekRegex, RegexFlags);
+
         public static readonly Regex FollowedUnit = new Regex(DateTimeDefinitions.FollowedUnit, RegexFlags);
 
         public static readonly Regex NumberCombinedWithUnit = new Regex(DateTimeDefinitions.NumberCombinedWithUnit, RegexFlags);
@@ -66,6 +72,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         public static readonly Regex FutureRegex = new Regex(DateTimeDefinitions.FutureRegex, RegexFlags);
 
+        public static readonly Regex WeekWithWeekDayRangeRegex = new Regex(DateTimeDefinitions.WeekWithWeekDayRangeRegex, RegexFlags);
+
         public static readonly Regex FirstLastOfYearRegex = new Regex(DateTimeDefinitions.FirstLastOfYearRegex, RegexFlags);
 
         public static readonly Regex SeasonWithYear = new Regex(DateTimeDefinitions.SeasonWithYear, RegexFlags);
@@ -73,6 +81,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         public static readonly Regex QuarterRegex = new Regex(DateTimeDefinitions.QuarterRegex, RegexFlags);
 
         public static readonly Regex DecadeRegex = new Regex(DateTimeDefinitions.DecadeRegex, RegexFlags);
+
+        public static readonly Regex CenturyRegex = new Regex(DateTimeDefinitions.CenturyRegex, RegexFlags);
 
         public static readonly Regex SpecialMonthRegex = new Regex(DateTimeDefinitions.SpecialMonthRegex, RegexFlags);
 
@@ -82,9 +92,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         public static readonly Regex DayRegexInCJK = new Regex(DateTimeDefinitions.DatePeriodDayRegexInCJK, RegexFlags);
         public static readonly Regex MonthNumRegex = new Regex(DateTimeDefinitions.MonthNumRegex, RegexFlags);
         public static readonly Regex ThisRegex = new Regex(DateTimeDefinitions.DatePeriodThisRegex, RegexFlags);
+        public static readonly Regex DateUnitRegex = new Regex(DateTimeDefinitions.DateUnitRegex, RegexFlags);
         public static readonly Regex LastRegex = new Regex(DateTimeDefinitions.DatePeriodLastRegex, RegexFlags);
         public static readonly Regex NextRegex = new Regex(DateTimeDefinitions.DatePeriodNextRegex, RegexFlags);
         public static readonly Regex RelativeMonthRegex = new Regex(DateTimeDefinitions.RelativeMonthRegex, RegexFlags);
+        public static readonly Regex LaterEarlyPeriodRegex = new Regex(DateTimeDefinitions.LaterEarlyPeriodRegex, RegexFlags);
+        public static readonly Regex DatePointWithAgoAndLater = new Regex(DateTimeDefinitions.DatePointWithAgoAndLater, RegexFlags);
+        public static readonly Regex ReferenceDatePeriodRegex = new Regex(DateTimeDefinitions.ReferenceDatePeriodRegex, RegexFlags);
+        public static readonly Regex ComplexDatePeriodRegex = new Regex(DateTimeDefinitions.ComplexDatePeriodRegex, RegexFlags);
         public static readonly Regex MonthRegex = new Regex(DateTimeDefinitions.MonthRegex, RegexFlags);
         public static readonly Regex YearRegex = new Regex(DateTimeDefinitions.YearRegex, RegexFlags);
         public static readonly Regex YearRegexInNumber = new Regex(DateTimeDefinitions.YearRegexInNumber, RegexFlags);
@@ -92,6 +107,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         public static readonly Regex MonthSuffixRegex = new Regex(DateTimeDefinitions.MonthSuffixRegex, RegexFlags);
         public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.UnitRegex, RegexFlags);
         public static readonly Regex SeasonRegex = new Regex(DateTimeDefinitions.SeasonRegex, RegexFlags);
+        public static readonly Regex DynastyDatePeriodRegex = new Regex(DateTimeDefinitions.DynastyDatePeriodRegex, RegexFlags);
+        public static readonly Dictionary<char, char> NormalizeCharMap = DateTimeDefinitions.NormalizeCharMap;
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
@@ -104,7 +121,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             YearToYearSuffixRequired,
             MonthToMonth,
             DayToDay,
-            MonthDayRange,
             YearMonthRange,
             MonthDayRange,
             YearMonthDayRange,
@@ -116,15 +132,25 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             SpecialYearRegex,
             WeekOfMonthRegex,
             WeekOfYearRegex,
+            WeekOfDateRegex,
+            MonthOfDateRegex,
+            WhichWeekRegex,
+            LaterEarlyPeriodRegex,
             SeasonWithYear,
             QuarterRegex,
             DecadeRegex,
+            CenturyRegex,
+            ReferenceDatePeriodRegex,
+            ComplexDatePeriodRegex,
+            DatePointWithAgoAndLater,
+            DynastyDatePeriodRegex,
         };
 
         public JapaneseDatePeriodExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             DatePointExtractor = new BaseCJKDateExtractor(new JapaneseDateExtractorConfiguration(this));
+            DurationExtractor = new BaseCJKDurationExtractor(new JapaneseDurationExtractorConfiguration(this));
 
             var numOptions = NumberOptions.None;
             if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
@@ -139,15 +165,21 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         public IDateTimeExtractor DatePointExtractor { get; }
 
+        public IDateTimeExtractor DurationExtractor { get; }
+
         public IExtractor IntegerExtractor { get; }
 
         IEnumerable<Regex> ICJKDatePeriodExtractorConfiguration.SimpleCasesRegexes => SimpleCasesRegexes;
 
         Regex ICJKDatePeriodExtractorConfiguration.TillRegex => TillRegex;
 
+        Dictionary<char, char> ICJKDatePeriodExtractorConfiguration.NormalizeCharMap => NormalizeCharMap;
+
         Regex ICJKDatePeriodExtractorConfiguration.FutureRegex => FutureRegex;
 
         Regex ICJKDatePeriodExtractorConfiguration.PastRegex => PastRegex;
+
+        Regex ICJKDatePeriodExtractorConfiguration.DateUnitRegex => DateUnitRegex;
 
         Regex ICJKDatePeriodExtractorConfiguration.FirstLastOfYearRegex => FirstLastOfYearRegex;
 

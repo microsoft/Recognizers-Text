@@ -72,11 +72,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IImmutableDictionary<string, int> CardinalMap { get; }
 
-        string LastWeekDayToken { get; }
+        Regex LastWeekDayRegex { get; }
 
-        string NextMonthToken { get; }
+        Regex NextMonthRegex { get; }
 
-        string LastMonthToken { get; }
+        Regex LastMonthRegex { get; }
 
         int GetSwiftDay(string text);
     }

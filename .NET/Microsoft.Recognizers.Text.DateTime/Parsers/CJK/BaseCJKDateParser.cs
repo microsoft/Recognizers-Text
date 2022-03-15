@@ -591,7 +591,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             int year;
 
             int cardinal;
-            if (cardinalStr.Equals(this.config.LastWeekDayToken, StringComparison.Ordinal))
+            if (this.config.LastWeekDayRegex.IsExactMatch(cardinalStr, trim: true))
             {
                 cardinal = 5;
             }
@@ -605,11 +605,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (string.IsNullOrEmpty(monthStr))
             {
                 var swift = 0;
-                if (trimmedText.StartsWith(this.config.NextMonthToken, StringComparison.Ordinal))
+                if (this.config.NextMonthRegex.MatchBegin(trimmedText, trim: true).Success)
                 {
                     swift = 1;
                 }
-                else if (trimmedText.StartsWith(this.config.LastMonthToken, StringComparison.Ordinal))
+                else if (this.config.LastMonthRegex.MatchBegin(trimmedText, trim: true).Success)
                 {
                     swift = -1;
                 }

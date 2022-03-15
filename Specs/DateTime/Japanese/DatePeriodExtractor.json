@@ -1,7 +1,6 @@
 [
   {
     "Input": "1月は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -14,7 +13,6 @@
   },
   {
     "Input": "今年の1月は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -27,7 +25,6 @@
   },
   {
     "Input": "2001年1月は不在でした。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -40,7 +37,6 @@
   },
   {
     "Input": "2月は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -53,7 +49,6 @@
   },
   {
     "Input": "今年の2月は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -66,7 +61,6 @@
   },
   {
     "Input": "2001年2月は不在でした。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -79,7 +73,6 @@
   },
   {
     "Input": "3月は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -92,7 +85,6 @@
   },
   {
     "Input": "今年の3月は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -105,7 +97,6 @@
   },
   {
     "Input": "2001年3月は不在でした。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -118,7 +109,6 @@
   },
   {
     "Input": "4月は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -131,7 +121,6 @@
   },
   {
     "Input": "今年の4月は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -144,7 +133,6 @@
   },
   {
     "Input": "2001年4月は不在でした。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -157,7 +145,6 @@
   },
   {
     "Input": "5月は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -170,7 +157,6 @@
   },
   {
     "Input": "今年の5月は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -183,7 +169,6 @@
   },
   {
     "Input": "2001年5月は不在でした。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -196,7 +181,6 @@
   },
   {
     "Input": "6月は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -209,7 +193,6 @@
   },
   {
     "Input": "今年の6月は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -222,7 +205,6 @@
   },
   {
     "Input": "2001年6月は不在でした。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -235,7 +217,6 @@
   },
   {
     "Input": "7月は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -248,7 +229,6 @@
   },
   {
     "Input": "今年の7月は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -261,7 +241,6 @@
   },
   {
     "Input": "2001年7月は不在でした。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -274,7 +253,6 @@
   },
   {
     "Input": "8月は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -287,7 +265,6 @@
   },
   {
     "Input": "今年の8月は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -300,7 +277,6 @@
   },
   {
     "Input": "2001年8月は不在でした。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -313,7 +289,6 @@
   },
   {
     "Input": "9月は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -326,7 +301,6 @@
   },
   {
     "Input": "今年の9月は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -339,7 +313,6 @@
   },
   {
     "Input": "2001年9月は不在でした。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -352,7 +325,6 @@
   },
   {
     "Input": "10月は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -365,7 +337,6 @@
   },
   {
     "Input": "今年の10月は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -378,7 +349,6 @@
   },
   {
     "Input": "2001年10月は不在でした。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -391,7 +361,6 @@
   },
   {
     "Input": "11月は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -404,7 +373,6 @@
   },
   {
     "Input": "今年の11月は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -417,7 +385,6 @@
   },
   {
     "Input": "2001年11月は不在でした。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -430,7 +397,6 @@
   },
   {
     "Input": "12月は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -443,7 +409,6 @@
   },
   {
     "Input": "今年の12月は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -456,7 +421,6 @@
   },
   {
     "Input": "2001年12月は不在でした。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -469,7 +433,6 @@
   },
   {
     "Input": "9月のカレンダー",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -482,7 +445,6 @@
   },
   {
     "Input": "今月の4日から22日まで不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -495,7 +457,6 @@
   },
   {
     "Input": "来月の4日から23日まで不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -508,7 +469,6 @@
   },
   {
     "Input": "9月3日から12日まで不在にします。ハハハ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -521,7 +481,6 @@
   },
   {
     "Input": "今月の4日から23日まで不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -534,7 +493,6 @@
   },
   {
     "Input": "今月の4日から22日の間、不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -547,7 +505,6 @@
   },
   {
     "Input": "9月3日から12日の間、不在にします。ハハハ",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -560,7 +517,6 @@
   },
   {
     "Input": "9月4日から8日までの間、不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -573,7 +529,6 @@
   },
   {
     "Input": "11月15日から19日までの間、不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -586,7 +541,6 @@
   },
   {
     "Input": "2017年1月4日から22日まで不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -599,7 +553,6 @@
   },
   {
     "Input": "2017年1月4日から22日の間、不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -612,7 +565,6 @@
   },
   {
     "Input": "今週は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -625,7 +577,6 @@
   },
   {
     "Input": "来週は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -638,7 +589,6 @@
   },
   {
     "Input": "来年の6月は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -651,7 +601,6 @@
   },
   {
     "Input": "2016年6月は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -664,7 +613,6 @@
   },
   {
     "Input": "今週末は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -677,7 +625,6 @@
   },
   {
     "Input": "今月の第三週は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -690,7 +637,6 @@
   },
   {
     "Input": "7月の最後の週は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -703,7 +649,6 @@
   },
   {
     "Input": "金曜日から日曜日までキャンプの予定を入れる。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -716,7 +661,6 @@
   },
   {
     "Input": "向こう3日間は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -729,7 +673,6 @@
   },
   {
     "Input": "向こう3か月は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -742,25 +685,42 @@
   },
   {
     "Input": "3年後に不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
-    "Results": []
+    "Results": [
+      {
+        "Text": "3年後に",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
   },
   {
     "Input": "3週間後に不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
-    "Results": []
+    "Results": [
+      {
+        "Text": "3週間後に",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
   },
   {
     "Input": "3か月後に不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
-    "Results": []
+    "Results": [
+      {
+        "Text": "3か月後に",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 5
+      }
+    ]
   },
   {
     "Input": "前の3週間は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -773,7 +733,6 @@
   },
   {
     "Input": "この数週間",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -786,7 +745,6 @@
   },
   {
     "Input": "この数日間",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -799,7 +757,6 @@
   },
   {
     "Input": "10月2日から22日まで不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -812,20 +769,18 @@
   },
   {
     "Input": "2016年1月12日から2016年2月22日まで不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2016年1月12日から2016年2月22日",
+        "Text": "2016年1月12日から2016年2月22日まで",
         "Type": "daterange",
         "Start": 0,
-        "Length": 22
+        "Length": 24
       }
     ]
   },
   {
     "Input": "1月1日から1月22日水曜日まで不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -838,7 +793,6 @@
   },
   {
     "Input": "今日から明日まで不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -851,7 +805,6 @@
   },
   {
     "Input": "今日から10月22日まで不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -864,7 +817,6 @@
   },
   {
     "Input": "10月2日から明後日まで不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -877,7 +829,6 @@
   },
   {
     "Input": "今日から来週日曜日まで不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -890,7 +841,6 @@
   },
   {
     "Input": "今週の金曜日から来週の日曜日まで不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -903,7 +853,6 @@
   },
   {
     "Input": "2015年8月12日から10月22日まで不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -919,7 +868,6 @@
     "Context": {
       "ReferenceDateTime": "2018-03-01T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -932,7 +880,6 @@
   },
   {
     "Input": "10月2日から22日の間、不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -945,7 +892,6 @@
   },
   {
     "Input": "11月19日から20日まで不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -958,7 +904,6 @@
   },
   {
     "Input": "11月19日から20日の間は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -971,7 +916,6 @@
   },
   {
     "Input": "2016年の第3四半期は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -984,7 +928,6 @@
   },
   {
     "Input": "今年の第3四半期は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -997,7 +940,6 @@
   },
   {
     "Input": "第1四半期中に戻ってきます。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1010,7 +952,6 @@
   },
   {
     "Input": "第3四半期は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1023,7 +964,6 @@
   },
   {
     "Input": "2015年3月は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1036,7 +976,6 @@
   },
   {
     "Input": "2027年の第3週は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1049,7 +988,6 @@
   },
   {
     "Input": "来年の第3週は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1062,7 +1000,6 @@
   },
   {
     "Input": "今年の夏出発します。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1075,7 +1012,6 @@
   },
   {
     "Input": "来年の春出発します。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1088,7 +1024,6 @@
   },
   {
     "Input": "その夏出発します。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1101,7 +1036,6 @@
   },
   {
     "Input": "夏出発します。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1114,7 +1048,6 @@
   },
   {
     "Input": "2016年の夏出発します。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1127,7 +1060,6 @@
   },
   {
     "Input": "来月の休日",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1140,7 +1072,6 @@
   },
   {
     "Input": "11月30日の週",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1153,7 +1084,6 @@
   },
   {
     "Input": "9月15日の週",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1166,7 +1096,6 @@
   },
   {
     "Input": "9月15日の月",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1179,7 +1108,6 @@
   },
   {
     "Input": "その週末に出発します。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1192,7 +1120,6 @@
   },
   {
     "Input": "その週の残りの日は休暇を取ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1205,7 +1132,6 @@
   },
   {
     "Input": "私の週の残りの日は休暇を取ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1218,7 +1144,6 @@
   },
   {
     "Input": "週の残りの日は休暇を取ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1231,7 +1156,6 @@
   },
   {
     "Input": "今週の残りの日は休暇を取ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1244,7 +1168,6 @@
   },
   {
     "Input": "その月の残りの日は休暇を取ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1257,20 +1180,18 @@
   },
   {
     "Input": "その年いっぱいは休暇を取ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "の年いっぱい",
+        "Text": "その年いっぱい",
         "Type": "daterange",
-        "Start": 1,
-        "Length": 6
+        "Start": 0,
+        "Length": 7
       }
     ]
   },
   {
     "Input": "今月の終わりごろ会うための時間をつくってください。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1283,7 +1204,6 @@
   },
   {
     "Input": "今週の終わりごろ会うための時間をつくってください。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1296,7 +1216,6 @@
   },
   {
     "Input": "来週の終わりごろ会うための時間をつくってください。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1309,7 +1228,6 @@
   },
   {
     "Input": "来年の終わりごろ会うための時間をつくってください。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1322,7 +1240,6 @@
   },
   {
     "Input": "私たちは先週の終わりごろ会いました。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1335,7 +1252,6 @@
   },
   {
     "Input": "今月初めに会うための時間をとってください。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1348,7 +1264,6 @@
   },
   {
     "Input": "今週初めに会うための時間をとってください。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1361,7 +1276,6 @@
   },
   {
     "Input": "来週初めに会うための時間をとってください。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1374,7 +1288,6 @@
   },
   {
     "Input": "来年初めに会うための時間をとってください。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1387,7 +1300,6 @@
   },
   {
     "Input": "コルタナ、アントニオと25分の会議を来週の水曜日から金曜日の間で調整して。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1400,7 +1312,6 @@
   },
   {
     "Input": "コルタナ、アントニオと25分の会議を来週の水曜日から金曜日で調整して。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1413,20 +1324,18 @@
   },
   {
     "Input": "コルタナ、アントニオと25分の会議を先週の水曜日から金曜日の間で調整して。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "先週の水曜日から金曜日",
+        "Text": "先週の水曜日から金曜日の間",
         "Type": "daterange",
         "Start": 18,
-        "Length": 11
+        "Length": 13
       }
     ]
   },
   {
     "Input": "コルタナ、アントニオと25分の会議を今週の水曜日から金曜日で調整して。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1439,7 +1348,6 @@
   },
   {
     "Input": "247年は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1452,7 +1360,6 @@
   },
   {
     "Input": "1970年代に",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1465,7 +1372,6 @@
   },
   {
     "Input": "2000年代に彼は生まれた。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1478,7 +1384,6 @@
   },
   {
     "Input": "70年代に",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1491,7 +1396,6 @@
   },
   {
     "Input": "40年代に",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1504,7 +1408,6 @@
   },
   {
     "Input": "2010年代に",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1517,7 +1420,6 @@
   },
   {
     "Input": "2000年代に",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1530,7 +1432,6 @@
   },
   {
     "Input": "2018年2月2日から7日は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1543,7 +1444,6 @@
   },
   {
     "Input": "2018年2月2日から7日の間は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1556,7 +1456,6 @@
   },
   {
     "Input": "1999年の6月にそれは起きた。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1569,20 +1468,18 @@
   },
   {
     "Input": "1928年に",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "1928年",
+        "Text": "1928年に",
         "Type": "daterange",
         "Start": 0,
-        "Length": 5
+        "Length": 6
       }
     ]
   },
   {
     "Input": "2027年の最初の週は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1595,7 +1492,6 @@
   },
   {
     "Input": "2020年の第1四半期は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1608,7 +1504,6 @@
   },
   {
     "Input": "1978年の春に",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1621,7 +1516,6 @@
   },
   {
     "Input": "再来週は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1634,7 +1528,6 @@
   },
   {
     "Input": "それは過去20年間に起きた。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1647,7 +1540,6 @@
   },
   {
     "Input": "それは次の10年間に起きた。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1660,7 +1552,6 @@
   },
   {
     "Input": "それは今後4週間に起きるでしょう。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1673,7 +1564,6 @@
   },
   {
     "Input": "それは2日後に起きるでしょう。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1686,7 +1576,6 @@
   },
   {
     "Input": "コルタナが来週の初めに時間を見つけてくれる。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1699,7 +1588,6 @@
   },
   {
     "Input": "承知しました。来週の終わりにスカイプを取得しましょう。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1712,7 +1600,6 @@
   },
   {
     "Input": "承知しました。来週の初めにスカイプを取得しましょう。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1725,7 +1612,6 @@
   },
   {
     "Input": "コルタナ、三月の下旬に時間を見つけて。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1738,7 +1624,6 @@
   },
   {
     "Input": "コルタナ、来週半ばに時間を見つけて。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1751,7 +1636,6 @@
   },
   {
     "Input": "コルタナが三月半ばに会えるよう手配してくれる。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1764,7 +1648,6 @@
   },
   {
     "Input": "夏の半ばまでにどうですか。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1777,7 +1660,6 @@
   },
   {
     "Input": "来週のはじめに時間がつくれます。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1790,7 +1672,6 @@
   },
   {
     "Input": "2016年11月は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1803,7 +1684,6 @@
   },
   {
     "Input": "1月1日から4月5日の間、不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1816,7 +1696,6 @@
   },
   {
     "Input": "2015年1月1日から2018年2月5日の間、不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1829,7 +1708,6 @@
   },
   {
     "Input": "2015年1月1日から2018年2月の間、不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1842,7 +1720,6 @@
   },
   {
     "Input": "2015年から2018年2月の間、不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1855,7 +1732,6 @@
   },
   {
     "Input": "2019年2月1日から3月まで不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1868,7 +1744,6 @@
   },
   {
     "Input": "2019年2月1日から3月の間、不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1881,7 +1756,6 @@
   },
   {
     "Input": "2015年6月から2018年5月の間、不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1894,7 +1768,6 @@
   },
   {
     "Input": "2015年5月から2018年の間、不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1907,7 +1780,6 @@
   },
   {
     "Input": "2015年5月から2018年6月の間、不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1920,7 +1792,6 @@
   },
   {
     "Input": "2015年から2018年1月5日の間、不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1933,7 +1804,6 @@
   },
   {
     "Input": "2015年から2017年5月5日まで不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1946,7 +1816,6 @@
   },
   {
     "Input": "先週の月曜日から2019年の4月まで不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1959,7 +1828,6 @@
   },
   {
     "Input": "第31週から第35週まで不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1972,7 +1840,6 @@
   },
   {
     "Input": "第31週から第35週の間、不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1985,7 +1852,6 @@
   },
   {
     "Input": "今日から2日半の間、ここに滞在します。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1998,7 +1864,6 @@
   },
   {
     "Input": "私の2017年4月のボーナスは何ですか。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2011,7 +1876,6 @@
   },
   {
     "Input": "私はそれが起きたのと同じ月にそこにいませんでした。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2024,7 +1888,6 @@
   },
   {
     "Input": "私はそれが起きたのと同じ週にそこにいませんでした。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2037,7 +1900,6 @@
   },
   {
     "Input": "私はその年にそこにいませんでした。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2050,7 +1912,6 @@
   },
   {
     "Input": "今日から2週間以上前にもうすべての仕事を終えた。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2063,7 +1924,6 @@
   },
   {
     "Input": "今日から2週間以内に戻ってきます。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2076,7 +1936,6 @@
   },
   {
     "Input": "この仕事は昨日の2日以上前には終わらせておくべきだった。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2089,7 +1948,6 @@
   },
   {
     "Input": "この仕事は明日から3日以内に終わらせます。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2102,7 +1960,6 @@
   },
   {
     "Input": "コルタナ、18日の週に何か予定を入れて。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2115,7 +1972,6 @@
   },
   {
     "Input": "日付がこの10年の売上",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2128,7 +1984,6 @@
   },
   {
     "Input": "2016年第3四半期は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2141,7 +1996,6 @@
   },
   {
     "Input": "来年の第3四半期は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2154,7 +2008,6 @@
   },
   {
     "Input": "来年の第4四半期は不在にします。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2168,13 +2021,11 @@
   {
     "Input": "2000ドルをイギリスポンドに換算してください。",
     "Comment": "2000 shouldn't recognized as year here",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
     "Input": "この銀行の株は年初来20%下がっている。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2187,7 +2038,6 @@
   },
   {
     "Input": "10月1日から11月7日まで",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2200,10 +2050,10 @@
   },
   {
     "Input": "去年の５月に会ったことある。",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "去年の５月",
+        "Text": "去年の5月",
         "Type": "daterange",
         "Start": 0,
         "Length": 5
@@ -2212,22 +2062,28 @@
   },
   {
     "Input": "１５００は年を示そうです。",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "1500",
         "Type": "daterange",
         "Start": 0,
         "Length": 4
+      },
+      {
+        "Text": "年",
+        "Type": "daterange",
+        "Start": 5,
+        "Length": 1
       }
     ]
   },
   {
     "Input": "２００８年の五輪は北京で行われました。",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "２００８年",
+        "Text": "2008年",
         "Type": "daterange",
         "Start": 0,
         "Length": 5
@@ -2236,22 +2092,28 @@
   },
   {
     "Input": "２０１８年１０月は１０月です。",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "2018年10月",
         "Type": "daterange",
         "Start": 0,
         "Length": 8
+      },
+      {
+        "Text": "10月",
+        "Type": "daterange",
+        "Start": 9,
+        "Length": 3
       }
     ]
   },
   {
     "Input": "来年の４月",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "来年の４月",
+        "Text": "来年の4月",
         "Type": "daterange",
         "Start": 0,
         "Length": 5
@@ -2260,7 +2122,7 @@
   },
   {
     "Input": "今年の夏",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "今年の夏",
@@ -2272,10 +2134,10 @@
   },
   {
     "Input": "前世紀の９０年代",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "前世紀の９０年代",
+        "Text": "前世紀の90年代",
         "Type": "daterange",
         "Start": 0,
         "Length": 8
@@ -2284,10 +2146,10 @@
   },
   {
     "Input": "３月２８日から4月１５日まで",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "３月２８日から4月１５日まで",
+        "Text": "3月28日から4月15日まで",
         "Type": "daterange",
         "Start": 0,
         "Length": 14
@@ -2296,7 +2158,7 @@
   },
   {
     "Input": "先週",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "先週",
@@ -2308,10 +2170,10 @@
   },
   {
     "Input": "彼は平成１９年前すでに卒業しました。",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "平成１９年",
+        "Text": "平成19年",
         "Type": "daterange",
         "Start": 2,
         "Length": 5
@@ -2320,10 +2182,10 @@
   },
   {
     "Input": "２０１５年一月十日から十二日まで",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "２０１５年一月十日から十二日まで",
+        "Text": "2015年一月十日から十二日まで",
         "Type": "daterange",
         "Start": 0,
         "Length": 16
@@ -2332,7 +2194,7 @@
   },
   {
     "Input": "2018年12月",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "2018年12月",
@@ -2344,10 +2206,10 @@
   },
   {
     "Input": "１８７０年代",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "１８７０年代",
+        "Text": "1870年代",
         "Type": "daterange",
         "Start": 0,
         "Length": 6
@@ -2356,10 +2218,10 @@
   },
   {
     "Input": "２００９年と比べて、激しく変化したことがわかりました。",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "２００９年",
+        "Text": "2009年",
         "Type": "daterange",
         "Start": 0,
         "Length": 5
@@ -2368,10 +2230,10 @@
   },
   {
     "Input": "1月１９日から２０日まで",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "1月１９日から２０日まで",
+        "Text": "1月19日から20日まで",
         "Type": "daterange",
         "Start": 0,
         "Length": 12
@@ -2380,7 +2242,7 @@
   },
   {
     "Input": "会議は来週になりました。",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "来週",
@@ -2392,10 +2254,10 @@
   },
   {
     "Input": "彼は１８７０年代に生まれました。",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "１８７０年代",
+        "Text": "1870年代",
         "Type": "daterange",
         "Start": 2,
         "Length": 6
@@ -2404,7 +2266,7 @@
   },
   {
     "Input": "平成三十年十二月",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "平成三十年十二月",
@@ -2416,7 +2278,7 @@
   },
   {
     "Input": "この三年間、犯罪者数は年々減っています。",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "この三年間",
@@ -2428,10 +2290,10 @@
   },
   {
     "Input": "５０年代のごろ",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "５０年代のごろ",
+        "Text": "50年代のごろ",
         "Type": "daterange",
         "Start": 0,
         "Length": 7
@@ -2440,15 +2302,15 @@
   },
   {
     "Input": "１００とはただの数字です。",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": []
   },
   {
     "Input": "平成３０年１０月",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "平成３０年１０月",
+        "Text": "平成30年10月",
         "Type": "daterange",
         "Start": 0,
         "Length": 8
@@ -2457,10 +2319,10 @@
   },
   {
     "Input": "２０１１年から２０１７年までの売り上げをまとめてもらえますか？",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "２０１１年から２０１７年まで",
+        "Text": "2011年から2017年まで",
         "Type": "daterange",
         "Start": 0,
         "Length": 14
@@ -2469,7 +2331,7 @@
   },
   {
     "Input": "次の週末",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "次の週末",
@@ -2481,7 +2343,7 @@
   },
   {
     "Input": "来週はどうですか？",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "来週",
@@ -2493,10 +2355,10 @@
   },
   {
     "Input": "２００９年から２０１０年までの小麦も生産量は二倍に増えた",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "２００９年から２０１０年まで",
+        "Text": "2009年から2010年まで",
         "Type": "daterange",
         "Start": 0,
         "Length": 14
@@ -2505,7 +2367,7 @@
   },
   {
     "Input": "一月十日から廿日にまで",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "一月十日から廿日にまで",
@@ -2517,24 +2379,24 @@
   },
   {
     "Input": "１４９９とはただの数字です。",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": []
   },
   {
     "Input": "オリンピックは２００８年に行われました。",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "２００８年",
+        "Text": "2008年に",
         "Type": "daterange",
         "Start": 7,
-        "Length": 5
+        "Length": 6
       }
     ]
   },
   {
     "Input": "２０１８年１２月は０月ではありません。",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "2018年12月",
@@ -2546,7 +2408,7 @@
   },
   {
     "Input": "来月まで終わります。",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "来月",
@@ -2558,10 +2420,10 @@
   },
   {
     "Input": "２００８年、五輪は北京で行われました。",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "２００８年",
+        "Text": "2008年",
         "Type": "daterange",
         "Start": 0,
         "Length": 5
@@ -2570,10 +2432,10 @@
   },
   {
     "Input": "７８９年に",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "７８９年に",
+        "Text": "789年に",
         "Type": "daterange",
         "Start": 0,
         "Length": 5
@@ -2582,7 +2444,7 @@
   },
   {
     "Input": "一月十日から十二日まで",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "一月十日から十二日まで",
@@ -2594,7 +2456,7 @@
   },
   {
     "Input": "翌年",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "翌年",
@@ -2606,7 +2468,7 @@
   },
   {
     "Input": "先月",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "先月",
@@ -2618,7 +2480,7 @@
   },
   {
     "Input": "翌日",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "翌日",
@@ -2630,22 +2492,28 @@
   },
   {
     "Input": "２０１８は年を示そうです。",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "2018",
         "Type": "daterange",
         "Start": 0,
         "Length": 4
+      },
+      {
+        "Text": "年",
+        "Type": "daterange",
+        "Start": 5,
+        "Length": 1
       }
     ]
   },
   {
     "Input": "今世紀の２０年代",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "今世紀の２０年代",
+        "Text": "今世紀の20年代",
         "Type": "daterange",
         "Start": 0,
         "Length": 8
@@ -2654,10 +2522,10 @@
   },
   {
     "Input": "１０月の第1週は建国記念日の連休です。",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "１０月の第1週",
+        "Text": "10月の第1週",
         "Type": "daterange",
         "Start": 0,
         "Length": 7
@@ -2666,10 +2534,10 @@
   },
   {
     "Input": "１９８０年代",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "１９８０年代",
+        "Text": "1980年代",
         "Type": "daterange",
         "Start": 0,
         "Length": 6
@@ -2678,10 +2546,10 @@
   },
   {
     "Input": "９０年代",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "９０年代",
+        "Text": "90年代",
         "Type": "daterange",
         "Start": 0,
         "Length": 4
@@ -2690,7 +2558,7 @@
   },
   {
     "Input": "来年",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "来年",
@@ -2702,7 +2570,7 @@
   },
   {
     "Input": "今クォーター",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "今クォーター",
@@ -2714,7 +2582,7 @@
   },
   {
     "Input": "過去の十年間北京は著しく変わりました。",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "過去の十年間",
@@ -2726,27 +2594,33 @@
   },
   {
     "Input": "２１０１とはただの数字です。",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": []
   },
   {
     "Input": "２１００は年を示そうです。",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "2100",
         "Type": "daterange",
         "Start": 0,
         "Length": 4
+      },
+      {
+        "Text": "年",
+        "Type": "daterange",
+        "Start": 5,
+        "Length": 1
       }
     ]
   },
   {
     "Input": "彼は２００７年後に学校に来たことはありません。",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "２００７年",
+        "Text": "2007年",
         "Type": "daterange",
         "Start": 2,
         "Length": 5
@@ -2993,5 +2867,20 @@
         "Length": 4
       }
     ]
+  },
+  {
+    "Input": "3か月で不在にします。",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "3年で不在にします。",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "3週間で不在にします。",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": []
   }
 ]

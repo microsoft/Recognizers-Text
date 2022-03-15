@@ -48,10 +48,16 @@ DateLastRegex: !nestedRegex
 DateNextRegex: !nestedRegex
   def: (다음(\s+)?(주\s+)?){WeekDayRegex}
   references: [WeekDayRegex]
+WeekWithWeekDayRangeRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Japanese
+  def: ^[.]
 SpecialMonthRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in Japanese
   def: ^[.]
 SpecialYearRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Japanese
+  def: ^[.]
+MonthDayRange: !simpleRegex
   # TODO: modify below regex according to the counterpart in Japanese
   def: ^[.]
 SpecialDayRegex: !simpleRegex
@@ -175,12 +181,24 @@ PureNumYearAndMonth: !nestedRegex
 OneWordPeriodRegex: !nestedRegex
   def: ((({MonthRegex}\s*)({DateDayRegexInCJK}\s*)|(그\s*)?(일|사건))(이 있[는던]|의)\s+[달주해])|(((?<yearrel>(작년|((다음|올)\s?해)|금년|내년))|({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex}))\s*)?{MonthRegex}(\s+달)?(\s*(초|말))?(\s+([1-9]|[12]\d|3[01])일,\s+([1-9]|[12]\d|3[01])일)?|(({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex}|그|다가오는|지난|올)\s+(몇\s+)?(며칠|날|주말?|해|달)(\s+([말안]|([초후]반?)))?(\s+휴가)?(에\s좀\s더\s일찍)?)|(금년|올\s?해|작년|내년)(\s*({HalfYearRegex}|[초말안]))?|((다다음주|금주|주말)(\s+[말안])?)|((앞으로)\s+(하루|이틀|사흘|나흘|닷새|엿새|이레|여드레|아흐레|열흘)(\s+동안)?)|((다가오는|다음)\s+(({DateDayRegexInCJK})|{MonthRegex}|((하루|이틀|사흘|나흘|닷새|엿새|이레|여드레|아흐레|열흘)|[주달])))|((({YearRegex})|(\d{1,2}년)\s*)?((({MonthRegex})|((한|두|세|네|다섯|여섯|일곱|여덟|아홉|열|열한|열두)\s+달))\s*)?({DateDayRegexInCJK})?(\s+이내))|((같은|이번|올)\s+[달주해])|((어제|오늘|내일)로?부터(\s+최소)?\s+((\d{1,2}주)|(하루|이틀|사흘|나흘|닷새|엿새|이레|여드레|아흐레|열흘)|(\d{1,2}일)|(오늘|내일))((\s+[후내안전])|(까지)|(\s+이내)))|(\d{1,2}번 째 주)|(\d{1,2}\s*세기)|(\d{4}-\d{4})
   references: [YearRegex, MonthRegex, DatePeriodThisRegex, DatePeriodLastRegex, DatePeriodNextRegex, HalfYearRegex, DateDayRegexInCJK]
+LaterEarlyPeriodRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Japanese
+  def: ^[.]
+DatePointWithAgoAndLater: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Japanese
+  def: ^[.]
 WeekOfMonthRegex: !nestedRegex
   def: (?<wom>{MonthSuffixRegex}의?\s+(?<cardinal>첫\s?번?째|두\s?번?째|둘째|세\s?번?째|셋째|네\s?번?째|넷째|마지막)\s*주\s*)
   references: [MonthSuffixRegex]
 WeekOfYearRegex: !nestedRegex
   def: (?<woy>(?<yearrel>내년|금년|작년|((다음|올)\s*해)|{YearRegex})의?\s+(?<cardinal>첫\s?번?째|두\s?번?째|둘째|세\s?번?째|셋째|네\s?번?째|넷째|마지막)\s*주\s*)
   references: [ YearRegex ]
+WeekOfDateRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Japanese
+  def: ^[.]
+MonthOfDateRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Japanese
+  def: ^[.]
 UnitRegex: !simpleRegex
   def: (?<unit>년|(개)?월(\s달)?|달|주|일)
 FollowedUnit: !nestedRegex
@@ -219,18 +237,27 @@ FirstLastOfYearRegex: !nestedRegex
   # TODO: modify below regex according to the counterpart in Chinese
   def: (({DatePeriodYearInCJKRegex}|{YearRegex}|(?<yearrel>明年|今年|去年))的?)((?<first>前)|(?<last>(最后|最後)))
   references: [YearRegex,DatePeriodYearInCJKRegex]
+ComplexDatePeriodRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Japanese
+  def: ^[.]
 PastRegex: !simpleRegex
   def: (?<past>지난|과거)
 FutureRegex: !simpleRegex
   def: (?<future>앞으로|지금부터)
 SeasonRegex: !simpleRegex
   def: (한\s*)?(?<season>봄|여름|가을|겨울)
+WhichWeekRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Japanese
+  def: ^[.]
 SeasonWithYear: !nestedRegex
   def: (({YearRegex}|{DatePeriodYearInCJKRegex}|(?<yearrel>내년|올\s?해|금년|작년)|(이번?|저번?|다음|그))의?\s+)?{SeasonRegex}\s*(초|중반|말)?
   references: [YearRegex,DatePeriodYearInCJKRegex, SeasonRegex]
 QuarterRegex: !nestedRegex
   def: (({YearRegex}|{DatePeriodYearInCJKRegex}|(?<yearrel>내년|올\s?해|금년|작년))(의)?\s+)?((?<cardinal>1|2|3|4|일|이|삼|사)사?분기)
   references: [YearRegex, DatePeriodYearInCJKRegex]
+CenturyNumRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Japanese
+  def: ^[.]
 CenturyRegex: !simpleRegex
   def: (?<century>\d|1\d|2\d)\s*세기
 CenturyRegexInCJK: !simpleRegex
@@ -458,6 +485,9 @@ FromToRegex: !simpleRegex
   def: (으?로?부터|과|에서).+(까지).+
 AmbiguousRangeModifierPrefix: !simpleRegex
   def: (从|自)
+ReferenceDatePeriodRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Japanese
+  def: ^[.]
 ParserConfigurationBefore: !simpleRegex
   def: ((?<include>和|或|及)?(之前|以前)|前)
 ParserConfigurationAfter: !simpleRegex
@@ -468,9 +498,9 @@ ParserConfigurationSincePrefix: !simpleRegex
   def: (自从|自|自打|打|从)
 ParserConfigurationSinceSuffix: !simpleRegex
   def: (以来|开始|起)
-ParserConfigurationLastWeekDayToken: 最后一个
-ParserConfigurationNextMonthToken: 下一个
-ParserConfigurationLastMonthToken: 上一个
+ParserConfigurationLastWeekDayRegex: 最后一个
+ParserConfigurationNextMonthRegex: 下一个
+ParserConfigurationLastMonthRegex: 上一个
 ParserConfigurationDatePrefix: ' '
 ParserConfigurationUnitMap: !dictionary
   types: [string, string]

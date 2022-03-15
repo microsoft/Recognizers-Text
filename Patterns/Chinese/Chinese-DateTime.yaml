@@ -48,6 +48,9 @@ DateLastRegex: !nestedRegex
 DateNextRegex: !nestedRegex
   def: (下一个|下个|下一|下)(的)?{WeekDayRegex}
   references: [WeekDayRegex]
+WeekWithWeekDayRangeRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Japanese
+  def: ^[.]
 WoMLastRegex: !simpleRegex
   def: 最后一
 WoMPreviousRegex: !simpleRegex
@@ -58,6 +61,9 @@ SpecialMonthRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in Japanese
   def: ^[.]
 SpecialYearRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Japanese
+  def: ^[.]
+MonthDayRange: !simpleRegex
   # TODO: modify below regex according to the counterpart in Japanese
   def: ^[.]
 SpecialDayRegex: !simpleRegex
@@ -175,12 +181,24 @@ PureNumYearAndMonth: !nestedRegex
 OneWordPeriodRegex: !nestedRegex
   def: (((?<yearrel>(明|今|去)年)\s*)?{MonthRegex}|({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})(?<halfTag>半)?\s*(周末|周|月|年)|周末|(今|明|去|前|后)年(\s*{HalfYearRegex})?)
   references: [MonthRegex, DatePeriodThisRegex, DatePeriodLastRegex, DatePeriodNextRegex, HalfYearRegex]
+LaterEarlyPeriodRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Japanese
+  def: ^[.]
+DatePointWithAgoAndLater: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Japanese
+  def: ^[.]
 WeekOfMonthRegex: !nestedRegex
   def: (?<wom>{MonthSuffixRegex}的(?<cardinal>第一|第二|第三|第四|第五|最后一)\s*周\s*)
   references: [MonthSuffixRegex]
 WeekOfYearRegex: !nestedRegex
   def: (?<woy>({YearRegex}|{RelativeRegex}年)的(?<cardinal>第一|第二|第三|第四|第五|最后一)\s*周\s*)
   references: [ YearRegex, RelativeRegex ]
+WeekOfDateRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Japanese
+  def: ^[.]
+MonthOfDateRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Japanese
+  def: ^[.]
 UnitRegex: !simpleRegex
   def: (?<unit>年|(?<uoy>(个)?月|周|週|日|天))
 FollowedUnit: !nestedRegex
@@ -212,18 +230,27 @@ DayRegexForPeriod: !simpleRegex
 FirstLastOfYearRegex: !nestedRegex
   def: (({DatePeriodYearInCJKRegex}|{YearRegex}|(?<yearrel>明年|今年|去年))的?)((?<first>前)|(?<last>(最后|最後)))
   references: [YearRegex,DatePeriodYearInCJKRegex]
+ComplexDatePeriodRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Japanese
+  def: ^[.]
 PastRegex: !simpleRegex
   def: (?<past>(之前|前|上|近|过去))
 FutureRegex: !simpleRegex
   def: (?<future>(之后|之後|后|後|(?<![一两几]\s*)下|未来(的)?))
 SeasonRegex: !simpleRegex
   def: (?<season>春|夏|秋|冬)(天|季)?
+WhichWeekRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Japanese
+  def: ^[.]
 SeasonWithYear: !nestedRegex
   def: (({YearRegex}|{DatePeriodYearInCJKRegex}|(?<yearrel>明年|今年|去年))(的)?)?{SeasonRegex}
   references: [YearRegex,DatePeriodYearInCJKRegex, SeasonRegex]
 QuarterRegex: !nestedRegex
   def: (({YearRegex}|{DatePeriodYearInCJKRegex}|(?<yearrel>明年|今年|去年))(的)?)?(第(?<cardinal>1|2|3|4|一|二|三|四)季度)
   references: [YearRegex, DatePeriodYearInCJKRegex]
+CenturyNumRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Japanese
+  def: ^[.]
 CenturyRegex: !simpleRegex
   def: (?<century>\d|1\d|2\d)世纪
 CenturyRegexInCJK: !simpleRegex
@@ -444,6 +471,9 @@ FromToRegex: !simpleRegex
   def: (从|自).+([至到]).+
 AmbiguousRangeModifierPrefix: !simpleRegex
   def: (从|自)
+ReferenceDatePeriodRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Japanese
+  def: ^[.]
 ParserConfigurationBefore: !simpleRegex
   def: ((?<include>和|或|及)?(之前|以前)|前)
 ParserConfigurationAfter: !simpleRegex
@@ -454,9 +484,9 @@ ParserConfigurationSincePrefix: !simpleRegex
   def: (自从|自|自打|打|从)
 ParserConfigurationSinceSuffix: !simpleRegex
   def: (以来|开始|起)
-ParserConfigurationLastWeekDayToken: 最后一个
-ParserConfigurationNextMonthToken: 下一个
-ParserConfigurationLastMonthToken: 上一个
+ParserConfigurationLastWeekDayRegex: 最后一个
+ParserConfigurationNextMonthRegex: 下一个
+ParserConfigurationLastMonthRegex: 上一个
 ParserConfigurationDatePrefix: ' '
 ParserConfigurationUnitMap: !dictionary
   types: [string, string]
