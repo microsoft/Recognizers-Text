@@ -186,10 +186,10 @@ class ChineseDateParserConfiguration implements IDateParserConfiguration {
     getSwiftMonthOrYear(source: string): number {
         let trimmedSource = source.trim().toLowerCase();
         let swift = 0;
-        if (trimmedSource.startsWith(ChineseDateTime.ParserConfigurationNextMonthToken)) {
+        if (trimmedSource.startsWith(ChineseDateTime.ParserConfigurationNextMonthRegex)) {
             swift = 1;
         }
-        else if (trimmedSource.startsWith(ChineseDateTime.ParserConfigurationLastMonthToken)) {
+        else if (trimmedSource.startsWith(ChineseDateTime.ParserConfigurationLastMonthRegex)) {
             swift = -1;
         }
         return swift;
@@ -200,7 +200,7 @@ class ChineseDateParserConfiguration implements IDateParserConfiguration {
     }
 
     isCardinalLast(source: string): boolean {
-        return source === ChineseDateTime.ParserConfigurationLastWeekDayToken;
+        return source === ChineseDateTime.ParserConfigurationLastWeekDayRegex;
     }
 
     constructor(dmyDateFormat: boolean) {
