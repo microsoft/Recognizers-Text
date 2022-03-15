@@ -5213,32 +5213,6 @@
     ]
   },
   {
-    "Input": "２００８年十二月",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "2008年十二月",
-        "Type": "daterange",
-        "Value": {
-          "Timex": "2008-12",
-          "FutureResolution": {
-            "startDate": "2008-12-01",
-            "endDate": "2009-01-01"
-          },
-          "PastResolution": {
-            "startDate": "2008-12-01",
-            "endDate": "2009-01-01"
-          }
-        },
-        "Start": 0,
-        "Length": 8
-      }
-    ]
-  },
-  {
     "Input": "私は７月４日から６日まで北京に行きます。",
     "Context": {
       "ReferenceDateTime": "2019-08-08T16:09:00"
