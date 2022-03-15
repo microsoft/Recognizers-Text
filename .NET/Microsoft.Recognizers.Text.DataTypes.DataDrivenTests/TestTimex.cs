@@ -17,133 +17,107 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         [TestMethod]
         public void DataTypes_Timex_FromDateTime()
         {
-            Assert.AreEqual("2017-12-05T23:57:35", TimexProperty.FromDateTime(new System.DateTime(2017, 12, 5, 23, 57, 35)).TimexValue);
+            Assert.AreEqual("2017-12-05T23:57:35",
+                TimexProperty.FromDateTime(new System.DateTime(2017, 12, 5, 23, 57, 35)).TimexValue);
         }
 
         [TestMethod]
-        public void DataTypes_Timex_Roundtrip_Date()
+        [DataRow("2017-09-27")]
+        [DataRow("XXXX-WXX-3")]
+        [DataRow("XXXX-12-05")]
+        public void DataTypes_Timex_Roundtrip_Date(string timex)
         {
-            Roundtrip("2017-09-27");
-            Roundtrip("XXXX-WXX-3");
-            Roundtrip("XXXX-12-05");
+            Roundtrip(timex);
         }
 
         [TestMethod]
-        public void DataTypes_Timex_Roundtrip_Time()
+        [DataRow("T17:30:45")]
+        [DataRow("T05:06:07")]
+        [DataRow("T17:30")]
+        [DataRow("T23")]
+        public void DataTypes_Timex_Roundtrip_Time(string timex)
         {
-            Roundtrip("T17:30:45");
-            Roundtrip("T05:06:07");
-            Roundtrip("T17:30");
-            Roundtrip("T23");
+            Roundtrip(timex);
         }
 
         [TestMethod]
-        public void DataTypes_Timex_Roundtrip_Duration()
+        [DataRow("P50Y")]
+        [DataRow("P6M")]
+        [DataRow("P3W")]
+        [DataRow("P5D")]
+        [DataRow("PT16H")]
+        [DataRow("PT32M")]
+        [DataRow("PT20S")]
+        public void DataTypes_Timex_Roundtrip_Duration(string timex)
         {
-            Roundtrip("P50Y");
-            Roundtrip("P6M");
-            Roundtrip("P3W");
-            Roundtrip("P5D");
-            Roundtrip("PT16H");
-            Roundtrip("PT32M");
-            Roundtrip("PT20S");
+            Roundtrip(timex);
         }
 
         [TestMethod]
-        public void DataTypes_Timex_Roundtrip_Now()
+        [DataRow("PRESENT_REF")]
+        public void DataTypes_Timex_Roundtrip_Now(string timex)
         {
-            Roundtrip("PRESENT_REF");
+            Roundtrip(timex);
         }
 
         [TestMethod]
-        public void DataTypes_Timex_Roundtrip_DateTime()
+        [DataRow("XXXX-WXX-3T04")]
+        [DataRow("2017-09-27T11:41:30")]
+        public void DataTypes_Timex_Roundtrip_DateTime(string timex)
         {
-            Roundtrip("XXXX-WXX-3T04");
-            Roundtrip("2017-09-27T11:41:30");
+            Roundtrip(timex);
         }
 
         [TestMethod]
-        public void DataTypes_Timex_Roundtrip_DateRange()
+        [DataRow("2017")]
+        [DataRow("SU")]
+        [DataRow("2017-WI")]
+        [DataRow("2017-09")]
+        [DataRow("2017-W37")]
+        [DataRow("2017-W37-WE")]
+        [DataRow("XXXX-05")]
+        public void DataTypes_Timex_Roundtrip_DateRange(string timex)
         {
-            Roundtrip("2017");
-            Roundtrip("SU");
-            Roundtrip("2017-WI");
-            Roundtrip("2017-09");
-            Roundtrip("2017-W37");
-            Roundtrip("2017-W37-WE");
-            Roundtrip("XXXX-05");
+            Roundtrip(timex);
         }
 
         [TestMethod]
-        public void DataTypes_Timex_Roundtrip_DateRange_Start_End_Duration()
+        [DataRow("(XXXX-WXX-3,XXXX-WXX-6,P3D)")]
+        [DataRow("(XXXX-01-01,XXXX-08-05,P216D)")]
+        [DataRow("(2017-01-01,2017-08-05,P216D)")]
+        [DataRow("(2016-01-01,2016-08-05,P217D)")]
+        public void DataTypes_Timex_Roundtrip_DateRange_Start_End_Duration(string timex)
         {
-            Roundtrip("(XXXX-WXX-3,XXXX-WXX-6,P3D)");
-            Roundtrip("(XXXX-01-01,XXXX-08-05,P216D)");
-            Roundtrip("(2017-01-01,2017-08-05,P216D)");
-            Roundtrip("(2016-01-01,2016-08-05,P217D)");
+            Roundtrip(timex);
         }
 
         [TestMethod]
-        public void DataTypes_Timex_Roundtrip_TimeRange()
+        [DataRow("TEV")]
+        public void DataTypes_Timex_Roundtrip_TimeRange(string timex)
         {
-            Roundtrip("TEV");
+            Roundtrip(timex);
         }
 
         [TestMethod]
-        public void DataTypes_Timex_Roundtrip_TimeRange_Start_End_Duration()
+        [DataRow("(T16,T19,PT3H)")]
+        public void DataTypes_Timex_Roundtrip_TimeRange_Start_End_Duration(string timex)
         {
-            Roundtrip("(T16,T19,PT3H)");
+            Roundtrip(timex);
         }
 
         [TestMethod]
-        public void DataTypes_Timex_Roundtrip_DateTimeRange()
+        [DataRow("2017-09-27TEV")]
+        public void DataTypes_Timex_Roundtrip_DateTimeRange(string timex)
         {
-            Roundtrip("2017-09-27TEV");
+            Roundtrip(timex);
         }
 
         [TestMethod]
-        public void DataTypes_Timex_Roundtrip_DateTimeRange_Start_End_Duration()
+        [DataRow("(2017-09-08T21:19:29,2017-09-08T21:24:29,PT5M)")]
+        [DataRow("(XXXX-WXX-3T16,XXXX-WXX-6T15,PT71H)")]
+        public void DataTypes_Timex_Roundtrip_DateTimeRange_Start_End_Duration(string timex)
         {
-            Roundtrip("(2017-09-08T21:19:29,2017-09-08T21:24:29,PT5M)");
-            Roundtrip("(XXXX-WXX-3T16,XXXX-WXX-6T15,PT71H)");
-        }
-
-        [TestMethod]
-        public void DataTypes_Timex_ToString()
-        {
-            Assert.AreEqual("5th May", new TimexProperty("XXXX-05-05").ToString());
-        }
-
-        [TestMethod]
-        public void DataTypes_Timex_ToNaturalLanguage()
-        {
-            var today = new System.DateTime(2017, 10, 16);
-            Assert.AreEqual("tomorrow", new TimexProperty("2017-10-17").ToNaturalLanguage(today));
-        }
-
-        [TestMethod]
-        public void DataTypes_Timex_FromTime()
-        {
-            Assert.AreEqual("T23:59:30", TimexProperty.FromTime(new Time(23, 59, 30)).TimexValue);
-        }
-
-        [TestMethod]
-        public void DataTypes_Timex_FromDateTime_ToString()
-        {
-            var timex = new TimexProperty("2022-03-11");
-            Assert.AreEqual("11th March 2022", timex.ToString());
-            timex = new TimexProperty("2022-03-12");
-            Assert.AreEqual("12th March 2022", timex.ToString());
-            timex = new TimexProperty("2022-03-13");
-            Assert.AreEqual("13th March 2022", timex.ToString());
-        }
-
-        [TestMethod]
-        public void DataTypes_Timex_FromDateTimeRange_ToString()
-        {
-            // TODO: This test documents a workaround to avoid exceptions when calling TimexProperty.ToString(). Proper fix for date range representation is needed.
-            var timex = new TimexProperty("(2022-03-15T16,2022-03-15T18,PT2H)");
-            Assert.AreEqual("15th March 2022 4PM", timex.ToString());
+            Roundtrip(timex);
         }
 
         private static void Roundtrip(string timex)

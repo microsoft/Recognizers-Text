@@ -43,15 +43,15 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
         public static class TimexTypes
         {
-            public static readonly string Present = "present";
-            public static readonly string Definite = "definite";
-            public static readonly string Date = "date";
-            public static readonly string DateTime = "datetime";
-            public static readonly string DateRange = "daterange";
-            public static readonly string Duration = "duration";
-            public static readonly string Time = "time";
-            public static readonly string TimeRange = "timerange";
-            public static readonly string DateTimeRange = "datetimerange";
+            public const string Present = "present";
+            public const string Definite = "definite";
+            public const string Date = "date";
+            public const string DateTime = "datetime";
+            public const string DateRange = "daterange";
+            public const string Duration = "duration";
+            public const string Time = "time";
+            public const string TimeRange = "timerange";
+            public const string DateTimeRange = "datetimerange";
         }
     }
 }
