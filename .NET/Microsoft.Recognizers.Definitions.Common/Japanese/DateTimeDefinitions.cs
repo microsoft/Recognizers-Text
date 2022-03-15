@@ -115,7 +115,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
       public static readonly string FirstLastOfYearRegex = $@"(({DatePeriodYearInCJKRegex}|{YearRegex}|(?<yearrel>再来年|翌年|来年|今年|去年))的?)((?<first>前)|(?<last>(最后|最後|最終)))";
       public static readonly string ComplexDatePeriodRegex = $@"({DateRangePrepositions})(?<start>(第{ZeroToNineIntegerRegexCJK}+|第\d+|{DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex}|(({YearNumRegex}|{DayRegexForPeriod}|{DateDayRegexInCJK}|{MonthRegex}|{MonthNumRegex})(?!((\d+)?(分|秒|時))))|{RelativeRegex}).+)(から)(?<end>.+)(までの間|まで|の間)";
       public const string PastRegex = @"(?<past>(この|前|上|之前|近|过去|去|過去)(の)?)";
-      public const string FutureRegex = @"(?<future>((?<within>以内に|後に)|向こう|后|次の|今後|これからの|後|(?<![一两几]\s*)下|之后|之後|未来(的|の)?))";
+      public const string FutureRegex = @"(?<future>((?<within>以内に)|後に|向こう|后|次の|今後|これからの|後|(?<![一两几]\s*)下|之后|之後|未来(的|の)?))";
       public const string SeasonRegex = @"(?<season>春|夏|秋|冬)(天|季)?(の)?((?<MidPrefix>半ば)|(?<EarlyPrefix>初め|のはじめ)|(?<LatePrefix>終わり(ごろ)?|末|下旬))?";
       public const string WhichWeekRegex = @"第(?<number>5[0-3]|[1-4]\d|0?[1-9])週";
       public static readonly string SeasonWithYear = $@"({DateRangePrepositions})(({YearRegex}|{DatePeriodYearInCJKRegex}|(?<yearrel>再来年|翌年|来年|今年|去年))(的|の)?)?({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex})?{SeasonRegex}";

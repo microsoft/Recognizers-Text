@@ -2896,14 +2896,14 @@
         "Text": "2日後に",
         "Type": "daterange",
         "Value": {
-          "Timex": "(2016-11-07,2016-11-09,P2D)",
+          "Timex": "(2016-11-08,2016-11-10,P2D)",
           "FutureResolution": {
-            "startDate": "2016-11-07",
-            "endDate": "2016-11-09"
+            "startDate": "2016-11-08",
+            "endDate": "2016-11-10"
           },
           "PastResolution": {
-            "startDate": "2016-11-07",
-            "endDate": "2016-11-09"
+            "startDate": "2016-11-08",
+            "endDate": "2016-11-10"
           }
         },
         "Start": 3,

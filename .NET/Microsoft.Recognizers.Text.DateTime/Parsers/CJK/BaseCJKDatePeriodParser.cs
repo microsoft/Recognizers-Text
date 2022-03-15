@@ -1994,6 +1994,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         if (!prefixMatch.Success)
                         {
                             prefixMatch = this.config.FutureRegex.MatchExact(afterStr, trim: true);
+                            isFuture = prefixMatch.Success;
                         }
 
                         if (isFuture && !this.config.FutureRegex.MatchExact(afterStr, trim: true).Groups["within"].Success)
