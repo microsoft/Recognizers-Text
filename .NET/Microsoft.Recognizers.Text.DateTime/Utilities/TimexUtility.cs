@@ -172,6 +172,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             return specialYearPrefixes == null ? yearTimex : specialYearPrefixes + yearTimex;
         }
 
+        public static string GenerateDatePeriodTimexWithDiff(DateObject beginDate, DateObject endDate, int diff)
+        {
+            var durationTimex = "P" + diff + Constants.TimexDay;
+            return $"({DateTimeFormatUtil.LuisDate(beginDate)},{DateTimeFormatUtil.LuisDate(endDate)},{durationTimex})";
+        }
+
         public static string GenerateDurationTimex(double number, string unitStr, bool isLessThanDay)
         {
             if (!Constants.TimexBusinessDay.Equals(unitStr, StringComparison.Ordinal))
@@ -455,6 +461,13 @@ namespace Microsoft.Recognizers.Text.DateTime
         public static string ModifyAmbiguousCenturyTimex(string timex)
         {
             return "XX" + timex.Substring(2);
+        }
+
+        public static float ParseNumberFromDurationTimex(string timex)
+        {
+            char[] unitChar = new char[] { 'D', 'W', 'M', 'Y', 'B' };
+            var numberStr = timex.Substring(timex.IndexOf('P') + 1, timex.IndexOfAny(unitChar) - 1);
+            return float.Parse(numberStr);
         }
 
         private static bool IsTimeDurationTimex(string timex)

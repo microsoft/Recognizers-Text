@@ -38,5 +38,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Dictionary<char, char> NormalizeCharMap { get; }
 
+        Dictionary<Regex, Regex> AmbiguityFiltersDict { get; }
+
     }
 }

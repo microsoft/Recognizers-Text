@@ -91,7 +91,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
       public static readonly string DatePeriodYearInCJKRegex = $@"(?<yearCJK>({ZeroToNineIntegerRegexCJK}{{2,4}}))年{HalfYearRegex}?";
       public static readonly string MonthSuffixRegex = $@"(?<msuf>({RelativeMonthRegex}|{MonthRegex}))";
       public static readonly string SimpleCasesRegex = $@"({DateRangePrepositions})(({YearRegex}|{DatePeriodYearInCJKRegex})\s*)?{MonthSuffixRegex}({DatePeriodDayRegexInCJK}|{DayRegex})\s*{DatePeriodTillRegex}\s*({DatePeriodDayRegexInCJK}|{DayRegex})((\s+|\s*,\s*){YearRegex})?(までの間|まで|の間)?";
-      public static readonly string YearAndMonth = $@"({YearNumRegex}の?{MonthRegex}(\b|から)?)";
+      public static readonly string YearAndMonth = $@"({YearNumRegex}の?\s*{MonthRegex}(\b|から)?)";
       public static readonly string SimpleYearAndMonth = $@"({DateRangePrepositions})({YearNumRegex}[/\\\-]{MonthNumRegex}(\b|から)$)";
       public static readonly string PureNumYearAndMonth = $@"({DateRangePrepositions})({YearRegexInNumber}\s*[-\.\/]\s*{MonthNumRegex})|({MonthNumRegex}\s*\/\s*{YearRegexInNumber})";
       public static readonly string OneWordPeriodRegex = $@"({DateRangePrepositions})((((周末|週(間)?|日間?|明年|(?<yearrel>今年|再来年|翌年|去年|前年|后年|来年))(,|の(残り)?)?\s*)?{MonthRegex}|({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})?の?\s*(数|\d\d?|{ZeroToNineIntegerRegexCJK})?(?<duration>ヶ?((?<!休|建国記念)日(?!付)間?|((?<!((?<![1-9]+)0+))月間?)|(週の)?週末|周末|周|週(間)?|年(?!々)(間)?|週間|今年|再来年|翌年|去年|前年|后年|来年))(?!間で)(?!で))(?<restof>の残りの日|いっぱい)?|(({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})({MonthRegex}(?!で)|{DayRegex})))(?<WithinNext>後に|以内に|初来)?";
@@ -125,7 +125,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
       public static readonly string CenturyRegex = $@"({CenturyNumRegex}|{CenturyRegexInCJK})";
       public static readonly string RelativeCenturyRegex = $@"(?<relcentury>({DatePeriodLastRegex}|{DatePeriodThisRegex}|{DatePeriodNextRegex}))世紀";
       public const string DecadeRegexInCJK = @"(?<decade>十|一十|二十|三十|四十|五十|六十|七十|八十|九十)";
-      public static readonly string DecadeRegex = $@"({DateRangePrepositions})(?<centurysuf>({CenturyRegex}|{CenturyRegexInCJK}|{RelativeCenturyRegex}))?の?(?<firstTwoNumOfYear>\d{{2}}(?=\d))?(?<decade>((\d{{1}}0)|{DecadeRegexInCJK}))年代(のごろ)?";
+      public static readonly string DecadeRegex = $@"({DateRangePrepositions})(?<centurysuf>({CenturyRegex}|{CenturyRegexInCJK}|{RelativeCenturyRegex}))?の?(?<firsttwoyearnum>\d{{2}}(?=\d))?(?<decade>((\d{{1}}0)|{DecadeRegexInCJK}))年代(のごろ)?";
       public const string PrepositionRegex = @"(?<prep>^(的|の)|在$)";
       public const string NowRegex = @"(?<now>现在|马上|立刻|刚刚才|刚刚|刚才)";
       public const string NightRegex = @"(?<night>早|晚)";
@@ -630,6 +630,10 @@ namespace Microsoft.Recognizers.Definitions.Japanese
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {
             { @"早", @"(?<!今|明|日|号)早(?!上)" }
+        };
+      public static readonly Dictionary<string, string> AmbiguityDatePeriodFiltersDict = new Dictionary<string, string>
+        {
+            { @"^年$", @"年" }
         };
       public static readonly Dictionary<string, long> DurationUnitValueMap = new Dictionary<string, long>
         {

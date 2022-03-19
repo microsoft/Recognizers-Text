@@ -184,7 +184,7 @@ SimpleCasesRegex: !nestedRegex
   def: ({DateRangePrepositions})(({YearRegex}|{DatePeriodYearInCJKRegex})\s*)?{MonthSuffixRegex}({DatePeriodDayRegexInCJK}|{DayRegex})\s*{DatePeriodTillRegex}\s*({DatePeriodDayRegexInCJK}|{DayRegex})((\s+|\s*,\s*){YearRegex})?(までの間|まで|の間)?
   references: [DateRangePrepositions, YearRegex, DatePeriodYearInCJKRegex, MonthSuffixRegex, DatePeriodDayRegexInCJK, DayRegex, DatePeriodTillRegex]
 YearAndMonth: !nestedRegex
-  def: ({YearNumRegex}の?{MonthRegex}(\b|から)?)
+  def: ({YearNumRegex}の?\s*{MonthRegex}(\b|から)?)
   references: [YearNumRegex, MonthRegex]
 SimpleYearAndMonth: !nestedRegex
   def: ({DateRangePrepositions})({YearNumRegex}[/\\\-]{MonthNumRegex}(\b|から)$)
@@ -276,7 +276,7 @@ RelativeCenturyRegex: !nestedRegex
 DecadeRegexInCJK: !simpleRegex
   def: (?<decade>十|一十|二十|三十|四十|五十|六十|七十|八十|九十)
 DecadeRegex: !nestedRegex
-  def: ({DateRangePrepositions})(?<centurysuf>({CenturyRegex}|{CenturyRegexInCJK}|{RelativeCenturyRegex}))?の?(?<firstTwoNumOfYear>\d{2}(?=\d))?(?<decade>((\d{1}0)|{DecadeRegexInCJK}))年代(のごろ)?
+  def: ({DateRangePrepositions})(?<centurysuf>({CenturyRegex}|{CenturyRegexInCJK}|{RelativeCenturyRegex}))?の?(?<firsttwoyearnum>\d{2}(?=\d))?(?<decade>((\d{1}0)|{DecadeRegexInCJK}))年代(のごろ)?
   references: [DateRangePrepositions, CenturyRegex, CenturyRegexInCJK, RelativeCenturyRegex, DecadeRegexInCJK]
 #DateTimeExtractorCJK
 PrepositionRegex: !simpleRegex
@@ -917,6 +917,10 @@ AmbiguityFiltersDict: !dictionary
   # TODO: populate dictionary according to the counterpart in Chinese
   entries:
     '早': '(?<!今|明|日|号)早(?!上)'
+AmbiguityDatePeriodFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    '^年$': '年'
 DurationUnitValueMap: !dictionary
   types: [string, long]
   entries:

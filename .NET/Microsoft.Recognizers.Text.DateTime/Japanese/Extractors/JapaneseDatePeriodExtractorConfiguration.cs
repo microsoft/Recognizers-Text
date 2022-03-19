@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Japanese;
+using Microsoft.Recognizers.Definitions.Utilities;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Japanese;
 using Microsoft.Recognizers.Text.Utilities;
@@ -192,5 +193,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         Regex ICJKDatePeriodExtractorConfiguration.RangePrefixRegex => RangePrefixRegex;
 
         Regex ICJKDatePeriodExtractorConfiguration.RangeSuffixRegex => RangeSuffixRegex;
+
+        public Dictionary<Regex, Regex> AmbiguityFiltersDict => DefinitionLoader.LoadAmbiguityFilters(DateTimeDefinitions.AmbiguityDatePeriodFiltersDict);
     }
 }

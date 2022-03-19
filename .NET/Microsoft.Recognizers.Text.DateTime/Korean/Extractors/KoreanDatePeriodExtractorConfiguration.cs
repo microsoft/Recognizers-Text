@@ -182,5 +182,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
         Regex ICJKDatePeriodExtractorConfiguration.RangePrefixRegex => RangePrefixRegex;
 
         Regex ICJKDatePeriodExtractorConfiguration.RangeSuffixRegex => RangeSuffixRegex;
+
+        public Dictionary<Regex, Regex> AmbiguityFiltersDict => null;
     }
 }

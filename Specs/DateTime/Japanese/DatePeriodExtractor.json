@@ -685,6 +685,7 @@
   },
   {
     "Input": "3年後に不在にします。",
+    "Comment": "This test case was intended to correspond to the English 'I'll be out in 3 years', but '後に' (after) is used instead of 'で' (in). A test case using 'で' has been appended to the specs.",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -697,6 +698,7 @@
   },
   {
     "Input": "3週間後に不在にします。",
+    "Comment": "This test case was intended to correspond to the English 'I'll be out in 3 weeks', but '後に' (after) is used instead of 'で' (in). A test case using 'で' has been appended to the specs.",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -709,6 +711,7 @@
   },
   {
     "Input": "3か月後に不在にします。",
+    "Comment": "This test case was intended to correspond to the English 'I'll be out in 3 months', but '後に' (after) is used instead of 'で' (in). A test case using 'で' has been appended to the specs.",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2069,12 +2072,6 @@
         "Type": "daterange",
         "Start": 0,
         "Length": 4
-      },
-      {
-        "Text": "年",
-        "Type": "daterange",
-        "Start": 5,
-        "Length": 1
       }
     ]
   },
@@ -2499,12 +2496,6 @@
         "Type": "daterange",
         "Start": 0,
         "Length": 4
-      },
-      {
-        "Text": "年",
-        "Type": "daterange",
-        "Start": 5,
-        "Length": 1
       }
     ]
   },
@@ -2606,12 +2597,6 @@
         "Type": "daterange",
         "Start": 0,
         "Length": 4
-      },
-      {
-        "Text": "年",
-        "Type": "daterange",
-        "Start": 5,
-        "Length": 1
       }
     ]
   },
@@ -2870,16 +2855,19 @@
   },
   {
     "Input": "3か月で不在にします。",
+    "Comment": "This test case corresponds to the English 'I'll be out in 3 months' where the original preposition '後に' (after) has been replaced by the more appropriate 'で' (in).",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
     "Input": "3年で不在にします。",
+    "Comment": "This test case corresponds to the English 'I'll be out in 3 years' where the original preposition '後に' (after) has been replaced by the more appropriate 'で' (in).",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   },
   {
     "Input": "3週間で不在にします。",
+    "Comment": "This test case corresponds to the English 'I'll be out in 3 weeks' where the original preposition '後に' (after) has been replaced by the more appropriate 'で' (in).",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
   }

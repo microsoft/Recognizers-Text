@@ -180,5 +180,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         Regex ICJKDatePeriodExtractorConfiguration.RangePrefixRegex => RangePrefixRegex;
 
         Regex ICJKDatePeriodExtractorConfiguration.RangeSuffixRegex => RangeSuffixRegex;
+
+        public Dictionary<Regex, Regex> AmbiguityFiltersDict => null;
     }
 }
