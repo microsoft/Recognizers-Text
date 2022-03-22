@@ -300,7 +300,7 @@ DateExtractorYearTermRegex: !nestedRegex
   references: [ DateYearRegex ]
 # Maandag, Mei 2
 DateExtractor1: !nestedRegex
-  def: \b({WeekDayRegex}\s*[,-]?\s*)?(({MonthRegex}(\.)?\s*[/\\.,-]?\s*{DayRegex}(?!\s*{MonthRegex}))|(\({MonthRegex}\s*[-.]\s*{DayRegex}\))|({DayRegex}(\.)?\s*[/\\.,-]?\s*{MonthRegex}))(\s*\(\s*{WeekDayRegex}\s*\))?({DateExtractorYearTermRegex}(?!\s*{MonthRegex})\b)?
+  def: \b({WeekDayRegex}\s*[,-]?\s*)?(({MonthRegex}(\.)?\s*[/\\.,-]?\s*{DayRegex}(?!\s*({MonthRegex}|\-\s*\d{2}\b)))|(\({MonthRegex}\s*[-.]\s*{DayRegex}\))|({DayRegex}(\.)?\s*[/\\.,-]?\s*{MonthRegex}))(\s*\(\s*{WeekDayRegex}\s*\))?({DateExtractorYearTermRegex}(?!\s*{MonthRegex})\b)?
   references: [ WeekDayRegex, MonthRegex, DayRegex, DateExtractorYearTermRegex ]
 # Maandag 2 Mei
 # TODO: add ... van 2019?

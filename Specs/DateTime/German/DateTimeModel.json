@@ -1,4 +1,4 @@
-[
+﻿[
   {
     "Input": "Ich komme am 2. Oktober zurück.",
     "Context": {
@@ -5229,6 +5229,37 @@
               "type": "daterange",
               "sourceEntity": "datetimerange",
               "end": "2000-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ich bin November 19-20 unterwegs",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "november 19-20",
+        "Start": 8,
+        "End": 21,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-11-19,XXXX-11-20,P1D)",
+              "type": "daterange",
+              "start": "2015-11-19",
+              "end": "2015-11-20"
+            },
+            {
+              "timex": "(XXXX-11-19,XXXX-11-20,P1D)",
+              "type": "daterange",
+              "start": "2016-11-19",
+              "end": "2016-11-20"
             }
           ]
         }
