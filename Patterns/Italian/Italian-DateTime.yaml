@@ -393,9 +393,6 @@ TimeRegexWithDotConnector: !nestedRegex
 FirstTimeRegexInTimeRange: !nestedRegex
   def: \b{TimeRegexWithDotConnector}(\s*{DescRegex})?
   references: [ TimeRegexWithDotConnector, DescRegex ]
-HourRegex: !nestedRegex
-  def: \b{BaseDateTime.HourRegex}
-  references: [ BaseDateTime.HourRegex ]
 PeriodDescRegex: !simpleRegex
   def: (?<desc>pm|am|p\.m\.|a\.m\.)
 PeriodPmRegex: !simpleRegex
