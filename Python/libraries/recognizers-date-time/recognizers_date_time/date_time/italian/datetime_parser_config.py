@@ -144,15 +144,14 @@ class ItalianDateTimeParserConfiguration(DateTimeParserConfiguration):
         source = source.strip().lower()
         timex = ''
 
-        if source.endswith('maintenant'):
+        if source.endswith('ora') or source.endswith('adesso') or source.endswith('in questo momento'):
             timex = 'PRESENT_REF'
         elif (
-            source == 'récemment' or
-            source == 'précédemment' or
-            source == 'auparavant'
+            source == 'recentemente' or
+            source == 'precedentemente'
         ):
             timex = 'PAST_REF'
-        elif source == 'dès que possible' or source == 'dqp':
+        elif source == 'il prima possibile' or source == 'asap':
             timex = 'FUTURE_REF'
         else:
             return MatchedTimex(False, None)
