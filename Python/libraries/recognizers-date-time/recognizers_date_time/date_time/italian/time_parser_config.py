@@ -57,11 +57,11 @@ class ItalianTimeParserConfiguration(TimeParserConfiguration):
         trimmed_prefix = prefix.strip().lower()
 
         # @todo Move hardcoded strings to resource YAML file.
-        if trimmed_prefix.endswith('demie'):
+        if trimmed_prefix.endswith('mezza') or trimmed_prefix.endswith('mezzo'):
             delta_min = 30
-        elif trimmed_prefix.endswith('un quart') or trimmed_prefix.endswith('quart'):
+        elif trimmed_prefix.endswith('un quarto') or trimmed_prefix.endswith('quarto'):
             delta_min = 15
-        elif trimmed_prefix.endswith('trois quarts'):
+        elif trimmed_prefix.endswith('tre quarti'):
             delta_min = 45
         else:
             match = regex.search(self.less_than_one_hour, trimmed_prefix)
@@ -74,7 +74,7 @@ class ItalianTimeParserConfiguration(TimeParserConfiguration):
                         match, 'deltaminnum').lower()
                     delta_min = self.numbers.get(min_str)
 
-        if trimmed_prefix.endswith('à') or 'moins' in trimmed_prefix:
+        if trimmed_prefix.startswith('meno'):
             delta_min = delta_min * -1
 
         adjust.minute += delta_min
@@ -92,7 +92,7 @@ class ItalianTimeParserConfiguration(TimeParserConfiguration):
         match = regex.match(self.time_suffix, suffix)
 
         if match and match.group() == suffix:
-            oclock_str = RegExpUtility.get_group(match, 'heures')
+            oclock_str = RegExpUtility.get_group(match, 'oclock')
             if not oclock_str:
                 am_str = RegExpUtility.get_group(match, 'am')
                 if am_str:
