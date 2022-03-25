@@ -36,8 +36,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IExtractor IntegerExtractor { get; }
 
-        Dictionary<char, char> NormalizeCharMap { get; }
-
         Dictionary<Regex, Regex> AmbiguityFiltersDict { get; }
 
     }

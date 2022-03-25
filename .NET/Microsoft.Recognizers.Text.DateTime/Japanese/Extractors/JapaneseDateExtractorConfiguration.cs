@@ -119,8 +119,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 new[] { dateRegex7, dateRegex6, dateRegex8/*, dateRegex11*/ } :
                 new[] { dateRegex6, dateRegex7, dateRegex8/*, dateRegex11*/ });
 
-            NormalizeCharMap = DateTimeDefinitions.NormalizeCharMap;
-
         }
 
         public IEnumerable<Regex> DateRegexList { get; }
@@ -134,8 +132,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         Regex ICJKDateExtractorConfiguration.BeforeRegex => BeforeRegex;
 
         Regex ICJKDateExtractorConfiguration.AfterRegex => AfterRegex;
-
-        public Dictionary<char, char> NormalizeCharMap { get; }
 
         Regex ICJKDateExtractorConfiguration.WeekDayStartEnd => WeekDayStartEnd;
     }

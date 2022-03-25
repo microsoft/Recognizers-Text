@@ -846,7 +846,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "３日間",
+        "Text": "3日間",
         "Type": "duration",
         "Value": {
           "Timex": "P3D",
@@ -870,7 +870,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "３年間半",
+        "Text": "3年間半",
         "Type": "duration",
         "Value": {
           "Timex": "P3.5Y",
@@ -894,7 +894,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "２年間",
+        "Text": "2年間",
         "Type": "duration",
         "Value": {
           "Timex": "P2Y",
@@ -918,7 +918,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "５分間",
+        "Text": "5分間",
         "Type": "duration",
         "Value": {
           "Timex": "PT5M",

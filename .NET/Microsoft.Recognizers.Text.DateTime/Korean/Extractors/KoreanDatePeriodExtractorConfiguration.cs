@@ -107,7 +107,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
         public static readonly Regex MonthSuffixRegex = new Regex(DateTimeDefinitions.MonthSuffixRegex, RegexFlags);
         public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.UnitRegex, RegexFlags);
         public static readonly Regex SeasonRegex = new Regex(DateTimeDefinitions.SeasonRegex, RegexFlags);
-        public static readonly Dictionary<char, char> NormalizeCharMap = null;
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
@@ -162,8 +161,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
         IEnumerable<Regex> ICJKDatePeriodExtractorConfiguration.SimpleCasesRegexes => SimpleCasesRegexes;
 
         Regex ICJKDatePeriodExtractorConfiguration.TillRegex => TillRegex;
-
-        Dictionary<char, char> ICJKDatePeriodExtractorConfiguration.NormalizeCharMap => NormalizeCharMap;
 
         Regex ICJKDatePeriodExtractorConfiguration.FutureRegex => FutureRegex;
 

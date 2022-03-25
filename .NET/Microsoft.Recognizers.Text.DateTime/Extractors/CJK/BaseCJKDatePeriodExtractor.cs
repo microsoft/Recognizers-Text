@@ -35,12 +35,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public List<ExtractResult> Extract(string text, DateObject referenceTime)
         {
-            // Normalize input
-            if (this.config.NormalizeCharMap != null)
-            {
-                text = StringExtension.Normalized(text, this.config.NormalizeCharMap);
-            }
-
             var tokens = new List<Token>();
             tokens.AddRange(MatchSimpleCases(text));
             var simpleCasesResults = Token.MergeAllTokens(tokens, text, ExtractorName);
