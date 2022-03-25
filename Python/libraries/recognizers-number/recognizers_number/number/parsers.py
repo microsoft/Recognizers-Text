@@ -710,7 +710,7 @@ class BaseNumberParser(Parser):
         source = fr'(?=\b)({single_int_frac})(?=\b)'
 
         if Culture.Italian == culture_code:
-            source = fr'({single_int_frac})'
+            source = fr'((?=\b)({single_int_frac})(?=\b))|({single_int_frac})'
 
         pattern = RegExpUtility.get_safe_reg_exp(source, flags=regex.I | regex.S)
         return pattern
