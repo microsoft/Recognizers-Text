@@ -201,7 +201,7 @@ class NumberWithUnitRecognizer(Recognizer[NumberWithUnitOptions]):
         ))
         self.register_model('TemperatureModel', Culture.SpanishMexican, lambda options: TemperatureModel(
             [ExtractorParserModel(NumberWithUnitExtractor(SpanishTemperatureExtractorConfiguration(
-            )), NumberWithUnitParser(
+                culture_info=CultureInfo(Culture.SpanishMexican))), NumberWithUnitParser(
                 SpanishTemperatureParserConfiguration(culture_info=CultureInfo(Culture.SpanishMexican))))]
         ))
         self.register_model('DimensionModel', Culture.SpanishMexican, lambda options: DimensionModel(
