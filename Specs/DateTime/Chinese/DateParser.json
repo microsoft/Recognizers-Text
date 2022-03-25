@@ -375,9 +375,10 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
-        "Text": "10月12号，星期一",
+        "Text": "10月12号,星期一",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-10-12",
@@ -398,9 +399,10 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
-        "Text": "2009年10月12号，星期一",
+        "Text": "2009年10月12号,星期一",
         "Type": "date",
         "Value": {
           "Timex": "2009-10-12",
