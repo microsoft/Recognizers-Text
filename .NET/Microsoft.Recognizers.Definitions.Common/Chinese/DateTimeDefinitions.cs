@@ -122,7 +122,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public const string PrepositionRegex = @"(?<prep>^的|在$)";
       public const string NowRegex = @"(?<now>现在|马上|立刻|刚刚才|刚刚|刚才|这会儿|当下|此刻)";
       public const string NightRegex = @"(?<night>早|晚)";
-      public const string TimeOfTodayRegex = @"(今晚|今早|今晨|明晚|明早|明晨|昨晚)(的|在)?";
+      public const string TimeOfSpecialDayRegex = @"(今晚|今早|今晨|明晚|明早|明晨|昨晚)(的|在)?";
       public const string DateTimePeriodTillRegex = @"(?<till>到|直到|--|-|—|——)";
       public const string DateTimePeriodPrepositionRegex = @"(?<prep>^\s*的|在\s*$)";
       public static readonly string HourRegex = $@"\b{BaseDateTime.HourRegex}";
@@ -140,6 +140,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public const string DurationAllRegex = @"^[.]";
       public const string DurationHalfRegex = @"^[.]";
       public const string DurationRelativeDurationUnitRegex = @"^[.]";
+      public const string AgoLaterRegex = @"^[.]";
       public const string DurationDuringRegex = @"^[.]";
       public const string DurationSomeRegex = @"^[.]";
       public const string DurationMoreOrLessRegex = @"^[.]";
@@ -173,6 +174,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
         };
       public static readonly string DurationUnitRegex = $@"(?<unit>{DateUnitRegex}|分钟?|秒钟?|个?小时|时|个?钟头|天|个?星期|周|週|个?月|年)";
       public const string DurationConnectorRegex = @"^\s*(?<connector>[多又余零]?)\s*$";
+      public const string ConnectorRegex = @"^\s*,\s*$";
       public static readonly string LunarHolidayRegex = $@"(({YearRegex}|{DatePeriodYearInCJKRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>除夕|春节|中秋节|中秋|元宵节|端午节|端午|重阳节)";
       public static readonly string HolidayRegexList1 = $@"(({YearRegex}|{DatePeriodYearInCJKRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>新年|五一|劳动节|元旦节|元旦|愚人节|平安夜|圣诞节|植树节|国庆节|情人节|教师节|儿童节|妇女节|青年节|建军节|女生节|光棍节|双十一|清明节|清明)";
       public static readonly string HolidayRegexList2 = $@"(({YearRegex}|{DatePeriodYearInCJKRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>母亲节|父亲节|感恩节|万圣节)";

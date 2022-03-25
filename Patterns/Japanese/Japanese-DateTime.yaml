@@ -74,7 +74,7 @@ WeekDayOfMonthRegex: !nestedRegex
   def: ((({SpecialMonthRegex}|{MonthRegex}|{MonthNumRegex}|((这个|这一个|这|这一|本|今|上个|上一个|上|上一|去|下个|下一个|下|下一|明)月))(的|の)?\s*)?(第|最)?(?<cardinal>([初一二三四五])|最後|最終|([1-5])|最后一)(个|の|\s)*{WeekDayRegex})
   references: [SpecialMonthRegex, MonthRegex, MonthNumRegex, WeekDayRegex]
 WeekDayAndDayRegex: !nestedRegex
-  def: ({DayRegexForPeriod}(の|的)?(\s|,|，|、)*{WeekDayRegex})
+  def: ({DayRegexForPeriod}(の|的)?(\s|,|，)*{WeekDayRegex})
   references: [DayRegexForPeriod, WeekDayRegex]
 ThisPrefixRegex: !simpleRegex
   def: 这个|这一个|这|这一|本|今|こ
@@ -93,25 +93,25 @@ DateUnitRegex: !simpleRegex
 BeforeRegex: !simpleRegex
   def: 以前|之前|前|先
 AfterRegex: !simpleRegex
-  def: 以内|以后|以後|之后|之後|后|後|で(?!す)|あと
+  def: 過ぎ|以内|以后|以後|之后|之後|后|後|で(?!す)|あと
 DateRegexList1: !nestedRegex
   # ２０１６年１２月１日
-  def: ({LunarRegex}(的|の|\s)*)?(({SimpleYearRegex}|{DateYearInCJKRegex})[/\\\-の的]?(\s*{MonthRegex})[/\\\-の的]?(\s*{DayRegexForPeriod})((\s|,|，|、)*{WeekDayRegex})?)
+  def: ({LunarRegex}(的|の|\s)*)?(({SimpleYearRegex}|{DateYearInCJKRegex})[/\\\-の的]?(\s*{MonthRegex})[/\\\-の的]?(\s*{DayRegexForPeriod})((\s|,|，)*{WeekDayRegex})?)
   references: [ MonthRegex, DayRegexForPeriod, SimpleYearRegex, WeekDayRegex, LunarRegex, DateYearInCJKRegex ]
 DateRegexList2: !nestedRegex
   # ２０１６年１２月
   def: (({SimpleYearRegex}|{DateYearInCJKRegex}){MonthRegexForPeriod}\s*)
   references: [ MonthRegexForPeriod, SimpleYearRegex, DateYearInCJKRegex ]
 DateRegexList3: !nestedRegex
-  def: ((({SimpleYearRegex}|{DateYearInCJKRegex})年)(的|の|\s)*)?({LunarRegex}(的|の|\s)*)?{MonthRegex}(\s*)({DateDayRegexInCJK}|{DayRegex})((\s|,|，|、)*{WeekDayRegex})?({BeforeRegex}|{AfterRegex})?
+  def: ((({SimpleYearRegex}|{DateYearInCJKRegex})年)(的|の|\s)*)?({LunarRegex}(的|の|\s)*)?{MonthRegex}(\s*)({DateDayRegexInCJK}|{DayRegex})((\s|,|，)*{WeekDayRegex})?({BeforeRegex}|{AfterRegex})?
   references: [MonthRegex, DateDayRegexInCJK, SimpleYearRegex, LunarRegex, WeekDayRegex, DateYearInCJKRegex, BeforeRegex, AfterRegex, DayRegex]
 # 7/23
 DateRegexList4: !nestedRegex
-  def: '(?<!\d){MonthNumRegex}\s*[/\\\-\.]\s*{DayRegex}(?!\d*%)((\s+|\s*,\s*)({SimpleYearRegex}|{DateYearInCJKRegex}))?((\s|,|，|、)*{WeekDayRegex})?(?!\d)'
+  def: '(?<!\d){MonthNumRegex}\s*[/\\\-\.]\s*{DayRegex}(?!\d*%)((\s+|\s*,\s*)({SimpleYearRegex}|{DateYearInCJKRegex}))?((\s|,|，)*{WeekDayRegex})?(?!\d)'
   references: [MonthNumRegex, DayRegex, SimpleYearRegex, WeekDayRegex, DateYearInCJKRegex ]
 # 23/7
 DateRegexList5: !nestedRegex
-  def: '(?<!\d){DayRegex}\s*[/\\\-\.]\s*{MonthNumRegex}(?!\d*%)((\s+|\s*,\s*)({SimpleYearRegex}|{DateYearInCJKRegex}))?((\s|,|，|、)*{WeekDayRegex})?(?!\d)'
+  def: '(?<!\d){DayRegex}\s*[/\\\-\.]\s*{MonthNumRegex}(?!\d*%)((\s+|\s*,\s*)({SimpleYearRegex}|{DateYearInCJKRegex}))?((\s|,|，)*{WeekDayRegex})?(?!\d)'
   references: [DayRegex, MonthNumRegex, SimpleYearRegex, WeekDayRegex, DateYearInCJKRegex]
 # 3-23-2017
 DateRegexList6: !nestedRegex
@@ -123,11 +123,11 @@ DateRegexList7: !nestedRegex
   references: [DayRegex, MonthNumRegex, YearNumRegex]
 # 2015-12-23
 DateRegexList8: !nestedRegex
-  def: '{YearNumRegex}\s*[/\\\-\. ]\s*{MonthNumRegex}\s*[/\\\-\. ]\s*{DayRegexForPeriod}((\s|,|，|、)*{WeekDayRegex})?'
+  def: '{YearNumRegex}\s*[/\\\-\. ]\s*{MonthNumRegex}\s*[/\\\-\. ]\s*{DayRegexForPeriod}((\s|,|，)*{WeekDayRegex})?'
   references: [YearNumRegex, MonthNumRegex, DayRegexForPeriod, WeekDayRegex]
 DateRegexList9: !nestedRegex
   # １２月/１日
-  def: ({LunarRegex}(的|の|\s)*)?((\s*{MonthRegex}[/\\\-の的]?{DayRegexForPeriod}((\s|,|，|、)*{WeekDayRegex})?)|((\s*{MonthRegex}[/\\\-の的]?){DayRegexForPeriod}(の|的)?((\s|,|，|、)*{WeekDayRegex})))
+  def: ({LunarRegex}(的|の|\s)*)?((\s*{MonthRegex}[/\\\-の的]?{DayRegexForPeriod}((\s|,|，)*{WeekDayRegex})?)|((\s*{MonthRegex}[/\\\-の的]?){DayRegexForPeriod}(の|的)?((\s|,|，)*{WeekDayRegex})))
   references: [ MonthRegex, DayRegexForPeriod, WeekDayRegex, LunarRegex ]
 DateRegexList10: !nestedRegex
   # 2016/12/23
@@ -280,13 +280,24 @@ DecadeRegex: !nestedRegex
   references: [DateRangePrepositions, CenturyRegex, CenturyRegexInCJK, RelativeCenturyRegex, DecadeRegexInCJK]
 #DateTimeExtractorCJK
 PrepositionRegex: !simpleRegex
-  def: (?<prep>^(的|の)|在$)
+  def: (?<prep>^(,?(夜の|的|の|t))|在$)
 NowRegex: !simpleRegex
-  def: (?<now>现在|马上|立刻|刚刚才|刚刚|刚才)
+  def: (?<now>出来る限り早く|できるだけ早く|现在|马上|立刻|刚刚才|刚刚|刚才|今日中|今(すぐ)?)
 NightRegex: !simpleRegex
-  def: (?<night>早|晚)
-TimeOfTodayRegex: !simpleRegex
-  def: (今晚|今早|今晨|明晚|明早|明晨|昨晚)(的|在)?
+  def: (?<night>早|晚|夜)
+TomorrowRegex: !simpleRegex
+  def: (?<tomorrow>明日の?(午前|午後|中|夜|朝)?)
+TodayRegex: !simpleRegex
+  def: (?<today>(今朝の?|今朝の午前|今晚|今早|今晨|明晚|明早|明晨|昨晚|今夜|昨夜)(的|在)?)
+TimeOfSpecialDayRegex: !nestedRegex
+  def: ((?<SpecificEndOf>明日の終わり|({WeekDayRegex}の?終わり))|{WeekDayRegex}|(?<UnspecificEndOf>日の終わり|一日の終わり|その日の終わり)|{TomorrowRegex}|あと|{TodayRegex})(\d日)?(と)?((?<hour>(([零〇一二两三四五六七八九]|二十[一二三四]?|十[一二三四五六七八九]?)(つ)?)|([0-1]?\d|2[0-4]))(時間?|(:00)))?((?<min>([二三四五]?十[一二三四五六七八九]?|六十|[零〇一二三四五六七八九])|([0-5]?\d))分間?)?((?<sec>([二三四五]?十[一二三四五六七八九]?|六十|[零〇一二三四五六七八九])|([0-5]?\d))秒間?)?((?<after>過ぎに?)|(?<around>ごろ)|(?<in>で|の?うちに)|(?<less>弱|たらず)|(?<more>以上))?
+  references: [ TomorrowRegex, TodayRegex, WeekDayRegex ]
+NowTimeRegex: !simpleRegex
+  def: (现在|今)
+RecentlyTimeRegex: !simpleRegex
+  def: (刚刚才?|刚才)
+AsapTimeRegex: !simpleRegex
+  def: (出来る限り早く|立刻|马上)
 #DateTimePeriodExtractorCJK
 DateTimePeriodTillRegex: !simpleRegex
   def: (?<till>到|直到|--|-|—|——)
@@ -342,6 +353,8 @@ DurationHalfRegex: !simpleRegex
   def: ^[.]
 DurationRelativeDurationUnitRegex: !simpleRegex
   def: (?<few>数ヶ|数)|(?<ago>前|昨日)|(?<later>後|明日)|(?<another>もう)
+AgoLaterRegex: !simpleRegex
+  def: (?<ago>(?<!午|(時\d\d?分))前)|(?<later>(?<!午)後)
 DurationDuringRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in Korean
   def: ^[.]
@@ -383,7 +396,9 @@ DurationUnitRegex: !nestedRegex
   def: (?<unit>{DateUnitRegex}|分|秒|時間|まる(ひと)?|もう|数|以上|たらず)
   references: [DateUnitRegex]
 DurationConnectorRegex: !simpleRegex
-  def: ^\s*(?<connector>[と]?|,|、)\s*$
+  def: ^\s*(?<connector>[と]?|,)\s*$
+ConnectorRegex: !simpleRegex
+  def: ^\s*[,-]\s*$
 LunarHolidayRegex: !nestedRegex
   def: (({YearRegex}|{DatePeriodYearInCJKRegex}|(?<yearrel>明年|今年|去年|来年))(的)?)?(?<holiday>除夕|春节|旧暦の正月初一|中秋(節|节)?|元宵(节|節)|端午(节|の節句)?|重(阳节|陽節))
   references: [YearRegex, DatePeriodYearInCJKRegex]
@@ -447,13 +462,13 @@ TimeCJKTimeRegex: !nestedRegex
   references: [TimeHourRegex, TimeQuarterRegex, TimeHalfRegex, TimeMinuteRegex, TimeSecondRegex]
 # e.g: 12:23
 TimeDigitTimeRegex: !nestedRegex
-  def: (?<hour>{TimeHourNumRegex}):(?<min>{TimeMinuteNumRegex})(:(?<sec>{TimeSecondNumRegex}))?
+  def: (?<hour>{TimeHourNumRegex}):(?<min>{TimeMinuteNumRegex})(:(?<sec>{TimeSecondNumRegex}))?(am|pm)?
   references: [TimeHourNumRegex, TimeMinuteNumRegex, TimeSecondNumRegex]
 TimeDayDescRegex: !nestedRegex
   def: (?<daydesc>(正午|夜中|午前半ば|(昼食時)|真昼)|((?<=({TimeDigitTimeRegex}|{TimeCJKTimeRegex})(の)?)(早朝(に)?|午後(に)?|(深)?夜(に)?|未明|午前(中)?|日中|白昼|(未|早)?朝(に)?|昼前に|昼すぎに|夕方前に|夕方に|営業時間内に|昼))|((早朝(に)?|午後(に)?|(深)?夜(に)?|未明|午前(中)?|日中|白昼|(未|早)?朝(に)?|昼前に|昼すぎに|夕方前に|夕方に|営業時間内に|昼)(?=(の)?({TimeDigitTimeRegex}|{TimeCJKTimeRegex}))))
   references: [TimeDigitTimeRegex, TimeCJKTimeRegex]
 TimeApproximateDescPreffixRegex: !simpleRegex
-  def: (ぐらい|おそらく|多分|ほとんど|まもなく|昨日の|昨日|明日の|明日|来週の|来週|昼食時|昼食|真)
+  def: (ぐらい|おそらく|多分|ほとんど|まもなく|昨日の|昨日|来週の|来週|昼食時|昼食|真)
 TimeApproximateDescSuffixRegex: !simpleRegex
   def: (ごろに|ごろ|過ぎに|過ぎ|丁度に|丁度|きっかりに|きっかり|を過ぎた頃に|を過ぎた頃|ちょっと前に|ちょっと前|近くに|近く|昼食時|昼食|ぐらい|時かっきり|頃|かっきり)
 TimeRegexes1: !nestedRegex
@@ -898,9 +913,9 @@ ParserConfigurationMonthOfYear: !dictionary
     08月: 8
     09月: 9
 DateTimeSimpleAmRegex: !simpleRegex
-  def: (?<am>早|晨)
+  def: (?<am>早|晨|am)
 DateTimeSimplePmRegex: !simpleRegex
-  def: (?<pm>晚)
+  def: (?<pm>晚|pm)
 DateTimePeriodMORegex: !simpleRegex
   def: (凌晨|清晨|早上|早|上午)
 DateTimePeriodMIRegex: !simpleRegex

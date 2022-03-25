@@ -217,6 +217,10 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string RelEarlyGroupName = "RelEarly";
         public const string RelLateGroupName = "RelLate";
         public const string EarlyPrefixGroupName = "EarlyPrefix";
+        public const string LessGroupName = "less";
+        public const string MoreGroupName = "more";
+        public const string LaterGroupName = "later";
+        public const string SpecificEndOfGroupName = "SpecificEndOf";s
         public const string LatePrefixGroupName = "LatePrefix";
         public const string MidPrefixGroupName = "MidPrefix";
         public const string RestOfGroupName = "restof";

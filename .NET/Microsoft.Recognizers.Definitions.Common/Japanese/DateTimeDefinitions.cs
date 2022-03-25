@@ -54,7 +54,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
       public const string SpecialDayRegex = @"((いっ)?さくじつ|おとつい|最近|前天|后天|明日から二日((?<today>今日)から(?<half>1日半)(の間)?)|((?<today>今日)から(?<half>2日半)(の間)?)|昨日の2日前|昨日から4日|今日から二日|今日から4日|昨日から2日間|昨天|明天|今天|今日|明日|一?昨?昨日|一昨日|大后天|大前天|後天|大後天|きょう|あす|あした|きのう|明々後日|(弥)?明後日|この日|前日|二日前|おととい|し?あさって|私の一日|この間|次の日|その日|最後の日)";
       public const string SpecialDayWithNumRegex = @"((いっ)?さくじつ|おとつい|最近|前天|后天|昨天|明天|今天|今日?|明日|一?昨?昨日|一昨日|大后天|大前天|後天|大後天|きょう|あす|あした|きのう|明々後日|(弥)?明後日|この日|前日|二日前|おととい|し?あさって|私の一日|この間|次の日|その日)(から|の)?([\d十一二三四五六七八九]*|数)(日|月|週|個)間?(先|後|前|以内)?(の(?<weekday>日曜日?|月曜日?|火曜日?|水曜日?|木曜日?|金曜日?|土曜日?))?";
       public static readonly string WeekDayOfMonthRegex = $@"((({SpecialMonthRegex}|{MonthRegex}|{MonthNumRegex}|((这个|这一个|这|这一|本|今|上个|上一个|上|上一|去|下个|下一个|下|下一|明)月))(的|の)?\s*)?(第|最)?(?<cardinal>([初一二三四五])|最後|最終|([1-5])|最后一)(个|の|\s)*{WeekDayRegex})";
-      public static readonly string WeekDayAndDayRegex = $@"({DayRegexForPeriod}(の|的)?(\s|,|，|、)*{WeekDayRegex})";
+      public static readonly string WeekDayAndDayRegex = $@"({DayRegexForPeriod}(の|的)?(\s|,|，)*{WeekDayRegex})";
       public const string ThisPrefixRegex = @"这个|这一个|这|这一|本|今|こ";
       public const string LastPrefixRegex = @"上个|上一个|上|上一|去|過去|最後|前|先|昨|最終";
       public const string NextPrefixRegex = @"下个|下一个|下|下一|明|次|再?来|向こう|これから(の)?|翌|向こう";
@@ -62,16 +62,16 @@ namespace Microsoft.Recognizers.Definitions.Japanese
       public static readonly string SpecialDate = $@"(?<thisyear>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex})年)?(の|的)?(?<thismonth>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex})(の|的)?月)?(の|的)?{DateDayRegexInCJK}";
       public const string DateUnitRegex = @"(?<unit>年|个月|月|周|時間?|(?<business>営業)日|(?<!(明|昨|今))日|天|週間?|星期|个星期|か月)";
       public const string BeforeRegex = @"以前|之前|前|先";
-      public const string AfterRegex = @"以内|以后|以後|之后|之後|后|後|で(?!す)|あと";
-      public static readonly string DateRegexList1 = $@"({LunarRegex}(的|の|\s)*)?(({SimpleYearRegex}|{DateYearInCJKRegex})[/\\\-の的]?(\s*{MonthRegex})[/\\\-の的]?(\s*{DayRegexForPeriod})((\s|,|，|、)*{WeekDayRegex})?)";
+      public const string AfterRegex = @"過ぎ|以内|以后|以後|之后|之後|后|後|で(?!す)|あと";
+      public static readonly string DateRegexList1 = $@"({LunarRegex}(的|の|\s)*)?(({SimpleYearRegex}|{DateYearInCJKRegex})[/\\\-の的]?(\s*{MonthRegex})[/\\\-の的]?(\s*{DayRegexForPeriod})((\s|,|，)*{WeekDayRegex})?)";
       public static readonly string DateRegexList2 = $@"(({SimpleYearRegex}|{DateYearInCJKRegex}){MonthRegexForPeriod}\s*)";
-      public static readonly string DateRegexList3 = $@"((({SimpleYearRegex}|{DateYearInCJKRegex})年)(的|の|\s)*)?({LunarRegex}(的|の|\s)*)?{MonthRegex}(\s*)({DateDayRegexInCJK}|{DayRegex})((\s|,|，|、)*{WeekDayRegex})?({BeforeRegex}|{AfterRegex})?";
-      public static readonly string DateRegexList4 = $@"(?<!\d){MonthNumRegex}\s*[/\\\-\.]\s*{DayRegex}(?!\d*%)((\s+|\s*,\s*)({SimpleYearRegex}|{DateYearInCJKRegex}))?((\s|,|，|、)*{WeekDayRegex})?(?!\d)";
-      public static readonly string DateRegexList5 = $@"(?<!\d){DayRegex}\s*[/\\\-\.]\s*{MonthNumRegex}(?!\d*%)((\s+|\s*,\s*)({SimpleYearRegex}|{DateYearInCJKRegex}))?((\s|,|，|、)*{WeekDayRegex})?(?!\d)";
+      public static readonly string DateRegexList3 = $@"((({SimpleYearRegex}|{DateYearInCJKRegex})年)(的|の|\s)*)?({LunarRegex}(的|の|\s)*)?{MonthRegex}(\s*)({DateDayRegexInCJK}|{DayRegex})((\s|,|，)*{WeekDayRegex})?({BeforeRegex}|{AfterRegex})?";
+      public static readonly string DateRegexList4 = $@"(?<!\d){MonthNumRegex}\s*[/\\\-\.]\s*{DayRegex}(?!\d*%)((\s+|\s*,\s*)({SimpleYearRegex}|{DateYearInCJKRegex}))?((\s|,|，)*{WeekDayRegex})?(?!\d)";
+      public static readonly string DateRegexList5 = $@"(?<!\d){DayRegex}\s*[/\\\-\.]\s*{MonthNumRegex}(?!\d*%)((\s+|\s*,\s*)({SimpleYearRegex}|{DateYearInCJKRegex}))?((\s|,|，)*{WeekDayRegex})?(?!\d)";
       public static readonly string DateRegexList6 = $@"{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}\s*[/\\\-]\s*({SimpleYearRegex}|{DateYearInCJKRegex})";
       public static readonly string DateRegexList7 = $@"{DayRegex}\s*[/\\\-\.]\s*{MonthNumRegex}\s*[/\\\-\.]\s*{YearNumRegex}";
-      public static readonly string DateRegexList8 = $@"{YearNumRegex}\s*[/\\\-\. ]\s*{MonthNumRegex}\s*[/\\\-\. ]\s*{DayRegexForPeriod}((\s|,|，|、)*{WeekDayRegex})?";
-      public static readonly string DateRegexList9 = $@"({LunarRegex}(的|の|\s)*)?((\s*{MonthRegex}[/\\\-の的]?{DayRegexForPeriod}((\s|,|，|、)*{WeekDayRegex})?)|((\s*{MonthRegex}[/\\\-の的]?){DayRegexForPeriod}(の|的)?((\s|,|，|、)*{WeekDayRegex})))";
+      public static readonly string DateRegexList8 = $@"{YearNumRegex}\s*[/\\\-\. ]\s*{MonthNumRegex}\s*[/\\\-\. ]\s*{DayRegexForPeriod}((\s|,|，)*{WeekDayRegex})?";
+      public static readonly string DateRegexList9 = $@"({LunarRegex}(的|の|\s)*)?((\s*{MonthRegex}[/\\\-の的]?{DayRegexForPeriod}((\s|,|，)*{WeekDayRegex})?)|((\s*{MonthRegex}[/\\\-の的]?){DayRegexForPeriod}(の|的)?((\s|,|，)*{WeekDayRegex})))";
       public static readonly string DateRegexList10 = $@"(({SimpleYearRegex}|{DateYearInCJKRegex})[/\\\-]{MonthNumRegex}[/\\\-]{DayRegexForPeriod})";
       public static readonly string DateRegexList11 = $@"(({SimpleYearRegex}|{DateYearInCJKRegex})[/\\\-]{MonthNumRegexForPeriod})";
       public const string DatePeriodTillRegex = @"(?<till>到|至|から|--|-|—|——|~|–)";
@@ -126,10 +126,15 @@ namespace Microsoft.Recognizers.Definitions.Japanese
       public static readonly string RelativeCenturyRegex = $@"(?<relcentury>({DatePeriodLastRegex}|{DatePeriodThisRegex}|{DatePeriodNextRegex}))世紀";
       public const string DecadeRegexInCJK = @"(?<decade>十|一十|二十|三十|四十|五十|六十|七十|八十|九十)";
       public static readonly string DecadeRegex = $@"({DateRangePrepositions})(?<centurysuf>({CenturyRegex}|{CenturyRegexInCJK}|{RelativeCenturyRegex}))?の?(?<firsttwoyearnum>\d{{2}}(?=\d))?(?<decade>((\d{{1}}0)|{DecadeRegexInCJK}))年代(のごろ)?";
-      public const string PrepositionRegex = @"(?<prep>^(的|の)|在$)";
-      public const string NowRegex = @"(?<now>现在|马上|立刻|刚刚才|刚刚|刚才)";
-      public const string NightRegex = @"(?<night>早|晚)";
-      public const string TimeOfTodayRegex = @"(今晚|今早|今晨|明晚|明早|明晨|昨晚)(的|在)?";
+      public const string PrepositionRegex = @"(?<prep>^(,?(夜の|的|の|t))|在$)";
+      public const string NowRegex = @"(?<now>出来る限り早く|できるだけ早く|现在|马上|立刻|刚刚才|刚刚|刚才|今日中|今(すぐ)?)";
+      public const string NightRegex = @"(?<night>早|晚|夜)";
+      public const string TomorrowRegex = @"(?<tomorrow>明日の?(午前|午後|中|夜|朝)?)";
+      public const string TodayRegex = @"(?<today>(今朝の?|今朝の午前|今晚|今早|今晨|明晚|明早|明晨|昨晚|今夜|昨夜)(的|在)?)";
+      public static readonly string TimeOfSpecialDayRegex = $@"((?<SpecificEndOf>明日の終わり|({WeekDayRegex}の?終わり))|{WeekDayRegex}|(?<UnspecificEndOf>日の終わり|一日の終わり|その日の終わり)|{TomorrowRegex}|あと|{TodayRegex})(\d日)?(と)?((?<hour>(([零〇一二两三四五六七八九]|二十[一二三四]?|十[一二三四五六七八九]?)(つ)?)|([0-1]?\d|2[0-4]))(時間?|(:00)))?((?<min>([二三四五]?十[一二三四五六七八九]?|六十|[零〇一二三四五六七八九])|([0-5]?\d))分間?)?((?<sec>([二三四五]?十[一二三四五六七八九]?|六十|[零〇一二三四五六七八九])|([0-5]?\d))秒間?)?((?<after>過ぎに?)|(?<around>ごろ)|(?<in>で|の?うちに)|(?<less>弱|たらず)|(?<more>以上))?";
+      public const string NowTimeRegex = @"(现在|今)";
+      public const string RecentlyTimeRegex = @"(刚刚才?|刚才)";
+      public const string AsapTimeRegex = @"(出来る限り早く|立刻|马上)";
       public const string DateTimePeriodTillRegex = @"(?<till>到|直到|--|-|—|——)";
       public const string DateTimePeriodPrepositionRegex = @"(?<prep>^\s*(的|の)|在\s*$)";
       public static readonly string HourRegex = $@"\b{BaseDateTime.HourRegex}";
@@ -154,6 +159,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
       public const string DurationAllRegex = @"(まる(ひと)?)";
       public const string DurationHalfRegex = @"^[.]";
       public const string DurationRelativeDurationUnitRegex = @"(?<few>数ヶ|数)|(?<ago>前|昨日)|(?<later>後|明日)|(?<another>もう)";
+      public const string AgoLaterRegex = @"(?<ago>(?<!午|(時\d\d?分))前)|(?<later>(?<!午)後)";
       public const string DurationDuringRegex = @"^[.]";
       public const string DurationSomeRegex = @"(?<few>数(?<unit>((か|ヶ)?(時|月|日|週|年|周|週|週|秒|分|営業日|年)間?))(たらず|以上)?)";
       public const string DurationMoreOrLessRegex = @"(?<less>たらず)|(?<more>以上)";
@@ -186,7 +192,8 @@ namespace Microsoft.Recognizers.Definitions.Japanese
             @"年"
         };
       public static readonly string DurationUnitRegex = $@"(?<unit>{DateUnitRegex}|分|秒|時間|まる(ひと)?|もう|数|以上|たらず)";
-      public const string DurationConnectorRegex = @"^\s*(?<connector>[と]?|,|、)\s*$";
+      public const string DurationConnectorRegex = @"^\s*(?<connector>[と]?|,)\s*$";
+      public const string ConnectorRegex = @"^\s*[,-]\s*$";
       public static readonly string LunarHolidayRegex = $@"(({YearRegex}|{DatePeriodYearInCJKRegex}|(?<yearrel>明年|今年|去年|来年))(的)?)?(?<holiday>除夕|春节|旧暦の正月初一|中秋(節|节)?|元宵(节|節)|端午(节|の節句)?|重(阳节|陽節))";
       public static readonly string HolidayRegexList1 = $@"(({YearRegex}|{DatePeriodYearInCJKRegex}|(?<yearrel>明年|今年|去年|来年))(的|の)?)?(?<holiday>新年|五一|劳动节|国際的な労働者の日|メーデー|元旦节|元旦|大晦日|愚人节|エイプリルフール|圣诞节|クリスマス(の日|イブ)?|感謝祭(の日)?|クリーンマンデイ|父の日|植树节|国庆节|国慶節|情人节|バレンタインデー|教(师节|師の日)|儿童节|妇女节|青年(节|の日)|建军节|建軍節|女生节|光棍节|双十一|清明(节|節)?|キング牧師記念日|旧正月|ガールズデー|(こども|子ども|子供)の日|お正月|植樹祭|シングルデー|シングルズデー|国際婦人デー|ダブル十一|復活祭|イースター)";
       public static readonly string HolidayRegexList2 = $@"(({YearRegex}|{DatePeriodYearInCJKRegex}|(?<yearrel>明年|今年|去年|来年))(的)?)?(?<holiday>母(亲节|の日)|父亲节|感恩节|万圣节|ハロウィン)";
@@ -211,9 +218,9 @@ namespace Microsoft.Recognizers.Definitions.Japanese
       public const string TimeHalfRegex = @"(?<half>过半|半)";
       public const string TimeQuarterRegex = @"(?<quarter>[一两二三四1-4])\s*(刻钟|刻)";
       public static readonly string TimeCJKTimeRegex = $@"{TimeHourRegex}({TimeQuarterRegex}|{TimeHalfRegex}|((((过|又)?{TimeMinuteRegex})({TimeSecondRegex})?)|({TimeSecondRegex})))?";
-      public static readonly string TimeDigitTimeRegex = $@"(?<hour>{TimeHourNumRegex}):(?<min>{TimeMinuteNumRegex})(:(?<sec>{TimeSecondNumRegex}))?";
+      public static readonly string TimeDigitTimeRegex = $@"(?<hour>{TimeHourNumRegex}):(?<min>{TimeMinuteNumRegex})(:(?<sec>{TimeSecondNumRegex}))?(am|pm)?";
       public static readonly string TimeDayDescRegex = $@"(?<daydesc>(正午|夜中|午前半ば|(昼食時)|真昼)|((?<=({TimeDigitTimeRegex}|{TimeCJKTimeRegex})(の)?)(早朝(に)?|午後(に)?|(深)?夜(に)?|未明|午前(中)?|日中|白昼|(未|早)?朝(に)?|昼前に|昼すぎに|夕方前に|夕方に|営業時間内に|昼))|((早朝(に)?|午後(に)?|(深)?夜(に)?|未明|午前(中)?|日中|白昼|(未|早)?朝(に)?|昼前に|昼すぎに|夕方前に|夕方に|営業時間内に|昼)(?=(の)?({TimeDigitTimeRegex}|{TimeCJKTimeRegex}))))";
-      public const string TimeApproximateDescPreffixRegex = @"(ぐらい|おそらく|多分|ほとんど|まもなく|昨日の|昨日|明日の|明日|来週の|来週|昼食時|昼食|真)";
+      public const string TimeApproximateDescPreffixRegex = @"(ぐらい|おそらく|多分|ほとんど|まもなく|昨日の|昨日|来週の|来週|昼食時|昼食|真)";
       public const string TimeApproximateDescSuffixRegex = @"(ごろに|ごろ|過ぎに|過ぎ|丁度に|丁度|きっかりに|きっかり|を過ぎた頃に|を過ぎた頃|ちょっと前に|ちょっと前|近くに|近く|昼食時|昼食|ぐらい|時かっきり|頃|かっきり)";
       public static readonly string TimeRegexes1 = $@"{TimeApproximateDescPreffixRegex}?({TimeDayDescRegex}(の)?)?({TimeDigitTimeRegex}|{TimeCJKTimeRegex})((の)?{TimeDayDescRegex})?{TimeApproximateDescSuffixRegex}?";
       public static readonly string TimeRegexes2 = $@"({TimeApproximateDescPreffixRegex}(の)?)?{TimeDayDescRegex}((の)?{TimeApproximateDescSuffixRegex})?";
@@ -620,8 +627,8 @@ namespace Microsoft.Recognizers.Definitions.Japanese
             { @"08月", 8 },
             { @"09月", 9 }
         };
-      public const string DateTimeSimpleAmRegex = @"(?<am>早|晨)";
-      public const string DateTimeSimplePmRegex = @"(?<pm>晚)";
+      public const string DateTimeSimpleAmRegex = @"(?<am>早|晨|am)";
+      public const string DateTimeSimplePmRegex = @"(?<pm>晚|pm)";
       public const string DateTimePeriodMORegex = @"(凌晨|清晨|早上|早|上午)";
       public const string DateTimePeriodMIRegex = @"^[.]";
       public const string DateTimePeriodAFRegex = @"(中午|下午|午后|傍晚)";

@@ -270,7 +270,7 @@ NowRegex: !simpleRegex
   def: (?<now>现在|马上|立刻|刚刚才|刚刚|刚才|这会儿|当下|此刻)
 NightRegex: !simpleRegex
   def: (?<night>早|晚)
-TimeOfTodayRegex: !simpleRegex
+TimeOfSpecialDayRegex: !simpleRegex
   def: (今晚|今早|今晨|明晚|明早|明晨|昨晚)(的|在)?
 #DateTimePeriodExtractorCJK
 DateTimePeriodTillRegex: !simpleRegex
@@ -314,6 +314,9 @@ DurationHalfRegex: !simpleRegex
   def: ^[.]
 DurationRelativeDurationUnitRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in Korean
+  def: ^[.]
+AgoLaterRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Japanese
   def: ^[.]
 DurationDuringRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in Korean
@@ -359,6 +362,8 @@ DurationUnitRegex: !nestedRegex
   references: [DateUnitRegex]
 DurationConnectorRegex: !simpleRegex
   def: ^\s*(?<connector>[多又余零]?)\s*$
+ConnectorRegex: !simpleRegex
+  def: ^\s*,\s*$
 LunarHolidayRegex: !nestedRegex
   def: (({YearRegex}|{DatePeriodYearInCJKRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>除夕|春节|中秋节|中秋|元宵节|端午节|端午|重阳节)
   references: [YearRegex, DatePeriodYearInCJKRegex]

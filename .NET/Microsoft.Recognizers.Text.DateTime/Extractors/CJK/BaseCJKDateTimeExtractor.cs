@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
@@ -96,7 +97,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
 
                     var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim();
-                    if (string.IsNullOrEmpty(middleStr) || middleStr.Equals(",") || this.config.PrepositionRegex.IsMatch(middleStr))
+                    if (string.IsNullOrEmpty(middleStr) || this.config.ConnectorRegex.IsMatch(middleStr) || this.config.PrepositionRegex.IsMatch(middleStr))
                     {
                         var begin = ers[i].Start ?? 0;
                         var end = (ers[j].Start ?? 0) + (ers[j].Length ?? 0);
@@ -135,7 +136,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     continue;
                 }
 
-                var match = this.config.TimeOfTodayRegex.MatchEnd(beforeStr, trim: true);
+                var match = this.config.TimeOfSpecialDayRegex.MatchEnd(beforeStr, trim: true);
 
                 if (match.Success)
                 {
@@ -143,6 +144,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var end = er.Start + er.Length ?? 0;
                     ret.Add(new Token(begin, end));
                 }
+            }
+
+            // TimePeriodExtractor cases using TimeOfDayRegex are not processed here
+            var matchTimeOfToday = this.config.TimeOfSpecialDayRegex.Match(text);
+            var matchTimeOfDay = this.config.TimeOfDayRegex.Match(text);
+
+            if (matchTimeOfToday.Success && !matchTimeOfDay.Success)
+            {
+                ret.Add(new Token(matchTimeOfToday.Index, matchTimeOfToday.Index + matchTimeOfToday.Length));
             }
 
             return ret;

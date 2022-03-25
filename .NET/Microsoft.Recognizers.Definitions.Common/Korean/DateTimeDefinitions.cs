@@ -126,7 +126,7 @@ namespace Microsoft.Recognizers.Definitions.Korean
       public const string PrepositionRegex = @"(?<prep>^的|在$)";
       public const string NowRegex = @"(?<now>지금)";
       public const string NightRegex = @"(?<night>이른|늦은)";
-      public const string TimeOfTodayRegex = @"(今晚|今早|今晨|明晚|明早|明晨|昨晚)(的|在)?";
+      public const string TimeOfSpecialDayRegex = @"(今晚|今早|今晨|明晚|明早|明晨|昨晚)(的|在)?";
       public const string DateTimePeriodTillRegex = @"(?<till>到|直到|--|-|—|——)";
       public const string DateTimePeriodPrepositionRegex = @"(?<prep>^\s*的|在\s*$)";
       public static readonly string HourRegex = $@"\b{BaseDateTime.HourRegex}";
@@ -144,6 +144,7 @@ namespace Microsoft.Recognizers.Definitions.Korean
       public const string DurationAllRegex = @"(내내|종일)";
       public const string DurationHalfRegex = @"ㅂ";
       public const string DurationRelativeDurationUnitRegex = @"(지난|저번|작(?=년))";
+      public const string AgoLaterRegex = @"^[.]";
       public const string DurationDuringRegex = @"(동안)";
       public const string DurationSomeRegex = @"^\b$";
       public const string DurationMoreOrLessRegex = @"(더|이상|이하|초과|미만)";
@@ -187,6 +188,7 @@ namespace Microsoft.Recognizers.Definitions.Korean
         };
       public const string DurationUnitRegex = @"(?<unit>(년|개?월|달|주일?|(?<!종)(?<=\d|\s+)일|(?<=\s)날|한나절|(?<=며)칠|시간?|분|초|영업일\s*기준으로|하루|이틀|사흘|나흘|닷새|엿새|이레|여드레|아흐레|열흘|하루|종일|내내|몇|여러|더|이상|이하|초과|미만)\s*(이상|이하|초과|미만)?)";
       public const string DurationConnectorRegex = @"(?<connector>\s*그리고\s*|\s+|,\s*)";
+      public const string ConnectorRegex = @"^\s*,\s*$";
       public static readonly string DurationMoreOrLessThanSurfix = $@"(?<DurationUnitRegex>\s*(이상|이하|초과|미만))";
       public static readonly string LunarHolidayRegex = $@"(({YearRegex}|{DatePeriodYearInCJKRegex}|(?<yearrel>내년|금년|작년))(의)?\s)?(?<holiday>섣달그믐날?|음력설|구정|추석|한가위|정월대보름|단오|석가탄신일)";
       public static readonly string HolidayRegexList1 = $@"(({YearRegex}|{DatePeriodYearInCJKRegex}|(?<yearrel>내년|금년|작년))(의)?\s)?(?<holiday>새해|설날|양력설|신정|근로자의 날|만우절|크리스마스 이브|크리스마스|식목일|건국기념일|발렌타인데이|밸런타인데이|스승의 날|교사의 날|어린이날|국제 여성의 날|세계 여성의 날|삼일절|3.1절|3·1절|현충일|광복절|개천절|한글날|기독탄신일)";
