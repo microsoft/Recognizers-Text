@@ -675,6 +675,11 @@ namespace Microsoft.Recognizers.Definitions.English
             @"yer",
             @"yen",
             @"db",
+            @"pen",
+            @"ron",
+            @"mad",
+            @"zar",
+            @"gel",
             @"satoshi",
             @"satoshis"
         };
@@ -894,7 +899,8 @@ namespace Microsoft.Recognizers.Definitions.English
         {
             { @"\bm\b", @"((('|’)\s*m)|(m\s*('|’)))" },
             { @"^\d{5} [cf]$", @"\b([a-z]{2} \d{5} [cf])\b" },
-            { @"\b\d+\s*\p{L}+$", @"((\d+\s*\p{L}+[-—–-]?\d+)|((\p{L}[-—–-]?|\d[-—–-])\d+\s*\p{L}+))" }
+            { @"\b\d+\s*\p{L}+$", @"((\d+\s*\p{L}+[-—–-]?\d+)|((\p{L}[-—–-]?|\d[-—–-])\d+\s*\p{L}+))" },
+            { @"^(all|bob|pen|cad|cup|cop|sos|ron|mad|mop|zar|gel)", @"(all|bob|pen|cad|cup|cop|sos|ron|mad|mop|zar|gel)\s*(\d|\p{L})" }
         };
       public static readonly Dictionary<string, string> TemperatureAmbiguityFiltersDict = new Dictionary<string, string>
         {
