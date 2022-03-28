@@ -79,7 +79,7 @@
   },
   {
     "Input": "il sistema è il ventisette percento più efficiente",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "ventisette percento",
