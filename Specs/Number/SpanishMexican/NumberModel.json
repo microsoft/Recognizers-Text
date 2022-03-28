@@ -169,7 +169,7 @@
   },
   {
     "Input": "3,000,000",
-    "NotSupported": "javascript, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "3,000,000",
