@@ -7,4 +7,5 @@ from .english_date_time import EnglishDateTime
 from .french_date_time import FrenchDateTime
 from .portuguese_date_time import PortugueseDateTime
 from .spanish_date_time import SpanishDateTime
+from .italian_date_time import ItalianDateTime
 from .english_time_zone import TimeZoneDefinitions

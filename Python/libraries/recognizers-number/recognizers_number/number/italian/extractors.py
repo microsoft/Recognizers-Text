@@ -101,7 +101,7 @@ class ItalianIntegerExtractor(BaseNumberExtractor):
                 val='IntegerNum'),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(self._generate_format_regex(
-                    LongFormatMode.INTEGER_COMMA, placeholder)),
+                    LongFormatMode.INTEGER_DOT, placeholder)),
                 val='IntegerNum'),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(self._generate_format_regex(

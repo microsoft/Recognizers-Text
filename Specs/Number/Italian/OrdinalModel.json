@@ -136,7 +136,7 @@
   },
   {
     "Input": "venticinquesimo",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "venticinquesimo",
@@ -166,7 +166,7 @@
   },
   {
     "Input": "centoventicinquesimo",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "centoventicinquesimo",
@@ -211,7 +211,7 @@
   },
   {
     "Input": "trentaseiesimo",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript,python",
     "Results": [
       {
         "Text": "trentaseiesimo",
@@ -286,7 +286,7 @@
   },
   {
     "Input": "il centoventisettesimo classificato",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "centoventisettesimo",
