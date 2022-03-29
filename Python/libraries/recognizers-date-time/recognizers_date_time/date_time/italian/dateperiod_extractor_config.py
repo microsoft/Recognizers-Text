@@ -173,10 +173,6 @@ class ItalianDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         return self._relative_month_regex
 
     @property
-    def written_month_regex(self) -> Pattern:
-        return self._written_month_regex
-
-    @property
     def month_suffix_regex(self) -> Pattern:
         return self._month_suffix_regex
 
@@ -222,7 +218,6 @@ class ItalianDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         self._next_prefix_regex = RegExpUtility.get_safe_reg_exp(ItalianDateTime.NextSuffixRegex)
         self._past_prefix_regex = RegExpUtility.get_safe_reg_exp(ItalianDateTime.PastSuffixRegex)
         self._month_suffix_regex = RegExpUtility.get_safe_reg_exp(ItalianDateTime.MonthSuffixRegex)
-        # self._written_month_regex = RegExpUtility.get_safe_reg_exp(ItalianDateTime.WrittenMonthRegex)
         self._relative_month_regex = RegExpUtility.get_safe_reg_exp(ItalianDateTime.RelativeMonthRegex)
         self._week_day_regex = RegExpUtility.get_safe_reg_exp(ItalianDateTime.WeekDayRegex)
         self._day_regex = RegExpUtility.get_safe_reg_exp(ItalianDateTime.DayRegex)
