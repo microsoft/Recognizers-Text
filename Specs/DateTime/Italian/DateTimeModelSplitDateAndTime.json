@@ -175,7 +175,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "domani",
@@ -322,7 +322,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "domani",
@@ -469,7 +469,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "domani",
@@ -764,7 +764,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "domani",
@@ -800,7 +800,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "domani",

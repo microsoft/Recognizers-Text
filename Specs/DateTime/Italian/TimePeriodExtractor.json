@@ -546,7 +546,7 @@
   },
   {
     "Input": "Ciao Cortana- per favore programma un colloquio skype con Jennifer. Ho bisogno di un colloquio di 30 min questo venerdì, nel pomeriggio partirò.",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "nel pomeriggio",

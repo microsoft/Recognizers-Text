@@ -4,7 +4,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.2744475+08:00"
     },
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "settimanalmente",
@@ -52,7 +52,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.2779449+08:00"
     },
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "quotidianamente",
@@ -76,7 +76,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.2794445+08:00"
     },
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "ogni giorno",
@@ -100,7 +100,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.2829445+08:00"
     },
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "ogni mese",
@@ -124,7 +124,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.2844439+08:00"
     },
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "annualmente",
@@ -148,7 +148,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.2854444+08:00"
     },
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "una volta all'anno",
@@ -172,7 +172,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.2854444+08:00"
     },
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "ogni anno",
@@ -532,7 +532,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:54.4170727+08:00"
     },
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "tutti i giorni",

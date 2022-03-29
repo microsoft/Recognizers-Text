@@ -1093,7 +1093,7 @@
   },
   {
     "Input": "Tornerò alle 12 mezzanotte",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "12 mezzanotte",
@@ -1114,7 +1114,7 @@
   },
   {
     "Input": "Tornerò alle 12 di notte",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "12 di notte",
@@ -1135,7 +1135,7 @@
   },
   {
     "Input": "Tornerò all'1 di notte",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "1 di notte",
