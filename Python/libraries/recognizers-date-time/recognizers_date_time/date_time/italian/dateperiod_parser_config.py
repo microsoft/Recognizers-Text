@@ -271,10 +271,11 @@ class ItalianDatePeriodParserConfiguration(DatePeriodParserConfiguration):
             ItalianDateTime.UnspecificEndOfRangeRegex)
 
         self._next_prefix_regex = RegExpUtility.get_safe_reg_exp(
-            '(prochain|prochaine)\b')
-        self._past_prefix_regex = RegExpUtility.get_safe_reg_exp('(dernier)\b')
+            ItalianDateTime.NextPrefixRegex)
+        self._past_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            ItalianDateTime.PastPrefixRegex)
         self._this_prefix_regex = RegExpUtility.get_safe_reg_exp(
-            '(ce|cette)\b')
+            ItalianDateTime.ThisPrefixRegex)
         self._next_suffix_regex = RegExpUtility.get_safe_reg_exp(
             ItalianDateTime.NextSuffixRegex)
         self._past_suffix_regex = RegExpUtility.get_safe_reg_exp(
