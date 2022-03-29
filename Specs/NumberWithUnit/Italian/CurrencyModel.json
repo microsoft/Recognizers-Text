@@ -29,7 +29,7 @@
   },
   {
     "Input": "pagamento siegel e shuster di $94.000 per ritirare tutte le richieste.",
-    "NotSupportedByDesign": "java,javascript,python",
+    "NotSupportedByDesign": "java,javascript",
     "Results": [
       {
         "Text": "$94.000",
@@ -99,7 +99,7 @@
   },
   {
     "Input": "I prezzi dell'accordo partono da $ 12.345.",
-    "NotSupportedByDesign": "java,javascript,python",
+    "NotSupportedByDesign": "java,javascript",
     "Results": [
       {
         "Text": "$ 12.345",
@@ -183,7 +183,7 @@
   },
   {
     "Input": "y . j . park e la sua famiglia avevano risparmiato per quattro anni per comprare un piccolo appartamento qui, ma hanno scoperto che più si avvicinavano al risparmio di $ 40.000 di cui avevano originariamente bisogno, più il prezzo aumentava.",
-    "NotSupportedByDesign": "java,javascript,python",
+    "NotSupportedByDesign": "java,javascript",
     "Results": [
       {
         "Text": "$ 40.000",
@@ -197,7 +197,7 @@
   },
   {
     "Input": "e . robert wallach è stato condannato da un u. s. giudice a new york a sei anni di prigione e multato di $ 250.000 per la sua condanna per racket nello scandalo wedtech.",
-    "NotSupportedByDesign": "java,javascript,python",
+    "NotSupportedByDesign": "java,javascript",
     "Results": [
       {
         "Text": "$ 250.000",
@@ -393,7 +393,7 @@
   },
   {
     "Input": "la borsa valori americana ha detto che una sede è stata venduta a $ 5.000 in meno rispetto alla precedente vendita di venersì scorso.",
-    "NotSupportedByDesign": "java,javascript,python",
+    "NotSupportedByDesign": "java,javascript",
     "Results": [
       {
         "Text": "$ 5.000",
@@ -477,7 +477,7 @@
   },
   {
     "Input": " al new jersey , per esempio , è stato chiesto di accettare $ 300.000 , ma ha rifiutato .",
-    "NotSupportedByDesign": "java,javascript,python",
+    "NotSupportedByDesign": "java,javascript",
     "Results": [
       {
         "Text": "$ 300.000",
@@ -771,7 +771,7 @@
   },
   {
     "Input": " inclusi i 450.000 yen dal primo ministro toshiki kaifu .",
-    "NotSupportedByDesign": "java,javascript,python",
+    "NotSupportedByDesign": "java,javascript",
     "Results": [
       {
         "Text": "450.000 yen",
@@ -799,7 +799,7 @@
   },
   {
     "Input": "agosto spesa modificata dalle famiglie retribuite è scesa di 0 . 6 % su 309.381 yen dell'anno prima .",
-    "NotSupportedByDesign": "java,javascript,python",
+    "NotSupportedByDesign": "java,javascript",
     "Results": [
       {
         "Text": "309.381 yen",
@@ -926,7 +926,7 @@
   },
   {
     "Input": "inoltre, la banca aveva un'opzione di comprare un 30 . 84 % di partecipazione bip da societe generale dopo il 1 gennaio 1990 a 1.015 franchi per azione .",
-    "NotSupportedByDesign": "java,javascript,python",
+    "NotSupportedByDesign": "java,javascript",
     "Results": [
       {
         "Text": "1.015 franchi",
@@ -1025,7 +1025,7 @@
   },
   {
     "Input": "uefa ha attaccato ferguson per aver screditato il gioco con i suoi commenti , e al 1 maggio di quest'anno è stato multato di 10.000 franchi svizzeri .",
-    "NotSupportedByDesign": "java,javascript,python",
+    "NotSupportedByDesign": "java,javascript",
     "Results": [
       {
         "Text": "10.000 franchi svizzeri",
@@ -1151,7 +1151,7 @@
   },
   {
     "Input": "lo stadio east stand ( worcester avenue ) è stato finito nel 1934 e il suo aumento di capacità a circa 80 , 000 spettatori ma è costato £ 60.000 .",
-    "NotSupportedByDesign": "java,javascript,python",
+    "NotSupportedByDesign": "java,javascript",
     "Results": [
       {
         "Text": "£ 60.000",
@@ -1263,7 +1263,7 @@
   },
   {
     "Input": "aerosmith si è accordato con columbia a metà del 1972 per un valore di $ 125.000 e ha pubblicato il loro album di debutto , aerosmith .",
-    "NotSupportedByDesign": "java,javascript,python",
+    "NotSupportedByDesign": "java,javascript",
     "Results": [
       {
         "Text": "$ 125.000",
@@ -1305,7 +1305,7 @@
   },
   {
     "Input": "hart - scott filing viene quindi esaminata e gli interssi di ogni antitrust si incontrano . tipicamente , hart - scott adesso è usata per dare ai manager di società target le prime notizie di un'offerta e la possibilità di usare la revisione normativa come tattica dilatoria . i $ 20.000 di tasse potrebbero essere un piccolo costo in questo affare da molti migliardi di dollari, ma un serio ostacolo a migliaia di piccoli, amichevoli accordi .",
-    "NotSupportedByDesign": "java,javascript,python",
+    "NotSupportedByDesign": "java,javascript",
     "Results": [
       {
         "Text": "$ 20.000",
@@ -1327,7 +1327,7 @@
   },
   {
     "Input": "dollaro : 143,80 yen , su di 0 . 95 ; 1 . 8500 punti , su di 0 . 0085 .",
-    "NotSupportedByDesign": "java,javascript,python",
+    "NotSupportedByDesign": "java,javascript",
     "Results": [
       {
         "Text": "dollaro",
