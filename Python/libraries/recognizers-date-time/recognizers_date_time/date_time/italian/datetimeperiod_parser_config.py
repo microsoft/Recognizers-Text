@@ -249,20 +249,9 @@ class ItalianDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration
         trimmed_source = source.strip().lower()
         swift = 0
 
-        # TODO: replace with regex
-        if (
-            trimmed_source.startswith('prochain') or
-            trimmed_source.endswith('prochain') or
-            trimmed_source.startswith('prochaine') or
-            trimmed_source.endswith('prochaine')
-        ):
-            swift = 1
-        elif (
-            trimmed_source.startswith('derniere') or
-            trimmed_source.startswith('dernier') or
-            trimmed_source.endswith('derniere') or
-            trimmed_source.endswith('dernier')
-        ):
+        if self.previous_prefix_regex.search(trimmed_source):
             swift = -1
+        elif self.next_prefix_regex.search(trimmed_source):
+            swift = 1
 
         return swift

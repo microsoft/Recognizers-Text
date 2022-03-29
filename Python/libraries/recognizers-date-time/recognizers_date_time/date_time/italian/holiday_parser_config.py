@@ -28,54 +28,61 @@ class ItalianHolidayParserConfiguration(BaseHolidayParserConfiguration):
         self._holiday_regexes = [
             RegExpUtility.get_safe_reg_exp(ItalianDateTime.HolidayRegex1),
             RegExpUtility.get_safe_reg_exp(ItalianDateTime.HolidayRegex2),
-            RegExpUtility.get_safe_reg_exp(ItalianDateTime.HolidayRegex3),
-            # RegExpUtility.get_safe_reg_exp(ItalianDateTime.HolidayRegex4)
+            RegExpUtility.get_safe_reg_exp(ItalianDateTime.HolidayRegex3)
         ]
         self._holiday_names = ItalianDateTime.HolidayNames
-        # self._variable_holidays_timex_dictionary = ItalianDateTime.VariableHolidaysTimexDictionary
+
+        self.next_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            ItalianDateTime.NextPrefixRegex)
+        self.previous_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            ItalianDateTime.PreviousPrefixRegex)
+        self.this_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            ItalianDateTime.ThisPrefixRegex)
 
     def _init_holiday_funcs(self) -> Dict[str, Callable[[int], datetime]]:
         local = dict([
-            ('maosbirthday', ItalianHolidayParserConfiguration.mao_birthday),
-            ('yuandan', ItalianHolidayParserConfiguration.new_year),
-            ('teachersday', ItalianHolidayParserConfiguration.teacher_day),
-            ('singleday', ItalianHolidayParserConfiguration.singles_day),
-            ('allsaintsday', ItalianHolidayParserConfiguration.halloween_day),
-            ('youthday', ItalianHolidayParserConfiguration.youth_day),
-            ('childrenday', ItalianHolidayParserConfiguration.children_day),
-            ('femaleday', ItalianHolidayParserConfiguration.female_day),
-            ('treeplantingday', ItalianHolidayParserConfiguration.tree_plant_day),
-            ('arborday', ItalianHolidayParserConfiguration.tree_plant_day),
-            ('girlsday', ItalianHolidayParserConfiguration.girls_day),
-            ('whiteloverday', ItalianHolidayParserConfiguration.white_lover_day),
-            ('loverday', ItalianHolidayParserConfiguration.valentines_day),
-            ('christmas', ItalianHolidayParserConfiguration.christmas_day),
-            ('xmas', ItalianHolidayParserConfiguration.christmas_day),
-            ('newyear', ItalianHolidayParserConfiguration.new_year),
-            ('newyearday', ItalianHolidayParserConfiguration.new_year),
-            ('newyearsday', ItalianHolidayParserConfiguration.new_year),
-            ('inaugurationday', ItalianHolidayParserConfiguration.inauguration_day),
-            ('groundhougday', ItalianHolidayParserConfiguration.groundhog_day),
-            ('valentinesday', ItalianHolidayParserConfiguration.valentines_day),
-            ('stpatrickday', ItalianHolidayParserConfiguration.st_patrick_day),
-            ('aprilfools', ItalianHolidayParserConfiguration.fool_day),
-            ('stgeorgeday', ItalianHolidayParserConfiguration.st_george_day),
-            ('mayday', ItalianHolidayParserConfiguration.mayday),
-            ('cincodemayoday', ItalianHolidayParserConfiguration.cinco_de_mayo_day),
-            ('baptisteday', ItalianHolidayParserConfiguration.baptiste_day),
-            ('usindependenceday', ItalianHolidayParserConfiguration.usa_independence_day),
-            ('independenceday', ItalianHolidayParserConfiguration.usa_independence_day),
-            ('bastilleday', ItalianHolidayParserConfiguration.bastille_day),
-            ('halloweenday', ItalianHolidayParserConfiguration.halloween_day),
-            ('allhallowday', ItalianHolidayParserConfiguration.all_hallow_day),
-            ('allsoulsday', ItalianHolidayParserConfiguration.all_souls_day),
-            ('guyfawkesday', ItalianHolidayParserConfiguration.guyfawkes_day),
-            ('veteransday', ItalianHolidayParserConfiguration.veterans_day),
-            ('christmaseve', ItalianHolidayParserConfiguration.christmas_eve),
-            ('newyeareve', ItalianHolidayParserConfiguration.new_year_eve),
-            ('fathersday', ItalianHolidayParserConfiguration.fathers_day),
-            ('mothersday', ItalianHolidayParserConfiguration.mothers_day),
-            ('labourday', ItalianHolidayParserConfiguration.labour_day)
+            ("maosbirthday", ItalianHolidayParserConfiguration.mao_birthday),
+            ("teachersday", ItalianHolidayParserConfiguration.teacher_day),
+            ("singleday", ItalianHolidayParserConfiguration.singles_day),
+            ("allsaintsday", ItalianHolidayParserConfiguration.halloween_day),
+            ("youthday", ItalianHolidayParserConfiguration.youth_day),
+            ("childrenday", ItalianHolidayParserConfiguration.children_day),
+            ("femaleday", ItalianHolidayParserConfiguration.female_day),
+            ("treeplantingday", ItalianHolidayParserConfiguration.tree_plant_day),
+            ("arborday", ItalianHolidayParserConfiguration.tree_plant_day),
+            ("girlsday", ItalianHolidayParserConfiguration.girls_day),
+            ("whiteloverday", ItalianHolidayParserConfiguration.white_lover_day),
+            ("loverday", ItalianHolidayParserConfiguration.valentines_day),
+            ("christmas", ItalianHolidayParserConfiguration.christmas_day),
+            ("xmas", ItalianHolidayParserConfiguration.children_day),
+            ("newyear", ItalianHolidayParserConfiguration.new_year),
+            ("newyearday", ItalianHolidayParserConfiguration.new_year),
+            ("newyearsday", ItalianHolidayParserConfiguration.new_year),
+            ("groundhougday", ItalianHolidayParserConfiguration.groundhog_day),
+            ("valentinesday", ItalianHolidayParserConfiguration.valentines_day),
+            ("stpatrickday", ItalianHolidayParserConfiguration.st_patrick_day),
+            ("aprilfools", ItalianHolidayParserConfiguration.fool_day),
+            ("stgeorgeday", ItalianHolidayParserConfiguration.st_george_day),
+            ("mayday", ItalianHolidayParserConfiguration.mayday),
+            ("cincodemayoday", ItalianHolidayParserConfiguration.cinco_de_mayo_day),
+            ("baptisteday", ItalianHolidayParserConfiguration.baptiste_day),
+            ("usindependenceday", ItalianHolidayParserConfiguration.usa_independence_day),
+            ("independenceday", ItalianHolidayParserConfiguration.usa_independence_day),
+            ("bastilleday", ItalianHolidayParserConfiguration.bastille_day),
+            ("halloweenday", ItalianHolidayParserConfiguration.halloween_day),
+            ("allhallowday", ItalianHolidayParserConfiguration.all_hallow_day),
+            ("allsoulsday", ItalianHolidayParserConfiguration.all_souls_day),
+            ("guyfawkesday", ItalianHolidayParserConfiguration.guyfawkes_day),
+            ("veteransday", ItalianHolidayParserConfiguration.veterans_day),
+            ("christmaseve", ItalianHolidayParserConfiguration.christmas_eve),
+            ("newyeareve", ItalianHolidayParserConfiguration.new_year_eve),
+            ("fathersday", ItalianHolidayParserConfiguration.fathers_day),
+            ("mothersday", ItalianHolidayParserConfiguration.mothers_day),
+            ("labourday", ItalianHolidayParserConfiguration.international_workers_day),
+            ("memorialday", ItalianHolidayParserConfiguration.memorial_day),
+            ("easterday", ItalianHolidayParserConfiguration.easter_day),
+            ("eastermonday", ItalianHolidayParserConfiguration.easter_day),
+            ("mardigras", ItalianHolidayParserConfiguration.easter_day),
         ])
 
         return {**super()._init_holiday_funcs(), **local}
@@ -216,13 +223,13 @@ class ItalianHolidayParserConfiguration(BaseHolidayParserConfiguration):
         trimmed_text = text.strip().lower()
         swift = -10
 
-        if trimmed_text.endswith('prochain'):  # next - 'l'annee prochain'
+        if self.next_prefix_regex.search(trimmed_text):
             swift = 1
 
-        if trimmed_text.endswith('dernier'):  # last - 'l'annee dernier'
+        if self.previous_prefix_regex.search(trimmed_text):
             swift = -1
 
-        if trimmed_text.startswith('cette'):  # this - 'cette annees'
+        if self.this_prefix_regex.search(trimmed_text):
             swift = 0
 
         return swift

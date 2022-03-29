@@ -125,6 +125,11 @@ class ItalianDateTimeParserConfiguration(DateTimeParserConfiguration):
         self._unit_regex = RegExpUtility.get_safe_reg_exp(
             ItalianDateTime.TimeUnitRegex)
 
+        self.next_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            ItalianDateTime.NextPrefixRegex)
+        self.previous_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            ItalianDateTime.PreviousPrefixRegex)
+
         self._date_extractor = config.date_extractor
         self._time_extractor = config.time_extractor
         self._date_parser = config.date_parser
@@ -162,19 +167,9 @@ class ItalianDateTimeParserConfiguration(DateTimeParserConfiguration):
         source = source.strip().lower()
         swift = 0
 
-        if (
-            source.startswith('prochain') or
-            source.endswith('prochain') or
-            source.startswith('prochaine') or
-            source.endswith('prochaine')
-        ):
+        if self.previous_prefix_regex.search(source):
             swift = -1
-        elif (
-            source.startswith('dernier') or
-            source.startswith('dernière') or
-            source.endswith('dernier') or
-            source.endswith('dernière')
-        ):
+        elif self.next_prefix_regex.search(source):
             swift = 1
 
         return swift
@@ -184,9 +179,9 @@ class ItalianDateTimeParserConfiguration(DateTimeParserConfiguration):
         result = hour
 
         # TODO: replace with a regex
-        if source.endswith('matin') and hour >= 12:
+        if source.endswith('mattina') and hour >= 12:
             result -= 12
-        elif not source.endswith('matin') and hour < 12:
+        elif not source.endswith('mattina') and hour < 12:
             result += 12
 
         return result

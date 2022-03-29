@@ -131,17 +131,21 @@ class ItalianSetParserConfiguration(SetParserConfiguration):
         timex = ''
 
         if (
-            trimmed_text == 'quotidien' or trimmed_text == 'quotidienne' or
-            trimmed_text == 'jours' or trimmed_text == 'journellement'
+            trimmed_text == 'quotidianamente' or
+            trimmed_text == 'quotidiano' or
+            trimmed_text == 'quotidiana' or
+            trimmed_text == 'giornalmente' or
+            trimmed_text == 'giornaliero' or
+            trimmed_text == 'giornaliera'
         ):
             timex = 'P1D'
-        elif trimmed_text == 'hebdomadaire':
+        elif trimmed_text == 'settimanale' or trimmed_text == 'settimanalmente':
             timex = 'P1W'
-        elif trimmed_text == 'bihebdomadaire':
+        elif trimmed_text == 'bisettimanale':
             timex = 'P2W'
-        elif trimmed_text == 'mensuel' or trimmed_text == 'mensuelle':
+        elif trimmed_text == 'mensile' or trimmed_text == 'mensilmente':
             timex = 'P1M'
-        elif trimmed_text == 'annuel' or trimmed_text == 'annuellement':
+        elif trimmed_text == 'annuale' or trimmed_text == 'annualmente':
             timex = 'P1Y'
         else:
             return MatchedTimex(False, None)
@@ -152,13 +156,13 @@ class ItalianSetParserConfiguration(SetParserConfiguration):
         trimmed_text = text.strip().lower()
         timex = ''
 
-        if trimmed_text == 'jour' or trimmed_text == 'journee':
+        if trimmed_text == 'giorno' or trimmed_text == 'giornata' or trimmed_text == 'giorni':
             timex = 'P1D'
-        elif trimmed_text == 'semaine':
+        elif trimmed_text == 'settimana' or trimmed_text == 'settimane':
             timex = 'P1W'
-        elif trimmed_text == 'mois':
+        elif trimmed_text == 'mese' or trimmed_text == 'mesi':
             timex = 'P1M'
-        elif trimmed_text == 'an' or trimmed_text == 'annee':
+        elif trimmed_text == 'anno' or trimmed_text == 'annata' or trimmed_text == 'anni':
             timex = 'P1Y'
         else:
             return MatchedTimex(False, None)

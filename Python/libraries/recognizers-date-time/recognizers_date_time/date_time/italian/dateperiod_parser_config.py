@@ -308,15 +308,9 @@ class ItalianDatePeriodParserConfiguration(DatePeriodParserConfiguration):
         trimmed_source = source.strip().lower()
         swift = 0
 
-        if trimmed_source.endswith('prochain') or trimmed_source.endswith('prochaine'):
+        if self.next_prefix_regex.search(trimmed_source):
             swift = 1
-
-        if (
-            trimmed_source.endswith('dernière') or
-            trimmed_source.endswith('dernières') or
-            trimmed_source.endswith('derniere') or
-            trimmed_source.endswith('dernieres')
-        ):
+        elif self.previous_prefix_regex.search(trimmed_source):
             swift = -1
 
         return swift
@@ -325,17 +319,11 @@ class ItalianDatePeriodParserConfiguration(DatePeriodParserConfiguration):
         trimmed_source = source.strip().lower()
         swift = -10
 
-        if trimmed_source.endswith('prochain') or trimmed_source.endswith('prochaine'):
+        if self.next_prefix_regex.search(trimmed_source):
             swift = 1
-
-        if (
-            trimmed_source.endswith('dernière') or
-            trimmed_source.endswith('dernières') or
-            trimmed_source.endswith('derniere') or
-            trimmed_source.endswith('dernieres')
-        ):
+        elif self.previous_prefix_regex.search(trimmed_source):
             swift = -1
-        elif trimmed_source.startswith('cette'):
+        elif self.this_prefix_regex.search(trimmed_source):
             swift = 0
 
         return swift
@@ -377,3 +365,4 @@ class ItalianDatePeriodParserConfiguration(DatePeriodParserConfiguration):
 
     def is_last_cardinal(self, source: str) -> bool:
         trimmed_source = source.strip().lower()
+        return any(trimmed_source == o for o in ItalianDateTime.LastCardinalTerms)

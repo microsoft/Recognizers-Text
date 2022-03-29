@@ -158,10 +158,4 @@ class ItalianDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
         self._utility_configuration = ItalianDateTimeUtilityConfiguration()
 
     def is_connector_token(self, source: str) -> bool:
-        return (
-            source == '' or source == ',' or
-            regex.search(self.preposition_regex, source) is not None or
-            source == 't' or
-            source == 'pour' or
-            source == 'vers'
-        )
+        return source.strip() == '' or regex.search(self.connector_regex, source) is not None or regex.search(self.preposition_regex, source) is not None

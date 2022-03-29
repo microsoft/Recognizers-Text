@@ -132,6 +132,13 @@ class ItalianDateParserConfiguration(DateParserConfiguration):
     def date_token_prefix(self) -> str:
         return self._date_token_prefix
 
+    _relative_day_regex = RegExpUtility.get_safe_reg_exp(
+        ItalianDateTime.RelativeDayRegex)
+    _next_prefix_regex = RegExpUtility.get_safe_reg_exp(
+        ItalianDateTime.NextPrefixRegex)
+    _past_prefix_regex = RegExpUtility.get_safe_reg_exp(
+        ItalianDateTime.PreviousPrefixRegex)
+
     def __init__(self, config: BaseDateParserConfiguration):
         self._ordinal_extractor = config.ordinal_extractor
         self._integer_extractor = config.integer_extractor
@@ -182,34 +189,44 @@ class ItalianDateParserConfiguration(DateParserConfiguration):
     def get_swift_day(self, source: str) -> int:
         trimmed_text = source.strip().lower()
         swift = 0
-
-        if trimmed_text == 'aujourd\'hui' or trimmed_text == 'auj':
+        matches = regex.search(
+            ItalianDateParserConfiguration._relative_day_regex, source)
+        if trimmed_text == 'oggi':
             swift = 0
-        elif trimmed_text == 'demain' or trimmed_text.endswith('a2m1') or trimmed_text.endswith('lendemain') or trimmed_text.endswith('jour suivant'):
+        elif trimmed_text == 'domani':
             swift = 1
-        elif trimmed_text == 'hier':
+        elif trimmed_text == 'ieri':
             swift = -1
-        elif trimmed_text.endswith('après demain') or trimmed_text.endswith('après-demain') or trimmed_text.endswith('apres-demain'):
+        elif trimmed_text.endswith('dopodomani'):
             swift = 2
-        elif trimmed_text.endswith('avant-hier') or trimmed_text.endswith('avant hier'):
+        elif trimmed_text.endswith('l\'altro ieri'):
             swift = -2
-        elif trimmed_text.endswith('dernier'):
+        elif trimmed_text.endswith('giorno dopo'):
+            swift = 1
+        elif trimmed_text.endswith('il giorno prima'):
             swift = -1
+        elif matches:
+            swift = self.get_swift(source)
 
         return swift
 
     def get_swift_month(self, source: str) -> int:
+        return self.get_swift(source)
+
+    def get_swift(self, source: str) -> int:
         trimmed_text = source.strip().lower()
         swift = 0
-
-        if trimmed_text.endswith('prochaine') or trimmed_text.endswith('prochain'):
+        next_prefix_matches = regex.search(
+            ItalianDateParserConfiguration._next_prefix_regex, trimmed_text)
+        past_prefix_matches = regex.search(
+            ItalianDateParserConfiguration._past_prefix_regex, trimmed_text)
+        if next_prefix_matches:
             swift = 1
-
-        if trimmed_text == 'dernière' or trimmed_text.endswith('dernières') or trimmed_text.endswith('derniere') or trimmed_text.endswith('dernieres'):
+        elif past_prefix_matches:
             swift = -1
 
         return swift
 
     def is_cardinal_last(self, source: str) -> bool:
         trimmed_text = source.strip().lower()
-        return trimmed_text.endswith('dernière') or trimmed_text.endswith('dernières') or trimmed_text.endswith('derniere') or trimmed_text.endswith('dernieres')
+        return not regex.search(ItalianDateParserConfiguration._past_prefix_regex, trimmed_text) is None

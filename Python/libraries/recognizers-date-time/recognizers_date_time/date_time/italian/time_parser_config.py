@@ -47,6 +47,8 @@ class ItalianTimeParserConfiguration(TimeParserConfiguration):
             ItalianDateTime.LessThanOneHour)
         self.time_suffix = RegExpUtility.get_safe_reg_exp(
             ItalianDateTime.TimeSuffix)
+        self.night_regex = RegExpUtility.get_safe_reg_exp(
+            ItalianDateTime.NightRegex)
 
         self._utility_configuration = config.utility_configuration
         self._numbers: Dict[str, int] = config.numbers
@@ -87,25 +89,27 @@ class ItalianTimeParserConfiguration(TimeParserConfiguration):
 
     def adjust_by_suffix(self, suffix: str, adjust: AdjustParams):
         suffix = suffix.strip().lower()
-
         delta_hour = 0
-        match = regex.match(self.time_suffix, suffix)
-
-        if match and match.group() == suffix:
+        match = regex.search(self.time_suffix, suffix)
+        if match is not None and match.start() == 0 and match.group() == suffix:
             oclock_str = RegExpUtility.get_group(match, 'oclock')
             if not oclock_str:
                 am_str = RegExpUtility.get_group(match, 'am')
                 if am_str:
                     if adjust.hour >= 12:
                         delta_hour -= 12
-
-                    adjust.has_am = True
-
+                    else:
+                        adjust.has_am = True
                 pm_str = RegExpUtility.get_group(match, 'pm')
                 if pm_str:
                     if adjust.hour < 12:
                         delta_hour = 12
-
-                    adjust.has_pm = True
-
+                    if regex.search(self.night_regex, pm_str):
+                        if adjust.hour <= 3 or adjust.hour == 12:
+                            if adjust.hour == 12:
+                                adjust.hour = 0
+                            delta_hour = 0
+                            adjust.has_am = True
+                        else:
+                            adjust.has_pm = True
         adjust.hour = (adjust.hour + delta_hour) % 24
