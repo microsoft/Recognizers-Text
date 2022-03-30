@@ -2635,5 +2635,33 @@
         "End": 7
       }
     ]
+  },
+  {
+    "Input": "All 70 of us.",
+    "Results": []
+  },
+  {
+    "Input": "ALL 5 solutions are wrong.",
+    "Results": []
+  },
+  {
+    "Input": "All seventeen tests were succesful.",
+    "Results": []
+  },
+  {
+    "Input": "I tried to call Bob 3 times already.",
+    "Results": []
+  },
+  {
+    "Input": "He has lost his pen 7 times since Monday.",
+    "Results": []
+  },
+  {
+    "Input": "Silica gel is used to absorb moisture.",
+    "Results": []
+  },
+  {
+    "Input": "She got really mad when she heard what happened.",
+    "Results": []
   }
 ]
