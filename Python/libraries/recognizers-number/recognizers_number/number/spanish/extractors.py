@@ -3,7 +3,6 @@
 
 from typing import Pattern, List, NamedTuple
 
-from recognizers_text import Culture
 from recognizers_text.utilities import RegExpUtility
 from recognizers_number.number.models import NumberMode, LongFormatMode
 from recognizers_number.resources import BaseNumbers
@@ -25,19 +24,19 @@ class SpanishNumberExtractor(BaseNumberExtractor):
     def _extract_type(self) -> str:
         return Constants.SYS_NUM
 
-    def __init__(self, mode: NumberMode = NumberMode.DEFAULT, culture=Culture.Spanish):
+    def __init__(self, mode: NumberMode = NumberMode.DEFAULT):
         self.__regexes: List[ReVal] = list()
         cardinal_ex: SpanishCardinalExtractor = None
 
         if mode is NumberMode.PURE_NUMBER:
             cardinal_ex = SpanishCardinalExtractor(
-                SpanishNumeric.PlaceHolderPureNumber, culture)
+                SpanishNumeric.PlaceHolderPureNumber)
         elif mode is NumberMode.CURRENCY:
             self.__regexes.append(
                 ReVal(re=SpanishNumeric.CurrencyRegex, val='IntegerNum'))
 
         if cardinal_ex is None:
-            cardinal_ex = SpanishCardinalExtractor(culture=culture)
+            cardinal_ex = SpanishCardinalExtractor()
 
         self.__regexes.extend(cardinal_ex.regexes)
 
@@ -62,11 +61,11 @@ class SpanishCardinalExtractor(BaseNumberExtractor):
     def _extract_type(self) -> str:
         return Constants.SYS_NUM_CARDINAL
 
-    def __init__(self, placeholder: str = SpanishNumeric.PlaceHolderDefault, culture=Culture.Spanish):
+    def __init__(self, placeholder: str = SpanishNumeric.PlaceHolderDefault):
         self.__regexes: List[ReVal] = list()
 
         # Add integer regexes
-        integer_ex = SpanishIntegerExtractor(placeholder, culture)
+        integer_ex = SpanishIntegerExtractor(placeholder)
         self.__regexes.extend(integer_ex.regexes)
 
         # Add double regexes
@@ -84,11 +83,7 @@ class SpanishIntegerExtractor(BaseNumberExtractor):
     def _extract_type(self) -> str:
         return Constants.SYS_NUM_INTEGER
 
-    def __init__(self, placeholder: str = SpanishNumeric.PlaceHolderDefault, culture=Culture.Spanish):
-        thousandMarker = LongFormatMode.INTEGER_DOT
-        if culture == Culture.SpanishMexican:
-            thousandMarker = LongFormatMode.INTEGER_COMMA
-
+    def __init__(self, placeholder: str = SpanishNumeric.PlaceHolderDefault):
         self.__regexes = [
             ReVal(
                 re=SpanishNumeric.NumbersWithPlaceHolder(placeholder),
@@ -97,7 +92,7 @@ class SpanishIntegerExtractor(BaseNumberExtractor):
                 re=SpanishNumeric.NumbersWithSuffix,
                 val='IntegerNum'),
             ReVal(
-                re=self._generate_format_regex(thousandMarker,
+                re=self._generate_format_regex(LongFormatMode.INTEGER_DOT,
                                                placeholder),
                 val='IntegerNum'),
             ReVal(

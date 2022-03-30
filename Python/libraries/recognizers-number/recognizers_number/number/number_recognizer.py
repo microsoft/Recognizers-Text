@@ -131,7 +131,7 @@ class NumberRecognizer(Recognizer[NumberOptions]):
         self.register_model('NumberModel', Culture.SpanishMexican, lambda options: NumberModel(
             AgnosticNumberParserFactory.get_parser(
                 ParserType.NUMBER, SpanishNumberParserConfiguration(CultureInfo(Culture.SpanishMexican))),
-            SpanishNumberExtractor(NumberMode.PURE_NUMBER, Culture.SpanishMexican)
+            SpanishNumberExtractor(NumberMode.PURE_NUMBER)
         ))
         self.register_model('OrdinalModel', Culture.SpanishMexican, lambda options: OrdinalModel(
             AgnosticNumberParserFactory.get_parser(

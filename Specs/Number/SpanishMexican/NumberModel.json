@@ -166,21 +166,5 @@
         "End": 17
       }
     ]
-  },
-  {
-    "Input": "3,000,000",
-    "NotSupported": "javascript, java",
-    "Results": [
-      {
-        "Text": "3,000,000",
-        "TypeName": "number",
-        "Resolution": {
-          "subtype": "decimal",
-          "value": "3000000"
-        },
-        "Start": 0,
-        "End": 8
-      }
-    ]
   }
 ]

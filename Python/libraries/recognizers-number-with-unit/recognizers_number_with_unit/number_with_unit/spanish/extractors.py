@@ -56,7 +56,7 @@ class SpanishNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfigu
         if culture_info is None:
             culture_info = CultureInfo(Culture.Spanish)
         super().__init__(culture_info)
-        self._unit_num_extractor = SpanishNumberExtractor(NumberMode.Unit, culture_info.code)
+        self._unit_num_extractor = SpanishNumberExtractor(NumberMode.Unit)
         self._build_prefix = SpanishNumericWithUnit.BuildPrefix
         self._build_suffix = SpanishNumericWithUnit.BuildSuffix
         self._compound_unit_connector_regex = RegExpUtility.get_safe_reg_exp(
