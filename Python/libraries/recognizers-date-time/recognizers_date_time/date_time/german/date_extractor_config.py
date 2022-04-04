@@ -2,7 +2,7 @@
 #  Licensed under the MIT License.
 
 from typing import Pattern, List, Dict
-from recognizers_number import (BaseNumberExtractor, BaseNumberParser,
+from recognizers_number import (BaseNumberExtractor, BaseNumberParser, Culture,
                                 GermanOrdinalExtractor, GermanIntegerExtractor, GermanNumberParserConfiguration)
 from recognizers_text.utilities import RegExpUtility
 from ...resources.german_date_time import GermanDateTime
@@ -14,7 +14,6 @@ from .duration_extractor_config import GermanDurationExtractorConfiguration
 from .base_configs import GermanDateTimeUtilityConfiguration
 from ..constants import Constants
 from ...resources.base_date_time import BaseDateTime
-from ..utilities import DateTimeOptions
 
 
 class GermanDateExtractorConfiguration(DateExtractorConfiguration):
@@ -135,6 +134,10 @@ class GermanDateExtractorConfiguration(DateExtractorConfiguration):
     def week_day_and_day_regex(self) -> Pattern:
         return self._week_day_and_day_regex
 
+    @property
+    def locale(self) -> str:
+        return self._locale
+
     def __init__(self):
         self._check_both_before_after = False
         if GermanDateTime.DefaultLanguageFallback == Constants.DEFAULT_LANGUAGE_FALLBACK_DMY:
@@ -231,3 +234,5 @@ class GermanDateExtractorConfiguration(DateExtractorConfiguration):
             GermanDateTime.WeekDayStart
         )
         self._check_both_before_after = GermanDateTime.CheckBothBeforeAfter
+
+        self._locale = Culture.German.replace('-', '_')

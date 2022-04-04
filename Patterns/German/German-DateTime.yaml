@@ -43,12 +43,18 @@ PmDescRegex: !nestedRegex
 AmPmDescRegex: !nestedRegex
   def: ({BaseDateTime.BaseAmPmDescRegex})
   references: [BaseDateTime.BaseAmPmDescRegex]
+OclockRegex: !simpleRegex
+  def: (?<oclock>uhr)
 DescRegex: !nestedRegex
   def: ({OclockRegex})
   references: [ OclockRegex ]
 TwoDigitYearRegex: !nestedRegex
   def: \b(?<![$])(?<year>([0-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b
   references: [ AmDescRegex, PmDescRegex]
+CenturyRegex: !simpleRegex
+  def: \b(?<century>((ein|zwei)?tausend(und)?)?((ein|zwei|drei|vier|fünf|sechs|sieben|acht|neun|zehn|elf|zwölf|dreizehn|vierzehn|fünfzehn|sechzehn|siebzehn|achtzehn|neunzehn)hundert))\b
+WrittenNumRegex: !simpleRegex
+  def: (zw(ö|oe)lf|dreizehn|vierzehn|fünfzehn|sechzehn|siebzehn|achtzehn|neunzehn|zwanzig|dreißig|vierzig|fünfzig|sechzig|siebzig|achtzig|neunzig|eins?|zw(een|ei|o)|drei|vier|fünf|fuenf|sechs|sieben|acht|neun|zehn|elf)
 FullTextYearRegex: !nestedRegex
   def: \b((?<firsttwoyearnum>{CenturyRegex})\s+(?<lasttwoyearnum>((zwanzig|dreißig|vierzig|fünfzig|sechzig|siebzig|achtzig|neunzig)\s+{WrittenNumRegex})|{WrittenNumRegex}))\b|\b(?<firsttwoyearnum>{CenturyRegex})\b
   references: [ CenturyRegex, WrittenNumRegex ]
@@ -181,8 +187,6 @@ WeekDayOfMonthRegex: !nestedRegex
 RelativeWeekDayRegex: !nestedRegex
   def: \b({WrittenNumRegex}\s+{WeekDayRegex}e\s+(von\s+jetzt|später))\b
   references: [ WrittenNumRegex, WeekDayRegex ]
-WrittenNumRegex: !simpleRegex
-  def: (zw(ö|oe)lf|dreizehn|vierzehn|fünfzehn|sechzehn|siebzehn|achtzehn|neunzehn|zwanzig|dreißig|vierzig|fünfzig|sechzig|siebzig|achtzig|neunzig|eins?|zw(een|ei|o)|drei|vier|fünf|fuenf|sechs|sieben|acht|neun|zehn|elf)
 SpecialDate: !nestedRegex
   def: (?=\b(an( dem)?|am)\s+){DayRegex}\b
   references: [ DayRegex ]
@@ -235,8 +239,6 @@ WeekDayStart: !nestedRegex
   references: [ WeekDayRegex ]
 RangeUnitRegex: !simpleRegex
   def: (?<unit>jahren?|jahr|monaten?|monat|wochen?|tagen?|tag)
-OclockRegex: !simpleRegex
-  def: (?<oclock>uhr)
 HourNumRegex: !simpleRegex
   def: \b(?<hournum>einundzwanzig|zweiundzwanzig|dreiundzwanzig|vierundzwanzig|zw(ö|oe)lf|dreizehn|vierzehn|fünfzehn|sechzehn|siebzehn|achtzehn|neunzehn|zwanzig|'null'|eins?|zw(een|ei|o)|drei|vier|fünf|fuenf|sechs|sieben|acht|neun|zehn|elf)\b
 MinuteNumRegex: !simpleRegex
@@ -569,8 +571,6 @@ TimeBeforeAfterRegex: !nestedRegex
   references: [ WrittenTimeRegex, HourNumRegex, BaseDateTime.HourRegex, MidTimeRegex ]
 DateNumberConnectorRegex: !simpleRegex
   def: \s*(?<connector>am)\s*
-CenturyRegex: !simpleRegex
-  def: \b(?<century>((ein|zwei)?tausend(und)?)?((ein|zwei|drei|vier|fünf|sechs|sieben|acht|neun|zehn|elf|zwölf|dreizehn|vierzehn|fünfzehn|sechzehn|siebzehn|achtzehn|neunzehn)hundert))\b
 DecadeRegex: !simpleRegex
   def: (?<decade>zwanziger|dreißiger|vierziger|fünfziger|sechziger|siebziger|achtziger|neunziger|zweitausender)(n)?
 DecadeWithCenturyRegex: !nestedRegex

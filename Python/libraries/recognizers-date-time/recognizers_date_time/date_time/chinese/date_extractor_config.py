@@ -4,9 +4,8 @@
 from typing import List, Pattern, Dict
 
 from recognizers_text import RegExpUtility
-from recognizers_number import BaseNumberExtractor
+from recognizers_number import BaseNumberExtractor, Culture
 from ...resources import ChineseDateTime
-from ..constants import Constants
 from ..extractors import DateTimeExtractor
 from ..base_date import DateTimeUtilityConfiguration
 from ..base_date import DateExtractorConfiguration
@@ -194,6 +193,10 @@ class ChineseDateExtractorConfiguration(DateExtractorConfiguration):
     def week_day_end(self) -> Pattern:
         pass
 
+    @property
+    def locale(self) -> str:
+        return self._locale
+
     def __init__(self):
         self._datetime_period_unit_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.DateTimePeriodUnitRegex
@@ -278,3 +281,5 @@ class ChineseDateExtractorConfiguration(DateExtractorConfiguration):
         self._month_of_year = None
         self._prefix_article_regex = None
         self._week_day_and_day_regex = None
+
+        self._locale = Culture.Chinese.replace('-', '_')

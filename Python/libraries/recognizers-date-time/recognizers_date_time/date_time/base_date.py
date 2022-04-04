@@ -2,6 +2,7 @@
 #  Licensed under the MIT License.
 
 from abc import ABC, abstractmethod
+from calendar import different_locale
 from typing import List, Optional, Pattern, Dict, Match
 from datetime import datetime, timedelta
 
@@ -14,8 +15,8 @@ from .constants import Constants, TimeTypeConstants
 from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
 from .utilities import Token, MatchingUtil
-import regex
 import calendar
+import regex
 
 
 class DateTimeUtilityConfiguration(ABC):
@@ -214,6 +215,11 @@ class DateExtractorConfiguration(ABC):
     @property
     @abstractmethod
     def check_both_before_after(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def locale(self) -> str:
         raise NotImplementedError
 
 
@@ -429,8 +435,9 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
                             # get week of day for the ordinal number which is regarded as a date of reference month
                             date = DateUtils.safe_create_from_min_value(
                                 year, month, num)
-                            num_week_day_str: str = calendar.day_name[date.weekday()].lower(
-                            )
+
+                            with different_locale(self.config.locale):
+                                num_week_day_str: str = calendar.day_name[date.weekday()].lower()
 
                             # get week day from text directly, compare it with the weekday generated above
                             # to see whether they refer to a same week day

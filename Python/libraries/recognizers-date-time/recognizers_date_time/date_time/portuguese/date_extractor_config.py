@@ -2,7 +2,7 @@
 #  Licensed under the MIT License.
 
 from typing import Pattern, List, Dict
-from recognizers_number import (BaseNumberExtractor, BaseNumberParser,
+from recognizers_number import (BaseNumberExtractor, BaseNumberParser, Culture,
                                 PortugueseOrdinalExtractor, PortugueseIntegerExtractor, PortugueseNumberParserConfiguration)
 from recognizers_text.utilities import RegExpUtility
 from ...resources.portuguese_date_time import PortugueseDateTime
@@ -133,6 +133,10 @@ class PortugueseDateExtractorConfiguration(DateExtractorConfiguration):
     def week_day_and_day_regex(self) -> Pattern:
         return self._week_day_and_day_regex
 
+    @property
+    def locale(self) -> str:
+        return self._locale
+
     def __init__(self):
         self._check_both_before_after = False
         if PortugueseDateTime.DefaultLanguageFallback == Constants.DEFAULT_LANGUAGE_FALLBACK_DMY:
@@ -235,3 +239,5 @@ class PortugueseDateExtractorConfiguration(DateExtractorConfiguration):
             PortugueseDateTime.WeekDayStart
         )
         self._check_both_before_after = PortugueseDateTime.CheckBothBeforeAfter
+
+        self._locale = Culture.Portuguese.replace('-', '_')
