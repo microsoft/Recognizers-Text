@@ -4,7 +4,7 @@
     "Context": {
       "ReferenceDateTime": "2016-01-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "15.",
@@ -28,7 +28,7 @@
     "Context": {
       "ReferenceDateTime": "2016-01-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "15. Januar",
@@ -52,7 +52,7 @@
     "Context": {
       "ReferenceDateTime": "2016-01-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "15.1.",
@@ -76,7 +76,7 @@
     "Context": {
       "ReferenceDateTime": "2016-01-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "15.01.",
@@ -100,7 +100,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "15. Januar 2011",
@@ -124,7 +124,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "15.1.2011",
@@ -148,7 +148,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "Montag den 15. Januar 2017",
@@ -172,7 +172,7 @@
     "Context": {
       "ReferenceDateTime": "2017-01-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "Montag den 15. Januar",
@@ -196,7 +196,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "21/04/2016",
@@ -220,7 +220,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "18. April 2016",
@@ -244,7 +244,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "Freitag",
@@ -268,7 +268,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "heute",
