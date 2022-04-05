@@ -35,7 +35,7 @@
   },
   {
     "Input": "fünfundzwanzigster",
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "fünfundzwanzigster",
@@ -52,7 +52,7 @@
   },
   {
     "Input": "Sie ist die einhunderteinunddreißigste.",
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "einhunderteinunddreißigste",
@@ -306,7 +306,7 @@
   },
   {
     "Input": "Er ist siebenundzwanzigster in der Thronfolge, es wäre schon sehr unwahrscheinlich das die anderen sechsundzwanzig im Bälde das zeitliche segnen",
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "siebenundzwanzigster",
@@ -340,7 +340,7 @@
   },
   {
     "Input": "erster, zweiter. achter Fisch von Achtern, sinnloses dritten!!! Wortsalat die siebte und Random stuff an der siebenundzwanzigsten Ampel links hinterm neunten Haus.",
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "erster",
@@ -619,7 +619,7 @@
   },
   {
     "Input": "Sie sind der einhunderttausendste Besucher.",
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "einhunderttausendste",
