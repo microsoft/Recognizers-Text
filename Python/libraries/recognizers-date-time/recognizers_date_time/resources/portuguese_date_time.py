@@ -117,7 +117,7 @@ class PortugueseDateTime:
     PmTimeRegex = f'(?<pm>(([dn]?es[st]a|\\b[àa]\\b|(pela|de|da|na))\\s+(tarde|noite)))|((depois\\s+do|ap[óo]s\\s+o)\\s+(almo[çc]o|meio dia|meio-dia))'
     LessThanOneHour = f'(?<lth>((\\s+e\\s+)?(quinze|(um\\s+|dois\\s+|tr[êes]\\s+)?quartos?)|quinze|(\\s*)(um\\s+|dois\\s+|tr[êes]\\s+)?quartos?|(\\s+e\\s+)(meia|trinta)|{BaseDateTime.DeltaMinuteRegex}(\\s+(minuto|minutos|min|mins))|{DeltaMinuteNumRegex}(\\s+(minuto|minutos|min|mins))))'
     TensTimeRegex = f'(?<tens>dez|vinte|trinta|[qc]uarenta|cin[qc]uenta)'
-    WrittenTimeRegex = f'(?<writtentime>({HourNumRegex}\\s*((e|menos)\\s+)?(({TensTimeRegex}((\\s*e\\s+)?{MinuteNumRegex}))|{MinuteNumRegex}))|(({MinuteNumRegex}|({TensTimeRegex}((\\s*e\\s+)?{MinuteNumRegex})?))\\s*((para as|pras|antes da|antes das)\\s+)?({HourNumRegex}|{BaseDateTime.HourRegex})))'
+    WrittenTimeRegex = f'(?<writtentime>({HourNumRegex}\\s*((e|menos)\\s+)?({MinuteNumRegex}|({TensTimeRegex}((\\s*e\\s+)?{MinuteNumRegex}))))|(({MinuteNumRegex}|({TensTimeRegex}((\\s*e\\s+)?{MinuteNumRegex})?))\\s*((para as|pras|antes da|antes das)\\s+)?({HourNumRegex}|{BaseDateTime.HourRegex})))'
     TimePrefix = f'(?<prefix>{LessThanOneHour}(\\s+(passad[ao]s)\\s+(as)?|\\s+depois\\s+(das?|do)|\\s+pras?|\\s+(para|antes)?\\s+([àa]s?))?)'
     TimeSuffix = f'(?<suffix>({LessThanOneHour}\\s+)?({AmRegex}|{PmRegex}|{OclockRegex}))'
     BasicTime = f'(?<basictime>{WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}:{BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?|{BaseDateTime.HourRegex})'
@@ -127,7 +127,7 @@ class PortugueseDateTime:
     MidafternoonRegex = f'(?<midafternoon>meio\\s+da\\s+tarde)'
     MiddayRegex = f'(?<midday>meio\\s*(-\\s*)?dia)'
     MidTimeRegex = f'(?<mid>({MidnightRegex}|{MidmorningRegex}|{MidEarlyMorning}|{MidafternoonRegex}|{MiddayRegex}))'
-    AtRegex = f'\\b(((?<=\\b([aà]s?)\\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}(\\s+e\\s+{BaseDateTime.MinuteRegex})?)(\\s+horas?|\\s*h\\b)?|(?<=\\b(s(er)?[aã]o|v[aã]o\\s+ser|^[eé]h?)\\s+|^\\s*)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\\s+horas?|\\s*h\\b))(\\s+{OclockRegex})?|{MidTimeRegex})\\b'
+    AtRegex = f'\\b(((?<=\\b([aà]s?)\\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\\s+horas?|\\s*h\\b)?|(?<=\\b(s(er)?[aã]o|v[aã]o\\s+ser|^[eé]h?)\\s+|^\\s*)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\\s+horas?|\\s*h\\b))(\\s+{OclockRegex})?|{MidTimeRegex})\\b'
     ConnectNumRegex = f'({BaseDateTime.HourRegex}(?<min>[0-5][0-9])\\s*{DescRegex})'
     TimeRegex1 = f'(\\b{TimePrefix}\\s+)?({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\\s*({DescRegex})'
     TimeRegex2 = f'(\\b{TimePrefix}\\s+)?(t)?{BaseDateTime.HourRegex}(\\s*)?:(\\s*)?{BaseDateTime.MinuteRegex}((\\s*)?:(\\s*)?{BaseDateTime.SecondRegex})?((\\s*{DescRegex})|\\b)'
@@ -468,9 +468,7 @@ class PortugueseDateTime:
                     ("vinte e oito", 28),
                     ("vinte e nove", 29),
                     ("trinta", 30),
-                    ("trinta e um", 31),
-                    ("quarenta", 40),
-                    ("cinquenta", 50)])
+                    ("trinta e um", 31)])
     HolidayNames = dict([("pai", ["diadopai", "diadospais"]),
                          ("mae", ["diadamae", "diadasmaes"]),
                          ("acaodegracas", ["diadegracas", "diadeacaodegracas", "acaodegracas"]),
@@ -517,7 +515,7 @@ class PortugueseDateTime:
     DecadeWithCenturyRegex = f'^[.]'
     RelativeDecadeRegex = f'^[.]'
     YearSuffix = f'((,|\\sde)?\\s*({YearRegex}|{FullTextYearRegex}))'
-    SuffixAfterRegex = f'^\\b$'
+    SuffixAfterRegex = f'^[.]'
     YearPeriodRegex = f'^[.]'
     FutureSuffixRegex = f'\\b(seguinte(s)?|pr[oó]xim[oa](s)?|no\\s+futuro)\\b'
     PastSuffixRegex = f'^\\b$'
