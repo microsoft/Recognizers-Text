@@ -295,7 +295,7 @@
   },
   {
     "Input": "zwei Euro fünfzig",
-    "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "",
     "NotSupported": "javascript,dotnet,java",
     "Results": [
       {
@@ -310,7 +310,7 @@
   },
   {
     "Input": "zwei Euro und fünfzig cent",
-    "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "",
     "NotSupported": "java, javascript",
     "Results": [
       {
@@ -325,7 +325,7 @@
   },
   {
     "Input": "siebenhundert Euro",
-    "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -340,7 +340,7 @@
   },
   {
     "Input": "achtundsiebzig Millionen Dollar",
-    "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -411,7 +411,7 @@
   },
   {
     "Input": "siebenhundert-Euro",
-    "NotSupportedByDesign": "python",
+    "NotSupportedByDesign": "",
     "NotSupported": "java, javascript",
     "Results": [
       {
@@ -426,7 +426,7 @@
   },
   {
     "Input": "es kostet nur 15 Dollar und 15 Cent.",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "15 dollar und 15 cent",
@@ -442,7 +442,7 @@
   },
   {
     "Input": "es kostet nur dreizehn Euro und fünfundvierzig Cent.",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "dreizehn euro und fünfundvierzig cent",
@@ -458,7 +458,7 @@
   },
   {
     "Input": "es kostet nur 15 Dollar und 15.",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "15 dollar und 15",
@@ -474,7 +474,7 @@
   },
   {
     "Input": "es kostet nur 15 Dollar 50.",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "15 dollar 50",

@@ -1,7 +1,7 @@
 [
   {
     "Input": "Um 7 bin ich zurück",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "7",
@@ -13,7 +13,7 @@
   },
   {
     "Input": "Ich werde um 12:34 zurück sein",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "12:34",
@@ -25,7 +25,7 @@
   },
   {
     "Input": "Es ist 7 Uhr",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "7 Uhr",
@@ -37,7 +37,7 @@
   },
   {
     "Input": "Es ist 8 Uhr morgens",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "8 Uhr morgens",
@@ -49,7 +49,7 @@
   },
   {
     "Input": "Es ist halb 8",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "halb 8",
@@ -61,7 +61,7 @@
   },
   {
     "Input": "Es ist viertel nach 8",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "viertel nach 8",
@@ -73,7 +73,7 @@
   },
   {
     "Input": "3 Minuten nach 8",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "3 Minuten nach 8",
@@ -85,7 +85,7 @@
   },
   {
     "Input": "nachts um 3 Uhr",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "nachts um 3 Uhr",
@@ -97,7 +97,7 @@
   },
   {
     "Input": "um drei Uhr in der Nacht",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "drei Uhr in der Nacht",
@@ -109,7 +109,7 @@
   },
   {
     "Input": "Nachmittags gegen 4",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "Nachmittags gegen 4",
@@ -121,7 +121,7 @@
   },
   {
     "Input": "Es ist 8 Uhr Morgens",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "8 Uhr Morgens",
@@ -133,7 +133,7 @@
   },
   {
     "Input": "Es ist 8 Uhr Abends",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "8 Uhr Abends",
@@ -145,7 +145,7 @@
   },
   {
     "Input": "Es ist 20 Uhr",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "20 Uhr",
@@ -157,7 +157,7 @@
   },
   {
     "Input": "es ist halb 8",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "halb 8",
@@ -169,7 +169,7 @@
   },
   {
     "Input": "Es ist 30 min nach acht",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "30 min nach acht",
@@ -181,7 +181,7 @@
   },
   {
     "Input": "Es ist viertel nach acht",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "viertel nach acht",
@@ -193,7 +193,7 @@
   },
   {
     "Input": "Es ist viertel vor acht",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "viertel vor acht",
@@ -205,7 +205,7 @@
   },
   {
     "Input": "drei Minuten vor 8",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "drei Minuten vor 8",
@@ -217,7 +217,7 @@
   },
   {
     "Input": "halb 7 Nachmittags",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "halb 7 Nachmittags",
@@ -229,7 +229,7 @@
   },
   {
     "Input": "halb 7 Morgens",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "halb 7 Morgens",
