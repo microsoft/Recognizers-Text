@@ -95,4 +95,3 @@ def recognize_datetime(query: str, culture: str, options: DateTimeOptions = Date
     recognizer = DateTimeRecognizer(culture, options)
     model = recognizer.get_datetime_model(culture, fallback_to_default_culture)
     return model.parse(query, reference)
-

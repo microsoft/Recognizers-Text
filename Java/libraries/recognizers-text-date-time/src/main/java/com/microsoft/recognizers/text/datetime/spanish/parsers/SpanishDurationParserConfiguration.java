@@ -131,6 +131,10 @@ public class SpanishDurationParserConfiguration extends BaseOptionsConfiguration
         return durationUnitRegex;
     }
 
+    @Override public Pattern getSpecialNumberUnitRegex() {
+        return null;
+    }
+
     @Override
     public ImmutableMap<String, String> getUnitMap() {
         return unitMap;

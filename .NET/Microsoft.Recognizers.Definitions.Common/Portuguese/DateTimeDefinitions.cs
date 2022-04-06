@@ -560,7 +560,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public const string DecadeWithCenturyRegex = @"^[.]";
       public const string RelativeDecadeRegex = @"^[.]";
       public static readonly string YearSuffix = $@"((,|\sde)?\s*({YearRegex}|{FullTextYearRegex}))";
-      public const string SuffixAfterRegex = @"^[.]";
+      public const string SuffixAfterRegex = @"^\b$";
       public const string YearPeriodRegex = @"^[.]";
       public const string FutureSuffixRegex = @"\b(seguinte(s)?|pr[oó]xim[oa](s)?|no\s+futuro)\b";
       public const string PastSuffixRegex = @"^\b$";

@@ -718,7 +718,23 @@ public class GermanNumericWithUnit {
 
     public static final List<String> AmbiguousWeightUnitList = Arrays.asList("g", "oz", "stone", "dram");
 
+    public static final ImmutableMap<String, String> AngleSuffixList = ImmutableMap.<String, String>builder()
+        .put("Degree", "grad|°")
+        .put("Radian", "radiant|rad")
+        .put("Turn", "turn")
+        .build();
+
+    public static final List<String> AmbiguousAngleUnitList = Arrays.asList("turn");
+
     public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
         .put("null", "null")
+        .build();
+
+    public static final ImmutableMap<String, String> TemperatureAmbiguityFiltersDict = ImmutableMap.<String, String>builder()
+        .put("\\b(grad|°)$", "\\b((grad|°)\\s*(winkel|dreh(ung|en|t)|gedreht)|(dreh(ung|en|t)|gedreht|winkel)(\\s+(\\p{L}+|\\d+)){0,4}\\s*(grad\\b|°))")
+        .build();
+
+    public static final ImmutableMap<String, String> DimensionAmbiguityFiltersDict = ImmutableMap.<String, String>builder()
+        .put("\\b(grad|°)$", "\\b((grad|°)\\s*(c(elsius|entigrate)?|f(ah?renheit)?)|(temperatur)(\\s+(\\p{L}+|\\d+)){0,4}\\s*(grad\\b|°))")
         .build();
 }

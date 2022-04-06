@@ -718,5 +718,95 @@
     "Input": "Girar 90°",
     "NotSupported": "java, javascript, python",
     "Results": []
+  },
+  {
+    "Input": "A temperature hoje chegou aos 37ºc.",
+    "Results": [
+      {
+        "Text": "37ºc",
+        "Start": 30,
+        "End": 33,
+        "TypeName": "temperature",
+        "Resolution": {
+          "unit": "Grau Celsius",
+          "value": "37"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "30º C é muito quente.",
+    "Results": [
+      {
+        "Text": "30º c",
+        "Start": 0,
+        "End": 4,
+        "TypeName": "temperature",
+        "Resolution": {
+          "unit": "Grau Celsius",
+          "value": "30"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "E que baixou para 36,6ºC.",
+    "Results": [
+      {
+        "Text": "36,6ºc",
+        "Start": 18,
+        "End": 23,
+        "TypeName": "temperature",
+        "Resolution": {
+          "unit": "Grau Celsius",
+          "value": "36,6"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Questionada sobre essa diferença de 0,4º C desde esses tempos até agora não seria apenas resultado de um aperfeiçoamento tecnológico, Julie Parsonnet responde que não.",
+    "Results": [
+      {
+        "Text": "0,4º c",
+        "Start": 36,
+        "End": 41,
+        "TypeName": "temperature",
+        "Resolution": {
+          "unit": "Grau Celsius",
+          "value": "0,4"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "E 100 ºC?",
+    "Results": [
+      {
+        "Text": "100 ºc",
+        "Start": 2,
+        "End": 7,
+        "TypeName": "temperature",
+        "Resolution": {
+          "unit": "Grau Celsius",
+          "value": "100"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "E 100 °C?",
+    "Results": [
+      {
+        "Text": "100 °c",
+        "Start": 2,
+        "End": 7,
+        "TypeName": "temperature",
+        "Resolution": {
+          "unit": "Grau Celsius",
+          "value": "100"
+        }
+      }
+    ]
   }
 ]

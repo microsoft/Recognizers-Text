@@ -139,7 +139,7 @@
     "Context": {
       "ReferenceDateTime": "2018-12-09T00:00:00"
     },
-    "NotSupported": "dotNet, javascript, python",
+    "NotSupported": "dotNet, javascript, python, java",
     "Results": [
       {
         "Text": "Letzten Freitag Nachmittag",

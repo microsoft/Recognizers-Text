@@ -148,7 +148,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "Montag den 15. Januar 2017",
@@ -172,7 +172,7 @@
     "Context": {
       "ReferenceDateTime": "2017-01-07T00:00:00"
     },
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "Montag den 15. Januar",

@@ -40,6 +40,8 @@ public interface IDurationExtractorConfiguration extends IOptionsConfiguration {
 
     Pattern getMoreThanRegex();
 
+    Pattern getSpecialNumberUnitRegex();
+
     IExtractor getCardinalExtractor();
 
     ImmutableMap<String, String> getUnitMap();

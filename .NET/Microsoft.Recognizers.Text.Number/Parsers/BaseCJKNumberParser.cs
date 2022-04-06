@@ -41,7 +41,7 @@ namespace Microsoft.Recognizers.Text.Number
                 Metadata = extResult.Metadata,
             };
 
-            if (Config.CultureInfo.Name == "zh-CN")
+            if (Config.CultureInfo.Name.ToLowerInvariant() == Culture.Chinese)
             {
                 getExtResult.Text = ReplaceTraWithSim(getExtResult.Text);
             }
@@ -120,7 +120,7 @@ namespace Microsoft.Recognizers.Text.Number
             }
 
             // TODO: @Refactor this check to determine the subtype for JA and KO
-            if ((Config.CultureInfo.Name == "ja-JP" || Config.CultureInfo.Name == "ko-KR") && ret != null)
+            if ((Config.CultureInfo.Name.ToLowerInvariant() == Culture.Japanese || Config.CultureInfo.Name.ToLowerInvariant() == Culture.Korean) && ret != null)
             {
                 ret.Type = DetermineType(extResult, ret);
                 ret.Text = ret.Text.ToLowerInvariant();
@@ -532,6 +532,7 @@ namespace Microsoft.Recognizers.Text.Number
             long roundBefore = -1, roundDefault = 1;
             var isNegative = false;
             var hasPreviousDigits = false;
+            var hasRoundDirectOrZero = intStr.Any(c => Config.RoundDirectList.Contains(c) || c == Config.ZeroChar);
 
             var isDozen = false;
             var isPair = false;
@@ -539,11 +540,11 @@ namespace Microsoft.Recognizers.Text.Number
             if (Config.DozenRegex.IsMatch(intStr))
             {
                 isDozen = true;
-                if (Config.CultureInfo.Name == "zh-CN")
+                if (Config.CultureInfo.Name.ToLowerInvariant() == Culture.Chinese)
                 {
                     intStr = intStr.Substring(0, intStr.Length - 1);
                 }
-                else if (Config.CultureInfo.Name == "ja-JP")
+                else if (Config.CultureInfo.Name.ToLowerInvariant() == Culture.Japanese)
                 {
                     intStr = intStr.Substring(0, intStr.Length - 3);
                 }
@@ -557,7 +558,7 @@ namespace Microsoft.Recognizers.Text.Number
             if (Config.NegativeNumberSignRegex.IsMatch(intStr))
             {
                 isNegative = true;
-                if (Config.CultureInfo.Name == "ko-KR")
+                if (Config.CultureInfo.Name.ToLowerInvariant() == Culture.Korean)
                 {
                     intStr = Regex.Replace(intStr, Config.NegativeNumberSignRegex.ToString(), string.Empty);
                 }
@@ -569,6 +570,11 @@ namespace Microsoft.Recognizers.Text.Number
 
             for (var i = 0; i < intStr.Length; i++)
             {
+                if (intStr[i] == Config.NonDecimalSeparatorChar)
+                {
+                    continue;
+                }
+
                 if (Config.RoundNumberMapChar.ContainsKey(intStr[i]))
                 {
                     var roundRecent = Config.RoundNumberMapChar[intStr[i]];
@@ -632,7 +638,7 @@ namespace Microsoft.Recognizers.Text.Number
                     {
                         // In colloquial Chinese, 百 may be omitted from the end of a number, similarly to how 一 can be dropped
                         // from the beginning. Japanese doesn't have such behaviour.
-                        if ((Config.CultureInfo.Name == "ja-JP" || Config.CultureInfo.Name == "ko-KR") || char.IsDigit(intStr[i]))
+                        if ((Config.CultureInfo.Name.ToLowerInvariant() == Culture.Japanese || Config.CultureInfo.Name.ToLowerInvariant() == Culture.Korean) || char.IsDigit(intStr[i]))
                         {
                             roundDefault = 1;
                         }
@@ -654,6 +660,12 @@ namespace Microsoft.Recognizers.Text.Number
                 }
 
                 hasPreviousDigits = char.IsDigit(intStr[i]);
+
+                // Japanese numbers in the form "一九九九" (1999) must be processed as digit numbers
+                if (Config.CultureInfo.Name.ToLowerInvariant() == Culture.Japanese && !hasPreviousDigits)
+                {
+                    hasPreviousDigits = !hasRoundDirectOrZero && Config.ZeroToNineMap.ContainsKey(intStr[i]);
+                }
 
                 if (Config.RoundDirectList.Contains(intStr[i]))
                 {

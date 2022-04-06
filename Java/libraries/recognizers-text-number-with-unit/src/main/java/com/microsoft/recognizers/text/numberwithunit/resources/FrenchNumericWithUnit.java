@@ -667,7 +667,23 @@ public class FrenchNumericWithUnit {
 
     public static final List<String> AmbiguousWeightUnitList = Arrays.asList("g", "oz");
 
+    public static final ImmutableMap<String, String> AngleSuffixList = ImmutableMap.<String, String>builder()
+        .put("Degree", "degré|degrés|degre|degres|deg|°")
+        .put("Radian", "radian|radians|rad")
+        .put("Turn", "tour|tours")
+        .build();
+
+    public static final List<String> AmbiguousAngleUnitList = Arrays.asList("tour", "tours");
+
     public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
         .put("\\bcent\\b", "\\bpour\\s+cent\\b")
+        .build();
+
+    public static final ImmutableMap<String, String> TemperatureAmbiguityFiltersDict = ImmutableMap.<String, String>builder()
+        .put("\\b(deg(r[eé]s?)?|°)$", "\\b((deg(r[eé]s?)?|°)\\s*(angle|rotation)|(tourn([eé]|er|ant)|rotation|angle)(\\s+(\\p{L}+|\\d+)){0,4}\\s*(deg(r[eé]s?)?\\b|°))")
+        .build();
+
+    public static final ImmutableMap<String, String> DimensionAmbiguityFiltersDict = ImmutableMap.<String, String>builder()
+        .put("\\b(deg(r[eé]s?)?|°)$", "\\b((deg(r[eé]s?)?|°)\\s*(c(elsius|entigrade)?|f(ah?renheit)?)|(temp[eé]rature)(\\s+(\\p{L}+|\\d+)){0,4}\\s*(deg(r[eé]s?)?\\b|°))")
         .build();
 }

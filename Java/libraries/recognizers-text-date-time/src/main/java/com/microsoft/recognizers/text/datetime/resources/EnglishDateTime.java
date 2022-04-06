@@ -796,7 +796,7 @@ public class EnglishDateTime {
     public static final String BeforeRegex = "((\\b{InclusiveModPrepositions}?(?:before|in\\s+advance\\s+of|prior\\s+to|(no\\s+later|earlier|sooner)\\s+than|ending\\s+(with|on)|by|(un)?till?|(?<include>as\\s+late\\s+as)){InclusiveModPrepositions}?\\b\\s*?)|(?<!\\w|>)((?<include><\\s*=)|<))(\\s+the)?"
             .replace("{InclusiveModPrepositions}", InclusiveModPrepositions);
 
-    public static final String AfterRegex = "((\\b{InclusiveModPrepositions}?((after(\\s+on)?(?!\\sfrom)|(?<!no\\s+)later than)|(year greater than))(?!\\s+or equal to){InclusiveModPrepositions}?\\b\\s*?)|(?<!\\w|<)((?<include>>\\s*=)|>))(\\s+the)?"
+    public static final String AfterRegex = "((\\b{InclusiveModPrepositions}?((after(\\s+on)?(?!\\sfrom)|(?<!no\\s+)later\\s+than)|((year\\s+)?greater\\s+than))(?!\\s+or\\s+equal\\s+to){InclusiveModPrepositions}?\\b\\s*?)|(?<!\\w|<)((?<include>>\\s*=)|>))(\\s+the)?"
             .replace("{InclusiveModPrepositions}", InclusiveModPrepositions);
 
     public static final String SinceRegex = "(?:(?:\\b(?:since|after\\s+or\\s+equal\\s+to|(starting|beginning)(\\s)?(?:from|on|with)?|as\\s+early\\s+as|(any\\s+time\\s+)from)\\b\\s*?)|(?<!\\w|<)(>=))(\\s+the)?";
