@@ -2,7 +2,7 @@
 #  Licensed under the MIT License.
 
 from typing import Pattern, List, Dict
-from recognizers_number import (BaseNumberExtractor, BaseNumberParser, Culture,
+from recognizers_number import (BaseNumberExtractor, BaseNumberParser,
                                 SpanishOrdinalExtractor, SpanishIntegerExtractor, SpanishNumberParserConfiguration)
 from recognizers_text.utilities import RegExpUtility
 from ...resources.spanish_date_time import SpanishDateTime
@@ -133,10 +133,6 @@ class SpanishDateExtractorConfiguration(DateExtractorConfiguration):
     def week_day_and_day_regex(self) -> Pattern:
         return self._week_day_and_day_regex
 
-    @property
-    def locale(self) -> str:
-        return self._locale
-
     def __init__(self):
         self._check_both_before_after = False
         if SpanishDateTime.DefaultLanguageFallback == Constants.DEFAULT_LANGUAGE_FALLBACK_DMY:
@@ -239,5 +235,3 @@ class SpanishDateExtractorConfiguration(DateExtractorConfiguration):
             SpanishDateTime.WeekDayStart
         )
         self._check_both_before_after = SpanishDateTime.CheckBothBeforeAfter
-
-        self._locale = Culture.Spanish.replace('-', '_')

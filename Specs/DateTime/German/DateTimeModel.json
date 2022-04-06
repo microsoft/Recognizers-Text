@@ -4076,7 +4076,7 @@
     "Context": {
       "ReferenceDateTime": "2021-05-04T00:00:00"
     },
-    "NotSupported": "java, javascript",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "dienstag, der 25",

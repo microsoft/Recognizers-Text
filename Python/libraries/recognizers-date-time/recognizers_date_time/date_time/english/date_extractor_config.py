@@ -2,7 +2,7 @@
 #  Licensed under the MIT License.
 
 from typing import Pattern, List, Dict
-from recognizers_number import (BaseNumberExtractor, BaseNumberParser, Culture,
+from recognizers_number import (BaseNumberExtractor, BaseNumberParser,
                                 EnglishOrdinalExtractor, EnglishIntegerExtractor, EnglishNumberParserConfiguration)
 from recognizers_text.utilities import RegExpUtility
 from ...resources.english_date_time import EnglishDateTime
@@ -156,10 +156,6 @@ class EnglishDateExtractorConfiguration(DateExtractorConfiguration):
     def month_suffix_regex(self) -> Pattern:
         return self._month_suffix_regex
 
-    @property
-    def locale(self) -> str:
-        return self._locale
-
     def __init__(self):
         self._check_both_before_after = EnglishDateTime.CheckBothBeforeAfter
         self._date_regex_list = [
@@ -271,6 +267,3 @@ class EnglishDateExtractorConfiguration(DateExtractorConfiguration):
         self._month_suffix_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.MonthSuffixRegex
         )
-
-        self._locale = Culture.English.replace('-', '_')
-

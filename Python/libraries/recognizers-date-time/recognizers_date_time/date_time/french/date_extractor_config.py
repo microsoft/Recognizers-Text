@@ -2,7 +2,7 @@
 #  Licensed under the MIT License.
 
 from typing import Pattern, List, Dict
-from recognizers_number import (BaseNumberExtractor, BaseNumberParser, Culture,
+from recognizers_number import (BaseNumberExtractor, BaseNumberParser,
                                 FrenchOrdinalExtractor, FrenchIntegerExtractor, FrenchNumberParserConfiguration)
 from recognizers_text.utilities import RegExpUtility
 from ...resources.french_date_time import FrenchDateTime
@@ -14,6 +14,7 @@ from .duration_extractor_config import FrenchDurationExtractorConfiguration
 from .base_configs import FrenchDateTimeUtilityConfiguration
 from ..constants import Constants
 from ...resources.base_date_time import BaseDateTime
+from ..utilities import DateTimeOptions
 
 
 class FrenchDateExtractorConfiguration(DateExtractorConfiguration):
@@ -134,10 +135,6 @@ class FrenchDateExtractorConfiguration(DateExtractorConfiguration):
     def week_day_and_day_regex(self) -> Pattern:
         return self._week_day_and_day_regex
 
-    @property
-    def locale(self) -> str:
-        return self._locale
-
     def __init__(self):
         self._check_both_before_after = False
         if FrenchDateTime.DefaultLanguageFallback == Constants.DEFAULT_LANGUAGE_FALLBACK_DMY:
@@ -234,5 +231,3 @@ class FrenchDateExtractorConfiguration(DateExtractorConfiguration):
             FrenchDateTime.WeekDayStart
         )
         self._check_both_before_after = FrenchDateTime.CheckBothBeforeAfter
-
-        self._locale = Culture.French.replace('-', '_')
