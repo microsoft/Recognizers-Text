@@ -91,7 +91,7 @@
   },
   {
     "Input": "einhundert Prozent",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript,python",
     "Results": [
       {
         "Text": "einhundert prozent",
@@ -121,7 +121,7 @@
   },
   {
     "Input": "siebenunddreißig Prozent",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript,python",
     "Results": [
       {
         "Text": "siebenunddreißig prozent",
@@ -136,7 +136,7 @@
   },
   {
     "Input": "einhundertneunundneunzig Prozent",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript,python",
     "Results": [
       {
         "Text": "einhundertneunundneunzig prozent",
@@ -151,7 +151,7 @@
   },
   {
     "Input": "Wenn er nicht einhundert Prozent gibt, wird er damit nicht mehr rechtzeitig fertig",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript,python",
     "Results": [
       {
         "Text": "einhundert prozent",

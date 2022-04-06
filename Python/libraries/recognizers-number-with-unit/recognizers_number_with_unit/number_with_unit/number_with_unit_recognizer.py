@@ -4,8 +4,8 @@
 from enum import IntFlag
 from typing import List
 from recognizers_text import Culture, Recognizer
-from recognizers_text.model import Model, ModelResult
 from recognizers_number.culture import CultureInfo
+from recognizers_text.model import Model, ModelResult
 from .models import CurrencyModel, TemperatureModel, DimensionModel, AgeModel, ExtractorParserModel
 from .extractors import NumberWithUnitExtractor, BaseMergedUnitExtractor
 from .parsers import NumberWithUnitParser, BaseMergedUnitParser
@@ -49,6 +49,12 @@ from .portuguese.parsers import (PortugueseCurrencyParserConfiguration,
                                  PortugueseTemperatureParserConfiguration,
                                  PortugueseDimensionParserConfiguration,
                                  PortugueseAgeParserConfiguration)
+from .german.extractors import GermanCurrencyExtractorConfiguration
+from .german.parsers import GermanCurrencyParserConfiguration
+from .italian.extractors import ItalianCurrencyExtractorConfiguration
+from .italian.parsers import ItalianCurrencyParserConfiguration
+from .japanese.extractors import JapaneseCurrencyExtractorConfiguration
+from .japanese.parsers import JapaneseCurrencyParserConfiguration
 
 
 class NumberWithUnitOptions(IntFlag):
@@ -196,23 +202,47 @@ class NumberWithUnitRecognizer(Recognizer[NumberWithUnitOptions]):
         # region Spanish Mexican
         self.register_model('CurrencyModel', Culture.SpanishMexican, lambda options: CurrencyModel(
             [ExtractorParserModel(BaseMergedUnitExtractor(SpanishCurrencyExtractorConfiguration(
-            )), BaseMergedUnitParser(
-                SpanishCurrencyParserConfiguration(culture_info=CultureInfo(Culture.SpanishMexican))))]
+            )), BaseMergedUnitParser(SpanishCurrencyParserConfiguration(culture_info=CultureInfo(Culture.SpanishMexican))))]
         ))
         self.register_model('TemperatureModel', Culture.SpanishMexican, lambda options: TemperatureModel(
             [ExtractorParserModel(NumberWithUnitExtractor(SpanishTemperatureExtractorConfiguration(
-            )), NumberWithUnitParser(
-                SpanishTemperatureParserConfiguration(culture_info=CultureInfo(Culture.SpanishMexican))))]
+            )), NumberWithUnitParser(SpanishTemperatureParserConfiguration(culture_info=CultureInfo(Culture.SpanishMexican))))]
         ))
         self.register_model('DimensionModel', Culture.SpanishMexican, lambda options: DimensionModel(
             [ExtractorParserModel(NumberWithUnitExtractor(SpanishDimensionExtractorConfiguration(
-            )), NumberWithUnitParser(
-                SpanishDimensionParserConfiguration(culture_info=CultureInfo(Culture.SpanishMexican))))]
+            )), NumberWithUnitParser(SpanishDimensionParserConfiguration(culture_info=CultureInfo(Culture.SpanishMexican))))]
         ))
         self.register_model('AgeModel', Culture.SpanishMexican, lambda options: AgeModel(
             [ExtractorParserModel(NumberWithUnitExtractor(SpanishAgeExtractorConfiguration(
             )), NumberWithUnitParser(SpanishAgeParserConfiguration(culture_info=CultureInfo(Culture.SpanishMexican))))]
         ))
+        # endregion
+
+        # region German
+        self.register_model('CurrencyModel', Culture.German, lambda options: CurrencyModel([
+            ExtractorParserModel(
+                BaseMergedUnitExtractor(
+                    GermanCurrencyExtractorConfiguration()),
+                BaseMergedUnitParser(GermanCurrencyParserConfiguration()))
+        ]))
+        # endregion
+
+        # region Italian
+        self.register_model('CurrencyModel', Culture.Italian, lambda options: CurrencyModel([
+            ExtractorParserModel(
+                BaseMergedUnitExtractor(
+                    ItalianCurrencyExtractorConfiguration()),
+                BaseMergedUnitParser(ItalianCurrencyParserConfiguration()))
+        ]))
+        # endregion
+
+        # region Japanese
+        self.register_model('CurrencyModel', Culture.Japanese, lambda options: CurrencyModel([
+            ExtractorParserModel(
+                BaseMergedUnitExtractor(
+                    JapaneseCurrencyExtractorConfiguration()),
+                BaseMergedUnitParser(JapaneseCurrencyParserConfiguration()))
+        ]))
         # endregion
 
     def get_age_model(self, culture: str = None, fallback_to_default_culture: bool = True) -> Model:

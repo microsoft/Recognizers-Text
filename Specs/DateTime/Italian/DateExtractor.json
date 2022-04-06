@@ -1,7 +1,7 @@
 [
   {
     "Input": "Tornerò il 15",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "15",
@@ -13,7 +13,7 @@
   },
   {
     "Input": "Tornerò il 22 Aprile",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il 22 Aprile",
@@ -25,7 +25,7 @@
   },
   {
     "Input": "Tornerò il 1 Gen",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il 1 Gen",
@@ -37,7 +37,7 @@
   },
   {
     "Input": "Tornerò il 2 Ottobre",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il 2 Ottobre",
@@ -49,7 +49,7 @@
   },
   {
     "Input": "Tornerò il 12 Gennaio 2016",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il 12 Gennaio 2016",
@@ -61,7 +61,7 @@
   },
   {
     "Input": "Tornerò il 12 Gennaio del 2016",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il 12 Gennaio del 2016",
@@ -73,7 +73,7 @@
   },
   {
     "Input": "Tornerò Lunedì 12 Gennaio 2016",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Lunedì 12 Gennaio 2016",
@@ -85,7 +85,7 @@
   },
   {
     "Input": "Tornerò il 02/22/2016",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il 02/22/2016",
@@ -97,7 +97,7 @@
   },
   {
     "Input": "Tornerò il 21/04/2016",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il 21/04/2016",
@@ -109,7 +109,7 @@
   },
   {
     "Input": "Tornerò il 21/04/16",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il 21/04/16",
@@ -121,7 +121,7 @@
   },
   {
     "Input": "Tornerò il 9-18-15",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il 9-18-15",
@@ -133,7 +133,7 @@
   },
   {
     "Input": "Tornerò il 4.22",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "4.22",
@@ -145,7 +145,7 @@
   },
   {
     "Input": "Tornerò il 4-22",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "4-22",
@@ -157,7 +157,7 @@
   },
   {
     "Input": "Tornerò il    4/22",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "4/22",
@@ -169,7 +169,7 @@
   },
   {
     "Input": "Tornerò il 22/04",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il 22/04",
@@ -181,7 +181,7 @@
   },
   {
     "Input": "Tornerò il 2015/08/12",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2015/08/12",
@@ -193,7 +193,7 @@
   },
   {
     "Input": "Tornerò il 11/12,2016",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il 11/12,2016",
@@ -205,7 +205,7 @@
   },
   {
     "Input": "Tornerò il 11/12,16",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il 11/12,16",
@@ -217,7 +217,7 @@
   },
   {
     "Input": "Tornerò il 1-Gen",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il 1-Gen",
@@ -229,7 +229,7 @@
   },
   {
     "Input": "Tornerò il 28-Nov",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il 28-Nov",
@@ -241,7 +241,7 @@
   },
   {
     "Input": "Tornerò Mer, 22 Gen",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Mer, 22 Gen",
@@ -253,7 +253,7 @@
   },
   {
     "Input": "Tornerò il primo venerdì di luglio",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il primo venerdì di luglio",
@@ -265,7 +265,7 @@
   },
   {
     "Input": "Tornerò il primo venerdì di questo mese",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il primo venerdì di questo mese",
@@ -277,7 +277,7 @@
   },
   {
     "Input": "Tornerò tra due settimane da adesso",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "due settimane da adesso",
@@ -289,7 +289,7 @@
   },
   {
     "Input": "Tornerò la prossima settimana il venerdì",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "prossima settimana il venerdì",
@@ -301,7 +301,7 @@
   },
   {
     "Input": "Tornerò il venerdì della prossima settimana",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "venerdì della prossima settimana",
@@ -313,7 +313,7 @@
   },
   {
     "Input": "lo scorso Lunedì",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "scorso Lunedì",
@@ -325,7 +325,7 @@
   },
   {
     "Input": "Tornerò Mar.",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Mar",
@@ -337,7 +337,7 @@
   },
   {
     "Input": "Tornerò Mar. buone notizie.",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Mar",
@@ -349,7 +349,7 @@
   },
   {
     "Input": "Tornerò Mar",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Mar",
@@ -361,7 +361,7 @@
   },
   {
     "Input": "Tornerò Venerdì",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "venerdì",
@@ -373,7 +373,7 @@
   },
   {
     "Input": "Tornerò oggi",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "oggi",
@@ -385,7 +385,7 @@
   },
   {
     "Input": "Tornerò domani",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "domani",
@@ -397,7 +397,7 @@
   },
   {
     "Input": "Sono tornato ieri",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "ieri",
@@ -409,7 +409,7 @@
   },
   {
     "Input": "Sono tornato l'altroieri",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "l'altroieri",
@@ -421,7 +421,7 @@
   },
   {
     "Input": "Tornerò dopodomani",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "dopodomani",
@@ -433,7 +433,7 @@
   },
   {
     "Input": "Tornerò il giorno dopo",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il giorno dopo",
@@ -445,7 +445,7 @@
   },
   {
     "Input": "Tornerò questo Venerdì",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "questo Venerdì",
@@ -457,7 +457,7 @@
   },
   {
     "Input": "Tornerò Domenica prossima",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Domenica prossima",
@@ -469,7 +469,7 @@
   },
   {
     "Input": "Sono tornato Domenica scorsa",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Domenica scorsa",
@@ -481,7 +481,7 @@
   },
   {
     "Input": "Tornerò l'ultimo giorno",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "l'ultimo giorno",
@@ -493,7 +493,7 @@
   },
   {
     "Input": "Tornerò in giornata",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "in giornata",
@@ -505,7 +505,7 @@
   },
   {
     "Input": "Tornerò questa settimana, di Venerdì",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "questa settimana, di Venerdì",
@@ -517,7 +517,7 @@
   },
   {
     "Input": "Tornerò la prossima settimana, di Domenica",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "prossima settimana, di Domenica",
@@ -529,7 +529,7 @@
   },
   {
     "Input": "Sono tornato la scorsa settimana, di Domenica",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "scorsa settimana, di Domenica",
@@ -541,7 +541,7 @@
   },
   {
     "Input": "Tornerò il 15 Giugno 2016",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il 15 Giugno 2016",
@@ -553,7 +553,7 @@
   },
   {
     "Input": "baseball l'undici maggio",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "undici maggio",
@@ -565,7 +565,7 @@
   },
   {
     "Input": "Tornerò il quattro maggio",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "quattro maggio",
@@ -577,7 +577,7 @@
   },
   {
     "Input": "Tornerò il 4 marzo",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il 4 marzo",
@@ -589,7 +589,7 @@
   },
   {
     "Input": "Tornerò il primo Gen",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "primo Gen",
@@ -601,7 +601,7 @@
   },
   {
     "Input": "Tornerò il ventuno Maggio",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "ventuno Maggio",
@@ -613,7 +613,7 @@
   },
   {
     "Input": "Tornerò il due Ago",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "due Ago",
@@ -625,7 +625,7 @@
   },
   {
     "Input": "Tornerò il ventidue Giugno",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "ventidue Giugno",
@@ -649,7 +649,7 @@
   },
   {
     "Input": "Tornerò due giorni dopo",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "due giorni dopo",
@@ -673,7 +673,7 @@
   },
   {
     "Input": "Sono tornato per il 27",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "27",
@@ -685,7 +685,7 @@
   },
   {
     "Input": "Sono tornato per il 27.",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "27",
@@ -697,7 +697,7 @@
   },
   {
     "Input": "Sono tornato per il 27!",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "27",
@@ -709,7 +709,7 @@
   },
   {
     "Input": "Sono tornato per il 27 .",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "27",
@@ -721,7 +721,7 @@
   },
   {
     "Input": "Sono tornato per il 21",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "21",
@@ -733,7 +733,7 @@
   },
   {
     "Input": "Sono tornato per il 22",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "22",
@@ -745,7 +745,7 @@
   },
   {
     "Input": "Sono tornato per il due",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "due",
@@ -757,7 +757,7 @@
   },
   {
     "Input": "Sono tornato per il ventidue",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "ventidue",
@@ -769,7 +769,7 @@
   },
   {
     "Input": "Sono tornato per il trentuno",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "trentuno",
@@ -781,7 +781,7 @@
   },
   {
     "Input": "Sono tornato il 27",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "27",
@@ -793,7 +793,7 @@
   },
   {
     "Input": "Sono tornato il 21",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "21",
@@ -805,7 +805,7 @@
   },
   {
     "Input": "Sono tornato il 22",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "22",
@@ -817,7 +817,7 @@
   },
   {
     "Input": "Sono tornato il due!",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "due",
@@ -829,7 +829,7 @@
   },
   {
     "Input": "Sono tornato il ventidue?",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "ventidue",
@@ -841,27 +841,27 @@
   },
   {
     "Input": "il primo premio",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": []
   },
   {
     "Input": "il secondo premio",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": []
   },
   {
     "Input": "Andrò al 27° piano",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": []
   },
   {
     "Input": "L'evento commemorativo per il 25° anniversario delle relazioni diplomatiche tra Singapore e China",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": []
   },
   {
     "Input": "Prendi i biglietti per il 17° Door Haunted Experience",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": []
   },
   {
@@ -869,7 +869,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-01T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "sabato due",
@@ -884,7 +884,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-01T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Mercoledì 27",
@@ -899,7 +899,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-01T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Giovedì 21",
@@ -914,7 +914,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-01T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Venerdì 22",
@@ -929,7 +929,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-01T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Sabato 23",
@@ -944,7 +944,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-01T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Venerdì 15",
@@ -959,7 +959,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-01T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Giovedì ventuno",
@@ -974,7 +974,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-01T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Venerdì ventidue",
@@ -989,7 +989,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-01T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Venerdì quindici",
@@ -1004,7 +1004,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-01T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Giovedì sette",
@@ -1016,7 +1016,7 @@
   },
   {
     "Input": "Tornerò la seconda Domenica",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "seconda Domenica",
@@ -1028,7 +1028,7 @@
   },
   {
     "Input": "Tornerò la prima Domenica",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "prima Domenica",
@@ -1040,7 +1040,7 @@
   },
   {
     "Input": "Tornerò il terzo Martedì",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "terzo Martedì",
@@ -1052,7 +1052,7 @@
   },
   {
     "Input": "Tornerò la quinta Domenica",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "quinta Domenica",
@@ -1064,7 +1064,7 @@
   },
   {
     "Input": "Tornerò la sesta Domenica",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Domenica",
@@ -1076,7 +1076,7 @@
   },
   {
     "Input": "Tornerò il decimo Lunedì",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Lunedì",
@@ -1112,7 +1112,7 @@
   },
   {
     "Input": "Cortana potresti provare ad organizzare una chiamata Skype o Venerdì di questa settimana o Martedì della prossima settimana",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Venerdì di questa settimana",
@@ -1130,7 +1130,7 @@
   },
   {
     "Input": "Cortana potresti provare ad organizzare una chiamata Skype o Venerdì di questa settimana o questa settimana di Domenica",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Venerdì di questa settimana",
@@ -1148,7 +1148,7 @@
   },
   {
     "Input": "16. Nov. 2016",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "16. Nov. 2016",
@@ -1184,7 +1184,7 @@
   },
   {
     "Input": "Partirò 2 anni e 21 giorni dopo",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2 anni e 21 giorni dopo",
@@ -1220,7 +1220,7 @@
   },
   {
     "Input": "Sono partito il 5 Dicembre 1391",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il 5 Dicembre 1391",
@@ -1281,7 +1281,7 @@
   },
   {
     "Input": "il dieci di Settembre, duemila",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "dieci di Settembre, duemila",

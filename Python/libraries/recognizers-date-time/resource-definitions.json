@@ -73,6 +73,22 @@
             "footer": [ "# pylint: enable=line-too-long" ]
         },
         {
+            "input": [
+                "Italian", "Italian-DateTime"
+            ],
+            "output": "italian_date_time",
+            "header": [
+                "from .base_date_time import BaseDateTime",
+                "# pylint: disable=line-too-long",
+                "",
+                "",
+                "class ItalianDateTime:"
+            ],
+            "footer": [
+                "# pylint: enable=line-too-long"
+            ]
+        },
+        {
             "input": [ "English", "English-TimeZone" ],
             "output": "english_time_zone",
             "header": [

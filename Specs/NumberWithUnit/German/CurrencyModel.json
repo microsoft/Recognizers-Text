@@ -2,7 +2,6 @@
   {
     "Input": "3 $",
     "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "3 $",
@@ -17,7 +16,6 @@
   {
     "Input": "3 €",
     "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "3 €",
@@ -32,7 +30,6 @@
   {
     "Input": "3 USD",
     "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "3 usd",
@@ -47,7 +44,6 @@
   {
     "Input": "17 dollar",
     "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "17 dollar",
@@ -62,7 +58,6 @@
   {
     "Input": "sieben Euro",
     "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "sieben euro",
@@ -77,7 +72,6 @@
   {
     "Input": "30 kambodschanische Riel",
     "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "30 kambodschanische riel",
@@ -92,7 +86,6 @@
   {
     "Input": "75 Millionen Dollar",
     "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "75 millionen dollar",
@@ -106,7 +99,6 @@
   },
   {
     "Input": "Das finnische Konglomerat Nokia oy ab sagte, es habe eine Einigung erzielt, dass niederländische Unternehmen Nkf Kabel b.v. für 420000000 finnische Mark zu kaufen.",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -121,7 +113,6 @@
   },
   {
     "Input": "National zahlte Siegel und Shuster 94.000 $, damit alle klagen fallen gelassen werden.",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -136,7 +127,6 @@
   },
   {
     "Input": "National zahlte Siegel und Shuster 94.000 $, um alle klagen fallen zu lassen.",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -151,7 +141,6 @@
   },
   {
     "Input": "Das dürften ca. 99$ pro Kopf sein.",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -166,7 +155,6 @@
   },
   {
     "Input": "94£",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -181,7 +169,6 @@
   },
   {
     "Input": "General Dynamics Services Co., eine Abteilung der General Dynamics Corp., hat einen 48 Millionen Dollar Vertrag, zur Errichtung von Wartungseinrichtungen für Kettenfahrzeuge der Armee, gewonnen.",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -196,7 +183,6 @@
   },
   {
     "Input": "Der Preis für einen zweiten Simulator liegt bei 16,4 Millionen kanadischen Dollar.",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -211,7 +197,6 @@
   },
   {
     "Input": "bard / ems hatte 1988 Verkäufe mit einem Wert von rund 14 Millionen Dollar, sagte Birchter.",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -226,7 +211,6 @@
   },
   {
     "Input": "Preise starten bei 12.345$.",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -241,7 +225,6 @@
   },
   {
     "Input": "Der Haushalt beläuft sich auf 12 500 EUR.",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -256,7 +239,6 @@
   },
   {
     "Input": "Der Wert dieses Unternehmens liegt bei 2,5 Mio USD",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -271,7 +253,6 @@
   },
   {
     "Input": "Der Umsatz sank in der zweiten Jahreshälfte um 27% auf 300 000 GBP",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -286,7 +267,6 @@
   },
   {
     "Input": "Hast du mal einen Euro für mich?",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -301,7 +281,6 @@
   },
   {
     "Input": "Hast du zwei Euro für mich?",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -376,7 +355,6 @@
   },
   {
     "Input": "try the Dollar haben sie gesagt",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -391,7 +369,6 @@
   },
   {
     "Input": "für drei Dollar können sie jetzt das SOS Signal senden",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -406,7 +383,6 @@
   },
   {
     "Input": "100 indische Rupien",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -421,7 +397,6 @@
   },
   {
     "Input": "1000 Rupien",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
     "Results": [
       {

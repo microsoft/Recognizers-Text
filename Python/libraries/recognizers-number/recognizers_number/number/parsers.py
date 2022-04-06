@@ -5,10 +5,11 @@ from abc import ABC, abstractmethod
 from typing import Dict, Pattern, Optional, List
 from decimal import Decimal, getcontext
 import regex
+from recognizers_text.culture import Culture
 from recognizers_text.utilities import RegExpUtility
 from recognizers_text.extractor import ExtractResult
-from recognizers_text.parser import Parser, ParseResult
 from recognizers_text.meta_data import MetaData
+from recognizers_text.parser import Parser, ParseResult
 from recognizers_number.culture import CultureInfo
 from recognizers_number.number.constants import Constants
 from recognizers_number.number.utilities import precision
@@ -125,16 +126,14 @@ class BaseNumberParser(Parser):
     def __init__(self, config: NumberParserConfiguration):
         self.config: NumberParserConfiguration = config
         self.supported_types: List[str] = list()
-
         single_int_frac = f'{self.config.word_separator_token}| -|{self._get_key_regex(self.config.cardinal_number_map.keys())}|{self._get_key_regex(self.config.ordinal_number_map.keys())}'
-        self.text_number_regex: Pattern = RegExpUtility.get_safe_reg_exp(
-            fr'(?=\b)({single_int_frac})(?=\b)', flags=regex.I | regex.S)
+        self.text_number_regex: Pattern = self._get_text_number_regex(single_int_frac)
         self.arabic_number_regex: Pattern = RegExpUtility.get_safe_reg_exp(
             r'\d+', flags=regex.I | regex.S)
         self.round_number_set: List[str] = list(
             self.config.round_number_map.keys())
         self.is_non_standard_separator_variant = self.config.culture_info.code in \
-                                                 self.config.non_standard_separator_variants
+            self.config.non_standard_separator_variants
 
     def parse(self, source: ExtractResult) -> Optional[ParseResult]:
         # Check if the parser is configured to support specific types
@@ -157,7 +156,46 @@ class BaseNumberParser(Parser):
             is_negative = True
             source.text = source.text[len(match_negative[1]):]
 
-        if 'Num' in extra:
+        if isinstance(source.data, List):
+            ers = source.data
+            inner_prs = [self.parse(rs) for rs in ers]
+            merged_prs = []
+
+            val = 0
+            count = 0
+
+            for idx in range(len(inner_prs)):
+                val += inner_prs[idx].value
+                if (idx + 1 >= len(inner_prs)) or not self.__is_mergeable(float(str(inner_prs[idx].value)),
+                                                                          float(str(inner_prs[idx+1].value))):
+                    start = ers[idx - count].start
+                    length = ers[idx].start + ers[idx].length - start
+
+                    parsed_result = ParseResult()
+                    parsed_result.start = start
+                    parsed_result.length = length
+                    parsed_result.value = val
+                    parsed_result.text = source.text[start - source.start:length]
+                    parsed_result.type = source.type
+                    parsed_result.data = None
+
+                    merged_prs.append(parsed_result)
+                    final_val = val
+                    val = 0
+                    count = 0
+
+                else:
+                    count += 1
+
+            ret = ParseResult()
+            ret.start = source.start
+            ret.length = source.length
+            ret.text = source.text
+            ret.type = source.type
+            ret.value = val + final_val
+            ret.data = merged_prs
+
+        elif 'Num' in extra:
             ret = self._digit_number_parse(source)
         # Frac is a special number, parse via another method
         elif regex.search(fr'Frac{self.config.lang_marker}', extra):
@@ -167,17 +205,25 @@ class BaseNumberParser(Parser):
         elif 'Pow' in extra:
             ret = self._power_number_parse(source)
 
-        if ret and ret.value is not None:
+        if isinstance(ret.data, List):
+            for parsed_result in ret.data:
+                ret.resolution_str = self.__get_resolution_string(parsed_result.value)
+
+        elif ret and ret.value is not None:
             if is_negative:
                 # Recover to the original extracted Text
                 ret.text = match_negative[1] + source.text
                 ret.value = ret.value * -1
-            # Use culture_info to format values
-            ret.resolution_str = self.config.culture_info.format(
-                ret.value) if self.config.culture_info is not None else repr(ret.value)
+
+            ret.resolution_str = self.__get_resolution_string(ret.value)
+            # TODO - Determine type???
             ret.text = ret.text.lower()
 
         return ret
+
+    def __get_resolution_string(self, value):
+        return self.config.culture_info.format(
+            value) if self.config.culture_info is not None else repr(value)
 
     def _get_key_regex(self, keys: List[str]) -> str:
         return str.join('|', sorted(keys, key=len, reverse=True))
@@ -218,8 +264,9 @@ class BaseNumberParser(Parser):
                     handle = front + handle[tmp_index + len(match):]
                     tmp_index = handle.find(match.group(), start_index)
 
-        # Scale used in the calculate of double
-        result.value = self._get_digital_value(handle, power)
+        # Scale used in the calculate of double.
+        value = self._get_digital_value(handle, power)
+        result.value = value
 
         return result
 
@@ -434,6 +481,10 @@ class BaseNumberParser(Parser):
         matches = list(regex.finditer(self.text_number_regex, source))
         return list(filter(None, map(lambda m: m.group().lower(), matches)))
 
+    def __is_mergeable(self, former: float, later: float) -> bool:
+        return (abs(former % 1) < sys.float_info.epsilon) and (abs(later % 1) < sys.float_info.epsilon) and \
+               former > later > 0 and len(str(int(former))) > len(str(int(later)))
+
     # Test if big and combine with small.
     # e.g. 'hundred' can combine with 'thirty' but 'twenty' can't combine with 'thirty'.
     def __is_composable(self, big: int, small: int) -> bool:
@@ -548,13 +599,18 @@ class BaseNumberParser(Parser):
         # Special cases for multi-language countries where decimal separators can be used interchangeably. Mostly informally.
         # Ex: South Africa, Namibia; Puerto Rico in ES; or in Canada for EN and FR.
         # "me pidio $5.00 prestados" and "me pidio $5,00 prestados" -> currency $5
+        # culture_regex: Pattern = RegExpUtility.get_safe_reg_exp(
+        #     r'^(en|es|fr)(-)?\b', flags=regex.I | regex.S)
 
         if ch == non_decimal_separator:
             result = True
 
+        # not (distance_end <= decimal_length and culture_regex.match(self.config.culture_info.code))):
+
         if self.config.is_multi_decimal_separator_culture and has_single_separator:
 
             if distance_end != decimal_length or (prev_char == '0' and distance_start == 1) or distance_start > 3:
+
                 result = False
 
         return result
@@ -593,8 +649,7 @@ class BaseNumberParser(Parser):
                     if first_non_decimal_separator == sys.maxsize:
                         first_non_decimal_separator = i
 
-            if (((last_decimal_separator < 0 <= last_non_decimal_separator) or (
-                    last_non_decimal_separator < 0 <= last_decimal_separator))
+            if (((last_decimal_separator < 0 <= last_non_decimal_separator) or (last_non_decimal_separator < 0 <= last_decimal_separator))
                     and first_non_decimal_separator == last_non_decimal_separator):
 
                 has_single_separator = True
@@ -649,6 +704,16 @@ class BaseNumberParser(Parser):
         cal_result = getcontext().multiply(cal_result, Decimal(power))
 
         return cal_result if not negative else cal_result * -1
+
+    def _get_text_number_regex(self, single_int_frac: str) -> Pattern:
+        culture_code = self.config.culture_info.code
+        source = fr'(?=\b)({single_int_frac})(?=\b)'
+
+        if Culture.Italian == culture_code:
+            source = fr'((?=\b)({single_int_frac})(?=\b))|({single_int_frac})'
+
+        pattern = RegExpUtility.get_safe_reg_exp(source, flags=regex.I | regex.S)
+        return pattern
 
 
 class BasePercentageParser(BaseNumberParser):

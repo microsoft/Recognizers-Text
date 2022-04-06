@@ -1535,7 +1535,7 @@
     "Context": {
       "ReferenceDateTime": "2019-09-03T00:00:00"
     },
-    "NotSupported": "python, javascript, java",
+    "NotSupported": "python, javascript",
     "Results": [
       {
         "Text": "nächsten donnerstag bis samstag",
@@ -2444,8 +2444,7 @@
   },
   {
     "Input": "was läuft am morgen",
-    "Comment": "Java does not correctly handle lookbehinds.",
-    "NotSupported": "java",
+    "NotSupported": "python",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
@@ -2470,6 +2469,7 @@
   },
   {
     "Input": "gehe zur Vormittagszeit",
+    "NotSupported": "python",
     "Context": {
       "ReferenceDateTime": "2019-07-17T00:00:00"
     },
@@ -2495,6 +2495,7 @@
   },
   {
     "Input": "gehe zur Mittagszeit",
+    "NotSupported": "python",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -2518,10 +2519,10 @@
   },
   {
     "Input": "gehe auf Spätabends",
+    "NotSupported": "python",
     "Context": {
       "ReferenceDateTime": "2019-08-01T00:00:00"
     },
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "spätabends",
@@ -2544,10 +2545,10 @@
   },
   {
     "Input": "gehe auf Spätnachmittags",
+    "NotSupported": "python",
     "Context": {
       "ReferenceDateTime": "2019-08-01T00:00:00"
     },
-    "NotSupported": "java",
     "Results": [
       {
         "Text": "spätnachmittags",
@@ -2570,6 +2571,7 @@
   },
   {
     "Input": "gehe nach Mitternacht",
+    "NotSupported": "python",
     "Context": {
       "ReferenceDateTime": "2018-09-07T12:00:00"
     },
@@ -2595,6 +2597,7 @@
   },
   {
     "Input": "gehe vor Mitternacht",
+    "NotSupported": "python",
     "Context": {
       "ReferenceDateTime": "2018-09-07T12:00:00"
     },
@@ -2620,6 +2623,7 @@
   },
   {
     "Input": "gehe um Mitternacht",
+    "NotSupported": "python",
     "Context": {
       "ReferenceDateTime": "2018-09-07T12:00:00"
     },
@@ -2691,6 +2695,7 @@
   },
   {
     "Input": "Erinnere mich um 12 Uhr nachts aufzustehen",
+    "NotSupported": "python",
     "Context": {
       "ReferenceDateTime": "2019-08-05T00:00:00"
     },
@@ -2714,6 +2719,7 @@
   },
   {
     "Input": "Erinnere mich um 12 Uhr abends aufzustehen",
+    "NotSupported": "python",
     "Context": {
       "ReferenceDateTime": "2019-08-05T00:00:00"
     },
@@ -2737,6 +2743,7 @@
   },
   {
     "Input": "Erinnere mich um 12 nachts aufzustehen",
+    "NotSupported": "python",
     "Context": {
       "ReferenceDateTime": "2019-08-05T00:00:00"
     },
@@ -2760,6 +2767,7 @@
   },
   {
     "Input": "Erinnere mich um 12 abends aufzustehen",
+    "NotSupported": "python",
     "Context": {
       "ReferenceDateTime": "2019-08-05T00:00:00"
     },
@@ -2846,6 +2854,7 @@
   },
   {
     "Input": "Was läuft am ostermontag um 10:30 uhr?",
+    "NotSupported": "python",
     "Context": {
       "ReferenceDateTime": "2019-08-05T00:00:00"
     },
@@ -2894,6 +2903,7 @@
   },
   {
     "Input": "welche filme laufen an heiligabend um 18 uhr?",
+    "NotSupported": "python",
     "Context": {
       "ReferenceDateTime": "2019-08-05T00:00:00"
     },
@@ -4912,6 +4922,7 @@
   },
   {
     "Input": "nächstem Jahr.",
+    "NotSupported": "python",
     "Context": {
       "ReferenceDateTime": "2021-11-01T00:00:00"
     },
@@ -4936,6 +4947,7 @@
   },
   {
     "Input": "letztem Jahr.",
+    "NotSupported": "python",
     "Context": {
       "ReferenceDateTime": "2021-11-01T00:00:00"
     },

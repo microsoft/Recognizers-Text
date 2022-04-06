@@ -1344,12 +1344,13 @@ class BaseDatePeriodParser(DateTimeParser):
             return result
 
         month_str = RegExpUtility.get_group(match, Constants.MONTH_GROUP_NAME)
-        year_str = RegExpUtility.get_group(match, Constants.YEAR_GROUP_NAME)
         order_str = RegExpUtility.get_group(match, Constants.ORDER)
         month = self.config.month_of_year.get(month_str)
 
         try:
-            year = int(year_str)
+            year = self.config.date_extractor.get_year_from_text(match)
+            if year == Constants.INVALID_YEAR:
+                raise ValueError()
         except ValueError:
             swift = self.config.get_swift_year(order_str)
             if swift < 1:

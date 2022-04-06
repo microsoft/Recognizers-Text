@@ -95,6 +95,18 @@
                 "class FrenchNumeric:"
             ],
             "footer": [ "# pylint: enable=line-too-long" ]
+        },
+        {
+            "input": [ "Italian", "Italian-Numbers" ],
+            "output": "italian_numeric",
+            "header": [
+                "from .base_numbers import BaseNumbers",
+                "# pylint: disable=line-too-long",
+                "",
+                "",
+                "class ItalianNumeric:"
+            ],
+            "footer": [ "# pylint: enable=line-too-long" ]
         }
     ]
 }
