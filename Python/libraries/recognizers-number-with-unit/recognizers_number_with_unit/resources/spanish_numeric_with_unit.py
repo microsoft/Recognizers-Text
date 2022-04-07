@@ -540,7 +540,8 @@ class SpanishNumericWithUnit:
                                         ("Qəpik", "QƏPIK"),
                                         ("Fils", "FILS"),
                                         ("Poisha", "POISHA"),
-                                        ("Kopiyka", "KOPIYKA"),
+                                        ("Kapyeyka", "KAPYEYKA"),
+                                        ("Kopyeyka", "KOPYEYKA"),
                                         ("Centime", "CENTIME"),
                                         ("Chetrum", "CHETRUM"),
                                         ("Paisa", "PAISA"),
@@ -596,6 +597,7 @@ class SpanishNumericWithUnit:
                                         ("Seniti", "SENITI"),
                                         ("Millime", "MILLIME"),
                                         ("Tennesi", "TENNESI"),
+                                        ("Kopiyka", "KOPIYKA"),
                                         ("Tiyin", "TIYIN"),
                                         ("Hào", "HAO"),
                                         ("Ngwee", "NGWEE"),
@@ -691,8 +693,8 @@ class SpanishNumericWithUnit:
     AmbiguousSpeedUnitList = [r'nudo', r'nudos']
     TemperatureSuffixList = dict([("Kelvin", "k|K|kelvin"),
                                   ("Rankine", "r|rankine"),
-                                  ("Grado Celsius", "°c|grados c|grado celsius|grados celsius|celsius|grado centígrado|grados centígrados|centígrado|centígrados"),
-                                  ("Grado Fahrenheit", "°f|grados f|grado fahrenheit|grados fahrenheit|fahrenheit"),
+                                  ("Grado Celsius", "°c|° c|ºc|º c|grado c|grados c|grado celsius|grados celsius|celsius|grado centígrado|grados centígrados|centígrado|centígrados"),
+                                  ("Grado Fahrenheit", "°f|° f|ºf|º f|grado f|grados f|grado fahrenheit|grados fahrenheit|fahrenheit"),
                                   ("Grado Réaumur", "°r|°re|grados r|grado réaumur|grados réaumur|réaumur"),
                                   ("Grado Delisle", "°d|grados d|grado delisle|grados delisle|delisle"),
                                   ("Grado", "°|grados|grado")])
@@ -729,5 +731,11 @@ class SpanishNumericWithUnit:
                              ("Onza", "oz|onza|onzas"),
                              ("Grano", "grano|granos"),
                              ("Quilate", "ct|quilate|quilates")])
+    AngleSuffixList = dict([("Degree", "grado|grados|°"),
+                            ("Radian", "radián|radian|radianes|rad"),
+                            ("Turn", "vuelta|vueltas")])
+    AmbiguousAngleUnitList = [r'vuelta', r'vueltas']
     AmbiguityFiltersDict = dict([("null", "null")])
+    TemperatureAmbiguityFiltersDict = dict([("\\b(grados?|°)$", "\\b((grados?|°)\\s*(angolo|rotaci[oó]n)|(gira(r|do|torio)?|angolo|rotaci[oó]n)(\\s+(\\p{L}+|\\d+)){0,4}\\s*(grados?\\b|°))")])
+    DimensionAmbiguityFiltersDict = dict([("\\b(grados?|°)$", "\\b((grados?|°)\\s*(c(elsius|entígrado)?|f(ah?renheit)?)|(temperatura)(\\s+(\\p{L}+|\\d+)){0,4}\\s*(grados?\\b|°))")])
 # pylint: enable=line-too-long

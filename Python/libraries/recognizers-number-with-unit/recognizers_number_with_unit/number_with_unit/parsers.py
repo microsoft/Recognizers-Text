@@ -13,7 +13,7 @@ from recognizers_number.culture import CultureInfo
 from recognizers_number_with_unit.resources.base_currency import BaseCurrency
 
 UnitValue = namedtuple('UnitValue', ['number', 'unit'])
-CurrencyUnitValue = namedtuple('CurrencyUnitValue', ['number', 'unit', 'iso_currency'])
+CurrencyUnitValue = namedtuple('UnitValue', ['number', 'unit', 'iso_currency'])
 
 
 class NumberWithUnitParserConfiguration(ABC):
@@ -284,9 +284,8 @@ class BaseCurrencyParser(Parser):
 
     def __get_number_value(self, number_value):
         if number_value:
-            # return number string in format defined for the culture.
-            return self.config.culture_info.format(
-                number_value) if self.config.culture_info is not None else repr(number_value)
+            return self.config.culture_info.format(number_value) if self.config.culture_info is not None \
+                else repr(number_value)
         else:
             return None
 

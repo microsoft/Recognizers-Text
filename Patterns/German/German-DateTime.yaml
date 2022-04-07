@@ -102,7 +102,7 @@ MonthWithYear: !nestedRegex
   references: [ YearRegex ]
 OneWordPeriodRegex: !nestedRegex
   def: \b((((im\s+)?monat\s+)?({RelativeRegex}\s*(jahr\s*(im\s*)?)?)?(?<month>apr(il|\.)|aug(ust|\.)|dez(ember|\.)|feb(ruar|ber|\.)|j[äa]n(uar|ner|\.)|jul(e?i|l\.)|jun([io]|\.)|märz|mai|nov(ember|\.)|okt(ober|\.)|sept?(ember|\.)))|(?<business>unter\s+der\s+woche)|({RelativeRegex}\s+)?((?<business>werktags|arbeitswoche)|woche(nende)?|monat(s)?|jahr|jahres)(?!(\s+\d+(?!({BaseDateTime.BaseAmDescRegex}|{BaseDateTime.BasePmDescRegex}))|\s+bis\s+heute)))\b
-  references: [ RelativeRegex, AfterNextSuffixRegex ]
+  references: [ RelativeRegex, BaseDateTime.BaseAmDescRegex, BaseDateTime.BasePmDescRegex ]
 MonthNumWithYear: !nestedRegex
   def: ({YearRegex}(\s*)[/\-\.](\s*){MonthNumRegex})|({MonthNumRegex}(\s*)[/\-\.](\s*){YearRegex})
   references: [ YearRegex, MonthNumRegex ]

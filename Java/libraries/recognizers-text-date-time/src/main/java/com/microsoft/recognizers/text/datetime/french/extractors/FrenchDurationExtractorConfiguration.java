@@ -125,6 +125,10 @@ public class FrenchDurationExtractorConfiguration extends BaseOptionsConfigurati
         return MoreThanRegex;
     }
 
+    @Override public Pattern getSpecialNumberUnitRegex() {
+        return null;
+    }
+
     @Override
     public IExtractor getCardinalExtractor() {
         return cardinalExtractor;

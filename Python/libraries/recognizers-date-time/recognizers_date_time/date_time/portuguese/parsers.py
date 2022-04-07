@@ -54,7 +54,7 @@ class PortugueseTimeParser(BaseTimeParser):
 
         # handle Date followed by morning, afternoon
         # Add handling code to handle morning, afternoon followed by Date
-        # Add handling code to handle early/late morning, afternoon
+        # Add handling code to handle early/late morning, afternoon.
         # TODO: use regex from config: match = this.config.TimeOfDayRegex.Match(trimedText.Substring(startIndex));
         matches = list(RegExpUtility.get_safe_reg_exp(
             PortugueseDateTime.TimeOfDayRegex).finditer(trimmed_text[start_index:]))

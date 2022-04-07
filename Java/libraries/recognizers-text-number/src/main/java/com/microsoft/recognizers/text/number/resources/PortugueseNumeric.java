@@ -122,6 +122,8 @@ public class PortugueseNumeric {
     public static final String OverThousandOrdinalRegex = "(({AllIntRegex})([eé]sim[oa]))"
             .replace("{AllIntRegex}", AllIntRegex);
 
+    public static final String RelativeOrdinalRegex = "(?<relativeOrdinal>pr[oó]xim[ao]s?|[uú]ltim[ao]\\s+mas\\s+um|anterior\\s+ao\\s+últim[ao]|(pen)?[uú]ltim[ao]s?|antepen[uú]ltim[ao]s?|seguintes?|anterior(es)?|atua(l|is))";
+
     public static final String ComplexOrdinalRegex = "(({OverThousandOrdinalRegex}(\\s)?)?{UnderThousandOrdinalRegex}|{OverThousandOrdinalRegex})"
             .replace("{OverThousandOrdinalRegex}", OverThousandOrdinalRegex)
             .replace("{UnderThousandOrdinalRegex}", UnderThousandOrdinalRegex);
@@ -134,10 +136,14 @@ public class PortugueseNumeric {
             .replace("{SuffixRoundOrdinalRegex}", SuffixRoundOrdinalRegex)
             .replace("{ComplexOrdinalRegex}", ComplexOrdinalRegex);
 
-    public static final String AllOrdinalRegex = "{ComplexOrdinalRegex}|{SimpleRoundOrdinalRegex}|{ComplexRoundOrdinalRegex}"
+    public static final String AllOrdinalNumberRegex = "{ComplexOrdinalRegex}|{SimpleRoundOrdinalRegex}|{ComplexRoundOrdinalRegex}"
             .replace("{ComplexOrdinalRegex}", ComplexOrdinalRegex)
             .replace("{SimpleRoundOrdinalRegex}", SimpleRoundOrdinalRegex)
             .replace("{ComplexRoundOrdinalRegex}", ComplexRoundOrdinalRegex);
+
+    public static final String AllOrdinalRegex = "(?:{AllOrdinalNumberRegex}|{RelativeOrdinalRegex})"
+            .replace("{AllOrdinalNumberRegex}", AllOrdinalNumberRegex)
+            .replace("{RelativeOrdinalRegex}", RelativeOrdinalRegex);
 
     public static final String OrdinalSuffixRegex = "(?<=\\b)(\\d*((1|2|3|4|5|6|7|8|9|0)[oaºª]|(1|2|3|4|5|6|7|8|9)(\\.[ºª])))(?=\\b)";
 
@@ -158,16 +164,16 @@ public class PortugueseNumeric {
     public static final String RoundMultiplierRegex = "\\b\\s*({RoundMultiplierWithFraction}|(?<multiplier>(mil))$)"
             .replace("{RoundMultiplierWithFraction}", RoundMultiplierWithFraction);
 
-    public static final String FractionNounRegex = "(?<=\\b)({AllIntRegex}\\s+((e|com)\\s+)?)?(({AllIntRegex})(\\s+((e|com)\\s)?)((({AllOrdinalRegex})s?|({SpecialFractionInteger})|({SuffixRoundOrdinalRegex})s?)|mei[oa]?|ter[çc]o?)|(meio|um\\s+quarto\\s+de)\\s+{RoundNumberIntegerRegex})(?=\\b)"
+    public static final String FractionNounRegex = "(?<=\\b)({AllIntRegex}\\s+((e|com)\\s+)?)?(({AllIntRegex})(\\s+((e|com)\\s)?)((({AllOrdinalNumberRegex})s?|({SpecialFractionInteger})|({SuffixRoundOrdinalRegex})s?)|mei[oa]?|ter[çc]o?)|(meio|um\\s+quarto\\s+de)\\s+{RoundNumberIntegerRegex})(?=\\b)"
             .replace("{AllIntRegex}", AllIntRegex)
-            .replace("{AllOrdinalRegex}", AllOrdinalRegex)
+            .replace("{AllOrdinalNumberRegex}", AllOrdinalNumberRegex)
             .replace("{SpecialFractionInteger}", SpecialFractionInteger)
             .replace("{SuffixRoundOrdinalRegex}", SuffixRoundOrdinalRegex)
             .replace("{RoundNumberIntegerRegex}", RoundNumberIntegerRegex);
 
-    public static final String FractionNounWithArticleRegex = "(?<=\\b)(({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\\s+(e\\s+)?)?((um|um[as])(\\s+)(({AllOrdinalRegex})|({SuffixRoundOrdinalRegex})|(e\\s+)?mei[oa]?)|mei[oa]?)(?=\\b)"
+    public static final String FractionNounWithArticleRegex = "(?<=\\b)(({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\\s+(e\\s+)?)?((um|um[as])(\\s+)(({AllOrdinalNumberRegex})|({SuffixRoundOrdinalRegex})|(e\\s+)?mei[oa]?)|mei[oa]?)(?=\\b)"
             .replace("{AllIntRegex}", AllIntRegex)
-            .replace("{AllOrdinalRegex}", AllOrdinalRegex)
+            .replace("{AllOrdinalNumberRegex}", AllOrdinalNumberRegex)
             .replace("{SuffixRoundOrdinalRegex}", SuffixRoundOrdinalRegex)
             .replace("{RoundNumberIntegerRegexWithLocks}", RoundNumberIntegerRegexWithLocks);
 
@@ -544,10 +550,96 @@ public class PortugueseNumeric {
         .build();
 
     public static final ImmutableMap<String, String> RelativeReferenceOffsetMap = ImmutableMap.<String, String>builder()
-        .put("", "")
+        .put("proxima", "1")
+        .put("proximo", "1")
+        .put("próxima", "1")
+        .put("próximo", "1")
+        .put("proximas", "1")
+        .put("proximos", "1")
+        .put("próximas", "1")
+        .put("próximos", "1")
+        .put("ultima", "0")
+        .put("ultimo", "0")
+        .put("última", "0")
+        .put("último", "0")
+        .put("ultimas", "0")
+        .put("ultimos", "0")
+        .put("últimas", "0")
+        .put("últimos", "0")
+        .put("penultima", "-1")
+        .put("penultimo", "-1")
+        .put("penúltima", "-1")
+        .put("penúltimo", "-1")
+        .put("penultimas", "-1")
+        .put("penultimos", "-1")
+        .put("penúltimas", "-1")
+        .put("penúltimos", "-1")
+        .put("ultima mas um", "-1")
+        .put("ultimo mas um", "-1")
+        .put("última mas um", "-1")
+        .put("último mas um", "-1")
+        .put("anterior ao último", "-1")
+        .put("anterior ao última", "-1")
+        .put("antepenultima", "-2")
+        .put("antepenultimo", "-2")
+        .put("antepenúltima", "-2")
+        .put("antepenúltimo", "-2")
+        .put("antepenultimas", "-2")
+        .put("antepenultimos", "-2")
+        .put("antepenúltimas", "-2")
+        .put("antepenúltimos", "-2")
+        .put("seguinte", "1")
+        .put("seguintes", "1")
+        .put("anterior", "-1")
+        .put("anteriores", "-1")
+        .put("atual", "0")
+        .put("atuais", "0")
         .build();
 
     public static final ImmutableMap<String, String> RelativeReferenceRelativeToMap = ImmutableMap.<String, String>builder()
-        .put("", "")
+        .put("proxima", "current")
+        .put("proximo", "current")
+        .put("próxima", "current")
+        .put("próximo", "current")
+        .put("proximas", "current")
+        .put("proximos", "current")
+        .put("próximas", "current")
+        .put("próximos", "current")
+        .put("ultima", "end")
+        .put("ultimo", "end")
+        .put("última", "end")
+        .put("último", "end")
+        .put("ultimas", "end")
+        .put("ultimos", "end")
+        .put("últimas", "end")
+        .put("últimos", "end")
+        .put("penultima", "end")
+        .put("penultimo", "end")
+        .put("penúltima", "end")
+        .put("penúltimo", "end")
+        .put("penultimas", "end")
+        .put("penultimos", "end")
+        .put("penúltimas", "end")
+        .put("penúltimos", "end")
+        .put("ultima mas um", "end")
+        .put("ultimo mas um", "end")
+        .put("última mas um", "end")
+        .put("último mas um", "end")
+        .put("anterior ao último", "end")
+        .put("anterior ao última", "end")
+        .put("antepenultima", "end")
+        .put("antepenultimo", "end")
+        .put("antepenúltima", "end")
+        .put("antepenúltimo", "end")
+        .put("antepenultimas", "end")
+        .put("antepenultimos", "end")
+        .put("antepenúltimas", "end")
+        .put("antepenúltimos", "end")
+        .put("seguinte", "current")
+        .put("seguintes", "current")
+        .put("anterior", "current")
+        .put("anteriores", "current")
+        .put("atual", "current")
+        .put("atuais", "current")
         .build();
 }

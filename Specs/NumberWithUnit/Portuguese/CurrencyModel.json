@@ -1552,7 +1552,7 @@
   },
   {
     "Input": "custou apenas treze euros e quarenta e cinco centavos.",
-    "NotSupported": "javascript, , java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "treze euros e quarenta e cinco centavos",
@@ -1568,7 +1568,7 @@
   },
   {
     "Input": "custa apenas 15 dólares e 15.",
-    "NotSupported": "javascript, , java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "15 dólares e 15",
@@ -1584,7 +1584,7 @@
   },
   {
     "Input": "custa apenas 15 dólares 50.",
-    "NotSupported": "javascript, , java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "15 dólares 50",
@@ -1600,7 +1600,7 @@
   },
   {
     "Input": "custa apenas 15 dólares com 50.",
-    "NotSupported": "javascript, , java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "15 dólares com 50",
@@ -1616,7 +1616,7 @@
   },
   {
     "Input": "custa apenas 25 euros com 50.",
-    "NotSupported": "javascript, , java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "25 euros com 50",
@@ -1632,7 +1632,7 @@
   },
   {
     "Input": "custa apenas 3 euros com 99 centavos.",
-    "NotSupported": "javascript, , java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "3 euros com 99 centavos",
@@ -1648,7 +1648,7 @@
   },
   {
     "Input": "usd$ 15",
-    "NotSupported": "javascript, , java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "usd$ 15",
@@ -1728,6 +1728,22 @@
         },
         "Start": 0,
         "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "15 dólares e 15 centavos, por favor",
+    "NotSupported": "javascript, java",
+    "Results": [
+      {
+        "Text": "15 dólares e 15 centavos",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "15,15",
+          "unit": "Dólar"
+        },
+        "Start": 0,
+        "End": 23
       }
     ]
   }

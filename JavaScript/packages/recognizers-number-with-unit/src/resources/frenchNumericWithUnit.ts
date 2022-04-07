@@ -32,5 +32,9 @@ export namespace FrenchNumericWithUnit {
     export const AmbiguousVolumeUnitList = [ "oz","l" ];
     export const WeightSuffixList: ReadonlyMap<string, string> = new Map<string, string>([["Kilogramme", "kg|kilogramme|kilogrammes|kilo|kilos"],["Gram", "g|gramme|grammes"],["Milligramme", "mg|milligramme|milligrammes"],["Microgramme", "µg|ug|microgramme|microgrammes"],["Tonne métrique", "tonne métrique|tonnes métrique|tonnes métriques|tonne metrique|tonnes metrique"],["Tonne", "tonne|tonnes|-tonnes|-tonne"],["Livre", "livre|livres"]]);
     export const AmbiguousWeightUnitList = [ "g","oz" ];
+    export const AngleSuffixList: ReadonlyMap<string, string> = new Map<string, string>([["Degree", "degré|degrés|degre|degres|deg|°"],["Radian", "radian|radians|rad"],["Turn", "tour|tours"]]);
+    export const AmbiguousAngleUnitList = [ "tour","tours" ];
     export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["\\bcent\\b", "\\bpour\\s+cent\\b"]]);
+    export const TemperatureAmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["\\b(deg(r[eé]s?)?|°)$", "\\b((deg(r[eé]s?)?|°)\\s*(angle|rotation)|(tourn([eé]|er|ant)|rotation|angle)(\\s+(\\p{L}+|\\d+)){0,4}\\s*(deg(r[eé]s?)?\\b|°))"]]);
+    export const DimensionAmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["\\b(deg(r[eé]s?)?|°)$", "\\b((deg(r[eé]s?)?|°)\\s*(c(elsius|entigrade)?|f(ah?renheit)?)|(temp[eé]rature)(\\s+(\\p{L}+|\\d+)){0,4}\\s*(deg(r[eé]s?)?\\b|°))"]]);
 }
