@@ -5,7 +5,6 @@ from typing import List
 from enum import Enum
 
 from recognizers_number.number.extractors import ReVal, BaseNumberExtractor
-from recognizers_number.number.models import NumberMode
 from recognizers_text.utilities import RegExpUtility
 from recognizers_number.number.constants import Constants
 from recognizers_number.resources.japanese_numeric import JapaneseNumeric

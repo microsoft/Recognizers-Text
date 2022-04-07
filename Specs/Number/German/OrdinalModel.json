@@ -507,7 +507,7 @@
   },
   {
     "Input": "Wäre unsere Sonne der jüngste Stern der Milchstraße, so wäre sie mindestens der einhundert Milliardste und höchstens der dreihundert Milliardste Stern.",
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "einhundert milliardste",
@@ -535,7 +535,7 @@
   },
   {
     "Input": "Wäre unsere Sonne der jüngste Stern der Milchstraße, so wäre sie mindestens der einhundert Millionste und höchstens der dreihundert Millionste Stern. Diese Aussage ist nicht korrekt.",
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "einhundert millionste",
@@ -563,7 +563,7 @@
   },
   {
     "Input": "Wäre unsere Sonne der jüngste Stern der Milchstraße, so wäre sie mindestens der einhundert Billionste und höchstens der dreihundert Billionste Stern. Diese Aussage ist nicht korrekt.",
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "einhundert billionste",

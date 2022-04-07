@@ -756,7 +756,7 @@
   },
   {
     "Input": "1 234 567,89 ist ein gültiges Zahlenformat.",
-    "NotSupported": "javascript,python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "1 234 567,89",
@@ -883,7 +883,7 @@
   },
   {
     "Input": "sie wusste hundert Neuigkeiten zu berichten",
-    "NotSupported": "java, javascript",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "hundert",
@@ -913,7 +913,7 @@
   },
   {
     "Input": "fünfzehn",
-    "NotSupported": "java, javascript",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "fünfzehn",
@@ -928,7 +928,7 @@
   },
   {
     "Input": "fünfzehntausend",
-    "NotSupported": "java, javascript",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "fünfzehntausend",

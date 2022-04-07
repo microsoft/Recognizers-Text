@@ -28,9 +28,8 @@ def test_number_with_unit_recognizer(
     for actual, expected in zip(results, expected_results):
         assert actual.text == expected['Text']
         assert actual.type_name == expected['TypeName']
-        if 'Start' in expected and 'End' in expected:
-            assert actual.start == expected['Start']
-            assert actual.end == expected['End']
+        assert actual.start == expected['Start']
+        assert actual.end == expected['End']
         resolution_assert(actual, expected, ['value', 'unit', 'isoCurrency'])
 
 
