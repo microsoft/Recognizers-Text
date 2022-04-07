@@ -289,7 +289,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "vom 12. januar 2016 bis zum 22.01.2016",
@@ -545,7 +545,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "nächsten montagnachmittag",
@@ -601,7 +601,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "dienstagmorgen",
@@ -2573,6 +2573,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-07T12:00:00"
     },
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "nach mitternacht",
@@ -2598,6 +2599,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-07T12:00:00"
     },
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "vor mitternacht",
@@ -2623,6 +2625,7 @@
     "Context": {
       "ReferenceDateTime": "2018-09-07T12:00:00"
     },
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "mitternacht",
@@ -2898,6 +2901,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-05T00:00:00"
     },
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "heiligabend",
@@ -3967,7 +3971,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-07T00:00:00"
     },
-    "NotSupported": "java, javascript",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "so 27.02.2022",
@@ -4214,7 +4218,7 @@
     "Context": {
       "ReferenceDateTime": "2021-06-18T18:00:00"
     },
-    "NotSupported": "java, javascript",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "mitternachts",
@@ -4238,7 +4242,7 @@
     "Context": {
       "ReferenceDateTime": "2021-06-18T00:00:00"
     },
-    "NotSupported": "java, javascript",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "vorgestern",
@@ -4286,7 +4290,7 @@
     "Context": {
         "ReferenceDateTime": "2021-06-18T18:00:00"
     },
-    "NotSupported": "java, javascript",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "sonnabend frühmorgens",
@@ -4834,7 +4838,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "immer sonnabends",

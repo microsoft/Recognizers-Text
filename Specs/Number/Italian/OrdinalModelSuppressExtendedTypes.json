@@ -56,7 +56,7 @@
   },
   {
     "Input": "undicesimo",
-    "NotSupportedByDesign": "javascript,java",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "undicesimo",

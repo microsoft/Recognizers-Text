@@ -233,7 +233,7 @@
   },
   {
     "Input": "Ich bin am zweiten Februar 2018 wieder da.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "zweiten Februar 2018",
