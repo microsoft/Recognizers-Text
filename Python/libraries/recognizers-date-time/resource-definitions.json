@@ -74,22 +74,6 @@
         },
         {
             "input": [
-                "Italian", "Italian-DateTime"
-            ],
-            "output": "italian_date_time",
-            "header": [
-                "from .base_date_time import BaseDateTime",
-                "# pylint: disable=line-too-long",
-                "",
-                "",
-                "class ItalianDateTime:"
-            ],
-            "footer": [
-                "# pylint: enable=line-too-long"
-            ]
-        },
-        {
-            "input": [
                 "German", "German-DateTime"
             ],
             "output": "german_date_time",
