@@ -1281,7 +1281,7 @@
   },
   {
     "Input": "il dieci di Settembre, duemila",
-    "NotSupportedByDesign": "javascript,java",
+    "NotSupportedByDesign": "python,javascript,java",
     "Results": [
       {
         "Text": "dieci di Settembre, duemila",
