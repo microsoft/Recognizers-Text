@@ -2222,7 +2222,7 @@
   },
   {
     "Input": "I can give you 3 hundred and 21 yuan.",
-    "NotSupported": "javascript, java",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "3 hundred and 21",
@@ -2237,7 +2237,7 @@
   },
   {
     "Input": "4 thousand 3 hundred and 21 is a valid number.",
-    "NotSupported": "javascript, java",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "4 thousand 3 hundred and 21",
@@ -2286,7 +2286,7 @@
   },
   {
     "Input": "4000 3 hundred and 21 are two valid numbers.",
-    "NotSupported": "javascript, java",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "4000",
@@ -2425,7 +2425,7 @@
   },
   {
     "Input": "3 hundred and one is a valid numbers.",
-    "NotSupported": "javascript, java",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "3 hundred and one",
@@ -2642,7 +2642,7 @@
   },
   {
     "Input": "I count 6 crore and two hundred",
-    "NotSupported": "javascript, java",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "6 crore and two hundred",
