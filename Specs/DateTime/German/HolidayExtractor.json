@@ -37,7 +37,7 @@
   },
   {
     "Input": "Ich besuche dich an Karneval",
-    "NotSupported": "javascript, ",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "Karneval",

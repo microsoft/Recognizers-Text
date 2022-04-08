@@ -295,7 +295,6 @@
   },
   {
     "Input": "zwei Euro fünfzig",
-    "NotSupportedByDesign": "",
     "NotSupported": "javascript,dotnet,java",
     "Results": [
       {
@@ -310,7 +309,6 @@
   },
   {
     "Input": "zwei Euro und fünfzig cent",
-    "NotSupportedByDesign": "",
     "NotSupported": "java, javascript",
     "Results": [
       {
@@ -325,7 +323,6 @@
   },
   {
     "Input": "siebenhundert Euro",
-    "NotSupportedByDesign": "",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -340,7 +337,6 @@
   },
   {
     "Input": "achtundsiebzig Millionen Dollar",
-    "NotSupportedByDesign": "",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -411,7 +407,6 @@
   },
   {
     "Input": "siebenhundert-Euro",
-    "NotSupportedByDesign": "",
     "NotSupported": "java, javascript",
     "Results": [
       {
