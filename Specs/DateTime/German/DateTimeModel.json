@@ -1608,7 +1608,7 @@
     "Context": {
       "ReferenceDateTime": "2019-09-03T00:00:00"
     },
-    "NotSupported": ", javascript",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "eine halbe stunde",
@@ -1982,7 +1982,7 @@
     "Context": {
       "ReferenceDateTime": "2020-04-30T18:00:00"
     },
-    "NotSupported": ", javascript, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "bis märz 2008",
@@ -2008,7 +2008,7 @@
     "Context": {
       "ReferenceDateTime": "2020-04-30T18:00:00"
     },
-    "NotSupported": ", javascript, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "28. dezember 2012",
