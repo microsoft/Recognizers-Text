@@ -3,6 +3,8 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.Matcher;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit
@@ -145,6 +147,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
             result.RemoveAll(o => o.Type == Constants.SYS_NUM);
 
+            MergeMultiplier(source, result);
+
             return result;
         }
 
@@ -215,6 +219,31 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             }
 
             ers.Sort((x, y) => x.Start - y.Start ?? 0);
+        }
+
+        // Add multiplier to extraction when it follows the unit e.g. "10 USD million"
+        private void MergeMultiplier(string source, List<ExtractResult> ers)
+        {
+            if (config.MultiplierRegex != null)
+            {
+                var multiplierMatches = config.MultiplierRegex.Matches(source);
+                Match[] multipliers = new Match[multiplierMatches.Count];
+                multiplierMatches.CopyTo(multipliers, 0);
+                if (multipliers.Length > 0)
+                {
+                    for (int i = 0; i < ers.Count; i++)
+                    {
+                        var afterMatch = multipliers.Where(o => ers[i].Start + ers[i].Length == o.Index).ToList();
+                        if (afterMatch.Count > 0 && ers[i].Data != null)
+                        {
+                            ers[i].Data = new List<ExtractResult> { ers[i].Clone() };
+                            ers[i].Length += afterMatch[0].Length;
+                            ers[i].Text = source.Substring((int)ers[i].Start, (int)ers[i].Length);
+                            ers[i].Metadata = new Metadata { HasMod = true };
+                        }
+                    }
+                }
+            }
         }
     }
 }

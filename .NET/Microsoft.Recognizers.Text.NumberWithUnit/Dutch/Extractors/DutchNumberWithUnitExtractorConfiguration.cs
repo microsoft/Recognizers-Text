@@ -59,6 +59,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Dutch
 
         public virtual Regex AmbiguousUnitNumberMultiplierRegex => null;
 
+        public Regex MultiplierRegex => null;
+
         public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; } = null;
 
         public Dictionary<Regex, Regex> TemperatureAmbiguityFiltersDict { get; } = null;

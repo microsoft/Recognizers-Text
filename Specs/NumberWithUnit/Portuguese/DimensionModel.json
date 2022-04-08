@@ -1,4 +1,4 @@
-[
+﻿[
   {
     "Input": "são 180,25ml liquidos",
     "Results": [
@@ -996,5 +996,13 @@
         "End": 20
       }
     ]
+  },
+  {
+    "Input": "vou fazer um dia",
+    "Results": []
+  },
+  {
+    "Input": "lançamento em três dois um...",
+    "Results": []
   }
 ]

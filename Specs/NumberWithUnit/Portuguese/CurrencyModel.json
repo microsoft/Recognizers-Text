@@ -1746,5 +1746,186 @@
         "End": 23
       }
     ]
+  },
+  {
+    "Input": "Eles perderam 75 USD milhões nos últimos três anos.",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "75 usd milhões",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "75000000",
+          "unit": "Dólar estadunidense",
+          "isoCurrency": "USD"
+        },
+        "Start": 14,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "Los precios del acuerdo comienzan en dólar 22,5 milhões.",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "dólar 22,5 milhões",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "22500000",
+          "unit": "Dólar"
+        },
+        "Start": 37,
+        "End": 54
+      }
+    ]
+  },
+  {
+    "Input": "Los precios del acuerdo comienzan en dólar 22500000.",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "dólar 22500000",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "22500000",
+          "unit": "Dólar"
+        },
+        "Start": 37,
+        "End": 50
+      }
+    ]
+  },
+  {
+    "Input": "Por 15 dólares 50 você pode almoçar e jantar",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "15 dólares 50",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "15,5",
+          "unit": "Dólar"
+        },
+        "Start": 4,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "Por 15 USD 50 você pode almoçar e jantar.",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "15 usd 50",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "15,5",
+          "unit": "Dólar estadunidense",
+          "isoCurrency": "USD"
+        },
+        "Start": 4,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "Eles pagaram 75 USD milhões, mas o preço na verdade foi de 50 milhões USD. E se tivessem mais 15 USD 50, teriam pago 80 USD milhões.",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "75 usd milhões",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "75000000",
+          "unit": "Dólar estadunidense",
+          "isoCurrency": "USD"
+        },
+        "Start": 13,
+        "End": 26
+      },
+      {
+        "Text": "50 milhões usd",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "50000000",
+          "unit": "Dólar estadunidense",
+          "isoCurrency": "USD"
+        },
+        "Start": 59,
+        "End": 72
+      },
+      {
+        "Text": "15 usd 50",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "15,5",
+          "unit": "Dólar estadunidense",
+          "isoCurrency": "USD"
+        },
+        "Start": 94,
+        "End": 102
+      },
+      {
+        "Text": "80 usd milhões",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "80000000",
+          "unit": "Dólar estadunidense",
+          "isoCurrency": "USD"
+        },
+        "Start": 117,
+        "End": 130
+      }
+    ]
+  },
+  {
+    "Input": "O custo é de 500 USD,100 vezes mais do que o esperado.",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "500 usd",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "500",
+          "unit": "Dólar estadunidense",
+          "isoCurrency": "USD"
+        },
+        "Start": 13,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "Um é obrigado a pagar três mil dólares duzentas vezes.",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "três mil dólares",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "3000",
+          "unit": "Dólar"
+        },
+        "Start": 22,
+        "End": 37
+      }
+    ]
+  },
+  {
+    "Input": "Eu contei os dólares milhares de vezes.",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "dólares",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": null,
+          "unit": "Dólar"
+        },
+        "Start": 13,
+        "End": 19
+      }
+    ]
   }
 ]
