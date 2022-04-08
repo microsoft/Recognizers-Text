@@ -4,8 +4,8 @@
 from enum import IntFlag
 from typing import List
 from recognizers_text import Culture, Recognizer
-from recognizers_number.culture import CultureInfo
 from recognizers_text.model import Model, ModelResult
+from recognizers_number.culture import CultureInfo
 from .models import CurrencyModel, TemperatureModel, DimensionModel, AgeModel, ExtractorParserModel
 from .extractors import NumberWithUnitExtractor, BaseMergedUnitExtractor
 from .parsers import NumberWithUnitParser, BaseMergedUnitParser

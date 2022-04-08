@@ -1537,7 +1537,7 @@
   },
   {
     "Input": "solo cuesta 15 dolares y 15 centavos.",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "15 dolares y 15 centavos",
@@ -1553,7 +1553,7 @@
   },
   {
     "Input": "solo cuesta trece euros y cuarenta y cinco céntimos.",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "trece euros y cuarenta y cinco céntimos",
@@ -1569,7 +1569,7 @@
   },
   {
     "Input": "solo cuesta 15 dolares y 15.",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "15 dolares y 15",
@@ -1585,7 +1585,7 @@
   },
   {
     "Input": "solo cuesta 15 dolares 50.",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "15 dolares 50",
@@ -1601,7 +1601,7 @@
   },
   {
     "Input": "solo cuesta 15 dolares con 50.",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "15 dolares con 50",
@@ -1617,7 +1617,7 @@
   },
   {
     "Input": "solo cuesta 25 euros con 50.",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "25 euros con 50",
@@ -1633,7 +1633,7 @@
   },
   {
     "Input": "solo cuesta 3 euros con 99 céntimos.",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "3 euros con 99 céntimos",

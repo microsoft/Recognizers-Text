@@ -46,7 +46,7 @@ public class NumberCacheTest {
         NumberRecognizer recognizer = new NumberRecognizer(Culture.English, NumberOptions.None, false);
         Map<Triplet<String, Type, String>, IModel> internalCache = getInternalModelCache(recognizer);
 
-        Assert.assertTrue(internalCache.entrySet().stream().allMatch(kv -> kv.getKey().getValue0() == Culture.English));
+        Assert.assertTrue(internalCache.entrySet().stream().allMatch(kv -> kv.getKey().getValue0().equals(Culture.English)));
     }
 
     private static Map<Triplet<String, Type, String>, IModel> getInternalModelCache(NumberRecognizer recognizer) {

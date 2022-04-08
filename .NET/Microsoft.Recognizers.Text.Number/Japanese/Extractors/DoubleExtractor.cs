@@ -6,6 +6,7 @@ using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Japanese;
+using Microsoft.Recognizers.Text.Number.Config;
 
 namespace Microsoft.Recognizers.Text.Number.Japanese
 {
@@ -14,14 +15,10 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        public DoubleExtractor(BaseNumberOptionsConfiguration config)
+        public DoubleExtractor(BaseNumberOptionsConfiguration config, CJKNumberExtractorMode mode = CJKNumberExtractorMode.Default)
         {
             var regexes = new Dictionary<Regex, TypeTag>
             {
-                {
-                    new Regex(NumbersDefinitions.DoubleSpecialsChars, RegexFlags),
-                    RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
-                },
                 {
                     // (-)2.5, can avoid cases like ip address xx.xx.xx.xx
                     new Regex(NumbersDefinitions.DoubleSpecialsCharsWithNegatives, RegexFlags),
@@ -35,11 +32,6 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
                 {
                     // えは九・二三二一三一二
                     new Regex(NumbersDefinitions.DoubleRoundNumberSpecialsChars, RegexFlags),
-                    RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
-                },
-                {
-                    // 1.0 K
-                    new Regex(NumbersDefinitions.DoubleWithMultiplierRegex, RegexFlags),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
@@ -72,6 +64,33 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
             };
+
+            switch (mode)
+            {
+                case CJKNumberExtractorMode.Default:
+                    // Uses an allow list to avoid extracting "西九条" from "九"
+                    regexes.Add(
+                        new Regex(NumbersDefinitions.DoubleSpecialsChars, RegexFlags),
+                        RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX));
+
+                    // 1.0 K
+                    regexes.Add(
+                        new Regex(NumbersDefinitions.DoubleWithMultiplierRegex, RegexFlags),
+                        RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX));
+                    break;
+
+                case CJKNumberExtractorMode.ExtractAll:
+                    // Uses no allow lists and extracts all potential numbers (useful in Units, for example).
+                    regexes.Add(
+                        new Regex(NumbersDefinitions.DoubleSpecialsCharsAggressive, RegexFlags),
+                        RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX));
+
+                    // 1.0 K
+                    regexes.Add(
+                        new Regex(NumbersDefinitions.DoubleWithMultiplierAggressiveRegex, RegexFlags),
+                        RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX));
+                    break;
+            }
 
             Regexes = regexes.ToImmutableDictionary();
         }

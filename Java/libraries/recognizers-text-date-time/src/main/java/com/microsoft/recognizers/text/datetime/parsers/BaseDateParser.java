@@ -262,6 +262,10 @@ public class BaseDateParser implements IDateTimeParser {
             String weekdayStr = exactMatch.getMatch().get().getGroup("weekday").value.toLowerCase();
             LocalDateTime value = DateUtil.next(referenceDate, this.config.getDayOfWeek().get(weekdayStr));
 
+            if (config.getSwiftMonthOrYear(trimmedText) == 2) {
+                value = value.plusDays(7);
+            }
+
             ret.setTimex(DateTimeFormatUtil.luisDate(value));
             ret.setFutureValue(value);
             ret.setPastValue(value);

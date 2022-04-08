@@ -620,7 +620,7 @@ public class PortugueseNumericWithUnit {
         .put("Satoshi", "SATOSHI")
         .build();
 
-    public static final String CompoundUnitConnectorRegex = "(?<spacer>e|com)";
+    public static final String CompoundUnitConnectorRegex = "\\b(?<spacer>e|com)\\b";
 
     public static final ImmutableMap<String, String> CurrencyPrefixList = ImmutableMap.<String, String>builder()
         .put("Dólar", "$")
@@ -730,8 +730,8 @@ public class PortugueseNumericWithUnit {
     public static final ImmutableMap<String, String> TemperatureSuffixList = ImmutableMap.<String, String>builder()
         .put("Kelvin", "k|K|kelvin")
         .put("Grau Rankine", "r|°r|°ra|grau rankine|graus rankine| rankine")
-        .put("Grau Celsius", "°c|grau c|grau celsius|graus c|graus celsius|celsius|grau centígrado|grau centrigrado|graus centígrados|graus centigrados|centígrado|centígrados|centigrado|centigrados")
-        .put("Grau Fahrenheit", "°f|grau f|graus f|grau fahrenheit|graus fahrenheit|fahrenheit")
+        .put("Grau Celsius", "°c|° c|ºc|º c|grau c|grau celsius|graus c|graus celsius|celsius|grau centígrado|grau centrigrado|graus centígrados|graus centigrados|centígrado|centígrados|centigrado|centigrados")
+        .put("Grau Fahrenheit", "°f|° f|ºf|º f|grau f|graus f|grau fahrenheit|graus fahrenheit|fahrenheit")
         .put("Grau", "°|graus|grau")
         .build();
 
@@ -774,7 +774,23 @@ public class PortugueseNumericWithUnit {
         .put("Quilate", "ct|quilate|quilates")
         .build();
 
+    public static final ImmutableMap<String, String> AngleSuffixList = ImmutableMap.<String, String>builder()
+        .put("Degree", "grau|graus|°")
+        .put("Radian", "radiano|radianos|rad")
+        .put("Turn", "volta|voltas")
+        .build();
+
+    public static final List<String> AmbiguousAngleUnitList = Arrays.asList("volta", "voltas");
+
     public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
         .put("null", "null")
+        .build();
+
+    public static final ImmutableMap<String, String> TemperatureAmbiguityFiltersDict = ImmutableMap.<String, String>builder()
+        .put("\\b(graus?|°)$", "\\b((graus?|°)\\s*(ângulo|rotação)|(gira(r|do|ndo)?|ângulo|rotação)(\\s+(\\p{L}+|\\d+)){0,4}\\s*(graus?\\b|°))")
+        .build();
+
+    public static final ImmutableMap<String, String> DimensionAmbiguityFiltersDict = ImmutableMap.<String, String>builder()
+        .put("\\b(graus?|°)$", "\\b((graus?|°)\\s*(c(elsius|entígrado)?|f(ah?renheit)?)|(temperatura)(\\s+(\\p{L}+|\\d+)){0,4}\\s*(graus?\\b|°))")
         .build();
 }

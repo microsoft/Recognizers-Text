@@ -394,6 +394,20 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                     },
                 }));
 
+            RegisterModel<DimensionModel>(
+                Culture.Japanese,
+                (options) => new DimensionModel(new Dictionary<IExtractor, IParser>
+                {
+                    {
+                        new NumberWithUnitExtractor(new Japanese.DimensionExtractorConfiguration()),
+                        new NumberWithUnitParser(new Japanese.DimensionParserConfiguration())
+                    }, /*
+                    {
+                        new NumberWithUnitExtractor(new English.DimensionExtractorConfiguration()),
+                        new NumberWithUnitParser(new English.DimensionParserConfiguration())
+                    }, */
+                }));
+
             RegisterModel<TemperatureModel>(
                 Culture.Japanese,
                 (options) => new TemperatureModel(new Dictionary<IExtractor, IParser>

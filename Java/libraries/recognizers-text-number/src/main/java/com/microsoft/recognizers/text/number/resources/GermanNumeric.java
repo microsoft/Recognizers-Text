@@ -82,7 +82,7 @@ public class GermanNumeric {
 
     public static final String RoundNumberOrdinalRegex = "(hundertst(er|es|en|el|e)?|tausendst(er|es|en|el|e)?|millionst(er|es|en|el|e)?|milliardst(er|es|en|el|e)?|billionst(er|es|en|el|e)?)";
 
-    public static final String RelativeOrdinalRegex = "(?<relativeOrdinal>(ante)?penultimate|letzter|nächster|vorheriger|aktueller)";
+    public static final String RelativeOrdinalRegex = "(?<relativeOrdinal>(nächste|vorherige|aktuelle|jetzige|(vor|dritt)?letzte)[nr]?|zuletzt|früher)";
 
     public static final String BasicOrdinalRegex = "(zuerst|erst(er|es|en|e)|zweit(er|es|en|e)?|dritt(er|es|en|el|e)?|viert(er|es|en|el|e)?|fünft(er|es|en|el|e)?|fuenft(er|es|en|el|e)?|sechst(er|es|en|el|e)?|siebt(er|es|en|el|e)?|acht(er|es|en|el|e)?|neunt(er|es|en|el|e)?|zehnt(er|es|en|el|e)?|elft(er|es|en|el|e)?|zwölft(er|es|en|el|e)?|zwoelft(er|es|en|el|e)?|dreizehnt(er|es|en|el|e)?|vierzehnt(er|es|en|el|e)?|fünfzehnt(er|es|en|el|e)?|fuenfzehnt(er|es|en|el|e)?|sechzehnt(er|es|en|el|e)?|siebzehnt(er|es|en|el|e)?|achtzehnt(er|es|en|el|e)?|neunzehnt(er|es|en|el|e)?|zwanzigst(er|es|en|el|e)?|dreißigst(er|es|en|el|e)?|vierziegt(er|es|en|el|e)?|fünfzigst(er|es|en|el|e)?|fuenfzigst(er|es|en|el|e)?|sechzigst(er|es|en|el|e)?|siebzigst(er|es|en|el|e)?|achtzigst(er|es|en|el|e)?|neunzigst(er|es|en|el|e)?)";
 
@@ -97,10 +97,14 @@ public class GermanNumeric {
             .replace("{AllIntRegex}", AllIntRegex)
             .replace("{RoundNumberOrdinalRegex}", RoundNumberOrdinalRegex);
 
-    public static final String AllOrdinalRegex = "(({AllIntRegex}\\s*)*{SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})"
+    public static final String AllOrdinalNumberRegex = "(({AllIntRegex}\\s*)*{SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})"
             .replace("{SuffixBasicOrdinalRegex}", SuffixBasicOrdinalRegex)
             .replace("{SuffixRoundNumberOrdinalRegex}", SuffixRoundNumberOrdinalRegex)
             .replace("{AllIntRegex}", AllIntRegex);
+
+    public static final String AllOrdinalRegex = "(?:{AllOrdinalNumberRegex}|{RelativeOrdinalRegex})"
+            .replace("{AllOrdinalNumberRegex}", AllOrdinalNumberRegex)
+            .replace("{RelativeOrdinalRegex}", RelativeOrdinalRegex);
 
     public static final String OrdinalSuffixRegex = "^[\\.]";
 
@@ -133,16 +137,16 @@ public class GermanNumeric {
     public static final String RoundMultiplierRegex = "\\b\\s*((von\\s+)?ein(er|es|en|el|e)?\\s+)?({RoundMultiplierWithFraction}|(?<multiplier>(?:hundert|tausend))$)"
             .replace("{RoundMultiplierWithFraction}", RoundMultiplierWithFraction);
 
-    public static final String FractionNounRegex = "(?<=\\b)({AllIntRegex}\\s+(und\\s+)?)?(({AllIntRegex})(\\s*|\\s*-\\s*)((({AllOrdinalRegex})|({RoundNumberOrdinalRegex}))|halb(e[rs]?)?|hälfte)(\\s+{RoundNumberIntegerRegex})?|(eine\\s+(halbe|viertel)\\s+){RoundNumberIntegerRegex}|{FractionUnitsRegex}(\\s+{RoundNumberIntegerRegex})?)(?=\\b)"
+    public static final String FractionNounRegex = "(?<=\\b)({AllIntRegex}\\s+(und\\s+)?)?(({AllIntRegex})(\\s*|\\s*-\\s*)((({AllOrdinalNumberRegex})|({RoundNumberOrdinalRegex}))|halb(e[rs]?)?|hälfte)(\\s+{RoundNumberIntegerRegex})?|(eine\\s+(halbe|viertel)\\s+){RoundNumberIntegerRegex}|{FractionUnitsRegex}(\\s+{RoundNumberIntegerRegex})?)(?=\\b)"
             .replace("{AllIntRegex}", AllIntRegex)
-            .replace("{AllOrdinalRegex}", AllOrdinalRegex)
+            .replace("{AllOrdinalNumberRegex}", AllOrdinalNumberRegex)
             .replace("{RoundNumberOrdinalRegex}", RoundNumberOrdinalRegex)
             .replace("{FractionUnitsRegex}", FractionUnitsRegex)
             .replace("{RoundNumberIntegerRegex}", RoundNumberIntegerRegex);
 
-    public static final String FractionNounWithArticleRegex = "(?<=\\b)((({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\\s+(und\\s+)?)?eine?(\\s+|\\s*-\\s*)({AllOrdinalRegex}|{RoundNumberOrdinalRegex}|{FractionUnitsRegex}|({AllIntRegex}ein)?(halb(e[rs]?)?|hälfte))|{AllIntRegex}ein(halb)(\\s+{RoundNumberIntegerRegex})?)(?=\\b)"
+    public static final String FractionNounWithArticleRegex = "(?<=\\b)((({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\\s+(und\\s+)?)?eine?(\\s+|\\s*-\\s*)({AllOrdinalNumberRegex}|{RoundNumberOrdinalRegex}|{FractionUnitsRegex}|({AllIntRegex}ein)?(halb(e[rs]?)?|hälfte))|{AllIntRegex}ein(halb)(\\s+{RoundNumberIntegerRegex})?)(?=\\b)"
             .replace("{AllIntRegex}", AllIntRegex)
-            .replace("{AllOrdinalRegex}", AllOrdinalRegex)
+            .replace("{AllOrdinalNumberRegex}", AllOrdinalNumberRegex)
             .replace("{RoundNumberOrdinalRegex}", RoundNumberOrdinalRegex)
             .replace("{FractionUnitsRegex}", FractionUnitsRegex)
             .replace("{RoundNumberIntegerRegexWithLocks}", RoundNumberIntegerRegexWithLocks)
@@ -615,10 +619,54 @@ public class GermanNumeric {
         .build();
 
     public static final ImmutableMap<String, String> RelativeReferenceOffsetMap = ImmutableMap.<String, String>builder()
-        .put("", "")
+        .put("letzte", "0")
+        .put("letzten", "0")
+        .put("letzter", "0")
+        .put("nächste", "1")
+        .put("nächsten", "1")
+        .put("nächster", "1")
+        .put("vorherige", "-1")
+        .put("vorherigen", "-1")
+        .put("vorheriger", "-1")
+        .put("aktuelle", "0")
+        .put("aktuellen", "0")
+        .put("aktueller", "0")
+        .put("jetzige", "0")
+        .put("jetzigen", "0")
+        .put("jetziger", "0")
+        .put("vorletzte", "-1")
+        .put("vorletzten", "-1")
+        .put("vorletzter", "-1")
+        .put("drittletzte", "-2")
+        .put("drittletzten", "-2")
+        .put("drittletzter", "-2")
+        .put("zuletzt", "0")
+        .put("früher", "-1")
         .build();
 
     public static final ImmutableMap<String, String> RelativeReferenceRelativeToMap = ImmutableMap.<String, String>builder()
-        .put("", "")
+        .put("letzte", "end")
+        .put("letzten", "end")
+        .put("letzter", "end")
+        .put("nächste", "current")
+        .put("nächsten", "current")
+        .put("nächster", "current")
+        .put("vorherige", "current")
+        .put("vorherigen", "current")
+        .put("vorheriger", "current")
+        .put("aktuelle", "current")
+        .put("aktuellen", "current")
+        .put("aktueller", "current")
+        .put("jetzige", "current")
+        .put("jetzigen", "current")
+        .put("jetziger", "current")
+        .put("vorletzte", "end")
+        .put("vorletzten", "end")
+        .put("vorletzter", "end")
+        .put("drittletzte", "end")
+        .put("drittletzten", "end")
+        .put("drittletzter", "end")
+        .put("zuletzt", "end")
+        .put("früher", "current")
         .build();
 }

@@ -632,7 +632,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
             { @"Millibitcoin", @"MILLIBITCOIN" },
             { @"Satoshi", @"SATOSHI" }
         };
-      public const string CompoundUnitConnectorRegex = @"(?<spacer>e|com)";
+      public const string CompoundUnitConnectorRegex = @"\b(?<spacer>e|com)\b";
       public static readonly Dictionary<string, string> CurrencyPrefixList = new Dictionary<string, string>
         {
             { @"Dólar", @"$" },
@@ -762,8 +762,8 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
         {
             { @"Kelvin", @"k|K|kelvin" },
             { @"Grau Rankine", @"r|°r|°ra|grau rankine|graus rankine| rankine" },
-            { @"Grau Celsius", @"°c|grau c|grau celsius|graus c|graus celsius|celsius|grau centígrado|grau centrigrado|graus centígrados|graus centigrados|centígrado|centígrados|centigrado|centigrados" },
-            { @"Grau Fahrenheit", @"°f|grau f|graus f|grau fahrenheit|graus fahrenheit|fahrenheit" },
+            { @"Grau Celsius", @"°c|° c|ºc|º c|grau c|grau celsius|graus c|graus celsius|celsius|grau centígrado|grau centrigrado|graus centígrados|graus centigrados|centígrado|centígrados|centigrado|centigrados" },
+            { @"Grau Fahrenheit", @"°f|° f|ºf|º f|grau f|graus f|grau fahrenheit|graus fahrenheit|fahrenheit" },
             { @"Grau", @"°|graus|grau" }
         };
       public static readonly Dictionary<string, string> VolumeSuffixList = new Dictionary<string, string>

@@ -185,14 +185,12 @@ public class BaseDurationExtractor implements IDateTimeExtractor {
                 ExtractResult node = new ExtractResult(start, length, text, rType, null);
 
                 // add multiple duration type to extract result
-                String type = null;
+                String type = Constants.MultipleDuration_DateTime; // Default type
 
                 if (timeUnit == totalUnit) {
                     type = Constants.MultipleDuration_Time;
                 } else if (timeUnit == 0) {
                     type = Constants.MultipleDuration_Date;
-                } else {
-                    type = Constants.MultipleDuration_DateTime;
                 }
 
                 node.setData(type);
@@ -216,17 +214,17 @@ public class BaseDurationExtractor implements IDateTimeExtractor {
         Collection<Token> result = new ArrayList<>();
 
         // handle "all day", "all year"
-        result.addAll(getTokenFromRegex(config.getAllRegex(), text));
+        result.addAll(Token.getTokenFromRegex(config.getAllRegex(), text));
 
         // handle "half day", "half year"
-        result.addAll(getTokenFromRegex(config.getHalfRegex(), text));
+        result.addAll(Token.getTokenFromRegex(config.getHalfRegex(), text));
 
         // handle "next day", "last year"
-        result.addAll(getTokenFromRegex(config.getRelativeDurationUnitRegex(), text));
+        result.addAll(Token.getTokenFromRegex(config.getRelativeDurationUnitRegex(), text));
 
         // handle "during/for the day/week/month/year"
         if (config.getOptions().match(DateTimeOptions.CalendarMode)) {
-            result.addAll(getTokenFromRegex(config.getDuringRegex(), text));
+            result.addAll(Token.getTokenFromRegex(config.getDuringRegex(), text));
         }
 
         return result;
@@ -235,7 +233,7 @@ public class BaseDurationExtractor implements IDateTimeExtractor {
     // simple cases made by a number followed an unit
     private List<Token> numberWithUnit(String text) {
         List<Token> result = new ArrayList<>();
-        List<ExtractResult> ers = this.config.getCardinalExtractor().extract(text);
+        List<ExtractResult> ers = extractNumbersBeforeUnit(text);
         for (ExtractResult er : ers) {
             String afterStr = text.substring(er.getStart() + er.getLength());
             ConditionalMatch match = RegexExtension.matchBegin(this.config.getFollowedUnit(), afterStr, true);
@@ -245,25 +243,33 @@ public class BaseDurationExtractor implements IDateTimeExtractor {
         }
 
         // handle "3hrs"
-        result.addAll(this.getTokenFromRegex(this.config.getNumberCombinedWithUnit(), text));
+        result.addAll(Token.getTokenFromRegex(this.config.getNumberCombinedWithUnit(), text));
 
         // handle "an hour"
-        result.addAll(this.getTokenFromRegex(this.config.getAnUnitRegex(), text));
+        result.addAll(Token.getTokenFromRegex(this.config.getAnUnitRegex(), text));
 
         // handle "few" related cases
-        result.addAll(this.getTokenFromRegex(this.config.getInexactNumberUnitRegex(), text));
+        result.addAll(Token.getTokenFromRegex(this.config.getInexactNumberUnitRegex(), text));
 
         return result;
     }
 
-    private Collection<Token> getTokenFromRegex(Pattern pattern, String text) {
-        Collection<Token> result = new ArrayList<>();
+    private List<ExtractResult> extractNumbersBeforeUnit(String text) {
+        List<ExtractResult> ers = this.config.getCardinalExtractor().extract(text);
 
-        for (Match match : RegExpUtility.getMatches(pattern, text)) {
-            result.add(new Token(match.index, match.index + match.length));
+        // In special cases some languages will treat "both" as a number to be combined with duration units.
+        Collection<Token> specialNumberTokens = Token.getTokenFromRegex(config.getSpecialNumberUnitRegex(), text);
+
+        for (Token token: specialNumberTokens) {
+            ExtractResult er = new ExtractResult();
+            er.setStart(token.getStart());
+            er.setLength(token.getLength());
+            er.setText(text.substring(token.getStart(), token.getEnd()));
+
+            ers.add(er);
         }
 
-        return result;
+        return ers;
     }
 
     // handle cases look like: {number} {unit}? and {an|a} {half|quarter} {unit}?
