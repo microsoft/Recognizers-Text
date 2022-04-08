@@ -484,7 +484,7 @@
   },
   {
     "Input": "Es ist viertel 6",
-    "NotSupportedByDesign": "javascript,,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "viertel 6",
@@ -505,7 +505,7 @@
   },
   {
     "Input": "Es ist viertel vor 6",
-    "NotSupportedByDesign": "javascript,,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "viertel vor 6",
@@ -526,7 +526,7 @@
   },
   {
     "Input": "Es ist dreiviertel 6",
-    "NotSupportedByDesign": "javascript,,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "dreiviertel 6",
