@@ -163,5 +163,6 @@ class FrenchDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
             regex.search(self.preposition_regex, source) is not None or
             source == 't' or
             source == 'pour' or
-            source == 'vers'
+            source == 'vers' or
+            source == 'le'
         )
