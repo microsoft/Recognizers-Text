@@ -2683,7 +2683,7 @@
   },
   {
     "Input": "The price starts at dollar 22.5 million.",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "dotnet, java, javascript, python",
     "Results": [
       {
         "Text": "dollar 22.5 million",

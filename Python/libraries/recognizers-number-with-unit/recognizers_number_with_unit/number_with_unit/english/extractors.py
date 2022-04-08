@@ -20,6 +20,10 @@ class EnglishNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfigu
     @property
     def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
         return DefinitionLoader.load_ambiguity_filters(EnglishNumericWithUnit.AmbiguityFiltersDict)
+        
+    @property
+    def dimension_ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
+        return DefinitionLoader.load_ambiguity_filters(EnglishNumericWithUnit.DimensionAmbiguityFiltersDict)
 
     @property
     def unit_num_extractor(self) -> Extractor:

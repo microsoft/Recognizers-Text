@@ -582,7 +582,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly Dictionary<string, string> CurrencyPrefixList = new Dictionary<string, string>
         {
             { @"Dobra", @"db|std" },
-            { @"Dollar", @"$|dollars|dollar" },
+            { @"Dollar", @"$" },
             { @"Brazilian Real", @"R$" },
             { @"United States dollar", @"united states $|us$|us $|u.s. $|u.s $|usd$" },
             { @"East Caribbean dollar", @"east caribbean $" },

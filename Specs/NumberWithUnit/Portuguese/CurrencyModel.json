@@ -1584,7 +1584,7 @@
   },
   {
     "Input": "custa apenas 15 dólares 50.",
-    "NotSupported": "javascript, java",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "15 dólares 50",

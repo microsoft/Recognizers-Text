@@ -24,6 +24,10 @@ class NumberWithUnitExtractorConfiguration(ABC):
     @property
     def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
         pass
+        
+    @property
+    def dimension_ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
+        pass
 
     @property
     @abstractmethod
@@ -315,6 +319,9 @@ class NumberWithUnitExtractor(Extractor):
 
             # Remove common ambiguous cases
             result = self._filter_ambiguity(result, source)
+            # Remove entity-specific ambiguous case
+            if self.config.extract_type == Constants.SYS_UNIT_DIMENSION:
+                result = self._filter_ambiguity(result, source, self.config.dimension_ambiguity_filters_dict)
 
         # Expand Chinese phrase to the `half` patterns when it follows closely origin phrase.
         self.config.expand_half_suffix(source, result, numbers)
@@ -458,11 +465,15 @@ class NumberWithUnitExtractor(Extractor):
             dict[key] = []
         dict[key].append(value)
 
-    def _filter_ambiguity(self, ers: List[ExtractResult], text: str,) -> List[ExtractResult]:
+    def _filter_ambiguity(self, ers: List[ExtractResult], text: str, ambiguity_filter_dict = None) -> List[ExtractResult]:
+    
+        # If no filter is specified, use common AmbiguityFilter
+        if ambiguity_filter_dict is None:
+            ambiguity_filter_dict = self.config.ambiguity_filters_dict;
 
-        if self.config.ambiguity_filters_dict is not None:
-            for regex_var in self.config.ambiguity_filters_dict:
-                regexvar_value = self.config.ambiguity_filters_dict[regex_var]
+        if ambiguity_filter_dict is not None:
+            for regex_var in ambiguity_filter_dict:
+                regexvar_value = ambiguity_filter_dict[regex_var]
                 for er in ers:
                     match = list(filter(lambda x: x.group(), regex.finditer(regex_var, ers[0].text)))
 
