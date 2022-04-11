@@ -125,12 +125,10 @@ class NumberWithUnitRecognizer(Recognizer[NumberWithUnitOptions]):
         # endregion
 
         # region French
-        self.register_model('CurrencyModel', Culture.French, lambda options: CurrencyModel([
-            ExtractorParserModel(
-                NumberWithUnitExtractor(
-                    FrenchCurrencyExtractorConfiguration()),
-                NumberWithUnitParser(FrenchCurrencyParserConfiguration()))
-        ]))
+        self.register_model('CurrencyModel', Culture.French, lambda options: CurrencyModel(
+            [ExtractorParserModel(BaseMergedUnitExtractor(FrenchCurrencyExtractorConfiguration(
+            )), BaseMergedUnitParser(FrenchCurrencyParserConfiguration()))]
+        ))
         self.register_model('TemperatureModel', Culture.French, lambda options: TemperatureModel([
             ExtractorParserModel(
                 NumberWithUnitExtractor(
