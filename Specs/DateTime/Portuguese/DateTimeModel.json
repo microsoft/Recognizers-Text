@@ -3150,7 +3150,7 @@
     "Context": {
       "ReferenceDateTime": "2020-05-05T01:00:00"
     },
-    "NotSupported": "javascript",
+    "NotSupported": "javascript, python",
     "Results": [
       {
         "Text": "segunda-feira 12/01/2016",
