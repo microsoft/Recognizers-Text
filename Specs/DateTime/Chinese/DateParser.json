@@ -372,6 +372,7 @@
   },
   {
     "Input": "10月12号，星期一",
+    "Comment": "The input is not preprocessed in java, javascript, python and so the extracted text is not normalized.",
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
@@ -396,6 +397,7 @@
   },
   {
     "Input": "2009年10月12号，星期一",
+    "Comment": "The input is not preprocessed in java, javascript, python and so the extracted text is not normalized.",
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },

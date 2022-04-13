@@ -1102,29 +1102,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                         var durationUnit = this.config.UnitMap[durationStr];
                         DateObject beginDate;
                         DateObject endDate = beginDate = referenceDate;
-                        var diff = 0;
 
-                        switch (durationUnit)
-                        {
-                            case Constants.TimexWeek:
-                                diff = Constants.WeekDayCount - (beginDate.DayOfWeek == 0 ? Constants.WeekDayCount : (int)beginDate.DayOfWeek);
-                                endDate = beginDate.AddDays(diff);
-                                break;
-
-                            case Constants.TimexMonthFull:
-                                endDate = DateObject.MinValue.SafeCreateFromValue(beginDate.Year, beginDate.Month, 1);
-                                endDate = endDate.AddMonths(1).AddDays(-1);
-                                diff = endDate.Day - beginDate.Day + 1;
-                                break;
-
-                            case Constants.TimexYear:
-                                endDate = DateObject.MinValue.SafeCreateFromValue(beginDate.Year, 12, 1);
-                                endDate = endDate.AddMonths(1).AddDays(-1);
-                                diff = endDate.DayOfYear - beginDate.DayOfYear + 1;
-                                break;
-                        }
-
-                        ret.Timex = TimexUtility.GenerateDatePeriodTimexWithDiff(beginDate, endDate, diff);
+                        ret.Timex = TimexUtility.GenerateDatePeriodTimexWithDiff(beginDate, ref endDate, durationUnit);
                         ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
                         ret.Success = true;
                         return ret;
@@ -1909,6 +1888,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
+        // Analogous to the same method in BaseDatePeriodParser, it deals with date periods that involve durations
+        // e.g. "past 2 years", "within 2 days", "first 2 weeks of 2018".
         private DateTimeResolutionResult ParseDuration(string text, DateObject referenceDate)
         {
             var ret = new DateTimeResolutionResult();

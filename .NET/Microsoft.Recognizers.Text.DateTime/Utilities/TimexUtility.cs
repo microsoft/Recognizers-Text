@@ -172,8 +172,29 @@ namespace Microsoft.Recognizers.Text.DateTime
             return specialYearPrefixes == null ? yearTimex : specialYearPrefixes + yearTimex;
         }
 
-        public static string GenerateDatePeriodTimexWithDiff(DateObject beginDate, DateObject endDate, int diff)
+        public static string GenerateDatePeriodTimexWithDiff(DateObject beginDate, ref DateObject endDate, string durationUnit)
         {
+            var diff = 0;
+            switch (durationUnit)
+            {
+                case Constants.TimexWeek:
+                    diff = Constants.WeekDayCount - (beginDate.DayOfWeek == 0 ? Constants.WeekDayCount : (int)beginDate.DayOfWeek);
+                    endDate = beginDate.AddDays(diff);
+                    break;
+
+                case Constants.TimexMonthFull:
+                    endDate = DateObject.MinValue.SafeCreateFromValue(beginDate.Year, beginDate.Month, 1);
+                    endDate = endDate.AddMonths(1).AddDays(-1);
+                    diff = endDate.Day - beginDate.Day + 1;
+                    break;
+
+                case Constants.TimexYear:
+                    endDate = DateObject.MinValue.SafeCreateFromValue(beginDate.Year, 12, 1);
+                    endDate = endDate.AddMonths(1).AddDays(-1);
+                    diff = endDate.DayOfYear - beginDate.DayOfYear + 1;
+                    break;
+            }
+
             var durationTimex = "P" + diff + Constants.TimexDay;
             return $"({DateTimeFormatUtil.LuisDate(beginDate)},{DateTimeFormatUtil.LuisDate(endDate)},{durationTimex})";
         }
