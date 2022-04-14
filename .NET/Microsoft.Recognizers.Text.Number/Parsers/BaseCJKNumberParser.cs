@@ -532,7 +532,8 @@ namespace Microsoft.Recognizers.Text.Number
             long roundBefore = -1, roundDefault = 1;
             var isNegative = false;
             var hasPreviousDigits = false;
-            var hasRoundDirectOrZero = intStr.Any(c => Config.RoundDirectList.Contains(c) || c == Config.ZeroChar);
+            var hasRoundDirect = intStr.Any(c => Config.RoundDirectList.Contains(c));
+            var hasRoundDirectOrZero = hasRoundDirect || intStr.Any(c => c == Config.ZeroChar);
 
             var isDozen = false;
             var isPair = false;
@@ -664,7 +665,7 @@ namespace Microsoft.Recognizers.Text.Number
                 // Japanese numbers in the form "一九九九" (1999) must be processed as digit numbers
                 if (Config.CultureInfo.Name.ToLowerInvariant() == Culture.Japanese && !hasPreviousDigits)
                 {
-                    hasPreviousDigits = !hasRoundDirectOrZero && Config.ZeroToNineMap.ContainsKey(intStr[i]);
+                    hasPreviousDigits = !hasRoundDirect && Config.ZeroToNineMap.ContainsKey(intStr[i]) && intStr[i] != Config.ZeroChar;
                 }
 
                 if (Config.RoundDirectList.Contains(intStr[i]))

@@ -12726,5 +12726,167 @@
         "End": 9
       }
     ]
+  },
+  {
+    "Input": "零",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "零",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0"
+        },
+        "Start": 0,
+        "End": 0
+      }
+    ]
+  },
+  {
+    "Input": "の総和は零となるため二次電流は流れず",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "零",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0"
+        },
+        "Start": 4,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "0123",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "0123",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "123"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "〇一二三",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "〇一二三",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "123"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "零一二三",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "零一二三",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "123"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "零零零一二三",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "零零零一二三",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "123"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "零 一 二 三",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "零",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0"
+        },
+        "Start": 0,
+        "End": 0
+      },
+      {
+        "Text": "一",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        },
+        "Start": 2,
+        "End": 2
+      },
+      {
+        "Text": "二",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2"
+        },
+        "Start": 4,
+        "End": 4
+      },
+      {
+        "Text": "三",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3"
+        },
+        "Start": 6,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "零十",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "零十",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "零十三",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "零十三",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "13"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
   }
 ]
