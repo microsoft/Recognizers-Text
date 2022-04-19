@@ -609,6 +609,7 @@ namespace Microsoft.Recognizers.Text.Number
                     }
 
                     roundDefault = roundRecent / 10;
+                    beforeValue = 1;
                 }
                 else if (Config.ZeroToNineMap.ContainsKey(intStr[i]))
                 {

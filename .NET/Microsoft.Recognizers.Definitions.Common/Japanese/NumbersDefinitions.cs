@@ -101,7 +101,37 @@ namespace Microsoft.Recognizers.Definitions.Japanese
             { @"万万", @"億" },
             { @"億万", @"兆" },
             { @"万億", @"兆" },
-            { @" ", @"" }
+            { @" ", @"" },
+            { @"れい", @"〇" },
+            { @"ゼロ", @"〇" },
+            { @"マル", @"〇" },
+            { @"いち", @"一" },
+            { @"いっ", @"一" },
+            { @"に", @"二" },
+            { @"さん", @"三" },
+            { @"し", @"四" },
+            { @"よん", @"四" },
+            { @"ご", @"五" },
+            { @"ろく", @"六" },
+            { @"ろっ", @"六" },
+            { @"しち", @"七" },
+            { @"なな", @"七" },
+            { @"はち", @"八" },
+            { @"はっ", @"八" },
+            { @"きゅう", @"九" },
+            { @"く", @"九" },
+            { @"じゅう", @"十" },
+            { @"ひゃく", @"百" },
+            { @"ぴゃく", @"百" },
+            { @"びゃく", @"百" },
+            { @"せん", @"千" },
+            { @"ぜん", @"千" },
+            { @"まん", @"万" },
+            { @"ひゃくまん", @"百万" },
+            { @"ぴゃくまん", @"百万" },
+            { @"びゃくまん", @"百万" },
+            { @"せんまん", @"千万" },
+            { @"ぜんまん", @"千万" }
         };
       public static readonly IList<char> RoundDirectList = new List<char>
         {
@@ -114,6 +144,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
             '十'
         };
       public const string RoundNumberIntegerRegex = @"(十|百|千|万(?!万)|億|兆)";
+      public const string RoundNumberIntegerHiraganaRegex = @"(じゅう|[ひぴび]ゃく|[せぜ]ん|まん|[ひぴび]ゃくまん|[せぜ]んまん)";
       public static readonly string AllMultiplierLookupRegex = $@"({BaseNumbers.MultiplierLookupRegex}|ミリリットル(入れら)?|キロメートル|メートル|ミリメート)";
       public static readonly string DigitalNumberRegex = $@"((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
       public const string ZeroToNineFullHalfRegex = @"[\d]";
@@ -124,6 +155,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
       public static readonly string DoubleAndRoundRegex = $@"{ZeroToNineFullHalfRegex}+(\.{ZeroToNineFullHalfRegex}+)?\s*{RoundNumberIntegerRegex}{{1,2}}(\s*(以上))?";
       public const string FracSplitRegex = @"[はと]|分\s*の";
       public const string ZeroToNineIntegerRegex = @"[零〇一二三四五六七八九]";
+      public const string ZeroToNineIntegerHiraganaRegex = @"(れい|ゼロ|マル|い[ちっ]|に|さん|し|よん|ご|ろ[くっ]|しち|なな|は[ちっ]|きゅう|く)";
       public const string HalfUnitRegex = @"半";
       public const string NegativeNumberTermsRegex = @"(マ\s*イ\s*ナ\s*ス)";
       public static readonly string NegativeNumberTermsRegexNum = $@"((?<!(\d+(\s*{BaseNumbers.NumberMultiplierRegex})?\s*)|[-−－])[-−－])";
@@ -134,6 +166,9 @@ namespace Microsoft.Recognizers.Definitions.Japanese
       public static readonly string NotSingleRegex = $@"(?<!(第|だい))({RoundNumberIntegerRegex}+(({ZeroToNineIntegerRegex}+|{RoundNumberIntegerRegex})+|{ZeroToNineFullHalfRegex}+|十)(\s*(以上))?)|(({ZeroToNineIntegerRegex}+|{ZeroToNineFullHalfRegex}+|十)(\s*{RoundNumberIntegerRegex}){{1,2}})(\s*([零]?({ZeroToNineIntegerRegex}+|((,\s*){ZeroToNineFullHalfRegex}{{3}})+|{ZeroToNineFullHalfRegex}+|十)(\s*{RoundNumberIntegerRegex}){{0,1}}))*(\s*(以上)?)";
       public static readonly string SingleRegex = $@"(({ZeroToNineIntegerRegex}+|{ZeroToNineFullHalfRegex}+|十)(?={AllowListRegex}))";
       public static readonly string AllIntRegex = $@"(?<!(ダース))({NotSingleRegex}|({ZeroToNineIntegerRegex}+|{RoundNumberIntegerRegex}+))";
+      public static readonly string NotSingleHiraganaRegex = $@"(({ZeroToNineIntegerHiraganaRegex}?{RoundNumberIntegerHiraganaRegex})+{ZeroToNineIntegerHiraganaRegex}?)";
+      public static readonly string SingleHiriganaRegex = $@"({ZeroToNineIntegerHiraganaRegex}+)";
+      public static readonly string AllIntHiriganaRegex = $@"\b({NotSingleHiraganaRegex}|{SingleHiriganaRegex})\b";
       public const string PlaceHolderPureNumber = @"\b";
       public const string PlaceHolderDefault = @"\D|\b";
       public static readonly string NumbersSpecialsCharsAggressive = $@"((({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})\s*)?({ZeroToNineFullHalfRegex}))+(?=\b|\D)";
@@ -145,8 +180,8 @@ namespace Microsoft.Recognizers.Definitions.Japanese
       public static readonly string NumbersWithDozen = $@"({AllIntRegex}([と]?{ZeroToNineIntegerRegex})?|{ZeroToNineFullHalfRegex}+)(ダース)";
       public const string PointRegexStr = @"[\.．・]";
       public static readonly string AllFloatRegex = $@"{NegativeNumberTermsRegex}?{AllIntRegex}\s*{PointRegexStr}\s*[一二三四五六七八九](\s*{ZeroToNineIntegerRegex})*";
-      public static readonly string NumbersWithAllowListRegex = $@"(?<!(離は))({NegativeNumberTermsRegex}?({NotSingleRegex}|{SingleRegex})(?!({AllIntRegex}*([、.]{ZeroToNineIntegerRegex}+)*|{AllFloatRegex})*\s*{PercentageSymbol}))(?!(\s*{AllMultiplierLookupRegex}))";
-      public static readonly string NumbersAggressiveRegex = $@"(({AllIntRegex})(?!({AllIntRegex}|([、.]{ZeroToNineIntegerRegex})|{AllFloatRegex}|\s*{PercentageSymbol})))";
+      public static readonly string NumbersWithAllowListRegex = $@"(?<!(離は))({NegativeNumberTermsRegex}?({NotSingleRegex}|{SingleRegex}|{AllIntHiriganaRegex})(?!({AllIntRegex}*([、.]{ZeroToNineIntegerRegex}+)*|{AllFloatRegex})*\s*{PercentageSymbol}))(?!(\s*{AllMultiplierLookupRegex}))";
+      public static readonly string NumbersAggressiveRegex = $@"(({AllIntRegex}|{AllIntHiriganaRegex})(?!({AllIntRegex}|([、.]{ZeroToNineIntegerRegex})|{AllFloatRegex}|\s*{PercentageSymbol})))";
       public static readonly string PointRegex = $@"{PointRegexStr}";
       public static readonly string DoubleSpecialsCharsAggressive = $@"((?<!({ZeroToNineFullHalfRegex}+[\.．]{ZeroToNineFullHalfRegex}*))({NegativeNumberTermsRegexNum}\s*)?{ZeroToNineFullHalfRegex}+[\.．,]{ZeroToNineFullHalfRegex}+(?!({ZeroToNineFullHalfRegex}*[\.．,]{ZeroToNineFullHalfRegex}+)))(?=\b|\D)";
       public static readonly string DoubleSpecialsChars = $@"({DoubleSpecialsCharsAggressive})(?!\s*{AllMultiplierLookupRegex})";
@@ -254,6 +289,10 @@ namespace Microsoft.Recognizers.Definitions.Japanese
             { @"次のもの", @"current" },
             { @"最後から3番目", @"end" },
             { @"最後から2番目", @"end" }
+        };
+      public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
+        {
+            { @"^に$", @"に" }
         };
     }
 }
