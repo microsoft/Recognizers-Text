@@ -1,6 +1,7 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
+using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
@@ -47,7 +48,9 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
             this.ZeroToNineMap = NumbersDefinitions.ZeroToNineMap.ToImmutableDictionary();
             this.FullToHalfMap = NumbersDefinitions.FullToHalfMap.ToImmutableDictionary();
             this.RoundNumberMapChar = NumbersDefinitions.RoundNumberMapChar.ToImmutableDictionary();
-            this.UnitMap = NumbersDefinitions.UnitMap.ToImmutableSortedDictionary();
+
+            // Sorted by decreasing key length
+            this.UnitMap = NumbersDefinitions.UnitMap.ToImmutableSortedDictionary(new LengthComparer(true));
             this.RoundDirectList = NumbersDefinitions.RoundDirectList.ToImmutableList();
             this.TenChars = NumbersDefinitions.TenChars.ToImmutableList();
 
@@ -116,6 +119,22 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
         public override long ResolveCompositeNumber(string numberStr)
         {
             return 0;
+        }
+
+        private class LengthComparer : IComparer<string>
+        {
+            private bool isReverseOrder;
+
+            public LengthComparer(bool reverseOrder = false)
+            {
+                isReverseOrder = reverseOrder;
+            }
+
+            public int Compare(string x, string y)
+            {
+                int comparison = isReverseOrder ? y.Length.CompareTo(x.Length) : x.Length.CompareTo(y.Length);
+                return comparison == 0 ? x.CompareTo(y) : comparison;
+            }
         }
     }
 }
