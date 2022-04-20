@@ -808,5 +808,20 @@
         }
       }
     ]
+  },
+  {
+    "Input": "A temperature hoje chegou aos 99º f.",
+    "Results": [
+      {
+        "Text": "99º f",
+        "Start": 30,
+        "End": 34,
+        "TypeName": "temperature",
+        "Resolution": {
+          "unit": "Grau Fahrenheit",
+          "value": "99"
+        }
+      }
+    ]
   }
 ]

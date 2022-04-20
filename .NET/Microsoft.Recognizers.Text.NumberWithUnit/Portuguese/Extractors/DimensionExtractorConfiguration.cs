@@ -36,6 +36,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
             .Concat(AreaExtractorConfiguration.AmbiguousValues)
             .Concat(SpeedExtractorConfiguration.AmbiguousValues)
             .Concat(AngleExtractorConfiguration.AmbiguousUnits)
+            .Concat(WeightExtractorConfiguration.AmbiguousUnits)
             .Distinct()
             .ToImmutableList();
 
