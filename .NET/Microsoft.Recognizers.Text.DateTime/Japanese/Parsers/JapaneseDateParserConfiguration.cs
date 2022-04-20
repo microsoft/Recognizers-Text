@@ -19,6 +19,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         public static readonly Regex PlusThreeDayRegex = new Regex(DateTimeDefinitions.PlusThreeDayRegex, RegexFlags);
         public static readonly Regex MinusThreeDayRegex = new Regex(DateTimeDefinitions.MinusThreeDayRegex, RegexFlags);
         public static readonly Regex PlusFourDayRegex = new Regex(DateTimeDefinitions.PlusFourDayRegex, RegexFlags);
+        public static readonly Regex NextMonthRegex = new Regex(DateTimeDefinitions.ParserConfigurationNextMonthRegex, RegexFlags);
+        public static readonly Regex LastMonthRegex = new Regex(DateTimeDefinitions.ParserConfigurationLastMonthRegex, RegexFlags);
+        public static readonly Regex LastWeekDayRegex = new Regex(DateTimeDefinitions.ParserConfigurationLastWeekDayRegex, RegexFlags);
 
         public static readonly string ParserName = Constants.SYS_DATETIME_DATE; // "Date";
 
@@ -126,11 +129,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         public string DynastyStartYear { get; }
 
-        public string LastWeekDayToken => DateTimeDefinitions.ParserConfigurationLastWeekDayToken;
+        Regex ICJKDateParserConfiguration.LastWeekDayRegex => LastWeekDayRegex;
 
-        public string NextMonthToken => DateTimeDefinitions.ParserConfigurationNextMonthToken;
+        Regex ICJKDateParserConfiguration.NextMonthRegex => NextMonthRegex;
 
-        public string LastMonthToken => DateTimeDefinitions.ParserConfigurationLastMonthToken;
+        Regex ICJKDateParserConfiguration.LastMonthRegex => LastMonthRegex;
 
         public int GetSwiftDay(string text)
         {

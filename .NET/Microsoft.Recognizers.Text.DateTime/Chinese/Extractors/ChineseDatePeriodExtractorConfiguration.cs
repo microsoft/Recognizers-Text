@@ -40,6 +40,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static readonly Regex WeekOfYearRegex = new Regex(DateTimeDefinitions.WeekOfYearRegex, RegexFlags);
 
+        public static readonly Regex WeekOfDateRegex = new Regex(DateTimeDefinitions.WeekOfDateRegex, RegexFlags);
+
+        public static readonly Regex MonthOfDateRegex = new Regex(DateTimeDefinitions.MonthOfDateRegex, RegexFlags);
+
+        public static readonly Regex WhichWeekRegex = new Regex(DateTimeDefinitions.WhichWeekRegex, RegexFlags);
+
         public static readonly Regex FollowedUnit = new Regex(DateTimeDefinitions.FollowedUnit, RegexFlags);
 
         public static readonly Regex NumberCombinedWithUnit = new Regex(DateTimeDefinitions.NumberCombinedWithUnit, RegexFlags);
@@ -54,11 +60,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static readonly Regex DayToDay = new Regex(DateTimeDefinitions.DayToDay, RegexFlags);
 
+        public static readonly Regex MonthDayRange = new Regex(DateTimeDefinitions.MonthDayRange, RegexFlags);
+
         public static readonly Regex DayRegexForPeriod = new Regex(DateTimeDefinitions.DayRegexForPeriod, RegexFlags);
 
         public static readonly Regex PastRegex = new Regex(DateTimeDefinitions.PastRegex, RegexFlags);
 
         public static readonly Regex FutureRegex = new Regex(DateTimeDefinitions.FutureRegex, RegexFlags);
+
+        public static readonly Regex WeekWithWeekDayRangeRegex = new Regex(DateTimeDefinitions.WeekWithWeekDayRangeRegex, RegexFlags);
 
         public static readonly Regex FirstLastOfYearRegex = new Regex(DateTimeDefinitions.FirstLastOfYearRegex, RegexFlags);
 
@@ -68,6 +78,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static readonly Regex DecadeRegex = new Regex(DateTimeDefinitions.DecadeRegex, RegexFlags);
 
+        public static readonly Regex CenturyRegex = new Regex(DateTimeDefinitions.CenturyRegex, RegexFlags);
+
+        public static readonly Regex ComplexDatePeriodRegex = new Regex(DateTimeDefinitions.ComplexDatePeriodRegex, RegexFlags);
+
         public static readonly Regex SpecialMonthRegex = new Regex(DateTimeDefinitions.SpecialMonthRegex, RegexFlags);
 
         public static readonly Regex SpecialYearRegex = new Regex(DateTimeDefinitions.SpecialYearRegex, RegexFlags);
@@ -76,9 +90,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public static readonly Regex DayRegexInCJK = new Regex(DateTimeDefinitions.DatePeriodDayRegexInCJK, RegexFlags);
         public static readonly Regex MonthNumRegex = new Regex(DateTimeDefinitions.MonthNumRegex, RegexFlags);
         public static readonly Regex ThisRegex = new Regex(DateTimeDefinitions.DatePeriodThisRegex, RegexFlags);
+        public static readonly Regex DateUnitRegex = new Regex(DateTimeDefinitions.DateUnitRegex, RegexFlags);
         public static readonly Regex LastRegex = new Regex(DateTimeDefinitions.DatePeriodLastRegex, RegexFlags);
         public static readonly Regex NextRegex = new Regex(DateTimeDefinitions.DatePeriodNextRegex, RegexFlags);
         public static readonly Regex RelativeMonthRegex = new Regex(DateTimeDefinitions.RelativeMonthRegex, RegexFlags);
+        public static readonly Regex LaterEarlyPeriodRegex = new Regex(DateTimeDefinitions.LaterEarlyPeriodRegex, RegexFlags);
+        public static readonly Regex DatePointWithAgoAndLater = new Regex(DateTimeDefinitions.DatePointWithAgoAndLater, RegexFlags);
+        public static readonly Regex ReferenceDatePeriodRegex = new Regex(DateTimeDefinitions.ReferenceDatePeriodRegex, RegexFlags);
         public static readonly Regex MonthRegex = new Regex(DateTimeDefinitions.MonthRegex, RegexFlags);
         public static readonly Regex YearRegex = new Regex(DateTimeDefinitions.YearRegex, RegexFlags);
         public static readonly Regex YearRegexInNumber = new Regex(DateTimeDefinitions.YearRegexInNumber, RegexFlags);
@@ -105,15 +123,21 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             SpecialYearRegex,
             WeekOfMonthRegex,
             WeekOfYearRegex,
+            WeekOfDateRegex,
+            MonthOfDateRegex,
+            WhichWeekRegex,
             SeasonWithYear,
             QuarterRegex,
             DecadeRegex,
+            CenturyRegex,
+            ComplexDatePeriodRegex,
         };
 
         public ChineseDatePeriodExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
             DatePointExtractor = new BaseCJKDateExtractor(new ChineseDateExtractorConfiguration(this));
+            DurationExtractor = new BaseCJKDurationExtractor(new ChineseDurationExtractorConfiguration(this));
 
             var numOptions = NumberOptions.None;
             if ((config.Options & DateTimeOptions.NoProtoCache) != 0)
@@ -128,6 +152,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public IDateTimeExtractor DatePointExtractor { get; }
 
+        public IDateTimeExtractor DurationExtractor { get; }
+
         public IExtractor IntegerExtractor { get; }
 
         IEnumerable<Regex> ICJKDatePeriodExtractorConfiguration.SimpleCasesRegexes => SimpleCasesRegexes;
@@ -137,6 +163,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         Regex ICJKDatePeriodExtractorConfiguration.FutureRegex => FutureRegex;
 
         Regex ICJKDatePeriodExtractorConfiguration.PastRegex => PastRegex;
+
+        Regex ICJKDatePeriodExtractorConfiguration.DateUnitRegex => DateUnitRegex;
 
         Regex ICJKDatePeriodExtractorConfiguration.FirstLastOfYearRegex => FirstLastOfYearRegex;
 
@@ -149,5 +177,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         Regex ICJKDatePeriodExtractorConfiguration.RangePrefixRegex => RangePrefixRegex;
 
         Regex ICJKDatePeriodExtractorConfiguration.RangeSuffixRegex => RangeSuffixRegex;
+
+        public Dictionary<Regex, Regex> AmbiguityFiltersDict => null;
     }
 }

@@ -11,7 +11,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
     public class ChineseDateParserConfiguration : BaseDateTimeOptionsConfiguration, ICJKDateParserConfiguration
     {
+        public static readonly Regex NextMonthRegex = new Regex(DateTimeDefinitions.ParserConfigurationNextMonthRegex, RegexFlags);
+        public static readonly Regex LastMonthRegex = new Regex(DateTimeDefinitions.ParserConfigurationLastMonthRegex, RegexFlags);
+        public static readonly Regex LastWeekDayRegex = new Regex(DateTimeDefinitions.ParserConfigurationLastWeekDayRegex, RegexFlags);
+
         public static readonly string ParserName = Constants.SYS_DATETIME_DATE; // "Date";
+
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         public ChineseDateParserConfiguration(ICJKCommonDateTimeParserConfiguration config)
              : base(config)
@@ -116,11 +122,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public string DynastyStartYear { get; }
 
-        public string LastWeekDayToken => DateTimeDefinitions.ParserConfigurationLastWeekDayToken;
+        Regex ICJKDateParserConfiguration.LastWeekDayRegex => LastWeekDayRegex;
 
-        public string NextMonthToken => DateTimeDefinitions.ParserConfigurationNextMonthToken;
+        Regex ICJKDateParserConfiguration.NextMonthRegex => NextMonthRegex;
 
-        public string LastMonthToken => DateTimeDefinitions.ParserConfigurationLastMonthToken;
+        Regex ICJKDateParserConfiguration.LastMonthRegex => LastMonthRegex;
 
         public int GetSwiftDay(string text)
         {

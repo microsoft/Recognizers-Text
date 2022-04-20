@@ -26,6 +26,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
+        private static readonly Regex NextMonthRegex = new Regex(DateTimeDefinitions.ParserConfigurationNextMonthRegex, RegexFlags);
+        private static readonly Regex AfterNextMonthRegex = new Regex(DateTimeDefinitions.ParserConfigurationAfterNextMonthRegex, RegexFlags);
+        private static readonly Regex LastMonthRegex = new Regex(DateTimeDefinitions.ParserConfigurationLastMonthRegex, RegexFlags);
+        private static readonly Regex NextYearRegex = new Regex(DateTimeDefinitions.ParserConfigurationNextYearRegex, RegexFlags);
+        private static readonly Regex AfterNextYearRegex = new Regex(DateTimeDefinitions.ParserConfigurationAfterNextYearRegex, RegexFlags);
+        private static readonly Regex LastYearRegex = new Regex(DateTimeDefinitions.ParserConfigurationLastYearRegex, RegexFlags);
+        private static readonly Regex ThisYearRegex = new Regex(DateTimeDefinitions.ParserConfigurationThisYearRegex, RegexFlags);
+
         public JapaneseDatePeriodParserConfiguration(ICJKCommonDateTimeParserConfiguration config)
             : base(config)
         {
@@ -33,6 +41,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             NumberParser = config.NumberParser;
             DateExtractor = config.DateExtractor;
             DurationExtractor = config.DurationExtractor;
+            CardinalExtractor = config.CardinalExtractor;
+            DurationParser = config.DurationParser;
             DateParser = config.DateParser;
 
             DynastyYearRegex = JapaneseDateExtractorConfiguration.DynastyYearRegex;
@@ -49,6 +59,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             MonthToMonth = JapaneseDatePeriodExtractorConfiguration.MonthToMonth;
             MonthToMonthSuffixRequired = JapaneseDatePeriodExtractorConfiguration.MonthToMonthSuffixRequired;
             DayToDay = JapaneseDatePeriodExtractorConfiguration.DayToDay;
+            MonthDayRange = JapaneseDatePeriodExtractorConfiguration.MonthDayRange;
             DayRegexForPeriod = JapaneseDatePeriodExtractorConfiguration.DayRegexForPeriod;
             MonthRegex = JapaneseDatePeriodExtractorConfiguration.MonthRegex;
             SpecialMonthRegex = JapaneseDatePeriodExtractorConfiguration.SpecialMonthRegex;
@@ -60,14 +71,25 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             NumberCombinedWithUnit = JapaneseDatePeriodExtractorConfiguration.NumberCombinedWithUnit;
             PastRegex = JapaneseDatePeriodExtractorConfiguration.PastRegex;
             FutureRegex = JapaneseDatePeriodExtractorConfiguration.FutureRegex;
+            WeekWithWeekDayRangeRegex = JapaneseDatePeriodExtractorConfiguration.WeekWithWeekDayRangeRegex;
             UnitRegex = JapaneseDatePeriodExtractorConfiguration.UnitRegex;
             WeekOfMonthRegex = JapaneseDatePeriodExtractorConfiguration.WeekOfMonthRegex;
             WeekOfYearRegex = JapaneseDatePeriodExtractorConfiguration.WeekOfYearRegex;
+            WeekOfDateRegex = JapaneseDatePeriodExtractorConfiguration.WeekOfDateRegex;
+            MonthOfDateRegex = JapaneseDatePeriodExtractorConfiguration.MonthOfDateRegex;
+            WhichWeekRegex = JapaneseDatePeriodExtractorConfiguration.WhichWeekRegex;
             FirstLastOfYearRegex = JapaneseDatePeriodExtractorConfiguration.FirstLastOfYearRegex;
             SeasonWithYear = JapaneseDatePeriodExtractorConfiguration.SeasonWithYear;
             QuarterRegex = JapaneseDatePeriodExtractorConfiguration.QuarterRegex;
             DecadeRegex = JapaneseDatePeriodExtractorConfiguration.DecadeRegex;
+            CenturyRegex = JapaneseDatePeriodExtractorConfiguration.CenturyRegex;
             RelativeRegex = JapaneseDateExtractorConfiguration.RelativeRegex;
+            RelativeMonthRegex = JapaneseDateExtractorConfiguration.RelativeMonthRegex;
+            LaterEarlyPeriodRegex = JapaneseDatePeriodExtractorConfiguration.LaterEarlyPeriodRegex;
+            DatePointWithAgoAndLater = JapaneseDatePeriodExtractorConfiguration.DatePointWithAgoAndLater;
+            ReferenceDatePeriodRegex = JapaneseDatePeriodExtractorConfiguration.ReferenceDatePeriodRegex;
+            ComplexDatePeriodRegex = JapaneseDatePeriodExtractorConfiguration.ComplexDatePeriodRegex;
+            DurationRelativeDurationUnitRegex = JapaneseDateExtractorConfiguration.DurationRelativeDurationUnitRegex;
             UnitMap = DateTimeDefinitions.ParserConfigurationUnitMap.ToImmutableDictionary();
             CardinalMap = DateTimeDefinitions.ParserConfigurationCardinalMap.ToImmutableDictionary();
             DayOfMonth = DateTimeDefinitions.ParserConfigurationDayOfMonth.ToImmutableDictionary();
@@ -78,6 +100,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         public IDateTimeExtractor DateExtractor { get; }
 
         public IDateTimeExtractor DurationExtractor { get; }
+
+        public IExtractor CardinalExtractor { get; }
+
+        public IDateTimeParser DurationParser { get; }
 
         public IDateTimeParser DateParser { get; }
 
@@ -119,6 +145,18 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         public Regex RelativeRegex { get; }
 
+        public Regex RelativeMonthRegex { get; }
+
+        public Regex LaterEarlyPeriodRegex { get; }
+
+        public Regex DatePointWithAgoAndLater { get; }
+
+        public Regex ReferenceDatePeriodRegex { get; }
+
+        public Regex ComplexDatePeriodRegex { get; }
+
+        public Regex DurationRelativeDurationUnitRegex { get; }
+
         public Regex YearInCJKRegex { get; }
 
         public Regex MonthToMonth { get; }
@@ -139,11 +177,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         public Regex FutureRegex { get; }
 
+        public Regex WeekWithWeekDayRangeRegex { get; }
+
         public Regex UnitRegex { get; }
 
         public Regex WeekOfMonthRegex { get; }
 
         public Regex WeekOfYearRegex { get; }
+
+        public Regex WeekOfDateRegex { get; }
+
+        public Regex MonthOfDateRegex { get; }
+
+        public Regex WhichWeekRegex { get; }
 
         public Regex FirstLastOfYearRegex { get; }
 
@@ -153,7 +199,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         public Regex DecadeRegex { get; }
 
+        public Regex CenturyRegex { get; }
+
         public Regex DayToDay { get; }
+
+        public Regex MonthDayRange { get; }
 
         public Regex DayRegexForPeriod { get; }
 
@@ -235,20 +285,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             // Current month: 今月
             var value = 0;
 
-            // @TODO move hardcoded values to resources file
-
-            if (text.Equals("来月", StringComparison.Ordinal))
+            if (NextMonthRegex.IsMatch(text))
             {
                 value = 1;
             }
-            else if (text.Equals("前月", StringComparison.Ordinal) ||
-                     text.Equals("先月", StringComparison.Ordinal) ||
-                     text.Equals("昨月", StringComparison.Ordinal) ||
-                     text.Equals("先々月", StringComparison.Ordinal))
+            else if (LastMonthRegex.IsMatch(text))
             {
                 value = -1;
             }
-            else if (text.Equals("再来月", StringComparison.Ordinal))
+            else if (AfterNextMonthRegex.IsMatch(text))
             {
                 value = 2;
             }
@@ -258,20 +303,24 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         public int GetSwiftYear(string text)
         {
-            // Current year: 今年
-            var value = 0;
+            var value = -10;
 
-            // @TODO move hardcoded values to resources file
-
-            if (text.Equals("来年", StringComparison.Ordinal) ||
-                text.Equals("らいねん", StringComparison.Ordinal))
+            if (AfterNextYearRegex.IsMatch(text))
+            {
+                value = 2;
+            }
+            else if (NextYearRegex.IsMatch(text))
             {
                 value = 1;
             }
-            else if (text.Equals("昨年", StringComparison.Ordinal) ||
-                     text.Equals("前年", StringComparison.Ordinal))
+            else if (LastYearRegex.IsMatch(text))
             {
                 value = -1;
+            }
+            else if (ThisYearRegex.IsMatch(text))
+            {
+                // Current year: 今年
+                value = 0;
             }
 
             return value;

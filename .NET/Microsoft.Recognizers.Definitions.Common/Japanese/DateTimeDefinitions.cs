@@ -22,45 +22,47 @@ namespace Microsoft.Recognizers.Definitions.Japanese
     public static class DateTimeDefinitions
     {
       public const string LangMarker = @"Jpn";
-      public const string MonthRegex = @"(?<month>(正|一|二|三|四|五|六|七|八|九|十|十一|十二|1[012]|0?\d)\s*月)";
-      public const string MonthRegexForPeriod = @"(?<month>正月|一月|二月|三月|四月|五月|六月|七月|八月|九月|十月|十一月|十二月|(0?[1-9]|1[0-2])月)(?=\b|t|まで|から)?";
+      public const string MonthRegex = @"(?<month>(正|一|二|三|四|五|六|七|八|九|十|十一|十二|0?[1-9]|1[0-2])\s*(か月(?!で)|月間?))";
+      public const string MonthRegexForPeriod = @"(?<month>正月|一月|二月|三月|四月|五月|六月|七月|八月|九月|十月|十一月|十二月|(0?[1-9]|1[0-2])か?月)(?=\b|t|まで|から)?";
       public const string MonthNumRegexForPeriod = @"(?<month>0?[1-9]|1[0-2])(?=\b|t|まで|から)?";
-      public const string DayRegex = @"(?<day>[0-2]?[1-9]|[1-3]0|31)日?目?";
+      public const string DayRegex = @"(?<day>[0-2]?[1-9]|[1-3]0|31)([日目]間?)?";
       public const string DayRegexForPeriod = @"(?<day>3[01]|[0-2]?\d|(三十一?|(一|二)?十?[一二三四五六七八九]))(\s*日目?)?(?=\b|t|まで|から)?";
-      public const string DateDayRegexInCJK = @"(?<day>初一|((二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|十一|二十一|三十一|十二|十三|十四|十五|十六|十七|十八|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|十一|十|二十一|二十|三十一|三十|十二|十三|十四|十五|十六|十七|十八|十九|十|二十|三十|一|二|三|四|五|六|七|八|九|10|11|12|13|14|15\s*|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)|3[01]|[0-2]?\d)\s*日|一号|十一号|二十一号|三十一号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|一号|十一号|十号|二十一号|二十号|三十一号|三十号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|十号|二十号|三十号|10号|11号|12号|13号|14号|15号|16号|17号|18号|19号|1号|20号|21号|22号|23号|24号|25号|26号|27号|28号|29号|2号|30号|31号|3号|4号|5号|6号|7号|8号|9号)目?";
-      public const string DayRegexNumInCJK = @"(?<day>一|十一|二十一|三十一|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|一|十一|十|二十一|二十|三十一|三十|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|十|二十|廿|卅)";
+      public const string DateDayRegexInCJK = @"(?<day>初一|((二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|二十一|三十一|十二|十三|十四|十五|十六|十七|十八|十一|十|二十|廿(?!日市市)|三十|一|二|三|四|五|六|七|八|九)|3[01]|[0-2]?\d)(\s*日|号))目?";
+      public const string DayRegexNumInCJK = @"(?<day>一|十一|二十一|三十一|三十|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|一|十一|十|二十一|二十|廿(?!日市市)|三十一|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|十|二十|廿|卅)";
       public const string MonthNumRegex = @"(?<month>0?[1-9]|1[0-2])";
       public const string TwoNumYear = @"50";
-      public const string YearNumRegex = @"(?<year>((1[5-9]|20)[0-9]{2})|2100)年?";
-      public const string SimpleYearRegex = @"(?<year>([0-9]{2,4}))(\s*年)?";
-      public const string ZeroToNineIntegerRegexCJK = @"[一二三四五六七八九十零壹贰叁肆伍陆柒捌玖〇两千俩倆仨]";
+      public const string YearNumRegex = @"((?<year>(1[5-9]|20)\d{2}|2100)(?!\$|ドル|円|¥))(\s*年)?";
+      public const string SimpleYearRegex = @"((?<year>\d{2,4})(?!\$|ドル|円|¥))(\s*年)?";
+      public const string ZeroToNineIntegerRegexCJK = @"[一二三四五六七八九十廿零壹贰叁肆伍陆柒捌玖〇两千俩倆仨]";
       public const string DynastyStartYear = @"元";
       public const string RegionTitleRegex = @"(昭和|平成|令和|大正|明治|寛政|享和|文化|文政|天保|弘化|嘉永|安政|万延|文久|元治|慶応)";
       public static readonly string DynastyYearRegex = $@"(?<dynasty>{RegionTitleRegex})(?<biasYear>({DynastyStartYear}|\d{{1,2}}|({ZeroToNineIntegerRegexCJK}){{1,3}}))年?";
       public static readonly string DateYearInCJKRegex = $@"(?<yearCJK>({ZeroToNineIntegerRegexCJK}{{2,4}}|{DynastyYearRegex}))年?";
-      public const string WeekDayRegex = @"(?<weekday>日曜日?|月曜日?|火曜日?|水曜日?|木曜日?|金曜日?|土曜日?)";
+      public static readonly string DynastyDatePeriodRegex = $@"({RegionTitleRegex}(\d{{1,2}}|{DayRegexNumInCJK})(\s*年)?({MonthRegex})?)";
+      public const string WeekDayRegex = @"(週(間)?の?)?(?<weekday>(日|月|火|水|木|金|土)曜日?)";
       public static readonly string WeekDayStartEnd = $@"(^(の)?{WeekDayRegex}|{WeekDayRegex}$)";
       public const string LunarRegex = @"(农历|初一|正月|大年|旧暦)";
-      public static readonly string DateThisRegex = $@"(这个|这一个|这|这一|本|今週|そ|こ)(的|の)?({WeekDayRegex}|日)";
-      public static readonly string DateLastRegex = $@"(上一个|上个|上一|上|最后一个|最后|先週|最後)(的|の)?({WeekDayRegex}|日)";
-      public static readonly string DateNextRegex = $@"(下一个|下个|下一|下|来週|次)(的|の)?{WeekDayRegex}";
-      public const string WoMLastRegex = @"^\b$";
-      public const string WoMPreviousRegex = @"^\b$";
-      public const string WoMNextRegex = @"^\b$";
+      public static readonly string DateThisRegex = $@"(这个|这一个|这|这一|本|(?<week>今週)|そ|こ)(的|の)?({WeekDayRegex}|日)";
+      public static readonly string DateLastRegex = $@"(上一个|上个|上一|上|最后一个|最后|(?<week>先週)|最後)(的|の)?({WeekDayRegex}|日)";
+      public static readonly string DateNextRegex = $@"(下一个|下个|下一|下|(?<week>来週)|次)(的|の)?{WeekDayRegex}";
+      public static readonly string WeekWithWeekDayRangeRegex = $@"({DateThisRegex}|{DateNextRegex}|{DateLastRegex})(から)({WeekDayRegex})";
+      public const string WoMLastRegex = @"過去|去|最後|先";
+      public const string WoMPreviousRegex = @"前";
+      public const string WoMNextRegex = @"次|来|これから(の)?";
       public const string SpecialMonthRegex = @"(先月|来月|今月|前月|再来月|昨月|先々月|ぜんげつ|(せん)?せんげつ|さくげつ|らいげつ|こんげつ)";
-      public const string SpecialYearRegex = @"(昨年|再?来年|今年|前年|ことし|さ?らいねん|きょねん|さくねん|去年)";
-      public const string SpecialDayRegex = @"((いっ)?さくじつ|おとつい|最近|前天|后天|明日から二日|昨日の2日前|昨日から4日|今日から二日|今日から4日|昨日から2日間|昨天|明天|今天|今日|明日|一?昨?昨日|一昨日|大后天|大前天|後天|大後天|きょう|あす|あした|きのう|明々後日|(弥)?明後日|この日|前日|二日前|おととい|し?あさって|私の一日|この間|次の日|その日|最後の日)";
+      public const string SpecialYearRegex = @"(ことし|さ?らいねん|きょねん|さくねん)";
+      public const string SpecialDayRegex = @"((いっ)?さくじつ|おとつい|最近|前天|后天|明日から二日((?<today>今日)から(?<half>1日半)(の間)?)|((?<today>今日)から(?<half>2日半)(の間)?)|昨日の2日前|昨日から4日|今日から二日|今日から4日|昨日から2日間|昨天|明天|今天|今日|明日|一?昨?昨日|一昨日|大后天|大前天|後天|大後天|きょう|あす|あした|きのう|明々後日|(弥)?明後日|この日|前日|二日前|おととい|し?あさって|私の一日|この間|次の日|その日|最後の日)";
       public const string SpecialDayWithNumRegex = @"((いっ)?さくじつ|おとつい|最近|前天|后天|昨天|明天|今天|今日?|明日|一?昨?昨日|一昨日|大后天|大前天|後天|大後天|きょう|あす|あした|きのう|明々後日|(弥)?明後日|この日|前日|二日前|おととい|し?あさって|私の一日|この間|次の日|その日)(から|の)?([\d十一二三四五六七八九]*|数)(日|月|週|個)間?(先|後|前|以内)?(の(?<weekday>日曜日?|月曜日?|火曜日?|水曜日?|木曜日?|金曜日?|土曜日?))?";
-      public static readonly string WeekDayOfMonthRegex = $@"((({SpecialMonthRegex}|{MonthRegex}|{MonthNumRegex}|((这个|这一个|这|这一|本|今|上个|上一个|上|上一|去|下个|下一个|下|下一|明)月))(的|の)\s*)?(第|最)?(?<cardinal>([初一二三四五])|([1-5])|最后一)(个|の|\s)*{WeekDayRegex})";
+      public static readonly string WeekDayOfMonthRegex = $@"((({SpecialMonthRegex}|{MonthRegex}|{MonthNumRegex}|((这个|这一个|这|这一|本|今|上个|上一个|上|上一|去|下个|下一个|下|下一|明)月))(的|の)?\s*)?(第|最)?(?<cardinal>([初一二三四五])|最後|最終|([1-5])|最后一)(个|の|\s)*{WeekDayRegex})";
       public static readonly string WeekDayAndDayRegex = $@"({DayRegexForPeriod}(の|的)?(\s|,|，|、)*{WeekDayRegex})";
       public const string ThisPrefixRegex = @"这个|这一个|这|这一|本|今|こ";
-      public const string LastPrefixRegex = @"上个|上一个|上|上一|去";
-      public const string NextPrefixRegex = @"下个|下一个|下|下一|明|次|来";
+      public const string LastPrefixRegex = @"上个|上一个|上|上一|去|過去|最後|前|先|昨|最終";
+      public const string NextPrefixRegex = @"下个|下一个|下|下一|明|次|再?来|向こう|これから(の)?|翌|向こう";
       public static readonly string RelativeRegex = $@"(?<order>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex}))";
       public static readonly string SpecialDate = $@"(?<thisyear>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex})年)?(の|的)?(?<thismonth>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex})(の|的)?月)?(の|的)?{DateDayRegexInCJK}";
       public const string DateUnitRegex = @"(?<unit>年|个月|月|周|時間?|(?<business>営業)日|(?<!(明|昨|今))日|天|週間?|星期|个星期|か月)";
-      public const string BeforeRegex = @"以前|之前|前";
-      public const string AfterRegex = @"以内|以后|以後|之后|之後|后|後|先|で(?!す)";
+      public const string BeforeRegex = @"以前|之前|前|先";
+      public const string AfterRegex = @"以内|以后|以後|之后|之後|后|後|で(?!す)|あと";
       public static readonly string DateRegexList1 = $@"({LunarRegex}(的|の|\s)*)?(({SimpleYearRegex}|{DateYearInCJKRegex})[/\\\-の的]?(\s*{MonthRegex})[/\\\-の的]?(\s*{DayRegexForPeriod})((\s|,|，|、)*{WeekDayRegex})?)";
       public static readonly string DateRegexList2 = $@"(({SimpleYearRegex}|{DateYearInCJKRegex}){MonthRegexForPeriod}\s*)";
       public static readonly string DateRegexList3 = $@"((({SimpleYearRegex}|{DateYearInCJKRegex})年)(的|の|\s)*)?({LunarRegex}(的|の|\s)*)?{MonthRegex}(\s*)({DateDayRegexInCJK}|{DayRegex})((\s|,|，|、)*{WeekDayRegex})?({BeforeRegex}|{AfterRegex})?";
@@ -72,49 +74,58 @@ namespace Microsoft.Recognizers.Definitions.Japanese
       public static readonly string DateRegexList9 = $@"({LunarRegex}(的|の|\s)*)?((\s*{MonthRegex}[/\\\-の的]?{DayRegexForPeriod}((\s|,|，|、)*{WeekDayRegex})?)|((\s*{MonthRegex}[/\\\-の的]?){DayRegexForPeriod}(の|的)?((\s|,|，|、)*{WeekDayRegex})))";
       public static readonly string DateRegexList10 = $@"(({SimpleYearRegex}|{DateYearInCJKRegex})[/\\\-]{MonthNumRegex}[/\\\-]{DayRegexForPeriod})";
       public static readonly string DateRegexList11 = $@"(({SimpleYearRegex}|{DateYearInCJKRegex})[/\\\-]{MonthNumRegexForPeriod})";
-      public const string DatePeriodTillRegex = @"(?<till>到|至|--|-|—|——|~|–)";
+      public const string DatePeriodTillRegex = @"(?<till>到|至|から|--|-|—|——|~|–)";
       public const string DatePeriodRangeSuffixRegex = @"^\b$";
       public const string DatePeriodRangePrefixRegex = @"^\b$";
       public const string DatePeriodTillSuffixRequiredRegex = @"(?<till>与|和)";
-      public const string DatePeriodDayRegexInCJK = @"(?<day>二十二日|二十三日|二十四日|二十五日|二十六日|二十七日|二十八日|二十九日|二十二日|二十三日|二十一日|十一日|三十一日|十二日|十三日|十四日|十五日|十六日|十七日|十八日|十九日|十日|二十日|三十日|一日|十日|初一|三十|二日|三日|四日|五日|六日|七日|八日|九日|(3[0-1]|[1-2]\d|0?[1-9])日|一号|十一号|二十一号|三十一号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|一号|十一号|十号|二十一号|二十号|三十一号|三十号|二号|三号|四号|五号|六号|七号|八号|九号|十二号|十三号|十四号|十五号|十六号|十七号|十八号|十九号|二十二号|二十三号|二十四号|二十五号|二十六号|二十七号|二十八号|二十九号|十号|二十号|三十号|(3[0-1]|[1-2]\d|0?[1-9])号|一|十一|二十一|三十一|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|一|十一|十|二十一|二十|三十一|三十|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|十|二十|三十|廿|卅)目?";
-      public const string DatePeriodThisRegex = @"这个|这一个|这|这一|本";
-      public const string DatePeriodLastRegex = @"上个|上一个|上|上一";
-      public const string DatePeriodNextRegex = @"下个|下一个|下|下一";
+      public const string DatePeriodDayRegexInCJK = @"(?<day>(二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|二十二|二十三|二十一|十一|三十一|十二|十三|十四|十五|十六|十七|十八|十九|十|二十|三十|一|十|二|三|四|五|六|七|八|九|3[0-1]|[1-2]\d|0?[1-9])日|初一|三十|(一|十一|二十一|三十一|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|一|十一|十|二十一|二十|三十一|三十|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|十|二十|三十|3[0-1]|[1-2]\d|0?[1-9])号|一|十一|二十一|三十一|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|二十二|二十三|二十四|二十五|二十六|二十七|二十八|二十九|一|十一|十|二十一|二十|三十一|三十|二|三|四|五|六|七|八|九|十二|十三|十四|十五|十六|十七|十八|十九|十|二十|三十|廿(?!日市市)|卅)目?";
+      public const string DatePeriodThisRegex = @"今|这个|这一个|这|这一|本";
+      public const string DatePeriodLastRegex = @"この|上个|上一个|上|上一|前|去|最後|最終|過去|先|昨";
+      public const string DatePeriodNextRegex = @"(?<after>再来)|下个|下一个|下|下一|最初|来|向こう|これから(の)?|翌|今後|次(の)?";
+      public const string DateRangePrepositions = @"((こ|私の|その|この|これらの|それらの)\s*)?";
       public static readonly string RelativeMonthRegex = $@"(?<relmonth>({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})\s*月)";
-      public static readonly string YearRegex = $@"(({YearNumRegex})(\s*(年|の))?|({SimpleYearRegex})\s*年)(?=[\u4E00-\u9FFF]|\s|$|\W)";
-      public static readonly string StrictYearRegex = $@"{YearRegex}";
+      public const string HalfYearRegex = @"((?<firstHalf>の?(上|前)半期)|(?<secondHalf>の?(下|后)半期))";
+      public static readonly string YearRegex = $@"(({YearNumRegex})(\s*年)?|({SimpleYearRegex})\s*年)(に)?{HalfYearRegex}?";
+      public static readonly string StrictYearRegex = $@"(((こ|その|この|これらの|それらの)\s*)?{YearRegex})";
       public const string YearRegexInNumber = @"(?<year>(\d{3,4}))";
-      public static readonly string DatePeriodYearInCJKRegex = $@"(?<yearCJK>({ZeroToNineIntegerRegexCJK}{{2,4}}))年";
+      public static readonly string DatePeriodYearInCJKRegex = $@"(?<yearCJK>({ZeroToNineIntegerRegexCJK}{{2,4}}))年{HalfYearRegex}?";
       public static readonly string MonthSuffixRegex = $@"(?<msuf>({RelativeMonthRegex}|{MonthRegex}))";
-      public static readonly string SimpleCasesRegex = $@"((从)\s*)?(({YearRegex}|{DatePeriodYearInCJKRegex})\s*)?{MonthSuffixRegex}({DatePeriodDayRegexInCJK}|{DayRegex})\s*{DatePeriodTillRegex}\s*({DatePeriodDayRegexInCJK}|{DayRegex})((\s+|\s*,\s*){YearRegex})?";
-      public static readonly string YearAndMonth = $@"({YearNumRegex}{MonthRegex}(\b|から)$)";
-      public static readonly string SimpleYearAndMonth = $@"({YearNumRegex}[/\\\-]{MonthNumRegex}(\b|から)$)";
-      public static readonly string PureNumYearAndMonth = $@"({YearRegexInNumber}\s*[-\.\/]\s*{MonthNumRegex})|({MonthNumRegex}\s*\/\s*{YearRegexInNumber})";
-      public static readonly string OneWordPeriodRegex = $@"(((明年|今年|去年)\s*)?{MonthRegex}|({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})\s*(周末|周|月|年)|周末|今年|明年|去年|前年|后年)";
-      public static readonly string WeekOfMonthRegex = $@"((?<wom>{MonthSuffixRegex}(的|の))第?(?<cardinal>一|二|三|四|五|最后一)\s*周\s*)";
-      public static readonly string WeekOfYearRegex = $@"(?<woy>({YearRegex}|{RelativeRegex}年)的(?<cardinal>第一|第二|第三|第四|第五|最后一)\s*周\s*)";
-      public const string UnitRegex = @"(?<unit>年|(个)?月|周|日|天)";
+      public static readonly string SimpleCasesRegex = $@"({DateRangePrepositions})(({YearRegex}|{DatePeriodYearInCJKRegex})\s*)?{MonthSuffixRegex}({DatePeriodDayRegexInCJK}|{DayRegex})\s*{DatePeriodTillRegex}\s*({DatePeriodDayRegexInCJK}|{DayRegex})((\s+|\s*,\s*){YearRegex})?(までの間|まで|の間)?";
+      public static readonly string YearAndMonth = $@"({YearNumRegex}の?\s*{MonthRegex}(\b|から)?)";
+      public static readonly string SimpleYearAndMonth = $@"({DateRangePrepositions})({YearNumRegex}[/\\\-]{MonthNumRegex}(\b|から)$)";
+      public static readonly string PureNumYearAndMonth = $@"({DateRangePrepositions})({YearRegexInNumber}\s*[-\.\/]\s*{MonthNumRegex})|({MonthNumRegex}\s*\/\s*{YearRegexInNumber})";
+      public static readonly string OneWordPeriodRegex = $@"({DateRangePrepositions})((((周末|週(間)?|日間?|明年|(?<yearrel>今年|再来年|翌年|去年|前年|后年|来年))(,|の(残り)?)?\s*)?{MonthRegex}|({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})?の?\s*(数|\d\d?|{ZeroToNineIntegerRegexCJK})?(?<duration>ヶ?((?<!休|建国記念)日(?!付)間?|((?<!((?<![1-9]+)0+))月間?)|(週の)?週末|周末|周|週(間)?|年(?!々)(間)?|週間|今年|再来年|翌年|去年|前年|后年|来年))(?!間で)(?!で))(?<restof>の残りの日|いっぱい)?|(({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})({MonthRegex}(?!で)|{DayRegex})))(?<WithinNext>後に|以内に|初来)?";
+      public const string LaterEarlyPeriodRegex = @"((?<next>来)|(?<this>今|同じ)|(?<last>この|去|先))?(?<suffix>(?<!建国記念)日(?!付)|(?<month>(\d))?((?<!((?<![1-9]+)0+))|正|一|二|三|四|五|六|七|八|九|十|十一|十二)月|年(?!々)|週)(?!間で)(?!で)((?<LatePrefix>(?<RelLate>の下旬|この後)|の終わり(ごろ)?|末|下旬)|(?<MidPrefix>半ば)|(?<EarlyPrefix>(の)?初め|のはじめ|初旬|(?<RelEarly>ちょっと前に|上旬に))|(?<!の休日))";
+      public const string DatePointWithAgoAndLater = @"((?<today>今日)|(?<yesterday>昨日)|(?<tomorrow>明日))(から|の)(\d)(?<duration>週間|日)((?<within>以内)|(?<more>以上)(?<ago>前)|(?<more>以上(あと)?))";
+      public static readonly string WeekOfMonthRegex = $@"({DateRangePrepositions})((?<wom>{MonthSuffixRegex}(的|の))(?<cardinal>第一|第二|第三|第四|第五|最后一|第\d|{DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})?\s*の?(週|周)\s*)";
+      public static readonly string WeekOfYearRegex = $@"({DateRangePrepositions})(?<woy>({YearRegex}|{RelativeRegex}年)(的|の)(?<cardinal>第一|第二|第三|第四|第五|最后一|第\d|{DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})?\s*の?(週|周)\s*)";
+      public static readonly string WeekOfDateRegex = $@"(({DateRangePrepositions})({MonthSuffixRegex}({DayRegex})(的|の))第?\s*の?(週|周)s*)|({DayRegex}日の?(週(間)?))";
+      public static readonly string MonthOfDateRegex = $@"({DateRangePrepositions})({MonthSuffixRegex}({DayRegex})(的|の))第?\s*の?(月)s*";
+      public const string UnitRegex = @"(?<unit>ヶ?(年|(个)?月|周|週間|日|天))";
       public static readonly string FollowedUnit = $@"^\s*{UnitRegex}";
       public static readonly string NumberCombinedWithUnit = $@"(?<num>\d+(\.\d*)?){UnitRegex}";
-      public static readonly string YearMonthDayRange = $@"({YearNumRegex}[/\\\-]?({MonthRegex}|{MonthNumRegex})[/\\\-]?{DayRegexForPeriod}から{YearNumRegex}[/\\\-]?({MonthRegex}|{MonthNumRegex})[/\\\-]?{DayRegexForPeriod}まで)";
-      public static readonly string YearMonthRange = $@"({YearNumRegex}[/\\\-]?({MonthRegex}|{MonthNumRegex})から{YearNumRegex}[/\\\-]?({MonthRegex}|{MonthNumRegex})まで)";
-      public static readonly string MonthDayRange = $@"(({MonthRegex}|{MonthNumRegex})[/\\\-]?{DayRegexForPeriod}から({MonthRegex}|{MonthNumRegex})[/\\\-]?{DayRegexForPeriod}まで)";
-      public static readonly string YearToYear = $@"({YearNumRegex}から{YearNumRegex}まで)";
+      public static readonly string YearMonthDayRange = $@"({YearNumRegex}[/\\\-]?({MonthRegex}|{MonthNumRegex})[/\\\-]?({DayRegexForPeriod}|{DateDayRegexInCJK})から{YearNumRegex}[/\\\-]?({MonthRegex}|{MonthNumRegex})[/\\\-]?({DayRegexForPeriod}|{DateDayRegexInCJK})(までの間|まで|の間|にわたって))|(({YearNumRegex})?({MonthRegex}|{MonthNumRegex})[/\\\-]?({DayRegexForPeriod}|{DateDayRegexInCJK}){WeekDayRegex}?から({MonthRegex}|{MonthNumRegex})?({DayRegexForPeriod}|{DateDayRegexInCJK}){WeekDayRegex}(までの間|まで|の間|にわたって))";
+      public static readonly string YearMonthRange = $@"({YearNumRegex}[/\\\-]?({MonthRegex}|{MonthNumRegex})から{YearNumRegex}[/\\\-]?({MonthRegex}|{MonthNumRegex})(までの間|まで|の間|にわたって))";
+      public static readonly string MonthDayRange = $@"({YearNumRegex})?({MonthRegex}|{MonthNumRegex})[/\\\-]?(({DayRegexForPeriod}|{DateDayRegexInCJK})|{WeekDayRegex})から(({DayRegexForPeriod}|{DateDayRegexInCJK})|{WeekDayRegex})(までの間|まで|の間|にわたって)";
+      public static readonly string YearToYear = $@"({DateRangePrepositions})(({SpecialYearRegex}|{DatePeriodYearInCJKRegex}|{YearNumRegex})から({SpecialYearRegex}|{DatePeriodYearInCJKRegex}|{YearNumRegex})(までの間|まで|の間|にわたって))";
       public const string YearToYearSuffixRequired = @"^[.]";
-      public static readonly string MonthToMonth = $@"(({MonthRegex}から{MonthRegex}まで)|({SimpleYearRegex}{MonthRegexForPeriod}から{SimpleYearRegex}{MonthRegexForPeriod}まで)|({SimpleYearRegex}[/\\\-](?<monthFrom>{MonthNumRegexForPeriod})から{SimpleYearRegex}[/\\\-](?<monthTo>{MonthNumRegexForPeriod})まで))";
+      public static readonly string MonthToMonth = $@"({DateRangePrepositions})(({SimpleYearRegex}?({SpecialMonthRegex}|{MonthRegex})(SpecialDayRegex}}|{DayRegex})?から({SpecialMonthRegex}|{MonthRegex})(SpecialDayRegex}}|{DayRegex})?(までの間|まで|の間))|({SimpleYearRegex}{MonthRegexForPeriod}から{SimpleYearRegex}{MonthRegexForPeriod}(までの間|まで|の間))|({SimpleYearRegex}[/\\\-](?<monthFrom>{MonthNumRegexForPeriod})から{SimpleYearRegex}[/\\\-](?<monthTo>{MonthNumRegexForPeriod})(までの間|まで|の間)))";
       public const string MonthToMonthSuffixRequired = @"^[.]";
-      public static readonly string DayToDay = $@"({DayRegex}から{DayRegex}まで)";
-      public static readonly string FirstLastOfYearRegex = $@"(({DatePeriodYearInCJKRegex}|{YearRegex}|(?<yearrel>明年|今年|去年))的?)((?<first>前)|(?<last>(最后|最後)))";
-      public const string PastRegex = @"(?<past>(前|上|之前|近|过去))";
-      public const string FutureRegex = @"(?<future>(后|後|(?<![一两几]\s*)下|之后|之後|未来(的|の)?))";
-      public const string SeasonRegex = @"(?<season>春|夏|秋|冬)(天|季)?";
-      public static readonly string SeasonWithYear = $@"(({YearRegex}|{DatePeriodYearInCJKRegex}|(?<yearrel>明年|今年|去年))(的|の)?)?{SeasonRegex}";
-      public static readonly string QuarterRegex = $@"(({YearRegex}|{DatePeriodYearInCJKRegex}|(?<yearrel>明年|今年|去年))(的|の)?)?(第(?<cardinal>1|2|3|4|一|二|三|四)季度)";
-      public const string CenturyRegex = @"(?<century>\d|1\d|2\d)世纪";
-      public const string CenturyRegexInCJK = @"(?<century>一|二|三|四|五|六|七|八|九|十|十一|十二|十三|十四|十五|十六|十七|十八|十九|二十|二十一|二十二)世纪";
-      public static readonly string RelativeCenturyRegex = $@"(?<relcentury>({DatePeriodLastRegex}|{DatePeriodThisRegex}|{DatePeriodNextRegex}))世纪";
+      public static readonly string DayToDay = $@"({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex})?(({SpecialMonthRegex}|{MonthRegex})の?)?(({SpecialDayRegex}|{DayRegex}|{WeekDayRegex})から(({SpecialMonthRegex}|{MonthRegex})の?)?({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex})?((今月|来月|{MonthRegex})の?)?({SpecialDayRegex}|{DayRegex}|{WeekDayRegex})(までの間|まで|の間))|{SpecialDayRegex}";
+      public static readonly string FirstLastOfYearRegex = $@"(({DatePeriodYearInCJKRegex}|{YearRegex}|(?<yearrel>再来年|翌年|来年|今年|去年))的?)((?<first>前)|(?<last>(最后|最後|最終)))";
+      public static readonly string ComplexDatePeriodRegex = $@"({DateRangePrepositions})(?<start>(第{ZeroToNineIntegerRegexCJK}+|第\d+|{DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex}|(({YearNumRegex}|{DayRegexForPeriod}|{DateDayRegexInCJK}|{MonthRegex}|{MonthNumRegex})(?!((\d+)?(分|秒|時))))|{RelativeRegex}).+)(から)(?<end>.+)(までの間|まで|の間)";
+      public const string PastRegex = @"(?<past>(この|前|上|之前|近|过去|去|過去)(の)?)";
+      public const string FutureRegex = @"(?<future>((?<within>以内に)|後に|向こう|后|次の|今後|これからの|後|(?<![一两几]\s*)下|之后|之後|未来(的|の)?))";
+      public const string SeasonRegex = @"(?<season>春|夏|秋|冬)(天|季)?(の)?((?<MidPrefix>半ば)|(?<EarlyPrefix>初め|のはじめ)|(?<LatePrefix>終わり(ごろ)?|末|下旬))?";
+      public const string WhichWeekRegex = @"第(?<number>5[0-3]|[1-4]\d|0?[1-9])週";
+      public static readonly string SeasonWithYear = $@"({DateRangePrepositions})(({YearRegex}|{DatePeriodYearInCJKRegex}|(?<yearrel>再来年|翌年|来年|今年|去年))(的|の)?)?({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex})?{SeasonRegex}";
+      public static readonly string QuarterRegex = $@"({DateRangePrepositions})((({YearRegex}|{DatePeriodYearInCJKRegex}|(?<yearrel>再来年|翌年|来年|今年|去年))(的|の)?)?(第(?<cardinal>1|2|3|4|一|二|三|四)(四半期|クォーター)?))|(({DatePeriodLastRegex}|{DatePeriodThisRegex}|{DatePeriodNextRegex})(四半期|クォーター))";
+      public const string CenturyNumRegex = @"(?<century>\d|1\d|2\d)世紀";
+      public const string CenturyRegexInCJK = @"(?<century>一|二|三|四|五|六|七|八|九|十|十一|十二|十三|十四|十五|十六|十七|十八|十九|二十|二十一|二十二)世紀";
+      public static readonly string CenturyRegex = $@"({CenturyNumRegex}|{CenturyRegexInCJK})";
+      public static readonly string RelativeCenturyRegex = $@"(?<relcentury>({DatePeriodLastRegex}|{DatePeriodThisRegex}|{DatePeriodNextRegex}))世紀";
       public const string DecadeRegexInCJK = @"(?<decade>十|一十|二十|三十|四十|五十|六十|七十|八十|九十)";
-      public static readonly string DecadeRegex = $@"(?<centurysuf>({CenturyRegex}|{CenturyRegexInCJK}|{RelativeCenturyRegex}))?(?<decade>(\d0|{DecadeRegexInCJK}))年代";
+      public static readonly string DecadeRegex = $@"({DateRangePrepositions})(?<centurysuf>({CenturyRegex}|{CenturyRegexInCJK}|{RelativeCenturyRegex}))?の?(?<firsttwoyearnum>\d{{2}}(?=\d))?(?<decade>((\d{{1}}0)|{DecadeRegexInCJK}))年代(のごろ)?";
       public const string PrepositionRegex = @"(?<prep>^(的|の)|在$)";
       public const string NowRegex = @"(?<now>现在|马上|立刻|刚刚才|刚刚|刚才)";
       public const string NightRegex = @"(?<night>早|晚)";
@@ -218,14 +229,20 @@ namespace Microsoft.Recognizers.Definitions.Japanese
       public static readonly string TimePeriodRegexes2 = $@"(((早朝(に)?|午後(に)?|(深)?夜(に)?|未明|午前(中)?|日中|白昼|(未|早)?朝(に)?|昼前に|昼すぎに|夕方前に|夕方に|営業時間内に|昼)({TimePeriodShortLeftDigitTimeRegex}{TimePeriodRightDigitTimeRegex}|{TimePeriodShortLeftCJKTimeRegex}{TimePeriodRightCJKTimeRegex}))|((早朝(に)?|午後(に)?|(深)?夜(に)?|未明|午前(中)?|日中|白昼|(未|早)?朝(に)?|昼前に|昼すぎに|夕方前に|夕方に|営業時間内に|昼)(?=((?!({TimeCJKTimeRegex}|{TimeDigitTimeRegex})(から)?)))))";
       public const string FromToRegex = @"^[.]";
       public const string AmbiguousRangeModifierPrefix = @"^[.]";
+      public const string ReferenceDatePeriodRegex = @"(同じ|その)(?<duration>月|週末|年|週)";
       public const string ParserConfigurationBefore = @"(之前|以前|前)";
       public const string ParserConfigurationAfter = @"(之后|之後|以后|以後|后|後)";
       public const string ParserConfigurationUntil = @"(直到|直至|截至|截止(到)?)";
       public const string ParserConfigurationSincePrefix = @"(自从|自|自打|打)";
       public const string ParserConfigurationSinceSuffix = @"(以来|开始)";
-      public const string ParserConfigurationLastWeekDayToken = @"最后一个";
-      public const string ParserConfigurationNextMonthToken = @"来月";
-      public const string ParserConfigurationLastMonthToken = @"先月";
+      public const string ParserConfigurationLastWeekDayRegex = @"最后一个";
+      public const string ParserConfigurationNextMonthRegex = @"来月";
+      public const string ParserConfigurationAfterNextMonthRegex = @"再来月";
+      public const string ParserConfigurationLastMonthRegex = @"前月|先月|昨月|先々月";
+      public const string ParserConfigurationAfterNextYearRegex = @"再来年";
+      public const string ParserConfigurationNextYearRegex = @"来年|来|らいねん";
+      public const string ParserConfigurationLastYearRegex = @"昨年|前年";
+      public const string ParserConfigurationThisYearRegex = @"今";
       public const string ParserConfigurationDatePrefix = @" ";
       public static readonly Dictionary<string, string> ParserConfigurationUnitMap = new Dictionary<string, string>
         {
@@ -233,6 +250,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
             { @"月", @"MON" },
             { @"个月", @"MON" },
             { @"か月", @"MON" },
+            { @"ヶ月", @"MON" },
             { @"周", @"W" },
             { @"週", @"W" },
             { @"週間", @"W" },
@@ -286,36 +304,42 @@ namespace Microsoft.Recognizers.Definitions.Japanese
         };
       public static readonly IList<string> WeekendTerms = new List<string>
         {
-            @"周末"
+            @"周末",
+            @"週末",
+            @"週の週末"
         };
       public static readonly IList<string> WeekTerms = new List<string>
         {
             @"周",
-            @"星期"
+            @"週",
+            @"週間"
         };
       public static readonly IList<string> YearTerms = new List<string>
         {
-            @"년"
+            @"年",
+            @"年間"
         };
       public static readonly IList<string> ThisYearTerms = new List<string>
         {
-            @"금년"
+            @"今年"
         };
       public static readonly IList<string> LastYearTerms = new List<string>
         {
-            @"작년"
+            @"去年"
         };
       public static readonly IList<string> NextYearTerms = new List<string>
         {
-            @"내년"
+            @"来年",
+            @"翌年"
         };
       public static readonly IList<string> YearAfterNextTerms = new List<string>
         {
-            @"내후년"
+            @"后年",
+            @"再来年"
         };
       public static readonly IList<string> YearBeforeLastTerms = new List<string>
         {
-            @"재작년"
+            @"前年"
         };
       public static readonly Dictionary<string, string> ParserConfigurationSeasonMap = new Dictionary<string, string>
         {
@@ -353,7 +377,14 @@ namespace Microsoft.Recognizers.Definitions.Japanese
             { @"第二", 2 },
             { @"第三", 3 },
             { @"第四", 4 },
-            { @"第五", 5 }
+            { @"第五", 5 },
+            { @"最後", 5 },
+            { @"最終", 5 },
+            { @"第1", 1 },
+            { @"第2", 2 },
+            { @"第3", 3 },
+            { @"第4", 4 },
+            { @"第5", 5 }
         };
       public static readonly Dictionary<string, int> ParserConfigurationDayOfMonth = new Dictionary<string, int>
         {
@@ -440,6 +471,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
             { @"一日", 1 },
             { @"十一日", 11 },
             { @"二十日", 20 },
+            { @"廿日", 20 },
             { @"十日", 10 },
             { @"二十一日", 21 },
             { @"三十一日", 31 },
@@ -471,6 +503,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
             { @"一", 1 },
             { @"十一", 11 },
             { @"二十", 20 },
+            { @"廿", 20 },
             { @"十", 10 },
             { @"二十一", 21 },
             { @"三十一", 31 },
@@ -565,6 +598,18 @@ namespace Microsoft.Recognizers.Definitions.Japanese
             { @"10月", 10 },
             { @"11月", 11 },
             { @"12月", 12 },
+            { @"1か月", 1 },
+            { @"2か月", 2 },
+            { @"3か月", 3 },
+            { @"4か月", 4 },
+            { @"5か月", 5 },
+            { @"6か月", 6 },
+            { @"7か月", 7 },
+            { @"8か月", 8 },
+            { @"9か月", 9 },
+            { @"10か月", 10 },
+            { @"11か月", 11 },
+            { @"12か月", 12 },
             { @"01月", 1 },
             { @"02月", 2 },
             { @"03月", 3 },
@@ -585,6 +630,10 @@ namespace Microsoft.Recognizers.Definitions.Japanese
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {
             { @"早", @"(?<!今|明|日|号)早(?!上)" }
+        };
+      public static readonly Dictionary<string, string> AmbiguityDatePeriodFiltersDict = new Dictionary<string, string>
+        {
+            { @"^年$", @"年" }
         };
       public static readonly Dictionary<string, long> DurationUnitValueMap = new Dictionary<string, long>
         {
@@ -629,7 +678,8 @@ namespace Microsoft.Recognizers.Definitions.Japanese
             { '九', 9 },
             { '〇', 0 },
             { '两', 2 },
-            { '十', 10 }
+            { '十', 10 },
+            { '廿', 20 }
         };
       public static readonly Dictionary<string, int> TimeLowBoundDesc = new Dictionary<string, int>
         {
@@ -733,28 +783,6 @@ namespace Microsoft.Recognizers.Definitions.Japanese
             { @"文久", 1861 },
             { @"元治", 1864 },
             { @"慶応", 1865 }
-        };
-      public static readonly Dictionary<char, char> NormalizeCharMap = new Dictionary<char, char>
-        {
-            { '０', '0' },
-            { '１', '1' },
-            { '２', '2' },
-            { '３', '3' },
-            { '４', '4' },
-            { '５', '5' },
-            { '６', '6' },
-            { '７', '7' },
-            { '８', '8' },
-            { '９', '9' },
-            { '／', '/' },
-            { '－', '-' },
-            { '，', '\'' },
-            { 'Ｇ', 'G' },
-            { 'Ｍ', 'M' },
-            { 'Ｔ', 'T' },
-            { 'Ｋ', 'K' },
-            { 'ｋ', 'k' },
-            { '．', '.' }
         };
     }
 }
