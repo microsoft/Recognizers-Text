@@ -277,7 +277,7 @@ NowRegex: !simpleRegex
   def: (?<now>지금)
 NightRegex: !simpleRegex
   def: (?<night>이른|늦은)
-TimeOfTodayRegex: !simpleRegex
+TimeOfSpecialDayRegex: !simpleRegex
   def: (今晚|今早|今晨|明晚|明早|明晨|昨晚)(的|在)?
 #DateTimePeriodExtractorCJK
 DateTimePeriodTillRegex: !simpleRegex
@@ -319,6 +319,9 @@ DurationHalfRegex: !simpleRegex
   def: ㅂ
 DurationRelativeDurationUnitRegex: !simpleRegex
   def: (지난|저번|작(?=년))
+AgoLaterRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Japanese
+  def: ^[.]
 DurationDuringRegex: !simpleRegex
   def: (동안)
 DurationSomeRegex: !simpleRegex
@@ -370,6 +373,8 @@ DurationUnitRegex: !simpleRegex
   def: (?<unit>(년|개?월|달|주일?|(?<!종)(?<=\d|\s+)일|(?<=\s)날|한나절|(?<=며)칠|시간?|분|초|영업일\s*기준으로|하루|이틀|사흘|나흘|닷새|엿새|이레|여드레|아흐레|열흘|하루|종일|내내|몇|여러|더|이상|이하|초과|미만)\s*(이상|이하|초과|미만)?)
 DurationConnectorRegex: !simpleRegex
   def: (?<connector>\s*그리고\s*|\s+|,\s*)
+ConnectorRegex: !simpleRegex
+  def: ^\s*,\s*$
 DurationMoreOrLessThanSurfix: !nestedRegex
   def: (?<DurationUnitRegex>\s*(이상|이하|초과|미만))
   references: [DurationUnitRegex]
