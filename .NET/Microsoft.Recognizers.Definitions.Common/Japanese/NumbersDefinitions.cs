@@ -123,7 +123,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
       public const string PercentageRegex = @".+(?=パ\s*ー\s*セ\s*ン\s*ト)|.*(?=[％%])";
       public static readonly string DoubleAndRoundRegex = $@"{ZeroToNineFullHalfRegex}+(\.{ZeroToNineFullHalfRegex}+)?\s*{RoundNumberIntegerRegex}{{1,2}}(\s*(以上))?";
       public const string FracSplitRegex = @"[はと]|分\s*の";
-      public const string ZeroToNineIntegerRegex = @"[〇一二三四五六七八九]";
+      public const string ZeroToNineIntegerRegex = @"[零〇一二三四五六七八九]";
       public const string HalfUnitRegex = @"半";
       public const string NegativeNumberTermsRegex = @"(マ\s*イ\s*ナ\s*ス)";
       public static readonly string NegativeNumberTermsRegexNum = $@"((?<!(\d+(\s*{BaseNumbers.NumberMultiplierRegex})?\s*)|[-−－])[-−－])";

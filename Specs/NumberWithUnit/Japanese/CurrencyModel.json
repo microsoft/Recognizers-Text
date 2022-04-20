@@ -987,5 +987,22 @@
         "End": 47
       }
     ]
+  },
+  {
+    "Input": "これは 零円です",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "零円",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "JPY",
+          "value": "0",
+          "unit": "Japanese yen"
+        },
+        "Start": 4,
+        "End": 5
+      }
+    ]
   }
 ]
