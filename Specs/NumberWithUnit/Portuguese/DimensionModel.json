@@ -1004,5 +1004,21 @@
   {
     "Input": "lançamento em três dois um...",
     "Results": []
+  },
+  {
+    "Input": "o diâmetro é de 23 um.",
+    "Results": [
+      {
+        "Text": "23 um",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "23",
+          "unit": "Micrômetro",
+          "subtype": "Length"
+        },
+        "Start": 16,
+        "End": 20
+      }
+    ]
   }
 ]

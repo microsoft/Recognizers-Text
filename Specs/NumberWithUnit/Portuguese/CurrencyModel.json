@@ -1765,23 +1765,23 @@
     ]
   },
   {
-    "Input": "Los precios del acuerdo comienzan en dólar 22,5 milhões.",
+    "Input": "Os preços do negócio começam em dólares 22,5 milhões.",
     "NotSupported": "java, javascript, python",
     "Results": [
       {
-        "Text": "dólar 22,5 milhões",
+        "Text": "dólares 22,5 milhões",
         "TypeName": "currency",
         "Resolution": {
           "value": "22500000",
           "unit": "Dólar"
         },
-        "Start": 37,
-        "End": 54
+        "Start": 32,
+        "End": 51
       }
     ]
   },
   {
-    "Input": "Los precios del acuerdo comienzan en dólar 22500000.",
+    "Input": "Os preços do negócio começam em dólar 22500000.",
     "NotSupported": "java, javascript, python",
     "Results": [
       {
@@ -1791,8 +1791,8 @@
           "value": "22500000",
           "unit": "Dólar"
         },
-        "Start": 37,
-        "End": 50
+        "Start": 32,
+        "End": 45
       }
     ]
   },
@@ -1925,6 +1925,22 @@
         },
         "Start": 13,
         "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "O preço era na verdade 50 milhões de dólares.",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "50 milhões de dólares",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "50000000",
+          "unit": "Dólar"
+        },
+        "Start": 23,
+        "End": 43
       }
     ]
   }

@@ -723,7 +723,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
             { @"Decímetro", @"dm|decimetro|decímetro|decimetros|decímetros" },
             { @"Centímetro", @"cm|centimetro|centímetro|centimetros|centimetros" },
             { @"Milímetro", @"mm|milimetro|milímetro|milimetros|milímetros" },
-            { @"Micrômetro", @"µm|micrometro|micrômetro|micrómetro|micrometros|micrômetros|micrómetros|micron|mícron|microns|mícrons|micra" },
+            { @"Micrômetro", @"µm|um|micrometro|micrômetro|micrómetro|micrometros|micrômetros|micrómetros|micron|mícron|microns|mícrons|micra" },
             { @"Nanômetro", @"nm|nanometro|nanômetro|nanómetro|nanometros|nanômetros|nanómetros|milimicron|milimícron|milimicrons|milimícrons" },
             { @"Picômetro", @"pm|picometro|picômetro|picómetro|picometros|picômetros|picómetros" },
             { @"Milha", @"mi|milha|milhas" },
@@ -738,7 +738,8 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
             @"milha",
             @"milhas",
             @"""",
-            @"in"
+            @"in",
+            @"um"
         };
       public static readonly Dictionary<string, string> SpeedSuffixList = new Dictionary<string, string>
         {
@@ -825,7 +826,8 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
         };
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {
-            { @"\b\d+\s*\p{L}+$", @"((\d+(\s*\p{L}+[-—–-]|\p{L}+)\d+)|(((\p{L}|\d)[-—–-]\d+\s*|\p{L}\d+)\p{L}+))" }
+            { @"\b\d+\s*\p{L}+$", @"((\d+(\s*\p{L}+[-—–-]|\p{L}+)\d+)|(((\p{L}|\d)[-—–-]\d+\s*|\p{L}\d+)\p{L}+))" },
+            { @"\bum$", @"\p{L}\s+um\b" }
         };
       public static readonly Dictionary<string, string> TemperatureAmbiguityFiltersDict = new Dictionary<string, string>
         {
