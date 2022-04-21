@@ -9,7 +9,9 @@
         "Resolution": {
           "value": "3",
           "unit": "Dollar"
-        }
+        },
+        "Start": 0,
+        "End": 2
       }
     ]
   },
@@ -23,7 +25,9 @@
         "Resolution": {
           "value": "3",
           "unit": "Euro"
-        }
+        },
+        "Start": 0,
+        "End": 2
       }
     ]
   },
@@ -37,7 +41,9 @@
         "Resolution": {
           "value": "3",
           "unit": "United States dollar"
-        }
+        },
+        "Start": 0,
+        "End": 4
       }
     ]
   },
@@ -51,7 +57,9 @@
         "Resolution": {
           "value": "17",
           "unit": "Dollar"
-        }
+        },
+        "Start": 0,
+        "End": 8
       }
     ]
   },
@@ -65,7 +73,9 @@
         "Resolution": {
           "value": "7",
           "unit": "Euro"
-        }
+        },
+        "Start": 0,
+        "End": 10
       }
     ]
   },
@@ -79,7 +89,9 @@
         "Resolution": {
           "value": "30",
           "unit": "Cambodian riel"
-        }
+        },
+        "Start": 0,
+        "End": 23
       }
     ]
   },
@@ -93,7 +105,9 @@
         "Resolution": {
           "value": "75000000",
           "unit": "Dollar"
-        }
+        },
+        "Start": 0,
+        "End": 18
       }
     ]
   },
@@ -107,7 +121,9 @@
         "Resolution": {
           "value": "420000000",
           "unit": "Finnish markka"
-        }
+        },
+        "Start": 128,
+        "End": 151
       }
     ]
   },
@@ -121,7 +137,9 @@
         "Resolution": {
           "value": "94000",
           "unit": "Dollar"
-        }
+        },
+        "Start": 35,
+        "End": 42
       }
     ]
   },
@@ -135,7 +153,9 @@
         "Resolution": {
           "value": "94000",
           "unit": "Dollar"
-        }
+        },
+        "Start": 35,
+        "End": 42
       }
     ]
   },
@@ -149,7 +169,9 @@
         "Resolution": {
           "value": "99",
           "unit": "Dollar"
-        }
+        },
+        "Start": 16,
+        "End": 18
       }
     ]
   },
@@ -163,7 +185,9 @@
         "Resolution": {
           "value": "94",
           "unit": "Pound"
-        }
+        },
+        "Start": 0,
+        "End": 2
       }
     ]
   },
@@ -177,7 +201,9 @@
         "Resolution": {
           "value": "48000000",
           "unit": "Dollar"
-        }
+        },
+        "Start": 84,
+        "End": 102
       }
     ]
   },
@@ -191,7 +217,9 @@
         "Resolution": {
           "value": "16400000",
           "unit": "Canadian dollar"
-        }
+        },
+        "Start": 48,
+        "End": 80
       }
     ]
   },
@@ -205,7 +233,9 @@
         "Resolution": {
           "value": "14000000",
           "unit": "Dollar"
-        }
+        },
+        "Start": 55,
+        "End": 73
       }
     ]
   },
@@ -219,7 +249,9 @@
         "Resolution": {
           "value": "12345",
           "unit": "Dollar"
-        }
+        },
+        "Start": 19,
+        "End": 25
       }
     ]
   },
@@ -233,7 +265,9 @@
         "Resolution": {
           "value": "12500",
           "unit": "Euro"
-        }
+        },
+        "Start": 30,
+        "End": 39
       }
     ]
   },
@@ -247,7 +281,9 @@
         "Resolution": {
           "value": "2500000",
           "unit": "United States dollar"
-        }
+        },
+        "Start": 39,
+        "End": 49
       }
     ]
   },
@@ -261,7 +297,9 @@
         "Resolution": {
           "value": "300000",
           "unit": "British pound"
-        }
+        },
+        "Start": 55,
+        "End": 65
       }
     ]
   },
@@ -275,7 +313,9 @@
         "Resolution": {
           "value": "1",
           "unit": "Euro"
-        }
+        },
+        "Start": 12,
+        "End": 21
       }
     ]
   },
@@ -289,7 +329,9 @@
         "Resolution": {
           "value": "2",
           "unit": "Euro"
-        }
+        },
+        "Start": 8,
+        "End": 16
       }
     ]
   },
@@ -303,7 +345,9 @@
         "Resolution": {
           "value": "2,5",
           "unit": "Euro"
-        }
+        },
+        "Start": 0,
+        "End": 16
       }
     ]
   },
@@ -317,7 +361,9 @@
         "Resolution": {
           "value": "2,5",
           "unit": "Euro"
-        }
+        },
+        "Start": 0,
+        "End": 25
       }
     ]
   },
@@ -331,7 +377,9 @@
         "Resolution": {
           "value": "700",
           "unit": "Euro"
-        }
+        },
+        "Start": 0,
+        "End": 17
       }
     ]
   },
@@ -345,7 +393,9 @@
         "Resolution": {
           "value": "78000000",
           "unit": "Dollar"
-        }
+        },
+        "Start": 0,
+        "End": 30
       }
     ]
   },
@@ -359,7 +409,9 @@
         "Resolution": {
           "value": null,
           "unit": "Dollar"
-        }
+        },
+        "Start": 8,
+        "End": 13
       }
     ]
   },
@@ -373,7 +425,9 @@
         "Resolution": {
           "value": "3",
           "unit": "Dollar"
-        }
+        },
+        "Start": 4,
+        "End": 14
       }
     ]
   },
@@ -387,7 +441,9 @@
         "Resolution": {
           "value": "100",
           "unit": "Indian rupee"
-        }
+        },
+        "Start": 0,
+        "End": 18
       }
     ]
   },
@@ -401,7 +457,9 @@
         "Resolution": {
           "value": "1000",
           "unit": "Rupee"
-        }
+        },
+        "Start": 0,
+        "End": 10
       }
     ]
   },
@@ -415,7 +473,9 @@
         "Resolution": {
           "value": "700",
           "unit": "Euro"
-        }
+        },
+        "Start": 0,
+        "End": 17
       }
     ]
   },
