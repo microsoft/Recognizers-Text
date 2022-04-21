@@ -35,7 +35,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public static readonly string DescRegex = $@"((horas\s+)?(?<desc>{AmDescRegex}|{PmDescRegex})|{OclockRegex})";
       public const string OfPrepositionRegex = @"(\bd(o|a|e)s?\b)";
       public const string AfterNextSuffixRegex = @"\b(que\s+vem|passad[oa])\b";
-      public const string RangePrefixRegex = @"((de(sde)?|das?|entre)(\s+as?)?)";
+      public const string RangePrefixRegex = @"((de(sde)?|das?|entre)\s+(a(s)?\s+)?)";
       public static readonly string TwoDigitYearRegex = $@"\b(?<![$])(?<year>([0-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b";
       public const string RelativeRegex = @"(?<order>((est[ae]|pr[oó]xim[oa]|([uú]ltim(o|as|os)))(\s+fina(l|is)\s+d[eao])?)|(fina(l|is)\s+d[eao]))\b";
       public const string StrictRelativeRegex = @"(?<order>((est[ae]|pr[oó]xim[oa]|([uú]ltim(o|as|os)))(\s+fina(l|is)\s+d[eao])?)|(fina(l|is)\s+d[eao]))\b";
@@ -137,7 +137,6 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public static readonly string MidTimeRegex = $@"(?<mid>({MidnightRegex}|{MidmorningRegex}|{MidEarlyMorning}|{MidafternoonRegex}|{MiddayRegex}))";
       public static readonly string AtRegex = $@"\b(((?<=\b([aà]s?)\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}(\s+e\s+{BaseDateTime.MinuteRegex})?)(\s+horas?|\s*h\b)?|(?<=\b(s(er)?[aã]o|v[aã]o\s+ser|^[eé]h?)\s+|^\s*)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\s+horas?|\s*h\b))(\s+{OclockRegex})?|{MidTimeRegex})\b";
       public static readonly string ConnectNumRegex = $@"({BaseDateTime.HourRegex}(?<min>[0-5][0-9])\s*{DescRegex})";
-      public static readonly string TimeRegexWithDotConnector = $@"({BaseDateTime.HourRegex}(\s*\.\s*){BaseDateTime.MinuteRegex})";
       public static readonly string TimeRegex1 = $@"(\b{TimePrefix}\s+)?({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\s*({DescRegex})";
       public static readonly string TimeRegex2 = $@"(\b{TimePrefix}\s+)?(t)?{BaseDateTime.HourRegex}(\s*)?:(\s*)?{BaseDateTime.MinuteRegex}((\s*)?:(\s*)?{BaseDateTime.SecondRegex})?((\s*{DescRegex})|\b)";
       public static readonly string TimeRegex3 = $@"(\b{TimePrefix}\s+)?{BaseDateTime.HourRegex}\.{BaseDateTime.MinuteRegex}(\s*{DescRegex})";
@@ -164,11 +163,10 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public const string UnitRegex = @"(?<unit>anos?|meses|m[êe]s|semanas?|dias?|horas?|hrs?|hs?|minutos?|mins?|segundos?|segs?)\b";
       public const string ConnectorRegex = @"^(,|t|para [ao]|para as|pras|(cerca|perto|ao\s+redor|por\s+volta)\s+(de|das)|quase)$";
       public const string TimeHourNumRegex = @"(?<hour>vinte( e (um|dois|tr[êe]s|quatro))?|zero|uma?|dois|duas|tr[êe]s|quatro|cinco|seis|sete|oito|nove|dez|onze|doze|treze|quatorze|catorze|quinze|dez([ea]sseis|[ea]ssete|oito|[ea]nove))";
-      public static readonly string FirstTimeRegexInTimeRange = $@"\b{TimeRegexWithDotConnector}(\s*{DescRegex})?";
       public static readonly string PureNumFromTo = $@"(((desde|de|da|das)\s+(a(s)?\s+)?)?({BaseDateTime.HourRegex}|{TimeHourNumRegex})(\s*(?<leftDesc>{DescRegex}|horas))?\s*{TillRegex}(?<![aà]s)|((desde|de|da|das)\s+(a(s)?\s+)?)({BaseDateTime.HourRegex}|{TimeHourNumRegex})(\s*(?<leftDesc>{DescRegex}|horas))?\s*{TillRegex})\s*({BaseDateTime.HourRegex}|{TimeHourNumRegex})\s*(?<rightDesc>{PmRegex}|{AmRegex}|{DescRegex}|horas)?";
       public static readonly string PureNumBetweenAnd = $@"(entre\s+((a|as)?\s+)?)({BaseDateTime.HourRegex}|{TimeHourNumRegex})(\s*(?<leftDesc>{DescRegex}|horas))?\s*e\s*(a(s)?\s+)?({BaseDateTime.HourRegex}|{TimeHourNumRegex})\s*(?<rightDesc>{PmRegex}|{AmRegex}|{DescRegex}|horas)?";
-      public static readonly string SpecificTimeFromTo = $@"({RangePrefixRegex}\s+)?(?<time1>(({TimeRegex2}|{FirstTimeRegexInTimeRange})|({BaseDateTime.HourRegex}|{TimeHourNumRegex})(\s*(?<leftDesc>{DescRegex}|horas))?))\s*{TillRegex}\s*(?<time2>(({TimeRegex2}|{TimeRegexWithDotConnector}(?<rightDesc>\s*{DescRegex}|horas))|({BaseDateTime.HourRegex}|{TimeHourNumRegex})(\s*(?<rightDesc>{DescRegex}|horas))?))";
-      public static readonly string SpecificTimeBetweenAnd = $@"(entre\s+((a|as)?\s+)?)(?<time1>(({TimeRegex2}|{FirstTimeRegexInTimeRange})|({BaseDateTime.HourRegex}|{TimeHourNumRegex})(\s*(?<leftDesc>{DescRegex}|horas))?))\s*{RangeConnectorRegex}\s*(?<time2>(({TimeRegex2}|{TimeRegexWithDotConnector}(?<rightDesc>\s*{DescRegex}|horas))|({BaseDateTime.HourRegex}|{TimeHourNumRegex})(\s*(?<rightDesc>{DescRegex}|horas))?))";
+      public const string SpecificTimeFromTo = @"^[.]";
+      public const string SpecificTimeBetweenAnd = @"^[.]";
       public const string TimeUnitRegex = @"(?<unit>(hora|minuto|min|segundo|se[cg])(?<plural>s)?|h)\b";
       public static readonly string TimeFollowedUnit = $@"^\s*{TimeUnitRegex}";
       public static readonly string TimeNumberCombinedWithUnit = $@"\b(?<num>\d+(\,\d*)?)\s*{TimeUnitRegex}";
