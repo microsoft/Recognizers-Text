@@ -429,9 +429,7 @@
         "Resolution": {
           "value": "200",
           "unit": "C"
-        },
-        "Start": 9,
-        "End": 19
+        }
       },
       {
         "Text": "celsius",
@@ -439,9 +437,7 @@
         "Resolution": {
           "value": null,
           "unit": "C"
-        },
-        "Start": 13,
-        "End": 19
+        }
       },
       {
         "Text": "fahrenheit",
@@ -449,9 +445,7 @@
         "Resolution": {
           "value": null,
           "unit": "F"
-        },
-        "Start": 32,
-        "End": 41
+        }
       }
     ]
   },
@@ -465,9 +459,7 @@
         "Resolution": {
           "value": "101",
           "unit": "F"
-        },
-        "Start": 22,
-        "End": 35
+        }
       },
       {
         "Text": "fahrenheit",
@@ -475,9 +467,7 @@
         "Resolution": {
           "value": null,
           "unit": "F"
-        },
-        "Start": 0,
-        "End": 9
+        }
       },
       {
         "Text": "celsius",
@@ -485,9 +475,7 @@
         "Resolution": {
           "value": null,
           "unit": "C"
-        },
-        "Start": 14,
-        "End": 20
+        }
       },
       {
         "Text": "celsius",
@@ -495,9 +483,7 @@
         "Resolution": {
           "value": null,
           "unit": "C"
-        },
-        "Start": 14,
-        "End": 20
+        }
       }
     ]
   },
@@ -511,9 +497,7 @@
         "Resolution": {
           "value": "50",
           "unit": "C"
-        },
-        "Start": 0,
-        "End": 15
+        }
       },
       {
         "Text": "celsius",
@@ -521,9 +505,7 @@
         "Resolution": {
           "value": null,
           "unit": "C"
-        },
-        "Start": 9,
-        "End": 15
+        }
       },
       {
         "Text": "fahrenheit",
@@ -531,9 +513,7 @@
         "Resolution": {
           "value": null,
           "unit": "F"
-        },
-        "Start": 28,
-        "End": 37
+        }
       }
     ]
   },
