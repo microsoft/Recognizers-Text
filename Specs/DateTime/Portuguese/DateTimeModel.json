@@ -3285,9 +3285,9 @@
         "Resolution": {
           "values": [
             {
-              "timex": "(2018-05-05T04,2018-05-05T17,PT13H)",
+              "timex": "(2018-05-05T16,2018-05-05T17,PT1H)",
               "type": "datetimerange",
-              "start": "2018-05-05 04:00:00",
+              "start": "2018-05-05 16:00:00",
               "end": "2018-05-05 17:00:00"
             }
           ]
@@ -3645,6 +3645,107 @@
               "timex": "XXXX-01-01T20",
               "type": "datetime",
               "value": "2021-01-01 20:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "vamos estar de volta amanhã 8 horas da manhã",
+    "Context": {
+      "ReferenceDateTime": "2020-05-14T12:00:00"
+    },
+    "NotSupported": "javascript, java",
+    "Results": [
+      {
+        "Text": "amanhã 8 horas da manhã",
+        "Start": 21,
+        "End": 43,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-05-15T08",
+              "type": "datetime",
+              "value": "2020-05-15 08:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "vamos estar de volta amanhã de 8 horas da manhã",
+    "Context": {
+      "ReferenceDateTime": "2020-05-14T12:00:00"
+    },
+    "NotSupported": "javascript, java",
+    "Results": [
+      {
+        "Text": "amanhã de 8 horas da manhã",
+        "Start": 21,
+        "End": 46,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-05-15T08",
+              "type": "datetime",
+              "value": "2020-05-15 08:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "vamos estar de volta amanhã 8 horas da tarde",
+    "Context": {
+      "ReferenceDateTime": "2020-05-14T12:00:00"
+    },
+    "NotSupported": "javascript, java",
+    "Results": [
+      {
+        "Text": "amanhã 8 horas da tarde",
+        "Start": 21,
+        "End": 43,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-05-15T20",
+              "type": "datetime",
+              "value": "2020-05-15 20:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "que tal 8 pm da tarde dois de jan",
+    "Context": {
+      "ReferenceDateTime": "2020-05-14T12:00:00"
+    },
+    "NotSupported": "javascript, java",
+    "Results": [
+      {
+        "Text": "8 pm da tarde dois de jan",
+        "Start": 8,
+        "End": 32,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-01-02T20",
+              "type": "datetime",
+              "value": "2020-01-02 20:00:00"
+            },
+            {
+              "timex": "XXXX-01-02T20",
+              "type": "datetime",
+              "value": "2021-01-02 20:00:00"
             }
           ]
         }
