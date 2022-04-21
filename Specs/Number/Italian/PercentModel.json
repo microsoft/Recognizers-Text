@@ -8,7 +8,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "100%"
-        }
+        },
+        "Start": 0,
+        "End": 3
       }
     ]
   },
@@ -21,7 +23,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "100%"
-        }
+        },
+        "Start": 1,
+        "End": 4
       }
     ]
   },
@@ -34,7 +38,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "100%"
-        }
+        },
+        "Start": 1,
+        "End": 12
       }
     ]
   },
@@ -47,7 +53,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "100%"
-        }
+        },
+        "Start": 1,
+        "End": 15
       }
     ]
   },
@@ -60,7 +68,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "240%"
-        }
+        },
+        "Start": 0,
+        "End": 11
       }
     ]
   },
@@ -73,7 +83,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "20%"
-        }
+        },
+        "Start": 0,
+        "End": 13
       }
     ]
   },
@@ -86,7 +98,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "27%"
-        }
+        },
+        "Start": 16,
+        "End": 34
       }
     ]
   },
@@ -99,7 +113,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "30%"
-        }
+        },
+        "Start": 0,
+        "End": 14
       }
     ]
   },
@@ -112,7 +128,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "30%"
-        }
+        },
+        "Start": 0,
+        "End": 7
       }
     ]
   },
@@ -125,7 +143,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "100%"
-        }
+        },
+        "Start": 0,
+        "End": 13
       }
     ]
   },
@@ -138,7 +158,9 @@
         "TypeName": "percentage",
         "Resolution": {
           "value": "10%"
-        }
+        },
+        "Start": 0,
+        "End": 10
       }
     ]
   }
