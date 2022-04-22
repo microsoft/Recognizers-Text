@@ -1395,14 +1395,14 @@
         "Text": "昼",
         "Type": "timerange",
         "Value": {
-          "Timex": "TDT",
+          "Timex": "TMI",
           "FutureResolution": {
-            "startTime": "08:00:00",
-            "endTime": "18:00:00"
+            "startTime": "11:00:00",
+            "endTime": "13:00:00"
           },
           "PastResolution": {
-            "startTime": "08:00:00",
-            "endTime": "18:00:00"
+            "startTime": "11:00:00",
+            "endTime": "13:00:00"
           }
         },
         "Start": 0,
@@ -1667,6 +1667,32 @@
         },
         "Start": 0,
         "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "日中",
+    "Context": {
+      "ReferenceDateTime": "2018-10-11T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "日中",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "TDT",
+          "FutureResolution": {
+            "startTime": "08:00:00",
+            "endTime": "18:00:00"
+          },
+          "PastResolution": {
+            "startTime": "08:00:00",
+            "endTime": "18:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 2
       }
     ]
   }

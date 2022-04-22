@@ -61,6 +61,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public const string DateUnitRegex = @"(?<unit>年|个月|周|週|日|天)";
       public const string BeforeRegex = @"以前|之前|前";
       public const string AfterRegex = @"以后|以後|之后|之後|后|後";
+      public const string TimePeriodLeftRegex = @"^[.]";
       public static readonly string DateRegexList1 = $@"({LunarRegex}(\s*))?((({SimpleYearRegex}|{DateYearInCJKRegex})年)(\s*))?{MonthRegex}(\s*){DateDayRegexInCJK}((\s*|,|，){WeekDayRegex})?";
       public static readonly string DateRegexList2 = $@"((({SimpleYearRegex}|{DateYearInCJKRegex})年)(\s*))?({LunarRegex}(\s*))?{MonthRegex}(\s*){DateDayRegexInCJK}((\s*|,|，){WeekDayRegex})?";
       public static readonly string DateRegexList3 = $@"((({SimpleYearRegex}|{DateYearInCJKRegex})年)(\s*))?({LunarRegex}(\s*))?{MonthRegex}(\s*)({DayRegexNumInCJK}|{DayRegex})((\s*|,|，){WeekDayRegex})?";
@@ -95,6 +96,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public static readonly string WeekOfYearRegex = $@"(?<woy>({YearRegex}|{RelativeRegex}年)的(?<cardinal>第一|第二|第三|第四|第五|最后一)\s*周\s*)";
       public const string WeekOfDateRegex = @"^[.]";
       public const string MonthOfDateRegex = @"^[.]";
+      public const string RestOfDateRegex = @"^[.]";
       public const string UnitRegex = @"(?<unit>年|(?<uoy>(个)?月|周|週|日|天))";
       public static readonly string FollowedUnit = $@"^\s*{UnitRegex}";
       public static readonly string NumberCombinedWithUnit = $@"(?<num>\d+(\.\d*)?){UnitRegex}";

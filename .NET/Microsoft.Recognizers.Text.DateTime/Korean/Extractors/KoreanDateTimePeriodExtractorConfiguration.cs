@@ -35,6 +35,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
 
         public static readonly Regex FutureRegex = new Regex(DateTimeDefinitions.FutureRegex, RegexFlags);
 
+        public static readonly Regex TimePeriodLeftRegex = new Regex(DateTimeDefinitions.TimePeriodLeftRegex, RegexFlags);
+
+        public static readonly Regex RelativeRegex = new Regex(DateTimeDefinitions.RelativeRegex, RegexFlags);
+
+        public static readonly Regex RestOfDateRegex = new Regex(DateTimeDefinitions.RestOfDateRegex, RegexFlags);
+
         public static readonly Regex HourRegex = new Regex(DateTimeDefinitions.HourRegex, RegexFlags);
         public static readonly Regex HourNumRegex = new Regex(DateTimeDefinitions.HourNumRegex, RegexFlags);
         public static readonly Regex ThisRegex = new Regex(DateTimeDefinitions.DateTimePeriodThisRegex, RegexFlags);
@@ -91,6 +97,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
         Regex ICJKDateTimePeriodExtractorConfiguration.PastRegex => PastRegex;
 
         Regex ICJKDateTimePeriodExtractorConfiguration.FutureRegex => FutureRegex;
+
+        Regex ICJKDateTimePeriodExtractorConfiguration.TimePeriodLeftRegex => TimePeriodLeftRegex;
+
+        Regex ICJKDateTimePeriodExtractorConfiguration.RelativeRegex => RelativeRegex;
+
+        Regex ICJKDateTimePeriodExtractorConfiguration.RestOfDateRegex => RestOfDateRegex;
+
+        Regex ICJKDateTimePeriodExtractorConfiguration.ThisRegex => ThisRegex;
 
         public bool GetFromTokenIndex(string text, out int index)
         {

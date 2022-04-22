@@ -213,6 +213,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string NumGroupName = "num";
         public const string FirstGroupName = "first";
         public const string LastGroupName = "last";
+        public const string LatestGroupName = "latest";
         public const string AfterGroupName = "after";
         public const string RelEarlyGroupName = "RelEarly";
         public const string RelLateGroupName = "RelLate";
@@ -311,5 +312,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         // Timex non-constant
         public static readonly string[] DatePeriodTimexSplitter = { ",", "(", ")" };
+        public static readonly char[] DurationUnitChar = { 'D', 'W', 'M', 'Y', 'B' };
     }
 }
