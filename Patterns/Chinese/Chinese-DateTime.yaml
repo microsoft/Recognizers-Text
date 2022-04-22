@@ -96,7 +96,6 @@ AfterRegex: !simpleRegex
   def: 以后|以後|之后|之後|后|後
 TimePeriodLeftRegex: !simpleRegex
   def: ^[.]
-# (农历)?(2016年)?一月三日(星期三)?
 DateRegexList1: !nestedRegex
   def: ({LunarRegex}(\s*))?((({SimpleYearRegex}|{DateYearInCJKRegex})年)(\s*))?{MonthRegex}(\s*){DateDayRegexInCJK}((\s*|,|，){WeekDayRegex})?
   references: [LunarRegex, SimpleYearRegex, DateYearInCJKRegex, MonthRegex, DateDayRegexInCJK, WeekDayRegex]
