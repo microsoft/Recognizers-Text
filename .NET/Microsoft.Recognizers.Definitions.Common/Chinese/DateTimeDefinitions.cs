@@ -183,8 +183,10 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public const string SetUnitRegex = @"(?<unit>年|月|周|星期|日|天|小时|时|分钟|分|秒钟|秒)";
       public static readonly string SetEachUnitRegex = $@"(?<each>(每个|每一|每)\s*{SetUnitRegex})";
       public const string SetEachPrefixRegex = @"(?<each>(每)\s*$)";
+      public const string SetEachSuffixRegex = @"^[.]";
       public const string SetLastRegex = @"(?<last>last|this|next)";
       public const string SetEachDayRegex = @"(每|每一)(天|日)\s*$";
+      public const string SetEachDateUnitRegex = @"^[.]";
       public const string TimeHourNumRegex = @"(00|01|02|03|04|05|06|07|08|09|0|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|1|2|3|4|5|6|7|8|9)";
       public const string TimeMinuteNumRegex = @"(00|01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59|0|1|2|3|4|5|6|7|8|9)";
       public const string TimeSecondNumRegex = @"(00|01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59|0|1|2|3|4|5|6|7|8|9)";

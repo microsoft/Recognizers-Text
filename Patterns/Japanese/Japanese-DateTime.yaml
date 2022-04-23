@@ -295,9 +295,23 @@ YesterdayRegex: !simpleRegex
   def: (?<yesterday>昨日の?(午前|午後|中|夜|朝)?)
 TodayRegex: !simpleRegex
   def: (?<today>(今朝の?|今朝の午前|今晩|今晚|今早|今晨|明晚|明早|明晨|昨晚|今夜|昨夜)(的|在)?)
+SpecialDayHourRegex: !nestedRegex
+  def: ((?<hour>{TimeHourCJKRegex}|{TimeHourNumRegex})(時間?|(:00)))
+  references: [TimeHourCJKRegex, TimeHourNumRegex]
+SpecialDayMinuteRegex: !nestedRegex
+  def: ((?<min>{TimeMinuteCJKRegex}|{TimeMinuteNumRegex})分間?)
+  references: [TimeMinuteCJKRegex, TimeMinuteNumRegex]
+SpecialDaySecondRegex: !nestedRegex
+  def: ((?<sec>{TimeSecondCJKRegex}|{TimeSecondNumRegex})秒間?)
+  references: [TimeSecondCJKRegex, TimeSecondNumRegex]
+SpecialDayModRegex: !simpleRegex
+  def: ((?<after>過ぎに)|(?<around>ごろ)|(?<in>で|の?うちに)|(?<less>弱|たらず)|(?<more>以上))
+SpecialDayEndOfRegex: !nestedRegex
+  def: ((?<SpecificEndOf>明日の終わり|({WeekDayRegex}の?終わり))|(?<UnspecificEndOf>日の終わり|一日の終わり|その日の終わり))
+  references: [WeekDayRegex]
 TimeOfSpecialDayRegex: !nestedRegex
-  def: (((?<SpecificEndOf>明日の終わり|({WeekDayRegex}の?終わり))|{WeekDayRegex}|(?<UnspecificEndOf>日の終わり|一日の終わり|その日の終わり)|{TomorrowRegex}|{YesterdayRegex}|あと|{TodayRegex})(\d日)?(と)?((?<hour>(([零〇一二两三四五六七八九]|二十[一二三四]?|十[一二三四五六七八九]?)(つ)?)|([0-1]?\d|2[0-4]))(時間?|(:00)))?((?<min>([二三四五]?十[一二三四五六七八九]?|六十|[零〇一二三四五六七八九])|([0-5]?\d))分間?)?((?<sec>([二三四五]?十[一二三四五六七八九]?|六十|[零〇一二三四五六七八九])|([0-5]?\d))秒間?)?((?<after>過ぎに)|(?<around>ごろ)|(?<in>で|の?うちに)|(?<less>弱|たらず)|(?<more>以上))?)|((((?<hour>(([零〇一二两三四五六七八九]|二十[一二三四]?|十[一二三四五六七八九]?)(つ)?)|([0-1]?\d|2[0-4]))(時間?|(:00)))(?<in>で|の?うちに)))
-  references: [ TomorrowRegex, YesterdayRegex, TodayRegex, WeekDayRegex ]
+  def: (({SpecialDayEndOfRegex}|{WeekDayRegex}|{TomorrowRegex}|{YesterdayRegex}|あと|{TodayRegex})(\d日)?(と)?(({SpecialDayHourRegex}{SpecialDayMinuteRegex}?{SpecialDaySecondRegex}?)|({SpecialDayMinuteRegex}{SpecialDaySecondRegex}?)){SpecialDayModRegex}?)|(({SpecialDayHourRegex}(?<in>で|の?うちに)))|(({SpecialDayEndOfRegex}|{TomorrowRegex}|{YesterdayRegex}|あと|{TodayRegex}){SpecialDayModRegex}?)|({WeekDayRegex}(\d日)?(と)?{SpecialDayModRegex})
+  references: [ TomorrowRegex, YesterdayRegex, TodayRegex, WeekDayRegex, SpecialDayEndOfRegex, SpecialDayHourRegex, SpecialDayMinuteRegex, SpecialDaySecondRegex, SpecialDayModRegex ]
 NowTimeRegex: !simpleRegex
   def: (现在|今)
 RecentlyTimeRegex: !simpleRegex
@@ -416,16 +430,20 @@ HolidayRegexList2: !nestedRegex
   references: [YearRegex, DatePeriodYearInCJKRegex]
 #SetExtractorCJK
 SetUnitRegex: !simpleRegex
-  def: (?<unit>年|月|周|星期|日|天|小时|时|分钟|分|秒钟|秒)
+  def: (?<unit>年|月|隔週|週|日|時|分|秒)
 SetEachUnitRegex: !nestedRegex
-  def: (?<each>(每个|每一|每)\s*{SetUnitRegex})
+  def: ((?<each>(毎个|毎一|毎|各)\s*(?<unit>年|月|週|日|時|分|秒))|(?<=\d)泊|(?<unit>隔週))
   references: [SetUnitRegex]
 SetEachPrefixRegex: !simpleRegex
-  def: (?<each>(每)\s*$)
+  def: ((?<each>毎|隔|各|ごとに)\s*$)
+SetEachSuffixRegex: !simpleRegex
+  def: (^\s*(?<each>ごとに))
 SetLastRegex: !simpleRegex
   def: (?<last>last|this|next)
 SetEachDayRegex: !simpleRegex
-  def: (每|每一)(天|日)\s*$
+  def: (毎|各|毎一)(天|日)\s*$
+SetEachDateUnitRegex: !simpleRegex
+  def: (毎)(年|月|週)\s*$
 #TimeExtractorCJK
 TimeHourNumRegex: !simpleRegex
   def: ([0-1]?\d|2[0-4])
@@ -471,7 +489,7 @@ TimeDigitTimeRegex: !nestedRegex
   def: (?<hour>{TimeHourNumRegex}):(?<min>{TimeMinuteNumRegex})(:(?<sec>{TimeSecondNumRegex}))?(am|pm)?
   references: [TimeHourNumRegex, TimeMinuteNumRegex, TimeSecondNumRegex]
 TimeDayDescRegex: !nestedRegex
-  def: (?<daydesc>(正午|夜中|午前半ば|(昼食時)|真昼)|((?<=({TimeDigitTimeRegex}|{TimeCJKTimeRegex})(の)?)(早朝(に)?|午後(に)?|(深)?夜(に)?|未明|午前(中)?|日中|白昼|(未|早)?朝(に)?|昼前に|昼すぎに|夕方前に|夕方に|営業時間内に|昼))|((早朝(に)?|午後(に)?|(深)?夜(に)?|未明|午前(中)?|日中|白昼|(未|早)?朝(に)?|昼前に|昼すぎに|夕方前に|夕方に|営業時間内に|昼)(?=(の)?({TimeDigitTimeRegex}|{TimeCJKTimeRegex}))))
+  def: (?<daydesc>(正午|夜中|午前半ば|(昼食時)|真昼)|((?<=({TimeDigitTimeRegex}|{TimeCJKTimeRegex})(の)?)(早朝(に)?|午後(に)?|晚|晩|(深)?夜(に)?|未明|午前(中)?|日中|白昼|(未|早)?朝(に)?|昼前に|昼すぎに|夕方前に|夕方に|営業時間内に|昼))|((早朝(に)?|午後(に)?|晚|晩|(深)?夜(に)?|未明|午前(中)?|日中|白昼|(未|早)?朝(に)?|昼前に|昼すぎに|夕方前に|夕方に|営業時間内に|昼)(?=(の)?({TimeDigitTimeRegex}|{TimeCJKTimeRegex}))))
   references: [TimeDigitTimeRegex, TimeCJKTimeRegex]
 TimeApproximateDescPreffixRegex: !simpleRegex
   def: (ぐらい|おそらく|多分|ほとんど|まもなく|昨日の|昨日|来週の|来週|昼食時|昼食|真)
@@ -553,6 +571,7 @@ ParserConfigurationUnitMap: !dictionary
     週: W
     週間: W
     星期: W
+    隔週: W
     个星期: W
     日: D
     日間: D
@@ -995,6 +1014,8 @@ TimeLowBoundDesc: !dictionary
   types: [string, int]
   entries:
     夜: 18 
+    晚: 18
+    晩: 18
     午後: 12
     午后: 12
     pm: 12
@@ -1098,4 +1119,14 @@ DynastyYearMap: !dictionary
     文久: 1861
     元治: 1864
     慶応: 1865
+DayTypeRegex: !simpleRegex
+  def: ^(天|日)$
+WeekTypeRegex: !simpleRegex
+  def: ^(周|星期|週)$
+BiWeekTypeRegex: !simpleRegex
+  def: ^(隔週)$
+MonthTypeRegex: !simpleRegex
+  def: ^(月)$
+YearTypeRegex: !simpleRegex
+  def: ^(年)$
 ...

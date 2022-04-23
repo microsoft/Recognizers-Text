@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 using DateObject = System.DateTime;
@@ -30,9 +31,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             var tokens = new List<Token>();
             tokens.AddRange(MatchEachUnit(text));
             tokens.AddRange(MatchEachDuration(text, referenceTime));
-            tokens.AddRange(TimeEveryday(text, referenceTime));
-            tokens.AddRange(MatchEachDate(text, referenceTime));
-            tokens.AddRange(MatchEachDateTime(text, referenceTime));
+            tokens.AddRange(MatchEach(this.config.DateExtractor, text, referenceTime));
+            tokens.AddRange(MatchEach(this.config.DateTimeExtractor, text, referenceTime));
+            tokens.AddRange(MatchEach(this.config.TimePeriodExtractor, text, referenceTime));
+            tokens.AddRange(MatchEach(this.config.TimeExtractor, text, referenceTime));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }
@@ -56,6 +58,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     ret.Add(new Token(match.Index, er.Start + er.Length ?? 0));
                 }
+                else
+                {
+                    var afterStr = text.Substring(er.Start + er.Length ?? 0);
+                    match = this.config.EachSuffixRegex.Match(afterStr);
+                    if (match.Success)
+                    {
+                        ret.Add(new Token(er.Start ?? 0, er.Length + match.Length ?? 00));
+                    }
+                }
             }
 
             return ret;
@@ -75,27 +86,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        public List<Token> TimeEveryday(string text, DateObject referenceTime)
+        public List<Token> MatchEach(IDateTimeExtractor extractor, string text, DateObject referenceTime)
         {
             var ret = new List<Token>();
-            var ers = this.config.TimeExtractor.Extract(text, referenceTime);
-            foreach (var er in ers)
-            {
-                var beforeStr = text.Substring(0, er.Start ?? 0);
-                var match = this.config.EachDayRegex.Match(beforeStr);
-                if (match.Success)
-                {
-                    ret.Add(new Token(match.Index, match.Index + match.Length + (er.Length ?? 0)));
-                }
-            }
-
-            return ret;
-        }
-
-        public List<Token> MatchEachDate(string text, DateObject referenceTime)
-        {
-            var ret = new List<Token>();
-            var ers = this.config.DateExtractor.Extract(text, referenceTime);
+            var ers = extractor.Extract(text, referenceTime);
             foreach (var er in ers)
             {
                 var beforeStr = text.Substring(0, er.Start ?? 0);
@@ -104,22 +98,15 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     ret.Add(new Token(match.Index, match.Index + match.Length + (er.Length ?? 0)));
                 }
-            }
-
-            return ret;
-        }
-
-        public List<Token> MatchEachDateTime(string text, DateObject referenceTime)
-        {
-            var ret = new List<Token>();
-            var ers = this.config.DateTimeExtractor.Extract(text, referenceTime);
-            foreach (var er in ers)
-            {
-                var beforeStr = text.Substring(0, er.Start ?? 0);
-                var match = this.config.EachPrefixRegex.Match(beforeStr);
-                if (match.Success)
+                else if (er.Type == Constants.SYS_DATETIME_TIME || er.Type == Constants.SYS_DATETIME_DATE)
                 {
-                    ret.Add(new Token(match.Index, match.Index + match.Length + (er.Length ?? 0)));
+                    // Cases like "every day at 2pm" or "every year on April 15th"
+                    var eachRegex = er.Type == Constants.SYS_DATETIME_TIME ? this.config.EachDayRegex : this.config.EachDateUnitRegex;
+                    match = eachRegex.Match(beforeStr);
+                    if (match.Success)
+                    {
+                        ret.Add(new Token(match.Index, match.Index + match.Length + (er.Length ?? 0)));
+                    }
                 }
             }
 

@@ -384,10 +384,14 @@ SetEachUnitRegex: !nestedRegex
   references: [SetUnitRegex]
 SetEachPrefixRegex: !simpleRegex
   def: (?<each>(每)\s*$)
+SetEachSuffixRegex: !simpleRegex
+  def: ^[.]
 SetLastRegex: !simpleRegex
   def: (?<last>last|this|next)
 SetEachDayRegex: !simpleRegex
   def: (每|每一)(天|日)\s*$
+SetEachDateUnitRegex: !simpleRegex
+  def: ^[.]
 #TimeExtractorCJK
 TimeHourNumRegex: !simpleRegex
   def: (00|01|02|03|04|05|06|07|08|09|0|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|1|2|3|4|5|6|7|8|9)
