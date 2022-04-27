@@ -999,10 +999,12 @@
   },
   {
     "Input": "vou fazer um dia",
+    "NotSupported": "javascript",
     "Results": []
   },
   {
     "Input": "lançamento em três dois um...",
+    "NotSupported": "javascript",
     "Results": []
   },
   {
