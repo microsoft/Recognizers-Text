@@ -42,7 +42,7 @@ class ChineseDateTimeExtractorConfiguration implements IDateTimeExtractorConfigu
         this.prepositionRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.PrepositionRegex);
         this.nowRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.NowRegex);
         this.nightRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.NightRegex);
-        this.timeOfTodayBeforeRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.TimeOfTodayRegex);
+        this.timeOfTodayBeforeRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.TimeOfSpecialDayRegex);
     }
 
     isConnectorToken(source: string): boolean {
@@ -195,7 +195,7 @@ class ChineseDateTimeParserConfiguration implements IDateTimeParserConfiguration
         this.timeParser = new ChineseTimeParser();
         this.pmTimeRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DateTimeSimplePmRegex);
         this.amTimeRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DateTimeSimpleAmRegex);
-        this.specificTimeOfDayRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.TimeOfTodayRegex);
+        this.specificTimeOfDayRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.TimeOfSpecialDayRegex);
         this.nowRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.NowRegex);
         this.numberParser = AgnosticNumberParserFactory.getParser(AgnosticNumberParserType.Number, new ChineseNumberParserConfiguration());
         this.unitRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.DateUnitRegex);

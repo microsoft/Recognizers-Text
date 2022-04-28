@@ -727,7 +727,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
             { @"Picômetro", @"pm|picometro|picômetro|picómetro|picometros|picômetros|picómetros" },
             { @"Milha", @"mi|milha|milhas" },
             { @"Jarda", @"yd|jarda|jardas" },
-            { @"Polegada", @"polegada|polegadas|""" },
+            { @"Polegada", @"polegada|polegadas|""|in" },
             { @"Pé", @"pé|pe|pés|pes|ft" },
             { @"Ano luz", @"ano luz|anos luz|al" }
         };
@@ -736,7 +736,8 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
             @"mi",
             @"milha",
             @"milhas",
-            @""""
+            @"""",
+            @"in"
         };
       public static readonly Dictionary<string, string> SpeedSuffixList = new Dictionary<string, string>
         {
@@ -744,7 +745,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
             { @"Quilômetro por hora", @"km/h|quilômetro por hora|quilómetro por hora|quilometro por hora|quilômetros por hora|quilómetros por hora|quilometros por hora|quilômetro/hora|quilómetro/hora|quilometro/hora|quilômetros/hora|quilómetros/hora|quilometros/hora" },
             { @"Quilômetro por minuto", @"km/min|quilômetro por minuto|quilómetro por minuto|quilometro por minuto|quilômetros por minuto|quilómetros por minuto|quilometros por minuto|quilômetro/minuto|quilómetro/minuto|quilometro/minuto|quilômetros/minuto|quilómetros/minuto|quilometros/minuto" },
             { @"Quilômetro por segundo", @"km/seg|quilômetro por segundo|quilómetro por segundo|quilometro por segundo|quilômetros por segundo|quilómetros por segundo|quilometros por segundo|quilômetro/segundo|quilómetro/segundo|quilometro/segundo|quilômetros/segundo|quilómetros/segundo|quilometros/segundo" },
-            { @"Milha por hora", @"mph|milha por hora|mi/h|milha/hora|milhas/hora|milhas por hora" },
+            { @"Milha por hora", @"mph|milha por hora|mi/h|milha/hora|milhas/hora|milhas por hora|mi por hora|mi/hora" },
             { @"Nó", @"kt|nó|nós|kn" },
             { @"Pé por segundo", @"ft/s|pé/s|pe/s|ft/seg|pé/seg|pe/seg|pé por segundo|pe por segundo|pés por segundo|pes por segundo" },
             { @"Pé por minuto", @"ft/min|pé/mind|pe/min|pé por minuto|pe por minuto|pés por minuto|pes por minuto" },
@@ -788,8 +789,8 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
         };
       public static readonly Dictionary<string, string> WeightSuffixList = new Dictionary<string, string>
         {
-            { @"Tonelada métrica", @"tonelada métrica|tonelada metrica|toneladas métricas|toneladas metricas" },
-            { @"Tonelada", @"ton|tonelada|toneladas" },
+            { @"Tonelada métrica", @"tonelada métrica|tonelada metrica|toneladas métricas|toneladas metricas|t métrica|t metrica|t métricas|t metricas|t.métrica|t.metrica|t.métricas|t.metricas" },
+            { @"Tonelada", @"ton|tonelada|toneladas|t" },
             { @"Quilograma", @"kg|quilograma|quilogramas|quilo|quilos|kilo|kilos" },
             { @"Hectograma", @"hg|hectograma|hectogramas" },
             { @"Decagrama", @"dag|decagrama|decagramas" },
@@ -804,6 +805,11 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
             { @"Onça", @"oz|onça|onca|onças|oncas" },
             { @"Grão", @"grão|grao|grãos|graos|gr" },
             { @"Quilate", @"ct|quilate|quilates" }
+        };
+      public static readonly IList<string> AmbiguousWeightUnitList = new List<string>
+        {
+            @"g",
+            @"t"
         };
       public static readonly Dictionary<string, string> AngleSuffixList = new Dictionary<string, string>
         {

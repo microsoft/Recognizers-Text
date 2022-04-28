@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Linq;
 
 using Microsoft.Recognizers.Text.DateTime;
+using Microsoft.Recognizers.Text.Utilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using Newtonsoft.Json;
@@ -195,7 +196,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
             var referenceDateTime = testSpec.GetReferenceDateTime();
 
-            var actualResults = Extractor.Extract(testSpec.Input.ToLowerInvariant(), referenceDateTime);
+            var actualResults = Extractor.Extract(QueryProcessor.Preprocess(testSpec.Input), referenceDateTime);
             var expectedResults = testSpec.CastResults<ExtractResult>();
 
             Assert.AreEqual(expectedResults.Count(), actualResults.Count, GetMessage(testSpec));
@@ -219,7 +220,7 @@ namespace Microsoft.Recognizers.Text.DataDrivenTests
 
             var referenceDateTime = testSpec.GetReferenceDateTime();
 
-            var extractResults = Extractor.Extract(testSpec.Input.ToLowerInvariant(), referenceDateTime);
+            var extractResults = Extractor.Extract(QueryProcessor.Preprocess(testSpec.Input), referenceDateTime);
             var actualResults = extractResults.Select(o => DateTimeParser.Parse(o, referenceDateTime)).ToArray();
 
             var expectedResults = testSpec.CastResults<DateTimeParseResult>();

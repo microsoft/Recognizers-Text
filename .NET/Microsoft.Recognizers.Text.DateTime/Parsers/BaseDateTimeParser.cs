@@ -90,19 +90,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             return candidateResults;
         }
 
-        private static DateTimeResolutionResult ResolveEndOfDay(string timexPrefix, DateObject futureDate, DateObject pastDate)
-        {
-            var ret = new DateTimeResolutionResult
-            {
-                Timex = timexPrefix + "T23:59:59", // Due to .NET framework design
-                FutureValue = futureDate.Date.AddDays(1).AddSeconds(-1),
-                PastValue = pastDate.Date.AddDays(1).AddSeconds(-1),
-                Success = true,
-            };
-
-            return ret;
-        }
-
         private static bool WithinAfternoonHours(int hour)
         {
             return hour < Constants.HalfDayHourCount;
@@ -416,7 +403,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var futureDate = (DateObject)((DateTimeResolutionResult)pr.Value).FutureValue;
                 var pastDate = (DateObject)((DateTimeResolutionResult)pr.Value).PastValue;
 
-                ret = ResolveEndOfDay(pr.TimexStr, futureDate, pastDate);
+                ret = DateTimeFormatUtil.ResolveEndOfDay(pr.TimexStr, futureDate, pastDate);
             }
 
             return ret;
@@ -429,7 +416,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var eod = this.config.UnspecificEndOfRegex.Match(text);
             if (eod.Success)
             {
-                ret = ResolveEndOfDay(DateTimeFormatUtil.FormatDate(refDateTime), refDateTime, refDateTime);
+                ret = DateTimeFormatUtil.ResolveEndOfDay(DateTimeFormatUtil.FormatDate(refDateTime), refDateTime, refDateTime);
             }
 
             return ret;

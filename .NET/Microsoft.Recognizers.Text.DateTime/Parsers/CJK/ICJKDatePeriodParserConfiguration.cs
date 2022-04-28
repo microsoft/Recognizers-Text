@@ -16,6 +16,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IDateTimeExtractor DurationExtractor { get; }
 
+        IExtractor CardinalExtractor { get; }
+
+        IDateTimeParser DurationParser { get; }
+
         IDateTimeParser DateParser { get; }
 
         ImmutableDictionary<string, int> DynastyYearMap { get; }
@@ -43,6 +47,10 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex YearRegex { get; }
 
         Regex RelativeRegex { get; }
+
+        Regex RelativeMonthRegex { get; }
+
+        Regex DurationRelativeDurationUnitRegex { get; }
 
         Regex ThisRegex { get; }
 
@@ -74,11 +82,19 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex FutureRegex { get; }
 
+        Regex WeekWithWeekDayRangeRegex { get; }
+
         Regex UnitRegex { get; }
 
         Regex WeekOfMonthRegex { get; }
 
         Regex WeekOfYearRegex { get; }
+
+        Regex WeekOfDateRegex { get; }
+
+        Regex MonthOfDateRegex { get; }
+
+        Regex WhichWeekRegex { get; }
 
         Regex FirstLastOfYearRegex { get; }
 
@@ -88,7 +104,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex DecadeRegex { get; }
 
+        Regex CenturyRegex { get; }
+
         Regex DayToDay { get; }
+
+        Regex MonthDayRange { get; }
 
         Regex DayRegexForPeriod { get; }
 
@@ -98,11 +118,19 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex SpecialYearRegex { get; }
 
+        public Regex LaterEarlyPeriodRegex { get; }
+
+        public Regex DatePointWithAgoAndLater { get; }
+
+        public Regex ReferenceDatePeriodRegex { get; }
+
         Regex WoMLastRegex { get; }
 
         Regex WoMPreviousRegex { get; }
 
         Regex WoMNextRegex { get; }
+
+        Regex ComplexDatePeriodRegex { get; }
 
         int ToMonthNumber(string monthStr);
 

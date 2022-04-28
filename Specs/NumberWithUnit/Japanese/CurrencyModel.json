@@ -1,4 +1,4 @@
-[
+﻿[
   {
     "Input": "今日の日経平均は2222円13銭です。",
     "NotSupported": "python",
@@ -985,6 +985,56 @@
         },
         "Start": 35,
         "End": 47
+      }
+    ]
+  },
+  {
+    "Input": "これは 零円です",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "零円",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "JPY",
+          "value": "0",
+          "unit": "Japanese yen"
+        },
+        "Start": 4,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "このパソコンは にせんにひゃくごじゅうろく ドル となってます",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "にせんにひゃくごじゅうろく ドル",
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "value": "2256",
+          "unit": "United States dollar"
+        },
+        "Start": 8,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "私 は その 買い物 で あなた に ろく どる 仮 ています",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "ろく どる",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "6",
+          "unit": "Dollar"
+        },
+        "Start": 19,
+        "End": 23
       }
     ]
   }

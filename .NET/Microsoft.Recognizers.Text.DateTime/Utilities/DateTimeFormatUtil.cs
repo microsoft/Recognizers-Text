@@ -273,5 +273,18 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             return $"{thursday.Year:D4}-W{cal.GetWeekOfYear(thursday, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday):D2}";
         }
+
+        public static DateTimeResolutionResult ResolveEndOfDay(string timexPrefix, DateObject futureDate, DateObject pastDate)
+        {
+            var ret = new DateTimeResolutionResult
+            {
+                Timex = timexPrefix + "T23:59:59", // Due to .NET framework design
+                FutureValue = futureDate.Date.AddDays(1).AddSeconds(-1),
+                PastValue = pastDate.Date.AddDays(1).AddSeconds(-1),
+                Success = true,
+            };
+
+            return ret;
+        }
     }
 }

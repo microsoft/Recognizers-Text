@@ -1,4 +1,4 @@
-[
+﻿[
   {
     "Input": "西九条",
     "Results": []
@@ -12724,6 +12724,544 @@
         },
         "Start": 0,
         "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "零",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "零",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0"
+        },
+        "Start": 0,
+        "End": 0
+      }
+    ]
+  },
+  {
+    "Input": "の総和は零となるため二次電流は流れず",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "零",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0"
+        },
+        "Start": 4,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "0123",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "0123",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "123"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "〇一二三",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "〇一二三",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "123"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "零一二三",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "零一二三",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "123"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "零零零一二三",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "零零零一二三",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "123"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "零 一 二 三",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "零",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "0"
+        },
+        "Start": 0,
+        "End": 0
+      },
+      {
+        "Text": "一",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        },
+        "Start": 2,
+        "End": 2
+      },
+      {
+        "Text": "二",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "2"
+        },
+        "Start": 4,
+        "End": 4
+      },
+      {
+        "Text": "三",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3"
+        },
+        "Start": 6,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "零十",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "零十",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "零十三",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "零十三",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "13"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "私 は その 買い物 で あなた に ろく どる 仮 ています",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "ろく",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "6"
+        },
+        "Start": 19,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "にさんよんよんよんよんよんよん の アカウント リセット",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "にさんよんよんよんよんよんよん",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "23444444"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "しち",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "しち",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "7"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "にじゅうさん",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "にじゅうさん",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "23"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "きゅうじゅうなな",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "きゅうじゅうなな",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "97"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "ひゃくさんじゅうろく",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "ひゃくさんじゅうろく",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "136"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "ななひゃくよんじゅうに",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "ななひゃくよんじゅうに",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "742"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "せんにひゃくはちじゅうきゅう",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "せんにひゃくはちじゅうきゅう",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1289"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "さんぜんにひゃくじゅうなな",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "さんぜんにひゃくじゅうなな",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3217"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "三千二百十七",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "三千二百十七",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3217"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "にまんごせんさんびゃくよんじゅうはち",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "にまんごせんさんびゃくよんじゅうはち",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "25348"
+        },
+        "Start": 0,
+        "End": 17
+      }
+    ]
+  },
+  {
+    "Input": "はっせんはっぴゃくきゅうじゅうごまんろくせんさんびゃくななじゅう",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "はっせんはっぴゃくきゅうじゅうごまんろくせんさんびゃくななじゅう",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "88956370"
+        },
+        "Start": 0,
+        "End": 31
+      }
+    ]
+  },
+  {
+    "Input": "いっせんまん さんぜんまん はっせんまん",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "いっせんまん",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10000000"
+        },
+        "Start": 0,
+        "End": 5
+      },
+      {
+        "Text": "さんぜんまん",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "30000000"
+        },
+        "Start": 7,
+        "End": 12
+      },
+      {
+        "Text": "はっせんまん",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "80000000"
+        },
+        "Start": 14,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "さんびゃく ろっぴゃく はっぴゃく",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "さんびゃく",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "300"
+        },
+        "Start": 0,
+        "End": 4
+      },
+      {
+        "Text": "ろっぴゃく",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "600"
+        },
+        "Start": 6,
+        "End": 10
+      },
+      {
+        "Text": "はっぴゃく",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "800"
+        },
+        "Start": 12,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "さんぜん はっせん",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "さんぜん",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3000"
+        },
+        "Start": 0,
+        "End": 3
+      },
+      {
+        "Text": "はっせん",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "8000"
+        },
+        "Start": 5,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "ひらがな番号は いち、 に、 さん、 よん、 ご、 ろく、 なな、 はち、 きゅう、 じゅう、 ひゃく、 せん",
+    "Comment": "'に' (2) is not extracted because it is rarely used as number but is common as preposition (to, at, in...)",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "いち",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1"
+        },
+        "Start": 8,
+        "End": 9
+      },
+      {
+        "Text": "さん",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "3"
+        },
+        "Start": 15,
+        "End": 16
+      },
+      {
+        "Text": "よん",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "4"
+        },
+        "Start": 19,
+        "End": 20
+      },
+      {
+        "Text": "ご",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "5"
+        },
+        "Start": 23,
+        "End": 23
+      },
+      {
+        "Text": "ろく",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "6"
+        },
+        "Start": 26,
+        "End": 27
+      },
+      {
+        "Text": "なな",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "7"
+        },
+        "Start": 30,
+        "End": 31
+      },
+      {
+        "Text": "はち",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "8"
+        },
+        "Start": 34,
+        "End": 35
+      },
+      {
+        "Text": "きゅう",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "9"
+        },
+        "Start": 38,
+        "End": 40
+      },
+      {
+        "Text": "じゅう",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "10"
+        },
+        "Start": 43,
+        "End": 45
+      },
+      {
+        "Text": "ひゃく",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "100"
+        },
+        "Start": 48,
+        "End": 50
+      },
+      {
+        "Text": "せん",
+        "TypeName": "number",
+        "Resolution": {
+          "value": "1000"
+        },
+        "Start": 53,
+        "End": 54
       }
     ]
   }
