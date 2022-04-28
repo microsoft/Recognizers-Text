@@ -553,8 +553,9 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
         # Or {TimePeriod} ond {Date}, like "1:30 to 4 2015-9-23"
         ers_time_period = self.config.time_period_extractor.extract(source, reference)
 
+        # Mealtime periods(like "dinnertime") are not currently fully supported in merging.
         for er_time_period in ers_time_period:
-            if not er_time_period.meta_data:
+            if not er_time_period.meta_data or not er_time_period.meta_data.is_mealtime:
                 date_ers.append(er_time_period)
 
         points: List[ExtractResult] = sorted(date_ers, key=lambda x: x.start)

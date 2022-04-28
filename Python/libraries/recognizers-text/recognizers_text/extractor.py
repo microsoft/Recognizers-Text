@@ -52,6 +52,7 @@ class Metadata:
         self._is_ordinal_relative = False
         self._offset = ''
         self._relative_to = ''
+        self._is_mealtime = False
 
     @property
     def possibly_included_period_end(self):
@@ -108,3 +109,11 @@ class Metadata:
     @relative_to.setter
     def relative_to(self, value):
         self._relative_to = value
+
+    @property
+    def is_mealtime(self):
+        return self._is_mealtime
+
+    @is_mealtime.setter
+    def is_mealtime(self, value):
+        self._is_mealtime = value
