@@ -276,5 +276,18 @@
         }
       }
     ]
+  },
+  {
+    "Input": "N",
+    "Results": [
+      {
+        "Text": "N",
+        "TypeName": "boolean",
+        "Resolution": {
+          "value": true,
+          "score": 1.0
+        }
+      }
+    ]
   }
 ]
