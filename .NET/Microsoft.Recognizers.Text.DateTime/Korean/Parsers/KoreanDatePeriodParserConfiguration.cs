@@ -30,9 +30,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
             : base(config)
         {
             IntegerExtractor = config.IntegerExtractor;
+            CardinalExtractor = config.CardinalExtractor;
             NumberParser = config.NumberParser;
             DateExtractor = config.DateExtractor;
             DurationExtractor = config.DurationExtractor;
+            DurationParser = config.DurationParser;
             DateParser = config.DateParser;
 
             DynastyYearRegex = KoreanDateExtractorConfiguration.DynastyYearRegex;
@@ -49,6 +51,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
             MonthToMonth = KoreanDatePeriodExtractorConfiguration.MonthToMonth;
             MonthToMonthSuffixRequired = KoreanDatePeriodExtractorConfiguration.MonthToMonthSuffixRequired;
             DayToDay = KoreanDatePeriodExtractorConfiguration.DayToDay;
+            MonthDayRange = KoreanDatePeriodExtractorConfiguration.MonthDayRange;
             DayRegexForPeriod = KoreanDatePeriodExtractorConfiguration.DayRegexForPeriod;
             MonthRegex = KoreanDatePeriodExtractorConfiguration.MonthRegex;
             SpecialMonthRegex = KoreanDatePeriodExtractorConfiguration.SpecialMonthRegex;
@@ -60,13 +63,24 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
             NumberCombinedWithUnit = KoreanDatePeriodExtractorConfiguration.NumberCombinedWithUnit;
             PastRegex = KoreanDatePeriodExtractorConfiguration.PastRegex;
             FutureRegex = KoreanDatePeriodExtractorConfiguration.FutureRegex;
+            WeekWithWeekDayRangeRegex = KoreanDatePeriodExtractorConfiguration.WeekWithWeekDayRangeRegex;
             UnitRegex = KoreanDatePeriodExtractorConfiguration.UnitRegex;
             WeekOfMonthRegex = KoreanDatePeriodExtractorConfiguration.WeekOfMonthRegex;
             WeekOfYearRegex = KoreanDatePeriodExtractorConfiguration.WeekOfYearRegex;
+            WeekOfDateRegex = KoreanDatePeriodExtractorConfiguration.WeekOfDateRegex;
+            MonthOfDateRegex = KoreanDatePeriodExtractorConfiguration.MonthOfDateRegex;
+            WhichWeekRegex = KoreanDatePeriodExtractorConfiguration.WhichWeekRegex;
             FirstLastOfYearRegex = KoreanDatePeriodExtractorConfiguration.FirstLastOfYearRegex;
             SeasonWithYear = KoreanDatePeriodExtractorConfiguration.SeasonWithYear;
             QuarterRegex = KoreanDatePeriodExtractorConfiguration.QuarterRegex;
             DecadeRegex = KoreanDatePeriodExtractorConfiguration.DecadeRegex;
+            CenturyRegex = KoreanDatePeriodExtractorConfiguration.CenturyRegex;
+            RelativeMonthRegex = KoreanDateExtractorConfiguration.RelativeMonthRegex;
+            LaterEarlyPeriodRegex = KoreanDatePeriodExtractorConfiguration.LaterEarlyPeriodRegex;
+            DatePointWithAgoAndLater = KoreanDatePeriodExtractorConfiguration.DatePointWithAgoAndLater;
+            ReferenceDatePeriodRegex = KoreanDatePeriodExtractorConfiguration.ReferenceDatePeriodRegex;
+            ComplexDatePeriodRegex = KoreanDatePeriodExtractorConfiguration.ComplexDatePeriodRegex;
+            DurationRelativeDurationUnitRegex = KoreanDateExtractorConfiguration.DurationRelativeDurationUnitRegex;
             RelativeRegex = KoreanDateExtractorConfiguration.RelativeRegex;
             UnitMap = DateTimeDefinitions.ParserConfigurationUnitMap.ToImmutableDictionary();
             CardinalMap = DateTimeDefinitions.ParserConfigurationCardinalMap.ToImmutableDictionary();
@@ -79,9 +93,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
 
         public IDateTimeExtractor DurationExtractor { get; }
 
+        public IDateTimeParser DurationParser { get; }
+
         public IDateTimeParser DateParser { get; }
 
         public IExtractor IntegerExtractor { get; }
+
+        public IExtractor CardinalExtractor { get; }
 
         public IParser NumberParser { get; }
 
@@ -119,6 +137,18 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
 
         public Regex RelativeRegex { get; }
 
+        public Regex RelativeMonthRegex { get; }
+
+        public Regex LaterEarlyPeriodRegex { get; }
+
+        public Regex DatePointWithAgoAndLater { get; }
+
+        public Regex ReferenceDatePeriodRegex { get; }
+
+        public Regex ComplexDatePeriodRegex { get; }
+
+        public Regex DurationRelativeDurationUnitRegex { get; }
+
         public Regex YearInCJKRegex { get; }
 
         public Regex MonthToMonth { get; }
@@ -139,11 +169,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
 
         public Regex FutureRegex { get; }
 
+        public Regex WeekWithWeekDayRangeRegex { get; }
+
         public Regex UnitRegex { get; }
 
         public Regex WeekOfMonthRegex { get; }
 
         public Regex WeekOfYearRegex { get; }
+
+        public Regex WeekOfDateRegex { get; }
+
+        public Regex MonthOfDateRegex { get; }
+
+        public Regex WhichWeekRegex { get; }
 
         public Regex FirstLastOfYearRegex { get; }
 
@@ -153,7 +191,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
 
         public Regex DecadeRegex { get; }
 
+        public Regex CenturyRegex { get; }
+
         public Regex DayToDay { get; }
+
+        public Regex MonthDayRange { get; }
 
         public Regex DayRegexForPeriod { get; }
 

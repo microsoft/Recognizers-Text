@@ -584,7 +584,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "０時",
+        "Text": "0時",
         "Type": "time",
         "Start": 2,
         "Length": 2
@@ -608,7 +608,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "０時かっきり",
+        "Text": "0時かっきり",
         "Type": "time",
         "Start": 2,
         "Length": 6
@@ -668,7 +668,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
     {
-        "Text": "１時",
+        "Text": "1時",
         "Type": "time",
         "Start": 3,
         "Length": 2
@@ -716,7 +716,7 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "０時15分",
+        "Text": "0時15分",
         "Type": "time",
         "Start": 2,
         "Length": 5
