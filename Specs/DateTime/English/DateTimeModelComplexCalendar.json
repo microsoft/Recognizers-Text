@@ -12478,7 +12478,7 @@
     "Context": {
       "ReferenceDateTime": "2019-09-12T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "after breakfast",
@@ -12503,7 +12503,7 @@
     "Context": {
       "ReferenceDateTime": "2019-09-12T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "before lunch",
@@ -12528,7 +12528,7 @@
     "Context": {
       "ReferenceDateTime": "2019-09-12T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "around dinner",
@@ -12560,7 +12560,7 @@
   },
   {
     "Input": "We will have that staff dinner march twenty second at seven p . m .",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Context": {
       "ReferenceDateTime": "2019-09-12T00:00:00"
     },
