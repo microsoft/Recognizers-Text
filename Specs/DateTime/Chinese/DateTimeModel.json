@@ -225,6 +225,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "农历2015年十月初一",
@@ -234,6 +235,7 @@
             {
               "timex": "2015-10-01",
               "type": "date",
+              "isLunar": "True",
               "value": "2015-10-01"
             }
           ]
@@ -248,6 +250,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "正月三十",
@@ -257,11 +260,13 @@
             {
               "timex": "XXXX-01-30",
               "type": "date",
+              "isLunar": "True",
               "value": "2017-01-30"
             },
             {
               "timex": "XXXX-01-30",
               "type": "date",
+              "isLunar": "True",
               "value": "2018-01-30"
             }
           ]
@@ -646,6 +651,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T14:07:00"
     },
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "2015年十月初一早上九点二十",
@@ -655,6 +661,7 @@
             {
               "timex": "2015-10-01T09:20",
               "type": "datetime",
+              "isLunar": "True",
               "value": "2015-10-01 09:20:00"
             }
           ]
@@ -3857,7 +3864,7 @@
               "Mod": "since",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2016-03-01"
+              "start": "2016-03-01"
             }
           ]
         }
@@ -3883,7 +3890,7 @@
               "Mod": "since",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2015-02-01"
+              "start": "2015-02-01"
             }
           ]
         }
@@ -3935,7 +3942,7 @@
               "Mod": "since",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2014-06-14"
+              "start": "2014-06-14"
             }
           ]
         }
@@ -3978,7 +3985,7 @@
               "Mod": "since",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2019-08-06"
+              "start": "2019-08-06"
             }
           ]
         }
@@ -4019,7 +4026,7 @@
               "Mod": "until",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2010-01-10"
+              "end": "2010-01-10"
             }
           ]
         }
@@ -4060,7 +4067,7 @@
               "Mod": "until",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2010-01-04"
+              "end": "2010-01-04"
             }
           ]
         }
@@ -4077,7 +4084,7 @@
               "Mod": "since",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2012-01-01"
+              "start": "2012-01-01"
             }
           ]
         }
@@ -4103,7 +4110,7 @@
               "Mod": "until",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2012-01-01"
+              "end": "2012-01-01"
             }
           ]
         }
@@ -4146,7 +4153,7 @@
               "Mod": "since",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2010-01-10"
+              "start": "2010-01-10"
             }
           ]
         }
@@ -4189,7 +4196,7 @@
               "Mod": "until",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2015-02-01"
+              "end": "2015-02-01"
             }
           ]
         }
@@ -4249,7 +4256,7 @@
               "Mod": "until",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2019-04-05"
+              "end": "2019-04-05"
             }
           ]
         }
@@ -4275,7 +4282,7 @@
               "Mod": "until",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2010-01-04"
+              "end": "2010-01-04"
             }
           ]
         }
@@ -4318,7 +4325,7 @@
               "Mod": "since",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2014-06-04"
+              "start": "2014-06-04"
             }
           ]
         }
@@ -4335,7 +4342,7 @@
               "Mod": "until",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2009-08-16"
+              "end": "2009-08-16"
             }
           ]
         }
@@ -4361,7 +4368,7 @@
               "Mod": "until",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2011-03-22"
+              "end": "2011-03-22"
             }
           ]
         }
@@ -4404,7 +4411,7 @@
               "Mod": "since",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2015-01-01"
+              "start": "2015-01-01"
             }
           ]
         }
@@ -4430,7 +4437,7 @@
               "Mod": "since",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2015-01-01"
+              "start": "2015-01-01"
             }
           ]
         }
@@ -4456,7 +4463,7 @@
               "Mod": "until",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2019-04-04"
+              "end": "2019-04-04"
             }
           ]
         }
@@ -4531,7 +4538,7 @@
               "Mod": "until",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2019-04-04"
+              "end": "2019-04-04"
             }
           ]
         }
@@ -4572,7 +4579,7 @@
               "Mod": "since",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2016-09-01"
+              "start": "2016-09-01"
             }
           ]
         }
@@ -4615,7 +4622,7 @@
               "Mod": "since",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2015-02-01"
+              "start": "2015-02-01"
             }
           ]
         }
@@ -4675,7 +4682,7 @@
               "Mod": "since",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2015-02-01"
+              "start": "2015-02-01"
             }
           ]
         }
@@ -4718,7 +4725,7 @@
               "Mod": "until",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2019-04-05"
+              "end": "2019-04-05"
             }
           ]
         }
@@ -4744,7 +4751,7 @@
               "Mod": "until",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2015-01-01"
+              "end": "2015-01-01"
             }
           ]
         }
@@ -4802,7 +4809,7 @@
               "Mod": "since",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2016-12-01"
+              "start": "2016-12-01"
             }
           ]
         }
@@ -4843,7 +4850,7 @@
               "Mod": "since",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2015-02-01"
+              "start": "2015-02-01"
             }
           ]
         }
@@ -4869,7 +4876,7 @@
               "Mod": "until",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2019-05-05"
+              "end": "2019-05-05"
             }
           ]
         }
@@ -4910,7 +4917,7 @@
               "Mod": "since",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2019-01-01"
+              "start": "2019-01-01"
             }
           ]
         }
@@ -4936,7 +4943,7 @@
               "Mod": "since",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2010-01-04"
+              "start": "2010-01-04"
             }
           ]
         }
@@ -4962,7 +4969,7 @@
               "Mod": "since",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2009-09-01"
+              "start": "2009-09-01"
             }
           ]
         }
@@ -4988,7 +4995,7 @@
               "Mod": "since",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2015-01-01"
+              "start": "2015-01-01"
             }
           ]
         }
@@ -5014,7 +5021,7 @@
               "Mod": "since",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2015-01-01"
+              "start": "2015-01-01"
             }
           ]
         }
@@ -5040,7 +5047,7 @@
               "Mod": "since",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2019-01-01"
+              "start": "2019-01-01"
             }
           ]
         }
@@ -5066,7 +5073,7 @@
               "Mod": "since",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2010-01-01"
+              "start": "2010-01-01"
             }
           ]
         }
@@ -5092,7 +5099,7 @@
               "Mod": "since",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2015-01-01"
+              "start": "2015-01-01"
             }
           ]
         }
@@ -5118,7 +5125,7 @@
               "Mod": "until",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2019-11-11"
+              "end": "2019-11-11"
             }
           ]
         }
@@ -5159,7 +5166,7 @@
               "Mod": "until",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2012-01-07"
+              "end": "2012-01-07"
             }
           ]
         }
@@ -5185,7 +5192,7 @@
               "Mod": "until",
               "type": "daterange",
               "sourceEntity": "datetimerange",
-              "end": "2013-01-01"
+              "end": "2014-01-01"
             }
           ]
         }
@@ -5211,7 +5218,7 @@
               "Mod": "until",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2018-07-09"
+              "end": "2018-07-09"
             }
           ]
         }
@@ -5237,7 +5244,7 @@
               "Mod": "until",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2015-02-01"
+              "end": "2015-02-01"
             }
           ]
         }
@@ -5263,7 +5270,7 @@
               "Mod": "until",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2019-09-14"
+              "end": "2019-09-14"
             }
           ]
         }
@@ -5289,7 +5296,7 @@
               "Mod": "until",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2019-11-09"
+              "end": "2019-11-09"
             }
           ]
         }
@@ -5315,7 +5322,7 @@
               "Mod": "until",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2011-01-10"
+              "end": "2011-01-10"
             }
           ]
         }
@@ -5341,7 +5348,7 @@
               "Mod": "until",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2007-01-10"
+              "end": "2007-01-10"
             }
           ]
         }
@@ -5367,7 +5374,7 @@
               "Mod": "since",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2010-01-01"
+              "start": "2010-01-01"
             }
           ]
         }
@@ -5410,7 +5417,7 @@
               "Mod": "until",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2001-10-01"
+              "end": "2001-10-01"
             }
           ]
         }
@@ -5436,7 +5443,7 @@
               "Mod": "until",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2018-07-09"
+              "end": "2018-07-09"
             }
           ]
         }
@@ -5462,7 +5469,7 @@
               "Mod": "until",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2015-02-01"
+              "end": "2015-02-01"
             }
           ]
         }
@@ -5488,7 +5495,7 @@
               "Mod": "until",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2015-01-01"
+              "end": "2015-01-01"
             }
           ]
         }
@@ -5514,7 +5521,7 @@
               "Mod": "until",
               "type": "daterange",
               "sourceEntity": "datetimepoint",
-              "value": "2015-02-01"
+              "end": "2015-02-01"
             }
           ]
         }
@@ -5876,6 +5883,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "神龙二年正月初一",
@@ -5885,6 +5893,7 @@
             {
               "timex": "0706-01-01",
               "type": "date",
+              "isLunar": "True",
               "value": "0706-01-01"
             }
           ]
@@ -5899,6 +5908,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "雍正四年大年三十",
@@ -5908,6 +5918,7 @@
             {
               "timex": "1726-01-30",
               "type": "date",
+              "isLunar": "True",
               "value": "1726-01-30"
             }
           ]
