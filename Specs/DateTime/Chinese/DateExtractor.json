@@ -144,9 +144,11 @@
   },
   {
     "Input": "10月12号，星期一",
+    "Comment": "The input is not preprocessed in java, javascript, python and so the extracted text is not normalized.",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
-        "Text": "10月12号，星期一",
+        "Text": "10月12号,星期一",
         "Type": "date",
         "Start": 0,
         "Length": 10
@@ -155,9 +157,11 @@
   },
   {
     "Input": "2009年10月12号，星期一",
+    "Comment": "The input is not preprocessed in java, javascript, python and so the extracted text is not normalized.",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
-        "Text": "2009年10月12号，星期一",
+        "Text": "2009年10月12号,星期一",
         "Type": "date",
         "Start": 0,
         "Length": 15

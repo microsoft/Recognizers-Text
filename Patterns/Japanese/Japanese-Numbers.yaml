@@ -1,4 +1,4 @@
----
+﻿---
 #ISO 639-2 Code
 LangMarker: Jpn
 #JapaneseNumberParserConfiguration
@@ -85,6 +85,36 @@ UnitMap: !dictionary
     億万: 兆
     万億: 兆
     ' ' : ''
+    れい: 〇
+    ゼロ: 〇
+    マル: 〇
+    いち: 一
+    いっ: 一
+    に: 二
+    さん: 三
+    し: 四
+    よん: 四
+    ご: 五
+    ろく: 六
+    ろっ: 六
+    しち: 七
+    なな: 七
+    はち: 八
+    はっ: 八
+    きゅう: 九
+    く: 九
+    じゅう: 十
+    ひゃく: 百
+    ぴゃく: 百
+    びゃく: 百
+    せん: 千
+    ぜん: 千
+    まん: 万
+    ひゃくまん: 百万
+    ぴゃくまん: 百万
+    びゃくまん: 百万
+    せんまん: 千万
+    ぜんまん: 千万
 RoundDirectList: !list
   types: [char]
   entries:
@@ -97,6 +127,8 @@ TenChars: !list
     - 十
 RoundNumberIntegerRegex: !simpleRegex
   def: '(十|百|千|万(?!万)|億|兆)'
+RoundNumberIntegerHiraganaRegex: !simpleRegex
+  def: (じゅう|[ひぴび]ゃく|[せぜ]ん|まん|[ひぴび]ゃくまん|[せぜ]んまん)
 AllMultiplierLookupRegex: !nestedRegex
   def: ({BaseNumbers.MultiplierLookupRegex}|ミリリットル(入れら)?|キロメートル|メートル|ミリメート)
   references: [BaseNumbers.MultiplierLookupRegex]  
@@ -120,7 +152,9 @@ DoubleAndRoundRegex: !nestedRegex
 FracSplitRegex: !simpleRegex
   def: '[はと]|分\s*の'
 ZeroToNineIntegerRegex: !simpleRegex
-  def: '[〇一二三四五六七八九]'
+  def: '[零〇一二三四五六七八九]'
+ZeroToNineIntegerHiraganaRegex: !simpleRegex
+  def: (れい|ゼロ|マル|い[ちっ]|に|さん|し|よん|ご|ろ[くっ]|しち|なな|は[ちっ]|きゅう|く)
 HalfUnitRegex: !simpleRegex
   def: 半
 NegativeNumberTermsRegex: !simpleRegex
@@ -147,6 +181,15 @@ SingleRegex: !nestedRegex
 AllIntRegex: !nestedRegex
   def: (?<!(ダース))({NotSingleRegex}|({ZeroToNineIntegerRegex}+|{RoundNumberIntegerRegex}+))
   references: [NotSingleRegex, ZeroToNineIntegerRegex, RoundNumberIntegerRegex]
+NotSingleHiraganaRegex: !nestedRegex
+  def: (({ZeroToNineIntegerHiraganaRegex}?{RoundNumberIntegerHiraganaRegex})+{ZeroToNineIntegerHiraganaRegex}?)
+  references: [ZeroToNineIntegerHiraganaRegex, RoundNumberIntegerHiraganaRegex]
+SingleHiriganaRegex: !nestedRegex
+  def: ({ZeroToNineIntegerHiraganaRegex}+)
+  references: [ZeroToNineIntegerHiraganaRegex]
+AllIntHiriganaRegex: !nestedRegex
+  def: \b({NotSingleHiraganaRegex}|{SingleHiriganaRegex})\b
+  references: [SingleHiriganaRegex, NotSingleHiraganaRegex]
 PlaceHolderPureNumber: !simpleRegex
   def: \b
 PlaceHolderDefault: !simpleRegex
@@ -178,11 +221,11 @@ AllFloatRegex: !nestedRegex
   def: '{NegativeNumberTermsRegex}?{AllIntRegex}\s*{PointRegexStr}\s*[一二三四五六七八九](\s*{ZeroToNineIntegerRegex})*'
   references: [NegativeNumberTermsRegex, AllIntRegex, PointRegexStr, ZeroToNineIntegerRegex]
 NumbersWithAllowListRegex: !nestedRegex
-  def: '(?<!(離は))({NegativeNumberTermsRegex}?({NotSingleRegex}|{SingleRegex})(?!({AllIntRegex}*([、.]{ZeroToNineIntegerRegex}+)*|{AllFloatRegex})*\s*{PercentageSymbol}))(?!(\s*{AllMultiplierLookupRegex}))'
-  references: [NegativeNumberTermsRegex, NotSingleRegex, SingleRegex, AllIntRegex, ZeroToNineIntegerRegex, AllFloatRegex, PercentageSymbol, AllMultiplierLookupRegex]
+  def: '(?<!(離は))({NegativeNumberTermsRegex}?({NotSingleRegex}|{SingleRegex}|{AllIntHiriganaRegex})(?!({AllIntRegex}*([、.]{ZeroToNineIntegerRegex}+)*|{AllFloatRegex})*\s*{PercentageSymbol}))(?!(\s*{AllMultiplierLookupRegex}))'
+  references: [NegativeNumberTermsRegex, NotSingleRegex, SingleRegex, AllIntRegex, ZeroToNineIntegerRegex, AllFloatRegex, PercentageSymbol, AllMultiplierLookupRegex, AllIntHiriganaRegex]
 NumbersAggressiveRegex: !nestedRegex
-  def: (({AllIntRegex})(?!({AllIntRegex}|([、.]{ZeroToNineIntegerRegex})|{AllFloatRegex}|\s*{PercentageSymbol})))
-  references: [AllIntRegex, AllFloatRegex, NegativeNumberTermsRegex, ZeroToNineIntegerRegex, PercentageSymbol]
+  def: (({AllIntRegex}|{AllIntHiriganaRegex})(?!({AllIntRegex}|([、.]{ZeroToNineIntegerRegex})|{AllFloatRegex}|\s*{PercentageSymbol})))
+  references: [AllIntRegex, AllFloatRegex, NegativeNumberTermsRegex, ZeroToNineIntegerRegex, PercentageSymbol, AllIntHiriganaRegex]
 #DoubleExtractor
 PointRegex: !nestedRegex
   def: '{PointRegexStr}'
@@ -419,4 +462,8 @@ RelativeReferenceRelativeToMap: !dictionary
     次のもの: current
     最後から3番目: end
     最後から2番目: end
+AmbiguityFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    '^に$': 'に'
 ...

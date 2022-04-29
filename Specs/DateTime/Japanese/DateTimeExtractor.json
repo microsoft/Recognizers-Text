@@ -1,7 +1,6 @@
 [
   {
     "Input": "今戻ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -14,7 +13,6 @@
   },
   {
     "Input": "できるだけ早く戻ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -27,7 +25,6 @@
   },
   {
     "Input": "今すぐ戻ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -40,7 +37,6 @@
   },
   {
     "Input": "15日の8時に戻ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -53,7 +49,6 @@
   },
   {
     "Input": "15日の8時30秒に戻ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -66,7 +61,6 @@
   },
   {
     "Input": "15日の午後8時に戻ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -79,7 +73,6 @@
   },
   {
     "Input": "2016年04月21日の午後8時に戻ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -92,7 +85,6 @@
   },
   {
     "Input": "2016年04月21日の午後8時13秒に戻ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -105,7 +97,6 @@
   },
   {
     "Input": "10月23日の7時に戻ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -118,7 +109,6 @@
   },
   {
     "Input": "10月14日の午前8時に戻ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -131,7 +121,6 @@
   },
   {
     "Input": "10月14日の午前8時1秒に戻ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -144,7 +133,6 @@
   },
   {
     "Input": "明日の午前8時に戻ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -157,7 +145,6 @@
   },
   {
     "Input": "明日の午前8時ごろ戻ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -170,20 +157,18 @@
   },
   {
     "Input": "明日の午前8時5秒に戻ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "明日の午前8時5秒に戻ります。",
+        "Text": "明日の午前8時5秒",
         "Type": "datetime",
         "Start": 0,
-        "Length": 15
+        "Length": 9
       }
     ]
   },
   {
     "Input": "来週の金曜日の3時半に戻ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -196,7 +181,6 @@
   },
   {
     "Input": "2016年5月5日の夜8時20分に戻ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -209,7 +193,6 @@
   },
   {
     "Input": "15日の7時に戻ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -222,7 +205,6 @@
   },
   {
     "Input": "来週の日曜日の午後8時に戻ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -235,7 +217,6 @@
   },
   {
     "Input": "今日の午後8時に戻ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -248,7 +229,6 @@
   },
   {
     "Input": "明日の7時15分前に戻ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -261,7 +241,6 @@
   },
   {
     "Input": "2016年12月22日の19時に戻ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -274,7 +253,6 @@
   },
   {
     "Input": "明日の7時に戻ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -287,7 +265,6 @@
   },
   {
     "Input": "明日の朝7時に戻ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -300,7 +277,6 @@
   },
   {
     "Input": "日曜の午後7時に戻ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -313,7 +289,6 @@
   },
   {
     "Input": "明日の朝5時20分に戻ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -326,7 +301,6 @@
   },
   {
     "Input": "10月14日の8時に戻ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -339,7 +313,6 @@
   },
   {
     "Input": "今朝の7時に戻ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -352,7 +325,6 @@
   },
   {
     "Input": "1月1日の午後8時に戻ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -365,7 +337,6 @@
   },
   {
     "Input": "今夜10時に戻ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -378,7 +349,6 @@
   },
   {
     "Input": "今朝8時に戻ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -391,7 +361,6 @@
   },
   {
     "Input": "今夜8時に戻ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -404,7 +373,6 @@
   },
   {
     "Input": "今夜7時ごろ戻ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -417,7 +385,6 @@
   },
   {
     "Input": "今朝7時に戻ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -430,7 +397,6 @@
   },
   {
     "Input": "今夜7時に戻ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -443,7 +409,6 @@
   },
   {
     "Input": "今夜9時30分に2名",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -456,7 +421,6 @@
   },
   {
     "Input": "今夜9時30分31秒に2名",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -469,7 +433,6 @@
   },
   {
     "Input": "今日中に戻ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -482,7 +445,6 @@
   },
   {
     "Input": "明日中に戻ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -495,7 +457,6 @@
   },
   {
     "Input": "日曜日のうちに戻ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -508,7 +469,6 @@
   },
   {
     "Input": "5日の午前4時に戻ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -521,7 +481,6 @@
   },
   {
     "Input": "2016年12月16日の午後12時23分59秒に戻ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -534,7 +493,6 @@
   },
   {
     "Input": "あと5時間で戻ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -547,7 +505,6 @@
   },
   {
     "Input": "日曜日の午後3時があいているか確認。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -560,7 +517,6 @@
   },
   {
     "Input": "明日の朝9時にアポを入れる。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -573,7 +529,6 @@
   },
   {
     "Input": "明日の朝9時に戻ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -586,7 +541,6 @@
   },
   {
     "Input": "明日の9時に戻ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -599,7 +553,6 @@
   },
   {
     "Input": "今週の金曜日の午後1時",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -612,7 +565,6 @@
   },
   {
     "Input": "金曜日の午後12時30分にランチの予定を追加。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -625,7 +577,6 @@
   },
   {
     "Input": "今夜12時に649を追加。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -638,7 +589,6 @@
   },
   {
     "Input": "8月1日の午前11時に戻ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -651,7 +601,6 @@
   },
   {
     "Input": "8月1日の午後11時に戻ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -664,7 +613,6 @@
   },
   {
     "Input": "2月25日の午前11時に戻ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -677,7 +625,6 @@
   },
   {
     "Input": "2017年1月6日の午前6時37分に戻ります。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -690,7 +637,6 @@
   },
   {
     "Input": "2016年11月16日の10時38分",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -703,7 +649,6 @@
   },
   {
     "Input": "あと1日と2時間で出発します。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -716,7 +661,6 @@
   },
   {
     "Input": "あと1時間で忙しくなるので、後で電話してください。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -729,7 +673,6 @@
   },
   {
     "Input": "2か月1日2時間前に彼に会いました。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -742,7 +685,6 @@
   },
   {
     "Input": "あと1日と30分で出発します。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -755,7 +697,6 @@
   },
   {
     "Input": "あと2分で出発します。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -768,7 +709,6 @@
   },
   {
     "Input": "今日午前9時にスカイプ通話を予約してください。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -781,7 +721,6 @@
   },
   {
     "Input": "今日午後9時にスカイプ通話を予約してください。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -794,7 +733,6 @@
   },
   {
     "Input": "あと2時間で出発します。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -807,10 +745,10 @@
   },
   {
     "Input": "2010年１月２９日正午",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "2010年１月２９日正午",
+        "Text": "2010年1月29日正午",
         "Type": "datetime",
         "Start": 0,
         "Length": 12
@@ -819,7 +757,7 @@
   },
   {
     "Input": "平成二十二年一月二十九日五時",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "平成二十二年一月二十九日五時",
@@ -831,7 +769,7 @@
   },
   {
     "Input": "明日の午後五時",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "明日の午後五時",
@@ -843,10 +781,10 @@
   },
   {
     "Input": "旧暦の２０１５年１０月１日朝9時20分",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "旧暦の２０１５年１０月１日朝9時20分",
+        "Text": "旧暦の2015年10月1日朝9時20分",
         "Type": "datetime",
         "Start": 0,
         "Length": 19
@@ -855,7 +793,7 @@
   },
   {
     "Input": "昨夜六時",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "昨夜六時",
@@ -867,7 +805,7 @@
   },
   {
     "Input": "今朝五時",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "今朝五時",
@@ -879,10 +817,10 @@
   },
   {
     "Input": "すみません、６月１５日夜８時出発の航空便を予約しました。",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "６月１５日夜８時",
+        "Text": "6月15日夜8時",
         "Type": "datetime",
         "Start": 6,
         "Length": 8
@@ -891,7 +829,7 @@
   },
   {
     "Input": "一月十九日午後五時",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "一月十九日午後五時",
@@ -903,10 +841,10 @@
   },
   {
     "Input": "昭和６２年一月十一日八時",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "昭和６２年一月十一日八時",
+        "Text": "昭和62年一月十一日八時",
         "Type": "datetime",
         "Start": 0,
         "Length": 12
@@ -915,10 +853,10 @@
   },
   {
     "Input": "2010年１月２９日朝７時",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "2010年１月２９日朝７時",
+        "Text": "2010年1月29日朝7時",
         "Type": "datetime",
         "Start": 0,
         "Length": 13
@@ -927,7 +865,7 @@
   },
   {
     "Input": "今日の朝8時15分",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "今日の朝8時15分",
@@ -939,10 +877,10 @@
   },
   {
     "Input": "すみません、６月１５日朝８時出発の航空便を予約しました。",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "６月１５日朝８時",
+        "Text": "6月15日朝8時",
         "Type": "datetime",
         "Start": 6,
         "Length": 8
@@ -951,7 +889,7 @@
   },
   {
     "Input": "今は都合が悪い",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "今",
@@ -963,10 +901,10 @@
   },
   {
     "Input": "平成２２年１月２９日夜６時",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "平成２２年１月２９日夜６時",
+        "Text": "平成22年1月29日夜6時",
         "Type": "datetime",
         "Start": 0,
         "Length": 13
@@ -975,7 +913,7 @@
   },
   {
     "Input": "今夜六時",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "今夜六時",

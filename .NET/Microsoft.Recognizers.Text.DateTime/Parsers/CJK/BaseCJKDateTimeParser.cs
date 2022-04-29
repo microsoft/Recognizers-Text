@@ -41,7 +41,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (!innerResult.Success)
                 {
-                    innerResult = ParseTimeOfToday(er.Text, referenceTime);
+                    innerResult = ParseTimeOfSpecialDayRegex(er.Text, referenceTime);
                 }
 
                 if (!innerResult.Success)
@@ -125,6 +125,13 @@ namespace Microsoft.Recognizers.Text.DateTime
         private DateTimeResolutionResult MergeDateAndTime(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
+            var matchAgoLater = this.config.AgoLaterRegex.Match(text);
+
+            // cases with ago or later are processed in ParserDurationWithAgoAndLater
+            if (matchAgoLater.Success)
+            {
+                return ret;
+            }
 
             var er1 = this.config.DateExtractor.Extract(text, referenceTime);
             if (er1.Count == 0)
@@ -190,10 +197,26 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private DateTimeResolutionResult ParseTimeOfToday(string text, DateObject referenceTime)
+        private DateTimeResolutionResult ParseTimeOfSpecialDayRegex(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
             var ers = this.config.TimeExtractor.Extract(text, referenceTime);
+
+            // Handle 'eod', 'end of day'
+            var eod = this.config.TimeOfSpecialDayRegex.Match(text);
+
+            if (eod.Groups[Constants.SpecificEndOfGroupName].Success && ers.Count == 0)
+            {
+                ret = ParseSpecialTimeOfDate(text, referenceTime);
+                return ret;
+            }
+
+            if (eod.Success && ers.Count != 1)
+            {
+                ret = DateTimeFormatUtil.ResolveEndOfDay(DateTimeFormatUtil.FormatDate(referenceTime), referenceTime, referenceTime);
+                return ret;
+            }
+
             if (ers.Count != 1)
             {
                 return ret;
@@ -212,7 +235,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var min = time.Minute;
             var sec = time.Second;
 
-            var match = this.config.TimeOfTodayRegex.Match(text);
+            var match = this.config.TimeOfSpecialDayRegex.Match(text);
 
             if (match.Success)
             {
@@ -231,6 +254,16 @@ namespace Microsoft.Recognizers.Text.DateTime
                     timeStr = timeStr.Substring(0, timeStr.Length - 4);
                 }
 
+                // handle less and more mode
+                if (match.Groups[Constants.LessGroupName].Success)
+                {
+                    ret.Mod = Constants.LESS_THAN_MOD;
+                }
+                else if (match.Groups[Constants.MoreGroupName].Success)
+                {
+                    ret.Mod = Constants.MORE_THAN_MOD;
+                }
+
                 timeStr = "T" + hour.ToString("D2", CultureInfo.InvariantCulture) + timeStr.Substring(3);
 
                 ret.Timex = DateTimeFormatUtil.FormatDate(date) + timeStr;
@@ -238,6 +271,25 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ret.Success = true;
                 return ret;
             }
+
+            return ret;
+        }
+
+        private DateTimeResolutionResult ParseSpecialTimeOfDate(string text, DateObject refDateTime)
+        {
+
+            var ret = new DateTimeResolutionResult();
+            var ers = this.config.DateExtractor.Extract(text, refDateTime);
+            if (ers.Count != 1)
+            {
+                return ret;
+            }
+
+            var pr = this.config.DateParser.Parse(ers[0], refDateTime);
+            var futureDate = (DateObject)((DateTimeResolutionResult)pr.Value).FutureValue;
+            var pastDate = (DateObject)((DateTimeResolutionResult)pr.Value).PastValue;
+
+            ret = DateTimeFormatUtil.ResolveEndOfDay(pr.TimexStr, futureDate, pastDate);
 
             return ret;
         }
@@ -250,11 +302,28 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (durationRes.Count > 0)
             {
+                var matchAgoLater = this.config.AgoLaterRegex.Match(text);
+
+                if (matchAgoLater.Success)
+                {
+                    var pr = config.DurationParser.Parse(durationRes[0], referenceDate);
+                    var isFuture = matchAgoLater.Groups[Constants.LaterGroupName].Success;
+                    var timex = pr.TimexStr;
+
+                    var resultDateTime = DurationParsingUtil.ShiftDateTime(timex, referenceDate, future: isFuture);
+                    ret.Timex = $"{DateTimeFormatUtil.LuisDateTime(resultDateTime)}";
+                    ret.FutureValue = ret.PastValue = resultDateTime;
+                    ret.SubDateTimeEntities = new List<object> { pr };
+
+                    ret.Success = true;
+                    return ret;
+                }
+
                 var match = this.config.DateTimePeriodUnitRegex.Match(text);
                 if (match.Success)
                 {
                     var suffix = text.Substring((int)durationRes[0].Start + (int)durationRes[0].Length).Trim();
-                    var srcUnit = match.Groups["unit"].Value;
+                    var srcUnit = match.Groups[Constants.UnitGroupName].Value;
 
                     var numberStr = text.Substring((int)durationRes[0].Start, match.Index - (int)durationRes[0].Start).Trim();
                     var number = ConvertCJKToNum(numberStr);

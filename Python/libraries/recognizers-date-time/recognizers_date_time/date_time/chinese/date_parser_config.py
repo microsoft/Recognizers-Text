@@ -168,14 +168,14 @@ class ChineseDateParserConfiguration(DateParserConfiguration):
     def get_swift_month(self, source: str) -> int:
         source = source.strip().lower()
         swift = 0
-        if source.startswith(ChineseDateTime.ParserConfigurationNextMonthToken):
+        if source.startswith(ChineseDateTime.ParserConfigurationNextMonthRegex):
             swift = 1
-        elif source.startswith(ChineseDateTime.ParserConfigurationLastMonthToken):
+        elif source.startswith(ChineseDateTime.ParserConfigurationLastMonthRegex):
             swift = -1
         return swift
 
     def is_cardinal_last(self, source: str) -> bool:
-        return source == ChineseDateTime.ParserConfigurationLastWeekDayToken
+        return source == ChineseDateTime.ParserConfigurationLastWeekDayRegex
 
     def __init__(self):
         self._date_regex = [

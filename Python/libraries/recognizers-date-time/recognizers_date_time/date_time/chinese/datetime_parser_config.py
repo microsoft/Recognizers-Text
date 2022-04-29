@@ -117,7 +117,7 @@ class ChineseDateTimeParserConfiguration():
         self._am_time_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.DateTimeSimpleAmRegex)
         self._specific_time_of_day_regex = RegExpUtility.get_safe_reg_exp(
-            ChineseDateTime.TimeOfTodayRegex)
+            ChineseDateTime.TimeOfSpecialDayRegex)
         self._now_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.NowRegex)
 
