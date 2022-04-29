@@ -56,16 +56,18 @@
   },
   {
     "Input": "undicesimo",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "undicesimo",
         "TypeName": "ordinal",
         "Resolution": {
           "value": "11",
-          "offset":"11",
-          "relativeTo":"start"
-        }
+          "offset": "11",
+          "relativeTo": "start"
+        },
+        "Start": 0,
+        "End": 9
       }
     ]
   }

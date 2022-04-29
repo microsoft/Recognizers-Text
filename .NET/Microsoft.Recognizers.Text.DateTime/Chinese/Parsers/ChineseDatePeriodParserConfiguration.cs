@@ -28,6 +28,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             NumberParser = config.NumberParser;
             DateExtractor = config.DateExtractor;
             DurationExtractor = config.DurationExtractor;
+            CardinalExtractor = config.CardinalExtractor;
+            DurationParser = config.DurationParser;
             DateParser = config.DateParser;
 
             DynastyYearRegex = ChineseDateExtractorConfiguration.DynastyYearRegex;
@@ -44,6 +46,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             MonthToMonth = ChineseDatePeriodExtractorConfiguration.MonthToMonth;
             MonthToMonthSuffixRequired = ChineseDatePeriodExtractorConfiguration.MonthToMonthSuffixRequired;
             DayToDay = ChineseDatePeriodExtractorConfiguration.DayToDay;
+            MonthDayRange = ChineseDatePeriodExtractorConfiguration.MonthDayRange;
             DayRegexForPeriod = ChineseDatePeriodExtractorConfiguration.DayRegexForPeriod;
             MonthRegex = ChineseDatePeriodExtractorConfiguration.MonthRegex;
             SpecialMonthRegex = ChineseDatePeriodExtractorConfiguration.SpecialMonthRegex;
@@ -55,14 +58,25 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             NumberCombinedWithUnit = ChineseDatePeriodExtractorConfiguration.NumberCombinedWithUnit;
             PastRegex = ChineseDatePeriodExtractorConfiguration.PastRegex;
             FutureRegex = ChineseDatePeriodExtractorConfiguration.FutureRegex;
+            WeekWithWeekDayRangeRegex = ChineseDatePeriodExtractorConfiguration.WeekWithWeekDayRangeRegex;
             UnitRegex = ChineseDatePeriodExtractorConfiguration.UnitRegex;
             WeekOfMonthRegex = ChineseDatePeriodExtractorConfiguration.WeekOfMonthRegex;
             WeekOfYearRegex = ChineseDatePeriodExtractorConfiguration.WeekOfYearRegex;
+            WeekOfDateRegex = ChineseDatePeriodExtractorConfiguration.WeekOfDateRegex;
+            MonthOfDateRegex = ChineseDatePeriodExtractorConfiguration.MonthOfDateRegex;
+            WhichWeekRegex = ChineseDatePeriodExtractorConfiguration.WhichWeekRegex;
             FirstLastOfYearRegex = ChineseDatePeriodExtractorConfiguration.FirstLastOfYearRegex;
             SeasonWithYear = ChineseDatePeriodExtractorConfiguration.SeasonWithYear;
             QuarterRegex = ChineseDatePeriodExtractorConfiguration.QuarterRegex;
             DecadeRegex = ChineseDatePeriodExtractorConfiguration.DecadeRegex;
+            CenturyRegex = ChineseDatePeriodExtractorConfiguration.CenturyRegex;
+            ComplexDatePeriodRegex = ChineseDatePeriodExtractorConfiguration.ComplexDatePeriodRegex;
             RelativeRegex = ChineseDateExtractorConfiguration.RelativeRegex;
+            RelativeMonthRegex = ChineseDateExtractorConfiguration.RelativeMonthRegex;
+            LaterEarlyPeriodRegex = ChineseDatePeriodExtractorConfiguration.LaterEarlyPeriodRegex;
+            DatePointWithAgoAndLater = ChineseDatePeriodExtractorConfiguration.DatePointWithAgoAndLater;
+            ReferenceDatePeriodRegex = ChineseDatePeriodExtractorConfiguration.ReferenceDatePeriodRegex;
+            DurationRelativeDurationUnitRegex = ChineseDateExtractorConfiguration.DurationRelativeDurationUnitRegex;
             UnitMap = DateTimeDefinitions.ParserConfigurationUnitMap.ToImmutableDictionary();
             CardinalMap = DateTimeDefinitions.ParserConfigurationCardinalMap.ToImmutableDictionary();
             DayOfMonth = DateTimeDefinitions.ParserConfigurationDayOfMonth.ToImmutableDictionary();
@@ -74,9 +88,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public IDateTimeExtractor DurationExtractor { get; }
 
+        public IDateTimeParser DurationParser { get; }
+
         public IDateTimeParser DateParser { get; }
 
         public IExtractor IntegerExtractor { get; }
+
+        public IExtractor CardinalExtractor { get; }
 
         public IParser NumberParser { get; }
 
@@ -114,6 +132,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public Regex RelativeRegex { get; }
 
+        public Regex RelativeMonthRegex { get; }
+
+        public Regex LaterEarlyPeriodRegex { get; }
+
+        public Regex DatePointWithAgoAndLater { get; }
+
+        public Regex ReferenceDatePeriodRegex { get; }
+
+        public Regex DurationRelativeDurationUnitRegex { get; }
+
         public Regex YearInCJKRegex { get; }
 
         public Regex MonthToMonth { get; }
@@ -134,11 +162,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public Regex FutureRegex { get; }
 
+        public Regex WeekWithWeekDayRangeRegex { get; }
+
         public Regex UnitRegex { get; }
 
         public Regex WeekOfMonthRegex { get; }
 
         public Regex WeekOfYearRegex { get; }
+
+        public Regex WeekOfDateRegex { get; }
+
+        public Regex MonthOfDateRegex { get; }
+
+        public Regex WhichWeekRegex { get; }
 
         public Regex FirstLastOfYearRegex { get; }
 
@@ -148,7 +184,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public Regex DecadeRegex { get; }
 
+        public Regex CenturyRegex { get; }
+
+        public Regex ComplexDatePeriodRegex { get; }
+
         public Regex DayToDay { get; }
+
+        public Regex MonthDayRange { get; }
 
         public Regex DayRegexForPeriod { get; }
 

@@ -9,7 +9,9 @@
         "Resolution": {
           "value": "5",
           "unit": "Anno"
-        }
+        },
+        "Start": 13,
+        "End": 23
       }
     ]
   },
@@ -23,7 +25,9 @@
         "Resolution": {
           "value": "10",
           "unit": "Anno"
-        }
+        },
+        "Start": 22,
+        "End": 31
       }
     ]
   },
@@ -37,7 +41,9 @@
         "Resolution": {
           "value": "29",
           "unit": "Anno"
-        }
+        },
+        "Start": 8,
+        "End": 14
       }
     ]
   },
@@ -52,7 +58,9 @@
         "Resolution": {
           "value": "95",
           "unit": "Anno"
-        }
+        },
+        "Start": 13,
+        "End": 37
       }
     ]
   },
@@ -66,7 +74,9 @@
         "Resolution": {
           "value": "500",
           "unit": "Anno"
-        }
+        },
+        "Start": 36,
+        "End": 43
       }
     ]
   },
@@ -80,7 +90,9 @@
         "Resolution": {
           "value": "60",
           "unit": "Anno"
-        }
+        },
+        "Start": 7,
+        "End": 13
       }
     ]
   },
@@ -94,7 +106,9 @@
         "Resolution": {
           "value": "3",
           "unit": "Anno"
-        }
+        },
+        "Start": 53,
+        "End": 65
       }
     ]
   },
@@ -109,7 +123,9 @@
         "Resolution": {
           "value": "1",
           "unit": "Anno"
-        }
+        },
+        "Start": 64,
+        "End": 70
       }
     ]
   },
@@ -123,7 +139,9 @@
         "Resolution": {
           "value": "10",
           "unit": "Mese"
-        }
+        },
+        "Start": 40,
+        "End": 49
       }
     ]
   },
@@ -137,7 +155,9 @@
         "Resolution": {
           "value": "8",
           "unit": "Mese"
-        }
+        },
+        "Start": 28,
+        "End": 33
       }
     ]
   },
@@ -151,7 +171,9 @@
         "Resolution": {
           "value": "18",
           "unit": "Mese"
-        }
+        },
+        "Start": 67,
+        "End": 86
       }
     ]
   },
@@ -165,7 +187,9 @@
         "Resolution": {
           "value": "3",
           "unit": "Mese"
-        }
+        },
+        "Start": 58,
+        "End": 65
       }
     ]
   },
@@ -179,7 +203,9 @@
         "Resolution": {
           "value": "3",
           "unit": "Settimana"
-        }
+        },
+        "Start": 35,
+        "End": 47
       }
     ]
   },
@@ -193,7 +219,9 @@
         "Resolution": {
           "value": "6",
           "unit": "Settimana"
-        }
+        },
+        "Start": 2,
+        "End": 19
       }
     ]
   },
@@ -207,7 +235,9 @@
         "Resolution": {
           "value": "90",
           "unit": "Giorno"
-        }
+        },
+        "Start": 29,
+        "End": 37
       }
     ]
   }

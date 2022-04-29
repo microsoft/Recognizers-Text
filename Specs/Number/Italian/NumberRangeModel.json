@@ -13,7 +13,9 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(20,35]"
-        }
+        },
+        "Start": 16,
+        "End": 67
       }
     ]
   },
@@ -26,7 +28,9 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[20,30)"
-        }
+        },
+        "Start": 12,
+        "End": 22
       }
     ]
   },
@@ -40,7 +44,9 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[10,15)"
-        }
+        },
+        "Start": 18,
+        "End": 48
       }
     ]
   },
@@ -53,7 +59,9 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[10,15)"
-        }
+        },
+        "Start": 18,
+        "End": 36
       }
     ]
   },
@@ -67,7 +75,9 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(10,15)"
-        }
+        },
+        "Start": 18,
+        "End": 73
       }
     ]
   },
@@ -80,7 +90,9 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(10,15)"
-        }
+        },
+        "Start": 18,
+        "End": 68
       }
     ]
   },
@@ -94,7 +106,9 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(100,300)"
-        }
+        },
+        "Start": 25,
+        "End": 62
       }
     ]
   },
@@ -107,7 +121,9 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[100,300]"
-        }
+        },
+        "Start": 16,
+        "End": 68
       }
     ]
   },
@@ -120,7 +136,9 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[20,100]"
-        }
+        },
+        "Start": 8,
+        "End": 29
       }
     ]
   },
@@ -133,7 +151,9 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[20,100)"
-        }
+        },
+        "Start": 23,
+        "End": 28
       }
     ]
   },
@@ -146,7 +166,9 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[20,100)"
-        }
+        },
+        "Start": 25,
+        "End": 45
       }
     ]
   },
@@ -160,7 +182,9 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[1000,1500)"
-        }
+        },
+        "Start": 25,
+        "End": 51
       }
     ]
   },
@@ -173,7 +197,9 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(1000,1500)"
-        }
+        },
+        "Start": 12,
+        "End": 46
       }
     ]
   },
@@ -187,7 +213,9 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(0.25,0.5)"
-        }
+        },
+        "Start": 12,
+        "End": 55
       }
     ]
   },
@@ -200,7 +228,9 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(0.25,0.5)"
-        }
+        },
+        "Start": 12,
+        "End": 44
       }
     ]
   },
@@ -213,7 +243,9 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[3965,)"
-        }
+        },
+        "Start": 16,
+        "End": 67
       }
     ]
   },
@@ -226,7 +258,9 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(4565,)"
-        }
+        },
+        "Start": 16,
+        "End": 34
       }
     ]
   },
@@ -239,7 +273,9 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(30,)"
-        }
+        },
+        "Start": 7,
+        "End": 19
       }
     ]
   },
@@ -252,7 +288,9 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(30,)"
-        }
+        },
+        "Start": 7,
+        "End": 20
       }
     ]
   },
@@ -265,7 +303,9 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[30,)"
-        }
+        },
+        "Start": 11,
+        "End": 34
       }
     ]
   },
@@ -278,7 +318,9 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[500,)"
-        }
+        },
+        "Start": 14,
+        "End": 30
       }
     ]
   },
@@ -291,7 +333,9 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[500,)"
-        }
+        },
+        "Start": 14,
+        "End": 30
       }
     ]
   },
@@ -304,7 +348,9 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(0.5,)"
-        }
+        },
+        "Start": 0,
+        "End": 9
       }
     ]
   },
@@ -317,7 +363,9 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,100]"
-        }
+        },
+        "Start": 30,
+        "End": 55
       }
     ]
   },
@@ -330,7 +378,9 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,100]"
-        }
+        },
+        "Start": 30,
+        "End": 50
       }
     ]
   },
@@ -343,7 +393,9 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,500]"
-        }
+        },
+        "Start": 14,
+        "End": 31
       }
     ]
   },
@@ -356,7 +408,9 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,100]"
-        }
+        },
+        "Start": 30,
+        "End": 36
       }
     ]
   },
@@ -369,7 +423,9 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,170)"
-        }
+        },
+        "Start": 17,
+        "End": 31
       }
     ]
   },
@@ -382,7 +438,9 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,170)"
-        }
+        },
+        "Start": 17,
+        "End": 34
       }
     ]
   },
@@ -395,7 +453,9 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,1000)"
-        }
+        },
+        "Start": 0,
+        "End": 12
       }
     ]
   },
@@ -408,7 +468,9 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[170,170]"
-        }
+        },
+        "Start": 4,
+        "End": 25
       }
     ]
   },
@@ -421,14 +483,18 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(10,)"
-        }
+        },
+        "Start": 1,
+        "End": 3
       },
       {
         "Text": "<20",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,20)"
-        }
+        },
+        "Start": 8,
+        "End": 10
       }
     ]
   },
@@ -441,14 +507,18 @@
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(10,20)"
-        }
+        },
+        "Start": 4,
+        "End": 32
       },
       {
         "Text": "non più di 50 e non meno di 20",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[20,50]"
-        }
+        },
+        "Start": 39,
+        "End": 68
       }
     ]
   }

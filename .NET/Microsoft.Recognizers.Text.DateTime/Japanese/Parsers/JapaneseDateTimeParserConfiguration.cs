@@ -6,6 +6,7 @@ using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Japanese;
+using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
@@ -21,6 +22,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
+        private static readonly Regex NowTimeRegex = new Regex(DateTimeDefinitions.NowTimeRegex, RegexFlags);
+
+        private static readonly Regex RecentlyTimeRegex = new Regex(DateTimeDefinitions.RecentlyTimeRegex, RegexFlags);
+
+        private static readonly Regex AsapTimeRegex = new Regex(DateTimeDefinitions.AsapTimeRegex, RegexFlags);
+
         public JapaneseDateTimeParserConfiguration(ICJKCommonDateTimeParserConfiguration config)
             : base(config)
         {
@@ -30,15 +37,18 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             DurationExtractor = config.DurationExtractor;
 
             DateParser = config.DateParser;
+            DurationParser = config.DurationParser;
             TimeParser = config.TimeParser;
             NumberParser = config.NumberParser;
 
             UnitMap = DateTimeDefinitions.ParserConfigurationUnitMap.ToImmutableDictionary();
             NowRegex = JapaneseDateTimeExtractorConfiguration.NowRegex;
-            TimeOfTodayRegex = JapaneseDateTimeExtractorConfiguration.TimeOfTodayRegex;
+            TimeOfSpecialDayRegex = JapaneseDateTimeExtractorConfiguration.TimeOfSpecialDayRegex;
             DateTimePeriodUnitRegex = JapaneseDateTimeExtractorConfiguration.DateTimePeriodUnitRegex;
             BeforeRegex = JapaneseDateTimeExtractorConfiguration.BeforeRegex;
             AfterRegex = JapaneseDateTimeExtractorConfiguration.AfterRegex;
+            DurationRelativeDurationUnitRegex = JapaneseDateTimeExtractorConfiguration.DurationRelativeDurationUnitRegex;
+            AgoLaterRegex = JapaneseDateTimeExtractorConfiguration.AgoLaterRegex;
         }
 
         public IDateTimeExtractor DateExtractor { get; }
@@ -48,6 +58,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         public IDateTimeExtractor DurationExtractor { get; }
 
         public IDateTimeParser DateParser { get; }
+
+        public IDateTimeParser DurationParser { get; }
 
         public IDateTimeParser TimeParser { get; }
 
@@ -59,13 +71,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         public Regex NowRegex { get; }
 
-        public Regex TimeOfTodayRegex { get; }
+        public Regex TimeOfSpecialDayRegex { get; }
 
         public Regex DateTimePeriodUnitRegex { get; }
 
         public Regex BeforeRegex { get; }
 
         public Regex AfterRegex { get; }
+
+        public Regex DurationRelativeDurationUnitRegex { get; }
+
+        public Regex AgoLaterRegex { get; }
 
         Regex ICJKDateTimeParserConfiguration.LunarRegex => LunarRegex;
 
@@ -79,19 +95,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         {
             var trimmedText = text.Trim();
 
-            // @TODO move hardcoded values to resources file
-            if (trimmedText.EndsWith("现在", StringComparison.Ordinal))
+            if (NowTimeRegex.MatchEnd(trimmedText, trim: true).Success)
             {
                 timex = "PRESENT_REF";
             }
-            else if (trimmedText.Equals("刚刚才", StringComparison.Ordinal) ||
-                     trimmedText.Equals("刚刚", StringComparison.Ordinal) ||
-                     trimmedText.Equals("刚才", StringComparison.Ordinal))
+            else if (RecentlyTimeRegex.IsExactMatch(trimmedText, trim: true))
             {
                 timex = "PAST_REF";
             }
-            else if (trimmedText.Equals("立刻", StringComparison.Ordinal) ||
-                     trimmedText.Equals("马上", StringComparison.Ordinal))
+            else if (AsapTimeRegex.IsExactMatch(trimmedText, trim: true))
             {
                 timex = "FUTURE_REF";
             }

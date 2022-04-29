@@ -51,6 +51,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         public static readonly Regex DurationRelativeDurationUnitRegex = new Regex(DateTimeDefinitions.DurationRelativeDurationUnitRegex, RegexFlags);
         public static readonly Regex YearRegex = new Regex(DateTimeDefinitions.YearRegex, RegexFlags);
         public static readonly Regex RelativeRegex = new Regex(DateTimeDefinitions.RelativeRegex, RegexFlags);
+        public static readonly Regex RelativeMonthRegex = new Regex(DateTimeDefinitions.RelativeMonthRegex, RegexFlags);
         public static readonly Regex ZeroToNineIntegerRegexCJK = new Regex(DateTimeDefinitions.ZeroToNineIntegerRegexCJK, RegexFlags);
         public static readonly Regex YearInCJKRegex = new Regex(DateTimeDefinitions.DateYearInCJKRegex, RegexFlags);
         public static readonly Regex ThisRe = new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
@@ -118,8 +119,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
                 new[] { dateRegex7, dateRegex6, dateRegex8/*, dateRegex11*/ } :
                 new[] { dateRegex6, dateRegex7, dateRegex8/*, dateRegex11*/ });
 
-            NormalizeCharMap = DateTimeDefinitions.NormalizeCharMap;
-
         }
 
         public IEnumerable<Regex> DateRegexList { get; }
@@ -133,8 +132,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         Regex ICJKDateExtractorConfiguration.BeforeRegex => BeforeRegex;
 
         Regex ICJKDateExtractorConfiguration.AfterRegex => AfterRegex;
-
-        public Dictionary<char, char> NormalizeCharMap { get; }
 
         Regex ICJKDateExtractorConfiguration.WeekDayStartEnd => WeekDayStartEnd;
     }

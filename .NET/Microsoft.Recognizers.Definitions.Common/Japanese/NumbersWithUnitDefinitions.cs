@@ -243,6 +243,7 @@ namespace Microsoft.Recognizers.Definitions.Japanese
             { @"Surinamese dollar", @"スリナム・ドル|スリナムドル" },
             { @"Trinidad and Tobago dollar", @"トリニダード・トバゴ・ドル|トリニダードトバゴ・ドル" },
             { @"Tuvaluan dollar", @"ツバル・ドル|ツバルドル" },
+            { @"Dollar", @"どる|$" },
             { @"Chinese yuan", @"人民元|元" },
             { @"Fen", @"分" },
             { @"Jiao", @"角" },
