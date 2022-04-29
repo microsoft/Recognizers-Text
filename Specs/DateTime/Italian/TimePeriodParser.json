@@ -4,7 +4,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "dalle 5 alle 6pm",
@@ -56,7 +56,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "dalle 5 alle sette di mattina",
@@ -82,7 +82,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "dalle 5 alle 6 pm",
@@ -108,7 +108,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "tra le 5 e le 6pm",
@@ -134,7 +134,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "tra le 5pm e le 6pm",
@@ -186,7 +186,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "dalle 1am alle 5pm",
@@ -212,7 +212,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "dalle 4pm fino alle 5pm",
@@ -238,7 +238,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "dalle 4 fino alle 5pm",
@@ -290,7 +290,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "4pm-5pm",
@@ -316,7 +316,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "4pm - 5pm",
@@ -342,7 +342,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "dalle 3 di mattina fino alle 5pm",
@@ -368,7 +368,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "tra le 3 di mattina e le 5pm",
@@ -394,7 +394,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "tra le 4pm e le 5pm",
@@ -420,7 +420,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "di mattina",
@@ -446,7 +446,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "di pomeriggio",
@@ -472,7 +472,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "di notte",
@@ -498,7 +498,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "di sera",
@@ -524,7 +524,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "in serata",
@@ -550,7 +550,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "al mattino presto",
@@ -577,7 +577,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "in tarda mattinata",
@@ -604,7 +604,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "di prima mattina",
@@ -631,7 +631,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "al mattino tardi",
@@ -658,7 +658,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "nel primo pomeriggio",
@@ -685,7 +685,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "nel tardo pomeriggio",
@@ -712,7 +712,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "di sera presto",
@@ -739,7 +739,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "in tarda serata",
@@ -766,7 +766,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "di notte presto",
@@ -793,7 +793,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "a notte fonda",
@@ -820,7 +820,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "a tarda notte",
@@ -847,7 +847,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "dalle 1p.m. alle 4",
@@ -899,7 +899,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "la mattinata",

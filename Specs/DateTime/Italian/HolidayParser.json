@@ -28,7 +28,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "giorno di natale",
@@ -52,7 +52,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "la vigilia di capodanno",
@@ -76,7 +76,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "natale",
@@ -100,7 +100,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "capodanno cinese",
@@ -124,7 +124,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "giorno del ringraziamento",
@@ -148,7 +148,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "ringraziamento",
@@ -196,7 +196,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "capodanno cinese del prossimo anno",
@@ -220,7 +220,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "giorno del ringraziamento del 2010",

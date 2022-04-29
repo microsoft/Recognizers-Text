@@ -93,6 +93,18 @@
                 "class FrenchNumericWithUnit:"
             ],
             "footer": [ "# pylint: enable=line-too-long" ]
+        },
+        {
+            "input": [ "Italian", "Italian-NumbersWithUnit" ],
+            "output": "italian_numeric_with_unit",
+            "header": [
+                "from .base_numbers import BaseNumbers",
+                "# pylint: disable=line-too-long",
+                "",
+                "",
+                "class ItalianNumericWithUnit:"
+            ],
+            "footer": [ "# pylint: enable=line-too-long" ]
         }
     ]
 }

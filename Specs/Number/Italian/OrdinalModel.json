@@ -8,9 +8,11 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "3E+18",
-          "offset":"3E+18",
-          "relativeTo":"start"
-        }
+          "offset": "3E+18",
+          "relativeTo": "start"
+        },
+        "Start": 0,
+        "End": 15
       }
     ]
   },
@@ -23,9 +25,11 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "1E+18",
-          "offset":"1E+18",
-          "relativeTo":"start"
-        }
+          "offset": "1E+18",
+          "relativeTo": "start"
+        },
+        "Start": 0,
+        "End": 11
       }
     ]
   },
@@ -38,144 +42,164 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "1E+20",
-          "offset":"1E+20",
-          "relativeTo":"start"
-        }
+          "offset": "1E+20",
+          "relativeTo": "start"
+        },
+        "Start": 0,
+        "End": 17
       }
     ]
   },
   {
     "Input": "11°",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "11°",
         "TypeName": "ordinal",
         "Resolution": {
           "value": "11",
-          "offset":"11",
-          "relativeTo":"start"
-        }
+          "offset": "11",
+          "relativeTo": "start"
+        },
+        "Start": 0,
+        "End": 2
       }
     ]
   },
   {
     "Input": "21esima",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "21esima",
         "TypeName": "ordinal",
         "Resolution": {
           "value": "21",
-          "offset":"21",
-          "relativeTo":"start"
-        }
+          "offset": "21",
+          "relativeTo": "start"
+        },
+        "Start": 0,
+        "End": 6
       }
     ]
   },
   {
     "Input": "30mo",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "30mo",
         "TypeName": "ordinal",
         "Resolution": {
           "value": "30",
-          "offset":"30",
-          "relativeTo":"start"
-        }
+          "offset": "30",
+          "relativeTo": "start"
+        },
+        "Start": 0,
+        "End": 3
       }
     ]
   },
   {
     "Input": "2°",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2°",
         "TypeName": "ordinal",
         "Resolution": {
           "value": "2",
-          "offset":"2",
-          "relativeTo":"start"
-        }
+          "offset": "2",
+          "relativeTo": "start"
+        },
+        "Start": 0,
+        "End": 1
       }
     ]
   },
   {
     "Input": "undicesimo",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "undicesimo",
         "TypeName": "ordinal",
         "Resolution": {
           "value": "11",
-          "offset":"11",
-          "relativeTo":"start"
-        }
+          "offset": "11",
+          "relativeTo": "start"
+        },
+        "Start": 0,
+        "End": 9
       }
     ]
   },
   {
     "Input": "ventesimo",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "ventesimo",
         "TypeName": "ordinal",
         "Resolution": {
           "value": "20",
-          "offset":"20",
-          "relativeTo":"start"
-        }
+          "offset": "20",
+          "relativeTo": "start"
+        },
+        "Start": 0,
+        "End": 8
       }
     ]
   },
   {
     "Input": "venticinquesimo",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "venticinquesimo",
         "TypeName": "ordinal",
         "Resolution": {
           "value": "25",
-          "offset":"25",
-          "relativeTo":"start"
-        }
+          "offset": "25",
+          "relativeTo": "start"
+        },
+        "Start": 0,
+        "End": 14
       }
     ]
   },
   {
     "Input": "ventunesimo",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "ventunesimo",
         "TypeName": "ordinal",
         "Resolution": {
           "value": "21",
-          "offset":"21",
-          "relativeTo":"start"
-        }
+          "offset": "21",
+          "relativeTo": "start"
+        },
+        "Start": 0,
+        "End": 10
       }
     ]
   },
   {
     "Input": "centoventicinquesimo",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "centoventicinquesimo",
         "TypeName": "ordinal",
         "Resolution": {
           "value": "125",
-          "offset":"125",
-          "relativeTo":"start"
-        }
+          "offset": "125",
+          "relativeTo": "start"
+        },
+        "Start": 0,
+        "End": 19
       }
     ]
   },
@@ -188,114 +212,130 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "200",
-          "offset":"200",
-          "relativeTo":"start"
-        }
+          "offset": "200",
+          "relativeTo": "start"
+        },
+        "Start": 0,
+        "End": 11
       }
     ]
   },
   {
     "Input": "Prenota un posto in prima classe per Seattle",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "prima",
         "TypeName": "ordinal",
         "Resolution": {
           "value": "1",
-          "offset":"1",
-          "relativeTo":"start"
-        }
+          "offset": "1",
+          "relativeTo": "start"
+        },
+        "Start": 20,
+        "End": 24
       }
     ]
   },
   {
     "Input": "trentaseiesimo",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript,python",
     "Results": [
       {
         "Text": "trentaseiesimo",
         "TypeName": "ordinal",
         "Resolution": {
           "value": "36",
-          "offset":"36",
-          "relativeTo":"start"
-        }
+          "offset": "36",
+          "relativeTo": "start"
+        },
+        "Start": 0,
+        "End": 13
       }
     ]
   },
   {
     "Input": "quinto",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "quinto",
         "TypeName": "ordinal",
         "Resolution": {
           "value": "5",
-          "offset":"5",
-          "relativeTo":"start"
-        }
+          "offset": "5",
+          "relativeTo": "start"
+        },
+        "Start": 0,
+        "End": 5
       }
     ]
   },
   {
     "Input": "cento milionesimo",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "cento milionesimo",
         "TypeName": "ordinal",
         "Resolution": {
           "value": "100000000",
-          "offset":"100000000",
-          "relativeTo":"start"
-        }
+          "offset": "100000000",
+          "relativeTo": "start"
+        },
+        "Start": 0,
+        "End": 16
       }
     ]
   },
   {
     "Input": "trentesimo",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "trentesimo",
         "TypeName": "ordinal",
         "Resolution": {
           "value": "30",
-            "offset":"30",
-          "relativeTo":"start"
-        }
+          "offset": "30",
+          "relativeTo": "start"
+        },
+        "Start": 0,
+        "End": 9
       }
     ]
   },
   {
     "Input": "dodicesimo",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "dodicesimo",
         "TypeName": "ordinal",
         "Resolution": {
           "value": "12",
-          "offset":"12",
-          "relativeTo":"start"
-        }
+          "offset": "12",
+          "relativeTo": "start"
+        },
+        "Start": 0,
+        "End": 9
       }
     ]
   },
   {
     "Input": "il centoventisettesimo classificato",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "centoventisettesimo",
         "TypeName": "ordinal",
         "Resolution": {
           "value": "127",
-          "offset":"127",
-          "relativeTo":"start"
-        }
+          "offset": "127",
+          "relativeTo": "start"
+        },
+        "Start": 3,
+        "End": 21
       }
     ]
   },

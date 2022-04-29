@@ -9,7 +9,9 @@
         "Resolution": {
           "value": "40",
           "unit": "C"
-        }
+        },
+        "Start": 28,
+        "End": 43
       }
     ]
   },
@@ -23,7 +25,9 @@
         "Resolution": {
           "value": "90",
           "unit": "F"
-        }
+        },
+        "Start": 17,
+        "End": 29
       }
     ]
   },
@@ -37,7 +41,9 @@
         "Resolution": {
           "value": "-5",
           "unit": "F"
-        }
+        },
+        "Start": 0,
+        "End": 18
       }
     ]
   },
@@ -51,7 +57,9 @@
         "Resolution": {
           "value": "6",
           "unit": "C"
-        }
+        },
+        "Start": 0,
+        "End": 14
       }
     ]
   },
@@ -65,7 +73,9 @@
         "Resolution": {
           "value": "98,6",
           "unit": "F"
-        }
+        },
+        "Start": 0,
+        "End": 11
       }
     ]
   },
@@ -79,7 +89,9 @@
         "Resolution": {
           "value": "30",
           "unit": "C"
-        }
+        },
+        "Start": 25,
+        "End": 40
       }
     ]
   },
@@ -93,7 +105,9 @@
         "Resolution": {
           "value": "98,6",
           "unit": "F"
-        }
+        },
+        "Start": 32,
+        "End": 52
       }
     ]
   },
@@ -107,7 +121,9 @@
         "Resolution": {
           "value": "100",
           "unit": "F"
-        }
+        },
+        "Start": 0,
+        "End": 10
       }
     ]
   },
@@ -121,7 +137,9 @@
         "Resolution": {
           "value": "20",
           "unit": "C"
-        }
+        },
+        "Start": 0,
+        "End": 9
       }
     ]
   },
@@ -135,7 +153,9 @@
         "Resolution": {
           "value": "100,2",
           "unit": "F"
-        }
+        },
+        "Start": 0,
+        "End": 20
       }
     ]
   },
@@ -149,7 +169,9 @@
         "Resolution": {
           "value": "10,5",
           "unit": "C"
-        }
+        },
+        "Start": 0,
+        "End": 11
       }
     ]
   },
@@ -163,7 +185,9 @@
         "Resolution": {
           "value": "20",
           "unit": "C"
-        }
+        },
+        "Start": 0,
+        "End": 15
       }
     ]
   },
@@ -177,7 +201,9 @@
         "Resolution": {
           "value": "20,3",
           "unit": "C"
-        }
+        },
+        "Start": 0,
+        "End": 11
       }
     ]
   },
@@ -191,7 +217,9 @@
         "Resolution": {
           "value": "34,5",
           "unit": "C"
-        }
+        },
+        "Start": 0,
+        "End": 11
       }
     ]
   },
@@ -205,7 +233,9 @@
         "Resolution": {
           "value": "98",
           "unit": "Degree"
-        }
+        },
+        "Start": 28,
+        "End": 35
       }
     ]
   },
@@ -219,7 +249,9 @@
         "Resolution": {
           "value": "85",
           "unit": "Degree"
-        }
+        },
+        "Start": 24,
+        "End": 26
       }
     ]
   },
@@ -233,7 +265,9 @@
         "Resolution": {
           "value": "5",
           "unit": "Degree"
-        }
+        },
+        "Start": 23,
+        "End": 29
       }
     ]
   },
@@ -247,7 +281,9 @@
         "Resolution": {
           "value": "70",
           "unit": "F"
-        }
+        },
+        "Start": 25,
+        "End": 34
       }
     ]
   },
@@ -261,7 +297,9 @@
         "Resolution": {
           "value": "20",
           "unit": "Degree"
-        }
+        },
+        "Start": 23,
+        "End": 30
       }
     ]
   },
@@ -275,7 +313,9 @@
         "Resolution": {
           "value": "100",
           "unit": "Degree"
-        }
+        },
+        "Start": 25,
+        "End": 33
       }
     ]
   },
@@ -289,7 +329,9 @@
         "Resolution": {
           "value": "75",
           "unit": "F"
-        }
+        },
+        "Start": 26,
+        "End": 35
       }
     ]
   },
@@ -303,7 +345,9 @@
         "Resolution": {
           "value": "40",
           "unit": "C"
-        }
+        },
+        "Start": 26,
+        "End": 35
       }
     ]
   },
@@ -317,7 +361,9 @@
         "Resolution": {
           "value": "50",
           "unit": "Degree"
-        }
+        },
+        "Start": 24,
+        "End": 31
       }
     ]
   },
@@ -331,7 +377,9 @@
         "Resolution": {
           "value": "10",
           "unit": "C"
-        }
+        },
+        "Start": 9,
+        "End": 18
       },
       {
         "Text": "fahrenheit",
@@ -339,7 +387,9 @@
         "Resolution": {
           "value": null,
           "unit": "F"
-        }
+        },
+        "Start": 23,
+        "End": 32
       }
     ]
   },
@@ -353,7 +403,9 @@
         "Resolution": {
           "value": "34,9",
           "unit": "C"
-        }
+        },
+        "Start": 0,
+        "End": 14
       },
       {
         "Text": "farenheit",
@@ -361,7 +413,9 @@
         "Resolution": {
           "value": null,
           "unit": "F"
-        }
+        },
+        "Start": 19,
+        "End": 27
       }
     ]
   },
@@ -473,7 +527,9 @@
         "Resolution": {
           "value": "51",
           "unit": "F"
-        }
+        },
+        "Start": 16,
+        "End": 28
       },
       {
         "Text": "gradi celsius",
@@ -481,7 +537,9 @@
         "Resolution": {
           "value": null,
           "unit": "C"
-        }
+        },
+        "Start": 33,
+        "End": 45
       }
     ]
   },
@@ -495,7 +553,9 @@
         "Resolution": {
           "value": "106",
           "unit": "F"
-        }
+        },
+        "Start": 9,
+        "End": 28
       },
       {
         "Text": "gradi celsius",
@@ -503,7 +563,9 @@
         "Resolution": {
           "value": null,
           "unit": "C"
-        }
+        },
+        "Start": 33,
+        "End": 45
       }
     ]
   },
@@ -517,7 +579,9 @@
         "Resolution": {
           "value": "45",
           "unit": "F"
-        }
+        },
+        "Start": 9,
+        "End": 27
       },
       {
         "Text": "celsius",
@@ -525,7 +589,9 @@
         "Resolution": {
           "value": null,
           "unit": "C"
-        }
+        },
+        "Start": 32,
+        "End": 38
       }
     ]
   },
@@ -539,7 +605,9 @@
         "Resolution": {
           "value": "-20",
           "unit": "F"
-        }
+        },
+        "Start": 16,
+        "End": 36
       },
       {
         "Text": "celsius",
@@ -547,7 +615,9 @@
         "Resolution": {
           "value": null,
           "unit": "C"
-        }
+        },
+        "Start": 41,
+        "End": 47
       }
     ]
   },
