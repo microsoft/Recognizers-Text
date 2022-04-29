@@ -35,10 +35,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
 
             UnitMap = DateTimeDefinitions.ParserConfigurationUnitMap.ToImmutableDictionary();
             NowRegex = KoreanDateTimeExtractorConfiguration.NowRegex;
-            TimeOfTodayRegex = KoreanDateTimeExtractorConfiguration.TimeOfTodayRegex;
+            TimeOfSpecialDayRegex = KoreanDateTimeExtractorConfiguration.TimeOfSpecialDayRegex;
             DateTimePeriodUnitRegex = KoreanDateTimeExtractorConfiguration.DateTimePeriodUnitRegex;
             BeforeRegex = KoreanDateTimeExtractorConfiguration.BeforeRegex;
             AfterRegex = KoreanDateTimeExtractorConfiguration.AfterRegex;
+            DurationRelativeDurationUnitRegex = KoreanDateTimeExtractorConfiguration.DurationRelativeDurationUnitRegex;
+            AgoLaterRegex = KoreanDateTimeExtractorConfiguration.AgoLaterRegex;
         }
 
         public IDateTimeExtractor DateExtractor { get; }
@@ -48,6 +50,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
         public IDateTimeExtractor DurationExtractor { get; }
 
         public IDateTimeParser DateParser { get; }
+
+        public IDateTimeParser DurationParser { get; }
 
         public IDateTimeParser TimeParser { get; }
 
@@ -59,13 +63,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
 
         public Regex NowRegex { get; }
 
-        public Regex TimeOfTodayRegex { get; }
+        public Regex TimeOfSpecialDayRegex { get; }
 
         public Regex DateTimePeriodUnitRegex { get; }
 
         public Regex BeforeRegex { get; }
 
         public Regex AfterRegex { get; }
+
+        public Regex DurationRelativeDurationUnitRegex { get; }
+
+        public Regex AgoLaterRegex { get; }
 
         Regex ICJKDateTimeParserConfiguration.LunarRegex => LunarRegex;
 

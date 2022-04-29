@@ -3,7 +3,8 @@
 
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
-
+using Microsoft.Recognizers.Definitions.Japanese;
+using Microsoft.Recognizers.Definitions.Utilities;
 using Microsoft.Recognizers.Text.Number.Config;
 
 namespace Microsoft.Recognizers.Text.Number.Japanese
@@ -24,9 +25,13 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
             builder.AddRange(fracExtract.Regexes);
 
             Regexes = builder.ToImmutable();
+
+            AmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(NumbersDefinitions.AmbiguityFiltersDict).ToImmutableDictionary();
         }
 
         internal sealed override ImmutableDictionary<Regex, TypeTag> Regexes { get; }
+
+        protected sealed override ImmutableDictionary<Regex, Regex> AmbiguityFiltersDict { get; }
 
         protected sealed override string ExtractType { get; } = Constants.SYS_NUM;
     }

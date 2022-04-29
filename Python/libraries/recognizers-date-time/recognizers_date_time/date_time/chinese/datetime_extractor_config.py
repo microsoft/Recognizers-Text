@@ -124,7 +124,7 @@ class ChineseDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
         self._night_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.NightRegex)
         self._time_of_today_before_regex = RegExpUtility.get_safe_reg_exp(
-            ChineseDateTime.TimeOfTodayRegex)
+            ChineseDateTime.TimeOfSpecialDayRegex)
         self._preposition_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.PrepositionRegex)
         # TODO When the implementation for these properties is added, change the None values to their respective Regexps

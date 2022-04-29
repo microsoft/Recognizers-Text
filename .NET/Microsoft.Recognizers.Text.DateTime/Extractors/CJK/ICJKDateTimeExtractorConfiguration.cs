@@ -1,6 +1,7 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 
@@ -14,11 +15,15 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex NightRegex { get; }
 
-        Regex TimeOfTodayRegex { get; }
+        Regex TimeOfSpecialDayRegex { get; }
+
+        Regex TimeOfDayRegex { get; }
 
         Regex BeforeRegex { get; }
 
         Regex AfterRegex { get; }
+
+        Regex ConnectorRegex { get; }
 
         IDateTimeExtractor DurationExtractor { get; }
 

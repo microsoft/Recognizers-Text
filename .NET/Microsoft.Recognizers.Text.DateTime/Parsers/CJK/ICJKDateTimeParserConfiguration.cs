@@ -15,6 +15,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IDateTimeParser DateParser { get; }
 
+        IDateTimeParser DurationParser { get; }
+
         IDateTimeParser TimeParser { get; }
 
         IExtractor IntegerExtractor { get; }
@@ -33,9 +35,13 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex SimpleAmRegex { get; }
 
-        Regex TimeOfTodayRegex { get; }
+        Regex TimeOfSpecialDayRegex { get; }
 
         Regex DateTimePeriodUnitRegex { get; }
+
+        Regex DurationRelativeDurationUnitRegex { get; }
+
+        Regex AgoLaterRegex { get; }
 
         Regex BeforeRegex { get; }
 
