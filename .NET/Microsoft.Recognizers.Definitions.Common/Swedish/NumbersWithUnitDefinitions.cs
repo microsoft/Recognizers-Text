@@ -740,6 +740,7 @@ namespace Microsoft.Recognizers.Definitions.Swedish
         };
       public static readonly IList<string> AmbiguousCurrencyUnitList = new List<string>
         {
+            @"att",
             @"din.",
             @"kiwi",
             @"kina",
