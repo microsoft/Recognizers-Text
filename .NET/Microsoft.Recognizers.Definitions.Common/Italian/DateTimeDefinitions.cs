@@ -256,7 +256,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
       public const string SingleAmbiguousTermsRegex = @"(?<!l')una\b";
       public const string UnspecificDatePeriodRegex = @"^(settimana|finesettimana|weekend|mese|anno)$";
       public const string PrepositionSuffixRegex = @"\b(il|al?|del|di|dal?|fino al?)$";
-      public static readonly string FlexibleDayRegex = $@"(?<DayOfMonth>([A-Za-z]+\s)?({WrittenDayRegex}|{DayRegex}))";
+      public static readonly string FlexibleDayRegex = $@"(?<DayOfMonth>({WrittenDayRegex}|{DayRegex}))";
       public static readonly string ForTheRegex = $@"\b((((?<=per\s+il\s+){FlexibleDayRegex})|((?<!(\b{MonthRegex},?|\bper)\s+(il\s+|l'))(?<=(il\s+|l')){FlexibleDayRegex}))(?<end>\s*(,|\.|!|\?|$)))";
       public static readonly string WeekDayAndDayOfMonthRegex = $@"\b{WeekDayRegex},?\s+((il\s+)?{FlexibleDayRegex})\b(?!\s+{MonthRegex}\b)";
       public static readonly string WeekDayAndDayRegex = $@"\b{WeekDayRegex}\s*,?\s+(?!(il|l')){DayRegex}(?!([-:]|(\s+({AmDescRegex}|{{PmDescRegex|{OclockRegex}}}))))\b";
