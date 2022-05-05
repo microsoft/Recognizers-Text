@@ -842,6 +842,7 @@ CurrencyPrefixList: !dictionary
 AmbiguousCurrencyUnitList: !list
   types: [ string ]
   entries:
+    - att
     - din.
     - kiwi
     - kina
