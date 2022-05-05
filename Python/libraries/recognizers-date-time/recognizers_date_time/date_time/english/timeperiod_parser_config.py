@@ -105,6 +105,16 @@ class EnglishTimePeriodParserConfiguration(TimePeriodParserConfiguration):
             time_of_day = Constants.DAYTIME
         elif any(trimmed_text.endswith(o) for o in EnglishDateTime.NightTermList):
             time_of_day = Constants.NIGHT
+        elif any(trimmed_text.endswith(o) for o in EnglishDateTime.BusinessHourSplitStrings):
+            time_of_day = Constants.BUSINESS_HOUR
+        elif any(trimmed_text.endswith(o) for o in EnglishDateTime.MealtimeBreakfastTermList):
+            time_of_day = Constants.MEALTIME_BREAKFAST
+        elif any(trimmed_text.endswith(o) for o in EnglishDateTime.MealtimeBrunchTermList):
+            time_of_day = Constants.MEALTIME_BRUNCH
+        elif any(trimmed_text.endswith(o) for o in EnglishDateTime.MealtimeLunchTermList):
+            time_of_day = Constants.MEALTIME_LUNCH
+        elif any(trimmed_text.endswith(o) for o in EnglishDateTime.MealtimeDinnerTermList):
+            time_of_day = Constants.MEALTIME_DINNER
         else:
             return MatchedTimeRegex(
                 matched=False,

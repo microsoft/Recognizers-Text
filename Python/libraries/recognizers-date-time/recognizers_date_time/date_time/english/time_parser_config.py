@@ -21,6 +21,10 @@ class EnglishTimeParserConfiguration(TimeParserConfiguration):
         return self._at_regex
 
     @property
+    def meal_time_regex(self) -> Pattern:
+        return self._meal_time_regex
+
+    @property
     def time_regexes(self) -> List[Pattern]:
         return self._time_regexes
 
@@ -40,6 +44,8 @@ class EnglishTimeParserConfiguration(TimeParserConfiguration):
         self._time_token_prefix: str = EnglishDateTime.TimeTokenPrefix
         self._at_regex: Pattern = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.AtRegex)
+        self._meal_time_regex: Pattern = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.MealTimeRegex)
         self._time_regexes: List[Pattern] = [
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.TimeRegex1),
             RegExpUtility.get_safe_reg_exp(EnglishDateTime.TimeRegex2),
