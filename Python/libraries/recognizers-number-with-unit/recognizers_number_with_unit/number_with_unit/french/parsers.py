@@ -47,6 +47,8 @@ class FrenchCurrencyParserConfiguration(FrenchNumberWithUnitParserConfiguration)
         super().__init__(culture_info)
         self.add_dict_to_unit_map(FrenchNumericWithUnit.CurrencySuffixList)
         self.add_dict_to_unit_map(FrenchNumericWithUnit.CurrencyPrefixList)
+        self.currency_name_to_iso_code_map = FrenchNumericWithUnit.CurrencyNameToIsoCodeMap
+        self.currency_fraction_code_list = FrenchNumericWithUnit.FractionalUnitNameToCodeMap
 
 
 class FrenchDimensionParserConfiguration(FrenchNumberWithUnitParserConfiguration):

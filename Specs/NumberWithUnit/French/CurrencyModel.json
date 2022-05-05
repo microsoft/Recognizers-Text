@@ -1366,7 +1366,7 @@
   },
   {
     "Input": "Rolling Stone a noté, harpercollins a acquis le projet de livre pour 3 millions $ en 2008.",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "3 millions $",
@@ -1497,7 +1497,7 @@
   },
   {
     "Input": "Dollar: 143,80 yens, en haut 0. 95; 1. 8500 marques, en haut 0. 0085.",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "dollar",
@@ -1588,7 +1588,7 @@
   },
   {
     "Input": "ça ne coûte que 15 dollars et 15 cents.",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "15 dollars et 15 cents",
@@ -1604,7 +1604,7 @@
   },
   {
     "Input": "ça ne coûte que treize euros et quarante-cinq cents.",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "treize euros et quarante-cinq cents",
@@ -1620,7 +1620,7 @@
   },
   {
     "Input": "ça ne coûte que 15 dollars et 15.",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "15 dollars et 15",
@@ -1636,7 +1636,7 @@
   },
   {
     "Input": "ça ne coûte que 15 dollars 50.",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "15 dollars 50",
