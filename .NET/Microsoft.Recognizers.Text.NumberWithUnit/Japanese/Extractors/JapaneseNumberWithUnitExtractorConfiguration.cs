@@ -63,6 +63,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Japanese
 
         public virtual Regex AmbiguousUnitNumberMultiplierRegex => null;
 
+        public Regex MultiplierRegex => null;
+
         public IExtractor IntegerExtractor { get; }
 
         public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; } = null;

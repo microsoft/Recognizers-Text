@@ -633,9 +633,10 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
             { @"Satoshi", @"SATOSHI" }
         };
       public const string CompoundUnitConnectorRegex = @"\b(?<spacer>e|com)\b";
+      public const string MultiplierRegex = @"\s*\b(mil(h([ãa]o|[õo]es))?|bilh([ãa]o|[õo]es)|trilh([ãa]o|[õo]es)|qua[td]rilh([ãa]o|[õo]es)|quintilh([ãa]o|[õo]es))\b";
       public static readonly Dictionary<string, string> CurrencyPrefixList = new Dictionary<string, string>
         {
-            { @"Dólar", @"$" },
+            { @"Dólar", @"$|dólar|dolar|dólares|dolares" },
             { @"Dólar estadunidense", @"us$|u$d|usd$|usd" },
             { @"Dólar do Caribe Oriental", @"ec$|xcd" },
             { @"Dólar australiano", @"a$|aud" },
@@ -737,7 +738,8 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
             @"milha",
             @"milhas",
             @"""",
-            @"in"
+            @"in",
+            @"um"
         };
       public static readonly Dictionary<string, string> SpeedSuffixList = new Dictionary<string, string>
         {
@@ -824,7 +826,8 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
         };
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {
-            { @"null", @"null" }
+            { @"\b\d+\s*\p{L}+$", @"((\d+(\s*\p{L}+[-—–-]|\p{L}+)\d+)|(((\p{L}|\d)[-—–-]\d+\s*|\p{L}\d+)\p{L}+))" },
+            { @"\bum$", @"\p{L}\s+um\b" }
         };
       public static readonly Dictionary<string, string> TemperatureAmbiguityFiltersDict = new Dictionary<string, string>
         {

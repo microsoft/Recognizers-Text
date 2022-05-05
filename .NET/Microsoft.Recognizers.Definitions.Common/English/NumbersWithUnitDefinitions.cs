@@ -578,6 +578,7 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"Satoshi", @"SATOSHI" }
         };
       public const string CompoundUnitConnectorRegex = @"(?<spacer>and)";
+      public const string MultiplierRegex = @"\s*\b(thousand|million|billion|trillion)s?\b";
       public static readonly Dictionary<string, string> CurrencyPrefixList = new Dictionary<string, string>
         {
             { @"Dobra", @"db|std" },
@@ -899,7 +900,7 @@ namespace Microsoft.Recognizers.Definitions.English
         {
             { @"\bm\b", @"((('|’)\s*m)|(m\s*('|’)))" },
             { @"^\d{5} [cf]$", @"\b([a-z]{2} \d{5} [cf])\b" },
-            { @"\b\d+\s*\p{L}+$", @"((\d+\s*\p{L}+[-—–-]?\d+)|((\p{L}[-—–-]?|\d[-—–-])\d+\s*\p{L}+))" },
+            { @"\b\d+\s*\p{L}+$", @"((\d+(\s*\p{L}+[-—–-]|\p{L}+)\d+)|(((\p{L}|\d)[-—–-]\d+\s*|\p{L}\d+)\p{L}+))" },
             { @"^(all|bob|pen|cad|cup|cop|sos|ron|mad|mop|zar|gel)", @"(all|bob|pen|cad|cup|cop|sos|ron|mad|mop|zar|gel)\s*(\d|\p{L})" }
         };
       public static readonly Dictionary<string, string> TemperatureAmbiguityFiltersDict = new Dictionary<string, string>
@@ -908,7 +909,8 @@ namespace Microsoft.Recognizers.Definitions.English
         };
       public static readonly Dictionary<string, string> DimensionAmbiguityFiltersDict = new Dictionary<string, string>
         {
-            { @"\b(deg(rees?)?|°)$", @"\b((deg(rees?)?|°)\s*(c(elsius|entigrate)?|f(ah?renheit)?)|(temperature)(\s+(\p{L}+|\d+)){0,4}\s*(deg(rees?)?\b|°))" }
+            { @"\b(deg(rees?)?|°)$", @"\b((deg(rees?)?|°)\s*(c(elsius|entigrate)?|f(ah?renheit)?)|(temperature)(\s+(\p{L}+|\d+)){0,4}\s*(deg(rees?)?\b|°))" },
+            { @"\b\d+\s*\p{L}+$", @"((\d+\s*\p{L}+\d+)|(\p{L}\d+\s*\p{L}+))" }
         };
     }
 }

@@ -2663,5 +2663,220 @@
   {
     "Input": "She got really mad when she heard what happened.",
     "Results": []
+  },
+  {
+    "Input": "They lost 75 USD million in the past three years.",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "75 usd million",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "75000000",
+          "unit": "United States dollar",
+          "isoCurrency": "USD"
+        },
+        "Start": 10,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "The price starts at dollar 22.5 million.",
+    "NotSupported": "dotnet, java, javascript, python",
+    "Results": [
+      {
+        "Text": "dollar 22.5 million",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "22500000",
+          "unit": "Dollar"
+        },
+        "Start": 20,
+        "End": 38
+      }
+    ]
+  },
+  {
+    "Input": "The price starts at USD 22.5 million.",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "usd 22.5 million",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "22500000",
+          "unit": "United States dollar",
+          "isoCurrency": "USD"
+        },
+        "Start": 20,
+        "End": 35
+      }
+    ]
+  },
+  {
+    "Input": "It costs 15 dollars 50.",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "15 dollars 50",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "15.5",
+          "unit": "Dollar"
+        },
+        "Start": 9,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "It costs 15 dollars and 50.",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "15 dollars and 50",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "15.5",
+          "unit": "Dollar"
+        },
+        "Start": 9,
+        "End": 25
+      }
+    ]
+  },
+  {
+    "Input": "The subscription will increase to 17 USD 25.",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "17 usd 25",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "17.25",
+          "unit": "United States dollar",
+          "isoCurrency": "USD"
+        },
+        "Start": 34,
+        "End": 42
+      }
+    ]
+  },
+  {
+    "Input": "we are giving away 3 USD50 Cards.",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "usd50",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "50",
+          "unit": "United States dollar",
+          "isoCurrency": "USD"
+        },
+        "Start": 21,
+        "End": 25
+      }
+    ]
+  },
+  {
+    "Input": "They paid 75 USD million but the price was actually 50 million USD. And if they had just 15 USD 50 more, they would have paid 80 USD million.",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "75 usd million",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "75000000",
+          "unit": "United States dollar",
+          "isoCurrency": "USD"
+        },
+        "Start": 10,
+        "End": 23
+      },
+      {
+        "Text": "50 million usd",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "50000000",
+          "unit": "United States dollar",
+          "isoCurrency": "USD"
+        },
+        "Start": 52,
+        "End": 65
+      },
+      {
+        "Text": "15 usd 50",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "15.5",
+          "unit": "United States dollar",
+          "isoCurrency": "USD"
+        },
+        "Start": 89,
+        "End": 97
+      },
+      {
+        "Text": "80 usd million",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "80000000",
+          "unit": "United States dollar",
+          "isoCurrency": "USD"
+        },
+        "Start": 126,
+        "End": 139
+      }
+    ]
+  },
+  {
+    "Input": "The cost is 500 USD,100 times more than expected.",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "500 usd",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "500",
+          "unit": "United States dollar",
+          "isoCurrency": "USD"
+        },
+        "Start": 12,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "One is required to pay three thousand dollars two hundred times.",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "three thousand dollars",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "3000",
+          "unit": "Dollar"
+        },
+        "Start": 23,
+        "End": 44
+      }
+    ]
+  },
+  {
+    "Input": "I counted the dollars thousand of times.",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "dollars",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": null,
+          "unit": "Dollar"
+        },
+        "Start": 14,
+        "End": 20
+      }
+    ]
   }
 ]

@@ -789,10 +789,12 @@ FractionalUnitNameToCodeMap: !dictionary
     Satoshi: SATOSHI
 CompoundUnitConnectorRegex: !simpleRegex
     def: \b(?<spacer>e|com)\b
+MultiplierRegex: !simpleRegex
+  def: \s*\b(mil(h([ãa]o|[õo]es))?|bilh([ãa]o|[õo]es)|trilh([ãa]o|[õo]es)|qua[td]rilh([ãa]o|[õo]es)|quintilh([ãa]o|[õo]es))\b
 CurrencyPrefixList: !dictionary
   types: [ string, string ]
   entries:
-    Dólar: $
+    Dólar: $|dólar|dolar|dólares|dolares
     Dólar estadunidense: us$|u$d|usd$|usd
     Dólar do Caribe Oriental: ec$|xcd
     Dólar australiano: a$|aud
@@ -903,6 +905,7 @@ AmbiguousLengthUnitList: !list
     - milhas
     - '"'
     - in
+    - um
 #SpeedExtractorConfiguration
 SpeedSuffixList: !dictionary
   types: [ string, string ]
@@ -994,7 +997,8 @@ AmbiguousAngleUnitList: !list
 AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:
-    'null': 'null'
+    \b\d+\s*\p{L}+$: ((\d+(\s*\p{L}+[-—–-]|\p{L}+)\d+)|(((\p{L}|\d)[-—–-]\d+\s*|\p{L}\d+)\p{L}+))
+    \bum$: \p{L}\s+um\b
 TemperatureAmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:
