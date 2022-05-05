@@ -29,43 +29,50 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public List<ExtractResult> Extract(string text, DateObject referenceTime)
         {
+            // Date and time Extractions should be extracted from the text only once, and shared in the methods below, passed by value
+            var dateErs = this.config.SingleDateExtractor.Extract(text, referenceTime);
+            var timeErs = this.config.SingleTimeExtractor.Extract(text, referenceTime);
+            var timeRangeErs = this.config.TimePeriodExtractor.Extract(text, referenceTime);
+            var dateTimeErs = this.config.SingleDateTimeExtractor.Extract(text, referenceTime);
+
             var tokens = new List<Token>();
-            tokens.AddRange(MergeDateAndTimePeriod(text, referenceTime));
-            tokens.AddRange(MergeTwoTimePoints(text, referenceTime));
+            tokens.AddRange(MergeDateAndTimePeriod(text, new List<ExtractResult>(dateErs), new List<ExtractResult>(timeRangeErs)));
+            tokens.AddRange(MergeTwoTimePoints(text, new List<ExtractResult>(dateTimeErs), new List<ExtractResult>(timeErs)));
+            tokens.AddRange(MatchDuration(text, referenceTime));
+            tokens.AddRange(MatchRelativeUnit(text));
             tokens.AddRange(MatchNumberWithUnit(text));
             tokens.AddRange(MatchNight(text, referenceTime));
+            tokens.AddRange(MergeDateWithTimePeriodSuffix(text, new List<ExtractResult>(dateErs), new List<ExtractResult>(timeErs)));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }
 
         // merge Date and Time period
-        private List<Token> MergeDateAndTimePeriod(string text, DateObject referenceTime)
+        private List<Token> MergeDateAndTimePeriod(string text, List<ExtractResult> dateErs, List<ExtractResult> timeRangeErs)
         {
             var ret = new List<Token>();
-            var er1 = this.config.SingleDateExtractor.Extract(text, referenceTime);
-            var er2 = this.config.TimePeriodExtractor.Extract(text, referenceTime);
             var timePoints = new List<ExtractResult>();
 
             // handle the overlap problem
             var j = 0;
-            for (var i = 0; i < er1.Count; i++)
+            for (var i = 0; i < dateErs.Count; i++)
             {
-                timePoints.Add(er1[i]);
-                while (j < er2.Count && er2[j].Start + er2[j].Length <= er1[i].Start)
+                timePoints.Add(dateErs[i]);
+                while (j < timeRangeErs.Count && timeRangeErs[j].Start + timeRangeErs[j].Length <= dateErs[i].Start)
                 {
-                    timePoints.Add(er2[j]);
+                    timePoints.Add(timeRangeErs[j]);
                     j++;
                 }
 
-                while (j < er2.Count && er2[j].IsOverlap(er1[i]))
+                while (j < timeRangeErs.Count && timeRangeErs[j].IsOverlap(dateErs[i]))
                 {
                     j++;
                 }
             }
 
-            for (; j < er2.Count; j++)
+            for (; j < timeRangeErs.Count; j++)
             {
-                timePoints.Add(er2[j]);
+                timePoints.Add(timeRangeErs[j]);
             }
 
             timePoints = timePoints.OrderBy(o => o.Start).ToList();
@@ -99,33 +106,31 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private List<Token> MergeTwoTimePoints(string text, DateObject referenceTime)
+        private List<Token> MergeTwoTimePoints(string text, List<ExtractResult> dateTimeErs, List<ExtractResult> timeErs)
         {
             var ret = new List<Token>();
-            var er1 = this.config.SingleDateTimeExtractor.Extract(text, referenceTime);
-            var er2 = this.config.SingleTimeExtractor.Extract(text, referenceTime);
             var timePoints = new List<ExtractResult>();
 
             // handle the overlap problem
             var j = 0;
-            for (var i = 0; i < er1.Count; i++)
+            for (var i = 0; i < dateTimeErs.Count; i++)
             {
-                timePoints.Add(er1[i]);
-                while (j < er2.Count && er2[j].Start + er2[j].Length <= er1[i].Start)
+                timePoints.Add(dateTimeErs[i]);
+                while (j < timeErs.Count && timeErs[j].Start + timeErs[j].Length <= dateTimeErs[i].Start)
                 {
-                    timePoints.Add(er2[j]);
+                    timePoints.Add(timeErs[j]);
                     j++;
                 }
 
-                while (j < er2.Count && er2[j].IsOverlap(er1[i]))
+                while (j < timeErs.Count && timeErs[j].IsOverlap(dateTimeErs[i]))
                 {
                     j++;
                 }
             }
 
-            for (; j < er2.Count; j++)
+            for (; j < timeErs.Count; j++)
             {
-                timePoints.Add(er2[j]);
+                timePoints.Add(timeErs[j]);
             }
 
             timePoints = timePoints.OrderBy(o => o.Start).ToList();
@@ -220,6 +225,136 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
+        // Cases like "2015年1月1日の2時以降", "On January 1, 2015 after 2:00"
+        private IEnumerable<Token> MergeDateWithTimePeriodSuffix(string text, List<ExtractResult> dateErs, List<ExtractResult> timeErs)
+        {
+            var ret = new List<Token>();
+
+            if (!dateErs.Any())
+            {
+                return ret;
+            }
+
+            if (!timeErs.Any())
+            {
+                return ret;
+            }
+
+            var ers = dateErs;
+            ers.AddRange(timeErs);
+
+            ers = ers.OrderBy(o => o.Start).ToList();
+
+            var i = 0;
+            while (i < ers.Count - 1)
+            {
+                var j = i + 1;
+                while (j < ers.Count && ers[i].IsOverlap(ers[j]))
+                {
+                    j++;
+                }
+
+                if (j >= ers.Count)
+                {
+                    break;
+                }
+
+                if (ers[i].Type.Equals(Constants.SYS_DATETIME_DATE, StringComparison.Ordinal) &&
+                    ers[j].Type.Equals(Constants.SYS_DATETIME_TIME, StringComparison.Ordinal))
+                {
+                    var middleBegin = ers[i].Start + ers[i].Length ?? 0;
+                    var middleEnd = ers[j].Start ?? 0;
+                    if (middleBegin > middleEnd)
+                    {
+                        i = j + 1;
+                        continue;
+                    }
+
+                    var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim();
+
+                    if (middleStr.Length != Constants.INVALID_CONNECTOR_CODE)
+                    {
+                        var begin = ers[i].Start ?? 0;
+                        var end = (ers[j].Start ?? 0) + (ers[j].Length ?? 0);
+
+                        ret.Add(new Token(begin, end));
+                    }
+
+                    i = j + 1;
+                    continue;
+                }
+
+                i = j;
+            }
+
+            return ret;
+        }
+
+        // Extract patterns that involve durations e.g. "Within 5 hours from now"
+        private List<Token> MatchDuration(string text, DateObject reference)
+        {
+            var ret = new List<Token>();
+            var durationExtractions = config.DurationExtractor.Extract(text, reference);
+
+            foreach (var durationExtraction in durationExtractions)
+            {
+                var timeUnitMatch = config.UnitRegex.Match(durationExtraction.Text);
+                if (!timeUnitMatch.Success)
+                {
+                    continue;
+                }
+
+                var duration = new Token(durationExtraction.Start ?? 0, durationExtraction.Start + durationExtraction.Length ?? 0);
+                var beforeStr = text.Substring(0, duration.Start);
+                var afterStr = text.Substring(duration.Start + duration.Length);
+
+                if (string.IsNullOrWhiteSpace(beforeStr) && string.IsNullOrWhiteSpace(afterStr))
+                {
+                    continue;
+                }
+
+                var startOut = -1;
+                var endOut = -1;
+                var match = config.FutureRegex.Match(afterStr);
+
+                var inPrefixMatch = config.ThisRegex.Match(beforeStr);
+                var inPrefix = inPrefixMatch.Success;
+
+                if (match.Groups[Constants.WithinGroupName].Success)
+                {
+                    var startToken = inPrefix ? inPrefixMatch.Index : duration.Start;
+                    var withinlength = match.Groups[Constants.WithinGroupName].Value.Length;
+                    var endToken = duration.End + (inPrefix ? 0 : match.Index + match.Length);
+
+                    match = config.UnitRegex.Match(text.Substring(duration.Start, duration.Length));
+
+                    if (match.Success)
+                    {
+                        startOut = startToken;
+                        endOut = inPrefix ? endToken + withinlength : endToken;
+                    }
+
+                    Token token = new Token(startOut, endOut);
+                    ret.Add(token);
+                }
+            }
+
+            return ret;
+        }
+
+        private List<Token> MatchRelativeUnit(string text)
+        {
+            var ret = new List<Token>();
+            var matches = this.config.RestOfDateRegex.Matches(text);
+
+            foreach (Match match in matches)
+            {
+                ret.Add(new Token(match.Index, match.Index + match.Length));
+            }
+
+            return ret;
+        }
+
         private List<Token> MatchNumberWithUnit(string text)
         {
             var ret = new List<Token>();
@@ -231,6 +366,13 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 var afterStr = text.Substring(er.Start + er.Length ?? 0);
                 var match = this.config.FollowedUnit.MatchBegin(afterStr, trim: true);
+
+                if (match.Success)
+                {
+                    durations.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + match.Length));
+                }
+
+                match = this.config.PastRegex.MatchBegin(afterStr, trim: true);
 
                 if (match.Success)
                 {
@@ -261,6 +403,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 match = this.config.FutureRegex.MatchEnd(beforeStr, trim: true);
+
+                if (match.Success)
+                {
+                    ret.Add(new Token(match.Index, duration.End));
+                }
+
+                match = this.config.TimePeriodLeftRegex.MatchEnd(beforeStr, trim: true);
 
                 if (match.Success)
                 {

@@ -94,6 +94,8 @@ BeforeRegex: !simpleRegex
   def: 以前|之前|前
 AfterRegex: !simpleRegex
   def: 以后|以後|之后|之後|后|後
+TimePeriodLeftRegex: !simpleRegex
+  def: ^[.]
 # (农历)?(2016年)?一月三日(星期三)?
 DateRegexList1: !nestedRegex
   def: ({LunarRegex}(\s*))?((({SimpleYearRegex}|{DateYearInCJKRegex})年)(\s*))?{MonthRegex}(\s*){DateDayRegexInCJK}((\s*|,|，){WeekDayRegex})?
@@ -198,6 +200,8 @@ WeekOfDateRegex: !simpleRegex
   def: ^[.]
 MonthOfDateRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in Japanese
+  def: ^[.]
+RestOfDateRegex: !simpleRegex
   def: ^[.]
 UnitRegex: !simpleRegex
   def: (?<unit>年|(?<uoy>(个)?月|周|週|日|天))

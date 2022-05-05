@@ -56,6 +56,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             TimeParser = config.TimeParser;
             DateTimeParser = config.DateTimeParser;
             TimePeriodParser = config.TimePeriodParser;
+            DurationParser = config.DurationParser;
 
             SpecificTimeOfDayRegex = ChineseDateTimePeriodExtractorConfiguration.SpecificTimeOfDayRegex;
             TimeOfDayRegex = ChineseDateTimePeriodExtractorConfiguration.TimeOfDayRegex;
@@ -63,7 +64,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             LastRegex = ChineseDateTimePeriodExtractorConfiguration.LastRegex;
             PastRegex = ChineseDateTimePeriodExtractorConfiguration.PastRegex;
             FutureRegex = ChineseDateTimePeriodExtractorConfiguration.FutureRegex;
+            TimePeriodLeftRegex = ChineseDateTimePeriodExtractorConfiguration.TimePeriodLeftRegex;
             UnitRegex = ChineseDateTimePeriodExtractorConfiguration.UnitRegex;
+            RestOfDateRegex = ChineseDateTimePeriodExtractorConfiguration.RestOfDateRegex;
             UnitMap = config.UnitMap;
         }
 
@@ -89,6 +92,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public IDateTimeParser TimePeriodParser { get; }
 
+        public IDateTimeParser DurationParser { get; }
+
         public Regex SpecificTimeOfDayRegex { get; }
 
         public Regex TimeOfDayRegex { get; }
@@ -101,7 +106,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public Regex FutureRegex { get; }
 
+        public Regex TimePeriodLeftRegex { get; }
+
         public Regex UnitRegex { get; }
+
+        public Regex RestOfDateRegex { get; }
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 

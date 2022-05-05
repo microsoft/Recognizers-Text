@@ -56,6 +56,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
             TimeParser = config.TimeParser;
             DateTimeParser = config.DateTimeParser;
             TimePeriodParser = config.TimePeriodParser;
+            DurationParser = config.DurationParser;
 
             SpecificTimeOfDayRegex = KoreanDateTimePeriodExtractorConfiguration.SpecificTimeOfDayRegex;
             TimeOfDayRegex = KoreanDateTimePeriodExtractorConfiguration.TimeOfDayRegex;
@@ -63,7 +64,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
             LastRegex = KoreanDateTimePeriodExtractorConfiguration.LastRegex;
             PastRegex = KoreanDateTimePeriodExtractorConfiguration.PastRegex;
             FutureRegex = KoreanDateTimePeriodExtractorConfiguration.FutureRegex;
+            TimePeriodLeftRegex = KoreanDateTimePeriodExtractorConfiguration.TimePeriodLeftRegex;
             UnitRegex = KoreanDateTimePeriodExtractorConfiguration.UnitRegex;
+            RestOfDateRegex = KoreanDateTimePeriodExtractorConfiguration.RestOfDateRegex;
             UnitMap = config.UnitMap;
         }
 
@@ -89,6 +92,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
 
         public IDateTimeParser TimePeriodParser { get; }
 
+        public IDateTimeParser DurationParser { get; }
+
         public Regex SpecificTimeOfDayRegex { get; }
 
         public Regex TimeOfDayRegex { get; }
@@ -101,7 +106,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
 
         public Regex FutureRegex { get; }
 
+        public Regex TimePeriodLeftRegex { get; }
+
         public Regex UnitRegex { get; }
+
+        public Regex RestOfDateRegex { get; }
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 
