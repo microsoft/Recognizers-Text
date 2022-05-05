@@ -2,7 +2,6 @@
   {
     "Input": "3 $",
     "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "3 $",
@@ -10,14 +9,15 @@
         "Resolution": {
           "value": "3",
           "unit": "Dollar"
-        }
+        },
+        "Start": 0,
+        "End": 2
       }
     ]
   },
   {
     "Input": "3 €",
     "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "3 €",
@@ -25,14 +25,15 @@
         "Resolution": {
           "value": "3",
           "unit": "Euro"
-        }
+        },
+        "Start": 0,
+        "End": 2
       }
     ]
   },
   {
     "Input": "3 USD",
     "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "3 usd",
@@ -40,14 +41,15 @@
         "Resolution": {
           "value": "3",
           "unit": "United States dollar"
-        }
+        },
+        "Start": 0,
+        "End": 4
       }
     ]
   },
   {
     "Input": "17 dollar",
     "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "17 dollar",
@@ -55,14 +57,15 @@
         "Resolution": {
           "value": "17",
           "unit": "Dollar"
-        }
+        },
+        "Start": 0,
+        "End": 8
       }
     ]
   },
   {
     "Input": "sieben Euro",
     "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "sieben euro",
@@ -70,14 +73,15 @@
         "Resolution": {
           "value": "7",
           "unit": "Euro"
-        }
+        },
+        "Start": 0,
+        "End": 10
       }
     ]
   },
   {
     "Input": "30 kambodschanische Riel",
     "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "30 kambodschanische riel",
@@ -85,14 +89,15 @@
         "Resolution": {
           "value": "30",
           "unit": "Cambodian riel"
-        }
+        },
+        "Start": 0,
+        "End": 23
       }
     ]
   },
   {
     "Input": "75 Millionen Dollar",
     "NotSupported": "javascript",
-    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "75 millionen dollar",
@@ -100,13 +105,14 @@
         "Resolution": {
           "value": "75000000",
           "unit": "Dollar"
-        }
+        },
+        "Start": 0,
+        "End": 18
       }
     ]
   },
   {
     "Input": "Das finnische Konglomerat Nokia oy ab sagte, es habe eine Einigung erzielt, dass niederländische Unternehmen Nkf Kabel b.v. für 420000000 finnische Mark zu kaufen.",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -115,13 +121,14 @@
         "Resolution": {
           "value": "420000000",
           "unit": "Finnish markka"
-        }
+        },
+        "Start": 128,
+        "End": 151
       }
     ]
   },
   {
     "Input": "National zahlte Siegel und Shuster 94.000 $, damit alle klagen fallen gelassen werden.",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -130,13 +137,14 @@
         "Resolution": {
           "value": "94000",
           "unit": "Dollar"
-        }
+        },
+        "Start": 35,
+        "End": 42
       }
     ]
   },
   {
     "Input": "National zahlte Siegel und Shuster 94.000 $, um alle klagen fallen zu lassen.",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -145,13 +153,14 @@
         "Resolution": {
           "value": "94000",
           "unit": "Dollar"
-        }
+        },
+        "Start": 35,
+        "End": 42
       }
     ]
   },
   {
     "Input": "Das dürften ca. 99$ pro Kopf sein.",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -160,13 +169,14 @@
         "Resolution": {
           "value": "99",
           "unit": "Dollar"
-        }
+        },
+        "Start": 16,
+        "End": 18
       }
     ]
   },
   {
     "Input": "94£",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -175,13 +185,14 @@
         "Resolution": {
           "value": "94",
           "unit": "Pound"
-        }
+        },
+        "Start": 0,
+        "End": 2
       }
     ]
   },
   {
     "Input": "General Dynamics Services Co., eine Abteilung der General Dynamics Corp., hat einen 48 Millionen Dollar Vertrag, zur Errichtung von Wartungseinrichtungen für Kettenfahrzeuge der Armee, gewonnen.",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -190,13 +201,14 @@
         "Resolution": {
           "value": "48000000",
           "unit": "Dollar"
-        }
+        },
+        "Start": 84,
+        "End": 102
       }
     ]
   },
   {
     "Input": "Der Preis für einen zweiten Simulator liegt bei 16,4 Millionen kanadischen Dollar.",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -205,13 +217,14 @@
         "Resolution": {
           "value": "16400000",
           "unit": "Canadian dollar"
-        }
+        },
+        "Start": 48,
+        "End": 80
       }
     ]
   },
   {
     "Input": "bard / ems hatte 1988 Verkäufe mit einem Wert von rund 14 Millionen Dollar, sagte Birchter.",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -220,13 +233,14 @@
         "Resolution": {
           "value": "14000000",
           "unit": "Dollar"
-        }
+        },
+        "Start": 55,
+        "End": 73
       }
     ]
   },
   {
     "Input": "Preise starten bei 12.345$.",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -235,13 +249,14 @@
         "Resolution": {
           "value": "12345",
           "unit": "Dollar"
-        }
+        },
+        "Start": 19,
+        "End": 25
       }
     ]
   },
   {
     "Input": "Der Haushalt beläuft sich auf 12 500 EUR.",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -250,13 +265,14 @@
         "Resolution": {
           "value": "12500",
           "unit": "Euro"
-        }
+        },
+        "Start": 30,
+        "End": 39
       }
     ]
   },
   {
     "Input": "Der Wert dieses Unternehmens liegt bei 2,5 Mio USD",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -265,13 +281,14 @@
         "Resolution": {
           "value": "2500000",
           "unit": "United States dollar"
-        }
+        },
+        "Start": 39,
+        "End": 49
       }
     ]
   },
   {
     "Input": "Der Umsatz sank in der zweiten Jahreshälfte um 27% auf 300 000 GBP",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -280,13 +297,14 @@
         "Resolution": {
           "value": "300000",
           "unit": "British pound"
-        }
+        },
+        "Start": 55,
+        "End": 65
       }
     ]
   },
   {
     "Input": "Hast du mal einen Euro für mich?",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -295,13 +313,14 @@
         "Resolution": {
           "value": "1",
           "unit": "Euro"
-        }
+        },
+        "Start": 12,
+        "End": 21
       }
     ]
   },
   {
     "Input": "Hast du zwei Euro für mich?",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -310,13 +329,14 @@
         "Resolution": {
           "value": "2",
           "unit": "Euro"
-        }
+        },
+        "Start": 8,
+        "End": 16
       }
     ]
   },
   {
     "Input": "zwei Euro fünfzig",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript,dotnet,java",
     "Results": [
       {
@@ -325,13 +345,14 @@
         "Resolution": {
           "value": "2,5",
           "unit": "Euro"
-        }
+        },
+        "Start": 0,
+        "End": 16
       }
     ]
   },
   {
     "Input": "zwei Euro und fünfzig cent",
-    "NotSupportedByDesign": "python",
     "NotSupported": "java, javascript",
     "Results": [
       {
@@ -340,13 +361,14 @@
         "Resolution": {
           "value": "2,5",
           "unit": "Euro"
-        }
+        },
+        "Start": 0,
+        "End": 25
       }
     ]
   },
   {
     "Input": "siebenhundert Euro",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -355,13 +377,14 @@
         "Resolution": {
           "value": "700",
           "unit": "Euro"
-        }
+        },
+        "Start": 0,
+        "End": 17
       }
     ]
   },
   {
     "Input": "achtundsiebzig Millionen Dollar",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -370,13 +393,14 @@
         "Resolution": {
           "value": "78000000",
           "unit": "Dollar"
-        }
+        },
+        "Start": 0,
+        "End": 30
       }
     ]
   },
   {
     "Input": "try the Dollar haben sie gesagt",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -385,13 +409,14 @@
         "Resolution": {
           "value": null,
           "unit": "Dollar"
-        }
+        },
+        "Start": 8,
+        "End": 13
       }
     ]
   },
   {
     "Input": "für drei Dollar können sie jetzt das SOS Signal senden",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -400,13 +425,14 @@
         "Resolution": {
           "value": "3",
           "unit": "Dollar"
-        }
+        },
+        "Start": 4,
+        "End": 14
       }
     ]
   },
   {
     "Input": "100 indische Rupien",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -415,13 +441,14 @@
         "Resolution": {
           "value": "100",
           "unit": "Indian rupee"
-        }
+        },
+        "Start": 0,
+        "End": 18
       }
     ]
   },
   {
     "Input": "1000 Rupien",
-    "NotSupportedByDesign": "python",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -430,13 +457,14 @@
         "Resolution": {
           "value": "1000",
           "unit": "Rupee"
-        }
+        },
+        "Start": 0,
+        "End": 10
       }
     ]
   },
   {
     "Input": "siebenhundert-Euro",
-    "NotSupportedByDesign": "python",
     "NotSupported": "java, javascript",
     "Results": [
       {
@@ -445,13 +473,15 @@
         "Resolution": {
           "value": "700",
           "unit": "Euro"
-        }
+        },
+        "Start": 0,
+        "End": 17
       }
     ]
   },
   {
     "Input": "es kostet nur 15 Dollar und 15 Cent.",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "15 dollar und 15 cent",
@@ -467,7 +497,7 @@
   },
   {
     "Input": "es kostet nur dreizehn Euro und fünfundvierzig Cent.",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "dreizehn euro und fünfundvierzig cent",
@@ -483,7 +513,7 @@
   },
   {
     "Input": "es kostet nur 15 Dollar und 15.",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "15 dollar und 15",
@@ -499,7 +529,7 @@
   },
   {
     "Input": "es kostet nur 15 Dollar 50.",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "15 dollar 50",

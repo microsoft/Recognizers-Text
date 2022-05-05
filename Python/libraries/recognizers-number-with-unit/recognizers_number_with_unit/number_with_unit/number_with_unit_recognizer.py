@@ -51,6 +51,8 @@ from .portuguese.parsers import (PortugueseCurrencyParserConfiguration,
                                  PortugueseAgeParserConfiguration)
 from .italian.extractors import ItalianCurrencyExtractorConfiguration
 from .italian.parsers import ItalianCurrencyParserConfiguration
+from .german.extractors import GermanCurrencyExtractorConfiguration
+from .german.parsers import GermanCurrencyParserConfiguration
 
 
 class NumberWithUnitOptions(IntFlag):
@@ -223,6 +225,15 @@ class NumberWithUnitRecognizer(Recognizer[NumberWithUnitOptions]):
                 BaseMergedUnitExtractor(
                     ItalianCurrencyExtractorConfiguration()),
                 BaseMergedUnitParser(ItalianCurrencyParserConfiguration()))
+        ]))
+        # endregion
+
+        # region German
+        self.register_model('CurrencyModel', Culture.German, lambda options: CurrencyModel([
+            ExtractorParserModel(
+                BaseMergedUnitExtractor(
+                    GermanCurrencyExtractorConfiguration()),
+                BaseMergedUnitParser(GermanCurrencyParserConfiguration()))
         ]))
         # endregion
 
