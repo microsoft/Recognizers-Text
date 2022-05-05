@@ -22,12 +22,12 @@ PmDescRegex: !nestedRegex
 AmPmDescRegex: !nestedRegex
   def: ({BaseDateTime.BaseAmPmDescRegex})
   references: [BaseDateTime.BaseAmPmDescRegex]
-DescRegex: !nestedRegex
-  def: (?<desc>({AmDescRegex}|{PmDescRegex}))
-  references: [ AmDescRegex, PmDescRegex ]
 OclockRegex: !simpleRegex
   # "... em ponto"
   def: (?<oclock>em\s+ponto)
+DescRegex: !nestedRegex
+  def: ((horas\s+)?(?<desc>{AmDescRegex}|{PmDescRegex})|{OclockRegex})
+  references: [ AmDescRegex, PmDescRegex, OclockRegex ]
 OfPrepositionRegex: !simpleRegex
   def: (\bd(o|a|e)s?\b)
 AfterNextSuffixRegex: !simpleRegex
@@ -202,7 +202,7 @@ SpecialDateRegex: !nestedRegex
   def: (?<=\bno\s+){DayRegex}\b
   references: [ DayRegex ]
 OfMonthRegex: !nestedRegex
-  def: ^\s*de\s*{MonthSuffixRegex}
+  def: ^(\s*de)?\s*{MonthSuffixRegex}
   references: [ MonthSuffixRegex ]
 MonthEndRegex: !nestedRegex
   def: ({MonthRegex}\s*(o)?\s*$)
@@ -230,32 +230,32 @@ DateExtractor3: !nestedRegex
 # The final lookahead in DateExtractor4|5|10 avoids extracting as date "10/1-11" from an input like "10/1-11/2/2017" 
 DateExtractor4: !nestedRegex
   # 3-23-2017
-  def: \b{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}\s*[/\\\-]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)
-  references: [ MonthNumRegex, DayRegex, DateYearRegex ]
+  def: \b({WeekDayRegex}(\s+|\s*,\s*))?{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}\s*[/\\\-]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)
+  references: [ MonthNumRegex, DayRegex, DateYearRegex, WeekDayRegex ]
 DateExtractor5: !nestedRegex
   # 23-3-2015
-  def: \b{DayRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)
-  references: [ MonthNumRegex, MonthRegex, DayRegex, DateYearRegex ]
+  def: \b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)
+  references: [ MonthNumRegex, MonthRegex, DayRegex, DateYearRegex, WeekDayRegex ]
 DateExtractor6: !nestedRegex
   # o 1/3 (1o de março)
   def: (?<=\b(em|no|o)\s+){MonthNumRegex}[\-\.]{DayRegex}{BaseDateTime.CheckDecimalRegex}\b
   references: [ MonthNumRegex, DayRegex, BaseDateTime.CheckDecimalRegex ]
 DateExtractor7: !nestedRegex
   # 7/23
-  def: \b{MonthNumRegex}\s*/\s*{DayRegex}((\s+|\s*(,|de)\s*){DateYearRegex})?{BaseDateTime.CheckDecimalRegex}\b
-  references: [ MonthNumRegex, DayRegex, DateYearRegex, BaseDateTime.CheckDecimalRegex ]
+  def: \b({WeekDayRegex}(\s+|\s*,\s*))?{MonthNumRegex}\s*/\s*{DayRegex}((\s+|\s*(,|de)\s*){DateYearRegex})?{BaseDateTime.CheckDecimalRegex}\b
+  references: [ MonthNumRegex, DayRegex, DateYearRegex, BaseDateTime.CheckDecimalRegex, WeekDayRegex ]
 DateExtractor8: !nestedRegex
   # o 24-12
   def: (?<=\b(em|no|o)\s+){DayRegex}[\\\-]{MonthNumRegex}{BaseDateTime.CheckDecimalRegex}\b
   references: [ MonthNumRegex, DayRegex, BaseDateTime.CheckDecimalRegex ]
 DateExtractor9: !nestedRegex
   # 23/7
-  def: \b{DayRegex}\s*/\s*{MonthNumRegex}((\s+|\s*(,|de)\s*){DateYearRegex})?{BaseDateTime.CheckDecimalRegex}\b
-  references: [ DayRegex, MonthNumRegex, DateYearRegex, BaseDateTime.CheckDecimalRegex ]
+  def: \b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}\s*/\s*{MonthNumRegex}((\s+|\s*(,|de)\s*){DateYearRegex})?{BaseDateTime.CheckDecimalRegex}\b
+  references: [ DayRegex, MonthNumRegex, DateYearRegex, BaseDateTime.CheckDecimalRegex, WeekDayRegex ]
 DateExtractor10: !nestedRegex
   # 2015-12-23
-  def: \b({YearRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DayRegex}|{MonthRegex}\s*[/\\\-\.]\s*{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]\s*{DayRegex}|{DayRegex}\s*[/\\\-\.]\s*{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]\s*{MonthRegex})(?!\s*[/\\\-\.:]\s*\d+)
-  references: [ YearRegex, MonthNumRegex, MonthRegex, DayRegex, BaseDateTime.FourDigitYearRegex ]
+  def: \b({WeekDayRegex}(\s+|\s*,\s*))?({YearRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DayRegex}|{MonthRegex}\s*[/\\\-\.]\s*{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]\s*{DayRegex}|{DayRegex}\s*[/\\\-\.]\s*{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]\s*{MonthRegex})(?!\s*[/\\\-\.:]\s*\d+)
+  references: [ YearRegex, MonthNumRegex, MonthRegex, DayRegex, BaseDateTime.FourDigitYearRegex, WeekDayRegex ]
 DateExtractor11: !nestedRegex
   # dia 24
   def: (?<=\b(dia)\s+){DayRegex}
@@ -269,18 +269,21 @@ DeltaMinuteNumRegex: !simpleRegex
   def: (?<deltaminnum>um|dois|tr[êe]s|[qc]uatro|cinco|seis|sete|oito|nove|dez|onze|doze|treze|catorze|quatorze|quinze|dez[ea]sseis|dez[ea]sete|dezoito|dez[ea]nove|vinte|trinta|[qc]uarenta|cin[qc]uenta)
 PmRegex: !simpleRegex
   # "... tarde"
-  def: (?<pm>((pela|de|da|\b[àa]\b|na)\s+(tarde|noite)))|((depois\s+do|ap[óo]s\s+o)\s+(almo[çc]o|meio dia|meio-dia))
+  def: (horas\s+)?(?<pm>((pela|de|da|\b[àa]\b|na)\s+(tarde|noite)))|((depois\s+do|ap[óo]s\s+o)\s+(almo[çc]o|meio dia|meio-dia))
 AmRegex: !simpleRegex
   # "... da manhã"
-  def: (?<am>(pela|de|da|na)\s+(manh[ãa]|madrugada))
+  def: (horas\s+)?(?<am>(pela|de|da|na)\s+(manh[ãa]|madrugada))
 AmTimeRegex: !simpleRegex
   def: (?<am>([dn]?es[st]a|(pela|de|da|na))\s+(manh[ãa]|madrugada))
 PmTimeRegex: !simpleRegex
   def: (?<pm>(([dn]?es[st]a|\b[àa]\b|(pela|de|da|na))\s+(tarde|noite)))|((depois\s+do|ap[óo]s\s+o)\s+(almo[çc]o|meio dia|meio-dia))
 LessThanOneHour: !nestedRegex
   # "e meia ..." "e quinze ..."
-  def: (?<lth>((\s+e\s+)?(quinze|(um\s+|dois\s+|tr[êes]\s+)?quartos?)|quinze|(\s*)(um\s+|dois\s+|tr[êes]\s+)?quartos?|(\s+e\s+)(meia|trinta)|{BaseDateTime.DeltaMinuteRegex}(\s+(minuto|minutos|min|mins))|{DeltaMinuteNumRegex}(\s+(minuto|minutos|min|mins))))
+  def: (?<lth>((\s+e\s+)?(quinze|(um\s+|dois\s+|tr[êes]\s+)?quartos?)|quinze|(\s*)(um\s+|dois\s+|tr[êes]\s+)?quartos?|(\s+e\s+)(meia|trinta)|({BaseDateTime.DeltaMinuteRegex}|{DeltaMinuteNumRegex})(\s+(minuto|minutos|min|mins))?))
   references: [ BaseDateTime.DeltaMinuteRegex, DeltaMinuteNumRegex ]
+LessThanOneHourSuffix: !simpleRegex
+  # "e meia ..." "e quinze ..."
+  def: (?<lth>((\s+e\s+)?(quinze|(um\s+|dois\s+|tr[êes]\s+)?quartos?)|quinze|(\s*)(um\s+|dois\s+|tr[êes]\s+)?quartos?|(\s+e\s+)(meia|trinta)))
 TensTimeRegex: !simpleRegex
   def: (?<tens>dez|vinte|trinta|[qc]uarenta|cin[qc]uenta)
 WrittenTimeRegex: !nestedRegex
@@ -288,7 +291,7 @@ WrittenTimeRegex: !nestedRegex
   def: (?<writtentime>({HourNumRegex}\s*((e|menos)\s+)?(({TensTimeRegex}((\s*e\s+)?{MinuteNumRegex}))|{MinuteNumRegex}))|(({MinuteNumRegex}|({TensTimeRegex}((\s*e\s+)?{MinuteNumRegex})?))\s*((para as|pras|antes da|antes das)\s+)?({HourNumRegex}|{BaseDateTime.HourRegex})))
   references: [ HourNumRegex, MinuteNumRegex, TensTimeRegex, BaseDateTime.HourRegex ]
 TimePrefix: !nestedRegex
-  def: (?<prefix>{LessThanOneHour}(\s+(passad[ao]s)\s+(as)?|\s+depois\s+(das?|do)|\s+pras?|\s+(para|antes)?\s+([àa]s?))?)
+  def: (?<prefix>{LessThanOneHour}(\s+(passad[ao]s)\s+(as)?|\s+depois\s+(das?|do)|\s+pras?|\s+(para|antes)?\s+([àa]s?)))
   references: [ LessThanOneHour ]
 TimeSuffix: !nestedRegex
   def: (?<suffix>({LessThanOneHour}\s+)?({AmRegex}|{PmRegex}|{OclockRegex}))
@@ -330,12 +333,12 @@ TimeRegex3: !nestedRegex
   references: [ TimePrefix, BaseDateTime.HourRegex, BaseDateTime.MinuteRegex, DescRegex ]
 TimeRegex4: !nestedRegex
   # (tres min depois das) (cinco e trinta|sete|7|7:00(:00)?) (pm)?
-  def: \b(({DescRegex}?)|({BasicTime}?)({DescRegex}?))({TimePrefix}\s*)({HourNumRegex}|{BaseDateTime.HourRegex})?(\s+{TensTimeRegex}(\s+e\s+)?{MinuteNumRegex}?)?({OclockRegex})?\b
-  references: [ DescRegex, BasicTime, TimePrefix, HourNumRegex, BaseDateTime.HourRegex, TensTimeRegex, MinuteNumRegex, OclockRegex ]
+  def:  \b(({DescRegex}\s*)?(({TimePrefix}\s*)({HourNumRegex}|{BaseDateTime.HourRegex})|({HourNumRegex}|{BaseDateTime.HourRegex})(\s+{TensTimeRegex}(\s+e\s+)?{MinuteNumRegex}?)|{BasicTime}(\s*{DescRegex})?(?<prefix>{LessThanOneHourSuffix}))(\s*({DescRegex}|{OclockRegex}))?)\b
+  references: [ DescRegex, BasicTime, TimePrefix, HourNumRegex, BaseDateTime.HourRegex, TensTimeRegex, MinuteNumRegex, OclockRegex, LessThanOneHourSuffix ]
 TimeRegex5: !nestedRegex
   # (tres min depois das) (cinco e trinta|sete|7|7:00(:00)?) (pm)? (da noite)
-  def: \b({TimePrefix}|{BasicTime}{TimePrefix})\s+(\s*{DescRegex})?{BasicTime}?\s*{TimeSuffix}\b
-  references: [ TimePrefix, BasicTime, DescRegex, TimeSuffix ]
+  def: \b({TimePrefix}|{BasicTime}(?<prefix>{LessThanOneHourSuffix}))\s+(\s*{DescRegex})?{BasicTime}?\s*{TimeSuffix}\b
+  references: [ TimePrefix, BasicTime, DescRegex, TimeSuffix, LessThanOneHourSuffix ]
 TimeRegex6: !nestedRegex
   # (cinco e trinta|sete|7|7:00(:00)?) (pm)? (da noite)
   def: ({BasicTime}(\s*{DescRegex})?\s+{TimeSuffix}\b)
@@ -400,10 +403,10 @@ ConnectorRegex: !simpleRegex
 TimeHourNumRegex: !simpleRegex
   def: (?<hour>vinte( e (um|dois|tr[êe]s|quatro))?|zero|uma?|dois|duas|tr[êe]s|quatro|cinco|seis|sete|oito|nove|dez|onze|doze|treze|quatorze|catorze|quinze|dez([ea]sseis|[ea]ssete|oito|[ea]nove))
 PureNumFromTo: !nestedRegex
-  def: (((desde|de|da|das)\s+(a(s)?\s+)?)?({BaseDateTime.HourRegex}|{TimeHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?\s*{TillRegex}(?<![aà]s)|((desde|de|da|das)\s+(a(s)?\s+)?)({BaseDateTime.HourRegex}|{TimeHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?\s*{TillRegex})\s*({BaseDateTime.HourRegex}|{TimeHourNumRegex})\s*(?<rightDesc>{PmRegex}|{AmRegex}|{DescRegex})?
+  def: (((desde|de|da|das)\s+(a(s)?\s+)?)?({BaseDateTime.HourRegex}|{TimeHourNumRegex})(\s*(?<leftDesc>{DescRegex}|horas))?\s*{TillRegex}(?<![aà]s)|((desde|de|da|das)\s+(a(s)?\s+)?)({BaseDateTime.HourRegex}|{TimeHourNumRegex})(\s*(?<leftDesc>{DescRegex}|horas))?\s*{TillRegex})\s*({BaseDateTime.HourRegex}|{TimeHourNumRegex})\s*(?<rightDesc>{PmRegex}|{AmRegex}|{DescRegex}|horas)?
   references: [ BaseDateTime.HourRegex, TimeHourNumRegex, DescRegex, TillRegex, PmRegex, AmRegex ]
 PureNumBetweenAnd: !nestedRegex
-  def: (entre\s+((a|as)?\s+)?)({BaseDateTime.HourRegex}|{TimeHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?\s*e\s*(a(s)?\s+)?({BaseDateTime.HourRegex}|{TimeHourNumRegex})\s*(?<rightDesc>{PmRegex}|{AmRegex}|{DescRegex})?
+  def: (entre\s+((a|as)?\s+)?)({BaseDateTime.HourRegex}|{TimeHourNumRegex})(\s*(?<leftDesc>{DescRegex}|horas))?\s*e\s*(a(s)?\s+)?({BaseDateTime.HourRegex}|{TimeHourNumRegex})\s*(?<rightDesc>{PmRegex}|{AmRegex}|{DescRegex}|horas)?
   references: [ BaseDateTime.HourRegex, TimeHourNumRegex, DescRegex, PmRegex, AmRegex ]
 SpecificTimeFromTo: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
@@ -521,9 +524,9 @@ OrRegex: !simpleRegex
 YearPlusNumberRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
-NumberAsTimeRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
+NumberAsTimeRegex: !nestedRegex
+  def: \b({WrittenTimeRegex}|({TimeHourNumRegex}|{BaseDateTime.HourRegex})(?<desc>\s*horas)?)\b
+  references: [ WrittenTimeRegex, TimeHourNumRegex, BaseDateTime.HourRegex ]
 TimeBeforeAfterRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]

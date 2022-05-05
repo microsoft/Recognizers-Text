@@ -695,7 +695,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     // check if TokenBeforeDate and TokenBeforeTime are null
                     var dateText = trimmedText.Replace(ers[0].Text, string.Empty).Trim();
-                    dateText = !string.IsNullOrEmpty(Config.TokenBeforeDate) ? dateText.Replace(Config.TokenBeforeDate, string.Empty).Trim() : dateText;
+                    dateText = !string.IsNullOrEmpty(Config.TokenBeforeDate) && dateText.StartsWith(Config.TokenBeforeDate) ? dateText.Replace(Config.TokenBeforeDate, string.Empty).Trim() : dateText;
                     dateText = !string.IsNullOrEmpty(Config.TokenBeforeTime) ? dateText.Replace(Config.TokenBeforeTime.Trim(), string.Empty).Trim() : dateText;
                     if (this.Config.CheckBothBeforeAfter)
                     {

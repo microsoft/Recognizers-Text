@@ -96,6 +96,26 @@ namespace Microsoft.Recognizers.Text.DateTime
                 ers.AddRange(numErs);
             }
 
+            // handle cases which use numbers + desc as time points
+            if (timeNumMatches.Cast<Match>().Any(match => match.Groups[Constants.DescGroupName].Success))
+            {
+                var numDescErs = new List<ExtractResult>();
+                foreach (var match in timeNumMatches.Cast<Match>().Where(match => match.Groups[Constants.DescGroupName].Success))
+                {
+                    var node = new ExtractResult
+                    {
+                        Start = match.Index,
+                        Length = match.Length,
+                        Text = match.Value,
+                        Type = Constants.SYS_DATETIME_TIME,
+                    };
+
+                    numDescErs.Add(node);
+                }
+
+                ers.AddRange(numDescErs);
+            }
+
             ers = ers.OrderBy(o => o.Start).ToList();
 
             var i = 0;
