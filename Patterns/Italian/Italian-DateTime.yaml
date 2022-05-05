@@ -590,7 +590,7 @@ UnspecificDatePeriodRegex: !simpleRegex
 PrepositionSuffixRegex: !simpleRegex
   def: \b(il|al?|del|di|dal?|fino al?)$
 FlexibleDayRegex: !nestedRegex
-  def: (?<DayOfMonth>([A-Za-z]+\s)?({WrittenDayRegex}|{DayRegex}))
+  def: (?<DayOfMonth>({WrittenDayRegex}|{DayRegex}))
   references: [WrittenDayRegex, DayRegex ]
 ForTheRegex: !nestedRegex
   def: \b((((?<=per\s+il\s+){FlexibleDayRegex})|((?<!(\b{MonthRegex},?|\bper)\s+(il\s+|l'))(?<=(il\s+|l')){FlexibleDayRegex}))(?<end>\s*(,|\.|!|\?|$)))

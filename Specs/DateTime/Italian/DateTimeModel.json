@@ -2955,5 +2955,29 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Tornerò Lunedì, Gen ventidue, 2018",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,java,python",
+    "Results": [
+      {
+        "Text": "lunedì, gen ventidue, 2018",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-01-22",
+              "type": "date",
+              "value": "2018-01-22"
+            }
+          ]
+        },
+        "Start": 8,
+        "End": 33
+      }
+    ]
   }
 ]
