@@ -125,38 +125,38 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
             if (DayTypeRegex.IsMatch(trimmedText))
             {
-                durationType = "D";
+                durationType = Constants.TimexDay;
             }
             else if (WeekTypeRegex.IsMatch(trimmedText))
             {
-                durationType = "W";
+                durationType = Constants.TimexWeek;
             }
             else if (BiWeekTypeRegex.IsMatch(trimmedText))
             {
-                durationType = "W";
+                durationType = Constants.TimexWeek;
                 multiplier = 2;
             }
             else if (WeekendTypeRegex.IsMatch(trimmedText))
             {
-                durationType = "WE";
+                durationType = Constants.TimexWeekend;
             }
             else if (MonthTypeRegex.IsMatch(trimmedText))
             {
-                durationType = "M";
+                durationType = Constants.TimexMonth;
             }
             else if (QuarterTypeRegex.IsMatch(trimmedText))
             {
                 multiplier = 3;
-                durationType = "M";
+                durationType = Constants.TimexMonth;
             }
             else if (SemiAnnualTypeRegex.IsMatch(trimmedText))
             {
                 multiplier = 0.5f;
-                durationType = "Y";
+                durationType = Constants.TimexYear;
             }
             else if (YearTypeRegex.IsMatch(trimmedText))
             {
-                durationType = "Y";
+                durationType = Constants.TimexYear;
             }
             else
             {

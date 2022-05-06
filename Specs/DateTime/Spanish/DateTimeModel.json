@@ -22624,5 +22624,31 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Se espera que la transacción se cierre este año calendario.",
+    "Context": {
+      "ReferenceDateTime": "2019-06-18T00:00:00"
+    },
+    "Comment": "SPTERM Special terms",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "este año calendario",
+        "Start": 39,
+        "End": 57,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019",
+              "type": "daterange",
+              "start": "2019-01-01",
+              "end": "2020-01-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

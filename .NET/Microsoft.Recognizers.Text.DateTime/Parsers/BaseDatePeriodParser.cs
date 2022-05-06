@@ -2100,16 +2100,17 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (match.Success)
             {
-                var num = int.Parse(match.Groups["number"].ToString(), CultureInfo.InvariantCulture);
+                var num = int.Parse(match.Groups[Constants.NumberGroupName].ToString(), CultureInfo.InvariantCulture);
                 if (num == 0)
                 {
                     return ret;
                 }
 
+                // cases like "week 23 of 2019", "week 12 of last year"
                 var year = config.DateExtractor.GetYearFromText(match.Match);
                 if (year == Constants.InvalidYear)
                 {
-                    var orderStr = match.Groups["order"].Value;
+                    var orderStr = match.Groups[Constants.OrderGroupName].Value;
                     var swift = this.config.GetSwiftYear(orderStr);
                     if (swift < -1)
                     {
