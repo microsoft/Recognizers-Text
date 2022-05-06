@@ -544,17 +544,17 @@ class NumberWithUnitExtractor(Extractor):
 
         # Find prefix units with no space, e.g. '$50'.
         no_space_units: List[Token] = []
-        for prefix in prefix_result:
-            if isinstance(prefix.data, ExtractResult):
-                unit_str = prefix.text[:prefix.data.start]
+        for unit_prefix in prefix_result:
+            if isinstance(unit_prefix.data, ExtractResult):
+                unit_str = unit_prefix.text[:unit_prefix.data.start]
                 if len(unit_str) > 0 and unit_str == unit_str.rstrip():
-                    no_space_units.append(Token(prefix.start, prefix.start + len(unit_str)))
+                    no_space_units.append(Token(unit_prefix.start, unit_prefix.start + len(unit_str)))
 
         # Remove from suffixResult units that are also prefix units with no space,
         # e.g. in '1 $50', '$' should not be considered a suffix unit.
         for index in range(len(suffix_result) - 1, -1, -1):
             suffix = suffix_result[index]
-            if (any(suffix.start <= unit.start and suffix.end >= unit.end for unit in no_space_units)):
+            if any(suffix.start <= unit.start and suffix.end >= unit.end for unit in no_space_units):
                 suffix_result.pop(index)
 
         # Add Separate unit
