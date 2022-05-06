@@ -33,7 +33,11 @@ export class EnglishDimensionExtractorConfiguration extends EnglishNumberWithUni
 
         this.suffixList = dimensionSuffixList;
         this.prefixList = new Map<string, string>();
-        this.ambiguousUnitList = EnglishNumericWithUnit.AmbiguousDimensionUnitList;
+        this.ambiguousUnitList = EnglishNumericWithUnit.AmbiguousDimensionUnitList.concat(
+                                 EnglishNumericWithUnit.AmbiguousAngleUnitList.concat(
+                                 EnglishNumericWithUnit.AmbiguousLengthUnitList.concat(
+                                 EnglishNumericWithUnit.AmbiguousSpeedUnitList.concat(
+                                 EnglishNumericWithUnit.AmbiguousWeightUnitList))));
     }
 }
 

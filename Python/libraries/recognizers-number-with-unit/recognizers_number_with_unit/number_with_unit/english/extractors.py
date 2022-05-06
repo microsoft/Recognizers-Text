@@ -161,7 +161,13 @@ class EnglishDimensionExtractorConfiguration(EnglishNumberWithUnitExtractorConfi
             **EnglishNumericWithUnit.WeightSuffixList
         }
         self._prefix_list = dict()
-        self._ambiguous_unit_list = EnglishNumericWithUnit.AmbiguousDimensionUnitList
+        self._ambiguous_unit_list = EnglishNumericWithUnit.AmbiguousDimensionUnitList +\
+            EnglishNumericWithUnit.AmbiguousAngleUnitList +\
+            EnglishNumericWithUnit.AmbiguousAreaUnitList +\
+            EnglishNumericWithUnit.AmbiguousLengthUnitList +\
+            EnglishNumericWithUnit.AmbiguousSpeedUnitList +\
+            EnglishNumericWithUnit.AmbiguousVolumeUnitList +\
+            EnglishNumericWithUnit.AmbiguousWeightUnitList
 
 
 class EnglishTemperatureExtractorConfiguration(EnglishNumberWithUnitExtractorConfiguration):

@@ -21490,5 +21490,29 @@
     },
     "NotSupported": "javascript, java, python",
     "Results": []
+  },
+  {
+    "Input": "le plus tôt possible",
+    "Context": {
+      "ReferenceDateTime": "2022-05-06T15:32:23"
+    },
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "le plus tôt possible",
+        "Start": 0,
+        "End": 19,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "FUTURE_REF",
+              "type": "datetime",
+              "value": "2022-05-06 15:32:23"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

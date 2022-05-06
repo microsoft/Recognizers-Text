@@ -499,7 +499,7 @@ public class FrenchDateTime {
     public static final String TimeNumberCombinedWithUnit = "\\b(?<num>\\d+(\\.\\d*)?){TimeUnitRegex}"
             .replace("{TimeUnitRegex}", TimeUnitRegex);
 
-    public static final String NowRegex = "\\b(?<now>(ce\\s+)?moment|maintenant|d[eè]s que possible|dqp|r[eé]cemment|auparavant)\\b";
+    public static final String NowRegex = "\\b(?<now>(ce\\s+)?moment|maintenant|(d[eè]s|aussit[oô]t) que possible|dqp|r[eé]cemment|auparavant|le plus tôt( que)? possible)\\b";
 
     public static final String SuffixRegex = "^\\s*((dans\\s+l[ea]\\s+)|(en\\s+)|(d(u|\\'))?(matin([eé]e)?|apr[eè]s-midi|soir[eé]e|nuit))\\b";
 
@@ -622,6 +622,8 @@ public class FrenchDateTime {
     public static final String AMTimeRegex = "(?<am>matin([ée]e)?)";
 
     public static final String PMTimeRegex = "\\b(?<pm>(d'|l')?apr[eè]s-midi|nuit|((\\s*ce|du)\\s+)?soir)\\b";
+
+    public static final String AsapTimeRegex = "((d[eè]s|le plus t[oô]t|aussit[oô]t)( que)? possible|dqp)";
 
     public static final String BeforeRegex = "\\b(avant)\\b";
 

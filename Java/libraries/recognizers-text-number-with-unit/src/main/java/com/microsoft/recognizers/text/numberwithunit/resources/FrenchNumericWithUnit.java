@@ -615,7 +615,7 @@ public class FrenchNumericWithUnit {
         .put("Pouce", "pouce|pouces")
         .build();
 
-    public static final List<String> AmbiguousLengthUnitList = Arrays.asList("m", "m.", "yard", "yards", "pm", "pouce", "pt", "pts");
+    public static final List<String> AmbiguousLengthUnitList = Arrays.asList("m.", "yard", "yards", "pm", "pouce", "pt", "pts");
 
     public static final ImmutableMap<String, String> SpeedSuffixList = ImmutableMap.<String, String>builder()
         .put("Mètre par seconde", "m/s|metres/seconde|metres par seconde|metre par seconde|metres par secondes|mètre par seconde|mètres par seconde|mètres par secondes")
@@ -627,6 +627,8 @@ public class FrenchNumericWithUnit {
         .put("Pied par seconde", "ft/s|pied par seconde|pieds par seconde|pied/s|pieds/s")
         .put("Pied par minute", "pieds/minute|pied/minute|ft/minute|ft/min|pied/min")
         .build();
+
+    public static final List<String> AmbiguousSpeedUnitList = Arrays.asList("noeud", "noeuds", "nuds");
 
     public static final ImmutableMap<String, String> TemperatureSuffixList = ImmutableMap.<String, String>builder()
         .put("Kelvin", "k|K|kelvin")

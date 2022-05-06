@@ -158,7 +158,11 @@ class ItalianDimensionExtractorConfiguration(ItalianNumberWithUnitExtractorConfi
             **ItalianNumericWithUnit.WeightSuffixList
         }
         self._prefix_list = dict()
-        self._ambiguous_unit_list = ItalianNumericWithUnit.AmbiguousDimensionUnitList
+        self._ambiguous_unit_list = ItalianNumericWithUnit.AmbiguousDimensionUnitList +\
+            ItalianNumericWithUnit.AmbiguousAngleUnitList +\
+            ItalianNumericWithUnit.AmbiguousLengthUnitList +\
+            ItalianNumericWithUnit.AmbiguousVolumeUnitList +\
+            ItalianNumericWithUnit.AmbiguousWeightUnitList
 
 
 class ItalianTemperatureExtractorConfiguration(ItalianNumberWithUnitExtractorConfiguration):

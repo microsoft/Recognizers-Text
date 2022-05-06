@@ -2878,5 +2878,22 @@
         "End": 20
       }
     ]
+  },
+  {
+    "Input": "Sell Mex$ 10 million forward contract after you received the payment",
+    "NotSupported": "java, javascript",
+    "Results": [
+      {
+        "Text": "mex$ 10 million",
+        "Start": 5,
+        "End": 19,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "MXN",
+          "unit": "Mexican peso",
+          "value": "10000000"
+        }
+      }
+    ]
   }
 ]

@@ -157,7 +157,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public static readonly string SpecificTimeOfDayRegex = $@"\b(({RelativeRegex}\s+{TimeOfDayRegex})|({TimeOfDayRegex}\s*({NextSuffixRegex}))\b|\b(du )?soir)s?\b";
       public static readonly string TimeFollowedUnit = $@"^\s*{TimeUnitRegex}";
       public static readonly string TimeNumberCombinedWithUnit = $@"\b(?<num>\d+(\.\d*)?){TimeUnitRegex}";
-      public const string NowRegex = @"\b(?<now>(ce\s+)?moment|maintenant|d[eè]s que possible|dqp|r[eé]cemment|auparavant)\b";
+      public const string NowRegex = @"\b(?<now>(ce\s+)?moment|maintenant|(d[eè]s|aussit[oô]t) que possible|dqp|r[eé]cemment|auparavant|le plus tôt( que)? possible)\b";
       public const string SuffixRegex = @"^\s*((dans\s+l[ea]\s+)|(en\s+)|(d(u|\'))?(matin([eé]e)?|apr[eè]s-midi|soir[eé]e|nuit))\b";
       public const string DateTimeTimeOfDayRegex = @"\b(?<timeOfDay>matin([eé]e)?|apr[eè]s-midi|nuit|soir)\b";
       public static readonly string DateTimeSpecificTimeOfDayRegex = $@"\b(({RelativeRegex}\s+{DateTimeTimeOfDayRegex})\b|\b(ce(tte)?\s+)(soir|nuit))\b";
@@ -202,6 +202,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public const string ToTokenRegex = @"\b(moins|[aà]$)\b";
       public const string AMTimeRegex = @"(?<am>matin([ée]e)?)";
       public const string PMTimeRegex = @"\b(?<pm>(d'|l')?apr[eè]s-midi|nuit|((\s*ce|du)\s+)?soir)\b";
+      public const string AsapTimeRegex = @"((d[eè]s|le plus t[oô]t|aussit[oô]t)( que)? possible|dqp)";
       public const string BeforeRegex = @"\b(avant)\b";
       public const string BeforeRegex2 = @"\b(entre\s*(le|la(s)?)?)\b";
       public const string AfterRegex = @"\b(apres)\b";

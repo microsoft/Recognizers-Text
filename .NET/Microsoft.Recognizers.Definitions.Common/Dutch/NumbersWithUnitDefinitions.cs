@@ -158,13 +158,14 @@ namespace Microsoft.Recognizers.Definitions.Dutch
             { @"Barrel", @"vat|vaten" },
             { @"Gallon", @"-gallon|gallon" },
             { @"Metric ton", @"metrische ton" },
-            { @"Ton", @"-ton|ton" },
+            { @"Ton", @"-ton|ton|t" },
             { @"Pound", @"-pond|pond" },
             { @"Ounce", @"-ons|ons" }
         };
       public static readonly IList<string> AmbiguousWeightUnitList = new List<string>
         {
             @"g",
+            @"t",
             @"oz"
         };
       public static readonly Dictionary<string, string> CurrencySuffixList = new Dictionary<string, string>

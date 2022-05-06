@@ -12,6 +12,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
     {
         public static readonly ImmutableDictionary<string, string> WeightSuffixList = NumbersWithUnitDefinitions.WeightSuffixList.ToImmutableDictionary();
 
+        public static readonly ImmutableList<string> AmbiguousValues = NumbersWithUnitDefinitions.AmbiguousWeightUnitList.ToImmutableList();
+
         public WeightExtractorConfiguration()
                : this(new CultureInfo(Culture.Spanish))
         {
@@ -26,7 +28,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
 
         public override ImmutableDictionary<string, string> PrefixList => null;
 
-        public override ImmutableList<string> AmbiguousUnitList => null;
+        public override ImmutableList<string> AmbiguousUnitList => AmbiguousValues;
 
         public override string ExtractType => Constants.SYS_UNIT_WEIGHT;
     }

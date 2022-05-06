@@ -355,6 +355,17 @@
     "Input": "Una t.métrica es igual a 2.204,62 libras.",
     "Results": [
       {
+        "Text": "una t.métrica",
+        "Start": 0,
+        "End": 12,
+        "TypeName": "dimension",
+        "Resolution": {
+          "subtype": "Weight",
+          "unit": "Tonelada métrica",
+          "value": "1"
+        }
+      },
+      {
         "Text": "2.204,62 libras",
         "TypeName": "dimension",
         "Resolution": {

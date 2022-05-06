@@ -145,7 +145,11 @@ class SpanishDimensionExtractorConfiguration(SpanishNumberWithUnitExtractorConfi
         }
 
         self._prefix_list = dict()
-        self._ambiguous_unit_list = SpanishNumericWithUnit.AmbiguousDimensionUnitList
+        self._ambiguous_unit_list = SpanishNumericWithUnit.AmbiguousDimensionUnitList +\
+            SpanishNumericWithUnit.AmbiguousAngleUnitList +\
+            SpanishNumericWithUnit.AmbiguousLengthUnitList +\
+            SpanishNumericWithUnit.AmbiguousSpeedUnitList +\
+            SpanishNumericWithUnit.AmbiguousWeightUnitList
 
 
 class SpanishTemperatureExtractorConfiguration(SpanishNumberWithUnitExtractorConfiguration):

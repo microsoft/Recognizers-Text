@@ -9,9 +9,12 @@ import com.microsoft.recognizers.text.CultureInfo;
 import com.microsoft.recognizers.text.numberwithunit.Constants;
 import com.microsoft.recognizers.text.numberwithunit.resources.FrenchNumericWithUnit;
 
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class DimensionExtractorConfiguration extends FrenchNumberWithUnitExtractorConfiguration {
 
@@ -40,7 +43,14 @@ public class DimensionExtractorConfiguration extends FrenchNumberWithUnitExtract
 
     @Override
     public List<String> getAmbiguousUnitList() {
-        return FrenchNumericWithUnit.AmbiguousDimensionUnitList;
+        return Stream.of(FrenchNumericWithUnit.AmbiguousDimensionUnitList,
+                         FrenchNumericWithUnit.AmbiguousDimensionUnitList,
+                         FrenchNumericWithUnit.AmbiguousAngleUnitList,
+                         FrenchNumericWithUnit.AmbiguousLengthUnitList,
+                         FrenchNumericWithUnit.AmbiguousSpeedUnitList,
+                         FrenchNumericWithUnit.AmbiguousVolumeUnitList,
+                         FrenchNumericWithUnit.AmbiguousWeightUnitList
+                        ).flatMap(Collection::stream).collect(Collectors.toList());
     }
 
     public static Map<String, String> DimensionSuffixList = new ImmutableMap.Builder<String, String>()

@@ -252,7 +252,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
             { @"Rupia de Mauricio", @"rupia de Mauricio|rupias de Mauricio|mur" },
             { @"Uguiya", @"uguiya|uguiyas|mro" },
             { @"Jum", @"jum|jums" },
-            { @"Peso mexicano", @"peso mexicano|pesos mexicanos|mxn" },
+            { @"Peso mexicano", @"peso mexicano|pesos mexicanos|mxn|mxn$|mxn $|mex$" },
             { @"Centavo mexicano", @"centavo mexicano|centavos mexicanos" },
             { @"Leu moldavo", @"leu moldavo|lei moldavos|mdl" },
             { @"Ban moldavo", @"ban moldavo|bani moldavos" },
@@ -666,6 +666,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
             { @"Dólar namibio", @"n$|nad" },
             { @"Dólar de las Islas Salomón", @"si$|sbd" },
             { @"Nuevo dólar taiwanés", @"nt$|twd" },
+            { @"Peso mexicano", @"mxn|mxn$|mxn $|mex$" },
             { @"Real brasileño", @"r$|brl" },
             { @"Guaraní", @"₲|gs.|pyg" },
             { @"Dólar trinitense", @"tt$|ttd" },
@@ -797,8 +798,8 @@ namespace Microsoft.Recognizers.Definitions.Spanish
         };
       public static readonly Dictionary<string, string> WeightSuffixList = new Dictionary<string, string>
         {
-            { @"Tonelada métrica", @"tonelada métrica|toneladas métricas" },
-            { @"Tonelada", @"ton|tonelada|toneladas" },
+            { @"Tonelada métrica", @"tonelada métrica|toneladas métricas|t.métrica|t métrica|t. métrica|tonelada metrica|toneladas metricas|t.metrica|t metrica|t. metrica" },
+            { @"Tonelada", @"ton|tonelada|toneladas|t" },
             { @"Kilogramo", @"kg|kilogramo|kilogramos" },
             { @"Hectogramo", @"hg|hectogramo|hectogramos" },
             { @"Decagramo", @"dag|decagramo|decagramos" },
@@ -813,6 +814,11 @@ namespace Microsoft.Recognizers.Definitions.Spanish
             { @"Onza", @"oz|onza|onzas" },
             { @"Grano", @"grano|granos" },
             { @"Quilate", @"ct|quilate|quilates" }
+        };
+      public static readonly IList<string> AmbiguousWeightUnitList = new List<string>
+        {
+            @"g",
+            @"t"
         };
       public static readonly Dictionary<string, string> AngleSuffixList = new Dictionary<string, string>
         {

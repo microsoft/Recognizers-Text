@@ -622,8 +622,10 @@ public class PortugueseNumericWithUnit {
 
     public static final String CompoundUnitConnectorRegex = "\\b(?<spacer>e|com)\\b";
 
+    public static final String MultiplierRegex = "\\s*\\b(mil(h([ãa]o|[õo]es))?|bilh([ãa]o|[õo]es)|trilh([ãa]o|[õo]es)|qua[td]rilh([ãa]o|[õo]es)|quintilh([ãa]o|[õo]es))\\b";
+
     public static final ImmutableMap<String, String> CurrencyPrefixList = ImmutableMap.<String, String>builder()
-        .put("Dólar", "$")
+        .put("Dólar", "$|dólar|dolar|dólares|dolares")
         .put("Dólar estadunidense", "us$|u$d|usd$|usd")
         .put("Dólar do Caribe Oriental", "ec$|xcd")
         .put("Dólar australiano", "a$|aud")
@@ -705,19 +707,19 @@ public class PortugueseNumericWithUnit {
         .put("Picômetro", "pm|picometro|picômetro|picómetro|picometros|picômetros|picómetros")
         .put("Milha", "mi|milha|milhas")
         .put("Jarda", "yd|jarda|jardas")
-        .put("Polegada", "polegada|polegadas|\"")
+        .put("Polegada", "polegada|polegadas|\"|in")
         .put("Pé", "pé|pe|pés|pes|ft")
         .put("Ano luz", "ano luz|anos luz|al")
         .build();
 
-    public static final List<String> AmbiguousLengthUnitList = Arrays.asList("mi", "milha", "milhas", "\"");
+    public static final List<String> AmbiguousLengthUnitList = Arrays.asList("mi", "milha", "milhas", "\"", "in", "um");
 
     public static final ImmutableMap<String, String> SpeedSuffixList = ImmutableMap.<String, String>builder()
         .put("Metro por segundo", "metro/segundo|m/s|metro por segundo|metros por segundo|metros por segundos")
         .put("Quilômetro por hora", "km/h|quilômetro por hora|quilómetro por hora|quilometro por hora|quilômetros por hora|quilómetros por hora|quilometros por hora|quilômetro/hora|quilómetro/hora|quilometro/hora|quilômetros/hora|quilómetros/hora|quilometros/hora")
         .put("Quilômetro por minuto", "km/min|quilômetro por minuto|quilómetro por minuto|quilometro por minuto|quilômetros por minuto|quilómetros por minuto|quilometros por minuto|quilômetro/minuto|quilómetro/minuto|quilometro/minuto|quilômetros/minuto|quilómetros/minuto|quilometros/minuto")
         .put("Quilômetro por segundo", "km/seg|quilômetro por segundo|quilómetro por segundo|quilometro por segundo|quilômetros por segundo|quilómetros por segundo|quilometros por segundo|quilômetro/segundo|quilómetro/segundo|quilometro/segundo|quilômetros/segundo|quilómetros/segundo|quilometros/segundo")
-        .put("Milha por hora", "mph|milha por hora|mi/h|milha/hora|milhas/hora|milhas por hora")
+        .put("Milha por hora", "mph|milha por hora|mi/h|milha/hora|milhas/hora|milhas por hora|mi por hora|mi/hora")
         .put("Nó", "kt|nó|nós|kn")
         .put("Pé por segundo", "ft/s|pé/s|pe/s|ft/seg|pé/seg|pe/seg|pé por segundo|pe por segundo|pés por segundo|pes por segundo")
         .put("Pé por minuto", "ft/min|pé/mind|pe/min|pé por minuto|pe por minuto|pés por minuto|pes por minuto")
@@ -756,8 +758,8 @@ public class PortugueseNumericWithUnit {
         .build();
 
     public static final ImmutableMap<String, String> WeightSuffixList = ImmutableMap.<String, String>builder()
-        .put("Tonelada métrica", "tonelada métrica|tonelada metrica|toneladas métricas|toneladas metricas")
-        .put("Tonelada", "ton|tonelada|toneladas")
+        .put("Tonelada métrica", "tonelada métrica|tonelada metrica|toneladas métricas|toneladas metricas|t métrica|t metrica|t métricas|t metricas|t.métrica|t.metrica|t.métricas|t.metricas|t. metrica|t. métrica")
+        .put("Tonelada", "ton|tonelada|toneladas|t")
         .put("Quilograma", "kg|quilograma|quilogramas|quilo|quilos|kilo|kilos")
         .put("Hectograma", "hg|hectograma|hectogramas")
         .put("Decagrama", "dag|decagrama|decagramas")
@@ -774,6 +776,8 @@ public class PortugueseNumericWithUnit {
         .put("Quilate", "ct|quilate|quilates")
         .build();
 
+    public static final List<String> AmbiguousWeightUnitList = Arrays.asList("g", "t");
+
     public static final ImmutableMap<String, String> AngleSuffixList = ImmutableMap.<String, String>builder()
         .put("Degree", "grau|graus|°")
         .put("Radian", "radiano|radianos|rad")
@@ -783,7 +787,8 @@ public class PortugueseNumericWithUnit {
     public static final List<String> AmbiguousAngleUnitList = Arrays.asList("volta", "voltas");
 
     public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
-        .put("null", "null")
+        .put("\\b\\d+\\s*\\p{L}+$", "((\\d+(\\s*\\p{L}+[-—–-]|\\p{L}+)\\d+)|(((\\p{L}|\\d)[-—–-]\\d+\\s*|\\p{L}\\d+)\\p{L}+))")
+        .put("\\bum$", "\\p{L}\\s+um\\b")
         .build();
 
     public static final ImmutableMap<String, String> TemperatureAmbiguityFiltersDict = ImmutableMap.<String, String>builder()

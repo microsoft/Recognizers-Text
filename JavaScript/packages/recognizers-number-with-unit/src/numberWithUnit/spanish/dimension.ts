@@ -34,7 +34,11 @@ export class SpanishDimensionExtractorConfiguration extends SpanishNumberWithUni
 
         this.suffixList = dimensionSuffixList;
         this.prefixList = new Map<string, string>();
-        this.ambiguousUnitList = SpanishNumericWithUnit.AmbiguousDimensionUnitList;
+        this.ambiguousUnitList = SpanishNumericWithUnit.AmbiguousDimensionUnitList.concat(
+                                 SpanishNumericWithUnit.AmbiguousAngleUnitList.concat(
+                                 SpanishNumericWithUnit.AmbiguousLengthUnitList.concat(
+                                 SpanishNumericWithUnit.AmbiguousSpeedUnitList.concat(
+                                 SpanishNumericWithUnit.AmbiguousWeightUnitList))));
     }
 }
 
