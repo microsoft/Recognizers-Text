@@ -531,9 +531,6 @@ SpecialYearTermsRegex: !nestedRegex
 YearPlusNumberRegex: !nestedRegex
   def: \b({SpecialYearTermsRegex}((?<year>(\d{2,4}))|{FullTextYearRegex}))\b
   references: [ FullTextYearRegex, SpecialYearTermsRegex ]
-NumberAsTimeRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
 NumberAsTimeRegex: !nestedRegex
   def: \b({WrittenTimeRegex}|({TimeHourNumRegex}|{BaseDateTime.HourRegex})(?<desc>\s*horas)?)\b
   references: [ WrittenTimeRegex, TimeHourNumRegex, BaseDateTime.HourRegex ]
