@@ -162,12 +162,12 @@ class EnglishDimensionExtractorConfiguration(EnglishNumberWithUnitExtractorConfi
         }
         self._prefix_list = dict()
         self._ambiguous_unit_list = EnglishNumericWithUnit.AmbiguousDimensionUnitList +\
-                                    EnglishNumericWithUnit.AmbiguousAngleUnitList +\
-                                    EnglishNumericWithUnit.AmbiguousAreaUnitList +\
-                                    EnglishNumericWithUnit.AmbiguousLengthUnitList +\
-                                    EnglishNumericWithUnit.AmbiguousSpeedUnitList +\
-                                    EnglishNumericWithUnit.AmbiguousVolumeUnitList +\
-                                    EnglishNumericWithUnit.AmbiguousWeightUnitList
+            EnglishNumericWithUnit.AmbiguousAngleUnitList +\
+            EnglishNumericWithUnit.AmbiguousAreaUnitList +\
+            EnglishNumericWithUnit.AmbiguousLengthUnitList +\
+            EnglishNumericWithUnit.AmbiguousSpeedUnitList +\
+            EnglishNumericWithUnit.AmbiguousVolumeUnitList +\
+            EnglishNumericWithUnit.AmbiguousWeightUnitList
 
 
 class EnglishTemperatureExtractorConfiguration(EnglishNumberWithUnitExtractorConfiguration):

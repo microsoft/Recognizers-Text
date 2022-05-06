@@ -183,4 +183,3 @@ class PortugueseDateTimeParserConfiguration(DateTimeParserConfiguration):
             result += 12
 
         return result
-

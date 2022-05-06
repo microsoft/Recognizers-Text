@@ -147,10 +147,10 @@ class PortugueseDimensionExtractorConfiguration(PortugueseNumberWithUnitExtracto
 
         self._prefix_list = dict()
         self._ambiguous_unit_list = PortugueseNumericWithUnit.AmbiguousDimensionUnitList +\
-                                    PortugueseNumericWithUnit.AmbiguousAngleUnitList +\
-                                    PortugueseNumericWithUnit.AmbiguousLengthUnitList +\
-                                    PortugueseNumericWithUnit.AmbiguousSpeedUnitList +\
-                                    PortugueseNumericWithUnit.AmbiguousWeightUnitList
+            PortugueseNumericWithUnit.AmbiguousAngleUnitList +\
+            PortugueseNumericWithUnit.AmbiguousLengthUnitList +\
+            PortugueseNumericWithUnit.AmbiguousSpeedUnitList +\
+            PortugueseNumericWithUnit.AmbiguousWeightUnitList
 
 
 class PortugueseTemperatureExtractorConfiguration(PortugueseNumberWithUnitExtractorConfiguration):
