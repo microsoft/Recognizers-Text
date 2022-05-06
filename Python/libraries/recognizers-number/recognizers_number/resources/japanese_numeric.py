@@ -80,10 +80,41 @@ class JapaneseNumeric:
     UnitMap = dict([("万万", "億"),
                     ("億万", "兆"),
                     ("万億", "兆"),
-                    (" ", "")])
+                    (" ", ""),
+                    ("れい", "〇"),
+                    ("ゼロ", "〇"),
+                    ("マル", "〇"),
+                    ("いち", "一"),
+                    ("いっ", "一"),
+                    ("に", "二"),
+                    ("さん", "三"),
+                    ("し", "四"),
+                    ("よん", "四"),
+                    ("ご", "五"),
+                    ("ろく", "六"),
+                    ("ろっ", "六"),
+                    ("しち", "七"),
+                    ("なな", "七"),
+                    ("はち", "八"),
+                    ("はっ", "八"),
+                    ("きゅう", "九"),
+                    ("く", "九"),
+                    ("じゅう", "十"),
+                    ("ひゃく", "百"),
+                    ("ぴゃく", "百"),
+                    ("びゃく", "百"),
+                    ("せん", "千"),
+                    ("ぜん", "千"),
+                    ("まん", "万"),
+                    ("ひゃくまん", "百万"),
+                    ("ぴゃくまん", "百万"),
+                    ("びゃくまん", "百万"),
+                    ("せんまん", "千万"),
+                    ("ぜんまん", "千万")])
     RoundDirectList = [r'万', r'億', r'兆']
     TenChars = [r'十']
     RoundNumberIntegerRegex = f'(十|百|千|万(?!万)|億|兆)'
+    RoundNumberIntegerHiraganaRegex = f'(じゅう|[ひぴび]ゃく|[せぜ]ん|まん|[ひぴび]ゃくまん|[せぜ]んまん)'
     AllMultiplierLookupRegex = f'({BaseNumbers.MultiplierLookupRegex}|ミリリットル(入れら)?|キロメートル|メートル|ミリメート)'
     DigitalNumberRegex = f'((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))'
     ZeroToNineFullHalfRegex = f'[\\d]'
@@ -93,7 +124,8 @@ class JapaneseNumeric:
     PercentageRegex = f'.+(?=パ\\s*ー\\s*セ\\s*ン\\s*ト)|.*(?=[％%])'
     DoubleAndRoundRegex = f'{ZeroToNineFullHalfRegex}+(\\.{ZeroToNineFullHalfRegex}+)?\\s*{RoundNumberIntegerRegex}{{1,2}}(\\s*(以上))?'
     FracSplitRegex = f'[はと]|分\\s*の'
-    ZeroToNineIntegerRegex = f'[〇一二三四五六七八九]'
+    ZeroToNineIntegerRegex = f'[零〇一二三四五六七八九]'
+    ZeroToNineIntegerHiraganaRegex = f'(れい|ゼロ|マル|い[ちっ]|に|さん|し|よん|ご|ろ[くっ]|しち|なな|は[ちっ]|きゅう|く)'
     HalfUnitRegex = f'半'
     NegativeNumberTermsRegex = f'(マ\\s*イ\\s*ナ\\s*ス)'
     NegativeNumberTermsRegexNum = f'((?<!(\\d+(\\s*{BaseNumbers.NumberMultiplierRegex})?\\s*)|[-−－])[-−－])'
@@ -104,6 +136,9 @@ class JapaneseNumeric:
     NotSingleRegex = f'(?<!(第|だい))({RoundNumberIntegerRegex}+(({ZeroToNineIntegerRegex}+|{RoundNumberIntegerRegex})+|{ZeroToNineFullHalfRegex}+|十)(\\s*(以上))?)|(({ZeroToNineIntegerRegex}+|{ZeroToNineFullHalfRegex}+|十)(\\s*{RoundNumberIntegerRegex}){{1,2}})(\\s*([零]?({ZeroToNineIntegerRegex}+|((,\\s*){ZeroToNineFullHalfRegex}{{3}})+|{ZeroToNineFullHalfRegex}+|十)(\\s*{RoundNumberIntegerRegex}){{0,1}}))*(\\s*(以上)?)'
     SingleRegex = f'(({ZeroToNineIntegerRegex}+|{ZeroToNineFullHalfRegex}+|十)(?={AllowListRegex}))'
     AllIntRegex = f'(?<!(ダース))({NotSingleRegex}|({ZeroToNineIntegerRegex}+|{RoundNumberIntegerRegex}+))'
+    NotSingleHiraganaRegex = f'(({ZeroToNineIntegerHiraganaRegex}?{RoundNumberIntegerHiraganaRegex})+{ZeroToNineIntegerHiraganaRegex}?)'
+    SingleHiriganaRegex = f'({ZeroToNineIntegerHiraganaRegex}+)'
+    AllIntHiriganaRegex = f'\\b({NotSingleHiraganaRegex}|{SingleHiriganaRegex})\\b'
     PlaceHolderPureNumber = f'\\b'
     PlaceHolderDefault = f'\\D|\\b'
     NumbersSpecialsCharsAggressive = f'((({NegativeNumberTermsRegexNum}|{NegativeNumberTermsRegex})\\s*)?({ZeroToNineFullHalfRegex}))+(?=\\b|\\D)'
@@ -115,8 +150,8 @@ class JapaneseNumeric:
     NumbersWithDozen = f'({AllIntRegex}([と]?{ZeroToNineIntegerRegex})?|{ZeroToNineFullHalfRegex}+)(ダース)'
     PointRegexStr = f'[\\.．・]'
     AllFloatRegex = f'{NegativeNumberTermsRegex}?{AllIntRegex}\\s*{PointRegexStr}\\s*[一二三四五六七八九](\\s*{ZeroToNineIntegerRegex})*'
-    NumbersWithAllowListRegex = f'(?<!(離は))({NegativeNumberTermsRegex}?({NotSingleRegex}|{SingleRegex})(?!({AllIntRegex}*([、.]{ZeroToNineIntegerRegex}+)*|{AllFloatRegex})*\\s*{PercentageSymbol}))(?!(\\s*{AllMultiplierLookupRegex}))'
-    NumbersAggressiveRegex = f'(({AllIntRegex})(?!({AllIntRegex}|([、.]{ZeroToNineIntegerRegex})|{AllFloatRegex}|\\s*{PercentageSymbol})))'
+    NumbersWithAllowListRegex = f'(?<!(離は))({NegativeNumberTermsRegex}?({NotSingleRegex}|{SingleRegex}|{AllIntHiriganaRegex})(?!({AllIntRegex}*([、.]{ZeroToNineIntegerRegex}+)*|{AllFloatRegex})*\\s*{PercentageSymbol}))(?!(\\s*{AllMultiplierLookupRegex}))'
+    NumbersAggressiveRegex = f'(({AllIntRegex}|{AllIntHiriganaRegex})(?!({AllIntRegex}|([、.]{ZeroToNineIntegerRegex})|{AllFloatRegex}|\\s*{PercentageSymbol})))'
     PointRegex = f'{PointRegexStr}'
     DoubleSpecialsCharsAggressive = f'((?<!({ZeroToNineFullHalfRegex}+[\\.．]{ZeroToNineFullHalfRegex}*))({NegativeNumberTermsRegexNum}\\s*)?{ZeroToNineFullHalfRegex}+[\\.．,]{ZeroToNineFullHalfRegex}+(?!({ZeroToNineFullHalfRegex}*[\\.．,]{ZeroToNineFullHalfRegex}+)))(?=\\b|\\D)'
     DoubleSpecialsChars = f'({DoubleSpecialsCharsAggressive})(?!\\s*{AllMultiplierLookupRegex})'
@@ -219,4 +254,5 @@ class JapaneseNumeric:
                                            ("次のもの", "current"),
                                            ("最後から3番目", "end"),
                                            ("最後から2番目", "end")])
+    AmbiguityFiltersDict = dict([("^に$", "に")])
 # pylint: enable=line-too-long

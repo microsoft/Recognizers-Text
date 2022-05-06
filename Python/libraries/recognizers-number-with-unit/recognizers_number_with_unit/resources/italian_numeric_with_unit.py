@@ -656,9 +656,16 @@ class ItalianNumericWithUnit:
     WeightSuffixList = dict([("Chilogrammo", "kg|kilogrammo|chilogrammo|chilogrammi|kilogrammi|kilo|kili|chilo|chili"),
                              ("Grammo", "g|grammo|grammi|gr"),
                              ("Milligrammo", "mg|milligrammo|milligrammi"),
+                             ("Microgrammo", "μg|microgrammo|microgrammi"),
                              ("Tonnellata", "tonnellata|tonnellate"),
                              ("Libbra", "libbra|libbre"),
                              ("Oncia", "oncia|once")])
     AmbiguousWeightUnitList = [r'g', r'oz']
+    AngleSuffixList = dict([("Degree", "grado|gradi|°"),
+                            ("Radian", "radiante|radianti|rad"),
+                            ("Turn", "giro|giri")])
+    AmbiguousAngleUnitList = [r'giro', r'giri']
     AmbiguityFiltersDict = dict([("\\bl\\b", "l\\s*('|’)")])
+    TemperatureAmbiguityFiltersDict = dict([("\\b(grad[oi]|°)$", "\\b((grad[oi]|°)\\s*(angolo|rotazione)|(ruota(re|t[oiae]|ndo)?|angolo|rotazioe)(\\s+(\\p{L}+|\\d+)){0,4}\\s*(grad[oi]\\b|°))")])
+    DimensionAmbiguityFiltersDict = dict([("\\b(grad[oi]|°)$", "\\b((grad[oi]|°)\\s*(c(elsius|entigrado)?|f(ah?renheit)?)|(temperatura)(\\s+(\\p{L}+|\\d+)){0,4}\\s*(grad[oi]\\b|°))")])
 # pylint: enable=line-too-long

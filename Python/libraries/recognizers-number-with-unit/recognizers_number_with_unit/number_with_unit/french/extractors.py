@@ -145,7 +145,12 @@ class FrenchDimensionExtractorConfiguration(FrenchNumberWithUnitExtractorConfigu
             **FrenchNumericWithUnit.WeightSuffixList
         }
         self._prefix_list = dict()
-        self._ambiguous_unit_list = FrenchNumericWithUnit.AmbiguousDimensionUnitList
+        self._ambiguous_unit_list = FrenchNumericWithUnit.AmbiguousDimensionUnitList +\
+                                    FrenchNumericWithUnit.AmbiguousAngleUnitList +\
+                                    FrenchNumericWithUnit.AmbiguousLengthUnitList +\
+                                    FrenchNumericWithUnit.AmbiguousSpeedUnitList +\
+                                    FrenchNumericWithUnit.AmbiguousVolumeUnitList +\
+                                    FrenchNumericWithUnit.AmbiguousWeightUnitList
 
 
 class FrenchTemperatureExtractorConfiguration(FrenchNumberWithUnitExtractorConfiguration):

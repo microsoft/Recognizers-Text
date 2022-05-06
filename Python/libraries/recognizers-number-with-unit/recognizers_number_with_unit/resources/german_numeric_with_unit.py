@@ -657,6 +657,7 @@ class GermanNumericWithUnit:
     WeightSuffixList = dict([("Kilogram", "kg|kilogramm|kilo"),
                              ("Gram", "g|gramm"),
                              ("Milligram", "mg|milligramm"),
+                             ("Microgram", "μg|mikrogramm"),
                              ("Barrel", "barrel"),
                              ("Gallon", "gallone|gallonen"),
                              ("Metric ton", "metrische tonne|metrische tonnen"),
@@ -665,5 +666,11 @@ class GermanNumericWithUnit:
                              ("Ounce", "unze|unzen|oz|ounces"),
                              ("Weight unit", "pennyweight|grain|british long ton|US short hundredweight|stone|dram")])
     AmbiguousWeightUnitList = [r'g', r'oz', r'stone', r'dram']
+    AngleSuffixList = dict([("Degree", "grad|°"),
+                            ("Radian", "radiant|rad"),
+                            ("Turn", "turn")])
+    AmbiguousAngleUnitList = [r'turn']
     AmbiguityFiltersDict = dict([("null", "null")])
+    TemperatureAmbiguityFiltersDict = dict([("\\b(grad|°)$", "\\b((grad|°)\\s*(winkel|dreh(ung|en|t)|gedreht)|(dreh(ung|en|t)|gedreht|winkel)(\\s+(\\p{L}+|\\d+)){0,4}\\s*(grad\\b|°))")])
+    DimensionAmbiguityFiltersDict = dict([("\\b(grad|°)$", "\\b((grad|°)\\s*(c(elsius|entigrate)?|f(ah?renheit)?)|(temperatur)(\\s+(\\p{L}+|\\d+)){0,4}\\s*(grad\\b|°))")])
 # pylint: enable=line-too-long

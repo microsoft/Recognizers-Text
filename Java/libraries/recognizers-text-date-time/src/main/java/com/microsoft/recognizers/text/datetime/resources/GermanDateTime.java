@@ -1310,7 +1310,7 @@ public class GermanDateTime {
 
     public static final List<String> DaytimeTermList = Arrays.asList("tag");
 
-    public static final List<String> NightTermList = Arrays.asList("nacht", "nacths", "primetime");
+    public static final List<String> NightTermList = Arrays.asList("nacht", "nachts", "primetime");
 
     public static final List<String> SameDayTerms = Arrays.asList("heute", "heutige datum", "heutige tag", "aktuelles datum", "aktuelle datum", "aktueller tag", "aktuellen tag", "aktuelle tag", "dieser morgen", "diesem morgen", "diesen morgen", "aktuelle morgen", "aktuellen morgen", "jetzige morgen", "jetzigen morgen");
 

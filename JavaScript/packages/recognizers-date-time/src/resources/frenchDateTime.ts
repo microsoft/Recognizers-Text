@@ -147,7 +147,7 @@ export namespace FrenchDateTime {
     export const SpecificTimeOfDayRegex = `\\b((${RelativeRegex}\\s+${TimeOfDayRegex})|(${TimeOfDayRegex}\\s*(${NextSuffixRegex}))\\b|\\b(du )?soir)s?\\b`;
     export const TimeFollowedUnit = `^\\s*${TimeUnitRegex}`;
     export const TimeNumberCombinedWithUnit = `\\b(?<num>\\d+(\\.\\d*)?)${TimeUnitRegex}`;
-    export const NowRegex = `\\b(?<now>(ce\\s+)?moment|maintenant|d[eè]s que possible|dqp|r[eé]cemment|auparavant)\\b`;
+    export const NowRegex = `\\b(?<now>(ce\\s+)?moment|maintenant|(d[eè]s|aussit[oô]t) que possible|dqp|r[eé]cemment|auparavant|le plus tôt( que)? possible)\\b`;
     export const SuffixRegex = `^\\s*((dans\\s+l[ea]\\s+)|(en\\s+)|(d(u|\\'))?(matin([eé]e)?|apr[eè]s-midi|soir[eé]e|nuit))\\b`;
     export const DateTimeTimeOfDayRegex = `\\b(?<timeOfDay>matin([eé]e)?|apr[eè]s-midi|nuit|soir)\\b`;
     export const DateTimeSpecificTimeOfDayRegex = `\\b((${RelativeRegex}\\s+${DateTimeTimeOfDayRegex})\\b|\\b(ce(tte)?\\s+)(soir|nuit))\\b`;
@@ -192,6 +192,7 @@ export namespace FrenchDateTime {
     export const ToTokenRegex = `\\b(moins|[aà]$)\\b`;
     export const AMTimeRegex = `(?<am>matin([ée]e)?)`;
     export const PMTimeRegex = `\\b(?<pm>(d'|l')?apr[eè]s-midi|nuit|((\\s*ce|du)\\s+)?soir)\\b`;
+    export const AsapTimeRegex = `((d[eè]s|le plus t[oô]t|aussit[oô]t)( que)? possible|dqp)`;
     export const BeforeRegex = `\\b(avant)\\b`;
     export const BeforeRegex2 = `\\b(entre\\s*(le|la(s)?)?)\\b`;
     export const AfterRegex = `\\b(apres)\\b`;

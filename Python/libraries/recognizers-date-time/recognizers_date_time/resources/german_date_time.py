@@ -56,7 +56,7 @@ class GermanDateTime:
     MonthFrontBetweenRegex = f'({MonthSuffixRegex}\\s+(zwischen\\s+)({DayRegex})\\s*{RangeConnectorRegex}\\s*({DayRegex})((\\s+|\\s*,\\s*){YearRegex})?)'
     BetweenRegex = f'((zwischen\\s+)({DayRegex})(\\s+{MonthSuffixRegex})?\\s*{RangeConnectorRegex}\\s*({DayRegex})(\\s+{MonthSuffixRegex})((\\s+|\\s*,\\s*){YearRegex})?|(zwischen\\s+)({DayRegex})(\\s+{MonthSuffixRegex})?\\s*{RangeConnectorRegex}\\s*({DayRegex})(\\s+{MonthSuffixRegex})?((\\s+|\\s*,\\s*){YearRegex})?)'
     MonthWithYear = f'\\b((?<month>apr(il|\\.)|aug(ust|\\.)|dez(ember|\\.)|feb(ruar|ber|\\.)|januar|j[äa]n(ner|\\.)|jul(e?i|l\\.)|jun([io]|\\.)|märz|mai|nov(ember|\\.)|okt(ober|\\.)|sept?(ember|\\.))(\\s*),?(\\s+des)?(\\s*)({YearRegex}|(?<order>nächste[mn]|letzte[mn]|diese(s|n))\\s+jahres))'
-    OneWordPeriodRegex = f'\\b((((im\\s+)?monat\\s+)?({RelativeRegex}\\s*(jahr\\s*(im\\s*)?)?)?(?<month>apr(il|\\.)|aug(ust|\\.)|dez(ember|\\.)|feb(ruar|ber|\\.)|j[äa]n(uar|ner|\\.)|jul(e?i|l\\.)|jun([io]|\\.)|märz|mai|nov(ember|\\.)|okt(ober|\\.)|sept?(ember|\\.)))|(?<business>unter\\s+der\\s+woche)|({RelativeRegex}\\s+)?((?<business>werktags|arbeitswoche)|woche(nende)?|monat(s)?|jahr|jahres)(?!(\\s+\\d+(?!({{BaseDateTime.BaseAmDescRegex}}|{{BaseDateTime.BasePmDescRegex}}))|\\s+bis\\s+heute)))\\b'
+    OneWordPeriodRegex = f'\\b((((im\\s+)?monat\\s+)?({RelativeRegex}\\s*(jahr\\s*(im\\s*)?)?)?(?<month>apr(il|\\.)|aug(ust|\\.)|dez(ember|\\.)|feb(ruar|ber|\\.)|j[äa]n(uar|ner|\\.)|jul(e?i|l\\.)|jun([io]|\\.)|märz|mai|nov(ember|\\.)|okt(ober|\\.)|sept?(ember|\\.)))|(?<business>unter\\s+der\\s+woche)|({RelativeRegex}\\s+)?((?<business>werktags|arbeitswoche)|woche(nende)?|monat(s)?|jahr|jahres)(?!(\\s+\\d+(?!({BaseDateTime.BaseAmDescRegex}|{BaseDateTime.BasePmDescRegex}))|\\s+bis\\s+heute)))\\b'
     MonthNumWithYear = f'({YearRegex}(\\s*)[/\\-\\.](\\s*){MonthNumRegex})|({MonthNumRegex}(\\s*)[/\\-\\.](\\s*){YearRegex})'
     WeekOfMonthRegex = f'(?<wom>((die|der)\\s+)(?<cardinal>erste[rns]?|1\\.|zweite[rns]?|2\\.|dritte[rns]?|3\\.|vierte[rns]?|4\\.|fünfte[rns]?|5\\.|letzte[rmns]?)\\s+woche\\s+(des|diese(s|n)|im)\\s+({MonthSuffixRegex}|monat(s)?))'
     WeekOfYearRegex = f'(?<woy>((die|der)\\s+)?(?<cardinal>(erste[rns]?|1\\.|zweite[rns]?|2\\.|dritte[rns]?|3\\.|vierte[rns]?|4\\.|fünfte[rns]?|5\\.|letzte[rmns]?)\\s+woche\\s+(im|diese(s|n)|\\s+des)?\\s+({YearRegex}|{RelativeRegex}\\s+jahr(en|es|e)?)))'
@@ -720,7 +720,7 @@ class GermanDateTime:
     AfternoonTermList = [r'nachmittag']
     EveningTermList = [r'abend']
     DaytimeTermList = [r'tag']
-    NightTermList = [r'nacht', r'nacths', r'primetime']
+    NightTermList = [r'nacht', r'nachts', r'primetime']
     SameDayTerms = [r'heute', r'heutige datum', r'heutige tag', r'aktuelles datum', r'aktuelle datum', r'aktueller tag', r'aktuellen tag', r'aktuelle tag', r'dieser morgen', r'diesem morgen', r'diesen morgen', r'aktuelle morgen', r'aktuellen morgen', r'jetzige morgen', r'jetzigen morgen']
     PlusOneDayTerms = [r'morgen', r'morgiger tag', r'morgigen tag', r'morgigen tages']
     MinusOneDayTerms = [r'gestern', r'gestriger tag', r'gestrigen tag', r'gestrigen tages']

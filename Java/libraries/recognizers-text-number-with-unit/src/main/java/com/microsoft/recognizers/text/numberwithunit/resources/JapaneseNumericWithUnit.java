@@ -242,6 +242,7 @@ public class JapaneseNumericWithUnit {
         .put("Surinamese dollar", "スリナム・ドル|スリナムドル")
         .put("Trinidad and Tobago dollar", "トリニダード・トバゴ・ドル|トリニダードトバゴ・ドル")
         .put("Tuvaluan dollar", "ツバル・ドル|ツバルドル")
+        .put("Dollar", "どる|$")
         .put("Chinese yuan", "人民元|元")
         .put("Fen", "分")
         .put("Jiao", "角")

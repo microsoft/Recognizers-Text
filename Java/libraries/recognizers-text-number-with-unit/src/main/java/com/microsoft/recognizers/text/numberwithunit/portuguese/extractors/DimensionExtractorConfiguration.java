@@ -9,9 +9,12 @@ import com.microsoft.recognizers.text.CultureInfo;
 import com.microsoft.recognizers.text.numberwithunit.Constants;
 import com.microsoft.recognizers.text.numberwithunit.resources.PortugueseNumericWithUnit;
 
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class DimensionExtractorConfiguration extends PortugueseNumberWithUnitExtractorConfiguration {
 
@@ -40,7 +43,13 @@ public class DimensionExtractorConfiguration extends PortugueseNumberWithUnitExt
 
     @Override
     public List<String> getAmbiguousUnitList() {
-        return PortugueseNumericWithUnit.AmbiguousDimensionUnitList;
+        return Stream.of(PortugueseNumericWithUnit.AmbiguousDimensionUnitList,
+                         PortugueseNumericWithUnit.AmbiguousDimensionUnitList,
+                         PortugueseNumericWithUnit.AmbiguousAngleUnitList,
+                         PortugueseNumericWithUnit.AmbiguousLengthUnitList,
+                         PortugueseNumericWithUnit.AmbiguousSpeedUnitList,
+                         PortugueseNumericWithUnit.AmbiguousWeightUnitList
+                        ).flatMap(Collection::stream).collect(Collectors.toList());
     }
 
     public static Map<String, String> DimensionSuffixList = new ImmutableMap.Builder<String, String>()

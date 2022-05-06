@@ -33,7 +33,11 @@ export class FrenchDimensionExtractorConfiguration extends FrenchNumberWithUnitE
 
         this.suffixList = dimensionSuffixList;
         this.prefixList = new Map<string, string>();
-        this.ambiguousUnitList = FrenchNumericWithUnit.AmbiguousDimensionUnitList;
+        this.ambiguousUnitList = FrenchNumericWithUnit.AmbiguousDimensionUnitList.concat(
+                                 FrenchNumericWithUnit.AmbiguousAngleUnitList.concat(
+                                 FrenchNumericWithUnit.AmbiguousLengthUnitList.concat(
+                                 FrenchNumericWithUnit.AmbiguousSpeedUnitList.concat(
+                                 FrenchNumericWithUnit.AmbiguousWeightUnitList))));
     }
 }
 

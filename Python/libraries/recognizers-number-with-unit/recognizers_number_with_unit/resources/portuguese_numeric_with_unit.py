@@ -600,7 +600,8 @@ class PortugueseNumericWithUnit:
                                         ("Millibitcoin", "MILLIBITCOIN"),
                                         ("Satoshi", "SATOSHI")])
     CompoundUnitConnectorRegex = f'\\b(?<spacer>e|com)\\b'
-    CurrencyPrefixList = dict([("Dólar", "$"),
+    MultiplierRegex = f'\\s*\\b(mil(h([ãa]o|[õo]es))?|bilh([ãa]o|[õo]es)|trilh([ãa]o|[õo]es)|qua[td]rilh([ãa]o|[õo]es)|quintilh([ãa]o|[õo]es))\\b'
+    CurrencyPrefixList = dict([("Dólar", "$|dólar|dolar|dólares|dolares"),
                                ("Dólar estadunidense", "us$|u$d|usd$|usd"),
                                ("Dólar do Caribe Oriental", "ec$|xcd"),
                                ("Dólar australiano", "a$|aud"),
@@ -671,15 +672,15 @@ class PortugueseNumericWithUnit:
                              ("Picômetro", "pm|picometro|picômetro|picómetro|picometros|picômetros|picómetros"),
                              ("Milha", "mi|milha|milhas"),
                              ("Jarda", "yd|jarda|jardas"),
-                             ("Polegada", "polegada|polegadas|\""),
+                             ("Polegada", "polegada|polegadas|\"|in"),
                              ("Pé", "pé|pe|pés|pes|ft"),
                              ("Ano luz", "ano luz|anos luz|al")])
-    AmbiguousLengthUnitList = [r'mi', r'milha', r'milhas', r'"']
+    AmbiguousLengthUnitList = [r'mi', r'milha', r'milhas', r'"', r'in', r'um']
     SpeedSuffixList = dict([("Metro por segundo", "metro/segundo|m/s|metro por segundo|metros por segundo|metros por segundos"),
                             ("Quilômetro por hora", "km/h|quilômetro por hora|quilómetro por hora|quilometro por hora|quilômetros por hora|quilómetros por hora|quilometros por hora|quilômetro/hora|quilómetro/hora|quilometro/hora|quilômetros/hora|quilómetros/hora|quilometros/hora"),
                             ("Quilômetro por minuto", "km/min|quilômetro por minuto|quilómetro por minuto|quilometro por minuto|quilômetros por minuto|quilómetros por minuto|quilometros por minuto|quilômetro/minuto|quilómetro/minuto|quilometro/minuto|quilômetros/minuto|quilómetros/minuto|quilometros/minuto"),
                             ("Quilômetro por segundo", "km/seg|quilômetro por segundo|quilómetro por segundo|quilometro por segundo|quilômetros por segundo|quilómetros por segundo|quilometros por segundo|quilômetro/segundo|quilómetro/segundo|quilometro/segundo|quilômetros/segundo|quilómetros/segundo|quilometros/segundo"),
-                            ("Milha por hora", "mph|milha por hora|mi/h|milha/hora|milhas/hora|milhas por hora"),
+                            ("Milha por hora", "mph|milha por hora|mi/h|milha/hora|milhas/hora|milhas por hora|mi por hora|mi/hora"),
                             ("Nó", "kt|nó|nós|kn"),
                             ("Pé por segundo", "ft/s|pé/s|pe/s|ft/seg|pé/seg|pe/seg|pé por segundo|pe por segundo|pés por segundo|pes por segundo"),
                             ("Pé por minuto", "ft/min|pé/mind|pe/min|pé por minuto|pe por minuto|pés por minuto|pes por minuto"),
@@ -708,8 +709,8 @@ class PortugueseNumericWithUnit:
                              ("Pint", "pinta|pintas|pinto|pintos|quartilho|quartilhos|pint|pints"),
                              ("Barril", "barril|barris|bbl"),
                              ("Onça líquida", "onça líquida|onca liquida|onças líquidas|oncas liquidas")])
-    WeightSuffixList = dict([("Tonelada métrica", "tonelada métrica|tonelada metrica|toneladas métricas|toneladas metricas"),
-                             ("Tonelada", "ton|tonelada|toneladas"),
+    WeightSuffixList = dict([("Tonelada métrica", "tonelada métrica|tonelada metrica|toneladas métricas|toneladas metricas|t métrica|t metrica|t métricas|t metricas|t.métrica|t.metrica|t.métricas|t.metricas|t. metrica|t. métrica"),
+                             ("Tonelada", "ton|tonelada|toneladas|t"),
                              ("Quilograma", "kg|quilograma|quilogramas|quilo|quilos|kilo|kilos"),
                              ("Hectograma", "hg|hectograma|hectogramas"),
                              ("Decagrama", "dag|decagrama|decagramas"),
@@ -724,11 +725,13 @@ class PortugueseNumericWithUnit:
                              ("Onça", "oz|onça|onca|onças|oncas"),
                              ("Grão", "grão|grao|grãos|graos|gr"),
                              ("Quilate", "ct|quilate|quilates")])
+    AmbiguousWeightUnitList = [r'g', r't']
     AngleSuffixList = dict([("Degree", "grau|graus|°"),
                             ("Radian", "radiano|radianos|rad"),
                             ("Turn", "volta|voltas")])
     AmbiguousAngleUnitList = [r'volta', r'voltas']
-    AmbiguityFiltersDict = dict([("null", "null")])
+    AmbiguityFiltersDict = dict([("\\b\\d+\\s*\\p{L}+$", "((\\d+(\\s*\\p{L}+[-—–-]|\\p{L}+)\\d+)|(((\\p{L}|\\d)[-—–-]\\d+\\s*|\\p{L}\\d+)\\p{L}+))"),
+                                 ("\\bum$", "\\p{L}\\s+um\\b")])
     TemperatureAmbiguityFiltersDict = dict([("\\b(graus?|°)$", "\\b((graus?|°)\\s*(ângulo|rotação)|(gira(r|do|ndo)?|ângulo|rotação)(\\s+(\\p{L}+|\\d+)){0,4}\\s*(graus?\\b|°))")])
     DimensionAmbiguityFiltersDict = dict([("\\b(graus?|°)$", "\\b((graus?|°)\\s*(c(elsius|entígrado)?|f(ah?renheit)?)|(temperatura)(\\s+(\\p{L}+|\\d+)){0,4}\\s*(graus?\\b|°))")])
 # pylint: enable=line-too-long
