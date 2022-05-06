@@ -12,11 +12,15 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex EachPrefixRegex { get; }
 
+        Regex EachSuffixRegex { get; }
+
         Regex EachUnitRegex { get; }
 
         Regex UnitRegex { get; }
 
         Regex EachDayRegex { get; }
+
+        Regex EachDateUnitRegex { get; }
 
         IDateTimeExtractor DurationExtractor { get; }
 

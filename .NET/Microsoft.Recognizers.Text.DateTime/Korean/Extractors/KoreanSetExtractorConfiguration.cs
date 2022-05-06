@@ -17,9 +17,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
 
         public static readonly Regex EachPrefixRegex = new Regex(DateTimeDefinitions.SetEachPrefixRegex, RegexFlags);
 
+        public static readonly Regex EachSuffixRegex = new Regex(DateTimeDefinitions.SetEachSuffixRegex, RegexFlags);
+
         public static readonly Regex LastRegex = new Regex(DateTimeDefinitions.SetLastRegex, RegexFlags);
 
         public static readonly Regex EachDayRegex = new Regex(DateTimeDefinitions.SetEachDayRegex, RegexFlags);
+
+        public static readonly Regex EachDateUnitRegex = new Regex(DateTimeDefinitions.SetEachDateUnitRegex, RegexFlags);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
@@ -53,10 +57,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
 
         Regex ICJKSetExtractorConfiguration.EachPrefixRegex => EachPrefixRegex;
 
+        Regex ICJKSetExtractorConfiguration.EachSuffixRegex => EachSuffixRegex;
+
         Regex ICJKSetExtractorConfiguration.EachUnitRegex => EachUnitRegex;
 
         Regex ICJKSetExtractorConfiguration.UnitRegex => UnitRegex;
 
         Regex ICJKSetExtractorConfiguration.EachDayRegex => EachDayRegex;
+
+        Regex ICJKSetExtractorConfiguration.EachDateUnitRegex => EachDateUnitRegex;
     }
 }

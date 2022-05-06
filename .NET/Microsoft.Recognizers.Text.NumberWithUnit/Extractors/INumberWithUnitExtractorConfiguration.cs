@@ -33,6 +33,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
         Regex NonUnitRegex { get; }
 
+        Regex MultiplierRegex { get; }
+
         Regex AmbiguousUnitNumberMultiplierRegex { get; }
 
         Dictionary<Regex, Regex> AmbiguityFiltersDict { get; }

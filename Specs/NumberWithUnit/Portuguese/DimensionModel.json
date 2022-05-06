@@ -1,4 +1,4 @@
-[
+﻿[
   {
     "Input": "são 180,25ml liquidos",
     "Results": [
@@ -396,6 +396,17 @@
         },
         "Start": 25,
         "End": 39
+      },
+      {
+        "Text": "t.métrica",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": null,
+          "unit": "Tonelada métrica",
+          "subtype": "Weight"
+        },
+        "Start": 4,
+        "End": 12
       }
     ]
   },
@@ -921,5 +932,95 @@
     "Input": "A água ferve a 100° Celsius",
     "NotSupported": "java, javascript, python",
     "Results": []
+  },
+  {
+    "Input": "1.450.000 t de julio",
+    "Results": [
+      {
+        "Text": "1.450.000 t",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "1450000",
+          "unit": "Tonelada",
+          "subtype": "Weight"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "Massa de aproximadamente 11.000 t métricas.",
+    "Results": [
+      {
+        "Text": "11.000 t métricas",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "11000",
+          "unit": "Tonelada métrica",
+          "subtype": "Weight"
+        },
+        "Start": 25,
+        "End": 41
+      }
+    ]
+  },
+  {
+    "Input": "Compartimento para computador até 19 in.",
+    "Results": [
+      {
+        "Text": "19 in",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "19",
+          "unit": "Polegada",
+          "subtype": "Length"
+        },
+        "Start": 34,
+        "End": 38
+      }
+    ]
+  },
+  {
+    "Input": "Atinge 10 mi por hora durante mais de 5 horas.",
+    "Results": [
+      {
+        "Text": "10 mi por hora",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "10",
+          "unit": "Milha por hora",
+          "subtype": "Speed"
+        },
+        "Start": 7,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "vou fazer um dia",
+    "NotSupported": "javascript",
+    "Results": []
+  },
+  {
+    "Input": "lançamento em três dois um...",
+    "NotSupported": "javascript",
+    "Results": []
+  },
+  {
+    "Input": "o diâmetro é de 23 um.",
+    "Results": [
+      {
+        "Text": "23 um",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "23",
+          "unit": "Micrômetro",
+          "subtype": "Length"
+        },
+        "Start": 16,
+        "End": 20
+      }
+    ]
   }
 ]

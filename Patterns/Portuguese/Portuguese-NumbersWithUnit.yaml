@@ -789,10 +789,12 @@ FractionalUnitNameToCodeMap: !dictionary
     Satoshi: SATOSHI
 CompoundUnitConnectorRegex: !simpleRegex
     def: \b(?<spacer>e|com)\b
+MultiplierRegex: !simpleRegex
+  def: \s*\b(mil(h([ãa]o|[õo]es))?|bilh([ãa]o|[õo]es)|trilh([ãa]o|[õo]es)|qua[td]rilh([ãa]o|[õo]es)|quintilh([ãa]o|[õo]es))\b
 CurrencyPrefixList: !dictionary
   types: [ string, string ]
   entries:
-    Dólar: $
+    Dólar: $|dólar|dolar|dólares|dolares
     Dólar estadunidense: us$|u$d|usd$|usd
     Dólar do Caribe Oriental: ec$|xcd
     Dólar australiano: a$|aud
@@ -892,7 +894,7 @@ LengthSuffixList: !dictionary
     Picômetro: pm|picometro|picômetro|picómetro|picometros|picômetros|picómetros
     Milha: mi|milha|milhas
     Jarda: yd|jarda|jardas
-    Polegada: polegada|polegadas|"
+    Polegada: polegada|polegadas|"|in
     Pé: pé|pe|pés|pes|ft
     Ano luz: ano luz|anos luz|al
 AmbiguousLengthUnitList: !list
@@ -902,6 +904,8 @@ AmbiguousLengthUnitList: !list
     - milha
     - milhas
     - '"'
+    - in
+    - um
 #SpeedExtractorConfiguration
 SpeedSuffixList: !dictionary
   types: [ string, string ]
@@ -910,7 +914,7 @@ SpeedSuffixList: !dictionary
     Quilômetro por hora: km/h|quilômetro por hora|quilómetro por hora|quilometro por hora|quilômetros por hora|quilómetros por hora|quilometros por hora|quilômetro/hora|quilómetro/hora|quilometro/hora|quilômetros/hora|quilómetros/hora|quilometros/hora
     Quilômetro por minuto: km/min|quilômetro por minuto|quilómetro por minuto|quilometro por minuto|quilômetros por minuto|quilómetros por minuto|quilometros por minuto|quilômetro/minuto|quilómetro/minuto|quilometro/minuto|quilômetros/minuto|quilómetros/minuto|quilometros/minuto
     Quilômetro por segundo: km/seg|quilômetro por segundo|quilómetro por segundo|quilometro por segundo|quilômetros por segundo|quilómetros por segundo|quilometros por segundo|quilômetro/segundo|quilómetro/segundo|quilometro/segundo|quilômetros/segundo|quilómetros/segundo|quilometros/segundo
-    Milha por hora: mph|milha por hora|mi/h|milha/hora|milhas/hora|milhas por hora
+    Milha por hora: mph|milha por hora|mi/h|milha/hora|milhas/hora|milhas por hora|mi por hora|mi/hora
     Nó: kt|nó|nós|kn
     Pé por segundo: ft/s|pé/s|pe/s|ft/seg|pé/seg|pe/seg|pé por segundo|pe por segundo|pés por segundo|pes por segundo
     Pé por minuto: ft/min|pé/mind|pe/min|pé por minuto|pe por minuto|pés por minuto|pes por minuto
@@ -957,8 +961,8 @@ VolumeSuffixList: !dictionary
 WeightSuffixList: !dictionary
   types: [ string, string ]
   entries:
-    Tonelada métrica: tonelada métrica|tonelada metrica|toneladas métricas|toneladas metricas
-    Tonelada: ton|tonelada|toneladas
+    Tonelada métrica: tonelada métrica|tonelada metrica|toneladas métricas|toneladas metricas|t métrica|t metrica|t métricas|t metricas|t.métrica|t.metrica|t.métricas|t.metricas
+    Tonelada: ton|tonelada|toneladas|t
     Quilograma: kg|quilograma|quilogramas|quilo|quilos|kilo|kilos
     Hectograma: hg|hectograma|hectogramas
     Decagrama: dag|decagrama|decagramas
@@ -973,6 +977,11 @@ WeightSuffixList: !dictionary
     Onça: oz|onça|onca|onças|oncas
     Grão: grão|grao|grãos|graos|gr
     Quilate: ct|quilate|quilates
+AmbiguousWeightUnitList: !list
+  types: [ string ]
+  entries:
+    - g
+    - t
 #AngleExtractorConfiguration
 AngleSuffixList: !dictionary
   types: [ string, string ]
@@ -988,7 +997,8 @@ AmbiguousAngleUnitList: !list
 AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:
-    'null': 'null'
+    \b\d+\s*\p{L}+$: ((\d+(\s*\p{L}+[-—–-]|\p{L}+)\d+)|(((\p{L}|\d)[-—–-]\d+\s*|\p{L}\d+)\p{L}+))
+    \bum$: \p{L}\s+um\b
 TemperatureAmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:

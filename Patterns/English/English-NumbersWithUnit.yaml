@@ -657,6 +657,8 @@ FractionalUnitNameToCodeMap: !dictionary
     Satoshi: SATOSHI
 CompoundUnitConnectorRegex: !simpleRegex
     def: (?<spacer>and)
+MultiplierRegex: !simpleRegex
+  def: \s*\b(thousand|million|billion|trillion)s?\b
 CurrencyPrefixList: !dictionary
   types: [ string, string ]
   entries:
@@ -994,7 +996,7 @@ AmbiguityFiltersDict: !dictionary
   entries:
     \bm\b: ((('|’)\s*m)|(m\s*('|’)))
     ^\d{5} [cf]$: \b([a-z]{2} \d{5} [cf])\b
-    \b\d+\s*\p{L}+$: ((\d+\s*\p{L}+[-—–-]?\d+)|((\p{L}[-—–-]?|\d[-—–-])\d+\s*\p{L}+))
+    \b\d+\s*\p{L}+$: ((\d+(\s*\p{L}+[-—–-]|\p{L}+)\d+)|(((\p{L}|\d)[-—–-]\d+\s*|\p{L}\d+)\p{L}+))
     ^(all|bob|pen|cad|cup|cop|sos|ron|mad|mop|zar|gel): (all|bob|pen|cad|cup|cop|sos|ron|mad|mop|zar|gel)\s*(\d|\p{L})
 TemperatureAmbiguityFiltersDict: !dictionary
   types: [ string, string ]
@@ -1004,4 +1006,5 @@ DimensionAmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:
     \b(deg(rees?)?|°)$: \b((deg(rees?)?|°)\s*(c(elsius|entigrate)?|f(ah?renheit)?)|(temperature)(\s+(\p{L}+|\d+)){0,4}\s*(deg(rees?)?\b|°))
+    \b\d+\s*\p{L}+$: ((\d+\s*\p{L}+\d+)|(\p{L}\d+\s*\p{L}+))
 ...

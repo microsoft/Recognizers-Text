@@ -1,7 +1,7 @@
 [
   {
     "Input": "Sarò fuori a Gen",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Gen",
@@ -13,7 +13,7 @@
   },
   {
     "Input": "Sarò fuori questo Gen",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "questo Gen",
@@ -25,7 +25,7 @@
   },
   {
     "Input": "Sarò fuori il mese di Gen",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il mese di Gen",
@@ -37,7 +37,7 @@
   },
   {
     "Input": "Mi mancava Gen 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Gen 2001",
@@ -49,7 +49,7 @@
   },
   {
     "Input": "Mi mancava Gen, 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Gen, 2001",
@@ -61,7 +61,7 @@
   },
   {
     "Input": "Sarò fuori a Feb",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Feb",
@@ -73,7 +73,7 @@
   },
   {
     "Input": "Sarò fuori questo Feb",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "questo Feb",
@@ -85,7 +85,7 @@
   },
   {
     "Input": "Sarò fuori il mese di Feb",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il mese di Feb",
@@ -97,7 +97,7 @@
   },
   {
     "Input": "Mi mancava Feb 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Feb 2001",
@@ -109,7 +109,7 @@
   },
   {
     "Input": "Mi mancava Feb, 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Feb, 2001",
@@ -121,7 +121,7 @@
   },
   {
     "Input": "Sarò fuori a Mar",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Mar",
@@ -133,7 +133,7 @@
   },
   {
     "Input": "Sarò fuori questo Mar",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "questo Mar",
@@ -145,7 +145,7 @@
   },
   {
     "Input": "Sarò fuori il mese di Mar",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il mese di Mar",
@@ -157,7 +157,7 @@
   },
   {
     "Input": "Mi mancava Mar 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Mar 2001",
@@ -169,7 +169,7 @@
   },
   {
     "Input": "Mi mancava Mar, 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Mar, 2001",
@@ -181,7 +181,7 @@
   },
   {
     "Input": "Sarò fuori ad Apr",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Apr",
@@ -193,7 +193,7 @@
   },
   {
     "Input": "Sarò fuori questo Apr",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "questo Apr",
@@ -205,7 +205,7 @@
   },
   {
     "Input": "Sarò fuori il mese di Apr",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il mese di Apr",
@@ -217,7 +217,7 @@
   },
   {
     "Input": "Mi mancava Apr 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Apr 2001",
@@ -229,7 +229,7 @@
   },
   {
     "Input": "Mi mancava Apr, 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Apr, 2001",
@@ -241,7 +241,7 @@
   },
   {
     "Input": "Sarò fuori a Mag",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Mag",
@@ -253,7 +253,7 @@
   },
   {
     "Input": "Sarò fuori questo Mag",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "questo Mag",
@@ -265,7 +265,7 @@
   },
   {
     "Input": "Sarò fuori il mese di Mag",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il mese di Mag",
@@ -277,7 +277,7 @@
   },
   {
     "Input": "Mi mancava Mag 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Mag 2001",
@@ -289,7 +289,7 @@
   },
   {
     "Input": "Mi mancava Mag, 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Mag, 2001",
@@ -301,7 +301,7 @@
   },
   {
     "Input": "Sarò fuori a Giu",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Giu",
@@ -313,7 +313,7 @@
   },
   {
     "Input": "Sarò fuori questo Giu",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "questo Giu",
@@ -325,7 +325,7 @@
   },
   {
     "Input": "Sarò fuori il mese di Giu",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il mese di Giu",
@@ -337,7 +337,7 @@
   },
   {
     "Input": "Mi mancava Giu 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Giu 2001",
@@ -349,7 +349,7 @@
   },
   {
     "Input": "Mi mancava Giu, 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Giu, 2001",
@@ -361,7 +361,7 @@
   },
   {
     "Input": "Sarò fuori a Lug",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Lug",
@@ -373,7 +373,7 @@
   },
   {
     "Input": "Sarò fuori questo Lug",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "questo Lug",
@@ -385,7 +385,7 @@
   },
   {
     "Input": "Sarò fuori il mese di Lug",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il mese di Lug",
@@ -397,7 +397,7 @@
   },
   {
     "Input": "Mi mancava Lug 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Lug 2001",
@@ -409,7 +409,7 @@
   },
   {
     "Input": "Mi mancava Lug, 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Lug, 2001",
@@ -421,7 +421,7 @@
   },
   {
     "Input": "Sarò fuori ad Ago",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Ago",
@@ -433,7 +433,7 @@
   },
   {
     "Input": "Sarò fuori questo Ago",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "questo Ago",
@@ -445,7 +445,7 @@
   },
   {
     "Input": "Sarò fuori il mese di Ago",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il mese di Ago",
@@ -457,7 +457,7 @@
   },
   {
     "Input": "Mi mancava Ago 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Ago 2001",
@@ -469,7 +469,7 @@
   },
   {
     "Input": "Mi mancava Ago, 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Ago, 2001",
@@ -481,7 +481,7 @@
   },
   {
     "Input": "Sarò fuori a Set",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Set",
@@ -493,7 +493,7 @@
   },
   {
     "Input": "Sarò fuori questo Set",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "questo Set",
@@ -505,7 +505,7 @@
   },
   {
     "Input": "Sarò fuori il mese di Set",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il mese di Set",
@@ -517,7 +517,7 @@
   },
   {
     "Input": "Mi mancava Set 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Set 2001",
@@ -529,7 +529,7 @@
   },
   {
     "Input": "Mi mancava Set, 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Set, 2001",
@@ -541,7 +541,7 @@
   },
   {
     "Input": "Sarò fuori a Sett",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Sett",
@@ -553,7 +553,7 @@
   },
   {
     "Input": "Sarò fuori questo Sett",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "questo Sett",
@@ -565,7 +565,7 @@
   },
   {
     "Input": "Sarò fuori il mese di Sett",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il mese di Sett",
@@ -577,7 +577,7 @@
   },
   {
     "Input": "Mi mancava Sett 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Sett 2001",
@@ -589,7 +589,7 @@
   },
   {
     "Input": "Mi mancava Sett, 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Sett, 2001",
@@ -601,7 +601,7 @@
   },
   {
     "Input": "Sarò fuori ad Ott",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Ott",
@@ -613,7 +613,7 @@
   },
   {
     "Input": "Sarò fuori questo Ott",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "questo Ott",
@@ -625,7 +625,7 @@
   },
   {
     "Input": "Sarò fuori il mese di Ott",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il mese di Ott",
@@ -637,7 +637,7 @@
   },
   {
     "Input": "Mi mancava Ott 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Ott 2001",
@@ -649,7 +649,7 @@
   },
   {
     "Input": "Mi mancava Ott, 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Ott, 2001",
@@ -661,7 +661,7 @@
   },
   {
     "Input": "Sarò fuori a Nov",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Nov",
@@ -673,7 +673,7 @@
   },
   {
     "Input": "Sarò fuori questo Nov",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "questo Nov",
@@ -685,7 +685,7 @@
   },
   {
     "Input": "Sarò fuori il mese di Nov",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il mese di Nov",
@@ -697,7 +697,7 @@
   },
   {
     "Input": "Mi mancava Nov 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Nov 2001",
@@ -709,7 +709,7 @@
   },
   {
     "Input": "Mi mancava Nov, 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Nov, 2001",
@@ -721,7 +721,7 @@
   },
   {
     "Input": "Sarò fuori a Dic",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Dic",
@@ -733,7 +733,7 @@
   },
   {
     "Input": "Sarò fuori questo Dic",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "questo Dic",
@@ -745,7 +745,7 @@
   },
   {
     "Input": "Sarò fuori il mese di Dic",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il mese di Dic",
@@ -757,7 +757,7 @@
   },
   {
     "Input": "Mi mancava Dic 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Dic 2001",
@@ -769,7 +769,7 @@
   },
   {
     "Input": "Mi mancava Dic, 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Dic, 2001",
@@ -781,7 +781,7 @@
   },
   {
     "Input": "Sarò fuori a Gennaio",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Gennaio",
@@ -793,7 +793,7 @@
   },
   {
     "Input": "Sarò fuori questo Gennaio",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "questo Gennaio",
@@ -805,7 +805,7 @@
   },
   {
     "Input": "Sarò fuori il mese di Gennaio",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il mese di Gennaio",
@@ -817,7 +817,7 @@
   },
   {
     "Input": "Mi mancava Gennaio 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Gennaio 2001",
@@ -829,7 +829,7 @@
   },
   {
     "Input": "Mi mancava Gennaio, 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Gennaio, 2001",
@@ -841,7 +841,7 @@
   },
   {
     "Input": "Sarò fuori a Febbraio",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Febbraio",
@@ -853,7 +853,7 @@
   },
   {
     "Input": "Sarò fuori questo Febbraio",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "questo Febbraio",
@@ -865,7 +865,7 @@
   },
   {
     "Input": "Sarò fuori il mese di Febbraio",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il mese di Febbraio",
@@ -877,7 +877,7 @@
   },
   {
     "Input": "Mi mancava Febbraio 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Febbraio 2001",
@@ -889,7 +889,7 @@
   },
   {
     "Input": "Mi mancava Febbraio, 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Febbraio, 2001",
@@ -901,7 +901,7 @@
   },
   {
     "Input": "Sarò fuori a Marzo",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Marzo",
@@ -913,7 +913,7 @@
   },
   {
     "Input": "Sarò fuori questo Marzo",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "questo Marzo",
@@ -925,7 +925,7 @@
   },
   {
     "Input": "Sarò fuori il mese di Marzo",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il mese di Marzo",
@@ -937,7 +937,7 @@
   },
   {
     "Input": "Mi mancava Marzo 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Marzo 2001",
@@ -949,7 +949,7 @@
   },
   {
     "Input": "Mi mancava Marzo, 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Marzo, 2001",
@@ -961,7 +961,7 @@
   },
   {
     "Input": "Sarò fuori ad Aprile",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Aprile",
@@ -973,7 +973,7 @@
   },
   {
     "Input": "Sarò fuori questo Aprile",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "questo Aprile",
@@ -985,7 +985,7 @@
   },
   {
     "Input": "Sarò fuori il mese di Aprile",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il mese di Aprile",
@@ -997,7 +997,7 @@
   },
   {
     "Input": "Mi mancava Aprile 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Aprile 2001",
@@ -1009,7 +1009,7 @@
   },
   {
     "Input": "Mi mancava Aprile, 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Aprile, 2001",
@@ -1021,7 +1021,7 @@
   },
   {
     "Input": "Sarò fuori a Giugno",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Giugno",
@@ -1033,7 +1033,7 @@
   },
   {
     "Input": "Sarò fuori questo Giugno",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "questo Giugno",
@@ -1045,7 +1045,7 @@
   },
   {
     "Input": "Sarò fuori il mese di Giugno",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il mese di Giugno",
@@ -1057,7 +1057,7 @@
   },
   {
     "Input": "Mi mancava Giugno 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Giugno 2001",
@@ -1069,7 +1069,7 @@
   },
   {
     "Input": "Mi mancava Giugno, 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Giugno, 2001",
@@ -1081,7 +1081,7 @@
   },
   {
     "Input": "Sarò fuori a Luglio",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Luglio",
@@ -1093,7 +1093,7 @@
   },
   {
     "Input": "Sarò fuori questo Luglio",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "questo Luglio",
@@ -1105,7 +1105,7 @@
   },
   {
     "Input": "Sarò fuori il mese di Luglio",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il mese di Luglio",
@@ -1117,7 +1117,7 @@
   },
   {
     "Input": "Mi mancava Luglio 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Luglio 2001",
@@ -1129,7 +1129,7 @@
   },
   {
     "Input": "Mi mancava Luglio, 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Luglio, 2001",
@@ -1141,7 +1141,7 @@
   },
   {
     "Input": "Sarò fuori ad Agosto",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Agosto",
@@ -1153,7 +1153,7 @@
   },
   {
     "Input": "Sarò fuori questo Agosto",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "questo Agosto",
@@ -1165,7 +1165,7 @@
   },
   {
     "Input": "Sarò fuori il mese di Agosto",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il mese di Agosto",
@@ -1177,7 +1177,7 @@
   },
   {
     "Input": "Mi mancava Agosto 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Agosto 2001",
@@ -1189,7 +1189,7 @@
   },
   {
     "Input": "Mi mancava Agosto, 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Agosto, 2001",
@@ -1201,7 +1201,7 @@
   },
   {
     "Input": "Sarò fuori a Settembre",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Settembre",
@@ -1213,7 +1213,7 @@
   },
   {
     "Input": "Sarò fuori questo Settembre",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "questo Settembre",
@@ -1225,7 +1225,7 @@
   },
   {
     "Input": "Sarò fuori il mese di Settembre",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il mese di Settembre",
@@ -1237,7 +1237,7 @@
   },
   {
     "Input": "Mi mancava Settembre 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Settembre 2001",
@@ -1249,7 +1249,7 @@
   },
   {
     "Input": "Mi mancava Settembre, 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Settembre, 2001",
@@ -1261,7 +1261,7 @@
   },
   {
     "Input": "Sarò fuori a Ottobre",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Ottobre",
@@ -1273,7 +1273,7 @@
   },
   {
     "Input": "Sarò fuori questo Ottobre",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "questo Ottobre",
@@ -1285,7 +1285,7 @@
   },
   {
     "Input": "Sarò fuori il mese di Ottobre",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il mese di Ottobre",
@@ -1297,7 +1297,7 @@
   },
   {
     "Input": "Mi mancava Ottobre 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Ottobre 2001",
@@ -1309,7 +1309,7 @@
   },
   {
     "Input": "Mi mancava Ottobre, 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Ottobre, 2001",
@@ -1321,7 +1321,7 @@
   },
   {
     "Input": "Sarò fuori a Novembre",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Novembre",
@@ -1333,7 +1333,7 @@
   },
   {
     "Input": "Sarò fuori questo Novembre",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "questo Novembre",
@@ -1345,7 +1345,7 @@
   },
   {
     "Input": "Sarò fuori il mese di Novembre",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il mese di Novembre",
@@ -1357,7 +1357,7 @@
   },
   {
     "Input": "Mi mancava Novembre 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Novembre 2001",
@@ -1369,7 +1369,7 @@
   },
   {
     "Input": "Mi mancava Novembre, 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Novembre, 2001",
@@ -1381,7 +1381,7 @@
   },
   {
     "Input": "Sarò fuori a Dicembre",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Dicembre",
@@ -1393,7 +1393,7 @@
   },
   {
     "Input": "Sarò fuori questo Dicembre",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "questo Dicembre",
@@ -1405,7 +1405,7 @@
   },
   {
     "Input": "Sarò fuori il mese di Dicembre",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il mese di Dicembre",
@@ -1417,7 +1417,7 @@
   },
   {
     "Input": "Mi mancava Dicembre 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Dicembre 2001",
@@ -1429,7 +1429,7 @@
   },
   {
     "Input": "Mi mancava Dicembre, 2001",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Dicembre, 2001",
@@ -1441,7 +1441,7 @@
   },
   {
     "Input": "Calendario per il mese di Settembre.",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il mese di Settembre",
@@ -1453,7 +1453,7 @@
   },
   {
     "Input": "Sarò fuori dal 4 al 22 questo mese",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "dal 4 al 22 questo mese",
@@ -1465,7 +1465,7 @@
   },
   {
     "Input": "Sarò fuori dal 4-23 il prossimo mese",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "dal 4-23 il prossimo mese",
@@ -1477,7 +1477,7 @@
   },
   {
     "Input": "Sarò fuori dal 3 fino al 12 di Sett hahaha",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "dal 3 fino al 12 di Sett",
@@ -1489,7 +1489,7 @@
   },
   {
     "Input": "Sarò fuori dal 4 al 23 il mese prossimo",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "dal 4 al 23 il mese prossimo",
@@ -1501,7 +1501,7 @@
   },
   {
     "Input": "Sarò fuori dal 4 fino al 23 di questo mese",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "dal 4 fino al 23 di questo mese",
@@ -1513,7 +1513,7 @@
   },
   {
     "Input": "Sarò fuori tra il 4 e il 22 questo mese",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "tra il 4 e il 22 questo mese",
@@ -1525,7 +1525,7 @@
   },
   {
     "Input": "Sarò fuori tra il 3 e il 12 di Sett hahaha",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "tra il 3 e il 12 di Sett",
@@ -1537,7 +1537,7 @@
   },
   {
     "Input": "Sarò fuori tra il 4 Settembre e l'8 Settembre",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "tra il 4 Settembre e l'8 Settembre",
@@ -1549,7 +1549,7 @@
   },
   {
     "Input": "Sarò fuori tra il 15 e il 19 Novembre",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "tra il 15 e il 19 Novembre",
@@ -1561,7 +1561,7 @@
   },
   {
     "Input": "Sarò fuori dal 4 al 22 Gennaio 2017",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "dal 4 al 22 Gennaio 2017",
@@ -1573,7 +1573,7 @@
   },
   {
     "Input": "Sarò fuori tra il 4-22 Gennaio 2017",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "tra il 4-22 Gennaio 2017",
@@ -1585,7 +1585,7 @@
   },
   {
     "Input": "Sarò fuori questa settimana",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "questa settimana",
@@ -1597,7 +1597,7 @@
   },
   {
     "Input": "Sarò fuori la prossima settimana",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "la prossima settimana",
@@ -1621,7 +1621,7 @@
   },
   {
     "Input": "Sarò fuori il prossimo Giugno",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il prossimo Giugno",
@@ -1633,7 +1633,7 @@
   },
   {
     "Input": "Sarò fuori a Giugno 2016",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Giugno 2016",
@@ -1645,7 +1645,7 @@
   },
   {
     "Input": "Sarò fuori a Giugno del prossimo anno",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Giugno del prossimo anno",
@@ -1657,7 +1657,7 @@
   },
   {
     "Input": "Sarò fuori questo weekend",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "questo weekend",
@@ -1693,7 +1693,7 @@
   },
   {
     "Input": "programma il campeggio da venerdì a domenica",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "da venerdì a domenica",
@@ -1729,17 +1729,17 @@
   },
   {
     "Input": "Sarò fuori tra 3 anni",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": []
   },
   {
     "Input": "Sarò fuori tra 3 settimane",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": []
   },
   {
     "Input": "Sarò fuori tra 3 mesi",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": []
   },
   {
@@ -1768,7 +1768,7 @@
   },
   {
     "Input": "Sarò fuori per l'ultimo anno",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "l'ultimo anno",
@@ -1780,7 +1780,7 @@
   },
   {
     "Input": "Sarò fuori per l'ultimo mese",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "l'ultimo mese",
@@ -1804,7 +1804,7 @@
   },
   {
     "Input": "ultime settimane",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "ultime settimane",
@@ -1828,7 +1828,7 @@
   },
   {
     "Input": "Sarò fuori dal 2 Ott. a Ottobre 22",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "dal 2 Ott. a Ottobre 22",
@@ -1840,7 +1840,7 @@
   },
   {
     "Input": "Sarò fuori dal 12 Gennaio 2016 - 02/22/2016",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "dal 12 Gennaio 2016 - 02/22/2016",
@@ -1852,7 +1852,7 @@
   },
   {
     "Input": "Sarò fuori dal 1 Gen fino a Mer, 22 di Gen",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "dal 1 Gen fino a Mer, 22 di Gen",
@@ -1864,7 +1864,7 @@
   },
   {
     "Input": "Sarò fuori da oggi fino a domani",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "da oggi fino a domani",
@@ -1876,7 +1876,7 @@
   },
   {
     "Input": "Sarò fuori da oggi al 22 Ottobre",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "da oggi al 22 Ottobre",
@@ -1888,7 +1888,7 @@
   },
   {
     "Input": "Sarò fuori dal 2 Ott. fino a dopodomani",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "dal 2 Ott. fino a dopodomani",
@@ -1900,7 +1900,7 @@
   },
   {
     "Input": "Sarò fuori da oggi fino alla prossima domenica",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "da oggi fino alla prossima domenica",
@@ -1912,7 +1912,7 @@
   },
   {
     "Input": "Sarò fuori da questo venerdì fino alla prossima domenica",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "da questo venerdì fino alla prossima domenica",
@@ -1924,7 +1924,7 @@
   },
   {
     "Input": "Sarò fuori da 2015/08/12 fino a Ottobre 22",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "da 2015/08/12 fino a Ottobre 22",
@@ -1960,7 +1960,7 @@
   },
   {
     "Input": "Sarò fuori a Novembre dal 19-20",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "a Novembre dal 19-20",
@@ -1972,7 +1972,7 @@
   },
   {
     "Input": "Sarò fuori a Novembre dal 19 al 20",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "a Novembre dal 19 al 20",
@@ -1984,7 +1984,7 @@
   },
   {
     "Input": "Sarò fuori a Novembre tra il 19 e 20",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "a Novembre tra il 19 e 20",
@@ -1996,7 +1996,7 @@
   },
   {
     "Input": "Sarò fuori il terzo trimestre del 2016",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il terzo trimestre del 2016",
@@ -2008,7 +2008,7 @@
   },
   {
     "Input": "Sarò fuori il terzo trimestre di quest'anno",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il terzo trimestre di quest'anno",
@@ -2020,7 +2020,7 @@
   },
   {
     "Input": "Sarò fuori 2015.3",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2015.3",
@@ -2032,7 +2032,7 @@
   },
   {
     "Input": "Sarò fuori 2015-3",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2015-3",
@@ -2044,7 +2044,7 @@
   },
   {
     "Input": "Sarò fuori 2015/3",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2015/3",
@@ -2056,7 +2056,7 @@
   },
   {
     "Input": "Sarò fuori 3/2015",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "3/2015",
@@ -2068,7 +2068,7 @@
   },
   {
     "Input": "Sarò fuori la terza settimana del 2027",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "la terza settimana del 2027",
@@ -2080,7 +2080,7 @@
   },
   {
     "Input": "Sarò fuori la terza settimana del prossimo anno",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "la terza settimana del prossimo anno",
@@ -2092,7 +2092,7 @@
   },
   {
     "Input": "Partirò questa estate",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "questa estate",
@@ -2104,7 +2104,7 @@
   },
   {
     "Input": "Pertirò la prossima primavera",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "la prossima primavera",
@@ -2116,7 +2116,7 @@
   },
   {
     "Input": "Partirò d'estate",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "estate",
@@ -2128,7 +2128,7 @@
   },
   {
     "Input": "Partirò in estate",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "estate",
@@ -2140,7 +2140,7 @@
   },
   {
     "Input": "Partirò l'estate 2016",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "l'estate 2016",
@@ -2152,7 +2152,7 @@
   },
   {
     "Input": "Partirò l'estate del 2016",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "l'estate del 2016",
@@ -2164,7 +2164,7 @@
   },
   {
     "Input": "vacanze del mese in arrivo",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "mese in arrivo",
@@ -2176,7 +2176,7 @@
   },
   {
     "Input": "vacanze del prossimo mese",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "prossimo mese",
@@ -2188,7 +2188,7 @@
   },
   {
     "Input": "Cosa devo fare la settimana del 30 Novembre",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "la settimana del 30 Novembre",
@@ -2200,7 +2200,7 @@
   },
   {
     "Input": "la settimana del 15 Settembre",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "la settimana del 15 Settembre",
@@ -2212,7 +2212,7 @@
   },
   {
     "Input": "settimana del 15 Settembre",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "settimana del 15 Settembre",
@@ -2224,7 +2224,7 @@
   },
   {
     "Input": "il mese del 15 Settembre",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il mese del 15 Settembre",
@@ -2236,7 +2236,7 @@
   },
   {
     "Input": "Partirò dopo il weekend",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il weekend",
@@ -2320,7 +2320,7 @@
   },
   {
     "Input": "Vi preghiamo di trovare un momento per incontrarci a fine mese",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "fine mese",
@@ -2332,7 +2332,7 @@
   },
   {
     "Input": "Vi preghiamo di trovare un momento per incontrarci a fine settimana",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "fine settimana",
@@ -2344,7 +2344,7 @@
   },
   {
     "Input": "Vi preghiamo di trovare un momento per incontrarci a fine settimana prossima",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "fine settimana prossima",
@@ -2356,7 +2356,7 @@
   },
   {
     "Input": "Vi preghiamo di trovare un momento per incontrarci a fine anno prossimo",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "fine anno prossimo",
@@ -2368,7 +2368,7 @@
   },
   {
     "Input": "Ci siamo incontrati la scorsa settimana",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "la scorsa settimana",
@@ -2380,7 +2380,7 @@
   },
   {
     "Input": "Vi preghiamo di trovare un momento per incontrarci all'inizio di questo mese",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "inizio di questo mese",
@@ -2392,7 +2392,7 @@
   },
   {
     "Input": "Vi preghiamo di trovare un momento per incontrarci all'inizio di questa settimana",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "inizio di questa settimana",
@@ -2404,7 +2404,7 @@
   },
   {
     "Input": "Vi preghiamo di trovare un momento per incontrarci all'inizio della prossima settimana",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "inizio della prossima settimana",
@@ -2416,7 +2416,7 @@
   },
   {
     "Input": "Vi preghiamo di trovare un momento per incontrarci all'inizio del prossimo anno",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "inizio del prossimo anno",
@@ -2428,7 +2428,7 @@
   },
   {
     "Input": "Cortana, per favore coordina un appuntamento di 25 minuti con antonio la prossima settimana tra mercoledì e venerdì.",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "la prossima settimana tra mercoledì e venerdì",
@@ -2440,7 +2440,7 @@
   },
   {
     "Input": "Cortana, per favore coordina un appuntamento di 25 minuti con antonio la prossima settimana da mercoledì a venerdì.",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "la prossima settimana da mercoledì a venerdì",
@@ -2452,7 +2452,7 @@
   },
   {
     "Input": "Cortana, per favore coordina un appuntamento di 25 minuti con antonio l'ultima settimana da mercoledì a venerdì.",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "l'ultima settimana da mercoledì a venerdì",
@@ -2464,7 +2464,7 @@
   },
   {
     "Input": "Cortana, per favore coordina un appuntamento di 25 minuti con antonio questa settimana tra mercoledì e venerdì.",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "questa settimana tra mercoledì e venerdì",
@@ -2476,7 +2476,7 @@
   },
   {
     "Input": "Sarò fuori l'anno 247",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "anno 247",
@@ -2488,7 +2488,7 @@
   },
   {
     "Input": "Negli anni 70",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "anni 70",
@@ -2500,7 +2500,7 @@
   },
   {
     "Input": "Negli anni 2000, è nato.",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "anni 2000",
@@ -2512,7 +2512,7 @@
   },
   {
     "Input": "Negli anni '70",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "anni '70",
@@ -2524,7 +2524,7 @@
   },
   {
     "Input": "Negli anni 1970",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "anni 1970",
@@ -2536,7 +2536,7 @@
   },
   {
     "Input": "Negli anni settanta",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "anni settanta",
@@ -2548,7 +2548,7 @@
   },
   {
     "Input": "Negli anni millenovecentosettanta",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "anni millenovecentosettanta",
@@ -2560,7 +2560,7 @@
   },
   {
     "Input": "Negli anni duemiladieci",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "anni duemiladieci",
@@ -2572,7 +2572,7 @@
   },
   {
     "Input": "Negli anni duemila",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "anni duemila",
@@ -2584,7 +2584,7 @@
   },
   {
     "Input": "Negli anni trenta",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "anni trenta",
@@ -2596,7 +2596,7 @@
   },
   {
     "Input": "Sarò fuori dal 2 al 7 Feb duemiladiciotto",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "dal 2 al 7 Feb duemiladiciotto",
@@ -2608,7 +2608,7 @@
   },
   {
     "Input": "Sarò fuori tra il 2 e il 7 Feb, duemiladiciotto",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "tra il 2 e il 7 Feb, duemiladiciotto",
@@ -2620,7 +2620,7 @@
   },
   {
     "Input": "Sarò fuori a Feb tra il 2-7 duemiladiciotto",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "a Feb tra il 2-7 duemiladiciotto",
@@ -2632,7 +2632,7 @@
   },
   {
     "Input": "è successo a Giugno del millenovecentonovantanove",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Giugno del millenovecentonovantanove",
@@ -2656,7 +2656,7 @@
   },
   {
     "Input": "Sarò fuori la prima settimana del duemilaventisette",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "la prima settimana del duemilaventisette",
@@ -2668,7 +2668,7 @@
   },
   {
     "Input": "Sarò fuori il primo trimestre del duemilaventi",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il primo trimestre del duemilaventi",
@@ -2680,7 +2680,7 @@
   },
   {
     "Input": "Nella primavera del millenovecentosettantotto",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "primavera del millenovecentosettantotto",
@@ -2692,7 +2692,7 @@
   },
   {
     "Input": "Anno duecentosessantasette",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "anno duecentosessantasette",
@@ -2704,7 +2704,7 @@
   },
   {
     "Input": "Sarò fuori la settimana dopo la prossima",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "la settimana dopo la prossima",
@@ -2716,7 +2716,7 @@
   },
   {
     "Input": "è successo nei 2 decenni passati",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2 decenni passati",
@@ -2728,7 +2728,7 @@
   },
   {
     "Input": "è successo negli ultimi due decenni",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "ultimi due decenni",
@@ -2740,7 +2740,7 @@
   },
   {
     "Input": "è successo nel prossimo decennio",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "prossimo decennio",
@@ -2776,7 +2776,7 @@
   },
   {
     "Input": "Cortana puoi trovarci un momento a partire dalla settimana prossima",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "a partire dalla settimana prossima",
@@ -2788,7 +2788,7 @@
   },
   {
     "Input": "Certo, facciamo uno Skype alla fine della prossima settimana",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "fine della prossima settimana",
@@ -2800,7 +2800,7 @@
   },
   {
     "Input": "Certo, facciamo uno Skype all'inizio della prossima settimana",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "inizio della prossima settimana",
@@ -2812,7 +2812,7 @@
   },
   {
     "Input": "Cortana, trovaci un momento alla fine di Marzo",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "fine di Marzo",
@@ -2824,7 +2824,7 @@
   },
   {
     "Input": "Cortana, per favore trovaci un momento a metà della prossima settimana",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "metà della prossima settimana",
@@ -2836,7 +2836,7 @@
   },
   {
     "Input": "Cortana, puoi organizzare un appuntamento a metà Marzo",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "metà Marzo",
@@ -2848,7 +2848,7 @@
   },
   {
     "Input": "Che ne dici di metà estate?",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "metà estate",
@@ -2860,7 +2860,7 @@
   },
   {
     "Input": "Posso trovarci un momento a partire dalla prossima settimana",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "a partire dalla prossima settimana",

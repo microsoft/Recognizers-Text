@@ -24,6 +24,14 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex FutureRegex { get; }
 
+        Regex TimePeriodLeftRegex { get; }
+
+        Regex RelativeRegex { get; }
+
+        Regex RestOfDateRegex { get; }
+
+        Regex ThisRegex { get; }
+
         IExtractor CardinalExtractor { get; }
 
         IDateTimeExtractor SingleDateExtractor { get; }

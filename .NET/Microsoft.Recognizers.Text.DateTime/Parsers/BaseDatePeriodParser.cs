@@ -27,6 +27,36 @@ namespace Microsoft.Recognizers.Text.DateTime
             config = configuration;
         }
 
+        public static bool IsPresent(int swift)
+        {
+            return swift == 0;
+        }
+
+        public static Tuple<DateObject, DateObject> GetWeekRangeFromDate(DateObject date)
+        {
+            var startDate = date.This(DayOfWeek.Monday);
+            var endDate = inclusiveEndPeriod ? startDate.AddDays(Constants.WeekDayCount - 1) : startDate.AddDays(Constants.WeekDayCount);
+            return new Tuple<DateObject, DateObject>(startDate, endDate);
+        }
+
+        public static Tuple<DateObject, DateObject> GetMonthRangeFromDate(DateObject date)
+        {
+            var startDate = DateObject.MinValue.SafeCreateFromValue(date.Year, date.Month, 1);
+            DateObject endDate;
+            if (date.Month < 12)
+            {
+                endDate = DateObject.MinValue.SafeCreateFromValue(date.Year, date.Month + 1, 1);
+            }
+            else
+            {
+                endDate = DateObject.MinValue.SafeCreateFromValue(date.Year + 1, 1, 1);
+            }
+
+            endDate = inclusiveEndPeriod ? endDate.AddDays(-1) : endDate;
+
+            return new Tuple<DateObject, DateObject>(startDate, endDate);
+        }
+
         // @TODO Refactor code to remove the cycle between BaseDatePeriodParser and its config.
         public static DateContext GetYearContext(ISimpleDatePeriodParserConfiguration config, string startDateStr, string endDateStr, string text)
         {
@@ -183,87 +213,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
         {
             return candidateResults;
-        }
-
-        private static ModAndDateResult GetModAndDate(DateObject beginDate, DateObject endDate, DateObject referenceDate, string timex, bool future)
-        {
-            DateObject beginDateResult = beginDate;
-            DateObject endDateResult = endDate;
-            var isBusinessDay = timex.EndsWith(Constants.TimexBusinessDay, StringComparison.Ordinal);
-            var businessDayCount = 0;
-            List<DateObject> dateList = null;
-
-            if (isBusinessDay)
-            {
-                businessDayCount = int.Parse(timex.Substring(1, timex.Length - 3), CultureInfo.InvariantCulture);
-            }
-
-            if (future)
-            {
-                string mod = Constants.AFTER_MOD;
-
-                // For future the beginDate should add 1 first
-                if (isBusinessDay)
-                {
-                    beginDateResult = DurationParsingUtil.GetNextBusinessDay(referenceDate);
-                    endDateResult = DurationParsingUtil.GetNthBusinessDay(beginDateResult, businessDayCount - 1, true, out dateList);
-                    endDateResult = endDateResult.AddDays(1);
-                    return new ModAndDateResult(beginDateResult, endDateResult, mod, dateList);
-                }
-                else
-                {
-                    beginDateResult = referenceDate.AddDays(1);
-                    endDateResult = DurationParsingUtil.ShiftDateTime(timex, beginDateResult, true);
-                    return new ModAndDateResult(beginDateResult, endDateResult, mod, null);
-                }
-            }
-            else
-            {
-                const string mod = Constants.BEFORE_MOD;
-
-                if (isBusinessDay)
-                {
-                    endDateResult = DurationParsingUtil.GetNextBusinessDay(endDateResult, false);
-                    beginDateResult = DurationParsingUtil.GetNthBusinessDay(endDateResult, businessDayCount - 1, false, out dateList);
-                    endDateResult = endDateResult.AddDays(1);
-                    return new ModAndDateResult(beginDateResult, endDateResult, mod, dateList);
-                }
-                else
-                {
-                    beginDateResult = DurationParsingUtil.ShiftDateTime(timex, endDateResult, false);
-                    return new ModAndDateResult(beginDateResult, endDateResult, mod, null);
-                }
-            }
-        }
-
-        private static bool IsPresent(int swift)
-        {
-            return swift == 0;
-        }
-
-        private static Tuple<DateObject, DateObject> GetWeekRangeFromDate(DateObject date)
-        {
-            var startDate = date.This(DayOfWeek.Monday);
-            var endDate = inclusiveEndPeriod ? startDate.AddDays(Constants.WeekDayCount - 1) : startDate.AddDays(Constants.WeekDayCount);
-            return new Tuple<DateObject, DateObject>(startDate, endDate);
-        }
-
-        private static Tuple<DateObject, DateObject> GetMonthRangeFromDate(DateObject date)
-        {
-            var startDate = DateObject.MinValue.SafeCreateFromValue(date.Year, date.Month, 1);
-            DateObject endDate;
-            if (date.Month < 12)
-            {
-                endDate = DateObject.MinValue.SafeCreateFromValue(date.Year, date.Month + 1, 1);
-            }
-            else
-            {
-                endDate = DateObject.MinValue.SafeCreateFromValue(date.Year + 1, 1, 1);
-            }
-
-            endDate = inclusiveEndPeriod ? endDate.AddDays(-1) : endDate;
-
-            return new Tuple<DateObject, DateObject>(startDate, endDate);
         }
 
         // Shift resolution when a modifier like "end of" or "middle of" is present.
@@ -1616,7 +1565,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     if (config.PastRegex.IsMatch(beforeStr) || config.PastRegex.IsMatch(afterStr))
                     {
-                        modAndDateResult = GetModAndDate(beginDate, endDate, referenceDate, durationResult.Timex, false);
+                        modAndDateResult = ModAndDateResult.GetModAndDate(beginDate, endDate, referenceDate, durationResult.Timex, false);
                         beginDate = modAndDateResult.BeginDate;
                     }
 
@@ -1626,7 +1575,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     if (config.WithinNextPrefixRegex.IsExactMatch(beforeStr, trim: true) &&
                         DurationParsingUtil.IsDateDuration(durationResult.Timex) && string.IsNullOrEmpty(afterStr))
                     {
-                        modAndDateResult = GetModAndDate(beginDate, endDate, referenceDate, durationResult.Timex, true);
+                        modAndDateResult = ModAndDateResult.GetModAndDate(beginDate, endDate, referenceDate, durationResult.Timex, true);
 
                         // In GetModAndDate, this "future" resolution will add one day to beginDate/endDate,
                         // but for the "within" case it should start from the current day.
@@ -1640,7 +1589,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         if (config.WithinNextPrefixRegex.IsExactMatch(afterStr, trim: true) && DurationParsingUtil.IsDateDuration(durationResult.Timex) &&
                             (config.FutureRegex.MatchEnd(beforeStr, trim: true).Success || string.IsNullOrEmpty(beforeStr)))
                         {
-                            modAndDateResult = GetModAndDate(beginDate, endDate, referenceDate, durationResult.Timex, true);
+                            modAndDateResult = ModAndDateResult.GetModAndDate(beginDate, endDate, referenceDate, durationResult.Timex, true);
 
                             // In GetModAndDate, this "future" resolution will add one day to beginDate/endDate,
                             // but for the "within" case it should start from the current day.
@@ -1652,7 +1601,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     if (config.FutureRegex.IsExactMatch(beforeStr, trim: true))
                     {
-                        modAndDateResult = GetModAndDate(beginDate, endDate, referenceDate, durationResult.Timex, true);
+                        modAndDateResult = ModAndDateResult.GetModAndDate(beginDate, endDate, referenceDate, durationResult.Timex, true);
                         beginDate = modAndDateResult.BeginDate;
                         endDate = modAndDateResult.EndDate;
                         isMatch = true;
@@ -1660,7 +1609,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     if (config.FutureSuffixRegex.IsMatch(afterStr))
                     {
-                        modAndDateResult = GetModAndDate(beginDate, endDate, referenceDate, durationResult.Timex, true);
+                        modAndDateResult = ModAndDateResult.GetModAndDate(beginDate, endDate, referenceDate, durationResult.Timex, true);
                         beginDate = modAndDateResult.BeginDate;
                         endDate = modAndDateResult.EndDate;
                     }
@@ -1669,7 +1618,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     if (config.InConnectorRegex.IsExactMatch(beforeStr, trim: true) &&
                         !DurationParsingUtil.IsMultipleDuration(durationResult.Timex) && !isMatch)
                     {
-                        modAndDateResult = GetModAndDate(beginDate, endDate, referenceDate, durationResult.Timex, true);
+                        modAndDateResult = ModAndDateResult.GetModAndDate(beginDate, endDate, referenceDate, durationResult.Timex, true);
 
                         // Change the duration value and the beginDate
                         var unit = durationResult.Timex.Substring(durationResult.Timex.Length - 1);

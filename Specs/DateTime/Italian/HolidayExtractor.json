@@ -1,7 +1,7 @@
 [
   {
     "Input": "Tornerò a natale",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "natale",
@@ -13,7 +13,7 @@
   },
   {
     "Input": "Tornerò il giorno di natale",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "giorno di natale",
@@ -25,7 +25,7 @@
   },
   {
     "Input": "Tornerò al capodanno cinese",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "capodanno cinese",
@@ -37,7 +37,7 @@
   },
   {
     "Input": "Tornerò il giorno del ringraziamento",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "giorno del ringraziamento",
@@ -49,7 +49,7 @@
   },
   {
     "Input": "Tornerò alla festa del papà",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "festa del papà",
@@ -61,7 +61,7 @@
   },
   {
     "Input": "Tornerò al capodanno cinese di quest'anno",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "capodanno cinese di quest'anno",
@@ -73,7 +73,7 @@
   },
   {
     "Input": "Tornerò al capodanno cinese del 2016",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "capodanno cinese del 2016",
@@ -85,7 +85,7 @@
   },
   {
     "Input": "Tornerò al capodanno cinese 2016",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "capodanno cinese 2016",
@@ -97,7 +97,7 @@
   },
   {
     "Input": "Tornerò il primo giorno di quaresima",
-    "NotSupportedByDesign": "python,javascript,python",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "giorno di quaresima",

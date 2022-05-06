@@ -1,7 +1,6 @@
 [
   {
     "Input": "Ich bin an Ostern 2020 wieder zurück",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Ostern 2020",
@@ -13,7 +12,6 @@
   },
   {
     "Input": "Ich besuche dich an Weiberfastnacht 2019",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Weiberfastnacht 2019",
@@ -25,7 +23,6 @@
   },
   {
     "Input": "Ich besuche dich an Weiberfastnacht",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Weiberfastnacht",
@@ -37,7 +34,7 @@
   },
   {
     "Input": "Ich besuche dich an Karneval",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "Karneval",
@@ -49,7 +46,6 @@
   },
   {
     "Input": "Ich besuche dich an Karneval 2017",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Karneval 2017",
@@ -61,7 +57,6 @@
   },
   {
     "Input": "Ich besuche dich an Aschermittwoch",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Aschermittwoch",
@@ -73,7 +68,6 @@
   },
   {
     "Input": "Ich besuche dich an Aschermittwoch 2019",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Aschermittwoch 2019",
@@ -85,7 +79,6 @@
   },
   {
     "Input": "Ich besuche dich an Palmensonntag",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Palmensonntag",
@@ -97,7 +90,6 @@
   },
   {
     "Input": "Ich besuche dich an Palmensonntag 2018",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Palmensonntag 2018",
@@ -109,7 +101,6 @@
   },
   {
     "Input": "Ich besuche dich an Karfreitag",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Karfreitag",
@@ -121,7 +112,6 @@
   },
   {
     "Input": "Ich besuche dich an Karfreitag 2018",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Karfreitag 2018",
@@ -133,7 +123,6 @@
   },
   {
     "Input": "Ich besuche dich an Christi Himmelfahrt",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Christi Himmelfahrt",
@@ -145,7 +134,6 @@
   },
   {
     "Input": "Ich besuche dich an Christi Himmelfahrt 2018",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Christi Himmelfahrt 2018",
@@ -157,7 +145,6 @@
   },
   {
     "Input": "Ich besuche dich am Pfingstsonntag",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Pfingstsonntag",
@@ -169,7 +156,6 @@
   },
   {
     "Input": "Ich besuche dich am Pfingstsonntag 2018",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Pfingstsonntag 2018",
@@ -181,7 +167,6 @@
   },
   {
     "Input": "Ich besuche dich an Pfingstmontag",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Pfingstmontag",
@@ -193,7 +178,6 @@
   },
   {
     "Input": "Ich besuche dich an Pfingstmontag 2018",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Pfingstmontag 2018",
@@ -205,7 +189,6 @@
   },
   {
     "Input": "Ich besuche dich an Fronleichnam",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Fronleichnam",
@@ -217,7 +200,6 @@
   },
   {
     "Input": "Ich besuche dich an Fronleichnam 2018",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Fronleichnam 2018",
@@ -229,7 +211,6 @@
   },
   {
     "Input": "Ich besuche dich an Rosenmontag",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Rosenmontag",
@@ -241,7 +222,6 @@
   },
   {
     "Input": "Ich besuche dich an Rosenmontag 2018",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Rosenmontag 2018",
@@ -253,7 +233,6 @@
   },
   {
     "Input": "Ich besuche dich an Fastnacht",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Fastnacht",
@@ -265,7 +244,6 @@
   },
   {
     "Input": "Ich besuche dich an Fastnacht 2018",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Fastnacht 2018",
@@ -277,7 +255,6 @@
   },
   {
     "Input": "Ich besuche dich an Gründonnerstag",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Gründonnerstag",
@@ -289,7 +266,6 @@
   },
   {
     "Input": "Ich besuche dich an Gründonnerstag 2018",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Gründonnerstag 2018",
@@ -301,7 +277,6 @@
   },
   {
     "Input": "Ich besuche dich an Himmelfahrt",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Himmelfahrt",
@@ -313,7 +288,6 @@
   },
   {
     "Input": "Ich besuche dich an Himmelfahrt 2018",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Himmelfahrt 2018",
@@ -325,7 +299,6 @@
   },
   {
     "Input": "Ich besuche dich an Volkstrauertag",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Volkstrauertag",
@@ -337,7 +310,6 @@
   },
   {
     "Input": "Ich besuche dich an Volkstrauertag 2018",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Volkstrauertag 2018",
@@ -349,7 +321,6 @@
   },
   {
     "Input": "Ich besuche dich am Buß- und Bettag",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Buß- und Bettag",
@@ -361,7 +332,6 @@
   },
   {
     "Input": "Ich besuche dich an Buß- und Bettag 2018",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Buß- und Bettag 2018",
@@ -373,7 +343,6 @@
   },
   {
     "Input": "Ich besuche dich an Totensonntag",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Totensonntag",
@@ -385,7 +354,6 @@
   },
   {
     "Input": "Ich besuche dich an Totensonntag 2018",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Totensonntag 2018",
@@ -397,7 +365,6 @@
   },
   {
     "Input": "Ich besuche dich am erster Advent",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "erster Advent",
@@ -409,7 +376,6 @@
   },
   {
     "Input": "Ich besuche dich am erster Advent 2018",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "erster Advent 2018",
@@ -421,7 +387,6 @@
   },
   {
     "Input": "Ich besuche dich am 1. Advent",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "1. Advent",
@@ -433,7 +398,6 @@
   },
   {
     "Input": "Ich besuche dich am 1. Advent 2018",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "1. Advent 2018",
@@ -445,7 +409,6 @@
   },
   {
     "Input": "Ich besuche dich am zweiten Advent",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "zweiten Advent",
@@ -457,7 +420,6 @@
   },
   {
     "Input": "Ich besuche dich am zweiten Advent 2018",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "zweiten Advent 2018",
@@ -469,7 +431,6 @@
   },
   {
     "Input": "Ich besuche dich am 2. Advent",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2. Advent",
@@ -481,7 +442,6 @@
   },
   {
     "Input": "Ich besuche dich am 2. Advent 2018",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2. Advent 2018",
@@ -493,7 +453,6 @@
   },
   {
     "Input": "Ich besuche dich am 3. Advent",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "3. Advent",
@@ -505,7 +464,6 @@
   },
   {
     "Input": "Ich besuche dich am 3. Advent 2018",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "3. Advent 2018",
@@ -517,7 +475,6 @@
   },
   {
     "Input": "Ich besuche dich am dritter Advent",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "dritter Advent",
@@ -529,7 +486,6 @@
   },
   {
     "Input": "Ich besuche dich am dritter Advent 2018",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "dritter Advent 2018",
@@ -541,7 +497,6 @@
   },
   {
     "Input": "Ich besuche dich am 4. Advent",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "4. Advent",
@@ -553,7 +508,6 @@
   },
   {
     "Input": "Ich besuche dich am 4. Advent 2018",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "4. Advent 2018",
@@ -565,7 +519,6 @@
   },
   {
     "Input": "Ich besuche dich am vierten Advent",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "vierten Advent",
@@ -580,7 +533,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "vierten Advent 2018",
@@ -592,7 +545,6 @@
   },
   {
     "Input": "Ich besuche dich am schweizer Buß- und Bettag",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "schweizer Buß- und Bettag",
@@ -604,7 +556,6 @@
   },
   {
     "Input": "Ich bin an Ostern wieder zurück",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Ostern",
@@ -616,7 +567,6 @@
   },
   {
     "Input": "An Weihnachten bin ich bestimmt wieder da",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Weihnachten",
@@ -628,7 +578,6 @@
   },
   {
     "Input": "Weihnachten 2010 war wirklich schön",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Weihnachten 2010",
@@ -640,7 +589,6 @@
   },
   {
     "Input": "Mal schauen was wir dieses Jahr am Vatertag so unternehmen",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Vatertag",
@@ -652,7 +600,6 @@
   },
   {
     "Input": "An Mariä Himmelfahrt haben wir Bayern frei.",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Mariä Himmelfahrt",
@@ -664,7 +611,6 @@
   },
   {
     "Input": "Was machst du am Tag der deutschen Einheit?",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Tag der deutschen Einheit",
@@ -676,7 +622,6 @@
   },
   {
     "Input": "Was machst du an Ostermontag 2017?",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "Ostermontag 2017",

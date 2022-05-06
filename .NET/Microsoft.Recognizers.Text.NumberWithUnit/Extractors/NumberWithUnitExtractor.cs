@@ -616,6 +616,31 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 }
             }
 
+            // Find prefix units with no space, e.g. '$50'.
+            var noSpaceUnits = new List<Token>();
+            foreach (var prefix in prefixResult)
+            {
+                if (prefix.Data is ExtractResult numberResult)
+                {
+                    var unitStr = prefix.Text.Substring(0, (int)numberResult.Start);
+                    if (unitStr.Length > 0 && unitStr.Equals(unitStr.TrimEnd(), StringComparison.Ordinal))
+                    {
+                        noSpaceUnits.Add(new Token((int)prefix.Start, unitStr.Length));
+                    }
+                }
+            }
+
+            // Remove from suffixResult units that are also prefix units with no space,
+            // e.g. in '1 $50', '$' should not be considered a suffix unit.
+            for (var index = suffixResult.Count - 1; index >= 0; index--)
+            {
+                var suffix = suffixResult[index];
+                if (noSpaceUnits.Any(o => suffix.Start <= o.Start && suffix.Start + suffix.Length >= o.End))
+                {
+                    suffixResult.RemoveAt(index);
+                }
+            }
+
             // Add Separate unit
             for (var index = totalCandidate; index < extractResults.Count; index++)
             {
@@ -623,8 +648,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 suffixResult.Add(extractResults[index]);
             }
 
-            if (suffixResult.Count > prefixResult.Count)
+            if (suffixResult.Count >= prefixResult.Count)
             {
+                suffixResult.Sort((x, y) => x.Start - y.Start ?? 0);
                 return suffixResult;
             }
 

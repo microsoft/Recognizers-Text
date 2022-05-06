@@ -756,7 +756,7 @@
   },
   {
     "Input": "1 234 567,89 ist ein gültiges Zahlenformat.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript,python",
     "Results": [
       {
         "Text": "1 234 567,89",
@@ -883,7 +883,7 @@
   },
   {
     "Input": "sie wusste hundert Neuigkeiten zu berichten",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "hundert",
@@ -913,7 +913,7 @@
   },
   {
     "Input": "fünfzehn",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "fünfzehn",
@@ -928,7 +928,7 @@
   },
   {
     "Input": "fünfzehntausend",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "fünfzehntausend",
@@ -950,9 +950,11 @@
         "TypeName": "number",
         "Resolution": {
           "value": "500000",
+          "Start": 0,
+          "End": 17
+        },
         "Start": 0,
         "End": 17
-        }
       }
     ]
   },
@@ -965,9 +967,11 @@
         "TypeName": "number",
         "Resolution": {
           "value": "1500000",
+          "Start": 8,
+          "End": 27
+        },
         "Start": 8,
         "End": 27
-        }
       }
     ]
   },
@@ -980,9 +984,11 @@
         "TypeName": "number",
         "Resolution": {
           "value": "3500000",
+          "Start": 24,
+          "End": 44
+        },
         "Start": 24,
         "End": 44
-        }
       }
     ]
   },
@@ -995,9 +1001,11 @@
         "TypeName": "number",
         "Resolution": {
           "value": "1500000000",
+          "Start": 26,
+          "End": 46
+        },
         "Start": 26,
         "End": 46
-        }
       }
     ]
   },

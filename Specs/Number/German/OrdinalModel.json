@@ -8,8 +8,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "1",
-          "offset":"1",
-          "relativeTo":"start"
+          "offset": "1",
+          "relativeTo": "start"
         },
         "Start": 0,
         "End": 5
@@ -25,8 +25,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "2",
-          "offset":"2",
-          "relativeTo":"start"
+          "offset": "2",
+          "relativeTo": "start"
         },
         "Start": 0,
         "End": 6
@@ -42,8 +42,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "25",
-          "offset":"25",
-          "relativeTo":"start"
+          "offset": "25",
+          "relativeTo": "start"
         },
         "Start": 0,
         "End": 17
@@ -59,8 +59,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "131",
-          "offset":"131",
-          "relativeTo":"start"
+          "offset": "131",
+          "relativeTo": "start"
         },
         "Start": 12,
         "End": 37
@@ -76,8 +76,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "1",
-          "offset":"1",
-          "relativeTo":"start"
+          "offset": "1",
+          "relativeTo": "start"
         },
         "Start": 8,
         "End": 13
@@ -93,8 +93,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "3",
-          "offset":"3",
-          "relativeTo":"start"
+          "offset": "3",
+          "relativeTo": "start"
         },
         "Start": 18,
         "End": 22
@@ -110,8 +110,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "4",
-          "offset":"4",
-          "relativeTo":"start"
+          "offset": "4",
+          "relativeTo": "start"
         },
         "Start": 29,
         "End": 33
@@ -127,8 +127,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "11",
-          "offset":"11",
-          "relativeTo":"start"
+          "offset": "11",
+          "relativeTo": "start"
         },
         "Start": 20,
         "End": 23
@@ -138,8 +138,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "12",
-          "offset":"12",
-          "relativeTo":"start"
+          "offset": "12",
+          "relativeTo": "start"
         },
         "Start": 33,
         "End": 39
@@ -155,8 +155,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "1",
-          "offset":"1",
-          "relativeTo":"start"
+          "offset": "1",
+          "relativeTo": "start"
         },
         "Start": 9,
         "End": 14
@@ -166,8 +166,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "2",
-          "offset":"2",
-          "relativeTo":"start"
+          "offset": "2",
+          "relativeTo": "start"
         },
         "Start": 28,
         "End": 34
@@ -177,8 +177,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "4",
-          "offset":"4",
-          "relativeTo":"start"
+          "offset": "4",
+          "relativeTo": "start"
         },
         "Start": 45,
         "End": 51
@@ -188,8 +188,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "3",
-          "offset":"3",
-          "relativeTo":"start"
+          "offset": "3",
+          "relativeTo": "start"
         },
         "Start": 58,
         "End": 64
@@ -205,8 +205,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "1",
-          "offset":"1",
-          "relativeTo":"start"
+          "offset": "1",
+          "relativeTo": "start"
         },
         "Start": 0,
         "End": 5
@@ -216,8 +216,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "3",
-          "offset":"3",
-          "relativeTo":"start"
+          "offset": "3",
+          "relativeTo": "start"
         },
         "Start": 47,
         "End": 53
@@ -233,8 +233,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "1000",
-          "offset":"1000",
-          "relativeTo":"start"
+          "offset": "1000",
+          "relativeTo": "start"
         },
         "Start": 20,
         "End": 29
@@ -251,8 +251,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "1",
-          "offset":"1",
-          "relativeTo":"start"
+          "offset": "1",
+          "relativeTo": "start"
         },
         "Start": 192,
         "End": 196
@@ -262,8 +262,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "8",
-          "offset":"8",
-          "relativeTo":"start"
+          "offset": "8",
+          "relativeTo": "start"
         },
         "Start": 465,
         "End": 468
@@ -279,8 +279,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "3",
-          "offset":"3",
-          "relativeTo":"start"
+          "offset": "3",
+          "relativeTo": "start"
         },
         "Start": 17,
         "End": 18
@@ -296,8 +296,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "3",
-          "offset":"3",
-          "relativeTo":"start"
+          "offset": "3",
+          "relativeTo": "start"
         },
         "Start": 17,
         "End": 22
@@ -313,8 +313,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "27",
-          "offset":"27",
-          "relativeTo":"start"
+          "offset": "27",
+          "relativeTo": "start"
         },
         "Start": 7,
         "End": 26
@@ -330,8 +330,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "1000000000",
-          "offset":"1000000000",
-          "relativeTo":"start"
+          "offset": "1000000000",
+          "relativeTo": "start"
         },
         "Start": 26,
         "End": 37
@@ -347,8 +347,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "1",
-          "offset":"1",
-          "relativeTo":"start"
+          "offset": "1",
+          "relativeTo": "start"
         },
         "Start": 0,
         "End": 5
@@ -358,8 +358,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "2",
-          "offset":"2",
-          "relativeTo":"start"
+          "offset": "2",
+          "relativeTo": "start"
         },
         "Start": 8,
         "End": 14
@@ -369,8 +369,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "8",
-          "offset":"8",
-          "relativeTo":"start"
+          "offset": "8",
+          "relativeTo": "start"
         },
         "Start": 17,
         "End": 22
@@ -380,8 +380,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "3",
-          "offset":"3",
-          "relativeTo":"start"
+          "offset": "3",
+          "relativeTo": "start"
         },
         "Start": 53,
         "End": 59
@@ -391,8 +391,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "7",
-          "offset":"7",
-          "relativeTo":"start"
+          "offset": "7",
+          "relativeTo": "start"
         },
         "Start": 78,
         "End": 83
@@ -402,8 +402,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "27",
-          "offset":"27",
-          "relativeTo":"start"
+          "offset": "27",
+          "relativeTo": "start"
         },
         "Start": 109,
         "End": 128
@@ -413,8 +413,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "9",
-          "offset":"9",
-          "relativeTo":"start"
+          "offset": "9",
+          "relativeTo": "start"
         },
         "Start": 150,
         "End": 156
@@ -430,8 +430,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "1",
-          "offset":"1",
-          "relativeTo":"start"
+          "offset": "1",
+          "relativeTo": "start"
         },
         "Start": 4,
         "End": 8
@@ -441,8 +441,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "70",
-          "offset":"70",
-          "relativeTo":"start"
+          "offset": "70",
+          "relativeTo": "start"
         },
         "Start": 91,
         "End": 100
@@ -458,8 +458,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "1",
-          "offset":"1",
-          "relativeTo":"start"
+          "offset": "1",
+          "relativeTo": "start"
         },
         "Start": 24,
         "End": 28
@@ -480,8 +480,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "2",
-          "offset":"2",
-          "relativeTo":"start"
+          "offset": "2",
+          "relativeTo": "start"
         },
         "Start": 5,
         "End": 11
@@ -497,8 +497,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "100",
-          "offset":"100",
-          "relativeTo":"start"
+          "offset": "100",
+          "relativeTo": "start"
         },
         "Start": 4,
         "End": 14
@@ -507,15 +507,15 @@
   },
   {
     "Input": "Wäre unsere Sonne der jüngste Stern der Milchstraße, so wäre sie mindestens der einhundert Milliardste und höchstens der dreihundert Milliardste Stern.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript,python",
     "Results": [
       {
         "Text": "einhundert milliardste",
         "TypeName": "ordinal",
         "Resolution": {
           "value": "100000000000",
-          "offset":"100000000000",
-          "relativeTo":"start"
+          "offset": "100000000000",
+          "relativeTo": "start"
         },
         "Start": 80,
         "End": 101
@@ -525,8 +525,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "300000000000",
-          "offset":"300000000000",
-          "relativeTo":"start"
+          "offset": "300000000000",
+          "relativeTo": "start"
         },
         "Start": 121,
         "End": 143
@@ -535,15 +535,15 @@
   },
   {
     "Input": "Wäre unsere Sonne der jüngste Stern der Milchstraße, so wäre sie mindestens der einhundert Millionste und höchstens der dreihundert Millionste Stern. Diese Aussage ist nicht korrekt.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript,python",
     "Results": [
       {
         "Text": "einhundert millionste",
         "TypeName": "ordinal",
         "Resolution": {
           "value": "100000000",
-          "offset":"100000000",
-          "relativeTo":"start"
+          "offset": "100000000",
+          "relativeTo": "start"
         },
         "Start": 80,
         "End": 100
@@ -553,8 +553,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "300000000",
-          "offset":"300000000",
-          "relativeTo":"start"
+          "offset": "300000000",
+          "relativeTo": "start"
         },
         "Start": 120,
         "End": 141
@@ -563,15 +563,15 @@
   },
   {
     "Input": "Wäre unsere Sonne der jüngste Stern der Milchstraße, so wäre sie mindestens der einhundert Billionste und höchstens der dreihundert Billionste Stern. Diese Aussage ist nicht korrekt.",
-    "NotSupported": "javascript",
+    "NotSupported": "javascript,python",
     "Results": [
       {
         "Text": "einhundert billionste",
         "TypeName": "ordinal",
         "Resolution": {
           "value": "100000000000000",
-          "offset":"100000000000000",
-          "relativeTo":"start"
+          "offset": "100000000000000",
+          "relativeTo": "start"
         },
         "Start": 80,
         "End": 100
@@ -581,8 +581,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "300000000000000",
-          "offset":"300000000000000",
-          "relativeTo":"start"
+          "offset": "300000000000000",
+          "relativeTo": "start"
         },
         "Start": 120,
         "End": 141
@@ -598,8 +598,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "3",
-          "offset":"3",
-          "relativeTo":"start"
+          "offset": "3",
+          "relativeTo": "start"
         },
         "Start": 37,
         "End": 43
@@ -609,8 +609,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "3",
-          "offset":"3",
-          "relativeTo":"start"
+          "offset": "3",
+          "relativeTo": "start"
         },
         "Start": 70,
         "End": 76
@@ -626,8 +626,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "100000",
-          "offset":"100000",
-          "relativeTo":"start"
+          "offset": "100000",
+          "relativeTo": "start"
         },
         "Start": 13,
         "End": 32

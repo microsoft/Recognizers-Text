@@ -21,13 +21,21 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
 
         public static readonly Regex NightRegex = new Regex(DateTimeDefinitions.NightRegex, RegexFlags);
 
-        public static readonly Regex TimeOfTodayRegex = new Regex(DateTimeDefinitions.TimeOfTodayRegex, RegexFlags);
+        public static readonly Regex TimeOfSpecialDayRegex = new Regex(DateTimeDefinitions.TimeOfSpecialDayRegex, RegexFlags);
+
+        public static readonly Regex TimeOfDayRegex = new Regex(DateTimeDefinitions.TimeOfDayRegex, RegexFlags);
 
         public static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.BeforeRegex, RegexFlags);
 
         public static readonly Regex AfterRegex = new Regex(DateTimeDefinitions.AfterRegex, RegexFlags);
 
+        public static readonly Regex DurationRelativeDurationUnitRegex = new Regex(DateTimeDefinitions.DurationRelativeDurationUnitRegex, RegexFlags);
+
+        public static readonly Regex AgoLaterRegex = new Regex(DateTimeDefinitions.AgoLaterRegex, RegexFlags);
+
         public static readonly Regex DateTimePeriodUnitRegex = new Regex(DateTimeDefinitions.DateTimePeriodUnitRegex, RegexFlags);
+
+        public static readonly Regex ConnectorRegex = new Regex(DateTimeDefinitions.ConnectorRegex, RegexFlags);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
@@ -52,10 +60,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
 
         Regex ICJKDateTimeExtractorConfiguration.NightRegex => NightRegex;
 
-        Regex ICJKDateTimeExtractorConfiguration.TimeOfTodayRegex => TimeOfTodayRegex;
+        Regex ICJKDateTimeExtractorConfiguration.TimeOfSpecialDayRegex => TimeOfSpecialDayRegex;
+
+        Regex ICJKDateTimeExtractorConfiguration.TimeOfDayRegex => TimeOfDayRegex;
 
         Regex ICJKDateTimeExtractorConfiguration.BeforeRegex => BeforeRegex;
 
         Regex ICJKDateTimeExtractorConfiguration.AfterRegex => AfterRegex;
+
+        Regex ICJKDateTimeExtractorConfiguration.ConnectorRegex => ConnectorRegex;
+
     }
 }

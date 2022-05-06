@@ -1500,7 +1500,7 @@
   },
   {
     "Input": "423 0000 seront reconnus comme deux nombres.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "423",
@@ -1556,7 +1556,6 @@
   },
   {
     "Input": "quatre-vingt-quinze!",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "quatre-vingt-quinze",
@@ -1571,7 +1570,6 @@
   },
   {
     "Input": "quatre-vingt",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "quatre-vingt",
@@ -1586,7 +1584,6 @@
   },
   {
     "Input": "quatre-vingt-quinze; quatre-vingt; quatre-vingt-dix-neuf; quatre-vingt-dix neuf; quatre vingt dix neuf; quatre-vingts.",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "quatre-vingt-quinze",
@@ -1646,7 +1643,6 @@
   },
   {
     "Input": "neuf mille neuf cent quatre-vingt-dix neuf",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "neuf mille neuf cent quatre-vingt-dix neuf",
@@ -1693,7 +1689,6 @@
   },
   {
     "Input": "sous la pluie et un vent glacial",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "un",
@@ -1708,7 +1703,6 @@
   },
   {
     "Input": "vingt et un ou plus",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "vingt et un",
@@ -1723,7 +1717,6 @@
   },
   {
     "Input": "vingt et un ou vingt-deux",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "vingt et un",
@@ -1747,7 +1740,6 @@
   },
   {
     "Input": "quatre centièmes de seconde",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "quatre centièmes",
@@ -1762,7 +1754,6 @@
   },
   {
     "Input": "et une bonne jour née",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "une",

@@ -4,7 +4,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -31,7 +30,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -58,7 +56,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -85,7 +82,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -112,7 +108,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -139,7 +134,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -166,7 +160,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -193,7 +186,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -220,7 +212,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -247,7 +238,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -274,7 +264,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -301,7 +290,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -328,7 +316,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -355,7 +342,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -382,7 +368,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -409,7 +394,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -436,7 +420,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -463,7 +446,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -490,7 +472,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -517,7 +498,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -544,7 +524,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -571,7 +550,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -598,7 +576,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -625,7 +602,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -652,7 +628,6 @@
     "Context": {
       "ReferenceDateTime": "2026-01-01T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -679,7 +654,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -706,14 +680,14 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "その週末",
         "Type": "daterange",
         "Value": {
-          "Timex": "2016-W45-WE",
+          "timex": "XXXX-WXX-WE",
+          "Mod": "ref_undef",
           "FutureResolution": {
             "startDate": "2016-11-12",
             "endDate": "2016-11-14"
@@ -733,7 +707,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -760,7 +733,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -787,7 +759,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -814,7 +785,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -841,7 +811,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -868,7 +837,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -895,7 +863,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -922,7 +889,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -949,7 +915,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -976,7 +941,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1003,7 +967,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1030,7 +993,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1057,7 +1019,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1084,7 +1045,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1111,7 +1071,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1138,7 +1097,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1161,15 +1119,14 @@
     ]
   },
   {
-    "Input": "私の週の残りの日は不在にします。",
+    "Input": "私は週の残りの日は不在にします。",
     "Context": {
       "ReferenceDateTime": "2016-11-13T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "私の週の残りの日",
+        "Text": "週の残りの日",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-11-13,2016-11-13,P0D)",
@@ -1182,8 +1139,8 @@
             "endDate": "2016-11-13"
           }
         },
-        "Start": 0,
-        "Length": 8
+        "Start": 2,
+        "Length": 6
       }
     ]
   },
@@ -1192,7 +1149,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1219,7 +1175,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1246,7 +1201,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1273,7 +1227,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1300,7 +1253,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1327,7 +1279,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1354,7 +1305,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1381,7 +1331,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1408,7 +1357,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1435,7 +1383,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1462,7 +1409,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1489,7 +1435,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1516,7 +1461,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1543,7 +1487,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1570,7 +1513,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1597,7 +1539,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1624,7 +1565,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1651,7 +1591,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1678,7 +1617,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1699,7 +1637,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1720,7 +1657,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1741,7 +1677,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1762,7 +1697,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1783,7 +1717,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1810,7 +1743,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1838,7 +1770,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1866,7 +1797,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1894,7 +1824,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1922,7 +1851,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1950,7 +1878,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -1978,7 +1905,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2006,7 +1932,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2034,7 +1959,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2062,7 +1986,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-14T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2089,7 +2012,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-14T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2116,7 +2038,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-14T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2143,7 +2064,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-17T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2170,7 +2090,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-17T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2197,7 +2116,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-20T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2224,7 +2142,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-20T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2251,7 +2168,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-20T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2278,7 +2194,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-20T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2305,7 +2220,6 @@
     "Context": {
       "ReferenceDateTime": "2017-12-18T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2332,7 +2246,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2359,7 +2272,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2386,7 +2298,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2413,7 +2324,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2440,7 +2350,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2467,7 +2376,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2494,7 +2402,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2521,7 +2428,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2548,7 +2454,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2575,11 +2480,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "1928年",
+        "Text": "1928年に",
         "Type": "daterange",
         "Value": {
           "Timex": "1928",
@@ -2593,7 +2497,7 @@
           }
         },
         "Start": 0,
-        "Length": 5
+        "Length": 6
       }
     ]
   },
@@ -2602,11 +2506,10 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "1789年",
+        "Text": "1789年に",
         "Type": "daterange",
         "Value": {
           "Timex": "1789",
@@ -2620,7 +2523,7 @@
           }
         },
         "Start": 0,
-        "Length": 5
+        "Length": 6
       }
     ]
   },
@@ -2629,7 +2532,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2656,7 +2558,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2677,7 +2578,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2704,7 +2604,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2731,7 +2630,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2758,7 +2656,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2785,7 +2682,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2812,7 +2708,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2839,7 +2734,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2866,7 +2760,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2893,21 +2786,20 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "過去20年間",
         "Type": "daterange",
         "Value": {
-          "Timex": "(1990-01-01,2010-01-01,P20Y)",
+          "timex": "(1996-11-07,2016-11-07,P20Y)",
           "FutureResolution": {
-            "startDate": "1990-01-01",
-            "endDate": "2010-01-01"
+            "startDate": "1996-11-07",
+            "endDate": "2016-11-07"
           },
           "PastResolution": {
-            "startDate": "1990-01-01",
-            "endDate": "2010-01-01"
+            "startDate": "1996-11-07",
+            "endDate": "2016-11-07"
           }
         },
         "Start": 3,
@@ -2920,21 +2812,20 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "次の10年間",
         "Type": "daterange",
         "Value": {
-          "Timex": "(2020-01-01,2030-01-01,P10Y)",
+          "timex": "(2016-11-08,2026-11-08,P10Y)",
           "FutureResolution": {
-            "startDate": "2020-01-01",
-            "endDate": "2030-01-01"
+            "startDate": "2016-11-08",
+            "endDate": "2026-11-08"
           },
           "PastResolution": {
-            "startDate": "2020-01-01",
-            "endDate": "2030-01-01"
+            "startDate": "2016-11-08",
+            "endDate": "2026-11-08"
           }
         },
         "Start": 3,
@@ -2947,21 +2838,20 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "次の30年間",
         "Type": "daterange",
         "Value": {
-          "Timex": "(2020-01-01,2050-01-01,P30Y)",
+          "timex": "(2016-11-08,2046-11-08,P30Y)",
           "FutureResolution": {
-            "startDate": "2020-01-01",
-            "endDate": "2050-01-01"
+            "startDate": "2016-11-08",
+            "endDate": "2046-11-08"
           },
           "PastResolution": {
-            "startDate": "2020-01-01",
-            "endDate": "2050-01-01"
+            "startDate": "2016-11-08",
+            "endDate": "2046-11-08"
           }
         },
         "Start": 3,
@@ -2974,7 +2864,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3001,7 +2890,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3028,7 +2916,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3056,7 +2943,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3084,7 +2970,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3112,7 +2997,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3140,7 +3024,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3168,7 +3051,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3196,7 +3078,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3218,7 +3099,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3245,7 +3125,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3272,7 +3151,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3299,7 +3177,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3326,7 +3203,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3353,7 +3229,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3380,7 +3255,6 @@
     "Context": {
       "ReferenceDateTime": "2018-04-02T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3407,7 +3281,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3434,14 +3307,13 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "1月1日から4月5日の間",
         "Type": "daterange",
         "Value": {
-          "Timex": "(XXXX-01-01,XXXX-04-05,P94D)",
+          "Timex": "(XXXX-01-01,XXXX-04-05,P94D)|(XXXX-01-01,XXXX-04-05,P95D)",
           "FutureResolution": {
             "startDate": "2017-01-01",
             "endDate": "2017-04-05"
@@ -3461,7 +3333,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3488,7 +3359,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3515,7 +3385,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3542,7 +3411,6 @@
     "Context": {
       "ReferenceDateTime": "2018-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3569,7 +3437,6 @@
     "Context": {
       "ReferenceDateTime": "2018-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3596,7 +3463,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3623,7 +3489,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3650,7 +3515,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3677,7 +3541,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3704,7 +3567,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3731,7 +3593,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-04T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3758,7 +3619,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-04T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3785,7 +3645,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-04T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3812,7 +3671,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-04T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3839,7 +3697,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-17T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3867,7 +3724,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3895,7 +3751,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-11T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3923,7 +3778,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3951,7 +3805,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3959,6 +3812,7 @@
         "Type": "daterange",
         "Value": {
           "Timex": "2018-W22",
+          "Mod": "start",
           "FutureResolution": {
             "startDate": "2018-05-28",
             "endDate": "2018-05-31"
@@ -3978,7 +3832,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-13T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3986,13 +3839,14 @@
         "Type": "daterange",
         "Value": {
           "Timex": "2018-05",
+          "Mod": "start",
           "FutureResolution": {
             "startDate": "2018-05-01",
-            "endDate": "2018-05-13"
+            "endDate": "2018-05-16"
           },
           "PastResolution": {
             "startDate": "2018-05-01",
-            "endDate": "2018-05-13"
+            "endDate": "2018-05-16"
           }
         },
         "Start": 4,
@@ -4005,7 +3859,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-28T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4013,13 +3866,14 @@
         "Type": "daterange",
         "Value": {
           "Timex": "2018",
+          "Mod": "start",
           "FutureResolution": {
             "startDate": "2018-01-01",
-            "endDate": "2018-05-28"
+            "endDate": "2018-07-01"
           },
           "PastResolution": {
             "startDate": "2018-01-01",
-            "endDate": "2018-05-28"
+            "endDate": "2018-07-01"
           }
         },
         "Start": 4,
@@ -4028,56 +3882,56 @@
     ]
   },
   {
-    "Input": "今週の終わりごろ会うための時間をつくってください。",
+    "Input": "今月下旬会うための時間をつくってください。",
     "Context": {
       "ReferenceDateTime": "2017-11-10T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "今週の終わりごろ",
+        "Text": "今月下旬",
         "Type": "daterange",
         "Value": {
-          "Timex": "2017-W45",
+          "Timex": "2017-11",
+          "Mod": "end",
           "FutureResolution": {
-            "startDate": "2017-11-10",
-            "endDate": "2017-11-13"
+            "startDate": "2017-11-16",
+            "endDate": "2017-12-01"
           },
           "PastResolution": {
-            "startDate": "2017-11-10",
-            "endDate": "2017-11-13"
+            "startDate": "2017-11-16",
+            "endDate": "2017-12-01"
           }
         },
         "Start": 0,
-        "Length": 8
+        "Length": 4
       }
     ]
   },
   {
-    "Input": "今月の終わりごろ会うための時間をつくってください。",
+    "Input": "今月下旬ごろ会うための時間をつくってください。",
     "Context": {
       "ReferenceDateTime": "2018-05-28T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "今月の終わりごろ",
+        "Text": "今月下旬",
         "Type": "daterange",
         "Value": {
           "Timex": "2018-05",
+          "Mod": "end",
           "FutureResolution": {
-            "startDate": "2018-05-28",
+            "startDate": "2018-05-16",
             "endDate": "2018-06-01"
           },
           "PastResolution": {
-            "startDate": "2018-05-28",
+            "startDate": "2018-05-16",
             "endDate": "2018-06-01"
           }
         },
         "Start": 0,
-        "Length": 8
+        "Length": 4
       }
     ]
   },
@@ -4086,7 +3940,6 @@
     "Context": {
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4094,12 +3947,13 @@
         "Type": "daterange",
         "Value": {
           "Timex": "2017",
+          "Mod": "end",
           "FutureResolution": {
-            "startDate": "2017-11-08",
+            "startDate": "2017-07-01",
             "endDate": "2018-01-01"
           },
           "PastResolution": {
-            "startDate": "2017-11-08",
+            "startDate": "2017-07-01",
             "endDate": "2018-01-01"
           }
         },
@@ -4113,7 +3967,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4139,7 +3992,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4166,11 +4018,10 @@
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "今日から2週間以上",
+        "Text": "今日から2週間以上前",
         "Type": "daterange",
         "Value": {
           "Timex": "2018-05-15",
@@ -4183,7 +4034,7 @@
           }
         },
         "Start": 0,
-        "Length": 9
+        "Length": 10
       }
     ]
   },
@@ -4192,7 +4043,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4218,7 +4068,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4245,7 +4094,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4272,7 +4120,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4299,7 +4146,6 @@
     "Context": {
       "ReferenceDateTime": "2018-08-08T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4326,7 +4172,6 @@
     "Context": {
       "ReferenceDateTime": "2018-08-28T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4353,21 +4198,20 @@
     "Context": {
       "ReferenceDateTime": "2018-08-31T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "この10年",
         "Type": "daterange",
         "Value": {
-          "Timex": "(2010-01-01,2020-01-01,P10Y)",
+          "Timex": "(2008-08-31,2018-08-31,P10Y)",
           "FutureResolution": {
-            "startDate": "2010-01-01",
-            "endDate": "2020-01-01"
+            "startDate": "2008-08-31",
+            "endDate": "2018-08-31"
           },
           "PastResolution": {
-            "startDate": "2010-01-01",
-            "endDate": "2020-01-01"
+            "startDate": "2008-08-31",
+            "endDate": "2018-08-31"
           }
         },
         "Start": 3,
@@ -4380,7 +4224,6 @@
     "Context": {
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4407,7 +4250,6 @@
     "Context": {
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4434,7 +4276,6 @@
     "Context": {
       "ReferenceDateTime": "2019-01-01T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4461,7 +4302,6 @@
     "Context": {
       "ReferenceDateTime": "2017-01-01T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4488,7 +4328,6 @@
     "Context": {
       "ReferenceDateTime": "2016-01-01T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4838,20 +4677,20 @@
     "Context": {
       "ReferenceDateTime": "2019-07-22T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java,dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "4月の最終月曜日から10月1日まで",
         "Type": "daterange",
         "Value": {
-          "Timex": "(XXXX-08-WXX-1-#4,XXXX-10-01,P36D)",
+          "Timex": "(XXXX-04-WXX-1-#5,XXXX-10-01,P155D)",
           "FutureResolution": {
-            "startDate": "2019-08-26",
+            "startDate": "2019-04-29",
             "endDate": "2019-10-01"
           },
           "PastResolution": {
-            "startDate": "2018-08-27",
-            "endDate": "2018-10-01"
+            "startDate": "2019-04-29",
+            "endDate": "2019-10-01"
           }
         },
         "Start": 0,
@@ -4864,7 +4703,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "2019年6月1日から6月30日まで",
@@ -4890,10 +4729,10 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "２００８年",
+        "Text": "2008年に",
         "Type": "daterange",
         "Value": {
           "Timex": "2008",
@@ -4907,7 +4746,7 @@
           }
         },
         "Start": 7,
-        "Length": 5
+        "Length": 6
       }
     ]
   },
@@ -4916,7 +4755,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "来月",
@@ -4942,7 +4781,7 @@
     "Context": {
       "ReferenceDateTime": "2019-07-30T17:09:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "先週の木曜日から十月一日まで",
@@ -4964,14 +4803,14 @@
     ]
   },
   {
-    "Input": "2008年十月一日から２０１９年二月三日まで",
+    "Input": "2018年十月一日から２０１９年二月三日まで",
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "2008年十月一日から２０１９年二月三日まで",
+        "Text": "2018年十月一日から2019年二月三日まで",
         "Type": "daterange",
         "Value": {
           "Timex": "(2018-10-01,2019-02-03,P125D)",
@@ -4994,10 +4833,10 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "１８７０年代",
+        "Text": "1870年代",
         "Type": "daterange",
         "Value": {
           "Timex": "(1870-01-01,1880-01-01,P10Y)",
@@ -5020,10 +4859,10 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "今世紀の２０年代",
+        "Text": "今世紀の20年代",
         "Type": "daterange",
         "Value": {
           "Timex": "(2020-01-01,2030-01-01,P10Y)",
@@ -5046,10 +4885,10 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "前世紀の９０年代",
+        "Text": "前世紀の90年代",
         "Type": "daterange",
         "Value": {
           "Timex": "(1990-01-01,2000-01-01,P10Y)",
@@ -5072,16 +4911,16 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "１０月の第1週",
+        "Text": "10月の第1週",
         "Type": "daterange",
         "Value": {
           "Timex": "XXXX-10-W01",
           "FutureResolution": {
-            "startDate": "2017-09-25",
-            "endDate": "2017-10-02"
+            "startDate": "2017-10-02",
+            "endDate": "2017-10-09"
           },
           "PastResolution": {
             "startDate": "2016-10-03",
@@ -5098,20 +4937,20 @@
     "Context": {
       "ReferenceDateTime": "2018-09-12T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "２０１１年から２０１７年まで",
+        "Text": "2011年から2017年まで",
         "Type": "daterange",
         "Value": {
-          "Timex": "(2010-01-01,2018-01-01,P8Y)",
+          "Timex": "(2011-01-01,2017-01-01,P6Y)",
           "FutureResolution": {
-            "startDate": "2010-01-01",
-            "endDate": "2018-01-01"
+            "startDate": "2011-01-01",
+            "endDate": "2017-01-01"
           },
           "PastResolution": {
-            "startDate": "2010-01-01",
-            "endDate": "2018-01-01"
+            "startDate": "2011-01-01",
+            "endDate": "2017-01-01"
           }
         },
         "Start": 0,
@@ -5124,20 +4963,20 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "先週",
         "Type": "daterange",
         "Value": {
-          "Timex": "(2017-03-15,2017-03-22,P1W)",
+          "timex": "2017-W11",
           "FutureResolution": {
-            "startDate": "2017-03-15",
-            "endDate": "2017-03-22"
+            "startDate": "2017-03-13",
+            "endDate": "2017-03-20"
           },
           "PastResolution": {
-            "startDate": "2017-03-15",
-            "endDate": "2017-03-22"
+            "startDate": "2017-03-13",
+            "endDate": "2017-03-20"
           }
         },
         "Start": 0,
@@ -5150,10 +4989,10 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "２０１６年から２０１８年にわたって",
+        "Text": "2016年から2018年にわたって",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-01-01,2018-01-01,P2Y)",
@@ -5176,10 +5015,10 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "２０１６年から２０１８年まで",
+        "Text": "2016年から2018年まで",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-01-01,2018-01-01,P2Y)",
@@ -5202,7 +5041,7 @@
     "Context": {
       "ReferenceDateTime": "2019-07-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "四月最後の月曜日から十月一日まで",
@@ -5228,10 +5067,10 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "２００８年十二月",
+        "Text": "2008年十二月",
         "Type": "daterange",
         "Value": {
           "Timex": "2008-12",
@@ -5254,10 +5093,10 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "　２０１８年１０月",
+        "Text": "2018年10月",
         "Type": "daterange",
         "Value": {
           "Timex": "2018-10",
@@ -5270,8 +5109,8 @@
             "endDate": "2018-11-01"
           }
         },
-        "Start": 0,
-        "Length": 9
+        "Start": 1,
+        "Length": 8
       }
     ]
   },
@@ -5280,10 +5119,10 @@
     "Context": {
       "ReferenceDateTime": "2018-09-05T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "２００７年から２００９年までの間に",
+        "Text": "2007年から2009年までの間",
         "Type": "daterange",
         "Value": {
           "Timex": "(2007-01-01,2009-01-01,P2Y)",
@@ -5297,7 +5136,7 @@
           }
         },
         "Start": 0,
-        "Length": 17
+        "Length": 16
       }
     ]
   },
@@ -5306,7 +5145,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "一月十日から十二日まで",
@@ -5332,7 +5171,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "今夏",
@@ -5352,10 +5191,10 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "去年の５月",
+        "Text": "去年の5月",
         "Type": "daterange",
         "Value": {
           "Timex": "2016-05",
@@ -5374,40 +5213,14 @@
     ]
   },
   {
-    "Input": "２００８年　十二月",
-    "Context": {
-      "ReferenceDateTime": "2017-03-22T00:00:00"
-    },
-    "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "２００８年　十二月",
-        "Type": "daterange",
-        "Value": {
-          "Timex": "2008-12",
-          "FutureResolution": {
-            "startDate": "2008-12-01",
-            "endDate": "2009-01-01"
-          },
-          "PastResolution": {
-            "startDate": "2008-12-01",
-            "endDate": "2009-01-01"
-          }
-        },
-        "Start": 0,
-        "Length": 9
-      }
-    ]
-  },
-  {
     "Input": "私は７月４日から６日まで北京に行きます。",
     "Context": {
       "ReferenceDateTime": "2019-08-08T16:09:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "７月４日から６日まで",
+        "Text": "7月4日から6日まで",
         "Type": "daterange",
         "Value": {
           "Timex": "(XXXX-07-04,XXXX-07-06,P2D)",
@@ -5430,7 +5243,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "来週",
@@ -5456,7 +5269,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "この三年間",
@@ -5482,7 +5295,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "2016年一月十日から十二日にわたって",
@@ -5508,10 +5321,10 @@
     "Context": {
       "ReferenceDateTime": "2018-09-05T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "２００７年から２００９年までの間",
+        "Text": "2007年から2009年までの間",
         "Type": "daterange",
         "Value": {
           "Timex": "(2007-01-01,2009-01-01,P2Y)",
@@ -5534,7 +5347,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "2007年",
@@ -5560,10 +5373,10 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "７８９年に",
+        "Text": "789年に",
         "Type": "daterange",
         "Value": {
           "Timex": "0789",
@@ -5586,10 +5399,10 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "９０年代",
+        "Text": "90年代",
         "Type": "daterange",
         "Value": {
           "Timex": "(XX90-01-01,XX00-01-01,P10Y)",
@@ -5612,20 +5425,20 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "2018年12月",
         "Type": "daterange",
         "Value": {
-          "Timex": "2018-10",
+          "Timex": "2018-12",
           "FutureResolution": {
-            "startDate": "2018-10-01",
-            "endDate": "2018-11-01"
+            "startDate": "2018-12-01",
+            "endDate": "2019-01-01"
           },
           "PastResolution": {
-            "startDate": "2018-10-01",
-            "endDate": "2018-11-01"
+            "startDate": "2018-12-01",
+            "endDate": "2019-01-01"
           }
         },
         "Start": 0,
@@ -5638,10 +5451,10 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "１８７０年代",
+        "Text": "1870年代",
         "Type": "daterange",
         "Value": {
           "Timex": "(1870-01-01,1880-01-01,P10Y)",
@@ -5664,7 +5477,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "二〇一六年から二〇一八年まで",
@@ -5690,7 +5503,7 @@
     "Context": {
       "ReferenceDateTime": "2019-07-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "八月最後の月曜日から十月一日まで",
@@ -5716,10 +5529,10 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "２００８年",
+        "Text": "2008年",
         "Type": "daterange",
         "Value": {
           "Timex": "2008",
@@ -5742,10 +5555,10 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "２００９年",
+        "Text": "2009年",
         "Type": "daterange",
         "Value": {
           "Timex": "2009",
@@ -5768,7 +5581,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "来年",
@@ -5794,10 +5607,10 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "２００７年",
+        "Text": "2007年",
         "Type": "daterange",
         "Value": {
           "Timex": "2007",
@@ -5820,10 +5633,10 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "1月１９日から２０日まで",
+        "Text": "1月19日から20日まで",
         "Type": "daterange",
         "Value": {
           "Timex": "(XXXX-01-19,XXXX-01-20,P1D)",
@@ -5846,7 +5659,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "次の週末",
@@ -5872,7 +5685,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "次の二日間",
@@ -5898,10 +5711,10 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "３月２８日から4月１５日まで",
+        "Text": "3月28日から4月15日まで",
         "Type": "daterange",
         "Value": {
           "Timex": "(XXXX-03-28,XXXX-04-15,P18D)",
@@ -5924,7 +5737,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "今年の第一クォーター",
@@ -5950,10 +5763,10 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "２００８年",
+        "Text": "2008年",
         "Type": "daterange",
         "Value": {
           "Timex": "2008",
@@ -5976,7 +5789,7 @@
     "Context": {
       "ReferenceDateTime": "2018-07-24T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "過去の十年間",
@@ -5998,14 +5811,14 @@
     ]
   },
   {
-    "Input": "一月十日から廿日にまで",
+    "Input": "一月十日から廿日まで",
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "一月十日から廿日にまで",
+        "Text": "一月十日から廿日まで",
         "Type": "daterange",
         "Value": {
           "Timex": "(XXXX-01-10,XXXX-01-20,P10D)",
@@ -6019,7 +5832,7 @@
           }
         },
         "Start": 0,
-        "Length": 11
+        "Length": 10
       }
     ]
   },
@@ -6028,7 +5841,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "この三年間",
@@ -6054,10 +5867,10 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "2016年６月1日から６月３０日まで",
+        "Text": "2016年6月1日から6月30日まで",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-06-01,2016-06-30,P29D)",
@@ -6080,10 +5893,10 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "来年の４月",
+        "Text": "来年の4月",
         "Type": "daterange",
         "Value": {
           "Timex": "2018-04",
@@ -6106,7 +5919,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "2018",
@@ -6132,7 +5945,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "来週",
@@ -6158,10 +5971,10 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "２００９年から２０１０年まで",
+        "Text": "2009年から2010年まで",
         "Type": "daterange",
         "Value": {
           "Timex": "(2009-01-01,2010-01-01,P1Y)",
@@ -6184,10 +5997,10 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "１９８０年代",
+        "Text": "1980年代",
         "Type": "daterange",
         "Value": {
           "Timex": "(1980-01-01,1990-01-01,P10Y)",
@@ -6210,10 +6023,10 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "２０１５年一月十日から十二日まで",
+        "Text": "2015年一月十日から十二日まで",
         "Type": "daterange",
         "Value": {
           "Timex": "(2015-01-10,2015-01-12,P2D)",
@@ -6236,24 +6049,41 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "2018年10月",
         "Type": "daterange",
         "Value": {
-          "Timex": "2018-12",
+          "Timex": "2018-10",
           "FutureResolution": {
-            "startDate": "2018-12-01",
-            "endDate": "2019-01-01"
+            "startDate": "2018-10-01",
+            "endDate": "2018-11-01"
           },
           "PastResolution": {
-            "startDate": "2018-12-01",
-            "endDate": "2019-01-01"
+            "startDate": "2018-10-01",
+            "endDate": "2018-11-01"
           }
         },
         "Start": 0,
         "Length": 8
+      },
+      {
+        "Text": "10月",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "XXXX-10",
+          "FutureResolution": {
+            "startDate": "2017-10-01",
+            "endDate": "2017-11-01"
+          },
+          "PastResolution": {
+            "startDate": "2016-10-01",
+            "endDate": "2016-11-01"
+          }
+        },
+        "Start": 9,
+        "Length": 3
       }
     ]
   },
@@ -6262,10 +6092,10 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "５０年代のごろ",
+        "Text": "50年代のごろ",
         "Type": "daterange",
         "Value": {
           "Timex": "(XX50-01-01,XX60-01-01,P10Y)",
@@ -6288,20 +6118,20 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "翌年",
         "Type": "daterange",
         "Value": {
-          "Timex": "(2017-03-23,2018-03-23,P1Y)",
+          "timex": "2018",
           "FutureResolution": {
-            "startDate": "2017-03-23",
-            "endDate": "2018-03-23"
+            "startDate": "2018-01-01",
+            "endDate": "2019-01-01"
           },
           "PastResolution": {
-            "startDate": "2017-03-23",
-            "endDate": "2018-03-23"
+            "startDate": "2018-01-01",
+            "endDate": "2019-01-01"
           }
         },
         "Start": 0,
@@ -6314,7 +6144,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "前の二ヶ月間",
@@ -6340,7 +6170,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -6348,6 +6177,7 @@
         "Type": "daterange",
         "Value": {
           "Timex": "XXXX-01",
+          "Mod": "start",
           "FutureResolution": {
             "startDate": "2017-01-01",
             "endDate": "2017-01-16"
@@ -6359,6 +6189,162 @@
         },
         "Start": 2,
         "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "今週この後",
+    "Context": {
+      "ReferenceDateTime": "2017-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "今週この後",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W45",
+          "FutureResolution": {
+            "startDate": "2017-11-09",
+            "endDate": "2017-11-13"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-09",
+            "endDate": "2017-11-13"
+          }
+        },
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "今月この後",
+    "Context": {
+      "ReferenceDateTime": "2017-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "今月この後",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-11",
+          "FutureResolution": {
+            "startDate": "2017-11-16",
+            "endDate": "2017-12-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-16",
+            "endDate": "2017-12-01"
+          }
+        },
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "今年この後",
+    "Context": {
+      "ReferenceDateTime": "2017-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "今年この後",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017",
+          "FutureResolution": {
+            "startDate": "2017-11-07",
+            "endDate": "2018-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2017-11-07",
+            "endDate": "2018-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "今月ちょっと前に",
+    "Context": {
+      "ReferenceDateTime": "2018-07-28T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "今月ちょっと前に",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2018-07",
+          "FutureResolution": {
+            "startDate": "2018-07-01",
+            "endDate": "2018-07-16"
+          },
+          "PastResolution": {
+            "startDate": "2018-07-01",
+            "endDate": "2018-07-16"
+          }
+        },
+        "Start": 0,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "私たちは今月上旬にに会う約束ができたかもしれません。",
+    "Context": {
+      "ReferenceDateTime": "2018-05-13T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "今月上旬に",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2018-05",
+          "FutureResolution": {
+            "startDate": "2018-05-01",
+            "endDate": "2018-05-13"
+          },
+          "PastResolution": {
+            "startDate": "2018-05-01",
+            "endDate": "2018-05-13"
+          }
+        },
+        "Start": 4,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "２００８年 十二月",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "2008年 十二月",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2008-12",
+          "FutureResolution": {
+            "startDate": "2008-12-01",
+            "endDate": "2009-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2008-12-01",
+            "endDate": "2009-01-01"
+          }
+        },
+        "Start": 0,
+        "Length": 9
       }
     ]
   }

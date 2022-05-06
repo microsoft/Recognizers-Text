@@ -172,6 +172,33 @@ namespace Microsoft.Recognizers.Text.DateTime
             return specialYearPrefixes == null ? yearTimex : specialYearPrefixes + yearTimex;
         }
 
+        public static string GenerateDatePeriodTimexWithDiff(DateObject beginDate, ref DateObject endDate, string durationUnit)
+        {
+            var diff = 0;
+            switch (durationUnit)
+            {
+                case Constants.TimexWeek:
+                    diff = Constants.WeekDayCount - (beginDate.DayOfWeek == 0 ? Constants.WeekDayCount : (int)beginDate.DayOfWeek);
+                    endDate = beginDate.AddDays(diff);
+                    break;
+
+                case Constants.TimexMonthFull:
+                    endDate = DateObject.MinValue.SafeCreateFromValue(beginDate.Year, beginDate.Month, 1);
+                    endDate = endDate.AddMonths(1).AddDays(-1);
+                    diff = endDate.Day - beginDate.Day + 1;
+                    break;
+
+                case Constants.TimexYear:
+                    endDate = DateObject.MinValue.SafeCreateFromValue(beginDate.Year, 12, 1);
+                    endDate = endDate.AddMonths(1).AddDays(-1);
+                    diff = endDate.DayOfYear - beginDate.DayOfYear + 1;
+                    break;
+            }
+
+            var durationTimex = Constants.GeneralPeriodPrefix + diff + Constants.TimexDay;
+            return $"({DateTimeFormatUtil.LuisDate(beginDate)},{DateTimeFormatUtil.LuisDate(endDate)},{durationTimex})";
+        }
+
         public static string GenerateDurationTimex(double number, string unitStr, bool isLessThanDay)
         {
             if (!Constants.TimexBusinessDay.Equals(unitStr, StringComparison.Ordinal))
@@ -198,6 +225,22 @@ namespace Microsoft.Recognizers.Text.DateTime
             return Constants.GeneralPeriodPrefix +
                    (isLessThanDay ? Constants.TimeTimexPrefix : string.Empty) +
                    number.ToString(CultureInfo.InvariantCulture) + unitStr;
+        }
+
+        public static string GenerateDurationTimex(DateObject beginDateTime, DateObject endDateTime)
+        {
+            var duration = endDateTime - beginDateTime;
+            var days = duration.Days;
+            var hours = duration.Hours;
+            var mins = duration.Minutes;
+            var secs = duration.Seconds;
+
+            return Constants.GeneralPeriodPrefix +
+                   (days > 0 ? days.ToString(CultureInfo.InvariantCulture) + Constants.TimexDay : string.Empty) +
+                   (hours > 0 || mins > 0 || secs > 0 ? Constants.TimeTimexPrefix : string.Empty) +
+                   (hours > 0 ? hours.ToString(CultureInfo.InvariantCulture) + Constants.TimexHour : string.Empty) +
+                   (mins > 0 ? mins.ToString(CultureInfo.InvariantCulture) + Constants.TimexMinute : string.Empty) +
+                   (secs > 0 ? secs.ToString(CultureInfo.InvariantCulture) + Constants.TimexSecond : string.Empty);
         }
 
         public static DatePeriodTimexType GetDatePeriodTimexType(string durationTimex)
@@ -420,6 +463,69 @@ namespace Microsoft.Recognizers.Text.DateTime
             return $"({beginTimex},{endTimex},{durationTimex})";
         }
 
+        public static string GenerateDateTimePeriodTimex(DateObject beginDateTime, DateObject endDateTime, string durationTimex)
+        {
+            return GenerateDateTimePeriodTimex(DateTimeFormatUtil.LuisDateTime(beginDateTime),
+                DateTimeFormatUtil.LuisDateTime(endDateTime), durationTimex);
+        }
+
+        public static string GenerateDateTimePeriodTimex(DateObject beginDateTime, DateObject endDateTime)
+        {
+            var durationTimex = GenerateDurationTimex(beginDateTime, endDateTime);
+
+            return GenerateDateTimePeriodTimex(beginDateTime, endDateTime, durationTimex);
+        }
+
+        public static string GenerateRelativeUnitDateTimePeriodTimex(ref DateObject beginDateTime, ref DateObject endDateTime, DateObject referenceTime, string unitStr, int swift)
+        {
+            string prefix = Constants.GeneralPeriodPrefix + Constants.TimeTimexPrefix;
+            string durationTimex = string.Empty;
+            switch (unitStr)
+            {
+                case Constants.TimexDay:
+                    endDateTime = DateObject.MinValue.SafeCreateFromValue(beginDateTime.Year, beginDateTime.Month, beginDateTime.Day);
+                    endDateTime = endDateTime.AddDays(1).AddSeconds(-1);
+                    durationTimex = prefix + (endDateTime - beginDateTime).TotalSeconds + Constants.TimexSecond;
+                    break;
+                case Constants.TimexHour:
+                    beginDateTime = swift > 0 ? beginDateTime : referenceTime.AddHours(swift);
+                    endDateTime = swift > 0 ? referenceTime.AddHours(swift) : endDateTime;
+                    durationTimex = prefix + "1" + Constants.TimexHour;
+                    break;
+                case Constants.TimexMinute:
+                    beginDateTime = swift > 0 ? beginDateTime : referenceTime.AddMinutes(swift);
+                    endDateTime = swift > 0 ? referenceTime.AddMinutes(swift) : endDateTime;
+                    durationTimex = prefix + "1" + Constants.TimexMinute;
+                    break;
+                case Constants.TimexSecond:
+                    beginDateTime = swift > 0 ? beginDateTime : referenceTime.AddSeconds(swift);
+                    endDateTime = swift > 0 ? referenceTime.AddSeconds(swift) : endDateTime;
+                    durationTimex = prefix + "1" + Constants.TimexSecond;
+                    break;
+                default:
+                    return string.Empty;
+            }
+
+            return GenerateDateTimePeriodTimex(beginDateTime, endDateTime, durationTimex);
+        }
+
+        public static string GenerateSplitDateTimePeriodTimex(string dateTimex, string timeRangeTimex)
+        {
+            var split = timeRangeTimex.Split(Constants.TimeTimexPrefix[0]);
+            string timex = null;
+            if (split.Length == 4)
+            {
+                timex = split[0] + dateTimex + Constants.TimeTimexPrefix + split[1] + dateTimex +
+                    Constants.TimeTimexPrefix + split[2] + Constants.TimeTimexPrefix + split[3];
+            }
+            else if (split.Length == 2)
+            {
+                timex = dateTimex + timeRangeTimex;
+            }
+
+            return timex;
+        }
+
         public static RangeTimexComponents GetRangeTimexComponents(string rangeTimex)
         {
             rangeTimex = rangeTimex.Replace("(", string.Empty).Replace(")", string.Empty);
@@ -455,6 +561,12 @@ namespace Microsoft.Recognizers.Text.DateTime
         public static string ModifyAmbiguousCenturyTimex(string timex)
         {
             return "XX" + timex.Substring(2);
+        }
+
+        public static float ParseNumberFromDurationTimex(string timex)
+        {
+            var numberStr = timex.Substring(timex.IndexOf(Constants.GeneralPeriodPrefix) + 1, timex.IndexOfAny(Constants.DurationUnitChar) - 1);
+            return float.Parse(numberStr);
         }
 
         private static bool IsTimeDurationTimex(string timex)

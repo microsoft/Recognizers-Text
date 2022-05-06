@@ -1,7 +1,7 @@
 [
   {
     "Input": "Tornerò adesso",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "adesso",
@@ -13,7 +13,7 @@
   },
   {
     "Input": "Tornerò il prima possibile",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il prima possibile",
@@ -25,7 +25,7 @@
   },
   {
     "Input": "Tornerò proprio adesso",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "proprio adesso",
@@ -37,7 +37,7 @@
   },
   {
     "Input": "Tornerò il 15 alle 8:00",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "15 alle 8:00",
@@ -49,7 +49,7 @@
   },
   {
     "Input": "Tornerò il 15 alle 8:00:30",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "15 alle 8:00:30",
@@ -61,7 +61,7 @@
   },
   {
     "Input": "Tornerò il 15, 8pm",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "15, 8pm",
@@ -73,7 +73,7 @@
   },
   {
     "Input": "Tornerò il 04/21/2016, 8:00pm",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il 04/21/2016, 8:00pm",
@@ -85,7 +85,7 @@
   },
   {
     "Input": "Tornerò 04/21/2016, 8:00:13pm",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "04/21/2016, 8:00:13pm",
@@ -97,7 +97,7 @@
   },
   {
     "Input": "Tornerò il 23 Ott alle sette",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il 23 Ott alle sette",
@@ -109,7 +109,7 @@
   },
   {
     "Input": "Tornerò il 14 Ottobre 8:00am",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il 14 Ottobre 8:00am",
@@ -121,7 +121,7 @@
   },
   {
     "Input": "Tornerò il 14 Ottobre 8:00:00am",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il 14 Ottobre 8:00:00am",
@@ -133,7 +133,7 @@
   },
   {
     "Input": "Tornerò il 14 Ottobre, 8:00:01am",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il 14 Ottobre, 8:00:01am",
@@ -145,7 +145,7 @@
   },
   {
     "Input": "Tornerò domani 8:00am",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "domani 8:00am",
@@ -157,7 +157,7 @@
   },
   {
     "Input": "Tornerò domani verso le 8:00am",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "domani verso le 8:00am",
@@ -169,7 +169,7 @@
   },
   {
     "Input": "Tornerò domani per le 8:00am",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "domani per le 8:00am",
@@ -181,7 +181,7 @@
   },
   {
     "Input": "Tornerò domani 8:00:05am",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "domani 8:00:05am",
@@ -193,7 +193,7 @@
   },
   {
     "Input": "Tornerò il prossimo venerdì alle 3 e mezza",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "prossimo venerdì alle 3 e mezza",
@@ -205,7 +205,7 @@
   },
   {
     "Input": "Tornerò il 5 Maggio 2016, otto e 20 di sera",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il 5 Maggio 2016, otto e 20 di sera",
@@ -217,7 +217,7 @@
   },
   {
     "Input": "Tornerò alle 8pm del 15",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "8pm del 15",
@@ -229,7 +229,7 @@
   },
   {
     "Input": "Tornerò alle sette del 15",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "sette del 15",
@@ -241,7 +241,7 @@
   },
   {
     "Input": "Tornerò alle 8pm della prossima domenica",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "8pm della prossima domenica",
@@ -253,7 +253,7 @@
   },
   {
     "Input": "Tornerò alle 8pm di oggi",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "8pm di oggi",
@@ -265,7 +265,7 @@
   },
   {
     "Input": "Tornerò alle sette meno un quarto di domani",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "sette meno un quarto di domani",
@@ -277,7 +277,7 @@
   },
   {
     "Input": "Tornerò alle 19:00, il 2016-12-22",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "19:00, il 2016-12-22",
@@ -289,7 +289,7 @@
   },
   {
     "Input": "Tornerò alle sette domani",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "sette domani",
@@ -301,7 +301,7 @@
   },
   {
     "Input": "Tornerò domani mattina alle 7",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "domani mattina alle 7",
@@ -313,7 +313,7 @@
   },
   {
     "Input": "Tornerò alle 7:00 di domenica pomeriggio",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "7:00 di domenica pomeriggio",
@@ -325,7 +325,7 @@
   },
   {
     "Input": "Tornerò alle cinque e venti di domani mattina",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "cinque e venti di domani mattina",
@@ -337,7 +337,7 @@
   },
   {
     "Input": "Tornerò alle 8:00, Ottobre 14",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "8:00, Ottobre 14",
@@ -349,7 +349,7 @@
   },
   {
     "Input": "Tornerò alle 7, stamattina",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "7, stamattina",
@@ -361,7 +361,7 @@
   },
   {
     "Input": "Tornerò alle 8pm di sera, Lunedì",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "8pm di sera, Lunedì",
@@ -373,7 +373,7 @@
   },
   {
     "Input": "Tornerò alle 8pm di sera, 1 Gen",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "8pm di sera, 1 Gen",
@@ -385,7 +385,7 @@
   },
   {
     "Input": "Tornerò alle 10pm stanotte",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "10pm stanotte",
@@ -397,7 +397,7 @@
   },
   {
     "Input": "Tornerò alle 8am di stamattina",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "8am di stamattina",
@@ -409,7 +409,7 @@
   },
   {
     "Input": "Tornerò alle 8pm di questa sera",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "8pm di questa sera",
@@ -421,7 +421,7 @@
   },
   {
     "Input": "Tornerò stanotte verso le 7",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "stanotte verso le 7",
@@ -433,7 +433,7 @@
   },
   {
     "Input": "Tornerò stamattina alle 7",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "stamattina alle 7",
@@ -445,7 +445,7 @@
   },
   {
     "Input": "Tornerò stamattina alle 7pm",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "stamattina alle 7pm",
@@ -457,7 +457,7 @@
   },
   {
     "Input": "Tornerò stamattina alle sette",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "stamattina alle sette",
@@ -469,7 +469,7 @@
   },
   {
     "Input": "Tornerò stamattina alle 7:00",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "stamattina alle 7:00",
@@ -481,7 +481,7 @@
   },
   {
     "Input": "Tornerò questa notte alle 7",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "questa notte alle 7",
@@ -493,7 +493,7 @@
   },
   {
     "Input": "Tornerò stanotte alle 7",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "stanotte alle 7",
@@ -505,7 +505,7 @@
   },
   {
     "Input": "per 2 persone stanotte alle 9:30 pm",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "stanotte alle 9:30 pm",
@@ -517,7 +517,7 @@
   },
   {
     "Input": "per 2 persone stanotte alle 9:30:31 pm",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "stanotte alle 9:30:31 pm",
@@ -529,7 +529,7 @@
   },
   {
     "Input": "Tornerò a fine giornata",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "fine giornata",
@@ -541,7 +541,7 @@
   },
   {
     "Input": "Tornerò alla fine di domani",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "alla fine di domani",
@@ -553,7 +553,7 @@
   },
   {
     "Input": "Tornerò alla fine di domenica",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "alla fine di domenica",
@@ -565,7 +565,7 @@
   },
   {
     "Input": "Tornerò il 2016-12-16T12:23:59",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2016-12-16T12:23:59",
@@ -577,7 +577,7 @@
   },
   {
     "Input": "Tornerò in 5 ore",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "in 5 ore",
@@ -589,7 +589,7 @@
   },
   {
     "Input": "vedo se sono disponibile per le 3pm di dom",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "3pm di dom",
@@ -601,7 +601,7 @@
   },
   {
     "Input": "Fissa un appuntamento per domani mattina alle 9.",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "domani mattina alle 9",
@@ -613,7 +613,7 @@
   },
   {
     "Input": "Tornerò domani mattina alle 9",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "domani mattina alle 9",
@@ -625,7 +625,7 @@
   },
   {
     "Input": "Tornerò domani alle 9",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "domani alle 9",
@@ -637,7 +637,7 @@
   },
   {
     "Input": "questo venerdì all'una pm",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "questo venerdì all'una pm",
@@ -649,7 +649,7 @@
   },
   {
     "Input": "AGGIUNGI PRANZO ALLE 12:30 PM IL VEN",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "12:30 PM IL VEN",
@@ -673,7 +673,7 @@
   },
   {
     "Input": "Tornerò il 1 Agosto alle 11 AM",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il 1 Agosto alle 11 AM",
@@ -685,7 +685,7 @@
   },
   {
     "Input": "Tornerò il 1 Agosto alle 11 pm",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il 1 Agosto alle 11 pm",
@@ -697,7 +697,7 @@
   },
   {
     "Input": "Tornerò il 1 Agosto alle 11 p.m.",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il 1 Agosto alle 11 p.m.",
@@ -709,7 +709,7 @@
   },
   {
     "Input": "Tornerò il 25/02 alle 11 am",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il 25/02 alle 11 am",
@@ -721,7 +721,7 @@
   },
   {
     "Input": "Tornerò il 6 Gen 2017 - 6:37am",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "il 6 Gen 2017 - 6:37am",
@@ -733,7 +733,7 @@
   },
   {
     "Input": "16. Nov. 2016 10:38",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "16. Nov. 2016 10:38",
@@ -745,7 +745,7 @@
   },
   {
     "Input": "Partirò 1 giorno e 2 ore dopo",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "1 giorno e 2 ore dopo",
@@ -769,7 +769,7 @@
   },
   {
     "Input": "Partirò 1 giorno e 30 minuti dopo",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "1 giorno e 30 minuti dopo",
@@ -793,7 +793,7 @@
   },
   {
     "Input": "Andrò via alle 9am di lunedì",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "9am di lunedì",
@@ -805,7 +805,7 @@
   },
   {
     "Input": "Andrò via alle 9am il lunedì",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "9am il lunedì",

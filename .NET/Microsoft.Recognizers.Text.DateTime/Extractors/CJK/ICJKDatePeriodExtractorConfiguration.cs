@@ -12,6 +12,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex TillRegex { get; }
 
+        Regex DateUnitRegex { get; }
+
         Regex RangePrefixRegex { get; }
 
         Regex RangeSuffixRegex { get; }
@@ -30,6 +32,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IDateTimeExtractor DatePointExtractor { get; }
 
+        IDateTimeExtractor DurationExtractor { get; }
+
         IExtractor IntegerExtractor { get; }
+
+        Dictionary<Regex, Regex> AmbiguityFiltersDict { get; }
+
     }
 }

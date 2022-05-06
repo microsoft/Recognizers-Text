@@ -600,5 +600,26 @@
         "End": 5
       }
     ]
+  },
+  {
+    "Input": "Se till att rymma västkustens tidszon",
+    "NotSupported": "javascript,python,java",
+    "Results": []
+  },
+  {
+    "Input": "vi har 100 Att",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "100 att",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100",
+          "unit": "Att"
+        },
+        "Start": 7,
+        "End": 13
+      }
+    ]
   }
 ]

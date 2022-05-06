@@ -56,6 +56,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             TimeParser = config.TimeParser;
             DateTimeParser = config.DateTimeParser;
             TimePeriodParser = config.TimePeriodParser;
+            DurationParser = config.DurationParser;
 
             SpecificTimeOfDayRegex = JapaneseDateTimePeriodExtractorConfiguration.SpecificTimeOfDayRegex;
             TimeOfDayRegex = JapaneseDateTimePeriodExtractorConfiguration.TimeOfDayRegex;
@@ -63,7 +64,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             LastRegex = JapaneseDateTimePeriodExtractorConfiguration.LastRegex;
             PastRegex = JapaneseDateTimePeriodExtractorConfiguration.PastRegex;
             FutureRegex = JapaneseDateTimePeriodExtractorConfiguration.FutureRegex;
+            TimePeriodLeftRegex = JapaneseDateTimePeriodExtractorConfiguration.TimePeriodLeftRegex;
             UnitRegex = JapaneseDateTimePeriodExtractorConfiguration.UnitRegex;
+            RestOfDateRegex = JapaneseDateTimePeriodExtractorConfiguration.RestOfDateRegex;
             UnitMap = config.UnitMap;
         }
 
@@ -89,6 +92,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         public IDateTimeParser TimePeriodParser { get; }
 
+        public IDateTimeParser DurationParser { get; }
+
         public Regex SpecificTimeOfDayRegex { get; }
 
         public Regex TimeOfDayRegex { get; }
@@ -101,7 +106,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         public Regex FutureRegex { get; }
 
+        public Regex TimePeriodLeftRegex { get; }
+
         public Regex UnitRegex { get; }
+
+        public Regex RestOfDateRegex { get; }
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 

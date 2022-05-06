@@ -1,7 +1,7 @@
 [
   {
     "Input": "Andrò via settimanalmente",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "settimanalmente",
@@ -13,7 +13,7 @@
   },
   {
     "Input": "Andrò via quotidianamente",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "quotidianamente",
@@ -25,7 +25,7 @@
   },
   {
     "Input": "Andrò via ogni giorno",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "ogni giorno",
@@ -37,7 +37,7 @@
   },
   {
     "Input": "Andrò via ogni mese",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "ogni mese",
@@ -49,7 +49,7 @@
   },
   {
     "Input": "Andrò via annualmente",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "annualmente",
@@ -61,7 +61,7 @@
   },
   {
     "Input": "Andrò via una volta all'anno",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "una volta all'anno",
@@ -73,7 +73,7 @@
   },
   {
     "Input": "Andrò via ogni due giorni",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "ogni due giorni",
@@ -85,7 +85,7 @@
   },
   {
     "Input": "Andrò via ogni tre settimane",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "ogni tre settimane",
@@ -97,7 +97,7 @@
   },
   {
     "Input": "Andrò via alle 3pm ogni giorno",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "3pm ogni giorno",
@@ -109,7 +109,7 @@
   },
   {
     "Input": "Andrò via ogni 4/15",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "ogni 4/15",
@@ -121,7 +121,7 @@
   },
   {
     "Input": "Andrò via ogni lunedì",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "ogni lunedì",
@@ -133,7 +133,7 @@
   },
   {
     "Input": "Andrò via ogni lunedì alle 4pm",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "ogni lunedì alle 4pm",
@@ -145,7 +145,7 @@
   },
   {
     "Input": "Andrò via ogni mattina",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "ogni mattina",
@@ -157,7 +157,7 @@
   },
   {
     "Input": "Andrò via ogni mattina alle 9am",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "ogni mattina alle 9am",
@@ -169,7 +169,7 @@
   },
   {
     "Input": "Andrò via ogni pomeriggio alle 4pm",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "ogni pomeriggio alle 4pm",
@@ -181,7 +181,7 @@
   },
   {
     "Input": "Andrò via ogni notte alle 9pm",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "ogni notte alle 9pm",
@@ -193,7 +193,7 @@
   },
   {
     "Input": "Andrò via ogni notte alle 9",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "ogni notte alle 9",
@@ -217,7 +217,7 @@
   },
   {
     "Input": "Andrò via ogni mattina alle 9",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "ogni mattina alle 9",
@@ -241,7 +241,7 @@
   },
   {
     "Input": "Andrò via tutti i giorni",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "tutti i giorni",
@@ -253,7 +253,7 @@
   },
   {
     "Input": "Andrò via alle 9am ogni domenica",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "9am ogni domenica",
@@ -265,7 +265,7 @@
   },
   {
     "Input": "Andrò via alle 9am di ogni lunedì",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "9am di ogni lunedì",
@@ -277,7 +277,7 @@
   },
   {
     "Input": "Andrò via alle 9am tutti i lunedì",
-    "NotSupportedByDesign": "python,javascript,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "9am tutti i lunedì",

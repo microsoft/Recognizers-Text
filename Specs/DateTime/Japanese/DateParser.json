@@ -2906,7 +2906,7 @@
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "1か月、21日前",
+        "Text": "1か月,21日前",
         "Type": "date",
         "Value": {
           "Timex": "2017-10-02",
@@ -4178,7 +4178,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "二〇〇九年十月十二日、月曜日",
+        "Text": "二〇〇九年十月十二日,月曜日",
         "Type": "date",
         "Value": {
           "Timex": "2009-10-12",
@@ -4466,7 +4466,7 @@
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "10月12日、月曜日",
+        "Text": "10月12日,月曜日",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-10-12",
