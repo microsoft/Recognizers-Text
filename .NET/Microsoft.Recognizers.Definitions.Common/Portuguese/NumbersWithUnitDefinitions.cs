@@ -791,7 +791,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
         };
       public static readonly Dictionary<string, string> WeightSuffixList = new Dictionary<string, string>
         {
-            { @"Tonelada métrica", @"tonelada métrica|tonelada metrica|toneladas métricas|toneladas metricas|t métrica|t metrica|t métricas|t metricas|t.métrica|t.metrica|t.métricas|t.metricas" },
+            { @"Tonelada métrica", @"tonelada métrica|tonelada metrica|toneladas métricas|toneladas metricas|t métrica|t metrica|t métricas|t metricas|t.métrica|t.metrica|t.métricas|t.metricas|t. metrica|t. métrica" },
             { @"Tonelada", @"ton|tonelada|toneladas|t" },
             { @"Quilograma", @"kg|quilograma|quilogramas|quilo|quilos|kilo|kilos" },
             { @"Hectograma", @"hg|hectograma|hectogramas" },

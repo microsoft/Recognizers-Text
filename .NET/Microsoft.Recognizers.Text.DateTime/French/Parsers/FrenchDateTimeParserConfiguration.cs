@@ -7,6 +7,7 @@ using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.French;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
+using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.French
 {
@@ -19,6 +20,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             new Regex(DateTimeDefinitions.PMTimeRegex, RegexFlags);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
+        private static readonly Regex AsapTimeRegex =
+            new Regex(DateTimeDefinitions.AsapTimeRegex, RegexFlags);
 
         public FrenchDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
@@ -143,8 +147,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             {
                 timex = "PAST_REF";
             }
-            else if (trimmedText.Equals("dès que possible", StringComparison.Ordinal) ||
-                     trimmedText.Equals("dqp", StringComparison.Ordinal))
+            else if (AsapTimeRegex.IsExactMatch(trimmedText, trim: true))
             {
                 timex = "FUTURE_REF";
             }

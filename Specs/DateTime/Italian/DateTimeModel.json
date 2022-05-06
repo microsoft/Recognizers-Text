@@ -2985,7 +2985,7 @@
     "Context": {
       "ReferenceDateTime": "2022-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript,java",
+    "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "da gennaio ad aprile",
