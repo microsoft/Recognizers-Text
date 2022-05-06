@@ -3,11 +3,11 @@
 LangMarker: Ita
 CheckBothBeforeAfter: !bool false
 TillRegex: !simpleRegex
-  def: (?<till>\b(fino\s+a(l(l[aoe'])?|gli|i)?|a(l(l[aoe'])?|gli|i)?|e\s+(il?|l[aoe']|gli))\b|--|-|—|——|~)
+  def: (?<till>\b(fino\s+a(l(l[aoe'])?|gli|i|d)?|a(l(l[aoe'])?|gli|i|d)?|e\s+(il?|l[aoe']|gli))\b|--|-|—|——|~)
 RestrictedTillRegex: !simpleRegex
-  def: (?<till>\b(fino\s+a(l(l[aoe'])?|gli|i)?)\b|--|-|—|——|~)
+  def: (?<till>\b(fino\s+a(l(l[aoe'])?|gli|i|d)?)\b|--|-|—|——|~)
 RangeConnectorRegex: !nestedRegex
-  def: (?<and>\b(e(\s+l[aoe']|gli|i)?|a(l(l[aoe'])?|gli|i)?)\b|{BaseDateTime.RangeConnectorSymbolRegex})
+  def: (?<and>\b(e(\s+l[aoe']|gli|i|d)?|a(l(l[aoe'])?|gli|i|d)?)\b|{BaseDateTime.RangeConnectorSymbolRegex})
   references: [ BaseDateTime.RangeConnectorSymbolRegex ]
 RelativeRegex: !simpleRegex
   def: \b(?<order>((il?|l[ae])\s+)?prossim['oaie]|((il?|l[ae])\s+)?seguent[ei]|((il?|l[ae])\s+)?successiv[oaei]|in\s+arrivo|quest['oaie]|(l'|gli\s+|le\s+)?ultim['oaie]|((il?|l[ae])\s+)?passat[oaie]|((il?|l[ae])\s+)?precedent[ei]|((lo|l[ae]|gli)\s+)?scors[oaie]|((il?|l[ae])\s+)?corrent[ei]|quest['oaei]|il?|l[oae']|gli)
