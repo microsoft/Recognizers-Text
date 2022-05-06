@@ -43,4 +43,3 @@ class GermanCurrencyParserConfiguration(GermanNumberWithUnitParserConfiguration)
         self.add_dict_to_unit_map(GermanNumericWithUnit.CurrencyPrefixList)
         self.currency_name_to_iso_code_map = GermanNumericWithUnit.CurrencyNameToIsoCodeMap
         self.currency_fraction_code_list = GermanNumericWithUnit.FractionalUnitNameToCodeMap
-

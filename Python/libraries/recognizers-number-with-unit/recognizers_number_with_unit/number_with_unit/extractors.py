@@ -26,7 +26,7 @@ class NumberWithUnitExtractorConfiguration(ABC):
     @property
     def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
         pass
-        
+
     @property
     def dimension_ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
         pass
@@ -473,11 +473,11 @@ class NumberWithUnitExtractor(Extractor):
             dict[key] = []
         dict[key].append(value)
 
-    def _filter_ambiguity(self, ers: List[ExtractResult], text: str, ambiguity_filter_dict = None) -> List[ExtractResult]:
-    
+    def _filter_ambiguity(self, ers: List[ExtractResult], text: str, ambiguity_filter_dict=None) -> List[ExtractResult]:
+
         # If no filter is specified, use common AmbiguityFilter
         if ambiguity_filter_dict is None:
-            ambiguity_filter_dict = self.config.ambiguity_filters_dict;
+            ambiguity_filter_dict = self.config.ambiguity_filters_dict
 
         if ambiguity_filter_dict is not None:
             for regex_var in ambiguity_filter_dict:
@@ -507,11 +507,11 @@ class NumberWithUnitExtractor(Extractor):
         return ers
 
     def _select_candidates(self, source: str, ers: List[ExtractResult], unit_is_prefix: List[bool]) -> List[ExtractResult]:
-    
+
         total_candidate = len(unit_is_prefix)
         have_conflict = False
         for index in range(1, total_candidate):
-            if ers[index -1].end > ers[index].start:
+            if ers[index - 1].end > ers[index].start:
                 have_conflict = True
 
         if not have_conflict:
@@ -532,7 +532,7 @@ class NumberWithUnitExtractor(Extractor):
                     prefix_result.append(ers[index])
 
         current_end = len(source)
-        for index in range(total_candidate -1, -1, -1):
+        for index in range(total_candidate - 1, -1, -1):
             if current_end >= ers[index].end:
                 current_end = ers[index].start
                 suffix_result.append(ers[index])
@@ -552,7 +552,7 @@ class NumberWithUnitExtractor(Extractor):
 
         # Remove from suffixResult units that are also prefix units with no space,
         # e.g. in '1 $50', '$' should not be considered a suffix unit.
-        for index in range(len(suffix_result) -1, -1, -1):
+        for index in range(len(suffix_result) - 1, -1, -1):
             suffix = suffix_result[index]
             if (any(suffix.start <= unit.start and suffix.end >= unit.end for unit in no_space_units)):
                 suffix_result.pop(index)
