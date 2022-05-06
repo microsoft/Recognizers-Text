@@ -3751,5 +3751,347 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Estarei fora na semana 3 de dois mil e vinte e sete",
+    "Context": {
+      "ReferenceDateTime": "2021-11-29T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "semana 3 de dois mil e vinte e sete",
+        "Start": 16,
+        "End": 50,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2027-W03",
+              "type": "daterange",
+              "start": "2027-01-18",
+              "end": "2027-01-25"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Mostrar vendas na semana 27 do ano passado",
+    "Context": {
+      "ReferenceDateTime": "2018-07-02T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "semana 27 do ano passado",
+        "Start": 18,
+        "End": 41,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-W27",
+              "type": "daterange",
+              "start": "2017-07-03",
+              "end": "2017-07-10"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "O projeto deve começar na próxima década.",
+    "Context": {
+      "ReferenceDateTime": "2018-07-02T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "na próxima década",
+        "Start": 23,
+        "End": 39,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2020-01-01,2030-01-01,P10Y)",
+              "type": "daterange",
+              "start": "2020-01-01",
+              "end": "2030-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "O projeto deve ser concluído nas próximas duas décadas.",
+    "Context": {
+      "ReferenceDateTime": "2018-07-02T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "nas próximas duas décadas",
+        "Start": 29,
+        "End": 53,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2020-01-01,2040-01-01,P20Y)",
+              "type": "daterange",
+              "start": "2020-01-01",
+              "end": "2040-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tais acordos proliferaram na última década.",
+    "Context": {
+      "ReferenceDateTime": "2018-07-02T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "na última década",
+        "Start": 26,
+        "End": 41,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2000-01-01,2010-01-01,P10Y)",
+              "type": "daterange",
+              "start": "2000-01-01",
+              "end": "2010-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Vamos ter uma reunião trimestral.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "trimestral",
+        "Start": 22,
+        "End": 31,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P3M",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "O Conselho será informado semestralmente sobre o andamento do pedido",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "semestralmente",
+        "Start": 26,
+        "End": 39,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P6M",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Eu tenho muitos ganhos neste ano letivo.",
+    "Context": {
+      "ReferenceDateTime": "2019-06-18T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "neste ano letivo",
+        "Start": 23,
+        "End": 38,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "SY2019",
+              "type": "daterange",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Eu tenho muitos ganhos neste letivo ano.",
+    "Context": {
+      "ReferenceDateTime": "2019-06-18T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "neste letivo ano",
+        "Start": 23,
+        "End": 38,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "SY2019",
+              "type": "daterange",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Eu tenho muitos ganhos no último ano fiscal.",
+    "Context": {
+      "ReferenceDateTime": "2019-06-18T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "último ano fiscal",
+        "Start": 26,
+        "End": 42,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "FY2018",
+              "type": "daterange",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Eu tenho muitos ganhos neste ano civil.",
+    "Context": {
+      "ReferenceDateTime": "2019-06-18T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "neste ano civil",
+        "Start": 23,
+        "End": 37,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019",
+              "type": "daterange",
+              "start": "2019-01-01",
+              "end": "2020-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Mostrar vendas no ano fiscal de 2008",
+    "Context": {
+      "ReferenceDateTime": "2019-06-18T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "ano fiscal de 2008",
+        "Start": 18,
+        "End": 35,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "FY2008",
+              "type": "daterange",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Você está disponível dois dias depois de hoje?",
+    "Context": {
+      "ReferenceDateTime": "2018-05-31T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "dois dias depois de hoje",
+        "Start": 21,
+        "End": 44,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-06-02",
+              "type": "date",
+              "value": "2018-06-02"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Eu já terminei todos os meus trabalhos 2 semanas antes de hoje.",
+    "Context": {
+      "ReferenceDateTime": "2018-06-12T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2 semanas antes de hoje",
+        "Start": 39,
+        "End": 61,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-05-29",
+              "type": "date",
+              "value": "2018-05-29"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

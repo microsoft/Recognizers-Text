@@ -5294,8 +5294,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
-    "Comment": "MERGE Merge sub-entities for consistency with English.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "dos días después de hoy",
@@ -7547,7 +7546,7 @@
       "ReferenceDateTime": "2018-07-17T13:00:00"
     },
     "Comment": "HOLIDAY",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "día de independencia de este año",
@@ -13692,7 +13691,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "Comment": "HOLIDAY",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "viernes negro 2010",
@@ -13717,7 +13716,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "Comment": "HOLIDAY",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "día de la tierra 2010",
@@ -14137,7 +14136,7 @@
       "ReferenceDateTime": "2019-06-18T00:00:00"
     },
     "Comment": "SPTERM Special terms",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "este año escolar",
@@ -14162,11 +14161,11 @@
       "ReferenceDateTime": "2019-06-18T00:00:00"
     },
     "Comment": "SPTERM Special terms",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "último año fiscal",
-        "Start": 27,
+        "Text": "el último año fiscal",
+        "Start": 24,
         "End": 43,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
@@ -14187,7 +14186,7 @@
       "ReferenceDateTime": "2019-06-18T00:00:00"
     },
     "Comment": "SPTERM Special terms",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "este año calendario",
@@ -14311,7 +14310,7 @@
       "ReferenceDateTime": "2019-06-18T00:00:00"
     },
     "Comment": "SPTERM Special terms",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "año fiscal",
@@ -14385,7 +14384,7 @@
       "ReferenceDateTime": "2019-06-28T00:00:00"
     },
     "Comment": "HOLIDAY",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "día de san patricio 2020",
@@ -17720,7 +17719,7 @@
       "ReferenceDateTime": "2020-05-14T12:00:00"
     },
     "Comment": "HOLIDAY",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "día internacional de los trabajadores",
@@ -22252,6 +22251,402 @@
               "type": "daterange",
               "start": "2020-01-01",
               "end": "2020-01-11"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Estaré afuera en semana 3 de dos mil veintisiete",
+    "Context": {
+      "ReferenceDateTime": "2021-11-29T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "semana 3 de dos mil veintisiete",
+        "Start": 17,
+        "End": 47,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2027-W03",
+              "type": "daterange",
+              "start": "2027-01-18",
+              "end": "2027-01-25"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Mostrar ventas en la semana 27 del año pasado",
+    "Context": {
+      "ReferenceDateTime": "2018-07-02T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "semana 27 del año pasado",
+        "Start": 21,
+        "End": 44,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-W27",
+              "type": "daterange",
+              "start": "2017-07-03",
+              "end": "2017-07-10"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "programarme una reunión a las 3:00 h",
+    "Context": {
+      "ReferenceDateTime": "2017-12-04T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3:00 h",
+        "Start": 30,
+        "End": 35,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T03:00",
+              "type": "time",
+              "value": "03:00:00"
+            },
+            {
+              "timex": "T15:00",
+              "type": "time",
+              "value": "15:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "La acción de este banco ha bajado un 20% en el año hasta la fecha.",
+    "Context": {
+      "ReferenceDateTime": "2018-09-07T12:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "año hasta la fecha",
+        "Start": 47,
+        "End": 64,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018",
+              "type": "daterange",
+              "start": "2018-01-01",
+              "end": "2018-09-07"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "El proyecto debería comenzar en la próxima década.",
+    "Context": {
+      "ReferenceDateTime": "2018-07-02T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "la próxima década",
+        "Start": 32,
+        "End": 48,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2020-01-01,2030-01-01,P10Y)",
+              "type": "daterange",
+              "start": "2020-01-01",
+              "end": "2030-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "El proyecto debería estar terminado en las próximas dos décadas.",
+    "Context": {
+      "ReferenceDateTime": "2018-07-02T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "las próximas dos décadas",
+        "Start": 39,
+        "End": 62,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2020-01-01,2040-01-01,P20Y)",
+              "type": "daterange",
+              "start": "2020-01-01",
+              "end": "2040-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Esos acuerdos han proliferado en el último decenio.",
+    "Context": {
+      "ReferenceDateTime": "2018-07-02T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "el último decenio",
+        "Start": 33,
+        "End": 49,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2000-01-01,2010-01-01,P10Y)",
+              "type": "daterange",
+              "start": "2000-01-01",
+              "end": "2010-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tengamos una reunión trimestral.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "trimestral",
+        "Start": 21,
+        "End": 30,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P3M",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Se informará a la Junta semestralmente de los avances en la aplicación",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "semestralmente",
+        "Start": 24,
+        "End": 37,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P6M",
+              "type": "set",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tengo muchas ganancias en este escolar año.",
+    "Context": {
+      "ReferenceDateTime": "2019-06-18T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "este escolar año",
+        "Start": 26,
+        "End": 41,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "SY2019",
+              "type": "daterange",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tengo muchas ganancias en el último fiscal año.",
+    "Context": {
+      "ReferenceDateTime": "2019-06-18T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "el último fiscal año",
+        "Start": 26,
+        "End": 45,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "FY2018",
+              "type": "daterange",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Tengo muchas ganancias en este calendario año.",
+    "Context": {
+      "ReferenceDateTime": "2019-06-18T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "este calendario año",
+        "Start": 26,
+        "End": 44,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019",
+              "type": "daterange",
+              "start": "2019-01-01",
+              "end": "2020-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Mostrar ventas en el fiscal año 2008",
+    "Context": {
+      "ReferenceDateTime": "2019-06-18T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "fiscal año 2008",
+        "Start": 21,
+        "End": 35,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "FY2008",
+              "type": "daterange",
+              "value": "not resolved"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver a las 7 del próximo domingo a la tarde",
+    "Context": {
+      "ReferenceDateTime": "2018-05-01T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "7 del próximo domingo a la tarde",
+        "Start": 19,
+        "End": 50,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-05-13T19",
+              "type": "datetime",
+              "value": "2018-05-13 19:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver 7h del próximo domingo a la tarde",
+    "Context": {
+      "ReferenceDateTime": "2018-05-01T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "7h del próximo domingo a la tarde",
+        "Start": 13,
+        "End": 45,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-05-13T19",
+              "type": "datetime",
+              "value": "2018-05-13 19:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Voy a volver 7 horas del próximo domingo a la tarde",
+    "Context": {
+      "ReferenceDateTime": "2018-05-01T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "7 horas del próximo domingo a la tarde",
+        "Start": 13,
+        "End": 50,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-05-13T19",
+              "type": "datetime",
+              "value": "2018-05-13 19:00:00"
             }
           ]
         }

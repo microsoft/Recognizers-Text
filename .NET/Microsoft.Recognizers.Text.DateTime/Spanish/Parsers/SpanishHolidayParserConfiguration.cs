@@ -71,6 +71,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                 { "todoslossantos", HalloweenDay },
                 { "niño", ChildrenDay },
                 { "mujer", FemaleDay },
+                { "independencia", UsaIndependenceDay },
+                { "earthday", EarthDay },
+                { "stpatrickday", StPatrickDay },
+                { "valentinesday", ValentinesDay },
+                { "goodfriday", GoodFriday },
             };
         }
 
@@ -91,5 +96,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         private static DateObject TeacherDay(int year) => new DateObject(year, 9, 11);
 
         private static DateObject Pascuas(int year) => HolidayFunctions.CalculateHolidayByEaster(year);
+
+        private static DateObject GoodFriday(int year) => Pascuas(year).AddDays(-2);
+
+        private static DateObject UsaIndependenceDay(int year) => new DateObject(year, 7, 4);
+
+        private static DateObject EarthDay(int year) => new DateObject(year, 4, 22);
+
+        private static DateObject ValentinesDay(int year) => new DateObject(year, 2, 14);
+
+        private static DateObject StPatrickDay(int year) => new DateObject(year, 3, 17);
     }
 }

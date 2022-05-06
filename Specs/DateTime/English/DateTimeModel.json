@@ -23005,5 +23005,105 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Show sales in the week 3 of 2027",
+    "Context": {
+      "ReferenceDateTime": "2018-07-02T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "week 3 of 2027",
+        "Start": 18,
+        "End": 31,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2027-W03",
+              "type": "daterange",
+              "start": "2027-01-18",
+              "end": "2027-01-25"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Show sales in the week 27 of last year",
+    "Context": {
+      "ReferenceDateTime": "2018-07-02T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "week 27 of last year",
+        "Start": 18,
+        "End": 37,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-W27",
+              "type": "daterange",
+              "start": "2017-07-03",
+              "end": "2017-07-10"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The project should start in the next decade",
+    "Context": {
+      "ReferenceDateTime": "2018-07-02T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "the next decade",
+        "Start": 28,
+        "End": 42,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2020-01-01,2030-01-01,P10Y)",
+              "type": "daterange",
+              "start": "2020-01-01",
+              "end": "2030-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The project should be completed in the next two decades.",
+    "Context": {
+      "ReferenceDateTime": "2018-07-02T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "the next two decades",
+        "Start": 35,
+        "End": 54,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2020-01-01,2040-01-01,P20Y)",
+              "type": "daterange",
+              "start": "2020-01-01",
+              "end": "2040-01-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

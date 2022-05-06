@@ -2106,7 +2106,19 @@ namespace Microsoft.Recognizers.Text.DateTime
                     return ret;
                 }
 
-                var year = referenceDate.Year;
+                var year = config.DateExtractor.GetYearFromText(match.Match);
+                if (year == Constants.InvalidYear)
+                {
+                    var orderStr = match.Groups["order"].Value;
+                    var swift = this.config.GetSwiftYear(orderStr);
+                    if (swift < -1)
+                    {
+                        swift = 0;
+                    }
+
+                    year = referenceDate.Year + swift;
+                }
+
                 ret.Timex = year.ToString("D4", CultureInfo.InvariantCulture) + "-W" + num.ToString("D2", CultureInfo.InvariantCulture);
 
                 var firstDay = DateObject.MinValue.SafeCreateFromValue(year, 1, 1);
