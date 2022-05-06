@@ -88,4 +88,3 @@ class GermanCurrencyExtractorConfiguration(GermanNumberWithUnitExtractorConfigur
         self._suffix_list = GermanNumericWithUnit.CurrencySuffixList
         self._prefix_list = GermanNumericWithUnit.CurrencyPrefixList
         self._ambiguous_unit_list = GermanNumericWithUnit.AmbiguousCurrencyUnitList
-

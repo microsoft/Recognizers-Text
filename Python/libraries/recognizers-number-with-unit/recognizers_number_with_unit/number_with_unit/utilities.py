@@ -26,6 +26,7 @@ class DictionaryUtility():
                 continue
             source_dictionary[token] = key
 
+
 class Token:
     def __init__(self, start: int, end: int):
         self._start: int = start

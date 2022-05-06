@@ -2979,5 +2979,61 @@
         "End": 33
       }
     ]
+  },
+  {
+    "Input": "Clima Los Angeles da gennaio ad aprile",
+    "Context": {
+      "ReferenceDateTime": "2022-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,java",
+    "Results": [
+      {
+        "Text": "da gennaio ad aprile",
+        "Start": 18,
+        "End": 37,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-01-01,XXXX-04-01,P3M)",
+              "type": "daterange",
+              "start": "2022-01-01",
+              "end": "2022-04-01"
+            },
+            {
+              "timex": "(XXXX-01-01,XXXX-04-01,P3M)",
+              "type": "daterange",
+              "start": "2023-01-01",
+              "end": "2023-04-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Da Gennaio ad Aprile 2021",
+    "Context": {
+      "ReferenceDateTime": "2022-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,java",
+    "Results": [
+      {
+        "Text": "da gennaio ad aprile 2021",
+        "Start": 0,
+        "End": 24,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2021-01-01,2021-04-01,P3M)",
+              "type": "daterange",
+              "start": "2021-01-01",
+              "end": "2021-04-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
