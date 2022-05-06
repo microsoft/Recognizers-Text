@@ -699,7 +699,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public const string MonthTypeRegex = @"(mensal(mente)?)$";
       public const string BiMonthTypeRegex = @"(bimestral(mente)?)$";
       public const string QuarterTypeRegex = @"(trimestral(mente)?)$";
-      public const string BiAnnualTypeRegex = @"(semestral(mente)?)$";
+      public const string SemiAnnualTypeRegex = @"(semestral(mente)?)$";
       public const string YearTypeRegex = @"(anual(mente)?)$";
     }
 }

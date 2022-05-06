@@ -3916,7 +3916,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "P6M",
+              "timex": "P0.5Y",
               "type": "set",
               "value": "not resolved"
             }

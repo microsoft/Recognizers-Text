@@ -1193,8 +1193,8 @@ MonthTypeRegex: !simpleRegex
   def: (mes(es)?|mensual(es|mente)?)$
 QuarterTypeRegex: !simpleRegex
   def: (trimestral(es|mente)?)$
-BiAnnualTypeRegex: !simpleRegex
+SemiAnnualTypeRegex: !simpleRegex
   def: (semestral(es|mente)?)$
 YearTypeRegex: !simpleRegex
-  def: (años?|anualmente)$
+  def: (años?|anual(mente)?)$
 ...

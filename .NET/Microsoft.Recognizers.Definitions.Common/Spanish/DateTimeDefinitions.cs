@@ -767,7 +767,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public const string WeekendTypeRegex = @"(fin(es)?\s+de\s+semana|finde)$";
       public const string MonthTypeRegex = @"(mes(es)?|mensual(es|mente)?)$";
       public const string QuarterTypeRegex = @"(trimestral(es|mente)?)$";
-      public const string BiAnnualTypeRegex = @"(semestral(es|mente)?)$";
-      public const string YearTypeRegex = @"(años?|anualmente)$";
+      public const string SemiAnnualTypeRegex = @"(semestral(es|mente)?)$";
+      public const string YearTypeRegex = @"(años?|anual(mente)?)$";
     }
 }

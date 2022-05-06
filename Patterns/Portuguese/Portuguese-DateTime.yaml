@@ -1103,7 +1103,7 @@ BiMonthTypeRegex: !simpleRegex
   def: (bimestral(mente)?)$
 QuarterTypeRegex: !simpleRegex
   def: (trimestral(mente)?)$
-BiAnnualTypeRegex: !simpleRegex
+SemiAnnualTypeRegex: !simpleRegex
   def: (semestral(mente)?)$
 YearTypeRegex: !simpleRegex
   def: (anual(mente)?)$

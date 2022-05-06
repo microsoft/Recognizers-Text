@@ -34,8 +34,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         private static readonly Regex QuarterTypeRegex =
             new Regex(DateTimeDefinitions.QuarterTypeRegex, RegexFlags);
 
-        private static readonly Regex BiAnnualTypeRegex =
-            new Regex(DateTimeDefinitions.BiAnnualTypeRegex, RegexFlags);
+        private static readonly Regex SemiAnnualTypeRegex =
+            new Regex(DateTimeDefinitions.SemiAnnualTypeRegex, RegexFlags);
 
         private static readonly Regex YearTypeRegex =
             new Regex(DateTimeDefinitions.YearTypeRegex, RegexFlags);
@@ -149,10 +149,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
                 multiplier = 3;
                 durationType = "M";
             }
-            else if (BiAnnualTypeRegex.IsMatch(trimmedText))
+            else if (SemiAnnualTypeRegex.IsMatch(trimmedText))
             {
-                multiplier = 6;
-                durationType = "M";
+                multiplier = 0.5f;
+                durationType = "Y";
             }
             else if (YearTypeRegex.IsMatch(trimmedText))
             {

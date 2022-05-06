@@ -16687,8 +16687,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "Comment": "SETREF. Set implementation to be refined.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "trimestral",
@@ -18242,8 +18241,7 @@
     "Context": {
       "ReferenceDateTime": "2020-06-12T00:00:00"
     },
-    "Comment": "SETREF. Set implementation to be refined.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "semestralmente",
@@ -18267,8 +18265,7 @@
     "Context": {
       "ReferenceDateTime": "2020-06-12T00:00:00"
     },
-    "Comment": "SETREF. Set implementation to be refined.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "semestral",
@@ -18367,8 +18364,7 @@
     "Context": {
       "ReferenceDateTime": "2020-06-12T00:00:00"
     },
-    "Comment": "SETREF. Set implementation to be refined.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "anual",
@@ -22437,30 +22433,6 @@
     ]
   },
   {
-    "Input": "Tengamos una reunión trimestral.",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "trimestral",
-        "Start": 21,
-        "End": 30,
-        "TypeName": "datetimeV2.set",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "P3M",
-              "type": "set",
-              "value": "not resolved"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  {
     "Input": "Se informará a la Junta semestralmente de los avances en la aplicación",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -22475,7 +22447,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "P6M",
+              "timex": "P0.5Y",
               "type": "set",
               "value": "not resolved"
             }
