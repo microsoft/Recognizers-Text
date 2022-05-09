@@ -36,7 +36,8 @@ namespace Microsoft.Recognizers.Definitions.Spanish
             @"es-pr"
         };
       public const string HundredsNumberIntegerRegex = @"(cuatrocient[ao]s|trescient[ao]s|seiscient[ao]s|setecient[ao]s|ochocient[ao]s|novecient[ao]s|doscient[ao]s|quinient[ao]s|(?<!por\s+)(cien(to)?))";
-      public const string RoundNumberIntegerRegex = @"(mil\s+millones|mill[oó]n(es)?|mil|bill[oó]n(es)?|trill[oó]n(es)?|cuatrill[oó]n(es)?|quintill[oó]n(es)?|sextill[oó]n(es)?|septill[oó]n(es)?)";
+      public const string RoundNumberIntegerSingRegex = @"(((mil\s+)?mi|bi|cuatri|quinti|sexti|septi)ll[oó]n|mil)";
+      public static readonly string RoundNumberIntegerRegex = $@"({RoundNumberIntegerSingRegex}(es)?)";
       public const string ZeroToNineIntegerRegex = @"(cuatro|cinco|siete|nueve|cero|tres|seis|ocho|dos|un[ao]?)";
       public const string TwoToNineIntegerRegex = @"(cuatro|cinco|siete|nueve|tres|seis|ocho|dos)";
       public const string TenToNineteenIntegerRegex = @"(diecisiete|diecinueve|diecis[eé]is|dieciocho|catorce|quince|trece|diez|once|doce)";
@@ -47,9 +48,9 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public const string DigitsNumberRegex = @"\d|\d{1,3}(\.\d{3})";
       public static readonly string BelowHundredsRegex = $@"(({TenToNineteenIntegerRegex}|{TwentiesIntegerRegex}|({TensNumberIntegerRegex}(\s+y\s+{ZeroToNineIntegerRegex})?))|{ZeroToNineIntegerRegex})";
       public static readonly string BelowThousandsRegex = $@"({HundredsNumberIntegerRegex}(\s+{BelowHundredsRegex})?|{BelowHundredsRegex})";
-      public static readonly string SupportThousandsRegex = $@"((({BelowThousandsRegex}|{BelowHundredsRegex})\s+)?{RoundNumberIntegerRegex}(\s+{RoundNumberIntegerRegex})?)";
+      public static readonly string SupportThousandsRegex = $@"(({BelowThousandsRegex}|{BelowHundredsRegex})\s+{RoundNumberIntegerRegex}(\s+{RoundNumberIntegerRegex})?)";
       public static readonly string SeparaIntRegex = $@"({SupportThousandsRegex}(\s+{SupportThousandsRegex})*(\s+{BelowThousandsRegex})?|{BelowThousandsRegex})";
-      public static readonly string AllIntRegex = $@"({SeparaIntRegex}|mil(\s+{BelowThousandsRegex})?)";
+      public static readonly string AllIntRegex = $@"({SeparaIntRegex}|mil(\s+{BelowThousandsRegex})?|{RoundNumberIntegerSingRegex})";
       public const string PlaceHolderPureNumber = @"\b";
       public const string PlaceHolderDefault = @"\D|\b";
       public static readonly Func<string, string> NumbersWithPlaceHolder = (placeholder) => $@"(((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!([\.,]\d+[a-zA-Z]))(?={placeholder})";

@@ -20,8 +20,11 @@ NonStandardSeparatorVariants: !list
 #Integer Regex
 HundredsNumberIntegerRegex: !simpleRegex
   def: (cuatrocient[ao]s|trescient[ao]s|seiscient[ao]s|setecient[ao]s|ochocient[ao]s|novecient[ao]s|doscient[ao]s|quinient[ao]s|(?<!por\s+)(cien(to)?))
-RoundNumberIntegerRegex: !simpleRegex
-  def: (mil\s+millones|mill[oó]n(es)?|mil|bill[oó]n(es)?|trill[oó]n(es)?|cuatrill[oó]n(es)?|quintill[oó]n(es)?|sextill[oó]n(es)?|septill[oó]n(es)?)
+RoundNumberIntegerSingRegex: !simpleRegex
+  def: (((mil\s+)?mi|bi|cuatri|quinti|sexti|septi)ll[oó]n|mil)
+RoundNumberIntegerRegex: !nestedRegex
+  def: ({RoundNumberIntegerSingRegex}(es)?)
+  references: [ RoundNumberIntegerSingRegex ]
 ZeroToNineIntegerRegex: !simpleRegex
   def: (cuatro|cinco|siete|nueve|cero|tres|seis|ocho|dos|un[ao]?)
 TwoToNineIntegerRegex: !simpleRegex
@@ -46,14 +49,14 @@ BelowThousandsRegex: !nestedRegex
   def: ({HundredsNumberIntegerRegex}(\s+{BelowHundredsRegex})?|{BelowHundredsRegex})
   references: [ HundredsNumberIntegerRegex, BelowHundredsRegex ]
 SupportThousandsRegex: !nestedRegex
-  def: ((({BelowThousandsRegex}|{BelowHundredsRegex})\s+)?{RoundNumberIntegerRegex}(\s+{RoundNumberIntegerRegex})?)
+  def: (({BelowThousandsRegex}|{BelowHundredsRegex})\s+{RoundNumberIntegerRegex}(\s+{RoundNumberIntegerRegex})?)
   references: [ BelowThousandsRegex, BelowHundredsRegex, RoundNumberIntegerRegex ]
 SeparaIntRegex: !nestedRegex
   def: ({SupportThousandsRegex}(\s+{SupportThousandsRegex})*(\s+{BelowThousandsRegex})?|{BelowThousandsRegex})
   references: [ SupportThousandsRegex, BelowThousandsRegex ]
 AllIntRegex: !nestedRegex
-  def: ({SeparaIntRegex}|mil(\s+{BelowThousandsRegex})?)
-  references: [ SeparaIntRegex, BelowThousandsRegex ]
+  def: ({SeparaIntRegex}|mil(\s+{BelowThousandsRegex})?|{RoundNumberIntegerSingRegex})
+  references: [ SeparaIntRegex, BelowThousandsRegex, RoundNumberIntegerSingRegex ]
 PlaceHolderPureNumber: !simpleRegex
   def: \b
 PlaceHolderDefault: !simpleRegex
