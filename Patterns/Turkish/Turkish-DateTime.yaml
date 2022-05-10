@@ -651,11 +651,11 @@ LastRegex: !simpleRegex
 InclusiveModPrepositions: !simpleRegex
   def: (?<include>(('(ü|u|te|ta|da|de|inde|sinde|ünde|ında|unda|sında)\s+)?(ya\s+da|veya)\b))
 BeforeRegex: !nestedRegex
-  def: ((({InclusiveModPrepositions}|(?<=günü)nden|'?(den?|tan?|ten?|y?[ea])|('|(?<!başın))dan?)\s+(öncesinde|öncesine|daha\s+önce(sinde)?|önce(\b|(?=dır|dir))|evvel|(daha|en)\s+(erken)|kadar(?!\s+erken)|en\s+geç)|(öncesinde|öncesine|daha\s+önce|(daha|en)\s+(geç|erken)|kadar)\s+{InclusiveModPrepositions})|en\s+geç\s*?|önce\b|(?<include>kadar\s+geç)|kadar(?!\s+erken)|ile\s+biten|(?<!\w|>)((?<include><=)|<))
+  def: ((({InclusiveModPrepositions}|(?<=günü)nden|'?(den?|tan?|ten?|y?[ea])|('|(?<!başın))dan?)\s+(önce(sind?e|ki)|daha\s+önce(sinde)?|önce(\b|(?=dır|dir))|evvel|(daha|en)\s+(erken)|kadar(?!\s+erken)|en\s+geç)|(öncesinde|öncesine|daha\s+önce|(daha|en)\s+(geç|erken)|kadar)\s+{InclusiveModPrepositions})|en\s+geç\s*?|önce\b|(?<include>kadar\s+geç)|kadar(?!\s+erken)|ile\s+biten|(?<!\w|>)((?<include><=)|<))
   references: [ InclusiveModPrepositions ]
 # WithAnchor regexes are used in MergedExtractor to ensure that some patterns are only matched in afterString
 BeforeRegexWithAnchor: !nestedRegex
-  def: ((^({InclusiveModPrepositions}|nden|'?(den?|tan?|ten?|y?[ea])|('|(?<!başın))dan?)\s+(öncesinde|öncesine|daha\s+önce(sinde)?|önce(\b|(?=dır|dir))|evvel|(daha|en)\s+(erken)|kadar(?!\s+erken)|en\s+geç)|(öncesinde|öncesine|daha\s+önce|(daha|en)\s+(geç|erken)|kadar)\s+{InclusiveModPrepositions})|en\s+geç\s*?|^önce\b|^(?<include>kadar\s+geç)|^kadar(?!\s+erken)|ile\s+biten|(?<!\w|>)((?<include><=)|<))
+  def: ((^({InclusiveModPrepositions}|nden|'?(den?|tan?|ten?|y?[ea])|('|(?<!başın))dan?)\s+(önce(sind?e|ki)|daha\s+önce(sinde)?|önce(\b|(?=dır|dir))|evvel|(daha|en)\s+(erken)|kadar(?!\s+erken)|en\s+geç)|(öncesinde|öncesine|daha\s+önce|(daha|en)\s+(geç|erken)|kadar)\s+{InclusiveModPrepositions})|en\s+geç\s*?|^önce\b|^(?<include>kadar\s+geç)|^kadar(?!\s+erken)|ile\s+biten|(?<!\w|>)((?<include><=)|<))
   references: [ InclusiveModPrepositions ]
 # "starting from" is SinceRegex
 AfterRegex: !nestedRegex

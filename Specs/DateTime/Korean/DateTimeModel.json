@@ -8830,5 +8830,48 @@
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": []
+  },
+  {
+    "Input": "2010년에서 2018년 또는 2000년 이전의 매출을 보여주세요.",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2010년에서 2018년 ",
+        "Start": 0,
+        "End": 12,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2010-01-01,2018-01-01,P8Y)",
+              "type": "daterange",
+              "start": "2010-01-01",
+              "end": "2018-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2000년 이전의",
+        "Start": 17,
+        "End": 25,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2000",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "end": "2000-01-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

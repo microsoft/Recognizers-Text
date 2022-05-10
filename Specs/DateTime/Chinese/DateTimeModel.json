@@ -6863,5 +6863,47 @@
         }
       }
     ]
+  },
+  {
+    "Input": "显示 2010 年至 2018 年或 2000 年之前的销售额",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2010 年至 2018 年",
+        "Start": 3,
+        "End": 16,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2010-01-01,2018-01-01,P8Y)",
+              "type": "daterange",
+              "start": "2010-01-01",
+              "end": "2018-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2000 年之前",
+        "Start": 19,
+        "End": 26,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2000",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "end": "2000-01-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
