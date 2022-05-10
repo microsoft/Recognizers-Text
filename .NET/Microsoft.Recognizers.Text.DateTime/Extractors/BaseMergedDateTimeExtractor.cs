@@ -51,20 +51,20 @@ namespace Microsoft.Recognizers.Text.DateTime
             var beforeStr = text.Substring(0, er.Start ?? 0);
             var afterStr = text.Substring(er.Start + er.Length ?? 0);
 
-            // Avoid adding mod for ambiguity cases, such as "from" in "from ... to ..." should not add mod
-            if (potentialAmbiguity && this.config.AmbiguousRangeModifierPrefix != null && this.config.AmbiguousRangeModifierPrefix.IsMatch(beforeStr))
-            {
-                var matches = this.config.PotentialAmbiguousRangeRegex.Matches(text).Cast<Match>();
-
-                // Weak ambiguous matches are considered only if the extraction is of type range
-                if (matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start && !(m.Groups[Constants.AmbiguousPattern].Success && !er.Type.EndsWith("range"))))
-                {
-                    return false;
-                }
-            }
-
             if (HasTokenIndex(beforeStr.TrimEnd(), tokenRegex, out var tokenIndex, inPrefix: true))
             {
+                // Avoid adding mod for ambiguity cases, such as "from" in "from ... to ..." should not add mod
+                if (potentialAmbiguity && this.config.AmbiguousRangeModifierPrefix != null && this.config.AmbiguousRangeModifierPrefix.IsMatch(beforeStr.Substring(tokenIndex)))
+                {
+                    var matches = this.config.PotentialAmbiguousRangeRegex.Matches(text).Cast<Match>();
+
+                    // Weak ambiguous matches are considered only if the extraction is of type range
+                    if (matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start && !(m.Groups[Constants.AmbiguousPattern].Success && !er.Type.EndsWith("range"))))
+                    {
+                        return false;
+                    }
+                }
+
                 var modLength = beforeStr.Length - tokenIndex;
 
                 er.Length += modLength;

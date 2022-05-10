@@ -947,9 +947,9 @@ YearSuffix: !nestedRegex
 SuffixAfterRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^\b$
-YearPeriodRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^[.]
+YearPeriodRegex: !nestedRegex
+  def: ((((de(sde)?(\s*a(s)?)?)\s+)?{YearRegex}\s*({TillRegex})\s*{YearRegex})|(((entre\s*([oa](s)?)?)\s+){YearRegex}\s*({RangeConnectorRegex})\s*{YearRegex}))
+  references: [ YearRegex, TillRegex, RangeConnectorRegex ]
 FutureSuffixRegex: !simpleRegex
   def: \b(seguinte(s)?|pr[oó]xim[oa](s)?|no\s+futuro)\b
 PastSuffixRegex: !simpleRegex

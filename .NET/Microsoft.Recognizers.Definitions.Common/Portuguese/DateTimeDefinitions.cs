@@ -566,7 +566,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public static readonly string RelativeDecadeRegex = $@"\b((n?as?\s+)?{RelativeRegex}\s+((?<number>[\w,]+)\s+)?(d[eé]cada)s?)\b";
       public static readonly string YearSuffix = $@"((,|\sde)?\s*({YearRegex}|{FullTextYearRegex}))";
       public const string SuffixAfterRegex = @"^\b$";
-      public const string YearPeriodRegex = @"^[.]";
+      public static readonly string YearPeriodRegex = $@"((((de(sde)?(\s*a(s)?)?)\s+)?{YearRegex}\s*({TillRegex})\s*{YearRegex})|(((entre\s*([oa](s)?)?)\s+){YearRegex}\s*({RangeConnectorRegex})\s*{YearRegex}))";
       public const string FutureSuffixRegex = @"\b(seguinte(s)?|pr[oó]xim[oa](s)?|no\s+futuro)\b";
       public const string PastSuffixRegex = @"^\b$";
       public static readonly string ModPrefixRegex = $@"\b({RelativeRegex}|{AroundRegex}|{BeforeRegex}|{AfterRegex}|{SinceRegex})\b";
