@@ -43,6 +43,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly Regex AmbiguousPointRangeRegex =
             new Regex(DateTimeDefinitions.AmbiguousPointRangeRegex, RegexFlags);
 
+        public static readonly Regex SpecialYearPrefixes =
+            new Regex(DateTimeDefinitions.SpecialYearPrefixes, RegexFlags);
+
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         public SpanishDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
@@ -345,7 +348,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         {
             var trimmedText = text.Trim();
             return DateTimeDefinitions.YearTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)) ||
-                   (DateTimeDefinitions.YearTerms.Any(o => trimmedText.Contains(o)) && RelativeSuffixRegex.IsMatch(trimmedText));
+                   (DateTimeDefinitions.YearTerms.Any(o => trimmedText.Contains(o)) && (RelativeSuffixRegex.IsMatch(trimmedText) || SpecialYearPrefixes.IsMatch(trimmedText)));
         }
 
         public bool IsYearToDate(string text)

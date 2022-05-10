@@ -37,8 +37,8 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public const string AfterNextSuffixRegex = @"\b(que\s+vem|passad[oa])\b";
       public const string RangePrefixRegex = @"((de(sde)?|das?|entre)\s+(a(s)?\s+)?)";
       public static readonly string TwoDigitYearRegex = $@"\b(?<![$])(?<year>([0-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b";
-      public const string RelativeRegex = @"(?<order>((est[ae]|pr[oó]xim[oa]|([uú]ltim(o|as|os)))(\s+fina(l|is)\s+d[eao])?)|(fina(l|is)\s+d[eao]))\b";
-      public const string StrictRelativeRegex = @"(?<order>((est[ae]|pr[oó]xim[oa]|([uú]ltim(o|as|os)))(\s+fina(l|is)\s+d[eao])?)|(fina(l|is)\s+d[eao]))\b";
+      public const string RelativeRegex = @"(?<order>((n?est[ae]s?|pr[oó]xim[oa]s?|([uú]ltim[ao]s?))(\s+fina(l|is)\s+d[eao])?)|(fina(l|is)\s+d[eao]))\b";
+      public const string StrictRelativeRegex = @"(?<order>((n?est[ae]|pr[oó]xim[oa]|([uú]ltim(o|as|os)))(\s+fina(l|is)\s+d[eao])?)|(fina(l|is)\s+d[eao]))\b";
       public const string WrittenOneToNineRegex = @"(uma?|dois|duas|tr[eê]s|quatro|cinco|seis|sete|oito|nove)";
       public const string WrittenOneHundredToNineHundredRegex = @"(duzent[oa]s|trezent[oa]s|[cq]uatrocent[ao]s|quinhent[ao]s|seiscent[ao]s|setecent[ao]s|oitocent[ao]s|novecent[ao]s|cem|(?<!por\s+)(cento))";
       public static readonly string WrittenOneToNinetyNineRegex = $@"(((vinte|trinta|[cq]uarenta|cinquenta|sessenta|setenta|oitenta|noventa)(\s+e\s+{WrittenOneToNineRegex})?)|d[eé]z|onze|doze|treze|(c|qu)atorze|quinze|dez[ea]sseis|dez[ea]ssete|dez[ea]nove|dezoito|uma?|d(oi|ua)s|tr[eê]s|quatro|cinco|seis|sete|oito|nove)";
@@ -54,7 +54,8 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public static readonly string MonthFrontSimpleCasesRegex = $@"\b{MonthSuffixRegex}\s+((desde\s+[oa]|desde|d[oa])\s+)?(dia\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex})((\s+|\s*,\s*){YearRegex})?\b";
       public static readonly string MonthFrontBetweenRegex = $@"\b{MonthSuffixRegex}\s+((entre|entre\s+[oa]s?)\s+)(dias?\s+)?({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})((\s+|\s*,\s*){YearRegex})?\b";
       public static readonly string DayBetweenRegex = $@"\b((entre|entre\s+[oa]s?)\s+)(dia\s+)?({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*){YearRegex})?\b";
-      public const string OneWordPeriodRegex = @"\b(((pr[oó]xim[oa]?|[nd]?es[st]e|aquel[ea]|[uú]ltim[oa]?|em)\s+)?(?<month>abr(il)?|ago(sto)?|dez(embro)?|fev(ereiro)?|jan(eiro)?|ju[ln](ho)?|mar([çc]o)?|maio?|nov(embro)?|out(ubro)?|sep?t(embro)?)|(?<=\b(de|do|da|o|a)\s+)?(pr[oó]xim[oa](s)?|[uú]ltim[oa]s?|est(e|a))\s+(fim de semana|fins de semana|semana|m[êe]s|ano)|fim de semana|fins de semana|(m[êe]s|anos)? [àa] data)\b";
+      public const string SpecialYearPrefixes = @"((do\s+)?calend[aá]rio|civil|(?<special>fiscal|escolar|letivo))";
+      public static readonly string OneWordPeriodRegex = $@"\b(((pr[oó]xim[oa]?|[nd]?es[st]e|aquel[ea]|[uú]ltim[oa]?|em)\s+)?(?<month>abr(il)?|ago(sto)?|dez(embro)?|fev(ereiro)?|jan(eiro)?|ju[ln](ho)?|mar([çc]o)?|maio?|nov(embro)?|out(ubro)?|sep?t(embro)?)|({RelativeRegex}\s+)?(ano\s+{SpecialYearPrefixes}|{SpecialYearPrefixes}\s+ano)|(?<=\b(de|do|da|o|a)\s+)?(pr[oó]xim[oa](s)?|[uú]ltim[oa]s?|est(e|a))\s+(fim de semana|fins de semana|semana|m[êe]s|ano)|fim de semana|fins de semana|(m[êe]s|anos)? [àa] data)\b";
       public static readonly string MonthWithYearRegex = $@"\b((((pr[oó]xim[oa](s)?|[nd]?es[st]e|aquele|[uú]ltim[oa]?|em)\s+)?{MonthRegex}|((n?o\s+)?(?<cardinal>primeiro|1o|segundo|2o|terceiro|3o|[cq]uarto|4o|quinto|5o|sexto|6o|s[eé]timo|7o|oitavo|8o|nono|9o|d[eé]cimo(\s+(primeiro|segundo))?|10o|11o|12o|[uú]ltimo)\s+m[eê]s(?=\s+(d[aeo]|[ao]))))\s+((d[aeo]|[ao])\s+)?({YearRegex}|{TwoDigitYearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|[nd]?es[st]e)\s+ano))\b";
       public static readonly string MonthNumWithYearRegex = $@"({YearRegex}(\s*?)[/\-\.](\s*?){MonthNumRegex})|({MonthNumRegex}(\s*?)[/\-](\s*?){YearRegex})";
       public static readonly string WeekOfMonthRegex = $@"(?<wom>(a|na\s+)?(?<cardinal>primeira?|1a|segunda|2a|terceira|3a|[qc]uarta|4a|quinta|5a|[uú]ltima)\s+semana\s+{MonthSuffixRegex})";
@@ -68,7 +69,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public const string AllHalfYearRegex = @"^[.]";
       public const string PrefixDayRegex = @"^[.]";
       public static readonly string SeasonRegex = $@"\b(?<season>(([uú]ltim[oa]|[nd]?es[st][ea]|n?[oa]|(pr[oó]xim[oa]s?|seguinte))\s+)?(?<seas>primavera|ver[ãa]o|outono|inverno)((\s+)?(seguinte|((de\s+|,)?\s*{YearRegex})|((do\s+)?(?<order>pr[oó]ximo|[uú]ltimo|[nd]?es[st]e)\s+ano)))?)\b";
-      public const string WhichWeekRegex = @"\b(semana)(\s*)(?<number>5[0-3]|[1-4]\d|0?[1-9])\b";
+      public static readonly string WhichWeekRegex = $@"\b(semana)(\s*)(?<number>5[0-3]|[1-4]\d|0?[1-9])(\s+(de|do)\s+({YearRegex}|(?<order>pr[oó]ximo|[uú]ltimo|[nd]?es[st]e)\s+ano|ano\s+(?<order>passado)))?\b";
       public const string WeekOfRegex = @"(semana)(\s*)((do|da|de))";
       public const string MonthOfRegex = @"(mes)(\s*)((do|da|de))";
       public const string RangeUnitRegex = @"\b(?<unit>anos?|meses|m[êe]s|semanas?)\b";
@@ -102,7 +103,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public static readonly string OfMonthRegex = $@"^(\s*de)?\s*{MonthSuffixRegex}";
       public static readonly string MonthEndRegex = $@"({MonthRegex}\s*(o)?\s*$)";
       public static readonly string WeekDayEnd = $@"{WeekDayRegex}\s*,?\s*$";
-      public const string WeekDayStart = @"^[\.]";
+      public const string WeekDayStart = @"^\b$";
       public static readonly string DateYearRegex = $@"(?<year>{YearRegex}|{TwoDigitYearRegex})";
       public static readonly string DateExtractor1 = $@"\b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}((\s*(de)|[/\\\.\- ])\s*)?{MonthRegex}\b";
       public static readonly string DateExtractor2 = $@"\b({WeekDayRegex}(\s+|\s*,\s*))?({DayRegex}(\s*([/\.\-]|de)?\s*{MonthRegex}|\s+de\s+{MonthNumRegex})(\s*([,./-]|de|\s+)\s*){DateYearRegex}|{BaseDateTime.FourDigitYearRegex}\s*[/\.\- ]\s*{DayRegex}\s*[/\.\- ]\s*{MonthRegex})\b";
@@ -192,7 +193,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public const string AfterRegex = @"((depois|ap[óo]s|a\s+partir)(\s*(de|d?[oa]s?)?)?)";
       public const string SinceRegex = @"(desde(\s+(as?|o))?)";
       public const string AroundRegex = @"(?:\b(?:cerca|perto|ao\s+redor|por\s+volta)\s*?\b)(\s+(de|das))?";
-      public const string PeriodicRegex = @"\b(?<periodic>di[áa]ri[ao]|(diaria|mensal|semanal|quinzenal|anual)mente)\b";
+      public const string PeriodicRegex = @"\b(?<periodic>di[áa]ri[ao]|(diaria|mensal|semanal|quinzenal|(bi|tri|se)mestral|anual)(mente)?)\b";
       public const string EachExpression = @"cada|tod[oa]s?\s*([oa]s)?";
       public static readonly string EachUnitRegex = $@"(?<each>({EachExpression})\s*{UnitRegex})";
       public static readonly string EachPrefixRegex = $@"(?<each>({EachExpression})\s*$)";
@@ -205,13 +206,14 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public const string MiddlePauseRegex = @"^[.]";
       public const string PrefixArticleRegex = @"^[\.]";
       public const string OrRegex = @"^[.]";
-      public const string YearPlusNumberRegex = @"^[.]";
+      public static readonly string SpecialYearTermsRegex = $@"\b(({SpecialYearPrefixes}\s+anos?\s+|anos?\s+({SpecialYearPrefixes}\s+)?)(d[oe]\s+)?)";
+      public static readonly string YearPlusNumberRegex = $@"\b({SpecialYearTermsRegex}((?<year>(\d{{2,4}}))|{FullTextYearRegex}))\b";
       public static readonly string NumberAsTimeRegex = $@"\b({WrittenTimeRegex}|({TimeHourNumRegex}|{BaseDateTime.HourRegex})(?<desc>\s*horas)?)\b";
       public const string TimeBeforeAfterRegex = @"^[.]";
       public const string DateNumberConnectorRegex = @"^[.]";
       public const string ComplexDatePeriodRegex = @"^[.]";
-      public const string AgoRegex = @"\b(antes|atr[áa]s|no passado)\b";
-      public const string LaterRegex = @"\b(depois d[eoa]s?|ap[óo]s (as)?|desde( (as|o))?|no futuro|mais tarde)\b";
+      public const string AgoRegex = @"\b(antes(\s+d[eoa]s?\s+(?<day>hoje|ontem|manhã))?|atr[áa]s|no passado)\b";
+      public const string LaterRegex = @"\b(depois(\s+d[eoa]s?\s+(agora|(?<day>hoje|ontem|manhã)))?|ap[óo]s (as)?|desde( (as|o))?|no futuro|mais tarde)\b";
       public const string Tomorrow = @"amanh[ãa]";
       public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>
         {
@@ -265,7 +267,9 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
         };
       public static readonly Dictionary<string, string> SpecialYearPrefixesMap = new Dictionary<string, string>
         {
-            { @"", @"" }
+            { @"fiscal", @"FY" },
+            { @"escolar", @"SY" },
+            { @"letivo", @"SY" }
         };
       public static readonly Dictionary<string, string> SeasonMap = new Dictionary<string, string>
         {
@@ -540,7 +544,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public const string TokenBeforeDate = @"o ";
       public const string TokenBeforeTime = @"as ";
       public const string PastPrefixRegex = @".^";
-      public static readonly string PreviousPrefixRegex = $@"([uú]ltim[oa]s?|{PastPrefixRegex})\b";
+      public static readonly string PreviousPrefixRegex = $@"([uú]ltim[oa]s?|passad[oa]s?|{PastPrefixRegex})\b";
       public const string ThisPrefixRegex = @"([nd]?es[st][ea])\b";
       public const string RelativeDayRegex = @"^[\.]";
       public const string RestOfDateRegex = @"^[\.]";
@@ -559,7 +563,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public const string CenturyRegex = @"^[.]";
       public const string DecadeRegex = @"^[.]";
       public const string DecadeWithCenturyRegex = @"^[.]";
-      public const string RelativeDecadeRegex = @"^[.]";
+      public static readonly string RelativeDecadeRegex = $@"\b((n?as?\s+)?{RelativeRegex}\s+((?<number>[\w,]+)\s+)?(d[eé]cada)s?)\b";
       public static readonly string YearSuffix = $@"((,|\sde)?\s*({YearRegex}|{FullTextYearRegex}))";
       public const string SuffixAfterRegex = @"^\b$";
       public const string YearPeriodRegex = @"^[.]";
@@ -689,5 +693,13 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
             { 'õ', 'o' },
             { 'ç', 'c' }
         };
+      public const string DayTypeRegex = @"(diari([ao]|amente))$";
+      public const string WeekTypeRegex = @"(semanal(mente)?)$";
+      public const string BiWeekTypeRegex = @"(quinzenal(mente)?)$";
+      public const string MonthTypeRegex = @"(mensal(mente)?)$";
+      public const string BiMonthTypeRegex = @"(bimestral(mente)?)$";
+      public const string QuarterTypeRegex = @"(trimestral(mente)?)$";
+      public const string SemiAnnualTypeRegex = @"(semestral(mente)?)$";
+      public const string YearTypeRegex = @"(anual(mente)?)$";
     }
 }

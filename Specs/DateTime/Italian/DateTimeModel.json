@@ -1,4 +1,4 @@
-[
+﻿[
   {
     "Input": "Tornerò il Ott/2",
     "Context": {
@@ -2985,7 +2985,7 @@
     "Context": {
       "ReferenceDateTime": "2022-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java,python",
     "Results": [
       {
         "Text": "da gennaio ad aprile",
