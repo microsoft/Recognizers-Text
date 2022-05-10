@@ -607,9 +607,9 @@ YearSuffix: !nestedRegex
 SuffixAfterRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^\b$
-YearPeriodRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^\b$
+YearPeriodRegex: !nestedRegex
+  def: ((((du|depuis|des?)\s+)?{YearRegex}\s*({TillRegex})\s*{YearRegex})|(((entre)\s+){YearRegex}\s*({RangeConnectorRegex})\s*{YearRegex}))
+  references: [ YearRegex, TillRegex, RangeConnectorRegex ]
 FutureSuffixRegex: !simpleRegex
   def: \b(dans\s+le\s+futur)\b
 ModPrefixRegex: !nestedRegex

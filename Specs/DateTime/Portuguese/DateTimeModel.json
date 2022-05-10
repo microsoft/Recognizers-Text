@@ -4093,5 +4093,47 @@
         }
       }
     ]
+  },
+  {
+    "Input": "mostre-me as vendas de 2010 a 2018 ou antes de 2000",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "de 2010 a 2018",
+        "Start": 20,
+        "End": 33,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2010-01-01,2018-01-01,P8Y)",
+              "type": "daterange",
+              "start": "2010-01-01",
+              "end": "2018-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "antes de 2000",
+        "Start": 38,
+        "End": 50,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2000",
+              "Mod": "before",
+              "type": "daterange",
+              "sourceEntity": "datetimerange",
+              "end": "2000-01-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

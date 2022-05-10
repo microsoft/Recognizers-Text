@@ -260,7 +260,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public const string RelativeDecadeRegex = @"^\b$";
       public static readonly string YearSuffix = $@"(,?(\s*à)?\s*({DateYearRegex}|{FullTextYearRegex}))";
       public const string SuffixAfterRegex = @"^\b$";
-      public const string YearPeriodRegex = @"^\b$";
+      public static readonly string YearPeriodRegex = $@"((((du|depuis|des?)\s+)?{YearRegex}\s*({TillRegex})\s*{YearRegex})|(((entre)\s+){YearRegex}\s*({RangeConnectorRegex})\s*{YearRegex}))";
       public const string FutureSuffixRegex = @"\b(dans\s+le\s+futur)\b";
       public static readonly string ModPrefixRegex = $@"\b({RelativeRegex}|{AroundRegex}|{BeforeRegex}|{AfterRegex}|{SinceRegex})\b";
       public static readonly string ModSuffixRegex = $@"\b({AgoRegex}|{LaterRegex}|{BeforeAfterRegex}|{FutureSuffixRegex}|{PastSuffixRegex})\b";
