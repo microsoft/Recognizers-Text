@@ -1238,5 +1238,101 @@
         }
       }
     ]
+  },
+  {
+    "Input": "dos millonesimo",
+    "Results": [
+      {
+        "Text": "dos millonesimo",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "2000000",
+          "offset":"2000000",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "terceros",
+    "Results": [
+      {
+        "Text": "terceros",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3",
+          "offset":"3",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "millonesimos",
+    "Results": [
+      {
+        "Text": "millonesimos",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "1000000",
+          "offset":"1000000",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "billonesimos",
+    "Results": [
+      {
+        "Text": "billonesimos",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "1000000000000",
+          "offset":"1000000000000",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "tres millonesimos",
+    "Results": [
+      {
+        "Text": "tres millonesimos",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "3000000",
+          "offset":"3000000",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "cien millonesimos",
+    "Results": [
+      {
+        "Text": "cien millonesimos",
+        "TypeName": "ordinal",
+        "Resolution": {
+          "value": "100000000",
+          "offset":"100000000",
+          "relativeTo":"start"
+        },
+        "Start": 0,
+        "End": 16
+      }
+    ]
   }
 ]

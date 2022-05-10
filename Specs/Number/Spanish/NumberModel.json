@@ -2010,17 +2010,17 @@
     ]
   },
   {
-    "Input": "cien mil billonesima",
+    "Input": "cien mil billonesimas",
     "Results": [
       {
-        "Text": "cien mil billonesima",
+        "Text": "cien mil billonesimas",
         "TypeName": "number",
         "Resolution": {
           "subtype": "fraction",
           "value": "1E-07"
         },
         "Start": 0,
-        "End": 19
+        "End": 20
       }
     ]
   },
@@ -3106,5 +3106,174 @@
         "End": 34
       }
     ]
+  },
+  {
+    "Input": "3 dz",
+    "Results": [
+      {
+        "Text": "3 dz",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "36"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": " cinco dozs",
+    "Results": [
+      {
+        "Text": "cinco dozs",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "60"
+        },
+        "Start": 1,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "La mitad de la clase no vino esta mañana.",
+    "Results": [
+      {
+        "Text": "mitad",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0,5"
+        },
+        "Start": 3,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "100 billonesimo",
+    "Results": [
+      {
+        "Text": "100",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "100"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "100 millonesimo",
+    "Results": [
+      {
+        "Text": "100",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "100"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "100 millonesimas",
+    "Results": [
+      {
+        "Text": "100",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "100"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "cien millonesimas",
+    "Results": [
+      {
+        "Text": "cien millonesimas",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0,0001"
+        },
+        "Start": 0,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "dos millonesimo",
+    "Results": [
+      {
+        "Text": "dos",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "dos millonésimas",
+    "Results": [
+      {
+        "Text": "dos millonésimas",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "2E-06"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "millon",
+    "Results": [
+      {
+        "Text": "millon",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1000000"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "billon",
+    "Results": [
+      {
+        "Text": "billon",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1000000000000"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "billons",
+    "Results": []
   }
 ]

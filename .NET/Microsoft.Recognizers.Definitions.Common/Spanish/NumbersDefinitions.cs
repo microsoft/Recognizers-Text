@@ -36,7 +36,8 @@ namespace Microsoft.Recognizers.Definitions.Spanish
             @"es-pr"
         };
       public const string HundredsNumberIntegerRegex = @"(cuatrocient[ao]s|trescient[ao]s|seiscient[ao]s|setecient[ao]s|ochocient[ao]s|novecient[ao]s|doscient[ao]s|quinient[ao]s|(?<!por\s+)(cien(to)?))";
-      public const string RoundNumberIntegerRegex = @"(mil\s+millones|mill[oó]n(es)?|mil|bill[oó]n(es)?|trill[oó]n(es)?|cuatrill[oó]n(es)?|quintill[oó]n(es)?|sextill[oó]n(es)?|septill[oó]n(es)?)";
+      public const string RoundNumberIntegerSingRegex = @"(((mil\s+)?mi|bi|cuatri|quinti|sexti|septi)ll[oó]n|mil)";
+      public static readonly string RoundNumberIntegerRegex = $@"({RoundNumberIntegerSingRegex}(es)?)";
       public const string ZeroToNineIntegerRegex = @"(cuatro|cinco|siete|nueve|cero|tres|seis|ocho|dos|un[ao]?)";
       public const string TwoToNineIntegerRegex = @"(cuatro|cinco|siete|nueve|tres|seis|ocho|dos)";
       public const string TenToNineteenIntegerRegex = @"(diecisiete|diecinueve|diecis[eé]is|dieciocho|catorce|quince|trece|diez|once|doce)";
@@ -49,15 +50,15 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public static readonly string BelowThousandsRegex = $@"({HundredsNumberIntegerRegex}(\s+{BelowHundredsRegex})?|{BelowHundredsRegex})";
       public static readonly string SupportThousandsRegex = $@"(({BelowThousandsRegex}|{BelowHundredsRegex})\s+{RoundNumberIntegerRegex}(\s+{RoundNumberIntegerRegex})?)";
       public static readonly string SeparaIntRegex = $@"({SupportThousandsRegex}(\s+{SupportThousandsRegex})*(\s+{BelowThousandsRegex})?|{BelowThousandsRegex})";
-      public static readonly string AllIntRegex = $@"({SeparaIntRegex}|mil(\s+{BelowThousandsRegex})?)";
+      public static readonly string AllIntRegex = $@"({SeparaIntRegex}|mil(\s+{BelowThousandsRegex})?|{RoundNumberIntegerSingRegex})";
       public const string PlaceHolderPureNumber = @"\b";
       public const string PlaceHolderDefault = @"\D|\b";
       public static readonly Func<string, string> NumbersWithPlaceHolder = (placeholder) => $@"(((?<!\d+\s*)-\s*)|(?<=\b))\d+(?!([\.,]\d+[a-zA-Z]))(?={placeholder})";
       public static readonly string NumbersWithSuffix = $@"(((?<=\W|^)-\s*)|(?<=\b))\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)";
       public static readonly string RoundNumberIntegerRegexWithLocks = $@"(?<=\b)({DigitsNumberRegex})+\s+{RoundNumberIntegerRegex}(?=\b)";
-      public const string NumbersWithDozenSuffix = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+docenas?(?=\b)";
+      public const string NumbersWithDozenSuffix = @"(((?<=\W|^)-\s*)|(?<=\b))\d+\s+(docena|dz|doz)s?(?=\b)";
       public static readonly string AllIntRegexWithLocks = $@"((?<=\b){AllIntRegex}(?=\b))";
-      public static readonly string AllIntRegexWithDozenSuffixLocks = $@"(?<=\b)(((media\s+)?\s+docena)|({AllIntRegex}\s+(y|con)\s+)?({AllIntRegex}\s+docenas?))(?=\b)";
+      public static readonly string AllIntRegexWithDozenSuffixLocks = $@"(?<=\b)(((media\s+)?\s+docena)|({AllIntRegex}\s+(y|con)\s+)?({AllIntRegex}\s+(docena|dz|doz)s?))(?=\b)";
       public const string SimpleRoundOrdinalRegex = @"(mil[eé]simo|millon[eé]sim[oa]|billon[eé]sim[oa]|trillon[eé]sim[oa]|cuatrillon[eé]sim[oa]|quintillon[eé]sim[oa]|sextillon[eé]sim[oa]|septillon[eé]sim[oa])";
       public const string OneToNineOrdinalRegex = @"(primer[oa]?|segund[oa]|tercer[oa]?|cuart[oa]|quint[oa]|sext[oa]|s[eé]ptim[oa]|octav[oa]|noven[oa])";
       public const string TensOrdinalRegex = @"(nonag[eé]sim[oa]|octog[eé]sim[oa]|septuag[eé]sim[oa]|sexag[eé]sim[oa]|quincuag[eé]sim[oa]|cuadrag[eé]sim[oa]|trig[eé]sim[oa]|vig[eé]sim[oa]|d[eé]cim[oa])";
@@ -71,7 +72,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public static readonly string SufixRoundOrdinalRegex = $@"(({AllIntRegex})({SimpleRoundOrdinalRegex}))";
       public static readonly string ComplexRoundOrdinalRegex = $@"((({SufixRoundOrdinalRegex}(\s)?)?{ComplexOrdinalRegex})|{SufixRoundOrdinalRegex})";
       public static readonly string AllOrdinalNumberRegex = $@"{ComplexOrdinalRegex}|{SimpleRoundOrdinalRegex}|{ComplexRoundOrdinalRegex}";
-      public static readonly string AllOrdinalRegex = $@"(?:{AllOrdinalNumberRegex}|{RelativeOrdinalRegex})";
+      public static readonly string AllOrdinalRegex = $@"(?:{AllOrdinalNumberRegex}s?|{RelativeOrdinalRegex})";
       public const string OrdinalSuffixRegex = @"(?<=\b)(\d*((1(er|r[oa])|2d[oa]|3r[oa]|4t[oa]|5t[oa]|6t[oa]|7m[oa]|8v[oa]|9n[oa]|0m[oa]|11[vm][oa]|12[vm][oa])|\d\.?[ºª]))(?=\b)";
       public static readonly string OrdinalNounRegex = $@"(?<=\b){AllOrdinalRegex}(?=\b)";
       public static readonly string SpecialFractionInteger = $@"((({AllIntRegex})i?({ZeroToNineIntegerRegex})|({AllIntRegex}))a?v[oa]s?)";
@@ -80,8 +81,8 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public static readonly string FractionMultiplierRegex = $@"(?<fracMultiplier>\s+(y|con)\s+(medio|(un|{TwoToNineIntegerRegex})\s+(medio|terci[oa]?|cuart[oa]|quint[oa]|sext[oa]|s[eé]ptim[oa]|octav[oa]|noven[oa]|d[eé]cim[oa])s?))";
       public static readonly string RoundMultiplierWithFraction = $@"(?<multiplier>(?:(mil\s+millones|mill[oó]n(es)?|bill[oó]n(es)?|trill[oó]n(es)?|cuatrill[oó]n(es)?|quintill[oó]n(es)?|sextill[oó]n(es)?|septill[oó]n(es)?)))(?={FractionMultiplierRegex}?$)";
       public static readonly string RoundMultiplierRegex = $@"\b\s*({RoundMultiplierWithFraction}|(?<multiplier>(mil))$)";
-      public static readonly string FractionNounRegex = $@"(?<=\b)({AllIntRegex}\s+((y|con)\s+)?)?(({AllIntRegex})(\s+((y|con)\s)?)((({AllOrdinalNumberRegex})s?|({SpecialFractionInteger})|({SufixRoundOrdinalRegex})s?)|medi[oa]s?|tercios?)|(medio|un\s+cuarto\s+de)\s+{RoundNumberIntegerRegex})(?=\b)";
-      public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)(({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\s+(y\s+)?)?((un|un[oa])(\s+)(({AllOrdinalNumberRegex})|({SufixRoundOrdinalRegex}))|(un[ao]?\s+)?medi[oa]s?)(?=\b)";
+      public static readonly string FractionNounRegex = $@"(?<=\b)({AllIntRegex}\s+((y|con)\s+)?)?({AllIntRegex}\s+((({AllOrdinalNumberRegex}|{SufixRoundOrdinalRegex})s|{SpecialFractionInteger})|((y|con)\s+)?(medi[oa]s?|tercios?))|(medio|un\s+cuarto\s+de)\s+{RoundNumberIntegerRegex})(?=\b)";
+      public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)(({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\s+((y|con)\s+)?)?((un|un[oa])(\s+)(({AllOrdinalNumberRegex})|({SufixRoundOrdinalRegex}))|(un[ao]?\s+)?medi[oa]s?|mitad)(?=\b)";
       public static readonly string FractionPrepositionRegex = $@"(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<!\.)\d+))\s+sobre\s+(?<denominator>({AllIntRegex})|((\d+)(?!\.)))(?=\b)";
       public static readonly string AllPointRegex = $@"((\s+{ZeroToNineIntegerRegex})+|(\s+{AllIntRegex}))";
       public static readonly string AllFloatRegex = $@"{AllIntRegex}(\s+(coma|con)){AllPointRegex}";
@@ -132,7 +133,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public static readonly string[] WrittenFractionSeparatorTexts = { @"con" };
       public static readonly string[] OneHalfTokens = { @"un", @"medio" };
       public const string HalfADozenRegex = @"media\s+docena";
-      public static readonly string DigitalNumberRegex = $@"((?<=\b)(mil(l[oó]n(es)?)?|bill[oó]n(es)?|trill[oó]n(es)?|docenas?)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
+      public static readonly string DigitalNumberRegex = $@"((?<=\b)(mil(l[oó]n(es)?)?|bill[oó]n(es)?|trill[oó]n(es)?|(docena|dz|doz)s?)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
       public static readonly Dictionary<string, long> CardinalNumberMap = new Dictionary<string, long>
         {
             { @"cero", 0 },
@@ -152,6 +153,10 @@ namespace Microsoft.Recognizers.Definitions.Spanish
             { @"doce", 12 },
             { @"docena", 12 },
             { @"docenas", 12 },
+            { @"dz", 12 },
+            { @"doz", 12 },
+            { @"dzs", 12 },
+            { @"dozs", 12 },
             { @"trece", 13 },
             { @"catorce", 14 },
             { @"quince", 15 },
@@ -223,6 +228,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
             { @"segunda", 2 },
             { @"medio", 2 },
             { @"media", 2 },
+            { @"mitad", 2 },
             { @"tercero", 3 },
             { @"tercera", 3 },
             { @"tercer", 3 },
@@ -346,7 +352,134 @@ namespace Microsoft.Recognizers.Definitions.Spanish
             { @"billonesimo", 1000000000000 },
             { @"billonesima", 1000000000000 },
             { @"billonésimo", 1000000000000 },
-            { @"billonésima", 1000000000000 }
+            { @"billonésima", 1000000000000 },
+            { @"primeros", 1 },
+            { @"primeras", 1 },
+            { @"segundos", 2 },
+            { @"segundas", 2 },
+            { @"terceros", 3 },
+            { @"terceras", 3 },
+            { @"tercios", 3 },
+            { @"cuartos", 4 },
+            { @"cuartas", 4 },
+            { @"quintos", 5 },
+            { @"quintas", 5 },
+            { @"sextos", 6 },
+            { @"sextas", 6 },
+            { @"septimos", 7 },
+            { @"septimas", 7 },
+            { @"séptimos", 7 },
+            { @"séptimas", 7 },
+            { @"octavos", 8 },
+            { @"octavas", 8 },
+            { @"novenos", 9 },
+            { @"novenas", 9 },
+            { @"decimos", 10 },
+            { @"décimos", 10 },
+            { @"decimas", 10 },
+            { @"décimas", 10 },
+            { @"undecimos", 11 },
+            { @"undecimas", 11 },
+            { @"undécimos", 11 },
+            { @"undécimas", 11 },
+            { @"duodecimos", 12 },
+            { @"duodecimas", 12 },
+            { @"duodécimos", 12 },
+            { @"duodécimas", 12 },
+            { @"decimoterceros", 13 },
+            { @"decimoterceras", 13 },
+            { @"decimocuartos", 14 },
+            { @"decimocuartas", 14 },
+            { @"decimoquintos", 15 },
+            { @"decimoquintas", 15 },
+            { @"decimosextos", 16 },
+            { @"decimosextas", 16 },
+            { @"decimoseptimos", 17 },
+            { @"decimoseptimas", 17 },
+            { @"decimoctavos", 18 },
+            { @"decimoctavas", 18 },
+            { @"decimonovenos", 19 },
+            { @"decimonovenas", 19 },
+            { @"vigesimos", 20 },
+            { @"vigesimas", 20 },
+            { @"vigésimos", 20 },
+            { @"vigésimas", 20 },
+            { @"trigesimos", 30 },
+            { @"trigesimas", 30 },
+            { @"trigésimos", 30 },
+            { @"trigésimas", 30 },
+            { @"cuadragesimos", 40 },
+            { @"cuadragesimas", 40 },
+            { @"cuadragésimos", 40 },
+            { @"cuadragésimas", 40 },
+            { @"quincuagesimos", 50 },
+            { @"quincuagesimas", 50 },
+            { @"quincuagésimos", 50 },
+            { @"quincuagésimas", 50 },
+            { @"sexagesimos", 60 },
+            { @"sexagesimas", 60 },
+            { @"sexagésimos", 60 },
+            { @"sexagésimas", 60 },
+            { @"septuagesimos", 70 },
+            { @"septuagesimas", 70 },
+            { @"septuagésimos", 70 },
+            { @"septuagésimas", 70 },
+            { @"octogesimos", 80 },
+            { @"octogesimas", 80 },
+            { @"octogésimos", 80 },
+            { @"octogésimas", 80 },
+            { @"nonagesimos", 90 },
+            { @"nonagesimas", 90 },
+            { @"nonagésimos", 90 },
+            { @"nonagésimas", 90 },
+            { @"centesimos", 100 },
+            { @"centesimas", 100 },
+            { @"centésimos", 100 },
+            { @"centésimas", 100 },
+            { @"ducentesimos", 200 },
+            { @"ducentesimas", 200 },
+            { @"ducentésimos", 200 },
+            { @"ducentésimas", 200 },
+            { @"tricentesimos", 300 },
+            { @"tricentesimas", 300 },
+            { @"tricentésimos", 300 },
+            { @"tricentésimas", 300 },
+            { @"cuadringentesimos", 400 },
+            { @"cuadringentesimas", 400 },
+            { @"cuadringentésimos", 400 },
+            { @"cuadringentésimas", 400 },
+            { @"quingentesimos", 500 },
+            { @"quingentesimas", 500 },
+            { @"quingentésimos", 500 },
+            { @"quingentésimas", 500 },
+            { @"sexcentesimos", 600 },
+            { @"sexcentesimas", 600 },
+            { @"sexcentésimos", 600 },
+            { @"sexcentésimas", 600 },
+            { @"septingentesimos", 700 },
+            { @"septingentesimas", 700 },
+            { @"septingentésimos", 700 },
+            { @"septingentésimas", 700 },
+            { @"octingentesimos", 800 },
+            { @"octingentesimas", 800 },
+            { @"octingentésimos", 800 },
+            { @"octingentésimas", 800 },
+            { @"noningentesimos", 900 },
+            { @"noningentesimas", 900 },
+            { @"noningentésimos", 900 },
+            { @"noningentésimas", 900 },
+            { @"milesimos", 1000 },
+            { @"milesimas", 1000 },
+            { @"milésimos", 1000 },
+            { @"milésimas", 1000 },
+            { @"millonesimos", 1000000 },
+            { @"millonesimas", 1000000 },
+            { @"millonésimos", 1000000 },
+            { @"millonésimas", 1000000 },
+            { @"billonesimos", 1000000000000 },
+            { @"billonesimas", 1000000000000 },
+            { @"billonésimos", 1000000000000 },
+            { @"billonésimas", 1000000000000 }
         };
       public static readonly Dictionary<string, long> PrefixCardinalMap = new Dictionary<string, long>
         {
@@ -422,6 +555,10 @@ namespace Microsoft.Recognizers.Definitions.Spanish
             { @"trillonesimo", 1000000000000000000 },
             { @"docena", 12 },
             { @"docenas", 12 },
+            { @"dz", 12 },
+            { @"doz", 12 },
+            { @"dzs", 12 },
+            { @"dozs", 12 },
             { @"k", 1000 },
             { @"m", 1000000 },
             { @"g", 1000000000 },
