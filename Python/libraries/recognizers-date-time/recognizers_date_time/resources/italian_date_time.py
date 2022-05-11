@@ -16,9 +16,9 @@ from .base_date_time import BaseDateTime
 class ItalianDateTime:
     LangMarker = 'Ita'
     CheckBothBeforeAfter = False
-    TillRegex = f'(?<till>\\b(fino\\s+a(l(l[aoe\'])?|gli|i)?|a(l(l[aoe\'])?|gli|i)?|e\\s+(il?|l[aoe\']|gli))\\b|--|-|—|——|~)'
-    RestrictedTillRegex = f'(?<till>\\b(fino\\s+a(l(l[aoe\'])?|gli|i)?)\\b|--|-|—|——|~)'
-    RangeConnectorRegex = f'(?<and>\\b(e(\\s+l[aoe\']|gli|i)?|a(l(l[aoe\'])?|gli|i)?)\\b|{BaseDateTime.RangeConnectorSymbolRegex})'
+    TillRegex = f'(?<till>\\b(fino\\s+a(l(l[aoe\'])?|gli|i|d)?|a(l(l[aoe\'])?|gli|i|d)?|e\\s+(il?|l[aoe\']|gli))\\b|--|-|—|——|~)'
+    RestrictedTillRegex = f'(?<till>\\b(fino\\s+a(l(l[aoe\'])?|gli|i|d)?)\\b|--|-|—|——|~)'
+    RangeConnectorRegex = f'(?<and>\\b(e(\\s+l[aoe\']|gli|i|d)?|a(l(l[aoe\'])?|gli|i|d)?)\\b|{BaseDateTime.RangeConnectorSymbolRegex})'
     RelativeRegex = f'\\b(?<order>((il?|l[ae])\\s+)?prossim[\'oaie]|((il?|l[ae])\\s+)?seguent[ei]|((il?|l[ae])\\s+)?successiv[oaei]|in\\s+arrivo|quest[\'oaie]|(l\'|gli\\s+|le\\s+)?ultim[\'oaie]|((il?|l[ae])\\s+)?passat[oaie]|((il?|l[ae])\\s+)?precedent[ei]|((lo|l[ae]|gli)\\s+)?scors[oaie]|((il?|l[ae])\\s+)?corrent[ei]|quest[\'oaei]|il?|l[oae\']|gli)'
     StrictRelativeRegex = f'(?<order>prossim[\'oaie]|seguent[ei]|successiv[oaei]|in\\s+arrivo|quest[\'oaie]|ultim[\'oaie]|passat[oaie]|precedent[ei]|scors[oaie]|corrent[ei]|quest[\'oaei])'
     NextSuffixRegex = f'(?<order>prossim[oaei]|seguent[ei]|successiv[oaei]|imminent[ei]|in\\s+arrivo)\\b'
@@ -249,7 +249,7 @@ class ItalianDateTime:
     SingleAmbiguousTermsRegex = f'(?<!l\')una\\b'
     UnspecificDatePeriodRegex = f'^(settimana|finesettimana|weekend|mese|anno)$'
     PrepositionSuffixRegex = f'\\b(il|al?|del|di|dal?|fino al?)$'
-    FlexibleDayRegex = f'(?<DayOfMonth>([A-Za-z]+\\s)?({WrittenDayRegex}|{DayRegex}))'
+    FlexibleDayRegex = f'(?<DayOfMonth>({WrittenDayRegex}|{DayRegex}))'
     ForTheRegex = f'\\b((((?<=per\\s+il\\s+){FlexibleDayRegex})|((?<!(\\b{MonthRegex},?|\\bper)\\s+(il\\s+|l\'))(?<=(il\\s+|l\')){FlexibleDayRegex}))(?<end>\\s*(,|\\.|!|\\?|$)))'
     WeekDayAndDayOfMonthRegex = f'\\b{WeekDayRegex},?\\s+((il\\s+)?{FlexibleDayRegex})\\b(?!\\s+{MonthRegex}\\b)'
     WeekDayAndDayRegex = f'\\b{WeekDayRegex}\\s*,?\\s+(?!(il|l\')){DayRegex}(?!([-:]|(\\s+({AmDescRegex}|{{PmDescRegex|{OclockRegex}}}))))\\b'

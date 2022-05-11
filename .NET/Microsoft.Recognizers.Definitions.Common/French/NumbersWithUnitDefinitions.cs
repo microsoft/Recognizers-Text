@@ -654,7 +654,6 @@ namespace Microsoft.Recognizers.Definitions.French
         };
       public static readonly IList<string> AmbiguousLengthUnitList = new List<string>
         {
-            @"m",
             @"m.",
             @"yard",
             @"yards",
@@ -673,6 +672,12 @@ namespace Microsoft.Recognizers.Definitions.French
             { @"Noeuds", @"noeud|noeuds|nuds" },
             { @"Pied par seconde", @"ft/s|pied par seconde|pieds par seconde|pied/s|pieds/s" },
             { @"Pied par minute", @"pieds/minute|pied/minute|ft/minute|ft/min|pied/min" }
+        };
+      public static readonly IList<string> AmbiguousSpeedUnitList = new List<string>
+        {
+            @"noeud",
+            @"noeuds",
+            @"nuds"
         };
       public static readonly Dictionary<string, string> TemperatureSuffixList = new Dictionary<string, string>
         {

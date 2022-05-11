@@ -278,8 +278,8 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public const string PMTimeRegex = @"\b(?<pm>öğleden sonra|öğle vakti|öğlenleyin|öğlen|öğle|akşam|gece)\b";
       public const string LastRegex = @"(son)";
       public const string InclusiveModPrepositions = @"(?<include>(('(ü|u|te|ta|da|de|inde|sinde|ünde|ında|unda|sında)\s+)?(ya\s+da|veya)\b))";
-      public static readonly string BeforeRegex = $@"((({InclusiveModPrepositions}|(?<=günü)nden|'?(den?|tan?|ten?|y?[ea])|('|(?<!başın))dan?)\s+(öncesinde|öncesine|daha\s+önce(sinde)?|önce(\b|(?=dır|dir))|evvel|(daha|en)\s+(erken)|kadar(?!\s+erken)|en\s+geç)|(öncesinde|öncesine|daha\s+önce|(daha|en)\s+(geç|erken)|kadar)\s+{InclusiveModPrepositions})|en\s+geç\s*?|önce\b|(?<include>kadar\s+geç)|kadar(?!\s+erken)|ile\s+biten|(?<!\w|>)((?<include><=)|<))";
-      public static readonly string BeforeRegexWithAnchor = $@"((^({InclusiveModPrepositions}|nden|'?(den?|tan?|ten?|y?[ea])|('|(?<!başın))dan?)\s+(öncesinde|öncesine|daha\s+önce(sinde)?|önce(\b|(?=dır|dir))|evvel|(daha|en)\s+(erken)|kadar(?!\s+erken)|en\s+geç)|(öncesinde|öncesine|daha\s+önce|(daha|en)\s+(geç|erken)|kadar)\s+{InclusiveModPrepositions})|en\s+geç\s*?|^önce\b|^(?<include>kadar\s+geç)|^kadar(?!\s+erken)|ile\s+biten|(?<!\w|>)((?<include><=)|<))";
+      public static readonly string BeforeRegex = $@"((({InclusiveModPrepositions}|(?<=günü)nden|'?(den?|tan?|ten?|y?[ea])|('|(?<!başın))dan?)\s+(önce(sind?e|ki)|daha\s+önce(sinde)?|önce(\b|(?=dır|dir))|evvel|(daha|en)\s+(erken)|kadar(?!\s+erken)|en\s+geç)|(öncesinde|öncesine|daha\s+önce|(daha|en)\s+(geç|erken)|kadar)\s+{InclusiveModPrepositions})|en\s+geç\s*?|önce\b|(?<include>kadar\s+geç)|kadar(?!\s+erken)|ile\s+biten|(?<!\w|>)((?<include><=)|<))";
+      public static readonly string BeforeRegexWithAnchor = $@"((^({InclusiveModPrepositions}|nden|'?(den?|tan?|ten?|y?[ea])|('|(?<!başın))dan?)\s+(önce(sind?e|ki)|daha\s+önce(sinde)?|önce(\b|(?=dır|dir))|evvel|(daha|en)\s+(erken)|kadar(?!\s+erken)|en\s+geç)|(öncesinde|öncesine|daha\s+önce|(daha|en)\s+(geç|erken)|kadar)\s+{InclusiveModPrepositions})|en\s+geç\s*?|^önce\b|^(?<include>kadar\s+geç)|^kadar(?!\s+erken)|ile\s+biten|(?<!\w|>)((?<include><=)|<))";
       public static readonly string AfterRegex = $@"((({InclusiveModPrepositions}|(?<=günü)nden|'(dan?|den?|tan?|ten?|y?[ea]))\s+(sonrasında|daha\s+(sonra|geç|büyük\s+(bir\s+)?yıl(ın)?)|sonra)(?!\s+veya\s+aynı)|(sonrasında|daha\s+sonra|sonra)\s+{InclusiveModPrepositions}|sonra\b)|(?<!\w|<)((?<include>>=)|>))";
       public static readonly string AfterRegexWithAnchor = $@"((^({InclusiveModPrepositions}|nden|'(dan?|den?|tan?|ten?|y?[ea]))\s+(sonrasında|daha\s+(sonra|geç|büyük\s+(bir\s+)?yıl(ın)?)|sonra)(?!\s+veya\s+aynı)|(sonrasında|daha\s+sonra|sonra)\s+{InclusiveModPrepositions}|^sonra\b)|(?<!\w|<)((?<include>>=)|>))";
       public const string SinceRegex = @"((('|\b)(([dt][ae]n\s+)?beri|sonra\s+veya\s+aynı|((den|dan|ile)\s+)?(başlayarak|başlayan|(itibaren\s+)?herhangi\s+bir\s+zamanda)|(y[ae]\s+)?eşit\s+veya\s+sonraki|bu\s+yana|erkenden|kadar\s+erken|herhangi\s+bir\s+zamanda|((nın\s+)?başından\s+)itibaren)\b)|(?<!\w|<)(>=))";
@@ -1096,9 +1096,7 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public static readonly string[] DurationDateRestrictions = { @"bugün", @"şimdi", @"şu an" };
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {
-            { @"\bmorning|afternoon|evening|night|day\b", @"\b(good\s+(morning|afternoon|evening|night|day))|(nighty\s+night)\b" },
-            { @"\bnow\b", @"\b(^now,)|\b((is|are)\s+now\s+for|for\s+now)\b" },
-            { @"\bmay\b", @"\b((^may i)|(i|you|he|she|we|they)\s+may|(may\s+((((also|not|(also not)|well)\s+)?(be|ask|contain|constitute|email|e-mail|take|have|result|involve|get|work|reply|differ))|(or may not))))\b" }
+            { @"\bmart\b", @"\b(martin)\b" }
         };
       public static readonly IList<string> MorningTermList = new List<string>
         {

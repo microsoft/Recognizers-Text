@@ -950,9 +950,11 @@
         "TypeName": "number",
         "Resolution": {
           "value": "500000",
+          "Start": 0,
+          "End": 17
+        },
         "Start": 0,
         "End": 17
-        }
       }
     ]
   },
@@ -965,9 +967,11 @@
         "TypeName": "number",
         "Resolution": {
           "value": "1500000",
+          "Start": 8,
+          "End": 27
+        },
         "Start": 8,
         "End": 27
-        }
       }
     ]
   },
@@ -980,9 +984,11 @@
         "TypeName": "number",
         "Resolution": {
           "value": "3500000",
+          "Start": 24,
+          "End": 44
+        },
         "Start": 24,
         "End": 44
-        }
       }
     ]
   },
@@ -995,9 +1001,11 @@
         "TypeName": "number",
         "Resolution": {
           "value": "1500000000",
+          "Start": 26,
+          "End": 46
+        },
         "Start": 26,
         "End": 46
-        }
       }
     ]
   },

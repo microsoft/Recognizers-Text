@@ -243,7 +243,7 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"Cuban convertible peso", @"cuban convertible pesos|cuban convertible peso|cuc|cuba convertible pesos|cuba convertible peso" },
             { @"Cuban peso", @"cuban pesos|cuban peso|cup|cuba pesos|cuba peso" },
             { @"Dominican peso", @"dominican pesos|dominican peso|dop|dominica pesos|dominica peso" },
-            { @"Mexican peso", @"mexican pesos|mexican peso|mxn|mexico pesos|mexico peso|mxn$" },
+            { @"Mexican peso", @"mexican pesos|mexican peso|mxn|mexico pesos|mexico peso|mxn$|mxn $|mex$" },
             { @"Philippine peso", @"piso|philippine pesos|philippine peso|₱|php" },
             { @"Uruguayan peso", @"uruguayan pesos|uruguayan peso|uyu" },
             { @"Peso", @"pesos|peso" },
@@ -578,6 +578,7 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"Satoshi", @"SATOSHI" }
         };
       public const string CompoundUnitConnectorRegex = @"(?<spacer>and)";
+      public const string MultiplierRegex = @"\s*\b(thousand|million|billion|trillion)s?\b";
       public static readonly Dictionary<string, string> CurrencyPrefixList = new Dictionary<string, string>
         {
             { @"Dobra", @"db|std" },
@@ -585,7 +586,7 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"Brazilian Real", @"R$" },
             { @"United States dollar", @"united states $|us$|us $|u.s. $|u.s $|usd$" },
             { @"East Caribbean dollar", @"east caribbean $" },
-            { @"Mexican peso", @"mxn$" },
+            { @"Mexican peso", @"mxn$|mxn $|mex$" },
             { @"Australian dollar", @"australian $|australia $" },
             { @"Bahamian dollar", @"bahamian $|bahamia $" },
             { @"Barbadian dollar", @"barbadian $|barbadin $" },
@@ -861,7 +862,7 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"Microgram", @"μg|microgram|micrograms|micro gram|micro grams|microgramme|microgrammes|mcg" },
             { @"Gallon", @"-gallon|gallons|gallon|gal" },
             { @"Metric ton", @"metric tons|metric ton" },
-            { @"Ton", @"-ton|ton|tons|tonne|tonnes" },
+            { @"Ton", @"-ton|ton|tons|tonne|tonnes|t" },
             { @"Pound", @"pound|pounds|lb|lbs" },
             { @"Ounce", @"-ounce|ounce|oz|ounces" },
             { @"Grain", @"grain|grains|gr" },
@@ -875,6 +876,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly IList<string> AmbiguousWeightUnitList = new List<string>
         {
             @"g",
+            @"t",
             @"gr",
             @"oz",
             @"stone",
@@ -899,7 +901,7 @@ namespace Microsoft.Recognizers.Definitions.English
         {
             { @"\bm\b", @"((('|’)\s*m)|(m\s*('|’)))" },
             { @"^\d{5} [cf]$", @"\b([a-z]{2} \d{5} [cf])\b" },
-            { @"\b\d+\s*\p{L}+$", @"((\d+\s*\p{L}+[-—–-]?\d+)|((\p{L}[-—–-]?|\d[-—–-])\d+\s*\p{L}+))" },
+            { @"\b\d+\s*\p{L}+$", @"((\d+(\s*\p{L}+[-—–-]|\p{L}+)\d+)|(((\p{L}|\d)[-—–-]\d+\s*|\p{L}\d+)\p{L}+))" },
             { @"^(all|bob|pen|cad|cup|cop|sos|ron|mad|mop|zar|gel)", @"(all|bob|pen|cad|cup|cop|sos|ron|mad|mop|zar|gel)\s*(\d|\p{L})" }
         };
       public static readonly Dictionary<string, string> TemperatureAmbiguityFiltersDict = new Dictionary<string, string>
@@ -908,7 +910,8 @@ namespace Microsoft.Recognizers.Definitions.English
         };
       public static readonly Dictionary<string, string> DimensionAmbiguityFiltersDict = new Dictionary<string, string>
         {
-            { @"\b(deg(rees?)?|°)$", @"\b((deg(rees?)?|°)\s*(c(elsius|entigrate)?|f(ah?renheit)?)|(temperature)(\s+(\p{L}+|\d+)){0,4}\s*(deg(rees?)?\b|°))" }
+            { @"\b(deg(rees?)?|°)$", @"\b((deg(rees?)?|°)\s*(c(elsius|entigrate)?|f(ah?renheit)?)|(temperature)(\s+(\p{L}+|\d+)){0,4}\s*(deg(rees?)?\b|°))" },
+            { @"\b\d+\s*\p{L}+$", @"((\d+\s*\p{L}+\d+)|(\p{L}\d+\s*\p{L}+))" }
         };
     }
 }

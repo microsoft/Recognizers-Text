@@ -442,7 +442,6 @@
   },
   {
     "Input": "Ich bin um 7h01 zurück",
-    "NotSupported": "",
     "Results": [
       {
         "Text": "7h01",
@@ -463,7 +462,6 @@
   },
   {
     "Input": "Ich bin um 10 h 10 Uhr zurück.",
-    "NotSupported": "",
     "Results": [
       {
         "Text": "10 h 10 Uhr",
@@ -484,7 +482,7 @@
   },
   {
     "Input": "Es ist viertel 6",
-    "NotSupportedByDesign": "javascript,,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "viertel 6",
@@ -505,7 +503,7 @@
   },
   {
     "Input": "Es ist viertel vor 6",
-    "NotSupportedByDesign": "javascript,,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "viertel vor 6",
@@ -526,7 +524,7 @@
   },
   {
     "Input": "Es ist dreiviertel 6",
-    "NotSupportedByDesign": "javascript,,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "dreiviertel 6",

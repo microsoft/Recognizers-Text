@@ -789,7 +789,7 @@ namespace Microsoft.Recognizers.Definitions.German
       public static readonly IList<string> NightTermList = new List<string>
         {
             @"nacht",
-            @"nacths",
+            @"nachts",
             @"primetime"
         };
       public static readonly IList<string> SameDayTerms = new List<string>

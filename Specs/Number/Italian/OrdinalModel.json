@@ -8,9 +8,11 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "3E+18",
-          "offset":"3E+18",
-          "relativeTo":"start"
-        }
+          "offset": "3E+18",
+          "relativeTo": "start"
+        },
+        "Start": 0,
+        "End": 15
       }
     ]
   },
@@ -23,9 +25,11 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "1E+18",
-          "offset":"1E+18",
-          "relativeTo":"start"
-        }
+          "offset": "1E+18",
+          "relativeTo": "start"
+        },
+        "Start": 0,
+        "End": 11
       }
     ]
   },
@@ -38,9 +42,11 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "1E+20",
-          "offset":"1E+20",
-          "relativeTo":"start"
-        }
+          "offset": "1E+20",
+          "relativeTo": "start"
+        },
+        "Start": 0,
+        "End": 17
       }
     ]
   },
@@ -53,9 +59,11 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "11",
-          "offset":"11",
-          "relativeTo":"start"
-        }
+          "offset": "11",
+          "relativeTo": "start"
+        },
+        "Start": 0,
+        "End": 2
       }
     ]
   },
@@ -68,9 +76,11 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "21",
-          "offset":"21",
-          "relativeTo":"start"
-        }
+          "offset": "21",
+          "relativeTo": "start"
+        },
+        "Start": 0,
+        "End": 6
       }
     ]
   },
@@ -83,9 +93,11 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "30",
-          "offset":"30",
-          "relativeTo":"start"
-        }
+          "offset": "30",
+          "relativeTo": "start"
+        },
+        "Start": 0,
+        "End": 3
       }
     ]
   },
@@ -98,9 +110,11 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "2",
-          "offset":"2",
-          "relativeTo":"start"
-        }
+          "offset": "2",
+          "relativeTo": "start"
+        },
+        "Start": 0,
+        "End": 1
       }
     ]
   },
@@ -113,9 +127,11 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "11",
-          "offset":"11",
-          "relativeTo":"start"
-        }
+          "offset": "11",
+          "relativeTo": "start"
+        },
+        "Start": 0,
+        "End": 9
       }
     ]
   },
@@ -128,9 +144,11 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "20",
-          "offset":"20",
-          "relativeTo":"start"
-        }
+          "offset": "20",
+          "relativeTo": "start"
+        },
+        "Start": 0,
+        "End": 8
       }
     ]
   },
@@ -143,9 +161,11 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "25",
-          "offset":"25",
-          "relativeTo":"start"
-        }
+          "offset": "25",
+          "relativeTo": "start"
+        },
+        "Start": 0,
+        "End": 14
       }
     ]
   },
@@ -158,9 +178,11 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "21",
-          "offset":"21",
-          "relativeTo":"start"
-        }
+          "offset": "21",
+          "relativeTo": "start"
+        },
+        "Start": 0,
+        "End": 10
       }
     ]
   },
@@ -173,9 +195,11 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "125",
-          "offset":"125",
-          "relativeTo":"start"
-        }
+          "offset": "125",
+          "relativeTo": "start"
+        },
+        "Start": 0,
+        "End": 19
       }
     ]
   },
@@ -188,9 +212,11 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "200",
-          "offset":"200",
-          "relativeTo":"start"
-        }
+          "offset": "200",
+          "relativeTo": "start"
+        },
+        "Start": 0,
+        "End": 11
       }
     ]
   },
@@ -203,9 +229,11 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "1",
-          "offset":"1",
-          "relativeTo":"start"
-        }
+          "offset": "1",
+          "relativeTo": "start"
+        },
+        "Start": 20,
+        "End": 24
       }
     ]
   },
@@ -218,9 +246,11 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "36",
-          "offset":"36",
-          "relativeTo":"start"
-        }
+          "offset": "36",
+          "relativeTo": "start"
+        },
+        "Start": 0,
+        "End": 13
       }
     ]
   },
@@ -233,9 +263,11 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "5",
-          "offset":"5",
-          "relativeTo":"start"
-        }
+          "offset": "5",
+          "relativeTo": "start"
+        },
+        "Start": 0,
+        "End": 5
       }
     ]
   },
@@ -248,9 +280,11 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "100000000",
-          "offset":"100000000",
-          "relativeTo":"start"
-        }
+          "offset": "100000000",
+          "relativeTo": "start"
+        },
+        "Start": 0,
+        "End": 16
       }
     ]
   },
@@ -263,9 +297,11 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "30",
-            "offset":"30",
-          "relativeTo":"start"
-        }
+          "offset": "30",
+          "relativeTo": "start"
+        },
+        "Start": 0,
+        "End": 9
       }
     ]
   },
@@ -278,9 +314,11 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "12",
-          "offset":"12",
-          "relativeTo":"start"
-        }
+          "offset": "12",
+          "relativeTo": "start"
+        },
+        "Start": 0,
+        "End": 9
       }
     ]
   },
@@ -293,9 +331,11 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "127",
-          "offset":"127",
-          "relativeTo":"start"
-        }
+          "offset": "127",
+          "relativeTo": "start"
+        },
+        "Start": 3,
+        "End": 21
       }
     ]
   },

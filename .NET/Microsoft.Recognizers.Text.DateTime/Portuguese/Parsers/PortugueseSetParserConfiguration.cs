@@ -12,6 +12,32 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 {
     public class PortugueseSetParserConfiguration : BaseDateTimeOptionsConfiguration, ISetParserConfiguration
     {
+        private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
+
+        private static readonly Regex DayTypeRegex =
+            new Regex(DateTimeDefinitions.DayTypeRegex, RegexFlags);
+
+        private static readonly Regex WeekTypeRegex =
+            new Regex(DateTimeDefinitions.WeekTypeRegex, RegexFlags);
+
+        private static readonly Regex BiWeekTypeRegex =
+            new Regex(DateTimeDefinitions.BiWeekTypeRegex, RegexFlags);
+
+        private static readonly Regex MonthTypeRegex =
+            new Regex(DateTimeDefinitions.MonthTypeRegex, RegexFlags);
+
+        private static readonly Regex BiMonthTypeRegex =
+            new Regex(DateTimeDefinitions.BiMonthTypeRegex, RegexFlags);
+
+        private static readonly Regex QuarterTypeRegex =
+            new Regex(DateTimeDefinitions.QuarterTypeRegex, RegexFlags);
+
+        private static readonly Regex SemiAnnualTypeRegex =
+            new Regex(DateTimeDefinitions.SemiAnnualTypeRegex, RegexFlags);
+
+        private static readonly Regex YearTypeRegex =
+            new Regex(DateTimeDefinitions.YearTypeRegex, RegexFlags);
+
         public PortugueseSetParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
         {
@@ -86,33 +112,53 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         {
             var trimmedText = text.Trim().Normalized(DateTimeDefinitions.SpecialCharactersEquivalent);
 
-            // @TODO move hardcoded values to resources file
-            if (trimmedText.EndsWith("diario", StringComparison.Ordinal) || trimmedText.EndsWith("diaria", StringComparison.Ordinal) ||
-                trimmedText.EndsWith("diariamente", StringComparison.Ordinal))
+            float durationLength = 1; // Default value
+            float multiplier = 1;
+            string durationType;
+
+            if (DayTypeRegex.IsMatch(trimmedText))
             {
-                timex = "P1D";
+                durationType = Constants.TimexDay;
             }
-            else if (trimmedText.Equals("semanalmente", StringComparison.Ordinal))
+            else if (WeekTypeRegex.IsMatch(trimmedText))
             {
-                timex = "P1W";
+                durationType = Constants.TimexWeek;
             }
-            else if (trimmedText.Equals("quinzenalmente", StringComparison.Ordinal))
+            else if (BiWeekTypeRegex.IsMatch(trimmedText))
             {
-                timex = "P2W";
+                durationType = Constants.TimexWeek;
+                multiplier = 2;
             }
-            else if (trimmedText.Equals("mensalmente", StringComparison.Ordinal))
+            else if (MonthTypeRegex.IsMatch(trimmedText))
             {
-                timex = "P1M";
+                durationType = Constants.TimexMonth;
             }
-            else if (trimmedText.Equals("anualmente", StringComparison.Ordinal))
+            else if (BiMonthTypeRegex.IsMatch(trimmedText))
             {
-                timex = "P1Y";
+                durationType = Constants.TimexMonth;
+                multiplier = 2;
+            }
+            else if (QuarterTypeRegex.IsMatch(trimmedText))
+            {
+                durationType = Constants.TimexMonth;
+                multiplier = 3;
+            }
+            else if (SemiAnnualTypeRegex.IsMatch(trimmedText))
+            {
+                durationType = Constants.TimexYear;
+                multiplier = 0.5f;
+            }
+            else if (YearTypeRegex.IsMatch(trimmedText))
+            {
+                durationType = Constants.TimexYear;
             }
             else
             {
                 timex = null;
                 return false;
             }
+
+            timex = TimexUtility.GenerateSetTimex(durationType, durationLength, multiplier);
 
             return true;
         }

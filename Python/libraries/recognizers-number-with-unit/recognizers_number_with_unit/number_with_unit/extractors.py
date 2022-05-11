@@ -2,6 +2,7 @@
 #  Licensed under the MIT License.
 
 from abc import ABC, abstractmethod
+from sys import prefix
 from typing import List, Dict, Set, Pattern, Match
 from copy import deepcopy
 from collections import namedtuple
@@ -15,6 +16,7 @@ from recognizers_text.matcher.string_matcher import StringMatcher
 from recognizers_text.matcher.match_strategy import MatchStrategy
 from recognizers_text.matcher.number_with_unit_tokenizer import NumberWithUnitTokenizer
 from recognizers_text.matcher.match_result import MatchResult
+from .utilities import Token
 
 
 PrefixUnitResult = namedtuple('PrefixUnitResult', ['offset', 'unit'])
@@ -23,6 +25,10 @@ PrefixUnitResult = namedtuple('PrefixUnitResult', ['offset', 'unit'])
 class NumberWithUnitExtractorConfiguration(ABC):
     @property
     def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
+        pass
+
+    @property
+    def dimension_ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
         pass
 
     @property
@@ -168,6 +174,7 @@ class NumberWithUnitExtractor(Extractor):
 
         non_unit_match = None
         numbers = None
+        unit_is_prefix = []
 
         mapping_prefix: Dict[float, PrefixUnitResult] = dict()
         matched = [False] * len(source)
@@ -290,6 +297,7 @@ class NumberWithUnitExtractor(Extractor):
                             continue
 
                         result.append(er)
+                        unit_is_prefix.append(False)
 
                 if prefix_unit and prefix_unit is not None and not prefix_matched:
                     er = ExtractResult()
@@ -302,6 +310,7 @@ class NumberWithUnitExtractor(Extractor):
                     number.start = start - er.start
                     er.data = number
                     result.append(er)
+                    unit_is_prefix.append(True)
 
         # Extract Separate unit
         if self.separate_regex:
@@ -315,6 +324,12 @@ class NumberWithUnitExtractor(Extractor):
 
             # Remove common ambiguous cases
             result = self._filter_ambiguity(result, source)
+            # Remove entity-specific ambiguous case
+            if self.config.extract_type == Constants.SYS_UNIT_DIMENSION:
+                result = self._filter_ambiguity(result, source, self.config.dimension_ambiguity_filters_dict)
+
+            if self.config.extract_type == Constants.SYS_UNIT_CURRENCY:
+                result = self._select_candidates(source, result, unit_is_prefix)
 
         # Expand Chinese phrase to the `half` patterns when it follows closely origin phrase.
         self.config.expand_half_suffix(source, result, numbers)
@@ -458,11 +473,15 @@ class NumberWithUnitExtractor(Extractor):
             dict[key] = []
         dict[key].append(value)
 
-    def _filter_ambiguity(self, ers: List[ExtractResult], text: str,) -> List[ExtractResult]:
+    def _filter_ambiguity(self, ers: List[ExtractResult], text: str, ambiguity_filter_dict=None) -> List[ExtractResult]:
 
-        if self.config.ambiguity_filters_dict is not None:
-            for regex_var in self.config.ambiguity_filters_dict:
-                regexvar_value = self.config.ambiguity_filters_dict[regex_var]
+        # If no filter is specified, use common AmbiguityFilter
+        if ambiguity_filter_dict is None:
+            ambiguity_filter_dict = self.config.ambiguity_filters_dict
+
+        if ambiguity_filter_dict is not None:
+            for regex_var in ambiguity_filter_dict:
+                regexvar_value = ambiguity_filter_dict[regex_var]
                 for er in ers:
                     match = list(filter(lambda x: x.group(), regex.finditer(regex_var, ers[0].text)))
 
@@ -486,6 +505,70 @@ class NumberWithUnitExtractor(Extractor):
             pass
 
         return ers
+
+    def _select_candidates(self, source: str, ers: List[ExtractResult], unit_is_prefix: List[bool]) -> List[ExtractResult]:
+
+        total_candidate = len(unit_is_prefix)
+        have_conflict = False
+        for index in range(1, total_candidate):
+            if ers[index - 1].end > ers[index].start:
+                have_conflict = True
+
+        if not have_conflict:
+            return ers
+
+        prefix_result: List[ExtractResult] = []
+        suffix_result: List[ExtractResult] = []
+        current_end = -1
+
+        for index in range(total_candidate):
+            if current_end < ers[index].start:
+                current_end = ers[index].end
+                prefix_result.append(ers[index])
+            else:
+                if unit_is_prefix[index]:
+                    prefix_result.pop(-1)
+                    current_end = ers[index].end
+                    prefix_result.append(ers[index])
+
+        current_end = len(source)
+        for index in range(total_candidate - 1, -1, -1):
+            if current_end >= ers[index].end:
+                current_end = ers[index].start
+                suffix_result.append(ers[index])
+            else:
+                if not unit_is_prefix[index]:
+                    suffix_result.pop(-1)
+                    current_end = ers[index].start
+                    suffix_result.append(ers[index])
+
+        # Find prefix units with no space, e.g. '$50'.
+        no_space_units: List[Token] = []
+        for unit_prefix in prefix_result:
+            if isinstance(unit_prefix.data, ExtractResult):
+                unit_str = unit_prefix.text[:unit_prefix.data.start]
+                if len(unit_str) > 0 and unit_str == unit_str.rstrip():
+                    no_space_units.append(Token(unit_prefix.start, unit_prefix.start + len(unit_str)))
+
+        # Remove from suffixResult units that are also prefix units with no space,
+        # e.g. in '1 $50', '$' should not be considered a suffix unit.
+        for index in range(len(suffix_result) - 1, -1, -1):
+            suffix = suffix_result[index]
+            if any(suffix.start <= unit.start and suffix.end >= unit.end for unit in no_space_units):
+                suffix_result.pop(index)
+
+        # Add Separate unit
+        for index in range(total_candidate, len(ers)):
+            prefix_result.append(ers[index])
+            suffix_result.append(ers[index])
+
+        if len(suffix_result) >= len(prefix_result):
+            def sort_by_start(e):
+                return e.start
+            suffix_result.sort(key=sort_by_start)
+            return suffix_result
+
+        return prefix_result
 
 
 class BaseMergedUnitExtractor(Extractor):

@@ -149,13 +149,14 @@ WeightSuffixList: !dictionary
     Barrel: vat|vaten
     Gallon: -gallon|gallon
     Metric ton: metrische ton
-    Ton: -ton|ton
+    Ton: -ton|ton|t
     Pound: -pond|pond
     Ounce: -ons|ons
 AmbiguousWeightUnitList: !list
   types: [ string ]
   entries:
     - g
+    - t
     - oz
 #CurrencyExtractorConfiguration
 CurrencySuffixList: !dictionary

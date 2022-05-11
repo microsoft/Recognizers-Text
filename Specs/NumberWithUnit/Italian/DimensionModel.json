@@ -10,7 +10,9 @@
           "value": "75",
           "unit": "Millilitro",
           "subtype": "Volume"
-        }
+        },
+        "Start": 0,
+        "End": 3
       }
     ]
   },
@@ -25,7 +27,9 @@
           "value": "3",
           "unit": "Pollice",
           "subtype": "Length"
-        }
+        },
+        "Start": 64,
+        "End": 72
       }
     ]
   },
@@ -40,7 +44,9 @@
           "value": "10",
           "unit": "Miglio",
           "subtype": "Length"
-        }
+        },
+        "Start": 47,
+        "End": 58
       }
     ]
   },
@@ -55,7 +61,9 @@
           "value": "10,5",
           "unit": "Miglio",
           "subtype": "Length"
-        }
+        },
+        "Start": 25,
+        "End": 37
       }
     ]
   },
@@ -70,7 +78,9 @@
           "value": "6",
           "unit": "Miglio",
           "subtype": "Length"
-        }
+        },
+        "Start": 14,
+        "End": 23
       }
     ]
   },
@@ -85,7 +95,9 @@
           "value": "500000",
           "unit": "Barile",
           "subtype": "Volume"
-        }
+        },
+        "Start": 64,
+        "End": 77
       }
     ]
   },
@@ -100,7 +112,9 @@
           "value": "2",
           "unit": "Piede",
           "subtype": "Length"
-        }
+        },
+        "Start": 161,
+        "End": 169
       }
     ]
   },
@@ -115,7 +129,9 @@
           "value": "68",
           "unit": "Oncia",
           "subtype": "Weight"
-        }
+        },
+        "Start": 72,
+        "End": 78
       }
     ]
   },
@@ -130,7 +146,9 @@
           "value": "45",
           "unit": "Acro",
           "subtype": "Area"
-        }
+        },
+        "Start": 183,
+        "End": 189
       }
     ]
   },
@@ -145,7 +163,9 @@
           "value": "10",
           "unit": "Piede",
           "subtype": "Length"
-        }
+        },
+        "Start": 145,
+        "End": 152
       }
     ]
   },
@@ -160,7 +180,9 @@
           "value": "2400000000",
           "unit": "Gallone",
           "subtype": "Volume"
-        }
+        },
+        "Start": 160,
+        "End": 182
       }
     ]
   },
@@ -175,7 +197,9 @@
           "value": "10",
           "unit": "Gallone",
           "subtype": "Volume"
-        }
+        },
+        "Start": 28,
+        "End": 37
       }
     ]
   },
@@ -190,7 +214,9 @@
           "value": "1500000",
           "unit": "Gallone",
           "subtype": "Volume"
-        }
+        },
+        "Start": 58,
+        "End": 79
       }
     ]
   },
@@ -205,7 +231,9 @@
           "value": "2",
           "unit": "Libbra",
           "subtype": "Weight"
-        }
+        },
+        "Start": 26,
+        "End": 35
       }
     ]
   },
@@ -220,7 +248,9 @@
           "value": "25",
           "unit": "Libbra",
           "subtype": "Weight"
-        }
+        },
+        "Start": 139,
+        "End": 147
       }
     ]
   },
@@ -235,7 +265,9 @@
           "value": "9E+17",
           "unit": "Piede cubo",
           "subtype": "Volume"
-        }
+        },
+        "Start": 82,
+        "End": 107
       }
     ]
   },
@@ -250,7 +282,9 @@
           "value": "660",
           "unit": "Metro quadrato",
           "subtype": "Area"
-        }
+        },
+        "Start": 155,
+        "End": 170
       }
     ]
   },
@@ -265,7 +299,9 @@
           "value": "200",
           "unit": "Miglio",
           "subtype": "Length"
-        }
+        },
+        "Start": 32,
+        "End": 41
       }
     ]
   },
@@ -280,7 +316,9 @@
           "value": "3",
           "unit": "Piede",
           "subtype": "Length"
-        }
+        },
+        "Start": 58,
+        "End": 66
       }
     ]
   },
@@ -295,7 +333,9 @@
           "value": "190000",
           "unit": "Metro quadrato",
           "subtype": "Area"
-        }
+        },
+        "Start": 36,
+        "End": 55
       }
     ]
   },
@@ -310,7 +350,9 @@
           "value": "3",
           "unit": "Tonnellata",
           "subtype": "Weight"
-        }
+        },
+        "Start": 203,
+        "End": 216
       }
     ]
   },
@@ -325,7 +367,9 @@
           "value": "130",
           "unit": "Gallone",
           "subtype": "Volume"
-        }
+        },
+        "Start": 296,
+        "End": 306
       }
     ]
   },
@@ -340,7 +384,9 @@
           "value": "1458000",
           "unit": "Tonnellata",
           "subtype": "Weight"
-        }
+        },
+        "Start": 172,
+        "End": 191
       }
     ]
   },
@@ -355,7 +401,9 @@
           "value": "6",
           "unit": "Piede",
           "subtype": "Length"
-        }
+        },
+        "Start": 59,
+        "End": 67
       }
     ]
   },
@@ -370,7 +418,9 @@
           "value": "16000",
           "unit": "Tonnellata",
           "subtype": "Weight"
-        }
+        },
+        "Start": 108,
+        "End": 124
       }
     ]
   },
@@ -385,7 +435,9 @@
           "value": "16",
           "unit": "Bit",
           "subtype": "Information"
-        }
+        },
+        "Start": 131,
+        "End": 136
       }
     ]
   },
@@ -400,7 +452,9 @@
           "value": "188",
           "unit": "Miglia all'ora",
           "subtype": "Speed"
-        }
+        },
+        "Start": 40,
+        "End": 57
       }
     ]
   },
@@ -415,7 +469,9 @@
           "value": "100",
           "unit": "Metro",
           "subtype": "Length"
-        }
+        },
+        "Start": 69,
+        "End": 77
       }
     ]
   },
@@ -430,7 +486,9 @@
           "value": "2,5",
           "unit": "Miglio",
           "subtype": "Length"
-        }
+        },
+        "Start": 103,
+        "End": 112
       }
     ]
   },
@@ -445,7 +503,9 @@
           "value": "4",
           "unit": "Miglio",
           "subtype": "Length"
-        }
+        },
+        "Start": 19,
+        "End": 32
       }
     ]
   },
@@ -460,7 +520,9 @@
           "value": "325",
           "unit": "Chilometro",
           "subtype": "Length"
-        }
+        },
+        "Start": 79,
+        "End": 92
       }
     ]
   },
@@ -475,7 +537,9 @@
           "value": "5",
           "unit": "Piede",
           "subtype": "Length"
-        }
+        },
+        "Start": 22,
+        "End": 28
       }
     ]
   },
@@ -490,7 +554,9 @@
           "value": "4",
           "unit": "Pollice",
           "subtype": "Length"
-        }
+        },
+        "Start": 0,
+        "End": 8
       }
     ]
   },
@@ -505,7 +571,9 @@
           "value": "0,25",
           "unit": "Miglio",
           "subtype": "Length"
-        }
+        },
+        "Start": 62,
+        "End": 74
       }
     ]
   },
@@ -520,7 +588,9 @@
           "value": "1,6",
           "unit": "Chilometro",
           "subtype": "Length"
-        }
+        },
+        "Start": 65,
+        "End": 70
       }
     ]
   },
@@ -535,7 +605,9 @@
           "value": "17",
           "unit": "Chilometro",
           "subtype": "Length"
-        }
+        },
+        "Start": 40,
+        "End": 44
       }
     ]
   },
@@ -550,7 +622,9 @@
           "value": "776",
           "unit": "Piede",
           "subtype": "Length"
-        }
+        },
+        "Start": 139,
+        "End": 147
       }
     ]
   },
@@ -565,7 +639,9 @@
           "value": "500",
           "unit": "Metro",
           "subtype": "Length"
-        }
+        },
+        "Start": 102,
+        "End": 110
       }
     ]
   },
@@ -580,7 +656,9 @@
           "value": "300",
           "unit": "Millimetro",
           "subtype": "Length"
-        }
+        },
+        "Start": 126,
+        "End": 130
       }
     ]
   },
@@ -595,7 +673,9 @@
           "value": "7,62",
           "unit": "Millimetro",
           "subtype": "Length"
-        }
+        },
+        "Start": 109,
+        "End": 115
       }
     ]
   },
@@ -610,7 +690,9 @@
           "value": "34500",
           "unit": "Tonnellata",
           "subtype": "Weight"
-        }
+        },
+        "Start": 108,
+        "End": 124
       }
     ]
   },
@@ -625,7 +707,9 @@
           "value": "291890",
           "unit": "Tonnellata",
           "subtype": "Weight"
-        }
+        },
+        "Start": 60,
+        "End": 77
       }
     ]
   },
@@ -640,7 +724,9 @@
           "value": "190",
           "unit": "Chilometro quadrato",
           "subtype": "Area"
-        }
+        },
+        "Start": 51,
+        "End": 57
       }
     ]
   },
@@ -648,14 +734,16 @@
     "Input": "una tonnellata è pari a 2.204,62 libbre.",
     "NotSupportedByDesign": "python,javascript,python",
     "Results": [
-	  {
+      {
         "Text": "una tonnellata",
         "TypeName": "dimension",
         "Resolution": {
           "value": "1",
           "unit": "Tonnellata",
           "subtype": "Weight"
-        }
+        },
+        "Start": 0,
+        "End": 13
       },
       {
         "Text": "2.204,62 libbre",
@@ -664,7 +752,9 @@
           "value": "2204,62",
           "unit": "Libbra",
           "subtype": "Weight"
-        }
+        },
+        "Start": 24,
+        "End": 38
       }
     ]
   },

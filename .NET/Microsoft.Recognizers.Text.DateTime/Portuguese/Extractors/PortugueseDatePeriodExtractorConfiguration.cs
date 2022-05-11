@@ -198,6 +198,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             QuarterRegex,
             QuarterRegexYearFront,
             SeasonRegex,
+            WhichWeekRegex,
             RestOfDateRegex,
             LaterEarlyPeriodRegex,
             WeekWithWeekDayRangeRegex,

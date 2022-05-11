@@ -47,9 +47,9 @@ namespace Microsoft.Recognizers.Definitions.English
       public const string IndianNumberingSystemRegex = @"(?<=\b)((?:\d{1,2},(?:\d{2},)*\d{3})(?=\b))";
       public static readonly string NumbersWithSuffix = $@"(((?<!\d+(\s*{BaseNumbers.NumberMultiplierRegex})?\s*)-\s*)|(?<=\b))\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)";
       public static readonly string RoundNumberIntegerRegexWithLocks = $@"(?<=\b)\d+\s+{RoundNumberIntegerRegex}(?=\b)";
-      public static readonly string NumbersWithDozenSuffix = $@"(((?<!\d+(\s*{BaseNumbers.NumberMultiplierRegex})?\s*)-\s*)|(?<=\b))\d+\s+dozen(s)?(?=\b)";
+      public static readonly string NumbersWithDozenSuffix = $@"(((?<!\d+(\s*{BaseNumbers.NumberMultiplierRegex})?\s*)-\s*)|(?<=\b))\d+\s+(doz(en)?|dz)s?(?=\b)";
       public static readonly string AllIntRegexWithLocks = $@"((?<=\b){AllIntRegex}(?=\b))";
-      public static readonly string AllIntRegexWithDozenSuffixLocks = $@"(?<=\b)(((half\s+)?a\s+dozen)|({AllIntRegex}\s+dozen(s)?))(?=\b)";
+      public static readonly string AllIntRegexWithDozenSuffixLocks = $@"(?<=\b)(((half\s+)?a\s+dozen)|({AllIntRegex}\s+(doz(en)?|dz)s?))(?=\b)";
       public const string RoundNumberOrdinalRegex = @"(?:hundredth|thousandth|millionth|billionth|trillionth)";
       public const string NumberOrdinalRegex = @"(?:first|second|third|fourth|fifth|sixth|seventh|eighth|nine?th|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)";
       public const string RelativeOrdinalRegex = @"(?<relativeOrdinal>(next|previous|current)\s+one|(the\s+second|next)\s+to\s+last|the\s+one\s+before\s+the\s+last(\s+one)?|the\s+last\s+but\s+one|(ante)?penultimate|last|next|previous|current)";
@@ -123,7 +123,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly string[] WrittenIntegerSeparatorTexts = { @"and" };
       public static readonly string[] WrittenFractionSeparatorTexts = { @"and" };
       public const string HalfADozenRegex = @"half\s+a\s+dozen";
-      public static readonly string DigitalNumberRegex = $@"((?<=\b)(hundred|thousand|[mb]illion|trillion|[mbt]ln|lakh|crore|dozen(s)?)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
+      public static readonly string DigitalNumberRegex = $@"((?<=\b)(hundred|thousand|[mb]illion|trillion|[mbt]ln|lakh|crore|(doz(en)?|dz)s?)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))";
       public static readonly Dictionary<string, long> CardinalNumberMap = new Dictionary<string, long>
         {
             { @"a", 1 },
@@ -143,6 +143,10 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"twelve", 12 },
             { @"dozen", 12 },
             { @"dozens", 12 },
+            { @"dz", 12 },
+            { @"doz", 12 },
+            { @"dzs", 12 },
+            { @"dozs", 12 },
             { @"thirteen", 13 },
             { @"fourteen", 14 },
             { @"fifteen", 15 },
@@ -280,6 +284,10 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"trillionths", 1000000000000 },
             { @"dozen", 12 },
             { @"dozens", 12 },
+            { @"dz", 12 },
+            { @"doz", 12 },
+            { @"dzs", 12 },
+            { @"dozs", 12 },
             { @"k", 1000 },
             { @"m", 1000000 },
             { @"mm", 1000000 },

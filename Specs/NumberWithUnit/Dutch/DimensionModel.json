@@ -1172,5 +1172,22 @@
     "Input": "Water kookt bij 100° Celsius",
     "NotSupported": "java, javascript, python",
     "Results": []
+  },
+  {
+    "Input": "max. capaciteit is 100t",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "100t",
+        "Start": 19,
+        "End": 22,
+        "TypeName": "dimension",
+        "Resolution": {
+          "subtype": "Weight",
+          "unit": "Ton",
+          "value": "100"
+        }
+      }
+    ]
   }
 ]

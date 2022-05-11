@@ -24,5 +24,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
             return weekday;
         }
 
+        public static DateTimeResolutionResult ResolveSet(ref DateTimeResolutionResult result, string innerTimex)
+        {
+            result.Timex = innerTimex;
+            result.FutureValue = result.PastValue = "Set: " + innerTimex;
+            result.Success = true;
+
+            return result;
+        }
+
     }
 }

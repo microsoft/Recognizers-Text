@@ -43,4 +43,3 @@ class ItalianCurrencyParserConfiguration(ItalianNumberWithUnitParserConfiguratio
         self.add_dict_to_unit_map(ItalianNumericWithUnit.CurrencyPrefixList)
         self.currency_name_to_iso_code_map = ItalianNumericWithUnit.CurrencyNameToIsoCodeMap
         self.currency_fraction_code_list = ItalianNumericWithUnit.FractionalUnitNameToCodeMap
-

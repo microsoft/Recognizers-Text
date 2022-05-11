@@ -216,15 +216,6 @@ class NumberWithUnitRecognizer(Recognizer[NumberWithUnitOptions]):
         ))
         # endregion
 
-        # region German
-        self.register_model('CurrencyModel', Culture.German, lambda options: CurrencyModel([
-            ExtractorParserModel(
-                BaseMergedUnitExtractor(
-                    GermanCurrencyExtractorConfiguration()),
-                BaseMergedUnitParser(GermanCurrencyParserConfiguration()))
-        ]))
-        # endregion
-
         # region Italian
         self.register_model('CurrencyModel', Culture.Italian, lambda options: CurrencyModel([
             ExtractorParserModel(
@@ -234,12 +225,12 @@ class NumberWithUnitRecognizer(Recognizer[NumberWithUnitOptions]):
         ]))
         # endregion
 
-        # region Japanese
-        self.register_model('CurrencyModel', Culture.Japanese, lambda options: CurrencyModel([
+        # region German
+        self.register_model('CurrencyModel', Culture.German, lambda options: CurrencyModel([
             ExtractorParserModel(
                 BaseMergedUnitExtractor(
-                    JapaneseCurrencyExtractorConfiguration()),
-                BaseMergedUnitParser(JapaneseCurrencyParserConfiguration()))
+                    GermanCurrencyExtractorConfiguration()),
+                BaseMergedUnitParser(GermanCurrencyParserConfiguration()))
         ]))
         # endregion
 

@@ -1455,5 +1455,33 @@
     "Input": "Water boils at 100° Celsius",
     "NotSupported": "java, javascript, python",
     "Results": []
+  },
+  {
+    "Input": "the Max. capacity is 100t and Max. outreach is 48m",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "100t",
+        "Start": 21,
+        "End": 24,
+        "TypeName": "dimension",
+        "Resolution": {
+          "subtype": "Weight",
+          "unit": "Ton",
+          "value": "100"
+        }
+      },
+      {
+        "Text": "48m",
+        "Start": 47,
+        "End": 49,
+        "TypeName": "dimension",
+        "Resolution": {
+          "subtype": "Length",
+          "unit": "Meter",
+          "value": "48"
+        }
+      }
+    ]
   }
 ]

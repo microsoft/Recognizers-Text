@@ -23,9 +23,9 @@ namespace Microsoft.Recognizers.Definitions.Italian
     {
       public const string LangMarker = @"Ita";
       public const bool CheckBothBeforeAfter = false;
-      public const string TillRegex = @"(?<till>\b(fino\s+a(l(l[aoe'])?|gli|i)?|a(l(l[aoe'])?|gli|i)?|e\s+(il?|l[aoe']|gli))\b|--|-|—|——|~)";
-      public const string RestrictedTillRegex = @"(?<till>\b(fino\s+a(l(l[aoe'])?|gli|i)?)\b|--|-|—|——|~)";
-      public static readonly string RangeConnectorRegex = $@"(?<and>\b(e(\s+l[aoe']|gli|i)?|a(l(l[aoe'])?|gli|i)?)\b|{BaseDateTime.RangeConnectorSymbolRegex})";
+      public const string TillRegex = @"(?<till>\b(fino\s+a(l(l[aoe'])?|gli|i|d)?|a(l(l[aoe'])?|gli|i|d)?|e\s+(il?|l[aoe']|gli))\b|--|-|—|——|~)";
+      public const string RestrictedTillRegex = @"(?<till>\b(fino\s+a(l(l[aoe'])?|gli|i|d)?)\b|--|-|—|——|~)";
+      public static readonly string RangeConnectorRegex = $@"(?<and>\b(e(\s+l[aoe']|gli|i|d)?|a(l(l[aoe'])?|gli|i|d)?)\b|{BaseDateTime.RangeConnectorSymbolRegex})";
       public const string RelativeRegex = @"\b(?<order>((il?|l[ae])\s+)?prossim['oaie]|((il?|l[ae])\s+)?seguent[ei]|((il?|l[ae])\s+)?successiv[oaei]|in\s+arrivo|quest['oaie]|(l'|gli\s+|le\s+)?ultim['oaie]|((il?|l[ae])\s+)?passat[oaie]|((il?|l[ae])\s+)?precedent[ei]|((lo|l[ae]|gli)\s+)?scors[oaie]|((il?|l[ae])\s+)?corrent[ei]|quest['oaei]|il?|l[oae']|gli)";
       public const string StrictRelativeRegex = @"(?<order>prossim['oaie]|seguent[ei]|successiv[oaei]|in\s+arrivo|quest['oaie]|ultim['oaie]|passat[oaie]|precedent[ei]|scors[oaie]|corrent[ei]|quest['oaei])";
       public const string NextSuffixRegex = @"(?<order>prossim[oaei]|seguent[ei]|successiv[oaei]|imminent[ei]|in\s+arrivo)\b";
@@ -256,7 +256,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
       public const string SingleAmbiguousTermsRegex = @"(?<!l')una\b";
       public const string UnspecificDatePeriodRegex = @"^(settimana|finesettimana|weekend|mese|anno)$";
       public const string PrepositionSuffixRegex = @"\b(il|al?|del|di|dal?|fino al?)$";
-      public static readonly string FlexibleDayRegex = $@"(?<DayOfMonth>([A-Za-z]+\s)?({WrittenDayRegex}|{DayRegex}))";
+      public static readonly string FlexibleDayRegex = $@"(?<DayOfMonth>({WrittenDayRegex}|{DayRegex}))";
       public static readonly string ForTheRegex = $@"\b((((?<=per\s+il\s+){FlexibleDayRegex})|((?<!(\b{MonthRegex},?|\bper)\s+(il\s+|l'))(?<=(il\s+|l')){FlexibleDayRegex}))(?<end>\s*(,|\.|!|\?|$)))";
       public static readonly string WeekDayAndDayOfMonthRegex = $@"\b{WeekDayRegex},?\s+((il\s+)?{FlexibleDayRegex})\b(?!\s+{MonthRegex}\b)";
       public static readonly string WeekDayAndDayRegex = $@"\b{WeekDayRegex}\s*,?\s+(?!(il|l')){DayRegex}(?!([-:]|(\s+({AmDescRegex}|{{PmDescRegex|{OclockRegex}}}))))\b";

@@ -39,12 +39,22 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (!innerResult.Success)
                 {
+                    innerResult = ParseDuration(er.Text, referenceTime);
+                }
+
+                if (!innerResult.Success)
+                {
                     innerResult = ParseSpecificNight(er.Text, referenceTime);
                 }
 
                 if (!innerResult.Success)
                 {
                     innerResult = ParseNumberWithUnit(er.Text, referenceTime);
+                }
+
+                if (!innerResult.Success)
+                {
+                    innerResult = ParseRelativeUnit(er.Text, referenceTime);
                 }
 
                 if (innerResult.Success)
@@ -126,17 +136,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                     DateObject.MinValue.SafeCreateFromValue(pastDate.Year, pastDate.Month, pastDate.Day, beginTime.Hour, beginTime.Minute, beginTime.Second),
                     DateObject.MinValue.SafeCreateFromValue(pastDate.Year, pastDate.Month, pastDate.Day, endTime.Hour, endTime.Minute, endTime.Second));
 
-            var split = pr2.TimexStr.Split('T');
-            if (split.Length != 4)
-            {
-                return ret;
-            }
+            ret.Timex = TimexUtility.GenerateSplitDateTimePeriodTimex(pr1.TimexStr, pr2.TimexStr);
+            ret.Success = !string.IsNullOrEmpty(ret.Timex);
 
-            var dateStr = pr1.TimexStr;
-
-            ret.Timex = split[0] + dateStr + "T" + split[1] + dateStr + "T" + split[2] + "T" + split[3];
-
-            ret.Success = true;
             return ret;
         }
 
@@ -151,6 +153,14 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             var rightTime = DateObject.MinValue.SafeCreateFromValue(referenceTime.Year, referenceTime.Month, referenceTime.Day);
             var leftTime = DateObject.MinValue.SafeCreateFromValue(referenceTime.Year, referenceTime.Month, referenceTime.Day);
+
+            var match = config.FutureRegex.Match(text);
+
+            // cases including 'within' are processed in ParseDuration
+            if (match.Groups[Constants.WithinGroupName].Success)
+            {
+                return ParseDuration(text, referenceTime);
+            }
 
             if (er2.Count == 2)
             {
@@ -307,6 +317,53 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
+        private DateTimeResolutionResult ParseDuration(string text, DateObject referenceTime)
+        {
+            var ret = new DateTimeResolutionResult();
+            var ers = config.DurationExtractor.Extract(text, referenceTime);
+
+            if (ers.Count == 1)
+            {
+                var pr = config.DurationParser.Parse(ers[0]);
+                var afterStr = text.Substring((pr.Start ?? 0) + (pr.Length ?? 0)).Trim();
+
+                if (pr.Value != null)
+                {
+                    var swiftSeconds = 0;
+                    var mod = string.Empty;
+                    var durationResult = (DateTimeResolutionResult)pr.Value;
+                    if (durationResult.PastValue is double && durationResult.FutureValue is double)
+                    {
+                        swiftSeconds = (int)((double)durationResult.FutureValue);
+                    }
+
+                    DateObject beginTime;
+                    var endTime = beginTime = referenceTime;
+                    var match = config.FutureRegex.Match(afterStr);
+
+                    if (match.Groups[Constants.WithinGroupName].Success)
+                    {
+                        endTime = beginTime.AddSeconds(swiftSeconds);
+
+                        ret.Timex = TimexUtility.GenerateDateTimePeriodTimex(beginTime, endTime, durationResult.Timex);
+
+                        ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginTime, endTime);
+                        ret.Success = true;
+
+                        if (!string.IsNullOrEmpty(mod))
+                        {
+                            ((DateTimeResolutionResult)pr.Value).Mod = mod;
+                        }
+
+                        ret.SubDateTimeEntities = new List<object> { pr };
+                        return ret;
+                    }
+                }
+            }
+
+            return ret;
+        }
+
         // Parse cases like "this night"
         private DateTimeResolutionResult ParseSpecificNight(string text, DateObject referenceTime)
         {
@@ -318,9 +375,32 @@ namespace Microsoft.Recognizers.Text.DateTime
             // Handle 昨晚 (last night)，今晨 (this morning)
             if (this.config.SpecificTimeOfDayRegex.IsExactMatch(trimmedText, trim: true))
             {
+                // handle the ambiguous case "ぎりぎり" [the latest possible time]
+                var latest = this.config.SpecificTimeOfDayRegex.Match(text);
+                if (latest.Groups[Constants.LatestGroupName].Success)
+                {
+                    DateObject beginDate, endDate;
+                    beginDate = referenceTime.AddMinutes(-1);
+                    endDate = referenceTime;
+                    var diff = endDate - beginDate;
+                    ret.Timex = TimexUtility.GenerateDateTimePeriodTimex(beginDate, endDate);
+                    ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginDate, endDate);
+                    ret.Success = true;
+                    return ret;
+                }
+
                 if (!this.config.GetMatchedTimeRangeAndSwift(trimmedText, out timeStr, out beginHour, out endHour, out endMin, out int swift))
                 {
                     return ret;
+                }
+
+                if (this.config.NextRegex.IsMatch(trimmedText))
+                {
+                    swift = 1;
+                }
+                else if (this.config.LastRegex.IsMatch(trimmedText))
+                {
+                    swift = -1;
                 }
 
                 var date = referenceTime.AddDays(swift).Date;
@@ -459,6 +539,12 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     prefixMatch = this.config.FutureRegex.MatchExact(beforeStr, trim: true);
 
+                    if (!prefixMatch.Success)
+                    {
+                        prefixMatch = this.config.TimePeriodLeftRegex.MatchEnd(beforeStr, trim: true);
+
+                    }
+
                     if (prefixMatch.Success)
                     {
                         DateObject beginDate, endDate;
@@ -493,7 +579,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var match = this.config.UnitRegex.Match(text);
             if (match.Success)
             {
-                var srcUnit = match.Groups["unit"].Value;
+                var srcUnit = match.Groups[Constants.UnitGroupName].Value;
                 var beforeStr = text.Substring(0, match.Index).Trim();
                 if (this.config.UnitMap.ContainsKey(srcUnit))
                 {
@@ -554,6 +640,36 @@ namespace Microsoft.Recognizers.Text.DateTime
                         ret.Success = true;
                         return ret;
                     }
+                }
+            }
+
+            return ret;
+        }
+
+        private DateTimeResolutionResult ParseRelativeUnit(string text, DateObject referenceTime)
+        {
+            var ret = new DateTimeResolutionResult();
+
+            var match = this.config.RestOfDateRegex.Match(text);
+
+            if (match.Success)
+            {
+                var srcUnit = match.Groups[Constants.UnitGroupName].Value;
+
+                var unitStr = config.UnitMap[srcUnit];
+
+                int swiftValue = 1;
+                DateObject beginTime;
+                var endTime = beginTime = referenceTime;
+
+                if (config.UnitMap.ContainsKey(srcUnit))
+                {
+                    ret.Timex = TimexUtility.GenerateRelativeUnitDateTimePeriodTimex(ref beginTime, ref endTime, referenceTime, unitStr, swiftValue);
+
+                    ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginTime, endTime);
+                    ret.Success = !string.IsNullOrEmpty(ret.Timex);
+
+                    return ret;
                 }
             }
 

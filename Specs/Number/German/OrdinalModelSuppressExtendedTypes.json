@@ -58,8 +58,8 @@
         "TypeName": "ordinal",
         "Resolution": {
           "value": "25",
-          "offset":"25",
-          "relativeTo":"start"
+          "offset": "25",
+          "relativeTo": "start"
         },
         "Start": 0,
         "End": 17

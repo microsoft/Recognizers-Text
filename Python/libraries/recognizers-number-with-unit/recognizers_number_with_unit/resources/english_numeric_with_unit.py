@@ -218,7 +218,7 @@ class EnglishNumericWithUnit:
                                ("Cuban convertible peso", "cuban convertible pesos|cuban convertible peso|cuc|cuba convertible pesos|cuba convertible peso"),
                                ("Cuban peso", "cuban pesos|cuban peso|cup|cuba pesos|cuba peso"),
                                ("Dominican peso", "dominican pesos|dominican peso|dop|dominica pesos|dominica peso"),
-                               ("Mexican peso", "mexican pesos|mexican peso|mxn|mexico pesos|mexico peso|mxn$"),
+                               ("Mexican peso", "mexican pesos|mexican peso|mxn|mexico pesos|mexico peso|mxn$|mxn $|mex$"),
                                ("Philippine peso", "piso|philippine pesos|philippine peso|₱|php"),
                                ("Uruguayan peso", "uruguayan pesos|uruguayan peso|uyu"),
                                ("Peso", "pesos|peso"),
@@ -546,12 +546,13 @@ class EnglishNumericWithUnit:
                                         ("Millibitcoin", "MILLIBITCOIN"),
                                         ("Satoshi", "SATOSHI")])
     CompoundUnitConnectorRegex = f'(?<spacer>and)'
+    MultiplierRegex = f'\\s*\\b(thousand|million|billion|trillion)s?\\b'
     CurrencyPrefixList = dict([("Dobra", "db|std"),
                                ("Dollar", "$"),
                                ("Brazilian Real", "R$"),
                                ("United States dollar", "united states $|us$|us $|u.s. $|u.s $|usd$"),
                                ("East Caribbean dollar", "east caribbean $"),
-                               ("Mexican peso", "mxn$"),
+                               ("Mexican peso", "mxn$|mxn $|mex$"),
                                ("Australian dollar", "australian $|australia $"),
                                ("Bahamian dollar", "bahamian $|bahamia $"),
                                ("Barbadian dollar", "barbadian $|barbadin $"),
@@ -591,7 +592,7 @@ class EnglishNumericWithUnit:
                                ("Costa Rican colón", "₡"),
                                ("Turkish lira", "₺"),
                                ("Bitcoin", "₿|btc|xbt")])
-    AmbiguousCurrencyUnitList = [r'din.', r'kiwi', r'kina', r'kobo', r'lari', r'lipa', r'napa', r'para', r'sfr.', r'taka', r'tala', r'toea', r'vatu', r'yuan', r'all', r'ang', r'ban', r'bob', r'btn', r'byr', r'cad', r'cop', r'cup', r'dop', r'gip', r'jod', r'kgs', r'lak', r'lei', r'mga', r'mop', r'nad', r'omr', r'pul', r'sar', r'sbd', r'scr', r'sdg', r'sek', r'sen', r'sol', r'sos', r'std', r'try', r'yer', r'yen', r'db', r'satoshi', r'satoshis']
+    AmbiguousCurrencyUnitList = [r'din.', r'kiwi', r'kina', r'kobo', r'lari', r'lipa', r'napa', r'para', r'sfr.', r'taka', r'tala', r'toea', r'vatu', r'yuan', r'all', r'ang', r'ban', r'bob', r'btn', r'byr', r'cad', r'cop', r'cup', r'dop', r'gip', r'jod', r'kgs', r'lak', r'lei', r'mga', r'mop', r'nad', r'omr', r'pul', r'sar', r'sbd', r'scr', r'sdg', r'sek', r'sen', r'sol', r'sos', r'std', r'try', r'yer', r'yen', r'db', r'pen', r'ron', r'mad', r'zar', r'gel', r'satoshi', r'satoshis']
     InformationSuffixList = dict([("Bit", "-bit|bit|bits"),
                                   ("Kilobit", "kilobit|kilobits|kb|Kb|kbit"),
                                   ("Megabit", "megabit|megabits|mb|Mb|mbit"),
@@ -680,7 +681,7 @@ class EnglishNumericWithUnit:
                              ("Microgram", "μg|microgram|micrograms|micro gram|micro grams|microgramme|microgrammes|mcg"),
                              ("Gallon", "-gallon|gallons|gallon|gal"),
                              ("Metric ton", "metric tons|metric ton"),
-                             ("Ton", "-ton|ton|tons|tonne|tonnes"),
+                             ("Ton", "-ton|ton|tons|tonne|tonnes|t"),
                              ("Pound", "pound|pounds|lb|lbs"),
                              ("Ounce", "-ounce|ounce|oz|ounces"),
                              ("Grain", "grain|grains|gr"),
@@ -690,14 +691,16 @@ class EnglishNumericWithUnit:
                              ("Short hundredweight (US)", "us short hundredweight|short hundredweight (us)"),
                              ("Stone", "stone"),
                              ("Dram", "dram|drachm|drachma|roman drachma|greek drachma")])
-    AmbiguousWeightUnitList = [r'g', r'gr', r'oz', r'stone', r'dram', r'lbs', r'gal', r'grain', r'grains']
+    AmbiguousWeightUnitList = [r'g', r't', r'gr', r'oz', r'stone', r'dram', r'lbs', r'gal', r'grain', r'grains']
     AngleSuffixList = dict([("Degree", "degree|degrees|deg.|deg|°"),
                             ("Radian", "radian|radians|rad"),
                             ("Turn", "turn|turns")])
     AmbiguousAngleUnitList = [r'turn', r'turns']
     AmbiguityFiltersDict = dict([("\\bm\\b", "((('|’)\\s*m)|(m\\s*('|’)))"),
                                  ("^\\d{5} [cf]$", "\\b([a-z]{2} \\d{5} [cf])\\b"),
-                                 ("\\b\\d+\\s*\\p{L}+$", "((\\d+\\s*\\p{L}+[-—–-]?\\d+)|((\\p{L}[-—–-]?|\\d[-—–-])\\d+\\s*\\p{L}+))")])
+                                 ("\\b\\d+\\s*\\p{L}+$", "((\\d+(\\s*\\p{L}+[-—–-]|\\p{L}+)\\d+)|(((\\p{L}|\\d)[-—–-]\\d+\\s*|\\p{L}\\d+)\\p{L}+))"),
+                                 ("^(all|bob|pen|cad|cup|cop|sos|ron|mad|mop|zar|gel)", "(all|bob|pen|cad|cup|cop|sos|ron|mad|mop|zar|gel)\\s*(\\d|\\p{L})")])
     TemperatureAmbiguityFiltersDict = dict([("\\b(deg(rees?)?|°)$", "\\b((deg(rees?)?|°)\\s*(angle|rotation)|(rotat(ion|e[ds]?|ing)|angle)(\\s+(\\p{L}+|\\d+)){0,4}\\s*(deg(rees?)?\\b|°))")])
-    DimensionAmbiguityFiltersDict = dict([("\\b(deg(rees?)?|°)$", "\\b((deg(rees?)?|°)\\s*(c(elsius|entigrate)?|f(ah?renheit)?)|(temperature)(\\s+(\\p{L}+|\\d+)){0,4}\\s*(deg(rees?)?\\b|°))")])
+    DimensionAmbiguityFiltersDict = dict([("\\b(deg(rees?)?|°)$", "\\b((deg(rees?)?|°)\\s*(c(elsius|entigrate)?|f(ah?renheit)?)|(temperature)(\\s+(\\p{L}+|\\d+)){0,4}\\s*(deg(rees?)?\\b|°))"),
+                                          ("\\b\\d+\\s*\\p{L}+$", "((\\d+\\s*\\p{L}+\\d+)|(\\p{L}\\d+\\s*\\p{L}+))")])
 # pylint: enable=line-too-long

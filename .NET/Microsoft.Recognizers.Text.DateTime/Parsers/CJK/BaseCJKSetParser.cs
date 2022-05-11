@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
@@ -36,21 +37,26 @@ namespace Microsoft.Recognizers.Text.DateTime
                     innerResult = ParseEachDuration(er.Text, refDate);
                 }
 
-                if (!innerResult.Success)
-                {
-                    innerResult = ParserTimeEveryday(er.Text, refDate);
-                }
-
                 // NOTE: Please do not change the order of following function
                 // we must consider datetime before date
                 if (!innerResult.Success)
                 {
-                    innerResult = ParseEachDateTime(er.Text, refDate);
+                    innerResult = ParseEach(config.DateTimeExtractor, config.DateTimeParser, er.Text, refDate);
                 }
 
                 if (!innerResult.Success)
                 {
-                    innerResult = ParseEachDate(er.Text, refDate);
+                    innerResult = ParseEach(config.DateExtractor, config.DateParser, er.Text, refDate);
+                }
+
+                if (!innerResult.Success)
+                {
+                    innerResult = ParseEach(config.TimePeriodExtractor, config.TimePeriodParser, er.Text, refDate);
+                }
+
+                if (!innerResult.Success)
+                {
+                    innerResult = ParseEach(config.TimeExtractor, config.TimeParser, er.Text, refDate);
                 }
 
                 if (innerResult.Success)
@@ -88,31 +94,22 @@ namespace Microsoft.Recognizers.Text.DateTime
             return candidateResults;
         }
 
-        private static bool IsLessThanDay(string unit)
-        {
-            return unit.Equals("S", StringComparison.Ordinal) ||
-                   unit.Equals("M", StringComparison.Ordinal) ||
-                   unit.Equals("H", StringComparison.Ordinal);
-        }
-
         private DateTimeResolutionResult ParseEachDuration(string text, DateObject refDate)
         {
             var ret = new DateTimeResolutionResult();
 
             var ers = this.config.DurationExtractor.Extract(text, refDate);
 
-            if (ers.Count != 1 || !string.IsNullOrWhiteSpace(text.Substring(ers[0].Start + ers[0].Length ?? 0)))
+            if (ers.Count != 1 || string.IsNullOrWhiteSpace(text.Substring(ers[0].Start + ers[0].Length ?? 0)))
             {
                 return ret;
             }
 
-            var beforeStr = text.Substring(0, ers[0].Start ?? 0);
-            if (this.config.EachPrefixRegex.IsMatch(beforeStr))
+            var afterStr = text.Substring(ers[0].Start + ers[0].Length ?? 0);
+            if (this.config.EachPrefixRegex.IsMatch(afterStr))
             {
                 var pr = this.config.DurationParser.Parse(ers[0], DateObject.Now);
-                ret.Timex = pr.TimexStr;
-                ret.FutureValue = ret.PastValue = "Set: " + pr.TimexStr;
-                ret.Success = true;
+                ret = SetHandler.ResolveSet(ref ret, pr.TimexStr);
                 return ret;
             }
 
@@ -132,88 +129,47 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (!string.IsNullOrEmpty(sourceUnit) && this.config.UnitMap.ContainsKey(sourceUnit))
                 {
 
-                    if (this.config.GetMatchedUnitTimex(sourceUnit, out string timex))
+                    if (this.config.GetMatchedUnitTimex(sourceUnit, out string timexStr))
                     {
-                        ret.Timex = timex;
+                        ret = SetHandler.ResolveSet(ref ret, timexStr);
                     }
-                    else
-                    {
-                        return ret;
-                    }
-
-                    ret.FutureValue = ret.PastValue = "Set: " + ret.Timex;
-                    ret.Success = true;
-                    return ret;
                 }
             }
 
             return ret;
         }
 
-        private DateTimeResolutionResult ParserTimeEveryday(string text, DateObject refDate)
+        private DateTimeResolutionResult ParseEach(IDateTimeExtractor extractor, IDateTimeParser parser, string text, DateObject refDate)
         {
             var ret = new DateTimeResolutionResult();
-            var ers = this.config.TimeExtractor.Extract(text, refDate);
-            if (ers.Count != 1)
+            var ers = extractor.Extract(text, refDate);
+            var success = false;
+            foreach (var er in ers)
             {
-                return ret;
-            }
+                var beforeStr = text.Substring(0, er.Start ?? 0);
+                var match = this.config.EachPrefixRegex.Match(beforeStr);
 
-            var beforeStr = text.Substring(0, ers[0].Start ?? 0);
-            var match = this.config.EachDayRegex.Match(beforeStr);
-            if (match.Success)
-            {
-                var pr = this.config.TimeParser.Parse(ers[0], DateObject.Now);
-                ret.Timex = pr.TimexStr;
-                ret.FutureValue = ret.PastValue = "Set: " + ret.Timex;
-                ret.Success = true;
-                return ret;
-            }
+                if (match.Success && match.Length + er.Length == text.Length)
+                {
+                    success = true;
+                }
+                else if (er.Type == Constants.SYS_DATETIME_TIME || er.Type == Constants.SYS_DATETIME_DATE)
+                {
+                    // Cases like "every day at 2pm" or "every year on April 15th"
+                    var eachRegex = er.Type == Constants.SYS_DATETIME_TIME ? this.config.EachDayRegex : this.config.EachDateUnitRegex;
+                    match = eachRegex.Match(beforeStr);
+                    if (match.Success && match.Length + er.Length == text.Length)
+                    {
+                        success = true;
+                    }
+                }
 
-            return ret;
-        }
-
-        private DateTimeResolutionResult ParseEachDate(string text, DateObject refDate)
-        {
-            var ret = new DateTimeResolutionResult();
-            var ers = this.config.DateExtractor.Extract(text, refDate);
-            if (ers.Count != 1)
-            {
-                return ret;
-            }
-
-            var beforeStr = text.Substring(0, ers[0].Start ?? 0);
-            var match = this.config.EachPrefixRegex.Match(beforeStr);
-            if (match.Success)
-            {
-                var pr = this.config.DateParser.Parse(ers[0], DateObject.Now);
-                ret.Timex = pr.TimexStr;
-                ret.FutureValue = ret.PastValue = "Set: " + ret.Timex;
-                ret.Success = true;
-                return ret;
-            }
-
-            return ret;
-        }
-
-        private DateTimeResolutionResult ParseEachDateTime(string text, DateObject refDate)
-        {
-            var ret = new DateTimeResolutionResult();
-            var ers = this.config.DateTimeExtractor.Extract(text, refDate);
-            if (ers.Count != 1)
-            {
-                return ret;
-            }
-
-            var beforeStr = text.Substring(0, ers[0].Start ?? 0);
-            var match = this.config.EachPrefixRegex.Match(beforeStr);
-            if (match.Success)
-            {
-                var pr = this.config.DateTimeParser.Parse(ers[0], DateObject.Now);
-                ret.Timex = pr.TimexStr;
-                ret.FutureValue = ret.PastValue = "Set: " + ret.Timex;
-                ret.Success = true;
-                return ret;
+                if (success)
+                {
+                    var pr = parser.Parse(er, refDate);
+                    ret = SetHandler.ResolveSet(ref ret, pr.TimexStr);
+                    break;
+                }
             }
 
             return ret;

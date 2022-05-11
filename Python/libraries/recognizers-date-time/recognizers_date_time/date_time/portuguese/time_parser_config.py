@@ -82,8 +82,8 @@ class PortugueseTimeParserConfiguration(TimeParserConfiguration):
             else:
                 min_str = RegExpUtility.get_group(match, 'deltaminnum').lower()
                 delta_min = self.numbers[min_str]
-        if prefix.endswith('para a') or prefix.endswith('para as')  or prefix.endswith('pra')  \
-                or prefix.endswith('pras')  or prefix.endswith('antes da')  or prefix.endswith('antes das'):
+        if prefix.endswith('para a') or prefix.endswith('para as') or prefix.endswith('pra')  \
+                or prefix.endswith('pras') or prefix.endswith('antes da') or prefix.endswith('antes das'):
             delta_min = delta_min * -1
         adjust.minute += delta_min
         if adjust.minute < 0:

@@ -383,7 +383,7 @@ CurrencySuffixList: !dictionary
     Uguiya: uguiya|uguiyas|mro
     Jum: jum|jums
     #México
-    Peso mexicano: peso mexicano|pesos mexicanos|mxn
+    Peso mexicano: peso mexicano|pesos mexicanos|mxn|mxn$|mxn $|mex$
     Centavo mexicano: centavo mexicano|centavos mexicanos
     #Micronesia, Estados Federados de -> Dólar estadounidense
     #Moldavia
@@ -893,6 +893,7 @@ CurrencyPrefixList: !dictionary
     Dólar de las Islas Salomón: si$|sbd
     Nuevo dólar taiwanés: nt$|twd
 #Other prefix
+    Peso mexicano: mxn|mxn$|mxn $|mex$
     Real brasileño: r$|brl
     Guaraní: ₲|gs.|pyg
     Dólar trinitense: tt$|ttd
@@ -1035,8 +1036,8 @@ VolumeSuffixList: !dictionary
 WeightSuffixList: !dictionary
   types: [ string, string ]
   entries:
-    Tonelada métrica: tonelada métrica|toneladas métricas
-    Tonelada: ton|tonelada|toneladas
+    Tonelada métrica: tonelada métrica|toneladas métricas|t.métrica|t métrica|t. métrica|tonelada metrica|toneladas metricas|t.metrica|t metrica|t. metrica
+    Tonelada: ton|tonelada|toneladas|t
     Kilogramo: kg|kilogramo|kilogramos
     Hectogramo: hg|hectogramo|hectogramos
     Decagramo: dag|decagramo|decagramos
@@ -1051,6 +1052,11 @@ WeightSuffixList: !dictionary
     Onza: oz|onza|onzas
     Grano: grano|granos
     Quilate: ct|quilate|quilates
+AmbiguousWeightUnitList: !list
+  types: [ string ]
+  entries:
+    - g
+    - t
 #AngleExtractorConfiguration
 AngleSuffixList: !dictionary
   types: [ string, string ]

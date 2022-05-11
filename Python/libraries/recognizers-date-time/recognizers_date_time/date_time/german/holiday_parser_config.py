@@ -239,4 +239,3 @@ class GermanHolidayParserConfiguration(BaseHolidayParserConfiguration):
             .replace(' ', '')\
             .replace('-', '') \
             .replace('\'', '')
-

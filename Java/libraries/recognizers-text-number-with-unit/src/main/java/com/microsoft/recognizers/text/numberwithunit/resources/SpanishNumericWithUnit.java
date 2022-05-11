@@ -235,7 +235,7 @@ public class SpanishNumericWithUnit {
         .put("Rupia de Mauricio", "rupia de Mauricio|rupias de Mauricio|mur")
         .put("Uguiya", "uguiya|uguiyas|mro")
         .put("Jum", "jum|jums")
-        .put("Peso mexicano", "peso mexicano|pesos mexicanos|mxn")
+        .put("Peso mexicano", "peso mexicano|pesos mexicanos|mxn|mxn$|mxn $|mex$")
         .put("Centavo mexicano", "centavo mexicano|centavos mexicanos")
         .put("Leu moldavo", "leu moldavo|lei moldavos|mdl")
         .put("Ban moldavo", "ban moldavo|bani moldavos")
@@ -650,6 +650,7 @@ public class SpanishNumericWithUnit {
         .put("Dólar namibio", "n$|nad")
         .put("Dólar de las Islas Salomón", "si$|sbd")
         .put("Nuevo dólar taiwanés", "nt$|twd")
+        .put("Peso mexicano", "mxn|mxn$|mxn $|mex$")
         .put("Real brasileño", "r$|brl")
         .put("Guaraní", "₲|gs.|pyg")
         .put("Dólar trinitense", "tt$|ttd")
@@ -764,8 +765,8 @@ public class SpanishNumericWithUnit {
         .build();
 
     public static final ImmutableMap<String, String> WeightSuffixList = ImmutableMap.<String, String>builder()
-        .put("Tonelada métrica", "tonelada métrica|toneladas métricas")
-        .put("Tonelada", "ton|tonelada|toneladas")
+        .put("Tonelada métrica", "tonelada métrica|toneladas métricas|t.métrica|t métrica|t. métrica|tonelada metrica|toneladas metricas|t.metrica|t metrica|t. metrica")
+        .put("Tonelada", "ton|tonelada|toneladas|t")
         .put("Kilogramo", "kg|kilogramo|kilogramos")
         .put("Hectogramo", "hg|hectogramo|hectogramos")
         .put("Decagramo", "dag|decagramo|decagramos")
@@ -781,6 +782,8 @@ public class SpanishNumericWithUnit {
         .put("Grano", "grano|granos")
         .put("Quilate", "ct|quilate|quilates")
         .build();
+
+    public static final List<String> AmbiguousWeightUnitList = Arrays.asList("g", "t");
 
     public static final ImmutableMap<String, String> AngleSuffixList = ImmutableMap.<String, String>builder()
         .put("Degree", "grado|grados|°")

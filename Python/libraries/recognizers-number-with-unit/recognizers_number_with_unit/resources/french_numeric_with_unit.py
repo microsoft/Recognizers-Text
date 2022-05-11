@@ -580,7 +580,7 @@ class FrenchNumericWithUnit:
                              ("Pied", "pied|pieds"),
                              ("Yard", "yards|yard|yd"),
                              ("Pouce", "pouce|pouces")])
-    AmbiguousLengthUnitList = [r'm', r'm.', r'yard', r'yards', r'pm', r'pouce', r'pt', r'pts']
+    AmbiguousLengthUnitList = [r'm.', r'yard', r'yards', r'pm', r'pouce', r'pt', r'pts']
     SpeedSuffixList = dict([("Mètre par seconde", "m/s|metres/seconde|metres par seconde|metre par seconde|metres par secondes|mètre par seconde|mètres par seconde|mètres par secondes"),
                             ("Kilomètre par heure", "km/h|kilomètre par heure|kilomètres par heure|kilomètres par heures|kilometres par heure|kilometre par heure"),
                             ("Kilomètre par minute", "km/m|kilomètre par minute|kilomètres par minute|kilomètres par minutes|kilometre par minute|kilometre par minutes"),
@@ -589,6 +589,7 @@ class FrenchNumericWithUnit:
                             ("Noeuds", "noeud|noeuds|nuds"),
                             ("Pied par seconde", "ft/s|pied par seconde|pieds par seconde|pied/s|pieds/s"),
                             ("Pied par minute", "pieds/minute|pied/minute|ft/minute|ft/min|pied/min")])
+    AmbiguousSpeedUnitList = [r'noeud', r'noeuds', r'nuds']
     TemperatureSuffixList = dict([("Kelvin", "k|K|kelvin"),
                                   ("F", "°f|° f|degres f|degrés f|deg f|degrés fahrenheit|degres fahrenheit|fahrenheit|deg fahrenheit|degs fahrenheit"),
                                   ("R", "rankine|°r|° r"),

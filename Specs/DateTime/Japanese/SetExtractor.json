@@ -1,7 +1,6 @@
 [
   {
     "Input": "毎週出発する。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -14,7 +13,6 @@
   },
   {
     "Input": "毎日出発する。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -27,7 +25,6 @@
   },
   {
     "Input": "毎月出発する。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -40,7 +37,6 @@
   },
   {
     "Input": "毎年出発する。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -53,7 +49,6 @@
   },
   {
     "Input": "2日ごとに出発する。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -66,7 +61,6 @@
   },
   {
     "Input": "3週間ごとに出発する。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -79,20 +73,18 @@
   },
   {
     "Input": "毎日午後3時に出発する。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "毎日午後3時に",
+        "Text": "毎日午後3時",
         "Type": "set",
         "Start": 0,
-        "Length": 7
+        "Length": 6
       }
     ]
   },
   {
     "Input": "毎年4月15日に出発する。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -105,7 +97,6 @@
   },
   {
     "Input": "毎週月曜日に出発する。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -118,7 +109,6 @@
   },
   {
     "Input": "毎週月曜日午後4時に出発する。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -131,7 +121,6 @@
   },
   {
     "Input": "毎朝出発する。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -144,50 +133,46 @@
   },
   {
     "Input": "毎朝9時に出発する。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "毎朝9時に",
+        "Text": "毎朝9時",
         "Type": "set",
         "Start": 0,
-        "Length": 5
+        "Length": 4
       }
     ]
   },
   {
     "Input": "毎日午後4時に出発する。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "毎日午後4時に",
+        "Text": "毎日午後4時",
         "Type": "set",
         "Start": 0,
-        "Length": 7
+        "Length": 6
       }
     ]
   },
   {
     "Input": "毎晩9時に出発する。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "毎晩9時に",
+        "Text": "毎晩9時",
         "Type": "set",
         "Start": 0,
-        "Length": 5
+        "Length": 4
       }
     ]
   },
   {
-    "Input": "午前9時に出発する。",
-    "NotSupported": "dotnet",
+    "Input": "各午前9時に出発する。",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "午前9時に",
+        "Text": "各午前9時",
         "Type": "set",
         "Start": 0,
         "Length": 5
@@ -196,46 +181,42 @@
   },
   {
     "Input": "毎週日曜日午前9時に出発する。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "毎週日曜日午前9時に",
+        "Text": "毎週日曜日午前9時",
         "Type": "set",
         "Start": 0,
-        "Length": 10
+        "Length": 9
       }
     ]
   },
   {
     "Input": "毎週月曜日午前9時に出発する。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "毎週月曜日午前9時に",
+        "Text": "毎週月曜日午前9時",
         "Type": "set",
         "Start": 0,
-        "Length": 10
+        "Length": 9
       }
     ]
   },
   {
     "Input": "毎週日曜日に出発する。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "毎週日曜日に",
+        "Text": "毎週日曜日",
         "Type": "set",
         "Start": 0,
-        "Length": 6
+        "Length": 5
       }
     ]
   },
   {
     "Input": "5月9日から2泊予約できますか。",
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -248,7 +229,7 @@
   },
   {
     "Input": "毎週日曜日午後八時に事件が起こる",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "毎週日曜日午後八時",
@@ -260,7 +241,7 @@
   },
   {
     "Input": "毎週日曜日事件が起こる",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "毎週日曜日",
@@ -272,7 +253,7 @@
   },
   {
     "Input": "毎日事件が起こる",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "毎日",
@@ -284,7 +265,7 @@
   },
   {
     "Input": "毎週事件が起こる",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "毎週",
@@ -296,7 +277,7 @@
   },
   {
     "Input": "毎月事件が起こる",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "毎月",
@@ -308,7 +289,7 @@
   },
   {
     "Input": "毎年事件が起こる",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "毎年",

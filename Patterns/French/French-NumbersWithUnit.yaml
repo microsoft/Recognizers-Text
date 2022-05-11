@@ -745,7 +745,6 @@ LengthSuffixList: !dictionary
 AmbiguousLengthUnitList: !list
   types: [ string ]
   entries:
-    - m
     - m.
     - yard
     - yards
@@ -753,7 +752,7 @@ AmbiguousLengthUnitList: !list
     - pouce
     - pt
     - pts
-#SpeecExtractorConfiguration
+#SpeedExtractorConfiguration
 SpeedSuffixList: !dictionary
   types: [ string, string ]
   entries:
@@ -765,6 +764,12 @@ SpeedSuffixList: !dictionary
     Noeuds: noeud|noeuds|nuds
     Pied par seconde: ft/s|pied par seconde|pieds par seconde|pied/s|pieds/s
     Pied par minute: pieds/minute|pied/minute|ft/minute|ft/min|pied/min
+AmbiguousSpeedUnitList: !list
+   types: [ string ]
+   entries:
+    - noeud
+    - noeuds
+    - nuds
 #TemperatureExtractionConfiguration
 TemperatureSuffixList: !dictionary
   types: [ string, string ]
