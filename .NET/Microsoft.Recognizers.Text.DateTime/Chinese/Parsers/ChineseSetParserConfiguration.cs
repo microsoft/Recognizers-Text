@@ -17,23 +17,28 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         {
             DurationExtractor = config.DurationExtractor;
             TimeExtractor = config.TimeExtractor;
+            TimePeriodExtractor = config.TimePeriodExtractor;
             DateExtractor = config.DateExtractor;
             DateTimeExtractor = config.DateTimeExtractor;
 
             DurationParser = config.DurationParser;
             TimeParser = config.TimeParser;
+            TimePeriodParser = config.TimePeriodParser;
             DateParser = config.DateParser;
             DateTimeParser = config.DateTimeParser;
 
             EachPrefixRegex = ChineseSetExtractorConfiguration.EachPrefixRegex;
             EachUnitRegex = ChineseSetExtractorConfiguration.EachUnitRegex;
             EachDayRegex = ChineseSetExtractorConfiguration.EachDayRegex;
+            EachDateUnitRegex = ChineseSetExtractorConfiguration.EachDateUnitRegex;
             UnitMap = config.UnitMap;
         }
 
         public IDateTimeExtractor DurationExtractor { get; }
 
         public IDateTimeExtractor TimeExtractor { get; }
+
+        public IDateTimeExtractor TimePeriodExtractor { get; }
 
         public IDateTimeExtractor DateExtractor { get; }
 
@@ -42,6 +47,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public IDateTimeParser DurationParser { get; }
 
         public IDateTimeParser TimeParser { get; }
+
+        public IDateTimeParser TimePeriodParser { get; }
 
         public IDateTimeParser DateParser { get; }
 
@@ -52,6 +59,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public Regex EachUnitRegex { get; }
 
         public Regex EachDayRegex { get; }
+
+        public Regex EachDateUnitRegex { get; }
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 

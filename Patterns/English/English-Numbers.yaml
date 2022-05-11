@@ -55,13 +55,13 @@ RoundNumberIntegerRegexWithLocks: !nestedRegex
   def: (?<=\b)\d+\s+{RoundNumberIntegerRegex}(?=\b)
   references: [ RoundNumberIntegerRegex ]
 NumbersWithDozenSuffix: !nestedRegex
-  def: (((?<!\d+(\s*{BaseNumbers.NumberMultiplierRegex})?\s*)-\s*)|(?<=\b))\d+\s+dozen(s)?(?=\b)
+  def: (((?<!\d+(\s*{BaseNumbers.NumberMultiplierRegex})?\s*)-\s*)|(?<=\b))\d+\s+(doz(en)?|dz)s?(?=\b)
   references: [ BaseNumbers.NumberMultiplierRegex ]
 AllIntRegexWithLocks: !nestedRegex
   def: ((?<=\b){AllIntRegex}(?=\b))
   references: [ AllIntRegex ]
 AllIntRegexWithDozenSuffixLocks: !nestedRegex
-  def: (?<=\b)(((half\s+)?a\s+dozen)|({AllIntRegex}\s+dozen(s)?))(?=\b)
+  def: (?<=\b)(((half\s+)?a\s+dozen)|({AllIntRegex}\s+(doz(en)?|dz)s?))(?=\b)
   references: [ AllIntRegex ]
 #Ordinal Regex
 RoundNumberOrdinalRegex: !simpleRegex
@@ -254,7 +254,7 @@ WrittenFractionSeparatorTexts: [and]
 HalfADozenRegex: !simpleRegex
   def: half\s+a\s+dozen
 DigitalNumberRegex: !nestedRegex
-  def: ((?<=\b)(hundred|thousand|[mb]illion|trillion|[mbt]ln|lakh|crore|dozen(s)?)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))
+  def: ((?<=\b)(hundred|thousand|[mb]illion|trillion|[mbt]ln|lakh|crore|(doz(en)?|dz)s?)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))
   references: [ BaseNumbers.MultiplierLookupRegex ]
 CardinalNumberMap: !dictionary
   types: [ string, long ]
@@ -276,6 +276,10 @@ CardinalNumberMap: !dictionary
     twelve: 12
     dozen: 12
     dozens: 12
+    dz: 12
+    doz: 12
+    dzs: 12
+    dozs: 12
     thirteen: 13
     fourteen: 14
     fifteen: 15
@@ -413,6 +417,10 @@ RoundNumberMap: !dictionary
     trillionths: 1000000000000
     dozen: 12
     dozens: 12
+    dz: 12
+    doz: 12
+    dzs: 12
+    dozs: 12
     k: 1000
     m: 1000000
     mm: 1000000

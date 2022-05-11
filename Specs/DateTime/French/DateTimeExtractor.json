@@ -485,7 +485,7 @@
   },
   {
     "Input": "Je vais rentrer maintenant",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "maintenant",
@@ -497,7 +497,7 @@
   },
   {
     "Input": "Je vais rentrer le plus tôt possible",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "le plus tôt possible",
@@ -521,7 +521,7 @@
   },
   {
     "Input": "Je vais rentrer le 15 à 8h00",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "15 à 8h00",
@@ -533,7 +533,7 @@
   },
   {
     "Input": "Je vais rentrer le 15 à 8:00:30",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "15 à 8:00:30",
@@ -545,7 +545,7 @@
   },
   {
     "Input": "Je vais rentrer le 15, 20h",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "15, 20h",
@@ -557,7 +557,7 @@
   },
   {
     "Input": "Je vais rentrer 21/04/2016, 20h00",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "21/04/2016, 20h00",
@@ -569,7 +569,7 @@
   },
   {
     "Input": "Je vais revenir 21/04/2016, 20:00:13",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "21/04/2016, 20:00:13",
@@ -581,7 +581,7 @@
   },
   {
     "Input": "Je vais rentrer le 23 octobre à sept heures",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "23 octobre à sept heures",
@@ -593,7 +593,7 @@
   },
   {
     "Input": "Je vais rentrer le 14 octobre à 8:00am",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "14 octobre à 8:00am",
@@ -605,7 +605,7 @@
   },
   {
     "Input": "Je vais rentrer le 14 octobre à 8:00:00am",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "14 octobre à 8:00:00am",
@@ -617,7 +617,7 @@
   },
   {
     "Input": "Je vais rentrer le 14 octobre, 8:00am",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "14 octobre, 8:00am",
@@ -629,7 +629,7 @@
   },
   {
     "Input": "Je vais rentrer le 14 octobre à 8:00:01 ",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "14 octobre à 8:00:01",
@@ -641,7 +641,7 @@
   },
   {
     "Input": "Je vais rentrer demain à 8:00am",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "demain à 8:00am",
@@ -665,7 +665,7 @@
   },
   {
     "Input": "Je vais rentrer demain pour 8:00am",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "demain pour 8:00am",
@@ -677,7 +677,7 @@
   },
   {
     "Input": "Je vais rentrer demain à 8:00:05",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "demain à 8:00:05",
@@ -689,7 +689,7 @@
   },
   {
     "Input": "Je vais rentrer vendredi prochain à 3 heures et demie",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "vendredi prochain à 3 heures et demie",
@@ -713,7 +713,7 @@
   },
   {
     "Input": "Je vais rentrer à 20h le 15",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "20h le 15",
@@ -725,7 +725,7 @@
   },
   {
     "Input": "Je vais rentrer à sept heures le 15",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "sept heures le 15",
@@ -737,7 +737,7 @@
   },
   {
     "Input": "Je vais rentrer à 20h dimanche prochain",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "20h dimanche prochain",
@@ -749,7 +749,7 @@
   },
   {
     "Input": "Je vais rentrer à 20h aujourd'hui",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "20h aujourd'hui",
@@ -773,7 +773,7 @@
   },
   {
     "Input": "Je vais rentrer 19:00, 22/12/2016",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "19:00, 22/12/2016",
@@ -785,7 +785,7 @@
   },
   {
     "Input": "Je vais rentrer à sept heures demain",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "sept heures demain",
@@ -797,7 +797,7 @@
   },
   {
     "Input": "Je vais rentrer demain matin à 7h",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "demain matin à 7h",
@@ -809,7 +809,7 @@
   },
   {
     "Input": "Je vais rentrer à 7h dimanche après-midi",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "7h dimanche après-midi",
@@ -845,7 +845,7 @@
   },
   {
     "Input": "Je vais rentrer à 7h, ce matin",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "7h, ce matin",
@@ -869,7 +869,7 @@
   },
   {
     "Input": "Je vais rentrer à 20h le soir, 1er janvier",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "20h le soir, 1er janvier",
@@ -893,7 +893,7 @@
   },
   {
     "Input": "Je vais rentrer à 22h ce soir",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "22h ce soir",
@@ -905,7 +905,7 @@
   },
   {
     "Input": "Je vais rentrer à 8h ce matin",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "8h ce matin",
@@ -917,7 +917,7 @@
   },
   {
     "Input": "Je vais rentrer à 20h ce soir",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "20h ce soir",
@@ -953,7 +953,7 @@
   },
   {
     "Input": "Je vais rentrer ce matin à 19h",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "ce matin à 19h",
@@ -1037,7 +1037,7 @@
   },
   {
     "Input": "Je reviendrai à la fin de la journée",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "la fin de la journée",
@@ -1097,7 +1097,7 @@
   },
   {
     "Input": "Je vais rentrer dans 5 heures",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "dans 5 heures",
@@ -1109,7 +1109,7 @@
   },
   {
     "Input": "voir si je suis disponible pour 15h le dimanche",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "15h le dimanche",
@@ -1145,7 +1145,7 @@
   },
   {
     "Input": "Je vais rentrer demain matin à 9 h",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "demain matin à 9 h",
@@ -1157,7 +1157,7 @@
   },
   {
     "Input": "Je vais rentrer demain à 9 heures",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "demain à 9 heures",
@@ -1169,7 +1169,7 @@
   },
   {
     "Input": "Je vais rentrer demain à 9 h",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "demain à 9 h",
@@ -1205,7 +1205,7 @@
   },
   {
     "Input": "Ajouter 649 minuit ce soir",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "minuit ce soir",
@@ -1217,7 +1217,7 @@
   },
   {
     "Input": "Je vais rentrer le 1er août à 11h",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "1er août à 11h",
@@ -1229,7 +1229,7 @@
   },
   {
     "Input": "Je vais rentrer le 1er août à 23h",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "1er août à 23h",
@@ -1241,7 +1241,7 @@
   },
   {
     "Input": "Je vais rentrer le 1er août à 11pm",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "1er août à 11pm",
@@ -1253,7 +1253,7 @@
   },
   {
     "Input": "Je vais rentrer 25/02 à 11h",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "25/02 à 11h",
@@ -1265,7 +1265,7 @@
   },
   {
     "Input": "Je reviendrai le 6 janvier 2017 à 6h37",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "6 janvier 2017 à 6h37",
@@ -1277,7 +1277,7 @@
   },
   {
     "Input": "le 10:38 16 novembre 2016 ",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "10:38 16 novembre 2016",
@@ -1301,7 +1301,7 @@
   },
   {
     "Input": "Je serai occupé dans une heure, alors appelle-moi plus tard",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "dans une heure",
@@ -1337,7 +1337,7 @@
   },
   {
     "Input": "Je partirai dans 2 minutes",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "dans 2 minutes",
@@ -1349,7 +1349,7 @@
   },
   {
     "Input": "Veuillez réserver un appel Skype aujourd'hui à 9 h.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "aujourd'hui à 9 h",
@@ -1361,7 +1361,7 @@
   },
   {
     "Input": "Veuillez réserver un appel Skype aujourd'hui à 21 heures.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "aujourd'hui à 21 heures",
@@ -1373,7 +1373,7 @@
   },
   {
     "Input": "Je partirai dans 2 heures",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "dans 2 heures",
@@ -1397,7 +1397,7 @@
   },
   {
     "Input": "Le 15:50:06 mer. 26 octobre 2016 n'est pas un jour en 2019.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "15:50:06 mer. 26 octobre 2016",
@@ -1421,7 +1421,7 @@
   },
   {
     "Input": "Je vais rentrer aujourd'hui à 20h30",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "aujourd'hui à 20h30",
@@ -1433,7 +1433,7 @@
   },
   {
     "Input": "Je rentre à 20h30 aujourd'hui",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "20h30 aujourd'hui",
@@ -1445,7 +1445,7 @@
   },
   {
     "Input": "Je rentre à 8:30pm aujourd'hui",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "8:30pm aujourd'hui",

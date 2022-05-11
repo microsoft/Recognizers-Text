@@ -3562,5 +3562,65 @@
         "End": 42
       }
     ]
+  },
+  {
+    "Input": " 3 dzs",
+    "Results": [
+      {
+        "Text": "3 dzs",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "36"
+        },
+        "Start": 1,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": " five dozs",
+    "Results": [
+      {
+        "Text": "five dozs",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "60"
+        },
+        "Start": 1,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": " two millionth",
+    "Results": [
+      {
+        "Text": "two",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2"
+        },
+        "Start": 1,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": " 100 millionths",
+    "Results": [
+      {
+        "Text": "100",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "100"
+        },
+        "Start": 1,
+        "End": 3
+      }
+    ]
   }
 ]

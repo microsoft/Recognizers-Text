@@ -51,6 +51,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
 
         public virtual Regex AmbiguousUnitNumberMultiplierRegex => null;
 
+        public Regex MultiplierRegex => null;
+
         public abstract string ExtractType { get; }
 
         public CultureInfo CultureInfo { get; }

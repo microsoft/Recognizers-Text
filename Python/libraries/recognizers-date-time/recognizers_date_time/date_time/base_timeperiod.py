@@ -8,12 +8,12 @@ from collections import namedtuple
 import regex
 
 from recognizers_text.utilities import RegExpUtility, QueryProcessor
-from recognizers_text.extractor import Extractor, ExtractResult
+from recognizers_text.extractor import Extractor, ExtractResult, Metadata
 from recognizers_date_time.date_time.base_time import BaseTimeExtractor, BaseTimeParser
 from .constants import Constants, TimeTypeConstants
 from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
-from .utilities import Token, merge_all_tokens, get_tokens_from_regex, DateTimeResolutionResult, \
+from .utilities import Token, merge_all_tokens, DateTimeResolutionResult, \
     DateTimeUtilityConfiguration, DateTimeFormatUtil, ResolutionStartEnd, DateTimeOptionsConfiguration, DateTimeOptions
 
 MatchedIndex = namedtuple('MatchedIndex', ['matched', 'index'])
@@ -98,7 +98,7 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
 
         tokens = self.match_simple_cases(source)
         tokens.extend(self.merge_two_time_points(source, reference))
-        tokens.extend(self.match_night(source))
+        tokens.extend(self.match_time_of_day(source))
 
         if (self.config.options & DateTimeOptions.CALENDAR) != 0:
             tokens.extend(self.match_pure_number_cases(source))
@@ -308,8 +308,20 @@ class BaseTimePeriodExtractor(DateTimeExtractor):
 
         return result
 
-    def match_night(self, source: str) -> List[Token]:
-        return get_tokens_from_regex(self.config.time_of_day_regex, source)
+    def match_time_of_day(self, source: str) -> List[Token]:
+        result: List[Token] = list()
+        matches = regex.finditer(self.config.time_of_day_regex, source)
+
+        for match in matches:
+            meta = None
+            if RegExpUtility.get_group(match, Constants.MEALTIME_GROUP_NAME):
+                meta = Metadata()
+                meta.is_mealtime = True
+
+            result.append(Token(start=source.index(match.group()),
+                                end=source.index(match.group()) + (match.end() - match.start()),
+                                metadata=meta))
+        return result
 
 
 MatchedTimeRegex = namedtuple(

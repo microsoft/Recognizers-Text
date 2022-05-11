@@ -1140,7 +1140,7 @@ NightTermList: !list
   types: [ string ] 
   entries: 
     - nacht
-    - nacths
+    - nachts
     - primetime
 SameDayTerms: !list
   types: [ string ]

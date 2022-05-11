@@ -59,6 +59,7 @@ namespace Microsoft.Recognizers.Definitions.Korean
       public const string DateUnitRegex = @"(?<unit>년|개?월|주|(?<!내)일)";
       public const string BeforeRegex = @"이?전|之前|前";
       public const string AfterRegex = @"이?후|후에";
+      public const string TimePeriodLeftRegex = @"^[.]";
       public static readonly string DateRegexList1 = $@"({RelativeRegex}\s*)?({SimpleYearRegex}년\s*)?({LunarRegex}\s*)?({MonthRegex}\s*)?{DateDayRegexInCJK}(\s*(,\s*)?{WeekDayRegex})?(\s*(,\s*)?{SimpleYearRegex})?";
       public static readonly string DateRegexList2 = $@"({WeekDayRegex},?\s*)?({MonthRegex}\s*[/\\\-\.]?\s*{DateDayRegexInCJK})(\s*{WeekDayRegex})?(\s*(,\s*)?({SimpleYearRegex}|{DateYearInCJKRegex})년?)?";
       public static readonly string DateRegexList3 = $@"(({SpecialDayRegex}으?로?부터)\s((\d+\s*주간?(\s*{WeekDayRegex})?)|({DateDayRegexInCJK}|{SpecialDayRegex})\s[전후]))|((\d+년\s*)?(((한|두|세|네|다섯|여섯|일곱|여덟|아홉|열|열한|열두)\s?달\s*)|(\d+개월\s*))?(((,\s*)|(\s*하고\s*))?{DateDayRegexInCJK}|{SpecialDayRegex})\s(전|후|지나서))|(((그\s)?(다음날|전날))|([그이] 날)|(지난 날)|(새해\s첫\s?날))|({DayRegex}일\s*{MonthNumRegex}월\s*{SimpleYearRegex}년)|(((앞으로\s+)|({SpecialDayRegex}으?로?부터\s+))?\d+\s*주\s(후|동안)\s+{WeekDayRegex})|(나의 하루)|(몇\s*[달일] 전)";
@@ -97,6 +98,7 @@ namespace Microsoft.Recognizers.Definitions.Korean
       public static readonly string WeekOfYearRegex = $@"(?<woy>(?<yearrel>내년|금년|작년|((다음|올)\s*해)|{YearRegex})의?\s+(?<cardinal>첫\s?번?째|두\s?번?째|둘째|세\s?번?째|셋째|네\s?번?째|넷째|마지막)\s*주\s*)";
       public const string WeekOfDateRegex = @"^[.]";
       public const string MonthOfDateRegex = @"^[.]";
+      public const string RestOfDateRegex = @"^[.]";
       public const string UnitRegex = @"(?<unit>년|(개)?월(\s달)?|달|주|일)";
       public static readonly string FollowedUnit = $@"^\s*{UnitRegex}";
       public static readonly string NumberCombinedWithUnit = $@"(?<num>\d+(\.\d*)?){UnitRegex}";
@@ -196,8 +198,10 @@ namespace Microsoft.Recognizers.Definitions.Korean
       public const string SetUnitRegex = @"(?<unit>년|월|달|주일?|일|시간|시|분|초)";
       public static readonly string SetEachUnitRegex = $@"(?<each>{SetUnitRegex}\s?(마다))";
       public const string SetEachPrefixRegex = @"(?<each>(매)\s*$)";
+      public const string SetEachSuffixRegex = @"^[.]";
       public const string SetLastRegex = @"(?<last>last|this|next)";
       public const string SetEachDayRegex = @"(每|每一)(天|日)\s*$";
+      public const string SetEachDateUnitRegex = @"^[.]";
       public const string TimeHourNumRegex = @"(00|01|02|03|04|05|06|07|08|09|0|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|1|2|3|4|5|6|7|8|9)";
       public const string TimeMinuteNumRegex = @"(00|01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59|0|1|2|3|4|5|6|7|8|9)";
       public const string TimeSecondNumRegex = @"(00|01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59|0|1|2|3|4|5|6|7|8|9)";

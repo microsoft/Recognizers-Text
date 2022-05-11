@@ -29,6 +29,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public static readonly Regex UnspecificEndOfRangeRegex =
             new Regex(DateTimeDefinitions.UnspecificEndOfRangeRegex, RegexFlags);
 
+        public static readonly Regex SpecialYearPrefixes =
+            new Regex(DateTimeDefinitions.SpecialYearPrefixes, RegexFlags);
+
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         public PortugueseDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
@@ -319,7 +322,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public bool IsYearOnly(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.YearTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal));
+            return DateTimeDefinitions.YearTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal)) ||
+                   (DateTimeDefinitions.YearTerms.Any(o => trimmedText.Contains(o)) && SpecialYearPrefixes.IsMatch(trimmedText));
         }
 
         public bool IsYearToDate(string text)

@@ -357,7 +357,7 @@ TimeNumberCombinedWithUnit: !nestedRegex
   def: \b(?<num>\d+(\.\d*)?){TimeUnitRegex}
   references: [ TimeUnitRegex ]
 NowRegex: !simpleRegex
-  def: \b(?<now>(ce\s+)?moment|maintenant|d[eè]s que possible|dqp|r[eé]cemment|auparavant)\b
+  def: \b(?<now>(ce\s+)?moment|maintenant|(d[eè]s|aussit[oô]t) que possible|dqp|r[eé]cemment|auparavant|le plus tôt( que)? possible)\b
 SuffixRegex: !simpleRegex
   def: ^\s*((dans\s+l[ea]\s+)|(en\s+)|(d(u|\'))?(matin([eé]e)?|apr[eè]s-midi|soir[eé]e|nuit))\b
 DateTimeTimeOfDayRegex: !simpleRegex
@@ -462,6 +462,8 @@ AMTimeRegex: !simpleRegex
   def: (?<am>matin([ée]e)?)
 PMTimeRegex: !simpleRegex
   def: \b(?<pm>(d'|l')?apr[eè]s-midi|nuit|((\s*ce|du)\s+)?soir)\b
+AsapTimeRegex: !simpleRegex
+  def: ((d[eè]s|le plus t[oô]t|aussit[oô]t)( que)? possible|dqp)
 BeforeRegex: !simpleRegex
   def: \b(avant)\b
 BeforeRegex2: !simpleRegex
@@ -605,9 +607,9 @@ YearSuffix: !nestedRegex
 SuffixAfterRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^\b$
-YearPeriodRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^\b$
+YearPeriodRegex: !nestedRegex
+  def: ((((du|depuis|des?)\s+)?{YearRegex}\s*({TillRegex})\s*{YearRegex})|(((entre)\s+){YearRegex}\s*({RangeConnectorRegex})\s*{YearRegex}))
+  references: [ YearRegex, TillRegex, RangeConnectorRegex ]
 FutureSuffixRegex: !simpleRegex
   def: \b(dans\s+le\s+futur)\b
 ModPrefixRegex: !nestedRegex

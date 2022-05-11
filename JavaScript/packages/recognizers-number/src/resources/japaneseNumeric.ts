@@ -25,10 +25,11 @@ export namespace JapaneseNumeric {
     export const RoundNumberMapChar: ReadonlyMap<string, number> = new Map<string, number>([["十", 10],["百", 100],["千", 1000],["万", 10000],["億", 100000000],["兆", 1000000000000]]);
     export const ZeroToNineMap: ReadonlyMap<string, number> = new Map<string, number>([["0", 0],["1", 1],["2", 2],["3", 3],["4", 4],["5", 5],["6", 6],["7", 7],["8", 8],["9", 9],["零", 0],["〇", 0],["一", 1],["二", 2],["三", 3],["四", 4],["五", 5],["六", 6],["七", 7],["八", 8],["九", 9],["半", 0.5]]);
     export const FullToHalfMap: ReadonlyMap<string, string> = new Map<string, string>([["０", "0"],["１", "1"],["２", "2"],["３", "3"],["４", "4"],["５", "5"],["６", "6"],["７", "7"],["８", "8"],["９", "9"],["／", "/"],["－", "-"],["，", "'"],["、", "'"],["Ｇ", "G"],["Ｍ", "M"],["Ｔ", "T"],["Ｋ", "K"],["ｋ", "k"],["．", "."]]);
-    export const UnitMap: ReadonlyMap<string, string> = new Map<string, string>([["万万", "億"],["億万", "兆"],["万億", "兆"],[" ", ""]]);
+    export const UnitMap: ReadonlyMap<string, string> = new Map<string, string>([["万万", "億"],["億万", "兆"],["万億", "兆"],[" ", ""],["れい", "〇"],["ゼロ", "〇"],["マル", "〇"],["いち", "一"],["いっ", "一"],["に", "二"],["さん", "三"],["し", "四"],["よん", "四"],["ご", "五"],["ろく", "六"],["ろっ", "六"],["しち", "七"],["なな", "七"],["はち", "八"],["はっ", "八"],["きゅう", "九"],["く", "九"],["じゅう", "十"],["ひゃく", "百"],["ぴゃく", "百"],["びゃく", "百"],["せん", "千"],["ぜん", "千"],["まん", "万"],["ひゃくまん", "百万"],["ぴゃくまん", "百万"],["びゃくまん", "百万"],["せんまん", "千万"],["ぜんまん", "千万"]]);
     export const RoundDirectList = [ "万","億","兆" ];
     export const TenChars = [ "十" ];
     export const RoundNumberIntegerRegex = `(十|百|千|万(?!万)|億|兆)`;
+    export const RoundNumberIntegerHiraganaRegex = `(じゅう|[ひぴび]ゃく|[せぜ]ん|まん|[ひぴび]ゃくまん|[せぜ]んまん)`;
     export const AllMultiplierLookupRegex = `(${BaseNumbers.MultiplierLookupRegex}|ミリリットル(入れら)?|キロメートル|メートル|ミリメート)`;
     export const DigitalNumberRegex = `((?<=(\\d|\\b))${BaseNumbers.MultiplierLookupRegex}(?=\\b))`;
     export const ZeroToNineFullHalfRegex = `[\\d]`;
@@ -38,7 +39,8 @@ export namespace JapaneseNumeric {
     export const PercentageRegex = `.+(?=パ\\s*ー\\s*セ\\s*ン\\s*ト)|.*(?=[％%])`;
     export const DoubleAndRoundRegex = `${ZeroToNineFullHalfRegex}+(\\.${ZeroToNineFullHalfRegex}+)?\\s*${RoundNumberIntegerRegex}{1,2}(\\s*(以上))?`;
     export const FracSplitRegex = `[はと]|分\\s*の`;
-    export const ZeroToNineIntegerRegex = `[〇一二三四五六七八九]`;
+    export const ZeroToNineIntegerRegex = `[零〇一二三四五六七八九]`;
+    export const ZeroToNineIntegerHiraganaRegex = `(れい|ゼロ|マル|い[ちっ]|に|さん|し|よん|ご|ろ[くっ]|しち|なな|は[ちっ]|きゅう|く)`;
     export const HalfUnitRegex = `半`;
     export const NegativeNumberTermsRegex = `(マ\\s*イ\\s*ナ\\s*ス)`;
     export const NegativeNumberTermsRegexNum = `((?<!(\\d+(\\s*${BaseNumbers.NumberMultiplierRegex})?\\s*)|[-−－])[-−－])`;
@@ -49,6 +51,9 @@ export namespace JapaneseNumeric {
     export const NotSingleRegex = `(?<!(第|だい))(${RoundNumberIntegerRegex}+((${ZeroToNineIntegerRegex}+|${RoundNumberIntegerRegex})+|${ZeroToNineFullHalfRegex}+|十)(\\s*(以上))?)|((${ZeroToNineIntegerRegex}+|${ZeroToNineFullHalfRegex}+|十)(\\s*${RoundNumberIntegerRegex}){1,2})(\\s*([零]?(${ZeroToNineIntegerRegex}+|((,\\s*)${ZeroToNineFullHalfRegex}{3})+|${ZeroToNineFullHalfRegex}+|十)(\\s*${RoundNumberIntegerRegex}){0,1}))*(\\s*(以上)?)`;
     export const SingleRegex = `((${ZeroToNineIntegerRegex}+|${ZeroToNineFullHalfRegex}+|十)(?=${AllowListRegex}))`;
     export const AllIntRegex = `(?<!(ダース))(${NotSingleRegex}|(${ZeroToNineIntegerRegex}+|${RoundNumberIntegerRegex}+))`;
+    export const NotSingleHiraganaRegex = `((${ZeroToNineIntegerHiraganaRegex}?${RoundNumberIntegerHiraganaRegex})+${ZeroToNineIntegerHiraganaRegex}?)`;
+    export const SingleHiriganaRegex = `(${ZeroToNineIntegerHiraganaRegex}+)`;
+    export const AllIntHiriganaRegex = `\\b(${NotSingleHiraganaRegex}|${SingleHiriganaRegex})\\b`;
     export const PlaceHolderPureNumber = `\\b`;
     export const PlaceHolderDefault = `\\D|\\b`;
     export const NumbersSpecialsCharsAggressive = `(((${NegativeNumberTermsRegexNum}|${NegativeNumberTermsRegex})\\s*)?(${ZeroToNineFullHalfRegex}))+(?=\\b|\\D)`;
@@ -60,8 +65,8 @@ export namespace JapaneseNumeric {
     export const NumbersWithDozen = `(${AllIntRegex}([と]?${ZeroToNineIntegerRegex})?|${ZeroToNineFullHalfRegex}+)(ダース)`;
     export const PointRegexStr = `[\\.．・]`;
     export const AllFloatRegex = `${NegativeNumberTermsRegex}?${AllIntRegex}\\s*${PointRegexStr}\\s*[一二三四五六七八九](\\s*${ZeroToNineIntegerRegex})*`;
-    export const NumbersWithAllowListRegex = `(?<!(離は))(${NegativeNumberTermsRegex}?(${NotSingleRegex}|${SingleRegex})(?!(${AllIntRegex}*([、.]${ZeroToNineIntegerRegex}+)*|${AllFloatRegex})*\\s*${PercentageSymbol}))(?!(\\s*${AllMultiplierLookupRegex}))`;
-    export const NumbersAggressiveRegex = `((${AllIntRegex})(?!(${AllIntRegex}|([、.]${ZeroToNineIntegerRegex})|${AllFloatRegex}|\\s*${PercentageSymbol})))`;
+    export const NumbersWithAllowListRegex = `(?<!(離は))(${NegativeNumberTermsRegex}?(${NotSingleRegex}|${SingleRegex}|${AllIntHiriganaRegex})(?!(${AllIntRegex}*([、.]${ZeroToNineIntegerRegex}+)*|${AllFloatRegex})*\\s*${PercentageSymbol}))(?!(\\s*${AllMultiplierLookupRegex}))`;
+    export const NumbersAggressiveRegex = `((${AllIntRegex}|${AllIntHiriganaRegex})(?!(${AllIntRegex}|([、.]${ZeroToNineIntegerRegex})|${AllFloatRegex}|\\s*${PercentageSymbol})))`;
     export const PointRegex = `${PointRegexStr}`;
     export const DoubleSpecialsCharsAggressive = `((?<!(${ZeroToNineFullHalfRegex}+[\\.．]${ZeroToNineFullHalfRegex}*))(${NegativeNumberTermsRegexNum}\\s*)?${ZeroToNineFullHalfRegex}+[\\.．,]${ZeroToNineFullHalfRegex}+(?!(${ZeroToNineFullHalfRegex}*[\\.．,]${ZeroToNineFullHalfRegex}+)))(?=\\b|\\D)`;
     export const DoubleSpecialsChars = `(${DoubleSpecialsCharsAggressive})(?!\\s*${AllMultiplierLookupRegex})`;
@@ -132,4 +137,5 @@ export namespace JapaneseNumeric {
     export const AmbiguousFractionConnectorsRegex = `^[.]`;
     export const RelativeReferenceOffsetMap: ReadonlyMap<string, string> = new Map<string, string>([["前", ""],["現在", ""],["次", ""],["最後", ""],["最後から三番目", ""],["最後から二番目", ""],["最後から一つ前", ""],["最後から一つ前のもの", ""],["最後から一つ前のこと", ""],["最後から1つ前のこと", ""],["最後から1つ前のもの", ""],["最後から1つ前", ""],["現在のこと", ""],["前のもの", ""],["次のもの", ""],["最後から3番目", ""],["最後から2番目", ""]]);
     export const RelativeReferenceRelativeToMap: ReadonlyMap<string, string> = new Map<string, string>([["前", "current"],["現在", "current"],["次", "current"],["最後", "end"],["最後から三番目", "end"],["最後から二番目", "end"],["最後から一つ前", "end"],["最後から一つ前のもの", "end"],["最後から一つ前のこと", "end"],["現在のこと", "current"],["最後から1つ前のこと", "end"],["最後から1つ前のもの", "end"],["最後から1つ前", "end"],["前のもの", "current"],["次のもの", "current"],["最後から3番目", "end"],["最後から2番目", "end"]]);
+    export const AmbiguityFiltersDict: ReadonlyMap<string, string> = new Map<string, string>([["^に$", "に"]]);
 }

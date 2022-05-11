@@ -695,7 +695,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     // check if TokenBeforeDate and TokenBeforeTime are null
                     var dateText = trimmedText.Replace(ers[0].Text, string.Empty).Trim();
-                    dateText = !string.IsNullOrEmpty(Config.TokenBeforeDate) ? dateText.Replace(Config.TokenBeforeDate, string.Empty).Trim() : dateText;
+                    dateText = !string.IsNullOrEmpty(Config.TokenBeforeDate) && dateText.StartsWith(Config.TokenBeforeDate) ? dateText.Replace(Config.TokenBeforeDate, string.Empty).Trim() : dateText;
                     dateText = !string.IsNullOrEmpty(Config.TokenBeforeTime) ? dateText.Replace(Config.TokenBeforeTime.Trim(), string.Empty).Trim() : dateText;
                     if (this.Config.CheckBothBeforeAfter)
                     {
@@ -1318,42 +1318,13 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 DateObject beginTime;
                 var endTime = beginTime = referenceTime;
-                var sufixPtTimex = string.Empty;
 
                 if (Config.UnitMap.ContainsKey(srcUnit))
                 {
-                    switch (unitStr)
-                    {
-                        case "D":
-                            endTime = DateObject.MinValue.SafeCreateFromValue(beginTime.Year, beginTime.Month, beginTime.Day);
-                            endTime = endTime.AddDays(1).AddSeconds(-1);
-                            sufixPtTimex = "PT" + (endTime - beginTime).TotalSeconds + "S";
-                            break;
-                        case "H":
-                            beginTime = swiftValue > 0 ? beginTime : referenceTime.AddHours(swiftValue);
-                            endTime = swiftValue > 0 ? referenceTime.AddHours(swiftValue) : endTime;
-                            sufixPtTimex = "PT1H";
-                            break;
-                        case "M":
-                            beginTime = swiftValue > 0 ? beginTime : referenceTime.AddMinutes(swiftValue);
-                            endTime = swiftValue > 0 ? referenceTime.AddMinutes(swiftValue) : endTime;
-                            sufixPtTimex = "PT1M";
-                            break;
-                        case "S":
-                            beginTime = swiftValue > 0 ? beginTime : referenceTime.AddSeconds(swiftValue);
-                            endTime = swiftValue > 0 ? referenceTime.AddSeconds(swiftValue) : endTime;
-                            sufixPtTimex = "PT1S";
-                            break;
-                        default:
-                            return ret;
-                    }
-
-                    ret.Timex =
-                            $"({DateTimeFormatUtil.LuisDate(beginTime)}T{DateTimeFormatUtil.LuisTime(beginTime)}," +
-                            $"{DateTimeFormatUtil.LuisDate(endTime)}T{DateTimeFormatUtil.LuisTime(endTime)},{sufixPtTimex})";
+                    ret.Timex = TimexUtility.GenerateRelativeUnitDateTimePeriodTimex(ref beginTime, ref endTime, referenceTime, unitStr, swiftValue);
 
                     ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(beginTime, endTime);
-                    ret.Success = true;
+                    ret.Success = !string.IsNullOrEmpty(ret.Timex);
 
                     return ret;
                 }

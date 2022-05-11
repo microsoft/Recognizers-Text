@@ -4,7 +4,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2744475+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -29,7 +28,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2754476+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -54,7 +52,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2779449+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -79,7 +76,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2794445+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -104,7 +100,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2829445+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -129,7 +124,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2844439+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -154,7 +148,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2854444+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -179,7 +172,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2909444+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -204,7 +196,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2959472+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -229,11 +220,10 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.2989494+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "毎日午後3時に",
+        "Text": "毎日午後3時",
         "Type": "set",
         "Value": {
           "Timex": "T15",
@@ -245,7 +235,7 @@
           }
         },
         "Start": 0,
-        "Length": 7
+        "Length": 6
       }
     ]
   },
@@ -254,11 +244,10 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3039501+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "毎日午後3時に",
+        "Text": "毎日午後3時",
         "Type": "set",
         "Value": {
           "Timex": "T15",
@@ -270,7 +259,7 @@
           }
         },
         "Start": 0,
-        "Length": 7
+        "Length": 6
       }
     ]
   },
@@ -279,7 +268,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3109498+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -304,7 +292,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3259514+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -329,7 +316,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3379507+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -354,7 +340,6 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3429518+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -379,11 +364,10 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3609535+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "毎朝9時に",
+        "Text": "毎朝9時",
         "Type": "set",
         "Value": {
           "Timex": "T09",
@@ -395,7 +379,7 @@
           }
         },
         "Start": 0,
-        "Length": 5
+        "Length": 4
       }
     ]
   },
@@ -404,11 +388,10 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3730732+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "毎日午後4時に",
+        "Text": "毎日午後4時",
         "Type": "set",
         "Value": {
           "Timex": "T16",
@@ -420,20 +403,19 @@
           }
         },
         "Start": 0,
-        "Length": 7
+        "Length": 6
       }
     ]
   },
   {
-    "Input": "毎晩9時に出発する。",
+    "Input": "各晩9時に出発する。",
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3840706+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "毎晩9時に",
+        "Text": "各晩9時",
         "Type": "set",
         "Value": {
           "Timex": "T21",
@@ -445,7 +427,7 @@
           }
         },
         "Start": 0,
-        "Length": 5
+        "Length": 4
       }
     ]
   },
@@ -454,11 +436,10 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.3930718+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "毎晩9時に",
+        "Text": "毎晩9時",
         "Type": "set",
         "Value": {
           "Timex": "T21",
@@ -470,20 +451,19 @@
           }
         },
         "Start": 0,
-        "Length": 5
+        "Length": 4
       }
     ]
   },
   {
-    "Input": "午前9時に出発する。",
+    "Input": "各午前9時に出発する。",
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.4065719+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "午前9時に",
+        "Text": "各午前9時",
         "Type": "set",
         "Value": {
           "Timex": "T09",
@@ -500,15 +480,14 @@
     ]
   },
   {
-    "Input": "午前9時に出発する。",
+    "Input": "毎午前9時に出発する。",
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.4170727+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "午前9時に",
+        "Text": "毎午前9時",
         "Type": "set",
         "Value": {
           "Timex": "T09",
@@ -529,11 +508,10 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.4295727+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "毎週日曜日午前9時に",
+        "Text": "毎週日曜日午前9時",
         "Type": "set",
         "Value": {
           "Timex": "XXXX-WXX-7T09",
@@ -545,7 +523,7 @@
           }
         },
         "Start": 0,
-        "Length": 10
+        "Length": 9
       }
     ]
   },
@@ -554,23 +532,22 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.438575+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "毎週月曜日午前9時に",
+        "Text": "毎週月曜日午前9時",
         "Type": "set",
         "Value": {
-          "Timex": "XXXX-WXX-7T09",
+          "Timex": "XXXX-WXX-1T09",
           "FutureResolution": {
-            "set": "Set: XXXX-WXX-7T09"
+            "set": "Set: XXXX-WXX-1T09"
           },
           "PastResolution": {
-            "set": "Set: XXXX-WXX-7T09"
+            "set": "Set: XXXX-WXX-1T09"
           }
         },
         "Start": 0,
-        "Length": 10
+        "Length": 9
       }
     ]
   },
@@ -579,23 +556,22 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.4505726+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "毎週月曜日午前9時に",
+        "Text": "毎週月曜日午前9時",
         "Type": "set",
         "Value": {
-          "Timex": "XXXX-WXX-7T09",
+          "Timex": "XXXX-WXX-1T09",
           "FutureResolution": {
-            "set": "Set: XXXX-WXX-7T09"
+            "set": "Set: XXXX-WXX-1T09"
           },
           "PastResolution": {
-            "set": "Set: XXXX-WXX-7T09"
+            "set": "Set: XXXX-WXX-1T09"
           }
         },
         "Start": 0,
-        "Length": 10
+        "Length": 9
       }
     ]
   },
@@ -604,11 +580,10 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.4570731+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "毎週月曜日に",
+        "Text": "毎週月曜日",
         "Type": "set",
         "Value": {
           "Timex": "XXXX-WXX-1",
@@ -620,7 +595,7 @@
           }
         },
         "Start": 0,
-        "Length": 6
+        "Length": 5
       }
     ]
   },
@@ -629,11 +604,10 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.4635727+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "毎週日曜日に",
+        "Text": "毎週日曜日",
         "Type": "set",
         "Value": {
           "Timex": "XXXX-WXX-7",
@@ -645,20 +619,19 @@
           }
         },
         "Start": 0,
-        "Length": 6
+        "Length": 5
       }
     ]
   },
   {
-    "Input": "毎週日曜日に出発する。",
+    "Input": "各週日曜日に出発する。",
     "Context": {
       "ReferenceDateTime": "2017-09-27T12:25:54.4710739+03:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "毎週日曜日",
+        "Text": "各週日曜日",
         "Type": "set",
         "Value": {
           "Timex": "XXXX-WXX-7",
@@ -676,18 +649,18 @@
   },
   {
     "Input": "毎週日曜日午後八時に事件が起こる",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "毎週日曜日午後八時",
         "Type": "set",
         "Value": {
-          "Timex": "XXXX-WXX-1T20",
+          "Timex": "XXXX-WXX-7T20",
           "FutureResolution": {
-            "set": "Set: XXXX-WXX-1T20"
+            "set": "Set: XXXX-WXX-7T20"
           },
           "PastResolution": {
-            "set": "Set: XXXX-WXX-1T20"
+            "set": "Set: XXXX-WXX-7T20"
           }
         },
         "Start": 0,
@@ -697,18 +670,18 @@
   },
   {
     "Input": "毎週日曜日事件が起こる",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "毎週日曜日",
         "Type": "set",
         "Value": {
-          "Timex": "XXXX-WXX-1",
+          "Timex": "XXXX-WXX-7",
           "FutureResolution": {
-            "set": "Set: XXXX-WXX-1"
+            "set": "Set: XXXX-WXX-7"
           },
           "PastResolution": {
-            "set": "Set: XXXX-WXX-1"
+            "set": "Set: XXXX-WXX-7"
           }
         },
         "Start": 0,
@@ -718,7 +691,7 @@
   },
   {
     "Input": "毎日事件が起こる",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "毎日",
@@ -739,7 +712,7 @@
   },
   {
     "Input": "毎週事件が起こる",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "毎週",
@@ -760,7 +733,7 @@
   },
   {
     "Input": "毎月事件が起こる",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "毎月",
@@ -781,7 +754,7 @@
   },
   {
     "Input": "毎年事件が起こる",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "毎年",

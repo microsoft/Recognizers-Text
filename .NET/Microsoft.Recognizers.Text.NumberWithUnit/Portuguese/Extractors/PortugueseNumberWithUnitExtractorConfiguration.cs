@@ -25,6 +25,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
         private static readonly Regex NonUnitsRegex =
             new Regex(BaseUnits.PmNonUnitRegex, RegexFlags);
 
+        private static readonly Regex NumberMultiplierRegex =
+            new Regex(NumbersWithUnitDefinitions.MultiplierRegex, RegexFlags);
+
         protected PortugueseNumberWithUnitExtractorConfiguration(CultureInfo ci)
         {
             this.CultureInfo = ci;
@@ -36,6 +39,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
             this.BuildSuffix = NumbersWithUnitDefinitions.BuildSuffix;
             this.ConnectorToken = NumbersWithUnitDefinitions.ConnectorToken;
 
+            AmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(NumbersWithUnitDefinitions.AmbiguityFiltersDict);
             TemperatureAmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(NumbersWithUnitDefinitions.TemperatureAmbiguityFiltersDict);
             DimensionAmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(NumbersWithUnitDefinitions.DimensionAmbiguityFiltersDict);
         }
@@ -57,6 +61,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Portuguese
         public Regex NonUnitRegex => NonUnitsRegex;
 
         public virtual Regex AmbiguousUnitNumberMultiplierRegex => null;
+
+        public Regex MultiplierRegex => NumberMultiplierRegex;
 
         public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; } = null;
 

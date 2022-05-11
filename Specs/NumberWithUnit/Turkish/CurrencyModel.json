@@ -1794,5 +1794,22 @@
         "End": 5
       }
     ]
+  },
+  {
+    "Input": "lockheed martin ve amerika birleşik devletleri hükümeti hindistan'ın 126 savaş uçağı için 10 milyar abd dolar işareti lığ sözleşmesi için yoğun bir şekilde kulis yaptı",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "10 milyar abd dolar",
+        "Start": 90,
+        "End": 108,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "unit": "United States dollar",
+          "value": "10000000000"
+        }
+      }
+    ]
   }
 ]

@@ -28,7 +28,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
             if (extResult.Data is List<ExtractResult>)
             {
-                pr = MergeCompoundUnit(extResult);
+                pr = MergeMultiplier(extResult);
+                if (pr == null)
+                {
+                    pr = MergeCompoundUnit(extResult);
+                }
             }
             else
             {
@@ -237,6 +241,48 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             {
                 Value = results,
             };
+        }
+
+        // Parse patterns where a multiplier follows the unit e.g. "10 USD million"
+        private ParseResult MergeMultiplier(ExtractResult er)
+        {
+            var parseResult = new ParseResult { };
+            if (er.Metadata != null && er.Metadata.HasMod)
+            {
+                var origResult = ((List<ExtractResult>)er.Data)[0];
+                var origData = origResult.Data as ExtractResult;
+
+                var multiplier = er.Text.Replace(origResult.Text, string.Empty);
+                var number = origData.Text;
+                var unit = origResult.Text.Replace(number, string.Empty);
+                var orderedStr = number + multiplier + unit;
+
+                origData.Length = (number + multiplier).Length;
+                origData.Text = number + multiplier;
+
+                ExtractResult result = er.Clone();
+                result.Text = orderedStr;
+                result.Data = origData;
+
+                parseResult = numberWithUnitParser.Parse(result);
+                if (parseResult.Value != null)
+                {
+                    parseResult.Text = er.Text;
+                    var value = parseResult.Value as UnitValue;
+                    Config.CurrencyNameToIsoCodeMap.TryGetValue(value?.Unit, out var mainUnitIsoCode);
+                    if (!string.IsNullOrEmpty(mainUnitIsoCode) && !mainUnitIsoCode.StartsWith(Constants.FAKE_ISO_CODE_PREFIX, StringComparison.Ordinal))
+                    {
+                        parseResult.Value = new CurrencyUnitValue
+                        {
+                            Unit = value?.Unit,
+                            Number = value?.Number,
+                            IsoCurrency = mainUnitIsoCode,
+                        };
+                    }
+                }
+            }
+
+            return parseResult.Value != null ? parseResult : null;
         }
     }
 }

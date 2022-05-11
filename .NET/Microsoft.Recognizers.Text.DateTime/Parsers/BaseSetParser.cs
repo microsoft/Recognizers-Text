@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
@@ -111,15 +112,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             return candidateResults;
         }
 
-        private DateTimeResolutionResult ResolveSet(ref DateTimeResolutionResult result, string innerTimex)
-        {
-            result.Timex = innerTimex;
-            result.FutureValue = result.PastValue = "Set: " + innerTimex;
-            result.Success = true;
-
-            return result;
-        }
-
         private DateTimeResolutionResult ParseEachDuration(string text, DateObject refDate)
         {
             var ret = new DateTimeResolutionResult();
@@ -136,7 +128,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 var pr = this.config.DurationParser.Parse(ers[0], DateObject.Now);
 
-                ret = ResolveSet(ref ret, pr.TimexStr);
+                ret = SetHandler.ResolveSet(ref ret, pr.TimexStr);
             }
 
             return ret;
@@ -156,7 +148,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     return ret;
                 }
 
-                ret = ResolveSet(ref ret, timex);
+                ret = SetHandler.ResolveSet(ref ret, timex);
 
                 return ret;
             }
@@ -186,7 +178,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         timex = timex.Replace("1", "2");
                     }
 
-                    ret = ResolveSet(ref ret, timex);
+                    ret = SetHandler.ResolveSet(ref ret, timex);
                 }
             }
 
@@ -211,7 +203,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 var pr = this.config.TimeParser.Parse(ers[0], DateObject.Now);
 
-                ret = ResolveSet(ref ret, pr.TimexStr);
+                ret = SetHandler.ResolveSet(ref ret, pr.TimexStr);
             }
 
             return ret;
@@ -256,7 +248,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 var pr = parser.Parse(ers[0], refDate);
 
-                ret = ResolveSet(ref ret, pr.TimexStr);
+                ret = SetHandler.ResolveSet(ref ret, pr.TimexStr);
             }
 
             return ret;

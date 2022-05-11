@@ -71,6 +71,8 @@ public class ChineseDateTime {
     public static final String DateNextRegex = "(下一个|下个|下一|下)(的)?{WeekDayRegex}"
             .replace("{WeekDayRegex}", WeekDayRegex);
 
+    public static final String WeekWithWeekDayRangeRegex = "^[.]";
+
     public static final String WoMLastRegex = "最后一";
 
     public static final String WoMPreviousRegex = "上个";
@@ -80,6 +82,8 @@ public class ChineseDateTime {
     public static final String SpecialMonthRegex = "^[.]";
 
     public static final String SpecialYearRegex = "^[.]";
+
+    public static final String MonthDayRange = "^[.]";
 
     public static final String SpecialDayRegex = "(最近|前天|后天|昨天|明天|今天|今日|明日|昨日|大后天|大前天|後天|大後天)";
 
@@ -114,6 +118,8 @@ public class ChineseDateTime {
     public static final String BeforeRegex = "以前|之前|前";
 
     public static final String AfterRegex = "以后|以後|之后|之後|后|後";
+
+    public static final String TimePeriodLeftRegex = "^[.]";
 
     public static final String DateRegexList1 = "({LunarRegex}(\\s*))?((({SimpleYearRegex}|{DateYearInCJKRegex})年)(\\s*))?{MonthRegex}(\\s*){DateDayRegexInCJK}((\\s*|,|，){WeekDayRegex})?"
             .replace("{LunarRegex}", LunarRegex)
@@ -232,12 +238,22 @@ public class ChineseDateTime {
             .replace("{DatePeriodNextRegex}", DatePeriodNextRegex)
             .replace("{HalfYearRegex}", HalfYearRegex);
 
+    public static final String LaterEarlyPeriodRegex = "^[.]";
+
+    public static final String DatePointWithAgoAndLater = "^[.]";
+
     public static final String WeekOfMonthRegex = "(?<wom>{MonthSuffixRegex}的(?<cardinal>第一|第二|第三|第四|第五|最后一)\\s*周\\s*)"
             .replace("{MonthSuffixRegex}", MonthSuffixRegex);
 
     public static final String WeekOfYearRegex = "(?<woy>({YearRegex}|{RelativeRegex}年)的(?<cardinal>第一|第二|第三|第四|第五|最后一)\\s*周\\s*)"
             .replace("{YearRegex}", YearRegex)
             .replace("{RelativeRegex}", RelativeRegex);
+
+    public static final String WeekOfDateRegex = "^[.]";
+
+    public static final String MonthOfDateRegex = "^[.]";
+
+    public static final String RestOfDateRegex = "^[.]";
 
     public static final String UnitRegex = "(?<unit>年|(?<uoy>(个)?月|周|週|日|天))";
 
@@ -279,11 +295,15 @@ public class ChineseDateTime {
             .replace("{YearRegex}", YearRegex)
             .replace("{DatePeriodYearInCJKRegex}", DatePeriodYearInCJKRegex);
 
+    public static final String ComplexDatePeriodRegex = "^[.]";
+
     public static final String PastRegex = "(?<past>(之前|前|上|近|过去))";
 
     public static final String FutureRegex = "(?<future>(之后|之後|后|後|(?<![一两几]\\s*)下|未来(的)?))";
 
     public static final String SeasonRegex = "(?<season>春|夏|秋|冬)(天|季)?";
+
+    public static final String WhichWeekRegex = "^[.]";
 
     public static final String SeasonWithYear = "(({YearRegex}|{DatePeriodYearInCJKRegex}|(?<yearrel>明年|今年|去年))(的)?)?{SeasonRegex}"
             .replace("{YearRegex}", YearRegex)
@@ -293,6 +313,8 @@ public class ChineseDateTime {
     public static final String QuarterRegex = "(({YearRegex}|{DatePeriodYearInCJKRegex}|(?<yearrel>明年|今年|去年))(的)?)?(第(?<cardinal>1|2|3|4|一|二|三|四)季度)"
             .replace("{YearRegex}", YearRegex)
             .replace("{DatePeriodYearInCJKRegex}", DatePeriodYearInCJKRegex);
+
+    public static final String CenturyNumRegex = "^[.]";
 
     public static final String CenturyRegex = "(?<century>\\d|1\\d|2\\d)世纪";
 
@@ -317,7 +339,7 @@ public class ChineseDateTime {
 
     public static final String NightRegex = "(?<night>早|晚)";
 
-    public static final String TimeOfTodayRegex = "(今晚|今早|今晨|明晚|明早|明晨|昨晚)(的|在)?";
+    public static final String TimeOfSpecialDayRegex = "(今晚|今早|今晨|明晚|明早|明晨|昨晚)(的|在)?";
 
     public static final String DateTimePeriodTillRegex = "(?<till>到|直到|--|-|—|——)";
 
@@ -360,6 +382,8 @@ public class ChineseDateTime {
 
     public static final String DurationRelativeDurationUnitRegex = "^[.]";
 
+    public static final String AgoLaterRegex = "^[.]";
+
     public static final String DurationDuringRegex = "^[.]";
 
     public static final String DurationSomeRegex = "^[.]";
@@ -387,6 +411,8 @@ public class ChineseDateTime {
 
     public static final String DurationConnectorRegex = "^\\s*(?<connector>[多又余零]?)\\s*$";
 
+    public static final String ConnectorRegex = "^\\s*,\\s*$";
+
     public static final String LunarHolidayRegex = "(({YearRegex}|{DatePeriodYearInCJKRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>除夕|春节|中秋节|中秋|元宵节|端午节|端午|重阳节)"
             .replace("{YearRegex}", YearRegex)
             .replace("{DatePeriodYearInCJKRegex}", DatePeriodYearInCJKRegex);
@@ -406,9 +432,13 @@ public class ChineseDateTime {
 
     public static final String SetEachPrefixRegex = "(?<each>(每)\\s*$)";
 
+    public static final String SetEachSuffixRegex = "^[.]";
+
     public static final String SetLastRegex = "(?<last>last|this|next)";
 
     public static final String SetEachDayRegex = "(每|每一)(天|日)\\s*$";
+
+    public static final String SetEachDateUnitRegex = "^[.]";
 
     public static final String TimeHourNumRegex = "(00|01|02|03|04|05|06|07|08|09|0|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|1|2|3|4|5|6|7|8|9)";
 
@@ -530,6 +560,8 @@ public class ChineseDateTime {
 
     public static final String AmbiguousRangeModifierPrefix = "(从|自)";
 
+    public static final String ReferenceDatePeriodRegex = "^[.]";
+
     public static final String ParserConfigurationBefore = "((?<include>和|或|及)?(之前|以前)|前)";
 
     public static final String ParserConfigurationAfter = "((?<include>和|或|及)?(之后|之後|以后|以後)|后|後)";
@@ -540,11 +572,11 @@ public class ChineseDateTime {
 
     public static final String ParserConfigurationSinceSuffix = "(以来|开始|起)";
 
-    public static final String ParserConfigurationLastWeekDayToken = "最后一个";
+    public static final String ParserConfigurationLastWeekDayRegex = "最后一个";
 
-    public static final String ParserConfigurationNextMonthToken = "下一个";
+    public static final String ParserConfigurationNextMonthRegex = "下一个";
 
-    public static final String ParserConfigurationLastMonthToken = "上一个";
+    public static final String ParserConfigurationLastMonthRegex = "上一个";
 
     public static final String ParserConfigurationDatePrefix = " ";
 

@@ -227,6 +227,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var noDateText = match.Value.Replace(match.Groups["year"].Value, string.Empty)
                         .Replace(match.Groups["month"].Value, string.Empty)
                         .Replace(match.Groups["day"].Value, string.Empty);
+                    noDateText = match.Groups["weekday"].Success ? noDateText.Replace(match.Groups["weekday"].Value, string.Empty) : noDateText;
                     var separators = new List<char> { '/', '\\', '-', '.' };
 
                     if (separators.Count(separator => noDateText.Contains(separator)) > 1)
@@ -453,7 +454,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                     beginMatch = this.Config.WeekDayRegex.MatchBegin(suffixStr.Trim(), trim: true);
 
                     if (beginMatch.Success && num >= 1 && num <= 5
-                        && result.Type.Equals(Number.Constants.SYS_NUM_ORDINAL, StringComparison.Ordinal))
+                        && result.Type.Equals(Number.Constants.SYS_NUM_ORDINAL, StringComparison.Ordinal)
+                        && !this.Config.WeekDayRegex.IsExactMatch(result.Text, trim: true))
                     {
                         var weekDayStr = beginMatch.Groups["weekday"].Value;
                         if (this.Config.DayOfWeek.ContainsKey(weekDayStr))

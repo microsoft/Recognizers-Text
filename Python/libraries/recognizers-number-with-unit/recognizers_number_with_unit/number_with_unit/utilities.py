@@ -25,3 +25,31 @@ class DictionaryUtility():
             if not token or token in source_dictionary:
                 continue
             source_dictionary[token] = key
+
+
+class Token:
+    def __init__(self, start: int, end: int):
+        self._start: int = start
+        self._end: int = end
+
+    @property
+    def length(self) -> int:
+        if self._start > self._end:
+            return 0
+        return self._end - self._start
+
+    @property
+    def start(self) -> int:
+        return self._start
+
+    @start.setter
+    def start(self, value) -> int:
+        self._start = value
+
+    @property
+    def end(self) -> int:
+        return self._end
+
+    @end.setter
+    def end(self, value) -> int:
+        self._end = value

@@ -61,6 +61,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public const string DateUnitRegex = @"(?<unit>年|个月|周|週|日|天)";
       public const string BeforeRegex = @"以前|之前|前";
       public const string AfterRegex = @"以后|以後|之后|之後|后|後";
+      public const string TimePeriodLeftRegex = @"^[.]";
       public static readonly string DateRegexList1 = $@"({LunarRegex}(\s*))?((({SimpleYearRegex}|{DateYearInCJKRegex})年)(\s*))?{MonthRegex}(\s*){DateDayRegexInCJK}((\s*|,|，){WeekDayRegex})?";
       public static readonly string DateRegexList2 = $@"((({SimpleYearRegex}|{DateYearInCJKRegex})年)(\s*))?({LunarRegex}(\s*))?{MonthRegex}(\s*){DateDayRegexInCJK}((\s*|,|，){WeekDayRegex})?";
       public static readonly string DateRegexList3 = $@"((({SimpleYearRegex}|{DateYearInCJKRegex})年)(\s*))?({LunarRegex}(\s*))?{MonthRegex}(\s*)({DayRegexNumInCJK}|{DayRegex})((\s*|,|，){WeekDayRegex})?";
@@ -95,6 +96,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public static readonly string WeekOfYearRegex = $@"(?<woy>({YearRegex}|{RelativeRegex}年)的(?<cardinal>第一|第二|第三|第四|第五|最后一)\s*周\s*)";
       public const string WeekOfDateRegex = @"^[.]";
       public const string MonthOfDateRegex = @"^[.]";
+      public const string RestOfDateRegex = @"^[.]";
       public const string UnitRegex = @"(?<unit>年|(?<uoy>(个)?月|周|週|日|天))";
       public static readonly string FollowedUnit = $@"^\s*{UnitRegex}";
       public static readonly string NumberCombinedWithUnit = $@"(?<num>\d+(\.\d*)?){UnitRegex}";
@@ -181,8 +183,10 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public const string SetUnitRegex = @"(?<unit>年|月|周|星期|日|天|小时|时|分钟|分|秒钟|秒)";
       public static readonly string SetEachUnitRegex = $@"(?<each>(每个|每一|每)\s*{SetUnitRegex})";
       public const string SetEachPrefixRegex = @"(?<each>(每)\s*$)";
+      public const string SetEachSuffixRegex = @"^[.]";
       public const string SetLastRegex = @"(?<last>last|this|next)";
       public const string SetEachDayRegex = @"(每|每一)(天|日)\s*$";
+      public const string SetEachDateUnitRegex = @"^[.]";
       public const string TimeHourNumRegex = @"(00|01|02|03|04|05|06|07|08|09|0|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|1|2|3|4|5|6|7|8|9)";
       public const string TimeMinuteNumRegex = @"(00|01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59|0|1|2|3|4|5|6|7|8|9)";
       public const string TimeSecondNumRegex = @"(00|01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59|0|1|2|3|4|5|6|7|8|9)";

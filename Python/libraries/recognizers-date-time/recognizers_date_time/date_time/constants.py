@@ -94,7 +94,11 @@ class Constants:
     EVENING: str = "TEV"
     DAYTIME: str = "TDT"
     NIGHT: str = "TNI"
-    BUSINESS_HOUR = "TBH"
+    BUSINESS_HOUR: str = "TBH"
+    MEALTIME_BREAKFAST: str = "TMEB"
+    MEALTIME_BRUNCH: str = "TBH"
+    MEALTIME_LUNCH: str = "TMEL"
+    MEALTIME_DINNER: str = "TMED"
 
     INVALID_DATE_STRING = "0001-01-01"
     COMPOSTIE_TIMEX_DELIMITER = "|"
@@ -129,6 +133,7 @@ class Constants:
     BUSINESS_DAY_GROUP_NAME = 'business'
     LEFT_AM_PM_GROUP_NAME = 'leftDesc'
     RIGHT_AM_PM_GROUP_NAME = 'rightDesc'
+    MEALTIME_GROUP_NAME = 'mealTime'
     HOLIDAY_GROUP_NAME = 'holiday'
 
     REL_MONTH = 'relmonth'

@@ -235,7 +235,7 @@ public class EnglishNumericWithUnit {
         .put("Cuban convertible peso", "cuban convertible pesos|cuban convertible peso|cuc|cuba convertible pesos|cuba convertible peso")
         .put("Cuban peso", "cuban pesos|cuban peso|cup|cuba pesos|cuba peso")
         .put("Dominican peso", "dominican pesos|dominican peso|dop|dominica pesos|dominica peso")
-        .put("Mexican peso", "mexican pesos|mexican peso|mxn|mexico pesos|mexico peso|mxn$")
+        .put("Mexican peso", "mexican pesos|mexican peso|mxn|mexico pesos|mexico peso|mxn$|mxn $|mex$")
         .put("Philippine peso", "piso|philippine pesos|philippine peso|₱|php")
         .put("Uruguayan peso", "uruguayan pesos|uruguayan peso|uyu")
         .put("Peso", "pesos|peso")
@@ -572,13 +572,15 @@ public class EnglishNumericWithUnit {
 
     public static final String CompoundUnitConnectorRegex = "(?<spacer>and)";
 
+    public static final String MultiplierRegex = "\\s*\\b(thousand|million|billion|trillion)s?\\b";
+
     public static final ImmutableMap<String, String> CurrencyPrefixList = ImmutableMap.<String, String>builder()
         .put("Dobra", "db|std")
         .put("Dollar", "$")
         .put("Brazilian Real", "R$")
         .put("United States dollar", "united states $|us$|us $|u.s. $|u.s $|usd$")
         .put("East Caribbean dollar", "east caribbean $")
-        .put("Mexican peso", "mxn$")
+        .put("Mexican peso", "mxn$|mxn $|mex$")
         .put("Australian dollar", "australian $|australia $")
         .put("Bahamian dollar", "bahamian $|bahamia $")
         .put("Barbadian dollar", "barbadian $|barbadin $")
@@ -620,7 +622,7 @@ public class EnglishNumericWithUnit {
         .put("Bitcoin", "₿|btc|xbt")
         .build();
 
-    public static final List<String> AmbiguousCurrencyUnitList = Arrays.asList("din.", "kiwi", "kina", "kobo", "lari", "lipa", "napa", "para", "sfr.", "taka", "tala", "toea", "vatu", "yuan", "all", "ang", "ban", "bob", "btn", "byr", "cad", "cop", "cup", "dop", "gip", "jod", "kgs", "lak", "lei", "mga", "mop", "nad", "omr", "pul", "sar", "sbd", "scr", "sdg", "sek", "sen", "sol", "sos", "std", "try", "yer", "yen", "db", "satoshi", "satoshis");
+    public static final List<String> AmbiguousCurrencyUnitList = Arrays.asList("din.", "kiwi", "kina", "kobo", "lari", "lipa", "napa", "para", "sfr.", "taka", "tala", "toea", "vatu", "yuan", "all", "ang", "ban", "bob", "btn", "byr", "cad", "cop", "cup", "dop", "gip", "jod", "kgs", "lak", "lei", "mga", "mop", "nad", "omr", "pul", "sar", "sbd", "scr", "sdg", "sek", "sen", "sol", "sos", "std", "try", "yer", "yen", "db", "pen", "ron", "mad", "zar", "gel", "satoshi", "satoshis");
 
     public static final ImmutableMap<String, String> InformationSuffixList = ImmutableMap.<String, String>builder()
         .put("Bit", "-bit|bit|bits")
@@ -733,7 +735,7 @@ public class EnglishNumericWithUnit {
         .put("Microgram", "μg|microgram|micrograms|micro gram|micro grams|microgramme|microgrammes|mcg")
         .put("Gallon", "-gallon|gallons|gallon|gal")
         .put("Metric ton", "metric tons|metric ton")
-        .put("Ton", "-ton|ton|tons|tonne|tonnes")
+        .put("Ton", "-ton|ton|tons|tonne|tonnes|t")
         .put("Pound", "pound|pounds|lb|lbs")
         .put("Ounce", "-ounce|ounce|oz|ounces")
         .put("Grain", "grain|grains|gr")
@@ -745,7 +747,7 @@ public class EnglishNumericWithUnit {
         .put("Dram", "dram|drachm|drachma|roman drachma|greek drachma")
         .build();
 
-    public static final List<String> AmbiguousWeightUnitList = Arrays.asList("g", "gr", "oz", "stone", "dram", "lbs", "gal", "grain", "grains");
+    public static final List<String> AmbiguousWeightUnitList = Arrays.asList("g", "t", "gr", "oz", "stone", "dram", "lbs", "gal", "grain", "grains");
 
     public static final ImmutableMap<String, String> AngleSuffixList = ImmutableMap.<String, String>builder()
         .put("Degree", "degree|degrees|deg.|deg|°")
@@ -758,7 +760,8 @@ public class EnglishNumericWithUnit {
     public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
         .put("\\bm\\b", "((('|’)\\s*m)|(m\\s*('|’)))")
         .put("^\\d{5} [cf]$", "\\b([a-z]{2} \\d{5} [cf])\\b")
-        .put("\\b\\d+\\s*\\p{L}+$", "((\\d+\\s*\\p{L}+[-—–-]?\\d+)|((\\p{L}[-—–-]?|\\d[-—–-])\\d+\\s*\\p{L}+))")
+        .put("\\b\\d+\\s*\\p{L}+$", "((\\d+(\\s*\\p{L}+[-—–-]|\\p{L}+)\\d+)|(((\\p{L}|\\d)[-—–-]\\d+\\s*|\\p{L}\\d+)\\p{L}+))")
+        .put("^(all|bob|pen|cad|cup|cop|sos|ron|mad|mop|zar|gel)", "(all|bob|pen|cad|cup|cop|sos|ron|mad|mop|zar|gel)\\s*(\\d|\\p{L})")
         .build();
 
     public static final ImmutableMap<String, String> TemperatureAmbiguityFiltersDict = ImmutableMap.<String, String>builder()
@@ -767,5 +770,6 @@ public class EnglishNumericWithUnit {
 
     public static final ImmutableMap<String, String> DimensionAmbiguityFiltersDict = ImmutableMap.<String, String>builder()
         .put("\\b(deg(rees?)?|°)$", "\\b((deg(rees?)?|°)\\s*(c(elsius|entigrate)?|f(ah?renheit)?)|(temperature)(\\s+(\\p{L}+|\\d+)){0,4}\\s*(deg(rees?)?\\b|°))")
+        .put("\\b\\d+\\s*\\p{L}+$", "((\\d+\\s*\\p{L}+\\d+)|(\\p{L}\\d+\\s*\\p{L}+))")
         .build();
 }

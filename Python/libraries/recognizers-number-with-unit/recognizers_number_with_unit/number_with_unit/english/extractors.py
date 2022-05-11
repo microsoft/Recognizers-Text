@@ -22,6 +22,10 @@ class EnglishNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfigu
         return DefinitionLoader.load_ambiguity_filters(EnglishNumericWithUnit.AmbiguityFiltersDict)
 
     @property
+    def dimension_ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
+        return DefinitionLoader.load_ambiguity_filters(EnglishNumericWithUnit.DimensionAmbiguityFiltersDict)
+
+    @property
     def unit_num_extractor(self) -> Extractor:
         return self._unit_num_extractor
 
@@ -157,7 +161,13 @@ class EnglishDimensionExtractorConfiguration(EnglishNumberWithUnitExtractorConfi
             **EnglishNumericWithUnit.WeightSuffixList
         }
         self._prefix_list = dict()
-        self._ambiguous_unit_list = EnglishNumericWithUnit.AmbiguousDimensionUnitList
+        self._ambiguous_unit_list = EnglishNumericWithUnit.AmbiguousDimensionUnitList +\
+            EnglishNumericWithUnit.AmbiguousAngleUnitList +\
+            EnglishNumericWithUnit.AmbiguousAreaUnitList +\
+            EnglishNumericWithUnit.AmbiguousLengthUnitList +\
+            EnglishNumericWithUnit.AmbiguousSpeedUnitList +\
+            EnglishNumericWithUnit.AmbiguousVolumeUnitList +\
+            EnglishNumericWithUnit.AmbiguousWeightUnitList
 
 
 class EnglishTemperatureExtractorConfiguration(EnglishNumberWithUnitExtractorConfiguration):

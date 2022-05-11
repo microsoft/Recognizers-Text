@@ -16,6 +16,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IDateTimeParser TimeParser { get; }
 
+        IDateTimeExtractor TimePeriodExtractor { get; }
+
+        IDateTimeParser TimePeriodParser { get; }
+
         IDateTimeExtractor DateExtractor { get; }
 
         IDateTimeParser DateParser { get; }
@@ -31,6 +35,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex EachUnitRegex { get; }
 
         Regex EachDayRegex { get; }
+
+        Regex EachDateUnitRegex { get; }
 
         bool GetMatchedUnitTimex(string text, out string timex);
     }

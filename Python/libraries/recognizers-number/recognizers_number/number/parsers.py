@@ -5,6 +5,7 @@ from abc import ABC, abstractmethod
 from typing import Dict, Pattern, Optional, List
 from decimal import Decimal, getcontext
 import regex
+from recognizers_text.culture import Culture
 from recognizers_text.utilities import RegExpUtility
 from recognizers_text.extractor import ExtractResult
 from recognizers_text.parser import Parser, ParseResult
@@ -127,14 +128,13 @@ class BaseNumberParser(Parser):
         self.supported_types: List[str] = list()
 
         single_int_frac = f'{self.config.word_separator_token}| -|{self._get_key_regex(self.config.cardinal_number_map.keys())}|{self._get_key_regex(self.config.ordinal_number_map.keys())}'
-        self.text_number_regex: Pattern = RegExpUtility.get_safe_reg_exp(
-            fr'(?=\b)({single_int_frac})(?=\b)', flags=regex.I | regex.S)
+        self.text_number_regex: Pattern = self._get_text_number_regex(single_int_frac)
         self.arabic_number_regex: Pattern = RegExpUtility.get_safe_reg_exp(
             r'\d+', flags=regex.I | regex.S)
         self.round_number_set: List[str] = list(
             self.config.round_number_map.keys())
         self.is_non_standard_separator_variant = self.config.culture_info.code in \
-                                                 self.config.non_standard_separator_variants
+            self.config.non_standard_separator_variants
 
     def parse(self, source: ExtractResult) -> Optional[ParseResult]:
         # Check if the parser is configured to support specific types
@@ -649,6 +649,16 @@ class BaseNumberParser(Parser):
         cal_result = getcontext().multiply(cal_result, Decimal(power))
 
         return cal_result if not negative else cal_result * -1
+
+    def _get_text_number_regex(self, single_int_frac: str) -> Pattern:
+        culture_code = self.config.culture_info.code
+        source = fr'(?=\b)({single_int_frac})(?=\b)'
+
+        if culture_code in (Culture.Italian, Culture.German):
+            source = fr'((?=\b)({single_int_frac})(?=\b))|({single_int_frac})'
+
+        pattern = RegExpUtility.get_safe_reg_exp(source, flags=regex.I | regex.S)
+        return pattern
 
 
 class BasePercentageParser(BaseNumberParser):

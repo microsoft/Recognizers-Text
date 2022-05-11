@@ -33,7 +33,11 @@ export class PortugueseDimensionExtractorConfiguration extends PortugueseNumberW
 
         this.suffixList = dimensionSuffixList;
         this.prefixList = new Map<string, string>();
-        this.ambiguousUnitList = PortugueseNumericWithUnit.AmbiguousDimensionUnitList;
+        this.ambiguousUnitList = PortugueseNumericWithUnit.AmbiguousDimensionUnitList.concat(
+                                 PortugueseNumericWithUnit.AmbiguousAngleUnitList.concat(
+                                 PortugueseNumericWithUnit.AmbiguousLengthUnitList.concat(
+                                 PortugueseNumericWithUnit.AmbiguousSpeedUnitList.concat(
+                                 PortugueseNumericWithUnit.AmbiguousWeightUnitList))));
     }
 }
 
