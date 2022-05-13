@@ -470,7 +470,7 @@
         "Start": 0,
         "Length": 5
       },
-	        {
+      {
         "Text": "26時",
         "Type": "time",
         "Start": 9,
@@ -488,7 +488,7 @@
         "Start": 0,
         "Length": 5
       },
-	        {
+      {
         "Text": "4時以降",
         "Type": "time",
         "Start": 9,
@@ -506,7 +506,7 @@
         "Start": 0,
         "Length": 5
       },
-	        {
+      {
         "Text": "25時",
         "Type": "time",
         "Start": 9,
@@ -817,7 +817,7 @@
         "Type": "duration",
         "Start": 4,
         "Length": 2
-      },
+      }
     ]
   },
   {
