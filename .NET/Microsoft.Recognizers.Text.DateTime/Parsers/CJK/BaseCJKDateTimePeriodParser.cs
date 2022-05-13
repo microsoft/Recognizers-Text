@@ -126,15 +126,31 @@ namespace Microsoft.Recognizers.Text.DateTime
             var futureDate = (DateObject)((DateTimeResolutionResult)pr1.Value).FutureValue;
             var pastDate = (DateObject)((DateTimeResolutionResult)pr1.Value).PastValue;
 
+            // handle cases with time like 25時 which resolve to the next day
+            var swiftDay = 0;
+            var timexHours = TimexUtility.ParseHoursFromTimePeriodTimex(pr2.TimexStr);
+            if (timexHours.Item1 > Constants.DayHourCount)
+            {
+                pastDate = pastDate.AddDays(1);
+                futureDate = futureDate.AddDays(1);
+            }
+            else if (timexHours.Item2 > Constants.DayHourCount)
+            {
+                swiftDay++;
+            }
+
+            var pastDate1 = pastDate.AddDays(swiftDay);
+            var futureDate1 = futureDate.AddDays(swiftDay);
+
             ret.FutureValue =
                 new Tuple<DateObject, DateObject>(
                     DateObject.MinValue.SafeCreateFromValue(futureDate.Year, futureDate.Month, futureDate.Day, beginTime.Hour, beginTime.Minute, beginTime.Second),
-                    DateObject.MinValue.SafeCreateFromValue(futureDate.Year, futureDate.Month, futureDate.Day, endTime.Hour, endTime.Minute, endTime.Second));
+                    DateObject.MinValue.SafeCreateFromValue(futureDate1.Year, futureDate1.Month, futureDate1.Day, endTime.Hour, endTime.Minute, endTime.Second));
 
             ret.PastValue =
                 new Tuple<DateObject, DateObject>(
                     DateObject.MinValue.SafeCreateFromValue(pastDate.Year, pastDate.Month, pastDate.Day, beginTime.Hour, beginTime.Minute, beginTime.Second),
-                    DateObject.MinValue.SafeCreateFromValue(pastDate.Year, pastDate.Month, pastDate.Day, endTime.Hour, endTime.Minute, endTime.Second));
+                    DateObject.MinValue.SafeCreateFromValue(pastDate1.Year, pastDate1.Month, pastDate1.Day, endTime.Hour, endTime.Minute, endTime.Second));
 
             ret.Timex = TimexUtility.GenerateSplitDateTimePeriodTimex(pr1.TimexStr, pr2.TimexStr);
             ret.Success = !string.IsNullOrEmpty(ret.Timex);

@@ -569,6 +569,30 @@ namespace Microsoft.Recognizers.Text.DateTime
             return float.Parse(numberStr);
         }
 
+        public static int ParseHourFromTimeTimex(string timex)
+        {
+            var start = timex.IndexOf(Constants.TimeTimexPrefix) + 1;
+            var end = timex.IndexOf(Constants.TimeTimexConnector);
+            end = end > 0 ? end : timex.Length;
+            var hourStr = timex.Substring(start, end - start);
+            int.TryParse(hourStr, out int hour);
+
+            return hour;
+        }
+
+        public static Tuple<int, int> ParseHoursFromTimePeriodTimex(string timex)
+        {
+            int hour1 = 0, hour2 = 0;
+            var timeList = timex.Split(Constants.TimexSeparator[0]);
+            if (timeList.Length > 2)
+            {
+                hour1 = ParseHourFromTimeTimex(timeList[0]);
+                hour2 = ParseHourFromTimeTimex(timeList[1]);
+            }
+
+            return new Tuple<int, int>(hour1, hour2);
+        }
+
         private static bool IsTimeDurationTimex(string timex)
         {
             return timex.StartsWith($"{Constants.GeneralPeriodPrefix}{Constants.TimeTimexPrefix}", StringComparison.Ordinal);

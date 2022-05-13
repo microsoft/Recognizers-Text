@@ -4,7 +4,7 @@
     "Context": {
       "ReferenceDateTime": "2020-01-05T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "今日夜十時ぐらい以降",
@@ -30,7 +30,7 @@
     "Context": {
       "ReferenceDateTime": "2020-01-05T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "十時ぐらい以降",
@@ -63,7 +63,7 @@
     "Context": {
       "ReferenceDateTime": "2020-01-05T00:00:00"
     },
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "夜十時ぐらい以降",
@@ -81,6 +81,108 @@
         },
         "Start": 0,
         "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "午前10時の予定を25時に変更します。",
+    "Context": {
+      "ReferenceDateTime": "2020-01-05T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "午前10時",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T10",
+              "type": "time",
+              "value": "10:00:00",
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 5
+      },
+      {
+        "Text": "25時",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T25",
+              "type": "time",
+              "value": "01:00:00",
+            }
+          ]
+        },
+        "Start": 9,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "午前10時の予定を28時に変更します。",
+    "Context": {
+      "ReferenceDateTime": "2020-01-05T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "午前10時",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T10",
+              "type": "time",
+              "value": "10:00:00",
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 5
+      },
+      {
+        "Text": "28時",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T28",
+              "type": "time",
+              "value": "04:00:00",
+            }
+          ]
+        },
+        "Start": 9,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "午前10時の予定を31時に変更します。",
+    "Context": {
+      "ReferenceDateTime": "2020-01-05T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "午前10時",
+        "Type": "datetimeV2.time",
+        "Value": {
+          "values": [
+            {
+              "timex": "T10",
+              "type": "time",
+              "value": "10:00:00",
+            }
+          ]
+        },
+        "Start": 0,
+        "Length": 5
       }
     ]
   }

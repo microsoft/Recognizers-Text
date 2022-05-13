@@ -53,6 +53,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         // AmPm time representation for time parser
         public const string Comment_AmPm = "ampm";
+        public const string Comment_Am = "am";
 
         // Prefix early/late for time parser
         public const string Comment_Early = "early";
@@ -267,6 +268,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string TimexFuzzyDay = "XX";
         public const string DateTimexConnector = "-";
         public const string TimeTimexConnector = ":";
+        public const string TimexSeparator = ",";
         public const string GeneralPeriodPrefix = "P";
         public const string TimeTimexPrefix = "T";
 
