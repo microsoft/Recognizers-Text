@@ -139,18 +139,18 @@ namespace Microsoft.Recognizers.Text.DateTime
                 swiftDay++;
             }
 
-            var pastDate1 = pastDate.AddDays(swiftDay);
-            var futureDate1 = futureDate.AddDays(swiftDay);
+            var pastDateAlt = pastDate.AddDays(swiftDay);
+            var futureDateAlt = futureDate.AddDays(swiftDay);
 
             ret.FutureValue =
                 new Tuple<DateObject, DateObject>(
                     DateObject.MinValue.SafeCreateFromValue(futureDate.Year, futureDate.Month, futureDate.Day, beginTime.Hour, beginTime.Minute, beginTime.Second),
-                    DateObject.MinValue.SafeCreateFromValue(futureDate1.Year, futureDate1.Month, futureDate1.Day, endTime.Hour, endTime.Minute, endTime.Second));
+                    DateObject.MinValue.SafeCreateFromValue(futureDateAlt.Year, futureDateAlt.Month, futureDateAlt.Day, endTime.Hour, endTime.Minute, endTime.Second));
 
             ret.PastValue =
                 new Tuple<DateObject, DateObject>(
                     DateObject.MinValue.SafeCreateFromValue(pastDate.Year, pastDate.Month, pastDate.Day, beginTime.Hour, beginTime.Minute, beginTime.Second),
-                    DateObject.MinValue.SafeCreateFromValue(pastDate1.Year, pastDate1.Month, pastDate1.Day, endTime.Hour, endTime.Minute, endTime.Second));
+                    DateObject.MinValue.SafeCreateFromValue(pastDateAlt.Year, pastDateAlt.Month, pastDateAlt.Day, endTime.Hour, endTime.Minute, endTime.Second));
 
             ret.Timex = TimexUtility.GenerateSplitDateTimePeriodTimex(pr1.TimexStr, pr2.TimexStr);
             ret.Success = !string.IsNullOrEmpty(ret.Timex);
