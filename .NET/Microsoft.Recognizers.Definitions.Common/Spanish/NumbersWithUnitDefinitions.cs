@@ -642,10 +642,11 @@ namespace Microsoft.Recognizers.Definitions.Spanish
             { @"Satoshi", @"SATOSHI" }
         };
       public const string CompoundUnitConnectorRegex = @"(?<spacer>y|con)";
+      public const string MultiplierRegex = @"\s*\b(((mil\s+)?mi|bi|cuatri|quinti|sexti|septi)ll[oó]n|mil)(es)?\b";
       public static readonly Dictionary<string, string> CurrencyPrefixList = new Dictionary<string, string>
         {
             { @"Dobra", @"db|std" },
-            { @"Dólar", @"$" },
+            { @"Dólar", @"$|dólar|dólares|dolar|dolares" },
             { @"Dólar estadounidense", @"us$|u$d|usd" },
             { @"Dólar del Caribe Oriental", @"ec$|xcd" },
             { @"Dólar australiano", @"a$|aud" },
