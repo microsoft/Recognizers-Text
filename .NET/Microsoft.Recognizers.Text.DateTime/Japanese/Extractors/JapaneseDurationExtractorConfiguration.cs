@@ -6,8 +6,8 @@ using System.Collections.Immutable;
 using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
-
 using Microsoft.Recognizers.Definitions.Japanese;
+using Microsoft.Recognizers.Definitions.Utilities;
 using Microsoft.Recognizers.Text.NumberWithUnit;
 using Microsoft.Recognizers.Text.NumberWithUnit.Japanese;
 
@@ -48,6 +48,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
             UnitMap = DateTimeDefinitions.ParserConfigurationUnitMap.ToDictionary(k => k.Key, k => k.Value);
             UnitValueMap = DateTimeDefinitions.DurationUnitValueMap;
+            AmbiguityDurationFiltersDict = DefinitionLoader.LoadAmbiguityFilters(DateTimeDefinitions.AmbiguityDurationFiltersDict);
+
         }
 
         public IExtractor InternalExtractor { get; }
@@ -55,6 +57,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         public Dictionary<string, string> UnitMap { get; }
 
         public Dictionary<string, long> UnitValueMap { get; }
+
+        public Dictionary<Regex, Regex> AmbiguityDurationFiltersDict { get; }
 
         Regex ICJKDurationExtractorConfiguration.DurationUnitRegex => DurationUnitRegex;
 

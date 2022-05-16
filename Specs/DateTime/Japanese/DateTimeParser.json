@@ -1967,5 +1967,125 @@
         "Length": 5
       }
     ]
+  },
+  {
+    "Input": "私は2016年12月22日25時に戻ります",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016年12月22日25時",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-12-22T25",
+          "FutureResolution": {
+            "dateTime": "2016-12-23 01:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-12-23 01:00:00"
+          }
+        },
+        "Start": 2,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "私は2016年12月22日26時に戻ります",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016年12月22日26時",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "2016-12-22T26",
+          "FutureResolution": {
+            "dateTime": "2016-12-23 02:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-12-23 02:00:00"
+          }
+        },
+        "Start": 2,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "私は15日の25時に戻ります",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "15日の25時",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-XX-15T25",
+          "FutureResolution": {
+            "dateTime": "2016-11-16 01:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-10-16 01:00:00"
+          }
+        },
+        "Start": 2,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "私は30日の28時に戻ります",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "30日の28時",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-XX-30T28",
+          "FutureResolution": {
+            "dateTime": "2016-12-01 04:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-10-31 04:00:00"
+          }
+        },
+        "Start": 2,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "私は30日の28時45分に戻ります",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "30日の28時45分",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-XX-30T28:45",
+          "FutureResolution": {
+            "dateTime": "2016-12-01 04:45:00"
+          },
+          "PastResolution": {
+            "dateTime": "2016-10-31 04:45:00"
+          }
+        },
+        "Start": 2,
+        "Length": 10
+      }
+    ]
   }
 ]

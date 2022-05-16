@@ -79,12 +79,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
                 noDesc = false;
             }
 
-            int hour = timeResult.Hour > 0 ? timeResult.Hour % Constants.DayHourCount : 0,
+            // Hours > 24 (e.g. 25時 which resolves to the next day) are kept unnormalized in the timex
+            // to avoid ambiguity in other entities. For example, "on the 30th at 25" is resolved to
+            // "XXXX-XX-30T25" because with "XXXX-XX-30+1T01" it is not known if the day should be "31" or "01".
+            int hour = timeResult.Hour > 0 && timeResult.Hour != Constants.DayHourCount ? timeResult.Hour : 0,
                 min = timeResult.Minute > 0 ? timeResult.Minute : 0,
-                second = timeResult.Second > 0 ? timeResult.Second : 0,
-                day = referenceTime.Day,
-                month = referenceTime.Month,
-                year = referenceTime.Year;
+                second = timeResult.Second > 0 ? timeResult.Second : 0;
 
             var dateTimeResult = new DateTimeResolutionResult();
 
@@ -109,6 +109,18 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
                 build.Append(":" + second.ToString("D2", CultureInfo.InvariantCulture));
             }
 
+            // handle cases with time like 25時 (the hour is normalized in the past/future values)
+            if (timeResult.Hour > Constants.DayHourCount)
+            {
+                hour = timeResult.Hour - Constants.DayHourCount;
+                referenceTime = referenceTime.AddDays(1);
+                if (noDesc)
+                {
+                    dateTimeResult.Comment = Constants.Comment_Am;
+                    noDesc = false;
+                }
+            }
+
             if (noDesc && hour <= Constants.HalfDayHourCount)
             {
                 // build.Append("ampm");
@@ -117,6 +129,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
 
             dateTimeResult.Timex = build.ToString();
 
+            int day = referenceTime.Day, month = referenceTime.Month, year = referenceTime.Year;
             dateTimeResult.FutureValue = dateTimeResult.PastValue =
                 DateObject.MinValue.SafeCreateFromValue(year, month, day, hour, min, second);
             dateTimeResult.Success = true;

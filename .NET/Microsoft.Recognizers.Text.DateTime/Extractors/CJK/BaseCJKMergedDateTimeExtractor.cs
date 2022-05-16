@@ -129,6 +129,17 @@ namespace Microsoft.Recognizers.Text.DateTime
                     er.Metadata = AssignModMetadata(er.Metadata);
                 }
 
+                match = this.config.UntilRegex.MatchBegin(afterStr, trim: true);
+
+                if (match.Success)
+                {
+                    var modLength = match.Index + match.Length;
+                    er.Length += modLength;
+                    er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+
+                    er.Metadata = AssignModMetadata(er.Metadata);
+                }
+
                 match = this.config.SincePrefixRegex.MatchEnd(beforeStr, trim: true);
 
                 if (match.Success && AmbiguousRangeChecker(beforeStr, text, er))
