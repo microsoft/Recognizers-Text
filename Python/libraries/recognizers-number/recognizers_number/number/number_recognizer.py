@@ -20,7 +20,7 @@ from recognizers_number.number.portuguese.extractors import PortugueseNumberExtr
 from recognizers_number.number.portuguese.parsers import PortugueseNumberParserConfiguration
 from recognizers_number.number.french.extractors import FrenchNumberExtractor, FrenchOrdinalExtractor, FrenchPercentageExtractor
 from recognizers_number.number.french.parsers import FrenchNumberParserConfiguration
-from recognizers_number.number.german.extractors import GermanMergedNumberExtractor, GermanOrdinalExtractor, GermanPercentageExtractor, GermanNumberExtractor
+from recognizers_number.number.german.extractors import GermanMergedNumberExtractor, GermanOrdinalExtractor, GermanPercentageExtractor
 from recognizers_number.number.german.parsers import GermanNumberParserConfiguration
 from recognizers_number.number.italian.extractors import ItalianMergedNumberExtractor, ItalianOrdinalExtractor, ItalianPercentageExtractor
 from recognizers_number.number.italian.parsers import ItalianNumberParserConfiguration
@@ -59,7 +59,7 @@ class NumberRecognizer(Recognizer[NumberOptions]):
         self.register_model('NumberModel', Culture.German, lambda options: NumberModel(
             AgnosticNumberParserFactory.get_parser(
                 ParserType.NUMBER, GermanNumberParserConfiguration()),
-            GermanNumberExtractor(NumberMode.PURE_NUMBER)
+            GermanMergedNumberExtractor(NumberMode.PURE_NUMBER)
         ))
         self.register_model('OrdinalModel', Culture.German, lambda options: OrdinalModel(
             AgnosticNumberParserFactory.get_parser(
