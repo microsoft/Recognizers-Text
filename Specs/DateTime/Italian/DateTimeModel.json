@@ -3077,5 +3077,36 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Sarò via novembre 19-20",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "novembre 19-20",
+        "Start": 9,
+        "End": 22,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-11-19,XXXX-11-20,P1D)",
+              "type": "daterange",
+              "start": "2015-11-19",
+              "end": "2015-11-20"
+            },
+            {
+              "timex": "(XXXX-11-19,XXXX-11-20,P1D)",
+              "type": "daterange",
+              "start": "2016-11-19",
+              "end": "2016-11-20"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
