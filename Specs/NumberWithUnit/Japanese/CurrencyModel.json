@@ -1,6 +1,7 @@
 ﻿[
   {
     "Input": "今日の日経平均は2222円13銭です。",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "2222円13銭",
@@ -22,6 +23,7 @@
   },
   {
     "Input": "35億円",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "35億円",
@@ -38,6 +40,7 @@
   },
   {
     "Input": "そのシュークリームは1個\\100です",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "\\100",
@@ -59,6 +62,7 @@
   },
   {
     "Input": "1,280円",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "1,280円",
@@ -75,6 +79,7 @@
   },
   {
     "Input": "その中で、四川の彩友の中で1注1000万人民元の基本的なトップ賞を得ました。",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "1000万人民元",
@@ -91,6 +96,7 @@
   },
   {
     "Input": "今回の受賞終了後、賞池の金額が36.57億人民元に上った。",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "36.57億人民元",
@@ -107,6 +113,7 @@
   },
   {
     "Input": "1ユーロでいいです。",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "1ユーロ",
@@ -123,6 +130,7 @@
   },
   {
     "Input": "両替1.0753ドル",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "1.0753ドル",
@@ -139,6 +147,7 @@
   },
   {
     "Input": "両替1.0092スイス・フラン",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "1.0092スイス・フラン",
@@ -155,6 +164,7 @@
   },
   {
     "Input": "2016年は合併などで直接投資し、中国の資金は1200億ドルが流出した",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "1200億ドル",
@@ -171,6 +181,7 @@
   },
   {
     "Input": "宝安科学技術会社は、国際精密な15人の株主と買収協議を締結し、1株当たり1.95香港ドルで",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "1.95香港ドル",
@@ -187,6 +198,7 @@
   },
   {
     "Input": "中央銀行は期限切れの5306億ニュー台湾ドルを確定する",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "5306億ニュー台湾ドル",
@@ -203,6 +215,7 @@
   },
   {
     "Input": "東芝はもう1万億円で取引銀行に融資を申請した",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "1万億円",
@@ -219,6 +232,7 @@
   },
   {
     "Input": "445ナイラで両替する",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "445ナイラ",
@@ -235,6 +249,7 @@
   },
   {
     "Input": "15ドル",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "15ドル",
@@ -251,6 +266,7 @@
   },
   {
     "Input": "10ドル",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "10ドル",
@@ -267,6 +283,7 @@
   },
   {
     "Input": "りんごが1ドル割引する",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "1ドル",
@@ -283,6 +300,7 @@
   },
   {
     "Input": "このパソコンは2ドルです",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "2ドル",
@@ -299,6 +317,7 @@
   },
   {
     "Input": "このパソコンは2ドル3セントです。",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "2ドル3セント",
@@ -348,6 +367,7 @@
   },
   {
     "Input": "高田は毎日€ 1.5 かかります",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "€ 1.5",
@@ -364,6 +384,7 @@
   },
   {
     "Input": "彼女がいた後、小山は毎月£ 512.5を多く支出しています。",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "£ 512.5",
@@ -379,6 +400,7 @@
   },
   {
     "Input": "彼女がいた後、小山は毎月545パナマ・バルボアを多く支出しています。",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "545パナマ・バルボア",
@@ -395,6 +417,7 @@
   },
   {
     "Input": "小山は毎月545ドルと5セントを多く支出しています。",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "545ドルと5セント",
@@ -411,6 +434,7 @@
   },
   {
     "Input": "この本は5人民元と3角です",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "5人民元と3角",
@@ -427,6 +451,7 @@
   },
   {
     "Input": "ドルはアメリカの通貨です。",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "ドル",
@@ -443,6 +468,7 @@
   },
   {
     "Input": "ユーロはEU圏の通貨です。",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "ユーロ",
@@ -459,6 +485,7 @@
   },
   {
     "Input": "この自転車は100ユーロと30です。",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "100ユーロと30",
@@ -492,7 +519,7 @@
   },
   {
     "Input": "8億人民元",
-    "NotSupported": "javascript, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "8億人民元",
@@ -543,7 +570,7 @@
   },
   {
     "Input": "1.0753ドルを交換します",
-    "NotSupported": "javascript, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "1.0753ドル",
@@ -616,7 +643,7 @@
   },
   {
     "Input": "10円5銭",
-    "NotSupported": "javascript, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "10円5銭",
@@ -633,7 +660,7 @@
   },
   {
     "Input": "このパソコンは2ドル3セントとなってます",
-    "NotSupported": "javascript, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "2ドル3セント",
@@ -747,7 +774,7 @@
   },
   {
     "Input": "宝安テクノロジーはIPE GROUP LIMITEDの株主15人と買収契約をサインしました。一株あたり1.95香港ドル",
-    "NotSupported": "javascript, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "1.95香港ドル",
@@ -877,7 +904,7 @@
   },
   {
     "Input": "このパソコンは2ドルとなってます",
-    "NotSupported": "javascript, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "2ドル",
@@ -894,7 +921,7 @@
   },
   {
     "Input": "445ナイラ到達で交換できます",
-    "NotSupported": "javascript, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "445ナイラ",
@@ -911,7 +938,7 @@
   },
   {
     "Input": "1ユーロで大丈夫です",
-    "NotSupported": "javascript, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "1ユーロ",

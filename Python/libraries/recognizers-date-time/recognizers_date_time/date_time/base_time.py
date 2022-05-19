@@ -389,7 +389,7 @@ class BaseTimeParser(DateTimeParser):
         if has_seconds:
             result.timex += f':{second:02d}'
 
-        if hour <= 12 and not has_pm and not has_am and not has_mid:
+        if 0 < hour <= 12 and not has_pm and not has_am and not has_mid:
             result.comment = Constants.AM_PM_GROUP_NAME
 
         result.future_value = datetime(year, month, day, hour, minute, second)

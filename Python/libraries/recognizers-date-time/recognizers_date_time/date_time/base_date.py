@@ -437,8 +437,8 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
                             extracted_week_day_str = RegExpUtility.get_group(
                                 match_case, 'weekday').lower()
                             if (date != DateUtils.min_value and
-                                    self.config.day_of_week[num_week_day_str] ==
-                                    self.config.day_of_week[extracted_week_day_str]):
+                                    DateUtils.day_of_week(num_week_day_str) ==
+                                    self.config.day_of_week.get(extracted_week_day_str)):
                                 ret.append(
                                     Token(match_case.start(), match_case.end()))
                                 is_found = True

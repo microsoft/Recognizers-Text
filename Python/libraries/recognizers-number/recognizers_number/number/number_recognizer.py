@@ -59,7 +59,7 @@ class NumberRecognizer(Recognizer[NumberOptions]):
         self.register_model('NumberModel', Culture.German, lambda options: NumberModel(
             AgnosticNumberParserFactory.get_parser(
                 ParserType.NUMBER, GermanNumberParserConfiguration()),
-            GermanNumberExtractor(NumberMode.PURE_NUMBER)
+            GermanMergedNumberExtractor(NumberMode.PURE_NUMBER)
         ))
         self.register_model('OrdinalModel', Culture.German, lambda options: OrdinalModel(
             AgnosticNumberParserFactory.get_parser(
