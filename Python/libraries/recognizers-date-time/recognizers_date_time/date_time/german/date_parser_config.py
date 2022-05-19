@@ -193,9 +193,9 @@ class GermanDateParserConfiguration(DateParserConfiguration):
             swift = 0
         elif trimmed_text == 'morgen':
             swift = 1
-        elif trimmed_text == 'übermorgen':
+        elif trimmed_text == 'gestern':
             swift = -1
-        elif trimmed_text.endswith('dopodomani'):
+        elif trimmed_text.endswith('übermorgen'):
             swift = 2
         elif trimmed_text.endswith('vorgestern'):
             swift = -2
