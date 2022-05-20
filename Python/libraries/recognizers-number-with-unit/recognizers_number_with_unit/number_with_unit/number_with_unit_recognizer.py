@@ -53,8 +53,6 @@ from .german.extractors import GermanCurrencyExtractorConfiguration
 from .german.parsers import GermanCurrencyParserConfiguration
 from .italian.extractors import ItalianCurrencyExtractorConfiguration
 from .italian.parsers import ItalianCurrencyParserConfiguration
-from .japanese.extractors import JapaneseCurrencyExtractorConfiguration
-from .japanese.parsers import JapaneseCurrencyParserConfiguration
 
 
 class NumberWithUnitOptions(IntFlag):
