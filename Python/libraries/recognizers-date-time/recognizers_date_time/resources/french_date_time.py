@@ -253,7 +253,7 @@ class FrenchDateTime:
     RelativeDecadeRegex = f'^\\b$'
     YearSuffix = f'(,?(\\s*à)?\\s*({DateYearRegex}|{FullTextYearRegex}))'
     SuffixAfterRegex = f'^\\b$'
-    YearPeriodRegex = f'^\\b$'
+    YearPeriodRegex = f'((((du|depuis|des?)\\s+)?{YearRegex}\\s*({TillRegex})\\s*{YearRegex})|(((entre)\\s+){YearRegex}\\s*({RangeConnectorRegex})\\s*{YearRegex}))'
     FutureSuffixRegex = f'\\b(dans\\s+le\\s+futur)\\b'
     ModPrefixRegex = f'\\b({RelativeRegex}|{AroundRegex}|{BeforeRegex}|{AfterRegex}|{SinceRegex})\\b'
     ModSuffixRegex = f'\\b({AgoRegex}|{LaterRegex}|{BeforeAfterRegex}|{FutureSuffixRegex}|{PastSuffixRegex})\\b'
