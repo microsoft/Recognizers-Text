@@ -463,6 +463,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             return $"({beginTimex},{endTimex},{durationTimex})";
         }
 
+        public static string GenerateDateTimePeriodTimex(string beginTimex, string endTimex, TimeSpan duration)
+        {
+            var durationTimex = DateTimeFormatUtil.LuisTimeSpan(duration);
+            return GenerateDateTimePeriodTimex(beginTimex, endTimex, durationTimex);
+        }
+
         public static string GenerateDateTimePeriodTimex(DateObject beginDateTime, DateObject endDateTime, string durationTimex)
         {
             return GenerateDateTimePeriodTimex(DateTimeFormatUtil.LuisDateTime(beginDateTime),

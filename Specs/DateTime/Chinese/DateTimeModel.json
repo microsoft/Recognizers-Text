@@ -803,7 +803,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "(2016-11-06T14:00:00,2016-11-08T04:00:00,PT38H)",
+              "timex": "(2016-11-06T14,2016-11-08T04,PT38H)",
               "type": "datetimerange",
               "start": "2016-11-06 14:00:00",
               "end": "2016-11-08 04:00:00"
@@ -6900,6 +6900,62 @@
               "type": "daterange",
               "sourceEntity": "datetimerange",
               "end": "2000-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "帮我预订2016年12月15日晚上7:00到8:00的会议",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T10:20:00"
+    },
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2016年12月15日晚上7:00到8:00",
+        "Start": 4,
+        "End": 25,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-12-15T19:00,2016-12-15T20:00,PT1H)",
+              "type": "datetimerange",
+              "start": "2016-12-15 19:00:00",
+              "end": "2016-12-15 20:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "周一上午10点到12点有空吗",
+    "Context": {
+      "ReferenceDateTime": "2018-11-01T12:00:00"
+    },
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "周一上午10点到12点",
+        "Start": 0,
+        "End": 10,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-WXX-1T10,XXXX-WXX-1T12,PT2H)",
+              "type": "datetimerange",
+              "start": "2018-10-29 10:00:00",
+              "end": "2018-10-29 12:00:00"
+            },
+            {
+              "timex": "(XXXX-WXX-1T10,XXXX-WXX-1T12,PT2H)",
+              "type": "datetimerange",
+              "start": "2018-11-05 10:00:00",
+              "end": "2018-11-05 12:00:00"
             }
           ]
         }
