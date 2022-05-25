@@ -1135,8 +1135,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pastEnd = DateObject.MinValue.SafeCreateFromValue(
                     pastBegin.Year, pastBegin.Month, pastBegin.Day, pastEnd.Hour, pastEnd.Minute, pastEnd.Second);
 
-                rightTimex = pr1.TimexStr.Equals(Constants.TimexNow, StringComparison.Ordinal) ? DateTimeFormatUtil.LuisDateShortTime(futureEnd) :
-                    pr1.TimexStr.Split(Constants.TimeTimexPrefix[0])[0] + pr2.TimexStr;
+                rightTimex = TimexUtility.CombineDateTimeTimex(pr2.TimexStr, pr1.TimexStr, futureEnd);
             }
             else if (endHasDate)
             {
@@ -1145,8 +1144,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pastBegin = DateObject.MinValue.SafeCreateFromValue(
                     pastEnd.Year, pastEnd.Month, pastEnd.Day, pastBegin.Hour, pastBegin.Minute, pastBegin.Second);
 
-                leftTimex = pr2.TimexStr.Equals(Constants.TimexNow, StringComparison.Ordinal) ? DateTimeFormatUtil.LuisDateShortTime(pastBegin) :
-                    pr2.TimexStr.Split(Constants.TimeTimexPrefix[0])[0] + pr1.TimexStr;
+                leftTimex = TimexUtility.CombineDateTimeTimex(pr1.TimexStr, pr2.TimexStr, pastBegin);
             }
 
             ret.Timex = TimexUtility.GenerateDateTimePeriodTimex(leftTimex, rightTimex, futureEnd - futureBegin);
