@@ -18686,7 +18686,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
@@ -20023,6 +20022,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "20 ste van de volgende maand",
@@ -20046,6 +20046,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "vier dagen gerekend vanaf gisteren",
@@ -20069,6 +20070,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "4 dagen gerekend vanaf gisteren",
@@ -20088,56 +20090,11 @@
     ]
   },
   {
-    "Input": "Het zal 3 dagen vanaf dinsdag gebeuren",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "Results": [
-      {
-        "Text": "3 dagen vanaf dinsdag",
-        "Start": 8,
-        "End": 28,
-        "TypeName": "datetimeV2.date",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "2016-11-11",
-              "type": "date",
-              "value": "2016-11-11"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  {
-    "Input": "Het zal 3 dagen na de 12e januari gebeuren",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "Results": [
-      {
-        "Text": "3 dagen na de 12e januari",
-        "Start": 8,
-        "End": 32,
-        "TypeName": "datetimeV2.date",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "2017-01-15",
-              "type": "date",
-              "value": "2017-01-15"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  {
     "Input": "APEC zal in Korea plaatsvinden jan-feb 2017",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "jan-feb 2017",
@@ -20162,6 +20119,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "jan feb 2017",
