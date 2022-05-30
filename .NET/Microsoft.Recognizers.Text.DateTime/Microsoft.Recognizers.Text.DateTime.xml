@@ -84,6 +84,11 @@
             NoProtoCache
             </summary>
         </member>
+		<member name="F:Microsoft.Recognizers.Text.DateTime.DateTimeOptions.TasksMode">
+			<summary>
+				TasksMode
+			</summary>
+		</member>
         <member name="F:Microsoft.Recognizers.Text.DateTime.DateTimeOptions.FailFast">
             <summary>
             FailFast, mode that aborts extraction/tagging quickly for non-entity cases. May be removed later.

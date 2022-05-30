@@ -39,6 +39,11 @@ namespace Microsoft.Recognizers.Text.DateTime
         NoProtoCache = 16,
 
         /// <summary>
+        /// NoProtoCache
+        /// </summary>
+        TasksMode = 32,
+
+        /// <summary>
         /// FailFast, mode that aborts extraction/tagging quickly for non-entity cases. May be removed later.
         /// </summary>
         FailFast = 2097152, // 2 ^21
