@@ -6961,5 +6961,55 @@
         }
       }
     ]
+  },
+  {
+    "Input": "还剩5 分钟",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "还剩5 分钟",
+        "Start": 0,
+        "End": 5,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-11-07T16:12:00,2016-11-07T16:17:00,PT5M)",
+              "type": "datetimerange",
+              "start": "2016-11-07 16:12:00",
+              "end": "2016-11-07 16:17:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "还剩 3 小时",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "还剩 3 小时",
+        "Start": 0,
+        "End": 6,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-11-07T16:12:00,2016-11-07T19:12:00,PT3H)",
+              "type": "datetimerange",
+              "start": "2016-11-07 16:12:00",
+              "end": "2016-11-07 19:12:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
