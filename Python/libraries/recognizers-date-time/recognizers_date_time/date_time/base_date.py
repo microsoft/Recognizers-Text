@@ -455,7 +455,7 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
                     if match_case:
                         match_length = result.start + result.length - match_case.start()
 
-                        if match_length == match_case.start():
+                        if match_length == match_case.end() - match_case.start():
                             ret.append(Token(match_case.start(), match_case.end()))
                             is_found = True
 
