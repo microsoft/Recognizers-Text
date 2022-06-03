@@ -57,6 +57,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();
 
+        public static readonly Regex YearRegex =
+            new Regex(DateTimeDefinitions.YearRegex, RegexFlags);
+
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         public FrenchMergedExtractorConfiguration(IDateTimeOptionsConfiguration config)
@@ -140,6 +143,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         Regex IMergedExtractorConfiguration.UnspecificDatePeriodRegex => UnspecificDatePeriodRegex;
 
         Regex IMergedExtractorConfiguration.UnspecificTimePeriodRegex => null;
+
+        Regex IMergedExtractorConfiguration.YearRegex => YearRegex;
 
         public Regex FailFastRegex { get; } = null;
 
