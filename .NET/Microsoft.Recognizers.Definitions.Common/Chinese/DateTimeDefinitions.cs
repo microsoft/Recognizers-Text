@@ -60,8 +60,8 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public static readonly string SpecialDate = $@"(?<thisyear>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex})年)?(?<thismonth>({ThisPrefixRegex}|{LastPrefixRegex}|{NextPrefixRegex})月)?{DateDayRegexInCJK}";
       public const string DateUnitRegex = @"(?<unit>年|个月|周|週|日|天)";
       public const string BeforeRegex = @"以前|之前|前";
-      public const string AfterRegex = @"以后|以後|之后|之後|后|後";
-      public const string TimePeriodLeftRegex = @"^[.]";
+      public const string AfterRegex = @"以后|以後|之后|之後|后|後|还剩";
+      public const string TimePeriodLeftRegex = @"还剩";
       public static readonly string DateRegexList1 = $@"({LunarRegex}(\s*))?((({SimpleYearRegex}|{DateYearInCJKRegex})年)(\s*))?{MonthRegex}(\s*){DateDayRegexInCJK}((\s*|,|，){WeekDayRegex})?";
       public static readonly string DateRegexList2 = $@"((({SimpleYearRegex}|{DateYearInCJKRegex})年)(\s*))?({LunarRegex}(\s*))?{MonthRegex}(\s*){DateDayRegexInCJK}((\s*|,|，){WeekDayRegex})?";
       public static readonly string DateRegexList3 = $@"((({SimpleYearRegex}|{DateYearInCJKRegex})年)(\s*))?({LunarRegex}(\s*))?{MonthRegex}(\s*)({DayRegexNumInCJK}|{DayRegex})((\s*|,|，){WeekDayRegex})?";
