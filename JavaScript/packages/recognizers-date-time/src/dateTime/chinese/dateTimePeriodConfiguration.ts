@@ -556,17 +556,12 @@ export class ChineseDateTimePeriodParser extends BaseDateTimePeriodParser {
         result.futureValue = [leftTime, rightTime];
         result.pastValue = [leftTime, rightTime];
 
-        let leftTimex = prs.begin.timexStr;
-        let rightTimex = prs.end.timexStr;
-        if (beginHasDate) {
-            rightTimex = DateTimeFormatUtil.luisDateShortTime(rightTime, rightTimex);
-        }
-        else if (endHasDate) {
-            leftTimex = DateTimeFormatUtil.luisDateShortTime(leftTime, leftTimex);
-        }
-        let durationTimex = DateTimeFormatUtil.luisTimeSpan(leftTime, rightTime);
+        let hasFuzzyTimex = prs.begin.timexStr.includes('X') || prs.end.timexStr.includes('X');
+        let leftTimex = hasFuzzyTimex ? prs.begin.timexStr : DateTimeFormatUtil.luisDateTime(leftTime);
+        let rightTimex = hasFuzzyTimex ? prs.end.timexStr : DateTimeFormatUtil.luisDateTime(rightTime);
+        let hoursBetween = DateUtils.totalHours(rightTime, leftTime);
 
-        result.timex = `(${leftTimex},${rightTimex},${durationTimex})`;
+        result.timex = `(${leftTimex},${rightTimex},PT${hoursBetween}H)`;
         result.success = true;
 
         return result;

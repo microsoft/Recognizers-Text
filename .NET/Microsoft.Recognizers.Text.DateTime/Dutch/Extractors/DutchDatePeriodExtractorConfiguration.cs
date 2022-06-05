@@ -16,7 +16,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
     {
         // Base regexes
         public static readonly Regex TillRegex =
-            new Regex(DateTimeDefinitions.ComplexTillRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.TillRegex, RegexFlags);
 
         public static readonly Regex RangeConnectorRegex =
             new Regex(DateTimeDefinitions.RangeConnectorRegex, RegexFlags);

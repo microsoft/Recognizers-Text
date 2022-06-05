@@ -44,9 +44,6 @@ class Constants:
     MIN_MONTH: int = 1
     MAX_MONTH: int = 12
     INVALID_YEAR = -2147483648
-    INVALID_HOUR = -2147483648
-    INVALID_MINUTE = -2147483648
-    INVALID_SECOND = -2147483648
 
     COMMENT_KEY: str = 'Comment'
     COMMENT_AMPM = 'ampm'
@@ -59,9 +56,6 @@ class Constants:
     MAX_YEAR_NUM: int = int(BaseDateTime.MaxYearNum)
 
     HALF_DAY_HOUR_COUNT = 12
-    DAY_HOUR_COUNT = 24
-    HOUR_SECOND_COUNT = 3600
-    MINUTE_SECOND_COUNT = 60
     HALF_MID_DAY_DURATION_HOUR_COUNT = 2
 
     # specifies the priority interpreting month and day order

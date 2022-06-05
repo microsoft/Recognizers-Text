@@ -1277,8 +1277,7 @@ class BaseDateTimePeriodParser(DateTimeParser):
             if past_end < past_begin:
                 past_end = future_end
 
-            duration_str = DateTimeFormatUtil.luis_time_span(future_begin, future_end)
-            result.timex = f'({parse_result1.timex_str},{parse_result2.timex_str},{duration_str})'
+            result.timex = f'({parse_result1.timex_str},{parse_result2.timex_str},PT{DateUtils.total_hours(future_begin, future_end)}H)'
 
             # Do nothing
         elif begin_has_date:

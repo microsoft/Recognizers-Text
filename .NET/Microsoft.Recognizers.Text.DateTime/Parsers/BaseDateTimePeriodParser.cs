@@ -1097,25 +1097,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             DateObject pastBegin = (DateObject)((DateTimeResolutionResult)pr1.Value).PastValue,
                        pastEnd = (DateObject)((DateTimeResolutionResult)pr2.Value).PastValue;
 
-            // If one side contains "ampm" while the other doesn't, shift the time appropriately
-            var ampmStr1 = ((DateTimeResolutionResult)pr1.Value).Comment;
-            var ampmStr2 = ((DateTimeResolutionResult)pr2.Value).Comment;
-            if (ampmStr1 is Constants.Comment_AmPm ^ ampmStr2 is Constants.Comment_AmPm)
-            {
-                if (futureBegin > futureEnd && futureBegin.Date == futureEnd.Date)
-                {
-                    futureEnd = futureEnd.AddHours(Constants.HalfDayHourCount);
-                }
-
-                if (pastBegin > pastEnd && pastBegin.Date == pastEnd.Date)
-                {
-                    pastEnd = pastEnd.AddHours(Constants.HalfDayHourCount);
-                }
-            }
-
-            var leftTimex = pr1.TimexStr;
-            var rightTimex = pr2.TimexStr;
-
             if (bothHaveDates)
             {
                 if (futureBegin > futureEnd)
@@ -1128,27 +1109,43 @@ namespace Microsoft.Recognizers.Text.DateTime
                     pastEnd = futureEnd;
                 }
             }
+
+            if (bothHaveDates)
+            {
+                var duration = futureEnd - futureBegin;
+                var durationStr = Convert.ToInt32(duration.TotalHours) != 0 ? $"{Convert.ToInt32(duration.TotalHours)}H" :
+                    $"{Convert.ToInt32(duration.TotalMinutes)}M";
+                ret.Timex = $"({pr1.TimexStr},{pr2.TimexStr},PT{durationStr})";
+
+                // Do nothing
+            }
             else if (beginHasDate)
             {
                 futureEnd = DateObject.MinValue.SafeCreateFromValue(
                     futureBegin.Year, futureBegin.Month, futureBegin.Day, futureEnd.Hour, futureEnd.Minute, futureEnd.Second);
+
                 pastEnd = DateObject.MinValue.SafeCreateFromValue(
                     pastBegin.Year, pastBegin.Month, pastBegin.Day, pastEnd.Hour, pastEnd.Minute, pastEnd.Second);
 
-                rightTimex = TimexUtility.CombineDateTimeTimex(pr2.TimexStr, pr1.TimexStr, futureEnd);
+                var dateStr = pr1.TimexStr.Split('T')[0];
+                var durationStr = DateTimeFormatUtil.LuisTimeSpan(futureEnd - futureBegin);
+                ret.Timex = $"({pr1.TimexStr},{dateStr + pr2.TimexStr},{durationStr})";
             }
             else if (endHasDate)
             {
                 futureBegin = DateObject.MinValue.SafeCreateFromValue(
                     futureEnd.Year, futureEnd.Month, futureEnd.Day, futureBegin.Hour, futureBegin.Minute, futureBegin.Second);
+
                 pastBegin = DateObject.MinValue.SafeCreateFromValue(
                     pastEnd.Year, pastEnd.Month, pastEnd.Day, pastBegin.Hour, pastBegin.Minute, pastBegin.Second);
 
-                leftTimex = TimexUtility.CombineDateTimeTimex(pr1.TimexStr, pr2.TimexStr, pastBegin);
+                var dateStr = pr2.TimexStr.Split('T')[0];
+                var durationStr = DateTimeFormatUtil.LuisTimeSpan(pastEnd - pastBegin);
+                ret.Timex = $"({dateStr + pr1.TimexStr},{pr2.TimexStr},{durationStr})";
             }
 
-            ret.Timex = TimexUtility.GenerateDateTimePeriodTimex(leftTimex, rightTimex, futureEnd - futureBegin);
-
+            var ampmStr1 = ((DateTimeResolutionResult)pr1.Value).Comment;
+            var ampmStr2 = ((DateTimeResolutionResult)pr2.Value).Comment;
             if (!string.IsNullOrEmpty(ampmStr1) && ampmStr1.EndsWith(Constants.Comment_AmPm, StringComparison.Ordinal) &&
                 !string.IsNullOrEmpty(ampmStr2) && ampmStr2.EndsWith(Constants.Comment_AmPm, StringComparison.Ordinal))
             {

@@ -99,18 +99,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             {
                 timeOfDay = Constants.BusinessHour;
             }
-            else if (DateTimeDefinitions.MealtimeBreakfastTermList.Any(o => trimmedText.Contains(o)))
-            {
-                timeOfDay = Constants.MealtimeBreakfast;
-            }
-            else if (DateTimeDefinitions.MealtimeLunchTermList.Any(o => trimmedText.Contains(o)))
-            {
-                timeOfDay = Constants.MealtimeLunch;
-            }
-            else if (DateTimeDefinitions.MealtimeDinnerTermList.Any(o => trimmedText.Contains(o)))
-            {
-                timeOfDay = Constants.MealtimeDinner;
-            }
             else
             {
                 timex = null;

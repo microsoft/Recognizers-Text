@@ -232,11 +232,17 @@ namespace Microsoft.Recognizers.Text.DateTime
             DateObject futureBegin = (DateObject)((DateTimeResolutionResult)pr1.Value).FutureValue,
                 futureEnd = (DateObject)((DateTimeResolutionResult)pr2.Value).FutureValue;
 
-            DateObject pastBegin = (DateObject)((DateTimeResolutionResult)pr1.Value).PastValue;
+            DateObject pastBegin = (DateObject)((DateTimeResolutionResult)pr1.Value).PastValue,
+                pastEnd = (DateObject)((DateTimeResolutionResult)pr2.Value).PastValue;
 
             if (futureBegin > futureEnd)
             {
                 futureBegin = pastBegin;
+            }
+
+            if (pastEnd < pastBegin)
+            {
+                pastEnd = futureEnd;
             }
 
             if (bothHaveDates)
@@ -246,10 +252,22 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
             else if (beginHasDate)
             {
+                // TODO: Handle "明天下午两点到五点"
+                futureEnd = DateObject.MinValue.SafeCreateFromValue(
+                    futureBegin.Year, futureBegin.Month, futureBegin.Day, futureEnd.Hour, futureEnd.Minute, futureEnd.Second);
+                pastEnd = DateObject.MinValue.SafeCreateFromValue(
+                    pastBegin.Year, pastBegin.Month, pastBegin.Day, pastEnd.Hour, pastEnd.Minute, pastEnd.Second);
+
                 leftTime = DateObject.MinValue.SafeCreateFromValue(futureBegin.Year, futureBegin.Month, futureBegin.Day);
             }
             else if (endHasDate)
             {
+                // TODO: Handle "明天下午两点到五点"
+                futureBegin = DateObject.MinValue.SafeCreateFromValue(
+                    futureEnd.Year, futureEnd.Month, futureEnd.Day, futureBegin.Hour, futureBegin.Minute, futureBegin.Second);
+                pastBegin = DateObject.MinValue.SafeCreateFromValue(
+                    pastEnd.Year, pastEnd.Month, pastEnd.Day, pastBegin.Hour, pastBegin.Minute, pastBegin.Second);
+
                 rightTime = DateObject.MinValue.SafeCreateFromValue(futureEnd.Year, futureEnd.Month, futureEnd.Day);
             }
 
@@ -258,18 +276,27 @@ namespace Microsoft.Recognizers.Text.DateTime
             var leftResultTime = (DateObject)leftResult.FutureValue;
             var rightResultTime = (DateObject)rightResult.FutureValue;
 
+            int day = referenceTime.Day,
+                month = referenceTime.Month,
+                year = referenceTime.Year;
+
             // check if the right time is smaller than the left time, if yes, add one day
             int hour = leftResultTime.Hour > 0 ? leftResultTime.Hour : 0,
                 min = leftResultTime.Minute > 0 ? leftResultTime.Minute : 0,
                 second = leftResultTime.Second > 0 ? leftResultTime.Second : 0;
 
-            leftTime = leftTime.AddHours(hour).AddMinutes(min).AddSeconds(second);
+            leftTime = leftTime.AddHours(hour);
+            leftTime = leftTime.AddMinutes(min);
+            leftTime = leftTime.AddSeconds(second);
+            DateObject.MinValue.SafeCreateFromValue(year, month, day, hour, min, second);
 
             hour = rightResultTime.Hour > 0 ? rightResultTime.Hour : 0;
             min = rightResultTime.Minute > 0 ? rightResultTime.Minute : 0;
             second = rightResultTime.Second > 0 ? rightResultTime.Second : 0;
 
-            rightTime = rightTime.AddHours(hour).AddMinutes(min).AddSeconds(second);
+            rightTime = rightTime.AddHours(hour);
+            rightTime = rightTime.AddMinutes(min);
+            rightTime = rightTime.AddSeconds(second);
 
             // the right side time contains "ampm", while the left side doesn't
             if (rightResult.Comment is Constants.Comment_AmPm &&
@@ -285,18 +312,23 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(leftTime, rightTime);
 
-            var leftTimex = pr1.TimexStr;
-            var rightTimex = pr2.TimexStr;
-            if (beginHasDate)
+            var leftTimex = string.Empty;
+            var rightTimex = string.Empty;
+
+            // "X" is timex token for not determined time
+            if (!pr1.TimexStr.Contains("X") && !pr2.TimexStr.Contains("X"))
             {
-                rightTimex = DateTimeFormatUtil.LuisDateShortTime(rightTime, pr2.TimexStr);
+                leftTimex = DateTimeFormatUtil.LuisDateTime(leftTime);
+                rightTimex = DateTimeFormatUtil.LuisDateTime(rightTime);
             }
-            else if (endHasDate)
+            else
             {
-                leftTimex = DateTimeFormatUtil.LuisDateShortTime(leftTime, pr1.TimexStr);
+                leftTimex = pr1.TimexStr;
+                rightTimex = pr2.TimexStr;
             }
 
-            ret.Timex = TimexUtility.GenerateDateTimePeriodTimex(leftTimex, rightTimex, rightTime - leftTime);
+            ret.Timex = $"({leftTimex},{rightTimex},PT{Convert.ToInt32((rightTime - leftTime).TotalHours)}H)";
+
             ret.Success = true;
             return ret;
         }

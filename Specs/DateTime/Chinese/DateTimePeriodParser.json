@@ -34,7 +34,7 @@
         "Text": "从昨天下午两点到明天四点",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "(2016-11-06T14,2016-11-08T04,PT38H)",
+          "Timex": "(2016-11-06T14:00:00,2016-11-08T04:00:00,PT38H)",
           "FutureResolution": {
             "startDateTime": "2016-11-06 14:00:00",
             "endDateTime": "2016-11-08 04:00:00"
@@ -109,7 +109,7 @@
         "Text": "2点-明天4点",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "(2016-11-07T02,2016-11-08T04,PT26H)",
+          "Timex": "(2016-11-07T02:00:00,2016-11-08T04:00:00,PT26H)",
           "FutureResolution": {
             "startDateTime": "2016-11-07 02:00:00",
             "endDateTime": "2016-11-08 04:00:00"
@@ -309,7 +309,7 @@
         "Text": "从现在到八点",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "(PRESENT_REF,2016-11-07T20,PT3H48M)",
+          "Timex": "(2016-11-07T16:12:00,2016-11-07T20:00:00,PT4H)",
           "FutureResolution": {
             "startDateTime": "2016-11-07 16:12:00",
             "endDateTime": "2016-11-07 20:00:00"
@@ -334,7 +334,7 @@
         "Text": "今晚八点到九点",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "(2016-11-07T20,2016-11-07T21,PT1H)",
+          "Timex": "(2016-11-07T20:00:00,2016-11-07T21:00:00,PT1H)",
           "FutureResolution": {
             "startDateTime": "2016-11-07 20:00:00",
             "endDateTime": "2016-11-07 21:00:00"
@@ -359,7 +359,7 @@
         "Text": "今晚7点到7点30",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "(2016-11-07T19,2016-11-07T19:30,PT30M)",
+          "Timex": "(2016-11-07T19:00:00,2016-11-07T19:30:00,PT0H)",
           "FutureResolution": {
             "startDateTime": "2016-11-07 19:00:00",
             "endDateTime": "2016-11-07 19:30:00"
@@ -639,58 +639,6 @@
         },
         "Start": 14,
         "Length": 6
-      }
-    ]
-  },
-  {
-    "Input": "明天下午两点到五点",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "明天下午两点到五点",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "(2016-11-08T14,2016-11-08T17,PT3H)",
-          "FutureResolution": {
-            "startDateTime": "2016-11-08 14:00:00",
-            "endDateTime": "2016-11-08 17:00:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-08 14:00:00",
-            "endDateTime": "2016-11-08 17:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 9
-      }
-    ]
-  },
-  {
-    "Input": "2:00-明天4:00",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T16:12:00"
-    },
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "2:00-明天4:00",
-        "Type": "datetimerange",
-        "Value": {
-          "Timex": "(2016-11-07T02:00,2016-11-08T04:00,PT26H)",
-          "FutureResolution": {
-            "startDateTime": "2016-11-07 02:00:00",
-            "endDateTime": "2016-11-08 04:00:00"
-          },
-          "PastResolution": {
-            "startDateTime": "2016-11-07 02:00:00",
-            "endDateTime": "2016-11-08 04:00:00"
-          }
-        },
-        "Start": 0,
-        "Length": 11
       }
     ]
   }
