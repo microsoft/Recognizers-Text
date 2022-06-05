@@ -196,7 +196,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public const string MealTimeRegex = @"\b(at\s+)?(?<mealTime>breakfast|brunch|lunch(\s*time)?|dinner(\s*time)?|supper)\b";
       public static readonly string UnspecificTimePeriodRegex = $@"({MealTimeRegex})";
       public static readonly string TimeOfDayRegex = $@"\b(?<timeOfDay>((((in\s+the\s+){LaterEarlyRegex}?(morning|afternoon|night(-?time)?|evening)s)|((in\s+the\s+)?{LaterEarlyRegex}?(in(\s+the)?\s+)?(morning|afternoon|night(-?time)?|evening)))|{MealTimeRegex}|(((in\s+(the)?\s+)?)(daytime|business\s+hours?))))\b";
-      public static readonly string SpecificTimeOfDayRegex = $@"\b(({StrictRelativeRegex}\s+{TimeOfDayRegex})\b|\b(?<pm>toni(ght|te)))s?\b";
+      public static readonly string SpecificTimeOfDayRegex = $@"\b(({StrictRelativeRegex}\s+{TimeOfDayRegex})\b|\btoni(ght|te))s?\b";
       public static readonly string TimeFollowedUnit = $@"^\s*{TimeUnitRegex}";
       public static readonly string TimeNumberCombinedWithUnit = $@"\b(?<num>\d+(\.\d*)?){TimeUnitRegex}";
       public static readonly string[] BusinessHourSplitStrings = { @"business", @"hour" };
@@ -213,8 +213,8 @@ namespace Microsoft.Recognizers.Definitions.English
       public const string SpecificEndOfRegex = @"(the\s+)?end of(\s+the)?\s*$";
       public const string UnspecificEndOfRegex = @"\b(the\s+)?(eod|(end\s+of\s+day))\b";
       public const string UnspecificEndOfRangeRegex = @"\b(eoy)\b";
-      public static readonly string PeriodTimeOfDayRegex = $@"\b((in\s+(the)?\s+)?{LaterEarlyRegex}?((this\s+)?{DateTimeTimeOfDayRegex}|(?<timeOfDay>(?<pm>tonight))))\b";
-      public static readonly string PeriodSpecificTimeOfDayRegex = $@"\b({LaterEarlyRegex}?this\s+{DateTimeTimeOfDayRegex}|({StrictRelativeRegex}\s+{PeriodTimeOfDayRegex})\b|\b(?<pm>toni(ght|te)))\b";
+      public static readonly string PeriodTimeOfDayRegex = $@"\b((in\s+(the)?\s+)?{LaterEarlyRegex}?(this\s+)?{DateTimeTimeOfDayRegex})\b";
+      public static readonly string PeriodSpecificTimeOfDayRegex = $@"\b({LaterEarlyRegex}?this\s+{DateTimeTimeOfDayRegex}|({StrictRelativeRegex}\s+{PeriodTimeOfDayRegex})\b|\btoni(ght|te))\b";
       public static readonly string PeriodTimeOfDayWithDateRegex = $@"\b(({PeriodTimeOfDayRegex}(\s+(on|of))?))\b";
       public const string LessThanRegex = @"\b(less\s+than)\b";
       public const string MoreThanRegex = @"\b(more\s+than)\b";

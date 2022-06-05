@@ -571,19 +571,19 @@ export class BaseDateTimePeriodParser implements IDateTimeParser {
             if (pastEnd < pastBegin) {
                 pastEnd = futureEnd;
             }
-            result.timex = `(${prs.begin.timexStr},${prs.end.timexStr},${DateTimeFormatUtil.luisTimeSpan(futureBegin, futureEnd)})`;
+            result.timex = `(${prs.begin.timexStr},${prs.end.timexStr},PT${DateUtils.totalHours(futureEnd, futureBegin)}H)`;
         }
         else if (beginHasDate) {
             futureEnd = DateUtils.safeCreateFromMinValue(futureBegin.getFullYear(), futureBegin.getMonth(), futureBegin.getDate(), futureEnd.getHours(), futureEnd.getMinutes(), futureEnd.getSeconds());
             pastEnd = DateUtils.safeCreateFromMinValue(pastBegin.getFullYear(), pastBegin.getMonth(), pastBegin.getDate(), pastEnd.getHours(), pastEnd.getMinutes(), pastEnd.getSeconds());
             let dateStr = prs.begin.timexStr.split('T').pop();
-            result.timex = `(${prs.begin.timexStr},${dateStr}${prs.end.timexStr},${DateTimeFormatUtil.luisTimeSpan(futureBegin, futureEnd)})`;
+            result.timex = `(${prs.begin.timexStr},${dateStr}${prs.end.timexStr},PT${DateUtils.totalHours(futureEnd, futureBegin)}H)`;
         }
         else if (endHasDate) {
             futureBegin = DateUtils.safeCreateFromMinValue(futureEnd.getFullYear(), futureEnd.getMonth(), futureEnd.getDate(), futureBegin.getHours(), futureBegin.getMinutes(), futureBegin.getSeconds());
             pastBegin = DateUtils.safeCreateFromMinValue(pastEnd.getFullYear(), pastEnd.getMonth(), pastEnd.getDate(), pastBegin.getHours(), pastBegin.getMinutes(), pastBegin.getSeconds());
             let dateStr = prs.end.timexStr.split('T')[0];
-            result.timex = `(${dateStr}${prs.begin.timexStr},${prs.end.timexStr},${DateTimeFormatUtil.luisTimeSpan(futureBegin, futureEnd)})`;
+            result.timex = `(${dateStr}${prs.begin.timexStr},${prs.end.timexStr},PT${DateUtils.totalHours(futureEnd, futureBegin)}H)`;
         }
         if (!StringUtility.isNullOrEmpty(begin.comment) && begin.comment.endsWith('ampm') && !StringUtility.isNullOrEmpty(end.comment) && end.comment.endsWith('ampm')) {
             result.comment = 'ampm';

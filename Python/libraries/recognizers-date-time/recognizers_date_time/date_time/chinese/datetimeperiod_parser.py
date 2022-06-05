@@ -218,14 +218,13 @@ class ChineseDateTimePeriodParser(BaseDateTimePeriodParser):
         result.future_value = [left_time, right_time]
         result.past_value = [left_time, right_time]
 
-        left_timex = prs.begin.timex_str
-        right_timex = prs.end.timex_str
-        if begin_has_date:
-            right_timex = DateTimeFormatUtil.luis_date_short_time(right_time, right_timex)
-        elif end_has_date:
-            left_timex = DateTimeFormatUtil.luis_date_short_time(left_time, left_timex)
-        duration_timex = DateTimeFormatUtil.luis_time_span(left_time, right_time)
-        result.timex = f'({left_timex},{right_timex},{duration_timex})'
+        fuzzy_timex = 'X' in prs.begin.timex_str or 'X' in prs.end.timex_str
+        left_timex = prs.begin.timex_str if fuzzy_timex else DateTimeFormatUtil.luis_date_time(
+            left_time)
+        right_timex = prs.end.timex_str if fuzzy_timex else DateTimeFormatUtil.luis_date_time(
+            right_time)
+        total_hours = DateUtils.total_hours(left_time, right_time)
+        result.timex = f'({left_timex},{right_timex},PT{total_hours}H)'
 
         result.success = True
         return result
