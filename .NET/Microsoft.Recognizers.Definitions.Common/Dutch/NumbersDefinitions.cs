@@ -50,7 +50,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public static readonly string SuffixRoundNumberOrdinalRegex = $@"(({AllIntRegex}\s*){RoundNumberOrdinalRegex})";
       public static readonly string AllOrdinalNumberRegex = $@"(?:{SuffixBasicOrdinalRegex}|{SuffixRoundNumberOrdinalRegex})";
       public static readonly string AllOrdinalRegex = $@"(?:{AllOrdinalNumberRegex}|{RelativeOrdinalRegex})";
-      public const string OrdinalSuffixRegex = @"(?<=\b)((\d+\s*e)|[18]\s*ste|[092-7]\s*de|([0-9]*1[0-9]\s*de)|([0-9]*[2-9][0-9]\s*ste)|([0-9]*[0]([18]\s*ste|[092-7]\s*de)))(?=\b)";
+      public const string OrdinalSuffixRegex = @"(?<=\b)((\d*(1e|2e|3e|4e|5e|6e|7e|8e|9e|0e))|(1ste|2de|3de|4de|5de|6de|7de|8ste|9de|0de)|([0-9]*1[0-9]de)|([0-9]*[2-9][0-9]ste)|([0-9]*[0](1ste|2de|3de|4de|5de|6de|7de|8ste|9de|0de)))(?=\b)";
       public const string OrdinalNumericRegex = @"(?<=\b)(\d{1,3}(\s*.\s*\d{3})*\s*e)(?=\b)";
       public static readonly string OrdinalRoundNumberRegex = $@"(?<!(één|een)\s+){RoundNumberOrdinalRegex}";
       public static readonly string OrdinalDutchRegex = $@"(?<=\b){AllOrdinalRegex}(?=\b)";

@@ -458,21 +458,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             return $"W{weekNum.ToString("D2", CultureInfo.InvariantCulture)}";
         }
 
-        public static string CombineDateTimeTimex(string timeTimex1, string dateTimeTimex2, DateObject dateTime1)
-        {
-            return dateTimeTimex2.Equals(Constants.TimexNow, StringComparison.Ordinal) ? DateTimeFormatUtil.LuisDateShortTime(dateTime1) :
-                    dateTimeTimex2.Split(Constants.TimeTimexPrefix[0])[0] + timeTimex1;
-        }
-
         public static string GenerateDateTimePeriodTimex(string beginTimex, string endTimex, string durationTimex)
         {
             return $"({beginTimex},{endTimex},{durationTimex})";
-        }
-
-        public static string GenerateDateTimePeriodTimex(string beginTimex, string endTimex, TimeSpan duration)
-        {
-            var durationTimex = DateTimeFormatUtil.LuisTimeSpan(duration);
-            return GenerateDateTimePeriodTimex(beginTimex, endTimex, durationTimex);
         }
 
         public static string GenerateDateTimePeriodTimex(DateObject beginDateTime, DateObject endDateTime, string durationTimex)
