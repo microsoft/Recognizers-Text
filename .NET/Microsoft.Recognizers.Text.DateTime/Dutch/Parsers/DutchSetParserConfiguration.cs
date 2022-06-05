@@ -31,6 +31,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         private static readonly Regex YearTypeRegex =
             new Regex(DateTimeDefinitions.YearTypeRegex, RegexFlags);
 
+        private static readonly Regex SemiYearTypeRegex =
+            new Regex(DateTimeDefinitions.SemiYearTypeRegex, RegexFlags);
+
+        private static readonly Regex WeekendTypeRegex =
+            new Regex(DateTimeDefinitions.WeekendTypeRegex, RegexFlags);
+
         public DutchSetParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
         {
@@ -125,9 +131,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             {
                 timex = "P1Y";
             }
+            else if (SemiYearTypeRegex.IsMatch(trimmedText))
+            {
+                timex = "P0.5Y";
+            }
             else if (QuarterTypeRegex.IsMatch(trimmedText))
             {
                 timex = "P3M";
+            }
+            else if (WeekendTypeRegex.IsMatch(trimmedText))
+            {
+                timex = "XXXX-WXX-WE";
             }
             else
             {
