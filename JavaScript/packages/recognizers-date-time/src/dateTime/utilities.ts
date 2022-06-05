@@ -260,6 +260,12 @@ export class DateTimeFormatUtil {
         return `${DateTimeFormatUtil.luisDateFromDate(time)}T${DateTimeFormatUtil.luisTimeFromDate(time)}`;
     }
 
+    public static luisDateShortTime(time: Date, timex: string = null): string {
+        let hasMin = timex != null ? timex.includes(Constants.TimeTimexConnector) : false;
+        let hasSec = timex != null ? timex.split(Constants.TimeTimexConnector).length > 2 : false;
+        return `${DateTimeFormatUtil.luisDateFromDate(time)}${DateTimeFormatUtil.formatShortTime(time, hasMin, hasSec)}`;
+    }
+
     public static formatDate(date: Date): string {
         return [DateTimeFormatUtil.toString(date.getFullYear(), 4),
         DateTimeFormatUtil.toString(date.getMonth() + 1, 2),
@@ -274,6 +280,13 @@ export class DateTimeFormatUtil {
 
     public static formatDateTime(datetime: Date): string {
         return `${DateTimeFormatUtil.formatDate(datetime)} ${DateTimeFormatUtil.formatTime(datetime)}`;
+    }
+
+    public static formatShortTime(time: Date, hasMin: Boolean = false, hasSec: Boolean = false): string {
+        let hour = time.getHours();
+        let min = hasMin || time.getMinutes() > 0 ? time.getMinutes() : -1;
+        let sec = hasSec || time.getSeconds() > 0 ? time.getSeconds() : -1;
+        return DateTimeFormatUtil.shortTime(hour, min, sec);
     }
 
     public static shortTime(hour: number, minute: number, second: number): string {

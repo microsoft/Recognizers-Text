@@ -238,7 +238,7 @@
         "Text": "de 2:00pm, 2016-2-21 a 3:32, 04/23/2016",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "(2016-02-21T14:00,2016-04-23T03:32,PT1478H)",
+          "Timex": "(2016-02-21T14:00,2016-04-23T03:32,PT1477H32M)",
           "FutureResolution": {
             "startDateTime": "2016-02-21 14:00:00",
             "endDateTime": "2016-04-23 03:32:00"
@@ -952,7 +952,7 @@
         "Text": "desde las 2 p. m. del 21 de feb de 2016 hasta el 4-23-16 a las 3:32",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "(2016-02-21T14:00,2016-04-23T03:32,PT1478H)",
+          "Timex": "(2016-02-21T14:00,2016-04-23T03:32,PT1477H32M)",
           "FutureResolution": {
             "startDateTime": "2016-02-21 14:00:00",
             "endDateTime": "2016-04-23 03:32:00"
@@ -1978,7 +1978,7 @@
         "Text": "desde las 14 h de 21-2-2016 hasta el 23.4.16 a las 3:32",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "(2016-02-21T14:00,2016-04-23T03:32,PT1478H)",
+          "Timex": "(2016-02-21T14:00,2016-04-23T03:32,PT1477H32M)",
           "FutureResolution": {
             "startDateTime": "2016-02-21 14:00:00",
             "endDateTime": "2016-04-23 03:32:00"
