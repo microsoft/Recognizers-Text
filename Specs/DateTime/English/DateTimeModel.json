@@ -18407,7 +18407,7 @@
     "Context": {
       "ReferenceDateTime": "2019-12-15T01:00:00"
     },
-    "NotSupported": ".NET, javascript, python, java",
+    "NotSupported": "dotnet, javascript, python, java",
     "Results": [
       {
         "Text": "2000",
