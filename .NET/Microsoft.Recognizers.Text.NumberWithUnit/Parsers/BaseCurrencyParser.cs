@@ -39,6 +39,22 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 pr = numberWithUnitParser.Parse(extResult);
                 var value = pr.Value as UnitValue;
 
+                // Parse unit like "MUSD" that resolves to "1 million USD"
+                if (extResult.Data is ExtractResult)
+                {
+                    var data = (ExtractResult)extResult.Data;
+                    var unitStr = extResult.Text.Replace(data.Text, string.Empty).Trim();
+                    if (this.Config.MultiplierIsoCodeList.Contains(unitStr) && float.TryParse(value?.Number, out var number))
+                    {
+                        value.Number = (number * 1000000).ToString("G15", CultureInfo.InvariantCulture);
+                        pr.Value = new UnitValue
+                        {
+                            Unit = value?.Unit,
+                            Number = value?.Number,
+                        };
+                    }
+                }
+
                 Config.CurrencyNameToIsoCodeMap.TryGetValue(value?.Unit, out var mainUnitIsoCode);
                 if (string.IsNullOrEmpty(mainUnitIsoCode) || mainUnitIsoCode.StartsWith(Constants.FAKE_ISO_CODE_PREFIX, StringComparison.Ordinal))
                 {
