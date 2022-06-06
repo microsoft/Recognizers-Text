@@ -223,7 +223,7 @@ export class BaseMergedExtractor implements IDateTimeExtractor {
         });
     }
 
-    private tryMergeModifierToken(er:ExtractResult, regex: RegExp, source: string, potentialAmbiguity:boolean = false): boolean {
+    protected tryMergeModifierToken(er:ExtractResult, regex: RegExp, source: string, potentialAmbiguity:boolean = false): boolean {
         let beforeStr = source.substr(0, er.start).toLowerCase();
 
         // Avoid adding mod for ambiguity cases, such as "from" in "from ... to ..." should not add mod
@@ -250,7 +250,7 @@ export class BaseMergedExtractor implements IDateTimeExtractor {
         return false;
     }
 
-    private assignModMetadata(metadata: MetaData): MetaData {
+    protected assignModMetadata(metadata: MetaData): MetaData {
 
         if (metadata === undefined || metadata === null) {
             metadata = new MetaData();
@@ -262,7 +262,7 @@ export class BaseMergedExtractor implements IDateTimeExtractor {
         return metadata
     }
 
-    private hasTokenIndex(source: string, regex: RegExp): { matched: boolean, index: number } {
+    protected hasTokenIndex(source: string, regex: RegExp): { matched: boolean, index: number } {
         // This part is different from C# because no Regex RightToLeft option in JS
         let result = { matched: false, index: -1 };
         let matchResult = RegExpUtility.getMatches(regex, source);

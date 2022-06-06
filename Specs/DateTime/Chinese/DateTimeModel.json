@@ -225,7 +225,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "农历2015年十月初一",
@@ -250,7 +249,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "正月三十",
@@ -651,7 +649,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T14:07:00"
     },
-    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "2015年十月初一早上九点二十",
@@ -1655,7 +1652,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "2018年以前",
@@ -1681,7 +1678,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "2018年之后",
@@ -1759,7 +1756,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "自2018年以来",
@@ -1785,7 +1782,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "2018年开始",
@@ -1811,7 +1808,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "07年以后",
@@ -1837,7 +1834,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "07 年以前",
@@ -2193,7 +2190,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-30T14:16:03"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "python, java",
     "Results": [
       {
         "Text": "2015年前",
@@ -3144,7 +3141,7 @@
     "Context": {
       "ReferenceDateTime": "2019-07-01T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "python, java",
     "Results": [
       {
         "Text": "今天晚上八点之前",
@@ -3170,7 +3167,7 @@
     "Context": {
       "ReferenceDateTime": "2019-07-01T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "python, java",
     "Results": [
       {
         "Text": "下午三点之前",
@@ -3850,7 +3847,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-30T14:16:03"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, python",
     "Results": [
       {
         "Text": "从2016年3月1日开始",
@@ -4565,7 +4562,7 @@
     "Context": {
       "ReferenceDateTime": "2019-01-06T12:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, python",
     "Results": [
       {
         "Text": "自2016年9月1日起",
@@ -4821,7 +4818,7 @@
     "Context": {
       "ReferenceDateTime": "2019-01-06T12:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, python",
     "Results": [
       {
         "Text": "2015年1月1日",
@@ -5883,7 +5880,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "神龙二年正月初一",
