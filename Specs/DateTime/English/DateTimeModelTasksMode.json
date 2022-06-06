@@ -54,6 +54,7 @@
     "Context": {
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
+    "NotSupported": "javascript, python",
     "Results": []
   },
   {
@@ -61,6 +62,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "javascript, python",
     "Results": []
   },
   {
@@ -68,6 +70,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "javascript, python",
     "Results": []
   },
   {
@@ -83,6 +86,7 @@
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
+    "NotSupported": "javascript, python",
     "Results": []
   }
 ]
