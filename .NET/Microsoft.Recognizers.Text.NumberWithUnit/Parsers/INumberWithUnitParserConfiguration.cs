@@ -41,6 +41,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             this.CurrencyFractionMapping = BaseCurrency.CurrencyFractionMapping.ToImmutableDictionary();
             this.NonStandardFractionalSubunits = BaseCurrency.NonStandardFractionalSubunits.ToImmutableDictionary();
             this.CurrencyNameToIsoCodeMap = new Dictionary<string, string>();
+            this.MultiplierIsoCodeList = new List<string>();
             this.CurrencyFractionCodeList = new Dictionary<string, string>();
             this.TypeList = new Dictionary<string, string>();
             this.CheckFirstSuffix = false;
@@ -65,6 +66,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         public bool CheckFirstSuffix { get; set; }
 
         public IDictionary<string, string> CurrencyNameToIsoCodeMap { get; set; }
+
+        public List<string> MultiplierIsoCodeList { get; set; }
 
         public IDictionary<string, string> CurrencyFractionCodeList { get; set; }
 
