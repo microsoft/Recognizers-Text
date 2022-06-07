@@ -18408,24 +18408,7 @@
       "ReferenceDateTime": "2019-12-15T01:00:00"
     },
     "NotSupported": "dotnet, javascript, python, java",
-    "Results": [
-      {
-        "Text": "2000",
-        "Start": 8,
-        "End": 11,
-        "TypeName": "datetimeV2.daterange",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "2000",
-              "type": "daterange",
-              "start": "2000-01-01",
-              "end": "2001-01-01"
-            }
-          ]
-        }
-      }
-    ]
+    "Results": []
   },
   {
     "Input": "Show sales of 2007 and 2009",
