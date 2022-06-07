@@ -52,6 +52,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public static readonly Regex PotentialAmbiguousRangeRegex =
             new Regex(DateTimeDefinitions.PotentialAmbiguousRangeRegex, RegexFlags);
 
+        public static readonly Regex YearRegex =
+           new Regex(DateTimeDefinitions.YearRegex, RegexFlags);
+
         public static readonly Regex[] TermFilterRegexes =
         {
             // one on one
@@ -151,6 +154,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         Regex IMergedExtractorConfiguration.UnspecificDatePeriodRegex => UnspecificDatePeriodRegex;
 
         Regex IMergedExtractorConfiguration.UnspecificTimePeriodRegex => null;
+
+        Regex IMergedExtractorConfiguration.YearRegex => YearRegex;
 
         public Regex FailFastRegex { get; } = null;
 

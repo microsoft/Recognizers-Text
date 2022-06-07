@@ -53,6 +53,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Swedish
         public static readonly Regex FailFastRegex =
             new Regex(DateTimeDefinitions.FailFastRegex, RegexFlags | RegexOptions.Compiled);
 
+        public static readonly Regex YearRegex =
+           new Regex(DateTimeDefinitions.YearRegex, RegexFlags);
+
         public static readonly Regex[] TermFilterRegexes =
         {
             // one on one
@@ -163,6 +166,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Swedish
         Regex IMergedExtractorConfiguration.UnspecificDatePeriodRegex => UnspecificDatePeriodRegex;
 
         Regex IMergedExtractorConfiguration.UnspecificTimePeriodRegex => UnspecificTimePeriodRegex;
+
+        Regex IMergedExtractorConfiguration.YearRegex => YearRegex;
 
         Regex IMergedExtractorConfiguration.FailFastRegex => FailFastRegex;
 

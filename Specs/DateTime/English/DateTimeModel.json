@@ -18402,6 +18402,55 @@
     ]
   },
   {
+    "Input": "deliver 2000 pieces of toys.",
+    "Comment": "Default mode produces a false positive for it and it's a case from TasksMode.",
+    "Context": {
+      "ReferenceDateTime": "2019-12-15T01:00:00"
+    },
+    "NotSupported": "dotnet, javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Show sales of 2007 and 2009",
+    "Context": {
+      "ReferenceDateTime": "2018-06-26T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2007",
+        "Start": 14,
+        "End": 17,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2007",
+              "type": "daterange",
+              "start": "2007-01-01",
+              "end": "2008-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2009",
+        "Start": 23,
+        "End": 26,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2009",
+              "type": "daterange",
+              "start": "2009-01-01",
+              "end": "2010-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "It will happen 3 days from Tuesday.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -21270,7 +21319,7 @@
   {
     "Input": "I want to book a flight for the weekend of halloween",
     "Context": {
-        "ReferenceDateTime": "2021-11-09T18:00:00"
+      "ReferenceDateTime": "2021-11-09T18:00:00"
     },
     "NotSupported": "java, javascript, python",
     "Results": [
@@ -21301,7 +21350,7 @@
   {
     "Input": "I want to book a flight for halloween weekend 2021",
     "Context": {
-        "ReferenceDateTime": "2021-11-09T18:00:00"
+      "ReferenceDateTime": "2021-11-09T18:00:00"
     },
     "NotSupported": "java, javascript, python",
     "Results": [
@@ -21326,7 +21375,7 @@
   {
     "Input": "I need to prepare for labor day weekend",
     "Context": {
-        "ReferenceDateTime": "2021-11-09T18:00:00"
+      "ReferenceDateTime": "2021-11-09T18:00:00"
     },
     "NotSupported": "java, javascript, python",
     "Results": [
@@ -21357,7 +21406,7 @@
   {
     "Input": "I need to prepare for labor day 2021 weekend",
     "Context": {
-        "ReferenceDateTime": "2021-11-09T18:00:00"
+      "ReferenceDateTime": "2021-11-09T18:00:00"
     },
     "NotSupported": "java, javascript, python",
     "Results": [
@@ -21382,7 +21431,7 @@
   {
     "Input": "We'll take weekend of thanksgiving 2023 off",
     "Context": {
-        "ReferenceDateTime": "2021-11-09T18:00:00"
+      "ReferenceDateTime": "2021-11-09T18:00:00"
     },
     "NotSupported": "java, javascript, python",
     "Results": [
