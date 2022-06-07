@@ -22,6 +22,28 @@
     ]
   },
   {
+    "Input": "i'll go back april22",
+    "Results": [
+      {
+        "Text": "april22",
+        "Type": "date",
+        "Start": 13,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "i'll go back 22april",
+    "Results": [
+      {
+        "Text": "22april",
+        "Type": "date",
+        "Start": 13,
+        "Length": 7
+      }
+    ]
+  },
+  {
     "Input": "i'll go back jan-1",
     "Results": [
       {
@@ -62,6 +84,17 @@
         "Type": "date",
         "Start": 13,
         "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "i'll go back january12,2016",
+    "Results": [
+      {
+        "Text": "january12,2016",
+        "Type": "date",
+        "Start": 13,
+        "Length": 14
       }
     ]
   },

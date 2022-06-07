@@ -69,6 +69,29 @@
     ]
   },
   {
+    "Input": "I'll go back Oct2",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "Oct2",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-10-02",
+          "FutureResolution": {
+            "date": "2017-10-02"
+          },
+          "PastResolution": {
+            "date": "2016-10-02"
+          }
+        },
+        "Start": 13,
+        "Length": 4
+      }
+    ]
+  },
+  {
     "Input": "I'll go back Oct/2",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -111,6 +134,29 @@
         },
         "Start": 13,
         "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back October2",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "October2",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-10-02",
+          "FutureResolution": {
+            "date": "2017-10-02"
+          },
+          "PastResolution": {
+            "date": "2016-10-02"
+          }
+        },
+        "Start": 13,
+        "Length": 8
       }
     ]
   },
