@@ -466,6 +466,17 @@
     ]
   },
   {
+    "Input": "i'll go back tmrw",
+    "Results": [
+      {
+        "Text": "tmrw",
+        "Type": "date",
+        "Start": 13,
+        "Length": 4
+      }
+    ]
+  },
+  {
     "Input": "i'll go back yesterday",
     "Results": [
       {
@@ -495,6 +506,17 @@
         "Type": "date",
         "Start": 13,
         "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "i'll go back the day after tmrw",
+    "Results": [
+      {
+        "Text": "the day after tmrw",
+        "Type": "date",
+        "Start": 13,
+        "Length": 18
       }
     ]
   },

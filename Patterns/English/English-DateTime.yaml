@@ -248,10 +248,10 @@ NextDateRegex: !nestedRegex
   def: \b({NextPrefixRegex}(\s*week{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|((on\s+)?{WeekDayRegex}((\s+of)?\s+(the\s+following|(the\s+)?next)\s*week))\b
   references: [ NextPrefixRegex, WeekDayRegex, PrefixWeekDayRegex ]
 SpecialDayRegex: !nestedRegex
-  def: \b((the\s+)?day before yesterday|(the\s+)?day after (tomorrow|tmr)|the\s+day\s+(before|after)(?!=\s+day)|((the\s+)?({RelativeRegex}|my)\s+day)|yesterday|tomorrow|tmr|today|otd|current date)\b
+  def: \b((the\s+)?day before yesterday|(the\s+)?day after (tomorrow|tmr|tmrw)|the\s+day\s+(before|after)(?!=\s+day)|((the\s+)?({RelativeRegex}|my)\s+day)|yesterday|tomorrow|tmr|tmrw|today|otd|current date)\b
   references: [ RelativeRegex ]
 SpecialDayWithNumRegex: !nestedRegex
-  def: \b((?<number>{WrittenNumRegex})\s+days?\s+from\s+(?<day>yesterday|tomorrow|tmr|today|current date))\b
+  def: \b((?<number>{WrittenNumRegex})\s+days?\s+from\s+(?<day>yesterday|tomorrow|tmr|tmrw|today|current date))\b
   references: [ WrittenNumRegex ]
 RelativeDayRegex: !nestedRegex
   def: \b(((the\s+)?{RelativeRegex}\s+day))\b
@@ -600,7 +600,7 @@ SinceRegexExp: !nestedRegex
 AgoRegex: !simpleRegex
   def: \b(ago|earlier|before\s+(?<day>yesterday|today))\b
 LaterRegex: !nestedRegex
-  def: \b(?:later(?!((\s+in)?\s*{OneWordPeriodRegex})|(\s+{TimeOfDayRegex})|\s+than\b)|from now|(from|after)\s+(?<day>tomorrow|tmr|today))\b
+  def: \b(?:later(?!((\s+in)?\s*{OneWordPeriodRegex})|(\s+{TimeOfDayRegex})|\s+than\b)|from now|(from|after)\s+(?<day>tomorrow|tmr|tmrw|today))\b
   references: [ OneWordPeriodRegex, TimeOfDayRegex ]
 BeforeAfterRegex: !simpleRegex
   def: \b((?<before>before)|(?<after>from|after))\b
@@ -1271,6 +1271,7 @@ PlusOneDayTerms: !list
   entries: 
     - tomorrow
     - tmr
+    - tmrw
     - day after
 MinusOneDayTerms: !list
   types: [ string ]
@@ -1282,6 +1283,7 @@ PlusTwoDayTerms: !list
   entries: 
     - day after tomorrow
     - day after tmr
+    - day after tmrw
 MinusTwoDayTerms: !list
   types: [ string ]
   entries: 

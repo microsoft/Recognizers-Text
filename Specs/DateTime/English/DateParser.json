@@ -819,6 +819,29 @@
     ]
   },
   {
+    "Input": "I'll go back tmrw",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "tmrw",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-08",
+          "FutureResolution": {
+            "date": "2016-11-08"
+          },
+          "PastResolution": {
+            "date": "2016-11-08"
+          }
+        },
+        "Start": 13,
+        "Length": 4
+      }
+    ]
+  },
+  {
     "Input": "I'll go back yesterday",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -884,6 +907,29 @@
         },
         "Start": 13,
         "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back the day after tmrw",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "the day after tmrw",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-11-09",
+          "FutureResolution": {
+            "date": "2016-11-09"
+          },
+          "PastResolution": {
+            "date": "2016-11-09"
+          }
+        },
+        "Start": 13,
+        "Length": 18
       }
     ]
   },
