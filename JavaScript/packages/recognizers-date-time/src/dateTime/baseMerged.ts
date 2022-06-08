@@ -40,6 +40,7 @@ export interface IMergedExtractorConfiguration {
     numberEndingPattern: RegExp
     unspecificDatePeriodRegex: RegExp
     filterWordRegexList: RegExp[]
+    taskfilterWordRegexList: RegExp[]
     AmbiguityFiltersDict: Map<RegExp, RegExp>
 }
 
@@ -86,6 +87,11 @@ export class BaseMergedExtractor implements IDateTimeExtractor {
             this.checkCalendarFilterList(result, source);
         }
 
+        // filtering - TaskMode
+        if ((this.options & DateTimeOptions.Task) !== 0) {
+            this.checkTaskFilterList(result, source);
+        }
+
         result = result.sort((a, b) => a.start - b.start);
         return result;
     }
@@ -101,6 +107,17 @@ export class BaseMergedExtractor implements IDateTimeExtractor {
         }
     }
 
+    private checkTaskFilterList(ers: ExtractResult[], text: string) {
+        for (let er of ers.reverse()) {
+            for (let negRegex of this.config.taskfilterWordRegexList) {
+                let match = RegExpUtility.getMatches(negRegex, er.text).pop();
+                if (match) {
+                    ers.splice(ers.indexOf(er));
+                }
+            }
+        }
+    }
+    
     // handle cases like "move 3pm appointment to 4"
     private numberEndingRegexMatch(text: string, extractResults: ExtractResult[]): ExtractResult[] {
         let tokens = new Array<Token>();

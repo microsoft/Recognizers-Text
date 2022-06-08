@@ -51,6 +51,7 @@ class ChineseMergedExtractorConfiguration implements IMergedExtractorConfigurati
     readonly numberEndingPattern: RegExp
     readonly unspecificDatePeriodRegex: RegExp
     readonly filterWordRegexList: RegExp[]
+    readonly taskfilterWordRegexList: RegExp[]
     readonly AmbiguityFiltersDict: Map<RegExp, RegExp>
 
     constructor(dmyDateFormat: boolean) {

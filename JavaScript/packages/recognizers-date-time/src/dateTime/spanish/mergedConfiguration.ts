@@ -49,6 +49,7 @@ export class SpanishMergedExtractorConfiguration implements IMergedExtractorConf
     readonly numberEndingPattern: RegExp;
     readonly unspecificDatePeriodRegex: RegExp;
     readonly filterWordRegexList: RegExp[];
+    readonly taskfilterWordRegexList: RegExp[];
     readonly AmbiguityFiltersDict: Map<RegExp, RegExp>
 
     constructor(dmyDateFormat: boolean = false) {
@@ -74,6 +75,7 @@ export class SpanishMergedExtractorConfiguration implements IMergedExtractorConf
         this.holidayExtractor = new BaseHolidayExtractor(new SpanishHolidayExtractorConfiguration());
         this.integerExtractor = new SpanishIntegerExtractor();
         this.filterWordRegexList = [];
+        this.taskfilterWordRegexList = [];
         this.AmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(SpanishDateTime.AmbiguityFiltersDict);
     }
 }

@@ -48,6 +48,7 @@ export class FrenchMergedExtractorConfiguration implements IMergedExtractorConfi
     readonly numberEndingPattern: RegExp;
     readonly unspecificDatePeriodRegex: RegExp;
     readonly filterWordRegexList: RegExp[];
+    readonly taskfilterWordRegexList: RegExp[];
     readonly AmbiguityFiltersDict: Map<RegExp, RegExp>
 
     constructor(dmyDateFormat: boolean = false) {
@@ -73,6 +74,7 @@ export class FrenchMergedExtractorConfiguration implements IMergedExtractorConfi
         this.holidayExtractor = new BaseHolidayExtractor(new FrenchHolidayExtractorConfiguration());
         this.integerExtractor = new FrenchIntegerExtractor();
         this.filterWordRegexList = [];
+        this.taskfilterWordRegexList = [];
         this.AmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(FrenchDateTime.AmbiguityFiltersDict);
     }
 }
