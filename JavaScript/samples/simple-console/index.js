@@ -83,7 +83,7 @@ function parseAll(input, culture) {
         
         // DateTime recognizer - This function will find any Date even if its write in colloquial language -
         // E.g "I'll go back 8pm today" will return "2017-10-04 20:00:00"
-        ...Recognizers.recognizeDateTime(input, culture),
+        ...Recognizers.recognizeDateTime(input, culture, Recognizers.DateTimeOptions.Task),
         
         // Add PhoneNumber recognizer - This recognizer will find any phone number presented
         // E.g "My phone number is ( 19 ) 38294427."

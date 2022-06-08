@@ -50,8 +50,8 @@ export namespace ChineseDateTime {
     export const SpecialDate = `(?<thisyear>(${ThisPrefixRegex}|${LastPrefixRegex}|${NextPrefixRegex})年)?(?<thismonth>(${ThisPrefixRegex}|${LastPrefixRegex}|${NextPrefixRegex})月)?${DateDayRegexInCJK}`;
     export const DateUnitRegex = `(?<unit>年|个月|周|週|日|天)`;
     export const BeforeRegex = `以前|之前|前`;
-    export const AfterRegex = `以后|以後|之后|之後|后|後`;
-    export const TimePeriodLeftRegex = `^[.]`;
+    export const AfterRegex = `以后|以後|之后|之後|后|後|还剩`;
+    export const TimePeriodLeftRegex = `还剩`;
     export const DateRegexList1 = `(${LunarRegex}(\\s*))?(((${SimpleYearRegex}|${DateYearInCJKRegex})年)(\\s*))?${MonthRegex}(\\s*)${DateDayRegexInCJK}((\\s*|,|，)${WeekDayRegex})?`;
     export const DateRegexList2 = `(((${SimpleYearRegex}|${DateYearInCJKRegex})年)(\\s*))?(${LunarRegex}(\\s*))?${MonthRegex}(\\s*)${DateDayRegexInCJK}((\\s*|,|，)${WeekDayRegex})?`;
     export const DateRegexList3 = `(((${SimpleYearRegex}|${DateYearInCJKRegex})年)(\\s*))?(${LunarRegex}(\\s*))?${MonthRegex}(\\s*)(${DayRegexNumInCJK}|${DayRegex})((\\s*|,|，)${WeekDayRegex})?`;

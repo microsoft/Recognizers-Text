@@ -250,7 +250,7 @@ export namespace FrenchDateTime {
     export const RelativeDecadeRegex = `^\\b$`;
     export const YearSuffix = `(,?(\\s*à)?\\s*(${DateYearRegex}|${FullTextYearRegex}))`;
     export const SuffixAfterRegex = `^\\b$`;
-    export const YearPeriodRegex = `^\\b$`;
+    export const YearPeriodRegex = `((((du|depuis|des?)\\s+)?${YearRegex}\\s*(${TillRegex})\\s*${YearRegex})|(((entre)\\s+)${YearRegex}\\s*(${RangeConnectorRegex})\\s*${YearRegex}))`;
     export const FutureSuffixRegex = `\\b(dans\\s+le\\s+futur)\\b`;
     export const ModPrefixRegex = `\\b(${RelativeRegex}|${AroundRegex}|${BeforeRegex}|${AfterRegex}|${SinceRegex})\\b`;
     export const ModSuffixRegex = `\\b(${AgoRegex}|${LaterRegex}|${BeforeAfterRegex}|${FutureSuffixRegex}|${PastSuffixRegex})\\b`;

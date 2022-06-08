@@ -97,7 +97,7 @@ export namespace EnglishDateTime {
     export const PrefixDayRegex = `\\b((?<EarlyPrefix>earl(y|ier))|(?<MidPrefix>mid(dle)?)|(?<LatePrefix>later?))(\\s+in)?(\\s+the\\s+day)?$`;
     export const SeasonDescRegex = `(?<seas>spring|summer|fall|autumn|winter)`;
     export const SeasonRegex = `\\b(?<season>(${PrefixPeriodRegex}\\s+)?(${RelativeRegex}\\s+)?${SeasonDescRegex}((\\s+of|\\s*,\\s*)?\\s+(${YearRegex}|${RelativeRegex}\\s+year))?)\\b`;
-    export const WhichWeekRegex = `\\b(week)(\\s*)(?<number>5[0-3]|[1-4]\\d|0?[1-9])\\b`;
+    export const WhichWeekRegex = `\\b(week)(\\s*)(?<number>5[0-3]|[1-4]\\d|0?[1-9])(\\s+of\\s+(${YearRegex}|${RelativeRegex}\\s+year))?\\b`;
     export const WeekOfRegex = `(the\\s+)?((week)(\\s+(of|(commencing|starting|beginning)(\\s+on)?))|w/c)(\\s+the)?`;
     export const MonthOfRegex = `(month)(\\s*)(of)`;
     export const DateYearRegex = `(?<year>${BaseDateTime.FourDigitYearRegex}|(?<!,\\s?)${TwoDigitYearRegex}|${TwoDigitYearRegex}(?=(\\.(?!\\d)|[?!;]|$)))`;
@@ -118,7 +118,7 @@ export namespace EnglishDateTime {
     export const DatePreposition = `\\b(on|in)`;
     export const DateExtractorYearTermRegex = `(\\s+|\\s*[/\\\\.,-]\\s*|\\s+of\\s+)${DateYearRegex}`;
     export const DayPrefix = `\\b(${WeekDayRegex}|${SpecialDayRegex})\\b`;
-    export const DateExtractor1 = `\\b(${DayPrefix}\\s*[,-]?\\s*)?((${MonthRegex}[\\.]?\\s*[/\\\\.,-]?\\s*${DayRegex})|(\\(${MonthRegex}\\s*[-./]\\s*${DayRegex}\\)))(\\s*\\(\\s*${DayPrefix}\\s*\\))?(${DateExtractorYearTermRegex}\\b)?`;
+    export const DateExtractor1 = `\\b(${DayPrefix}\\s*[,-]?\\s*)?((${MonthRegex}[\\.]?\\s*[/\\\\.,-]?\\s*${DayRegex})|(\\(${MonthRegex}\\s*[-./]\\s*${DayRegex}\\)))(?!\\s*\\-\\s*\\d{2}\\b)(\\s*\\(\\s*${DayPrefix}\\s*\\))?(${DateExtractorYearTermRegex}\\b)?`;
     export const DateExtractor3 = `\\b(${DayPrefix}(\\s+|\\s*,\\s*))?(${DayRegex}[\\.]?(\\s+|\\s*[-,/]\\s*|\\s+of\\s+)${MonthRegex}[\\.]?((\\s+in)?${DateExtractorYearTermRegex})?|${BaseDateTime.FourDigitYearRegex}\\s*[-./]?\\s*(the\\s+)?(?<day>(?:3[0-1]|[1-2]\\d|0?[1-9])(?:th|nd|rd|st)?)[\\.]?(\\s+|\\s*[-,/]\\s*|\\s+of\\s+)${MonthRegex}[\\.]?)\\b`;
     export const DateExtractor4 = `\\b${MonthNumRegex}\\s*[/\\\\\\-]\\s*${DayRegex}[\\.]?\\s*[/\\\\\\-]\\s*${DateYearRegex}`;
     export const DateExtractor5 = `\\b(${DayPrefix}(\\s*,)?\\s+)?${DayRegex}\\s*[/\\\\\\-\\.]\\s*(${MonthNumRegex}|${MonthRegex})\\s*[/\\\\\\-\\.]\\s*${DateYearRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)`;
@@ -186,7 +186,7 @@ export namespace EnglishDateTime {
     export const MealTimeRegex = `\\b(at\\s+)?(?<mealTime>breakfast|brunch|lunch(\\s*time)?|dinner(\\s*time)?|supper)\\b`;
     export const UnspecificTimePeriodRegex = `(${MealTimeRegex})`;
     export const TimeOfDayRegex = `\\b(?<timeOfDay>((((in\\s+the\\s+)${LaterEarlyRegex}?(morning|afternoon|night(-?time)?|evening)s)|((in\\s+the\\s+)?${LaterEarlyRegex}?(in(\\s+the)?\\s+)?(morning|afternoon|night(-?time)?|evening)))|${MealTimeRegex}|(((in\\s+(the)?\\s+)?)(daytime|business\\s+hours?))))\\b`;
-    export const SpecificTimeOfDayRegex = `\\b((${StrictRelativeRegex}\\s+${TimeOfDayRegex})\\b|\\btoni(ght|te))s?\\b`;
+    export const SpecificTimeOfDayRegex = `\\b((${StrictRelativeRegex}\\s+${TimeOfDayRegex})\\b|\\b(?<pm>toni(ght|te)))s?\\b`;
     export const TimeFollowedUnit = `^\\s*${TimeUnitRegex}`;
     export const TimeNumberCombinedWithUnit = `\\b(?<num>\\d+(\\.\\d*)?)${TimeUnitRegex}`;
     export const BusinessHourSplitStrings = [ "business","hour" ];
@@ -203,8 +203,8 @@ export namespace EnglishDateTime {
     export const SpecificEndOfRegex = `(the\\s+)?end of(\\s+the)?\\s*$`;
     export const UnspecificEndOfRegex = `\\b(the\\s+)?(eod|(end\\s+of\\s+day))\\b`;
     export const UnspecificEndOfRangeRegex = `\\b(eoy)\\b`;
-    export const PeriodTimeOfDayRegex = `\\b((in\\s+(the)?\\s+)?${LaterEarlyRegex}?(this\\s+)?${DateTimeTimeOfDayRegex})\\b`;
-    export const PeriodSpecificTimeOfDayRegex = `\\b(${LaterEarlyRegex}?this\\s+${DateTimeTimeOfDayRegex}|(${StrictRelativeRegex}\\s+${PeriodTimeOfDayRegex})\\b|\\btoni(ght|te))\\b`;
+    export const PeriodTimeOfDayRegex = `\\b((in\\s+(the)?\\s+)?${LaterEarlyRegex}?((this\\s+)?${DateTimeTimeOfDayRegex}|(?<timeOfDay>(?<pm>tonight))))\\b`;
+    export const PeriodSpecificTimeOfDayRegex = `\\b(${LaterEarlyRegex}?this\\s+${DateTimeTimeOfDayRegex}|(${StrictRelativeRegex}\\s+${PeriodTimeOfDayRegex})\\b|\\b(?<pm>toni(ght|te)))\\b`;
     export const PeriodTimeOfDayWithDateRegex = `\\b((${PeriodTimeOfDayRegex}(\\s+(on|of))?))\\b`;
     export const LessThanRegex = `\\b(less\\s+than)\\b`;
     export const MoreThanRegex = `\\b(more\\s+than)\\b`;
