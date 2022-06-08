@@ -19199,6 +19199,7 @@
     "Context": {
       "ReferenceDateTime": "2011-07-02T00:00:00"
     },
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "first week",
@@ -19223,6 +19224,7 @@
     "Context": {
       "ReferenceDateTime": "2011-07-02T00:00:00"
     },
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "1st week",
