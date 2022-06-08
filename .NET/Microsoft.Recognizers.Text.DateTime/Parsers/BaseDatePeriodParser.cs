@@ -2100,17 +2100,51 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (match.Success)
             {
-                var num = int.Parse(match.Groups[Constants.NumberGroupName].ToString(), CultureInfo.InvariantCulture);
+                var isOrdinal = false;
+                var num = 0;
+                if (match.Groups[Constants.OrdinalGroupName].Success)
+                {
+                    isOrdinal = true;
+                    if (match.Groups[Constants.WrittenNumberGroupName].Success)
+                    {
+                        // "second week"
+                        var er = new ExtractResult
+                        {
+                            Start = match.Groups[Constants.WrittenNumberGroupName].Index,
+                            Length = match.Groups[Constants.WrittenNumberGroupName].Length,
+                            Text = match.Groups[Constants.WrittenNumberGroupName].Value,
+                        };
+                        num = Convert.ToInt32((double)this.config.NumberParser.Parse(er).Value);
+                    }
+                    else
+                    {
+                        // "2nd week"
+                        num = int.Parse(match.Groups[Constants.NumberGroupName].ToString(), CultureInfo.InvariantCulture);
+                    }
+                }
+                else if (match.Groups[Constants.WrittenNumberGroupName].Success)
+                {
+                    // "week two"
+                    num = this.config.Numbers[match.Groups[Constants.WrittenNumberGroupName].ToString()];
+                }
+                else
+                {
+                    // "week 2"
+                    num = int.Parse(match.Groups[Constants.NumberGroupName].ToString(), CultureInfo.InvariantCulture);
+                }
+
                 if (num == 0)
                 {
                     return ret;
                 }
 
                 // cases like "week 23 of 2019", "week 12 of last year"
+                var hasYear = true;
                 var year = config.DateExtractor.GetYearFromText(match.Match);
                 if (year == Constants.InvalidYear)
                 {
                     var orderStr = match.Groups[Constants.OrderGroupName].Value;
+                    hasYear = match.Groups[Constants.OrderGroupName].Success;
                     var swift = this.config.GetSwiftYear(orderStr);
                     if (swift < -1)
                     {
@@ -2120,9 +2154,21 @@ namespace Microsoft.Recognizers.Text.DateTime
                     year = referenceDate.Year + swift;
                 }
 
-                ret.Timex = year.ToString("D4", CultureInfo.InvariantCulture) + "-W" + num.ToString("D2", CultureInfo.InvariantCulture);
-
                 var firstDay = DateObject.MinValue.SafeCreateFromValue(year, 1, 1);
+
+                // In case of ordinal numbers without year (e.g. "second week"),
+                // future and past values are calculated from the reference date
+                // and the Timex does not contain the year.
+                if (isOrdinal && !hasYear)
+                {
+                    firstDay = referenceDate;
+                    ret.Timex = TimexUtility.GenerateWeekNumberTimex(num);
+                }
+                else
+                {
+                    ret.Timex = TimexUtility.GenerateWeekNumberTimex(num, year);
+                }
+
                 var firstThursday = firstDay.AddDays(DayOfWeek.Thursday - firstDay.DayOfWeek);
                 var firstWeek = Cal.GetWeekOfYear(firstThursday, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
 

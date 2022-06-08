@@ -20186,5 +20186,80 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Toon verkoop in week eenendertig",
+    "Context": {
+      "ReferenceDateTime": "2018-07-02T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "week eenendertig",
+        "Start": 16,
+        "End": 31,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-W31",
+              "type": "daterange",
+              "start": "2018-07-30",
+              "end": "2018-08-06"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Show sales in week drie van 2027",
+    "Context": {
+      "ReferenceDateTime": "2018-07-02T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "week drie van 2027",
+        "Start": 14,
+        "End": 31,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2027-W03",
+              "type": "daterange",
+              "start": "2027-01-18",
+              "end": "2027-01-25"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Toon verkoop in de week zevenentwintig van vorig jaar",
+    "Context": {
+      "ReferenceDateTime": "2018-07-02T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "week zevenentwintig van vorig jaar",
+        "Start": 19,
+        "End": 52,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-W27",
+              "type": "daterange",
+              "start": "2017-07-03",
+              "end": "2017-07-10"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

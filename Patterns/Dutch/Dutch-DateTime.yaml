@@ -64,7 +64,7 @@ WrittenElevenToNineteenRegex: !simpleRegex
 WrittenTensRegex: !simpleRegex
   def: (tien|twintig|dertig|veertig|vijftig|zestig|zeventig|tachtig|negentig)
 WrittenNumRegex: !nestedRegex
-  def: ({WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|{WrittenTensRegex}(\s+{WrittenOneToNineRegex})?)
+  def: ({WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|({WrittenOneToNineRegex}(en|ën))?{WrittenTensRegex})
   references: [ WrittenOneToNineRegex, WrittenElevenToNineteenRegex, WrittenTensRegex ]
 WrittenCenturyFullYearRegex: !nestedRegex
   def: ((twee)\s*duizend(\s+en)?(\s*{WrittenOneToNineRegex}\s*honderd)?)
@@ -169,8 +169,8 @@ MonthWithYear: !nestedRegex
   def: \b(({WrittenMonthRegex}(\.)?(\s*)[/\\\-\.,]?(\s+(van|over|in))?(\s*){RelativeYearRegex})|({RelativeYearRegex}(\s*),?(\s*){WrittenMonthRegex}))\b
   references: [ WrittenMonthRegex, RelativeYearRegex ]
 OneWordPeriodRegex: !nestedRegex
-  def: \b((((de\s+)?maand\s+(van\s+)?)?({StrictRelativeRegex}\s+)?(?<month>januari|februari|maart|april|mei|juni|juli|augustus|september|oktober|november|december|jan\.?|feb\.?|mar\.?|mrt\.?|apr\.?|jun\.?|jul\.?|aug\.?|sep\.?|sept\.?|oct\.?|okt\.?|nov\.?|dec\.?))|(maand|jaar)\s+tot(\s+op)?\s+heden|(({RelativeRegex}\s+)(mijn\s+)?(weekend|(?<business>werkweek)|week|maand|jaar(?!\s+hoger dan))|({RelativeRegex}\s+)?(mijn\s+)(weekend|(?<business>werkweek)|week|maand|jaar))(?!((\s+van)?\s+\d+|\s+tot(\s+op)?\s+heden|nu))(\s+{AfterNextSuffixRegex})?)\b
-  references: [ StrictRelativeRegex, RelativeRegex, AfterNextSuffixRegex ]
+  def: \b((((de\s+)?maand\s+(van\s+)?)?({StrictRelativeRegex}\s+)?(?<month>januari|februari|maart|april|mei|juni|juli|augustus|september|oktober|november|december|jan\.?|feb\.?|mar\.?|mrt\.?|apr\.?|jun\.?|jul\.?|aug\.?|sep\.?|sept\.?|oct\.?|okt\.?|nov\.?|dec\.?))|(maand|jaar)\s+tot(\s+op)?\s+heden|(({RelativeRegex}\s+)(mijn\s+)?(weekend|(?<business>werkweek)|(?<!\bde\s+)week|maand|jaar(?!\s+hoger dan))|de\s+week(?!\s+{WrittenNumRegex})|({RelativeRegex}\s+)?(mijn\s+)(weekend|(?<business>werkweek)|week|maand|jaar))(?!((\s+van)?\s+\d+|\s+tot(\s+op)?\s+heden|nu))(\s+{AfterNextSuffixRegex})?)\b
+  references: [ StrictRelativeRegex, RelativeRegex, AfterNextSuffixRegex, WrittenNumRegex ]
 MonthNumWithYear: !nestedRegex
   def: \b(({BaseDateTime.FourDigitYearRegex}(\s*)[/\-\.](\s*){MonthNumRegex})|({MonthNumRegex}(\s*)[/\-](\s*){BaseDateTime.FourDigitYearRegex}))\b
   references: [ BaseDateTime.FourDigitYearRegex, MonthNumRegex ]
@@ -232,8 +232,9 @@ SeasonDescRegex: !simpleRegex
 SeasonRegex: !nestedRegex
   def: \b(?<season>({PrefixPeriodRegex}(\s+)?)?({ArticleRegex}\s+)?({RelativeRegex}\s+)?{SeasonDescRegex}((\s+(in|van)|\s*,\s*)?\s+({YearRegex}|({ArticleRegex}\s+)?({RelativeRegex}\s+)?jaar))?)\b
   references: [ YearRegex, RelativeRegex, SeasonDescRegex, PrefixPeriodRegex, ArticleRegex ]
-WhichWeekRegex: !simpleRegex
-  def: \b(week)(\s*)(?<number>5[0-3]|[1-4]\d|0?[1-9])\b
+WhichWeekRegex: !nestedRegex
+  def: \b(week)(\s*)((?<number>5[0-3]|[1-4]\d|0?[1-9])|(?<writtenNumber>{WrittenNumRegex}))(\s+van\s+({YearRegex}|{RelativeRegex}\s+jaar))?\b
+  references: [ YearRegex, RelativeRegex, WrittenNumRegex ]
 WeekOfRegex: !simpleRegex
   def: (de\s+)?(week)\s+(van(\s+(de|het))?|(beginnend|die\s+begint|startend|aanvangend)(\s+op)?)
 MonthOfRegex: !simpleRegex

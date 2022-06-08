@@ -237,6 +237,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string EndGroupName = "end";
         public const string WithinGroupName = "within";
         public const string NumberGroupName = "number";
+        public const string WrittenNumberGroupName = "writtenNumber";
+        public const string OrdinalGroupName = "ordinal";
         public const string OrderGroupName = "order";
         public const string AgoGroupName = "ago";
         public const string YesterdayGroupName = "yesterday";
