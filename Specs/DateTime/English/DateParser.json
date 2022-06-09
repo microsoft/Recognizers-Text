@@ -73,6 +73,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "Oct2",
@@ -142,6 +143,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "October2",
