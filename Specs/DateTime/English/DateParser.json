@@ -825,6 +825,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "tmrw",
@@ -917,6 +918,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "the day after tmrw",
