@@ -106,11 +106,12 @@ SingleWeekDayRegex: !simpleRegex
 RelativeMonthRegex: !nestedRegex
   def: (?<relmonth>((day\s+)?of\s+)?{RelativeRegex}\s+month)\b
   references: [RelativeRegex]
-MonthRegex: !simpleRegex
-  def: \b(?<month>apr(il)?|aug(ust)?|dec(ember)?|feb(ruary)?|jan(uary)?|july?|june?|mar(ch)?|may|nov(ember)?|oct(ober)?|sept(ember)?|sep)(?!\p{L})
-# handling cases like 29Feb
+#  only to handle informal cases like 29Feb. For all other date cases, use MonthRegex.
 MonthRegexNoWordBoundary: !simpleRegex
   def: (?<month>apr(il)?|aug(ust)?|dec(ember)?|feb(ruary)?|jan(uary)?|july?|june?|mar(ch)?|may|nov(ember)?|oct(ober)?|sept(ember)?|sep)(?!\p{L})
+MonthRegex: !nestedRegex
+  def: \b{MonthRegexNoWordBoundary}
+  references: [ MonthRegexNoWordBoundary ]
 WrittenMonthRegex: !nestedRegex
   def: (((the\s+)?month of\s+)?{MonthRegex})
   references: [ MonthRegex ]
