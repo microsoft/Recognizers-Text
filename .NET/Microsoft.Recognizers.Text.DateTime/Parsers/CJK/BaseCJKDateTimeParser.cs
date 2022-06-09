@@ -158,6 +158,14 @@ namespace Microsoft.Recognizers.Text.DateTime
             var pastDate = (DateObject)((DateTimeResolutionResult)pr1.Value).PastValue;
             var time = (DateObject)((DateTimeResolutionResult)pr2.Value).FutureValue;
 
+            // handle cases with time like 25時 which resolve to the next day
+            var timexHour = TimexUtility.ParseHourFromTimeTimex(pr2.TimexStr);
+            if (timexHour > Constants.DayHourCount)
+            {
+                futureDate = futureDate.AddDays(1);
+                pastDate = pastDate.AddDays(1);
+            }
+
             var hour = time.Hour;
             var min = time.Minute;
             var sec = time.Second;
@@ -178,7 +186,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                 timeStr = timeStr.Substring(0, timeStr.Length - 4);
             }
 
-            timeStr = "T" + hour.ToString("D2", CultureInfo.InvariantCulture) + timeStr.Substring(3);
             ret.Timex = pr1.TimexStr + timeStr;
 
             var val = (DateTimeResolutionResult)pr2.Value;

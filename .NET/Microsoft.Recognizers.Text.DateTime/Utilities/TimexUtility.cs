@@ -458,9 +458,21 @@ namespace Microsoft.Recognizers.Text.DateTime
             return $"W{weekNum.ToString("D2", CultureInfo.InvariantCulture)}";
         }
 
+        public static string CombineDateTimeTimex(string timeTimex1, string dateTimeTimex2, DateObject dateTime1)
+        {
+            return dateTimeTimex2.Equals(Constants.TimexNow, StringComparison.Ordinal) ? DateTimeFormatUtil.LuisDateShortTime(dateTime1) :
+                    dateTimeTimex2.Split(Constants.TimeTimexPrefix[0])[0] + timeTimex1;
+        }
+
         public static string GenerateDateTimePeriodTimex(string beginTimex, string endTimex, string durationTimex)
         {
             return $"({beginTimex},{endTimex},{durationTimex})";
+        }
+
+        public static string GenerateDateTimePeriodTimex(string beginTimex, string endTimex, TimeSpan duration)
+        {
+            var durationTimex = DateTimeFormatUtil.LuisTimeSpan(duration);
+            return GenerateDateTimePeriodTimex(beginTimex, endTimex, durationTimex);
         }
 
         public static string GenerateDateTimePeriodTimex(DateObject beginDateTime, DateObject endDateTime, string durationTimex)
@@ -567,6 +579,30 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var numberStr = timex.Substring(timex.IndexOf(Constants.GeneralPeriodPrefix) + 1, timex.IndexOfAny(Constants.DurationUnitChar) - 1);
             return float.Parse(numberStr);
+        }
+
+        public static int ParseHourFromTimeTimex(string timex)
+        {
+            var start = timex.IndexOf(Constants.TimeTimexPrefix) + 1;
+            var end = timex.IndexOf(Constants.TimeTimexConnector);
+            end = end > 0 ? end : timex.Length;
+            var hourStr = timex.Substring(start, end - start);
+            int.TryParse(hourStr, out int hour);
+
+            return hour;
+        }
+
+        public static Tuple<int, int> ParseHoursFromTimePeriodTimex(string timex)
+        {
+            int hour1 = 0, hour2 = 0;
+            var timeList = timex.Split(Constants.TimexSeparator[0]);
+            if (timeList.Length > 2)
+            {
+                hour1 = ParseHourFromTimeTimex(timeList[0]);
+                hour2 = ParseHourFromTimeTimex(timeList[1]);
+            }
+
+            return new Tuple<int, int>(hour1, hour2);
         }
 
         private static bool IsTimeDurationTimex(string timex)

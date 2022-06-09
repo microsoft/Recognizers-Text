@@ -1731,5 +1731,188 @@
         "End": 5
       }
     ]
+  },
+  {
+    "Input": "Perdieron 75 USD millones en los últimos tres años.",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "75 usd millones",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "75000000",
+          "unit": "Dólar estadounidense",
+          "isoCurrency": "USD"
+        },
+        "Start": 10,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "Los precios del acuerdo comienzan en dólar 22,5 millones.",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "dólar 22,5 millones",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "22500000",
+          "unit": "Dólar"
+        },
+        "Start": 37,
+        "End": 55
+      }
+    ]
+  },
+  {
+    "Input": "Los precios del acuerdo comienzan en dólar 22500000.",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "dólar 22500000",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "22500000",
+          "unit": "Dólar"
+        },
+        "Start": 37,
+        "End": 50
+      }
+    ]
+  },
+  {
+    "Input": "Por 15 dolares 50 puedes almorzar y cenar",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "15 dolares 50",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "15,5",
+          "unit": "Dólar"
+        },
+        "Start": 4,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "Por 15 USD 50 puedes almorzar y cenar",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "15 usd 50",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "15,5",
+          "unit": "Dólar estadounidense",
+          "isoCurrency": "USD"
+        },
+        "Start": 4,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "Pagaron 75 USD millones, pero el precio en realidad fue de 50 millones USD. Y si tuvieran otros 15 USD 50, habrían pagado 80 USD millones.",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "75 usd millones",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "75000000",
+          "unit": "Dólar estadounidense",
+          "isoCurrency": "USD"
+        },
+        "Start": 8,
+        "End": 22
+      },
+      {
+        "Text": "50 millones usd",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "50000000",
+          "unit": "Dólar estadounidense",
+          "isoCurrency": "USD"
+        },
+        "Start": 59,
+        "End": 73
+      },
+      {
+        "Text": "15 usd 50",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "15,5",
+          "unit": "Dólar estadounidense",
+          "isoCurrency": "USD"
+        },
+        "Start": 96,
+        "End": 104
+      },
+      {
+        "Text": "80 usd millones",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "80000000",
+          "unit": "Dólar estadounidense",
+          "isoCurrency": "USD"
+        },
+        "Start": 122,
+        "End": 136
+      }
+    ]
+  },
+  {
+    "Input": "El cheque equivalía a 125 USD millones",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "125 usd millones",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "125000000",
+          "unit": "Dólar estadounidense",
+          "isoCurrency": "USD"
+        },
+        "Start": 22,
+        "End": 37
+      }
+    ]
+  },
+  {
+    "Input": "Obtén 2 meses por MXN$ 20",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "mxn$ 20",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "20",
+          "unit": "Peso mexicano",
+          "isoCurrency": "MXN"
+        },
+        "Start": 18,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "Obtén 2 meses por 20 MXN$",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "20 mxn$",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "20",
+          "unit": "Peso mexicano",
+          "isoCurrency": "MXN"
+        },
+        "Start": 18,
+        "End": 24
+      }
+    ]
   }
 ]

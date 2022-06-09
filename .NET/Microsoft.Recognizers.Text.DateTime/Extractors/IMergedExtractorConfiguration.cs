@@ -67,6 +67,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         // Regex to act as umbrella for key terms so that sentences that clearly don't have entities can be rejected quickly
         Regex FailFastRegex { get; }
 
+        Regex YearRegex { get; }
+
         StringMatcher SuperfluousWordMatcher { get; }
 
         Dictionary<Regex, Regex> AmbiguityFiltersDict { get; }

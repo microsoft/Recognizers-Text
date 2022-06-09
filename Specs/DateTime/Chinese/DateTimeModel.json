@@ -225,7 +225,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "农历2015年十月初一",
@@ -250,7 +249,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "正月三十",
@@ -651,7 +649,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T14:07:00"
     },
-    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "2015年十月初一早上九点二十",
@@ -803,7 +800,7 @@
         "Resolution": {
           "values": [
             {
-              "timex": "(2016-11-06T14:00:00,2016-11-08T04:00:00,PT38H)",
+              "timex": "(2016-11-06T14,2016-11-08T04,PT38H)",
               "type": "datetimerange",
               "start": "2016-11-06 14:00:00",
               "end": "2016-11-08 04:00:00"
@@ -1655,7 +1652,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "2018年以前",
@@ -1681,7 +1678,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "2018年之后",
@@ -1759,7 +1756,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "自2018年以来",
@@ -1785,7 +1782,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "2018年开始",
@@ -1811,7 +1808,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "07年以后",
@@ -1837,7 +1834,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "07 年以前",
@@ -2193,7 +2190,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-30T14:16:03"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "python, java",
     "Results": [
       {
         "Text": "2015年前",
@@ -3144,7 +3141,7 @@
     "Context": {
       "ReferenceDateTime": "2019-07-01T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "python, java",
     "Results": [
       {
         "Text": "今天晚上八点之前",
@@ -3170,7 +3167,7 @@
     "Context": {
       "ReferenceDateTime": "2019-07-01T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "python, java",
     "Results": [
       {
         "Text": "下午三点之前",
@@ -3850,7 +3847,7 @@
     "Context": {
       "ReferenceDateTime": "2018-08-30T14:16:03"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, python",
     "Results": [
       {
         "Text": "从2016年3月1日开始",
@@ -4565,7 +4562,7 @@
     "Context": {
       "ReferenceDateTime": "2019-01-06T12:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, python",
     "Results": [
       {
         "Text": "自2016年9月1日起",
@@ -4821,7 +4818,7 @@
     "Context": {
       "ReferenceDateTime": "2019-01-06T12:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, python",
     "Results": [
       {
         "Text": "2015年1月1日",
@@ -5883,7 +5880,6 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "神龙二年正月初一",
@@ -6900,6 +6896,112 @@
               "type": "daterange",
               "sourceEntity": "datetimerange",
               "end": "2000-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "帮我预订2016年12月15日晚上7:00到8:00的会议",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T10:20:00"
+    },
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2016年12月15日晚上7:00到8:00",
+        "Start": 4,
+        "End": 25,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-12-15T19:00,2016-12-15T20:00,PT1H)",
+              "type": "datetimerange",
+              "start": "2016-12-15 19:00:00",
+              "end": "2016-12-15 20:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "周一上午10点到12点有空吗",
+    "Context": {
+      "ReferenceDateTime": "2018-11-01T12:00:00"
+    },
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "周一上午10点到12点",
+        "Start": 0,
+        "End": 10,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-WXX-1T10,XXXX-WXX-1T12,PT2H)",
+              "type": "datetimerange",
+              "start": "2018-10-29 10:00:00",
+              "end": "2018-10-29 12:00:00"
+            },
+            {
+              "timex": "(XXXX-WXX-1T10,XXXX-WXX-1T12,PT2H)",
+              "type": "datetimerange",
+              "start": "2018-11-05 10:00:00",
+              "end": "2018-11-05 12:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "还剩5 分钟",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "还剩5 分钟",
+        "Start": 0,
+        "End": 5,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-11-07T16:12:00,2016-11-07T16:17:00,PT5M)",
+              "type": "datetimerange",
+              "start": "2016-11-07 16:12:00",
+              "end": "2016-11-07 16:17:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "还剩 3 小时",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "还剩 3 小时",
+        "Start": 0,
+        "End": 6,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-11-07T16:12:00,2016-11-07T19:12:00,PT3H)",
+              "type": "datetimerange",
+              "start": "2016-11-07 16:12:00",
+              "end": "2016-11-07 19:12:00"
             }
           ]
         }

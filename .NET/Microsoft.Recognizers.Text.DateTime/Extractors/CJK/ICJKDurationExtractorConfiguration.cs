@@ -32,5 +32,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Dictionary<string, long> UnitValueMap { get; }
 
+        Dictionary<Regex, Regex> AmbiguityDurationFiltersDict { get; }
+
     }
 }

@@ -232,7 +232,7 @@ SpecialDate: !nestedRegex
   def: (?<=\b(il|l'|al(l')?)\s*){DayRegex}\b
   references: [ DayRegex ]
 DateExtractor1: !nestedRegex
-  def: \b((quest[oa]\s+)?{WeekDayRegex}\s*[,-]?\s*)?(({MonthRegex}(\.)?\s*[/\\.,-]?\s*{DayRegex})|(\({MonthRegex}\s*[-.]\s*{DayRegex}\))|({DayRegex}\s*[/\\.,-]?\s*{MonthRegex}(\.)?))(\s*\(\s*{WeekDayRegex}\s*\))?
+  def: \b((quest[oa]\s+)?{WeekDayRegex}\s*[,-]?\s*)?(({MonthRegex}(\.)?\s*[/\\.,-]?\s*{DayRegex}(?!\s*\-\s*\d{2}\b))|(\({MonthRegex}\s*[-.]\s*{DayRegex}\))|({DayRegex}\s*[/\\.,-]?\s*{MonthRegex}(\.)?))(\s*\(\s*{WeekDayRegex}\s*\))?
   references: [ WeekDayRegex, MonthRegex, DayRegex ]
 DateExtractor2: !nestedRegex
   def: ({DateExtractor1}(\s+|\s*[\-/,.]\s*|\s+del\s+)({DateYearRegex}))\b

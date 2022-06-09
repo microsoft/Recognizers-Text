@@ -218,7 +218,7 @@
         "Text": "今日の午後4時から明日の午後5時まで",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "(2016-11-07T16:00:00,2016-11-08T17:00:00,PT25H)",
+          "Timex": "(2016-11-07T16,2016-11-08T17,PT25H)",
           "FutureResolution": {
             "startDateTime": "2016-11-07 16:00:00",
             "endDateTime": "2016-11-08 17:00:00"
@@ -244,7 +244,7 @@
         "Text": "2016年2月21日の午後2時から2016年4月23日3時32分まで",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "(2016-02-21T14:00:00,2016-04-23T03:32:00,PT1478H)",
+          "Timex": "(2016-02-21T14,2016-04-23T03:32,PT1477H32M)",
           "FutureResolution": {
             "startDateTime": "2016-02-21 14:00:00",
             "endDateTime": "2016-04-23 03:32:00"
@@ -296,7 +296,7 @@
         "Text": "2016年1月1日の午後4時から今日の午後5時まで",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "(2016-01-01T16:00:00,2016-11-07T17:00:00,PT7465H)",
+          "Timex": "(2016-01-01T16,2016-11-07T17,PT7465H)",
           "FutureResolution": {
             "startDateTime": "2016-01-01 16:00:00",
             "endDateTime": "2016-11-07 17:00:00"
@@ -1050,7 +1050,7 @@
         "Text": "2016年2月21日午後2時から2016年4月23日3時32分まで",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "(2016-02-21T14:00:00,2016-04-23T03:32:00,PT1478H)",
+          "Timex": "(2016-02-21T14,2016-04-23T03:32,PT1477H32M)",
           "FutureResolution": {
             "startDateTime": "2016-02-21 14:00:00",
             "endDateTime": "2016-04-23 03:32:00"
@@ -1778,7 +1778,7 @@
         "Text": "2時-明日の4時",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "(2016-11-07T02:00:00,2016-11-08T04:00:00,PT26H)",
+          "Timex": "(2016-11-07T02,2016-11-08T04,PT26H)",
           "FutureResolution": {
             "startDateTime": "2016-11-07 02:00:00",
             "endDateTime": "2016-11-08 04:00:00"
@@ -1856,7 +1856,7 @@
         "Text": "今夜7時から7時30分まで",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "(2016-11-07T19:00:00,2016-11-07T19:30:00,PT0H)",
+          "Timex": "(2016-11-07T19,2016-11-07T19:30,PT30M)",
           "FutureResolution": {
             "startDateTime": "2016-11-07 19:00:00",
             "endDateTime": "2016-11-07 19:30:00"
@@ -1960,7 +1960,7 @@
         "Text": "今夜8時から9時まで",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "(2016-11-07T20:00:00,2016-11-07T21:00:00,PT1H)",
+          "Timex": "(2016-11-07T20,2016-11-07T21,PT1H)",
           "FutureResolution": {
             "startDateTime": "2016-11-07 20:00:00",
             "endDateTime": "2016-11-07 21:00:00"
@@ -2038,7 +2038,7 @@
         "Text": "今から8時まで",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "(2016-11-07T16:12:00,2016-11-07T20:00:00,PT4H)",
+          "Timex": "(PRESENT_REF,2016-11-07T20,PT3H48M)",
           "FutureResolution": {
             "startDateTime": "2016-11-07 16:12:00",
             "endDateTime": "2016-11-07 20:00:00"
@@ -2312,7 +2312,7 @@
         "Text": "昨日の午後2時から明日4時まで",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "(2016-11-06T14:00:00,2016-11-08T04:00:00,PT38H)",
+          "Timex": "(2016-11-06T14,2016-11-08T04,PT38H)",
           "FutureResolution": {
             "startDateTime": "2016-11-06 14:00:00",
             "endDateTime": "2016-11-08 04:00:00"
@@ -2454,6 +2454,136 @@
         },
         "Start": 3,
         "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "2016年1月1日の5時から25時まで不在にします。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016年1月1日の5時から25時まで",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-01-01T05,2016-01-01T25,PT20H)",
+          "FutureResolution": {
+            "startDateTime": "2016-01-01 05:00:00",
+            "endDateTime": "2016-01-02 01:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-01-01 05:00:00",
+            "endDateTime": "2016-01-02 01:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "2016年1月31日の5時から25時まで不在にします。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016年1月31日の5時から25時まで",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-01-31T05,2016-01-31T25,PT20H)",
+          "FutureResolution": {
+            "startDateTime": "2016-01-31 05:00:00",
+            "endDateTime": "2016-02-01 01:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-01-31 05:00:00",
+            "endDateTime": "2016-02-01 01:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "2016年1月1日の25時から29時まで不在にします。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2016年1月1日の25時から29時まで",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2016-01-01T25,2016-01-01T29,PT4H)",
+          "FutureResolution": {
+            "startDateTime": "2016-01-02 01:00:00",
+            "endDateTime": "2016-01-02 05:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-01-02 01:00:00",
+            "endDateTime": "2016-01-02 05:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "月曜日の8時から29時に戻ってきます。",
+    "Context": {
+      "ReferenceDateTime": "2018-04-19T08:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "月曜日の8時から29時",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-WXX-1T08,XXXX-WXX-1T29,PT21H)",
+          "FutureResolution": {
+            "startDateTime": "2018-04-23 08:00:00",
+            "endDateTime": "2018-04-24 05:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2018-04-16 08:00:00",
+            "endDateTime": "2018-04-17 05:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "月曜日の26時30分から29時に戻ってきます。",
+    "Context": {
+      "ReferenceDateTime": "2018-04-19T08:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "月曜日の26時30分から29時",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-WXX-1T26:30,XXXX-WXX-1T29,PT2H30M)",
+          "FutureResolution": {
+            "startDateTime": "2018-04-24 02:30:00",
+            "endDateTime": "2018-04-24 05:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2018-04-17 02:30:00",
+            "endDateTime": "2018-04-17 05:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 15
       }
     ]
   }

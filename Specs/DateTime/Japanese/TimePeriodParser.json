@@ -1669,5 +1669,83 @@
         "Length": 10
       }
     ]
+  },
+  {
+    "Input": "4時から25時まで。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4時から25時まで",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T04,T25,PT21H)",
+          "FutureResolution": {
+            "startTime": "04:00:00",
+            "endTime": "01:00:00"
+          },
+          "PastResolution": {
+            "startTime": "04:00:00",
+            "endTime": "01:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "4時から26時まで。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4時から26時まで",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T04,T26,PT22H)",
+          "FutureResolution": {
+            "startTime": "04:00:00",
+            "endTime": "02:00:00"
+          },
+          "PastResolution": {
+            "startTime": "04:00:00",
+            "endTime": "02:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "26時から30時まで。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "26時から30時まで",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T26,T30,PT4H)",
+          "FutureResolution": {
+            "startTime": "02:00:00",
+            "endTime": "06:00:00"
+          },
+          "PastResolution": {
+            "startTime": "02:00:00",
+            "endTime": "06:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 10
+      }
+    ]
   }
 ]

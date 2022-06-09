@@ -223,6 +223,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                 }
 
+                if ((config.Options & DateTimeOptions.TasksMode) != 0)
+                {
+                    if (ShouldSkipOnlyYear(result))
+                    {
+                        continue;
+                    }
+                }
+
                 var isFound = false;
                 var overlapIndexes = new List<int>();
                 var firstIndex = -1;
@@ -268,6 +276,15 @@ namespace Microsoft.Recognizers.Text.DateTime
         private bool ShouldSkipFromToMerge(ExtractResult er)
         {
             return config.FromToRegex.IsMatch(er.Text);
+        }
+
+        /*Under TasksMode: Should not treat a four-digit number as a daterange if the input text does not include a month or year reference.
+          It should not treat 2005 as a daterange in statements like "Milk 2005."
+         (The year 2005 should be treated as a number only.)
+        */
+        private bool ShouldSkipOnlyYear(ExtractResult er)
+        {
+            return config.YearRegex.Match(er.Text).Value == er.Text;
         }
 
         private List<ExtractResult> FilterUnspecificDatePeriod(List<ExtractResult> ers)

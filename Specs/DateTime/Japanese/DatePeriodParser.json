@@ -6347,5 +6347,31 @@
         "Length": 9
       }
     ]
+  },
+  {
+    "Input": "私は今から2週間以内に戻ります",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2週間以内に",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2018-05-29,2018-06-12,P2W)",
+          "FutureResolution": {
+            "startDate": "2018-05-29",
+            "endDate": "2018-06-12"
+          },
+          "PastResolution": {
+            "startDate": "2018-05-29",
+            "endDate": "2018-06-12"
+          }
+        },
+        "Start": 5,
+        "Length": 6
+      }
+    ]
   }
 ]

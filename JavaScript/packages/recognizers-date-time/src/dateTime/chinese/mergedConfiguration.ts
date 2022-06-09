@@ -11,7 +11,7 @@ import { BaseTimePeriodExtractor, BaseTimePeriodParser } from "../baseTimePeriod
 import { BaseDateTimeExtractor, BaseDateTimeParser } from "../baseDateTime";
 import { BaseDateTimePeriodExtractor, BaseDateTimePeriodParser } from "../baseDateTimePeriod";
 import { BaseDurationExtractor, BaseDurationParser } from "../baseDuration";
-import { ExtractResult, RegExpUtility } from "@microsoft/recognizers-text";
+import { ExtractResult, RegExpUtility, MetaData } from "@microsoft/recognizers-text";
 import { BaseNumberExtractor } from "@microsoft/recognizers-text-number";
 import { ChineseDateTime } from "../../resources/chineseDateTime";
 import { ChineseDurationExtractor, ChineseDurationParser } from "./durationConfiguration";
@@ -41,8 +41,8 @@ class ChineseMergedExtractorConfiguration implements IMergedExtractorConfigurati
     readonly setExtractor: BaseSetExtractor
     readonly integerExtractor: BaseNumberExtractor
     readonly afterRegex: RegExp
-    readonly sinceRegex: RegExp
     readonly beforeRegex: RegExp
+    readonly sinceRegex: RegExp
     readonly fromToRegex: RegExp
     readonly singleAmbiguousMonthRegex: RegExp
     readonly prepositionSuffixRegex: RegExp
@@ -63,16 +63,22 @@ class ChineseMergedExtractorConfiguration implements IMergedExtractorConfigurati
         this.setExtractor = new ChineseSetExtractor(dmyDateFormat);
         this.holidayExtractor = new BaseHolidayExtractor(new ChineseHolidayExtractorConfiguration());
         this.durationExtractor = new ChineseDurationExtractor();
+        this.beforeRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.ParserConfigurationBefore);
+        this.afterRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.ParserConfigurationAfter);
     }
 }
 
 export class ChineseMergedExtractor extends BaseMergedExtractor {
     private readonly dayOfMonthRegex: RegExp;
+    private readonly sincePrefixRegex: RegExp
+    private readonly sinceSuffixRegex: RegExp
 
     constructor(options: DateTimeOptions, dmyDateFormat: boolean = false) {
         let config = new ChineseMergedExtractorConfiguration(dmyDateFormat);
         super(config, options);
         this.dayOfMonthRegex = RegExpUtility.getSafeRegExp(`^\\d{1,2}号`, 'gi');
+        this.sincePrefixRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.ParserConfigurationSincePrefix);
+        this.sinceSuffixRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.ParserConfigurationSinceSuffix);
     }
 
     extract(source: string, refDate: Date): ExtractResult[] {
@@ -93,6 +99,8 @@ export class ChineseMergedExtractor extends BaseMergedExtractor {
         this.addTo(result, this.config.holidayExtractor.extract(source, referenceDate), source);
 
         result = this.checkBlackList(result, source);
+
+        this.addMod(result, source);
 
         result = result.sort((a, b) => a.start - b.start);
         return result;
@@ -157,6 +165,77 @@ export class ChineseMergedExtractor extends BaseMergedExtractor {
             return true;
         });
     }
+
+    protected addMod(ers: ExtractResult[], source: string) {
+        let lastEnd = 0;
+        ers.forEach(er => {
+            let success = this.tryMergeModifierToken(er, this.config.beforeRegex, source);
+            if (!success) {
+                success = this.tryMergeModifierToken(er, this.config.afterRegex, source);
+            }
+
+            if (!success) {
+                // SinceRegex in English contains the term "from" which is potentially ambiguous with ranges in the form "from X to Y"
+                success = this.tryMergeModifierToken(er, this.sincePrefixRegex, source, true, true);
+                success = this.tryMergeModifierToken(er, this.sinceSuffixRegex, source, false, true);
+            }
+        });
+    }
+
+    protected tryMergeModifierToken(er:ExtractResult, regex: RegExp, source: string, isPrefix: boolean = false, potentialAmbiguity:boolean = false): boolean {
+        let subStr = isPrefix ? source.substr(0, er.start) : source.substr(er.start + er.length);
+
+        // Avoid adding mod for ambiguity cases, such as "from" in "from ... to ..." should not add mod
+        if (potentialAmbiguity && this.config.ambiguousRangeModifierPrefix &&
+            RegExpUtility.isMatch(this.config.ambiguousRangeModifierPrefix, subStr)) {
+            let matches = RegExpUtility.getMatches(this.config.potentialAmbiguousRangeRegex, source);
+            if (matches.find(m => m.index < er.start + er.length && m.index + m.length > er.start)) {
+                return false
+            }
+        }
+
+        let token = this.hasTokenIndex(subStr.trim(), regex, isPrefix);
+        if (token.matched) {
+            let modLength = isPrefix ? subStr.length - token.index : token.index;
+            er.length += modLength;
+            er.start -= isPrefix ? modLength : 0;
+            er.text = source.substr(er.start, er.length);
+            
+            er.metaData = this.assignModMetadata(er.metaData);
+
+            return true;
+        }
+
+        return false;
+    }
+
+    protected assignModMetadata(metadata: MetaData): MetaData {
+
+        if (metadata === undefined || metadata === null) {
+            metadata = new MetaData();
+            metadata.HasMod = true;
+        } else {
+            metadata.HasMod = true;
+        }
+
+        return metadata
+    }
+
+    protected hasTokenIndex(source: string, regex: RegExp, isPrefix: boolean = false): { matched: boolean, index: number } {
+        // This part is different from C# because no Regex RightToLeft option in JS
+        let result = { matched: false, index: -1 };
+        let matchResult = RegExpUtility.getMatches(regex, source);
+        let index = isPrefix ? matchResult.length - 1 : 0;
+        let match = matchResult.length > 0 ? matchResult[index]: false;
+        if (match) {
+            let leftStr = isPrefix ? source.substr(match.index + match.length).trim() : source.substr(0, match.index).trim()
+            if (!leftStr.length) {
+                result.matched = true;
+                result.index = match.index + (isPrefix ? 0 : match.length);
+            }            
+        }
+        return result;
+    }
 }
 
 class ChineseMergedParserConfiguration implements IMergedParserConfiguration {
@@ -174,9 +253,8 @@ class ChineseMergedParserConfiguration implements IMergedParserConfiguration {
     readonly setParser: BaseSetParser;
 
     constructor(dmyDateFormat: boolean) {
-        this.beforeRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.MergedBeforeRegex);
-        this.afterRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.MergedAfterRegex);
-        this.sinceRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.MergedAfterRegex);
+        this.beforeRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.ParserConfigurationBefore);
+        this.afterRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.ParserConfigurationAfter);        
 
         this.dateParser = new ChineseDateParser(dmyDateFormat);
         this.holidayParser = new ChineseHolidayParser();
@@ -265,9 +343,14 @@ export class ChineseMergedParser extends BaseMergedParser {
 }
 
 export class ChineseFullMergedParser extends BaseMergedParser {
+    private readonly sincePrefixRegex: RegExp;
+    private readonly sinceSuffixRegex: RegExp;
+    
     constructor(dmyDateFormat: boolean = false) {
         let config = new ChineseMergedParserConfiguration(dmyDateFormat);
         super(config, 0);
+        this.sincePrefixRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.ParserConfigurationSincePrefix);
+        this.sinceSuffixRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.ParserConfigurationSinceSuffix);
     }
 
     parse(er: ExtractResult, refTime?: Date): DateTimeParseResult | null {
@@ -277,22 +360,43 @@ export class ChineseFullMergedParser extends BaseMergedParser {
         // push, save teh MOD string
         let hasBefore = false;
         let hasAfter = false;
-        let modStr = "";
-        let beforeMatch = RegExpUtility.getMatches(this.config.beforeRegex, er.text).pop();
-        let afterMatch = RegExpUtility.getMatches(this.config.afterRegex, er.text).pop();
-        if (beforeMatch && !this.isDurationWithAgoAndLater(er)) {
-            hasBefore = true;
-            er.start += beforeMatch.length;
-            er.length -= beforeMatch.length;
-            er.text = er.text.substring(beforeMatch.length);
-            modStr = beforeMatch.value;
-        }
-        else if (afterMatch && !this.isDurationWithAgoAndLater(er)) {
-            hasAfter = true;
-            er.start += afterMatch.length;
-            er.length -= afterMatch.length;
-            er.text = er.text.substring(afterMatch.length);
-            modStr = afterMatch.value;
+        let hasSince = false;
+        let modStr = '', modStrPrefix = '', modStrSuffix = '';
+        let erLength = er.length;
+
+        if (er.metaData !== null && er.metaData !== undefined && er.metaData.HasMod) {
+            let beforeMatch = RegExpUtility.getMatches(this.config.beforeRegex, er.text).shift();
+            let afterMatch = RegExpUtility.getMatches(this.config.afterRegex, er.text).shift();
+            let sincePrefixMatch = RegExpUtility.getMatches(this.sincePrefixRegex, er.text).shift();
+            let sinceSuffixMatch = RegExpUtility.getMatches(this.sinceSuffixRegex, er.text).shift();
+            if (beforeMatch && beforeMatch.index  + beforeMatch.length === erLength) {
+                hasBefore = true;
+                er.length -= beforeMatch.length;
+                er.text = er.text.substring(0, er.length);
+                modStr = beforeMatch.value;
+            }
+            else if (afterMatch && afterMatch.index  + afterMatch.length === erLength) {
+                hasAfter = true;
+                er.length -= afterMatch.length;
+                er.text = er.text.substring(0, er.length);
+                modStr = afterMatch.value;
+            }
+            else {
+                if (sincePrefixMatch && sincePrefixMatch.index === 0) {
+                    hasSince = true;
+                    er.start += sincePrefixMatch.length;
+                    er.length -= sincePrefixMatch.length;
+                    er.text = er.text.substring(sincePrefixMatch.length);
+                    modStrPrefix = sincePrefixMatch.value;
+                }
+
+                if (sinceSuffixMatch && sinceSuffixMatch.index + sinceSuffixMatch.length === erLength) {
+                    hasSince = true;
+                    er.length -= sinceSuffixMatch.length;
+                    er.text = er.text.substring(0, er.length);
+                    modStrSuffix = sinceSuffixMatch.value;
+                }
+            }
         }
 
         if (er.type === Constants.SYS_DATETIME_DATE) {
@@ -329,29 +433,37 @@ export class ChineseFullMergedParser extends BaseMergedParser {
         // pop, restore the MOD string
         if (hasBefore && pr.value !== null) {
             pr.length += modStr.length;
-            pr.start -= modStr.length;
-            pr.text = modStr + pr.text;
+            pr.text = pr.text + modStr;
             let val = pr.value;
-            val.mod = TimeTypeConstants.beforeMod;
+            val.mod = this.combineMod(val.mod, TimeTypeConstants.beforeMod);
             pr.value = val;
         }
 
         if (hasAfter && pr.value !== null) {
             pr.length += modStr.length;
-            pr.start -= modStr.length;
-            pr.text = modStr + pr.text;
+            pr.text = pr.text + modStr;
             let val = pr.value;
-            val.mod = TimeTypeConstants.afterMod;
+            val.mod = this.combineMod(val.mod, TimeTypeConstants.afterMod);
             pr.value = val;
         }
 
-        pr.value = this.dateTimeResolution(pr, hasBefore, hasAfter);
-        pr.type = `${this.parserTypeName}.${this.determineDateTimeType(er.type, hasBefore || hasAfter)}`;
+        if (hasSince && pr.value !== null) {
+            pr.length += modStrPrefix.length + modStrSuffix.length;
+            pr.start -= modStrPrefix.length;
+            pr.text = modStrPrefix + pr.text + modStrSuffix;
+            let val = pr.value;
+            val.mod = this.combineMod(val.mod, TimeTypeConstants.sinceMod);
+            pr.value = val;
+        }
+
+        let hasRangeChangingMod = hasBefore || hasAfter || hasSince;
+        pr.value = this.dateTimeResolution(pr, hasRangeChangingMod);
+        pr.type = `${this.parserTypeName}.${this.determineDateTimeType(er.type, hasRangeChangingMod)}`;
 
         return pr;
     }
 
-    protected dateTimeResolution(slot: DateTimeParseResult, hasBefore: boolean, hasAfter: boolean, hasSince: boolean = false): { [s: string]: StringMap[]; } {
+    protected dateTimeResolution(slot: DateTimeParseResult, hasRangeChangingMod: boolean): { [s: string]: StringMap[]; } {
         if (!slot) {
             return null;
         }
@@ -360,8 +472,9 @@ export class ChineseFullMergedParser extends BaseMergedParser {
         let resolutions = new Array<StringMap>();
 
         let type = slot.type;
-        let outputType = this.determineDateTimeType(type, hasBefore || hasAfter);
+        let outputType = this.determineDateTimeType(type, hasRangeChangingMod);
         let timex = slot.timexStr;
+        let sourceEntity = this.determineSourceEntityType(type, outputType, hasRangeChangingMod);
 
         let value: DateTimeResolutionResult = slot.value;
         if (!value) {
@@ -410,10 +523,6 @@ export class ChineseFullMergedParser extends BaseMergedParser {
             }
         }
 
-        if (isLunar) {
-            this.addResolutionFieldsAny(result, Constants.IsLunarKey, isLunar);
-        }
-
         result.forEach((value, key) => {
             if (this.isObject(value)) {
                 // is "StringMap"
@@ -422,6 +531,10 @@ export class ChineseFullMergedParser extends BaseMergedParser {
                 this.addResolutionFields(newValues, Constants.TimexKey, timex);
                 this.addResolutionFields(newValues, Constants.ModKey, mod);
                 this.addResolutionFields(newValues, Constants.TypeKey, outputType);
+                this.addResolutionFields(newValues, Constants.SourceEntity, sourceEntity);
+                if (isLunar) {
+                    this.addResolutionFields(newValues, Constants.IsLunarKey, "True");
+                }
 
                 Object.keys(value).forEach((innerKey) => {
                     newValues[innerKey] = value[innerKey];
