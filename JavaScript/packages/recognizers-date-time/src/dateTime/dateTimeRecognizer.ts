@@ -12,7 +12,7 @@ import { FrenchMergedParserConfiguration, FrenchMergedExtractorConfiguration } f
 import { ChineseMergedExtractor, ChineseMergedParser, ChineseFullMergedParser } from "./chinese/mergedConfiguration";
 
 export enum DateTimeOptions {
-    None = 0, SkipFromToMerge = 1, SplitDateAndTime = 2, Calendar = 4, Task = 8
+    None = 0, SkipFromToMerge = 1, SplitDateAndTime = 2, Calendar = 4, Tasks = 8
 }
 
 export function recognizeDateTime(query: string, culture: string, options: DateTimeOptions = DateTimeOptions.None,
@@ -65,7 +65,7 @@ export default class DateTimeRecognizer extends Recognizer<DateTimeOptions> {
     }
 
     protected IsValidOptions(options: number): boolean {
-        return options >= 0 && options <= DateTimeOptions.None + DateTimeOptions.SkipFromToMerge + DateTimeOptions.SplitDateAndTime + DateTimeOptions.Calendar + DateTimeOptions.Task;
+        return options >= 0 && options <= DateTimeOptions.None + DateTimeOptions.SkipFromToMerge + DateTimeOptions.SplitDateAndTime + DateTimeOptions.Calendar + DateTimeOptions.Tasks;
     }
 
     getDateTimeModel(culture: string = null, fallbackToDefaultCulture: boolean = true): IDateTimeModel {

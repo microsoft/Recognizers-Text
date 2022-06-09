@@ -88,7 +88,7 @@ export class BaseMergedExtractor implements IDateTimeExtractor {
         }
 
         // filtering - TaskMode
-        if ((this.options & DateTimeOptions.Task) !== 0) {
+        if ((this.options & DateTimeOptions.Tasks) !== 0) {
             this.checkTaskFilterList(result, source);
         }
 
@@ -117,7 +117,7 @@ export class BaseMergedExtractor implements IDateTimeExtractor {
             }
         }
     }
-    
+
     // handle cases like "move 3pm appointment to 4"
     private numberEndingRegexMatch(text: string, extractResults: ExtractResult[]): ExtractResult[] {
         let tokens = new Array<Token>();

@@ -88,5 +88,13 @@
     },
     "NotSupported": "javascript, python, java",
     "Results": []
+  },
+  {
+    "Input": "setup 1:1 meeting",
+    "Context": {
+      "ReferenceDateTime": "2018-05-31T00:00:00"
+    },
+    "NotSupported": "python, java",
+    "Results": []
   }
 ]

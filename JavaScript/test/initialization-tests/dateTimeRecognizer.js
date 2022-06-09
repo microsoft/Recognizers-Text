@@ -56,9 +56,10 @@ module.exports = function (describe) {
         });
 
         it('InitializationWithIntOption_ResolveOptionsEnum', t => {
-            var recognizer = new DateTimeRecognizer(EnglishCulture, 5);
+            var recognizer = new DateTimeRecognizer(EnglishCulture, 13);
             t.true((recognizer.Options & DateTimeOptions.SkipFromToMerge) === DateTimeOptions.SkipFromToMerge);
             t.true((recognizer.Options & DateTimeOptions.Calendar) === DateTimeOptions.Calendar);
+            t.true((recognizer.Options & DateTimeOptions.Tasks) === DateTimeOptions.Tasks);
         });
 
         it('InitializationWithInvalidOptions_ThrowError', t => {
