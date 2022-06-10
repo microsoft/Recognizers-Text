@@ -280,7 +280,7 @@ DateExtractor1: !nestedRegex
   def: \b({DayPrefix}\s*[,-]?\s*)?(({MonthRegex}[\.]?\s*[/\\.,-]?\s*{DayRegex})|(\({MonthRegex}\s*[-./]\s*{DayRegex}\)))(?!\s*\-\s*\d{2}\b)(\s*\(\s*{DayPrefix}\s*\))?({DateExtractorYearTermRegex}\b)?
   references: [ DayPrefix, MonthRegex, DayRegex, DateExtractorYearTermRegex ]
 DateExtractor3: !nestedRegex
-  def: \b({DayPrefix}(\s+|\s*,\s*))?({DayRegex}?[\.]?(\s+|\s*[-,/]\s*|\s+of\s+|\s*)\b?{MonthRegexNoWordBoundary}[\.]?((\s+in)?{DateExtractorYearTermRegex})?|{BaseDateTime.FourDigitYearRegex}\s*[-./]?\s*(the\s+)?(?<day>(?:3[0-1]|[1-2]\d|0?[1-9])(?:th|nd|rd|st)?)[\.]?(\s+|\s*[-,/]\s*|\s+of\s+){MonthRegex}[\.]?)\b
+  def: \b({DayPrefix}(\s+|\s*,\s*))?({DayRegex}?[\.]?(\s+|\s*[-,/]\s*|\s+of\s+|\s*)(\b)?{MonthRegexNoWordBoundary}[\.]?((\s+in)?{DateExtractorYearTermRegex})?|{BaseDateTime.FourDigitYearRegex}\s*[-./]?\s*(the\s+)?(?<day>(?:3[0-1]|[1-2]\d|0?[1-9])(?:th|nd|rd|st)?)[\.]?(\s+|\s*[-,/]\s*|\s+of\s+){MonthRegex}[\.]?)\b
   references: [ DayPrefix, DayRegex, MonthRegex, DateExtractorYearTermRegex, BaseDateTime.FourDigitYearRegex, MonthRegexNoWordBoundary ]
 DateExtractor4: !nestedRegex
   def: \b{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}[\.]?\s*[/\\\-]\s*{DateYearRegex}
