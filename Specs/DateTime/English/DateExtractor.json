@@ -12,7 +12,6 @@
   },
   {
     "Input": "i'll go back april 22",
-    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "april 22",
@@ -24,6 +23,7 @@
   },
   {
     "Input": "i'll go back april22",
+     "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "april22",
