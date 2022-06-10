@@ -285,8 +285,11 @@ class DateTimeFormatUtil:
         return DateTimeFormatUtil.luis_date(date.year, date.month, date.day)
 
     @staticmethod
-    def luis_time(hour: int, minute: int, second: int) -> str:
-        return f'{hour:02d}:{minute:02d}:{second:02d}'
+    def luis_time(hour: int, minute: int, second: int = Constants.INVALID_SECOND) -> str:
+        if second == Constants.INVALID_SECOND:
+            return f'{hour:02d}:{minute:02d}'
+        else:
+            return f'{hour:02d}:{minute:02d}:{second:02d}'
 
     @staticmethod
     def luis_time_from_datetime(time: datetime) -> str:
@@ -297,15 +300,37 @@ class DateTimeFormatUtil:
         return DateTimeFormatUtil.luis_date_from_datetime(time) + 'T' + DateTimeFormatUtil.luis_time_from_datetime(time)
 
     @staticmethod
+    def luis_date_short_time(time: datetime, timex: str = None) -> str:
+        has_min = False if timex is None else Constants.TIME_TIMEX_CONNECTOR in timex
+        has_sec = False if timex is None else len(timex.split(Constants.TIME_TIMEX_CONNECTOR)) > 2
+
+        return DateTimeFormatUtil.luis_date_from_datetime(time) + DateTimeFormatUtil.format_short_time(time, has_min, has_sec)
+
+    @staticmethod
+    def format_short_time(time: datetime, has_min: bool = False, has_sec: bool = False) -> str:
+        hour = time.hour
+        min = time.minute if has_min or time.minute > 0 else Constants.INVALID_MINUTE
+        sec = time.second if has_sec or time.second > 0 else Constants.INVALID_SECOND
+        return DateTimeFormatUtil.short_time(hour, min, sec)
+
+    @staticmethod
+    def short_time(hour: int, minute: int = Constants.INVALID_MINUTE, second: int = Constants.INVALID_SECOND) -> str:
+        if minute == Constants.INVALID_MINUTE and second == Constants.INVALID_SECOND:
+            return f'{Constants.TIME_TIMEX_PREFIX}{hour:02d}'
+        else:
+            return f'{Constants.TIME_TIMEX_PREFIX}{DateTimeFormatUtil.luis_time(hour, minute, second)}'
+
+    @staticmethod
     def luis_time_span(begin_time: datetime, end_time: datetime) -> str:
         timex_builder = f'{Constants.GENERAL_PERIOD_PREFIX}{Constants.TIME_TIMEX_PREFIX}'
+        span = end_time - begin_time
+        total_days = span.days
+        total_seconds = span.seconds
+        total_hours, total_seconds = divmod(total_seconds, Constants.HOUR_SECOND_COUNT)
+        total_minutes, total_seconds = divmod(total_seconds, Constants.MINUTE_SECOND_COUNT)
 
-        total_hours = end_time.hour - begin_time.hour
-        total_minutes = end_time.minute - begin_time.minute
-        total_seconds = end_time.second - begin_time.second
-
-        if total_hours > 0:
-            timex_builder += f'{total_hours}H'
+        if total_days > 0 or total_hours > 0:
+            timex_builder += f'{total_days * Constants.DAY_HOUR_COUNT + total_hours}H'
         if total_minutes > 0:
             timex_builder += f'{total_minutes}M'
         if total_seconds > 0:

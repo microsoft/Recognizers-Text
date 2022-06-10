@@ -107,7 +107,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public static readonly string DateYearRegex = $@"(?<year>{YearRegex}|{TwoDigitYearRegex})";
       public static readonly string DateExtractor1 = $@"\b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}((\s*(de)|[/\\\.\- ])\s*)?{MonthRegex}\b";
       public static readonly string DateExtractor2 = $@"\b({WeekDayRegex}(\s+|\s*,\s*))?({DayRegex}(\s*([/\.\-]|de)?\s*{MonthRegex}|\s+de\s+{MonthNumRegex})(\s*([,./-]|de|\s+)\s*){DateYearRegex}|{BaseDateTime.FourDigitYearRegex}\s*[/\.\- ]\s*{DayRegex}\s*[/\.\- ]\s*{MonthRegex})\b";
-      public static readonly string DateExtractor3 = $@"\b({WeekDayRegex}(\s+|\s*,\s*))?{MonthRegex}(\s*[/\.\- ]\s*|\s+de\s+){DayRegex}((\s*[/\.\- ]\s*|\s+de\s+){DateYearRegex})?\b";
+      public static readonly string DateExtractor3 = $@"\b({WeekDayRegex}(\s+|\s*,\s*))?{MonthRegex}(\s*[/\.\- ]\s*|\s+de\s+){DayRegex}(?!\s*\-\s*\d{{2}}\b)((\s*[/\.\- ]\s*|\s+de\s+){DateYearRegex})?\b";
       public static readonly string DateExtractor4 = $@"\b({WeekDayRegex}(\s+|\s*,\s*))?{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}\s*[/\\\-]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)";
       public static readonly string DateExtractor5 = $@"\b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)";
       public static readonly string DateExtractor6 = $@"(?<=\b(em|no|o)\s+){MonthNumRegex}[\-\.]{DayRegex}{BaseDateTime.CheckDecimalRegex}\b";

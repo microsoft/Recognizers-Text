@@ -1,4 +1,4 @@
-[
+﻿[
   {
     "Input": "dom, amanhã, hoje, 2018",
     "Context": {
@@ -4130,6 +4130,37 @@
               "type": "daterange",
               "sourceEntity": "datetimerange",
               "end": "2000-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Estarei fora novembro 19-20",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "novembro 19-20",
+        "Start": 13,
+        "End": 26,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-11-19,XXXX-11-20,P1D)",
+              "type": "daterange",
+              "start": "2015-11-19",
+              "end": "2015-11-20"
+            },
+            {
+              "timex": "(XXXX-11-19,XXXX-11-20,P1D)",
+              "type": "daterange",
+              "start": "2016-11-19",
+              "end": "2016-11-20"
             }
           ]
         }

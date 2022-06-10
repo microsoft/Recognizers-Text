@@ -1636,5 +1636,68 @@
         "Length": 4
       }
     ]
+  },
+  {
+    "Input": "アラームを25時40分にセットして。",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "25時40分",
+        "Type": "time",
+        "Value": {
+          "Timex": "T25:40",
+          "FutureResolution": {
+            "time": "01:40:00"
+          },
+          "PastResolution": {
+            "time": "01:40:00"
+          }
+        },
+        "Start": 5,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "アラームを26時45分にセットして。",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "26時45分",
+        "Type": "time",
+        "Value": {
+          "Timex": "T26:45",
+          "FutureResolution": {
+            "time": "02:45:00"
+          },
+          "PastResolution": {
+            "time": "02:45:00"
+          }
+        },
+        "Start": 5,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "私は8:00:24pmに戻ります",
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "8:00:24pm",
+        "Type": "time",
+        "Value": {
+          "Timex": "T20:00:24",
+          "FutureResolution": {
+            "time": "20:00:24"
+          },
+          "PastResolution": {
+            "time": "20:00:24"
+          }
+        },
+        "Start": 2,
+        "Length": 9
+      }
+    ]
   }
 ]

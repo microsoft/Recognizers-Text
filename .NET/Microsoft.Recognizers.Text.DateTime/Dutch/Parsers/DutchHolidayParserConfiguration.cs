@@ -120,6 +120,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
                 { "sacrifice", Sacrifice },
                 { "eidalfitr", EidAlFitr },
                 { "islamicnewyear", IslamicNewYear },
+                { "earthday", EarthDay },
+                { "juneteenth", Juneteenth },
             };
         }
 
@@ -214,6 +216,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         private static DateObject Driekoningen(int year) => new DateObject(year, 1, 6);
 
         private static DateObject KetiKoti(int year) => new DateObject(year, 7, 1);
+
+        private static DateObject EarthDay(int year) => new DateObject(year, 4, 22);
+
+        private static DateObject Juneteenth(int year) => new DateObject(year, 6, 19);
 
         private static DateObject Ramadan(int year) => HolidayFunctions.IslamicHoliday(year, HolidayFunctions.IslamicHolidayType.Ramadan);
 

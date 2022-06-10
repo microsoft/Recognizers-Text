@@ -51,6 +51,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
         public static readonly Regex FailFastRegex =
             new Regex(DateTimeDefinitions.FailFastRegex, RegexFlags | RegexOptions.Compiled);
 
+        public static readonly Regex YearRegex =
+            new Regex(DateTimeDefinitions.YearRegex, RegexFlags);
+
         public static readonly Regex[] TermFilterRegexes =
         {
             // one on one
@@ -140,6 +143,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
         Regex IMergedExtractorConfiguration.UnspecificDatePeriodRegex => UnspecificDatePeriodRegex;
 
         Regex IMergedExtractorConfiguration.UnspecificTimePeriodRegex => null;
+
+        Regex IMergedExtractorConfiguration.YearRegex => YearRegex;
 
         Regex IMergedExtractorConfiguration.FailFastRegex => FailFastRegex;
 

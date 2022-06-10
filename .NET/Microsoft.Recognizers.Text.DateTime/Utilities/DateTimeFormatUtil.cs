@@ -157,14 +157,24 @@ namespace Microsoft.Recognizers.Text.DateTime
             return $"{LuisDate(time)}{Constants.TimeTimexPrefix}{LuisTime(time.Hour, time.Minute, time.Second)}";
         }
 
-        // Only handle TimeSpan which is less than one day
+        // If a timex is given and it contains minutes and seconds, the result also includes minutes and seconds.
+        // Otherwise the result does not include minutes and seconds if they are zero.
+        public static string LuisDateShortTime(DateObject time, string timex = null)
+        {
+            var hasMin = timex != null ? timex.Contains(Constants.TimeTimexConnector) : false;
+            var hasSec = timex != null ? timex.Split(Constants.TimeTimexConnector[0]).Length > 2 : false;
+
+            return $"{LuisDate(time)}{FormatShortTime(time, hasMin, hasSec)}";
+        }
+
+        // Also handle TimeSpans which are more than one day
         public static string LuisTimeSpan(System.TimeSpan timeSpan)
         {
             var timexBuilder = new StringBuilder($"{Constants.GeneralPeriodPrefix}{Constants.TimeTimexPrefix}");
 
-            if (timeSpan.Hours > 0)
+            if (timeSpan.Days > 0 || timeSpan.Hours > 0)
             {
-                timexBuilder.Append($"{timeSpan.Hours}H");
+                timexBuilder.Append($"{(timeSpan.Days * Constants.DayHourCount) + timeSpan.Hours}H");
             }
 
             if (timeSpan.Minutes > 0)
@@ -188,6 +198,15 @@ namespace Microsoft.Recognizers.Text.DateTime
         public static string FormatTime(DateObject time)
         {
             return string.Join(Constants.TimeTimexConnector, time.Hour.ToString("D2", CultureInfo.InvariantCulture), time.Minute.ToString("D2", CultureInfo.InvariantCulture), time.Second.ToString("D2", CultureInfo.InvariantCulture));
+        }
+
+        // Does not return minutes and seconds if they are zero
+        public static string FormatShortTime(DateObject time, bool keepMin = false, bool keepSec = false)
+        {
+            int hour = time.Hour,
+                min = (keepMin || time.Minute > 0) ? time.Minute : Constants.InvalidMinute,
+                sec = (keepSec || time.Second > 0) ? time.Second : Constants.InvalidSecond;
+            return ShortTime(hour, min, sec);
         }
 
         public static string FormatDateTime(DateObject datetime)

@@ -218,7 +218,7 @@
         "Text": "21-2-2016, 14:00'ten 23/04/2016 saat 3:32'ye kadar",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "(2016-02-21T14:00,2016-04-23T03:32,PT1478H)",
+          "Timex": "(2016-02-21T14:00,2016-04-23T03:32,PT1477H32M)",
           "FutureResolution": {
             "startDateTime": "2016-02-21 14:00:00",
             "endDateTime": "2016-04-23 03:32:00"
@@ -1164,7 +1164,7 @@
         "Text": "21/2/2016 saat 14:00'ten 23/04/2016 saat 3:32'ye kadar",
         "Type": "datetimerange",
         "Value": {
-          "Timex": "(2016-02-21T14:00,2016-04-23T03:32,PT1478H)",
+          "Timex": "(2016-02-21T14:00,2016-04-23T03:32,PT1477H32M)",
           "FutureResolution": {
             "startDateTime": "2016-02-21 14:00:00",
             "endDateTime": "2016-04-23 03:32:00"

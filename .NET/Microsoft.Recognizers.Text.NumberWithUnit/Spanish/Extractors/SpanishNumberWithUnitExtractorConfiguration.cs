@@ -26,6 +26,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
         private static readonly Regex NonUnitsRegex =
             new Regex(BaseUnits.PmNonUnitRegex, RegexFlags);
 
+        private static readonly Regex NumberMultiplierRegex =
+            new Regex(NumbersWithUnitDefinitions.MultiplierRegex, RegexFlags);
+
         protected SpanishNumberWithUnitExtractorConfiguration(CultureInfo ci)
         {
             this.CultureInfo = ci;
@@ -59,7 +62,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
 
         public virtual Regex AmbiguousUnitNumberMultiplierRegex => null;
 
-        public Regex MultiplierRegex => null;
+        public Regex MultiplierRegex => NumberMultiplierRegex;
 
         public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; } = null;
 
