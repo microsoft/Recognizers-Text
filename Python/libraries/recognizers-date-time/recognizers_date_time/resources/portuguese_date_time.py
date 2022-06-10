@@ -100,7 +100,7 @@ class PortugueseDateTime:
     DateYearRegex = f'(?<year>{YearRegex}|{TwoDigitYearRegex})'
     DateExtractor1 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{DayRegex}((\\s*(de)|[/\\\\\\.\\- ])\\s*)?{MonthRegex}\\b'
     DateExtractor2 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?({DayRegex}(\\s*([/\\.\\-]|de)?\\s*{MonthRegex}|\\s+de\\s+{MonthNumRegex})(\\s*([,./-]|de|\\s+)\\s*){DateYearRegex}|{BaseDateTime.FourDigitYearRegex}\\s*[/\\.\\- ]\\s*{DayRegex}\\s*[/\\.\\- ]\\s*{MonthRegex})\\b'
-    DateExtractor3 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{MonthRegex}(\\s*[/\\.\\- ]\\s*|\\s+de\\s+){DayRegex}((\\s*[/\\.\\- ]\\s*|\\s+de\\s+){DateYearRegex})?\\b'
+    DateExtractor3 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{MonthRegex}(\\s*[/\\.\\- ]\\s*|\\s+de\\s+){DayRegex}(?!\\s*\\-\\s*\\d{{2}}\\b)((\\s*[/\\.\\- ]\\s*|\\s+de\\s+){DateYearRegex})?\\b'
     DateExtractor4 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{MonthNumRegex}\\s*[/\\\\\\-]\\s*{DayRegex}\\s*[/\\\\\\-]\\s*{DateYearRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)'
     DateExtractor5 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{DayRegex}\\s*[/\\\\\\-\\.]\\s*({MonthNumRegex}|{MonthRegex})\\s*[/\\\\\\-\\.]\\s*{DateYearRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)'
     DateExtractor6 = f'(?<=\\b(em|no|o)\\s+){MonthNumRegex}[\\-\\.]{DayRegex}{BaseDateTime.CheckDecimalRegex}\\b'

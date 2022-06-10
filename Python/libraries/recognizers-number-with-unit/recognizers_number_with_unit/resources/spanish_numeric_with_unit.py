@@ -604,8 +604,9 @@ class SpanishNumericWithUnit:
                                         ("Millibitcoin", "MILLIBITCOIN"),
                                         ("Satoshi", "SATOSHI")])
     CompoundUnitConnectorRegex = f'(?<spacer>y|con)'
+    MultiplierRegex = f'\\s*\\b(((mil\\s+)?mi|bi|cuatri|quinti|sexti|septi)ll[oó]n|mil)(es)?\\b'
     CurrencyPrefixList = dict([("Dobra", "db|std"),
-                               ("Dólar", "$"),
+                               ("Dólar", "$|dólar|dólares|dolar|dolares"),
                                ("Dólar estadounidense", "us$|u$d|usd"),
                                ("Dólar del Caribe Oriental", "ec$|xcd"),
                                ("Dólar australiano", "a$|aud"),

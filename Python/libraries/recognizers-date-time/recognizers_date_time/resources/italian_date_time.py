@@ -104,7 +104,7 @@ class ItalianDateTime:
     WeekDayOfMonthRegex = f'(?<wom>((la|il)\\s+)?(?<cardinal>prim[ao]|second[ao]|terz[ao]|quart[ao]|quint[ao]|ultim[ao])\\s+{WeekDayRegex}\\s+{MonthSuffixRegex})'
     RelativeWeekDayRegex = f'\\b({WrittenNumRegex}\\s+{WeekDayRegex}\\s+(da\\s+ora|dopo))\\b'
     SpecialDate = f'(?<=\\b(il|l\'|al(l\')?)\\s*){DayRegex}\\b'
-    DateExtractor1 = f'\\b((quest[oa]\\s+)?{WeekDayRegex}\\s*[,-]?\\s*)?(({MonthRegex}(\\.)?\\s*[/\\\\.,-]?\\s*{DayRegex})|(\\({MonthRegex}\\s*[-.]\\s*{DayRegex}\\))|({DayRegex}\\s*[/\\\\.,-]?\\s*{MonthRegex}(\\.)?))(\\s*\\(\\s*{WeekDayRegex}\\s*\\))?'
+    DateExtractor1 = f'\\b((quest[oa]\\s+)?{WeekDayRegex}\\s*[,-]?\\s*)?(({MonthRegex}(\\.)?\\s*[/\\\\.,-]?\\s*{DayRegex}(?!\\s*\\-\\s*\\d{{2}}\\b))|(\\({MonthRegex}\\s*[-.]\\s*{DayRegex}\\))|({DayRegex}\\s*[/\\\\.,-]?\\s*{MonthRegex}(\\.)?))(\\s*\\(\\s*{WeekDayRegex}\\s*\\))?'
     DateExtractor2 = f'({DateExtractor1}(\\s+|\\s*[\\-/,.]\\s*|\\s+del\\s+)({DateYearRegex}))\\b'
     DateExtractor3 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?({DayRegex}(\\.)?(\\s*[/,.\\- ]\\s*|\\s+di\\s+){MonthRegex}(\\.)?(\\s*[/,.\\- ]\\s*{DateYearRegex})?|{BaseDateTime.FourDigitYearRegex}\\s*[/,.\\- ]\\s*{DayRegex}\\s*[/,.\\- ]\\s*{MonthRegex})\\b'
     DateExtractor4 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?((il|l\')\\s*)?{MonthNumRegex}\\s*[/\\\\\\-]\\s*{DayRegex}(\\.)?\\s*[/\\\\\\-]\\s*{DateYearRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)'
