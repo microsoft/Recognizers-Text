@@ -60,6 +60,13 @@ WrittenTensRegex: !simpleRegex
 WrittenNumRegex: !nestedRegex
   def: (?:{WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|{WrittenTensRegex}(\s+{WrittenOneToNineRegex})?)
   references: [ WrittenOneToNineRegex, WrittenElevenToNineteenRegex, WrittenTensRegex ]
+WrittenOneToNineOrdinalRegex: !simpleRegex
+  def: (?:first|second|third|fourth|fifth|sixth|seventh|eighth|nine?th)
+WrittenTensOrdinalRegex: !simpleRegex
+  def: (?:tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)
+WrittenOrdinalRegex: !nestedRegex
+  def: (?:{WrittenOneToNineOrdinalRegex}|{WrittenTensOrdinalRegex}|{WrittenTensRegex}\s+{WrittenOneToNineOrdinalRegex})
+  references: [ WrittenOneToNineOrdinalRegex, WrittenTensOrdinalRegex, WrittenTensRegex ]
 WrittenCenturyFullYearRegex: !nestedRegex
   def: (?:(one|two)\s+thousand((\s+and)?\s+{WrittenOneToNineRegex}\s+hundred)?)
   references: [ WrittenOneToNineRegex]
@@ -154,8 +161,8 @@ MonthWithYear: !nestedRegex
 SpecialYearPrefixes: !simpleRegex
   def: (calendar|(?<special>fiscal|school))
 OneWordPeriodRegex: !nestedRegex
-  def: \b((((the\s+)?month of\s+)?({StrictRelativeRegex}\s+)?{MonthRegex})|(month|year) to date|(?<toDate>((un)?till?|to)\s+date)|({RelativeRegex}\s+)?(my\s+)?((?<business>working\s+week|workweek)|week(end)?|month|fortnight|(({SpecialYearPrefixes}\s+)?year))(?!((\s+of)?\s+\d+(?!({BaseDateTime.BaseAmDescRegex}|{BaseDateTime.BasePmDescRegex}))|\s+to\s+date))(\s+{AfterNextSuffixRegex})?)\b
-  references: [ StrictRelativeRegex, RelativeRegex, AfterNextSuffixRegex, SpecialYearPrefixes, BaseDateTime.BaseAmDescRegex, BaseDateTime.BasePmDescRegex, MonthRegex ]
+  def: \b((((the\s+)?month of\s+)?({StrictRelativeRegex}\s+)?{MonthRegex})|(month|year) to date|(?<toDate>((un)?till?|to)\s+date)|(({RelativeRegex}\s+)?(my\s+)?((?<business>working\s+week|workweek)|weekend|week(?!\s+{WrittenNumRegex})|month|fortnight|(({SpecialYearPrefixes}\s+)?year)))(?!((\s+of)?\s+\d+(?!({BaseDateTime.BaseAmDescRegex}|{BaseDateTime.BasePmDescRegex}))|\s+to\s+date))(\s+{AfterNextSuffixRegex})?)\b
+  references: [ StrictRelativeRegex, RelativeRegex, AfterNextSuffixRegex, SpecialYearPrefixes, BaseDateTime.BaseAmDescRegex, BaseDateTime.BasePmDescRegex, MonthRegex, WrittenNumRegex ]
 MonthNumWithYear: !nestedRegex
   def: \b(({BaseDateTime.FourDigitYearRegex}(\s*)[/\-\.](\s*){MonthNumRegex})|({MonthNumRegex}(\s*)[/\-](\s*){BaseDateTime.FourDigitYearRegex}))\b
   references: [ BaseDateTime.FourDigitYearRegex, MonthNumRegex ]
@@ -218,8 +225,8 @@ SeasonRegex: !nestedRegex
   def: \b(?<season>({PrefixPeriodRegex}\s+)?({RelativeRegex}\s+)?{SeasonDescRegex}((\s+of|\s*,\s*)?\s+({YearRegex}|{RelativeRegex}\s+year))?)\b
   references: [ YearRegex, RelativeRegex, SeasonDescRegex, PrefixPeriodRegex ]
 WhichWeekRegex: !nestedRegex
-  def: \b(week)(\s*)(?<number>5[0-3]|[1-4]\d|0?[1-9])(\s+of\s+({YearRegex}|{RelativeRegex}\s+year))?\b
-  references: [ YearRegex, RelativeRegex ]
+  def: \b((week)(\s*)((?<number>5[0-3]|[1-4]\d|0?[1-9])|(?<writtenNumber>{WrittenNumRegex}))|(?<ordinal>((?<number>5[0-3]|[1-4]\d|0?[1-9])(st|[nr]d|th))|(?<writtenNumber>{WrittenOrdinalRegex}))\s+week)(\s+of\s+({YearRegex}|{RelativeRegex}\s+year))?\b
+  references: [ YearRegex, RelativeRegex, WrittenNumRegex, WrittenOrdinalRegex ]
 WeekOfRegex: !simpleRegex
   def: (the\s+)?((week)(\s+(of|(commencing|starting|beginning)(\s+on)?))|w/c)(\s+the)?
 MonthOfRegex: !simpleRegex

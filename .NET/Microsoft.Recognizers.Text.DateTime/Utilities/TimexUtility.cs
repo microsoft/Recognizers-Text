@@ -124,6 +124,19 @@ namespace Microsoft.Recognizers.Text.DateTime
             return $"({timex1},{timex2},{datePeriodTimex})";
         }
 
+        public static string GenerateWeekNumberTimex(int weekNum, int year = -1)
+        {
+            if (year > 0)
+            {
+                return year.ToString("D4", CultureInfo.InvariantCulture) + Constants.DateTimexConnector
+                    + Constants.TimexWeek + weekNum.ToString("D2", CultureInfo.InvariantCulture);
+            }
+            else
+            {
+                return Constants.TimexWeek + weekNum.ToString("D2", CultureInfo.InvariantCulture);
+            }
+        }
+
         public static string GenerateWeekTimex(DateObject monday = default(DateObject))
         {
             if (monday.IsDefaultValue())
