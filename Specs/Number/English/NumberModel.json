@@ -3622,5 +3622,115 @@
         "End": 3
       }
     ]
+  },
+  {
+    "Input": "nought is 0",
+    "Results": [
+      {
+        "Text": "nought",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "0"
+        },
+        "Start": 0,
+        "End": 5
+      },
+      {
+        "Text": "0",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "0"
+        },
+        "Start": 10,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "nine point nought four",
+    "Results": [
+      {
+        "Text": "nine point nought four",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "9.04"
+        },
+        "Start": 0,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "nought point nought three plus zero point zero eight equals nought point eleven",
+    "Results": [
+      {
+        "Text": "nought point nought three",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "0.03"
+        },
+        "Start": 0,
+        "End": 24
+      },
+      {
+        "Text": "zero point zero eight",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "0.08"
+        },
+        "Start": 31,
+        "End": 51
+      },
+      {
+        "Text": "nought point eleven",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "0.11"
+        },
+        "Start": 60,
+        "End": 78
+      }
+    ]
+  },
+  {
+    "Input": "they were playing three-nought-four",
+    "Results": [
+      {
+        "Text": "three",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "3"
+        },
+        "Start": 18,
+        "End": 22
+      },
+      {
+        "Text": "nought",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "0"
+        },
+        "Start": 24,
+        "End": 29
+      },
+      {
+        "Text": "four",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "4"
+        },
+        "Start": 31,
+        "End": 34
+      }
+    ]
   }
 ]
