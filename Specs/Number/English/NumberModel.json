@@ -3732,5 +3732,35 @@
         "End": 34
       }
     ]
+  },
+  {
+    "Input": "naught",
+    "Results": [
+      {
+        "Text": "naught",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "0"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "naught point five",
+    "Results": [
+      {
+        "Text": "naught point five",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "0.5"
+        },
+        "Start": 0,
+        "End": 16
+      }
+    ]
   }
 ]
