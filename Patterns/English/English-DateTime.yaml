@@ -106,8 +106,12 @@ SingleWeekDayRegex: !simpleRegex
 RelativeMonthRegex: !nestedRegex
   def: (?<relmonth>((day\s+)?of\s+)?{RelativeRegex}\s+month)\b
   references: [RelativeRegex]
-MonthRegex: !simpleRegex
-  def: \b(?<month>apr(il)?|aug(ust)?|dec(ember)?|feb(ruary)?|jan(uary)?|july?|june?|mar(ch)?|may|nov(ember)?|oct(ober)?|sept(ember)?|sep)(?!\p{L})
+#  only to handle informal cases like 29Feb. For all other date cases, use MonthRegex.
+MonthRegexNoWordBoundary: !simpleRegex
+  def: (?<month>apr(il)?|aug(ust)?|dec(ember)?|feb(ruary)?|jan(uary)?|july?|june?|mar(ch)?|may|nov(ember)?|oct(ober)?|sept(ember)?|sep)(?!\p{L})
+MonthRegex: !nestedRegex
+  def: \b{MonthRegexNoWordBoundary}
+  references: [ MonthRegexNoWordBoundary ]
 WrittenMonthRegex: !nestedRegex
   def: (((the\s+)?month of\s+)?{MonthRegex})
   references: [ MonthRegex ]
@@ -245,10 +249,10 @@ NextDateRegex: !nestedRegex
   def: \b({NextPrefixRegex}(\s*week{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|((on\s+)?{WeekDayRegex}((\s+of)?\s+(the\s+following|(the\s+)?next)\s*week))\b
   references: [ NextPrefixRegex, WeekDayRegex, PrefixWeekDayRegex ]
 SpecialDayRegex: !nestedRegex
-  def: \b((the\s+)?day before yesterday|(the\s+)?day after (tomorrow|tmr)|the\s+day\s+(before|after)(?!=\s+day)|((the\s+)?({RelativeRegex}|my)\s+day)|yesterday|tomorrow|tmr|today|otd|current date)\b
+  def: \b((the\s+)?day before yesterday|(the\s+)?day after (tomorrow|tmrw?)|the\s+day\s+(before|after)(?!=\s+day)|((the\s+)?({RelativeRegex}|my)\s+day)|yesterday|tomorrow|tmrw?|today|otd|current date)\b
   references: [ RelativeRegex ]
 SpecialDayWithNumRegex: !nestedRegex
-  def: \b((?<number>{WrittenNumRegex})\s+days?\s+from\s+(?<day>yesterday|tomorrow|tmr|today|current date))\b
+  def: \b((?<number>{WrittenNumRegex})\s+days?\s+from\s+(?<day>yesterday|tomorrow|tmrw?|today|current date))\b
   references: [ WrittenNumRegex ]
 RelativeDayRegex: !nestedRegex
   def: \b(((the\s+)?{RelativeRegex}\s+day))\b
@@ -276,8 +280,8 @@ DateExtractor1: !nestedRegex
   def: \b({DayPrefix}\s*[,-]?\s*)?(({MonthRegex}[\.]?\s*[/\\.,-]?\s*{DayRegex})|(\({MonthRegex}\s*[-./]\s*{DayRegex}\)))(?!\s*\-\s*\d{2}\b)(\s*\(\s*{DayPrefix}\s*\))?({DateExtractorYearTermRegex}\b)?
   references: [ DayPrefix, MonthRegex, DayRegex, DateExtractorYearTermRegex ]
 DateExtractor3: !nestedRegex
-  def: \b({DayPrefix}(\s+|\s*,\s*))?({DayRegex}[\.]?(\s+|\s*[-,/]\s*|\s+of\s+){MonthRegex}[\.]?((\s+in)?{DateExtractorYearTermRegex})?|{BaseDateTime.FourDigitYearRegex}\s*[-./]?\s*(the\s+)?(?<day>(?:3[0-1]|[1-2]\d|0?[1-9])(?:th|nd|rd|st)?)[\.]?(\s+|\s*[-,/]\s*|\s+of\s+){MonthRegex}[\.]?)\b
-  references: [ DayPrefix, DayRegex, MonthRegex, DateExtractorYearTermRegex, BaseDateTime.FourDigitYearRegex ]
+  def: \b({DayPrefix}(\s+|\s*,\s*))?({DayRegex}?[\.]?(\s+|\s*[-,/]\s*|\s+of\s+|\s*)(\b)?{MonthRegexNoWordBoundary}[\.]?((\s+in)?{DateExtractorYearTermRegex})?|{BaseDateTime.FourDigitYearRegex}\s*[-./]?\s*(the\s+)?(?<day>(?:3[0-1]|[1-2]\d|0?[1-9])(?:th|nd|rd|st)?)[\.]?(\s+|\s*[-,/]\s*|\s+of\s+){MonthRegex}[\.]?)\b
+  references: [ DayPrefix, DayRegex, MonthRegex, DateExtractorYearTermRegex, BaseDateTime.FourDigitYearRegex, MonthRegexNoWordBoundary ]
 DateExtractor4: !nestedRegex
   def: \b{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}[\.]?\s*[/\\\-]\s*{DateYearRegex}
   references: [ MonthNumRegex, DayRegex, DateYearRegex ]
@@ -597,7 +601,7 @@ SinceRegexExp: !nestedRegex
 AgoRegex: !simpleRegex
   def: \b(ago|earlier|before\s+(?<day>yesterday|today))\b
 LaterRegex: !nestedRegex
-  def: \b(?:later(?!((\s+in)?\s*{OneWordPeriodRegex})|(\s+{TimeOfDayRegex})|\s+than\b)|from now|(from|after)\s+(?<day>tomorrow|tmr|today))\b
+  def: \b(?:later(?!((\s+in)?\s*{OneWordPeriodRegex})|(\s+{TimeOfDayRegex})|\s+than\b)|from now|(from|after)\s+(?<day>tomorrow|tmrw?|today))\b
   references: [ OneWordPeriodRegex, TimeOfDayRegex ]
 BeforeAfterRegex: !simpleRegex
   def: \b((?<before>before)|(?<after>from|after))\b
@@ -1268,6 +1272,7 @@ PlusOneDayTerms: !list
   entries: 
     - tomorrow
     - tmr
+    - tmrw
     - day after
 MinusOneDayTerms: !list
   types: [ string ]
@@ -1279,6 +1284,7 @@ PlusTwoDayTerms: !list
   entries: 
     - day after tomorrow
     - day after tmr
+    - day after tmrw
 MinusTwoDayTerms: !list
   types: [ string ]
   entries: 
