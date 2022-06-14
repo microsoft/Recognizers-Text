@@ -15878,7 +15878,23 @@
       "ReferenceDateTime": "2020-05-14T12:00:00"
     },
     "NotSupportedByDesign": "java, javascript, python",
-    "Results": []
+    "Results": [
+      {
+        "Text": "2002-10-09",
+        "Start": 40,
+        "End": 49,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2002-10-09",
+              "type": "date",
+              "value": "2002-10-09"
+            }
+          ]
+        }
+      }
+    ]
   },
   {
     "Input": "2015-1-32 is een incorrecte datum",

@@ -584,7 +584,9 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {
             { @"^\d{4}$", @"(\d\.\d{4}|\d{4}\.\d)" },
-            { @"^(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)$", @"([$%£&!?@#])(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)|(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)([$%£&@#])" }
+            { @"^(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)$", @"([$%£&!?@#])(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)|(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)([$%£&@#])" },
+            { @"^\d{1,4}-\d{1,4}$", @"\d{1,4}-\d{1,4}-\d|\d-\d{1,4}-\d{1,4}" },
+            { @"^\d{1,4}-\d{1,4}-\d{1,4}$", @"\d{1,4}-\d{1,4}-\d{1,4}-\d|\d-\d{1,4}-\d{1,4}-\d{1,4}" }
         };
       public static readonly Dictionary<string, string> AmbiguityTimeFiltersDict = new Dictionary<string, string>
         {

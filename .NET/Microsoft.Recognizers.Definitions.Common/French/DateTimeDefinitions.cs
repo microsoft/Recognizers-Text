@@ -733,7 +733,9 @@ namespace Microsoft.Recognizers.Definitions.French
             { @"^\d{4}$", @"(\d\.\d{4}|\d{4}\.\d)" },
             { @"^([eé]t[eé])$", @"(?<!((l\s*['`]\s*)|(cet(te)?|en)\s+))[eé]t[eé]\b" },
             { @"^(mer)$", @"(?<!((le|ce)\s+))mer\b" },
-            { @"^(avr|ao[uû]t|d[eé]c|f[eé]vr?|janv?|jui?[ln]|mars?|mai|nov|oct|sept?)$", @"([$%£&!?@#])(avr|ao[uû]t|d[eé]c|f[eé]vr?|janv?|jui?[ln]|mars?|mai|nov|oct|sept?)|(avr|ao[uû]t|d[eé]c|f[eé]vr?|janv?|jui?[ln]|mars?|mai|nov|oct|sept?)([$%£&@#])" }
+            { @"^(avr|ao[uû]t|d[eé]c|f[eé]vr?|janv?|jui?[ln]|mars?|mai|nov|oct|sept?)$", @"([$%£&!?@#])(avr|ao[uû]t|d[eé]c|f[eé]vr?|janv?|jui?[ln]|mars?|mai|nov|oct|sept?)|(avr|ao[uû]t|d[eé]c|f[eé]vr?|janv?|jui?[ln]|mars?|mai|nov|oct|sept?)([$%£&@#])" },
+            { @"^\d{1,4}-\d{1,4}$", @"\d{1,4}-\d{1,4}-\d|\d-\d{1,4}-\d{1,4}" },
+            { @"^\d{1,4}-\d{1,4}-\d{1,4}$", @"\d{1,4}-\d{1,4}-\d{1,4}-\d|\d-\d{1,4}-\d{1,4}-\d{1,4}" }
         };
       public static readonly Dictionary<string, string> AmbiguityTimeFiltersDict = new Dictionary<string, string>
         {

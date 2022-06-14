@@ -977,6 +977,8 @@ AmbiguityFiltersDict: !dictionary
   entries:
     '^\d{4}$': '(\d\.\d{4}|\d{4}\.\d)'
     '^(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)$': '([$%£&!?@#])(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)|(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)([$%£&@#])'
+    '^\d{1,4}-\d{1,4}$': '\d{1,4}-\d{1,4}-\d|\d-\d{1,4}-\d{1,4}'
+    '^\d{1,4}-\d{1,4}-\d{1,4}$': '\d{1,4}-\d{1,4}-\d{1,4}-\d|\d-\d{1,4}-\d{1,4}-\d{1,4}'
 # Used to exclude duration matches (e.g. "por 3 horas") from time extractions
 AmbiguityTimeFiltersDict: !dictionary
   types: [ string, string ]
