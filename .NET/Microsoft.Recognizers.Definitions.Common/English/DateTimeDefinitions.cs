@@ -67,7 +67,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly string MonthRegex = $@"\b{MonthRegexNoWordBoundary}";
       public static readonly string WrittenMonthRegex = $@"(((the\s+)?month of\s+)?{MonthRegex})";
       public static readonly string MonthSuffixRegex = $@"(?<msuf>(?:(in|of|on)\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))";
-      public const string DateUnitRegex = @"(?<unit>(decade|year|(?<uoy>month|week)|(?<business>(business\s+|week\s*))?(?<uoy>day)|fortnight|weekend)(?<plural>s)?|(?<=\s+\d{1,4})[ymwd])\b";
+      public const string DateUnitRegex = @"(?<unit>(decade|year|(?<uoy>month|week)|(?<business>(business\s+|week\s*))?(?<uoy>day)|fortnight|weekend)(?<plural>s)?|(?<=(^|\s)\d{1,4})[ymwd])\b";
       public const string DateTokenPrefix = @"on ";
       public const string TimeTokenPrefix = @"at ";
       public const string TokenBeforeDate = @"on ";
@@ -119,8 +119,8 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly string ThisRegex = $@"\b(this(\s*week{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|({WeekDayRegex}((\s+of)?\s+this\s*week))\b";
       public static readonly string LastDateRegex = $@"\b({PreviousPrefixRegex}(\s*week{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|({WeekDayRegex}(\s+(of\s+)?last\s*week))\b";
       public static readonly string NextDateRegex = $@"\b({NextPrefixRegex}(\s*week{PrefixWeekDayRegex}?)?\s*{WeekDayRegex})|((on\s+)?{WeekDayRegex}((\s+of)?\s+(the\s+following|(the\s+)?next)\s*week))\b";
-      public static readonly string SpecialDayRegex = $@"\b((the\s+)?day before yesterday|(the\s+)?day after (tomorrow|tmr|tmrw)|the\s+day\s+(before|after)(?!=\s+day)|((the\s+)?({RelativeRegex}|my)\s+day)|yesterday|tomorrow|tmrw|tmr|today|otd|current date)\b";
-      public static readonly string SpecialDayWithNumRegex = $@"\b((?<number>{WrittenNumRegex})\s+days?\s+from\s+(?<day>yesterday|tomorrow|tmr|tmrw|today|current date))\b";
+      public static readonly string SpecialDayRegex = $@"\b((the\s+)?day before yesterday|(the\s+)?day after (tomorrow|tmrw?)|the\s+day\s+(before|after)(?!=\s+day)|((the\s+)?({RelativeRegex}|my)\s+day)|yesterday|tomorrow|tmrw?|today|otd|current date)\b";
+      public static readonly string SpecialDayWithNumRegex = $@"\b((?<number>{WrittenNumRegex})\s+days?\s+from\s+(?<day>yesterday|tomorrow|tmrw?|today|current date))\b";
       public static readonly string RelativeDayRegex = $@"\b(((the\s+)?{RelativeRegex}\s+day))\b";
       public const string SetWeekDayRegex = @"\b(?<prefix>on\s+)?(?<weekday>morning|afternoon|evening|night|(sun|mon|tues|wednes|thurs|fri|satur)day)s\b";
       public static readonly string WeekDayOfMonthRegex = $@"(?<wom>(the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\s+(week\s+{MonthSuffixRegex}[\.]?\s+(on\s+)?{WeekDayRegex}|{WeekDayRegex}\s+{MonthSuffixRegex}))";
@@ -252,7 +252,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public const string SinceRegex = @"(?:(?:\b(?:since|after\s+or\s+equal\s+to|(starting|beginning)(\s)?(?:from|on|with)?|as\s+early\s+as|(any\s+time\s+)from)\b\s*?)|(?<!\w|<)(>=))(\s+the)?";
       public static readonly string SinceRegexExp = $@"({SinceRegex}|\bfrom(\s+the)?\b)";
       public const string AgoRegex = @"\b(ago|earlier|before\s+(?<day>yesterday|today))\b";
-      public static readonly string LaterRegex = $@"\b(?:later(?!((\s+in)?\s*{OneWordPeriodRegex})|(\s+{TimeOfDayRegex})|\s+than\b)|from now|(from|after)\s+(?<day>tomorrow|tmr|tmrw|today))\b";
+      public static readonly string LaterRegex = $@"\b(?:later(?!((\s+in)?\s*{OneWordPeriodRegex})|(\s+{TimeOfDayRegex})|\s+than\b)|from now|(from|after)\s+(?<day>tomorrow|tmrw?|today))\b";
       public const string BeforeAfterRegex = @"\b((?<before>before)|(?<after>from|after))\b";
       public static readonly string ModPrefixRegex = $@"\b({RelativeRegex}|{AroundRegex}|{BeforeRegex}|{AfterRegex}|{SinceRegex})\b";
       public static readonly string ModSuffixRegex = $@"\b({AgoRegex}|{LaterRegex}|{BeforeAfterRegex}|{FutureSuffixRegex}|{PastSuffixRegex})\b";
@@ -311,8 +311,10 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"decade", @"10Y" },
             { @"years", @"Y" },
             { @"year", @"Y" },
+            { @"y", @"Y" },
             { @"months", @"MON" },
             { @"month", @"MON" },
+            { @"m", @"M" },
             { @"quarters", @"3MON" },
             { @"quarter", @"3MON" },
             { @"semesters", @"6MON" },
@@ -321,6 +323,7 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"semestre", @"6MON" },
             { @"weeks", @"W" },
             { @"week", @"W" },
+            { @"w", @"W" },
             { @"weekends", @"WE" },
             { @"weekend", @"WE" },
             { @"fortnights", @"2W" },
@@ -329,6 +332,7 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"weekday", @"D" },
             { @"days", @"D" },
             { @"day", @"D" },
+            { @"d", @"D" },
             { @"nights", @"D" },
             { @"night", @"D" },
             { @"hours", @"H" },
@@ -351,16 +355,20 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"decade", 315360000 },
             { @"years", 31536000 },
             { @"year", 31536000 },
+            { @"y", 31536000 },
             { @"months", 2592000 },
             { @"month", 2592000 },
+            { @"m", 2592000 },
             { @"fortnights", 1209600 },
             { @"fortnight", 1209600 },
             { @"weekends", 172800 },
             { @"weekend", 172800 },
             { @"weeks", 604800 },
             { @"week", 604800 },
+            { @"w", 604800 },
             { @"days", 86400 },
             { @"day", 86400 },
+            { @"d", 86400 },
             { @"nights", 86400 },
             { @"night", 86400 },
             { @"hours", 3600 },

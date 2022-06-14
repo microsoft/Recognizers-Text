@@ -23650,5 +23650,77 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I'll leave for 10D",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "10d",
+        "Start": 15,
+        "End": 17,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P10D",
+              "type": "duration",
+              "value": "864000"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "the plants were grown for 3Y",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "3y",
+        "Start": 26,
+        "End": 27,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P3Y",
+              "type": "duration",
+              "value": "94608000"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "the cold lasted 2W",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java",
+    "Results": [
+      {
+        "Text": "2w",
+        "Start": 16,
+        "End": 17,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P2W",
+              "type": "duration",
+              "value": "1209600"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
