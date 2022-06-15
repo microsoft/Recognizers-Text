@@ -86,6 +86,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Swedish
             TimePointExtractor = new BaseTimeExtractor(new SwedishTimeExtractorConfiguration(this));
             DurationExtractor = new BaseDurationExtractor(new SwedishDurationExtractorConfiguration(this));
             UtilityConfiguration = new SwedishDatetimeUtilityConfiguration();
+            HolidayPointExtractor = new BaseHolidayExtractor(new SwedishHolidayExtractorConfiguration(this));
+
         }
 
         public IExtractor IntegerExtractor { get; }
@@ -95,6 +97,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Swedish
         public IDateTimeExtractor TimePointExtractor { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
+
+        public IDateTimeExtractor HolidayPointExtractor { get; }
 
         Regex IDateTimeExtractorConfiguration.NowRegex => NowRegex;
 

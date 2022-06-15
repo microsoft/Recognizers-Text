@@ -85,6 +85,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             TimePointExtractor = new BaseTimeExtractor(new DutchTimeExtractorConfiguration(this));
             DurationExtractor = new BaseDurationExtractor(new DutchDurationExtractorConfiguration(this));
             UtilityConfiguration = new DutchDatetimeUtilityConfiguration();
+            HolidayPointExtractor = new BaseHolidayExtractor(new DutchHolidayExtractorConfiguration(this));
         }
 
         public IExtractor IntegerExtractor { get; }
@@ -94,6 +95,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public IDateTimeExtractor TimePointExtractor { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
+
+        public IDateTimeExtractor HolidayPointExtractor { get; }
 
         Regex IDateTimeExtractorConfiguration.NowRegex => NowRegex;
 

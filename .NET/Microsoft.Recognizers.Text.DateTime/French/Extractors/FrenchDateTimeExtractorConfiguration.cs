@@ -88,6 +88,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             TimePointExtractor = new BaseTimeExtractor(new FrenchTimeExtractorConfiguration(this));
             DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration(this));
             UtilityConfiguration = new FrenchDatetimeUtilityConfiguration();
+            HolidayPointExtractor = new BaseHolidayExtractor(new FrenchHolidayExtractorConfiguration(this));
+
         }
 
         public IExtractor IntegerExtractor { get; }
@@ -97,6 +99,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public IDateTimeExtractor TimePointExtractor { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
+
+        public IDateTimeExtractor HolidayPointExtractor { get; }
 
         Regex IDateTimeExtractorConfiguration.NowRegex => NowRegex;
 
