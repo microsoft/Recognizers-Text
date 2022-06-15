@@ -119,7 +119,7 @@ MonthSuffixRegex: !nestedRegex
   def: (?<msuf>(?:(in|of|on)\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))
   references: [ RelativeMonthRegex, WrittenMonthRegex ]
 DateUnitRegex: !simpleRegex
-  def: (?<unit>(decade|year|(?<uoy>month|week)|(?<business>(business\s+|week\s*))?(?<uoy>day)|fortnight|weekend)(?<plural>s)?|(?<=\s+\d{1,4})[ymwd])\b
+  def: (?<unit>(decade|year|(?<uoy>month|week)|(?<business>(business\s+|week\s*))?(?<uoy>day)|fortnight|weekend)(?<plural>s)?|(?<=(^|\s)\d{1,4})[ymwd])\b
 DateTokenPrefix: 'on '
 TimeTokenPrefix: 'at '
 TokenBeforeDate: 'on '
@@ -744,8 +744,10 @@ UnitMap: !dictionary
     decade: 10Y
     years: Y
     year: Y
+    y: Y
     months: MON
     month: MON
+    m: M
     quarters: 3MON
     quarter: 3MON
     semesters: 6MON
@@ -754,6 +756,7 @@ UnitMap: !dictionary
     semestre: 6MON
     weeks: W
     week: W
+    w: W
     weekends: WE
     weekend: WE
     fortnights: 2W
@@ -762,6 +765,7 @@ UnitMap: !dictionary
     weekday: D
     days: D
     day: D
+    d: D
     nights: D
     night: D
     hours: H
@@ -784,16 +788,20 @@ UnitValueMap: !dictionary
     decade: 315360000
     years: 31536000
     year: 31536000
+    y: 31536000
     months: 2592000
     month: 2592000
+    m: 2592000
     fortnights: 1209600
     fortnight: 1209600
     weekends: 172800
     weekend: 172800
     weeks: 604800
     week: 604800
+    w: 604800
     days: 86400
     day: 86400
+    d: 86400
     nights: 86400
     night: 86400
     hours: 3600
