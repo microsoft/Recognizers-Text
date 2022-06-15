@@ -4166,5 +4166,71 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Eu poderei entrar se chegarmos antes de as 7?",
+    "Context": {
+      "ReferenceDateTime": "2018-09-28T01:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "antes de as 7",
+        "Start": 31,
+        "End": 43,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07",
+              "Mod": "before",
+              "type": "timerange",
+              "sourceEntity": "datetimepoint",
+              "end": "07:00:00"
+            },
+            {
+              "timex": "T19",
+              "Mod": "before",
+              "type": "timerange",
+              "sourceEntity": "datetimepoint",
+              "end": "19:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Eu poderei entrar se chegarmos antes das 7?",
+    "Context": {
+      "ReferenceDateTime": "2018-09-28T01:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "antes das 7",
+        "Start": 31,
+        "End": 41,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07",
+              "Mod": "before",
+              "type": "timerange",
+              "sourceEntity": "datetimepoint",
+              "end": "07:00:00"
+            },
+            {
+              "timex": "T19",
+              "Mod": "before",
+              "type": "timerange",
+              "sourceEntity": "datetimepoint",
+              "end": "19:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

@@ -318,7 +318,7 @@ MidTimeRegex: !nestedRegex
   references: [ MidnightRegex, MidmorningRegex, MidafternoonRegex, MiddayRegex, MidEarlyMorning ]
 AtRegex: !nestedRegex
   # "as quatro" "às 3"
-  def: \b(((?<=\b([aà]s?)\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}(\s+e\s+{BaseDateTime.MinuteRegex})?)(\s+horas?|\s*h\b)?|(?<=\b(s(er)?[aã]o|v[aã]o\s+ser|^[eé]h?)\s+|^\s*)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\s+horas?|\s*h\b))(\s+{OclockRegex})?|{MidTimeRegex})\b
+  def: \b(((?<=\b(d?[aà]s?)\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}(\s+e\s+{BaseDateTime.MinuteRegex})?)(\s+horas?|\s*h\b)?|(?<=\b(s(er)?[aã]o|v[aã]o\s+ser|^[eé]h?)\s+|^\s*)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\s+horas?|\s*h\b))(\s+{OclockRegex})?|{MidTimeRegex})\b
   references: [ HourNumRegex, BaseDateTime.HourRegex, BaseDateTime.MinuteRegex, WrittenTimeRegex, OclockRegex, MidTimeRegex ]
 ConnectNumRegex: !nestedRegex
   def: ({BaseDateTime.HourRegex}(?<min>[0-5][0-9])\s*{DescRegex})
@@ -480,7 +480,7 @@ HolidayRegex3: !nestedRegex
   references: [ YearRegex ]
 # PortugueseMergedExtractorConfiguration
 BeforeRegex: !simpleRegex
-  def: (antes(\s+(d[aeo]s?)?)?|at[ée]h?(\s+[oàa]s?\b)?)
+  def: (antes(\s+(d(e\s+)?[aeo]s?)?)?|at[ée]h?(\s+[oàa]s?\b)?)
 AfterRegex: !simpleRegex
   def: ((depois|ap[óo]s|a\s+partir)(\s*(de|d?[oa]s?)?)?)
 SinceRegex: !simpleRegex
