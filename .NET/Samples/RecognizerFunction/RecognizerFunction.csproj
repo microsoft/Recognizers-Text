@@ -18,7 +18,7 @@
     <ProjectReference Include="..\..\Microsoft.Recognizers.Text.Sequence\Microsoft.Recognizers.Text.Sequence.csproj" />
     <ProjectReference Include="..\..\Microsoft.Recognizers.Text\Microsoft.Recognizers.Text.csproj" />
   </ItemGroup>
-	
+
   <ItemGroup>
     <None Update="host.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
