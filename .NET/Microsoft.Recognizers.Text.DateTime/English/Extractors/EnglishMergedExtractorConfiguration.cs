@@ -66,6 +66,13 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             new Regex(DateTimeDefinitions.SingleAmbiguousTermsRegex, RegexFlags),
         };
 
+        // Skip Regexes under TasksMode
+        public static readonly Regex[] TasksSkipMergeRegexes =
+        {
+            // handle case scheduele 1:1 on 12 dec at 5 pm.
+            new Regex(DateTimeDefinitions.OneOnOneRegex, RegexFlags),
+        };
+
         public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
@@ -177,5 +184,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         StringMatcher IMergedExtractorConfiguration.SuperfluousWordMatcher => SuperfluousWordMatcher;
 
         bool IMergedExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+
+        IEnumerable<Regex> IMergedExtractorConfiguration.TasksSkipMergeRegexes => TasksSkipMergeRegexes;
+
     }
 }

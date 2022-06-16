@@ -60,6 +60,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             new Regex(DateTimeDefinitions.OneOnOneRegex, RegexFlags),
         };
 
+        public static readonly Regex[] TasksSkipMergeRegexes = System.Array.Empty<Regex>();
+
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         public GermanMergedExtractorConfiguration(IDateTimeOptionsConfiguration config)
@@ -154,5 +156,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         StringMatcher IMergedExtractorConfiguration.SuperfluousWordMatcher => SuperfluousWordMatcher;
 
         bool IMergedExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+
+        IEnumerable<Regex> IMergedExtractorConfiguration.TasksSkipMergeRegexes => TasksSkipMergeRegexes;
+
     }
 }

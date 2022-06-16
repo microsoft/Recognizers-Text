@@ -36,6 +36,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IEnumerable<Regex> TermFilterRegexes { get; }
 
+        IEnumerable<Regex> TasksSkipMergeRegexes { get; }
+
         Regex AfterRegex { get; }
 
         Regex BeforeRegex { get; }

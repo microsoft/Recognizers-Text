@@ -64,6 +64,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             new Regex(DateTimeDefinitions.SingleAmbiguousTermsRegex, RegexFlags),
         };
 
+        public static readonly Regex[] TasksSkipMergeRegexes = System.Array.Empty<Regex>();
+
         public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
@@ -164,5 +166,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         StringMatcher IMergedExtractorConfiguration.SuperfluousWordMatcher => SuperfluousWordMatcher;
 
         bool IMergedExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+
+        IEnumerable<Regex> IMergedExtractorConfiguration.TasksSkipMergeRegexes => TasksSkipMergeRegexes;
     }
 }

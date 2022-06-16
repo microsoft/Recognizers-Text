@@ -58,6 +58,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public static readonly Regex[] TermFilterRegexes = System.Array.Empty<Regex>();
 
+        public static readonly Regex[] TasksSkipMergeRegexes = System.Array.Empty<Regex>();
+
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         public PortugueseMergedExtractorConfiguration(IDateTimeOptionsConfiguration config)
@@ -151,5 +153,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         StringMatcher IMergedExtractorConfiguration.SuperfluousWordMatcher => SuperfluousWordMatcher;
 
         bool IMergedExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+
+        IEnumerable<Regex> IMergedExtractorConfiguration.TasksSkipMergeRegexes => TasksSkipMergeRegexes;
+
     }
 }
