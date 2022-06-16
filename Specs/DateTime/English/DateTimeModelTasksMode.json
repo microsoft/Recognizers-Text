@@ -128,7 +128,7 @@
     ]
   },
   {
-    "Input": "schedule me a one-one on saturday",
+    "Input": "schedule me a 1:1 on saturday",
     "Context": {
       "ReferenceDateTime": "2022-04-27T00:00:00"
     },
@@ -136,7 +136,7 @@
     "Results": [
       {
         "Text": "saturday",
-        "Start": 25,
+        "Start": 21,
         "End": 32,
         "TypeName": "datetimeV2.date",
         "Resolution": {

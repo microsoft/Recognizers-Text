@@ -71,6 +71,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         {
             // handle case scheduele 1:1 on 12 dec at 5 pm.
             new Regex(DateTimeDefinitions.OneOnOneRegex, RegexFlags),
+
+            // supress cases like 1ampm
+            new Regex(DateTimeDefinitions.AmPmDescRegex, RegexFlags),
         };
 
         public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();
