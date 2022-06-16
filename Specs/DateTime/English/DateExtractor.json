@@ -1626,5 +1626,16 @@
         "Length": 17
       }
     ]
+  },
+  {
+    "Input": "Book me a trip on Monday 8th",
+    "Results": [
+      {
+        "Text": "Monday 8th",
+        "Type": "date",
+        "Start": 18,
+        "Length": 10
+      }
+    ]
   }
 ]
