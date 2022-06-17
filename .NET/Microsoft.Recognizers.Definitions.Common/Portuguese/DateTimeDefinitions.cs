@@ -136,7 +136,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public const string MidafternoonRegex = @"(?<midafternoon>meio\s+da\s+tarde)";
       public const string MiddayRegex = @"(?<midday>meio\s*(-\s*)?dia)";
       public static readonly string MidTimeRegex = $@"(?<mid>({MidnightRegex}|{MidmorningRegex}|{MidEarlyMorning}|{MidafternoonRegex}|{MiddayRegex}))";
-      public static readonly string AtRegex = $@"\b(((?<=\b([aà]s?)\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}(\s+e\s+{BaseDateTime.MinuteRegex})?)(\s+horas?|\s*h\b)?|(?<=\b(s(er)?[aã]o|v[aã]o\s+ser|^[eé]h?)\s+|^\s*)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\s+horas?|\s*h\b))(\s+{OclockRegex})?|{MidTimeRegex})\b";
+      public static readonly string AtRegex = $@"\b(((?<=\b(d?[aà]s?)\s+)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}(\s+e\s+{BaseDateTime.MinuteRegex})?)(\s+horas?|\s*h\b)?|(?<=\b(s(er)?[aã]o|v[aã]o\s+ser|^[eé]h?)\s+|^\s*)({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})(\s+horas?|\s*h\b))(\s+{OclockRegex})?|{MidTimeRegex})\b";
       public static readonly string ConnectNumRegex = $@"({BaseDateTime.HourRegex}(?<min>[0-5][0-9])\s*{DescRegex})";
       public static readonly string TimeRegex1 = $@"(\b{TimePrefix}\s+)?({WrittenTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex})\s*({DescRegex})";
       public static readonly string TimeRegex2 = $@"(\b{TimePrefix}\s+)?(t)?{BaseDateTime.HourRegex}(\s*)?:(\s*)?{BaseDateTime.MinuteRegex}((\s*)?:(\s*)?{BaseDateTime.SecondRegex})?((\s*{DescRegex})|\b)";
@@ -189,7 +189,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public static readonly string HolidayRegex1 = $@"\b(?<holiday>sexta-feira santa|sexta-feira da paix[ãa]o|quarta-feira de cinzas|carnaval|dia dos? presidentes?|ano novo chin[eê]s|ano novo|v[ée]spera de ano novo|natal|v[ée]spera de natal|dia de a[cç][ãa]o de gra[çc]as|a[cç][ãa]o de gra[çc]as|yuandan|halloween|dia das bruxas|p[áa]scoa)(\s+(d[eo]?\s+)?({YearRegex}|(?<order>(pr[oó]xim[oa]?|[nd]?es[st][ea]|[uú]ltim[oa]?|em))\s+ano))?\b";
       public static readonly string HolidayRegex2 = $@"\b(?<holiday>(dia\s+(d[eoa]s?\s+)?)?(martin luther king|todos os santos|s[ãa]o (patr[íi]cio|francisco|jorge|jo[ãa]o)|independ[êe]ncia))(\s+(d[eo]?\s+)?({YearRegex}|(?<order>(pr[oó]xim[oa]?|[nd]?es[st][ea]|[uú]ltim[oa]?|em))\s+ano))?\b";
       public static readonly string HolidayRegex3 = $@"\b(?<holiday>(dia\s+d[eoa]s?\s+)(trabalh(o|ador(es)?)|m[ãa]es?|pais?|mulher(es)?|crian[çc]as?|marmota|professor(es)?))(\s+(d[eo]?\s+)?({YearRegex}|(?<order>(pr[oó]xim[oa]?|[nd]?es[st][ea]|[uú]ltim[oa]?|em))\s+ano))?\b";
-      public const string BeforeRegex = @"(antes(\s+(d[aeo]s?)?)?|at[ée]h?(\s+[oàa]s?\b)?)";
+      public const string BeforeRegex = @"(antes(\s+(d(e\s+)?[aeo]s?)?)?|at[ée]h?(\s+[oàa]s?\b)?)";
       public const string AfterRegex = @"((depois|ap[óo]s|a\s+partir)(\s*(de|d?[oa]s?)?)?)";
       public const string SinceRegex = @"(desde(\s+(as?|o))?)";
       public const string AroundRegex = @"(?:\b(?:cerca|perto|ao\s+redor|por\s+volta)\s*?\b)(\s+(de|das))?";
@@ -584,7 +584,9 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {
             { @"^\d{4}$", @"(\d\.\d{4}|\d{4}\.\d)" },
-            { @"^(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)$", @"([$%£&!?@#])(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)|(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)([$%£&@#])" }
+            { @"^(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)$", @"([$%£&!?@#])(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)|(abr|ago|dez|fev|jan|ju[ln]|mar|maio?|nov|out|sep?t)([$%£&@#])" },
+            { @"^\d{1,4}-\d{1,4}$", @"\d{1,4}-\d{1,4}-\d|\d-\d{1,4}-\d{1,4}" },
+            { @"^\d{1,4}-\d{1,4}-\d{1,4}$", @"\d{1,4}-\d{1,4}-\d{1,4}-\d|\d-\d{1,4}-\d{1,4}-\d{1,4}" }
         };
       public static readonly Dictionary<string, string> AmbiguityTimeFiltersDict = new Dictionary<string, string>
         {

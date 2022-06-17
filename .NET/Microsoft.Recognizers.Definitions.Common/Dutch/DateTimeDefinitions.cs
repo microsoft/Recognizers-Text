@@ -860,7 +860,9 @@ namespace Microsoft.Recognizers.Definitions.Dutch
         {
             { @"^\d{4}$", @"(\d\.\d{4}|\d{4}\.\d)" },
             { @"\b(ontbijt|lunch|avondeten)$", @"(?<!\b(op|om|voor|na(ar)?|rond)(\s+(het|de))?\s+)(ontbijt|lunch|avondeten)" },
-            { @"^(morgen|middag|avond|nacht|dag)\b", @"\b(goe[di]en?\s*(morgen|middag|avond|nacht|dag))\b" }
+            { @"^(morgen|middag|avond|nacht|dag)\b", @"\b(goe[di]en?\s*(morgen|middag|avond|nacht|dag))\b" },
+            { @"^\d{1,4}-\d{1,4}$", @"\d{1,4}-\d{1,4}-\d|\d-\d{1,4}-\d{1,4}" },
+            { @"^\d{1,4}-\d{1,4}-\d{1,4}$", @"\d{1,4}-\d{1,4}-\d{1,4}-\d|\d-\d{1,4}-\d{1,4}-\d{1,4}" }
         };
       public static readonly Dictionary<string, string> AmbiguityTimeFiltersDict = new Dictionary<string, string>
         {

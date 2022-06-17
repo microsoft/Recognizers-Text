@@ -14,8 +14,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public class BaseMergedDateTimeExtractor : IDateTimeExtractor
     {
-        private static readonly Regex NumberOrConnectorRegex = new Regex(@"^[0-9-]+$", RegexOptions.Compiled);
-
         private readonly IMergedExtractorConfiguration config;
 
         public BaseMergedDateTimeExtractor(IMergedExtractorConfiguration config)
@@ -151,7 +149,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             ret = FilterUnspecificDatePeriod(ret);
 
             // Remove common ambiguous cases
-            ret = FilterAmbiguity(ret, text);
+            ret = ExtractResultExtension.FilterAmbiguity(ret, text, this.config.AmbiguityFiltersDict);
 
             ret = AddMod(ret, text);
 
@@ -308,32 +306,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             ers.RemoveAll(o => this.config.UnspecificDatePeriodRegex.IsMatch(o.Text));
             return ers;
-        }
-
-        private List<ExtractResult> FilterAmbiguity(List<ExtractResult> extractResults, string text)
-        {
-            if (this.config.AmbiguityFiltersDict != null)
-            {
-                foreach (var regex in this.config.AmbiguityFiltersDict)
-                {
-                    foreach (var extractResult in extractResults)
-                    {
-                        if (regex.Key.IsMatch(extractResult.Text))
-                        {
-                            var matches = regex.Value.Matches(text).Cast<Match>();
-                            extractResults = extractResults.Where(er => !matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start))
-                                .ToList();
-                        }
-                    }
-                }
-            }
-
-            // @TODO: Refactor to remove this method and use the general ambiguity filter approach
-            extractResults = extractResults.Where(er => !(NumberOrConnectorRegex.IsMatch(er.Text) &&
-                    (text.Substring(0, (int)er.Start).Trim().EndsWith("-", StringComparison.Ordinal) || text.Substring((int)(er.Start + er.Length)).Trim().StartsWith("-", StringComparison.Ordinal))))
-                    .ToList();
-
-            return extractResults;
         }
 
         // Handle cases like "move 3pm appointment to 4"

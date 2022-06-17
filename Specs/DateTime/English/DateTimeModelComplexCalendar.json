@@ -13067,7 +13067,23 @@
       "ReferenceDateTime": "2020-05-14T12:00:00"
     },
     "NotSupported": "javascript, python, java",
-    "Results": []
+    "Results": [
+      {
+        "Text": "2002-10-09",
+        "Start": 32,
+        "End": 41,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2002-10-09",
+              "type": "date",
+              "value": "2002-10-09"
+            }
+          ]
+        }
+      }
+    ]
   },
   {
     "Input": "2015-1-32 is a wrong date",

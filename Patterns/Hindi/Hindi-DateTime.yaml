@@ -1828,6 +1828,8 @@ AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:
     '\bदिन\b': '\bदिन-ब-दिन\b'
+    '^\d{1,4}-\d{1,4}$': '\d{1,4}-\d{1,4}-\d|\d-\d{1,4}-\d{1,4}'
+    '^\d{1,4}-\d{1,4}-\d{1,4}$': '\d{1,4}-\d{1,4}-\d{1,4}-\d|\d-\d{1,4}-\d{1,4}-\d{1,4}'
 # For TimeOfDay resolution
 MorningTermList: !list
   types: [ string ]

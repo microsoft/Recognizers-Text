@@ -17665,7 +17665,23 @@
       "ReferenceDateTime": "2020-05-14T12:00:00"
     },
     "NotSupported": "javascript, python, java",
-    "Results": []
+    "Results": [
+      {
+        "Text": "2002-10-09",
+        "Start": 38,
+        "End": 47,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2002-10-09",
+              "type": "date",
+              "value": "2002-10-09"
+            }
+          ]
+        }
+      }
+    ]
   },
   {
     "Input": "2015-1-32 es una fecha incorrecta",
@@ -22718,6 +22734,66 @@
               "type": "daterange",
               "start": "2016-11-19",
               "end": "2016-11-20"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "DateTime frase de búsqueda\n23.04.2022 14:55\n30.04.2022 12:04 algún texto 2020",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "23.04.2022 14:55",
+        "Start": 27,
+        "End": 42,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2022-04-23T14:55",
+              "type": "datetime",
+              "value": "2022-04-23 14:55:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "30.04.2022 12:04",
+        "Start": 44,
+        "End": 59,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2022-04-30T12:04",
+              "type": "datetime",
+              "value": "2022-04-30 12:04:00"
+            },
+            {
+              "timex": "2022-04-30T00:04",
+              "type": "datetime",
+              "value": "2022-04-30 00:04:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2020",
+        "Start": 73,
+        "End": 76,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020",
+              "type": "daterange",
+              "start": "2020-01-01",
+              "end": "2021-01-01"
             }
           ]
         }
