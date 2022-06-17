@@ -245,7 +245,7 @@ DateExtractor4: !nestedRegex
   def: \b({WeekDayRegex}(\s+|\s*,\s*))?((il|l')\s*)?{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}(\.)?\s*[/\\\-]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)
   references: [ MonthNumRegex, DayRegex, DateYearRegex, WeekDayRegex ]
 DateExtractor5: !nestedRegex
-  def: \b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}\s*[/\\\-]\s*({MonthNumRegex}|{MonthRegex}(\.)?)\s*[/\\\-]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)
+  def: \b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex}(\.)?)\s*[/\\\-\.]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)
   references: [ DayRegex, MonthNumRegex, MonthRegex, DateYearRegex, WeekDayRegex ]
 DateExtractor6: !nestedRegex
   def: (?<!([\-\.\/]|all[e']\s*|l[e']\s*))\b{MonthNumRegex}[\-\.\/]{DayRegex}{BaseDateTime.CheckDecimalRegex}(?!(%|\s*{DescRegex}))\b
