@@ -64,6 +64,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
             // (the)? (day|week|month|year)
             new Regex(DateTimeDefinitions.SingleAmbiguousTermsRegex, RegexFlags),
+
         };
 
         // Skip Regexes under TasksMode
@@ -74,6 +75,15 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
             // supress cases like 1ampm
             new Regex(DateTimeDefinitions.AmPmDescRegex, RegexFlags),
+
+            // suppress holiday time reference whose celebration dates are region specific
+            // new Regex(DateTimeDefinitions.HolidayListSupress, RegexFlags),
+
+            // Remove decade regex ex seventies, twenties
+            new Regex(DateTimeDefinitions.DecadeRegex, RegexFlags),
+
+            // Remove decade regex ex 1990s, 9s
+            new Regex(DateTimeDefinitions.DecadeWithCenturyRegex, RegexFlags),
         };
 
         public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();
