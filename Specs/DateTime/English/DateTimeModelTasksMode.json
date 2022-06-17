@@ -137,7 +137,7 @@
       {
         "Text": "saturday",
         "Start": 21,
-        "End": 32,
+        "End": 28,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
@@ -179,5 +179,71 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Listen to 1990s music",
+    "Comment": "Taskmode will supress number with s (90s) from getting be categorised as daterange",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Who are us presidents in 1990 s.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Who are us presidents in nineties",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "I'll be back at 7ampm",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "There is a event in the independence day of this year.",
+    "Context": {
+      "ReferenceDateTime": "2018-07-17T13:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "this year",
+        "Start": 44,
+        "End": 52,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018",
+              "type": "daterange",
+              "start": "2018-01-01",
+              "end": "2019-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "meet on eid al fitr",
+    "Context": {
+      "ReferenceDateTime": "2022-06-17T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
   }
 ]

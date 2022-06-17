@@ -77,7 +77,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             new Regex(DateTimeDefinitions.AmPmDescRegex, RegexFlags),
 
             // suppress holiday time reference whose celebration dates are region specific
-            // new Regex(DateTimeDefinitions.HolidayListSupress, RegexFlags),
+            new Regex(DateTimeDefinitions.HolidayListSupress, RegexFlags),
 
             // Remove decade regex ex seventies, twenties
             new Regex(DateTimeDefinitions.DecadeRegex, RegexFlags),
