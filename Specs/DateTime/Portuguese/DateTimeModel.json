@@ -4166,5 +4166,131 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Eu poderei entrar se chegarmos antes de as 7?",
+    "Context": {
+      "ReferenceDateTime": "2018-09-28T01:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "antes de as 7",
+        "Start": 31,
+        "End": 43,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07",
+              "Mod": "before",
+              "type": "timerange",
+              "sourceEntity": "datetimepoint",
+              "end": "07:00:00"
+            },
+            {
+              "timex": "T19",
+              "Mod": "before",
+              "type": "timerange",
+              "sourceEntity": "datetimepoint",
+              "end": "19:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Eu poderei entrar se chegarmos antes das 7?",
+    "Context": {
+      "ReferenceDateTime": "2018-09-28T01:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "antes das 7",
+        "Start": 31,
+        "End": 41,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07",
+              "Mod": "before",
+              "type": "timerange",
+              "sourceEntity": "datetimepoint",
+              "end": "07:00:00"
+            },
+            {
+              "timex": "T19",
+              "Mod": "before",
+              "type": "timerange",
+              "sourceEntity": "datetimepoint",
+              "end": "19:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "DateTime frase de pesquisa\n23.04.2022 14:55\n30.04.2022 12:04 algum texto 2020",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "23.04.2022 14:55",
+        "Start": 27,
+        "End": 42,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2022-04-23T14:55",
+              "type": "datetime",
+              "value": "2022-04-23 14:55:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "30.04.2022 12:04",
+        "Start": 44,
+        "End": 59,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2022-04-30T12:04",
+              "type": "datetime",
+              "value": "2022-04-30 12:04:00"
+            },
+            {
+              "timex": "2022-04-30T00:04",
+              "type": "datetime",
+              "value": "2022-04-30 00:04:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "2020",
+        "Start": 73,
+        "End": 76,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020",
+              "type": "daterange",
+              "start": "2020-01-01",
+              "end": "2021-01-01"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
