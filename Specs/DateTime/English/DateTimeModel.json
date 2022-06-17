@@ -24124,7 +24124,7 @@
         }
       }
     ]
-  }
+  },
   {
     "Input": "Listen to 1990s music",
     "Comment": "Taskmode will supress number with s (90s) from getting be categorised as daterange",
