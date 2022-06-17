@@ -223,7 +223,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if ((config.Options & DateTimeOptions.TasksMode) != 0)
                 {
-                    if (ShouldSkipOnlyYear(result) || SkipRegexTaskMode(result))
+                    if (ShouldSkipOnlyYear(result) || SkipRegexTasksMode(result))
                     {
                         continue;
                     }
@@ -276,7 +276,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return config.FromToRegex.IsMatch(er.Text);
         }
 
-        private bool SkipRegexTaskMode(ExtractResult er)
+        private bool SkipRegexTasksMode(ExtractResult er)
         {
             foreach (var regex in this.config.TasksSkipMergeRegexes)
             {
