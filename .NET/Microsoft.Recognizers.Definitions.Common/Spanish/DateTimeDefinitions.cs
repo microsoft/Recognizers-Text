@@ -654,7 +654,9 @@ namespace Microsoft.Recognizers.Definitions.Spanish
             { @"^a[nñ]o$", @"(?<!el\s+)a[nñ]o" },
             { @"^semana$", @"(?<!la\s+)semana" },
             { @"^mes$", @"(?<!el\s+)mes" },
-            { @"^(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)$", @"([$%£&!?@#])(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)|(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)([$%£&@#])" }
+            { @"^(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)$", @"([$%£&!?@#])(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)|(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)([$%£&@#])" },
+            { @"^\d{1,4}-\d{1,4}$", @"\d{1,4}-\d{1,4}-\d|\d-\d{1,4}-\d{1,4}" },
+            { @"^\d{1,4}-\d{1,4}-\d{1,4}$", @"\d{1,4}-\d{1,4}-\d{1,4}-\d|\d-\d{1,4}-\d{1,4}-\d{1,4}" }
         };
       public const string EarlyMorningStartEndRegex = @"(^(madrugada)|(madrugada)$)";
       public const string MorningStartEndRegex = @"(^((la\s+)?mañana))|(((la\s+)?mañana)$)";

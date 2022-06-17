@@ -1216,6 +1216,8 @@ AmbiguityFiltersDict: !dictionary
     '^\d+m$': '^\d+m$'
     '^(apr|aug|dec|feb|jan|jul|jun|mar|may|nov|oct|sept?)$': '([$%£&!?@#])(apr|aug|dec|feb|jan|jul|jun|mar|may|nov|oct|sept?)|(apr|aug|dec|feb|jan|jul|jun|mar|may|nov|oct|sept?)([$%£&@#])'
     '^(to\s+date)$': '\b((equals?|up)\s+to\s+date)\b'
+    '^\d{1,4}-\d{1,4}$': '\d{1,4}-\d{1,4}-\d|\d-\d{1,4}-\d{1,4}'
+    '^\d{1,4}-\d{1,4}-\d{1,4}$': '\d{1,4}-\d{1,4}-\d{1,4}-\d|\d-\d{1,4}-\d{1,4}-\d{1,4}'
 AmbiguityTimeFiltersDict: !dictionary
   types: [ string, string ]
   entries:
