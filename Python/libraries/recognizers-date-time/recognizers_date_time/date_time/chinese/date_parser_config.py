@@ -119,6 +119,10 @@ class ChineseDateParserConfiguration(DateParserConfiguration):
         return None
 
     @property
+    def week_day_and_day_regex(self) -> Pattern:
+        return self._week_day_and_day_regex
+
+    @property
     def relative_month_regex(self) -> any:
         return None
 
@@ -216,6 +220,8 @@ class ChineseDateParserConfiguration(DateParserConfiguration):
         self._unit_map = ChineseDateTime.ParserConfigurationUnitMap
         self._week_day_of_month_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.WeekDayOfMonthRegex)
+        self._week_day_and_day_regex = RegExpUtility.get_safe_reg_exp(
+            ChineseDateTime.WeekDayAndDayRegex)
         self._week_day_regex = RegExpUtility.get_safe_reg_exp(
             ChineseDateTime.WeekDayRegex)
         self._dynasty_year_regex = RegExpUtility.get_safe_reg_exp(

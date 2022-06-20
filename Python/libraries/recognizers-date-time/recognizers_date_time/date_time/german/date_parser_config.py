@@ -109,6 +109,10 @@ class GermanDateParserConfiguration(DateParserConfiguration):
         return self._week_day_of_month_regex
 
     @property
+    def week_day_and_day_regex(self) -> Pattern:
+        return self._week_day_and_day_regex
+
+    @property
     def for_the_regex(self) -> Pattern:
         return self._for_the_regex
 
@@ -176,6 +180,8 @@ class GermanDateParserConfiguration(DateParserConfiguration):
             GermanDateTime.ForTheRegex)
         self._week_day_and_day_of_month_regex = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.WeekDayAndDayOfMonthRegex)
+        self._week_day_and_day_regex = RegExpUtility.get_safe_reg_exp(
+            GermanDateTime.WeekDayAndDayRegex)
         self._relative_month_regex = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.RelativeMonthRegex)
         self._relative_week_day_regex = RegExpUtility.get_safe_reg_exp(

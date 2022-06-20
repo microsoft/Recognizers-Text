@@ -117,6 +117,10 @@ class SpanishDateParserConfiguration(DateParserConfiguration):
         return self._week_day_and_day_of_month_regex
 
     @property
+    def week_day_and_day_regex(self) -> Pattern:
+        return self._week_day_and_day_regex
+
+    @property
     def relative_month_regex(self) -> Pattern:
         return self._relative_month_regex
 
@@ -179,6 +183,8 @@ class SpanishDateParserConfiguration(DateParserConfiguration):
             SpanishDateTime.ForTheRegex)
         self._week_day_and_day_of_month_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.WeekDayAndDayOfMonthRegex)
+        self._week_day_and_day_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.WeekDayAndDayRegex)
         self._relative_month_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.RelativeMonthRegex)
         self._relative_week_day_regex = RegExpUtility.get_safe_reg_exp(

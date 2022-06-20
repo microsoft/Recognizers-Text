@@ -116,6 +116,10 @@ class EnglishDateParserConfiguration(DateParserConfiguration):
         return self._week_day_and_day_of_month_regex
 
     @property
+    def week_day_and_day_regex(self) -> Pattern:
+        return self._week_day_and_day_regex
+
+    @property
     def relative_month_regex(self) -> Pattern:
         return self._relative_month_regex
 
@@ -185,6 +189,8 @@ class EnglishDateParserConfiguration(DateParserConfiguration):
             EnglishDateTime.ForTheRegex)
         self._week_day_and_day_of_month_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.WeekDayAndDayOfMonthRegex)
+        self._week_day_and_day_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.WeekDayAndDayRegex)
         self._relative_month_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.RelativeMonthRegex)
         self._utility_configuration = config.utility_configuration
