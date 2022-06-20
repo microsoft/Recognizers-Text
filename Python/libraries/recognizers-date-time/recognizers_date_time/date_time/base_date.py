@@ -844,6 +844,11 @@ class DateParserConfiguration(ABC):
 
     @property
     @abstractmethod
+    def relative_week_day_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
     def utility_configuration(self):
         raise NotImplementedError
 
@@ -1050,6 +1055,33 @@ class BaseDateParser(DateTimeParser):
             result.future_value = value
             result.past_value = value
             result.success = True
+            return result
+
+        # Handle "two sundays from now"
+        match = regex.match(self.config.relative_week_day_regex, trimmed_source)
+        if match:
+            ers = self.config.integer_extractor.extract(trimmed_source)
+
+            if not ers or not ers[0].text:
+                return result
+
+            num = int(self.config.number_parser.parse(ers[0]).value)
+            weekday_str = match.group(Constants.WEEKDAY_GROUP_NAME)
+            value = reference
+
+            # Check whether the determined day of this week has passed.
+            if value.isoweekday() > self.config.day_of_week.get(weekday_str):
+                num -= 1
+
+            while num > 0:
+                value = DateUtils.next(value, self.config.day_of_week.get(weekday_str))
+                num -= 1
+
+            result.timex = DateTimeFormatUtil.luis_date_from_datetime(value)
+            result.future_value = DateUtils.safe_create_from_min_value(value.year, value.month, value.day)
+            result.past_value = result.future_value
+            result.success = True
+
             return result
 
         # handle "next Sunday"

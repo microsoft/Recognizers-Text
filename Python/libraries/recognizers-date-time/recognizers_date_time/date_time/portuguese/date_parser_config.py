@@ -125,6 +125,10 @@ class PortugueseDateParserConfiguration(DateParserConfiguration):
         return self._relative_month_regex
 
     @property
+    def relative_week_day_regex(self) -> Pattern:
+        return self._relative_week_day_regex
+
+    @property
     def utility_configuration(self) -> DateTimeUtilityConfiguration:
         return self._utility_configuration
 
@@ -183,6 +187,8 @@ class PortugueseDateParserConfiguration(DateParserConfiguration):
             PortugueseDateTime.WeekDayAndDayRegex)
         self._relative_month_regex = RegExpUtility.get_safe_reg_exp(
             PortugueseDateTime.RelativeMonthRegex)
+        self._relative_week_day_regex = RegExpUtility.get_safe_reg_exp(
+            PortugueseDateTime.RelativeWeekDayRegex)
         self._utility_configuration = config.utility_configuration
         self._date_token_prefix = PortugueseDateTime.DateTokenPrefix
         self._check_both_before_after = PortugueseDateTime.CheckBothBeforeAfter
