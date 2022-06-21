@@ -46,6 +46,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             DurationParser = config.DurationParser;
             DateTimeParser = config.DateTimeParser;
             TimeZoneParser = config.TimeZoneParser;
+            HolidayExtractor = config.HolidayExtractor;
+            HolidaytimeParser = config.HolidaytimeParser;
 
             PureNumberFromToRegex = DutchTimePeriodExtractorConfiguration.PureNumFromTo;
             HyphenDateRegex = DutchDateTimePeriodExtractorConfiguration.HyphenDateRegex;
@@ -144,6 +146,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public IImmutableDictionary<string, string> UnitMap { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
+
+        public IDateTimeExtractor HolidayExtractor { get; }
+
+        public IDateTimeParser HolidaytimeParser { get; }
 
         public bool GetMatchedTimeRange(string text, out string todSymbol, out int beginHour, out int endHour, out int endMin)
         {

@@ -50,6 +50,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             DateParser = config.DateParser;
             TimeParser = config.TimeParser;
 
+            HolidayExtractor = config.HolidayExtractor;
+            HolidaytimeParser = config.HolidaytimeParser;
+
             NowRegex = EnglishDateTimeExtractorConfiguration.NowRegex;
 
             SimpleTimeOfTodayAfterRegex = EnglishDateTimeExtractorConfiguration.SimpleTimeOfTodayAfterRegex;
@@ -124,6 +127,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public IImmutableDictionary<string, int> Numbers { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
+
+        public IDateTimeExtractor HolidayExtractor { get; }
+
+        public IDateTimeParser HolidaytimeParser { get; }
 
         public int GetHour(string text, int hour)
         {

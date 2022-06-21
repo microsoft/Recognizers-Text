@@ -36,6 +36,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             DateParser = config.DateParser;
             TimeParser = config.TimeParser;
 
+            HolidayExtractor = config.HolidayExtractor;
+            HolidaytimeParser = config.HolidaytimeParser;
+
             NowRegex = FrenchDateTimeExtractorConfiguration.NowRegex;
 
             SimpleTimeOfTodayAfterRegex = FrenchDateTimeExtractorConfiguration.SimpleTimeOfTodayAfterRegex;
@@ -109,6 +112,10 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public IImmutableDictionary<string, int> Numbers { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
+
+        public IDateTimeExtractor HolidayExtractor { get; }
+
+        public IDateTimeParser HolidaytimeParser { get; }
 
         // Note: French typically uses 24:00 time, consider removing 12:00 am/pm
         public int GetHour(string text, int hour)

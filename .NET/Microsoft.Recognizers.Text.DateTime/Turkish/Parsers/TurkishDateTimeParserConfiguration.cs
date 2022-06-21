@@ -45,6 +45,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
             DateParser = config.DateParser;
             TimeParser = config.TimeParser;
 
+            HolidayExtractor = config.HolidayExtractor;
+            HolidaytimeParser = config.HolidaytimeParser;
+
             NowRegex = TurkishDateTimeExtractorConfiguration.NowRegex;
 
             SimpleTimeOfTodayAfterRegex = TurkishDateTimeExtractorConfiguration.SimpleTimeOfTodayAfterRegex;
@@ -119,6 +122,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
         public IImmutableDictionary<string, int> Numbers { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
+
+        public IDateTimeExtractor HolidayExtractor { get; }
+
+        public IDateTimeParser HolidaytimeParser { get; }
 
         public int GetHour(string text, int hour)
         {

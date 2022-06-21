@@ -45,6 +45,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             DateTimeParser = config.DateTimeParser;
             TimeZoneParser = config.TimeZoneParser;
 
+            HolidayExtractor = config.HolidayExtractor;
+            HolidaytimeParser = config.HolidaytimeParser;
+
             PureNumberFromToRegex = GermanTimePeriodExtractorConfiguration.PureNumFromTo;
             HyphenDateRegex = GermanDateTimePeriodExtractorConfiguration.HyphenDateRegex;
             PureNumberBetweenAndRegex = GermanTimePeriodExtractorConfiguration.PureNumBetweenAnd;
@@ -141,6 +144,10 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public IImmutableDictionary<string, string> UnitMap { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
+
+        public IDateTimeExtractor HolidayExtractor { get; }
+
+        public IDateTimeParser HolidaytimeParser { get; }
 
         public bool GetMatchedTimeRange(string text, out string todSymbol, out int beginHour, out int endHour, out int endMin)
         {

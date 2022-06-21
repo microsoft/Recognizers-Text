@@ -47,6 +47,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
             // Do not change order. The order of initialization can lead to side-effects
             DateExtractor = new BaseDateExtractor(new EnglishDateExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new EnglishHolidayExtractorConfiguration(this));
             TimeExtractor = new BaseTimeExtractor(new EnglishTimeExtractorConfiguration(this));
             DateTimeExtractor = new BaseDateTimeExtractor(new EnglishDateTimeExtractorConfiguration(this));
             DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(this));
@@ -56,6 +57,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
             DurationParser = new BaseDurationParser(new EnglishDurationParserConfiguration(this));
             DateParser = new BaseDateParser(new EnglishDateParserConfiguration(this));
+            HolidaytimeParser = new BaseHolidayParser(new EnglishHolidayParserConfiguration(this));
             TimeParser = new TimeParser(new EnglishTimeParserConfiguration(this));
             DateTimeParser = new BaseDateTimeParser(new EnglishDateTimeParserConfiguration(this));
             DatePeriodParser = new BaseDatePeriodParser(new EnglishDatePeriodParserConfiguration(this));
@@ -63,6 +65,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             DateTimePeriodParser = new BaseDateTimePeriodParser(new EnglishDateTimePeriodParserConfiguration(this));
 
             DateTimeAltParser = new BaseDateTimeAltParser(new EnglishDateTimeAltParserConfiguration(this));
+
         }
 
         public override IImmutableDictionary<string, int> DayOfMonth => BaseDateTime.DayOfMonthDictionary.ToImmutableDictionary().AddRange(DateTimeDefinitions.DayOfMonth);

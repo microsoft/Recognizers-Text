@@ -22,6 +22,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             TimeExtractor = config.TimeExtractor;
             DateParser = config.DateParser;
             TimeParser = config.TimeParser;
+            HolidayExtractor = config.HolidayExtractor;
+            HolidaytimeParser = config.HolidaytimeParser;
 
             NowRegex = ItalianDateTimeExtractorConfiguration.NowRegex;
             AMTimeRegex = new Regex(DateTimeDefinitions.AMTimeRegex, RegexFlags);
@@ -105,6 +107,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
         public IImmutableDictionary<string, int> Numbers { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
+
+        public IDateTimeExtractor HolidayExtractor { get; }
+
+        public IDateTimeParser HolidaytimeParser { get; }
 
         // Note: Italian typically uses 24:00 time, consider removing 12:00 am/pm
         public int GetHour(string text, int hour)
