@@ -346,7 +346,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var simpleCasesResults = Token.MergeAllTokens(tokens, text, ExtractorName);
             var ordinalExtractions = config.OrdinalExtractor.Extract(text);
 
-            tokens.AddRange(MergeTwoTimePoints(text, reference));
+            tokens.AddRange(MergeTwoTimePoints(text, new List<ExtractResult>(ordinalExtractions), reference));
             tokens.AddRange(MatchDuration(text, reference));
             tokens.AddRange(SingleTimePointWithPatterns(text, new List<ExtractResult>(ordinalExtractions), reference));
             tokens.AddRange(MatchComplexCases(text, simpleCasesResults, reference));
@@ -559,12 +559,19 @@ namespace Microsoft.Recognizers.Text.DateTime
             return MergeMultipleExtractions(text, er);
         }
 
-        private List<Token> MergeTwoTimePoints(string text, DateObject reference)
+        private List<Token> MergeTwoTimePoints(string text, List<ExtractResult> ordinalExtractions, DateObject reference)
         {
             var er = this.config.DatePointExtractor.Extract(text, reference);
 
             // Handle "now"
             er = MatchNow(text, er);
+
+            // Handle cases like "april 9th through seventeenth"
+            if (er.Count > 0)
+            {
+                er.AddRange(ordinalExtractions.Where(o => !er.Any(er => er.IsOverlap(o)) && !o.Metadata.IsOrdinalRelative));
+                er = er.OrderBy(o => o.Start).ToList();
+            }
 
             return MergeMultipleExtractions(text, er);
         }

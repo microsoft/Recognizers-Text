@@ -113,6 +113,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const int MaxWeekOfMonth = 5;
         public const int MaxMonth = 12;
         public const int MinMonth = 1;
+        public const int MaxDayMonth = 31;
 
         // Day start hour
         public const int DayHourStart = 0;
