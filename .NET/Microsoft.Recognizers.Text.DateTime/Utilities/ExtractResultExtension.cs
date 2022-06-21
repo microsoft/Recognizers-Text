@@ -3,6 +3,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -65,6 +66,30 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return mergedResults;
+        }
+
+        public static List<ExtractResult> FilterAmbiguity(List<ExtractResult> extractResults, string text, Dictionary<Regex, Regex> ambiguityFiltersDict)
+        {
+            if (ambiguityFiltersDict != null)
+            {
+                foreach (var regex in ambiguityFiltersDict)
+                {
+                    for (int i = extractResults.Count - 1; i >= 0; i--)
+                    {
+                        var er = extractResults[i];
+                        if (regex.Key.IsMatch(er.Text))
+                        {
+                            var matches = regex.Value.Matches(text).Cast<Match>();
+                            if (matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start))
+                            {
+                                extractResults.RemoveAt(i);
+                            }
+                        }
+                    }
+                }
+            }
+
+            return extractResults;
         }
     }
 }

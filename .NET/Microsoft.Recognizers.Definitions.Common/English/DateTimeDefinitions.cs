@@ -39,7 +39,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public const string ReferencePrefixRegex = @"(that|same)\b";
       public const string FutureSuffixRegex = @"\b((in\s+the\s+)?future|hence)\b";
       public const string PastSuffixRegex = @"\b((in\s+the\s+)past)\b";
-      public const string DayRegex = @"(the\s*)?(?<!(\d+:?|\$)\s*)(?<day>(?:3[0-1]|[1-2]\d|0?[1-9])(?:th|nd|rd|st)?)(?=\b|t)";
+      public const string DayRegex = @"(the\s*)?(?<!(\d:|\$)\s*|\d)(?<day>(?:3[0-1]|[1-2]\d|0?[1-9])(?:th|nd|rd|st)?)(?=\b|t)";
       public const string ImplicitDayRegex = @"(the\s*)?(?<day>(?:3[0-1]|[0-2]?\d)(?:th|nd|rd|st))\b";
       public const string MonthNumRegex = @"(?<month>1[0-2]|(0)?[1-9])\b";
       public const string WrittenOneToNineRegex = @"(?:one|two|three|four|five|six|seven|eight|nine)";
@@ -779,7 +779,9 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"\b(breakfast|brunch|lunch(time)?|dinner(time)?|supper)$", @"(?<!\b(at|before|after|around|circa)\b\s)(breakfast|brunch|lunch|dinner|supper)(?!\s*time)" },
             { @"^\d+m$", @"^\d+m$" },
             { @"^(apr|aug|dec|feb|jan|jul|jun|mar|may|nov|oct|sept?)$", @"([$%£&!?@#])(apr|aug|dec|feb|jan|jul|jun|mar|may|nov|oct|sept?)|(apr|aug|dec|feb|jan|jul|jun|mar|may|nov|oct|sept?)([$%£&@#])" },
-            { @"^(to\s+date)$", @"\b((equals?|up)\s+to\s+date)\b" }
+            { @"^(to\s+date)$", @"\b((equals?|up)\s+to\s+date)\b" },
+            { @"^\d{1,4}-\d{1,4}$", @"\d{1,4}-\d{1,4}-\d|\d-\d{1,4}-\d{1,4}" },
+            { @"^\d{1,4}-\d{1,4}-\d{1,4}$", @"\d{1,4}-\d{1,4}-\d{1,4}-\d|\d-\d{1,4}-\d{1,4}-\d{1,4}" }
         };
       public static readonly Dictionary<string, string> AmbiguityTimeFiltersDict = new Dictionary<string, string>
         {

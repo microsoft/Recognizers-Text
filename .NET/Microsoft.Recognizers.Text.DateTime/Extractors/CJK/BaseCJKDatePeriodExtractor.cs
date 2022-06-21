@@ -46,7 +46,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var rets = Token.MergeAllTokens(tokens, text, ExtractorName);
 
             // Remove common ambiguous cases
-            rets = FilterAmbiguity(rets, text);
+            rets = ExtractResultExtension.FilterAmbiguity(rets, text, this.config.AmbiguityFiltersDict);
 
             return rets;
         }
@@ -315,27 +315,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return ret;
-        }
-
-        private List<ExtractResult> FilterAmbiguity(List<ExtractResult> extractResults, string text)
-        {
-            if (this.config.AmbiguityFiltersDict != null)
-            {
-                foreach (var regex in this.config.AmbiguityFiltersDict)
-                {
-                    foreach (var extractResult in extractResults)
-                    {
-                        if (regex.Key.IsMatch(extractResult.Text))
-                        {
-                            var matches = regex.Value.Matches(text).Cast<Match>();
-                            extractResults = extractResults.Where(er => !matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start))
-                                .ToList();
-                        }
-                    }
-                }
-            }
-
-            return extractResults;
         }
     }
 }
