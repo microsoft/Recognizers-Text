@@ -74,5 +74,10 @@ namespace Microsoft.Recognizers.Text.DateTime
         IImmutableDictionary<string, int> SpecialDecadeCases { get; }
 
         IDateTimeUtilityConfiguration UtilityConfiguration { get; }
+
+        IDateTimeExtractor HolidayExtractor { get; }
+
+        IDateTimeParser HolidaytimeParser { get; }
+
     }
 }

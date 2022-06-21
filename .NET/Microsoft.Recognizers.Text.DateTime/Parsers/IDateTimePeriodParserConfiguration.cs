@@ -14,6 +14,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IDateExtractor DateExtractor { get; }
 
+        IDateTimeExtractor HolidayExtractor { get; }
+
         IDateTimeExtractor TimeExtractor { get; }
 
         IDateTimeExtractor DateTimeExtractor { get; }
@@ -27,6 +29,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         IParser NumberParser { get; }
 
         IDateTimeParser DateParser { get; }
+
+        IDateTimeParser HolidaytimeParser { get; }
 
         IDateTimeParser TimeParser { get; }
 
