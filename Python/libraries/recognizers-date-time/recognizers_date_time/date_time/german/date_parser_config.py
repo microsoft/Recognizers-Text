@@ -81,6 +81,10 @@ class GermanDateParserConfiguration(DateParserConfiguration):
         return self._special_day_regex
 
     @property
+    def special_day_with_num_regex(self) -> Pattern:
+        return self._special_day_with_num_regex
+
+    @property
     def next_regex(self) -> Pattern:
         return self._next_regex
 
@@ -160,7 +164,7 @@ class GermanDateParserConfiguration(DateParserConfiguration):
         self._on_regex = RegExpUtility.get_safe_reg_exp(GermanDateTime.OnRegex)
         self._special_day_regex = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.SpecialDayRegex)
-        self._special_day_regex_with_num_regex = RegExpUtility.get_safe_reg_exp(
+        self._special_day_with_num_regex = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.SpecialDayWithNumRegex)
         self._next_regex = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.NextDateRegex)

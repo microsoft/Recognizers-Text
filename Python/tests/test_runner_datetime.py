@@ -162,6 +162,12 @@ def test_datetime_model(
             assert_model_resolution(actual_resolution_value, expected['Resolution']['values'], spec_info)
 
 
+def test_single_utterance():
+    res = recognize_datetime("two days from tomorrow", "en-us")
+    print(f"{res}")
+    assert res != []
+
+
 def get_props(results, prop):
     list_result = []
     for result in results:

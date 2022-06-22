@@ -81,6 +81,10 @@ class SpanishDateParserConfiguration(DateParserConfiguration):
         return self._special_day_regex
 
     @property
+    def special_day_with_num_regex(self) -> Pattern:
+        return self._special_day_with_num_regex
+
+    @property
     def next_regex(self) -> Pattern:
         return self._next_regex
 
@@ -165,6 +169,8 @@ class SpanishDateParserConfiguration(DateParserConfiguration):
             SpanishDateTime.OnRegex)
         self._special_day_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.SpecialDayRegex)
+        self._special_day_with_num_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishDateTime.SpecialDayWithNumRegex)
         self._next_regex = RegExpUtility.get_safe_reg_exp(
             SpanishDateTime.NextDateRegex)
         self._unit_regex = RegExpUtility.get_safe_reg_exp(

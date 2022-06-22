@@ -789,6 +789,11 @@ class DateParserConfiguration(ABC):
 
     @property
     @abstractmethod
+    def special_day_with_num_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
     def next_regex(self) -> Pattern:
         raise NotImplementedError
 
@@ -1055,6 +1060,26 @@ class BaseDateParser(DateTimeParser):
             result.future_value = value
             result.past_value = value
             result.success = True
+            return result
+
+        # Handle two days from tomorrow
+        match = regex.match(self.config.special_day_with_num_regex, trimmed_source)
+        if match:
+            swift = self.config.get_swift_day(match.group(Constants.DAY_GROUP_NAME))
+            ers = self.config.integer_extractor.extract(trimmed_source)
+
+            if not ers or not ers[0].text:
+                return result
+
+            num = int(self.config.number_parser.parse(ers[0]).value)
+
+            value = reference + datedelta(days=num + swift)
+
+            result.timex = DateTimeFormatUtil.luis_date_from_datetime(value)
+            result.future_value = DateUtils.safe_create_from_min_value(value.year, value.month, value.day)
+            result.past_value = result.future_value
+            result.success = True
+
             return result
 
         # Handle "two sundays from now"
