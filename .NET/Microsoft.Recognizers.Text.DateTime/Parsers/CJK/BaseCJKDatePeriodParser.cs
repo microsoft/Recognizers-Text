@@ -1011,7 +1011,16 @@ namespace Microsoft.Recognizers.Text.DateTime
                     return ret;
                 }
 
-                var thisMatch = this.config.ThisRegex.Match(trimmedText);
+                if (this.config.IsYearToDate(trimmedText))
+                {
+                    ret.Timex = referenceDate.Year.ToString("D4", CultureInfo.InvariantCulture);
+                    ret.FutureValue =
+                        ret.PastValue =
+                            new Tuple<DateObject, DateObject>(DateObject.MinValue.SafeCreateFromValue(referenceDate.Year, 1, 1), referenceDate);
+                    ret.Success = true;
+                    return ret;
+                }
+
                 var nextMatch = this.config.NextRegex.Match(trimmedText);
                 var lastMatch = this.config.LastRegex.Match(trimmedText);
 
@@ -1911,9 +1920,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var beforeStr = text.Substring(0, (int)durationRes[0].Start);
                 var afterStr = text.Substring((int)durationRes[0].Start + (int)durationRes[0].Length).Trim();
                 var matches = this.config.UnitRegex.Matches(durationRes[0].Text);
+                var matchBusinessDays = this.config.DurationUnitRegex.MatchExact(text, trim: true);
 
-                // only handle duration cases like "5 years 1 month 21 days"
-                if (matches.Count > 1 && matches.Count <= 3)
+                // handle duration cases like "5 years 1 month 21 days" and "multiple business days"
+                if ((matches.Count > 1 && matches.Count <= 3) ||
+                    matchBusinessDays.Groups[Constants.BusinessDayGroupName].Success)
                 {
                     ret = ParseMultipleDatesDuration(text, referenceDate);
                     return ret;
@@ -2097,16 +2108,21 @@ namespace Microsoft.Recognizers.Text.DateTime
                         beginDate = modAndDateResult.BeginDate;
                     }
 
-                    if (config.FutureRegex.IsExactMatch(afterStr, trim: true) &&
+                    if ((config.FutureRegex.IsExactMatch(beforeStr, trim: true) || config.FutureRegex.IsExactMatch(afterStr, trim: true)) &&
                         DurationParsingUtil.IsDateDuration(durationResult.Timex))
                     {
                         modAndDateResult = ModAndDateResult.GetModAndDate(beginDate, endDate, referenceDate, durationResult.Timex, true);
 
+                        beginDate = modAndDateResult.BeginDate;
+                        endDate = modAndDateResult.EndDate;
+
                         // In GetModAndDate, this "future" resolution will add one day to beginDate/endDate,
                         // but for the "within" case it should start from the current day.
-                        beginDate = modAndDateResult.BeginDate.AddDays(-1);
-                        endDate = modAndDateResult.EndDate.AddDays(-1);
-
+                        if (this.config.FutureRegex.MatchExact(afterStr, trim: true).Groups[Constants.WithinGroupName].Success)
+                        {
+                            beginDate = beginDate.AddDays(-1);
+                            endDate = endDate.AddDays(-1);
+                        }
                     }
 
                     if (!string.IsNullOrEmpty(modAndDateResult.Mod))
@@ -2185,9 +2201,14 @@ namespace Microsoft.Recognizers.Text.DateTime
             else
             {
                 month = this.config.ToMonthNumber(monthStr);
-                ret.Timex = DateTimeFormatUtil.LuisDate(Constants.InvalidYear, month);
-                year = referenceDate.Year;
-                noYear = true;
+                year = GetYearFromText(match);
+
+                if (year == Constants.InvalidYear)
+                {
+                    year = referenceDate.Year;
+                    noYear = true;
+                }
+
             }
 
             ret = GetWeekOfMonth(cardinalStr, month, year, referenceDate, noYear);
@@ -2692,21 +2713,21 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 beginLuisStr = DateTimeFormatUtil.LuisDate(-1, 1, 1);
-                beginLuisStr = beginLuisStr.Replace("XXXX", beginYearStr);
+                beginLuisStr = beginLuisStr.Replace(Constants.TimexFuzzyYear, beginYearStr);
 
-                var endYearStr = ConvertCJKToInteger(firstTwoNumOfYear) + (endYear % 100).ToString("D2", CultureInfo.InvariantCulture);
+                var endYearStr = endYear.ToString("D2", CultureInfo.InvariantCulture);
                 endLuisStr = DateTimeFormatUtil.LuisDate(-1, 1, 1);
-                endLuisStr = endLuisStr.Replace("XXXX", endYearStr);
+                endLuisStr = endLuisStr.Replace(Constants.TimexFuzzyYear, endYearStr);
             }
             else
             {
-                var beginYearStr = "XX" + decade;
+                var beginYearStr = Constants.TimexFuzzyTwoDigitYear + decade;
                 beginLuisStr = DateTimeFormatUtil.LuisDate(-1, 1, 1);
-                beginLuisStr = beginLuisStr.Replace("XXXX", beginYearStr);
+                beginLuisStr = beginLuisStr.Replace(Constants.TimexFuzzyYear, beginYearStr);
 
-                var endYearStr = "XX" + (endYear % 100).ToString("D2", CultureInfo.InvariantCulture);
+                var endYearStr = Constants.TimexFuzzyTwoDigitYear + (endYear % 100).ToString("D2", CultureInfo.InvariantCulture);
                 endLuisStr = DateTimeFormatUtil.LuisDate(-1, 1, 1);
-                endLuisStr = endLuisStr.Replace("XXXX", endYearStr);
+                endLuisStr = endLuisStr.Replace(Constants.TimexFuzzyYear, endYearStr);
             }
 
             ret.Timex = $"({beginLuisStr},{endLuisStr},P10Y)";
@@ -3088,6 +3109,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (!innerResult.Success)
             {
                 innerResult = ParseDatePointWithAgoAndLater(text, referenceDate);
+            }
+
+            if (innerResult.Success && dateContext != null)
+            {
+                innerResult = dateContext.ProcessDatePeriodEntityResolution(innerResult);
             }
 
             return innerResult;

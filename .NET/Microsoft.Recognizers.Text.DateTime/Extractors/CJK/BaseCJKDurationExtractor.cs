@@ -55,30 +55,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                 res = MergeMultipleDuration(source, res);
             }
 
-            res = FilterAmbiguity(res, source);
+            res = ExtractResultExtension.FilterAmbiguity(res, source, this.config.AmbiguityDurationFiltersDict);
 
             return res;
-        }
-
-        private List<ExtractResult> FilterAmbiguity(List<ExtractResult> extractResults, string text)
-        {
-            if (this.config.AmbiguityDurationFiltersDict != null)
-            {
-                foreach (var regex in this.config.AmbiguityDurationFiltersDict)
-                {
-                    foreach (var extractResult in extractResults)
-                    {
-                        if (regex.Key.IsMatch(text))
-                        {
-                            var matches = regex.Value.Matches(text).Cast<Match>();
-                            extractResults = extractResults.Where(er => !matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start))
-                                .ToList();
-                        }
-                    }
-                }
-            }
-
-            return extractResults;
         }
 
         private List<ExtractResult> MergeMultipleDuration(string text, List<ExtractResult> extractorResults)

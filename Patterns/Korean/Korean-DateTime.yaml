@@ -288,6 +288,8 @@ DateTimePeriodTillRegex: !simpleRegex
   def: (?<till>到|直到|--|-|—|——)
 DateTimePeriodPrepositionRegex: !simpleRegex
   def: (?<prep>^\s*的|在\s*$)
+BeforeAfterRegex: !simpleRegex
+  def: ^\b$
 HourRegex: !nestedRegex
   def: \b{BaseDateTime.HourRegex}
   references: [ BaseDateTime.HourRegex ]
@@ -375,6 +377,8 @@ DurationAmbiguousUnits: !list
     - 시
 DurationUnitRegex: !simpleRegex
   def: (?<unit>(년|개?월|달|주일?|(?<!종)(?<=\d|\s+)일|(?<=\s)날|한나절|(?<=며)칠|시간?|분|초|영업일\s*기준으로|하루|이틀|사흘|나흘|닷새|엿새|이레|여드레|아흐레|열흘|하루|종일|내내|몇|여러|더|이상|이하|초과|미만)\s*(이상|이하|초과|미만)?)
+AnUnitRegex: !simpleRegex
+  def: ^[.]
 DurationConnectorRegex: !simpleRegex
   def: (?<connector>\s*그리고\s*|\s+|,\s*)
 ConnectorRegex: !simpleRegex
@@ -501,6 +505,9 @@ AmbiguousRangeModifierPrefix: !simpleRegex
 ReferenceDatePeriodRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in Japanese
   def: ^[.]
+UnspecificDatePeriodRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Japanese
+  def: ^[.]
 ParserConfigurationBefore: !simpleRegex
   def: ((?<include>和|或|及)?(之前|以前)|前)
 ParserConfigurationAfter: !simpleRegex
@@ -509,6 +516,12 @@ ParserConfigurationUntil: !simpleRegex
   def: (直到|直至|截至|截止(到)?)
 ParserConfigurationSincePrefix: !simpleRegex
   def: (自从|自|自打|打|从)
+ParserConfigurationAroundPrefix: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Japanese
+  def: ^[.]
+ParserConfigurationAroundSuffix: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Japanese
+  def: ^[.]
 ParserConfigurationSinceSuffix: !simpleRegex
   def: (以来|开始|起)
 ParserConfigurationLastWeekDayRegex: 最后一个
@@ -598,6 +611,10 @@ ThisYearTerms: !list
   entries:
     - 금년
     - 올해
+YearToDateTerms: !list
+  types: [ string ]
+  entries:
+    - 올해 초부터 현재까지
 LastYearTerms: !list
   types: [ string ]
   entries:
@@ -959,6 +976,18 @@ DateTimePeriodEVRegex: !simpleRegex
   def: (晚上|夜里|夜晚|晚)
 DateTimePeriodNIRegex: !simpleRegex
   def: (半夜|夜间|深夜)
+AmbiguityTimeFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    '^[.]': '^[.]'
+AmbiguityDateFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    '^[.]': '^[.]'
+AmbiguityDateTimeFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    '^[.]': '^[.]'
 # For cases like "12号", singleWord "早" and "晚"
 AmbiguityFiltersDict: !dictionary
   types: [ string, string ]

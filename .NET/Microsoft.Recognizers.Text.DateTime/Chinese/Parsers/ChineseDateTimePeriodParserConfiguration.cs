@@ -67,6 +67,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             TimePeriodLeftRegex = ChineseDateTimePeriodExtractorConfiguration.TimePeriodLeftRegex;
             UnitRegex = ChineseDateTimePeriodExtractorConfiguration.UnitRegex;
             RestOfDateRegex = ChineseDateTimePeriodExtractorConfiguration.RestOfDateRegex;
+            AmPmDescRegex = ChineseDateTimePeriodExtractorConfiguration.AmPmDescRegex;
             UnitMap = config.UnitMap;
         }
 
@@ -111,6 +112,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public Regex UnitRegex { get; }
 
         public Regex RestOfDateRegex { get; }
+
+        public Regex AmPmDescRegex { get; }
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 

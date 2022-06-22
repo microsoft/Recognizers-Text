@@ -10,6 +10,7 @@ using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Japanese;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.Number.Config;
 using Microsoft.Recognizers.Text.Number.Japanese;
 using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
@@ -43,7 +44,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
             var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
 
-            CardinalExtractor = config.CardinalExtractor;
+            CardinalExtractor = new CardinalExtractor(numConfig, CJKNumberExtractorMode.ExtractAll);
             CardinalParser = AgnosticNumberParserFactory.GetParser(
                 AgnosticNumberParserType.Cardinal, new JapaneseNumberParserConfiguration(numConfig));
 
@@ -67,6 +68,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             TimePeriodLeftRegex = JapaneseDateTimePeriodExtractorConfiguration.TimePeriodLeftRegex;
             UnitRegex = JapaneseDateTimePeriodExtractorConfiguration.UnitRegex;
             RestOfDateRegex = JapaneseDateTimePeriodExtractorConfiguration.RestOfDateRegex;
+            AmPmDescRegex = JapaneseDateTimePeriodExtractorConfiguration.AmPmDescRegex;
             UnitMap = config.UnitMap;
         }
 
@@ -111,6 +113,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         public Regex UnitRegex { get; }
 
         public Regex RestOfDateRegex { get; }
+
+        public Regex AmPmDescRegex { get; }
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 

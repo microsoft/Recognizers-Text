@@ -30,12 +30,19 @@ namespace Microsoft.Recognizers.Text.DateTime
         public List<ExtractResult> Extract(string text, DateObject referenceTime)
         {
             var tokens = new List<Token>();
+            var result = new List<ExtractResult>();
+
             tokens.AddRange(MergeDateAndTime(text, referenceTime));
             tokens.AddRange(BasicRegexMatch(text));
             tokens.AddRange(TimeOfToday(text, referenceTime));
             tokens.AddRange(DurationWithAgoAndLater(text, referenceTime));
 
-            return Token.MergeAllTokens(tokens, text, ExtractorName);
+            result = Token.MergeAllTokens(tokens, text, ExtractorName);
+
+            result = ExtractResultExtension.FilterAmbiguity(result, text, this.config.AmbiguityDateTimeFiltersDict);
+
+            return result;
+
         }
 
         // Match now

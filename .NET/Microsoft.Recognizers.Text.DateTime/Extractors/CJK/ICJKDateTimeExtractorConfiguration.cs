@@ -30,5 +30,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         IDateTimeExtractor DatePointExtractor { get; }
 
         IDateTimeExtractor TimePointExtractor { get; }
+
+        Dictionary<Regex, Regex> AmbiguityDateTimeFiltersDict { get; }
+
     }
 }

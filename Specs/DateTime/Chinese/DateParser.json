@@ -729,9 +729,9 @@
         "Text": "本月十日",
         "Type": "date",
         "Value": {
-          "Timex": "XXXX-03-10",
+          "Timex": "2017-03-10",
           "FutureResolution": {
-            "date": "2018-03-10"
+            "date": "2017-03-10"
           },
           "PastResolution": {
             "date": "2017-03-10"

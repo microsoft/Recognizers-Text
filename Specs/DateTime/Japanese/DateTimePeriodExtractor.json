@@ -624,18 +624,6 @@
     ]
   },
   {
-    "Input": "それは2015年1月1日の2時以降に起きるでしょう。",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "2015年1月1日の2時以降",
-        "Type": "datetimerange",
-        "Start": 3,
-        "Length": 14
-      }
-    ]
-  },
-  {
     "Input": "それは今日の午後4時前に起きるでしょう。",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -648,18 +636,6 @@
     ]
   },
   {
-    "Input": "それは来週の水曜日の午前10時以降に起きるでしょう。",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "来週の水曜日の午前10時以降",
-        "Type": "datetimerange",
-        "Start": 3,
-        "Length": 14
-      }
-    ]
-  },
-  {
     "Input": "それは前の火曜日の午後2時までに起きた。",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
@@ -668,18 +644,6 @@
         "Type": "datetimerange",
         "Start": 3,
         "Length": 12
-      }
-    ]
-  },
-  {
-    "Input": "2月1日の6時までには行きましょう。",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "2月1日の6時まで",
-        "Type": "datetimerange",
-        "Start": 0,
-        "Length": 9
       }
     ]
   },

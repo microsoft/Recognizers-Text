@@ -127,13 +127,14 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public const string TimeOfSpecialDayRegex = @"(今晚|今早|今晨|明晚|明早|明晨|昨晚)(的|在)?";
       public const string DateTimePeriodTillRegex = @"(?<till>到|直到|--|-|—|——)";
       public const string DateTimePeriodPrepositionRegex = @"(?<prep>^\s*的|在\s*$)";
+      public const string BeforeAfterRegex = @"^\b$";
       public static readonly string HourRegex = $@"\b{BaseDateTime.HourRegex}";
       public const string HourNumRegex = @"(?<hour>[零〇一二两三四五六七八九]|二十[一二三四]?|十[一二三四五六七八九]?)";
       public const string ZhijianRegex = @"^\s*(之间|之内|期间|中间|间)";
       public const string DateTimePeriodThisRegex = @"这个|这一个|这|这一";
       public const string DateTimePeriodLastRegex = @"上个|上一个|上|上一";
       public const string DateTimePeriodNextRegex = @"下个|下一个|下|下一";
-      public const string AmPmDescRegex = @"(?<daydesc>(am|a\.m\.|a m|a\. m\.|a\.m|a\. m|a m|pm|p\.m\.|p m|p\. m\.|p\.m|p\. m|p m))";
+      public const string AmPmDescRegex = @"(?<daydesc>(am|a\.m\.|a m|a\. m\.|a\.m|a\. m|a m|pm|p\.m\.|p m|p\. m\.|p\.m|p\. m|p m|上午|中午|下午|午后|晚上|夜里|夜晚|夜间|深夜|傍晚|晚|早间?))";
       public const string TimeOfDayRegex = @"(?<timeOfDay>凌晨|清晨|早上|早间|早|上午|中午|下午|午后|晚上|夜里|夜晚|半夜|夜间|深夜|傍晚|晚)";
       public static readonly string SpecificTimeOfDayRegex = $@"((({DateTimePeriodThisRegex}|{DateTimePeriodNextRegex}|{DateTimePeriodLastRegex})\s+{TimeOfDayRegex})|(今晚|今早|今晨|明晚|明早|明晨|昨晚))";
       public const string DateTimePeriodUnitRegex = @"(个)?(?<unit>(小时|钟头|分钟|秒钟|时|分|秒))";
@@ -175,6 +176,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
             @"时"
         };
       public static readonly string DurationUnitRegex = $@"(?<unit>{DateUnitRegex}|分钟?|秒钟?|个?小时|时|个?钟头|天|个?星期|周|週|个?月|年)";
+      public const string AnUnitRegex = @"^[.]";
       public const string DurationConnectorRegex = @"^\s*(?<connector>[多又余零]?)\s*$";
       public const string ConnectorRegex = @"^\s*,\s*$";
       public static readonly string LunarHolidayRegex = $@"(({YearRegex}|{DatePeriodYearInCJKRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>除夕|春节|中秋节|中秋|元宵节|端午节|端午|重阳节)";
@@ -222,11 +224,14 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public const string FromToRegex = @"(从|自).+([至到]).+";
       public const string AmbiguousRangeModifierPrefix = @"(从|自)";
       public const string ReferenceDatePeriodRegex = @"^[.]";
+      public const string UnspecificDatePeriodRegex = @"^[.]";
       public const string ParserConfigurationBefore = @"((?<include>和|或|及)?(之前|以前)|前)";
       public const string ParserConfigurationAfter = @"((?<include>和|或|及)?(之后|之後|以后|以後)|后|後)";
       public const string ParserConfigurationUntil = @"(直到|直至|截至|截止(到)?)";
       public const string ParserConfigurationSincePrefix = @"(自从|自|自打|打|从)";
       public const string ParserConfigurationSinceSuffix = @"(以来|开始|起)";
+      public const string ParserConfigurationAroundPrefix = @"^[.]";
+      public const string ParserConfigurationAroundSuffix = @"^[.]";
       public const string ParserConfigurationLastWeekDayRegex = @"最后一个";
       public const string ParserConfigurationNextMonthRegex = @"下一个";
       public const string ParserConfigurationLastMonthRegex = @"上一个";
@@ -295,6 +300,10 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public static readonly IList<string> ThisYearTerms = new List<string>
         {
             @"今年"
+        };
+      public static readonly IList<string> YearToDateTerms = new List<string>
+        {
+            @"今年迄今"
         };
       public static readonly IList<string> LastYearTerms = new List<string>
         {
@@ -664,6 +673,18 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public const string DateTimePeriodAFRegex = @"(下午|午后|傍晚)";
       public const string DateTimePeriodEVRegex = @"(晚上|夜里|夜晚|晚)";
       public const string DateTimePeriodNIRegex = @"(半夜|夜间|深夜)";
+      public static readonly Dictionary<string, string> AmbiguityTimeFiltersDict = new Dictionary<string, string>
+        {
+            { @"^[.]", @"^[.]" }
+        };
+      public static readonly Dictionary<string, string> AmbiguityDateFiltersDict = new Dictionary<string, string>
+        {
+            { @"^[.]", @"^[.]" }
+        };
+      public static readonly Dictionary<string, string> AmbiguityDateTimeFiltersDict = new Dictionary<string, string>
+        {
+            { @"^[.]", @"^[.]" }
+        };
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {
             { @"早", @"(?<!今|明|日|号)早(?!上)" },

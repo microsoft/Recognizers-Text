@@ -50,6 +50,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex RestOfDateRegex { get; }
 
+        Regex AmPmDescRegex { get; }
+
         IImmutableDictionary<string, string> UnitMap { get; }
 
         bool GetMatchedTimeRange(string text, out string todSymbol, out int beginHour, out int endHour, out int endMinute);

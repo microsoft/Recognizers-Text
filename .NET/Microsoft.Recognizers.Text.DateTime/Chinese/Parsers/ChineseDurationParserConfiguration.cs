@@ -25,6 +25,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             SomeRegex = ChineseDurationExtractorConfiguration.SomeRegex;
             MoreOrLessRegex = ChineseDurationExtractorConfiguration.MoreOrLessRegex;
             DurationUnitRegex = ChineseDurationExtractorConfiguration.DurationUnitRegex;
+            AnUnitRegex = ChineseDurationExtractorConfiguration.AnUnitRegex;
             DurationConnectorRegex = ChineseDurationExtractorConfiguration.DurationConnectorRegex;
 
             UnitMap = config.UnitMap;
@@ -42,6 +43,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public Regex MoreOrLessRegex { get; }
 
         public Regex DurationUnitRegex { get; }
+
+        public Regex AnUnitRegex { get; }
 
         public Regex DurationConnectorRegex { get; }
 

@@ -67,6 +67,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
             TimePeriodLeftRegex = KoreanDateTimePeriodExtractorConfiguration.TimePeriodLeftRegex;
             UnitRegex = KoreanDateTimePeriodExtractorConfiguration.UnitRegex;
             RestOfDateRegex = KoreanDateTimePeriodExtractorConfiguration.RestOfDateRegex;
+            AmPmDescRegex = KoreanDateTimePeriodExtractorConfiguration.AmPmDescRegex;
             UnitMap = config.UnitMap;
         }
 
@@ -111,6 +112,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
         public Regex UnitRegex { get; }
 
         public Regex RestOfDateRegex { get; }
+
+        public Regex AmPmDescRegex { get; }
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 

@@ -148,6 +148,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
         }
 
+        public static string GenerateWeekdayTimex(int weekday)
+        {
+            return $"{Constants.TimexFuzzyYear}{Constants.DateTimexConnector}{Constants.TimexFuzzyWeek}{Constants.DateTimexConnector}{weekday}";
+        }
+
         public static string GenerateMonthTimex(DateObject date = default(DateObject))
         {
             if (date.IsDefaultValue())

@@ -220,7 +220,15 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (eod.Success && ers.Count != 1)
             {
-                ret = DateTimeFormatUtil.ResolveEndOfDay(DateTimeFormatUtil.FormatDate(referenceTime), referenceTime, referenceTime);
+                if (eod.Groups[Constants.TomorrowGroupName].Success)
+                {
+                    ret = DateTimeFormatUtil.ResolveEndOfDay(DateTimeFormatUtil.FormatDate(referenceTime.AddDays(1)), referenceTime.AddDays(1), referenceTime.AddDays(1));
+                }
+                else
+                {
+                    ret = DateTimeFormatUtil.ResolveEndOfDay(DateTimeFormatUtil.FormatDate(referenceTime), referenceTime, referenceTime);
+                }
+
                 return ret;
             }
 

@@ -164,6 +164,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         periodBegin = index;
                     }
+                    else
+                    {
+                        var afterStr = text.Substring(periodEnd);
+                        if (this.config.GetFromTokenIndex(afterStr, out index))
+                        {
+                            periodEnd += index;
+                        }
+                    }
 
                     ret.Add(new Token(periodBegin, periodEnd));
                     idx += 2;
@@ -272,7 +280,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim();
 
-                    if (middleStr.Length != Constants.INVALID_CONNECTOR_CODE)
+                    if (this.config.BeforeAfterRegex.IsMatch(middleStr))
                     {
                         var begin = ers[i].Start ?? 0;
                         var end = (ers[j].Start ?? 0) + (ers[j].Length ?? 0);

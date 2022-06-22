@@ -15,10 +15,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
     public class KoreanMergedExtractorConfiguration : BaseDateTimeOptionsConfiguration, ICJKMergedExtractorConfiguration
     {
         public static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.ParserConfigurationBefore, RegexFlags);
+        public static readonly Regex UnspecificDatePeriodRegex = new Regex(DateTimeDefinitions.UnspecificDatePeriodRegex, RegexFlags);
         public static readonly Regex AfterRegex = new Regex(DateTimeDefinitions.ParserConfigurationAfter, RegexFlags);
         public static readonly Regex UntilRegex = new Regex(DateTimeDefinitions.ParserConfigurationUntil, RegexFlags);
         public static readonly Regex SincePrefixRegex = new Regex(DateTimeDefinitions.ParserConfigurationSincePrefix, RegexFlags);
         public static readonly Regex SinceSuffixRegex = new Regex(DateTimeDefinitions.ParserConfigurationSinceSuffix, RegexFlags);
+        public static readonly Regex AroundPrefixRegex = new Regex(DateTimeDefinitions.ParserConfigurationAroundPrefix, RegexFlags);
+        public static readonly Regex AroundSuffixRegex = new Regex(DateTimeDefinitions.ParserConfigurationAroundSuffix, RegexFlags);
         public static readonly Regex EqualRegex = new Regex(BaseDateTime.EqualRegex, RegexFlags);
         public static readonly Regex PotentialAmbiguousRangeRegex = new Regex(DateTimeDefinitions.FromToRegex, RegexFlags);
         public static readonly Regex AmbiguousRangeModifierPrefix = new Regex(DateTimeDefinitions.AmbiguousRangeModifierPrefix, RegexFlags);
@@ -63,9 +66,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
 
         Regex ICJKMergedExtractorConfiguration.BeforeRegex => BeforeRegex;
 
+        Regex ICJKMergedExtractorConfiguration.UnspecificDatePeriodRegex => UnspecificDatePeriodRegex;
+
         Regex ICJKMergedExtractorConfiguration.SincePrefixRegex => SincePrefixRegex;
 
         Regex ICJKMergedExtractorConfiguration.SinceSuffixRegex => SinceSuffixRegex;
+
+        Regex ICJKMergedExtractorConfiguration.AroundPrefixRegex => AroundPrefixRegex;
+
+        Regex ICJKMergedExtractorConfiguration.AroundSuffixRegex => AroundSuffixRegex;
 
         Regex ICJKMergedExtractorConfiguration.UntilRegex => UntilRegex;
 

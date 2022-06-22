@@ -191,6 +191,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string FirstTwoYearGroupName = "firsttwoyearnum";
         public const string LastTwoYearGroupName = "lasttwoyearnum";
         public const string DayGroupName = "day";
+        public const string WeekdayGroupName = "weekday";
         public const string WeekGroupName = "week";
         public const string MonthGroupName = "month";
         public const string RelMonthGroupName = "relmonth";
@@ -200,10 +201,13 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string DecadeGroupName = "decade";
         public const string CenturyGroupName = "century";
         public const string RelCenturyGroupName = "relcentury";
+        public const string AnotherGroupName = "another";
         public const string HalfGroupName = "half";
         public const string HalfTagGroupName = "halfTag";
         public const string FirstHalfGroupName = "firstHalf";
         public const string SecondHalfGroupName = "secondHalf";
+        public const string QuarterGroupName = "quarter";
+        public const string ThreeQuarterGroupName = "threequarter";
         public const string CardinalGroupName = "cardinal";
         public const string TimeOfDayGroupName = "timeOfDay";
         public const string BusinessDayGroupName = "business";
@@ -227,6 +231,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string FewGroupName = "few";
         public const string LaterGroupName = "later";
         public const string SpecificEndOfGroupName = "SpecificEndOf";
+        public const string TomorrowGroupName = "tomorrow";
         public const string LatePrefixGroupName = "LatePrefix";
         public const string MidPrefixGroupName = "MidPrefix";
         public const string RestOfGroupName = "restof";
@@ -267,6 +272,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string TimexNow = "PRESENT_REF";
         public const char TimexFuzzy = 'X';
         public const string TimexFuzzyYear = "XXXX";
+        public const string TimexFuzzyTwoDigitYear = "XX";
         public const string TimexFuzzyMonth = "XX";
         public const string TimexFuzzyWeek = "WXX";
         public const string TimexFuzzyDay = "XX";

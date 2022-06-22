@@ -18,6 +18,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
             AfterRegex = KoreanMergedExtractorConfiguration.AfterRegex;
             SincePrefixRegex = KoreanMergedExtractorConfiguration.SincePrefixRegex;
             SinceSuffixRegex = KoreanMergedExtractorConfiguration.SinceSuffixRegex;
+            AroundPrefixRegex = KoreanMergedExtractorConfiguration.AroundPrefixRegex;
+            AroundSuffixRegex = KoreanMergedExtractorConfiguration.AroundSuffixRegex;
             EqualRegex = KoreanMergedExtractorConfiguration.EqualRegex;
             UntilRegex = KoreanMergedExtractorConfiguration.UntilRegex;
         }
@@ -29,6 +31,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
         public Regex SincePrefixRegex { get; }
 
         public Regex SinceSuffixRegex { get; }
+
+        public Regex AroundPrefixRegex { get; }
+
+        public Regex AroundSuffixRegex { get; }
 
         public Regex UntilRegex { get; }
 

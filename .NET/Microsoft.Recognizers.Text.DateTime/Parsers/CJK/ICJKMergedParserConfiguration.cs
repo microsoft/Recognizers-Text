@@ -20,5 +20,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         Regex UntilRegex { get; }
 
         Regex EqualRegex { get; }
+
+        Regex AroundPrefixRegex { get; }
+
+        Regex AroundSuffixRegex { get; }
     }
 }

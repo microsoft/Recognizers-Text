@@ -129,6 +129,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             // handle cases with time like 25時 which resolve to the next day
             var swiftDay = 0;
             var timexHours = TimexUtility.ParseHoursFromTimePeriodTimex(pr2.TimexStr);
+            if (!this.config.AmPmDescRegex.Match(text).Success && timexHours.Item1 < Constants.HalfDayHourCount && timexHours.Item2 < Constants.HalfDayHourCount)
+            {
+                ret.Comment = Constants.Comment_AmPm;
+            }
+
             if (timexHours.Item1 > Constants.DayHourCount)
             {
                 pastDate = pastDate.AddDays(1);

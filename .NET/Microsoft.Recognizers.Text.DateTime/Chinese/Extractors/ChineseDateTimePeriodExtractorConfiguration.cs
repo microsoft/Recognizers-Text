@@ -41,6 +41,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static readonly Regex RestOfDateRegex = new Regex(DateTimeDefinitions.RestOfDateRegex, RegexFlags);
 
+        public static readonly Regex AmPmDescRegex = new Regex(DateTimeDefinitions.AmPmDescRegex, RegexFlags);
+
+        public static readonly Regex BeforeAfterRegex = new Regex(DateTimeDefinitions.BeforeAfterRegex, RegexFlags);
+
         public static readonly Regex HourRegex = new Regex(DateTimeDefinitions.HourRegex, RegexFlags);
         public static readonly Regex HourNumRegex = new Regex(DateTimeDefinitions.HourNumRegex, RegexFlags);
         public static readonly Regex ThisRegex = new Regex(DateTimeDefinitions.DateTimePeriodThisRegex, RegexFlags);
@@ -104,7 +108,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         Regex ICJKDateTimePeriodExtractorConfiguration.RestOfDateRegex => RestOfDateRegex;
 
+        Regex ICJKDateTimePeriodExtractorConfiguration.AmPmDescRegex => AmPmDescRegex;
+
         Regex ICJKDateTimePeriodExtractorConfiguration.ThisRegex => ThisRegex;
+
+        Regex ICJKDateTimePeriodExtractorConfiguration.BeforeAfterRegex => BeforeAfterRegex;
 
         public bool GetFromTokenIndex(string text, out int index)
         {

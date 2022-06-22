@@ -281,6 +281,8 @@ DateTimePeriodTillRegex: !simpleRegex
   def: (?<till>到|直到|--|-|—|——)
 DateTimePeriodPrepositionRegex: !simpleRegex
   def: (?<prep>^\s*的|在\s*$)
+BeforeAfterRegex: !simpleRegex
+  def: ^\b$
 HourRegex: !nestedRegex
   def: \b{BaseDateTime.HourRegex}
   references: [ BaseDateTime.HourRegex ]
@@ -295,7 +297,7 @@ DateTimePeriodLastRegex: !simpleRegex
 DateTimePeriodNextRegex: !simpleRegex
   def: 下个|下一个|下|下一
 AmPmDescRegex: !simpleRegex
-  def: (?<daydesc>(am|a\.m\.|a m|a\. m\.|a\.m|a\. m|a m|pm|p\.m\.|p m|p\. m\.|p\.m|p\. m|p m))
+  def: (?<daydesc>(am|a\.m\.|a m|a\. m\.|a\.m|a\. m|a m|pm|p\.m\.|p m|p\. m\.|p\.m|p\. m|p m|上午|中午|下午|午后|晚上|夜里|夜晚|夜间|深夜|傍晚|晚|早间?))
 TimeOfDayRegex: !simpleRegex
   def: (?<timeOfDay>凌晨|清晨|早上|早间|早|上午|中午|下午|午后|晚上|夜里|夜晚|半夜|夜间|深夜|傍晚|晚)
 SpecificTimeOfDayRegex: !nestedRegex
@@ -364,6 +366,8 @@ DurationAmbiguousUnits: !list
 DurationUnitRegex: !nestedRegex
   def: (?<unit>{DateUnitRegex}|分钟?|秒钟?|个?小时|时|个?钟头|天|个?星期|周|週|个?月|年)
   references: [DateUnitRegex]
+AnUnitRegex: !simpleRegex
+  def: ^[.]
 DurationConnectorRegex: !simpleRegex
   def: ^\s*(?<connector>[多又余零]?)\s*$
 ConnectorRegex: !simpleRegex
@@ -487,6 +491,9 @@ AmbiguousRangeModifierPrefix: !simpleRegex
 ReferenceDatePeriodRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in Japanese
   def: ^[.]
+UnspecificDatePeriodRegex: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Japanese
+  def: ^[.]
 ParserConfigurationBefore: !simpleRegex
   def: ((?<include>和|或|及)?(之前|以前)|前)
 ParserConfigurationAfter: !simpleRegex
@@ -497,6 +504,12 @@ ParserConfigurationSincePrefix: !simpleRegex
   def: (自从|自|自打|打|从)
 ParserConfigurationSinceSuffix: !simpleRegex
   def: (以来|开始|起)
+ParserConfigurationAroundPrefix: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Japanese
+  def: ^[.]
+ParserConfigurationAroundSuffix: !simpleRegex
+  # TODO: modify below regex according to the counterpart in Japanese
+  def: ^[.]
 ParserConfigurationLastWeekDayRegex: 最后一个
 ParserConfigurationNextMonthRegex: 下一个
 ParserConfigurationLastMonthRegex: 上一个
@@ -566,6 +579,10 @@ ThisYearTerms: !list
   types: [ string ]
   entries:
     - 今年
+YearToDateTerms: !list
+  types: [ string ]
+  entries:
+    - 今年迄今
 LastYearTerms: !list
   types: [ string ]
   entries:
@@ -941,6 +958,18 @@ DateTimePeriodEVRegex: !simpleRegex
   def: (晚上|夜里|夜晚|晚)
 DateTimePeriodNIRegex: !simpleRegex
   def: (半夜|夜间|深夜)
+AmbiguityTimeFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    '^[.]': '^[.]'
+AmbiguityDateFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    '^[.]': '^[.]'
+AmbiguityDateTimeFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    '^[.]': '^[.]'
 # For cases like "12号", singleWord "早" and "晚"
 AmbiguityFiltersDict: !dictionary
   types: [ string, string ]

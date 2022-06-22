@@ -7,6 +7,7 @@ using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Japanese;
+using Microsoft.Recognizers.Definitions.Utilities;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Japanese;
 using DateObject = System.DateTime;
@@ -42,6 +43,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         public static readonly Regex DateTimePeriodUnitRegex = new Regex(DateTimeDefinitions.DateTimePeriodUnitRegex, RegexFlags);
 
+        public static readonly Regex RangeConnectorSymbolRegex = new Regex(DateTimeDefinitions.DatePeriodTillRegex, RegexFlags);
+
         public static readonly Regex MonthRegex = new Regex(DateTimeDefinitions.MonthRegex, RegexFlags);
         public static readonly Regex DayRegex = new Regex(DateTimeDefinitions.DayRegex, RegexFlags);
         public static readonly Regex DayRegexInCJK = new Regex(DateTimeDefinitions.DateDayRegexInCJK, RegexFlags);
@@ -73,7 +76,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
             ImplicitDateList = new List<Regex>
             {
-                LunarRegex, SpecialDayWithNumRegex, SpecialDayRegex, ThisRegex, LastRegex, NextRegex,
+                SpecialDayWithNumRegex, SpecialDayRegex, ThisRegex, LastRegex, NextRegex,
                 WeekDayRegex, WeekDayOfMonthRegex, SpecialDate, WeekDayAndDayRegex,
             };
 
@@ -134,5 +137,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         Regex ICJKDateExtractorConfiguration.AfterRegex => AfterRegex;
 
         Regex ICJKDateExtractorConfiguration.WeekDayStartEnd => WeekDayStartEnd;
+
+        Regex ICJKDateExtractorConfiguration.RangeConnectorSymbolRegex => RangeConnectorSymbolRegex;
+
+        public Dictionary<Regex, Regex> AmbiguityDateFiltersDict => DefinitionLoader.LoadAmbiguityFilters(DateTimeDefinitions.AmbiguityDateFiltersDict);
+
     }
 }

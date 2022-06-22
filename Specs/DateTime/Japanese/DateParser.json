@@ -2185,12 +2185,12 @@
         "Text": "今月の27日",
         "Type": "date",
         "Value": {
-          "Timex": "XXXX-11-27",
+          "Timex": "2016-11-27",
           "FutureResolution": {
             "date": "2016-11-27"
           },
           "PastResolution": {
-            "date": "2015-11-27"
+            "date": "2016-11-27"
           }
         },
         "Start": 2,
@@ -2234,12 +2234,12 @@
         "Text": "今月27日",
         "Type": "date",
         "Value": {
-          "Timex": "XXXX-11-27",
+          "Timex": "2016-11-27",
           "FutureResolution": {
             "date": "2016-11-27"
           },
           "PastResolution": {
-            "date": "2015-11-27"
+            "date": "2016-11-27"
           }
         },
         "Start": 2,
@@ -2621,12 +2621,12 @@
         "Text": "来月の二十日",
         "Type": "date",
         "Value": {
-          "Timex": "XXXX-12-20",
+          "Timex": "2016-12-20",
           "FutureResolution": {
             "date": "2016-12-20"
           },
           "PastResolution": {
-            "date": "2015-12-20"
+            "date": "2016-12-20"
           }
         },
         "Start": 2,
@@ -2645,7 +2645,7 @@
         "Text": "今月の三十一日",
         "Type": "date",
         "Value": {
-          "Timex": "XXXX-11-31",
+          "Timex": "2016-11-31",
           "FutureResolution": {
             "date": "2016-12-31"
           },
@@ -2933,12 +2933,12 @@
         "Text": "次の月の20日",
         "Type": "date",
         "Value": {
-          "Timex": "XXXX-01-20",
+          "Timex": "2018-01-20",
           "FutureResolution": {
             "date": "2018-01-20"
           },
           "PastResolution": {
-            "date": "2017-01-20"
+            "date": "2018-01-20"
           }
         },
         "Start": 4,
@@ -4205,9 +4205,9 @@
         "Text": "今月の十日",
         "Type": "date",
         "Value": {
-          "Timex": "XXXX-03-10",
+          "Timex": "2017-03-10",
           "FutureResolution": {
-            "date": "2018-03-10"
+            "date": "2017-03-10"
           },
           "PastResolution": {
             "date": "2017-03-10"
