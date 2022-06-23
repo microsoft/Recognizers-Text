@@ -789,6 +789,11 @@ class DateParserConfiguration(ABC):
 
     @property
     @abstractmethod
+    def special_day_with_num_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
     def next_regex(self) -> Pattern:
         raise NotImplementedError
 
@@ -834,7 +839,17 @@ class DateParserConfiguration(ABC):
 
     @property
     @abstractmethod
+    def week_day_and_day_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
     def relative_month_regex(self) -> Pattern:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def relative_week_day_regex(self) -> Pattern:
         raise NotImplementedError
 
     @property
@@ -1047,6 +1062,53 @@ class BaseDateParser(DateTimeParser):
             result.success = True
             return result
 
+        # Handle two days from tomorrow
+        match = regex.match(self.config.special_day_with_num_regex, trimmed_source)
+        if match:
+            swift = self.config.get_swift_day(match.group(Constants.DAY_GROUP_NAME))
+            ers = self.config.integer_extractor.extract(trimmed_source)
+
+            if not ers or not ers[0].text:
+                return result
+
+            num = int(self.config.number_parser.parse(ers[0]).value)
+
+            value = reference + datedelta(days=num + swift)
+
+            result.timex = DateTimeFormatUtil.luis_date_from_datetime(value)
+            result.future_value = DateUtils.safe_create_from_min_value(value.year, value.month, value.day)
+            result.past_value = result.future_value
+            result.success = True
+
+            return result
+
+        # Handle "two sundays from now"
+        match = regex.match(self.config.relative_week_day_regex, trimmed_source)
+        if match:
+            ers = self.config.integer_extractor.extract(trimmed_source)
+
+            if not ers or not ers[0].text:
+                return result
+
+            num = int(self.config.number_parser.parse(ers[0]).value)
+            weekday_str = match.group(Constants.WEEKDAY_GROUP_NAME)
+            value = reference
+
+            # Check whether the determined day of this week has passed.
+            if value.isoweekday() > self.config.day_of_week.get(weekday_str):
+                num -= 1
+
+            while num > 0:
+                value = DateUtils.next(value, self.config.day_of_week.get(weekday_str))
+                num -= 1
+
+            result.timex = DateTimeFormatUtil.luis_date_from_datetime(value)
+            result.future_value = DateUtils.safe_create_from_min_value(value.year, value.month, value.day)
+            result.past_value = result.future_value
+            result.success = True
+
+            return result
+
         # handle "next Sunday"
         match = regex.match(self.config.next_regex, trimmed_source)
         if match and match.start() == 0 and len(match.group()) == len(trimmed_source):
@@ -1147,6 +1209,84 @@ class BaseDateParser(DateTimeParser):
             date = datetime(year, month, day)
             result.future_value = date
             result.past_value = date
+            result.success = True
+
+            return result
+
+        # Handling cases like 'Monday 21', which both 'Monday' and '21' refer to the same date.
+        # The year of expected date can be different to the year of referenceDate.
+        match = regex.match(
+            self.config.week_day_and_day_regex, trimmed_source)
+        if match:
+            # avoid parsing "Monday 3" from "Monday 3 weeks from now"
+            after_str = trimmed_source[match.end():]
+            if self.config.unit_regex.search(after_str.strip()):
+                return result
+
+            month = reference.month
+            year = reference.year
+
+            day_str = match.group(Constants.DAY_GROUP_NAME)
+            er = ExtractResult.get_from_text(day_str)
+
+            # Parse the day in text into number
+            day = int(self.config.number_parser.parse(er).value)
+
+            # Firstly, find a latest date with the "day" as pivotDate.
+            # Secondly, if the pivotDate equals the referenced date, in other word, the day of the referenced date is exactly the "day".
+            # In this way, check if the pivotDate is the weekday. If so, then the futureDate and the previousDate are the same date (referenced date).
+            # Otherwise, increase the pivotDate month by month to find the latest futureDate and decrease the pivotDate month
+            # by month to the latest previousDate.
+            # Notice: if the "day" is larger than 28, some months should be ignored in the increase or decrease procedure.
+            days_in_month = calendar.monthrange(year, month)[1]
+            if days_in_month >= day:
+                pivot_date = DateUtils.safe_create_from_min_value(year, month, day)
+            else:
+                # Add 1 month is enough, since 1, 3, 5, 7, 8, 10, 12 months has 31 days
+                pivot_date = datetime(year, month, day) + datedelta(months=1)
+                pivot_date = DateUtils.safe_create_from_min_value(pivot_date.year, pivot_date.month, pivot_date.day)
+
+            num_week_day_int = pivot_date.isoweekday()
+            extracted_week_day_str = match.group(Constants.WEEKDAY_GROUP_NAME)
+            week_day = self.config.day_of_week.get(extracted_week_day_str)
+
+            if pivot_date != DateUtils.min_value:
+                if day == reference.day and num_week_day_int == week_day:
+                    # The referenceDate is the weekday and with the "day".
+                    result.future_value = datetime(year, month, day)
+                    result.past_value = datetime(year, month, day)
+                    result.timex = DateTimeFormatUtil.luis_date(year, month, day)
+                else:
+                    future_date = pivot_date
+                    past_date = pivot_date
+
+                    while future_date.isoweekday() != week_day or future_date.day != day or future_date < reference:
+                        # Increase the futureDate month by month to find the expected date (the "day" is the weekday) and
+                        # make sure the futureDate not less than the referenceDate.
+                        future_date += datedelta(months=1)
+                        tmp_days_in_month = calendar.monthrange(future_date.year, future_date.month)[1]
+                        if tmp_days_in_month >= day:
+                            # For months like January 31, after add 1 month, February 31 won't be returned, so the day should be revised ASAP.
+                            future_date = DateUtils.safe_create_from_value(DateUtils.min_value, future_date.year, future_date.month, day)
+
+                    result.future_value = future_date
+
+                    while past_date.isoweekday() != week_day or past_date.day != day or past_date > reference:
+                        # Decrease the pastDate month by month to find the expected date (the "day" is the weekday) and
+                        # make sure the pastDate not larger than the referenceDate.
+                        past_date += datedelta(months=-1)
+                        tmp_days_in_month = calendar.monthrange(past_date.year, future_date.month)[1]
+                        if tmp_days_in_month >= day:
+                            # For months like March 31, after minus 1 month, February 31 won't be returned, so the day should be revised ASAP.
+                            past_date = DateUtils.safe_create_from_value(DateUtils.min_value, past_date.year, past_date.month, day)
+
+                    result.past_value = past_date
+
+                    if week_day == 0:
+                        week_day = 7
+
+                    result.timex = f"XXXX-WXX-{week_day}"
+
             result.success = True
 
             return result
