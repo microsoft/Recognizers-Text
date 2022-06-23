@@ -18860,39 +18860,24 @@
     "Context": {
       "ReferenceDateTime": "2019-08-05T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python, dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "kerstavond",
+        "Text": "kerstavond om 18.00",
         "Start": 25,
-        "End": 34,
-        "TypeName": "datetimeV2.date",
+        "End": 43,
+        "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
             {
-              "timex": "XXXX-12-24",
-              "type": "date",
-              "value": "2018-12-24"
+              "timex": "XXXX-12-24T18:00",
+              "type": "datetime",
+              "value": "2018-12-24 18:00:00"
             },
             {
-              "timex": "XXXX-12-24",
-              "type": "date",
-              "value": "2019-12-24"
-            }
-          ]
-        }
-      },
-      {
-        "Text": "om 18.00",
-        "Start": 36,
-        "End": 43,
-        "TypeName": "datetimeV2.time",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "T18:00",
-              "type": "time",
-              "value": "18:00:00"
+              "timex": "XXXX-12-24T18:00",
+              "type": "datetime",
+              "value": "2019-12-24 18:00:00"
             }
           ]
         }
@@ -20257,35 +20242,6 @@
               "type": "daterange",
               "start": "2020-01-01",
               "end": "2021-01-01"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  {
-    "Input": "welke films spelen er op Kerstavond om 18.00?",
-    "Context": {
-      "ReferenceDateTime": "2019-08-05T00:00:00"
-    },
-    "NotSupportedByDesign": "java, javascript, python",
-    "Results": [
-      {
-        "Text": "kerstavond om 18.00",
-        "Start": 25,
-        "End": 43,
-        "TypeName": "datetimeV2.datetime",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "XXXX-12-24T18:00",
-              "type": "datetime",
-              "value": "2018-12-24 18:00:00"
-            },
-            {
-              "timex": "XXXX-12-24T18:00",
-              "type": "datetime",
-              "value": "2019-12-24 18:00:00"
             }
           ]
         }
