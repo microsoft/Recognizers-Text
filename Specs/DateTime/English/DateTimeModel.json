@@ -21724,6 +21724,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-05T00:00:00"
     },
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "christmas",
@@ -21795,6 +21796,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-05T00:00:00"
     },
+    "NotSupported": "dotnet",
     "Results": [
       {
         "Text": "christmas",
@@ -23928,6 +23930,64 @@
               "timex": "XXXX-04-22T10:30",
               "type": "datetime",
               "value": "2020-04-13 10:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The event starts on Christmas early morning at 9:00",
+    "Context": {
+      "ReferenceDateTime": "2022-06-22T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "christmas early morning at 9:00",
+        "Start": 20,
+        "End": 50,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-12-25T09:00",
+              "type": "datetime",
+              "value": "2021-12-25 09:00:00"
+            },
+            {
+              "timex": "XXXX-12-25T09:00",
+              "type": "datetime",
+              "value": "2022-12-25 09:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The event starts on Christmas at 9:00 early morning",
+    "Context": {
+      "ReferenceDateTime": "2022-08-05T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "christmas at 9:00 early morning",
+        "Start": 20,
+        "End": 50,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-12-25T09:00",
+              "type": "datetime",
+              "value": "2021-12-25 09:00:00"
+            },
+            {
+              "timex": "XXXX-12-25T09:00",
+              "type": "datetime",
+              "value": "2022-12-25 09:00:00"
             }
           ]
         }
