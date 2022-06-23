@@ -44,6 +44,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             NumberParser = new BaseNumberParser(new FrenchNumberParserConfiguration(numConfig));
 
             DateExtractor = new BaseDateExtractor(new FrenchDateExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new FrenchHolidayExtractorConfiguration(this));
             TimeExtractor = new BaseTimeExtractor(new FrenchTimeExtractorConfiguration(this));
             DateTimeExtractor = new BaseDateTimeExtractor(new FrenchDateTimeExtractorConfiguration(this));
             DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration(this));
@@ -54,6 +55,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             // DurationParser should be assigned first, as DateParser would reference the DurationParser
             DurationParser = new BaseDurationParser(new FrenchDurationParserConfiguration(this));
             DateParser = new BaseDateParser(new FrenchDateParserConfiguration(this));
+            HolidaytimeParser = new BaseHolidayParser(new FrenchHolidayParserConfiguration(this));
             TimeParser = new BaseTimeParser(new FrenchTimeParserConfiguration(this));
             DateTimeParser = new BaseDateTimeParser(new FrenchDateTimeParserConfiguration(this));
             DatePeriodParser = new BaseDatePeriodParser(new FrenchDatePeriodParserConfiguration(this));

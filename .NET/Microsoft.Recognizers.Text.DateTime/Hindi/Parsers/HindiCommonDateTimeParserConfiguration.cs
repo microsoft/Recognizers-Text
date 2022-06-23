@@ -46,6 +46,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
             TimeZoneParser = new BaseTimeZoneParser(new HindiTimeZoneParserConfiguration(this));
 
             DateExtractor = new BaseDateExtractor(new HindiDateExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new HindiHolidayExtractorConfiguration(this));
             TimeExtractor = new BaseTimeExtractor(new HindiTimeExtractorConfiguration(this));
             DateTimeExtractor = new BaseDateTimeExtractor(new HindiDateTimeExtractorConfiguration(this));
             DurationExtractor = new BaseDurationExtractor(new HindiDurationExtractorConfiguration(this));
@@ -54,6 +55,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
             DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new HindiDateTimePeriodExtractorConfiguration(this));
             DurationParser = new BaseDurationParser(new HindiDurationParserConfiguration(this));
             DateParser = new BaseDateParser(new HindiDateParserConfiguration(this));
+            HolidaytimeParser = new BaseHolidayParser(new HindiHolidayParserConfiguration(this));
             TimeParser = new TimeParser(new HindiTimeParserConfiguration(this));
             DateTimeParser = new BaseDateTimeParser(new HindiDateTimeParserConfiguration(this));
             DatePeriodParser = new BaseDatePeriodParser(new HindiDatePeriodParserConfiguration(this));

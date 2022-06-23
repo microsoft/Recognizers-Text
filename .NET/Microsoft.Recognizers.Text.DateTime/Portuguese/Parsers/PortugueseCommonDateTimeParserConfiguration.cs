@@ -45,6 +45,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
             // Do not change order. The order of initialization can lead to side-effects
             DateExtractor = new BaseDateExtractor(new PortugueseDateExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new PortugueseHolidayExtractorConfiguration(this));
             TimeExtractor = new BaseTimeExtractor(new PortugueseTimeExtractorConfiguration(this));
             DateTimeExtractor = new BaseDateTimeExtractor(new PortugueseDateTimeExtractorConfiguration(this));
             DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration(this));
@@ -54,6 +55,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
             DurationParser = new BaseDurationParser(new PortugueseDurationParserConfiguration(this));
             DateParser = new BaseDateParser(new PortugueseDateParserConfiguration(this));
+            HolidaytimeParser = new BaseHolidayParser(new PortugueseHolidayParserConfiguration(this));
             TimeParser = new BaseTimeParser(new PortugueseTimeParserConfiguration(this));
             DateTimeParser = new BaseDateTimeParser(new PortugueseDateTimeParserConfiguration(this));
             DatePeriodParser = new BaseDatePeriodParser(new PortugueseDatePeriodParserConfiguration(this));

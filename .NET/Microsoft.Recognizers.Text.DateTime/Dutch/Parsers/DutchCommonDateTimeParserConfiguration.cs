@@ -45,6 +45,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
             TimeZoneParser = new BaseTimeZoneParser(new DutchTimeZoneParserConfiguration(this));
             DateExtractor = new BaseDateExtractor(new DutchDateExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new DutchHolidayExtractorConfiguration(this));
             TimeExtractor = new BaseTimeExtractor(new DutchTimeExtractorConfiguration(this));
             DateTimeExtractor = new BaseDateTimeExtractor(new DutchDateTimeExtractorConfiguration(this));
             DurationExtractor = new BaseDurationExtractor(new DutchDurationExtractorConfiguration(this));
@@ -53,6 +54,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new DutchDateTimePeriodExtractorConfiguration(this));
             DurationParser = new BaseDurationParser(new DutchDurationParserConfiguration(this));
             DateParser = new BaseDateParser(new DutchDateParserConfiguration(this));
+            HolidaytimeParser = new BaseHolidayParser(new DutchHolidayParserConfiguration(this));
             TimeParser = new TimeParser(new DutchTimeParserConfiguration(this));
             DateTimeParser = new BaseDateTimeParser(new DutchDateTimeParserConfiguration(this));
             DatePeriodParser = new BaseDatePeriodParser(new DutchDatePeriodParserConfiguration(this));

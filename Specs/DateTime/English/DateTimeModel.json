@@ -18748,7 +18748,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-05T00:00:00"
     },
-    "NotSupported": "python, java, javascript",
+    "NotSupported": "python, java, javascript, dotnet",
     "Results": [
       {
         "Text": "easter monday",
@@ -18792,6 +18792,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-05T00:00:00"
     },
+    "NotSupported": "python, java, javascript, dotnet",
     "Results": [
       {
         "Text": "christmas eve",
@@ -23961,6 +23962,64 @@
           ]
         }
       }
+    ]
+  },
+  {
+    "Input": "What happened on Easter Monday at 10:30 am?",
+    "Context": {
+      "ReferenceDateTime": "2019-08-05T00:00:00"
+    },
+    "NotSupported": "python, java, javascript",
+    "Results": [
+      {
+        "Text": "easter monday at 10:30 am",
+        "Start": 17,
+        "End": 41,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-04-22T10:30",
+              "type": "datetime",
+              "value": "2019-04-22 10:30:00"
+            },
+            {
+              "timex": "XXXX-04-22T10:30",
+              "type": "datetime",
+              "value": "2020-04-13 10:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "which films are shown on christmas eve at 6 p.m.?",
+    "Context": {
+      "ReferenceDateTime": "2019-08-05T00:00:00"
+    },
+    "NotSupported": "python, java, javascript",
+    "Results": [
+      {
+        "Text": "christmas eve at 6 p.m.",
+        "Start": 25,
+        "End": 47,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-12-24T18",
+              "type": "datetime",
+              "value": "2018-12-24 18:00:00"
+            },
+            {
+              "timex": "XXXX-12-24T18",
+              "type": "datetime",
+              "value": "2019-12-24 18:00:00"
+            }
+          ]
+        }
+      } 
     ]
   }
 ]

@@ -43,6 +43,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             NumberParser = new BaseNumberParser(new ItalianNumberParserConfiguration(numConfig));
 
             DateExtractor = new BaseDateExtractor(new ItalianDateExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new ItalianHolidayExtractorConfiguration(this));
             TimeExtractor = new BaseTimeExtractor(new ItalianTimeExtractorConfiguration(this));
             DateTimeExtractor = new BaseDateTimeExtractor(new ItalianDateTimeExtractorConfiguration(this));
             DurationExtractor = new BaseDurationExtractor(new ItalianDurationExtractorConfiguration(this));
@@ -50,6 +51,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             TimePeriodExtractor = new BaseTimePeriodExtractor(new ItalianTimePeriodExtractorConfiguration(this));
             DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new ItalianDateTimePeriodExtractorConfiguration(this));
             DateParser = new BaseDateParser(new ItalianDateParserConfiguration(this));
+            HolidaytimeParser = new BaseHolidayParser(new ItalianHolidayParserConfiguration(this));
             TimeParser = new TimeParser(new ItalianTimeParserConfiguration(this));
             DateTimeParser = new BaseDateTimeParser(new ItalianDateTimeParserConfiguration(this));
             DurationParser = new BaseDurationParser(new ItalianDurationParserConfiguration(this));

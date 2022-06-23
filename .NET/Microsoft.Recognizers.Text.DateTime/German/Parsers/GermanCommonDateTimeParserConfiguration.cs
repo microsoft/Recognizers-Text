@@ -44,6 +44,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             NumberParser = new BaseNumberParser(new GermanNumberParserConfiguration(numConfig));
 
             DateExtractor = new BaseDateExtractor(new GermanDateExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new GermanHolidayExtractorConfiguration(this));
             TimeExtractor = new BaseTimeExtractor(new GermanTimeExtractorConfiguration(this));
             DateTimeExtractor = new BaseDateTimeExtractor(new GermanDateTimeExtractorConfiguration(this));
             DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration(this));
@@ -52,6 +53,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new GermanDateTimePeriodExtractorConfiguration(this));
             DurationParser = new BaseDurationParser(new GermanDurationParserConfiguration(this));
             DateParser = new BaseDateParser(new GermanDateParserConfiguration(this));
+            HolidaytimeParser = new BaseHolidayParser(new GermanHolidayParserConfiguration(this));
             TimeParser = new TimeParser(new GermanTimeParserConfiguration(this));
             DateTimeParser = new BaseDateTimeParser(new GermanDateTimeParserConfiguration(this));
             DatePeriodParser = new BaseDatePeriodParser(new GermanDatePeriodParserConfiguration(this));

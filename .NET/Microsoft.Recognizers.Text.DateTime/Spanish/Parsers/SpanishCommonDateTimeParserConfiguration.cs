@@ -45,6 +45,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
             // Do not change order. The order of initialization can lead to side-effects
             DateExtractor = new BaseDateExtractor(new SpanishDateExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new SpanishHolidayExtractorConfiguration(this));
             TimeExtractor = new BaseTimeExtractor(new SpanishTimeExtractorConfiguration(this));
             DateTimeExtractor = new BaseDateTimeExtractor(new SpanishDateTimeExtractorConfiguration(this));
             DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration(this));
@@ -54,6 +55,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
             DurationParser = new BaseDurationParser(new SpanishDurationParserConfiguration(this));
             DateParser = new BaseDateParser(new SpanishDateParserConfiguration(this));
+            HolidaytimeParser = new BaseHolidayParser(new SpanishHolidayParserConfiguration(this));
             TimeParser = new BaseTimeParser(new SpanishTimeParserConfiguration(this));
             DateTimeParser = new BaseDateTimeParser(new SpanishDateTimeParserConfiguration(this));
             DatePeriodParser = new BaseDatePeriodParser(new SpanishDatePeriodParserConfiguration(this));
