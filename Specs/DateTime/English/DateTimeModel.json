@@ -24216,7 +24216,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "dotnet, java, javascript, python",
     "Results": [
       {
         "Text": "from april twenty-seventh to the third",
@@ -24247,7 +24247,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "dotnet, java, javascript, python",
     "Results": [
       {
         "Text": "from the twenty-seventh to the third of april",

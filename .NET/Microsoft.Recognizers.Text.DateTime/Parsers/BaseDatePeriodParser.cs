@@ -699,9 +699,47 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (match.Success)
             {
-                var days = match.Groups["day"];
-                beginDay = this.config.DayOfMonth[days.Captures[0].Value];
-                endDay = this.config.DayOfMonth[days.Captures[1].Value];
+                var days = match.Groups[Constants.DayGroupName];
+                var writtenDay = match.Groups[Constants.OrdinalGroupName];
+                if (writtenDay.Captures.Count > 0 && days.Captures[0].Value == writtenDay.Captures[0].Value)
+                {
+                    // Parse beginDay in written form
+                    var dayMatch = writtenDay.Captures[0];
+                    var dayEr = new ExtractResult
+                    {
+                        Start = dayMatch.Index,
+                        Length = dayMatch.Length,
+                        Text = dayMatch.Value,
+                        Type = Constants.SYS_NUMBER_ORDINAL,
+                        Metadata = new Metadata { IsOrdinalRelative = false, },
+                    };
+                    var dayPr = this.config.NumberParser.Parse(dayEr);
+                    beginDay = (int)(double)dayPr.Value;
+                }
+                else
+                {
+                    beginDay = this.config.DayOfMonth[days.Captures[0].Value];
+                }
+
+                if (writtenDay.Captures.Count > 0 && days.Captures[1].Value == writtenDay.Captures[writtenDay.Captures.Count - 1].Value)
+                {
+                    // Parse endDay in written form
+                    var dayMatch = writtenDay.Captures[writtenDay.Captures.Count - 1];
+                    var dayEr = new ExtractResult
+                    {
+                        Start = dayMatch.Index,
+                        Length = dayMatch.Length,
+                        Text = dayMatch.Value,
+                        Type = Constants.SYS_NUMBER_ORDINAL,
+                        Metadata = new Metadata { IsOrdinalRelative = false, },
+                    };
+                    var dayPr = this.config.NumberParser.Parse(dayEr);
+                    endDay = (int)(double)dayPr.Value;
+                }
+                else
+                {
+                    endDay = this.config.DayOfMonth[days.Captures[1].Value];
+                }
 
                 // parse year
                 year = config.DateExtractor.GetYearFromText(match.Match);
@@ -1365,36 +1403,15 @@ namespace Microsoft.Recognizers.Text.DateTime
             var er = this.config.DateExtractor.Extract(text, referenceDate);
             DateTimeParseResult pr1 = null;
             DateTimeParseResult pr2 = null;
-            var isOrdinal = false;
             if (er.Count < 2)
             {
                 er = this.config.DateExtractor.Extract(this.config.TokenBeforeDate + text, referenceDate);
-                er.ForEach(o => o.Start -= this.config.TokenBeforeDate.Length);
-                if (er.Count == 1)
+                if (er.Count >= 2)
                 {
-                    var ordinalExtractions = this.config.OrdinalExtractor.Extract(text);
-                    ordinalExtractions = ordinalExtractions.Where(o => !er.Any(er => er.IsOverlap(o)) && !o.Metadata.IsOrdinalRelative).ToList();
-                    foreach (var ordinal in ordinalExtractions)
-                    {
-                        if (ordinal.Metadata != null && int.TryParse(((Metadata)ordinal.Metadata).Offset, out int num) && num <= Constants.MaxDayMonth)
-                        {
-                            var ordinalEr = new ExtractResult
-                            {
-                                Start = ordinal.Start,
-                                Length = ordinal.Length,
-                                Text = ordinal.Text,
-                                Type = Constants.SYS_DATETIME_DATE,
-                            };
-
-                            er.Add(ordinalEr);
-                            isOrdinal = true;
-                        }
-                    }
-
-                    er = er.OrderBy(o => o.Start).ToList();
+                    er[0].Start -= this.config.TokenBeforeDate.Length;
+                    er[1].Start -= this.config.TokenBeforeDate.Length;
                 }
-
-                if (er.Count < 2)
+                else
                 {
                     var nowPr = ParseNowAsDate(text, referenceDate);
                     if (nowPr.Value == null || er.Count < 1)
@@ -1458,11 +1475,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                     (pr1, pr2) = dateContext.SyncYear(pr1, pr2);
                 }
 
-                if (isOrdinal)
-                {
-                    (pr1, pr2) = dateContext.SyncMonth(pr1, pr2);
-                }
-
                 // Expressions like "today", "tomorrow",... should keep their original year
                 if (!this.config.SpecialDayRegex.IsMatch(pr1.Text))
                 {
@@ -1495,9 +1507,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             ret.Timex = TimexUtility.GenerateDatePeriodTimex(futureBegin, futureEnd, DatePeriodTimexType.ByDay, pr1.TimexStr, pr2.TimexStr);
 
-            if ((pr1.TimexStr.StartsWith(Constants.TimexFuzzyYear, StringComparison.Ordinal) &&
+            if (pr1.TimexStr.StartsWith(Constants.TimexFuzzyYear, StringComparison.Ordinal) &&
                 futureBegin.CompareTo(DateObject.MinValue.SafeCreateFromValue(futureBegin.Year, 2, 28)) <= 0 &&
-                futureEnd.CompareTo(DateObject.MinValue.SafeCreateFromValue(futureBegin.Year, 3, 1)) >= 0) || isOrdinal)
+                futureEnd.CompareTo(DateObject.MinValue.SafeCreateFromValue(futureBegin.Year, 3, 1)) >= 0)
             {
                 // Handle cases like "Feb 28th - March 1st".
                 // There may be different timexes for FutureValue and PastValue due to the different validity of Feb 29th.
