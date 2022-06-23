@@ -18744,6 +18744,35 @@
     ]
   },
   {
+    "Input": "What happened on Easter Monday at 10:30 am?",
+    "Context": {
+      "ReferenceDateTime": "2019-08-05T00:00:00"
+    },
+    "NotSupported": "python, java, javascript",
+    "Results": [
+      {
+        "Text": "easter monday at 10:30 am",
+        "Start": 17,
+        "End": 41,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-04-22T10:30",
+              "type": "datetime",
+              "value": "2019-04-22 10:30:00"
+            },
+            {
+              "timex": "XXXX-04-22T10:30",
+              "type": "datetime",
+              "value": "2020-04-13 10:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "which films are shown on christmas eve at 6 p.m.?",
     "Context": {
       "ReferenceDateTime": "2019-08-05T00:00:00"
@@ -23901,35 +23930,6 @@
               "type": "daterange",
               "start": "2020-01-01",
               "end": "2021-01-01"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  {
-    "Input": "What happened on Easter Monday at 10:30 am?",
-    "Context": {
-      "ReferenceDateTime": "2019-08-05T00:00:00"
-    },
-    "NotSupported": "python, java, javascript",
-    "Results": [
-      {
-        "Text": "easter monday at 10:30 am",
-        "Start": 17,
-        "End": 41,
-        "TypeName": "datetimeV2.datetime",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "XXXX-04-22T10:30",
-              "type": "datetime",
-              "value": "2019-04-22 10:30:00"
-            },
-            {
-              "timex": "XXXX-04-22T10:30",
-              "type": "datetime",
-              "value": "2020-04-13 10:30:00"
             }
           ]
         }
