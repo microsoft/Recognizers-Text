@@ -323,6 +323,17 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
+            // Taskmode specific modification of past datetime references
+            if ((this.Config.Options & DateTimeOptions.TasksMode) != 0)
+            {
+                // filter decade regexes
+                if (pr != null)
+                {
+                    pr = MergedParserUtil.TasksModeModification(pr, referenceTime);
+                    pr.Text = originText;
+                }
+            }
+
             return pr;
         }
 
