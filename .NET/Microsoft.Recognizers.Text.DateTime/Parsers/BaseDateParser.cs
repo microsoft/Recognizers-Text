@@ -592,6 +592,37 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return ret;
             }
 
+            if ((config.Options & DateTimeOptions.TasksMode) != 0)
+            {
+                trimmedText = text.Trim();
+                if (trimmedText.Contains("next week"))
+                {
+                    var value = referenceDate.AddDays(Constants.WeekDayCount);
+                    ret.Timex = DateTimeFormatUtil.LuisDate(value);
+                    ret.FutureValue = ret.PastValue = DateObject.MinValue.SafeCreateFromValue(value.Year, value.Month, value.Day);
+                    ret.Success = true;
+                    return ret;
+                }
+
+                if (trimmedText.Contains("next month"))
+                {
+                    var value = referenceDate.AddMonths(1);
+                    ret.Timex = DateTimeFormatUtil.LuisDate(value.Year, value.Month, 1);
+                    ret.FutureValue = ret.PastValue = DateObject.MinValue.SafeCreateFromValue(value.Year, value.Month, 1);
+                    ret.Success = true;
+                    return ret;
+                }
+
+                if (trimmedText.Contains("next year"))
+                {
+                    var value = referenceDate.AddYears(1);
+                    ret.Timex = DateTimeFormatUtil.LuisDate(value.Year, 1, 1);
+                    ret.FutureValue = ret.PastValue = DateObject.MinValue.SafeCreateFromValue(value.Year, 1, 1);
+                    ret.Success = true;
+                    return ret;
+                }
+            }
+
             return ret;
         }
 

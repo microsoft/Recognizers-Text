@@ -323,6 +323,16 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
+            // Taskmode specific modification
+            if ((this.Config.Options & DateTimeOptions.TasksMode) != 0)
+            {
+                if (pr != null)
+                {
+                    pr = MergedParserUtil.TasksModeModification(pr, referenceTime);
+                    pr.Text = originText;
+                }
+            }
+
             return pr;
         }
 

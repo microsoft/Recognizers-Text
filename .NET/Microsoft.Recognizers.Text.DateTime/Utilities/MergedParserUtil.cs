@@ -520,6 +520,18 @@ namespace Microsoft.Recognizers.Text.DateTime
             return results;
         }
 
+        public static DateTimeParseResult TasksModeModification(DateTimeParseResult slot, DateObject referenceTime)
+        {
+            switch (slot.Type.Substring(ParserTypeName.Length + 1))
+            {
+                case Constants.SYS_DATETIME_DATE:
+                    slot = ModifyNextWeekDate(slot, referenceTime);
+                    break;
+            }
+
+            return slot;
+        }
+
         internal static void AddResolutionFields(Dictionary<string, string> dic, string key, string value)
         {
             if (!string.IsNullOrEmpty(value))
@@ -696,6 +708,32 @@ namespace Microsoft.Recognizers.Text.DateTime
                     // @TODO remove in future refactoring of test code and double-check there's no impact in output schema.
                     return pastResolutionStr.Keys.First().ToLowerInvariant();
             }
+        }
+
+        private static DateTimeParseResult ModifyNextWeekDate(DateTimeParseResult slot, DateObject referenceTime)
+        {
+            var value = (SortedDictionary<string, object>)slot.Value;
+
+            if (value != null && value.ContainsKey(ResolutionKey.ValueSet) && slot.Text.Contains("next week"))
+            {
+                if (value[ResolutionKey.ValueSet] is IList<Dictionary<string, string>> valueSet && valueSet.Any())
+                {
+
+                    foreach (var values in valueSet)
+                    {
+                        var tempdate = referenceTime.Upcoming(DayOfWeek.Monday).Date;
+                        var dateTimeToSet = DateObject.MinValue.SafeCreateFromValue(tempdate.Year, tempdate.Month, tempdate.Day);
+                        values[DateTimeResolutionKey.Value] = DateTimeFormatUtil.FormatDate(dateTimeToSet);
+                        values[DateTimeResolutionKey.Timex] = $"{DateTimeFormatUtil.LuisDate(dateTimeToSet)}";
+                    }
+
+                }
+
+            }
+
+            slot.Value = value;
+            return slot;
+
         }
     }
 }
