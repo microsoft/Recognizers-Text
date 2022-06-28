@@ -39,7 +39,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             AddTo(ret, this.config.SetExtractor.Extract(text, referenceTime));
             AddTo(ret, this.config.HolidayExtractor.Extract(text, referenceTime));
 
-            ret = FilterAmbiguity(ret, text);
+            ret = ExtractResultExtension.FilterAmbiguity(ret, text, this.config.AmbiguityFiltersDict);
 
             AddMod(ret, text);
 
@@ -63,28 +63,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             var tempDst = dst.Where((_, i) => !duplicate.Contains(i)).ToList();
 
             return tempDst;
-        }
-
-        // Filter some bad cases like "十二周岁" and "12号", etc.
-        private List<ExtractResult> FilterAmbiguity(List<ExtractResult> extractResults, string text)
-        {
-            if (this.config.AmbiguityFiltersDict != null)
-            {
-                foreach (var regex in this.config.AmbiguityFiltersDict)
-                {
-                    foreach (var extractResult in extractResults)
-                    {
-                        if (regex.Key.IsMatch(extractResult.Text))
-                        {
-                            var matches = regex.Value.Matches(text).Cast<Match>();
-                            extractResults = extractResults.Where(er => !matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start))
-                                .ToList();
-                        }
-                    }
-                }
-            }
-
-            return extractResults;
         }
 
         private void AddMod(List<ExtractResult> ers, string text)

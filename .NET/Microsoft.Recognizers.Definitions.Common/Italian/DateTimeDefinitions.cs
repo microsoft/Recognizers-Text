@@ -115,7 +115,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
       public static readonly string DateExtractor2 = $@"({DateExtractor1}(\s+|\s*[\-/,.]\s*|\s+del\s+)({DateYearRegex}))\b";
       public static readonly string DateExtractor3 = $@"\b({WeekDayRegex}(\s+|\s*,\s*))?({DayRegex}(\.)?(\s*[/,.\- ]\s*|\s+di\s+){MonthRegex}(\.)?(\s*[/,.\- ]\s*{DateYearRegex})?|{BaseDateTime.FourDigitYearRegex}\s*[/,.\- ]\s*{DayRegex}\s*[/,.\- ]\s*{MonthRegex})\b";
       public static readonly string DateExtractor4 = $@"\b({WeekDayRegex}(\s+|\s*,\s*))?((il|l')\s*)?{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}(\.)?\s*[/\\\-]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)";
-      public static readonly string DateExtractor5 = $@"\b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}\s*[/\\\-]\s*({MonthNumRegex}|{MonthRegex}(\.)?)\s*[/\\\-]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)";
+      public static readonly string DateExtractor5 = $@"\b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex}(\.)?)\s*[/\\\-\.]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)";
       public static readonly string DateExtractor6 = $@"(?<!([\-\.\/]|all[e']\s*|l[e']\s*))\b{MonthNumRegex}[\-\.\/]{DayRegex}{BaseDateTime.CheckDecimalRegex}(?!(%|\s*{{DescRegex}}))\b";
       public static readonly string DateExtractor7 = $@"(?<!\b{DateYearRegex}\s*[/\\\-]\s*)\b{DayRegex}\s*[\/\\-]s*{MonthNumRegex}((\s+|\s*[\/\-\\,]\s*){DateYearRegex})?\b{BaseDateTime.CheckDecimalRegex}(?!\s*[/\\\-\.]\s*\d+)";
       public static readonly string DateExtractor8 = $@"(?<!([\-\.\/]|all[e']\s*|l[e']\s*))\b{DayRegex}[\/\\\-]{MonthNumRegex}{BaseDateTime.CheckDecimalRegex}(?!(%|\s*{DescRegex}))\b";
@@ -654,7 +654,9 @@ namespace Microsoft.Recognizers.Definitions.Italian
         {
             { @"^\d{4}$", @"(\d\.\d{4}|\d{4}\.\d)" },
             { @"\bgiorno|pomeriggio|sera|notte\b", @"\b(buona?\s*(giorno|pomeriggio|sera|notte))\b" },
-            { @"^(apr|ago|dic|feb|gen|lug|giu|mar|mag|nov|ott|sett?)$", @"([$%£&!?@#])(apr|ago|dic|feb|gen|lug|giu|mar|mag|nov|ott|sett?)|(apr|ago|dic|feb|gen|lug|giu|mar|mag|nov|ott|sett?)([$%£&@#])" }
+            { @"^(apr|ago|dic|feb|gen|lug|giu|mar|mag|nov|ott|sett?)$", @"([$%£&!?@#])(apr|ago|dic|feb|gen|lug|giu|mar|mag|nov|ott|sett?)|(apr|ago|dic|feb|gen|lug|giu|mar|mag|nov|ott|sett?)([$%£&@#])" },
+            { @"^\d{1,4}-\d{1,4}$", @"\d{1,4}-\d{1,4}-\d|\d-\d{1,4}-\d{1,4}" },
+            { @"^\d{1,4}-\d{1,4}-\d{1,4}$", @"\d{1,4}-\d{1,4}-\d{1,4}-\d|\d-\d{1,4}-\d{1,4}-\d{1,4}" }
         };
       public static readonly IList<string> MorningTermList = new List<string>
         {

@@ -1581,6 +1581,8 @@ AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:
     '\bmart\b': '\b(martin)\b'
+    '^\d{1,4}-\d{1,4}$': '\d{1,4}-\d{1,4}-\d|\d-\d{1,4}-\d{1,4}'
+    '^\d{1,4}-\d{1,4}-\d{1,4}$': '\d{1,4}-\d{1,4}-\d{1,4}-\d|\d-\d{1,4}-\d{1,4}-\d{1,4}'
 # For TimeOfDay resolution
 MorningTermList: !list
   types: [ string ]
