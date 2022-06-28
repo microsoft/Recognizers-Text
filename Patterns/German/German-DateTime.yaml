@@ -30,10 +30,17 @@ RangePrefixRegex: !simpleRegex
   def: (vo[nm]|zwischen)
 PenultimatePrefixRegex: !simpleRegex
   def: \b(vorletzte[snm]?)\b
+WrittenOneToNineRegex: !simpleRegex
+  def: (eins?|zw(een|ei|o)|drei|vier|fünf|fuenf|sechs|sieben|acht|neun)
 DayRegex: !simpleRegex
   def: (de[rmsn]\s*)?(?<day>(01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)(\.|\b))
+WrittenDayNumRegex: !nestedRegex
+  def: \b(?<day>(?<ordinal>((erst|zweit|dritt|viert|fünft|fuenft|sechst|siebt|acht|neunt|zehnt|elft|zwölft|zwoelft|dreizehnt|vierzehnt|fünfzehnt|fuenfzehnt|sechzehnt|siebzehnt|achtzehnt|neunzehnt)er|({WrittenOneToNineRegex}und)?zwanzigster|(einund)?dreißigster)))\b
+  references: [ WrittenOneToNineRegex ]
 MonthNumRegex: !simpleRegex
-  def: (?<month>(01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\.?)
+  def: (?<month>(01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)(\.|\b))
+WrittenMonthNumRegex: !simpleRegex
+  def: \b(?<month>(?<ordinal>((erst|zweit|dritt|viert|fünft|fuenft|sechst|siebt|acht|neunt|zehnt|elft|zw(ö|oe)lft)er)))\b
 AmDescRegex: !nestedRegex
   def: ({BaseDateTime.BaseAmDescRegex})
   references: [BaseDateTime.BaseAmDescRegex]
@@ -53,8 +60,9 @@ TwoDigitYearRegex: !nestedRegex
   references: [ AmDescRegex, PmDescRegex]
 CenturyRegex: !simpleRegex
   def: \b(?<century>((ein|zwei)?tausend(und)?)?((ein|zwei|drei|vier|fünf|sechs|sieben|acht|neun|zehn|elf|zwölf|dreizehn|vierzehn|fünfzehn|sechzehn|siebzehn|achtzehn|neunzehn)hundert))\b
-WrittenNumRegex: !simpleRegex
-  def: (zw(ö|oe)lf|dreizehn|vierzehn|fünfzehn|sechzehn|siebzehn|achtzehn|neunzehn|zwanzig|dreißig|vierzig|fünfzig|sechzig|siebzig|achtzig|neunzig|eins?|zw(een|ei|o)|drei|vier|fünf|fuenf|sechs|sieben|acht|neun|zehn|elf)
+WrittenNumRegex: !nestedRegex
+  def: (zw(ö|oe)lf|dreizehn|vierzehn|fünfzehn|sechzehn|siebzehn|achtzehn|neunzehn|zwanzig|dreißig|vierzig|fünfzig|sechzig|siebzig|achtzig|neunzig|elf|zehn|{WrittenOneToNineRegex})
+  references: [ WrittenOneToNineRegex ]
 FullTextYearRegex: !nestedRegex
   def: \b((?<firsttwoyearnum>{CenturyRegex})\s+(?<lasttwoyearnum>((zwanzig|dreißig|vierzig|fünfzig|sechzig|siebzig|achtzig|neunzig)\s+{WrittenNumRegex})|{WrittenNumRegex}))\b|\b(?<firsttwoyearnum>{CenturyRegex})\b
   references: [ CenturyRegex, WrittenNumRegex ]
@@ -222,6 +230,9 @@ DateExtractor10: !nestedRegex
   def: ^[.]
   #def: \b({RelativeRegex}\s*jahr(\s*im)?({MonthNumRegex}|sommer|winter|frühling|herbst)?)\b
   references: [ DayRegex, MonthNumRegex, DateYearRegex, RelativeRegex ]
+DateExtractor11: !nestedRegex
+  def: \b(({WeekDayRegex})(\s+|\s*,\s*)|(?<=\bam\s+))({DayRegex}\.|{WrittenDayNumRegex})\s*[/\\.\- ]\s*({MonthNumRegex}\.|{WrittenMonthNumRegex})(\s*[/\\.\- ]\s*{DateYearRegex})?
+  references: [ WeekDayRegex, MonthNumRegex, DayRegex, DateYearRegex, WrittenMonthNumRegex, WrittenDayNumRegex ]
 DateExtractorA: !nestedRegex
   def: ({DateYearRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DayRegex}|{MonthRegex}\s*[/\\\-\.]\s*{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]\s*{DayRegex}|{DayRegex}\s*[/\\\-\.]\s*{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]\s*{MonthRegex})(?!\s*[/\\\-\.:]\s*\d+)
   references: [ DateYearRegex, MonthNumRegex, MonthRegex, DayRegex, BaseDateTime.FourDigitYearRegex ]
@@ -799,6 +810,20 @@ MonthOfYear: !dictionary
     '07': 7
     '08': 8
     '09': 9
+    'erster': 1
+    'zweiter': 2
+    'dritter': 3
+    'vierter': 4
+    'fünfter': 5
+    'fuenfter': 5
+    'sechster': 6
+    'siebter': 7
+    'achter': 8
+    'neunter': 9
+    'zehnter': 10
+    'elfter': 11
+    'zwölfter': 12
+    'zwoelfter': 12
 Numbers: !dictionary
   types: [ string, int ]
   entries:
@@ -973,6 +998,41 @@ DayOfMonth: !dictionary
     '29': 29
     '30': 30
     '31': 31
+    'erster': 1
+    'zweiter': 2
+    'dritter': 3
+    'vierter': 4
+    'fünfter': 5
+    'fuenfter': 5
+    'sechster': 6
+    'siebter': 7
+    'achter': 8
+    'neunter': 9
+    'zehnter': 10
+    'elfter': 11
+    'zwölfter': 12
+    'zwoelfter': 12
+    'dreizehnter': 13
+    'vierzehnter': 14
+    'fünfzehnter': 15
+    'fuenfzehnter': 15
+    'sechzehnter': 16
+    'siebzehnter': 17
+    'achtzehnter': 18
+    'neunzehnter': 19
+    'zwanzigster': 20
+    'einundzwanzigster': 21
+    'zweiundzwanzigster': 22
+    'dreiundzwanzigster': 23
+    'vierundzwanzigster': 24
+    'fünfundzwanzigster': 25
+    'fuenfundzwanzigster': 25
+    'sechsundzwanzigster': 26
+    'siebenundzwanzigster': 27
+    'achtundzwanzigster': 28
+    'neunundzwanzigster': 29
+    'dreißigster': 30
+    'einunddreißigster': 31
 DoubleNumbers: !dictionary
   types: [ string, double ]
   entries: 
