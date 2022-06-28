@@ -76,6 +76,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             // supress cases like 1ampm
             new Regex(DateTimeDefinitions.AmPmDescRegex, RegexFlags),
 
+            // supress cases like 1p--> 1pm
+            new Regex(DateTimeDefinitions.SpecialDescRegex, RegexFlags),
+
             // suppress holiday time reference whose celebration dates are region specific
             new Regex(DateTimeDefinitions.HolidayListSupress, RegexFlags),
 
