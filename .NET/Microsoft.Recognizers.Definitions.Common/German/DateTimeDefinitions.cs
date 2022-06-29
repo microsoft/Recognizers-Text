@@ -37,9 +37,9 @@ namespace Microsoft.Recognizers.Definitions.German
       public const string PenultimatePrefixRegex = @"\b(vorletzte[snm]?)\b";
       public const string WrittenOneToNineRegex = @"(eins?|zw(een|ei|o)|drei|vier|fünf|fuenf|sechs|sieben|acht|neun)";
       public const string DayRegex = @"(de[rmsn]\s*)?(?<day>(01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)(\.|\b))";
-      public static readonly string WrittenDayNumRegex = $@"\b(?<day>(?<ordinal>((erst|zweit|dritt|viert|fünft|fuenft|sechst|siebt|acht|neunt|zehnt|elft|zwölft|zwoelft|dreizehnt|vierzehnt|fünfzehnt|fuenfzehnt|sechzehnt|siebzehnt|achtzehnt|neunzehnt)er|({WrittenOneToNineRegex}und)?zwanzigster|(einund)?dreißigster)))\b";
+      public static readonly string WrittenDayNumRegex = $@"\b(de[rmsn]\s+)?(?<day>erst|zweit|dritt|viert|fünft|fuenft|sechst|siebt|acht|neunt|zehnt|elft|zwölft|zwoelft|dreizehnt|vierzehnt|fünfzehnt|fuenfzehnt|sechzehnt|siebzehnt|achtzehnt|neunzehnt|({WrittenOneToNineRegex}und)?zwanzigst|(einund)?dreißigst)e[nr]\b";
       public const string MonthNumRegex = @"(?<month>(01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)(\.|\b))";
-      public const string WrittenMonthNumRegex = @"\b(?<month>(?<ordinal>((erst|zweit|dritt|viert|fünft|fuenft|sechst|siebt|acht|neunt|zehnt|elft|zw(ö|oe)lft)er)))\b";
+      public const string WrittenMonthNumRegex = @"\b(?<month>erst|zweit|dritt|viert|fünft|fuenft|sechst|siebt|acht|neunt|zehnt|elft|zw(ö|oe)lft)e[nr]\b";
       public static readonly string AmDescRegex = $@"({BaseDateTime.BaseAmDescRegex})";
       public static readonly string PmDescRegex = $@"({BaseDateTime.BasePmDescRegex})";
       public static readonly string AmPmDescRegex = $@"({BaseDateTime.BaseAmPmDescRegex})";
@@ -457,20 +457,20 @@ namespace Microsoft.Recognizers.Definitions.German
             { @"07", 7 },
             { @"08", 8 },
             { @"09", 9 },
-            { @"erster", 1 },
-            { @"zweiter", 2 },
-            { @"dritter", 3 },
-            { @"vierter", 4 },
-            { @"fünfter", 5 },
-            { @"fuenfter", 5 },
-            { @"sechster", 6 },
-            { @"siebter", 7 },
-            { @"achter", 8 },
-            { @"neunter", 9 },
-            { @"zehnter", 10 },
-            { @"elfter", 11 },
-            { @"zwölfter", 12 },
-            { @"zwoelfter", 12 }
+            { @"erst", 1 },
+            { @"zweit", 2 },
+            { @"dritt", 3 },
+            { @"viert", 4 },
+            { @"fünft", 5 },
+            { @"fuenft", 5 },
+            { @"sechst", 6 },
+            { @"siebt", 7 },
+            { @"acht", 8 },
+            { @"neunt", 9 },
+            { @"zehnt", 10 },
+            { @"elft", 11 },
+            { @"zwölft", 12 },
+            { @"zwoelft", 12 }
         };
       public static readonly Dictionary<string, int> Numbers = new Dictionary<string, int>
         {
@@ -645,41 +645,41 @@ namespace Microsoft.Recognizers.Definitions.German
             { @"29", 29 },
             { @"30", 30 },
             { @"31", 31 },
-            { @"erster", 1 },
-            { @"zweiter", 2 },
-            { @"dritter", 3 },
-            { @"vierter", 4 },
-            { @"fünfter", 5 },
-            { @"fuenfter", 5 },
-            { @"sechster", 6 },
-            { @"siebter", 7 },
-            { @"achter", 8 },
-            { @"neunter", 9 },
-            { @"zehnter", 10 },
-            { @"elfter", 11 },
-            { @"zwölfter", 12 },
-            { @"zwoelfter", 12 },
-            { @"dreizehnter", 13 },
-            { @"vierzehnter", 14 },
-            { @"fünfzehnter", 15 },
-            { @"fuenfzehnter", 15 },
-            { @"sechzehnter", 16 },
-            { @"siebzehnter", 17 },
-            { @"achtzehnter", 18 },
-            { @"neunzehnter", 19 },
-            { @"zwanzigster", 20 },
-            { @"einundzwanzigster", 21 },
-            { @"zweiundzwanzigster", 22 },
-            { @"dreiundzwanzigster", 23 },
-            { @"vierundzwanzigster", 24 },
-            { @"fünfundzwanzigster", 25 },
-            { @"fuenfundzwanzigster", 25 },
-            { @"sechsundzwanzigster", 26 },
-            { @"siebenundzwanzigster", 27 },
-            { @"achtundzwanzigster", 28 },
-            { @"neunundzwanzigster", 29 },
-            { @"dreißigster", 30 },
-            { @"einunddreißigster", 31 }
+            { @"erst", 1 },
+            { @"zweit", 2 },
+            { @"dritt", 3 },
+            { @"viert", 4 },
+            { @"fünft", 5 },
+            { @"fuenft", 5 },
+            { @"sechst", 6 },
+            { @"siebt", 7 },
+            { @"acht", 8 },
+            { @"neunt", 9 },
+            { @"zehnt", 10 },
+            { @"elft", 11 },
+            { @"zwölft", 12 },
+            { @"zwoelft", 12 },
+            { @"dreizehnt", 13 },
+            { @"vierzehnt", 14 },
+            { @"fünfzehnt", 15 },
+            { @"fuenfzehnt", 15 },
+            { @"sechzehnt", 16 },
+            { @"siebzehnt", 17 },
+            { @"achtzehnt", 18 },
+            { @"neunzehnt", 19 },
+            { @"zwanzigst", 20 },
+            { @"einundzwanzigst", 21 },
+            { @"zweiundzwanzigst", 22 },
+            { @"dreiundzwanzigst", 23 },
+            { @"vierundzwanzigst", 24 },
+            { @"fünfundzwanzigst", 25 },
+            { @"fuenfundzwanzigst", 25 },
+            { @"sechsundzwanzigst", 26 },
+            { @"siebenundzwanzigst", 27 },
+            { @"achtundzwanzigst", 28 },
+            { @"neunundzwanzigst", 29 },
+            { @"dreißigst", 30 },
+            { @"einunddreißigst", 31 }
         };
       public static readonly Dictionary<string, double> DoubleNumbers = new Dictionary<string, double>
         {

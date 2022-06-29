@@ -5560,5 +5560,63 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Ich komme am Donnerstag, den siebten vierten zurück.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "donnerstag, den siebten vierten",
+        "Start": 13,
+        "End": 43,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-04-07",
+              "type": "date",
+              "value": "2016-04-07"
+            },
+            {
+              "timex": "XXXX-04-07",
+              "type": "date",
+              "value": "2017-04-07"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ich komme am Donnerstag, den siebenundzwanzigsten zwölften zurück.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "donnerstag, den siebenundzwanzigsten zwölften",
+        "Start": 13,
+        "End": 57,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-12-27",
+              "type": "date",
+              "value": "2015-12-27"
+            },
+            {
+              "timex": "XXXX-12-27",
+              "type": "date",
+              "value": "2016-12-27"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
