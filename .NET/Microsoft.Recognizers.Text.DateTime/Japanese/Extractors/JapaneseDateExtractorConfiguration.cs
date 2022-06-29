@@ -83,8 +83,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             // ２０１６年１２月１日
             var dateRegex1 = new Regex(DateTimeDefinitions.DateRegexList1, RegexFlags);
 
-            // # ２０１６年１２月 (this is not a Date)
-            // var dateRegex2 = new Regex(DateTimeDefinitions.DateRegexList2, RegexFlags);
+            // 金曜日 6月 15日
+            var dateRegex2 = new Regex(DateTimeDefinitions.DateRegexList2, RegexFlags);
 
             // (2015年)?(农历)?十月二十(星期三)?
             var dateRegex3 = new Regex(DateTimeDefinitions.DateRegexList3, RegexFlags);
@@ -116,7 +116,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             // Regex precedence where the order between D and M varies is controlled by DefaultLanguageFallback
             var enableDmy = DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY;
 
-            DateRegexList = new List<Regex> { dateRegex1, dateRegex10, /*dateRegex2, */dateRegex9, dateRegex3, dateRegex4, dateRegex5 };
+            DateRegexList = new List<Regex> { dateRegex1, dateRegex10, dateRegex2, dateRegex9, dateRegex3, dateRegex4, dateRegex5 };
             DateRegexList = DateRegexList.Concat(
                 enableDmy ?
                 new[] { dateRegex7, dateRegex6, dateRegex8/*, dateRegex11*/ } :

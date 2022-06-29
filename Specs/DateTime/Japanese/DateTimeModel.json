@@ -984,21 +984,19 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "1時間で",
         "Start": 0,
         "End": 3,
-        "TypeName": "datetimeV2.datetimerange",
+        "TypeName": "datetimeV2.datetime",
         "Resolution": {
           "values": [
             {
-              "timex": "(2016-11-07T16:12:00,2016-11-07T17:12:00,PT1H)",
-              "type": "datetimerange",
-              "start": "2016-11-07 16:12:00",
-              "end": "2016-11-07 17:12:00"
+              "timex": "2016-11-07T17:12:00",
+              "type": "datetime",
+              "value": "2016-11-07 17:12:00"
             }
           ]
         }
@@ -2708,7 +2706,6 @@
     "Context": {
       "ReferenceDateTime": "2018-03-25T01:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2832,7 +2829,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-16T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -2853,18 +2849,6 @@
               "type": "datetimerange",
               "start": "2018-05-21 11:00:00",
               "end": "2018-05-21 16:00:00"
-            },
-            {
-              "timex": "(XXXX-WXX-1T23,XXXX-WXX-2T04,PT5H)",
-              "type": "datetimerange",
-              "start": "2018-05-14 23:00:00",
-              "end": "2018-05-15 04:00:00"
-            },
-            {
-              "timex": "(XXXX-WXX-1T23,XXXX-WXX-2T04,PT5H)",
-              "type": "datetimerange",
-              "start": "2018-05-21 23:00:00",
-              "end": "2018-05-22 04:00:00"
             }
           ]
         }
@@ -3121,20 +3105,19 @@
     "Context": {
       "ReferenceDateTime": "2018-05-22T16:12:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "一日",
         "Start": 2,
         "End": 3,
-        "TypeName": "datetimeV2.date",
+        "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
             {
-              "timex": "2018-05-22",
-              "type": "date",
-              "value": "2018-05-22"
+              "timex": "P1D",
+              "type": "duration",
+              "value": "86400"
             }
           ]
         }
@@ -3171,7 +3154,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-18T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3224,7 +3206,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-18T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -3994,7 +3975,6 @@
     "Context": {
       "ReferenceDateTime": "2018-06-20T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4024,11 +4004,10 @@
     "Context": {
       "ReferenceDateTime": "2018-06-20T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "今週の金曜日（6月15日）",
+        "Text": "今週の金曜日(6月15日)",
         "Start": 5,
         "End": 17,
         "TypeName": "datetimeV2.date",
@@ -4062,7 +4041,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4229,7 +4207,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4316,17 +4293,16 @@
         }
       },
       {
-        "Text": "泊",
-        "Start": 7,
+        "Text": "2泊",
+        "Start": 6,
         "End": 7,
-        "TypeName": "datetimeV2.timerange",
+        "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
             {
-              "timex": "TNI",
-              "type": "timerange",
-              "start": "20:00:00",
-              "end": "23:59:59"
+              "timex": "P2D",
+              "type": "duration",
+              "value": "172800"
             }
           ]
         }
@@ -4473,13 +4449,12 @@
     "Context": {
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "今日の午後4時前に",
+        "Text": "今日の午後4時前",
         "Start": 3,
-        "End": 11,
+        "End": 10,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -4487,7 +4462,7 @@
               "timex": "2018-06-26T16",
               "Mod": "before",
               "type": "datetimerange",
-              "sourceEntity": "datetimerange",
+              "sourceEntity": "datetimepoint",
               "end": "2018-06-26 16:00:00"
             }
           ]
@@ -4526,7 +4501,6 @@
     "Context": {
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -4540,7 +4514,6 @@
               "timex": "2018-06-19T14",
               "Mod": "before",
               "type": "datetimerange",
-              "sourceEntity": "datetimerange",
               "end": "2018-06-19 14:00:00"
             }
           ]
@@ -5157,15 +5130,14 @@
     ]
   },
   {
-    "Input": "2時間以内あるいは4日以上続く記録で、30分以上のものを検索して。",
+    "Input": "2時間以下あるいは4日以上続く記録で、30分以上のものを検索して。",
     "Context": {
       "ReferenceDateTime": "2018-07-09T22:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2時間以内",
+        "Text": "2時間以下",
         "Start": 0,
         "End": 4,
         "TypeName": "datetimeV2.duration",
@@ -5205,7 +5177,7 @@
           "values": [
             {
               "timex": "PT30M",
-              "Mod": "less",
+              "Mod": "more",
               "type": "duration",
               "value": "1800"
             }
@@ -5452,7 +5424,6 @@
     "Context": {
       "ReferenceDateTime": "2018-07-30T13:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -5493,18 +5464,6 @@
               "type": "datetimerange",
               "start": "2018-08-01 10:00:00",
               "end": "2018-08-01 16:00:00"
-            },
-            {
-              "timex": "(XXXX-WXX-3T22,XXXX-WXX-4T04,PT6H)",
-              "type": "datetimerange",
-              "start": "2018-07-25 22:00:00",
-              "end": "2018-07-26 04:00:00"
-            },
-            {
-              "timex": "(XXXX-WXX-3T22,XXXX-WXX-4T04,PT6H)",
-              "type": "datetimerange",
-              "start": "2018-08-01 22:00:00",
-              "end": "2018-08-02 04:00:00"
             }
           ]
         }
@@ -5984,7 +5943,6 @@
     "Context": {
       "ReferenceDateTime": "2018-08-17T15:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -6004,18 +5962,16 @@
         }
       },
       {
-        "Text": "早朝午前7時に",
+        "Text": "早朝午前7時",
         "Start": 2,
-        "End": 8,
-        "TypeName": "datetimeV2.timerange",
+        "End": 7,
+        "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
             {
-              "timex": "T07:00",
-              "Mod": "since",
-              "type": "timerange",
-              "sourceEntity": "datetimerange",
-              "start": "07:00:00"
+              "timex": "T07",
+              "type": "time",
+              "value": "07:00:00"
             }
           ]
         }
@@ -6129,22 +6085,19 @@
     "Context": {
       "ReferenceDateTime": "2018-08-21T10:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
         "Text": "4営業日前",
         "Start": 5,
         "End": 9,
-        "TypeName": "datetimeV2.daterange",
+        "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
             {
-              "timex": "(2018-08-15,2018-08-21,P4BD)",
-              "type": "daterange",
-              "list": "2018-08-15,2018-08-16,2018-08-17,2018-08-20",
-              "start": "2018-08-15",
-              "end": "2018-08-21"
+              "timex": "2018-08-15",
+              "type": "date",
+              "value": "2018-08-15"
             }
           ]
         }
@@ -8879,7 +8832,6 @@
     "Context": {
       "ReferenceDateTime": "2019-01-25T12:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -8890,14 +8842,9 @@
         "Resolution": {
           "values": [
             {
-              "timex": "XXXX-WXX-1",
+              "timex": "2019-01-21",
               "type": "date",
               "value": "2019-01-21"
-            },
-            {
-              "timex": "XXXX-WXX-1",
-              "type": "date",
-              "value": "2019-10-21"
             }
           ]
         }
@@ -9442,9 +9389,9 @@
         }
       },
       {
-        "Text": "木曜日の19時から21時で",
+        "Text": "木曜日の19時から21時",
         "Start": 12,
-        "End": 24,
+        "End": 23,
         "TypeName": "datetimeV2.datetimerange",
         "Resolution": {
           "values": [
@@ -15658,7 +15605,6 @@
     "Context": {
       "ReferenceDateTime": "2018-06-26T00:00:00"
     },
-    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
@@ -15679,8 +15625,8 @@
       },
       {
         "Text": "2000年以前",
-        "Start": 14,
-        "End": 20,
+        "Start": 15,
+        "End": 21,
         "TypeName": "datetimeV2.daterange",
         "Resolution": {
           "values": [
@@ -16082,6 +16028,174 @@
               "type": "daterange",
               "start": "2020-02-29",
               "end": "2020-03-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "次の1時間で戻ります。",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "次の1時間",
+        "Start": 0,
+        "End": 4,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-11-07T16:12:00,2016-11-07T17:12:00,PT1H)",
+              "type": "datetimerange",
+              "start": "2016-11-07 16:12:00",
+              "end": "2016-11-07 17:12:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "コルタナ、過去4営業日何か設定してくれませんか",
+    "Context": {
+      "ReferenceDateTime": "2018-08-21T10:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "過去4営業日",
+        "Start": 5,
+        "End": 10,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2018-08-15,2018-08-21,P4BD)",
+              "type": "daterange",
+              "list": "2018-08-15,2018-08-16,2018-08-17,2018-08-20",
+              "start": "2018-08-15",
+              "end": "2018-08-21"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "この日はブロックされています",
+    "Context": {
+      "ReferenceDateTime": "2018-05-22T16:12:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "この日",
+        "Start": 0,
+        "End": 2,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018-05-22",
+              "type": "date",
+              "value": "2018-05-22"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "コルタナ、2営業日以内にSkype通話を設定してください。",
+    "Context": {
+      "ReferenceDateTime": "2018-04-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "2営業日以内に",
+        "Start": 5,
+        "End": 11,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2018-04-08,2018-04-10,P2BD)",
+              "type": "daterange",
+              "list": "2018-04-09,2018-04-10",
+              "start": "2018-04-08",
+              "end": "2018-04-10"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "コルタナ、4営業日以内にSkypeコールをセットしてください。",
+    "Context": {
+      "ReferenceDateTime": "2018-04-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4営業日以内に",
+        "Start": 5,
+        "End": 11,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2018-04-08,2018-04-12,P4BD)",
+              "type": "daterange",
+              "list": "2018-04-09,2018-04-10,2018-04-11,2018-04-12",
+              "start": "2018-04-08",
+              "end": "2018-04-12"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "4日を上回る1週間を下回る記録を表示して。",
+    "Context": {
+      "ReferenceDateTime": "2018-05-31T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,python,java",
+    "Results": [
+      {
+        "Text": "4日を上回る",
+        "Start": 0,
+        "End": 5,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P4D",
+              "Mod": "more",
+              "type": "duration",
+              "value": "345600"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "1週間を下回る",
+        "Start": 6,
+        "End": 12,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1W",
+              "Mod": "less",
+              "type": "duration",
+              "value": "604800"
             }
           ]
         }

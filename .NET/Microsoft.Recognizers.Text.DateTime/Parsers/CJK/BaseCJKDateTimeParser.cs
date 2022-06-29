@@ -211,6 +211,32 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             // Handle 'eod', 'end of day'
             var eod = this.config.TimeOfSpecialDayRegex.Match(text);
+            var matchAgoLater = this.config.AgoLaterRegex.Match(text);
+            if (matchAgoLater.Success)
+            {
+                var durationRes = this.config.DurationExtractor.Extract(text, referenceTime);
+                var pr1 = config.DurationParser.Parse(durationRes[0], referenceTime);
+                var isFuture = matchAgoLater.Groups[Constants.LaterGroupName].Success;
+                var timex = pr1.TimexStr;
+
+                // handle less and more mode
+                if (eod.Groups[Constants.LessGroupName].Success)
+                {
+                    ret.Mod = Constants.LESS_THAN_MOD;
+                }
+                else if (eod.Groups[Constants.MoreGroupName].Success)
+                {
+                    ret.Mod = Constants.MORE_THAN_MOD;
+                }
+
+                var resultDateTime = DurationParsingUtil.ShiftDateTime(timex, referenceTime, future: isFuture);
+                ret.Timex = TimexUtility.GenerateDateTimeTimex(resultDateTime);
+                ret.FutureValue = ret.PastValue = resultDateTime;
+                ret.SubDateTimeEntities = new List<object> { pr1 };
+
+                ret.Success = true;
+                return ret;
+            }
 
             if (eod.Groups[Constants.SpecificEndOfGroupName].Success && ers.Count == 0)
             {
@@ -326,7 +352,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var timex = pr.TimexStr;
 
                     var resultDateTime = DurationParsingUtil.ShiftDateTime(timex, referenceDate, future: isFuture);
-                    ret.Timex = $"{DateTimeFormatUtil.LuisDateTime(resultDateTime)}";
+                    ret.Timex = TimexUtility.GenerateDateTimeTimex(resultDateTime);
                     ret.FutureValue = ret.PastValue = resultDateTime;
                     ret.SubDateTimeEntities = new List<object> { pr };
 

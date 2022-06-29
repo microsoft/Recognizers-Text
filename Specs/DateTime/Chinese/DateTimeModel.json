@@ -360,6 +360,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
+    "Comment": "As in English, expressions like '10th of the/this month' are resolved to the current month and year",
     "NotSupported": "java, javascript, python",
     "Results": [
       {
@@ -826,7 +827,7 @@
               "start": "2016-11-06 05:00:00",
               "end": "2016-11-06 06:00:00"
             },
-			{
+            {
               "timex": "(2016-11-06T17:00,2016-11-06T18:00,PT1H)",
               "type": "datetimerange",
               "start": "2016-11-06 17:00:00",
@@ -1636,7 +1637,7 @@
               "start": "05:00:00",
               "end": "06:00:00"
             },
-			{
+            {
               "timex": "(T17:00,T18:00,PT1H)",
               "type": "timerange",
               "start": "17:00:00",

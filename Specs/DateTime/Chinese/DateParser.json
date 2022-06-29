@@ -724,6 +724,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
+    "Comment": "As in English, expressions like '10th of the/this month' are resolved to the current month and year",
     "NotSupported": "java, javascript, python",
     "Results": [
       {

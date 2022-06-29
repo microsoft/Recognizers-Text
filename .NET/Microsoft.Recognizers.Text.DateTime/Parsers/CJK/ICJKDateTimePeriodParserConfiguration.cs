@@ -44,6 +44,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex FutureRegex { get; }
 
+        Regex WeekDayRegex { get; }
+
         Regex TimePeriodLeftRegex { get; }
 
         Regex UnitRegex { get; }

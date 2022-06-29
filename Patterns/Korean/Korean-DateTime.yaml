@@ -980,6 +980,10 @@ AmbiguityTimeFiltersDict: !dictionary
   types: [ string, string ]
   entries:
     '^[.]': '^[.]'
+AmbiguityTimePeriodFiltersDict: !dictionary
+  types: [ string, string ]
+  entries:
+    '^[.]': '^[.]'
 AmbiguityDateFiltersDict: !dictionary
   types: [ string, string ]
   entries:

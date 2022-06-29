@@ -2178,7 +2178,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "Comment": "Fix needed: translated from 'the 27', w/o month term.",
+    "Comment": "Fix needed: translated from 'the 27', w/o month term. As in English, expressions like '10th of the/this month' are resolved to the current month and year",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -2227,7 +2227,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "Comment": "Fix needed: translated from 'the 27th', w/o month term.",
+    "Comment": "Fix needed: translated from 'the 27th', w/o month term. As in English, expressions like '10th of the/this month' are resolved to the current month and year",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -2615,6 +2615,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "Comment": "As in English, expressions like '10th of the/this month' are resolved to the current month and year",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -2639,6 +2640,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
+    "Comment": "As in English, expressions like '10th of the/this month' are resolved to the current month and year",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -2927,6 +2929,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-07T00:00:00"
     },
+    "Comment": "As in English, expressions like '10th of the/this month' are resolved to the current month and year",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -3571,14 +3574,14 @@
     ]
   },
   {
-    "Input": "コルタナ、4営業日以内にSkypeコールをセットしてください。",
+    "Input": "コルタナ、4営業日でSkypeコールをセットしてください。",
     "Context": {
       "ReferenceDateTime": "2018-08-21T08:00:00"
     },
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "4営業日以内",
+        "Text": "4営業日で",
         "Type": "date",
         "Value": {
           "Timex": "2018-08-27",
@@ -3590,7 +3593,7 @@
           }
         },
         "Start": 5,
-        "Length": 6
+        "Length": 5
       }
     ]
   },
@@ -4199,6 +4202,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
+    "Comment": "As in English, expressions like '10th of the/this month' are resolved to the current month and year",
     "NotSupported": "javascript, python, java",
     "Results": [
       {

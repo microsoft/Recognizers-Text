@@ -624,18 +624,6 @@
     ]
   },
   {
-    "Input": "それは今日の午後4時前に起きるでしょう。",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "今日の午後4時前",
-        "Type": "datetimerange",
-        "Start": 3,
-        "Length": 8
-      }
-    ]
-  },
-  {
     "Input": "それは前の火曜日の午後2時までに起きた。",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [

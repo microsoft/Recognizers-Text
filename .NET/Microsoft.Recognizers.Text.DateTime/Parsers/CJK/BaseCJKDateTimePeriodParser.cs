@@ -57,31 +57,63 @@ namespace Microsoft.Recognizers.Text.DateTime
                     innerResult = ParseRelativeUnit(er.Text, referenceTime);
                 }
 
+                if (!innerResult.Success)
+                {
+                    innerResult = ParseDateWithPeriodSuffix(er.Text, referenceTime);
+                }
+
+                if (!innerResult.Success)
+                {
+                    innerResult = ParseDateWithTimePeriodSuffix(er.Text, referenceTime);
+                }
+
                 if (innerResult.Success)
                 {
-                    innerResult.FutureResolution = new Dictionary<string, string>
+                    if (innerResult.Mod == Constants.BEFORE_MOD)
                     {
-                        {
-                            TimeTypeConstants.START_DATETIME,
-                            DateTimeFormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>)innerResult.FutureValue).Item1)
-                        },
-                        {
-                            TimeTypeConstants.END_DATETIME,
-                            DateTimeFormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>)innerResult.FutureValue).Item2)
-                        },
-                    };
+                        // Cases like "last tuesday by 2:00 pm" there is no StartTime
+                        innerResult.FutureResolution = new Dictionary<string, string>
+                            {
+                                {
+                                    TimeTypeConstants.END_DATETIME,
+                                    DateTimeFormatUtil.FormatDateTime((DateObject)innerResult.FutureValue)
+                                },
+                            };
 
-                    innerResult.PastResolution = new Dictionary<string, string>
+                        innerResult.PastResolution = new Dictionary<string, string>
+                            {
+                                {
+                                    TimeTypeConstants.END_DATETIME,
+                                    DateTimeFormatUtil.FormatDateTime((DateObject)innerResult.PastValue)
+                                },
+                            };
+                    }
+                    else
                     {
+                            innerResult.FutureResolution = new Dictionary<string, string>
                         {
-                            TimeTypeConstants.START_DATETIME,
-                            DateTimeFormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>)innerResult.PastValue).Item1)
-                        },
+                            {
+                                TimeTypeConstants.START_DATETIME,
+                                DateTimeFormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>)innerResult.FutureValue).Item1)
+                            },
+                            {
+                                TimeTypeConstants.END_DATETIME,
+                                DateTimeFormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>)innerResult.FutureValue).Item2)
+                            },
+                        };
+
+                            innerResult.PastResolution = new Dictionary<string, string>
                         {
-                            TimeTypeConstants.END_DATETIME,
-                            DateTimeFormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>)innerResult.PastValue).Item2)
-                        },
-                    };
+                            {
+                                TimeTypeConstants.START_DATETIME,
+                                DateTimeFormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>)innerResult.PastValue).Item1)
+                            },
+                            {
+                                TimeTypeConstants.END_DATETIME,
+                                DateTimeFormatUtil.FormatDateTime(((Tuple<DateObject, DateObject>)innerResult.PastValue).Item2)
+                            },
+                        };
+                    }
 
                     value = innerResult;
                 }
@@ -163,6 +195,54 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
+        // Cases like "last tuesday by 2:00pm"
+        private DateTimeResolutionResult ParseDateWithTimePeriodSuffix(string text, DateObject referenceTime)
+        {
+            var ret = new DateTimeResolutionResult();
+
+            var dateEr = this.config.DateExtractor.Extract(text, referenceTime);
+            var timeEr = this.config.TimeExtractor.Extract(text, referenceTime);
+
+            if (dateEr.Count > 0 && timeEr.Count > 0)
+            {
+                var match = config.PastRegex.MatchEnd(text, trim: true);
+
+                if (match.Groups[Constants.BEFORE_MOD].Success)
+                {
+                    ret.Mod = Constants.BEFORE_MOD;
+                }
+
+                var datePr = this.config.DateParser.Parse(dateEr[0], referenceTime);
+                var timePr = this.config.TimeParser.Parse(timeEr[0], referenceTime);
+
+                if (datePr != null && timePr != null)
+                {
+                    var timeResolutionResult = (DateTimeResolutionResult)timePr.Value;
+                    var dateResolutionResult = (DateTimeResolutionResult)datePr.Value;
+                    var futureDateValue = (DateObject)dateResolutionResult.FutureValue;
+                    var pastDateValue = (DateObject)dateResolutionResult.PastValue;
+                    var futureTimeValue = (DateObject)timeResolutionResult.FutureValue;
+                    var pastTimeValue = (DateObject)timeResolutionResult.PastValue;
+
+                    ret.Comment = timeResolutionResult.Comment;
+                    ret.Timex = TimexUtility.CombineDateAndTimeTimex(datePr.TimexStr, timePr.TimexStr);
+
+                    ret.FutureValue = DateObject.MinValue.SafeCreateFromValue(futureDateValue.Year, futureDateValue.Month, futureDateValue.Day, futureTimeValue.Hour, futureTimeValue.Minute, futureTimeValue.Second);
+                    ret.PastValue = DateObject.MinValue.SafeCreateFromValue(pastDateValue.Year, pastDateValue.Month, pastDateValue.Day, pastTimeValue.Hour, pastTimeValue.Minute, pastTimeValue.Second);
+
+                    ret.SubDateTimeEntities = new List<object>()
+                    {
+                        datePr,
+                        timePr,
+                    };
+
+                    ret.Success = true;
+                }
+            }
+
+            return ret;
+        }
+
         private DateTimeResolutionResult MergeTwoTimePoints(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
@@ -181,6 +261,13 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (match.Groups[Constants.WithinGroupName].Success)
             {
                 return ParseDuration(text, referenceTime);
+            }
+
+            var matchWeekDay = config.WeekDayRegex.Match(text);
+
+            if (matchWeekDay.Success)
+            {
+                return ret;
             }
 
             if (er2.Count == 2)
@@ -664,5 +751,65 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             return ret;
         }
+
+        // cases like "Early in the day Wednesday"
+        private DateTimeResolutionResult ParseDateWithPeriodSuffix(string text, DateObject referenceTime)
+        {
+            var ret = new DateTimeResolutionResult();
+
+            var dateResult = this.config.DateExtractor.Extract(text, referenceTime);
+            if (dateResult.Count > 0)
+            {
+                DateTimeParseResult pr = new DateTimeParseResult();
+                var afterString = text.Substring((int)(dateResult[0].Start + dateResult[0].Length),
+                    text.Length - ((int)(dateResult[0].Start + dateResult[0].Length))).TrimStart();
+                var match = config.TimePeriodLeftRegex.Match(afterString);
+                if (match.Success)
+                {
+                    pr = this.config.DateParser.Parse(dateResult[0], referenceTime);
+                }
+
+                if (match.Success)
+                {
+                    if (pr.Value != null)
+                    {
+                        var startTime = (DateObject)((DateTimeResolutionResult)pr.Value).FutureValue;
+                        startTime = new DateObject(startTime.Year, startTime.Month, startTime.Day);
+                        var endTime = startTime;
+
+                        if (match.Groups[Constants.EarlyPrefixGroupName].Success)
+                        {
+                            endTime = endTime.AddHours(Constants.HalfDayHourCount);
+                            ret.Mod = Constants.EARLY_MOD;
+                        }
+                        else if (match.Groups[Constants.MidPrefixGroupName].Success)
+                        {
+                            startTime = startTime.AddHours(Constants.HalfDayHourCount - Constants.HalfMidDayDurationHourCount);
+                            endTime = endTime.AddHours(Constants.HalfDayHourCount + Constants.HalfMidDayDurationHourCount);
+                            ret.Mod = Constants.MID_MOD;
+                        }
+                        else if (match.Groups[Constants.LatePrefixGroupName].Success)
+                        {
+                            startTime = startTime.AddHours(Constants.HalfDayHourCount);
+                            endTime = startTime.AddHours(Constants.HalfDayHourCount);
+                            ret.Mod = Constants.LATE_MOD;
+                        }
+                        else
+                        {
+                            return ret;
+                        }
+
+                        ret.Timex = pr.TimexStr;
+
+                        ret.PastValue = ret.FutureValue = new Tuple<DateObject, DateObject>(startTime, endTime);
+
+                        ret.Success = true;
+                    }
+                }
+            }
+
+            return ret;
+        }
+
     }
 }

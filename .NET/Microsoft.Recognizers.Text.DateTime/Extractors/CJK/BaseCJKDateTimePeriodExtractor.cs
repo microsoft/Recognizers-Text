@@ -36,13 +36,14 @@ namespace Microsoft.Recognizers.Text.DateTime
             var dateTimeErs = this.config.SingleDateTimeExtractor.Extract(text, referenceTime);
 
             var tokens = new List<Token>();
-            tokens.AddRange(MergeDateAndTimePeriod(text, new List<ExtractResult>(dateErs), new List<ExtractResult>(timeRangeErs)));
-            tokens.AddRange(MergeTwoTimePoints(text, new List<ExtractResult>(dateTimeErs), new List<ExtractResult>(timeErs)));
+            tokens.AddRange(MergeDateAndTimePeriod(text, dateErs, timeRangeErs));
+            tokens.AddRange(MergeTwoTimePoints(text, dateTimeErs, timeErs));
             tokens.AddRange(MatchDuration(text, referenceTime));
             tokens.AddRange(MatchRelativeUnit(text));
+            tokens.AddRange(MatchDateWithPeriodSuffix(text, dateErs));
             tokens.AddRange(MatchNumberWithUnit(text));
             tokens.AddRange(MatchNight(text, referenceTime));
-            tokens.AddRange(MergeDateWithTimePeriodSuffix(text, new List<ExtractResult>(dateErs), new List<ExtractResult>(timeErs)));
+            tokens.AddRange(MergeDateWithTimePeriodSuffix(text, dateErs, timeErs));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }
@@ -358,6 +359,25 @@ namespace Microsoft.Recognizers.Text.DateTime
             foreach (Match match in matches)
             {
                 ret.Add(new Token(match.Index, match.Index + match.Length));
+            }
+
+            return ret;
+        }
+
+        // For cases like "Early in the day Wednesday"
+        private IEnumerable<Token> MatchDateWithPeriodSuffix(string text, List<ExtractResult> dateErs)
+        {
+            var ret = new List<Token>();
+
+            foreach (var dateEr in dateErs)
+            {
+                var dateStrEnd = (int)(dateEr.Start + dateEr.Length);
+                var afterStr = text.Substring(dateStrEnd, text.Length - dateStrEnd);
+                var matchAfter = this.config.TimePeriodLeftRegex.MatchBegin(afterStr, trim: true);
+                if (matchAfter.Success)
+                {
+                    ret.Add(new Token((int)dateEr.Start, dateStrEnd + matchAfter.Index + matchAfter.Length));
+                }
             }
 
             return ret;

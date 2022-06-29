@@ -693,6 +693,10 @@ namespace Microsoft.Recognizers.Definitions.Korean
         {
             { @"^[.]", @"^[.]" }
         };
+      public static readonly Dictionary<string, string> AmbiguityTimePeriodFiltersDict = new Dictionary<string, string>
+        {
+            { @"^[.]", @"^[.]" }
+        };
       public static readonly Dictionary<string, string> AmbiguityDateFiltersDict = new Dictionary<string, string>
         {
             { @"^[.]", @"^[.]" }

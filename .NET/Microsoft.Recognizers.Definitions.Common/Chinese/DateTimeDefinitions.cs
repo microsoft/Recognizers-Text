@@ -677,6 +677,10 @@ namespace Microsoft.Recognizers.Definitions.Chinese
         {
             { @"^[.]", @"^[.]" }
         };
+      public static readonly Dictionary<string, string> AmbiguityTimePeriodFiltersDict = new Dictionary<string, string>
+        {
+            { @"^[.]", @"^[.]" }
+        };
       public static readonly Dictionary<string, string> AmbiguityDateFiltersDict = new Dictionary<string, string>
         {
             { @"^[.]", @"^[.]" }
