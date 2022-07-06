@@ -524,6 +524,10 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             switch (slot.Type.Substring(ParserTypeName.Length + 1))
             {
+                case Constants.SYS_DATETIME_DATE:
+                    slot = ModifyDate(slot, referenceTime);
+                    break;
+
                 case Constants.SYS_DATETIME_TIME:
                     slot = HandlePastTime(slot, referenceTime);
                     break;
@@ -721,6 +725,42 @@ namespace Microsoft.Recognizers.Text.DateTime
                     // @TODO remove in future refactoring of test code and double-check there's no impact in output schema.
                     return pastResolutionStr.Keys.First().ToLowerInvariant();
             }
+        }
+
+        private static DateTimeParseResult ModifyDate(DateTimeParseResult slot, DateObject referenceTime)
+        {
+            if (!slot.TimexStr.Contains("XXXX"))
+            {
+                return slot;
+            }
+
+            var value = (SortedDictionary<string, object>)slot.Value;
+            if (value != null && value.ContainsKey(ResolutionKey.ValueSet))
+            {
+                if (value[ResolutionKey.ValueSet] is IList<Dictionary<string, string>> valueSet && valueSet.Any())
+                {
+                    foreach (var values in valueSet)
+                    {
+                        var inputTime = DateObject.Parse(values[DateTimeResolutionKey.Value], CultureInfo.InvariantCulture);
+                        var inputDay = inputTime.Day;
+                        var inputMonth = inputTime.Month;
+
+                        if (inputDay == referenceTime.Day && inputMonth == referenceTime.Month)
+                        {
+                            var newDate = inputTime.Date.AddYears(-1);
+                            var dateTimeToSet = DateObject.MinValue.SafeCreateFromValue(newDate.Year, newDate.Month, newDate.Day);
+
+                            values[DateTimeResolutionKey.Value] = DateTimeFormatUtil.FormatDate(dateTimeToSet);
+
+                        }
+
+                    }
+                }
+            }
+
+            slot.Value = value;
+
+            return slot;
         }
 
         private static DateTimeParseResult HandlePastDateTimePeriod(DateTimeParseResult slot, DateObject referenceTime)
