@@ -528,6 +528,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                     slot = ModifyDate(slot, referenceTime);
                     break;
 
+                case Constants.SYS_DATETIME_DATEPERIOD:
+                    slot = ModifyDatePeriod(slot, referenceTime);
+                    break;
+
                 case Constants.SYS_DATETIME_TIME:
                     slot = HandlePastTime(slot, referenceTime);
                     break;
@@ -751,6 +755,96 @@ namespace Microsoft.Recognizers.Text.DateTime
                             var dateTimeToSet = DateObject.MinValue.SafeCreateFromValue(newDate.Year, newDate.Month, newDate.Day);
 
                             values[DateTimeResolutionKey.Value] = DateTimeFormatUtil.FormatDate(dateTimeToSet);
+
+                        }
+
+                    }
+                }
+            }
+
+            slot.Value = value;
+
+            return slot;
+        }
+
+        private static DateTimeParseResult ModifyDatePeriod(DateTimeParseResult slot, DateObject referenceTime)
+        {
+            if (!slot.TimexStr.Contains("XXXX"))
+            {
+                return slot;
+            }
+
+            var value = (SortedDictionary<string, object>)slot.Value;
+
+            if (value != null && value.ContainsKey(ResolutionKey.ValueSet))
+            {
+                if (value[ResolutionKey.ValueSet] is IList<Dictionary<string, string>> valueSet && valueSet.Any())
+                {
+                    for (int i = 0; i < valueSet.Count - 1; i = i + 2)
+                    {
+                        var pastvalue = valueSet.ElementAt(i);
+                        var futurevalue = valueSet.ElementAt(i + 1);
+
+                        DateObject pastdate;
+                        DateObject futuredate;
+
+                        bool maptonew = false;
+
+                        if (pastvalue.ContainsKey("start"))
+                        {
+                            futuredate = DateObject.Parse(futurevalue[DateTimeResolutionKey.Start], CultureInfo.InvariantCulture);
+
+                            if ((futuredate.Day == referenceTime.Day) && (futuredate.Month == referenceTime.Month)
+                               && (futuredate.Year != referenceTime.Year) && (!slot.TimexStr.Contains("XXXX-WXX")))
+                            {
+                                maptonew = true;
+                            }
+
+                        }
+
+                        if (pastvalue.ContainsKey("end"))
+                        {
+
+                            futuredate = DateObject.Parse(futurevalue[DateTimeResolutionKey.End], CultureInfo.InvariantCulture);
+
+                            if ((futuredate.Day == referenceTime.Day) && (futuredate.Month == referenceTime.Month)
+                                && (futuredate.Year != referenceTime.Year) && (!slot.TimexStr.Contains("XXXX-WXX")))
+                            {
+                                maptonew = true;
+                            }
+
+                        }
+
+                        if (maptonew)
+                        {
+                            {
+                                if (pastvalue.ContainsKey("start"))
+                                {
+                                    pastdate = DateObject.Parse(pastvalue[DateTimeResolutionKey.Start],
+                                                                           CultureInfo.InvariantCulture);
+
+                                    futuredate = DateObject.Parse(futurevalue[DateTimeResolutionKey.Start],
+                                                                           CultureInfo.InvariantCulture);
+
+                                    futurevalue[DateTimeResolutionKey.Start] = DateTimeFormatUtil.FormatDate(futuredate.AddYears(-1));
+
+                                    pastvalue[DateTimeResolutionKey.Start] = DateTimeFormatUtil.FormatDate(pastdate.AddYears(-1));
+                                }
+
+                                if (pastvalue.ContainsKey("end"))
+                                {
+                                    pastdate = DateObject.Parse(pastvalue[DateTimeResolutionKey.End],
+                                                                           CultureInfo.InvariantCulture);
+
+                                    futuredate = DateObject.Parse(futurevalue[DateTimeResolutionKey.End],
+                                                                           CultureInfo.InvariantCulture);
+
+                                    futurevalue[DateTimeResolutionKey.End] = DateTimeFormatUtil.FormatDate(futuredate.AddYears(-1));
+
+                                    pastvalue[DateTimeResolutionKey.End] = DateTimeFormatUtil.FormatDate(pastdate.AddYears(-1));
+                                }
+
+                            }
 
                         }
 

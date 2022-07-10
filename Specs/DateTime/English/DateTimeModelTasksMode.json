@@ -499,6 +499,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-02T00:00:00"
     },
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "nov/2",
@@ -516,6 +517,37 @@
               "timex": "XXXX-11-02",
               "type": "date",
               "value": "2016-11-02"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "meet me from 2 july to 10 july",
+    "Context": {
+      "ReferenceDateTime": "2022-07-10T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "from 2 july to 10 july",
+        "Start": 8,
+        "End": 29,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-07-02,XXXX-07-10,P8D)",
+              "type": "daterange",
+              "start": "2021-07-02",
+              "end": "2021-07-10"
+            },
+            {
+              "timex": "(XXXX-07-02,XXXX-07-10,P8D)",
+              "type": "daterange",
+              "start": "2022-07-02",
+              "end": "2022-07-10"
             }
           ]
         }

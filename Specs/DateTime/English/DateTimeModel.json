@@ -24131,5 +24131,35 @@
         }
       }
     ]
+  },
+  {
+    "Input": "meet me from 2 july to 10 july",
+    "Context": {
+      "ReferenceDateTime": "2022-07-10T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "from 2 july to 10 july",
+        "Start": 8,
+        "End": 29,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-07-02,XXXX-07-10,P8D)",
+              "type": "daterange",
+              "start": "2022-07-02",
+              "end": "2022-07-10"
+            },
+            {
+              "timex": "(XXXX-07-02,XXXX-07-10,P8D)",
+              "type": "daterange",
+              "start": "2023-07-02",
+              "end": "2023-07-10"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
