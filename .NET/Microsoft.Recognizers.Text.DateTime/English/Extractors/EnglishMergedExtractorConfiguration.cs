@@ -87,6 +87,15 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
             // Remove decade regex ex 1990s, 9s
             new Regex(DateTimeDefinitions.DecadeWithCenturyRegex, RegexFlags),
+
+            // "Q1 2018", "2nd quarter"
+            new Regex(DateTimeDefinitions.QuarterRegex, RegexFlags),
+
+            // "2016 Q1", "last year the 4th quarter"
+            new Regex(DateTimeDefinitions.QuarterRegexYearFront, RegexFlags),
+
+            // "2015 the H1", "H2 of 2016", "1st half 2018", "2nd half this year"
+            new Regex(DateTimeDefinitions.AllHalfYearRegex, RegexFlags),
         };
 
         public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();
