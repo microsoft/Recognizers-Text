@@ -24109,6 +24109,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-02T00:00:00"
     },
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "nov/2",
@@ -24137,6 +24138,7 @@
     "Context": {
       "ReferenceDateTime": "2022-07-10T00:00:00"
     },
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "from 2 july to 10 july",
