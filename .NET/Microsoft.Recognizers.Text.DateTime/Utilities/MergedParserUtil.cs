@@ -749,7 +749,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         var inputDay = inputTime.Day;
                         var inputMonth = inputTime.Month;
 
-                        if (inputDay == referenceTime.Day && inputMonth == referenceTime.Month)
+                        if (inputDay == referenceTime.Day && inputMonth == referenceTime.Month && (!slot.TimexStr.Contains("XXXX-WXX")))
                         {
                             var newDate = inputTime.Date.AddYears(-1);
                             var dateTimeToSet = DateObject.MinValue.SafeCreateFromValue(newDate.Year, newDate.Month, newDate.Day);
