@@ -148,10 +148,17 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public bool GetMatchedTimeRange(string text, out string todSymbol, out int beginHour, out int endHour, out int endMin)
         {
             var trimmedText = text.Trim();
-
             beginHour = 0;
             endHour = 0;
             endMin = 0;
+
+            // Change for ToDo to match the new rules set by the NLP for DateTime project
+            if ((Options & DateTimeOptions.TasksMode) != 0)
+            {
+                 return GetMatchedTimeRangeForTasksMode(text, out todSymbol,
+                           out beginHour,   out endHour,  out endMin);
+            }
+
             if (MorningStartEndRegex.IsMatch(trimmedText))
             {
                 todSymbol = "TMO";
@@ -176,6 +183,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 beginHour = 20;
                 endHour = 23;
                 endMin = 59;
+
             }
             else
             {
@@ -203,6 +211,46 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             }
 
             return swift;
+        }
+
+        private bool GetMatchedTimeRangeForTasksMode(string text, out string todSymbol, out int beginHour, out int endHour, out int endMin)
+        {
+            var trimmedText = text.Trim();
+            beginHour = 0;
+            endHour = 0;
+            endMin = 0;
+            if (MorningStartEndRegex.IsMatch(trimmedText))
+            {
+                todSymbol = "TMO";
+                beginHour = 6;
+                endHour = 6;
+            }
+            else if (AfternoonStartEndRegex.IsMatch(trimmedText))
+            {
+                todSymbol = "TAF";
+                beginHour = Constants.HalfDayHourCount;
+                endHour = Constants.HalfDayHourCount;
+
+            }
+            else if (EveningStartEndRegex.IsMatch(trimmedText))
+            {
+                todSymbol = "TEV";
+                beginHour = 18;
+                endHour = 18;
+            }
+            else if (NightStartEndRegex.IsMatch(trimmedText))
+            {
+                todSymbol = "TNI";
+                beginHour = 21;
+                endHour = 21;
+            }
+            else
+            {
+                todSymbol = null;
+                return false;
+            }
+
+            return true;
         }
     }
 }

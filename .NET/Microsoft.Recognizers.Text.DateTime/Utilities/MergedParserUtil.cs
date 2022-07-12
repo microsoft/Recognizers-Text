@@ -525,7 +525,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             switch (slot.Type.Substring(ParserTypeName.Length + 1))
             {
                 case Constants.SYS_DATETIME_DATE:
-                    slot = ModifyNextWeekDate(slot, referenceTime);
+                    slot = ModifyDate(slot, referenceTime);
                     break;
             }
 
@@ -710,21 +710,24 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
         }
 
-        private static DateTimeParseResult ModifyNextWeekDate(DateTimeParseResult slot, DateObject referenceTime)
+        private static DateTimeParseResult ModifyDate(DateTimeParseResult slot, DateObject referenceTime)
         {
             var value = (SortedDictionary<string, object>)slot.Value;
 
-            if (value != null && value.ContainsKey(ResolutionKey.ValueSet) && slot.Text.Contains("next week"))
+            if (value != null && value.ContainsKey(ResolutionKey.ValueSet))
             {
                 if (value[ResolutionKey.ValueSet] is IList<Dictionary<string, string>> valueSet && valueSet.Any())
                 {
 
                     foreach (var values in valueSet)
                     {
-                        var tempdate = referenceTime.Upcoming(DayOfWeek.Monday).Date;
-                        var dateTimeToSet = DateObject.MinValue.SafeCreateFromValue(tempdate.Year, tempdate.Month, tempdate.Day);
-                        values[DateTimeResolutionKey.Value] = DateTimeFormatUtil.FormatDate(dateTimeToSet);
-                        values[DateTimeResolutionKey.Timex] = $"{DateTimeFormatUtil.LuisDate(dateTimeToSet)}";
+                        if (slot.Text.Contains("next week"))
+                        {
+                            var tempdate = referenceTime.Upcoming(DayOfWeek.Monday).Date;
+                            var dateTimeToSet = DateObject.MinValue.SafeCreateFromValue(tempdate.Year, tempdate.Month, tempdate.Day);
+                            values[DateTimeResolutionKey.Value] = DateTimeFormatUtil.FormatDate(dateTimeToSet);
+                            values[DateTimeResolutionKey.Timex] = $"{DateTimeFormatUtil.LuisDate(dateTimeToSet)}";
+                        }
                     }
 
                 }

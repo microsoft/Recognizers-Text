@@ -506,7 +506,7 @@ UnspecificEndOfRegex: !simpleRegex
 UnspecificEndOfRangeRegex: !simpleRegex
   def: \b(eoy)\b
 PeriodTimeOfDayRegex: !nestedRegex
-  def: \b((in\s+(the)?\s+)?{LaterEarlyRegex}?((this\s+)?{DateTimeTimeOfDayRegex}|(?<timeOfDay>(?<pm>tonight))))\b
+  def: \b((in\s+(the\s+)?)?{LaterEarlyRegex}?((this\s+)?{DateTimeTimeOfDayRegex}|(?<timeOfDay>(?<pm>tonight))))\b
   references: [ DateTimeTimeOfDayRegex, LaterEarlyRegex ]
 PeriodSpecificTimeOfDayRegex: !nestedRegex
   def: \b({LaterEarlyRegex}?this\s+{DateTimeTimeOfDayRegex}|({StrictRelativeRegex}\s+{PeriodTimeOfDayRegex})\b|\b(?<pm>toni(ght|te)))\b
