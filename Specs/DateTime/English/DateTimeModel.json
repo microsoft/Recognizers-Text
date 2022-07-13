@@ -24074,7 +24074,7 @@
     "Context": {
       "ReferenceDateTime": "2022-04-29T13:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "next month",
@@ -24242,7 +24242,7 @@
     "Context": {
       "ReferenceDateTime": "2022-04-29T13:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "next year",
