@@ -29,19 +29,7 @@
   {
     "Input": "मुझे आखिरी से पहले का दिखाएं।",
     "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "पहले",
-        "Start": 14,
-        "End": 17,
-        "TypeName": "ordinal",
-        "Resolution": {
-          "offset": "1",
-          "relativeTo": "start",
-          "value": "1"
-        }
-      }
-    ]
+    "Results": []
   },
   {
     "Input": "मुझे आखिरी का दूसरा दिखाएं",

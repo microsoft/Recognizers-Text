@@ -25,6 +25,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         // SourceEntity Types
         public const string SYS_DATETIME_DATETIMEPOINT = "datetimepoint";
 
+        // Number Types
+        public const string SYS_NUMBER_ORDINAL = "builtin.num.ordinal";
+
         // Model Name
         public const string MODEL_DATETIME = "datetime";
 
@@ -113,6 +116,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const int MaxWeekOfMonth = 5;
         public const int MaxMonth = 12;
         public const int MinMonth = 1;
+        public const int MaxDayMonth = 31;
 
         // Day start hour
         public const int DayHourStart = 0;
@@ -242,6 +246,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string EndGroupName = "end";
         public const string WithinGroupName = "within";
         public const string NumberGroupName = "number";
+        public const string OrdinalGroupName = "ordinal";
         public const string OrderGroupName = "order";
         public const string AgoGroupName = "ago";
         public const string YesterdayGroupName = "yesterday";
