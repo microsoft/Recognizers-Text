@@ -2045,14 +2045,14 @@
     ]
   },
   {
-    "Input": "私は今から2週間以内に戻ります",
+    "Input": "私は今から2週間でに戻ります",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "今から2週間以内",
+        "Text": "今から2週間で",
         "Type": "date",
         "Value": {
           "Timex": "2016-11-21",
@@ -2064,7 +2064,7 @@
           }
         },
         "Start": 2,
-        "Length": 8
+        "Length": 7
       }
     ]
   },

@@ -1320,5 +1320,35 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I'll be out November 19-20",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "november 19-20",
+        "Start": 12,
+        "End": 25,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-11-19,XXXX-11-20,P1D)",
+              "type": "daterange",
+              "start": "2015-11-19",
+              "end": "2015-11-20"
+            },
+            {
+              "timex": "(XXXX-11-19,XXXX-11-20,P1D)",
+              "type": "daterange",
+              "start": "2016-11-19",
+              "end": "2016-11-20"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

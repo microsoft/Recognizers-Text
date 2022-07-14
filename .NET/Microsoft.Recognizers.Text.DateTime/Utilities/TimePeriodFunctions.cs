@@ -91,12 +91,21 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
 
             int day = refTime.Day,
                 month = refTime.Month,
-                year = refTime.Year;
+                year = refTime.Year,
+                rightSwiftDay = 0,
+                leftSwiftDay = 0;
 
             // determine if the right side time is smaller than the left side, if yes, add one day
             int hour = leftResult.Hour > 0 ? leftResult.Hour : 0,
                 min = leftResult.Minute > 0 ? leftResult.Minute : 0,
                 second = leftResult.Second > 0 ? leftResult.Second : 0;
+
+            // handle cases with time like 25時 which resolve to the next day
+            if (hour > Constants.DayHourCount)
+            {
+                hour -= Constants.DayHourCount;
+                leftSwiftDay++;
+            }
 
             var leftTime = DateObject.MinValue.SafeCreateFromValue(year, month, day, hour, min, second);
 
@@ -104,18 +113,28 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
             min = rightResult.Minute > 0 ? rightResult.Minute : 0;
             second = rightResult.Second > 0 ? rightResult.Second : 0;
 
+            // handle cases with time like 25時 which resolve to the next day
+            if (hour > Constants.DayHourCount)
+            {
+                hour -= Constants.DayHourCount;
+                rightSwiftDay++;
+            }
+
             var rightTime = DateObject.MinValue.SafeCreateFromValue(year, month, day, hour, min, second);
 
-            if (rightTime.Hour < leftTime.Hour)
+            if (rightResult.Hour < leftResult.Hour)
             {
                 rightTime = rightTime.AddDays(1);
             }
 
-            ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(leftTime, rightTime);
-
             var leftTimex = BuildTimex(leftResult);
             var rightTimex = BuildTimex(rightResult);
             ret.Timex = $"({leftTimex},{rightTimex},{BuildSpan(leftResult, rightResult)})";
+
+            leftTime = leftTime.AddDays(leftSwiftDay);
+            rightTime = rightTime.AddDays(rightSwiftDay);
+
+            ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(leftTime, rightTime);
             return ret;
         }
 

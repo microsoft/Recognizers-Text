@@ -2895,5 +2895,90 @@
         }
       }
     ]
+  },
+  {
+    "Input": "five more losses in excess of 30 MUSD were reported",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "30 musd",
+        "Start": 30,
+        "End": 36,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "unit": "United States dollar",
+          "value": "30000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The client estimates an increase to 120 MEUR",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "120 meur",
+        "Start": 36,
+        "End": 43,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "EUR",
+          "unit": "Euro",
+          "value": "120000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Refers to 48.5 MGBP purchase price already paid",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "48.5 mgbp",
+        "Start": 10,
+        "End": 18,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "GBP",
+          "unit": "British pound",
+          "value": "48500000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The company has annual revenues of about MAUD 60",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "maud 60",
+        "Start": 41,
+        "End": 47,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "AUD",
+          "unit": "Australian dollar",
+          "value": "60000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "In 1993, 25 grants were provided, totalling twenty MUSD",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "twenty musd",
+        "Start": 44,
+        "End": 54,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "unit": "United States dollar",
+          "value": "20000000"
+        }
+      }
+    ]
   }
 ]

@@ -867,11 +867,13 @@ FractionalUnitNameToCodeMap: !dictionary
     Satoshi: SATOSHI
 CompoundUnitConnectorRegex: !simpleRegex
     def: (?<spacer>y|con)
+MultiplierRegex: !simpleRegex
+  def: \s*\b(((mil\s+)?mi|bi|cuatri|quinti|sexti|septi)ll[oó]n|mil)(es)?\b
 CurrencyPrefixList: !dictionary
   types: [ string, string ]
   entries:
     Dobra: db|std
-    Dólar: $
+    Dólar: $|dólar|dólares|dolar|dolares
     Dólar estadounidense: us$|u$d|usd
     Dólar del Caribe Oriental: ec$|xcd
     Dólar australiano: a$|aud

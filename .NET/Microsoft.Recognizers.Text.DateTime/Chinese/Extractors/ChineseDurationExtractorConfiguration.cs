@@ -56,6 +56,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public Dictionary<string, long> UnitValueMap { get; }
 
+        public Dictionary<Regex, Regex> AmbiguityDurationFiltersDict => null;
+
         Regex ICJKDurationExtractorConfiguration.DurationUnitRegex => DurationUnitRegex;
 
         Regex ICJKDurationExtractorConfiguration.DurationConnectorRegex => DurationConnectorRegex;

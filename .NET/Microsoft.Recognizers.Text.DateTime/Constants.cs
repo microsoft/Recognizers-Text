@@ -53,6 +53,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         // AmPm time representation for time parser
         public const string Comment_AmPm = "ampm";
+        public const string Comment_Am = "am";
 
         // Prefix early/late for time parser
         public const string Comment_Early = "early";
@@ -127,6 +128,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         // Hours is a half mid-day-duration
         public const int HalfMidDayDurationHourCount = 2;
+
+        // Minutes in an hour
+        public const int HourMinuteCount = 60;
 
         // Char length of four digits year, e.g., 2018
         public const int FourDigitsYearLength = 4;
@@ -260,6 +264,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string TimexHour = "H";
         public const string TimexMinute = "M";
         public const string TimexSecond = "S";
+        public const string TimexNow = "PRESENT_REF";
         public const char TimexFuzzy = 'X';
         public const string TimexFuzzyYear = "XXXX";
         public const string TimexFuzzyMonth = "XX";
@@ -267,6 +272,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string TimexFuzzyDay = "XX";
         public const string DateTimexConnector = "-";
         public const string TimeTimexConnector = ":";
+        public const string TimexSeparator = ",";
         public const string GeneralPeriodPrefix = "P";
         public const string TimeTimexPrefix = "T";
 

@@ -49,6 +49,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public static readonly Regex UnspecificDatePeriodRegex =
             new Regex(DateTimeDefinitions.UnspecificDatePeriodRegex, RegexFlags);
 
+        public static readonly Regex YearRegex =
+          new Regex(DateTimeDefinitions.YearRegex, RegexFlags);
+
         public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();
 
         public static readonly Regex[] TermFilterRegexes =
@@ -141,6 +144,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         Regex IMergedExtractorConfiguration.UnspecificDatePeriodRegex => UnspecificDatePeriodRegex;
 
         Regex IMergedExtractorConfiguration.UnspecificTimePeriodRegex => null;
+
+        Regex IMergedExtractorConfiguration.YearRegex => YearRegex;
 
         public Regex FailFastRegex { get; } = null;
 

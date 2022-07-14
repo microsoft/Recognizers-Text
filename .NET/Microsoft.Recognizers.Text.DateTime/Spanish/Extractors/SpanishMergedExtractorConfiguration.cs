@@ -51,6 +51,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();
 
+        public static readonly Regex YearRegex = new Regex(DateTimeDefinitions.YearRegex, RegexFlags);
+
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         public SpanishMergedExtractorConfiguration(IDateTimeOptionsConfiguration config)
@@ -145,6 +147,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         Regex IMergedExtractorConfiguration.UnspecificDatePeriodRegex => UnspecificDatePeriodRegex;
 
         Regex IMergedExtractorConfiguration.UnspecificTimePeriodRegex => null;
+
+        Regex IMergedExtractorConfiguration.YearRegex => YearRegex;
 
         public Regex FailFastRegex { get; } = null;
 

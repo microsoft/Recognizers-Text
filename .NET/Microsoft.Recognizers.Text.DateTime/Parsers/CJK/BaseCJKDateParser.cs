@@ -318,8 +318,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             // handle "明日から3週間" (3 weeks from tomorrow)
             var durationResult = this.config.DurationExtractor.Extract(text, referenceDate);
             var unitMatch = this.config.DurationRelativeDurationUnitRegex.Match(text);
+            var isWithin = this.config.DurationRelativeDurationUnitRegex.MatchEnd(text, trim: true).Groups[Constants.WithinGroupName].Success;
 
-            if (exactMatch.Success && unitMatch.Success && (durationResult.Count > 0) &&
+            if ((exactMatch.Success || isWithin) && unitMatch.Success && (durationResult.Count > 0) &&
                 string.IsNullOrEmpty(unitMatch.Groups["few"].Value))
             {
                 var pr = this.config.DurationParser.Parse(durationResult[0], referenceDate);

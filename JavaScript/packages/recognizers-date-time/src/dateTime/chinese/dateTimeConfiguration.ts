@@ -246,11 +246,16 @@ class ChineseDateTimeParserConfiguration implements IDateTimeParserConfiguration
 export class ChineseDateTimeParser extends BaseDateTimeParser {
     private readonly durationExtractor: ChineseDurationExtractor;
     private readonly integerExtractor: BaseNumberExtractor
+    private readonly lunarRegex: RegExp;
+    private readonly lunarHolidayRegex: RegExp;
+
     constructor(dmyDateFormat: boolean) {
         let config = new ChineseDateTimeParserConfiguration(dmyDateFormat);
         super(config);
         this.durationExtractor = new ChineseDurationExtractor();
         this.integerExtractor = new ChineseIntegerExtractor();
+        this.lunarRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.LunarRegex);
+        this.lunarHolidayRegex = RegExpUtility.getSafeRegExp(ChineseDateTime.LunarHolidayRegex);
     }
 
     parse(er: ExtractResult, refTime?: Date): DateTimeParseResult {
@@ -276,6 +281,7 @@ export class ChineseDateTimeParser extends BaseDateTimeParser {
                 innerResult.futureResolution[TimeTypeConstants.DATETIME] = DateTimeFormatUtil.formatDateTime(innerResult.futureValue);
                 innerResult.pastResolution = {};
                 innerResult.pastResolution[TimeTypeConstants.DATETIME] = DateTimeFormatUtil.formatDateTime(innerResult.pastValue);
+                innerResult.isLunar = this.isLunarCalendar(er.text);
                 value = innerResult;
             }
         }
@@ -287,6 +293,17 @@ export class ChineseDateTimeParser extends BaseDateTimeParser {
         };
 
         return ret;
+    }
+
+    // parse if lunar contains
+    private isLunarCalendar(text: string): boolean {
+        let trimmedText = text.trim();
+        if (RegExpUtility.getMatches(this.lunarRegex, text).length || RegExpUtility.getMatches(this.lunarHolidayRegex, text).length)
+        {
+            return true;
+        }
+
+        return false;
     }
 
     // merge a Date entity and a Time entity

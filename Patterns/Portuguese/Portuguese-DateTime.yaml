@@ -229,7 +229,7 @@ DateExtractor2: !nestedRegex
   references: [ MonthRegex, MonthNumRegex, DayRegex, DateYearRegex, WeekDayRegex, BaseDateTime.FourDigitYearRegex ]
 DateExtractor3: !nestedRegex
   # (domingo,)? Abril 6
-  def: \b({WeekDayRegex}(\s+|\s*,\s*))?{MonthRegex}(\s*[/\.\- ]\s*|\s+de\s+){DayRegex}((\s*[/\.\- ]\s*|\s+de\s+){DateYearRegex})?\b
+  def: \b({WeekDayRegex}(\s+|\s*,\s*))?{MonthRegex}(\s*[/\.\- ]\s*|\s+de\s+){DayRegex}(?!\s*\-\s*\d{2}\b)((\s*[/\.\- ]\s*|\s+de\s+){DateYearRegex})?\b
   references: [ DayRegex, MonthRegex, WeekDayRegex, DateYearRegex ]
 # The final lookahead in DateExtractor4|5|10 avoids extracting as date "10/1-11" from an input like "10/1-11/2/2017" 
 DateExtractor4: !nestedRegex

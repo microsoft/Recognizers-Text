@@ -39,6 +39,11 @@ namespace Microsoft.Recognizers.Text.DateTime
         NoProtoCache = 16,
 
         /// <summary>
+        /// TasksMode, specific functionality that changes default behaviour for business reasons.
+        /// </summary>
+        TasksMode = 1048576, // 2 ^20
+
+        /// <summary>
         /// FailFast, mode that aborts extraction/tagging quickly for non-entity cases. May be removed later.
         /// </summary>
         FailFast = 2097152, // 2 ^21
