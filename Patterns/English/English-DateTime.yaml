@@ -581,8 +581,8 @@ HolidayRegex: !nestedRegex
   def: \b(({StrictRelativeRegex}\s+({HolidayList1}|{HolidayList2}|{HolidayList3}|{HolidayList4}))|(?<holidayWeekend>((the\s+)?weekend\s+of\s+)({HolidayList1}|{HolidayList2}|{HolidayList3}|{HolidayList4})(\s+((of\s+)?({YearRegex}|{RelativeRegex}\s+year)))?)|(({HolidayList1}|{HolidayList2}|{HolidayList3}|{HolidayList4})((?<holidayWeekend>(\s+weekend)(\s+((of\s+)?({YearRegex}|{RelativeRegex}\s+year)))?)|(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year)(?<holidayWeekend>\s+weekend)?))?))\b
   references: [ HolidayList1, HolidayList2, HolidayList3, HolidayList4, YearRegex, RelativeRegex, StrictRelativeRegex ]
 #Holidays List to supress under TasksMode
-HolidayListSupress: !nestedRegex
-  def: (?<holiday>(?:independence|teacher'?s|youth|children|girls)\s+day)|{HolidayList4}
+TasksModeHolidayListSupression: !nestedRegex
+  def: (?<holiday>(?:independence|teacher'?s|youth|children|girls)\s+day)| (?<holiday>ramad(h)?an|ram(a)?zan|ramathan|eid al(-|\s+)adha|eid al(-|\s+)azha|eidul(-|\s+)azha|feast of the sacrifice|(islamic|arabic|hijri) new year|eid al(-|\s+)fitr|festival of breaking the fast)\b
   references: [ HolidayList4 ]
 AMTimeRegex: !simpleRegex
   def: (?<am>morning)

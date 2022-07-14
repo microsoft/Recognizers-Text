@@ -63,7 +63,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
             new Regex(DateTimeDefinitions.SingleAmbiguousTermsRegex, RegexFlags),
         };
 
-        public static readonly Regex[] TasksSkipMergeRegexes = System.Array.Empty<Regex>();
+        public static readonly Regex[] TasksModeMentionFilters = System.Array.Empty<Regex>();
 
         public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();
 
@@ -156,7 +156,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 
         bool IMergedExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 
-        IEnumerable<Regex> IMergedExtractorConfiguration.TasksSkipMergeRegexes => TasksSkipMergeRegexes;
+        IEnumerable<Regex> IMergedExtractorConfiguration.TasksModeMentionFilters => TasksModeMentionFilters;
 
     }
 }

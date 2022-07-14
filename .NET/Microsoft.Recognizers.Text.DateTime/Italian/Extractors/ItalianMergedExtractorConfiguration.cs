@@ -54,7 +54,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public static readonly Regex[] TermFilterRegexes = System.Array.Empty<Regex>();
 
-        public static readonly Regex[] TasksSkipMergeRegexes = System.Array.Empty<Regex>();
+        public static readonly Regex[] TasksModeMentionFilters = System.Array.Empty<Regex>();
 
         public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();
 
@@ -146,7 +146,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         bool IMergedExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 
-        IEnumerable<Regex> IMergedExtractorConfiguration.TasksSkipMergeRegexes => TasksSkipMergeRegexes;
+        IEnumerable<Regex> IMergedExtractorConfiguration.TasksModeMentionFilters => TasksModeMentionFilters;
 
     }
 }

@@ -49,7 +49,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public static readonly Regex[] TermFilterRegexes = System.Array.Empty<Regex>();
 
-        public static readonly Regex[] TasksSkipMergeRegexes = System.Array.Empty<Regex>();
+        public static readonly Regex[] TasksModeMentionFilters = System.Array.Empty<Regex>();
 
         public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();
 
@@ -160,7 +160,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         bool IMergedExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 
-        IEnumerable<Regex> IMergedExtractorConfiguration.TasksSkipMergeRegexes => TasksSkipMergeRegexes;
+        IEnumerable<Regex> IMergedExtractorConfiguration.TasksModeMentionFilters => TasksModeMentionFilters;
 
     }
 }

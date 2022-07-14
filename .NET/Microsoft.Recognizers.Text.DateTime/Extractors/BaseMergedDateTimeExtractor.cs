@@ -223,7 +223,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if ((config.Options & DateTimeOptions.TasksMode) != 0)
                 {
-                    if (ShouldSkipOnlyYear(result) || SkipRegexTasksMode(result))
+                    if (ShouldSkipOnlyYear(result) || TasksModeFilters(result))
                     {
                         continue;
                     }
@@ -276,21 +276,19 @@ namespace Microsoft.Recognizers.Text.DateTime
             return config.FromToRegex.IsMatch(er.Text);
         }
 
-        private bool SkipRegexTasksMode(ExtractResult er)
+        private bool TasksModeFilters(ExtractResult er)
         {
-            foreach (var regex in this.config.TasksSkipMergeRegexes)
+            foreach (var regex in this.config.TasksModeMentionFilters)
             {
                 var match = regex.Match(er.Text);
 
                 if (match.Success)
                 {
                     return true;
-
                 }
             }
 
             return false;
-
         }
 
         /*Under TasksMode: Should not treat a four-digit number as a daterange if the input text does not include a month or year reference.

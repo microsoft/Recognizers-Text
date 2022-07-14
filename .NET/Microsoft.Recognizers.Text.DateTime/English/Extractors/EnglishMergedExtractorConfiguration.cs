@@ -68,7 +68,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         };
 
         // Skip Regexes under TasksMode
-        public static readonly Regex[] TasksSkipMergeRegexes =
+        public static readonly Regex[] TasksModeMentionFilters =
         {
             // handle case scheduele 1:1 on 12 dec at 5 pm.
             new Regex(DateTimeDefinitions.OneOnOneRegex, RegexFlags),
@@ -80,7 +80,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             new Regex(DateTimeDefinitions.SpecialDescRegex, RegexFlags),
 
             // suppress holiday time reference whose celebration dates are region specific
-            new Regex(DateTimeDefinitions.HolidayListSupress, RegexFlags),
+            new Regex(DateTimeDefinitions.TasksModeHolidayListSupression, RegexFlags),
 
             // Remove decade regex ex seventies, twenties
             new Regex(DateTimeDefinitions.DecadeRegex, RegexFlags),
@@ -210,7 +210,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         bool IMergedExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 
-        IEnumerable<Regex> IMergedExtractorConfiguration.TasksSkipMergeRegexes => TasksSkipMergeRegexes;
+        IEnumerable<Regex> IMergedExtractorConfiguration.TasksModeMentionFilters => TasksModeMentionFilters;
 
     }
 }

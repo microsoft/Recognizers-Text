@@ -58,7 +58,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public static readonly Regex[] TermFilterRegexes = System.Array.Empty<Regex>();
 
-        public static readonly Regex[] TasksSkipMergeRegexes = System.Array.Empty<Regex>();
+        public static readonly Regex[] TasksModeMentionFilters = System.Array.Empty<Regex>();
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
@@ -154,7 +154,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         bool IMergedExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 
-        IEnumerable<Regex> IMergedExtractorConfiguration.TasksSkipMergeRegexes => TasksSkipMergeRegexes;
+        IEnumerable<Regex> IMergedExtractorConfiguration.TasksModeMentionFilters => TasksModeMentionFilters;
 
     }
 }
