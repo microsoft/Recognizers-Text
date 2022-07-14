@@ -164,7 +164,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 foreach (Match match in matches)
                 {
                     // some match might be part of the date range entity, and might be split in a wrong way
-                    if (ValidateMatch(match, text))
+                    if (DateContext.ValidateMatch(match, text, this.Config.DateRegexList, this.Config.RangeConnectorSymbolRegex))
                     {
                         // Cases that the relative term is before the detected date entity, like "this 5/12", "next friday 5/12"
                         var preText = text.Substring(0, match.Index);
@@ -184,99 +184,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return results;
-        }
-
-        // this method is to validate whether the match is part of date range and is a correct split
-        // For example: in case "10-1 - 11-7", "10-1 - 11" can be matched by some of the Regexes, but the full text is a date range, so "10-1 - 11" is not a correct split
-        private bool ValidateMatch(Match match, string text)
-        {
-            // If the match doesn't contains "year" part, it will not be ambiguous and it's a valid match
-            var isValidMatch = !match.Groups["year"].Success;
-
-            if (!isValidMatch)
-            {
-                var yearGroup = match.Groups["year"];
-
-                // If the "year" part is not at the end of the match, it's a valid match
-                if (yearGroup.Index + yearGroup.Length != match.Index + match.Length)
-                {
-                    isValidMatch = true;
-                }
-                else
-                {
-                    var subText = text.Substring(yearGroup.Index);
-
-                    // If the following text (include the "year" part) doesn't start with a Date entity, it's a valid match
-                    if (!StartsWithBasicDate(subText))
-                    {
-                        isValidMatch = true;
-                    }
-                    else
-                    {
-                        // If the following text (include the "year" part) starts with a Date entity, but the following text (doesn't include the "year" part) also starts with a valid Date entity, the current match is still valid
-                        // For example, "10-1-2018-10-2-2018". Match "10-1-2018" is valid because though "2018-10-2" a valid match (indicates the first year "2018" might belongs to the second Date entity), but "10-2-2018" is also a valid match.
-                        subText = text.Substring(yearGroup.Index + yearGroup.Length).Trim();
-                        subText = TrimStartRangeConnectorSymbols(subText);
-                        isValidMatch = StartsWithBasicDate(subText);
-                    }
-                }
-
-                // Expressions with mixed separators are not considered valid dates e.g. "30/4.85" (unless one is a comma "30/4, 2016")
-                if (match.Groups["day"].Success && match.Groups["month"].Success)
-                {
-                    var noDateText = match.Value.Replace(match.Groups["year"].Value, string.Empty)
-                        .Replace(match.Groups["month"].Value, string.Empty)
-                        .Replace(match.Groups["day"].Value, string.Empty);
-                    noDateText = match.Groups["weekday"].Success ? noDateText.Replace(match.Groups["weekday"].Value, string.Empty) : noDateText;
-                    var separators = new List<char> { '/', '\\', '-', '.' };
-
-                    if (separators.Count(separator => noDateText.Contains(separator)) > 1)
-                    {
-                        isValidMatch = false;
-                    }
-                }
-            }
-
-            return isValidMatch;
-        }
-
-        // TODO: Simplify this method to improve its performance
-        private string TrimStartRangeConnectorSymbols(string text)
-        {
-            var rangeConnectorSymbolMatches = Config.RangeConnectorSymbolRegex.Matches(text);
-
-            foreach (Match symbolMatch in rangeConnectorSymbolMatches)
-            {
-                var startSymbolLength = -1;
-
-                if (symbolMatch.Success && symbolMatch.Index == 0 && symbolMatch.Length > startSymbolLength)
-                {
-                    startSymbolLength = symbolMatch.Length;
-                }
-
-                if (startSymbolLength > 0)
-                {
-                    text = text.Substring(startSymbolLength);
-                }
-            }
-
-            return text.Trim();
-        }
-
-        // TODO: Simplify this method to improve its performance
-        private bool StartsWithBasicDate(string text)
-        {
-            foreach (var regex in this.Config.DateRegexList)
-            {
-                var match = regex.MatchBegin(text, trim: true);
-
-                if (match.Success)
-                {
-                    return true;
-                }
-            }
-
-            return false;
         }
 
         // match several other cases

@@ -348,10 +348,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             tokens.AddRange(MergeTwoTimePoints(text, reference));
             tokens.AddRange(MatchDuration(text, reference));
-            tokens.AddRange(SingleTimePointWithPatterns(text, new List<ExtractResult>(ordinalExtractions), reference));
+            tokens.AddRange(SingleTimePointWithPatterns(text, ordinalExtractions, reference));
             tokens.AddRange(MatchComplexCases(text, simpleCasesResults, reference));
             tokens.AddRange(MatchYearPeriod(text, reference));
-            tokens.AddRange(MatchOrdinalNumberWithCenturySuffix(text, new List<ExtractResult>(ordinalExtractions)));
+            tokens.AddRange(MatchOrdinalNumberWithCenturySuffix(text, ordinalExtractions));
 
             return Token.MergeAllTokens(tokens, text, ExtractorName);
         }

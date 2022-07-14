@@ -7,6 +7,7 @@ using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Korean;
+using Microsoft.Recognizers.Definitions.Utilities;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Korean;
 using DateObject = System.DateTime;
@@ -47,6 +48,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
         public static readonly Regex WeekDayStartEnd = new Regex(DateTimeDefinitions.WeekDayStartEnd, RegexFlags);
 
         public static readonly Regex DateTimePeriodUnitRegex = new Regex(DateTimeDefinitions.DateTimePeriodUnitRegex, RegexFlags);
+
+        public static readonly Regex RangeConnectorSymbolRegex = new Regex(DateTimeDefinitions.DatePeriodTillRegex, RegexFlags);
 
         public static readonly Regex MonthRegex = new Regex(DateTimeDefinitions.MonthRegex, RegexFlags);
         public static readonly Regex DayRegex = new Regex(DateTimeDefinitions.DayRegex, RegexFlags);
@@ -134,5 +137,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
         Regex ICJKDateExtractorConfiguration.AfterRegex => AfterRegex;
 
         Regex ICJKDateExtractorConfiguration.WeekDayStartEnd => WeekDayStartEnd;
+
+        Regex ICJKDateExtractorConfiguration.RangeConnectorSymbolRegex => RangeConnectorSymbolRegex;
+
+        public Dictionary<Regex, Regex> AmbiguityDateFiltersDict => DefinitionLoader.LoadAmbiguityFilters(DateTimeDefinitions.AmbiguityDateFiltersDict);
+
     }
 }

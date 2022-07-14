@@ -3,6 +3,9 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DateTime
@@ -91,22 +94,58 @@ namespace Microsoft.Recognizers.Text.DateTime
             return month == 2 && day == 29;
         }
 
-        // Used in CJK implementation
-        public static DateObject ComputeDate(int cardinal, int weekday, int month, int year)
+        // this method is to validate whether the match is part of date range and is a correct split
+        // For example: in case "10-1 - 11-7", "10-1 - 11" can be matched by some of the Regexes, but the full text is a date range, so "10-1 - 11" is not a correct split
+        public static bool ValidateMatch(Match match, string text, IEnumerable<Regex> dateRegexList, Regex rangeConnectorSymbolRegex)
         {
-            var firstDay = DateObject.MinValue.SafeCreateFromValue(year, month, 1);
-            var firstWeekday = firstDay.This((DayOfWeek)weekday);
-            if (weekday == 0)
+            // If the match doesn't contains "year" part, it will not be ambiguous and it's a valid match
+            var isValidMatch = !match.Groups[Constants.YearGroupName].Success;
+
+            if (!isValidMatch)
             {
-                weekday = 7;
+                var yearGroup = match.Groups[Constants.YearGroupName];
+
+                // If the "year" part is not at the end of the match, it's a valid match
+                if (yearGroup.Index + yearGroup.Length != match.Index + match.Length)
+                {
+                    isValidMatch = true;
+                }
+                else
+                {
+                    var subText = text.Substring(yearGroup.Index);
+
+                    // If the following text (include the "year" part) doesn't start with a Date entity, it's a valid match
+                    if (!StartsWithBasicDate(subText, dateRegexList))
+                    {
+                        isValidMatch = true;
+                    }
+                    else
+                    {
+                        // If the following text (include the "year" part) starts with a Date entity, but the following text (doesn't include the "year" part) also starts with a valid Date entity, the current match is still valid
+                        // For example, "10-1-2018-10-2-2018". Match "10-1-2018" is valid because though "2018-10-2" a valid match (indicates the first year "2018" might belongs to the second Date entity), but "10-2-2018" is also a valid match.
+                        subText = text.Substring(yearGroup.Index + yearGroup.Length).Trim();
+                        subText = TrimStartRangeConnectorSymbols(subText, rangeConnectorSymbolRegex);
+                        isValidMatch = StartsWithBasicDate(subText, dateRegexList);
+                    }
+                }
+
+                // Expressions with mixed separators are not considered valid dates e.g. "30/4.85" (unless one is a comma "30/4, 2016")
+                if (match.Groups[Constants.DayGroupName].Success && match.Groups[Constants.MonthGroupName].Success)
+                {
+                    var noDateText = match.Value.Replace(match.Groups[Constants.YearGroupName].Value, string.Empty)
+                        .Replace(match.Groups[Constants.MonthGroupName].Value, string.Empty)
+                        .Replace(match.Groups[Constants.DayGroupName].Value, string.Empty);
+                    noDateText = match.Groups[Constants.WeekdayGroupName].Success ? noDateText.Replace(match.Groups[Constants.WeekdayGroupName].Value, string.Empty) : noDateText;
+                    var separators = new List<char> { '/', '\\', '-', '.' };
+
+                    if (separators.Count(separator => noDateText.Contains(separator)) > 1)
+                    {
+                        isValidMatch = false;
+                    }
+                }
             }
 
-            if (weekday < (int)firstDay.DayOfWeek)
-            {
-                firstWeekday = firstDay.Next((DayOfWeek)weekday);
-            }
-
-            return firstWeekday.AddDays(7 * (cardinal - 1));
+            return isValidMatch;
         }
 
         // This method is to ensure the year of begin date is same with the end date in no year situation.
@@ -179,6 +218,45 @@ namespace Microsoft.Recognizers.Text.DateTime
         public bool IsEmpty()
         {
             return this.Year == Constants.InvalidYear;
+        }
+
+        // TODO: Simplify this method to improve its performance
+        private static string TrimStartRangeConnectorSymbols(string text, Regex rangeConnectorSymbolRegex)
+        {
+            var rangeConnectorSymbolMatches = rangeConnectorSymbolRegex.Matches(text);
+
+            foreach (Match symbolMatch in rangeConnectorSymbolMatches)
+            {
+                var startSymbolLength = -1;
+
+                if (symbolMatch.Success && symbolMatch.Index == 0 && symbolMatch.Length > startSymbolLength)
+                {
+                    startSymbolLength = symbolMatch.Length;
+                }
+
+                if (startSymbolLength > 0)
+                {
+                    text = text.Substring(startSymbolLength);
+                }
+            }
+
+            return text.Trim();
+        }
+
+        // TODO: Simplify this method to improve its performance
+        private static bool StartsWithBasicDate(string text, IEnumerable<Regex> dateRegexList)
+        {
+            foreach (var regex in dateRegexList)
+            {
+                var match = regex.MatchBegin(text, trim: true);
+
+                if (match.Success)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         private DateObject SetDateWithContext(DateObject originalDate, int year = -1)

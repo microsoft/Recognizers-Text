@@ -18,6 +18,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             AfterRegex = ChineseMergedExtractorConfiguration.AfterRegex;
             SincePrefixRegex = ChineseMergedExtractorConfiguration.SincePrefixRegex;
             SinceSuffixRegex = ChineseMergedExtractorConfiguration.SinceSuffixRegex;
+            AroundPrefixRegex = ChineseMergedExtractorConfiguration.AroundPrefixRegex;
+            AroundSuffixRegex = ChineseMergedExtractorConfiguration.AroundSuffixRegex;
             EqualRegex = ChineseMergedExtractorConfiguration.EqualRegex;
             UntilRegex = ChineseMergedExtractorConfiguration.UntilRegex;
         }
@@ -29,6 +31,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public Regex SincePrefixRegex { get; }
 
         public Regex SinceSuffixRegex { get; }
+
+        public Regex AroundPrefixRegex { get; }
+
+        public Regex AroundSuffixRegex { get; }
 
         public Regex UntilRegex { get; }
 
