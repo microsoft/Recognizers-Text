@@ -255,32 +255,6 @@
     "Results": []
   },
   {
-    "Input": "I'll go back as early as next year's first quarter.",
-    "Context": {
-      "ReferenceDateTime": "2018-09-06T12:00:00"
-    },
-    "NotSupported": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "as early as next year",
-        "Start": 13,
-        "End": 33,
-        "TypeName": "datetimeV2.daterange",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "2019",
-              "Mod": "since",
-              "type": "daterange",
-              "sourceEntity": "datetimerange",
-              "start": "2019-01-01"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  {
     "Input": "The sales went up during 2017-q1",
     "Context": {
       "ReferenceDateTime": "2019-06-11T00:00:00"
