@@ -86,6 +86,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex UnitRegex { get; }
 
+        Regex DurationUnitRegex { get; }
+
         Regex WeekOfMonthRegex { get; }
 
         Regex WeekOfYearRegex { get; }
@@ -143,6 +145,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         bool IsYearOnly(string text);
 
         bool IsThisYear(string text);
+
+        bool IsYearToDate(string text);
 
         bool IsLastYear(string text);
 

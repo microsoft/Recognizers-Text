@@ -360,6 +360,8 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
+    "Comment": "As in English, expressions like '10th of the/this month' are resolved to the current month and year",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "本月十日",
@@ -367,14 +369,9 @@
         "Resolution": {
           "values": [
             {
-              "timex": "XXXX-03-10",
+              "timex": "2017-03-10",
               "type": "date",
               "value": "2017-03-10"
-            },
-            {
-              "timex": "XXXX-03-10",
-              "type": "date",
-              "value": "2018-03-10"
             }
           ]
         },
@@ -817,6 +814,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "从昨天5:00-6:00",
@@ -828,6 +826,12 @@
               "type": "datetimerange",
               "start": "2016-11-06 05:00:00",
               "end": "2016-11-06 06:00:00"
+            },
+            {
+              "timex": "(2016-11-06T17:00,2016-11-06T18:00,PT1H)",
+              "type": "datetimerange",
+              "start": "2016-11-06 17:00:00",
+              "end": "2016-11-06 18:00:00"
             }
           ]
         },
@@ -1404,6 +1408,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "零点",
@@ -1414,11 +1419,6 @@
               "timex": "T00",
               "type": "time",
               "value": "00:00:00"
-            },
-            {
-              "timex": "T12",
-              "type": "time",
-              "value": "12:00:00"
             }
           ]
         },
@@ -1432,6 +1432,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "零点整",
@@ -1442,11 +1443,6 @@
               "timex": "T00",
               "type": "time",
               "value": "00:00:00"
-            },
-            {
-              "timex": "T12",
-              "type": "time",
-              "value": "12:00:00"
             }
           ]
         },
@@ -1628,6 +1624,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "5:00到6:00",
@@ -1639,6 +1636,12 @@
               "type": "timerange",
               "start": "05:00:00",
               "end": "06:00:00"
+            },
+            {
+              "timex": "(T17:00,T18:00,PT1H)",
+              "type": "timerange",
+              "start": "17:00:00",
+              "end": "18:00:00"
             }
           ]
         },

@@ -74,19 +74,24 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
             }
 
             // No 'am' or 'pm' indicator
-            if (leftResult.LowBound == -1 && rightResult.LowBound == -1 && leftResult.Hour <= Constants.HalfDayHourCount && rightResult.Hour <= Constants.HalfDayHourCount && spanHour > Constants.HalfDayHourCount)
+            if (leftResult.LowBound == -1 && rightResult.LowBound == -1 && leftResult.Hour <= Constants.HalfDayHourCount && rightResult.Hour <= Constants.HalfDayHourCount)
             {
-                if (leftResult.Hour > rightResult.Hour)
+                if (spanHour > Constants.HalfDayHourCount)
                 {
-                    if (leftResult.Hour == Constants.HalfDayHourCount)
+                    if (leftResult.Hour > rightResult.Hour)
                     {
-                        leftResult.Hour -= Constants.HalfDayHourCount;
-                    }
-                    else
-                    {
-                        rightResult.Hour += Constants.HalfDayHourCount;
+                        if (leftResult.Hour == Constants.HalfDayHourCount)
+                        {
+                            leftResult.Hour -= Constants.HalfDayHourCount;
+                        }
+                        else
+                        {
+                            rightResult.Hour += Constants.HalfDayHourCount;
+                        }
                     }
                 }
+
+                ret.Comment = Constants.Comment_AmPm;
             }
 
             int day = refTime.Day,

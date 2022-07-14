@@ -99,6 +99,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
+            // Remove common ambiguous cases
+            result = ExtractResultExtension.FilterAmbiguity(result, source, this.config.AmbiguityTimePeriodFiltersDict);
+
             return result;
         }
     }

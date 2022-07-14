@@ -136,6 +136,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (!string.IsNullOrEmpty(monthStr))
                 {
                     hasMonth = true;
+                    hasYear = true;
                     if (this.config.NextRe.Match(monthStr).Success)
                     {
                         month++;
@@ -466,7 +467,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             weekDay = 7;
                         }
 
-                        ret.Timex = DateTimeFormatUtil.LuisDate(pastDate);
+                        ret.Timex = TimexUtility.GenerateWeekdayTimex(weekDay);
                     }
                 }
 
@@ -539,7 +540,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (match.Success)
             {
-                var weekdayKey = match.Groups["weekday"].Value;
+                var weekdayKey = match.Groups[Constants.WeekdayGroupName].Value;
                 var weekday = this.config.DayOfWeek[weekdayKey];
                 var value = reference.This((DayOfWeek)weekday);
 
@@ -553,7 +554,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     value = reference.Next((DayOfWeek)weekday);
                 }
 
-                result.Timex = "XXXX-WXX-" + weekday;
+                result.Timex = TimexUtility.GenerateWeekdayTimex(weekday);
                 var futureDate = value;
                 var pastDate = value;
                 if (futureDate < reference)

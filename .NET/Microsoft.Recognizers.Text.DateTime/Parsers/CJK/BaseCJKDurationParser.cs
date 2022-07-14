@@ -38,6 +38,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (!dateTimeParseResult.Success)
             {
+                 dateTimeParseResult = ParseAnUnit(er.Text);
+            }
+
+            if (!dateTimeParseResult.Success)
+            {
                 var parseResult = this.config.InternalParser.Parse(er);
                 var unitResult = parseResult.Value as UnitValue;
 
@@ -72,11 +77,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var moreOrLessMatch = config.MoreOrLessRegex.Match(er.Text);
                 if (moreOrLessMatch.Success)
                 {
-                    if (moreOrLessMatch.Groups["less"].Success)
+                    if (moreOrLessMatch.Groups[Constants.LessGroupName].Success)
                     {
                         dateTimeParseResult.Mod = Constants.LESS_THAN_MOD;
                     }
-                    else if (moreOrLessMatch.Groups["more"].Success)
+                    else if (moreOrLessMatch.Groups[Constants.MoreGroupName].Success)
                     {
                         dateTimeParseResult.Mod = Constants.MORE_THAN_MOD;
                     }
@@ -101,6 +106,33 @@ namespace Microsoft.Recognizers.Text.DateTime
         public List<DateTimeParseResult> FilterResults(string query, List<DateTimeParseResult> candidateResults)
         {
             return candidateResults;
+        }
+
+        private DateTimeResolutionResult ParseAnUnit(string text)
+        {
+            var ret = new DateTimeResolutionResult();
+
+            var match = this.config.AnUnitRegex.Match(text);
+
+            if (match.Groups[Constants.AnotherGroupName].Success)
+            {
+                var numVal = match.Groups[Constants.HalfGroupName].Success ? 0.5 : 1;
+                numVal = match.Groups[Constants.QuarterGroupName].Success ? 0.25 : numVal;
+                numVal = match.Groups[Constants.ThreeQuarterGroupName].Success ? 0.75 : numVal;
+
+                var srcUnit = match.Groups[Constants.UnitGroupName].Value;
+                if (this.config.UnitMap.ContainsKey(srcUnit))
+                {
+                    var unitStr = this.config.UnitMap[srcUnit];
+
+                    ret.Timex = TimexUtility.GenerateDurationTimex(numVal, unitStr, DurationParsingUtil.IsLessThanDay(unitStr));
+                    ret.FutureValue = ret.PastValue = numVal * this.config.UnitValueMap[unitStr];
+                    ret.Success = true;
+                }
+
+            }
+
+            return ret;
         }
 
         private DateTimeResolutionResult ParseMergedDuration(string text, DateObject referenceTime)
@@ -151,7 +183,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var pr = (DateTimeParseResult)Parse(er);
                     if (pr != null && pr.Value != null)
                     {
-                        timexDict.Add(this.config.UnitMap[unitMatch.Groups["unit"].Value], pr.TimexStr);
+                        timexDict.Add(this.config.UnitMap[unitMatch.Groups[Constants.UnitGroupName].Value], pr.TimexStr);
                         prs.Add(pr);
                     }
                 }
