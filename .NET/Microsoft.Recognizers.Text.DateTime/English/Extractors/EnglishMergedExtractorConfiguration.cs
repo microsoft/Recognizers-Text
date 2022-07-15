@@ -70,9 +70,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         // Skip Regexes under TasksMode
         public static readonly Regex[] TasksModeMentionFilters =
         {
-            // handle case scheduele 1:1 on 12 dec at 5 pm.
-            new Regex(DateTimeDefinitions.OneOnOneRegex, RegexFlags),
-
             // supress cases like 1ampm
             new Regex(DateTimeDefinitions.AmPmDescRegex, RegexFlags),
 
