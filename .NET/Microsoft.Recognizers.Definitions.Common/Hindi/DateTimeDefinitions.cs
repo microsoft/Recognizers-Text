@@ -1374,7 +1374,9 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public static readonly string[] DurationDateRestrictions = { @"आज", @"today", @"now" };
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {
-            { @"\bदिन\b", @"\bदिन-ब-दिन\b" }
+            { @"\bदिन\b", @"\bदिन-ब-दिन\b" },
+            { @"^\d{1,4}-\d{1,4}$", @"\d{1,4}-\d{1,4}-\d|\d-\d{1,4}-\d{1,4}" },
+            { @"^\d{1,4}-\d{1,4}-\d{1,4}$", @"\d{1,4}-\d{1,4}-\d{1,4}-\d|\d-\d{1,4}-\d{1,4}-\d{1,4}" }
         };
       public static readonly IList<string> MorningTermList = new List<string>
         {

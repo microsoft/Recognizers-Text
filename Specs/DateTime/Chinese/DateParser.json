@@ -724,14 +724,16 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
+    "Comment": "As in English, expressions like '10th of the/this month' are resolved to the current month and year",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "本月十日",
         "Type": "date",
         "Value": {
-          "Timex": "XXXX-03-10",
+          "Timex": "2017-03-10",
           "FutureResolution": {
-            "date": "2018-03-10"
+            "date": "2017-03-10"
           },
           "PastResolution": {
             "date": "2017-03-10"

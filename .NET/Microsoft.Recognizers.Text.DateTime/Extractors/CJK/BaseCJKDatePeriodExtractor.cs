@@ -46,7 +46,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var rets = Token.MergeAllTokens(tokens, text, ExtractorName);
 
             // Remove common ambiguous cases
-            rets = FilterAmbiguity(rets, text);
+            rets = ExtractResultExtension.FilterAmbiguity(rets, text, this.config.AmbiguityFiltersDict);
 
             return rets;
         }
@@ -91,17 +91,29 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 // handle cases with 'within' and 'next'
-                var matchWithin = config.FutureRegex.Match(afterStr);
-                var matchNext = config.FutureRegex.Match(beforeStr);
+                var matchWithin = config.FutureRegex.MatchBegin(afterStr, trim: true);
+                var matchNext = config.FutureRegex.MatchEnd(beforeStr, trim: true);
 
-                if (matchWithin.Success && matchNext.Success)
+                if (matchWithin.Success && matchNext.Success && !matchNext.Groups[Constants.WithinGroupName].Success)
                 {
-                    ret.Add(new Token(duration.Start - matchNext.Value.Length, duration.End + matchWithin.Value.Length));
+                    if (matchNext.Value == matchWithin.Value)
+                    {
+                        ret.Add(new Token(duration.Start - matchNext.Value.Length, duration.End));
+                    }
+                    else
+                    {
+                        ret.Add(new Token(duration.Start - matchNext.Value.Length, duration.End + matchWithin.Value.Length));
+                    }
                 }
                 else if (matchWithin.Success)
                 {
                     ret.Add(new Token(duration.Start, duration.End + matchWithin.Value.Length));
                 }
+                else if (matchNext.Success)
+                {
+                    ret.Add(new Token(duration.Start - matchNext.Value.Length, duration.End));
+                }
+
             }
 
             return ret;
@@ -268,7 +280,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 var middleBegin = extractionResults[idx].Start + extractionResults[idx].Length ?? 0;
                 var middleEnd = extractionResults[idx + 1].Start ?? 0;
-                if (middleBegin >= middleEnd)
+                if (middleBegin > middleEnd)
                 {
                     idx++;
                     continue;
@@ -276,9 +288,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim();
                 var endPointStr = extractionResults[idx + 1].Text;
+                var startPointStr = extractionResults[idx].Text;
 
                 if (config.TillRegex.IsExactMatch(middleStr, trim: true) || (string.IsNullOrEmpty(middleStr) &&
-                    config.TillRegex.MatchBegin(endPointStr, trim: true).Success))
+                    (config.TillRegex.MatchBegin(endPointStr, trim: true).Success || config.TillRegex.MatchEnd(startPointStr, trim: true).Success)))
                 {
                     var periodBegin = extractionResults[idx].Start ?? 0;
                     var periodEnd = (extractionResults[idx + 1].Start ?? 0) + (extractionResults[idx + 1].Length ?? 0);
@@ -315,27 +328,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return ret;
-        }
-
-        private List<ExtractResult> FilterAmbiguity(List<ExtractResult> extractResults, string text)
-        {
-            if (this.config.AmbiguityFiltersDict != null)
-            {
-                foreach (var regex in this.config.AmbiguityFiltersDict)
-                {
-                    foreach (var extractResult in extractResults)
-                    {
-                        if (regex.Key.IsMatch(extractResult.Text))
-                        {
-                            var matches = regex.Value.Matches(text).Cast<Match>();
-                            extractResults = extractResults.Where(er => !matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start))
-                                .ToList();
-                        }
-                    }
-                }
-            }
-
-            return extractResults;
         }
     }
 }

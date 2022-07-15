@@ -36,9 +36,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             // push, save teh MOD string
             var hasInclusiveModifier = false;
-            bool hasBefore = false, hasAfter = false, hasUntil = false, hasSince = false, hasEqual = false;
+            bool hasBefore = false, hasAfter = false, hasUntil = false, hasSince = false, hasEqual = false, hasAround = false;
             string modStr = string.Empty, modStrPrefix = string.Empty, modStrSuffix = string.Empty;
-            if (er.Metadata != null)
+            if (er.Metadata != null && er.Metadata.HasMod)
             {
                 var beforeMatch = config.BeforeRegex.MatchEnd(er.Text, trim: true);
                 var afterMatch = config.AfterRegex.MatchEnd(er.Text, trim: true);
@@ -46,6 +46,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var sinceMatchPrefix = config.SincePrefixRegex.MatchBegin(er.Text, trim: true);
                 var sinceMatchSuffix = config.SinceSuffixRegex.MatchEnd(er.Text, trim: true);
                 var equalMatch = config.EqualRegex.MatchBegin(er.Text, trim: true);
+                var aroundMatchPrefix = config.AroundPrefixRegex.MatchBegin(er.Text, trim: true);
+                var aroundMatchSuffix = config.AroundSuffixRegex.MatchEnd(er.Text, trim: true);
 
                 if (beforeMatch.Success && !MergedParserUtil.IsDurationWithAgoAndLater(er))
                 {
@@ -59,7 +61,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         hasInclusiveModifier = true;
                     }
                 }
-                else if (afterMatch.Success && !MergedParserUtil.IsDurationWithAgoAndLater(er))
+                else if (afterMatch.Success && !MergedParserUtil.IsDurationWithAgoAndLater(er) && !sinceMatchSuffix.Success)
                 {
                     hasAfter = true;
                     er.Length -= afterMatch.Length;
@@ -104,6 +106,23 @@ namespace Microsoft.Recognizers.Text.DateTime
                         er.Length -= sinceMatchSuffix.Length;
                         er.Text = er.Text.Substring(0, er.Length ?? 0);
                         modStrSuffix = sinceMatchSuffix.Value;
+                    }
+
+                    if (aroundMatchPrefix.Success)
+                    {
+                        hasAround = true;
+                        er.Start += aroundMatchPrefix.Length;
+                        er.Length -= aroundMatchPrefix.Length;
+                        er.Text = er.Text.Substring(aroundMatchPrefix.Length);
+                        modStrPrefix = aroundMatchPrefix.Value;
+                    }
+
+                    if (aroundMatchSuffix.Success)
+                    {
+                        hasAround = true;
+                        er.Length -= aroundMatchSuffix.Length;
+                        er.Text = er.Text.Substring(0, er.Length ?? 0);
+                        modStrSuffix = aroundMatchSuffix.Value;
                     }
                 }
             }
@@ -164,6 +183,16 @@ namespace Microsoft.Recognizers.Text.DateTime
                 pr.Length += modStr.Length;
                 pr.Start -= modStr.Length;
                 pr.Text = modStr + pr.Text;
+            }
+
+            if (hasAround)
+            {
+                pr.Length += modStrPrefix.Length + modStrSuffix.Length;
+                pr.Start -= modStrPrefix.Length;
+                pr.Text = modStrPrefix + pr.Text + modStrSuffix;
+                var val = (DateTimeResolutionResult)pr.Value;
+                val.Mod = Constants.APPROX_MOD;
+                pr.Value = val;
             }
 
             var hasRangeChangingMod = hasBefore || hasAfter || hasSince;

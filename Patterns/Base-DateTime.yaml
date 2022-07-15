@@ -3,7 +3,7 @@ HourRegex: !simpleRegex
 TwoDigitHourRegex: !simpleRegex
   def: (?<hour>[0-1]\d|2[0-4])(h)?
 MinuteRegex: !simpleRegex
-  def: (?<min>[0-5]?\d)(?!\d)
+  def: (?<min>[0-5]\d)(?!\d)
 TwoDigitMinuteRegex: !simpleRegex
   def: (?<min>[0-5]\d)(?!\d)
 DeltaMinuteRegex: !simpleRegex

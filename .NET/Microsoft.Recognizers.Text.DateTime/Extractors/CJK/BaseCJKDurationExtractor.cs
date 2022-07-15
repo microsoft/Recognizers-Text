@@ -53,32 +53,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (this.merge)
             {
                 res = MergeMultipleDuration(source, res);
+                res = ExtractResultExtension.FilterAmbiguity(res, source, this.config.AmbiguityDurationFiltersDict);
             }
-
-            res = FilterAmbiguity(res, source);
 
             return res;
-        }
-
-        private List<ExtractResult> FilterAmbiguity(List<ExtractResult> extractResults, string text)
-        {
-            if (this.config.AmbiguityDurationFiltersDict != null)
-            {
-                foreach (var regex in this.config.AmbiguityDurationFiltersDict)
-                {
-                    foreach (var extractResult in extractResults)
-                    {
-                        if (regex.Key.IsMatch(text))
-                        {
-                            var matches = regex.Value.Matches(text).Cast<Match>();
-                            extractResults = extractResults.Where(er => !matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start))
-                                .ToList();
-                        }
-                    }
-                }
-            }
-
-            return extractResults;
         }
 
         private List<ExtractResult> MergeMultipleDuration(string text, List<ExtractResult> extractorResults)
@@ -101,9 +79,9 @@ namespace Microsoft.Recognizers.Text.DateTime
                 string curUnit = null;
                 var unitMatch = unitRegex.Match(extractorResults[firstExtractionIndex].Text);
 
-                if (unitMatch.Success && unitMap.ContainsKey(unitMatch.Groups["unit"].ToString()))
+                if (unitMatch.Success && unitMap.ContainsKey(unitMatch.Groups[Constants.UnitGroupName].ToString()))
                 {
-                    curUnit = unitMatch.Groups["unit"].ToString();
+                    curUnit = unitMatch.Groups[Constants.UnitGroupName].ToString();
                     totalUnit++;
                     if (DurationParsingUtil.IsTimeDurationUnit(unitMap[curUnit]))
                     {
@@ -132,10 +110,18 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var match = this.config.DurationConnectorRegex.Match(midStr);
                     if (match.Success)
                     {
-                        unitMatch = unitRegex.Match(extractorResults[secondExtractionIndex].Text);
-                        if (unitMatch.Success && unitMap.ContainsKey(unitMatch.Groups["unit"].ToString()))
+                        // If the second element of a group is a modifier, it should not be merged with subsequent elements.
+                        // For example "4 days or more and 1 week or less" should return 2 separate extractions.
+                        if (secondExtractionIndex > 1 && extractorResults[secondExtractionIndex - 1].Metadata != null &&
+                            extractorResults[secondExtractionIndex - 1].Metadata.HasMod)
                         {
-                            var nextUnitStr = unitMatch.Groups["unit"].ToString();
+                            break;
+                        }
+
+                        unitMatch = unitRegex.Match(extractorResults[secondExtractionIndex].Text);
+                        if (unitMatch.Success && unitMap.ContainsKey(unitMatch.Groups[Constants.UnitGroupName].ToString()))
+                        {
+                            var nextUnitStr = unitMatch.Groups[Constants.UnitGroupName].ToString();
                             if (unitValueMap[unitMap[nextUnitStr]] != unitValueMap[unitMap[curUnit]])
                             {
                                 valid = true;
@@ -231,6 +217,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 node.Length = e.Length;
                 node.Text = text.Substring(node.Start ?? 0, node.Length ?? 0);
                 node.Type = ExtractorName;
+                node.Metadata = new Metadata { HasMod = true };
 
                 result.Add(node);
             }
