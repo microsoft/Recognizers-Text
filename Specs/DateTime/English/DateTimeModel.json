@@ -24274,78 +24274,27 @@
     ]
   },
   {
-    "Input": "schedule me a 1:1 meeting",
-    "Comment": "Taskmode supress 1:1 from getting categorised as time.",
+    "Input": "schedule me a 1:1 on monday",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "1:1",
-        "Start": 14,
-        "End": 16,
-        "TypeName": "datetimeV2.time",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "T01:01",
-              "type": "time",
-              "value": "01:01:00"
-            },
-            {
-              "timex": "T13:01",
-              "type": "time",
-              "value": "13:01:00"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  {
-    "Input": "schedule me a 1:1 meeting on 14 nov",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "NotSupported": "javascript",
-    "Results": [
-      {
-        "Text": "1:1",
-        "Start": 14,
-        "End": 16,
-        "TypeName": "datetimeV2.time",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "T01:01",
-              "type": "time",
-              "value": "01:01:00"
-            },
-            {
-              "timex": "T13:01",
-              "type": "time",
-              "value": "13:01:00"
-            }
-          ]
-        }
-      },
-      {
-        "Text": "14 nov",
-        "Start": 29,
-        "End": 34,
+        "Text": "monday",
+        "Start": 21,
+        "End": 26,
         "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
             {
-              "timex": "XXXX-11-14",
+              "timex": "XXXX-WXX-1",
               "type": "date",
-              "value": "2015-11-14"
+              "value": "2016-10-31"
             },
             {
-              "timex": "XXXX-11-14",
+              "timex": "XXXX-WXX-1",
               "type": "date",
-              "value": "2016-11-14"
+              "value": "2016-11-07"
             }
           ]
         }
@@ -24353,223 +24302,10 @@
     ]
   },
   {
-    "Input": "schedule me a 1:1 on saturday",
-    "Context": {
-      "ReferenceDateTime": "2022-04-27T00:00:00"
-    },
-    "NotSupported": "javascript",
-    "Results": [
-      {
-        "Text": "1:1 on saturday",
-        "Start": 14,
-        "End": 28,
-        "TypeName": "datetimeV2.datetime",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "XXXX-WXX-6T01:01",
-              "type": "datetime",
-              "value": "2022-04-23 01:01:00"
-            },
-            {
-              "timex": "XXXX-WXX-6T01:01",
-              "type": "datetime",
-              "value": "2022-04-30 01:01:00"
-            },
-            {
-              "timex": "XXXX-WXX-6T13:01",
-              "type": "datetime",
-              "value": "2022-04-23 13:01:00"
-            },
-            {
-              "timex": "XXXX-WXX-6T13:01",
-              "type": "datetime",
-              "value": "2022-04-30 13:01:00"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  {
-    "Input": "schedule me a 1:1 meeting 14 nov 2023",
+    "Input": "This screen has a 4:3 aspect ratio.",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "javascript",
-    "Results": [
-      {
-        "Text": "1:1",
-        "Start": 14,
-        "End": 16,
-        "TypeName": "datetimeV2.time",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "T01:01",
-              "type": "time",
-              "value": "01:01:00"
-            },
-            {
-              "timex": "T13:01",
-              "type": "time",
-              "value": "13:01:00"
-            }
-          ]
-        }
-      },
-      {
-        "Text": "14 nov 2023",
-        "Start": 26,
-        "End": 36,
-        "TypeName": "datetimeV2.date",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "2023-11-14",
-              "type": "date",
-              "value": "2023-11-14"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  {
-    "Input": "Listen to 1990s music",
-    "Comment": "Taskmode will supress number with s (90s) from getting be categorised as daterange",
-    "Context": {
-      "ReferenceDateTime": "2018-05-29T00:00:00"
-    },
-    "NotSupported": "javascript, python",
-    "Results": [
-      {
-        "Text": "1990s",
-        "Start": 10,
-        "End": 14,
-        "TypeName": "datetimeV2.daterange",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "(1990-01-01,2000-01-01,P10Y)",
-              "type": "daterange",
-              "start": "1990-01-01",
-              "end": "2000-01-01"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  {
-    "Input": "Who are us presidents in nineties",
-    "Context": {
-      "ReferenceDateTime": "2018-05-29T00:00:00"
-    },
-    "NotSupported": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "nineties",
-        "Start": 25,
-        "End": 32,
-        "TypeName": "datetimeV2.daterange",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "(XX90-01-01,XX00-01-01,P10Y)",
-              "type": "daterange",
-              "start": "1990-01-01",
-              "end": "2000-01-01"
-            },
-            {
-              "timex": "(XX90-01-01,XX00-01-01,P10Y)",
-              "type": "daterange",
-              "start": "2090-01-01",
-              "end": "2100-01-01"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  {
-    "Input": "I'll be back at 7ampm",
-    "Context": {
-      "ReferenceDateTime": "2018-05-29T00:00:00"
-    },
-    "Results": [
-      {
-        "Text": "7ampm",
-        "Start": 16,
-        "End": 20,
-        "TypeName": "datetimeV2.time",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "T07",
-              "type": "time",
-              "value": "07:00:00"
-            },
-            {
-              "timex": "T19",
-              "type": "time",
-              "value": "19:00:00"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  {
-    "Input": "I'll be back at 7p",
-    "Context": {
-      "ReferenceDateTime": "2018-05-29T00:00:00"
-    },
-    "Results": [
-      {
-        "Text": "7p",
-        "Start": 16,
-        "End": 17,
-        "TypeName": "datetimeV2.time",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "T19",
-              "type": "time",
-              "value": "19:00:00"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  {
-    "Input": "meet on eid al fitr",
-    "Context": {
-      "ReferenceDateTime": "2022-06-17T00:00:00"
-    },
-    "NotSupported": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "eid al fitr",
-        "Start": 8,
-        "End": 18,
-        "TypeName": "datetimeV2.date",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "XXXX-05-02",
-              "type": "date",
-              "value": "2022-05-02"
-            },
-            {
-              "timex": "XXXX-05-02",
-              "type": "date",
-              "value": "2023-04-21"
-            }
-          ]
-        }
-      }
-    ]
+    "Results": []
   }
 ]
