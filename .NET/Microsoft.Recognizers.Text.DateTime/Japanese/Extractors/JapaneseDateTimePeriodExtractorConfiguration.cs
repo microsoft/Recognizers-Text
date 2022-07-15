@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Japanese;
 using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.Number.Config;
 using Microsoft.Recognizers.Text.Number.Japanese;
 using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
@@ -18,6 +19,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
     {
 
         public static readonly Regex TillRegex = new Regex(DateTimeDefinitions.DateTimePeriodTillRegex, RegexFlags);
+
+        public static readonly Regex FromPrefixRegex = new Regex(DateTimeDefinitions.DateTimePeriodFromPrefixRegex, RegexFlags);
+
+        public static readonly Regex FromSuffixRegex = new Regex(DateTimeDefinitions.DateTimePeriodFromSuffixRegex, RegexFlags);
+
+        public static readonly Regex ConnectorRegex = new Regex(DateTimeDefinitions.DateTimePeriodConnectorRegex, RegexFlags);
 
         public static readonly Regex PrepositionRegex = new Regex(DateTimeDefinitions.DateTimePeriodPrepositionRegex, RegexFlags);
 
@@ -35,11 +42,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         public static readonly Regex FutureRegex = new Regex(DateTimeDefinitions.FutureRegex, RegexFlags);
 
+        public static readonly Regex WeekDayRegex = new Regex(DateTimeDefinitions.WeekDayRegex, RegexFlags);
+
         public static readonly Regex TimePeriodLeftRegex = new Regex(DateTimeDefinitions.TimePeriodLeftRegex, RegexFlags);
 
         public static readonly Regex RelativeRegex = new Regex(DateTimeDefinitions.RelativeRegex, RegexFlags);
 
         public static readonly Regex RestOfDateRegex = new Regex(DateTimeDefinitions.RestOfDateRegex, RegexFlags);
+
+        public static readonly Regex AmPmDescRegex = new Regex(DateTimeDefinitions.AmPmDescRegex, RegexFlags);
+
+        public static readonly Regex BeforeAfterRegex = new Regex(DateTimeDefinitions.BeforeAfterRegex, RegexFlags);
 
         public static readonly Regex HourRegex = new Regex(DateTimeDefinitions.HourRegex, RegexFlags);
         public static readonly Regex HourNumRegex = new Regex(DateTimeDefinitions.HourNumRegex, RegexFlags);
@@ -61,7 +74,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
             var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
 
-            CardinalExtractor = new CardinalExtractor(numConfig);
+            CardinalExtractor = new CardinalExtractor(numConfig, CJKNumberExtractorMode.ExtractAll);
 
             SingleDateExtractor = new BaseCJKDateExtractor(new JapaneseDateExtractorConfiguration(this));
             SingleTimeExtractor = new BaseCJKTimeExtractor(new JapaneseTimeExtractorConfiguration(this));
@@ -104,17 +117,30 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         Regex ICJKDateTimePeriodExtractorConfiguration.RestOfDateRegex => RestOfDateRegex;
 
+        Regex ICJKDateTimePeriodExtractorConfiguration.AmPmDescRegex => AmPmDescRegex;
+
         Regex ICJKDateTimePeriodExtractorConfiguration.ThisRegex => ThisRegex;
+
+        Regex ICJKDateTimePeriodExtractorConfiguration.BeforeAfterRegex => BeforeAfterRegex;
 
         public bool GetFromTokenIndex(string text, out int index)
         {
             index = -1;
 
-            // @TODO move hardcoded values to resources file
-            if (text.Trim().EndsWith("从", StringComparison.Ordinal))
+            var match = FromPrefixRegex.MatchEnd(text, trim: true);
+            if (match.Success)
             {
-                index = text.LastIndexOf("从", StringComparison.Ordinal);
+                index = match.Index;
                 return true;
+            }
+            else
+            {
+                match = FromSuffixRegex.MatchBegin(text, trim: true);
+                if (match.Success)
+                {
+                    index = match.Index + match.Length;
+                    return true;
+                }
             }
 
             return false;
@@ -135,10 +161,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         public bool HasConnectorToken(string text)
         {
-            // @TODO move hardcoded values to resources file
-            return text.Equals("和", StringComparison.Ordinal) ||
-                    text.Equals("与", StringComparison.Ordinal) ||
-                    text.Equals("到", StringComparison.Ordinal);
+            return ConnectorRegex.IsExactMatch(text, trim: true);
         }
     }
 }

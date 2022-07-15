@@ -699,9 +699,47 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (match.Success)
             {
-                var days = match.Groups["day"];
-                beginDay = this.config.DayOfMonth[days.Captures[0].Value];
-                endDay = this.config.DayOfMonth[days.Captures[1].Value];
+                var days = match.Groups[Constants.DayGroupName];
+                var writtenDay = match.Groups[Constants.OrdinalGroupName];
+                if (writtenDay.Captures.Count > 0 && days.Captures[0].Value == writtenDay.Captures[0].Value)
+                {
+                    // Parse beginDay in written form
+                    var dayMatch = writtenDay.Captures[0];
+                    var dayEr = new ExtractResult
+                    {
+                        Start = dayMatch.Index,
+                        Length = dayMatch.Length,
+                        Text = dayMatch.Value,
+                        Type = Constants.SYS_NUMBER_ORDINAL,
+                        Metadata = new Metadata { IsOrdinalRelative = false, },
+                    };
+                    var dayPr = this.config.NumberParser.Parse(dayEr);
+                    beginDay = (int)(double)dayPr.Value;
+                }
+                else
+                {
+                    beginDay = this.config.DayOfMonth[days.Captures[0].Value];
+                }
+
+                if (writtenDay.Captures.Count > 0 && days.Captures[1].Value == writtenDay.Captures[writtenDay.Captures.Count - 1].Value)
+                {
+                    // Parse endDay in written form
+                    var dayMatch = writtenDay.Captures[writtenDay.Captures.Count - 1];
+                    var dayEr = new ExtractResult
+                    {
+                        Start = dayMatch.Index,
+                        Length = dayMatch.Length,
+                        Text = dayMatch.Value,
+                        Type = Constants.SYS_NUMBER_ORDINAL,
+                        Metadata = new Metadata { IsOrdinalRelative = false, },
+                    };
+                    var dayPr = this.config.NumberParser.Parse(dayEr);
+                    endDay = (int)(double)dayPr.Value;
+                }
+                else
+                {
+                    endDay = this.config.DayOfMonth[days.Captures[1].Value];
+                }
 
                 // parse year
                 year = config.DateExtractor.GetYearFromText(match.Match);
@@ -2227,7 +2265,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             var trimmedText = text.Trim();
             var match = this.config.DecadeWithCenturyRegex.MatchExact(trimmedText, trim: true);
-            string beginLuisStr, endLuisStr;
 
             if (match.Success)
             {
@@ -2318,23 +2355,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             // swift = 0 corresponding to the/this decade
             var totalLastYear = decadeLastYear * Math.Abs(swift == 0 ? 1 : swift);
 
-            if (inputCentury)
-            {
-                beginLuisStr = DateTimeFormatUtil.LuisDate(beginYear, 1, 1);
-                endLuisStr = DateTimeFormatUtil.LuisDate(beginYear + totalLastYear, 1, 1);
-            }
-            else
-            {
-                var beginYearStr = "XX" + decade;
-                beginLuisStr = DateTimeFormatUtil.LuisDate(-1, 1, 1);
-                beginLuisStr = beginLuisStr.Replace("XXXX", beginYearStr);
-
-                var endYearStr = "XX" + ((decade + totalLastYear) % 100).ToString("D2", CultureInfo.InvariantCulture);
-                endLuisStr = DateTimeFormatUtil.LuisDate(-1, 1, 1);
-                endLuisStr = endLuisStr.Replace("XXXX", endYearStr);
-            }
-
-            ret.Timex = $"({beginLuisStr},{endLuisStr},P{totalLastYear}Y)";
+            ret.Timex = TimexUtility.GenerateDecadeTimex(beginYear, totalLastYear, decade, inputCentury);
 
             int futureYear = beginYear, pastYear = beginYear;
             var startDate = DateObject.MinValue.SafeCreateFromValue(beginYear, 1, 1);

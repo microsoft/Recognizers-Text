@@ -1096,7 +1096,9 @@ namespace Microsoft.Recognizers.Definitions.Turkish
       public static readonly string[] DurationDateRestrictions = { @"bugün", @"şimdi", @"şu an" };
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {
-            { @"\bmart\b", @"\b(martin)\b" }
+            { @"\bmart\b", @"\b(martin)\b" },
+            { @"^\d{1,4}-\d{1,4}$", @"\d{1,4}-\d{1,4}-\d|\d-\d{1,4}-\d{1,4}" },
+            { @"^\d{1,4}-\d{1,4}-\d{1,4}$", @"\d{1,4}-\d{1,4}-\d{1,4}-\d|\d-\d{1,4}-\d{1,4}-\d{1,4}" }
         };
       public static readonly IList<string> MorningTermList = new List<string>
         {

@@ -6,6 +6,7 @@ using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Chinese;
+using Microsoft.Recognizers.Definitions.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
@@ -76,8 +77,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
                 },
             };
             Regexes = regexes.ToImmutableDictionary();
+            AmbiguityTimeFiltersDict = DefinitionLoader.LoadAmbiguityFilters(DateTimeDefinitions.AmbiguityTimeFiltersDict);
         }
 
         public ImmutableDictionary<Regex, TimeType> Regexes { get; }
+
+        public Dictionary<Regex, Regex> AmbiguityTimeFiltersDict { get; }
+
     }
 }

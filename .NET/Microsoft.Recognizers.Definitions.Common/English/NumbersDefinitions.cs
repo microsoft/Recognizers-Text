@@ -31,7 +31,7 @@ namespace Microsoft.Recognizers.Definitions.English
             @"en-zw"
         };
       public const string RoundNumberIntegerRegex = @"(?:hundred|thousand|million|mln|billion|bln|trillion|tln|lakh|crore)s?";
-      public const string ZeroToNineIntegerRegex = @"(?:three|seven|eight|four|five|zero|nine|one|two|six)";
+      public const string ZeroToNineIntegerRegex = @"(?:three|seven|eight|four|five|zero|n[ao]ught|nine|one|two|six)";
       public const string TwoToNineIntegerRegex = @"(?:three|seven|eight|four|five|nine|two|six)";
       public const string NegativeNumberTermsRegex = @"(?<negTerm>(minus|negative)\s+)";
       public static readonly string NegativeNumberSignRegex = $@"^{NegativeNumberTermsRegex}.*";
@@ -128,6 +128,8 @@ namespace Microsoft.Recognizers.Definitions.English
         {
             { @"a", 1 },
             { @"zero", 0 },
+            { @"naught", 0 },
+            { @"nought", 0 },
             { @"an", 1 },
             { @"one", 1 },
             { @"two", 2 },
