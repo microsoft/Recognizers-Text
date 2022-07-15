@@ -86,7 +86,7 @@
         </member>
         <member name="F:Microsoft.Recognizers.Text.DateTime.DateTimeOptions.TasksMode">
             <summary>
-            NoProtoCache
+            TasksMode, specific functionality that changes default behaviour for business reasons.
             </summary>
         </member>
         <member name="F:Microsoft.Recognizers.Text.DateTime.DateTimeOptions.FailFast">

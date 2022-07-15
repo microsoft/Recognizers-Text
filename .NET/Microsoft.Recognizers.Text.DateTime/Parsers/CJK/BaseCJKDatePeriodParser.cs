@@ -1011,7 +1011,16 @@ namespace Microsoft.Recognizers.Text.DateTime
                     return ret;
                 }
 
-                var thisMatch = this.config.ThisRegex.Match(trimmedText);
+                if (this.config.IsYearToDate(trimmedText))
+                {
+                    ret.Timex = TimexUtility.GenerateYearTimex(referenceDate.Year);
+                    ret.FutureValue =
+                        ret.PastValue =
+                            new Tuple<DateObject, DateObject>(DateObject.MinValue.SafeCreateFromValue(referenceDate.Year, 1, 1), referenceDate);
+                    ret.Success = true;
+                    return ret;
+                }
+
                 var nextMatch = this.config.NextRegex.Match(trimmedText);
                 var lastMatch = this.config.LastRegex.Match(trimmedText);
 
@@ -1911,9 +1920,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var beforeStr = text.Substring(0, (int)durationRes[0].Start);
                 var afterStr = text.Substring((int)durationRes[0].Start + (int)durationRes[0].Length).Trim();
                 var matches = this.config.UnitRegex.Matches(durationRes[0].Text);
+                var matchBusinessDays = this.config.DurationUnitRegex.MatchExact(text, trim: true);
 
-                // only handle duration cases like "5 years 1 month 21 days"
-                if (matches.Count > 1 && matches.Count <= 3)
+                // handle duration cases like "5 years 1 month 21 days" and "multiple business days"
+                if ((matches.Count > 1 && matches.Count <= 3) ||
+                    matchBusinessDays.Groups[Constants.BusinessDayGroupName].Success)
                 {
                     ret = ParseMultipleDatesDuration(text, referenceDate);
                     return ret;
@@ -2097,16 +2108,21 @@ namespace Microsoft.Recognizers.Text.DateTime
                         beginDate = modAndDateResult.BeginDate;
                     }
 
-                    if (config.FutureRegex.IsExactMatch(afterStr, trim: true) &&
+                    if ((config.FutureRegex.IsExactMatch(beforeStr, trim: true) || config.FutureRegex.IsExactMatch(afterStr, trim: true)) &&
                         DurationParsingUtil.IsDateDuration(durationResult.Timex))
                     {
                         modAndDateResult = ModAndDateResult.GetModAndDate(beginDate, endDate, referenceDate, durationResult.Timex, true);
 
+                        beginDate = modAndDateResult.BeginDate;
+                        endDate = modAndDateResult.EndDate;
+
                         // In GetModAndDate, this "future" resolution will add one day to beginDate/endDate,
                         // but for the "within" case it should start from the current day.
-                        beginDate = modAndDateResult.BeginDate.AddDays(-1);
-                        endDate = modAndDateResult.EndDate.AddDays(-1);
-
+                        if (this.config.FutureRegex.MatchExact(afterStr, trim: true).Groups[Constants.WithinGroupName].Success)
+                        {
+                            beginDate = beginDate.AddDays(-1);
+                            endDate = endDate.AddDays(-1);
+                        }
                     }
 
                     if (!string.IsNullOrEmpty(modAndDateResult.Mod))
@@ -2185,9 +2201,14 @@ namespace Microsoft.Recognizers.Text.DateTime
             else
             {
                 month = this.config.ToMonthNumber(monthStr);
-                ret.Timex = DateTimeFormatUtil.LuisDate(Constants.InvalidYear, month);
-                year = referenceDate.Year;
-                noYear = true;
+                year = GetYearFromText(match);
+
+                if (year == Constants.InvalidYear)
+                {
+                    year = referenceDate.Year;
+                    noYear = true;
+                }
+
             }
 
             ret = GetWeekOfMonth(cardinalStr, month, year, referenceDate, noYear);
@@ -2616,8 +2637,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             var match = this.config.DecadeRegex.MatchExact(text, trim: true);
 
-            string beginLuisStr, endLuisStr;
-
             if (match.Success)
             {
                 var decadeStr = match.Groups[Constants.DecadeGroupName].Value;
@@ -2670,46 +2689,15 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             var beginYear = ((century - 1) * 100) + decade;
-            var endYear = beginYear + decadeLastYear;
             var firstTwoNumOfYear = match.Groups[Constants.FirstTwoYearGroupName].Value;
 
-            if (inputCentury)
-            {
-                beginLuisStr = DateTimeFormatUtil.LuisDate(beginYear, 1, 1);
-                endLuisStr = DateTimeFormatUtil.LuisDate(endYear, 1, 1);
-            }
-
             // handle cases like "2000年代"
-            else if (!string.IsNullOrEmpty(firstTwoNumOfYear))
+            if (!string.IsNullOrEmpty(firstTwoNumOfYear))
             {
                 beginYear = (ConvertCJKToInteger(firstTwoNumOfYear) * 100) + decade;
-                endYear = beginYear + decadeLastYear;
-                var beginYearStr = ConvertCJKToInteger(firstTwoNumOfYear).ToString() + decade;
-
-                if (decade == 0)
-                {
-                    beginYearStr += '0';
-                }
-
-                beginLuisStr = DateTimeFormatUtil.LuisDate(-1, 1, 1);
-                beginLuisStr = beginLuisStr.Replace("XXXX", beginYearStr);
-
-                var endYearStr = ConvertCJKToInteger(firstTwoNumOfYear) + (endYear % 100).ToString("D2", CultureInfo.InvariantCulture);
-                endLuisStr = DateTimeFormatUtil.LuisDate(-1, 1, 1);
-                endLuisStr = endLuisStr.Replace("XXXX", endYearStr);
-            }
-            else
-            {
-                var beginYearStr = "XX" + decade;
-                beginLuisStr = DateTimeFormatUtil.LuisDate(-1, 1, 1);
-                beginLuisStr = beginLuisStr.Replace("XXXX", beginYearStr);
-
-                var endYearStr = "XX" + (endYear % 100).ToString("D2", CultureInfo.InvariantCulture);
-                endLuisStr = DateTimeFormatUtil.LuisDate(-1, 1, 1);
-                endLuisStr = endLuisStr.Replace("XXXX", endYearStr);
             }
 
-            ret.Timex = $"({beginLuisStr},{endLuisStr},P10Y)";
+            ret.Timex = TimexUtility.GenerateDecadeTimex(beginYear, decadeLastYear, decade, inputCentury);
 
             int futureYear = beginYear, pastYear = beginYear;
             var startDate = DateObject.MinValue.SafeCreateFromValue(beginYear, 1, 1);
@@ -2740,7 +2728,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new DateTimeResolutionResult();
             int century = (referenceDate.Year / 100) + 1;
-            string beginLuisStr, endLuisStr;
 
             var match = this.config.CenturyRegex.MatchExact(text, trim: true);
 
@@ -2760,11 +2747,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 var startDate = new DateObject(beginYear, 1, 1);
                 var endDate = new DateObject(endYear, 1, 1);
-                beginLuisStr = DateTimeFormatUtil.LuisDate(beginYear, 1, 1);
-                endLuisStr = DateTimeFormatUtil.LuisDate(endYear, 1, 1);
-                var durationTimex = $"P{Constants.CenturyYearsCount}Y";
 
-                ret.Timex = $"({beginLuisStr},{endLuisStr},{durationTimex})";
+                ret.Timex = TimexUtility.GenerateDatePeriodTimex(startDate, endDate, DatePeriodTimexType.ByYear);
                 ret.FutureValue = new Tuple<DateObject, DateObject>(startDate, endDate);
                 ret.PastValue = new Tuple<DateObject, DateObject>(startDate, endDate);
                 ret.Success = true;
@@ -2819,11 +2803,9 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                         if (startDate != DateObject.MinValue)
                         {
-                            var startLuisStr = DateTimeFormatUtil.LuisDate(startDate);
-                            var endLuisStr = DateTimeFormatUtil.LuisDate(endDate);
                             var durationTimex = ((DateTimeResolutionResult)duration.Value).Timex;
 
-                            ret.Timex = $"({startLuisStr},{endLuisStr},{durationTimex})";
+                            ret.Timex = TimexUtility.GenerateDatePeriodTimexWithDuration(startDate, endDate, durationTimex);
                             ret.FutureValue = new Tuple<DateObject, DateObject>(startDate, endDate);
                             ret.PastValue = new Tuple<DateObject, DateObject>(startDate, endDate);
                             ret.Success = true;
@@ -2833,7 +2815,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     else if (isMoreThan)
                     {
                         ret.Mod = isAgo ? Constants.BEFORE_MOD : Constants.AFTER_MOD;
-                        ret.Timex = $"{pr.TimexStr}";
+                        ret.Timex = pr.TimexStr;
                         ret.FutureValue = (DateObject)((DateTimeResolutionResult)pr.Value).FutureValue;
                         ret.PastValue = (DateObject)((DateTimeResolutionResult)pr.Value).PastValue;
                         ret.Success = true;
@@ -3088,6 +3070,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (!innerResult.Success)
             {
                 innerResult = ParseDatePointWithAgoAndLater(text, referenceDate);
+            }
+
+            if (innerResult.Success && dateContext != null)
+            {
+                innerResult = dateContext.ProcessDatePeriodEntityResolution(innerResult);
             }
 
             return innerResult;

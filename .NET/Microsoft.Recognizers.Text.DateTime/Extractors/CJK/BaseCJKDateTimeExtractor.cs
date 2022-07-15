@@ -30,12 +30,19 @@ namespace Microsoft.Recognizers.Text.DateTime
         public List<ExtractResult> Extract(string text, DateObject referenceTime)
         {
             var tokens = new List<Token>();
+            var result = new List<ExtractResult>();
+
             tokens.AddRange(MergeDateAndTime(text, referenceTime));
             tokens.AddRange(BasicRegexMatch(text));
             tokens.AddRange(TimeOfToday(text, referenceTime));
             tokens.AddRange(DurationWithAgoAndLater(text, referenceTime));
 
-            return Token.MergeAllTokens(tokens, text, ExtractorName);
+            result = Token.MergeAllTokens(tokens, text, ExtractorName);
+
+            result = ExtractResultExtension.FilterAmbiguity(result, text, this.config.AmbiguityDateTimeFiltersDict);
+
+            return result;
+
         }
 
         // Match now
@@ -172,14 +179,16 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (pos < text.Length)
                 {
                     var suffix = text.Substring(pos);
-                    var beforeMatch = this.config.BeforeRegex.Match(suffix);
-                    var afterMatch = this.config.AfterRegex.Match(suffix);
+                    var match = this.config.BeforeRegex.Match(suffix);
+                    if (!match.Success)
+                    {
+                        match = this.config.AfterRegex.Match(suffix);
+                    }
 
-                    if ((beforeMatch.Success && suffix.StartsWith(beforeMatch.Value, StringComparison.Ordinal)) ||
-                        (afterMatch.Success && suffix.StartsWith(afterMatch.Value, StringComparison.Ordinal)))
+                    if (match.Success && suffix.StartsWith(match.Value, StringComparison.Ordinal))
                     {
                         var metadata = new Metadata() { IsDurationWithAgoAndLater = true };
-                        ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + 1, metadata));
+                        ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + match.Length, metadata));
                     }
                 }
             }
