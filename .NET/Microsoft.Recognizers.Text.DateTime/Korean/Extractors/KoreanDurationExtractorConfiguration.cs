@@ -21,6 +21,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
 
         public static readonly Regex DurationUnitRegex = new Regex(DateTimeDefinitions.DurationUnitRegex, RegexFlags);
 
+        public static readonly Regex AnUnitRegex = new Regex(DateTimeDefinitions.AnUnitRegex, RegexFlags);
+
         public static readonly Regex DurationConnectorRegex = new Regex(DateTimeDefinitions.DurationConnectorRegex, RegexFlags);
 
         public static readonly Regex AllRegex = new Regex(DateTimeDefinitions.DurationAllRegex, RegexFlags);

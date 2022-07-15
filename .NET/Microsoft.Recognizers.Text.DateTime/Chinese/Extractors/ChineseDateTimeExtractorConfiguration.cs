@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Chinese;
+using Microsoft.Recognizers.Definitions.Utilities;
 using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
@@ -69,6 +70,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         Regex ICJKDateTimeExtractorConfiguration.AfterRegex => AfterRegex;
 
         Regex ICJKDateTimeExtractorConfiguration.ConnectorRegex => ConnectorRegex;
+
+        public Dictionary<Regex, Regex> AmbiguityDateTimeFiltersDict => DefinitionLoader.LoadAmbiguityFilters(DateTimeDefinitions.AmbiguityDateTimeFiltersDict);
 
     }
 }

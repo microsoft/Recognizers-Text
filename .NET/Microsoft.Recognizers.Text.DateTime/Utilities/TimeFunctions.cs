@@ -121,7 +121,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
                 }
             }
 
-            if (noDesc && hour <= Constants.HalfDayHourCount)
+            if (noDesc && hour <= Constants.HalfDayHourCount && hour > Constants.DayHourStart)
             {
                 // build.Append("ampm");
                 dateTimeResult.Comment = Constants.Comment_AmPm;

@@ -64,9 +64,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
             LastRegex = KoreanDateTimePeriodExtractorConfiguration.LastRegex;
             PastRegex = KoreanDateTimePeriodExtractorConfiguration.PastRegex;
             FutureRegex = KoreanDateTimePeriodExtractorConfiguration.FutureRegex;
+            WeekDayRegex = KoreanDateTimePeriodExtractorConfiguration.WeekDayRegex;
             TimePeriodLeftRegex = KoreanDateTimePeriodExtractorConfiguration.TimePeriodLeftRegex;
             UnitRegex = KoreanDateTimePeriodExtractorConfiguration.UnitRegex;
             RestOfDateRegex = KoreanDateTimePeriodExtractorConfiguration.RestOfDateRegex;
+            AmPmDescRegex = KoreanDateTimePeriodExtractorConfiguration.AmPmDescRegex;
             UnitMap = config.UnitMap;
         }
 
@@ -106,11 +108,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
 
         public Regex FutureRegex { get; }
 
+        public Regex WeekDayRegex { get; }
+
         public Regex TimePeriodLeftRegex { get; }
 
         public Regex UnitRegex { get; }
 
         public Regex RestOfDateRegex { get; }
+
+        public Regex AmPmDescRegex { get; }
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 
