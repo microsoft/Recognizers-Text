@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.Number;
 
 using DateObject = System.DateTime;
 
@@ -31,6 +32,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             tokens.AddRange(MatchEachUnit(text));
             tokens.AddRange(MatchEachDuration(text, reference));
             tokens.AddRange(TimeEveryday(text, reference));
+            tokens.AddRange(DayEveryweek(text, reference));
             tokens.AddRange(MatchEach(config.DateExtractor, text, reference));
             tokens.AddRange(MatchEach(config.TimeExtractor, text, reference));
             tokens.AddRange(MatchEach(config.DateTimeExtractor, text, reference));
@@ -80,7 +82,23 @@ namespace Microsoft.Recognizers.Text.DateTime
             matches = this.config.EachUnitRegex.Matches(text);
             foreach (Match match in matches)
             {
-                ret.Add(new Token(match.Index, match.Index + match.Length));
+                if (match.Groups["unit"].Value.Equals("month"))
+                {
+                    var beforeStr = text.Substring(0, match.Index);
+                    var dayMatch = this.config.BeforeEachDayRegex.Match(beforeStr);
+                    if (dayMatch.Success)
+                    {
+                        ret.Add(new Token(dayMatch.Index, match.Index + match.Length));
+                    }
+                    else
+                    {
+                        ret.Add(new Token(match.Index, match.Index + match.Length));
+                    }
+                }
+                else
+                {
+                    ret.Add(new Token(match.Index, match.Index + match.Length));
+                }
             }
 
             return ret;
@@ -90,26 +108,102 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new List<Token>();
             var ers = this.config.TimeExtractor.Extract(text, reference);
+            var ers1 = this.config.TimePeriodExtractor.Extract(text, reference);
+            if (ers.Count == 0)
+            {
+                ers = ers1;
+            }
 
             foreach (var er in ers)
             {
                 var afterStr = text.Substring(er.Start + er.Length ?? 0);
-                if ((string.IsNullOrEmpty(afterStr) || this.config.CheckBothBeforeAfter) && this.config.BeforeEachDayRegex != null)
+
+                var beforeStr = text.Substring(0, er.Start ?? 0);
+                var beforeMatch = this.config.EachDayRegex.Match(beforeStr);
+                if (beforeMatch.Success)
                 {
-                    var beforeStr = text.Substring(0, er.Start ?? 0);
-                    var beforeMatch = this.config.BeforeEachDayRegex.Match(beforeStr);
-                    if (beforeMatch.Success)
-                    {
-                        ret.Add(new Token(beforeMatch.Index, er.Start + er.Length ?? 0));
-                    }
+                    ret.Add(new Token(beforeMatch.Index, er.Start + er.Length ?? 0));
                 }
-                else
+
+                var match = this.config.EachDayRegex.Match(afterStr);
+                if (match.Success)
                 {
-                    var match = this.config.EachDayRegex.Match(afterStr);
-                    if (match.Success)
+                    ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + match.Length + match.Index));
+                }
+            }
+
+            return ret;
+        }
+
+        public virtual List<Token> DayEveryweek(string text, DateObject reference)
+        {
+            var ret = new List<Token>();
+            var ers = this.config.DateExtractor.Extract(text, reference);
+            if (NumberRecognizer.RecognizeOrdinal(text, Culture.English).Count > 0)
+            {
+                return ret;
+            }
+
+            if (ers.Count != 1)
+            {
+                return ret;
+            }
+
+            foreach (var er in ers)
+            {
+                var afterStr = text.Substring(er.Start + er.Length ?? 0);
+
+                var beforeStr = text.Substring(0, er.Start ?? 0);
+
+                // var beforeMatch = this.config.EachUnitRegex.Match(beforeStr);
+                var beforeMatch = MatchEachUnit(beforeStr);
+                var timeBeforeErs = this.config.TimeExtractor.Extract(beforeStr, reference);
+                var timeBeforeErs1 = this.config.TimePeriodExtractor.Extract(beforeStr, reference);
+                if (timeBeforeErs.Count == 0)
+                {
+                    timeBeforeErs = timeBeforeErs1;
+                }
+
+                var match = MatchEachUnit(afterStr);
+                var timeErs = this.config.TimeExtractor.Extract(afterStr, reference);
+                var timeErs1 = this.config.TimePeriodExtractor.Extract(afterStr, reference);
+                if (timeErs.Count == 0)
+                {
+                    timeErs = timeErs1;
+                }
+
+                if (beforeMatch.Count > 0)
+                {
+                    var beforeMatchInd = beforeMatch[0].Start;
+                    if (timeBeforeErs.Count > 0)
                     {
-                        ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + match.Length));
+                        beforeMatchInd = Math.Min(beforeMatchInd, (int)timeBeforeErs[0].Start);
                     }
+
+                    var erEnd = er.Start + er.Length ?? 0;
+                    if (timeErs.Count > 0)
+                    {
+                        erEnd += (int)timeErs[0].Start + (int)timeErs[0].Length;
+                    }
+
+                    ret.Add(new Token(beforeMatchInd, erEnd));
+                }
+
+                if (match.Count > 0)
+                {
+                    var matchInd = match[0].Length + match[0].Start;
+                    if (timeErs.Count > 0)
+                    {
+                        matchInd = Math.Max(matchInd, (int)timeErs[0].Start + (int)timeErs[0].Length);
+                    }
+
+                    var erStart = er.Start ?? 0;
+                    if (timeBeforeErs.Count > 0)
+                    {
+                        erStart = Math.Min(erStart, (int)timeBeforeErs[0].Start);
+                    }
+
+                    ret.Add(new Token(erStart, (er.Start + er.Length ?? 0) + matchInd));
                 }
             }
 

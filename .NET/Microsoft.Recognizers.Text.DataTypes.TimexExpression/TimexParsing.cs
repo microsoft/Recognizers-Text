@@ -52,15 +52,33 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
             if (indexOfT == -1)
             {
+                var indexOfP = s.IndexOf('P');
                 var extracted = new Dictionary<string, string>();
-                TimexRegex.Extract("date", s, extracted);
+                if (indexOfP == -1)
+                {
+                    TimexRegex.Extract("date", s, extracted);
+                }
+                else
+                {
+                    TimexRegex.Extract("date", s.Substring(0, indexOfP), extracted);
+                }
+
                 timexProperty.AssignProperties(extracted);
             }
             else
             {
+                var indexOfP = s.IndexOf('P');
                 var extracted = new Dictionary<string, string>();
                 TimexRegex.Extract("date", s.Substring(0, indexOfT), extracted);
-                TimexRegex.Extract("time", s.Substring(indexOfT), extracted);
+                if (indexOfP == -1)
+                {
+                    TimexRegex.Extract("time", s.Substring(indexOfT), extracted);
+                }
+                else
+                {
+                    TimexRegex.Extract("time", s.Substring(indexOfT, indexOfP - indexOfT), extracted);
+                }
+
                 timexProperty.AssignProperties(extracted);
             }
         }
