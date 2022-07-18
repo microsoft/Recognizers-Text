@@ -88,6 +88,9 @@ OclockRegex: !simpleRegex
   def: (?<oclock>o\s*((’|‘|')\s*)?clock|sharp)
 SpecialDescRegex: !simpleRegex
   def: ((?<ipm>)p\b)
+# Tasksmode suppression regex for suppressin 7p, 11p etc
+TasksModeSpecialDescRegex: !simpleRegex
+  def: ([0-9]+((?<ipm>)p\b))
 AmDescRegex: !nestedRegex
   def: (?:{BaseDateTime.BaseAmDescRegex})
   references: [BaseDateTime.BaseAmDescRegex]
@@ -582,7 +585,7 @@ HolidayRegex: !nestedRegex
   references: [ HolidayList1, HolidayList2, HolidayList3, HolidayList4, YearRegex, RelativeRegex, StrictRelativeRegex ]
 #Holidays List to supress under TasksMode
 TasksModeHolidayListSupression: !nestedRegex
-  def: (?<holiday>(?:independence|teacher'?s|youth|children|girls)\s+day)| (?<holiday>ramad(h)?an|ram(a)?zan|ramathan|eid al(-|\s+)adha|eid al(-|\s+)azha|eidul(-|\s+)azha|feast of the sacrifice|(islamic|arabic|hijri) new year|eid al(-|\s+)fitr|festival of breaking the fast)\b
+  def: (?<holiday>(?:independence|teacher'?s|youth|children|girls)\s+day)|(?<holiday>ramad(h)?an|ram(a)?zan|ramathan|eid al(-|\s+)adha|eid al(-|\s+)azha|eidul(-|\s+)azha|feast of the sacrifice|(islamic|arabic|hijri) new year|eid al(-|\s+)fitr|festival of breaking the fast)\b
   references: [ HolidayList4 ]
 AMTimeRegex: !simpleRegex
   def: (?<am>morning)

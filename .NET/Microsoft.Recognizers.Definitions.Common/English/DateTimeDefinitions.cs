@@ -57,6 +57,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly string FullTextYearRegex = $@"\b((?<firsttwoyearnum>{CenturyRegex})(\s+and)?\s+(?<lasttwoyearnum>{LastTwoYearNumRegex})\b|\b(?<firsttwoyearnum>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}\s+hundred))\b";
       public const string OclockRegex = @"(?<oclock>o\s*((’|‘|')\s*)?clock|sharp)";
       public const string SpecialDescRegex = @"((?<ipm>)p\b)";
+      public const string TasksModeSpecialDescRegex = @"([0-9]+((?<ipm>)p\b))";
       public static readonly string AmDescRegex = $@"(?:{BaseDateTime.BaseAmDescRegex})";
       public static readonly string PmDescRegex = $@"(:?{BaseDateTime.BasePmDescRegex})";
       public static readonly string AmPmDescRegex = $@"(:?{BaseDateTime.BaseAmPmDescRegex})";
@@ -243,7 +244,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public const string HolidayList3 = @"(?<holiday>(?:independence|presidents(?:')?|mlk|martin luther king( jr)?|canberra|ascension|columbus|tree( planting)?|arbor|labou?r|((international|int'?l)\s+)?workers'?|mother'?s?|father'?s?|female|women('s)?|single|teacher'?s|youth|children|girls|lovers?|earth|inauguration|groundhog|valentine'?s|baptiste|bastille|veterans(?:')?|memorial|mid[ \-]autumn|moon|spring|lantern)\s+day)";
       public const string HolidayList4 = @"(?<holiday>ramad(h)?an|ram(a)?zan|ramathan|eid al(-|\s+)adha|eid al(-|\s+)azha|eidul(-|\s+)azha|feast of the sacrifice|(islamic|arabic|hijri) new year|eid al(-|\s+)fitr|festival of breaking the fast)";
       public static readonly string HolidayRegex = $@"\b(({StrictRelativeRegex}\s+({HolidayList1}|{HolidayList2}|{HolidayList3}|{HolidayList4}))|(?<holidayWeekend>((the\s+)?weekend\s+of\s+)({HolidayList1}|{HolidayList2}|{HolidayList3}|{HolidayList4})(\s+((of\s+)?({YearRegex}|{RelativeRegex}\s+year)))?)|(({HolidayList1}|{HolidayList2}|{HolidayList3}|{HolidayList4})((?<holidayWeekend>(\s+weekend)(\s+((of\s+)?({YearRegex}|{RelativeRegex}\s+year)))?)|(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year)(?<holidayWeekend>\s+weekend)?))?))\b";
-      public static readonly string TasksModeHolidayListSupression = $@"(?<holiday>(?:independence|teacher'?s|youth|children|girls)\s+day)| (?<holiday>ramad(h)?an|ram(a)?zan|ramathan|eid al(-|\s+)adha|eid al(-|\s+)azha|eidul(-|\s+)azha|feast of the sacrifice|(islamic|arabic|hijri) new year|eid al(-|\s+)fitr|festival of breaking the fast)\b";
+      public static readonly string TasksModeHolidayListSupression = $@"(?<holiday>(?:independence|teacher'?s|youth|children|girls)\s+day)|(?<holiday>ramad(h)?an|ram(a)?zan|ramathan|eid al(-|\s+)adha|eid al(-|\s+)azha|eidul(-|\s+)azha|feast of the sacrifice|(islamic|arabic|hijri) new year|eid al(-|\s+)fitr|festival of breaking the fast)\b";
       public const string AMTimeRegex = @"(?<am>morning)";
       public const string PMTimeRegex = @"\b(?<pm>afternoon|evening|night)\b";
       public const string NightTimeRegex = @"(night)";

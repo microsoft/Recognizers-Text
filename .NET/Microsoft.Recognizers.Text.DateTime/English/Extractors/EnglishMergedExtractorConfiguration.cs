@@ -74,7 +74,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             new Regex(DateTimeDefinitions.AmPmDescRegex, RegexFlags),
 
             // supress cases like 1p--> 1pm
-            new Regex(DateTimeDefinitions.SpecialDescRegex, RegexFlags),
+            new Regex(DateTimeDefinitions.TasksModeSpecialDescRegex, RegexFlags),
 
             // suppress holiday time reference whose celebration dates are region specific
             new Regex(DateTimeDefinitions.TasksModeHolidayListSupression, RegexFlags),
@@ -93,6 +93,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
             // "2015 the H1", "H2 of 2016", "1st half 2018", "2nd half this year"
             new Regex(DateTimeDefinitions.AllHalfYearRegex, RegexFlags),
+
+            // summer winter etc
+            new Regex(DateTimeDefinitions.SeasonRegex, RegexFlags),
         };
 
         public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();
