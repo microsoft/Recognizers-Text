@@ -126,8 +126,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         private static readonly Regex DayRegex =
             new Regex(DateTimeDefinitions.ImplicitDayRegex, RegexFlags);
 
-        private static readonly Regex DurationToDate =
-            new Regex(@"\b((next\s+week)|(next\s+month)|(next\s+year))\b", RegexFlags);
+        // convert duration to date under tasksmode: next year -->date;
+        private static readonly Regex TasksModeDurationToDate =
+            new Regex(DateTimeDefinitions.TasksModeDurationToDate, RegexFlags);
 
         public EnglishDateExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
@@ -192,7 +193,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
             if ((Options & DateTimeOptions.TasksMode) != 0)
             {
-                ImplicitDateList = ImplicitDateList.Concat(new[] { DurationToDate });
+                ImplicitDateList = ImplicitDateList.Concat(new[] { TasksModeDurationToDate });
             }
 
             // 3-23-2017
