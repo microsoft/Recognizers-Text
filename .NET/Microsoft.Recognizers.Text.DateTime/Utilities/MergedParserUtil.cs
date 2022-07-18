@@ -525,7 +525,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             switch (slot.Type.Substring(ParserTypeName.Length + 1))
             {
                 case Constants.SYS_DATETIME_DATE:
-                    slot = ModifyDate(slot, referenceTime);
+                    slot = TasksModeProcessing.TasksModeModifyDateValue(slot, referenceTime);
                     break;
             }
 
@@ -708,35 +708,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                     // @TODO remove in future refactoring of test code and double-check there's no impact in output schema.
                     return pastResolutionStr.Keys.First().ToLowerInvariant();
             }
-        }
-
-        private static DateTimeParseResult ModifyDate(DateTimeParseResult slot, DateObject referenceTime)
-        {
-            var value = (SortedDictionary<string, object>)slot.Value;
-
-            if (value != null && value.ContainsKey(ResolutionKey.ValueSet))
-            {
-                if (value[ResolutionKey.ValueSet] is IList<Dictionary<string, string>> valueSet && valueSet.Any())
-                {
-
-                    foreach (var values in valueSet)
-                    {
-                        if (slot.Text.Contains("next week"))
-                        {
-                            var tempdate = referenceTime.Upcoming(DayOfWeek.Monday).Date;
-                            var dateTimeToSet = DateObject.MinValue.SafeCreateFromValue(tempdate.Year, tempdate.Month, tempdate.Day);
-                            values[DateTimeResolutionKey.Value] = DateTimeFormatUtil.FormatDate(dateTimeToSet);
-                            values[DateTimeResolutionKey.Timex] = $"{DateTimeFormatUtil.LuisDate(dateTimeToSet)}";
-                        }
-                    }
-
-                }
-
-            }
-
-            slot.Value = value;
-            return slot;
-
         }
     }
 }
