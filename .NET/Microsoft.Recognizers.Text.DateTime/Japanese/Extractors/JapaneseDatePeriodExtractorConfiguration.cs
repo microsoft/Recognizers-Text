@@ -107,8 +107,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         public static readonly Regex ZeroToNineIntegerRegexCJK = new Regex(DateTimeDefinitions.ZeroToNineIntegerRegexCJK, RegexFlags);
         public static readonly Regex MonthSuffixRegex = new Regex(DateTimeDefinitions.MonthSuffixRegex, RegexFlags);
         public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.UnitRegex, RegexFlags);
+        public static readonly Regex DurationUnitRegex = new Regex(DateTimeDefinitions.DurationUnitRegex, RegexFlags);
         public static readonly Regex SeasonRegex = new Regex(DateTimeDefinitions.SeasonRegex, RegexFlags);
-        public static readonly Regex DynastyDatePeriodRegex = new Regex(DateTimeDefinitions.DynastyDatePeriodRegex, RegexFlags);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
@@ -141,9 +141,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             DecadeRegex,
             CenturyRegex,
             ReferenceDatePeriodRegex,
-            ComplexDatePeriodRegex,
             DatePointWithAgoAndLater,
-            DynastyDatePeriodRegex,
         };
 
         public JapaneseDatePeriodExtractorConfiguration(IDateTimeOptionsConfiguration config)

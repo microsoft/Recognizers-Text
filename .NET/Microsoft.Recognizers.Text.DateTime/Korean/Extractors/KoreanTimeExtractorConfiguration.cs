@@ -6,6 +6,7 @@ using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Korean;
+using Microsoft.Recognizers.Definitions.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Korean
 {
@@ -76,8 +77,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
                 },
             };
             Regexes = regexes.ToImmutableDictionary();
+            AmbiguityTimeFiltersDict = DefinitionLoader.LoadAmbiguityFilters(DateTimeDefinitions.AmbiguityTimeFiltersDict);
         }
 
         public ImmutableDictionary<Regex, TimeType> Regexes { get; }
+
+        public Dictionary<Regex, Regex> AmbiguityTimeFiltersDict { get; }
+
     }
 }

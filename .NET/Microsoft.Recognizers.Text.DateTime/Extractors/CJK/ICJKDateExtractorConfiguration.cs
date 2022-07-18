@@ -22,6 +22,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex WeekDayStartEnd { get; }
 
+        Regex RangeConnectorSymbolRegex { get; }
+
         IDateTimeExtractor DurationExtractor { get; }
+
+        Dictionary<Regex, Regex> AmbiguityDateFiltersDict { get; }
+
     }
 }

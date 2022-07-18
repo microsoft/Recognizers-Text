@@ -111,6 +111,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
+            result = ExtractResultExtension.FilterAmbiguity(result, source, this.config.AmbiguityTimeFiltersDict);
+
             return result;
         }
     }

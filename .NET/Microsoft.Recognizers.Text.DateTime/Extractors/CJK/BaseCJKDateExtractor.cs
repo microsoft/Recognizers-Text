@@ -33,11 +33,16 @@ namespace Microsoft.Recognizers.Text.DateTime
         public List<ExtractResult> Extract(string text, DateObject referenceTime)
         {
             var tokens = new List<Token>();
+            var result = new List<ExtractResult>();
+
             tokens.AddRange(BasicRegexMatch(text));
             tokens.AddRange(ImplicitDate(text));
             tokens.AddRange(DurationWithAgoAndLater(text, referenceTime));
+            result = Token.MergeAllTokens(tokens, text, ExtractorName);
 
-            return Token.MergeAllTokens(tokens, text, ExtractorName);
+            result = ExtractResultExtension.FilterAmbiguity(result, text, this.config.AmbiguityDateFiltersDict);
+
+            return result;
         }
 
         // Match basic patterns in DateRegexList
@@ -49,7 +54,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var matches = regex.Matches(text);
                 foreach (Match match in matches)
                 {
-                    ret.Add(new Token(match.Index, match.Index + match.Length));
+                    // some match might be part of the date range entity, and might be split in a wrong way
+                    if (DateContext.ValidateMatch(match, text, this.config.DateRegexList, this.config.RangeConnectorSymbolRegex))
+                    {
+                        ret.Add(new Token(match.Index, match.Index + match.Length));
+
+                    }
                 }
             }
 
