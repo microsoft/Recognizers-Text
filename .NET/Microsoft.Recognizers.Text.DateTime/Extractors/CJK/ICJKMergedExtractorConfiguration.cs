@@ -32,9 +32,15 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex BeforeRegex { get; }
 
+        Regex UnspecificDatePeriodRegex { get; }
+
         Regex SinceSuffixRegex { get; }
 
         Regex SincePrefixRegex { get; }
+
+        Regex AroundSuffixRegex { get; }
+
+        Regex AroundPrefixRegex { get; }
 
         Regex UntilRegex { get; }
 

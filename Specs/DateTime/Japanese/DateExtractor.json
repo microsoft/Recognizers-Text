@@ -842,16 +842,10 @@
     "NotSupportedByDesign": "javascript,python,java",
 	"Results": [
       {
-        "Text": "今週の金曜日",
+        "Text": "今週の金曜日6月15日",
         "Type": "date",
         "Start": 5,
-        "Length": 6
-      },
-      {
-        "Text": "6月15日",
-        "Type": "date",
-        "Start": 11,
-        "Length": 5
+        "Length": 11
       }
     ]
   },
@@ -863,16 +857,10 @@
     "NotSupportedByDesign": "javascript,python,java",
 	"Results": [
       {
-        "Text": "今週の金曜日",
+        "Text": "今週の金曜日(6月15日)",
         "Type": "date",
         "Start": 5,
-        "Length": 6
-      },
-      {
-        "Text": "6月15日",
-        "Type": "date",
-        "Start": 12,
-        "Length": 5
+        "Length": 13
       }
     ]
   },
@@ -884,16 +872,10 @@
     "NotSupportedByDesign": "javascript,python,java",
 	"Results": [
       {
-        "Text": "今週の金曜日",
+        "Text": "今週の金曜日6月22日",
         "Type": "date",
         "Start": 5,
-        "Length": 6
-      },
-      {
-        "Text": "6月22日",
-        "Type": "date",
-        "Start": 11,
-        "Length": 5
+        "Length": 11
       }
     ]
   },
@@ -905,16 +887,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "今週の金曜日",
+        "Text": "今週の金曜日6月23日",
         "Type": "date",
         "Start": 5,
-        "Length": 6
-      },
-      {
-        "Text": "6月23日",
-        "Type": "date",
-        "Start": 11,
-        "Length": 5
+        "Length": 11
       }
     ]
   },
@@ -964,14 +940,14 @@
     ]
   },
   {
-    "Input": "コルタナ、2営業日以内にSkype通話を設定してください。",
+    "Input": "コルタナ、2営業日でSkype通話を設定してください。",
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "2営業日以内",
+        "Text": "2営業日で",
         "Type": "date",
         "Start": 5,
-        "Length": 6
+        "Length": 5
       }
     ]
   },

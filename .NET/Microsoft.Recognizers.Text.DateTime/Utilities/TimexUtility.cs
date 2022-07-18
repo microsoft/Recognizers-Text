@@ -148,6 +148,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
         }
 
+        public static string GenerateWeekdayTimex(int weekday)
+        {
+            return $"{Constants.TimexFuzzyYear}{Constants.DateTimexConnector}{Constants.TimexFuzzyWeek}{Constants.DateTimexConnector}{weekday}";
+        }
+
         public static string GenerateMonthTimex(DateObject date = default(DateObject))
         {
             if (date.IsDefaultValue())
@@ -196,6 +201,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             var durationTimex = Constants.GeneralPeriodPrefix + diff + Constants.TimexDay;
+            return $"({DateTimeFormatUtil.LuisDate(beginDate)},{DateTimeFormatUtil.LuisDate(endDate)},{durationTimex})";
+        }
+
+        public static string GenerateDatePeriodTimexWithDuration(DateObject beginDate, DateObject endDate, string durationTimex)
+        {
             return $"({DateTimeFormatUtil.LuisDate(beginDate)},{DateTimeFormatUtil.LuisDate(endDate)},{durationTimex})";
         }
 
@@ -437,6 +447,28 @@ namespace Microsoft.Recognizers.Text.DateTime
             return timexEndInclusive;
         }
 
+        public static string GenerateDecadeTimex(int beginYear, int totalLastYear, int decade, bool inputCentury)
+        {
+            string beginStr, endStr;
+            if (inputCentury)
+            {
+                beginStr = DateTimeFormatUtil.LuisDate(beginYear, 1, 1);
+                endStr = DateTimeFormatUtil.LuisDate(beginYear + totalLastYear, 1, 1);
+            }
+            else
+            {
+                var beginYearStr = Constants.TimexFuzzyTwoDigitYear + decade;
+                beginStr = DateTimeFormatUtil.LuisDate(-1, 1, 1);
+                beginStr = beginStr.Replace(Constants.TimexFuzzyYear, beginYearStr);
+
+                var endYearStr = Constants.TimexFuzzyTwoDigitYear + ((decade + totalLastYear) % 100).ToString("D2", CultureInfo.InvariantCulture);
+                endStr = DateTimeFormatUtil.LuisDate(-1, 1, 1);
+                endStr = endStr.Replace(Constants.TimexFuzzyYear, endYearStr);
+            }
+
+            return $"({beginStr},{endStr},{Constants.GeneralPeriodPrefix}{totalLastYear}{Constants.TimexYear})";
+        }
+
         public static string GenerateWeekOfYearTimex(int year, int weekNum)
         {
             var weekTimex = GenerateWeekTimex(weekNum);
@@ -462,6 +494,11 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             return dateTimeTimex2.Equals(Constants.TimexNow, StringComparison.Ordinal) ? DateTimeFormatUtil.LuisDateShortTime(dateTime1) :
                     dateTimeTimex2.Split(Constants.TimeTimexPrefix[0])[0] + timeTimex1;
+        }
+
+        public static string GenerateDateTimeTimex(DateObject dateTime)
+        {
+            return DateTimeFormatUtil.LuisDateTime(dateTime);
         }
 
         public static string GenerateDateTimePeriodTimex(string beginTimex, string endTimex, string durationTimex)

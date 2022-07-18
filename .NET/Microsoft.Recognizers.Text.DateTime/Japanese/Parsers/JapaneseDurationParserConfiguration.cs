@@ -25,6 +25,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             SomeRegex = JapaneseDurationExtractorConfiguration.SomeRegex;
             MoreOrLessRegex = JapaneseDurationExtractorConfiguration.MoreOrLessRegex;
             DurationUnitRegex = JapaneseDurationExtractorConfiguration.DurationUnitRegex;
+            AnUnitRegex = JapaneseDurationExtractorConfiguration.AnUnitRegex;
             DurationConnectorRegex = JapaneseDurationExtractorConfiguration.DurationConnectorRegex;
 
             UnitMap = config.UnitMap;
@@ -42,6 +43,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         public Regex MoreOrLessRegex { get; }
 
         public Regex DurationUnitRegex { get; }
+
+        public Regex AnUnitRegex { get; }
 
         public Regex DurationConnectorRegex { get; }
 
