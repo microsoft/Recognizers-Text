@@ -30,7 +30,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex RestOfDateRegex { get; }
 
+        Regex AmPmDescRegex { get; }
+
         Regex ThisRegex { get; }
+
+        Regex BeforeAfterRegex { get; }
 
         IExtractor CardinalExtractor { get; }
 

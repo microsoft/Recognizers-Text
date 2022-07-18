@@ -70,7 +70,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public const string DecimalUnitsRegex = @"(?:डेढ़|डेढ़|डेढ|ढाई|सवा|सावा)";
       public static readonly string DecimalUnitsWithRoundNumberRegex = $@"({DecimalUnitsRegex}\s+({{AllNumericalIntRegex}}\s+)?{RoundNumberIntegerRegex}|{DecimalUnitsRegex})";
       public const string RoundNumberOrdinalRegex = @"(?:(सौ|हजार|हज़ार|लाख|करोड़|अरब|खरब)(वां|वीं|वें|वाँ))";
-      public const string OneToNineOrdinalRegex = @"(?:पहला|पहले|पहली|तीसरे|प्रथम|दूसरा|दूसरी|दूसरे|तिहाई|चौथाई|((पांच|पाँच|छठ|सात|आठ|नौ)(वां|वीं|वें|वाँ|वा)))";
+      public const string OneToNineOrdinalRegex = @"(?:पहला|(?<!से\s*)पहले|पहली|तीसरे|प्रथम|दूसरा|दूसरी|दूसरे|तिहाई|चौथाई|((पांच|पाँच|छठ|सात|आठ|नौ)(वां|वीं|वें|वाँ|वा)))";
       public const string TenToNineteenOrdinalRegex = @"(?:(दस|ग्यारह|बारह|तेरह|चौदह|पंद्रह|सोलह|सत्रह|अठारह|उन्नीस)(वां|वीं|वें|वाँ))";
       public const string TwentyToTwentyNineOrdinalRegex = @"(?:(बीस|इक्कीस|बाईस|बाइस|तेईस|तेइस|चौबीस|पच्चीस|छब्बीस|सत्ताईस|सत्ताइस|अट्ठाईस|अट्ठाइस|उनतीस)(वां|वीं|वें|वाँ))";
       public const string ThirtyToThirtyNineOrdinalRegex = @"(?:(तीस|इकतीस|इकत्तीस|बत्तीस|तैंतीस|चौंतीस|पैंतीस|छ्त्तीस|सैंतीस|अड़तीस|उनतालीस)(वां|वीं|वें|वाँ))";

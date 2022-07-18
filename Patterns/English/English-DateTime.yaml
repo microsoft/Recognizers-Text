@@ -60,6 +60,16 @@ WrittenTensRegex: !simpleRegex
 WrittenNumRegex: !nestedRegex
   def: (?:{WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|{WrittenTensRegex}(\s+{WrittenOneToNineRegex})?)
   references: [ WrittenOneToNineRegex, WrittenElevenToNineteenRegex, WrittenTensRegex ]
+WrittenOneToNineOrdinalRegex: !simpleRegex
+  def: (?:first|second|third|fourth|fifth|sixth|seventh|eighth|nine?th)
+WrittenTensOrdinalRegex: !simpleRegex
+  def: (?:tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)
+WrittenOrdinalRegex: !nestedRegex
+  def: (?:{WrittenOneToNineOrdinalRegex}|{WrittenTensOrdinalRegex}|{WrittenTensRegex}\s+{WrittenOneToNineOrdinalRegex})
+  references: [ WrittenOneToNineOrdinalRegex, WrittenTensOrdinalRegex, WrittenTensRegex ]
+WrittenOrdinalDayRegex: !nestedRegex
+  def: \b(the\s+)?(?<day>(?<ordinal>{WrittenOneToNineOrdinalRegex}|(?:tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth)|(?:ten|twenty)\s+{WrittenOneToNineOrdinalRegex}|thirty\s+first))\b
+  references: [ WrittenOneToNineOrdinalRegex ]
 WrittenCenturyFullYearRegex: !nestedRegex
   def: (?:(one|two)\s+thousand((\s+and)?\s+{WrittenOneToNineRegex}\s+hundred)?)
   references: [ WrittenOneToNineRegex]
@@ -137,17 +147,17 @@ FromRegex: !simpleRegex
 BetweenTokenRegex: !simpleRegex
   def: \b(between(\s+the)?)$
 SimpleCasesRegex: !nestedRegex
-  def: \b({RangePrefixRegex}\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex}\s+{MonthSuffixRegex}|{MonthSuffixRegex}\s+{DayRegex})((\s+|\s*,\s*){YearRegex})?\b
-  references: [ DayRegex, TillRegex, MonthSuffixRegex, YearRegex, RangePrefixRegex ]
+  def: \b({RangePrefixRegex}\s+)?({DayRegex}|{WrittenOrdinalDayRegex})\s*{TillRegex}\s*(({DayRegex}|{WrittenOrdinalDayRegex})\s+{MonthSuffixRegex}|{MonthSuffixRegex}\s+({DayRegex}|{WrittenOrdinalDayRegex}))((\s+|\s*,\s*){YearRegex})?\b
+  references: [ DayRegex, TillRegex, MonthSuffixRegex, YearRegex, RangePrefixRegex, WrittenOrdinalDayRegex ]
 MonthFrontSimpleCasesRegex: !nestedRegex
-  def: \b({RangePrefixRegex}\s+)?{MonthSuffixRegex}\s+((from)\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex})((\s+|\s*,\s*){YearRegex})?\b
-  references: [ MonthSuffixRegex, DayRegex, TillRegex, YearRegex, RangePrefixRegex ]
+  def: \b({RangePrefixRegex}\s+)?{MonthSuffixRegex}\s+((from)\s+)?({DayRegex}|{WrittenOrdinalDayRegex})\s*{TillRegex}\s*({DayRegex}|{WrittenOrdinalDayRegex})((\s+|\s*,\s*){YearRegex})?\b
+  references: [ MonthSuffixRegex, DayRegex, TillRegex, YearRegex, RangePrefixRegex, WrittenOrdinalDayRegex ]
 MonthFrontBetweenRegex: !nestedRegex
-  def: \b{MonthSuffixRegex}\s+(between\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})((\s+|\s*,\s*){YearRegex})?\b
-  references: [ MonthSuffixRegex, DayRegex, RangeConnectorRegex , YearRegex ]
+  def: \b{MonthSuffixRegex}\s+(between\s+)({DayRegex}|{WrittenOrdinalDayRegex})\s*{RangeConnectorRegex}\s*({DayRegex}|{WrittenOrdinalDayRegex})((\s+|\s*,\s*){YearRegex})?\b
+  references: [ MonthSuffixRegex, DayRegex, RangeConnectorRegex , YearRegex, WrittenOrdinalDayRegex ]
 BetweenRegex: !nestedRegex
-  def: \b(between\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*){YearRegex})?\b
-  references: [ DayRegex, RangeConnectorRegex , MonthSuffixRegex, YearRegex ]
+  def: \b(between\s+)({DayRegex}|{WrittenOrdinalDayRegex})\s*{RangeConnectorRegex}\s*({DayRegex}|{WrittenOrdinalDayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*){YearRegex})?\b
+  references: [ DayRegex, RangeConnectorRegex , MonthSuffixRegex, YearRegex, WrittenOrdinalDayRegex ]
 MonthWithYear: !nestedRegex
   def: \b((({WrittenMonthRegex}[\.]?|((the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|sixth|6th|seventh|7th|eighth|8th|ninth|9th|tenth|10th|eleventh|11th|twelfth|12th|last)\s+month(?=\s+(of|in))))((\s*)[/\\\-\.,]?(\s+(of|in))?(\s*)({YearRegex}|(?<order>following|next|last|this)\s+year)|\s+(of|in)\s+{TwoDigitYearRegex}))|(({YearRegex}|(?<order>following|next|last|this)\s+year)(\s*),?(\s*){WrittenMonthRegex}))\b
   references: [ WrittenMonthRegex, YearRegex, TwoDigitYearRegex ]

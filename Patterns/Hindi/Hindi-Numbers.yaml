@@ -125,7 +125,7 @@ DecimalUnitsWithRoundNumberRegex: !nestedRegex
 RoundNumberOrdinalRegex: !simpleRegex
   def: (?:(सौ|हजार|हज़ार|लाख|करोड़|अरब|खरब)(वां|वीं|वें|वाँ))
 OneToNineOrdinalRegex: !simpleRegex
-  def: (?:पहला|पहले|पहली|तीसरे|प्रथम|दूसरा|दूसरी|दूसरे|तिहाई|चौथाई|((पांच|पाँच|छठ|सात|आठ|नौ)(वां|वीं|वें|वाँ|वा)))
+  def: (?:पहला|(?<!से\s*)पहले|पहली|तीसरे|प्रथम|दूसरा|दूसरी|दूसरे|तिहाई|चौथाई|((पांच|पाँच|छठ|सात|आठ|नौ)(वां|वीं|वें|वाँ|वा)))
 TenToNineteenOrdinalRegex: !simpleRegex
   def: (?:(दस|ग्यारह|बारह|तेरह|चौदह|पंद्रह|सोलह|सत्रह|अठारह|उन्नीस)(वां|वीं|वें|वाँ))
 TwentyToTwentyNineOrdinalRegex: !simpleRegex
