@@ -35,6 +35,8 @@ class Culture:
 
     @staticmethod
     def map_to_nearest_language(culture_code: str):
+        if not culture_code:
+            return
         culture_code = culture_code.lower()
         supported_culture_codes = Culture._get_supported_culture_codes()
         if culture_code not in supported_culture_codes:
@@ -44,12 +46,13 @@ class Culture:
                 if supportedCultureCode.startswith(culture_prefix):
                     possible_cultures.append(supportedCultureCode)
 
-            if len(possible_cultures) > 1:
-                for code in possible_cultures:
-                    if '*' in code:
-                        culture_code = code
-            else:
-                culture_code = possible_cultures[0]
+            if possible_cultures:
+                if len(possible_cultures) > 1:
+                    for code in possible_cultures:
+                        if '*' in code:
+                            culture_code = code
+                else:
+                    culture_code = possible_cultures[0]
         return culture_code
 
 
