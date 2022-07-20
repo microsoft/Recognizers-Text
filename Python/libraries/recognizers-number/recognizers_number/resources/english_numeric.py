@@ -19,7 +19,7 @@ class EnglishNumeric:
     MultiDecimalSeparatorCulture = True
     NonStandardSeparatorVariants = [r'en-za', r'en-na', r'en-zw']
     RoundNumberIntegerRegex = f'(?:hundred|thousand|million|mln|billion|bln|trillion|tln|lakh|crore)s?'
-    ZeroToNineIntegerRegex = f'(?:three|seven|eight|four|five|zero|nine|one|two|six)'
+    ZeroToNineIntegerRegex = f'(?:three|seven|eight|four|five|zero|n[ao]ught|nine|one|two|six)'
     TwoToNineIntegerRegex = f'(?:three|seven|eight|four|five|nine|two|six)'
     NegativeNumberTermsRegex = f'(?<negTerm>(minus|negative)\\s+)'
     NegativeNumberSignRegex = f'^{NegativeNumberTermsRegex}.*'
@@ -120,6 +120,8 @@ class EnglishNumeric:
     DigitalNumberRegex = f'((?<=\\b)(hundred|thousand|[mb]illion|trillion|[mbt]ln|lakh|crore|(doz(en)?|dz)s?)(?=\\b))|((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))'
     CardinalNumberMap = dict([("a", 1),
                               ("zero", 0),
+                              ("naught", 0),
+                              ("nought", 0),
                               ("an", 1),
                               ("one", 1),
                               ("two", 2),
