@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Recognizers.Text.DataTypes.TimexExpression;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
@@ -32,61 +33,91 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (er.Type.Equals(ParserName, StringComparison.Ordinal))
             {
-                var innerResult = ParseEachUnit(er.Text);
+                var innerResult = ParseEachUnit(er.Text.Trim());
+                var innerResultTime = ParserTimeEveryday(er.Text.Trim(), refDate);
+                var innerResultDay = ParserDayEveryweek(er.Text.Trim(), refDate);
+                var innerResultNumber = ParserSingleNumbermonth(er.Text.Trim(), refDate);
 
-                if (!innerResult.Success)
+                if (innerResultTime.Success)
                 {
-                    innerResult = ParseEachDuration(er.Text, refDate);
+                    innerResult = innerResultTime;
+                }
+
+                if (innerResultDay.Success)
+                {
+                    innerResult = innerResultDay;
                 }
 
                 if (!innerResult.Success)
                 {
-                    innerResult = ParserTimeEveryday(er.Text, refDate);
+                    innerResult = ParseEachDuration(er.Text.Trim(), refDate);
+                }
+
+                if (!innerResult.Success)
+                {
+                    innerResult = ParserTimeEveryday(er.Text.Trim(), refDate);
                 }
 
                 // NOTE: Do not change the order of the following calls, due to type precedence
                 // datetimeperiod > dateperiod > timeperiod > datetime > date > time
                 if (!innerResult.Success)
                 {
-                    innerResult = ParseEach(config.DateTimePeriodExtractor, config.DateTimePeriodParser, er.Text, refDate);
+                    innerResult = ParseEach(config.DateTimePeriodExtractor, config.DateTimePeriodParser, er.Text.Trim(), refDate);
                 }
 
                 if (!innerResult.Success)
                 {
-                    innerResult = ParseEach(config.DatePeriodExtractor, config.DatePeriodParser, er.Text, refDate);
+                    innerResult = ParseEach(config.DatePeriodExtractor, config.DatePeriodParser, er.Text.Trim(), refDate);
                 }
 
                 if (!innerResult.Success)
                 {
-                    innerResult = ParseEach(config.TimePeriodExtractor, config.TimePeriodParser, er.Text, refDate);
+                    innerResult = ParseEach(config.TimePeriodExtractor, config.TimePeriodParser, er.Text.Trim(), refDate);
                 }
 
                 if (!innerResult.Success)
                 {
-                    innerResult = ParseEach(config.DateTimeExtractor, config.DateTimeParser, er.Text, refDate);
+                    innerResult = ParseEach(config.DateTimeExtractor, config.DateTimeParser, er.Text.Trim(), refDate);
                 }
 
                 if (!innerResult.Success)
                 {
-                    innerResult = ParseEach(config.DateExtractor, config.DateParser, er.Text, refDate);
+                    innerResult = ParseEach(config.DateExtractor, config.DateParser, er.Text.Trim(), refDate);
                 }
 
                 if (!innerResult.Success)
                 {
-                    innerResult = ParseEach(config.TimeExtractor, config.TimeParser, er.Text, refDate);
+                    innerResult = ParseEach(config.TimeExtractor, config.TimeParser, er.Text.Trim(), refDate);
+                }
+
+                if (innerResultDay.Success && !innerResult.Success)
+                {
+                    innerResult = innerResultDay;
+                }
+
+                if (innerResultNumber.Success && !innerResult.Success)
+                {
+                    innerResult = innerResultNumber;
                 }
 
                 if (innerResult.Success)
                 {
-                    innerResult.FutureResolution = new Dictionary<string, string>
+                    if ((config.Options & DateTimeOptions.TasksMode) != 0)
                     {
-                        { TimeTypeConstants.SET, (string)innerResult.FutureValue },
-                    };
+                        innerResult = TasksModeAddResolution(ref innerResult, er, refDate);
+                    }
+                    else
+                    {
+                        innerResult.FutureResolution = new Dictionary<string, string>
+                        {
+                            { TimeTypeConstants.SET, (string)innerResult.FutureValue },
+                        };
 
-                    innerResult.PastResolution = new Dictionary<string, string>
-                    {
-                        { TimeTypeConstants.SET, (string)innerResult.PastValue },
-                    };
+                        innerResult.PastResolution = new Dictionary<string, string>
+                        {
+                            { TimeTypeConstants.SET, (string)innerResult.PastValue },
+                        };
+                    }
 
                     value = innerResult;
                 }
@@ -116,19 +147,32 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new DateTimeResolutionResult();
 
-            var ers = this.config.DurationExtractor.Extract(text, refDate);
-
-            if (ers.Count != 1 || !string.IsNullOrWhiteSpace(text.Substring(ers[0].Start + ers[0].Length ?? 0)))
+            var match = config.SetEachRegex.Match(text);
+            if (!match.Success)
             {
                 return ret;
             }
 
-            var beforeStr = text.Substring(0, ers[0].Start ?? 0);
+            var trimmedText = text.Remove(match.Index, match.Length);
+
+            var ers = this.config.DurationExtractor.Extract(trimmedText, refDate);
+
+            if (ers.Count != 1 || !string.IsNullOrWhiteSpace(text.Substring(ers[0].Start + ers[0].Length + match.Index + match.Length ?? 0)))
+            {
+                return ret;
+            }
+
+            var beforeStr = text.Substring(0, ers[0].Start + match.Length + match.Index ?? 0);
             if (this.config.EachPrefixRegex.IsMatch(beforeStr))
             {
                 var pr = this.config.DurationParser.Parse(ers[0], DateObject.Now);
 
                 ret = SetHandler.ResolveSet(ref ret, pr.TimexStr);
+
+                if ((config.Options & DateTimeOptions.TasksMode) != 0)
+                {
+                    ret = TasksModeSetHandler.TasksModeResolveSet(ref ret, pr.TimexStr);
+                }
             }
 
             return ret;
@@ -149,6 +193,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 ret = SetHandler.ResolveSet(ref ret, timex);
+
+                if ((config.Options & DateTimeOptions.TasksMode) != 0)
+                {
+                    ret = TasksModeSetHandler.TasksModeResolveSet(ref ret, timex);
+                }
 
                 return ret;
             }
@@ -179,6 +228,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
 
                     ret = SetHandler.ResolveSet(ref ret, timex);
+
+                    if ((config.Options & DateTimeOptions.TasksMode) != 0)
+                    {
+                        ret = TasksModeSetHandler.TasksModeResolveSet(ref ret, timex);
+                    }
                 }
             }
 
@@ -190,6 +244,13 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ret = new DateTimeResolutionResult();
 
             var ers = this.config.TimeExtractor.Extract(text, refDate);
+
+            var ers1 = this.config.TimePeriodExtractor.Extract(text, refDate);
+
+            if (ers.Count == 0)
+            {
+                ers = ers1;
+            }
 
             if (ers.Count != 1)
             {
@@ -203,7 +264,120 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 var pr = this.config.TimeParser.Parse(ers[0], DateObject.Now);
 
+                if (pr.TimexStr.Equals(string.Empty))
+                {
+                    pr = this.config.TimePeriodParser.Parse(ers[0], DateObject.Now);
+                }
+
                 ret = SetHandler.ResolveSet(ref ret, pr.TimexStr);
+
+                if ((config.Options & DateTimeOptions.TasksMode) != 0)
+                {
+                    ret = TasksModeSetHandler.TasksModeResolveSet(ref ret, pr.TimexStr);
+                }
+
+            }
+
+            return ret;
+        }
+
+        private DateTimeResolutionResult ParserDayEveryweek(string text, DateObject refDate)
+        {
+            var ret = new DateTimeResolutionResult();
+
+            var ers = this.config.DateExtractor.Extract(text, refDate);
+
+            if (ers.Count != 1)
+            {
+                return ret;
+            }
+
+            var afterStr = text.Replace(ers[0].Text, string.Empty);
+            var timeErs = this.config.TimeExtractor.Extract(afterStr, refDate);
+            var timeErs1 = this.config.TimePeriodExtractor.Extract(afterStr, refDate);
+
+            if (timeErs.Count == 0)
+            {
+                timeErs = timeErs1;
+            }
+
+            var match = this.config.EachUnitRegex.Match(afterStr);
+            if (!match.Success)
+            {
+                match = this.config.PeriodicRegex.Match(text);
+            }
+
+            if (match.Success)
+            {
+                var pr = this.config.DateParser.Parse(ers[0], DateObject.Now);
+                var eachResult = ParseEachUnit(match.Value);
+
+                if (timeErs.Count > 0)
+                {
+                    var timePr = this.config.TimeParser.Parse(timeErs[0], DateObject.Now);
+                    ret = SetHandler.ResolveSet(ref ret, pr.TimexStr + timePr.TimexStr + eachResult.Timex);
+                    if ((config.Options & DateTimeOptions.TasksMode) != 0)
+                    {
+                        ret = TasksModeSetHandler.TasksModeResolveSet(ref ret, pr.TimexStr + timePr.TimexStr + eachResult.Timex);
+                    }
+
+                }
+                else
+                {
+                    ret = SetHandler.ResolveSet(ref ret, pr.TimexStr + eachResult.Timex);
+                    if ((config.Options & DateTimeOptions.TasksMode) != 0)
+                    {
+                        ret = TasksModeSetHandler.TasksModeResolveSet(ref ret, pr.TimexStr + eachResult.Timex);
+                    }
+                }
+            }
+
+            return ret;
+        }
+
+        private DateTimeResolutionResult ParserSingleNumbermonth(string text, DateObject refDate)
+        {
+            var ret = new DateTimeResolutionResult();
+
+            List<ExtractResult> ers = null;
+            var success = false;
+
+            // remove key words of set type from text
+            var match = config.SetEachRegex.Match(text);
+            if (match.Success)
+            {
+                var trimmedText = text.Replace(match.Value, "this ");
+
+                ers = this.config.DateExtractor.Extract(trimmedText, refDate);
+                if (ers.Count == 1 && ers.First().Length == trimmedText.Length)
+                {
+                    success = true;
+                }
+            }
+
+            if (success)
+            {
+                var eachMatch = this.config.EachUnitRegex.Match(text);
+                if (!eachMatch.Success)
+                {
+                    eachMatch = this.config.PeriodicRegex.Match(text);
+                }
+
+                if (eachMatch.Success)
+                {
+                    var pr = this.config.DateParser.Parse(ers[0], DateObject.Now);
+                    var eachResult = ParseEachUnit(eachMatch.Value);
+
+                    if ((config.Options & DateTimeOptions.TasksMode) != 0)
+                    {
+                        ret = TasksModeSetHandler.TasksModeResolveSet(ref ret, "XXXX-XX-" + pr.TimexStr.Substring(8) + eachResult.Timex, pr);
+                    }
+                    else
+                    {
+                        ret = SetHandler.ResolveSet(ref ret, "XXXX-XX-" + pr.TimexStr.Substring(8) + eachResult.Timex);
+
+                    }
+                }
             }
 
             return ret;
@@ -230,12 +404,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // remove suffix 's' and "on" if existed and re-try
-            match = this.config.SetWeekDayRegex.Match(text);
-            if (match.Success)
+            var match1 = this.config.SetWeekDayRegex.Match(text);
+            if (match1.Success)
             {
-                var trimmedText = text.Remove(match.Index, match.Length);
-
-                trimmedText = trimmedText.Insert(match.Index, config.WeekDayGroupMatchString(match));
+                var trimmedText = text.Remove(match1.Index, match1.Length);
+                trimmedText = trimmedText.Insert(match1.Index, config.WeekDayGroupMatchString(match1));
 
                 ers = extractor.Extract(trimmedText, refDate);
                 if (ers.Count == 1 && ers.First().Length == trimmedText.Length)
@@ -248,10 +421,219 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 var pr = parser.Parse(ers[0], refDate);
 
-                ret = SetHandler.ResolveSet(ref ret, pr.TimexStr);
+                if ((config.Options & DateTimeOptions.TasksMode) != 0)
+                {
+                    if (match.Groups["other"].Success)
+                    {
+                        pr.TimexStr = pr.TimexStr + "P2W";
+                    }
+
+                    if (match.Success && pr.Type.Equals(TimeTypeConstants.DATE) && !pr.TimexStr.StartsWith("XXXX-W"))
+                    {
+                        pr.TimexStr = pr.TimexStr + "P1Y";
+                    }
+
+                    ret = TasksModeSetHandler.TasksModeResolveSet(ref ret, pr.TimexStr, pr);
+
+                }
+                else
+                {
+                    ret = SetHandler.ResolveSet(ref ret, pr.TimexStr);
+                }
             }
 
             return ret;
+        }
+
+        private DateTimeResolutionResult TasksModeAddResolution(ref DateTimeResolutionResult result, ExtractResult er, DateObject refDate)
+        {
+            if (result.Timex.EndsWith("WE"))
+            {
+                var innerResult1 = ParseEach(config.DatePeriodExtractor, config.DatePeriodParser, er.Text, refDate);
+                if (innerResult1.FutureValue != null)
+                {
+                    if (refDate.DayOfWeek == DayOfWeek.Sunday)
+                    {
+                        result.FutureResolution = new Dictionary<string, string>
+                        {
+                            {
+                                TimeTypeConstants.DATE,
+                                DateTimeFormatUtil.FormatDate((DateObject)refDate)
+                            },
+                        };
+
+                        result.PastResolution = new Dictionary<string, string>
+                        {
+                            {
+                                TimeTypeConstants.DATE,
+                                DateTimeFormatUtil.FormatDate((DateObject)refDate)
+                            },
+                        };
+                    }
+                    else
+                    {
+                        result.FutureResolution = new Dictionary<string, string>
+                        {
+                            {
+                                TimeTypeConstants.DATE,
+                                DateTimeFormatUtil.FormatDate((DateObject)innerResult1.FutureValue)
+                            },
+                        };
+
+                        result.PastResolution = new Dictionary<string, string>
+                        {
+                            {
+                                TimeTypeConstants.DATE,
+                                DateTimeFormatUtil.FormatDate((DateObject)innerResult1.FutureValue)
+                            },
+                        };
+                    }
+                }
+                else
+                {
+                    result.FutureResolution = new Dictionary<string, string>
+                    {
+                        { TimeTypeConstants.SET, (string)result.FutureValue },
+                    };
+
+                    result.PastResolution = new Dictionary<string, string>
+                    {
+                        { TimeTypeConstants.SET, (string)result.PastValue },
+                    };
+                }
+            }
+            else if (result.Timex.EndsWith("WD"))
+            {
+                if (refDate.DayOfWeek == DayOfWeek.Saturday)
+                {
+                    result.FutureResolution = new Dictionary<string, string>
+                    {
+                        { TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject)refDate.AddDays(2)) },
+                    };
+
+                    result.PastResolution = new Dictionary<string, string>
+                    {
+                        { TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject)refDate.AddDays(2)) },
+                    };
+                }
+                else if (refDate.DayOfWeek == DayOfWeek.Sunday)
+                {
+                    result.FutureResolution = new Dictionary<string, string>
+                    {
+                        { TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject)refDate.AddDays(1)) },
+                    };
+
+                    result.PastResolution = new Dictionary<string, string>
+                    {
+                        { TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject)refDate.AddDays(1)) },
+                    };
+                }
+                else
+                {
+                    result.FutureResolution = new Dictionary<string, string>
+                    {
+                        { TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject)refDate) },
+                    };
+
+                    result.PastResolution = new Dictionary<string, string>
+                    {
+                        { TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject)refDate) },
+                    };
+                }
+            }
+            else if (result.Timex.StartsWith("P"))
+            {
+                result.FutureResolution = new Dictionary<string, string>
+                {
+                    { TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject)refDate) },
+                };
+
+                result.PastResolution = new Dictionary<string, string>
+                {
+                    { TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject)refDate) },
+                };
+            }
+            else if (result.Timex.StartsWith("XXXX-"))
+            {
+                var timexRes = TimexResolver.Resolve(new[] { result.Timex }, refDate);
+
+                string value = timexRes.Values[1].Value;
+
+                var resKey = TimeTypeConstants.DATETIME;
+
+                if (!result.Timex.Contains("T"))
+                {
+                    resKey = TimeTypeConstants.DATE;
+                }
+
+                var futureValue = refDate.AddDays(7);
+
+                if (DateTimeFormatUtil.FormatDate(futureValue).Equals(value.Substring(0, 10)) && result.Timex.StartsWith("XXXX-WXX-"))
+                {
+                    if (result.Timex.Contains("T"))
+                    {
+                        if (DateTimeFormatUtil.FormatTime(refDate).CompareTo(value.Substring(11)) <= 0)
+                        {
+                            value = DateTimeFormatUtil.FormatDate(refDate) + " " + value.Substring(11);
+                        }
+                    }
+                    else
+                    {
+                        value = DateTimeFormatUtil.FormatDate(refDate);
+                    }
+                }
+
+                result.FutureResolution = new Dictionary<string, string>
+                {
+                    { resKey, (string)value },
+                };
+
+                result.PastResolution = new Dictionary<string, string>
+                {
+                    { resKey, (string)value },
+                };
+            }
+            else if (result.Timex.StartsWith("T"))
+            {
+                var timexRes = TimexResolver.Resolve(new[] { result.Timex }, refDate);
+
+                string value = timexRes.Values[0].Start;
+                if (value == null)
+                {
+                    value = timexRes.Values[0].Value;
+                }
+
+                DateObject resDate = refDate;
+                if (DateTimeFormatUtil.FormatTime(resDate).CompareTo(value) > 0)
+                {
+                    resDate = resDate.AddDays(1);
+                }
+
+                result.FutureResolution = new Dictionary<string, string>
+                {
+                    { TimeTypeConstants.DATETIME, DateTimeFormatUtil.FormatDate((DateObject)resDate) + " " + (string)value },
+                };
+
+                result.PastResolution = new Dictionary<string, string>
+                {
+                    { TimeTypeConstants.DATETIME, DateTimeFormatUtil.FormatDate((DateObject)resDate) + " " + (string)value },
+                };
+            }
+            else
+            {
+                result.FutureResolution = new Dictionary<string, string>
+                {
+                    { TimeTypeConstants.SET, (string)result.FutureValue },
+                };
+
+                result.PastResolution = new Dictionary<string, string>
+                {
+                    { TimeTypeConstants.SET, (string)result.PastValue },
+                };
+
+            }
+
+            return result;
         }
     }
 }

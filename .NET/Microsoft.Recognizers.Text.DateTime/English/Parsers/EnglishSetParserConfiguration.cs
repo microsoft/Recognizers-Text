@@ -38,6 +38,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         private static readonly Regex YearTypeRegex =
             new Regex(DateTimeDefinitions.YearTypeRegex, RegexFlags);
 
+        private static readonly Regex FortNightTypeRegex =
+            new Regex(DateTimeDefinitions.FortNightTypeRegex, RegexFlags);
+
+        private static readonly Regex WeekDayTypeRegex =
+           new Regex(DateTimeDefinitions.WeekDayTypeRegex, RegexFlags);
+
         public EnglishSetParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
         {
@@ -125,7 +131,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 multiplier = 0.5f;
             }
 
-            if (DayTypeRegex.IsMatch(trimmedText))
+            if (WeekDayTypeRegex.IsMatch(trimmedText))
+            {
+                durationType = "WD";
+            }
+            else if (DayTypeRegex.IsMatch(trimmedText))
             {
                 durationType = "D";
             }
@@ -136,6 +146,11 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             else if (WeekendTypeRegex.IsMatch(trimmedText))
             {
                 durationType = "WE";
+            }
+            else if (FortNightTypeRegex.IsMatch(trimmedText))
+            {
+                durationLength = 2;
+                durationType = "W";
             }
             else if (MonthTypeRegex.IsMatch(trimmedText))
             {
