@@ -55,7 +55,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
             DurationParser = new BaseDurationParser(new PortugueseDurationParserConfiguration(this));
             DateParser = new BaseDateParser(new PortugueseDateParserConfiguration(this));
-            HolidaytimeParser = new BaseHolidayParser(new PortugueseHolidayParserConfiguration(this));
+            HolidayTimeParser = new BaseHolidayParser(new PortugueseHolidayParserConfiguration(this));
             TimeParser = new BaseTimeParser(new PortugueseTimeParserConfiguration(this));
             DateTimeParser = new BaseDateTimeParser(new PortugueseDateTimeParserConfiguration(this));
             DatePeriodParser = new BaseDatePeriodParser(new PortugueseDatePeriodParserConfiguration(this));

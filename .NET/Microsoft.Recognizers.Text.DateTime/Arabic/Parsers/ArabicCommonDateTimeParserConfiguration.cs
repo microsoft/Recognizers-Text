@@ -57,7 +57,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Arabic
 
             DurationParser = new BaseDurationParser(new ArabicDurationParserConfiguration(this));
             DateParser = new BaseDateParser(new ArabicDateParserConfiguration(this));
-            HolidaytimeParser = new BaseHolidayParser(new ArabicHolidayParserConfiguration(this));
+            HolidayTimeParser = new BaseHolidayParser(new ArabicHolidayParserConfiguration(this));
             TimeParser = new TimeParser(new ArabicTimeParserConfiguration(this));
             DateTimeParser = new BaseDateTimeParser(new ArabicDateTimeParserConfiguration(this));
             DatePeriodParser = new BaseDatePeriodParser(new ArabicDatePeriodParserConfiguration(this));

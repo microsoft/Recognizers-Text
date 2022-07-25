@@ -465,7 +465,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var pr = this.Config.DateParser.Parse(ers[0], referenceTime);
                 if (pr.Value == null && ((Config.Options & DateTimeOptions.TasksMode) != 0))
                 {
-                    pr = this.Config.HolidaytimeParser.Parse(ers[0], referenceTime);
+                    pr = this.Config.HolidayTimeParser.Parse(ers[0], referenceTime);
                 }
 
                 var futureDate = (DateObject)((DateTimeResolutionResult)pr.Value).FutureValue;
@@ -549,7 +549,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                         if (((Config.Options & DateTimeOptions.TasksMode) != 0) && (datePr.Value == null))
                         {
-                            datePr = this.Config.HolidaytimeParser.Parse(dateEr, referenceTime);
+                            datePr = this.Config.HolidayTimeParser.Parse(dateEr, referenceTime);
                         }
 
                         var timePr = this.Config.TimeParser.Parse(timeEr, referenceTime);
@@ -636,7 +636,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     pr = this.Config.DateParser.Parse(dateResult.Last(), referenceTime);
                     if ((pr.Value == null) && ((Config.Options & DateTimeOptions.TasksMode) != 0))
                     {
-                        pr = this.Config.HolidaytimeParser.Parse(dateResult.Last(), referenceTime);
+                        pr = this.Config.HolidayTimeParser.Parse(dateResult.Last(), referenceTime);
                     }
                 }
 
@@ -651,7 +651,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         pr = this.Config.DateParser.Parse(dateResult.First(), referenceTime);
                         if ((pr.Value == null) && ((Config.Options & DateTimeOptions.TasksMode) != 0))
                         {
-                            pr = this.Config.HolidaytimeParser.Parse(dateResult.First(), referenceTime);
+                            pr = this.Config.HolidayTimeParser.Parse(dateResult.First(), referenceTime);
                         }
                     }
                 }
@@ -765,7 +765,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         var pr = this.Config.DateParser.Parse(dateResult[0], referenceTime);
                         if ((pr.Value == null) && ((Config.Options & DateTimeOptions.TasksMode) != 0))
                         {
-                            pr = this.Config.HolidaytimeParser.Parse(dateResult[0], referenceTime);
+                            pr = this.Config.HolidayTimeParser.Parse(dateResult[0], referenceTime);
                         }
 
                         if (pr.Value != null)
@@ -883,7 +883,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var pr = this.Config.DateParser.Parse(dateExtractResult[0], referenceTime);
                     if (((Config.Options & DateTimeOptions.TasksMode) != 0) && (pr.Value == null))
                     {
-                        pr = this.Config.HolidaytimeParser.Parse(dateExtractResult[0], referenceTime);
+                        pr = this.Config.HolidayTimeParser.Parse(dateExtractResult[0], referenceTime);
                     }
 
                     if (pr.Value != null)

@@ -55,7 +55,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             // DurationParser should be assigned first, as DateParser would reference the DurationParser
             DurationParser = new BaseDurationParser(new FrenchDurationParserConfiguration(this));
             DateParser = new BaseDateParser(new FrenchDateParserConfiguration(this));
-            HolidaytimeParser = new BaseHolidayParser(new FrenchHolidayParserConfiguration(this));
+            HolidayTimeParser = new BaseHolidayParser(new FrenchHolidayParserConfiguration(this));
             TimeParser = new BaseTimeParser(new FrenchTimeParserConfiguration(this));
             DateTimeParser = new BaseDateTimeParser(new FrenchDateTimeParserConfiguration(this));
             DatePeriodParser = new BaseDatePeriodParser(new FrenchDatePeriodParserConfiguration(this));

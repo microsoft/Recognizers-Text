@@ -49,7 +49,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             DurationParser = config.DurationParser;
             TimeZoneParser = config.TimeZoneParser;
             HolidayExtractor = config.HolidayExtractor;
-            HolidaytimeParser = config.HolidaytimeParser;
+            HolidayTimeParser = config.HolidayTimeParser;
 
             PureNumberFromToRegex = SpanishTimePeriodExtractorConfiguration.PureNumFromTo;
             HyphenDateRegex = SpanishDateTimePeriodExtractorConfiguration.HyphenDateRegex;
@@ -151,7 +151,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IDateTimeExtractor HolidayExtractor { get; }
 
-        public IDateTimeParser HolidaytimeParser { get; }
+        public IDateTimeParser HolidayTimeParser { get; }
 
         public bool GetMatchedTimeRange(string text, out string todSymbol, out int beginHour, out int endHour, out int endMin)
         {

@@ -77,7 +77,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IDateTimeExtractor HolidayExtractor { get; }
 
-        IDateTimeParser HolidaytimeParser { get; }
+        IDateTimeParser HolidayTimeParser { get; }
 
     }
 }

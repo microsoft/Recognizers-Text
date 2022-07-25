@@ -45,7 +45,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             DateTimeParser = config.DateTimeParser;
             TimeZoneParser = config.TimeZoneParser;
             HolidayExtractor = config.HolidayExtractor;
-            HolidaytimeParser = config.HolidaytimeParser;
+            HolidayTimeParser = config.HolidayTimeParser;
 
             PureNumberFromToRegex = EnglishTimePeriodExtractorConfiguration.PureNumFromTo;
             HyphenDateRegex = EnglishDateTimePeriodExtractorConfiguration.HyphenDateRegex;
@@ -147,7 +147,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public IDateTimeExtractor HolidayExtractor { get; }
 
-        public IDateTimeParser HolidaytimeParser { get; }
+        public IDateTimeParser HolidayTimeParser { get; }
 
         // @TODO Move time range resolution to common policy
 

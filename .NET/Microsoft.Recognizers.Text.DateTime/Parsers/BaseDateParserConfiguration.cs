@@ -83,7 +83,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public virtual IDateTimeUtilityConfiguration UtilityConfiguration { get; protected set; }
 
-        public virtual IDateTimeParser HolidaytimeParser { get; protected set; }
+        public virtual IDateTimeParser HolidayTimeParser { get; protected set; }
 
     }
 }

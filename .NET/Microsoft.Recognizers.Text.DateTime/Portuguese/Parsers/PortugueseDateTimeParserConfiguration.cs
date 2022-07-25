@@ -25,7 +25,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             DateParser = config.DateParser;
             TimeParser = config.TimeParser;
             HolidayExtractor = config.HolidayExtractor;
-            HolidaytimeParser = config.HolidaytimeParser;
+            HolidayTimeParser = config.HolidayTimeParser;
 
             NowRegex = PortugueseDateTimeExtractorConfiguration.NowRegex;
             AMTimeRegex = new Regex(DateTimeDefinitions.AmTimeRegex, RegexFlags);
@@ -101,7 +101,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public IDateTimeExtractor HolidayExtractor { get; }
 
-        public IDateTimeParser HolidaytimeParser { get; }
+        public IDateTimeParser HolidayTimeParser { get; }
 
         public int GetHour(string text, int hour)
         {

@@ -57,7 +57,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
             DurationParser = new BaseDurationParser(new EnglishDurationParserConfiguration(this));
             DateParser = new BaseDateParser(new EnglishDateParserConfiguration(this));
-            HolidaytimeParser = new BaseHolidayParser(new EnglishHolidayParserConfiguration(this));
+            HolidayTimeParser = new BaseHolidayParser(new EnglishHolidayParserConfiguration(this));
             TimeParser = new TimeParser(new EnglishTimeParserConfiguration(this));
             DateTimeParser = new BaseDateTimeParser(new EnglishDateTimeParserConfiguration(this));
             DatePeriodParser = new BaseDatePeriodParser(new EnglishDatePeriodParserConfiguration(this));

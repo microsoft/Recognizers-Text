@@ -55,7 +55,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
             DurationParser = new BaseDurationParser(new SpanishDurationParserConfiguration(this));
             DateParser = new BaseDateParser(new SpanishDateParserConfiguration(this));
-            HolidaytimeParser = new BaseHolidayParser(new SpanishHolidayParserConfiguration(this));
+            HolidayTimeParser = new BaseHolidayParser(new SpanishHolidayParserConfiguration(this));
             TimeParser = new BaseTimeParser(new SpanishTimeParserConfiguration(this));
             DateTimeParser = new BaseDateTimeParser(new SpanishDateTimeParserConfiguration(this));
             DatePeriodParser = new BaseDatePeriodParser(new SpanishDatePeriodParserConfiguration(this));

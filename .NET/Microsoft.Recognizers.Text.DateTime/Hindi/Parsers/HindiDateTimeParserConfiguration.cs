@@ -45,7 +45,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
             DateParser = config.DateParser;
             TimeParser = config.TimeParser;
             HolidayExtractor = config.HolidayExtractor;
-            HolidaytimeParser = config.HolidaytimeParser;
+            HolidayTimeParser = config.HolidayTimeParser;
 
             NowRegex = HindiDateTimeExtractorConfiguration.NowRegex;
 
@@ -124,7 +124,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
 
         public IDateTimeExtractor HolidayExtractor { get; }
 
-        public IDateTimeParser HolidaytimeParser { get; }
+        public IDateTimeParser HolidayTimeParser { get; }
 
         public int GetHour(string text, int hour)
         {

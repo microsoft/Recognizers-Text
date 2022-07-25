@@ -30,7 +30,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IDateTimeParser DateParser { get; }
 
-        IDateTimeParser HolidaytimeParser { get; }
+        IDateTimeParser HolidayTimeParser { get; }
 
         IDateTimeParser TimeParser { get; }
 

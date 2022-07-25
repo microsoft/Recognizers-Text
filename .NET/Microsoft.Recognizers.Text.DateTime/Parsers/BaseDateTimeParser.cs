@@ -374,7 +374,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return ret;
             }
 
-            var pr1 = this.config.HolidaytimeParser.Parse(er1[0], referenceTime.Date);
+            var pr1 = this.config.HolidayTimeParser.Parse(er1[0], referenceTime.Date);
 
             var pr2 = this.config.TimeParser.Parse(er2[correctTimeIdx], referenceTime);
             if (pr1.Value == null || pr2.Value == null)

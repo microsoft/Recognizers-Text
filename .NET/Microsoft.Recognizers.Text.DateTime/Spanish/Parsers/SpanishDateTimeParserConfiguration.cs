@@ -26,7 +26,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             DateParser = config.DateParser;
             TimeParser = config.TimeParser;
             HolidayExtractor = config.HolidayExtractor;
-            HolidaytimeParser = config.HolidaytimeParser;
+            HolidayTimeParser = config.HolidayTimeParser;
 
             NowRegex = SpanishDateTimeExtractorConfiguration.NowRegex;
 
@@ -123,7 +123,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IDateTimeExtractor HolidayExtractor { get; }
 
-        public IDateTimeParser HolidaytimeParser { get; }
+        public IDateTimeParser HolidayTimeParser { get; }
 
         public int GetHour(string text, int hour)
         {

@@ -23,7 +23,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IDateTimeParser TimeParser { get; }
 
-        IDateTimeParser HolidaytimeParser { get; }
+        IDateTimeParser HolidayTimeParser { get; }
 
         IExtractor CardinalExtractor { get; }
 

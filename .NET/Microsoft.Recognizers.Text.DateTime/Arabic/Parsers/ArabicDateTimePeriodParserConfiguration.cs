@@ -46,7 +46,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Arabic
             TimeZoneParser = config.TimeZoneParser;
 
             HolidayExtractor = config.HolidayExtractor;
-            HolidaytimeParser = config.HolidaytimeParser;
+            HolidayTimeParser = config.HolidayTimeParser;
 
             PureNumberFromToRegex = ArabicTimePeriodExtractorConfiguration.PureNumFromTo;
             HyphenDateRegex = ArabicDateTimePeriodExtractorConfiguration.HyphenDateRegex;
@@ -148,7 +148,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Arabic
 
         public IDateTimeExtractor HolidayExtractor { get; }
 
-        public IDateTimeParser HolidaytimeParser { get; }
+        public IDateTimeParser HolidayTimeParser { get; }
 
         // @TODO Move time range resolution to common policy
 
