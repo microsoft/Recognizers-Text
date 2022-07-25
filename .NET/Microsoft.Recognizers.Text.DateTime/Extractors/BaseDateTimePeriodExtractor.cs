@@ -35,8 +35,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             var dateErs = config.SingleDateExtractor.Extract(text, reference);
 
             // adding support for merging holiday dates with timerange references.
-            var holidates = config.SingleHolidayExtractor.Extract(text, reference);
-            dateErs.AddRange(holidates);
+
+            if ((config.Options & DateTimeOptions.TasksMode) != 0)
+            {
+                var holidates = config.SingleHolidayExtractor.Extract(text, reference);
+                dateErs.AddRange(holidates);
+            }
 
             var timeErs = config.SingleTimeExtractor.Extract(text, reference);
 
@@ -226,9 +230,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                         var ers = this.config.SingleDateExtractor.Extract(beforeStr, reference);
 
                         // adding support for merging holiday with timeperiod
-
-                        var holidates = config.SingleHolidayExtractor.Extract(beforeStr, reference);
-                        ers.AddRange(holidates);
+                        if ((config.Options & DateTimeOptions.TasksMode) != 0)
+                        {
+                            var holidates = config.SingleHolidayExtractor.Extract(beforeStr, reference);
+                            ers.AddRange(holidates);
+                        }
 
                         if (ers.Count > 0)
                         {
@@ -251,8 +257,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                         var er = this.config.SingleDateExtractor.Extract(followedStr, reference);
 
                         // check if follwed by holiday?
-                        var holidates = config.SingleHolidayExtractor.Extract(followedStr, reference);
-                        er.AddRange(holidates);
+                        if ((config.Options & DateTimeOptions.TasksMode) != 0)
+                        {
+                            var holidates = config.SingleHolidayExtractor.Extract(followedStr, reference);
+                            er.AddRange(holidates);
+                        }
 
                         if (er.Count > 0)
                         {

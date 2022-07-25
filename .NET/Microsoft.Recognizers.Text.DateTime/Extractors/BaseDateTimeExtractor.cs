@@ -30,7 +30,12 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var tokens = new List<Token>();
             tokens.AddRange(MergeDateAndTime(text, reference));
-            tokens.AddRange(MergeHolidayAndTime(text, reference));
+
+            if ((config.Options & DateTimeOptions.TasksMode) != 0)
+            {
+                tokens.AddRange(MergeHolidayAndTime(text, reference));
+            }
+
             tokens.AddRange(BasicRegexMatch(text));
             tokens.AddRange(TimeOfTodayBefore(text, reference));
             tokens.AddRange(TimeOfTodayAfter(text, reference));

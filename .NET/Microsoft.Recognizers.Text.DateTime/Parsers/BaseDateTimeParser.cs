@@ -34,7 +34,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (er.Type.Equals(ParserName, StringComparison.Ordinal))
             {
                 var innerResult = MergeDateAndTime(er.Text, referenceTime);
-                if (!innerResult.Success)
+                if ((!innerResult.Success) && ((config.Options & DateTimeOptions.TasksMode) != 0))
                 {
                     innerResult = MergeHolidayAndTime(er.Text, referenceTime);
                 }

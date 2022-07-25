@@ -303,7 +303,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 var ers = this.Config.DateExtractor.Extract(beforeStr + ' ' + afterStr, referenceTime);
 
-                ers.AddRange(this.Config.HolidayExtractor.Extract(beforeStr + ' ' + afterStr, referenceTime));
+                if ((Config.Options & DateTimeOptions.TasksMode) != 0)
+                {
+                    ers.AddRange(this.Config.HolidayExtractor.Extract(beforeStr + ' ' + afterStr, referenceTime));
+                }
 
                 // Consider cases with specific time of day e.g. "between 7 and 9:30 last night"
                 if (ers.Count == 0)
@@ -399,7 +402,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                     if (!valid)
                     {
                         ers = this.Config.DateExtractor.Extract(afterStr, referenceTime);
-                        ers.AddRange(this.Config.HolidayExtractor.Extract(beforeStr + ' ' + afterStr, referenceTime));
+                        if ((Config.Options & DateTimeOptions.TasksMode) != 0)
+                        {
+                            ers.AddRange(this.Config.HolidayExtractor.Extract(beforeStr + ' ' + afterStr, referenceTime));
+                        }
 
                         if (ers.Count == 0 || ers[0].Length != afterStr.Length)
                         {
@@ -457,7 +463,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 var pr = this.Config.DateParser.Parse(ers[0], referenceTime);
-                if (pr.Value == null)
+                if (pr.Value == null && ((Config.Options & DateTimeOptions.TasksMode) != 0))
                 {
                     pr = this.Config.HolidaytimeParser.Parse(ers[0], referenceTime);
                 }
@@ -512,7 +518,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             var dateEr = this.Config.DateExtractor.Extract(text, referenceTime).FirstOrDefault();
 
-            if (dateEr == null)
+            if (dateEr == null && ((Config.Options & DateTimeOptions.TasksMode) != 0))
             {
                 dateEr = this.Config.HolidayExtractor.Extract(text, referenceTime).FirstOrDefault();
             }
@@ -541,7 +547,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         var datePr = this.Config.DateParser.Parse(dateEr, referenceTime);
 
-                        if (datePr.Value == null)
+                        if (((Config.Options & DateTimeOptions.TasksMode) != 0) && (datePr.Value == null))
                         {
                             datePr = this.Config.HolidaytimeParser.Parse(dateEr, referenceTime);
                         }
@@ -615,7 +621,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             var dateResult = this.Config.DateExtractor.Extract(text, referenceTime);
 
-            dateResult.AddRange(this.Config.HolidayExtractor.Extract(text, referenceTime));
+            if ((Config.Options & DateTimeOptions.TasksMode) != 0)
+            {
+                dateResult.AddRange(this.Config.HolidayExtractor.Extract(text, referenceTime));
+            }
 
             if (dateResult.Count > 0)
             {
@@ -625,7 +634,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (match.Success)
                 {
                     pr = this.Config.DateParser.Parse(dateResult.Last(), referenceTime);
-                    if (pr.Value == null)
+                    if ((pr.Value == null) && ((Config.Options & DateTimeOptions.TasksMode) != 0))
                     {
                         pr = this.Config.HolidaytimeParser.Parse(dateResult.Last(), referenceTime);
                     }
@@ -640,7 +649,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     if (match.Success)
                     {
                         pr = this.Config.DateParser.Parse(dateResult.First(), referenceTime);
-                        if (pr.Value == null)
+                        if ((pr.Value == null) && ((Config.Options & DateTimeOptions.TasksMode) != 0))
                         {
                             pr = this.Config.HolidaytimeParser.Parse(dateResult.First(), referenceTime);
                         }
@@ -717,14 +726,20 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     var dateResult = this.Config.DateExtractor.Extract(trimmedText.Replace(ers[0].Text, string.Empty), referenceTime);
 
-                    dateResult.AddRange(this.Config.HolidayExtractor.Extract(trimmedText.Replace(ers[0].Text, string.Empty), referenceTime));
+                    if ((Config.Options & DateTimeOptions.TasksMode) != 0)
+                    {
+                        dateResult.AddRange(this.Config.HolidayExtractor.Extract(trimmedText.Replace(ers[0].Text, string.Empty), referenceTime));
+                    }
 
                     // Try to add TokenBeforeDate if no result is found because it is not always included in the DateTimePeriod extraction
                     // (e.g. "I'll leave on the 17 from 2 to 4 pm" -> "the 17 from 2 to 4 pm")
                     if (dateResult.Count == 0)
                     {
                         dateResult = this.Config.DateExtractor.Extract(Config.TokenBeforeDate + trimmedText.Substring(0, (int)ers[0].Start), referenceTime);
-                        dateResult.AddRange(this.Config.HolidayExtractor.Extract(Config.TokenBeforeDate + trimmedText.Substring(0, (int)ers[0].Start), referenceTime));
+                        if ((Config.Options & DateTimeOptions.TasksMode) != 0)
+                        {
+                            dateResult.AddRange(this.Config.HolidayExtractor.Extract(Config.TokenBeforeDate + trimmedText.Substring(0, (int)ers[0].Start), referenceTime));
+                        }
                     }
 
                     // check if TokenBeforeDate and TokenBeforeTime are null
@@ -748,7 +763,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         DateObject pastTime;
 
                         var pr = this.Config.DateParser.Parse(dateResult[0], referenceTime);
-                        if (pr.Value == null)
+                        if ((pr.Value == null) && ((Config.Options & DateTimeOptions.TasksMode) != 0))
                         {
                             pr = this.Config.HolidaytimeParser.Parse(dateResult[0], referenceTime);
                         }
@@ -846,21 +861,27 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 // Parse following date
                 var dateExtractResult = this.Config.DateExtractor.Extract(trimmedText.Replace(match.Value, string.Empty), referenceTime);
-                dateExtractResult.AddRange(this.Config.HolidayExtractor.Extract(trimmedText.Replace(match.Value, string.Empty), referenceTime));
+                if ((Config.Options & DateTimeOptions.TasksMode) != 0)
+                {
+                    dateExtractResult.AddRange(this.Config.HolidayExtractor.Extract(trimmedText.Replace(match.Value, string.Empty), referenceTime));
+                }
 
                 // Try to add TokenBeforeDate if no result is found because it is not always included in the DateTimePeriod extraction
                 // (e.g. "I'll leave on the 17 from 2 to 4 pm" -> "the 17 from 2 to 4 pm")
                 if (dateExtractResult.Count == 0)
                 {
                     dateExtractResult = this.Config.DateExtractor.Extract(Config.TokenBeforeDate + trimmedText.Substring(0, match.Index), referenceTime);
-                    dateExtractResult.AddRange(this.Config.HolidayExtractor.Extract(Config.TokenBeforeDate + trimmedText.Substring(0, match.Index), referenceTime));
+                    if ((Config.Options & DateTimeOptions.TasksMode) != 0)
+                    {
+                        dateExtractResult.AddRange(this.Config.HolidayExtractor.Extract(Config.TokenBeforeDate + trimmedText.Substring(0, match.Index), referenceTime));
+                    }
                 }
 
                 DateObject futureDate, pastDate;
                 if (dateExtractResult.Count > 0)
                 {
                     var pr = this.Config.DateParser.Parse(dateExtractResult[0], referenceTime);
-                    if (pr.Value == null)
+                    if (((Config.Options & DateTimeOptions.TasksMode) != 0) && (pr.Value == null))
                     {
                         pr = this.Config.HolidaytimeParser.Parse(dateExtractResult[0], referenceTime);
                     }
