@@ -88,5 +88,197 @@
     },
     "NotSupported": "javascript, python, java",
     "Results": []
+  },
+  {
+    "Input": "The event starts on Christmas early morning at 9:00",
+    "Context": {
+      "ReferenceDateTime": "2022-06-22T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "christmas early morning at 9:00",
+        "Start": 20,
+        "End": 50,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-12-25T09:00",
+              "type": "datetime",
+              "value": "2021-12-25 09:00:00"
+            },
+            {
+              "timex": "XXXX-12-25T09:00",
+              "type": "datetime",
+              "value": "2022-12-25 09:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The event starts on Christmas at 9:00 early morning",
+    "Context": {
+      "ReferenceDateTime": "2022-08-05T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "christmas at 9:00 early morning",
+        "Start": 20,
+        "End": 50,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-12-25T09:00",
+              "type": "datetime",
+              "value": "2021-12-25 09:00:00"
+            },
+            {
+              "timex": "XXXX-12-25T09:00",
+              "type": "datetime",
+              "value": "2022-12-25 09:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "will prepare cake on christmas at 5.",
+    "Context": {
+      "ReferenceDateTime": "2022-04-29T00:00:00"
+    },
+    "NotSupported": "python, java, javascript",
+    "Results": [
+      {
+        "Text": "christmas at 5",
+        "Start": 21,
+        "End": 34,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-12-25T05",
+              "type": "datetime",
+              "value": "2021-12-25 05:00:00"
+            },
+            {
+              "timex": "XXXX-12-25T05",
+              "type": "datetime",
+              "value": "2022-12-25 05:00:00"
+            },
+            {
+              "timex": "XXXX-12-25T17",
+              "type": "datetime",
+              "value": "2021-12-25 17:00:00"
+            },
+            {
+              "timex": "XXXX-12-25T17",
+              "type": "datetime",
+              "value": "2022-12-25 17:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "will prepare cake on easter after 5pm",
+    "Context": {
+      "ReferenceDateTime": "2022-04-29T00:00:00"
+    },
+    "NotSupported": "python, java, javascript",
+    "Results": [
+      {
+        "Text": "easter after 5pm",
+        "Start": 21,
+        "End": 36,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-04-17T17",
+              "Mod": "after",
+              "type": "datetimerange",
+              "start": "2022-04-17 17:00:00"
+            },
+            {
+              "timex": "XXXX-04-17T17",
+              "Mod": "after",
+              "type": "datetimerange",
+              "start": "2023-04-09 17:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "will decorate home between 5 to 7pm on new year.",
+    "Context": {
+      "ReferenceDateTime": "2022-04-29T00:00:00"
+    },
+    "NotSupported": "python, java, javascript",
+    "Results": [
+      {
+        "Text": "between 5 to 7pm on new year",
+        "Start": 19,
+        "End": 46,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-01-01T17,XXXX-01-01T19,PT2H)",
+              "type": "datetimerange",
+              "start": "2022-01-01 17:00:00",
+              "end": "2022-01-01 19:00:00"
+            },
+            {
+              "timex": "(XXXX-01-01T17,XXXX-01-01T19,PT2H)",
+              "type": "datetimerange",
+              "start": "2023-01-01 17:00:00",
+              "end": "2023-01-01 19:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "will wake up early morning on earth day.",
+    "Context": {
+      "ReferenceDateTime": "2022-04-29T00:00:00"
+    },
+    "NotSupported": "python, java, javascript",
+    "Results": [
+      {
+        "Text": "early morning on earth day",
+        "Start": 13,
+        "End": 38,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-04-22TMO",
+              "Mod": "start",
+              "type": "datetimerange",
+              "start": "2022-04-22 08:00:00",
+              "end": "2022-04-22 10:00:00"
+            },
+            {
+              "timex": "XXXX-04-22TMO",
+              "Mod": "start",
+              "type": "datetimerange",
+              "start": "2023-04-22 08:00:00",
+              "end": "2023-04-22 10:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
