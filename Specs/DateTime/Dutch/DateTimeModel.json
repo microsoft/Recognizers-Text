@@ -18863,21 +18863,36 @@
     "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "kerstavond om 18.00",
+        "Text": "kerstavond",
         "Start": 25,
-        "End": 43,
-        "TypeName": "datetimeV2.datetime",
+        "End": 34,
+        "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
             {
-              "timex": "XXXX-12-24T18:00",
-              "type": "datetime",
-              "value": "2018-12-24 18:00:00"
+              "timex": "XXXX-12-24",
+              "type": "date",
+              "value": "2018-12-24"
             },
             {
-              "timex": "XXXX-12-24T18:00",
-              "type": "datetime",
-              "value": "2019-12-24 18:00:00"
+              "timex": "XXXX-12-24",
+              "type": "date",
+              "value": "2019-12-24"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "om 18.00",
+        "Start": 36,
+        "End": 43,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T18:00",
+              "type": "time",
+              "value": "18:00:00"
             }
           ]
         }

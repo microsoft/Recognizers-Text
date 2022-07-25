@@ -2805,7 +2805,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-05T00:00:00"
     },
-    "NotSupported": "python, dotnet",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "ostermontag",
@@ -2854,7 +2854,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-05T00:00:00"
     },
-    "NotSupported": "python, dotnet",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "heiligabend",
@@ -4997,21 +4997,36 @@
     "NotSupported": "java, javascript, python",
     "Results": [
       {
-        "Text": "weihnachten frühmorgens um 8:00",
+        "Text": "weihnachten",
         "Start": 29,
-        "End": 59,
-        "TypeName": "datetimeV2.datetime",
+        "End": 39,
+        "TypeName": "datetimeV2.date",
         "Resolution": {
           "values": [
             {
-              "timex": "XXXX-12-25T08:00",
-              "type": "datetime",
-              "value": "2018-12-25 08:00:00"
+              "timex": "XXXX-12-25",
+              "type": "date",
+              "value": "2018-12-25"
             },
             {
-              "timex": "XXXX-12-25T08:00",
-              "type": "datetime",
-              "value": "2019-12-25 08:00:00"
+              "timex": "XXXX-12-25",
+              "type": "date",
+              "value": "2019-12-25"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "frühmorgens um 8:00",
+        "Start": 41,
+        "End": 59,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T08:00",
+              "type": "time",
+              "value": "08:00:00"
             }
           ]
         }
