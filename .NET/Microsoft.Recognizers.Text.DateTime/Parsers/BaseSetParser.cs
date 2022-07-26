@@ -315,7 +315,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (timeErs.Count > 0)
                 {
                     var timePr = this.config.TimeParser.Parse(timeErs[0], DateObject.Now);
-                    ret = SetHandler.ResolveSet(ref ret, pr.TimexStr + timePr.TimexStr + eachResult.Timex);
+                    ret = SetHandler.ResolveSet(ref ret, pr.TimexStr + timePr.TimexStr);
                     if ((config.Options & DateTimeOptions.TasksMode) != 0)
                     {
                         ret = TasksModeSetHandler.TasksModeResolveSet(ref ret, pr.TimexStr + timePr.TimexStr + eachResult.Timex);
@@ -324,7 +324,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
                 else
                 {
-                    ret = SetHandler.ResolveSet(ref ret, pr.TimexStr + eachResult.Timex);
+                    ret = SetHandler.ResolveSet(ref ret, pr.TimexStr);
                     if ((config.Options & DateTimeOptions.TasksMode) != 0)
                     {
                         ret = TasksModeSetHandler.TasksModeResolveSet(ref ret, pr.TimexStr + eachResult.Timex);
@@ -374,7 +374,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
                     else
                     {
-                        ret = SetHandler.ResolveSet(ref ret, "XXXX-XX-" + pr.TimexStr.Substring(8) + eachResult.Timex);
+                        ret = SetHandler.ResolveSet(ref ret, "XXXX-XX-" + pr.TimexStr.Substring(8));
 
                     }
                 }

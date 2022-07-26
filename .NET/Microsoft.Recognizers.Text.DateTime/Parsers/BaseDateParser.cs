@@ -666,7 +666,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var firstWeekDay = (int)firstDate.DayOfWeek;
                     var firstWantedWeekDay = firstDate.AddDays(wantedWeekDay >= firstWeekDay ? wantedWeekDay - firstWeekDay : wantedWeekDay - firstWeekDay + 7);
                     var answerDay = firstWantedWeekDay.Day + ((num - 1) * 7);
-                    if (answerDay < referenceDate.Day)
+                    if ((answerDay < referenceDate.Day) && ((config.Options & DateTimeOptions.TasksMode) != 0))
                     {
                         DateObject nextReferenceDate = referenceDate.AddMonths(1);
                         month = nextReferenceDate.Month;
@@ -674,6 +674,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                         firstWeekDay = (int)firstDate.DayOfWeek;
                         firstWantedWeekDay = firstDate.AddDays(wantedWeekDay >= firstWeekDay ? wantedWeekDay - firstWeekDay : wantedWeekDay - firstWeekDay + 7);
                         answerDay = firstWantedWeekDay.Day + ((num - 1) * 7);
+
+                    }
+                    else
+                    {
+                        firstWantedWeekDay = firstDate.AddDays(wantedWeekDay > firstWeekDay ? wantedWeekDay - firstWeekDay : wantedWeekDay - firstWeekDay + 7);
+                        answerDay = firstWantedWeekDay.Day + ((num - 1) * 7);
+
                     }
 
                     day = answerDay;
