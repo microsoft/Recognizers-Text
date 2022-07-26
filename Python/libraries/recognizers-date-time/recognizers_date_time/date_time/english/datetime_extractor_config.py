@@ -106,10 +106,10 @@ class EnglishDateTimeExtractorConfiguration(DateTimeExtractorConfiguration):
     def prefix_day_regex(self) -> Pattern:
         return self._prefix_day_regex
 
-    def __init__(self):
+    def __init__(self, dmyDateFormat=False):
         super().__init__()
         self._date_point_extractor = BaseDateExtractor(
-            EnglishDateExtractorConfiguration())
+            EnglishDateExtractorConfiguration(dmyDateFormat))
         self._time_point_extractor = BaseTimeExtractor(
             EnglishTimeExtractorConfiguration())
         self._duration_extractor = BaseDurationExtractor(

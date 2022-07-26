@@ -155,7 +155,7 @@ class EnglishCommonDateTimeParserConfiguration(BaseDateParserConfiguration):
     def utility_configuration(self) -> DateTimeUtilityConfiguration:
         return self._utility_configuration
 
-    def __init__(self):
+    def __init__(self, dmyDateFormat=False):
         BaseDateParserConfiguration.__init__(self)
 
         self._utility_configuration = EnglishDateTimeUtilityConfiguration()
@@ -177,23 +177,23 @@ class EnglishCommonDateTimeParserConfiguration(BaseDateParserConfiguration):
         self._number_parser = BaseNumberParser(
             EnglishNumberParserConfiguration())
         self._date_extractor = BaseDateExtractor(
-            EnglishDateExtractorConfiguration())
+            EnglishDateExtractorConfiguration(dmyDateFormat))
         self._time_extractor = BaseTimeExtractor(
             EnglishTimeExtractorConfiguration())
         self._duration_extractor = BaseDurationExtractor(
             EnglishDurationExtractorConfiguration())
         self._date_period_extractor = BaseDatePeriodExtractor(
-            EnglishDatePeriodExtractorConfiguration())
+            EnglishDatePeriodExtractorConfiguration(dmyDateFormat))
         self._time_period_extractor = BaseTimePeriodExtractor(
             EnglishTimePeriodExtractorConfiguration())
         self._date_time_extractor = BaseDateTimeExtractor(
-            EnglishDateTimeExtractorConfiguration())
+            EnglishDateTimeExtractorConfiguration(dmyDateFormat))
         self._date_time_period_extractor = BaseDateTimePeriodExtractor(
-            EnglishDateTimePeriodExtractorConfiguration())
+            EnglishDateTimePeriodExtractorConfiguration(dmyDateFormat))
         self._duration_parser = BaseDurationParser(
             EnglishDurationParserConfiguration(self))
         self._date_parser = BaseDateParser(
-            EnglishDateParserConfiguration(self))
+            EnglishDateParserConfiguration(self, dmyDateFormat))
         self._time_parser = EnglishTimeParser(
             EnglishTimeParserConfiguration(self))
         self._date_period_parser = BaseDatePeriodParser(
