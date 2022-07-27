@@ -75,6 +75,7 @@ CULTURES = {
     'Chinese': Culture.Chinese,
     'Dutch': Culture.Dutch,
     'English': Culture.English,
+    'EnglishOthers': Culture.EnglishOthers,
     'French': Culture.French,
     'Italian': Culture.Italian,
     'Japanese': Culture.Japanese,

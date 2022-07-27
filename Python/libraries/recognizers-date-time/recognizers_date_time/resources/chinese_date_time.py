@@ -120,13 +120,14 @@ class ChineseDateTime:
     TimeOfSpecialDayRegex = f'(今晚|今早|今晨|明晚|明早|明晨|昨晚)(的|在)?'
     DateTimePeriodTillRegex = f'(?<till>到|直到|--|-|—|——)'
     DateTimePeriodPrepositionRegex = f'(?<prep>^\\s*的|在\\s*$)'
+    BeforeAfterRegex = f'^\\b$'
     HourRegex = f'\\b{BaseDateTime.HourRegex}'
     HourNumRegex = f'(?<hour>[零〇一二两三四五六七八九]|二十[一二三四]?|十[一二三四五六七八九]?)'
     ZhijianRegex = f'^\\s*(之间|之内|期间|中间|间)'
     DateTimePeriodThisRegex = f'这个|这一个|这|这一'
     DateTimePeriodLastRegex = f'上个|上一个|上|上一'
     DateTimePeriodNextRegex = f'下个|下一个|下|下一'
-    AmPmDescRegex = f'(?<daydesc>(am|a\\.m\\.|a m|a\\. m\\.|a\\.m|a\\. m|a m|pm|p\\.m\\.|p m|p\\. m\\.|p\\.m|p\\. m|p m))'
+    AmPmDescRegex = f'(?<daydesc>(am|a\\.m\\.|a m|a\\. m\\.|a\\.m|a\\. m|a m|pm|p\\.m\\.|p m|p\\. m\\.|p\\.m|p\\. m|p m|上午|中午|下午|午后|晚上|夜里|夜晚|夜间|深夜|傍晚|晚|早间?))'
     TimeOfDayRegex = f'(?<timeOfDay>凌晨|清晨|早上|早间|早|上午|中午|下午|午后|晚上|夜里|夜晚|半夜|夜间|深夜|傍晚|晚)'
     SpecificTimeOfDayRegex = f'((({DateTimePeriodThisRegex}|{DateTimePeriodNextRegex}|{DateTimePeriodLastRegex})\\s+{TimeOfDayRegex})|(今晚|今早|今晨|明晚|明早|明晨|昨晚))'
     DateTimePeriodUnitRegex = f'(个)?(?<unit>(小时|钟头|分钟|秒钟|时|分|秒))'
@@ -150,6 +151,7 @@ class ChineseDateTime:
                                ("Y", "年")])
     DurationAmbiguousUnits = [r'分钟', r'秒钟', r'秒', r'个小时', r'小时', r'天', r'星期', r'个星期', r'周', r'週', r'个月', r'年', r'时']
     DurationUnitRegex = f'(?<unit>{DateUnitRegex}|分钟?|秒钟?|个?小时|时|个?钟头|天|个?星期|周|週|个?月|年)'
+    AnUnitRegex = f'^[.]'
     DurationConnectorRegex = f'^\\s*(?<connector>[多又余零]?)\\s*$'
     ConnectorRegex = f'^\\s*,\\s*$'
     LunarHolidayRegex = f'(({YearRegex}|{DatePeriodYearInCJKRegex}|(?<yearrel>明年|今年|去年))(的)?)?(?<holiday>除夕|春节|中秋节|中秋|元宵节|端午节|端午|重阳节)'
@@ -197,11 +199,14 @@ class ChineseDateTime:
     FromToRegex = f'(从|自).+([至到]).+'
     AmbiguousRangeModifierPrefix = f'(从|自)'
     ReferenceDatePeriodRegex = f'^[.]'
+    UnspecificDatePeriodRegex = f'^[.]'
     ParserConfigurationBefore = f'((?<include>和|或|及)?(之前|以前)|前)'
     ParserConfigurationAfter = f'((?<include>和|或|及)?(之后|之後|以后|以後)|后|後)'
     ParserConfigurationUntil = f'(直到|直至|截至|截止(到)?)'
     ParserConfigurationSincePrefix = f'(自从|自|自打|打|从)'
     ParserConfigurationSinceSuffix = f'(以来|开始|起)'
+    ParserConfigurationAroundPrefix = f'^[.]'
+    ParserConfigurationAroundSuffix = f'^[.]'
     ParserConfigurationLastWeekDayRegex = '最后一个'
     ParserConfigurationNextMonthRegex = '下一个'
     ParserConfigurationLastMonthRegex = '上一个'
@@ -248,6 +253,7 @@ class ChineseDateTime:
     WeekTerms = [r'周', r'週', r'星期']
     YearTerms = [r'年']
     ThisYearTerms = [r'今年']
+    YearToDateTerms = [r'今年迄今']
     LastYearTerms = [r'去年']
     NextYearTerms = [r'明年']
     YearAfterNextTerms = [r'后年']
@@ -586,6 +592,10 @@ class ChineseDateTime:
     DateTimePeriodAFRegex = f'(下午|午后|傍晚)'
     DateTimePeriodEVRegex = f'(晚上|夜里|夜晚|晚)'
     DateTimePeriodNIRegex = f'(半夜|夜间|深夜)'
+    AmbiguityTimeFiltersDict = dict([("^[.]", "^[.]")])
+    AmbiguityTimePeriodFiltersDict = dict([("^[.]", "^[.]")])
+    AmbiguityDateFiltersDict = dict([("^[.]", "^[.]")])
+    AmbiguityDateTimeFiltersDict = dict([("^[.]", "^[.]")])
     AmbiguityFiltersDict = dict([("早", "(?<!今|明|日|号)早(?!上)"),
                                  ("晚", "(?<!今|明|昨|傍|夜|日|号)晚(?!上)"),
                                  ("^\\d{1,2}号", "^\\d{1,2}号"),
