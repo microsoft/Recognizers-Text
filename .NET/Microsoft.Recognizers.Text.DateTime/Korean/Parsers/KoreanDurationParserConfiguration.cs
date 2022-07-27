@@ -25,6 +25,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
             SomeRegex = KoreanDurationExtractorConfiguration.SomeRegex;
             MoreOrLessRegex = KoreanDurationExtractorConfiguration.MoreOrLessRegex;
             DurationUnitRegex = KoreanDurationExtractorConfiguration.DurationUnitRegex;
+            AnUnitRegex = KoreanDurationExtractorConfiguration.AnUnitRegex;
             DurationConnectorRegex = KoreanDurationExtractorConfiguration.DurationConnectorRegex;
 
             UnitMap = config.UnitMap;
@@ -42,6 +43,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
         public Regex MoreOrLessRegex { get; }
 
         public Regex DurationUnitRegex { get; }
+
+        public Regex AnUnitRegex { get; }
 
         public Regex DurationConnectorRegex { get; }
 

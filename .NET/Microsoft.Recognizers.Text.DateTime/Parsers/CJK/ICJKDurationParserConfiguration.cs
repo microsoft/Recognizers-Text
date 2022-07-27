@@ -20,6 +20,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex DurationUnitRegex { get; }
 
+        Regex AnUnitRegex { get; }
+
         Regex DurationConnectorRegex { get; }
 
         IImmutableDictionary<string, string> UnitMap { get; }

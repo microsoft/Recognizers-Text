@@ -60,7 +60,7 @@ The table below summarizes the currently supported entities. Support for English
 | Seq. - IP Address    | G    | G        | G    | G      | G     | G       | G      | G      | G      | G       |
 | Seq. - Phone Number  | G    | G        | G    | G      | G     | G       | G      | G      | G      | G       |
 | Seq. - URL           | G    | G*       | G    | G      | G     | G       | G*     | G*     | G      | G       |
-| DateTime (+subtypes) | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | **SO** | **SO** | ✓     | ✓       | 
+| DateTime (+subtypes) | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | **SO** | ✓     | ✓       | 
 
 | Entity Type       | SV      | BG      | TR    | HI     | AR     |         |        |        |        |         |
 |:-----------------:|:-------:|:-------:|:-----:|:------:|:------:|:-------:|:------:|:------:|:------:|:-------:| 

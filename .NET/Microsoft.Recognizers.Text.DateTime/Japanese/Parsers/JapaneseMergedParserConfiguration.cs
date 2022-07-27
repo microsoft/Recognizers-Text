@@ -18,6 +18,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             AfterRegex = JapaneseMergedExtractorConfiguration.AfterRegex;
             SincePrefixRegex = JapaneseMergedExtractorConfiguration.SincePrefixRegex;
             SinceSuffixRegex = JapaneseMergedExtractorConfiguration.SinceSuffixRegex;
+            AroundPrefixRegex = JapaneseMergedExtractorConfiguration.AroundPrefixRegex;
+            AroundSuffixRegex = JapaneseMergedExtractorConfiguration.AroundSuffixRegex;
             EqualRegex = JapaneseMergedExtractorConfiguration.EqualRegex;
             UntilRegex = JapaneseMergedExtractorConfiguration.UntilRegex;
         }
@@ -29,6 +31,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         public Regex SincePrefixRegex { get; }
 
         public Regex SinceSuffixRegex { get; }
+
+        public Regex AroundPrefixRegex { get; }
+
+        public Regex AroundSuffixRegex { get; }
 
         public Regex UntilRegex { get; }
 
