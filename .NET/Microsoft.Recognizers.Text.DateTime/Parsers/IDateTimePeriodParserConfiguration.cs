@@ -76,6 +76,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex AfterRegex { get; }
 
+        Regex TasksmodeMealTimeofDay { get; }
+
         bool CheckBothBeforeAfter { get; }
 
         IImmutableDictionary<string, string> UnitMap { get; }

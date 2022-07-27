@@ -366,6 +366,18 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
+            // under tasksmode add mealtime support only when no occurence of time
+            if ((config.Options & DateTimeOptions.TasksMode) != 0)
+            {
+                foreach (var timePeriod in timePeriodErs)
+                {
+                    if ((timeErs.Count == 0) && (timePeriod.Metadata != null) && timePeriod.Metadata.IsMealtime)
+                    {
+                        dateErs.Add(timePeriod);
+                    }
+                }
+            }
+
             var points = dateErs.OrderBy(x => x.Start).ToList();
 
             for (idx = 0; idx < points.Count - 1; idx++)

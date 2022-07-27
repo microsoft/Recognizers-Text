@@ -173,6 +173,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         Regex IDateTimePeriodExtractorConfiguration.AfterRegex => AfterRegex;
 
+        Regex IDateTimePeriodExtractorConfiguration.TasksmodeMealTimeofDay => null;
+
         public bool GetFromTokenIndex(string text, out int index)
         {
             index = -1;

@@ -281,6 +281,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
+            if (!match.Success && ((Config.Options & DateTimeOptions.TasksMode) != 0)
+                && this.Config.TasksmodeMealTimeofDay != null)
+            {
+                match = this.Config.TasksmodeMealTimeofDay.Match(trimmedText);
+            }
+
             if (match.Success)
             {
                 var beforeStr = trimmedText.Substring(0, match.Index).Trim();

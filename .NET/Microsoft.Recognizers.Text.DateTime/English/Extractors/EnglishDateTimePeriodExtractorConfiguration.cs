@@ -59,6 +59,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex PeriodSpecificTimeOfDayRegex =
             new Regex(DateTimeDefinitions.PeriodSpecificTimeOfDayRegex, RegexFlags);
 
+        public static readonly Regex TasksmodeMealTimeofDay =
+           new Regex(DateTimeDefinitions.TasksmodeMealTimeofDay, RegexFlags);
+
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly Regex[] SimpleCases =
@@ -147,6 +150,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         Regex IDateTimePeriodExtractorConfiguration.MiddlePauseRegex => MiddlePauseRegex;
 
         Regex IDateTimePeriodExtractorConfiguration.PeriodTimeOfDayWithDateRegex => PeriodTimeOfDayWithDateRegex;
+
+        Regex IDateTimePeriodExtractorConfiguration.TasksmodeMealTimeofDay => TasksmodeMealTimeofDay;
 
         Regex IDateTimePeriodExtractorConfiguration.AmDescRegex => AmDescRegex;
 

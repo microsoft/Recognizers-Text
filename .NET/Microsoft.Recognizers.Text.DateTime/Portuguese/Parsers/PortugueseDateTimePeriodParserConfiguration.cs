@@ -125,6 +125,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         bool IDateTimePeriodParserConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 
+        Regex IDateTimePeriodParserConfiguration.TasksmodeMealTimeofDay => null;
+
         public IImmutableDictionary<string, string> UnitMap { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
