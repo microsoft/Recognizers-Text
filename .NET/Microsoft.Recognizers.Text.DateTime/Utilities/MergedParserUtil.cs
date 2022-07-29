@@ -520,6 +520,22 @@ namespace Microsoft.Recognizers.Text.DateTime
             return results;
         }
 
+        /*
+        TasksModeModification function modify datetime value according to it's type and w.r.t 
+        refrence time one of such scenarios is explained below.
+
+        Under TasksMode
+        For Input: 22 april at 5 pm. (reference time is 22/04/2022 T17:30:00, output type is datetime)
+        Expected output : {Past resolution value: 22/04/2022T17,
+        Future resolution value: 22/04/2023T17
+        },
+
+        Under Default Mode
+        For Input: 22 april at 5 pm. (reference time is 22/04/2022 T17:30:00)
+        Expected output : {Past resolution value: 22/04/2021T17,
+        Future resolution value: 22/04/2022T17
+        },
+         */
         public static DateTimeParseResult TasksModeModification(DateTimeParseResult slot, DateObject referenceTime)
         {
             switch (slot.Type.Substring(ParserTypeName.Length + 1))
@@ -550,7 +566,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return slot;
-
         }
 
         internal static void AddResolutionFields(Dictionary<string, string> dic, string key, string value)
