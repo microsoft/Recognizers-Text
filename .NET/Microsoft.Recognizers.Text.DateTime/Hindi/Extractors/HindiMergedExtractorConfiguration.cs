@@ -63,8 +63,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
             new Regex(DateTimeDefinitions.SingleAmbiguousTermsRegex, RegexFlags),
         };
 
-        public static readonly Regex[] TasksModeMentionFilters = System.Array.Empty<Regex>();
-
         public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
@@ -156,7 +154,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
 
         bool IMergedExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 
-        IEnumerable<Regex> IMergedExtractorConfiguration.TasksModeMentionFilters => TasksModeMentionFilters;
-
+        public IEnumerable<Regex> TasksModeMentionFilters { get; }
     }
 }

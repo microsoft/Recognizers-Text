@@ -55,8 +55,6 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public static readonly Regex[] TermFilterRegexes = System.Array.Empty<Regex>();
 
-        public static readonly Regex[] TasksModeMentionFilters = System.Array.Empty<Regex>();
-
         public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();
 
         public static readonly Regex YearRegex =
@@ -156,7 +154,6 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         bool IMergedExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 
-        IEnumerable<Regex> IMergedExtractorConfiguration.TasksModeMentionFilters => TasksModeMentionFilters;
-
+        public IEnumerable<Regex> TasksModeMentionFilters { get; }
     }
 }
