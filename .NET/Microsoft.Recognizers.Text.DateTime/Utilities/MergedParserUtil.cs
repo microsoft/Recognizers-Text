@@ -521,8 +521,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         /*
-        TasksModeModification function modify datetime value according to it's type and w.r.t 
-        refrence time one of such scenarios is explained below.
+        TasksModeModification function will modify datetime value according to it's type and w.r.t
+        refrence time.
 
         Under TasksMode
         For Input: 22 april at 5 pm. (reference time is 22/04/2022 T17:30:00, output type is datetime)
