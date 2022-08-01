@@ -11,6 +11,7 @@ using Microsoft.Recognizers.Text.DateTime.French;
 using Microsoft.Recognizers.Text.DateTime.German;
 using Microsoft.Recognizers.Text.DateTime.Hindi;
 using Microsoft.Recognizers.Text.DateTime.Italian;
+using Microsoft.Recognizers.Text.DateTime.Japanese;
 using Microsoft.Recognizers.Text.DateTime.Korean;
 using Microsoft.Recognizers.Text.DateTime.Portuguese;
 using Microsoft.Recognizers.Text.DateTime.Spanish;
@@ -160,12 +161,13 @@ namespace Microsoft.Recognizers.Text.DateTime
             //        new BaseMergedDateTimeExtractor(
             //            new SwedishMergedExtractorConfiguration(new BaseDateTimeOptionsConfiguration(Culture.Swedish, options)))));
 
-            // TODO to be uncommented when all tests for Japanese are green.
-            // RegisterModel<DateTimeModel>(
-            //    Culture.Japanese,
-            //    options => new DateTimeModel(
-            //      new FullDateTimeParser(new JapaneseDateTimeParserConfiguration(options)),
-            //      new JapaneseMergedExtractor(options)));
+            RegisterModel<DateTimeModel>(
+                Culture.Japanese,
+                options => new DateTimeModel(
+                  new BaseCJKMergedDateTimeParser(
+                      new JapaneseMergedParserConfiguration(new JapaneseCommonDateTimeParserConfiguration(new BaseDateTimeOptionsConfiguration(Culture.Japanese, options)))),
+                  new BaseCJKMergedDateTimeExtractor(
+                      new JapaneseMergedExtractorConfiguration(new BaseDateTimeOptionsConfiguration(Culture.Japanese, options)))));
 
             // TODO to be uncommented when all tests for Arabic are green.
             /*RegisterModel<DateTimeModel>(

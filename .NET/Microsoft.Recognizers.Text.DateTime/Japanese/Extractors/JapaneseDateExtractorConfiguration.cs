@@ -7,6 +7,7 @@ using System.Collections.Immutable;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Japanese;
+using Microsoft.Recognizers.Definitions.Utilities;
 using Microsoft.Recognizers.Text.Number;
 using Microsoft.Recognizers.Text.Number.Japanese;
 using DateObject = System.DateTime;
@@ -42,6 +43,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         public static readonly Regex DateTimePeriodUnitRegex = new Regex(DateTimeDefinitions.DateTimePeriodUnitRegex, RegexFlags);
 
+        public static readonly Regex RangeConnectorSymbolRegex = new Regex(DateTimeDefinitions.DatePeriodTillRegex, RegexFlags);
+
         public static readonly Regex MonthRegex = new Regex(DateTimeDefinitions.MonthRegex, RegexFlags);
         public static readonly Regex DayRegex = new Regex(DateTimeDefinitions.DayRegex, RegexFlags);
         public static readonly Regex DayRegexInCJK = new Regex(DateTimeDefinitions.DateDayRegexInCJK, RegexFlags);
@@ -73,15 +76,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
             ImplicitDateList = new List<Regex>
             {
-                LunarRegex, SpecialDayWithNumRegex, SpecialDayRegex, ThisRegex, LastRegex, NextRegex,
+                SpecialDayWithNumRegex, SpecialDayRegex, ThisRegex, LastRegex, NextRegex,
                 WeekDayRegex, WeekDayOfMonthRegex, SpecialDate, WeekDayAndDayRegex,
             };
 
             // ２０１６年１２月１日
             var dateRegex1 = new Regex(DateTimeDefinitions.DateRegexList1, RegexFlags);
 
-            // # ２０１６年１２月 (this is not a Date)
-            // var dateRegex2 = new Regex(DateTimeDefinitions.DateRegexList2, RegexFlags);
+            // 金曜日 6月 15日
+            var dateRegex2 = new Regex(DateTimeDefinitions.DateRegexList2, RegexFlags);
 
             // (2015年)?(农历)?十月二十(星期三)?
             var dateRegex3 = new Regex(DateTimeDefinitions.DateRegexList3, RegexFlags);
@@ -113,7 +116,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             // Regex precedence where the order between D and M varies is controlled by DefaultLanguageFallback
             var enableDmy = DateTimeDefinitions.DefaultLanguageFallback == Constants.DefaultLanguageFallback_DMY;
 
-            DateRegexList = new List<Regex> { dateRegex1, dateRegex10, /*dateRegex2, */dateRegex9, dateRegex3, dateRegex4, dateRegex5 };
+            DateRegexList = new List<Regex> { dateRegex1, dateRegex10, dateRegex2, dateRegex9, dateRegex3, dateRegex4, dateRegex5 };
             DateRegexList = DateRegexList.Concat(
                 enableDmy ?
                 new[] { dateRegex7, dateRegex6, dateRegex8/*, dateRegex11*/ } :
@@ -134,5 +137,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         Regex ICJKDateExtractorConfiguration.AfterRegex => AfterRegex;
 
         Regex ICJKDateExtractorConfiguration.WeekDayStartEnd => WeekDayStartEnd;
+
+        Regex ICJKDateExtractorConfiguration.RangeConnectorSymbolRegex => RangeConnectorSymbolRegex;
+
+        public Dictionary<Regex, Regex> AmbiguityDateFiltersDict => DefinitionLoader.LoadAmbiguityFilters(DateTimeDefinitions.AmbiguityDateFiltersDict);
+
     }
 }

@@ -216,18 +216,6 @@
     ]
   },
   {
-    "Input": "5月9日から2泊予約できますか。",
-    "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "泊",
-        "Type": "set",
-        "Start": 7,
-        "Length": 1
-      }
-    ]
-  },
-  {
     "Input": "毎週日曜日午後八時に事件が起こる",
     "NotSupported": "javascript, python, java",
     "Results": [
