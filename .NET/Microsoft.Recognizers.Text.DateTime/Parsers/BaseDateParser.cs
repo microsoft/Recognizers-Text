@@ -597,6 +597,10 @@ namespace Microsoft.Recognizers.Text.DateTime
             eg next week will get mapped to same day of next week,
             next month will get mapped to starting day of comming month,
             next year will get mapped to starting date of coming year.
+
+            Input text : meet me next week (refrence time 01-08-2022)
+            Tasksmode: next week --> 08-08-2022 datetime type: date
+            Default mode: next week --> 08-08-2022 - 15-08-2022 datetime type: daterange
              */
             if ((config.Options & DateTimeOptions.TasksMode) != 0)
             {
