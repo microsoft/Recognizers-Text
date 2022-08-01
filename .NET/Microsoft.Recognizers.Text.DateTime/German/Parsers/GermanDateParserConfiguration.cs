@@ -134,6 +134,12 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public Regex BeforeAfterRegex { get; }
 
+        public Regex TasksModeNextWeekRegex { get; }
+
+        public Regex TasksModeNextMonthRegex { get; }
+
+        public Regex TasksModeNextYearRegex { get; }
+
         public IImmutableDictionary<string, int> DayOfMonth { get; }
 
         public IImmutableDictionary<string, int> DayOfWeek { get; }

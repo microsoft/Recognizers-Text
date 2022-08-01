@@ -592,10 +592,16 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return ret;
             }
 
+            /*
+             Adding support to parse addtitonal Implicit date references under tasksmode.
+            eg next week will get mapped to same day of next week,
+            next month will get mapped to starting day of comming month,
+            next year will get mapped to starting date of coming year.
+             */
             if ((config.Options & DateTimeOptions.TasksMode) != 0)
             {
                 trimmedText = text.Trim();
-                if (trimmedText.Contains("next week"))
+                if (this.config.TasksModeNextWeekRegex.Match(trimmedText).Success)
                 {
                     var value = referenceDate.AddDays(Constants.WeekDayCount);
                     ret.Timex = DateTimeFormatUtil.LuisDate(value);
@@ -603,8 +609,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ret.Success = true;
                     return ret;
                 }
-
-                if (trimmedText.Contains("next month"))
+                else if (this.config.TasksModeNextMonthRegex.Match(trimmedText).Success)
                 {
                     var value = referenceDate.AddMonths(1);
                     ret.Timex = DateTimeFormatUtil.LuisDate(value.Year, value.Month, 1);
@@ -612,8 +617,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ret.Success = true;
                     return ret;
                 }
-
-                if (trimmedText.Contains("next year"))
+                else if (this.config.TasksModeNextYearRegex.Match(trimmedText).Success)
                 {
                     var value = referenceDate.AddYears(1);
                     ret.Timex = DateTimeFormatUtil.LuisDate(value.Year, 1, 1);

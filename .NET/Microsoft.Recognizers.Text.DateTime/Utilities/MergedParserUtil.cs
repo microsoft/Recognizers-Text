@@ -520,18 +520,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             return results;
         }
 
-        public static DateTimeParseResult TasksModeModification(DateTimeParseResult slot, DateObject referenceTime)
-        {
-            switch (slot.Type.Substring(ParserTypeName.Length + 1))
-            {
-                case Constants.SYS_DATETIME_DATE:
-                    slot = TasksModeProcessing.TasksModeModifyDateValue(slot, referenceTime);
-                    break;
-            }
-
-            return slot;
-        }
-
         internal static void AddResolutionFields(Dictionary<string, string> dic, string key, string value)
         {
             if (!string.IsNullOrEmpty(value))

@@ -121,17 +121,18 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 return false;
             }
 
+            var parseResult = TimexUtility.ResolveTimeOfDay(timeOfDay);
+            timex = parseResult.Timex;
+            beginHour = parseResult.BeginHour;
+            endHour = parseResult.EndHour;
+            endMin = parseResult.EndMin;
+
             if ((Options & DateTimeOptions.TasksMode) != 0)
             {
-                var parseResultTaskMode = TimexUtility.ResolveTimeOfDayTaskMode(timeOfDay);
-                timex = parseResultTaskMode.Timex;
-                beginHour = parseResultTaskMode.BeginHour;
-                endHour = parseResultTaskMode.EndHour;
-                endMin = parseResultTaskMode.EndMin;
-            }
-            else
-            {
-                var parseResult = TimexUtility.ResolveTimeOfDay(timeOfDay);
+                beginHour = 0;
+                endHour = 0;
+                endMin = 0;
+                parseResult = TasksModeProcessing.TasksModeResolveTimeOfDay(timeOfDay);
                 timex = parseResult.Timex;
                 beginHour = parseResult.BeginHour;
                 endHour = parseResult.EndHour;

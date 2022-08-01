@@ -328,7 +328,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 if (pr != null)
                 {
-                    pr = MergedParserUtil.TasksModeModification(pr, referenceTime);
+                    pr = TasksModeProcessing.TasksModeModification(pr, referenceTime);
                     pr.Text = originText;
                 }
             }

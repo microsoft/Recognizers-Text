@@ -66,6 +66,15 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             PlusTwoDayTerms = DateTimeDefinitions.PlusTwoDayTerms.ToImmutableList();
             MinusOneDayTerms = DateTimeDefinitions.MinusOneDayTerms.ToImmutableList();
             MinusTwoDayTerms = DateTimeDefinitions.MinusTwoDayTerms.ToImmutableList();
+
+            if ((config.Options & DateTimeOptions.TasksMode) != 0)
+            {
+                TasksModeNextMonthRegex = new Regex(DateTimeDefinitions.TasksModeNextMonthRegex, RegexFlags);
+
+                TasksModeNextWeekRegex = new Regex(DateTimeDefinitions.TasksModeNextWeekRegex, RegexFlags);
+
+                TasksModeNextYearRegex = new Regex(DateTimeDefinitions.TasksModeNextYearRegex, RegexFlags);
+            }
         }
 
         public string DateTokenPrefix { get; }
@@ -135,6 +144,12 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public Regex PastPrefixRegex { get; }
 
         public Regex BeforeAfterRegex { get; }
+
+        public Regex TasksModeNextWeekRegex { get; }
+
+        public Regex TasksModeNextMonthRegex { get; }
+
+        public Regex TasksModeNextYearRegex { get; }
 
         public IImmutableDictionary<string, int> DayOfMonth { get; }
 
