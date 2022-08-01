@@ -156,12 +156,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             endHour = 0;
             endMin = 0;
 
-            if ((Options & DateTimeOptions.TasksMode) != 0)
-            {
-                return GetMatchedTimeRangeForTasksMode(text, out todSymbol,
-                          out beginHour, out endHour, out endMin);
-            }
-
             if (MorningStartEndRegex.IsMatch(trimmedText))
             {
                 todSymbol = "TMO";
@@ -187,10 +181,41 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 endHour = 23;
                 endMin = 59;
             }
+            else if (((Options & DateTimeOptions.TasksMode) != 0) && DateTimeDefinitions.MealtimeBreakfastTermList.Any(o => trimmedText.Contains(o)))
+            {
+                todSymbol = Constants.MealtimeBreakfast;
+                beginHour = Constants.MealtimeBreakfastBeginHour;
+                endHour = Constants.MealtimeBreakfastEndHour;
+            }
+            else if (((Options & DateTimeOptions.TasksMode) != 0) && DateTimeDefinitions.MealtimeBrunchTermList.Any(o => trimmedText.Contains(o)))
+            {
+                todSymbol = Constants.MealtimeBrunch;
+                beginHour = Constants.MealtimeBrunchBeginHour;
+                endHour = Constants.MealtimeBrunchEndHour;
+            }
+            else if (((Options & DateTimeOptions.TasksMode) != 0) && DateTimeDefinitions.MealtimeLunchTermList.Any(o => trimmedText.Contains(o)))
+            {
+                todSymbol = Constants.MealtimeLunch;
+                beginHour = Constants.MealtimeLunchBeginHour;
+                endHour = Constants.MealtimeLunchEndHour;
+            }
+            else if (((Options & DateTimeOptions.TasksMode) != 0) && DateTimeDefinitions.MealtimeDinnerTermList.Any(o => trimmedText.Contains(o)))
+            {
+                todSymbol = Constants.MealtimeDinner;
+                beginHour = Constants.MealtimeDinnerBeginHour;
+                endHour = Constants.MealtimeDinnerEndHour;
+            }
             else
             {
                 todSymbol = null;
                 return false;
+            }
+
+            // TasksMode modifies the values of Ambiguous time refrences like morning, lunchtime etc.
+            if ((Options & DateTimeOptions.TasksMode) != 0)
+            {
+                return TasksModeProcessing.GetMatchedTimeRangeForTasksMode(text, todSymbol,
+                          out beginHour, out endHour, out endMin);
             }
 
             return true;
@@ -213,82 +238,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             }
 
             return swift;
-        }
-
-        private bool GetMatchedTimeRangeForTasksMode(string text, out string todSymbol, out int beginHour, out int endHour, out int endMin)
-        {
-            var trimmedText = text.Trim();
-            beginHour = 0;
-            endHour = 0;
-            endMin = 0;
-            if (MorningStartEndRegex.IsMatch(trimmedText))
-            {
-                todSymbol = "TMO";
-                beginHour = 6;
-                endHour = 6;
-            }
-            else if (AfternoonStartEndRegex.IsMatch(trimmedText))
-            {
-                todSymbol = "TAF";
-                beginHour = Constants.HalfDayHourCount;
-                endHour = Constants.HalfDayHourCount;
-
-            }
-            else if (EveningStartEndRegex.IsMatch(trimmedText))
-            {
-                todSymbol = "TEV";
-                beginHour = 18;
-                endHour = 18;
-            }
-            else if (NightStartEndRegex.IsMatch(trimmedText))
-            {
-                todSymbol = "TNI";
-                beginHour = 21;
-                endHour = 21;
-            }
-             else if (DateTimeDefinitions.MealtimeBreakfastTermList.Any(o => trimmedText.Contains(o)))
-            {
-                todSymbol = Constants.MealtimeBreakfast;
-
-                // Change for ToDo to match the new rules set by the NLP for DateTime project
-
-                beginHour = Constants.MealtimeBreakfastBeginHour;
-                endHour = Constants.MealtimeBreakfastEndHour;
-            }
-            else if (DateTimeDefinitions.MealtimeBrunchTermList.Any(o => trimmedText.Contains(o)))
-            {
-                todSymbol = Constants.MealtimeBrunch;
-
-                // Change for ToDo to match the new rules set by the NLP for DateTime project
-
-                beginHour = Constants.MealtimeBrunchBeginHour;
-                endHour = Constants.MealtimeBrunchEndHour;
-            }
-            else if (DateTimeDefinitions.MealtimeLunchTermList.Any(o => trimmedText.Contains(o)))
-            {
-                todSymbol = Constants.MealtimeLunch;
-
-                // Change for ToDo to match the new rules set by the NLP for DateTime project
-
-                beginHour = Constants.MealtimeLunchBeginHour;
-                endHour = Constants.MealtimeLunchEndHour;
-            }
-            else if (DateTimeDefinitions.MealtimeDinnerTermList.Any(o => trimmedText.Contains(o)))
-            {
-                todSymbol = Constants.MealtimeDinner;
-
-                // Change for ToDo to match the new rules set by the NLP for DateTime project
-
-                beginHour = Constants.MealtimeDinnerBeginHour;
-                endHour = Constants.MealtimeDinnerEndHour;
-            }
-            else
-            {
-                todSymbol = null;
-                return false;
-            }
-
-            return true;
         }
     }
 }

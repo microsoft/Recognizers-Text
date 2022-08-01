@@ -127,6 +127,19 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             endHour = parseResult.EndHour;
             endMin = parseResult.EndMin;
 
+            if ((Options & DateTimeOptions.TasksMode) != 0)
+            {
+                beginHour = 0;
+                endHour = 0;
+                endMin = 0;
+                parseResult = TasksModeProcessing.TasksModeResolveTimeOfDay(timeOfDay);
+                timex = parseResult.Timex;
+                beginHour = parseResult.BeginHour;
+                endHour = parseResult.EndHour;
+                endMin = parseResult.EndMin;
+            }
+
+
             return true;
         }
     }
