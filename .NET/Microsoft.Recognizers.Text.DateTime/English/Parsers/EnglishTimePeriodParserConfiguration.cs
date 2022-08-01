@@ -139,7 +139,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 endMin = parseResult.EndMin;
             }
 
-
             return true;
         }
     }
