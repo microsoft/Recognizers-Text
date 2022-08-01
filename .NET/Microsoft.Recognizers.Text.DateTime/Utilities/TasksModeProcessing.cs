@@ -155,6 +155,26 @@ namespace Microsoft.Recognizers.Text.DateTime
                 beginHour = 21;
                 endHour = 21;
             }
+            else if (todSymbol == Constants.MealtimeBreakfast)
+            {
+                beginHour = Constants.MealtimeBreakfastBeginHour;
+                endHour = Constants.MealtimeBreakfastEndHour;
+            }
+            else if (todSymbol == Constants.MealtimeBrunch)
+            {
+                beginHour = Constants.MealtimeBrunchBeginHour;
+                endHour = Constants.MealtimeBrunchBeginHour;
+            }
+            else if (todSymbol == Constants.MealtimeDinner)
+            {
+                beginHour = 20;
+                endHour = 21;
+            }
+            else if (todSymbol == Constants.MealtimeLunch)
+            {
+                beginHour = Constants.MealtimeLunchBeginHour;
+                endHour = Constants.MealtimeLunchEndHour;
+            }
             else
             {
                 return false;

@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections.Immutable;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.English;
@@ -177,6 +178,30 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 endHour = 23;
                 endMin = 59;
 
+            }
+            else if (((Options & DateTimeOptions.TasksMode) != 0) && DateTimeDefinitions.MealtimeBreakfastTermList.Any(o => trimmedText.Contains(o)))
+            {
+                todSymbol = Constants.MealtimeBreakfast;
+                beginHour = Constants.MealtimeBreakfastBeginHour;
+                endHour = Constants.MealtimeBreakfastEndHour;
+            }
+            else if (((Options & DateTimeOptions.TasksMode) != 0) && DateTimeDefinitions.MealtimeBrunchTermList.Any(o => trimmedText.Contains(o)))
+            {
+                todSymbol = Constants.MealtimeBrunch;
+                beginHour = Constants.MealtimeBrunchBeginHour;
+                endHour = Constants.MealtimeBrunchEndHour;
+            }
+            else if (((Options & DateTimeOptions.TasksMode) != 0) && DateTimeDefinitions.MealtimeLunchTermList.Any(o => trimmedText.Contains(o)))
+            {
+                todSymbol = Constants.MealtimeLunch;
+                beginHour = Constants.MealtimeLunchBeginHour;
+                endHour = Constants.MealtimeLunchEndHour;
+            }
+            else if (((Options & DateTimeOptions.TasksMode) != 0) && DateTimeDefinitions.MealtimeDinnerTermList.Any(o => trimmedText.Contains(o)))
+            {
+                todSymbol = Constants.MealtimeDinner;
+                beginHour = Constants.MealtimeDinnerBeginHour;
+                endHour = Constants.MealtimeDinnerEndHour;
             }
             else
             {
