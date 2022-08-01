@@ -13,12 +13,60 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public static readonly string DateMinString = DateTimeFormatUtil.FormatDate(DateObject.MinValue);
 
+        /*
+        TasksModeModification function will modify datetime value according to it's type and w.r.t
+        refrence time.
+
+        Under TasksMode
+        For Input: 22 april at 5 pm. (reference time is 22/04/2022 T17:30:00, output type is datetime)
+        Expected output : {Past resolution value: 22/04/2022T17,
+        Future resolution value: 22/04/2023T17
+        },
+
+        Under Default Mode
+        For Input: 22 april at 5 pm. (reference time is 22/04/2022 T17:30:00)
+        Expected output : {Past resolution value: 22/04/2021T17,
+        Future resolution value: 22/04/2022T17
+        },
+         */
+        public static DateTimeParseResult TasksModeModification(DateTimeParseResult slot, DateObject referenceTime)
+        {
+            switch (slot.Type.Substring(ParserTypeName.Length + 1))
+            {
+                case Constants.SYS_DATETIME_DATE:
+                    slot = TasksModeProcessing.TasksModeModifyDateValue(slot, referenceTime);
+                    break;
+
+                case Constants.SYS_DATETIME_DATEPERIOD:
+                    slot = TasksModeProcessing.TasksModeModifyDatePeriodValue(slot, referenceTime);
+                    break;
+
+                case Constants.SYS_DATETIME_TIME:
+                    slot = TasksModeProcessing.TasksModeModifyTimeValue(slot, referenceTime);
+                    break;
+
+                case Constants.SYS_DATETIME_TIMEPERIOD:
+                    slot = TasksModeProcessing.TasksModeTimePeriodValue(slot, referenceTime);
+                    break;
+
+                case Constants.SYS_DATETIME_DATETIME:
+                    slot = TasksModeProcessing.TasksModeModifyDateTimeValue(slot, referenceTime);
+                    break;
+
+                case Constants.SYS_DATETIME_DATETIMEPERIOD:
+                    slot = TasksModeProcessing.TasksModeModifyDateTimePeriodValue(slot, referenceTime);
+                    break;
+            }
+
+            return slot;
+        }
+
         /*Under TasksMode If you input today's date, future date should get mapped to current date insted of next year.
          ex if input is meet on 7 july and refrence time is 7 july 2022,
         expected future value --> 7 july 2022 &&
         past value--> 7 july 2021
         */
-        public static DateTimeParseResult TasksModeModifyDateValue(DateTimeParseResult slot, DateObject referenceTime)
+        private static DateTimeParseResult TasksModeModifyDateValue(DateTimeParseResult slot, DateObject referenceTime)
         {
             if (!slot.TimexStr.Contains("XXXX"))
             {
@@ -63,7 +111,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         expected future start value --> 7 july 2022 &&
         past start value--> 7 july 2021
         */
-        public static DateTimeParseResult TasksModeModifyDatePeriodValue(DateTimeParseResult slot, DateObject referenceTime)
+        private static DateTimeParseResult TasksModeModifyDatePeriodValue(DateTimeParseResult slot, DateObject referenceTime)
         {
             if (!slot.TimexStr.Contains("XXXX"))
             {
@@ -163,7 +211,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         expected future value should get mapped to 14 july 2022, morning &&
         past value get mapped to 7 july 2022, morning.
        */
-        public static DateTimeParseResult TasksModeModifyDateTimePeriodValue(DateTimeParseResult slot, DateObject referenceTime)
+        private static DateTimeParseResult TasksModeModifyDateTimePeriodValue(DateTimeParseResult slot, DateObject referenceTime)
         {
             if (!slot.TimexStr.Contains("XXXX"))
             {
@@ -352,7 +400,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         expected future value should get mapped to 14 july 2022, 6pm &&
         past value get mapped to 7 july 2022, 6pm.
        */
-        public static DateTimeParseResult TasksModeModifyDateTimeValue(DateTimeParseResult slot, DateObject referenceTime)
+        private static DateTimeParseResult TasksModeModifyDateTimeValue(DateTimeParseResult slot, DateObject referenceTime)
         {
             if (!slot.TimexStr.Contains("XXXX"))
             {
@@ -411,7 +459,7 @@ namespace Microsoft.Recognizers.Text.DateTime
        then this has to be done for both AM and PM but depending on the date, e.g., if we say "Do this at 9" but current time is
        8 PM, then we mean 9 PM on the same day or 9 AM the next day.
        */
-        public static DateTimeParseResult TasksModeModifyTimeValue(DateTimeParseResult slot, DateObject referenceTime)
+        private static DateTimeParseResult TasksModeModifyTimeValue(DateTimeParseResult slot, DateObject referenceTime)
         {
             var value = (SortedDictionary<string, object>)slot.Value;
             var newType = $"{ParserTypeName}.{Constants.SYS_DATETIME_TIME}";
@@ -474,7 +522,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         and instead of returning time only, both date and time should be returned.Example:
         "Do this in morning" issued when the current time is past 9 pm.
         */
-        public static DateTimeParseResult TasksModeTimePeriodValue(DateTimeParseResult slot, DateObject referenceTime)
+        private static DateTimeParseResult TasksModeTimePeriodValue(DateTimeParseResult slot, DateObject referenceTime)
         {
             var value = (SortedDictionary<string, object>)slot.Value;
             var newType = $"{ParserTypeName}.{Constants.SYS_DATETIME_TIMEPERIOD}";

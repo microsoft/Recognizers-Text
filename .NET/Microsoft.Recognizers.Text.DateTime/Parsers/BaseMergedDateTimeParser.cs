@@ -338,7 +338,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 // filter decade regexes
                 if (pr != null)
                 {
-                    pr = MergedParserUtil.TasksModeModification(pr, referenceTime);
+                    pr = TasksModeProcessing.TasksModeModification(pr, referenceTime);
                     pr.Text = originText;
                 }
             }

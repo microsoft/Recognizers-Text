@@ -520,54 +520,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             return results;
         }
 
-        /*
-        TasksModeModification function will modify datetime value according to it's type and w.r.t
-        refrence time.
-
-        Under TasksMode
-        For Input: 22 april at 5 pm. (reference time is 22/04/2022 T17:30:00, output type is datetime)
-        Expected output : {Past resolution value: 22/04/2022T17,
-        Future resolution value: 22/04/2023T17
-        },
-
-        Under Default Mode
-        For Input: 22 april at 5 pm. (reference time is 22/04/2022 T17:30:00)
-        Expected output : {Past resolution value: 22/04/2021T17,
-        Future resolution value: 22/04/2022T17
-        },
-         */
-        public static DateTimeParseResult TasksModeModification(DateTimeParseResult slot, DateObject referenceTime)
-        {
-            switch (slot.Type.Substring(ParserTypeName.Length + 1))
-            {
-                case Constants.SYS_DATETIME_DATE:
-                    slot = TasksModeProcessing.TasksModeModifyDateValue(slot, referenceTime);
-                    break;
-
-                case Constants.SYS_DATETIME_DATEPERIOD:
-                    slot = TasksModeProcessing.TasksModeModifyDatePeriodValue(slot, referenceTime);
-                    break;
-
-                case Constants.SYS_DATETIME_TIME:
-                    slot = TasksModeProcessing.TasksModeModifyTimeValue(slot, referenceTime);
-                    break;
-
-                case Constants.SYS_DATETIME_TIMEPERIOD:
-                    slot = TasksModeProcessing.TasksModeTimePeriodValue(slot, referenceTime);
-                    break;
-
-                case Constants.SYS_DATETIME_DATETIME:
-                    slot = TasksModeProcessing.TasksModeModifyDateTimeValue(slot, referenceTime);
-                    break;
-
-                case Constants.SYS_DATETIME_DATETIMEPERIOD:
-                    slot = TasksModeProcessing.TasksModeModifyDateTimePeriodValue(slot, referenceTime);
-                    break;
-            }
-
-            return slot;
-        }
-
         internal static void AddResolutionFields(Dictionary<string, string> dic, string key, string value)
         {
             if (!string.IsNullOrEmpty(value))
