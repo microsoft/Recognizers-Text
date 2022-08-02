@@ -98,7 +98,7 @@ The table below summarizes the currently supported entities. Support for English
 | Seq. - IP Address    | G    | G       | G     | G      | G      |         |        |        |        |         |
 | Seq. - Phone Number  | :x:  | :x:     | :x:   | :x:    | :x:    |         |        |        |        |         |
 | Seq. - URL           | G    | G       | G     | G*     | G*     |         |        |        |        |         |
-| DateTime (+subtypes) | :x:  | :x:     | ✓     | ✓     | **SO** |         |        |        |        |         |
+| DateTime (+subtypes) | **SP** | :x:     | ✓     | ✓     | **SO** |         |        |        |        |         |
 
 * G: Generic entity, not language-specific (* unicode TLDs not-supported);
 * EO: Extraction-only (parsing/resolution/normalization pending);
