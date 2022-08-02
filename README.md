@@ -20,6 +20,25 @@ Especially for Japanese, Korean, Arabic, Swedish, and others! More info below.
 
 .NET is the primary package version and contributions propagate to the other platforms with time.
 
+## Citing the Recognizers-Text project
+
+If you utilize the recognizers in academic works, please cite it as below (you can omit the version number or update it to a specific version if relevant):
+
+```tex
+@software{soft:recognizers-text,
+  author    = {Wenhao Huang and Zijia Lin and Chris McConnell and B{\"{o}}rje F. Karlsson},
+  title     = {{Recognizers-Text}: {R}ecognition and resolution of numbers, units, and date/time entities expressed across multiple languages},
+  month     = jul,
+  year      = 2017,
+  publisher = {Zenodo},
+  version   = {1.0.0},
+  doi       = {10.5281/zenodo.6860598},
+  url       = {https://doi.org/10.5281/zenodo.6860598}
+}
+```
+
+Feel free to change "@software" to "@misc" if it better fits your templates.
+
 # Help
 
 If you have any questions, please go ahead and [open an issue](https://github.com/Microsoft/Recognizers-Text/issues/new/choose), even if it's not an actual bug. Issues are an acceptable discussion forum as well.
