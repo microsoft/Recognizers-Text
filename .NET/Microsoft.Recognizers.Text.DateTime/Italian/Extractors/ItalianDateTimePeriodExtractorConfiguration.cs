@@ -108,7 +108,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             DurationExtractor = new BaseDurationExtractor(new ItalianDurationExtractorConfiguration(this));
             TimePeriodExtractor = new BaseTimePeriodExtractor(new ItalianTimePeriodExtractorConfiguration(this));
             TimeZoneExtractor = new BaseTimeZoneExtractor(new ItalianTimeZoneExtractorConfiguration(this));
-            SingleHolidayExtractor = new BaseHolidayExtractor(new ItalianHolidayExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new ItalianHolidayExtractorConfiguration(this));
 
         }
 
@@ -172,7 +172,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public IDateTimeExtractor TimeZoneExtractor { get; }
 
-        public IDateTimeExtractor SingleHolidayExtractor { get; }
+        public IDateTimeExtractor HolidayExtractor { get; }
 
         Regex IDateTimePeriodExtractorConfiguration.PrefixDayRegex => PrefixDayRegex;
 

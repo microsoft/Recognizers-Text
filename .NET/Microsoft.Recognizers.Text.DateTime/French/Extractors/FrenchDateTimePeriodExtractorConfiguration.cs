@@ -108,7 +108,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             DurationExtractor = new BaseDurationExtractor(new FrenchDurationExtractorConfiguration(this));
             TimePeriodExtractor = new BaseTimePeriodExtractor(new FrenchTimePeriodExtractorConfiguration(this));
             TimeZoneExtractor = new BaseTimeZoneExtractor(new FrenchTimeZoneExtractorConfiguration(this));
-            SingleHolidayExtractor = new BaseHolidayExtractor(new FrenchHolidayExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new FrenchHolidayExtractorConfiguration(this));
 
         }
 
@@ -150,7 +150,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public IDateTimeExtractor TimeZoneExtractor { get; }
 
-        public IDateTimeExtractor SingleHolidayExtractor { get; }
+        public IDateTimeExtractor HolidayExtractor { get; }
 
         bool IDateTimePeriodExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 

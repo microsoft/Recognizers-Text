@@ -104,7 +104,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
             SingleDateTimeExtractor = new BaseDateTimeExtractor(new TurkishDateTimeExtractorConfiguration(this));
             DurationExtractor = new BaseDurationExtractor(new TurkishDurationExtractorConfiguration(this));
             TimePeriodExtractor = new BaseTimePeriodExtractor(new TurkishTimePeriodExtractorConfiguration(this));
-            SingleHolidayExtractor = new BaseHolidayExtractor(new TurkishHolidayExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new TurkishHolidayExtractorConfiguration(this));
 
         }
 
@@ -176,7 +176,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 
         public IDateTimeExtractor TimeZoneExtractor { get; }
 
-        public IDateTimeExtractor SingleHolidayExtractor { get; }
+        public IDateTimeExtractor HolidayExtractor { get; }
 
         // TODO: these three methods are the same in DatePeriod, should be abstracted
         public bool GetFromTokenIndex(string text, out int index)

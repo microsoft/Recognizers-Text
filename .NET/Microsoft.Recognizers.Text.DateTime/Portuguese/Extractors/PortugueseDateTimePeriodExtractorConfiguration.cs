@@ -92,7 +92,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration(this));
             TimePeriodExtractor = new BaseTimePeriodExtractor(new PortugueseTimePeriodExtractorConfiguration(this));
             TimeZoneExtractor = new BaseTimeZoneExtractor(new PortugueseTimeZoneExtractorConfiguration(this));
-            SingleHolidayExtractor = new BaseHolidayExtractor(new PortugueseHolidayExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new PortugueseHolidayExtractorConfiguration(this));
 
         }
 
@@ -112,7 +112,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public IDateTimeExtractor TimeZoneExtractor { get; }
 
-        public IDateTimeExtractor SingleHolidayExtractor { get; }
+        public IDateTimeExtractor HolidayExtractor { get; }
 
         public IEnumerable<Regex> SimpleCasesRegex => new[]
         {

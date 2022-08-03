@@ -99,7 +99,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             DurationExtractor = new BaseDurationExtractor(new SpanishDurationExtractorConfiguration(this));
             TimePeriodExtractor = new BaseTimePeriodExtractor(new SpanishTimePeriodExtractorConfiguration(this));
             TimeZoneExtractor = new BaseTimeZoneExtractor(new SpanishTimeZoneExtractorConfiguration(this));
-            SingleHolidayExtractor = new BaseHolidayExtractor(new SpanishHolidayExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new SpanishHolidayExtractorConfiguration(this));
 
         }
 
@@ -117,7 +117,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public IDateTimeExtractor TimePeriodExtractor { get; }
 
-        public IDateTimeExtractor SingleHolidayExtractor { get; }
+        public IDateTimeExtractor HolidayExtractor { get; }
 
         public IDateTimeExtractor TimeZoneExtractor { get; }
 

@@ -38,7 +38,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if ((config.Options & DateTimeOptions.TasksMode) != 0)
             {
-                var holidates = config.SingleHolidayExtractor.Extract(text, reference);
+                var holidates = config.HolidayExtractor.Extract(text, reference);
                 dateErs.AddRange(holidates);
             }
 
@@ -232,7 +232,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         // adding support for merging holiday with timeperiod
                         if ((config.Options & DateTimeOptions.TasksMode) != 0)
                         {
-                            var holidates = config.SingleHolidayExtractor.Extract(beforeStr, reference);
+                            var holidates = config.HolidayExtractor.Extract(beforeStr, reference);
                             ers.AddRange(holidates);
                         }
 
@@ -259,7 +259,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                         // check if follwed by holiday?
                         if ((config.Options & DateTimeOptions.TasksMode) != 0)
                         {
-                            var holidates = config.SingleHolidayExtractor.Extract(followedStr, reference);
+                            var holidates = config.HolidayExtractor.Extract(followedStr, reference);
                             er.AddRange(holidates);
                         }
 

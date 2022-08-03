@@ -229,7 +229,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public List<Token> MergeHolidayAndTime(string text, DateObject reference)
         {
             var ret = new List<Token>();
-            var dateErs = this.config.SingleHolidayExtractor.Extract(text, reference);
+            var dateErs = this.config.HolidayExtractor.Extract(text, reference);
             if (dateErs.Count == 0)
             {
                 return ret;

@@ -78,7 +78,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             TimePointExtractor = new BaseTimeExtractor(new ItalianTimeExtractorConfiguration(this));
             DurationExtractor = new BaseDurationExtractor(new ItalianDurationExtractorConfiguration(this));
             UtilityConfiguration = new ItalianDatetimeUtilityConfiguration();
-            SingleHolidayExtractor = new BaseHolidayExtractor(new ItalianHolidayExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new ItalianHolidayExtractorConfiguration(this));
 
         }
 
@@ -90,7 +90,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public IDateTimeExtractor SingleHolidayExtractor { get; }
+        public IDateTimeExtractor HolidayExtractor { get; }
 
         Regex IDateTimeExtractorConfiguration.NowRegex => NowRegex;
 

@@ -77,7 +77,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
             TimePointExtractor = new BaseTimeExtractor(new TurkishTimeExtractorConfiguration(this));
             DurationExtractor = new BaseDurationExtractor(new TurkishDurationExtractorConfiguration(this));
             UtilityConfiguration = new TurkishDatetimeUtilityConfiguration();
-            SingleHolidayExtractor = new BaseHolidayExtractor(new TurkishHolidayExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new TurkishHolidayExtractorConfiguration(this));
 
         }
 
@@ -89,7 +89,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public IDateTimeExtractor SingleHolidayExtractor { get; }
+        public IDateTimeExtractor HolidayExtractor { get; }
 
         Regex IDateTimeExtractorConfiguration.NowRegex => NowRegex;
 

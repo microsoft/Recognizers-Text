@@ -48,7 +48,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        IDateTimeExtractor SingleHolidayExtractor { get; }
+        IDateTimeExtractor HolidayExtractor { get; }
 
         bool IsConnector(string text);
     }

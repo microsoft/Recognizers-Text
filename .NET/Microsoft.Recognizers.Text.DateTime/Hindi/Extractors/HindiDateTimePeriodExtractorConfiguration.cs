@@ -97,7 +97,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
             SingleDateTimeExtractor = new BaseDateTimeExtractor(new HindiDateTimeExtractorConfiguration(this));
             DurationExtractor = new BaseDurationExtractor(new HindiDurationExtractorConfiguration(this));
             TimePeriodExtractor = new BaseTimePeriodExtractor(new HindiTimePeriodExtractorConfiguration(this));
-            SingleHolidayExtractor = new BaseHolidayExtractor(new HindiHolidayExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new HindiHolidayExtractorConfiguration(this));
 
         }
 
@@ -169,7 +169,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
 
         public IDateTimeExtractor TimeZoneExtractor { get; }
 
-        public IDateTimeExtractor SingleHolidayExtractor { get; }
+        public IDateTimeExtractor HolidayExtractor { get; }
 
         // TODO: these three methods are the same in DatePeriod, should be abstracted
         public bool GetFromTokenIndex(string text, out int index)
