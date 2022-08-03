@@ -215,6 +215,8 @@ def simple_parser_assert(spec_info, actual, expected, prop, resolution, ignore_r
 
 
 def create_extractor(language, model, options):
+    if language == "EnglishOthers":
+        language = "English"
     extractor = get_class(
         'recognizers_date_time',
         f'{language}{model}Extractor')
@@ -243,6 +245,10 @@ def create_extractor(language, model, options):
 
 
 def create_parser(language, model, options):
+    dmyDateFormat = False
+    if language == "EnglishOthers":
+        language = "English"
+        dmyDateFormat = True
     parser = get_class(
         f'recognizers_date_time.date_time.{language.lower()}.{model.lower()}_parser',
         f'{language}{model}Parser')
@@ -269,8 +275,12 @@ def create_parser(language, model, options):
         f'recognizers_date_time.date_time.{language.lower()}.common_configs',
         f'{language}CommonDateTimeParserConfiguration')
 
-    configuration = configuration_class(
-        language_configuration()) if language_configuration else configuration_class()
+    if dmyDateFormat:
+        configuration = configuration_class(
+            language_configuration(), dmyDateFormat) if language_configuration else configuration_class()
+    else:
+        configuration = configuration_class(
+            language_configuration()) if language_configuration else configuration_class()
 
     if model == 'Merged':
         option = get_option(options)
