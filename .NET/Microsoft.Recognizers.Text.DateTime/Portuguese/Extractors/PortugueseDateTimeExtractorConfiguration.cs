@@ -87,7 +87,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             TimePointExtractor = new BaseTimeExtractor(new PortugueseTimeExtractorConfiguration(this));
             DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration(this));
             UtilityConfiguration = new PortugueseDatetimeUtilityConfiguration();
-            HolidayPointExtractor = new BaseHolidayExtractor(new PortugueseHolidayExtractorConfiguration(this));
+            SingleHolidayExtractor = new BaseHolidayExtractor(new PortugueseHolidayExtractorConfiguration(this));
 
         }
 
@@ -101,7 +101,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public IDateTimeExtractor HolidayPointExtractor { get; }
+        public IDateTimeExtractor SingleHolidayExtractor { get; }
 
         Regex IDateTimeExtractorConfiguration.NowRegex => NowRegex;
 

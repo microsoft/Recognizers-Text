@@ -85,7 +85,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Arabic
             TimePointExtractor = new BaseTimeExtractor(new ArabicTimeExtractorConfiguration(this));
             DurationExtractor = new BaseDurationExtractor(new ArabicDurationExtractorConfiguration(this));
             UtilityConfiguration = new ArabicDatetimeUtilityConfiguration();
-            HolidayPointExtractor = new BaseHolidayExtractor(new ArabicHolidayExtractorConfiguration(this));
+            SingleHolidayExtractor = new BaseHolidayExtractor(new ArabicHolidayExtractorConfiguration(this));
         }
 
         public IExtractor IntegerExtractor { get; }
@@ -96,7 +96,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Arabic
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public IDateTimeExtractor HolidayPointExtractor { get; }
+        public IDateTimeExtractor SingleHolidayExtractor { get; }
 
         Regex IDateTimeExtractorConfiguration.NowRegex => NowRegex;
 

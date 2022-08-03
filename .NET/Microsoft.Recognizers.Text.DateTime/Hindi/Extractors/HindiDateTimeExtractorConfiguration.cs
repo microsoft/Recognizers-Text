@@ -74,7 +74,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
             TimePointExtractor = new BaseTimeExtractor(new HindiTimeExtractorConfiguration(this));
             DurationExtractor = new BaseDurationExtractor(new HindiDurationExtractorConfiguration(this));
             UtilityConfiguration = new HindiDatetimeUtilityConfiguration();
-            HolidayPointExtractor = new BaseHolidayExtractor(new HindiHolidayExtractorConfiguration(this));
+            SingleHolidayExtractor = new BaseHolidayExtractor(new HindiHolidayExtractorConfiguration(this));
 
         }
 
@@ -86,7 +86,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
 
-        public IDateTimeExtractor HolidayPointExtractor { get; }
+        public IDateTimeExtractor SingleHolidayExtractor { get; }
 
         Regex IDateTimeExtractorConfiguration.NowRegex => NowRegex;
 
