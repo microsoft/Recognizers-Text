@@ -506,9 +506,9 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
                     end_index = (start_index + result_length) + len(match.group())
 
                     start_index, end_index = self.extend_with_week_day_and_year(start_index, end_index,
-                                                       self.config.month_of_year[RegExpUtility.get_group(
-                                                           match, Constants.MONTH_GROUP_NAME).lower() or str(
-                                                           reference.month)], num, source, reference)
+                                                                                self.config.month_of_year[RegExpUtility.get_group(
+                                                                                    match, Constants.MONTH_GROUP_NAME).lower() or str(
+                                                                                    reference.month)], num, source, reference)
 
                     ret.append(Token(start_index, end_index))
         return ret
@@ -517,7 +517,7 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
         index = 0
         match_year = self.config.year_suffix.match(affix)
 
-        success = not (match_year and match_year.start())  if not in_prefix else match_year and match_year.start() \
+        success = not (match_year and match_year.start()) if not in_prefix else match_year and match_year.start() \
             + match_year.end() == len(affix.strip())
 
         if success:
@@ -1242,10 +1242,10 @@ class BaseDateParser(DateTimeParser):
         match_year = self.config.date_extractor.config.year_suffix.match(affix)
 
         success = not (match_year and match_year.start()) if not in_prefix else match_year and match_year.start() \
-                                                                                + match_year.end() == len(affix.strip())
+            + match_year.end() == len(affix.strip())
 
         if success:
-            year =  self.config.date_extractor.get_year_from_text(match_year)
+            year = self.config.date_extractor.get_year_from_text(match_year)
             if Constants.MIN_YEAR_NUM <= year <= Constants.MAX_YEAR_NUM:
                 return year
 

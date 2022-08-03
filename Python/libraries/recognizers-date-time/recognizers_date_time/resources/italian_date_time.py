@@ -104,11 +104,11 @@ class ItalianDateTime:
     WeekDayOfMonthRegex = f'(?<wom>((la|il)\\s+)?(?<cardinal>prim[ao]|second[ao]|terz[ao]|quart[ao]|quint[ao]|ultim[ao])\\s+{WeekDayRegex}\\s+{MonthSuffixRegex})'
     RelativeWeekDayRegex = f'\\b({WrittenNumRegex}\\s+{WeekDayRegex}\\s+(da\\s+ora|dopo))\\b'
     SpecialDate = f'(?<=\\b(il|l\'|al(l\')?)\\s*){DayRegex}\\b'
-    DateExtractor1 = f'\\b((quest[oa]\\s+)?{WeekDayRegex}\\s*[,-]?\\s*)?(({MonthRegex}(\\.)?\\s*[/\\\\.,-]?\\s*{DayRegex})|(\\({MonthRegex}\\s*[-.]\\s*{DayRegex}\\))|({DayRegex}\\s*[/\\\\.,-]?\\s*{MonthRegex}(\\.)?))(\\s*\\(\\s*{WeekDayRegex}\\s*\\))?'
+    DateExtractor1 = f'\\b((quest[oa]\\s+)?{WeekDayRegex}\\s*[,-]?\\s*)?(({MonthRegex}(\\.)?\\s*[/\\\\.,-]?\\s*{DayRegex}(?!\\s*\\-\\s*\\d{{2}}\\b))|(\\({MonthRegex}\\s*[-.]\\s*{DayRegex}\\))|({DayRegex}\\s*[/\\\\.,-]?\\s*{MonthRegex}(\\.)?))(\\s*\\(\\s*{WeekDayRegex}\\s*\\))?'
     DateExtractor2 = f'({DateExtractor1}(\\s+|\\s*[\\-/,.]\\s*|\\s+del\\s+)({DateYearRegex}))\\b'
     DateExtractor3 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?({DayRegex}(\\.)?(\\s*[/,.\\- ]\\s*|\\s+di\\s+){MonthRegex}(\\.)?(\\s*[/,.\\- ]\\s*{DateYearRegex})?|{BaseDateTime.FourDigitYearRegex}\\s*[/,.\\- ]\\s*{DayRegex}\\s*[/,.\\- ]\\s*{MonthRegex})\\b'
     DateExtractor4 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?((il|l\')\\s*)?{MonthNumRegex}\\s*[/\\\\\\-]\\s*{DayRegex}(\\.)?\\s*[/\\\\\\-]\\s*{DateYearRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)'
-    DateExtractor5 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{DayRegex}\\s*[/\\\\\\-]\\s*({MonthNumRegex}|{MonthRegex}(\\.)?)\\s*[/\\\\\\-]\\s*{DateYearRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)'
+    DateExtractor5 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{DayRegex}\\s*[/\\\\\\-\\.]\\s*({MonthNumRegex}|{MonthRegex}(\\.)?)\\s*[/\\\\\\-\\.]\\s*{DateYearRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)'
     DateExtractor6 = f'(?<!([\\-\\.\\/]|all[e\']\\s*|l[e\']\\s*))\\b{MonthNumRegex}[\\-\\.\\/]{DayRegex}{BaseDateTime.CheckDecimalRegex}(?!(%|\\s*{{DescRegex}}))\\b'
     DateExtractor7 = f'(?<!\\b{DateYearRegex}\\s*[/\\\\\\-]\\s*)\\b{DayRegex}\\s*[\\/\\\\-]s*{MonthNumRegex}((\\s+|\\s*[\\/\\-\\\\,]\\s*){DateYearRegex})?\\b{BaseDateTime.CheckDecimalRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)'
     DateExtractor8 = f'(?<!([\\-\\.\\/]|all[e\']\\s*|l[e\']\\s*))\\b{DayRegex}[\\/\\\\\\-]{MonthNumRegex}{BaseDateTime.CheckDecimalRegex}(?!(%|\\s*{DescRegex}))\\b'
@@ -603,7 +603,9 @@ class ItalianDateTime:
     DurationDateRestrictions = []
     AmbiguityFiltersDict = dict([("^\\d{4}$", "(\\d\\.\\d{4}|\\d{4}\\.\\d)"),
                                  ("\\bgiorno|pomeriggio|sera|notte\\b", "\\b(buona?\\s*(giorno|pomeriggio|sera|notte))\\b"),
-                                 ("^(apr|ago|dic|feb|gen|lug|giu|mar|mag|nov|ott|sett?)$", "([$%£&!?@#])(apr|ago|dic|feb|gen|lug|giu|mar|mag|nov|ott|sett?)|(apr|ago|dic|feb|gen|lug|giu|mar|mag|nov|ott|sett?)([$%£&@#])")])
+                                 ("^(apr|ago|dic|feb|gen|lug|giu|mar|mag|nov|ott|sett?)$", "([$%£&!?@#])(apr|ago|dic|feb|gen|lug|giu|mar|mag|nov|ott|sett?)|(apr|ago|dic|feb|gen|lug|giu|mar|mag|nov|ott|sett?)([$%£&@#])"),
+                                 ("^\\d{1,4}-\\d{1,4}$", "\\d{1,4}-\\d{1,4}-\\d|\\d-\\d{1,4}-\\d{1,4}"),
+                                 ("^\\d{1,4}-\\d{1,4}-\\d{1,4}$", "\\d{1,4}-\\d{1,4}-\\d{1,4}-\\d|\\d-\\d{1,4}-\\d{1,4}-\\d{1,4}")])
     MorningTermList = [r'mattino', r'mattina', r'mattine', r'mattinata']
     AfternoonTermList = [r'pomeriggio', r'pomeriggi', r'dopo pranzo']
     EveningTermList = [r'sera', r'sere', r'serata']
