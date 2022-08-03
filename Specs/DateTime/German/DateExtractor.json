@@ -233,7 +233,7 @@
   },
   {
     "Input": "Ich bin am zweiten Februar 2018 wieder da.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "zweiten Februar 2018",
@@ -336,6 +336,18 @@
         "Type": "date",
         "Start": 33,
         "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Sehen Sie meine Forderungen von Mittwoch, den 11. November an",
+    "NotSupported": "java, javascript",
+    "Results": [
+      {
+        "Text": "Mittwoch, den 11. November",
+        "Type": "date",
+        "Start": 32,
+        "Length": 26
       }
     ]
   }

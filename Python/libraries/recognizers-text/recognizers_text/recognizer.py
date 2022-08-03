@@ -3,6 +3,8 @@
 
 from abc import ABC, abstractmethod
 from typing import Generic, Callable
+
+from . import Culture
 from .model import T_MODEL_OPTIONS, ModelFactory, Model
 
 
@@ -23,6 +25,7 @@ class Recognizer(Generic[T_MODEL_OPTIONS], ABC):
     def get_model(self, model_type_name: str, culture: str, fallback_to_default_culture: bool) -> Model:
         if culture is None:
             culture = self.target_culture
+        culture = Culture.map_to_nearest_language(culture)
         return self.model_factory.get_model(model_type_name, culture, fallback_to_default_culture, self.options)
 
     def register_model(self, model_type_name: str, culture: str, model_ctor: Callable[[T_MODEL_OPTIONS], Model]):
