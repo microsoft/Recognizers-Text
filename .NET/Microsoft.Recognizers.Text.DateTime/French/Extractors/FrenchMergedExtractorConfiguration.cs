@@ -154,6 +154,6 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         bool IMergedExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 
-        public IEnumerable<Regex> TasksModeMentionFilters { get; }
+        public Regex TasksModeMentionFilters { get; }
     }
 }

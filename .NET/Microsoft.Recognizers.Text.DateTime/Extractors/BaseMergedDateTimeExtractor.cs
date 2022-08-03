@@ -278,14 +278,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         private bool TasksModeFilters(ExtractResult er)
         {
-            foreach (var regex in this.config.TasksModeMentionFilters)
-            {
-                var match = regex.Match(er.Text);
+            var match = config.TasksModeMentionFilters.Match(er.Text);
 
-                if (match.Success)
-                {
-                    return true;
-                }
+            if (match.Success)
+            {
+                return true;
             }
 
             return false;

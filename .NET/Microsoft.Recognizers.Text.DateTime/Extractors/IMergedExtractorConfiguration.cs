@@ -39,7 +39,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         /* TasksModeMentionFilters should be used only under TasksMode.
            Some scenarios that don't need to be classified are suppressed.
          */
-        IEnumerable<Regex> TasksModeMentionFilters { get; }
+        Regex TasksModeMentionFilters { get; }
 
         Regex AfterRegex { get; }
 
