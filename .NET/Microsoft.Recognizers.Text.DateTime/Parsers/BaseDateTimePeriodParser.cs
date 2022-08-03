@@ -402,6 +402,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     if (!valid)
                     {
                         ers = this.Config.DateExtractor.Extract(afterStr, referenceTime);
+
                         if ((Config.Options & DateTimeOptions.TasksMode) != 0)
                         {
                             ers.AddRange(this.Config.HolidayExtractor.Extract(beforeStr + ' ' + afterStr, referenceTime));
@@ -463,6 +464,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 var pr = this.Config.DateParser.Parse(ers[0], referenceTime);
+
                 if (pr.Value == null && ((Config.Options & DateTimeOptions.TasksMode) != 0))
                 {
                     pr = this.Config.HolidayTimeParser.Parse(ers[0], referenceTime);
