@@ -101,32 +101,32 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             {
                 TasksModeMentionFilters = new List<Regex>
                 {
-                // supress cases like 1ampm
-                new Regex(DateTimeDefinitions.AmPmDescRegex, RegexFlags),
+                    // supress cases like 1ampm
+                    new Regex(DateTimeDefinitions.AmPmDescRegex, RegexFlags),
 
-                // supress cases like 1p--> 1pm
-                new Regex(DateTimeDefinitions.TasksModeSpecialDescRegex, RegexFlags),
+                    // supress cases like 1p--> 1pm
+                    new Regex(DateTimeDefinitions.TasksModeSpecialDescRegex, RegexFlags),
 
-                // suppress holiday time reference whose celebration dates are region specific
-                new Regex(DateTimeDefinitions.TasksModeHolidayListSupression, RegexFlags),
+                    // suppress holiday time reference whose celebration dates are region specific
+                    new Regex(DateTimeDefinitions.TasksModeHolidayListSupression, RegexFlags),
 
-                // Remove decade regex ex seventies, twenties
-                new Regex(DateTimeDefinitions.DecadeRegex, RegexFlags),
+                    // Remove decade regex ex seventies, twenties
+                    new Regex(DateTimeDefinitions.DecadeRegex, RegexFlags),
 
-                // Remove decade regex ex 1990s, 9s
-                new Regex(DateTimeDefinitions.DecadeWithCenturyRegex, RegexFlags),
+                    // Remove decade regex ex 1990s, 9s
+                    new Regex(DateTimeDefinitions.DecadeWithCenturyRegex, RegexFlags),
 
-                // "Q1 2018", "2nd quarter"
-                new Regex(DateTimeDefinitions.QuarterRegex, RegexFlags),
+                    // "Q1 2018", "2nd quarter"
+                    new Regex(DateTimeDefinitions.QuarterRegex, RegexFlags),
 
-                // "2016 Q1", "last year the 4th quarter"
-                new Regex(DateTimeDefinitions.QuarterRegexYearFront, RegexFlags),
+                    // "2016 Q1", "last year the 4th quarter"
+                    new Regex(DateTimeDefinitions.QuarterRegexYearFront, RegexFlags),
 
-                // "2015 the H1", "H2 of 2016", "1st half 2018", "2nd half this year"
-                new Regex(DateTimeDefinitions.AllHalfYearRegex, RegexFlags),
+                    // "2015 the H1", "H2 of 2016", "1st half 2018", "2nd half this year"
+                    new Regex(DateTimeDefinitions.AllHalfYearRegex, RegexFlags),
 
-                // summer winter etc
-                new Regex(DateTimeDefinitions.SeasonRegex, RegexFlags),
+                    // summer winter etc
+                    new Regex(DateTimeDefinitions.SeasonRegex, RegexFlags),
                 };
             }
 
@@ -211,8 +211,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         StringMatcher IMergedExtractorConfiguration.SuperfluousWordMatcher => SuperfluousWordMatcher;
 
         bool IMergedExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
-
-        // IEnumerable<Regex> IMergedExtractorConfiguration.TasksModeMentionFilters => TasksModeMentionFilters;
 
         public IEnumerable<Regex> TasksModeMentionFilters { get; }
     }
