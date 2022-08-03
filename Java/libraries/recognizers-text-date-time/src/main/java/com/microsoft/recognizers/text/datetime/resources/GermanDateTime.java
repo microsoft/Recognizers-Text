@@ -49,9 +49,16 @@ public class GermanDateTime {
 
     public static final String PenultimatePrefixRegex = "\\b(vorletzte[snm]?)\\b";
 
+    public static final String WrittenOneToNineRegex = "(eins?|zw(een|ei|o)|drei|vier|fünf|fuenf|sechs|sieben|acht|neun)";
+
     public static final String DayRegex = "(de[rmsn]\\s*)?(?<day>(01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)(\\.|\\b))";
 
-    public static final String MonthNumRegex = "(?<month>(01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\\.?)";
+    public static final String WrittenDayNumRegex = "\\b(de[rmsn]\\s+)?(?<day>erst|zweit|dritt|viert|fünft|fuenft|sechst|siebt|acht|neunt|zehnt|elft|zwölft|zwoelft|dreizehnt|vierzehnt|fünfzehnt|fuenfzehnt|sechzehnt|siebzehnt|achtzehnt|neunzehnt|({WrittenOneToNineRegex}und)?zwanzigst|(einund)?dreißigst)e[nr]\\b"
+            .replace("{WrittenOneToNineRegex}", WrittenOneToNineRegex);
+
+    public static final String MonthNumRegex = "(?<month>(01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)(\\.|\\b))";
+
+    public static final String WrittenMonthNumRegex = "\\b(?<month>erst|zweit|dritt|viert|fünft|fuenft|sechst|siebt|acht|neunt|zehnt|elft|zw(ö|oe)lft)e[nr]\\b";
 
     public static final String AmDescRegex = "({BaseDateTime.BaseAmDescRegex})"
             .replace("{BaseDateTime.BaseAmDescRegex}", BaseDateTime.BaseAmDescRegex);
@@ -73,7 +80,8 @@ public class GermanDateTime {
 
     public static final String CenturyRegex = "\\b(?<century>((ein|zwei)?tausend(und)?)?((ein|zwei|drei|vier|fünf|sechs|sieben|acht|neun|zehn|elf|zwölf|dreizehn|vierzehn|fünfzehn|sechzehn|siebzehn|achtzehn|neunzehn)hundert))\\b";
 
-    public static final String WrittenNumRegex = "(zw(ö|oe)lf|dreizehn|vierzehn|fünfzehn|sechzehn|siebzehn|achtzehn|neunzehn|zwanzig|dreißig|vierzig|fünfzig|sechzig|siebzig|achtzig|neunzig|eins?|zw(een|ei|o)|drei|vier|fünf|fuenf|sechs|sieben|acht|neun|zehn|elf)";
+    public static final String WrittenNumRegex = "(zw(ö|oe)lf|dreizehn|vierzehn|fünfzehn|sechzehn|siebzehn|achtzehn|neunzehn|zwanzig|dreißig|vierzig|fünfzig|sechzig|siebzig|achtzig|neunzig|elf|zehn|{WrittenOneToNineRegex})"
+            .replace("{WrittenOneToNineRegex}", WrittenOneToNineRegex);
 
     public static final String FullTextYearRegex = "\\b((?<firsttwoyearnum>{CenturyRegex})\\s+(?<lasttwoyearnum>((zwanzig|dreißig|vierzig|fünfzig|sechzig|siebzig|achtzig|neunzig)\\s+{WrittenNumRegex})|{WrittenNumRegex}))\\b|\\b(?<firsttwoyearnum>{CenturyRegex})\\b"
             .replace("{CenturyRegex}", CenturyRegex)
@@ -243,7 +251,7 @@ public class GermanDateTime {
             .replace("{DateYearRegex}", DateYearRegex)
             .replace("{BaseDateTime.FourDigitYearRegex}", BaseDateTime.FourDigitYearRegex);
 
-    public static final String DateExtractor2 = "\\b({MonthRegex}\\s*[/\\\\.,\\- ]\\s*{DayRegex}(\\s*[/\\\\.,\\- ]\\s*{DateYearRegex})?)\\b"
+    public static final String DateExtractor2 = "\\b({MonthRegex}\\s*[/\\\\.,\\- ]\\s*{DayRegex}(?!\\s*\\-\\s*\\d{2}\\b)(\\s*[/\\\\.,\\- ]\\s*{DateYearRegex})?)\\b"
             .replace("{WeekDayRegex}", WeekDayRegex)
             .replace("{MonthRegex}", MonthRegex)
             .replace("{DayRegex}", DayRegex)
@@ -290,6 +298,14 @@ public class GermanDateTime {
             .replace("{MonthNumRegex}", MonthNumRegex)
             .replace("{DateYearRegex}", DateYearRegex)
             .replace("{RelativeRegex}", RelativeRegex);
+
+    public static final String DateExtractor11 = "\\b(({WeekDayRegex})(\\s+|\\s*,\\s*)|(?<=\\bam\\s+))({DayRegex}\\.|{WrittenDayNumRegex})\\s*[/\\\\.\\- ]\\s*({MonthNumRegex}\\.|{WrittenMonthNumRegex})(\\s*[/\\\\.\\- ]\\s*{DateYearRegex})?"
+            .replace("{WeekDayRegex}", WeekDayRegex)
+            .replace("{MonthNumRegex}", MonthNumRegex)
+            .replace("{DayRegex}", DayRegex)
+            .replace("{DateYearRegex}", DateYearRegex)
+            .replace("{WrittenMonthNumRegex}", WrittenMonthNumRegex)
+            .replace("{WrittenDayNumRegex}", WrittenDayNumRegex);
 
     public static final String DateExtractorA = "({DateYearRegex}\\s*[/\\\\\\-\\.]\\s*({MonthNumRegex}|{MonthRegex})\\s*[/\\\\\\-\\.]\\s*{DayRegex}|{MonthRegex}\\s*[/\\\\\\-\\.]\\s*{BaseDateTime.FourDigitYearRegex}\\s*[/\\\\\\-\\.]\\s*{DayRegex}|{DayRegex}\\s*[/\\\\\\-\\.]\\s*{BaseDateTime.FourDigitYearRegex}\\s*[/\\\\\\-\\.]\\s*{MonthRegex})(?!\\s*[/\\\\\\-\\.:]\\s*\\d+)"
             .replace("{DateYearRegex}", DateYearRegex)
@@ -982,6 +998,20 @@ public class GermanDateTime {
         .put("07", 7)
         .put("08", 8)
         .put("09", 9)
+        .put("erst", 1)
+        .put("zweit", 2)
+        .put("dritt", 3)
+        .put("viert", 4)
+        .put("fünft", 5)
+        .put("fuenft", 5)
+        .put("sechst", 6)
+        .put("siebt", 7)
+        .put("acht", 8)
+        .put("neunt", 9)
+        .put("zehnt", 10)
+        .put("elft", 11)
+        .put("zwölft", 12)
+        .put("zwoelft", 12)
         .build();
 
     public static final ImmutableMap<String, Integer> Numbers = ImmutableMap.<String, Integer>builder()
@@ -1156,6 +1186,41 @@ public class GermanDateTime {
         .put("29", 29)
         .put("30", 30)
         .put("31", 31)
+        .put("erst", 1)
+        .put("zweit", 2)
+        .put("dritt", 3)
+        .put("viert", 4)
+        .put("fünft", 5)
+        .put("fuenft", 5)
+        .put("sechst", 6)
+        .put("siebt", 7)
+        .put("acht", 8)
+        .put("neunt", 9)
+        .put("zehnt", 10)
+        .put("elft", 11)
+        .put("zwölft", 12)
+        .put("zwoelft", 12)
+        .put("dreizehnt", 13)
+        .put("vierzehnt", 14)
+        .put("fünfzehnt", 15)
+        .put("fuenfzehnt", 15)
+        .put("sechzehnt", 16)
+        .put("siebzehnt", 17)
+        .put("achtzehnt", 18)
+        .put("neunzehnt", 19)
+        .put("zwanzigst", 20)
+        .put("einundzwanzigst", 21)
+        .put("zweiundzwanzigst", 22)
+        .put("dreiundzwanzigst", 23)
+        .put("vierundzwanzigst", 24)
+        .put("fünfundzwanzigst", 25)
+        .put("fuenfundzwanzigst", 25)
+        .put("sechsundzwanzigst", 26)
+        .put("siebenundzwanzigst", 27)
+        .put("achtundzwanzigst", 28)
+        .put("neunundzwanzigst", 29)
+        .put("dreißigst", 30)
+        .put("einunddreißigst", 31)
         .build();
 
     public static final ImmutableMap<String, Double> DoubleNumbers = ImmutableMap.<String, Double>builder()
