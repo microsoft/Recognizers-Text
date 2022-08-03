@@ -437,8 +437,8 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
                             extracted_week_day_str = RegExpUtility.get_group(
                                 match_case, 'weekday').lower()
                             if (date != DateUtils.min_value and
-                                    self.config.day_of_week[num_week_day_str] ==
-                                    self.config.day_of_week[extracted_week_day_str]):
+                                    DateUtils.day_of_week(num_week_day_str) ==
+                                    self.config.day_of_week.get(extracted_week_day_str)):
                                 ret.append(
                                     Token(match_case.start(), match_case.end()))
                                 is_found = True
@@ -505,27 +505,26 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
                     result_length = result.length if result.length else 0
                     end_index = (start_index + result_length) + len(match.group())
 
-                    self.extend_with_week_day_and_year(start_index, end_index,
-                                                       self.config.month_of_year[RegExpUtility.get_group(
-                                                           match, Constants.MONTH_GROUP_NAME).lower() or str(
-                                                           reference.month)], num, source, reference)
+                    start_index, end_index = self.extend_with_week_day_and_year(start_index, end_index,
+                                                                                self.config.month_of_year[RegExpUtility.get_group(
+                                                                                    match, Constants.MONTH_GROUP_NAME).lower() or str(
+                                                                                    reference.month)], num, source, reference)
 
-                    ret.append(Token(start_index, start_index +
-                                     result.length + len(match.group())))
-
+                    ret.append(Token(start_index, end_index))
         return ret
 
     def get_year_index(self, affix, year, in_prefix):
         index = 0
         match_year = self.config.year_suffix.match(affix)
-        success = match_year and match_year.start() if not in_prefix else match_year and match_year.start() \
+
+        success = not (match_year and match_year.start()) if not in_prefix else match_year and match_year.start() \
             + match_year.end() == len(affix.strip())
 
         if success:
             year = self.get_year_from_text(match_year)
 
             if Constants.MIN_YEAR_NUM <= year <= Constants.MAX_YEAR_NUM:
-                index = match_year.length if not in_prefix else match_year.end() + (len(affix) - len(affix.strip()))
+                index = len(match_year.group(0)) if not in_prefix else match_year.end() + (len(affix) - len(affix.strip()))
 
         return index, success
 
@@ -544,7 +543,7 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
 
         # Check also in prefix
         if not success and self.config.check_both_before_after:
-            year_index, success = self.get_year_index(suffix, year, False)
+            year_index, success = self.get_year_index(suffix, year, True)
             start_index -= year_index
 
         # Check also in prefix
@@ -1239,6 +1238,19 @@ class BaseDateParser(DateTimeParser):
             self.config.unit_regex,
             self.config.utility_configuration)
 
+    def _get_year_in_affix(self, affix, in_prefix):
+        match_year = self.config.date_extractor.config.year_suffix.match(affix)
+
+        success = not (match_year and match_year.start()) if not in_prefix else match_year and match_year.start() \
+            + match_year.end() == len(affix.strip())
+
+        if success:
+            year = self.config.date_extractor.get_year_from_text(match_year)
+            if Constants.MIN_YEAR_NUM <= year <= Constants.MAX_YEAR_NUM:
+                return year
+
+        return Constants.INVALID_YEAR
+
     def parse_number_with_month(self, source: str, reference: datetime) -> DateTimeParseResult:
         from .utilities import DateUtils
         from .utilities import DateTimeFormatUtil
@@ -1258,12 +1270,24 @@ class BaseDateParser(DateTimeParser):
         num = int(self.config.number_parser.parse(ers[0]).value)
         day = 1
         month = 0
+        year = reference.year
 
         match = regex.search(self.config.month_regex, trimmed_source)
 
         if match:
             month = self.config.month_of_year.get(match.group())
             day = num
+            suffix = trimmed_source[match.end():]
+            prefix = trimmed_source[0: match.start()]
+            year = self._get_year_in_affix(suffix, False)
+
+            if year == Constants.INVALID_YEAR and self.config.check_both_before_after:
+                year = self._get_year_in_affix(prefix, True)
+
+            if year != Constants.INVALID_YEAR:
+                ambiguous = False
+            else:
+                year = reference.year
         else:
             # handling relative month
             match = regex.search(
@@ -1295,8 +1319,6 @@ class BaseDateParser(DateTimeParser):
 
         if not match:
             return result
-
-        year = reference.year
 
         # for LUIS format value string
         date = DateUtils.safe_create_from_min_value(year, month, day)

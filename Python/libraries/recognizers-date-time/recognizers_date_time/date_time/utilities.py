@@ -529,6 +529,19 @@ class DateUtils:
     def is_Feb_29th_datetime(date: datetime):
         return date.month == 2 and date.day == 29
 
+    @staticmethod
+    def day_of_week(day):
+        dayOfWeek = {
+            'sunday': 0,
+            'monday': 1,
+            'tuesday': 2,
+            'wednesday': 3,
+            'thursday': 4,
+            'friday': 5,
+            'saturday': 6,
+        }
+        return dayOfWeek.get(day)
+
 
 class HolidayFunctions:
 

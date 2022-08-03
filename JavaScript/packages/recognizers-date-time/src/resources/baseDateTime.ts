@@ -12,7 +12,7 @@
 export namespace BaseDateTime {
     export const HourRegex = `(?<!\\d[,.])(?<hour>2[0-4]|[0-1]?\\d)(h)?`;
     export const TwoDigitHourRegex = `(?<hour>[0-1]\\d|2[0-4])(h)?`;
-    export const MinuteRegex = `(?<min>[0-5]?\\d)(?!\\d)`;
+    export const MinuteRegex = `(?<min>[0-5]\\d)(?!\\d)`;
     export const TwoDigitMinuteRegex = `(?<min>[0-5]\\d)(?!\\d)`;
     export const DeltaMinuteRegex = `(?<deltamin>[0-5]?\\d)`;
     export const SecondRegex = `(?<sec>[0-5]?\\d)`;

@@ -19,7 +19,7 @@ class EnglishNumeric:
     MultiDecimalSeparatorCulture = True
     NonStandardSeparatorVariants = [r'en-za', r'en-na', r'en-zw']
     RoundNumberIntegerRegex = f'(?:hundred|thousand|million|mln|billion|bln|trillion|tln|lakh|crore)s?'
-    ZeroToNineIntegerRegex = f'(?:three|seven|eight|four|five|zero|nine|one|two|six)'
+    ZeroToNineIntegerRegex = f'(?:three|seven|eight|four|five|zero|n[ao]ught|nine|one|two|six)'
     TwoToNineIntegerRegex = f'(?:three|seven|eight|four|five|nine|two|six)'
     NegativeNumberTermsRegex = f'(?<negTerm>(minus|negative)\\s+)'
     NegativeNumberSignRegex = f'^{NegativeNumberTermsRegex}.*'
@@ -37,9 +37,9 @@ class EnglishNumeric:
     IndianNumberingSystemRegex = f'(?<=\\b)((?:\\d{{1,2}},(?:\\d{{2}},)*\\d{{3}})(?=\\b))'
     NumbersWithSuffix = f'(((?<!\\d+(\\s*{BaseNumbers.NumberMultiplierRegex})?\\s*)-\\s*)|(?<=\\b))\\d+\\s*{BaseNumbers.NumberMultiplierRegex}(?=\\b)'
     RoundNumberIntegerRegexWithLocks = f'(?<=\\b)\\d+\\s+{RoundNumberIntegerRegex}(?=\\b)'
-    NumbersWithDozenSuffix = f'(((?<!\\d+(\\s*{BaseNumbers.NumberMultiplierRegex})?\\s*)-\\s*)|(?<=\\b))\\d+\\s+dozen(s)?(?=\\b)'
+    NumbersWithDozenSuffix = f'(((?<!\\d+(\\s*{BaseNumbers.NumberMultiplierRegex})?\\s*)-\\s*)|(?<=\\b))\\d+\\s+(doz(en)?|dz)s?(?=\\b)'
     AllIntRegexWithLocks = f'((?<=\\b){AllIntRegex}(?=\\b))'
-    AllIntRegexWithDozenSuffixLocks = f'(?<=\\b)(((half\\s+)?a\\s+dozen)|({AllIntRegex}\\s+dozen(s)?))(?=\\b)'
+    AllIntRegexWithDozenSuffixLocks = f'(?<=\\b)(((half\\s+)?a\\s+dozen)|({AllIntRegex}\\s+(doz(en)?|dz)s?))(?=\\b)'
     RoundNumberOrdinalRegex = f'(?:hundredth|thousandth|millionth|billionth|trillionth)'
     NumberOrdinalRegex = f'(?:first|second|third|fourth|fifth|sixth|seventh|eighth|nine?th|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)'
     RelativeOrdinalRegex = f'(?<relativeOrdinal>(next|previous|current)\\s+one|(the\\s+second|next)\\s+to\\s+last|the\\s+one\\s+before\\s+the\\s+last(\\s+one)?|the\\s+last\\s+but\\s+one|(ante)?penultimate|last|next|previous|current)'
@@ -117,9 +117,11 @@ class EnglishNumeric:
     WrittenIntegerSeparatorTexts = [r'and']
     WrittenFractionSeparatorTexts = [r'and']
     HalfADozenRegex = f'half\\s+a\\s+dozen'
-    DigitalNumberRegex = f'((?<=\\b)(hundred|thousand|[mb]illion|trillion|[mbt]ln|lakh|crore|dozen(s)?)(?=\\b))|((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))'
+    DigitalNumberRegex = f'((?<=\\b)(hundred|thousand|[mb]illion|trillion|[mbt]ln|lakh|crore|(doz(en)?|dz)s?)(?=\\b))|((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))'
     CardinalNumberMap = dict([("a", 1),
                               ("zero", 0),
+                              ("naught", 0),
+                              ("nought", 0),
                               ("an", 1),
                               ("one", 1),
                               ("two", 2),
@@ -135,6 +137,10 @@ class EnglishNumeric:
                               ("twelve", 12),
                               ("dozen", 12),
                               ("dozens", 12),
+                              ("dz", 12),
+                              ("doz", 12),
+                              ("dzs", 12),
+                              ("dozs", 12),
                               ("thirteen", 13),
                               ("fourteen", 14),
                               ("fifteen", 15),
@@ -266,6 +272,10 @@ class EnglishNumeric:
                            ("trillionths", 1000000000000),
                            ("dozen", 12),
                            ("dozens", 12),
+                           ("dz", 12),
+                           ("doz", 12),
+                           ("dzs", 12),
+                           ("dozs", 12),
                            ("k", 1000),
                            ("m", 1000000),
                            ("mm", 1000000),
