@@ -23,7 +23,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             switch (slot.Type.Substring(ParserTypeName.Length + 1))
             {
-                case Constants.SYS_DATETIME_DATE:
+                case TasksModeConstants.SYS_DATETIME_DATE:
                     slot = TasksModeModifyDateValue(slot, referenceTime);
                     break;
             }
@@ -39,84 +39,72 @@ namespace Microsoft.Recognizers.Text.DateTime
             var result = new TimeOfDayResolutionResult();
             switch (tod)
             {
-                case Constants.EarlyMorning:
-                    result.Timex = Constants.EarlyMorning;
-                    result.BeginHour = 6;
-                    result.EndHour = 6;
+                case TasksModeConstants.EarlyMorning:
+                    result.Timex = TasksModeConstants.EarlyMorning;
+                    result.BeginHour = TasksModeConstants.EarlyMorningBeginHour;
+                    result.EndHour = TasksModeConstants.EarlyMorningEndHour;
                     break;
-
-                case Constants.Morning:
-                    result.Timex = Constants.Morning;
-                    result.BeginHour = 6;
-                    result.EndHour = 6;
+                case TasksModeConstants.Morning:
+                    result.Timex = TasksModeConstants.Morning;
+                    result.BeginHour = TasksModeConstants.MorningBeginHour;
+                    result.EndHour = TasksModeConstants.MorningEndHour;
                     break;
-
-                case Constants.MidDay:
-                    result.Timex = Constants.MidDay;
-                    result.BeginHour = Constants.HalfDayHourCount;
-                    result.EndHour = Constants.HalfDayHourCount;
+                case TasksModeConstants.MidDay:
+                    result.Timex = TasksModeConstants.MidDay;
+                    result.BeginHour = TasksModeConstants.MidDayBeginHour;
+                    result.EndHour = TasksModeConstants.MidDayEndHour;
                     break;
-
-                case Constants.Afternoon:
-                    result.Timex = Constants.Afternoon;
-                    result.BeginHour = Constants.HalfDayHourCount;
-                    result.EndHour = Constants.HalfDayHourCount;
+                case TasksModeConstants.Afternoon:
+                    result.Timex = TasksModeConstants.Afternoon;
+                    result.BeginHour = TasksModeConstants.AfternoonBeginHour;
+                    result.EndHour = TasksModeConstants.AfternoonEndHour;
                     break;
-
-                case Constants.Evening:
-                    result.Timex = Constants.Evening;
-                    result.BeginHour = 18;
-                    result.EndHour = 18;
+                case TasksModeConstants.Evening:
+                    result.Timex = TasksModeConstants.Evening;
+                    result.BeginHour = TasksModeConstants.EveningBeginHour;
+                    result.EndHour = TasksModeConstants.EveningEndHour;
                     break;
-
-                case Constants.Daytime:
-                    result.Timex = Constants.Daytime;
-                    result.BeginHour = 16;
-                    result.EndHour = 16;
+                case TasksModeConstants.Daytime:
+                    result.Timex = TasksModeConstants.Daytime;
+                    result.BeginHour = TasksModeConstants.DaytimeBeginHour;
+                    result.EndHour = TasksModeConstants.DaytimeEndHour;
                     break;
-
-                case Constants.Nighttime:
-                    result.Timex = Constants.Nighttime;
-                    result.BeginHour = 21;
-                    result.EndHour = 21;
+                case TasksModeConstants.Nighttime:
+                    result.Timex = TasksModeConstants.Nighttime;
+                    result.BeginHour = TasksModeConstants.NighttimeBeginHour;
+                    result.EndHour = TasksModeConstants.NighttimeEndHour;
                     break;
-
-                case Constants.BusinessHour:
-                    result.Timex = Constants.BusinessHour;
-                    result.BeginHour = Constants.BusinessBeginHour;
-                    result.EndHour = Constants.BusinessEndHour;
+                case TasksModeConstants.BusinessHour:
+                    result.Timex = TasksModeConstants.BusinessHour;
+                    result.BeginHour = TasksModeConstants.BusinessBeginHour;
+                    result.EndHour = TasksModeConstants.BusinessEndHour;
                     break;
-
-                case Constants.Night:
-                    result.Timex = Constants.Night;
-                    result.BeginHour = 21;
-                    result.EndHour = 21;
+                case TasksModeConstants.Night:
+                    result.Timex = TasksModeConstants.Night;
+                    result.BeginHour = TasksModeConstants.NightBeginHour;
+                    result.EndHour = TasksModeConstants.NightEndHour;
+                    result.EndMin = TasksModeConstants.NightEndMin;
                     break;
-
-                case Constants.MealtimeBreakfast:
-                    result.Timex = Constants.MealtimeBreakfast;
-                    result.BeginHour = Constants.MealtimeBreakfastBeginHour;
-                    result.EndHour = Constants.MealtimeBreakfastEndHour;
+                case TasksModeConstants.MealtimeBreakfast:
+                    result.Timex = TasksModeConstants.MealtimeBreakfast;
+                    result.BeginHour = TasksModeConstants.MealtimeBreakfastBeginHour;
+                    result.EndHour = TasksModeConstants.MealtimeBreakfastEndHour;
                     break;
-
-                case Constants.MealtimeBrunch:
-                    result.Timex = Constants.MealtimeBrunch;
-                    result.BeginHour = Constants.MealtimeBrunchBeginHour;
-                    result.EndHour = Constants.MealtimeBrunchEndHour;
+                case TasksModeConstants.MealtimeBrunch:
+                    result.Timex = TasksModeConstants.MealtimeBrunch;
+                    result.BeginHour = TasksModeConstants.MealtimeBrunchBeginHour;
+                    result.EndHour = TasksModeConstants.MealtimeBrunchEndHour;
                     break;
-
-                case Constants.MealtimeLunch:
-                    result.Timex = Constants.MealtimeLunch;
-                    result.BeginHour = Constants.MealtimeLunchBeginHour;
-                    result.EndHour = Constants.MealtimeLunchEndHour;
+                case TasksModeConstants.MealtimeLunch:
+                    result.Timex = TasksModeConstants.MealtimeLunch;
+                    result.BeginHour = TasksModeConstants.MealtimeLunchBeginHour;
+                    result.EndHour = TasksModeConstants.MealtimeLunchEndHour;
                     break;
-
-                case Constants.MealtimeDinner:
-                    result.Timex = Constants.MealtimeDinner;
-                    result.BeginHour = 20;
-                    result.EndHour = 21;
+                case TasksModeConstants.MealtimeDinner:
+                    result.Timex = TasksModeConstants.MealtimeDinner;
+                    result.BeginHour = TasksModeConstants.MealtimeDinnerBeginHour;
+                    result.EndHour = TasksModeConstants.MealtimeDinnerEndHour;
                     break;
-
                 default:
                     break;
             }
@@ -134,46 +122,46 @@ namespace Microsoft.Recognizers.Text.DateTime
             beginHour = 0;
             endHour = 0;
             endMin = 0;
-            if (todSymbol == Constants.Morning)
+            if (todSymbol == TasksModeConstants.Morning)
             {
-                beginHour = 6;
-                endHour = 6;
+                beginHour = TasksModeConstants.MorningBeginHour;
+                endHour = TasksModeConstants.EarlyMorningEndHour;
             }
-            else if (todSymbol == Constants.Afternoon)
+            else if (todSymbol == TasksModeConstants.Afternoon)
             {
-                beginHour = Constants.HalfDayHourCount;
-                endHour = Constants.HalfDayHourCount;
+                beginHour = TasksModeConstants.AfternoonBeginHour;
+                endHour = TasksModeConstants.AfternoonEndHour;
 
             }
-            else if (todSymbol == Constants.Evening)
+            else if (todSymbol == TasksModeConstants.Evening)
             {
-                beginHour = 18;
-                endHour = 18;
+                beginHour = TasksModeConstants.EveningBeginHour;
+                endHour = TasksModeConstants.EveningEndHour;
             }
-            else if (todSymbol == Constants.Night)
+            else if (todSymbol == TasksModeConstants.Night)
             {
-                beginHour = 21;
-                endHour = 21;
+                beginHour = TasksModeConstants.NightBeginHour;
+                endHour = TasksModeConstants.NightEndHour;
             }
-            else if (todSymbol == Constants.MealtimeBreakfast)
+            else if (todSymbol == TasksModeConstants.MealtimeBreakfast)
             {
-                beginHour = Constants.MealtimeBreakfastBeginHour;
-                endHour = Constants.MealtimeBreakfastEndHour;
+                beginHour = TasksModeConstants.MealtimeBreakfastBeginHour;
+                endHour = TasksModeConstants.MealtimeBreakfastEndHour;
             }
-            else if (todSymbol == Constants.MealtimeBrunch)
+            else if (todSymbol == TasksModeConstants.MealtimeBrunch)
             {
-                beginHour = Constants.MealtimeBrunchBeginHour;
-                endHour = Constants.MealtimeBrunchBeginHour;
+                beginHour = TasksModeConstants.MealtimeBrunchBeginHour;
+                endHour = TasksModeConstants.MealtimeBrunchEndHour;
             }
-            else if (todSymbol == Constants.MealtimeDinner)
+            else if (todSymbol == TasksModeConstants.MealtimeDinner)
             {
-                beginHour = 20;
-                endHour = 21;
+                beginHour = TasksModeConstants.MealtimeDinnerBeginHour;
+                endHour = TasksModeConstants.MealtimeDinnerEndHour;
             }
-            else if (todSymbol == Constants.MealtimeLunch)
+            else if (todSymbol == TasksModeConstants.MealtimeLunch)
             {
-                beginHour = Constants.MealtimeLunchBeginHour;
-                endHour = Constants.MealtimeLunchEndHour;
+                beginHour = TasksModeConstants.MealtimeLunchBeginHour;
+                endHour = TasksModeConstants.MealtimeLunchEndHour;
             }
             else
             {

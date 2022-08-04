@@ -620,7 +620,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 if (match.Groups["week"] != null)
                 {
-                    var value = referenceDate.AddDays(Constants.WeekDayCount);
+                    var value = referenceDate.AddDays(TasksModeConstants.WeekDayCount);
                     ret.Timex = DateTimeFormatUtil.LuisDate(value);
                     ret.FutureValue = ret.PastValue = DateObject.MinValue.SafeCreateFromValue(value.Year, value.Month, value.Day);
                     ret.Success = true;
