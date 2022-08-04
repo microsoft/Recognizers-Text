@@ -135,11 +135,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public Regex BeforeAfterRegex { get; }
 
-        public Regex TasksModeNextWeekRegex { get; }
-
-        public Regex TasksModeNextMonthRegex { get; }
-
-        public Regex TasksModeNextYearRegex { get; }
+        public Regex TasksModeDurationToDatePatterns { get; }
 
         public IImmutableDictionary<string, int> DayOfMonth { get; }
 

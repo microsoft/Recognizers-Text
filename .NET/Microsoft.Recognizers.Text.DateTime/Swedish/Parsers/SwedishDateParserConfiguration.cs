@@ -136,7 +136,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Swedish
 
         public Regex BeforeAfterRegex { get; }
 
-        public Regex TasksModeNextWeekRegex { get; }
+        public Regex TasksModeDurationToDatePatterns { get; }
 
         public Regex TasksModeNextMonthRegex { get; }
 

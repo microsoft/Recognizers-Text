@@ -747,15 +747,11 @@ ComplexDatePeriodRegex: !nestedRegex
 FailFastRegex: !nestedRegex
   def: '{BaseDateTime.DeltaMinuteRegex}|\b(?:{BaseDateTime.BaseAmDescRegex}|{BaseDateTime.BasePmDescRegex})|{BaseDateTime.BaseAmPmDescRegex}|\b(?:zero|{WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|{WrittenTensRegex}|{WrittenMonthRegex}|{SeasonDescRegex}|{DecadeRegex}|centur(y|ies)|weekends?|quarters?|hal(f|ves)|yesterday|to(morrow|day|night)|tmr|noonish|\d(-|——)?ish|((the\s+\w*)|\d)(th|rd|nd|st)|(mid\s*(-\s*)?)?(night|morning|afternoon|day)s?|evenings?|noon|lunch(time)?|dinner(time)?|(day|night)time|overnight|dawn|dusk|sunset|hours?|hrs?|h|minutes?|mins?|seconds?|secs?|eo[dmy]|mardi[ -]?gras|birthday|eve|christmas|xmas|thanksgiving|halloween|yuandan|easter|yuan dan|april fools|cinco de mayo|all (hallow|souls)|guy fawkes|(st )?patrick|hundreds?|noughties|aughts|thousands?)\b|{WeekDayRegex}|{SetWeekDayRegex}|{NowRegex}|{PeriodicRegex}|\b({DateUnitRegex}|{ImplicitDayRegex})'
   references: [ BaseDateTime.DeltaMinuteRegex, BaseDateTime.BaseAmDescRegex, BaseDateTime.BasePmDescRegex, BaseDateTime.BaseAmPmDescRegex, ImplicitDayRegex, DateUnitRegex, WeekDayRegex, SetWeekDayRegex, NowRegex, PeriodicRegex, DecadeRegex, SeasonDescRegex, WrittenMonthRegex, WrittenTensRegex, WrittenElevenToNineteenRegex, WrittenOneToNineRegex ]
-TasksModeNextWeekRegex: !simpleRegex
-  def: \b(next\s+week)\b
-TasksModeNextMonthRegex: !simpleRegex
-  def: \b(next\s+month)\b
-TasksModeNextYearRegex: !simpleRegex
-  def: \b(next\s+year)\b
-TasksModeDurationToDate: !nestedRegex
-  def:  ({TasksModeNextWeekRegex}|{TasksModeNextMonthRegex}|{TasksModeNextYearRegex})
-  references: [TasksModeNextWeekRegex, TasksModeNextMonthRegex,TasksModeNextYearRegex]
+TasksModeNextPrefix: !simpleRegex
+  def: (?<next>\s*next\s+)
+TasksModeDurationToDatePatterns: !nestedRegex
+  def: \b({TasksModeNextPrefix}((?<week>week\b)|(?<month>month\b)|(?<year>year\b)))
+  references: [TasksModeNextPrefix]
 UnitMap: !dictionary
   types: [ string, string ]
   entries:

@@ -43,6 +43,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                     innerResult = ParseImplicitDate(er.Text, referenceDate);
                 }
 
+                if (!innerResult.Success && ((config.Options & DateTimeOptions.TasksMode) != 0))
+                {
+                    innerResult = ParseTasksModeDurationToDatePattern(er.Text, referenceDate);
+                }
+
                 if (!innerResult.Success)
                 {
                     innerResult = ParseWeekdayOfMonth(er.Text, referenceDate);
@@ -592,20 +597,28 @@ namespace Microsoft.Recognizers.Text.DateTime
                 return ret;
             }
 
-            /*
-             Adding support to parse addtitonal Implicit date references under tasksmode.
-            eg next week will get mapped to same day of next week,
-            next month will get mapped to starting day of comming month,
-            next year will get mapped to starting date of coming year.
+            return ret;
+        }
 
-            Input text : meet me next week (refrence time 01-08-2022)
-            Tasksmode: next week --> 08-08-2022 datetime type: date
-            Default mode: next week --> 08-08-2022 - 15-08-2022 datetime type: daterange
-             */
-            if ((config.Options & DateTimeOptions.TasksMode) != 0)
+        /*
+           under tasksmode parse addtitonal Implicit date references under tasksmode.
+           eg next week will get mapped to same day of next week,
+           next month will get mapped to starting day of comming month,
+           next year will get mapped to starting date of coming year.
+
+           Input text : meet me next week (refrence time 01-08-2022)
+           Tasksmode: next week --> 08-08-2022 datetime type: date
+           Default mode: next week --> (08-08-2022 - 15-08-2022) datetime type: daterange
+        */
+        private DateTimeResolutionResult ParseTasksModeDurationToDatePattern(string text, DateObject referenceDate)
+        {
+            var trimmedText = text.Trim();
+            var ret = new DateTimeResolutionResult();
+
+            var match = this.config.TasksModeDurationToDatePatterns.Match(trimmedText);
+            if (match.Success)
             {
-                trimmedText = text.Trim();
-                if (this.config.TasksModeNextWeekRegex.Match(trimmedText).Success)
+                if (match.Groups["week"] != null)
                 {
                     var value = referenceDate.AddDays(Constants.WeekDayCount);
                     ret.Timex = DateTimeFormatUtil.LuisDate(value);
@@ -613,7 +626,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ret.Success = true;
                     return ret;
                 }
-                else if (this.config.TasksModeNextMonthRegex.Match(trimmedText).Success)
+                else if (match.Groups["month"] != null)
                 {
                     var value = referenceDate.AddMonths(1);
                     ret.Timex = DateTimeFormatUtil.LuisDate(value.Year, value.Month, 1);
@@ -621,7 +634,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ret.Success = true;
                     return ret;
                 }
-                else if (this.config.TasksModeNextYearRegex.Match(trimmedText).Success)
+                else if (match.Groups["year"] != null)
                 {
                     var value = referenceDate.AddYears(1);
                     ret.Timex = DateTimeFormatUtil.LuisDate(value.Year, 1, 1);
@@ -629,6 +642,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ret.Success = true;
                     return ret;
                 }
+
             }
 
             return ret;
@@ -830,6 +844,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                             if (!innerResult.Success)
                             {
                                 innerResult = ParseImplicitDate(dateString, referenceDate);
+                            }
+
+                            if (!innerResult.Success && ((config.Options & DateTimeOptions.TasksMode) != 0))
+                            {
+                                innerResult = ParseTasksModeDurationToDatePattern(dateString, referenceDate);
                             }
 
                             if (!innerResult.Success)

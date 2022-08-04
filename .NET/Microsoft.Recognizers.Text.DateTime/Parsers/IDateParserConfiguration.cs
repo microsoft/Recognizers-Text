@@ -76,11 +76,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex BeforeAfterRegex { get; }
 
-        Regex TasksModeNextMonthRegex { get; }
-
-        Regex TasksModeNextWeekRegex { get; }
-
-        Regex TasksModeNextYearRegex { get; }
+        Regex TasksModeDurationToDatePatterns { get; }
 
         IImmutableDictionary<string, string> UnitMap { get; }
 

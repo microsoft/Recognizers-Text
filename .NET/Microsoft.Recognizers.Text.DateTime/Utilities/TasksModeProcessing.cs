@@ -190,7 +190,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         */
         private static DateTimeParseResult TasksModeModifyDateValue(DateTimeParseResult slot, DateObject referenceTime)
         {
-            if (!slot.TimexStr.Contains("XXXX"))
+            if (slot.TimexStr.Contains("XXXX"))
             {
                 return slot;
             }
