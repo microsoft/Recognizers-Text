@@ -37,34 +37,171 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             switch (slot.Type.Substring(ParserTypeName.Length + 1))
             {
-                case TasksModeConstants.SYS_DATETIME_DATE:
-                    slot = TasksModeModifyDateValue(slot, referenceTime);
+
                 case Constants.SYS_DATETIME_DATE:
-                    slot = TasksModeProcessing.TasksModeModifyDateValue(slot, referenceTime);
+                    slot = TasksModeModifyDateValue(slot, referenceTime);
                     break;
 
                 case Constants.SYS_DATETIME_DATEPERIOD:
-                    slot = TasksModeProcessing.TasksModeModifyDatePeriodValue(slot, referenceTime);
+                    slot = TasksModeModifyDatePeriodValue(slot, referenceTime);
                     break;
 
                 case Constants.SYS_DATETIME_TIME:
-                    slot = TasksModeProcessing.TasksModeModifyTimeValue(slot, referenceTime);
+                    slot = TasksModeModifyTimeValue(slot, referenceTime);
                     break;
 
                 case Constants.SYS_DATETIME_TIMEPERIOD:
-                    slot = TasksModeProcessing.TasksModeTimePeriodValue(slot, referenceTime);
+                    slot = TasksModeTimePeriodValue(slot, referenceTime);
                     break;
 
                 case Constants.SYS_DATETIME_DATETIME:
-                    slot = TasksModeProcessing.TasksModeModifyDateTimeValue(slot, referenceTime);
+                    slot = TasksModeModifyDateTimeValue(slot, referenceTime);
                     break;
 
                 case Constants.SYS_DATETIME_DATETIMEPERIOD:
-                    slot = TasksModeProcessing.TasksModeModifyDateTimePeriodValue(slot, referenceTime);
+                    slot = TasksModeModifyDateTimePeriodValue(slot, referenceTime);
                     break;
             }
 
             return slot;
+        }
+
+        // Change resolution value of datetime value under tasksmode.
+        public static TimeOfDayResolutionResult TasksModeResolveTimeOfDay(string tod)
+        {
+            var result = new TimeOfDayResolutionResult();
+            switch (tod)
+            {
+                case TasksModeConstants.EarlyMorning:
+                    result.Timex = TasksModeConstants.EarlyMorning;
+                    result.BeginHour = TasksModeConstants.EarlyMorningBeginHour;
+                    result.EndHour = TasksModeConstants.EarlyMorningEndHour;
+                    break;
+                case TasksModeConstants.Morning:
+                    result.Timex = TasksModeConstants.Morning;
+                    result.BeginHour = TasksModeConstants.MorningBeginHour;
+                    result.EndHour = TasksModeConstants.MorningEndHour;
+                    break;
+                case TasksModeConstants.MidDay:
+                    result.Timex = TasksModeConstants.MidDay;
+                    result.BeginHour = TasksModeConstants.MidDayBeginHour;
+                    result.EndHour = TasksModeConstants.MidDayEndHour;
+                    break;
+                case TasksModeConstants.Afternoon:
+                    result.Timex = TasksModeConstants.Afternoon;
+                    result.BeginHour = TasksModeConstants.AfternoonBeginHour;
+                    result.EndHour = TasksModeConstants.AfternoonEndHour;
+                    break;
+                case TasksModeConstants.Evening:
+                    result.Timex = TasksModeConstants.Evening;
+                    result.BeginHour = TasksModeConstants.EveningBeginHour;
+                    result.EndHour = TasksModeConstants.EveningEndHour;
+                    break;
+                case TasksModeConstants.Daytime:
+                    result.Timex = TasksModeConstants.Daytime;
+                    result.BeginHour = TasksModeConstants.DaytimeBeginHour;
+                    result.EndHour = TasksModeConstants.DaytimeEndHour;
+                    break;
+                case TasksModeConstants.Nighttime:
+                    result.Timex = TasksModeConstants.Nighttime;
+                    result.BeginHour = TasksModeConstants.NighttimeBeginHour;
+                    result.EndHour = TasksModeConstants.NighttimeEndHour;
+                    break;
+                case TasksModeConstants.BusinessHour:
+                    result.Timex = TasksModeConstants.BusinessHour;
+                    result.BeginHour = TasksModeConstants.BusinessBeginHour;
+                    result.EndHour = TasksModeConstants.BusinessEndHour;
+                    break;
+                case TasksModeConstants.Night:
+                    result.Timex = TasksModeConstants.Night;
+                    result.BeginHour = TasksModeConstants.NightBeginHour;
+                    result.EndHour = TasksModeConstants.NightEndHour;
+                    result.EndMin = TasksModeConstants.NightEndMin;
+                    break;
+                case TasksModeConstants.MealtimeBreakfast:
+                    result.Timex = TasksModeConstants.MealtimeBreakfast;
+                    result.BeginHour = TasksModeConstants.MealtimeBreakfastBeginHour;
+                    result.EndHour = TasksModeConstants.MealtimeBreakfastEndHour;
+                    break;
+                case TasksModeConstants.MealtimeBrunch:
+                    result.Timex = TasksModeConstants.MealtimeBrunch;
+                    result.BeginHour = TasksModeConstants.MealtimeBrunchBeginHour;
+                    result.EndHour = TasksModeConstants.MealtimeBrunchEndHour;
+                    break;
+                case TasksModeConstants.MealtimeLunch:
+                    result.Timex = TasksModeConstants.MealtimeLunch;
+                    result.BeginHour = TasksModeConstants.MealtimeLunchBeginHour;
+                    result.EndHour = TasksModeConstants.MealtimeLunchEndHour;
+                    break;
+                case TasksModeConstants.MealtimeDinner:
+                    result.Timex = TasksModeConstants.MealtimeDinner;
+                    result.BeginHour = TasksModeConstants.MealtimeDinnerBeginHour;
+                    result.EndHour = TasksModeConstants.MealtimeDinnerEndHour;
+                    break;
+                default:
+                    break;
+            }
+
+            return result;
+        }
+
+        /*
+         Change beginHour and endHour for subjective time refereneces under TasksMode.
+         morning get's mapped to 6:00 am
+         */
+        public static bool GetMatchedTimeRangeForTasksMode(string text, string todSymbol, out int beginHour, out int endHour, out int endMin)
+        {
+            var trimmedText = text.Trim();
+            beginHour = 0;
+            endHour = 0;
+            endMin = 0;
+            if (todSymbol == TasksModeConstants.Morning)
+            {
+                beginHour = TasksModeConstants.MorningBeginHour;
+                endHour = TasksModeConstants.EarlyMorningEndHour;
+            }
+            else if (todSymbol == TasksModeConstants.Afternoon)
+            {
+                beginHour = TasksModeConstants.AfternoonBeginHour;
+                endHour = TasksModeConstants.AfternoonEndHour;
+
+            }
+            else if (todSymbol == TasksModeConstants.Evening)
+            {
+                beginHour = TasksModeConstants.EveningBeginHour;
+                endHour = TasksModeConstants.EveningEndHour;
+            }
+            else if (todSymbol == TasksModeConstants.Night)
+            {
+                beginHour = TasksModeConstants.NightBeginHour;
+                endHour = TasksModeConstants.NightEndHour;
+            }
+            else if (todSymbol == TasksModeConstants.MealtimeBreakfast)
+            {
+                beginHour = TasksModeConstants.MealtimeBreakfastBeginHour;
+                endHour = TasksModeConstants.MealtimeBreakfastEndHour;
+            }
+            else if (todSymbol == TasksModeConstants.MealtimeBrunch)
+            {
+                beginHour = TasksModeConstants.MealtimeBrunchBeginHour;
+                endHour = TasksModeConstants.MealtimeBrunchEndHour;
+            }
+            else if (todSymbol == TasksModeConstants.MealtimeDinner)
+            {
+                beginHour = TasksModeConstants.MealtimeDinnerBeginHour;
+                endHour = TasksModeConstants.MealtimeDinnerEndHour;
+            }
+            else if (todSymbol == TasksModeConstants.MealtimeLunch)
+            {
+                beginHour = TasksModeConstants.MealtimeLunchBeginHour;
+                endHour = TasksModeConstants.MealtimeLunchEndHour;
+            }
+            else
+            {
+                return false;
+            }
+
+            return true;
         }
 
         /*Under TasksMode If you input today's date, future date should get mapped to current date insted of next year.
@@ -74,11 +211,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         */
         private static DateTimeParseResult TasksModeModifyDateValue(DateTimeParseResult slot, DateObject referenceTime)
         {
-            if (!slot.TimexStr.Contains("XXXX"))
-            {
-                return slot;
-            }
-
             var value = (SortedDictionary<string, object>)slot.Value;
             if (value != null && value.ContainsKey(ResolutionKey.ValueSet))
             {
@@ -90,7 +222,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                         var inputDay = inputTime.Day;
                         var inputMonth = inputTime.Month;
 
-                        if (inputDay == referenceTime.Day && inputMonth == referenceTime.Month)
+                        if (slot.Text.Contains("next week") && !slot.TimexStr.Contains("XXXX"))
+                        {
+                            var tempdate = referenceTime.Upcoming(DayOfWeek.Monday).Date;
+                            var dateTimeToSet = DateObject.MinValue.SafeCreateFromValue(tempdate.Year, tempdate.Month, tempdate.Day);
+                            values[DateTimeResolutionKey.Value] = DateTimeFormatUtil.FormatDate(dateTimeToSet);
+                            values[DateTimeResolutionKey.Timex] = $"{DateTimeFormatUtil.LuisDate(dateTimeToSet)}";
+                        }
+                        else if (slot.TimexStr.Contains("XXXX") && inputDay == referenceTime.Day && inputMonth == referenceTime.Month)
                         {
                             // ignore for input text like monday, tue etc
                             if (!slot.TimexStr.Contains("XXXX-WXX"))
