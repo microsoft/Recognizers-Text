@@ -88,21 +88,21 @@ class EnglishSetExtractorConfiguration(SetExtractorConfiguration):
     def duration_unit_regex(self) -> Pattern:
         return self._duration_unit_regex
 
-    def __init__(self):
+    def __init__(self, dmyDateFormat=False):
         self._duration_extractor = BaseDurationExtractor(
             EnglishDurationExtractorConfiguration())
         self._time_extractor = BaseTimeExtractor(
             EnglishTimeExtractorConfiguration())
         self._date_extractor = BaseDateExtractor(
-            EnglishDateExtractorConfiguration())
+            EnglishDateExtractorConfiguration(dmyDateFormat))
         self._date_time_extractor = BaseDateTimeExtractor(
-            EnglishDateTimeExtractorConfiguration())
+            EnglishDateTimeExtractorConfiguration(dmyDateFormat))
         self._date_period_extractor = BaseDatePeriodExtractor(
-            EnglishDatePeriodExtractorConfiguration())
+            EnglishDatePeriodExtractorConfiguration(dmyDateFormat))
         self._time_period_extractor = BaseTimePeriodExtractor(
             EnglishTimePeriodExtractorConfiguration())
         self._date_time_period_extractor = BaseDateTimePeriodExtractor(
-            EnglishDateTimePeriodExtractorConfiguration())
+            EnglishDateTimePeriodExtractorConfiguration(dmyDateFormat))
         self._last_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.SetLastRegex)
         self._each_prefix_regex = RegExpUtility.get_safe_reg_exp(

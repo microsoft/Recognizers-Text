@@ -29,7 +29,10 @@ public class SpanishNumeric {
 
     public static final String HundredsNumberIntegerRegex = "(cuatrocient[ao]s|trescient[ao]s|seiscient[ao]s|setecient[ao]s|ochocient[ao]s|novecient[ao]s|doscient[ao]s|quinient[ao]s|(?<!por\\s+)(cien(to)?))";
 
-    public static final String RoundNumberIntegerRegex = "(mil\\s+millones|mill[oó]n(es)?|mil|bill[oó]n(es)?|trill[oó]n(es)?|cuatrill[oó]n(es)?|quintill[oó]n(es)?|sextill[oó]n(es)?|septill[oó]n(es)?)";
+    public static final String RoundNumberIntegerSingRegex = "(((mil\\s+)?mi|bi|cuatri|quinti|sexti|septi)ll[oó]n|mil)";
+
+    public static final String RoundNumberIntegerRegex = "({RoundNumberIntegerSingRegex}(es)?)"
+            .replace("{RoundNumberIntegerSingRegex}", RoundNumberIntegerSingRegex);
 
     public static final String ZeroToNineIntegerRegex = "(cuatro|cinco|siete|nueve|cero|tres|seis|ocho|dos|un[ao]?)";
 
@@ -67,9 +70,10 @@ public class SpanishNumeric {
             .replace("{SupportThousandsRegex}", SupportThousandsRegex)
             .replace("{BelowThousandsRegex}", BelowThousandsRegex);
 
-    public static final String AllIntRegex = "({SeparaIntRegex}|mil(\\s+{BelowThousandsRegex})?)"
+    public static final String AllIntRegex = "({SeparaIntRegex}|mil(\\s+{BelowThousandsRegex})?|{RoundNumberIntegerSingRegex})"
             .replace("{SeparaIntRegex}", SeparaIntRegex)
-            .replace("{BelowThousandsRegex}", BelowThousandsRegex);
+            .replace("{BelowThousandsRegex}", BelowThousandsRegex)
+            .replace("{RoundNumberIntegerSingRegex}", RoundNumberIntegerSingRegex);
 
     public static final String PlaceHolderPureNumber = "\\b";
 
@@ -87,12 +91,12 @@ public class SpanishNumeric {
             .replace("{DigitsNumberRegex}", DigitsNumberRegex)
             .replace("{RoundNumberIntegerRegex}", RoundNumberIntegerRegex);
 
-    public static final String NumbersWithDozenSuffix = "(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s+docenas?(?=\\b)";
+    public static final String NumbersWithDozenSuffix = "(((?<=\\W|^)-\\s*)|(?<=\\b))\\d+\\s+(docena|dz|doz)s?(?=\\b)";
 
     public static final String AllIntRegexWithLocks = "((?<=\\b){AllIntRegex}(?=\\b))"
             .replace("{AllIntRegex}", AllIntRegex);
 
-    public static final String AllIntRegexWithDozenSuffixLocks = "(?<=\\b)(((media\\s+)?\\s+docena)|({AllIntRegex}\\s+(y|con)\\s+)?({AllIntRegex}\\s+docenas?))(?=\\b)"
+    public static final String AllIntRegexWithDozenSuffixLocks = "(?<=\\b)(((media\\s+)?\\s+docena)|({AllIntRegex}\\s+(y|con)\\s+)?({AllIntRegex}\\s+(docena|dz|doz)s?))(?=\\b)"
             .replace("{AllIntRegex}", AllIntRegex);
 
     public static final String SimpleRoundOrdinalRegex = "(mil[eé]simo|millon[eé]sim[oa]|billon[eé]sim[oa]|trillon[eé]sim[oa]|cuatrillon[eé]sim[oa]|quintillon[eé]sim[oa]|sextillon[eé]sim[oa]|septillon[eé]sim[oa])";
@@ -136,7 +140,7 @@ public class SpanishNumeric {
             .replace("{SimpleRoundOrdinalRegex}", SimpleRoundOrdinalRegex)
             .replace("{ComplexRoundOrdinalRegex}", ComplexRoundOrdinalRegex);
 
-    public static final String AllOrdinalRegex = "(?:{AllOrdinalNumberRegex}|{RelativeOrdinalRegex})"
+    public static final String AllOrdinalRegex = "(?:{AllOrdinalNumberRegex}s?|{RelativeOrdinalRegex})"
             .replace("{AllOrdinalNumberRegex}", AllOrdinalNumberRegex)
             .replace("{RelativeOrdinalRegex}", RelativeOrdinalRegex);
 
@@ -163,14 +167,14 @@ public class SpanishNumeric {
     public static final String RoundMultiplierRegex = "\\b\\s*({RoundMultiplierWithFraction}|(?<multiplier>(mil))$)"
             .replace("{RoundMultiplierWithFraction}", RoundMultiplierWithFraction);
 
-    public static final String FractionNounRegex = "(?<=\\b)({AllIntRegex}\\s+((y|con)\\s+)?)?(({AllIntRegex})(\\s+((y|con)\\s)?)((({AllOrdinalNumberRegex})s?|({SpecialFractionInteger})|({SufixRoundOrdinalRegex})s?)|medi[oa]s?|tercios?)|(medio|un\\s+cuarto\\s+de)\\s+{RoundNumberIntegerRegex})(?=\\b)"
+    public static final String FractionNounRegex = "(?<=\\b)({AllIntRegex}\\s+((y|con)\\s+)?)?({AllIntRegex}\\s+((({AllOrdinalNumberRegex}|{SufixRoundOrdinalRegex})s|{SpecialFractionInteger})|((y|con)\\s+)?(medi[oa]s?|tercios?))|(medio|un\\s+cuarto\\s+de)\\s+{RoundNumberIntegerRegex})(?=\\b)"
             .replace("{AllIntRegex}", AllIntRegex)
             .replace("{AllOrdinalNumberRegex}", AllOrdinalNumberRegex)
             .replace("{SpecialFractionInteger}", SpecialFractionInteger)
             .replace("{SufixRoundOrdinalRegex}", SufixRoundOrdinalRegex)
             .replace("{RoundNumberIntegerRegex}", RoundNumberIntegerRegex);
 
-    public static final String FractionNounWithArticleRegex = "(?<=\\b)(({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\\s+(y\\s+)?)?((un|un[oa])(\\s+)(({AllOrdinalNumberRegex})|({SufixRoundOrdinalRegex}))|(un[ao]?\\s+)?medi[oa]s?)(?=\\b)"
+    public static final String FractionNounWithArticleRegex = "(?<=\\b)(({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\\s+((y|con)\\s+)?)?((un|un[oa])(\\s+)(({AllOrdinalNumberRegex})|({SufixRoundOrdinalRegex}))|(un[ao]?\\s+)?medi[oa]s?|mitad)(?=\\b)"
             .replace("{AllIntRegex}", AllIntRegex)
             .replace("{AllOrdinalNumberRegex}", AllOrdinalNumberRegex)
             .replace("{SufixRoundOrdinalRegex}", SufixRoundOrdinalRegex)
@@ -340,7 +344,7 @@ public class SpanishNumeric {
 
     public static final String HalfADozenRegex = "media\\s+docena";
 
-    public static final String DigitalNumberRegex = "((?<=\\b)(mil(l[oó]n(es)?)?|bill[oó]n(es)?|trill[oó]n(es)?|docenas?)(?=\\b))|((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))"
+    public static final String DigitalNumberRegex = "((?<=\\b)(mil(l[oó]n(es)?)?|bill[oó]n(es)?|trill[oó]n(es)?|(docena|dz|doz)s?)(?=\\b))|((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))"
             .replace("{BaseNumbers.MultiplierLookupRegex}", BaseNumbers.MultiplierLookupRegex);
 
     public static final ImmutableMap<String, Long> CardinalNumberMap = ImmutableMap.<String, Long>builder()
@@ -361,6 +365,10 @@ public class SpanishNumeric {
         .put("doce", 12L)
         .put("docena", 12L)
         .put("docenas", 12L)
+        .put("dz", 12L)
+        .put("doz", 12L)
+        .put("dzs", 12L)
+        .put("dozs", 12L)
         .put("trece", 13L)
         .put("catorce", 14L)
         .put("quince", 15L)
@@ -432,6 +440,7 @@ public class SpanishNumeric {
         .put("segunda", 2L)
         .put("medio", 2L)
         .put("media", 2L)
+        .put("mitad", 2L)
         .put("tercero", 3L)
         .put("tercera", 3L)
         .put("tercer", 3L)
@@ -556,6 +565,133 @@ public class SpanishNumeric {
         .put("billonesima", 1000000000000L)
         .put("billonésimo", 1000000000000L)
         .put("billonésima", 1000000000000L)
+        .put("primeros", 1L)
+        .put("primeras", 1L)
+        .put("segundos", 2L)
+        .put("segundas", 2L)
+        .put("terceros", 3L)
+        .put("terceras", 3L)
+        .put("tercios", 3L)
+        .put("cuartos", 4L)
+        .put("cuartas", 4L)
+        .put("quintos", 5L)
+        .put("quintas", 5L)
+        .put("sextos", 6L)
+        .put("sextas", 6L)
+        .put("septimos", 7L)
+        .put("septimas", 7L)
+        .put("séptimos", 7L)
+        .put("séptimas", 7L)
+        .put("octavos", 8L)
+        .put("octavas", 8L)
+        .put("novenos", 9L)
+        .put("novenas", 9L)
+        .put("decimos", 10L)
+        .put("décimos", 10L)
+        .put("decimas", 10L)
+        .put("décimas", 10L)
+        .put("undecimos", 11L)
+        .put("undecimas", 11L)
+        .put("undécimos", 11L)
+        .put("undécimas", 11L)
+        .put("duodecimos", 12L)
+        .put("duodecimas", 12L)
+        .put("duodécimos", 12L)
+        .put("duodécimas", 12L)
+        .put("decimoterceros", 13L)
+        .put("decimoterceras", 13L)
+        .put("decimocuartos", 14L)
+        .put("decimocuartas", 14L)
+        .put("decimoquintos", 15L)
+        .put("decimoquintas", 15L)
+        .put("decimosextos", 16L)
+        .put("decimosextas", 16L)
+        .put("decimoseptimos", 17L)
+        .put("decimoseptimas", 17L)
+        .put("decimoctavos", 18L)
+        .put("decimoctavas", 18L)
+        .put("decimonovenos", 19L)
+        .put("decimonovenas", 19L)
+        .put("vigesimos", 20L)
+        .put("vigesimas", 20L)
+        .put("vigésimos", 20L)
+        .put("vigésimas", 20L)
+        .put("trigesimos", 30L)
+        .put("trigesimas", 30L)
+        .put("trigésimos", 30L)
+        .put("trigésimas", 30L)
+        .put("cuadragesimos", 40L)
+        .put("cuadragesimas", 40L)
+        .put("cuadragésimos", 40L)
+        .put("cuadragésimas", 40L)
+        .put("quincuagesimos", 50L)
+        .put("quincuagesimas", 50L)
+        .put("quincuagésimos", 50L)
+        .put("quincuagésimas", 50L)
+        .put("sexagesimos", 60L)
+        .put("sexagesimas", 60L)
+        .put("sexagésimos", 60L)
+        .put("sexagésimas", 60L)
+        .put("septuagesimos", 70L)
+        .put("septuagesimas", 70L)
+        .put("septuagésimos", 70L)
+        .put("septuagésimas", 70L)
+        .put("octogesimos", 80L)
+        .put("octogesimas", 80L)
+        .put("octogésimos", 80L)
+        .put("octogésimas", 80L)
+        .put("nonagesimos", 90L)
+        .put("nonagesimas", 90L)
+        .put("nonagésimos", 90L)
+        .put("nonagésimas", 90L)
+        .put("centesimos", 100L)
+        .put("centesimas", 100L)
+        .put("centésimos", 100L)
+        .put("centésimas", 100L)
+        .put("ducentesimos", 200L)
+        .put("ducentesimas", 200L)
+        .put("ducentésimos", 200L)
+        .put("ducentésimas", 200L)
+        .put("tricentesimos", 300L)
+        .put("tricentesimas", 300L)
+        .put("tricentésimos", 300L)
+        .put("tricentésimas", 300L)
+        .put("cuadringentesimos", 400L)
+        .put("cuadringentesimas", 400L)
+        .put("cuadringentésimos", 400L)
+        .put("cuadringentésimas", 400L)
+        .put("quingentesimos", 500L)
+        .put("quingentesimas", 500L)
+        .put("quingentésimos", 500L)
+        .put("quingentésimas", 500L)
+        .put("sexcentesimos", 600L)
+        .put("sexcentesimas", 600L)
+        .put("sexcentésimos", 600L)
+        .put("sexcentésimas", 600L)
+        .put("septingentesimos", 700L)
+        .put("septingentesimas", 700L)
+        .put("septingentésimos", 700L)
+        .put("septingentésimas", 700L)
+        .put("octingentesimos", 800L)
+        .put("octingentesimas", 800L)
+        .put("octingentésimos", 800L)
+        .put("octingentésimas", 800L)
+        .put("noningentesimos", 900L)
+        .put("noningentesimas", 900L)
+        .put("noningentésimos", 900L)
+        .put("noningentésimas", 900L)
+        .put("milesimos", 1000L)
+        .put("milesimas", 1000L)
+        .put("milésimos", 1000L)
+        .put("milésimas", 1000L)
+        .put("millonesimos", 1000000L)
+        .put("millonesimas", 1000000L)
+        .put("millonésimos", 1000000L)
+        .put("millonésimas", 1000000L)
+        .put("billonesimos", 1000000000000L)
+        .put("billonesimas", 1000000000000L)
+        .put("billonésimos", 1000000000000L)
+        .put("billonésimas", 1000000000000L)
         .build();
 
     public static final ImmutableMap<String, Long> PrefixCardinalMap = ImmutableMap.<String, Long>builder()
@@ -631,6 +767,10 @@ public class SpanishNumeric {
         .put("trillonesimo", 1000000000000000000L)
         .put("docena", 12L)
         .put("docenas", 12L)
+        .put("dz", 12L)
+        .put("doz", 12L)
+        .put("dzs", 12L)
+        .put("dozs", 12L)
         .put("k", 1000L)
         .put("m", 1000000L)
         .put("g", 1000000000L)

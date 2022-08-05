@@ -104,6 +104,7 @@ export class EnglishDatePeriodParserConfiguration implements IDatePeriodParserCo
     readonly dateParser: BaseDateParser
     readonly durationExtractor: IDateTimeExtractor
     readonly durationParser: BaseDurationParser
+    readonly integerExtractor: BaseNumberExtractor
     readonly numberParser: BaseNumberParser
     readonly monthFrontBetweenRegex: RegExp
     readonly betweenRegex: RegExp
@@ -147,6 +148,7 @@ export class EnglishDatePeriodParserConfiguration implements IDatePeriodParserCo
         this.durationExtractor = config.durationExtractor;
         this.durationParser = config.durationParser;
         this.numberParser = config.numberParser;
+        this.integerExtractor = config.integerExtractor;
         this.monthFrontBetweenRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MonthFrontBetweenRegex);
         this.betweenRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.BetweenRegex);
         this.monthFrontSimpleCasesRegex = RegExpUtility.getSafeRegExp(EnglishDateTime.MonthFrontSimpleCasesRegex);

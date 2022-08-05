@@ -143,6 +143,7 @@ class ChineseDatePeriodParserConfiguration implements IDatePeriodParserConfigura
     readonly dateParser: BaseDateParser
     readonly durationExtractor: ChineseDurationExtractor
     readonly durationParser: BaseDurationParser
+    readonly integerExtractor: BaseNumberExtractor
     readonly numberParser: BaseNumberParser
     readonly monthFrontBetweenRegex: RegExp
     readonly betweenRegex: RegExp

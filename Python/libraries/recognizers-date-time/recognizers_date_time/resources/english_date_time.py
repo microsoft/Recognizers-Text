@@ -32,13 +32,17 @@ class EnglishDateTime:
     ReferencePrefixRegex = f'(that|same)\\b'
     FutureSuffixRegex = f'\\b((in\\s+the\\s+)?future|hence)\\b'
     PastSuffixRegex = f'\\b((in\\s+the\\s+)past)\\b'
-    DayRegex = f'(the\\s*)?(?<!(\\d+:?|\\$)\\s*)(?<day>(?:3[0-1]|[1-2]\\d|0?[1-9])(?:th|nd|rd|st)?)(?=\\b|t)'
+    DayRegex = f'(the\\s*)?(?<!(\\d:|\\$)\\s*|\\d)(?<day>(?:3[0-1]|[1-2]\\d|0?[1-9])(?:th|nd|rd|st)?)(?=\\b|t)'
     ImplicitDayRegex = f'(the\\s*)?(?<day>(?:3[0-1]|[0-2]?\\d)(?:th|nd|rd|st))\\b'
     MonthNumRegex = f'(?<month>1[0-2]|(0)?[1-9])\\b'
     WrittenOneToNineRegex = f'(?:one|two|three|four|five|six|seven|eight|nine)'
     WrittenElevenToNineteenRegex = f'(?:eleven|twelve|(?:thir|four|fif|six|seven|eigh|nine)teen)'
     WrittenTensRegex = f'(?:ten|twenty|thirty|fou?rty|fifty|sixty|seventy|eighty|ninety)'
     WrittenNumRegex = f'(?:{WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|{WrittenTensRegex}(\\s+{WrittenOneToNineRegex})?)'
+    WrittenOneToNineOrdinalRegex = f'(?:first|second|third|fourth|fifth|sixth|seventh|eighth|nine?th)'
+    WrittenTensOrdinalRegex = f'(?:tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|sixtieth|seventieth|eightieth|ninetieth)'
+    WrittenOrdinalRegex = f'(?:{WrittenOneToNineOrdinalRegex}|{WrittenTensOrdinalRegex}|{WrittenTensRegex}\\s+{WrittenOneToNineOrdinalRegex})'
+    WrittenOrdinalDayRegex = f'\\b(the\\s+)?(?<day>(?<ordinal>{WrittenOneToNineOrdinalRegex}|(?:tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth)|(?:ten|twenty)\\s+{WrittenOneToNineOrdinalRegex}|thirty\\s+first))\\b'
     WrittenCenturyFullYearRegex = f'(?:(one|two)\\s+thousand((\\s+and)?\\s+{WrittenOneToNineRegex}\\s+hundred)?)'
     WrittenCenturyOrdinalYearRegex = f'(?:twenty(\\s+(one|two))?|ten|eleven|twelve|thirteen|fifteen|eighteen|(?:four|six|seven|nine)(teen)?|one|two|three|five|eight)'
     CenturyRegex = f'\\b(?<century>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}(\\s+hundred)?)\\b'
@@ -56,10 +60,11 @@ class EnglishDateTime:
     WeekDayRegex = f'\\b(?<weekday>(?:sun|mon|tues?|thurs?|fri)(day)?|thu|wedn(esday)?|weds?|sat(urday)?)s?\\b'
     SingleWeekDayRegex = f'\\b(?<weekday>(?<!(easter|palm)\\s+)sunday|(?<!easter\\s+)saturday|(?<!(easter|cyber)\\s+)monday|mon|(?<!black\\s+)friday|fri|(?:tues?|thurs?)(day)?|thu|wedn(esday)?|weds?|((?<=on\\s+)(sat|sun)))\\b'
     RelativeMonthRegex = f'(?<relmonth>((day\\s+)?of\\s+)?{RelativeRegex}\\s+month)\\b'
-    MonthRegex = f'\\b(?<month>apr(il)?|aug(ust)?|dec(ember)?|feb(ruary)?|jan(uary)?|july?|june?|mar(ch)?|may|nov(ember)?|oct(ober)?|sept(ember)?|sep)(?!\\p{{L}})'
+    MonthRegexNoWordBoundary = f'(?<month>apr(il)?|aug(ust)?|dec(ember)?|feb(ruary)?|jan(uary)?|july?|june?|mar(ch)?|may|nov(ember)?|oct(ober)?|sept(ember)?|sep)(?!\\p{{L}})'
+    MonthRegex = f'\\b{MonthRegexNoWordBoundary}'
     WrittenMonthRegex = f'(((the\\s+)?month of\\s+)?{MonthRegex})'
     MonthSuffixRegex = f'(?<msuf>(?:(in|of|on)\\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))'
-    DateUnitRegex = f'(?<unit>(decade|year|(?<uoy>month|week)|(?<business>(business\\s+|week\\s*))?(?<uoy>day)|fortnight|weekend)(?<plural>s)?|(?<=\\s+\\d{{1,4}})[ymwd])\\b'
+    DateUnitRegex = f'(?<unit>(decade|year|(?<uoy>month|week)|(?<business>(business\\s+|week\\s*))?(?<uoy>day)|fortnight|weekend)(?<plural>s)?|(?<=(^|\\s)\\d{{1,4}})[ymwd])\\b'
     DateTokenPrefix = 'on '
     TimeTokenPrefix = 'at '
     TokenBeforeDate = 'on '
@@ -70,10 +75,10 @@ class EnglishDateTime:
     ToTokenRegex = f'\\b(to)$'
     FromRegex = f'\\b(from(\\s+the)?)$'
     BetweenTokenRegex = f'\\b(between(\\s+the)?)$'
-    SimpleCasesRegex = f'\\b({RangePrefixRegex}\\s+)?({DayRegex})\\s*{TillRegex}\\s*({DayRegex}\\s+{MonthSuffixRegex}|{MonthSuffixRegex}\\s+{DayRegex})((\\s+|\\s*,\\s*){YearRegex})?\\b'
-    MonthFrontSimpleCasesRegex = f'\\b({RangePrefixRegex}\\s+)?{MonthSuffixRegex}\\s+((from)\\s+)?({DayRegex})\\s*{TillRegex}\\s*({DayRegex})((\\s+|\\s*,\\s*){YearRegex})?\\b'
-    MonthFrontBetweenRegex = f'\\b{MonthSuffixRegex}\\s+(between\\s+)({DayRegex})\\s*{RangeConnectorRegex}\\s*({DayRegex})((\\s+|\\s*,\\s*){YearRegex})?\\b'
-    BetweenRegex = f'\\b(between\\s+)({DayRegex})\\s*{RangeConnectorRegex}\\s*({DayRegex})\\s+{MonthSuffixRegex}((\\s+|\\s*,\\s*){YearRegex})?\\b'
+    SimpleCasesRegex = f'\\b({RangePrefixRegex}\\s+)?({DayRegex}|{WrittenOrdinalDayRegex})\\s*{TillRegex}\\s*(({DayRegex}|{WrittenOrdinalDayRegex})\\s+{MonthSuffixRegex}|{MonthSuffixRegex}\\s+({DayRegex}|{WrittenOrdinalDayRegex}))((\\s+|\\s*,\\s*){YearRegex})?\\b'
+    MonthFrontSimpleCasesRegex = f'\\b({RangePrefixRegex}\\s+)?{MonthSuffixRegex}\\s+((from)\\s+)?({DayRegex}|{WrittenOrdinalDayRegex})\\s*{TillRegex}\\s*({DayRegex}|{WrittenOrdinalDayRegex})((\\s+|\\s*,\\s*){YearRegex})?\\b'
+    MonthFrontBetweenRegex = f'\\b{MonthSuffixRegex}\\s+(between\\s+)({DayRegex}|{WrittenOrdinalDayRegex})\\s*{RangeConnectorRegex}\\s*({DayRegex}|{WrittenOrdinalDayRegex})((\\s+|\\s*,\\s*){YearRegex})?\\b'
+    BetweenRegex = f'\\b(between\\s+)({DayRegex}|{WrittenOrdinalDayRegex})\\s*{RangeConnectorRegex}\\s*({DayRegex}|{WrittenOrdinalDayRegex})\\s+{MonthSuffixRegex}((\\s+|\\s*,\\s*){YearRegex})?\\b'
     MonthWithYear = f'\\b((({WrittenMonthRegex}[\\.]?|((the\\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|sixth|6th|seventh|7th|eighth|8th|ninth|9th|tenth|10th|eleventh|11th|twelfth|12th|last)\\s+month(?=\\s+(of|in))))((\\s*)[/\\\\\\-\\.,]?(\\s+(of|in))?(\\s*)({YearRegex}|(?<order>following|next|last|this)\\s+year)|\\s+(of|in)\\s+{TwoDigitYearRegex}))|(({YearRegex}|(?<order>following|next|last|this)\\s+year)(\\s*),?(\\s*){WrittenMonthRegex}))\\b'
     SpecialYearPrefixes = f'(calendar|(?<special>fiscal|school))'
     OneWordPeriodRegex = f'\\b((((the\\s+)?month of\\s+)?({StrictRelativeRegex}\\s+)?{MonthRegex})|(month|year) to date|(?<toDate>((un)?till?|to)\\s+date)|({RelativeRegex}\\s+)?(my\\s+)?((?<business>working\\s+week|workweek)|week(end)?|month|fortnight|(({SpecialYearPrefixes}\\s+)?year))(?!((\\s+of)?\\s+\\d+(?!({BaseDateTime.BaseAmDescRegex}|{BaseDateTime.BasePmDescRegex}))|\\s+to\\s+date))(\\s+{AfterNextSuffixRegex})?)\\b'
@@ -100,7 +105,7 @@ class EnglishDateTime:
     PrefixDayRegex = f'\\b((?<EarlyPrefix>earl(y|ier))|(?<MidPrefix>mid(dle)?)|(?<LatePrefix>later?))(\\s+in)?(\\s+the\\s+day)?$'
     SeasonDescRegex = f'(?<seas>spring|summer|fall|autumn|winter)'
     SeasonRegex = f'\\b(?<season>({PrefixPeriodRegex}\\s+)?({RelativeRegex}\\s+)?{SeasonDescRegex}((\\s+of|\\s*,\\s*)?\\s+({YearRegex}|{RelativeRegex}\\s+year))?)\\b'
-    WhichWeekRegex = f'\\b(week)(\\s*)(?<number>5[0-3]|[1-4]\\d|0?[1-9])\\b'
+    WhichWeekRegex = f'\\b(week)(\\s*)(?<number>5[0-3]|[1-4]\\d|0?[1-9])(\\s+of\\s+({YearRegex}|{RelativeRegex}\\s+year))?\\b'
     WeekOfRegex = f'(the\\s+)?((week)(\\s+(of|(commencing|starting|beginning)(\\s+on)?))|w/c)(\\s+the)?'
     MonthOfRegex = f'(month)(\\s*)(of)'
     DateYearRegex = f'(?<year>{BaseDateTime.FourDigitYearRegex}|(?<!,\\s?){TwoDigitYearRegex}|{TwoDigitYearRegex}(?=(\\.(?!\\d)|[?!;]|$)))'
@@ -111,8 +116,8 @@ class EnglishDateTime:
     ThisRegex = f'\\b(this(\\s*week{PrefixWeekDayRegex}?)?\\s*{WeekDayRegex})|({WeekDayRegex}((\\s+of)?\\s+this\\s*week))\\b'
     LastDateRegex = f'\\b({PreviousPrefixRegex}(\\s*week{PrefixWeekDayRegex}?)?\\s*{WeekDayRegex})|({WeekDayRegex}(\\s+(of\\s+)?last\\s*week))\\b'
     NextDateRegex = f'\\b({NextPrefixRegex}(\\s*week{PrefixWeekDayRegex}?)?\\s*{WeekDayRegex})|((on\\s+)?{WeekDayRegex}((\\s+of)?\\s+(the\\s+following|(the\\s+)?next)\\s*week))\\b'
-    SpecialDayRegex = f'\\b((the\\s+)?day before yesterday|(the\\s+)?day after (tomorrow|tmr)|the\\s+day\\s+(before|after)(?!=\\s+day)|((the\\s+)?({RelativeRegex}|my)\\s+day)|yesterday|tomorrow|tmr|today|otd|current date)\\b'
-    SpecialDayWithNumRegex = f'\\b((?<number>{WrittenNumRegex})\\s+days?\\s+from\\s+(?<day>yesterday|tomorrow|tmr|today|current date))\\b'
+    SpecialDayRegex = f'\\b((the\\s+)?day before yesterday|(the\\s+)?day after (tomorrow|tmrw?)|the\\s+day\\s+(before|after)(?!=\\s+day)|((the\\s+)?({RelativeRegex}|my)\\s+day)|yesterday|tomorrow|tmrw?|today|otd|current date)\\b'
+    SpecialDayWithNumRegex = f'\\b((?<number>{WrittenNumRegex})\\s+days?\\s+from\\s+(?<day>yesterday|tomorrow|tmrw?|today|current date))\\b'
     RelativeDayRegex = f'\\b(((the\\s+)?{RelativeRegex}\\s+day))\\b'
     SetWeekDayRegex = f'\\b(?<prefix>on\\s+)?(?<weekday>morning|afternoon|evening|night|(sun|mon|tues|wednes|thurs|fri|satur)day)s\\b'
     WeekDayOfMonthRegex = f'(?<wom>(the\\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|last)\\s+(week\\s+{MonthSuffixRegex}[\\.]?\\s+(on\\s+)?{WeekDayRegex}|{WeekDayRegex}\\s+{MonthSuffixRegex}))'
@@ -121,8 +126,8 @@ class EnglishDateTime:
     DatePreposition = f'\\b(on|in)'
     DateExtractorYearTermRegex = f'(\\s+|\\s*[/\\\\.,-]\\s*|\\s+of\\s+){DateYearRegex}'
     DayPrefix = f'\\b({WeekDayRegex}|{SpecialDayRegex})\\b'
-    DateExtractor1 = f'\\b({DayPrefix}\\s*[,-]?\\s*)?(({MonthRegex}[\\.]?\\s*[/\\\\.,-]?\\s*{DayRegex})|(\\({MonthRegex}\\s*[-./]\\s*{DayRegex}\\)))(\\s*\\(\\s*{DayPrefix}\\s*\\))?({DateExtractorYearTermRegex}\\b)?'
-    DateExtractor3 = f'\\b({DayPrefix}(\\s+|\\s*,\\s*))?({DayRegex}[\\.]?(\\s+|\\s*[-,/]\\s*|\\s+of\\s+){MonthRegex}[\\.]?((\\s+in)?{DateExtractorYearTermRegex})?|{BaseDateTime.FourDigitYearRegex}\\s*[-./]?\\s*(the\\s+)?(?<day>(?:3[0-1]|[1-2]\\d|0?[1-9])(?:th|nd|rd|st)?)[\\.]?(\\s+|\\s*[-,/]\\s*|\\s+of\\s+){MonthRegex}[\\.]?)\\b'
+    DateExtractor1 = f'\\b({DayPrefix}\\s*[,-]?\\s*)?(({MonthRegex}[\\.]?\\s*[/\\\\.,-]?\\s*{DayRegex})|(\\({MonthRegex}\\s*[-./]\\s*{DayRegex}\\)))(?!\\s*\\-\\s*\\d{{2}}\\b)(\\s*\\(\\s*{DayPrefix}\\s*\\))?({DateExtractorYearTermRegex}\\b)?'
+    DateExtractor3 = f'\\b({DayPrefix}(\\s+|\\s*,\\s*))?({DayRegex}?[\\.]?(\\s+|\\s*[-,/]\\s*|\\s+of\\s+|\\s*)(\\b)?{MonthRegexNoWordBoundary}[\\.]?((\\s+in)?{DateExtractorYearTermRegex})?|{BaseDateTime.FourDigitYearRegex}\\s*[-./]?\\s*(the\\s+)?(?<day>(?:3[0-1]|[1-2]\\d|0?[1-9])(?:th|nd|rd|st)?)[\\.]?(\\s+|\\s*[-,/]\\s*|\\s+of\\s+){MonthRegex}[\\.]?)\\b'
     DateExtractor4 = f'\\b{MonthNumRegex}\\s*[/\\\\\\-]\\s*{DayRegex}[\\.]?\\s*[/\\\\\\-]\\s*{DateYearRegex}'
     DateExtractor5 = f'\\b({DayPrefix}(\\s*,)?\\s+)?{DayRegex}\\s*[/\\\\\\-\\.]\\s*({MonthNumRegex}|{MonthRegex})\\s*[/\\\\\\-\\.]\\s*{DateYearRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)'
     DateExtractor6 = f'(?<={DatePreposition}\\s+)({StrictRelativeRegex}\\s+)?({DayPrefix}\\s+)?{MonthNumRegex}[\\-\\.]{DayRegex}(?![%]){BaseDateTime.CheckDecimalRegex}\\b'
@@ -189,7 +194,7 @@ class EnglishDateTime:
     MealTimeRegex = f'\\b(at\\s+)?(?<mealTime>breakfast|brunch|lunch(\\s*time)?|dinner(\\s*time)?|supper)\\b'
     UnspecificTimePeriodRegex = f'({MealTimeRegex})'
     TimeOfDayRegex = f'\\b(?<timeOfDay>((((in\\s+the\\s+){LaterEarlyRegex}?(morning|afternoon|night(-?time)?|evening)s)|((in\\s+the\\s+)?{LaterEarlyRegex}?(in(\\s+the)?\\s+)?(morning|afternoon|night(-?time)?|evening)))|{MealTimeRegex}|(((in\\s+(the)?\\s+)?)(daytime|business\\s+hours?))))\\b'
-    SpecificTimeOfDayRegex = f'\\b(({StrictRelativeRegex}\\s+{TimeOfDayRegex})\\b|\\btoni(ght|te))s?\\b'
+    SpecificTimeOfDayRegex = f'\\b(({StrictRelativeRegex}\\s+{TimeOfDayRegex})\\b|\\b(?<pm>toni(ght|te)))s?\\b'
     TimeFollowedUnit = f'^\\s*{TimeUnitRegex}'
     TimeNumberCombinedWithUnit = f'\\b(?<num>\\d+(\\.\\d*)?){TimeUnitRegex}'
     BusinessHourSplitStrings = [r'business', r'hour']
@@ -206,8 +211,8 @@ class EnglishDateTime:
     SpecificEndOfRegex = f'(the\\s+)?end of(\\s+the)?\\s*$'
     UnspecificEndOfRegex = f'\\b(the\\s+)?(eod|(end\\s+of\\s+day))\\b'
     UnspecificEndOfRangeRegex = f'\\b(eoy)\\b'
-    PeriodTimeOfDayRegex = f'\\b((in\\s+(the)?\\s+)?{LaterEarlyRegex}?(this\\s+)?{DateTimeTimeOfDayRegex})\\b'
-    PeriodSpecificTimeOfDayRegex = f'\\b({LaterEarlyRegex}?this\\s+{DateTimeTimeOfDayRegex}|({StrictRelativeRegex}\\s+{PeriodTimeOfDayRegex})\\b|\\btoni(ght|te))\\b'
+    PeriodTimeOfDayRegex = f'\\b((in\\s+(the)?\\s+)?{LaterEarlyRegex}?((this\\s+)?{DateTimeTimeOfDayRegex}|(?<timeOfDay>(?<pm>tonight))))\\b'
+    PeriodSpecificTimeOfDayRegex = f'\\b({LaterEarlyRegex}?this\\s+{DateTimeTimeOfDayRegex}|({StrictRelativeRegex}\\s+{PeriodTimeOfDayRegex})\\b|\\b(?<pm>toni(ght|te)))\\b'
     PeriodTimeOfDayWithDateRegex = f'\\b(({PeriodTimeOfDayRegex}(\\s+(on|of))?))\\b'
     LessThanRegex = f'\\b(less\\s+than)\\b'
     MoreThanRegex = f'\\b(more\\s+than)\\b'
@@ -244,7 +249,7 @@ class EnglishDateTime:
     SinceRegex = f'(?:(?:\\b(?:since|after\\s+or\\s+equal\\s+to|(starting|beginning)(\\s)?(?:from|on|with)?|as\\s+early\\s+as|(any\\s+time\\s+)from)\\b\\s*?)|(?<!\\w|<)(>=))(\\s+the)?'
     SinceRegexExp = f'({SinceRegex}|\\bfrom(\\s+the)?\\b)'
     AgoRegex = f'\\b(ago|earlier|before\\s+(?<day>yesterday|today))\\b'
-    LaterRegex = f'\\b(?:later(?!((\\s+in)?\\s*{OneWordPeriodRegex})|(\\s+{TimeOfDayRegex})|\\s+than\\b)|from now|(from|after)\\s+(?<day>tomorrow|tmr|today))\\b'
+    LaterRegex = f'\\b(?:later(?!((\\s+in)?\\s*{OneWordPeriodRegex})|(\\s+{TimeOfDayRegex})|\\s+than\\b)|from now|(from|after)\\s+(?<day>tomorrow|tmrw?|today))\\b'
     BeforeAfterRegex = f'\\b((?<before>before)|(?<after>from|after))\\b'
     ModPrefixRegex = f'\\b({RelativeRegex}|{AroundRegex}|{BeforeRegex}|{AfterRegex}|{SinceRegex})\\b'
     ModSuffixRegex = f'\\b({AgoRegex}|{LaterRegex}|{BeforeAfterRegex}|{FutureSuffixRegex}|{PastSuffixRegex})\\b'
@@ -301,8 +306,10 @@ class EnglishDateTime:
                     ("decade", "10Y"),
                     ("years", "Y"),
                     ("year", "Y"),
+                    ("y", "Y"),
                     ("months", "MON"),
                     ("month", "MON"),
+                    ("m", "M"),
                     ("quarters", "3MON"),
                     ("quarter", "3MON"),
                     ("semesters", "6MON"),
@@ -311,6 +318,7 @@ class EnglishDateTime:
                     ("semestre", "6MON"),
                     ("weeks", "W"),
                     ("week", "W"),
+                    ("w", "W"),
                     ("weekends", "WE"),
                     ("weekend", "WE"),
                     ("fortnights", "2W"),
@@ -319,6 +327,7 @@ class EnglishDateTime:
                     ("weekday", "D"),
                     ("days", "D"),
                     ("day", "D"),
+                    ("d", "D"),
                     ("nights", "D"),
                     ("night", "D"),
                     ("hours", "H"),
@@ -338,16 +347,20 @@ class EnglishDateTime:
                          ("decade", 315360000),
                          ("years", 31536000),
                          ("year", 31536000),
+                         ("y", 31536000),
                          ("months", 2592000),
                          ("month", 2592000),
+                         ("m", 2592000),
                          ("fortnights", 1209600),
                          ("fortnight", 1209600),
                          ("weekends", 172800),
                          ("weekend", 172800),
                          ("weeks", 604800),
                          ("week", 604800),
+                         ("w", 604800),
                          ("days", 86400),
                          ("day", 86400),
+                         ("d", 86400),
                          ("nights", 86400),
                          ("night", 86400),
                          ("hours", 3600),
@@ -711,7 +724,9 @@ class EnglishDateTime:
                                  ("\\b(breakfast|brunch|lunch(time)?|dinner(time)?|supper)$", "(?<!\\b(at|before|after|around|circa)\\b\\s)(breakfast|brunch|lunch|dinner|supper)(?!\\s*time)"),
                                  ("^\\d+m$", "^\\d+m$"),
                                  ("^(apr|aug|dec|feb|jan|jul|jun|mar|may|nov|oct|sept?)$", "([$%£&!?@#])(apr|aug|dec|feb|jan|jul|jun|mar|may|nov|oct|sept?)|(apr|aug|dec|feb|jan|jul|jun|mar|may|nov|oct|sept?)([$%£&@#])"),
-                                 ("^(to\\s+date)$", "\\b((equals?|up)\\s+to\\s+date)\\b")])
+                                 ("^(to\\s+date)$", "\\b((equals?|up)\\s+to\\s+date)\\b"),
+                                 ("^\\d{1,4}-\\d{1,4}$", "\\d{1,4}-\\d{1,4}-\\d|\\d-\\d{1,4}-\\d{1,4}"),
+                                 ("^\\d{1,4}-\\d{1,4}-\\d{1,4}$", "\\d{1,4}-\\d{1,4}-\\d{1,4}-\\d|\\d-\\d{1,4}-\\d{1,4}-\\d{1,4}")])
     AmbiguityTimeFiltersDict = dict([("^(\\p{L}+|\\d{1,2})(\\s+(morning|afternoon|evening|night))?$", "\\b(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|\\d{1,2})\\s+(morning|afternoon|evening|night)\\b")])
     AmbiguityDurationFiltersDict = dict([("night$", "\\bnight(\\s*|-)(club|light|market|shift|work(er)?)s?\\b")])
     MorningTermList = [r'morning']
@@ -725,9 +740,9 @@ class EnglishDateTime:
     NightTermList = [r'night']
     NighttimeTermList = [r'nighttime', r'night-time']
     SameDayTerms = [r'today', r'current date', r'otd']
-    PlusOneDayTerms = [r'tomorrow', r'tmr', r'day after']
+    PlusOneDayTerms = [r'tomorrow', r'tmr', r'tmrw', r'day after']
     MinusOneDayTerms = [r'yesterday', r'day before']
-    PlusTwoDayTerms = [r'day after tomorrow', r'day after tmr']
+    PlusTwoDayTerms = [r'day after tomorrow', r'day after tmr', r'day after tmrw']
     MinusTwoDayTerms = [r'day before yesterday']
     FutureTerms = [r'this', r'next']
     LastCardinalTerms = [r'last']

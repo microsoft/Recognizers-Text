@@ -117,9 +117,9 @@ public class ChineseDateTime {
 
     public static final String BeforeRegex = "以前|之前|前";
 
-    public static final String AfterRegex = "以后|以後|之后|之後|后|後";
+    public static final String AfterRegex = "以后|以後|之后|之後|后|後|还剩";
 
-    public static final String TimePeriodLeftRegex = "^[.]";
+    public static final String TimePeriodLeftRegex = "还剩";
 
     public static final String DateRegexList1 = "({LunarRegex}(\\s*))?((({SimpleYearRegex}|{DateYearInCJKRegex})年)(\\s*))?{MonthRegex}(\\s*){DateDayRegexInCJK}((\\s*|,|，){WeekDayRegex})?"
             .replace("{LunarRegex}", LunarRegex)
@@ -345,6 +345,8 @@ public class ChineseDateTime {
 
     public static final String DateTimePeriodPrepositionRegex = "(?<prep>^\\s*的|在\\s*$)";
 
+    public static final String BeforeAfterRegex = "^\\b$";
+
     public static final String HourRegex = "\\b{BaseDateTime.HourRegex}"
             .replace("{BaseDateTime.HourRegex}", BaseDateTime.HourRegex);
 
@@ -358,7 +360,7 @@ public class ChineseDateTime {
 
     public static final String DateTimePeriodNextRegex = "下个|下一个|下|下一";
 
-    public static final String AmPmDescRegex = "(?<daydesc>(am|a\\.m\\.|a m|a\\. m\\.|a\\.m|a\\. m|a m|pm|p\\.m\\.|p m|p\\. m\\.|p\\.m|p\\. m|p m))";
+    public static final String AmPmDescRegex = "(?<daydesc>(am|a\\.m\\.|a m|a\\. m\\.|a\\.m|a\\. m|a m|pm|p\\.m\\.|p m|p\\. m\\.|p\\.m|p\\. m|p m|上午|中午|下午|午后|晚上|夜里|夜晚|夜间|深夜|傍晚|晚|早间?))";
 
     public static final String TimeOfDayRegex = "(?<timeOfDay>凌晨|清晨|早上|早间|早|上午|中午|下午|午后|晚上|夜里|夜晚|半夜|夜间|深夜|傍晚|晚)";
 
@@ -408,6 +410,8 @@ public class ChineseDateTime {
 
     public static final String DurationUnitRegex = "(?<unit>{DateUnitRegex}|分钟?|秒钟?|个?小时|时|个?钟头|天|个?星期|周|週|个?月|年)"
             .replace("{DateUnitRegex}", DateUnitRegex);
+
+    public static final String AnUnitRegex = "^[.]";
 
     public static final String DurationConnectorRegex = "^\\s*(?<connector>[多又余零]?)\\s*$";
 
@@ -562,6 +566,8 @@ public class ChineseDateTime {
 
     public static final String ReferenceDatePeriodRegex = "^[.]";
 
+    public static final String UnspecificDatePeriodRegex = "^[.]";
+
     public static final String ParserConfigurationBefore = "((?<include>和|或|及)?(之前|以前)|前)";
 
     public static final String ParserConfigurationAfter = "((?<include>和|或|及)?(之后|之後|以后|以後)|后|後)";
@@ -571,6 +577,10 @@ public class ChineseDateTime {
     public static final String ParserConfigurationSincePrefix = "(自从|自|自打|打|从)";
 
     public static final String ParserConfigurationSinceSuffix = "(以来|开始|起)";
+
+    public static final String ParserConfigurationAroundPrefix = "^[.]";
+
+    public static final String ParserConfigurationAroundSuffix = "^[.]";
 
     public static final String ParserConfigurationLastWeekDayRegex = "最后一个";
 
@@ -632,6 +642,8 @@ public class ChineseDateTime {
     public static final List<String> YearTerms = Arrays.asList("年");
 
     public static final List<String> ThisYearTerms = Arrays.asList("今年");
+
+    public static final List<String> YearToDateTerms = Arrays.asList("今年迄今");
 
     public static final List<String> LastYearTerms = Arrays.asList("去年");
 
@@ -999,6 +1011,22 @@ public class ChineseDateTime {
     public static final String DateTimePeriodEVRegex = "(晚上|夜里|夜晚|晚)";
 
     public static final String DateTimePeriodNIRegex = "(半夜|夜间|深夜)";
+
+    public static final ImmutableMap<String, String> AmbiguityTimeFiltersDict = ImmutableMap.<String, String>builder()
+        .put("^[.]", "^[.]")
+        .build();
+
+    public static final ImmutableMap<String, String> AmbiguityTimePeriodFiltersDict = ImmutableMap.<String, String>builder()
+        .put("^[.]", "^[.]")
+        .build();
+
+    public static final ImmutableMap<String, String> AmbiguityDateFiltersDict = ImmutableMap.<String, String>builder()
+        .put("^[.]", "^[.]")
+        .build();
+
+    public static final ImmutableMap<String, String> AmbiguityDateTimeFiltersDict = ImmutableMap.<String, String>builder()
+        .put("^[.]", "^[.]")
+        .build();
 
     public static final ImmutableMap<String, String> AmbiguityFiltersDict = ImmutableMap.<String, String>builder()
         .put("早", "(?<!今|明|日|号)早(?!上)")
