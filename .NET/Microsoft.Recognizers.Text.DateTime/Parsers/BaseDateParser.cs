@@ -618,7 +618,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var match = this.config.TasksModeDurationToDatePatterns.Match(trimmedText);
             if (match.Success)
             {
-                if (match.Groups["week"] != null)
+                if (match.Groups["week"].Value.Trim() != string.Empty)
                 {
                     var value = referenceDate.AddDays(TasksModeConstants.WeekDayCount);
                     ret.Timex = DateTimeFormatUtil.LuisDate(value);
@@ -626,7 +626,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ret.Success = true;
                     return ret;
                 }
-                else if (match.Groups["month"] != null)
+                else if (match.Groups["month"].Value.Trim() != string.Empty)
                 {
                     var value = referenceDate.AddMonths(1);
                     ret.Timex = DateTimeFormatUtil.LuisDate(value.Year, value.Month, 1);
@@ -634,7 +634,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ret.Success = true;
                     return ret;
                 }
-                else if (match.Groups["year"] != null)
+                else if (match.Groups["year"].Value.Trim() != string.Empty)
                 {
                     var value = referenceDate.AddYears(1);
                     ret.Timex = DateTimeFormatUtil.LuisDate(value.Year, 1, 1);

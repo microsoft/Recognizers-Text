@@ -330,8 +330,8 @@
             {
               "timex": "2016-11-08TDT",
               "type": "datetimerange",
-              "start": "2016-11-08 08:00:00",
-              "end": "2016-11-08 18:00:00"
+              "start": "2016-11-08 16:00:00",
+              "end": "2016-11-08 16:00:00"
             }
           ]
         }
@@ -341,7 +341,7 @@
   {
     "Input": "they were working in the night-time",
     "Context": {
-      "ReferenceDateTime": "2016-11-07T01:00:00"
+      "ReferenceDateTime": "2016-11-07T22:00:00"
     },
     "NotSupported": "javascript, python, java",
     "Results": [
@@ -355,8 +355,8 @@
             {
               "timex": "2016-11-08TNT",
               "type": "datetimerange",
-              "start": "2016-11-08 00:00:00",
-              "end": "2016-11-08 08:00:00"
+              "start": "2016-11-08 21:00:00",
+              "end": "2016-11-08 21:00:00"
             }
           ]
         }
@@ -461,8 +461,8 @@
             {
               "timex": "2016-11-08TMO",
               "type": "datetimerange",
-              "start": "2016-11-08 08:00:00",
-              "end": "2016-11-08 12:00:00"
+              "start": "2016-11-08 06:00:00",
+              "end": "2016-11-08 06:00:00"
             }
           ]
         }
@@ -486,8 +486,8 @@
             {
               "timex": "TEV",
               "type": "timerange",
-              "start": "16:00:00",
-              "end": "20:00:00"
+              "start": "18:00:00",
+              "end": "18:00:00"
             }
           ]
         }
