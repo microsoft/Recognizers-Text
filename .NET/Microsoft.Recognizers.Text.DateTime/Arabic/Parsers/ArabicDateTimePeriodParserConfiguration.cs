@@ -137,7 +137,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Arabic
 
         public Regex AfterRegex { get; }
 
-        Regex IDateTimePeriodParserConfiguration.TasksmodeMealTimeofDay => null;
+        Regex IDateTimePeriodParserConfiguration.TasksmodeMealTimeofDayRegex => null;
 
         bool IDateTimePeriodParserConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 

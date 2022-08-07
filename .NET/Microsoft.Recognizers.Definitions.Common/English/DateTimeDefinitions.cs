@@ -221,7 +221,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly string PeriodTimeOfDayRegex = $@"\b((in\s+(the)?\s+)?{LaterEarlyRegex}?((this\s+)?{DateTimeTimeOfDayRegex}|(?<timeOfDay>(?<pm>tonight))))\b";
       public static readonly string PeriodSpecificTimeOfDayRegex = $@"\b({LaterEarlyRegex}?this\s+{DateTimeTimeOfDayRegex}|({StrictRelativeRegex}\s+{PeriodTimeOfDayRegex})\b|\b(?<pm>toni(ght|te)))\b";
       public static readonly string PeriodTimeOfDayWithDateRegex = $@"\b(({PeriodTimeOfDayRegex}(\s+(on|of))?))\b";
-      public static readonly string TasksmodeMealTimeofDay = $@"\b((in\s+(the)?\s+)?((?<early>earl(y|ier)(\s+|-))|(?<late>late(r?\s+|-)))?((this\s+)?\b(?<timeOfDay>lunch(\s*time)?|dinner(\s*time)?|brunch|breakfast)\b))\b";
+      public static readonly string TasksmodeMealTimeofDayRegex = $@"\b((in\s+(the)?\s+)?((?<early>earl(y|ier)(\s+|-))|(?<late>late(r?\s+|-)))?((this\s+)?\b(?<timeOfDay>lunch(\s*time)?|dinner(\s*time)?|brunch|breakfast)\b))\b";
       public const string LessThanRegex = @"\b(less\s+than)\b";
       public const string MoreThanRegex = @"\b(more\s+than)\b";
       public static readonly string DurationUnitRegex = $@"(?<unit>{DateUnitRegex}|h(ou)?rs?|h|min(ute)?s?|sec(ond)?s?|nights?)\b";

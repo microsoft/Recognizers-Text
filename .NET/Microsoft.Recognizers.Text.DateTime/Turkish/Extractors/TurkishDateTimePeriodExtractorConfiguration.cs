@@ -158,7 +158,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
 
         bool IDateTimePeriodExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 
-        Regex IDateTimePeriodExtractorConfiguration.TasksmodeMealTimeofDay => null;
+        Regex IDateTimePeriodExtractorConfiguration.TasksmodeMealTimeofDayRegex => null;
 
         public string TokenBeforeDate { get; }
 

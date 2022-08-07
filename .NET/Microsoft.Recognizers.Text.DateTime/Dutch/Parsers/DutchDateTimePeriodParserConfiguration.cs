@@ -99,7 +99,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public IDateTimeParser TimeZoneParser { get; }
 
-        Regex IDateTimePeriodParserConfiguration.TasksmodeMealTimeofDay => null;
+        Regex IDateTimePeriodParserConfiguration.TasksmodeMealTimeofDayRegex => null;
 
         public Regex PureNumberFromToRegex { get; }
 

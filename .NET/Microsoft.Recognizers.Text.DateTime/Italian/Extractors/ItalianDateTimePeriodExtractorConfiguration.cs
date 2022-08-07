@@ -154,7 +154,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         Regex IDateTimePeriodExtractorConfiguration.WithinNextPrefixRegex => WithinNextPrefixRegex;
 
-        Regex IDateTimePeriodExtractorConfiguration.TasksmodeMealTimeofDay => null;
+        Regex IDateTimePeriodExtractorConfiguration.TasksmodeMealTimeofDayRegex => null;
 
         public string TokenBeforeDate { get; }
 

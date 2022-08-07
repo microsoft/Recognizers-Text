@@ -282,9 +282,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             if (!match.Success && ((Config.Options & DateTimeOptions.TasksMode) != 0)
-                && this.Config.TasksmodeMealTimeofDay != null)
+                && this.Config.TasksmodeMealTimeofDayRegex != null)
             {
-                match = this.Config.TasksmodeMealTimeofDay.Match(trimmedText);
+                match = this.Config.TasksmodeMealTimeofDayRegex.Match(trimmedText);
             }
 
             if (match.Success)

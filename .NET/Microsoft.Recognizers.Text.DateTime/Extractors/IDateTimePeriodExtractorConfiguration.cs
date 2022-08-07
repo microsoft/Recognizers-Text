@@ -60,7 +60,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex AfterRegex { get; }
 
-        Regex TasksmodeMealTimeofDay { get; }
+        Regex TasksmodeMealTimeofDayRegex { get; }
 
         bool CheckBothBeforeAfter { get; }
 

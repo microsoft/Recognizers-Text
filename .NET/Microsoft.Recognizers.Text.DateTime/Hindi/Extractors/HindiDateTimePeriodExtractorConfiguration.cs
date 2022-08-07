@@ -151,7 +151,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
 
         Regex IDateTimePeriodExtractorConfiguration.AfterRegex => AfterRegex;
 
-        Regex IDateTimePeriodExtractorConfiguration.TasksmodeMealTimeofDay => null;
+        Regex IDateTimePeriodExtractorConfiguration.TasksmodeMealTimeofDayRegex => null;
 
         public string TokenBeforeDate { get; }
 

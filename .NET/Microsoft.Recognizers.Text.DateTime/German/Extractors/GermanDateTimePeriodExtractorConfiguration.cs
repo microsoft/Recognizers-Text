@@ -165,7 +165,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         Regex IDateTimePeriodExtractorConfiguration.AfterRegex => AfterRegex;
 
-        Regex IDateTimePeriodExtractorConfiguration.TasksmodeMealTimeofDay => null;
+        Regex IDateTimePeriodExtractorConfiguration.TasksmodeMealTimeofDayRegex => null;
 
         public string TokenBeforeDate { get; }
 
