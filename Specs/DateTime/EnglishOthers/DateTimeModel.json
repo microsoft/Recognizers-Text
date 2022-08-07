@@ -4,7 +4,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-01T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "5/3/18 @ 17:49:19",
@@ -52,7 +51,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-01T12:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "monday morning from 10am to 12pm",
@@ -114,7 +113,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-01T12:00:00"
     },
-    "NotSupportedByDesign": "java, python",
+    "NotSupportedByDesign": "java",
     "Results": [
       {
         "Text": "yesterday afternoon from 3-8pm",
@@ -139,7 +138,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-01T12:00:00"
     },
-    "NotSupportedByDesign": "java, python",
+    "NotSupportedByDesign": "java",
     "Results": [
       {
         "Text": "from 3-8pm yesterday afternoon",
@@ -164,7 +163,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-01T12:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "from 8am-3 yesterday afternoon",
@@ -232,7 +231,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-01T12:00:00"
     },
-    "NotSupportedByDesign": "java, python",
+    "NotSupportedByDesign": "java",
     "Results": [
       {
         "Text": "between 3 and 8 yesterday",
@@ -263,7 +262,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-01T12:00:00"
     },
-    "NotSupportedByDesign": "java, python",
+    "NotSupportedByDesign": "java",
     "Results": [
       {
         "Text": "between 3 and 8am next monday",
@@ -288,7 +287,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-01T12:00:00"
     },
-    "NotSupportedByDesign": "java, python",
+    "NotSupportedByDesign": "java",
     "Results": [
       {
         "Text": "between 3am - 12pm next monday",
@@ -313,7 +312,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-01T12:00:00"
     },
-    "NotSupportedByDesign": "java, python",
+    "NotSupportedByDesign": "java",
     "Results": [
       {
         "Text": "6-8 next monday",
@@ -375,7 +374,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-01T12:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "next monday morning 6-8",
@@ -687,7 +686,7 @@
     "Context": {
       "ReferenceDateTime": "2018-10-24T12:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "from may to oct 2020",
@@ -787,7 +786,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-28T12:00:00"
     },
-    "NotSupportedByDesign": "java, python",
+    "NotSupportedByDesign": "java",
     "NotSupported": "javascript",
     "Results": [
       {
@@ -872,7 +871,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "from 10/06/2019 to 12/06/2019",
@@ -920,7 +918,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "sep-23-2020",
@@ -944,7 +942,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "september-2020-23",
@@ -968,7 +966,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "2020/23/sep",
@@ -992,7 +990,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "2020/sep/23",
@@ -1016,7 +1014,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "23/sep/2020",
@@ -1040,7 +1038,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "23-2020-september",

@@ -627,9 +627,11 @@ public class SpanishNumericWithUnit {
 
     public static final String CompoundUnitConnectorRegex = "(?<spacer>y|con)";
 
+    public static final String MultiplierRegex = "\\s*\\b(((mil\\s+)?mi|bi|cuatri|quinti|sexti|septi)ll[oó]n|mil)(es)?\\b";
+
     public static final ImmutableMap<String, String> CurrencyPrefixList = ImmutableMap.<String, String>builder()
         .put("Dobra", "db|std")
-        .put("Dólar", "$")
+        .put("Dólar", "$|dólar|dólares|dolar|dolares")
         .put("Dólar estadounidense", "us$|u$d|usd")
         .put("Dólar del Caribe Oriental", "ec$|xcd")
         .put("Dólar australiano", "a$|aud")

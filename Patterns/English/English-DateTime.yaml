@@ -189,7 +189,7 @@ NumberCombinedWithDateUnit: !nestedRegex
 QuarterTermRegex: !simpleRegex
   def: \b(((?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th)[ -]+quarter)|(q(?<number>[1-4])))\b
 RelativeQuarterTermRegex: !nestedRegex
-  def: \b(?<orderQuarter>{StrictRelativeRegex})\s+quarter\b
+  def: \b(?<orderQuarter>{StrictRelativeRegex})\s+((?<num>[\w,]+)\s+)?quarters?\b
   references: [ StrictRelativeRegex ]
 QuarterRegex: !nestedRegex
   def: ((the\s+)?{QuarterTermRegex}(?:((\s+of)?\s+|\s*[,-]\s*)({YearRegex}|{RelativeRegex}\s+year))?)|{RelativeQuarterTermRegex}
