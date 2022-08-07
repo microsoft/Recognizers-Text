@@ -16,13 +16,11 @@ namespace Microsoft.Recognizers.Text.DateTime
         /*
         TasksModeModification function will modify datetime value according to it's type and w.r.t
         refrence time.
-
         Under TasksMode
         For Input: 22 april at 5 pm. (reference time is 22/04/2022 T17:30:00, output type is datetime)
         Expected output : {Past resolution value: 22/04/2022T17,
         Future resolution value: 22/04/2023T17
         },
-
         Under Default Mode
         For Input: 22 april at 5 pm. (reference time is 22/04/2022 T17:30:00)
         Expected output : {Past resolution value: 22/04/2021T17,
@@ -55,6 +53,47 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 case Constants.SYS_DATETIME_DATETIMEPERIOD:
                     slot = TasksModeProcessing.TasksModeModifyDateTimePeriodValue(slot, referenceTime);
+                    break;
+            }
+
+            return slot;
+        }
+
+        // Change resolution value of datetime value under tasksmode.
+        public static TimeOfDayResolutionResult TasksModeResolveTimeOfDay(string tod)
+        {
+            var result = new TimeOfDayResolutionResult();
+            switch (tod)
+            {
+                case TasksModeConstants.EarlyMorning:
+                    result.Timex = TasksModeConstants.EarlyMorning;
+                    result.BeginHour = TasksModeConstants.EarlyMorningBeginHour;
+                    result.EndHour = TasksModeConstants.EarlyMorningEndHour;
+                    break;
+                case TasksModeConstants.Morning:
+                    result.Timex = TasksModeConstants.Morning;
+                    result.BeginHour = TasksModeConstants.MorningBeginHour;
+                    result.EndHour = TasksModeConstants.MorningEndHour;
+                    break;
+                case TasksModeConstants.MidDay:
+                    result.Timex = TasksModeConstants.MidDay;
+                    result.BeginHour = TasksModeConstants.MidDayBeginHour;
+                    result.EndHour = TasksModeConstants.MidDayEndHour;
+                    break;
+                case TasksModeConstants.Afternoon:
+                    result.Timex = TasksModeConstants.Afternoon;
+                    result.BeginHour = TasksModeConstants.AfternoonBeginHour;
+                    result.EndHour = TasksModeConstants.AfternoonEndHour;
+                    break;
+                case TasksModeConstants.Evening:
+                    result.Timex = TasksModeConstants.Evening;
+                    result.BeginHour = TasksModeConstants.EveningBeginHour;
+                    result.EndHour = TasksModeConstants.EveningEndHour;
+                    break;
+                case TasksModeConstants.Daytime:
+                    result.Timex = TasksModeConstants.Daytime;
+                    result.BeginHour = TasksModeConstants.DaytimeBeginHour;
+                    result.EndHour = TasksModeConstants.DaytimeEndHour;
                     break;
                 case TasksModeConstants.Nighttime:
                     result.Timex = TasksModeConstants.Nighttime;
@@ -96,7 +135,66 @@ namespace Microsoft.Recognizers.Text.DateTime
                     break;
             }
 
-            return slot;
+            return result;
+        }
+
+        /*
+         Change beginHour and endHour for subjective time refereneces under TasksMode.
+         morning get's mapped to 6:00 am
+         */
+        public static bool GetMatchedTimeRangeForTasksMode(string text, string todSymbol, out int beginHour, out int endHour, out int endMin)
+        {
+            var trimmedText = text.Trim();
+            beginHour = 0;
+            endHour = 0;
+            endMin = 0;
+            if (todSymbol == TasksModeConstants.Morning)
+            {
+                beginHour = TasksModeConstants.MorningBeginHour;
+                endHour = TasksModeConstants.EarlyMorningEndHour;
+            }
+            else if (todSymbol == TasksModeConstants.Afternoon)
+            {
+                beginHour = TasksModeConstants.AfternoonBeginHour;
+                endHour = TasksModeConstants.AfternoonEndHour;
+
+            }
+            else if (todSymbol == TasksModeConstants.Evening)
+            {
+                beginHour = TasksModeConstants.EveningBeginHour;
+                endHour = TasksModeConstants.EveningEndHour;
+            }
+            else if (todSymbol == TasksModeConstants.Night)
+            {
+                beginHour = TasksModeConstants.NightBeginHour;
+                endHour = TasksModeConstants.NightEndHour;
+            }
+            else if (todSymbol == TasksModeConstants.MealtimeBreakfast)
+            {
+                beginHour = TasksModeConstants.MealtimeBreakfastBeginHour;
+                endHour = TasksModeConstants.MealtimeBreakfastEndHour;
+            }
+            else if (todSymbol == TasksModeConstants.MealtimeBrunch)
+            {
+                beginHour = TasksModeConstants.MealtimeBrunchBeginHour;
+                endHour = TasksModeConstants.MealtimeBrunchEndHour;
+            }
+            else if (todSymbol == TasksModeConstants.MealtimeDinner)
+            {
+                beginHour = TasksModeConstants.MealtimeDinnerBeginHour;
+                endHour = TasksModeConstants.MealtimeDinnerEndHour;
+            }
+            else if (todSymbol == TasksModeConstants.MealtimeLunch)
+            {
+                beginHour = TasksModeConstants.MealtimeLunchBeginHour;
+                endHour = TasksModeConstants.MealtimeLunchEndHour;
+            }
+            else
+            {
+                return false;
+            }
+
+            return true;
         }
 
         /*Under TasksMode If you input today's date, future date should get mapped to current date insted of next year.
@@ -244,7 +342,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         ex if input is "meet on 7 july morning" and refrence time is 7 july 2022 10pm,
         expected future value should get mapped to 7 july 2023, morning &&
         past value get mapped to 7 july 2022, morning.
-
         ex if input is "meet on  thursday morning" and refrence time is 7 july 2022 (thursday) 10pm,
         expected future value should get mapped to 14 july 2022, morning &&
         past value get mapped to 7 july 2022, morning.
@@ -433,7 +530,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         ex if input is "meet after 7 july at 9pm" and refrence time is 7 july 2022 10pm,
         expected future value should get mapped to 7 july 2023,9pm &&
         past value get mapped to 7 july 2022,9pm.
-
         ex if input is "meet on  thursday at 6pm" and refrence time is 7 july 2022 (thursday) 10pm,
         expected future value should get mapped to 14 july 2022, 6pm &&
         past value get mapped to 7 july 2022, 6pm.
