@@ -323,19 +323,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
-            /* modification of "past datetime" references
-               Input : 22 april at 5 pm. (reference time is 22/04/2022 T17:30:00)
-               output under taskmode.
-                                    Past resolution value: 22/04/2022T17,
-                                    Future resolution value: 22/04/2023T17
-               output under default mode.
-                                     Past resolution value: 22/04/2021T17,
-                                    Future resolution value: 22/04/2022T17
-
+            /* Modification of datetime value under tasksmode,
+             for example when input text is 9 april at 2 pm and current datetime value is 9 april 2022 1pm,
+            then output for current query should be "9 april 2022, 9pm" under tasksmode which is different
+            from default mode, under which it is "9 april 2023, 9pm".
              */
             if ((this.Config.Options & DateTimeOptions.TasksMode) != 0)
             {
-                // filter decade regexes
                 if (pr != null)
                 {
                     pr = TasksModeProcessing.TasksModeModification(pr, referenceTime);
