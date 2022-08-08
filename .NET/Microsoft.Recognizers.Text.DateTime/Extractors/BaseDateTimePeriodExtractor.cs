@@ -33,6 +33,15 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             // Date and time Extractions should be extracted from the text only once, and shared in the methods below, passed by value
             var dateErs = config.SingleDateExtractor.Extract(text, reference);
+
+            // adding support for merging holiday dates with timerange references.
+
+            if ((config.Options & DateTimeOptions.TasksMode) != 0)
+            {
+                var holidates = config.HolidayExtractor.Extract(text, reference);
+                dateErs.AddRange(holidates);
+            }
+
             var timeErs = config.SingleTimeExtractor.Extract(text, reference);
 
             tokens.AddRange(MatchSimpleCases(text, reference));
@@ -219,6 +228,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                     if (!string.IsNullOrEmpty(beforeStr))
                     {
                         var ers = this.config.SingleDateExtractor.Extract(beforeStr, reference);
+
+                        // adding support for merging holiday with timeperiod
+                        if ((config.Options & DateTimeOptions.TasksMode) != 0)
+                        {
+                            var holidates = config.HolidayExtractor.Extract(beforeStr, reference);
+                            ers.AddRange(holidates);
+                        }
+
                         if (ers.Count > 0)
                         {
                             var er = ers.Last();
@@ -238,6 +255,14 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         // Is it followed by a date?
                         var er = this.config.SingleDateExtractor.Extract(followedStr, reference);
+
+                        // check if follwed by holiday?
+                        if ((config.Options & DateTimeOptions.TasksMode) != 0)
+                        {
+                            var holidates = config.HolidayExtractor.Extract(followedStr, reference);
+                            er.AddRange(holidates);
+                        }
+
                         if (er.Count > 0)
                         {
                             var begin = er[0].Start ?? 0;
