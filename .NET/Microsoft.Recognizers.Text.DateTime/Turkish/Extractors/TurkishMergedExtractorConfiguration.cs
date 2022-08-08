@@ -153,5 +153,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
         StringMatcher IMergedExtractorConfiguration.SuperfluousWordMatcher => SuperfluousWordMatcher;
 
         bool IMergedExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+
+        public Regex TasksModeMentionFilters { get; }
+
     }
 }
