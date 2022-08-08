@@ -138,10 +138,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Swedish
 
         public Regex TasksModeDurationToDatePatterns { get; }
 
-        public Regex TasksModeNextMonthRegex { get; }
-
-        public Regex TasksModeNextYearRegex { get; }
-
         public IImmutableDictionary<string, int> DayOfMonth { get; }
 
         public IImmutableDictionary<string, int> DayOfWeek { get; }

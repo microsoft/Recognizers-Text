@@ -222,17 +222,17 @@ namespace Microsoft.Recognizers.Text.DateTime
                         var inputDay = inputTime.Day;
                         var inputMonth = inputTime.Month;
 
-                        if (slot.Text.Contains("next week") && !slot.TimexStr.Contains("XXXX"))
+                        if (slot.Text.Contains(TasksModeConstants.NextWeekGroupName) && !slot.TimexStr.Contains(Constants.TimexFuzzyYear))
                         {
                             var tempdate = referenceTime.Upcoming(DayOfWeek.Monday).Date;
                             var dateTimeToSet = DateObject.MinValue.SafeCreateFromValue(tempdate.Year, tempdate.Month, tempdate.Day);
                             values[DateTimeResolutionKey.Value] = DateTimeFormatUtil.FormatDate(dateTimeToSet);
                             values[DateTimeResolutionKey.Timex] = $"{DateTimeFormatUtil.LuisDate(dateTimeToSet)}";
                         }
-                        else if (slot.TimexStr.Contains("XXXX") && inputDay == referenceTime.Day && inputMonth == referenceTime.Month)
+                        else if (slot.TimexStr.Contains(Constants.TimexFuzzyYear) && inputDay == referenceTime.Day && inputMonth == referenceTime.Month)
                         {
                             // ignore for input text like monday, tue etc
-                            if (!slot.TimexStr.Contains("XXXX-WXX"))
+                            if (!slot.TimexStr.Contains(Constants.TimexFuzzyWeek))
                             {
                                 var newDate = inputTime.Date.AddYears(-1);
                                 var dateTimeToSet = DateObject.MinValue.SafeCreateFromValue(newDate.Year, newDate.Month, newDate.Day);
@@ -258,7 +258,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         */
         private static DateTimeParseResult TasksModeModifyDatePeriodValue(DateTimeParseResult slot, DateObject referenceTime)
         {
-            if (!slot.TimexStr.Contains("XXXX"))
+            if (!slot.TimexStr.Contains(Constants.TimexFuzzyYear))
             {
                 return slot;
             }
@@ -284,7 +284,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             futuredate = DateObject.Parse(futurevalue[DateTimeResolutionKey.Start], CultureInfo.InvariantCulture);
 
                             if ((futuredate.Day == referenceTime.Day) && (futuredate.Month == referenceTime.Month)
-                               && (futuredate.Year != referenceTime.Year) && (!slot.TimexStr.Contains("XXXX-WXX")))
+                               && (futuredate.Year != referenceTime.Year) && (!slot.TimexStr.Contains(Constants.TimexFuzzyWeek)))
                             {
                                 maptonew = true;
                             }
@@ -297,7 +297,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             futuredate = DateObject.Parse(futurevalue[DateTimeResolutionKey.End], CultureInfo.InvariantCulture);
 
                             if ((futuredate.Day == referenceTime.Day) && (futuredate.Month == referenceTime.Month)
-                                && (futuredate.Year != referenceTime.Year) && (!slot.TimexStr.Contains("XXXX-WXX")))
+                                && (futuredate.Year != referenceTime.Year) && (!slot.TimexStr.Contains(Constants.TimexFuzzyWeek)))
                             {
                                 maptonew = true;
                             }
@@ -358,7 +358,7 @@ namespace Microsoft.Recognizers.Text.DateTime
        */
         private static DateTimeParseResult TasksModeModifyDateTimePeriodValue(DateTimeParseResult slot, DateObject referenceTime)
         {
-            if (!slot.TimexStr.Contains("XXXX"))
+            if (!slot.TimexStr.Contains(Constants.TimexFuzzyYear))
             {
                 return slot;
             }
@@ -384,12 +384,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                             pastdatetimeperiod = DateObject.Parse(pastvalue[DateTimeResolutionKey.Start], CultureInfo.InvariantCulture);
                             futuredatetimeperiod = DateObject.Parse(futurevalue[DateTimeResolutionKey.Start], CultureInfo.InvariantCulture);
 
-                            if ((pastdatetimeperiod > referenceTime) && !slot.TimexStr.Contains("XXXX-WXX"))
+                            if ((pastdatetimeperiod > referenceTime) && !slot.TimexStr.Contains(Constants.TimexFuzzyWeek))
                             {
                                 maptonew = true;
                             }
 
-                            if ((futuredatetimeperiod < referenceTime) && slot.TimexStr.Contains("XXXX-WXX"))
+                            if ((futuredatetimeperiod < referenceTime) && slot.TimexStr.Contains(Constants.TimexFuzzyWeek))
                             {
                                 maptonew = true;
                             }
@@ -402,12 +402,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 pastdatetimeperiod = DateObject.Parse(pastvalue[DateTimeResolutionKey.End], CultureInfo.InvariantCulture);
                                 futuredatetimeperiod = DateObject.Parse(futurevalue[DateTimeResolutionKey.End], CultureInfo.InvariantCulture);
 
-                                if ((pastdatetimeperiod > referenceTime) && !slot.TimexStr.Contains("XXXX-WXX"))
+                                if ((pastdatetimeperiod > referenceTime) && !slot.TimexStr.Contains(Constants.TimexFuzzyWeek))
                                 {
                                     maptonew = true;
                                 }
 
-                                if ((futuredatetimeperiod < referenceTime) && slot.TimexStr.Contains("XXXX-WXX"))
+                                if ((futuredatetimeperiod < referenceTime) && slot.TimexStr.Contains(Constants.TimexFuzzyWeek))
                                 {
                                     maptonew = true;
                                 }
@@ -416,7 +416,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                         if (maptonew)
                         {
-                            if (slot.TimexStr.Contains("XXXX-WXX"))
+                            if (slot.TimexStr.Contains(Constants.TimexFuzzyWeek))
                             {
                                 if (pastvalue.ContainsKey("start"))
                                 {
@@ -472,7 +472,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     }
 
-                    if ((valueSet.Count == 1) && slot.TimexStr.Contains("XXXX-WXX"))
+                    if ((valueSet.Count == 1) && slot.TimexStr.Contains(Constants.TimexFuzzyWeek))
                     {
                         var currvalue = valueSet.ElementAt(0);
                         bool maptonew = false;
@@ -503,7 +503,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                         if (maptonew)
                         {
-                            if (slot.TimexStr.Contains("XXXX-WXX"))
+                            if (slot.TimexStr.Contains(Constants.TimexFuzzyWeek))
                             {
                                 if (currvalue.ContainsKey("start"))
                                 {
@@ -547,7 +547,7 @@ namespace Microsoft.Recognizers.Text.DateTime
        */
         private static DateTimeParseResult TasksModeModifyDateTimeValue(DateTimeParseResult slot, DateObject referenceTime)
         {
-            if (!slot.TimexStr.Contains("XXXX"))
+            if (!slot.TimexStr.Contains(Constants.TimexFuzzyYear))
             {
                 return slot;
             }
@@ -569,7 +569,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                         if (futuredatetime < referenceTime)
                         {
-                            if (slot.TimexStr.Contains("XXXX-WXX"))
+                            if (slot.TimexStr.Contains(Constants.TimexFuzzyWeek))
                             {
                                 pastvalue[DateTimeResolutionKey.Value] = futurevalue[DateTimeResolutionKey.Value];
                                 var tempdate = futuredatetime.Date.AddDays(7);

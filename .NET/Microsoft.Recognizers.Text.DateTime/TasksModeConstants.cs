@@ -46,5 +46,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const int MealtimeDinnerBeginHour = 20;
         public const int MealtimeDinnerEndHour = 21;
 
+        // tasksmode specific date parser constant
+        public const string NextWeekGroupName = "next";
     }
 }
