@@ -34,6 +34,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (er.Type.Equals(ParserName, StringComparison.Ordinal))
             {
                 var innerResult = MergeDateAndTime(er.Text, referenceTime);
+
+                if ((!innerResult.Success) && ((config.Options & DateTimeOptions.TasksMode) != 0))
+                {
+                    innerResult = MergeHolidayAndTime(er.Text, referenceTime);
+                }
+
                 if (!innerResult.Success)
                 {
                     innerResult = ParseBasicRegex(er.Text, referenceTime);
@@ -249,6 +255,172 @@ namespace Microsoft.Recognizers.Text.DateTime
             ret.PastValue = DateObject.MinValue.SafeCreateFromValue(pastDate.Year, pastDate.Month, pastDate.Day, hour, min, sec);
 
             // Handle case like "Wed Oct 26 15:50:06 2016" which year and month separated by time.
+            var timeSuffix = text.Substring(er2[0].Start + er2[0].Length ?? 0);
+            var matchYear = this.config.YearRegex.Match(timeSuffix);
+            if (matchYear.Success && ((DateObject)((DateTimeResolutionResult)pr1.Value).FutureValue).Year != ((DateObject)((DateTimeResolutionResult)pr1.Value).PastValue).Year)
+            {
+                var year = ((BaseDateExtractor)this.config.DateExtractor).GetYearFromText(matchYear);
+                var dateSuffix = text.Substring(er1[0].Start + er1[0].Length ?? 0);
+                var checkYear = this.config.DateExtractor.GetYearFromText(this.config.YearRegex.Match(dateSuffix));
+
+                if (year >= Constants.MinYearNum && year <= Constants.MaxYearNum && year == checkYear)
+                {
+                    ret.FutureValue = DateObject.MinValue.SafeCreateFromValue(year, futureDate.Month, futureDate.Day, hour, min, sec);
+                    ret.PastValue = DateObject.MinValue.SafeCreateFromValue(year, pastDate.Month, pastDate.Day, hour, min, sec);
+                    ret.Timex = year + pr1.TimexStr.Substring(4) + timeStr;
+                }
+            }
+
+            ret.Success = true;
+
+            // Change the value of time object
+            pr2.TimexStr = timeStr;
+            if (!string.IsNullOrEmpty(ret.Comment))
+            {
+                ((DateTimeResolutionResult)pr2.Value).Comment = ret.Comment.Equals(Constants.Comment_AmPm, StringComparison.Ordinal) ?
+                                                                Constants.Comment_AmPm : string.Empty;
+            }
+
+            // Add the date and time object in case we want to split them
+            ret.SubDateTimeEntities = new List<object> { pr1, pr2 };
+
+            // Add timezone
+            ret.TimeZoneResolution = ((DateTimeResolutionResult)pr2.Value).TimeZoneResolution;
+
+            return ret;
+        }
+
+        // Set Resolution of merged entity generated after merging of holiday entity and a time.
+        private DateTimeResolutionResult MergeHolidayAndTime(string text, DateObject referenceTime)
+        {
+            var ret = new DateTimeResolutionResult();
+
+            var er1 = this.config.HolidayExtractor.Extract(text, referenceTime);
+
+            if (er1.Count == 0)
+            {
+                er1 = this.config.HolidayExtractor.Extract(this.config.TokenBeforeDate + text, referenceTime);
+                if (er1.Count == 1)
+                {
+                    er1[0].Start -= this.config.TokenBeforeDate.Length;
+                }
+                else
+                {
+                    return ret;
+                }
+            }
+            else
+            {
+                // This is to understand if there is an ambiguous token in the text. For some languages (e.g. spanish),
+                // the same word could mean different things (e.g a time in the day or an specific day).
+                if (this.config.ContainsAmbiguousToken(text, er1[0].Text))
+                {
+                    return ret;
+                }
+            }
+
+            var er2 = this.config.TimeExtractor.Extract(text, referenceTime);
+            if (er2.Count == 0)
+            {
+                // Here we filter out "morning, afternoon, night..." time entities
+                var prefixToken = this.config.TokenBeforeTime;
+                er2 = this.config.TimeExtractor.Extract(prefixToken + text, referenceTime);
+
+                if (er2.Count == 1)
+                {
+                    er2[0].Start -= prefixToken.Length;
+                }
+                else if (er2.Count == 0)
+                {
+                    // check whether there is a number being used as a time point
+                    bool hasTimeNumber = false;
+                    var numErs = this.config.IntegerExtractor.Extract(text);
+                    if (numErs.Count > 0 && er1.Count == 1)
+                    {
+                        foreach (var num in numErs)
+                        {
+                            var middleBegin = er1[0].Start + er1[0].Length ?? 0;
+                            var middleEnd = num.Start ?? 0;
+                            if (middleBegin > middleEnd)
+                            {
+                                continue;
+                            }
+
+                            var middleStr = text.Substring(middleBegin, middleEnd - middleBegin).Trim();
+                            var match = this.config.DateNumberConnectorRegex.Match(middleStr);
+                            if (string.IsNullOrEmpty(middleStr) || match.Success)
+                            {
+                                num.Type = Constants.SYS_DATETIME_TIME;
+                                er2.Add(num);
+                                hasTimeNumber = true;
+                            }
+                        }
+                    }
+
+                    if (!hasTimeNumber)
+                    {
+                        return ret;
+                    }
+                }
+            }
+
+            var correctTimeIdx = 0;
+            while (correctTimeIdx < er2.Count && er2[correctTimeIdx].IsOverlap(er1[0]))
+            {
+                correctTimeIdx++;
+            }
+
+            if (correctTimeIdx >= er2.Count)
+            {
+                return ret;
+            }
+
+            var pr1 = this.config.HolidayTimeParser.Parse(er1[0], referenceTime.Date);
+
+            var pr2 = this.config.TimeParser.Parse(er2[correctTimeIdx], referenceTime);
+            if (pr1.Value == null || pr2.Value == null)
+            {
+                return ret;
+            }
+
+            var futureDate = (DateObject)((DateTimeResolutionResult)pr1.Value).FutureValue;
+            var pastDate = (DateObject)((DateTimeResolutionResult)pr1.Value).PastValue;
+            var time = (DateObject)((DateTimeResolutionResult)pr2.Value).FutureValue;
+
+            var hour = time.Hour;
+            var min = time.Minute;
+            var sec = time.Second;
+
+            // Handle morning, afternoon
+            if (this.config.PMTimeRegex.IsMatch(text) && WithinAfternoonHours(hour))
+            {
+                hour += Constants.HalfDayHourCount;
+            }
+            else if (this.config.AMTimeRegex.IsMatch(text) && WithinMorningHoursAndNoon(hour, min, sec))
+            {
+                hour -= Constants.HalfDayHourCount;
+            }
+
+            var timeStr = pr2.TimexStr;
+            if (timeStr.EndsWith(Constants.Comment_AmPm, StringComparison.Ordinal))
+            {
+                timeStr = timeStr.Substring(0, timeStr.Length - 4);
+            }
+
+            timeStr = "T" + hour.ToString("D2", CultureInfo.InvariantCulture) + timeStr.Substring(3);
+            ret.Timex = pr1.TimexStr + timeStr;
+
+            var val = (DateTimeResolutionResult)pr2.Value;
+            if (hour <= Constants.HalfDayHourCount && !this.config.PMTimeRegex.IsMatch(text) && !this.config.AMTimeRegex.IsMatch(text) &&
+                !string.IsNullOrEmpty(val.Comment))
+            {
+                ret.Comment = Constants.Comment_AmPm;
+            }
+
+            ret.FutureValue = DateObject.MinValue.SafeCreateFromValue(futureDate.Year, futureDate.Month, futureDate.Day, hour, min, sec);
+            ret.PastValue = DateObject.MinValue.SafeCreateFromValue(pastDate.Year, pastDate.Month, pastDate.Day, hour, min, sec);
+
+            // Handle case like "on christmas 15:50:06 2016" which year and holiday separated by time.
             var timeSuffix = text.Substring(er2[0].Start + er2[0].Length ?? 0);
             var matchYear = this.config.YearRegex.Match(timeSuffix);
             if (matchYear.Success && ((DateObject)((DateTimeResolutionResult)pr1.Value).FutureValue).Year != ((DateObject)((DateTimeResolutionResult)pr1.Value).PastValue).Year)

@@ -47,6 +47,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Arabic
 
             // Do not change order. The order of initialization can lead to side-effects
             DateExtractor = new BaseDateExtractor(new ArabicDateExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new ArabicHolidayExtractorConfiguration(this));
             TimeExtractor = new BaseTimeExtractor(new ArabicTimeExtractorConfiguration(this));
             DateTimeExtractor = new BaseDateTimeExtractor(new ArabicDateTimeExtractorConfiguration(this));
             DurationExtractor = new BaseDurationExtractor(new ArabicDurationExtractorConfiguration(this));
@@ -56,6 +57,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Arabic
 
             DurationParser = new BaseDurationParser(new ArabicDurationParserConfiguration(this));
             DateParser = new BaseDateParser(new ArabicDateParserConfiguration(this));
+            HolidayTimeParser = new BaseHolidayParser(new ArabicHolidayParserConfiguration(this));
             TimeParser = new TimeParser(new ArabicTimeParserConfiguration(this));
             DateTimeParser = new BaseDateTimeParser(new ArabicDateTimeParserConfiguration(this));
             DatePeriodParser = new BaseDatePeriodParser(new ArabicDatePeriodParserConfiguration(this));

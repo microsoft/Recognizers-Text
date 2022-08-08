@@ -139,12 +139,14 @@ export class SpanishDatePeriodParserConfiguration implements IDatePeriodParserCo
     readonly numberCombinedWithUnit: RegExp;
 
     readonly cardinalExtractor: IExtractor;
+    readonly integerExtractor: BaseNumberExtractor;
     readonly numberParser: BaseNumberParser;
     readonly nowRegex: RegExp
 
     constructor(config: ICommonDateTimeParserConfiguration) {
         this.tokenBeforeDate = SpanishDateTime.TokenBeforeDate;
         this.cardinalExtractor = config.cardinalExtractor;
+        this.integerExtractor = config.integerExtractor;
         this.numberParser = config.numberParser;
         this.durationExtractor = config.durationExtractor;
         this.dateExtractor = config.dateExtractor;

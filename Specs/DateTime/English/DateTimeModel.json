@@ -24509,6 +24509,231 @@
     ]
   },
   {
+    "Input": "What are the sales for the last quarter",
+    "Context": {
+      "ReferenceDateTime": "2019-07-04T00:00:00"
+    },
+    "NotSupported": "java, python",
+    "Results": [
+      {
+        "Text": "last quarter",
+        "Start": 27,
+        "End": 38,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-04-01,2019-07-01,P3M)",
+              "type": "daterange",
+              "start": "2019-04-01",
+              "end": "2019-07-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "What are the sales for the last 2 quarters",
+    "Context": {
+      "ReferenceDateTime": "2019-07-04T00:00:00"
+    },
+    "NotSupported": "java, python",
+    "Results": [
+      {
+        "Text": "last 2 quarters",
+        "Start": 27,
+        "End": 41,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-01-01,2019-07-01,P6M)",
+              "type": "daterange",
+              "start": "2019-01-01",
+              "end": "2019-07-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "What are the sales for the past two quarters",
+    "Context": {
+      "ReferenceDateTime": "2019-07-04T00:00:00"
+    },
+    "NotSupported": "java, python",
+    "Results": [
+      {
+        "Text": "past two quarters",
+        "Start": 27,
+        "End": 43,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-01-01,2019-07-01,P6M)",
+              "type": "daterange",
+              "start": "2019-01-01",
+              "end": "2019-07-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "What are the sales for the previous three quarters",
+    "Context": {
+      "ReferenceDateTime": "2019-07-04T00:00:00"
+    },
+    "NotSupported": "java, python",
+    "Results": [
+      {
+        "Text": "previous three quarters",
+        "Start": 27,
+        "End": 49,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2018-10-01,2019-07-01,P9M)",
+              "type": "daterange",
+              "start": "2018-10-01",
+              "end": "2019-07-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "What are the sales for the previous eleven quarters",
+    "Context": {
+      "ReferenceDateTime": "2019-07-04T00:00:00"
+    },
+    "NotSupported": "java, python",
+    "Results": [
+      {
+        "Text": "previous eleven quarters",
+        "Start": 27,
+        "End": 50,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-10-01,2019-07-01,P33M)",
+              "type": "daterange",
+              "start": "2016-10-01",
+              "end": "2019-07-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "What are the sales for the next quarter",
+    "Context": {
+      "ReferenceDateTime": "2019-07-04T00:00:00"
+    },
+    "NotSupported": "java, python",
+    "Results": [
+      {
+        "Text": "next quarter",
+        "Start": 27,
+        "End": 38,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-10-01,2020-01-01,P3M)",
+              "type": "daterange",
+              "start": "2019-10-01",
+              "end": "2020-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "What are the sales for the following 2 quarters",
+    "Context": {
+      "ReferenceDateTime": "2019-07-04T00:00:00"
+    },
+    "NotSupported": "java, python",
+    "Results": [
+      {
+        "Text": "following 2 quarters",
+        "Start": 27,
+        "End": 46,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-10-01,2020-04-01,P6M)",
+              "type": "daterange",
+              "start": "2019-10-01",
+              "end": "2020-04-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "What are the sales for the coming three quarters",
+    "Context": {
+      "ReferenceDateTime": "2019-07-04T00:00:00"
+    },
+    "NotSupported": "java, python",
+    "Results": [
+      {
+        "Text": "coming three quarters",
+        "Start": 27,
+        "End": 47,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-10-01,2020-07-01,P9M)",
+              "type": "daterange",
+              "start": "2019-10-01",
+              "end": "2020-07-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "What are the sales for the next 7 quarters",
+    "Context": {
+      "ReferenceDateTime": "2019-07-04T00:00:00"
+    },
+    "NotSupported": "java, python",
+    "Results": [
+      {
+        "Text": "next 7 quarters",
+        "Start": 27,
+        "End": 41,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-10-01,2021-07-01,P21M)",
+              "type": "daterange",
+              "start": "2019-10-01",
+              "end": "2021-07-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "Listen to 1990s music",
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
