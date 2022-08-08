@@ -11,41 +11,6 @@ namespace Microsoft.Recognizers.Text.DateTime
     [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1310: CSharp.Naming : Field names must not contain underscores.", Justification = "Constant names are written in upper case so they can be readily distinguished from camel case variable names.")]
     public static class TasksModeConstants
     {
-        public const string SYS_DATETIME_DATE = "date";
-        public const string SYS_DATETIME_TIME = "time";
-        public const string SYS_DATETIME_DATEPERIOD = "daterange";
-        public const string SYS_DATETIME_DATETIME = "datetime";
-        public const string SYS_DATETIME_TIMEPERIOD = "timerange";
-        public const string SYS_DATETIME_DATETIMEPERIOD = "datetimerange";
-        public const string SYS_DATETIME_DURATION = "duration";
-        public const string SYS_DATETIME_SET = "set";
-        public const string SYS_DATETIME_DATETIMEALT = "datetimealt";
-        public const string SYS_DATETIME_TIMEZONE = "timezone";
-
-        // Timex of TimeOfDay
-        public const string EarlyMorning = "TDA";
-        public const string Morning = "TMO";
-        public const string MidDay = "TMI";
-        public const string Afternoon = "TAF";
-        public const string Evening = "TEV";
-        public const string Daytime = "TDT";
-        public const string Nighttime = "TNT";
-        public const string Night = "TNI";
-        public const string BusinessHour = "TBH";
-        public const string MealtimeBreakfast = "TMEB";
-        public const string MealtimeBrunch = "TMER";
-        public const string MealtimeLunch = "TMEL";
-        public const string MealtimeDinner = "TMED";
-
-        // SourceEntity Types
-        public const string SYS_DATETIME_DATETIMEPOINT = "datetimepoint";
-
-        // Number Types
-        public const string SYS_NUMBER_ORDINAL = "builtin.num.ordinal";
-
-        // Model Name
-        public const string MODEL_DATETIME = "datetime";
-
         // These are some particular values for timezone recognition
         public const int WeekDayCount = 7;
 
