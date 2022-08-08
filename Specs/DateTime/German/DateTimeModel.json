@@ -3580,7 +3580,7 @@
     ]
   },
   {
-    "Input": "Ich besuche dich an Palmsonntag 2019" ,
+    "Input": "Ich besuche dich an Palmsonntag 2019",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -3604,7 +3604,7 @@
     ]
   },
   {
-    "Input": "Ich besuche dich an Karsamstag" ,
+    "Input": "Ich besuche dich an Karsamstag",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -3633,7 +3633,7 @@
     ]
   },
   {
-    "Input": "Ich besuche dich an Fastnachtssamstag" ,
+    "Input": "Ich besuche dich an Fastnachtssamstag",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -3662,7 +3662,7 @@
     ]
   },
   {
-    "Input": "Ich besuche dich an Fastnachtssonntag im nächsten Jahr" ,
+    "Input": "Ich besuche dich an Fastnachtssonntag im nächsten Jahr",
     "Context": {
       "ReferenceDateTime": "2017-11-07T00:00:00"
     },
@@ -3686,7 +3686,7 @@
     ]
   },
   {
-    "Input": "Ich besuche dich an Heilige Drei Könige im Jahr 2020" ,
+    "Input": "Ich besuche dich an Heilige Drei Könige im Jahr 2020",
     "Context": {
       "ReferenceDateTime": "2017-11-07T00:00:00"
     },
@@ -3710,7 +3710,7 @@
     ]
   },
   {
-    "Input": "Ich besuche dich an Barbaratag" ,
+    "Input": "Ich besuche dich an Barbaratag",
     "Context": {
       "ReferenceDateTime": "2018-11-07T00:00:00"
     },
@@ -3739,7 +3739,7 @@
     ]
   },
   {
-    "Input": "Ich besuche dich an Weltkindertag 2019" ,
+    "Input": "Ich besuche dich an Weltkindertag 2019",
     "Context": {
       "ReferenceDateTime": "2018-11-07T00:00:00"
     },
@@ -3763,7 +3763,7 @@
     ]
   },
   {
-    "Input": "Ich besuche dich an Augsburger Friedensfest letzten Jahres" ,
+    "Input": "Ich besuche dich an Augsburger Friedensfest letzten Jahres",
     "Context": {
       "ReferenceDateTime": "2018-11-07T00:00:00"
     },
@@ -3787,7 +3787,7 @@
     ]
   },
   {
-    "Input": "Ich besuche dich an Johannistag" ,
+    "Input": "Ich besuche dich an Johannistag",
     "Context": {
       "ReferenceDateTime": "2018-11-07T00:00:00"
     },
@@ -3816,7 +3816,7 @@
     ]
   },
   {
-    "Input": "Ich besuche dich an Peter und Paul " ,
+    "Input": "Ich besuche dich an Peter und Paul ",
     "Context": {
       "ReferenceDateTime": "2018-11-07T00:00:00"
     },
@@ -3845,7 +3845,7 @@
     ]
   },
   {
-    "Input": "Ich besuche dich an Allerheiligen" ,
+    "Input": "Ich besuche dich an Allerheiligen",
     "Context": {
       "ReferenceDateTime": "2018-11-07T00:00:00"
     },
@@ -3874,7 +3874,7 @@
     ]
   },
   {
-    "Input": "Ostern ist dieses Jahr früh" ,
+    "Input": "Ostern ist dieses Jahr früh",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
@@ -3920,7 +3920,7 @@
     ]
   },
   {
-    "Input": "Ich besuche dich an So 27.02.2022" ,
+    "Input": "Ich besuche dich an So 27.02.2022",
     "Context": {
       "ReferenceDateTime": "2018-11-07T00:00:00"
     },
@@ -3944,7 +3944,7 @@
     ]
   },
   {
-    "Input": "Ich besuche dich in 15 Tg." ,
+    "Input": "Ich besuche dich in 15 Tg.",
     "Context": {
       "ReferenceDateTime": "2018-11-07T00:00:00"
     },
@@ -4241,7 +4241,7 @@
   {
     "Input": "Sonnabend frühmorgens bin ich erst um 8 Uhr aufgestanden.",
     "Context": {
-        "ReferenceDateTime": "2021-06-18T18:00:00"
+      "ReferenceDateTime": "2021-06-18T18:00:00"
     },
     "NotSupported": "java, javascript, python",
     "Results": [
@@ -4294,7 +4294,7 @@
   {
     "Input": "Damit stehen den Fahrgästen am kommenden Sonnabendabend Züge für die Rückfahrt ab Bremen bis Osnabrück um 20.20 Uhr sowie 22.20 Uhr und 23.23 Uhr.",
     "Context": {
-        "ReferenceDateTime": "2021-06-18T18:00:00"
+      "ReferenceDateTime": "2021-06-18T18:00:00"
     },
     "NotSupported": "java, javascript, python",
     "Results": [
@@ -4364,7 +4364,7 @@
   {
     "Input": "Dienstagspätabends Anreise, samstagfrüh Abreise.",
     "Context": {
-        "ReferenceDateTime": "2021-06-18T18:00:00"
+      "ReferenceDateTime": "2021-06-18T18:00:00"
     },
     "NotSupported": "java, javascript, python",
     "Results": [
@@ -4419,7 +4419,7 @@
   {
     "Input": "Jeden Donnerstag wandern wir auf dem Goldsteig.",
     "Context": {
-        "ReferenceDateTime": "2021-06-18T18:00:00"
+      "ReferenceDateTime": "2021-06-18T18:00:00"
     },
     "NotSupported": "java, javascript",
     "Results": [
@@ -4443,7 +4443,7 @@
   {
     "Input": "Tag der Arbeit, ersten Weihnachtsfeiertag, zweiten Weihnachtstag",
     "Context": {
-        "ReferenceDateTime": "2021-06-18T18:00:00"
+      "ReferenceDateTime": "2021-06-18T18:00:00"
     },
     "NotSupported": "java, javascript, python",
     "Results": [
@@ -4512,7 +4512,7 @@
   {
     "Input": "Morgens stehe ich um 7 Uhr von Montag bis Freitag auf und ich gehe zur Schule",
     "Context": {
-        "ReferenceDateTime": "2021-06-18T18:00:00"
+      "ReferenceDateTime": "2021-06-18T18:00:00"
     },
     "NotSupported": "java, javascript",
     "Results": [

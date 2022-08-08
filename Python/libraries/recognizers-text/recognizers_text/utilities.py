@@ -5,15 +5,18 @@ import re
 import unicodedata
 from typing import Pattern, Union, List, Match, Dict
 import regex
-from emoji import UNICODE_EMOJI
+from emoji import demojize
 from multipledispatch import dispatch
 
 
 class StringUtility:
     @staticmethod
     def is_emoji(letter):
-        return letter in UNICODE_EMOJI["en"]
-
+        val = demojize(letter)
+        if letter in val:
+            return False
+        else:
+            return True
     @staticmethod
     def remove_unicode_matches(string: Pattern):
         py_regex = re.sub('\\\\u.{4}[\\|\\\\]', '', string.pattern)

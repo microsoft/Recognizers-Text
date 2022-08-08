@@ -49,6 +49,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public virtual IDateTimeParser TimePeriodParser { get; protected set; }
 
+        public virtual IDateTimeExtractor HolidayExtractor { get; protected set; }
+
         public virtual IDateTimeParser DateTimePeriodParser { get; protected set; }
 
         public virtual IDateTimeParser DateTimeAltParser { get; protected set; }
@@ -80,5 +82,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         public virtual IImmutableDictionary<string, int> SpecialDecadeCases { get; protected set; }
 
         public virtual IDateTimeUtilityConfiguration UtilityConfiguration { get; protected set; }
+
+        public virtual IDateTimeParser HolidayTimeParser { get; protected set; }
+
     }
 }

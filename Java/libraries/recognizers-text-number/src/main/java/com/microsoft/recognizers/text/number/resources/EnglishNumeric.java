@@ -29,7 +29,7 @@ public class EnglishNumeric {
 
     public static final String RoundNumberIntegerRegex = "(?:hundred|thousand|million|mln|billion|bln|trillion|tln|lakh|crore)s?";
 
-    public static final String ZeroToNineIntegerRegex = "(?:three|seven|eight|four|five|zero|nine|one|two|six)";
+    public static final String ZeroToNineIntegerRegex = "(?:three|seven|eight|four|five|zero|n[ao]ught|nine|one|two|six)";
 
     public static final String TwoToNineIntegerRegex = "(?:three|seven|eight|four|five|nine|two|six)";
 
@@ -78,13 +78,13 @@ public class EnglishNumeric {
     public static final String RoundNumberIntegerRegexWithLocks = "(?<=\\b)\\d+\\s+{RoundNumberIntegerRegex}(?=\\b)"
             .replace("{RoundNumberIntegerRegex}", RoundNumberIntegerRegex);
 
-    public static final String NumbersWithDozenSuffix = "(((?<!\\d+(\\s*{BaseNumbers.NumberMultiplierRegex})?\\s*)-\\s*)|(?<=\\b))\\d+\\s+dozen(s)?(?=\\b)"
+    public static final String NumbersWithDozenSuffix = "(((?<!\\d+(\\s*{BaseNumbers.NumberMultiplierRegex})?\\s*)-\\s*)|(?<=\\b))\\d+\\s+(doz(en)?|dz)s?(?=\\b)"
             .replace("{BaseNumbers.NumberMultiplierRegex}", BaseNumbers.NumberMultiplierRegex);
 
     public static final String AllIntRegexWithLocks = "((?<=\\b){AllIntRegex}(?=\\b))"
             .replace("{AllIntRegex}", AllIntRegex);
 
-    public static final String AllIntRegexWithDozenSuffixLocks = "(?<=\\b)(((half\\s+)?a\\s+dozen)|({AllIntRegex}\\s+dozen(s)?))(?=\\b)"
+    public static final String AllIntRegexWithDozenSuffixLocks = "(?<=\\b)(((half\\s+)?a\\s+dozen)|({AllIntRegex}\\s+(doz(en)?|dz)s?))(?=\\b)"
             .replace("{AllIntRegex}", AllIntRegex);
 
     public static final String RoundNumberOrdinalRegex = "(?:hundredth|thousandth|millionth|billionth|trillionth)";
@@ -331,12 +331,14 @@ public class EnglishNumeric {
 
     public static final String HalfADozenRegex = "half\\s+a\\s+dozen";
 
-    public static final String DigitalNumberRegex = "((?<=\\b)(hundred|thousand|[mb]illion|trillion|[mbt]ln|lakh|crore|dozen(s)?)(?=\\b))|((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))"
+    public static final String DigitalNumberRegex = "((?<=\\b)(hundred|thousand|[mb]illion|trillion|[mbt]ln|lakh|crore|(doz(en)?|dz)s?)(?=\\b))|((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))"
             .replace("{BaseNumbers.MultiplierLookupRegex}", BaseNumbers.MultiplierLookupRegex);
 
     public static final ImmutableMap<String, Long> CardinalNumberMap = ImmutableMap.<String, Long>builder()
         .put("a", 1L)
         .put("zero", 0L)
+        .put("naught", 0L)
+        .put("nought", 0L)
         .put("an", 1L)
         .put("one", 1L)
         .put("two", 2L)
@@ -352,6 +354,10 @@ public class EnglishNumeric {
         .put("twelve", 12L)
         .put("dozen", 12L)
         .put("dozens", 12L)
+        .put("dz", 12L)
+        .put("doz", 12L)
+        .put("dzs", 12L)
+        .put("dozs", 12L)
         .put("thirteen", 13L)
         .put("fourteen", 14L)
         .put("fifteen", 15L)
@@ -489,6 +495,10 @@ public class EnglishNumeric {
         .put("trillionths", 1000000000000L)
         .put("dozen", 12L)
         .put("dozens", 12L)
+        .put("dz", 12L)
+        .put("doz", 12L)
+        .put("dzs", 12L)
+        .put("dozs", 12L)
         .put("k", 1000L)
         .put("m", 1000000L)
         .put("mm", 1000000L)
