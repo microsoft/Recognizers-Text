@@ -32,27 +32,27 @@ namespace Microsoft.Recognizers.Text.DateTime
             switch (slot.Type.Substring(ParserTypeName.Length + 1))
             {
                 case Constants.SYS_DATETIME_DATE:
-                    slot = TasksModeProcessing.TasksModeModifyDateValue(slot, referenceTime);
+                    slot = TasksModeModifyDateValue(slot, referenceTime);
                     break;
 
                 case Constants.SYS_DATETIME_DATEPERIOD:
-                    slot = TasksModeProcessing.TasksModeModifyDatePeriodValue(slot, referenceTime);
+                    slot = TasksModeModifyDatePeriodValue(slot, referenceTime);
                     break;
 
                 case Constants.SYS_DATETIME_TIME:
-                    slot = TasksModeProcessing.TasksModeModifyTimeValue(slot, referenceTime);
+                    slot = TasksModeModifyTimeValue(slot, referenceTime);
                     break;
 
                 case Constants.SYS_DATETIME_TIMEPERIOD:
-                    slot = TasksModeProcessing.TasksModeTimePeriodValue(slot, referenceTime);
+                    slot = TasksModeTimePeriodValue(slot, referenceTime);
                     break;
 
                 case Constants.SYS_DATETIME_DATETIME:
-                    slot = TasksModeProcessing.TasksModeModifyDateTimeValue(slot, referenceTime);
+                    slot = TasksModeModifyDateTimeValue(slot, referenceTime);
                     break;
 
                 case Constants.SYS_DATETIME_DATETIMEPERIOD:
-                    slot = TasksModeProcessing.TasksModeModifyDateTimePeriodValue(slot, referenceTime);
+                    slot = TasksModeModifyDateTimePeriodValue(slot, referenceTime);
                     break;
             }
 
@@ -65,69 +65,69 @@ namespace Microsoft.Recognizers.Text.DateTime
             var result = new TimeOfDayResolutionResult();
             switch (tod)
             {
-                case TasksModeConstants.EarlyMorning:
-                    result.Timex = TasksModeConstants.EarlyMorning;
+                case Constants.EarlyMorning:
+                    result.Timex = Constants.EarlyMorning;
                     result.BeginHour = TasksModeConstants.EarlyMorningBeginHour;
                     result.EndHour = TasksModeConstants.EarlyMorningEndHour;
                     break;
-                case TasksModeConstants.Morning:
-                    result.Timex = TasksModeConstants.Morning;
+                case Constants.Morning:
+                    result.Timex = Constants.Morning;
                     result.BeginHour = TasksModeConstants.MorningBeginHour;
                     result.EndHour = TasksModeConstants.MorningEndHour;
                     break;
-                case TasksModeConstants.MidDay:
-                    result.Timex = TasksModeConstants.MidDay;
+                case Constants.MidDay:
+                    result.Timex = Constants.MidDay;
                     result.BeginHour = TasksModeConstants.MidDayBeginHour;
                     result.EndHour = TasksModeConstants.MidDayEndHour;
                     break;
-                case TasksModeConstants.Afternoon:
-                    result.Timex = TasksModeConstants.Afternoon;
+                case Constants.Afternoon:
+                    result.Timex = Constants.Afternoon;
                     result.BeginHour = TasksModeConstants.AfternoonBeginHour;
                     result.EndHour = TasksModeConstants.AfternoonEndHour;
                     break;
-                case TasksModeConstants.Evening:
-                    result.Timex = TasksModeConstants.Evening;
+                case Constants.Evening:
+                    result.Timex = Constants.Evening;
                     result.BeginHour = TasksModeConstants.EveningBeginHour;
                     result.EndHour = TasksModeConstants.EveningEndHour;
                     break;
-                case TasksModeConstants.Daytime:
-                    result.Timex = TasksModeConstants.Daytime;
+                case Constants.Daytime:
+                    result.Timex = Constants.Daytime;
                     result.BeginHour = TasksModeConstants.DaytimeBeginHour;
                     result.EndHour = TasksModeConstants.DaytimeEndHour;
                     break;
-                case TasksModeConstants.Nighttime:
-                    result.Timex = TasksModeConstants.Nighttime;
+                case Constants.Nighttime:
+                    result.Timex = Constants.Nighttime;
                     result.BeginHour = TasksModeConstants.NighttimeBeginHour;
                     result.EndHour = TasksModeConstants.NighttimeEndHour;
                     break;
-                case TasksModeConstants.BusinessHour:
-                    result.Timex = TasksModeConstants.BusinessHour;
+                case Constants.BusinessHour:
+                    result.Timex = Constants.BusinessHour;
                     result.BeginHour = TasksModeConstants.BusinessBeginHour;
                     result.EndHour = TasksModeConstants.BusinessEndHour;
                     break;
-                case TasksModeConstants.Night:
-                    result.Timex = TasksModeConstants.Night;
+                case Constants.Night:
+                    result.Timex = Constants.Night;
                     result.BeginHour = TasksModeConstants.NightBeginHour;
                     result.EndHour = TasksModeConstants.NightEndHour;
                     result.EndMin = TasksModeConstants.NightEndMin;
                     break;
-                case TasksModeConstants.MealtimeBreakfast:
-                    result.Timex = TasksModeConstants.MealtimeBreakfast;
+                case Constants.MealtimeBreakfast:
+                    result.Timex = Constants.MealtimeBreakfast;
                     result.BeginHour = TasksModeConstants.MealtimeBreakfastBeginHour;
                     result.EndHour = TasksModeConstants.MealtimeBreakfastEndHour;
                     break;
-                case TasksModeConstants.MealtimeBrunch:
-                    result.Timex = TasksModeConstants.MealtimeBrunch;
+                case Constants.MealtimeBrunch:
+                    result.Timex = Constants.MealtimeBrunch;
                     result.BeginHour = TasksModeConstants.MealtimeBrunchBeginHour;
                     result.EndHour = TasksModeConstants.MealtimeBrunchEndHour;
                     break;
-                case TasksModeConstants.MealtimeLunch:
-                    result.Timex = TasksModeConstants.MealtimeLunch;
+                case Constants.MealtimeLunch:
+                    result.Timex = Constants.MealtimeLunch;
                     result.BeginHour = TasksModeConstants.MealtimeLunchBeginHour;
                     result.EndHour = TasksModeConstants.MealtimeLunchEndHour;
                     break;
-                case TasksModeConstants.MealtimeDinner:
-                    result.Timex = TasksModeConstants.MealtimeDinner;
+                case Constants.MealtimeDinner:
+                    result.Timex = Constants.MealtimeDinner;
                     result.BeginHour = TasksModeConstants.MealtimeDinnerBeginHour;
                     result.EndHour = TasksModeConstants.MealtimeDinnerEndHour;
                     break;
@@ -139,52 +139,52 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         /*
-         Change beginHour and endHour for subjective time refereneces under TasksMode.
-         morning get's mapped to 6:00 am
-         */
+          Change beginHour and endHour for subjective time refereneces under TasksMode.
+          morning get's mapped to 6:00 am
+        */
         public static bool GetMatchedTimeRangeForTasksMode(string text, string todSymbol, out int beginHour, out int endHour, out int endMin)
         {
             var trimmedText = text.Trim();
             beginHour = 0;
             endHour = 0;
             endMin = 0;
-            if (todSymbol == TasksModeConstants.Morning)
+            if (todSymbol == Constants.Morning)
             {
                 beginHour = TasksModeConstants.MorningBeginHour;
                 endHour = TasksModeConstants.EarlyMorningEndHour;
             }
-            else if (todSymbol == TasksModeConstants.Afternoon)
+            else if (todSymbol == Constants.Afternoon)
             {
-                beginHour = TasksModeConstants.AfternoonBeginHour;
-                endHour = TasksModeConstants.AfternoonEndHour;
+                beginHour = Constants.AfternoonBeginHour;
+                endHour = Constants.AfternoonEndHour;
 
             }
-            else if (todSymbol == TasksModeConstants.Evening)
+            else if (todSymbol == Constants.Evening)
             {
-                beginHour = TasksModeConstants.EveningBeginHour;
-                endHour = TasksModeConstants.EveningEndHour;
+                beginHour = Constants.EveningBeginHour;
+                endHour = Constants.EveningEndHour;
             }
-            else if (todSymbol == TasksModeConstants.Night)
+            else if (todSymbol == Constants.Night)
             {
                 beginHour = TasksModeConstants.NightBeginHour;
                 endHour = TasksModeConstants.NightEndHour;
             }
-            else if (todSymbol == TasksModeConstants.MealtimeBreakfast)
+            else if (todSymbol == Constants.MealtimeBreakfast)
             {
                 beginHour = TasksModeConstants.MealtimeBreakfastBeginHour;
                 endHour = TasksModeConstants.MealtimeBreakfastEndHour;
             }
-            else if (todSymbol == TasksModeConstants.MealtimeBrunch)
+            else if (todSymbol == Constants.MealtimeBrunch)
             {
                 beginHour = TasksModeConstants.MealtimeBrunchBeginHour;
                 endHour = TasksModeConstants.MealtimeBrunchEndHour;
             }
-            else if (todSymbol == TasksModeConstants.MealtimeDinner)
+            else if (todSymbol == Constants.MealtimeDinner)
             {
                 beginHour = TasksModeConstants.MealtimeDinnerBeginHour;
                 endHour = TasksModeConstants.MealtimeDinnerEndHour;
             }
-            else if (todSymbol == TasksModeConstants.MealtimeLunch)
+            else if (todSymbol == Constants.MealtimeLunch)
             {
                 beginHour = TasksModeConstants.MealtimeLunchBeginHour;
                 endHour = TasksModeConstants.MealtimeLunchEndHour;
@@ -198,17 +198,12 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         /*Under TasksMode If you input today's date, future date should get mapped to current date insted of next year.
-         ex if input is meet on 7 july and refrence time is 7 july 2022,
-        expected future value --> 7 july 2022 &&
-        past value--> 7 july 2021
-        */
+          ex if input is meet on 7 july and refrence time is 7 july 2022,
+         expected future value --> 7 july 2022 &&
+         past value--> 7 july 2021
+         */
         private static DateTimeParseResult TasksModeModifyDateValue(DateTimeParseResult slot, DateObject referenceTime)
         {
-            if (!slot.TimexStr.Contains("XXXX"))
-            {
-                return slot;
-            }
-
             var value = (SortedDictionary<string, object>)slot.Value;
             if (value != null && value.ContainsKey(ResolutionKey.ValueSet))
             {
@@ -220,10 +215,17 @@ namespace Microsoft.Recognizers.Text.DateTime
                         var inputDay = inputTime.Day;
                         var inputMonth = inputTime.Month;
 
-                        if (inputDay == referenceTime.Day && inputMonth == referenceTime.Month)
+                        if (slot.Text.Contains(TasksModeConstants.NextWeekGroupName) && !slot.TimexStr.Contains(Constants.TimexFuzzyYear))
+                        {
+                            var tempdate = referenceTime.Upcoming(DayOfWeek.Monday).Date;
+                            var dateTimeToSet = DateObject.MinValue.SafeCreateFromValue(tempdate.Year, tempdate.Month, tempdate.Day);
+                            values[DateTimeResolutionKey.Value] = DateTimeFormatUtil.FormatDate(dateTimeToSet);
+                            values[DateTimeResolutionKey.Timex] = $"{DateTimeFormatUtil.LuisDate(dateTimeToSet)}";
+                        }
+                        else if (slot.TimexStr.Contains(Constants.TimexFuzzyYear) && inputDay == referenceTime.Day && inputMonth == referenceTime.Month)
                         {
                             // ignore for input text like monday, tue etc
-                            if (!slot.TimexStr.Contains("XXXX-WXX"))
+                            if (!slot.TimexStr.Contains(Constants.TimexFuzzyWeek))
                             {
                                 var newDate = inputTime.Date.AddYears(-1);
                                 var dateTimeToSet = DateObject.MinValue.SafeCreateFromValue(newDate.Year, newDate.Month, newDate.Day);
@@ -249,7 +251,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         */
         private static DateTimeParseResult TasksModeModifyDatePeriodValue(DateTimeParseResult slot, DateObject referenceTime)
         {
-            if (!slot.TimexStr.Contains("XXXX"))
+            if (!slot.TimexStr.Contains(Constants.TimexFuzzyYear))
             {
                 return slot;
             }
@@ -275,7 +277,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             futuredate = DateObject.Parse(futurevalue[DateTimeResolutionKey.Start], CultureInfo.InvariantCulture);
 
                             if ((futuredate.Day == referenceTime.Day) && (futuredate.Month == referenceTime.Month)
-                               && (futuredate.Year != referenceTime.Year) && (!slot.TimexStr.Contains("XXXX-WXX")))
+                               && (futuredate.Year != referenceTime.Year) && (!slot.TimexStr.Contains(Constants.TimexFuzzyWeek)))
                             {
                                 maptonew = true;
                             }
@@ -288,7 +290,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             futuredate = DateObject.Parse(futurevalue[DateTimeResolutionKey.End], CultureInfo.InvariantCulture);
 
                             if ((futuredate.Day == referenceTime.Day) && (futuredate.Month == referenceTime.Month)
-                                && (futuredate.Year != referenceTime.Year) && (!slot.TimexStr.Contains("XXXX-WXX")))
+                                && (futuredate.Year != referenceTime.Year) && (!slot.TimexStr.Contains(Constants.TimexFuzzyWeek)))
                             {
                                 maptonew = true;
                             }
@@ -348,7 +350,7 @@ namespace Microsoft.Recognizers.Text.DateTime
        */
         private static DateTimeParseResult TasksModeModifyDateTimePeriodValue(DateTimeParseResult slot, DateObject referenceTime)
         {
-            if (!slot.TimexStr.Contains("XXXX"))
+            if (!slot.TimexStr.Contains(Constants.TimexFuzzyYear))
             {
                 return slot;
             }
@@ -374,12 +376,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                             pastdatetimeperiod = DateObject.Parse(pastvalue[DateTimeResolutionKey.Start], CultureInfo.InvariantCulture);
                             futuredatetimeperiod = DateObject.Parse(futurevalue[DateTimeResolutionKey.Start], CultureInfo.InvariantCulture);
 
-                            if ((pastdatetimeperiod > referenceTime) && !slot.TimexStr.Contains("XXXX-WXX"))
+                            if ((pastdatetimeperiod > referenceTime) && !slot.TimexStr.Contains(Constants.TimexFuzzyWeek))
                             {
                                 maptonew = true;
                             }
 
-                            if ((futuredatetimeperiod < referenceTime) && slot.TimexStr.Contains("XXXX-WXX"))
+                            if ((futuredatetimeperiod < referenceTime) && slot.TimexStr.Contains(Constants.TimexFuzzyWeek))
                             {
                                 maptonew = true;
                             }
@@ -392,12 +394,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 pastdatetimeperiod = DateObject.Parse(pastvalue[DateTimeResolutionKey.End], CultureInfo.InvariantCulture);
                                 futuredatetimeperiod = DateObject.Parse(futurevalue[DateTimeResolutionKey.End], CultureInfo.InvariantCulture);
 
-                                if ((pastdatetimeperiod > referenceTime) && !slot.TimexStr.Contains("XXXX-WXX"))
+                                if ((pastdatetimeperiod > referenceTime) && !slot.TimexStr.Contains(Constants.TimexFuzzyWeek))
                                 {
                                     maptonew = true;
                                 }
 
-                                if ((futuredatetimeperiod < referenceTime) && slot.TimexStr.Contains("XXXX-WXX"))
+                                if ((futuredatetimeperiod < referenceTime) && slot.TimexStr.Contains(Constants.TimexFuzzyWeek))
                                 {
                                     maptonew = true;
                                 }
@@ -406,7 +408,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                         if (maptonew)
                         {
-                            if (slot.TimexStr.Contains("XXXX-WXX"))
+                            if (slot.TimexStr.Contains(Constants.TimexFuzzyWeek))
                             {
                                 if (pastvalue.ContainsKey("start"))
                                 {
@@ -462,7 +464,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     }
 
-                    if ((valueSet.Count == 1) && slot.TimexStr.Contains("XXXX-WXX"))
+                    if ((valueSet.Count == 1) && slot.TimexStr.Contains(Constants.TimexFuzzyWeek))
                     {
                         var currvalue = valueSet.ElementAt(0);
                         bool maptonew = false;
@@ -493,7 +495,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                         if (maptonew)
                         {
-                            if (slot.TimexStr.Contains("XXXX-WXX"))
+                            if (slot.TimexStr.Contains(Constants.TimexFuzzyWeek))
                             {
                                 if (currvalue.ContainsKey("start"))
                                 {
@@ -536,7 +538,7 @@ namespace Microsoft.Recognizers.Text.DateTime
        */
         private static DateTimeParseResult TasksModeModifyDateTimeValue(DateTimeParseResult slot, DateObject referenceTime)
         {
-            if (!slot.TimexStr.Contains("XXXX"))
+            if (!slot.TimexStr.Contains(Constants.TimexFuzzyYear))
             {
                 return slot;
             }
@@ -558,7 +560,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                         if (futuredatetime < referenceTime)
                         {
-                            if (slot.TimexStr.Contains("XXXX-WXX"))
+                            if (slot.TimexStr.Contains(Constants.TimexFuzzyWeek))
                             {
                                 pastvalue[DateTimeResolutionKey.Value] = futurevalue[DateTimeResolutionKey.Value];
                                 var tempdate = futuredatetime.Date.AddDays(7);
