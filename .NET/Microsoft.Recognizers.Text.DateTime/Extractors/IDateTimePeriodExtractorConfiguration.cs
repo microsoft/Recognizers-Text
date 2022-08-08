@@ -78,6 +78,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IDateTimeExtractor TimeZoneExtractor { get; }
 
+        IDateTimeExtractor HolidayExtractor { get; }
+
         bool GetFromTokenIndex(string text, out int index);
 
         bool HasConnectorToken(string text);

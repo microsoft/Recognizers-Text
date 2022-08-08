@@ -45,6 +45,9 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             DateTimeParser = config.DateTimeParser;
             TimeZoneParser = config.TimeZoneParser;
 
+            HolidayExtractor = config.HolidayExtractor;
+            HolidayTimeParser = config.HolidayTimeParser;
+
             PureNumberFromToRegex = FrenchTimePeriodExtractorConfiguration.PureNumFromTo;
             HyphenDateRegex = FrenchDateTimePeriodExtractorConfiguration.HyphenDateRegex;
             PureNumberBetweenAndRegex = FrenchTimePeriodExtractorConfiguration.PureNumBetweenAnd;
@@ -144,6 +147,10 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         public IImmutableDictionary<string, string> UnitMap { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
+
+        public IDateTimeExtractor HolidayExtractor { get; }
+
+        public IDateTimeParser HolidayTimeParser { get; }
 
         public bool GetMatchedTimeRange(string text, out string todSymbol, out int beginHour, out int endHour, out int endMin)
         {

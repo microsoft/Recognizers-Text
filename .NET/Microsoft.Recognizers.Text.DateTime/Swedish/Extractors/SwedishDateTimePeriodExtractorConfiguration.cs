@@ -107,6 +107,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Swedish
             DurationExtractor = new BaseDurationExtractor(new SwedishDurationExtractorConfiguration(this));
             TimePeriodExtractor = new BaseTimePeriodExtractor(new SwedishTimePeriodExtractorConfiguration(this));
             TimeZoneExtractor = new BaseTimeZoneExtractor(new SwedishTimeZoneExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new SwedishHolidayExtractorConfiguration(this));
+
         }
 
         public IEnumerable<Regex> SimpleCasesRegex => SimpleCases;
@@ -178,6 +180,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Swedish
         public IDateTimeExtractor TimePeriodExtractor { get; }
 
         public IDateTimeExtractor TimeZoneExtractor { get; }
+
+        public IDateTimeExtractor HolidayExtractor { get; }
 
         // TODO: these three methods are the same in DatePeriod, should be abstracted
         public bool GetFromTokenIndex(string text, out int index)

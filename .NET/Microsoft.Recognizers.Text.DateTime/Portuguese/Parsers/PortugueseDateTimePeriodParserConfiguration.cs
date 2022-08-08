@@ -31,6 +31,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             TimePeriodParser = config.TimePeriodParser;
             DurationParser = config.DurationParser;
             TimeZoneParser = config.TimeZoneParser;
+            HolidayExtractor = config.HolidayExtractor;
+            HolidayTimeParser = config.HolidayTimeParser;
 
             PureNumberFromToRegex = PortugueseTimePeriodExtractorConfiguration.PureNumFromTo;
             HyphenDateRegex = PortugueseDateTimePeriodExtractorConfiguration.HyphenDateRegex;
@@ -130,6 +132,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public IImmutableDictionary<string, string> UnitMap { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
+
+        public IDateTimeExtractor HolidayExtractor { get; }
+
+        public IDateTimeParser HolidayTimeParser { get; }
 
         public bool GetMatchedTimeRange(string text, out string todSymbol, out int beginHour, out int endHour, out int endMin)
         {
