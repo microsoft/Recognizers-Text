@@ -85,6 +85,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             TimePointExtractor = new BaseTimeExtractor(new GermanTimeExtractorConfiguration(this));
             DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration(this));
             UtilityConfiguration = new GermanDatetimeUtilityConfiguration();
+            HolidayExtractor = new BaseHolidayExtractor(new GermanHolidayExtractorConfiguration(this));
+
         }
 
         public IExtractor IntegerExtractor { get; }
@@ -94,6 +96,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public IDateTimeExtractor TimePointExtractor { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
+
+        public IDateTimeExtractor HolidayExtractor { get; }
 
         Regex IDateTimeExtractorConfiguration.NowRegex => NowRegex;
 

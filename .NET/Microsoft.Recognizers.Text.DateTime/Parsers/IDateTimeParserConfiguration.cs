@@ -15,11 +15,15 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IDateExtractor DateExtractor { get; }
 
+        IDateTimeExtractor HolidayExtractor { get; }
+
         IDateTimeExtractor TimeExtractor { get; }
 
         IDateTimeParser DateParser { get; }
 
         IDateTimeParser TimeParser { get; }
+
+        IDateTimeParser HolidayTimeParser { get; }
 
         IExtractor CardinalExtractor { get; }
 
