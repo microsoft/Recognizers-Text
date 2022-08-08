@@ -225,7 +225,7 @@ PrefixPeriodRegex: !nestedRegex
   def: ({EarlyPrefixRegex}|{MidPrefixRegex}|{LaterPrefixRegex})
   references: [EarlyPrefixRegex, MidPrefixRegex, LaterPrefixRegex]
 PrefixDayRegex: !nestedRegex
-  def: \b(((?<!{WeekDayRegex}\s+)(?<EarlyPrefix>eerder|vroeg(er)?|begin|start)|(?<MidPrefix>midden|halverwege|op\s+de\s+helft)|in\s+de|(?<LatePrefix>laat|later))(\s+(in|op|van))?(\s+de\s+dag)?$)|^\s*(((?<!{WeekDayRegex}\s+)(?<EarlyPrefix>eerder|vroeg(er)?|begin|start)|(?<MidPrefix>midden|halverwege|op\s+de\s+helft)|in\s+de|(?<LatePrefix>laat|later))(\s+(in|op|van))(\s+de\s+dag))\b
+  def: \b(((?<!{WeekDayRegex}\s+)(?<EarlyPrefix>eerder|vroeg(er)?|begin|start)|(?<MidPrefix>midden|halverwege|op\s+de\s+helft)|(?<LatePrefix>laat|later))(\s+(in|op|van))?(\s+de\s+dag)?$)|^\s*(((?<!{WeekDayRegex}\s+)(?<EarlyPrefix>eerder|vroeg(er)?|begin|start)|(?<MidPrefix>midden|halverwege|op\s+de\s+helft)|in\s+de|(?<LatePrefix>laat|later))(\s+(in|op|van))(\s+de\s+dag))\b
   references: [ WeekDayRegex ]
 SeasonDescRegex: !simpleRegex
   def: (?<seas>lente|voorjaar|zomer|herfst|najaar|winter)

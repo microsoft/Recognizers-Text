@@ -765,7 +765,10 @@ public class FrenchDateTime {
 
     public static final String SuffixAfterRegex = "^\\b$";
 
-    public static final String YearPeriodRegex = "^\\b$";
+    public static final String YearPeriodRegex = "((((du|depuis|des?)\\s+)?{YearRegex}\\s*({TillRegex})\\s*{YearRegex})|(((entre)\\s+){YearRegex}\\s*({RangeConnectorRegex})\\s*{YearRegex}))"
+            .replace("{YearRegex}", YearRegex)
+            .replace("{TillRegex}", TillRegex)
+            .replace("{RangeConnectorRegex}", RangeConnectorRegex);
 
     public static final String FutureSuffixRegex = "\\b(dans\\s+le\\s+futur)\\b";
 
@@ -1257,6 +1260,8 @@ public class FrenchDateTime {
         .put("^([eé]t[eé])$", "(?<!((l\\s*['`]\\s*)|(cet(te)?|en)\\s+))[eé]t[eé]\\b")
         .put("^(mer)$", "(?<!((le|ce)\\s+))mer\\b")
         .put("^(avr|ao[uû]t|d[eé]c|f[eé]vr?|janv?|jui?[ln]|mars?|mai|nov|oct|sept?)$", "([$%£&!?@#])(avr|ao[uû]t|d[eé]c|f[eé]vr?|janv?|jui?[ln]|mars?|mai|nov|oct|sept?)|(avr|ao[uû]t|d[eé]c|f[eé]vr?|janv?|jui?[ln]|mars?|mai|nov|oct|sept?)([$%£&@#])")
+        .put("^\\d{1,4}-\\d{1,4}$", "\\d{1,4}-\\d{1,4}-\\d|\\d-\\d{1,4}-\\d{1,4}")
+        .put("^\\d{1,4}-\\d{1,4}-\\d{1,4}$", "\\d{1,4}-\\d{1,4}-\\d{1,4}-\\d|\\d-\\d{1,4}-\\d{1,4}-\\d{1,4}")
         .build();
 
     public static final ImmutableMap<String, String> AmbiguityTimeFiltersDict = ImmutableMap.<String, String>builder()

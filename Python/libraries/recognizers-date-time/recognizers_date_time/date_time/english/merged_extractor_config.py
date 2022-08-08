@@ -153,24 +153,24 @@ class EnglishMergedExtractorConfiguration(MergedExtractorConfiguration):
     def term_filter_regexes(self) -> List[Pattern]:
         return self._term_filter_regexes
 
-    def __init__(self):
+    def __init__(self, dmyDateFormat=False):
         self._integer_extractor = EnglishIntegerExtractor()
         self._date_extractor = BaseDateExtractor(
-            EnglishDateExtractorConfiguration())
+            EnglishDateExtractorConfiguration(dmyDateFormat))
         self._time_extractor = BaseTimeExtractor(
             EnglishTimeExtractorConfiguration())
         self._duration_extractor = BaseDurationExtractor(
             EnglishDurationExtractorConfiguration())
         self._date_period_extractor = BaseDatePeriodExtractor(
-            EnglishDatePeriodExtractorConfiguration())
+            EnglishDatePeriodExtractorConfiguration(dmyDateFormat))
         self._time_period_extractor = BaseTimePeriodExtractor(
             EnglishTimePeriodExtractorConfiguration())
         self._date_time_extractor = BaseDateTimeExtractor(
-            EnglishDateTimeExtractorConfiguration())
+            EnglishDateTimeExtractorConfiguration(dmyDateFormat))
         self._date_time_period_extractor = BaseDateTimePeriodExtractor(
-            EnglishDateTimePeriodExtractorConfiguration())
+            EnglishDateTimePeriodExtractorConfiguration(dmyDateFormat))
         self._set_extractor = BaseSetExtractor(
-            EnglishSetExtractorConfiguration())
+            EnglishSetExtractorConfiguration(dmyDateFormat))
         self._holiday_extractor = BaseHolidayExtractor(
             EnglishHolidayExtractorConfiguration())
         self._after_regex = RegExpUtility.get_safe_reg_exp(

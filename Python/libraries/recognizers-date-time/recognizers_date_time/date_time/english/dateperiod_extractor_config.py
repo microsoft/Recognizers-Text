@@ -164,7 +164,7 @@ class EnglishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
     def century_suffix_regex(self) -> Pattern:
         return self._century_suffix_regex
 
-    def __init__(self):
+    def __init__(self, dmyDateFormat=False):
         self._previous_prefix_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.PreviousPrefixRegex)
         self._check_both_before_after = EnglishDateTime.CheckBothBeforeAfter
@@ -224,7 +224,7 @@ class EnglishDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         self._range_unit_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.RangeUnitRegex)
         self._date_point_extractor = BaseDateExtractor(
-            EnglishDateExtractorConfiguration())
+            EnglishDateExtractorConfiguration(dmyDateFormat))
         self._integer_extractor = EnglishIntegerExtractor()
         self._number_parser = BaseNumberParser(
             EnglishNumberParserConfiguration())

@@ -51,6 +51,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             TimeExtractor = config.TimeExtractor;
             DateParser = config.DateParser;
             TimeParser = config.TimeParser;
+            HolidayExtractor = config.HolidayExtractor;
+            HolidayTimeParser = config.HolidayTimeParser;
 
             NowRegex = DutchDateTimeExtractorConfiguration.NowRegex;
 
@@ -126,6 +128,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public IImmutableDictionary<string, int> Numbers { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
+
+        public IDateTimeExtractor HolidayExtractor { get; }
+
+        public IDateTimeParser HolidayTimeParser { get; }
 
         public int GetHour(string text, int hour)
         {
