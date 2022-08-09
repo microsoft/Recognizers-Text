@@ -330,8 +330,8 @@
             {
               "timex": "2016-11-08TDT",
               "type": "datetimerange",
-              "start": "2016-11-08 08:00:00",
-              "end": "2016-11-08 18:00:00"
+              "start": "2016-11-08 16:00:00",
+              "end": "2016-11-08 16:00:00"
             }
           ]
         }
@@ -341,7 +341,7 @@
   {
     "Input": "they were working in the night-time",
     "Context": {
-      "ReferenceDateTime": "2016-11-07T01:00:00"
+      "ReferenceDateTime": "2016-11-07T22:00:00"
     },
     "NotSupported": "javascript, python, java",
     "Results": [
@@ -355,8 +355,8 @@
             {
               "timex": "2016-11-08TNT",
               "type": "datetimerange",
-              "start": "2016-11-08 00:00:00",
-              "end": "2016-11-08 08:00:00"
+              "start": "2016-11-08 21:00:00",
+              "end": "2016-11-08 21:00:00"
             }
           ]
         }
@@ -461,8 +461,8 @@
             {
               "timex": "2016-11-08TMO",
               "type": "datetimerange",
-              "start": "2016-11-08 08:00:00",
-              "end": "2016-11-08 12:00:00"
+              "start": "2016-11-08 06:00:00",
+              "end": "2016-11-08 06:00:00"
             }
           ]
         }
@@ -486,8 +486,8 @@
             {
               "timex": "TEV",
               "type": "timerange",
-              "start": "16:00:00",
-              "end": "20:00:00"
+              "start": "18:00:00",
+              "end": "18:00:00"
             }
           ]
         }
@@ -731,15 +731,115 @@
               "timex": "XXXX-04-22TMO",
               "Mod": "start",
               "type": "datetimerange",
-              "start": "2022-04-22 08:00:00",
-              "end": "2022-04-22 10:00:00"
+              "start": "2022-04-22 06:00:00",
+              "end": "2022-04-22 08:00:00"
             },
             {
               "timex": "XXXX-04-22TMO",
               "Mod": "start",
               "type": "datetimerange",
-              "start": "2023-04-22 08:00:00",
-              "end": "2023-04-22 10:00:00"
+              "start": "2023-04-22 06:00:00",
+              "end": "2023-04-22 08:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "any available time to run errands at lunchtime today",
+    "Context": {
+      "ReferenceDateTime": "2022-07-27T10:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "at lunchtime today",
+        "Start": 34,
+        "End": 51,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2022-07-27TMEL",
+              "type": "datetimerange",
+              "start": "2022-07-27 11:00:00",
+              "end": "2022-07-27 13:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Take medicines after dinner tomorrow",
+    "Context": {
+      "ReferenceDateTime": "2022-07-27T10:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "after dinner tomorrow",
+        "Start": 15,
+        "End": 35,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2022-07-28TMED",
+              "Mod": "after",
+              "type": "datetimerange",
+              "start": "2022-07-28 21:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Take medicines after dinnertime tomorrow",
+    "Context": {
+      "ReferenceDateTime": "2022-07-27T10:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "after dinnertime tomorrow",
+        "Start": 15,
+        "End": 39,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2022-07-28TMED",
+              "Mod": "after",
+              "type": "datetimerange",
+              "start": "2022-07-28 21:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "let's meet at lunch tomorrow.",
+    "Context": {
+      "ReferenceDateTime": "2022-07-27T10:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "at lunch tomorrow",
+        "Start": 11,
+        "End": 27,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2022-07-28TMEL",
+              "type": "datetimerange",
+              "start": "2022-07-28 11:00:00",
+              "end": "2022-07-28 13:00:00"
             }
           ]
         }

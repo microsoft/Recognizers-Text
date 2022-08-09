@@ -167,6 +167,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         Regex IDateTimePeriodExtractorConfiguration.AfterRegex => AfterRegex;
 
+        Regex IDateTimePeriodExtractorConfiguration.TasksmodeMealTimeofDayRegex => null;
+
         public string TokenBeforeDate { get; }
 
         public IExtractor CardinalExtractor { get; }
