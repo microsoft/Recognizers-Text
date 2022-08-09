@@ -527,6 +527,9 @@ PeriodSpecificTimeOfDayRegex: !nestedRegex
 PeriodTimeOfDayWithDateRegex: !nestedRegex
  def: \b(({PeriodTimeOfDayRegex}(\s+(on|of))?))\b
  references: [ PeriodTimeOfDayRegex ]
+TasksmodeMealTimeofDayRegex:  !nestedRegex
+  def: \b((in\s+(the)?\s+)?((?<early>earl(y|ier)(\s+|-))|(?<late>late(r?\s+|-)))?((this\s+)?\b(?<timeOfDay>lunch(\s*time)?|dinner(\s*time)?|brunch|breakfast)\b))\b
+  references: [ DateTimeTimeOfDayRegex, LaterEarlyRegex ]
 LessThanRegex: !simpleRegex
   def: \b(less\s+than)\b
 MoreThanRegex: !simpleRegex

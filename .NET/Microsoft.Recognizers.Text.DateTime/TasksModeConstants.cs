@@ -48,5 +48,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         // tasksmode specific date parser constant
         public const string NextWeekGroupName = "next week";
+
     }
 }

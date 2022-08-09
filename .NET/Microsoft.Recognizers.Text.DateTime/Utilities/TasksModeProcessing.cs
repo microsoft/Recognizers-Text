@@ -20,13 +20,11 @@ namespace Microsoft.Recognizers.Text.DateTime
         under tasksmode it's value will get mapped to 22 june 2021 9 pm.
         TasksModeModification function will modify datetime value according to it's type and w.r.t
         refrence time.
-
         Under TasksMode
         For Input: 22 april at 5 pm. (reference time is 22/04/2022 T17:30:00, output type is datetime)
         Expected output : {Past resolution value: 22/04/2022T17,
         Future resolution value: 22/04/2023T17
         },
-
         Under Default Mode
         For Input: 22 april at 5 pm. (reference time is 22/04/2022 T17:30:00)
         Expected output : {Past resolution value: 22/04/2021T17,
@@ -146,9 +144,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         /*
-         Change beginHour and endHour for subjective time refereneces under TasksMode.
-         morning get's mapped to 6:00 am
-         */
+          Change beginHour and endHour for subjective time refereneces under TasksMode.
+          morning get's mapped to 6:00 am
+        */
         public static bool GetMatchedTimeRangeForTasksMode(string text, string todSymbol, out int beginHour, out int endHour, out int endMin)
         {
             var trimmedText = text.Trim();
@@ -205,10 +203,10 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         /*Under TasksMode If you input today's date, future date should get mapped to current date insted of next year.
-         ex if input is meet on 7 july and refrence time is 7 july 2022,
-        expected future value --> 7 july 2022 &&
-        past value--> 7 july 2021
-        */
+          ex if input is meet on 7 july and refrence time is 7 july 2022,
+         expected future value --> 7 july 2022 &&
+         past value--> 7 july 2021
+         */
         private static DateTimeParseResult TasksModeModifyDateValue(DateTimeParseResult slot, DateObject referenceTime)
         {
             var value = (SortedDictionary<string, object>)slot.Value;
@@ -223,6 +221,13 @@ namespace Microsoft.Recognizers.Text.DateTime
                         var inputMonth = inputTime.Month;
 
                         if (slot.Text.Contains(TasksModeConstants.NextWeekGroupName) && !slot.TimexStr.Contains(Constants.TimexFuzzyYear))
+                        {
+                            var tempdate = referenceTime.Upcoming(DayOfWeek.Monday).Date;
+                            var dateTimeToSet = DateObject.MinValue.SafeCreateFromValue(tempdate.Year, tempdate.Month, tempdate.Day);
+                            values[DateTimeResolutionKey.Value] = DateTimeFormatUtil.FormatDate(dateTimeToSet);
+                            values[DateTimeResolutionKey.Timex] = $"{DateTimeFormatUtil.LuisDate(dateTimeToSet)}";
+                        }
+                        else if (slot.TimexStr.Contains(Constants.TimexFuzzyYear) && inputDay == referenceTime.Day && inputMonth == referenceTime.Month)
                         {
                             var tempdate = referenceTime.Upcoming(DayOfWeek.Monday).Date;
                             var dateTimeToSet = DateObject.MinValue.SafeCreateFromValue(tempdate.Year, tempdate.Month, tempdate.Day);
@@ -351,7 +356,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         ex if input is "meet on 7 july morning" and refrence time is 7 july 2022 10pm,
         expected future value should get mapped to 7 july 2023, morning &&
         past value get mapped to 7 july 2022, morning.
-
         ex if input is "meet on  thursday morning" and refrence time is 7 july 2022 (thursday) 10pm,
         expected future value should get mapped to 14 july 2022, morning &&
         past value get mapped to 7 july 2022, morning.
@@ -540,7 +544,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         ex if input is "meet after 7 july at 9pm" and refrence time is 7 july 2022 10pm,
         expected future value should get mapped to 7 july 2023,9pm &&
         past value get mapped to 7 july 2022,9pm.
-
         ex if input is "meet on  thursday at 6pm" and refrence time is 7 july 2022 (thursday) 10pm,
         expected future value should get mapped to 14 july 2022, 6pm &&
         past value get mapped to 7 july 2022, 6pm.

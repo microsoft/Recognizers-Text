@@ -24961,6 +24961,126 @@
     ]
   },
   {
+    "Input": "Take medicines after dinner tomorrow",
+    "Context": {
+      "ReferenceDateTime": "2022-07-27T10:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "after dinner",
+        "Start": 15,
+        "End": 26,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TMED",
+              "Mod": "after",
+              "type": "timerange",
+              "start": "20:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "tomorrow",
+        "Start": 28,
+        "End": 35,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2022-07-28",
+              "type": "date",
+              "value": "2022-07-28"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Take medicines after dinnertime tomorrow",
+    "Context": {
+      "ReferenceDateTime": "2022-07-27T10:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "after dinnertime",
+        "Start": 15,
+        "End": 30,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TMED",
+              "Mod": "after",
+              "type": "timerange",
+              "start": "20:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "tomorrow",
+        "Start": 32,
+        "End": 39,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2022-07-28",
+              "type": "date",
+              "value": "2022-07-28"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "let's meet at lunch tomorrow.",
+    "Context": {
+      "ReferenceDateTime": "2022-07-27T10:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "at lunch",
+        "Start": 11,
+        "End": 18,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TMEL",
+              "type": "timerange",
+              "start": "11:00:00",
+              "end": "13:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "tomorrow",
+        "Start": 20,
+        "End": 27,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2022-07-28",
+              "type": "date",
+              "value": "2022-07-28"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "meet me next month",
     "Context": {
       "ReferenceDateTime": "2022-04-29T00:00:00"
