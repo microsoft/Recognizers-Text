@@ -36,6 +36,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         IEnumerable<Regex> TermFilterRegexes { get; }
 
+        /* TasksModeMentionFilters should be used only under TasksMode.
+           Some scenarios that don't need to be classified are suppressed.
+         */
+        Regex TasksModeMentionFilters { get; }
+
         Regex AfterRegex { get; }
 
         Regex BeforeRegex { get; }

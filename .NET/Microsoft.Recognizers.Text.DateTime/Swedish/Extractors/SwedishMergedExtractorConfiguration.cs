@@ -176,5 +176,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Swedish
         StringMatcher IMergedExtractorConfiguration.SuperfluousWordMatcher => SuperfluousWordMatcher;
 
         bool IMergedExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+
+        public Regex TasksModeMentionFilters { get; }
+
     }
 }
