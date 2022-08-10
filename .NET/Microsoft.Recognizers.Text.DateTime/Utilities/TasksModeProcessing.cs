@@ -229,13 +229,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                         }
                         else if (slot.TimexStr.Contains(Constants.TimexFuzzyYear) && inputDay == referenceTime.Day && inputMonth == referenceTime.Month)
                         {
-                            var tempdate = referenceTime.Upcoming(DayOfWeek.Monday).Date;
-                            var dateTimeToSet = DateObject.MinValue.SafeCreateFromValue(tempdate.Year, tempdate.Month, tempdate.Day);
-                            values[DateTimeResolutionKey.Value] = DateTimeFormatUtil.FormatDate(dateTimeToSet);
-                            values[DateTimeResolutionKey.Timex] = $"{DateTimeFormatUtil.LuisDate(dateTimeToSet)}";
-                        }
-                        else if (slot.TimexStr.Contains(Constants.TimexFuzzyYear) && inputDay == referenceTime.Day && inputMonth == referenceTime.Month)
-                        {
                             // ignore for input text like monday, tue etc
                             if (!slot.TimexStr.Contains(Constants.TimexFuzzyWeek))
                             {
