@@ -43,6 +43,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                     innerResult = ParseImplicitDate(er.Text, referenceDate);
                 }
 
+                if (!innerResult.Success && ((config.Options & DateTimeOptions.TasksMode) != 0))
+                {
+                    innerResult = ParseTasksModeDurationToDatePattern(er.Text, referenceDate);
+                }
+
                 if (!innerResult.Success)
                 {
                     innerResult = ParseWeekdayOfMonth(er.Text, referenceDate);
@@ -595,6 +600,54 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
+        /*
+           under tasksmode parse addtitonal Implicit date references under tasksmode.
+           eg next week will get mapped to same day of next week,
+           next month will get mapped to starting day of comming month,
+           next year will get mapped to starting date of coming year.
+
+           Input text : meet me next week (refrence time 01-08-2022)
+           Tasksmode: next week --> 08-08-2022 datetime type: date
+           Default mode: next week --> (08-08-2022 - 15-08-2022) datetime type: daterange
+        */
+        private DateTimeResolutionResult ParseTasksModeDurationToDatePattern(string text, DateObject referenceDate)
+        {
+            var trimmedText = text.Trim();
+            var ret = new DateTimeResolutionResult();
+
+            var match = this.config.TasksModeDurationToDatePatterns.Match(trimmedText);
+            if (match.Success)
+            {
+                if (match.Groups["week"].Value.Trim() != string.Empty)
+                {
+                    var value = referenceDate.AddDays(TasksModeConstants.WeekDayCount);
+                    ret.Timex = DateTimeFormatUtil.LuisDate(value);
+                    ret.FutureValue = ret.PastValue = DateObject.MinValue.SafeCreateFromValue(value.Year, value.Month, value.Day);
+                    ret.Success = true;
+                    return ret;
+                }
+                else if (match.Groups["month"].Value.Trim() != string.Empty)
+                {
+                    var value = referenceDate.AddMonths(1);
+                    ret.Timex = DateTimeFormatUtil.LuisDate(value.Year, value.Month, 1);
+                    ret.FutureValue = ret.PastValue = DateObject.MinValue.SafeCreateFromValue(value.Year, value.Month, 1);
+                    ret.Success = true;
+                    return ret;
+                }
+                else if (match.Groups["year"].Value.Trim() != string.Empty)
+                {
+                    var value = referenceDate.AddYears(1);
+                    ret.Timex = DateTimeFormatUtil.LuisDate(value.Year, 1, 1);
+                    ret.FutureValue = ret.PastValue = DateObject.MinValue.SafeCreateFromValue(value.Year, 1, 1);
+                    ret.Success = true;
+                    return ret;
+                }
+
+            }
+
+            return ret;
+        }
+
         // Handle cases like "January first", "twenty-two of August"
         // Handle cases like "20th of next month"
         private DateTimeResolutionResult ParseNumberWithMonth(string text, DateObject referenceDate)
@@ -791,6 +844,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                             if (!innerResult.Success)
                             {
                                 innerResult = ParseImplicitDate(dateString, referenceDate);
+                            }
+
+                            if (!innerResult.Success && ((config.Options & DateTimeOptions.TasksMode) != 0))
+                            {
+                                innerResult = ParseTasksModeDurationToDatePattern(dateString, referenceDate);
                             }
 
                             if (!innerResult.Success)

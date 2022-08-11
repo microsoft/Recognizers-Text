@@ -158,7 +158,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public bool GetMatchedTimeRange(string text, out string todSymbol, out int beginHour, out int endHour, out int endMin)
         {
             var trimmedText = text.Trim();
-
             beginHour = 0;
             endHour = 0;
             endMin = 0;
@@ -187,6 +186,31 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 beginHour = 20;
                 endHour = 23;
                 endMin = 59;
+
+            }
+            else if (((Options & DateTimeOptions.TasksMode) != 0) && DateTimeDefinitions.MealtimeBreakfastTermList.Any(o => trimmedText.Contains(o)))
+            {
+                todSymbol = Constants.MealtimeBreakfast;
+                beginHour = Constants.MealtimeBreakfastBeginHour;
+                endHour = Constants.MealtimeBreakfastEndHour;
+            }
+            else if (((Options & DateTimeOptions.TasksMode) != 0) && DateTimeDefinitions.MealtimeBrunchTermList.Any(o => trimmedText.Contains(o)))
+            {
+                todSymbol = Constants.MealtimeBrunch;
+                beginHour = Constants.MealtimeBrunchBeginHour;
+                endHour = Constants.MealtimeBrunchEndHour;
+            }
+            else if (((Options & DateTimeOptions.TasksMode) != 0) && DateTimeDefinitions.MealtimeLunchTermList.Any(o => trimmedText.Contains(o)))
+            {
+                todSymbol = Constants.MealtimeLunch;
+                beginHour = Constants.MealtimeLunchBeginHour;
+                endHour = Constants.MealtimeLunchEndHour;
+            }
+            else if (((Options & DateTimeOptions.TasksMode) != 0) && DateTimeDefinitions.MealtimeDinnerTermList.Any(o => trimmedText.Contains(o)))
+            {
+                todSymbol = Constants.MealtimeDinner;
+                beginHour = Constants.MealtimeDinnerBeginHour;
+                endHour = Constants.MealtimeDinnerEndHour;
             }
             else if (((Options & DateTimeOptions.TasksMode) != 0) && DateTimeDefinitions.MealtimeBreakfastTermList.Any(o => trimmedText.Contains(o)))
             {

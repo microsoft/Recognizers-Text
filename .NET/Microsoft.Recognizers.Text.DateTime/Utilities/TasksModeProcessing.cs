@@ -14,6 +14,10 @@ namespace Microsoft.Recognizers.Text.DateTime
         public static readonly string DateMinString = DateTimeFormatUtil.FormatDate(DateObject.MinValue);
 
         /*
+        TasksModeModification modifies past datetime references under tasksmode.
+        Eg if input text is 22 june at 9 pm and current time is 22 june 2022, 8 am then
+        under default mode pastdateime value will be 22 june 2022 9 pm, but since time has not been passed
+        under tasksmode it's value will get mapped to 22 june 2021 9 pm.
         TasksModeModification function will modify datetime value according to it's type and w.r.t
         refrence time.
         Under TasksMode
@@ -31,6 +35,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             switch (slot.Type.Substring(ParserTypeName.Length + 1))
             {
+
                 case Constants.SYS_DATETIME_DATE:
                     slot = TasksModeModifyDateValue(slot, referenceTime);
                     break;

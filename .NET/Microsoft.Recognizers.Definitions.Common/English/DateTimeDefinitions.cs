@@ -219,7 +219,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public const string SpecificEndOfRegex = @"(the\s+)?end of(\s+the)?\s*$";
       public const string UnspecificEndOfRegex = @"\b(the\s+)?(eod|(end\s+of\s+day))\b";
       public const string UnspecificEndOfRangeRegex = @"\b(eoy)\b";
-      public static readonly string PeriodTimeOfDayRegex = $@"\b((in\s+(the)?\s+)?{LaterEarlyRegex}?((this\s+)?{DateTimeTimeOfDayRegex}|(?<timeOfDay>(?<pm>tonight))))\b";
+      public static readonly string PeriodTimeOfDayRegex = $@"\b((in\s+(the\s+)?)?{LaterEarlyRegex}?((this\s+)?{DateTimeTimeOfDayRegex}|(?<timeOfDay>(?<pm>tonight))))\b";
       public static readonly string PeriodSpecificTimeOfDayRegex = $@"\b({LaterEarlyRegex}?this\s+{DateTimeTimeOfDayRegex}|({StrictRelativeRegex}\s+{PeriodTimeOfDayRegex})\b|\b(?<pm>toni(ght|te)))\b";
       public static readonly string PeriodTimeOfDayWithDateRegex = $@"\b(({PeriodTimeOfDayRegex}(\s+(on|of))?))\b";
       public static readonly string TasksmodeMealTimeofDayRegex = $@"\b((in\s+(the)?\s+)?((?<early>earl(y|ier)(\s+|-))|(?<late>late(r?\s+|-)))?((this\s+)?\b(?<timeOfDay>lunch(\s*time)?|dinner(\s*time)?|brunch|breakfast)\b))\b";
@@ -313,6 +313,8 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly string ComplexDatePeriodRegex = $@"(?:((from|during|in)\s+)?{StartMiddleEndRegex}(?<start>.+)\s*({StrictTillRegex})\s*{StartMiddleEndRegex}(?<end>.+)|((between)\s+){StartMiddleEndRegex}(?<start>.+)\s*({StrictRangeConnectorRegex})\s*{StartMiddleEndRegex}(?<end>.+))";
       public static readonly string FailFastRegex = $@"{BaseDateTime.DeltaMinuteRegex}|\b(?:{BaseDateTime.BaseAmDescRegex}|{BaseDateTime.BasePmDescRegex})|{BaseDateTime.BaseAmPmDescRegex}|\b(?:zero|{WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|{WrittenTensRegex}|{WrittenMonthRegex}|{SeasonDescRegex}|{DecadeRegex}|centur(y|ies)|weekends?|quarters?|hal(f|ves)|yesterday|to(morrow|day|night)|tmr|noonish|\d(-|——)?ish|((the\s+\w*)|\d)(th|rd|nd|st)|(mid\s*(-\s*)?)?(night|morning|afternoon|day)s?|evenings?|noon|lunch(time)?|dinner(time)?|(day|night)time|overnight|dawn|dusk|sunset|hours?|hrs?|h|minutes?|mins?|seconds?|secs?|eo[dmy]|mardi[ -]?gras|birthday|eve|christmas|xmas|thanksgiving|halloween|yuandan|easter|yuan dan|april fools|cinco de mayo|all (hallow|souls)|guy fawkes|(st )?patrick|hundreds?|noughties|aughts|thousands?)\b|{WeekDayRegex}|{SetWeekDayRegex}|{NowRegex}|{PeriodicRegex}|\b({DateUnitRegex}|{ImplicitDayRegex})";
       public static readonly string TasksModeSupressionRegexes = $@"({AmPmDescRegex}|{TasksModeSpecialDescRegex}|{TasksModeHolidayListSupression}|{DecadeRegex}|{DecadeWithCenturyRegex}|{QuarterRegex}|{QuarterRegexYearFront}|{AllHalfYearRegex}|{SeasonRegex})";
+      public const string TasksModeNextPrefix = @"(?<next>next\s+)";
+      public static readonly string TasksModeDurationToDatePatterns = $@"\b({TasksModeNextPrefix}((?<week>week)|(?<month>month)|(?<year>year)))\b";
       public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>
         {
             { @"decades", @"10Y" },
