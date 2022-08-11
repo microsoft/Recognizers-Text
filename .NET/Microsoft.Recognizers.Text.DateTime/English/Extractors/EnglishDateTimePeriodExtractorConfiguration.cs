@@ -59,6 +59,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex PeriodSpecificTimeOfDayRegex =
             new Regex(DateTimeDefinitions.PeriodSpecificTimeOfDayRegex, RegexFlags);
 
+        public static readonly Regex TasksmodeMealTimeofDayRegex =
+           new Regex(DateTimeDefinitions.TasksmodeMealTimeofDayRegex, RegexFlags);
+
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly Regex[] SimpleCases =
@@ -106,6 +109,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             DurationExtractor = new BaseDurationExtractor(new EnglishDurationExtractorConfiguration(this));
             TimePeriodExtractor = new BaseTimePeriodExtractor(new EnglishTimePeriodExtractorConfiguration(this));
             TimeZoneExtractor = new BaseTimeZoneExtractor(new EnglishTimeZoneExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new EnglishHolidayExtractorConfiguration(this));
+
         }
 
         public IEnumerable<Regex> SimpleCasesRegex => SimpleCases;
@@ -148,6 +153,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         Regex IDateTimePeriodExtractorConfiguration.PeriodTimeOfDayWithDateRegex => PeriodTimeOfDayWithDateRegex;
 
+        Regex IDateTimePeriodExtractorConfiguration.TasksmodeMealTimeofDayRegex => TasksmodeMealTimeofDayRegex;
+
         Regex IDateTimePeriodExtractorConfiguration.AmDescRegex => AmDescRegex;
 
         Regex IDateTimePeriodExtractorConfiguration.PmDescRegex => PmDescRegex;
@@ -175,6 +182,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public IDateTimeExtractor TimePeriodExtractor { get; }
 
         public IDateTimeExtractor TimeZoneExtractor { get; }
+
+        public IDateTimeExtractor HolidayExtractor { get; }
 
         // TODO: these three methods are the same in DatePeriod, should be abstracted
         public bool GetFromTokenIndex(string text, out int index)

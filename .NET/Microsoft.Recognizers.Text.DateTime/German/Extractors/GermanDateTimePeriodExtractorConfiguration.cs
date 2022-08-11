@@ -109,6 +109,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             DurationExtractor = new BaseDurationExtractor(new GermanDurationExtractorConfiguration(this));
             TimePeriodExtractor = new BaseTimePeriodExtractor(new GermanTimePeriodExtractorConfiguration(this));
             TimeZoneExtractor = new BaseTimeZoneExtractor(new GermanTimeZoneExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new GermanHolidayExtractorConfiguration(this));
+
         }
 
         public IEnumerable<Regex> SimpleCasesRegex => SimpleCases;
@@ -165,6 +167,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         Regex IDateTimePeriodExtractorConfiguration.AfterRegex => AfterRegex;
 
+        Regex IDateTimePeriodExtractorConfiguration.TasksmodeMealTimeofDayRegex => null;
+
         public string TokenBeforeDate { get; }
 
         public IExtractor CardinalExtractor { get; }
@@ -180,6 +184,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public IDateTimeExtractor TimePeriodExtractor { get; }
 
         public IDateTimeExtractor TimeZoneExtractor { get; }
+
+        public IDateTimeExtractor HolidayExtractor { get; }
 
         public bool GetFromTokenIndex(string text, out int index)
         {

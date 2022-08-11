@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections.Immutable;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.English;
@@ -44,6 +45,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             DurationParser = config.DurationParser;
             DateTimeParser = config.DateTimeParser;
             TimeZoneParser = config.TimeZoneParser;
+            HolidayExtractor = config.HolidayExtractor;
+            HolidayTimeParser = config.HolidayTimeParser;
 
             PureNumberFromToRegex = EnglishTimePeriodExtractorConfiguration.PureNumFromTo;
             HyphenDateRegex = EnglishDateTimePeriodExtractorConfiguration.HyphenDateRegex;
@@ -64,9 +67,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             PrefixDayRegex = EnglishDateTimePeriodExtractorConfiguration.PrefixDayRegex;
             BeforeRegex = EnglishDateTimePeriodExtractorConfiguration.BeforeRegex;
             AfterRegex = EnglishDateTimePeriodExtractorConfiguration.AfterRegex;
-
             UnitMap = config.UnitMap;
             Numbers = config.Numbers;
+
+            TasksmodeMealTimeofDayRegex = EnglishDateTimePeriodExtractorConfiguration.TasksmodeMealTimeofDayRegex;
         }
 
         public string TokenBeforeDate { get; }
@@ -137,21 +141,27 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public Regex AfterRegex { get; }
 
+        public Regex TasksmodeMealTimeofDayRegex { get; }
+
         bool IDateTimePeriodParserConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
 
+        public IDateTimeExtractor HolidayExtractor { get; }
+
+        public IDateTimeParser HolidayTimeParser { get; }
+
         // @TODO Move time range resolution to common policy
 
         public bool GetMatchedTimeRange(string text, out string todSymbol, out int beginHour, out int endHour, out int endMin)
         {
             var trimmedText = text.Trim();
-
             beginHour = 0;
             endHour = 0;
             endMin = 0;
+
             if (MorningStartEndRegex.IsMatch(trimmedText))
             {
                 todSymbol = "TMO";
@@ -176,11 +186,67 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 beginHour = 20;
                 endHour = 23;
                 endMin = 59;
+
+            }
+            else if (((Options & DateTimeOptions.TasksMode) != 0) && DateTimeDefinitions.MealtimeBreakfastTermList.Any(o => trimmedText.Contains(o)))
+            {
+                todSymbol = Constants.MealtimeBreakfast;
+                beginHour = Constants.MealtimeBreakfastBeginHour;
+                endHour = Constants.MealtimeBreakfastEndHour;
+            }
+            else if (((Options & DateTimeOptions.TasksMode) != 0) && DateTimeDefinitions.MealtimeBrunchTermList.Any(o => trimmedText.Contains(o)))
+            {
+                todSymbol = Constants.MealtimeBrunch;
+                beginHour = Constants.MealtimeBrunchBeginHour;
+                endHour = Constants.MealtimeBrunchEndHour;
+            }
+            else if (((Options & DateTimeOptions.TasksMode) != 0) && DateTimeDefinitions.MealtimeLunchTermList.Any(o => trimmedText.Contains(o)))
+            {
+                todSymbol = Constants.MealtimeLunch;
+                beginHour = Constants.MealtimeLunchBeginHour;
+                endHour = Constants.MealtimeLunchEndHour;
+            }
+            else if (((Options & DateTimeOptions.TasksMode) != 0) && DateTimeDefinitions.MealtimeDinnerTermList.Any(o => trimmedText.Contains(o)))
+            {
+                todSymbol = Constants.MealtimeDinner;
+                beginHour = Constants.MealtimeDinnerBeginHour;
+                endHour = Constants.MealtimeDinnerEndHour;
+            }
+            else if (((Options & DateTimeOptions.TasksMode) != 0) && DateTimeDefinitions.MealtimeBreakfastTermList.Any(o => trimmedText.Contains(o)))
+            {
+                todSymbol = Constants.MealtimeBreakfast;
+                beginHour = Constants.MealtimeBreakfastBeginHour;
+                endHour = Constants.MealtimeBreakfastEndHour;
+            }
+            else if (((Options & DateTimeOptions.TasksMode) != 0) && DateTimeDefinitions.MealtimeBrunchTermList.Any(o => trimmedText.Contains(o)))
+            {
+                todSymbol = Constants.MealtimeBrunch;
+                beginHour = Constants.MealtimeBrunchBeginHour;
+                endHour = Constants.MealtimeBrunchEndHour;
+            }
+            else if (((Options & DateTimeOptions.TasksMode) != 0) && DateTimeDefinitions.MealtimeLunchTermList.Any(o => trimmedText.Contains(o)))
+            {
+                todSymbol = Constants.MealtimeLunch;
+                beginHour = Constants.MealtimeLunchBeginHour;
+                endHour = Constants.MealtimeLunchEndHour;
+            }
+            else if (((Options & DateTimeOptions.TasksMode) != 0) && DateTimeDefinitions.MealtimeDinnerTermList.Any(o => trimmedText.Contains(o)))
+            {
+                todSymbol = Constants.MealtimeDinner;
+                beginHour = Constants.MealtimeDinnerBeginHour;
+                endHour = Constants.MealtimeDinnerEndHour;
             }
             else
             {
                 todSymbol = null;
                 return false;
+            }
+
+            // TasksMode modifies the values of Ambiguous time refrences like morning, lunchtime etc.
+            if ((Options & DateTimeOptions.TasksMode) != 0)
+            {
+                return TasksModeProcessing.GetMatchedTimeRangeForTasksMode(text, todSymbol,
+                          out beginHour, out endHour, out endMin);
             }
 
             return true;

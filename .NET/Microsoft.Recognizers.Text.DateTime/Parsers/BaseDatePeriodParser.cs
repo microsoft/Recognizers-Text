@@ -1964,6 +1964,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             int quarterNum;
+            int numOfQuarters = 0;
             if (!string.IsNullOrEmpty(numberStr))
             {
                 quarterNum = int.Parse(numberStr, CultureInfo.InvariantCulture);
@@ -1974,6 +1975,18 @@ namespace Microsoft.Recognizers.Text.DateTime
                 quarterNum = decimal.ToInt16(Math.Ceiling((decimal)month / Constants.TrimesterMonthCount));
                 var swift = this.config.GetSwiftYear(orderQuarterStr);
                 quarterNum += swift;
+                var numStr = match.Groups[Constants.NumGroupName].Value;
+                var er = this.config.IntegerExtractor.Extract(numStr);
+                if (er.Count == 1)
+                {
+                    numOfQuarters = Convert.ToInt32((double)(this.config.NumberParser.Parse(er[0]).Value ?? 0)) - 1;
+                }
+
+                if (numOfQuarters > 0 && swift >= 0)
+                {
+                    quarterNum += numOfQuarters;
+                }
+
                 if (quarterNum <= 0)
                 {
                     quarterNum += Constants.QuarterCount;
@@ -1981,8 +1994,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
                 else if (quarterNum > Constants.QuarterCount)
                 {
-                    quarterNum -= Constants.QuarterCount;
-                    year += 1;
+                    year += quarterNum / Constants.QuarterCount;
+                    quarterNum = quarterNum % Constants.QuarterCount;
                 }
             }
             else
@@ -1990,7 +2003,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 quarterNum = this.config.CardinalMap[cardinalStr];
             }
 
-            var beginDate = DateObject.MinValue.SafeCreateFromValue(year, ((quarterNum - 1) * Constants.TrimesterMonthCount) + 1, 1);
+            var beginDate = DateObject.MinValue.SafeCreateFromValue(year, ((quarterNum - 1) * Constants.TrimesterMonthCount) + 1, 1).AddMonths(-numOfQuarters * Constants.TrimesterMonthCount);
             var endDate = DateObject.MinValue.SafeCreateFromValue(year, quarterNum * Constants.TrimesterMonthCount, 1).AddMonths(1);
 
             if (noSpecificYear)

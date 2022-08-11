@@ -25,6 +25,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
             DateParser = config.DateParser;
             TimeParser = config.TimeParser;
 
+            HolidayExtractor = config.HolidayExtractor;
+            HolidayTimeParser = config.HolidayTimeParser;
+
             NowRegex = GermanDateTimeExtractorConfiguration.NowRegex;
 
             AMTimeRegex = new Regex(DateTimeDefinitions.AMTimeRegex, RegexFlags);
@@ -98,6 +101,10 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public IImmutableDictionary<string, int> Numbers { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
+
+        public IDateTimeExtractor HolidayExtractor { get; }
+
+        public IDateTimeParser HolidayTimeParser { get; }
 
         public int GetHour(string text, int hour)
         {

@@ -64,6 +64,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
             // (the)? (day|week|month|year)
             new Regex(DateTimeDefinitions.SingleAmbiguousTermsRegex, RegexFlags),
+
         };
 
         public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();
@@ -94,6 +95,21 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             if ((config.Options & DateTimeOptions.ExperimentalMode) != 0)
             {
                 SinceRegex = SinceRegexExp;
+            }
+
+            /*
+             supression under tasksmode, cases like 1ampm, 1p --> pm,
+             holiday time reference whose celebration dates are region specific,
+             Remove decade regex ex seventies, twenties
+             Remove decade regex ex 1990s, 9s,
+             Suppress "Q1 2018", "2nd quarter",
+            "2016 Q1", "last year the 4th quarter",
+             "2015 the H1", "H2 of 2016", "1st half 2018", "2nd half this year",
+            summer winter etc
+             */
+            if ((config.Options & DateTimeOptions.TasksMode) != 0)
+            {
+                TasksModeMentionFilters = new Regex(DateTimeDefinitions.TasksModeSupressionRegexes, RegexFlags);
             }
 
             var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
@@ -177,5 +193,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         StringMatcher IMergedExtractorConfiguration.SuperfluousWordMatcher => SuperfluousWordMatcher;
 
         bool IMergedExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+
+        public Regex TasksModeMentionFilters { get; }
+
     }
 }

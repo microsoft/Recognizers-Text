@@ -49,6 +49,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             DurationParser = config.DurationParser;
             DateTimeParser = config.DateTimeParser;
             TimeZoneParser = config.TimeZoneParser;
+            HolidayExtractor = config.HolidayExtractor;
+            HolidayTimeParser = config.HolidayTimeParser;
 
             PureNumberFromToRegex = ItalianTimePeriodExtractorConfiguration.PureNumFromTo;
             HyphenDateRegex = ItalianDateTimePeriodExtractorConfiguration.HyphenDateRegex;
@@ -144,9 +146,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
 
         bool IDateTimePeriodParserConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 
+        Regex IDateTimePeriodParserConfiguration.TasksmodeMealTimeofDayRegex => null;
+
         public IImmutableDictionary<string, string> UnitMap { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
+
+        public IDateTimeExtractor HolidayExtractor { get; }
+
+        public IDateTimeParser HolidayTimeParser { get; }
 
         public bool GetMatchedTimeRange(string text, out string todSymbol, out int beginHour, out int endHour, out int endMin)
         {

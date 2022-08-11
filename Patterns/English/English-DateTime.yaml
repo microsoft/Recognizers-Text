@@ -88,6 +88,9 @@ OclockRegex: !simpleRegex
   def: (?<oclock>o\s*((’|‘|')\s*)?clock|sharp)
 SpecialDescRegex: !simpleRegex
   def: ((?<ipm>)p\b)
+# Tasksmode suppression regex for suppressin 7p, 11p etc
+TasksModeSpecialDescRegex: !simpleRegex
+  def: ([0-9]+((?<ipm>)p\b))
 AmDescRegex: !nestedRegex
   def: (?:{BaseDateTime.BaseAmDescRegex})
   references: [BaseDateTime.BaseAmDescRegex]
@@ -189,7 +192,7 @@ NumberCombinedWithDateUnit: !nestedRegex
 QuarterTermRegex: !simpleRegex
   def: \b(((?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th)[ -]+quarter)|(q(?<number>[1-4])))\b
 RelativeQuarterTermRegex: !nestedRegex
-  def: \b(?<orderQuarter>{StrictRelativeRegex})\s+quarter\b
+  def: \b(?<orderQuarter>{StrictRelativeRegex})\s+((?<num>[\w,]+)\s+)?quarters?\b
   references: [ StrictRelativeRegex ]
 QuarterRegex: !nestedRegex
   def: ((the\s+)?{QuarterTermRegex}(?:((\s+of)?\s+|\s*[,-]\s*)({YearRegex}|{RelativeRegex}\s+year))?)|{RelativeQuarterTermRegex}
@@ -516,7 +519,7 @@ UnspecificEndOfRegex: !simpleRegex
 UnspecificEndOfRangeRegex: !simpleRegex
   def: \b(eoy)\b
 PeriodTimeOfDayRegex: !nestedRegex
-  def: \b((in\s+(the)?\s+)?{LaterEarlyRegex}?((this\s+)?{DateTimeTimeOfDayRegex}|(?<timeOfDay>(?<pm>tonight))))\b
+  def: \b((in\s+(the\s+)?)?{LaterEarlyRegex}?((this\s+)?{DateTimeTimeOfDayRegex}|(?<timeOfDay>(?<pm>tonight))))\b
   references: [ DateTimeTimeOfDayRegex, LaterEarlyRegex ]
 PeriodSpecificTimeOfDayRegex: !nestedRegex
   def: \b({LaterEarlyRegex}?this\s+{DateTimeTimeOfDayRegex}|({StrictRelativeRegex}\s+{PeriodTimeOfDayRegex})\b|\b(?<pm>toni(ght|te)))\b
@@ -524,6 +527,9 @@ PeriodSpecificTimeOfDayRegex: !nestedRegex
 PeriodTimeOfDayWithDateRegex: !nestedRegex
  def: \b(({PeriodTimeOfDayRegex}(\s+(on|of))?))\b
  references: [ PeriodTimeOfDayRegex ]
+TasksmodeMealTimeofDayRegex:  !nestedRegex
+  def: \b((in\s+(the)?\s+)?((?<early>earl(y|ier)(\s+|-))|(?<late>late(r?\s+|-)))?((this\s+)?\b(?<timeOfDay>lunch(\s*time)?|dinner(\s*time)?|brunch|breakfast)\b))\b
+  references: [ DateTimeTimeOfDayRegex, LaterEarlyRegex ]
 LessThanRegex: !simpleRegex
   def: \b(less\s+than)\b
 MoreThanRegex: !simpleRegex
@@ -580,6 +586,10 @@ HolidayList4: !simpleRegex
 HolidayRegex: !nestedRegex
   def: \b(({StrictRelativeRegex}\s+({HolidayList1}|{HolidayList2}|{HolidayList3}|{HolidayList4}))|(?<holidayWeekend>((the\s+)?weekend\s+of\s+)({HolidayList1}|{HolidayList2}|{HolidayList3}|{HolidayList4})(\s+((of\s+)?({YearRegex}|{RelativeRegex}\s+year)))?)|(({HolidayList1}|{HolidayList2}|{HolidayList3}|{HolidayList4})((?<holidayWeekend>(\s+weekend)(\s+((of\s+)?({YearRegex}|{RelativeRegex}\s+year)))?)|(\s+(of\s+)?({YearRegex}|{RelativeRegex}\s+year)(?<holidayWeekend>\s+weekend)?))?))\b
   references: [ HolidayList1, HolidayList2, HolidayList3, HolidayList4, YearRegex, RelativeRegex, StrictRelativeRegex ]
+#Holidays List to supress under TasksMode
+TasksModeHolidayListSupression: !nestedRegex
+  def: (?<holiday>(?:independence|teacher'?s|youth|children|girls)\s+day)|(?<holiday>ramad(h)?an|ram(a)?zan|ramathan|eid al(-|\s+)adha|eid al(-|\s+)azha|eidul(-|\s+)azha|feast of the sacrifice|(islamic|arabic|hijri) new year|eid al(-|\s+)fitr|festival of breaking the fast)\b
+  references: [ HolidayList4 ]
 AMTimeRegex: !simpleRegex
   def: (?<am>morning)
 PMTimeRegex: !simpleRegex
@@ -747,6 +757,15 @@ ComplexDatePeriodRegex: !nestedRegex
 FailFastRegex: !nestedRegex
   def: '{BaseDateTime.DeltaMinuteRegex}|\b(?:{BaseDateTime.BaseAmDescRegex}|{BaseDateTime.BasePmDescRegex})|{BaseDateTime.BaseAmPmDescRegex}|\b(?:zero|{WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|{WrittenTensRegex}|{WrittenMonthRegex}|{SeasonDescRegex}|{DecadeRegex}|centur(y|ies)|weekends?|quarters?|hal(f|ves)|yesterday|to(morrow|day|night)|tmr|noonish|\d(-|——)?ish|((the\s+\w*)|\d)(th|rd|nd|st)|(mid\s*(-\s*)?)?(night|morning|afternoon|day)s?|evenings?|noon|lunch(time)?|dinner(time)?|(day|night)time|overnight|dawn|dusk|sunset|hours?|hrs?|h|minutes?|mins?|seconds?|secs?|eo[dmy]|mardi[ -]?gras|birthday|eve|christmas|xmas|thanksgiving|halloween|yuandan|easter|yuan dan|april fools|cinco de mayo|all (hallow|souls)|guy fawkes|(st )?patrick|hundreds?|noughties|aughts|thousands?)\b|{WeekDayRegex}|{SetWeekDayRegex}|{NowRegex}|{PeriodicRegex}|\b({DateUnitRegex}|{ImplicitDayRegex})'
   references: [ BaseDateTime.DeltaMinuteRegex, BaseDateTime.BaseAmDescRegex, BaseDateTime.BasePmDescRegex, BaseDateTime.BaseAmPmDescRegex, ImplicitDayRegex, DateUnitRegex, WeekDayRegex, SetWeekDayRegex, NowRegex, PeriodicRegex, DecadeRegex, SeasonDescRegex, WrittenMonthRegex, WrittenTensRegex, WrittenElevenToNineteenRegex, WrittenOneToNineRegex ]
+# Suppression under tasksmode
+TasksModeSupressionRegexes: !nestedRegex
+  def: ({AmPmDescRegex}|{TasksModeSpecialDescRegex}|{TasksModeHolidayListSupression}|{DecadeRegex}|{DecadeWithCenturyRegex}|{QuarterRegex}|{QuarterRegexYearFront}|{AllHalfYearRegex}|{SeasonRegex})
+  references: [AmPmDescRegex, TasksModeSpecialDescRegex, TasksModeHolidayListSupression, DecadeRegex, DecadeWithCenturyRegex, QuarterRegex, QuarterRegexYearFront, AllHalfYearRegex, SeasonRegex]
+TasksModeNextPrefix: !simpleRegex
+  def: (?<next>next\s+)
+TasksModeDurationToDatePatterns: !nestedRegex
+  def: \b({TasksModeNextPrefix}((?<week>week)|(?<month>month)|(?<year>year)))\b
+  references: [TasksModeNextPrefix]
 UnitMap: !dictionary
   types: [ string, string ]
   entries:

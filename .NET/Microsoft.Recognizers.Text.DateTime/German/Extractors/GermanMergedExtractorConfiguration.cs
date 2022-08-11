@@ -154,5 +154,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         StringMatcher IMergedExtractorConfiguration.SuperfluousWordMatcher => SuperfluousWordMatcher;
 
         bool IMergedExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+
+        public Regex TasksModeMentionFilters { get; }
     }
 }

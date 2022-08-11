@@ -115,6 +115,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             DurationExtractor = new BaseDurationExtractor(new DutchDurationExtractorConfiguration(this));
             TimePeriodExtractor = new BaseTimePeriodExtractor(new DutchTimePeriodExtractorConfiguration(this));
             TimeZoneExtractor = new BaseTimeZoneExtractor(new DutchTimeZoneExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new DutchHolidayExtractorConfiguration(this));
         }
 
         public string TokenBeforeDate { get; }
@@ -173,6 +174,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         Regex IDateTimePeriodExtractorConfiguration.AfterRegex => AfterRegex;
 
+        Regex IDateTimePeriodExtractorConfiguration.TasksmodeMealTimeofDayRegex => null;
+
         public IExtractor CardinalExtractor { get; }
 
         public IDateTimeExtractor SingleDateExtractor { get; }
@@ -186,6 +189,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public IDateTimeExtractor TimePeriodExtractor { get; }
 
         public IDateTimeExtractor TimeZoneExtractor { get; }
+
+        public IDateTimeExtractor HolidayExtractor { get; }
 
         // TODO: these three methods are the same in DatePeriod, should be abstracted
         public bool GetFromTokenIndex(string text, out int index)
