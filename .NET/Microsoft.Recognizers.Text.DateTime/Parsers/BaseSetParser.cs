@@ -53,11 +53,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                     innerResult = ParseEachDuration(er.Text.Trim(), refDate);
                 }
 
-                if (!innerResult.Success)
-                {
-                    innerResult = ParserTimeEveryday(er.Text.Trim(), refDate);
-                }
-
                 // NOTE: Do not change the order of the following calls, due to type precedence
                 // datetimeperiod > dateperiod > timeperiod > datetime > date > time
                 if (!innerResult.Success)
@@ -157,7 +152,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             var ers = this.config.DurationExtractor.Extract(trimmedText, refDate);
 
-            if (ers.Count != 1 || !string.IsNullOrWhiteSpace(text.Substring(ers[0].Start + ers[0].Length + match.Index + match.Length ?? 0)))
+            if (ers.Count != 1 || !string.IsNullOrWhiteSpace(text.Substring(ers[0].Start + ers[0].Length ?? 0)))
             {
                 return ret;
             }
@@ -273,7 +268,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if ((config.Options & DateTimeOptions.TasksMode) != 0)
                 {
-                    ret = TasksModeSetHandler.TasksModeResolveSet(ref ret, pr.TimexStr);
+                    ret = TasksModeSetHandler.TasksModeResolveSet(ref ret, pr.TimexStr + "P1D");
                 }
 
             }
@@ -423,14 +418,14 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if ((config.Options & DateTimeOptions.TasksMode) != 0)
                 {
-                    if (match.Groups["other"].Success)
+                    if (match.Success)
                     {
-                        pr.TimexStr = pr.TimexStr + "P2W";
+                        pr.TimexStr = TasksModeSetHandler.TasksModeTimexIntervalExt(pr.TimexStr);
                     }
 
-                    if (match.Success && pr.Type.Equals(TimeTypeConstants.DATE) && !pr.TimexStr.StartsWith("XXXX-W"))
+                    if (match.Groups["other"].Success)
                     {
-                        pr.TimexStr = pr.TimexStr + "P1Y";
+                        pr.TimexStr = pr.TimexStr.Replace("P1", "P2");
                     }
 
                     ret = TasksModeSetHandler.TasksModeResolveSet(ref ret, pr.TimexStr, pr);

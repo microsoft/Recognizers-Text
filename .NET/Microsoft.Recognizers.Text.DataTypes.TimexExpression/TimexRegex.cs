@@ -48,7 +48,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             {
                 PeriodCollectionName, new Regex[]
                 {
-                    new Regex(@"^P(?<amount>\d*\.?\d+)(?<dateUnit>Y|M|W|D|WE|WD)$"),
+                    new Regex(@"P(?<amount>\d*\.?\d+)(?<dateUnit>Y|M|W|D|WE|WD)$"),
                     new Regex(@"^PT(?<hourAmount>\d*\.?\d+)H(\d*\.?\d+(M|S)){0,2}$"),
                     new Regex(@"^PT(\d*\.?\d+H)?(?<minuteAmount>\d*\.?\d+)M(\d*\.?\d+S)?$"),
                     new Regex(@"^PT(\d*\.?\d+(H|M)){0,2}(?<secondAmount>\d*\.?\d+)S$"),
