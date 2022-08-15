@@ -174,6 +174,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         Regex IDateTimePeriodExtractorConfiguration.AfterRegex => AfterRegex;
 
+        Regex IDateTimePeriodExtractorConfiguration.TasksmodeMealTimeofDayRegex => null;
+
         public IExtractor CardinalExtractor { get; }
 
         public IDateTimeExtractor SingleDateExtractor { get; }

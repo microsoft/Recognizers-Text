@@ -157,5 +157,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         StringMatcher IMergedExtractorConfiguration.SuperfluousWordMatcher => SuperfluousWordMatcher;
 
         bool IMergedExtractorConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
+
+        public Regex TasksModeMentionFilters { get; }
+
     }
 }

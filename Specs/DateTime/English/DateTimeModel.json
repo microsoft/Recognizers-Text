@@ -24732,5 +24732,795 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Listen to 1990s music",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "1990s",
+        "Start": 10,
+        "End": 14,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(1990-01-01,2000-01-01,P10Y)",
+              "type": "daterange",
+              "start": "1990-01-01",
+              "end": "2000-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Who are us presidents in nineties",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "nineties",
+        "Start": 25,
+        "End": 32,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XX90-01-01,XX00-01-01,P10Y)",
+              "type": "daterange",
+              "start": "1990-01-01",
+              "end": "2000-01-01"
+            },
+            {
+              "timex": "(XX90-01-01,XX00-01-01,P10Y)",
+              "type": "daterange",
+              "start": "2090-01-01",
+              "end": "2100-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be back at 7ampm",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "7ampm",
+        "Start": 16,
+        "End": 20,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07",
+              "type": "time",
+              "value": "07:00:00"
+            },
+            {
+              "timex": "T19",
+              "type": "time",
+              "value": "19:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be back at 7p",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "7p",
+        "Start": 16,
+        "End": 17,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T19",
+              "type": "time",
+              "value": "19:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "meet on eid al fitr",
+    "Context": {
+      "ReferenceDateTime": "2022-06-17T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "eid al fitr",
+        "Start": 8,
+        "End": 18,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-05-02",
+              "type": "date",
+              "value": "2022-05-02"
+            },
+            {
+              "timex": "XXXX-05-02",
+              "type": "date",
+              "value": "2023-04-21"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "schedule me a 1:1 meeting",
+    "Comment": "Tasksmode supress 1:1 from getting categorised as time.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "schedule me a 1:1 meeting on 14 nov",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "14 nov",
+        "Start": 29,
+        "End": 34,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-11-14",
+              "type": "date",
+              "value": "2015-11-14"
+            },
+            {
+              "timex": "XXXX-11-14",
+              "type": "date",
+              "value": "2016-11-14"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "schedule me a 1:1 on saturday",
+    "Context": {
+      "ReferenceDateTime": "2022-04-27T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "saturday",
+        "Start": 21,
+        "End": 28,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-6",
+              "type": "date",
+              "value": "2022-04-23"
+            },
+            {
+              "timex": "XXXX-WXX-6",
+              "type": "date",
+              "value": "2022-04-30"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "schedule me a 1:1 meeting 14 nov 2023",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "14 nov 2023",
+        "Start": 26,
+        "End": 36,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2023-11-14",
+              "type": "date",
+              "value": "2023-11-14"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Take medicines after dinner tomorrow",
+    "Context": {
+      "ReferenceDateTime": "2022-07-27T10:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "after dinner",
+        "Start": 15,
+        "End": 26,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TMED",
+              "Mod": "after",
+              "type": "timerange",
+              "start": "20:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "tomorrow",
+        "Start": 28,
+        "End": 35,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2022-07-28",
+              "type": "date",
+              "value": "2022-07-28"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Take medicines after dinnertime tomorrow",
+    "Context": {
+      "ReferenceDateTime": "2022-07-27T10:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "after dinnertime",
+        "Start": 15,
+        "End": 30,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TMED",
+              "Mod": "after",
+              "type": "timerange",
+              "start": "20:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "tomorrow",
+        "Start": 32,
+        "End": 39,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2022-07-28",
+              "type": "date",
+              "value": "2022-07-28"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "let's meet at lunch tomorrow.",
+    "Context": {
+      "ReferenceDateTime": "2022-07-27T10:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "at lunch",
+        "Start": 11,
+        "End": 18,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TMEL",
+              "type": "timerange",
+              "start": "11:00:00",
+              "end": "13:00:00"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "tomorrow",
+        "Start": 20,
+        "End": 27,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2022-07-28",
+              "type": "date",
+              "value": "2022-07-28"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "meet me next month",
+    "Context": {
+      "ReferenceDateTime": "2022-04-29T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "next month",
+        "Start": 8,
+        "End": 17,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2022-05",
+              "type": "daterange",
+              "start": "2022-05-01",
+              "end": "2022-06-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "meet me next month in morning",
+    "Context": {
+      "ReferenceDateTime": "2022-04-29T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "next month",
+        "Start": 8,
+        "End": 17,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2022-05",
+              "type": "daterange",
+              "start": "2022-05-01",
+              "end": "2022-06-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "in morning",
+        "Start": 19,
+        "End": 28,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TMO",
+              "type": "timerange",
+              "start": "08:00:00",
+              "end": "12:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "meet me next month at 6pm",
+    "Context": {
+      "ReferenceDateTime": "2022-04-29T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "next month",
+        "Start": 8,
+        "End": 17,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2022-05",
+              "type": "daterange",
+              "start": "2022-05-01",
+              "end": "2022-06-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "6pm",
+        "Start": 22,
+        "End": 24,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T18",
+              "type": "time",
+              "value": "18:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "meet next month between 2:20 to 3pm",
+    "Context": {
+      "ReferenceDateTime": "2022-04-29T13:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "next month",
+        "Start": 5,
+        "End": 14,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2022-05",
+              "type": "daterange",
+              "start": "2022-05-01",
+              "end": "2022-06-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "between 2:20 to 3pm",
+        "Start": 16,
+        "End": 34,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(T14:20,T15,PT40M)",
+              "type": "timerange",
+              "start": "14:20:00",
+              "end": "15:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "meet next month after 3pm",
+    "Context": {
+      "ReferenceDateTime": "2022-04-29T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "next month",
+        "Start": 5,
+        "End": 14,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2022-05",
+              "type": "daterange",
+              "start": "2022-05-01",
+              "end": "2022-06-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "after 3pm",
+        "Start": 16,
+        "End": 24,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T15",
+              "Mod": "after",
+              "type": "timerange",
+              "sourceEntity": "datetimepoint",
+              "start": "15:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "meet me next year at 6pm",
+    "Context": {
+      "ReferenceDateTime": "2022-04-29T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "next year",
+        "Start": 8,
+        "End": 16,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2023",
+              "type": "daterange",
+              "start": "2023-01-01",
+              "end": "2024-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "6pm",
+        "Start": 21,
+        "End": 23,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T18",
+              "type": "time",
+              "value": "18:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "meet me next year at 6.",
+    "Context": {
+      "ReferenceDateTime": "2022-04-29T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "next year",
+        "Start": 8,
+        "End": 16,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2023",
+              "type": "daterange",
+              "start": "2023-01-01",
+              "end": "2024-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "6",
+        "Start": 21,
+        "End": 21,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T06",
+              "type": "time",
+              "value": "06:00:00"
+            },
+            {
+              "timex": "T18",
+              "type": "time",
+              "value": "18:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "meet me next year between 2:20 to 3pm",
+    "Context": {
+      "ReferenceDateTime": "2022-04-29T13:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "next year",
+        "Start": 8,
+        "End": 16,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2023",
+              "type": "daterange",
+              "start": "2023-01-01",  
+              "end": "2024-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "between 2:20 to 3pm",
+        "Start": 18,
+        "End": 36,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(T14:20,T15,PT40M)",
+              "type": "timerange",
+              "start": "14:20:00",
+              "end": "15:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "meet me next year after 3pm",
+    "Context": {
+      "ReferenceDateTime": "2022-04-29T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "next year",
+        "Start": 8,
+        "End": 16,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2023",
+              "type": "daterange",
+              "start": "2023-01-01",
+              "end": "2024-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "after 3pm",
+        "Start": 18,
+        "End": 26,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T15",
+              "Mod": "after",
+              "type": "timerange",
+              "sourceEntity": "datetimepoint",
+              "start": "15:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "meet me next month at 6.",
+    "Context": {
+      "ReferenceDateTime": "2022-04-29T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "next month",
+        "Start": 8,
+        "End": 17,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2022-05",
+              "type": "daterange",
+              "start": "2022-05-01",
+              "end": "2022-06-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "6",
+        "Start": 22,
+        "End": 22,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T06",
+              "type": "time",
+              "value": "06:00:00"
+            },
+            {
+              "timex": "T18",
+              "type": "time",
+              "value": "18:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "meet me next year in morning",
+    "Context": {
+      "ReferenceDateTime": "2022-04-29T00:00:00"
+    },
+    "NotSupported": "javascript, python",
+    "Results": [
+      {
+        "Text": "next year",
+        "Start": 8,
+        "End": 16,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2023",
+              "type": "daterange",
+              "start": "2023-01-01",
+              "end": "2024-01-01"
+            }
+          ]
+        }
+      },
+      {
+        "Text": "in morning",
+        "Start": 18,
+        "End": 27,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TMO",
+              "type": "timerange",
+              "start": "08:00:00",
+              "end": "12:00:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

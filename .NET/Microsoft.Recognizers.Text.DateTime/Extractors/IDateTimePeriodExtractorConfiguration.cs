@@ -60,6 +60,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         Regex AfterRegex { get; }
 
+        Regex TasksmodeMealTimeofDayRegex { get; }
+
         bool CheckBothBeforeAfter { get; }
 
         IExtractor CardinalExtractor { get; }
