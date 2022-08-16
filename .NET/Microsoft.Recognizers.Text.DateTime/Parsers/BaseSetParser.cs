@@ -152,7 +152,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             var ers = this.config.DurationExtractor.Extract(trimmedText, refDate);
 
-            if (ers.Count != 1 || !string.IsNullOrWhiteSpace(text.Substring(ers[0].Start + ers[0].Length ?? 0)))
+            if (ers.Count != 1 || !string.IsNullOrWhiteSpace(text.Substring(ers[0].Start + ers[0].Length + match.Index + match.Length ?? 0)))
             {
                 return ret;
             }
