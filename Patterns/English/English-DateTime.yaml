@@ -552,7 +552,7 @@ SetLastRegex: !nestedRegex
   def: (?<last>following|next|upcoming|this|{LastNegPrefix}last|past|previous|current)
   references: [ LastNegPrefix ]
 EachDayRegex: !simpleRegex
-  def: \b(((each|every)\s*day)|daily)\b
+  def: \s*((each|every)\s*day)|daily\b
 DurationFollowedUnit: !nestedRegex
   def: (^\s*{DurationUnitRegex}\s+{SuffixAndRegex})|(^\s*{SuffixAndRegex}?(\s+|-)?{DurationUnitRegex})
   references: [ SuffixAndRegex, DurationUnitRegex ]
