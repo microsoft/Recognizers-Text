@@ -89,6 +89,10 @@ class FrenchNumberParserConfiguration(NumberParserConfiguration):
     def is_multi_decimal_separator_culture(self) -> bool:
         return self._is_multi_decimal_separator_culture
 
+    @property
+    def round_multiplier_regex(self) -> Pattern:
+        return self._round_multiplier_regex
+
     def __init__(self, culture_info=None):
         if culture_info is None:
             culture_info = CultureInfo(Culture.French)
@@ -117,6 +121,8 @@ class FrenchNumberParserConfiguration(NumberParserConfiguration):
             FrenchNumeric.HalfADozenRegex)
         self._digital_number_regex = RegExpUtility.get_safe_reg_exp(
             FrenchNumeric.DigitalNumberRegex)
+        self._round_multiplier_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchNumeric.RoundMultiplierRegex)
 
     def normalize_token_set(self, tokens: List[str], context: ParseResult) -> List[str]:
         return tokens
