@@ -120,9 +120,10 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 var beforeStr = text.Substring(0, er.Start ?? 0);
                 var beforeMatch = this.config.EachDayRegex.Match(beforeStr);
+                var startIndexBeforeMatch = beforeMatch.Length + beforeMatch.Index - beforeMatch.Value.TrimStart().Length;
                 if (beforeMatch.Success)
                 {
-                    ret.Add(new Token(beforeMatch.Index, er.Start + er.Length ?? 0));
+                    ret.Add(new Token(startIndexBeforeMatch, er.Start + er.Length ?? 0));
                 }
 
                 var match = this.config.EachDayRegex.Match(afterStr);

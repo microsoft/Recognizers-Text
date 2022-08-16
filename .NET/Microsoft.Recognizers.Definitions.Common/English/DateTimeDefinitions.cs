@@ -232,7 +232,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public const string EachPrefixRegex = @"\b(?<each>(each|every|once an?)\s*$)";
       public const string SetEachRegex = @"\b(?<each>(each|every)(?<other>\s+(other|alternate))?\s*)(?!the|that)\b";
       public static readonly string SetLastRegex = $@"(?<last>following|next|upcoming|this|{LastNegPrefix}last|past|previous|current)";
-      public const string EachDayRegex = @"\b(((each|every)\s*day)|daily)\b";
+      public const string EachDayRegex = @"\s*((each|every)\s*day)|daily\b";
       public static readonly string DurationFollowedUnit = $@"(^\s*{DurationUnitRegex}\s+{SuffixAndRegex})|(^\s*{SuffixAndRegex}?(\s+|-)?{DurationUnitRegex})";
       public static readonly string NumberCombinedWithDurationUnit = $@"\b(?<num>\d+(\.\d*)?)(-)?{DurationUnitRegex}";
       public static readonly string AnUnitRegex = $@"(\b((?<half>(half)\s+)?an?|another)|(?<half>(1/2|½|half)))\s+{DurationUnitRegex}";
