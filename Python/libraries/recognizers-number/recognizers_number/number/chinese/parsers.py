@@ -170,6 +170,10 @@ class ChineseNumberParserConfiguration(NumberParserConfiguration):
     def is_multi_decimal_separator_culture(self) -> bool:
         return self._is_multi_decimal_separator_culture
 
+    @property
+    def round_multiplier_regex(self) -> None:
+        return None
+
     def __init__(self, culture_info=None):
         if culture_info is None:
             culture_info = CultureInfo(Culture.Chinese)
