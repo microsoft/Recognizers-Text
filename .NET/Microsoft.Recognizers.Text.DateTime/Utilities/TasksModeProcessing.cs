@@ -14,15 +14,17 @@ namespace Microsoft.Recognizers.Text.DateTime
         public static readonly string DateMinString = DateTimeFormatUtil.FormatDate(DateObject.MinValue);
 
         /*
+        TasksModeModification modifies past datetime references under tasksmode.
+        Eg if input text is 22 june at 9 pm and current time is 22 june 2022, 8 am then
+        under default mode pastdateime value will be 22 june 2022 9 pm, but since time has not been passed
+        under tasksmode it's value will get mapped to 22 june 2021 9 pm.
         TasksModeModification function will modify datetime value according to it's type and w.r.t
         refrence time.
-
         Under TasksMode
         For Input: 22 april at 5 pm. (reference time is 22/04/2022 T17:30:00, output type is datetime)
         Expected output : {Past resolution value: 22/04/2022T17,
         Future resolution value: 22/04/2023T17
         },
-
         Under Default Mode
         For Input: 22 april at 5 pm. (reference time is 22/04/2022 T17:30:00)
         Expected output : {Past resolution value: 22/04/2021T17,
@@ -33,46 +35,180 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             switch (slot.Type.Substring(ParserTypeName.Length + 1))
             {
+
                 case Constants.SYS_DATETIME_DATE:
-                    slot = TasksModeProcessing.TasksModeModifyDateValue(slot, referenceTime);
+                    slot = TasksModeModifyDateValue(slot, referenceTime);
                     break;
 
                 case Constants.SYS_DATETIME_DATEPERIOD:
-                    slot = TasksModeProcessing.TasksModeModifyDatePeriodValue(slot, referenceTime);
+                    slot = TasksModeModifyDatePeriodValue(slot, referenceTime);
                     break;
 
                 case Constants.SYS_DATETIME_TIME:
-                    slot = TasksModeProcessing.TasksModeModifyTimeValue(slot, referenceTime);
+                    slot = TasksModeModifyTimeValue(slot, referenceTime);
                     break;
 
                 case Constants.SYS_DATETIME_TIMEPERIOD:
-                    slot = TasksModeProcessing.TasksModeTimePeriodValue(slot, referenceTime);
+                    slot = TasksModeTimePeriodValue(slot, referenceTime);
                     break;
 
                 case Constants.SYS_DATETIME_DATETIME:
-                    slot = TasksModeProcessing.TasksModeModifyDateTimeValue(slot, referenceTime);
+                    slot = TasksModeModifyDateTimeValue(slot, referenceTime);
                     break;
 
                 case Constants.SYS_DATETIME_DATETIMEPERIOD:
-                    slot = TasksModeProcessing.TasksModeModifyDateTimePeriodValue(slot, referenceTime);
+                    slot = TasksModeModifyDateTimePeriodValue(slot, referenceTime);
                     break;
             }
 
             return slot;
         }
 
-        /*Under TasksMode If you input today's date, future date should get mapped to current date insted of next year.
-         ex if input is meet on 7 july and refrence time is 7 july 2022,
-        expected future value --> 7 july 2022 &&
-        past value--> 7 july 2021
-        */
-        private static DateTimeParseResult TasksModeModifyDateValue(DateTimeParseResult slot, DateObject referenceTime)
+        // Change resolution value of datetime value under tasksmode.
+        public static TimeOfDayResolutionResult TasksModeResolveTimeOfDay(string tod)
         {
-            if (!slot.TimexStr.Contains("XXXX"))
+            var result = new TimeOfDayResolutionResult();
+            switch (tod)
             {
-                return slot;
+                case Constants.EarlyMorning:
+                    result.Timex = Constants.EarlyMorning;
+                    result.BeginHour = TasksModeConstants.EarlyMorningBeginHour;
+                    result.EndHour = TasksModeConstants.EarlyMorningEndHour;
+                    break;
+                case Constants.Morning:
+                    result.Timex = Constants.Morning;
+                    result.BeginHour = TasksModeConstants.MorningBeginHour;
+                    result.EndHour = TasksModeConstants.MorningEndHour;
+                    break;
+                case Constants.MidDay:
+                    result.Timex = Constants.MidDay;
+                    result.BeginHour = TasksModeConstants.MidDayBeginHour;
+                    result.EndHour = TasksModeConstants.MidDayEndHour;
+                    break;
+                case Constants.Afternoon:
+                    result.Timex = Constants.Afternoon;
+                    result.BeginHour = TasksModeConstants.AfternoonBeginHour;
+                    result.EndHour = TasksModeConstants.AfternoonEndHour;
+                    break;
+                case Constants.Evening:
+                    result.Timex = Constants.Evening;
+                    result.BeginHour = TasksModeConstants.EveningBeginHour;
+                    result.EndHour = TasksModeConstants.EveningEndHour;
+                    break;
+                case Constants.Daytime:
+                    result.Timex = Constants.Daytime;
+                    result.BeginHour = TasksModeConstants.DaytimeBeginHour;
+                    result.EndHour = TasksModeConstants.DaytimeEndHour;
+                    break;
+                case Constants.Nighttime:
+                    result.Timex = Constants.Nighttime;
+                    result.BeginHour = TasksModeConstants.NighttimeBeginHour;
+                    result.EndHour = TasksModeConstants.NighttimeEndHour;
+                    break;
+                case Constants.BusinessHour:
+                    result.Timex = Constants.BusinessHour;
+                    result.BeginHour = TasksModeConstants.BusinessBeginHour;
+                    result.EndHour = TasksModeConstants.BusinessEndHour;
+                    break;
+                case Constants.Night:
+                    result.Timex = Constants.Night;
+                    result.BeginHour = TasksModeConstants.NightBeginHour;
+                    result.EndHour = TasksModeConstants.NightEndHour;
+                    result.EndMin = TasksModeConstants.NightEndMin;
+                    break;
+                case Constants.MealtimeBreakfast:
+                    result.Timex = Constants.MealtimeBreakfast;
+                    result.BeginHour = TasksModeConstants.MealtimeBreakfastBeginHour;
+                    result.EndHour = TasksModeConstants.MealtimeBreakfastEndHour;
+                    break;
+                case Constants.MealtimeBrunch:
+                    result.Timex = Constants.MealtimeBrunch;
+                    result.BeginHour = TasksModeConstants.MealtimeBrunchBeginHour;
+                    result.EndHour = TasksModeConstants.MealtimeBrunchEndHour;
+                    break;
+                case Constants.MealtimeLunch:
+                    result.Timex = Constants.MealtimeLunch;
+                    result.BeginHour = TasksModeConstants.MealtimeLunchBeginHour;
+                    result.EndHour = TasksModeConstants.MealtimeLunchEndHour;
+                    break;
+                case Constants.MealtimeDinner:
+                    result.Timex = Constants.MealtimeDinner;
+                    result.BeginHour = TasksModeConstants.MealtimeDinnerBeginHour;
+                    result.EndHour = TasksModeConstants.MealtimeDinnerEndHour;
+                    break;
+                default:
+                    break;
             }
 
+            return result;
+        }
+
+        /*
+          Change beginHour and endHour for subjective time refereneces under TasksMode.
+          morning get's mapped to 6:00 am
+        */
+        public static bool GetMatchedTimeRangeForTasksMode(string text, string todSymbol, out int beginHour, out int endHour, out int endMin)
+        {
+            var trimmedText = text.Trim();
+            beginHour = 0;
+            endHour = 0;
+            endMin = 0;
+            if (todSymbol == Constants.Morning)
+            {
+                beginHour = TasksModeConstants.MorningBeginHour;
+                endHour = TasksModeConstants.EarlyMorningEndHour;
+            }
+            else if (todSymbol == Constants.Afternoon)
+            {
+                beginHour = Constants.AfternoonBeginHour;
+                endHour = Constants.AfternoonEndHour;
+
+            }
+            else if (todSymbol == Constants.Evening)
+            {
+                beginHour = Constants.EveningBeginHour;
+                endHour = Constants.EveningEndHour;
+            }
+            else if (todSymbol == Constants.Night)
+            {
+                beginHour = TasksModeConstants.NightBeginHour;
+                endHour = TasksModeConstants.NightEndHour;
+            }
+            else if (todSymbol == Constants.MealtimeBreakfast)
+            {
+                beginHour = TasksModeConstants.MealtimeBreakfastBeginHour;
+                endHour = TasksModeConstants.MealtimeBreakfastEndHour;
+            }
+            else if (todSymbol == Constants.MealtimeBrunch)
+            {
+                beginHour = TasksModeConstants.MealtimeBrunchBeginHour;
+                endHour = TasksModeConstants.MealtimeBrunchEndHour;
+            }
+            else if (todSymbol == Constants.MealtimeDinner)
+            {
+                beginHour = TasksModeConstants.MealtimeDinnerBeginHour;
+                endHour = TasksModeConstants.MealtimeDinnerEndHour;
+            }
+            else if (todSymbol == Constants.MealtimeLunch)
+            {
+                beginHour = TasksModeConstants.MealtimeLunchBeginHour;
+                endHour = TasksModeConstants.MealtimeLunchEndHour;
+            }
+            else
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        /*Under TasksMode If you input today's date, future date should get mapped to current date insted of next year.
+          ex if input is meet on 7 july and refrence time is 7 july 2022,
+         expected future value --> 7 july 2022 &&
+         past value--> 7 july 2021
+         */
+        private static DateTimeParseResult TasksModeModifyDateValue(DateTimeParseResult slot, DateObject referenceTime)
+        {
             var value = (SortedDictionary<string, object>)slot.Value;
             if (value != null && value.ContainsKey(ResolutionKey.ValueSet))
             {
@@ -84,10 +220,17 @@ namespace Microsoft.Recognizers.Text.DateTime
                         var inputDay = inputTime.Day;
                         var inputMonth = inputTime.Month;
 
-                        if (inputDay == referenceTime.Day && inputMonth == referenceTime.Month)
+                        if (slot.Text.Contains(TasksModeConstants.NextWeekGroupName) && !slot.TimexStr.Contains(Constants.TimexFuzzyYear))
+                        {
+                            var tempdate = referenceTime.Upcoming(DayOfWeek.Monday).Date;
+                            var dateTimeToSet = DateObject.MinValue.SafeCreateFromValue(tempdate.Year, tempdate.Month, tempdate.Day);
+                            values[DateTimeResolutionKey.Value] = DateTimeFormatUtil.FormatDate(dateTimeToSet);
+                            values[DateTimeResolutionKey.Timex] = $"{DateTimeFormatUtil.LuisDate(dateTimeToSet)}";
+                        }
+                        else if (slot.TimexStr.Contains(Constants.TimexFuzzyYear) && inputDay == referenceTime.Day && inputMonth == referenceTime.Month)
                         {
                             // ignore for input text like monday, tue etc
-                            if (!slot.TimexStr.Contains("XXXX-WXX"))
+                            if (!slot.TimexStr.Contains(Constants.TimexFuzzyWeek))
                             {
                                 var newDate = inputTime.Date.AddYears(-1);
                                 var dateTimeToSet = DateObject.MinValue.SafeCreateFromValue(newDate.Year, newDate.Month, newDate.Day);
@@ -113,7 +256,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         */
         private static DateTimeParseResult TasksModeModifyDatePeriodValue(DateTimeParseResult slot, DateObject referenceTime)
         {
-            if (!slot.TimexStr.Contains("XXXX"))
+            if (!slot.TimexStr.Contains(Constants.TimexFuzzyYear))
             {
                 return slot;
             }
@@ -139,7 +282,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             futuredate = DateObject.Parse(futurevalue[DateTimeResolutionKey.Start], CultureInfo.InvariantCulture);
 
                             if ((futuredate.Day == referenceTime.Day) && (futuredate.Month == referenceTime.Month)
-                               && (futuredate.Year != referenceTime.Year) && (!slot.TimexStr.Contains("XXXX-WXX")))
+                               && (futuredate.Year != referenceTime.Year) && (!slot.TimexStr.Contains(Constants.TimexFuzzyWeek)))
                             {
                                 maptonew = true;
                             }
@@ -152,7 +295,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                             futuredate = DateObject.Parse(futurevalue[DateTimeResolutionKey.End], CultureInfo.InvariantCulture);
 
                             if ((futuredate.Day == referenceTime.Day) && (futuredate.Month == referenceTime.Month)
-                                && (futuredate.Year != referenceTime.Year) && (!slot.TimexStr.Contains("XXXX-WXX")))
+                                && (futuredate.Year != referenceTime.Year) && (!slot.TimexStr.Contains(Constants.TimexFuzzyWeek)))
                             {
                                 maptonew = true;
                             }
@@ -206,14 +349,13 @@ namespace Microsoft.Recognizers.Text.DateTime
         ex if input is "meet on 7 july morning" and refrence time is 7 july 2022 10pm,
         expected future value should get mapped to 7 july 2023, morning &&
         past value get mapped to 7 july 2022, morning.
-
         ex if input is "meet on  thursday morning" and refrence time is 7 july 2022 (thursday) 10pm,
         expected future value should get mapped to 14 july 2022, morning &&
         past value get mapped to 7 july 2022, morning.
        */
         private static DateTimeParseResult TasksModeModifyDateTimePeriodValue(DateTimeParseResult slot, DateObject referenceTime)
         {
-            if (!slot.TimexStr.Contains("XXXX"))
+            if (!slot.TimexStr.Contains(Constants.TimexFuzzyYear))
             {
                 return slot;
             }
@@ -239,12 +381,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                             pastdatetimeperiod = DateObject.Parse(pastvalue[DateTimeResolutionKey.Start], CultureInfo.InvariantCulture);
                             futuredatetimeperiod = DateObject.Parse(futurevalue[DateTimeResolutionKey.Start], CultureInfo.InvariantCulture);
 
-                            if ((pastdatetimeperiod > referenceTime) && !slot.TimexStr.Contains("XXXX-WXX"))
+                            if ((pastdatetimeperiod > referenceTime) && !slot.TimexStr.Contains(Constants.TimexFuzzyWeek))
                             {
                                 maptonew = true;
                             }
 
-                            if ((futuredatetimeperiod < referenceTime) && slot.TimexStr.Contains("XXXX-WXX"))
+                            if ((futuredatetimeperiod < referenceTime) && slot.TimexStr.Contains(Constants.TimexFuzzyWeek))
                             {
                                 maptonew = true;
                             }
@@ -257,12 +399,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 pastdatetimeperiod = DateObject.Parse(pastvalue[DateTimeResolutionKey.End], CultureInfo.InvariantCulture);
                                 futuredatetimeperiod = DateObject.Parse(futurevalue[DateTimeResolutionKey.End], CultureInfo.InvariantCulture);
 
-                                if ((pastdatetimeperiod > referenceTime) && !slot.TimexStr.Contains("XXXX-WXX"))
+                                if ((pastdatetimeperiod > referenceTime) && !slot.TimexStr.Contains(Constants.TimexFuzzyWeek))
                                 {
                                     maptonew = true;
                                 }
 
-                                if ((futuredatetimeperiod < referenceTime) && slot.TimexStr.Contains("XXXX-WXX"))
+                                if ((futuredatetimeperiod < referenceTime) && slot.TimexStr.Contains(Constants.TimexFuzzyWeek))
                                 {
                                     maptonew = true;
                                 }
@@ -271,7 +413,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                         if (maptonew)
                         {
-                            if (slot.TimexStr.Contains("XXXX-WXX"))
+                            if (slot.TimexStr.Contains(Constants.TimexFuzzyWeek))
                             {
                                 if (pastvalue.ContainsKey("start"))
                                 {
@@ -327,7 +469,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     }
 
-                    if ((valueSet.Count == 1) && slot.TimexStr.Contains("XXXX-WXX"))
+                    if ((valueSet.Count == 1) && slot.TimexStr.Contains(Constants.TimexFuzzyWeek))
                     {
                         var currvalue = valueSet.ElementAt(0);
                         bool maptonew = false;
@@ -358,7 +500,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                         if (maptonew)
                         {
-                            if (slot.TimexStr.Contains("XXXX-WXX"))
+                            if (slot.TimexStr.Contains(Constants.TimexFuzzyWeek))
                             {
                                 if (currvalue.ContainsKey("start"))
                                 {
@@ -395,14 +537,13 @@ namespace Microsoft.Recognizers.Text.DateTime
         ex if input is "meet after 7 july at 9pm" and refrence time is 7 july 2022 10pm,
         expected future value should get mapped to 7 july 2023,9pm &&
         past value get mapped to 7 july 2022,9pm.
-
         ex if input is "meet on  thursday at 6pm" and refrence time is 7 july 2022 (thursday) 10pm,
         expected future value should get mapped to 14 july 2022, 6pm &&
         past value get mapped to 7 july 2022, 6pm.
        */
         private static DateTimeParseResult TasksModeModifyDateTimeValue(DateTimeParseResult slot, DateObject referenceTime)
         {
-            if (!slot.TimexStr.Contains("XXXX"))
+            if (!slot.TimexStr.Contains(Constants.TimexFuzzyYear))
             {
                 return slot;
             }
@@ -424,7 +565,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                         if (futuredatetime < referenceTime)
                         {
-                            if (slot.TimexStr.Contains("XXXX-WXX"))
+                            if (slot.TimexStr.Contains(Constants.TimexFuzzyWeek))
                             {
                                 pastvalue[DateTimeResolutionKey.Value] = futurevalue[DateTimeResolutionKey.Value];
                                 var tempdate = futuredatetime.Date.AddDays(7);

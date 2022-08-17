@@ -142,6 +142,8 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         bool IDateTimePeriodParserConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 
+        Regex IDateTimePeriodParserConfiguration.TasksmodeMealTimeofDayRegex => null;
+
         public IImmutableDictionary<string, string> UnitMap { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
