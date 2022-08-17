@@ -415,7 +415,7 @@ SetEachRegex: !simpleRegex
 SetLastRegex: !simpleRegex
   def: (?<last>prochain|dernier|derni[eè]re|pass[ée]s|pr[eé]c[eé]dent|courant|en\s*cours)
 EachDayRegex: !simpleRegex
-  def: ^\s*(chaque|tous les)\s*(jour|jours)\b
+  def: \s*(chaque|tous les)\s*(jour|jours)\b
 DurationFollowedUnit: !nestedRegex
   def: ^\s*{SuffixAndRegex}?(\s+|-)?{DurationUnitRegex}
   references: [ SuffixAndRegex, DurationUnitRegex ]

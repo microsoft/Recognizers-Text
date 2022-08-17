@@ -29,6 +29,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         public List<ExtractResult> Extract(string text, DateObject reference)
         {
             var tokens = new List<Token>();
+
             tokens.AddRange(MatchEachUnit(text));
             tokens.AddRange(MatchEachDuration(text, reference));
             tokens.AddRange(TimeEveryday(text, reference));

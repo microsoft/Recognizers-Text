@@ -34,14 +34,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (er.Type.Equals(ParserName, StringComparison.Ordinal))
             {
                 var innerResult = ParseEachUnit(er.Text.Trim());
-                var innerResultTime = ParserTimeEveryday(er.Text.Trim(), refDate);
                 var innerResultDay = ParserDayEveryweek(er.Text.Trim(), refDate);
                 var innerResultNumber = ParserSingleNumbermonth(er.Text.Trim(), refDate);
-
-                if (innerResultTime.Success)
-                {
-                    innerResult = innerResultTime;
-                }
 
                 if (innerResultDay.Success)
                 {
@@ -51,6 +45,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (!innerResult.Success)
                 {
                     innerResult = ParseEachDuration(er.Text.Trim(), refDate);
+                }
+
+                if (!innerResult.Success)
+                {
+                    innerResult = ParserTimeEveryday(er.Text.Trim(), refDate);
                 }
 
                 // NOTE: Do not change the order of the following calls, due to type precedence
@@ -142,22 +141,14 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new DateTimeResolutionResult();
 
-            var match = config.SetEachRegex.Match(text);
-            if (!match.Success)
+            var ers = this.config.DurationExtractor.Extract(text, refDate);
+
+            if (ers.Count != 1 || !string.IsNullOrWhiteSpace(text.Substring(ers[0].Start + ers[0].Length ?? 0)))
             {
                 return ret;
             }
 
-            var trimmedText = text.Remove(match.Index, match.Length);
-
-            var ers = this.config.DurationExtractor.Extract(trimmedText, refDate);
-
-            if (ers.Count != 1 || !string.IsNullOrWhiteSpace(text.Substring(ers[0].Start + ers[0].Length + match.Index + match.Length ?? 0)))
-            {
-                return ret;
-            }
-
-            var beforeStr = text.Substring(0, ers[0].Start + match.Length + match.Index ?? 0);
+            var beforeStr = text.Substring(0, ers[0].Start ?? 0);
             if (this.config.EachPrefixRegex.IsMatch(beforeStr))
             {
                 var pr = this.config.DurationParser.Parse(ers[0], DateObject.Now);
@@ -242,35 +233,39 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             var ers1 = this.config.TimePeriodExtractor.Extract(text, refDate);
 
-            if (ers.Count == 0)
+            if (ers.Count == 1)
             {
-                ers = ers1;
-            }
+                var afterStr = text.Replace(ers[0].Text, string.Empty);
+                var match = this.config.EachDayRegex.Match(afterStr);
 
-            if (ers.Count != 1)
-            {
-                return ret;
-            }
-
-            var afterStr = text.Replace(ers[0].Text, string.Empty);
-            var match = this.config.EachDayRegex.Match(afterStr);
-
-            if (match.Success)
-            {
-                var pr = this.config.TimeParser.Parse(ers[0], DateObject.Now);
-
-                if (pr.TimexStr.Equals(string.Empty))
+                if (match.Success)
                 {
-                    pr = this.config.TimePeriodParser.Parse(ers[0], DateObject.Now);
+                    var pr = this.config.TimeParser.Parse(ers[0], DateObject.Now);
+                    ret = SetHandler.ResolveSet(ref ret, pr.TimexStr);
+
+                    if ((config.Options & DateTimeOptions.TasksMode) != 0)
+                    {
+                        ret = TasksModeSetHandler.TasksModeResolveSet(ref ret, pr.TimexStr + "P1D");
+                    }
+
                 }
+            }
+            else if (ers1.Count == 1)
+            {
+                var afterStr = text.Replace(ers1[0].Text, string.Empty);
+                var match = this.config.SetEachRegex.Match(afterStr);
 
-                ret = SetHandler.ResolveSet(ref ret, pr.TimexStr);
-
-                if ((config.Options & DateTimeOptions.TasksMode) != 0)
+                if (match.Success)
                 {
-                    ret = TasksModeSetHandler.TasksModeResolveSet(ref ret, pr.TimexStr + "P1D");
-                }
+                    var pr = this.config.TimePeriodParser.Parse(ers1[0], DateObject.Now);
+                    ret = SetHandler.ResolveSet(ref ret, pr.TimexStr);
 
+                    if ((config.Options & DateTimeOptions.TasksMode) != 0)
+                    {
+                        ret = TasksModeSetHandler.TasksModeResolveSet(ref ret, pr.TimexStr + "P1D");
+                    }
+
+                }
             }
 
             return ret;
