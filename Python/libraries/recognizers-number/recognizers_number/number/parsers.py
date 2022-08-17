@@ -121,20 +121,25 @@ class NumberParserConfiguration(ABC):
     def is_multi_decimal_separator_culture(self) -> bool:
         pass
 
+    @property
+    @abstractmethod
+    def round_multiplier_regex(self) -> Pattern:
+        pass
+
 
 class BaseNumberParser(Parser):
     def __init__(self, config: NumberParserConfiguration):
         self.config: NumberParserConfiguration = config
         self.supported_types: List[str] = list()
 
-        single_int_frac = f'{self.config.word_separator_token}| -|{self._get_key_regex(self.config.cardinal_number_map.keys())}|{self._get_key_regex(self.config.ordinal_number_map.keys())}'
+        single_int_frac = f'{self.config.word_separator_token}| -|{self._get_key_regex(self.config.cardinal_number_map.keys())}|{self._get_key_regex(self.config.ordinal_number_map.keys())}|\\d+'
         self.text_number_regex: Pattern = self._get_text_number_regex(single_int_frac)
         self.arabic_number_regex: Pattern = RegExpUtility.get_safe_reg_exp(
             r'\d+', flags=regex.I | regex.S)
         self.round_number_set: List[str] = list(
             self.config.round_number_map.keys())
         self.is_non_standard_separator_variant = self.config.culture_info.code in \
-            self.config.non_standard_separator_variants
+                                                 self.config.non_standard_separator_variants
 
     def parse(self, source: ExtractResult) -> Optional[ParseResult]:
         # Check if the parser is configured to support specific types
@@ -247,6 +252,15 @@ class BaseNumberParser(Parser):
 
             result.value = small_value / big_value
         else:
+            is_fraction_multiplier = False
+            multiplier = 1
+            if self.config.round_multiplier_regex is not None:
+                match = self.config.round_multiplier_regex.search(result_text)
+                if match is not None:
+                    result_text = result_text.replace(match.group(0), "")
+                    multiplier = self.config.round_number_map[match.group("multiplier")]
+                    is_fraction_multiplier = True if match.groups("fracMultiplier") is not None else False
+
             words = list(filter(lambda x: x, result_text.split(' ')))
             frac_words = self.config.normalize_token_set(words, result)
 
@@ -258,7 +272,7 @@ class BaseNumberParser(Parser):
 
             # for case like "half"
             if len(frac_words) == 1:
-                result.value = 1 / self.__get_int_value(frac_words)
+                result.value = (1 / self.__get_int_value(frac_words)) * multiplier
                 return result
 
             for split_index in range(len(frac_words) - 2, -1, -1):
@@ -290,7 +304,8 @@ class BaseNumberParser(Parser):
                             # frac[i+1] % 100 and frac[i] % 100 = 0
                             if (self.config.resolve_composite_number(frac_words[split_index]) >= sm_hundreds
                                     and not frac_words[split_index + 1] in self.config.written_fraction_separator_texts
-                                    and self.config.resolve_composite_number(frac_words[split_index + 1]) < sm_hundreds):
+                                    and self.config.resolve_composite_number(
+                                        frac_words[split_index + 1]) < sm_hundreds):
                                 split_index += 1
                                 break
                             split_index += 1
@@ -330,12 +345,11 @@ class BaseNumberParser(Parser):
             int_value = self.__get_int_value(self.__get_matches(int_str))
 
             # Find mixed number
-            if (mixed_index != len(frac_words) and numer_value < denomi_value):
-                # int_value + numer_value / denomi_value
-                result.value = int_value + numer_value / denomi_value
+            if mixed_index != len(frac_words) and numer_value < denomi_value:
+                result.value = (int_value + (numer_value / denomi_value)) * multiplier if is_fraction_multiplier else \
+                    int_value + (multiplier * numer_value / denomi_value)
             else:
-                # (int_value + numer_value) / denomi_value
-                result.value = (int_value + numer_value) / denomi_value
+                result.value = multiplier * (int_value + numer_value) / denomi_value
 
             # Convert to float for fixed float point vs. exponential notation consistency /w C#/TS/JS
             result.value = float(result.value)
@@ -405,7 +419,7 @@ class BaseNumberParser(Parser):
                 negative = not negative
             elif c == '+':
                 continue
-            if i == len(handle)-1:
+            if i == len(handle) - 1:
                 if negative:
                     call_stack.append(-tmp)
                 else:
@@ -447,7 +461,7 @@ class BaseNumberParser(Parser):
         end_flag = 1
 
         # Scan from end to start, find the end word
-        for i in range(len(matches)-1, 0, -1):
+        for i in range(len(matches) - 1, 0, -1):
             if matches[i] in self.round_number_set:
                 # if false,then continue, you will meet hundred first, then thousand.
                 if end_flag > self.config.round_number_map[matches[i]]:
@@ -495,6 +509,8 @@ class BaseNumberParser(Parser):
                             tmp = tmp_stack.pop() + match_value
                             tmp += tmp_stack.pop()
                             tmp_stack.append(tmp)
+                elif match.isdigit():
+                    tmp_stack.append(int(match))
                 else:
                     complex_val = self.config.resolve_composite_number(match)
                     if complex_val != 0:
@@ -534,7 +550,7 @@ class BaseNumberParser(Parser):
             scale = Decimal(0.1)
             for match in matches:
                 result += scale * \
-                    Decimal(self.config.cardinal_number_map[match])
+                          Decimal(self.config.cardinal_number_map[match])
                 scale *= Decimal(0.1)
 
         return result

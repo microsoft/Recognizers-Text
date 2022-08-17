@@ -2596,7 +2596,7 @@
   },
   {
     "Input": "once con uno y medio",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "once con uno y medio",
@@ -3013,7 +3013,7 @@
   },
   {
     "Input": "el resultado es cinco y medio",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "cinco y medio",
@@ -3029,7 +3029,7 @@
   },
   {
     "Input": "La población es 2 millones y medio",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "2 millones y medio",
@@ -3045,7 +3045,7 @@
   },
   {
     "Input": "Ellos obtuvieron tres millones y medio",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "tres millones y medio",
@@ -3077,7 +3077,7 @@
   },
   {
     "Input": "El número es cinco billones con tres cuartos.",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "cinco billones con tres cuartos",
@@ -3093,7 +3093,7 @@
   },
   {
     "Input": "Conté seis millones con dos tercios",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "seis millones con dos tercios",
