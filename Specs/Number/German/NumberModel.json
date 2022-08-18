@@ -943,7 +943,7 @@
   },
   {
     "Input": "Eine halbe Million Eier wurden heute zerbrochen",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "eine halbe million",
@@ -960,7 +960,7 @@
   },
   {
     "Input": "Es gibt anderthalb Millionen Möglichkeiten",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "anderthalb millionen",
@@ -977,7 +977,7 @@
   },
   {
     "Input": "Die Bevölkerung beträgt dreieinhalb Millionen",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "dreieinhalb millionen",
@@ -994,7 +994,7 @@
   },
   {
     "Input": "Der aktuelle Wert beträgt eineinhalb Milliarden",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "eineinhalb milliarden",
@@ -1011,7 +1011,7 @@
   },
   {
     "Input": "Die Zahl ist fünf und drei Viertel Milliarde",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "fünf und drei viertel milliarde",
@@ -1026,7 +1026,7 @@
   },
   {
     "Input": "Ich habe sechs und zwei Drittel Millionen gezählt",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "sechs und zwei drittel millionen",
