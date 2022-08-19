@@ -37,11 +37,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var innerResultDay = ParserDayEveryweek(er.Text.Trim(), refDate);
                 var innerResultNumber = ParserSingleNumbermonth(er.Text.Trim(), refDate);
 
-                if (innerResultDay.Success)
-                {
-                    innerResult = innerResultDay;
-                }
-
                 if (!innerResult.Success)
                 {
                     innerResult = ParseEachDuration(er.Text.Trim(), refDate);
@@ -253,7 +248,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             else if (ers1.Count == 1)
             {
                 var afterStr = text.Replace(ers1[0].Text, string.Empty);
-                var match = this.config.SetEachRegex.Match(afterStr);
+                var match = this.config.EachDayRegex.Match(afterStr);
 
                 if (match.Success)
                 {

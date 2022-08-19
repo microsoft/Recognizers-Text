@@ -87,7 +87,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     var beforeStr = text.Substring(0, match.Index);
                     var dayMatch = this.config.BeforeEachDayRegex.Match(beforeStr);
-                    if (dayMatch.Success)
+                    var dateMatch = this.config.DateExtractor.Extract(beforeStr);
+
+                    // don't merge cases like 19 june every month, it's not valid.
+                    if (dayMatch.Success && dateMatch.Count == 0)
                     {
                         ret.Add(new Token(dayMatch.Index, match.Index + match.Length));
                     }
@@ -141,7 +144,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new List<Token>();
             var ers = this.config.DateExtractor.Extract(text, reference);
-            if (NumberRecognizer.RecognizeOrdinal(text, Culture.English).Count > 0)
+            if (NumberRecognizer.RecognizeOrdinal(text, config.Culture).Count > 0)
             {
                 return ret;
             }
@@ -161,7 +164,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var beforeMatch = MatchEachUnit(beforeStr);
                 var timeBeforeErs = this.config.TimeExtractor.Extract(beforeStr, reference);
                 var timeBeforeErs1 = this.config.TimePeriodExtractor.Extract(beforeStr, reference);
-                if (timeBeforeErs.Count == 0)
+                if (timeBeforeErs.Count == 0 && (timeBeforeErs1.Count != 0))
                 {
                     timeBeforeErs = timeBeforeErs1;
                 }
@@ -169,7 +172,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var match = MatchEachUnit(afterStr);
                 var timeErs = this.config.TimeExtractor.Extract(afterStr, reference);
                 var timeErs1 = this.config.TimePeriodExtractor.Extract(afterStr, reference);
-                if (timeErs.Count == 0)
+                if (timeErs.Count == 0 && (timeErs1.Count != 0))
                 {
                     timeErs = timeErs1;
                 }
