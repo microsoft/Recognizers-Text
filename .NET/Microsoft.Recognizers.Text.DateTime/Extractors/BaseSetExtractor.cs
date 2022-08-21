@@ -112,11 +112,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new List<Token>();
             var ers = this.config.TimeExtractor.Extract(text, reference);
-            var ers1 = this.config.TimePeriodExtractor.Extract(text, reference);
-            if (ers.Count == 0)
-            {
-                ers = ers1;
-            }
 
             foreach (var er in ers)
             {
@@ -140,6 +135,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
+        // extract set type: second saturday of each month
         public virtual List<Token> DayEveryweek(string text, DateObject reference)
         {
             var ret = new List<Token>();
