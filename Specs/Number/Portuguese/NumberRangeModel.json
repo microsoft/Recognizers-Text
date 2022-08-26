@@ -20,7 +20,7 @@
     ]
   },
   {
-    "Input": "Este número és maior que vinte e menor ou igual que trinta e cinco.",
+    "Input": "Este número é maior que vinte e menor ou igual que trinta e cinco.",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -44,8 +44,8 @@
         "Resolution": {
           "value": "[20,30)"
         },
-        "Start": 15,
-        "End": 27
+        "Start": 11,
+        "End": 23
       }
     ]
   },
@@ -75,7 +75,7 @@
           "value": "[10,15)"
         },
         "Start": 15,
-        "End": 39
+        "End": 32
       }
     ]
   },
@@ -89,7 +89,7 @@
         "Resolution": {
           "value": "[10,15)"
         },
-        "Start": 15,
+        "Start": 18,
         "End": 39
       }
     ]
@@ -110,17 +110,17 @@
     ]
   },
   {
-    "Input": "Tens um nivel mais alto que diez mas mais baixo que quinze.",
+    "Input": "Tens um nivel mais alto que dez mas mais baixo que quinze.",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "mais alto que diez mas mais baixo que quinze",
+        "Text": "mais alto que dez mas mais baixo que quinze",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(10,15)"
         },
-        "Start": 15,
-        "End": 62
+        "Start": 14,
+        "End": 56
       }
     ]
   },
@@ -134,8 +134,8 @@
         "Resolution": {
           "value": "(100,300)"
         },
-        "Start": 20,
-        "End": 48
+        "Start": 18,
+        "End": 46
       }
     ]
   },
@@ -149,8 +149,8 @@
         "Resolution": {
           "value": "(100,300)"
         },
-        "Start": 13,
-        "End": 41
+        "Start": 18,
+        "End": 46
       }
     ]
   },
@@ -170,11 +170,11 @@
     ]
   },
   {
-    "Input": "Este número es mayor o igual que cien, menor o igual que trescientos",
+    "Input": "Este número eh maior ou igual que cem, menor ou igual que trezentos",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "mayor o igual que cien, menor o igual que trescientos",
+        "Text": "maior ou igual que cem, menor ou igual que trezentos",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[100,300]"
@@ -185,101 +185,131 @@
     ]
   },
   {
-    "Input": "Hay como máximo 100 y como mínimo 20 manzanas.",
+    "Input": "Tens no máximo 100 e no mínimo 20 maçãs.",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "como máximo 100 y como mínimo 20",
+        "Text": "no máximo 100 e no mínimo 20",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[20,100]"
         },
-        "Start": 4,
+        "Start": 5,
+        "End": 32
+      }
+    ]
+  },
+  {
+    "Input": "Existem 100 como máximo e 20 como mínimo.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "100 como máximo e 20 como mínimo",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[20,100]"
+        },
+        "Start": 8,
+        "End": 39
+      }
+    ]
+  },
+  {
+    "Input": "Existem 100 no máximo e 20 no mínimo.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "100 no máximo e 20 no mínimo",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[20,100]"
+        },
+        "Start": 8,
         "End": 35
       }
     ]
   },
   {
-    "Input": "Hay 100 como máximo y 20 como mínimo manzanas.",
+    "Input": "Temos ao menos 20 bananas.",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "100 como máximo y 20 como mínimo",
-        "TypeName": "numberrange",
-        "Resolution": {
-          "value": "[20,100]"
-        },
-        "Start": 4,
-        "End": 35
-      }
-    ]
-  },
-  {
-    "Input": "Hay al menos 20 manzanas.",
-    "NotSupportedByDesign": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "al menos 20",
+        "Text": "ao menos 20",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[20,)"
         },
-        "Start": 4,
-        "End": 14
+        "Start": 6,
+        "End": 16
       }
     ]
   },
   {
-    "Input": "Hay por lo menos 20 manzanas.",
+    "Input": "Tenho pelo menos 20 maçãs.",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "por lo menos 20",
+        "Text": "pelo menos 20",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[20,)"
         },
-        "Start": 4,
+        "Start": 6,
         "End": 18
       }
     ]
   },
   {
-    "Input": "Hay entre 20 y 100 manzanas",
+    "Input": "Há entre 20 e 100 dias",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "entre 20 y 100",
+        "Text": "entre 20 e 100",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[20,100)"
         },
-        "Start": 4,
-        "End": 17
+        "Start": 3,
+        "End": 16
       }
     ]
   },
   {
-    "Input": "El rango de números es desde 20 hasta 100",
+    "Input": "A faixa de números vai desde 20 até 100",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "desde 20 hasta 100",
+        "Text": "desde 20 até 100",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[20,100)"
         },
         "Start": 23,
-        "End": 40
+        "End": 38
       }
     ]
   },
   {
-    "Input": "El rango de números es desde mil hasta mil quinientos.",
+    "Input": "A faixa de números vai desde 20 ateh 100",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "desde mil hasta mil quinientos",
+        "Text": "desde 20 ateh 100",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[20,100)"
+        },
+        "Start": 23,
+        "End": 39
+      }
+    ]
+  },
+  {
+    "Input": "O preço varia de mil a mil e quinhentos.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "de mil a mil e quinhentos",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[1000,1500)"
@@ -290,41 +320,41 @@
     ]
   },
   {
-    "Input": "Esta cifra es más alta que 1000 y más baja que 1500",
+    "Input": "Esta cifra é mais alta que 1000 e mais baixa que 1500",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "más alta que 1000 y más baja que 1500",
+        "Text": "mais alta que 1000 e mais baixa que 1500",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(1000,1500)"
         },
-        "Start": 14,
-        "End": 50
+        "Start": 13,
+        "End": 52
       }
     ]
   },
   {
-    "Input": "Este número es más alto que un cuarto y más bajo que un medio.",
+    "Input": "Este número é mais alto que um quarto e mais baixo que um meio.",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "más alto que un cuarto y más bajo que un medio",
+        "Text": "mais alto que um quarto e mais baixo que um meio",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(0.25,0.5)"
         },
-        "Start": 15,
-        "End": 60
+        "Start": 14,
+        "End": 61
       }
     ]
   },
   {
-    "Input": "Esta cifra es mayor o igual a tres mil novecientos sesenta y cinco.",
+    "Input": "Esta cifra eh maior ou igual a tres mil novecentos e sessenta e cinco.",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "mayor o igual a tres mil novecientos sesenta y cinco",
+        "Text": "maior ou igual a tres mil novecentos e sessenta e cinco",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[3965,)"
@@ -335,132 +365,132 @@
     ]
   },
   {
-    "Input": "Este número es mayor que 4.565",
+    "Input": "Este número é maior que 4.565",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "mayor que 4.565",
+        "Text": "maior que 4.565",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(4565,)"
         },
-        "Start": 15,
-        "End": 29
-      }
-    ]
-  },
-  {
-    "Input": "Este número es mayor que 4565",
-    "NotSupportedByDesign": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "mayor que 4565",
-        "TypeName": "numberrange",
-        "Resolution": {
-          "value": "(4565,)"
-        },
-        "Start": 15,
+        "Start": 14,
         "End": 28
       }
     ]
   },
   {
-    "Input": "Tiene más de treinta años.",
+    "Input": "Este número é maior que 4565",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "más de treinta",
+        "Text": "maior que 4565",
         "TypeName": "numberrange",
         "Resolution": {
-          "value": "(30,)"
+          "value": "(4565,)"
         },
-        "Start": 6,
-        "End": 19
+        "Start": 14,
+        "End": 27
       }
     ]
   },
   {
-    "Input": "Es mayor de treinta años de edad.",
+    "Input": "Tens mais de trinta anos.",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "mayor de treinta",
+        "Text": "mais de trinta",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(30,)"
         },
-        "Start": 3,
+        "Start": 5,
         "End": 18
       }
     ]
   },
   {
-    "Input": "Tiene una edad de no menos de treinta años.",
+    "Input": "És maior de trinta anos de idade.",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "no menos de treinta",
+        "Text": "maior de trinta",
         "TypeName": "numberrange",
         "Resolution": {
-          "value": "[30,)"
+          "value": "(30,)"
         },
-        "Start": 18,
-        "End": 36
+        "Start": 3,
+        "End": 17
       }
     ]
   },
   {
-    "Input": "Hay alrededor de quinientos o más productos.",
+    "Input": "Sua idade é não menos de trinta anos.",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "quinientos o más",
+        "Text": "não menos de trinta",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[30,)"
+        },
+        "Start": 12,
+        "End": 30
+      }
+    ]
+  },
+  {
+    "Input": "Existem cerca de quinhentos ou mais produtos.",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "quinhentos ou mais",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[500,)"
         },
         "Start": 17,
-        "End": 32
+        "End": 34
       }
     ]
   },
   {
-    "Input": "Más de la mitad de la genta vino aquí.",
+    "Input": "Mais da metade das pessoas vieram aqui.",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "Más de la mitad",
+        "Text": "Mais da metade",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(0.5,)"
         },
         "Start": 0,
-        "End": 14
+        "End": 13
       }
     ]
   },
   {
-    "Input": "Busca los números primos que son menores o iguales a 100",
+    "Input": "Procure os números primos que são menores ou iguais a 100",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "menores o iguales a 100",
+        "Text": "menores ou iguais a 100",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,100]"
         },
-        "Start": 33,
-        "End": 55
+        "Start": 34,
+        "End": 56
       }
     ]
   },
   {
-    "Input": "Busca los números primos menores o iguales a 100",
+    "Input": "Busque os números primos menores ou iguais a 100",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "menores o iguales a 100",
+        "Text": "menores ou iguais a 100",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,100]"
@@ -471,22 +501,22 @@
     ]
   },
   {
-    "Input": "Hay aproximadamente quinientos o menos productos.",
+    "Input": "Haviam aproximadamente quinhentos ou menos productos.",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "quinientos o menos",
+        "Text": "quinhentos ou menos",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,500]"
         },
-        "Start": 20,
-        "End": 37
+        "Start": 23,
+        "End": 41
       }
     ]
   },
   {
-    "Input": "Busca los números primos <=100",
+    "Input": "Quais os números primos <=100",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -495,13 +525,13 @@
         "Resolution": {
           "value": "(,100]"
         },
-        "Start": 25,
-        "End": 29
+        "Start": 24,
+        "End": 28
       }
     ]
   },
   {
-    "Input": "Mide menos de 170.",
+    "Input": "Mede menos de 170.",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -516,7 +546,7 @@
     ]
   },
   {
-    "Input": "Tiene menos de 170 de estatura.",
+    "Input": "Temos menos de 170 de estatura.",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -531,7 +561,7 @@
     ]
   },
   {
-    "Input": "Menos de mil pandas todavían viven en la naturaleza.",
+    "Input": "Menos de mil pandas no total vivem na natureza.",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -546,16 +576,16 @@
     ]
   },
   {
-    "Input": "x es igual a ciento setenta.",
+    "Input": "x é igual a cento e setenta.",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "igual a ciento setenta",
+        "Text": "igual a cento e setenta",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[170,170]"
         },
-        "Start": 5,
+        "Start": 4,
         "End": 26
       }
     ]
@@ -585,31 +615,31 @@
     ]
   },
   {
-    "Input": "x es mayor que 10 y menor que 20. y tiene un valor de no más de 50 y no menos de 20.",
+    "Input": "x é maior que 10 e menor que 20. E tem valor de não mais de 50 e não menos de 20.",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "mayor que 10 y menor que 20",
+        "Text": "maior que 10 e menor que 20",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(10,20)"
         },
-        "Start": 5,
-        "End": 31
+        "Start": 4,
+        "End": 30
       },
       {
-        "Text": "no más de 50 y no menos de 20",
+        "Text": "não mais de 50 e não menos de 20",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[20,50]"
         },
-        "Start": 54,
-        "End": 82
+        "Start": 48,
+        "End": 79
       }
     ]
   },
   {
-    "Input": "Un cuarto es un número fraccionario.",
+    "Input": "Um quarto é um número fracionário.",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": []
   },
@@ -629,7 +659,7 @@
     ]
   },
   {
-    "Input": "Siendo igual a 20 los estudiantes de nuestro grupo y no es una cifra significativa.",
+    "Input": "O total é igual a 20 dos estudantes do nosso grupo e não é uma cifra significativa.",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -638,177 +668,177 @@
         "Resolution": {
           "value": "[20,20]"
         },
-        "Start": 7,
-        "End": 16
+        "Start": 10,
+        "End": 19
       }
     ]
   },
   {
-    "Input": "+1-222-2222/2222 es un número de teléfono.",
+    "Input": "+1-222-2222/2222 é um número de telefone.",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": []
   },
   {
-    "Input": "+1-222-2222-2222 es un número de teléfono.",
+    "Input": "+1-222-2222-2222 é um número de telefone.",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": []
   },
   {
-    "Input": "Su calificación es 200 o mayor",
+    "Input": "Sua qualificação é 200 ou maior",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "200 o mayor",
+        "Text": "200 ou maior",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[200,)"
         },
         "Start": 19,
-        "End": 29
+        "End": 30
       }
     ]
   },
   {
-    "Input": "Saca una calificación de 200 o mayor de 190",
+    "Input": "Saca uma qualificação de 200 ou maior de 190",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "mayor de 190",
+        "Text": "maior de 190",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(190,)"
         },
-        "Start": 31,
+        "Start": 32,
+        "End": 43
+      }
+    ]
+  },
+  {
+    "Input": "Saca uma qualificação de 200 ou maior",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "200 ou maior",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[200,)"
+        },
+        "Start": 25,
+        "End": 36
+      }
+    ]
+  },
+  {
+    "Input": "Alcance uma pontuação de 210 ou mais de 190",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "mais de 190",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(190,)"
+        },
+        "Start": 32,
         "End": 42
       }
     ]
   },
   {
-    "Input": "Saca una calificación de 200 o mayor",
+    "Input": "Alcançou uma nota de 200 ou mais",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "200 o mayor",
+        "Text": "200 ou mais",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[200,)"
         },
-        "Start": 25,
-        "End": 35
+        "Start": 21,
+        "End": 31
       }
     ]
   },
   {
-    "Input": "Saca una calificación de 200 o más de 190",
+    "Input": "Sua nota é menor ou igual a 30",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "más de 190",
+        "Text": "menor ou igual a 30",
         "TypeName": "numberrange",
         "Resolution": {
-          "value": "(190,)"
+          "value": "(,30]"
         },
-        "Start": 31,
-        "End": 40
+        "Start": 11,
+        "End": 29
       }
     ]
   },
   {
-    "Input": "Saca una calificación de 200 o más",
+    "Input": "Sua nota é igual ou menor que 30",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "200 o más",
+        "Text": "igual ou menor que 30",
         "TypeName": "numberrange",
         "Resolution": {
-          "value": "[200,)"
+          "value": "(,30]"
         },
-        "Start": 25,
+        "Start": 11,
+        "End": 31
+      }
+    ]
+  },
+  {
+    "Input": "Sua nota é igual a ou menor que 30",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "igual a ou menor que 30",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(,30]"
+        },
+        "Start": 11,
         "End": 33
       }
     ]
   },
   {
-    "Input": "Su nota es menor o igual a 30",
+    "Input": "Tire uma nota de pelo menos 30",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "menor o igual a 30",
-        "TypeName": "numberrange",
-        "Resolution": {
-          "value": "(,30]"
-        },
-        "Start": 11,
-        "End": 28
-      }
-    ]
-  },
-  {
-    "Input": "Su nota es igual o menor que 30",
-    "NotSupportedByDesign": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "igual o menor que 30",
-        "TypeName": "numberrange",
-        "Resolution": {
-          "value": "(,30]"
-        },
-        "Start": 11,
-        "End": 30
-      }
-    ]
-  },
-  {
-    "Input": "Su nota es igual a o menor que 30",
-    "NotSupportedByDesign": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "igual a o menor que 30",
-        "TypeName": "numberrange",
-        "Resolution": {
-          "value": "(,30]"
-        },
-        "Start": 11,
-        "End": 32
-      }
-    ]
-  },
-  {
-    "Input": "Saca una nota de por lo menos 30",
-    "NotSupportedByDesign": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "por lo menos 30",
+        "Text": "pelo menos 30",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[30,)"
         },
         "Start": 17,
-        "End": 31
+        "End": 29
       }
     ]
   },
   {
-    "Input": "Saca una nota de 30 por lo menos",
+    "Input": "Tire uma nota de 30 pelo menos",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "30 por lo menos",
+        "Text": "30 pelo menos",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[30,)"
         },
         "Start": 17,
-        "End": 31
+        "End": 29
       }
     ]
   },
   {
-    "Input": "Saca una nota de 30 al menos",
+    "Input": "Tire uma nota de 30 ao menos",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "30 al menos",
+        "Text": "30 ao menos",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[30,)"
@@ -819,11 +849,11 @@
     ]
   },
   {
-    "Input": "Saca una nota de al menos 30",
+    "Input": "Tiro uma nota de ao menos 30",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "al menos 30",
+        "Text": "ao menos 30",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[30,)"
@@ -834,52 +864,52 @@
     ]
   },
   {
-    "Input": "Su nota es igual a o mayor que 30",
+    "Input": "Sua nota é igual a ou maior que 30",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "igual a o mayor que 30",
+        "Text": "igual a ou maior que 30",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[30,)"
         },
         "Start": 11,
-        "End": 32
+        "End": 33
       }
     ]
   },
   {
-    "Input": "Su nota es igual o mayor que 30",
+    "Input": "Sua nota é igual ou maior que 30",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "igual o mayor que 30",
+        "Text": "igual ou maior que 30",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[30,)"
         },
         "Start": 11,
-        "End": 30
+        "End": 31
       }
     ]
   },
   {
-    "Input": "Su nota es igual a 5000 o menor",
+    "Input": "Sua nota é igual a 5000 ou menor",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "igual a 5000 o menor",
+        "Text": "igual a 5000 ou menor",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,5000]"
         },
         "Start": 11,
-        "End": 30
+        "End": 31
       }
     ]
   },
   {
-    "Input": "Saca una nota igual a 5000 o menos de 6000",
+    "Input": "Tire uma nota igual a 5000 ou menos de 6000",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -897,28 +927,28 @@
         "Resolution": {
           "value": "(,6000)"
         },
-        "Start": 29,
-        "End": 41
+        "Start": 30,
+        "End": 42
       }
     ]
   },
   {
-    "Input": "Saca una nota igual a 5000 o mayor",
+    "Input": "Tire uma nota igual a 5000 ou maior",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "igual a 5000 o mayor",
+        "Text": "igual a 5000 ou maior",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[5000,)"
         },
         "Start": 14,
-        "End": 33
+        "End": 34
       }
     ]
   },
   {
-    "Input": "Su nota es igual a 5000 o mayor que 4500",
+    "Input": "Sua nota é igual a 5000 ou maior que 4500",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -931,73 +961,73 @@
         "End": 22
       },
       {
-        "Text": "mayor que 4500",
+        "Text": "maior que 4500",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(4500,)"
         },
-        "Start": 26,
-        "End": 39
+        "Start": 27,
+        "End": 40
       }
     ]
   },
   {
-    "Input": "Saca una nota de menos de 5000 o igual",
+    "Input": "Saca uma nota de menos de 5000 ou igual",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "menos de 5000 o igual",
+        "Text": "menos de 5000 ou igual",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,5000]"
         },
         "Start": 17,
-        "End": 37
-      }
-    ]
-  },
-  {
-    "Input": "Tiene una nota mayor que 5000 o igual",
-    "NotSupportedByDesign": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "mayor que 5000 o igual",
-        "TypeName": "numberrange",
-        "Resolution": {
-          "value": "[5000,)"
-        },
-        "Start": 15,
-        "End": 36
-      }
-    ]
-  },
-  {
-    "Input": "Tiene una nota mayor que 5000 o igual a eso",
-    "NotSupportedByDesign": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "mayor que 5000 o igual a",
-        "TypeName": "numberrange",
-        "Resolution": {
-          "value": "[5000,)"
-        },
-        "Start": 15,
         "End": 38
       }
     ]
   },
   {
-    "Input": "Tiene una nota mayor que 5000 o igual a 6000",
+    "Input": "Temos uma nota maior que 5000 ou igual",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "mayor que 5000",
+        "Text": "maior que 5000 ou igual",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[5000,)"
+        },
+        "Start": 15,
+        "End": 37
+      }
+    ]
+  },
+  {
+    "Input": "Temos uma nota maior que 5000 ou igual a isso",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "maior que 5000 ou igual a",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[5000,)"
+        },
+        "Start": 15,
+        "End": 39
+      }
+    ]
+  },
+  {
+    "Input": "Tirei nota maior que 5000 ou igual a 6000",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "maior que 5000",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(5000,)"
         },
-        "Start": 15,
-        "End": 28
+        "Start": 11,
+        "End": 24
       },
       {
         "Text": "igual a 6000",
@@ -1005,13 +1035,13 @@
         "Resolution": {
           "value": "[6000,6000]"
         },
-        "Start": 32,
-        "End": 43
+        "Start": 29,
+        "End": 40
       }
     ]
   },
   {
-    "Input": "Su nota es igual a 5000 o menor que 5000",
+    "Input": "Sua nota é igual a 5000 ou menor que 5000",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -1029,13 +1059,13 @@
         "Resolution": {
           "value": "(,5000)"
         },
-        "Start": 26,
-        "End": 39
+        "Start": 27,
+        "End": 40
       }
     ]
   },
   {
-    "Input": "El rango de números es 1000-5000",
+    "Input": "A faixa de números é 1000-5000",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -1044,13 +1074,13 @@
         "Resolution": {
           "value": "[1000,5000)"
         },
-        "Start": 23,
-        "End": 31
+        "Start": 21,
+        "End": 29
       }
     ]
   },
   {
-    "Input": "El rango de números es 1000 - 5000",
+    "Input": "O intervalo é 1000 - 5000",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -1059,59 +1089,59 @@
         "Resolution": {
           "value": "[1000,5000)"
         },
-        "Start": 23,
-        "End": 33
-      }
-    ]
-  },
-  {
-    "Input": "Qué tal dos quintos o más",
-    "NotSupportedByDesign": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "dos quintos o más",
-        "TypeName": "numberrange",
-        "Resolution": {
-          "value": "[0.4,)"
-        },
-        "Start": 8,
+        "Start": 14,
         "End": 24
       }
     ]
   },
   {
-    "Input": "Qué tal más de dos quintos",
+    "Input": "Que tal dois quintos ou mais",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "dois quintos ou mais",
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "[0.4,)"
+        },
+        "Start": 8,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "Que tal mais de dois quintos",
     "Comment": "As this can be ambiguous, by design the interpretation is left-to-right and the range is extracted first.",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "más de dos quintos",
+        "Text": "mais de dois quintos",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(0.4,)"
         },
         "Start": 8,
-        "End": 25
+        "End": 27
       }
     ]
   },
   {
-    "Input": "Puedes mostrarme registros de más de 3000 en 2009",
+    "Input": "Podes me mostrar os registros de mais de 3000 em 2009",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "más de 3000",
+        "Text": "mais de 3000",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(3000,)"
         },
-        "Start": 30,
-        "End": 40
+        "Start": 33,
+        "End": 44
       }
     ]
   },
   {
-    "Input": "Puedes mostrarme registros de menos de 3000 en 2009",
+    "Input": "Podes me mostrar os registros de menos de 3000 em 2009",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -1120,13 +1150,13 @@
         "Resolution": {
           "value": "(,3000)"
         },
-        "Start": 30,
-        "End": 42
+        "Start": 33,
+        "End": 45
       }
     ]
   },
   {
-    "Input": "Es aún así cuando >30",
+    "Input": "Ainda é assim quando >30",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -1135,13 +1165,13 @@
         "Resolution": {
           "value": "(30,)"
         },
-        "Start": 18,
-        "End": 20
+        "Start": 21,
+        "End": 23
       }
     ]
   },
   {
-    "Input": "Es aún así cuando >=30",
+    "Input": "Ainda é assim quando >=30",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -1150,13 +1180,13 @@
         "Resolution": {
           "value": "[30,)"
         },
-        "Start": 18,
-        "End": 21
+        "Start": 21,
+        "End": 24
       }
     ]
   },
   {
-    "Input": "Es aún así cuando <-30",
+    "Input": "Ainda é assim quando <-30",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -1165,13 +1195,13 @@
         "Resolution": {
           "value": "(,-30)"
         },
-        "Start": 18,
-        "End": 21
+        "Start": 21,
+        "End": 24
       }
     ]
   },
   {
-    "Input": "Es aún así cuando <=-30",
+    "Input": "Ainda é assim quando <=-30",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -1180,8 +1210,8 @@
         "Resolution": {
           "value": "(,-30]"
         },
-        "Start": 18,
-        "End": 22
+        "Start": 21,
+        "End": 25
       }
     ]
   },
@@ -1201,13 +1231,13 @@
     "Results": []
   },
   {
-    "Input": "La cifra equivale a 20000 en 1998",
+    "Input": "A cifra equivale a 20000 em 1998",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "equivale a 20000",
-        "Start": 9,
-        "End": 24,
+        "Start": 8,
+        "End": 23,
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[20000,20000]"
@@ -1216,13 +1246,13 @@
     ]
   },
   {
-    "Input": "La cifra es desde 200 hasta 3000000 en 2008",
+    "Input": "A cifra é desde 200 até 3000000 em 2008",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "desde 200 hasta 3000000",
-        "Start": 12,
-        "End": 34,
+        "Text": "desde 200 até 3000000",
+        "Start": 10,
+        "End": 30,
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[200,3000000)"
@@ -1231,13 +1261,13 @@
     ]
   },
   {
-    "Input": "Año en que las ventas de bmw son superiores a 300000?",
+    "Input": "O ano em que as vendas de bmw são superiores a 300000?",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "superiores a 300000",
-        "Start": 33,
-        "End": 51,
+        "Start": 34,
+        "End": 52,
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(300000,)"
@@ -1246,12 +1276,28 @@
     ]
   },
   {
-    "Input": "¿Qué categorías tuvieron ventas de más de 700000?",
+    "Input": "Que categorías tiveram vendas de mais de 700000?",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "más de 700000",
-        "Start": 35,
+        "Text": "mais de 700000",
+        "Start": 33,
+        "End": 46,
+        "TypeName": "numberrange",
+        "Resolution": {
+          "value": "(700000,)"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Que categorías tiveram vendas de mais de 700.000?",
+    "NotSupportedByDesign": "javascript, python, java",
+    "Comments": "Spanish doesn't traditionally use comma as thousand-separator",
+    "Results": [
+      {
+        "Text": "mais de 700.000",
+        "Start": 33,
         "End": 47,
         "TypeName": "numberrange",
         "Resolution": {
@@ -1261,29 +1307,13 @@
     ]
   },
   {
-    "Input": "¿Qué categorías tuvieron ventas de más de 700.000?",
-    "NotSupportedByDesign": "javascript, python, java",
-    "Comments": "Spanish doesn't traditionally use comma as thousand-separator",
-    "Results": [
-      {
-        "Text": "más de 700.000",
-        "Start": 35,
-        "End": 48,
-        "TypeName": "numberrange",
-        "Resolution": {
-          "value": "(700000,)"
-        }
-      }
-    ]
-  },
-  {
-    "Input": "Encuentre 2 años fiscales con los menores recuentos de sesiones en enero cuando las recuperaciones son menores a 10",
+    "Input": "Encontre 2 anos fiscais com os registros em janeiro em que as recuperações sejam inferiores a 10",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "menores a 10",
-        "Start": 103,
-        "End": 114,
+        "Text": "inferiores a 10",
+        "Start": 81,
+        "End": 95,
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,10)"
@@ -1292,7 +1322,7 @@
     ]
   },
   {
-    "Input": "Marcas cuyos teléfonos celulares más ligeros pesan menos de 174.",
+    "Input": "Marcas cujos telefones celulares mais lieves pesam menos de 174 gramas.",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -1307,14 +1337,14 @@
     ]
   },
   {
-    "Input": "Poner en orden descendente los recuentos de sesiones más grandes no menos de 194 y menos de 12 en cada mes y año fiscal.",
+    "Input": "Ponha em ordem descendente os registros de sessoes com nao menos de 194 e menos de 12 em cada mes e ano fiscal.",
     "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "no menos de 194",
-        "Start": 65,
-        "End": 79,
+        "Text": "não menos de 194",
+        "Start": 55,
+        "End": 70,
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[194,)"
@@ -1322,8 +1352,8 @@
       },
       {
         "Text": "menos de 12",
-        "Start": 83,
-        "End": 93,
+        "Start": 74,
+        "End": 84,
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,12)"
@@ -1332,23 +1362,23 @@
     ]
   },
   {
-    "Input": "x es no menos de 194 y menos de 12.",
+    "Input": "x é não menos de 195 e menos de 13.",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "no menos de 194",
+        "Text": "não menos de 195",
         "TypeName": "numberrange",
         "Resolution": {
-          "value": "[194,)"
+          "value": "[195,)"
         },
-        "Start": 5,
+        "Start": 4,
         "End": 19
       },
       {
-        "Text": "menos de 12",
+        "Text": "menos de 13",
         "TypeName": "numberrange",
         "Resolution": {
-          "value": "(,12)"
+          "value": "(,13)"
         },
         "Start": 23,
         "End": 33
@@ -1356,17 +1386,17 @@
     ]
   },
   {
-    "Input": "x es no más de 12 y más de 194.",
+    "Input": "x é não mais que 12 e mais que 194.",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
-        "Text": "no más de 12",
+        "Text": "não mais que 12",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,12]"
         },
-        "Start": 5,
-        "End": 16
+        "Start": 4,
+        "End": 18
       },
       {
         "Text": "más de 194",
@@ -1374,65 +1404,65 @@
         "Resolution": {
           "value": "(194,)"
         },
-        "Start": 20,
-        "End": 29
+        "Start": 22,
+        "End": 33
       }
     ]
   },
   {
-    "Input": "encuentre ventas que no sean mayores a 30 o menores a 20",
+    "Input": "encontre as vendas que não sejam maiores que 30 ou menores de 20",
     "NotSupported": "java, javascript, python",
     "Results": [
       {
-        "Text": "mayores a 30",
+        "Text": "maiores que 30",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(30,)"
         },
-        "Start": 29,
-        "End": 40
+        "Start": 33,
+        "End": 45
       },
       {
-        "Text": "menores a 20",
+        "Text": "menores de 20",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,20)"
         },
-        "Start": 44,
-        "End": 55
+        "Start": 51,
+        "End": 63
       }
     ]
   },
   {
-    "Input": "busque registros que las ventas sean 12, 15 o mayores que 20",
+    "Input": "busque registros em que as vendas sejam 12, 15 ou maiores que 20",
     "NotSupported": "java, javascript, python",
     "Results": [
       {
-        "Text": "mayores que 20",
+        "Text": "maiores que 20",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(20,)"
         },
-        "Start": 46,
-        "End": 59
+        "Start": 50,
+        "End": 63
       }
     ]
   },
   {
-    "Input": "encuentre ventas menores o iguales a 30 o mayores a 50 y no de 60",
+    "Input": "encontre vendas menores ou iguais a 30 ou maiores que 50 e não de 60",
     "NotSupported": "java, javascript, python",
     "Results": [
       {
-        "Text": "menores o iguales a 30",
+        "Text": "menores ou iguais a 30",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(,30]"
         },
-        "Start": 17,
-        "End": 38
+        "Start": 16,
+        "End": 27
       },
       {
-        "Text": "mayores a 50",
+        "Text": "maiores que 50",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(50,)"
@@ -1443,17 +1473,17 @@
     ]
   },
   {
-    "Input": "encuentre ventas superiores a 30 e inferiores o iguales a 40 o inferiores a 10",
+    "Input": "encontre vendas superiores a 30 e inferiores ou iguais a 40 ou inferiores a 10",
     "NotSupported": "java, javascript, python",
     "Results": [
       {
-        "Text": "superiores a 30 e inferiores o iguales a 40",
+        "Text": "superiores a 30 e inferiores ou iguais a 40",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(30,40]"
         },
-        "Start": 17,
-        "End": 59
+        "Start": 16,
+        "End": 58
       },
       {
         "Text": "inferiores a 10",
@@ -1467,7 +1497,7 @@
     ]
   },
   {
-    "Input": "ventas de 0 a 2 y mayores de 4",
+    "Input": "vendas de 0 a 2 e maiores que 4",
     "NotSupported": "java, javascript, python",
     "Results": [
       {
@@ -1480,22 +1510,22 @@
         "End": 14
       },
       {
-        "Text": "mayores de 4",
+        "Text": "maiores que 4",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(4,)"
         },
         "Start": 18,
-        "End": 29
+        "End": 30
       }
     ]
   },
   {
-    "Input": "ventas mayores que 3 y menores que 1",
+    "Input": "vendas maiores que 3 e menores que 1",
     "NotSupported": "java, javascript, python",
     "Results": [
       {
-        "Text": "mayores que 3",
+        "Text": "maiores que 3",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(3,)"
@@ -1515,7 +1545,7 @@
     ]
   },
   {
-    "Input": "Encuentra las ventas clasificadas entre quinta y vigésima.",
+    "Input": "Encontre as vendas clasificadas entre quinta y vigésima.",
     "NotSupported": "java, javascript, python",
     "Results": [
       {
@@ -1524,38 +1554,38 @@
         "Resolution": {
           "value": "[5,20)"
         },
-        "Start": 34,
-        "End": 56
+        "Start": 32,
+        "End": 54
       }
     ]
   },
   {
-    "Input": "Encuentra las ventas clasificadas entre undécima y sexagésima.",
+    "Input": "Encontre as vendas clasificadas entre décima primeira e sexagésima.",
     "NotSupported": "java, javascript, python",
     "Results": [
       {
-        "Text": "entre undécima y sexagésima",
+        "Text": "entre décima primeira e sexagésima",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[11,60)"
         },
-        "Start": 34,
-        "End": 60
+        "Start": 32,
+        "End": 35
       }
     ]
   },
   {
-    "Input": "Encuentra las ventas clasificadas entre duodécima y cuadringentésima.",
+    "Input": "Encontre as vendas clasificadas entre décima e quadrigentésima.",
     "NotSupported": "java, javascript, python",
     "Results": [
       {
-        "Text": "entre duodécima y cuadringentésima",
+        "Text": "entre décima e quadrigésima",
         "TypeName": "numberrange",
         "Resolution": {
-          "value": "[12,400)"
+          "value": "[10,400)"
         },
-        "Start": 34,
-        "End": 67
+        "Start": 32,
+        "End": 61
       }
     ]
   }
