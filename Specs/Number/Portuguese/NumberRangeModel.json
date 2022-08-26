@@ -14,8 +14,8 @@
         "Resolution": {
           "value": "(20,35]"
         },
-        "Start": 15,
-        "End": 64
+        "Start": 14,
+        "End": 62
       }
     ]
   },
@@ -29,8 +29,8 @@
         "Resolution": {
           "value": "(20,35]"
         },
-        "Start": 15,
-        "End": 66
+        "Start": 14,
+        "End": 64
       }
     ]
   },
@@ -96,6 +96,7 @@
   },
   {
     "Input": "Saca uma nota entre menos dez e quinze.",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -164,8 +165,8 @@
         "Resolution": {
           "value": "[100,300]"
         },
-        "Start": 15,
-        "End": 63
+        "Start": 14,
+        "End": 61
       }
     ]
   },
@@ -180,7 +181,7 @@
           "value": "[100,300]"
         },
         "Start": 15,
-        "End": 67
+        "End": 66
       }
     ]
   },
@@ -314,8 +315,8 @@
         "Resolution": {
           "value": "[1000,1500)"
         },
-        "Start": 23,
-        "End": 52
+        "Start": 14,
+        "End": 38
       }
     ]
   },
@@ -360,7 +361,7 @@
           "value": "[3965,)"
         },
         "Start": 14,
-        "End": 65
+        "End": 68
       }
     ]
   },
@@ -1066,6 +1067,7 @@
   },
   {
     "Input": "A faixa de números é 1000-5000",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -1081,6 +1083,7 @@
   },
   {
     "Input": "O intervalo é 1000 - 5000",
+    "NotSupported": "dotnet",
     "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
@@ -1399,7 +1402,7 @@
         "End": 18
       },
       {
-        "Text": "más de 194",
+        "Text": "mais que 194",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "(194,)"
@@ -1420,7 +1423,7 @@
           "value": "(30,)"
         },
         "Start": 33,
-        "End": 45
+        "End": 46
       },
       {
         "Text": "menores de 20",
@@ -1459,7 +1462,7 @@
           "value": "(,30]"
         },
         "Start": 16,
-        "End": 27
+        "End": 37
       },
       {
         "Text": "maiores que 50",
@@ -1468,7 +1471,7 @@
           "value": "(50,)"
         },
         "Start": 42,
-        "End": 53
+        "End": 55
       }
     ]
   },
@@ -1545,11 +1548,11 @@
     ]
   },
   {
-    "Input": "Encontre as vendas clasificadas entre quinta y vigésima.",
-    "NotSupported": "java, javascript, python",
+    "Input": "Encontre as vendas clasificadas entre quinta e vigésima.",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
-        "Text": "entre quinta y vigésima",
+        "Text": "entre quinta e vigésima",
         "TypeName": "numberrange",
         "Resolution": {
           "value": "[5,20)"
@@ -1561,7 +1564,8 @@
   },
   {
     "Input": "Encontre as vendas clasificadas entre décima primeira e sexagésima.",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "entre décima primeira e sexagésima",
@@ -1576,7 +1580,8 @@
   },
   {
     "Input": "Encontre as vendas clasificadas entre décima e quadrigentésima.",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "dotnet",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "entre décima e quadrigésima",

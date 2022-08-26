@@ -138,7 +138,7 @@ FractionPrepositionRegex: !nestedRegex
   references: [ AllIntRegex, BaseNumbers.CommonCurrencySymbol ]
 #Double Regex
 AllFloatRegex: !nestedRegex
-  def: '{AllIntRegex}(\s+(vírgula|virgula|e|ponto)){AllPointRegex}'
+  def: '(?<!(entre\s+(menos\+)?)){AllIntRegex}(\s+(v[íi]rgula|e|ponto)){AllPointRegex}'
   references: [ AllIntRegex, AllPointRegex ]
 DoubleWithMultiplierRegex: !nestedRegex
   def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\,)))\d+,\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)
@@ -167,21 +167,21 @@ NumberWithSuffixPercentage: !nestedRegex
 TillRegex: !simpleRegex
   def: (\b[aà]\b|at[eé]h?|--|-|—|——|~|–)
 MoreRegex: !simpleRegex
-  def: (mais\s+(alt[oa]s?|grandes?)\s+que|(mais|maior(es)?|superior(es)?|(por\s+|a)cima)\b((\s+(que|d[eao]|ao?))|(?=\s+ou\b))|(?<!<|=)>)
+  def: (mais\s+(alt[oa]s?|grandes?)\s+que|(mais|maior(es)?|superior(es)?|acima)\b((\s+(que|de|a))|(?=\s+ou\b))|(?<!<|=)>)
 LessRegex: !simpleRegex
-  def: ((meno(s|r(es)?)|inferior(es)?|(por\s+(de)?|a)baixo)((\s+(que|d[eao]|ao?)|(?=\s+ou\b)))|mais\s+baix[oa]\s+que|(?<!>|=)<)
+  def: (mais\s+baix[oa]\s+que|(meno(s|r(es)?)|inferior(es)?|abaixo)(\s+(que|de|a)|(?=\s+ou\b))|(?<!>|=)<)
 EqualRegex: !simpleRegex
   def: ((igua(l|is)|equivalente(s)?|equivale(ndo)?)(\s+(ao?|que|d[eao]))?|(?<!<|>)=)
 MoreOrEqualPrefix: !nestedRegex
-  def: ((n[ãa]o\s+{LessRegex})|((por|pelo|ao)\s+menos|(como(\s+o)?|no)\s+m[íi]nimo))
+  def: ((n[ãa]o\s+{LessRegex})|((pelo|ao)\s+menos|(como(\s+o)?|no)\s+m[íi]nimo))
   references: [ LessRegex ]
 MoreOrEqual: !nestedRegex
   def: (({MoreRegex}\s+(ou)?\s+{EqualRegex})|({EqualRegex}\s+(ou|e)\s+{MoreRegex})|{MoreOrEqualPrefix}(\s+(ou)\s+{EqualRegex})?|({EqualRegex}\s+(ou)\s+)?{MoreOrEqualPrefix}|>\s*=)
   references: [ MoreRegex, EqualRegex, LessRegex, MoreOrEqualPrefix ]
 MoreOrEqualSuffix: !simpleRegex
-  def: ((\b(e|ou)\b\s+(mais|maior(es)?|superior(es)?)((?!\s+(alt[oa]|baix[oa]|que|d[eao]|ao?))|(\s+(que|d[eao]|ao?)(?!(\s*\d+)))))|(como(\s+o)?|no)\s+m[íi]nimo|(por|pelo|ao)\s+menos)\b
+  def: ((\b(e|ou)\b\s+(mais|maior(es)?|superior(es)?)((?!\s+(alt[oa]|baix[oa]|que|d[eao]|ao?))|(\s+(que|d[eao]|ao?)(?!(\s*\d+)))))|(como(\s+o)?|no)\s+m[íi]nimo|(pelo|ao)\s+menos)\b
 LessOrEqualPrefix: !nestedRegex
-  def: ((n[ãa]o\s+{MoreRegex})|((como(\s+o)?|no)\s+(m[aá]ximo|mucho)))
+  def: ((n[ãa]o\s+{MoreRegex})|((como(\s+o)?|no)\s+m[aá]ximo))
   references: [ MoreRegex ]
 LessOrEqual: !nestedRegex
   def: (({LessRegex}\s+(ou)?\s+{EqualRegex})|({EqualRegex}\s+(ou)?\s+{LessRegex})|{LessOrEqualPrefix}(\s+(ou)?\s+{EqualRegex})?|({EqualRegex}\s+(ou)?\s+)?{LessOrEqualPrefix}|<\s*=)
@@ -428,6 +428,10 @@ OrdinalNumberMap: !dictionary
     quadringentesimo: 400
     quadringentésima: 400
     quadringentesima: 400
+    quadrigentésimo: 400
+    quadrigentesimo: 400
+    quadrigentésima: 400
+    quadrigentesima: 400
     quingentésimo: 500
     quingentesimo: 500
     quingentésima: 500

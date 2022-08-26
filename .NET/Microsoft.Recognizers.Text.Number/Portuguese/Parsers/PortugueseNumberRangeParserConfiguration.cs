@@ -19,8 +19,8 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
 
             var numConfig = new BaseNumberOptionsConfiguration(config.Culture, config.Options);
 
-            NumberExtractor = Spanish.NumberExtractor.GetInstance(numConfig);
-            OrdinalExtractor = Spanish.OrdinalExtractor.GetInstance(numConfig);
+            NumberExtractor = Portuguese.NumberExtractor.GetInstance(numConfig);
+            OrdinalExtractor = Portuguese.OrdinalExtractor.GetInstance(numConfig);
 
             NumberParser = new BaseNumberParser(new PortugueseNumberParserConfiguration(config));
 

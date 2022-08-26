@@ -73,7 +73,7 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public static readonly string FractionNounRegex = $@"(?<=\b)({AllIntRegex}\s+((e|com)\s+)?)?(({AllIntRegex})(\s+((e|com)\s)?)((({AllOrdinalNumberRegex})s?|({SpecialFractionInteger})|({SuffixRoundOrdinalRegex})s?)|mei[oa]?|ter[çc]o?)|(meio|um\s+quarto\s+de)\s+{RoundNumberIntegerRegex})(?=\b)";
       public static readonly string FractionNounWithArticleRegex = $@"(?<=\b)(({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\s+(e\s+)?)?((um|um[as])(\s+)(({AllOrdinalNumberRegex})|({SuffixRoundOrdinalRegex})|(e\s+)?mei[oa]?)|mei[oa]?)(?=\b)";
       public static readonly string FractionPrepositionRegex = $@"(?<!{BaseNumbers.CommonCurrencySymbol}\s*)(?<=\b)(?<numerator>({AllIntRegex})|((?<!\.)\d+))\s+sobre\s+(?<denominator>({AllIntRegex})|((\d+)(?!\.)))(?=\b)";
-      public static readonly string AllFloatRegex = $@"{AllIntRegex}(\s+(vírgula|virgula|e|ponto)){AllPointRegex}";
+      public static readonly string AllFloatRegex = $@"(?<!(entre\s+(menos\+)?)){AllIntRegex}(\s+(v[íi]rgula|e|ponto)){AllPointRegex}";
       public static readonly string DoubleWithMultiplierRegex = $@"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+\,)))\d+,\d+\s*{BaseNumbers.NumberMultiplierRegex}(?=\b)";
       public const string DoubleExponentialNotationRegex = @"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))(\d+(,\d+)?)e([+-]*[1-9]\d*)(?=\b)";
       public const string DoubleCaretExponentialNotationRegex = @"(((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))(\d+(,\d+)?)\^([+-]*[1-9]\d*)(?=\b)";
@@ -83,13 +83,13 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public static readonly string DoubleAllFloatRegex = $@"((?<=\b){AllFloatRegex}(?=\b))";
       public static readonly string NumberWithSuffixPercentage = $@"(?<!%)({BaseNumbers.NumberReplaceToken})(\s*)(%(?!{BaseNumbers.NumberReplaceToken})|(por cento|pontos percentuais)\b)";
       public const string TillRegex = @"(\b[aà]\b|at[eé]h?|--|-|—|——|~|–)";
-      public const string MoreRegex = @"(mais\s+(alt[oa]s?|grandes?)\s+que|(mais|maior(es)?|superior(es)?|(por\s+|a)cima)\b((\s+(que|d[eao]|a))|(?=\s+ou\b))|(?<!<|=)>)";
-      public const string LessRegex = @"((meno(s|r(es)?)|inferior(es)?|(por\s+(de)?|a)baixo)((\s+(que|d[eao]|ao?)|(?=\s+ou\b)))|mais\s+baix[oa]\s+que|(?<!>|=)<)";
+      public const string MoreRegex = @"(mais\s+(alt[oa]s?|grandes?)\s+que|(mais|maior(es)?|superior(es)?|acima)\b((\s+(que|de|a))|(?=\s+ou\b))|(?<!<|=)>)";
+      public const string LessRegex = @"(mais\s+baix[oa]\s+que|(meno(s|r(es)?)|inferior(es)?|abaixo)(\s+(que|de|a)|(?=\s+ou\b))|(?<!>|=)<)";
       public const string EqualRegex = @"((igua(l|is)|equivalente(s)?|equivale(ndo)?)(\s+(ao?|que|d[eao]))?|(?<!<|>)=)";
-      public static readonly string MoreOrEqualPrefix = $@"((n[ãa]o\s+{LessRegex})|((por|pelo|ao)\s+menos|(como(\s+o)?|no)\s+m[íi]nimo))";
+      public static readonly string MoreOrEqualPrefix = $@"((n[ãa]o\s+{LessRegex})|((pelo|ao)\s+menos|(como(\s+o)?|no)\s+m[íi]nimo))";
       public static readonly string MoreOrEqual = $@"(({MoreRegex}\s+(ou)?\s+{EqualRegex})|({EqualRegex}\s+(ou|e)\s+{MoreRegex})|{MoreOrEqualPrefix}(\s+(ou)\s+{EqualRegex})?|({EqualRegex}\s+(ou)\s+)?{MoreOrEqualPrefix}|>\s*=)";
-      public const string MoreOrEqualSuffix = @"((\b(e|ou)\b\s+(mais|maior(es)?|superior(es)?)((?!\s+(alt[oa]|baix[oa]|que|d[eao]|ao?))|(\s+(que|d[eao]|ao?)(?!(\s*\d+)))))|(como(\s+o)?|no)\s+m[íi]nimo|(por|pelo|ao)\s+menos)\b";
-      public static readonly string LessOrEqualPrefix = $@"((n[ãa]o\s+{MoreRegex})|((como(\s+o)?|no)\s+(m[aá]ximo|mucho)))";
+      public const string MoreOrEqualSuffix = @"((\b(e|ou)\b\s+(mais|maior(es)?|superior(es)?)((?!\s+(alt[oa]|baix[oa]|que|d[eao]|ao?))|(\s+(que|d[eao]|ao?)(?!(\s*\d+)))))|(como(\s+o)?|no)\s+m[íi]nimo|(pelo|ao)\s+menos)\b";
+      public static readonly string LessOrEqualPrefix = $@"((n[ãa]o\s+{MoreRegex})|((como(\s+o)?|no)\s+m[aá]ximo))";
       public static readonly string LessOrEqual = $@"(({LessRegex}\s+(ou)?\s+{EqualRegex})|({EqualRegex}\s+(ou)?\s+{LessRegex})|{LessOrEqualPrefix}(\s+(ou)?\s+{EqualRegex})?|({EqualRegex}\s+(ou)?\s+)?{LessOrEqualPrefix}|<\s*=)";
       public const string LessOrEqualSuffix = @"((\b(e|ou)\b\s+(meno(s|r(es)?|inferior(es)?))((?!\s+(alt[oa]|baix[oa]|que|d[eao]|ao?))|(\s+(que|d[eao]|ao?)(?!(\s*\d+)))))|(como(\s+o)?|no)\s+m[áa]ximo)\b";
       public static readonly string NumberSplitMark = $@"(?![,.](?!\d+))(?!\s*\b(((e)\s+)?({LessRegex}|{MoreRegex}|{EqualRegex}|n[ãa]o|d[eao])|mas|[ao])\b)";
@@ -295,6 +295,10 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
             { @"quadringentesimo", 400 },
             { @"quadringentésima", 400 },
             { @"quadringentesima", 400 },
+            { @"quadrigentésimo", 400 },
+            { @"quadrigentesimo", 400 },
+            { @"quadrigentésima", 400 },
+            { @"quadrigentesima", 400 },
             { @"quingentésimo", 500 },
             { @"quingentesimo", 500 },
             { @"quingentésima", 500 },
