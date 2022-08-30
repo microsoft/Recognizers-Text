@@ -2178,7 +2178,7 @@
   },
   {
     "Input": "Oggi sono state rotte mezzo milione di uova",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "mezzo milione",
@@ -2195,7 +2195,7 @@
   },
   {
     "Input": "Ci sono un milione e mezzo di possibilità",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "un milione e mezzo",
@@ -2212,7 +2212,7 @@
   },
   {
     "Input": "La popolazione è di 3 milioni e mezzo",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "3 milioni e mezzo",
@@ -2229,7 +2229,7 @@
   },
   {
     "Input": "Il valore attuale è un miliardo e mezzo milione",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "un miliardo e mezzo milione",
@@ -2246,7 +2246,7 @@
   },
   {
     "Input": "Il numero è cinque miliardi e tre quarti",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "cinque miliardi e tre quarti",
@@ -2261,7 +2261,7 @@
   },
   {
     "Input": "Ho contato sei milioni e due terzi",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "sei milioni e due terzi",

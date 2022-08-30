@@ -3061,7 +3061,7 @@
   },
   {
     "Input": "el valor actual es un billón y medio millon",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "un billón y medio millon",

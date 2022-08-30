@@ -3240,7 +3240,7 @@
   },
   {
     "Input": "There are one million and a half possibilities",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "one million and a half",
@@ -3256,7 +3256,7 @@
   },
   {
     "Input": "The population is 3 million and a half",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "3 million and a half",
@@ -3272,7 +3272,7 @@
   },
   {
     "Input": "They have two million and one half",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "two million and one half",
@@ -3288,7 +3288,7 @@
   },
   {
     "Input": "Half million eggs have been broken today",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "half million",
@@ -3320,7 +3320,7 @@
   },
   {
     "Input": "Current value is one billion and a half million",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "one billion and a half million",
@@ -3336,7 +3336,7 @@
   },
   {
     "Input": "Last value was one billion and a quarter million",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "one billion and a quarter million",

@@ -150,6 +150,16 @@ class PortugueseNumberParserConfiguration(NumberParserConfiguration):
                         break
             result.append(token)
 
+        # The following piece of code is needed to compute the fraction pattern number+'e meio'
+        # e.g. 'cinco e meio' ('five and a half') where the numerator is omitted in Portuguese.
+        # It works by inserting the numerator 'um' ('a') in the list result
+        # so that the pattern is correctly processed.
+        if len(result) > 2:
+            if result[len(result) - 1] == PortugueseNumeric.OneHalfTokens[1] and \
+                    result[len(result) - 2] == PortugueseNumeric.WordSeparatorToken:
+                result[len(result) - 2] = PortugueseNumeric.WrittenFractionSeparatorTexts[0]
+                result.insert(len(result) - 1, PortugueseNumeric.OneHalfTokens[0])
+
         return result
 
     def resolve_composite_number(self, number_str: str) -> int:
