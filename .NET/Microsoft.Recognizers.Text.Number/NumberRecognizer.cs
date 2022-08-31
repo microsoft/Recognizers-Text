@@ -246,14 +246,12 @@ namespace Microsoft.Recognizers.Text.Number
                                                               new BaseNumberOptionsConfiguration(Culture.Portuguese, options))),
                     new Portuguese.PercentageExtractor(new BaseNumberOptionsConfiguration(Culture.Portuguese, options))));
 
-            /*
             RegisterModel<NumberRangeModel>(
                 Culture.Portuguese,
                 (options) => new NumberRangeModel(
-                    new BaseNumberRangeParser(new PortugueseRangeParserConfiguration(
+                    new BaseNumberRangeParser(new PortugueseNumberRangeParserConfiguration(
                                                   new BaseNumberOptionsConfiguration(Culture.Portuguese, options))),
                     new Portuguese.NumberRangeExtractor(new BaseNumberOptionsConfiguration(Culture.Portuguese, options))));
-            */
 
             RegisterModel<NumberModel>(
                 Culture.French,

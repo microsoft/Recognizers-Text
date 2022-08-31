@@ -17,6 +17,7 @@ class StringUtility:
             return False
         else:
             return True
+
     @staticmethod
     def remove_unicode_matches(string: Pattern):
         py_regex = re.sub('\\\\u.{4}[\\|\\\\]', '', string.pattern)

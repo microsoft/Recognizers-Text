@@ -1234,7 +1234,7 @@
   },
   {
     "Input": "We had a meeting 1 month 21 days ago",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "1 month 21 days ago",
@@ -1246,7 +1246,7 @@
   },
   {
     "Input": "i left here 2 years 1 month 21 days ago",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "2 years 1 month 21 days ago",
@@ -1258,7 +1258,7 @@
   },
   {
     "Input": "i will leve here 2 years 21 days later",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "2 years 21 days later",
@@ -1270,7 +1270,7 @@
   },
   {
     "Input": "i left here 1 month 2 years 21 days ago",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "1 month 2 years 21 days ago",
@@ -1387,7 +1387,6 @@
   },
   {
     "Input": "Are you available two sundays from now?",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "two sundays from now",
@@ -1399,7 +1398,6 @@
   },
   {
     "Input": "Are you available two monday later?",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "two monday later",
@@ -1411,7 +1409,7 @@
   },
   {
     "Input": "Are you available two days after today?",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "two days after today",
@@ -1423,7 +1421,7 @@
   },
   {
     "Input": "Are you available three weeks from tomorrow?",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "three weeks from tomorrow",
@@ -1435,7 +1433,7 @@
   },
   {
     "Input": "Where were you two days before yesterday?",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "two days before yesterday",
@@ -1450,7 +1448,6 @@
     "Context": {
       "ReferenceDateTime": "2018-06-14T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "this friday-jun-15",
@@ -1465,7 +1462,6 @@
     "Context": {
       "ReferenceDateTime": "2018-06-14T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "this friday(jun-15)",
@@ -1480,7 +1476,6 @@
     "Context": {
       "ReferenceDateTime": "2018-06-14T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "this friday (jun-15)",
@@ -1510,7 +1505,6 @@
     "Context": {
       "ReferenceDateTime": "2018-06-20T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "this friday",
@@ -1531,7 +1525,7 @@
     "Context": {
       "ReferenceDateTime": "2018-06-20T00:00:00"
     },
-    "NotSupported": "python,javascript",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "in 3 weeks",
