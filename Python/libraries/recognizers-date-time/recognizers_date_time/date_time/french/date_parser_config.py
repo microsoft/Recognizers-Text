@@ -81,6 +81,10 @@ class FrenchDateParserConfiguration(DateParserConfiguration):
         return self._special_day_regex
 
     @property
+    def special_day_with_num_regex(self) -> Pattern:
+        return self._special_day_with_num_regex
+
+    @property
     def next_regex(self) -> Pattern:
         return self._next_regex
 
@@ -117,6 +121,10 @@ class FrenchDateParserConfiguration(DateParserConfiguration):
         return self._week_day_and_day_of_month_regex
 
     @property
+    def week_day_and_day_regex(self) -> Pattern:
+        return self._week_day_and_day_regex
+
+    @property
     def relative_month_regex(self) -> Pattern:
         return self._relative_month_regex
 
@@ -149,7 +157,7 @@ class FrenchDateParserConfiguration(DateParserConfiguration):
         self._on_regex = RegExpUtility.get_safe_reg_exp(FrenchDateTime.OnRegex)
         self._special_day_regex = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.SpecialDayRegex)
-        self._special_day_regex_with_num_regex = RegExpUtility.get_safe_reg_exp(
+        self._special_day_with_num_regex = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.SpecialDayWithNumRegex)
         self._next_regex = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.NextDateRegex)
@@ -171,6 +179,8 @@ class FrenchDateParserConfiguration(DateParserConfiguration):
             FrenchDateTime.ForTheRegex)
         self._week_day_and_day_of_month_regex = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.WeekDayAndDayOfMonthRegex)
+        self._week_day_and_day_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchDateTime.WeekDayAndDayRegex)
         self._relative_month_regex = RegExpUtility.get_safe_reg_exp(
             FrenchDateTime.RelativeMonthRegex)
         self._relative_week_day_regex = RegExpUtility.get_safe_reg_exp(

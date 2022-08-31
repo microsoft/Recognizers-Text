@@ -81,6 +81,10 @@ class ItalianDateParserConfiguration(DateParserConfiguration):
         return self._special_day_regex
 
     @property
+    def special_day_with_num_regex(self) -> Pattern:
+        return self._special_day_with_num_regex
+
+    @property
     def next_regex(self) -> Pattern:
         return self._next_regex
 
@@ -115,6 +119,10 @@ class ItalianDateParserConfiguration(DateParserConfiguration):
     @property
     def week_day_and_day_of_month_regex(self) -> Pattern:
         return self._week_day_and_day_of_month_regex
+
+    @property
+    def week_day_and_day_regex(self) -> Pattern:
+        return self._week_day_and_day_regex
 
     @property
     def relative_month_regex(self) -> Pattern:
@@ -156,7 +164,7 @@ class ItalianDateParserConfiguration(DateParserConfiguration):
         self._on_regex = RegExpUtility.get_safe_reg_exp(ItalianDateTime.OnRegex)
         self._special_day_regex = RegExpUtility.get_safe_reg_exp(
             ItalianDateTime.SpecialDayRegex)
-        self._special_day_regex_with_num_regex = RegExpUtility.get_safe_reg_exp(
+        self._special_day_with_num_regex = RegExpUtility.get_safe_reg_exp(
             ItalianDateTime.SpecialDayWithNumRegex)
         self._next_regex = RegExpUtility.get_safe_reg_exp(
             ItalianDateTime.NextDateRegex)
@@ -178,6 +186,8 @@ class ItalianDateParserConfiguration(DateParserConfiguration):
             ItalianDateTime.ForTheRegex)
         self._week_day_and_day_of_month_regex = RegExpUtility.get_safe_reg_exp(
             ItalianDateTime.WeekDayAndDayOfMonthRegex)
+        self._week_day_and_day_regex = RegExpUtility.get_safe_reg_exp(
+            ItalianDateTime.WeekDayAndDayRegex)
         self._relative_month_regex = RegExpUtility.get_safe_reg_exp(
             ItalianDateTime.RelativeMonthRegex)
         self._relative_week_day_regex = RegExpUtility.get_safe_reg_exp(

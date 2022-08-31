@@ -81,6 +81,10 @@ class PortugueseDateParserConfiguration(DateParserConfiguration):
         return self._special_day_regex
 
     @property
+    def special_day_with_num_regex(self) -> Pattern:
+        return self._special_day_with_num_regex
+
+    @property
     def next_regex(self) -> Pattern:
         return self._next_regex
 
@@ -117,8 +121,16 @@ class PortugueseDateParserConfiguration(DateParserConfiguration):
         return self._week_day_and_day_of_month_regex
 
     @property
+    def week_day_and_day_regex(self) -> Pattern:
+        return self._week_day_and_day_regex
+
+    @property
     def relative_month_regex(self) -> Pattern:
         return self._relative_month_regex
+
+    @property
+    def relative_week_day_regex(self) -> Pattern:
+        return self._relative_week_day_regex
 
     @property
     def utility_configuration(self) -> DateTimeUtilityConfiguration:
@@ -157,6 +169,8 @@ class PortugueseDateParserConfiguration(DateParserConfiguration):
             PortugueseDateTime.OnRegex)
         self._special_day_regex = RegExpUtility.get_safe_reg_exp(
             PortugueseDateTime.SpecialDayRegex)
+        self._special_day_with_num_regex = RegExpUtility.get_safe_reg_exp(
+            PortugueseDateTime.SpecialDayWithNumRegex)
         self._next_regex = RegExpUtility.get_safe_reg_exp(
             PortugueseDateTime.NextDateRegex)
         self._unit_regex = RegExpUtility.get_safe_reg_exp(
@@ -175,8 +189,12 @@ class PortugueseDateParserConfiguration(DateParserConfiguration):
             PortugueseDateTime.ForTheRegex)
         self._week_day_and_day_of_month_regex = RegExpUtility.get_safe_reg_exp(
             PortugueseDateTime.WeekDayAndDayOfMonthRegex)
+        self._week_day_and_day_regex = RegExpUtility.get_safe_reg_exp(
+            PortugueseDateTime.WeekDayAndDayRegex)
         self._relative_month_regex = RegExpUtility.get_safe_reg_exp(
             PortugueseDateTime.RelativeMonthRegex)
+        self._relative_week_day_regex = RegExpUtility.get_safe_reg_exp(
+            PortugueseDateTime.RelativeWeekDayRegex)
         self._utility_configuration = config.utility_configuration
         self._date_token_prefix = PortugueseDateTime.DateTokenPrefix
         self._check_both_before_after = PortugueseDateTime.CheckBothBeforeAfter
