@@ -163,7 +163,8 @@ class GermanNumberParserConfiguration(NumberParserConfiguration):
                 frac_words.append(self._written_fraction_separator_texts[0])
                 frac_words.append(GermanNumeric.OneHalfTokens[0])
                 frac_words.append(GermanNumeric.OneHalfTokens[1])
-            elif m := self._fraction_units_regex.search(word):
+            elif self._fraction_units_regex.search(word):
+                m = self._fraction_units_regex.search(word)
                 if m.group("onehalf"):  # 'einundhalb' case
                     frac_words[idx] = GermanNumeric.OneHalfTokens[0]
                     frac_words.append(self._written_fraction_separator_texts[0])
