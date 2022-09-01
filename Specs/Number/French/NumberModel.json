@@ -4299,7 +4299,7 @@
   },
   {
     "Input": "Un demi-million d'œufs ont été cassés aujourd'hui",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "un demi-million",
@@ -4314,7 +4314,7 @@
   },
   {
     "Input": "Il y a un million et demi de possibilités",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "un million et demi",
@@ -4329,7 +4329,7 @@
   },
   {
     "Input": "La population est de 3 millions et demi",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "3 millions et demi",
@@ -4344,7 +4344,7 @@
   },
   {
     "Input": "La valeur actuelle est d'un milliard et demi million",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "un milliard et demi million",
@@ -4359,7 +4359,7 @@
   },
   {
     "Input": "Le nombre est de cinq milliards et trois quarts",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "cinq milliards et trois quarts",
@@ -4374,7 +4374,7 @@
   },
   {
     "Input": "J'ai compté six millions et deux tiers",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "six millions et deux tiers",

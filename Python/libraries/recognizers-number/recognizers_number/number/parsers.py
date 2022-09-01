@@ -139,7 +139,7 @@ class BaseNumberParser(Parser):
         self.round_number_set: List[str] = list(
             self.config.round_number_map.keys())
         self.is_non_standard_separator_variant = self.config.culture_info.code in \
-            self.config.non_standard_separator_variants
+                                                 self.config.non_standard_separator_variants
 
     def parse(self, source: ExtractResult) -> Optional[ParseResult]:
         # Check if the parser is configured to support specific types
@@ -259,7 +259,7 @@ class BaseNumberParser(Parser):
                 if match is not None:
                     result_text = result_text.replace(match.group(0), "")
                     multiplier = self.config.round_number_map[match.group("multiplier")]
-                    is_fraction_multiplier = True if match.groups("fracMultiplier") is not None else False
+                    is_fraction_multiplier = True if match.group("fracMultiplier") is not None else False
 
             words = list(filter(lambda x: x, result_text.split(' ')))
             frac_words = self.config.normalize_token_set(words, result)
