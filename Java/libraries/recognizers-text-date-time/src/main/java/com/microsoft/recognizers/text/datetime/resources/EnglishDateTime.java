@@ -115,6 +115,8 @@ public class EnglishDateTime {
 
     public static final String SpecialDescRegex = "((?<ipm>)p\\b)";
 
+    public static final String TasksModeSpecialDescRegex = "([0-9]+((?<ipm>)p\\b))";
+
     public static final String AmDescRegex = "(?:{BaseDateTime.BaseAmDescRegex})"
             .replace("{BaseDateTime.BaseAmDescRegex}", BaseDateTime.BaseAmDescRegex);
 
@@ -255,7 +257,7 @@ public class EnglishDateTime {
 
     public static final String QuarterTermRegex = "\\b(((?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th)[ -]+quarter)|(q(?<number>[1-4])))\\b";
 
-    public static final String RelativeQuarterTermRegex = "\\b(?<orderQuarter>{StrictRelativeRegex})\\s+quarter\\b"
+    public static final String RelativeQuarterTermRegex = "\\b(?<orderQuarter>{StrictRelativeRegex})\\s+((?<num>[\\w,]+)\\s+)?quarters?\\b"
             .replace("{StrictRelativeRegex}", StrictRelativeRegex);
 
     public static final String QuarterRegex = "((the\\s+)?{QuarterTermRegex}(?:((\\s+of)?\\s+|\\s*[,-]\\s*)({YearRegex}|{RelativeRegex}\\s+year))?)|{RelativeQuarterTermRegex}"
@@ -727,7 +729,7 @@ public class EnglishDateTime {
 
     public static final String UnspecificEndOfRangeRegex = "\\b(eoy)\\b";
 
-    public static final String PeriodTimeOfDayRegex = "\\b((in\\s+(the)?\\s+)?{LaterEarlyRegex}?((this\\s+)?{DateTimeTimeOfDayRegex}|(?<timeOfDay>(?<pm>tonight))))\\b"
+    public static final String PeriodTimeOfDayRegex = "\\b((in\\s+(the\\s+)?)?{LaterEarlyRegex}?((this\\s+)?{DateTimeTimeOfDayRegex}|(?<timeOfDay>(?<pm>tonight))))\\b"
             .replace("{DateTimeTimeOfDayRegex}", DateTimeTimeOfDayRegex)
             .replace("{LaterEarlyRegex}", LaterEarlyRegex);
 
@@ -739,6 +741,10 @@ public class EnglishDateTime {
 
     public static final String PeriodTimeOfDayWithDateRegex = "\\b(({PeriodTimeOfDayRegex}(\\s+(on|of))?))\\b"
             .replace("{PeriodTimeOfDayRegex}", PeriodTimeOfDayRegex);
+
+    public static final String TasksmodeMealTimeofDayRegex = "\\b((in\\s+(the)?\\s+)?((?<early>earl(y|ier)(\\s+|-))|(?<late>late(r?\\s+|-)))?((this\\s+)?\\b(?<timeOfDay>lunch(\\s*time)?|dinner(\\s*time)?|brunch|breakfast)\\b))\\b"
+            .replace("{DateTimeTimeOfDayRegex}", DateTimeTimeOfDayRegex)
+            .replace("{LaterEarlyRegex}", LaterEarlyRegex);
 
     public static final String LessThanRegex = "\\b(less\\s+than)\\b";
 
@@ -798,6 +804,9 @@ public class EnglishDateTime {
             .replace("{YearRegex}", YearRegex)
             .replace("{RelativeRegex}", RelativeRegex)
             .replace("{StrictRelativeRegex}", StrictRelativeRegex);
+
+    public static final String TasksModeHolidayListSupression = "(?<holiday>(?:independence|teacher'?s|youth|children|girls)\\s+day)|(?<holiday>ramad(h)?an|ram(a)?zan|ramathan|eid al(-|\\s+)adha|eid al(-|\\s+)azha|eidul(-|\\s+)azha|feast of the sacrifice|(islamic|arabic|hijri) new year|eid al(-|\\s+)fitr|festival of breaking the fast)\\b"
+            .replace("{HolidayList4}", HolidayList4);
 
     public static final String AMTimeRegex = "(?<am>morning)";
 
@@ -1017,6 +1026,22 @@ public class EnglishDateTime {
             .replace("{WrittenTensRegex}", WrittenTensRegex)
             .replace("{WrittenElevenToNineteenRegex}", WrittenElevenToNineteenRegex)
             .replace("{WrittenOneToNineRegex}", WrittenOneToNineRegex);
+
+    public static final String TasksModeSupressionRegexes = "({AmPmDescRegex}|{TasksModeSpecialDescRegex}|{TasksModeHolidayListSupression}|{DecadeRegex}|{DecadeWithCenturyRegex}|{QuarterRegex}|{QuarterRegexYearFront}|{AllHalfYearRegex}|{SeasonRegex})"
+            .replace("{AmPmDescRegex}", AmPmDescRegex)
+            .replace("{TasksModeSpecialDescRegex}", TasksModeSpecialDescRegex)
+            .replace("{TasksModeHolidayListSupression}", TasksModeHolidayListSupression)
+            .replace("{DecadeRegex}", DecadeRegex)
+            .replace("{DecadeWithCenturyRegex}", DecadeWithCenturyRegex)
+            .replace("{QuarterRegex}", QuarterRegex)
+            .replace("{QuarterRegexYearFront}", QuarterRegexYearFront)
+            .replace("{AllHalfYearRegex}", AllHalfYearRegex)
+            .replace("{SeasonRegex}", SeasonRegex);
+
+    public static final String TasksModeNextPrefix = "(?<next>next\\s+)";
+
+    public static final String TasksModeDurationToDatePatterns = "\\b({TasksModeNextPrefix}((?<week>week)|(?<month>month)|(?<year>year)))\\b"
+            .replace("{TasksModeNextPrefix}", TasksModeNextPrefix);
 
     public static final ImmutableMap<String, String> UnitMap = ImmutableMap.<String, String>builder()
         .put("decades", "10Y")

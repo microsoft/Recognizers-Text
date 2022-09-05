@@ -47,6 +47,7 @@ export namespace EnglishDateTime {
     export const FullTextYearRegex = `\\b((?<firsttwoyearnum>${CenturyRegex})(\\s+and)?\\s+(?<lasttwoyearnum>${LastTwoYearNumRegex})\\b|\\b(?<firsttwoyearnum>${WrittenCenturyFullYearRegex}|${WrittenCenturyOrdinalYearRegex}\\s+hundred))\\b`;
     export const OclockRegex = `(?<oclock>o\\s*((’|‘|')\\s*)?clock|sharp)`;
     export const SpecialDescRegex = `((?<ipm>)p\\b)`;
+    export const TasksModeSpecialDescRegex = `([0-9]+((?<ipm>)p\\b))`;
     export const AmDescRegex = `(?:${BaseDateTime.BaseAmDescRegex})`;
     export const PmDescRegex = `(:?${BaseDateTime.BasePmDescRegex})`;
     export const AmPmDescRegex = `(:?${BaseDateTime.BaseAmPmDescRegex})`;
@@ -87,7 +88,7 @@ export namespace EnglishDateTime {
     export const FollowedDateUnit = `^\\s*${DateUnitRegex}`;
     export const NumberCombinedWithDateUnit = `\\b(?<num>\\d+(\\.\\d*)?)${DateUnitRegex}`;
     export const QuarterTermRegex = `\\b(((?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th)[ -]+quarter)|(q(?<number>[1-4])))\\b`;
-    export const RelativeQuarterTermRegex = `\\b(?<orderQuarter>${StrictRelativeRegex})\\s+quarter\\b`;
+    export const RelativeQuarterTermRegex = `\\b(?<orderQuarter>${StrictRelativeRegex})\\s+((?<num>[\\w,]+)\\s+)?quarters?\\b`;
     export const QuarterRegex = `((the\\s+)?${QuarterTermRegex}(?:((\\s+of)?\\s+|\\s*[,-]\\s*)(${YearRegex}|${RelativeRegex}\\s+year))?)|${RelativeQuarterTermRegex}`;
     export const QuarterRegexYearFront = `(?:${YearRegex}|${RelativeRegex}\\s+year)('s)?(?:\\s*-\\s*|\\s+(the\\s+)?)?${QuarterTermRegex}`;
     export const HalfYearTermRegex = `(?<cardinal>first|1st|second|2nd)\\s+half`;
@@ -208,9 +209,10 @@ export namespace EnglishDateTime {
     export const SpecificEndOfRegex = `(the\\s+)?end of(\\s+the)?\\s*$`;
     export const UnspecificEndOfRegex = `\\b(the\\s+)?(eod|(end\\s+of\\s+day))\\b`;
     export const UnspecificEndOfRangeRegex = `\\b(eoy)\\b`;
-    export const PeriodTimeOfDayRegex = `\\b((in\\s+(the)?\\s+)?${LaterEarlyRegex}?((this\\s+)?${DateTimeTimeOfDayRegex}|(?<timeOfDay>(?<pm>tonight))))\\b`;
+    export const PeriodTimeOfDayRegex = `\\b((in\\s+(the\\s+)?)?${LaterEarlyRegex}?((this\\s+)?${DateTimeTimeOfDayRegex}|(?<timeOfDay>(?<pm>tonight))))\\b`;
     export const PeriodSpecificTimeOfDayRegex = `\\b(${LaterEarlyRegex}?this\\s+${DateTimeTimeOfDayRegex}|(${StrictRelativeRegex}\\s+${PeriodTimeOfDayRegex})\\b|\\b(?<pm>toni(ght|te)))\\b`;
     export const PeriodTimeOfDayWithDateRegex = `\\b((${PeriodTimeOfDayRegex}(\\s+(on|of))?))\\b`;
+    export const TasksmodeMealTimeofDayRegex = `\\b((in\\s+(the)?\\s+)?((?<early>earl(y|ier)(\\s+|-))|(?<late>late(r?\\s+|-)))?((this\\s+)?\\b(?<timeOfDay>lunch(\\s*time)?|dinner(\\s*time)?|brunch|breakfast)\\b))\\b`;
     export const LessThanRegex = `\\b(less\\s+than)\\b`;
     export const MoreThanRegex = `\\b(more\\s+than)\\b`;
     export const DurationUnitRegex = `(?<unit>${DateUnitRegex}|h(ou)?rs?|h|min(ute)?s?|sec(ond)?s?|nights?)\\b`;
@@ -233,6 +235,7 @@ export namespace EnglishDateTime {
     export const HolidayList3 = `(?<holiday>(?:independence|presidents(?:')?|mlk|martin luther king( jr)?|canberra|ascension|columbus|tree( planting)?|arbor|labou?r|((international|int'?l)\\s+)?workers'?|mother'?s?|father'?s?|female|women('s)?|single|teacher'?s|youth|children|girls|lovers?|earth|inauguration|groundhog|valentine'?s|baptiste|bastille|veterans(?:')?|memorial|mid[ \\-]autumn|moon|spring|lantern)\\s+day)`;
     export const HolidayList4 = `(?<holiday>ramad(h)?an|ram(a)?zan|ramathan|eid al(-|\\s+)adha|eid al(-|\\s+)azha|eidul(-|\\s+)azha|feast of the sacrifice|(islamic|arabic|hijri) new year|eid al(-|\\s+)fitr|festival of breaking the fast)`;
     export const HolidayRegex = `\\b((${StrictRelativeRegex}\\s+(${HolidayList1}|${HolidayList2}|${HolidayList3}|${HolidayList4}))|(?<holidayWeekend>((the\\s+)?weekend\\s+of\\s+)(${HolidayList1}|${HolidayList2}|${HolidayList3}|${HolidayList4})(\\s+((of\\s+)?(${YearRegex}|${RelativeRegex}\\s+year)))?)|((${HolidayList1}|${HolidayList2}|${HolidayList3}|${HolidayList4})((?<holidayWeekend>(\\s+weekend)(\\s+((of\\s+)?(${YearRegex}|${RelativeRegex}\\s+year)))?)|(\\s+(of\\s+)?(${YearRegex}|${RelativeRegex}\\s+year)(?<holidayWeekend>\\s+weekend)?))?))\\b`;
+    export const TasksModeHolidayListSupression = `(?<holiday>(?:independence|teacher'?s|youth|children|girls)\\s+day)|(?<holiday>ramad(h)?an|ram(a)?zan|ramathan|eid al(-|\\s+)adha|eid al(-|\\s+)azha|eidul(-|\\s+)azha|feast of the sacrifice|(islamic|arabic|hijri) new year|eid al(-|\\s+)fitr|festival of breaking the fast)\\b`;
     export const AMTimeRegex = `(?<am>morning)`;
     export const PMTimeRegex = `\\b(?<pm>afternoon|evening|night)\\b`;
     export const NightTimeRegex = `(night)`;
@@ -299,6 +302,9 @@ export namespace EnglishDateTime {
     export const StartMiddleEndRegex = `\\b((?<StartOf>((the\\s+)?(start|beginning)\\s+of\\s+)?)(?<MiddleOf>((the\\s+)?middle\\s+of\\s+)?)(?<EndOf>((the\\s+)?end\\s+of\\s+)?))`;
     export const ComplexDatePeriodRegex = `(?:((from|during|in)\\s+)?${StartMiddleEndRegex}(?<start>.+)\\s*(${StrictTillRegex})\\s*${StartMiddleEndRegex}(?<end>.+)|((between)\\s+)${StartMiddleEndRegex}(?<start>.+)\\s*(${StrictRangeConnectorRegex})\\s*${StartMiddleEndRegex}(?<end>.+))`;
     export const FailFastRegex = `${BaseDateTime.DeltaMinuteRegex}|\\b(?:${BaseDateTime.BaseAmDescRegex}|${BaseDateTime.BasePmDescRegex})|${BaseDateTime.BaseAmPmDescRegex}|\\b(?:zero|${WrittenOneToNineRegex}|${WrittenElevenToNineteenRegex}|${WrittenTensRegex}|${WrittenMonthRegex}|${SeasonDescRegex}|${DecadeRegex}|centur(y|ies)|weekends?|quarters?|hal(f|ves)|yesterday|to(morrow|day|night)|tmr|noonish|\\d(-|——)?ish|((the\\s+\\w*)|\\d)(th|rd|nd|st)|(mid\\s*(-\\s*)?)?(night|morning|afternoon|day)s?|evenings?|noon|lunch(time)?|dinner(time)?|(day|night)time|overnight|dawn|dusk|sunset|hours?|hrs?|h|minutes?|mins?|seconds?|secs?|eo[dmy]|mardi[ -]?gras|birthday|eve|christmas|xmas|thanksgiving|halloween|yuandan|easter|yuan dan|april fools|cinco de mayo|all (hallow|souls)|guy fawkes|(st )?patrick|hundreds?|noughties|aughts|thousands?)\\b|${WeekDayRegex}|${SetWeekDayRegex}|${NowRegex}|${PeriodicRegex}|\\b(${DateUnitRegex}|${ImplicitDayRegex})`;
+    export const TasksModeSupressionRegexes = `(${AmPmDescRegex}|${TasksModeSpecialDescRegex}|${TasksModeHolidayListSupression}|${DecadeRegex}|${DecadeWithCenturyRegex}|${QuarterRegex}|${QuarterRegexYearFront}|${AllHalfYearRegex}|${SeasonRegex})`;
+    export const TasksModeNextPrefix = `(?<next>next\\s+)`;
+    export const TasksModeDurationToDatePatterns = `\\b(${TasksModeNextPrefix}((?<week>week)|(?<month>month)|(?<year>year)))\\b`;
     export const UnitMap: ReadonlyMap<string, string> = new Map<string, string>([["decades", "10Y"],["decade", "10Y"],["years", "Y"],["year", "Y"],["y", "Y"],["months", "MON"],["month", "MON"],["m", "M"],["quarters", "3MON"],["quarter", "3MON"],["semesters", "6MON"],["semestres", "6MON"],["semester", "6MON"],["semestre", "6MON"],["weeks", "W"],["week", "W"],["w", "W"],["weekends", "WE"],["weekend", "WE"],["fortnights", "2W"],["fortnight", "2W"],["weekdays", "D"],["weekday", "D"],["days", "D"],["day", "D"],["d", "D"],["nights", "D"],["night", "D"],["hours", "H"],["hour", "H"],["hrs", "H"],["hr", "H"],["h", "H"],["minutes", "M"],["minute", "M"],["mins", "M"],["min", "M"],["seconds", "S"],["second", "S"],["secs", "S"],["sec", "S"]]);
     export const UnitValueMap: ReadonlyMap<string, number> = new Map<string, number>([["decades", 315360000],["decade", 315360000],["years", 31536000],["year", 31536000],["y", 31536000],["months", 2592000],["month", 2592000],["m", 2592000],["fortnights", 1209600],["fortnight", 1209600],["weekends", 172800],["weekend", 172800],["weeks", 604800],["week", 604800],["w", 604800],["days", 86400],["day", 86400],["d", 86400],["nights", 86400],["night", 86400],["hours", 3600],["hour", 3600],["hrs", 3600],["hr", 3600],["h", 3600],["minutes", 60],["minute", 60],["mins", 60],["min", 60],["seconds", 1],["second", 1],["secs", 1],["sec", 1]]);
     export const SpecialYearPrefixesMap: ReadonlyMap<string, string> = new Map<string, string>([["fiscal", "FY"],["school", "SY"],["fy", "FY"],["sy", "SY"]]);
