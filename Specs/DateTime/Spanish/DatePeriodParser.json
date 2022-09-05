@@ -1856,7 +1856,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "month of september.16th",
+        "Text": "mes de 16 de septiembre",
         "Type": "daterange",
         "Value": {
           "Timex": "XXXX-09-16",
@@ -1870,7 +1870,7 @@
           }
         },
         "Start": 0,
-        "Length": 23
+        "Length": 22
       }
     ]
   },
@@ -2162,7 +2162,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "",
+        "Text": "este fin de semana",
         "Type": "daterange",
         "Value": {
           "Timex": "2016-W45-WE",
@@ -2324,7 +2324,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "from Oct. 2 to October 22",
+        "Text": "desde 2 oct hasta 22 octubre",
         "Type": "daterange",
         "Value": {
           "Timex": "(XXXX-10-02,XXXX-10-22,P20D)",
@@ -2405,7 +2405,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "November 19 to 20",
+        "Text": "de 19 a 20 de noviembre",
         "Type": "daterange",
         "Value": {
           "Timex": "(XXXX-11-19,XXXX-11-20,P1D)",
@@ -2419,7 +2419,7 @@
           }
         },
         "Start": 12,
-        "Length": 17
+        "Length": 23
       }
     ]
   },
@@ -2540,7 +2540,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "rest of current week",
+        "Text": "el resto de la semana actual",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-11-07,2016-11-13,P6D)",
@@ -2554,7 +2554,7 @@
           }
         },
         "Start": 20,
-        "Length": 25
+        "Length": 28
       }
     ]
   },
@@ -3035,7 +3035,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "2016 the third quarter",
+        "Text": "el tercer cuatrimestre de 2016",
         "Type": "daterange",
         "Value": {
           "Timex": "(2016-07-01,2016-10-01,P3M)",
@@ -3049,7 +3049,7 @@
           }
         },
         "Start": 20,
-        "Length": 27
+        "Length": 30
       }
     ]
   },
@@ -4398,7 +4398,7 @@
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "one thousand seven hundred and eighty nine",
+        "Text": "mil setecientos ochenta y nueve",
         "Type": "daterange",
         "Value": {
           "Timex": "1789",
@@ -6663,32 +6663,6 @@
         },
         "Start": 10,
         "Length": 21
-      }
-    ]
-  },
-  {
-    "Input": "I have already finished all my work more than 2 weeks before today",
-    "Context": {
-      "ReferenceDateTime": "2018-05-29T00:00:00"
-    },
-    "NotSupported": "dotnet, java, python",
-    "NotSupportedByDesign": "javascript",
-    "Results": [
-      {
-        "Text": "more than 2 weeks before today",
-        "Type": "daterange",
-        "Value": {
-          "Timex": "2018-05-15",
-          "Mod": "before",
-          "FutureResolution": {
-            "endDate": "2018-05-15"
-          },
-          "PastResolution": {
-            "endDate": "2018-05-15"
-          }
-        },
-        "Start": 36,
-        "Length": 30
       }
     ]
   },
