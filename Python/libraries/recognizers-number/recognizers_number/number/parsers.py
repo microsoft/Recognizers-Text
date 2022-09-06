@@ -259,7 +259,7 @@ class BaseNumberParser(Parser):
                 if match is not None:
                     result_text = result_text.replace(match.group(0), "")
                     multiplier = self.config.round_number_map[match.group("multiplier")]
-                    is_fraction_multiplier = True if match.groups("fracMultiplier") is not None else False
+                    is_fraction_multiplier = True if match.group("fracMultiplier") is not None else False
 
             words = list(filter(lambda x: x, result_text.split(' ')))
             frac_words = self.config.normalize_token_set(words, result)
@@ -550,7 +550,7 @@ class BaseNumberParser(Parser):
             scale = Decimal(0.1)
             for match in matches:
                 result += scale * \
-                          Decimal(self.config.cardinal_number_map[match])
+                    Decimal(self.config.cardinal_number_map[match])
                 scale *= Decimal(0.1)
 
         return result
