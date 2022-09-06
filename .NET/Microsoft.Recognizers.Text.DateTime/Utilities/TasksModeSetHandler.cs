@@ -80,6 +80,183 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
             return timex;
         }
 
+        public static DateTimeResolutionResult TasksModeAddResolution(ref DateTimeResolutionResult result, ExtractResult er, DateObject refDate)
+        {
+            if (result.Timex.EndsWith("WE"))
+            {
+                if (refDate.DayOfWeek == DayOfWeek.Sunday)
+                {
+                    result.FutureResolution = new Dictionary<string, string>
+                    {
+                        {
+                            TimeTypeConstants.DATE,
+                            DateTimeFormatUtil.FormatDate((DateObject)refDate)
+                        },
+                    };
+
+                    result.PastResolution = new Dictionary<string, string>
+                    {
+                        {
+                            TimeTypeConstants.DATE,
+                            DateTimeFormatUtil.FormatDate((DateObject)refDate)
+                        },
+                    };
+                }
+                else
+                {
+                    var tempdate = refDate.Upcoming(DayOfWeek.Sunday).Date;
+                    var dateTimeToSet = DateObject.MinValue.SafeCreateFromValue(tempdate.Year, tempdate.Month, tempdate.Day);
+                    result.FutureResolution = new Dictionary<string, string>
+                    {
+                        {
+                            TimeTypeConstants.DATE,
+                            DateTimeFormatUtil.FormatDate(dateTimeToSet)
+                        },
+                    };
+
+                    result.PastResolution = new Dictionary<string, string>
+                    {
+                        {
+                            TimeTypeConstants.DATE,
+                            DateTimeFormatUtil.FormatDate(dateTimeToSet)
+                        },
+                    };
+                }
+            }
+            else if (result.Timex.EndsWith("WD"))
+            {
+                if (refDate.DayOfWeek == DayOfWeek.Saturday)
+                {
+                    result.FutureResolution = new Dictionary<string, string>
+                    {
+                        { TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject)refDate.AddDays(2)) },
+                    };
+
+                    result.PastResolution = new Dictionary<string, string>
+                    {
+                        { TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject)refDate.AddDays(2)) },
+                    };
+                }
+                else if (refDate.DayOfWeek == DayOfWeek.Sunday)
+                {
+                    result.FutureResolution = new Dictionary<string, string>
+                    {
+                        { TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject)refDate.AddDays(1)) },
+                    };
+
+                    result.PastResolution = new Dictionary<string, string>
+                    {
+                        { TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject)refDate.AddDays(1)) },
+                    };
+                }
+                else
+                {
+                    result.FutureResolution = new Dictionary<string, string>
+                    {
+                        { TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject)refDate) },
+                    };
+
+                    result.PastResolution = new Dictionary<string, string>
+                    {
+                        { TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject)refDate) },
+                    };
+                }
+            }
+            else if (result.Timex.StartsWith("P"))
+            {
+                result.FutureResolution = new Dictionary<string, string>
+                {
+                    { TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject)refDate) },
+                };
+
+                result.PastResolution = new Dictionary<string, string>
+                {
+                    { TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject)refDate) },
+                };
+            }
+            else if (result.Timex.StartsWith("XXXX-"))
+            {
+                var timexRes = TimexResolver.Resolve(new[] { result.Timex }, refDate);
+
+                string value = timexRes.Values[1].Value;
+
+                var resKey = TimeTypeConstants.DATETIME;
+
+                if (!result.Timex.Contains("T"))
+                {
+                    resKey = TimeTypeConstants.DATE;
+                }
+
+                var futureValue = refDate.AddDays(7);
+
+                if (DateTimeFormatUtil.FormatDate(futureValue).Equals(value.Substring(0, 10)) && result.Timex.StartsWith("XXXX-WXX-"))
+                {
+                    if (result.Timex.Contains("T"))
+                    {
+                        if (DateTimeFormatUtil.FormatTime(refDate).CompareTo(value.Substring(11)) <= 0)
+                        {
+                            value = DateTimeFormatUtil.FormatDate(refDate) + " " + value.Substring(11);
+                        }
+                    }
+                    else
+                    {
+                        value = DateTimeFormatUtil.FormatDate(refDate);
+                    }
+                }
+
+                result.FutureResolution = new Dictionary<string, string>
+                {
+                    { resKey, (string)value },
+                };
+
+                result.PastResolution = new Dictionary<string, string>
+                {
+                    { resKey, (string)value },
+                };
+            }
+            else if (result.Timex.StartsWith("T"))
+            {
+                var timexRes = TimexResolver.Resolve(new[] { result.Timex }, refDate);
+
+                string value = timexRes.Values[0].Start;
+                if (value == null)
+                {
+                    value = timexRes.Values[0].Value;
+                }
+
+                DateObject resDate = refDate;
+                if (DateTimeFormatUtil.FormatTime(resDate).CompareTo(value) > 0)
+                {
+                    resDate = resDate.AddDays(1);
+                }
+
+                result.FutureResolution = new Dictionary<string, string>
+                {
+                    { TimeTypeConstants.DATETIME, DateTimeFormatUtil.FormatDate((DateObject)resDate) + " " + (string)value },
+                };
+
+                result.PastResolution = new Dictionary<string, string>
+                {
+                    { TimeTypeConstants.DATETIME, DateTimeFormatUtil.FormatDate((DateObject)resDate) + " " + (string)value },
+                };
+            }
+            else
+            {
+                result.FutureResolution = new Dictionary<string, string>
+                {
+                    { TimeTypeConstants.SET, (string)result.FutureValue },
+                };
+
+                result.PastResolution = new Dictionary<string, string>
+                {
+                    { TimeTypeConstants.SET, (string)result.PastValue },
+                };
+
+            }
+
+            return result;
+        }
+
         internal static void TasksModeAddAltSingleDateTimeToResolution(Dictionary<string, string> resolutionDic, string type, string mod,
                                                             Dictionary<string, string> res)
         {

@@ -87,10 +87,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     var beforeStr = text.Substring(0, match.Index);
                     var dayMatch = this.config.BeforeEachDayRegex.Match(beforeStr);
-                    var dateMatch = this.config.DateExtractor.Extract(beforeStr);
 
-                    // don't merge cases like 19 june every month, it's not valid.
-                    if (dayMatch.Success && dateMatch.Count == 0)
+                    if (dayMatch.Success)
                     {
                         ret.Add(new Token(dayMatch.Index, match.Index + match.Length));
                     }
@@ -112,6 +110,15 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new List<Token>();
             var ers = this.config.TimeExtractor.Extract(text, reference);
+
+            if ((config.Options & DateTimeOptions.TasksMode) != 0)
+            {
+                var ers1 = this.config.TimePeriodExtractor.Extract(text, reference);
+                if (ers.Count == 0 && ers1.Count == 1)
+                {
+                    ers = ers1;
+                }
+            }
 
             foreach (var er in ers)
             {
@@ -135,7 +142,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        // extract set type: second saturday of each month
         public virtual List<Token> DayEveryweek(string text, DateObject reference)
         {
             var ret = new List<Token>();

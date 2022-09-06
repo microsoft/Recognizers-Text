@@ -91,7 +91,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 {
                     if ((config.Options & DateTimeOptions.TasksMode) != 0)
                     {
-                        innerResult = TasksModeAddResolution(ref innerResult, er, refDate);
+                        innerResult = TasksModeSetHandler.TasksModeAddResolution(ref innerResult, er, refDate);
                     }
                     else
                     {
@@ -223,6 +223,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ret = new DateTimeResolutionResult();
 
             var ers = this.config.TimeExtractor.Extract(text, refDate);
+            var ers1 = this.config.TimePeriodExtractor.Extract(text, refDate);
 
             if (ers.Count == 1)
             {
@@ -232,6 +233,23 @@ namespace Microsoft.Recognizers.Text.DateTime
                 if (match.Success)
                 {
                     var pr = this.config.TimeParser.Parse(ers[0], DateObject.Now);
+                    ret = SetHandler.ResolveSet(ref ret, pr.TimexStr);
+
+                    if ((config.Options & DateTimeOptions.TasksMode) != 0)
+                    {
+                        ret = TasksModeSetHandler.TasksModeResolveSet(ref ret, pr.TimexStr + "P1D");
+                    }
+
+                }
+            }
+            else if (ers1.Count == 1)
+            {
+                var afterStr = text.Replace(ers1[0].Text, string.Empty);
+                var match = this.config.EachDayRegex.Match(afterStr);
+
+                if (match.Success)
+                {
+                    var pr = this.config.TimePeriodParser.Parse(ers1[0], DateObject.Now);
                     ret = SetHandler.ResolveSet(ref ret, pr.TimexStr);
 
                     if ((config.Options & DateTimeOptions.TasksMode) != 0)
@@ -407,197 +425,6 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             return ret;
-        }
-
-        private DateTimeResolutionResult TasksModeAddResolution(ref DateTimeResolutionResult result, ExtractResult er, DateObject refDate)
-        {
-            if (result.Timex.EndsWith("WE"))
-            {
-                var innerResult1 = ParseEach(config.DatePeriodExtractor, config.DatePeriodParser, er.Text, refDate);
-                if (innerResult1.FutureValue != null)
-                {
-                    if (refDate.DayOfWeek == DayOfWeek.Sunday)
-                    {
-                        result.FutureResolution = new Dictionary<string, string>
-                        {
-                            {
-                                TimeTypeConstants.DATE,
-                                DateTimeFormatUtil.FormatDate((DateObject)refDate)
-                            },
-                        };
-
-                        result.PastResolution = new Dictionary<string, string>
-                        {
-                            {
-                                TimeTypeConstants.DATE,
-                                DateTimeFormatUtil.FormatDate((DateObject)refDate)
-                            },
-                        };
-                    }
-                    else
-                    {
-                        result.FutureResolution = new Dictionary<string, string>
-                        {
-                            {
-                                TimeTypeConstants.DATE,
-                                DateTimeFormatUtil.FormatDate((DateObject)innerResult1.FutureValue)
-                            },
-                        };
-
-                        result.PastResolution = new Dictionary<string, string>
-                        {
-                            {
-                                TimeTypeConstants.DATE,
-                                DateTimeFormatUtil.FormatDate((DateObject)innerResult1.FutureValue)
-                            },
-                        };
-                    }
-                }
-                else
-                {
-                    result.FutureResolution = new Dictionary<string, string>
-                    {
-                        { TimeTypeConstants.SET, (string)result.FutureValue },
-                    };
-
-                    result.PastResolution = new Dictionary<string, string>
-                    {
-                        { TimeTypeConstants.SET, (string)result.PastValue },
-                    };
-                }
-            }
-            else if (result.Timex.EndsWith("WD"))
-            {
-                if (refDate.DayOfWeek == DayOfWeek.Saturday)
-                {
-                    result.FutureResolution = new Dictionary<string, string>
-                    {
-                        { TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject)refDate.AddDays(2)) },
-                    };
-
-                    result.PastResolution = new Dictionary<string, string>
-                    {
-                        { TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject)refDate.AddDays(2)) },
-                    };
-                }
-                else if (refDate.DayOfWeek == DayOfWeek.Sunday)
-                {
-                    result.FutureResolution = new Dictionary<string, string>
-                    {
-                        { TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject)refDate.AddDays(1)) },
-                    };
-
-                    result.PastResolution = new Dictionary<string, string>
-                    {
-                        { TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject)refDate.AddDays(1)) },
-                    };
-                }
-                else
-                {
-                    result.FutureResolution = new Dictionary<string, string>
-                    {
-                        { TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject)refDate) },
-                    };
-
-                    result.PastResolution = new Dictionary<string, string>
-                    {
-                        { TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject)refDate) },
-                    };
-                }
-            }
-            else if (result.Timex.StartsWith("P"))
-            {
-                result.FutureResolution = new Dictionary<string, string>
-                {
-                    { TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject)refDate) },
-                };
-
-                result.PastResolution = new Dictionary<string, string>
-                {
-                    { TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject)refDate) },
-                };
-            }
-            else if (result.Timex.StartsWith("XXXX-"))
-            {
-                var timexRes = TimexResolver.Resolve(new[] { result.Timex }, refDate);
-
-                string value = timexRes.Values[1].Value;
-
-                var resKey = TimeTypeConstants.DATETIME;
-
-                if (!result.Timex.Contains("T"))
-                {
-                    resKey = TimeTypeConstants.DATE;
-                }
-
-                var futureValue = refDate.AddDays(7);
-
-                if (DateTimeFormatUtil.FormatDate(futureValue).Equals(value.Substring(0, 10)) && result.Timex.StartsWith("XXXX-WXX-"))
-                {
-                    if (result.Timex.Contains("T"))
-                    {
-                        if (DateTimeFormatUtil.FormatTime(refDate).CompareTo(value.Substring(11)) <= 0)
-                        {
-                            value = DateTimeFormatUtil.FormatDate(refDate) + " " + value.Substring(11);
-                        }
-                    }
-                    else
-                    {
-                        value = DateTimeFormatUtil.FormatDate(refDate);
-                    }
-                }
-
-                result.FutureResolution = new Dictionary<string, string>
-                {
-                    { resKey, (string)value },
-                };
-
-                result.PastResolution = new Dictionary<string, string>
-                {
-                    { resKey, (string)value },
-                };
-            }
-            else if (result.Timex.StartsWith("T"))
-            {
-                var timexRes = TimexResolver.Resolve(new[] { result.Timex }, refDate);
-
-                string value = timexRes.Values[0].Start;
-                if (value == null)
-                {
-                    value = timexRes.Values[0].Value;
-                }
-
-                DateObject resDate = refDate;
-                if (DateTimeFormatUtil.FormatTime(resDate).CompareTo(value) > 0)
-                {
-                    resDate = resDate.AddDays(1);
-                }
-
-                result.FutureResolution = new Dictionary<string, string>
-                {
-                    { TimeTypeConstants.DATETIME, DateTimeFormatUtil.FormatDate((DateObject)resDate) + " " + (string)value },
-                };
-
-                result.PastResolution = new Dictionary<string, string>
-                {
-                    { TimeTypeConstants.DATETIME, DateTimeFormatUtil.FormatDate((DateObject)resDate) + " " + (string)value },
-                };
-            }
-            else
-            {
-                result.FutureResolution = new Dictionary<string, string>
-                {
-                    { TimeTypeConstants.SET, (string)result.FutureValue },
-                };
-
-                result.PastResolution = new Dictionary<string, string>
-                {
-                    { TimeTypeConstants.SET, (string)result.PastValue },
-                };
-
-            }
-
-            return result;
         }
     }
 }
