@@ -1558,8 +1558,8 @@
     "Results": [
       {
         "Text": "6am everyday",
-        "Start": 12,
-        "End": 23,
+        "Start": 11,
+        "End": 22,
         "TypeName": "datetimeV2.set",
         "Resolution": {
           "values": [
@@ -1771,7 +1771,7 @@
   {
     "Input": "we will meet after school every weekend.",
     "Context": {
-      "ReferenceDateTime": "2022-08-22T01:00:00"
+      "ReferenceDateTime": "2022-09-06T17:00:00"
     },
     "NotSupported": "javascript, python, java",
     "Results": [
@@ -1786,7 +1786,7 @@
               "timex": "P1WE",
               "type": "set",
               "setTypename": "date",
-              "value": "2022-08-27",
+              "value": "2022-09-11",
               "intervalSize": "1",
               "intervalType": "WE"
             }

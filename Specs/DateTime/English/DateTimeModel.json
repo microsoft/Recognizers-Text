@@ -25534,30 +25534,6 @@
     ]
   },
   {
-    "Input": "we will meet in ground daily sunday 4pm",
-    "Context": {
-      "ReferenceDateTime": "2022-08-22T01:00:00"
-    },
-    "NotSupported": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "daily sunday 4pm",
-        "Start": 23,
-        "End": 38,
-        "TypeName": "datetimeV2.set",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "T16P1D",
-              "type": "set",
-              "value": "not resolved"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  {
     "Input": "I'll leave 6am everyday",
     "Context": {
       "ReferenceDateTime": "2022-08-22T01:00:00"
@@ -25566,8 +25542,8 @@
     "Results": [
       {
         "Text": "6am everyday",
-        "Start": 12,
-        "End": 23,
+        "Start": 11,
+        "End": 22,
         "TypeName": "datetimeV2.set",
         "Resolution": {
           "values": [
