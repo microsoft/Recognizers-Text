@@ -218,7 +218,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
             {
                 var timexRes = TimexResolver.Resolve(new[] { result.Timex }, refDate);
 
-                string value = timexRes.Values[0].Start;
+                string value = GetStartValue(timexRes);
                 if (value == null)
                 {
                     value = timexRes.Values[0].Value;
@@ -275,5 +275,18 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
                 MergedParserUtil.AddSingleDateTimeToResolution(resolutionDic, TimeTypeConstants.TIME, mod, res);
             }
         }
+
+        internal static string GetStartValue(Resolution timexRes)
+        {
+            switch (timexRes.Values[0].Timex)
+            {
+                case "TMO": return "06:00:00";
+                case "TAF": return "12:00:00";
+                case "TEV": return "18:00:00";
+                case "TNI": return "21:00:00";
+                default: return timexRes.Values[0].Start;
+            }
+        }
+
     }
 }
