@@ -25510,30 +25510,6 @@
     ]
   },
   {
-    "Input": "I'll take a walk daily at night",
-    "Context": {
-      "ReferenceDateTime": "2022-08-22T01:00:00"
-    },
-    "NotSupported": "javascript, python, java",
-    "Results": [
-      {
-        "Text": "daily at night",
-        "Start": 17,
-        "End": 30,
-        "TypeName": "datetimeV2.set",
-        "Resolution": {
-          "values": [
-            {
-              "timex": "TNI",
-              "type": "set",
-               "value": "not resolved"
-            }
-          ]
-        }
-      }
-    ]
-  },
-  {
     "Input": "I'll leave 6am everyday",
     "Context": {
       "ReferenceDateTime": "2022-08-22T01:00:00"
