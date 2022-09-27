@@ -398,14 +398,17 @@ namespace Microsoft.Recognizers.Text.DateTime
             var resolutionPast = GenerateResolution(type, pastResolutionStr, mod);
             var resolutionFuture = GenerateResolution(type, futureResolutionStr, mod);
 
-            if (type.Equals(Constants.SYS_DATETIME_SET, StringComparison.Ordinal) && (config.Options & DateTimeOptions.TasksMode) != 0)
+            if ((config.Options & DateTimeOptions.TasksMode) != 0)
             {
-                pastResolutionStr = ((DateTimeResolutionResult)slot.Value).PastResolution;
-                futureResolutionStr = ((DateTimeResolutionResult)slot.Value).FutureResolution;
+                if (type.Equals(Constants.SYS_DATETIME_SET, StringComparison.Ordinal))
+                {
+                    pastResolutionStr = ((DateTimeResolutionResult)slot.Value).PastResolution;
+                    futureResolutionStr = ((DateTimeResolutionResult)slot.Value).FutureResolution;
 
-                resolutionPast = TasksModeSetHandler.TasksModeGenerateResolutionSetParser(pastResolutionStr, mod, timex);
-                resolutionFuture = TasksModeSetHandler.TasksModeGenerateResolutionSetParser(futureResolutionStr, mod, timex);
+                    resolutionPast = TasksModeSetHandler.TasksModeGenerateResolutionSetParser(pastResolutionStr, mod, timex);
+                    resolutionFuture = TasksModeSetHandler.TasksModeGenerateResolutionSetParser(futureResolutionStr, mod, timex);
 
+                }
             }
 
             // If past and future are same, keep only one
