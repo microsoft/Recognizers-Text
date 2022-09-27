@@ -48,8 +48,16 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         // tasksmode specific date parser constant
         public const string NextWeekGroupName = "next week";
+
+        // constants
         public const string PeriodDaySuffix = "P1D";
         public const string FuzzyYearAndMonth = "XXXX-XX-";
+        public const string FuzzyYearAndWeek = "XXXX-WXX-";
+        public const string FuzzyYear = "XXXX-";
+        public const string GeneralPeriodPrefix = "P";
+        public const string TimeTimexPrefix = "T";
+        public const string WeekDayPrefix = "WD";
+        public const string WeekEndPrefix = "WE";
 
     }
 }

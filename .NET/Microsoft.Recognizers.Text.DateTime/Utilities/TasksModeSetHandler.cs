@@ -39,21 +39,21 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
             var res = new Dictionary<string, string>();
 
             TasksModeAddAltSingleDateTimeToResolution(resolutionDic, TimeTypeConstants.DATETIMEALT, mod, res);
-            if (timex.StartsWith("P") && res.Count > 0)
+            if (timex.StartsWith(TasksModeConstants.GeneralPeriodPrefix) && res.Count > 0)
             {
                 var extracted = new Dictionary<string, string>();
                 TimexRegex.Extract("period", timex, extracted);
                 res.Add("intervalSize", extracted.TryGetValue("amount", out var intervalSize) ? intervalSize : string.Empty);
                 res.Add("intervalType", extracted.TryGetValue("dateUnit", out var intervalType) ? intervalType : string.Empty);
             }
-            else if (timex.StartsWith("XXXX-") && res.Count > 0)
+            else if (timex.StartsWith(TasksModeConstants.FuzzyYear) && res.Count > 0)
             {
                 var extracted = new Dictionary<string, string>();
                 TimexRegex.Extract("period", timex, extracted);
                 res.Add("intervalSize", extracted.TryGetValue("amount", out var intervalSize) ? intervalSize : "1");
                 res.Add("intervalType", extracted.TryGetValue("dateUnit", out var intervalType) ? intervalType : "W");
             }
-            else if (timex.StartsWith("T") && res.Count > 0)
+            else if (timex.StartsWith(TasksModeConstants.TimeTimexPrefix) && res.Count > 0)
             {
                 res.Add("intervalSize", "1");
                 res.Add("intervalType", "D");
@@ -82,7 +82,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
 
         public static DateTimeResolutionResult TasksModeAddResolution(ref DateTimeResolutionResult result, ExtractResult er, DateObject refDate)
         {
-            if (result.Timex.EndsWith("WE"))
+            if (result.Timex.EndsWith(TasksModeConstants.WeekEndPrefix))
             {
                 if (refDate.DayOfWeek == DayOfWeek.Sunday)
                 {
@@ -123,7 +123,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
                     };
                 }
             }
-            else if (result.Timex.EndsWith("WD"))
+            else if (result.Timex.EndsWith(TasksModeConstants.WeekDayPrefix))
             {
                 if (refDate.DayOfWeek == DayOfWeek.Saturday)
                 {
@@ -162,7 +162,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
                     };
                 }
             }
-            else if (result.Timex.StartsWith("P"))
+            else if (result.Timex.StartsWith(TasksModeConstants.GeneralPeriodPrefix))
             {
                 result.FutureResolution = new Dictionary<string, string>
                 {
@@ -174,7 +174,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
                     { TimeTypeConstants.DATE, DateTimeFormatUtil.FormatDate((DateObject)refDate) },
                 };
             }
-            else if (result.Timex.StartsWith("XXXX-"))
+            else if (result.Timex.StartsWith(TasksModeConstants.FuzzyYear))
             {
                 var timexRes = TimexResolver.Resolve(new[] { result.Timex }, refDate);
 
@@ -182,16 +182,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
 
                 var resKey = TimeTypeConstants.DATETIME;
 
-                if (!result.Timex.Contains("T"))
+                if (!result.Timex.Contains(TasksModeConstants.TimeTimexPrefix))
                 {
                     resKey = TimeTypeConstants.DATE;
                 }
 
                 var futureValue = refDate.AddDays(7);
 
-                if (DateTimeFormatUtil.FormatDate(futureValue).Equals(value.Substring(0, 10)) && result.Timex.StartsWith("XXXX-WXX-"))
+                if (DateTimeFormatUtil.FormatDate(futureValue).Equals(value.Substring(0, 10)) && result.Timex.StartsWith(TasksModeConstants.FuzzyYearAndWeek))
                 {
-                    if (result.Timex.Contains("T"))
+                    if (result.Timex.Contains(TasksModeConstants.TimeTimexPrefix))
                     {
                         if (DateTimeFormatUtil.FormatTime(refDate).CompareTo(value.Substring(11)) <= 0)
                         {
@@ -214,7 +214,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
                     { resKey, (string)value },
                 };
             }
-            else if (result.Timex.StartsWith("T"))
+            else if (result.Timex.StartsWith(TasksModeConstants.TimeTimexPrefix))
             {
                 var timexRes = TimexResolver.Resolve(new[] { result.Timex }, refDate);
 
