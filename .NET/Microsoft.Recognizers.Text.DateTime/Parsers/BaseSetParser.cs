@@ -4,7 +4,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.Recognizers.Text.DataTypes.TimexExpression;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
@@ -239,7 +238,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     if ((config.Options & DateTimeOptions.TasksMode) != 0)
                     {
-                        ret = TasksModeSetHandler.TasksModeResolveSet(ref ret, pr.TimexStr + "P1D");
+                        ret = TasksModeSetHandler.TasksModeResolveSet(ref ret, pr.TimexStr + TasksModeConstants.PeriodDaySuffix);
                     }
 
                 }
@@ -256,7 +255,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     if ((config.Options & DateTimeOptions.TasksMode) != 0)
                     {
-                        ret = TasksModeSetHandler.TasksModeResolveSet(ref ret, pr.TimexStr + "P1D");
+                        ret = TasksModeSetHandler.TasksModeResolveSet(ref ret, pr.TimexStr + TasksModeConstants.PeriodDaySuffix);
                     }
 
                 }
@@ -354,11 +353,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     if ((config.Options & DateTimeOptions.TasksMode) != 0)
                     {
-                        ret = TasksModeSetHandler.TasksModeResolveSet(ref ret, "XXXX-XX-" + pr.TimexStr.Substring(8) + eachResult.Timex, pr);
+                        ret = TasksModeSetHandler.TasksModeResolveSet(ref ret, TasksModeConstants.FuzzyYearAndMonth + pr.TimexStr.Substring(8) + eachResult.Timex, pr);
                     }
                     else
                     {
-                        ret = SetHandler.ResolveSet(ref ret, "XXXX-XX-" + pr.TimexStr.Substring(8));
+                        ret = SetHandler.ResolveSet(ref ret, TasksModeConstants.FuzzyYearAndMonth + pr.TimexStr.Substring(8));
 
                     }
                 }
