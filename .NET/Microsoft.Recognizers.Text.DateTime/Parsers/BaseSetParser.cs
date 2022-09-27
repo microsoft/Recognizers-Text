@@ -33,58 +33,60 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (er.Type.Equals(ParserName, StringComparison.Ordinal))
             {
-                var innerResult = ParseEachUnit(er.Text.Trim());
+                er.Text = er.Text.Trim();
+
+                var innerResult = ParseEachUnit(er.Text);
 
                 if (!innerResult.Success)
                 {
-                    innerResult = ParseEachDuration(er.Text.Trim(), refDate);
+                    innerResult = ParseEachDuration(er.Text, refDate);
                 }
 
                 if (!innerResult.Success)
                 {
-                    innerResult = ParserTimeEveryday(er.Text.Trim(), refDate);
+                    innerResult = ParserTimeEveryday(er.Text, refDate);
                 }
 
                 // NOTE: Do not change the order of the following calls, due to type precedence
                 // datetimeperiod > dateperiod > timeperiod > datetime > date > time
                 if (!innerResult.Success)
                 {
-                    innerResult = ParseEach(config.DateTimePeriodExtractor, config.DateTimePeriodParser, er.Text.Trim(), refDate);
+                    innerResult = ParseEach(config.DateTimePeriodExtractor, config.DateTimePeriodParser, er.Text, refDate);
                 }
 
                 if (!innerResult.Success)
                 {
-                    innerResult = ParseEach(config.DatePeriodExtractor, config.DatePeriodParser, er.Text.Trim(), refDate);
+                    innerResult = ParseEach(config.DatePeriodExtractor, config.DatePeriodParser, er.Text, refDate);
                 }
 
                 if (!innerResult.Success)
                 {
-                    innerResult = ParseEach(config.TimePeriodExtractor, config.TimePeriodParser, er.Text.Trim(), refDate);
+                    innerResult = ParseEach(config.TimePeriodExtractor, config.TimePeriodParser, er.Text, refDate);
                 }
 
                 if (!innerResult.Success)
                 {
-                    innerResult = ParseEach(config.DateTimeExtractor, config.DateTimeParser, er.Text.Trim(), refDate);
+                    innerResult = ParseEach(config.DateTimeExtractor, config.DateTimeParser, er.Text, refDate);
                 }
 
                 if (!innerResult.Success)
                 {
-                    innerResult = ParseEach(config.DateExtractor, config.DateParser, er.Text.Trim(), refDate);
+                    innerResult = ParseEach(config.DateExtractor, config.DateParser, er.Text, refDate);
                 }
 
                 if (!innerResult.Success)
                 {
-                    innerResult = ParseEach(config.TimeExtractor, config.TimeParser, er.Text.Trim(), refDate);
+                    innerResult = ParseEach(config.TimeExtractor, config.TimeParser, er.Text, refDate);
                 }
 
                 if (!innerResult.Success)
                 {
-                    innerResult = ParserDayEveryweek(er.Text.Trim(), refDate);
+                    innerResult = ParserDayEveryweek(er.Text, refDate);
                 }
 
                 if (!innerResult.Success)
                 {
-                    innerResult = ParserSingleNumbermonth(er.Text.Trim(), refDate);
+                    innerResult = ParserSingleNumbermonth(er.Text, refDate);
                 }
 
                 if (innerResult.Success)
