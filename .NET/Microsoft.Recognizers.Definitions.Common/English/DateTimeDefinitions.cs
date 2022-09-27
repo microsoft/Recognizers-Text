@@ -919,7 +919,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public const string HalfMultiplierRegex = @"^(semi)(-|\s)?";
       public const string DayTypeRegex = @"((week)?da(il)?ys?)$";
       public const string WeekDayTypeRegex = @"(weekday?)$";
-      public const string FortNightTypeRegex = @"(fortnight?)$";
+      public const string FortNightRegex = @"(fortnight?)$";
       public const string WeekTypeRegex = @"(week(s|ly)?)$";
       public const string WeekendTypeRegex = @"(weekends?)$";
       public const string MonthTypeRegex = @"(month(s|ly)?)$";

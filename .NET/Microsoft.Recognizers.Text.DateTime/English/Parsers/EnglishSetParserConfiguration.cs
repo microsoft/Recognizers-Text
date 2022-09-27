@@ -38,8 +38,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         private static readonly Regex YearTypeRegex =
             new Regex(DateTimeDefinitions.YearTypeRegex, RegexFlags);
 
-        private static readonly Regex FortNightTypeRegex =
-            new Regex(DateTimeDefinitions.FortNightTypeRegex, RegexFlags);
+        private static readonly Regex FortNightRegex =
+            new Regex(DateTimeDefinitions.FortNightRegex, RegexFlags);
 
         private static readonly Regex WeekDayTypeRegex =
            new Regex(DateTimeDefinitions.WeekDayTypeRegex, RegexFlags);
@@ -147,7 +147,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             {
                 durationType = "WE";
             }
-            else if (FortNightTypeRegex.IsMatch(trimmedText))
+            else if (FortNightRegex.IsMatch(trimmedText))
             {
                 durationLength = 2;
                 durationType = "W";

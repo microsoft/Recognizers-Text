@@ -1380,7 +1380,7 @@ DayTypeRegex: !simpleRegex
   def: ((week)?da(il)?ys?)$
 WeekDayTypeRegex: !simpleRegex
   def: (weekday?)$
-FortNightTypeRegex: !simpleRegex
+FortNightRegex: !simpleRegex
   def: (fortnight?)$
 WeekTypeRegex: !simpleRegex
   def: (week(s|ly)?)$
