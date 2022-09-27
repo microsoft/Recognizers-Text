@@ -161,8 +161,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                 var afterStr = text.Substring(er.Start + er.Length ?? 0);
 
                 var beforeStr = text.Substring(0, er.Start ?? 0);
-
-                // var beforeMatch = this.config.EachUnitRegex.Match(beforeStr);
                 var beforeMatch = MatchEachUnit(beforeStr);
                 var timeBeforeErs = this.config.TimeExtractor.Extract(beforeStr, reference);
                 var timeBeforeErs1 = this.config.TimePeriodExtractor.Extract(beforeStr, reference);
