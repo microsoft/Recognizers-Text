@@ -49,10 +49,10 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
         private static void ExtractDateTime(string s, TimexProperty timexProperty)
         {
             var indexOfT = s.IndexOf('T');
+            var indexOfP = s.IndexOf('P');
 
             if (indexOfT == -1)
             {
-                var indexOfP = s.IndexOf('P');
                 var extracted = new Dictionary<string, string>();
                 if (indexOfP == -1)
                 {
@@ -67,7 +67,6 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             }
             else
             {
-                var indexOfP = s.IndexOf('P');
                 var extracted = new Dictionary<string, string>();
                 TimexRegex.Extract("date", s.Substring(0, indexOfT), extracted);
                 if (indexOfP == -1)
