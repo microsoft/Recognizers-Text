@@ -387,11 +387,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             }
 
             // remove suffix 's' and "on" if existed and re-try
-            var match1 = this.config.SetWeekDayRegex.Match(text);
-            if (match1.Success)
+            var matchWeekDay = this.config.SetWeekDayRegex.Match(text);
+            if (matchWeekDay.Success)
             {
-                var trimmedText = text.Remove(match1.Index, match1.Length);
-                trimmedText = trimmedText.Insert(match1.Index, config.WeekDayGroupMatchString(match1));
+                var trimmedText = text.Remove(matchWeekDay.Index, matchWeekDay.Length);
+                trimmedText = trimmedText.Insert(matchWeekDay.Index, config.WeekDayGroupMatchString(matchWeekDay));
 
                 ers = extractor.Extract(trimmedText, refDate);
                 if (ers.Count == 1 && ers.First().Length == trimmedText.Length)
