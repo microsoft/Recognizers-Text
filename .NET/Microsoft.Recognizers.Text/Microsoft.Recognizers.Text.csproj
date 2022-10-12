@@ -34,7 +34,7 @@
     <PackageReference Include="System.Collections.Immutable" Version="1.7.1" />
     <PackageReference Include="System.ValueTuple" Version="4.5.0" />
     <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="2.2.0" />
-    <PackageReference Include="NuGet.CommandLine" Version="5.7.2" />
+    <PackageReference Include="NuGet.CommandLine" Version="5.9.3" />
     <PackageReference Include="vswhere" Version="2.8.4" />
   </ItemGroup>
 
