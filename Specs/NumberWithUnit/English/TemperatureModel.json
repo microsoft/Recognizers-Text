@@ -608,5 +608,40 @@
     "Input": "Rotate 90°",
     "NotSupported": "java, javascript, python",
     "Results": []
+  },
+  {
+    "Input": "Operating profit and funds from operations for 2020 were $765 million or 14.7C/ per security.",
+    "NotSupported": "javascript",
+    "Results": []
+  },
+  {
+    "Input": "The March 2021 C.P.I. forecast is the median estimate in a Bloomberg survey of economists, as of the morning of April 12.",
+    "NotSupported": "javascript",
+    "Results": []
+  },
+  {
+    "Input": "Qs cash profits for the first half of fiscal 2021, announced on Thursday, rose 9 per cent to $165 million, led by a turnaround in its retail banking arm, and its interim dividend by 11c to 17c a share.",
+    "NotSupported": "javascript",
+    "Results": []
+  },
+  {
+    "Input": "Ford routinely sells more than 800,000 F-Series pickups ",
+    "NotSupported": "javascript",
+    "Results": []
+  },
+  {
+    "Input": "Direct Relief, which has long worked with FedEx, also partnered with the shipping giant to charter a Boeing 777F to transport supplies to India free of cost",
+    "NotSupported": "javascript",
+    "Results": []
+  },
+  {
+    "Input": "The 13F filing provides one of the first examples of how a hedge fund attempted to capitalize on the distressed remains of Archegos.",
+    "NotSupported": "javascript",
+    "Results": []
+  },
+  {
+    "Input": "When must 13F be filed?",
+    "NotSupported": "javascript",
+    "Results": []
   }
 ]

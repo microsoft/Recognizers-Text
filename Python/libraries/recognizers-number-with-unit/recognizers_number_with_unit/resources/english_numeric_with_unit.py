@@ -699,7 +699,13 @@ class EnglishNumericWithUnit:
     AmbiguityFiltersDict = dict([("\\bm\\b", "((('|’)\\s*m)|(m\\s*('|’)))"),
                                  ("^\\d{5} [cf]$", "\\b([a-z]{2} \\d{5} [cf])\\b"),
                                  ("\\b\\d+\\s*\\p{L}+$", "((\\d+(\\s*\\p{L}+[-—–-]|\\p{L}+)\\d+)|(((\\p{L}|\\d)[-—–-]\\d+\\s*|\\p{L}\\d+)\\p{L}+))"),
-                                 ("^(all|bob|pen|cad|cup|cop|sos|ron|mad|mop|zar|gel)", "(all|bob|pen|cad|cup|cop|sos|ron|mad|mop|zar|gel)\\s*(\\d|\\p{L})")])
+                                 ("^(all|bob|pen|cad|cup|cop|sos|ron|mad|mop|zar|gel)", "(all|bob|pen|cad|cup|cop|sos|ron|mad|mop|zar|gel)\\s*(\\d|\\p{L})"),
+                                 ("\\d\\s*pm\\b", "\\b(at|until|since|before|after)\\s\\d(\\d)?\\s*pm\\b"),
+                                 ("\\bin\\b", "\\bin\\s*(\\d{4}|(jan|febr)uary|march|april|may|ju(ne|ly)|august|october|(sept|nov|dec)ember)"),
+                                 ("\\b(13)?f\\b", "(\\bf-series\\b|\\b13f\\s(filings?|be fill?ed))"),
+                                 ("\\d\\d\\df", "boeing\\s777f"),
+                                 ("\\bc\\b", "\\bc\\.p\\.i(\\.)?"),
+                                 ("\\d\\s*c\\b", "(dividend (of|by) (\\d\\.)?\\d(\\d)?\\s*c|(\\d\\.)?\\d(\\d)?\\s*c/? (a share|per security))")])
     TemperatureAmbiguityFiltersDict = dict([("\\b(deg(rees?)?|°)$", "\\b((deg(rees?)?|°)\\s*(angle|rotation)|(rotat(ion|e[ds]?|ing)|angle)(\\s+(\\p{L}+|\\d+)){0,4}\\s*(deg(rees?)?\\b|°))")])
     DimensionAmbiguityFiltersDict = dict([("\\b(deg(rees?)?|°)$", "\\b((deg(rees?)?|°)\\s*(c(elsius|entigrate)?|f(ah?renheit)?)|(temperature)(\\s+(\\p{L}+|\\d+)){0,4}\\s*(deg(rees?)?\\b|°))"),
                                           ("\\b\\d+\\s*\\p{L}+$", "((\\d+\\s*\\p{L}+\\d+)|(\\p{L}\\d+\\s*\\p{L}+))")])
