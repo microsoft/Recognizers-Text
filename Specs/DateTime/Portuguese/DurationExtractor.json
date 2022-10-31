@@ -250,5 +250,29 @@
         "Length": 6
       }
     ]
+  },
+  {
+    "Input": "estivemos no paquistao por 2ys",
+    "NotSupported": "dotnet,javascript,python,java",
+    "Results": [
+      {
+        "Text": "2ys",
+        "Type": "duration",
+        "Start": 27,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "a estimativa do projeto é de 2 ys de duração",
+    "NotSupported": "dotnet,javascript,python,java",
+    "Results": [
+      {
+        "Text": "2 ys",
+        "Type": "duration",
+        "Start": 29,
+        "Length": 4
+      }
+    ]
   }
 ]
