@@ -68,7 +68,7 @@ class PortugueseNumeric:
     FractionNounRegex = f'(?<=\\b)({AllIntRegex}\\s+((e|com)\\s+)?)?(({AllIntRegex})(\\s+((e|com)\\s)?)((({AllOrdinalNumberRegex})s?|({SpecialFractionInteger})|({SuffixRoundOrdinalRegex})s?)|mei[oa]?|ter[çc]o?)|(meio|um\\s+quarto\\s+de)\\s+{RoundNumberIntegerRegex})(?=\\b)'
     FractionNounWithArticleRegex = f'(?<=\\b)(({AllIntRegex}|{RoundNumberIntegerRegexWithLocks})\\s+(e\\s+)?)?((um|um[as])(\\s+)(({AllOrdinalNumberRegex})|({SuffixRoundOrdinalRegex})|(e\\s+)?mei[oa]?)|mei[oa]?)(?=\\b)'
     FractionPrepositionRegex = f'(?<!{BaseNumbers.CommonCurrencySymbol}\\s*)(?<=\\b)(?<numerator>({AllIntRegex})|((?<!\\.)\\d+))\\s+sobre\\s+(?<denominator>({AllIntRegex})|((\\d+)(?!\\.)))(?=\\b)'
-    AllFloatRegex = f'{AllIntRegex}(\\s+(vírgula|virgula|e|ponto)){AllPointRegex}'
+    AllFloatRegex = f'(?<!(entre\\s+(menos\\+)?)){AllIntRegex}(\\s+(v[íi]rgula|e|ponto)){AllPointRegex}'
     DoubleWithMultiplierRegex = f'(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\,)))\\d+,\\d+\\s*{BaseNumbers.NumberMultiplierRegex}(?=\\b)'
     DoubleExponentialNotationRegex = f'(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+,)))(\\d+(,\\d+)?)e([+-]*[1-9]\\d*)(?=\\b)'
     DoubleCaretExponentialNotationRegex = f'(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+,)))(\\d+(,\\d+)?)\\^([+-]*[1-9]\\d*)(?=\\b)'
@@ -81,7 +81,34 @@ class PortugueseNumeric:
     DoubleWithRoundNumber = f'(((?<!\\d+\\s*)-\\s*)|((?<=\\b)(?<!\\d+\\,)))\\d+,\\d+\\s+{RoundNumberIntegerRegex}(?=\\b)'
     DoubleAllFloatRegex = f'((?<=\\b){AllFloatRegex}(?=\\b))'
     NumberWithSuffixPercentage = f'(?<!%)({BaseNumbers.NumberReplaceToken})(\\s*)(%(?!{BaseNumbers.NumberReplaceToken})|(por cento|pontos percentuais)\\b)'
-    AmbiguousFractionConnectorsRegex = f'^[.]'
+    TillRegex = f'(\\b[aà]\\b|at[eé]h?|--|-|—|——|~|–)'
+    MoreRegex = f'(mais\\s+(alt[oa]s?|grandes?)\\s+que|(mais|maior(es)?|superior(es)?|acima)\\b((\\s+(que|de|a))|(?=\\s+ou\\b))|(?<!<|=)>)'
+    LessRegex = f'(mais\\s+baix[oa]\\s+que|(meno(s|r(es)?)|inferior(es)?|abaixo)(\\s+(que|de|a)|(?=\\s+ou\\b))|(?<!>|=)<)'
+    EqualRegex = f'((igua(l|is)|equivalente(s)?|equivale(ndo)?)(\\s+(ao?|que|d[eao]))?|(?<!<|>)=)'
+    MoreOrEqualPrefix = f'((n[ãa]o\\s+{LessRegex})|((pelo|ao)\\s+menos|(como(\\s+o)?|no)\\s+m[íi]nimo))'
+    MoreOrEqual = f'(({MoreRegex}\\s+(ou)?\\s+{EqualRegex})|({EqualRegex}\\s+(ou|e)\\s+{MoreRegex})|{MoreOrEqualPrefix}(\\s+(ou)\\s+{EqualRegex})?|({EqualRegex}\\s+(ou)\\s+)?{MoreOrEqualPrefix}|>\\s*=)'
+    MoreOrEqualSuffix = f'((\\b(e|ou)\\b\\s+(mais|maior(es)?|superior(es)?)((?!\\s+(alt[oa]|baix[oa]|que|d[eao]|ao?))|(\\s+(que|d[eao]|ao?)(?!(\\s*\\d+)))))|(como(\\s+o)?|no)\\s+m[íi]nimo|(pelo|ao)\\s+menos)\\b'
+    LessOrEqualPrefix = f'((n[ãa]o\\s+{MoreRegex})|((como(\\s+o)?|no)\\s+m[aá]ximo))'
+    LessOrEqual = f'(({LessRegex}\\s+(ou)?\\s+{EqualRegex})|({EqualRegex}\\s+(ou)?\\s+{LessRegex})|{LessOrEqualPrefix}(\\s+(ou)?\\s+{EqualRegex})?|({EqualRegex}\\s+(ou)?\\s+)?{LessOrEqualPrefix}|<\\s*=)'
+    LessOrEqualSuffix = f'((\\b(e|ou)\\b\\s+(meno(s|r(es)?|inferior(es)?))((?!\\s+(alt[oa]|baix[oa]|que|d[eao]|ao?))|(\\s+(que|d[eao]|ao?)(?!(\\s*\\d+)))))|(como(\\s+o)?|no)\\s+m[áa]ximo)\\b'
+    NumberSplitMark = f'(?![,.](?!\\d+))(?!\\s*\\b(((e)\\s+)?({LessRegex}|{MoreRegex}|{EqualRegex}|n[ãa]o|d[eao])|mas|[ao])\\b)'
+    MoreRegexNoNumberSucceed = f'(\\b(mais|maior(es)?|superior(es)?)((?!\\s+(que|d[eao]|ao?))|\\s+((que|d[eao])(?!(\\s*\\d+))))|((por\\s+|a)cima)(?!(\\s*\\d+)))\\b'
+    LessRegexNoNumberSucceed = f'(\\b(meno(s|r(es)?)|inferior(es)?)((?!\\s+(que|d[eao]|ao?))|\\s+((que|d[eao]|ao?)(?!(\\s*\\d+))))|((por\\s+|a)baixo)(?!(\\s*\\d+)))\\b'
+    EqualRegexNoNumberSucceed = f'(\\b(igua(l|is)|equivalentes?|equivale(ndo)?)((?!\\s+(ao?|que|d[eao]))|(\\s+(ao?|que|d[eao])(?!(\\s*\\d+)))))\\b'
+    OneNumberRangeMoreRegex1 = f'({MoreOrEqual}|{MoreRegex})\\s*(([ao]s?)\\s+)?(?<number1>({NumberSplitMark}.)+)'
+    OneNumberRangeMoreRegex1LB = f'(?<!n[ãa]o\\s+){OneNumberRangeMoreRegex1}'
+    OneNumberRangeMoreRegex2 = f'(?<number1>({NumberSplitMark}.)+)\\s*{MoreOrEqualSuffix}'
+    OneNumberRangeMoreSeparateRegex = f'({EqualRegex}\\s+(?<number1>({NumberSplitMark}.)+)(\\s+ou\\s+){MoreRegexNoNumberSucceed})|({MoreRegex}\\s+(?<number1>({NumberSplitMark}.)+)(\\s+ou\\s+){EqualRegexNoNumberSucceed})'
+    OneNumberRangeLessRegex1 = f'({LessOrEqual}|{LessRegex})\\s*([ao]s?\\s+)?(?<number2>({NumberSplitMark}.)+)'
+    OneNumberRangeLessRegex1LB = f'(?<!n[ãa]o\\s+){OneNumberRangeLessRegex1}'
+    OneNumberRangeLessRegex2 = f'(?<number2>({NumberSplitMark}.)+)\\s*{LessOrEqualSuffix}'
+    OneNumberRangeLessSeparateRegex = f'({EqualRegex}\\s+(?<number1>({NumberSplitMark}.)+)(\\s+ou\\s+){LessRegexNoNumberSucceed})|({LessRegex}\\s+(?<number1>({NumberSplitMark}.)+)(\\s+ou\\s+){EqualRegexNoNumberSucceed})'
+    OneNumberRangeEqualRegex = f'{EqualRegex}\\s*([ao]s?\\s+)?(?<number1>({NumberSplitMark}.)+)'
+    TwoNumberRangeRegex1 = f'\\bentre\\s*([ao]s?\\s+)?(?<number1>({NumberSplitMark}.)+)\\s*e\\s*([ao]s?\\s+)?(?<number2>({NumberSplitMark}.)+)'
+    TwoNumberRangeRegex2 = f'({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})\\s*(\\be\\b|mas|,)\\s*({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})'
+    TwoNumberRangeRegex3 = f'({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2})\\s*(\\be\\b|mas|,)\\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2})'
+    TwoNumberRangeRegex4 = f'(\\bde(sde)?\\s+)?(\\b[ao]s?\\s+)?\\b(?!\\s+)(?<number1>({NumberSplitMark}(?!\\b(entre|de(sde)?|es)\\b).)+)\\b\\s*{TillRegex}\\s*([ao]s?\\s+)?\\b(?!\\s+)(?<number2>({NumberSplitMark}.)+)\\b'
+    AmbiguousFractionConnectorsRegex = f'(\\b(em|de)\\b)'
     DecimalSeparatorChar = ','
     FractionMarkerToken = 'sobre'
     NonDecimalSeparatorChar = '.'
@@ -95,7 +122,7 @@ class PortugueseNumeric:
     OneHalfTokens = [r'um', r'meio']
     PluralSuffix = 's'
     HalfADozenRegex = f'meia\\s+d[uú]zia'
-    DigitalNumberRegex = f'((?<=\\b)(mil|cem|milh[oõ]es|milh[aã]o|bilh[oõ]es|bilh[aã]o|trilh[oõ]es|trilh[aã]o|milhares|centena|centenas|dezena|dezenas?)(?=\\b))|((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))'
+    DigitalNumberRegex = f'((?<=\\b)(mil(hares)?|ce(m|ntenas?)|[bmt]ilh([aã]o|[oõ]es)|dezenas?)(?=\\b))|((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))'
     CardinalNumberMap = dict([("zero", 0),
                               ("hum", 1),
                               ("um", 1),
@@ -262,6 +289,10 @@ class PortugueseNumeric:
                              ("quadringentesimo", 400),
                              ("quadringentésima", 400),
                              ("quadringentesima", 400),
+                             ("quadrigentésimo", 400),
+                             ("quadrigentesimo", 400),
+                             ("quadrigentésima", 400),
+                             ("quadrigentesima", 400),
                              ("quingentésimo", 500),
                              ("quingentesimo", 500),
                              ("quingentésima", 500),
