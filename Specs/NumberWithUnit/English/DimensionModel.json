@@ -1483,5 +1483,25 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Put out the bad news on New Year's Eve, or a Friday at 6pm, too late for the TV news.",
+    "NotSupported": "javascript",
+    "Results": []
+  },
+  {
+    "Input": "However, takeaway deliveries are permitted only until 11pm under the government restrictions.",
+    "NotSupported": "javascript",
+    "Results": []
+  },
+  {
+    "Input": "Get together for 2 in april",
+    "NotSupported": "javascript",
+    "Results": []
+  },
+  {
+    "Input": "It has also doubled its work force to 50,000 in 2020, becoming South Koreas third-largest private-sector employer.",
+    "NotSupported": "javascript",
+    "Results": []
   }
 ]
