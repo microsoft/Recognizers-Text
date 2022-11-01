@@ -31,7 +31,7 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
                 },
                 {
                     // 五分の二   七分の三
-                    new Regex(NumbersDefinitions.AllFractionNumber, RegexFlags, TimeSpan.FromSeconds(5)),
+                    new Regex(NumbersDefinitions.AllFractionNumber, RegexFlags, TimeSpan.FromSeconds(Constants.DEFAULT_MATCH_TIMEOUT_IN_SECONDS)),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.JAPANESE)
                 },
             };
