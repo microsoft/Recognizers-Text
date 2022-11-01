@@ -1,6 +1,7 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
+using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
@@ -30,7 +31,7 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
                 },
                 {
                     // 五分の二   七分の三
-                    new Regex(NumbersDefinitions.AllFractionNumber, RegexFlags),
+                    new Regex(NumbersDefinitions.AllFractionNumber, RegexFlags, TimeSpan.FromSeconds(Constants.DEFAULT_TIMEOUT_IN_SECONDS)),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.JAPANESE)
                 },
             };

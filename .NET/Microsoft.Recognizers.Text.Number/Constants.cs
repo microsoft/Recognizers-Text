@@ -82,5 +82,7 @@ namespace Microsoft.Recognizers.Text.Number
             FRACTION,
             POWER,
         };
+
+        public static readonly int DEFAULT_TIMEOUT_IN_SECONDS = 5;
     }
 }
