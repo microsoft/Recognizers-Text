@@ -256,7 +256,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {
             { @"十", @"十足" },
-            { @"伍", @"队伍" },
+            { @"伍", @"队伍|入伍|退伍|伍仁" },
             { @"肆", @"放肆|肆意|肆无忌惮" },
             { @"陆", @"大陆|陆地|登陆|海陆" },
             { @"拾", @"拾取|拾起|收拾|拾到|朝花夕拾" }
