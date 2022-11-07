@@ -15,11 +15,11 @@ namespace Microsoft.Recognizers.Text
 
         private readonly ModelFactory<TRecognizerOptions> factory;
 
-        protected Recognizer(string targetCulture, TRecognizerOptions options, bool lazyInitialization, int timeoutInSeconds = 0)
+        protected Recognizer(string targetCulture, TRecognizerOptions options, bool lazyInitialization, int timeout = 0)
         {
             this.Options = options;
             this.TargetCulture = targetCulture;
-            this.TimeoutInSeconds = timeoutInSeconds;
+            this.TimeoutInSeconds = timeout;
             this.factory = new ModelFactory<TRecognizerOptions>();
 
             AddRegexTimeoutValuesForType();
@@ -42,14 +42,7 @@ namespace Microsoft.Recognizers.Text
 
         public static TimeSpan GetTimeout(Type type)
         {
-            if (!TimeoutDictionary.ContainsKey(type))
-            {
-                throw new ArgumentException($"Invalid type {type.Name}");
-            }
-
-            var timeInSeconds = Math.Max(0, TimeoutDictionary[type]);
-
-            return timeInSeconds > 0 ?
+            return TimeoutDictionary.TryGetValue(type, out var timeInSeconds) && timeInSeconds > 0 ?
                 TimeSpan.FromSeconds(timeInSeconds) : TimeSpan.FromSeconds(Constants.MaxRegexTimeoutInSeconds);
         }
 
