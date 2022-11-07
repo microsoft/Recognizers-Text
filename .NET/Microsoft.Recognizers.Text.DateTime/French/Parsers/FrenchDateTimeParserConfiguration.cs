@@ -14,15 +14,15 @@ namespace Microsoft.Recognizers.Text.DateTime.French
     public class FrenchDateTimeParserConfiguration : BaseDateTimeOptionsConfiguration, IDateTimeParserConfiguration
     {
         public static readonly Regex AmTimeRegex =
-            new Regex(DateTimeDefinitions.AMTimeRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.AMTimeRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex PmTimeRegex =
-            new Regex(DateTimeDefinitions.PMTimeRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.PMTimeRegex, RegexFlags, RegexTimeOut);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly Regex AsapTimeRegex =
-            new Regex(DateTimeDefinitions.AsapTimeRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.AsapTimeRegex, RegexFlags, RegexTimeOut);
 
         public FrenchDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)

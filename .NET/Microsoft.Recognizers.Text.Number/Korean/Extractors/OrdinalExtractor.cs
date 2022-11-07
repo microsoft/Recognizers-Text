@@ -24,7 +24,7 @@ namespace Microsoft.Recognizers.Text.Number.Korean
             var regexes = new Dictionary<Regex, TypeTag>
             {
                 {
-                    new Regex(NumbersDefinitions.OrdinalKoreanRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.OrdinalKoreanRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.KOREAN)
                 },
 

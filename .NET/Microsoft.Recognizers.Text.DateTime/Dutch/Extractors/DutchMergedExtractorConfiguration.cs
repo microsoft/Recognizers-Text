@@ -14,54 +14,54 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
     public class DutchMergedExtractorConfiguration : BaseDateTimeOptionsConfiguration, IMergedExtractorConfiguration
     {
         public static readonly Regex BeforeRegex =
-            new Regex(DateTimeDefinitions.BeforeRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.BeforeRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex AfterRegex =
-            new Regex(DateTimeDefinitions.AfterRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.AfterRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex SinceRegex =
-            new Regex(DateTimeDefinitions.SinceRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.SinceRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex AroundRegex =
-            new Regex(DateTimeDefinitions.AroundRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.AroundRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex EqualRegex =
-            new Regex(BaseDateTime.EqualRegex, RegexFlags);
+            new Regex(BaseDateTime.EqualRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex FromToRegex =
-            new Regex(DateTimeDefinitions.FromToRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.FromToRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex SingleAmbiguousMonthRegex =
-            new Regex(DateTimeDefinitions.SingleAmbiguousMonthRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.SingleAmbiguousMonthRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex PrepositionSuffixRegex =
-            new Regex(DateTimeDefinitions.PrepositionSuffixRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.PrepositionSuffixRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex AmbiguousRangeModifierPrefix =
-            new Regex(DateTimeDefinitions.AmbiguousRangeModifierPrefix, RegexFlags);
+            new Regex(DateTimeDefinitions.AmbiguousRangeModifierPrefix, RegexFlags, RegexTimeOut);
 
         public static readonly Regex NumberEndingPattern =
-            new Regex(DateTimeDefinitions.NumberEndingPattern, RegexFlags);
+            new Regex(DateTimeDefinitions.NumberEndingPattern, RegexFlags, RegexTimeOut);
 
         public static readonly Regex SuffixAfterRegex =
-            new Regex(DateTimeDefinitions.SuffixAfterRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.SuffixAfterRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex UnspecificDatePeriodRegex =
-            new Regex(DateTimeDefinitions.UnspecificDatePeriodRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.UnspecificDatePeriodRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex PotentialAmbiguousRangeRegex =
-            new Regex(DateTimeDefinitions.PotentialAmbiguousRangeRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.PotentialAmbiguousRangeRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex YearRegex =
-           new Regex(DateTimeDefinitions.YearRegex, RegexFlags);
+           new Regex(DateTimeDefinitions.YearRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex[] TermFilterRegexes =
         {
             // one on one
-            new Regex(DateTimeDefinitions.OneOnOneRegex, RegexFlags),
+            new Regex(DateTimeDefinitions.OneOnOneRegex, RegexFlags, RegexTimeOut),
 
             // (the)? (day|week|month|year)
-            new Regex(DateTimeDefinitions.SingleAmbiguousTermsRegex, RegexFlags),
+            new Regex(DateTimeDefinitions.SingleAmbiguousTermsRegex, RegexFlags, RegexTimeOut),
         };
 
         public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();

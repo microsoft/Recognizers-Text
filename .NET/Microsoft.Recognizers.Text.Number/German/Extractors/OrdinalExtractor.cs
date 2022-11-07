@@ -29,19 +29,19 @@ namespace Microsoft.Recognizers.Text.Number.German
             this.Regexes = new Dictionary<Regex, TypeTag>
             {
                 {
-                    new Regex(NumbersDefinitions.OrdinalSuffixRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.OrdinalSuffixRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.OrdinalNumericRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.OrdinalNumericRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.OrdinalGermanRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.OrdinalGermanRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.GERMAN)
                 },
                 {
-                    new Regex(NumbersDefinitions.OrdinalRoundNumberRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.OrdinalRoundNumberRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.GERMAN)
                 },
             }.ToImmutableDictionary();

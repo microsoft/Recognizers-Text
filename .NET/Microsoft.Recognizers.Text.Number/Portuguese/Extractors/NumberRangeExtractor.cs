@@ -25,57 +25,57 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
             {
                 {
                     // entre ...e ...
-                    new Regex(NumbersDefinitions.TwoNumberRangeRegex1, RegexFlags),
+                    new Regex(NumbersDefinitions.TwoNumberRangeRegex1, RegexFlags, RegexTimeOut),
                     NumberRangeConstants.TWONUMBETWEEN
                 },
                 {
                     // mais que ... menos que ...
-                    new Regex(NumbersDefinitions.TwoNumberRangeRegex2, RegexFlags),
+                    new Regex(NumbersDefinitions.TwoNumberRangeRegex2, RegexFlags, RegexTimeOut),
                     NumberRangeConstants.TWONUM
                 },
                 {
                     // menos que ... mais que ...
-                    new Regex(NumbersDefinitions.TwoNumberRangeRegex3, RegexFlags),
+                    new Regex(NumbersDefinitions.TwoNumberRangeRegex3, RegexFlags, RegexTimeOut),
                     NumberRangeConstants.TWONUM
                 },
                 {
                     // de ... a ...
-                    new Regex(NumbersDefinitions.TwoNumberRangeRegex4, RegexFlags),
+                    new Regex(NumbersDefinitions.TwoNumberRangeRegex4, RegexFlags, RegexTimeOut),
                     NumberRangeConstants.TWONUMTILL
                 },
                 {
                     // mais/maior que ...
-                    new Regex(NumbersDefinitions.OneNumberRangeMoreRegex1LB, RegexFlags),
+                    new Regex(NumbersDefinitions.OneNumberRangeMoreRegex1LB, RegexFlags, RegexTimeOut),
                     NumberRangeConstants.MORE
                 },
                 {
                     // 30 and/or greater/higher
-                    new Regex(NumbersDefinitions.OneNumberRangeMoreRegex2, RegexFlags),
+                    new Regex(NumbersDefinitions.OneNumberRangeMoreRegex2, RegexFlags, RegexTimeOut),
                     NumberRangeConstants.MORE
                 },
                 {
                     // less/smaller/lower than ...
-                    new Regex(NumbersDefinitions.OneNumberRangeLessRegex1LB, RegexFlags),
+                    new Regex(NumbersDefinitions.OneNumberRangeLessRegex1LB, RegexFlags, RegexTimeOut),
                     NumberRangeConstants.LESS
                 },
                 {
                     // 30 e/ou mais/maior/maiores
-                    new Regex(NumbersDefinitions.OneNumberRangeLessRegex2, RegexFlags),
+                    new Regex(NumbersDefinitions.OneNumberRangeLessRegex2, RegexFlags, RegexTimeOut),
                     NumberRangeConstants.LESS
                 },
                 {
                     // igual a ...
-                    new Regex(NumbersDefinitions.OneNumberRangeEqualRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.OneNumberRangeEqualRegex, RegexFlags, RegexTimeOut),
                     NumberRangeConstants.EQUAL
                 },
                 {
                     // igual a 30 ou mais, mais que 30 ou igual ...
-                    new Regex(NumbersDefinitions.OneNumberRangeMoreSeparateRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.OneNumberRangeMoreSeparateRegex, RegexFlags, RegexTimeOut),
                     NumberRangeConstants.MORE
                 },
                 {
                     // igual a 30 ou menos, menos que 30 ou igual ...
-                    new Regex(NumbersDefinitions.OneNumberRangeLessSeparateRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.OneNumberRangeLessSeparateRegex, RegexFlags, RegexTimeOut),
                     NumberRangeConstants.LESS
                 },
             };
@@ -83,7 +83,7 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
             Regexes = regexes.ToImmutableDictionary();
 
             AmbiguousFractionConnectorsRegex =
-                new Regex(NumbersDefinitions.AmbiguousFractionConnectorsRegex, RegexFlags);
+                new Regex(NumbersDefinitions.AmbiguousFractionConnectorsRegex, RegexFlags, RegexTimeOut);
         }
 
         internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }

@@ -19,42 +19,42 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
             var regexes = new Dictionary<Regex, TypeTag>
             {
                 {
-                    new Regex(NumbersDefinitions.DoubleSpecialsChars, RegexFlags),
+                    new Regex(NumbersDefinitions.DoubleSpecialsChars, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     // (-)2.5, can avoid cases like ip address xx.xx.xx.xx
-                    new Regex(NumbersDefinitions.DoubleSpecialsCharsWithNegatives, RegexFlags),
+                    new Regex(NumbersDefinitions.DoubleSpecialsCharsWithNegatives, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     // (-).2
-                    new Regex(NumbersDefinitions.SimpleDoubleSpecialsChars, RegexFlags),
+                    new Regex(NumbersDefinitions.SimpleDoubleSpecialsChars, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     // 1.0 K
-                    new Regex(NumbersDefinitions.DoubleWithMultiplierRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.DoubleWithMultiplierRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     // １５.２万
-                    new Regex(NumbersDefinitions.DoubleWithThousandsRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.DoubleWithThousandsRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.CHINESE)
                 },
                 {
                     // 四十五点三三
-                    new Regex(NumbersDefinitions.DoubleAllFloatRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.DoubleAllFloatRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.CHINESE)
                 },
                 {
                     // 2e6, 21.2e0
-                    new Regex(NumbersDefinitions.DoubleExponentialNotationRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.DoubleExponentialNotationRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.POWER_SUFFIX)
                 },
                 {
                     // 2^5
-                    new Regex(NumbersDefinitions.DoubleScientificNotationRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.DoubleScientificNotationRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.POWER_SUFFIX)
                 },
             };

@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions;
@@ -13,6 +14,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
     public class NumberWithUnitExtractor : IExtractor
     {
+
         private readonly INumberWithUnitExtractorConfiguration config;
 
         private readonly StringMatcher suffixMatcher = new StringMatcher(MatchStrategy.TrieTree, new NumberWithUnitTokenizer());
@@ -20,7 +22,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
         private readonly Regex separateRegex;
         private readonly Regex singleCharUnitRegex = new Regex(BaseUnits.SingleCharUnitRegex,
-                                                               RegexOptions.Singleline | RegexOptions.Compiled | RegexOptions.IgnoreCase);
+                                                               RegexOptions.Singleline | RegexOptions.Compiled | RegexOptions.IgnoreCase, RegexTimeOut);
 
         private readonly int maxPrefixMatchLen;
 
@@ -53,6 +55,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
             separateRegex = BuildSeparateRegexFromSet();
         }
+
+        protected static TimeSpan RegexTimeOut => NumberWithUnitRecognizer.GetTimeout(MethodBase.GetCurrentMethod().DeclaringType);
 
         public static bool ValidateUnit(string source)
         {
@@ -447,7 +451,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                 var pattern = $@"{this.config.BuildPrefix}({string.Join("|", regexTokens)}){this.config.BuildSuffix}";
                 var options = RegexOptions.Singleline | RegexOptions.ExplicitCapture | (ignoreCase ? RegexOptions.IgnoreCase : RegexOptions.None);
 
-                var regex = new Regex(pattern, options);
+                var regex = new Regex(pattern, options, RegexTimeOut);
                 regexes.Add(regex);
             }
 
@@ -508,7 +512,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             var pattern = $@"{this.config.BuildPrefix}({string.Join("|", regexTokens)}){this.config.BuildSuffix}";
             var options = RegexOptions.Singleline | RegexOptions.ExplicitCapture | (ignoreCase ? RegexOptions.IgnoreCase : RegexOptions.None);
 
-            var regex = new Regex(pattern, options);
+            var regex = new Regex(pattern, options, RegexTimeOut);
             return regex;
         }
 

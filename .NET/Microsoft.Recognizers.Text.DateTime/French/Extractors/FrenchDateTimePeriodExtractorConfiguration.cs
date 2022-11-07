@@ -13,52 +13,52 @@ namespace Microsoft.Recognizers.Text.DateTime.French
     public class FrenchDateTimePeriodExtractorConfiguration : BaseDateTimeOptionsConfiguration, IDateTimePeriodExtractorConfiguration
     {
         public static readonly Regex TimeNumberCombinedWithUnit =
-            new Regex(DateTimeDefinitions.TimeNumberCombinedWithUnit, RegexFlags);
+            new Regex(DateTimeDefinitions.TimeNumberCombinedWithUnit, RegexFlags, RegexTimeOut);
 
         public static readonly Regex HyphenDateRegex =
-            new Regex(BaseDateTime.HyphenDateRegex, RegexFlags);
+            new Regex(BaseDateTime.HyphenDateRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex PeriodTimeOfDayWithDateRegex =
-            new Regex(DateTimeDefinitions.PeriodTimeOfDayWithDateRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.PeriodTimeOfDayWithDateRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex RelativeTimeUnitRegex =
-            new Regex(DateTimeDefinitions.RelativeTimeUnitRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.RelativeTimeUnitRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex RestOfDateTimeRegex =
-            new Regex(DateTimeDefinitions.RestOfDateTimeRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.RestOfDateTimeRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex GeneralEndingRegex =
-            new Regex(DateTimeDefinitions.GeneralEndingRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.GeneralEndingRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex MiddlePauseRegex =
-            new Regex(DateTimeDefinitions.MiddlePauseRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.MiddlePauseRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex AmDescRegex =
-            new Regex(DateTimeDefinitions.AmDescRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.AmDescRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex PmDescRegex =
-            new Regex(DateTimeDefinitions.PmDescRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.PmDescRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex WithinNextPrefixRegex =
-            new Regex(DateTimeDefinitions.WithinNextPrefixRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.WithinNextPrefixRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex DateUnitRegex =
-            new Regex(DateTimeDefinitions.DateUnitRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.DateUnitRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex PrefixDayRegex =
             new Regex(DateTimeDefinitions.PrefixDayRegex, RegexFlags | RegexOptions.RightToLeft);
 
         public static readonly Regex SuffixRegex =
-            new Regex(DateTimeDefinitions.SuffixRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.SuffixRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex AfterRegex =
-            new Regex(DateTimeDefinitions.AfterRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.AfterRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex BeforeRegex =
-            new Regex(DateTimeDefinitions.BeforeRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.BeforeRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex WeekDaysRegex =
-            new Regex(DateTimeDefinitions.WeekDayRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.WeekDayRegex, RegexFlags, RegexTimeOut);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
@@ -70,22 +70,22 @@ namespace Microsoft.Recognizers.Text.DateTime.French
         };
 
         private static readonly Regex FromRegex =
-            new Regex(DateTimeDefinitions.FromRegex2, RegexFlags);
+            new Regex(DateTimeDefinitions.FromRegex2, RegexFlags, RegexTimeOut);
 
         private static readonly Regex ConnectorAndRegex =
-            new Regex(DateTimeDefinitions.ConnectorAndRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.ConnectorAndRegex, RegexFlags, RegexTimeOut);
 
         private static readonly Regex PeriodTimeOfDayRegex =
-            new Regex(DateTimeDefinitions.PeriodTimeOfDayRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.PeriodTimeOfDayRegex, RegexFlags, RegexTimeOut);
 
         private static readonly Regex PeriodSpecificTimeOfDayRegex =
-            new Regex(DateTimeDefinitions.PeriodSpecificTimeOfDayRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.PeriodSpecificTimeOfDayRegex, RegexFlags, RegexTimeOut);
 
         private static readonly Regex TimeTimeUnitRegex =
-            new Regex(DateTimeDefinitions.TimeUnitRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.TimeUnitRegex, RegexFlags, RegexTimeOut);
 
         private static readonly Regex TimeFollowedUnit =
-            new Regex(DateTimeDefinitions.TimeFollowedUnit, RegexFlags);
+            new Regex(DateTimeDefinitions.TimeFollowedUnit, RegexFlags, RegexTimeOut);
 
         public FrenchDateTimePeriodExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)

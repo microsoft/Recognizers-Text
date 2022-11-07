@@ -20,67 +20,67 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
             {
                 {
                     // 百パーセント 十五パーセント
-                    new Regex(NumbersDefinitions.SimplePercentageRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.SimplePercentageRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.PERCENT_PREFIX, Constants.JAPANESE)
                 },
                 {
                     // 19パーセント　１パーセント
-                    new Regex(NumbersDefinitions.NumbersPercentagePointRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.NumbersPercentagePointRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.PERCENT_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     // 3,000パーセント  １，１２３パーセント
-                    new Regex(NumbersDefinitions.NumbersPercentageWithSeparatorRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.NumbersPercentageWithSeparatorRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.PERCENT_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     // 3.2 k パーセント
-                    new Regex(NumbersDefinitions.NumbersPercentageWithMultiplierRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.NumbersPercentageWithMultiplierRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.PERCENT_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     // 15kパーセント
-                    new Regex(NumbersDefinitions.SimpleNumbersPercentageWithMultiplierRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.SimpleNumbersPercentageWithMultiplierRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.PERCENT_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     // @TODO Example missing
-                    new Regex(NumbersDefinitions.SimpleIntegerPercentageRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.SimpleIntegerPercentageRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.PERCENT_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     // 2割引 ２.５割引
-                    new Regex(NumbersDefinitions.NumbersFoldsPercentageRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.NumbersFoldsPercentageRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.PERCENT_PREFIX, Constants.SPECIAL_SUFFIX)
                 },
                 {
                     // 三割引 六点五折 七五折
-                    new Regex(NumbersDefinitions.FoldsPercentageRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.FoldsPercentageRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.PERCENT_PREFIX, Constants.SPECIAL_SUFFIX)
                 },
                 {
                     // 5割 7割半
-                    new Regex(NumbersDefinitions.SimpleFoldsPercentageRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.SimpleFoldsPercentageRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.PERCENT_PREFIX, Constants.SPECIAL_SUFFIX)
                 },
                 {
                     // 七割半
-                    new Regex(NumbersDefinitions.SpecialsPercentageRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.SpecialsPercentageRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.PERCENT_PREFIX, Constants.SPECIAL_SUFFIX)
                 },
                 {
                     // 2割 ２.５割
-                    new Regex(NumbersDefinitions.NumbersSpecialsPercentageRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.NumbersSpecialsPercentageRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.PERCENT_PREFIX, Constants.SPECIAL_SUFFIX)
                 },
                 {
                     // 三割
-                    new Regex(NumbersDefinitions.SimpleSpecialsPercentageRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.SimpleSpecialsPercentageRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.PERCENT_PREFIX, Constants.SPECIAL_SUFFIX)
                 },
                 {
                     // @TODO Example missing
-                    new Regex(NumbersDefinitions.SpecialsFoldsPercentageRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.SpecialsFoldsPercentageRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.PERCENT_PREFIX, Constants.SPECIAL_SUFFIX)
                 },
             };

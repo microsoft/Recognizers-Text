@@ -16,7 +16,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Korean
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly Regex AmbiguousUnitMultiplierRegex =
-            new Regex(BaseUnits.AmbiguousUnitNumberMultiplierRegex, RegexFlags);
+            new Regex(BaseUnits.AmbiguousUnitNumberMultiplierRegex, RegexFlags, RegexTimeOut);
 
         public TemperatureExtractorConfiguration()
             : this(new CultureInfo(Culture.Korean))

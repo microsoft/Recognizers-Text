@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions;
@@ -16,13 +17,13 @@ namespace Microsoft.Recognizers.Text.DateTime
     public class BaseTimeExtractor : IDateTimeExtractor
     {
         public static readonly Regex HourRegex =
-            new Regex(BaseDateTime.HourRegex, RegexOptions.Singleline | RegexOptions.Compiled);
+            new Regex(BaseDateTime.HourRegex, RegexOptions.Singleline | RegexOptions.Compiled, RegexTimeOut);
 
         public static readonly Regex MinuteRegex =
-            new Regex(BaseDateTime.MinuteRegex, RegexOptions.Singleline | RegexOptions.Compiled);
+            new Regex(BaseDateTime.MinuteRegex, RegexOptions.Singleline | RegexOptions.Compiled, RegexTimeOut);
 
         public static readonly Regex SecondRegex =
-            new Regex(BaseDateTime.SecondRegex, RegexOptions.Singleline | RegexOptions.Compiled);
+            new Regex(BaseDateTime.SecondRegex, RegexOptions.Singleline | RegexOptions.Compiled, RegexTimeOut);
 
         private const string ExtractorName = Constants.SYS_DATETIME_TIME; // "Time";
 
@@ -37,6 +38,8 @@ namespace Microsoft.Recognizers.Text.DateTime
             this.config = config;
             keyPrefix = string.Intern(config.Options + "_" + config.LanguageMarker);
         }
+
+        protected static TimeSpan RegexTimeOut => DateTimeRecognizer.GetTimeout(MethodBase.GetCurrentMethod().DeclaringType);
 
         public virtual List<ExtractResult> Extract(string text)
         {

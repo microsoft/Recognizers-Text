@@ -1,10 +1,12 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
+using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
 using System.Linq;
+using System.Reflection;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions;
@@ -75,6 +77,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Spanish
         public abstract ImmutableDictionary<string, string> PrefixList { get; }
 
         public abstract ImmutableList<string> AmbiguousUnitList { get; }
+
+        protected static TimeSpan RegexTimeOut => NumberWithUnitRecognizer.GetTimeout(MethodBase.GetCurrentMethod().DeclaringType);
 
         public void ExpandHalfSuffix(string source, ref List<ExtractResult> result, IOrderedEnumerable<ExtractResult> numbers)
         {

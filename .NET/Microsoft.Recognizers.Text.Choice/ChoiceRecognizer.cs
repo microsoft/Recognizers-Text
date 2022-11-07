@@ -1,6 +1,7 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
+using System;
 using System.Collections.Generic;
 using Microsoft.Recognizers.Text.Choice.Arabic;
 using Microsoft.Recognizers.Text.Choice.Bulgarian;
@@ -21,23 +22,23 @@ namespace Microsoft.Recognizers.Text.Choice
 {
     public class ChoiceRecognizer : Recognizer<ChoiceOptions>
     {
-        public ChoiceRecognizer(string targetCulture, ChoiceOptions options = ChoiceOptions.None, bool lazyInitialization = false)
-            : base(targetCulture, options, lazyInitialization)
+        public ChoiceRecognizer(string targetCulture, ChoiceOptions options = ChoiceOptions.None, bool lazyInitialization = false, int timeoutInSeconds = 0)
+            : base(targetCulture, options, lazyInitialization, timeoutInSeconds)
         {
         }
 
-        public ChoiceRecognizer(string targetCulture, int options, bool lazyInitialization = false)
-            : this(targetCulture, GetOptions(options), lazyInitialization)
+        public ChoiceRecognizer(string targetCulture, int options, bool lazyInitialization = false, int timeoutInSeconds = 0)
+            : this(targetCulture, GetOptions(options), lazyInitialization, timeoutInSeconds)
         {
         }
 
-        public ChoiceRecognizer(ChoiceOptions options = ChoiceOptions.None, bool lazyInitialization = true)
-            : base(null, options, lazyInitialization)
+        public ChoiceRecognizer(ChoiceOptions options = ChoiceOptions.None, bool lazyInitialization = true, int timeoutInSeconds = 0)
+            : base(null, options, lazyInitialization, timeoutInSeconds)
         {
         }
 
-        public ChoiceRecognizer(int options, bool lazyInitialization = true)
-            : this(null, GetOptions(options), lazyInitialization)
+        public ChoiceRecognizer(int options, bool lazyInitialization = true, int timeoutInSeconds = 0)
+            : this(null, GetOptions(options), lazyInitialization, timeoutInSeconds)
         {
         }
 
@@ -51,6 +52,27 @@ namespace Microsoft.Recognizers.Text.Choice
         public IModel GetBooleanModel(string culture = null, bool fallbackToDefaultCulture = true)
         {
             return GetModel<BooleanModel>(culture, fallbackToDefaultCulture);
+        }
+
+        protected override List<Type> GetRelatedTypes()
+        {
+            return new List<Type>()
+            {
+                typeof(ArabicBooleanExtractorConfiguration),
+                typeof(BulgarianBooleanExtractorConfiguration),
+                typeof(ChineseBooleanExtractorConfiguration),
+                typeof(DutchBooleanExtractorConfiguration),
+                typeof(EnglishBooleanExtractorConfiguration),
+                typeof(FrenchBooleanExtractorConfiguration),
+                typeof(GermanBooleanExtractorConfiguration),
+                typeof(ItalianBooleanExtractorConfiguration),
+                typeof(HindiBooleanExtractorConfiguration),
+                typeof(JapaneseBooleanExtractorConfiguration),
+                typeof(PortugueseBooleanExtractorConfiguration),
+                typeof(SpanishBooleanExtractorConfiguration),
+                typeof(SwedishBooleanExtractorConfiguration),
+                typeof(TurkishBooleanExtractorConfiguration),
+            };
         }
 
         protected override void InitializeConfiguration()

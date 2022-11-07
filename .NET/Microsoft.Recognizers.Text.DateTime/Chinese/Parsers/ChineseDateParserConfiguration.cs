@@ -11,9 +11,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
     public class ChineseDateParserConfiguration : BaseDateTimeOptionsConfiguration, ICJKDateParserConfiguration
     {
-        public static readonly Regex NextMonthRegex = new Regex(DateTimeDefinitions.ParserConfigurationNextMonthRegex, RegexFlags);
-        public static readonly Regex LastMonthRegex = new Regex(DateTimeDefinitions.ParserConfigurationLastMonthRegex, RegexFlags);
-        public static readonly Regex LastWeekDayRegex = new Regex(DateTimeDefinitions.ParserConfigurationLastWeekDayRegex, RegexFlags);
+        public static readonly Regex NextMonthRegex = new Regex(DateTimeDefinitions.ParserConfigurationNextMonthRegex, RegexFlags, RegexTimeOut);
+        public static readonly Regex LastMonthRegex = new Regex(DateTimeDefinitions.ParserConfigurationLastMonthRegex, RegexFlags, RegexTimeOut);
+        public static readonly Regex LastWeekDayRegex = new Regex(DateTimeDefinitions.ParserConfigurationLastWeekDayRegex, RegexFlags, RegexTimeOut);
 
         public static readonly string ParserName = Constants.SYS_DATETIME_DATE; // "Date";
 

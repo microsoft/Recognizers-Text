@@ -13,47 +13,47 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         // part 1: smallest component
         // --------------------------------------
         public static readonly Regex DescRegex =
-            new Regex(DateTimeDefinitions.DescRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.DescRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex HourNumRegex =
-            new Regex(DateTimeDefinitions.HourNumRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.HourNumRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex MinuteNumRegex =
-            new Regex(DateTimeDefinitions.MinuteNumRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.MinuteNumRegex, RegexFlags, RegexTimeOut);
 
         // part 2: middle level component
         // --------------------------------------
         // handle "... en punto"
         public static readonly Regex OclockRegex =
-            new Regex(DateTimeDefinitions.OclockRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.OclockRegex, RegexFlags, RegexTimeOut);
 
         // handle "... tarde"
         public static readonly Regex PmRegex =
-            new Regex(DateTimeDefinitions.PmRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.PmRegex, RegexFlags, RegexTimeOut);
 
         // handle "... de la mañana"
         public static readonly Regex AmRegex =
-            new Regex(DateTimeDefinitions.AmRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.AmRegex, RegexFlags, RegexTimeOut);
 
         // handle "y media ..." "menos cuarto ..."
         public static readonly Regex LessThanOneHour =
-            new Regex(DateTimeDefinitions.LessThanOneHour, RegexFlags);
+            new Regex(DateTimeDefinitions.LessThanOneHour, RegexFlags, RegexTimeOut);
 
         public static readonly Regex TensTimeRegex =
-            new Regex(DateTimeDefinitions.TensTimeRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.TensTimeRegex, RegexFlags, RegexTimeOut);
 
         // handle "seis treinta", "seis veintiuno", "seis menos diez"
         public static readonly Regex WrittenTimeRegex =
-            new Regex(DateTimeDefinitions.WrittenTimeRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.WrittenTimeRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex TimePrefix =
-            new Regex(DateTimeDefinitions.TimePrefix, RegexFlags);
+            new Regex(DateTimeDefinitions.TimePrefix, RegexFlags, RegexTimeOut);
 
         public static readonly Regex TimeSuffix =
-            new Regex(DateTimeDefinitions.TimeSuffix, RegexFlags);
+            new Regex(DateTimeDefinitions.TimeSuffix, RegexFlags, RegexTimeOut);
 
         public static readonly Regex BasicTime =
-            new Regex(DateTimeDefinitions.BasicTime, RegexFlags);
+            new Regex(DateTimeDefinitions.BasicTime, RegexFlags, RegexTimeOut);
 
         // part 3: regex for time
         // --------------------------------------
@@ -61,48 +61,48 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         // TODO: add some new regex which have used in AtRegex
         // TODO: modify according to corresponding English regex
         public static readonly Regex AtRegex =
-            new Regex(DateTimeDefinitions.AtRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.AtRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex ConnectNumRegex =
-            new Regex(DateTimeDefinitions.ConnectNumRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.ConnectNumRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex TimeBeforeAfterRegex =
-            new Regex(DateTimeDefinitions.TimeBeforeAfterRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.TimeBeforeAfterRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex[] TimeRegexList =
         {
             // (tres min pasadas las)? siete|7|(siete treinta) pm
-            new Regex(DateTimeDefinitions.TimeRegex1, RegexFlags),
+            new Regex(DateTimeDefinitions.TimeRegex1, RegexFlags, RegexTimeOut),
 
             // (tres min pasadas las)? 3:00(:00)? (pm)?
-            new Regex(DateTimeDefinitions.TimeRegex2, RegexFlags),
+            new Regex(DateTimeDefinitions.TimeRegex2, RegexFlags, RegexTimeOut),
 
             // (tres min pasadas las)? 3.00 (pm)
-            new Regex(DateTimeDefinitions.TimeRegex3, RegexFlags),
+            new Regex(DateTimeDefinitions.TimeRegex3, RegexFlags, RegexTimeOut),
 
             // (tres min pasadas las) (cinco treinta|siete|7|7:00(:00)?) (pm)?
-            new Regex(DateTimeDefinitions.TimeRegex4, RegexFlags),
+            new Regex(DateTimeDefinitions.TimeRegex4, RegexFlags, RegexTimeOut),
 
             // (tres min pasadas las) (cinco treinta|siete|7|7:00(:00)?) (pm)? (de la noche)
-            new Regex(DateTimeDefinitions.TimeRegex5, RegexFlags),
+            new Regex(DateTimeDefinitions.TimeRegex5, RegexFlags, RegexTimeOut),
 
             // (cinco treinta|siete|7|7:00(:00)?) (pm)? (de la noche)
-            new Regex(DateTimeDefinitions.TimeRegex6, RegexFlags),
+            new Regex(DateTimeDefinitions.TimeRegex6, RegexFlags, RegexTimeOut),
 
             // (En la noche) a las (cinco treinta|siete|7|7:00(:00)?) (pm)?
-            new Regex(DateTimeDefinitions.TimeRegex7, RegexFlags),
+            new Regex(DateTimeDefinitions.TimeRegex7, RegexFlags, RegexTimeOut),
 
             // (En la noche) (cinco treinta|siete|7|7:00(:00)?) (pm)?
-            new Regex(DateTimeDefinitions.TimeRegex8, RegexFlags),
+            new Regex(DateTimeDefinitions.TimeRegex8, RegexFlags, RegexTimeOut),
 
             // once (y)? veinticinco
-            new Regex(DateTimeDefinitions.TimeRegex9, RegexFlags),
+            new Regex(DateTimeDefinitions.TimeRegex9, RegexFlags, RegexTimeOut),
 
             // (tres menos veinte) (pm)?
-            new Regex(DateTimeDefinitions.TimeRegex11, RegexFlags),
+            new Regex(DateTimeDefinitions.TimeRegex11, RegexFlags, RegexTimeOut),
 
             // (tres min pasadas las)? 3h00 (pm)?
-            new Regex(DateTimeDefinitions.TimeRegex12, RegexFlags),
+            new Regex(DateTimeDefinitions.TimeRegex12, RegexFlags, RegexTimeOut),
 
             // 340pm
             ConnectNumRegex,

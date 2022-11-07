@@ -1,7 +1,9 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
+using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Arabic;
@@ -11,13 +13,13 @@ namespace Microsoft.Recognizers.Text.Choice.Arabic
     public class ArabicBooleanExtractorConfiguration : IBooleanExtractorConfiguration
     {
         public static readonly Regex TrueRegex =
-            new Regex(ChoiceDefinitions.TrueRegex, RegexOptions.Singleline | RegexOptions.RightToLeft);
+            new Regex(ChoiceDefinitions.TrueRegex, RegexOptions.Singleline | RegexOptions.RightToLeft, RegexTimeOut);
 
         public static readonly Regex FalseRegex =
-            new Regex(ChoiceDefinitions.FalseRegex, RegexOptions.Singleline | RegexOptions.RightToLeft);
+            new Regex(ChoiceDefinitions.FalseRegex, RegexOptions.Singleline | RegexOptions.RightToLeft, RegexTimeOut);
 
         public static readonly Regex TokenRegex =
-            new Regex(ChoiceDefinitions.TokenizerRegex, RegexOptions.Singleline | RegexOptions.RightToLeft);
+            new Regex(ChoiceDefinitions.TokenizerRegex, RegexOptions.Singleline | RegexOptions.RightToLeft, RegexTimeOut);
 
         public static readonly IDictionary<Regex, string> MapRegexes = new Dictionary<Regex, string>()
         {
@@ -43,5 +45,7 @@ namespace Microsoft.Recognizers.Text.Choice.Arabic
         public int MaxDistance => 2;
 
         public bool OnlyTopMatch { get; }
+
+        protected static TimeSpan RegexTimeOut => ChoiceRecognizer.GetTimeout(MethodBase.GetCurrentMethod().DeclaringType);
     }
 }

@@ -11,7 +11,7 @@ namespace Microsoft.Recognizers.Text.Sequence.Portuguese
         public PortuguesePhoneNumberExtractorConfiguration(SequenceOptions options)
             : base(options)
         {
-            FalsePositivePrefixRegex = new Regex(PhoneNumbersDefinitions.FalsePositivePrefixRegex);
+            FalsePositivePrefixRegex = new Regex(PhoneNumbersDefinitions.FalsePositivePrefixRegex, RegexOptions.None, RegexTimeOut);
         }
     }
 }

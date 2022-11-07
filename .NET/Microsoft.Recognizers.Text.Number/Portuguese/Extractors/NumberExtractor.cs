@@ -64,7 +64,7 @@ namespace Microsoft.Recognizers.Text.Number.Portuguese
             {
                 foreach (var item in NumbersDefinitions.AmbiguityFiltersDict)
                 {
-                    ambiguityBuilder.Add(new Regex(item.Key, RegexFlags), new Regex(item.Value, RegexFlags));
+                    ambiguityBuilder.Add(new Regex(item.Key, RegexFlags, RegexTimeOut), new Regex(item.Value, RegexFlags, RegexTimeOut));
                 }
             }
 

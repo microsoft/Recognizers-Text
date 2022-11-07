@@ -64,15 +64,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
             var regexes = new Dictionary<Regex, TimeType>
             {
                 {
-                    new Regex(DateTimeDefinitions.TimeRegexes1, RegexFlags),
+                    new Regex(DateTimeDefinitions.TimeRegexes1, RegexFlags, RegexTimeOut),
                     TimeType.CjkTime
                 },
                 {
-                    new Regex(DateTimeDefinitions.TimeRegexes2, RegexFlags),
+                    new Regex(DateTimeDefinitions.TimeRegexes2, RegexFlags, RegexTimeOut),
                     TimeType.DigitTime
                 },
                 {
-                    new Regex(DateTimeDefinitions.TimeRegexes3, RegexFlags),
+                    new Regex(DateTimeDefinitions.TimeRegexes3, RegexFlags, RegexTimeOut),
                     TimeType.LessTime
                 },
             };

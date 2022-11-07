@@ -15,55 +15,55 @@ namespace Microsoft.Recognizers.Text.DateTime.Swedish
     public class SwedishTimePeriodExtractorConfiguration : BaseDateTimeOptionsConfiguration, ITimePeriodExtractorConfiguration
     {
         public static readonly Regex TillRegex =
-            new Regex(DateTimeDefinitions.TillRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.TillRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex HourRegex =
-            new Regex(DateTimeDefinitions.HourRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.HourRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex PeriodHourNumRegex =
-            new Regex(DateTimeDefinitions.PeriodHourNumRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.PeriodHourNumRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex PeriodDescRegex =
-            new Regex(DateTimeDefinitions.DescRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.DescRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex PmRegex =
-            new Regex(DateTimeDefinitions.PmRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.PmRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex AmRegex =
-            new Regex(DateTimeDefinitions.AmRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.AmRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex PureNumFromTo =
-            new Regex(DateTimeDefinitions.PureNumFromTo, RegexFlags);
+            new Regex(DateTimeDefinitions.PureNumFromTo, RegexFlags, RegexTimeOut);
 
         public static readonly Regex PureNumBetweenAnd =
-            new Regex(DateTimeDefinitions.PureNumBetweenAnd, RegexFlags);
+            new Regex(DateTimeDefinitions.PureNumBetweenAnd, RegexFlags, RegexTimeOut);
 
         public static readonly Regex SpecificTimeFromTo =
-            new Regex(DateTimeDefinitions.SpecificTimeFromTo, RegexFlags);
+            new Regex(DateTimeDefinitions.SpecificTimeFromTo, RegexFlags, RegexTimeOut);
 
         public static readonly Regex SpecificTimeBetweenAnd =
-            new Regex(DateTimeDefinitions.SpecificTimeBetweenAnd, RegexFlags);
+            new Regex(DateTimeDefinitions.SpecificTimeBetweenAnd, RegexFlags, RegexTimeOut);
 
         public static readonly Regex PrepositionRegex =
-            new Regex(DateTimeDefinitions.PrepositionRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.PrepositionRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex TimeOfDayRegex =
-            new Regex(DateTimeDefinitions.TimeOfDayRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.TimeOfDayRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex SpecificTimeOfDayRegex =
-            new Regex(DateTimeDefinitions.SpecificTimeOfDayRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.SpecificTimeOfDayRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex TimeUnitRegex =
-            new Regex(DateTimeDefinitions.TimeUnitRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.TimeUnitRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex TimeFollowedUnit =
-            new Regex(DateTimeDefinitions.TimeFollowedUnit, RegexFlags);
+            new Regex(DateTimeDefinitions.TimeFollowedUnit, RegexFlags, RegexTimeOut);
 
         public static readonly Regex TimeNumberCombinedWithUnit =
-            new Regex(DateTimeDefinitions.TimeNumberCombinedWithUnit, RegexFlags);
+            new Regex(DateTimeDefinitions.TimeNumberCombinedWithUnit, RegexFlags, RegexTimeOut);
 
         public static readonly Regex GeneralEndingRegex =
-            new Regex(DateTimeDefinitions.GeneralEndingRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.GeneralEndingRegex, RegexFlags, RegexTimeOut);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 

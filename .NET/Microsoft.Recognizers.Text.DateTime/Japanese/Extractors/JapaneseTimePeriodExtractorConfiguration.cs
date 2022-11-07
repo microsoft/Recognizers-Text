@@ -41,15 +41,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             var regexes = new Dictionary<Regex, PeriodType>
             {
                 {
-                    new Regex(DateTimeDefinitions.TimePeriodRegexes1, RegexFlags),
+                    new Regex(DateTimeDefinitions.TimePeriodRegexes1, RegexFlags, RegexTimeOut),
                     PeriodType.FullTime
                 },
                 {
-                    new Regex(DateTimeDefinitions.TimePeriodRegexes2, RegexFlags),
+                    new Regex(DateTimeDefinitions.TimePeriodRegexes2, RegexFlags, RegexTimeOut),
                     PeriodType.ShortTime
                 },
                 {
-                    new Regex(DateTimeDefinitions.TimeOfDayRegex, RegexFlags),
+                    new Regex(DateTimeDefinitions.TimeOfDayRegex, RegexFlags, RegexTimeOut),
                     PeriodType.ShortTime
                 },
             };

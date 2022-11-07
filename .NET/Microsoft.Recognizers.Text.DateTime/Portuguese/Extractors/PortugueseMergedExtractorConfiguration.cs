@@ -15,46 +15,46 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
     public class PortugueseMergedExtractorConfiguration : BaseDateTimeOptionsConfiguration, IMergedExtractorConfiguration
     {
         public static readonly Regex BeforeRegex =
-            new Regex(DateTimeDefinitions.BeforeRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.BeforeRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex AfterRegex =
-            new Regex(DateTimeDefinitions.AfterRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.AfterRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex SinceRegex =
-            new Regex(DateTimeDefinitions.SinceRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.SinceRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex AroundRegex =
-            new Regex(DateTimeDefinitions.AroundRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.AroundRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex EqualRegex =
-            new Regex(BaseDateTime.EqualRegex, RegexFlags);
+            new Regex(BaseDateTime.EqualRegex, RegexFlags, RegexTimeOut);
 
         // TODO: change the following three regexes to Portuguese if there are the same requirement of splitting from A to B as two time points
         public static readonly Regex FromToRegex =
-            new Regex(DateTimeDefinitions.FromToRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.FromToRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex SingleAmbiguousMonthRegex =
-            new Regex(DateTimeDefinitions.SingleAmbiguousMonthRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.SingleAmbiguousMonthRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex PrepositionSuffixRegex =
-            new Regex(DateTimeDefinitions.PrepositionSuffixRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.PrepositionSuffixRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex AmbiguousRangeModifierPrefix =
-            new Regex(DateTimeDefinitions.AmbiguousRangeModifierPrefix, RegexFlags);
+            new Regex(DateTimeDefinitions.AmbiguousRangeModifierPrefix, RegexFlags, RegexTimeOut);
 
         public static readonly Regex NumberEndingPattern =
-            new Regex(DateTimeDefinitions.NumberEndingPattern, RegexFlags);
+            new Regex(DateTimeDefinitions.NumberEndingPattern, RegexFlags, RegexTimeOut);
 
         public static readonly Regex SuffixAfterRegex =
-            new Regex(DateTimeDefinitions.SuffixAfterRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.SuffixAfterRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex UnspecificDatePeriodRegex =
-            new Regex(DateTimeDefinitions.UnspecificDatePeriodRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.UnspecificDatePeriodRegex, RegexFlags, RegexTimeOut);
 
         public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();
 
         public static readonly Regex YearRegex =
-            new Regex(DateTimeDefinitions.YearRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.YearRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex[] TermFilterRegexes = System.Array.Empty<Regex>();
 

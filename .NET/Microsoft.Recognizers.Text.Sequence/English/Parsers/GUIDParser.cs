@@ -18,7 +18,7 @@ namespace Microsoft.Recognizers.Text.Sequence.English
         private static string pureDigitRegex = @"^\d*$";
         private static string formatRegex = @"-";
 
-        private static readonly Regex GuidElementRegex = new Regex(BaseGUID.GUIDRegexElement, RegexOptions.Compiled);
+        private static readonly Regex GuidElementRegex = new Regex(BaseGUID.GUIDRegexElement, RegexOptions.Compiled, RegexTimeOut);
 
         public static double ScoreGUID(string textGUID)
         {

@@ -1,8 +1,9 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
+using System;
+using System.Reflection;
 using System.Text.RegularExpressions;
-
 using Microsoft.Recognizers.Definitions.French;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 
@@ -11,43 +12,43 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Utilities
     public class FrenchDatetimeUtilityConfiguration : IDateTimeUtilityConfiguration
     {
         public static readonly Regex AgoRegex =
-            new Regex(DateTimeDefinitions.AgoRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.AgoRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex LaterRegex =
-            new Regex(DateTimeDefinitions.LaterRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.LaterRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex InConnectorRegex =
-            new Regex(DateTimeDefinitions.InConnectorRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.InConnectorRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex SinceYearSuffixRegex =
-            new Regex(DateTimeDefinitions.SinceYearSuffixRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.SinceYearSuffixRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex WithinNextPrefixRegex =
-            new Regex(DateTimeDefinitions.WithinNextPrefixRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.WithinNextPrefixRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex AmDescRegex =
-            new Regex(DateTimeDefinitions.AmDescRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.AmDescRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex PmDescRegex =
-            new Regex(DateTimeDefinitions.PmDescRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.PmDescRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex AmPmDescRegex =
-            new Regex(DateTimeDefinitions.AmPmDescRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.AmPmDescRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex RangeUnitRegex =
-            new Regex(DateTimeDefinitions.RangeUnitRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.RangeUnitRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex TimeUnitRegex =
-            new Regex(DateTimeDefinitions.TimeUnitRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.TimeUnitRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex DateUnitRegex =
-            new Regex(DateTimeDefinitions.DateUnitRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.DateUnitRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex CommonDatePrefixRegex =
-            new Regex(DateTimeDefinitions.CommonDatePrefixRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.CommonDatePrefixRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex RangePrefixRegex =
-            new Regex(DateTimeDefinitions.RangePrefixRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.RangePrefixRegex, RegexFlags, RegexTimeOut);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
@@ -80,5 +81,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French.Utilities
         // CheckBothBeforeAfter normally gets its value from DateTimeDefinitions.CheckBothBeforeAfter which however for French is false.
         // It only needs to be true here to extract 'ago/later' in prefixes (e.g. 'il y a 30 minutes').
         bool IDateTimeUtilityConfiguration.CheckBothBeforeAfter => true;
+
+        protected static TimeSpan RegexTimeOut => DateTimeRecognizer.GetTimeout(MethodBase.GetCurrentMethod().DeclaringType);
     }
 }

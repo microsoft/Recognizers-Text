@@ -17,10 +17,10 @@ namespace Microsoft.Recognizers.Text.Number.German
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly Regex FractionHalfRegex =
-            new Regex(NumbersDefinitions.FractionHalfRegex, RegexFlags);
+            new Regex(NumbersDefinitions.FractionHalfRegex, RegexFlags, RegexTimeOut);
 
         private static readonly Regex FractionUnitsRegex =
-            new Regex(NumbersDefinitions.FractionUnitsRegex, RegexFlags);
+            new Regex(NumbersDefinitions.FractionUnitsRegex, RegexFlags, RegexTimeOut);
 
         private static readonly string[] OneHalfTokens = NumbersDefinitions.OneHalfTokens;
 
@@ -51,11 +51,11 @@ namespace Microsoft.Recognizers.Text.Number.German
             this.RelativeReferenceRelativeToMap = NumbersDefinitions.RelativeReferenceRelativeToMap.ToImmutableDictionary();
             this.RoundNumberMap = NumbersDefinitions.RoundNumberMap.ToImmutableDictionary();
 
-            this.HalfADozenRegex = new Regex(NumbersDefinitions.HalfADozenRegex, RegexFlags);
-            this.DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexFlags);
-            this.NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexFlags);
-            this.FractionPrepositionRegex = new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexFlags);
-            this.RoundMultiplierRegex = new Regex(NumbersDefinitions.RoundMultiplierRegex, RegexFlags);
+            this.HalfADozenRegex = new Regex(NumbersDefinitions.HalfADozenRegex, RegexFlags, RegexTimeOut);
+            this.DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexFlags, RegexTimeOut);
+            this.NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexFlags, RegexTimeOut);
+            this.FractionPrepositionRegex = new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexFlags, RegexTimeOut);
+            this.RoundMultiplierRegex = new Regex(NumbersDefinitions.RoundMultiplierRegex, RegexFlags, RegexTimeOut);
         }
 
         public string NonDecimalSeparatorText { get; private set; }

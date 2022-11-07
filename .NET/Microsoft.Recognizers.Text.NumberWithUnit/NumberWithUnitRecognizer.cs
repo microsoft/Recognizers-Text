@@ -3,28 +3,41 @@
 
 using System;
 using System.Collections.Generic;
+using Microsoft.Recognizers.Text.NumberWithUnit.Chinese;
+using Microsoft.Recognizers.Text.NumberWithUnit.Dutch;
+using Microsoft.Recognizers.Text.NumberWithUnit.English;
+using Microsoft.Recognizers.Text.NumberWithUnit.French;
+using Microsoft.Recognizers.Text.NumberWithUnit.German;
+using Microsoft.Recognizers.Text.NumberWithUnit.Hindi;
+using Microsoft.Recognizers.Text.NumberWithUnit.Italian;
+using Microsoft.Recognizers.Text.NumberWithUnit.Japanese;
+using Microsoft.Recognizers.Text.NumberWithUnit.Korean;
+using Microsoft.Recognizers.Text.NumberWithUnit.Portuguese;
+using Microsoft.Recognizers.Text.NumberWithUnit.Spanish;
+using Microsoft.Recognizers.Text.NumberWithUnit.Swedish;
+using Microsoft.Recognizers.Text.NumberWithUnit.Turkish;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
     public class NumberWithUnitRecognizer : Recognizer<NumberWithUnitOptions>
     {
-        public NumberWithUnitRecognizer(string targetCulture, NumberWithUnitOptions options = NumberWithUnitOptions.None, bool lazyInitialization = false)
-            : base(targetCulture, options, lazyInitialization)
+        public NumberWithUnitRecognizer(string targetCulture, NumberWithUnitOptions options = NumberWithUnitOptions.None, bool lazyInitialization = false, int timeoutInSeconds = 0)
+            : base(targetCulture, options, lazyInitialization, timeoutInSeconds)
         {
         }
 
-        public NumberWithUnitRecognizer(string targetCulture, int options, bool lazyInitialization = false)
-            : this(targetCulture, GetOptions(options), lazyInitialization)
+        public NumberWithUnitRecognizer(string targetCulture, int options, bool lazyInitialization = false, int timeoutInSeconds = 0)
+            : this(targetCulture, GetOptions(options), lazyInitialization, timeoutInSeconds)
         {
         }
 
-        public NumberWithUnitRecognizer(NumberWithUnitOptions options = NumberWithUnitOptions.None, bool lazyInitialization = true)
-            : this(null, options, lazyInitialization)
+        public NumberWithUnitRecognizer(NumberWithUnitOptions options = NumberWithUnitOptions.None, bool lazyInitialization = true, int timeoutInSeconds = 0)
+            : this(null, options, lazyInitialization, timeoutInSeconds)
         {
         }
 
-        public NumberWithUnitRecognizer(int options, bool lazyInitialization = true)
-            : this(null, GetOptions(options), lazyInitialization)
+        public NumberWithUnitRecognizer(int options, bool lazyInitialization = true, int timeoutInSeconds = 0)
+            : this(null, GetOptions(options), lazyInitialization, timeoutInSeconds)
         {
         }
 
@@ -677,6 +690,27 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         new BaseMergedUnitParser(new Turkish.CurrencyParserConfiguration())
                     },
                 }));
+        }
+
+        protected override List<Type> GetRelatedTypes()
+        {
+            return new List<Type>()
+            {
+                typeof(NumberWithUnitExtractor),
+                typeof(ChineseNumberWithUnitExtractorConfiguration),
+                typeof(DutchNumberWithUnitExtractorConfiguration),
+                typeof(EnglishNumberWithUnitExtractorConfiguration),
+                typeof(FrenchNumberWithUnitExtractorConfiguration),
+                typeof(GermanNumberWithUnitExtractorConfiguration),
+                typeof(HindiNumberWithUnitExtractorConfiguration),
+                typeof(ItalianNumberWithUnitExtractorConfiguration),
+                typeof(JapaneseNumberWithUnitExtractorConfiguration),
+                typeof(KoreanNumberWithUnitExtractorConfiguration),
+                typeof(PortugueseNumberWithUnitExtractorConfiguration),
+                typeof(SpanishNumberWithUnitExtractorConfiguration),
+                typeof(SwedishNumberWithUnitExtractorConfiguration),
+                typeof(TurkishNumberWithUnitExtractorConfiguration),
+            };
         }
 
         private static List<ModelResult> RecognizeByModel(Func<NumberWithUnitRecognizer, IModel> getModelFunc, string query, NumberWithUnitOptions options)

@@ -1,7 +1,9 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
+using System;
 using System.Globalization;
+using System.Reflection;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Dutch;
 
@@ -24,12 +26,12 @@ namespace Microsoft.Recognizers.Text.Number.Dutch
             // @TODO Change init to follow design in other languages
             NumberParser = new BaseNumberParser(new DutchNumberParserConfiguration(config));
 
-            MoreOrEqual = new Regex(NumbersDefinitions.MoreOrEqual, RegexFlags);
-            LessOrEqual = new Regex(NumbersDefinitions.LessOrEqual, RegexFlags);
-            MoreOrEqualSuffix = new Regex(NumbersDefinitions.MoreOrEqualSuffix, RegexFlags);
-            LessOrEqualSuffix = new Regex(NumbersDefinitions.LessOrEqualSuffix, RegexFlags);
-            MoreOrEqualSeparate = new Regex(NumbersDefinitions.OneNumberRangeMoreSeparateRegex, RegexFlags);
-            LessOrEqualSeparate = new Regex(NumbersDefinitions.OneNumberRangeLessSeparateRegex, RegexFlags);
+            MoreOrEqual = new Regex(NumbersDefinitions.MoreOrEqual, RegexFlags, RegexTimeOut);
+            LessOrEqual = new Regex(NumbersDefinitions.LessOrEqual, RegexFlags, RegexTimeOut);
+            MoreOrEqualSuffix = new Regex(NumbersDefinitions.MoreOrEqualSuffix, RegexFlags, RegexTimeOut);
+            LessOrEqualSuffix = new Regex(NumbersDefinitions.LessOrEqualSuffix, RegexFlags, RegexTimeOut);
+            MoreOrEqualSeparate = new Regex(NumbersDefinitions.OneNumberRangeMoreSeparateRegex, RegexFlags, RegexTimeOut);
+            LessOrEqualSeparate = new Regex(NumbersDefinitions.OneNumberRangeLessSeparateRegex, RegexFlags, RegexTimeOut);
         }
 
         public CultureInfo CultureInfo { get; private set; }
@@ -51,5 +53,7 @@ namespace Microsoft.Recognizers.Text.Number.Dutch
         public Regex MoreOrEqualSeparate { get; private set; }
 
         public Regex LessOrEqualSeparate { get; private set; }
+
+        protected static TimeSpan RegexTimeOut => NumberRecognizer.GetTimeout(MethodBase.GetCurrentMethod().DeclaringType);
     }
 }

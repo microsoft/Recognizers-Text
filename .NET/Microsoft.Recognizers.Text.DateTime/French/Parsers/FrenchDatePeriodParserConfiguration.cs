@@ -14,28 +14,28 @@ namespace Microsoft.Recognizers.Text.DateTime.French
     {
         // @TODO move to resources - French - relative
         public static readonly Regex NextPrefixRegex =
-            new Regex(@"(prochain|prochaine)\b", RegexFlags);
+            new Regex(@"(prochain|prochaine)\b", RegexFlags, RegexTimeOut);
 
         public static readonly Regex PastPrefixRegex =
-            new Regex(@"(dernier)\b", RegexFlags);
+            new Regex(@"(dernier)\b", RegexFlags, RegexTimeOut);
 
         public static readonly Regex ThisPrefixRegex =
-            new Regex(@"(ce|cette)\b", RegexFlags);
+            new Regex(@"(ce|cette)\b", RegexFlags, RegexTimeOut);
 
         public static readonly Regex NextSuffixRegex =
-            new Regex(DateTimeDefinitions.NextSuffixRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.NextSuffixRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex PastSuffixRegex =
-            new Regex(DateTimeDefinitions.PastSuffixRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.PastSuffixRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex RelativeRegex =
-            new Regex(DateTimeDefinitions.RelativeRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.RelativeRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex UnspecificEndOfRangeRegex =
-            new Regex(DateTimeDefinitions.UnspecificEndOfRangeRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.UnspecificEndOfRangeRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex AmbiguousPointRangeRegex =
-            new Regex(DateTimeDefinitions.AmbiguousPointRangeRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.AmbiguousPointRangeRegex, RegexFlags, RegexTimeOut);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 

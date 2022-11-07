@@ -12,33 +12,33 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
     public class HindiSetExtractorConfiguration : BaseDateTimeOptionsConfiguration, ISetExtractorConfiguration
     {
         public static readonly Regex SetUnitRegex =
-           new Regex(DateTimeDefinitions.DurationUnitRegex, RegexFlags);
+           new Regex(DateTimeDefinitions.DurationUnitRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex PeriodicRegex =
-            new Regex(DateTimeDefinitions.PeriodicRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.PeriodicRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex EachUnitRegex =
-            new Regex(DateTimeDefinitions.EachUnitRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.EachUnitRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex EachPrefixRegex =
-            new Regex(DateTimeDefinitions.EachPrefixRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.EachPrefixRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex SetLastRegex =
-            new Regex(DateTimeDefinitions.SetLastRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.SetLastRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex EachDayRegex =
-            new Regex(DateTimeDefinitions.EachDayRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.EachDayRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex SetWeekDayRegex =
-            new Regex(DateTimeDefinitions.SetWeekDayRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.SetWeekDayRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex SetEachRegex =
-            new Regex(DateTimeDefinitions.SetEachRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.SetEachRegex, RegexFlags, RegexTimeOut);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly Regex EachDayRegexPrefix =
-            new Regex(DateTimeDefinitions.EachDayRegexPrefix, RegexFlags);
+            new Regex(DateTimeDefinitions.EachDayRegexPrefix, RegexFlags, RegexTimeOut);
 
         public HindiSetExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)

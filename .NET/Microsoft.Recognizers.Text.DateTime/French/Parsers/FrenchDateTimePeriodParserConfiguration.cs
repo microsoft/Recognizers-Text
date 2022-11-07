@@ -12,16 +12,16 @@ namespace Microsoft.Recognizers.Text.DateTime.French
     public class FrenchDateTimePeriodParserConfiguration : BaseDateTimeOptionsConfiguration, IDateTimePeriodParserConfiguration
     {
         public static readonly Regex MorningStartEndRegex =
-            new Regex(DateTimeDefinitions.MorningStartEndRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.MorningStartEndRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex AfternoonStartEndRegex =
-            new Regex(DateTimeDefinitions.AfternoonStartEndRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.AfternoonStartEndRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex EveningStartEndRegex =
-            new Regex(DateTimeDefinitions.EveningStartEndRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.EveningStartEndRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex NightStartEndRegex =
-            new Regex(DateTimeDefinitions.NightStartEndRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.NightStartEndRegex, RegexFlags, RegexTimeOut);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 

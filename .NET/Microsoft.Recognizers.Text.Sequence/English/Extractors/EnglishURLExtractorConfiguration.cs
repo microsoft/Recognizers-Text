@@ -11,8 +11,8 @@ namespace Microsoft.Recognizers.Text.Sequence.English
         public EnglishURLExtractorConfiguration(SequenceOptions options)
             : base(options)
         {
-            IpUrlRegex = new Regex(BaseURL.IpUrlRegex, RegexOptions.Compiled);
-            UrlRegex = new Regex(BaseURL.UrlRegex, RegexOptions.Compiled);
+            IpUrlRegex = new Regex(BaseURL.IpUrlRegex, RegexOptions.Compiled, RegexTimeOut);
+            UrlRegex = new Regex(BaseURL.UrlRegex, RegexOptions.Compiled, RegexTimeOut);
         }
 
     }
