@@ -26,6 +26,7 @@ using Microsoft.Recognizers.Text.DateTime.Portuguese.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Spanish;
 using Microsoft.Recognizers.Text.DateTime.Spanish.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Swedish;
+using Microsoft.Recognizers.Text.DateTime.Swedish.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Turkish;
 using Microsoft.Recognizers.Text.DateTime.Turkish.Utilities;
 
@@ -220,6 +221,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 typeof(ItalianDatetimeUtilityConfiguration),
                 typeof(PortugueseDatetimeUtilityConfiguration),
                 typeof(SpanishDatetimeUtilityConfiguration),
+                typeof(SwedishDatetimeUtilityConfiguration),
                 typeof(TurkishDatetimeUtilityConfiguration),
             };
         }
