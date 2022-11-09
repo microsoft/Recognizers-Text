@@ -3,7 +3,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Threading;
 using Microsoft.Recognizers.Text.Utilities;
 
 namespace Microsoft.Recognizers.Text
@@ -46,6 +45,10 @@ namespace Microsoft.Recognizers.Text
                 TimeSpan.FromSeconds(timeInSeconds) : TimeSpan.FromSeconds(Constants.MaxRegexTimeoutInSeconds);
         }
 
+        // For each Recognizer type (i.e., NumberRecognizer, DateTimeRecognizer, SequenceRecognizer and so on)
+        // Find all the types that should use the same timeout value set by that recognizer.
+        // Refer to the concrete implementation of each recognizer for the list of the types. These are
+        // the types that have a Regex object created in them and need a Timeout parameter.
         protected abstract List<Type> GetRelatedTypes();
 
         protected T GetModel<T>(string culture, bool fallbackToDefaultCulture)

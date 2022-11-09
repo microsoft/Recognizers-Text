@@ -3,32 +3,18 @@
 
 using System;
 using System.Collections.Generic;
-using System.Xml;
-using Microsoft.Recognizers.Text.DateTime.Arabic;
-using Microsoft.Recognizers.Text.DateTime.Arabic.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Chinese;
 using Microsoft.Recognizers.Text.DateTime.Dutch;
-using Microsoft.Recognizers.Text.DateTime.Dutch.Utilities;
 using Microsoft.Recognizers.Text.DateTime.English;
-using Microsoft.Recognizers.Text.DateTime.English.Utilities;
 using Microsoft.Recognizers.Text.DateTime.French;
-using Microsoft.Recognizers.Text.DateTime.French.Utilities;
 using Microsoft.Recognizers.Text.DateTime.German;
-using Microsoft.Recognizers.Text.DateTime.German.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Hindi;
-using Microsoft.Recognizers.Text.DateTime.Hindi.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Italian;
-using Microsoft.Recognizers.Text.DateTime.Italian.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Japanese;
-using Microsoft.Recognizers.Text.DateTime.Korean;
 using Microsoft.Recognizers.Text.DateTime.Portuguese;
-using Microsoft.Recognizers.Text.DateTime.Portuguese.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Spanish;
-using Microsoft.Recognizers.Text.DateTime.Spanish.Utilities;
-using Microsoft.Recognizers.Text.DateTime.Swedish;
-using Microsoft.Recognizers.Text.DateTime.Swedish.Utilities;
 using Microsoft.Recognizers.Text.DateTime.Turkish;
-using Microsoft.Recognizers.Text.DateTime.Turkish.Utilities;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
@@ -212,17 +198,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                 typeof(BaseDateTimePeriodParser),
                 typeof(MatchingUtil),
                 typeof(TimeZoneUtility),
-                typeof(ArabicDatetimeUtilityConfiguration),
-                typeof(DutchDatetimeUtilityConfiguration),
-                typeof(EnglishDatetimeUtilityConfiguration),
-                typeof(FrenchDatetimeUtilityConfiguration),
-                typeof(GermanDatetimeUtilityConfiguration),
-                typeof(HindiDatetimeUtilityConfiguration),
-                typeof(ItalianDatetimeUtilityConfiguration),
-                typeof(PortugueseDatetimeUtilityConfiguration),
-                typeof(SpanishDatetimeUtilityConfiguration),
-                typeof(SwedishDatetimeUtilityConfiguration),
-                typeof(TurkishDatetimeUtilityConfiguration),
+                typeof(BaseDatetimeUtilityConfiguration),
             };
         }
     }

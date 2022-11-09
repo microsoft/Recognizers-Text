@@ -8,6 +8,7 @@ using Microsoft.Recognizers.Text.Choice.Bulgarian;
 using Microsoft.Recognizers.Text.Choice.Chinese;
 using Microsoft.Recognizers.Text.Choice.Dutch;
 using Microsoft.Recognizers.Text.Choice.English;
+using Microsoft.Recognizers.Text.Choice.Extractors;
 using Microsoft.Recognizers.Text.Choice.French;
 using Microsoft.Recognizers.Text.Choice.German;
 using Microsoft.Recognizers.Text.Choice.Hindi;
@@ -44,7 +45,7 @@ namespace Microsoft.Recognizers.Text.Choice
 
         public static List<ModelResult> RecognizeBoolean(string query, string culture, ChoiceOptions options = ChoiceOptions.None, bool fallbackToDefaultCulture = true)
         {
-            var recognizer = new ChoiceRecognizer(options);
+            var recognizer = new ChoiceRecognizer(options, timeoutInSeconds: 23);
             var model = recognizer.GetBooleanModel(culture, fallbackToDefaultCulture);
             return model.Parse(query);
         }
@@ -58,20 +59,7 @@ namespace Microsoft.Recognizers.Text.Choice
         {
             return new List<Type>()
             {
-                typeof(ArabicBooleanExtractorConfiguration),
-                typeof(BulgarianBooleanExtractorConfiguration),
-                typeof(ChineseBooleanExtractorConfiguration),
-                typeof(DutchBooleanExtractorConfiguration),
-                typeof(EnglishBooleanExtractorConfiguration),
-                typeof(FrenchBooleanExtractorConfiguration),
-                typeof(GermanBooleanExtractorConfiguration),
-                typeof(ItalianBooleanExtractorConfiguration),
-                typeof(HindiBooleanExtractorConfiguration),
-                typeof(JapaneseBooleanExtractorConfiguration),
-                typeof(PortugueseBooleanExtractorConfiguration),
-                typeof(SpanishBooleanExtractorConfiguration),
-                typeof(SwedishBooleanExtractorConfiguration),
-                typeof(TurkishBooleanExtractorConfiguration),
+                typeof(BaseBooleanExtractorConfiguration),
             };
         }
 

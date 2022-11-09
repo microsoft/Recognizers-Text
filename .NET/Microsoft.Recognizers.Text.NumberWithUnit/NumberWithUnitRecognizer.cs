@@ -3,19 +3,6 @@
 
 using System;
 using System.Collections.Generic;
-using Microsoft.Recognizers.Text.NumberWithUnit.Chinese;
-using Microsoft.Recognizers.Text.NumberWithUnit.Dutch;
-using Microsoft.Recognizers.Text.NumberWithUnit.English;
-using Microsoft.Recognizers.Text.NumberWithUnit.French;
-using Microsoft.Recognizers.Text.NumberWithUnit.German;
-using Microsoft.Recognizers.Text.NumberWithUnit.Hindi;
-using Microsoft.Recognizers.Text.NumberWithUnit.Italian;
-using Microsoft.Recognizers.Text.NumberWithUnit.Japanese;
-using Microsoft.Recognizers.Text.NumberWithUnit.Korean;
-using Microsoft.Recognizers.Text.NumberWithUnit.Portuguese;
-using Microsoft.Recognizers.Text.NumberWithUnit.Spanish;
-using Microsoft.Recognizers.Text.NumberWithUnit.Swedish;
-using Microsoft.Recognizers.Text.NumberWithUnit.Turkish;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
@@ -697,19 +684,6 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
             return new List<Type>()
             {
                 typeof(NumberWithUnitExtractor),
-                typeof(ChineseNumberWithUnitExtractorConfiguration),
-                typeof(DutchNumberWithUnitExtractorConfiguration),
-                typeof(EnglishNumberWithUnitExtractorConfiguration),
-                typeof(FrenchNumberWithUnitExtractorConfiguration),
-                typeof(GermanNumberWithUnitExtractorConfiguration),
-                typeof(HindiNumberWithUnitExtractorConfiguration),
-                typeof(ItalianNumberWithUnitExtractorConfiguration),
-                typeof(JapaneseNumberWithUnitExtractorConfiguration),
-                typeof(KoreanNumberWithUnitExtractorConfiguration),
-                typeof(PortugueseNumberWithUnitExtractorConfiguration),
-                typeof(SpanishNumberWithUnitExtractorConfiguration),
-                typeof(SwedishNumberWithUnitExtractorConfiguration),
-                typeof(TurkishNumberWithUnitExtractorConfiguration),
             };
         }
 
