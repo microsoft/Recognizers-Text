@@ -45,7 +45,7 @@ namespace Microsoft.Recognizers.Text.Choice
 
         public static List<ModelResult> RecognizeBoolean(string query, string culture, ChoiceOptions options = ChoiceOptions.None, bool fallbackToDefaultCulture = true)
         {
-            var recognizer = new ChoiceRecognizer(options, timeoutInSeconds: 23);
+            var recognizer = new ChoiceRecognizer(options);
             var model = recognizer.GetBooleanModel(culture, fallbackToDefaultCulture);
             return model.Parse(query);
         }

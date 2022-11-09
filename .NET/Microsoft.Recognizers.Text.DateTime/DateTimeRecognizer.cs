@@ -42,7 +42,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         public static List<ModelResult> RecognizeDateTime(string query, string culture, DateTimeOptions options = DateTimeOptions.None, System.DateTime? refTime = null, bool fallbackToDefaultCulture = true)
         {
-            var recognizer = new DateTimeRecognizer(options, timeoutInSeconds: 22);
+            var recognizer = new DateTimeRecognizer(options);
             var model = recognizer.GetDateTimeModel(culture, fallbackToDefaultCulture);
             return model.Parse(query, refTime ?? System.DateTime.Now);
         }
