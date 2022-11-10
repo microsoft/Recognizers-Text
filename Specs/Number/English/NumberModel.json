@@ -2840,7 +2840,7 @@
   },
   {
     "Input": " half million",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "half million",
@@ -2856,7 +2856,7 @@
   },
   {
     "Input": " quarter million",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "quarter million",
@@ -2872,7 +2872,7 @@
   },
   {
     "Input": " two thirds of a million",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "two thirds of a million",
@@ -2888,7 +2888,7 @@
   },
   {
     "Input": " one billion and three quarters million",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "one billion and three quarters million",

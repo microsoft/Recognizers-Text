@@ -139,7 +139,7 @@ class BaseNumberParser(Parser):
         self.round_number_set: List[str] = list(
             self.config.round_number_map.keys())
         self.is_non_standard_separator_variant = self.config.culture_info.code in \
-                                                 self.config.non_standard_separator_variants
+            self.config.non_standard_separator_variants
 
     def parse(self, source: ExtractResult) -> Optional[ParseResult]:
         # Check if the parser is configured to support specific types
@@ -550,7 +550,7 @@ class BaseNumberParser(Parser):
             scale = Decimal(0.1)
             for match in matches:
                 result += scale * \
-                          Decimal(self.config.cardinal_number_map[match])
+                    Decimal(self.config.cardinal_number_map[match])
                 scale *= Decimal(0.1)
 
         return result
