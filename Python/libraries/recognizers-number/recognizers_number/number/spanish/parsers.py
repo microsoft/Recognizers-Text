@@ -157,7 +157,7 @@ class SpanishNumberParserConfiguration(NumberParserConfiguration):
 
         # The following piece of code is needed to compute the fraction pattern number+'y medio'
         # e.g. 'cinco y medio' ('five and a half') where the numerator is omitted in Spanish.
-        # It works by inserting the numerator 'un' ('a') in the list fracWords
+        # It works by inserting the numerator 'un' ('a') in the list result
         # so that the pattern is correctly processed.
         if len(result) > 2:
             if result[len(result) - 1] == SpanishNumeric.OneHalfTokens[1] and \
