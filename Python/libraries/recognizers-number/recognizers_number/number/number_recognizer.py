@@ -3,6 +3,10 @@
 
 from enum import IntFlag
 from typing import List
+
+from recognizers_number.number.dutch.extractors import DutchOrdinalExtractor, \
+    DutchPercentageExtractor, DutchNumberExtractor
+from recognizers_number.number.dutch.parsers import DutchNumberParserConfiguration
 from recognizers_text import Culture, Recognizer, Model
 from recognizers_number.culture import CultureInfo
 from recognizers_number.number.models import NumberMode, NumberModel, OrdinalModel, PercentModel, ModelResult
@@ -70,6 +74,24 @@ class NumberRecognizer(Recognizer[NumberOptions]):
             AgnosticNumberParserFactory.get_parser(
                 ParserType.PERCENTAGE, GermanNumberParserConfiguration()),
             GermanPercentageExtractor()
+        ))
+        # endregion
+
+        # region Dutch
+        self.register_model('NumberModel', Culture.Dutch, lambda options: NumberModel(
+            AgnosticNumberParserFactory.get_parser(
+                ParserType.NUMBER, DutchNumberParserConfiguration()),
+            DutchNumberExtractor(NumberMode.PURE_NUMBER)
+        ))
+        self.register_model('OrdinalModel', Culture.Dutch, lambda options: OrdinalModel(
+            AgnosticNumberParserFactory.get_parser(
+                ParserType.ORDINAL, DutchNumberParserConfiguration()),
+            DutchOrdinalExtractor()
+        ))
+        self.register_model('PercentModel', Culture.Dutch, lambda options: PercentModel(
+            AgnosticNumberParserFactory.get_parser(
+                ParserType.PERCENTAGE, DutchNumberParserConfiguration()),
+            DutchPercentageExtractor()
         ))
         # endregion
 
