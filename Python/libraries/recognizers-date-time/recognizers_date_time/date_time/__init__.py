@@ -24,3 +24,4 @@ from .spanish import *
 from .chinese import *
 from .french import *
 from .portuguese import *
+from .dutch import *
