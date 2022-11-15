@@ -670,7 +670,7 @@ class BaseNumberParser(Parser):
         culture_code = self.config.culture_info.code
         source = fr'(?=\b)({single_int_frac})(?=\b)'
 
-        if culture_code in (Culture.Italian, Culture.German):
+        if culture_code in (Culture.Italian, Culture.German, Culture.Dutch):
             source = fr'((?=\b)({single_int_frac})(?=\b))|({single_int_frac})'
 
         pattern = RegExpUtility.get_safe_reg_exp(source, flags=regex.I | regex.S)

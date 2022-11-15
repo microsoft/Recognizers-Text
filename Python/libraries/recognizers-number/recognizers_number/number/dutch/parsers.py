@@ -161,7 +161,7 @@ class DutchNumberParserConfiguration(NumberParserConfiguration):
             pass
         for idx, word in enumerate(frac_words):
             if self._fraction_half_regex.search(word):
-                frac_words[idx] = word[0:(len(word) - 7)]
+                frac_words[idx] = word[0:(len(word) - 6)]
                 frac_words.append(self._written_fraction_separator_texts[0])
                 frac_words.append(DutchNumeric.OneHalfTokens[0])
                 frac_words.append(DutchNumeric.OneHalfTokens[1])

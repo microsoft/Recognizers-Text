@@ -49,6 +49,8 @@ NumbersWithDozenSuffix: !simpleRegex
 AllIntRegexWithLocks: !nestedRegex
   def: ((?<=\b){AllIntRegex}(?=\b))
   references: [ AllIntRegex ]
+GrossRegex: !simpleRegex
+  def: (een\s+)?gros
 AllIntRegexWithDozenSuffixLocks: !nestedRegex
   def: (?<=\b)(((een\s+)?half\s+dozijn)|({AllIntRegex}\s+dozijn(en)?)|{GrossRegex})(?=\b)
   references: [ AllIntRegex, GrossRegex ]
@@ -126,7 +128,7 @@ DoubleWithMultiplierRegex: !nestedRegex
 DoubleExponentialNotationRegex: !simpleRegex
   def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))(\d+(,\d+)?)e([+-]*[1-9]\d*)(?=\b)
 DoubleCaretExponentialNotationRegex: !simpleRegex
-  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))(\d+(,\d+)?)\^([+-]*[1-9]\d*)(?=\b)
+  def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+[\.,])))(\d+([\.,]\d+)?)\^([+-]*[1-9]\d*)(?=\b)
 DoubleDecimalPointRegex: !paramsRegex
   def: (((?<!\d+\s*)-\s*)|((?<=\b)(?<!\d+,)))\d+,\d+(?!(,\d+))(?={placeholder})
   params: [ placeholder ]
@@ -238,8 +240,6 @@ WrittenIntegerSeparatorTexts: [en, ën]
 WrittenFractionSeparatorTexts: [uit, van de, op de, en]
 HalfADozenRegex: !simpleRegex
   def: (een\s+)?half\s+dozijn
-GrossRegex: !simpleRegex
-  def: (een\s+)?gros
 DigitalNumberRegex: !nestedRegex
   def: ((?<=\b)(honderd|duizend|miljoen|miljard|biljoen|dozijn?)(?=\b))|((?<=(\d|\b)){BaseNumbers.MultiplierLookupRegex}(?=\b))
   references: [ BaseNumbers.MultiplierLookupRegex ]

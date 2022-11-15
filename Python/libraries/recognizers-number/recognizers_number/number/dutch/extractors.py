@@ -3,7 +3,8 @@ from typing import Pattern, List, NamedTuple
 import regex
 from recognizers_text.utilities import RegExpUtility
 from recognizers_number.number.models import NumberMode, LongFormatMode
-from recognizers_number.number.extractors import ReVal, ReRe, BaseNumberExtractor, BasePercentageExtractor
+from recognizers_number.number.extractors import ReVal, ReRe, BaseNumberExtractor, BasePercentageExtractor, \
+    BaseMergedNumberExtractor
 from recognizers_number.number.constants import Constants
 
 
@@ -252,3 +253,16 @@ class DutchPercentageExtractor(BasePercentageExtractor):
         ]
 
 
+class DutchMergedNumberExtractor(BaseMergedNumberExtractor):
+
+    @property
+    def _round_number_integer_regex_with_locks(self) -> Pattern:
+        return RegExpUtility.get_safe_reg_exp(DutchNumeric.RoundNumberIntegerRegexWithLocks)
+
+    @property
+    def _connector_regex(self) -> Pattern:
+        return RegExpUtility.get_safe_reg_exp(DutchNumeric.ConnectorRegex)
+
+    def __init__(self, mode: NumberMode = NumberMode.DEFAULT):
+        self._number_extractor = DutchNumberExtractor(mode)
+        

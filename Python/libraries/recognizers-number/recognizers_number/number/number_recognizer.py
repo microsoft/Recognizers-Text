@@ -5,7 +5,7 @@ from enum import IntFlag
 from typing import List
 
 from recognizers_number.number.dutch.extractors import DutchOrdinalExtractor, \
-    DutchPercentageExtractor, DutchNumberExtractor
+    DutchPercentageExtractor, DutchMergedNumberExtractor
 from recognizers_number.number.dutch.parsers import DutchNumberParserConfiguration
 from recognizers_text import Culture, Recognizer, Model
 from recognizers_number.culture import CultureInfo
@@ -81,7 +81,7 @@ class NumberRecognizer(Recognizer[NumberOptions]):
         self.register_model('NumberModel', Culture.Dutch, lambda options: NumberModel(
             AgnosticNumberParserFactory.get_parser(
                 ParserType.NUMBER, DutchNumberParserConfiguration()),
-            DutchNumberExtractor(NumberMode.PURE_NUMBER)
+            DutchMergedNumberExtractor(NumberMode.PURE_NUMBER)
         ))
         self.register_model('OrdinalModel', Culture.Dutch, lambda options: OrdinalModel(
             AgnosticNumberParserFactory.get_parser(
