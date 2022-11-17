@@ -98,10 +98,6 @@ class DutchAgeExtractorConfiguration(DutchNumberWithUnitExtractorConfiguration):
 class DutchCurrencyExtractorConfiguration(DutchNumberWithUnitExtractorConfiguration):
 
     @property
-    def ambiguity_filters_dict(self) -> Dict[Pattern, Pattern]:
-        return DutchNumericWithUnit.AmbiguityFiltersDict
-
-    @property
     def extract_type(self) -> str:
         return Constants.SYS_UNIT_CURRENCY
 

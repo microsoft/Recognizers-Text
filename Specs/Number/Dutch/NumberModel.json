@@ -1298,7 +1298,7 @@
   },
   {
     "Input": "1 uit eenentwintig",
-    "NotSupportedByDesign": "javascript,java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "1 uit eenentwintig",
@@ -2058,7 +2058,7 @@
   },
   {
     "Input": "het resultaat is ⅙ en soms ½",
-    "NotSupported": "java, javascript",
+    "NotSupported": "java, python, javascript",
     "Results": [
       {
         "Text": "⅙",
