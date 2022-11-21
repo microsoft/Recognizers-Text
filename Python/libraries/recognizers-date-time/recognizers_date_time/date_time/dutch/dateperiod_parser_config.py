@@ -311,7 +311,7 @@ class DutchDatePeriodParserConfiguration(DatePeriodParserConfiguration):
         self._next_prefix_regex = RegExpUtility.get_safe_reg_exp(
             DutchDateTime.NextPrefixRegex)
         self._past_prefix_regex = RegExpUtility.get_safe_reg_exp(
-            DutchDateTime.PastPrefixRegex)
+            DutchDateTime.PreviousPrefixRegex)
         self._this_prefix_regex = RegExpUtility.get_safe_reg_exp(
             DutchDateTime.ThisPrefixRegex)
         self._next_suffix_regex = RegExpUtility.get_safe_reg_exp(

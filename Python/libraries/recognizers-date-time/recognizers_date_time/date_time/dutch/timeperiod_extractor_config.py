@@ -5,7 +5,7 @@ from typing import List, Pattern
 
 from recognizers_text.utilities import RegExpUtility
 from recognizers_text.extractor import Extractor
-from recognizers_number.number.Dutch.extractors import DutchIntegerExtractor
+from recognizers_number.number.dutch.extractors import DutchIntegerExtractor
 from ...resources.dutch_date_time import DutchDateTime
 from ..extractors import DateTimeExtractor
 from ..base_timeperiod import TimePeriodExtractorConfiguration, MatchedIndex

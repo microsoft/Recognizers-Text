@@ -144,8 +144,8 @@ class DutchDateParserConfiguration(DateParserConfiguration):
         DutchDateTime.RelativeDayRegex)
     _next_prefix_regex = RegExpUtility.get_safe_reg_exp(
         DutchDateTime.NextPrefixRegex)
-    _previous_prefix_regex = RegExpUtility.get_safe_reg_exp(
-        DutchDateTime.PastPrefixRegex)
+    _past_prefix_regex = RegExpUtility.get_safe_reg_exp(
+        DutchDateTime.PreviousPrefixRegex)
 
     def __init__(self, config: BaseDateParserConfiguration):
         self._ordinal_extractor = config.ordinal_extractor

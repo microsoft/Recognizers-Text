@@ -5,8 +5,8 @@ from typing import List, Pattern
 
 from recognizers_text.utilities import RegExpUtility
 from recognizers_number.number import BaseNumberParser
-from recognizers_number.number.Dutch.extractors import DutchIntegerExtractor, DutchCardinalExtractor
-from recognizers_number.number.Dutch.parsers import DutchNumberParserConfiguration
+from recognizers_number.number.dutch.extractors import DutchIntegerExtractor, DutchCardinalExtractor
+from recognizers_number.number.dutch.parsers import DutchNumberParserConfiguration
 from ...resources.base_date_time import BaseDateTime
 from ...resources.dutch_date_time import DutchDateTime
 from ..extractors import DateTimeExtractor
@@ -241,7 +241,7 @@ class DutchDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         self._range_connector_regex = RegExpUtility.get_safe_reg_exp(DutchDateTime.RangeConnectorRegex)
         self._time_unit_regex = RegExpUtility.get_safe_reg_exp(DutchDateTime.TimeUnitRegex)
         self._first_last_regex = RegExpUtility.get_safe_reg_exp(DutchDateTime.FirstLastRegex)
-        self.between_token_regex = RegExpUtility.get_safe_reg_exp(DutchDateTime.BetweenTokenRegex)
+        self._between_token_regex = RegExpUtility.get_safe_reg_exp(DutchDateTime.BetweenTokenRegex)
         self._previous_prefix_regex = RegExpUtility.get_safe_reg_exp(
             DutchDateTime.PastSuffixRegex)
         self._check_both_before_after = DutchDateTime.CheckBothBeforeAfter
@@ -287,7 +287,7 @@ class DutchDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         self._number_combined_with_unit = RegExpUtility.get_safe_reg_exp(
             DutchDateTime.NumberCombinedWithDateUnit)
         self._past_regex = RegExpUtility.get_safe_reg_exp(
-            DutchDateTime.PastSuffixRegex)
+            DutchDateTime.PreviousPrefixRegex)
         self._future_regex = RegExpUtility.get_safe_reg_exp(
             DutchDateTime.NextPrefixRegex)
         self._week_of_regex = RegExpUtility.get_safe_reg_exp(
@@ -361,7 +361,7 @@ class DutchDatePeriodExtractorConfiguration(DatePeriodExtractorConfiguration):
         return MatchedIndex(False, -1)
 
     def get_between_token_index(self, source: str) -> MatchedIndex:
-        match = self.before_regex.search(source)
+        match = self.between_token_regex.search(source)
         if match:
             return MatchedIndex(True, match.start())
 

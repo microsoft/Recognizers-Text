@@ -1,7 +1,7 @@
 [
   {
     "Input": "Ik ga 3u weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "3u",
@@ -13,7 +13,7 @@
   },
   {
     "Input": "Ik ga 3 dgn weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "3 dgn",
@@ -25,7 +25,7 @@
   },
   {
     "Input": "Ik ga 3dagen weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "3dagen",
@@ -37,7 +37,7 @@
   },
   {
     "Input": "Ik ga 3,5 jaar weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "3,5 jaar",
@@ -49,7 +49,7 @@
   },
   {
     "Input": "Ik ga 3,5 jr weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "3,5 jr",
@@ -61,7 +61,7 @@
   },
   {
     "Input": "Ik ga 3 u weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "3 u",
@@ -73,7 +73,7 @@
   },
   {
     "Input": "Ik ga 3 uur weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "3 uur",
@@ -85,7 +85,7 @@
   },
   {
     "Input": "Ik ga 3 uren weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "3 uren",
@@ -97,7 +97,7 @@
   },
   {
     "Input": "Ik ga 3 dagen weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "3 dagen",
@@ -109,7 +109,7 @@
   },
   {
     "Input": "Ik ga 3 maanden weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "3 maanden",
@@ -121,7 +121,7 @@
   },
   {
     "Input": "Ik ga 3 minuten weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "3 minuten",
@@ -133,7 +133,7 @@
   },
   {
     "Input": "Ik ga 3 min weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "3 min",
@@ -145,7 +145,7 @@
   },
   {
     "Input": "Ik ga 123,45 seconden weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "123,45 seconden",
@@ -157,7 +157,7 @@
   },
   {
     "Input": "Ik ga twee weken weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "twee weken",
@@ -169,7 +169,7 @@
   },
   {
     "Input": "Ik ga twintig minuten weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "twintig minuten",
@@ -181,7 +181,7 @@
   },
   {
     "Input": "Ik ga vierentwintig uur weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "vierentwintig uur",
@@ -193,7 +193,7 @@
   },
   {
     "Input": "Ik ga de hele dag weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de hele dag",
@@ -205,7 +205,7 @@
   },
   {
     "Input": "Ik ga de hele week weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de hele week",
@@ -217,7 +217,7 @@
   },
   {
     "Input": "Ik ga de hele maand weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de hele maand",
@@ -229,7 +229,7 @@
   },
   {
     "Input": "Ik ga het hele jaar weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "het hele jaar",
@@ -241,7 +241,7 @@
   },
   {
     "Input": "Ik ga een hele dag weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "een hele dag",
@@ -253,7 +253,7 @@
   },
   {
     "Input": "Ik ga een hele week weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "een hele week",
@@ -265,7 +265,7 @@
   },
   {
     "Input": "Ik ga een hele maand weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "een hele maand",
@@ -277,7 +277,7 @@
   },
   {
     "Input": "Ik ga een heel jaar weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "een heel jaar",
@@ -289,7 +289,7 @@
   },
   {
     "Input": "Ik ga een uur weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "een uur",
@@ -301,7 +301,7 @@
   },
   {
     "Input": "Ik ga een jaar weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "een jaar",
@@ -313,7 +313,7 @@
   },
   {
     "Input": "half jaar",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "half jaar",
@@ -325,7 +325,7 @@
   },
   {
     "Input": "een half jaar",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "een half jaar",
@@ -337,7 +337,7 @@
   },
   {
     "Input": "Ik ga 3 min. weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "3 min.",
@@ -349,7 +349,7 @@
   },
   {
     "Input": "Ik ga 30 min. weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "30 min.",
@@ -361,7 +361,7 @@
   },
   {
     "Input": "Ik ga een half uur weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "een half uur",
@@ -373,7 +373,7 @@
   },
   {
     "Input": "Ik ga een halfuur weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "een halfuur",
@@ -385,7 +385,7 @@
   },
   {
     "Input": "Ik ga anderhalf uur weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "anderhalf uur",
@@ -397,7 +397,7 @@
   },
   {
     "Input": "Ik ga twee uren weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "twee uren",
@@ -409,7 +409,7 @@
   },
   {
     "Input": "Ik ga tweeëneenhalf uur weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "tweeëneenhalf uur",
@@ -421,7 +421,7 @@
   },
   {
     "Input": "over een week",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "een week",
@@ -433,7 +433,7 @@
   },
   {
     "Input": "Over een dag",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "een dag",
@@ -445,7 +445,7 @@
   },
   {
     "Input": "een uur lang",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "een uur lang",
@@ -457,7 +457,7 @@
   },
   {
     "Input": "een maand lang",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "een maand lang",
@@ -469,7 +469,7 @@
   },
   {
     "Input": "Ik ga een paar uur lang weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "een paar uur lang",
@@ -481,7 +481,7 @@
   },
   {
     "Input": "Ik ga een paar minuten lang weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "een paar minuten lang",
@@ -493,7 +493,7 @@
   },
   {
     "Input": "Ik ga een paar dagen weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "een paar dagen",
@@ -505,7 +505,7 @@
   },
   {
     "Input": "Ik ga enkele dagen weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "enkele dagen",
@@ -517,7 +517,7 @@
   },
   {
     "Input": "Ik ga 1 jaar, 1 maand en 21 dagen weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "1 jaar, 1 maand en 21 dagen",
@@ -529,7 +529,7 @@
   },
   {
     "Input": "Ik ga 1 maand en 2 dagen weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "1 maand en 2 dagen",
@@ -541,7 +541,7 @@
   },
   {
     "Input": "Ik realiseerde me dat jij nog een week weg bent.",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "nog een week",
@@ -553,7 +553,7 @@
   },
   {
     "Input": "Kunnen we nog een maand wachten?",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "nog een maand",
@@ -565,7 +565,7 @@
   },
   {
     "Input": "Ik vertrek voor 3u",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "3u",
@@ -577,7 +577,7 @@
   },
   {
     "Input": "Ik vertrek voor 3,5jaar",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "3,5jaar",
@@ -589,7 +589,7 @@
   },
   {
     "Input": "Ik vertrek voor 3 u",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "3 u",
@@ -601,7 +601,7 @@
   },
   {
     "Input": "Ik vertrek voor 3 uren",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "3 uren",
@@ -613,7 +613,7 @@
   },
   {
     "Input": "Ik vertrek voor 3 maanden",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "3 maanden",
@@ -625,7 +625,7 @@
   },
   {
     "Input": "Ik vertrek voor 3 minuten",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "3 minuten",
@@ -637,7 +637,7 @@
   },
   {
     "Input": "Ik vertrek voor 3 min",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "3 min",
@@ -649,7 +649,7 @@
   },
   {
     "Input": "Ik vertrek voor 123,45 sec",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "123,45 sec",
@@ -661,7 +661,7 @@
   },
   {
     "Input": "Ik vertrek voor twee weken",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "twee weken",
@@ -673,7 +673,7 @@
   },
   {
     "Input": "Ik vertrek voor twintig minuten",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "twintig minuten",
@@ -685,7 +685,7 @@
   },
   {
     "Input": "Ik vertrek voor de hele dag",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de hele dag",
@@ -697,7 +697,7 @@
   },
   {
     "Input": "Ik vertrek voor de hele week",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de hele week",
@@ -709,7 +709,7 @@
   },
   {
     "Input": "Ik vertrek voor de hele maand",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de hele maand",
@@ -721,7 +721,7 @@
   },
   {
     "Input": "Ik vertrek voor het hele jaar",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "het hele jaar",
@@ -733,7 +733,7 @@
   },
   {
     "Input": "Ik vertrek voor de gehele dag",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de gehele dag",
@@ -745,7 +745,7 @@
   },
   {
     "Input": "Ik vertrek voor de gehele week",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de gehele week",
@@ -757,7 +757,7 @@
   },
   {
     "Input": "Ik vertrek voor de gehele maand",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de gehele maand",
@@ -769,7 +769,7 @@
   },
   {
     "Input": "Ik vertrek voor het gehele jaar",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "het gehele jaar",
@@ -781,7 +781,7 @@
   },
   {
     "Input": "Ik vertrek voor een uur",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "een uur",
@@ -793,7 +793,7 @@
   },
   {
     "Input": "Ik vertrek voor een jaar",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "een jaar",
@@ -805,7 +805,7 @@
   },
   {
     "Input": "Ik vertrek voor 30 minuten",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "30 minuten",
@@ -817,7 +817,7 @@
   },
   {
     "Input": "Ik vertrek voor een half uur",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "een half uur",
@@ -829,7 +829,7 @@
   },
   {
     "Input": "Ik vertrek voor een halfuur",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "een halfuur",
@@ -841,7 +841,7 @@
   },
   {
     "Input": "Ik vertrek voor anderhalf uur",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "anderhalf uur",
@@ -853,7 +853,7 @@
   },
   {
     "Input": "Ik vertrek voor halfuur",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "halfuur",
@@ -865,7 +865,7 @@
   },
   {
     "Input": "Ik vertrek voor twee uren",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "twee uren",
@@ -877,7 +877,7 @@
   },
   {
     "Input": "Ik vertrek voor tweeënhalf uur",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "tweeënhalf uur",
@@ -889,7 +889,7 @@
   },
   {
     "Input": "Over een week",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "een week",
@@ -901,7 +901,7 @@
   },
   {
     "Input": "voor een uur",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "een uur",
@@ -913,7 +913,7 @@
   },
   {
     "Input": "voor een maand",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "een maand",
@@ -925,7 +925,7 @@
   },
   {
     "Input": "Ik vertrek voor paar uren",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "paar uren",
@@ -937,7 +937,7 @@
   },
   {
     "Input": "Ik vertrek voor een paar minuten",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "een paar minuten",
@@ -949,7 +949,7 @@
   },
   {
     "Input": "Ik vertrek voor aantal dagen",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "aantal dagen",
@@ -961,7 +961,7 @@
   },
   {
     "Input": "Ik vertrek voor enkele dagen",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "enkele dagen",
@@ -973,7 +973,7 @@
   },
   {
     "Input": "Ik vertrek voor 1 jaar, 1 maand, 21 dagen",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "1 jaar, 1 maand, 21 dagen",
@@ -985,7 +985,7 @@
   },
   {
     "Input": "Ik vertrek voor 2 dagen, 1 maand",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2 dagen, 1 maand",
@@ -997,7 +997,7 @@
   },
   {
     "Input": "Ik besefte dat je nog een week weg bent",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "nog een week",
@@ -1009,7 +1009,7 @@
   },
   {
     "Input": "Kunnen we nog een werkdag wachten?",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "nog een werkdag",
@@ -1021,7 +1021,7 @@
   },
   {
     "Input": "Ik vertrek voor twee decennia",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "twee decennia",
@@ -1033,7 +1033,7 @@
   },
   {
     "Input": "Ik vertrek voor veertien dagen",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "veertien dagen",

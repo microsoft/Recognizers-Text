@@ -1,7 +1,7 @@
 [
   {
     "Input": "Ik ben in jan weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "jan",
@@ -13,7 +13,7 @@
   },
   {
     "Input": "Ik ben aanstaande jan weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "aanstaande jan",
@@ -25,7 +25,7 @@
   },
   {
     "Input": "Ik ben maand jan weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "maand jan",
@@ -37,7 +37,7 @@
   },
   {
     "Input": "Ik ben de maand jan weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de maand jan",
@@ -49,7 +49,7 @@
   },
   {
     "Input": "Ik miste jan 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "jan 2001",
@@ -61,7 +61,7 @@
   },
   {
     "Input": "Ik miste jan, 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "jan, 2001",
@@ -73,7 +73,7 @@
   },
   {
     "Input": "Ik ben in feb weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "feb",
@@ -85,7 +85,7 @@
   },
   {
     "Input": "Ik ben aanstaande feb weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "aanstaande feb",
@@ -97,7 +97,7 @@
   },
   {
     "Input": "Ik ben maand feb weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "maand feb",
@@ -109,7 +109,7 @@
   },
   {
     "Input": "Ik ben de maand feb weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de maand feb",
@@ -121,7 +121,7 @@
   },
   {
     "Input": "Ik miste feb 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "feb 2001",
@@ -133,7 +133,7 @@
   },
   {
     "Input": "Ik miste feb, 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "feb, 2001",
@@ -145,7 +145,7 @@
   },
   {
     "Input": "Ik ben in mrt weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "mrt",
@@ -157,7 +157,7 @@
   },
   {
     "Input": "Ik ben aanstaande mrt weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "aanstaande mrt",
@@ -169,7 +169,7 @@
   },
   {
     "Input": "Ik ben maand mrt weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "maand mrt",
@@ -181,7 +181,7 @@
   },
   {
     "Input": "Ik ben de maand mrt weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de maand mrt",
@@ -193,7 +193,7 @@
   },
   {
     "Input": "Ik miste mrt 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "mrt 2001",
@@ -205,7 +205,7 @@
   },
   {
     "Input": "Ik miste mrt, 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "mrt, 2001",
@@ -217,7 +217,7 @@
   },
   {
     "Input": "Ik ben in apr weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "apr",
@@ -229,7 +229,7 @@
   },
   {
     "Input": "Ik ben aanstaande apr weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "aanstaande apr",
@@ -241,7 +241,7 @@
   },
   {
     "Input": "Ik ben maand apr weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "maand apr",
@@ -253,7 +253,7 @@
   },
   {
     "Input": "Ik ben de maand apr weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de maand apr",
@@ -265,7 +265,7 @@
   },
   {
     "Input": "Ik miste apr 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "apr 2001",
@@ -277,7 +277,7 @@
   },
   {
     "Input": "Ik miste apr, 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "apr, 2001",
@@ -289,7 +289,7 @@
   },
   {
     "Input": "Ik ben in mei weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "mei",
@@ -301,7 +301,7 @@
   },
   {
     "Input": "Ik ben aanstaande mei weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "aanstaande mei",
@@ -313,7 +313,7 @@
   },
   {
     "Input": "Ik ben maand mei weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "maand mei",
@@ -325,7 +325,7 @@
   },
   {
     "Input": "Ik ben de maand mei weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de maand mei",
@@ -337,7 +337,7 @@
   },
   {
     "Input": "Ik miste mei 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "mei 2001",
@@ -349,7 +349,7 @@
   },
   {
     "Input": "Ik miste mei, 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "mei, 2001",
@@ -361,7 +361,7 @@
   },
   {
     "Input": "Ik ben in jun weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "jun",
@@ -373,7 +373,7 @@
   },
   {
     "Input": "Ik ben aanstaande jun weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "aanstaande jun",
@@ -385,7 +385,7 @@
   },
   {
     "Input": "Ik ben maand jun weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "maand jun",
@@ -397,7 +397,7 @@
   },
   {
     "Input": "Ik ben de maand jun weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de maand jun",
@@ -409,7 +409,7 @@
   },
   {
     "Input": "Ik miste jun 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "jun 2001",
@@ -421,7 +421,7 @@
   },
   {
     "Input": "Ik miste jun, 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "jun, 2001",
@@ -433,7 +433,7 @@
   },
   {
     "Input": "Ik ben in jul weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "jul",
@@ -445,7 +445,7 @@
   },
   {
     "Input": "Ik ben aanstaande jul weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "aanstaande jul",
@@ -457,7 +457,7 @@
   },
   {
     "Input": "Ik ben maand jul weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "maand jul",
@@ -469,7 +469,7 @@
   },
   {
     "Input": "Ik ben de maand jul weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de maand jul",
@@ -481,7 +481,7 @@
   },
   {
     "Input": "Ik miste jul 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "jul 2001",
@@ -493,7 +493,7 @@
   },
   {
     "Input": "Ik miste jul, 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "jul, 2001",
@@ -505,7 +505,7 @@
   },
   {
     "Input": "Ik ben in aug weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "aug",
@@ -517,7 +517,7 @@
   },
   {
     "Input": "Ik ben aanstaande aug weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "aanstaande aug",
@@ -529,7 +529,7 @@
   },
   {
     "Input": "Ik ben maand aug weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "maand aug",
@@ -541,7 +541,7 @@
   },
   {
     "Input": "Ik ben de maand aug weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de maand aug",
@@ -553,7 +553,7 @@
   },
   {
     "Input": "Ik miste aug 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "aug 2001",
@@ -565,7 +565,7 @@
   },
   {
     "Input": "Ik miste aug, 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "aug, 2001",
@@ -577,7 +577,7 @@
   },
   {
     "Input": "Ik ben in sep weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "sep",
@@ -589,7 +589,7 @@
   },
   {
     "Input": "Ik ben aanstaande sep weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "aanstaande sep",
@@ -601,7 +601,7 @@
   },
   {
     "Input": "Ik ben maand sep weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "maand sep",
@@ -613,7 +613,7 @@
   },
   {
     "Input": "Ik ben de maand sep weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de maand sep",
@@ -625,7 +625,7 @@
   },
   {
     "Input": "Ik miste sep 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "sep 2001",
@@ -637,7 +637,7 @@
   },
   {
     "Input": "Ik miste sep, 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "sep, 2001",
@@ -649,7 +649,7 @@
   },
   {
     "Input": "Ik ben in okt weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "okt",
@@ -661,7 +661,7 @@
   },
   {
     "Input": "Ik ben aanstaande okt weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "aanstaande okt",
@@ -673,7 +673,7 @@
   },
   {
     "Input": "Ik ben maand okt weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "maand okt",
@@ -685,7 +685,7 @@
   },
   {
     "Input": "Ik ben de maand okt weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de maand okt",
@@ -697,7 +697,7 @@
   },
   {
     "Input": "Ik miste okt 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "okt 2001",
@@ -709,7 +709,7 @@
   },
   {
     "Input": "Ik miste okt, 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "okt, 2001",
@@ -721,7 +721,7 @@
   },
   {
     "Input": "Ik ben nov weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "nov",
@@ -733,7 +733,7 @@
   },
   {
     "Input": "Ik ben aanstaande nov weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "aanstaande nov",
@@ -745,7 +745,7 @@
   },
   {
     "Input": "Ik ben maand nov weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "maand nov",
@@ -757,7 +757,7 @@
   },
   {
     "Input": "Ik ben de maand nov weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de maand nov",
@@ -769,7 +769,7 @@
   },
   {
     "Input": "Ik miste nov 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "nov 2001",
@@ -781,7 +781,7 @@
   },
   {
     "Input": "Ik miste nov, 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "nov, 2001",
@@ -793,7 +793,7 @@
   },
   {
     "Input": "Ik ben in dec weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "dec",
@@ -805,7 +805,7 @@
   },
   {
     "Input": "Ik ben aanstaande dec weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "aanstaande dec",
@@ -817,7 +817,7 @@
   },
   {
     "Input": "Ik ben maand dec weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "maand dec",
@@ -829,7 +829,7 @@
   },
   {
     "Input": "Ik ben de maand dec weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de maand dec",
@@ -841,7 +841,7 @@
   },
   {
     "Input": "Ik miste dec 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "dec 2001",
@@ -853,7 +853,7 @@
   },
   {
     "Input": "Ik miste dec, 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "dec, 2001",
@@ -865,7 +865,7 @@
   },
   {
     "Input": "Ik ben in januari weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "januari",
@@ -877,7 +877,7 @@
   },
   {
     "Input": "Ik ben aanstaande januari weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "aanstaande januari",
@@ -889,7 +889,7 @@
   },
   {
     "Input": "Ik ben maand januari weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "maand januari",
@@ -901,7 +901,7 @@
   },
   {
     "Input": "Ik ben de maand januari weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de maand januari",
@@ -913,7 +913,7 @@
   },
   {
     "Input": "Ik miste januari 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "januari 2001",
@@ -925,7 +925,7 @@
   },
   {
     "Input": "Ik miste januari, 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "januari, 2001",
@@ -937,7 +937,7 @@
   },
   {
     "Input": "Ik ben in februari weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "februari",
@@ -949,7 +949,7 @@
   },
   {
     "Input": "Ik ben aanstaande februari weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "aanstaande februari",
@@ -961,7 +961,7 @@
   },
   {
     "Input": "Ik ben maand februari weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "maand februari",
@@ -973,7 +973,7 @@
   },
   {
     "Input": "Ik ben de maand februari weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de maand februari",
@@ -985,7 +985,7 @@
   },
   {
     "Input": "Ik miste februari 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "februari 2001",
@@ -997,7 +997,7 @@
   },
   {
     "Input": "Ik miste februari, 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "februari, 2001",
@@ -1009,7 +1009,7 @@
   },
   {
     "Input": "Ik ben in maart weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "maart",
@@ -1021,7 +1021,7 @@
   },
   {
     "Input": "Ik ben aanstaande maart weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "aanstaande maart",
@@ -1033,7 +1033,7 @@
   },
   {
     "Input": "Ik ben maand maart weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "maand maart",
@@ -1045,7 +1045,7 @@
   },
   {
     "Input": "Ik ben de maand maart weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de maand maart",
@@ -1057,7 +1057,7 @@
   },
   {
     "Input": "Ik miste maart 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "maart 2001",
@@ -1069,7 +1069,7 @@
   },
   {
     "Input": "Ik miste maart, 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "maart, 2001",
@@ -1081,7 +1081,7 @@
   },
   {
     "Input": "Ik ben in april weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "april",
@@ -1093,7 +1093,7 @@
   },
   {
     "Input": "Ik ben aanstaande april weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "aanstaande april",
@@ -1105,7 +1105,7 @@
   },
   {
     "Input": "Ik ben maand april weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "maand april",
@@ -1117,7 +1117,7 @@
   },
   {
     "Input": "Ik ben de maand april weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de maand april",
@@ -1129,7 +1129,7 @@
   },
   {
     "Input": "Ik miste april 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "april 2001",
@@ -1141,7 +1141,7 @@
   },
   {
     "Input": "Ik miste april, 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "april, 2001",
@@ -1153,7 +1153,7 @@
   },
   {
     "Input": "Ik ben in juni weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "juni",
@@ -1165,7 +1165,7 @@
   },
   {
     "Input": "Ik ben aanstaande juni weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "aanstaande juni",
@@ -1177,7 +1177,7 @@
   },
   {
     "Input": "Ik ben maand juni weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "maand juni",
@@ -1189,7 +1189,7 @@
   },
   {
     "Input": "Ik ben de maand juni weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de maand juni",
@@ -1201,7 +1201,7 @@
   },
   {
     "Input": "Ik miste juni 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "juni 2001",
@@ -1213,7 +1213,7 @@
   },
   {
     "Input": "Ik miste juni, 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "juni, 2001",
@@ -1225,7 +1225,7 @@
   },
   {
     "Input": "Ik ben in juli weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "juli",
@@ -1237,7 +1237,7 @@
   },
   {
     "Input": "Ik ben aanstaande juli weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "aanstaande juli",
@@ -1249,7 +1249,7 @@
   },
   {
     "Input": "Ik ben maand juli weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "maand juli",
@@ -1261,7 +1261,7 @@
   },
   {
     "Input": "Ik ben de maand juli weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de maand juli",
@@ -1273,7 +1273,7 @@
   },
   {
     "Input": "Ik miste juli 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "juli 2001",
@@ -1285,7 +1285,7 @@
   },
   {
     "Input": "Ik miste juli, 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "juli, 2001",
@@ -1297,7 +1297,7 @@
   },
   {
     "Input": "Ik ben in augustus weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "augustus",
@@ -1309,7 +1309,7 @@
   },
   {
     "Input": "Ik ben aanstaande augustus weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "aanstaande augustus",
@@ -1321,7 +1321,7 @@
   },
   {
     "Input": "Ik ben maand augustus weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "maand augustus",
@@ -1333,7 +1333,7 @@
   },
   {
     "Input": "Ik ben de maand augustus weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de maand augustus",
@@ -1345,7 +1345,7 @@
   },
   {
     "Input": "Ik miste augustus 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "augustus 2001",
@@ -1357,7 +1357,7 @@
   },
   {
     "Input": "Ik miste augustus, 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "augustus, 2001",
@@ -1369,7 +1369,7 @@
   },
   {
     "Input": "Ik ben in september weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "september",
@@ -1381,7 +1381,7 @@
   },
   {
     "Input": "Ik ben aanstaande september weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "aanstaande september",
@@ -1393,7 +1393,7 @@
   },
   {
     "Input": "Ik ben maand september weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "maand september",
@@ -1405,7 +1405,7 @@
   },
   {
     "Input": "Ik ben de maand september weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de maand september",
@@ -1417,7 +1417,7 @@
   },
   {
     "Input": "Ik miste september 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "september 2001",
@@ -1429,7 +1429,7 @@
   },
   {
     "Input": "Ik miste september, 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "september, 2001",
@@ -1441,7 +1441,7 @@
   },
   {
     "Input": "Ik ben in oktober weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "oktober",
@@ -1453,7 +1453,7 @@
   },
   {
     "Input": "Ik ben aanstaande oktober weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "aanstaande oktober",
@@ -1465,7 +1465,7 @@
   },
   {
     "Input": "Ik ben maand oktober weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "maand oktober",
@@ -1477,7 +1477,7 @@
   },
   {
     "Input": "Ik ben de maand oktober weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de maand oktober",
@@ -1489,7 +1489,7 @@
   },
   {
     "Input": "Ik miste oktober 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "oktober 2001",
@@ -1501,7 +1501,7 @@
   },
   {
     "Input": "Ik miste oktober, 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "oktober, 2001",
@@ -1513,7 +1513,7 @@
   },
   {
     "Input": "Ik ben november weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "november",
@@ -1525,7 +1525,7 @@
   },
   {
     "Input": "Ik ben aanstaande november weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "aanstaande november",
@@ -1537,7 +1537,7 @@
   },
   {
     "Input": "Ik ben maand november weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "maand november",
@@ -1549,7 +1549,7 @@
   },
   {
     "Input": "Ik ben de maand november weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de maand november",
@@ -1561,7 +1561,7 @@
   },
   {
     "Input": "Ik miste november 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "november 2001",
@@ -1573,7 +1573,7 @@
   },
   {
     "Input": "Ik miste november, 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "november, 2001",
@@ -1585,7 +1585,7 @@
   },
   {
     "Input": "Ik ben in december weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "december",
@@ -1597,7 +1597,7 @@
   },
   {
     "Input": "Ik ben aanstaande december weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "aanstaande december",
@@ -1609,7 +1609,7 @@
   },
   {
     "Input": "Ik ben maand december weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "maand december",
@@ -1621,7 +1621,7 @@
   },
   {
     "Input": "Ik ben de maand december weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de maand december",
@@ -1633,7 +1633,7 @@
   },
   {
     "Input": "Ik miste december 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "december 2001",
@@ -1645,7 +1645,7 @@
   },
   {
     "Input": "Ik miste december, 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "december, 2001",
@@ -1657,7 +1657,7 @@
   },
   {
     "Input": "Agenda voor de maand september",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de maand september",
@@ -1669,7 +1669,7 @@
   },
   {
     "Input": "Ik ben deze maand van 4 tot 22 weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "deze maand van 4 tot 22",
@@ -1681,7 +1681,7 @@
   },
   {
     "Input": "Ik ben volgende maand van 4 tot 23 weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "volgende maand van 4 tot 23",
@@ -1693,7 +1693,7 @@
   },
   {
     "Input": "Ik ben weg van 3 tot 12 sep hahaha",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van 3 tot 12 sep",
@@ -1705,7 +1705,7 @@
   },
   {
     "Input": "Ik ben weg van 4 tot 23 volgende maand",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van 4 tot 23 volgende maand",
@@ -1717,7 +1717,7 @@
   },
   {
     "Input": "Ik ben weg van 4 tot 22 deze maand",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van 4 tot 22 deze maand",
@@ -1729,7 +1729,7 @@
   },
   {
     "Input": "Ik ben weg tussen 4 en 22 deze maand",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "tussen 4 en 22 deze maand",
@@ -1741,7 +1741,7 @@
   },
   {
     "Input": "Ik ben weg tussen 3 en 12 van sep hahaha",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "tussen 3 en 12 van sep",
@@ -1753,7 +1753,7 @@
   },
   {
     "Input": "Ik ben weg tussen 4e september tot en met 8e september ",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "tussen 4e september tot en met 8e september",
@@ -1765,7 +1765,7 @@
   },
   {
     "Input": "Ik ben weg tussen 15e november tot en met 19e ",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "tussen 15e november tot en met 19e",
@@ -1777,7 +1777,7 @@
   },
   {
     "Input": "Ik ben weg tussen 15e november tot en met de 19e ",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "tussen 15e november tot en met de 19e",
@@ -1789,7 +1789,7 @@
   },
   {
     "Input": "Ik ben weg tussen de 15e november tot en met 19e ",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "tussen de 15e november tot en met 19e",
@@ -1801,7 +1801,7 @@
   },
   {
     "Input": "Ik ben weg van 4 tot 22 januari, 2017",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van 4 tot 22 januari, 2017",
@@ -1813,7 +1813,7 @@
   },
   {
     "Input": "Ik ben weg tussen 4-22 januari, 2017",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "tussen 4-22 januari, 2017",
@@ -1825,7 +1825,7 @@
   },
   {
     "Input": "Ik ben weg op deze week",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "deze week",
@@ -1837,7 +1837,7 @@
   },
   {
     "Input": "Ik ben weg de komende week ",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "komende week",
@@ -1849,7 +1849,7 @@
   },
   {
     "Input": "Ik ben weg in september",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "september",
@@ -1861,7 +1861,7 @@
   },
   {
     "Input": "Ik ben weg afgelopen september",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "afgelopen september",
@@ -1873,7 +1873,7 @@
   },
   {
     "Input": "Ik ben volgende juni weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "volgende juni",
@@ -1885,7 +1885,7 @@
   },
   {
     "Input": "Ik ben juni 2016 weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "juni 2016",
@@ -1897,7 +1897,7 @@
   },
   {
     "Input": "Ik ben juni volgend jaar weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "juni volgend jaar",
@@ -1909,7 +1909,7 @@
   },
   {
     "Input": "Ik ben dit weekend weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "dit weekend",
@@ -1921,7 +1921,7 @@
   },
   {
     "Input": "Ik ben de derde week van deze maand weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de derde week van deze maand",
@@ -1933,7 +1933,7 @@
   },
   {
     "Input": "Ik ben de laatste week van juli weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de laatste week van juli",
@@ -1945,7 +1945,8 @@
   },
   {
     "Input": "Plan kamperen in voor vrijdag tot en met zondag",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "vrijdag tot en met zondag",
@@ -1957,7 +1958,7 @@
   },
   {
     "Input": "Ik ben de volgende 3 dagen weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "volgende 3 dagen",
@@ -1969,7 +1970,7 @@
   },
   {
     "Input": "Ik ben de volgende 3 maanden weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "volgende 3 maanden",
@@ -1981,22 +1982,22 @@
   },
   {
     "Input": "Ik ben over 3 jaar weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": []
   },
   {
     "Input": "Ik ben over 3 weken weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": []
   },
   {
     "Input": "Ik ben over 3 maanden weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": []
   },
   {
     "Input": "Ik ben de afgelopen 3 weken weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "afgelopen 3 weken",
@@ -2008,7 +2009,7 @@
   },
   {
     "Input": "Ik ben de afgelopen 3 jaar weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "afgelopen 3 jaar",
@@ -2020,7 +2021,7 @@
   },
   {
     "Input": "Ik ben afgelopen jaar weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "afgelopen jaar",
@@ -2032,7 +2033,7 @@
   },
   {
     "Input": "Ik ben vorige maand weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "vorige maand",
@@ -2044,7 +2045,7 @@
   },
   {
     "Input": "Ik ben vorige 3 weken weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "vorige 3 weken",
@@ -2056,7 +2057,7 @@
   },
   {
     "Input": "afgelopen paar weken",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "afgelopen paar weken",
@@ -2068,7 +2069,7 @@
   },
   {
     "Input": "afgelopen paar dagen",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "afgelopen paar dagen",
@@ -2080,7 +2081,7 @@
   },
   {
     "Input": "Ik ben 2 okt. tot 22 oktober weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2 okt. tot 22 oktober",
@@ -2092,7 +2093,7 @@
   },
   {
     "Input": "Ik ben 12 januari, 2016 tot 22-02-2016 weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "12 januari, 2016 tot 22-02-2016",
@@ -2104,7 +2105,7 @@
   },
   {
     "Input": "Ik ben 1e jan tot woens 22 jan weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "1e jan tot woens 22 jan",
@@ -2116,7 +2117,7 @@
   },
   {
     "Input": "Ik ben vandaag tot morgen weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "vandaag tot morgen",
@@ -2128,7 +2129,7 @@
   },
   {
     "Input": "Ik ben vandaag tot 22 oktober weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "vandaag tot 22 oktober",
@@ -2140,7 +2141,7 @@
   },
   {
     "Input": "Ik ben 2 okt. tot overmorgen weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2 okt. tot overmorgen",
@@ -2152,7 +2153,7 @@
   },
   {
     "Input": "Ik ben vandaag tot volgende zondag weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "vandaag tot volgende zondag",
@@ -2164,7 +2165,7 @@
   },
   {
     "Input": "Ik ben deze vrijdag tot volgende zondag weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "deze vrijdag tot volgende zondag",
@@ -2176,7 +2177,7 @@
   },
   {
     "Input": "Ik ben van 2 okt. tot 22 oktober weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van 2 okt. tot 22 oktober",
@@ -2188,7 +2189,7 @@
   },
   {
     "Input": "Ik ben van 12-08-2015 tot 22 oktober weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van 12-08-2015 tot 22 oktober",
@@ -2200,7 +2201,7 @@
   },
   {
     "Input": "Ik ben van vrijdag de 2e tot dinsdag de 6e weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van vrijdag de 2e tot dinsdag de 6e",
@@ -2212,7 +2213,7 @@
   },
   {
     "Input": "Ik ben van vandaag tot morgen weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van vandaag tot morgen",
@@ -2224,7 +2225,7 @@
   },
   {
     "Input": "Ik ben van deze vrijdag tot volgende zondag weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van deze vrijdag tot volgende zondag",
@@ -2236,7 +2237,7 @@
   },
   {
     "Input": "Ik ben tussen 2 okt. en 22 oktober weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "tussen 2 okt. en 22 oktober",
@@ -2248,7 +2249,7 @@
   },
   {
     "Input": "Ik ben 19-20 november weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "19-20 november",
@@ -2260,7 +2261,7 @@
   },
   {
     "Input": "Ik ben 19 tot 20 november weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "19 tot 20 november",
@@ -2272,7 +2273,7 @@
   },
   {
     "Input": "Ik ben november tussen 19 en 20 weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "november tussen 19 en 20",
@@ -2284,7 +2285,7 @@
   },
   {
     "Input": "Ik ben het derde kwartaal van 2016 weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "het derde kwartaal van 2016",
@@ -2296,7 +2297,7 @@
   },
   {
     "Input": "Ik ben het derde kwartaal dit jaar weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "het derde kwartaal dit jaar",
@@ -2308,7 +2309,7 @@
   },
   {
     "Input": "Ik ben 2016 het derde kwartaal weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2016 het derde kwartaal",
@@ -2320,7 +2321,7 @@
   },
   {
     "Input": "Ik ben tijdens K1 terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "K1",
@@ -2332,7 +2333,7 @@
   },
   {
     "Input": "Ik ben dit K3 weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "K3",
@@ -2344,7 +2345,7 @@
   },
   {
     "Input": "Ik ben 2015.3 weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2015.3",
@@ -2356,7 +2357,7 @@
   },
   {
     "Input": "Ik ben 2015-3 weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2015-3",
@@ -2368,7 +2369,7 @@
   },
   {
     "Input": "Ik ben 2015/3 weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2015/3",
@@ -2380,7 +2381,7 @@
   },
   {
     "Input": "Ik ben 3/2015 weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "3/2015",
@@ -2392,7 +2393,7 @@
   },
   {
     "Input": "Ik ben de derde week van 2027 weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de derde week van 2027",
@@ -2404,7 +2405,7 @@
   },
   {
     "Input": "Ik ben volgend jaar de derde week weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "volgend jaar de derde week",
@@ -2416,7 +2417,7 @@
   },
   {
     "Input": "Ik vertrek deze zomer",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "deze zomer",
@@ -2428,7 +2429,7 @@
   },
   {
     "Input": "Ik vertrek volgende lente",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "volgende lente",
@@ -2440,7 +2441,7 @@
   },
   {
     "Input": "Ik vertrek de zomer",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de zomer",
@@ -2452,7 +2453,7 @@
   },
   {
     "Input": "Ik vertrek zomer",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "zomer",
@@ -2464,7 +2465,7 @@
   },
   {
     "Input": "Ik vertrek zomer 2016",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "zomer 2016",
@@ -2476,7 +2477,7 @@
   },
   {
     "Input": "Ik vertrek zomer van 2016",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "zomer van 2016",
@@ -2488,7 +2489,7 @@
   },
   {
     "Input": "vakanties aankomende maand",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "aankomende maand",
@@ -2500,7 +2501,7 @@
   },
   {
     "Input": "vakantie volgende maand",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "volgende maand",
@@ -2512,7 +2513,7 @@
   },
   {
     "Input": "Wat heb ik de week van 30e november",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de week van 30e november",
@@ -2524,7 +2525,7 @@
   },
   {
     "Input": "de week van 15e september",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de week van 15e september",
@@ -2536,7 +2537,7 @@
   },
   {
     "Input": "week van 15e september",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "week van 15e september",
@@ -2548,7 +2549,7 @@
   },
   {
     "Input": "maand van 15e september",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "maand van 15e september",
@@ -2560,7 +2561,7 @@
   },
   {
     "Input": "Ik vertrek tijdens het weekend",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "het weekend",
@@ -2572,7 +2573,7 @@
   },
   {
     "Input": "Ik vertrek de rest van de week",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "rest van de week",
@@ -2584,7 +2585,7 @@
   },
   {
     "Input": "Ik vertrek de rest van mijn week",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "rest van mijn week",
@@ -2596,7 +2597,7 @@
   },
   {
     "Input": "Ik vertrek rest van week",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "rest van week",
@@ -2608,7 +2609,7 @@
   },
   {
     "Input": "Ik vertrek rest van de week",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "rest van de week",
@@ -2620,7 +2621,7 @@
   },
   {
     "Input": "Ik vertrek rest van deze week",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "rest van deze week",
@@ -2632,7 +2633,7 @@
   },
   {
     "Input": "Ik vertrek rest van huidige week",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "rest van huidige week",
@@ -2644,7 +2645,7 @@
   },
   {
     "Input": "Ik vertrek rest van de maand",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "rest van de maand",
@@ -2656,7 +2657,7 @@
   },
   {
     "Input": "Ik vertrek rest van het jaar",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "rest van het jaar",
@@ -2668,7 +2669,7 @@
   },
   {
     "Input": "Zoek een tijd om elkaar later deze maand te ontmoeten",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "later deze maand",
@@ -2680,7 +2681,7 @@
   },
   {
     "Input": "Zoek een tijd om elkaar later deze week te ontmoeten",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "later deze week",
@@ -2692,7 +2693,7 @@
   },
   {
     "Input": "Zoek een tijd om elkaar eind volgende week te ontmoeten",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "eind volgende week",
@@ -2704,7 +2705,7 @@
   },
   {
     "Input": "Zoek een tijd om elkaar eind volgend jaar",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "eind volgend jaar",
@@ -2716,7 +2717,7 @@
   },
   {
     "Input": "We hebben eind vorige week afgesproken",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "eind vorige week",
@@ -2728,7 +2729,7 @@
   },
   {
     "Input": "Zoek een tijd voor ons om af te spreken begin deze maand",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "begin deze maand",
@@ -2740,7 +2741,7 @@
   },
   {
     "Input": "Zoek een tijd voor ons om af te spreken begin deze week",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "begin deze week",
@@ -2752,7 +2753,7 @@
   },
   {
     "Input": "Zoek een tijd voor ons om af te spreken begin volgende week",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "begin volgende week",
@@ -2764,7 +2765,7 @@
   },
   {
     "Input": "Zoek een tijd voor ons om af te spreken begin volgend jaar",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "begin volgend jaar",
@@ -2776,7 +2777,7 @@
   },
   {
     "Input": "Cortana, regel alsjeblieft een meeting van 25 minuten met antonio volgende week tussen woensdag en vrijdag",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "volgende week tussen woensdag en vrijdag",
@@ -2788,7 +2789,7 @@
   },
   {
     "Input": "Ik ben jaar 247 weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "jaar 247",
@@ -2800,7 +2801,7 @@
   },
   {
     "Input": "In de jaren 1970",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de jaren 1970",
@@ -2812,7 +2813,7 @@
   },
   {
     "Input": "In de jaren 2000 werd hij geboren",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de jaren 2000",
@@ -2824,7 +2825,7 @@
   },
   {
     "Input": "In de jaren '70",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de jaren '70",
@@ -2836,7 +2837,7 @@
   },
   {
     "Input": "In de jaren '40",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de jaren '40",
@@ -2848,7 +2849,7 @@
   },
   {
     "Input": "In de jaren zeventig",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de jaren zeventig",
@@ -2860,7 +2861,7 @@
   },
   {
     "Input": "In de jaren negentienzeventig",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de jaren negentienzeventig",
@@ -2872,7 +2873,7 @@
   },
   {
     "Input": "In de jaren tweeduizend tien",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de jaren tweeduizend tien",
@@ -2884,7 +2885,7 @@
   },
   {
     "Input": "In de jaren tweeduizend",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de jaren tweeduizend",
@@ -2896,7 +2897,7 @@
   },
   {
     "Input": "In de jaren nul",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de jaren nul",
@@ -2908,7 +2909,7 @@
   },
   {
     "Input": "Ik ben van 2 tot 7 feb, tweeduizend achttien weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van 2 tot 7 feb, tweeduizend achttien",
@@ -2920,7 +2921,7 @@
   },
   {
     "Input": "Ik ben tussen 2 tot 7 feb tweeduizend achttien weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "tussen 2 tot 7 feb tweeduizend achttien",
@@ -2932,7 +2933,7 @@
   },
   {
     "Input": "Ik ben feb tussen 2-7 tweeduizend achttien weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "feb tussen 2-7 tweeduizend achttien",
@@ -2944,7 +2945,7 @@
   },
   {
     "Input": "Het gebeurde in juni van negentiennegenennegentig",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "juni van negentiennegenennegentig",
@@ -2956,7 +2957,7 @@
   },
   {
     "Input": "In negentienachtentwintig",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "negentienachtentwintig",
@@ -2968,7 +2969,7 @@
   },
   {
     "Input": "Ik ben de eerste week van tweeduizend zevenentwintig weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de eerste week van tweeduizend zevenentwintig",
@@ -2980,7 +2981,7 @@
   },
   {
     "Input": "Ik ben het eerste kwartaal van tweeduizend twintig weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "het eerste kwartaal van tweeduizend twintig",
@@ -2992,7 +2993,7 @@
   },
   {
     "Input": "In de lente van negentienachtenzeventig",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de lente van negentienachtenzeventig",
@@ -3004,7 +3005,7 @@
   },
   {
     "Input": "Jaar tweehonderdzevenenzestig,",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "Jaar tweehonderdzevenenzestig",
@@ -3016,7 +3017,7 @@
   },
   {
     "Input": "Ik ben de week na de volgende weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de week na de volgende",
@@ -3028,7 +3029,7 @@
   },
   {
     "Input": "Het gebeurde in de afgelopen 2 decennia",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de afgelopen 2 decennia",
@@ -3040,7 +3041,7 @@
   },
   {
     "Input": "Het gebeurde in de laatste twee decennia",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de laatste twee decennia",
@@ -3052,7 +3053,7 @@
   },
   {
     "Input": "Het gebeurde in het volgende decennium",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "het volgende decennium",
@@ -3064,7 +3065,8 @@
   },
   {
     "Input": "Het zal 4 weken in de toekomst gebeuren",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "4 weken in de toekomst",
@@ -3076,7 +3078,8 @@
   },
   {
     "Input": "Het zal 2 dagen daarna gebeuren",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "2 dagen daarna",
@@ -3088,7 +3091,7 @@
   },
   {
     "Input": "Cortana kan een tijd begin volgende week voor ons vinden",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "begin volgende week",
@@ -3100,7 +3103,7 @@
   },
   {
     "Input": "Natuurlijk, laten we eind van volgende week Skypen",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "eind van volgende week",
@@ -3112,7 +3115,7 @@
   },
   {
     "Input": "Cortana kan half maart een ontmoeting voor ons regelen",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "half maart",
@@ -3124,7 +3127,7 @@
   },
   {
     "Input": "en anders tegen midzomer?",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "midzomer",
@@ -3136,7 +3139,7 @@
   },
   {
     "Input": "Ik kan begin van volgende week een tijd voor ons vastleggen",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "begin van volgende week",
@@ -3148,7 +3151,7 @@
   },
   {
     "Input": "Ik ben 11-2016 weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "11-2016",
@@ -3160,7 +3163,7 @@
   },
   {
     "Input": "Ik ben 11/2016 weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "11/2016",
@@ -3172,7 +3175,7 @@
   },
   {
     "Input": "Ik ben 2016/11 weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2016/11",
@@ -3184,7 +3187,7 @@
   },
   {
     "Input": "Ik ben 2016-11 weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2016-11",
@@ -3196,7 +3199,7 @@
   },
   {
     "Input": "Ik ben 2016 november weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2016 november",
@@ -3208,7 +3211,7 @@
   },
   {
     "Input": "Ik ben november, 2016 weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "november, 2016",
@@ -3220,7 +3223,7 @@
   },
   {
     "Input": "Ik ben 2016, nov weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2016, nov",
@@ -3232,7 +3235,7 @@
   },
   {
     "Input": "Ik ben tussen de 1e januari en de 5e april weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "tussen de 1e januari en de 5e april",
@@ -3244,7 +3247,8 @@
   },
   {
     "Input": "Ik ben tussen de 1e januari 2015 en de 5e feb 2018 weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "tussen de 1e januari 2015 en de 5e feb 2018",
@@ -3256,7 +3260,7 @@
   },
   {
     "Input": "Ik ben tussen de 1e januari 2015 en feb 2018 weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "tussen de 1e januari 2015 en feb 2018",
@@ -3268,7 +3272,8 @@
   },
   {
     "Input": "Ik ben tussen 2015 en feb 2018 weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "tussen 2015 en feb 2018",
@@ -3280,7 +3285,7 @@
   },
   {
     "Input": "Ik ben van 1 feb tot maart 2019 weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van 1 feb tot maart 2019",
@@ -3292,7 +3297,8 @@
   },
   {
     "Input": "Ik ben tussen 1 feb en maart 2019 weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "tussen 1 feb en maart 2019",
@@ -3304,7 +3310,8 @@
   },
   {
     "Input": "Ik ben tussen juni 2015 en mei 2018 weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "tussen juni 2015 en mei 2018",
@@ -3316,7 +3323,8 @@
   },
   {
     "Input": "Ik ben tussen mei 2015 en 2018 weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "tussen mei 2015 en 2018",
@@ -3328,7 +3336,8 @@
   },
   {
     "Input": "Ik ben tussen mei 2015 en juni 2018 weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "tussen mei 2015 en juni 2018",
@@ -3340,7 +3349,8 @@
   },
   {
     "Input": "Ik ben tussen 2015 en de 5e van januari 2018 weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "tussen 2015 en de 5e van januari 2018",
@@ -3352,7 +3362,7 @@
   },
   {
     "Input": "Ik ben van 2015 tot 5 mei 2017 weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van 2015 tot 5 mei 2017",
@@ -3364,7 +3374,7 @@
   },
   {
     "Input": "Ik ben van laatste maandag april tot 2019 weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van laatste maandag april tot 2019",
@@ -3376,7 +3386,7 @@
   },
   {
     "Input": "Ik ben van week 31 tot week 35 weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van week 31 tot week 35",
@@ -3388,7 +3398,8 @@
   },
   {
     "Input": "Ik ben tussen week 31 en week 35 weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "tussen week 31 en week 35",
@@ -3400,7 +3411,7 @@
   },
   {
     "Input": "Ik zal hier blijven van vandaag tot tweeënhalve dag later",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van vandaag tot tweeënhalve dag later",
@@ -3412,7 +3423,7 @@
   },
   {
     "Input": "Wat is mijn bonus van april 2017?",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "april 2017",
@@ -3424,7 +3435,7 @@
   },
   {
     "Input": "Ik was daar niet in dezelfde maand dat het gebeurd",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "dezelfde maand",
@@ -3436,7 +3447,7 @@
   },
   {
     "Input": "Ik was daar niet in dezelfde week dat het gebeurd",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "dezelfde week",
@@ -3448,7 +3459,7 @@
   },
   {
     "Input": "Ik was er niet dat jaar.",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "dat jaar",
@@ -3460,7 +3471,8 @@
   },
   {
     "Input": "Ik heb al mijn werk al meer dan 2 weken voor vandaag afgerond",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "meer dan 2 weken voor vandaag",
@@ -3472,7 +3484,7 @@
   },
   {
     "Input": "Ik kom binnen 2 weken vanaf vandaag terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "binnen 2 weken vanaf vandaag",
@@ -3484,7 +3496,8 @@
   },
   {
     "Input": "Ik kom binnen minder dan 2 weken vanaf vandaag terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "binnen minder dan 2 weken vanaf vandaag",
@@ -3496,7 +3509,8 @@
   },
   {
     "Input": "Deze taak zou meer dan 2 dagen voor gisteren moeten zijn gedaan",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "meer dan 2 dagen voor gisteren",
@@ -3508,7 +3522,8 @@
   },
   {
     "Input": "Deze taak zal minder dan 3 dagen na morgen afgerond zijn",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "minder dan 3 dagen na morgen",
@@ -3520,7 +3535,7 @@
   },
   {
     "Input": "Ik miste okt. 2001",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "okt. 2001",
@@ -3532,7 +3547,7 @@
   },
   {
     "Input": "verkoop waarvan de datum dit decennium is",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "dit decennium",
@@ -3544,7 +3559,7 @@
   },
   {
     "Input": "Ik ben het derde kwartaal weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "het derde kwartaal",
@@ -3556,7 +3571,7 @@
   },
   {
     "Input": "Ik ben het derde kwartaal van volgend jaar weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "het derde kwartaal van volgend jaar",
@@ -3568,7 +3583,7 @@
   },
   {
     "Input": "Ik ben het vierde kwartaal van volgend jaar weg",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "het vierde kwartaal van volgend jaar",
@@ -3580,12 +3595,12 @@
   },
   {
     "Input": "Zet alsjeblieft $2000 om naar Britse ponden",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": []
   },
   {
     "Input": "Het aandeel van deze bank is 20% lager in het jaar tot op heden",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "jaar tot op heden",
@@ -3597,7 +3612,7 @@
   },
   {
     "Input": "van 1-10 tot 7-11",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van 1-10 tot 7-11",
@@ -3609,7 +3624,7 @@
   },
   {
     "Input": "Ik zal mijn werk doen tussen nu en november 15e",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "tussen nu en november 15e",
@@ -3621,7 +3636,7 @@
   },
   {
     "Input": "Ik heb mijn werk tussen 22 jan en nu afgerond",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "tussen 22 jan en nu",
@@ -3633,7 +3648,7 @@
   },
   {
     "Input": "15.00 : ik ben deze week weg",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "deze week",
@@ -3645,8 +3660,8 @@
   },
   {
     "Input": "deze week 8.00 zou een datumreeks en een tijdstip moeten zijn",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet,python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "deze week",
@@ -3658,8 +3673,8 @@
   },
   {
     "Input": "deze week 20.00 zou een datumreeks en een tijdstip moeten zijn",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet,python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "deze week",
@@ -3671,7 +3686,7 @@
   },
   {
     "Input": "week 10 20.00 zou een datumreeks en een tijdstip moeten zijn",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "week 10",
@@ -3683,7 +3698,7 @@
   },
   {
     "Input": "week 10 10:20 zou een datumreeks en een tijdstip moeten zijn",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "week 10",
@@ -3695,7 +3710,7 @@
   },
   {
     "Input": "6,107.31 augustus 2019 zou het decimaal niet moeten bevatten",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "augustus 2019",
@@ -3707,7 +3722,7 @@
   },
   {
     "Input": "Ik was daar niet van 01/aug/2019 tot vandaag",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "van 01/aug/2019 tot vandaag",
@@ -3719,7 +3734,7 @@
   },
   {
     "Input": "Ik was daar niet van 01-aug-2019 tot vandaag",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "van 01-aug-2019 tot vandaag",
@@ -3731,8 +3746,8 @@
   },
   {
     "Input": "plan alsjeblieft een meeting in voor de week die 4 februari aanvangt",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet,python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "de week die 4 februari aanvangt",
@@ -3744,8 +3759,8 @@
   },
   {
     "Input": "plan alsjeblieft een meeting in voor de week die 4 februari start",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet,python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "de week die 4 februari start",
@@ -3757,8 +3772,8 @@
   },
   {
     "Input": "plan alsjeblieft een meeting in voor de week die op 4 februari start",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet,python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "de week die op 4 februari start",
@@ -3770,8 +3785,8 @@
   },
   {
     "Input": "plan alsjeblieft een meeting in voor de week die op 4 februari begint",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet,python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "de week die op 4 februari begint",
@@ -3783,8 +3798,8 @@
   },
   {
     "Input": "plan alsjeblieft een meeting in voor de week die 4 februari begint",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet,python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "de week die 4 februari begint",
@@ -3796,7 +3811,7 @@
   },
   {
     "Input": "Boek een reis van 26e juni van 2020 tot 28e juni van 2020",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "van 26e juni van 2020 tot 28e juni van 2020",
