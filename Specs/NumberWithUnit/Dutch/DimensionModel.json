@@ -1165,12 +1165,12 @@
   },
   {
     "Input": "de temperatuur is 24 graden",
-    "NotSupported": "java, javascript",
+    "NotSupported": "java, python, javascript",
     "Results": []
   },
   {
     "Input": "Water kookt bij 100° Celsius",
-    "NotSupported": "java, javascript",
+    "NotSupported": "java, python, javascript",
     "Results": []
   },
   {

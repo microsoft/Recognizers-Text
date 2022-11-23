@@ -108,7 +108,7 @@
   },
   {
     "Input": "180,25ml vloeistof",
-    "NotSupportedByDesign": "javascript,java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": []
   },
   {
@@ -399,7 +399,7 @@
   },
   {
     "Input": " -9,2321312",
-    "NotSupportedByDesign": "javascript,java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "-9,2321312",
@@ -1153,7 +1153,7 @@
   },
   {
     "Input": "honderdduizend biljoensten",
-    "NotSupportedByDesign": "javascript,java",
+    "NotSupportedByDesign": "javascript, python, java",
     "Results": [
       {
         "Text": "honderdduizend biljoensten",
@@ -1350,6 +1350,7 @@
   },
   {
     "Input": "één uit de 20",
+    "NotSupported": "python",
     "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
