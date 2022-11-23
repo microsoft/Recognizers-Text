@@ -166,7 +166,8 @@ class DutchNumberParserConfiguration(NumberParserConfiguration):
                 frac_words.append(DutchNumeric.OneHalfTokens[0])
                 frac_words.append(DutchNumeric.OneHalfTokens[1])
                 length = 4
-            elif m := self._fraction_units_regex.search(word):
+            elif self._fraction_units_regex.search(word):
+                m = self._fraction_units_regex.search(word)
                 if m.group("onehalf"):
                     frac_words[idx] = DutchNumeric.OneHalfTokens[0]
                     frac_words.append(self._written_fraction_separator_texts[0])
