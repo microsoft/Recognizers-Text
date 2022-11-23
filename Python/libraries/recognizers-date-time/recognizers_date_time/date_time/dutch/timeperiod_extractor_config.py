@@ -148,6 +148,8 @@ class DutchTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
         self._pure_number_regex = [DutchDateTime.PureNumFromTo, DutchDateTime.PureNumFromTo]
         self._time_zone_extractor = BaseTimeZoneExtractor(
             DutchTimeZoneExtractorConfiguration())
+        self.between_token_regex = RegExpUtility.get_safe_reg_exp(
+            DutchDateTime.BetweenTokenRegex)
 
     def get_from_token_index(self, source: str) -> MatchedIndex:
         match = self.from_regex.search(source)
@@ -157,7 +159,7 @@ class DutchTimePeriodExtractorConfiguration(TimePeriodExtractorConfiguration):
         return MatchedIndex(False, -1)
 
     def get_between_token_index(self, source: str) -> MatchedIndex:
-        match = self.before_regex.search(source)
+        match = self.between_token_regex.search(source)
         if match:
             return MatchedIndex(True, match.start())
 

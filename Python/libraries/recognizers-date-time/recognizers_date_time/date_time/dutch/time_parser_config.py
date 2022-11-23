@@ -106,7 +106,7 @@ class DutchTimeParserConfiguration(TimeParserConfiguration):
     def adjust_by_suffix(self, suffix: str, adjust: AdjustParams):
         suffix = suffix.strip().lower()
         delta_hour = 0
-        match = regex.search(self.time_suffix, suffix)
+        match = regex.search(self.time_suffix_full_regex, suffix)
         if match is not None and match.start() == 0 and match.group() == suffix:
             oclock_str = RegExpUtility.get_group(match, 'oclock')
             if not oclock_str:

@@ -148,6 +148,7 @@ class DutchDimensionExtractorConfiguration(DutchNumberWithUnitExtractorConfigura
             **DutchNumericWithUnit.InformationSuffixList,
             **DutchNumericWithUnit.AreaSuffixList,
             **DutchNumericWithUnit.LengthSuffixList,
+            **DutchNumericWithUnit.AngleSuffixList,
             **DutchNumericWithUnit.SpeedSuffixList,
             **DutchNumericWithUnit.VolumeSuffixList,
             **DutchNumericWithUnit.WeightSuffixList

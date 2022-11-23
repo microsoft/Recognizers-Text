@@ -386,6 +386,7 @@
   {
     "Input": "Ik ga anderhalf uur weg",
     "NotSupportedByDesign": "javascript,java",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "anderhalf uur",
@@ -410,6 +411,7 @@
   {
     "Input": "Ik ga tweeëneenhalf uur weg",
     "NotSupportedByDesign": "javascript,java",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "tweeëneenhalf uur",
@@ -842,6 +844,7 @@
   {
     "Input": "Ik vertrek voor anderhalf uur",
     "NotSupportedByDesign": "javascript,java",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "anderhalf uur",
@@ -878,6 +881,7 @@
   {
     "Input": "Ik vertrek voor tweeënhalf uur",
     "NotSupportedByDesign": "javascript,java",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "tweeënhalf uur",

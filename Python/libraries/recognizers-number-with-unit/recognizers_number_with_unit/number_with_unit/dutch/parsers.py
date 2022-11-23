@@ -57,6 +57,7 @@ class DutchDimensionParserConfiguration(DutchNumberWithUnitParserConfiguration):
         self.add_dict_to_unit_map(DutchNumericWithUnit.AreaSuffixList)
         self.add_dict_to_unit_map(DutchNumericWithUnit.LengthSuffixList)
         self.add_dict_to_unit_map(DutchNumericWithUnit.SpeedSuffixList)
+        self.add_dict_to_unit_map(DutchNumericWithUnit.AngleSuffixList)
         self.add_dict_to_unit_map(DutchNumericWithUnit.VolumeSuffixList)
         self.add_dict_to_unit_map(DutchNumericWithUnit.WeightSuffixList)
 

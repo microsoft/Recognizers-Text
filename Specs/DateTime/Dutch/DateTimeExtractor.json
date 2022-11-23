@@ -1,7 +1,7 @@
 [
   {
     "Input": "Ik ga nu terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "nu",
@@ -13,7 +13,7 @@
   },
   {
     "Input": "Ik ga zo snel mogelijk terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "zo snel mogelijk",
@@ -25,7 +25,7 @@
   },
   {
     "Input": "Ik ga terug op 15 om 8:00",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "15 om 8:00",
@@ -37,7 +37,7 @@
   },
   {
     "Input": "Ik ga terug op 15 om 8:00:30",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "15 om 8:00:30",
@@ -49,7 +49,7 @@
   },
   {
     "Input": "Ik ga terug op 15 om 8.00:30",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "15 om 8.00:30",
@@ -61,7 +61,7 @@
   },
   {
     "Input": "Ik ga terug op 15, 20u",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "15, 20u",
@@ -73,7 +73,7 @@
   },
   {
     "Input": "Ik ga terug op 21/04/2016, 20u",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "21/04/2016, 20u",
@@ -85,7 +85,7 @@
   },
   {
     "Input": "Ik ga terug op 23 Okt om 7",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "23 Okt om 7",
@@ -97,7 +97,7 @@
   },
   {
     "Input": "Ik ga terug op 14 oktober 20:00",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "14 oktober 20:00",
@@ -109,7 +109,7 @@
   },
   {
     "Input": "Ik ga terug op 14 oktober om 8:00:00u",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "14 oktober om 8:00:00u",
@@ -121,7 +121,7 @@
   },
   {
     "Input": "Ik ga terug op 14 oktober, 8:00u",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "14 oktober, 8:00u",
@@ -133,7 +133,7 @@
   },
   {
     "Input": "Ik ga morgen om 8:00 terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "morgen om 8:00",
@@ -145,7 +145,7 @@
   },
   {
     "Input": "Ik ga morgen rond 8 uur terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "morgen rond 8 uur",
@@ -157,7 +157,7 @@
   },
   {
     "Input": "Ik ga morgen voor 8u terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "morgen voor 8u",
@@ -169,7 +169,7 @@
   },
   {
     "Input": "Ik ga morgen 8:00:05u terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "morgen 8:00:05u",
@@ -181,7 +181,7 @@
   },
   {
     "Input": "Ik ga volgende week vrijdag om half 4 terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "volgende week vrijdag om half 4",
@@ -193,7 +193,7 @@
   },
   {
     "Input": "Ik ga terug op 5 mei 2016, 20 minuten over 8 in de avond",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "5 mei 2016, 20 minuten over 8 in de avond",
@@ -205,7 +205,7 @@
   },
   {
     "Input": "Ik ga terug 20.00 op 15",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "20.00 op 15",
@@ -217,7 +217,7 @@
   },
   {
     "Input": "Ik ga terug om zeven op 15",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "zeven op 15",
@@ -229,7 +229,7 @@
   },
   {
     "Input": "Ik ga terug om 20u komende zondag",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "20u komende zondag",
@@ -241,7 +241,7 @@
   },
   {
     "Input": "Ik ga vandaag om 20u terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "vandaag om 20u",
@@ -253,7 +253,7 @@
   },
   {
     "Input": "Ik ga terug om kwart voor zeven morgen",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "kwart voor zeven morgen",
@@ -265,7 +265,7 @@
   },
   {
     "Input": "Ik ga terug om 19u, 22-12-2016",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "19u, 22-12-2016",
@@ -277,7 +277,7 @@
   },
   {
     "Input": "Ik ga terug zeven uur morgen",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "zeven uur morgen",
@@ -289,7 +289,7 @@
   },
   {
     "Input": "Ik ga terug om 7 uur morgenochtend",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "7 uur morgenochtend",
@@ -301,7 +301,7 @@
   },
   {
     "Input": "Ik ga terug om 19:00 op zondagavond",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "19:00 op zondagavond",
@@ -313,7 +313,7 @@
   },
   {
     "Input": "Ik ga terug 20 minuten over vijf morgenochtend",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "20 minuten over vijf morgenochtend",
@@ -325,7 +325,7 @@
   },
   {
     "Input": "Ik ga terug op 14 oktober om 8:00",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "14 oktober om 8:00",
@@ -337,7 +337,7 @@
   },
   {
     "Input": "Ik ga terug om 7u, deze ochtend",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "7u, deze ochtend",
@@ -349,7 +349,7 @@
   },
   {
     "Input": "Ik ga terug om 20u 's avonds, maandag",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "20u 's avonds, maandag",
@@ -361,7 +361,7 @@
   },
   {
     "Input": "Ik ga terug 20u in de avond, 1 jan",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "20u in de avond, 1 jan",
@@ -373,7 +373,7 @@
   },
   {
     "Input": "Ik ga terug om 22h vanavond",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "22h vanavond",
@@ -385,7 +385,7 @@
   },
   {
     "Input": "Ik ga terug om 8u deze morgen",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "8u deze morgen",
@@ -397,7 +397,7 @@
   },
   {
     "Input": "Ik ga terug om 20u vanavond",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "20u vanavond",
@@ -409,7 +409,7 @@
   },
   {
     "Input": "Ik ga terug vanavond rond 7",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "vanavond rond 7",
@@ -421,7 +421,7 @@
   },
   {
     "Input": "Ik ga terug deze morgen om 7",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "deze morgen om 7",
@@ -433,7 +433,7 @@
   },
   {
     "Input": "Ik ga terug vanmorgen om 7u",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "vanmorgen om 7u",
@@ -445,7 +445,7 @@
   },
   {
     "Input": "Ik ga deze morgen om zeven terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "deze morgen om zeven",
@@ -457,7 +457,7 @@
   },
   {
     "Input": "Ik ga deze morgen om 7:00 terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "deze morgen om 7:00",
@@ -469,7 +469,7 @@
   },
   {
     "Input": "Ik ga vanavond om 7 terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "vanavond om 7",
@@ -481,7 +481,8 @@
   },
   {
     "Input": "voor 2 personen vanavond om 21.30u",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "vanavond om 21.30u",
@@ -493,7 +494,8 @@
   },
   {
     "Input": "voor 2 personen vanavond om 21.30:31u",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "vanavond om 21.30:31u",
@@ -505,7 +507,7 @@
   },
   {
     "Input": "Ik ga eind van de dag terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "eind van de dag",
@@ -517,7 +519,7 @@
   },
   {
     "Input": "Ik ga morgen einde van de dag terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "morgen einde van de dag",
@@ -529,7 +531,7 @@
   },
   {
     "Input": "Ik ga zondag eind van de dag terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "zondag eind van de dag",
@@ -541,7 +543,7 @@
   },
   {
     "Input": "Ik ga terug op de 5e om 4u ‘s morgens",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de 5e om 4u ‘s morgens",
@@ -553,7 +555,7 @@
   },
   {
     "Input": "Ik ga terug op 16-12-2016 om 12.23:59u",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "16-12-2016 om 12.23:59u",
@@ -565,7 +567,7 @@
   },
   {
     "Input": "Ik ga terug over 5 uur",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "over 5 uur",
@@ -577,7 +579,7 @@
   },
   {
     "Input": "bekijk of ik beschikbaar ben om 15u op zondag",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "15u op zondag",
@@ -589,7 +591,7 @@
   },
   {
     "Input": "Afspraak voor morgenochtend om 9 uur",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "morgenochtend om 9 uur",
@@ -601,7 +603,7 @@
   },
   {
     "Input": "Ik ga morgenochtend om 9 uur terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "morgenochtend om 9 uur",
@@ -613,7 +615,7 @@
   },
   {
     "Input": "Ik ga morgenochtend om 9u terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "morgenochtend om 9u",
@@ -625,7 +627,7 @@
   },
   {
     "Input": "Ik ga morgen om 9 uur terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "morgen om 9 uur",
@@ -637,7 +639,7 @@
   },
   {
     "Input": "deze vrijdag om 13u",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "deze vrijdag om 13u",
@@ -649,7 +651,7 @@
   },
   {
     "Input": "VOEG LUNCH TOE OM 12.30u OP VRIJDAG",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "om 12.30u OP VRIJDAG",
@@ -661,7 +663,7 @@
   },
   {
     "Input": "Voeg 649 toe middernacht vannacht",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "middernacht vannacht",
@@ -673,7 +675,7 @@
   },
   {
     "Input": "Ik ga op 1 augustus om 11u terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "1 augustus om 11u",
@@ -685,7 +687,7 @@
   },
   {
     "Input": "Ik ga op 1 augustus om 23u terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "1 augustus om 23u",
@@ -697,7 +699,7 @@
   },
   {
     "Input": "Ik ga 1 augustus 23u terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "1 augustus 23u",
@@ -709,7 +711,7 @@
   },
   {
     "Input": "Ik ga 25/2 om 11u terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "25/2 om 11u",
@@ -721,7 +723,7 @@
   },
   {
     "Input": "Ik ga op 6 jan 2017 6.37u terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "6 jan 2017 6.37u",
@@ -733,7 +735,7 @@
   },
   {
     "Input": "16 Nov. 2016 10.38",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "16 Nov. 2016 10.38",
@@ -745,7 +747,7 @@
   },
   {
     "Input": "Ik vertrek 1 dag en 2 uur later",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "1 dag en 2 uur later",
@@ -757,7 +759,7 @@
   },
   {
     "Input": "Ik ben druk over een uur, dus bel me later",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "over een uur",
@@ -769,7 +771,7 @@
   },
   {
     "Input": "Ik ontmoette hem 2 maanden 1 dag en 2 uur geleden",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2 maanden 1 dag en 2 uur geleden",
@@ -781,7 +783,7 @@
   },
   {
     "Input": "Ik ontmoette hem 2 maanden 1 dag 2 uur geleden",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2 maanden 1 dag 2 uur geleden",
@@ -793,7 +795,7 @@
   },
   {
     "Input": "Ik vertrek 1 dag en 30 minuten later",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "1 dag en 30 minuten later",
@@ -805,7 +807,7 @@
   },
   {
     "Input": "Ik vertrek over 2 minuten",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "over 2 minuten",
@@ -817,7 +819,7 @@
   },
   {
     "Input": "Ik ga nu meteen terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "nu meteen",
@@ -829,7 +831,7 @@
   },
   {
     "Input": "Ik ga op 15 om 8:00 terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "15 om 8:00",
@@ -841,7 +843,7 @@
   },
   {
     "Input": "Ik ga op 15 om 8:00:30 terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "15 om 8:00:30",
@@ -853,7 +855,7 @@
   },
   {
     "Input": "Ik ga op de 15e, 20:00 terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de 15e, 20:00",
@@ -865,7 +867,7 @@
   },
   {
     "Input": "Ik ga 21-04-2016, 20.00 terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "21-04-2016, 20.00",
@@ -877,7 +879,7 @@
   },
   {
     "Input": "Ik ga 23 okt. om zeven uur terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "23 okt. om zeven uur",
@@ -889,7 +891,7 @@
   },
   {
     "Input": "Ik ga 14 oktober 8:00 's morgens terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "14 oktober 8:00 's morgens",
@@ -901,7 +903,7 @@
   },
   {
     "Input": "Ik ga 14 oktober 8:00:00 terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "14 oktober 8:00:00",
@@ -913,7 +915,7 @@
   },
   {
     "Input": "Ik ga 14 oktober, 8:00 uur 's morgens terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "14 oktober, 8:00 uur 's morgens",
@@ -925,7 +927,7 @@
   },
   {
     "Input": "Ik ga morgen 8:00 's ochtends terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "morgen 8:00 's ochtends",
@@ -937,7 +939,7 @@
   },
   {
     "Input": "Ik ga morgen rond 8:00 's ochtends terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "morgen rond 8:00 's ochtends",
@@ -949,7 +951,7 @@
   },
   {
     "Input": "Ik ga morgen voor 8:00 's ochtends terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "morgen voor 8:00 's ochtends",
@@ -961,7 +963,7 @@
   },
   {
     "Input": "Ik ga morgen 8:00:05 terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "morgen 8:00:05",
@@ -973,7 +975,7 @@
   },
   {
     "Input": "Ik ga volgende vrijdag om half 4 terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "volgende vrijdag om half 4",
@@ -985,7 +987,7 @@
   },
   {
     "Input": "Ik ga 5 mei, 2016, 20.20 terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "5 mei, 2016, 20.20",
@@ -997,7 +999,7 @@
   },
   {
     "Input": "Ik ga terug op de 15e om 20.00",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de 15e om 20.00",
@@ -1009,7 +1011,7 @@
   },
   {
     "Input": "Ik ga terug om zeven uur op de 15e",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "zeven uur op de 15e",
@@ -1021,7 +1023,7 @@
   },
   {
     "Input": "Ik ga volgende week zondag 20.00 terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "volgende week zondag 20.00",
@@ -1033,7 +1035,7 @@
   },
   {
     "Input": "Ik ga 20.00 vandaag terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "20.00 vandaag",
@@ -1045,7 +1047,7 @@
   },
   {
     "Input": "Ik ga morgen kwart voor zeven terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "morgen kwart voor zeven",
@@ -1057,7 +1059,7 @@
   },
   {
     "Input": "Ik ga 19.00, 22-12-2016 terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "19.00, 22-12-2016",
@@ -1069,7 +1071,7 @@
   },
   {
     "Input": "Ik ga morgen zeven uur terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "morgen zeven uur",
@@ -1081,7 +1083,7 @@
   },
   {
     "Input": "Ik ga morgenochtend om 7 uur terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "morgenochtend om 7 uur",
@@ -1093,7 +1095,7 @@
   },
   {
     "Input": "Ik ga zondagmiddag om 7:00 terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "zondagmiddag om 7:00",
@@ -1105,7 +1107,7 @@
   },
   {
     "Input": "Ik ga morgenochtend tien voor half zes terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "morgenochtend tien voor half zes",
@@ -1117,7 +1119,7 @@
   },
   {
     "Input": "Ik ga 14 oktober 8:00 terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "14 oktober 8:00",
@@ -1129,7 +1131,7 @@
   },
   {
     "Input": "Ik ga om 7 uur vanmorgen terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "7 uur vanmorgen",
@@ -1141,7 +1143,7 @@
   },
   {
     "Input": "Ik ga 8 uur 's avonds, maandag terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "8 uur 's avonds, maandag",
@@ -1153,7 +1155,7 @@
   },
   {
     "Input": "Ik ga 10 uur vanavond terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "10 uur vanavond",
@@ -1165,7 +1167,7 @@
   },
   {
     "Input": "Ik ga 8 uur vanmorgen terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "8 uur vanmorgen",
@@ -1177,7 +1179,7 @@
   },
   {
     "Input": "Ik ga 8 uur vanavond terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "8 uur vanavond",
@@ -1189,7 +1191,7 @@
   },
   {
     "Input": "Ik ga vanavond rond 7 uur terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "vanavond rond 7 uur",
@@ -1201,7 +1203,7 @@
   },
   {
     "Input": "Ik ga vanmorgen om 7 uur terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "vanmorgen om 7 uur",
@@ -1213,7 +1215,7 @@
   },
   {
     "Input": "Ik ga vanmorgen om zeven uur terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "vanmorgen om zeven uur",
@@ -1225,7 +1227,7 @@
   },
   {
     "Input": "Ik ga vanmorgen om 7:00 terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "vanmorgen om 7:00",
@@ -1237,7 +1239,8 @@
   },
   {
     "Input": "Ik ga deze avond om 7 uur terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "deze avond om 7 uur",
@@ -1249,7 +1252,8 @@
   },
   {
     "Input": "Ik ga vanavond om 7 uur terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "vanavond om 7 uur",
@@ -1261,7 +1265,8 @@
   },
   {
     "Input": "Ik ga vanavond om 21:30 terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "vanavond om 21:30",
@@ -1273,7 +1278,9 @@
   },
   {
     "Input": "Ik ga vanavond om 21:30:31 terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
+    "NotSupported": "python",
+
     "Results": [
       {
         "Text": "vanavond om 21:30:31",
@@ -1285,7 +1292,7 @@
   },
   {
     "Input": "Ik ga het eind van de dag terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "het eind van de dag",
@@ -1297,7 +1304,7 @@
   },
   {
     "Input": "Ik ga eind van morgen terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "eind van morgen",
@@ -1309,7 +1316,7 @@
   },
   {
     "Input": "Ik ga eind van de zondag terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "eind van de zondag",
@@ -1321,7 +1328,7 @@
   },
   {
     "Input": "Ik ga op de 5e om 4:00 's ochtends terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de 5e om 4:00 's ochtends",
@@ -1333,7 +1340,7 @@
   },
   {
     "Input": "Ik ga 2016-12-16 12:23:59 's middags terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2016-12-16 12:23:59 's middags",
@@ -1345,7 +1352,7 @@
   },
   {
     "Input": "Ik ga over 5 uur terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "over 5 uur",
@@ -1357,7 +1364,7 @@
   },
   {
     "Input": "kijk of ik beschikbaar ben om 15:00 op zon",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "15:00 op zon",
@@ -1369,7 +1376,7 @@
   },
   {
     "Input": "Boek afspraak in voor morgenochtend om 9 uur",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "morgenochtend om 9 uur",
@@ -1381,7 +1388,7 @@
   },
   {
     "Input": "deze vrijdag om één uur 's middags",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "deze vrijdag om één uur 's middags",
@@ -1393,7 +1400,7 @@
   },
   {
     "Input": "VOEG LUNCH TOE OM 12.30 'S MIDDAGS OP VRIJ",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "om 12.30 'S MIDDAGS OP VRIJ",
@@ -1405,7 +1412,7 @@
   },
   {
     "Input": "Voeg 649 middernacht vanavond",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "middernacht vanavond",
@@ -1417,7 +1424,7 @@
   },
   {
     "Input": "Ik ga de 1e van augustus 11:00 terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de 1e van augustus 11:00",
@@ -1429,7 +1436,7 @@
   },
   {
     "Input": "Ik ga de 1e van augustus 23:00 terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de 1e van augustus 23:00",
@@ -1441,7 +1448,7 @@
   },
   {
     "Input": "Ik ga 25-02 11:00 terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "25-02 11:00",
@@ -1453,7 +1460,7 @@
   },
   {
     "Input": "Ik ga 6 jan 2017 - 6.37 's ochtends terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "6 jan 2017 - 6.37 's ochtends",
@@ -1465,7 +1472,7 @@
   },
   {
     "Input": "16 nov. 2016 10:38",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "16 nov. 2016 10:38",
@@ -1477,7 +1484,7 @@
   },
   {
     "Input": "Ik vertrek 1 dag, 2 uur later",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "1 dag, 2 uur later",
@@ -1489,7 +1496,7 @@
   },
   {
     "Input": "Ik ben over een uur druk, dus bel me later",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "over een uur",
@@ -1501,7 +1508,7 @@
   },
   {
     "Input": "Ik ontmoette hem 2 maanden, 1 dag, 2 uur geleden",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2 maanden, 1 dag, 2 uur geleden",
@@ -1513,7 +1520,7 @@
   },
   {
     "Input": "Boek alsjeblieft Skypegesprek vandaag om 9:00",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "vandaag om 9:00",
@@ -1525,7 +1532,7 @@
   },
   {
     "Input": "Boek alsjeblieft Skypegesprek vandaag om 21:00",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "vandaag om 21:00",
@@ -1537,7 +1544,7 @@
   },
   {
     "Input": "Ik vertrek over 2 uur",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "over 2 uur",
@@ -1549,7 +1556,7 @@
   },
   {
     "Input": "Ik zal teruggaan op woens. 26 okt. 15:50:06 2016.",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "woens. 26 okt. 15:50:06 2016",
@@ -1561,7 +1568,7 @@
   },
   {
     "Input": "Woens. 26 okt. 15:50:06 2016 is geen dag in 2019.",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "woens. 26 okt. 15:50:06 2016",
@@ -1573,7 +1580,7 @@
   },
   {
     "Input": "Ik zal om 20.30 vandaag teruggaan.",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "20.30 vandaag",
@@ -1585,7 +1592,7 @@
   },
   {
     "Input": "Ik zal vandaag om 20.30 teruggaan.",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "vandaag om 20.30",
@@ -1597,7 +1604,7 @@
   },
   {
     "Input": "Ik zal 20.30 vandaag teruggaan.",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "20.30 vandaag",

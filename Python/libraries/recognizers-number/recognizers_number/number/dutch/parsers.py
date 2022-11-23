@@ -180,8 +180,11 @@ class DutchNumberParserConfiguration(NumberParserConfiguration):
                     length = 3
 
         fracLen = len(frac_words)
+
         if fracLen > length and frac_words[fracLen - length - 1] != DutchNumeric.WordSeparatorToken:
-            frac_words.insert(fracLen - length, DutchNumeric.WordSeparatorToken)
+            if not (all(i in frac_words for i in ["op", "de"]) or all(i in frac_words for i in ["van", "de"])
+                    or all(i in frac_words for i in ["uit", "de"])):
+                frac_words.insert(fracLen - length, DutchNumeric.WordSeparatorToken)
 
         return frac_words
 

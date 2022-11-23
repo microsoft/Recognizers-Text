@@ -175,7 +175,7 @@ class DutchDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigura
         self._till_regex = RegExpUtility.get_safe_reg_exp(
             DutchDateTime.TillRegex)
         self._specific_time_of_day_regex = RegExpUtility.get_safe_reg_exp(
-            DutchDateTime.PeriodSpecificTimeOfDayRegex)
+            DutchDateTime.SpecificTimeOfDayRegex)
         self._time_of_day_regex = RegExpUtility.get_safe_reg_exp(
             DutchDateTime.PeriodTimeOfDayRegex)
         self._followed_unit = RegExpUtility.get_safe_reg_exp(

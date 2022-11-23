@@ -3412,6 +3412,7 @@
   {
     "Input": "Ik zal hier blijven van vandaag tot tweeënhalve dag later",
     "NotSupportedByDesign": "javascript,java",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "van vandaag tot tweeënhalve dag later",

@@ -58,7 +58,7 @@ class DutchDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration):
         self.next_prefix_regex = RegExpUtility.get_safe_reg_exp(
             DutchDateTime.NextPrefixRegex)
         self._previous_prefix_regex = RegExpUtility.get_safe_reg_exp(
-            DutchDateTime.PastSuffixRegex)
+            DutchDateTime.PreviousPrefixRegex)
         self.this_prefix_regex = RegExpUtility.get_safe_reg_exp(
             DutchDateTime.ThisPrefixRegex)
         self.morning_start_end_regex = RegExpUtility.get_safe_reg_exp(
