@@ -609,7 +609,7 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
         durations = []
         duration_extractions = self.config.duration_extractor.extract(source, reference)
 
-        for duration_extraction in self.config.duration_extractor.extract(source, reference):
+        for duration_extraction in duration_extractions:
             match = self.config.date_unit_regex.search(duration_extraction.text)
             if match:
                 durations.append(
