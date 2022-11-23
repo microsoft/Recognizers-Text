@@ -188,7 +188,7 @@
         }
       }
     ],
-    "NotSupported": "dotnet",
+    "NotSupported": "dotnet,python",
     "NotSupportedByDesign": "javascript,java"
   },
   {
