@@ -229,7 +229,7 @@ class DutchDateTime:
     LessThanRegex = f'\\b((binnen\\s+)?minder\\s+dan)\\b'
     MoreThanRegex = f'\\b((meer|langer)\\s+dan|ruim)\\b'
     DurationUnitRegex = f'(?<unit>{DateUnitRegex}|(min\\.|sec\\.)|((?<half>halfuur)|(?<quarter>kwartier\\s+uur)|(?<quarter>kwartier)|uur|uren|u|minuten|minuut|m(ins?)?|seconde[ns]?|s(ecs?)?|nacht(en)?)\\b)(\\s+lang\\b)?'
-    SuffixAndRegex = f'(?<suffix>\\s(\\s*en|ën)(\\s*een)?\\s*(?<suffix_num>hal(f|ve)|kwart|kwartier)|(?<suffix_num>(een\\s+)?kwartier))'
+    SuffixAndRegex = f'(?<suffix>\\s+(en|ën)(\\s*een)?\\s*(?<suffix_num>hal(f|ve)|kwart|kwartier)|(?<suffix_num>(een\\s+)?kwartier))'
     PeriodicRegex = f'\\b(?<periodic>dagelijkse?|(drie)?maandelijkse?|wekelijkse?|twee-?wekelijkse?|(half)?jaarlijkse?|kwartaal)\\b'
     EachUnitRegex = f'(?<each>((iedere?|elke?|eenmaal per)(?<other>\\s+andere)?\\s*({DurationUnitRegex}|(?<specialUnit>weekend(en)?))|({DurationUnitRegex}|{WeekDayRegex})\\s+om(\\s+de)?(?<other>\\s+andere)?\\s*(week|{DurationUnitRegex})))'
     EachPrefixRegex = f'\\b(?<each>(iedere|elke|eenmaal per)\\s*$)'
