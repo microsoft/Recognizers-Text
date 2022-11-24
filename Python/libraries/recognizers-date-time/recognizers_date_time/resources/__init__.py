@@ -10,3 +10,4 @@ from .spanish_date_time import SpanishDateTime
 from .italian_date_time import ItalianDateTime
 from .german_date_time import GermanDateTime
 from .english_time_zone import TimeZoneDefinitions
+from .dutch_date_time import DutchDateTime
