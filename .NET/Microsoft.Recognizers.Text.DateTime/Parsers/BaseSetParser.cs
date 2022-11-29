@@ -250,6 +250,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (match.Success)
                 {
+                    // parse input: daily morning under tasksmode
                     var pr = this.config.TimePeriodParser.Parse(ers1[0], refDate);
                     ret = SetHandler.ResolveSet(ref ret, pr.TimexStr);
 
