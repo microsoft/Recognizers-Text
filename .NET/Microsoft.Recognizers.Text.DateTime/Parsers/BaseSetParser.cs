@@ -233,7 +233,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (match.Success)
                 {
-                    var pr = this.config.TimeParser.Parse(ers[0], DateObject.Now);
+                    var pr = this.config.TimeParser.Parse(ers[0], refDate);
                     ret = SetHandler.ResolveSet(ref ret, pr.TimexStr);
 
                     if ((config.Options & DateTimeOptions.TasksMode) != 0)
@@ -250,7 +250,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (match.Success)
                 {
-                    var pr = this.config.TimePeriodParser.Parse(ers1[0], DateObject.Now);
+                    var pr = this.config.TimePeriodParser.Parse(ers1[0], refDate);
                     ret = SetHandler.ResolveSet(ref ret, pr.TimexStr);
 
                     if ((config.Options & DateTimeOptions.TasksMode) != 0)
@@ -264,6 +264,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
+        // parse value for 15 may of every year etc
         private DateTimeResolutionResult ParserDayEveryweek(string text, DateObject refDate)
         {
             var ret = new DateTimeResolutionResult();
@@ -318,6 +319,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
+        // parse value for input date like 19th for every month
         private DateTimeResolutionResult ParserSingleNumbermonth(string text, DateObject refDate)
         {
             var ret = new DateTimeResolutionResult();

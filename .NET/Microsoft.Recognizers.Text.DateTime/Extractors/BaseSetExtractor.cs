@@ -68,6 +68,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
+        // every month, weekly, quarterly etc
         public List<Token> MatchEachUnit(string text)
         {
             var ret = new List<Token>();
@@ -142,6 +143,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
+        // Handle cases like 19th of every month
         public virtual List<Token> DayEveryweek(string text, DateObject reference)
         {
             var ret = new List<Token>();
