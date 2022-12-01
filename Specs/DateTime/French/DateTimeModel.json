@@ -8695,6 +8695,27 @@
     ]
   },
   {
+    "Input": "bonjour la maison n'est plus habitée depuis ans",
+    "Results": [
+      {
+        "Text": "depuis ans",
+        "Start": 37,
+        "End": 46,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1Y",
+              "Mod": "since",
+              "type": "duration",
+              "value": "31536000"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "Rechercher les enregistrements durent moins de 2 heures ou plus de 4 jours et pas moins de 30 minutes.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
