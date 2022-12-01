@@ -398,7 +398,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var durationExtractor = this.config.DurationExtractor;
 
             // DurationExtractor without parameter will not extract merged duration
-            var ers = durationExtractor.Extract(text, referenceTime);
+            var ers = durationExtractor.Extract(text.TrimStart(), referenceTime);
 
             // If the duration extractions do not start at 0, check if the input starts with an isolated unit.
             // This happens for example with patterns like "next week and 3 days" where "next" is not part of the extraction.
