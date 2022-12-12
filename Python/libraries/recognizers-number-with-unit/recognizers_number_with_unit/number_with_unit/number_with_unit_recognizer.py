@@ -6,10 +6,6 @@ from typing import List
 from recognizers_text import Culture, Recognizer
 from recognizers_text.model import Model, ModelResult
 from recognizers_number.culture import CultureInfo
-from .dutch.extractors import DutchCurrencyExtractorConfiguration, DutchTemperatureExtractorConfiguration, \
-    DutchDimensionExtractorConfiguration, DutchAgeExtractorConfiguration
-from .dutch.parsers import DutchCurrencyParserConfiguration, DutchTemperatureParserConfiguration, \
-    DutchDimensionParserConfiguration, DutchAgeParserConfiguration
 from .models import CurrencyModel, TemperatureModel, DimensionModel, AgeModel, ExtractorParserModel
 from .extractors import NumberWithUnitExtractor, BaseMergedUnitExtractor
 from .parsers import NumberWithUnitParser, BaseMergedUnitParser
@@ -29,6 +25,14 @@ from .chinese.parsers import (ChineseCurrencyParserConfiguration,
                               ChineseTemperatureParserConfiguration,
                               ChineseDimensionParserConfiguration,
                               ChineseAgeParserConfiguration)
+from .dutch.extractors import (DutchCurrencyExtractorConfiguration,
+                               DutchTemperatureExtractorConfiguration,
+                               DutchDimensionExtractorConfiguration,
+                               DutchAgeExtractorConfiguration)
+from .dutch.parsers import (DutchCurrencyParserConfiguration,
+                            DutchTemperatureParserConfiguration,
+                            DutchDimensionParserConfiguration,
+                            DutchAgeParserConfiguration)
 from .spanish.extractors import (SpanishCurrencyExtractorConfiguration,
                                  SpanishTemperatureExtractorConfiguration,
                                  SpanishDimensionExtractorConfiguration,
