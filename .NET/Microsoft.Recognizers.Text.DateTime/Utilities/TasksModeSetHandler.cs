@@ -21,7 +21,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
                 DateTimeResolutionResult value = (DateTimeResolutionResult)pr.Value;
                 if (value.FutureValue != null)
                 {
-                    if (pr.TimexStr.EndsWith("WE"))
+                    if (pr.TimexStr.EndsWith(TasksModeConstants.WeekEndPrefix))
                     {
                         result.FutureValue = ((Tuple<DateObject, DateObject>)value.FutureValue).Item1;
                         result.PastValue = ((Tuple<DateObject, DateObject>)value.PastValue).Item1;
@@ -42,14 +42,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
             if (timex.StartsWith(TasksModeConstants.GeneralPeriodPrefix) && res.Count > 0)
             {
                 var extracted = new Dictionary<string, string>();
-                TimexRegex.Extract("period", timex, extracted);
+                TimexRegex.Extract(TasksModeConstants.PeriodTimexString, timex, extracted);
                 res.Add("intervalSize", extracted.TryGetValue("amount", out var intervalSize) ? intervalSize : string.Empty);
                 res.Add("intervalType", extracted.TryGetValue("dateUnit", out var intervalType) ? intervalType : string.Empty);
             }
             else if (timex.StartsWith(TasksModeConstants.FuzzyYear) && res.Count > 0)
             {
                 var extracted = new Dictionary<string, string>();
-                TimexRegex.Extract("period", timex, extracted);
+                TimexRegex.Extract(TasksModeConstants.PeriodTimexString, timex, extracted);
                 res.Add("intervalSize", extracted.TryGetValue("amount", out var intervalSize) ? intervalSize : "1");
                 res.Add("intervalType", extracted.TryGetValue("dateUnit", out var intervalType) ? intervalType : "W");
             }
@@ -76,6 +76,14 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
             {
                 timex = timex + "P1D";
             }
+
+            return timex;
+        }
+
+        // function replaces P1 with P2 when parsing values i.e. every other day at 2pm
+        public static string TasksModeTimexIntervalReplace(string timex)
+        {
+            timex = timex.Replace("P1", "P2");
 
             return timex;
         }
@@ -280,10 +288,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
         {
             switch (timexRes.Values[0].Timex)
             {
-                case "TMO": return "06:00:00";
-                case "TAF": return "12:00:00";
-                case "TEV": return "18:00:00";
-                case "TNI": return "21:00:00";
+                case TasksModeConstants.Morning: return TasksModeConstants.MorningSrtingHour;
+                case TasksModeConstants.Afternoon: return TasksModeConstants.AfternoonSrtingHour;
+                case TasksModeConstants.Evening: return TasksModeConstants.EveningSrtingHour;
+                case TasksModeConstants.Night: return TasksModeConstants.NightSrtingHour;
                 default: return timexRes.Values[0].Start;
             }
         }

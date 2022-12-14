@@ -32,7 +32,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (er.Type.Equals(ParserName, StringComparison.Ordinal))
             {
-                er.Text = er.Text.Trim();
+                er.Text = er.Text;
 
                 var innerResult = ParseEachUnit(er.Text);
 
@@ -279,11 +279,11 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             var afterStr = text.Replace(ers[0].Text, string.Empty);
             var timeErs = this.config.TimeExtractor.Extract(afterStr, refDate);
-            var timeErs1 = this.config.TimePeriodExtractor.Extract(afterStr, refDate);
+            var timePeriodErs = this.config.TimePeriodExtractor.Extract(afterStr, refDate);
 
             if (timeErs.Count == 0)
             {
-                timeErs = timeErs1;
+                timeErs = timePeriodErs;
             }
 
             var match = this.config.EachUnitRegex.Match(afterStr);
@@ -416,7 +416,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     if (match.Groups["other"].Success)
                     {
-                        pr.TimexStr = pr.TimexStr.Replace("P1", "P2");
+                        // function replaces P1 with P2 when parsing values i.e. every other day at 2pm
+                        pr.TimexStr = TasksModeSetHandler.TasksModeTimexIntervalExt(pr.TimexStr);
                     }
 
                     ret = TasksModeSetHandler.TasksModeResolveSet(ref ret, pr.TimexStr, pr);

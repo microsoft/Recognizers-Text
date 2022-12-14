@@ -59,5 +59,21 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string WeekDayPrefix = "WD";
         public const string WeekEndPrefix = "WE";
 
+        // Timex of TimeOfDay
+        public const string EarlyMorning = "TDA";
+        public const string Morning = "TMO";
+        public const string MidDay = "TMI";
+        public const string Afternoon = "TAF";
+        public const string Evening = "TEV";
+        public const string Night = "TNI";
+
+        // Default time in String format
+        public const string MorningSrtingHour = "06:00:00";
+        public const string AfternoonSrtingHour = "12:00:00";
+        public const string EveningSrtingHour = "18:00:00";
+        public const string NightSrtingHour = "21:00:00";
+
+        // timex pattern to be extracted by SetHandler
+        public const string PeriodTimexString = "period";
     }
 }
