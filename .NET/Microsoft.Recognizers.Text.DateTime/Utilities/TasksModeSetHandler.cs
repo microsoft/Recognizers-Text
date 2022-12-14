@@ -83,7 +83,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
         // function replaces P1 with P2 when parsing values i.e. every other day at 2pm
         public static string TasksModeTimexIntervalReplace(string timex)
         {
-            timex = timex.Replace("P1", "P2");
+            timex = timex.Replace(TasksModeConstants.DailyPeriodPrefix,  TasksModeConstants.AlternatePeriodPrefix);
 
             return timex;
         }

@@ -58,6 +58,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string TimeTimexPrefix = "T";
         public const string WeekDayPrefix = "WD";
         public const string WeekEndPrefix = "WE";
+        public const string DailyPeriodPrefix = "P1";
+        public const string AlternatePeriodPrefix = "P2";
 
         // Timex of TimeOfDay
         public const string EarlyMorning = "TDA";

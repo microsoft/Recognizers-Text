@@ -417,7 +417,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     if (match.Groups["other"].Success)
                     {
                         // function replaces P1 with P2 when parsing values i.e. every other day at 2pm
-                        pr.TimexStr = TasksModeSetHandler.TasksModeTimexIntervalExt(pr.TimexStr);
+                        pr.TimexStr = TasksModeSetHandler.TasksModeTimexIntervalReplace(pr.TimexStr);
                     }
 
                     ret = TasksModeSetHandler.TasksModeResolveSet(ref ret, pr.TimexStr, pr);
