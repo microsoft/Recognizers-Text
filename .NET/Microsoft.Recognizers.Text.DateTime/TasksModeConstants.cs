@@ -61,21 +61,27 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string DailyPeriodPrefix = "P1";
         public const string AlternatePeriodPrefix = "P2";
 
-        // Timex of TimeOfDay
+        // Timex
         public const string EarlyMorning = "TDA";
         public const string Morning = "TMO";
         public const string MidDay = "TMI";
         public const string Afternoon = "TAF";
         public const string Evening = "TEV";
         public const string Night = "TNI";
+        public const string TimexWeek = "W";
+        public const string TimexDay = "D";
+        public const string TimexYear = "Y";
 
         // Default time in String format
-        public const string MorningSrtingHour = "06:00:00";
-        public const string AfternoonSrtingHour = "12:00:00";
-        public const string EveningSrtingHour = "18:00:00";
-        public const string NightSrtingHour = "21:00:00";
+        public const string StringMorningHHMMSS = "06:00:00";
+        public const string StringAfternoonHHMMSS = "12:00:00";
+        public const string StringEveningHHMMSS = "18:00:00";
+        public const string StringNightHHMMSS = "21:00:00";
 
         // timex pattern to be extracted by SetHandler
-        public const string PeriodTimexString = "period";
+        public const string PeriodString = "period";
+        public const string YearlyPeriodic = DailyPeriodPrefix + TimexYear;
+        public const string WeeklyPeriodic = DailyPeriodPrefix + TimexWeek;
+        public const string DailyPeriodic = DailyPeriodPrefix + TimexDay;
     }
 }

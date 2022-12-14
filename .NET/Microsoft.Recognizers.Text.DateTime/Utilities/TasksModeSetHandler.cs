@@ -42,21 +42,21 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
             if (timex.StartsWith(TasksModeConstants.GeneralPeriodPrefix) && res.Count > 0)
             {
                 var extracted = new Dictionary<string, string>();
-                TimexRegex.Extract(TasksModeConstants.PeriodTimexString, timex, extracted);
+                TimexRegex.Extract(TasksModeConstants.PeriodString, timex, extracted);
                 res.Add("intervalSize", extracted.TryGetValue("amount", out var intervalSize) ? intervalSize : string.Empty);
                 res.Add("intervalType", extracted.TryGetValue("dateUnit", out var intervalType) ? intervalType : string.Empty);
             }
             else if (timex.StartsWith(TasksModeConstants.FuzzyYear) && res.Count > 0)
             {
                 var extracted = new Dictionary<string, string>();
-                TimexRegex.Extract(TasksModeConstants.PeriodTimexString, timex, extracted);
+                TimexRegex.Extract(TasksModeConstants.PeriodString, timex, extracted);
                 res.Add("intervalSize", extracted.TryGetValue("amount", out var intervalSize) ? intervalSize : "1");
-                res.Add("intervalType", extracted.TryGetValue("dateUnit", out var intervalType) ? intervalType : "W");
+                res.Add("intervalType", extracted.TryGetValue("dateUnit", out var intervalType) ? intervalType : TasksModeConstants.TimexWeek);
             }
             else if (timex.StartsWith(TasksModeConstants.TimeTimexPrefix) && res.Count > 0)
             {
                 res.Add("intervalSize", "1");
-                res.Add("intervalType", "D");
+                res.Add("intervalType",  TasksModeConstants.TimexDay);
             }
 
             return res;
@@ -64,27 +64,25 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
 
         public static string TasksModeTimexIntervalExt(string timex)
         {
+            string periodicity;
             if (timex.Contains(Constants.TimexFuzzyWeek))
             {
-                timex = timex + "P1W";
+                periodicity = TasksModeConstants.WeeklyPeriodic;
             }
             else if (timex.Contains(Constants.TimexFuzzyYear))
             {
-                timex = timex + "P1Y";
+                periodicity = TasksModeConstants.YearlyPeriodic;
             }
-            else if (!timex.EndsWith("WE") && !timex.EndsWith("WD"))
+            else if (!timex.EndsWith(TasksModeConstants.WeekEndPrefix) && !timex.EndsWith(TasksModeConstants.WeekDayPrefix))
             {
-                timex = timex + "P1D";
+                periodicity = TasksModeConstants.DailyPeriodic;
+            }
+            else
+            {
+                periodicity = string.Empty;
             }
 
-            return timex;
-        }
-
-        // function replaces P1 with P2 when parsing values i.e. every other day at 2pm
-        public static string TasksModeTimexIntervalReplace(string timex)
-        {
-            timex = timex.Replace(TasksModeConstants.DailyPeriodPrefix,  TasksModeConstants.AlternatePeriodPrefix);
-
+            timex = ExtendSetTimex(timex, periodicity);
             return timex;
         }
 
@@ -203,7 +201,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
                     {
                         if (DateTimeFormatUtil.FormatTime(refDate).CompareTo(value.Substring(11)) <= 0)
                         {
-                            value = DateTimeFormatUtil.FormatDate(refDate) + " " + value.Substring(11);
+                            value = JoinDateWithValue(refDate, value.Substring(11));
                         }
                     }
                     else
@@ -240,12 +238,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
 
                 result.FutureResolution = new Dictionary<string, string>
                 {
-                    { TimeTypeConstants.DATETIME, DateTimeFormatUtil.FormatDate((DateObject)resDate) + " " + (string)value },
+                    { TimeTypeConstants.DATETIME, JoinDateWithValue(resDate, (string)value) },
                 };
 
                 result.PastResolution = new Dictionary<string, string>
                 {
-                    { TimeTypeConstants.DATETIME, DateTimeFormatUtil.FormatDate((DateObject)resDate) + " " + (string)value },
+                    { TimeTypeConstants.DATETIME, JoinDateWithValue(resDate, (string)value) },
                 };
             }
             else
@@ -263,6 +261,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
             }
 
             return result;
+        }
+
+        internal static string JoinDateWithValue(DateObject resDate, string value)
+        {
+            return string.Join(" ", DateTimeFormatUtil.FormatDate((DateObject)resDate), (string)value);
         }
 
         internal static void TasksModeAddAltSingleDateTimeToResolution(Dictionary<string, string> resolutionDic, string type, string mod,
@@ -288,12 +291,25 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
         {
             switch (timexRes.Values[0].Timex)
             {
-                case TasksModeConstants.Morning: return TasksModeConstants.MorningSrtingHour;
-                case TasksModeConstants.Afternoon: return TasksModeConstants.AfternoonSrtingHour;
-                case TasksModeConstants.Evening: return TasksModeConstants.EveningSrtingHour;
-                case TasksModeConstants.Night: return TasksModeConstants.NightSrtingHour;
+                case TasksModeConstants.Morning: return TasksModeConstants.StringMorningHHMMSS;
+                case TasksModeConstants.Afternoon: return TasksModeConstants.StringAfternoonHHMMSS;
+                case TasksModeConstants.Evening: return TasksModeConstants.StringEveningHHMMSS;
+                case TasksModeConstants.Night: return TasksModeConstants.StringNightHHMMSS;
                 default: return timexRes.Values[0].Start;
             }
+        }
+
+        // function replaces P1 with P2 when parsing values i.e. every other day at 2pm
+        internal static string TasksModeTimexIntervalReplace(string timex)
+        {
+            timex = timex.Replace(TasksModeConstants.DailyPeriodPrefix, TasksModeConstants.AlternatePeriodPrefix);
+
+            return timex;
+        }
+
+        internal static string ExtendSetTimex(string timex, string extTimex)
+        {
+            return timex + extTimex;
         }
 
     }

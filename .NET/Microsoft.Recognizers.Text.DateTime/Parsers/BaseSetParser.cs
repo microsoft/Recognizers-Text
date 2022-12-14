@@ -224,7 +224,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ret = new DateTimeResolutionResult();
 
             var ers = this.config.TimeExtractor.Extract(text, refDate);
-            var ers1 = this.config.TimePeriodExtractor.Extract(text, refDate);
+            var ersTimePeriod = this.config.TimePeriodExtractor.Extract(text, refDate);
 
             if (ers.Count == 1)
             {
@@ -243,15 +243,15 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 }
             }
-            else if (ers1.Count == 1)
+            else if (ersTimePeriod.Count == 1)
             {
-                var afterStr = text.Replace(ers1[0].Text, string.Empty);
+                var afterStr = text.Replace(ersTimePeriod[0].Text, string.Empty);
                 var match = this.config.EachDayRegex.Match(afterStr);
 
                 if (match.Success)
                 {
                     // parse input: daily morning under tasksmode
-                    var pr = this.config.TimePeriodParser.Parse(ers1[0], refDate);
+                    var pr = this.config.TimePeriodParser.Parse(ersTimePeriod[0], refDate);
                     ret = SetHandler.ResolveSet(ref ret, pr.TimexStr);
 
                     if ((config.Options & DateTimeOptions.TasksMode) != 0)
@@ -332,10 +332,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             var match = config.SetEachRegex.Match(text);
             if (match.Success)
             {
-                var trimmedText = text.Replace(match.Value, "this ");
+                // if match value equals 19th of every month then newText = 19th of this month
+                var newText = text.Replace(match.Value, "this");
 
-                ers = this.config.DateExtractor.Extract(trimmedText, refDate);
-                if (ers.Count == 1 && ers.First().Length == trimmedText.Length)
+                ers = this.config.DateExtractor.Extract(newText, refDate);
+                if (ers.Count == 1 && ers.First().Length == newText.Length)
                 {
                     success = true;
                 }
@@ -416,7 +417,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     if (match.Groups["other"].Success)
                     {
-                        // function replaces P1 with P2 when parsing values i.e. every other day at 2pm
+                        // function replaces timex P1 with timex P2 when parsing values i.e. every other day at 2pm.
                         pr.TimexStr = TasksModeSetHandler.TasksModeTimexIntervalReplace(pr.TimexStr);
                     }
 
