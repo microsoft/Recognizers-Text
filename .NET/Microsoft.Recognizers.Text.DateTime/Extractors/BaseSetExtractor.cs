@@ -33,7 +33,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             tokens.AddRange(MatchEachUnit(text));
             tokens.AddRange(MatchEachDuration(text, reference));
             tokens.AddRange(TimeEveryday(text, reference));
-            tokens.AddRange(DayEveryweek(text, reference));
+
+            if ((config.Options & DateTimeOptions.TasksMode) != 0)
+            {
+                tokens.AddRange(DayEveryweek(text, reference));
+            }
+
             tokens.AddRange(MatchEach(config.DateExtractor, text, reference));
             tokens.AddRange(MatchEach(config.TimeExtractor, text, reference));
             tokens.AddRange(MatchEach(config.DateTimeExtractor, text, reference));
@@ -143,7 +148,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        // Handle cases like 19th of every month
+        // Handle cases like 19th of every month: For now specific to TasksMode
         public virtual List<Token> DayEveryweek(string text, DateObject reference)
         {
             var ret = new List<Token>();
