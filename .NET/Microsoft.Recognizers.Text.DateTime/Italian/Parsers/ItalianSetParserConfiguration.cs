@@ -198,7 +198,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             return weekday;
         }
 
-        public string ReplaceValueInTextWithThis(string text, string value)
+        public string ReplaceValueInTextWithFutTerm(string text, string value)
         {
             value = value.Trim();
             text = text.Replace(value, DateTimeDefinitions.FutureStartTerms[0]);

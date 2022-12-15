@@ -176,7 +176,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         public string WeekDayGroupMatchString(Match match) => SetHandler.WeekDayGroupMatchString(match);
 
-        public string ReplaceValueInTextWithThis(string text, string value)
+        public string ReplaceValueInTextWithFutTerm(string text, string value)
         {
             value = value.Trim();
             text = text.Replace(value, DateTimeDefinitions.FutureTerms[0]);

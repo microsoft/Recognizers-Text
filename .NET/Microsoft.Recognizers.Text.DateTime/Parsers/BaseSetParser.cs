@@ -333,7 +333,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (match.Success)
             {
                 // if match value equals 19th of every month then newText = 19th of this month
-                var newText = config.ReplaceValueInTextWithThis(text, match.Value);
+                var newText = config.ReplaceValueInTextWithFutTerm(text, match.Value);
 
                 ers = this.config.DateExtractor.Extract(newText, refDate);
                 if (ers.Count == 1 && ers.First().Length == newText.Length)

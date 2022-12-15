@@ -56,6 +56,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         string WeekDayGroupMatchString(Match match);
 
-        string ReplaceValueInTextWithThis(string text, string value);
+        string ReplaceValueInTextWithFutTerm(string text, string value);
     }
 }
