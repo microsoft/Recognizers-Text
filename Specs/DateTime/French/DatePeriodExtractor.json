@@ -5950,5 +5950,16 @@
         "Length": 31
       }
     ]
+  },
+  {
+    "Input": "Montrez-moi les records d'août 99",
+    "Results": [
+      {
+        "Text": "août 99",
+        "Type": "daterange",
+        "Start": 26,
+        "Length": 7
+      }
+    ]
   }
 ]
