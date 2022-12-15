@@ -1106,4 +1106,9 @@ SemiAnnualTypeRegex: !simpleRegex
   def: (semestral(mente)?)$
 YearTypeRegex: !simpleRegex
   def: (anual(mente)?)$
+# for set parser configuration
+FutureTerms: !list
+  types: [ string ]
+  entries:
+    - esea
 ...

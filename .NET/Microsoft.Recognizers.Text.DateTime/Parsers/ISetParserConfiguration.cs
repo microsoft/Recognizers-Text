@@ -55,5 +55,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         bool GetMatchedUnitTimex(string text, out string timex);
 
         string WeekDayGroupMatchString(Match match);
+
+        string ReplaceValueInTextWithThis(string text, string value);
     }
 }

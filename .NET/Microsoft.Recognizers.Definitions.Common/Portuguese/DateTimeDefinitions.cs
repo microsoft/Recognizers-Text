@@ -703,5 +703,9 @@ namespace Microsoft.Recognizers.Definitions.Portuguese
       public const string QuarterTypeRegex = @"(trimestral(mente)?)$";
       public const string SemiAnnualTypeRegex = @"(semestral(mente)?)$";
       public const string YearTypeRegex = @"(anual(mente)?)$";
+      public static readonly IList<string> FutureTerms = new List<string>
+        {
+            @"esea"
+        };
     }
 }

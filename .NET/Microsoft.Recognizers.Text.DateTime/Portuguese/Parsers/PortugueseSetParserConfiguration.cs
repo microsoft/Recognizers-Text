@@ -194,5 +194,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         }
 
         public string WeekDayGroupMatchString(Match match) => SetHandler.WeekDayGroupMatchString(match);
+
+        public string ReplaceValueInTextWithThis(string text, string value)
+        {
+            value = value.Trim();
+            text = text.Replace(value, DateTimeDefinitions.FutureTerms[0]);
+            return text;
+        }
     }
 }
