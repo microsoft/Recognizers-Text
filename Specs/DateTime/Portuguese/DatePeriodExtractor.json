@@ -704,5 +704,16 @@
         "Length": 36
       }
     ]
+  },
+  {
+    "Input": "Mostre-me os registros de agosto de 99",
+    "Results": [
+      {
+        "Text": "agosto de 99",
+        "Type": "daterange",
+        "Start": 26,
+        "Length": 12
+      }
+    ]
   }
 ]

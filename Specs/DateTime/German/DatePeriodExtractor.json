@@ -754,5 +754,16 @@
         "Length": 10
       }
     ]
+  },
+  {
+    "Input": "Zeigen Sie mir die Aufzeichnungen vom August 99",
+    "Results": [
+      {
+        "Text": "August 99",
+        "Type": "daterange",
+        "Start": 38,
+        "Length": 9
+      }
+    ]
   }
 ]

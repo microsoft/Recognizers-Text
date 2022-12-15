@@ -2869,5 +2869,16 @@
         "Length": 34
       }
     ]
+  },
+  {
+    "Input": "Fammi vedere i record dell'agosto 99",
+    "Results": [
+      {
+        "Text": "agosto 99",
+        "Type": "daterange",
+        "Start": 27,
+        "Length": 9
+      }
+    ]
   }
 ]

@@ -3915,5 +3915,16 @@
         "Length": 43
       }
     ]
+  },
+  {
+    "Input": "Show me the records for August 99",
+    "Results": [
+      {
+        "Text": "August 99",
+        "Type": "daterange",
+        "Start": 24,
+        "Length": 9
+      }
+    ]
   }
 ]
