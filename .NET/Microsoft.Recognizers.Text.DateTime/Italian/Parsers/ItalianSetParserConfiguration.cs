@@ -5,6 +5,7 @@ using System;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Italian;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Italian
 {
@@ -198,11 +199,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             return weekday;
         }
 
-        public string ReplaceValueInTextWithFutTerm(string text, string value)
-        {
-            value = value.Trim();
-            text = text.Replace(value, DateTimeDefinitions.FutureStartTerms[0]);
-            return text;
-        }
+        public string ReplaceValueInTextWithFutTerm(string text, string value) => TasksModeSetHandler.ReplaceValueInTextWithFutTerm(text, value, DateTimeDefinitions.FutureStartTerms[0]);
     }
 }

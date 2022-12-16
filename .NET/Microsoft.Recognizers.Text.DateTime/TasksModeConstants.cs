@@ -17,7 +17,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         // Hours in a half day
         public const int HalfDayHourCount = 12;
 
-        // Default boundaries for time of day resolution
+        // Default boundaries for time of day resolution under TasksMode
         public const int EarlyMorningBeginHour = 6;
         public const int EarlyMorningEndHour = 6;
         public const int MorningBeginHour = 6;
@@ -46,31 +46,19 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const int MealtimeDinnerBeginHour = 20;
         public const int MealtimeDinnerEndHour = 21;
 
-        // tasksmode specific date parser constant
-        public const string NextWeekGroupName = "next week";
-
         // constants
         public const string PeriodDaySuffix = "P1D";
+        public const string YearlyPeriodSuffix = "P1Y";
+        public const string WeeklyPeriodSuffix = "P1W";
+        public const string DailyPeriodPrefix = "P1";
+        public const string AlternatePeriodPrefix = "P2";
+        public const string WeekEndPrefix = "WE";
+        public const string WeekDayPrefix = "WD";
+
+        // Fuzzy timex
         public const string FuzzyYearAndMonth = "XXXX-XX-";
         public const string FuzzyYearAndWeek = "XXXX-WXX-";
         public const string FuzzyYear = "XXXX-";
-        public const string GeneralPeriodPrefix = "P";
-        public const string TimeTimexPrefix = "T";
-        public const string WeekDayPrefix = "WD";
-        public const string WeekEndPrefix = "WE";
-        public const string DailyPeriodPrefix = "P1";
-        public const string AlternatePeriodPrefix = "P2";
-
-        // Timex
-        public const string EarlyMorning = "TDA";
-        public const string Morning = "TMO";
-        public const string MidDay = "TMI";
-        public const string Afternoon = "TAF";
-        public const string Evening = "TEV";
-        public const string Night = "TNI";
-        public const string TimexWeek = "W";
-        public const string TimexDay = "D";
-        public const string TimexYear = "Y";
 
         // Default time in String format
         public const string StringMorningHHMMSS = "06:00:00";
@@ -80,8 +68,27 @@ namespace Microsoft.Recognizers.Text.DateTime
 
         // timex pattern to be extracted by SetHandler
         public const string PeriodString = "period";
-        public const string YearlyPeriodic = DailyPeriodPrefix + TimexYear;
-        public const string WeeklyPeriodic = DailyPeriodPrefix + TimexWeek;
-        public const string DailyPeriodic = DailyPeriodPrefix + TimexDay;
+        public const string AmountString = "amount";
+        public const string DateUnitString = "dateUnit";
+
+        // TasksMode Additional units and constants in SetParser
+        public const string KeyIntSize = "intervalSize";
+        public const string KeyIntType = "intervalType";
+        public const string KeySetTypeName = "setTypename";
+        public const string KeySet = "Set: ";
+        public const string NextWeekGroupName = "next week";
+
+        // Timex reused from contants file, behaviour could be changed in future for TasksMode.
+        public const string EarlyMorning = Constants.EarlyMorning;
+        public const string Morning = Constants.Morning;
+        public const string MidDay = Constants.MidDay;
+        public const string Afternoon = Constants.Afternoon;
+        public const string Evening = Constants.Evening;
+        public const string Night = Constants.Night;
+        public const string TimexWeek = Constants.TimexWeek;
+        public const string TimexDay = Constants.TimexDay;
+        public const string TimexYear = Constants.TimexYear;
+        public const string TimeTimexPrefix = Constants.TimeTimexPrefix;
+        public const string GeneralPeriodPrefix = Constants.GeneralPeriodPrefix;
     }
 }

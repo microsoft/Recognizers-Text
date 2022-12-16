@@ -133,37 +133,37 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
             if (WeekDayTypeRegex.IsMatch(trimmedText))
             {
-                durationType = "WD";
+                durationType = DateTimeDefinitions.UnitMap["weekday"];
             }
             else if (DayTypeRegex.IsMatch(trimmedText))
             {
-                durationType = "D";
+                durationType = DateTimeDefinitions.UnitMap["day"];
             }
             else if (WeekTypeRegex.IsMatch(trimmedText))
             {
-                durationType = "W";
+                durationType = DateTimeDefinitions.UnitMap["week"];
             }
             else if (WeekendTypeRegex.IsMatch(trimmedText))
             {
-                durationType = "WE";
+                durationType = DateTimeDefinitions.UnitMap["weekend"];
             }
             else if (FortNightRegex.IsMatch(trimmedText))
             {
                 durationLength = 2;
-                durationType = "W";
+                durationType = DateTimeDefinitions.UnitMap["week"];
             }
             else if (MonthTypeRegex.IsMatch(trimmedText))
             {
-                durationType = "M";
+                durationType = DateTimeDefinitions.UnitMap["m"];
             }
             else if (QuarterTypeRegex.IsMatch(trimmedText))
             {
                 durationLength = 3;
-                durationType = "M";
+                durationType = DateTimeDefinitions.UnitMap["m"];
             }
             else if (YearTypeRegex.IsMatch(trimmedText))
             {
-                durationType = "Y";
+                durationType = DateTimeDefinitions.UnitMap["y"];
             }
             else
             {
@@ -183,12 +183,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public string WeekDayGroupMatchString(Match match) => SetHandler.WeekDayGroupMatchString(match);
 
-        public string ReplaceValueInTextWithFutTerm(string text, string value)
-        {
-            value = value.Trim();
-            text = text.Replace(value, DateTimeDefinitions.FutureTerms[0]);
-            return text;
-        }
+        public string ReplaceValueInTextWithFutTerm(string text, string value) => TasksModeSetHandler.ReplaceValueInTextWithFutTerm(text, value, DateTimeDefinitions.FutureTerms[0]);
 
     }
 }

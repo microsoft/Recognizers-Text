@@ -32,8 +32,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (er.Type.Equals(ParserName, StringComparison.Ordinal))
             {
-                er.Text = er.Text;
-
                 var innerResult = ParseEachUnit(er.Text);
 
                 if (!innerResult.Success)

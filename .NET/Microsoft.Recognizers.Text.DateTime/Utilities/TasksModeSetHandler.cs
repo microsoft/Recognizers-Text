@@ -14,7 +14,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
         {
             result.Timex = innerTimex;
 
-            result.FutureValue = result.PastValue = "Set: " + innerTimex;
+            result.FutureValue = result.PastValue = ExtendSetTimex(TasksModeConstants.KeySet, innerTimex);
 
             if (pr != null)
             {
@@ -50,13 +50,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
             {
                 var extracted = new Dictionary<string, string>();
                 TimexRegex.Extract(TasksModeConstants.PeriodString, timex, extracted);
-                res.Add("intervalSize", extracted.TryGetValue("amount", out var intervalSize) ? intervalSize : "1");
-                res.Add("intervalType", extracted.TryGetValue("dateUnit", out var intervalType) ? intervalType : TasksModeConstants.TimexWeek);
+                res.Add(TasksModeConstants.KeyIntSize, extracted.TryGetValue(TasksModeConstants.AmountString, out var intervalSize) ? intervalSize : "1");
+                res.Add(TasksModeConstants.KeyIntType, extracted.TryGetValue(TasksModeConstants.DateUnitString, out var intervalType) ? intervalType : TasksModeConstants.TimexWeek);
             }
             else if (timex.StartsWith(TasksModeConstants.TimeTimexPrefix) && res.Count > 0)
             {
-                res.Add("intervalSize", "1");
-                res.Add("intervalType",  TasksModeConstants.TimexDay);
+                res.Add(TasksModeConstants.KeyIntSize, "1");
+                res.Add(TasksModeConstants.KeyIntType,  TasksModeConstants.TimexDay);
             }
 
             return res;
@@ -67,15 +67,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
             string periodicity;
             if (timex.Contains(Constants.TimexFuzzyWeek))
             {
-                periodicity = TasksModeConstants.WeeklyPeriodic;
+                periodicity = TasksModeConstants.WeeklyPeriodSuffix;
             }
             else if (timex.Contains(Constants.TimexFuzzyYear))
             {
-                periodicity = TasksModeConstants.YearlyPeriodic;
+                periodicity = TasksModeConstants.YearlyPeriodSuffix;
             }
             else if (!timex.EndsWith(TasksModeConstants.WeekEndPrefix) && !timex.EndsWith(TasksModeConstants.WeekDayPrefix))
             {
-                periodicity = TasksModeConstants.DailyPeriodic;
+                periodicity = TasksModeConstants.PeriodDaySuffix;
             }
             else
             {
@@ -263,6 +263,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
             return result;
         }
 
+        public static string ReplaceValueInTextWithFutTerm(string text, string value, string thisTerm)
+        {
+            value = value.Trim();
+            text = text.Replace(value, thisTerm);
+            return text;
+        }
+
         internal static string JoinDateWithValue(DateObject resDate, string value)
         {
             return string.Join(" ", DateTimeFormatUtil.FormatDate((DateObject)resDate), (string)value);
@@ -273,12 +280,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
         {
             if (resolutionDic.ContainsKey(TimeTypeConstants.DATE))
             {
-                res.Add("setTypename", TimeTypeConstants.DATE);
+                res.Add(TasksModeConstants.KeySetTypeName, TimeTypeConstants.DATE);
                 MergedParserUtil.AddSingleDateTimeToResolution(resolutionDic, TimeTypeConstants.DATE, mod, res);
             }
             else if (resolutionDic.ContainsKey(TimeTypeConstants.DATETIME))
             {
-                res.Add("setTypename", Constants.SYS_DATETIME_DATETIME);
+                res.Add(TasksModeConstants.KeySetTypeName, Constants.SYS_DATETIME_DATETIME);
                 MergedParserUtil.AddSingleDateTimeToResolution(resolutionDic, TimeTypeConstants.DATETIME, mod, res);
             }
             else if (resolutionDic.ContainsKey(TimeTypeConstants.TIME))

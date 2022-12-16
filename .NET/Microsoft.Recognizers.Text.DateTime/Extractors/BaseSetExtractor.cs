@@ -153,6 +153,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new List<Token>();
             var ers = this.config.DateExtractor.Extract(text, reference);
+
+            // @TODO change call to the Number recognizer, it has to config specific.
             if (NumberRecognizer.RecognizeOrdinal(text, config.Culture).Count > 0)
             {
                 return ret;

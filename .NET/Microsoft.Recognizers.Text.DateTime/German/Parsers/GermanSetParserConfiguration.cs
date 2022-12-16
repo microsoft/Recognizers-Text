@@ -182,11 +182,6 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
         public string WeekDayGroupMatchString(Match match) => SetHandler.WeekDayGroupMatchString(match);
 
-        public string ReplaceValueInTextWithFutTerm(string text, string value)
-        {
-            value = value.Trim();
-            text = text.Replace(value, DateTimeDefinitions.FutureTerms[0]);
-            return text;
-        }
+        public string ReplaceValueInTextWithFutTerm(string text, string value) => TasksModeSetHandler.ReplaceValueInTextWithFutTerm(text, value, DateTimeDefinitions.FutureTerms[0]);
     }
 }
