@@ -77,18 +77,5 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string KeySetTypeName = "setTypename";
         public const string KeySet = "Set: ";
         public const string NextWeekGroupName = "next week";
-
-        // Timex reused from contants file, behaviour could be changed in future for TasksMode.
-        public const string EarlyMorning = Constants.EarlyMorning;
-        public const string Morning = Constants.Morning;
-        public const string MidDay = Constants.MidDay;
-        public const string Afternoon = Constants.Afternoon;
-        public const string Evening = Constants.Evening;
-        public const string Night = Constants.Night;
-        public const string TimexWeek = Constants.TimexWeek;
-        public const string TimexDay = Constants.TimexDay;
-        public const string TimexYear = Constants.TimexYear;
-        public const string TimeTimexPrefix = Constants.TimeTimexPrefix;
-        public const string GeneralPeriodPrefix = Constants.GeneralPeriodPrefix;
     }
 }

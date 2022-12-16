@@ -39,24 +39,24 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
             var res = new Dictionary<string, string>();
 
             TasksModeAddAltSingleDateTimeToResolution(resolutionDic, TimeTypeConstants.DATETIMEALT, mod, res);
-            if (timex.StartsWith(TasksModeConstants.GeneralPeriodPrefix) && res.Count > 0)
+            if (timex.StartsWith(Constants.GeneralPeriodPrefix) && res.Count > 0)
             {
                 var extracted = new Dictionary<string, string>();
                 TimexRegex.Extract(TasksModeConstants.PeriodString, timex, extracted);
-                res.Add("intervalSize", extracted.TryGetValue("amount", out var intervalSize) ? intervalSize : string.Empty);
-                res.Add("intervalType", extracted.TryGetValue("dateUnit", out var intervalType) ? intervalType : string.Empty);
+                res.Add(TasksModeConstants.KeyIntSize, extracted.TryGetValue(TasksModeConstants.AmountString, out var intervalSize) ? intervalSize : string.Empty);
+                res.Add(TasksModeConstants.KeyIntType, extracted.TryGetValue(TasksModeConstants.DateUnitString, out var intervalType) ? intervalType : string.Empty);
             }
             else if (timex.StartsWith(TasksModeConstants.FuzzyYear) && res.Count > 0)
             {
                 var extracted = new Dictionary<string, string>();
                 TimexRegex.Extract(TasksModeConstants.PeriodString, timex, extracted);
                 res.Add(TasksModeConstants.KeyIntSize, extracted.TryGetValue(TasksModeConstants.AmountString, out var intervalSize) ? intervalSize : "1");
-                res.Add(TasksModeConstants.KeyIntType, extracted.TryGetValue(TasksModeConstants.DateUnitString, out var intervalType) ? intervalType : TasksModeConstants.TimexWeek);
+                res.Add(TasksModeConstants.KeyIntType, extracted.TryGetValue(TasksModeConstants.DateUnitString, out var intervalType) ? intervalType : Constants.TimexWeek);
             }
-            else if (timex.StartsWith(TasksModeConstants.TimeTimexPrefix) && res.Count > 0)
+            else if (timex.StartsWith(Constants.TimeTimexPrefix) && res.Count > 0)
             {
                 res.Add(TasksModeConstants.KeyIntSize, "1");
-                res.Add(TasksModeConstants.KeyIntType,  TasksModeConstants.TimexDay);
+                res.Add(TasksModeConstants.KeyIntType,  Constants.TimexDay);
             }
 
             return res;
@@ -168,7 +168,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
                     };
                 }
             }
-            else if (result.Timex.StartsWith(TasksModeConstants.GeneralPeriodPrefix))
+            else if (result.Timex.StartsWith(Constants.GeneralPeriodPrefix))
             {
                 result.FutureResolution = new Dictionary<string, string>
                 {
@@ -188,7 +188,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
 
                 var resKey = TimeTypeConstants.DATETIME;
 
-                if (!result.Timex.Contains(TasksModeConstants.TimeTimexPrefix))
+                if (!result.Timex.Contains(Constants.TimeTimexPrefix))
                 {
                     resKey = TimeTypeConstants.DATE;
                 }
@@ -197,7 +197,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
 
                 if (DateTimeFormatUtil.FormatDate(futureValue).Equals(value.Substring(0, 10)) && result.Timex.StartsWith(TasksModeConstants.FuzzyYearAndWeek))
                 {
-                    if (result.Timex.Contains(TasksModeConstants.TimeTimexPrefix))
+                    if (result.Timex.Contains(Constants.TimeTimexPrefix))
                     {
                         if (DateTimeFormatUtil.FormatTime(refDate).CompareTo(value.Substring(11)) <= 0)
                         {
@@ -220,7 +220,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
                     { resKey, (string)value },
                 };
             }
-            else if (result.Timex.StartsWith(TasksModeConstants.TimeTimexPrefix))
+            else if (result.Timex.StartsWith(Constants.TimeTimexPrefix))
             {
                 var timexRes = TimexResolver.Resolve(new[] { result.Timex }, refDate);
 
@@ -298,10 +298,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
         {
             switch (timexRes.Values[0].Timex)
             {
-                case TasksModeConstants.Morning: return TasksModeConstants.StringMorningHHMMSS;
-                case TasksModeConstants.Afternoon: return TasksModeConstants.StringAfternoonHHMMSS;
-                case TasksModeConstants.Evening: return TasksModeConstants.StringEveningHHMMSS;
-                case TasksModeConstants.Night: return TasksModeConstants.StringNightHHMMSS;
+                case Constants.Morning: return TasksModeConstants.StringMorningHHMMSS;
+                case Constants.Afternoon: return TasksModeConstants.StringAfternoonHHMMSS;
+                case Constants.Evening: return TasksModeConstants.StringEveningHHMMSS;
+                case Constants.Night: return TasksModeConstants.StringNightHHMMSS;
                 default: return timexRes.Values[0].Start;
             }
         }
