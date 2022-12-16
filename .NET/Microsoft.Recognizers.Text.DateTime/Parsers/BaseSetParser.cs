@@ -303,7 +303,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         ret = TasksModeSetHandler.TasksModeResolveSet(ref ret, pr.TimexStr + timePr.TimexStr + eachResult.Timex);
                     }
-
                 }
                 else
                 {
@@ -420,7 +419,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                     }
 
                     ret = TasksModeSetHandler.TasksModeResolveSet(ref ret, pr.TimexStr, pr);
-
                 }
                 else
                 {

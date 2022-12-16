@@ -29,7 +29,6 @@ namespace Microsoft.Recognizers.Text.DateTime
         public List<ExtractResult> Extract(string text, DateObject reference)
         {
             var tokens = new List<Token>();
-
             tokens.AddRange(MatchEachUnit(text));
             tokens.AddRange(MatchEachDuration(text, reference));
             tokens.AddRange(TimeEveryday(text, reference));
@@ -119,17 +118,16 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if ((config.Options & DateTimeOptions.TasksMode) != 0)
             {
-                var ers1 = this.config.TimePeriodExtractor.Extract(text, reference);
-                if (ers.Count == 0 && ers1.Count == 1)
+                var ersTimePeriod = this.config.TimePeriodExtractor.Extract(text, reference);
+                if (ers.Count == 0 && ersTimePeriod.Count == 1)
                 {
-                    ers = ers1;
+                    ers = ersTimePeriod;
                 }
             }
 
             foreach (var er in ers)
             {
                 var afterStr = text.Substring(er.Start + er.Length ?? 0);
-
                 var beforeStr = text.Substring(0, er.Start ?? 0);
                 var beforeMatch = this.config.EachDayRegex.Match(beforeStr);
                 var startIndexBeforeMatch = beforeMatch.Length + beforeMatch.Index - beforeMatch.Value.TrimStart().Length;
@@ -168,22 +166,21 @@ namespace Microsoft.Recognizers.Text.DateTime
             foreach (var er in ers)
             {
                 var afterStr = text.Substring(er.Start + er.Length ?? 0);
-
                 var beforeStr = text.Substring(0, er.Start ?? 0);
                 var beforeMatch = MatchEachUnit(beforeStr);
                 var timeBeforeErs = this.config.TimeExtractor.Extract(beforeStr, reference);
-                var timeBeforeErs1 = this.config.TimePeriodExtractor.Extract(beforeStr, reference);
-                if (timeBeforeErs.Count == 0 && (timeBeforeErs1.Count != 0))
+                var timePeriodBeforeErs = this.config.TimePeriodExtractor.Extract(beforeStr, reference);
+                if (timeBeforeErs.Count == 0 && (timePeriodBeforeErs.Count != 0))
                 {
-                    timeBeforeErs = timeBeforeErs1;
+                    timeBeforeErs = timePeriodBeforeErs;
                 }
 
                 var match = MatchEachUnit(afterStr);
                 var timeErs = this.config.TimeExtractor.Extract(afterStr, reference);
-                var timeErs1 = this.config.TimePeriodExtractor.Extract(afterStr, reference);
-                if (timeErs.Count == 0 && (timeErs1.Count != 0))
+                var timePeriodErs = this.config.TimePeriodExtractor.Extract(afterStr, reference);
+                if (timeErs.Count == 0 && (timePeriodErs.Count != 0))
                 {
-                    timeErs = timeErs1;
+                    timeErs = timePeriodErs;
                 }
 
                 if (beforeMatch.Count > 0)

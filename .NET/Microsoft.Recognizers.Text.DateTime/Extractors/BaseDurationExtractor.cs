@@ -150,6 +150,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var ret = new List<Token>();
             var ers = ExtractNumbersBeforeUnit(text);
+
             foreach (var er in ers)
             {
                 var afterStr = text.Substring(er.Start + er.Length ?? 0);

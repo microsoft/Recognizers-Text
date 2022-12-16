@@ -727,13 +727,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                         firstWeekDay = (int)firstDate.DayOfWeek;
                         firstWantedWeekDay = firstDate.AddDays(wantedWeekDay >= firstWeekDay ? wantedWeekDay - firstWeekDay : wantedWeekDay - firstWeekDay + 7);
                         answerDay = firstWantedWeekDay.Day + ((num - 1) * 7);
-
                     }
                     else
                     {
                         firstWantedWeekDay = firstDate.AddDays(wantedWeekDay > firstWeekDay ? wantedWeekDay - firstWeekDay : wantedWeekDay - firstWeekDay + 7);
                         answerDay = firstWantedWeekDay.Day + ((num - 1) * 7);
-
                     }
 
                     day = answerDay;

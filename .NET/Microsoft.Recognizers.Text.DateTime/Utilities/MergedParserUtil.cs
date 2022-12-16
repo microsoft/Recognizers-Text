@@ -407,7 +407,6 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                     resolutionPast = TasksModeSetHandler.TasksModeGenerateResolutionSetParser(pastResolutionStr, mod, timex);
                     resolutionFuture = TasksModeSetHandler.TasksModeGenerateResolutionSetParser(futureResolutionStr, mod, timex);
-
                 }
             }
 
