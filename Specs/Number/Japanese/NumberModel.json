@@ -8106,7 +8106,7 @@
   {
     "Input": "私はあなたに三百二十一元をあげることができます。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "三百二十一",
@@ -8123,7 +8123,7 @@
   {
     "Input": "四千三百二十一は有効な数字です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "四千三百二十一",
@@ -8140,7 +8140,7 @@
   {
     "Input": "四千三百と〇は二つの有効な数字です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "四千三百",
@@ -8177,7 +8177,7 @@
   {
     "Input": "四千と三百二十一は二つの有効な数字です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "四千",
@@ -8214,7 +8214,7 @@
   {
     "Input": "三百と二百は二つの有効な数字です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "三百",
@@ -8251,7 +8251,7 @@
   {
     "Input": "三百とマイナス一は二つの有効な数字です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "三百",
@@ -8288,7 +8288,7 @@
   {
     "Input": "三百一は有効な数字です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "三百一",
