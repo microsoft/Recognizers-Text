@@ -1199,7 +1199,7 @@ SemiAnnualTypeRegex: !simpleRegex
   def: (semestral(es|mente)?)$
 YearTypeRegex: !simpleRegex
   def: (años?|anual(mente)?)$
-FutureTerms: !list
+ThisTerms: !list
   types: [ string ]
   entries:
     - esta

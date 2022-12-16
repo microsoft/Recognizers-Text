@@ -195,7 +195,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
 
                 var futureValue = refDate.AddDays(7);
 
-                if (DateTimeFormatUtil.FormatDate(futureValue).Equals(value.Substring(0, 10)) && result.Timex.StartsWith(TasksModeConstants.FuzzyYearAndWeek))
+                // value = "09-04-2022 19:30" to extract only date substring from value used value[0:10].
+                if (DateTimeFormatUtil.FormatDate(futureValue).Equals(value.Substring(TasksModeConstants.IntDateStartIdx, TasksModeConstants.IntDateEndIdx)) && result.Timex.StartsWith(TasksModeConstants.FuzzyYearAndWeek))
                 {
                     if (result.Timex.Contains(Constants.TimeTimexPrefix))
                     {

@@ -771,7 +771,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public const string QuarterTypeRegex = @"(trimestral(es|mente)?)$";
       public const string SemiAnnualTypeRegex = @"(semestral(es|mente)?)$";
       public const string YearTypeRegex = @"(años?|anual(mente)?)$";
-      public static readonly IList<string> FutureTerms = new List<string>
+      public static readonly IList<string> ThisTerms = new List<string>
         {
             @"esta"
         };

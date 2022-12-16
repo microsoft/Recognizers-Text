@@ -77,5 +77,9 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string KeySetTypeName = "setTypename";
         public const string KeySet = "Set: ";
         public const string NextWeekGroupName = "next week";
+
+        // TasksMode SetParser Date calucation constant from value
+        public const int IntDateStartIdx = 0;
+        public const int IntDateEndIdx = 10;
     }
 }
