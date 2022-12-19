@@ -117,6 +117,18 @@
                 "class GermanNumericWithUnit:"
             ],
             "footer": [ "# pylint: enable=line-too-long" ]
+        },
+        {
+            "input": [ "Dutch", "Dutch-NumbersWithUnit" ],
+            "output": "dutch_numeric_with_unit",
+            "header": [
+                "from .base_numbers import BaseNumbers",
+                "# pylint: disable=line-too-long",
+                "",
+                "",
+                "class DutchNumericWithUnit:"
+            ],
+            "footer": [ "# pylint: enable=line-too-long" ]
         }
     ]
 }

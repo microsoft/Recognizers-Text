@@ -11,7 +11,7 @@
         }
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Het bedrag is 5 euro 50",
@@ -25,7 +25,7 @@
         }
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Het bedrag is vijf euro vijftig",
@@ -39,7 +39,7 @@
         }
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Het bedrag is vijf euro",
@@ -53,7 +53,7 @@
         }
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Hey, het gaat €4,25 kosten en 32 is het aantal dat ik wil afnemen!",
@@ -67,7 +67,7 @@
         }
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Het bedrag is 3 euro en 50 cent",
@@ -81,7 +81,7 @@
         }
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Ik vond laatst een cent op de grond",
@@ -95,7 +95,7 @@
         }
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Een broodje kost gemiddeld € 2,20",
@@ -109,7 +109,7 @@
         }
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "De internationale symbolen voor munteenheden kunnen voor of achter het bedrag staan (bijvoorbeeld 200 EUR, EUR 500). In Nederland is het gebruikelijk de muntcode voor het bedrag te zetten, in Vlaanderen erachter.",
@@ -131,7 +131,7 @@
         }
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Voor negatieve bedragen is het aan te bevelen € -12 te schrijven.",
@@ -145,7 +145,7 @@
         }
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": " Hij is me nog 24 euro schuldig",
@@ -159,7 +159,7 @@
         }
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Hij is me nog € 24,- schuldig.",
@@ -173,7 +173,7 @@
         }
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Hij is me nog een tientje schuldig.",
@@ -211,7 +211,7 @@
         }
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Een dubbeltje is 10 cent.",
@@ -233,7 +233,7 @@
         }
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Een stuiver is 5 cent.",
@@ -255,7 +255,7 @@
         }
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Het zal een kuai en vijf mao vijf kosten.",
@@ -270,7 +270,7 @@
         }
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Microsoft CEO Satya Nadella heeft bijna een derde van zijn aandelen in de leverancier verkocht voor 35,9 miljoen dollar. Nadella verkocht 328.000 van zijn Microsoft-aandelen, dat was zo'n 29,6 procent van de totale aandelen die hij bezit.",
@@ -284,7 +284,7 @@
         }
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Het Amerikaanse defensie-onderdeel darpa, oftewel Defense Advanced Research Projects Agency, gaat omgerekend iets meer dan 1,7 miljard euro stoppen in onderzoek naar ai.",
@@ -298,7 +298,7 @@
         }
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Amerikaanse defensie investeert 2 miljard amerikaanse dollar in onderzoek naar ai",
@@ -313,7 +313,7 @@
         }
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "  Het gewicht van de zilverguldens tussen 1839 en 1954 heeft tot gevolg dat 1000 kg (= 1 ton) aan guldens een waarde heeft van 100.000 gulden. De gewichtseenheid krijgt daarmee een geldswaarde.",
@@ -327,7 +327,7 @@
         }
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "De markka was verdeeld in 100 penni (Finse en Zweedse naam). 1 euro is 5,94573 markka waard.",
@@ -366,7 +366,7 @@
         }
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "De kosten zijn 100元!",
@@ -381,11 +381,11 @@
         }
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "het kost slechts 15 dollar en 15 cent.",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "15 dollar en 15 cent",
@@ -401,7 +401,7 @@
   },
   {
     "Input": "het kost slechts dertien euro en vijfenveertig cent.",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "dertien euro en vijfenveertig cent",
@@ -417,7 +417,7 @@
   },
   {
     "Input": "het kost slechts 15 dollar en 15.",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "15 dollar en 15",
@@ -433,7 +433,7 @@
   },
   {
     "Input": "het kost slechts 15 dollar 50.",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "15 dollar 50",
