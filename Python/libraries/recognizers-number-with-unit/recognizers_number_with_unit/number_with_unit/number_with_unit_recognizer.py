@@ -29,6 +29,14 @@ from .chinese.parsers import (ChineseCurrencyParserConfiguration,
                               ChineseTemperatureParserConfiguration,
                               ChineseDimensionParserConfiguration,
                               ChineseAgeParserConfiguration)
+from .dutch.extractors import (DutchCurrencyExtractorConfiguration,
+                               DutchTemperatureExtractorConfiguration,
+                               DutchDimensionExtractorConfiguration,
+                               DutchAgeExtractorConfiguration)
+from .dutch.parsers import (DutchCurrencyParserConfiguration,
+                            DutchTemperatureParserConfiguration,
+                            DutchDimensionParserConfiguration,
+                            DutchAgeParserConfiguration)
 from .spanish.extractors import (SpanishCurrencyExtractorConfiguration,
                                  SpanishTemperatureExtractorConfiguration,
                                  SpanishDimensionExtractorConfiguration,

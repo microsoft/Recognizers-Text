@@ -3,10 +3,6 @@
 
 from enum import IntFlag
 from typing import List
-
-from recognizers_number.number.dutch.extractors import DutchOrdinalExtractor, \
-    DutchPercentageExtractor, DutchMergedNumberExtractor
-from recognizers_number.number.dutch.parsers import DutchNumberParserConfiguration
 from recognizers_text import Culture, Recognizer, Model
 from recognizers_number.culture import CultureInfo
 from recognizers_number.number.models import NumberMode, NumberModel, OrdinalModel, PercentModel, ModelResult
@@ -17,6 +13,8 @@ from recognizers_number.number.english.parsers import EnglishNumberParserConfigu
 from recognizers_number.number.spanish.extractors import SpanishNumberExtractor, SpanishOrdinalExtractor, SpanishPercentageExtractor
 from recognizers_number.number.chinese.extractors import ChineseNumberExtractor, ChineseOrdinalExtractor, ChinesePercentageExtractor
 from recognizers_number.number.chinese.parsers import ChineseNumberParserConfiguration
+from recognizers_number.number.dutch.extractors import DutchOrdinalExtractor, DutchPercentageExtractor, DutchMergedNumberExtractor
+from recognizers_number.number.dutch.parsers import DutchNumberParserConfiguration
 from recognizers_number.number.japanese.extractors import JapaneseNumberExtractor, JapaneseOrdinalExtractor, JapanesePercentageExtractor
 from recognizers_number.number.japanese.parsers import JapaneseNumberParserConfiguration
 from recognizers_number.number.spanish.parsers import SpanishNumberParserConfiguration
