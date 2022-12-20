@@ -2697,7 +2697,7 @@
   },
   {
     "Input": "423 0000 se reconocerán como dos números.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "423",

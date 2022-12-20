@@ -13,7 +13,7 @@
         "End": 20
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "Dit verhaal is 10 jaar oud.",
@@ -29,7 +29,7 @@
         "End": 25
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "Ik ben pas 29 jaar.",
@@ -45,7 +45,7 @@
         "End": 17
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "Nu, op 95 jarige leeftijd, inzichten veranderen.",
@@ -61,7 +61,7 @@
         "End": 24
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "De Chinese Muur is meer dan 500 jaar oud en is langer dan 5000 mijl.",
@@ -77,7 +77,7 @@
         "End": 39
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "Zij is 60 jaar oud; zij is geboren op 8 mei 1945.",
@@ -93,7 +93,7 @@
         "End": 17
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "25% van de gevallen zijn niet gediagnostiseerd tot een leeftijd van 3 jaar.",
@@ -109,7 +109,7 @@
         "End": 73
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "Wanneer komt er druk om een afspraak van één jaar na te komen?",
@@ -125,7 +125,7 @@
         "End": 48
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "Het gebeurde toen de baby pas tien maanden was.",
@@ -141,7 +141,7 @@
         "End": 41
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "Het bestuursvoorstel is 8 maanden.",
@@ -157,7 +157,7 @@
         "End": 32
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "Ongeveer 50% van de gevallen worden gediagnostiseerd wanneer ze achttien maanden oud zijn.",
@@ -173,7 +173,7 @@
         "End": 83
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "Het is mogelijk, maar in 2006 was 95% jonger dan drie maanden.",
@@ -189,7 +189,7 @@
         "End": 60
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "Als we doorgaan in december, is het project 3 weken oud.",
@@ -205,7 +205,7 @@
         "End": 54
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "Op 6-jarige leeftijd kun je al Kerst vieren.",
@@ -221,7 +221,7 @@
         "End": 19
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "Een energie factuur van 90 dagen is erg oud",
@@ -237,7 +237,7 @@
         "End": 31
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "Hij is tussen de 40 en 50 jaar.",
@@ -253,7 +253,7 @@
         "End": 29
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   },
   {
     "Input": "De vrouw die Kavanaugh beschuldigt, Christine Blasey Ford, hield bij de hoorzitting vol dat zij er '100 procent zeker' van is dat zij op 15-jarige leeftijd is overrompeld en aangerand door een destijds 17-jarige Kavanaugh.",
@@ -279,6 +279,6 @@
         "End": 210
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript, java"
   }
 ]
