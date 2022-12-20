@@ -2,6 +2,7 @@
 // Licensed under the MIT License.
 
 using System;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Dutch;
@@ -36,6 +37,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         private static readonly Regex WeekendTypeRegex =
             new Regex(DateTimeDefinitions.WeekendTypeRegex, RegexFlags);
+
+        // pass FutureTerms as List to ReplaceValueInTextWithFutTerm function
+        private static readonly List<string> FutureTerms = (List<string>)DateTimeDefinitions.FutureTerms;
 
         public DutchSetParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
@@ -159,6 +163,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public string WeekDayGroupMatchString(Match match) => SetHandler.WeekDayGroupMatchString(match);
 
-        public string ReplaceValueInTextWithFutTerm(string text, string value) => TasksModeSetHandler.ReplaceValueInTextWithFutTerm(text, value, DateTimeDefinitions.FutureTerms[0]);
+        public string ReplaceValueInTextWithFutTerm(string text, string value) => TasksModeSetHandler.ReplaceValueInTextWithFutTerm(text, value, FutureTerms);
     }
 }

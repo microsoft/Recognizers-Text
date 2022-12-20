@@ -83,7 +83,7 @@ namespace Microsoft.Recognizers.Text.DateTime
 
                 if (!innerResult.Success)
                 {
-                    innerResult = ParserSingleNumbermonth(er.Text, refDate);
+                    innerResult = ParserSingleNumberMonth(er.Text, refDate);
                 }
 
                 if (innerResult.Success)
@@ -318,7 +318,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         }
 
         // parse value for input date like 19th for every month
-        private DateTimeResolutionResult ParserSingleNumbermonth(string text, DateObject refDate)
+        private DateTimeResolutionResult ParserSingleNumberMonth(string text, DateObject refDate)
         {
             var ret = new DateTimeResolutionResult();
 

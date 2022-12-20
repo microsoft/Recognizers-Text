@@ -1,6 +1,7 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
@@ -43,6 +44,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         private static readonly Regex WeekDayTypeRegex =
            new Regex(DateTimeDefinitions.WeekDayTypeRegex, RegexFlags);
+
+        // pass FutureTerms as List to ReplaceValueInTextWithFutTerm function
+        private static readonly List<string> FutureTerms = (List<string>)DateTimeDefinitions.FutureTerms;
 
         public EnglishSetParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
@@ -183,6 +187,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public string WeekDayGroupMatchString(Match match) => SetHandler.WeekDayGroupMatchString(match);
 
-        public string ReplaceValueInTextWithFutTerm(string text, string value) => TasksModeSetHandler.ReplaceValueInTextWithFutTerm(text, value, DateTimeDefinitions.FutureTerms[0]);
+        public string ReplaceValueInTextWithFutTerm(string text, string value) => TasksModeSetHandler.ReplaceValueInTextWithFutTerm(text, value, FutureTerms);
     }
 }

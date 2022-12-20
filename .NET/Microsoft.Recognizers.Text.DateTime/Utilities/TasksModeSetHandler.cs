@@ -264,9 +264,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
             return result;
         }
 
-        public static string ReplaceValueInTextWithFutTerm(string text, string value, string thisTerm)
+        public static string ReplaceValueInTextWithFutTerm(string text, string value, List<string> thisTermList)
         {
             value = value.Trim();
+            string thisTerm = thisTermList[0];
             text = text.Replace(value, thisTerm);
             return text;
         }
