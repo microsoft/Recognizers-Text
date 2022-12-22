@@ -2,6 +2,7 @@
 // Licensed under the MIT License.
 
 using System;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
@@ -37,6 +38,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
 
         private static readonly Regex YearTypeRegex =
             new Regex(DateTimeDefinitions.YearTypeRegex, RegexFlags);
+
+        // pass FutureTerms as List to ReplaceValueInTextWithFutTerm function
+        private static readonly List<string> ThisTerms = (List<string>)DateTimeDefinitions.ThisTerms;
 
         public PortugueseSetParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
@@ -194,5 +198,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         }
 
         public string WeekDayGroupMatchString(Match match) => SetHandler.WeekDayGroupMatchString(match);
+
+        public string ReplaceValueInTextWithFutTerm(string text, string value) => TasksModeSetHandler.ReplaceValueInTextWithFutTerm(text, value, ThisTerms);
     }
 }

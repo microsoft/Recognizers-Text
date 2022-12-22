@@ -49,18 +49,35 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
         private static void ExtractDateTime(string s, TimexProperty timexProperty)
         {
             var indexOfT = s.IndexOf('T');
+            var indexOfP = s.IndexOf('P');
 
             if (indexOfT == -1)
             {
                 var extracted = new Dictionary<string, string>();
-                TimexRegex.Extract("date", s, extracted);
+                if (indexOfP == -1)
+                {
+                    TimexRegex.Extract("date", s, extracted);
+                }
+                else
+                {
+                    TimexRegex.Extract("date", s.Substring(0, indexOfP), extracted);
+                }
+
                 timexProperty.AssignProperties(extracted);
             }
             else
             {
                 var extracted = new Dictionary<string, string>();
                 TimexRegex.Extract("date", s.Substring(0, indexOfT), extracted);
-                TimexRegex.Extract("time", s.Substring(indexOfT), extracted);
+                if (indexOfP == -1)
+                {
+                    TimexRegex.Extract("time", s.Substring(indexOfT), extracted);
+                }
+                else
+                {
+                    TimexRegex.Extract("time", s.Substring(indexOfT, indexOfP - indexOfT), extracted);
+                }
+
                 timexProperty.AssignProperties(extracted);
             }
         }

@@ -17,7 +17,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         // Hours in a half day
         public const int HalfDayHourCount = 12;
 
-        // Default boundaries for time of day resolution
+        // Default boundaries for time of day resolution under TasksMode
         public const int EarlyMorningBeginHour = 6;
         public const int EarlyMorningEndHour = 6;
         public const int MorningBeginHour = 6;
@@ -46,8 +46,40 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const int MealtimeDinnerBeginHour = 20;
         public const int MealtimeDinnerEndHour = 21;
 
-        // tasksmode specific date parser constant
+        // constants
+        public const string PeriodDaySuffix = "P1D";
+        public const string YearlyPeriodSuffix = "P1Y";
+        public const string WeeklyPeriodSuffix = "P1W";
+        public const string DailyPeriodPrefix = "P1";
+        public const string AlternatePeriodPrefix = "P2";
+        public const string WeekEndPrefix = "WE";
+        public const string WeekDayPrefix = "WD";
+
+        // Fuzzy timex
+        public const string FuzzyYearAndMonth = "XXXX-XX-";
+        public const string FuzzyYearAndWeek = "XXXX-WXX-";
+        public const string FuzzyYear = "XXXX-";
+
+        // Default time in String format
+        public const string StringMorningHHMMSS = "06:00:00";
+        public const string StringAfternoonHHMMSS = "12:00:00";
+        public const string StringEveningHHMMSS = "18:00:00";
+        public const string StringNightHHMMSS = "21:00:00";
+
+        // timex pattern to be extracted by SetHandler
+        public const string PeriodString = "period";
+        public const string AmountString = "amount";
+        public const string DateUnitString = "dateUnit";
+
+        // TasksMode Additional units and constants in SetParser
+        public const string KeyIntSize = "intervalSize";
+        public const string KeyIntType = "intervalType";
+        public const string KeySetTypeName = "setTypename";
+        public const string KeySet = "Set: ";
         public const string NextWeekGroupName = "next week";
 
+        // TasksMode SetParser Date calucation constant from value
+        public const int IntDateStartIdx = 0;
+        public const int IntDateEndIdx = 10;
     }
 }
