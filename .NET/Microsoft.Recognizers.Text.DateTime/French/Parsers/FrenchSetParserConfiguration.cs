@@ -13,7 +13,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
     public class FrenchSetParserConfiguration : BaseDateTimeOptionsConfiguration, ISetParserConfiguration
     {
         // pass FutureTerms as List to ReplaceValueInTextWithFutTerm function
-        private static readonly List<string> FutureTerms = (List<string>)DateTimeDefinitions.FutureStartTerms;
+        private static readonly List<string> ThisTerms = (List<string>)DateTimeDefinitions.FutureStartTerms;
 
         public FrenchSetParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
@@ -166,6 +166,6 @@ namespace Microsoft.Recognizers.Text.DateTime.French
 
         public string WeekDayGroupMatchString(Match match) => SetHandler.WeekDayGroupMatchString(match);
 
-        public string ReplaceValueInTextWithFutTerm(string text, string value) => TasksModeSetHandler.ReplaceValueInTextWithFutTerm(text, value, FutureTerms);
+        public string ReplaceValueInTextWithFutTerm(string text, string value) => TasksModeSetHandler.ReplaceValueInTextWithFutTerm(text, value, ThisTerms);
     }
 }

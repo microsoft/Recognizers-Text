@@ -46,7 +46,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
            new Regex(DateTimeDefinitions.WeekDayTypeRegex, RegexFlags);
 
         // pass FutureTerms as List to ReplaceValueInTextWithFutTerm function
-        private static readonly List<string> FutureTerms = (List<string>)DateTimeDefinitions.FutureTerms;
+        private static readonly List<string> ThisTerms = (List<string>)DateTimeDefinitions.FutureTerms;
 
         public EnglishSetParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
@@ -187,6 +187,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public string WeekDayGroupMatchString(Match match) => SetHandler.WeekDayGroupMatchString(match);
 
-        public string ReplaceValueInTextWithFutTerm(string text, string value) => TasksModeSetHandler.ReplaceValueInTextWithFutTerm(text, value, FutureTerms);
+        public string ReplaceValueInTextWithFutTerm(string text, string value) => TasksModeSetHandler.ReplaceValueInTextWithFutTerm(text, value, ThisTerms);
     }
 }

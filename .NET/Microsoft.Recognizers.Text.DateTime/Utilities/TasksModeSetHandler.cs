@@ -264,9 +264,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Utilities
             return result;
         }
 
+        // function used for replacing "every" with "this" in string for parsing text i.e "19th of every month". (only with month duration)
         public static string ReplaceValueInTextWithFutTerm(string text, string value, List<string> thisTermList)
         {
             value = value.Trim();
+
+            // the function should replace value with first term of list in text, It must agree with "month".
             string thisTerm = thisTermList[0];
             text = text.Replace(value, thisTerm);
             return text;
