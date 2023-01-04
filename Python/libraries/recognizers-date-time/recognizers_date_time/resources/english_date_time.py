@@ -153,7 +153,7 @@ class EnglishDateTime:
     LunchRegex = f'\\blunchtime\\b'
     NightRegex = f'\\b(mid)?night\\b'
     CommonDatePrefixRegex = f'^[\\.]'
-    LessThanOneHour = f'(?<lth>(a\\s+)?quarter|three quarter(s)?|half( an hour)?|{BaseDateTime.DeltaMinuteRegex}(\\s+(minutes?|mins?))|{DeltaMinuteNumRegex}(\\s+(minutes?|mins?)))'
+    LessThanOneHour = f'(?<lth>(a\\s+)?quarter|three quarter(s)?|half( an hour)?|{BaseDateTime.DeltaMinuteRegex}(\\s+(minutes?|mins?)|(?=\\s+past))|{DeltaMinuteNumRegex}(\\s+(minutes?|mins?)|(?=\\s+past)))'
     WrittenTimeRegex = f'(?<writtentime>{HourNumRegex}\\s+{MinuteNumRegex}(\\s+(minutes?|mins?))?)'
     TimePrefix = f'(?<prefix>{LessThanOneHour}\\s+(past|to))'
     TimeSuffix = f'(?<suffix>{AmRegex}|{PmRegex}|{OclockRegex})'
