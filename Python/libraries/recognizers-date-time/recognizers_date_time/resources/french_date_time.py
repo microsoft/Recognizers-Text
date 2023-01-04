@@ -117,7 +117,7 @@ class FrenchDateTime:
     MorningRegex = f'(?<morning>matin([ée]e)?)'
     AfternoonRegex = f'(?<afternoon>(d\'|l\')?apr[eè]s(-|\\s*)midi)'
     MidmorningRegex = f'(?<midmorning>milieu\\s*d[ue]\\s*{MorningRegex})'
-    MiddayRegex = f'(?<midday>milieu(\\s*|-)d[eu]\\s*(jour|midi)|apr[eè]s(-|\\s*)midi|(?<=\\bà\\s+)midi)'
+    MiddayRegex = f'(?<midday>milieu(\\s*|-)d[eu]\\s*(jour|midi)|apr[eè]s(-|\\s*)midi|(?<=à\\s+)midi)'
     MidafternoonRegex = f'(?<midafternoon>milieu\\s*d\'+{AfternoonRegex})'
     MidTimeRegex = f'(?<mid>({MidnightRegex}|{MidmorningRegex}|{MidafternoonRegex}|{MiddayRegex}))'
     AtRegex = f'\\b(((?<=\\b[àa]\\s+)({WrittenTimeRegex}|{HourNumRegex}(\\s+heures)?|{BaseDateTime.HourRegex}|{MidTimeRegex}))|{MidTimeRegex})\\b'

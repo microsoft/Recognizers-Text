@@ -486,7 +486,7 @@ public class EnglishDateTime {
 
     public static final String CommonDatePrefixRegex = "^[\\.]";
 
-    public static final String LessThanOneHour = "(?<lth>(a\\s+)?quarter|three quarter(s)?|half( an hour)?|{BaseDateTime.DeltaMinuteRegex}(\\s+(minutes?|mins?))|{DeltaMinuteNumRegex}(\\s+(minutes?|mins?)))"
+    public static final String LessThanOneHour = "(?<lth>(a\\s+)?quarter|three quarter(s)?|half( an hour)?|{BaseDateTime.DeltaMinuteRegex}(\\s+(minutes?|mins?)|(?=\\s+past))|{DeltaMinuteNumRegex}(\\s+(minutes?|mins?)|(?=\\s+past)))"
             .replace("{BaseDateTime.DeltaMinuteRegex}", BaseDateTime.DeltaMinuteRegex)
             .replace("{DeltaMinuteNumRegex}", DeltaMinuteNumRegex);
 
