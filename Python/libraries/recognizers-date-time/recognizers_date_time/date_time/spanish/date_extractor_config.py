@@ -137,17 +137,17 @@ class SpanishDateExtractorConfiguration(DateExtractorConfiguration):
         self._check_both_before_after = False
         if SpanishDateTime.DefaultLanguageFallback == Constants.DEFAULT_LANGUAGE_FALLBACK_DMY:
             date_extractor_4 = SpanishDateTime.DateExtractor5
-            date_extractor_5 = SpanishDateTime.DateExtractor4
-            date_extractor_6 = SpanishDateTime.DateExtractor8
-            date_extractor_8 = SpanishDateTime.DateExtractor6
-            date_extractor_7 = SpanishDateTime.DateExtractor9
+            date_extractor_5 = SpanishDateTime.DateExtractor8
+            date_extractor_6 = SpanishDateTime.DateExtractor9
+            date_extractor_8 = SpanishDateTime.DateExtractor4
+            date_extractor_7 = SpanishDateTime.DateExtractor6
             date_extractor_9 = SpanishDateTime.DateExtractor7
         else:
             date_extractor_4 = SpanishDateTime.DateExtractor4
-            date_extractor_5 = SpanishDateTime.DateExtractor5
-            date_extractor_6 = SpanishDateTime.DateExtractor6
-            date_extractor_8 = SpanishDateTime.DateExtractor8
-            date_extractor_7 = SpanishDateTime.DateExtractor7
+            date_extractor_5 = SpanishDateTime.DateExtractor6
+            date_extractor_6 = SpanishDateTime.DateExtractor7
+            date_extractor_8 = SpanishDateTime.DateExtractor5
+            date_extractor_7 = SpanishDateTime.DateExtractor8
             date_extractor_9 = SpanishDateTime.DateExtractor9
 
         self._date_regex_list = [
