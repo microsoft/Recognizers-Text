@@ -3918,6 +3918,7 @@
   },
   {
     "Input": "Show me the records for August 99",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "August 99",

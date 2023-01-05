@@ -5953,6 +5953,7 @@
   },
   {
     "Input": "Montrez-moi les records d'août 99",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "août 99",

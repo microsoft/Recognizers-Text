@@ -757,6 +757,7 @@
   },
   {
     "Input": "Zeigen Sie mir die Aufzeichnungen vom August 99",
+    "NotSupportedByDesign": "javascript",
     "Results": [
       {
         "Text": "August 99",
