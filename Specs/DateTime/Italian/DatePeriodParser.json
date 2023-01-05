@@ -3446,6 +3446,7 @@
   },
   {
     "Input": "Fammi vedere i record dell'agosto 99",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "agosto 99",

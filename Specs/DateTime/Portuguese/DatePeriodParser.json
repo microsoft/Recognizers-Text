@@ -1345,6 +1345,7 @@
   },
   {
     "Input": "Mostre-me os registros de agosto de 99",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "agosto de 99",

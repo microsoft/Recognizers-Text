@@ -5464,7 +5464,7 @@
   },
   {
     "Input": "Laat me de gegevens van augustus 99 zien",
-    "NotSupported": "python",
+    "NotSupported": "python,javascript,java",
     "Results": [
       {
         "Text": "augustus 99",

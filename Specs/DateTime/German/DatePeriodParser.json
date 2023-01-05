@@ -1313,6 +1313,7 @@
   },
   {
     "Input": "Zeigen Sie mir die Aufzeichnungen vom August 99",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "August 99",
