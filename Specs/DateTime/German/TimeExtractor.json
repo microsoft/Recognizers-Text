@@ -180,6 +180,54 @@
     ]
   },
   {
+    "Input": "Es ist 10 nach 3",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "10 nach 3",
+        "Type": "time",
+        "Start": 7,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Es ist 10 nach drei",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "10 nach drei",
+        "Type": "time",
+        "Start": 7,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Es ist zehn nach 3",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "zehn nach 3",
+        "Type": "time",
+        "Start": 7,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Es ist zehn nach drei",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "zehn nach drei",
+        "Type": "time",
+        "Start": 7,
+        "Length": 14
+      }
+    ]
+  },
+  {
     "Input": "Es ist viertel nach acht",
     "NotSupported": "javascript",
     "Results": [

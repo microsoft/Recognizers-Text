@@ -105,6 +105,90 @@
     ]
   },
   {
+    "Input": "Das dürfte gegen 10 nach 3 Vormittags sein.",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "10 nach 3 Vormittags",
+        "Type": "time",
+        "Value": {
+          "Timex": "T03:10",
+          "FutureResolution": {
+            "time": "03:10:00"
+          },
+          "PastResolution": {
+            "time": "03:10:00"
+          }
+        },
+        "Start": 17,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Das dürfte gegen 10 nach drei Nachmittag sein.",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "10 nach drei Nachmittag",
+        "Type": "time",
+        "Value": {
+          "Timex": "T15:10",
+          "FutureResolution": {
+            "time": "15:10:00"
+          },
+          "PastResolution": {
+            "time": "15:10:00"
+          }
+        },
+        "Start": 17,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "Das dürfte gegen zehn nach 3 Vormittags sein.",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "zehn nach 3 Vormittags",
+        "Type": "time",
+        "Value": {
+          "Timex": "T03:10",
+          "FutureResolution": {
+            "time": "03:10:00"
+          },
+          "PastResolution": {
+            "time": "03:10:00"
+          }
+        },
+        "Start": 17,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Das dürfte gegen zehn nach drei Nachmittag sein.",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "zehn nach drei Nachmittag",
+        "Type": "time",
+        "Value": {
+          "Timex": "T15:10",
+          "FutureResolution": {
+            "time": "15:10:00"
+          },
+          "PastResolution": {
+            "time": "15:10:00"
+          }
+        },
+        "Start": 17,
+        "Length": 25
+      }
+    ]
+  },
+  {
     "Input": "Das dürfte gegen viertel nach 7 Vormittags sein.",
     "NotSupported": "javascript",
     "Results": [
