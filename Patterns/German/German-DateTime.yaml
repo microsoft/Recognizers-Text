@@ -271,7 +271,7 @@ AmPmPrefixRegex: !simpleRegex
 CommonDatePrefixRegex: !simpleRegex
   def: ^[\.]
 LessThanOneHour: !nestedRegex
-  def: \b(?<lth>(ein(er?)?\s+)?((drei)?viertel|halb(en?)?)(\s*stunden?)?)|{BaseDateTime.DeltaMinuteRegex}(\s+(min(uten?)?)|(?=\s+nach))|{DeltaMinuteNumRegex}(\s+(min(uten?)?)|(?=\s+nach))
+  def: \b(?<lth>(ein(er?)?\s+)?((drei)?viertel|halb(en?)?)(\s*stunden?)?)|{BaseDateTime.DeltaMinuteRegex}(\s+(min(uten?)?)|(?=\s+(nach|vor)))|{DeltaMinuteNumRegex}(\s+(min(uten?)?)|(?=\s+(nach|vor)))
   references: [ BaseDateTime.DeltaMinuteRegex, DeltaMinuteNumRegex ]
 WrittenTimeRegex: !nestedRegex
   def: (um\s*)?(?<writtentime>{HourNumRegex}(\s*{OclockRegex}\s*)({MinuteNumRegex}|{MinuteNumRegex}und(?<tens>zwanzig|dreißig|vierzig|fünfzig)))

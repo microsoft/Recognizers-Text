@@ -210,6 +210,132 @@
     ]
   },
   {
+    "Input": "Es ist 5 vor 3 Vormittags",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "5 vor 3 vormittags",
+        "Type": "time",
+        "Value": {
+          "Timex": "T02:55",
+          "FutureResolution": {
+            "time": "02:55:00"
+          },
+          "PastResolution": {
+            "time": "02:55:00"
+          }
+        },
+        "Start": 7,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Es ist 5 minuten vor 4 Nachmittag",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "5 minuten vor 4 nachmittag",
+        "Type": "time",
+        "Value": {
+          "Timex": "T15:55",
+          "FutureResolution": {
+            "time": "15:55:00"
+          },
+          "PastResolution": {
+            "time": "15:55:00"
+          }
+        },
+        "Start": 7,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Es ist 5 min vor vier vormittags",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "5 min vor vier vormittags",
+        "Type": "time",
+        "Value": {
+          "Timex": "T03:55",
+          "FutureResolution": {
+            "time": "03:55:00"
+          },
+          "PastResolution": {
+            "time": "03:55:00"
+          }
+        },
+        "Start": 7,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Es ist fünf minuten vor 8 Nachmittag",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "fünf minuten vor 8 nachmittag",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:55",
+          "FutureResolution": {
+            "time": "19:55:00"
+          },
+          "PastResolution": {
+            "time": "19:55:00"
+          }
+        },
+        "Start": 7,
+        "Length": 29
+      }
+    ]
+  },
+  {
+    "Input": "Es ist fünf vor zehn Vormittags",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "fünf vor zehn vormittags",
+        "Type": "time",
+        "Value": {
+          "Timex": "T09:55",
+          "FutureResolution": {
+            "time": "09:55:00"
+          },
+          "PastResolution": {
+            "time": "09:55:00"
+          }
+        },
+        "Start": 7,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "Es ist fünf minuten vor vier nachmittag",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "fünf minuten vor vier nachmittag",
+        "Type": "time",
+        "Value": {
+          "Timex": "T15:55",
+          "FutureResolution": {
+            "time": "15:55:00"
+          },
+          "PastResolution": {
+            "time": "15:55:00"
+          }
+        },
+        "Start": 7,
+        "Length": 32
+      }
+    ]
+  },
+  {
     "Input": "Ich habe den Alarm auf 8:40 eingestellt",
     "NotSupported": "javascript",
     "Results": [
