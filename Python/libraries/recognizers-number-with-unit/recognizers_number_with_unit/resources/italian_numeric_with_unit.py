@@ -541,7 +541,7 @@ class ItalianNumericWithUnit:
                                         ("Millibitcoin", "MILLIBITCOIN"),
                                         ("Satoshi", "SATOSHI")])
     CompoundUnitConnectorRegex = f'(?<spacer>e)'
-    CurrencyPrefixList = dict([("Dollar", "$"),
+    CurrencyPrefixList = dict([("Dollar", "$|dollari"),
                                ("United States dollar", "$ stati uniti|us$|us $|u.s. $|u.s $"),
                                ("East Caribbean dollar", "east caribbean $"),
                                ("Australian dollar", "$ australiano|$ australia"),

@@ -1689,5 +1689,37 @@
         "End": 5
       }
     ]
+  },
+  {
+    "Input": "Ho bisogno di dollari 996",
+    "NotSupported": "javascript, java",
+    "Results": [
+      {
+        "Text": "dollari 996",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "996",
+          "unit": "Dollar"
+        },
+        "Start": 14,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "dollari 4",
+    "NotSupported": "javascript, java",
+    "Results": [
+      {
+        "Text": "dollari 4",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "4",
+          "unit": "Dollar"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
   }
 ]

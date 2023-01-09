@@ -565,7 +565,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
       public const string CompoundUnitConnectorRegex = @"(?<spacer>e)";
       public static readonly Dictionary<string, string> CurrencyPrefixList = new Dictionary<string, string>
         {
-            { @"Dollar", @"$" },
+            { @"Dollar", @"$|dollari" },
             { @"United States dollar", @"$ stati uniti|us$|us $|u.s. $|u.s $" },
             { @"East Caribbean dollar", @"east caribbean $" },
             { @"Australian dollar", @"$ australiano|$ australia" },
