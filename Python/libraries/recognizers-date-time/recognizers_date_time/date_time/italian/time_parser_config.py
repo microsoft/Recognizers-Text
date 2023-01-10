@@ -76,7 +76,7 @@ class ItalianTimeParserConfiguration(TimeParserConfiguration):
                         match, 'deltaminnum').lower()
                     delta_min = self.numbers.get(min_str)
 
-        if trimmed_prefix.startswith('meno'):
+        if trimmed_prefix.startswith('meno') or trimmed_prefix.endswith('alle'):
             delta_min = delta_min * -1
 
         adjust.minute += delta_min
