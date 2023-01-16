@@ -67,7 +67,7 @@ class ItalianDateTime:
     MonthFrontBetweenRegex = f'\\b{MonthSuffixRegex}\\s+([tf]ra\\s+)({DayRegex})\\s*{RangeConnectorRegex}\\s*({DayRegex})((\\s+|\\s*,\\s*){YearRegex})?\\b'
     BetweenRegex = f'\\b([tf]ra\\s+)({DayRegex})\\s*{RangeConnectorRegex}\\s*({DayRegex})\\s+{MonthSuffixRegex}((\\s+|\\s*,\\s*){YearRegex})?\\b'
     YearWordRegex = f'\\b(?<year>l\'anno)\\b'
-    MonthWithYear = f'\\b({MonthRegex}(\\.)?(\\s*)[/\\\\\\-\\.,]?(((\\s+del)?\\s+{YearRegex})|((\\s+(del|di|il))?\\s+(?<order>prossim[\'o]|passato|quest[\'o])\\s*anno)|((\\s+(del)?l\')anno\\s+(?<order>prossimo|passato))))'
+    MonthWithYear = f'\\b({MonthRegex}(\\.)?(\\s*)[/\\\\\\-\\.,]?(((\\s+del)?\\s+{YearRegex}|{TwoDigitYearRegex})|((\\s+(del|di|il))?\\s+(?<order>prossim[\'o]|passato|quest[\'o])\\s*anno)|((\\s+(del)?l\')anno\\s+(?<order>prossimo|passato))))'
     SpecialYearPrefixes = f'(?<special>fiscale|scolastico)'
     OneWordPeriodRegex = f'\\b((((il|l[o\'])\\s*)?((mese di\\s+)|({RelativeRegex}\\s*))?{MonthRegex}(\\s+{RelativeRegex})?)|dall\'inizio\\s+del(l\')\\s*(mese|anno)|({RelativeRegex}\\s*)?(mi[ao]\\s+)?(weekend|finesettimana|settimana|mese|anno)(\\s+{RelativeRegex})?(?!((\\s+di|del)?\\s+\\d+))(\\s+{AfterNextSuffixRegex})?)\\b'
     MonthNumWithYear = f'({YearRegex}[/\\-\\.]{MonthNumRegex})|({MonthNumRegex}[/\\-]{YearRegex})'

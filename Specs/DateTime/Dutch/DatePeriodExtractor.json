@@ -3524,7 +3524,7 @@
   {
     "Input": "Deze taak zal minder dan 3 dagen na morgen afgerond zijn",
     "NotSupportedByDesign": "javascript,java",
-    "NotSupported": "python",
+    "NotSupported": "javascript, java, python",
     "Results": [
       {
         "Text": "minder dan 3 dagen na morgen",
@@ -3819,6 +3819,17 @@
         "Type": "daterange",
         "Start": 14,
         "Length": 43
+      }
+    ]
+  },
+  {
+    "Input": "Laat me de gegevens van augustus 99 zien",
+    "Results": [
+      {
+        "Text": "augustus 99",
+        "Type": "daterange",
+        "Start": 24,
+        "Length": 11
       }
     ]
   }

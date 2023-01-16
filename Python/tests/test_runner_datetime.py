@@ -329,3 +329,42 @@ def get_option(option):
         return option_class['SPLIT_DATE_AND_TIME']
 
     return option_class['NONE']
+
+
+def test_test():
+    # res = recognize_datetime("Montrez-moi les records d'août 20", "fr-fr")
+    # res = recognize_datetime("Muéstrame los registros de agosto de 20", "es-es")
+    res = recognize_datetime("Zeigen Sie mir die Aufzeichnungen vom August 20", "de-de")
+    # res = recognize_datetime("Show me the records for August 20", "en-gb")
+    # res = recognize_number("1 uit drie", "nl-nl")
+    # res = recognize_number("1 out of three", "en-en")
+    # res = recognize_number("um vinte e um avos", "pt-pt")
+
+    print(res)
+    for actual in res:
+        val = actual.resolution['values']
+
+        for v in val:
+            value = v.get('value')
+            start = v.get('start')
+            end = v.get('end')
+            print(start)
+            print(end)
+            print(value)
+
+
+def test_regex():
+    import re
+    # pattern = re.compile(EnglishDateTime.MonthWithYear)
+    string = "March 98"
+    # m = re.match(EnglishDateTime.MonthWithYear, string)
+    # m = re.match("\b(?<![$])(?<year>([0-9]\d))(?!(\s*((\:\d)|{(am\b|a\s*\.\s*m\s*\.|a[\.]?\s*m\b)}|{(pm\b|p\s*\.\s*m\s*\.|p[\.]?\s*m\b)}|\.\d)))\b", string)
+    # m = re.match("\b(?<![$])(?P<year>([0-9]\d))(?!(\s*((\:\d)|{(am\b|a\s*\.\s*m\s*\.|a[\.]?\s*m\b)}|{(pm\b|p\s*\.\s*m\s*\.|p[\.]?\s*m\b)}|\.\d)))\b", string)
+    #
+    # if m:
+    #     print("Hi")
+
+# def test_test():
+#     res = recognize_datetime("Montrez-moi les records d'août 99", "fr-fr")
+#
+#     print(res)
