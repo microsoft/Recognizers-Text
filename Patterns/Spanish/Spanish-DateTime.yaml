@@ -96,7 +96,7 @@ OneWordPeriodRegex: !nestedRegex
   def: \b(((((la|el)\s+)?mes\s+(({OfPrepositionRegex})\s+)?)|((pr[oó]xim[oa]?|est[ea]|[uú]ltim[oa]?)\s+))?({MonthRegex})|((el\s+)?{RelativeRegex}\s+)?(({SpecialYearPrefixes}\s+)año|año\s+{SpecialYearPrefixes})|(((la|el)\s+)?((({RelativeRegex}\s+)({DateUnitRegex}|(fin\s+de\s+)?semana|finde)(\s+{RelativeSuffixRegex})?)|{DateUnitRegex}(\s+{RelativeSuffixRegex}))|va\s+de\s+{DateUnitRegex}|((año|mes)(\s+(a|hasta)\s+la\s+fecha)?|((el\s+)?fin\s+de\s+)?semana|(el\s+)?finde))\b)
   references: [MonthRegex, RelativeRegex, OfPrepositionRegex, RelativeSuffixRegex, DateUnitRegex, SpecialYearPrefixes]
 MonthWithYearRegex: !nestedRegex
-  def: \b((((pr[oó]xim[oa](s)?|est?[ae]|[uú]ltim[oa]?)\s+)?{MonthRegex}|((el\s+)?(?<cardinal>primero?|1(er|ro)|segundo|2do|tercero?|3(er|ro)|uarto|4to|quinto|5to|sexto|6to|s[eé]ptimo|7mo|octavo|8vo|noveno|9no|d[eé]cimo|10mo|und[eé]cimo|11mo|duod[eé]cimo|12mo|[uú]ltimo)\s+mes(?=\s+(del?|en))))((\s+|(\s*[,-]\s*))((de(l|\s+la)?|en)\s+)?({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\s+año)|\s+(del?|en)\s+{TwoDigitYearRegex}))\b
+  def: \b((((pr[oó]xim[oa](s)?|est?[ae]|[uú]ltim[oa]?)\s+)?{MonthRegex}|((el\s+)?(?<cardinal>primero?|1(er|ro)|segundo|2do|tercero?|3(er|ro)|uarto|4to|quinto|5to|sexto|6to|s[eé]ptimo|7mo|octavo|8vo|noveno|9no|d[eé]cimo|10mo|und[eé]cimo|11mo|duod[eé]cimo|12mo|[uú]ltimo)\s+mes(?=\s+(del?|en))))((\s+|(\s*[,-]\s*))((de(l|\s+la)?|en)\s+)?({YearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|este)\s+año)|\s+(del?|en)\s+\'?{TwoDigitYearRegex}))\b
   references: [ MonthRegex, YearRegex, TwoDigitYearRegex ]
 MonthNumWithYearRegex: !nestedRegex
   def: \b(({YearRegex}(\s*?)[/\-\.~](\s*?){MonthNumRegex})|({MonthNumRegex}(\s*?)[/\-\.~](\s*?){YearRegex}))\b
@@ -237,7 +237,7 @@ WeekDayEnd: !nestedRegex
 WeekDayStart: !simpleRegex
   def: ^\b$
 DateYearRegex: !nestedRegex
-  def: (?<year>{YearRegex}|(?<!,\s?){TwoDigitYearRegex}|{TwoDigitYearRegex}(?=(\.(?!\d)|[?!;]|$)))
+  def: (?<year>{YearRegex}|(?<!,\s?)\'?{TwoDigitYearRegex}|\'?{TwoDigitYearRegex}(?=(\.(?!\d)|[?!;]|$)))
   references: [ YearRegex, TwoDigitYearRegex ]
 DateExtractor1: !nestedRegex
   # (domingo,)? 5 de Abril

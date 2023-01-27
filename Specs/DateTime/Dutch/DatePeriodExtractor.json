@@ -3832,5 +3832,16 @@
         "Length": 11
       }
     ]
+  },
+  {
+    "Input": "Laat me de gegevens van augustus '99 zien",
+    "Results": [
+      {
+        "Text": "augustus '99",
+        "Type": "daterange",
+        "Start": 24,
+        "Length": 12
+      }
+    ]
   }
 ]

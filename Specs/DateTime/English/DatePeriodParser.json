@@ -6151,5 +6151,28 @@
         "Length": 9
       }
     ]
+  },
+  {
+    "Input": "Show me the records for August '99",
+    "NotSupported": "javascript, java",
+    "Results": [
+      {
+        "Text": "August '99",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "1999-08",
+          "FutureResolution": {
+            "startDate": "1999-08-01",
+            "endDate": "1999-09-01"
+          },
+          "PastResolution": {
+            "startDate": "1999-08-01",
+            "endDate": "1999-09-01"
+          }
+        },
+        "Start": 24,
+        "Length": 10
+      }
+    ]
   }
 ]

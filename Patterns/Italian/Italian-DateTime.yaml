@@ -108,7 +108,7 @@ TwoDigitYearRegex: !nestedRegex
 #This is a look-behind assertion. Some cases should extract two digits as year like 11/25/16, where 16 means 2016. 
 #The assertion determines if not connected with am/pm or hour separator (:), which should be a time.
 DateYearRegex: !nestedRegex
-  def: (?<year>{BaseDateTime.FourDigitYearRegex}|{TwoDigitYearRegex})
+  def: (?<year>{BaseDateTime.FourDigitYearRegex}|\'?{TwoDigitYearRegex})
   references: [ BaseDateTime.FourDigitYearRegex, TwoDigitYearRegex ]
 YearSuffix: !nestedRegex
   def: (,?\s*({DateYearRegex}|{FullTextYearRegex}))
@@ -133,7 +133,7 @@ BetweenRegex: !nestedRegex
 YearWordRegex: !simpleRegex
   def: \b(?<year>l'anno)\b
 MonthWithYear: !nestedRegex
-  def: \b({MonthRegex}(\.)?(\s*)[/\\\-\.,]?(((\s+del)?\s+{YearRegex}|{TwoDigitYearRegex})|((\s+(del|di|il))?\s+(?<order>prossim['o]|passato|quest['o])\s*anno)|((\s+(del)?l')anno\s+(?<order>prossimo|passato))))
+  def: \b({MonthRegex}(\.)?(\s*)[/\\\-\.,]?(((\s+del)?\s+{YearRegex}|\'?{TwoDigitYearRegex})|((\s+(del|di|il))?\s+(?<order>prossim['o]|passato|quest['o])\s*anno)|((\s+(del)?l')anno\s+(?<order>prossimo|passato))))
   references: [ YearRegex, MonthRegex, TwoDigitYearRegex ]
 SpecialYearPrefixes: !simpleRegex
   def: (?<special>fiscale|scolastico)

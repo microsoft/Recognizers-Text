@@ -85,7 +85,7 @@ OneWordPeriodRegex: !nestedRegex
   def: \b(((pr[oó]xim[oa]?|[nd]?es[st]e|aquel[ea]|[uú]ltim[oa]?|em)\s+)?(?<month>abr(il)?|ago(sto)?|dez(embro)?|fev(ereiro)?|jan(eiro)?|ju[ln](ho)?|mar([çc]o)?|maio?|nov(embro)?|out(ubro)?|sep?t(embro)?)|({RelativeRegex}\s+)?(ano\s+{SpecialYearPrefixes}|{SpecialYearPrefixes}\s+ano)|(?<=\b(de|do|da|o|a)\s+)?(pr[oó]xim[oa](s)?|[uú]ltim[oa]s?|est(e|a))\s+(fim de semana|fins de semana|semana|m[êe]s|ano)|fim de semana|fins de semana|(m[êe]s|anos)? [àa] data)\b
   references: [RelativeRegex, SpecialYearPrefixes]
 MonthWithYearRegex: !nestedRegex
-  def: \b((((pr[oó]xim[oa](s)?|[nd]?es[st]e|aquele|[uú]ltim[oa]?|em)\s+)?{MonthRegex}|((n?o\s+)?(?<cardinal>primeiro|1o|segundo|2o|terceiro|3o|[cq]uarto|4o|quinto|5o|sexto|6o|s[eé]timo|7o|oitavo|8o|nono|9o|d[eé]cimo(\s+(primeiro|segundo))?|10o|11o|12o|[uú]ltimo)\s+m[eê]s(?=\s+(d[aeo]|[ao]))))\s+((d[aeo]|[ao])\s+)?({YearRegex}|{TwoDigitYearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|[nd]?es[st]e)\s+ano))\b
+  def: \b((((pr[oó]xim[oa](s)?|[nd]?es[st]e|aquele|[uú]ltim[oa]?|em)\s+)?{MonthRegex}|((n?o\s+)?(?<cardinal>primeiro|1o|segundo|2o|terceiro|3o|[cq]uarto|4o|quinto|5o|sexto|6o|s[eé]timo|7o|oitavo|8o|nono|9o|d[eé]cimo(\s+(primeiro|segundo))?|10o|11o|12o|[uú]ltimo)\s+m[eê]s(?=\s+(d[aeo]|[ao]))))\s+((d[aeo]|[ao])\s+)?({YearRegex}|\'?{TwoDigitYearRegex}|(?<order>pr[oó]ximo(s)?|[uú]ltimo?|[nd]?es[st]e)\s+ano))\b
   references: [ MonthRegex, YearRegex, TwoDigitYearRegex ]
 MonthNumWithYearRegex: !nestedRegex
   def: ({YearRegex}(\s*?)[/\-\.](\s*?){MonthNumRegex})|({MonthNumRegex}(\s*?)[/\-](\s*?){YearRegex})
@@ -217,7 +217,7 @@ WeekDayEnd: !nestedRegex
 WeekDayStart: !simpleRegex
   def: ^\b$
 DateYearRegex: !nestedRegex
-  def: (?<year>{YearRegex}|{TwoDigitYearRegex})
+  def: (?<year>{YearRegex}|\'?{TwoDigitYearRegex})
   references: [ YearRegex, TwoDigitYearRegex ]
 DateExtractor1: !nestedRegex
   # (domingo,)? 5 de Abril
