@@ -643,7 +643,7 @@ CurrencyPrefixList: !dictionary
   types: [ string, string ]
   entries:
 #Dollar Prefix
-    Dollar: $
+    Dollar: $|dollari
     United States dollar: $ stati uniti|us$|us $|u.s. $|u.s $
     East Caribbean dollar: east caribbean $
     Australian dollar: $ australiano|$ australia
