@@ -1,6 +1,7 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
@@ -37,6 +38,15 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         private static readonly Regex YearTypeRegex =
             new Regex(DateTimeDefinitions.YearTypeRegex, RegexFlags);
+
+        private static readonly Regex FortNightRegex =
+            new Regex(DateTimeDefinitions.FortNightRegex, RegexFlags);
+
+        private static readonly Regex WeekDayTypeRegex =
+           new Regex(DateTimeDefinitions.WeekDayTypeRegex, RegexFlags);
+
+        // pass FutureTerms as List to ReplaceValueInTextWithFutTerm function
+        private static readonly List<string> ThisTerms = (List<string>)DateTimeDefinitions.FutureTerms;
 
         public EnglishSetParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
@@ -125,30 +135,39 @@ namespace Microsoft.Recognizers.Text.DateTime.English
                 multiplier = 0.5f;
             }
 
-            if (DayTypeRegex.IsMatch(trimmedText))
+            if (WeekDayTypeRegex.IsMatch(trimmedText))
             {
-                durationType = "D";
+                durationType = DateTimeDefinitions.UnitMap["weekday"];
+            }
+            else if (DayTypeRegex.IsMatch(trimmedText))
+            {
+                durationType = DateTimeDefinitions.UnitMap["day"];
             }
             else if (WeekTypeRegex.IsMatch(trimmedText))
             {
-                durationType = "W";
+                durationType = DateTimeDefinitions.UnitMap["week"];
             }
             else if (WeekendTypeRegex.IsMatch(trimmedText))
             {
-                durationType = "WE";
+                durationType = DateTimeDefinitions.UnitMap["weekend"];
+            }
+            else if (FortNightRegex.IsMatch(trimmedText))
+            {
+                durationLength = 2;
+                durationType = DateTimeDefinitions.UnitMap["week"];
             }
             else if (MonthTypeRegex.IsMatch(trimmedText))
             {
-                durationType = "M";
+                durationType = DateTimeDefinitions.UnitMap["m"];
             }
             else if (QuarterTypeRegex.IsMatch(trimmedText))
             {
                 durationLength = 3;
-                durationType = "M";
+                durationType = DateTimeDefinitions.UnitMap["m"];
             }
             else if (YearTypeRegex.IsMatch(trimmedText))
             {
-                durationType = "Y";
+                durationType = DateTimeDefinitions.UnitMap["y"];
             }
             else
             {
@@ -168,5 +187,6 @@ namespace Microsoft.Recognizers.Text.DateTime.English
 
         public string WeekDayGroupMatchString(Match match) => SetHandler.WeekDayGroupMatchString(match);
 
+        public string ReplaceValueInTextWithFutTerm(string text, string value) => TasksModeSetHandler.ReplaceValueInTextWithFutTerm(text, value, ThisTerms);
     }
 }

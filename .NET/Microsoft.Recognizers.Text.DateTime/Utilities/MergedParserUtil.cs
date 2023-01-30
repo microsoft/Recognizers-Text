@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
@@ -396,6 +397,18 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             var resolutionPast = GenerateResolution(type, pastResolutionStr, mod);
             var resolutionFuture = GenerateResolution(type, futureResolutionStr, mod);
+
+            if ((config.Options & DateTimeOptions.TasksMode) != 0)
+            {
+                if (type.Equals(Constants.SYS_DATETIME_SET, StringComparison.Ordinal))
+                {
+                    pastResolutionStr = ((DateTimeResolutionResult)slot.Value).PastResolution;
+                    futureResolutionStr = ((DateTimeResolutionResult)slot.Value).FutureResolution;
+
+                    resolutionPast = TasksModeSetHandler.TasksModeGenerateResolutionSetParser(pastResolutionStr, mod, timex);
+                    resolutionFuture = TasksModeSetHandler.TasksModeGenerateResolutionSetParser(futureResolutionStr, mod, timex);
+                }
+            }
 
             // If past and future are same, keep only one
             if (resolutionFuture.OrderBy(t => t.Key).Select(t => t.Value)

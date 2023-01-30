@@ -163,8 +163,8 @@ BetweenRegex: !nestedRegex
   def: \b(tussen\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*){YearRegex})?\b
   references: [ DayRegex, RangeConnectorRegex , MonthSuffixRegex, YearRegex ]
 RelativeYearRegex: !nestedRegex
-  def: ({YearRegex}|(?<order>volgende?|komende?|aanstaande?|aankomende?|huidige?|vorige?|afgelopen|dit)\s+jaar)
-  references: [ YearRegex ]
+  def: ({YearRegex}|{TwoDigitYearRegex}|(?<order>volgende?|komende?|aanstaande?|aankomende?|huidige?|vorige?|afgelopen|dit)\s+jaar)
+  references: [ YearRegex, TwoDigitYearRegex ]
 MonthWithYear: !nestedRegex
   def: \b(({WrittenMonthRegex}(\.)?(\s*)[/\\\-\.,]?(\s+(van|over|in))?(\s*){RelativeYearRegex})|({RelativeYearRegex}(\s*),?(\s*){WrittenMonthRegex}))\b
   references: [ WrittenMonthRegex, RelativeYearRegex ]
@@ -581,7 +581,7 @@ SetLastRegex: !simpleRegex
   def: (?<last>volgende?|komende|aankomende|aanstaande|deze|huidige|aanstaande|vorige?|verleden|laatste)
 # This regex is used to extract Set patterns like "3pm every day" where "every day" follows the time.
 EachDayRegex: !simpleRegex
-  def: ^\s*(iedere|elke)\s*dag\b
+  def: \s*(iedere|elke)\s*dag\b
 # This regex is used to extract Set patterns like "every day at 3pm" where "every day" preceeds the time.
 BeforeEachDayRegex: !simpleRegex
   def: (iedere|elke)\s*dag\s*

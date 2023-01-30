@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.Number;
 
 using DateObject = System.DateTime;
 
@@ -31,6 +32,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             tokens.AddRange(MatchEachUnit(text));
             tokens.AddRange(MatchEachDuration(text, reference));
             tokens.AddRange(TimeEveryday(text, reference));
+
+            if ((config.Options & DateTimeOptions.TasksMode) != 0)
+            {
+                tokens.AddRange(DayEveryweek(text, reference));
+            }
+
             tokens.AddRange(MatchEach(config.DateExtractor, text, reference));
             tokens.AddRange(MatchEach(config.TimeExtractor, text, reference));
             tokens.AddRange(MatchEach(config.DateTimeExtractor, text, reference));
@@ -65,6 +72,7 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
+        // every month, weekly, quarterly etc
         public List<Token> MatchEachUnit(string text)
         {
             var ret = new List<Token>();
@@ -80,7 +88,24 @@ namespace Microsoft.Recognizers.Text.DateTime
             matches = this.config.EachUnitRegex.Matches(text);
             foreach (Match match in matches)
             {
-                ret.Add(new Token(match.Index, match.Index + match.Length));
+                if (match.Groups["unit"].Value.Equals("month"))
+                {
+                    var beforeStr = text.Substring(0, match.Index);
+                    var dayMatch = this.config.BeforeEachDayRegex.Match(beforeStr);
+
+                    if (dayMatch.Success)
+                    {
+                        ret.Add(new Token(dayMatch.Index, match.Index + match.Length));
+                    }
+                    else
+                    {
+                        ret.Add(new Token(match.Index, match.Index + match.Length));
+                    }
+                }
+                else
+                {
+                    ret.Add(new Token(match.Index, match.Index + match.Length));
+                }
             }
 
             return ret;
@@ -91,25 +116,105 @@ namespace Microsoft.Recognizers.Text.DateTime
             var ret = new List<Token>();
             var ers = this.config.TimeExtractor.Extract(text, reference);
 
+            if ((config.Options & DateTimeOptions.TasksMode) != 0)
+            {
+                var ersTimePeriod = this.config.TimePeriodExtractor.Extract(text, reference);
+                if (ers.Count == 0 && ersTimePeriod.Count == 1)
+                {
+                    ers = ersTimePeriod;
+                }
+            }
+
             foreach (var er in ers)
             {
                 var afterStr = text.Substring(er.Start + er.Length ?? 0);
-                if ((string.IsNullOrEmpty(afterStr) || this.config.CheckBothBeforeAfter) && this.config.BeforeEachDayRegex != null)
+                var beforeStr = text.Substring(0, er.Start ?? 0);
+                var beforeMatch = this.config.EachDayRegex.Match(beforeStr);
+                var startIndexBeforeMatch = beforeMatch.Length + beforeMatch.Index - beforeMatch.Value.TrimStart().Length;
+                if (beforeMatch.Success)
                 {
-                    var beforeStr = text.Substring(0, er.Start ?? 0);
-                    var beforeMatch = this.config.BeforeEachDayRegex.Match(beforeStr);
-                    if (beforeMatch.Success)
-                    {
-                        ret.Add(new Token(beforeMatch.Index, er.Start + er.Length ?? 0));
-                    }
+                    ret.Add(new Token(startIndexBeforeMatch, er.Start + er.Length ?? 0));
                 }
-                else
+
+                var match = this.config.EachDayRegex.Match(afterStr);
+                if (match.Success)
                 {
-                    var match = this.config.EachDayRegex.Match(afterStr);
-                    if (match.Success)
+                    ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + match.Length + match.Index));
+                }
+            }
+
+            return ret;
+        }
+
+        // Handle cases like 19th of every month: For now specific to TasksMode
+        public virtual List<Token> DayEveryweek(string text, DateObject reference)
+        {
+            var ret = new List<Token>();
+            var ers = this.config.DateExtractor.Extract(text, reference);
+
+            // @TODO change call to the Number recognizer, it has to config specific.
+            if (NumberRecognizer.RecognizeOrdinal(text, config.Culture).Count > 0)
+            {
+                return ret;
+            }
+
+            if (ers.Count != 1)
+            {
+                return ret;
+            }
+
+            foreach (var er in ers)
+            {
+                var afterStr = text.Substring(er.Start + er.Length ?? 0);
+                var beforeStr = text.Substring(0, er.Start ?? 0);
+                var beforeMatch = MatchEachUnit(beforeStr);
+                var timeBeforeErs = this.config.TimeExtractor.Extract(beforeStr, reference);
+                var timePeriodBeforeErs = this.config.TimePeriodExtractor.Extract(beforeStr, reference);
+                if (timeBeforeErs.Count == 0 && (timePeriodBeforeErs.Count != 0))
+                {
+                    timeBeforeErs = timePeriodBeforeErs;
+                }
+
+                var match = MatchEachUnit(afterStr);
+                var timeErs = this.config.TimeExtractor.Extract(afterStr, reference);
+                var timePeriodErs = this.config.TimePeriodExtractor.Extract(afterStr, reference);
+                if (timeErs.Count == 0 && (timePeriodErs.Count != 0))
+                {
+                    timeErs = timePeriodErs;
+                }
+
+                if (beforeMatch.Count > 0)
+                {
+                    var beforeMatchInd = beforeMatch[0].Start;
+                    if (timeBeforeErs.Count > 0)
                     {
-                        ret.Add(new Token(er.Start ?? 0, (er.Start + er.Length ?? 0) + match.Length));
+                        beforeMatchInd = Math.Min(beforeMatchInd, (int)timeBeforeErs[0].Start);
                     }
+
+                    var erEnd = er.Start + er.Length ?? 0;
+                    if (timeErs.Count > 0)
+                    {
+                        erEnd += (int)timeErs[0].Start + (int)timeErs[0].Length;
+                    }
+
+                    ret.Add(new Token(beforeMatchInd, erEnd));
+                }
+
+                if (match.Count > 0)
+                {
+                    var matchInd = match[0].Length + match[0].Start;
+                    if (timeErs.Count > 0)
+                    {
+                        matchInd = Math.Max(matchInd, (int)timeErs[0].Start + (int)timeErs[0].Length);
+                    }
+
+                    var erStart = er.Start ?? 0;
+                    if (timeBeforeErs.Count > 0)
+                    {
+                        erStart = Math.Min(erStart, (int)timeBeforeErs[0].Start);
+                    }
+
+                    ret.Add(new Token(erStart, (er.Start + er.Length ?? 0) + matchInd));
                 }
             }
 
