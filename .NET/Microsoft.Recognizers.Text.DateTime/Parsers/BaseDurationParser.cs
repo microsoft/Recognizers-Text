@@ -398,7 +398,16 @@ namespace Microsoft.Recognizers.Text.DateTime
             var durationExtractor = this.config.DurationExtractor;
 
             // DurationExtractor without parameter will not extract merged duration
-            var ers = durationExtractor.Extract(text, referenceTime);
+
+            // TrimStart() was added to address a bug with french duration expression "depuis ans"
+            // for which the basecase of the recursive call (i.e., if(ers.Count <= 1))
+            // would never be reached in which case the stack would overflow.
+            // The statement if(minStart){...} is meant to find the isolated unit as explained in
+            // the below comment. However, if there is whitespace before the extacted entity
+            // (as in " ans") the minStart will be greater than 1 and the Followed Unit regex
+            // keeps on matching with "ans" and it adds it to ers and it always has
+            // more than one item in it, hence the recursion never ends.
+            var ers = durationExtractor.Extract(text.TrimStart(), referenceTime);
 
             // If the duration extractions do not start at 0, check if the input starts with an isolated unit.
             // This happens for example with patterns like "next week and 3 days" where "next" is not part of the extraction.

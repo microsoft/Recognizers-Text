@@ -1241,7 +1241,7 @@
     "Context": {
       "ReferenceDateTime": "2022-04-29T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "next month at 6pm",
@@ -1265,7 +1265,7 @@
     "Context": {
       "ReferenceDateTime": "2022-04-29T13:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "next month between 2:20 to 3pm",
@@ -1291,7 +1291,7 @@
     "Context": {
       "ReferenceDateTime": "2022-04-29T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "next month after 3pm",
@@ -1316,7 +1316,7 @@
     "Context": {
       "ReferenceDateTime": "2022-04-29T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "next year at 6pm",
@@ -1340,7 +1340,7 @@
     "Context": {
       "ReferenceDateTime": "2022-04-29T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "next year at 6",
@@ -1369,7 +1369,7 @@
     "Context": {
       "ReferenceDateTime": "2022-04-29T13:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "next year between 2:20 to 3pm",
@@ -1394,7 +1394,7 @@
     "Context": {
       "ReferenceDateTime": "2022-04-29T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "next year after 3pm",
@@ -1419,7 +1419,7 @@
     "Context": {
       "ReferenceDateTime": "2022-04-29T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "next month at 6",
@@ -1448,7 +1448,7 @@
     "Context": {
       "ReferenceDateTime": "2022-04-29T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "next year in morning",
@@ -1462,6 +1462,333 @@
               "type": "datetimerange",
               "start": "2023-01-01 06:00:00",
               "end": "2023-01-01 06:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll leave everyday 6am",
+    "Context": {
+      "ReferenceDateTime": "2022-08-22T01:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "everyday 6am",
+        "Start": 11,
+        "End": 22,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T06P1D",
+              "type": "set",
+              "setTypename": "datetime",
+              "value": "2022-08-22 06:00:00",
+              "intervalSize": "1",
+              "intervalType": "D"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll take a walk daily at night",
+    "Context": {
+      "ReferenceDateTime": "2022-08-22T01:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "daily at night",
+        "Start": 17,
+        "End": 30,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TNIP1D",
+              "type": "set",
+              "setTypename": "datetime",
+              "value": "2022-08-22 21:00:00",
+              "intervalSize": "1",
+              "intervalType": "D"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "we will meet in ground daily sunday 4pm",
+    "Context": {
+      "ReferenceDateTime": "2022-08-22T01:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "daily sunday 4pm",
+        "Start": 23,
+        "End": 38,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T16P1D",
+              "type": "set",
+              "setTypename": "datetime",
+              "value": "2022-08-22 16:00:00",
+              "intervalSize": "1",
+              "intervalType": "D"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll leave 6am everyday",
+    "Context": {
+      "ReferenceDateTime": "2022-08-22T01:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "6am everyday",
+        "Start": 11,
+        "End": 22,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T06P1D",
+              "type": "set",
+              "setTypename": "datetime",
+              "value": "2022-08-22 06:00:00",
+              "intervalSize": "1",
+              "intervalType": "D"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "remind me to pay bill on 19th of every month.",
+    "Context": {
+      "ReferenceDateTime": "2022-08-22T01:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "19th of every month",
+        "Start": 25,
+        "End": 43,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-XX-19P1M",
+              "type": "set",
+              "setTypename": "date",
+              "value": "2022-09-19",
+              "intervalSize": "1",
+              "intervalType": "M"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "plan trip quarterly",
+    "Context": {
+      "ReferenceDateTime": "2022-08-22T01:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "quarterly",
+        "Start": 10,
+        "End": 18,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P3M",
+              "type": "set",
+              "setTypename": "date",
+              "value": "2022-08-22",
+              "intervalSize": "3",
+              "intervalType": "M"
+            }
+          ]
+        }
+      }
+
+    ]
+  },
+  {
+    "Input": "I'll leave every Sunday.",
+    "Context": {
+      "ReferenceDateTime": "2022-08-22T01:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "every sunday",
+        "Start": 11,
+        "End": 22,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-7P1W",
+              "type": "set",
+              "setTypename": "date",
+              "value": "2022-08-28",
+              "intervalSize": "1",
+              "intervalType": "W"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "dinner on me every night.",
+    "Context": {
+      "ReferenceDateTime": "2022-08-22T01:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "every night",
+        "Start": 13,
+        "End": 23,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TNIP1D",
+              "type": "set",
+              "setTypename": "datetime",
+              "value": "2022-08-22 21:00:00",
+              "intervalSize": "1",
+              "intervalType": "D"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "we will run every morning",
+    "Context": {
+      "ReferenceDateTime": "2022-08-22T01:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "every morning",
+        "Start": 12,
+        "End": 24,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TMOP1D",
+              "type": "set",
+              "setTypename": "datetime",
+              "value": "2022-08-22 06:00:00",
+              "intervalSize": "1",
+              "intervalType": "D"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll leave early every other day",
+    "Context": {
+      "ReferenceDateTime": "2022-08-22T01:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "every other day",
+        "Start": 17,
+        "End": 31,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P2D",
+              "type": "set",
+              "setTypename": "date",
+              "value": "2022-08-22",
+              "intervalSize": "2",
+              "intervalType": "D"
+            }
+          ]
+        }
+      }
+
+    ]
+  },
+  {
+    "Input": "I'll take a run weekly",
+    "Context": {
+      "ReferenceDateTime": "2022-08-22T01:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "weekly",
+        "Start": 16,
+        "End": 21,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1W",
+              "type": "set",
+              "setTypename": "date",
+              "value": "2022-08-22",
+              "intervalSize": "1",
+              "intervalType": "W"
+            }
+          ]
+        }
+      }
+
+    ]
+  },
+  {
+    "Input": "we will meet after school every weekend.",
+    "Context": {
+      "ReferenceDateTime": "2022-09-06T17:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "every weekend",
+        "Start": 26,
+        "End": 38,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1WE",
+              "type": "set",
+              "setTypename": "date",
+              "value": "2022-09-11",
+              "intervalSize": "1",
+              "intervalType": "WE"
             }
           ]
         }

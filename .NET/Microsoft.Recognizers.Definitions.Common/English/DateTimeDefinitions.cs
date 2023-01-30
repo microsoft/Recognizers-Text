@@ -72,7 +72,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly string MonthRegex = $@"\b{MonthRegexNoWordBoundary}";
       public static readonly string WrittenMonthRegex = $@"(((the\s+)?month of\s+)?{MonthRegex})";
       public static readonly string MonthSuffixRegex = $@"(?<msuf>(?:(in|of|on)\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))";
-      public const string DateUnitRegex = @"(?<unit>(decade|year|(?<uoy>month|week)|(?<business>(business\s+|week\s*))?(?<uoy>day)|fortnight|weekend)(?<plural>s)?|(?<=(^|\s)\d{1,4})[ymwd])\b";
+      public const string DateUnitRegex = @"(?<unit>(decade|year|(?<uoy>month|week|fortnight)|(?<business>(business\s+|week\s*))?(?<uoy>day)|fortnight|weekend)(?<plural>s)?|(?<=(^|\s)\d{1,4})[ymwd])\b";
       public const string DateTokenPrefix = @"on ";
       public const string TimeTokenPrefix = @"at ";
       public const string TokenBeforeDate = @"on ";
@@ -232,7 +232,7 @@ namespace Microsoft.Recognizers.Definitions.English
       public const string EachPrefixRegex = @"\b(?<each>(each|every|once an?)\s*$)";
       public const string SetEachRegex = @"\b(?<each>(each|every)(?<other>\s+(other|alternate))?\s*)(?!the|that)\b";
       public static readonly string SetLastRegex = $@"(?<last>following|next|upcoming|this|{LastNegPrefix}last|past|previous|current)";
-      public const string EachDayRegex = @"^\s*(each|every)\s*day\b";
+      public const string EachDayRegex = @"\s*((each|every)\s*day)|daily\b";
       public static readonly string DurationFollowedUnit = $@"(^\s*{DurationUnitRegex}\s+{SuffixAndRegex})|(^\s*{SuffixAndRegex}?(\s+|-)?{DurationUnitRegex})";
       public static readonly string NumberCombinedWithDurationUnit = $@"\b(?<num>\d+(\.\d*)?)(-)?{DurationUnitRegex}";
       public static readonly string AnUnitRegex = $@"(\b((?<half>(half)\s+)?an?|another)|(?<half>(1/2|½|half)))\s+{DurationUnitRegex}";
@@ -338,8 +338,8 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"weekend", @"WE" },
             { @"fortnights", @"2W" },
             { @"fortnight", @"2W" },
-            { @"weekdays", @"D" },
-            { @"weekday", @"D" },
+            { @"weekdays", @"WD" },
+            { @"weekday", @"WD" },
             { @"days", @"D" },
             { @"day", @"D" },
             { @"d", @"D" },
@@ -918,6 +918,8 @@ namespace Microsoft.Recognizers.Definitions.English
       public const string DoubleMultiplierRegex = @"^(bi)(-|\s)?";
       public const string HalfMultiplierRegex = @"^(semi)(-|\s)?";
       public const string DayTypeRegex = @"((week)?da(il)?ys?)$";
+      public const string WeekDayTypeRegex = @"(weekday?)$";
+      public const string FortNightRegex = @"(fortnight?)$";
       public const string WeekTypeRegex = @"(week(s|ly)?)$";
       public const string WeekendTypeRegex = @"(weekends?)$";
       public const string MonthTypeRegex = @"(month(s|ly)?)$";

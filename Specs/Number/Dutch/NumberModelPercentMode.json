@@ -38,6 +38,6 @@
         }
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   }
 ]

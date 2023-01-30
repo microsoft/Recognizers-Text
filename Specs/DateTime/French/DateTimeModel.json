@@ -3624,7 +3624,7 @@
         "End": 67
       }
     ]
-  },  
+  },
   {
     "Input": "Je vais rentrer le 4 janvier 2019.",
     "NotSupported": "dotnet, javascript, python, java",
@@ -8688,6 +8688,27 @@
               "timex": "2018-07-06",
               "type": "date",
               "value": "2018-07-06"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "bonjour la maison n'est plus habitée depuis ans",
+    "Results": [
+      {
+        "Text": "depuis ans",
+        "Start": 37,
+        "End": 46,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1Y",
+              "Mod": "since",
+              "type": "duration",
+              "value": "31536000"
             }
           ]
         }
@@ -21372,7 +21393,7 @@
               "type": "time",
               "value": "08:00:00"
             },
-			{
+            {
               "timex": "T20",
               "type": "time",
               "value": "20:00:00"
@@ -21400,7 +21421,7 @@
               "type": "time",
               "value": "01:00:00"
             },
-			{
+            {
               "timex": "T13",
               "type": "time",
               "value": "13:00:00"

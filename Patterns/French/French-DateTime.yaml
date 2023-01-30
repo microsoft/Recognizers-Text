@@ -268,7 +268,7 @@ MidmorningRegex: !nestedRegex
   def: (?<midmorning>milieu\s*d[ue]\s*{MorningRegex})
   references: [ MorningRegex ]
 MiddayRegex: !simpleRegex
-  def: (?<midday>milieu(\s*|-)d[eu]\s*(jour|midi)|apr[eè]s(-|\s*)midi|(?<=\bà\s+)midi)
+  def: (?<midday>milieu(\s*|-)d[eu]\s*(jour|midi)|apr[eè]s(-|\s*)midi|(?<=à\s+)midi)
 MidafternoonRegex: !nestedRegex
   def: (?<midafternoon>milieu\s*d'+{AfternoonRegex})
   references: [ AfternoonRegex ]
@@ -415,7 +415,7 @@ SetEachRegex: !simpleRegex
 SetLastRegex: !simpleRegex
   def: (?<last>prochain|dernier|derni[eè]re|pass[ée]s|pr[eé]c[eé]dent|courant|en\s*cours)
 EachDayRegex: !simpleRegex
-  def: ^\s*(chaque|tous les)\s*(jour|jours)\b
+  def: \s*(chaque|tous les)\s*(jour|jours)\b
 DurationFollowedUnit: !nestedRegex
   def: ^\s*{SuffixAndRegex}?(\s+|-)?{DurationUnitRegex}
   references: [ SuffixAndRegex, DurationUnitRegex ]

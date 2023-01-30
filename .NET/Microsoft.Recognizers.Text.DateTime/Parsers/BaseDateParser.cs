@@ -717,8 +717,23 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var wantedWeekDay = this.config.DayOfWeek[match.Groups["weekday"].Value];
                     var firstDate = DateObject.MinValue.SafeCreateFromValue(referenceDate.Year, referenceDate.Month, 1);
                     var firstWeekDay = (int)firstDate.DayOfWeek;
-                    var firstWantedWeekDay = firstDate.AddDays(wantedWeekDay > firstWeekDay ? wantedWeekDay - firstWeekDay : wantedWeekDay - firstWeekDay + 7);
+                    var firstWantedWeekDay = firstDate.AddDays(wantedWeekDay >= firstWeekDay ? wantedWeekDay - firstWeekDay : wantedWeekDay - firstWeekDay + 7);
                     var answerDay = firstWantedWeekDay.Day + ((num - 1) * 7);
+                    if ((answerDay < referenceDate.Day) && ((config.Options & DateTimeOptions.TasksMode) != 0))
+                    {
+                        DateObject nextReferenceDate = referenceDate.AddMonths(1);
+                        month = nextReferenceDate.Month;
+                        firstDate = DateObject.MinValue.SafeCreateFromValue(nextReferenceDate.Year, nextReferenceDate.Month, 1);
+                        firstWeekDay = (int)firstDate.DayOfWeek;
+                        firstWantedWeekDay = firstDate.AddDays(wantedWeekDay >= firstWeekDay ? wantedWeekDay - firstWeekDay : wantedWeekDay - firstWeekDay + 7);
+                        answerDay = firstWantedWeekDay.Day + ((num - 1) * 7);
+                    }
+                    else
+                    {
+                        firstWantedWeekDay = firstDate.AddDays(wantedWeekDay > firstWeekDay ? wantedWeekDay - firstWeekDay : wantedWeekDay - firstWeekDay + 7);
+                        answerDay = firstWantedWeekDay.Day + ((num - 1) * 7);
+                    }
+
                     day = answerDay;
                     ambiguous = false;
                 }

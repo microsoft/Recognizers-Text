@@ -239,7 +239,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public const string EachPrefixRegex = @"\b(?<each>(iedere|elke|eenmaal per)\s*$)";
       public static readonly string SetEachRegex = $@"\b(?<each>(iedere|elke|om\s+de)\s*(?<other>\s+andere)?\s*(week\s*(?={WeekDayRegex}))?)";
       public const string SetLastRegex = @"(?<last>volgende?|komende|aankomende|aanstaande|deze|huidige|aanstaande|vorige?|verleden|laatste)";
-      public const string EachDayRegex = @"^\s*(iedere|elke)\s*dag\b";
+      public const string EachDayRegex = @"\s*(iedere|elke)\s*dag\b";
       public const string BeforeEachDayRegex = @"(iedere|elke)\s*dag\s*";
       public static readonly string DurationFollowedUnit = $@"^\s*((?<suffix>(?<unit>(?<suffix_num>(een\s+)?kwartier)))|{SuffixAndRegex}?(\s+|-)?{DurationUnitRegex})";
       public static readonly string NumberCombinedWithDurationUnit = $@"\b(?<num>\d+([.,:]\d*)?)(-)?{DurationUnitRegex}";

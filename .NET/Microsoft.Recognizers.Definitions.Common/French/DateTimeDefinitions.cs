@@ -180,7 +180,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public const string EachPrefixRegex = @"\b(?<each>(chaque|tous les|(toutes les))\s*$)";
       public const string SetEachRegex = @"\b(?<each>(chaque|tous les|(toutes les))\s*)";
       public const string SetLastRegex = @"(?<last>prochain|dernier|derni[eè]re|pass[ée]s|pr[eé]c[eé]dent|courant|en\s*cours)";
-      public const string EachDayRegex = @"^\s*(chaque|tous les)\s*(jour|jours)\b";
+      public const string EachDayRegex = @"\s*(chaque|tous les)\s*(jour|jours)\b";
       public static readonly string DurationFollowedUnit = $@"^\s*{SuffixAndRegex}?(\s+|-)?{DurationUnitRegex}";
       public static readonly string NumberCombinedWithDurationUnit = $@"\b(?<num>\d+(\.\d*)?)(-)?{DurationUnitRegex}";
       public static readonly string AnUnitRegex = $@"\b(((?<half>demi\s+)?(-)\s+{DurationUnitRegex}))";
