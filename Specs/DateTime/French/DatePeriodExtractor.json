@@ -5962,5 +5962,17 @@
         "Length": 7
       }
     ]
+  },
+  {
+    "Input": "Montrez-moi les records d'août '99",
+    "NotSupportedByDesign": "javascript,java",
+    "Results": [
+      {
+        "Text": "août '99",
+        "Type": "daterange",
+        "Start": 26,
+        "Length": 8
+      }
+    ]
   }
 ]

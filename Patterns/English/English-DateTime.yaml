@@ -162,7 +162,7 @@ BetweenRegex: !nestedRegex
   def: \b(between\s+)({DayRegex}|{WrittenOrdinalDayRegex})\s*{RangeConnectorRegex}\s*({DayRegex}|{WrittenOrdinalDayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*){YearRegex})?\b
   references: [ DayRegex, RangeConnectorRegex , MonthSuffixRegex, YearRegex, WrittenOrdinalDayRegex ]
 MonthWithYear: !nestedRegex
-  def: \b((({WrittenMonthRegex}[\.]?|((the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|sixth|6th|seventh|7th|eighth|8th|ninth|9th|tenth|10th|eleventh|11th|twelfth|12th|last)\s+month(?=\s+(of|in))))((\s*)[/\\\-\.,]?(\s+(of|in))?(\s*)({YearRegex}|{TwoDigitYearRegex}|(?<order>following|next|last|this)\s+year)|\s+(of|in)\s+{TwoDigitYearRegex}))|(({YearRegex}|(?<order>following|next|last|this)\s+year)(\s*),?(\s*){WrittenMonthRegex}))\b
+  def: \b((({WrittenMonthRegex}[\.]?|((the\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|sixth|6th|seventh|7th|eighth|8th|ninth|9th|tenth|10th|eleventh|11th|twelfth|12th|last)\s+month(?=\s+(of|in))))((\s*)[/\\\-\.,]?(\s+(of|in))?(\s*)({YearRegex}|\'?{TwoDigitYearRegex}|(?<order>following|next|last|this)\s+year)|\s+(of|in)\s+{TwoDigitYearRegex}))|(({YearRegex}|(?<order>following|next|last|this)\s+year)(\s*),?(\s*){WrittenMonthRegex}))\b
   references: [ WrittenMonthRegex, YearRegex, TwoDigitYearRegex ]
 SpecialYearPrefixes: !simpleRegex
   def: (calendar|(?<special>fiscal|school))
@@ -240,7 +240,7 @@ MonthOfRegex: !simpleRegex
 # This is a look-behind assertion. Some cases should extract two digits as year like 11/25/16, where 16 means 2016. 
 # The assertion determines if not connected with am/pm or hour separator (:), which should be a time.
 DateYearRegex: !nestedRegex
-  def: (?<year>{BaseDateTime.FourDigitYearRegex}|(?<!,\s?){TwoDigitYearRegex}|{TwoDigitYearRegex}(?=(\.(?!\d)|[?!;]|$)))
+  def: (?<year>{BaseDateTime.FourDigitYearRegex}|(?<!,\s?)\'?{TwoDigitYearRegex}|\'?{TwoDigitYearRegex}(?=(\.(?!\d)|[?!;]|$)))
   references: [ BaseDateTime.FourDigitYearRegex, TwoDigitYearRegex ]
 YearSuffix: !nestedRegex
   def: ((,|\sof)?\s*({DateYearRegex}|{FullTextYearRegex}))

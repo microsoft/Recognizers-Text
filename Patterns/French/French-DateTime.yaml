@@ -92,7 +92,7 @@ BetweenRegex: !nestedRegex
 YearWordRegex: !simpleRegex
   def: \b(?<year>l'ann[ée]e)\b
 MonthWithYear: !nestedRegex
-  def: \b({WrittenMonthRegex}(\s*),?(\s+de)?(\s*)({YearRegex}|{TwoDigitYearRegex}|(?<order>cette)\s*{YearWordRegex})|{YearWordRegex}\s*({PastSuffixRegex}|{NextSuffixRegex}))
+  def: \b({WrittenMonthRegex}(\s*),?(\s+de)?(\s*)({YearRegex}|\'?{TwoDigitYearRegex}|(?<order>cette)\s*{YearWordRegex})|{YearWordRegex}\s*({PastSuffixRegex}|{NextSuffixRegex}))
   references: [ WrittenMonthRegex, YearRegex, TwoDigitYearRegex, YearWordRegex, PastSuffixRegex, NextSuffixRegex ]
 OneWordPeriodRegex: !nestedRegex
   def: \b(({RelativeRegex}\s+)?{WrittenMonthRegex}|(la\s+)?(weekend|(fin de )?semaine|week-end|mois|ans?|l'année)\s+{StrictRelativeRegex}|{RelativeRegex}\s+(weekend|(fin de )?semaine|week-end|mois|ans?|l'année)|weekend|week-end|mois|l'année|an)\b
@@ -183,7 +183,7 @@ SpecialDate: !nestedRegex
   def: (?<=\b(au|le)\s+){DayRegex}(?!:)\b
   references: [ DayRegex ]
 DateYearRegex: !nestedRegex
-  def: (?<year>{YearRegex}|{TwoDigitYearRegex})
+  def: (?<year>{YearRegex}|\'?{TwoDigitYearRegex})
   references: [ YearRegex, TwoDigitYearRegex ]
 DateExtractor1: !nestedRegex
   def: \b({WeekDayRegex}(\s+|\s*,\s*))?{MonthRegex}\s*[/\\\.\-]?\s*{DayRegex}(\s*([/\\\.\-]|\bde\b)?\s*{BaseDateTime.FourDigitYearRegex})?\b
