@@ -268,7 +268,7 @@ MidmorningRegex: !nestedRegex
   def: (?<midmorning>milieu\s*d[ue]\s*{MorningRegex})
   references: [ MorningRegex ]
 MiddayRegex: !simpleRegex
-  def: (?<midday>milieu(\s*|-)d[eu]\s*(jour|midi)|apr[eè]s(-|\s*)midi|(?<=\bà\s+)midi)
+  def: (?<midday>milieu(\s*|-)d[eu]\s*(jour|midi)|apr[eè]s(-|\s*)midi|(?<=à\s+)midi)
 MidafternoonRegex: !nestedRegex
   def: (?<midafternoon>milieu\s*d'+{AfternoonRegex})
   references: [ AfternoonRegex ]
