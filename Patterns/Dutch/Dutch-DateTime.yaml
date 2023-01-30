@@ -581,7 +581,7 @@ SetLastRegex: !simpleRegex
   def: (?<last>volgende?|komende|aankomende|aanstaande|deze|huidige|aanstaande|vorige?|verleden|laatste)
 # This regex is used to extract Set patterns like "3pm every day" where "every day" follows the time.
 EachDayRegex: !simpleRegex
-  def: ^\s*(iedere|elke)\s*dag\b
+  def: \s*(iedere|elke)\s*dag\b
 # This regex is used to extract Set patterns like "every day at 3pm" where "every day" preceeds the time.
 BeforeEachDayRegex: !simpleRegex
   def: (iedere|elke)\s*dag\s*

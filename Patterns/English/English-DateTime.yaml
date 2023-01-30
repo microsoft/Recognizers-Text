@@ -132,7 +132,7 @@ MonthSuffixRegex: !nestedRegex
   def: (?<msuf>(?:(in|of|on)\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))
   references: [ RelativeMonthRegex, WrittenMonthRegex ]
 DateUnitRegex: !simpleRegex
-  def: (?<unit>(decade|year|(?<uoy>month|week)|(?<business>(business\s+|week\s*))?(?<uoy>day)|fortnight|weekend)(?<plural>s)?|(?<=(^|\s)\d{1,4})[ymwd])\b
+  def: (?<unit>(decade|year|(?<uoy>month|week|fortnight)|(?<business>(business\s+|week\s*))?(?<uoy>day)|fortnight|weekend)(?<plural>s)?|(?<=(^|\s)\d{1,4})[ymwd])\b
 DateTokenPrefix: 'on '
 TimeTokenPrefix: 'at '
 TokenBeforeDate: 'on '
@@ -552,7 +552,7 @@ SetLastRegex: !nestedRegex
   def: (?<last>following|next|upcoming|this|{LastNegPrefix}last|past|previous|current)
   references: [ LastNegPrefix ]
 EachDayRegex: !simpleRegex
-  def: ^\s*(each|every)\s*day\b
+  def: ^\s*((each|every)\s*day)|daily\b
 DurationFollowedUnit: !nestedRegex
   def: (^\s*{DurationUnitRegex}\s+{SuffixAndRegex})|(^\s*{SuffixAndRegex}?(\s+|-)?{DurationUnitRegex})
   references: [ SuffixAndRegex, DurationUnitRegex ]
@@ -790,8 +790,8 @@ UnitMap: !dictionary
     weekend: WE
     fortnights: 2W
     fortnight: 2W
-    weekdays: D
-    weekday: D
+    weekdays: WD
+    weekday: WD
     days: D
     day: D
     d: D
@@ -1379,6 +1379,10 @@ HalfMultiplierRegex: !simpleRegex
 DayTypeRegex: !simpleRegex
   def: ((week)?da(il)?ys?)$
 WeekTypeRegex: !simpleRegex
+WeekDayTypeRegex: !simpleRegex
+  def: (weekday?)$
+FortNightRegex: !simpleRegex
+  def: (fortnight?)$
   def: (week(s|ly)?)$
 WeekendTypeRegex: !simpleRegex
   def: (weekends?)$
