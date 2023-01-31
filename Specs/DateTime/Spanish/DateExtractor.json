@@ -671,5 +671,31 @@
         "Length": 19
       }
     ]
+  },
+  {
+    "Input": "quién fue el presidente el 23 del 5 del 91",
+    "NotSupported": "java",
+    "NotSupportedByDesign": "javascript",
+    "Results": [
+      {
+        "Text": "23 del 5 del 91",
+        "Type": "date",
+        "Start": 27,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "quién fue el presidente el 23 de 5 de 91",
+    "NotSupported": "java",
+    "NotSupportedByDesign": "javascript",
+    "Results": [
+      {
+        "Text": "23 de 5 de 91",
+        "Type": "date",
+        "Start": 25,
+        "Length": 13
+      }
+    ]
   }
 ]
