@@ -1,1 +1,0 @@
-This directory is required in the nuget package building process.

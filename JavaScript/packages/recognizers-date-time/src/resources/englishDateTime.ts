@@ -77,7 +77,7 @@ export namespace EnglishDateTime {
     export const MonthFrontSimpleCasesRegex = `\\b(${RangePrefixRegex}\\s+)?${MonthSuffixRegex}\\s+((from)\\s+)?(${DayRegex}|${WrittenOrdinalDayRegex})\\s*${TillRegex}\\s*(${DayRegex}|${WrittenOrdinalDayRegex})((\\s+|\\s*,\\s*)${YearRegex})?\\b`;
     export const MonthFrontBetweenRegex = `\\b${MonthSuffixRegex}\\s+(between\\s+)(${DayRegex}|${WrittenOrdinalDayRegex})\\s*${RangeConnectorRegex}\\s*(${DayRegex}|${WrittenOrdinalDayRegex})((\\s+|\\s*,\\s*)${YearRegex})?\\b`;
     export const BetweenRegex = `\\b(between\\s+)(${DayRegex}|${WrittenOrdinalDayRegex})\\s*${RangeConnectorRegex}\\s*(${DayRegex}|${WrittenOrdinalDayRegex})\\s+${MonthSuffixRegex}((\\s+|\\s*,\\s*)${YearRegex})?\\b`;
-    export const MonthWithYear = `\\b(((${WrittenMonthRegex}[\\.]?|((the\\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|sixth|6th|seventh|7th|eighth|8th|ninth|9th|tenth|10th|eleventh|11th|twelfth|12th|last)\\s+month(?=\\s+(of|in))))((\\s*)[/\\\\\\-\\.,]?(\\s+(of|in))?(\\s*)(${YearRegex}|(?<order>following|next|last|this)\\s+year)|\\s+(of|in)\\s+${TwoDigitYearRegex}))|((${YearRegex}|(?<order>following|next|last|this)\\s+year)(\\s*),?(\\s*)${WrittenMonthRegex}))\\b`;
+    export const MonthWithYear = `\\b(((${WrittenMonthRegex}[\\.]?|((the\\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|sixth|6th|seventh|7th|eighth|8th|ninth|9th|tenth|10th|eleventh|11th|twelfth|12th|last)\\s+month(?=\\s+(of|in))))((\\s*)[/\\\\\\-\\.,]?(\\s+(of|in))?(\\s*)(${YearRegex}|\\'?${TwoDigitYearRegex}|(?<order>following|next|last|this)\\s+year)|\\s+(of|in)\\s+${TwoDigitYearRegex}))|((${YearRegex}|(?<order>following|next|last|this)\\s+year)(\\s*),?(\\s*)${WrittenMonthRegex}))\\b`;
     export const SpecialYearPrefixes = `(calendar|(?<special>fiscal|school))`;
     export const OneWordPeriodRegex = `\\b((((the\\s+)?month of\\s+)?(${StrictRelativeRegex}\\s+)?${MonthRegex})|(month|year) to date|(?<toDate>((un)?till?|to)\\s+date)|(${RelativeRegex}\\s+)?(my\\s+)?((?<business>working\\s+week|workweek)|week(end)?|month|fortnight|((${SpecialYearPrefixes}\\s+)?year))(?!((\\s+of)?\\s+\\d+(?!(${BaseDateTime.BaseAmDescRegex}|${BaseDateTime.BasePmDescRegex}))|\\s+to\\s+date))(\\s+${AfterNextSuffixRegex})?)\\b`;
     export const MonthNumWithYear = `\\b((${BaseDateTime.FourDigitYearRegex}(\\s*)[/\\-\\.](\\s*)${MonthNumRegex})|(${MonthNumRegex}(\\s*)[/\\-](\\s*)${BaseDateTime.FourDigitYearRegex}))\\b`;
@@ -106,7 +106,7 @@ export namespace EnglishDateTime {
     export const WhichWeekRegex = `\\b(week)(\\s*)(?<number>5[0-3]|[1-4]\\d|0?[1-9])(\\s+of\\s+(${YearRegex}|${RelativeRegex}\\s+year))?\\b`;
     export const WeekOfRegex = `(the\\s+)?((week)(\\s+(of|(commencing|starting|beginning)(\\s+on)?))|w/c)(\\s+the)?`;
     export const MonthOfRegex = `(month)(\\s*)(of)`;
-    export const DateYearRegex = `(?<year>${BaseDateTime.FourDigitYearRegex}|(?<!,\\s?)${TwoDigitYearRegex}|${TwoDigitYearRegex}(?=(\\.(?!\\d)|[?!;]|$)))`;
+    export const DateYearRegex = `(?<year>${BaseDateTime.FourDigitYearRegex}|(?<!,\\s?)\\'?${TwoDigitYearRegex}|\\'?${TwoDigitYearRegex}(?=(\\.(?!\\d)|[?!;]|$)))`;
     export const YearSuffix = `((,|\\sof)?\\s*(${DateYearRegex}|${FullTextYearRegex}))`;
     export const OnRegex = `(?<=\\bon\\s+)(${DayRegex}s?)\\b`;
     export const RelaxedOnRegex = `(?<=\\b(on|at|in)\\s+)((?<day>(3[0-1]|[0-2]?\\d)(?:th|nd|rd|st))s?)\\b`;
