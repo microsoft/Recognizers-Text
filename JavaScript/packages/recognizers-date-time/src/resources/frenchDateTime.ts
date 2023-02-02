@@ -114,7 +114,7 @@ export namespace FrenchDateTime {
     export const MorningRegex = `(?<morning>matin([ée]e)?)`;
     export const AfternoonRegex = `(?<afternoon>(d'|l')?apr[eè]s(-|\\s*)midi)`;
     export const MidmorningRegex = `(?<midmorning>milieu\\s*d[ue]\\s*${MorningRegex})`;
-    export const MiddayRegex = `(?<midday>milieu(\\s*|-)d[eu]\\s*(jour|midi)|apr[eè]s(-|\\s*)midi|(?<=à\\s+)midi)`;
+    export const MiddayRegex = `(?<midday>milieu(\\s*|-)d[eu]\\s*(jour|midi)|apr[eè]s(-|\\s*)midi|(?<=\\bà\\s+)midi)`;
     export const MidafternoonRegex = `(?<midafternoon>milieu\\s*d'+${AfternoonRegex})`;
     export const MidTimeRegex = `(?<mid>(${MidnightRegex}|${MidmorningRegex}|${MidafternoonRegex}|${MiddayRegex}))`;
     export const AtRegex = `\\b(((?<=\\b[àa]\\s+)(${WrittenTimeRegex}|${HourNumRegex}(\\s+heures)?|${BaseDateTime.HourRegex}|${MidTimeRegex}))|${MidTimeRegex})\\b`;
