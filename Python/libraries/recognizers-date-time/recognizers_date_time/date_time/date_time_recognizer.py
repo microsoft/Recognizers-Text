@@ -28,6 +28,9 @@ from .italian.merged_parser_config import ItalianMergedParserConfiguration
 from .german.common_configs import GermanCommonDateTimeParserConfiguration
 from .german.merged_extractor_config import GermanMergedExtractorConfiguration
 from .german.merged_parser_config import GermanMergedParserConfiguration
+from .dutch.common_configs import DutchCommonDateTimeParserConfiguration
+from .dutch.merged_extractor_config import DutchMergedExtractorConfiguration
+from .dutch.merged_parser_config import DutchMergedParserConfiguration
 
 
 class DateTimeRecognizer(Recognizer[DateTimeOptions]):
