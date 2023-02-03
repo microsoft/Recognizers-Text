@@ -1312,7 +1312,7 @@
     ]
   },
   {
-    "Input": "Zeigen Sie mir die Aufzeichnungen vom August 99",
+    "Input": "Zeigen Sie mir die Aufzeichnungen vom august 99",
     "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
@@ -1335,7 +1335,7 @@
     ]
   },
   {
-    "Input": "Zeigen Sie mir die Aufzeichnungen vom August '99",
+    "Input": "Zeigen Sie mir die Aufzeichnungen vom august '99",
     "NotSupported": "javascript, java",
     "Results": [
       {

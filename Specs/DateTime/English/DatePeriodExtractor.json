@@ -3917,7 +3917,7 @@
     ]
   },
   {
-    "Input": "Show me the records for August 99",
+    "Input": "Show me the records for august 99",
     "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
@@ -3929,7 +3929,7 @@
     ]
   },
   {
-    "Input": "Show me the records for August '99",
+    "Input": "Show me the records for august '99",
     "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
