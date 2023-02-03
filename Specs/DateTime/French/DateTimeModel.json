@@ -24,6 +24,31 @@
     ]
   },
   {
+    "Input": "au cours des dix derniers mois",
+    "Context": {
+      "ReferenceDateTime": "2023-02-01T00:00:00"
+    },
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "dix derniers mois",
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2022-04-01,2023-02-01,P10M)",
+              "type": "daterange",
+              "start": "2022-04-01",
+              "end": "2023-02-01"
+            }
+          ]
+        },
+        "start": 13,
+        "End": 29
+      }
+    ]
+  },
+  {
     "Input": "Je vais sortir cette août",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
