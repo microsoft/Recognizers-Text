@@ -114,6 +114,33 @@
                 "class TimeZoneDefinitions:"
             ],
             "footer": [ "# pylint: enable=line-too-long" ]
+        },
+        {
+            "input": [
+                "Dutch", "Dutch-DateTime"
+            ],
+            "output": "dutch_date_time",
+            "header": [
+                "from .base_date_time import BaseDateTime",
+                "# pylint: disable=line-too-long",
+                "",
+                "",
+                "class DutchDateTime:"
+            ],
+            "footer": [
+                "# pylint: enable=line-too-long"
+            ]
+        },
+        {
+            "input": [ "Dutch", "Dutch-TimeZone" ],
+            "output": "dutch_time_zone",
+            "header": [
+                "# pylint: disable=line-too-long",
+                "",
+                "",
+                "class TimeZoneDefinitions:"
+            ],
+            "footer": [ "# pylint: enable=line-too-long" ]
         }
     ]
 }
