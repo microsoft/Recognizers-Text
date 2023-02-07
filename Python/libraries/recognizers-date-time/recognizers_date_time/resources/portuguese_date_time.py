@@ -573,4 +573,5 @@ class PortugueseDateTime:
     QuarterTypeRegex = f'(trimestral(mente)?)$'
     SemiAnnualTypeRegex = f'(semestral(mente)?)$'
     YearTypeRegex = f'(anual(mente)?)$'
+    ThisTerms = [r'esse', r'essa', r'este', r'esta']
 # pylint: enable=line-too-long
