@@ -4,7 +4,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "5 tot 18:00",
@@ -30,7 +30,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "5 tot 6 's avonds",
@@ -56,7 +56,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "5 tot zeven 's morgens",
@@ -82,7 +82,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van 5 tot 18:00",
@@ -108,7 +108,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van 5 tot 6 in de avond",
@@ -134,7 +134,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "tussen 5 en 6 's avonds",
@@ -160,7 +160,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "tussen 17:00 en 18:00",
@@ -186,7 +186,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "tussen 5 en 6 's middags",
@@ -212,7 +212,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van 1:00 tot 17:00",
@@ -238,7 +238,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van 16:00 tot 17:00",
@@ -264,7 +264,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van 4 tot 5 's avonds",
@@ -290,7 +290,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "4:00 tot 7 uur",
@@ -316,7 +316,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "16:00-17:00",
@@ -342,7 +342,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "16:00 - 17:00",
@@ -368,7 +368,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van 3 uur 's ochtends tot 17:00",
@@ -394,7 +394,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "tussen 3 uur 's ochtends en 17:00",
@@ -420,7 +420,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "tussen 16:00 en 17:00",
@@ -446,7 +446,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "'s ochtends",
@@ -472,7 +472,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "'s middags",
@@ -498,7 +498,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "'s nachts",
@@ -524,7 +524,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "'s avonds",
@@ -550,7 +550,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "in de avonden",
@@ -576,7 +576,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "in de vroege morgens",
@@ -603,7 +603,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "in de late morgens",
@@ -630,7 +630,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "in de vroege morgen",
@@ -657,7 +657,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "in de late morgen",
@@ -684,7 +684,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "in de vroege middag",
@@ -711,7 +711,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "in de late middag",
@@ -738,7 +738,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "in de vroege avond",
@@ -765,7 +765,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "in de late avond",
@@ -792,7 +792,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "in de vroege nacht",
@@ -819,7 +819,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "in de late nacht",
@@ -846,7 +846,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van 1 's middags tot 4",
@@ -872,7 +872,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van 13:00 tot 4",
@@ -898,9 +898,9 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
+    "NotSupported": "dotnet,python",
     "Comment": "Not supported because the extraction is not at the end of the Input",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van 13:00 tot 4",
@@ -926,7 +926,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van 1:30 's middags tot 4",
@@ -952,7 +952,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van 13:30 tot 4",
@@ -978,9 +978,9 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
+    "NotSupported": "dotnet,python",
     "Comment": "Not supported because the extraction is not at the end of the Input",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van 13:30 tot 4",
@@ -1006,7 +1006,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "de ochtend",
@@ -1032,7 +1032,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van 1:30 tot 3",
@@ -1058,7 +1058,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van 11:00 tot 3",
@@ -1084,7 +1084,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van 23:00 tot 3",
@@ -1110,7 +1110,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van 23:01 tot 11",
@@ -1136,7 +1136,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van 11:01 's ochtends tot 11",
@@ -1162,7 +1162,8 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "van 11:01 tot 11",
@@ -1188,7 +1189,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van 11:00 tot 11:50",
@@ -1214,7 +1215,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van 1:30 's middags tot 3:30",
@@ -1240,7 +1241,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van 13:30 tot 3:30",
@@ -1266,7 +1267,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van 13:30 tot 15:30",
@@ -1292,7 +1293,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van 15:00 tot 15:30",
@@ -1318,7 +1319,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van 0:01 tot 13:00",
@@ -1344,7 +1345,8 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "van 0:01 's ochtends tot 1",
@@ -1370,7 +1372,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van 0:01 tot 1",
@@ -1396,7 +1398,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van 3 tot 3:30",
@@ -1422,7 +1424,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van 1:30 tot 3",
@@ -1448,7 +1450,8 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "van 1:30 tot 3 's middags",
@@ -1474,7 +1477,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van 1:30 tot 15:00",
@@ -1500,7 +1503,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van 11 tot 15:00",
@@ -1526,7 +1529,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van 11 tot 11:50",
@@ -1552,7 +1555,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van 11 tot 3 's ochtends",
@@ -1578,7 +1581,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van 10 tot 11:00",
@@ -1604,7 +1607,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van 23 tot 3:00",
@@ -1630,7 +1633,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van 23 tot 15:00",
@@ -1656,7 +1659,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "tussen 10 en 11:30",
@@ -1682,7 +1685,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "tussen 10:10 en 12:50",
@@ -1708,7 +1711,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "tussen 22:10 en 3",
@@ -1734,7 +1737,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van 22:10 tot 10",
@@ -1760,7 +1763,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "van 10:30 tot 23",
@@ -1786,7 +1789,8 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "tijdens de werkuren",
@@ -1812,8 +1816,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet,python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "lunchtijd",
@@ -1839,8 +1843,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet,python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "lunchpauze",
@@ -1866,8 +1870,8 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet,python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "lunchconcert",
