@@ -97,7 +97,7 @@ class PortugueseDateTime:
     MonthEndRegex = f'({MonthRegex}\\s*(o)?\\s*$)'
     WeekDayEnd = f'{WeekDayRegex}\\s*,?\\s*$'
     WeekDayStart = f'^\\b$'
-    DateYearRegex = f'(?<year>{YearRegex}|\\\'?{TwoDigitYearRegex})'
+    DateYearRegex = f'(?<year>{YearRegex}|\'?{TwoDigitYearRegex})'
     DateExtractor1 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{DayRegex}((\\s*(de)|[/\\\\\\.\\- ])\\s*)?{MonthRegex}\\b'
     DateExtractor2 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?({DayRegex}(\\s*([/\\.\\-]|de)?\\s*{MonthRegex}|\\s+de\\s+{MonthNumRegex})(\\s*([,./-]|de|\\s+)\\s*){DateYearRegex}|{BaseDateTime.FourDigitYearRegex}\\s*[/\\.\\- ]\\s*{DayRegex}\\s*[/\\.\\- ]\\s*{MonthRegex})\\b'
     DateExtractor3 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{MonthRegex}(\\s*[/\\.\\- ]\\s*|\\s+de\\s+){DayRegex}(?!\\s*\\-\\s*\\d{{2}}\\b)((\\s*[/\\.\\- ]\\s*|\\s+de\\s+){DateYearRegex})?\\b'

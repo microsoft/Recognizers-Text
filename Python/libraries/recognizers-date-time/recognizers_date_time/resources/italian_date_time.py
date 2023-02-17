@@ -58,7 +58,7 @@ class ItalianDateTime:
     LastTwoYearNumRegex = f'({WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|{WrittenTensRegex}({WrittenOneToNineRegex})?)'
     FullTextYearRegex = f'\\b((?<firsttwoyearnum>{WrittenCenturyFullYearRegex})(?<lasttwoyearnum>{LastTwoYearNumRegex})?)\\b'
     TwoDigitYearRegex = f'\\b(?<![$])(?<year>([0-9]\\d))(?!(\\s*((\\:\\d)|{AmDescRegex}|{PmDescRegex}|\\.\\d)))\\b'
-    DateYearRegex = f'(?<year>{BaseDateTime.FourDigitYearRegex}|\\\'?{TwoDigitYearRegex})'
+    DateYearRegex = f'(?<year>{BaseDateTime.FourDigitYearRegex}|\'?{TwoDigitYearRegex})'
     YearSuffix = f'(,?\\s*({DateYearRegex}|{FullTextYearRegex}))'
     YearRegex = f'({BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})'
     DateUnitRegex = f'\\b(?<unit>decennio|mese|settimana|(ann|giorn)(o|(?<plural>i))|(?<plural>decenni|mesi|settimane))\\b'

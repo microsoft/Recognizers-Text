@@ -108,7 +108,7 @@ class SpanishDateTime:
     MonthEndRegex = f'({MonthRegex}\\s*(el)?\\s*$)'
     WeekDayEnd = f'{WeekDayRegex}\\s*,?\\s*$'
     WeekDayStart = f'^\\b$'
-    DateYearRegex = f'(?<year>{YearRegex}|(?<!,\\s?)\\\'?{TwoDigitYearRegex}|\\\'?{TwoDigitYearRegex}(?=(\\.(?!\\d)|[?!;]|$)))'
+    DateYearRegex = f'(?<year>{YearRegex}|(?<!,\\s?)\'?{TwoDigitYearRegex}|\'?{TwoDigitYearRegex}(?=(\\.(?!\\d)|[?!;]|$)))'
     DateExtractor1 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?(?<!\\d[.,]){DayRegex}((\\s*(d[eo])|[/\\\\\\.\\-])\\s*)?{MonthRegex}\\b'
     DateExtractor2 = f'\\b((el\\s+d[ií]a|{WeekDayRegex})(\\s+|\\s*,\\s*))?(?<!\\d[.,])(({DayRegex}((\\s+(d[eo]\\s+)?|\\s*[.,/-]\\s*){MonthRegex}((\\s+(del?\\s+)?|\\s*[.,/-]\\s*){DateYearRegex}\\b)?|\\s+(d[eo]\\s+){MonthNumRegex}\\s+(del?\\s+{DateYearRegex}\\b)))|{BaseDateTime.FourDigitYearRegex}\\s*[.,/-]?\\s*(el\\s+d[ií]a\\s+)?{DayRegex}(\\s+(d[eo]\\s+)?|\\s*[.,/-]\\s*){MonthRegex})'
     DateExtractor3 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{MonthRegex}(\\s*[.,/-]?\\s*)(el\\s+d[ií]a\\s+)?{DayRegex}(?!\\s*\\-\\s*\\d{{2}}\\b)((\\s+(del?\\s+)?|\\s*[.,/-]\\s*){DateYearRegex})?\\b'

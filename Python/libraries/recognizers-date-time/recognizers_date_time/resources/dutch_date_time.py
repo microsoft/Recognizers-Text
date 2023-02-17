@@ -111,7 +111,7 @@ class DutchDateTime:
     WeekOfRegex = f'(de\\s+)?(week)\\s+(van(\\s+(de|het))?|(beginnend|die\\s+begint|startend|aanvangend)(\\s+op)?)'
     MonthOfRegex = f'(maand)(\\s*)(van)'
     MonthRegex = f'\\b(?<month>(januari|februari|maart|april|mei|juni|juli|augustus|september|oktober|november|december)\\b|(jan|feb|mar|mrt|apr|jun|jul|aug|sept|sep|oct|okt|nov|dec)(?:\\.|\\b))'
-    DateYearRegex = f'(?<year>{BaseDateTime.FourDigitYearRegex}|{TwoDigitYearRegex})'
+    DateYearRegex = f'(?<year>{BaseDateTime.FourDigitYearRegex}|\'?{TwoDigitYearRegex})'
     YearSuffix = f'((,|\\s*van)?\\s*({DateYearRegex}|{FullTextYearRegex}))'
     OnRegex = f'(?<=\\bop\\s+)({DayRegex})\\b(?!(\\.|:)\\d+)'
     RelaxedOnRegex = f'\\b(?<=op\\s+)(?:de\\s+)?(?<day>(?:3[0-1]|[1-2]\\d|0?[1-9]))(?:\\s*(ste|de|e))?\\b(?!(\\.|:)\\d+)'

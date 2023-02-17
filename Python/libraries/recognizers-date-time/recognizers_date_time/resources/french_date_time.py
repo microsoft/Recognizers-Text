@@ -85,7 +85,7 @@ class FrenchDateTime:
     AmbiguousRangeModifierPrefix = f'^\\b$'
     NumberEndingPattern = f'^\\b$'
     SpecialDate = f'(?<=\\b(au|le)\\s+){DayRegex}(?!:)\\b'
-    DateYearRegex = f'(?<year>{YearRegex}|\\\'?{TwoDigitYearRegex})'
+    DateYearRegex = f'(?<year>{YearRegex}|\'?{TwoDigitYearRegex})'
     DateExtractor1 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{MonthRegex}\\s*[/\\\\\\.\\-]?\\s*{DayRegex}(\\s*([/\\\\\\.\\-]|\\bde\\b)?\\s*{BaseDateTime.FourDigitYearRegex})?\\b'
     DateExtractor2 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{DayRegex}(\\s+|\\s*,\\s*|\\s+){MonthRegex}\\s*([\\.\\-]|\\bde\\b)?\\s*{DateYearRegex}\\b'
     DateExtractor3 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?((?<!\\d\\s)(?<!\\d){DayRegex}(\\s+|\\s*[.,/-])({MonthRegex}((\\s+|\\s*[.,/-]\\s*){DateYearRegex}(?!\\s*\\d))?|{MonthNumRegex}(\\s+|\\s*[.,/-]\\s*){DateYearRegex}(?!\\s*\\d))|{BaseDateTime.FourDigitYearRegex}\\s*[.,/-]?\\s*{DayRegex}\\s*[.,/-]?\\s*{MonthRegex})\\b'
