@@ -237,7 +237,7 @@ WeekDayEnd: !nestedRegex
 WeekDayStart: !simpleRegex
   def: ^\b$
 DateYearRegex: !nestedRegex
-  def: (?<year>{YearRegex}|(?<!,\s?)\'?{TwoDigitYearRegex}|\'?{TwoDigitYearRegex}(?=(\.(?!\d)|[?!;]|$)))
+  def: (?<year>{YearRegex}|(?<!,\s?)'?{TwoDigitYearRegex}|'?{TwoDigitYearRegex}(?=(\.(?!\d)|[?!;]|$)))
   references: [ YearRegex, TwoDigitYearRegex ]
 DateExtractor1: !nestedRegex
   # (domingo,)? 5 de Abril

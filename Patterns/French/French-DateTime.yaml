@@ -183,7 +183,7 @@ SpecialDate: !nestedRegex
   def: (?<=\b(au|le)\s+){DayRegex}(?!:)\b
   references: [ DayRegex ]
 DateYearRegex: !nestedRegex
-  def: (?<year>{YearRegex}|\'?{TwoDigitYearRegex})
+  def: (?<year>{YearRegex}|'?{TwoDigitYearRegex})
   references: [ YearRegex, TwoDigitYearRegex ]
 DateExtractor1: !nestedRegex
   def: \b({WeekDayRegex}(\s+|\s*,\s*))?{MonthRegex}\s*[/\\\.\-]?\s*{DayRegex}(\s*([/\\\.\-]|\bde\b)?\s*{BaseDateTime.FourDigitYearRegex})?\b

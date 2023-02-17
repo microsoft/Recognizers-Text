@@ -89,7 +89,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public static readonly string MonthFrontSimpleCasesRegex = $@"\b({RangePrefixRegex}\s+)?(({MonthSuffixRegex}\s+((van)\s+)?({DayRegex})|({DayRegex})\s+((van)\s+)?{MonthSuffixRegex})\s*{TillRegex}\s*({DayRegex})|(op\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex})\s+{MonthSuffixRegex})((\s+|\s*,\s*){YearRegex})?\b";
       public static readonly string MonthFrontBetweenRegex = $@"\b{MonthSuffixRegex}\s+(tussen\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})((\s+|\s*,\s*){YearRegex})?\b";
       public static readonly string BetweenRegex = $@"\b(tussen\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*){YearRegex})?\b";
-      public static readonly string RelativeYearRegex = $@"({YearRegex}|{TwoDigitYearRegex}|(?<order>volgende?|komende?|aanstaande?|aankomende?|huidige?|vorige?|afgelopen|dit)\s+jaar)";
+      public static readonly string RelativeYearRegex = $@"({YearRegex}|'?{TwoDigitYearRegex}|(?<order>volgende?|komende?|aanstaande?|aankomende?|huidige?|vorige?|afgelopen|dit)\s+jaar)";
       public static readonly string MonthWithYear = $@"\b(({WrittenMonthRegex}(\.)?(\s*)[/\\\-\.,]?(\s+(van|over|in))?(\s*){RelativeYearRegex})|({RelativeYearRegex}(\s*),?(\s*){WrittenMonthRegex}))\b";
       public static readonly string OneWordPeriodRegex = $@"\b((((de\s+)?maand\s+(van\s+)?)?({StrictRelativeRegex}\s+)?(?<month>januari|februari|maart|april|mei|juni|juli|augustus|september|oktober|november|december|jan\.?|feb\.?|mar\.?|mrt\.?|apr\.?|jun\.?|jul\.?|aug\.?|sep\.?|sept\.?|oct\.?|okt\.?|nov\.?|dec\.?))|(maand|jaar)\s+tot(\s+op)?\s+heden|(({RelativeRegex}\s+)(mijn\s+)?(weekend|(?<business>werkweek)|week|maand|jaar(?!\s+hoger dan))|({RelativeRegex}\s+)?(mijn\s+)(weekend|(?<business>werkweek)|week|maand|jaar))(?!((\s+van)?\s+\d+|\s+tot(\s+op)?\s+heden|nu))(\s+{AfterNextSuffixRegex})?)\b";
       public static readonly string MonthNumWithYear = $@"\b(({BaseDateTime.FourDigitYearRegex}(\s*)[/\-\.](\s*){MonthNumRegex})|({MonthNumRegex}(\s*)[/\-](\s*){BaseDateTime.FourDigitYearRegex}))\b";
@@ -118,7 +118,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public const string WeekOfRegex = @"(de\s+)?(week)\s+(van(\s+(de|het))?|(beginnend|die\s+begint|startend|aanvangend)(\s+op)?)";
       public const string MonthOfRegex = @"(maand)(\s*)(van)";
       public const string MonthRegex = @"\b(?<month>(januari|februari|maart|april|mei|juni|juli|augustus|september|oktober|november|december)\b|(jan|feb|mar|mrt|apr|jun|jul|aug|sept|sep|oct|okt|nov|dec)(?:\.|\b))";
-      public static readonly string DateYearRegex = $@"(?<year>{BaseDateTime.FourDigitYearRegex}|{TwoDigitYearRegex})";
+      public static readonly string DateYearRegex = $@"(?<year>{BaseDateTime.FourDigitYearRegex}|'?{TwoDigitYearRegex})";
       public static readonly string YearSuffix = $@"((,|\s*van)?\s*({DateYearRegex}|{FullTextYearRegex}))";
       public static readonly string OnRegex = $@"(?<=\bop\s+)({DayRegex})\b(?!(\.|:)\d+)";
       public const string RelaxedOnRegex = @"\b(?<=op\s+)(?:de\s+)?(?<day>(?:3[0-1]|[1-2]\d|0?[1-9]))(?:\s*(ste|de|e))?\b(?!(\.|:)\d+)";
