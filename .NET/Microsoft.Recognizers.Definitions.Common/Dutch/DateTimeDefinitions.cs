@@ -118,7 +118,7 @@ namespace Microsoft.Recognizers.Definitions.Dutch
       public const string WeekOfRegex = @"(de\s+)?(week)\s+(van(\s+(de|het))?|(beginnend|die\s+begint|startend|aanvangend)(\s+op)?)";
       public const string MonthOfRegex = @"(maand)(\s*)(van)";
       public const string MonthRegex = @"\b(?<month>(januari|februari|maart|april|mei|juni|juli|augustus|september|oktober|november|december)\b|(jan|feb|mar|mrt|apr|jun|jul|aug|sept|sep|oct|okt|nov|dec)(?:\.|\b))";
-      public static readonly string DateYearRegex = $@"(?<year>{BaseDateTime.FourDigitYearRegex}|'?{TwoDigitYearRegex})";
+      public static readonly string DateYearRegex = $@"(?<year>{BaseDateTime.FourDigitYearRegex}|{TwoDigitYearRegex})";
       public static readonly string YearSuffix = $@"((,|\s*van)?\s*({DateYearRegex}|{FullTextYearRegex}))";
       public static readonly string OnRegex = $@"(?<=\bop\s+)({DayRegex})\b(?!(\.|:)\d+)";
       public const string RelaxedOnRegex = @"\b(?<=op\s+)(?:de\s+)?(?<day>(?:3[0-1]|[1-2]\d|0?[1-9]))(?:\s*(ste|de|e))?\b(?!(\.|:)\d+)";
