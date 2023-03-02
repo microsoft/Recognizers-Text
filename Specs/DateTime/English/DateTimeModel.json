@@ -25748,5 +25748,107 @@
         }
       }
     ]
+  },
+  {
+    "Input": "I made this purchase at 10 past 9",
+    "Context": {
+      "ReferenceDateTime": "2023-03-01T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "10 past 9",
+        "Start": 24,
+        "End": 32,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T09:10",
+              "type": "time",
+              "value": "09:10:00"
+            },
+            {
+              "timex": "T21:10",
+              "type": "time",
+              "value": "21:10:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "It's 15 past seven o'clock",
+    "Context": {
+      "ReferenceDateTime": "2023-03-01T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "15 past seven o'clock",
+        "Start": 5,
+        "End": 25,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07:15",
+              "type": "time",
+              "value": "07:15:00"
+            },
+            {
+              "timex": "T19:15",
+              "type": "time",
+              "value": "19:15:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I made this purchase at ten past 9 in the evening",
+    "Context": {
+      "ReferenceDateTime": "2023-03-01T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "ten past 9 in the evening",
+        "Start": 24,
+        "End": 48,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T21:10",
+              "type": "time",
+              "value": "21:10:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "It's fifteen past eight in the morning",
+    "Context": {
+      "ReferenceDateTime": "2023-03-01T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "fifteen past eight in the morning",
+        "Start": 5,
+        "End": 37,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T08:15",
+              "type": "time",
+              "value": "08:15:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
