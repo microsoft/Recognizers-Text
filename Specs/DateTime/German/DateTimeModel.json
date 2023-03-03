@@ -1498,22 +1498,21 @@
     ]
   },
   {
-    "Input": "Das dürfte gegen 10 nach 3 Vormittags sein.",
+    "Input": "Das dürfte 10 nach 3 Vormittags sein.",
     "Context": {
       "ReferenceDateTime": "2023-03-01T00:00:00"
     },
     "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "gegen 10 nach 3 vormittags",
+        "Text": "10 nach 3 vormittags",
         "Start": 11,
-        "End": 36,
+        "End": 30,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
             {
               "timex": "T03:10",
-              "Mod": "approx",
               "type": "time",
               "value": "03:10:00"
             }
@@ -1605,22 +1604,21 @@
     ]
   },
   {
-    "Input": "Das dürfte gegen 10 vor 3 Vormittags sein.",
+    "Input": "Das dürfte 10 vor 3 Vormittags sein.",
     "Context": {
       "ReferenceDateTime": "2023-03-01T00:00:00"
     },
     "NotSupported": "javascript",
     "Results": [
       {
-        "Text": "gegen 10 vor 3 vormittags",
+        "Text": "10 vor 3 vormittags",
         "Start": 11,
-        "End": 35,
+        "End": 29,
         "TypeName": "datetimeV2.time",
         "Resolution": {
           "values": [
             {
               "timex": "T02:50",
-              "Mod": "approx",
               "type": "time",
               "value": "02:50:00"
             }
