@@ -150,7 +150,7 @@ export namespace EnglishDateTime {
     export const LunchRegex = `\\blunchtime\\b`;
     export const NightRegex = `\\b(mid)?night\\b`;
     export const CommonDatePrefixRegex = `^[\\.]`;
-    export const LessThanOneHour = `(?<lth>(a\\s+)?quarter|three quarter(s)?|half( an hour)?|${BaseDateTime.DeltaMinuteRegex}(\\s+(minutes?|mins?))|${DeltaMinuteNumRegex}(\\s+(minutes?|mins?)))`;
+    export const LessThanOneHour = `(?<lth>(a\\s+)?quarter|three quarter(s)?|half( an hour)?|${BaseDateTime.DeltaMinuteRegex}(\\s+(minutes?|mins?)|(?=\\s+past))|${DeltaMinuteNumRegex}(\\s+(minutes?|mins?)|(?=\\s+past)))`;
     export const WrittenTimeRegex = `(?<writtentime>${HourNumRegex}\\s+${MinuteNumRegex}(\\s+(minutes?|mins?))?)`;
     export const TimePrefix = `(?<prefix>${LessThanOneHour}\\s+(past|to))`;
     export const TimeSuffix = `(?<suffix>${AmRegex}|${PmRegex}|${OclockRegex})`;
