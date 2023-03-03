@@ -303,13 +303,13 @@ LunchRegex: !simpleRegex
 NightRegex: !simpleRegex
   def: \b(mezzanotte|notte)\b
 LessThanOneHour: !nestedRegex
-  def: (?<lth>(un\s+quarto|tre quarti?|mezz[oa]|mezz'ora|{BaseDateTime.DeltaMinuteRegex}(\s+(minut[oi]|min))?|{DeltaMinuteNumRegex}(\s+(minut[oi]|min))|(?<=(e|meno)\s+){DeltaMinuteNumRegex}))
+  def: (?<lth>(un\s+quarto|tre quarti?|mezz[oa]|mezz'ora|{BaseDateTime.DeltaMinuteRegex}|{DeltaMinuteNumRegex}))
   references: [ BaseDateTime.DeltaMinuteRegex, DeltaMinuteNumRegex ]
 EngTimeRegex: !nestedRegex
   def: (?<engtime>{HourNumRegex}\s+e\s+({MinuteNumRegex}|(?<tens>venti?|trenta?|quaranta?|cinquanta?){MinuteNumRegex}))
   references: [ HourNumRegex, MinuteNumRegex ]
 TimePrefix: !nestedRegex
-  def: (?<prefix>(e\s+{LessThanOneHour}|{LessThanOneHour}\s+(minut[oi]|min)\s+all[e']|meno {LessThanOneHour}))
+  def: (?<prefix>((e|meno)\s+{LessThanOneHour}(\s+(minut[oi]|min))?|{LessThanOneHour}\s+(minut[oi]|min)\s+all[e']))
   references: [ LessThanOneHour ]
 TimeSuffix: !nestedRegex
   def: (?<suffix>{AmRegex}|{PmRegex}|{OclockRegex})

@@ -567,6 +567,90 @@
     ]
   },
   {
+    "Input": "Mancano 5 minuti alle 4",
+    "NotSupportedByDesign": "java,javascript",
+    "Results": [
+      {
+        "Text": "5 minuti alle 4",
+        "Type": "time",
+        "Value": {
+          "Timex": "T03:55",
+          "FutureResolution": {
+            "time": "03:55:00"
+          },
+          "PastResolution": {
+            "time": "03:55:00"
+          }
+        },
+        "Start": 8,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Mancano 10 minuti alle quattro",
+    "NotSupportedByDesign": "java,javascript",
+    "Results": [
+      {
+        "Text": "10 minuti alle quattro",
+        "Type": "time",
+        "Value": {
+          "Timex": "T03:50",
+          "FutureResolution": {
+            "time": "03:50:00"
+          },
+          "PastResolution": {
+            "time": "03:50:00"
+          }
+        },
+        "Start": 8,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Mancano cinque minuti alle 14",
+    "NotSupportedByDesign": "java,javascript",
+    "Results": [
+      {
+        "Text": "cinque minuti alle 14",
+        "Type": "time",
+        "Value": {
+          "Timex": "T13:55",
+          "FutureResolution": {
+            "time": "13:55:00"
+          },
+          "PastResolution": {
+            "time": "13:55:00"
+          }
+        },
+        "Start": 8,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Mancano dieci minuti alle otto",
+    "NotSupportedByDesign": "java,javascript",
+    "Results": [
+      {
+        "Text": "dieci minuti alle otto",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07:50",
+          "FutureResolution": {
+            "time": "07:50:00"
+          },
+          "PastResolution": {
+            "time": "07:50:00"
+          }
+        },
+        "Start": 8,
+        "Length": 22
+      }
+    ]
+  },
+  {
     "Input": "Sono le sette e mezza",
     "NotSupportedByDesign": "javascript",
     "Results": [

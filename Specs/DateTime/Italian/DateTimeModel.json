@@ -3168,5 +3168,251 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Mancano 5 minuti alle 4",
+    "Context": {
+      "ReferenceDateTime": "2023-03-01T00:00:00"
+    },
+    "NotSupportedByDesign": "java,javascript",
+    "Results": [
+      {
+        "Text": "5 minuti alle 4",
+        "Start": 8,
+        "End": 22,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T03:55",
+              "type": "time",
+              "value": "03:55:00"
+            },
+            {
+              "timex": "T15:55",
+              "type": "time",
+              "value": "15:55:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Mancano 10 minuti alle quattro",
+    "Context": {
+      "ReferenceDateTime": "2023-03-01T00:00:00"
+    },
+    "NotSupportedByDesign": "java,javascript",
+    "Results": [
+      {
+        "Text": "10 minuti alle quattro",
+        "Start": 8,
+        "End": 29,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T03:50",
+              "type": "time",
+              "value": "03:50:00"
+            },
+            {
+              "timex": "T15:50",
+              "type": "time",
+              "value": "15:50:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Mancano cinque minuti alle 14",
+    "Context": {
+      "ReferenceDateTime": "2023-03-01T00:00:00"
+    },
+    "NotSupportedByDesign": "java,javascript",
+    "Results": [
+      {
+        "Text": "cinque minuti alle 14",
+        "Start": 8,
+        "End": 28,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T13:55",
+              "type": "time",
+              "value": "13:55:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Mancano dieci minuti alle otto",
+    "Context": {
+      "ReferenceDateTime": "2023-03-01T00:00:00"
+    },
+    "NotSupportedByDesign": "java,javascript",
+    "Results": [
+      {
+        "Text": "dieci minuti alle otto",
+        "Start": 8,
+        "End": 29,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07:50",
+              "type": "time",
+              "value": "07:50:00"
+            },
+            {
+              "timex": "T19:50",
+              "type": "time",
+              "value": "19:50:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono le otto e 30 min",
+    "Context": {
+      "ReferenceDateTime": "2023-03-01T00:00:00"
+    },
+    "NotSupportedByDesign": "java,javascript",
+    "Results": [
+      {
+        "Text": "otto e 30 min",
+        "Start": 8,
+        "End": 20,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T08:30",
+              "type": "time",
+              "value": "08:30:00"
+            },
+            {
+              "timex": "T20:30",
+              "type": "time",
+              "value": "20:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono le otto e un quarto",
+    "Context": {
+      "ReferenceDateTime": "2023-03-01T00:00:00"
+    },
+    "NotSupportedByDesign": "java,javascript",
+    "Results": [
+      {
+        "Text": "otto e un quarto",
+        "Start": 8,
+        "End": 23,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T08:15",
+              "type": "time",
+              "value": "08:15:00"
+            },
+            {
+              "timex": "T20:15",
+              "type": "time",
+              "value": "20:15:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono le 9pm e tre quarti",
+    "Context": {
+      "ReferenceDateTime": "2023-03-01T00:00:00"
+    },
+    "NotSupportedByDesign": "java,javascript",
+    "Results": [
+      {
+        "Text": "9pm e tre quarti",
+        "Start": 8,
+        "End": 23,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T21:45",
+              "type": "time",
+              "value": "21:45:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono le otto meno tre minuti",
+    "Context": {
+      "ReferenceDateTime": "2023-03-01T00:00:00"
+    },
+    "NotSupportedByDesign": "java,javascript",
+    "Results": [
+      {
+        "Text": "otto meno tre minuti",
+        "Start": 8,
+        "End": 27,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07:57",
+              "type": "time",
+              "value": "07:57:00"
+            },
+            {
+              "timex": "T19:57",
+              "type": "time",
+              "value": "19:57:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Sono le 8 meno un quarto del mattino",
+    "Context": {
+      "ReferenceDateTime": "2023-03-01T00:00:00"
+    },
+    "NotSupportedByDesign": "java,javascript",
+    "Results": [
+      {
+        "Text": "8 meno un quarto del mattino",
+        "Start": 8,
+        "End": 35,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07:45",
+              "type": "time",
+              "value": "07:45:00"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
