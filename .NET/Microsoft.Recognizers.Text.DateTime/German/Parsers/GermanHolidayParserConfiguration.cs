@@ -16,9 +16,9 @@ namespace Microsoft.Recognizers.Text.DateTime.German
         public GermanHolidayParserConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
         {
-            ThisPrefixRegex = new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
-            NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
-            PreviousPrefixRegex = new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
+            ThisPrefixRegex = new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags, RegexTimeOut);
+            NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags, RegexTimeOut);
+            PreviousPrefixRegex = new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags, RegexTimeOut);
 
             this.HolidayRegexList = GermanHolidayExtractorConfiguration.HolidayRegexList;
             this.HolidayNames = DateTimeDefinitions.HolidayNames.ToImmutableDictionary();

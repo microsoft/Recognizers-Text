@@ -18,48 +18,48 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         public static readonly string ExtractorName = Constants.SYS_DATETIME_TIMEPERIOD; // "TimePeriod";
 
         public static readonly Regex HourNumRegex =
-            new Regex(DateTimeDefinitions.TimeHourNumRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.TimeHourNumRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex PureNumFromTo =
-            new Regex(DateTimeDefinitions.PureNumFromTo, RegexFlags);
+            new Regex(DateTimeDefinitions.PureNumFromTo, RegexFlags, RegexTimeOut);
 
         public static readonly Regex PureNumBetweenAnd =
-            new Regex(DateTimeDefinitions.PureNumBetweenAnd, RegexFlags);
+            new Regex(DateTimeDefinitions.PureNumBetweenAnd, RegexFlags, RegexTimeOut);
 
         public static readonly Regex SpecificTimeFromTo =
-            new Regex(DateTimeDefinitions.SpecificTimeFromTo, RegexFlags);
+            new Regex(DateTimeDefinitions.SpecificTimeFromTo, RegexFlags, RegexTimeOut);
 
         public static readonly Regex SpecificTimeBetweenAnd =
-            new Regex(DateTimeDefinitions.SpecificTimeBetweenAnd, RegexFlags);
+            new Regex(DateTimeDefinitions.SpecificTimeBetweenAnd, RegexFlags, RegexTimeOut);
 
         public static readonly Regex UnitRegex =
-            new Regex(DateTimeDefinitions.TimeUnitRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.TimeUnitRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex FollowedUnit =
-            new Regex(DateTimeDefinitions.TimeFollowedUnit, RegexFlags);
+            new Regex(DateTimeDefinitions.TimeFollowedUnit, RegexFlags, RegexTimeOut);
 
         public static readonly Regex NumberCombinedWithUnit =
-            new Regex(DateTimeDefinitions.TimeNumberCombinedWithUnit, RegexFlags);
+            new Regex(DateTimeDefinitions.TimeNumberCombinedWithUnit, RegexFlags, RegexTimeOut);
 
         public static readonly Regex TimeOfDayRegex =
-            new Regex(DateTimeDefinitions.TimeOfDayRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.TimeOfDayRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex GeneralEndingRegex =
-            new Regex(DateTimeDefinitions.GeneralEndingRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.GeneralEndingRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex TillRegex =
-            new Regex(DateTimeDefinitions.TillRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.TillRegex, RegexFlags, RegexTimeOut);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly Regex FromRegex =
-            new Regex(DateTimeDefinitions.FromRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.FromRegex, RegexFlags, RegexTimeOut);
 
         private static readonly Regex RangeConnectorRegex =
-            new Regex(DateTimeDefinitions.RangeConnectorRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.RangeConnectorRegex, RegexFlags, RegexTimeOut);
 
         private static readonly Regex BetweenRegex =
-            new Regex(DateTimeDefinitions.BetweenRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.BetweenRegex, RegexFlags, RegexTimeOut);
 
         public SpanishTimePeriodExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)

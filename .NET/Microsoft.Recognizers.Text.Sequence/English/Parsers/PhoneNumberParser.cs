@@ -36,10 +36,10 @@ namespace Microsoft.Recognizers.Text.Sequence.English
         private static string continueDigitRegex = @"\d{5}\d*";
         private static string digitRegex = @"\d";
 
-        private static readonly Regex CountryCodeRegex = new Regex(BasePhoneNumbers.CountryCodeRegex);
-        private static readonly Regex AreaCodeRegex = new Regex(BasePhoneNumbers.AreaCodeIndicatorRegex);
-        private static readonly Regex FormatIndicatorRegex = new Regex(BasePhoneNumbers.FormatIndicatorRegex);
-        private static readonly Regex NoAreaCodeUsPhoneNumberRegex = new Regex(BasePhoneNumbers.NoAreaCodeUSPhoneNumberRegex);
+        private static readonly Regex CountryCodeRegex = new Regex(BasePhoneNumbers.CountryCodeRegex, RegexOptions.None, RegexTimeOut);
+        private static readonly Regex AreaCodeRegex = new Regex(BasePhoneNumbers.AreaCodeIndicatorRegex, RegexOptions.None, RegexTimeOut);
+        private static readonly Regex FormatIndicatorRegex = new Regex(BasePhoneNumbers.FormatIndicatorRegex, RegexOptions.None, RegexTimeOut);
+        private static readonly Regex NoAreaCodeUsPhoneNumberRegex = new Regex(BasePhoneNumbers.NoAreaCodeUSPhoneNumberRegex, RegexOptions.None, RegexTimeOut);
 
         public static double ScorePhoneNumber(string phoneNumberText)
         {

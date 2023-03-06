@@ -11,10 +11,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Swedish
     public class SwedishHolidayExtractorConfiguration : BaseDateTimeOptionsConfiguration, IHolidayExtractorConfiguration
     {
         public static readonly Regex YearRegex =
-            new Regex(DateTimeDefinitions.YearRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.YearRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex H =
-            new Regex(DateTimeDefinitions.HolidayRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.HolidayRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex[] HolidayRegexList =
         {

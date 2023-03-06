@@ -16,49 +16,49 @@ namespace Microsoft.Recognizers.Text.DateTime.French
     {
         // avant - 'before'
         public static readonly Regex BeforeRegex =
-            new Regex(DateTimeDefinitions.BeforeRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.BeforeRegex, RegexFlags, RegexTimeOut);
 
         // ensuite/puis are for adverbs, i.e 'i ate and then i walked', so we'll use apres
         public static readonly Regex AfterRegex =
-            new Regex(DateTimeDefinitions.AfterRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.AfterRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex SinceRegex =
-            new Regex(DateTimeDefinitions.SinceRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.SinceRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex AroundRegex =
-            new Regex(DateTimeDefinitions.AroundRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.AroundRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex EqualRegex =
-            new Regex(BaseDateTime.EqualRegex, RegexFlags);
+            new Regex(BaseDateTime.EqualRegex, RegexFlags, RegexTimeOut);
 
         // 'Je vais du lundi au mecredi' - I will go from monday to weds
         public static readonly Regex FromToRegex =
-            new Regex(DateTimeDefinitions.FromToRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.FromToRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex SingleAmbiguousMonthRegex =
-            new Regex(DateTimeDefinitions.SingleAmbiguousMonthRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.SingleAmbiguousMonthRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex PrepositionSuffixRegex =
-            new Regex(DateTimeDefinitions.PrepositionSuffixRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.PrepositionSuffixRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex AmbiguousRangeModifierPrefix =
-            new Regex(DateTimeDefinitions.AmbiguousRangeModifierPrefix, RegexFlags);
+            new Regex(DateTimeDefinitions.AmbiguousRangeModifierPrefix, RegexFlags, RegexTimeOut);
 
         public static readonly Regex NumberEndingPattern =
-            new Regex(DateTimeDefinitions.NumberEndingPattern, RegexFlags);
+            new Regex(DateTimeDefinitions.NumberEndingPattern, RegexFlags, RegexTimeOut);
 
         public static readonly Regex SuffixAfterRegex =
-            new Regex(DateTimeDefinitions.SuffixAfterRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.SuffixAfterRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex UnspecificDatePeriodRegex =
-            new Regex(DateTimeDefinitions.UnspecificDatePeriodRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.UnspecificDatePeriodRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex[] TermFilterRegexes = System.Array.Empty<Regex>();
 
         public static readonly StringMatcher SuperfluousWordMatcher = new StringMatcher();
 
         public static readonly Regex YearRegex =
-            new Regex(DateTimeDefinitions.YearRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.YearRegex, RegexFlags, RegexTimeOut);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 

@@ -37,62 +37,62 @@ namespace Microsoft.Recognizers.Text.Number.Arabic
             {
                 {
                     // between...and...
-                    new Regex(NumbersDefinitions.TwoNumberRangeRegex1, RegexFlags),
+                    new Regex(NumbersDefinitions.TwoNumberRangeRegex1, RegexFlags, RegexTimeOut),
                     NumberRangeConstants.TWONUMBETWEEN
                 },
                 {
                     // more than ... less than ...
-                    new Regex(NumbersDefinitions.TwoNumberRangeRegex2, RegexFlags),
+                    new Regex(NumbersDefinitions.TwoNumberRangeRegex2, RegexFlags, RegexTimeOut),
                     NumberRangeConstants.TWONUM
                 },
                 {
                     // less than ... more than ...
-                    new Regex(NumbersDefinitions.TwoNumberRangeRegex3, RegexFlags),
+                    new Regex(NumbersDefinitions.TwoNumberRangeRegex3, RegexFlags, RegexTimeOut),
                     NumberRangeConstants.TWONUM
                 },
                 {
                     // from ... to/~/- ...
-                    new Regex(NumbersDefinitions.TwoNumberRangeRegex4, RegexFlags),
+                    new Regex(NumbersDefinitions.TwoNumberRangeRegex4, RegexFlags, RegexTimeOut),
                     NumberRangeConstants.TWONUMTILL
                 },
                 {
                     // more/greater/higher than ...
-                    new Regex(NumbersDefinitions.OneNumberRangeMoreRegex1, RegexFlags),
+                    new Regex(NumbersDefinitions.OneNumberRangeMoreRegex1, RegexFlags, RegexTimeOut),
                     NumberRangeConstants.MORE
                 },
                 {
                     // 30 and/or greater/higher
-                    new Regex(NumbersDefinitions.OneNumberRangeMoreRegex2, RegexFlags),
+                    new Regex(NumbersDefinitions.OneNumberRangeMoreRegex2, RegexFlags, RegexTimeOut),
                     NumberRangeConstants.MORE
                 },
                 {
                     // فيه خمس مائة وأكثر منتجات
-                    new Regex(NumbersDefinitions.OneNumberRangeMoreRegex3, RegexFlags),
+                    new Regex(NumbersDefinitions.OneNumberRangeMoreRegex3, RegexFlags, RegexTimeOut),
                     NumberRangeConstants.MORE
                 },
                 {
                     // less/smaller/lower than ...
-                    new Regex(NumbersDefinitions.OneNumberRangeLessRegex1, RegexFlags),
+                    new Regex(NumbersDefinitions.OneNumberRangeLessRegex1, RegexFlags, RegexTimeOut),
                     NumberRangeConstants.LESS
                 },
                 {
                     // 30 and/or less/smaller/lower
-                    new Regex(NumbersDefinitions.OneNumberRangeLessRegex2, RegexFlags),
+                    new Regex(NumbersDefinitions.OneNumberRangeLessRegex2, RegexFlags, RegexTimeOut),
                     NumberRangeConstants.LESS
                 },
                 {
                     // equal to ...
-                    new Regex(NumbersDefinitions.OneNumberRangeEqualRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.OneNumberRangeEqualRegex, RegexFlags, RegexTimeOut),
                     NumberRangeConstants.EQUAL
                 },
                 {
                     // equal to 30 or more than, larger than 30 or equal to ...
-                    new Regex(NumbersDefinitions.OneNumberRangeMoreSeparateRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.OneNumberRangeMoreSeparateRegex, RegexFlags, RegexTimeOut),
                     NumberRangeConstants.MORE
                 },
                 {
                     // equal to 30 or less, smaller than 30 or equal ...
-                    new Regex(NumbersDefinitions.OneNumberRangeLessSeparateRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.OneNumberRangeLessSeparateRegex, RegexFlags, RegexTimeOut),
                     NumberRangeConstants.LESS
                 },
             };
@@ -100,7 +100,7 @@ namespace Microsoft.Recognizers.Text.Number.Arabic
             Regexes = regexes.ToImmutableDictionary();
 
             AmbiguousFractionConnectorsRegex =
-                new Regex(NumbersDefinitions.AmbiguousFractionConnectorsRegex, RegexFlags);
+                new Regex(NumbersDefinitions.AmbiguousFractionConnectorsRegex, RegexFlags, RegexTimeOut);
         }
 
         internal sealed override ImmutableDictionary<Regex, string> Regexes { get; }

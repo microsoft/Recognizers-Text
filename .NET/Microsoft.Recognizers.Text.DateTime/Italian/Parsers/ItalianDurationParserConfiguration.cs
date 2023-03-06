@@ -11,10 +11,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
     public class ItalianDurationParserConfiguration : BaseDateTimeOptionsConfiguration, IDurationParserConfiguration
     {
         public static readonly Regex InexactNumberUnitRegex2 =
-            new Regex(DateTimeDefinitions.InexactNumberUnitRegex2, RegexFlags);
+            new Regex(DateTimeDefinitions.InexactNumberUnitRegex2, RegexFlags, RegexTimeOut);
 
         public static readonly Regex PrefixArticleRegex =
-            new Regex(DateTimeDefinitions.PrefixArticleRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.PrefixArticleRegex, RegexFlags, RegexTimeOut);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 

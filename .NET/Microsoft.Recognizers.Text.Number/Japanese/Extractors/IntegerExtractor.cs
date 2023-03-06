@@ -21,22 +21,22 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
             {
                 {
                     // 1,234,  ２，３３２，１１１
-                    new Regex(NumbersDefinitions.DottedNumbersSpecialsChar, RegexFlags),
+                    new Regex(NumbersDefinitions.DottedNumbersSpecialsChar, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     // 半百  半ダース
-                    new Regex(NumbersDefinitions.NumbersWithHalfDozen, RegexFlags),
+                    new Regex(NumbersDefinitions.NumbersWithHalfDozen, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.JAPANESE)
                 },
                 {
                     // 半
-                    new Regex(NumbersDefinitions.HalfUnitRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.HalfUnitRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.JAPANESE)
                 },
                 {
                     // 一ダース  五十ダース
-                    new Regex(NumbersDefinitions.NumbersWithDozen, RegexFlags),
+                    new Regex(NumbersDefinitions.NumbersWithDozen, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.JAPANESE)
                 },
             };
@@ -47,17 +47,17 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
                     // 一百五十五, 负一亿三百二十二.
                     // Uses an allow list to avoid extracting "西九条" from "九"
                     regexes.Add(
-                        new Regex(NumbersDefinitions.NumbersWithAllowListRegex, RegexFlags),
+                        new Regex(NumbersDefinitions.NumbersWithAllowListRegex, RegexFlags, RegexTimeOut),
                         RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.JAPANESE));
 
                     // 123456,  －１２３４５６
                     regexes.Add(
-                        new Regex(NumbersDefinitions.NumbersSpecialsChars, RegexFlags),
+                        new Regex(NumbersDefinitions.NumbersSpecialsChars, RegexFlags, RegexTimeOut),
                         RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX));
 
                     // 15k,  16 G
                     regexes.Add(
-                        new Regex(NumbersDefinitions.NumbersSpecialsCharsWithSuffix, RegexFlags),
+                        new Regex(NumbersDefinitions.NumbersSpecialsCharsWithSuffix, RegexFlags, RegexTimeOut),
                         RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX));
                     break;
 
@@ -65,17 +65,17 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
                     // 一百五十五, 负一亿三百二十二, "西九条" from "九"
                     // Uses no allow lists and extracts all potential integers (useful in Units, for example).
                     regexes.Add(
-                        new Regex(NumbersDefinitions.NumbersAggressiveRegex, RegexFlags),
+                        new Regex(NumbersDefinitions.NumbersAggressiveRegex, RegexFlags, RegexTimeOut),
                         RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.JAPANESE));
 
                     // 123456,  －１２３４５６
                     regexes.Add(
-                        new Regex(NumbersDefinitions.NumbersSpecialsCharsAggressive, RegexFlags),
+                        new Regex(NumbersDefinitions.NumbersSpecialsCharsAggressive, RegexFlags, RegexTimeOut),
                         RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX));
 
                     // 15k,  16 G
                     regexes.Add(
-                        new Regex(NumbersDefinitions.NumbersSpecialsCharsWithSuffixAggressive, RegexFlags),
+                        new Regex(NumbersDefinitions.NumbersSpecialsCharsWithSuffixAggressive, RegexFlags, RegexTimeOut),
                         RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX));
                     break;
             }

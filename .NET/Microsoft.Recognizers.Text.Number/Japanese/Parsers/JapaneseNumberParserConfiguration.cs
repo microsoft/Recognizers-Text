@@ -57,17 +57,17 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
             this.HalfADozenRegex = null;
 
             // @TODO Change init to follow design in other languages
-            this.DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexFlags);
-            this.DozenRegex = new Regex(NumbersDefinitions.DozenRegex, RegexFlags);
-            this.PointRegex = new Regex(NumbersDefinitions.PointRegex, RegexFlags);
-            this.DigitNumRegex = new Regex(NumbersDefinitions.DigitNumRegex, RegexFlags);
-            this.DoubleAndRoundRegex = new Regex(NumbersDefinitions.DoubleAndRoundRegex, RegexFlags);
-            this.FracSplitRegex = new Regex(NumbersDefinitions.FracSplitRegex, RegexFlags);
-            this.NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexFlags);
-            this.SpeGetNumberRegex = new Regex(NumbersDefinitions.SpeGetNumberRegex, RegexFlags);
-            this.PercentageRegex = new Regex(NumbersDefinitions.PercentageRegex, RegexFlags);
-            this.PairRegex = new Regex(NumbersDefinitions.PairRegex, RegexFlags);
-            this.RoundNumberIntegerRegex = new Regex(NumbersDefinitions.RoundNumberIntegerRegex, RegexFlags);
+            this.DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexFlags, RegexTimeOut);
+            this.DozenRegex = new Regex(NumbersDefinitions.DozenRegex, RegexFlags, RegexTimeOut);
+            this.PointRegex = new Regex(NumbersDefinitions.PointRegex, RegexFlags, RegexTimeOut);
+            this.DigitNumRegex = new Regex(NumbersDefinitions.DigitNumRegex, RegexFlags, RegexTimeOut);
+            this.DoubleAndRoundRegex = new Regex(NumbersDefinitions.DoubleAndRoundRegex, RegexFlags, RegexTimeOut);
+            this.FracSplitRegex = new Regex(NumbersDefinitions.FracSplitRegex, RegexFlags, RegexTimeOut);
+            this.NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexFlags, RegexTimeOut);
+            this.SpeGetNumberRegex = new Regex(NumbersDefinitions.SpeGetNumberRegex, RegexFlags, RegexTimeOut);
+            this.PercentageRegex = new Regex(NumbersDefinitions.PercentageRegex, RegexFlags, RegexTimeOut);
+            this.PairRegex = new Regex(NumbersDefinitions.PairRegex, RegexFlags, RegexTimeOut);
+            this.RoundNumberIntegerRegex = new Regex(NumbersDefinitions.RoundNumberIntegerRegex, RegexFlags, RegexTimeOut);
             this.PercentageNumRegex = null;
         }
 

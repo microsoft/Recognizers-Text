@@ -20,24 +20,24 @@ namespace Microsoft.Recognizers.Text.Number.Turkish
         private OrdinalExtractor(BaseNumberOptionsConfiguration config)
             : base(config.Options)
         {
-            RelativeReferenceRegex = new Regex(NumbersDefinitions.RelativeOrdinalRegex, RegexFlags);
+            RelativeReferenceRegex = new Regex(NumbersDefinitions.RelativeOrdinalRegex, RegexFlags, RegexTimeOut);
 
             var regexes = new Dictionary<Regex, TypeTag>
             {
                 {
-                    new Regex(NumbersDefinitions.OrdinalSuffixRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.OrdinalSuffixRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.OrdinalNumericRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.OrdinalNumericRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.OrdinalTurkishRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.OrdinalTurkishRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.TURKISH)
                 },
                 {
-                    new Regex(NumbersDefinitions.RoundNumberOrdinalRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.RoundNumberOrdinalRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.TURKISH)
                 },
             };

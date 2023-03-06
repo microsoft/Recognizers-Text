@@ -11,16 +11,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
     public class TurkishHolidayExtractorConfiguration : BaseDateTimeOptionsConfiguration, IHolidayExtractorConfiguration
     {
         public static readonly Regex YearRegex =
-            new Regex(DateTimeDefinitions.YearRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.YearRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex H1 =
-            new Regex(DateTimeDefinitions.HolidayRegex1, RegexFlags);
+            new Regex(DateTimeDefinitions.HolidayRegex1, RegexFlags, RegexTimeOut);
 
         public static readonly Regex H2 =
-            new Regex(DateTimeDefinitions.HolidayRegex2, RegexFlags);
+            new Regex(DateTimeDefinitions.HolidayRegex2, RegexFlags, RegexTimeOut);
 
         public static readonly Regex H3 =
-            new Regex(DateTimeDefinitions.HolidayRegex3, RegexFlags);
+            new Regex(DateTimeDefinitions.HolidayRegex3, RegexFlags, RegexTimeOut);
 
         public static readonly Regex[] HolidayRegexList =
         {

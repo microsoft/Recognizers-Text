@@ -15,31 +15,31 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly Regex DoubleMultiplierRegex =
-            new Regex(DateTimeDefinitions.DoubleMultiplierRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.DoubleMultiplierRegex, RegexFlags, RegexTimeOut);
 
         private static readonly Regex DayTypeRegex =
-            new Regex(DateTimeDefinitions.DayTypeRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.DayTypeRegex, RegexFlags, RegexTimeOut);
 
         private static readonly Regex WeekTypeRegex =
-            new Regex(DateTimeDefinitions.WeekTypeRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.WeekTypeRegex, RegexFlags, RegexTimeOut);
 
         private static readonly Regex BiWeekTypeRegex =
-            new Regex(DateTimeDefinitions.BiWeekTypeRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.BiWeekTypeRegex, RegexFlags, RegexTimeOut);
 
         private static readonly Regex WeekendTypeRegex =
-            new Regex(DateTimeDefinitions.WeekendTypeRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.WeekendTypeRegex, RegexFlags, RegexTimeOut);
 
         private static readonly Regex MonthTypeRegex =
-            new Regex(DateTimeDefinitions.MonthTypeRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.MonthTypeRegex, RegexFlags, RegexTimeOut);
 
         private static readonly Regex QuarterTypeRegex =
-            new Regex(DateTimeDefinitions.QuarterTypeRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.QuarterTypeRegex, RegexFlags, RegexTimeOut);
 
         private static readonly Regex SemiAnnualTypeRegex =
-            new Regex(DateTimeDefinitions.SemiAnnualTypeRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.SemiAnnualTypeRegex, RegexFlags, RegexTimeOut);
 
         private static readonly Regex YearTypeRegex =
-            new Regex(DateTimeDefinitions.YearTypeRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.YearTypeRegex, RegexFlags, RegexTimeOut);
 
         // pass FutureTerms as List to ReplaceValueInTextWithFutTerm function
         private static readonly List<string> ThisTerms = (List<string>)DateTimeDefinitions.ThisTerms;

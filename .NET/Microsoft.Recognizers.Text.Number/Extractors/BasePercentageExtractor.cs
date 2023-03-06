@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
+using System.Reflection;
 using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.Number
@@ -24,6 +25,8 @@ namespace Microsoft.Recognizers.Text.Number
             this.Options = numberExtractor.Options;
             this.numberExtractor = numberExtractor;
         }
+
+        protected static TimeSpan RegexTimeOut => NumberRecognizer.GetTimeout(MethodBase.GetCurrentMethod().DeclaringType);
 
         protected string ExtractType { get; set; } = Constants.SYS_NUM_PERCENTAGE;
 
@@ -125,7 +128,7 @@ namespace Microsoft.Recognizers.Text.Number
                     regexOptions |= RegexOptions.IgnoreCase;
                 }
 
-                Regex regex = new Regex(regexString, regexOptions);
+                Regex regex = new Regex(regexString, regexOptions, RegexTimeOut);
 
                 regexes.Add(regex);
             }

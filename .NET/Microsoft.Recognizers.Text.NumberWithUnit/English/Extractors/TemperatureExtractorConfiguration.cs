@@ -21,7 +21,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
             NumbersWithUnitDefinitions.AmbiguousTemperatureUnitList.ToImmutableList();
 
         private static readonly Regex AmbiguousUnitMultiplierRegex =
-            new Regex(BaseUnits.AmbiguousUnitNumberMultiplierRegex, RegexFlags);
+            new Regex(BaseUnits.AmbiguousUnitNumberMultiplierRegex, RegexFlags, RegexTimeOut);
 
         public TemperatureExtractorConfiguration()
                : this(new CultureInfo(Culture.English))

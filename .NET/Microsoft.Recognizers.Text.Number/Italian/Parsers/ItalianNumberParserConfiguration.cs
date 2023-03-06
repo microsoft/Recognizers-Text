@@ -44,12 +44,12 @@ namespace Microsoft.Recognizers.Text.Number.Italian
             this.RelativeReferenceRelativeToMap = NumbersDefinitions.RelativeReferenceRelativeToMap.ToImmutableDictionary();
             this.RoundNumberMap = NumbersDefinitions.RoundNumberMap.ToImmutableDictionary();
 
-            this.HalfADozenRegex = new Regex(NumbersDefinitions.HalfADozenRegex, RegexFlags);
-            this.DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexFlags);
-            this.NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexFlags);
-            this.FractionPrepositionRegex = new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexFlags);
-            this.OneToNineOrdinalRegex = new Regex(NumbersDefinitions.OneToNineOrdinalRegex, RegexFlags);
-            this.RoundMultiplierRegex = new Regex(NumbersDefinitions.RoundMultiplierRegex, RegexFlags);
+            this.HalfADozenRegex = new Regex(NumbersDefinitions.HalfADozenRegex, RegexFlags, RegexTimeOut);
+            this.DigitalNumberRegex = new Regex(NumbersDefinitions.DigitalNumberRegex, RegexFlags, RegexTimeOut);
+            this.NegativeNumberSignRegex = new Regex(NumbersDefinitions.NegativeNumberSignRegex, RegexFlags, RegexTimeOut);
+            this.FractionPrepositionRegex = new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexFlags, RegexTimeOut);
+            this.OneToNineOrdinalRegex = new Regex(NumbersDefinitions.OneToNineOrdinalRegex, RegexFlags, RegexTimeOut);
+            this.RoundMultiplierRegex = new Regex(NumbersDefinitions.RoundMultiplierRegex, RegexFlags, RegexTimeOut);
         }
 
         public string NonDecimalSeparatorText { get; private set; }

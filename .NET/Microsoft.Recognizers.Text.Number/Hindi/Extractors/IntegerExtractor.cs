@@ -22,31 +22,31 @@ namespace Microsoft.Recognizers.Text.Number.Hindi
             var regexes = new Dictionary<Regex, TypeTag>
             {
                 {
-                    new Regex(NumbersDefinitions.NumbersWithPlaceHolder(placeholder), RegexFlags),
+                    new Regex(NumbersDefinitions.NumbersWithPlaceHolder(placeholder), RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.IndianNumberingSystemRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.IndianNumberingSystemRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.NumbersWithSuffix, RegexFlags),
+                    new Regex(NumbersDefinitions.NumbersWithSuffix, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.RoundNumberIntegerRegexWithLocks, RegexFlags),
+                    new Regex(NumbersDefinitions.RoundNumberIntegerRegexWithLocks, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.NumbersWithDozenSuffix, RegexFlags),
+                    new Regex(NumbersDefinitions.NumbersWithDozenSuffix, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.AllIntRegexWithLocks, RegexFlags),
+                    new Regex(NumbersDefinitions.AllIntRegexWithLocks, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.HINDI)
                 },
                 {
-                    new Regex(NumbersDefinitions.AllIntRegexWithDozenSuffixLocks, RegexFlags),
+                    new Regex(NumbersDefinitions.AllIntRegexWithDozenSuffixLocks, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.HINDI)
                 },
                 {
@@ -62,15 +62,15 @@ namespace Microsoft.Recognizers.Text.Number.Hindi
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.NegativeHinglishRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.NegativeHinglishRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.HINDI)
                 },
                 {
-                    new Regex(NumbersDefinitions.CompoundEnglishNumberRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.CompoundEnglishNumberRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.HINDI)
                 },
                 {
-                    new Regex(NumbersDefinitions.DecimalUnitsWithRoundNumberRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.DecimalUnitsWithRoundNumberRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.HINDI)
                 },
             };

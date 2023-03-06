@@ -22,31 +22,31 @@ namespace Microsoft.Recognizers.Text.Number.Turkish
             var regexes = new Dictionary<Regex, TypeTag>
             {
                 {
-                    new Regex(NumbersDefinitions.NumbersWithPlaceHolder(placeholder), RegexFlags),
+                    new Regex(NumbersDefinitions.NumbersWithPlaceHolder(placeholder), RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.NumbersWithSuffix, RegexFlags),
+                    new Regex(NumbersDefinitions.NumbersWithSuffix, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.RoundNumberIntegerRegexWithLocks, RegexFlags),
+                    new Regex(NumbersDefinitions.RoundNumberIntegerRegexWithLocks, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.NumbersWithDozenSuffix, RegexFlags),
+                    new Regex(NumbersDefinitions.NumbersWithDozenSuffix, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.AllIntRegexWithLocks, RegexFlags),
+                    new Regex(NumbersDefinitions.AllIntRegexWithLocks, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.TURKISH)
                 },
                 {
-                    new Regex(NumbersDefinitions.NegativeAllIntRegexWithLocks, RegexFlags),
+                    new Regex(NumbersDefinitions.NegativeAllIntRegexWithLocks, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.TURKISH)
                 },
                 {
-                    new Regex(NumbersDefinitions.AllIntRegexWithDozenSuffixLocks, RegexFlags),
+                    new Regex(NumbersDefinitions.AllIntRegexWithDozenSuffixLocks, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.TURKISH)
                 },
                 {

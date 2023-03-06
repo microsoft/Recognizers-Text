@@ -25,7 +25,7 @@ namespace Microsoft.Recognizers.Text.Number.Japanese
             {
                 {
                     // だい一百五十四
-                    new Regex(NumbersDefinitions.AllOrdinalRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.AllOrdinalRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.JAPANESE)
                 },
 

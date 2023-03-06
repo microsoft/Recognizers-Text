@@ -14,25 +14,25 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public static readonly string ExtractorName = Constants.SYS_DATETIME_SET;
 
         public static readonly Regex PeriodicRegex =
-            new Regex(DateTimeDefinitions.PeriodicRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.PeriodicRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex EachUnitRegex =
-            new Regex(DateTimeDefinitions.EachUnitRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.EachUnitRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex EachPrefixRegex =
-            new Regex(DateTimeDefinitions.EachPrefixRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.EachPrefixRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex EachDayRegex =
-            new Regex(DateTimeDefinitions.EachDayRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.EachDayRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex BeforeEachDayRegex =
-            new Regex(DateTimeDefinitions.BeforeEachDayRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.BeforeEachDayRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex SetWeekDayRegex =
-            new Regex(DateTimeDefinitions.SetWeekDayRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.SetWeekDayRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex SetEachRegex =
-            new Regex(DateTimeDefinitions.SetEachRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.SetEachRegex, RegexFlags, RegexTimeOut);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 

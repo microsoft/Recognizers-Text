@@ -30,13 +30,13 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
             NowRegex = SpanishDateTimeExtractorConfiguration.NowRegex;
 
-            AMTimeRegex = new Regex(DateTimeDefinitions.AmTimeRegex, RegexFlags);
-            PMTimeRegex = new Regex(DateTimeDefinitions.PmTimeRegex, RegexFlags);
-            NightTimeRegex = new Regex(DateTimeDefinitions.NightTimeRegex, RegexFlags);
-            LastNightTimeRegex = new Regex(DateTimeDefinitions.LastNightTimeRegex, RegexFlags);
-            NowTimeRegex = new Regex(DateTimeDefinitions.NowTimeRegex, RegexFlags);
-            RecentlyTimeRegex = new Regex(DateTimeDefinitions.RecentlyTimeRegex, RegexFlags);
-            AsapTimeRegex = new Regex(DateTimeDefinitions.AsapTimeRegex, RegexFlags);
+            AMTimeRegex = new Regex(DateTimeDefinitions.AmTimeRegex, RegexFlags, RegexTimeOut);
+            PMTimeRegex = new Regex(DateTimeDefinitions.PmTimeRegex, RegexFlags, RegexTimeOut);
+            NightTimeRegex = new Regex(DateTimeDefinitions.NightTimeRegex, RegexFlags, RegexTimeOut);
+            LastNightTimeRegex = new Regex(DateTimeDefinitions.LastNightTimeRegex, RegexFlags, RegexTimeOut);
+            NowTimeRegex = new Regex(DateTimeDefinitions.NowTimeRegex, RegexFlags, RegexTimeOut);
+            RecentlyTimeRegex = new Regex(DateTimeDefinitions.RecentlyTimeRegex, RegexFlags, RegexTimeOut);
+            AsapTimeRegex = new Regex(DateTimeDefinitions.AsapTimeRegex, RegexFlags, RegexTimeOut);
 
             SimpleTimeOfTodayAfterRegex = SpanishDateTimeExtractorConfiguration.SimpleTimeOfTodayAfterRegex;
             SimpleTimeOfTodayBeforeRegex = SpanishDateTimeExtractorConfiguration.SimpleTimeOfTodayBeforeRegex;

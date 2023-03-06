@@ -22,31 +22,31 @@ namespace Microsoft.Recognizers.Text.Number.Dutch
             var regexes = new Dictionary<Regex, TypeTag>
             {
                 {
-                    new Regex(NumbersDefinitions.DoubleDecimalPointRegex(config.Placeholder), RegexFlags),
+                    new Regex(NumbersDefinitions.DoubleDecimalPointRegex(config.Placeholder), RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.DoubleWithoutIntegralRegex(config.Placeholder), RegexFlags),
+                    new Regex(NumbersDefinitions.DoubleWithoutIntegralRegex(config.Placeholder), RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.DoubleWithMultiplierRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.DoubleWithMultiplierRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.DoubleWithRoundNumber, RegexFlags),
+                    new Regex(NumbersDefinitions.DoubleWithRoundNumber, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.DoubleAllFloatRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.DoubleAllFloatRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.DUTCH)
                 },
                 {
-                    new Regex(NumbersDefinitions.DoubleExponentialNotationRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.DoubleExponentialNotationRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.POWER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.DoubleCaretExponentialNotationRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.DoubleCaretExponentialNotationRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.DOUBLE_PREFIX, Constants.POWER_SUFFIX)
                 },
                 {

@@ -29,11 +29,11 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
             var regexes = new Dictionary<Regex, TypeTag>
             {
                 {
-                    new Regex(NumbersDefinitions.OrdinalSuffixRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.OrdinalSuffixRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.OrdinalNounRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.OrdinalNounRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.ORDINAL_PREFIX, Constants.SPANISH)
                 },
             };

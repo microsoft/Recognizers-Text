@@ -12,21 +12,21 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
     public class JapaneseDateTimeParserConfiguration : BaseDateTimeOptionsConfiguration, ICJKDateTimeParserConfiguration
     {
-        public static readonly Regex LunarRegex = new Regex(DateTimeDefinitions.LunarRegex, RegexFlags);
+        public static readonly Regex LunarRegex = new Regex(DateTimeDefinitions.LunarRegex, RegexFlags, RegexTimeOut);
 
-        public static readonly Regex LunarHolidayRegex = new Regex(DateTimeDefinitions.LunarHolidayRegex, RegexFlags);
+        public static readonly Regex LunarHolidayRegex = new Regex(DateTimeDefinitions.LunarHolidayRegex, RegexFlags, RegexTimeOut);
 
-        public static readonly Regex SimpleAmRegex = new Regex(DateTimeDefinitions.DateTimeSimpleAmRegex, RegexFlags);
+        public static readonly Regex SimpleAmRegex = new Regex(DateTimeDefinitions.DateTimeSimpleAmRegex, RegexFlags, RegexTimeOut);
 
-        public static readonly Regex SimplePmRegex = new Regex(DateTimeDefinitions.DateTimeSimplePmRegex, RegexFlags);
+        public static readonly Regex SimplePmRegex = new Regex(DateTimeDefinitions.DateTimeSimplePmRegex, RegexFlags, RegexTimeOut);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        private static readonly Regex NowTimeRegex = new Regex(DateTimeDefinitions.NowTimeRegex, RegexFlags);
+        private static readonly Regex NowTimeRegex = new Regex(DateTimeDefinitions.NowTimeRegex, RegexFlags, RegexTimeOut);
 
-        private static readonly Regex RecentlyTimeRegex = new Regex(DateTimeDefinitions.RecentlyTimeRegex, RegexFlags);
+        private static readonly Regex RecentlyTimeRegex = new Regex(DateTimeDefinitions.RecentlyTimeRegex, RegexFlags, RegexTimeOut);
 
-        private static readonly Regex AsapTimeRegex = new Regex(DateTimeDefinitions.AsapTimeRegex, RegexFlags);
+        private static readonly Regex AsapTimeRegex = new Regex(DateTimeDefinitions.AsapTimeRegex, RegexFlags, RegexTimeOut);
 
         public JapaneseDateTimeParserConfiguration(ICJKCommonDateTimeParserConfiguration config)
             : base(config)

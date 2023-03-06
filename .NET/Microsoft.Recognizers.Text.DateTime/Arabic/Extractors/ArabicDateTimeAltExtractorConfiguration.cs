@@ -10,22 +10,22 @@ namespace Microsoft.Recognizers.Text.DateTime.Arabic
     public class ArabicDateTimeAltExtractorConfiguration : BaseDateTimeOptionsConfiguration, IDateTimeAltExtractorConfiguration
     {
         public static readonly Regex ThisPrefixRegex =
-            new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex PreviousPrefixRegex =
-            new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex NextPrefixRegex =
-            new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex AmRegex =
-            new Regex(DateTimeDefinitions.AmRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.AmRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex PmRegex =
-            new Regex(DateTimeDefinitions.PmRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.PmRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex RangePrefixRegex =
-            new Regex(DateTimeDefinitions.RangePrefixRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.RangePrefixRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex[] RelativePrefixList =
         {
@@ -40,10 +40,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Arabic
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture | RegexOptions.RightToLeft;
 
         private static readonly Regex OrRegex =
-            new Regex(DateTimeDefinitions.OrRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.OrRegex, RegexFlags, RegexTimeOut);
 
         private static readonly Regex DayRegex =
-            new Regex(DateTimeDefinitions.DayRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.DayRegex, RegexFlags, RegexTimeOut);
 
         public ArabicDateTimeAltExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)

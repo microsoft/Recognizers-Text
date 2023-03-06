@@ -28,8 +28,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             HolidayTimeParser = config.HolidayTimeParser;
 
             NowRegex = PortugueseDateTimeExtractorConfiguration.NowRegex;
-            AMTimeRegex = new Regex(DateTimeDefinitions.AmTimeRegex, RegexFlags);
-            PMTimeRegex = new Regex(DateTimeDefinitions.PmTimeRegex, RegexFlags);
+            AMTimeRegex = new Regex(DateTimeDefinitions.AmTimeRegex, RegexFlags, RegexTimeOut);
+            PMTimeRegex = new Regex(DateTimeDefinitions.PmTimeRegex, RegexFlags, RegexTimeOut);
             SimpleTimeOfTodayAfterRegex = PortugueseDateTimeExtractorConfiguration.SimpleTimeOfTodayAfterRegex;
             SimpleTimeOfTodayBeforeRegex = PortugueseDateTimeExtractorConfiguration.SimpleTimeOfTodayBeforeRegex;
             SpecificTimeOfDayRegex = PortugueseDateTimeExtractorConfiguration.SpecificTimeOfDayRegex;

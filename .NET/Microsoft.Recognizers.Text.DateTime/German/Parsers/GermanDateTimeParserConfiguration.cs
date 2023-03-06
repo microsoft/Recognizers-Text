@@ -30,8 +30,8 @@ namespace Microsoft.Recognizers.Text.DateTime.German
 
             NowRegex = GermanDateTimeExtractorConfiguration.NowRegex;
 
-            AMTimeRegex = new Regex(DateTimeDefinitions.AMTimeRegex, RegexFlags);
-            PMTimeRegex = new Regex(DateTimeDefinitions.PMTimeRegex, RegexFlags);
+            AMTimeRegex = new Regex(DateTimeDefinitions.AMTimeRegex, RegexFlags, RegexTimeOut);
+            PMTimeRegex = new Regex(DateTimeDefinitions.PMTimeRegex, RegexFlags, RegexTimeOut);
 
             SimpleTimeOfTodayAfterRegex = GermanDateTimeExtractorConfiguration.SimpleTimeOfTodayAfterRegex;
             SimpleTimeOfTodayBeforeRegex = GermanDateTimeExtractorConfiguration.SimpleTimeOfTodayBeforeRegex;
