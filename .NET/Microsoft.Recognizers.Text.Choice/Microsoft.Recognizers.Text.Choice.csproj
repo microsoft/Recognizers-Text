@@ -19,6 +19,14 @@
       -->
       <DocumentationFile>$(OutputPath)$(AssemblyName).xml</DocumentationFile>
       <NoWarn>$(NoWarn),1573,1591,1712</NoWarn>
+      <Authors>Microsoft</Authors>
+      <PackageTags>nlp, entity-extraction, parser-library, recognizer, boolean, alternatives, choices, netstandard2.0</PackageTags>
+      <Description>Microsoft.Recognizers.Text.Choice provides recognition of Boolean (yes/no) answers expressed in English, Portuguese, Spanish, Japanese, Chinese,
+       Dutch, French, German, Italian, Swedish, Bulgarian, Turkish, Hindi, and Arabic. As well as base classes to support lists of alternative choices.</Description>
+      <PackageLicenseExpression>MIT</PackageLicenseExpression>
+      <PackageProjectUrl>https://github.com/Microsoft/Recognizers-Text</PackageProjectUrl>
+      <icon>images\icon.png</icon>
+      <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
