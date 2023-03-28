@@ -30,6 +30,8 @@ namespace Microsoft.Recognizers.Text.Number.Arabic
             }
 
             this.CultureInfo = new CultureInfo(culture);
+            this.CultureInfo.NumberFormat.NegativeSign = "-";
+            this.CultureInfo.NumberFormat.NumberDecimalSeparator = ".";
 
             this.IsCompoundNumberLanguage = NumbersDefinitions.CompoundNumberLanguage;
             this.IsMultiDecimalSeparatorCulture = NumbersDefinitions.MultiDecimalSeparatorCulture;
