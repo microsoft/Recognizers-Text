@@ -55,7 +55,7 @@ set configuration=Release
 
 ECHO.
 ECHO # Restoring NuGet dependencies
-CALL !MSBuild! restore Microsoft.Recognizers.Text.sln /p:Configuration=%configuration%
+CALL !MSBuild! Microsoft.Recognizers.Text.sln /t:Restore /p:Configuration=%configuration%
 
 set configuration=Release
 ECHO.
