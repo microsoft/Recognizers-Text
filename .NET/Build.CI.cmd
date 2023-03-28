@@ -51,11 +51,9 @@ IF %ERRORLEVEL% NEQ 0 (
 	EXIT /b %ERRORLEVEL%
 )
 
-set configuration=Release
-
 ECHO.
 ECHO # Restoring NuGet dependencies
-CALL !MSBuild! Microsoft.Recognizers.Text.sln /t:Restore /p:Configuration=%configuration%
+CALL !MSBuild! Microsoft.Recognizers.Text.sln restore
 
 set configuration=Release
 ECHO.
