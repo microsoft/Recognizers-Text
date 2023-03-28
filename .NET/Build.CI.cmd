@@ -53,7 +53,9 @@ IF %ERRORLEVEL% NEQ 0 (
 
 ECHO.
 ECHO # Restoring NuGet dependencies
-CALL !MSBuild! restore Microsoft.Recognizers.Text.sln
+CALL !MSBuild! restore Microsoft.Recognizers.Definitions.Common\Microsoft.Recognizers.Definitions.Common.csproj
+CALL !MSBuild! restore Microsoft.Recognizers.Definitions\Microsoft.Recognizers.Definitions.csproj
+CALL !MSBuild! restore Microsoft.Recognizers.Text\Microsoft.Recognizers.Text.csproj
 
 set configuration=Release
 ECHO.
