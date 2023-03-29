@@ -5,7 +5,7 @@ image: Visual Studio 2022
 environment:
   nodejs_version: "14.17.6"
   PYTHON: "C:\\Python36-x64"
-  JAVA_HOME: "C:\\Program Files\\Java\\jdk11"
+  JAVA_HOME: ""C:\\Program Files (x86)\\Java\\jdk1.8.0"
 platform: Any CPU
 configuration: Release
 
@@ -39,7 +39,11 @@ build_script:
     
     CALL node -e "console.log(process.versions.v8);"
     
-    rm NuGet.Config    
+    rm NuGet.Config
+
+    cd ..\java\
+    
+    build.ci.cmd    
 
     cd .NET\
     
@@ -53,9 +57,6 @@ build_script:
     
     build.ci.cmd
     
-    cd ..\java\
-    
-    build.ci.cmd
     
 test:
           
