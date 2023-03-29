@@ -201,18 +201,18 @@ class Timex:
 
     def assign_date_duration(self, source):
         if source['date_unit'] == 'Y':
-            self.years = Decimal(source['amount'])
+            self.years = int(Decimal(source['amount']))
         elif source['date_unit'] == 'M':
-            self.months = Decimal(source['amount'])
+            self.months = int(Decimal(source['amount']))
         elif source['date_unit'] == 'W':
-            self.weeks = Decimal(source['amount'])
+            self.weeks = int(Decimal(source['amount']))
         elif source['date_unit'] == 'D':
-            self.days = Decimal(source['amount'])
+            self.days = int(Decimal(source['amount']))
 
     def assign_time_duration(self, source):
         if source['time_unit'] == 'H':
-            self.hours = Decimal(source['amount'])
+            self.hours = int(Decimal(source['amount']))
         elif source['time_unit'] == 'M':
-            self.minutes = Decimal(source['amount'])
+            self.minutes = int(Decimal(source['amount']))
         elif source['time_unit'] == 'S':
-            self.seconds = Decimal(source['amount'])
+            self.seconds = int(Decimal(source['amount']))
