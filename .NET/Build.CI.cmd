@@ -53,6 +53,7 @@ IF %ERRORLEVEL% NEQ 0 (
 
 ECHO.
 ECHO # Restoring NuGet dependencies
+CALL "buildtools\nuget"
 CALL "buildtools\nuget" restore
 
 set configuration=Release
