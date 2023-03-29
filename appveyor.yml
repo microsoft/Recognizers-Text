@@ -41,17 +41,6 @@ build_script:
     
     rm NuGet.Config
 
-    #cd java\
-    
-    #build.ci.cmd   
-    
-    #cd .. 
-
-    #cd .NET\
-    
-    #build.ci.cmd
-     
-    #cd ..\Python\
     cd Python
 
     build.ci.cmd
