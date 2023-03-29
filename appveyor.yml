@@ -64,7 +64,11 @@ test_script:
     cd ..\.NET\
     
     tests.ci.cmd
-   
+
+    cd ..\JavaScript\
+    
+    tests.ci.cmd
+    
     cd ..\java\
     
     tests.ci.cmd
