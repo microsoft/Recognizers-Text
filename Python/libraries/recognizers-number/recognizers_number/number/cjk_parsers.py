@@ -348,12 +348,12 @@ class CJKNumberParser(BaseNumberParser):
 
     def ord_parse(self, source: ExtractResult) -> ParseResult:
         result = ParseResult(source)
-        source_text = source.text[1:]
+        # source_text = source.text[1:]
 
-        if regex.search(self.config.digit_num_regex, source_text) is not None:
-            result.value = self.get_digit_value(source_text, 1)
+        if regex.search(self.config.digit_num_regex, source.text) is not None:
+            result.value = self.get_digit_value(source.text, 1)
         else:
-            result.value = self.get_int_value(source_text)
+            result.value = self.get_int_value(source.text)
 
         result.resolution_str = self.__format(result.value)
         return result

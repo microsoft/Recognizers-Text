@@ -4,9 +4,7 @@
 from setuptools import setup, find_packages
 
 NAME = "recognizers-text-genesys"
-
-VERSION = '1.0.41'
-
+VERSION = "1.0.44"
 REQUIRES = ['emoji==1.1.0', 'multipledispatch']
 
 setup(
