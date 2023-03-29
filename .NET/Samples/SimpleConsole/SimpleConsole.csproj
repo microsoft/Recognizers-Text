@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFrameworks>netcoreapp3.1;net6.0</TargetFrameworks>
+    <TargetFramework>net6.0</TargetFramework>
     <LangVersion>9</LangVersion>
     <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
     <CodeAnalysisRuleSet>../../Recognizers-Text.ruleset</CodeAnalysisRuleSet>

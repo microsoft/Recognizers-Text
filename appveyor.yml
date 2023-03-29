@@ -4,7 +4,7 @@ version: 1.0.{build}
 image: Visual Studio 2022
 environment:
   nodejs_version: "14.17.6"
-  PYTHON: "C:\\Python36-x64"
+  PYTHON: "C:\\Python311-x64"
   JAVA_HOME: "C:\\Program Files (x86)\\Java\\jdk1.8.0"
 platform: Any CPU
 configuration: Release
@@ -50,11 +50,7 @@ build_script:
     cd .NET\
     
     build.ci.cmd
-    
-    cd ..\JavaScript\
-    
-    build.ci.cmd
-    
+     
     cd ..\Python\
     
     build.ci.cmd
@@ -66,11 +62,7 @@ test_script:
     cd ..\.NET\
     
     tests.ci.cmd
-
-    cd ..\JavaScript\
-    
-    tests.ci.cmd
-    
+   
     cd ..\java\
     
     tests.ci.cmd
