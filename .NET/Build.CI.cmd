@@ -53,8 +53,9 @@ IF %ERRORLEVEL% NEQ 0 (
 
 ECHO.
 ECHO # Restoring NuGet dependencies
-CALL "buildtools\nuget"
-CALL "buildtools\nuget" restore
+REM CALL !MSBuild! Microsoft.Recognizers.Definitions.Common\Microsoft.Recognizers.Definitions.Common.csproj /t:Restore
+REM CALL !MSBuild! Microsoft.Recognizers.Definitions\Microsoft.Recognizers.Definitions.csproj /t:Restore
+CALL !MSBuild! Microsoft.Recognizers.Text.sln /t:Restore
 
 set configuration=Release
 ECHO.
