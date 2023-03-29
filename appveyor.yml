@@ -41,9 +41,11 @@ build_script:
     
     rm NuGet.Config
 
-    cd ..\java\
+    cd java\
     
-    build.ci.cmd    
+    build.ci.cmd   
+    
+    cd .. 
 
     cd .NET\
     
