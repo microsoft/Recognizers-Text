@@ -4,7 +4,7 @@ version: 1.0.{build}
 image: Visual Studio 2022
 environment:
   nodejs_version: "14.17.6"
-  PYTHON: "C:\\Python311"
+  PYTHON: "C:\\Python311-x64"
   JAVA_HOME: "C:\\Program Files (x86)\\Java\\jdk1.8.0"
 platform: Any CPU
 configuration: Release
@@ -41,8 +41,20 @@ build_script:
     
     rm NuGet.Config
 
-    cd Python
-
+    cd .NET\
+    
+    build.ci.cmd
+    
+    cd ..\JavaScript\
+    
+    build.ci.cmd
+    
+    cd ..\Python\
+    
+    build.ci.cmd
+    
+    cd ..\java\
+    
     build.ci.cmd
     
     

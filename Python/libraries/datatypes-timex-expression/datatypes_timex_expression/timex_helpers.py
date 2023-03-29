@@ -164,9 +164,9 @@ class TimexHelpers:
     @staticmethod
     def date_from_timex(timex):
         return date(
-            timex.year if timex.year is not None else 2001,
-            timex.month if timex.month is not None else 1,
-            timex.day_of_month if timex.day_of_month is not None else 1
+            int(timex.year) if timex.year is not None else 2001,
+            int(timex.month) if timex.month is not None else 1,
+            int(timex.day_of_month) if timex.day_of_month is not None else 1
         )
 
     @staticmethod
