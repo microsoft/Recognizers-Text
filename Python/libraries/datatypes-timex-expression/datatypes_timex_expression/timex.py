@@ -211,8 +211,8 @@ class Timex:
 
     def assign_time_duration(self, source):
         if source['time_unit'] == 'H':
-            self.hours = int(Decimal(source['amount']))
+            self.hours = Decimal(source['amount'])
         elif source['time_unit'] == 'M':
-            self.minutes = int(Decimal(source['amount']))
+            self.minutes = Decimal(source['amount'])
         elif source['time_unit'] == 'S':
-            self.seconds = int(Decimal(source['amount']))
+            self.seconds = Decimal(source['amount'])

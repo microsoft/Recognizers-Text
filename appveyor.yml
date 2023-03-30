@@ -56,8 +56,7 @@ build_script:
     cd ..\java\
     
     build.ci.cmd
-    
-    
+        
 test:
           
 test_script:
