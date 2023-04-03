@@ -22,6 +22,7 @@ namespace Microsoft.Recognizers.Text.Number.Swedish
             this.Config = config;
             this.LanguageMarker = NumbersDefinitions.LangMarker;
             this.CultureInfo = new CultureInfo(config.Culture);
+            this.CultureInfo.NumberFormat.NegativeSign = "-";
 
             this.IsCompoundNumberLanguage = NumbersDefinitions.CompoundNumberLanguage;
             this.IsMultiDecimalSeparatorCulture = NumbersDefinitions.MultiDecimalSeparatorCulture;
