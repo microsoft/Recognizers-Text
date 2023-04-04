@@ -18,9 +18,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
     public class KoreanDatePeriodParserConfiguration : BaseDateTimeOptionsConfiguration, ICJKDatePeriodParserConfiguration
     {
 
-        public static readonly Regex WoMLastRegex = new Regex(DateTimeDefinitions.WoMLastRegex, RegexFlags);
-        public static readonly Regex WoMPreviousRegex = new Regex(DateTimeDefinitions.WoMPreviousRegex, RegexFlags);
-        public static readonly Regex WoMNextRegex = new Regex(DateTimeDefinitions.WoMNextRegex, RegexFlags);
+        public static readonly Regex WoMLastRegex = new Regex(DateTimeDefinitions.WoMLastRegex, RegexFlags, RegexTimeOut);
+        public static readonly Regex WoMPreviousRegex = new Regex(DateTimeDefinitions.WoMPreviousRegex, RegexFlags, RegexTimeOut);
+        public static readonly Regex WoMNextRegex = new Regex(DateTimeDefinitions.WoMNextRegex, RegexFlags, RegexTimeOut);
 
         public static readonly ImmutableDictionary<string, int> MonthOfYear = DateTimeDefinitions.ParserConfigurationMonthOfYear.ToImmutableDictionary();
 
@@ -65,6 +65,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
             FutureRegex = KoreanDatePeriodExtractorConfiguration.FutureRegex;
             WeekWithWeekDayRangeRegex = KoreanDatePeriodExtractorConfiguration.WeekWithWeekDayRangeRegex;
             UnitRegex = KoreanDatePeriodExtractorConfiguration.UnitRegex;
+            DurationUnitRegex = KoreanDatePeriodExtractorConfiguration.DurationUnitRegex;
             WeekOfMonthRegex = KoreanDatePeriodExtractorConfiguration.WeekOfMonthRegex;
             WeekOfYearRegex = KoreanDatePeriodExtractorConfiguration.WeekOfYearRegex;
             WeekOfDateRegex = KoreanDatePeriodExtractorConfiguration.WeekOfDateRegex;
@@ -173,6 +174,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
 
         public Regex UnitRegex { get; }
 
+        public Regex DurationUnitRegex { get; }
+
         public Regex WeekOfMonthRegex { get; }
 
         public Regex WeekOfYearRegex { get; }
@@ -246,6 +249,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
         {
             var trimmedText = text.Trim();
             return DateTimeDefinitions.ThisYearTerms.Any(o => trimmedText.Equals(o, StringComparison.Ordinal));
+        }
+
+        public bool IsYearToDate(string text)
+        {
+            var trimmedText = text.Trim();
+            return DateTimeDefinitions.YearToDateTerms.Any(o => trimmedText.Equals(o, StringComparison.Ordinal));
         }
 
         public bool IsLastYear(string text)

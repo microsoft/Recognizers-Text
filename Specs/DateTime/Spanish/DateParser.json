@@ -1677,5 +1677,51 @@
         "Length": 8
       }
     ]
+  },
+  {
+    "Input": "envíame un recibo por la compra hecha el 17 del 11",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "17 del 11",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-11-17",
+          "FutureResolution": {
+            "date": "2016-11-17"
+          },
+          "PastResolution": {
+            "date": "2015-11-17"
+          }
+        },
+        "Start": 41,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "reserva un hotel para el 21 del 3 en el marriott",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "21 del 3",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-03-21",
+          "FutureResolution": {
+            "date": "2017-03-21"
+          },
+          "PastResolution": {
+            "date": "2016-03-21"
+          }
+        },
+        "Start": 25,
+        "Length": 8
+      }
+    ]
   }
 ]

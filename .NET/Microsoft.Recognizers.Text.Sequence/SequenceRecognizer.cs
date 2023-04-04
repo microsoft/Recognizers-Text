@@ -21,23 +21,23 @@ namespace Microsoft.Recognizers.Text.Sequence
 {
     public class SequenceRecognizer : Recognizer<SequenceOptions>
     {
-        public SequenceRecognizer(string targetCulture, SequenceOptions options = SequenceOptions.None, bool lazyInitialization = false)
-            : base(targetCulture, options, lazyInitialization)
+        public SequenceRecognizer(string targetCulture, SequenceOptions options = SequenceOptions.None, bool lazyInitialization = false, int timeoutInSeconds = 0)
+            : base(targetCulture, options, lazyInitialization, timeoutInSeconds)
         {
         }
 
-        public SequenceRecognizer(string targetCulture, int options, bool lazyInitialization = false)
-            : this(targetCulture, GetOptions(options), lazyInitialization)
+        public SequenceRecognizer(string targetCulture, int options, bool lazyInitialization = false, int timeoutInSeconds = 0)
+            : this(targetCulture, GetOptions(options), lazyInitialization, timeoutInSeconds)
         {
         }
 
-        public SequenceRecognizer(SequenceOptions options = SequenceOptions.None, bool lazyInitialization = true)
-            : base(null, options, lazyInitialization)
+        public SequenceRecognizer(SequenceOptions options = SequenceOptions.None, bool lazyInitialization = true, int timeoutInSeconds = 0)
+            : base(null, options, lazyInitialization, timeoutInSeconds)
         {
         }
 
-        public SequenceRecognizer(int options, bool lazyInitialization = true)
-            : this(null, GetOptions(options), lazyInitialization)
+        public SequenceRecognizer(int options, bool lazyInitialization = true, int timeoutInSeconds = 0)
+            : this(null, GetOptions(options), lazyInitialization, timeoutInSeconds)
         {
         }
 
@@ -334,6 +334,21 @@ namespace Microsoft.Recognizers.Text.Sequence
                 Culture.English,
                 (options) => new GUIDModel(new GUIDParser(), new GUIDExtractor()));
 
+        }
+
+        protected override List<Type> GetRelatedTypes()
+        {
+            return new List<Type>()
+            {
+                typeof(IpConfiguration),
+                typeof(PhoneNumberConfiguration),
+                typeof(QuotedTextConfiguration),
+                typeof(URLConfiguration),
+                typeof(BaseEmailExtractor),
+                typeof(BaseGUIDExtractor),
+                typeof(BaseURLExtractor),
+                typeof(BaseSequenceParser),
+            };
         }
 
         private static List<ModelResult> RecognizeByModel(Func<SequenceRecognizer, IModel> getModelFunc, string query, SequenceOptions options)

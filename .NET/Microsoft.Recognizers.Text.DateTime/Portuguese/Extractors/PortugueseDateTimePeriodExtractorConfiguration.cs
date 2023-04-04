@@ -13,63 +13,63 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
     public class PortugueseDateTimePeriodExtractorConfiguration : BaseDateTimeOptionsConfiguration, IDateTimePeriodExtractorConfiguration
     {
         public static readonly Regex NumberCombinedWithUnit =
-            new Regex(DateTimeDefinitions.DateTimePeriodNumberCombinedWithUnit, RegexFlags);
+            new Regex(DateTimeDefinitions.DateTimePeriodNumberCombinedWithUnit, RegexFlags, RegexTimeOut);
 
         public static readonly Regex WeekDayRegex =
-            new Regex(DateTimeDefinitions.WeekDayRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.WeekDayRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex RestOfDateTimeRegex =
-            new Regex(DateTimeDefinitions.RestOfDateTimeRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.RestOfDateTimeRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex HyphenDateRegex =
-            new Regex(BaseDateTime.HyphenDateRegex, RegexFlags);
+            new Regex(BaseDateTime.HyphenDateRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex PeriodTimeOfDayWithDateRegex =
-            new Regex(DateTimeDefinitions.PeriodTimeOfDayWithDateRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.PeriodTimeOfDayWithDateRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex RelativeTimeUnitRegex =
-            new Regex(DateTimeDefinitions.RelativeTimeUnitRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.RelativeTimeUnitRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex GeneralEndingRegex =
-            new Regex(DateTimeDefinitions.GeneralEndingRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.GeneralEndingRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex MiddlePauseRegex =
-            new Regex(DateTimeDefinitions.MiddlePauseRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.MiddlePauseRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex AmDescRegex =
-            new Regex(DateTimeDefinitions.AmDescRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.AmDescRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex PmDescRegex =
-            new Regex(DateTimeDefinitions.PmDescRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.PmDescRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex WithinNextPrefixRegex =
-            new Regex(DateTimeDefinitions.WithinNextPrefixRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.WithinNextPrefixRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex DateUnitRegex =
-            new Regex(DateTimeDefinitions.DateUnitRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.DateUnitRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex PrefixDayRegex =
             new Regex(DateTimeDefinitions.PrefixDayRegex, RegexFlags | RegexOptions.RightToLeft);
 
         public static readonly Regex SuffixRegex =
-            new Regex(DateTimeDefinitions.SuffixRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.SuffixRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex BeforeRegex =
-            new Regex(DateTimeDefinitions.BeforeRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.BeforeRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex AfterRegex =
-            new Regex(DateTimeDefinitions.AfterRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.AfterRegex, RegexFlags, RegexTimeOut);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly Regex FromRegex =
-            new Regex(DateTimeDefinitions.FromRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.FromRegex, RegexFlags, RegexTimeOut);
 
         private static readonly Regex RangeConnectorRegex =
-            new Regex(DateTimeDefinitions.RangeConnectorRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.RangeConnectorRegex, RegexFlags, RegexTimeOut);
 
         private static readonly Regex BetweenRegex =
-            new Regex(DateTimeDefinitions.BetweenRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.BetweenRegex, RegexFlags, RegexTimeOut);
 
         public PortugueseDateTimePeriodExtractorConfiguration(IDateTimeOptionsConfiguration config)
             : base(config)
@@ -92,6 +92,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
             DurationExtractor = new BaseDurationExtractor(new PortugueseDurationExtractorConfiguration(this));
             TimePeriodExtractor = new BaseTimePeriodExtractor(new PortugueseTimePeriodExtractorConfiguration(this));
             TimeZoneExtractor = new BaseTimeZoneExtractor(new PortugueseTimeZoneExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new PortugueseHolidayExtractorConfiguration(this));
+
         }
 
         public string TokenBeforeDate { get; }
@@ -109,6 +111,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         public IDateTimeExtractor TimePeriodExtractor { get; }
 
         public IDateTimeExtractor TimeZoneExtractor { get; }
+
+        public IDateTimeExtractor HolidayExtractor { get; }
 
         public IEnumerable<Regex> SimpleCasesRegex => new[]
         {
@@ -165,6 +169,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Portuguese
         Regex IDateTimePeriodExtractorConfiguration.BeforeRegex => BeforeRegex;
 
         Regex IDateTimePeriodExtractorConfiguration.AfterRegex => AfterRegex;
+
+        Regex IDateTimePeriodExtractorConfiguration.TasksmodeMealTimeofDayRegex => null;
 
         public bool GetFromTokenIndex(string text, out int index)
         {

@@ -48,11 +48,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Swedish
             RelativeWeekDayRegex = SwedishDateExtractorConfiguration.RelativeWeekDayRegex;
             BeforeAfterRegex = SwedishDateExtractorConfiguration.BeforeAfterRegex;
 
-            RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexFlags);
-            NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
-            PreviousPrefixRegex = new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
-            UpcomingPrefixRegex = new Regex(DateTimeDefinitions.UpcomingPrefixRegex, RegexFlags);
-            PastPrefixRegex = new Regex(DateTimeDefinitions.PastPrefixRegex, RegexFlags);
+            RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexFlags, RegexTimeOut);
+            NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags, RegexTimeOut);
+            PreviousPrefixRegex = new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags, RegexTimeOut);
+            UpcomingPrefixRegex = new Regex(DateTimeDefinitions.UpcomingPrefixRegex, RegexFlags, RegexTimeOut);
+            PastPrefixRegex = new Regex(DateTimeDefinitions.PastPrefixRegex, RegexFlags, RegexTimeOut);
 
             DayOfMonth = config.DayOfMonth;
             DayOfWeek = config.DayOfWeek;
@@ -135,6 +135,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Swedish
         public Regex PastPrefixRegex { get; }
 
         public Regex BeforeAfterRegex { get; }
+
+        public Regex TasksModeDurationToDatePatterns { get; }
 
         public IImmutableDictionary<string, int> DayOfMonth { get; }
 

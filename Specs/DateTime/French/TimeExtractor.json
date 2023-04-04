@@ -1251,7 +1251,7 @@
   },
   {
     "Input": "Je reviens à midi",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "midi",

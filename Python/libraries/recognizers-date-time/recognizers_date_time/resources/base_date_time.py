@@ -15,7 +15,7 @@
 class BaseDateTime:
     HourRegex = f'(?<!\\d[,.])(?<hour>2[0-4]|[0-1]?\\d)(h)?'
     TwoDigitHourRegex = f'(?<hour>[0-1]\\d|2[0-4])(h)?'
-    MinuteRegex = f'(?<min>[0-5]?\\d)(?!\\d)'
+    MinuteRegex = f'(?<min>[0-5]\\d)(?!\\d)'
     TwoDigitMinuteRegex = f'(?<min>[0-5]\\d)(?!\\d)'
     DeltaMinuteRegex = f'(?<deltamin>[0-5]?\\d)'
     SecondRegex = f'(?<sec>[0-5]?\\d)'

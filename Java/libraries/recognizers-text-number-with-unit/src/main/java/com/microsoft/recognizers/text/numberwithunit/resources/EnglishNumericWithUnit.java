@@ -762,6 +762,12 @@ public class EnglishNumericWithUnit {
         .put("^\\d{5} [cf]$", "\\b([a-z]{2} \\d{5} [cf])\\b")
         .put("\\b\\d+\\s*\\p{L}+$", "((\\d+(\\s*\\p{L}+[-—–-]|\\p{L}+)\\d+)|(((\\p{L}|\\d)[-—–-]\\d+\\s*|\\p{L}\\d+)\\p{L}+))")
         .put("^(all|bob|pen|cad|cup|cop|sos|ron|mad|mop|zar|gel)", "(all|bob|pen|cad|cup|cop|sos|ron|mad|mop|zar|gel)\\s*(\\d|\\p{L})")
+        .put("\\d\\s*pm\\b", "\\b(at|until|since|before|after)\\s\\d(\\d)?\\s*pm\\b")
+        .put("\\bin\\b", "\\bin\\s*(\\d{4}|(jan|febr)uary|march|april|may|ju(ne|ly)|august|october|(sept|nov|dec)ember)")
+        .put("\\b(13)?f\\b", "(\\bf-series\\b|\\b13f\\s(filings?|be fill?ed))")
+        .put("\\d\\d\\df", "boeing\\s777f")
+        .put("\\bc\\b", "\\bc\\.p\\.i(\\.)?")
+        .put("\\d\\s*c\\b", "(dividend (of|by) (\\d\\.)?\\d(\\d)?\\s*c|(\\d\\.)?\\d(\\d)?\\s*c/? (a share|per security))")
         .build();
 
     public static final ImmutableMap<String, String> TemperatureAmbiguityFiltersDict = ImmutableMap.<String, String>builder()

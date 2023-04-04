@@ -1306,7 +1306,7 @@
         "Text": "5時間で",
         "Type": "datetime",
         "Value": {
-          "Timex": "2016-11-07T05",
+          "Timex": "2016-11-07T05:00:00",
           "FutureResolution": {
             "dateTime": "2016-11-07 05:00:00"
           },
@@ -1642,7 +1642,7 @@
         "Text": "あと1時間",
         "Type": "datetime",
         "Value": {
-          "Timex": "2017-11-23T01",
+          "Timex": "2017-11-23T01:00:00",
           "FutureResolution": {
             "dateTime": "2017-11-23 01:00:00"
           },
@@ -1667,7 +1667,7 @@
         "Type": "datetime",
         "Value": {
           "Mod": "less",
-          "Timex": "2017-11-23T01",
+          "Timex": "2017-11-23T01:00:00",
           "FutureResolution": {
             "dateTime": "2017-11-23 01:00:00"
           },

@@ -10,6 +10,7 @@ using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Japanese;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 using Microsoft.Recognizers.Text.Number;
+using Microsoft.Recognizers.Text.Number.Config;
 using Microsoft.Recognizers.Text.Number.Japanese;
 using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
@@ -19,15 +20,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
     public class JapaneseDateTimePeriodParserConfiguration : BaseDateTimeOptionsConfiguration, ICJKDateTimePeriodParserConfiguration
     {
 
-        public static readonly Regex MORegex = new Regex(DateTimeDefinitions.DateTimePeriodMORegex, RegexFlags);
+        public static readonly Regex MORegex = new Regex(DateTimeDefinitions.DateTimePeriodMORegex, RegexFlags, RegexTimeOut);
 
-        public static readonly Regex MIRegex = new Regex(DateTimeDefinitions.DateTimePeriodMIRegex, RegexFlags);
+        public static readonly Regex MIRegex = new Regex(DateTimeDefinitions.DateTimePeriodMIRegex, RegexFlags, RegexTimeOut);
 
-        public static readonly Regex AFRegex = new Regex(DateTimeDefinitions.DateTimePeriodAFRegex, RegexFlags);
+        public static readonly Regex AFRegex = new Regex(DateTimeDefinitions.DateTimePeriodAFRegex, RegexFlags, RegexTimeOut);
 
-        public static readonly Regex EVRegex = new Regex(DateTimeDefinitions.DateTimePeriodEVRegex, RegexFlags);
+        public static readonly Regex EVRegex = new Regex(DateTimeDefinitions.DateTimePeriodEVRegex, RegexFlags, RegexTimeOut);
 
-        public static readonly Regex NIRegex = new Regex(DateTimeDefinitions.DateTimePeriodNIRegex, RegexFlags);
+        public static readonly Regex NIRegex = new Regex(DateTimeDefinitions.DateTimePeriodNIRegex, RegexFlags, RegexTimeOut);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
@@ -43,7 +44,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
             var numConfig = new BaseNumberOptionsConfiguration(config.Culture, numOptions);
 
-            CardinalExtractor = config.CardinalExtractor;
+            CardinalExtractor = new CardinalExtractor(numConfig, CJKNumberExtractorMode.ExtractAll);
             CardinalParser = AgnosticNumberParserFactory.GetParser(
                 AgnosticNumberParserType.Cardinal, new JapaneseNumberParserConfiguration(numConfig));
 
@@ -64,9 +65,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             LastRegex = JapaneseDateTimePeriodExtractorConfiguration.LastRegex;
             PastRegex = JapaneseDateTimePeriodExtractorConfiguration.PastRegex;
             FutureRegex = JapaneseDateTimePeriodExtractorConfiguration.FutureRegex;
+            WeekDayRegex = JapaneseDateTimePeriodExtractorConfiguration.WeekDayRegex;
             TimePeriodLeftRegex = JapaneseDateTimePeriodExtractorConfiguration.TimePeriodLeftRegex;
             UnitRegex = JapaneseDateTimePeriodExtractorConfiguration.UnitRegex;
             RestOfDateRegex = JapaneseDateTimePeriodExtractorConfiguration.RestOfDateRegex;
+            AmPmDescRegex = JapaneseDateTimePeriodExtractorConfiguration.AmPmDescRegex;
             UnitMap = config.UnitMap;
         }
 
@@ -106,11 +109,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         public Regex FutureRegex { get; }
 
+        public Regex WeekDayRegex { get; }
+
         public Regex TimePeriodLeftRegex { get; }
 
         public Regex UnitRegex { get; }
 
         public Regex RestOfDateRegex { get; }
+
+        public Regex AmPmDescRegex { get; }
 
         public IImmutableDictionary<string, string> UnitMap { get; }
 

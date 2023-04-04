@@ -352,10 +352,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "正午ごろ",
+        "Text": "正午",
         "Type": "time",
         "Start": 0,
-        "Length": 4
+        "Length": 2
       }
     ]
   },
@@ -388,10 +388,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "11時ごろ",
+        "Text": "11時",
         "Type": "time",
         "Start": 0,
-        "Length": 5
+        "Length": 3
       }
     ]
   },
@@ -448,10 +448,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "午後3時ごろ",
+        "Text": "午後3時",
         "Type": "time",
         "Start": 0,
-        "Length": 6
+        "Length": 4
       }
     ]
   },

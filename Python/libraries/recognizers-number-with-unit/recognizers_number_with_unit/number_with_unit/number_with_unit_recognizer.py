@@ -25,6 +25,14 @@ from .chinese.parsers import (ChineseCurrencyParserConfiguration,
                               ChineseTemperatureParserConfiguration,
                               ChineseDimensionParserConfiguration,
                               ChineseAgeParserConfiguration)
+from .dutch.extractors import (DutchCurrencyExtractorConfiguration,
+                               DutchTemperatureExtractorConfiguration,
+                               DutchDimensionExtractorConfiguration,
+                               DutchAgeExtractorConfiguration)
+from .dutch.parsers import (DutchCurrencyParserConfiguration,
+                            DutchTemperatureParserConfiguration,
+                            DutchDimensionParserConfiguration,
+                            DutchAgeParserConfiguration)
 from .spanish.extractors import (SpanishCurrencyExtractorConfiguration,
                                  SpanishTemperatureExtractorConfiguration,
                                  SpanishDimensionExtractorConfiguration,
@@ -49,10 +57,10 @@ from .portuguese.parsers import (PortugueseCurrencyParserConfiguration,
                                  PortugueseTemperatureParserConfiguration,
                                  PortugueseDimensionParserConfiguration,
                                  PortugueseAgeParserConfiguration)
-from .italian.extractors import ItalianCurrencyExtractorConfiguration
-from .italian.parsers import ItalianCurrencyParserConfiguration
 from .german.extractors import GermanCurrencyExtractorConfiguration
 from .german.parsers import GermanCurrencyParserConfiguration
+from .italian.extractors import ItalianCurrencyExtractorConfiguration
+from .italian.parsers import ItalianCurrencyParserConfiguration
 
 
 class NumberWithUnitOptions(IntFlag):
@@ -128,6 +136,30 @@ class NumberWithUnitRecognizer(Recognizer[NumberWithUnitOptions]):
         ]))
         # endregion
 
+        # region Dutch
+        self.register_model('CurrencyModel', Culture.Dutch, lambda options: CurrencyModel(
+            [ExtractorParserModel(BaseMergedUnitExtractor(DutchCurrencyExtractorConfiguration(
+            )), BaseMergedUnitParser(DutchCurrencyParserConfiguration()))]
+        ))
+        self.register_model('TemperatureModel', Culture.Dutch, lambda options: TemperatureModel([
+            ExtractorParserModel(
+                NumberWithUnitExtractor(
+                    DutchTemperatureExtractorConfiguration()),
+                NumberWithUnitParser(DutchTemperatureParserConfiguration()))
+        ]))
+        self.register_model('DimensionModel', Culture.Dutch, lambda options: DimensionModel([
+            ExtractorParserModel(
+                NumberWithUnitExtractor(
+                    DutchDimensionExtractorConfiguration()),
+                NumberWithUnitParser(DutchDimensionParserConfiguration()))
+        ]))
+        self.register_model('AgeModel', Culture.Dutch, lambda options: AgeModel([
+            ExtractorParserModel(
+                NumberWithUnitExtractor(DutchAgeExtractorConfiguration()),
+                NumberWithUnitParser(DutchAgeParserConfiguration()))
+        ]))
+        # endregion
+
         # region French
         self.register_model('CurrencyModel', Culture.French, lambda options: CurrencyModel(
             [ExtractorParserModel(BaseMergedUnitExtractor(FrenchCurrencyExtractorConfiguration(
@@ -198,18 +230,15 @@ class NumberWithUnitRecognizer(Recognizer[NumberWithUnitOptions]):
         # region Spanish Mexican
         self.register_model('CurrencyModel', Culture.SpanishMexican, lambda options: CurrencyModel(
             [ExtractorParserModel(BaseMergedUnitExtractor(SpanishCurrencyExtractorConfiguration(
-            )), BaseMergedUnitParser(
-                SpanishCurrencyParserConfiguration(culture_info=CultureInfo(Culture.SpanishMexican))))]
+            )), BaseMergedUnitParser(SpanishCurrencyParserConfiguration(culture_info=CultureInfo(Culture.SpanishMexican))))]
         ))
         self.register_model('TemperatureModel', Culture.SpanishMexican, lambda options: TemperatureModel(
             [ExtractorParserModel(NumberWithUnitExtractor(SpanishTemperatureExtractorConfiguration(
-            )), NumberWithUnitParser(
-                SpanishTemperatureParserConfiguration(culture_info=CultureInfo(Culture.SpanishMexican))))]
+            )), NumberWithUnitParser(SpanishTemperatureParserConfiguration(culture_info=CultureInfo(Culture.SpanishMexican))))]
         ))
         self.register_model('DimensionModel', Culture.SpanishMexican, lambda options: DimensionModel(
             [ExtractorParserModel(NumberWithUnitExtractor(SpanishDimensionExtractorConfiguration(
-            )), NumberWithUnitParser(
-                SpanishDimensionParserConfiguration(culture_info=CultureInfo(Culture.SpanishMexican))))]
+            )), NumberWithUnitParser(SpanishDimensionParserConfiguration(culture_info=CultureInfo(Culture.SpanishMexican))))]
         ))
         self.register_model('AgeModel', Culture.SpanishMexican, lambda options: AgeModel(
             [ExtractorParserModel(NumberWithUnitExtractor(SpanishAgeExtractorConfiguration(

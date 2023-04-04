@@ -9,7 +9,7 @@
         "Length": 5
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Ik ben om zeven uur terug",
@@ -21,7 +21,7 @@
         "Length": 9
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Ik ben om 7 uur ‘s avonds terug",
@@ -33,7 +33,7 @@
         "Length": 15
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Ik ben om 7:56 ‘s avonds terug",
@@ -45,7 +45,7 @@
         "Length": 14
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": " Ik ben om 7:56:35 ‘s avonds terug",
@@ -57,7 +57,7 @@
         "Length": 17
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Ik ben om 12:34 terug",
@@ -69,7 +69,7 @@
         "Length": 5
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Ik ben om 12:34:20 terug",
@@ -81,7 +81,7 @@
         "Length": 8
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Ik ben om T12:34:20 terug",
@@ -93,7 +93,7 @@
         "Length": 9
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Ik ben om 00:00 terug",
@@ -105,7 +105,7 @@
         "Length": 5
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": " Ik ben om 00:00:30 terug",
@@ -117,7 +117,7 @@
         "Length": 8
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Het is 7 uur",
@@ -129,7 +129,7 @@
         "Length": 5
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Het is zeven uur",
@@ -141,7 +141,7 @@
         "Length": 9
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Het is 8 uur ‘s ochtends",
@@ -153,7 +153,7 @@
         "Length": 17
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Het is 8 uur ‘s nachts",
@@ -165,7 +165,7 @@
         "Length": 15
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Het is half negen",
@@ -177,7 +177,7 @@
         "Length": 10
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Het is kwart over acht",
@@ -189,7 +189,7 @@
         "Length": 15
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Het is kwart voor 10 ‘s avonds",
@@ -201,7 +201,7 @@
         "Length": 23
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Het is drie minuten voor acht",
@@ -213,7 +213,7 @@
         "Length": 22
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Het is half acht",
@@ -225,7 +225,7 @@
         "Length": 9
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": " Het is half acht ‘s avonds",
@@ -237,7 +237,7 @@
         "Length": 19
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Het is half acht ‘s ochtends",
@@ -249,7 +249,7 @@
         "Length": 21
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Het is kwart voor 8 in de ochtend",
@@ -261,7 +261,7 @@
         "Length": 26
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Het is 10 voor half negen in de avond",
@@ -273,7 +273,7 @@
         "Length": 30
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Ik ben om 7 uur in de avond terug",
@@ -285,7 +285,7 @@
         "Length": 17
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Ik ben om 7:00 ‘s avonds terug",
@@ -297,7 +297,7 @@
         "Length": 14
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": " Ik ben om 7:00:14 ‘s avonds terug",
@@ -309,7 +309,7 @@
         "Length": 17
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Ik ben om vier uur ‘s middags terug",
@@ -321,7 +321,7 @@
         "Length": 19
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Ik ga terug om zeven uur dertig ‘s avonds",
@@ -333,7 +333,7 @@
         "Length": 26
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Ik ga terug om vier uur vijfendertig ‘s middags",
@@ -345,7 +345,7 @@
         "Length": 32
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Ik ga om vijf over elf",
@@ -357,7 +357,7 @@
         "Length": 13
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Ik ga om drie minuten voor vijf ",
@@ -369,7 +369,7 @@
         "Length": 22
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Ik ga om half zes 's avonds",
@@ -381,7 +381,7 @@
         "Length": 18
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Ik kom middagloos terug",
@@ -393,7 +393,7 @@
         "Length": 10
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Ik ben ‘s middags terug",
@@ -405,7 +405,7 @@
         "Length": 10
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Ik ben om 12 uur ‘s middags terug",
@@ -417,7 +417,7 @@
         "Length": 17
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Ik ben tegen 11’en terug",
@@ -429,7 +429,7 @@
         "Length": 11
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": " Ik ben tegen 11-en terug",
@@ -441,7 +441,7 @@
         "Length": 11
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Ik ben om 340pm terug",
@@ -453,7 +453,7 @@
         "Length": 5
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Ik ben om 1140 a.m. terug",
@@ -465,7 +465,7 @@
         "Length": 9
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "middernacht",
@@ -477,7 +477,7 @@
         "Length": 11
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "mid morgen",
@@ -489,7 +489,7 @@
         "Length": 10
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "mid-morgen",
@@ -501,7 +501,7 @@
         "Length": 10
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "middag",
@@ -513,7 +513,7 @@
         "Length": 6
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "mid middag",
@@ -525,7 +525,7 @@
         "Length": 10
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "I'll be back 7 p m",
@@ -537,7 +537,7 @@
         "Length": 5
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Ik ben om 7 uur p.m. terug",
@@ -549,7 +549,7 @@
         "Length": 10
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Ik ben om 7:56 a m terug",
@@ -561,7 +561,7 @@
         "Length": 8
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Ik ben om 7:56:35 a.m. terug",
@@ -573,7 +573,7 @@
         "Length": 12
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Ik ga om 7:56:35 am",
@@ -585,7 +585,7 @@
         "Length": 10
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Ik ga om 7:56:35 a. m.",
@@ -597,7 +597,7 @@
         "Length": 13
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Ik ga om zeven uur dertig p.m.",
@@ -609,7 +609,7 @@
         "Length": 21
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Ik ben om 340 pm terug",
@@ -621,7 +621,7 @@
         "Length": 6
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Ik ben om 1140 a m terug",
@@ -633,17 +633,17 @@
         "Length": 8
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "welke emails hebben p als onderwerp gekregen",
     "Results": [],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "welke emails hebben een antwoord gehad",
     "Results": [],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Ik ben om 12 uur lunchtijd terug",
@@ -655,7 +655,7 @@
         "Length": 16
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Ik ben met lunchtijd 12 uur terug",
@@ -667,11 +667,11 @@
         "Length": 20
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Ik ben om 19:00 terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "19:00",
@@ -683,7 +683,7 @@
   },
   {
     "Input": "Ik ben om 19:56 terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "19:56",
@@ -695,7 +695,7 @@
   },
   {
     "Input": "Ik ben om 19:56:35 terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "19:56:35",
@@ -707,7 +707,7 @@
   },
   {
     "Input": "Ik ben om 12:34:20u terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "12:34:20u",
@@ -719,7 +719,7 @@
   },
   {
     "Input": "Ik ben om 00:00:30 terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "00:00:30",
@@ -731,7 +731,7 @@
   },
   {
     "Input": "Het is 8 uur 's morgens",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "8 uur 's morgens",
@@ -743,7 +743,7 @@
   },
   {
     "Input": "Het is 8 uur 's avonds",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "8 uur 's avonds",
@@ -755,7 +755,7 @@
   },
   {
     "Input": "Het is half negen 's avonds",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "half negen 's avonds",
@@ -767,7 +767,7 @@
   },
   {
     "Input": "Het is kwart voor 10 's avonds",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "kwart voor 10 's avonds",
@@ -779,7 +779,7 @@
   },
   {
     "Input": "Het is half acht 's morgens",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "half acht 's morgens",
@@ -791,7 +791,7 @@
   },
   {
     "Input": "Het is kwart voor 8 's morgens",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "kwart voor 8 's morgens",
@@ -803,7 +803,7 @@
   },
   {
     "Input": "Het is tien voor half 9 's avonds",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "tien voor half 9 's avonds",
@@ -815,7 +815,7 @@
   },
   {
     "Input": "Ik ga half acht 's avonds terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "half acht 's avonds",
@@ -827,7 +827,7 @@
   },
   {
     "Input": "Ik ga vijf over half acht 's avonds terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "vijf over half acht 's avonds",
@@ -839,7 +839,7 @@
   },
   {
     "Input": "Ik ga vijf over elf terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "vijf over elf",
@@ -851,7 +851,7 @@
   },
   {
     "Input": "Ik ga drie minuten voor half zes terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "drie minuten voor half zes",
@@ -863,7 +863,7 @@
   },
   {
     "Input": "Ik ga half zes 's avonds terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "half zes 's avonds",
@@ -875,7 +875,7 @@
   },
   {
     "Input": "Ik ga 's avonds half zes terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "'s avonds half zes",
@@ -887,7 +887,7 @@
   },
   {
     "Input": "Ik ben rond het middaguur terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "rond het middaguur",
@@ -899,7 +899,7 @@
   },
   {
     "Input": "Ik ben het middaguur terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "het middaguur",
@@ -911,7 +911,7 @@
   },
   {
     "Input": "Ik ben rond elven terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "rond elven",
@@ -923,7 +923,7 @@
   },
   {
     "Input": "Ik ben 15:40 terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "15:40",
@@ -935,7 +935,7 @@
   },
   {
     "Input": "Ik ben 11:40 's morgens terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "11:40 's morgens",
@@ -947,7 +947,7 @@
   },
   {
     "Input": "halverwege de ochtend",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "halverwege de ochtend",
@@ -959,7 +959,7 @@
   },
   {
     "Input": "halverwege de middag",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "halverwege de middag",
@@ -971,7 +971,7 @@
   },
   {
     "Input": "het middaguur",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "het middaguur",
@@ -983,7 +983,7 @@
   },
   {
     "Input": "Ik ben 19:00 terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "19:00",
@@ -995,7 +995,7 @@
   },
   {
     "Input": "Ik ben 7:56 terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "7:56",
@@ -1007,7 +1007,7 @@
   },
   {
     "Input": "Ik ben 7:56:35 terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "7:56:35",
@@ -1019,7 +1019,7 @@
   },
   {
     "Input": "Ik ben 12 uur lunchtijd terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "12 uur lunchtijd",
@@ -1031,7 +1031,7 @@
   },
   {
     "Input": "Ik ben lunchtijd 12 uur terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "lunchtijd 12 uur",
@@ -1043,7 +1043,7 @@
   },
   {
     "Input": "Ik ben om lunchtijd 12 uur terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "om lunchtijd 12 uur",
@@ -1055,12 +1055,12 @@
   },
   {
     "Input": "Cortana, plan een vergadering voor volgende week.\nBentonville, AR 72716 P: 479.277",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": []
   },
   {
     "Input": "21:00 schikt me",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "21:00",
@@ -1072,7 +1072,7 @@
   },
   {
     "Input": "9:00 schikt me",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "9:00",
@@ -1084,7 +1084,7 @@
   },
   {
     "Input": "Ik ben om 21:00 terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "21:00",
@@ -1096,7 +1096,7 @@
   },
   {
     "Input": "Ik ben om 9:00 terug",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "9:00",
@@ -1109,12 +1109,12 @@
   {
     "Input": "Dit product is geprijsd als 1.6714.",
     "Comment": "1 shouldn't recognized as time here",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": []
   },
   {
     "Input": "15.00 : Ik zal deze week weg zijn",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "15.00",
@@ -1126,8 +1126,8 @@
   },
   {
     "Input": "deze week 8.00 zou een datumreeks en een tijd moeten zijn",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet,python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "8.00",
@@ -1139,8 +1139,8 @@
   },
   {
     "Input": "deze week 20.00 zou een datumreeks en een tijd moeten zijn",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet,python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "20.00",
@@ -1152,8 +1152,8 @@
   },
   {
     "Input": "week 10 20.00 zou een datumreeks en een tijd moeten zijn",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet,python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "20.00",
@@ -1165,8 +1165,8 @@
   },
   {
     "Input": "week 10 10.20 zou een datumreeks en een tijd moeten zijn",
-    "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupported": "dotnet,python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "10.20",
@@ -1178,7 +1178,7 @@
   },
   {
     "Input": "De doeltijd is 20.10",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "20.10",

@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text.RegularExpressions;
 
 namespace Microsoft.Recognizers.Text.Number
@@ -28,6 +29,8 @@ namespace Microsoft.Recognizers.Text.Number
         internal abstract System.Collections.Immutable.ImmutableDictionary<Regex, string> Regexes { get; }
 
         internal abstract Regex AmbiguousFractionConnectorsRegex { get; }
+
+        protected static TimeSpan RegexTimeOut => NumberRecognizer.GetTimeout(MethodBase.GetCurrentMethod().DeclaringType);
 
         protected virtual INumberOptionsConfiguration Config { get; }
 

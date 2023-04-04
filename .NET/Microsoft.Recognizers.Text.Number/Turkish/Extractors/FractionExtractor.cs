@@ -24,15 +24,15 @@ namespace Microsoft.Recognizers.Text.Number.Turkish
             var regexes = new Dictionary<Regex, TypeTag>
             {
                 {
-                    new Regex(NumbersDefinitions.FractionNotationWithSpacesRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.FractionNotationWithSpacesRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.FractionNotationRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.FractionNotationRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.FractionNounWithArticleRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.FractionNounWithArticleRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.TURKISH)
                 },
             };
@@ -41,7 +41,7 @@ namespace Microsoft.Recognizers.Text.Number.Turkish
             if (mode != NumberMode.Unit)
             {
                 regexes.Add(
-                    new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.TURKISH));
             }
 

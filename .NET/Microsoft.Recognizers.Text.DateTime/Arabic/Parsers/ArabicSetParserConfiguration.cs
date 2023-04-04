@@ -1,6 +1,7 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
@@ -15,28 +16,30 @@ namespace Microsoft.Recognizers.Text.DateTime.Arabic
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture | RegexOptions.RightToLeft;
 
         private static readonly Regex DoubleMultiplierRegex =
-            new Regex(DateTimeDefinitions.DoubleMultiplierRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.DoubleMultiplierRegex, RegexFlags, RegexTimeOut);
 
         private static readonly Regex HalfMultiplierRegex =
-            new Regex(DateTimeDefinitions.HalfMultiplierRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.HalfMultiplierRegex, RegexFlags, RegexTimeOut);
 
         private static readonly Regex DayTypeRegex =
-            new Regex(DateTimeDefinitions.DayTypeRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.DayTypeRegex, RegexFlags, RegexTimeOut);
 
         private static readonly Regex WeekTypeRegex =
-            new Regex(DateTimeDefinitions.WeekTypeRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.WeekTypeRegex, RegexFlags, RegexTimeOut);
 
         private static readonly Regex WeekendTypeRegex =
-            new Regex(DateTimeDefinitions.WeekendTypeRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.WeekendTypeRegex, RegexFlags, RegexTimeOut);
 
         private static readonly Regex MonthTypeRegex =
-            new Regex(DateTimeDefinitions.MonthTypeRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.MonthTypeRegex, RegexFlags, RegexTimeOut);
 
         private static readonly Regex QuarterTypeRegex =
-            new Regex(DateTimeDefinitions.QuarterTypeRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.QuarterTypeRegex, RegexFlags, RegexTimeOut);
 
         private static readonly Regex YearTypeRegex =
-            new Regex(DateTimeDefinitions.YearTypeRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.YearTypeRegex, RegexFlags, RegexTimeOut);
+
+        private static readonly List<string> ThisTerms = (List<string>)DateTimeDefinitions.FutureTerms;
 
         public ArabicSetParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)
@@ -168,5 +171,6 @@ namespace Microsoft.Recognizers.Text.DateTime.Arabic
 
         public string WeekDayGroupMatchString(Match match) => SetHandler.WeekDayGroupMatchString(match);
 
+        public string ReplaceValueInTextWithFutTerm(string text, string value) => TasksModeSetHandler.ReplaceValueInTextWithFutTerm(text, value, ThisTerms);
     }
 }

@@ -67,7 +67,7 @@ class ItalianDateTime:
     MonthFrontBetweenRegex = f'\\b{MonthSuffixRegex}\\s+([tf]ra\\s+)({DayRegex})\\s*{RangeConnectorRegex}\\s*({DayRegex})((\\s+|\\s*,\\s*){YearRegex})?\\b'
     BetweenRegex = f'\\b([tf]ra\\s+)({DayRegex})\\s*{RangeConnectorRegex}\\s*({DayRegex})\\s+{MonthSuffixRegex}((\\s+|\\s*,\\s*){YearRegex})?\\b'
     YearWordRegex = f'\\b(?<year>l\'anno)\\b'
-    MonthWithYear = f'\\b({MonthRegex}(\\.)?(\\s*)[/\\\\\\-\\.,]?(((\\s+del)?\\s+{YearRegex})|((\\s+(del|di|il))?\\s+(?<order>prossim[\'o]|passato|quest[\'o])\\s*anno)|((\\s+(del)?l\')anno\\s+(?<order>prossimo|passato))))'
+    MonthWithYear = f'\\b({MonthRegex}(\\.)?(\\s*)[/\\\\\\-\\.,]?(((\\s+del)?\\s+{YearRegex}|{TwoDigitYearRegex})|((\\s+(del|di|il))?\\s+(?<order>prossim[\'o]|passato|quest[\'o])\\s*anno)|((\\s+(del)?l\')anno\\s+(?<order>prossimo|passato))))'
     SpecialYearPrefixes = f'(?<special>fiscale|scolastico)'
     OneWordPeriodRegex = f'\\b((((il|l[o\'])\\s*)?((mese di\\s+)|({RelativeRegex}\\s*))?{MonthRegex}(\\s+{RelativeRegex})?)|dall\'inizio\\s+del(l\')\\s*(mese|anno)|({RelativeRegex}\\s*)?(mi[ao]\\s+)?(weekend|finesettimana|settimana|mese|anno)(\\s+{RelativeRegex})?(?!((\\s+di|del)?\\s+\\d+))(\\s+{AfterNextSuffixRegex})?)\\b'
     MonthNumWithYear = f'({YearRegex}[/\\-\\.]{MonthNumRegex})|({MonthNumRegex}[/\\-]{YearRegex})'
@@ -104,11 +104,11 @@ class ItalianDateTime:
     WeekDayOfMonthRegex = f'(?<wom>((la|il)\\s+)?(?<cardinal>prim[ao]|second[ao]|terz[ao]|quart[ao]|quint[ao]|ultim[ao])\\s+{WeekDayRegex}\\s+{MonthSuffixRegex})'
     RelativeWeekDayRegex = f'\\b({WrittenNumRegex}\\s+{WeekDayRegex}\\s+(da\\s+ora|dopo))\\b'
     SpecialDate = f'(?<=\\b(il|l\'|al(l\')?)\\s*){DayRegex}\\b'
-    DateExtractor1 = f'\\b((quest[oa]\\s+)?{WeekDayRegex}\\s*[,-]?\\s*)?(({MonthRegex}(\\.)?\\s*[/\\\\.,-]?\\s*{DayRegex})|(\\({MonthRegex}\\s*[-.]\\s*{DayRegex}\\))|({DayRegex}\\s*[/\\\\.,-]?\\s*{MonthRegex}(\\.)?))(\\s*\\(\\s*{WeekDayRegex}\\s*\\))?'
+    DateExtractor1 = f'\\b((quest[oa]\\s+)?{WeekDayRegex}\\s*[,-]?\\s*)?(({MonthRegex}(\\.)?\\s*[/\\\\.,-]?\\s*{DayRegex}(?!\\s*\\-\\s*\\d{{2}}\\b))|(\\({MonthRegex}\\s*[-.]\\s*{DayRegex}\\))|({DayRegex}\\s*[/\\\\.,-]?\\s*{MonthRegex}(\\.)?))(\\s*\\(\\s*{WeekDayRegex}\\s*\\))?'
     DateExtractor2 = f'({DateExtractor1}(\\s+|\\s*[\\-/,.]\\s*|\\s+del\\s+)({DateYearRegex}))\\b'
     DateExtractor3 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?({DayRegex}(\\.)?(\\s*[/,.\\- ]\\s*|\\s+di\\s+){MonthRegex}(\\.)?(\\s*[/,.\\- ]\\s*{DateYearRegex})?|{BaseDateTime.FourDigitYearRegex}\\s*[/,.\\- ]\\s*{DayRegex}\\s*[/,.\\- ]\\s*{MonthRegex})\\b'
     DateExtractor4 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?((il|l\')\\s*)?{MonthNumRegex}\\s*[/\\\\\\-]\\s*{DayRegex}(\\.)?\\s*[/\\\\\\-]\\s*{DateYearRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)'
-    DateExtractor5 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{DayRegex}\\s*[/\\\\\\-]\\s*({MonthNumRegex}|{MonthRegex}(\\.)?)\\s*[/\\\\\\-]\\s*{DateYearRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)'
+    DateExtractor5 = f'\\b({WeekDayRegex}(\\s+|\\s*,\\s*))?{DayRegex}\\s*[/\\\\\\-\\.]\\s*({MonthNumRegex}|{MonthRegex}(\\.)?)\\s*[/\\\\\\-\\.]\\s*{DateYearRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)'
     DateExtractor6 = f'(?<!([\\-\\.\\/]|all[e\']\\s*|l[e\']\\s*))\\b{MonthNumRegex}[\\-\\.\\/]{DayRegex}{BaseDateTime.CheckDecimalRegex}(?!(%|\\s*{{DescRegex}}))\\b'
     DateExtractor7 = f'(?<!\\b{DateYearRegex}\\s*[/\\\\\\-]\\s*)\\b{DayRegex}\\s*[\\/\\\\-]s*{MonthNumRegex}((\\s+|\\s*[\\/\\-\\\\,]\\s*){DateYearRegex})?\\b{BaseDateTime.CheckDecimalRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)'
     DateExtractor8 = f'(?<!([\\-\\.\\/]|all[e\']\\s*|l[e\']\\s*))\\b{DayRegex}[\\/\\\\\\-]{MonthNumRegex}{BaseDateTime.CheckDecimalRegex}(?!(%|\\s*{DescRegex}))\\b'
@@ -132,9 +132,9 @@ class ItalianDateTime:
     AmRegex = f'\\b(?<am>((((la|alla|verso|per|della|di|in)\\s+(la\\s+)?)?(mattinata|mattina))|(((il|al|verso|per|del|di)\\s+(il\\s+)?)?(mattino))))\\b'
     LunchRegex = f'\\b(ora di pranzo)\\b'
     NightRegex = f'\\b(mezzanotte|notte)\\b'
-    LessThanOneHour = f'(?<lth>(un\\s+quarto|tre quarti?|mezz[oa]|mezz\'ora|{BaseDateTime.DeltaMinuteRegex}(\\s+(minut[oi]|min))?|{DeltaMinuteNumRegex}(\\s+(minut[oi]|min))|(?<=(e|meno)\\s+){DeltaMinuteNumRegex}))'
+    LessThanOneHour = f'(?<lth>(un\\s+quarto|tre quarti?|mezz[oa]|mezz\'ora|{BaseDateTime.DeltaMinuteRegex}|{DeltaMinuteNumRegex}))'
     EngTimeRegex = f'(?<engtime>{HourNumRegex}\\s+e\\s+({MinuteNumRegex}|(?<tens>venti?|trenta?|quaranta?|cinquanta?){MinuteNumRegex}))'
-    TimePrefix = f'(?<prefix>(e\\s+{LessThanOneHour}|{LessThanOneHour}\\s+(minut[oi]|min)\\s+all[e\']|meno {LessThanOneHour}))'
+    TimePrefix = f'(?<prefix>((e|meno)\\s+{LessThanOneHour}(\\s+(minut[oi]|min))?|{LessThanOneHour}\\s+(minut[oi]|min)\\s+all[e\']))'
     TimeSuffix = f'(?<suffix>{AmRegex}|{PmRegex}|{OclockRegex})'
     BasicTime = f'\\b(?<basictime>{EngTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}:{BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?|{BaseDateTime.HourRegex})'
     MidnightRegex = f'(?<midnight>mezzanotte|mezza notte)'
@@ -603,7 +603,9 @@ class ItalianDateTime:
     DurationDateRestrictions = []
     AmbiguityFiltersDict = dict([("^\\d{4}$", "(\\d\\.\\d{4}|\\d{4}\\.\\d)"),
                                  ("\\bgiorno|pomeriggio|sera|notte\\b", "\\b(buona?\\s*(giorno|pomeriggio|sera|notte))\\b"),
-                                 ("^(apr|ago|dic|feb|gen|lug|giu|mar|mag|nov|ott|sett?)$", "([$%£&!?@#])(apr|ago|dic|feb|gen|lug|giu|mar|mag|nov|ott|sett?)|(apr|ago|dic|feb|gen|lug|giu|mar|mag|nov|ott|sett?)([$%£&@#])")])
+                                 ("^(apr|ago|dic|feb|gen|lug|giu|mar|mag|nov|ott|sett?)$", "([$%£&!?@#])(apr|ago|dic|feb|gen|lug|giu|mar|mag|nov|ott|sett?)|(apr|ago|dic|feb|gen|lug|giu|mar|mag|nov|ott|sett?)([$%£&@#])"),
+                                 ("^\\d{1,4}-\\d{1,4}$", "\\d{1,4}-\\d{1,4}-\\d|\\d-\\d{1,4}-\\d{1,4}"),
+                                 ("^\\d{1,4}-\\d{1,4}-\\d{1,4}$", "\\d{1,4}-\\d{1,4}-\\d{1,4}-\\d|\\d-\\d{1,4}-\\d{1,4}-\\d{1,4}")])
     MorningTermList = [r'mattino', r'mattina', r'mattine', r'mattinata']
     AfternoonTermList = [r'pomeriggio', r'pomeriggi', r'dopo pranzo']
     EveningTermList = [r'sera', r'sere', r'serata']

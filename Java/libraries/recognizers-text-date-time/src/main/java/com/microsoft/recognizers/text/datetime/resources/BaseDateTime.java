@@ -21,7 +21,7 @@ public class BaseDateTime {
 
     public static final String TwoDigitHourRegex = "(?<hour>[0-1]\\d|2[0-4])(h)?";
 
-    public static final String MinuteRegex = "(?<min>[0-5]?\\d)(?!\\d)";
+    public static final String MinuteRegex = "(?<min>[0-5]\\d)(?!\\d)";
 
     public static final String TwoDigitMinuteRegex = "(?<min>[0-5]\\d)(?!\\d)";
 

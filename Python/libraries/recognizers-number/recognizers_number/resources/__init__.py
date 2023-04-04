@@ -5,6 +5,7 @@ from .base_numbers import BaseNumbers
 from .chinese_numeric import ChineseNumeric
 from .english_numeric import EnglishNumeric
 from .german_numeric import GermanNumeric
+from .dutch_numeric import DutchNumeric
 from .italian_numeric import ItalianNumeric
 from .french_numeric import FrenchNumeric
 from .portuguese_numeric import PortugueseNumeric

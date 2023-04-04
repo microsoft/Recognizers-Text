@@ -46,6 +46,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
             TimeZoneParser = new BaseTimeZoneParser(new TurkishTimeZoneParserConfiguration(this));
 
             DateExtractor = new BaseDateExtractor(new TurkishDateExtractorConfiguration(this));
+            HolidayExtractor = new BaseHolidayExtractor(new TurkishHolidayExtractorConfiguration(this));
             TimeExtractor = new BaseTimeExtractor(new TurkishTimeExtractorConfiguration(this));
             DateTimeExtractor = new BaseDateTimeExtractor(new TurkishDateTimeExtractorConfiguration(this));
             DurationExtractor = new BaseDurationExtractor(new TurkishDurationExtractorConfiguration(this));
@@ -54,6 +55,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
             DateTimePeriodExtractor = new BaseDateTimePeriodExtractor(new TurkishDateTimePeriodExtractorConfiguration(this));
             DurationParser = new BaseDurationParser(new TurkishDurationParserConfiguration(this));
             DateParser = new BaseDateParser(new TurkishDateParserConfiguration(this));
+            HolidayTimeParser = new BaseHolidayParser(new TurkishHolidayParserConfiguration(this));
             TimeParser = new TimeParser(new TurkishTimeParserConfiguration(this));
             DateTimeParser = new BaseDateTimeParser(new TurkishDateTimeParserConfiguration(this));
             DatePeriodParser = new BaseDatePeriodParser(new TurkishDatePeriodParserConfiguration(this));

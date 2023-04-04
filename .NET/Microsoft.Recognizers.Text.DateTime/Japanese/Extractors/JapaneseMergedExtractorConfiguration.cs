@@ -14,14 +14,17 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
     public class JapaneseMergedExtractorConfiguration : BaseDateTimeOptionsConfiguration, ICJKMergedExtractorConfiguration
     {
-        public static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.ParserConfigurationBefore, RegexFlags);
-        public static readonly Regex AfterRegex = new Regex(DateTimeDefinitions.ParserConfigurationAfter, RegexFlags);
-        public static readonly Regex UntilRegex = new Regex(DateTimeDefinitions.ParserConfigurationUntil, RegexFlags);
-        public static readonly Regex SincePrefixRegex = new Regex(DateTimeDefinitions.ParserConfigurationSincePrefix, RegexFlags);
-        public static readonly Regex SinceSuffixRegex = new Regex(DateTimeDefinitions.ParserConfigurationSinceSuffix, RegexFlags);
-        public static readonly Regex EqualRegex = new Regex(BaseDateTime.EqualRegex, RegexFlags);
-        public static readonly Regex PotentialAmbiguousRangeRegex = new Regex(DateTimeDefinitions.FromToRegex, RegexFlags);
-        public static readonly Regex AmbiguousRangeModifierPrefix = new Regex(DateTimeDefinitions.AmbiguousRangeModifierPrefix, RegexFlags);
+        public static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.ParserConfigurationBefore, RegexFlags, RegexTimeOut);
+        public static readonly Regex UnspecificDatePeriodRegex = new Regex(DateTimeDefinitions.UnspecificDatePeriodRegex, RegexFlags, RegexTimeOut);
+        public static readonly Regex AfterRegex = new Regex(DateTimeDefinitions.ParserConfigurationAfter, RegexFlags, RegexTimeOut);
+        public static readonly Regex UntilRegex = new Regex(DateTimeDefinitions.ParserConfigurationUntil, RegexFlags, RegexTimeOut);
+        public static readonly Regex SincePrefixRegex = new Regex(DateTimeDefinitions.ParserConfigurationSincePrefix, RegexFlags, RegexTimeOut);
+        public static readonly Regex SinceSuffixRegex = new Regex(DateTimeDefinitions.ParserConfigurationSinceSuffix, RegexFlags, RegexTimeOut);
+        public static readonly Regex AroundPrefixRegex = new Regex(DateTimeDefinitions.ParserConfigurationAroundPrefix, RegexFlags, RegexTimeOut);
+        public static readonly Regex AroundSuffixRegex = new Regex(DateTimeDefinitions.ParserConfigurationAroundSuffix, RegexFlags, RegexTimeOut);
+        public static readonly Regex EqualRegex = new Regex(BaseDateTime.EqualRegex, RegexFlags, RegexTimeOut);
+        public static readonly Regex PotentialAmbiguousRangeRegex = new Regex(DateTimeDefinitions.FromToRegex, RegexFlags, RegexTimeOut);
+        public static readonly Regex AmbiguousRangeModifierPrefix = new Regex(DateTimeDefinitions.AmbiguousRangeModifierPrefix, RegexFlags, RegexTimeOut);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
@@ -63,9 +66,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         Regex ICJKMergedExtractorConfiguration.BeforeRegex => BeforeRegex;
 
+        Regex ICJKMergedExtractorConfiguration.UnspecificDatePeriodRegex => UnspecificDatePeriodRegex;
+
         Regex ICJKMergedExtractorConfiguration.SincePrefixRegex => SincePrefixRegex;
 
         Regex ICJKMergedExtractorConfiguration.SinceSuffixRegex => SinceSuffixRegex;
+
+        Regex ICJKMergedExtractorConfiguration.AroundPrefixRegex => AroundPrefixRegex;
+
+        Regex ICJKMergedExtractorConfiguration.AroundSuffixRegex => AroundSuffixRegex;
 
         Regex ICJKMergedExtractorConfiguration.UntilRegex => UntilRegex;
 

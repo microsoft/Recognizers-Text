@@ -88,6 +88,10 @@ class ItalianNumberParserConfiguration(NumberParserConfiguration):
     def is_multi_decimal_separator_culture(self) -> bool:
         return self._is_multi_decimal_separator_culture
 
+    @property
+    def round_multiplier_regex(self) -> Pattern:
+        return self._round_multiplier_regex
+
     def __init__(self, culture_info=None):
         if culture_info is None:
             culture_info = CultureInfo(Culture.Italian)
@@ -116,6 +120,8 @@ class ItalianNumberParserConfiguration(NumberParserConfiguration):
             ItalianNumeric.HalfADozenRegex)
         self._digital_number_regex = RegExpUtility.get_safe_reg_exp(
             ItalianNumeric.DigitalNumberRegex)
+        self._round_multiplier_regex = RegExpUtility.get_safe_reg_exp(
+            ItalianNumeric.RoundMultiplierRegex)
 
     def normalize_token_set(self, tokens: List[str], context: ParseResult) -> List[str]:
         frac_words: List[str] = list()
@@ -140,6 +146,16 @@ class ItalianNumberParserConfiguration(NumberParserConfiguration):
             else:
                 frac_words.append(tokens[i])
             i += 1
+
+        # The following piece of code is needed to compute the fraction pattern number+'e mezzo'
+        # e.g. 'due e mezzo' ('two and a half') where the numerator is omitted in Italian.
+        # It works by inserting the numerator 'un' ('a') in the list frac_words
+        # so that the pattern is correctly processed.
+        if len(frac_words) > 2:
+            if frac_words[len(frac_words) - 1] == ItalianNumeric.OneHalfTokens[1] and \
+                    frac_words[len(frac_words) - 2] == ItalianNumeric.WordSeparatorToken:
+                frac_words[len(frac_words) - 2] = ItalianNumeric.WrittenFractionSeparatorTexts[0]
+                frac_words.insert(len(frac_words) - 1, ItalianNumeric.OneHalfTokens[0])
 
         return frac_words
 

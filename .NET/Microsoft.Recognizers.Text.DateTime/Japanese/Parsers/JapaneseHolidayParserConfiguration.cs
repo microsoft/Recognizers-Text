@@ -24,6 +24,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             { "旧正月", NewYear },
             { "元旦节", NewYear },
             { "お正月", NewYear },
+            { "独立記念日", UsaIndependenceDay },
             { "旧暦の正月初一", SpringDay },
             { "教师节", TeacherDay },
             { "教師の日", TeacherDay },
@@ -149,6 +150,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         }
 
         private static DateObject NewYear(int year) => new DateObject(year, 1, 1);
+
+        private static DateObject UsaIndependenceDay(int year) => new DateObject(year, 7, 4);
 
         private static DateObject TeacherDay(int year) => new DateObject(year, 9, 10);
 

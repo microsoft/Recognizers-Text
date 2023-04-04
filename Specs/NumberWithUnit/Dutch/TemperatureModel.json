@@ -13,7 +13,7 @@
         "End": 41
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "het is 90 Fahrenheit in Texas",
@@ -29,7 +29,7 @@
         "End": 19
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "-5 graden Fahrenheit",
@@ -45,7 +45,7 @@
         "End": 19
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "6 gr. C",
@@ -61,7 +61,7 @@
         "End": 6
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "98,6 graden F is de normale temperatuur",
@@ -77,7 +77,7 @@
         "End": 12
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Zet de temperatuur op 30 graden Celsius",
@@ -93,7 +93,7 @@
         "End": 38
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "normale temperatuur is 98,6 graden Fahrenheit",
@@ -109,7 +109,7 @@
         "End": 44
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "100 graden F",
@@ -125,7 +125,7 @@
         "End": 11
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "20 graden C",
@@ -141,7 +141,7 @@
         "End": 10
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "100,2 graden Fahrenheit is laag",
@@ -157,7 +157,7 @@
         "End": 22
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "10,5 Celsius",
@@ -173,7 +173,7 @@
         "End": 11
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "20 graden Celsius",
@@ -189,7 +189,7 @@
         "End": 16
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "20,3 Celsius",
@@ -205,7 +205,7 @@
         "End": 11
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "34,5 Celsius",
@@ -221,7 +221,7 @@
         "End": 11
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "de temperatuur buiten is 30 graden",
@@ -237,7 +237,7 @@
         "End": 33
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "zet de thermostaat op 85°",
@@ -253,7 +253,7 @@
         "End": 24
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "verhoog de temperatuur met 5 graden",
@@ -269,7 +269,7 @@
         "End": 34
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "zet de temperatuur op 70 graden F",
@@ -285,7 +285,7 @@
         "End": 32
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "verhoog de temperatuur met 20 graden",
@@ -301,7 +301,7 @@
         "End": 35
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "zet de temperatuur op 100 graden",
@@ -317,7 +317,7 @@
         "End": 31
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "hou de temperatuur op 75 graden F",
@@ -333,7 +333,7 @@
         "End": 32
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "laat de temperatuur 40 Celsius zijn",
@@ -349,7 +349,7 @@
         "End": 29
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "laat de temperatuur 50 graden zijn",
@@ -365,7 +365,7 @@
         "End": 28
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "converteer 10 graden Celsius to Fahrenheit",
@@ -391,7 +391,7 @@
         "End": 41
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "34,9 graden Celsius naar Fahrenheit",
@@ -417,7 +417,7 @@
         "End": 34
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "converteer 200 graden Celsius naar Fahrenheit",
@@ -443,7 +443,7 @@
         "End": 44
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "Fahrenheit naar Celsius: 101 Fahrenheit is hoeveel graden Celsius",
@@ -489,7 +489,7 @@
         "End": 64
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "50 graden Celsius naar Fahrenheit",
@@ -515,7 +515,7 @@
         "End": 32
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "zou je 51 Fahrenheit naar graden Celsius kunnen converteren?",
@@ -541,7 +541,7 @@
         "End": 39
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "converteer 106 graden Fahrenheit naar graden Celsius",
@@ -567,7 +567,7 @@
         "End": 51
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "converteer 45 graden Fahrenheit naar Celsius",
@@ -593,7 +593,7 @@
         "End": 43
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "hoe converteer je - 20 graden Fahrenheit naar Celsius",
@@ -619,16 +619,16 @@
         "End": 52
       }
     ],
-    "NotSupportedByDesign": "javascript,python,java"
+    "NotSupportedByDesign": "javascript,java"
   },
   {
     "Input": "draai een hoek van 45 graden",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, python, javascript",
     "Results": []
   },
   {
     "Input": "Draai 90°",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, python, javascript",
     "Results": []
   }
 ]

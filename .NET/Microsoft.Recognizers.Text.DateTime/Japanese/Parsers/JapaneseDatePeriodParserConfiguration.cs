@@ -18,21 +18,21 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
     public class JapaneseDatePeriodParserConfiguration : BaseDateTimeOptionsConfiguration, ICJKDatePeriodParserConfiguration
     {
 
-        public static readonly Regex WoMLastRegex = new Regex(DateTimeDefinitions.WoMLastRegex, RegexFlags);
-        public static readonly Regex WoMPreviousRegex = new Regex(DateTimeDefinitions.WoMPreviousRegex, RegexFlags);
-        public static readonly Regex WoMNextRegex = new Regex(DateTimeDefinitions.WoMNextRegex, RegexFlags);
+        public static readonly Regex WoMLastRegex = new Regex(DateTimeDefinitions.WoMLastRegex, RegexFlags, RegexTimeOut);
+        public static readonly Regex WoMPreviousRegex = new Regex(DateTimeDefinitions.WoMPreviousRegex, RegexFlags, RegexTimeOut);
+        public static readonly Regex WoMNextRegex = new Regex(DateTimeDefinitions.WoMNextRegex, RegexFlags, RegexTimeOut);
 
         public static readonly ImmutableDictionary<string, int> MonthOfYear = DateTimeDefinitions.ParserConfigurationMonthOfYear.ToImmutableDictionary();
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        private static readonly Regex NextMonthRegex = new Regex(DateTimeDefinitions.ParserConfigurationNextMonthRegex, RegexFlags);
-        private static readonly Regex AfterNextMonthRegex = new Regex(DateTimeDefinitions.ParserConfigurationAfterNextMonthRegex, RegexFlags);
-        private static readonly Regex LastMonthRegex = new Regex(DateTimeDefinitions.ParserConfigurationLastMonthRegex, RegexFlags);
-        private static readonly Regex NextYearRegex = new Regex(DateTimeDefinitions.ParserConfigurationNextYearRegex, RegexFlags);
-        private static readonly Regex AfterNextYearRegex = new Regex(DateTimeDefinitions.ParserConfigurationAfterNextYearRegex, RegexFlags);
-        private static readonly Regex LastYearRegex = new Regex(DateTimeDefinitions.ParserConfigurationLastYearRegex, RegexFlags);
-        private static readonly Regex ThisYearRegex = new Regex(DateTimeDefinitions.ParserConfigurationThisYearRegex, RegexFlags);
+        private static readonly Regex NextMonthRegex = new Regex(DateTimeDefinitions.ParserConfigurationNextMonthRegex, RegexFlags, RegexTimeOut);
+        private static readonly Regex AfterNextMonthRegex = new Regex(DateTimeDefinitions.ParserConfigurationAfterNextMonthRegex, RegexFlags, RegexTimeOut);
+        private static readonly Regex LastMonthRegex = new Regex(DateTimeDefinitions.ParserConfigurationLastMonthRegex, RegexFlags, RegexTimeOut);
+        private static readonly Regex NextYearRegex = new Regex(DateTimeDefinitions.ParserConfigurationNextYearRegex, RegexFlags, RegexTimeOut);
+        private static readonly Regex AfterNextYearRegex = new Regex(DateTimeDefinitions.ParserConfigurationAfterNextYearRegex, RegexFlags, RegexTimeOut);
+        private static readonly Regex LastYearRegex = new Regex(DateTimeDefinitions.ParserConfigurationLastYearRegex, RegexFlags, RegexTimeOut);
+        private static readonly Regex ThisYearRegex = new Regex(DateTimeDefinitions.ParserConfigurationThisYearRegex, RegexFlags, RegexTimeOut);
 
         public JapaneseDatePeriodParserConfiguration(ICJKCommonDateTimeParserConfiguration config)
             : base(config)
@@ -73,6 +73,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
             FutureRegex = JapaneseDatePeriodExtractorConfiguration.FutureRegex;
             WeekWithWeekDayRangeRegex = JapaneseDatePeriodExtractorConfiguration.WeekWithWeekDayRangeRegex;
             UnitRegex = JapaneseDatePeriodExtractorConfiguration.UnitRegex;
+            DurationUnitRegex = JapaneseDatePeriodExtractorConfiguration.DurationUnitRegex;
             WeekOfMonthRegex = JapaneseDatePeriodExtractorConfiguration.WeekOfMonthRegex;
             WeekOfYearRegex = JapaneseDatePeriodExtractorConfiguration.WeekOfYearRegex;
             WeekOfDateRegex = JapaneseDatePeriodExtractorConfiguration.WeekOfDateRegex;
@@ -181,6 +182,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 
         public Regex UnitRegex { get; }
 
+        public Regex DurationUnitRegex { get; }
+
         public Regex WeekOfMonthRegex { get; }
 
         public Regex WeekOfYearRegex { get; }
@@ -247,13 +250,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
         public bool IsYearOnly(string text)
         {
             var trimmedText = text.Trim();
-            return DateTimeDefinitions.YearTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal));
+            return DateTimeDefinitions.YearTerms.Any(o => trimmedText.EndsWith(o, StringComparison.Ordinal) || trimmedText.StartsWith(o, StringComparison.Ordinal));
         }
 
         public bool IsThisYear(string text)
         {
             var trimmedText = text.Trim();
             return DateTimeDefinitions.ThisYearTerms.Any(o => trimmedText.Equals(o, StringComparison.Ordinal));
+        }
+
+        public bool IsYearToDate(string text)
+        {
+            var trimmedText = text.Trim();
+            return DateTimeDefinitions.YearToDateTerms.Any(o => trimmedText.Equals(o, StringComparison.Ordinal));
         }
 
         public bool IsLastYear(string text)

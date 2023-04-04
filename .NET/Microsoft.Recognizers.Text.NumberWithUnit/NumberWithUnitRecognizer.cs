@@ -8,23 +8,23 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
     public class NumberWithUnitRecognizer : Recognizer<NumberWithUnitOptions>
     {
-        public NumberWithUnitRecognizer(string targetCulture, NumberWithUnitOptions options = NumberWithUnitOptions.None, bool lazyInitialization = false)
-            : base(targetCulture, options, lazyInitialization)
+        public NumberWithUnitRecognizer(string targetCulture, NumberWithUnitOptions options = NumberWithUnitOptions.None, bool lazyInitialization = false, int timeoutInSeconds = 0)
+            : base(targetCulture, options, lazyInitialization, timeoutInSeconds)
         {
         }
 
-        public NumberWithUnitRecognizer(string targetCulture, int options, bool lazyInitialization = false)
-            : this(targetCulture, GetOptions(options), lazyInitialization)
+        public NumberWithUnitRecognizer(string targetCulture, int options, bool lazyInitialization = false, int timeoutInSeconds = 0)
+            : this(targetCulture, GetOptions(options), lazyInitialization, timeoutInSeconds)
         {
         }
 
-        public NumberWithUnitRecognizer(NumberWithUnitOptions options = NumberWithUnitOptions.None, bool lazyInitialization = true)
-            : this(null, options, lazyInitialization)
+        public NumberWithUnitRecognizer(NumberWithUnitOptions options = NumberWithUnitOptions.None, bool lazyInitialization = true, int timeoutInSeconds = 0)
+            : this(null, options, lazyInitialization, timeoutInSeconds)
         {
         }
 
-        public NumberWithUnitRecognizer(int options, bool lazyInitialization = true)
-            : this(null, GetOptions(options), lazyInitialization)
+        public NumberWithUnitRecognizer(int options, bool lazyInitialization = true, int timeoutInSeconds = 0)
+            : this(null, GetOptions(options), lazyInitialization, timeoutInSeconds)
         {
         }
 
@@ -677,6 +677,14 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
                         new BaseMergedUnitParser(new Turkish.CurrencyParserConfiguration())
                     },
                 }));
+        }
+
+        protected override List<Type> GetRelatedTypes()
+        {
+            return new List<Type>()
+            {
+                typeof(NumberWithUnitExtractor),
+            };
         }
 
         private static List<ModelResult> RecognizeByModel(Func<NumberWithUnitRecognizer, IModel> getModelFunc, string query, NumberWithUnitOptions options)

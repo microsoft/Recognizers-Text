@@ -35,8 +35,11 @@ namespace Microsoft.Recognizers.Definitions.German
       public const string ThisPrefixRegex = @"\b(diese[rnms]?|jetzige[rns]?|heutige[rns]?|aktuelle[rns]?)\b";
       public const string RangePrefixRegex = @"(vo[nm]|zwischen)";
       public const string PenultimatePrefixRegex = @"\b(vorletzte[snm]?)\b";
+      public const string WrittenOneToNineRegex = @"(eins?|zw(een|ei|o)|drei|vier|fünf|fuenf|sechs|sieben|acht|neun)";
       public const string DayRegex = @"(de[rmsn]\s*)?(?<day>(01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)(\.|\b))";
-      public const string MonthNumRegex = @"(?<month>(01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\.?)";
+      public static readonly string WrittenDayNumRegex = $@"\b(de[rmsn]\s+)?(?<day>erst|zweit|dritt|viert|fünft|fuenft|sechst|siebt|acht|neunt|zehnt|elft|zwölft|zwoelft|dreizehnt|vierzehnt|fünfzehnt|fuenfzehnt|sechzehnt|siebzehnt|achtzehnt|neunzehnt|({WrittenOneToNineRegex}und)?zwanzigst|(einund)?dreißigst)e[nr]\b";
+      public const string MonthNumRegex = @"(?<month>(01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)(\.|\b))";
+      public const string WrittenMonthNumRegex = @"\b(?<month>erst|zweit|dritt|viert|fünft|fuenft|sechst|siebt|acht|neunt|zehnt|elft|zw(ö|oe)lft)e[nr]\b";
       public static readonly string AmDescRegex = $@"({BaseDateTime.BaseAmDescRegex})";
       public static readonly string PmDescRegex = $@"({BaseDateTime.BasePmDescRegex})";
       public static readonly string AmPmDescRegex = $@"({BaseDateTime.BaseAmPmDescRegex})";
@@ -44,7 +47,7 @@ namespace Microsoft.Recognizers.Definitions.German
       public static readonly string DescRegex = $@"({OclockRegex})";
       public static readonly string TwoDigitYearRegex = $@"\b(?<![$])(?<year>([0-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b";
       public const string CenturyRegex = @"\b(?<century>((ein|zwei)?tausend(und)?)?((ein|zwei|drei|vier|fünf|sechs|sieben|acht|neun|zehn|elf|zwölf|dreizehn|vierzehn|fünfzehn|sechzehn|siebzehn|achtzehn|neunzehn)hundert))\b";
-      public const string WrittenNumRegex = @"(zw(ö|oe)lf|dreizehn|vierzehn|fünfzehn|sechzehn|siebzehn|achtzehn|neunzehn|zwanzig|dreißig|vierzig|fünfzig|sechzig|siebzig|achtzig|neunzig|eins?|zw(een|ei|o)|drei|vier|fünf|fuenf|sechs|sieben|acht|neun|zehn|elf)";
+      public static readonly string WrittenNumRegex = $@"(zw(ö|oe)lf|dreizehn|vierzehn|fünfzehn|sechzehn|siebzehn|achtzehn|neunzehn|zwanzig|dreißig|vierzig|fünfzig|sechzig|siebzig|achtzig|neunzig|elf|zehn|{WrittenOneToNineRegex})";
       public static readonly string FullTextYearRegex = $@"\b((?<firsttwoyearnum>{CenturyRegex})\s+(?<lasttwoyearnum>((zwanzig|dreißig|vierzig|fünfzig|sechzig|siebzig|achtzig|neunzig)\s+{WrittenNumRegex})|{WrittenNumRegex}))\b|\b(?<firsttwoyearnum>{CenturyRegex})\b";
       public static readonly string YearRegex = $@"({BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})";
       public const string WeekDayRegex = @"(?<weekday>sonntag|montag|dienstag|mittwoch|donnerstag|freitag|samstag|sonnabend|(mo|di|mi|do|fr|sa|so)(\.|\b))";
@@ -62,7 +65,7 @@ namespace Microsoft.Recognizers.Definitions.German
       public static readonly string MonthFrontSimpleCasesRegex = $@"((vom|zwischen)\s*)?{MonthSuffixRegex}\s*((vom|zwischen)\s*)?({DayRegex})\s*{TillRegex}\s*({DayRegex})((\s+|\s*,\s*){YearRegex})?";
       public static readonly string MonthFrontBetweenRegex = $@"({MonthSuffixRegex}\s+(zwischen\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})((\s+|\s*,\s*){YearRegex})?)";
       public static readonly string BetweenRegex = $@"((zwischen\s+)({DayRegex})(\s+{MonthSuffixRegex})?\s*{RangeConnectorRegex}\s*({DayRegex})(\s+{MonthSuffixRegex})((\s+|\s*,\s*){YearRegex})?|(zwischen\s+)({DayRegex})(\s+{MonthSuffixRegex})?\s*{RangeConnectorRegex}\s*({DayRegex})(\s+{MonthSuffixRegex})?((\s+|\s*,\s*){YearRegex})?)";
-      public static readonly string MonthWithYear = $@"\b((?<month>apr(il|\.)|aug(ust|\.)|dez(ember|\.)|feb(ruar|ber|\.)|januar|j[äa]n(ner|\.)|jul(e?i|l\.)|jun([io]|\.)|märz|mai|nov(ember|\.)|okt(ober|\.)|sept?(ember|\.))(\s*),?(\s+des)?(\s*)({YearRegex}|(?<order>nächste[mn]|letzte[mn]|diese(s|n))\s+jahres))";
+      public static readonly string MonthWithYear = $@"\b((?<month>apr(il|\.)|aug(ust|\.)|dez(ember|\.)|feb(ruar|ber|\.)|januar|j[äa]n(ner|\.)|jul(e?i|l\.)|jun([io]|\.)|märz|mai|nov(ember|\.)|okt(ober|\.)|sept?(ember|\.))(\s*),?(\s+des)?(\s*)({YearRegex}|{TwoDigitYearRegex}|(?<order>nächste[mn]|letzte[mn]|diese(s|n))\s+jahres))";
       public static readonly string OneWordPeriodRegex = $@"\b((((im\s+)?monat\s+)?({RelativeRegex}\s*(jahr\s*(im\s*)?)?)?(?<month>apr(il|\.)|aug(ust|\.)|dez(ember|\.)|feb(ruar|ber|\.)|j[äa]n(uar|ner|\.)|jul(e?i|l\.)|jun([io]|\.)|märz|mai|nov(ember|\.)|okt(ober|\.)|sept?(ember|\.)))|(?<business>unter\s+der\s+woche)|({RelativeRegex}\s+)?((?<business>werktags|arbeitswoche)|woche(nende)?|monat(s)?|jahr|jahres)(?!(\s+\d+(?!({BaseDateTime.BaseAmDescRegex}|{BaseDateTime.BasePmDescRegex}))|\s+bis\s+heute)))\b";
       public static readonly string MonthNumWithYear = $@"({YearRegex}(\s*)[/\-\.](\s*){MonthNumRegex})|({MonthNumRegex}(\s*)[/\-\.](\s*){YearRegex})";
       public static readonly string WeekOfMonthRegex = $@"(?<wom>((die|der)\s+)(?<cardinal>erste[rns]?|1\.|zweite[rns]?|2\.|dritte[rns]?|3\.|vierte[rns]?|4\.|fünfte[rns]?|5\.|letzte[rmns]?)\s+woche\s+(des|diese(s|n)|im)\s+({MonthSuffixRegex}|monat(s)?))";
@@ -105,6 +108,7 @@ namespace Microsoft.Recognizers.Definitions.German
       public static readonly string DateExtractor8 = $@"(?<=\b(am)\s+){DayRegex}[/\\\.]{MonthNumRegex}([/\\\.]{DateYearRegex})?{BaseDateTime.CheckDecimalRegex}\b";
       public static readonly string DateExtractor9 = $@"\b({DayRegex}\s*/\s*{MonthNumRegex}((\s+|\s*,\s*){DateYearRegex})?){BaseDateTime.CheckDecimalRegex}\b";
       public static readonly string DateExtractor10 = $@"^[.]";
+      public static readonly string DateExtractor11 = $@"\b(({WeekDayRegex})(\s+|\s*,\s*)|(?<=\bam\s+))({DayRegex}\.|{WrittenDayNumRegex})\s*[/\\.\- ]\s*({MonthNumRegex}\.|{WrittenMonthNumRegex})(\s*[/\\.\- ]\s*{DateYearRegex})?";
       public static readonly string DateExtractorA = $@"({DateYearRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DayRegex}|{MonthRegex}\s*[/\\\-\.]\s*{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]\s*{DayRegex}|{DayRegex}\s*[/\\\-\.]\s*{BaseDateTime.FourDigitYearRegex}\s*[/\\\-\.]\s*{MonthRegex})(?!\s*[/\\\-\.:]\s*\d+)";
       public static readonly string OfMonth = $@"^(\s*des\s*|\s*)?{MonthRegex}";
       public static readonly string MonthEnd = $@"{MonthRegex}\s*(de[rmn])?\s*$";
@@ -452,7 +456,21 @@ namespace Microsoft.Recognizers.Definitions.German
             { @"06", 6 },
             { @"07", 7 },
             { @"08", 8 },
-            { @"09", 9 }
+            { @"09", 9 },
+            { @"erst", 1 },
+            { @"zweit", 2 },
+            { @"dritt", 3 },
+            { @"viert", 4 },
+            { @"fünft", 5 },
+            { @"fuenft", 5 },
+            { @"sechst", 6 },
+            { @"siebt", 7 },
+            { @"acht", 8 },
+            { @"neunt", 9 },
+            { @"zehnt", 10 },
+            { @"elft", 11 },
+            { @"zwölft", 12 },
+            { @"zwoelft", 12 }
         };
       public static readonly Dictionary<string, int> Numbers = new Dictionary<string, int>
         {
@@ -626,7 +644,42 @@ namespace Microsoft.Recognizers.Definitions.German
             { @"28", 28 },
             { @"29", 29 },
             { @"30", 30 },
-            { @"31", 31 }
+            { @"31", 31 },
+            { @"erst", 1 },
+            { @"zweit", 2 },
+            { @"dritt", 3 },
+            { @"viert", 4 },
+            { @"fünft", 5 },
+            { @"fuenft", 5 },
+            { @"sechst", 6 },
+            { @"siebt", 7 },
+            { @"acht", 8 },
+            { @"neunt", 9 },
+            { @"zehnt", 10 },
+            { @"elft", 11 },
+            { @"zwölft", 12 },
+            { @"zwoelft", 12 },
+            { @"dreizehnt", 13 },
+            { @"vierzehnt", 14 },
+            { @"fünfzehnt", 15 },
+            { @"fuenfzehnt", 15 },
+            { @"sechzehnt", 16 },
+            { @"siebzehnt", 17 },
+            { @"achtzehnt", 18 },
+            { @"neunzehnt", 19 },
+            { @"zwanzigst", 20 },
+            { @"einundzwanzigst", 21 },
+            { @"zweiundzwanzigst", 22 },
+            { @"dreiundzwanzigst", 23 },
+            { @"vierundzwanzigst", 24 },
+            { @"fünfundzwanzigst", 25 },
+            { @"fuenfundzwanzigst", 25 },
+            { @"sechsundzwanzigst", 26 },
+            { @"siebenundzwanzigst", 27 },
+            { @"achtundzwanzigst", 28 },
+            { @"neunundzwanzigst", 29 },
+            { @"dreißigst", 30 },
+            { @"einunddreißigst", 31 }
         };
       public static readonly Dictionary<string, double> DoubleNumbers = new Dictionary<string, double>
         {

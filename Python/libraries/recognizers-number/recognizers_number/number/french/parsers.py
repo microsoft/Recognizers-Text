@@ -89,6 +89,10 @@ class FrenchNumberParserConfiguration(NumberParserConfiguration):
     def is_multi_decimal_separator_culture(self) -> bool:
         return self._is_multi_decimal_separator_culture
 
+    @property
+    def round_multiplier_regex(self) -> Pattern:
+        return self._round_multiplier_regex
+
     def __init__(self, culture_info=None):
         if culture_info is None:
             culture_info = CultureInfo(Culture.French)
@@ -117,9 +121,43 @@ class FrenchNumberParserConfiguration(NumberParserConfiguration):
             FrenchNumeric.HalfADozenRegex)
         self._digital_number_regex = RegExpUtility.get_safe_reg_exp(
             FrenchNumeric.DigitalNumberRegex)
+        self._round_multiplier_regex = RegExpUtility.get_safe_reg_exp(
+            FrenchNumeric.RoundMultiplierRegex)
 
     def normalize_token_set(self, tokens: List[str], context: ParseResult) -> List[str]:
-        return tokens
+        frac_words: List[str] = list()
+        tokens_len = len(tokens)
+        i = 0
+        while i < tokens_len:
+            if '-' in tokens[i]:
+                splited_tokens = tokens[i].split('-')
+                if len(splited_tokens) == 2 and splited_tokens[1] in self.ordinal_number_map:
+                    frac_words.append(splited_tokens[0])
+                    frac_words.append(splited_tokens[1])
+                else:
+                    frac_words.append(tokens[i])
+            elif i < tokens_len - 2 and tokens[i + 1] == '-':
+                if tokens[i + 2] in self.ordinal_number_map:
+                    frac_words.append(tokens[i])
+                    frac_words.append(tokens[i + 2])
+                else:
+                    frac_words.append(
+                        tokens[i] + tokens[i + 1] + tokens[i + 2])
+                i += 2
+            else:
+                frac_words.append(tokens[i])
+            i += 1
+
+        # The following piece of code is needed to compute the fraction pattern number+'et demi'
+        # e.g. 'deux et demi' ('two and a half') where the numerator is omitted in French.
+        # It works by inserting the numerator 'un' ('a') in the list frac_words
+        #
+        if len(frac_words) > 2:
+            if frac_words[len(frac_words) - 1] == FrenchNumeric.OneHalfTokens[1] and \
+                    frac_words[len(frac_words) - 2] == FrenchNumeric.WordSeparatorToken:
+                frac_words.insert(len(frac_words) - 1, FrenchNumeric.OneHalfTokens[0])
+
+        return frac_words
 
     def resolve_composite_number(self, number_str: str) -> int:
         if number_str in self.ordinal_number_map:

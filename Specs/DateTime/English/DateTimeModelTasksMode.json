@@ -88,5 +88,1711 @@
     },
     "NotSupported": "javascript, python, java",
     "Results": []
+  },
+  {
+    "Input": "I'll be back 7:56:30 pm",
+    "Comment": "Taskmode changes resolution of past time resolution to datetime.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "7:56:30 pm",
+        "Start": 13,
+        "End": 22,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T19:56:30",
+              "type": "time",
+              "value": "19:56:30"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be back 7:56:30 am",
+    "Comment": "Taskmode changes resolution of past time resolution to datetime.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T08:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "7:56:30 am",
+        "Start": 13,
+        "End": 22,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-08T07:56",
+              "type": "datetime",
+              "value": "2016-11-08 07:56:30"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "It's half past seven o'clock",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "half past seven o'clock",
+        "Start": 5,
+        "End": 27,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07:30",
+              "type": "time",
+              "value": "07:30:00"
+            },
+            {
+              "timex": "T19:30",
+              "type": "time",
+              "value": "19:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "It's 20 min past eight in the evening",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T21:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "20 min past eight in the evening",
+        "Start": 5,
+        "End": 36,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-08T20:20",
+              "type": "datetime",
+              "value": "2016-11-08 20:20:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be back in the morning at 7",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "in the morning at 7",
+        "Start": 13,
+        "End": 31,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T07",
+              "type": "time",
+              "value": "07:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be back in the afternoon at 7",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T20:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "in the afternoon at 7",
+        "Start": 13,
+        "End": 33,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-08T19",
+              "type": "datetime",
+              "value": "2016-11-08 19:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be back noonish",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T13:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "noonish",
+        "Start": 13,
+        "End": 19,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-08T12",
+              "type": "datetime",
+              "value": "2016-11-08 12:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be back 11ish",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T13:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "11ish",
+        "Start": 13,
+        "End": 17,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-08T11",
+              "type": "datetime",
+              "value": "2016-11-08 11:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out from 2:30 to 2:15 pm",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "from 2:30 to 2:15 pm",
+        "Start": 12,
+        "End": 31,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-11-08T02:30,2016-11-08T14:15,PT11H45M)",
+              "type": "datetimerange",
+              "start": "2016-11-08 02:30:00",
+              "end": "2016-11-08 14:15:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "let's meet in the daytime",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "in the daytime",
+        "Start": 11,
+        "End": 24,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-08TDT",
+              "type": "datetimerange",
+              "start": "2016-11-08 16:00:00",
+              "end": "2016-11-08 16:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "they were working in the night-time",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T22:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "in the night-time",
+        "Start": 18,
+        "End": 34,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-08TNT",
+              "type": "datetimerange",
+              "start": "2016-11-08 21:00:00",
+              "end": "2016-11-08 21:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out 5 to seven in the morning",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "5 to seven in the morning",
+        "Start": 12,
+        "End": 36,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-11-08T05,2016-11-08T07,PT2H)",
+              "type": "datetimerange",
+              "start": "2016-11-08 05:00:00",
+              "end": "2016-11-08 07:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out 4:00 to 7 oclock",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "4:00 to 7 oclock",
+        "Start": 12,
+        "End": 27,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-11-08T04,2016-11-08T07,PT3H)",
+              "type": "datetimerange",
+              "start": "2016-11-08 04:00:00",
+              "end": "2016-11-08 07:00:00"
+            },
+            {
+              "timex": "(2016-11-08T16,2016-11-08T19,PT3H)",
+              "type": "datetimerange",
+              "start": "2016-11-08 16:00:00",
+              "end": "2016-11-08 19:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be out from 3 in the morning until 5pm",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "from 3 in the morning until 5pm",
+        "Start": 12,
+        "End": 42,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2016-11-08T03,2016-11-08T17,PT14H)",
+              "type": "datetimerange",
+              "start": "2016-11-08 03:00:00",
+              "end": "2016-11-08 17:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "let's meet in the morning",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "in the morning",
+        "Start": 11,
+        "End": 24,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2016-11-08TMO",
+              "type": "datetimerange",
+              "start": "2016-11-08 06:00:00",
+              "end": "2016-11-08 06:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "let's meet in the evening",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T15:12:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "in the evening",
+        "Start": 11,
+        "End": 24,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TEV",
+              "type": "timerange",
+              "start": "18:00:00",
+              "end": "18:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back Nov/2",
+    "Context": {
+      "ReferenceDateTime": "2016-11-02T10:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "nov/2",
+        "Start": 13,
+        "End": 17,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-11-02",
+              "type": "date",
+              "value": "2015-11-02"
+            },
+            {
+              "timex": "XXXX-11-02",
+              "type": "date",
+              "value": "2016-11-02"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "meet me from 2 july to 10 july",
+    "Context": {
+      "ReferenceDateTime": "2022-07-10T10:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "from 2 july to 10 july",
+        "Start": 8,
+        "End": 29,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-07-02,XXXX-07-10,P8D)",
+              "type": "daterange",
+              "start": "2021-07-02",
+              "end": "2021-07-10"
+            },
+            {
+              "timex": "(XXXX-07-02,XXXX-07-10,P8D)",
+              "type": "daterange",
+              "start": "2022-07-02",
+              "end": "2022-07-10"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The event starts on Christmas early morning at 9:00",
+    "Context": {
+      "ReferenceDateTime": "2022-06-22T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "christmas early morning at 9:00",
+        "Start": 20,
+        "End": 50,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-12-25T09:00",
+              "type": "datetime",
+              "value": "2021-12-25 09:00:00"
+            },
+            {
+              "timex": "XXXX-12-25T09:00",
+              "type": "datetime",
+              "value": "2022-12-25 09:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The event starts on Christmas at 9:00 early morning",
+    "Context": {
+      "ReferenceDateTime": "2022-08-05T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "christmas at 9:00 early morning",
+        "Start": 20,
+        "End": 50,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-12-25T09:00",
+              "type": "datetime",
+              "value": "2021-12-25 09:00:00"
+            },
+            {
+              "timex": "XXXX-12-25T09:00",
+              "type": "datetime",
+              "value": "2022-12-25 09:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "will prepare cake on christmas at 5.",
+    "Context": {
+      "ReferenceDateTime": "2022-04-29T00:00:00"
+    },
+    "NotSupported": "python, java, javascript",
+    "Results": [
+      {
+        "Text": "christmas at 5",
+        "Start": 21,
+        "End": 34,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-12-25T05",
+              "type": "datetime",
+              "value": "2021-12-25 05:00:00"
+            },
+            {
+              "timex": "XXXX-12-25T05",
+              "type": "datetime",
+              "value": "2022-12-25 05:00:00"
+            },
+            {
+              "timex": "XXXX-12-25T17",
+              "type": "datetime",
+              "value": "2021-12-25 17:00:00"
+            },
+            {
+              "timex": "XXXX-12-25T17",
+              "type": "datetime",
+              "value": "2022-12-25 17:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "will prepare cake on easter after 5pm",
+    "Context": {
+      "ReferenceDateTime": "2022-04-29T00:00:00"
+    },
+    "NotSupported": "python, java, javascript",
+    "Results": [
+      {
+        "Text": "easter after 5pm",
+        "Start": 21,
+        "End": 36,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-04-17T17",
+              "Mod": "after",
+              "type": "datetimerange",
+              "start": "2022-04-17 17:00:00"
+            },
+            {
+              "timex": "XXXX-04-17T17",
+              "Mod": "after",
+              "type": "datetimerange",
+              "start": "2023-04-09 17:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "will decorate home between 5 to 7pm on new year.",
+    "Context": {
+      "ReferenceDateTime": "2022-04-29T00:00:00"
+    },
+    "NotSupported": "python, java, javascript",
+    "Results": [
+      {
+        "Text": "between 5 to 7pm on new year",
+        "Start": 19,
+        "End": 46,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-01-01T17,XXXX-01-01T19,PT2H)",
+              "type": "datetimerange",
+              "start": "2022-01-01 17:00:00",
+              "end": "2022-01-01 19:00:00"
+            },
+            {
+              "timex": "(XXXX-01-01T17,XXXX-01-01T19,PT2H)",
+              "type": "datetimerange",
+              "start": "2023-01-01 17:00:00",
+              "end": "2023-01-01 19:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "will wake up early morning on earth day.",
+    "Context": {
+      "ReferenceDateTime": "2022-04-29T00:00:00"
+    },
+    "NotSupported": "python, java, javascript",
+    "Results": [
+      {
+        "Text": "early morning on earth day",
+        "Start": 13,
+        "End": 38,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-04-22TMO",
+              "Mod": "start",
+              "type": "datetimerange",
+              "start": "2022-04-22 06:00:00",
+              "end": "2022-04-22 08:00:00"
+            },
+            {
+              "timex": "XXXX-04-22TMO",
+              "Mod": "start",
+              "type": "datetimerange",
+              "start": "2023-04-22 06:00:00",
+              "end": "2023-04-22 08:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "any available time to run errands at lunchtime today",
+    "Context": {
+      "ReferenceDateTime": "2022-07-27T10:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "at lunchtime today",
+        "Start": 34,
+        "End": 51,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2022-07-27TMEL",
+              "type": "datetimerange",
+              "start": "2022-07-27 11:00:00",
+              "end": "2022-07-27 13:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Take medicines after dinner tomorrow",
+    "Context": {
+      "ReferenceDateTime": "2022-07-27T10:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "after dinner tomorrow",
+        "Start": 15,
+        "End": 35,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2022-07-28TMED",
+              "Mod": "after",
+              "type": "datetimerange",
+              "start": "2022-07-28 21:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Take medicines after dinnertime tomorrow",
+    "Context": {
+      "ReferenceDateTime": "2022-07-27T10:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "after dinnertime tomorrow",
+        "Start": 15,
+        "End": 39,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2022-07-28TMED",
+              "Mod": "after",
+              "type": "datetimerange",
+              "start": "2022-07-28 21:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "let's meet at lunch tomorrow.",
+    "Context": {
+      "ReferenceDateTime": "2022-07-27T10:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "at lunch tomorrow",
+        "Start": 11,
+        "End": 27,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2022-07-28TMEL",
+              "type": "datetimerange",
+              "start": "2022-07-28 11:00:00",
+              "end": "2022-07-28 13:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "schedule me a 1:1 meeting",
+    "Comment": "Tasksmode supress 1:1 from getting categorised as time.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "schedule me a 1:1 meeting on 14 nov",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "14 nov",
+        "Start": 29,
+        "End": 34,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-11-14",
+              "type": "date",
+              "value": "2015-11-14"
+            },
+            {
+              "timex": "XXXX-11-14",
+              "type": "date",
+              "value": "2016-11-14"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "schedule me a 1:1 on saturday",
+    "Context": {
+      "ReferenceDateTime": "2022-04-27T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "saturday",
+        "Start": 21,
+        "End": 28,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-6",
+              "type": "date",
+              "value": "2022-04-23"
+            },
+            {
+              "timex": "XXXX-WXX-6",
+              "type": "date",
+              "value": "2022-04-30"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "schedule me a 1:1 meeting 14 nov 2023",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "14 nov 2023",
+        "Start": 26,
+        "End": 36,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2023-11-14",
+              "type": "date",
+              "value": "2023-11-14"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Listen to 1990s music",
+    "Comment": "Taskmode will supress number with s (90s) from getting be categorised as daterange",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Who are us presidents in 1990 s.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Who are us presidents in nineties",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "I'll be back at 7ampm",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "I'll be back at 7p",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "There is a event in the independence day of this year.",
+    "Context": {
+      "ReferenceDateTime": "2018-07-17T13:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "this year",
+        "Start": 44,
+        "End": 52,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2018",
+              "type": "daterange",
+              "start": "2018-01-01",
+              "end": "2019-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "meet on eid al fitr",
+    "Context": {
+      "ReferenceDateTime": "2022-06-17T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "The sales went up during 2017-q1",
+    "Context": {
+      "ReferenceDateTime": "2019-06-11T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "The sales went up during 2017 q1",
+    "Context": {
+      "ReferenceDateTime": "2019-06-11T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "2019 H2 will bring challenges",
+    "Context": {
+      "ReferenceDateTime": "2019-06-11T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "2019-H2 will bring challenges",
+    "Context": {
+      "ReferenceDateTime": "2019-06-11T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "The sales went up during from 2017-q1 to 2018-q1",
+    "Context": {
+      "ReferenceDateTime": "2019-06-11T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "The sales went up during from 2017 q1 to 2018 q1",
+    "Context": {
+      "ReferenceDateTime": "2019-06-11T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "The sales went up during from q1 of 2017 - q3 of 2018",
+    "Context": {
+      "ReferenceDateTime": "2019-06-11T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Sales for this quarter",
+    "Context": {
+      "ReferenceDateTime": "2019-07-04T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Sales for current quarter",
+    "Context": {
+      "ReferenceDateTime": "2019-07-04T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Sales for last quarter",
+    "Context": {
+      "ReferenceDateTime": "2019-07-04T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Sales for last quarter",
+    "Context": {
+      "ReferenceDateTime": "2019-01-28T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Let's discuss the work for the next quarter.",
+    "Context": {
+      "ReferenceDateTime": "2019-07-04T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Let's discuss the work for the next quarter.",
+    "Context": {
+      "ReferenceDateTime": "2019-12-28T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Let's discuss the work for the coming quarter.",
+    "Context": {
+      "ReferenceDateTime": "2019-07-04T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Let's discuss the work for the following quarter.",
+    "Context": {
+      "ReferenceDateTime": "2019-07-04T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "How about 2019 q1",
+    "Context": {
+      "ReferenceDateTime": "2019-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "How about 2019-Q1",
+    "Context": {
+      "ReferenceDateTime": "2019-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "How about q3 2019",
+    "Context": {
+      "ReferenceDateTime": "2019-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "q1-2019",
+    "Context": {
+      "ReferenceDateTime": "2019-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "I'll leave this SUMMER",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "I plan to leave before independence day.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "Winter, and more so the whole 1st quarter of 2013, was very polluted",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": []
+  },
+  {
+    "Input": "meet me next month",
+    "Context": {
+      "ReferenceDateTime": "2022-04-29T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "next month",
+        "Start": 8,
+        "End": 17,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2022-05-01",
+              "type": "date",
+              "value": "2022-05-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "meet me next month in morning",
+    "Context": {
+      "ReferenceDateTime": "2022-04-29T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "next month in morning",
+        "Start": 8,
+        "End": 28,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2022-05-01TMO",
+              "type": "datetimerange",
+              "start": "2022-05-01 06:00:00",
+              "end": "2022-05-01 06:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "meet me next month at 6pm",
+    "Context": {
+      "ReferenceDateTime": "2022-04-29T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "next month at 6pm",
+        "Start": 8,
+        "End": 24,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2022-05-01T18",
+              "type": "datetime",
+              "value": "2022-05-01 18:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "meet next month between 2:20 to 3pm",
+    "Context": {
+      "ReferenceDateTime": "2022-04-29T13:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "next month between 2:20 to 3pm",
+        "Start": 5,
+        "End": 34,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2022-05-01T14:20,2022-05-01T15,PT40M)",
+              "type": "datetimerange",
+              "start": "2022-05-01 14:20:00",
+              "end": "2022-05-01 15:00:00"
+            }
+          ]
+        }
+      }
+
+    ]
+  },
+  {
+    "Input": "meet next month after 3pm",
+    "Context": {
+      "ReferenceDateTime": "2022-04-29T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "next month after 3pm",
+        "Start": 5,
+        "End": 24,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2022-05-01T15",
+              "Mod": "after",
+              "type": "datetimerange",
+              "start": "2022-05-01 15:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "meet me next year at 6pm",
+    "Context": {
+      "ReferenceDateTime": "2022-04-29T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "next year at 6pm",
+        "Start": 8,
+        "End": 23,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2023-01-01T18",
+              "type": "datetime",
+              "value": "2023-01-01 18:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "meet me next year at 6.",
+    "Context": {
+      "ReferenceDateTime": "2022-04-29T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "next year at 6",
+        "Start": 8,
+        "End": 21,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2023-01-01T06",
+              "type": "datetime",
+              "value": "2023-01-01 06:00:00"
+            },
+            {
+              "timex": "2023-01-01T18",
+              "type": "datetime",
+              "value": "2023-01-01 18:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "meet me next year between 2:20 to 3pm",
+    "Context": {
+      "ReferenceDateTime": "2022-04-29T13:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "next year between 2:20 to 3pm",
+        "Start": 8,
+        "End": 36,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2023-01-01T14:20,2023-01-01T15,PT40M)",
+              "type": "datetimerange",
+              "start": "2023-01-01 14:20:00",
+              "end": "2023-01-01 15:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "meet me next year after 3pm",
+    "Context": {
+      "ReferenceDateTime": "2022-04-29T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "next year after 3pm",
+        "Start": 8,
+        "End": 26,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2023-01-01T15",
+              "Mod": "after",
+              "type": "datetimerange",
+              "start": "2023-01-01 15:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "meet me next month at 6.",
+    "Context": {
+      "ReferenceDateTime": "2022-04-29T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "next month at 6",
+        "Start": 8,
+        "End": 22,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2022-05-01T06",
+              "type": "datetime",
+              "value": "2022-05-01 06:00:00"
+            },
+            {
+              "timex": "2022-05-01T18",
+              "type": "datetime",
+              "value": "2022-05-01 18:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "meet me next year in morning",
+    "Context": {
+      "ReferenceDateTime": "2022-04-29T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "next year in morning",
+        "Start": 8,
+        "End": 27,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2023-01-01TMO",
+              "type": "datetimerange",
+              "start": "2023-01-01 06:00:00",
+              "end": "2023-01-01 06:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll leave everyday 6am",
+    "Context": {
+      "ReferenceDateTime": "2022-08-22T01:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "everyday 6am",
+        "Start": 11,
+        "End": 22,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T06P1D",
+              "type": "set",
+              "setTypename": "datetime",
+              "value": "2022-08-22 06:00:00",
+              "intervalSize": "1",
+              "intervalType": "D"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll take a walk daily at night",
+    "Context": {
+      "ReferenceDateTime": "2022-08-22T01:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "daily at night",
+        "Start": 17,
+        "End": 30,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TNIP1D",
+              "type": "set",
+              "setTypename": "datetime",
+              "value": "2022-08-22 21:00:00",
+              "intervalSize": "1",
+              "intervalType": "D"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "we will meet in ground daily sunday 4pm",
+    "Context": {
+      "ReferenceDateTime": "2022-08-22T01:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "daily sunday 4pm",
+        "Start": 23,
+        "End": 38,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T16P1D",
+              "type": "set",
+              "setTypename": "datetime",
+              "value": "2022-08-22 16:00:00",
+              "intervalSize": "1",
+              "intervalType": "D"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll leave 6am everyday",
+    "Context": {
+      "ReferenceDateTime": "2022-08-22T01:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "6am everyday",
+        "Start": 11,
+        "End": 22,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T06P1D",
+              "type": "set",
+              "setTypename": "datetime",
+              "value": "2022-08-22 06:00:00",
+              "intervalSize": "1",
+              "intervalType": "D"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "remind me to pay bill on 19th of every month.",
+    "Context": {
+      "ReferenceDateTime": "2022-08-22T01:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "19th of every month",
+        "Start": 25,
+        "End": 43,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-XX-19P1M",
+              "type": "set",
+              "setTypename": "date",
+              "value": "2022-09-19",
+              "intervalSize": "1",
+              "intervalType": "M"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "plan trip quarterly",
+    "Context": {
+      "ReferenceDateTime": "2022-08-22T01:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "quarterly",
+        "Start": 10,
+        "End": 18,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P3M",
+              "type": "set",
+              "setTypename": "date",
+              "value": "2022-08-22",
+              "intervalSize": "3",
+              "intervalType": "M"
+            }
+          ]
+        }
+      }
+
+    ]
+  },
+  {
+    "Input": "I'll leave every Sunday.",
+    "Context": {
+      "ReferenceDateTime": "2022-08-22T01:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "every sunday",
+        "Start": 11,
+        "End": 22,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-7P1W",
+              "type": "set",
+              "setTypename": "date",
+              "value": "2022-08-28",
+              "intervalSize": "1",
+              "intervalType": "W"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "dinner on me every night.",
+    "Context": {
+      "ReferenceDateTime": "2022-08-22T01:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "every night",
+        "Start": 13,
+        "End": 23,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TNIP1D",
+              "type": "set",
+              "setTypename": "datetime",
+              "value": "2022-08-22 21:00:00",
+              "intervalSize": "1",
+              "intervalType": "D"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "we will run every morning",
+    "Context": {
+      "ReferenceDateTime": "2022-08-22T01:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "every morning",
+        "Start": 12,
+        "End": 24,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "TMOP1D",
+              "type": "set",
+              "setTypename": "datetime",
+              "value": "2022-08-22 06:00:00",
+              "intervalSize": "1",
+              "intervalType": "D"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll leave early every other day",
+    "Context": {
+      "ReferenceDateTime": "2022-08-22T01:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "every other day",
+        "Start": 17,
+        "End": 31,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P2D",
+              "type": "set",
+              "setTypename": "date",
+              "value": "2022-08-22",
+              "intervalSize": "2",
+              "intervalType": "D"
+            }
+          ]
+        }
+      }
+
+    ]
+  },
+  {
+    "Input": "I'll take a run weekly",
+    "Context": {
+      "ReferenceDateTime": "2022-08-22T01:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "weekly",
+        "Start": 16,
+        "End": 21,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1W",
+              "type": "set",
+              "setTypename": "date",
+              "value": "2022-08-22",
+              "intervalSize": "1",
+              "intervalType": "W"
+            }
+          ]
+        }
+      }
+
+    ]
+  },
+  {
+    "Input": "we will meet after school every weekend.",
+    "Context": {
+      "ReferenceDateTime": "2022-09-06T17:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "every weekend",
+        "Start": 26,
+        "End": 38,
+        "TypeName": "datetimeV2.set",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1WE",
+              "type": "set",
+              "setTypename": "date",
+              "value": "2022-09-11",
+              "intervalSize": "1",
+              "intervalType": "WE"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

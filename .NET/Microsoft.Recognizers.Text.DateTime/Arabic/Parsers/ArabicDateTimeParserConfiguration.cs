@@ -14,30 +14,30 @@ namespace Microsoft.Recognizers.Text.DateTime.Arabic
     public class ArabicDateTimeParserConfiguration : BaseDateTimeOptionsConfiguration, IDateTimeParserConfiguration
     {
         public static readonly Regex AmTimeRegex =
-             new Regex(DateTimeDefinitions.AMTimeRegex, RegexFlags);
+             new Regex(DateTimeDefinitions.AMTimeRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex PmTimeRegex =
-            new Regex(DateTimeDefinitions.PMTimeRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.PMTimeRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex NightTimeRegex =
-             new Regex(DateTimeDefinitions.NightTimeRegex, RegexFlags);
+             new Regex(DateTimeDefinitions.NightTimeRegex, RegexFlags, RegexTimeOut);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture | RegexOptions.RightToLeft;
 
         private static readonly Regex NowTimeRegex =
-            new Regex(DateTimeDefinitions.NowTimeRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.NowTimeRegex, RegexFlags, RegexTimeOut);
 
         private static readonly Regex RecentlyTimeRegex =
-            new Regex(DateTimeDefinitions.RecentlyTimeRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.RecentlyTimeRegex, RegexFlags, RegexTimeOut);
 
         private static readonly Regex AsapTimeRegex =
-            new Regex(DateTimeDefinitions.AsapTimeRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.AsapTimeRegex, RegexFlags, RegexTimeOut);
 
         private static readonly Regex NextPrefixRegex =
-            new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags, RegexTimeOut);
 
         private static readonly Regex PreviousPrefixRegex =
-            new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags, RegexTimeOut);
 
         public ArabicDateTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
          : base(config)
@@ -49,6 +49,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Arabic
             TimeExtractor = config.TimeExtractor;
             DateParser = config.DateParser;
             TimeParser = config.TimeParser;
+            HolidayExtractor = config.HolidayExtractor;
+            HolidayTimeParser = config.HolidayTimeParser;
 
             NowRegex = ArabicDateTimeExtractorConfiguration.NowRegex;
 
@@ -124,6 +126,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Arabic
         public IImmutableDictionary<string, int> Numbers { get; }
 
         public IDateTimeUtilityConfiguration UtilityConfiguration { get; }
+
+        public IDateTimeExtractor HolidayExtractor { get; }
+
+        public IDateTimeParser HolidayTimeParser { get; }
 
         public int GetHour(string text, int hour)
         {

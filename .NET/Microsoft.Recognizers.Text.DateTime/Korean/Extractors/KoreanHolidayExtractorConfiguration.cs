@@ -10,12 +10,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
     public class KoreanHolidayExtractorConfiguration : BaseDateTimeOptionsConfiguration, ICJKHolidayExtractorConfiguration
     {
 
-        public static readonly Regex LunarHolidayRegex = new Regex(DateTimeDefinitions.LunarHolidayRegex, RegexFlags);
+        public static readonly Regex LunarHolidayRegex = new Regex(DateTimeDefinitions.LunarHolidayRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex[] HolidayRegexList =
         {
-            new Regex(DateTimeDefinitions.HolidayRegexList1, RegexFlags),
-            new Regex(DateTimeDefinitions.HolidayRegexList2, RegexFlags),
+            new Regex(DateTimeDefinitions.HolidayRegexList1, RegexFlags, RegexTimeOut),
+            new Regex(DateTimeDefinitions.HolidayRegexList2, RegexFlags, RegexTimeOut),
             LunarHolidayRegex,
         };
 

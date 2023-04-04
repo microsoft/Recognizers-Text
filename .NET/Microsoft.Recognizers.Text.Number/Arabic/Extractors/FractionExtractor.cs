@@ -25,31 +25,31 @@ namespace Microsoft.Recognizers.Text.Number.Arabic
             var regexes = new Dictionary<Regex, TypeTag>
             {
                 {
-                    new Regex(NumbersDefinitions.FractionNotationWithSpacesRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.FractionNotationWithSpacesRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.FractionNotationWithSpacesRegex2, RegexFlags),
+                    new Regex(NumbersDefinitions.FractionNotationWithSpacesRegex2, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.FractionNotationRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.FractionNotationRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.FractionNounRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.FractionNounRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ARABIC)
                 },
                 {
-                    new Regex(NumbersDefinitions.FractionNounWithArticleRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.FractionNounWithArticleRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ARABIC)
                 },
                 {
-                    new Regex(NumbersDefinitions.FractionWithOrdinalPrefix, RegexFlags),
+                    new Regex(NumbersDefinitions.FractionWithOrdinalPrefix, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ARABIC)
                 },
                 {
-                    new Regex(NumbersDefinitions.FractionWithPartOfPrefix, RegexFlags),
+                    new Regex(NumbersDefinitions.FractionWithPartOfPrefix, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ARABIC)
                 },
             };
@@ -60,13 +60,13 @@ namespace Microsoft.Recognizers.Text.Number.Arabic
                 if ((Options & NumberOptions.PercentageMode) != 0)
                 {
                     regexes.Add(
-                        new Regex(NumbersDefinitions.FractionPrepositionWithinPercentModeRegex, RegexFlags),
+                        new Regex(NumbersDefinitions.FractionPrepositionWithinPercentModeRegex, RegexFlags, RegexTimeOut),
                         RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ARABIC));
                 }
                 else
                 {
                     regexes.Add(
-                        new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexFlags),
+                        new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexFlags, RegexTimeOut),
                         RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.ARABIC));
                 }
             }

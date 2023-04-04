@@ -28,8 +28,11 @@ class GermanDateTime:
     ThisPrefixRegex = f'\\b(diese[rnms]?|jetzige[rns]?|heutige[rns]?|aktuelle[rns]?)\\b'
     RangePrefixRegex = f'(vo[nm]|zwischen)'
     PenultimatePrefixRegex = f'\\b(vorletzte[snm]?)\\b'
+    WrittenOneToNineRegex = f'(eins?|zw(een|ei|o)|drei|vier|fünf|fuenf|sechs|sieben|acht|neun)'
     DayRegex = f'(de[rmsn]\\s*)?(?<day>(01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|1|20|21|22|23|24|25|26|27|28|29|2|30|31|3|4|5|6|7|8|9)(\\.|\\b))'
-    MonthNumRegex = f'(?<month>(01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)\\.?)'
+    WrittenDayNumRegex = f'\\b(de[rmsn]\\s+)?(?<day>erst|zweit|dritt|viert|fünft|fuenft|sechst|siebt|acht|neunt|zehnt|elft|zwölft|zwoelft|dreizehnt|vierzehnt|fünfzehnt|fuenfzehnt|sechzehnt|siebzehnt|achtzehnt|neunzehnt|({WrittenOneToNineRegex}und)?zwanzigst|(einund)?dreißigst)e[nr]\\b'
+    MonthNumRegex = f'(?<month>(01|02|03|04|05|06|07|08|09|10|11|12|1|2|3|4|5|6|7|8|9)(\\.|\\b))'
+    WrittenMonthNumRegex = f'\\b(?<month>erst|zweit|dritt|viert|fünft|fuenft|sechst|siebt|acht|neunt|zehnt|elft|zw(ö|oe)lft)e[nr]\\b'
     AmDescRegex = f'({BaseDateTime.BaseAmDescRegex})'
     PmDescRegex = f'({BaseDateTime.BasePmDescRegex})'
     AmPmDescRegex = f'({BaseDateTime.BaseAmPmDescRegex})'
@@ -37,7 +40,7 @@ class GermanDateTime:
     DescRegex = f'({OclockRegex})'
     TwoDigitYearRegex = f'\\b(?<![$])(?<year>([0-9]\\d))(?!(\\s*((\\:\\d)|{AmDescRegex}|{PmDescRegex}|\\.\\d)))\\b'
     CenturyRegex = f'\\b(?<century>((ein|zwei)?tausend(und)?)?((ein|zwei|drei|vier|fünf|sechs|sieben|acht|neun|zehn|elf|zwölf|dreizehn|vierzehn|fünfzehn|sechzehn|siebzehn|achtzehn|neunzehn)hundert))\\b'
-    WrittenNumRegex = f'(zw(ö|oe)lf|dreizehn|vierzehn|fünfzehn|sechzehn|siebzehn|achtzehn|neunzehn|zwanzig|dreißig|vierzig|fünfzig|sechzig|siebzig|achtzig|neunzig|eins?|zw(een|ei|o)|drei|vier|fünf|fuenf|sechs|sieben|acht|neun|zehn|elf)'
+    WrittenNumRegex = f'(zw(ö|oe)lf|dreizehn|vierzehn|fünfzehn|sechzehn|siebzehn|achtzehn|neunzehn|zwanzig|dreißig|vierzig|fünfzig|sechzig|siebzig|achtzig|neunzig|elf|zehn|{WrittenOneToNineRegex})'
     FullTextYearRegex = f'\\b((?<firsttwoyearnum>{CenturyRegex})\\s+(?<lasttwoyearnum>((zwanzig|dreißig|vierzig|fünfzig|sechzig|siebzig|achtzig|neunzig)\\s+{WrittenNumRegex})|{WrittenNumRegex}))\\b|\\b(?<firsttwoyearnum>{CenturyRegex})\\b'
     YearRegex = f'({BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})'
     WeekDayRegex = f'(?<weekday>sonntag|montag|dienstag|mittwoch|donnerstag|freitag|samstag|sonnabend|(mo|di|mi|do|fr|sa|so)(\\.|\\b))'
@@ -55,7 +58,7 @@ class GermanDateTime:
     MonthFrontSimpleCasesRegex = f'((vom|zwischen)\\s*)?{MonthSuffixRegex}\\s*((vom|zwischen)\\s*)?({DayRegex})\\s*{TillRegex}\\s*({DayRegex})((\\s+|\\s*,\\s*){YearRegex})?'
     MonthFrontBetweenRegex = f'({MonthSuffixRegex}\\s+(zwischen\\s+)({DayRegex})\\s*{RangeConnectorRegex}\\s*({DayRegex})((\\s+|\\s*,\\s*){YearRegex})?)'
     BetweenRegex = f'((zwischen\\s+)({DayRegex})(\\s+{MonthSuffixRegex})?\\s*{RangeConnectorRegex}\\s*({DayRegex})(\\s+{MonthSuffixRegex})((\\s+|\\s*,\\s*){YearRegex})?|(zwischen\\s+)({DayRegex})(\\s+{MonthSuffixRegex})?\\s*{RangeConnectorRegex}\\s*({DayRegex})(\\s+{MonthSuffixRegex})?((\\s+|\\s*,\\s*){YearRegex})?)'
-    MonthWithYear = f'\\b((?<month>apr(il|\\.)|aug(ust|\\.)|dez(ember|\\.)|feb(ruar|ber|\\.)|januar|j[äa]n(ner|\\.)|jul(e?i|l\\.)|jun([io]|\\.)|märz|mai|nov(ember|\\.)|okt(ober|\\.)|sept?(ember|\\.))(\\s*),?(\\s+des)?(\\s*)({YearRegex}|(?<order>nächste[mn]|letzte[mn]|diese(s|n))\\s+jahres))'
+    MonthWithYear = f'\\b((?<month>apr(il|\\.)|aug(ust|\\.)|dez(ember|\\.)|feb(ruar|ber|\\.)|januar|j[äa]n(ner|\\.)|jul(e?i|l\\.)|jun([io]|\\.)|märz|mai|nov(ember|\\.)|okt(ober|\\.)|sept?(ember|\\.))(\\s*),?(\\s+des)?(\\s*)({YearRegex}|{TwoDigitYearRegex}|(?<order>nächste[mn]|letzte[mn]|diese(s|n))\\s+jahres))'
     OneWordPeriodRegex = f'\\b((((im\\s+)?monat\\s+)?({RelativeRegex}\\s*(jahr\\s*(im\\s*)?)?)?(?<month>apr(il|\\.)|aug(ust|\\.)|dez(ember|\\.)|feb(ruar|ber|\\.)|j[äa]n(uar|ner|\\.)|jul(e?i|l\\.)|jun([io]|\\.)|märz|mai|nov(ember|\\.)|okt(ober|\\.)|sept?(ember|\\.)))|(?<business>unter\\s+der\\s+woche)|({RelativeRegex}\\s+)?((?<business>werktags|arbeitswoche)|woche(nende)?|monat(s)?|jahr|jahres)(?!(\\s+\\d+(?!({BaseDateTime.BaseAmDescRegex}|{BaseDateTime.BasePmDescRegex}))|\\s+bis\\s+heute)))\\b'
     MonthNumWithYear = f'({YearRegex}(\\s*)[/\\-\\.](\\s*){MonthNumRegex})|({MonthNumRegex}(\\s*)[/\\-\\.](\\s*){YearRegex})'
     WeekOfMonthRegex = f'(?<wom>((die|der)\\s+)(?<cardinal>erste[rns]?|1\\.|zweite[rns]?|2\\.|dritte[rns]?|3\\.|vierte[rns]?|4\\.|fünfte[rns]?|5\\.|letzte[rmns]?)\\s+woche\\s+(des|diese(s|n)|im)\\s+({MonthSuffixRegex}|monat(s)?))'
@@ -89,7 +92,7 @@ class GermanDateTime:
     RelativeWeekDayRegex = f'\\b({WrittenNumRegex}\\s+{WeekDayRegex}e\\s+(von\\s+jetzt|später))\\b'
     SpecialDate = f'(?=\\b(an( dem)?|am)\\s+){DayRegex}\\b'
     DateExtractor1 = f'\\b(({WeekDayRegex})(\\s+|\\s*,\\s*))?({DayRegex}\\s*[/\\\\.,\\- ]\\s*{MonthRegex}(\\s*[/\\\\.,\\- ]\\s*{DateYearRegex})?|{BaseDateTime.FourDigitYearRegex}\\s*[/\\\\.,\\- ]\\s*{DayRegex}\\s*[/\\\\.,\\- ]\\s*{MonthRegex})\\b'
-    DateExtractor2 = f'\\b({MonthRegex}\\s*[/\\\\.,\\- ]\\s*{DayRegex}(\\s*[/\\\\.,\\- ]\\s*{DateYearRegex})?)\\b'
+    DateExtractor2 = f'\\b({MonthRegex}\\s*[/\\\\.,\\- ]\\s*{DayRegex}(?!\\s*\\-\\s*\\d{{2}}\\b)(\\s*[/\\\\.,\\- ]\\s*{DateYearRegex})?)\\b'
     DateExtractor3 = f'\\b({DayRegex}{MonthRegex})'
     DateExtractor4 = f'\\b({DayRegex}\\s*{MonthNumRegex}\\s*{DateYearRegex})\\b'
     DateExtractor5 = f'\\b(({WeekDayRegex})(\\s+|\\s*,\\s*))?({DayRegex}\\s*[/\\\\\\-\\.]\\s*({MonthNumRegex}|{MonthRegex})\\s*[/\\\\\\-\\.]\\s*{DateYearRegex})\\b(?!\\s*[/\\\\\\-\\.]\\s*\\d+)'
@@ -98,6 +101,7 @@ class GermanDateTime:
     DateExtractor8 = f'(?<=\\b(am)\\s+){DayRegex}[/\\\\\\.]{MonthNumRegex}([/\\\\\\.]{DateYearRegex})?{BaseDateTime.CheckDecimalRegex}\\b'
     DateExtractor9 = f'\\b({DayRegex}\\s*/\\s*{MonthNumRegex}((\\s+|\\s*,\\s*){DateYearRegex})?){BaseDateTime.CheckDecimalRegex}\\b'
     DateExtractor10 = f'^[.]'
+    DateExtractor11 = f'\\b(({WeekDayRegex})(\\s+|\\s*,\\s*)|(?<=\\bam\\s+))({DayRegex}\\.|{WrittenDayNumRegex})\\s*[/\\\\.\\- ]\\s*({MonthNumRegex}\\.|{WrittenMonthNumRegex})(\\s*[/\\\\.\\- ]\\s*{DateYearRegex})?'
     DateExtractorA = f'({DateYearRegex}\\s*[/\\\\\\-\\.]\\s*({MonthNumRegex}|{MonthRegex})\\s*[/\\\\\\-\\.]\\s*{DayRegex}|{MonthRegex}\\s*[/\\\\\\-\\.]\\s*{BaseDateTime.FourDigitYearRegex}\\s*[/\\\\\\-\\.]\\s*{DayRegex}|{DayRegex}\\s*[/\\\\\\-\\.]\\s*{BaseDateTime.FourDigitYearRegex}\\s*[/\\\\\\-\\.]\\s*{MonthRegex})(?!\\s*[/\\\\\\-\\.:]\\s*\\d+)'
     OfMonth = f'^(\\s*des\\s*|\\s*)?{MonthRegex}'
     MonthEnd = f'{MonthRegex}\\s*(de[rmn])?\\s*$'
@@ -422,7 +426,21 @@ class GermanDateTime:
                         ("06", 6),
                         ("07", 7),
                         ("08", 8),
-                        ("09", 9)])
+                        ("09", 9),
+                        ("erst", 1),
+                        ("zweit", 2),
+                        ("dritt", 3),
+                        ("viert", 4),
+                        ("fünft", 5),
+                        ("fuenft", 5),
+                        ("sechst", 6),
+                        ("siebt", 7),
+                        ("acht", 8),
+                        ("neunt", 9),
+                        ("zehnt", 10),
+                        ("elft", 11),
+                        ("zwölft", 12),
+                        ("zwoelft", 12)])
     Numbers = dict([("null", 0),
                     ("eins", 1),
                     ("ein", 1),
@@ -590,7 +608,42 @@ class GermanDateTime:
                        ("28", 28),
                        ("29", 29),
                        ("30", 30),
-                       ("31", 31)])
+                       ("31", 31),
+                       ("erst", 1),
+                       ("zweit", 2),
+                       ("dritt", 3),
+                       ("viert", 4),
+                       ("fünft", 5),
+                       ("fuenft", 5),
+                       ("sechst", 6),
+                       ("siebt", 7),
+                       ("acht", 8),
+                       ("neunt", 9),
+                       ("zehnt", 10),
+                       ("elft", 11),
+                       ("zwölft", 12),
+                       ("zwoelft", 12),
+                       ("dreizehnt", 13),
+                       ("vierzehnt", 14),
+                       ("fünfzehnt", 15),
+                       ("fuenfzehnt", 15),
+                       ("sechzehnt", 16),
+                       ("siebzehnt", 17),
+                       ("achtzehnt", 18),
+                       ("neunzehnt", 19),
+                       ("zwanzigst", 20),
+                       ("einundzwanzigst", 21),
+                       ("zweiundzwanzigst", 22),
+                       ("dreiundzwanzigst", 23),
+                       ("vierundzwanzigst", 24),
+                       ("fünfundzwanzigst", 25),
+                       ("fuenfundzwanzigst", 25),
+                       ("sechsundzwanzigst", 26),
+                       ("siebenundzwanzigst", 27),
+                       ("achtundzwanzigst", 28),
+                       ("neunundzwanzigst", 29),
+                       ("dreißigst", 30),
+                       ("einunddreißigst", 31)])
     DoubleNumbers = dict([("halb", 0.5),
                           ("viertel", 0.25)])
     HolidayNames = dict([("reformationday", ["reformationstag", "reformationsfest", "gedenktagderreformation"]),

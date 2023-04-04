@@ -133,8 +133,8 @@ BetweenRegex: !nestedRegex
 YearWordRegex: !simpleRegex
   def: \b(?<year>l'anno)\b
 MonthWithYear: !nestedRegex
-  def: \b({MonthRegex}(\.)?(\s*)[/\\\-\.,]?(((\s+del)?\s+{YearRegex})|((\s+(del|di|il))?\s+(?<order>prossim['o]|passato|quest['o])\s*anno)|((\s+(del)?l')anno\s+(?<order>prossimo|passato))))
-  references: [ YearRegex, MonthRegex ]
+  def: \b({MonthRegex}(\.)?(\s*)[/\\\-\.,]?(((\s+del)?\s+{YearRegex}|{TwoDigitYearRegex})|((\s+(del|di|il))?\s+(?<order>prossim['o]|passato|quest['o])\s*anno)|((\s+(del)?l')anno\s+(?<order>prossimo|passato))))
+  references: [ YearRegex, MonthRegex, TwoDigitYearRegex ]
 SpecialYearPrefixes: !simpleRegex
   def: (?<special>fiscale|scolastico)
 OneWordPeriodRegex: !nestedRegex
@@ -245,7 +245,7 @@ DateExtractor4: !nestedRegex
   def: \b({WeekDayRegex}(\s+|\s*,\s*))?((il|l')\s*)?{MonthNumRegex}\s*[/\\\-]\s*{DayRegex}(\.)?\s*[/\\\-]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)
   references: [ MonthNumRegex, DayRegex, DateYearRegex, WeekDayRegex ]
 DateExtractor5: !nestedRegex
-  def: \b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}\s*[/\\\-]\s*({MonthNumRegex}|{MonthRegex}(\.)?)\s*[/\\\-]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)
+  def: \b({WeekDayRegex}(\s+|\s*,\s*))?{DayRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex}(\.)?)\s*[/\\\-\.]\s*{DateYearRegex}(?!\s*[/\\\-\.]\s*\d+)
   references: [ DayRegex, MonthNumRegex, MonthRegex, DateYearRegex, WeekDayRegex ]
 DateExtractor6: !nestedRegex
   def: (?<!([\-\.\/]|all[e']\s*|l[e']\s*))\b{MonthNumRegex}[\-\.\/]{DayRegex}{BaseDateTime.CheckDecimalRegex}(?!(%|\s*{DescRegex}))\b
@@ -303,13 +303,13 @@ LunchRegex: !simpleRegex
 NightRegex: !simpleRegex
   def: \b(mezzanotte|notte)\b
 LessThanOneHour: !nestedRegex
-  def: (?<lth>(un\s+quarto|tre quarti?|mezz[oa]|mezz'ora|{BaseDateTime.DeltaMinuteRegex}(\s+(minut[oi]|min))?|{DeltaMinuteNumRegex}(\s+(minut[oi]|min))|(?<=(e|meno)\s+){DeltaMinuteNumRegex}))
+  def: (?<lth>(un\s+quarto|tre quarti?|mezz[oa]|mezz'ora|{BaseDateTime.DeltaMinuteRegex}|{DeltaMinuteNumRegex}))
   references: [ BaseDateTime.DeltaMinuteRegex, DeltaMinuteNumRegex ]
 EngTimeRegex: !nestedRegex
   def: (?<engtime>{HourNumRegex}\s+e\s+({MinuteNumRegex}|(?<tens>venti?|trenta?|quaranta?|cinquanta?){MinuteNumRegex}))
   references: [ HourNumRegex, MinuteNumRegex ]
 TimePrefix: !nestedRegex
-  def: (?<prefix>(e\s+{LessThanOneHour}|{LessThanOneHour}\s+(minut[oi]|min)\s+all[e']|meno {LessThanOneHour}))
+  def: (?<prefix>((e|meno)\s+{LessThanOneHour}(\s+(minut[oi]|min))?|{LessThanOneHour}\s+(minut[oi]|min)\s+all[e']))
   references: [ LessThanOneHour ]
 TimeSuffix: !nestedRegex
   def: (?<suffix>{AmRegex}|{PmRegex}|{OclockRegex})
@@ -1031,6 +1031,8 @@ AmbiguityFiltersDict: !dictionary
     '^\d{4}$': '(\d\.\d{4}|\d{4}\.\d)'
     '\bgiorno|pomeriggio|sera|notte\b': '\b(buona?\s*(giorno|pomeriggio|sera|notte))\b'
     '^(apr|ago|dic|feb|gen|lug|giu|mar|mag|nov|ott|sett?)$': '([$%£&!?@#])(apr|ago|dic|feb|gen|lug|giu|mar|mag|nov|ott|sett?)|(apr|ago|dic|feb|gen|lug|giu|mar|mag|nov|ott|sett?)([$%£&@#])'
+    '^\d{1,4}-\d{1,4}$': '\d{1,4}-\d{1,4}-\d|\d-\d{1,4}-\d{1,4}'
+    '^\d{1,4}-\d{1,4}-\d{1,4}$': '\d{1,4}-\d{1,4}-\d{1,4}-\d|\d-\d{1,4}-\d{1,4}-\d{1,4}'
 # For TimeOfDay resolution
 MorningTermList: !list
   types: [ string ]

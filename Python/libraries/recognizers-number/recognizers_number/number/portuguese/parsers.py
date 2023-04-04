@@ -89,6 +89,10 @@ class PortugueseNumberParserConfiguration(NumberParserConfiguration):
     def is_multi_decimal_separator_culture(self) -> bool:
         return self._is_multi_decimal_separator_culture
 
+    @property
+    def round_multiplier_regex(self) -> Pattern:
+        return self._round_multiplier_regex
+
     def __init__(self, culture_info=None):
         if culture_info is None:
             culture_info = CultureInfo(Culture.Portuguese)
@@ -117,6 +121,8 @@ class PortugueseNumberParserConfiguration(NumberParserConfiguration):
             PortugueseNumeric.HalfADozenRegex)
         self._digital_number_regex = RegExpUtility.get_safe_reg_exp(
             PortugueseNumeric.DigitalNumberRegex)
+        self._round_multiplier_regex = RegExpUtility.get_safe_reg_exp(
+            PortugueseNumeric.RoundMultiplierRegex)
 
     def normalize_token_set(self, tokens: List[str], context: ParseResult) -> List[str]:
         result = []
@@ -143,6 +149,16 @@ class PortugueseNumberParserConfiguration(NumberParserConfiguration):
                         result.append(temp_word)
                         break
             result.append(token)
+
+        # The following piece of code is needed to compute the fraction pattern number+'e meio'
+        # e.g. 'cinco e meio' ('five and a half') where the numerator is omitted in Portuguese.
+        # It works by inserting the numerator 'um' ('a') in the list result
+        # so that the pattern is correctly processed.
+        if len(result) > 2:
+            if result[len(result) - 1] == PortugueseNumeric.OneHalfTokens[1] and \
+                    result[len(result) - 2] == PortugueseNumeric.WordSeparatorToken:
+                result[len(result) - 2] = PortugueseNumeric.WrittenFractionSeparatorTexts[0]
+                result.insert(len(result) - 1, PortugueseNumeric.OneHalfTokens[0])
 
         return result
 

@@ -148,10 +148,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "明日の午前8時ごろ",
+        "Text": "明日の午前8時",
         "Type": "datetime",
         "Start": 0,
-        "Length": 9
+        "Length": 7
       }
     ]
   },
@@ -376,10 +376,10 @@
     "NotSupportedByDesign": "javascript,python,java",
     "Results": [
       {
-        "Text": "今夜7時ごろ",
+        "Text": "今夜7時",
         "Type": "datetime",
         "Start": 0,
-        "Length": 6
+        "Length": 4
       }
     ]
   },
@@ -458,14 +458,7 @@
   {
     "Input": "日曜日のうちに戻ります。",
     "NotSupportedByDesign": "javascript,python,java",
-    "Results": [
-      {
-        "Text": "日曜日のうちに",
-        "Type": "datetime",
-        "Start": 0,
-        "Length": 7
-      }
-    ]
+    "Results": []
   },
   {
     "Input": "5日の午前4時に戻ります。",
@@ -920,6 +913,18 @@
         "Type": "datetime",
         "Start": 0,
         "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "日曜日の終わりに帰ります",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "日曜日の終わり",
+        "Type": "datetime",
+        "Start": 0,
+        "Length": 7
       }
     ]
   }

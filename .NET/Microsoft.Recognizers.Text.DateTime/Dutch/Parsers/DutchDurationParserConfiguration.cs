@@ -13,7 +13,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
     {
 
         public static readonly Regex PrefixArticleRegex =
-            new Regex(DateTimeDefinitions.PrefixArticleRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.PrefixArticleRegex, RegexFlags, RegexTimeOut);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 

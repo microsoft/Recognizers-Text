@@ -2045,7 +2045,7 @@
   },
   {
     "Input": "423 0000 will be recognized as two numbers.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "423",
@@ -2222,7 +2222,7 @@
   },
   {
     "Input": "I can give you 3 hundred and 21 yuan.",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "3 hundred and 21",
@@ -2237,7 +2237,7 @@
   },
   {
     "Input": "4 thousand 3 hundred and 21 is a valid number.",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "4 thousand 3 hundred and 21",
@@ -2286,7 +2286,7 @@
   },
   {
     "Input": "4000 3 hundred and 21 are two valid numbers.",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "4000",
@@ -2355,7 +2355,7 @@
   },
   {
     "Input": "3 hundred and 2.12 hundred are two valid numbers.",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "3 hundred",
@@ -2425,7 +2425,7 @@
   },
   {
     "Input": "3 hundred and one is a valid numbers.",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "3 hundred and one",
@@ -2440,22 +2440,22 @@
   },
   {
     "Input": "The one you mentioned is invalid",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": []
   },
   {
     "Input": "This one you is not correct",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": []
   },
   {
     "Input": "Which one do you prefer?",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": []
   },
   {
     "Input": "That one is really good",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": []
   },
   {
@@ -2642,7 +2642,7 @@
   },
   {
     "Input": "I count 6 crore and two hundred",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "6 crore and two hundred",
@@ -2672,7 +2672,6 @@
   },
   {
     "Input": "That account revenue target is US$ 1MM",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "1mm",
@@ -2721,7 +2720,7 @@
   {
     "Input": "There are 12,567 words in this document",
     "Comment": "Example of Indian numbering system, the format may not need to be supported in other languages.",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "12,567",
@@ -2841,7 +2840,7 @@
   },
   {
     "Input": " half million",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "half million",
@@ -2857,7 +2856,7 @@
   },
   {
     "Input": " quarter million",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "quarter million",
@@ -2873,7 +2872,7 @@
   },
   {
     "Input": " two thirds of a million",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "two thirds of a million",
@@ -2889,7 +2888,7 @@
   },
   {
     "Input": " one billion and three quarters million",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "one billion and three quarters million",
@@ -3241,7 +3240,7 @@
   },
   {
     "Input": "There are one million and a half possibilities",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "one million and a half",
@@ -3257,7 +3256,7 @@
   },
   {
     "Input": "The population is 3 million and a half",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "3 million and a half",
@@ -3273,7 +3272,7 @@
   },
   {
     "Input": "They have two million and one half",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "two million and one half",
@@ -3289,7 +3288,7 @@
   },
   {
     "Input": "Half million eggs have been broken today",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "half million",
@@ -3321,7 +3320,7 @@
   },
   {
     "Input": "Current value is one billion and a half million",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "one billion and a half million",
@@ -3337,7 +3336,7 @@
   },
   {
     "Input": "Last value was one billion and a quarter million",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "one billion and a quarter million",
@@ -3385,7 +3384,7 @@
   },
   {
     "Input": "The number is five billion and three quarters",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "five billion and three quarters",
@@ -3401,7 +3400,7 @@
   },
   {
     "Input": "I counted six million and two thirds",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "six million and two thirds",
@@ -3417,7 +3416,7 @@
   },
   {
     "Input": "They have two million and three fifths",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "two million and three fifths",
@@ -3433,7 +3432,7 @@
   },
   {
     "Input": "We spent nine million and five ninths",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "nine million and five ninths",
@@ -3517,7 +3516,7 @@
   },
   {
     "Input": "The measurement has a value of forty two and a third",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "forty two and a third",
@@ -3533,7 +3532,7 @@
   },
   {
     "Input": "The measurement has a value of two hundred thirty two and a thirtieth",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "two hundred thirty two and a thirtieth",
@@ -3549,7 +3548,7 @@
   },
   {
     "Input": "we will be working on releasing version two and a previous version will still be maintained",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "two",

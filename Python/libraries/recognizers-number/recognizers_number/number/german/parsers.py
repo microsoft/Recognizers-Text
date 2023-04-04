@@ -88,6 +88,10 @@ class GermanNumberParserConfiguration(NumberParserConfiguration):
     def is_multi_decimal_separator_culture(self) -> bool:
         return self._is_multi_decimal_separator_culture
 
+    @property
+    def round_multiplier_regex(self) -> Pattern:
+        return self._round_multiplier_regex
+
     def __init__(self, culture_info=None):
         if culture_info is None:
             culture_info = CultureInfo(Culture.German)
@@ -116,6 +120,12 @@ class GermanNumberParserConfiguration(NumberParserConfiguration):
             GermanNumeric.HalfADozenRegex)
         self._digital_number_regex = RegExpUtility.get_safe_reg_exp(
             GermanNumeric.DigitalNumberRegex)
+        self._round_multiplier_regex = RegExpUtility.get_safe_reg_exp(
+            GermanNumeric.RoundMultiplierRegex)
+        self._fraction_units_regex = RegExpUtility.get_safe_reg_exp(
+            GermanNumeric.FractionUnitsRegex)
+        self._fraction_half_regex = RegExpUtility.get_safe_reg_exp(
+            GermanNumeric.FractionHalfRegex)
 
     def normalize_token_set(self, tokens: List[str], context: ParseResult) -> List[str]:
         frac_words: List[str] = list()
@@ -140,6 +150,30 @@ class GermanNumberParserConfiguration(NumberParserConfiguration):
             else:
                 frac_words.append(tokens[i])
             i += 1
+
+        # The following piece of code is needed to compute the fraction pattern number+'einhalb'
+        # e.g. 'zweieinhalb' ('two and a half').
+        try:
+            frac_words.remove("/")  # .remove() raises a value error so this must be caught
+        except ValueError:
+            pass
+        for idx, word in enumerate(frac_words):
+            if self._fraction_half_regex.search(word):  # zweieinhalb, dreienhalb etc. case
+                frac_words[idx] = word[0:(len(word)-7)]
+                frac_words.append(self._written_fraction_separator_texts[0])
+                frac_words.append(GermanNumeric.OneHalfTokens[0])
+                frac_words.append(GermanNumeric.OneHalfTokens[1])
+            elif self._fraction_units_regex.search(word):
+                m = self._fraction_units_regex.search(word)
+                if m.group("onehalf"):  # 'einundhalb' case
+                    frac_words[idx] = GermanNumeric.OneHalfTokens[0]
+                    frac_words.append(self._written_fraction_separator_texts[0])
+                    frac_words.append(GermanNumeric.OneHalfTokens[0])
+                    frac_words.append(GermanNumeric.OneHalfTokens[1])
+                if m.group("quarter"):  # 'dreiviertal' case
+                    frac_words[idx] = word[0:len("drei")]
+                    frac_words.append(self._written_fraction_separator_texts[0])
+                    frac_words.append(word[len(frac_words[idx]):len("viertel")+len(frac_words[idx])])
 
         return frac_words
 

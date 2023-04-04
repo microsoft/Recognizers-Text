@@ -13,9 +13,9 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
     public class ChineseDatePeriodParserConfiguration : BaseDateTimeOptionsConfiguration, ICJKDatePeriodParserConfiguration
     {
 
-        public static readonly Regex WoMLastRegex = new Regex(DateTimeDefinitions.WoMLastRegex, RegexFlags);
-        public static readonly Regex WoMPreviousRegex = new Regex(DateTimeDefinitions.WoMPreviousRegex, RegexFlags);
-        public static readonly Regex WoMNextRegex = new Regex(DateTimeDefinitions.WoMNextRegex, RegexFlags);
+        public static readonly Regex WoMLastRegex = new Regex(DateTimeDefinitions.WoMLastRegex, RegexFlags, RegexTimeOut);
+        public static readonly Regex WoMPreviousRegex = new Regex(DateTimeDefinitions.WoMPreviousRegex, RegexFlags, RegexTimeOut);
+        public static readonly Regex WoMNextRegex = new Regex(DateTimeDefinitions.WoMNextRegex, RegexFlags, RegexTimeOut);
 
         public static readonly ImmutableDictionary<string, int> MonthOfYear = DateTimeDefinitions.ParserConfigurationMonthOfYear.ToImmutableDictionary();
 
@@ -60,6 +60,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             FutureRegex = ChineseDatePeriodExtractorConfiguration.FutureRegex;
             WeekWithWeekDayRangeRegex = ChineseDatePeriodExtractorConfiguration.WeekWithWeekDayRangeRegex;
             UnitRegex = ChineseDatePeriodExtractorConfiguration.UnitRegex;
+            DurationUnitRegex = ChineseDatePeriodExtractorConfiguration.DurationUnitRegex;
             WeekOfMonthRegex = ChineseDatePeriodExtractorConfiguration.WeekOfMonthRegex;
             WeekOfYearRegex = ChineseDatePeriodExtractorConfiguration.WeekOfYearRegex;
             WeekOfDateRegex = ChineseDatePeriodExtractorConfiguration.WeekOfDateRegex;
@@ -166,6 +167,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public Regex UnitRegex { get; }
 
+        public Regex DurationUnitRegex { get; }
+
         public Regex WeekOfMonthRegex { get; }
 
         public Regex WeekOfYearRegex { get; }
@@ -241,6 +244,12 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         {
             var trimmedText = text.Trim();
             return DateTimeDefinitions.ThisYearTerms.Any(o => trimmedText.Equals(o, StringComparison.Ordinal));
+        }
+
+        public bool IsYearToDate(string text)
+        {
+            var trimmedText = text.Trim();
+            return DateTimeDefinitions.YearToDateTerms.Any(o => trimmedText.Equals(o, StringComparison.Ordinal));
         }
 
         public bool IsLastYear(string text)

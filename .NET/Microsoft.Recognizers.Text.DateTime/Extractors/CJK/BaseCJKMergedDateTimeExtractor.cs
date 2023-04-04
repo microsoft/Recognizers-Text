@@ -39,9 +39,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             AddTo(ret, this.config.SetExtractor.Extract(text, referenceTime));
             AddTo(ret, this.config.HolidayExtractor.Extract(text, referenceTime));
 
-            ret = FilterAmbiguity(ret, text);
+            ret = FilterUnspecificDatePeriod(ret);
 
-            AddMod(ret, text);
+            ret = ExtractResultExtension.FilterAmbiguity(ret, text, this.config.AmbiguityFiltersDict);
+
+            ret = AddMod(ret, text);
 
             ret = ret.OrderBy(p => p.Start).ToList();
 
@@ -65,29 +67,13 @@ namespace Microsoft.Recognizers.Text.DateTime
             return tempDst;
         }
 
-        // Filter some bad cases like "十二周岁" and "12号", etc.
-        private List<ExtractResult> FilterAmbiguity(List<ExtractResult> extractResults, string text)
+        private List<ExtractResult> FilterUnspecificDatePeriod(List<ExtractResult> ers)
         {
-            if (this.config.AmbiguityFiltersDict != null)
-            {
-                foreach (var regex in this.config.AmbiguityFiltersDict)
-                {
-                    foreach (var extractResult in extractResults)
-                    {
-                        if (regex.Key.IsMatch(extractResult.Text))
-                        {
-                            var matches = regex.Value.Matches(text).Cast<Match>();
-                            extractResults = extractResults.Where(er => !matches.Any(m => m.Index < er.Start + er.Length && m.Index + m.Length > er.Start))
-                                .ToList();
-                        }
-                    }
-                }
-            }
-
-            return extractResults;
+            ers.RemoveAll(o => this.config.UnspecificDatePeriodRegex.IsMatch(o.Text));
+            return ers;
         }
 
-        private void AddMod(List<ExtractResult> ers, string text)
+        private List<ExtractResult> AddMod(List<ExtractResult> ers, string text)
         {
             var lastEnd = 0;
             foreach (var er in ers)
@@ -162,6 +148,28 @@ namespace Microsoft.Recognizers.Text.DateTime
                     er.Metadata = AssignModMetadata(er.Metadata);
                 }
 
+                match = this.config.AroundPrefixRegex.MatchEnd(beforeStr, trim: true);
+
+                if (match.Success && AmbiguousRangeChecker(beforeStr, text, er))
+                {
+                    var modLength = beforeStr.Length - match.Index;
+                    er.Length += modLength;
+                    er.Start -= modLength;
+                    er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+
+                    er.Metadata = AssignModMetadata(er.Metadata);
+                }
+
+                match = this.config.AroundSuffixRegex.MatchBegin(afterStr, trim: true);
+                if (match.Success)
+                {
+                    var modLength = match.Index + match.Length;
+                    er.Length += modLength;
+                    er.Text = text.Substring(er.Start ?? 0, er.Length ?? 0);
+
+                    er.Metadata = AssignModMetadata(er.Metadata);
+                }
+
                 match = this.config.EqualRegex.MatchBegin(beforeStr, trim: true);
                 if (match.Success)
                 {
@@ -173,6 +181,8 @@ namespace Microsoft.Recognizers.Text.DateTime
                     er.Metadata = AssignModMetadata(er.Metadata);
                 }
             }
+
+            return ers;
         }
 
         private void AddTo(List<ExtractResult> dst, List<ExtractResult> src)

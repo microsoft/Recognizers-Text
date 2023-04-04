@@ -316,20 +316,22 @@ class BaseMergedExtractor(DateTimeExtractor):
                 regex_var_value = self.config.ambiguity_filters_dict[regex_var]
 
                 try:
-                    reg_len = list(filter(lambda x: x.group(), regex.finditer(regex_var_value, text)))
+                    for extract_result in extract_results:
+                        if regex.search(regex_var, extract_result.text):
+                            reg_len = list(filter(lambda x: x.group(), regex.finditer(regex_var_value, text)))
 
-                    reg_length = len(reg_len)
-                    if reg_length > 0:
+                            reg_length = len(reg_len)
+                            if reg_length > 0:
 
-                        matches = reg_len
-                        new_ers = list(filter(lambda x: list(
-                            filter(lambda m: m.start() < x.start + x.length and m.start() +
-                                   len(m.group()) > x.start, matches)), extract_results))
-                        if len(new_ers) > 0:
-                            for item in extract_results:
-                                for i in new_ers:
-                                    if item is i:
-                                        extract_results.remove(item)
+                                matches = reg_len
+                                new_ers = list(filter(lambda x: list(
+                                    filter(lambda m: m.start() < x.start + x.length and m.start() +
+                                           len(m.group()) > x.start, matches)), extract_results))
+                                if len(new_ers) > 0:
+                                    for item in extract_results:
+                                        for i in new_ers:
+                                            if item is i:
+                                                extract_results.remove(item)
                 except Exception:
                     pass
 

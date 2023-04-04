@@ -11,19 +11,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
     public class DutchDateTimePeriodParserConfiguration : BaseDateTimeOptionsConfiguration, IDateTimePeriodParserConfiguration
     {
         public static readonly Regex MorningStartEndRegex =
-            new Regex(DateTimeDefinitions.MorningStartEndRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.MorningStartEndRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex AfternoonStartEndRegex =
-            new Regex(DateTimeDefinitions.AfternoonStartEndRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.AfternoonStartEndRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex EveningStartEndRegex =
-            new Regex(DateTimeDefinitions.EveningStartEndRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.EveningStartEndRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex NightStartEndRegex =
-            new Regex(DateTimeDefinitions.NightStartEndRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.NightStartEndRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex PeriodTimeOfDayWithDateRegex =
-            new Regex(DateTimeDefinitions.PeriodTimeOfDayWithDateRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.PeriodTimeOfDayWithDateRegex, RegexFlags, RegexTimeOut);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
@@ -46,6 +46,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
             DurationParser = config.DurationParser;
             DateTimeParser = config.DateTimeParser;
             TimeZoneParser = config.TimeZoneParser;
+            HolidayExtractor = config.HolidayExtractor;
+            HolidayTimeParser = config.HolidayTimeParser;
 
             PureNumberFromToRegex = DutchTimePeriodExtractorConfiguration.PureNumFromTo;
             HyphenDateRegex = DutchDateTimePeriodExtractorConfiguration.HyphenDateRegex;
@@ -99,6 +101,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
 
         public IDateTimeParser TimeZoneParser { get; }
 
+        Regex IDateTimePeriodParserConfiguration.TasksmodeMealTimeofDayRegex => null;
+
         public Regex PureNumberFromToRegex { get; }
 
         public Regex HyphenDateRegex { get; }
@@ -144,6 +148,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         public IImmutableDictionary<string, string> UnitMap { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
+
+        public IDateTimeExtractor HolidayExtractor { get; }
+
+        public IDateTimeParser HolidayTimeParser { get; }
 
         public bool GetMatchedTimeRange(string text, out string todSymbol, out int beginHour, out int endHour, out int endMin)
         {

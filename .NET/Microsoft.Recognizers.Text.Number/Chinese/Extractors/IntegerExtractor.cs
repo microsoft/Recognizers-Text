@@ -20,32 +20,32 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
             {
                 {
                     // 123456,  －１２３４５６
-                    new Regex(NumbersDefinitions.NumbersSpecialsChars, RegexFlags),
+                    new Regex(NumbersDefinitions.NumbersSpecialsChars, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     // 15k,  16 G
-                    new Regex(NumbersDefinitions.NumbersSpecialsCharsWithSuffix, RegexFlags),
+                    new Regex(NumbersDefinitions.NumbersSpecialsCharsWithSuffix, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     // 1,234,  ２，３３２，１１１
-                    new Regex(NumbersDefinitions.DottedNumbersSpecialsChar, RegexFlags),
+                    new Regex(NumbersDefinitions.DottedNumbersSpecialsChar, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     // 半百  半打
-                    new Regex(NumbersDefinitions.NumbersWithHalfDozen, RegexFlags),
+                    new Regex(NumbersDefinitions.NumbersWithHalfDozen, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.CHINESE)
                 },
                 {
                     // 半
-                    new Regex(NumbersDefinitions.HalfUnitRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.HalfUnitRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.CHINESE)
                 },
                 {
                     // 一打  五十打
-                    new Regex(NumbersDefinitions.NumbersWithDozen, RegexFlags),
+                    new Regex(NumbersDefinitions.NumbersWithDozen, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.CHINESE)
                 },
             };

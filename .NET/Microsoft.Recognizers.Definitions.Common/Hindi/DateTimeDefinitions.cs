@@ -235,7 +235,7 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public const string EachPrefixRegex = @"\b(?<each>(से\s+प्रत्येक|रोजाना|रोज|डेली|हरेक|हर\s+तीसरे|हर(\s+(एक|रोज|दिन))?)\s*$)";
       public const string SetEachRegex = @"\b(?<each>((से\s+)?प्रत्येक|प्रतिदिन|रोजाना|रोज|डेली|हरेक|हर(\s+(एक|रोज|दिन))?)\s*)";
       public const string SetLastRegex = @"(?<last>निम्नलिखित|अगले|आगामी|इस|पिछले|पिछले|पिछले|वर्तमान)";
-      public const string EachDayRegex = @"^\s*(हर दिन|रोज़|रोज|प्रतिदिन)\b";
+      public const string EachDayRegex = @"\s*(हर दिन|रोज़|रोज|प्रतिदिन)\b";
       public const string EachDayRegexPrefix = @"\b(हर दिन|रोज़|प्रतिदिन)\s*$";
       public static readonly string DurationFollowedUnit = $@"(^\s*{DurationUnitRegex}\s+{SuffixAndRegex})|(^\s*{SuffixAndRegex}?(\s+|-)?{DurationUnitRegex})";
       public static readonly string NumberCombinedWithDurationUnit = $@"\b(?<num>\d+(\.\d*)?)(-)?{DurationUnitRegex}";
@@ -1374,7 +1374,9 @@ namespace Microsoft.Recognizers.Definitions.Hindi
       public static readonly string[] DurationDateRestrictions = { @"आज", @"today", @"now" };
       public static readonly Dictionary<string, string> AmbiguityFiltersDict = new Dictionary<string, string>
         {
-            { @"\bदिन\b", @"\bदिन-ब-दिन\b" }
+            { @"\bदिन\b", @"\bदिन-ब-दिन\b" },
+            { @"^\d{1,4}-\d{1,4}$", @"\d{1,4}-\d{1,4}-\d|\d-\d{1,4}-\d{1,4}" },
+            { @"^\d{1,4}-\d{1,4}-\d{1,4}$", @"\d{1,4}-\d{1,4}-\d{1,4}-\d|\d-\d{1,4}-\d{1,4}-\d{1,4}" }
         };
       public static readonly IList<string> MorningTermList = new List<string>
         {

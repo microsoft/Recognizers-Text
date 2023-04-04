@@ -81,7 +81,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             }
 
             // 'to' i.e 'one to five'
-            if (trimmedPrefix.StartsWith("meno", StringComparison.Ordinal))
+            if (trimmedPrefix.StartsWith("meno", StringComparison.Ordinal) ||
+                trimmedPrefix.EndsWith("alle", StringComparison.Ordinal))
             {
                 deltaMin = -deltaMin;
             }

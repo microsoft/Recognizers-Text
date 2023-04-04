@@ -12,6 +12,7 @@ from ..parsers import DateTimeParser
 from ..utilities import DateTimeUtilityConfiguration
 from ..base_date import DateParserConfiguration
 from ..base_configs import BaseDateParserConfiguration
+from .date_extractor_config import EnglishDateExtractorConfiguration
 
 
 class EnglishDateParserConfiguration(DateParserConfiguration):
@@ -80,6 +81,10 @@ class EnglishDateParserConfiguration(DateParserConfiguration):
         return self._special_day_regex
 
     @property
+    def special_day_with_num_regex(self) -> Pattern:
+        return self._special_day_with_num_regex
+
+    @property
     def next_regex(self) -> Pattern:
         return self._next_regex
 
@@ -116,8 +121,16 @@ class EnglishDateParserConfiguration(DateParserConfiguration):
         return self._week_day_and_day_of_month_regex
 
     @property
+    def week_day_and_day_regex(self) -> Pattern:
+        return self._week_day_and_day_regex
+
+    @property
     def relative_month_regex(self) -> Pattern:
         return self._relative_month_regex
+
+    @property
+    def relative_week_day_regex(self) -> Pattern:
+        return self._relative_week_day_regex
 
     @property
     def utility_configuration(self) -> DateTimeUtilityConfiguration:
@@ -137,7 +150,7 @@ class EnglishDateParserConfiguration(DateParserConfiguration):
     _past_prefix_regex = RegExpUtility.get_safe_reg_exp(
         EnglishDateTime.PreviousPrefixRegex)
 
-    def __init__(self, config: BaseDateParserConfiguration):
+    def __init__(self, config: BaseDateParserConfiguration, dmyDateFormat=False):
         self._ordinal_extractor = config.ordinal_extractor
         self._integer_extractor = config.integer_extractor
         self._cardinal_extractor = config.cardinal_extractor
@@ -150,23 +163,13 @@ class EnglishDateParserConfiguration(DateParserConfiguration):
         self._day_of_week = config.day_of_week
         self._unit_map = config.unit_map
         self._cardinal_map = config.cardinal_map
-        self._date_regex = [
-            RegExpUtility.get_safe_reg_exp(EnglishDateTime.DateExtractor1),
-            RegExpUtility.get_safe_reg_exp(EnglishDateTime.DateExtractor3),
-            RegExpUtility.get_safe_reg_exp(EnglishDateTime.DateExtractor4),
-            RegExpUtility.get_safe_reg_exp(EnglishDateTime.DateExtractor5),
-            RegExpUtility.get_safe_reg_exp(EnglishDateTime.DateExtractor6),
-            RegExpUtility.get_safe_reg_exp(EnglishDateTime.DateExtractor7L),
-            RegExpUtility.get_safe_reg_exp(EnglishDateTime.DateExtractor7S),
-            RegExpUtility.get_safe_reg_exp(EnglishDateTime.DateExtractor8),
-            RegExpUtility.get_safe_reg_exp(EnglishDateTime.DateExtractor9L),
-            RegExpUtility.get_safe_reg_exp(EnglishDateTime.DateExtractor9S),
-            RegExpUtility.get_safe_reg_exp(EnglishDateTime.DateExtractorA),
-        ]
+        self._date_regex = EnglishDateExtractorConfiguration(dmyDateFormat)._date_regex_list
         self._on_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.OnRegex)
         self._special_day_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.SpecialDayRegex)
+        self._special_day_with_num_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.SpecialDayWithNumRegex)
         self._next_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.NextDateRegex)
         self._unit_regex = RegExpUtility.get_safe_reg_exp(
@@ -185,8 +188,12 @@ class EnglishDateParserConfiguration(DateParserConfiguration):
             EnglishDateTime.ForTheRegex)
         self._week_day_and_day_of_month_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.WeekDayAndDayOfMonthRegex)
+        self._week_day_and_day_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.WeekDayAndDayRegex)
         self._relative_month_regex = RegExpUtility.get_safe_reg_exp(
             EnglishDateTime.RelativeMonthRegex)
+        self._relative_week_day_regex = RegExpUtility.get_safe_reg_exp(
+            EnglishDateTime.RelativeWeekDayRegex)
         self._utility_configuration = config.utility_configuration
         self._date_token_prefix = EnglishDateTime.DateTokenPrefix
         self._check_both_before_after = EnglishDateTime.CheckBothBeforeAfter

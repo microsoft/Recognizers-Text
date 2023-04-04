@@ -2,7 +2,6 @@
 // Licensed under the MIT License.
 
 using System.Collections.Generic;
-using System.Collections.Immutable;
 using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -17,20 +16,18 @@ using Microsoft.Recognizers.Text.NumberWithUnit.Utilities;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
 {
-    public abstract class ChineseNumberWithUnitExtractorConfiguration : INumberWithUnitExtractorConfiguration
+    public abstract class ChineseNumberWithUnitExtractorConfiguration : BaseNumberWithUnitExtractorConfiguration
     {
-
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        private static readonly Regex CompoundUnitConnRegex =
-            new Regex(NumbersWithUnitDefinitions.CompoundUnitConnectorRegex, RegexFlags);
-
-        private static readonly Regex NonUnitsRegex =
-            new Regex(BaseUnits.PmNonUnitRegex, RegexFlags);
-
-        private static readonly Regex HalfUnitRegex = new Regex(NumbersWithUnitDefinitions.HalfUnitRegex, RegexFlags);
+        private static readonly Regex HalfUnitRegex = new Regex(NumbersWithUnitDefinitions.HalfUnitRegex, RegexFlags, RegexTimeOut);
 
         protected ChineseNumberWithUnitExtractorConfiguration(CultureInfo ci)
+            : base(
+                  NumbersWithUnitDefinitions.CompoundUnitConnectorRegex,
+                  BaseUnits.PmNonUnitRegex,
+                  string.Empty,
+                  RegexFlags)
         {
             this.CultureInfo = ci;
 
@@ -45,41 +42,9 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Chinese
             AmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(NumbersWithUnitDefinitions.AmbiguityFiltersDict);
         }
 
-        public Regex CompoundUnitConnectorRegex => CompoundUnitConnRegex;
-
-        public Regex NonUnitRegex => NonUnitsRegex;
-
-        public virtual Regex AmbiguousUnitNumberMultiplierRegex => null;
-
-        public Regex MultiplierRegex => null;
-
-        public abstract string ExtractType { get; }
-
-        public CultureInfo CultureInfo { get; }
-
-        public IExtractor UnitNumExtractor { get; }
-
-        public string BuildPrefix { get; }
-
-        public string BuildSuffix { get; }
-
-        public string ConnectorToken { get; }
-
         public IExtractor IntegerExtractor { get; }
 
-        public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; } = null;
-
-        public Dictionary<Regex, Regex> TemperatureAmbiguityFiltersDict { get; } = null;
-
-        public Dictionary<Regex, Regex> DimensionAmbiguityFiltersDict { get; } = null;
-
-        public abstract ImmutableDictionary<string, string> SuffixList { get; }
-
-        public abstract ImmutableDictionary<string, string> PrefixList { get; }
-
-        public abstract ImmutableList<string> AmbiguousUnitList { get; }
-
-        public void ExpandHalfSuffix(string source, ref List<ExtractResult> result, IOrderedEnumerable<ExtractResult> numbers)
+        public override void ExpandHalfSuffix(string source, ref List<ExtractResult> result, IOrderedEnumerable<ExtractResult> numbers)
         {
             // Expand Chinese phrase to the `half` patterns when it follows closely origin phrase.
             CommonUtils.ExpandHalfSuffix(source, ref result, numbers, HalfUnitRegex);

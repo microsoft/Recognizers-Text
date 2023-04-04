@@ -1,6 +1,6 @@
 [
   {
-    "Input": "Condado de Montgomery, md. - - $ 75 milhões de obligaciones generales, Serie b , bonos consolidados de mejoramiento público de 1989 , A través de un Manufacturers Hanover Trust co. group.",
+    "Input": "Condado de Montgomery, md. - - $ 75 milhões de obrigações gerais, Série b , bens consolidados de melhoramento público de 1989 , através do Manufacturers Hanover Trust co. group.",
     "Results": [
       {
         "Text": "$ 75 milhões",
@@ -15,7 +15,7 @@
     ]
   },
   {
-    "Input": "Conglomerado finlandés nokia ( oy ab ) dijo que llegó a un acuerdo para comprar la compañía de cable holandés NKF kabel b.v. por 420 milhoes de marcos finlandeses",
+    "Input": "Conglomerado finlandês Nokia ( oy ab ) diz que chegou a um acordo para comprar a companhia de cabo holandesa NKF kabel b.v. por 420 milhoes de marcos finlandeses",
     "Results": [
       {
         "Text": "420 milhoes de marcos finlandeses",
@@ -24,13 +24,13 @@
           "value": "420000000",
           "unit": "Marco finlandês"
         },
-        "Start": 129,
-        "End": 161
+        "Start": 128,
+        "End": 160
       }
     ]
   },
   {
-    "Input": "Nacional pagó a Siegel y Shuster $ 94.000 para cancelar todas las reclamaciones.",
+    "Input": "Nacional pagour a Siegel e Shuster $ 94.000 para cancelar todas as reclamacoes.",
     "Results": [
       {
         "Text": "$ 94.000",
@@ -39,13 +39,13 @@
           "value": "94000",
           "unit": "Dólar"
         },
-        "Start": 33,
-        "End": 40
+        "Start": 35,
+        "End": 42
       }
     ]
   },
   {
-    "Input": "Servicios de dinámica general co., una unidad de Dinámica General corp., ganó un contrato del ejército de $ 48,2 milhoes para establecer facilidades del mantenimiento para los vehículos con seguimiento en Paquistán.",
+    "Input": "Servicos da dinámica general co., uma unidade do Dinámica General corp., ganhou um contrato do exército de $ 48,2 milhoes para establecer facilidades de manutenção para os veículos com rastreamento no Paquistão.",
     "Results": [
       {
         "Text": "$ 48,2 milhoes",
@@ -54,13 +54,13 @@
           "value": "48200000",
           "unit": "Dólar"
         },
-        "Start": 106,
-        "End": 119
+        "Start": 107,
+        "End": 120
       }
     ]
   },
   {
-    "Input": "El precio del segundo simulador oscila entre C$ 16,4 milhoes",
+    "Input": "O preço do segundo simulador oscila em torno de C$ 16,4 milhoes",
     "Results": [
       {
         "Text": "c$ 16,4 milhoes",
@@ -69,13 +69,13 @@
           "value": "16400000",
           "unit": "Dólar canadense"
         },
-        "Start": 45,
-        "End": 59
+        "Start": 48,
+        "End": 62
       }
     ]
   },
   {
-    "Input": "Golar Gas Holding co., una subsidiaria de Gotaas-Larsen Shipping corp., ofreciendo $ 280 milhoes por las notas preferidas de la hipoteca de buques, vía los mercados de capitales de Merrill Linch.",
+    "Input": "Golar Gas Holding co., uma subsidiaria do Gotaas-Larsen Shipping corp., oferece $ 280 milhoes pelas hipotecas preferenciais, vía os mercados de capitais da Merrill Linch.",
     "Results": [
       {
         "Text": "$ 280 milhoes",
@@ -84,13 +84,13 @@
           "value": "280000000",
           "unit": "Dólar"
         },
-        "Start": 83,
-        "End": 95
+        "Start": 80,
+        "End": 92
       }
     ]
   },
   {
-    "Input": "Bard/Ems tenía 1988 ventas de cerca de $ 14 milhões, según Birtcher.",
+    "Input": "Bard/Ems tinha em 1988 vendas de cerca de $ 14 milhões, segundo Birtcher.",
     "Results": [
       {
         "Text": "$ 14 milhões",
@@ -99,13 +99,13 @@
           "value": "14000000",
           "unit": "Dólar"
         },
-        "Start": 39,
-        "End": 50
+        "Start": 42,
+        "End": 53
       }
     ]
   },
   {
-    "Input": "Los precios del acuerdo comienzan en $ 12.345.",
+    "Input": "Os preços do acordo começam em $ 12.345.",
     "Results": [
       {
         "Text": "$ 12.345",
@@ -114,13 +114,13 @@
           "value": "12345",
           "unit": "Dólar"
         },
-        "Start": 37,
-        "End": 44
+        "Start": 31,
+        "End": 38
       }
     ]
   },
   {
-    "Input": "solamente Batman ha acumulado mas de $247 milhoes en taquilla hasta la fecha, convirtiendola en la película con mejor recaudación de Warner Bros.",
+    "Input": "Batman havia acumulado mais de $247 milhoes nas bilheterias até hoje, tornando-se o filme de maior bilheteria da Warner Bros.",
     "Results": [
       {
         "Text": "$247 milhoes",
@@ -129,13 +129,13 @@
           "value": "247000000",
           "unit": "Dólar"
         },
-        "Start": 37,
-        "End": 48
+        "Start": 31,
+        "End": 42
       }
     ]
   },
   {
-    "Input": "El patrimonio neto de Coyle fue estimado en £ 8,10 milhões en Octuble del 2014.",
+    "Input": "O patrimonio liquido de Coyle foi estimado em £ 8,10 milhões em Outubro de 2014.",
     "Results": [
       {
         "Text": "£ 8,10 milhões",
@@ -144,13 +144,13 @@
           "value": "8100000",
           "unit": "Libra"
         },
-        "Start": 44,
-        "End": 57
+        "Start": 46,
+        "End": 59
       }
     ]
   },
   {
-    "Input": "Los ingresos netos por intereses cayeron un 27% en el trimestre a $ 254 milhões",
+    "Input": "Os ingressos liquidos por interesse cairam uns 27% no trimestre a $ 254 milhões",
     "Results": [
       {
         "Text": "$ 254 milhões",
@@ -165,7 +165,7 @@
     ]
   },
   {
-    "Input": "Un tribunal de apelaciones federal anuló una regulación de gas natural que había impedido que las compañías de gasoductos pasaran a los clientes un gasto de $ um bilhão en costos de contratos controversiales",
+    "Input": "Um tribunal de apelacoes federal anulou uma regulacao de gas natural que havía impedido que as companhis de gasoductos passassem aos clientes o gasto de $ um bilhão em custos de contratos controversos",
     "Results": [
       {
         "Text": "$ um bilhão",
@@ -174,13 +174,13 @@
           "value": "1000000000",
           "unit": "Dólar"
         },
-        "Start": 157,
-        "End": 167
+        "Start": 153,
+        "End": 163
       }
     ]
   },
   {
-    "Input": "El trimestre de 1988 también incluyó ganancias únicas por un total de aproximadamente $ 35 milhões.",
+    "Input": "O trimestre de 1988 também incluiu ganancias únicas por um total de aproximadamente $ 35 milhões.",
     "Results": [
       {
         "Text": "$ 35 milhões",
@@ -189,13 +189,13 @@
           "value": "35000000",
           "unit": "Dólar"
         },
-        "Start": 86,
-        "End": 97
+        "Start": 84,
+        "End": 95
       }
     ]
   },
   {
-    "Input": "Y.J.Park y su familia subsistió durante cuatro años para comprar un pequeño apartamento aquí, pero se encontró que cuanto más cerca estaban de llegar a ahorrar los $ 40.000 que originalmente necesitaban, más subia el precio.",
+    "Input": "Y.J.Park e sua familia subsistiram durante quatro anos para comprar um pequeno apartamento aqui, mas descobriram que quanto mais perto eles estavam de chegar a juntar os $ 40.000 que originalmente necesitavam, mais subia o preco.",
     "Results": [
       {
         "Text": "$ 40.000",
@@ -204,13 +204,13 @@
           "value": "40000",
           "unit": "Dólar"
         },
-        "Start": 164,
-        "End": 171
+        "Start": 170,
+        "End": 177
       }
     ]
   },
   {
-    "Input": "E. Robert Wallach fue sentenciado por un juez en Nueva York a seis años de prisión y una multa de $250.000 por su extorsión en el escándalo de Wedtech.",
+    "Input": "E. Robert Wallach foi sentenciado por um juiz de Nova York a seis anos de prisão e uma multa de $250.000 por sua extorção no escândalo de Wedtech.",
     "Results": [
       {
         "Text": "$250.000",
@@ -219,13 +219,13 @@
           "value": "250000",
           "unit": "Dólar"
         },
-        "Start": 98,
-        "End": 105
+        "Start": 96,
+        "End": 103
       }
     ]
   },
   {
-    "Input": "Un artículo publicado el miércoles en la encuesta económica de Oriente Medio revela que Irak pidió a sus clientes que paguen 50 centavos más por barril de petróleo sobre el precio oficial do petróleo a 1 de dezembro en una cuenta que no está bajo la supervisión de las naciones unidas.",
+    "Input": "Um artigo publicado na quarta na pesquisa económica do Oriente Medio revela que o Iraque pediu a seus clientes que paguem 50 centavos a mais por barril de petróleo sobre o preço oficial do petróleo a 1 de dezembro em uma conta que não está sob a supervisão das nações unidas.",
     "Results": [
       {
         "Text": "50 centavos",
@@ -234,13 +234,13 @@
           "value": "50",
           "unit": "Centavo"
         },
-        "Start": 125,
-        "End": 135
+        "Start": 122,
+        "End": 132
       }
     ]
   },
   {
-    "Input": "La división Chevrolet de General Motors Corp., reaccionando a las ventas lentas, dijo que ofrecerá rebajas de $ 800 en su Beretta 1990, la versión de dos puertas de su línea base de autos compactos.",
+    "Input": "A divisão Chevrolet da General Motors Corp., reagindo às vendas lentas, disse que oferecerá descontos de $ 800 em sua Beretta 1990, a versión de duas portas de sua linha base de automóveis compactos.",
     "Results": [
       {
         "Text": "$ 800",
@@ -249,8 +249,8 @@
           "value": "800",
           "unit": "Dólar"
         },
-        "Start": 110,
-        "End": 114
+        "Start": 105,
+        "End": 109
       }
     ]
   },
@@ -281,21 +281,6 @@
         },
         "Start": 70,
         "End": 81
-      }
-    ]
-  },
-  {
-    "Input": "Al mismo tiempo, los inversionistas estiman que la reestructuración reduciría la factura anual de intereses en efectivo de la compañía en aproximadamente U$D 90 milhões.",
-    "Results": [
-      {
-        "Text": "u$d 90 milhões",
-        "TypeName": "currency",
-        "Resolution": {
-          "value": "90000000",
-          "unit": "Dólar estadunidense"
-        },
-        "Start": 154,
-        "End": 167
       }
     ]
   },

@@ -6,6 +6,7 @@ using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Chinese;
+using Microsoft.Recognizers.Definitions.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Chinese
 {
@@ -63,21 +64,25 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             var regexes = new Dictionary<Regex, TimeType>
             {
                 {
-                    new Regex(DateTimeDefinitions.TimeRegexes1, RegexFlags),
+                    new Regex(DateTimeDefinitions.TimeRegexes1, RegexFlags, RegexTimeOut),
                     TimeType.CjkTime
                 },
                 {
-                    new Regex(DateTimeDefinitions.TimeRegexes2, RegexFlags),
+                    new Regex(DateTimeDefinitions.TimeRegexes2, RegexFlags, RegexTimeOut),
                     TimeType.DigitTime
                 },
                 {
-                    new Regex(DateTimeDefinitions.TimeRegexes3, RegexFlags),
+                    new Regex(DateTimeDefinitions.TimeRegexes3, RegexFlags, RegexTimeOut),
                     TimeType.LessTime
                 },
             };
             Regexes = regexes.ToImmutableDictionary();
+            AmbiguityTimeFiltersDict = DefinitionLoader.LoadAmbiguityFilters(DateTimeDefinitions.AmbiguityTimeFiltersDict);
         }
 
         public ImmutableDictionary<Regex, TimeType> Regexes { get; }
+
+        public Dictionary<Regex, Regex> AmbiguityTimeFiltersDict { get; }
+
     }
 }

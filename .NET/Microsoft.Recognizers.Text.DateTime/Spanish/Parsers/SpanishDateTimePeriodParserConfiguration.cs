@@ -13,19 +13,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
     public class SpanishDateTimePeriodParserConfiguration : BaseDateTimeOptionsConfiguration, IDateTimePeriodParserConfiguration
     {
         public static readonly Regex EarlyMorningStartEndRegex =
-            new Regex(DateTimeDefinitions.EarlyMorningStartEndRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.EarlyMorningStartEndRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex MorningStartEndRegex =
-            new Regex(DateTimeDefinitions.MorningStartEndRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.MorningStartEndRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex AfternoonStartEndRegex =
-            new Regex(DateTimeDefinitions.AfternoonStartEndRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.AfternoonStartEndRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex EveningStartEndRegex =
-            new Regex(DateTimeDefinitions.EveningStartEndRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.EveningStartEndRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex NightStartEndRegex =
-            new Regex(DateTimeDefinitions.NightStartEndRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.NightStartEndRegex, RegexFlags, RegexTimeOut);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
@@ -48,6 +48,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
             TimePeriodParser = config.TimePeriodParser;
             DurationParser = config.DurationParser;
             TimeZoneParser = config.TimeZoneParser;
+            HolidayExtractor = config.HolidayExtractor;
+            HolidayTimeParser = config.HolidayTimeParser;
 
             PureNumberFromToRegex = SpanishTimePeriodExtractorConfiguration.PureNumFromTo;
             HyphenDateRegex = SpanishDateTimePeriodExtractorConfiguration.HyphenDateRegex;
@@ -143,9 +145,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
 
         bool IDateTimePeriodParserConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 
+        Regex IDateTimePeriodParserConfiguration.TasksmodeMealTimeofDayRegex => null;
+
         public IImmutableDictionary<string, string> UnitMap { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
+
+        public IDateTimeExtractor HolidayExtractor { get; }
+
+        public IDateTimeParser HolidayTimeParser { get; }
 
         public bool GetMatchedTimeRange(string text, out string todSymbol, out int beginHour, out int endHour, out int endMin)
         {

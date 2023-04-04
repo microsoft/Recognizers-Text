@@ -121,13 +121,18 @@ class NumberParserConfiguration(ABC):
     def is_multi_decimal_separator_culture(self) -> bool:
         pass
 
+    @property
+    @abstractmethod
+    def round_multiplier_regex(self) -> Pattern:
+        pass
+
 
 class BaseNumberParser(Parser):
     def __init__(self, config: NumberParserConfiguration):
         self.config: NumberParserConfiguration = config
         self.supported_types: List[str] = list()
 
-        single_int_frac = f'{self.config.word_separator_token}| -|{self._get_key_regex(self.config.cardinal_number_map.keys())}|{self._get_key_regex(self.config.ordinal_number_map.keys())}'
+        single_int_frac = f'{self.config.word_separator_token}| -|{self._get_key_regex(self.config.cardinal_number_map.keys())}|{self._get_key_regex(self.config.ordinal_number_map.keys())}|\\d+'
         self.text_number_regex: Pattern = self._get_text_number_regex(single_int_frac)
         self.arabic_number_regex: Pattern = RegExpUtility.get_safe_reg_exp(
             r'\d+', flags=regex.I | regex.S)
@@ -157,7 +162,46 @@ class BaseNumberParser(Parser):
             is_negative = True
             source.text = source.text[len(match_negative[1]):]
 
-        if 'Num' in extra:
+        if isinstance(source.data, List):
+            ers = source.data
+            inner_prs = [self.parse(rs) for rs in ers]
+            merged_prs = []
+
+            val = 0
+            count = 0
+
+            for idx in range(len(inner_prs)):
+                val += inner_prs[idx].value
+                if (idx + 1 >= len(inner_prs)) or not self.__is_mergeable(float(str(inner_prs[idx].value)),
+                                                                          float(str(inner_prs[idx + 1].value))):
+                    start = ers[idx - count].start
+                    length = ers[idx].start + ers[idx].length - start
+
+                    parsed_result = ParseResult()
+                    parsed_result.start = start
+                    parsed_result.length = length
+                    parsed_result.value = val
+                    parsed_result.text = source.text[start - source.start:length]
+                    parsed_result.type = source.type
+                    parsed_result.data = None
+
+                    merged_prs.append(parsed_result)
+                    if val != 0:
+                        final_val = val
+                    val = 0
+                    count = 0
+
+                else:
+                    count += 1
+
+            ret = ParseResult()
+            ret.start = source.start
+            ret.length = source.length
+            ret.text = source.text
+            ret.type = source.type
+            ret.value = val + final_val
+            ret.data = merged_prs
+        elif 'Num' in extra:
             ret = self._digit_number_parse(source)
         # Frac is a special number, parse via another method
         elif regex.search(fr'Frac{self.config.lang_marker}', extra):
@@ -167,7 +211,10 @@ class BaseNumberParser(Parser):
         elif 'Pow' in extra:
             ret = self._power_number_parse(source)
 
-        if ret and ret.value is not None:
+        if isinstance(ret.data, List):
+            for parsed_result in ret.data:
+                ret.resolution_str = self._get_resolution_string(parsed_result.value)
+        elif ret and ret.value is not None:
             if is_negative:
                 # Recover to the original extracted Text
                 ret.text = match_negative[1] + source.text
@@ -175,9 +222,14 @@ class BaseNumberParser(Parser):
             # Use culture_info to format values
             ret.resolution_str = self.config.culture_info.format(
                 ret.value) if self.config.culture_info is not None else repr(ret.value)
+
+            ret.resolution_str = self._get_resolution_string(ret.value)
             ret.text = ret.text.lower()
 
         return ret
+
+    def _get_resolution_string(self, value):
+        return self.config.culture_info.format(value) if self.config.culture_info is not None else repr(value)
 
     def _get_key_regex(self, keys: List[str]) -> str:
         return str.join('|', sorted(keys, key=len, reverse=True))
@@ -247,6 +299,15 @@ class BaseNumberParser(Parser):
 
             result.value = small_value / big_value
         else:
+            is_fraction_multiplier = False
+            multiplier = 1
+            if self.config.round_multiplier_regex is not None:
+                match = self.config.round_multiplier_regex.search(result_text)
+                if match is not None:
+                    result_text = result_text.replace(match.group(0), "")
+                    multiplier = self.config.round_number_map[match.group("multiplier")]
+                    is_fraction_multiplier = True if match.group("fracMultiplier") is not None else False
+
             words = list(filter(lambda x: x, result_text.split(' ')))
             frac_words = self.config.normalize_token_set(words, result)
 
@@ -258,7 +319,7 @@ class BaseNumberParser(Parser):
 
             # for case like "half"
             if len(frac_words) == 1:
-                result.value = 1 / self.__get_int_value(frac_words)
+                result.value = (1 / self.__get_int_value(frac_words)) * multiplier
                 return result
 
             for split_index in range(len(frac_words) - 2, -1, -1):
@@ -290,7 +351,8 @@ class BaseNumberParser(Parser):
                             # frac[i+1] % 100 and frac[i] % 100 = 0
                             if (self.config.resolve_composite_number(frac_words[split_index]) >= sm_hundreds
                                     and not frac_words[split_index + 1] in self.config.written_fraction_separator_texts
-                                    and self.config.resolve_composite_number(frac_words[split_index + 1]) < sm_hundreds):
+                                    and self.config.resolve_composite_number(
+                                        frac_words[split_index + 1]) < sm_hundreds):
                                 split_index += 1
                                 break
                             split_index += 1
@@ -330,12 +392,11 @@ class BaseNumberParser(Parser):
             int_value = self.__get_int_value(self.__get_matches(int_str))
 
             # Find mixed number
-            if (mixed_index != len(frac_words) and numer_value < denomi_value):
-                # int_value + numer_value / denomi_value
-                result.value = int_value + numer_value / denomi_value
+            if mixed_index != len(frac_words) and numer_value < denomi_value:
+                result.value = (int_value + (numer_value / denomi_value)) * multiplier if is_fraction_multiplier else \
+                    int_value + (multiplier * numer_value / denomi_value)
             else:
-                # (int_value + numer_value) / denomi_value
-                result.value = (int_value + numer_value) / denomi_value
+                result.value = multiplier * (int_value + numer_value) / denomi_value
 
             # Convert to float for fixed float point vs. exponential notation consistency /w C#/TS/JS
             result.value = float(result.value)
@@ -405,7 +466,7 @@ class BaseNumberParser(Parser):
                 negative = not negative
             elif c == '+':
                 continue
-            if i == len(handle)-1:
+            if i == len(handle) - 1:
                 if negative:
                     call_stack.append(-tmp)
                 else:
@@ -434,6 +495,10 @@ class BaseNumberParser(Parser):
         matches = list(regex.finditer(self.text_number_regex, source))
         return list(filter(None, map(lambda m: m.group().lower(), matches)))
 
+    def __is_mergeable(self, former: float, later: float) -> bool:
+        return (abs(former % 1) < sys.float_info.epsilon) and (abs(later % 1) < sys.float_info.epsilon) and \
+               former > later > 0 and len(str(int(former))) > len(str(int(later)))
+
     # Test if big and combine with small.
     # e.g. 'hundred' can combine with 'thirty' but 'twenty' can't combine with 'thirty'.
     def __is_composable(self, big: int, small: int) -> bool:
@@ -447,7 +512,7 @@ class BaseNumberParser(Parser):
         end_flag = 1
 
         # Scan from end to start, find the end word
-        for i in range(len(matches)-1, 0, -1):
+        for i in range(len(matches) - 1, 0, -1):
             if matches[i] in self.round_number_set:
                 # if false,then continue, you will meet hundred first, then thousand.
                 if end_flag > self.config.round_number_map[matches[i]]:
@@ -495,6 +560,8 @@ class BaseNumberParser(Parser):
                             tmp = tmp_stack.pop() + match_value
                             tmp += tmp_stack.pop()
                             tmp_stack.append(tmp)
+                elif match.isdigit():
+                    tmp_stack.append(int(match))
                 else:
                     complex_val = self.config.resolve_composite_number(match)
                     if complex_val != 0:
@@ -654,7 +721,7 @@ class BaseNumberParser(Parser):
         culture_code = self.config.culture_info.code
         source = fr'(?=\b)({single_int_frac})(?=\b)'
 
-        if culture_code in (Culture.Italian, Culture.German):
+        if culture_code in (Culture.Italian, Culture.German, Culture.Dutch):
             source = fr'((?=\b)({single_int_frac})(?=\b))|({single_int_frac})'
 
         pattern = RegExpUtility.get_safe_reg_exp(source, flags=regex.I | regex.S)

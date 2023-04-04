@@ -274,7 +274,7 @@ DateExtractor8: !nestedRegex
   references: [ MonthNumRegex, DayRegex, BaseDateTime.CheckDecimalRegex ]
 DateExtractor9: !nestedRegex
   # 23/7
-  def: \b({WeekDayRegex}\s+)?(?<!\d[.,]){DayRegex}\s*/\s*{MonthNumRegex}((\s+|\s*,\s*|\s+d[eo]\s+){DateYearRegex})?\b{BaseDateTime.CheckDecimalRegex}(?!\s*[/\\\.]\s*\d+)
+  def: \b({WeekDayRegex}\s+)?(?<!\d[.,]){DayRegex}\s*(/|\bdel\b)\s*{MonthNumRegex}((\s+|\s*,\s*|\s+d[eo]\s+){DateYearRegex})?\b{BaseDateTime.CheckDecimalRegex}(?!\s*[/\\\.]\s*\d+)
   references: [ WeekDayRegex, DayRegex, MonthNumRegex, DateYearRegex, BaseDateTime.CheckDecimalRegex ]
 DateExtractor10: !nestedRegex
   # 2015-12-23 | Abril-2016-23 | 23/2016/Abril
@@ -1067,6 +1067,8 @@ AmbiguityFiltersDict: !dictionary
     '^semana$': '(?<!la\s+)semana'
     '^mes$': '(?<!el\s+)mes'
     '^(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)$': '([$%£&!?@#])(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)|(abr|ago|dic|feb|ene|ju[ln]|mar|may|nov|oct|sep?t|sep)([$%£&@#])'
+    '^\d{1,4}-\d{1,4}$': '\d{1,4}-\d{1,4}-\d|\d-\d{1,4}-\d{1,4}'
+    '^\d{1,4}-\d{1,4}-\d{1,4}$': '\d{1,4}-\d{1,4}-\d{1,4}-\d|\d-\d{1,4}-\d{1,4}-\d{1,4}'
 # For TimeOfDay resolution
 EarlyMorningStartEndRegex: !simpleRegex
   def: (^(madrugada)|(madrugada)$)
@@ -1197,4 +1199,8 @@ SemiAnnualTypeRegex: !simpleRegex
   def: (semestral(es|mente)?)$
 YearTypeRegex: !simpleRegex
   def: (años?|anual(mente)?)$
+ThisTerms: !list
+  types: [ string ]
+  entries:
+    - esta
 ...

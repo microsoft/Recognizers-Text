@@ -6,6 +6,7 @@ using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions.Korean;
+using Microsoft.Recognizers.Definitions.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime.Korean
 {
@@ -40,15 +41,15 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
             var regexes = new Dictionary<Regex, PeriodType>
             {
                 {
-                    new Regex(DateTimeDefinitions.TimePeriodRegexes1, RegexFlags),
+                    new Regex(DateTimeDefinitions.TimePeriodRegexes1, RegexFlags, RegexTimeOut),
                     PeriodType.FullTime
                 },
                 {
-                    new Regex(DateTimeDefinitions.TimePeriodRegexes2, RegexFlags),
+                    new Regex(DateTimeDefinitions.TimePeriodRegexes2, RegexFlags, RegexTimeOut),
                     PeriodType.ShortTime
                 },
                 {
-                    new Regex(DateTimeDefinitions.TimeOfDayRegex, RegexFlags),
+                    new Regex(DateTimeDefinitions.TimeOfDayRegex, RegexFlags, RegexTimeOut),
                     PeriodType.ShortTime
                 },
             };
@@ -57,5 +58,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
         }
 
         public ImmutableDictionary<Regex, PeriodType> Regexes { get; }
+
+        public Dictionary<Regex, Regex> AmbiguityTimePeriodFiltersDict => DefinitionLoader.LoadAmbiguityFilters(DateTimeDefinitions.AmbiguityTimePeriodFiltersDict);
+
     }
 }

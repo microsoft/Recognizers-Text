@@ -20,6 +20,25 @@ Especially for Japanese, Korean, Arabic, Swedish, and others! More info below.
 
 .NET is the primary package version and contributions propagate to the other platforms with time.
 
+## Citing the Recognizers-Text project
+
+If you utilize the recognizers in academic works, please cite it as below (you can omit the version number or update it to a specific version if relevant):
+
+```tex
+@software{soft:recognizers-text,
+  author    = {Wenhao Huang and Zijia Lin and Chris McConnell and B{\"{o}}rje F. Karlsson},
+  title     = {{Recognizers-Text}: {R}ecognition and resolution of numbers, units, and date/time entities expressed across multiple languages},
+  month     = jul,
+  year      = 2017,
+  publisher = {Zenodo},
+  version   = {1.0.0},
+  doi       = {10.5281/zenodo.6860598},
+  url       = {https://doi.org/10.5281/zenodo.6860598}
+}
+```
+
+Feel free to change "@software" to "@misc" if it better fits your templates.
+
 # Help
 
 If you have any questions, please go ahead and [open an issue](https://github.com/Microsoft/Recognizers-Text/issues/new/choose), even if it's not an actual bug. Issues are an acceptable discussion forum as well.
@@ -48,7 +67,7 @@ The table below summarizes the currently supported entities. Support for English
 | Number (cardinal)    | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | ✓     | ✓      | ✓       |
 | Ordinal              | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | ✓     | ✓      | ✓       |
 | Percentage           | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | ✓     | ✓      | ✓       |
-| Number Range         | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | PA/EO  | ✓      | :x:    | ✓       |
+| Number Range         | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | PA/EO  | ✓      | ✓     | ✓       |
 | Unit - Age           | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | PA/EO  | ✓     | ✓       |
 | Unit - Currency      | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | PA/EO  | ✓     | ✓       |
 | Unit - Dimensions    | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | PA/EO  | ✓      | ✓      | 
@@ -60,7 +79,7 @@ The table below summarizes the currently supported entities. Support for English
 | Seq. - IP Address    | G    | G        | G    | G      | G     | G       | G      | G      | G      | G       |
 | Seq. - Phone Number  | G    | G        | G    | G      | G     | G       | G      | G      | G      | G       |
 | Seq. - URL           | G    | G*       | G    | G      | G     | G       | G*     | G*     | G      | G       |
-| DateTime (+subtypes) | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | **SO** | **SO** | ✓     | ✓       | 
+| DateTime (+subtypes) | ✓    | ✓       | ✓    | ✓     | ✓     | ✓       | ✓      | **SO** | ✓     | ✓       | 
 
 | Entity Type       | SV      | BG      | TR    | HI     | AR     |         |        |        |        |         |
 |:-----------------:|:-------:|:-------:|:-----:|:------:|:------:|:-------:|:------:|:------:|:------:|:-------:| 
@@ -79,7 +98,7 @@ The table below summarizes the currently supported entities. Support for English
 | Seq. - IP Address    | G    | G       | G     | G      | G      |         |        |        |        |         |
 | Seq. - Phone Number  | :x:  | :x:     | :x:   | :x:    | :x:    |         |        |        |        |         |
 | Seq. - URL           | G    | G       | G     | G*     | G*     |         |        |        |        |         |
-| DateTime (+subtypes) | :x:  | :x:     | ✓     | ✓     | **SO** |         |        |        |        |         |
+| DateTime (+subtypes) | **SP** | :x:     | ✓     | ✓     | **SO** |         |        |        |        |         |
 
 * G: Generic entity, not language-specific (* unicode TLDs not-supported);
 * EO: Extraction-only (parsing/resolution/normalization pending);

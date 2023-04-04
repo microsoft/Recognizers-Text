@@ -81,6 +81,10 @@ class GermanDateParserConfiguration(DateParserConfiguration):
         return self._special_day_regex
 
     @property
+    def special_day_with_num_regex(self) -> Pattern:
+        return self._special_day_with_num_regex
+
+    @property
     def next_regex(self) -> Pattern:
         return self._next_regex
 
@@ -107,6 +111,10 @@ class GermanDateParserConfiguration(DateParserConfiguration):
     @property
     def week_day_of_month_regex(self) -> Pattern:
         return self._week_day_of_month_regex
+
+    @property
+    def week_day_and_day_regex(self) -> Pattern:
+        return self._week_day_and_day_regex
 
     @property
     def for_the_regex(self) -> Pattern:
@@ -156,7 +164,7 @@ class GermanDateParserConfiguration(DateParserConfiguration):
         self._on_regex = RegExpUtility.get_safe_reg_exp(GermanDateTime.OnRegex)
         self._special_day_regex = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.SpecialDayRegex)
-        self._special_day_regex_with_num_regex = RegExpUtility.get_safe_reg_exp(
+        self._special_day_with_num_regex = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.SpecialDayWithNumRegex)
         self._next_regex = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.NextDateRegex)
@@ -176,6 +184,8 @@ class GermanDateParserConfiguration(DateParserConfiguration):
             GermanDateTime.ForTheRegex)
         self._week_day_and_day_of_month_regex = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.WeekDayAndDayOfMonthRegex)
+        self._week_day_and_day_regex = RegExpUtility.get_safe_reg_exp(
+            GermanDateTime.WeekDayAndDayRegex)
         self._relative_month_regex = RegExpUtility.get_safe_reg_exp(
             GermanDateTime.RelativeMonthRegex)
         self._relative_week_day_regex = RegExpUtility.get_safe_reg_exp(
@@ -193,9 +203,9 @@ class GermanDateParserConfiguration(DateParserConfiguration):
             swift = 0
         elif trimmed_text == 'morgen':
             swift = 1
-        elif trimmed_text == 'übermorgen':
+        elif trimmed_text == 'gestern':
             swift = -1
-        elif trimmed_text.endswith('dopodomani'):
+        elif trimmed_text.endswith('übermorgen'):
             swift = 2
         elif trimmed_text.endswith('vorgestern'):
             swift = -2

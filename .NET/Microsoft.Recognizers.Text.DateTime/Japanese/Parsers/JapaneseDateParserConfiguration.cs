@@ -12,16 +12,16 @@ namespace Microsoft.Recognizers.Text.DateTime.Japanese
 {
     public class JapaneseDateParserConfiguration : BaseDateTimeOptionsConfiguration, ICJKDateParserConfiguration
     {
-        public static readonly Regex PlusOneDayRegex = new Regex(DateTimeDefinitions.PlusOneDayRegex, RegexFlags);
-        public static readonly Regex MinusOneDayRegex = new Regex(DateTimeDefinitions.MinusOneDayRegex, RegexFlags);
-        public static readonly Regex PlusTwoDayRegex = new Regex(DateTimeDefinitions.PlusTwoDayRegex, RegexFlags);
-        public static readonly Regex MinusTwoDayRegex = new Regex(DateTimeDefinitions.MinusTwoDayRegex, RegexFlags);
-        public static readonly Regex PlusThreeDayRegex = new Regex(DateTimeDefinitions.PlusThreeDayRegex, RegexFlags);
-        public static readonly Regex MinusThreeDayRegex = new Regex(DateTimeDefinitions.MinusThreeDayRegex, RegexFlags);
-        public static readonly Regex PlusFourDayRegex = new Regex(DateTimeDefinitions.PlusFourDayRegex, RegexFlags);
-        public static readonly Regex NextMonthRegex = new Regex(DateTimeDefinitions.ParserConfigurationNextMonthRegex, RegexFlags);
-        public static readonly Regex LastMonthRegex = new Regex(DateTimeDefinitions.ParserConfigurationLastMonthRegex, RegexFlags);
-        public static readonly Regex LastWeekDayRegex = new Regex(DateTimeDefinitions.ParserConfigurationLastWeekDayRegex, RegexFlags);
+        public static readonly Regex PlusOneDayRegex = new Regex(DateTimeDefinitions.PlusOneDayRegex, RegexFlags, RegexTimeOut);
+        public static readonly Regex MinusOneDayRegex = new Regex(DateTimeDefinitions.MinusOneDayRegex, RegexFlags, RegexTimeOut);
+        public static readonly Regex PlusTwoDayRegex = new Regex(DateTimeDefinitions.PlusTwoDayRegex, RegexFlags, RegexTimeOut);
+        public static readonly Regex MinusTwoDayRegex = new Regex(DateTimeDefinitions.MinusTwoDayRegex, RegexFlags, RegexTimeOut);
+        public static readonly Regex PlusThreeDayRegex = new Regex(DateTimeDefinitions.PlusThreeDayRegex, RegexFlags, RegexTimeOut);
+        public static readonly Regex MinusThreeDayRegex = new Regex(DateTimeDefinitions.MinusThreeDayRegex, RegexFlags, RegexTimeOut);
+        public static readonly Regex PlusFourDayRegex = new Regex(DateTimeDefinitions.PlusFourDayRegex, RegexFlags, RegexTimeOut);
+        public static readonly Regex NextMonthRegex = new Regex(DateTimeDefinitions.ParserConfigurationNextMonthRegex, RegexFlags, RegexTimeOut);
+        public static readonly Regex LastMonthRegex = new Regex(DateTimeDefinitions.ParserConfigurationLastMonthRegex, RegexFlags, RegexTimeOut);
+        public static readonly Regex LastWeekDayRegex = new Regex(DateTimeDefinitions.ParserConfigurationLastWeekDayRegex, RegexFlags, RegexTimeOut);
 
         public static readonly string ParserName = Constants.SYS_DATETIME_DATE; // "Date";
 

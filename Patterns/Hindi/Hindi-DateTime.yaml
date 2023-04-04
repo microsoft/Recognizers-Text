@@ -554,7 +554,7 @@ SetEachRegex: !simpleRegex
 SetLastRegex: !simpleRegex
   def: (?<last>निम्नलिखित|अगले|आगामी|इस|पिछले|पिछले|पिछले|वर्तमान)
 EachDayRegex: !simpleRegex
-  def: ^\s*(हर दिन|रोज़|रोज|प्रतिदिन)\b
+  def: \s*(हर दिन|रोज़|रोज|प्रतिदिन)\b
 EachDayRegexPrefix: !simpleRegex
   def: \b(हर दिन|रोज़|प्रतिदिन)\s*$
 DurationFollowedUnit: !nestedRegex
@@ -1828,6 +1828,8 @@ AmbiguityFiltersDict: !dictionary
   types: [ string, string ]
   entries:
     '\bदिन\b': '\bदिन-ब-दिन\b'
+    '^\d{1,4}-\d{1,4}$': '\d{1,4}-\d{1,4}-\d|\d-\d{1,4}-\d{1,4}'
+    '^\d{1,4}-\d{1,4}-\d{1,4}$': '\d{1,4}-\d{1,4}-\d{1,4}-\d|\d-\d{1,4}-\d{1,4}-\d{1,4}'
 # For TimeOfDay resolution
 MorningTermList: !list
   types: [ string ]

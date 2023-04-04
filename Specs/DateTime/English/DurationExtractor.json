@@ -686,5 +686,29 @@
         "Length": 11
       }
     ]
+  },
+  {
+    "Input": "we've been in pakistan for 2ys",
+    "NotSupported": "dotnet,javascript,python,java",
+    "Results": [
+      {
+        "Text": "2ys",
+        "Type": "duration",
+        "Start": 27,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "the project estimative is a 2 ys duration",
+    "NotSupported": "dotnet,javascript,python,java",
+    "Results": [
+      {
+        "Text": "2 ys",
+        "Type": "duration",
+        "Start": 28,
+        "Length": 4
+      }
+    ]
   }
 ]

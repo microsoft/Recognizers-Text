@@ -16,25 +16,25 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly Regex TimeSuffixFull =
-            new Regex(DateTimeDefinitions.TimeSuffixFull, RegexFlags);
+            new Regex(DateTimeDefinitions.TimeSuffixFull, RegexFlags, RegexTimeOut);
 
         private static readonly Regex LunchRegex =
-            new Regex(DateTimeDefinitions.LunchRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.LunchRegex, RegexFlags, RegexTimeOut);
 
         private static readonly Regex NightRegex =
-            new Regex(DateTimeDefinitions.NightRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.NightRegex, RegexFlags, RegexTimeOut);
 
         private static readonly Regex HalfTokenRegex =
-            new Regex(DateTimeDefinitions.HalfTokenRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.HalfTokenRegex, RegexFlags, RegexTimeOut);
 
         private static readonly Regex QuarterTokenRegex =
-            new Regex(DateTimeDefinitions.QuarterTokenRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.QuarterTokenRegex, RegexFlags, RegexTimeOut);
 
         private static readonly Regex ThreeQuarterTokenRegex =
-            new Regex(DateTimeDefinitions.ThreeQuarterTokenRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.ThreeQuarterTokenRegex, RegexFlags, RegexTimeOut);
 
         private static readonly Regex ToTokenRegex =
-            new Regex(DateTimeDefinitions.ToTokenRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.ToTokenRegex, RegexFlags, RegexTimeOut);
 
         public HindiTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
          : base(config)

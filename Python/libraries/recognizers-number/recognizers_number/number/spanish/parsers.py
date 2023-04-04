@@ -89,6 +89,10 @@ class SpanishNumberParserConfiguration(NumberParserConfiguration):
     def is_multi_decimal_separator_culture(self) -> bool:
         return self._is_multi_decimal_separator_culture
 
+    @property
+    def round_multiplier_regex(self) -> Pattern:
+        return self._round_multiplier_regex
+
     def __init__(self, culture_info=None):
         if culture_info is None:
             culture_info = CultureInfo(Culture.Spanish)
@@ -126,6 +130,8 @@ class SpanishNumberParserConfiguration(NumberParserConfiguration):
             SpanishNumeric.HalfADozenRegex)
         self._digital_number_regex = RegExpUtility.get_safe_reg_exp(
             SpanishNumeric.DigitalNumberRegex)
+        self._round_multiplier_regex = RegExpUtility.get_safe_reg_exp(
+            SpanishNumeric.RoundMultiplierRegex)
 
     def normalize_token_set(self, tokens: List[str], context: ParseResult) -> List[str]:
         result: List[str] = list()
@@ -148,6 +154,16 @@ class SpanishNumberParserConfiguration(NumberParserConfiguration):
                         result.append(temp_word)
                         continue
             result.append(token)
+
+        # The following piece of code is needed to compute the fraction pattern number+'y medio'
+        # e.g. 'cinco y medio' ('five and a half') where the numerator is omitted in Spanish.
+        # It works by inserting the numerator 'un' ('a') in the list result
+        # so that the pattern is correctly processed.
+        if len(result) > 2:
+            if result[len(result) - 1] == SpanishNumeric.OneHalfTokens[1] and \
+                    result[len(result) - 2] == SpanishNumeric.WordSeparatorToken:
+                result[len(result) - 2] = SpanishNumeric.WrittenFractionSeparatorTexts[0]
+                result.insert(len(result) - 1, SpanishNumeric.OneHalfTokens[0])
 
         return result
 

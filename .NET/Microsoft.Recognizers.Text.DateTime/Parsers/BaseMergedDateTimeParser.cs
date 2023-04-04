@@ -323,6 +323,20 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
             }
 
+            /* Modification of datetime value under tasksmode,
+             for example when input text is 9 april at 2 pm and current datetime value is 9 april 2022 1pm,
+            then output for current query should be "9 april 2022, 9pm" under tasksmode which is different
+            from default mode, under which it is "9 april 2023, 9pm".
+             */
+            if ((this.Config.Options & DateTimeOptions.TasksMode) != 0)
+            {
+                if (pr != null)
+                {
+                    pr = TasksModeProcessing.TasksModeModification(pr, referenceTime);
+                    pr.Text = originText;
+                }
+            }
+
             return pr;
         }
 

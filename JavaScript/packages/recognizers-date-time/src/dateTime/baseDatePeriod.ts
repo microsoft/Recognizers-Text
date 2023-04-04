@@ -9,6 +9,7 @@ import { BaseDurationExtractor, BaseDurationParser } from "./baseDuration";
 import { IDateTimeParser, DateTimeParseResult } from "./parsers";
 import { BaseDateExtractor, BaseDateParser } from "./baseDate";
 import { IDateTimeExtractor } from "./baseDateTime";
+import toNumber = require("lodash.tonumber");
 
 export interface IDatePeriodExtractorConfiguration {
     simpleCasesRegexes: RegExp[]
@@ -225,6 +226,7 @@ export interface IDatePeriodParserConfiguration {
     dateParser: BaseDateParser
     durationExtractor: IDateTimeExtractor
     durationParser: BaseDurationParser
+    integerExtractor: BaseNumberExtractor
     numberParser: BaseNumberParser
     monthFrontBetweenRegex: RegExp
     betweenRegex: RegExp
@@ -1157,6 +1159,7 @@ export class BaseDatePeriodParser implements IDateTimeParser {
         }
 
         let quarterNum: number;
+        let numOfQuarters = 0;
         if (!StringUtility.isNullOrEmpty(cardinalStr)) {
             quarterNum = this.config.cardinalMap.get(cardinalStr);
         }
@@ -1165,13 +1168,23 @@ export class BaseDatePeriodParser implements IDateTimeParser {
             quarterNum = Math.ceil(month / Constants.TrimesterMonthCount);
             let swift = this.config.getSwiftYear(orderQuarterStr);
             quarterNum += swift;
+            let numStr = match.groups('num').value;
+            let er = this.config.integerExtractor.extract(numStr);
+            if (er.length === 1) {
+                numOfQuarters = toNumber(this.config.numberParser.parse(er[0]).value) - 1 ;
+            }
+
+            if (numOfQuarters > 0 && swift >= 0) {
+                    quarterNum += numOfQuarters;
+                }
+
             if (quarterNum <= 0) {
                 quarterNum += Constants.QuarterCount;
                 year -= 1;
             }
             else if (quarterNum > Constants.QuarterCount) {
-                quarterNum -= Constants.QuarterCount;
-                year += 1;
+                year += quarterNum / Constants.QuarterCount;
+                quarterNum = quarterNum % Constants.QuarterCount;
             }
         }
         else {
@@ -1180,6 +1193,7 @@ export class BaseDatePeriodParser implements IDateTimeParser {
 
         let beginDate = DateUtils.safeCreateDateResolveOverflow(year, (quarterNum - 1) * Constants.TrimesterMonthCount, 1);
         let endDate = DateUtils.safeCreateDateResolveOverflow(year, quarterNum * Constants.TrimesterMonthCount, 1);
+        beginDate = DateUtils.addMonths(beginDate, -numOfQuarters * Constants.TrimesterMonthCount);
 
         if (noSpecificYear) {
             if (endDate < referenceDate) {
@@ -1206,7 +1220,8 @@ export class BaseDatePeriodParser implements IDateTimeParser {
         else {
             result.futureValue = [beginDate, endDate];
             result.pastValue = [beginDate, endDate];
-            result.timex = `(${DateTimeFormatUtil.luisDateFromDate(beginDate)},${DateTimeFormatUtil.luisDateFromDate(endDate)},P3M)`;
+            let unitCount = (((endDate.getFullYear() - beginDate.getFullYear()) * 12) + (endDate.getMonth() - beginDate.getMonth())).toString();
+            result.timex = `(${DateTimeFormatUtil.luisDateFromDate(beginDate)},${DateTimeFormatUtil.luisDateFromDate(endDate)},P${unitCount}M)`;
         }
 
         result.success = true;

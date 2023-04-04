@@ -609,7 +609,7 @@ class BaseDatePeriodExtractor(DateTimeExtractor):
         durations = []
         duration_extractions = self.config.duration_extractor.extract(source, reference)
 
-        for duration_extraction in self.config.duration_extractor.extract(source, reference):
+        for duration_extraction in duration_extractions:
             match = self.config.date_unit_regex.search(duration_extraction.text)
             if match:
                 durations.append(
@@ -1344,12 +1344,13 @@ class BaseDatePeriodParser(DateTimeParser):
             return result
 
         month_str = RegExpUtility.get_group(match, Constants.MONTH_GROUP_NAME)
-        year_str = RegExpUtility.get_group(match, Constants.YEAR_GROUP_NAME)
         order_str = RegExpUtility.get_group(match, Constants.ORDER)
         month = self.config.month_of_year.get(month_str)
 
         try:
-            year = int(year_str)
+            year = self.config.date_extractor.get_year_from_text(match)
+            if year == Constants.INVALID_YEAR:
+                raise ValueError()
         except ValueError:
             swift = self.config.get_swift_year(order_str)
             if swift < 1:

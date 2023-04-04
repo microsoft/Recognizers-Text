@@ -2548,7 +2548,7 @@
   },
   {
     "Input": "423 0000 serão reconhecidos como dois números.",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "423",
@@ -2635,7 +2635,7 @@
   },
   {
     "Input": "A população é de 2 milhões e meio",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "2 milhões e meio",
@@ -2651,7 +2651,7 @@
   },
   {
     "Input": "Eles conseguiram três milhões e meio",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "três milhões e meio",
@@ -2667,7 +2667,7 @@
   },
   {
     "Input": "o valor presente é um trilhão e meio milhão",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "um trilhão e meio milhão",
@@ -2683,7 +2683,7 @@
   },
   {
     "Input": "O número é cinco trilhões com três quartos.",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "cinco trilhões com três quartos",
@@ -2699,7 +2699,7 @@
   },
   {
     "Input": "Eu contei seis milhões com dois terços",
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "seis milhões com dois terços",

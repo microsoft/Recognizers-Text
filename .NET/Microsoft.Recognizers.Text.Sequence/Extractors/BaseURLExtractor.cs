@@ -1,9 +1,11 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
+using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
+using System.Reflection;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions;
@@ -37,13 +39,15 @@ namespace Microsoft.Recognizers.Text.Sequence
             };
 
             Regexes = regexes.ToImmutableDictionary();
-            AmbiguousTimeTerm = new Regex(BaseURL.AmbiguousTimeTerm, RegexOptions.Compiled);
+            AmbiguousTimeTerm = new Regex(BaseURL.AmbiguousTimeTerm, RegexOptions.Compiled, RegexTimeOut);
 
             TldMatcher = new StringMatcher();
             TldMatcher.Init(BaseURL.TldList);
         }
 
         internal override ImmutableDictionary<Regex, string> Regexes { get; }
+
+        protected static TimeSpan RegexTimeOut => SequenceRecognizer.GetTimeout(MethodBase.GetCurrentMethod().DeclaringType);
 
         protected sealed override string ExtractType { get; } = Constants.SYS_URL;
 
