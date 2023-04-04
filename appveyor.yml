@@ -39,6 +39,8 @@ build_script:
     
     CALL node -e "console.log(process.versions.v8);"
     
+    rm NuGet.Config
+
     cd .NET\
     
     build.ci.cmd
