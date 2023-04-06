@@ -3084,6 +3084,30 @@
     ]
   },
   {
+    "Input": "Regresaré a las 00:00",
+    "Context": {
+      "ReferenceDateTime": "2023-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, java",
+    "Results": [
+      {
+        "Text": "00:00",
+        "Start": 16,
+        "End": 20,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T00:00",
+              "type": "time",
+              "value": "00:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "Regresaré a las 7:56:30 de la tarde",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
