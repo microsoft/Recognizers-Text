@@ -23,6 +23,29 @@
     ]
   },
   {
+    "Input": "I'll go back 5/3/23 @ 00:00:00",
+    "Context": {
+      "ReferenceDateTime": "2023-05-01T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "5/3/23 @ 00:00:00",
+        "Start": 13,
+        "End": 29,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2023-03-05T00:00:00",
+              "type": "datetime",
+              "value": "2023-03-05 00:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "The date should be 05-Aug-2016",
     "Context": {
       "ReferenceDateTime": "2018-10-24T12:00:00"
@@ -907,6 +930,29 @@
               "timex": "T20:10",
               "type": "time",
               "value": "20:10:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The target time is 00:00",
+    "Context": {
+      "ReferenceDateTime": "2023-12-26T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "00:00",
+        "Start": 19,
+        "End": 23,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T00:00",
+              "type": "time",
+              "value": "00:00:00"
             }
           ]
         }

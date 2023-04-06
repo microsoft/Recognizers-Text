@@ -46,6 +46,52 @@
     ]
   },
   {
+    "Input": "I'll go back on 15 at 00:00",
+    "Context": {
+      "ReferenceDateTime": "2023-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "15 at 00:00",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-XX-15T00:00",
+          "FutureResolution": {
+            "dateTime": "2023-11-15 00:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2023-10-15 00:00:00"
+          }
+        },
+        "Start": 16,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back on 15 at 00:00:00",
+    "Context": {
+      "ReferenceDateTime": "2023-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "15 at 00:00:00",
+        "Type": "datetime",
+        "Value": {
+          "Timex": "XXXX-XX-15T00:00:00",
+          "FutureResolution": {
+            "dateTime": "2023-11-15 00:00:00"
+          },
+          "PastResolution": {
+            "dateTime": "2023-10-15 00:00:00"
+          }
+        },
+        "Start": 16,
+        "Length": 14
+      }
+    ]
+  },
+  {
     "Input": "I'll go back on 15 at 8:00",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"

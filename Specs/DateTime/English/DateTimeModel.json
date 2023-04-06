@@ -10582,6 +10582,52 @@
     "Results": []
   },
   {
+    "Input": "I'll be back at 00:00",
+    "Context": {
+      "ReferenceDateTime": "2023-03-28T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "00:00",
+        "Start": 16,
+        "End": 20,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T00:00",
+              "type": "time",
+              "value": "00:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll be back tomorrow at 00:00.",
+    "Context": {
+      "ReferenceDateTime": "2023-03-28T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "tomorrow at 00:00",
+        "Start": 13,
+        "End": 29,
+        "TypeName": "datetimeV2.datetime",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2023-03-29T00:00",
+              "type": "datetime",
+              "value": "2023-03-29 00:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "I'll be back at 9:00a.",
     "Context": {
       "ReferenceDateTime": "2019-03-28T00:00:00"

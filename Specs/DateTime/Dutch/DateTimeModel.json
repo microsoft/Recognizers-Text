@@ -1574,7 +1574,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "19:56:30",
@@ -1587,6 +1587,30 @@
               "timex": "T19:56:30",
               "type": "time",
               "value": "19:56:30"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ik ben 00:00 terug",
+    "Context": {
+      "ReferenceDateTime": "2023-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,java",
+    "Results": [
+      {
+        "Text": "00:00",
+        "Start": 7,
+        "End": 11,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T00:00",
+              "type": "time",
+              "value": "00:00:00"
             }
           ]
         }

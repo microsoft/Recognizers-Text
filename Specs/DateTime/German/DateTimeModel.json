@@ -1271,6 +1271,29 @@
     "Results": []
   },
   {
+    "Input": "Lass uns um 00:00 einen Kaffee trinken gehen",
+    "Context": {
+      "ReferenceDateTime": "2023-08-05T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "00:00",
+        "Start": 12,
+        "End": 16,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T00:00",
+              "type": "time",
+              "value": "00:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "Lass uns um 18:12 einen Kaffee trinken gehen",
     "Context": {
       "ReferenceDateTime": "2019-08-05T00:00:00"

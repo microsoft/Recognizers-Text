@@ -300,6 +300,26 @@
     ]
   },
   {
+    "Input": "I'll be back 00:00",
+    "Results": [
+      {
+        "Text": "00:00",
+        "Type": "time",
+        "Value": {
+          "Timex": "T00:00",
+          "FutureResolution": {
+            "time": "00:00:00"
+          },
+          "PastResolution": {
+            "time": "00:00:00"
+          }
+        },
+        "Start": 13,
+        "Length": 5
+      }
+    ]
+  },
+  {
     "Input": "I'll be back 12:34",
     "Results": [
       {

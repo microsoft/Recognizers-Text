@@ -1303,6 +1303,29 @@
     ]
   },
   {
+    "Input": "Je retournerai 00:00",
+    "Context": {
+      "ReferenceDateTime": "2023-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "00:00",
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T00:00",
+              "type": "time",
+              "value": "00:00:00"
+            }
+          ]
+        },
+        "Start": 15,
+        "End": 19
+      }
+    ]
+  },
+  {
     "Input": "Je retournerai 19:56:30",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
