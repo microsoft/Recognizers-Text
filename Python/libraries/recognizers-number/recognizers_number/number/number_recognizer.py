@@ -26,6 +26,8 @@ from recognizers_number.number.german.extractors import GermanMergedNumberExtrac
 from recognizers_number.number.german.parsers import GermanNumberParserConfiguration
 from recognizers_number.number.italian.extractors import ItalianMergedNumberExtractor, ItalianOrdinalExtractor, ItalianPercentageExtractor
 from recognizers_number.number.italian.parsers import ItalianNumberParserConfiguration
+from recognizers_number.number.default.extractors import DefaultNumberExtractor
+from recognizers_number.number.default.parsers import DefaultNumberParserConfiguration
 
 
 class NumberOptions(IntFlag):
@@ -216,6 +218,14 @@ class NumberRecognizer(Recognizer[NumberOptions]):
             AgnosticNumberParserFactory.get_parser(
                 ParserType.PERCENTAGE, ItalianNumberParserConfiguration()),
             ItalianPercentageExtractor()
+        ))
+        # endregion
+
+        # region Default
+        self.register_model('NumberModel', Culture.Default, lambda options: NumberModel(
+            AgnosticNumberParserFactory.get_parser(
+                ParserType.NUMBER, DefaultNumberParserConfiguration()),
+            DefaultNumberExtractor(NumberMode.PURE_NUMBER)
         ))
         # endregion
 

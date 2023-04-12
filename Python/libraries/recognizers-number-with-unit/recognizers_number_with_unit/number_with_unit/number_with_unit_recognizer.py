@@ -270,6 +270,19 @@ class NumberWithUnitRecognizer(Recognizer[NumberWithUnitOptions]):
         ]))
         # endregion
 
+        # region Japanese
+        self.register_model('CurrencyModel', Culture.Japanese, lambda options: CurrencyModel([
+            ExtractorParserModel(
+                BaseMergedUnitExtractor(
+                    JapaneseCurrencyExtractorConfiguration()),
+                BaseMergedUnitParser(JapaneseCurrencyParserConfiguration())),
+            ExtractorParserModel(
+                NumberWithUnitExtractor(
+                    EnglishCurrencyExtractorConfiguration()),
+                NumberWithUnitParser(EnglishCurrencyParserConfiguration()))
+        ]))
+        # endregion
+
     def get_age_model(self, culture: str = None, fallback_to_default_culture: bool = True) -> Model:
         return self.get_model('AgeModel', culture, fallback_to_default_culture)
 

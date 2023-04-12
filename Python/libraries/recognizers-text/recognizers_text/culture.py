@@ -15,6 +15,7 @@ class Culture:
     SpanishMexican: str = 'es-mx'
     Turkish: str = 'tr-tr'
     German: str = 'de-de'
+    Default: str = 'default'
 
     @staticmethod
     def _get_supported_culture_codes():
