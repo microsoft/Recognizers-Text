@@ -88,6 +88,7 @@ class ArrayWriter(CodeWriter):
 
         for value in entries:
             value = value.replace('\'', '\\\'')
+            value = value.replace('\\', '\\\\')
             self.entries.append(f'r{value_quote}{value}{value_quote}')
 
     def write(self):
