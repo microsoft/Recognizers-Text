@@ -97,7 +97,7 @@ class GermanDateTime:
     DateExtractor4 = f'\\b({DayRegex}\\s*{MonthNumRegex}\\s*{DateYearRegex})\\b'
     DateExtractor5 = f'\\b(({WeekDayRegex})(\\s+|\\s*,\\s*))?({DayRegex}\\s*[/\\\\\\-\\.]\\s*({MonthNumRegex}|{MonthRegex})\\s*[/\\\\\\-\\.]\\s*{DateYearRegex})\\b(?!\\s*[/\\\\\\-\\.]\\s*\\d+)'
     DateExtractor6 = f'^[.]'
-    DateExtractor7 = f'({DayRegex}\\s*[\\.]\\s*{MonthNumRegex}[\\.]){BaseDateTime.CheckDecimalRegex}'
+    DateExtractor7 = f'\\b({DayRegex}\\s*[\\.]\\s*{MonthNumRegex}[\\.]){BaseDateTime.CheckDecimalRegex}'
     DateExtractor8 = f'(?<=\\b(am)\\s+){DayRegex}[/\\\\\\.]{MonthNumRegex}([/\\\\\\.]{DateYearRegex})?{BaseDateTime.CheckDecimalRegex}\\b'
     DateExtractor9 = f'\\b({DayRegex}\\s*/\\s*{MonthNumRegex}((\\s+|\\s*,\\s*){DateYearRegex})?){BaseDateTime.CheckDecimalRegex}\\b'
     DateExtractor10 = f'^[.]'
