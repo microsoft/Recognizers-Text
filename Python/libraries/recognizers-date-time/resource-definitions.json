@@ -141,6 +141,18 @@
                 "class TimeZoneDefinitions:"
             ],
             "footer": [ "# pylint: enable=line-too-long" ]
+        },
+        {
+            "input": [ "Japanese", "Japanese-DateTime" ],
+            "output": "japanese_date_time",
+            "header": [
+                "from .base_date_time import BaseDateTime",
+                "# pylint: disable=line-too-long",
+                "",
+                "",
+                "class JapaneseDateTime:"
+            ],
+            "footer": [ "# pylint: enable=line-too-long" ]
         }
     ]
 }
