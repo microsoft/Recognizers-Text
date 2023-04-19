@@ -4,8 +4,7 @@ from recognizers_text.culture import Culture
 from recognizers_text.extractor import Extractor
 from recognizers_text.utilities import RegExpUtility
 from recognizers_number.culture import CultureInfo
-from recognizers_number.number.models import NumberMode
-from recognizers_number.number.japanese.extractors import JapaneseNumberExtractor
+from recognizers_number.number.japanese.extractors import JapaneseNumberExtractor, JapaneseNumberExtractorMode
 from recognizers_number_with_unit.number_with_unit.constants import Constants
 from recognizers_number_with_unit.number_with_unit.extractors import NumberWithUnitExtractorConfiguration
 from recognizers_number_with_unit.resources.japanese_numeric_with_unit import JapaneseNumericWithUnit
@@ -44,6 +43,10 @@ class JapaneseNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfig
         return self._pm_non_unit_regex
 
     @property
+    def half_unit_regex(self) -> Pattern:
+        return self._half_unit_regex
+
+    @property
     def ambiguous_unit_number_multiplier_regex(self) -> Pattern:
         return None
 
@@ -54,7 +57,7 @@ class JapaneseNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfig
         if culture_info is None:
             culture_info = CultureInfo(Culture.Japanese)
         super().__init__(culture_info)
-        self._unit_num_extractor = JapaneseNumberExtractor(NumberMode.Unit)
+        self._unit_num_extractor = JapaneseNumberExtractor(JapaneseNumberExtractorMode.EXTRACT_ALL)
         self._build_prefix = JapaneseNumericWithUnit.BuildPrefix
         self._build_suffix = JapaneseNumericWithUnit.BuildSuffix
         self._connector_token = JapaneseNumericWithUnit.ConnectorToken
@@ -62,6 +65,7 @@ class JapaneseNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfig
             JapaneseNumericWithUnit.CompoundUnitConnectorRegex)
         self._pm_non_unit_regex = RegExpUtility.get_safe_reg_exp(
             BaseUnits.PmNonUnitRegex)
+        self._half_unit_regex = RegExpUtility.get_safe_reg_exp(JapaneseNumericWithUnit.HalfUnitRegex)
 
 
 # pylint: enable=abstract-method
@@ -87,8 +91,5 @@ class JapaneseCurrencyExtractorConfiguration(JapaneseNumberWithUnitExtractorConf
         super().__init__(culture_info)
         self._suffix_list = JapaneseNumericWithUnit.CurrencySuffixList
         self._prefix_list = JapaneseNumericWithUnit.CurrencyPrefixList
-        # NOTE: JapaneseNumericWithUnit has no attribute AmbiguousCurrencyUnitList
-        # Changing it to empty list
-        # self._ambiguous_unit_list = JapaneseNumericWithUnit.AmbiguousCurrencyUnitList
-        self._ambiguous_unit_list = []
+        self._ambiguous_unit_list = JapaneseNumericWithUnit.CurrencyAmbiguousValues
 

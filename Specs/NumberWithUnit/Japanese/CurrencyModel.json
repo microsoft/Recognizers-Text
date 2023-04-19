@@ -1,7 +1,7 @@
 ﻿[
   {
     "Input": "今日の日経平均は2222円13銭です。",
-    "NotSupported": "python",
+
     "Results": [
       {
         "Text": "2222円13銭",
@@ -18,12 +18,12 @@
   },
   {
     "Input": "次の停車駅は銭函",
-    "NotSupported": "python",
+
     "Results": []
   },
   {
     "Input": "35億円",
-    "NotSupported": "python",
+
     "Results": [
       {
         "Text": "35億円",
@@ -40,7 +40,7 @@
   },
   {
     "Input": "そのシュークリームは1個\\100です",
-    "NotSupported": "python",
+
     "Results": [
       {
         "Text": "\\100",
@@ -62,7 +62,7 @@
   },
   {
     "Input": "1,280円",
-    "NotSupported": "python",
+
     "Results": [
       {
         "Text": "1,280円",
@@ -79,7 +79,7 @@
   },
   {
     "Input": "その中で、四川の彩友の中で1注1000万人民元の基本的なトップ賞を得ました。",
-    "NotSupported": "python",
+
     "Results": [
       {
         "Text": "1000万人民元",
@@ -96,7 +96,7 @@
   },
   {
     "Input": "今回の受賞終了後、賞池の金額が36.57億人民元に上った。",
-    "NotSupported": "python",
+
     "Results": [
       {
         "Text": "36.57億人民元",
@@ -113,7 +113,7 @@
   },
   {
     "Input": "1ユーロでいいです。",
-    "NotSupported": "python",
+
     "Results": [
       {
         "Text": "1ユーロ",
@@ -130,7 +130,7 @@
   },
   {
     "Input": "両替1.0753ドル",
-    "NotSupported": "python",
+
     "Results": [
       {
         "Text": "1.0753ドル",
@@ -147,7 +147,7 @@
   },
   {
     "Input": "両替1.0092スイス・フラン",
-    "NotSupported": "python",
+
     "Results": [
       {
         "Text": "1.0092スイス・フラン",
@@ -164,7 +164,7 @@
   },
   {
     "Input": "2016年は合併などで直接投資し、中国の資金は1200億ドルが流出した",
-    "NotSupported": "python",
+
     "Results": [
       {
         "Text": "1200億ドル",
@@ -181,7 +181,7 @@
   },
   {
     "Input": "宝安科学技術会社は、国際精密な15人の株主と買収協議を締結し、1株当たり1.95香港ドルで",
-    "NotSupported": "python",
+
     "Results": [
       {
         "Text": "1.95香港ドル",
@@ -198,7 +198,7 @@
   },
   {
     "Input": "中央銀行は期限切れの5306億ニュー台湾ドルを確定する",
-    "NotSupported": "python",
+
     "Results": [
       {
         "Text": "5306億ニュー台湾ドル",
@@ -215,7 +215,7 @@
   },
   {
     "Input": "東芝はもう1万億円で取引銀行に融資を申請した",
-    "NotSupported": "python",
+
     "Results": [
       {
         "Text": "1万億円",
@@ -232,7 +232,7 @@
   },
   {
     "Input": "445ナイラで両替する",
-    "NotSupported": "python",
+
     "Results": [
       {
         "Text": "445ナイラ",
@@ -249,7 +249,7 @@
   },
   {
     "Input": "15ドル",
-    "NotSupported": "python",
+
     "Results": [
       {
         "Text": "15ドル",
@@ -266,7 +266,7 @@
   },
   {
     "Input": "10ドル",
-    "NotSupported": "python",
+
     "Results": [
       {
         "Text": "10ドル",
@@ -283,7 +283,7 @@
   },
   {
     "Input": "りんごが1ドル割引する",
-    "NotSupported": "python",
+
     "Results": [
       {
         "Text": "1ドル",
@@ -300,7 +300,7 @@
   },
   {
     "Input": "このパソコンは2ドルです",
-    "NotSupported": "python",
+
     "Results": [
       {
         "Text": "2ドル",
@@ -317,7 +317,7 @@
   },
   {
     "Input": "このパソコンは2ドル3セントです。",
-    "NotSupported": "python",
+
     "Results": [
       {
         "Text": "2ドル3セント",
@@ -334,7 +334,7 @@
   },
   {
     "Input": "中国移動の年間収入は$ 48.2 万で、とてもすごいです",
-    "NotSupported": "python",
+
     "Results": [
       {
         "Text": "$ 48.2 万",
@@ -350,7 +350,7 @@
   },
   {
     "Input": "中国移動の年間収入はus$ 48.2 万で、とてもすごいです",
-    "NotSupported": "python",
+
     "Results": [
       {
         "Text": "us$ 48.2 万",
@@ -367,7 +367,7 @@
   },
   {
     "Input": "高田は毎日€ 1.5 かかります",
-    "NotSupported": "python",
+
     "Results": [
       {
         "Text": "€ 1.5",
@@ -384,7 +384,7 @@
   },
   {
     "Input": "彼女がいた後、小山は毎月£ 512.5を多く支出しています。",
-    "NotSupported": "python",
+
     "Results": [
       {
         "Text": "£ 512.5",
@@ -400,7 +400,7 @@
   },
   {
     "Input": "彼女がいた後、小山は毎月545パナマ・バルボアを多く支出しています。",
-    "NotSupported": "python",
+
     "Results": [
       {
         "Text": "545パナマ・バルボア",
@@ -417,7 +417,7 @@
   },
   {
     "Input": "小山は毎月545ドルと5セントを多く支出しています。",
-    "NotSupported": "python",
+
     "Results": [
       {
         "Text": "545ドルと5セント",
@@ -434,7 +434,7 @@
   },
   {
     "Input": "この本は5人民元と3角です",
-    "NotSupported": "python",
+
     "Results": [
       {
         "Text": "5人民元と3角",
@@ -451,7 +451,7 @@
   },
   {
     "Input": "ドルはアメリカの通貨です。",
-    "NotSupported": "python",
+
     "Results": [
       {
         "Text": "ドル",
@@ -468,7 +468,7 @@
   },
   {
     "Input": "ユーロはEU圏の通貨です。",
-    "NotSupported": "python",
+
     "Results": [
       {
         "Text": "ユーロ",
@@ -485,7 +485,7 @@
   },
   {
     "Input": "この自転車は100ユーロと30です。",
-    "NotSupported": "python",
+
     "Results": [
       {
         "Text": "100ユーロと30",
@@ -502,7 +502,7 @@
   },
   {
     "Input": "十ドル",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "十ドル",
@@ -519,7 +519,7 @@
   },
   {
     "Input": "8億人民元",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "8億人民元",
@@ -536,7 +536,7 @@
   },
   {
     "Input": "東芝の再編はもう一万億円が必要、取引銀行に借り入れを申請した。",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "一万億円",
@@ -553,7 +553,7 @@
   },
   {
     "Input": "その中で、四川省の彩民一口で一千万人民元の基本大賞あたりました。",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "一千万人民元",
@@ -570,7 +570,7 @@
   },
   {
     "Input": "1.0753ドルを交換します",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "1.0753ドル",
@@ -587,7 +587,7 @@
   },
   {
     "Input": "ある人が江蘇省に15人民元でロト引いてたら1600萬の大あたりました　賞金プールは36.57億人民元となってます",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "15人民元",
@@ -615,7 +615,7 @@
   },
   {
     "Input": "このスマホケースはお前の5ドルと俺の三人民元かかります",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "5ドル",
@@ -643,7 +643,7 @@
   },
   {
     "Input": "10円5銭",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "10円5銭",
@@ -660,7 +660,7 @@
   },
   {
     "Input": "このパソコンは2ドル3セントとなってます",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "2ドル3セント",
@@ -678,7 +678,7 @@
   {
     "Input": "人民元八千元",
     "Comment": "Currency does not support split units (e.g. '人民元30元')",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "人民元八千元",
@@ -723,7 +723,7 @@
   },
   {
     "Input": "1.0092スイスフランを交換します",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "1.0092スイスフラン",
@@ -740,7 +740,7 @@
   },
   {
     "Input": "今回抽選後、賞金プールは36.57億人民元まで到達",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "36.57億人民元",
@@ -757,7 +757,7 @@
   },
   {
     "Input": "中国人民銀行の5306億台湾ドルの預金証書が期限切れになりました",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "5306億台湾ドル",
@@ -774,7 +774,7 @@
   },
   {
     "Input": "宝安テクノロジーはIPE GROUP LIMITEDの株主15人と買収契約をサインしました。一株あたり1.95香港ドル",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "1.95香港ドル",
@@ -791,7 +791,7 @@
   },
   {
     "Input": "千円あります",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "千円",
@@ -808,7 +808,7 @@
   },
   {
     "Input": "このスマホケースは五元三角で大丈夫です",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "五元三角",
@@ -825,7 +825,7 @@
   },
   {
     "Input": "appleの割引一ドル",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "一ドル",
@@ -842,7 +842,7 @@
   },
   {
     "Input": "人民元　米ドル",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "人民元",
@@ -870,7 +870,7 @@
   },
   {
     "Input": "50元6角3分",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "50元6角3分",
@@ -887,7 +887,7 @@
   },
   {
     "Input": "二千十六年、買収などの直接投資において、中国のキャッシュアウトフロー纯额は千二百億ドルも到達",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "千二百億ドル",
@@ -904,7 +904,7 @@
   },
   {
     "Input": "このパソコンは2ドルとなってます",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "2ドル",
@@ -921,7 +921,7 @@
   },
   {
     "Input": "445ナイラ到達で交換できます",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "445ナイラ",
@@ -938,7 +938,7 @@
   },
   {
     "Input": "1ユーロで大丈夫です",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "1ユーロ",
@@ -956,7 +956,7 @@
   {
     "Input": "人民元五十元",
     "Comment": "Currency does not support split units (e.g. '人民元30元')",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "人民元五十元",
@@ -973,7 +973,7 @@
   },
   {
     "Input": "金融市場で運用する資金運用事業を合わせた財投総額も過去最大の同二％減の四十九兆九千五百九十二億円となっている。",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "四十九兆九千五百九十二億円",
@@ -990,7 +990,7 @@
   },
   {
     "Input": "これは 零円です",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "零円",
@@ -1024,7 +1024,7 @@
   },
   {
     "Input": "私 は その 買い物 で あなた に ろく どる 仮 ています",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "ろく どる",
@@ -1040,7 +1040,7 @@
   },
   {
     "Input": "これは 7万円です",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "7万円",
@@ -1057,7 +1057,7 @@
   },
   {
     "Input": "これは7万円です",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "7万円",
@@ -1074,7 +1074,7 @@
   },
   {
     "Input": "これは     7万円です",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "7万円",
@@ -1091,7 +1091,7 @@
   },
   {
     "Input": "これは 7  万  円   です",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "7  万  円",
@@ -1108,7 +1108,7 @@
   },
   {
     "Input": "これは 700円です",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "700円",
@@ -1125,7 +1125,7 @@
   },
   {
     "Input": "これは 七万円です",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "七万円",
@@ -1142,7 +1142,7 @@
   },
   {
     "Input": "これは 7百円です",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "7百円",
@@ -1159,7 +1159,7 @@
   },
   {
     "Input": "これは 7千円です",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "7千円",

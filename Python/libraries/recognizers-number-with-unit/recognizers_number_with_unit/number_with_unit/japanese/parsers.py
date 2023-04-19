@@ -5,7 +5,7 @@ from recognizers_text.culture import Culture
 from recognizers_text.extractor import Extractor
 from recognizers_text.parser import Parser
 from recognizers_number.culture import CultureInfo
-from recognizers_number.number.japanese.extractors import JapaneseNumberExtractor, NumberMode
+from recognizers_number.number.japanese.extractors import JapaneseNumberExtractor, JapaneseNumberExtractorMode
 from recognizers_number.number.parser_factory import AgnosticNumberParserFactory, ParserType
 from recognizers_number.number.japanese.parsers import JapaneseNumberParserConfiguration
 from recognizers_number_with_unit.number_with_unit.parsers import NumberWithUnitParserConfiguration
@@ -30,7 +30,7 @@ class JapaneseNumberWithUnitParserConfiguration(NumberWithUnitParserConfiguratio
             culture_info = CultureInfo(Culture.Japanese)
         super().__init__(culture_info)
         self._internal_number_extractor = JapaneseNumberExtractor(
-            NumberMode.DEFAULT)
+            JapaneseNumberExtractorMode.EXTRACT_ALL)
         self._internal_number_parser = AgnosticNumberParserFactory.get_parser(
             ParserType.NUMBER, JapaneseNumberParserConfiguration(culture_info))
         self._connector_token = JapaneseNumericWithUnit.ConnectorToken

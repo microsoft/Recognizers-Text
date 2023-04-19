@@ -46,14 +46,14 @@ CurrencySuffixList: !dictionary
     Chetrum: チェルタム
 #Bolivian boliviano
     Bolivian boliviano: ボリビアーノ
-#Bosnia and Herzegovina convertible mark	
+#Bosnia and Herzegovina convertible mark
     Bosnia and Herzegovina convertible mark: 兌換マルク
 #Botswana pula
     Botswana pula: ボツワナ・プラ|ボツワナプラ|プラ
     Thebe: テベ
 #Brazilian real
     Brazilian real: ブラジル・レアル|ブラジルレアル|レアル
-#Bulgarian lev	
+#Bulgarian lev
     Bulgarian lev: ブルガリア・レフ|ブルガリアレフ|レフ
     Stotinka: ストティンカ
 #Cambodian riel
@@ -190,7 +190,7 @@ CurrencySuffixList: !dictionary
     Manat: マナト
 #Shilling
     Somali shilling: ソマリア・シリング
-    Somaliland shilling: ソマリランド・シリング	
+    Somaliland shilling: ソマリランド・シリング
     Tanzanian shilling: タンザニア・シリング
     Ugandan shilling: ウガンダ・シリング
 #Leu
@@ -499,10 +499,10 @@ CurrencyNameToIsoCodeMap: !dictionary
     Kiribati dollar: _KID
     Guernsey pound: _GGP
     Faroese króna: _FOK
-    Cook Islands dollar: _CKD 
-    British Virgin Islands dollar: _BD 
-    Ascension pound: _AP 
-    Alderney pound: _ALP 
+    Cook Islands dollar: _CKD
+    British Virgin Islands dollar: _BD
+    Ascension pound: _AP
+    Alderney pound: _ALP
     Abkhazian apsar: _AA
 FractionalUnitNameToCodeMap: !dictionary
   types: [ string, string ]
