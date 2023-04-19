@@ -286,7 +286,6 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "vom 12. januar 2016 bis zum 22.01.2016",
@@ -3947,7 +3946,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-07T00:00:00"
     },
-    "NotSupported": "java, javascript, python",
+    "NotSupported": "java, javascript",
     "Results": [
       {
         "Text": "so 27.02.2022",
@@ -5636,6 +5635,53 @@
               "timex": "XXXX-12-27",
               "type": "date",
               "value": "2016-12-27"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Ich komme am 32.04.2023 wieder.",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "04.2023",
+        "Start": 16,
+        "End": 22,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2023-04",
+              "type": "daterange",
+              "start": "2023-04-01",
+              "end": "2023-05-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Mein Geburtsdatum ist der 22.04.1990",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "der 22.04.1990",
+        "Start": 22,
+        "End": 35,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "1990-04-22",
+              "type": "date",
+              "value": "1990-04-22"
             }
           ]
         }

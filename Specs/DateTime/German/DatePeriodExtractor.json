@@ -778,5 +778,17 @@
         "Length": 10
       }
     ]
+  },
+  {
+    "Input": "Ich komme am 32.04.2023 wieder.",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "04.2023",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 7
+      }
+    ]
   }
 ]

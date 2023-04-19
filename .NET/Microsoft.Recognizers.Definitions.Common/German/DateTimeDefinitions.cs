@@ -104,7 +104,7 @@ namespace Microsoft.Recognizers.Definitions.German
       public static readonly string DateExtractor4 = $@"\b({DayRegex}\s*{MonthNumRegex}\s*{DateYearRegex})\b";
       public static readonly string DateExtractor5 = $@"\b(({WeekDayRegex})(\s+|\s*,\s*))?({DayRegex}\s*[/\\\-\.]\s*({MonthNumRegex}|{MonthRegex})\s*[/\\\-\.]\s*{DateYearRegex})\b(?!\s*[/\\\-\.]\s*\d+)";
       public static readonly string DateExtractor6 = $@"^[.]";
-      public static readonly string DateExtractor7 = $@"({DayRegex}\s*[\.]\s*{MonthNumRegex}[\.]){BaseDateTime.CheckDecimalRegex}";
+      public static readonly string DateExtractor7 = $@"\b({DayRegex}\s*[\.]\s*{MonthNumRegex}[\.]){BaseDateTime.CheckDecimalRegex}";
       public static readonly string DateExtractor8 = $@"(?<=\b(am)\s+){DayRegex}[/\\\.]{MonthNumRegex}([/\\\.]{DateYearRegex})?{BaseDateTime.CheckDecimalRegex}\b";
       public static readonly string DateExtractor9 = $@"\b({DayRegex}\s*/\s*{MonthNumRegex}((\s+|\s*,\s*){DateYearRegex})?){BaseDateTime.CheckDecimalRegex}\b";
       public static readonly string DateExtractor10 = $@"^[.]";
