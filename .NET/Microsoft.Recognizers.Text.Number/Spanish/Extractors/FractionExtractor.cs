@@ -25,19 +25,19 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
             var regexes = new Dictionary<Regex, TypeTag>
             {
                 {
-                    new Regex(NumbersDefinitions.FractionNotationWithSpacesRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.FractionNotationWithSpacesRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.FractionNotationRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.FractionNotationRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
-                    new Regex(NumbersDefinitions.FractionNounRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.FractionNounRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.SPANISH)
                 },
                 {
-                    new Regex(NumbersDefinitions.FractionNounWithArticleRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.FractionNounWithArticleRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.SPANISH)
                 },
             };
@@ -46,7 +46,7 @@ namespace Microsoft.Recognizers.Text.Number.Spanish
             if (config.Mode != NumberMode.Unit)
             {
                 regexes.Add(
-                    new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.FractionPrepositionRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.SPANISH));
             }
 

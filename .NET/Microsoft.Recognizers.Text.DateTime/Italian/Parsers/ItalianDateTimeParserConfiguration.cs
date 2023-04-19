@@ -26,10 +26,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Italian
             HolidayTimeParser = config.HolidayTimeParser;
 
             NowRegex = ItalianDateTimeExtractorConfiguration.NowRegex;
-            AMTimeRegex = new Regex(DateTimeDefinitions.AMTimeRegex, RegexFlags);
-            PMTimeRegex = new Regex(DateTimeDefinitions.PMTimeRegex, RegexFlags);
-            NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
-            PreviousPrefixRegex = new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
+            AMTimeRegex = new Regex(DateTimeDefinitions.AMTimeRegex, RegexFlags, RegexTimeOut);
+            PMTimeRegex = new Regex(DateTimeDefinitions.PMTimeRegex, RegexFlags, RegexTimeOut);
+            NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags, RegexTimeOut);
+            PreviousPrefixRegex = new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags, RegexTimeOut);
 
             SimpleTimeOfTodayAfterRegex = ItalianDateTimeExtractorConfiguration.SimpleTimeOfTodayAfterRegex;
             SimpleTimeOfTodayBeforeRegex = ItalianDateTimeExtractorConfiguration.SimpleTimeOfTodayBeforeRegex;

@@ -2,6 +2,7 @@
 // Licensed under the MIT License.
 
 using System;
+using System.Reflection;
 using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Definitions.Spanish;
 using Microsoft.Recognizers.Text.Utilities;
@@ -12,7 +13,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Spanish
     public class DateTimePeriodParser : BaseDateTimePeriodParser
     {
         public static readonly Regex ConnectorRegex =
-            new Regex(DateTimeDefinitions.ConnectorRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.ConnectorRegex, RegexFlags, RegexTimeOut);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 

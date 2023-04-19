@@ -15,7 +15,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly Regex DateUnitRegex =
-            new Regex(DateTimeDefinitions.DateUnitRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.DateUnitRegex, RegexFlags, RegexTimeOut);
 
         // pass FutureTerms as List to ReplaceValueInTextWithFutTerm function
         private static readonly List<string> ThisTerms = (List<string>)DateTimeDefinitions.FutureTerms;

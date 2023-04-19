@@ -14,19 +14,19 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
     public class TurkishDatePeriodParserConfiguration : BaseDateTimeOptionsConfiguration, IDatePeriodParserConfiguration
     {
         public static readonly Regex PreviousPrefixRegex =
-            new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex ThisPrefixRegex =
-            new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.ThisPrefixRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex AfterNextSuffixRegex =
-            new Regex(DateTimeDefinitions.AfterNextSuffixRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.AfterNextSuffixRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex RelativeRegex =
-            new Regex(DateTimeDefinitions.RelativeRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.RelativeRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex UnspecificEndOfRangeRegex =
-            new Regex(DateTimeDefinitions.UnspecificEndOfRangeRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.UnspecificEndOfRangeRegex, RegexFlags, RegexTimeOut);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
@@ -43,7 +43,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Turkish
             DateTimeDefinitions.YearTerms.Select(str => $" {str} ").ToList();
 
         private static readonly Regex NextPrefixRegex =
-            new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags, RegexTimeOut);
 
         public TurkishDatePeriodParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)

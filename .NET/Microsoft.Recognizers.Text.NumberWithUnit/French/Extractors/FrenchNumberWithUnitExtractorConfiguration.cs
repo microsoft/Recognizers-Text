@@ -2,7 +2,6 @@
 // Licensed under the MIT License.
 
 using System.Collections.Generic;
-using System.Collections.Immutable;
 using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -15,17 +14,16 @@ using Microsoft.Recognizers.Text.Number.French;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.French
 {
-    public abstract class FrenchNumberWithUnitExtractorConfiguration : INumberWithUnitExtractorConfiguration
+    public abstract class FrenchNumberWithUnitExtractorConfiguration : BaseNumberWithUnitExtractorConfiguration
     {
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
-        private static readonly Regex CompoundUnitConnRegex =
-            new Regex(NumbersWithUnitDefinitions.CompoundUnitConnectorRegex, RegexFlags);
-
-        private static readonly Regex NonUnitsRegex =
-            new Regex(BaseUnits.PmNonUnitRegex, RegexFlags);
-
         protected FrenchNumberWithUnitExtractorConfiguration(CultureInfo ci)
+            : base(
+                  NumbersWithUnitDefinitions.CompoundUnitConnectorRegex,
+                  BaseUnits.PmNonUnitRegex,
+                  string.Empty,
+                  RegexFlags)
         {
             this.CultureInfo = ci;
 
@@ -41,39 +39,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.French
             DimensionAmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(NumbersWithUnitDefinitions.DimensionAmbiguityFiltersDict);
         }
 
-        public abstract string ExtractType { get; }
-
-        public CultureInfo CultureInfo { get; }
-
-        public IExtractor UnitNumExtractor { get; }
-
-        public string BuildPrefix { get; }
-
-        public string BuildSuffix { get; }
-
-        public string ConnectorToken { get; }
-
-        public Regex CompoundUnitConnectorRegex => CompoundUnitConnRegex;
-
-        public Regex NonUnitRegex => NonUnitsRegex;
-
-        public virtual Regex AmbiguousUnitNumberMultiplierRegex => null;
-
-        public Regex MultiplierRegex => null;
-
-        public Dictionary<Regex, Regex> AmbiguityFiltersDict { get; }
-
-        public Dictionary<Regex, Regex> TemperatureAmbiguityFiltersDict { get; } = null;
-
-        public Dictionary<Regex, Regex> DimensionAmbiguityFiltersDict { get; } = null;
-
-        public abstract ImmutableDictionary<string, string> SuffixList { get; }
-
-        public abstract ImmutableDictionary<string, string> PrefixList { get; }
-
-        public abstract ImmutableList<string> AmbiguousUnitList { get; }
-
-        public void ExpandHalfSuffix(string source, ref List<ExtractResult> result, IOrderedEnumerable<ExtractResult> numbers)
+        public override void ExpandHalfSuffix(string source, ref List<ExtractResult> result, IOrderedEnumerable<ExtractResult> numbers)
         {
         }
     }

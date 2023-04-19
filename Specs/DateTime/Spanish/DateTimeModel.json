@@ -22799,5 +22799,61 @@
         }
       }
     ]
+  },
+  {
+    "Input": "envíame un recibo por la compra hecha el 17 del 11",
+    "Context": {
+      "ReferenceDateTime": "2023-02-23T01:00:00"
+    },
+    "Results": [
+      {
+        "Text": "17 del 11",
+        "Start": 41,
+        "End": 49,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-11-17",
+              "type": "date",
+              "value": "2022-11-17"
+            },
+            {
+              "timex": "XXXX-11-17",
+              "type": "date",
+              "value": "2023-11-17"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "reserva un hotel para el 21 del 3 en el marriott",
+    "Context": {
+      "ReferenceDateTime": "2023-02-23T01:00:00"
+    },
+    "Results": [
+      {
+        "Text": "21 del 3",
+        "Start": 25,
+        "End": 32,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-03-21",
+              "type": "date",
+              "value": "2022-03-21"
+            },
+            {
+              "timex": "XXXX-03-21",
+              "type": "date",
+              "value": "2023-03-21"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

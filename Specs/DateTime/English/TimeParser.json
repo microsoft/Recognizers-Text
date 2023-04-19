@@ -660,6 +660,86 @@
     ]
   },
   {
+    "Input": "I made this purchase at 10 past 9",
+    "Results": [
+      {
+        "Text": "10 past 9",
+        "Type": "time",
+        "Value": {
+          "Timex": "T09:10",
+          "FutureResolution": {
+            "time": "09:10:00"
+          },
+          "PastResolution": {
+            "time": "09:10:00"
+          }
+        },
+        "Start": 24,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "It's 15 past seven o'clock",
+    "Results": [
+      {
+        "Text": "15 past seven o'clock",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07:15",
+          "FutureResolution": {
+            "time": "07:15:00"
+          },
+          "PastResolution": {
+            "time": "07:15:00"
+          }
+        },
+        "Start": 5,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "I made this purchase at ten past 9 in the evening",
+    "Results": [
+      {
+        "Text": "ten past 9 in the evening",
+        "Type": "time",
+        "Value": {
+          "Timex": "T21:10",
+          "FutureResolution": {
+            "time": "21:10:00"
+          },
+          "PastResolution": {
+            "time": "21:10:00"
+          }
+        },
+        "Start": 24,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "It's fifteen past eight in the morning",
+    "Results": [
+      {
+        "Text": "fifteen past eight in the morning",
+        "Type": "time",
+        "Value": {
+          "Timex": "T08:15",
+          "FutureResolution": {
+            "time": "08:15:00"
+          },
+          "PastResolution": {
+            "time": "08:15:00"
+          }
+        },
+        "Start": 5,
+        "Length": 33
+      }
+    ]
+  },
+  {
     "Input": "I'll be back in the afternoon at 7",
     "Results": [
       {

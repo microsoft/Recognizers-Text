@@ -18,31 +18,31 @@ namespace Microsoft.Recognizers.Text.DateTime.Dutch
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly Regex TimeSuffixFull =
-            new Regex(DateTimeDefinitions.TimeSuffixFull, RegexFlags);
+            new Regex(DateTimeDefinitions.TimeSuffixFull, RegexFlags, RegexTimeOut);
 
         private static readonly Regex LunchRegex =
-            new Regex(DateTimeDefinitions.LunchRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.LunchRegex, RegexFlags, RegexTimeOut);
 
         private static readonly Regex NightRegex =
-            new Regex(DateTimeDefinitions.NightRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.NightRegex, RegexFlags, RegexTimeOut);
 
         private static readonly Regex HalfTokenRegex =
-            new Regex(DateTimeDefinitions.HalfTokenRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.HalfTokenRegex, RegexFlags, RegexTimeOut);
 
         private static readonly Regex QuarterTokenRegex =
-            new Regex(DateTimeDefinitions.QuarterTokenRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.QuarterTokenRegex, RegexFlags, RegexTimeOut);
 
         private static readonly Regex ThreeQuarterTokenRegex =
-            new Regex(DateTimeDefinitions.ThreeQuarterTokenRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.ThreeQuarterTokenRegex, RegexFlags, RegexTimeOut);
 
         private static readonly Regex ToTokenRegex =
-            new Regex(DateTimeDefinitions.ToTokenRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.ToTokenRegex, RegexFlags, RegexTimeOut);
 
         private static readonly Regex ToHalfTokenRegex =
-            new Regex(DateTimeDefinitions.ToHalfTokenRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.ToHalfTokenRegex, RegexFlags, RegexTimeOut);
 
         private static readonly Regex ForHalfTokenRegex =
-            new Regex(DateTimeDefinitions.ForHalfTokenRegex, RegexFlags);
+            new Regex(DateTimeDefinitions.ForHalfTokenRegex, RegexFlags, RegexTimeOut);
 
         public DutchTimeParserConfiguration(ICommonDateTimeParserConfiguration config)
             : base(config)

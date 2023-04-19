@@ -48,11 +48,11 @@ namespace Microsoft.Recognizers.Text.DateTime.Hindi
             RelativeWeekDayRegex = HindiDateExtractorConfiguration.RelativeWeekDayRegex;
             BeforeAfterRegex = HindiDateExtractorConfiguration.BeforeAfterRegex;
 
-            RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexFlags);
-            NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags);
-            PreviousPrefixRegex = new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags);
-            UpcomingPrefixRegex = new Regex(DateTimeDefinitions.UpcomingPrefixRegex, RegexFlags);
-            PastPrefixRegex = new Regex(DateTimeDefinitions.PastPrefixRegex, RegexFlags);
+            RelativeDayRegex = new Regex(DateTimeDefinitions.RelativeDayRegex, RegexFlags, RegexTimeOut);
+            NextPrefixRegex = new Regex(DateTimeDefinitions.NextPrefixRegex, RegexFlags, RegexTimeOut);
+            PreviousPrefixRegex = new Regex(DateTimeDefinitions.PreviousPrefixRegex, RegexFlags, RegexTimeOut);
+            UpcomingPrefixRegex = new Regex(DateTimeDefinitions.UpcomingPrefixRegex, RegexFlags, RegexTimeOut);
+            PastPrefixRegex = new Regex(DateTimeDefinitions.PastPrefixRegex, RegexFlags, RegexTimeOut);
 
             DayOfMonth = config.DayOfMonth;
             DayOfWeek = config.DayOfWeek;

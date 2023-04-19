@@ -53,7 +53,7 @@ IF %ERRORLEVEL% NEQ 0 (
 
 ECHO.
 ECHO # Restoring NuGet dependencies
-CALL "buildtools\nuget" restore
+CALL !MSBuild! Microsoft.Recognizers.Text.sln /t:Restore
 
 set configuration=Release
 ECHO.

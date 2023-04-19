@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.1;netstandard2.0;net462</TargetFrameworks>
+    <TargetFrameworks>netstandard2.1;netstandard2.0;net462;net6.0</TargetFrameworks>
     <LangVersion>9</LangVersion>
     <!-- Disable GenerateAssemblyInfo to use the existing AssemblyInfo.cs -->
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
@@ -19,6 +19,13 @@
 	  -->
 	  <DocumentationFile>$(OutputPath)$(AssemblyName).xml</DocumentationFile>
 	  <NoWarn>$(NoWarn),1573,1591,1712</NoWarn>
+      <Authors>Microsoft</Authors>
+      <PackageTags>nlp, entity-extraction, parser-library, recognizer, phonenumber, netstandard2.0</PackageTags>
+      <Description>Microsoft.Recognizers.Text.Sequence provides robust recognition and resolution of series entities like phone numbers, URLs, and e-mail and IP addresses.</Description>
+      <PackageLicenseExpression>MIT</PackageLicenseExpression>
+      <PackageProjectUrl>https://github.com/Microsoft/Recognizers-Text</PackageProjectUrl>
+      <icon>images\icon.png</icon>
+      <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
   </PropertyGroup>
 
   <ItemGroup>

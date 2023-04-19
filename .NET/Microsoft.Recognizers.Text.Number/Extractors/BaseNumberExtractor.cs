@@ -1,10 +1,12 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
+using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
 using System.Linq;
+using System.Reflection;
 using System.Text.RegularExpressions;
 
 using Microsoft.Recognizers.Definitions;
@@ -15,7 +17,7 @@ namespace Microsoft.Recognizers.Text.Number
     public abstract class BaseNumberExtractor : IExtractor
     {
         public static readonly Regex CurrencyRegex =
-            new Regex(BaseNumbers.CurrencyRegex, RegexOptions.Singleline | RegexOptions.ExplicitCapture);
+            new Regex(BaseNumbers.CurrencyRegex, RegexOptions.Singleline | RegexOptions.ExplicitCapture, RegexTimeOut);
 
         protected static readonly ResultsCache<ExtractResult> ResultsCache = new ResultsCache<ExtractResult>(4);
 
@@ -30,6 +32,8 @@ namespace Microsoft.Recognizers.Text.Number
 
         internal abstract ImmutableDictionary<Regex, TypeTag> Regexes { get; }
 
+        protected static TimeSpan RegexTimeOut => NumberRecognizer.GetTimeout(MethodBase.GetCurrentMethod().DeclaringType);
+
         protected virtual ImmutableDictionary<Regex, Regex> AmbiguityFiltersDict { get; } = null;
 
         protected virtual string ExtractType { get; } = string.Empty;
@@ -42,7 +46,6 @@ namespace Microsoft.Recognizers.Text.Number
 
         public virtual List<ExtractResult> Extract(string source)
         {
-
             if (string.IsNullOrEmpty(source))
             {
                 return new List<ExtractResult>();
@@ -166,7 +169,7 @@ namespace Microsoft.Recognizers.Text.Number
                 BaseNumbers.IntegerRegexDefinition(placeholder, thousandsMark) :
                 BaseNumbers.DoubleRegexDefinition(placeholder, thousandsMark, decimalsMark);
 
-            return new Regex(regexDefinition, flags);
+            return new Regex(regexDefinition, flags, RegexTimeOut);
         }
 
         private List<ExtractResult> FilterAmbiguity(List<ExtractResult> extractResults, string text)

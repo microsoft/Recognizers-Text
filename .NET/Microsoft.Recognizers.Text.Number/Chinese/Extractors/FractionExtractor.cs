@@ -20,17 +20,17 @@ namespace Microsoft.Recognizers.Text.Number.Chinese
             {
                 {
                     // -4 5/2,       ４ ６／３
-                    new Regex(NumbersDefinitions.FractionNotationSpecialsCharsRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.FractionNotationSpecialsCharsRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     // 8/3
-                    new Regex(NumbersDefinitions.FractionNotationRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.FractionNotationRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     // 四分之六十五
-                    new Regex(NumbersDefinitions.AllFractionNumber, RegexFlags),
+                    new Regex(NumbersDefinitions.AllFractionNumber, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.FRACTION_PREFIX, Constants.CHINESE)
                 },
             };

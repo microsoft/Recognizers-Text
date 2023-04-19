@@ -17,42 +17,42 @@ namespace Microsoft.Recognizers.Text.DateTime.Korean
         ICJKDateTimePeriodExtractorConfiguration
     {
 
-        public static readonly Regex TillRegex = new Regex(DateTimeDefinitions.DateTimePeriodTillRegex, RegexFlags);
+        public static readonly Regex TillRegex = new Regex(DateTimeDefinitions.DateTimePeriodTillRegex, RegexFlags, RegexTimeOut);
 
-        public static readonly Regex PrepositionRegex = new Regex(DateTimeDefinitions.DateTimePeriodPrepositionRegex, RegexFlags);
+        public static readonly Regex PrepositionRegex = new Regex(DateTimeDefinitions.DateTimePeriodPrepositionRegex, RegexFlags, RegexTimeOut);
 
-        public static readonly Regex ZhijianRegex = new Regex(DateTimeDefinitions.ZhijianRegex, RegexFlags);
+        public static readonly Regex ZhijianRegex = new Regex(DateTimeDefinitions.ZhijianRegex, RegexFlags, RegexTimeOut);
 
-        public static readonly Regex TimeOfDayRegex = new Regex(DateTimeDefinitions.TimeOfDayRegex, RegexFlags);
+        public static readonly Regex TimeOfDayRegex = new Regex(DateTimeDefinitions.TimeOfDayRegex, RegexFlags, RegexTimeOut);
 
-        public static readonly Regex SpecificTimeOfDayRegex = new Regex(DateTimeDefinitions.SpecificTimeOfDayRegex, RegexFlags);
+        public static readonly Regex SpecificTimeOfDayRegex = new Regex(DateTimeDefinitions.SpecificTimeOfDayRegex, RegexFlags, RegexTimeOut);
 
-        public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.DateTimePeriodUnitRegex, RegexFlags);
+        public static readonly Regex UnitRegex = new Regex(DateTimeDefinitions.DateTimePeriodUnitRegex, RegexFlags, RegexTimeOut);
 
-        public static readonly Regex FollowedUnit = new Regex(DateTimeDefinitions.DateTimePeriodFollowedUnit, RegexFlags);
+        public static readonly Regex FollowedUnit = new Regex(DateTimeDefinitions.DateTimePeriodFollowedUnit, RegexFlags, RegexTimeOut);
 
-        public static readonly Regex PastRegex = new Regex(DateTimeDefinitions.PastRegex, RegexFlags);
+        public static readonly Regex PastRegex = new Regex(DateTimeDefinitions.PastRegex, RegexFlags, RegexTimeOut);
 
-        public static readonly Regex FutureRegex = new Regex(DateTimeDefinitions.FutureRegex, RegexFlags);
+        public static readonly Regex FutureRegex = new Regex(DateTimeDefinitions.FutureRegex, RegexFlags, RegexTimeOut);
 
-        public static readonly Regex WeekDayRegex = new Regex(DateTimeDefinitions.WeekDayRegex, RegexFlags);
+        public static readonly Regex WeekDayRegex = new Regex(DateTimeDefinitions.WeekDayRegex, RegexFlags, RegexTimeOut);
 
-        public static readonly Regex TimePeriodLeftRegex = new Regex(DateTimeDefinitions.TimePeriodLeftRegex, RegexFlags);
+        public static readonly Regex TimePeriodLeftRegex = new Regex(DateTimeDefinitions.TimePeriodLeftRegex, RegexFlags, RegexTimeOut);
 
-        public static readonly Regex RelativeRegex = new Regex(DateTimeDefinitions.RelativeRegex, RegexFlags);
+        public static readonly Regex RelativeRegex = new Regex(DateTimeDefinitions.RelativeRegex, RegexFlags, RegexTimeOut);
 
-        public static readonly Regex RestOfDateRegex = new Regex(DateTimeDefinitions.RestOfDateRegex, RegexFlags);
+        public static readonly Regex RestOfDateRegex = new Regex(DateTimeDefinitions.RestOfDateRegex, RegexFlags, RegexTimeOut);
 
-        public static readonly Regex AmPmDescRegex = new Regex(DateTimeDefinitions.AmPmDescRegex, RegexFlags);
+        public static readonly Regex AmPmDescRegex = new Regex(DateTimeDefinitions.AmPmDescRegex, RegexFlags, RegexTimeOut);
 
-        public static readonly Regex BeforeAfterRegex = new Regex(DateTimeDefinitions.BeforeAfterRegex, RegexFlags);
+        public static readonly Regex BeforeAfterRegex = new Regex(DateTimeDefinitions.BeforeAfterRegex, RegexFlags, RegexTimeOut);
 
-        public static readonly Regex HourRegex = new Regex(DateTimeDefinitions.HourRegex, RegexFlags);
-        public static readonly Regex HourNumRegex = new Regex(DateTimeDefinitions.HourNumRegex, RegexFlags);
-        public static readonly Regex ThisRegex = new Regex(DateTimeDefinitions.DateTimePeriodThisRegex, RegexFlags);
-        public static readonly Regex LastRegex = new Regex(DateTimeDefinitions.DateTimePeriodLastRegex, RegexFlags);
-        public static readonly Regex NextRegex = new Regex(DateTimeDefinitions.DateTimePeriodNextRegex, RegexFlags);
-        public static readonly Regex NumberCombinedWithUnit = new Regex(DateTimeDefinitions.DateTimePeriodNumberCombinedWithUnit, RegexFlags);
+        public static readonly Regex HourRegex = new Regex(DateTimeDefinitions.HourRegex, RegexFlags, RegexTimeOut);
+        public static readonly Regex HourNumRegex = new Regex(DateTimeDefinitions.HourNumRegex, RegexFlags, RegexTimeOut);
+        public static readonly Regex ThisRegex = new Regex(DateTimeDefinitions.DateTimePeriodThisRegex, RegexFlags, RegexTimeOut);
+        public static readonly Regex LastRegex = new Regex(DateTimeDefinitions.DateTimePeriodLastRegex, RegexFlags, RegexTimeOut);
+        public static readonly Regex NextRegex = new Regex(DateTimeDefinitions.DateTimePeriodNextRegex, RegexFlags, RegexTimeOut);
+        public static readonly Regex NumberCombinedWithUnit = new Regex(DateTimeDefinitions.DateTimePeriodNumberCombinedWithUnit, RegexFlags, RegexTimeOut);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 

@@ -16,7 +16,7 @@ namespace Microsoft.Recognizers.Text.Sequence
             WordBoundariesRegex = BasePhoneNumbers.WordBoundariesRegex;
             NonWordBoundariesRegex = BasePhoneNumbers.NonWordBoundariesRegex;
             EndWordBoundariesRegex = BasePhoneNumbers.EndWordBoundariesRegex;
-            ColonPrefixCheckRegex = new Regex(BasePhoneNumbers.ColonPrefixCheckRegex);
+            ColonPrefixCheckRegex = new Regex(BasePhoneNumbers.ColonPrefixCheckRegex, RegexOptions.None, RegexTimeOut);
             ColonMarkers = (List<char>)BasePhoneNumbers.ColonMarkers;
             ForbiddenPrefixMarkers = (List<char>)BasePhoneNumbers.ForbiddenPrefixMarkers;
             ForbiddenSuffixMarkers = (List<char>)BasePhoneNumbers.ForbiddenSuffixMarkers;

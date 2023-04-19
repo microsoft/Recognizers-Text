@@ -17,7 +17,7 @@ namespace Microsoft.Recognizers.Text.Sequence.Chinese
             WordBoundariesRegex = PhoneNumbersDefinitions.WordBoundariesRegex;
             NonWordBoundariesRegex = PhoneNumbersDefinitions.NonWordBoundariesRegex;
             EndWordBoundariesRegex = PhoneNumbersDefinitions.EndWordBoundariesRegex;
-            ColonPrefixCheckRegex = new Regex(PhoneNumbersDefinitions.ColonPrefixCheckRegex);
+            ColonPrefixCheckRegex = new Regex(PhoneNumbersDefinitions.ColonPrefixCheckRegex, RegexOptions.None, RegexTimeOut);
             ForbiddenPrefixMarkers = (List<char>)PhoneNumbersDefinitions.ForbiddenPrefixMarkers;
             AmbiguityFiltersDict = AmbiguityFiltersDict = DefinitionLoader.LoadAmbiguityFilters(BasePhoneNumbers.AmbiguityFiltersDict);
         }

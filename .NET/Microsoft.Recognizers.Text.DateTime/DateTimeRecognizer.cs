@@ -1,9 +1,8 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
+using System;
 using System.Collections.Generic;
-
-using Microsoft.Recognizers.Text.DateTime.Arabic;
 using Microsoft.Recognizers.Text.DateTime.Chinese;
 using Microsoft.Recognizers.Text.DateTime.Dutch;
 using Microsoft.Recognizers.Text.DateTime.English;
@@ -12,33 +11,32 @@ using Microsoft.Recognizers.Text.DateTime.German;
 using Microsoft.Recognizers.Text.DateTime.Hindi;
 using Microsoft.Recognizers.Text.DateTime.Italian;
 using Microsoft.Recognizers.Text.DateTime.Japanese;
-using Microsoft.Recognizers.Text.DateTime.Korean;
 using Microsoft.Recognizers.Text.DateTime.Portuguese;
 using Microsoft.Recognizers.Text.DateTime.Spanish;
-using Microsoft.Recognizers.Text.DateTime.Swedish;
 using Microsoft.Recognizers.Text.DateTime.Turkish;
+using Microsoft.Recognizers.Text.DateTime.Utilities;
 
 namespace Microsoft.Recognizers.Text.DateTime
 {
     public class DateTimeRecognizer : Recognizer<DateTimeOptions>
     {
-        public DateTimeRecognizer(string targetCulture, DateTimeOptions options = DateTimeOptions.None, bool lazyInitialization = false)
-            : base(targetCulture, options, lazyInitialization)
+        public DateTimeRecognizer(string targetCulture, DateTimeOptions options = DateTimeOptions.None, bool lazyInitialization = false, int timeoutInSeconds = 0)
+            : base(targetCulture, options, lazyInitialization, timeoutInSeconds)
         {
         }
 
-        public DateTimeRecognizer(string targetCulture, int options, bool lazyInitialization = false)
-            : this(targetCulture, GetOptions(options), lazyInitialization)
+        public DateTimeRecognizer(string targetCulture, int options, bool lazyInitialization = false, int timeoutInSeconds = 0)
+            : this(targetCulture, GetOptions(options), lazyInitialization, timeoutInSeconds)
         {
         }
 
-        public DateTimeRecognizer(DateTimeOptions options = DateTimeOptions.None, bool lazyInitialization = true)
-            : this(null, options, lazyInitialization)
+        public DateTimeRecognizer(DateTimeOptions options = DateTimeOptions.None, bool lazyInitialization = true, int timeoutInSeconds = 0)
+            : this(null, options, lazyInitialization, timeoutInSeconds)
         {
         }
 
-        public DateTimeRecognizer(int options, bool lazyInitialization = true)
-            : this(null, options, lazyInitialization)
+        public DateTimeRecognizer(int options, bool lazyInitialization = true, int timeoutInSeconds = 0)
+            : this(null, options, lazyInitialization, timeoutInSeconds)
         {
         }
 
@@ -188,6 +186,20 @@ namespace Microsoft.Recognizers.Text.DateTime
                     new BaseCJKMergedDateTimeExtractor(
                         new KoreanMergedExtractorConfiguration(new BaseDateTimeOptionsConfiguration(Culture.Korean, options)))));
             */
+        }
+
+        protected override List<Type> GetRelatedTypes()
+        {
+            return new List<Type>()
+            {
+                typeof(BaseDateTimeOptionsConfiguration),
+                typeof(BaseTimeExtractor),
+                typeof(BaseCJKTimeExtractor),
+                typeof(BaseDateTimePeriodParser),
+                typeof(MatchingUtil),
+                typeof(TimeZoneUtility),
+                typeof(BaseDatetimeUtilityConfiguration),
+            };
         }
     }
 }

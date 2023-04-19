@@ -16,27 +16,27 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
     {
         public static readonly string ExtractorName = Constants.SYS_DATETIME_DATETIME; // "DateTime";
 
-        public static readonly Regex PrepositionRegex = new Regex(DateTimeDefinitions.PrepositionRegex, RegexFlags);
+        public static readonly Regex PrepositionRegex = new Regex(DateTimeDefinitions.PrepositionRegex, RegexFlags, RegexTimeOut);
 
-        public static readonly Regex NowRegex = new Regex(DateTimeDefinitions.NowRegex, RegexFlags);
+        public static readonly Regex NowRegex = new Regex(DateTimeDefinitions.NowRegex, RegexFlags, RegexTimeOut);
 
-        public static readonly Regex NightRegex = new Regex(DateTimeDefinitions.NightRegex, RegexFlags);
+        public static readonly Regex NightRegex = new Regex(DateTimeDefinitions.NightRegex, RegexFlags, RegexTimeOut);
 
-        public static readonly Regex TimeOfSpecialDayRegex = new Regex(DateTimeDefinitions.TimeOfSpecialDayRegex, RegexFlags);
+        public static readonly Regex TimeOfSpecialDayRegex = new Regex(DateTimeDefinitions.TimeOfSpecialDayRegex, RegexFlags, RegexTimeOut);
 
-        public static readonly Regex TimeOfDayRegex = new Regex(DateTimeDefinitions.TimeOfDayRegex, RegexFlags);
+        public static readonly Regex TimeOfDayRegex = new Regex(DateTimeDefinitions.TimeOfDayRegex, RegexFlags, RegexTimeOut);
 
-        public static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.BeforeRegex, RegexFlags);
+        public static readonly Regex BeforeRegex = new Regex(DateTimeDefinitions.BeforeRegex, RegexFlags, RegexTimeOut);
 
-        public static readonly Regex AfterRegex = new Regex(DateTimeDefinitions.AfterRegex, RegexFlags);
+        public static readonly Regex AfterRegex = new Regex(DateTimeDefinitions.AfterRegex, RegexFlags, RegexTimeOut);
 
-        public static readonly Regex DurationRelativeDurationUnitRegex = new Regex(DateTimeDefinitions.DurationRelativeDurationUnitRegex, RegexFlags);
+        public static readonly Regex DurationRelativeDurationUnitRegex = new Regex(DateTimeDefinitions.DurationRelativeDurationUnitRegex, RegexFlags, RegexTimeOut);
 
-        public static readonly Regex AgoLaterRegex = new Regex(DateTimeDefinitions.AgoLaterRegex, RegexFlags);
+        public static readonly Regex AgoLaterRegex = new Regex(DateTimeDefinitions.AgoLaterRegex, RegexFlags, RegexTimeOut);
 
-        public static readonly Regex DateTimePeriodUnitRegex = new Regex(DateTimeDefinitions.DateTimePeriodUnitRegex, RegexFlags);
+        public static readonly Regex DateTimePeriodUnitRegex = new Regex(DateTimeDefinitions.DateTimePeriodUnitRegex, RegexFlags, RegexTimeOut);
 
-        public static readonly Regex ConnectorRegex = new Regex(DateTimeDefinitions.ConnectorRegex, RegexFlags);
+        public static readonly Regex ConnectorRegex = new Regex(DateTimeDefinitions.ConnectorRegex, RegexFlags, RegexTimeOut);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 

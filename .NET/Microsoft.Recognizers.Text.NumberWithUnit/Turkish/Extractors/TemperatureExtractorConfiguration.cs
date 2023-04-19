@@ -19,7 +19,7 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.Turkish
             NumbersWithUnitDefinitions.AmbiguousTemperatureUnitList.ToImmutableList();
 
         private static readonly Regex AmbiguousUnitMultiplierRegex =
-            new Regex(BaseUnits.AmbiguousUnitNumberMultiplierRegex, RegexOptions.None);
+            new Regex(BaseUnits.AmbiguousUnitNumberMultiplierRegex, RegexOptions.None, RegexTimeOut);
 
         public TemperatureExtractorConfiguration()
                : this(new CultureInfo(Culture.Turkish))

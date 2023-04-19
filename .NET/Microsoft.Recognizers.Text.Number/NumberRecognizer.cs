@@ -22,23 +22,23 @@ namespace Microsoft.Recognizers.Text.Number
 {
     public class NumberRecognizer : Recognizer<NumberOptions>
     {
-        public NumberRecognizer(string targetCulture, NumberOptions options = NumberOptions.None, bool lazyInitialization = false)
-            : base(targetCulture, options, lazyInitialization)
+        public NumberRecognizer(string targetCulture, NumberOptions options = NumberOptions.None, bool lazyInitialization = false, int timeoutInSeconds = 0)
+            : base(targetCulture, options, lazyInitialization, timeoutInSeconds)
         {
         }
 
-        public NumberRecognizer(string targetCulture, int options, bool lazyInitialization = false)
-            : this(targetCulture, GetOptions(options), lazyInitialization)
+        public NumberRecognizer(string targetCulture, int options, bool lazyInitialization = false, int timeoutInSeconds = 0)
+            : this(targetCulture, GetOptions(options), lazyInitialization, timeoutInSeconds)
         {
         }
 
-        public NumberRecognizer(NumberOptions options = NumberOptions.None, bool lazyInitialization = true)
-            : this(null, options, lazyInitialization)
+        public NumberRecognizer(NumberOptions options = NumberOptions.None, bool lazyInitialization = true, int timeoutInSeconds = 0)
+            : this(null, options, lazyInitialization, timeoutInSeconds)
         {
         }
 
-        public NumberRecognizer(int options, bool lazyInitialization = true)
-            : this(null, options, lazyInitialization)
+        public NumberRecognizer(int options, bool lazyInitialization = true, int timeoutInSeconds = 0)
+            : this(null, options, lazyInitialization, timeoutInSeconds)
         {
         }
 
@@ -504,6 +504,20 @@ namespace Microsoft.Recognizers.Text.Number
             //        new BaseNumberRangeParser(new SwedishNumberRangeParserConfiguration(
             //                                        new BaseNumberOptionsConfiguration(Culture.Swedish, options))),
             //        new Swedish.NumberRangeExtractor(new BaseNumberOptionsConfiguration(Culture.Swedish, options))));
+        }
+
+        protected override List<Type> GetRelatedTypes()
+        {
+            return new List<Type>()
+            {
+                typeof(BaseNumberExtractor),
+                typeof(BaseNumberRangeExtractor),
+                typeof(BasePercentageExtractor),
+                typeof(BaseMergedNumberExtractor),
+                typeof(BaseNumberParser),
+                typeof(BaseNumberParserConfiguration),
+                typeof(BaseNumberRangeParserConfiguration),
+            };
         }
 
         private static List<ModelResult> RecognizeByModel(Func<NumberRecognizer, IModel> getModelFunc, string query, NumberOptions options)

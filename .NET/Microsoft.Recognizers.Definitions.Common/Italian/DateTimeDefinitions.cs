@@ -139,9 +139,9 @@ namespace Microsoft.Recognizers.Definitions.Italian
       public const string AmRegex = @"\b(?<am>((((la|alla|verso|per|della|di|in)\s+(la\s+)?)?(mattinata|mattina))|(((il|al|verso|per|del|di)\s+(il\s+)?)?(mattino))))\b";
       public const string LunchRegex = @"\b(ora di pranzo)\b";
       public const string NightRegex = @"\b(mezzanotte|notte)\b";
-      public static readonly string LessThanOneHour = $@"(?<lth>(un\s+quarto|tre quarti?|mezz[oa]|mezz'ora|{BaseDateTime.DeltaMinuteRegex}(\s+(minut[oi]|min))?|{DeltaMinuteNumRegex}(\s+(minut[oi]|min))|(?<=(e|meno)\s+){DeltaMinuteNumRegex}))";
+      public static readonly string LessThanOneHour = $@"(?<lth>(un\s+quarto|tre quarti?|mezz[oa]|mezz'ora|{BaseDateTime.DeltaMinuteRegex}|{DeltaMinuteNumRegex}))";
       public static readonly string EngTimeRegex = $@"(?<engtime>{HourNumRegex}\s+e\s+({MinuteNumRegex}|(?<tens>venti?|trenta?|quaranta?|cinquanta?){MinuteNumRegex}))";
-      public static readonly string TimePrefix = $@"(?<prefix>(e\s+{LessThanOneHour}|{LessThanOneHour}\s+(minut[oi]|min)\s+all[e']|meno {LessThanOneHour}))";
+      public static readonly string TimePrefix = $@"(?<prefix>((e|meno)\s+{LessThanOneHour}(\s+(minut[oi]|min))?|{LessThanOneHour}\s+(minut[oi]|min)\s+all[e']))";
       public static readonly string TimeSuffix = $@"(?<suffix>{AmRegex}|{PmRegex}|{OclockRegex})";
       public static readonly string BasicTime = $@"\b(?<basictime>{EngTimeRegex}|{HourNumRegex}|{BaseDateTime.HourRegex}:{BaseDateTime.MinuteRegex}(:{BaseDateTime.SecondRegex})?|{BaseDateTime.HourRegex})";
       public const string MidnightRegex = @"(?<midnight>mezzanotte|mezza notte)";

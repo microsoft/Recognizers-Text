@@ -21,42 +21,42 @@ namespace Microsoft.Recognizers.Text.Number.Korean
             {
                 {
                     // 123456,  －１２３４５６
-                    new Regex(NumbersDefinitions.NumbersSpecialsChars, RegexFlags),
+                    new Regex(NumbersDefinitions.NumbersSpecialsChars, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     // 15k,  16 G
-                    new Regex(NumbersDefinitions.NumbersSpecialsCharsWithSuffix, RegexFlags),
+                    new Regex(NumbersDefinitions.NumbersSpecialsCharsWithSuffix, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     // 1,234,  ２，３３２，１１１
-                    new Regex(NumbersDefinitions.DottedNumbersSpecialsChar, RegexFlags),
+                    new Regex(NumbersDefinitions.DottedNumbersSpecialsChar, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     // 마이너스 일, 마이너스 오
-                    new Regex(NumbersDefinitions.ZeroToNineIntegerSpecialsChars, RegexFlags),
+                    new Regex(NumbersDefinitions.ZeroToNineIntegerSpecialsChars, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.KOREAN)
                 },
                 {
                     // 마이너스 일, 마이너스 오
-                    new Regex(NumbersDefinitions.NumbersSpecialsChars, RegexFlags),
+                    new Regex(NumbersDefinitions.NumbersSpecialsChars, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.KOREAN)
                 },
                 {
                     // 다스
-                    new Regex(NumbersDefinitions.NumbersWithDozen, RegexFlags),
+                    new Regex(NumbersDefinitions.NumbersWithDozen, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.KOREAN)
                 },
                 {
                     // 3백21
-                    new Regex(NumbersDefinitions.NativeCumKoreanRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.NativeCumKoreanRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.NUMBER_SUFFIX)
                 },
                 {
                     // 스물여섯
-                    new Regex(NumbersDefinitions.NativeSingleRegex, RegexFlags),
+                    new Regex(NumbersDefinitions.NativeSingleRegex, RegexFlags, RegexTimeOut),
                     RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.KOREAN)
                 },
             };
@@ -66,7 +66,7 @@ namespace Microsoft.Recognizers.Text.Number.Korean
                 case CJKNumberExtractorMode.Default:
                     // 일백오십오
                     regexes.Add(
-                        new Regex(NumbersDefinitions.NumbersWithAllowListRegex, RegexFlags),
+                        new Regex(NumbersDefinitions.NumbersWithAllowListRegex, RegexFlags, RegexTimeOut),
                         RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.KOREAN));
                     break;
 
@@ -74,10 +74,10 @@ namespace Microsoft.Recognizers.Text.Number.Korean
                     // 일백오십오, 사직구장, "사직구장" from "사(it is homonym, seems like four(4) or other chinese character)"
                     // Uses no allow lists and extracts all potential integers (useful in Units, for example).
                     regexes.Add(
-                        new Regex(NumbersDefinitions.NumbersAggressiveRegex, RegexFlags),
+                        new Regex(NumbersDefinitions.NumbersAggressiveRegex, RegexFlags, RegexTimeOut),
                         RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.KOREAN));
                     regexes.Add(
-                        new Regex(NumbersDefinitions.InexactNumberUnitRegex, RegexFlags),
+                        new Regex(NumbersDefinitions.InexactNumberUnitRegex, RegexFlags, RegexTimeOut),
                         RegexTagGenerator.GenerateRegexTag(Constants.INTEGER_PREFIX, Constants.KOREAN));
                     break;
             }

@@ -24,11 +24,11 @@ namespace Microsoft.Recognizers.Text.Number.English
 
             keyPrefix = string.Intern(ExtractType + "_" + config.Options + "_" + config.Mode + "_" + config.Culture);
 
-            NegativeNumberTermsRegex = new Regex(NumbersDefinitions.NegativeNumberTermsRegex + '$', RegexFlags);
+            NegativeNumberTermsRegex = new Regex(NumbersDefinitions.NegativeNumberTermsRegex + '$', RegexFlags, RegexTimeOut);
 
-            AmbiguousFractionConnectorsRegex = new Regex(NumbersDefinitions.AmbiguousFractionConnectorsRegex, RegexFlags);
+            AmbiguousFractionConnectorsRegex = new Regex(NumbersDefinitions.AmbiguousFractionConnectorsRegex, RegexFlags, RegexTimeOut);
 
-            RelativeReferenceRegex = new Regex(NumbersDefinitions.RelativeOrdinalRegex, RegexFlags);
+            RelativeReferenceRegex = new Regex(NumbersDefinitions.RelativeOrdinalRegex, RegexFlags, RegexTimeOut);
 
             NumberParser = new BaseNumberParser(new EnglishNumberParserConfiguration(config));
 
@@ -73,7 +73,7 @@ namespace Microsoft.Recognizers.Text.Number.English
             {
                 foreach (var item in NumbersDefinitions.AmbiguityFiltersDict)
                 {
-                    ambiguityBuilder.Add(new Regex(item.Key, RegexFlags), new Regex(item.Value, RegexFlags));
+                    ambiguityBuilder.Add(new Regex(item.Key, RegexFlags, RegexTimeOut), new Regex(item.Value, RegexFlags, RegexTimeOut));
                 }
             }
 
