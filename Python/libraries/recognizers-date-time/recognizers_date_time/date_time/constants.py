@@ -50,6 +50,7 @@ class Constants:
 
     COMMENT_KEY: str = 'Comment'
     COMMENT_AMPM = 'ampm'
+    COMMENT_AM = 'am'
     COMMENT_DOUBLETIMEX = "doubleTimex"
 
     # Failed connector extraction

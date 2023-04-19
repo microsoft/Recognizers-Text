@@ -100,6 +100,8 @@ class JapaneseTimePeriodParser(BaseTimePeriodParser):
             time_of_day = Constants.DAYTIME
         elif any(trimmed_text.endswith(o) for o in JapaneseDateTime.NightTermList):
             time_of_day = Constants.NIGHT
+        elif any(trimmed_text.endswith(o) for o in JapaneseDateTime.BusinessHourTermList):
+            time_of_day = Constants.BUSINESS_HOUR
         else:
             timex = None
             matched = False
@@ -113,6 +115,7 @@ class JapaneseTimePeriodParser(BaseTimePeriodParser):
         end_hour = parse_result.end_hour
         end_min = parse_result.end_min
 
+        # Modify time period if "early"/"late" is present
         if any(trimmed_text.endswith(o) for o in JapaneseDateTime.EarlyHourTermList):
             end_hour = begin_hour + Constants.HALF_MID_DAY_DURATION_HOUR_COUNT
             if end_hour == 59:
@@ -190,7 +193,8 @@ class JapaneseTimePeriodParser(BaseTimePeriodParser):
         hour = self.__min_with_floor(time.hour)
         minute = self.__min_with_floor(time.minute)
         second = self.__min_with_floor(time.second)
-        return DateUtils.safe_create_from_min_value(reference.year, reference.month, reference.day, hour, minute, second)
+        return DateUtils.safe_create_from_min_value(reference.year, reference.month, reference.day, hour, minute,
+                                                    second)
 
     def __min_with_floor(self, value: int) -> int:
         return value if value > 0 else 0

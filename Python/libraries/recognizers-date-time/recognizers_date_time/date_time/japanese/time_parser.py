@@ -2,12 +2,12 @@
 #  Licensed under the MIT License.
 
 from typing import Optional
-from datetime import datetime
+from datetime import datetime, timedelta
 
 from recognizers_text import RegExpUtility
 
 from ...resources.japanese_date_time import JapaneseDateTime
-from ..constants import TimeTypeConstants
+from ..constants import TimeTypeConstants, Constants
 from ..utilities import DateTimeFormatUtil, DateTimeResolutionResult, DateUtils
 from ..extractors import ExtractResult
 from ..parsers import DateTimeParseResult
@@ -90,14 +90,15 @@ class JapaneseTimeParser(BaseTimeParser):
 
         return TimeResult(hour, minute, second)
 
-    def pack_time_result(self, extra: DateTimeExtra, time_result: TimeResult, reference: datetime) -> DateTimeResolutionResult:
-        result = DateTimeResolutionResult()
+    def pack_time_result(self, extra: DateTimeExtra, time_result: TimeResult,
+                         reference_time: datetime) -> DateTimeResolutionResult:
+        date_time_result = DateTimeResolutionResult()
 
         day_description = next(iter(extra.named_entity['daydesc']), '')
         no_desc = day_description.strip() == ''
 
         if no_desc:
-            result.comment = 'ampm'
+            date_time_result.comment = 'ampm'
         else:
             self.add_description(time_result, day_description)
 
@@ -105,9 +106,9 @@ class JapaneseTimeParser(BaseTimeParser):
         minute = self._min_with_floor(time_result.minute)
         second = self._min_with_floor(time_result.second)
 
-        day = reference.day
-        month = reference.month
-        year = reference.year
+        print(f"------ hour {type(hour)} - {type(time_result.hour)} - {hour} - {time_result.hour}")
+        print(f"------ minute {type(minute)} - {type(time_result.minute)} - {hour} - {time_result.minute}")
+        print(f"------ second {type(second)} - {type(time_result.second)} - {hour} - {time_result.second}")
 
         timex = 'T'
         if time_result.hour >= 0:
@@ -115,20 +116,35 @@ class JapaneseTimeParser(BaseTimeParser):
             if time_result.minute >= 0:
                 timex = f'{timex}:{time_result.minute:02d}'
                 if time_result.second >= 0:
+                    if time_result.minute < 0:
+                        timex = f'{timex}:{time_result.minute:02d}'
                     timex = f'{timex}:{time_result.second:02d}'
 
-        if hour == 24:
+        if hour == Constants.DAY_HOUR_COUNT:
             hour = 0
 
-        result.future_value = DateUtils.safe_create_from_min_value(
-            year, month, day, hour, minute, second)
-        result.past_value = DateUtils.safe_create_from_min_value(
-            year, month, day, hour, minute, second)
-        result.timex = timex
-        result.success = True
+        if time_result.hour > Constants.DAY_HOUR_COUNT:
+            hour = time_result.hour - Constants.DAY_HOUR_COUNT
+            reference_time = reference_time + timedelta(days=1)
+            if no_desc:
+                date_time_result.comment = Constants.COMMENT_AM
+                no_desc = False
 
-        return result
+        if no_desc and (hour <= Constants.HALF_DAY_HOUR_COUNT) and (hour > Constants.DAY_HOUR_COUNT):
+            date_time_result.comment = Constants.COMMENT_AMPM
 
+        day = reference_time.day
+        month = reference_time.month
+        year = reference_time.year
+
+        date_time_result.future_value = DateUtils.safe_create_from_min_value(
+            year, month, day, hour, minute, second)
+        date_time_result.past_value = DateUtils.safe_create_from_min_value(
+            year, month, day, hour, minute, second)
+        date_time_result.timex = timex
+        date_time_result.success = True
+
+        return date_time_result
 
     def _min_with_floor(self, source: int) -> int:
         return source if source > 0 else 0
