@@ -102,27 +102,34 @@ class JapaneseTimeParser(BaseTimeParser):
         else:
             self.add_description(time_result, day_description)
 
-        hour = self._min_with_floor(time_result.hour)
+        hour = time_result.hour if (time_result.hour > 0 and time_result.hour != Constants.DAY_HOUR_COUNT) else 0
         minute = self._min_with_floor(time_result.minute)
         second = self._min_with_floor(time_result.second)
 
         print(f"------ hour {type(hour)} - {type(time_result.hour)} - {hour} - {time_result.hour}")
-        print(f"------ minute {type(minute)} - {type(time_result.minute)} - {hour} - {time_result.minute}")
-        print(f"------ second {type(second)} - {type(time_result.second)} - {hour} - {time_result.second}")
+        print(f"------ minute {type(minute)} - {type(time_result.minute)} - {minute} - {time_result.minute}")
+        print(f"------ second {type(second)} - {type(time_result.second)} - {second} - {time_result.second}")
 
         timex = 'T'
+
         if time_result.hour >= 0:
-            timex = f'{timex}{time_result.hour:02d}'
+            timex = f'{timex}{hour:02d}'
+            print(f"----- hour >= 0  {timex}")
             if time_result.minute >= 0:
-                timex = f'{timex}:{time_result.minute:02d}'
+                timex = f'{timex}:{minute:02d}'
+                print(f"----- minute >= 0  {timex}")
                 if time_result.second >= 0:
                     if time_result.minute < 0:
-                        timex = f'{timex}:{time_result.minute:02d}'
-                    timex = f'{timex}:{time_result.second:02d}'
+                        timex = f'{timex}:{minute:02d}'
+                        print(f"----- second >= 0 and minute < 0 {timex}")
+                    timex = f'{timex}:{second:02d}'
+                    print(f"----- second >= 0  {timex}")
 
         if hour == Constants.DAY_HOUR_COUNT:
+            print(f"-------- hour is 24 -> {hour}")
             hour = 0
 
+        # handle cases with time like 25時 (the hour is normalized in the past/future values)
         if time_result.hour > Constants.DAY_HOUR_COUNT:
             hour = time_result.hour - Constants.DAY_HOUR_COUNT
             reference_time = reference_time + timedelta(days=1)

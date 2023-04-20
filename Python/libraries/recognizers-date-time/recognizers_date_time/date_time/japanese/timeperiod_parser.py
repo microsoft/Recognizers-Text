@@ -70,6 +70,18 @@ class JapaneseTimePeriodParser(BaseTimePeriodParser):
         if parameters['matched'] is False:
             return DateTimeResolutionResult()
 
+        # Add "early"/"late" mod
+        if (parameters["end_hour"] == parameters["begin_hour"] + Constants.HALF_MID_DAY_DURATION_HOUR_COUNT) \
+                and (parameters["begin_hour"] == Constants.MORNING_BEGIN_HOUR or parameters[
+            "begin_hour"] == Constants.AFTERNOON_BEGIN_HOUR):
+            result.comment = Constants.COMMENT_EARLY
+            result.mod = TimeTypeConstants.EARLY_MOD
+        elif (parameters["begin_hour"] == parameters["end_hour"] - Constants.HALF_MID_DAY_DURATION_HOUR_COUNT) \
+                and (parameters["end_hour"] == Constants.MORNING_END_HOUR or parameters[
+            "end_hour"] == Constants.AFTERNOON_END_HOUR):
+            result.comment = Constants.COMMENT_LATE
+            result.mod = TimeTypeConstants.LATE_MOD
+
         result.timex = parameters['timex']
         result.future_value = result.past_value = [
             DateUtils.safe_create_from_min_value(
