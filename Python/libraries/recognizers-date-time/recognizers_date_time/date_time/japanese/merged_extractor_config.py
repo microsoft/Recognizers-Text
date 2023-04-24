@@ -8,16 +8,8 @@ from ...resources.japanese_date_time import JapaneseDateTime, BaseDateTime
 
 from ..extractors import DateTimeExtractor
 from ..base_merged import MergedExtractorConfiguration
-from ..base_holiday import BaseHolidayExtractor
-# from .duration_extractor import JapaneseDurationExtractor
 from .time_extractor import JapaneseTimeExtractor
-# from .date_extractor import JapaneseDateExtractor
-# from .datetime_extractor import JapaneseDateTimeExtractor
 from .timeperiod_extractor import JapaneseTimePeriodExtractor
-# from .dateperiod_extractor import JapaneseDatePeriodExtractor
-# from .datetimeperiod_extractor import JapaneseDateTimePeriodExtractor
-# from .set_extractor import JapaneseSetExtractor
-# from .holiday_extractor_config import JapaneseHolidayExtractorConfiguration
 
 
 class JapaneseMergedExtractorConfiguration(MergedExtractorConfiguration):
@@ -66,41 +58,13 @@ class JapaneseMergedExtractorConfiguration(MergedExtractorConfiguration):
     def ambiguity_filters_dict(self) -> {}:
         return self._ambiguity_filters_dict
 
-    # @property
-    # def date_extractor(self) -> DateTimeExtractor:
-    #     return self._date_extractor
-
     @property
     def time_extractor(self) -> DateTimeExtractor:
         return self._time_extractor
 
-    # @property
-    # def date_time_extractor(self) -> DateTimeExtractor:
-    #     return self._date_time_extractor
-    #
-    # @property
-    # def date_period_extractor(self) -> DateTimeExtractor:
-    #     return self._date_period_extractor
-
     @property
     def time_period_extractor(self) -> DateTimeExtractor:
         return self._time_period_extractor
-
-    # @property
-    # def date_time_period_extractor(self) -> DateTimeExtractor:
-    #     return self._date_time_period_extractor
-    #
-    # @property
-    # def holiday_extractor(self) -> DateTimeExtractor:
-    #     return self._holiday_extractor
-    #
-    # @property
-    # def duration_extractor(self) -> DateTimeExtractor:
-    #     return self._duration_extractor
-    #
-    # @property
-    # def set_extractor(self) -> DateTimeExtractor:
-    #     return self._set_extractor
 
     @property
     def integer_extractor(self) -> any:
@@ -174,16 +138,8 @@ class JapaneseMergedExtractorConfiguration(MergedExtractorConfiguration):
             JapaneseDateTime.BeforeRegex
         )
         self._ambiguity_filters_dict = JapaneseDateTime.AmbiguityFiltersDict
-        # self._date_extractor = JapaneseDateExtractor()
         self._time_extractor = JapaneseTimeExtractor()
-        # self._date_time_extractor = JapaneseDateTimeExtractor()
-        # self._date_period_extractor = JapaneseDatePeriodExtractor()
         self._time_period_extractor = JapaneseTimePeriodExtractor()
-        # self._date_time_period_extractor = JapaneseDateTimePeriodExtractor()
-        # self._holiday_extractor = BaseHolidayExtractor(
-        #     JapaneseHolidayExtractorConfiguration())
-        # self._duration_extractor = JapaneseDurationExtractor()
-        # self._set_extractor = JapaneseSetExtractor()
         # TODO When the implementation for these properties is added, change the None values to their respective Regexps
         self._superfluous_word_matcher = None
         self._fail_fast_regex = None

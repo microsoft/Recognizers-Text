@@ -106,10 +106,6 @@ class JapaneseTimeParser(BaseTimeParser):
         minute = self._min_with_floor(time_result.minute)
         second = self._min_with_floor(time_result.second)
 
-        print(f"------ hour {type(hour)} - {type(time_result.hour)} - {hour} - {time_result.hour}")
-        print(f"------ minute {type(minute)} - {type(time_result.minute)} - {minute} - {time_result.minute}")
-        print(f"------ second {type(second)} - {type(time_result.second)} - {second} - {time_result.second}")
-
         timex = 'T'
 
         if time_result.hour >= 0:

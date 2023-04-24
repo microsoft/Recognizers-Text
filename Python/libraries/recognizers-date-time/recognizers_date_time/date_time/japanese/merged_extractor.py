@@ -5,8 +5,6 @@ from typing import List
 from datetime import datetime
 import regex
 
-from recognizers_text import RegExpUtility
-
 from ..base_merged import BaseMergedExtractor
 from ..utilities import DateTimeOptions, ExtractResult, RegExpUtility
 from .merged_extractor_config import JapaneseMergedExtractorConfiguration
