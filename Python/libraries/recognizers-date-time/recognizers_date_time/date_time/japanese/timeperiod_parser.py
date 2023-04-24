@@ -141,19 +141,24 @@ class JapaneseTimePeriodParser(BaseTimePeriodParser):
                 'end_hour': end_hour, 'end_min': end_min}
 
     def parse_time_period(self, extra: DateTimeExtra, reference: datetime) -> DateTimeResolutionResult:
+        # result should be returned
         result = DateTimeResolutionResult()
 
-        left_entity = next(iter(extra.named_entity['left']), '')
+        # Left is a time
+        left = next(iter(extra.named_entity['left']), '')
         left_result: TimeResult = None
+        right_result: TimeResult = None
+
         if extra.data_type == TimePeriodType.FullTime:
             left_result = self.get_parse_time_result(
-                left_entity, extra.match, reference)
+                left, extra.match, reference)
         else:
-            left_result = self.get_short_left(left_entity)
+            left_result = self.get_short_left(left)
 
-        right_entity = next(iter(extra.named_entity['right']), '')
+        # Right is a time
+        right = next(iter(extra.named_entity['right']), '')
         right_result = self.get_parse_time_result(
-            right_entity, extra.match, reference)
+            right, extra.match, reference)
 
         # the right side doesn't contain desc while the left side does
         if right_result.low_bound == -1 and left_result.low_bound != -1 and right_result.hour <= left_result.low_bound:
