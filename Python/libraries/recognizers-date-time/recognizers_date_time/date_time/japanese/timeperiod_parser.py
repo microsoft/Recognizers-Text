@@ -167,28 +167,59 @@ class JapaneseTimePeriodParser(BaseTimePeriodParser):
 
         # the right side doesn't contain desc while the left side does
         if right_result.low_bound == -1 and left_result.low_bound != -1 \
-            and right_result.hour <= Constants.HALF_DAY_HOUR_COUNT and span_hour > Constants.HALF_DAY_HOUR_COUNT:
+                and right_result.hour <= Constants.HALF_DAY_HOUR_COUNT and span_hour > Constants.HALF_DAY_HOUR_COUNT:
             right_result.hour += Constants.HALF_DAY_HOUR_COUNT
 
         # the left side doesn't contain desc while the right side does
         if left_result.low_bound == -1 and right_result.low_bound != -1 \
-            and left_result.hour <= Constants.HALF_DAY_HOUR_COUNT and span_hour > Constants.HALF_DAY_HOUR_COUNT:
+                and left_result.hour <= Constants.HALF_DAY_HOUR_COUNT and span_hour > Constants.HALF_DAY_HOUR_COUNT:
             left_result.hour += Constants.HALF_DAY_HOUR_COUNT
 
-        left_date = self.build_date(left_result, reference)
-        right_date = self.build_date(right_result, reference)
+        # No 'am' or 'pm' indicator
+        if left_result.low_bound != -1 and right_result.low_bound != -1 and \
+                left_result.hour <= Constants.HALF_DAY_HOUR_COUNT and \
+                right_result.hour <= Constants.HALF_DAY_HOUR_COUNT:
+            if span_hour > Constants.HALF_DAY_HOUR_COUNT:
+                if left_result.hour > right_result.hour:
+                    if left_result.hour == Constants.HALF_DAY_HOUR_COUNT:
+                        left_result.hour -= Constants.HALF_DAY_HOUR_COUNT
+                    else:
+                        right_result.hour += Constants.HALF_DAY_HOUR_COUNT
+            result.comment = Constants.COMMENT_AMPM
 
-        if right_date.hour < left_date.hour:
-            right_date += timedelta(days=1)
+        day = reference.day
+        month = reference.month
+        year = reference.year
+        right_swift_day = 0
+        left_swift_day = 0
 
-        result.future_value = [left_date, right_date]
-        result.past_value = [left_date, right_date]
+        # handle cases with time like 25時 which resolve to the next day
+        if left_result.hour > Constants.DAY_HOUR_COUNT:
+            left_result.hour -= Constants.DAY_HOUR_COUNT
+            left_swift_day += 1
+
+        if right_result.hour > Constants.DAY_HOUR_COUNT:
+            right_result.hour -= Constants.DAY_HOUR_COUNT
+            right_result += 1
+
+        left_time = self.build_date(left_result, reference)
+        right_time = self.build_date(right_result, reference)
+
+
+        if right_time.hour < left_time.hour:
+            right_time += timedelta(days=1)
 
         left_timex = self.build_timex(left_result)
         right_timex = self.build_timex(right_result)
         span_timex = self.build_span(left_result, right_result)
 
         result.timex = f'({left_timex},{right_timex},{span_timex})'
+
+        left_time = left_time + timedelta(left_swift_day)
+        right_time = right_time + timedelta(right_swift_day)
+
+        result.future_value = [left_time, right_time]
+        result.past_value = [left_time, right_time]
         result.success = True
 
         return result

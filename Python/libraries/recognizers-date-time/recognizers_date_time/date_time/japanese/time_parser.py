@@ -114,19 +114,14 @@ class JapaneseTimeParser(BaseTimeParser):
 
         if time_result.hour >= 0:
             timex = f'{timex}{hour:02d}'
-            print(f"----- hour >= 0  {timex}")
             if time_result.minute >= 0:
                 timex = f'{timex}:{minute:02d}'
-                print(f"----- minute >= 0  {timex}")
                 if time_result.second >= 0:
                     if time_result.minute < 0:
                         timex = f'{timex}:{minute:02d}'
-                        print(f"----- second >= 0 and minute < 0 {timex}")
                     timex = f'{timex}:{second:02d}'
-                    print(f"----- second >= 0  {timex}")
 
         if hour == Constants.DAY_HOUR_COUNT:
-            print(f"-------- hour is 24 -> {hour}")
             hour = 0
 
         # handle cases with time like 25時 (the hour is normalized in the past/future values)
