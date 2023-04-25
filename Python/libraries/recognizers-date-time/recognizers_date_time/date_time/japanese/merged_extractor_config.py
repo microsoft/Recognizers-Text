@@ -143,10 +143,14 @@ class JapaneseMergedExtractorConfiguration(MergedExtractorConfiguration):
         # TODO When the implementation for these properties is added, change the None values to their respective Regexps
         self._superfluous_word_matcher = None
         self._fail_fast_regex = None
-        self._unspecified_date_period_regex = None
+        self._unspecified_date_period_regex = RegExpUtility.get_safe_reg_exp(
+            JapaneseDateTime.UnspecificDatePeriodRegex
+        )
         self._suffix_after_regex = None
         self._potential_ambiguous_range_regex = None
-        self._ambiguous_range_modifier_prefix = None
+        self._ambiguous_range_modifier_prefix = RegExpUtility.get_safe_reg_exp(
+            JapaneseDateTime.AmbiguousRangeModifierPrefix
+        )
         self._around_regex = None
         self._term_filter_regexes = None
         self._datetime_alt_extractor = None
