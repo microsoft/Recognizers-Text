@@ -43,25 +43,10 @@ class JapaneseMergedParser(BaseMergedParser):
             result.text = result.text[after_match.start():]
             mod_str = after_match.group()
 
-        if source.type == Constants.SYS_DATETIME_DATE:
-            result = self.config.date_parser.parse(source, reference)
-            if not result.value:
-                result = self.config.holiday_parser.parse(source, reference)
-        elif source.type == Constants.SYS_DATETIME_TIME:
+        if source.type == Constants.SYS_DATETIME_TIME:
             result = self.config.time_parser.parse(source, reference)
-        elif source.type == Constants.SYS_DATETIME_DATETIME:
-            result = self.config.date_time_parser.parse(source, reference)
-        elif source.type == Constants.SYS_DATETIME_DATEPERIOD:
-            result = self.config.date_period_parser.parse(source, reference)
         elif source.type == Constants.SYS_DATETIME_TIMEPERIOD:
             result = self.config.time_period_parser.parse(source, reference)
-        elif source.type == Constants.SYS_DATETIME_DATETIMEPERIOD:
-            result = self.config.date_time_period_parser.parse(
-                source, reference)
-        elif source.type == Constants.SYS_DATETIME_DURATION:
-            result = self.config.duration_parser.parse(source, reference)
-        elif source.type == Constants.SYS_DATETIME_SET:
-            result = self.config.set_parser.parse(source, reference)
         else:
             return None
 
