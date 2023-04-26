@@ -141,18 +141,3 @@ class JapaneseMergedExtractor(BaseMergedExtractor):
 
         return [value for (idx, value) in enumerate(destination) if idx not in duplicated]
 
-    def check_black_list(self, ers: List[ExtractResult], source: str) -> List[ExtractResult]:
-        return list(filter(lambda x: self.filter_item(x, source), ers))
-
-    def filter_item(self, value: ExtractResult, source: str) -> bool:
-        value_end = value.start + value.length
-
-        if value_end != len(source):
-            last_char = source[value_end]
-            if value.text.endswith('周') and value_end < len(source) and last_char == '岁':
-                return False
-
-        if regex.search(self.day_of_month_regex, value.text):
-            return False
-
-        return True

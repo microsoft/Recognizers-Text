@@ -137,6 +137,7 @@ class JapaneseMergedExtractorConfiguration(MergedExtractorConfiguration):
         self._before_regex = RegExpUtility.get_safe_reg_exp(
             JapaneseDateTime.BeforeRegex
         )
+        self._day_of_month = JapaneseDateTime.ParserConfigurationDayOfMonth
         self._ambiguity_filters_dict = JapaneseDateTime.AmbiguityFiltersDict
         self._time_extractor = JapaneseTimeExtractor()
         self._time_period_extractor = JapaneseTimePeriodExtractor()
