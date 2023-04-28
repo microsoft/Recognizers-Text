@@ -166,6 +166,9 @@ class Constants:
     HOUR_NUM_GROUP_NAME = 'hournum'
     TENS_GROUP_NAME = 'tens'
     YEAR_CJK_GROUP_NAME = 'yearCJK'
+    LATER_GROUP_NAME = 'later'
+    LESS_GROUP_NAME = 'less'
+    MORE_GROUP_NAME = 'more'
 
     TIME_OF_DAY_GROUP_NAME = 'timeOfDay'
     BUSINESS_DAY_GROUP_NAME = 'business'
@@ -234,6 +237,8 @@ class Constants:
     HALF = 'half'
 
     HAS_MOD = 'mod'
+    LESS_THAN_MOD = 'less'
+    MORE_THAN_MOD = 'more'
 
     # Holidays
     # These should not be constants, they should go on the resources files for English

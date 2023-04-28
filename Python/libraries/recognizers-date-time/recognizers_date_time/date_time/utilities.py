@@ -130,6 +130,51 @@ class DurationParsingUtil:
 
         return result
 
+    @staticmethod
+    def _resolve_duration_timex(timex: str):
+        result = {}
+        # Resolve duration timex, such as P21DT2H (21 days 2 hours)
+        duration_str = timex.replace(Constants.GENERAL_PERIOD_PREFIX, "")
+        number_start = 0
+        is_time = False
+
+        #  Resolve business days
+        if duration_str.endswith(Constants.TIMEX_BUSINESS_DAY):
+            try:
+                num_val = float(duration_str[:-2])
+                result[Constants.TIMEX_BUSINESS_DAY] = num_val
+                return result
+            except ValueError:
+                pass
+
+        for i, char in enumerate(duration_str):
+            if char.isalpha():
+                if char == Constants.TIME_TIMEX_PREFIX:
+                    is_time = True
+                else:
+                    num_str = duration_str[number_start:(i - number_start)]
+                    try:
+                        num_val = float(num_str)
+                        src_timex_unit = duration_str[]
+                        if not is_time and src_timex_unit == Constants.TIMEX_MONTH
+                            src_timex_unit = Constants.TIMEX_MONTH_FULL
+                        result[src_timex_unit] = number_start
+
+                    except ValueError:
+                        return result
+                number_start = i + 1
+
+        return result
+
+    @staticmethod
+    def shift_date_time(timex: str, reference: datetime, future: bool):
+        timex_unit_map = _resolve_duration_timex(timex)
+        result = get_shift_result(timex_unit_map, reference, future)
+        return result
+
+
+
+
 
 class Token:
     def __init__(self, start: int, end: int, metadata: Metadata = None):
@@ -1117,6 +1162,15 @@ class TimexUtil:
         return unit_count
 
     @staticmethod
+    def parse_hour_from_time_timex(timex: str):
+        start = timex.index(Constants.TIME_TIMEX_PREFIX) + 1
+        end = timex.index(Constants.TIME_TIMEX_CONNECTOR)
+        if end < 0:
+            end = len(timex)
+        hour = timex[start:end - start]
+        return int(hour)
+
+    @staticmethod
     def generate_date_period_timex_str(begin, end, timex_type, timex1, timex2):
         boundary_valid = DateUtils.is_valid_datetime(begin) and DateUtils.is_valid_datetime(end)
         unit_count = TimexUtil.generate_date_period_timex_unit_count(begin, end, timex_type) if boundary_valid else "X"
@@ -1176,6 +1230,34 @@ class TimeZoneResolutionResult:
         self.value: str = ''
         self.utc_offset_mins: int = 0
         self.time_zone_text: str = ''
+
+
+def filter_ambiguity(extract_results: List[ExtractResult], text: str, ambiguity_filters_dict) -> List[ExtractResult]:
+    if ambiguity_filters_dict is not None:
+        for regex_var in ambiguity_filters_dict:
+            regex_var_value = ambiguity_filters_dict[regex_var]
+
+            try:
+                for extract_result in extract_results:
+                    if regex.search(regex_var, extract_result.text):
+                        reg_len = list(filter(lambda x: x.group(), regex.finditer(regex_var_value, text)))
+
+                        reg_length = len(reg_len)
+                        if reg_length > 0:
+
+                            matches = reg_len
+                            new_ers = list(filter(lambda x: list(
+                                filter(lambda m: m.start() < x.start + x.length and m.start() +
+                                                 len(m.group()) > x.start, matches)), extract_results))
+                            if len(new_ers) > 0:
+                                for item in extract_results:
+                                    for i in new_ers:
+                                        if item is i:
+                                            extract_results.remove(item)
+            except Exception:
+                pass
+
+    return extract_results
 
 
 def parse_chinese_dynasty_year(year_str: str, dynasty_year_regex: Pattern, dynasty_start_year: str, dynasty_year_map: dict, integer_extractor, number_parser):
