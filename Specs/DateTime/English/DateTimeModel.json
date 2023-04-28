@@ -233,6 +233,7 @@
     "Context": {
       "ReferenceDateTime": "2023-04-25T00:00:00"
     },
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "april first 2021",
@@ -256,6 +257,7 @@
     "Context": {
       "ReferenceDateTime": "2023-04-25T00:00:00"
     },
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "jun third 2023",
@@ -279,6 +281,7 @@
     "Context": {
       "ReferenceDateTime": "2023-04-25T00:00:00"
     },
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "september the second 2025",
@@ -302,6 +305,7 @@
     "Context": {
       "ReferenceDateTime": "2023-04-25T00:00:00"
     },
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "march one 2020",
@@ -325,6 +329,7 @@
     "Context": {
       "ReferenceDateTime": "2023-04-25T00:00:00"
     },
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "aug twelve 2024",
