@@ -30,8 +30,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
         }
 
-        public DateTimeRecognizer(DateTimeOptions options = DateTimeOptions.None, bool lazyInitialization = true, int timeoutInSeconds = 0)
-            : this(null, options, lazyInitialization, timeoutInSeconds)
+        public DateTimeRecognizer(DateTimeOptions options = DateTimeOptions.None, bool lazyInitialization = true)
+            : this(null, options, lazyInitialization, 0)
         {
         }
 

@@ -31,8 +31,8 @@ namespace Microsoft.Recognizers.Text.Sequence
         {
         }
 
-        public SequenceRecognizer(SequenceOptions options = SequenceOptions.None, bool lazyInitialization = true, int timeoutInSeconds = 0)
-            : base(null, options, lazyInitialization, timeoutInSeconds)
+        public SequenceRecognizer(SequenceOptions options = SequenceOptions.None, bool lazyInitialization = true)
+            : base(null, options, lazyInitialization, 0)
         {
         }
 

@@ -11,6 +11,9 @@
   </PropertyGroup>
 
   <PropertyGroup>
+	  <SignAssembly>true</SignAssembly>
+	  <AssemblyOriginatorKeyFile>..\buildtools\35MSSharedLib1024.snk</AssemblyOriginatorKeyFile>
+	  <DelaySign>true</DelaySign>
 	  <!--
 		Make sure any documentation comments which are included in code get checked for syntax during the build, but do
 		not report warnings for missing comments.

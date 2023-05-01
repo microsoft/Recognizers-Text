@@ -18,8 +18,8 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
         {
         }
 
-        public NumberWithUnitRecognizer(NumberWithUnitOptions options = NumberWithUnitOptions.None, bool lazyInitialization = true, int timeoutInSeconds = 0)
-            : this(null, options, lazyInitialization, timeoutInSeconds)
+        public NumberWithUnitRecognizer(NumberWithUnitOptions options = NumberWithUnitOptions.None, bool lazyInitialization = true)
+            : this(null, options, lazyInitialization, 0)
         {
         }
 

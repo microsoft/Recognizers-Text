@@ -32,8 +32,8 @@ namespace Microsoft.Recognizers.Text.Number
         {
         }
 
-        public NumberRecognizer(NumberOptions options = NumberOptions.None, bool lazyInitialization = true, int timeoutInSeconds = 0)
-            : this(null, options, lazyInitialization, timeoutInSeconds)
+        public NumberRecognizer(NumberOptions options = NumberOptions.None, bool lazyInitialization = true)
+            : this(null, options, lazyInitialization, 0)
         {
         }
 
