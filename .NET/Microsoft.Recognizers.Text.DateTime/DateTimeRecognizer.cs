@@ -20,13 +20,18 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public class DateTimeRecognizer : Recognizer<DateTimeOptions>
     {
-        public DateTimeRecognizer(string targetCulture, DateTimeOptions options = DateTimeOptions.None, bool lazyInitialization = false, int timeoutInSeconds = 0)
+        public DateTimeRecognizer(string targetCulture, DateTimeOptions options, bool lazyInitialization, int timeoutInSeconds)
             : base(targetCulture, options, lazyInitialization, timeoutInSeconds)
         {
         }
 
-        public DateTimeRecognizer(string targetCulture, int options, bool lazyInitialization = false, int timeoutInSeconds = 0)
-            : this(targetCulture, GetOptions(options), lazyInitialization, timeoutInSeconds)
+        public DateTimeRecognizer(string targetCulture, DateTimeOptions options = DateTimeOptions.None, bool lazyInitialization = false)
+            : base(targetCulture, options, lazyInitialization, 0)
+        {
+        }
+
+        public DateTimeRecognizer(string targetCulture, int options, bool lazyInitialization = false)
+            : this(targetCulture, GetOptions(options), lazyInitialization)
         {
         }
 
@@ -35,8 +40,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
         }
 
-        public DateTimeRecognizer(int options, bool lazyInitialization = true, int timeoutInSeconds = 0)
-            : this(null, options, lazyInitialization, timeoutInSeconds)
+        public DateTimeRecognizer(int options, bool lazyInitialization = true)
+            : this(null, options, lazyInitialization)
         {
         }
 
