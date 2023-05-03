@@ -1,2 +1,0 @@
-pytest-cov
-pytest>=3.2.0
