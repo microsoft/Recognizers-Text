@@ -8,23 +8,28 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
     public class NumberWithUnitRecognizer : Recognizer<NumberWithUnitOptions>
     {
-        public NumberWithUnitRecognizer(string targetCulture, NumberWithUnitOptions options = NumberWithUnitOptions.None, bool lazyInitialization = false, int timeoutInSeconds = 0)
+        public NumberWithUnitRecognizer(string targetCulture, NumberWithUnitOptions options, bool lazyInitialization, int timeoutInSeconds)
             : base(targetCulture, options, lazyInitialization, timeoutInSeconds)
         {
         }
 
-        public NumberWithUnitRecognizer(string targetCulture, int options, bool lazyInitialization = false, int timeoutInSeconds = 0)
-            : this(targetCulture, GetOptions(options), lazyInitialization, timeoutInSeconds)
+        public NumberWithUnitRecognizer(string targetCulture, NumberWithUnitOptions options = NumberWithUnitOptions.None, bool lazyInitialization = false)
+            : base(targetCulture, options, lazyInitialization, 0)
         {
         }
 
-        public NumberWithUnitRecognizer(NumberWithUnitOptions options = NumberWithUnitOptions.None, bool lazyInitialization = true, int timeoutInSeconds = 0)
-            : this(null, options, lazyInitialization, timeoutInSeconds)
+        public NumberWithUnitRecognizer(string targetCulture, int options, bool lazyInitialization = false)
+            : this(targetCulture, GetOptions(options), lazyInitialization, 0)
         {
         }
 
-        public NumberWithUnitRecognizer(int options, bool lazyInitialization = true, int timeoutInSeconds = 0)
-            : this(null, GetOptions(options), lazyInitialization, timeoutInSeconds)
+        public NumberWithUnitRecognizer(NumberWithUnitOptions options = NumberWithUnitOptions.None, bool lazyInitialization = true)
+            : this(null, options, lazyInitialization, 0)
+        {
+        }
+
+        public NumberWithUnitRecognizer(int options, bool lazyInitialization = true)
+            : this(null, GetOptions(options), lazyInitialization, 0)
         {
         }
 

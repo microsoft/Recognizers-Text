@@ -22,23 +22,28 @@ namespace Microsoft.Recognizers.Text.Number
 {
     public class NumberRecognizer : Recognizer<NumberOptions>
     {
-        public NumberRecognizer(string targetCulture, NumberOptions options = NumberOptions.None, bool lazyInitialization = false, int timeoutInSeconds = 0)
+        public NumberRecognizer(string targetCulture, NumberOptions options, bool lazyInitialization, int timeoutInSeconds)
             : base(targetCulture, options, lazyInitialization, timeoutInSeconds)
         {
         }
 
-        public NumberRecognizer(string targetCulture, int options, bool lazyInitialization = false, int timeoutInSeconds = 0)
-            : this(targetCulture, GetOptions(options), lazyInitialization, timeoutInSeconds)
+        public NumberRecognizer(string targetCulture, NumberOptions options = NumberOptions.None, bool lazyInitialization = false)
+            : base(targetCulture, options, lazyInitialization, 0)
         {
         }
 
-        public NumberRecognizer(NumberOptions options = NumberOptions.None, bool lazyInitialization = true, int timeoutInSeconds = 0)
-            : this(null, options, lazyInitialization, timeoutInSeconds)
+        public NumberRecognizer(string targetCulture, int options, bool lazyInitialization = false)
+            : this(targetCulture, GetOptions(options), lazyInitialization, 0)
         {
         }
 
-        public NumberRecognizer(int options, bool lazyInitialization = true, int timeoutInSeconds = 0)
-            : this(null, options, lazyInitialization, timeoutInSeconds)
+        public NumberRecognizer(NumberOptions options = NumberOptions.None, bool lazyInitialization = true)
+            : this(null, options, lazyInitialization, 0)
+        {
+        }
+
+        public NumberRecognizer(int options, bool lazyInitialization = true)
+            : this(null, options, lazyInitialization)
         {
         }
 

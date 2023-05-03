@@ -23,18 +23,23 @@ namespace Microsoft.Recognizers.Text.Choice
 {
     public class ChoiceRecognizer : Recognizer<ChoiceOptions>
     {
-        public ChoiceRecognizer(string targetCulture, ChoiceOptions options = ChoiceOptions.None, bool lazyInitialization = false, int timeoutInSeconds = 0)
+        public ChoiceRecognizer(string targetCulture, ChoiceOptions options, bool lazyInitialization, int timeoutInSeconds)
             : base(targetCulture, options, lazyInitialization, timeoutInSeconds)
         {
         }
 
-        public ChoiceRecognizer(string targetCulture, int options, bool lazyInitialization = false, int timeoutInSeconds = 0)
-            : this(targetCulture, GetOptions(options), lazyInitialization, timeoutInSeconds)
+        public ChoiceRecognizer(string targetCulture, ChoiceOptions options = ChoiceOptions.None, bool lazyInitialization = false)
+            : base(targetCulture, options, lazyInitialization, 0)
         {
         }
 
-        public ChoiceRecognizer(ChoiceOptions options = ChoiceOptions.None, bool lazyInitialization = true, int timeoutInSeconds = 0)
-            : base(null, options, lazyInitialization, timeoutInSeconds)
+        public ChoiceRecognizer(string targetCulture, int options, bool lazyInitialization = false)
+            : this(targetCulture, GetOptions(options), lazyInitialization)
+        {
+        }
+
+        public ChoiceRecognizer(ChoiceOptions options = ChoiceOptions.None, bool lazyInitialization = true)
+            : base(null, options, lazyInitialization, 0)
         {
         }
 

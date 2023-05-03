@@ -21,23 +21,28 @@ namespace Microsoft.Recognizers.Text.Sequence
 {
     public class SequenceRecognizer : Recognizer<SequenceOptions>
     {
-        public SequenceRecognizer(string targetCulture, SequenceOptions options = SequenceOptions.None, bool lazyInitialization = false, int timeoutInSeconds = 0)
-            : base(targetCulture, options, lazyInitialization, timeoutInSeconds)
+        public SequenceRecognizer(string targetCulture, SequenceOptions options, bool lazyInitialization, int timtoutInSeconds)
+            : base(targetCulture, options, lazyInitialization, timtoutInSeconds)
         {
         }
 
-        public SequenceRecognizer(string targetCulture, int options, bool lazyInitialization = false, int timeoutInSeconds = 0)
-            : this(targetCulture, GetOptions(options), lazyInitialization, timeoutInSeconds)
+        public SequenceRecognizer(string targetCulture, SequenceOptions options = SequenceOptions.None, bool lazyInitialization = false)
+            : base(targetCulture, options, lazyInitialization, 0)
         {
         }
 
-        public SequenceRecognizer(SequenceOptions options = SequenceOptions.None, bool lazyInitialization = true, int timeoutInSeconds = 0)
-            : base(null, options, lazyInitialization, timeoutInSeconds)
+        public SequenceRecognizer(string targetCulture, int options, bool lazyInitialization = false)
+            : this(targetCulture, GetOptions(options), lazyInitialization)
         {
         }
 
-        public SequenceRecognizer(int options, bool lazyInitialization = true, int timeoutInSeconds = 0)
-            : this(null, GetOptions(options), lazyInitialization, timeoutInSeconds)
+        public SequenceRecognizer(SequenceOptions options = SequenceOptions.None, bool lazyInitialization = true)
+            : base(null, options, lazyInitialization, 0)
+        {
+        }
+
+        public SequenceRecognizer(int options, bool lazyInitialization = true)
+            : this(null, GetOptions(options), lazyInitialization)
         {
         }
 

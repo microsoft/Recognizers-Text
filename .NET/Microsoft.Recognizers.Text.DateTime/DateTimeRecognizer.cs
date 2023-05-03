@@ -20,23 +20,28 @@ namespace Microsoft.Recognizers.Text.DateTime
 {
     public class DateTimeRecognizer : Recognizer<DateTimeOptions>
     {
-        public DateTimeRecognizer(string targetCulture, DateTimeOptions options = DateTimeOptions.None, bool lazyInitialization = false, int timeoutInSeconds = 0)
+        public DateTimeRecognizer(string targetCulture, DateTimeOptions options, bool lazyInitialization, int timeoutInSeconds)
             : base(targetCulture, options, lazyInitialization, timeoutInSeconds)
         {
         }
 
-        public DateTimeRecognizer(string targetCulture, int options, bool lazyInitialization = false, int timeoutInSeconds = 0)
-            : this(targetCulture, GetOptions(options), lazyInitialization, timeoutInSeconds)
+        public DateTimeRecognizer(string targetCulture, DateTimeOptions options = DateTimeOptions.None, bool lazyInitialization = false)
+            : base(targetCulture, options, lazyInitialization, 0)
         {
         }
 
-        public DateTimeRecognizer(DateTimeOptions options = DateTimeOptions.None, bool lazyInitialization = true, int timeoutInSeconds = 0)
-            : this(null, options, lazyInitialization, timeoutInSeconds)
+        public DateTimeRecognizer(string targetCulture, int options, bool lazyInitialization = false)
+            : this(targetCulture, GetOptions(options), lazyInitialization)
         {
         }
 
-        public DateTimeRecognizer(int options, bool lazyInitialization = true, int timeoutInSeconds = 0)
-            : this(null, options, lazyInitialization, timeoutInSeconds)
+        public DateTimeRecognizer(DateTimeOptions options = DateTimeOptions.None, bool lazyInitialization = true)
+            : this(null, options, lazyInitialization, 0)
+        {
+        }
+
+        public DateTimeRecognizer(int options, bool lazyInitialization = true)
+            : this(null, options, lazyInitialization)
         {
         }
 

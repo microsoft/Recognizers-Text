@@ -12,6 +12,8 @@ namespace Microsoft.Recognizers.Text
     {
         private static readonly IDictionary<Type, int> TimeoutDictionary = new Dictionary<Type, int>();
 
+        private static readonly object _locker = new object();
+
         private readonly ModelFactory<TRecognizerOptions> factory;
 
         protected Recognizer(string targetCulture, TRecognizerOptions options, bool lazyInitialization, int timeout = 0)
@@ -73,11 +75,14 @@ namespace Microsoft.Recognizers.Text
         {
             // Foreach Recognizer type find the subtypes who are supposed to use the same
             // Regex timeout value. Children of Recognzier get to have their own timeout value.
-            if (!TimeoutDictionary.ContainsKey(this.GetType()))
+            lock (_locker)
             {
-                TimeoutDictionary.Add(this.GetType(), TimeoutInSeconds);
-                var relatedTypes = GetRelatedTypes();
-                relatedTypes.ForEach(t => TimeoutDictionary.Add(t, TimeoutInSeconds));
+                if (!TimeoutDictionary.ContainsKey(this.GetType()))
+                {
+                    TimeoutDictionary.Add(this.GetType(), TimeoutInSeconds);
+                    var relatedTypes = GetRelatedTypes();
+                    relatedTypes.ForEach(t => TimeoutDictionary.Add(t, TimeoutInSeconds));
+                }
             }
         }
     }
