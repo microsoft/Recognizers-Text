@@ -1385,7 +1385,7 @@ class BaseDateParser(DateTimeParser):
                                                                                 + match_year.end() == len(affix.strip())
 
         if success:
-            year =  self.config.date_extractor.get_year_from_text(match_year)
+            year = self.config.date_extractor.get_year_from_text(match_year)
             if Constants.MIN_YEAR_NUM <= year <= Constants.MAX_YEAR_NUM:
                 return year
 
@@ -1417,8 +1417,13 @@ class BaseDateParser(DateTimeParser):
         if match:
             month = self.config.month_of_year.get(match.group())
             day = num
-            suffix = trimmed_source[match.end():]
-            prefix = trimmed_source[0: match.start()]
+
+            prefix_end = min(ers[0].start, match.start())
+            prefix = trimmed_source[0:prefix_end]
+
+            suffix_start = max(ers[0].start + ers[0].length, match.end())
+            suffix = trimmed_source[suffix_start:]
+
             year = self._get_year_in_affix(suffix, False)
 
             if year == Constants.INVALID_YEAR and self.config.check_both_before_after:
@@ -1472,7 +1477,7 @@ class BaseDateParser(DateTimeParser):
                 future_date = future_date.replace(year=future_date.year+1)
 
             if past_date >= reference:
-                past_date = past_date.replace(year=past_date.year+1)
+                past_date = past_date.replace(year=past_date.year-1)
         else:
             result.timex = DateTimeFormatUtil.luis_date(year, month, day)
 

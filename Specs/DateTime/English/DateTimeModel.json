@@ -229,6 +229,238 @@
     ]
   },
   {
+    "Input": "I'll go back on April first 2021.",
+    "Context": {
+      "ReferenceDateTime": "2023-04-25T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "april first 2021",
+        "Start": 16,
+        "End": 31,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2021-04-01",
+              "type": "date",
+              "value": "2021-04-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back Jun third 2023",
+    "Context": {
+      "ReferenceDateTime": "2023-04-25T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "jun third 2023",
+        "Start": 13,
+        "End": 26,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2023-06-03",
+              "type": "date",
+              "value": "2023-06-03"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back September the second 2025.",
+    "Context": {
+      "ReferenceDateTime": "2023-04-25T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "september the second 2025",
+        "Start": 13,
+        "End": 37,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2025-09-02",
+              "type": "date",
+              "value": "2025-09-02"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back March one 2020",
+    "Context": {
+      "ReferenceDateTime": "2023-04-25T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "march one 2020",
+        "TypeName": "datetimeV2.date",
+        "Start": 13,
+        "End": 26,
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-03-01",
+              "type": "date",
+              "value": "2020-03-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back Aug twelve 2024.",
+    "Context": {
+      "ReferenceDateTime": "2023-04-25T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "aug twelve 2024",
+        "TypeName": "datetimeV2.date",
+        "Start": 13,
+        "End": 27,
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2024-08-12",
+              "type": "date",
+              "value": "2024-08-12"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back February twenty fifth",
+    "Context": {
+      "ReferenceDateTime": "2023-04-25T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "february twenty fifth",
+        "Start": 13,
+        "End": 33,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-02-25",
+              "type": "date",
+              "value": "2023-02-25"
+            },
+            {
+              "timex": "XXXX-02-25",
+              "type": "date",
+              "value": "2024-02-25"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back on Nov the twelfth.",
+    "Context": {
+      "ReferenceDateTime": "2023-04-25T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "nov the twelfth",
+        "Start": 16,
+        "End": 30,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-11-12",
+              "type": "date",
+              "value": "2022-11-12"
+            },
+            {
+              "timex": "XXXX-11-12",
+              "type": "date",
+              "value": "2023-11-12"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back January thirty one",
+    "Context": {
+      "ReferenceDateTime": "2023-04-25T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "january thirty one",
+        "Start": 13,
+        "End": 30,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-01-31",
+              "type": "date",
+              "value": "2023-01-31"
+            },
+            {
+              "timex": "XXXX-01-31",
+              "type": "date",
+              "value": "2024-01-31"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back Oct twenty three.",
+    "Context": {
+      "ReferenceDateTime": "2023-04-25T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "oct twenty three",
+        "Start": 13,
+        "End": 28,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-10-23",
+              "type": "date",
+              "value": "2022-10-23"
+            },
+            {
+              "timex": "XXXX-10-23",
+              "type": "date",
+              "value": "2023-10-23"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "I'll go back today",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -21751,7 +21983,7 @@
     "Context": {
       "ReferenceDateTime": "2018-01-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "april of 1987",
@@ -21776,7 +22008,7 @@
     "Context": {
       "ReferenceDateTime": "2018-01-07T00:00:00"
     },
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "april of 87",
