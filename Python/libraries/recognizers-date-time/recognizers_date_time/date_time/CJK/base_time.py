@@ -11,12 +11,13 @@ from recognizers_text.extractor import ExtractResult
 from recognizers_date_time.date_time.constants import Constants, TimeTypeConstants
 from recognizers_date_time.date_time.extractors import DateTimeExtractor
 from recognizers_date_time.date_time.parsers import DateTimeParser, DateTimeParseResult
-from recognizers_date_time.date_time.utilities import DateTimeOptionsConfiguration, RegExpUtility, DateTimeFormatUtil
+from recognizers_date_time.date_time.utilities import DateTimeOptionsConfiguration, RegExpUtility, DateTimeFormatUtil, \
+    ExtractResultExtension
 from recognizers_date_time.resources import BaseDateTime
 
 
 class TimeType(Enum):
-    ChineseTime = 1
+    CJKTime = 1
     LessTime = 2
     DigitTime = 3
 
