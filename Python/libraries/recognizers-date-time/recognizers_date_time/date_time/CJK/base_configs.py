@@ -1,17 +1,16 @@
 #  Copyright (c) Microsoft Corporation. All rights reserved.
 #  Licensed under the MIT License.
 
-from typing import Dict, Pattern
+from typing import Dict
 from abc import abstractmethod, ABC
 
 from recognizers_number import BaseNumberExtractor, BaseNumberParser
-from ..resources.base_date_time import BaseDateTime
 from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser
 from .utilities import DateTimeUtilityConfiguration
 
 
-class BaseDateParserConfiguration(ABC):
+class CJKCommonDateTimeParserConfiguration(ABC):
     @property
     @abstractmethod
     def cardinal_extractor(self) -> BaseNumberExtractor:
@@ -69,6 +68,16 @@ class BaseDateParserConfiguration(ABC):
 
     @property
     @abstractmethod
+    def set_extractor(self) -> DateTimeExtractor:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def holiday_extractor(self) -> DateTimeExtractor:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
     def date_parser(self) -> DateTimeParser:
         raise NotImplementedError
 
@@ -80,11 +89,6 @@ class BaseDateParserConfiguration(ABC):
     @property
     @abstractmethod
     def date_time_parser(self) -> DateTimeParser:
-        raise NotImplementedError
-
-    @property
-    @abstractmethod
-    def time_zone_parser(self) -> DateTimeParser:
         raise NotImplementedError
 
     @property
@@ -109,6 +113,26 @@ class BaseDateParserConfiguration(ABC):
 
     @property
     @abstractmethod
+    def set_parser(self) -> DateTimeParser:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def holiday_parser(self) -> DateTimeParser:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def date_time_alt_parser(self) -> DateTimeParser:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def time_zone_parser(self) -> DateTimeParser:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
     def month_of_year(self) -> Dict[str, int]:
         raise NotImplementedError
 
@@ -125,6 +149,11 @@ class BaseDateParserConfiguration(ABC):
     @property
     @abstractmethod
     def season_map(self) -> Dict[str, str]:
+        raise NotImplementedError
+
+    @property
+    @abstractmethod
+    def special_year_prefixes_map(self) -> Dict[str, str]:
         raise NotImplementedError
 
     @property
@@ -153,13 +182,15 @@ class BaseDateParserConfiguration(ABC):
 
     @property
     @abstractmethod
-    def utility_configuration(self) -> DateTimeUtilityConfiguration:
+    def written_decades(self) -> Dict[str, int]:
         raise NotImplementedError
 
     @property
     @abstractmethod
-    def check_both_before_after(self) -> Pattern:
+    def special_decade_cases(self) -> Dict[str, int]:
         raise NotImplementedError
 
-    def __init__(self):
-        self._day_of_month = BaseDateTime.DayOfMonthDictionary
+    @property
+    @abstractmethod
+    def utility_configuration(self) -> DateTimeUtilityConfiguration:
+        raise NotImplementedError
