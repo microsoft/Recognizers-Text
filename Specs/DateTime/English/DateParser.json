@@ -3361,5 +3361,97 @@
         "Length": 9
       }
     ]
+  },
+  {
+    "Input": "the photograph appeared in the 01/07 issue of the magazine",
+    "Context": {
+      "ReferenceDateTime": "2023-05-05T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "the 01/07",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-07",
+          "FutureResolution": {
+            "date": "2024-01-07"
+          },
+          "PastResolution": {
+            "date": "2023-01-07"
+          }
+        },
+        "Start": 27,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "the contract is expected to start on 10/11",
+    "Context": {
+      "ReferenceDateTime": "2023-05-05T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "10/11",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-10-11",
+          "FutureResolution": {
+            "date": "2023-10-11"
+          },
+          "PastResolution": {
+            "date": "2022-10-11"
+          }
+        },
+        "Start": 37,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "the software used in the 11/3/2020 election can be easily hacked",
+    "Context": {
+      "ReferenceDateTime": "2023-05-05T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "the 11/3/2020",
+        "Type": "date",
+        "Value": {
+          "Timex": "2020-11-03",
+          "FutureResolution": {
+            "date": "2020-11-03"
+          },
+          "PastResolution": {
+            "date": "2020-11-03"
+          }
+        },
+        "Start": 21,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "this article was published on 06/10/2020",
+    "Context": {
+      "ReferenceDateTime": "2023-05-05T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "06/10/2020",
+        "Type": "date",
+        "Value": {
+          "Timex": "2020-06-10",
+          "FutureResolution": {
+            "date": "2020-06-10"
+          },
+          "PastResolution": {
+            "date": "2020-06-10"
+          }
+        },
+        "Start": 30,
+        "Length": 10
+      }
+    ]
   }
 ]
