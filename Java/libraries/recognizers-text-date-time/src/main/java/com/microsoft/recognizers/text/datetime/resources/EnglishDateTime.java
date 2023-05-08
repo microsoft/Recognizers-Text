@@ -412,13 +412,13 @@ public class EnglishDateTime {
             .replace("{StrictRelativeRegex}", StrictRelativeRegex)
             .replace("{BaseDateTime.CheckDecimalRegex}", BaseDateTime.CheckDecimalRegex);
 
-    public static final String DateExtractor7L = "\\b({DayPrefix}(\\s*,)?\\s+)?{MonthNumRegex}\\s*/\\s*{DayRegex}{DateExtractorYearTermRegex}(?![%])\\b"
+    public static final String DateExtractor7L = "\\b({DayPrefix}(\\s*,)?\\s+)?(the\\s+)?{MonthNumRegex}\\s*/\\s*{DayRegex}{DateExtractorYearTermRegex}(?![%])\\b"
             .replace("{MonthNumRegex}", MonthNumRegex)
             .replace("{DayRegex}", DayRegex)
             .replace("{DayPrefix}", DayPrefix)
             .replace("{DateExtractorYearTermRegex}", DateExtractorYearTermRegex);
 
-    public static final String DateExtractor7S = "\\b({DayPrefix}(\\s*,)?\\s+)?{MonthNumRegex}\\s*/\\s*{DayRegex}(?![%]){BaseDateTime.CheckDecimalRegex}\\b"
+    public static final String DateExtractor7S = "\\b({DayPrefix}(\\s*,)?\\s+)?(the\\s+)?{MonthNumRegex}\\s*/\\s*{DayRegex}(?![%]){BaseDateTime.CheckDecimalRegex}\\b"
             .replace("{MonthNumRegex}", MonthNumRegex)
             .replace("{DayRegex}", DayRegex)
             .replace("{DayPrefix}", DayPrefix)
