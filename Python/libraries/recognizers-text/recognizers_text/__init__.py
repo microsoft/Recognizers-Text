@@ -7,3 +7,4 @@ from .model import *
 from .extractor import *
 from .parser import *
 from .utilities import *
+from .resolution_key import *

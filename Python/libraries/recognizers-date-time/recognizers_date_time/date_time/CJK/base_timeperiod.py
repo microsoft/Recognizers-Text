@@ -2,19 +2,18 @@
 #  Licensed under the MIT License.
 
 from abc import abstractmethod
-from typing import List, Optional, Pattern, Dict, Match
-from datetime import datetime, timedelta
+from typing import List, Optional, Dict, Match
+from datetime import datetime
 from collections import namedtuple
 import regex
 
-from recognizers_text.utilities import RegExpUtility, QueryProcessor
-from recognizers_text.extractor import Extractor, ExtractResult, Metadata
-from recognizers_date_time.date_time.base_time import BaseTimeExtractor, BaseTimeParser
-from .constants import Constants, TimeTypeConstants
-from .extractors import DateTimeExtractor
-from .parsers import DateTimeParser, DateTimeParseResult
-from .utilities import Token, merge_all_tokens, DateTimeResolutionResult, \
-    DateTimeUtilityConfiguration, DateTimeFormatUtil, ResolutionStartEnd, DateTimeOptionsConfiguration, DateTimeOptions
+from recognizers_text.extractor import ExtractResult
+from recognizers_date_time.date_time.constants import Constants, TimeTypeConstants
+from recognizers_date_time.date_time.extractors import DateTimeExtractor
+from recognizers_date_time.date_time.parsers import DateTimeParser, DateTimeParseResult
+from recognizers_date_time.date_time.utilities import DateTimeResolutionResult, DateTimeFormatUtil, \
+    DateTimeOptionsConfiguration, ExtractResultExtension, TimeFunctions, DateTimeExtra, TimePeriodFunctions, DateUtils
+from recognizers_date_time.date_time.data_structures import PeriodType
 
 
 class CJKTimePeriodExtractorConfiguration(DateTimeOptionsConfiguration):
@@ -128,7 +127,7 @@ class BaseCJKTimePeriodParser(DateTimeParser):
             parse_result = self.parse_time_of_day(source.text, reference)
 
             if not parse_result.success:
-                parse_result = TimePeriodFunctions.Handle(self.config.time_parser, extra, reference, self.config.time_func)
+                parse_result = TimePeriodFunctions.handle(self.config.time_parser, extra, reference, self.config.time_func)
 
             if parse_result.success:
                 parse_result.future_resolution[TimeTypeConstants.START_TIME] = DateTimeFormatUtil.format_time(

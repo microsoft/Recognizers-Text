@@ -2,7 +2,6 @@
 #  Licensed under the MIT License.
 
 from abc import abstractmethod
-from enum import Enum
 from typing import List, Optional, Pattern, Dict, Match
 from datetime import datetime
 import regex
@@ -12,14 +11,9 @@ from recognizers_date_time.date_time.constants import Constants, TimeTypeConstan
 from recognizers_date_time.date_time.extractors import DateTimeExtractor
 from recognizers_date_time.date_time.parsers import DateTimeParser, DateTimeParseResult
 from recognizers_date_time.date_time.utilities import DateTimeOptionsConfiguration, RegExpUtility, DateTimeFormatUtil, \
-    ExtractResultExtension
+    ExtractResultExtension, DateTimeExtra, TimeFunctions
 from recognizers_date_time.resources import BaseDateTime
-
-
-class TimeType(Enum):
-    CJKTime = 1
-    LessTime = 2
-    DigitTime = 3
+from recognizers_date_time.date_time.data_structures import TimeType
 
 
 class CJKTimeExtractorConfiguration(DateTimeOptionsConfiguration):
@@ -126,7 +120,7 @@ class CJKTimeParserConfiguration(DateTimeOptionsConfiguration):
 
     @property
     @abstractmethod
-    def function_map(self) -> Dict[TimeTypeConstants, TimeFunction]:
+    def function_map(self):
         raise NotImplementedError
 
 

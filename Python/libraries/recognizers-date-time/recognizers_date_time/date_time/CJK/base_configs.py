@@ -2,15 +2,15 @@
 #  Licensed under the MIT License.
 
 from typing import Dict
-from abc import abstractmethod, ABC
+from abc import abstractmethod
 
 from recognizers_number import BaseNumberExtractor, BaseNumberParser
-from .extractors import DateTimeExtractor
-from .parsers import DateTimeParser
-from .utilities import DateTimeUtilityConfiguration
+from recognizers_date_time.date_time.extractors import DateTimeExtractor
+from recognizers_date_time.date_time.parsers import DateTimeParser
+from recognizers_date_time.date_time.utilities import DateTimeUtilityConfiguration, DateTimeOptionsConfiguration
 
 
-class CJKCommonDateTimeParserConfiguration(ABC):
+class CJKCommonDateTimeParserConfiguration(DateTimeOptionsConfiguration):
     @property
     @abstractmethod
     def cardinal_extractor(self) -> BaseNumberExtractor:
@@ -167,8 +167,9 @@ class CJKCommonDateTimeParserConfiguration(ABC):
         raise NotImplementedError
 
     @property
+    @abstractmethod
     def day_of_month(self) -> Dict[str, int]:
-        return self._day_of_month
+        return NotImplementedError
 
     @property
     @abstractmethod

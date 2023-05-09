@@ -15,6 +15,7 @@ class Constants:
     SYS_DATETIME_DURATION: str = 'duration'
     SYS_DATETIME_SET: str = 'set'
     SYS_DATETIME_TIMEZONE: str = 'timezone'
+    SYS_DATETIME_DATETIMEALT: str = 'datetimealt'
 
     SYS_DATETIME_MERGED: str = 'datetimeV2'
 
@@ -92,6 +93,7 @@ class Constants:
 
     HALF_DAY_HOUR_COUNT = 12
     DAY_HOUR_COUNT = 24
+    DAY_HOUR_START = 0
     HOUR_SECOND_COUNT = 3600
     MINUTE_SECOND_COUNT = 60
     HALF_MID_DAY_DURATION_HOUR_COUNT = 2
@@ -169,6 +171,9 @@ class Constants:
     LATER_GROUP_NAME = 'later'
     LESS_GROUP_NAME = 'less'
     MORE_GROUP_NAME = 'more'
+    SPECIFIC_END_OF_GROUP_NAME = "SpecificEndOf"
+    TOMORROW_GROUP_NAME = "tomorrow"
+    UNIT_GROUP_NAME = "unit"
 
     TIME_OF_DAY_GROUP_NAME = 'timeOfDay'
     BUSINESS_DAY_GROUP_NAME = 'business'
@@ -204,6 +209,9 @@ class Constants:
     MID_MORNING = 'midmorning'
     MID_NIGHT = 'midnight'
 
+    #  Include the date mentioned, to make "before" -> "until" or "after" -> "since". Such as "on or earlier than 1/1/2016".
+    INCLUDE_GROUP_NAME = "include"
+
     CARDINAL = 'cardinal'
 
     DECADE = 'decade'
@@ -233,12 +241,19 @@ class Constants:
     REL_LATE = 'RelLate'
     COMMENT_EARLY = 'early'
     COMMENT_LATE = 'late'
+    COMMENT_WEEK_OF = "WeekOf"
 
     HALF = 'half'
 
     HAS_MOD = 'mod'
     LESS_THAN_MOD = 'less'
     MORE_THAN_MOD = 'more'
+
+    BEFORE_MOD = "before"
+    AFTER_MOD = "after"
+    UNTIL_MOD = "until"
+    SINCE_MOD = "since"
+    APPROX_MOD = "approx"
 
     # Holidays
     # These should not be constants, they should go on the resources files for English
@@ -262,6 +277,8 @@ class Constants:
     UTC_OFFSET_MINS_KEY = "utcOffsetMins"
     POSITIVE_SIGN = 1
     NEGATIVE_SIGN = -1
+    RESOLVE_TIMEZONE = "resolveTimeZone"
+    TIMEZONE_TEXT = "timezoneText"
 
     # hours of one half day
     HALF_DAY_HOUR_COUNT = 12
@@ -280,6 +297,7 @@ class TimeTypeConstants:
     VALUE: str = 'value'
     START_TIME: str = 'startTime'
     END_TIME: str = 'endTime'
+    DATETIME_ALT = "dateTimeAlt"
 
     START: str = 'start'
     END: str = 'end'

@@ -2,7 +2,7 @@ from typing import Dict
 from datetime import datetime
 from recognizers_date_time.date_time.constants import Constants
 from recognizers_date_time.date_time.utilities import TimeOfDayResolution, DateUtils, \
-    DateTimeFormatUtil, RangeTimexComponents
+    DateTimeFormatUtil, RangeTimexComponents, DateTimeResolutionKey
 
 
 date_period_timex_type_to_suffix = {
@@ -150,3 +150,32 @@ class TimexUtil:
     @staticmethod
     def generate_date_time_period_timex(begin_timex: str, end_timex: str, duration_timex: str):
         return f'({begin_timex},{end_timex},{duration_timex})'
+
+    @staticmethod
+    def parse_hour_from_time_timex(timex: str) -> int:
+        start = timex.index(Constants.TIME_TIMEX_PREFIX) + 1
+        end = timex.index(Constants.TIME_TIMEX_CONNECTOR)
+        if not end > 0:
+            end = len(timex)
+        hour = int(timex[start:end-start])
+        return hour
+
+    @staticmethod
+    def generate_date_time_timex(date_time: datetime) -> str:
+        return DateTimeFormatUtil.luis_date_time(date_time)
+
+    @staticmethod
+    def has_double_timex(comment: str) -> bool:
+        return comment == Constants.COMMENT_DOUBLETIMEX
+
+    @staticmethod
+    def process_double_timex(resolution_dict: Dict, future_key: str, past_key: str, origin_timex:str) -> Dict:
+        timexes = origin_timex.split(Constants.COMPOSTIE_TIMEX_DELIMITER)
+        if future_key not in resolution_dict or past_key not in resolution_dict or len(timexes) != 2:
+            return resolution_dict
+
+        future_resolution = resolution_dict[future_key]
+        past_resolution = resolution_dict[past_key]
+        future_resolution[DateTimeResolutionKey.timex] = timexes[0]
+        past_resolution[DateTimeResolutionKey.timex] = timexes[1]
+

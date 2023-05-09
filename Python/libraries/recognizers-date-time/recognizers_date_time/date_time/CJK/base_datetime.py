@@ -12,13 +12,13 @@ from recognizers_date_time.date_time.date_extractor import DateExtractor
 from recognizers_text.extractor import ExtractResult
 from recognizers_number.number.extractors import BaseNumberExtractor
 from recognizers_number.number.parsers import BaseNumberParser
-from ..constants import Constants, TimeTypeConstants
+from recognizers_date_time.date_time.constants import Constants, TimeTypeConstants
 from recognizers_number.number.constants import Constants as NumConstants
-from ..extractors import DateTimeExtractor
-from ..parsers import DateTimeParser, DateTimeParseResult
-from ..utilities import Token, merge_all_tokens, DateTimeResolutionResult, DateTimeUtilityConfiguration, AgoLaterUtil,\
-    DateTimeFormatUtil, RegExpUtility, AgoLaterMode, DateTimeOptionsConfiguration, DateTimeOptions, filter_ambiguity, \
-    TimexUtil, DurationParsingUtil
+from recognizers_date_time.date_time.extractors import DateTimeExtractor
+from recognizers_date_time.date_time.parsers import DateTimeParser, DateTimeParseResult
+from recognizers_date_time.date_time.utilities import Token, merge_all_tokens, DateTimeResolutionResult, \
+    DateTimeFormatUtil, RegExpUtility, DateTimeOptionsConfiguration, TimexUtil, DurationParsingUtil, \
+    ExtractResultExtension
 
 
 class CJKDateTimeExtractorConfiguration(DateTimeOptionsConfiguration):
@@ -109,7 +109,7 @@ class BaseCJKDateTimeExtractor(DateTimeExtractor):
 
         result = merge_all_tokens(tokens, source, self.extractor_type_name)
 
-        result = filter_ambiguity(result, source, self.config.ambiguity_date_time_filters)
+        result = ExtractResultExtension.filter_ambiguity(result, source, self.config.ambiguity_date_time_filters)
 
         return result
 
@@ -216,7 +216,10 @@ class BaseCJKDateTimeExtractor(DateTimeExtractor):
         return ret
 
 
-class CJKDateTimeParserConfiguration:
+MatchedTimex = namedtuple('MatchedTimex', ['matched', 'timex'])
+
+
+class CJKDateTimeParserConfiguration(DateTimeOptionsConfiguration):
     @property
     @abstractmethod
     def date_extractor(self) -> DateTimeExtractor:
@@ -391,9 +394,13 @@ class BaseCJKDateTimeParser(DateTimeParser):
     # parse if lunar contains
     def is_lunar_calendar(self, source: str):
         source = source.strip().lower()
-        match = regex.search(self.config.lunar_regex, source)
+        match = regex.match(self.config.lunar_regex, source)
         if match:
             return True
+        match = regex.match(self.config.lunar_holiday_regex, source)
+        if match:
+            return True
+        return False
 
     # merge a Date entity and a Time entity
     def merge_date_and_time(self, source: str, reference: datetime) -> DateTimeResolutionResult:
@@ -422,8 +429,8 @@ class BaseCJKDateTimeParser(DateTimeParser):
         # handle cases with time like 25時 which resolve to the next day
         timex_hour = TimexUtil.parse_hour_from_time_timex(pr2.timex_str)
         if timex_hour > Constants.DAY_HOUR_COUNT:
-            future_date.day = future_date.day + 1
-            past_date.day = past_date.day + 1
+            future_date.day += timedelta(days=1)
+            past_date.day += timedelta(days=1)
 
         hour = time.hour
         minute = time.minute
@@ -464,42 +471,84 @@ class BaseCJKDateTimeParser(DateTimeParser):
         if match_ago_and_later:
             duration_res = self.config.duration_extractor.extract(source, reference)
             pr1 = self.config.duration_parser.parse(duration_res[0], reference)
-            is_future = match_ago_and_later.Groups[Constants.LATER_GROUP_NAME].value
+            is_future = False
+            if RegExpUtility.get_group(match_ago_and_later, Constants.LATER_GROUP_NAME):
+                is_future = True
             timex = pr1.timex_str
 
             # handle less and more mode
-            if eod.Groups[Constants.LESS_GROUP_NAME].value:
+            if RegExpUtility.get_group(eod, Constants.LESS_GROUP_NAME):
                 result.mod = Constants.LESS_THAN_MOD
-            elif eod.Groups[Constants.MORE_GROUP_NAME].value:
+            elif RegExpUtility.get_group(eod, Constants.MORE_GROUP_NAME):
                 result.mod = Constants.MORE_THAN_MOD
 
             result_datetime = DurationParsingUtil.shift_date_time(timex, reference, future=is_future)
-            result.timex = TimexUtil.generate_date_time_period_timex(result_datetime)
+            result.timex = TimexUtil.generate_date_time_timex(result_datetime)
             result.future_value = result.past_value = result_datetime
             result.sub_date_time_entities = [pr1]
 
             result.success = True
             return result
 
-        if eod.Groups[Constants.SPECIFIC_END_OF_GROUP_NAME].value and ers.Count == 0:
+        if RegExpUtility.get_group(eod, Constants.SPECIFIC_END_OF_GROUP_NAME) and len(ers) == 0:
             result = self.parse_special_time_of_date(source, reference)
             return result
 
-        if eod.success and ers.Count != 1:
-            if eod.Groups[Constants.TOMORROW_GROUP_NAME]
+        if eod and len(ers) > 1:
+            if RegExpUtility.get_group(eod, Constants.TOMORROW_GROUP_NAME):
+                tomorrow_date = reference + timedelta(days=1)
+                result = DateTimeFormatUtil.resolve_end_of_day(DateTimeFormatUtil.format_date(tomorrow_date),
+                                                               tomorrow_date, tomorrow_date)
+            else:
+                result = DateTimeFormatUtil.resolve_end_of_day(DateTimeFormatUtil.format_date(reference),
+                                                               reference, reference)
+            return result
 
+        if len(ers) != 1:
+            return result
 
+        pr = self.config.time_parser.parse(ers[0], reference)
+        if not pr.value:
+            return result
 
+        time = pr.value.future_value
 
+        hour = time.hour
+        min = time.minute
+        sec = time.second
 
+        match = regex.search(self.config.time_of_special_day_regex, source)
+        if match:
+            swift = 0
+            self.config.adjust_by_time_of_day(match.group(0), hour, swift)
+            date = reference + timedelta(days=swift)
 
+            # in this situation, luisStr cannot end up with "ampm", because we always have a "morning" or "night"
+            time_str = pr.timex_str
+            if time_str.endswith(Constants.COMMENT_AMPM):
+                time_str = time_str[0:-4]
+
+            #  handle less and more mode
+            if RegExpUtility.get_group(match, Constants.LESS_GROUP_NAME):
+                result.mod = Constants.LESS_THAN_MOD
+            elif RegExpUtility.get_group(match, Constants.MORE_GROUP_NAME):
+                result.mod = Constants.MORE_THAN_MOD
+
+            time_str = Constants.TIME_TIMEX_PREFIX + DateTimeFormatUtil.to_str(hour, 2) + time_str[3:]
+            result.timex = DateTimeFormatUtil.format_date(date) + time_str
+            result.future_value = datetime(
+                date.year, date.month, date.day, hour, min, sec)
+            result.past_value = result.future_value
+            result.success = True
+            return result
+        return result
 
     def parse_special_time_of_date(self, source: str, reference: datetime) -> DateTimeResolutionResult:
-        result = DateTimeResolutionResult
+        result = DateTimeResolutionResult()
         ers = self.config.date_extractor.extract(source, reference)
 
         if len(ers) != 1:
-            return  result
+            return result
 
         parse_result = self.config.date_parser.parse(ers[0], reference)
         future_date = parse_result.value.future_value
@@ -507,7 +556,6 @@ class BaseCJKDateTimeParser(DateTimeParser):
 
         result = DateTimeFormatUtil.resolve_end_of_day(parse_result.timex_str, future_date, past_date)
         return result
-
 
     # handle cases like "5分钟前", "1小时以后"
     def parser_duration_with_ago_and_later(self, source: str, reference: datetime) -> DateTimeResolutionResult:
@@ -519,52 +567,62 @@ class BaseCJKDateTimeParser(DateTimeParser):
 
             if match_ago_later:
                 parse_result = self.config.duration_parser.parse(duration_result[0], reference)
-                is_future = match_ago_later.Groups[Constants.LATER_GROUP_NAME].Success
+                is_future = False
+                if RegExpUtility.get_group(match_ago_later, Constants.LATER_GROUP_NAME):
+                    is_future = True
                 timex = parse_result.timex_str
 
                 result_date_time = DurationParsingUtil.shift_date_time(timex, reference, future=is_future)
-                result.timex = TimexUtil.generate_date_time_period_timex(result_date_time)
-                result.future_value = result.past_value = result_date_time
+                result.timex = TimexUtil.generate_date_time_timex(result_date_time)
+                result.future_value = result_date_time
+                result.past_value = result_date_time
                 result.sub_date_time_entities = [parse_result]
 
                 result.success = True
 
                 return result
 
-            match  = regex.match(self.config.datetime_period_unit_regex, source)
+            match = regex.match(self.config.datetime_period_unit_regex, source)
             if match:
                 suffix = source[duration_result[0].start:match.start() + duration_result[0].length].strip()
                 src_unit = RegExpUtility.get_group(match, Constants.UNIT_GROUP_NAME)
 
                 number_str = source[duration_result[0].start:match.start() - duration_result[0].start].strip()
-                number = ConevertCJKToNum(number_str)
+                number = self.convert_CJK_to_num(number_str)
 
-                if src_unit in self.config.unit_map():
-                    unit_str = self.config.unit_map()[src_unit]
-                    before_match = regex.match(self.config.before_regex, suffix)
-                    if before_match and suffix.startswith(before_match):
-                        # TODO: something here I dunno
-                        date = DateObject
+                if src_unit in self.config.unit_map:
+                    unit_str = self.config.unit_map[src_unit]
+                    before_match = regex.search(self.config.before_regex, suffix)
+                    if before_match and suffix.startswith(before_match.group()):
                         if unit_str == Constants.TIMEX_HOUR:
-                            reference.hour = reference.hour - number
+                            date = timedelta(hours=-number)
+                        elif unit_str == Constants.TIMEX_MINUTE:
+                            date = timedelta(minutes=-number)
+                        elif unit_str == Constants.TIMEX_SECOND:
+                            date = timedelta(seconds=-number)
+                        else:
+                            return result
 
-                        result.timex = DateTimeFormatUtil.luis_date(date)
+                        result.timex = DateTimeFormatUtil.luis_date_from_datetime(date)
                         result.future_value = result.past_value = date
                         result.success = True
                         return result
 
-                    after_match = regex.match(self.config.after_regex, source)
-                    if after_match and suffix.startswith(after_match):
-                        if before_match and suffix.startswith(before_match):
-                            # TODO: something here I dunno
-                            date = DateObject
-                            if unit_str == Constants.TIMEX_HOUR:
-                                reference.hour = reference.hour - number
-
-                            result.timex = DateTimeFormatUtil.luis_date(date)
-                            result.future_value = result.past_value = date
-                            result.success = True
+                    after_match = regex.search(self.config.after_regex, source)
+                    if after_match and suffix.startswith(after_match.group()):
+                        if unit_str == Constants.TIMEX_HOUR:
+                            date = timedelta(hours=number)
+                        elif unit_str == Constants.TIMEX_MINUTE:
+                            date = timedelta(minutes=number)
+                        elif unit_str == Constants.TIMEX_SECOND:
+                            date = timedelta(seconds=number)
+                        else:
                             return result
+
+                        result.timex = DateTimeFormatUtil.luis_date_from_datetime(date)
+                        result.future_value = result.past_value = date
+                        result.success = True
+                        return result
         return result
 
     def convert_CJK_to_num(self, num_str: str) -> int:
@@ -572,6 +630,8 @@ class BaseCJKDateTimeParser(DateTimeParser):
         er: ExtractResult = next(
             iter(self.config.integer_extractor.extract(num_str)), None)
         if er and er.type == NumConstants.SYS_NUM_INTEGER:
-            num = int(self.config.number_parser.parse(er).value)
-
+            try:
+                num = int(self.config.number_parser.parse(er).value)
+            except ValueError:
+                num = 0
         return num
