@@ -25797,5 +25797,107 @@
         }
       }
     ]
+  },
+  {
+    "Input": "the photograph appeared in the 01/07 issue of the magazine",
+    "Context": {
+      "ReferenceDateTime": "2023-05-05T00:00:00"
+    },
+    "Results": [
+      {
+        "Start": 27,
+        "End": 35,
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-01-07",
+              "type": "date",
+              "value": "2023-01-07"
+            },
+            {
+              "timex": "XXXX-01-07",
+              "type": "date",
+              "value": "2024-01-07"
+            }
+          ]
+        },
+        "Text": "the 01/07",
+        "TypeName": "datetimeV2.date"
+      }
+    ]
+  },
+  {
+    "Input": "the contract is expected to start on 10/11",
+    "Context": {
+      "ReferenceDateTime": "2023-05-05T00:00:00"
+    },
+    "Results": [
+      {
+        "Start": 37,
+        "End": 41,
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-10-11",
+              "type": "date",
+              "value": "2022-10-11"
+            },
+            {
+              "timex": "XXXX-10-11",
+              "type": "date",
+              "value": "2023-10-11"
+            }
+          ]
+        },
+        "Text": "10/11",
+        "TypeName": "datetimeV2.date"
+      }
+    ]
+  },
+  {
+    "Input": "the software used in the 11/3/2020 election can be easily hacked",
+    "Context": {
+      "ReferenceDateTime": "2023-05-05T00:00:00"
+    },
+    "Results": [
+      {
+        "Start": 21,
+        "End": 33,
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-11-03",
+              "type": "date",
+              "value": "2020-11-03"
+            }
+          ]
+        },
+        "Text": "the 11/3/2020",
+        "TypeName": "datetimeV2.date"
+      }
+    ]
+  },
+  {
+    "Input": "this article was published on 06/10/2020",
+    "Context": {
+      "ReferenceDateTime": "2023-05-05T00:00:00"
+    },
+    "Results": [
+      {
+        "Start": 30,
+        "End": 39,
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2020-06-10",
+              "type": "date",
+              "value": "2020-06-10"
+            }
+          ]
+        },
+        "Text": "06/10/2020",
+        "TypeName": "datetimeV2.date"
+      }
+    ]
   }
 ]

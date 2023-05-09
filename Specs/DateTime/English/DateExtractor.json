@@ -1795,5 +1795,49 @@
         "Length": 10
       }
     ]
+  },
+  {
+    "Input": "the photograph appeared in the 01/07 issue of the magazine",
+    "Results": [
+      {
+        "Text": "the 01/07",
+        "Type": "date",
+        "Start": 27,
+        "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "the contract is expected to start on 10/11",
+    "Results": [
+      {
+        "Text": "10/11",
+        "Type": "date",
+        "Start": 37,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "the software used in the 11/3/2020 election can be easily hacked",
+    "Results": [
+      {
+        "Text": "the 11/3/2020",
+        "Type": "date",
+        "Start": 21,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "this article was published on 06/10/2020",
+    "Results": [
+      {
+        "Text": "06/10/2020",
+        "Type": "date",
+        "Start": 30,
+        "Length": 10
+      }
+    ]
   }
 ]
