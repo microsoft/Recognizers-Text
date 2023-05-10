@@ -281,28 +281,6 @@ DecadeRegexInCJK: !simpleRegex
 DecadeRegex: !nestedRegex
   def: ({DateRangePrepositions})(?<centurysuf>({CenturyRegex}|{CenturyRegexInCJK}|{RelativeCenturyRegex}))?の?(?<century>(?<firsttwoyearnum>\d{2}(?=\d)))?(?<decade>((\d{1}0)|{DecadeRegexInCJK}))年代(のごろ)?
   references: [DateRangePrepositions, CenturyRegex, CenturyRegexInCJK, RelativeCenturyRegex, DecadeRegexInCJK]
-#TimeExtractorCJK
-TimeHourNumRegex: !simpleRegex
-  def: (?<!\d[,.]?)(30|[0-2]?\d)
-TimeMinuteNumRegex: !simpleRegex
-  def: ([0-5]?\d)
-TimeSecondNumRegex: !simpleRegex
-  def: ([0-5]?\d)
-TimeHourCJKRegex: !simpleRegex
-  def: (([零〇一二两三四五六七八九]|二十[一二三四]?|十[一二三四五六七八九]?)(つ)?)
-TimeMinuteCJKRegex: !simpleRegex
-  def: ([二三四五]?十[一二三四五六七八九]?|六十|[零〇一二三四五六七八九])
-TimeSecondCJKRegex: !nestedRegex
-  def: '{TimeMinuteCJKRegex}'
-  references: [TimeMinuteCJKRegex]
-TimeClockDescRegex: !simpleRegex
-  def: 時
-TimeMinuteDescRegex: !simpleRegex
-  def: (分)
-TimeSecondDescRegex: !simpleRegex
-  def: (秒)
-TimeBanHourPrefixRegex: !simpleRegex
-  def: (第)
 #DateTimeExtractorCJK
 PrepositionRegex: !simpleRegex
   def: (?<prep>^(,?(夜の|的|の(?<timeOfDay>朝|夜|午後|晩)?|t),?|在)$)
@@ -481,6 +459,28 @@ SetEachDayRegex: !simpleRegex
   def: (毎|各|毎一)(天|日)\s*$
 SetEachDateUnitRegex: !simpleRegex
   def: (毎)(年|月|週)\s*$
+#TimeExtractorCJK
+TimeHourNumRegex: !simpleRegex
+  def: (?<!\d[,.]?)(30|[0-2]?\d)
+TimeMinuteNumRegex: !simpleRegex
+  def: ([0-5]?\d)
+TimeSecondNumRegex: !simpleRegex
+  def: ([0-5]?\d)
+TimeHourCJKRegex: !simpleRegex
+  def: (([零〇一二两三四五六七八九]|二十[一二三四]?|十[一二三四五六七八九]?)(つ)?)
+TimeMinuteCJKRegex: !simpleRegex
+  def: ([二三四五]?十[一二三四五六七八九]?|六十|[零〇一二三四五六七八九])
+TimeSecondCJKRegex: !nestedRegex
+  def: '{TimeMinuteCJKRegex}'
+  references: [TimeMinuteCJKRegex]
+TimeClockDescRegex: !simpleRegex
+  def: 時
+TimeMinuteDescRegex: !simpleRegex
+  def: (分)
+TimeSecondDescRegex: !simpleRegex
+  def: (秒)
+TimeBanHourPrefixRegex: !simpleRegex
+  def: (第)
 # e.g: 12点, 十二点, 十二点整
 TimeHourRegex: !nestedRegex
   def: (?<!{TimeBanHourPrefixRegex})(?<hour>{TimeHourCJKRegex}|{TimeHourNumRegex}){TimeClockDescRegex}
