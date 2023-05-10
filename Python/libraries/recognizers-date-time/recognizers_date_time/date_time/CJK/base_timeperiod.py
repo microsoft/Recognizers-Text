@@ -2,7 +2,7 @@
 #  Licensed under the MIT License.
 
 from abc import abstractmethod
-from typing import List, Optional, Dict, Match
+from typing import List, Optional, Dict, Match, Pattern
 from datetime import datetime
 from collections import namedtuple
 import regex
@@ -19,12 +19,12 @@ from recognizers_date_time.date_time.data_structures import PeriodType
 class CJKTimePeriodExtractorConfiguration(DateTimeOptionsConfiguration):
     @property
     @abstractmethod
-    def regexes(self) -> Dict[regex, PeriodType]:
+    def regexes(self) -> Dict[Pattern, PeriodType]:
         raise NotImplementedError
 
     @property
     @abstractmethod
-    def ambiguity_time_period_filters_dict(self) -> Dict[regex, regex]:
+    def ambiguity_time_period_filters_dict(self) -> Dict[Pattern, Pattern]:
         raise NotImplementedError
 
 
