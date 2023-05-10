@@ -27,4 +27,3 @@ from .french import *
 from .portuguese import *
 from .dutch import *
 from .CJK import *
-from .japanese import *
