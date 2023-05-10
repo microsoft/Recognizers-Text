@@ -25,11 +25,13 @@ class MergedParserUtil:
         slot.value = MergedParserUtil.date_time_resolution(slot, config)
 
         # Change the type at last for the after or before modes
-        slot.type = f"{MergedParserUtil.parser_type_name}.{MergedParserUtil.determine_datetime_type(slot.type, has_mod, config)}"
+        slot.type = f"{MergedParserUtil.parser_type_name}." \
+                    f"{MergedParserUtil.determine_datetime_type(slot.type, has_mod, config)}"
         return slot
 
     @staticmethod
-    def date_time_resolution(slot: DateTimeParseResult, config: DateTimeOptionsConfiguration) -> Optional[Dict[str, object]]:
+    def date_time_resolution(slot: DateTimeParseResult, config: DateTimeOptionsConfiguration) -> \
+            Optional[Dict[str, object]]:
         if not slot:
             return None
 
@@ -111,7 +113,8 @@ class MergedParserUtil:
             res = MergedParserUtil.resolve_week_of(res, Constants.RESOLVE_TO_PAST_KEY)
 
         if comment and TimexUtil.has_double_timex(comment):
-            res = TimexUtil.process_double_timex(res, Constants.RESOLVE_TO_FUTURE_KEY, Constants.RESOLVE_TO_PAST_KEY, timex)
+            res = TimexUtil.process_double_timex(res, Constants.RESOLVE_TO_FUTURE_KEY,
+                                                 Constants.RESOLVE_TO_PAST_KEY, timex)
 
         for p in res.values():
             if type(p) == Dict[str, str]:
@@ -180,7 +183,8 @@ class MergedParserUtil:
     def generate_resolution(dt_type: str, resolution_dict: Dict[str, str], mod: str) -> Dict[str, str]:
         res: Dict[str, str] = {}
         if dt_type == Constants.SYS_DATETIME_DATETIME:
-            res = MergedParserUtil.add_single_datetime_to_resolution(resolution_dict, TimeTypeConstants.DATETIME, mod, res)
+            res = MergedParserUtil.add_single_datetime_to_resolution(resolution_dict,
+                                                                     TimeTypeConstants.DATETIME, mod, res)
         elif dt_type == Constants.SYS_DATETIME_TIME:
             res = MergedParserUtil.add_single_datetime_to_resolution(resolution_dict, TimeTypeConstants.TIME, mod, res)
         elif dt_type == Constants.SYS_DATETIME_DATE:

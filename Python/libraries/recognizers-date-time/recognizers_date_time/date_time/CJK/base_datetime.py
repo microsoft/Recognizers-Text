@@ -1,6 +1,3 @@
-#  Copyright (c) Microsoft Corporation. All rights reserved.
-#  Licensed under the MIT License.
-
 from abc import abstractmethod
 from typing import List, Optional, Pattern, Dict, Match
 from datetime import datetime, timedelta
@@ -186,7 +183,7 @@ class BaseCJKDateTimeExtractor(DateTimeExtractor):
                 tokens.append(Token(begin, end))
 
         # TimePeriodExtractor cases using TimeOfDayRegex are not processed here
-        match_time_of_today = regex.search(self.config.time_of_special_day_regex, source)
+        match_time_of_today = RegExpUtility.get_matches(self.config.time_of_special_day_regex, source)
         match_time_of_day = regex.search(self.config.time_of_day_regex, source)
 
         if match_time_of_today and not match_time_of_day:
@@ -595,11 +592,11 @@ class BaseCJKDateTimeParser(DateTimeParser):
                     before_match = regex.search(self.config.before_regex, suffix)
                     if before_match and suffix.startswith(before_match.group()):
                         if unit_str == Constants.TIMEX_HOUR:
-                            date = timedelta(hours=-number)
+                            date = reference + timedelta(hours=-number)
                         elif unit_str == Constants.TIMEX_MINUTE:
-                            date = timedelta(minutes=-number)
+                            date = reference + timedelta(minutes=-number)
                         elif unit_str == Constants.TIMEX_SECOND:
-                            date = timedelta(seconds=-number)
+                            date = reference + timedelta(seconds=-number)
                         else:
                             return result
 
@@ -611,11 +608,11 @@ class BaseCJKDateTimeParser(DateTimeParser):
                     after_match = regex.search(self.config.after_regex, source)
                     if after_match and suffix.startswith(after_match.group()):
                         if unit_str == Constants.TIMEX_HOUR:
-                            date = timedelta(hours=number)
+                            date = reference + timedelta(hours=number)
                         elif unit_str == Constants.TIMEX_MINUTE:
-                            date = timedelta(minutes=number)
+                            date = reference + timedelta(minutes=number)
                         elif unit_str == Constants.TIMEX_SECOND:
-                            date = timedelta(seconds=number)
+                            date = reference + timedelta(seconds=number)
                         else:
                             return result
 

@@ -95,8 +95,6 @@ class TimePeriodFunctions:
         if right_time.hour < left_time.hour:
             right_time += timedelta(days=1)
 
-
-
         left_timex = TimePeriodFunctions.build_timex(left_result)
         right_timex = TimePeriodFunctions.build_timex(right_result)
         span_timex = TimePeriodFunctions.build_span(left_result, right_result)

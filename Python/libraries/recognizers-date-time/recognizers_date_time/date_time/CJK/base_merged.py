@@ -392,7 +392,7 @@ class BaseCJKMergedDateTimeParser(DateTimeParser):
                 if before_match.get_group(Constants.INCLUDE_GROUP_NAME):
                     has_inclusive_modifier = True
 
-            elif after_match and not MergedParserUtil._is_duration_with_ago_and_later(er) and not since_match_suffix:
+            elif after_match and not MergedParserUtil.is_duration_with_ago_and_later(er) and not since_match_suffix:
                 has_after = True
                 er.start += after_match.start()
                 er.length -= len(after_match.group())

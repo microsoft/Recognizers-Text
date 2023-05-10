@@ -1,6 +1,3 @@
-#  Copyright (c) Microsoft Corporation. All rights reserved.
-#  Licensed under the MIT License.
-
 from abc import abstractmethod
 from typing import List, Optional, Dict, Match, Pattern
 from datetime import datetime
@@ -74,8 +71,19 @@ class BaseCJKTimePeriodExtractor(DateTimeExtractor):
             else:
                 last = i
 
-        result = ExtractResultExtension.filter_ambiguity(result, source, self.config.ambiguity_time_filters_dict)
+        result = ExtractResultExtension.filter_ambiguity(result, source, self.config.ambiguity_time_period_filters_dict)
 
+        return result
+
+    @staticmethod
+    def __get_data(source: Dict[Match, any], key: Match) -> any:
+        if key not in source:
+            return None
+
+        result = DateTimeExtra()
+        result.data_type = source[key]
+        result.named_entity = key.capturesdict()
+        result.match = key
         return result
 
 
@@ -127,7 +135,8 @@ class BaseCJKTimePeriodParser(DateTimeParser):
             parse_result = self.parse_time_of_day(source.text, reference)
 
             if not parse_result.success:
-                parse_result = TimePeriodFunctions.handle(self.config.time_parser, extra, reference, self.config.time_func)
+                parse_result = TimePeriodFunctions.handle(self.config.time_parser, extra,
+                                                          reference, self.config.time_func)
 
             if parse_result.success:
                 parse_result.future_resolution[TimeTypeConstants.START_TIME] = DateTimeFormatUtil.format_time(
@@ -167,12 +176,12 @@ class BaseCJKTimePeriodParser(DateTimeParser):
         if (end_hour == begin_hour + Constants.HALF_MID_DAY_DURATION_HOUR_COUNT) and \
                 (begin_hour == Constants.MORNING_BEGIN_HOUR or begin_hour == Constants.AFTERNOON_BEGIN_HOUR):
             result.Comment = Constants.COMMENT_EARLY
-            result.Mod = Constants.EARLY_MOD
+            result.Mod = TimeTypeConstants.EARLY_MOD
 
         if (begin_hour == end_hour - Constants.HALF_MID_DAY_DURATION_HOUR_COUNT) and \
                 (end_hour == Constants.MORNING_BEGIN_HOUR or end_hour == Constants.AFTERNOON_BEGIN_HOUR):
-            result.Comment = Constants.COOMENT_LATE
-            result.Mod = Constants.LATE_MOD
+            result.Comment = Constants.COMMENT_LATE
+            result.Mod = TimeTypeConstants.LATE_MOD
 
         result.timex = parameters['timex']
         result.future_value = result.past_value = [

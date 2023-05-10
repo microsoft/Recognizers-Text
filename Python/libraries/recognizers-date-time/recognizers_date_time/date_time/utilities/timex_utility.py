@@ -12,6 +12,7 @@ date_period_timex_type_to_suffix = {
         3: Constants.TIMEX_YEAR,
     }
 
+
 class TimexUtil:
 
     @staticmethod
@@ -104,8 +105,10 @@ class TimexUtil:
         return f"({timex1},{timex2},P{unit_count}{date_period_timex_type_to_suffix[timex_type]})"
 
     @staticmethod
-    def generate_date_period_timex(begin, end, timex_type, alternative_begin=datetime.now(), alternative_end=datetime.now()):
-        equal_duration_length = (end - begin).days == (alternative_end - alternative_begin).days or datetime.now() == alternative_end == alternative_begin
+    def generate_date_period_timex(begin, end, timex_type, alternative_begin=datetime.now(),
+                                   alternative_end=datetime.now()):
+        equal_duration_length = (end - begin).days == (alternative_end - alternative_begin).days or \
+                                datetime.now() == alternative_end == alternative_begin
         unit_count = TimexUtil.generate_date_period_timex_unit_count(begin, end, timex_type, equal_duration_length)
         date_period_timex = f'P{unit_count}{date_period_timex_type_to_suffix[timex_type]}'
 

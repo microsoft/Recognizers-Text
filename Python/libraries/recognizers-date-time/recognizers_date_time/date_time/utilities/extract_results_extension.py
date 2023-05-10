@@ -3,6 +3,7 @@ from typing import List, Dict, Pattern
 from regex import regex
 
 from recognizers_text.extractor import ExtractResult
+from recognizers_text.utilities import RegExpUtility
 
 
 class ExtractResultExtension:
@@ -53,7 +54,7 @@ class ExtractResultExtension:
                 for er in reversed(extract_results):
 
                     if regex.match(key, er.text):
-                        matches = regex.search(value, text)
+                        matches = RegExpUtility.get_matches(value, text)
 
                         if any(m.index < er.start + er.length and m.index + m.length > er.start for m in matches):
                             extract_results.remove(er)

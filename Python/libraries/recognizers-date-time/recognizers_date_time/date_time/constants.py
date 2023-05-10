@@ -280,9 +280,6 @@ class Constants:
     RESOLVE_TIMEZONE = "resolveTimeZone"
     TIMEZONE_TEXT = "timezoneText"
 
-    # hours of one half day
-    HALF_DAY_HOUR_COUNT = 12
-
 
 class TimeTypeConstants:
     DATE: str = 'date'
