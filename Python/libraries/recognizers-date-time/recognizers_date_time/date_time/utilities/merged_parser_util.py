@@ -362,15 +362,14 @@ class MergedParserUtil:
 
     @staticmethod
     def resolve_week_of(resolution_dict: Dict, key_name: str) -> Dict:
-        # TODO: figure this one out
-        # if key_name in resolution_dict:
-        #     resolution: Dict[str, str] = resolution_dict[key_name]
-        #
-        #     monday = datetime.datetime.strptime(resolution[DateTimeResolutionKey.start], '%A')
-        #     resolution[DateTimeResolutionKey.timex] = DateTimeFormatUtil.to_iso_week_timex(monday)
-        #
-        #     resolution_dict.pop(key_name)
-        #     resolution_dict[key_name] = resolution
+        if key_name in resolution_dict:
+            resolution: Dict[str, str] = resolution_dict[key_name]
+
+            monday = datetime.datetime.strptime(resolution[DateTimeResolutionKey.start], '%A')
+            resolution[DateTimeResolutionKey.timex] = DateTimeFormatUtil.to_iso_week_timex(monday)
+
+            resolution_dict.pop(key_name)
+            resolution_dict[key_name] = resolution
         return resolution_dict
 
 

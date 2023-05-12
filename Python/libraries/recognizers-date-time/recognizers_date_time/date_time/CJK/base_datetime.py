@@ -76,7 +76,7 @@ class CJKDateTimeExtractorConfiguration(DateTimeOptionsConfiguration):
 
     @property
     @abstractmethod
-    def ambiguity_date_time_filters(self) -> Dict:
+    def ambiguity_date_time_filters(self) -> Dict[Pattern, Pattern]:
         raise NotImplementedError
 
     @abstractmethod
@@ -150,17 +150,19 @@ class BaseCJKDateTimeExtractor(DateTimeExtractor):
                 middle_end = ers[j].start
 
                 if middle_begin > middle_end:
-                    continue
+                    break
 
                 middle = source[middle_begin:middle_end].strip().lower()
 
-                if self.config.is_connector_token(middle):
+                if not middle or self.config.is_connector_token(middle) or \
+                        RegExpUtility.is_exact_match(self.config.preposition_regex, middle, False):
                     begin = ers[i].start
                     end = ers[j].start + ers[j].length
                     tokens.append(Token(begin, end))
                 i = j + 1
                 continue
             i = j
+        return tokens
 
     # Parse a specific time of today, tonight, this afternoon, "今天下午七点"
     def time_of_today(self, source: str, reference: datetime) -> List[Token]:
@@ -326,7 +328,7 @@ class CJKDateTimeParserConfiguration(DateTimeOptionsConfiguration):
         raise NotImplementedError
 
     @abstractmethod
-    def adjust_by_time_of_day(self, source: str, hour: int, swift: int):
+    def adjust_by_time_of_day(self, source: str, hour: int, swift: int) -> None:
         raise NotImplementedError
 
 
@@ -491,7 +493,7 @@ class BaseCJKDateTimeParser(DateTimeParser):
             result = self.parse_special_time_of_date(source, reference)
             return result
 
-        if eod and len(ers) > 1:
+        if eod and len(ers) != 1:
             if RegExpUtility.get_group(eod, Constants.TOMORROW_GROUP_NAME):
                 tomorrow_date = reference + timedelta(days=1)
                 result = DateTimeFormatUtil.resolve_end_of_day(DateTimeFormatUtil.format_date(tomorrow_date),

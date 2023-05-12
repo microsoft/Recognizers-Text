@@ -184,7 +184,7 @@ class BaseCJKMergedDateTimeExtractor(DateTimeExtractor):
                 extract_result.length += mod_len
                 extract_result.text = source[extract_result.start:extract_result.length + 1]
 
-                extract_result.Metadata = self.assign_mod_metadate(extract_result.Metadata)
+                extract_result.Metadata = self.assign_mod_metadata(extract_result.Metadata)
 
             match = RegExpUtility.match_begin(self.config.after_regex, after_str, True)
             if match:
@@ -192,7 +192,7 @@ class BaseCJKMergedDateTimeExtractor(DateTimeExtractor):
                 extract_result.length += mod_len
                 extract_result.text = source[extract_result.start:extract_result.length + 1]
 
-                extract_result.Metadata = self.assign_mod_metadate(extract_result.Metadata)
+                extract_result.Metadata = self.assign_mod_metadata(extract_result.Metadata)
 
             match = RegExpUtility.match_begin(self.config.until_regex, before_str, True)
             if match:
@@ -201,7 +201,7 @@ class BaseCJKMergedDateTimeExtractor(DateTimeExtractor):
                 extract_result.start -= mod_len
                 extract_result.text = source[extract_result.start:extract_result.length]
 
-                extract_result.Metadata = self.assign_mod_metadate(extract_result.Metadata)
+                extract_result.Metadata = self.assign_mod_metadata(extract_result.Metadata)
 
             match = RegExpUtility.match_begin(self.config.until_regex, after_str, True)
             if match:
@@ -210,7 +210,7 @@ class BaseCJKMergedDateTimeExtractor(DateTimeExtractor):
                 extract_result.start -= mod_len
                 extract_result.text = source[extract_result.start:extract_result.length]
 
-                extract_result.Metadata = self.assign_mod_metadate(extract_result.Metadata)
+                extract_result.Metadata = self.assign_mod_metadata(extract_result.Metadata)
 
             match = RegExpUtility.match_begin(self.config.since_prefix_regex, before_str, True)
             if match and self.ambiguous_range_checker(before_str, source, extract_result):
@@ -219,7 +219,7 @@ class BaseCJKMergedDateTimeExtractor(DateTimeExtractor):
                 extract_result.start -= mod_len
                 extract_result.text = source[extract_result.start:extract_result.length]
 
-                extract_result.Metadata = self.assign_mod_metadate(extract_result.Metadata)
+                extract_result.Metadata = self.assign_mod_metadata(extract_result.Metadata)
 
             match = RegExpUtility.match_begin(self.config.since_prefix_regex, after_str, True)
             if match and self.ambiguous_range_checker(after_str, source, extract_result):
@@ -228,7 +228,7 @@ class BaseCJKMergedDateTimeExtractor(DateTimeExtractor):
                 extract_result.start -= mod_len
                 extract_result.text = source[extract_result.start:extract_result.length]
 
-                extract_result.Metadata = self.assign_mod_metadate(extract_result.Metadata)
+                extract_result.Metadata = self.assign_mod_metadata(extract_result.Metadata)
 
             match = RegExpUtility.match_begin(self.config.around_suffix_regex, before_str, True)
             if match:
@@ -237,7 +237,7 @@ class BaseCJKMergedDateTimeExtractor(DateTimeExtractor):
                 extract_result.start -= mod_len
                 extract_result.text = source[extract_result.start:extract_result.length]
 
-                extract_result.Metadata = self.assign_mod_metadate(extract_result.Metadata)
+                extract_result.Metadata = self.assign_mod_metadata(extract_result.Metadata)
 
             match = RegExpUtility.match_begin(self.config.around_suffix_regex, after_str, True)
             if match:
@@ -246,7 +246,7 @@ class BaseCJKMergedDateTimeExtractor(DateTimeExtractor):
                 extract_result.start -= mod_len
                 extract_result.text = source[extract_result.start:extract_result.length]
 
-                extract_result.Metadata = self.assign_mod_metadate(extract_result.Metadata)
+                extract_result.Metadata = self.assign_mod_metadata(extract_result.Metadata)
 
             match = RegExpUtility.match_begin(self.config.equal_regex, before_str, True)
             if match:
@@ -255,7 +255,7 @@ class BaseCJKMergedDateTimeExtractor(DateTimeExtractor):
                 extract_result.start -= mod_len
                 extract_result.text = source[extract_result.start:extract_result.length]
 
-                extract_result.Metadata = self.assign_mod_metadate(extract_result.Metadata)
+                extract_result.Metadata = self.assign_mod_metadata(extract_result.Metadata)
 
         return extract_results
 
@@ -298,7 +298,7 @@ class BaseCJKMergedDateTimeExtractor(DateTimeExtractor):
                 return False
         return True
 
-    def assign_mod_metadate(self, metadata: MetaData) -> MetaData:
+    def assign_mod_metadata(self, metadata: MetaData) -> MetaData:
         if not metadata:
             metadata = MetaData()
         metadata.has_mod = True
@@ -387,7 +387,7 @@ class BaseCJKMergedDateTimeParser(DateTimeParser):
                 has_before = True
                 er.start += before_match.start()
                 er.length -= len(before_match.group())
-                er.text = er.text[before_match.start():]
+                er.text = er.text[er.length]
                 mod_str = before_match.group()
                 if before_match.get_group(Constants.INCLUDE_GROUP_NAME):
                     has_inclusive_modifier = True

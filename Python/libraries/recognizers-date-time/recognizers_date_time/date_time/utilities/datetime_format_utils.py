@@ -159,4 +159,5 @@ class DateTimeFormatUtil:
 
     @staticmethod
     def to_iso_week_timex(date: datetime) -> str:
-        return NotImplementedError
+        year, week_num = date.isocalendar()[:2]
+        return f"{year}-W{week_num:02}"
