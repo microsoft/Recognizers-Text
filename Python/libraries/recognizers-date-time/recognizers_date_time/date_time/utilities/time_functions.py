@@ -86,7 +86,7 @@ class TimeFunctions:
                 result.comment = Constants.COMMENT_AM
                 no_desc = False
 
-        if no_desc and hour <= Constants.HALF_DAY_HOUR_COUNT and hour > Constants.DAY_HOUR_COUNT:
+        if no_desc and hour <= Constants.HALF_DAY_HOUR_COUNT and hour > Constants.DAY_HOUR_START:
             result.comment = Constants.COMMENT_AMPM
 
         result.future_value = DateUtils.safe_create_from_min_value(

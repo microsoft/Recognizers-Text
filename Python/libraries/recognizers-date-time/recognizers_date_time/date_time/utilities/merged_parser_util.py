@@ -105,6 +105,8 @@ class MergedParserUtil:
         # If 'ampm', double our resolution accordingly
         if comment and comment == Constants.COMMENT_AMPM:
             if res[Constants.RESOLVE_KEY]:
+                MergedParserUtil.resolve_ampm(res, Constants.RESOLVE_KEY)
+            else:
                 MergedParserUtil.resolve_ampm(res, Constants.RESOLVE_TO_PAST_KEY)
                 MergedParserUtil.resolve_ampm(res, Constants.RESOLVE_TO_FUTURE_KEY)
 

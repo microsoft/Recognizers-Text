@@ -153,7 +153,7 @@ class BaseCJKTimePeriodParser(DateTimeParser):
                 result.timex_str = parse_result.timex if parse_result is not None else ''
                 result.resolution_str = ''
 
-        return result
+        return None
 
     def filter_results(self, query: str, candidate_results: List[DateTimeParseResult]):
         return candidate_results
@@ -179,7 +179,7 @@ class BaseCJKTimePeriodParser(DateTimeParser):
             result.Mod = TimeTypeConstants.EARLY_MOD
 
         if (begin_hour == end_hour - Constants.HALF_MID_DAY_DURATION_HOUR_COUNT) and \
-                (end_hour == Constants.MORNING_BEGIN_HOUR or end_hour == Constants.AFTERNOON_BEGIN_HOUR):
+                (end_hour == Constants.MORNING_END_HOUR or end_hour == Constants.AFTERNOON_END_HOUR):
             result.Comment = Constants.COMMENT_LATE
             result.Mod = TimeTypeConstants.LATE_MOD
 
@@ -188,7 +188,7 @@ class BaseCJKTimePeriodParser(DateTimeParser):
             DateUtils.safe_create_from_min_value(
                 year, month, day, parameters['begin_hour'], 0, 0),
             DateUtils.safe_create_from_min_value(
-                year, month, day, parameters['end_hour'], parameters['end_min'], 0)
+                year, month, day, parameters['end_hour'], parameters['end_min'], parameters['end_min'])
         ]
 
         result.success = True

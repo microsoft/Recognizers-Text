@@ -35,7 +35,7 @@ class TimePeriodFunctions:
 
 
         span_hour = right_result.hour - left_result.hour
-        if span_hour < 0 or (span_hour ==0 and left_result.minute > right_result.minute):
+        if span_hour < 0 or (span_hour == 0 and left_result.minute > right_result.minute):
             span_hour += Constants.DAY_HOUR_COUNT
 
         # the right side doesn't contain desc while the left side does
@@ -52,6 +52,7 @@ class TimePeriodFunctions:
                 span_hour > Constants.DAY_HOUR_COUNT:
             left_result.hour += Constants.HALF_DAY_HOUR_COUNT
 
+        #  No 'am' or 'pm' indicator
         if left_result.low_bound == right_result.low_bound == -1 and \
             left_result.hour <= Constants.HALF_DAY_HOUR_COUNT and \
             right_result.hour <= Constants.HALF_DAY_HOUR_COUNT:
@@ -64,35 +65,37 @@ class TimePeriodFunctions:
                         right_result.hour += Constants.HALF_DAY_HOUR_COUNT
             result.comment = Constants.COMMENT_AMPM
 
-        #  determine if the left side time is smaller than the right side, if yes, add one day
-        hour = 0
-        minute = 0
-        second = 0
+        day = reference.day
+        month = reference.month
+        year = reference.year
         right_swift_day = 0
         left_swift_day = 0
 
-        if right_result.hour > 0:
-            hour = right_result.hour
+        #  determine if the left side time is smaller than the right side, if yes, add one day
+        hour = left_result.hour if left_result.hour > 0 else 0
+        minute = left_result.minute if left_result.minute > 0 else 0
+        second = left_result.second if left_result.second > 0 else 0
 
-        if hour > Constants.DAY_HOUR_COUNT:
-            hour -= Constants.DAY_HOUR_COUNT
-            right_swift_day += 1
-        right_time = DateUtils.safe_create_from_min_value(reference.year, reference.month, reference.day,
-                                                          hour, minute, second)
-
-        #  determine if the right side time is smaller than the left side, if yes, add one day
-        hour = 0
-
-        if left_result.hour > 0:
-            hour = left_result.hour
-
+        #  handle cases with time like 25時 which resolve to the next day
         if hour > Constants.DAY_HOUR_COUNT:
             hour -= Constants.DAY_HOUR_COUNT
             left_swift_day += 1
-        left_time = DateUtils.safe_create_from_min_value(reference.year, reference.month, reference.day,
+
+        left_time = DateUtils.safe_create_from_min_value(year, month, day, hour, minute, second)
+
+        hour = right_result.hour if right_result.hour > 0 else 0
+        minute = right_result.minute if right_result.minute > 0 else 0
+        second = right_result.second if right_result.second > 0 else 0
+
+        # handle cases with time like 25時 which resolve to the next day
+        if hour > Constants.DAY_HOUR_COUNT:
+            hour -= Constants.DAY_HOUR_COUNT
+            right_swift_day += 1
+
+        right_time = DateUtils.safe_create_from_min_value(reference.year, reference.month, reference.day,
                                                           hour, minute, second)
 
-        if right_time.hour < left_time.hour:
+        if right_result.hour < left_result.hour:
             right_time += timedelta(days=1)
 
         left_timex = TimePeriodFunctions.build_timex(left_result)
