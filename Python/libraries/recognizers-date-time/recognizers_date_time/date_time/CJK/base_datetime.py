@@ -367,9 +367,9 @@ class BaseCJKDateTimeParser(DateTimeParser):
 
                 inner_result.is_lunar = self.is_lunar_calendar(source_text)
 
-                result.value = inner_result
-                result.timex_str = inner_result.timex if inner_result else ''
-                result.resolution_str = ''
+            result.value = inner_result
+            result.timex_str = inner_result.timex if inner_result else ''
+            result.resolution_str = ''
 
         return result
 
@@ -439,7 +439,7 @@ class BaseCJKDateTimeParser(DateTimeParser):
         if self.config.simple_pm_regex.search(source) and hour < Constants.HALF_DAY_HOUR_COUNT:
             hour += Constants.HALF_DAY_HOUR_COUNT
         elif self.config.simple_am_regex.search(source) and hour >= Constants.HALF_DAY_HOUR_COUNT:
-            hour += Constants.HALF_DAY_HOUR_COUNT
+            hour -= Constants.HALF_DAY_HOUR_COUNT
 
         time_str = pr2.timex_str
         if time_str.endswith(Constants.COMMENT_AMPM):
@@ -448,7 +448,7 @@ class BaseCJKDateTimeParser(DateTimeParser):
         ret.timex = pr1.timex_str + time_str
 
         val = pr2.value
-        if hour <= Constants.COMMENT_AMPM and not self.config.simple_pm_regex.search(source) and not \
+        if hour <= Constants.HALF_DAY_HOUR_COUNT and not self.config.simple_pm_regex.search(source) and not \
                 self.config.simple_am_regex.search(source) and val.comment:
             ret.comment = Constants.COMMENT_AMPM
 

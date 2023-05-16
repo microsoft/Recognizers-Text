@@ -153,6 +153,8 @@ class BaseCJKTimePeriodParser(DateTimeParser):
                 result.timex_str = parse_result.timex if parse_result is not None else ''
                 result.resolution_str = ''
 
+            return result
+
         return None
 
     def filter_results(self, query: str, candidate_results: List[DateTimeParseResult]):
