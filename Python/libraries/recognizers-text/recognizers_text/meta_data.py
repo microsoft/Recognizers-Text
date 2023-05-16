@@ -6,3 +6,4 @@ class MetaData:
         self.has_mod: bool = False
         self.is_duration_with_ago_and_later = False
         self.is_mealtime = False
+        self.is_holiday = False

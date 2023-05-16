@@ -15,6 +15,7 @@ class Constants:
     SYS_DATETIME_DURATION: str = 'duration'
     SYS_DATETIME_SET: str = 'set'
     SYS_DATETIME_TIMEZONE: str = 'timezone'
+    SYS_DATETIME_DATETIMEALT: str = 'datetimealt'
 
     SYS_DATETIME_MERGED: str = 'datetimeV2'
 
@@ -50,7 +51,39 @@ class Constants:
 
     COMMENT_KEY: str = 'Comment'
     COMMENT_AMPM = 'ampm'
+    COMMENT_AM = 'am'
     COMMENT_DOUBLETIMEX = "doubleTimex"
+
+    # Default boundaries for time of day resolution
+    EARLY_MORNING_BEGIN_HOUR = 4
+    EARLY_MORNING_END_HOUR = 8
+    MORNING_BEGIN_HOUR = 8
+    MORNING_END_HOUR = 12
+    MID_DAY_BEGIN_HOUR = 11
+    MID_DAY_END_HOUR = 13
+    AFTERNOON_BEGIN_HOUR = 12
+    AFTERNOON_END_HOUR = 16
+    EVENING_BEGIN_HOUR = 16
+    EVENING_END_HOUR = 20
+    DAYTIME_BEGIN_HOUR = 8
+    DAYTIME_END_HOUR = 18
+    NIGHTTIME_BEGIN_HOUR = 0
+    NIGHTTIME_END_HOUR = 8
+    BUSINESS_BEGIN_HOUR = 8
+    BUSINESS_END_HOUR = 18
+    NIGHT_BEGIN_HOUR = 20
+    NIGHT_END_HOUR = 23
+    NIGHT_END_MINUTE = 59
+    MEAL_TIME_BREAKFAST_BEGIN_HOUR = 8
+    MEAL_TIME_BREAKFAST_END_HOUR = 12
+    MEAL_TIME_BRUNCH_BEGIN_HOUR = 8
+    MEAL_TIME_BRUNCH_END_HOUR = 12
+    MEAL_TIME_LUNCH_BEGIN_HOUR = 11
+    MEAL_TIME_LUNCH_END_HOUR = 13
+    MEAL_TIME_DINNER_BEGIN_HOUR = 16
+    MEAL_TIME_DINNER_END_HOUR = 20
+
+
 
     # Failed connector extraction
     INVALID_CONNECTOR_CODE = -1
@@ -60,6 +93,7 @@ class Constants:
 
     HALF_DAY_HOUR_COUNT = 12
     DAY_HOUR_COUNT = 24
+    DAY_HOUR_START = 0
     HOUR_SECOND_COUNT = 3600
     MINUTE_SECOND_COUNT = 60
     HALF_MID_DAY_DURATION_HOUR_COUNT = 2
@@ -134,6 +168,12 @@ class Constants:
     HOUR_NUM_GROUP_NAME = 'hournum'
     TENS_GROUP_NAME = 'tens'
     YEAR_CJK_GROUP_NAME = 'yearCJK'
+    LATER_GROUP_NAME = 'later'
+    LESS_GROUP_NAME = 'less'
+    MORE_GROUP_NAME = 'more'
+    SPECIFIC_END_OF_GROUP_NAME = "SpecificEndOf"
+    TOMORROW_GROUP_NAME = "tomorrow"
+    UNIT_GROUP_NAME = "unit"
 
     TIME_OF_DAY_GROUP_NAME = 'timeOfDay'
     BUSINESS_DAY_GROUP_NAME = 'business'
@@ -169,6 +209,9 @@ class Constants:
     MID_MORNING = 'midmorning'
     MID_NIGHT = 'midnight'
 
+    #  Include the date mentioned, to make "before" -> "until" or "after" -> "since". Such as "on or earlier than 1/1/2016".
+    INCLUDE_GROUP_NAME = "include"
+
     CARDINAL = 'cardinal'
 
     DECADE = 'decade'
@@ -198,10 +241,19 @@ class Constants:
     REL_LATE = 'RelLate'
     COMMENT_EARLY = 'early'
     COMMENT_LATE = 'late'
+    COMMENT_WEEK_OF = "WeekOf"
 
     HALF = 'half'
 
     HAS_MOD = 'mod'
+    LESS_THAN_MOD = 'less'
+    MORE_THAN_MOD = 'more'
+
+    BEFORE_MOD = "before"
+    AFTER_MOD = "after"
+    UNTIL_MOD = "until"
+    SINCE_MOD = "since"
+    APPROX_MOD = "approx"
 
     # Holidays
     # These should not be constants, they should go on the resources files for English
@@ -225,9 +277,8 @@ class Constants:
     UTC_OFFSET_MINS_KEY = "utcOffsetMins"
     POSITIVE_SIGN = 1
     NEGATIVE_SIGN = -1
-
-    # hours of one half day
-    HALF_DAY_HOUR_COUNT = 12
+    RESOLVE_TIMEZONE = "resolveTimeZone"
+    TIMEZONE_TEXT = "timezoneText"
 
 
 class TimeTypeConstants:
@@ -243,6 +294,7 @@ class TimeTypeConstants:
     VALUE: str = 'value'
     START_TIME: str = 'startTime'
     END_TIME: str = 'endTime'
+    DATETIME_ALT = "dateTimeAlt"
 
     START: str = 'start'
     END: str = 'end'

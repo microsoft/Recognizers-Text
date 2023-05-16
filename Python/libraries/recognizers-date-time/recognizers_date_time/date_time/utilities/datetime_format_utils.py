@@ -4,6 +4,7 @@ import regex
 
 from recognizers_text.utilities import RegExpUtility
 from recognizers_date_time.date_time.constants import Constants
+from recognizers_date_time.date_time.utilities import DateTimeResolutionResult
 
 
 class DateTimeFormatUtil:
@@ -146,3 +147,17 @@ class DateTimeFormatUtil:
             year = int(basic_year + bias_year - 1)
             return year
         return None
+
+    @staticmethod
+    def resolve_end_of_day(timex_prefix: str, future_date: datetime, past_date: datetime) -> DateTimeResolutionResult:
+        result = DateTimeResolutionResult()
+        result.timex = timex_prefix + "T23:59:59"
+        result.future_value = future_date
+        result.past_value = past_date
+
+        return result
+
+    @staticmethod
+    def to_iso_week_timex(date: datetime) -> str:
+        year, week_num = date.isocalendar()[:2]
+        return f"{year}-W{week_num:02}"

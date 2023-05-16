@@ -1,0 +1,10 @@
+class ResolutionKey:
+    value_set: str = ''
+    value: str = ''
+    type: str = ''
+    unit: str = ''
+    score: str = ''
+    iso_currency: str = ''
+    sub_type: str = ''
+    relative_to: str = ''
+    offset: str = ''
