@@ -110,9 +110,10 @@ class BaseCJKHolidayParser(DateTimeExtractor):
     def __init__(self, config: CJKHolidayParserConfiguration):
         self.config = config
 
+    def parse(self, ext_result: ExtractResult):
+        return self.parse(ext_result, datetime.now())
+
     def parse(self, source: ExtractResult, reference: datetime = None) -> Optional[DateTimeParseResult]:
-        if not reference:
-            reference = datetime.now()
         reference_date = reference
         value = None
 
