@@ -106,6 +106,9 @@ class Constants:
     MAX_TWO_DIGIT_YEAR_FUTURE_NUM: int = int(BaseDateTime.MaxTwoDigitYearFutureNum)
     MIN_TWO_DIGIT_YEAR_PAST_NUM: int = int(BaseDateTime.MinTwoDigitYearPastNum)
 
+    BASE_YEAR_PAST_CENTURY = 1900
+    BASE_YEAR_CURRENT_CENTURY = 2000
+
     # Timex
     TIMEX_YEAR: str = "Y"
     TIMEX_MONTH: str = "M"
