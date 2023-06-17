@@ -48,7 +48,7 @@
 		"@types/lodash.max": "^4.0.3",
 		"@types/lodash.sortby": "^4.7.3",
 		"@types/lodash.tonumber": "^4.0.3",
-		"@types/lodash.trimend": "^4.5.1",
+		"@types/lodash.trimend": "^4.17.21",
 		"@types/node": "^10.3.0",
 		"@types/npm": "^2.0.29",
 		"@typescript-eslint/eslint-plugin": "^1.10.2",
