@@ -1,8 +1,9 @@
-from typing import Dict
+from typing import Dict, List
 from datetime import datetime
 from recognizers_date_time.date_time.constants import Constants
 from recognizers_date_time.date_time.utilities import TimeOfDayResolution, DateUtils, \
     DateTimeFormatUtil, RangeTimexComponents, DateTimeResolutionKey
+from datatypes_timex_expression.timex_helpers import TimexHelpers
 
 
 date_period_timex_type_to_suffix = {
@@ -182,3 +183,29 @@ class TimexUtil:
         future_resolution[DateTimeResolutionKey.timex] = timexes[0]
         past_resolution[DateTimeResolutionKey.timex] = timexes[1]
 
+    @staticmethod
+    def generate_duration_timex(number: float, unit_str: str, is_less_than_day: bool) -> str:
+        if Constants.TIMEX_BUSINESS_DAY != unit_str:
+            if unit_str == Constants.DECADE_UNIT:
+                number = number * 10
+                unit_str = Constants.TIMEX_YEAR
+            elif unit_str == Constants.FORTNIGHT_UNIT:
+                number = number * 2
+                unit_str = Constants.TIMEX_WEEK
+            elif unit_str == Constants.WEEKEND_UNIT:
+                unit_str = Constants.TIMEX_WEEKEND
+            else:
+                unit_str = unit_str[0:1]
+
+        if is_less_than_day:
+            return Constants.GENERAL_PERIOD_PREFIX + Constants.TIME_TIMEX_PREFIX + str(number) + unit_str
+        else:
+            return Constants.GENERAL_PERIOD_PREFIX + str(number) + unit_str
+
+    @staticmethod
+    def generate_compound_duration_timex(unit_to_timex_components: Dict[str, str],
+                                         unit_value_map: Dict[str, str]) -> str:
+        unit_list: List[str] = list(unit_to_timex_components.keys())
+        unit_list.sort(key=lambda x: unit_value_map[x])
+
+        return TimexHelpers.generate_compound_duration_timex(unit_list)

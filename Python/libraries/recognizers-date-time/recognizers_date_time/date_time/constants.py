@@ -174,6 +174,9 @@ class Constants:
     SPECIFIC_END_OF_GROUP_NAME = "SpecificEndOf"
     TOMORROW_GROUP_NAME = "tomorrow"
     UNIT_GROUP_NAME = "unit"
+    HALF_GROUP_NAME = 'half'
+    QUARTER_GROUP_NAME = 'quarter'
+    THREE_QUARTER_GROUP_NAME = 'threequarter'
 
     TIME_OF_DAY_GROUP_NAME = 'timeOfDay'
     BUSINESS_DAY_GROUP_NAME = 'business'
@@ -181,6 +184,7 @@ class Constants:
     RIGHT_AM_PM_GROUP_NAME = 'rightDesc'
     MEALTIME_GROUP_NAME = 'mealTime'
     HOLIDAY_GROUP_NAME = 'holiday'
+    ANOTHER_GROUP_NAME = 'another'
 
     REL_MONTH = 'relmonth'
     FIRST_TWO_YEAR_NUM = 'firsttwoyearnum'
@@ -213,6 +217,11 @@ class Constants:
     INCLUDE_GROUP_NAME = "include"
 
     CARDINAL = 'cardinal'
+
+    DECADE_UNIT = '10Y'
+    FORTNIGHT_UNIT = '2W'
+    QUARTER_UNIT = '3MON'
+    WEEKEND_UNIT = 'WE'
 
     DECADE = 'decade'
     CENTURY = 'century'
