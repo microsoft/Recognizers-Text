@@ -1,16 +1,18 @@
 from typing import Dict
 from datetime import datetime
+
+from datedelta import datedelta
+
 from recognizers_date_time.date_time.constants import Constants
 from recognizers_date_time.date_time.utilities import TimeOfDayResolution, DateUtils, \
     DateTimeFormatUtil, RangeTimexComponents, DateTimeResolutionKey
 
-
 date_period_timex_type_to_suffix = {
-        0: Constants.TIMEX_DAY,
-        1: Constants.TIMEX_WEEK,
-        2: Constants.TIMEX_MONTH,
-        3: Constants.TIMEX_YEAR,
-    }
+    0: Constants.TIMEX_DAY,
+    1: Constants.TIMEX_WEEK,
+    2: Constants.TIMEX_MONTH,
+    3: Constants.TIMEX_YEAR,
+}
 
 
 class TimexUtil:
@@ -91,7 +93,7 @@ class TimexUtil:
                 unit_count = (end - begin).days
 
             if timex_type == 1:
-                unit_count = (end - begin).days/7
+                unit_count = (end - begin).days / 7
             if timex_type == 2:
                 unit_count = ((end.year - begin.year) * 12) + (end.month - begin.month)
             if timex_type == 3:
@@ -105,15 +107,60 @@ class TimexUtil:
         return f"({timex1},{timex2},P{unit_count}{date_period_timex_type_to_suffix[timex_type]})"
 
     @staticmethod
-    def generate_date_period_timex(begin, end, timex_type, alternative_begin=datetime.now(),
-                                   alternative_end=datetime.now()):
+    def generate_date_period_timex_with_diff(begin: datetime, end_date: datetime, duration_unit):
+
+        diff = 0
+        if duration_unit == Constants.TIMEX_WEEK:
+            diff = Constants.WEEK_DAY_COUNT - (Constants.WEEK_DAY_COUNT if begin.day == 0 else begin.isoweekday())
+            end_date = begin + datedelta(days=diff)
+
+        if duration_unit == Constants.TIMEX_MONTH_FULL:
+            end_date = DateUtils.safe_create_from_min_value(begin.year, begin.month, 1)
+            end_date = end_date + datedelta(months=1) - datedelta(days=1)
+            diff - end_date.day - begin.day + 1
+
+        if duration_unit == Constants.TIMEX_YEAR:
+            end_date = DateUtils.safe_create_from_min_value(begin.year, 12, 1)
+            end_date = end_date + datedelta(months=1) - datedelta(days=1)
+            diff = DateUtils.day_of_year(end_date) - DateUtils.day_of_year(begin) + 1
+
+        duration_timex = Constants.GENERAL_PERIOD_PREFIX + diff + Constants.TIMEX_DAY
+
+        return f'({DateTimeFormatUtil.luis_date(begin.year, begin.month, begin.day)},' \
+               f'{DateTimeFormatUtil.luis_date(end_date.year, end_date.month, end_date.day)},{duration_timex})'
+
+    @staticmethod
+    def generate_date_period_timex(begin, end, timex_type, alternative_begin: datetime = None,
+                                   alternative_end: datetime = None, has_year: bool = False):
+
+        # If the year is not specified, the combined range timex will use fuzzy years.
+        if not has_year:
+            begin.year = -1
+            end.year = -1
+
+        alternative = False
+        if alternative_begin is None and alternative_end is None:
+            alternative_begin = datetime.now()
+            alternative_end = datetime.now()
+        else:
+            alternative = True
+
         equal_duration_length = (end - begin).days == (alternative_end - alternative_begin).days or \
                                 datetime.now() == alternative_end == alternative_begin
         unit_count = TimexUtil.generate_date_period_timex_unit_count(begin, end, timex_type, equal_duration_length)
         date_period_timex = f'P{unit_count}{date_period_timex_type_to_suffix[timex_type]}'
 
-        return f'({DateTimeFormatUtil.luis_date(begin.year, begin.month, begin.day)},' \
-               f'{DateTimeFormatUtil.luis_date(end.year, end.month, end.day)},{date_period_timex})'
+        if alternative:
+            f'({DateTimeFormatUtil.luis_date_from_datetime_with_alternative(begin, alternative_begin)},' \
+            f'{DateTimeFormatUtil.luis_date_from_datetime_with_alternative(end, alternative_end)},{date_period_timex})'
+        else:
+            return f'({DateTimeFormatUtil.luis_date(begin.year, begin.month, begin.day)},' \
+                   f'{DateTimeFormatUtil.luis_date(end.year, end.month, end.day)},{date_period_timex})'
+
+    @staticmethod
+    def generate_date_period_timex_with_duration(begin_date: datetime, end_date: datetime, duration_timex: str):
+        return f'({DateTimeFormatUtil.luis_date(begin_date.year, begin_date.month, begin_date.day)},' \
+               f'{DateTimeFormatUtil.luis_date(end_date.year, end_date.month, end_date.day)},{duration_timex})'
 
     @staticmethod
     def _process_double_timex(resolution_dic: Dict[str, object], future_key: str, past_key: str, origin_timex: str):
@@ -155,12 +202,36 @@ class TimexUtil:
         return f'({begin_timex},{end_timex},{duration_timex})'
 
     @staticmethod
+    def parse_number_from_duration_timex(timex: str):
+        number_str = timex[
+                     timex.index(Constants.GENERAL_PERIOD_PREFIX) + 1:
+                     timex.index(Constants.DURATION_UNIT_CHAR - 1)]
+
+        return float(number_str)
+
+    @staticmethod
+    def generate_year_timex(date: any = None, special_year_prefixes=None):
+        if not date:
+            year_timex = Constants.TIMEX_FUZZY_YEAR
+        else:
+            if type(date) == datetime:
+                year_timex = f'{date.year}'
+            elif type(date) == int:
+                # For when the year is used directly
+                year_timex = DateTimeFormatUtil.luis_date(date, 1, 1)
+
+        if not special_year_prefixes:
+            return year_timex
+        else:
+            return special_year_prefixes + year_timex
+
+    @staticmethod
     def parse_hour_from_time_timex(timex: str) -> int:
         start = timex.index(Constants.TIME_TIMEX_PREFIX) + 1
         end = timex.index(Constants.TIME_TIMEX_CONNECTOR)
         if not end > 0:
             end = len(timex)
-        hour = int(timex[start:end-start])
+        hour = int(timex[start:end - start])
         return hour
 
     @staticmethod
@@ -172,7 +243,7 @@ class TimexUtil:
         return comment == Constants.COMMENT_DOUBLETIMEX
 
     @staticmethod
-    def process_double_timex(resolution_dict: Dict, future_key: str, past_key: str, origin_timex:str) -> Dict:
+    def process_double_timex(resolution_dict: Dict, future_key: str, past_key: str, origin_timex: str) -> Dict:
         timexes = origin_timex.split(Constants.COMPOSTIE_TIMEX_DELIMITER)
         if future_key not in resolution_dict or past_key not in resolution_dict or len(timexes) != 2:
             return resolution_dict
@@ -182,3 +253,63 @@ class TimexUtil:
         future_resolution[DateTimeResolutionKey.timex] = timexes[0]
         past_resolution[DateTimeResolutionKey.timex] = timexes[1]
 
+    @staticmethod
+    def generate_week_timex(monday=None):
+        if monday is None:
+            return f'{Constants.TIMEX_FUZZY_YEAR}{Constants.DATE_TIMEX_CONNECTOR}{Constants.TIMEX_FUZZY_WEEK}'
+        else:
+            return DateTimeFormatUtil.to_iso_week_timex(monday)
+
+    @staticmethod
+    def generate_weekday_timex(weekday: int):
+        return f'{Constants.TIMEX_FUZZY_YEAR}{Constants.DATE_TIMEX_CONNECTOR}{Constants.TIMEX_FUZZY_WEEK}' \
+               f'{Constants.DATE_TIMEX_CONNECTOR}{weekday}'
+
+
+    @staticmethod
+    def generate_decade_timex(begin_year, total_last_year, decade, input_century) -> str:
+
+        if input_century:
+            begin_str = DateTimeFormatUtil.luis_date(begin_year, 1, 1)
+            end_str = DateTimeFormatUtil.luis_date(begin_year + total_last_year, 1, 1)
+
+        else:
+            begin_year_str = Constants.TIMEX_FUZZY_TWO_DIGIT_YEAR + decade
+            begin_str = DateTimeFormatUtil.luis_date(-1, 1, 1)
+            begin_str = begin_str.replace(Constants.TIMEX_FUZZY_YEAR, begin_year_str)
+
+            end_year_str = Constants.TIMEX_FUZZY_TWO_DIGIT_YEAR + f'{((decade + total_last_year) % 100):02d}'
+            end_str = DateTimeFormatUtil.luis_date(-1, 1, 1)
+            end_str = end_str.replace(Constants.TIMEX_FUZZY_YEAR, end_year_str)
+
+        return f'({begin_str},{end_str},{Constants.GENERAL_PERIOD_PREFIX}{total_last_year}{Constants.TIMEX_YEAR})'
+
+    @staticmethod
+    def generate_week_of_month_timex(year: int, month: int, week_num: int) -> str:
+        week_timex = TimexUtil.generate_week_timex(week_num)
+        month_timex = DateTimeFormatUtil.luis_date(year, month, 1)
+
+        return f'{month_timex}-{week_timex}'
+
+    @staticmethod
+    def generate_week_of_year_timex(year: int, week_num: int) -> str:
+        week_timex = TimexUtil.generate_week_timex(week_num)
+        year_timex = DateTimeFormatUtil.luis_date(year, 1, 1)
+
+        return f'{year_timex}-{week_timex}'
+
+    @staticmethod
+    def generate_weekend_timex(date: datetime = None):
+        if date is None:
+            return f'{Constants.TIMEX_FUZZY_YEAR}{Constants.DATE_TIMEX_CONNECTOR}{Constants.TIMEX_FUZZY_WEEK}' \
+                   f'{Constants.DATE_TIMEX_CONNECTOR}{Constants.TIMEX_WEEKEND}'
+        else:
+            return f'{DateTimeFormatUtil.to_iso_week_timex(date)}{Constants.DATE_TIMEX_CONNECTOR}' \
+                   f'{Constants.TIMEX_WEEKEND}'
+
+    @staticmethod
+    def generate_month_timex(date: datetime = None):
+        if date is None:
+            return f'{Constants.TIMEX_FUZZY_YEAR}{Constants.DATE_TIMEX_CONNECTOR}{Constants.TIMEX_FUZZY_MONTH}'
+        else:
+            return f'{date.year:D4}{Constants.DATE_TIMEX_CONNECTOR}{date.month:D2}'

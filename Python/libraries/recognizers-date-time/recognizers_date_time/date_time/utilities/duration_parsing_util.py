@@ -113,3 +113,8 @@ class DurationParsingUtil:
         while date.weekday() == 5 or date.weekday() == 6:
             date += timedelta(days=date_increment)
         return date
+
+    @staticmethod
+    def is_date_duration(timex: str) -> bool:
+        resolved_timex = DurationParsingUtil.resolve_duration_timex(timex)
+        return len(resolved_timex) > 1

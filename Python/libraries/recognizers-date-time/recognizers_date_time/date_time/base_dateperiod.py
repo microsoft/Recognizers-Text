@@ -2361,8 +2361,8 @@ class BaseDatePeriodParser(DateTimeParser):
         date_resolution = self.config.date_parser.parse(ers[0], reference).value
         result.timex = date_resolution.timex
         result.comment = BaseDatePeriodParser.week_of_comment
-        result.future_value = self.__get_week_range_from_date(date_resolution.future_value)
-        result.past_value = self.__get_week_range_from_date(date_resolution.past_value)
+        result.future_value = self.get_week_range_from_date(date_resolution.future_value)
+        result.past_value = self.get_week_range_from_date(date_resolution.past_value)
         result.success = True
         return result
 
@@ -2377,18 +2377,18 @@ class BaseDatePeriodParser(DateTimeParser):
         date_resolution = self.config.date_parser.parse(ers[0], reference).value
         result.timex = date_resolution.timex
         result.comment = BaseDatePeriodParser.week_of_comment
-        result.future_value = self.__get_month_range_from_date(date_resolution.future_value)
-        result.past_value = self.__get_month_range_from_date(date_resolution.past_value)
+        result.future_value = self.get_month_range_from_date(date_resolution.future_value)
+        result.past_value = self.get_month_range_from_date(date_resolution.past_value)
         result.success = True
         return result
 
-    def __get_week_range_from_date(self, seed_date: datetime) -> List[datetime]:
+    def get_week_range_from_date(self, seed_date: datetime) -> List[datetime]:
         begin_date = DateUtils.this(seed_date, DayOfWeek.MONDAY)
         end_date = begin_date + timedelta(days=6 if self._inclusive_end_period else 7)
         return [begin_date, end_date]
 
     @staticmethod
-    def __get_month_range_from_date(seed_date: datetime) -> List[datetime]:
+    def get_month_range_from_date(seed_date: datetime) -> List[datetime]:
         begin_date = DateUtils.safe_create_from_value(DateUtils.min_value, seed_date.year, seed_date.month, 1)
         end_date = DateUtils.safe_create_from_value(DateUtils.min_value, seed_date.year, seed_date.month + 1, 1)
         return [begin_date, end_date]

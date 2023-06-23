@@ -319,12 +319,12 @@ class ChineseDateParser(BaseDateParser):
 
     def convert_chinese_year_to_number(self, source: str) -> int:
         year = 0
-        dynasty_year = DateTimeFormatUtil.parse_chinese_dynasty_year(source,
-                                                                     self.config.dynasty_year_regex,
-                                                                     self.config.dynasty_start_year,
-                                                                     self.config.dynasty_year_map,
-                                                                     self.integer_extractor,
-                                                                     self.config.number_parser)
+        dynasty_year = DateTimeFormatUtil.parse_dynasty_year(source,
+                                                             self.config.dynasty_year_regex,
+                                                             self.config.dynasty_start_year,
+                                                             self.config.dynasty_year_map,
+                                                             self.integer_extractor,
+                                                             self.config.number_parser)
         if dynasty_year is not None:
             return dynasty_year
 
@@ -341,7 +341,7 @@ class ChineseDateParser(BaseDateParser):
                     iter(self.config.integer_extractor.extract(char)), None)
                 if er and er.type == NumberConstants.SYS_NUM_INTEGER:
                     year = year + \
-                        int(self.config.number_parser.parse(er).value)
+                           int(self.config.number_parser.parse(er).value)
 
         return -1 if year < 10 else year
 
@@ -397,9 +397,9 @@ class ChineseDateParser(BaseDateParser):
                         elif unit_str == Constants.TIMEX_WEEK:
                             date = reference + timedelta(days=-7 * number)
                         elif unit_str == Constants.TIMEX_MONTH_FULL:
-                            date = reference.replace(month=reference.month-1)
+                            date = reference.replace(month=reference.month - 1)
                         elif unit_str == Constants.TIMEX_YEAR:
-                            date = reference.replace(year=reference.year-1)
+                            date = reference.replace(year=reference.year - 1)
                         else:
                             return result
 
@@ -415,9 +415,9 @@ class ChineseDateParser(BaseDateParser):
                         elif unit_str == Constants.TIMEX_WEEK:
                             date = reference + timedelta(days=7 * number)
                         elif unit_str == Constants.TIMEX_MONTH_FULL:
-                            date = reference.replace(month=reference.month+1)
+                            date = reference.replace(month=reference.month + 1)
                         elif unit_str == Constants.TIMEX_YEAR:
-                            date = reference.replace(year=reference.year+1)
+                            date = reference.replace(year=reference.year + 1)
                         else:
                             return result
 
