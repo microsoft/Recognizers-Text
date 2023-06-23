@@ -20,3 +20,5 @@ class Constants:
         'SATURDAY': 5,
         'SUNDAY': 6
     }
+    GENERAL_PERIOD_PREFIX: str = "P"
+    TIME_TIMEX_PREFIX: str = "T"

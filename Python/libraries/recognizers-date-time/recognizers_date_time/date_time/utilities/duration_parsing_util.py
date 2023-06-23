@@ -1,7 +1,9 @@
-from typing import Dict, List
+from typing import Dict, List, Pattern
 from datetime import datetime, timedelta
 
+from regex import regex
 from recognizers_date_time.date_time.constants import Constants
+from recognizers_date_time.date_time.utilities import DateTimeResolutionResult, RegExpUtility, TimexUtil
 
 
 class DurationParsingUtil:
@@ -118,3 +120,50 @@ class DurationParsingUtil:
     def is_date_duration(timex: str) -> bool:
         resolved_timex = DurationParsingUtil.resolve_duration_timex(timex)
         return len(resolved_timex) > 1
+
+    @staticmethod
+    def parse_inexact_number_with_unit(text: str, inexact_number_unit_regex: Pattern,
+                                       unit_map: Dict[str, str], unit_value_map: Dict[str, float],
+                                       is_cjk: bool = False) -> DateTimeResolutionResult:
+        ret = DateTimeResolutionResult()
+        match = regex.match(inexact_number_unit_regex, text)
+        if match:
+            #  set the inexact number "few", "some" to 3 for now
+            if RegExpUtility.get_group(match, "NumTwoTerm"):
+                num_val = 2
+            else:
+                num_val = 3
+            src_unit = RegExpUtility.get_group(match, "unit")
+            if src_unit in unit_map:
+                unit_str = unit_map[src_unit]
+
+                if num_val > 1000 and (unit_str == Constants.TIMEX_YEAR or
+                                      unit_str == Constants.TIMEX_MONTH_FULL or
+                                      unit_str == Constants.TIMEX_WEEK):
+                    return ret
+
+                ret.timex = TimexUtil.generate_duration_timex(num_val, unit_str,
+                                                              DurationParsingUtil.is_less_than_day(unit_str))
+
+                #  In CJK implementation unitValueMap uses the unitMap values as keys while
+                #  in standard implementation unitMap and unitValueMap have the same keys.
+                if is_cjk:
+                    unit_value = unit_value_map[unit_str]
+                else:
+                    unit_value = unit_value_map[src_unit]
+                ret.future_value = ret.past_value = num_val * unit_value
+                ret.success = True
+
+            elif RegExpUtility.get_group(match, Constants.BUSINESS_DAY_GROUP_NAME):
+                ret.timex = TimexUtil.generate_duration_timex(num_val, Constants.TIMEX_BUSINESS_DAY, False)
+
+                # TODO figure out this line
+                ret.future_value = ret.past_value = num_val * unit_value_map[src_unit.split()]
+                ret.success = True
+
+            return ret
+
+    @staticmethod
+    def is_less_than_day(unit: str) -> bool:
+        return unit == "S" or unit == "M" or unit == "H"
+

@@ -2,6 +2,7 @@
 #  Licensed under the MIT License.
 
 from datetime import date, timedelta, datetime
+from typing import List
 
 from math import floor
 
@@ -227,3 +228,31 @@ class TimexHelpers:
         result.weekend = None
         result.part_of_day = None
         return result
+
+    @staticmethod
+    def is_time_duration_timex(timex: str) -> bool:
+        return timex.startswith(f"{Constants.GENERAL_PERIOD_PREFIX}{Constants.TIME_TIMEX_PREFIX}")
+
+    @staticmethod
+    def get_duration_timex_without_prefix(timex: str) -> str:
+        #  Remove "PT" prefix for TimeDuration, Remove "P" prefix for DateDuration
+        if TimexHelpers.is_time_duration_timex(timex):
+            return timex[2:]
+        else:
+            return timex[1:]
+
+    @staticmethod
+    def generate_compound_duration_timex(timex_list: List[str]) -> str:
+        is_time_duration_already_exist = False
+        timex_builder = Constants.GENERAL_PERIOD_PREFIX
+
+        #  The Time Duration component occurs first time
+        for timex_component in timex_list:
+            if not is_time_duration_already_exist and TimexHelpers.is_time_duration_timex(timex_component):
+                timex_builder += f"{Constants.TIME_TIMEX_PREFIX}" \
+                                 f"{TimexHelpers.get_duration_timex_without_prefix(timex_component)}"
+                is_time_duration_already_exist = True
+            else:
+                timex_builder += f"{TimexHelpers.get_duration_timex_without_prefix(timex_component)}"
+
+        return timex_builder
