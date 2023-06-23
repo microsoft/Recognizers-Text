@@ -45,6 +45,7 @@ class Constants:
     MIN_MONTH: int = 1
     MAX_MONTH: int = 12
     INVALID_YEAR = -2147483648
+    INVALID_MONTH = -2147483648
     INVALID_HOUR = -2147483648
     INVALID_MINUTE = -2147483648
     INVALID_SECOND = -2147483648
@@ -97,6 +98,8 @@ class Constants:
     HOUR_SECOND_COUNT = 3600
     MINUTE_SECOND_COUNT = 60
     HALF_MID_DAY_DURATION_HOUR_COUNT = 2
+    WEEK_DAY_COUNT = 7
+    CENTURY_YEARS_COUNT = 100
 
     # specifies the priority interpreting month and day order
     DEFAULT_LANGUAGE_FALLBACK_MDY: str = 'MDY'
@@ -105,6 +108,11 @@ class Constants:
 
     MAX_TWO_DIGIT_YEAR_FUTURE_NUM: int = int(BaseDateTime.MaxTwoDigitYearFutureNum)
     MIN_TWO_DIGIT_YEAR_PAST_NUM: int = int(BaseDateTime.MinTwoDigitYearPastNum)
+    BASE_YEAR_PAST_CENTURY = 1900
+    BASE_YEAR_CURRENT_CENTURY = 2000
+
+    BASE_YEAR_PAST_CENTURY = 1900
+    BASE_YEAR_CURRENT_CENTURY = 2000
 
     # Timex
     TIMEX_YEAR: str = "Y"
@@ -119,6 +127,7 @@ class Constants:
     TIMEX_SECOND: str = "S"
     TIMEX_FUZZY: str = 'X'
     TIMEX_FUZZY_YEAR: str = "XXXX"
+    TIMEX_FUZZY_TWO_DIGIT_YEAR = "XX"
     TIMEX_FUZZY_MONTH: str = "XX"
     TIMEX_FUZZY_WEEK: str = "WXX"
     TIMEX_FUZZY_DAY: str = "XX"
@@ -143,8 +152,12 @@ class Constants:
     INVALID_DATE_STRING = "0001-01-01"
     COMPOSTIE_TIMEX_DELIMITER = "|"
 
+    # Timex non-constant
+    DURATION_UNIT_CHAR = ['D', 'W', 'M', 'Y', 'B']
+
     # Groups' names for named groups in regexes
     NEXT_GROUP_NAME = "next"
+    LAST_GROUP_NAME = "last"
     AM_GROUP_NAME = 'am'
     PM_GROUP_NAME = 'pm'
     AM_PM_GROUP_NAME = 'ampm'
@@ -163,17 +176,32 @@ class Constants:
     WEEK_GROUP_NAME = 'week'
     WEEKDAY_GROUP_NAME = 'weekday'
     MONTH_GROUP_NAME = 'month'
+    MONTH_FROM_GROUP_NAME = "monthFrom"
+    MONTH_TO_GROUP_NAME = "monthTo"
     YEAR_GROUP_NAME = 'year'
+    THIS_YEAR_GROUP_NAME = 'thisyear'
+    THIS_MONTH_GROUP_NAME = 'thismonth'
     FULL_YEAR_GROUP_NAME = 'fullyear'
     HOUR_NUM_GROUP_NAME = 'hournum'
     TENS_GROUP_NAME = 'tens'
     YEAR_CJK_GROUP_NAME = 'yearCJK'
+    UNIT_OF_YEAR_GROUP_NAME = 'uoy'
     LATER_GROUP_NAME = 'later'
+    FEW_GROUP_NAME = 'few'
     LESS_GROUP_NAME = 'less'
     MORE_GROUP_NAME = 'more'
     SPECIFIC_END_OF_GROUP_NAME = "SpecificEndOf"
     TOMORROW_GROUP_NAME = "tomorrow"
+    YESTERDAY_GROUP_NAME = "yesterday"
+    REST_OF_GROUP_NAME = "restof"
+    TO_DATE_GROUP_NAME = "toDate"
+    HALF_GROUP_NAME = "half"
+    FIRST_HALF_GROUP_NAME = 'firstHalf'
+    SECOND_HALF_GROUP_NAME = 'secondHalf'
+    HALF_TAG_GROUP_NAME = "halfTag"
     UNIT_GROUP_NAME = "unit"
+    WITHIN_GROUP_NAME = 'within'
+    SPECIAL_GROUP_NAME = 'special'
     HALF_GROUP_NAME = 'half'
     QUARTER_GROUP_NAME = 'quarter'
     THREE_QUARTER_GROUP_NAME = 'threequarter'
@@ -192,6 +220,7 @@ class Constants:
     YEAR_CHINESE = 'yearCJK'
     OTHER = 'other'
     YEAR_RELATIVE = 'yearrel'
+    FOUR_DIGIT_YEAR_GROUP_NAME = "FourDigitYear"
     DAY_OF_MONTH = 'DayOfMonth'
 
     NEW_TIME = 'newTime'
@@ -251,6 +280,7 @@ class Constants:
     COMMENT_EARLY = 'early'
     COMMENT_LATE = 'late'
     COMMENT_WEEK_OF = "WeekOf"
+    COMMENT_MONTH_OF = "MonthOf"
 
     HALF = 'half'
 

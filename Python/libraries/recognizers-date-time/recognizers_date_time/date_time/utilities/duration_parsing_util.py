@@ -117,6 +117,11 @@ class DurationParsingUtil:
         return date
 
     @staticmethod
+    def is_date_duration(timex: str) -> bool:
+        resolved_timex = DurationParsingUtil.resolve_duration_timex(timex)
+        return len(resolved_timex) > 1
+
+    @staticmethod
     def parse_inexact_number_with_unit(text: str, inexact_number_unit_regex: Pattern,
                                        unit_map: Dict[str, str], unit_value_map: Dict[str, float],
                                        is_cjk: bool = False) -> DateTimeResolutionResult:
