@@ -246,10 +246,12 @@ class TimexHelpers:
         is_time_duration_already_exist = False
         timex_builder = Constants.GENERAL_PERIOD_PREFIX
 
+        #  The Time Duration component occurs first time
         for timex_component in timex_list:
             if not is_time_duration_already_exist and TimexHelpers.is_time_duration_timex(timex_component):
                 timex_builder += f"{Constants.TIME_TIMEX_PREFIX}" \
                                  f"{TimexHelpers.get_duration_timex_without_prefix(timex_component)}"
+                is_time_duration_already_exist = True
             else:
                 timex_builder += f"{TimexHelpers.get_duration_timex_without_prefix(timex_component)}"
 

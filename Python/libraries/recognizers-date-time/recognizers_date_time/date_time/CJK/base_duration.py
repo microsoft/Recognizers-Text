@@ -151,7 +151,7 @@ class BaseCJKDurationExtractor(DateTimeExtractor):
                     return er
 
                 mid_str = text[mid_str_begin:mid_str_end-mid_str_begin]
-                match = regex.match(self.config.duration_unit_regex, mid_str)
+                match = regex.match(self.config.duration_connector_regex, mid_str)
                 if match:
                     # If the second element of a group is a modifier, it should not be merged with subsequent elements.
                     # For example "4 days or more and 1 week or less" should return 2 separate extractions.
@@ -391,7 +391,7 @@ class BaseCJKDurationParser(DateTimeParser):
 
         end = ers[-1].start + ers[-1].length
         if end != len(text):
-            after_str = text[end]
+            after_str = text[end:]
             if after_str:
                 return ret
 

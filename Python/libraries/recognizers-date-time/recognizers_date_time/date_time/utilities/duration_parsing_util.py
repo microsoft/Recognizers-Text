@@ -132,8 +132,8 @@ class DurationParsingUtil:
             if src_unit in unit_map:
                 unit_str = unit_map[src_unit]
 
-                if num_val > 100 and (unit_str == Constants.TIMEX_YEAR or
-                                      unit_str == Constants.TIMEX_MONTH or
+                if num_val > 1000 and (unit_str == Constants.TIMEX_YEAR or
+                                      unit_str == Constants.TIMEX_MONTH_FULL or
                                       unit_str == Constants.TIMEX_WEEK):
                     return ret
 
@@ -150,7 +150,7 @@ class DurationParsingUtil:
                 ret.success = True
 
             elif RegExpUtility.get_group(match, Constants.BUSINESS_DAY_GROUP_NAME):
-                ret.timex = TimexUtil.generate_duration_timex(num_val, Constants.BUSINESS_DAY_GROUP_NAME, False)
+                ret.timex = TimexUtil.generate_duration_timex(num_val, Constants.TIMEX_BUSINESS_DAY, False)
 
                 # TODO figure out this line
                 ret.future_value = ret.past_value = num_val * unit_value_map[src_unit.split()]
