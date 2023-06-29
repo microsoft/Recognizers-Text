@@ -6,9 +6,10 @@ from typing import List, Pattern, Dict, Match
 import regex
 
 from recognizers_text.extractor import Extractor, ExtractResult
-from recognizers_text.parser import Parser, ParseResult
+from recognizers_text.parser import Parser
 from recognizers_date_time.date_time.constants import Constants
-from recognizers_date_time.date_time import DateTimeExtractor, DateTimeParser
+from recognizers_date_time.date_time.extractors import DateTimeExtractor
+from recognizers_date_time.date_time.parsers import DateTimeParser
 from recognizers_date_time.date_time.utilities import DateTimeOptionsConfiguration, Token, merge_all_tokens, \
     ExtractResultExtension, RegExpUtility, DateTimeParseResult, DateTimeResolutionResult, \
     TimexUtil, DateUtils, DateTimeFormatUtil, TimeTypeConstants

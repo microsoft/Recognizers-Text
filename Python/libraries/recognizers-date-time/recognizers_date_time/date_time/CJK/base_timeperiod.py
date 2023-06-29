@@ -177,13 +177,13 @@ class BaseCJKTimePeriodParser(DateTimeParser):
         # Add "early"/"late" Mod
         if (end_hour == begin_hour + Constants.HALF_MID_DAY_DURATION_HOUR_COUNT) and \
                 (begin_hour == Constants.MORNING_BEGIN_HOUR or begin_hour == Constants.AFTERNOON_BEGIN_HOUR):
-            result.Comment = Constants.COMMENT_EARLY
-            result.Mod = TimeTypeConstants.EARLY_MOD
+            result.comment = Constants.COMMENT_EARLY
+            result.mod = TimeTypeConstants.EARLY_MOD
 
         if (begin_hour == end_hour - Constants.HALF_MID_DAY_DURATION_HOUR_COUNT) and \
                 (end_hour == Constants.MORNING_END_HOUR or end_hour == Constants.AFTERNOON_END_HOUR):
-            result.Comment = Constants.COMMENT_LATE
-            result.Mod = TimeTypeConstants.LATE_MOD
+            result.comment = Constants.COMMENT_LATE
+            result.mod = TimeTypeConstants.LATE_MOD
 
         result.timex = parameters['timex']
         result.future_value = result.past_value = [

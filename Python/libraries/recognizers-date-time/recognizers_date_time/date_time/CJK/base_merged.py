@@ -135,25 +135,25 @@ class BaseCJKMergedDateTimeExtractor(DateTimeExtractor):
         if reference is None:
             reference = datetime.now()
 
-        result = self.config.date_extractor.extract(source, reference)
-
+        # result = self.config.date_extractor.extract(source, reference)
+        result = []
         # The order is important, since there can be conflicts in merging
         result = self.add_to(
             result, self.config.time_extractor.extract(source, reference))
-        result = self.add_to(
-            result, self.config.duration_extractor.extract(source, reference))
-        result = self.add_to(
-            result, self.config.date_period_extractor.extract(source, reference))
-        result = self.add_to(
-            result, self.config.date_time_extractor.extract(source, reference))
+        # result = self.add_to(
+        #     result, self.config.duration_extractor.extract(source, reference))
+        # result = self.add_to(
+        #     result, self.config.date_period_extractor.extract(source, reference))
+        # result = self.add_to(
+        #     result, self.config.date_time_extractor.extract(source, reference))
         result = self.add_to(
             result, self.config.time_period_extractor.extract(source, reference))
-        result = self.add_to(
-            result, self.config.date_time_period_extractor.extract(source, reference))
-        result = self.add_to(
-            result, self.config.set_extractor.extract(source, reference))
-        result = self.add_to(
-            result, self.config.holiday_extractor.extract(source, reference))
+        # result = self.add_to(
+        #     result, self.config.date_time_period_extractor.extract(source, reference))
+        # result = self.add_to(
+        #     result, self.config.set_extractor.extract(source, reference))
+        # result = self.add_to(
+        #     result, self.config.holiday_extractor.extract(source, reference))
 
         result = self.filter_unspecific_date_period(result)
 

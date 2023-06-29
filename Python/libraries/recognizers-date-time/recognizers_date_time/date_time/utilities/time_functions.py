@@ -1,5 +1,5 @@
 from datetime import datetime
-from typing import Dict
+from typing import Dict, Pattern
 import regex
 
 from recognizers_text import RegExpUtility
@@ -8,7 +8,7 @@ from recognizers_date_time.date_time.constants import Constants
 
 
 class TimeFunctions:
-    def __init__(self, number_dictionary: Dict[str,int], low_bound_desc: Dict[str,int], day_desc_regex: str):
+    def __init__(self, number_dictionary: Dict[str,int], low_bound_desc: Dict[str, int], day_desc_regex: Pattern):
         self.number_dictionary = number_dictionary
         self.low_bound_desc = low_bound_desc
         self.day_desc_regex = day_desc_regex
@@ -27,7 +27,7 @@ class TimeFunctions:
         if _all < 0:
             _all = _all + 1440
 
-        return TimeResult(_all / 60, _all % 60, second)
+        return TimeResult(int(_all / 60), _all % 60, second)
 
     def handle_kanji(self, extra: DateTimeExtra) -> TimeResult:
         hour = self.match_to_value(next(iter(extra.named_entity['hour']), ''))
@@ -62,6 +62,9 @@ class TimeFunctions:
         # to avoid ambiguity in other entities. For example, "on the 30th at 25" is resolved to
         # "XXXX-XX-30T25" because with "XXXX-XX-30+1T01" it is not known if the day should be "31" or "01".
         hour = self._min_with_floor(time_result.hour)
+        if hour == Constants.DAY_HOUR_COUNT:
+            hour = 0
+
         minute = self._min_with_floor(time_result.minute)
         second = self._min_with_floor(time_result.second)
 
@@ -71,13 +74,13 @@ class TimeFunctions:
 
         timex = 'T'
         if time_result.hour >= 0:
-            timex = f'{timex}{time_result.hour:02d}'
+            timex = f'{timex}{hour:02d}'
         if time_result.minute >= 0:
-            timex = f'{timex}:{time_result.minute:02d}'
+            timex = f'{timex}:{minute:02d}'
         if time_result.second >= 0:
             if time_result.minute < 0:
-                timex = f'{timex}:{time_result.min:02d}'
-            timex = f'{timex}:{time_result.second:02d}'
+                timex = f'{timex}:{minute:02d}'
+            timex = f'{timex}:{second:02d}'
 
         # handle cases with time like 25時 (the hour is normalized in the past/future values)
         if hour > Constants.DAY_HOUR_COUNT:

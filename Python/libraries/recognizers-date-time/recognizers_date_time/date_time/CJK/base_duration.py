@@ -5,7 +5,7 @@ from datetime import datetime
 from regex import regex
 
 from recognizers_number_with_unit.number_with_unit.parsers import UnitValue
-from recognizers_date_time import Constants, TimeTypeConstants
+from recognizers_date_time.date_time import Constants, TimeTypeConstants
 from recognizers_date_time.date_time.utilities import RegExpUtility, DateTimeOptionsConfiguration,\
     ExtractResultExtension, DurationParsingUtil, Token, get_tokens_from_regex, DateTimeOptions, Metadata, TimexUtil, \
     DateTimeResolutionResult

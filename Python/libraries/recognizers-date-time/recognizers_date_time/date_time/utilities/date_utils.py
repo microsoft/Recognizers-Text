@@ -4,7 +4,7 @@ import calendar
 
 from datedelta import datedelta
 
-from recognizers_date_time import Constants
+from recognizers_date_time.date_time import Constants
 
 
 class DayOfWeek(IntEnum):
