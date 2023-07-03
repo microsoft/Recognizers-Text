@@ -12,7 +12,6 @@ from recognizers_number.number.japanese.extractors import JapaneseIntegerExtract
 from recognizers_number.number.cjk_parsers import CJKNumberParser
 
 from recognizers_date_time.resources.japanese_date_time import JapaneseDateTime
-from recognizers_date_time.date_time.utilities import DateTimeOptionsConfiguration
 from recognizers_date_time.date_time.CJK import CJKCommonDateTimeParserConfiguration, BaseCJKTimeExtractor, \
     BaseCJKTimePeriodExtractor, BaseCJKTimeParser, BaseCJKTimePeriodParser
 from recognizers_date_time.date_time.japanese import JapaneseTimeExtractorConfiguration, \

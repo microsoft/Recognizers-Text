@@ -2,9 +2,10 @@ from typing import Pattern
 
 from recognizers_date_time.date_time.CJK import CJKMergedParserConfiguration, CJKCommonDateTimeParserConfiguration
 from recognizers_date_time.date_time.japanese.merged_extractor_config import JapaneseMergedExtractorConfiguration
+from recognizers_date_time.date_time.japanese.common_configs import JapaneseCommonDateTimeParserConfiguration
 
 
-class JapaneseMergedParserConfiguration(CJKMergedParserConfiguration):
+class JapaneseMergedParserConfiguration(JapaneseCommonDateTimeParserConfiguration, CJKMergedParserConfiguration):
     @property
     def before_regex(self) -> Pattern:
         return self._before_regex
@@ -37,8 +38,8 @@ class JapaneseMergedParserConfiguration(CJKMergedParserConfiguration):
     def until_regex(self) -> Pattern:
         return self._until_regex
 
-    def __init__(self, config: CJKCommonDateTimeParserConfiguration):
-        super().__init__()
+    def __init__(self, config):
+        JapaneseCommonDateTimeParserConfiguration.__init__(self)
         self._before_regex = JapaneseMergedExtractorConfiguration.before_regex
         self._after_regex = JapaneseMergedExtractorConfiguration.after_regex
         self._since_prefix_regex = JapaneseMergedExtractorConfiguration.since_prefix_regex

@@ -1,10 +1,10 @@
 class DateTimeResolutionKey:
-    timex: str = ''
-    mod: str = ''
-    is_lunar: str = ''
-    value: str = ''
-    start: str = ''        
-    end: str = ''        
-    list: str = ''        
-    source_entity: str = ''        
+    timex: str = "timex"
+    mod: str = 'Mod'
+    is_lunar: str = 'isLunar'
+    value: str = 'value'
+    start: str = 'start'
+    end: str = 'end'
+    list: str = 'list'
+    source_entity: str = 'sourceEntity'
     
