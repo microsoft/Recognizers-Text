@@ -3,7 +3,7 @@
 
 var fs = require('fs');
 var path = require('path');
-var keys = require('lodash.keys');
+var keys = require('lodash/keys');
 var SupportedCultures = require('./cultures');
 var supportedLanguages = keys(SupportedCultures);
 var specsPath = '../../Specs';

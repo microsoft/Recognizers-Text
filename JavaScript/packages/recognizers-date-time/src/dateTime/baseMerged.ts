@@ -15,7 +15,7 @@ import { BaseDateTimePeriodExtractor, BaseDateTimePeriodParser } from "./baseDat
 import { BaseSetExtractor, BaseSetParser } from "./baseSet";
 import { BaseDurationExtractor, BaseDurationParser } from "./baseDuration";
 import { BaseHolidayExtractor, BaseHolidayParser } from "./baseHoliday";
-import isEqual = require('lodash.isequal');
+import isEqual = require("lodash/isEqual");
 import { DateTimeOptions } from "./dateTimeRecognizer";
 
 export interface IMergedExtractorConfiguration {

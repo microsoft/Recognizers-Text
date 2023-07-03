@@ -5,7 +5,7 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import sourceMaps from 'rollup-plugin-sourcemaps';
 import pkg from './package.json';
-import camelCase from 'lodash.camelcase';
+import camelCase from 'lodash/camelCase';
 
 export default {
   input: `index.js`,

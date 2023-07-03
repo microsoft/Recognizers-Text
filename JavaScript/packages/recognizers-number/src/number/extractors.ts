@@ -7,7 +7,7 @@ import { BaseNumbers } from "../resources/baseNumbers";
 import { EnglishNumeric } from "../resources/englishNumeric";
 import { Match, RegExpUtility } from "@microsoft/recognizers-text";
 import { LongFormatType } from "./models";
-import escapeRegExp = require("lodash.escaperegexp");
+import escapeRegExp = require("lodash/escapeRegExp");
 
 export interface RegExpValue {
     regExp: RegExp;

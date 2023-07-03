@@ -9,7 +9,7 @@ import { BaseDurationExtractor, BaseDurationParser } from "./baseDuration";
 import { IDateTimeParser, DateTimeParseResult } from "./parsers";
 import { BaseDateExtractor, BaseDateParser } from "./baseDate";
 import { IDateTimeExtractor } from "./baseDateTime";
-import toNumber = require("lodash.tonumber");
+import toNumber = require("lodash/toNumber");
 
 export interface IDatePeriodExtractorConfiguration {
     simpleCasesRegexes: RegExp[]

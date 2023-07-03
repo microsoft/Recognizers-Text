@@ -3,7 +3,7 @@
 
 import { IExtractor, ExtractResult, IParser, ParseResult, StringUtility } from "@microsoft/recognizers-text";
 import { CultureInfo, Constants as NumberConstants } from "@microsoft/recognizers-text-number";
-import last = require("lodash.last");
+import last = require("lodash/last");
 import { Constants } from "./constants";
 import { DictionaryUtils } from "./utilities";
 import { BaseCurrency } from "../resources/baseCurrency";

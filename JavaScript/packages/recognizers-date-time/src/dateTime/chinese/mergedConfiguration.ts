@@ -27,7 +27,7 @@ import { DateTimeOptions } from "../dateTimeRecognizer";
 import { IDateTimeParser, DateTimeParseResult } from "../parsers";
 import { Constants, TimeTypeConstants } from "../constants";
 import { DateTimeFormatUtil, DateUtils, DateTimeResolutionResult, StringMap } from "../utilities";
-import isEqual = require('lodash.isequal');
+import isEqual = require("lodash/isEqual");
 
 class ChineseMergedExtractorConfiguration implements IMergedExtractorConfiguration {
     readonly dateExtractor: BaseDateExtractor

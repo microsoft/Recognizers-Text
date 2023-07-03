@@ -4,8 +4,8 @@
 import { IExtractor, ExtractResult, RegExpUtility, Match, StringUtility } from "@microsoft/recognizers-text";
 import { Culture, CultureInfo, Constants as NumberConstants } from "@microsoft/recognizers-text-number";
 import { Constants } from "./constants";
-import max = require("lodash.max");
-import escapeRegExp = require("lodash.escaperegexp");
+import max = require("lodash/max");
+import escapeRegExp = require("lodash/escapeRegExp");
 import { BaseUnits } from "../resources/baseUnits";
 
 export interface INumberWithUnitExtractorConfiguration {

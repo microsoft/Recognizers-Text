@@ -9,7 +9,7 @@ import { Token, DateTimeFormatUtil, DateTimeResolutionResult, IDateTimeUtilityCo
 import { IDateTimeExtractor } from "./baseDateTime";
 import { BaseDurationExtractor, BaseDurationParser } from "./baseDuration";
 import { IDateTimeParser, DateTimeParseResult } from "./parsers";
-import toNumber = require("lodash.tonumber");
+import toNumber = require("lodash/toNumber");
 
 export interface IDateExtractorConfiguration {
     dateRegexList: RegExp[],
