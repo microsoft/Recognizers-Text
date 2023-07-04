@@ -198,8 +198,8 @@ class JapaneseCommonDateTimeParserConfiguration(CJKCommonDateTimeParserConfigura
         self._date_parser = None
         self._time_parser = BaseCJKTimeParser(JapaneseTimeParserConfiguration(self))
         self._date_time_parser = None
-        self._date_period_parser = BaseCJKTimePeriodParser(JapaneseTimePeriodParserConfiguration(self))
-        self._time_period_parser = None
+        self._date_period_parser = None
+        self._time_period_parser = BaseCJKTimePeriodParser(JapaneseTimePeriodParserConfiguration(self))
         self._date_time_period_parser = None
         self._holiday_parser = None
         self._set_parser = None
