@@ -11,6 +11,11 @@ MODELFUNCTION = {
     'DateTime': recognize_datetime
 }
 
+CJK_languages = [
+    # "Chinese", Skipped until it uses CJK base extractors/parsers
+    "Japanese",
+    "Korean"
+]
 
 @pytest.mark.parametrize(
     'culture, model, options, context, source, expected_results',
@@ -230,9 +235,16 @@ def create_extractor(language, model, options):
     if extractor:
         return extractor()
 
-    extractor = get_class(
-        f'recognizers_date_time.date_time.base_{model.lower()}',
-        f'Base{model}Extractor')
+    if language in CJK_languages:
+        extractor = get_class(
+            f'recognizers_date_time.date_time.CJK.base_{model.lower()}',
+            f'BaseCJK{model}Extractor'
+        )
+    else:
+        extractor = get_class(
+            f'recognizers_date_time.date_time.base_{model.lower()}',
+            f'Base{model}Extractor')
+
     configuration = get_class(
         f'recognizers_date_time.date_time.{language.lower()}.{model.lower()}_extractor_config',
         f'{language}{model}ExtractorConfiguration')
@@ -261,9 +273,15 @@ def create_parser(language, model, options):
         f'{language}{model}Parser')
 
     if not parser:
-        parser = get_class(
-            f'recognizers_date_time.date_time.base_{model.lower()}',
-            f'Base{model}Parser')
+        if language in CJK_languages:
+            parser = get_class(
+                f'recognizers_date_time.date_time.CJK.base_{model.lower()}',
+                f'BaseCJK{model}Parser'
+            )
+        else:
+            parser = get_class(
+                f'recognizers_date_time.date_time.base_{model.lower()}',
+                f'Base{model}Parser')
         if model == 'TimeZone':
             return parser()
 

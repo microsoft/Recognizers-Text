@@ -1,11 +1,13 @@
+from enum import IntEnum
 from typing import Dict, List, Tuple
-from datetime import datetime
+from datetime import datetime, timedelta
 
 from datedelta import datedelta
 
 from recognizers_date_time.date_time.constants import Constants
 from recognizers_date_time.date_time.utilities import TimeOfDayResolution, DateUtils, \
     DateTimeFormatUtil, RangeTimexComponents, DateTimeResolutionKey
+from recognizers_date_time.date_time.data_structures import DatePeriodTimexType
 from datatypes_timex_expression.timex_helpers import TimexHelpers
 
 date_period_timex_type_to_suffix = {
@@ -14,6 +16,12 @@ date_period_timex_type_to_suffix = {
     2: Constants.TIMEX_MONTH,
     3: Constants.TIMEX_YEAR,
 }
+
+class UnspecificDateTimeTerms(IntEnum):
+    NONE = 0,
+    NonSpecificYear = 1
+    NonSpecificMonth = 2
+    NonSpecificDay =  3
 
 
 class TimexUtil:
@@ -131,13 +139,22 @@ class TimexUtil:
                f'{DateTimeFormatUtil.luis_date(end_date.year, end_date.month, end_date.day)},{duration_timex})'
 
     @staticmethod
-    def generate_date_period_timex(begin, end, timex_type, alternative_begin: datetime = None,
-                                   alternative_end: datetime = None, has_year: bool = False):
+    def generate_date_period_timex(begin: datetime, end: datetime, timex_type: DatePeriodTimexType, alternative_begin: datetime = None,
+                                   alternative_end: datetime = None, has_year: bool = True):
 
         # If the year is not specified, the combined range timex will use fuzzy years.
         if not has_year:
-            begin.year = -1
-            end.year = -1
+            begin_month = begin.month
+            end_month = end.month
+            begin_day = begin.day
+            end_day = end.day
+            begin_year = end_year = -1
+            unit_count = TimexUtil.generate_date_period_timex_unit_count(begin, end, timex_type)
+
+            date_period_timex = f"P{unit_count}{date_period_timex_type_to_suffix[timex_type]}"
+            return f'({DateTimeFormatUtil.luis_date(begin_year, begin_month, begin_day)},' \
+                   f'{DateTimeFormatUtil.luis_date(end_year, end_month, end_day)},{date_period_timex})'
+
 
         alternative = False
         if alternative_begin is None and alternative_end is None:
@@ -152,8 +169,9 @@ class TimexUtil:
         date_period_timex = f'P{unit_count}{date_period_timex_type_to_suffix[timex_type]}'
 
         if alternative:
-            f'({DateTimeFormatUtil.luis_date_from_datetime_with_alternative(begin, alternative_begin)},' \
-            f'{DateTimeFormatUtil.luis_date_from_datetime_with_alternative(end, alternative_end)},{date_period_timex})'
+            return f'({DateTimeFormatUtil.luis_date_from_datetime_with_alternative(begin, alternative_begin)},' \
+                   f'{DateTimeFormatUtil.luis_date_from_datetime_with_alternative(end, alternative_end)},' \
+                   f'{date_period_timex})'
         else:
             return f'({DateTimeFormatUtil.luis_date(begin.year, begin.month, begin.day)},' \
                    f'{DateTimeFormatUtil.luis_date(end.year, end.month, end.day)},{date_period_timex})'

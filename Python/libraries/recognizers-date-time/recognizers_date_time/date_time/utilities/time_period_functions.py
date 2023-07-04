@@ -42,14 +42,14 @@ class TimePeriodFunctions:
         if right_result.low_bound == -1 and \
                 left_result.low_bound != -1 and \
                 right_result.hour <= Constants.HALF_DAY_HOUR_COUNT and \
-                span_hour > Constants.DAY_HOUR_COUNT:
+                span_hour > Constants.HALF_DAY_HOUR_COUNT:
             right_result.hour += Constants.HALF_DAY_HOUR_COUNT
 
         # the left side doesn't contain desc while the right side does
         if left_result.low_bound == -1 and \
                 right_result.low_bound != -1 and \
                 left_result.hour <= Constants.HALF_DAY_HOUR_COUNT and \
-                span_hour > Constants.DAY_HOUR_COUNT:
+                span_hour > Constants.HALF_DAY_HOUR_COUNT:
             left_result.hour += Constants.HALF_DAY_HOUR_COUNT
 
         #  No 'am' or 'pm' indicator

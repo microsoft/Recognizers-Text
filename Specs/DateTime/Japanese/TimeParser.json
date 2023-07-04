@@ -1,7 +1,7 @@
 [
   {
     "Input": "アラームを8時40分にセットして。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "8時40分",
@@ -22,7 +22,7 @@
   },
   {
     "Input": "アラームを午前8時40分にセットして。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "午前8時40分",
@@ -43,7 +43,7 @@
   },
   {
     "Input": "アラームを午後8時40分にセットして。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "午後8時40分",
@@ -64,7 +64,7 @@
   },
   {
     "Input": "アラームを10時45分にセットして。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "10時45分",
@@ -85,7 +85,7 @@
   },
   {
     "Input": "アラームを午後15時15分にセットして。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "午後15時15分",
@@ -106,7 +106,7 @@
   },
   {
     "Input": "アラームを午後15時30分にセットして。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "午後15時30分",
@@ -127,7 +127,7 @@
   },
   {
     "Input": "アラームを10時10分にセットして。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "10時10分",
@@ -148,7 +148,7 @@
   },
   {
     "Input": "アラームを午後10時55分にセットして。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "午後10時55分",
@@ -169,7 +169,7 @@
   },
   {
     "Input": "7時に戻ってきます。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "7時",
@@ -190,7 +190,7 @@
   },
   {
     "Input": "午後7時に戻ってきます。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "午後7時",
@@ -211,7 +211,7 @@
   },
   {
     "Input": "午後7時56分に戻ってきます。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "午後7時56分",
@@ -232,7 +232,7 @@
   },
   {
     "Input": "午後7時56分30秒に戻ってきます。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "午後7時56分30秒",
@@ -253,7 +253,7 @@
   },
   {
     "Input": "12時34分に戻ってきます。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "12時34分",
@@ -274,7 +274,7 @@
   },
   {
     "Input": "12時34分25秒に戻ってきます。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "12時34分25秒",
@@ -295,7 +295,7 @@
   },
   {
     "Input": "7時です。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "7時",
@@ -316,7 +316,7 @@
   },
   {
     "Input": "朝の8時です。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "朝の8時",
@@ -337,7 +337,7 @@
   },
   {
     "Input": "夜の8時です。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "夜の8時",
@@ -358,7 +358,7 @@
   },
   {
     "Input": "8時半です。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "8時半",
@@ -379,7 +379,7 @@
   },
   {
     "Input": "午後8時半です。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "午後8時半",
@@ -400,7 +400,7 @@
   },
   {
     "Input": "8時30分です。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "8時30分",
@@ -421,7 +421,7 @@
   },
   {
     "Input": "8時15分です。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "8時15分",
@@ -442,7 +442,7 @@
   },
   {
     "Input": "午後9時45分です。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "午後9時45分",
@@ -463,7 +463,7 @@
   },
   {
     "Input": "8時3分前です。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "8時3分前",
@@ -484,7 +484,7 @@
   },
   {
     "Input": "7時半です。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "7時半",
@@ -505,7 +505,7 @@
   },
   {
     "Input": "午後7時半です。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "午後7時半",
@@ -526,7 +526,7 @@
   },
   {
     "Input": "朝の7時半です。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "朝の7時半",
@@ -547,7 +547,7 @@
   },
   {
     "Input": "朝の8時15分前です。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "朝の8時15分前",
@@ -568,7 +568,7 @@
   },
   {
     "Input": "夜の8時20分です。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "夜の8時20分",
@@ -589,7 +589,7 @@
   },
   {
     "Input": "午後の7時に戻ってきます。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "午後の7時",
@@ -610,7 +610,7 @@
   },
   {
     "Input": "午後7時00分05秒に戻ってきます。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "午後7時00分05秒",
@@ -631,7 +631,7 @@
   },
   {
     "Input": "午後7時30分に戻ります。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "午後7時30分",
@@ -652,7 +652,7 @@
   },
   {
     "Input": "午後7時35分に戻ります。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "午後7時35分",
@@ -673,7 +673,7 @@
   },
   {
     "Input": "午後11時20分に戻ります。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "午後11時20分",
@@ -694,7 +694,7 @@
   },
   {
     "Input": "正午ごろ戻ってきます。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "正午",
@@ -715,7 +715,7 @@
   },
   {
     "Input": "正午12時に戻ってきます。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "正午12時",
@@ -736,7 +736,7 @@
   },
   {
     "Input": "11時ごろ戻ってきます。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "11時",
@@ -757,7 +757,7 @@
   },
   {
     "Input": "午後3時40分に戻ってきます。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "午後3時40分",
@@ -778,7 +778,7 @@
   },
   {
     "Input": "午前11時40分に戻ってきます。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "午前11時40分",
@@ -799,7 +799,7 @@
   },
   {
     "Input": "真夜中",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "真夜中",
@@ -820,7 +820,7 @@
   },
   {
     "Input": "午前半ば",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "午前半ば",
@@ -841,7 +841,7 @@
   },
   {
     "Input": "午後3時ごろ",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "午後3時",
@@ -862,7 +862,7 @@
   },
   {
     "Input": "正午",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "正午",
@@ -883,7 +883,7 @@
   },
   {
     "Input": "昼食時の12時に戻ってきます。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "昼食時の12時",
@@ -904,7 +904,7 @@
   },
   {
     "Input": "夜中の12時に戻ってきます。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "夜中の12時",
@@ -925,7 +925,7 @@
   },
   {
     "Input": "夜の12時に戻ってきます。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "夜の12時",
@@ -946,7 +946,7 @@
   },
   {
     "Input": "夜中の1時に戻ってきます。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "夜中の1時",
@@ -967,7 +967,7 @@
   },
   {
     "Input": "昼食時の11時に戻ってきます。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "昼食時の11時",
@@ -988,7 +988,7 @@
   },
   {
     "Input": "昼食時の1時に戻ってきます。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "昼食時の1時",
@@ -1009,7 +1009,7 @@
   },
   {
     "Input": "11時の昼食時に戻ってきます。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "11時の昼食時",
@@ -1030,7 +1030,7 @@
   },
   {
     "Input": "午後7時56分13秒に戻ってきます。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "午後7時56分13秒",
@@ -1051,7 +1051,7 @@
   },
   {
     "Input": "12時34分45秒に戻ってきます。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "12時34分45秒",
@@ -1072,7 +1072,7 @@
   },
   {
     "Input": "午後7時25秒に戻ってきます。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "午後7時25秒",
@@ -1093,7 +1093,7 @@
   },
   {
     "Input": "午前7時30分に戻ります。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "午前7時30分",
@@ -1114,7 +1114,7 @@
   },
   {
     "Input": "11時5分に戻ります。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "11時5分",
@@ -1135,7 +1135,7 @@
   },
   {
     "Input": "5時27分に戻ります。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "5時27分",
@@ -1156,7 +1156,7 @@
   },
   {
     "Input": "夜の5時30分に戻ります。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "夜の5時30分",
@@ -1177,7 +1177,7 @@
   },
   {
     "Input": "正午に戻ってきます。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "正午",
@@ -1198,7 +1198,7 @@
   },
   {
     "Input": "正午の昼食時に戻ってきます。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "正午の昼食時",
@@ -1219,7 +1219,7 @@
   },
   {
     "Input": "7時1分に戻ってきます。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "7時1分",
@@ -1240,7 +1240,7 @@
   },
   {
     "Input": "午後10時10分に戻ってきます。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "午後10時10分",
@@ -1261,7 +1261,7 @@
   },
   {
     "Input": "午後10時13分に戻ってきます。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "午後10時13分",
@@ -1285,7 +1285,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript,  java",
     "Results": [
       {
         "Text": "朝十時ぐらい",
@@ -1309,7 +1309,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-19T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript,  java",
     "Results": [
       {
         "Text": "夜八時",
@@ -1333,7 +1333,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-09T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript,  java",
     "Results": [
       {
         "Text": "朝8時",
@@ -1357,7 +1357,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript,  java",
     "Results": [
       {
         "Text": "午後五時",
@@ -1381,7 +1381,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript,  java",
     "Results": [
       {
         "Text": "朝11時",
@@ -1405,7 +1405,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript,  java",
     "Results": [
       {
         "Text": "夜十時ぐらい",
@@ -1429,7 +1429,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript,  java",
     "Results": [
       {
         "Text": "未明二時半",
@@ -1453,7 +1453,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript,  java",
     "Results": [
       {
         "Text": "夜19:30",
@@ -1477,7 +1477,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript,  java",
     "Results": [
       {
         "Text": "午後十一時半",
@@ -1501,7 +1501,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript,  java",
     "Results": [
       {
         "Text": "十時頃",
@@ -1525,7 +1525,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript,  java",
     "Results": [
       {
         "Text": "零時かっきり",
@@ -1549,7 +1549,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript,  java",
     "Results": [
       {
         "Text": "夜9:30",
@@ -1573,7 +1573,7 @@
     "Context": {
       "ReferenceDateTime": "2019-08-19T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript,  java",
     "Results": [
       {
         "Text": "朝八時",
@@ -1597,7 +1597,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript,  java",
     "Results": [
       {
         "Text": "零時",
@@ -1618,7 +1618,7 @@
   },
   {
     "Input": "8時3分です。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "8時3分",
@@ -1639,7 +1639,7 @@
   },
   {
     "Input": "アラームを25時40分にセットして。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "25時40分",
@@ -1660,7 +1660,7 @@
   },
   {
     "Input": "アラームを26時45分にセットして。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "26時45分",
@@ -1681,7 +1681,7 @@
   },
   {
     "Input": "私は8:00:24pmに戻ります",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "8:00:24pm",
