@@ -1,5 +1,5 @@
 import datetime
-from typing import Dict, Optional
+from typing import Dict, Optional, List
 from recognizers_text import ExtractResult, ResolutionKey
 from recognizers_date_time.date_time.parsers import DateTimeParseResult
 from recognizers_date_time.date_time import Constants
@@ -35,7 +35,7 @@ class MergedParserUtil:
         if not slot:
             return None
 
-        resolutions: Dict[str, str] = dict()
+        resolutions: List[Dict[str, str]] = list()
         res: Dict[str, object] = dict()
 
         slot_type = slot.type
@@ -134,7 +134,7 @@ class MergedParserUtil:
                     value[Constants.UTC_OFFSET_MINS_KEY] = str(val.timezone_resolutions.utc_offset_mins)
 
                 value.update(p)
-                resolutions.update(value)
+                resolutions.append(value)
 
         if len(resolution_past) == 0 and len(resolution_future) == 0 and not val.timezone_resolution:
             not_resolved = {
@@ -142,8 +142,8 @@ class MergedParserUtil:
                 ResolutionKey.type: type_output,
                 ResolutionKey.value: "not resolved"
             }
-            resolutions.update(not_resolved)
-        return {ResolutionKey.value_set: [resolutions]}
+            resolutions.append(not_resolved)
+        return {ResolutionKey.value_set: resolutions}
 
     @staticmethod
     def determine_datetime_type(dt_type: str, has_mod: bool, config: DateTimeOptionsConfiguration) -> str:
