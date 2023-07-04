@@ -100,7 +100,7 @@ class MergedParserUtil:
             if len(resolution_past) > 0:
                 res[Constants.RESOLVE_TO_PAST_KEY] = resolution_past
             if len(resolution_future) > 0:
-                res[Constants.RESOLVE_TO_FUTURE_KEY] = resolution_past
+                res[Constants.RESOLVE_TO_FUTURE_KEY] = resolution_future
 
         # If 'ampm', double our resolution accordingly
         if comment and comment == Constants.COMMENT_AMPM:
