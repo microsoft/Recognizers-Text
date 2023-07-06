@@ -3,6 +3,7 @@ from datetime import datetime, timedelta
 from abc import abstractmethod
 
 from datedelta import datedelta
+from dateutil.relativedelta import relativedelta
 
 from ..utilities import Token
 from typing import List, Pattern, Dict, Match
@@ -778,16 +779,14 @@ class BaseCJKDateParser(DateTimeParser):
             # and decrease the pivotDate month by month to the latest previousDate. Notice: if the "day" is larger
             # than 28, some months should be ignored in the increase or decrease procedure.
 
-            pivot_date = datetime(year, month, day)
             days_in_month = calendar.monthrange(year, month)[1]
             if days_in_month >= day:
                 pivot_date = DateUtils.safe_create_from_min_value(year, month, day)
             else:
                 # Add 1 month is enough, since 1, 3, 5, 7, 8, 10, 12 months has 31 days
-                pivot_date = pivot_date + datedelta(months=1)
-                pivot_date = DateUtils.safe_create_from_min_value(pivot_date.year, pivot_date.month, pivot_date.day)
+                pivot_date = DateUtils.safe_create_from_min_value(year, month + 1, day)
 
-            num_week_day_int = pivot_date.isoweekday()
+            num_week_day_int = pivot_date.isoweekday() % 7
             extracted_week_day_str = match.get_group(Date_Constants.WEEKDAY_GROUP_NAME)
             week_day = self.config.day_of_week[extracted_week_day_str]
 
@@ -802,10 +801,10 @@ class BaseCJKDateParser(DateTimeParser):
                     future_date = pivot_date
                     past_date = pivot_date
 
-                    while future_date.isoweekday() != week_day or future_date.day != day or future_date < reference:
+                    while future_date.isoweekday() % 7 != week_day or future_date.day != day or future_date < reference:
                         # Increase the futureDate month by month to find the expected date (the "day" is the weekday)
                         # and make sure the futureDate not less than the referenceDate.
-                        future_date += datedelta(months=1)
+                        future_date += relativedelta(months=1)
                         tmp_days_in_month = calendar.monthrange(future_date.year, future_date.month)[1]
                         if tmp_days_in_month >= day:
                             # For months like January 31, after add 1 month, February 31 won't be returned,
@@ -815,11 +814,11 @@ class BaseCJKDateParser(DateTimeParser):
 
                     result_value.future_value = future_date
 
-                    while past_date.isoweekday() != week_day or past_date.day != day or past_date > reference:
+                    while past_date.isoweekday() % 7 != week_day or past_date.day != day or past_date > reference:
                         # Decrease the pastDate month by month to find the expected date (the "day" is the weekday) and
                         # make sure the pastDate not larger than the referenceDate.
-                        past_date -= datedelta(months=1)
-                        tmp_days_in_month = calendar.monthrange(past_date.year, future_date.month)[1]
+                        past_date -= relativedelta(months=1)
+                        tmp_days_in_month = calendar.monthrange(past_date.year, past_date.month)[1]
                         if tmp_days_in_month >= day:
                             # For months like March 31, after minus 1 month, February 31
                             # won't be returned, so the day should be revised ASAP.
