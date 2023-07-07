@@ -33,7 +33,7 @@
     "prepare": "npm run build-resources && npm run clean-build && tsc && rollup -c"
   },
   "dependencies": {
-    "@microsoft/recognizers-text": "~1.3.0",
+    "@microsoft/recognizers-text": "file:../recognizers-text",
     "grapheme-splitter": "^1.0.2"
   }
 }
