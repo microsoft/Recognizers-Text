@@ -476,7 +476,7 @@ class CJKDateTimePeriodParserConfiguration(DateTimeOptionsConfiguration):
 
     @property
     @abstractmethod
-    def duration_parser(self) -> DateTimeExtractor:
+    def duration_parser(self) -> DateTimeParser:
         raise NotImplementedError
 
     @property

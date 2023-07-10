@@ -66,7 +66,7 @@ class CJKDateTimeExtractorConfiguration(DateTimeOptionsConfiguration):
 
     @property
     @abstractmethod
-    def date_point_extractor(self) -> DateExtractor:
+    def date_point_extractor(self) -> DateTimeExtractor:
         raise NotImplementedError
 
     @property
@@ -77,10 +77,6 @@ class CJKDateTimeExtractorConfiguration(DateTimeOptionsConfiguration):
     @property
     @abstractmethod
     def ambiguity_date_time_filters(self) -> Dict[Pattern, Pattern]:
-        raise NotImplementedError
-
-    @abstractmethod
-    def is_connector_token(self, middle):
         raise NotImplementedError
 
 

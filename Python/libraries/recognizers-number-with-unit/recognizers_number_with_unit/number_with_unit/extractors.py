@@ -316,7 +316,8 @@ class NumberWithUnitExtractor(Extractor):
         if self.separate_regex:
             if non_unit_match is None:
                 try:
-                    non_unit_match = list(self.config.non_unit_regex.match(source))
+                    non_unit_match = RegExpUtility.get_matches(self.config.non_unit_regex, source)
+                    # non_unit_match = list(self.config.non_unit_regex.match(source))
                 except:
                     non_unit_match = []
 

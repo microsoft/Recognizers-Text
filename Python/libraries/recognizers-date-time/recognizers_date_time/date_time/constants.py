@@ -141,6 +141,7 @@ class Constants:
     AFTERNOON: str = "TAF"
     EVENING: str = "TEV"
     DAYTIME: str = "TDT"
+    NIGHTTIME: str = "TNT"
     NIGHT: str = "TNI"
     BUSINESS_HOUR: str = "TBH"
     MEALTIME_BREAKFAST: str = "TMEB"

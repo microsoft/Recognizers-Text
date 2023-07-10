@@ -214,8 +214,8 @@ class BaseCJKDurationExtractor(DateTimeExtractor):
         #  handle "few days", "few months"
         ret.extend(get_tokens_from_regex(self.config.some_regex, text))
         #  handle "during/for the day/week/month/year"
-        if (self.config.options and DateTimeOptions.CALENDAR) != 0:
-            ret.extend(get_tokens_from_regex(self.config.during_regex, text))
+        # if (self.config.options and DateTimeOptions.CALENDAR) != 0:
+        #     ret.extend(get_tokens_from_regex(self.config.during_regex, text))
 
         result: List[ExtractResult] = list()
         for e in ret:
