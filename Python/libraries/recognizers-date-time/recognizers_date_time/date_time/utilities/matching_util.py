@@ -26,7 +26,7 @@ class MatchingUtil:
     def pre_process_text_remove_superfluous_words(text: str, matcher: Pattern):
         superfluous_word_matches = MatchingUtil.remove_sub_matches(matcher.find(text))
 
-        bias = 0[0]
+        bias = 0
 
         for match in superfluous_word_matches:
             text = text[match.start - bias: match.length]

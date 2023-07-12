@@ -42,7 +42,9 @@ class MergedParserUtil:
         timex = slot.timex_str
         val: DateTimeResolutionResult = slot.value
 
-        if not val:
+        val_success = getattr(val, 'success', None)
+
+        if not val or not val_success:
             return None
 
         is_lunar = val.is_lunar
@@ -69,7 +71,7 @@ class MergedParserUtil:
         res[DateTimeResolutionKey.is_lunar] = is_lunar
 
         has_time_zone = False
-        if hasattr(val, "timezone_resolution"):
+        if hasattr(val, 'timezone_resolution'):
             if slot_type == Constants.SYS_DATETIME_TIMEZONE:
                 #  single timezone
                 res[Constants.RESOLVE_TIMEZONE] = {
@@ -136,7 +138,8 @@ class MergedParserUtil:
                 value.update(p)
                 resolutions.append(value)
 
-        if len(resolution_past) == 0 and len(resolution_future) == 0 and not val.timezone_resolution:
+        if resolution_past and resolution_future and len(resolution_past) == 0 and len(resolution_future) == 0 \
+                and not val.timezone_resolution:
             not_resolved = {
                 DateTimeResolutionKey.timex: timex,
                 ResolutionKey.type: type_output,
@@ -199,7 +202,7 @@ class MergedParserUtil:
                                                             TimeTypeConstants.END_TIME, mod, res)
         elif dt_type == Constants.SYS_DATETIME_DATEPERIOD:
             res = MergedParserUtil.add_period_to_resolution(resolution_dict, TimeTypeConstants.START_DATE,
-                                                            TimeTypeConstants.END_TIME, mod, res)
+                                                            TimeTypeConstants.END_DATE, mod, res)
         elif dt_type == Constants.SYS_DATETIME_DATETIMEPERIOD:
             res = MergedParserUtil.add_period_to_resolution(resolution_dict, TimeTypeConstants.START_TIME,
                                                             TimeTypeConstants.END_TIME, mod, res)
@@ -277,12 +280,14 @@ class MergedParserUtil:
                 res[DateTimeResolutionKey.end] = end
                 return res
 
-            if not MergedParserUtil.are_unresolved_dates(start, end):
-                res[DateTimeResolutionKey.start] = start
-                res[DateTimeResolutionKey.end] = end
-                # Preserving any present timex values. Useful for Holiday weekend where the timex is known during parsing.
-                if DateTimeResolutionKey.timex in resolution_dict:
-                    res[DateTimeResolutionKey.timex] = resolution_dict[DateTimeResolutionKey.timex]
+            return res
+
+        if not MergedParserUtil.are_unresolved_dates(start, end):
+            res[DateTimeResolutionKey.start] = start
+            res[DateTimeResolutionKey.end] = end
+            # Preserving any present timex values. Useful for Holiday weekend where the timex is known during parsing.
+            if DateTimeResolutionKey.timex in resolution_dict:
+                res[DateTimeResolutionKey.timex] = resolution_dict[DateTimeResolutionKey.timex]
 
             return res
 

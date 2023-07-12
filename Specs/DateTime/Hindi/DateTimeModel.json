@@ -9675,7 +9675,7 @@
       "ReferenceDateTime": "2019-01-25T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "21 सोमवार",
@@ -9704,7 +9704,7 @@
     "Context": {
       "ReferenceDateTime": "2019-01-21T12:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "21 सोमवार",
@@ -9729,7 +9729,7 @@
       "ReferenceDateTime": "2019-01-25T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "रविवार 31",
@@ -9759,7 +9759,7 @@
       "ReferenceDateTime": "2019-02-25T12:00:00"
     },
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "31 शुक्रवार",
@@ -9777,6 +9777,35 @@
               "timex": "XXXX-WXX-5",
               "type": "date",
               "value": "2019-05-31"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "क्या शनिवार 30 तारीख को कोई व्यवस्था है!",
+    "Context": {
+      "ReferenceDateTime": "2023-07-05T12:00:00"
+    },
+    "NotSupportedByDesign": "javascript,java",
+    "Results": [
+      {
+        "Text": "शनिवार 30",
+        "Start": 5,
+        "End": 14,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-6",
+              "type": "date",
+              "value": "2022-07-30"
+            },
+            {
+              "timex": "XXXX-WXX-6",
+              "type": "date",
+              "value": "2023-09-30"
             }
           ]
         }

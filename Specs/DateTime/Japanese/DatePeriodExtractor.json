@@ -1,7 +1,7 @@
 [
   {
     "Input": "1月は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "1月",
@@ -13,7 +13,7 @@
   },
   {
     "Input": "今年の1月は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今年の1月",
@@ -25,7 +25,7 @@
   },
   {
     "Input": "2001年1月は不在でした。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2001年1月",
@@ -37,7 +37,7 @@
   },
   {
     "Input": "2月は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2月",
@@ -49,7 +49,7 @@
   },
   {
     "Input": "今年の2月は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今年の2月",
@@ -61,7 +61,7 @@
   },
   {
     "Input": "2001年2月は不在でした。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2001年2月",
@@ -73,7 +73,7 @@
   },
   {
     "Input": "3月は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "3月",
@@ -85,7 +85,7 @@
   },
   {
     "Input": "今年の3月は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今年の3月",
@@ -97,7 +97,7 @@
   },
   {
     "Input": "2001年3月は不在でした。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2001年3月",
@@ -109,7 +109,7 @@
   },
   {
     "Input": "4月は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "4月",
@@ -121,7 +121,7 @@
   },
   {
     "Input": "今年の4月は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今年の4月",
@@ -133,7 +133,7 @@
   },
   {
     "Input": "2001年4月は不在でした。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2001年4月",
@@ -145,7 +145,7 @@
   },
   {
     "Input": "5月は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "5月",
@@ -157,7 +157,7 @@
   },
   {
     "Input": "今年の5月は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今年の5月",
@@ -169,7 +169,7 @@
   },
   {
     "Input": "2001年5月は不在でした。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2001年5月",
@@ -181,7 +181,7 @@
   },
   {
     "Input": "6月は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "6月",
@@ -193,7 +193,7 @@
   },
   {
     "Input": "今年の6月は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今年の6月",
@@ -205,7 +205,7 @@
   },
   {
     "Input": "2001年6月は不在でした。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2001年6月",
@@ -217,7 +217,7 @@
   },
   {
     "Input": "7月は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "7月",
@@ -229,7 +229,7 @@
   },
   {
     "Input": "今年の7月は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今年の7月",
@@ -241,7 +241,7 @@
   },
   {
     "Input": "2001年7月は不在でした。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2001年7月",
@@ -253,7 +253,7 @@
   },
   {
     "Input": "8月は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "8月",
@@ -265,7 +265,7 @@
   },
   {
     "Input": "今年の8月は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今年の8月",
@@ -277,7 +277,7 @@
   },
   {
     "Input": "2001年8月は不在でした。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2001年8月",
@@ -289,7 +289,7 @@
   },
   {
     "Input": "9月は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "9月",
@@ -301,7 +301,7 @@
   },
   {
     "Input": "今年の9月は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今年の9月",
@@ -313,7 +313,7 @@
   },
   {
     "Input": "2001年9月は不在でした。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2001年9月",
@@ -325,7 +325,7 @@
   },
   {
     "Input": "10月は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "10月",
@@ -337,7 +337,7 @@
   },
   {
     "Input": "今年の10月は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今年の10月",
@@ -349,7 +349,7 @@
   },
   {
     "Input": "2001年10月は不在でした。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2001年10月",
@@ -361,7 +361,7 @@
   },
   {
     "Input": "11月は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "11月",
@@ -373,7 +373,7 @@
   },
   {
     "Input": "今年の11月は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今年の11月",
@@ -385,7 +385,7 @@
   },
   {
     "Input": "2001年11月は不在でした。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2001年11月",
@@ -397,7 +397,7 @@
   },
   {
     "Input": "12月は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "12月",
@@ -409,7 +409,7 @@
   },
   {
     "Input": "今年の12月は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今年の12月",
@@ -421,7 +421,7 @@
   },
   {
     "Input": "2001年12月は不在でした。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2001年12月",
@@ -433,7 +433,7 @@
   },
   {
     "Input": "9月のカレンダー",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "9月",
@@ -445,7 +445,7 @@
   },
   {
     "Input": "今月の4日から22日まで不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今月の4日から22日まで",
@@ -457,7 +457,7 @@
   },
   {
     "Input": "来月の4日から23日まで不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "来月の4日から23日まで",
@@ -469,7 +469,7 @@
   },
   {
     "Input": "9月3日から12日まで不在にします。ハハハ",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "9月3日から12日まで",
@@ -481,7 +481,7 @@
   },
   {
     "Input": "今月の4日から23日まで不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今月の4日から23日まで",
@@ -493,7 +493,7 @@
   },
   {
     "Input": "今月の4日から22日の間、不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今月の4日から22日の間",
@@ -505,7 +505,7 @@
   },
   {
     "Input": "9月3日から12日の間、不在にします。ハハハ",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "9月3日から12日の間",
@@ -517,7 +517,7 @@
   },
   {
     "Input": "9月4日から8日までの間、不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "9月4日から8日までの間",
@@ -529,7 +529,7 @@
   },
   {
     "Input": "11月15日から19日までの間、不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "11月15日から19日までの間",
@@ -541,7 +541,7 @@
   },
   {
     "Input": "2017年1月4日から22日まで不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2017年1月4日から22日まで",
@@ -553,7 +553,7 @@
   },
   {
     "Input": "2017年1月4日から22日の間、不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2017年1月4日から22日の間",
@@ -565,7 +565,7 @@
   },
   {
     "Input": "今週は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今週",
@@ -577,7 +577,7 @@
   },
   {
     "Input": "来週は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "来週",
@@ -589,7 +589,7 @@
   },
   {
     "Input": "来年の6月は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "来年の6月",
@@ -601,7 +601,7 @@
   },
   {
     "Input": "2016年6月は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2016年6月",
@@ -613,7 +613,7 @@
   },
   {
     "Input": "今週末は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今週末",
@@ -625,7 +625,7 @@
   },
   {
     "Input": "今月の第三週は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今月の第三週",
@@ -637,7 +637,7 @@
   },
   {
     "Input": "7月の最後の週は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "7月の最後の週",
@@ -649,7 +649,7 @@
   },
   {
     "Input": "金曜日から日曜日までキャンプの予定を入れる。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "金曜日から日曜日まで",
@@ -661,7 +661,7 @@
   },
   {
     "Input": "向こう3日間は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "向こう3日間",
@@ -673,7 +673,7 @@
   },
   {
     "Input": "向こう3か月は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "向こう3か月",
@@ -686,7 +686,7 @@
   {
     "Input": "3年後に不在にします。",
     "Comment": "This test case was intended to correspond to the English 'I'll be out in 3 years', but '後に' (after) is used instead of 'で' (in). A test case using 'で' has been appended to the specs.",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "3年後に",
@@ -699,7 +699,7 @@
   {
     "Input": "3週間後に不在にします。",
     "Comment": "This test case was intended to correspond to the English 'I'll be out in 3 weeks', but '後に' (after) is used instead of 'で' (in). A test case using 'で' has been appended to the specs.",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "3週間後に",
@@ -712,7 +712,7 @@
   {
     "Input": "3か月後に不在にします。",
     "Comment": "This test case was intended to correspond to the English 'I'll be out in 3 months', but '後に' (after) is used instead of 'で' (in). A test case using 'で' has been appended to the specs.",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "3か月後に",
@@ -724,7 +724,7 @@
   },
   {
     "Input": "前の3週間は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "前の3週間",
@@ -736,7 +736,7 @@
   },
   {
     "Input": "この数週間",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "この数週間",
@@ -748,7 +748,7 @@
   },
   {
     "Input": "この数日間",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "この数日間",
@@ -760,7 +760,7 @@
   },
   {
     "Input": "10月2日から22日まで不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "10月2日から22日まで",
@@ -772,7 +772,7 @@
   },
   {
     "Input": "2016年1月12日から2016年2月22日まで不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2016年1月12日から2016年2月22日まで",
@@ -784,7 +784,7 @@
   },
   {
     "Input": "1月1日から1月22日水曜日まで不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "1月1日から1月22日水曜日まで",
@@ -796,7 +796,7 @@
   },
   {
     "Input": "今日から明日まで不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今日から明日まで",
@@ -808,7 +808,7 @@
   },
   {
     "Input": "今日から10月22日まで不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今日から10月22日まで",
@@ -820,7 +820,7 @@
   },
   {
     "Input": "10月2日から明後日まで不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "10月2日から明後日まで",
@@ -832,7 +832,7 @@
   },
   {
     "Input": "今日から来週日曜日まで不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今日から来週日曜日まで",
@@ -844,7 +844,7 @@
   },
   {
     "Input": "今週の金曜日から来週の日曜日まで不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今週の金曜日から来週の日曜日まで",
@@ -856,7 +856,7 @@
   },
   {
     "Input": "2015年8月12日から10月22日まで不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2015年8月12日から10月22日まで",
@@ -883,7 +883,7 @@
   },
   {
     "Input": "10月2日から22日の間、不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "10月2日から22日の間",
@@ -895,7 +895,7 @@
   },
   {
     "Input": "11月19日から20日まで不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "11月19日から20日まで",
@@ -907,7 +907,7 @@
   },
   {
     "Input": "11月19日から20日の間は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "11月19日から20日の間",
@@ -919,7 +919,7 @@
   },
   {
     "Input": "2016年の第3四半期は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2016年の第3四半期",
@@ -931,7 +931,7 @@
   },
   {
     "Input": "今年の第3四半期は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今年の第3四半期",
@@ -943,7 +943,7 @@
   },
   {
     "Input": "第1四半期中に戻ってきます。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "第1四半期",
@@ -955,7 +955,7 @@
   },
   {
     "Input": "第3四半期は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "第3四半期",
@@ -967,7 +967,7 @@
   },
   {
     "Input": "2015年3月は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2015年3月",
@@ -979,7 +979,7 @@
   },
   {
     "Input": "2027年の第3週は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2027年の第3週",
@@ -991,7 +991,7 @@
   },
   {
     "Input": "来年の第3週は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "来年の第3週",
@@ -1003,7 +1003,7 @@
   },
   {
     "Input": "今年の夏出発します。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今年の夏",
@@ -1015,7 +1015,7 @@
   },
   {
     "Input": "来年の春出発します。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "来年の春",
@@ -1027,7 +1027,7 @@
   },
   {
     "Input": "その夏出発します。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "その夏",
@@ -1039,7 +1039,7 @@
   },
   {
     "Input": "夏出発します。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "夏",
@@ -1051,7 +1051,7 @@
   },
   {
     "Input": "2016年の夏出発します。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2016年の夏",
@@ -1063,7 +1063,7 @@
   },
   {
     "Input": "来月の休日",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "来月",
@@ -1075,7 +1075,7 @@
   },
   {
     "Input": "11月30日の週",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "11月30日の週",
@@ -1087,7 +1087,7 @@
   },
   {
     "Input": "9月15日の週",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "9月15日の週",
@@ -1099,7 +1099,7 @@
   },
   {
     "Input": "9月15日の月",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "9月15日の月",
@@ -1111,7 +1111,7 @@
   },
   {
     "Input": "その週末に出発します。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "その週末",
@@ -1123,7 +1123,7 @@
   },
   {
     "Input": "その週の残りの日は休暇を取ります。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "その週の残りの日",
@@ -1135,7 +1135,7 @@
   },
   {
     "Input": "私の週の残りの日は休暇を取ります。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "私の週の残りの日",
@@ -1147,7 +1147,7 @@
   },
   {
     "Input": "週の残りの日は休暇を取ります。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "週の残りの日",
@@ -1159,7 +1159,7 @@
   },
   {
     "Input": "今週の残りの日は休暇を取ります。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今週の残りの日",
@@ -1171,7 +1171,7 @@
   },
   {
     "Input": "その月の残りの日は休暇を取ります。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "その月の残りの日",
@@ -1183,7 +1183,7 @@
   },
   {
     "Input": "その年いっぱいは休暇を取ります。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "その年いっぱい",
@@ -1195,7 +1195,7 @@
   },
   {
     "Input": "今月の終わりごろ会うための時間をつくってください。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今月の終わりごろ",
@@ -1207,7 +1207,7 @@
   },
   {
     "Input": "今週の終わりごろ会うための時間をつくってください。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今週の終わりごろ",
@@ -1219,7 +1219,7 @@
   },
   {
     "Input": "来週の終わりごろ会うための時間をつくってください。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "来週の終わりごろ",
@@ -1231,7 +1231,7 @@
   },
   {
     "Input": "来年の終わりごろ会うための時間をつくってください。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "来年の終わりごろ",
@@ -1243,7 +1243,7 @@
   },
   {
     "Input": "私たちは先週の終わりごろ会いました。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "先週の終わりごろ",
@@ -1255,7 +1255,7 @@
   },
   {
     "Input": "今月初めに会うための時間をとってください。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今月初め",
@@ -1267,7 +1267,7 @@
   },
   {
     "Input": "今週初めに会うための時間をとってください。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今週初め",
@@ -1279,7 +1279,7 @@
   },
   {
     "Input": "来週初めに会うための時間をとってください。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "来週初め",
@@ -1291,7 +1291,7 @@
   },
   {
     "Input": "来年初めに会うための時間をとってください。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "来年初め",
@@ -1303,7 +1303,7 @@
   },
   {
     "Input": "コルタナ、アントニオと25分の会議を来週の水曜日から金曜日の間で調整して。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "来週の水曜日から金曜日の間",
@@ -1315,7 +1315,7 @@
   },
   {
     "Input": "コルタナ、アントニオと25分の会議を来週の水曜日から金曜日で調整して。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,python, java",
     "Results": [
       {
         "Text": "来週の水曜日から金曜日",
@@ -1327,7 +1327,7 @@
   },
   {
     "Input": "コルタナ、アントニオと25分の会議を先週の水曜日から金曜日の間で調整して。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "先週の水曜日から金曜日の間",
@@ -1351,7 +1351,7 @@
   },
   {
     "Input": "247年は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "247年",
@@ -1363,7 +1363,7 @@
   },
   {
     "Input": "1970年代に",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "1970年代",
@@ -1375,7 +1375,7 @@
   },
   {
     "Input": "2000年代に彼は生まれた。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2000年代",
@@ -1387,7 +1387,7 @@
   },
   {
     "Input": "70年代に",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "70年代",
@@ -1399,7 +1399,7 @@
   },
   {
     "Input": "40年代に",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "40年代",
@@ -1411,7 +1411,7 @@
   },
   {
     "Input": "2010年代に",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2010年代",
@@ -1423,7 +1423,7 @@
   },
   {
     "Input": "2000年代に",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2000年代",
@@ -1435,7 +1435,7 @@
   },
   {
     "Input": "2018年2月2日から7日は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2018年2月2日から7日",
@@ -1447,7 +1447,7 @@
   },
   {
     "Input": "2018年2月2日から7日の間は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2018年2月2日から7日の間",
@@ -1459,7 +1459,7 @@
   },
   {
     "Input": "1999年の6月にそれは起きた。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "1999年の6月",
@@ -1471,7 +1471,7 @@
   },
   {
     "Input": "1928年に",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "1928年に",
@@ -1483,7 +1483,7 @@
   },
   {
     "Input": "2027年の最初の週は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2027年の最初の週",
@@ -1495,7 +1495,7 @@
   },
   {
     "Input": "2020年の第1四半期は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2020年の第1四半期",
@@ -1507,7 +1507,7 @@
   },
   {
     "Input": "1978年の春に",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "1978年の春",
@@ -1519,7 +1519,7 @@
   },
   {
     "Input": "再来週は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "再来週",
@@ -1531,7 +1531,7 @@
   },
   {
     "Input": "それは過去20年間に起きた。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "過去20年間",
@@ -1543,7 +1543,7 @@
   },
   {
     "Input": "それは次の10年間に起きた。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "次の10年間",
@@ -1555,7 +1555,7 @@
   },
   {
     "Input": "それは今後4週間に起きるでしょう。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今後4週間",
@@ -1567,7 +1567,7 @@
   },
   {
     "Input": "それは2日後に起きるでしょう。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2日後に",
@@ -1579,7 +1579,7 @@
   },
   {
     "Input": "コルタナが来週の初めに時間を見つけてくれる。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "来週の初め",
@@ -1591,7 +1591,7 @@
   },
   {
     "Input": "承知しました。来週の終わりにスカイプを取得しましょう。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "来週の終わり",
@@ -1603,7 +1603,7 @@
   },
   {
     "Input": "承知しました。来週の初めにスカイプを取得しましょう。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "来週の初め",
@@ -1615,7 +1615,7 @@
   },
   {
     "Input": "コルタナ、三月の下旬に時間を見つけて。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "三月の下旬",
@@ -1627,7 +1627,7 @@
   },
   {
     "Input": "コルタナ、来週半ばに時間を見つけて。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "来週半ば",
@@ -1639,7 +1639,7 @@
   },
   {
     "Input": "コルタナが三月半ばに会えるよう手配してくれる。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "三月半ば",
@@ -1651,7 +1651,7 @@
   },
   {
     "Input": "夏の半ばまでにどうですか。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "夏の半ば",
@@ -1663,7 +1663,7 @@
   },
   {
     "Input": "来週のはじめに時間がつくれます。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "来週のはじめ",
@@ -1675,7 +1675,7 @@
   },
   {
     "Input": "2016年11月は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2016年11月",
@@ -1687,7 +1687,7 @@
   },
   {
     "Input": "1月1日から4月5日の間、不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "1月1日から4月5日の間",
@@ -1699,7 +1699,7 @@
   },
   {
     "Input": "2015年1月1日から2018年2月5日の間、不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2015年1月1日から2018年2月5日の間",
@@ -1735,7 +1735,7 @@
   },
   {
     "Input": "2019年2月1日から3月まで不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2019年2月1日から3月まで",
@@ -1747,7 +1747,7 @@
   },
   {
     "Input": "2019年2月1日から3月の間、不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2019年2月1日から3月の間",
@@ -1759,7 +1759,7 @@
   },
   {
     "Input": "2015年6月から2018年5月の間、不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2015年6月から2018年5月の間",
@@ -1783,7 +1783,7 @@
   },
   {
     "Input": "2015年5月から2018年6月の間、不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2015年5月から2018年6月の間",
@@ -1855,7 +1855,7 @@
   },
   {
     "Input": "今日から2日半の間、ここに滞在します。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今日から2日半の間",
@@ -1867,7 +1867,7 @@
   },
   {
     "Input": "私の2017年4月のボーナスは何ですか。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2017年4月",
@@ -1879,7 +1879,7 @@
   },
   {
     "Input": "私はそれが起きたのと同じ月にそこにいませんでした。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "同じ月",
@@ -1891,7 +1891,7 @@
   },
   {
     "Input": "私はそれが起きたのと同じ週にそこにいませんでした。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "同じ週",
@@ -1903,7 +1903,7 @@
   },
   {
     "Input": "私はその年にそこにいませんでした。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "その年",
@@ -1915,7 +1915,7 @@
   },
   {
     "Input": "今日から2週間以上前にもうすべての仕事を終えた。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今日から2週間以上前",
@@ -1927,7 +1927,7 @@
   },
   {
     "Input": "今日から2週間以内に戻ってきます。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今日から2週間以内",
@@ -1939,7 +1939,7 @@
   },
   {
     "Input": "この仕事は昨日の2日以上前には終わらせておくべきだった。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "昨日の2日以上前",
@@ -1951,7 +1951,7 @@
   },
   {
     "Input": "この仕事は明日から3日以内に終わらせます。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "明日から3日以内",
@@ -1963,7 +1963,7 @@
   },
   {
     "Input": "コルタナ、18日の週に何か予定を入れて。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "18日の週",
@@ -1975,7 +1975,7 @@
   },
   {
     "Input": "日付がこの10年の売上",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "この10年",
@@ -1987,7 +1987,7 @@
   },
   {
     "Input": "2016年第3四半期は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2016年第3四半期",
@@ -1999,7 +1999,7 @@
   },
   {
     "Input": "来年の第3四半期は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "来年の第3四半期",
@@ -2011,7 +2011,7 @@
   },
   {
     "Input": "来年の第4四半期は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "来年の第4四半期",
@@ -2024,12 +2024,12 @@
   {
     "Input": "2000ドルをイギリスポンドに換算してください。",
     "Comment": "2000 shouldn't recognized as year here",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": []
   },
   {
     "Input": "この銀行の株は年初来20%下がっている。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "年初来",
@@ -2041,7 +2041,7 @@
   },
   {
     "Input": "10月1日から11月7日まで",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "10月1日から11月7日まで",
@@ -2119,7 +2119,7 @@
   },
   {
     "Input": "今年の夏",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "今年の夏",
@@ -2155,7 +2155,7 @@
   },
   {
     "Input": "先週",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "先週",
@@ -2191,7 +2191,7 @@
   },
   {
     "Input": "2018年12月",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "2018年12月",
@@ -2239,7 +2239,7 @@
   },
   {
     "Input": "会議は来週になりました。",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "来週",
@@ -2263,7 +2263,7 @@
   },
   {
     "Input": "平成三十年十二月",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "平成三十年十二月",
@@ -2275,7 +2275,7 @@
   },
   {
     "Input": "この三年間、犯罪者数は年々減っています。",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "この三年間",
@@ -2299,7 +2299,7 @@
   },
   {
     "Input": "１００とはただの数字です。",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": []
   },
   {
@@ -2328,7 +2328,7 @@
   },
   {
     "Input": "次の週末",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "次の週末",
@@ -2340,7 +2340,7 @@
   },
   {
     "Input": "来週はどうですか？",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "来週",
@@ -2376,7 +2376,7 @@
   },
   {
     "Input": "１４９９とはただの数字です。",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": []
   },
   {
@@ -2405,7 +2405,7 @@
   },
   {
     "Input": "来月まで終わります。",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "来月",
@@ -2441,7 +2441,7 @@
   },
   {
     "Input": "一月十日から十二日まで",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "一月十日から十二日まで",
@@ -2453,7 +2453,7 @@
   },
   {
     "Input": "翌年",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "翌年",
@@ -2465,7 +2465,7 @@
   },
   {
     "Input": "先月",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "先月",
@@ -2477,7 +2477,7 @@
   },
   {
     "Input": "翌日",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "翌日",
@@ -2549,7 +2549,7 @@
   },
   {
     "Input": "来年",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "来年",
@@ -2561,7 +2561,7 @@
   },
   {
     "Input": "今クォーター",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "今クォーター",
@@ -2573,7 +2573,7 @@
   },
   {
     "Input": "過去の十年間北京は著しく変わりました。",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "過去の十年間",
@@ -2585,7 +2585,7 @@
   },
   {
     "Input": "２１０１とはただの数字です。",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": []
   },
   {
@@ -2614,7 +2614,7 @@
   },
   {
     "Input": "今月",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "今月",
@@ -2626,7 +2626,7 @@
   },
   {
     "Input": "こんげつ",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "こんげつ",
@@ -2638,7 +2638,7 @@
   },
   {
     "Input": "来月",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "来月",
@@ -2650,7 +2650,7 @@
   },
   {
     "Input": "らいげつ",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "らいげつ",
@@ -2663,7 +2663,7 @@
   {
     "Input": "再来月",
     "Comment": "Pronounciation: さらいげつ",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "再来月",
@@ -2675,7 +2675,7 @@
   },
   {
     "Input": "昨月",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "昨月",
@@ -2687,7 +2687,7 @@
   },
   {
     "Input": "さくげつ",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "さくげつ",
@@ -2699,7 +2699,7 @@
   },
   {
     "Input": "せんげつ",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "せんげつ",
@@ -2711,7 +2711,7 @@
   },
   {
     "Input": "先々月",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "先々月",
@@ -2723,7 +2723,7 @@
   },
   {
     "Input": "せんせんげつ",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "せんせんげつ",
@@ -2735,7 +2735,7 @@
   },
   {
     "Input": "前月",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "前月",
@@ -2747,7 +2747,7 @@
   },
   {
     "Input": "ぜんげつ",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "ぜんげつ",
@@ -2759,7 +2759,7 @@
   },
   {
     "Input": "今年",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "今年",
@@ -2771,7 +2771,7 @@
   },
   {
     "Input": "ことし",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "ことし",
@@ -2783,7 +2783,7 @@
   },
   {
     "Input": "らいねん",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "らいねん",
@@ -2795,7 +2795,7 @@
   },
   {
     "Input": "再来年",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "再来年",
@@ -2807,7 +2807,7 @@
   },
   {
     "Input": "さらいねん",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "さらいねん",
@@ -2819,7 +2819,7 @@
   },
   {
     "Input": "昨年",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "昨年",
@@ -2831,7 +2831,7 @@
   },
   {
     "Input": "さくねん",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "さくねん",
@@ -2843,7 +2843,7 @@
   },
   {
     "Input": "きょねん",
-    "NotSupportedByDesign": "javascript, python, java",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "きょねん",

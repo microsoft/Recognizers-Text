@@ -4,7 +4,7 @@ import calendar
 
 from datedelta import datedelta
 
-from recognizers_date_time.date_time import Constants
+from recognizers_date_time.date_time.constants import Constants
 
 
 class DayOfWeek(IntEnum):
@@ -51,7 +51,7 @@ class DateUtils:
 
                 if past_date >= reference and DateUtils.is_valid_date(year, month, day):
                     past_date = DateUtils.safe_create_from_min_value(year - 1, month, day)
-        return future_date, past_date
+        return [future_date, past_date]
 
     @staticmethod
     def int_try_parse(value):

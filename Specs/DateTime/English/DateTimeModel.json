@@ -10108,7 +10108,7 @@
     "Context": {
       "ReferenceDateTime": "2019-01-25T12:00:00"
     },
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "sunday 31",
@@ -10137,7 +10137,7 @@
     "Context": {
       "ReferenceDateTime": "2019-02-25T12:00:00"
     },
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "friday 31",
@@ -10155,6 +10155,35 @@
               "timex": "XXXX-WXX-5",
               "type": "date",
               "value": "2019-05-31"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Do you have any arrangement on Saturday 30?",
+    "Context": {
+      "ReferenceDateTime": "2023-07-05T12:00:00"
+    },
+    "NotSupportedByDesign": "javascript, java",
+    "Results": [
+      {
+        "Text": "saturday 30",
+        "Start": 31,
+        "End": 41,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-WXX-6",
+              "type": "date",
+              "value": "2022-07-30"
+            },
+            {
+              "timex": "XXXX-WXX-6",
+              "type": "date",
+              "value": "2023-09-30"
             }
           ]
         }

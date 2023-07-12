@@ -15,6 +15,11 @@ from recognizers_date_time.date_time.japanese.datetime_period_extractor_config i
 from recognizers_date_time.date_time.japanese.duration_extractor_config import JapaneseDurationExtractorConfiguration
 from recognizers_date_time.date_time.japanese.set_extractor_config import JapaneseSetExtractorConfiguration
 from recognizers_date_time.date_time.japanese.holiday_extractor_config import JapaneseHolidayExtractorConfiguration
+from recognizers_date_time.date_time.japanese.date_extractor_config import JapaneseDateExtractorConfiguration
+from recognizers_date_time.date_time.japanese.dateperiod_extractor_config import \
+    JapaneseDatePeriodExtractorConfiguration
+from recognizers_date_time.date_time.CJK.base_dateperiod import BaseCJKDatePeriodExtractor
+from recognizers_date_time.date_time.CJK.base_date import BaseCJKDateExtractor
 
 from recognizers_date_time.resources.base_date_time import BaseDateTime
 from recognizers_date_time.resources.japanese_date_time import JapaneseDateTime
@@ -112,8 +117,7 @@ class JapaneseMergedExtractorConfiguration(CJKMergedExtractorConfiguration):
 
     def __init__(self):
         super().__init__()
-        self._ambiguous_range_modifier_prefix = RegExpUtility.get_safe_reg_exp(
-            JapaneseDateTime.AmbiguousRangeModifierPrefix)
+        self._ambiguity_filters_dict = DefinitionLoader.load_ambiguity_filters(JapaneseDateTime.AmbiguityFiltersDict)
         self._potential_ambiguous_range_regex = RegExpUtility.get_safe_reg_exp(JapaneseDateTime.FromToRegex
                                                                                )
         self._equal_regex = RegExpUtility.get_safe_reg_exp(BaseDateTime.EqualRegex)
@@ -139,8 +143,6 @@ class JapaneseMergedExtractorConfiguration(CJKMergedExtractorConfiguration):
         self._duration_extractor = BaseCJKDurationExtractor(JapaneseDurationExtractorConfiguration())
         self._date_time_period_extractor = BaseCJKDateTimePeriodExtractor(
             JapaneseDateTimePeriodExtractorConfiguration())
-        self._date_period_extractor = None
+        self._date_period_extractor = BaseCJKDatePeriodExtractor(JapaneseDatePeriodExtractorConfiguration())
         self._date_time_extractor = BaseCJKDateTimeExtractor(JapaneseDateTimeExtractorConfiguration())
-        self._date_extractor = None
-
-
+        self._date_extractor = BaseCJKDateExtractor(JapaneseDateExtractorConfiguration())

@@ -27,7 +27,6 @@ def test_datetime_extractor(
         context,
         source,
         expected_results):
-
     reference_datetime = get_reference_date(context)
     language = get_language(culture)
     extractor = create_extractor(language, model, options)
@@ -54,7 +53,6 @@ def test_datetime_parser(
         context,
         source,
         expected_results):
-
     reference_datetime = get_reference_date(context)
     language = get_language(culture)
     extractor = create_extractor(language, model, options)
@@ -91,7 +89,6 @@ def test_datetime_mergedparser(
         context,
         source,
         expected_results):
-
     reference_datetime = get_reference_date(context)
     language = get_language(culture)
     extractor = create_extractor(language, model, options)
@@ -135,7 +132,6 @@ def test_datetime_model(
         context,
         source,
         expected_results):
-
     reference_datetime = get_reference_date(context)
     option_obj = get_option(options)
 
@@ -331,7 +327,6 @@ def get_results(culture, model, source, options, reference):
 
 
 def get_option(option):
-
     if not option:
         option = 'None'
 
@@ -347,3 +342,4 @@ def get_option(option):
         return option_class['SPLIT_DATE_AND_TIME']
 
     return option_class['NONE']
+

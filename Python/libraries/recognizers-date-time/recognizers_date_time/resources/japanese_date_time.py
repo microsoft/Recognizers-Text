@@ -121,13 +121,6 @@ class JapaneseDateTime:
     RelativeCenturyRegex = f'(?<relcentury>({DatePeriodLastRegex}|{DatePeriodThisRegex}|{DatePeriodNextRegex}))世紀'
     DecadeRegexInCJK = f'(?<decade>十|一十|二十|三十|四十|五十|六十|七十|八十|九十)'
     DecadeRegex = f'({DateRangePrepositions})(?<centurysuf>({CenturyRegex}|{CenturyRegexInCJK}|{RelativeCenturyRegex}))?の?(?<century>(?<firsttwoyearnum>\\d{{2}}(?=\\d)))?(?<decade>((\\d{{1}}0)|{DecadeRegexInCJK}))年代(のごろ)?'
-    PrepositionRegex = f'(?<prep>^(,?(夜の|的|の(?<timeOfDay>朝|夜|午後|晩)?|t),?|在)$)'
-    NowRegex = f'(?<now>出来る限り早く|できるだけ早く|现在|马上|立刻|刚刚才|刚刚|刚才|今日中|今(?!日)(すぐ)?)'
-    NightRegex = f'(?<night>早|晚|夜|泊(?=の?予約))'
-    TomorrowRegex = f'(?<tomorrow>(?<!「)明日の?(午前|午後|中|夜|泊(?=の?予約)|朝)?)'
-    YesterdayRegex = f'(?<yesterday>昨日の?(午前|午後|中|夜|泊(?=の?予約)|朝)?)'
-    TodayRegex = f'(?<today>(今朝の?|今朝の午前|今晩|今晚|今早|今晨|明晚|明早|明晨|昨晚|今夜|昨夜)(的|在)?)'
-    FromNowRegex = f'((?<now>今)から)'
     TimeHourNumRegex = f'(?<!\\d[,.]?)(30|[0-2]?\\d)'
     TimeMinuteNumRegex = f'([0-5]?\\d)'
     TimeSecondNumRegex = f'([0-5]?\\d)'
@@ -138,6 +131,13 @@ class JapaneseDateTime:
     TimeMinuteDescRegex = f'(分)'
     TimeSecondDescRegex = f'(秒)'
     TimeBanHourPrefixRegex = f'(第)'
+    PrepositionRegex = f'(?<prep>^(,?(夜の|的|の(?<timeOfDay>朝|夜|午後|晩)?|t),?|在)$)'
+    NowRegex = f'(?<now>出来る限り早く|できるだけ早く|现在|马上|立刻|刚刚才|刚刚|刚才|今日中|今(?!日)(すぐ)?)'
+    NightRegex = f'(?<night>早|晚|夜|泊(?=の?予約))'
+    TomorrowRegex = f'(?<tomorrow>(?<!「)明日の?(午前|午後|中|夜|泊(?=の?予約)|朝)?)'
+    YesterdayRegex = f'(?<yesterday>昨日の?(午前|午後|中|夜|泊(?=の?予約)|朝)?)'
+    TodayRegex = f'(?<today>(今朝の?|今朝の午前|今晩|今晚|今早|今晨|明晚|明早|明晨|昨晚|今夜|昨夜)(的|在)?)'
+    FromNowRegex = f'((?<now>今)から)'
     SpecialDayHourRegex = f'((?<hour>{TimeHourCJKRegex}|{TimeHourNumRegex})(時間?|(:00)))'
     SpecialDayMinuteRegex = f'((?<min>{TimeMinuteCJKRegex}|{TimeMinuteNumRegex})分間?)'
     SpecialDaySecondRegex = f'((?<sec>{TimeSecondCJKRegex}|{TimeSecondNumRegex})秒間?)'
@@ -309,6 +309,7 @@ class JapaneseDateTime:
     YearTerms = [r'年', r'年間', r'去年', r'今年', r'来年']
     ThisYearTerms = [r'今年']
     YearToDateTerms = [r'年初来']
+    MonthToDateTerms = [r'月に入ってから']
     LastYearTerms = [r'去年', r'前の年']
     NextYearTerms = [r'来年', r'翌年']
     YearAfterNextTerms = [r'后年', r'再来年']

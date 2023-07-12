@@ -66,8 +66,8 @@ class DateTimeRecognizer(Recognizer[DateTimeOptions]):
         self.register_model('DateTimeModel', Culture.Japanese, lambda options: DateTimeModel(
             BaseCJKMergedDateTimeParser(JapaneseMergedParserConfiguration(
                 JapaneseCommonDateTimeParserConfiguration()
-            )),
-            BaseCJKMergedDateTimeExtractor(JapaneseMergedExtractorConfiguration())
+            ), options),
+            BaseCJKMergedDateTimeExtractor(JapaneseMergedExtractorConfiguration(), options)
         ))
 
         self.register_model('DateTimeModel', Culture.Spanish, lambda options: DateTimeModel(

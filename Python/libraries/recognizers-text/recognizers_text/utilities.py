@@ -109,8 +109,8 @@ class RegExpUtility:
         return list(filter(None, map(lambda m: m.group().lower(), matches)))
 
     @staticmethod
-    def match_begin(regex: Pattern, text: str, trim: bool):
-        match = regex.search(text)
+    def match_begin(regexp: Pattern, text: str, trim: bool):
+        match = regexp.search(text)
 
         if match is None:
             return None
@@ -139,8 +139,8 @@ class RegExpUtility:
         return ConditionalMatch(match, success)
 
     @staticmethod
-    def is_exact_match(regex: Pattern, text: str, trim: bool):
-        match = regex.match(text)
+    def is_exact_match(regexp: Pattern, text: str, trim: bool):
+        match = regexp.match(text)
 
         length = len(text.strip()) if trim else len(text)
 
