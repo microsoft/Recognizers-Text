@@ -6,7 +6,7 @@ import regex
 
 from recognizers_text import MetaData
 from recognizers_date_time.date_time.date_extractor import DateExtractor
-from recognizers_text.extractor import ExtractResult
+from recognizers_text.extractor import ExtractResult, Extractor
 from recognizers_number.number.extractors import BaseNumberExtractor
 from recognizers_number.number.parsers import BaseNumberParser
 from recognizers_date_time.date_time.constants import Constants, TimeTypeConstants
@@ -84,7 +84,7 @@ class CJKDateTimeExtractorConfiguration(DateTimeOptionsConfiguration):
         raise NotImplementedError
 
 
-class BaseCJKDateTimeExtractor(DateTimeExtractor):
+class BaseCJKDateTimeExtractor(Extractor):
     @property
     def extractor_type_name(self) -> str:
         return Constants.SYS_DATETIME_DATETIME
@@ -102,7 +102,7 @@ class BaseCJKDateTimeExtractor(DateTimeExtractor):
         tokens.extend(self.merge_date_and_time(source, reference))
         tokens.extend(self.basic_regex_match(source))
         tokens.extend(self.time_of_today(source, reference))
-        tokens.extend(self.duration_with_ago_and_later(source, reference))
+        # tokens.extend(self.duration_with_ago_and_later(source, reference))
 
         result = merge_all_tokens(tokens, source, self.extractor_type_name)
 
@@ -356,8 +356,8 @@ class BaseCJKDateTimeParser(DateTimeParser):
             if not inner_result.success:
                 inner_result = self.parse_time_of_special_day_regex(source_text, reference)
 
-            if not inner_result.success:
-                inner_result = self.parser_duration_with_ago_and_later(source_text, reference)
+            # if not inner_result.success:
+            #     inner_result = self.parser_duration_with_ago_and_later(source_text, reference)
 
             if inner_result.success:
                 inner_result.future_resolution[TimeTypeConstants.DATETIME] = DateTimeFormatUtil.format_date_time(

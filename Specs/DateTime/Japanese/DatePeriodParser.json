@@ -186,7 +186,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "1995年1月4日から22日まで",
@@ -212,7 +212,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "1995年1月4日から22日の間",
@@ -264,7 +264,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今週",
@@ -290,7 +290,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "来週",
@@ -602,7 +602,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "その週",
@@ -628,7 +628,7 @@
     "Context": {
       "ReferenceDateTime": "2026-01-01T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今週",
@@ -654,7 +654,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "私の週",
@@ -707,7 +707,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今週末",
@@ -733,7 +733,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "私の週末",
@@ -785,7 +785,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2016年1月12日から2016年1月22日まで",
@@ -837,7 +837,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今日から明日まで",
@@ -1149,7 +1149,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "週末",
@@ -1175,7 +1175,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今週末",
@@ -1409,7 +1409,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2016年の第3四半期",
@@ -1435,7 +1435,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今年の第3四半期",
@@ -1513,7 +1513,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2016年の第1四半期",
@@ -1617,7 +1617,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今年の夏",
@@ -1637,7 +1637,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "来年の春",
@@ -1657,7 +1657,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "その夏",
@@ -1677,7 +1677,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "夏",
@@ -1697,7 +1697,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2016年の夏",
@@ -2064,7 +2064,7 @@
     "Context": {
       "ReferenceDateTime": "2017-11-17T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今週",
@@ -2168,7 +2168,7 @@
     "Context": {
       "ReferenceDateTime": "2017-11-20T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今週末",
@@ -2298,7 +2298,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "70年代",
@@ -2324,7 +2324,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "40年代",
@@ -2402,7 +2402,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2018年2月2日から7日",
@@ -2428,7 +2428,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2018年2月2日から7日の間",
@@ -2532,7 +2532,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2020年の第3四半期",
@@ -2558,7 +2558,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "1978年の春",
@@ -2708,7 +2708,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2014年から2018年まで",
@@ -2734,7 +2734,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2014年から2018年の間",
@@ -2760,7 +2760,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2000年から2014年まで",
@@ -4276,7 +4276,7 @@
     "Context": {
       "ReferenceDateTime": "2019-01-01T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今週",
@@ -4302,7 +4302,7 @@
     "Context": {
       "ReferenceDateTime": "2017-01-01T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今週",
@@ -4328,7 +4328,7 @@
     "Context": {
       "ReferenceDateTime": "2016-01-01T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今週",
@@ -4426,7 +4426,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-01T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "08日から12日まで",
@@ -4452,7 +4452,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-30T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "08日から12日まで",
@@ -4478,7 +4478,7 @@
     "Context": {
       "ReferenceDateTime": "2018-12-30T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "08日から12日まで",
@@ -4504,7 +4504,7 @@
     "Context": {
       "ReferenceDateTime": "2018-01-30T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "08日から12日まで",
@@ -4530,7 +4530,7 @@
     "Context": {
       "ReferenceDateTime": "2018-01-01T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "08日から12日まで",
@@ -4553,7 +4553,7 @@
   },
   {
     "Input": "2008年から2012年まで",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2008年から2012年まで",
@@ -4651,7 +4651,7 @@
     "Context": {
       "ReferenceDateTime": "2018-11-01T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "08/1から09/4まで",
@@ -4703,7 +4703,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript,python,java",
     "Results": [
       {
         "Text": "2019年6月1日から6月30日まで",
@@ -4755,7 +4755,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript,python,java",
     "Results": [
       {
         "Text": "来月",
@@ -5243,7 +5243,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "来週",
@@ -5347,7 +5347,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript,python,java",
     "Results": [
       {
         "Text": "2007年",
@@ -5477,7 +5477,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "二〇一六年から二〇一八年まで",
@@ -5581,7 +5581,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript,python,java",
     "Results": [
       {
         "Text": "来年",
@@ -5659,7 +5659,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "次の週末",
@@ -5737,7 +5737,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "今年の第一クォーター",
@@ -5945,7 +5945,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "来週",
@@ -6118,7 +6118,7 @@
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "翌年",

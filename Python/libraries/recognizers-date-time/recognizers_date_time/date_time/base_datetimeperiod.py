@@ -18,7 +18,7 @@ from .constants import Constants, TimeTypeConstants
 from .extractors import DateTimeExtractor
 from .parsers import DateTimeParser, DateTimeParseResult
 from .utilities import Token, merge_all_tokens, RegExpUtility, DateTimeFormatUtil, DateTimeResolutionResult, \
-    DateUtils, RegExpUtility, DateTimeOptionsConfiguration, DateTimeOptions, TimexUtil
+    DateUtils, DateTimeOptionsConfiguration, DateTimeOptions, TimexUtil
 
 
 class MatchedTimeRange:
@@ -457,7 +457,8 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
                         begin = er.start
                         end = er.start + er.length
                         middle_str = before_str[end:].strip()
-                        if not middle_str or RegExpUtility.is_exact_match(self.config.preposition_regex, middle_str, True):
+                        if not middle_str or RegExpUtility.is_exact_match(self.config.preposition_regex, middle_str,
+                                                                          True):
                             tokens.append(Token(begin, match.end()))
                             has_before_date = True
 
@@ -786,7 +787,7 @@ class BaseDateTimePeriodExtractor(DateTimeExtractor):
         substring = ''
         if match:
             substring = string[match.start(): match.end()] if in_prefix else string[0: match.start()]
-        return match and substring.strip() is not ''
+        return match and substring.strip() != ''
 
     def match_relative_unit(self, source: str) -> List[Token]:
         tokens: List[Token] = list()
@@ -1062,7 +1063,8 @@ class BaseDateTimePeriodParser(DateTimeParser):
 
             # if it is a range type timex
             if TimexUtil.is_range_timex(time_period_timex):
-                date_result = self.config.date_extractor.extract(trimmed_source.replace(extracted_results[0].text, ''), reference)
+                date_result = self.config.date_extractor.extract(trimmed_source.replace(extracted_results[0].text, ''),
+                                                                 reference)
 
                 # Check if token_before_date and token_before_time are null
                 date_text = trimmed_source.replace(extracted_results[0].text, '').strip()
@@ -1090,11 +1092,15 @@ class BaseDateTimePeriodParser(DateTimeParser):
                     range_timex_components = TimexUtil.get_range_timex_components(time_period_timex)
 
                     if range_timex_components.is_valid:
-                        begin_timex = TimexUtil.combine_date_and_time_timex(date_timex, range_timex_components.begin_timex)
-                        end_timex = TimexUtil.combine_date_and_time_timex(date_timex, range_timex_components.end_timex)
-                        result.timex = TimexUtil.generate_date_time_period_timex(begin_timex, end_timex, range_timex_components.duration_timex)
+                        begin_timex = TimexUtil.combine_date_and_time_timex(date_timex, range_timex_components.
+                                                                            begin_timex)
+                        end_timex = TimexUtil.combine_date_and_time_timex(date_timex, range_timex_components.
+                                                                          end_timex)
+                        result.timex = TimexUtil.generate_date_time_period_timex(begin_timex, end_timex,
+                                                                                 range_timex_components.duration_timex)
 
-                        time_period_future_value = (time_period_resolution_result.future_value.start, time_period_resolution_result.future_value.end)
+                        time_period_future_value = (time_period_resolution_result.future_value.start,
+                                                    time_period_resolution_result.future_value.end)
                         begin_time = time_period_future_value[0]
                         end_time = time_period_future_value[1]
 
@@ -1116,13 +1122,15 @@ class BaseDateTimePeriodParser(DateTimeParser):
                                                                  end_time.second)
                         ]
 
-                        if time_period_resolution_result.comment and time_period_resolution_result.comment == Constants.COMMENT_AMPM:
+                        if time_period_resolution_result.comment and time_period_resolution_result.comment == \
+                                Constants.COMMENT_AMPM:
                             # ampm comment is used for later set_parser_result to judge whether this parse result should
                             # have two parsing results.
                             # Cases like "from 10:30 to 11 on 1/1/2015" should have ampm comment, as it can be parsed
                             # to "10:30am to 11am" and also be parsed to "10:30pm to 11pm".
                             # Cases like "from 10:30 to 3 on 1/1/2015" should not have ampm comment.
-                            if begin_time.hour < Constants.HALF_DAY_HOUR_COUNT and end_time.hour < Constants.HALF_DAY_HOUR_COUNT:
+                            if begin_time.hour < Constants.HALF_DAY_HOUR_COUNT and end_time.hour < \
+                                    Constants.HALF_DAY_HOUR_COUNT:
                                 result.comment = Constants.COMMENT_AMPM
 
                         result.success = True
@@ -1292,7 +1300,8 @@ class BaseDateTimePeriodParser(DateTimeParser):
             result.timex = f'({parse_result1.timex_str},{date_str + parse_result2.timex_str},{duration_str})'
         elif end_has_date:
             future_begin = DateUtils.safe_create_from_min_value(future_end.year, future_end.month, future_end.day,
-                                                                future_begin.hour, future_begin.minute, future_begin.second)
+                                                                future_begin.hour, future_begin.minute,
+                                                                future_begin.second)
             past_begin = DateUtils.safe_create_from_min_value(past_end.year, past_end.month, past_end.day,
                                                               past_begin.hour, past_begin.minute, past_begin.second)
 
@@ -1375,7 +1384,9 @@ class BaseDateTimePeriodParser(DateTimeParser):
             result.future_value = result.past_value = (DateUtils.safe_create_from_min_value(year, month, day,
                                                                                             values.begin_hour, 0, 0),
                                                        DateUtils.safe_create_from_min_value(year, month, day,
-                                                                                            values.end_hour, values.end_min, values.end_min))
+                                                                                            values.end_hour,
+                                                                                            values.end_min,
+                                                                                            values.end_min))
 
             result.success = True
             return result
@@ -1384,7 +1395,7 @@ class BaseDateTimePeriodParser(DateTimeParser):
         match = self.config.period_time_of_day_with_date_regex.search(trimmed_source)
 
         if not match:
-            match = self.config.am_desc_regex.sarch(trimmed_source)
+            match = self.config.am_desc_regex.search(trimmed_source)
             if not match:
                 match = self.config.pm_desc_regex.search(trimmed_source)
         else:
@@ -1415,7 +1426,10 @@ class BaseDateTimePeriodParser(DateTimeParser):
                         _before_str = trimmed_after_str
                     trimmed_after_str = trimmed_after_str.strip()
 
-            extracted_results = self.config.date_extractor.extract((trimmed_before_str if trimmed_before_str is not '' else before_str) + ' ' + (trimmed_after_str if trimmed_after_str is not '' else after_str), reference)
+            extracted_results = self.config.date_extractor.extract((trimmed_before_str if trimmed_before_str != ''
+                                                                    else before_str) + ' ' +
+                                                                   (trimmed_after_str if trimmed_after_str != '' else
+                                                                    after_str), reference)
             if len(extracted_results) == 0 or extracted_results[0].length < len(trimmed_before_str):
                 valid = False
                 if len(extracted_results) > 0 and extracted_results[0].start == 0:

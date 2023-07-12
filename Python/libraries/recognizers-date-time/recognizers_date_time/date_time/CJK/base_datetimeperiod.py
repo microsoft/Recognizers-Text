@@ -159,7 +159,7 @@ class BaseCJKDateTimePeriodExtractor(DateTimeExtractor):
 
         tokens.extend(self.merge_date_and_time_period(text, date_ers, time_range_ers))
         tokens.extend(self.merge_two_time_points(text, date_time_ers, time_ers))
-        tokens.extend(self.match_duration(text, reference_time))
+        # tokens.extend(self.match_duration(text, reference_time))
         tokens.extend(self.match_relative_unit(text))
         tokens.extend(self.match_date_with_period_suffix(text, date_ers))
         tokens.extend(self.match_number_with_unit(text))
@@ -596,8 +596,8 @@ class BaseCJKDateTimePeriodParser(DateTimeParser):
             if not inner_result.success:
                 inner_result = self.merge_two_time_points(source.text, reference_time)
 
-            if not inner_result.success:
-                inner_result = self.parse_duration(source.text, reference_time)
+            # if not inner_result.success:
+            #     inner_result = self.parse_duration(source.text, reference_time)
 
             if not inner_result.success:
                 inner_result = self.parse_specific_night(source.text, reference_time)
@@ -782,8 +782,8 @@ class BaseCJKDateTimePeriodParser(DateTimeParser):
         match = regex.match(self.config.future_regex, text)
 
         # cases including 'within' are processed in ParseDuration
-        if RegExpUtility.get_group(match, Constants.WITHIN_GROUP_NAME):
-            return self.parse_duration(text, reference_time)
+        # if RegExpUtility.get_group(match, Constants.WITHIN_GROUP_NAME):
+        #     return self.parse_duration(text, reference_time)
 
         match_weekday = regex.match(self.config.weekday_regex, text)
 

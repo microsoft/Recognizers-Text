@@ -114,7 +114,7 @@ class CJKMergedExtractorConfiguration(DateTimeOptionsConfiguration):
 
     @property
     @abstractmethod
-    def ambiguous_range_modifier_regex(self) -> Pattern:
+    def ambiguous_range_modifier_prefix(self) -> Pattern:
         raise NotImplementedError
 
     @property
@@ -128,22 +128,22 @@ class BaseCJKMergedDateTimeExtractor(DateTimeExtractor):
     def extractor_type_name(self) -> str:
         return Constants.SYS_DATETIME_MERGED
 
-    def __init__(self, config: CJKMergedExtractorConfiguration):
+    def __init__(self, config: CJKMergedExtractorConfiguration, options: DateTimeOptions):
         self.config = config
 
     def extract(self, source: str, reference: datetime = None) -> List[ExtractResult]:
         if reference is None:
             reference = datetime.now()
 
-        # result = self.config.date_extractor.extract(source, reference)
-        result = []
+        result = self.config.date_extractor.extract(source, reference)
+
         # The order is important, since there can be conflicts in merging
         result = self.add_to(
             result, self.config.time_extractor.extract(source, reference))
         # result = self.add_to(
         #     result, self.config.duration_extractor.extract(source, reference))
-        # result = self.add_to(
-        #     result, self.config.date_period_extractor.extract(source, reference))
+        result = self.add_to(
+            result, self.config.date_period_extractor.extract(source, reference))
         # result = self.add_to(
         #     result, self.config.date_time_extractor.extract(source, reference))
         result = self.add_to(
@@ -184,7 +184,7 @@ class BaseCJKMergedDateTimeExtractor(DateTimeExtractor):
                 extract_result.length += mod_len
                 extract_result.text = source[extract_result.start:extract_result.length + 1]
 
-                extract_result.Metadata = self.assign_mod_metadata(extract_result.Metadata)
+                extract_result.meta_data = self.assign_mod_metadata(extract_result.meta_data)
 
             match = RegExpUtility.match_begin(self.config.after_regex, after_str, True)
             if match:
@@ -192,7 +192,7 @@ class BaseCJKMergedDateTimeExtractor(DateTimeExtractor):
                 extract_result.length += mod_len
                 extract_result.text = source[extract_result.start:extract_result.length + 1]
 
-                extract_result.Metadata = self.assign_mod_metadata(extract_result.Metadata)
+                extract_result.meta_data = self.assign_mod_metadata(extract_result.meta_data)
 
             match = RegExpUtility.match_begin(self.config.until_regex, before_str, True)
             if match:
@@ -201,7 +201,7 @@ class BaseCJKMergedDateTimeExtractor(DateTimeExtractor):
                 extract_result.start -= mod_len
                 extract_result.text = source[extract_result.start:extract_result.length]
 
-                extract_result.Metadata = self.assign_mod_metadata(extract_result.Metadata)
+                extract_result.meta_data = self.assign_mod_metadata(extract_result.meta_data)
 
             match = RegExpUtility.match_begin(self.config.until_regex, after_str, True)
             if match:
@@ -210,7 +210,7 @@ class BaseCJKMergedDateTimeExtractor(DateTimeExtractor):
                 extract_result.start -= mod_len
                 extract_result.text = source[extract_result.start:extract_result.length]
 
-                extract_result.Metadata = self.assign_mod_metadata(extract_result.Metadata)
+                extract_result.meta_data = self.assign_mod_metadata(extract_result.meta_data)
 
             match = RegExpUtility.match_begin(self.config.since_prefix_regex, before_str, True)
             if match and self.ambiguous_range_checker(before_str, source, extract_result):
@@ -219,7 +219,7 @@ class BaseCJKMergedDateTimeExtractor(DateTimeExtractor):
                 extract_result.start -= mod_len
                 extract_result.text = source[extract_result.start:extract_result.length]
 
-                extract_result.Metadata = self.assign_mod_metadata(extract_result.Metadata)
+                extract_result.meta_data = self.assign_mod_metadata(extract_result.meta_data)
 
             match = RegExpUtility.match_begin(self.config.since_prefix_regex, after_str, True)
             if match and self.ambiguous_range_checker(after_str, source, extract_result):
@@ -228,7 +228,7 @@ class BaseCJKMergedDateTimeExtractor(DateTimeExtractor):
                 extract_result.start -= mod_len
                 extract_result.text = source[extract_result.start:extract_result.length]
 
-                extract_result.Metadata = self.assign_mod_metadata(extract_result.Metadata)
+                extract_result.meta_data = self.assign_mod_metadata(extract_result.meta_data)
 
             match = RegExpUtility.match_begin(self.config.around_suffix_regex, before_str, True)
             if match:
@@ -237,7 +237,7 @@ class BaseCJKMergedDateTimeExtractor(DateTimeExtractor):
                 extract_result.start -= mod_len
                 extract_result.text = source[extract_result.start:extract_result.length]
 
-                extract_result.Metadata = self.assign_mod_metadata(extract_result.Metadata)
+                extract_result.meta_data = self.assign_mod_metadata(extract_result.meta_data)
 
             match = RegExpUtility.match_begin(self.config.around_suffix_regex, after_str, True)
             if match:
@@ -246,7 +246,7 @@ class BaseCJKMergedDateTimeExtractor(DateTimeExtractor):
                 extract_result.start -= mod_len
                 extract_result.text = source[extract_result.start:extract_result.length]
 
-                extract_result.Metadata = self.assign_mod_metadata(extract_result.Metadata)
+                extract_result.meta_data = self.assign_mod_metadata(extract_result.meta_data)
 
             match = RegExpUtility.match_begin(self.config.equal_regex, before_str, True)
             if match:
@@ -255,7 +255,7 @@ class BaseCJKMergedDateTimeExtractor(DateTimeExtractor):
                 extract_result.start -= mod_len
                 extract_result.text = source[extract_result.start:extract_result.length]
 
-                extract_result.Metadata = self.assign_mod_metadata(extract_result.Metadata)
+                extract_result.meta_data = self.assign_mod_metadata(extract_result.meta_data)
 
         return extract_results
 
@@ -352,14 +352,13 @@ class BaseCJKMergedDateTimeParser(DateTimeParser):
     def parser_type_name(self) -> str:
         return Constants.SYS_DATETIME_MERGED
 
-    def __init__(self, config: CJKMergedParserConfiguration):
+    def __init__(self, config: CJKMergedParserConfiguration, options):
         self.config = config
+        self.options = options
 
     def parse(self, er: ExtractResult, reference: datetime = None) -> Optional[DateTimeParseResult]:
         if not reference:
             reference = datetime.now()
-
-        pr = DateTimeParseResult()
 
         #  push, save the MOD string
         has_inclusive_modifier = False
@@ -384,7 +383,8 @@ class BaseCJKMergedDateTimeParser(DateTimeParser):
                 around_match_prefix = RegExpUtility.match_begin(self.config.around_prefix_regex, er.text, True)
                 around_match_suffix = RegExpUtility.match_end(self.config.around_suffix_regex, er.text, True)
 
-                if before_match and not MergedParserUtil.is_duration_with_ago_and_later(er):
+                # TODO add 'not MergedParserUtil.is_duration_with_ago_and_later(er)' once duration extractor implemented
+                if before_match:
                     has_before = True
                     er.start += before_match.start()
                     er.length -= len(before_match.group())
@@ -393,7 +393,8 @@ class BaseCJKMergedDateTimeParser(DateTimeParser):
                     if before_match.get_group(Constants.INCLUDE_GROUP_NAME):
                         has_inclusive_modifier = True
 
-                elif after_match and not MergedParserUtil.is_duration_with_ago_and_later(er) and not since_match_suffix:
+                # TODO add 'not MergedParserUtil.is_duration_with_ago_and_later(er)' once duration_extractor implemented
+                elif after_match and not since_match_suffix:
                     has_after = True
                     er.start += after_match.start()
                     er.length -= len(after_match.group())
@@ -447,6 +448,7 @@ class BaseCJKMergedDateTimeParser(DateTimeParser):
         pr = self.parse_result(er, reference)
         if not pr:
             return None
+        pr.value: DateTimeResolutionResult
 
         # pop, restore the MOD string
         if has_before:
@@ -506,12 +508,14 @@ class BaseCJKMergedDateTimeParser(DateTimeParser):
             has_range_changing_mod = True
 
         if not pr.value:
+            pr.value = DateTimeResolutionResult
             pr.value.has_range_changing_mod = has_range_changing_mod
+
         pr = MergedParserUtil.set_parse_result(pr, has_range_changing_mod, self.config)
 
         return pr
 
-    def parse_result(self, source: ExtractResult, reference: datetime):
+    def parse_result(self, source: ExtractResult, reference: datetime) -> DateTimeResolutionResult:
         result = None
 
         if source.type == Constants.SYS_DATETIME_DATE:
