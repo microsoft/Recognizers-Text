@@ -156,17 +156,17 @@ class JapaneseDateTimePeriodParserConfiguration(CJKDateTimePeriodParserConfigura
         self._ev_regex = RegExpUtility.get_safe_reg_exp(JapaneseDateTime.DateTimePeriodEVRegex)
         self._ni_regex = RegExpUtility.get_safe_reg_exp(JapaneseDateTime.DateTimePeriodNIRegex)
 
-        self._specific_time_of_day_regex = JapaneseDateTimePeriodExtractorConfiguration.specific_time_of_day_regex
-        self._time_of_day_regex = JapaneseDateTimePeriodExtractorConfiguration.time_of_day_regex
-        self._next_regex = JapaneseDateTimePeriodExtractorConfiguration.next_regex
-        self._last_regex = JapaneseDateTimePeriodExtractorConfiguration.last_regex
-        self._past_regex = JapaneseDateTimePeriodExtractorConfiguration.past_regex
-        self._future_regex = JapaneseDateTimePeriodExtractorConfiguration.future_regex
-        self._weekday_regex = JapaneseDateTimePeriodExtractorConfiguration.weekday_regex
-        self._time_period_left_regex = JapaneseDateTimePeriodExtractorConfiguration.time_period_left_regex
-        self._unit_regex = JapaneseDateTimePeriodExtractorConfiguration.unit_regex
-        self._rest_of_date_regex = JapaneseDateTimePeriodExtractorConfiguration.rest_of_date_regex
-        self._am_pm_desc_regex = JapaneseDateTimePeriodExtractorConfiguration.am_pm_desc_regex
+        self._specific_time_of_day_regex = JapaneseDateTimePeriodExtractorConfiguration().specific_time_of_day_regex
+        self._time_of_day_regex = JapaneseDateTimePeriodExtractorConfiguration().time_of_day_regex
+        self._next_regex = JapaneseDateTimePeriodExtractorConfiguration().next_regex
+        self._last_regex = JapaneseDateTimePeriodExtractorConfiguration().last_regex
+        self._past_regex = JapaneseDateTimePeriodExtractorConfiguration().past_regex
+        self._future_regex = JapaneseDateTimePeriodExtractorConfiguration().future_regex
+        self._weekday_regex = JapaneseDateTimePeriodExtractorConfiguration().weekday_regex
+        self._time_period_left_regex = JapaneseDateTimePeriodExtractorConfiguration().time_period_left_regex
+        self._unit_regex = JapaneseDateTimePeriodExtractorConfiguration().unit_regex
+        self._rest_of_date_regex = JapaneseDateTimePeriodExtractorConfiguration().rest_of_date_regex
+        self._am_pm_desc_regex = JapaneseDateTimePeriodExtractorConfiguration().am_pm_desc_regex
         self._unit_map = config.unit_map
 
     def get_matched_time_range(self, text: str) -> MatchedTimeRegexAndSwift:

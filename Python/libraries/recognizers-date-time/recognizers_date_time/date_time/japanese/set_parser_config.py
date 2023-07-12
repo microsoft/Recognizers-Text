@@ -110,10 +110,10 @@ class JapaneseSetParserConfiguration(CJKSetParserConfiguration):
         self._date_extractor = config.date_extractor
         self._date_time_extractor = config.date_time_extractor
 
-        self._each_prefix_regex = JapaneseSetExtractorConfiguration.each_prefix_regex
-        self._each_unit_regex = JapaneseSetExtractorConfiguration.each_unit_regex
-        self._each_day_regex = JapaneseSetExtractorConfiguration.each_day_regex
-        self._each_date_unit_regex = JapaneseSetExtractorConfiguration.each_date_unit_regex
+        self._each_prefix_regex = JapaneseSetExtractorConfiguration().each_prefix_regex
+        self._each_unit_regex = JapaneseSetExtractorConfiguration().each_unit_regex
+        self._each_day_regex = JapaneseSetExtractorConfiguration().each_day_regex
+        self._each_date_unit_regex = JapaneseSetExtractorConfiguration().each_date_unit_regex
         self._unit_map = config.unit_map
 
     def get_matched_unit_timex(self, text: str) -> MatchedTimex:

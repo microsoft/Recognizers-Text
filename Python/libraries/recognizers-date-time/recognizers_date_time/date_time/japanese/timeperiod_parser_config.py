@@ -29,7 +29,7 @@ class JapaneseTimePeriodParserConfiguration(CJKTimePeriodParserConfiguration):
         self._time_func = TimeFunctions(
             number_dictionary=JapaneseDateTime.TimeNumberDictionary,
             low_bound_desc=JapaneseDateTime.TimeLowBoundDesc,
-            day_desc_regex=JapaneseTimeExtractorConfiguration.day_desc_regex
+            day_desc_regex=JapaneseTimeExtractorConfiguration().day_desc_regex
         )
 
     def get_matched_timex_range(self, text: str) -> dict:

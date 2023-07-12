@@ -64,12 +64,12 @@ class JapaneseDurationParserConfiguration(CJKDurationParserConfiguration):
         self._duration_extractor = BaseCJKDurationExtractor(
             JapaneseDurationExtractorConfiguration(), False)
 
-        self._year_regex = JapaneseDurationExtractorConfiguration.year_regex
-        self._some_regex = JapaneseDurationExtractorConfiguration.some_regex
-        self._more_or_less_regex = JapaneseDurationExtractorConfiguration.more_or_less_regex
-        self._duration_unit_regex = JapaneseDurationExtractorConfiguration.duration_unit_regex
-        self._an_unit_regex = JapaneseDurationExtractorConfiguration.an_unit_regex
-        self._duration_connector_regex = JapaneseDurationExtractorConfiguration.duration_connector_regex
+        self._year_regex = JapaneseDurationExtractorConfiguration().year_regex
+        self._some_regex = JapaneseDurationExtractorConfiguration().some_regex
+        self._more_or_less_regex = JapaneseDurationExtractorConfiguration().more_or_less_regex
+        self._duration_unit_regex = JapaneseDurationExtractorConfiguration().duration_unit_regex
+        self._an_unit_regex = JapaneseDurationExtractorConfiguration().an_unit_regex
+        self._duration_connector_regex = JapaneseDurationExtractorConfiguration().duration_connector_regex
 
         self._unit_map = config.unit_map
         self._unit_value_map = config.unit_value_map

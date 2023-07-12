@@ -117,14 +117,14 @@ class JapaneseDateTimeParserConfiguration(CJKDateTimeParserConfiguration):
         self._number_parser = config.number_parser
 
         self._unit_map = JapaneseDateTime.ParserConfigurationUnitMap
-        self._now_regex = JapaneseDateTimeExtractorConfiguration.now_regex
-        self._time_of_special_day_regex = JapaneseDateTimeExtractorConfiguration.time_of_special_day_regex
-        self._datetime_period_unit_regex = JapaneseDateTimeExtractorConfiguration.datetime_period_unit_regex
-        self._before_regex = JapaneseDateTimeExtractorConfiguration.before_regex
-        self._after_regex = JapaneseDateTimeExtractorConfiguration.after_regex
+        self._now_regex = JapaneseDateTimeExtractorConfiguration().now_regex
+        self._time_of_special_day_regex = JapaneseDateTimeExtractorConfiguration().time_of_special_day_regex
+        self._datetime_period_unit_regex = JapaneseDateTimeExtractorConfiguration().datetime_period_unit_regex
+        self._before_regex = JapaneseDateTimeExtractorConfiguration().before_regex
+        self._after_regex = JapaneseDateTimeExtractorConfiguration().after_regex
         self._duration_relative_duration_unit_regex = \
-            JapaneseDateTimeExtractorConfiguration.duration_relative_duration_unit_regex
-        self._ago_later_regex = JapaneseDateTimeExtractorConfiguration.ago_later_regex
+            JapaneseDateTimeExtractorConfiguration().duration_relative_duration_unit_regex
+        self._ago_later_regex = JapaneseDateTimeExtractorConfiguration().ago_later_regex
 
         self._lunar_regex = RegExpUtility.get_safe_reg_exp(JapaneseDateTime.LunarRegex)
         self._lunar_holiday_regex = RegExpUtility.get_safe_reg_exp(JapaneseDateTime.LunarHolidayRegex)
