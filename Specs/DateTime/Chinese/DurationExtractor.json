@@ -45,6 +45,7 @@
   },
   {
     "Input": "三年半",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "三年半",
@@ -56,6 +57,7 @@
   },
   {
     "Input": "三天半",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "三天半",
@@ -67,6 +69,7 @@
   },
   {
     "Input": "三个月半",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "三个月半",

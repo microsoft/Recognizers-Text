@@ -5639,6 +5639,7 @@
     "Context": {
       "ReferenceDateTime": "2020-10-20T00:00:00"
     },
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "三年半",
@@ -5662,6 +5663,7 @@
     "Context": {
       "ReferenceDateTime": "2020-10-20T00:00:00"
     },
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "三年半",
