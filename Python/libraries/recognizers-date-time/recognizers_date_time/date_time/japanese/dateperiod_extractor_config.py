@@ -1,13 +1,11 @@
-#  Copyright (c) Microsoft Corporation. All rights reserved.
-#  Licensed under the MIT License.
-
 from typing import List, Pattern, Dict
 
 from recognizers_text import Extractor, RegExpUtility
 from recognizers_number import JapaneseNumberExtractor
 from recognizers_date_time.date_time.japanese.date_extractor_config import JapaneseDateExtractorConfiguration
-from recognizers_date_time.date_time.CJK.base_date import BaseCJKDateExtractor
-from recognizers_date_time.date_time.CJK.base_dateperiod import CJKDatePeriodExtractorConfiguration
+from recognizers_date_time.date_time.japanese.duration_extractor_config import JapaneseDurationExtractorConfiguration
+from recognizers_date_time.date_time.CJK import BaseCJKDateExtractor, CJKDatePeriodExtractorConfiguration, \
+    BaseCJKDurationExtractor
 from recognizers_date_time.resources.japanese_date_time import JapaneseDateTime
 from recognizers_date_time.date_time.extractors import DateTimeExtractor
 
@@ -333,6 +331,7 @@ class JapaneseDatePeriodExtractorConfiguration(CJKDatePeriodExtractorConfigurati
             self._decade_regex, self._century_regex, self._reference_date_period_regex, self._date_point_with_ago_and_later]
 
         self._date_point_extractor = BaseCJKDateExtractor(JapaneseDateExtractorConfiguration())
-        self._duration_extractor = None
+        self._duration_extractor = BaseCJKDurationExtractor(
+            JapaneseDurationExtractorConfiguration(), False)
         self._integer_extractor = JapaneseNumberExtractor()
         self._ambiguity_filters_dict = JapaneseDateTime.AmbiguityFiltersDict

@@ -1,7 +1,7 @@
 [
   {
     "Input": "これは2日です。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2日",
@@ -49,7 +49,7 @@
   },
   {
     "Input": "これは明日午後4時以降です。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "明日午後4時以降",
@@ -73,7 +73,7 @@
   },
   {
     "Input": "この1週間",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "この1週間",
@@ -97,7 +97,7 @@
   },
   {
     "Input": "この日はどうですか。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "この日",
@@ -109,7 +109,7 @@
   },
   {
     "Input": "この週はどうですか。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "この週",
@@ -121,7 +121,7 @@
   },
   {
     "Input": "私の一週間はどんなかんじですか。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "私の一週間",
@@ -133,7 +133,7 @@
   },
   {
     "Input": "その週はどんなかんじですか。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "その週",
@@ -145,7 +145,7 @@
   },
   {
     "Input": "私の一日はどんなかんじですか。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "私の一日",
@@ -157,7 +157,7 @@
   },
   {
     "Input": "その日はどんなかんじですか。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "その日",
@@ -169,7 +169,7 @@
   },
   {
     "Input": "午前9時から11時まで会議の予定を入れて。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "午前9時から11時まで",
@@ -193,7 +193,7 @@
   },
   {
     "Input": "7月22日のベルビューでの会議を8月22日に変更。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "7月22日",
@@ -211,7 +211,7 @@
   },
   {
     "Input": "7月2日以降",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "7月2日以降",
@@ -235,7 +235,7 @@
   },
   {
     "Input": "7月2日以前",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "7月2日以前",
@@ -247,7 +247,7 @@
   },
   {
     "Input": "6月6日 12時15分",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "6月6日 12時15分",
@@ -259,7 +259,7 @@
   },
   {
     "Input": "2012年6月6日 15時15分",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2012年6月6日 15時15分",
@@ -271,7 +271,7 @@
   },
   {
     "Input": "5月29日",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "5月29日",
@@ -283,7 +283,7 @@
   },
   {
     "Input": "3月29日",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "3月29日",
@@ -319,12 +319,12 @@
   },
   {
     "Input": "notapplicable",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": []
   },
   {
     "Input": "午後3時の予定を4時に変更します。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "午後3時",
@@ -342,7 +342,7 @@
   },
   {
     "Input": "午前10時の予定を11時に変更します。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "午前10時",
@@ -360,7 +360,7 @@
   },
   {
     "Input": "午前10時の予定を20時に変更します。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "午前10時",
@@ -378,7 +378,7 @@
   },
   {
     "Input": "午前10時の予定を13時に変更します。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "午前10時",
@@ -396,7 +396,7 @@
   },
   {
     "Input": "午前10時の予定を0時に変更します。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "午前10時",
@@ -414,7 +414,7 @@
   },
   {
     "Input": "午前10時の予定を24時に変更します。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "午前10時",
@@ -432,7 +432,7 @@
   },
   {
     "Input": "午前10時の予定を4時に変更しますが、どうでしょうか。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "午前10時",
@@ -462,7 +462,7 @@
   },
   {
     "Input": "午前10時の予定を26時に変更します。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "午前10時",
@@ -498,7 +498,7 @@
   },
   {
     "Input": "午前10時の予定を25時に変更します。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "午前10時",
@@ -588,7 +588,7 @@
   },
   {
     "Input": "2016年11月は不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2016年11月",
@@ -600,7 +600,7 @@
   },
   {
     "Input": "2016年11月",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2016年11月",
@@ -708,7 +708,7 @@
   },
   {
     "Input": "今日から2日後のご都合はいかがでしょうか。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今日から2日後",
@@ -720,7 +720,7 @@
   },
   {
     "Input": "明日から3週間のご都合はいかがでしょうか。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "明日から3週間",
@@ -732,7 +732,7 @@
   },
   {
     "Input": "昨日の2日前、あなたはどこにいましたか。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "昨日の2日前",
@@ -744,7 +744,7 @@
   },
   {
     "Input": "今日から2週間以上前にもうすべての仕事を終えた。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今日から2週間以上前",
@@ -756,7 +756,7 @@
   },
   {
     "Input": "今日から2週間以内に戻ってきます。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今日から2週間以内",
@@ -768,7 +768,7 @@
   },
   {
     "Input": "この仕事は昨日の2日以上前には終わらせておくべきだった。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "昨日の2日以上前",
@@ -780,7 +780,7 @@
   },
   {
     "Input": "この仕事は明日から3日以内に終わらせます。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "明日から3日以内",
@@ -792,7 +792,7 @@
   },
   {
     "Input": "今から3分後に始めましょう。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今から3分後",
@@ -804,7 +804,7 @@
   },
   {
     "Input": "今日から3分始めましょう。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今日",
@@ -846,7 +846,7 @@
   },
   {
     "Input": "これは2日間です。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2日間",

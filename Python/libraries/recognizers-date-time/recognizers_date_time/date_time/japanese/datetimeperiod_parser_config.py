@@ -10,7 +10,7 @@ from recognizers_date_time.date_time.extractors import DateTimeExtractor
 from recognizers_date_time.date_time.CJK import CJKDateTimePeriodParserConfiguration, \
     CJKCommonDateTimeParserConfiguration, MatchedTimeRegexAndSwift
 from recognizers_date_time.resources.japanese_date_time import JapaneseDateTime
-from recognizers_date_time.date_time.japanese.datetime_period_extractor_config import \
+from recognizers_date_time.date_time.japanese.datetimeperiod_extractor_config import \
     JapaneseDateTimePeriodExtractorConfiguration
 from recognizers_date_time.date_time.utilities import TimexUtil
 
@@ -148,7 +148,7 @@ class JapaneseDateTimePeriodParserConfiguration(CJKDateTimePeriodParserConfigura
         self._date_parser = config.date_parser
         self._time_parser = config.time_parser
         self._date_time_parser = config.date_time_parser
-        self._time_period_parser = config.date_time_period_parser
+        self._time_period_parser = config.time_period_parser
 
         self._mo_regex = RegExpUtility.get_safe_reg_exp(JapaneseDateTime.DateTimePeriodMORegex)
         self._mi_regex = RegExpUtility.get_safe_reg_exp(JapaneseDateTime.DateTimePeriodMIRegex)
@@ -195,15 +195,15 @@ class JapaneseDateTimePeriodParserConfiguration(CJKDateTimePeriodParserConfigura
             swift = -1
             tod = Constants.EVENING
 
-        if RegExpUtility.get_matches(self.mo_regex, trimmed_text).success:
+        if RegExpUtility.get_matches(self.mo_regex, trimmed_text):
             tod = Constants.MORNING
-        elif RegExpUtility.get_matches(self.mi_regex, trimmed_text).success:
+        elif RegExpUtility.get_matches(self.mi_regex, trimmed_text):
             tod = Constants.MIDDAY
-        elif RegExpUtility.get_matches(self.af_regex, trimmed_text).success:
+        elif RegExpUtility.get_matches(self.af_regex, trimmed_text):
             tod = Constants.AFTERNOON
-        elif RegExpUtility.get_matches(self.ev_regex, trimmed_text).success:
+        elif RegExpUtility.get_matches(self.ev_regex, trimmed_text):
             tod = Constants.EVENING
-        elif RegExpUtility.get_matches(self.ni_regex, trimmed_text).success:
+        elif RegExpUtility.get_matches(self.ni_regex, trimmed_text):
             tod = Constants.NIGHT
         elif not tod:
             tod_symbol = None

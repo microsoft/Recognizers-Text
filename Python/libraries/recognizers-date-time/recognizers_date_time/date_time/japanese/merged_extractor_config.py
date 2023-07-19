@@ -10,7 +10,7 @@ from recognizers_date_time.date_time.japanese.time_extractor_config import Japan
 from recognizers_date_time.date_time.japanese.timeperiod_extractor_config import \
     JapaneseTimePeriodExtractorConfiguration
 from recognizers_date_time.date_time.japanese.datetime_extractor_config import JapaneseDateTimeExtractorConfiguration
-from recognizers_date_time.date_time.japanese.datetime_period_extractor_config import \
+from recognizers_date_time.date_time.japanese.datetimeperiod_extractor_config import \
     JapaneseDateTimePeriodExtractorConfiguration
 from recognizers_date_time.date_time.japanese.duration_extractor_config import JapaneseDurationExtractorConfiguration
 from recognizers_date_time.date_time.japanese.set_extractor_config import JapaneseSetExtractorConfiguration

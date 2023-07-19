@@ -89,7 +89,7 @@
     "Context": {
       "ReferenceDateTime": "2020-01-05T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "午前10時",
@@ -128,7 +128,7 @@
     "Context": {
       "ReferenceDateTime": "2020-01-05T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "午前10時",
@@ -167,7 +167,7 @@
     "Context": {
       "ReferenceDateTime": "2020-01-05T00:00:00"
     },
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "午前10時",

@@ -93,6 +93,7 @@ class JapaneseDurationExtractorConfiguration(CJKDurationExtractorConfiguration):
             super().__init__(culture_info)
 
     def __init__(self, merge: bool = True):
+        super().__init__()
         self.merge = merge
         self._year_regex = RegExpUtility.get_safe_reg_exp(JapaneseDateTime.DurationYearRegex)
         self._duration_unit_regex = RegExpUtility.get_safe_reg_exp(JapaneseDateTime.DurationUnitRegex)

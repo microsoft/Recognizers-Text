@@ -186,11 +186,11 @@ class JapaneseDateTimePeriodExtractorConfiguration(CJKDateTimePeriodExtractorCon
         return MatchedIndex(False, index)
 
     def has_connector_token(self, text: str) -> MatchedIndex:
+        return RegExpUtility.exact_match(self.connector_regex, text, True)
+
+    def get_between_token_index(self, text: str) -> MatchedIndex:
         index = -1
         match = RegExpUtility.get_matches(self.zhijian_regex, text)
-        if match.success:
+        if match and match[0].success:
             return MatchedIndex(True, match.index)
         return MatchedIndex(False, index)
-
-    def get_between_token_index(self, text: str) -> bool:
-        return RegExpUtility.exact_match(self.connector_regex, text, True)

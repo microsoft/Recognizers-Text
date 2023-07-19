@@ -56,7 +56,8 @@ class ExtractResultExtension:
                     if regex.match(key, er.text):
                         matches = RegExpUtility.get_matches(value, text)
 
-                        if any(m.index < er.start + er.length and m.index + m.length > er.start for m in matches):
+                        if any(text.index(m) < er.start + er.length and text.index(m) + len(m) > er.start
+                               for m in matches):
                             extract_results.remove(er)
 
         return extract_results

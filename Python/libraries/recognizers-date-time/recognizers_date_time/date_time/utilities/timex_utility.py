@@ -303,21 +303,22 @@ class TimexUtil:
     @staticmethod
     def parse_hour_from_time_timex(timex: str) -> int:
         start = timex.index(Constants.TIME_TIMEX_PREFIX) + 1
-        end = timex.index(Constants.TIME_TIMEX_CONNECTOR)
-        if not end > 0:
+        try:
+            end = timex.index(Constants.TIME_TIMEX_CONNECTOR)
+        except ValueError:
             end = len(timex)
         hour = int(timex[start:end - start])
         return hour
 
     @staticmethod
-    def parse_hours_from_time_period_timex(timex: str) -> Tuple[str, str]:
+    def parse_hours_from_time_period_timex(timex: str) -> Tuple[int, int]:
         hour1 = 0
         hour2 = 0
         time_list = timex.split(Constants.TIMEX_SEPARATOR[0])
         if len(time_list) > 2:
             hour1 = TimexUtil.parse_hour_from_time_timex(time_list[0])
             hour2 = TimexUtil.parse_hour_from_time_timex(time_list[1])
-        return tuple(hour1, hour2)
+        return hour1, hour2
 
     @staticmethod
     def generate_date_time_timex(date_time: datetime) -> str:

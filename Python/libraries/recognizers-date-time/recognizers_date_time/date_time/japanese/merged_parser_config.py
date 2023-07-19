@@ -1,8 +1,5 @@
 from typing import Pattern
 
-from recognizers_date_time.date_time.CJK import CJKMergedParserConfiguration
-from recognizers_date_time.date_time.japanese.merged_extractor_config import JapaneseMergedExtractorConfiguration
-from recognizers_date_time.date_time.japanese.common_configs import JapaneseCommonDateTimeParserConfiguration
 from .common_configs import JapaneseCommonDateTimeParserConfiguration
 from recognizers_date_time.date_time.CJK.base_merged import CJKMergedParserConfiguration
 from recognizers_date_time.date_time.japanese import JapaneseMergedExtractorConfiguration

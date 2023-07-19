@@ -1,6 +1,7 @@
 from typing import Pattern, Dict
 
-from recognizers_date_time import MatchedTimex, DateTimeParser
+from recognizers_date_time.date_time.parsers import DateTimeParser
+from recognizers_date_time.date_time.base_datetime import MatchedTimex
 from recognizers_date_time.date_time.extractors import DateTimeExtractor
 from recognizers_date_time.date_time.CJK import CJKSetParserConfiguration, CJKCommonDateTimeParserConfiguration
 from recognizers_date_time.resources.japanese_date_time import JapaneseDateTime
@@ -56,7 +57,7 @@ class JapaneseSetParserConfiguration(CJKSetParserConfiguration):
 
     @property
     def duration_parser(self) -> DateTimeParser:
-        return self.duration_parser
+        return self._duration_parser
 
     @property
     def time_extractor(self) -> DateTimeExtractor:

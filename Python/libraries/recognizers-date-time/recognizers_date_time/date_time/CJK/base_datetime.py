@@ -5,7 +5,6 @@ from collections import namedtuple
 import regex
 
 from recognizers_text import MetaData
-from recognizers_date_time.date_time.date_extractor import DateExtractor
 from recognizers_text.extractor import ExtractResult, Extractor
 from recognizers_number.number.extractors import BaseNumberExtractor
 from recognizers_number.number.parsers import BaseNumberParser
@@ -150,8 +149,8 @@ class BaseCJKDateTimeExtractor(Extractor):
 
                 middle = source[middle_begin:middle_end].strip().lower()
 
-                if not middle or self.config.is_connector_token(middle) or \
-                        RegExpUtility.is_exact_match(self.config.preposition_regex, middle, False):
+                if not middle or RegExpUtility.get_matches(self.config.connector_regex, middle) or \
+                        RegExpUtility.get_matches(self.config.preposition_regex, middle):
                     begin = ers[i].start
                     end = ers[j].start + ers[j].length
                     tokens.append(Token(begin, end))
@@ -181,12 +180,12 @@ class BaseCJKDateTimeExtractor(Extractor):
                 tokens.append(Token(begin, end))
 
         # TimePeriodExtractor cases using TimeOfDayRegex are not processed here
-        match_time_of_today = RegExpUtility.get_matches(self.config.time_of_special_day_regex, source)
+        match_time_of_today = regex.search(self.config.time_of_special_day_regex, source)
         match_time_of_day = regex.search(self.config.time_of_day_regex, source)
 
         if match_time_of_today and not match_time_of_day:
-            tokens.append(Token(match_time_of_today.start,
-                                (match_time_of_today.start + match_time_of_today.length)
+            tokens.append(Token(match_time_of_today.start(),
+                                (match_time_of_today.end())
                                 ))
 
         return tokens

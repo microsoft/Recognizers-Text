@@ -2298,7 +2298,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,java",
+    "NotSupportedByDesign": "javascript,java, python",
     "Results": [
       {
         "Text": "70年代",
@@ -2324,7 +2324,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "javascript,java",
+    "NotSupportedByDesign": "javascript,java, python",
     "Results": [
       {
         "Text": "40年代",

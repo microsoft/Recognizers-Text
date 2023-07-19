@@ -9,6 +9,7 @@ from recognizers_number_with_unit.number_with_unit.constants import Constants
 from recognizers_number_with_unit.number_with_unit.extractors import NumberWithUnitExtractorConfiguration
 from recognizers_number_with_unit.resources.japanese_numeric_with_unit import JapaneseNumericWithUnit
 from recognizers_number_with_unit.resources.base_units import BaseUnits
+from recognizers_number_with_unit.number_with_unit.utilities import CommonUtils
 
 
 # pylint: disable=abstract-method
@@ -51,7 +52,7 @@ class JapaneseNumberWithUnitExtractorConfiguration(NumberWithUnitExtractorConfig
         return None
 
     def expand_half_suffix(self, source, result, numbers):
-        pass
+        return CommonUtils.expand_half_suffix(source, result, numbers, self.half_unit_regex)
 
     def __init__(self, culture_info: CultureInfo):
         if culture_info is None:

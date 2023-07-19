@@ -173,7 +173,7 @@ class NumberWithUnitExtractor(Extractor):
             return []
 
         non_unit_match = None
-        numbers = None
+        numbers: List[ExtractResult] = []
         unit_is_prefix = []
 
         mapping_prefix: Dict[float, PrefixUnitResult] = dict()
@@ -317,23 +317,22 @@ class NumberWithUnitExtractor(Extractor):
             if non_unit_match is None:
                 try:
                     non_unit_match = RegExpUtility.get_matches(self.config.non_unit_regex, source)
-                    # non_unit_match = list(self.config.non_unit_regex.match(source))
                 except:
                     non_unit_match = []
 
             self._extract_separate_units(source, result, non_unit_match)
 
-            # Remove common ambiguous cases
-            result = self._filter_ambiguity(result, source)
-            # Remove entity-specific ambiguous case
-            if self.config.extract_type == Constants.SYS_UNIT_DIMENSION:
-                result = self._filter_ambiguity(result, source, self.config.dimension_ambiguity_filters_dict)
+        # Remove common ambiguous cases
+        result = self._filter_ambiguity(result, source)
+        # Remove entity-specific ambiguous case
+        if self.config.extract_type == Constants.SYS_UNIT_DIMENSION:
+            result = self._filter_ambiguity(result, source, self.config.dimension_ambiguity_filters_dict)
 
-            if self.config.extract_type == Constants.SYS_UNIT_CURRENCY:
-                result = self._select_candidates(source, result, unit_is_prefix)
+        if self.config.extract_type == Constants.SYS_UNIT_CURRENCY:
+            result = self._select_candidates(source, result, unit_is_prefix)
 
         # Expand Chinese phrase to the `half` patterns when it follows closely origin phrase.
-        self.config.expand_half_suffix(source, result, numbers)
+        result = self.config.expand_half_suffix(source, result, numbers)
 
         return result
 

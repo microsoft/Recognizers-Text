@@ -1,7 +1,7 @@
 [
   {
     "Input": "クリスマスに戻ります。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "クリスマス",
@@ -13,7 +13,7 @@
   },
   {
     "Input": "クリスマスの日に戻ります。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "クリスマスの日",
@@ -25,7 +25,7 @@
   },
   {
     "Input": "元旦に戻ります。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "元旦",
@@ -37,7 +37,7 @@
   },
   {
     "Input": "感謝祭の日に戻ります。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "感謝祭の日",
@@ -49,7 +49,7 @@
   },
   {
     "Input": "父の日に戻ります。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "父の日",
@@ -61,7 +61,7 @@
   },
   {
     "Input": "今年の元旦に戻ります。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "今年の元旦",
@@ -73,7 +73,7 @@
   },
   {
     "Input": "2016年の元旦に戻ります。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2016年の元旦",
@@ -85,7 +85,7 @@
   },
   {
     "Input": "2016年元旦に戻ります。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2016年元旦",
@@ -97,7 +97,7 @@
   },
   {
     "Input": "クリーンマンデイに戻ります。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "クリーンマンデイ",
@@ -109,7 +109,7 @@
   },
   {
     "Input": "キング牧師記念日は、アメリカの連邦祝日です。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "キング牧師記念日",
@@ -121,12 +121,12 @@
   },
   {
     "Input": "マーティン・ルーサー・キングは、自分の名がつけられた祝日がある。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": []
   },
   {
     "Input": "明日建軍節だけどどこ行く？",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "建軍節",
@@ -138,7 +138,7 @@
   },
   {
     "Input": "明日バレンタインデーだけどどこ行く？",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "バレンタインデー",
@@ -150,7 +150,7 @@
   },
   {
     "Input": "明日国慶節だけどどこ行く？",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "国慶節",
@@ -162,7 +162,7 @@
   },
   {
     "Input": "明日清明だけどどこ行く？",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "清明",
@@ -174,7 +174,7 @@
   },
   {
     "Input": "明日大晦日だけどどこ行く？",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "大晦日",
@@ -186,7 +186,7 @@
   },
   {
     "Input": "明日ハロウィンだけどどこ行く？",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "ハロウィン",
@@ -198,7 +198,7 @@
   },
   {
     "Input": "明日中秋節だけどどこ行く？",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "中秋節",
@@ -210,7 +210,7 @@
   },
   {
     "Input": "明日旧正月だけどどこ行く？",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "旧正月",
@@ -222,7 +222,7 @@
   },
   {
     "Input": "明日ガールズデーだけどどこ行く？",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "ガールズデー",
@@ -234,7 +234,7 @@
   },
   {
     "Input": "明日感謝祭だけどどこ行く？",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "感謝祭",
@@ -246,7 +246,7 @@
   },
   {
     "Input": "明日子供の日だけどどこ行く？",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "子供の日",
@@ -258,7 +258,7 @@
   },
   {
     "Input": "明日クリスマスだけどどこ行く？",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "クリスマス",
@@ -270,7 +270,7 @@
   },
   {
     "Input": "明日お正月だけどどこ行く？",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "お正月",
@@ -282,7 +282,7 @@
   },
   {
     "Input": "明日植樹祭だけどどこ行く？",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "植樹祭",
@@ -294,7 +294,7 @@
   },
   {
     "Input": "明日重陽節だけどどこ行く？",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "重陽節",
@@ -306,7 +306,7 @@
   },
   {
     "Input": "明日父の日だけどどこ行く？",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "父の日",
@@ -318,7 +318,7 @@
   },
   {
     "Input": "明日シングルデーだけどどこ行く？",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "シングルデー",
@@ -330,7 +330,7 @@
   },
   {
     "Input": "明日国際婦人デーだけどどこ行く？",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "国際婦人デー",
@@ -342,7 +342,7 @@
   },
   {
     "Input": "明日ダブル十一だけどどこ行く？",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "ダブル十一",
@@ -354,7 +354,7 @@
   },
   {
     "Input": "明日元宵節だけどどこ行く？",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "元宵節",
@@ -366,7 +366,7 @@
   },
   {
     "Input": "明日教師の日だけどどこ行く？",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "教師の日",
@@ -378,7 +378,7 @@
   },
   {
     "Input": "明日新年だけどどこ行く？",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "新年",
@@ -390,7 +390,7 @@
   },
   {
     "Input": "明日中秋だけどどこ行く？",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "中秋",
@@ -402,7 +402,7 @@
   },
   {
     "Input": "明日端午の節句だけどどこ行く？",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "端午の節句",
@@ -414,7 +414,7 @@
   },
   {
     "Input": "明日母の日だけどどこ行く？",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "母の日",
@@ -426,7 +426,7 @@
   },
   {
     "Input": "明日エイプリルフールだけどどこ行く？",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "エイプリルフール",
@@ -438,7 +438,7 @@
   },
   {
     "Input": "明日青年の日だけどどこ行く？",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "青年の日",
@@ -450,7 +450,7 @@
   },
   {
     "Input": "明日メーデーだけどどこ行く？",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "メーデー",
@@ -462,7 +462,7 @@
   },
   {
     "Input": "明日クリスマスイブだけどどこ行く？",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "クリスマスイブ",
@@ -474,7 +474,7 @@
   },
   {
     "Input": "明日清明節だけどどこ行く？",
-    "NotSupported": "javascript, python, java",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "清明節",

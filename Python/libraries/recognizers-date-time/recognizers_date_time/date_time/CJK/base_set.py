@@ -287,17 +287,13 @@ class BaseCJKSetParser(DateTimeParser):
 
                 value = inner_result
 
-        ret = DateTimeParseResult(
-            text=extract_result.text,
-            start=extract_result.start,
-            length=extract_result.length,
-            type=extract_result.type,
-            data=extract_result.data,
-            value=value,
-            timex_str=value.timex if value else '',
-            resolution_str=''
-        )
-        return ret
+        result = DateTimeParseResult(extract_result)
+
+        result.value = value
+        result.timex_str = value.timex if value else ''
+        result.resolution_str = ''
+
+        return result
 
     def filter_results(self, query: str, candidate_results: List[DateTimeParseResult]) -> List[DateTimeParseResult]:
         return candidate_results
@@ -313,7 +309,7 @@ class BaseCJKSetParser(DateTimeParser):
         matches = regex.match(self.config.each_prefix_regex, after_str)
         if matches:
             pr = self.config.duration_parser.parse(ers[0], datetime.now())
-            ret = SetHandler.resolve_set(pr.timex_str)
+            ret = SetHandler.resolve_set(ret, pr.timex_str)
             return ret
 
         return ret

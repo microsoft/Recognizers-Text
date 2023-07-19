@@ -1,7 +1,7 @@
 [
   {
     "Input": "3時間不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "3時間",
@@ -13,7 +13,7 @@
   },
   {
     "Input": "3日間不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "3日間",
@@ -37,7 +37,7 @@
   },
   {
     "Input": "3か月不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "3か月",
@@ -49,7 +49,7 @@
   },
   {
     "Input": "3分不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "3分",
@@ -73,7 +73,7 @@
   },
   {
     "Input": "123.45秒不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "123.45秒",
@@ -85,7 +85,7 @@
   },
   {
     "Input": "2週間不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2週間",
@@ -97,7 +97,7 @@
   },
   {
     "Input": "20分不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "20分",
@@ -109,7 +109,7 @@
   },
   {
     "Input": "24時間不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "24時間",
@@ -193,7 +193,7 @@
   },
   {
     "Input": "1時間不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "1時間",
@@ -205,7 +205,7 @@
   },
   {
     "Input": "1年間不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "1年間",
@@ -229,7 +229,7 @@
   },
   {
     "Input": "30分不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "30分",
@@ -253,7 +253,7 @@
   },
   {
     "Input": "2時間不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "2時間",
@@ -277,7 +277,7 @@
   },
   {
     "Input": "1週間で",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "1週間",
@@ -289,7 +289,7 @@
   },
   {
     "Input": "1日で",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "1日",
@@ -301,7 +301,7 @@
   },
   {
     "Input": "1時間",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "1時間",
@@ -313,7 +313,7 @@
   },
   {
     "Input": "1か月間",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "1か月間",
@@ -325,7 +325,7 @@
   },
   {
     "Input": "数時間不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "数時間",
@@ -337,7 +337,7 @@
   },
   {
     "Input": "数分不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "数分",
@@ -349,7 +349,7 @@
   },
   {
     "Input": "数日間、不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "数日間",
@@ -433,7 +433,7 @@
   },
   {
     "Input": "20年間不在にします。",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "20年間",
@@ -445,7 +445,7 @@
   },
   {
     "Input": "二年間",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "二年間",
@@ -457,7 +457,7 @@
   },
   {
     "Input": "五時間",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "五時間",
@@ -481,7 +481,7 @@
   },
   {
     "Input": "七週間",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "七週間",
@@ -517,7 +517,7 @@
   },
   {
     "Input": "六日間",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
         "Text": "六日間",

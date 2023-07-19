@@ -13,7 +13,7 @@ from recognizers_date_time.date_time.japanese.dateperiod_extractor_config import
     JapaneseDatePeriodExtractorConfiguration
 from recognizers_date_time.date_time.japanese.duration_extractor_config import JapaneseDurationExtractorConfiguration
 from recognizers_date_time.date_time.japanese.datetime_extractor_config import JapaneseDateTimeExtractorConfiguration
-from recognizers_date_time.date_time.japanese.datetime_period_extractor_config import \
+from recognizers_date_time.date_time.japanese.datetimeperiod_extractor_config import \
     JapaneseDateTimePeriodExtractorConfiguration
 from recognizers_text import RegExpUtility
 
