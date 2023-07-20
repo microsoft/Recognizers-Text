@@ -137,7 +137,8 @@ class BaseCJKTimeParser(DateTimeParser):
 
         if not extra:
             result = self.config.time_extractor.extract(source.text, reference)
-            extra = result[0].data
+            if result:
+                extra = result[0].data
 
         if extra:
             time_result = self.config.function_map[extra.data_type](extra)
