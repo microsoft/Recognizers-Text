@@ -1,5 +1,3 @@
-#  Copyright (c) Microsoft Corporation. All rights reserved.
-#  Licensed under the MIT License.
 from typing import Pattern
 
 from .common_configs import JapaneseCommonDateTimeParserConfiguration
@@ -43,11 +41,11 @@ class JapaneseMergedParserConfiguration(JapaneseCommonDateTimeParserConfiguratio
 
     def __init__(self, config):
         JapaneseCommonDateTimeParserConfiguration.__init__(self)
-        self._before_regex = JapaneseMergedExtractorConfiguration.before_regex
-        self._after_regex = JapaneseMergedExtractorConfiguration.after_regex
-        self._since_prefix_regex = JapaneseMergedExtractorConfiguration.since_prefix_regex
-        self._since_suffix_regex = JapaneseMergedExtractorConfiguration.since_suffix_regex
-        self._around_prefix_regex = JapaneseMergedExtractorConfiguration.around_prefix_regex
-        self._around_suffix_regex = JapaneseMergedExtractorConfiguration.around_suffix_regex
-        self._equal_regex = JapaneseMergedExtractorConfiguration.equal_regex
-        self._until_regex = JapaneseMergedExtractorConfiguration.until_regex
+        self._before_regex = JapaneseMergedExtractorConfiguration().before_regex
+        self._after_regex = JapaneseMergedExtractorConfiguration().after_regex
+        self._since_prefix_regex = JapaneseMergedExtractorConfiguration().since_prefix_regex
+        self._since_suffix_regex = JapaneseMergedExtractorConfiguration().since_suffix_regex
+        self._around_prefix_regex = JapaneseMergedExtractorConfiguration().around_prefix_regex
+        self._around_suffix_regex = JapaneseMergedExtractorConfiguration().around_suffix_regex
+        self._equal_regex = JapaneseMergedExtractorConfiguration().equal_regex
+        self._until_regex = JapaneseMergedExtractorConfiguration().until_regex

@@ -4,6 +4,7 @@ from recognizers_text.utilities import RegExpUtility, DefinitionLoader
 from recognizers_date_time.resources.japanese_date_time import JapaneseDateTime
 from recognizers_date_time.date_time.data_structures import TimeType
 from recognizers_date_time.date_time.CJK.base_time import CJKTimeExtractorConfiguration
+from recognizers_date_time.date_time.utilities import DateTimeOptionsConfiguration
 
 
 class JapaneseTimeExtractorConfiguration(CJKTimeExtractorConfiguration):

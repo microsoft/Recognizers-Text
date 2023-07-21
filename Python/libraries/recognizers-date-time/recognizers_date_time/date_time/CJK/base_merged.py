@@ -123,7 +123,7 @@ class CJKMergedExtractorConfiguration(DateTimeOptionsConfiguration):
         raise NotImplementedError
 
 
-class BaseCJKMergedDateTimeExtractor(DateTimeExtractor):
+class BaseCJKMergedExtractor(DateTimeExtractor):
     @property
     def extractor_type_name(self) -> str:
         return Constants.SYS_DATETIME_MERGED
@@ -140,20 +140,20 @@ class BaseCJKMergedDateTimeExtractor(DateTimeExtractor):
         # The order is important, since there can be conflicts in merging
         result = self.add_to(
             result, self.config.time_extractor.extract(source, reference))
-        # result = self.add_to(
-        #     result, self.config.duration_extractor.extract(source, reference))
+        result = self.add_to(
+            result, self.config.duration_extractor.extract(source, reference))
         result = self.add_to(
             result, self.config.date_period_extractor.extract(source, reference))
-        # result = self.add_to(
-        #     result, self.config.date_time_extractor.extract(source, reference))
+        result = self.add_to(
+            result, self.config.date_time_extractor.extract(source, reference))
         result = self.add_to(
             result, self.config.time_period_extractor.extract(source, reference))
-        # result = self.add_to(
-        #     result, self.config.date_time_period_extractor.extract(source, reference))
-        # result = self.add_to(
-        #     result, self.config.set_extractor.extract(source, reference))
-        # result = self.add_to(
-        #     result, self.config.holiday_extractor.extract(source, reference))
+        result = self.add_to(
+            result, self.config.date_time_period_extractor.extract(source, reference))
+        result = self.add_to(
+            result, self.config.set_extractor.extract(source, reference))
+        result = self.add_to(
+            result, self.config.holiday_extractor.extract(source, reference))
 
         result = self.filter_unspecific_date_period(result)
 
@@ -292,7 +292,7 @@ class BaseCJKMergedDateTimeExtractor(DateTimeExtractor):
     # Avoid adding mod for ambiguity cases, such as "从" in "从 ... 到 ..." should not add mod
     # TODO: Revise PotentialAmbiguousRangeRegex to support cases like "从2015年起，哪所大学需要的分数在80到90之间"
     def ambiguous_range_checker(self, before_str: str, text: str, er: ExtractResult) -> bool:
-        if RegExpUtility.match_end(self.config.ambiguous_range_modifier_regex, text, True):
+        if RegExpUtility.match_end(self.config.ambiguous_range_modifier_prefix, text, True):
             matches = RegExpUtility.get_matches(self.config.potential_ambiguous_range_regex, text)
             if any(m.index < er.start + er.length and m.index + m.length > er.start for m in matches):
                 return False
@@ -347,7 +347,7 @@ class CJKMergedParserConfiguration(CJKCommonDateTimeParserConfiguration):
         raise NotImplementedError
 
 
-class BaseCJKMergedDateTimeParser(DateTimeParser):
+class BaseCJKMergedParser(DateTimeParser):
     @property
     def parser_type_name(self) -> str:
         return Constants.SYS_DATETIME_MERGED
@@ -383,23 +383,21 @@ class BaseCJKMergedDateTimeParser(DateTimeParser):
                 around_match_prefix = RegExpUtility.match_begin(self.config.around_prefix_regex, er.text, True)
                 around_match_suffix = RegExpUtility.match_end(self.config.around_suffix_regex, er.text, True)
 
-                # TODO add 'not MergedParserUtil.is_duration_with_ago_and_later(er)' once duration extractor implemented
-                if before_match:
+                if before_match and not MergedParserUtil.is_duration_with_ago_and_later(er):
                     has_before = True
-                    er.start += before_match.start()
-                    er.length -= len(before_match.group())
-                    er.text = er.text[er.length]
-                    mod_str = before_match.group()
+                    er.length -= before_match.length
+                    if er.length > len(er.text):
+                        er.text = er.text[0:er.length]
+                    mod_str = before_match.value
                     if before_match.get_group(Constants.INCLUDE_GROUP_NAME):
                         has_inclusive_modifier = True
 
-                # TODO add 'not MergedParserUtil.is_duration_with_ago_and_later(er)' once duration_extractor implemented
-                elif after_match and not since_match_suffix:
+                elif after_match and not since_match_suffix and not MergedParserUtil.is_duration_with_ago_and_later(er):
                     has_after = True
-                    er.start += after_match.start()
-                    er.length -= len(after_match.group())
-                    er.text = er.text[after_match.start():]
-                    mod_str = after_match.group()
+                    er.length -= after_match.length
+                    if er.length > len(er.text):
+                        er.text = er.text[0:er.length]
+                    mod_str = after_match.value
                     if after_match.get_group(Constants.INCLUDE_GROUP_NAME):
                         has_inclusive_modifier = True
 
@@ -448,7 +446,6 @@ class BaseCJKMergedDateTimeParser(DateTimeParser):
         pr = self.parse_result(er, reference)
         if not pr:
             return None
-        pr.value: DateTimeResolutionResult
 
         # pop, restore the MOD string
         if has_before:
@@ -515,7 +512,7 @@ class BaseCJKMergedDateTimeParser(DateTimeParser):
 
         return pr
 
-    def parse_result(self, source: ExtractResult, reference: datetime) -> DateTimeResolutionResult:
+    def parse_result(self, source: ExtractResult, reference: datetime) -> DateTimeParseResult:
         result = None
 
         if source.type == Constants.SYS_DATETIME_DATE:

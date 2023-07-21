@@ -214,8 +214,8 @@ class BaseCJKDurationExtractor(DateTimeExtractor):
         #  handle "few days", "few months"
         ret.extend(get_tokens_from_regex(self.config.some_regex, text))
         #  handle "during/for the day/week/month/year"
-        if (self.config.options and DateTimeOptions.CALENDAR) != 0:
-            ret.extend(get_tokens_from_regex(self.config.during_regex, text))
+        # if (self.config.options and DateTimeOptions.CALENDAR) != 0:
+        #     ret.extend(get_tokens_from_regex(self.config.during_regex, text))
 
         result: List[ExtractResult] = list()
         for e in ret:
@@ -294,19 +294,19 @@ class BaseCJKDurationParser(DateTimeParser):
     def parse(self, source: ExtractResult, reference: datetime = None) -> Optional[DateTimeParseResult]:
         datetime_parse_result = self.parse_merged_duration(source.text, reference)
 
-        if not datetime_parse_result:
+        if not datetime_parse_result.success:
             datetime_parse_result = DurationParsingUtil.\
                 parse_inexact_number_with_unit(source.text, self.config.some_regex, self.config.unit_map,
                                                self.config.unit_value_map, is_cjk=True)
 
-        if not datetime_parse_result:
+        if not datetime_parse_result.success:
             datetime_parse_result = self.parse_an_unit(source.text)
 
-        if not datetime_parse_result:
+        if not datetime_parse_result.success:
             parse_result = self.config.internal_parser.parse(source)
-            unit_result = UnitValue(parse_result.value, parse_result.unit)
+            unit_result = parse_result.value
             if not unit_result:
-                return None
+                return DateTimeParseResult()
 
             unit_str = unit_result.unit
             if unit_result.number:
@@ -335,16 +335,16 @@ class BaseCJKDurationParser(DateTimeParser):
                     elif RegExpUtility.get_group(more_or_less_match, Constants.MORE_GROUP_NAME):
                         datetime_parse_result.mod = Constants.MORE_THAN_MOD
 
-            ret = DateTimeParseResult()
-            ret.text = source.text
-            ret.start = source.start
-            ret.type = source.type
-            ret.data = source.type
-            ret.value = datetime_parse_result
-            ret.timex_str = datetime_parse_result.timex
-            ret.resolution_str = None
+        ret = DateTimeParseResult()
+        ret.text = source.text
+        ret.start = source.start
+        ret.type = source.type
+        ret.data = source.type
+        ret.value = datetime_parse_result
+        ret.timex_str = datetime_parse_result.timex
+        ret.resolution_str = None
 
-            return ret
+        return ret
 
     def filter_results(self, query: str, candidate_results: List[DateTimeParseResult]) -> List[DateTimeParseResult]:
         return candidate_results

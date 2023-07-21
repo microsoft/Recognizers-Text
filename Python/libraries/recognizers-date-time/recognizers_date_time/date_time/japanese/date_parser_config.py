@@ -1,6 +1,3 @@
-#  Copyright (c) Microsoft Corporation. All rights reserved.
-#  Licensed under the MIT License.
-
 from typing import List, Pattern, Dict
 
 from recognizers_date_time.date_time.extractors import DateTimeExtractor

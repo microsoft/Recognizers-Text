@@ -116,7 +116,7 @@ class BaseCJKDatePeriodExtractor(DateTimeExtractor):
         tokens += self.match_complex_cases(source, simple_cases_results, reference)
         tokens += self.merge_two_time_points(source, reference)
         tokens += self.match_number_with_unit(source)
-        # tokens += self.match_duration(source, reference)
+        tokens += self.match_duration(source, reference)
 
         rets = merge_all_tokens(tokens, source, self.extractor_type_name)
 
@@ -821,8 +821,8 @@ class BaseCJKDatePeriodParser(DateTimeParser):
 
         inner_result = self.parse_simple_cases(source, reference)
 
-        # if not inner_result.success:
-        #     inner_result = self.parse_duration(source, reference)
+        if not inner_result.success:
+            inner_result = self.parse_duration(source, reference)
         if not inner_result.success:
             inner_result = self.parse_one_word_period(source, reference)
         if not inner_result.success:
@@ -932,8 +932,8 @@ class BaseCJKDatePeriodParser(DateTimeParser):
         num = -1
         er = self.config.integer_extractor.extract(num_str)
 
-        if er and er.type == Num_Constants.SYS_NUM_INTEGER:
-            num = self.config.number_parser.parse(er[0])
+        if er and er[0].type == Num_Constants.SYS_NUM_INTEGER:
+            num = int(self.config.number_parser.parse(er[0]).value)
 
         return num
 
@@ -2128,35 +2128,41 @@ class BaseCJKDatePeriodParser(DateTimeParser):
         ret = DateTimeResolutionResult()
 
         # For cases like 'first 2 weeks of 2021' (2021年的前2周), 'past 2 years' (前两年), 'next 3 years' (后三年)
-
         duration_res = self.config.duration_extractor.extract(source, reference)
 
         match_half = RegExpUtility.exact_match(self.config.one_word_period_regex, source, trim=True)
 
         # halfTag cases are processed in ParseOneWordPeriod
-        if match_half.get_group(Constants.HALF_TAG_GROUP_NAME):
+        if match_half.success and match_half.get_group(Constants.HALF_TAG_GROUP_NAME):
             ret.success = False
             return ret
 
         if len(duration_res) > 0:
             before_str = source[:duration_res[0].start]
-            after_str = source[duration_res[0].start + duration_res[0].length]
+            after_str = source[duration_res[0].start:]
 
-            matches = RegExpUtility.get_matches(self.config.unit_regex, duration_res[0].text)
+            matches = list(regex.finditer(self.config.unit_regex, duration_res[0].text))
+            # matches = RegExpUtility.get_matches(self.config.unit_regex, duration_res[0].text)
             match_business_days = RegExpUtility.exact_match(self.config.duration_unit_regex, source, trim=True)
 
             # handle duration cases like "5 years 1 month 21 days" and "multiple business days"
-            if (1 < len(matches) <= 3) or \
-                    match_business_days.get_group(Constants.BUSINESS_DAY_GROUP_NAME):
+            if (1 < len(matches) <= 3) or (
+                    matches and match_business_days.get_group(Constants.BUSINESS_DAY_GROUP_NAME)
+            ):
                 ret = self.parse_multiple_dates_duration(source, reference)
                 return ret
 
-            elif len(matches) == 1 and matches[0]:
-                src_unit = matches[0].get_group()
-                number_str = duration_res[0].text[:matches[0].index]
+            elif len(matches) == 1:
+                src_unit = RegExpUtility.get_group(matches[0], Constants.UNIT_GROUP_NAME)
+                src_unit_index = duration_res[0].text.index(src_unit)
+
+                number_str = duration_res[0].text[:src_unit_index]
                 match_few = self.config.duration_relative_duration_unit_regex.match(source)
-                number = 3 if number_str == match_few.get_group(Constants.FEW_GROUP_NAME).Value \
-                    else self.convert_cjk_to_num(number_str)
+
+                if match_few and number_str == match_few.get_group(Constants.FEW_GROUP_NAME).Value:
+                    number = 3
+                else:
+                    number = self.convert_cjk_to_num(number_str)
 
                 if src_unit in self.config.unit_map:
                     begin_date = reference
@@ -2165,16 +2171,20 @@ class BaseCJKDatePeriodParser(DateTimeParser):
                     unit_str = self.config.unit_map[src_unit]
 
                     # Get prefix
-                    temp_match = Match()
-                    prefix_match = ConditionalMatch(temp_match, False)
+                    prefix_match = None
 
                     if self.config.unit_regex.match(src_unit).groups(Constants.UNIT_OF_YEAR_GROUP_NAME):
                         #  Patterns like 'first 2 weeks of 2018' are considered only if the unit is compatible
                         prefix_match = RegExpUtility.exact_match(self.config.first_last_of_year_regex, before_str,
                                                                  trim=True)
 
-                    is_of_year_match = prefix_match.success
-                    is_past_match = prefix_match.groups(Constants.LAST_GROUP_NAME)
+                    if prefix_match.success:
+                        is_of_year_match = prefix_match.success
+                        is_past_match = prefix_match.groups(Constants.LAST_GROUP_NAME)
+                    else:
+                        is_of_year_match = False
+                        is_past_match = None
+
                     is_future = False
 
                     if not prefix_match:

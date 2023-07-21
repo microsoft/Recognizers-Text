@@ -303,21 +303,22 @@ class TimexUtil:
     @staticmethod
     def parse_hour_from_time_timex(timex: str) -> int:
         start = timex.index(Constants.TIME_TIMEX_PREFIX) + 1
-        end = timex.index(Constants.TIME_TIMEX_CONNECTOR)
-        if not end > 0:
+        try:
+            end = timex.index(Constants.TIME_TIMEX_CONNECTOR)
+        except ValueError:
             end = len(timex)
         hour = int(timex[start:end - start])
         return hour
 
     @staticmethod
-    def parse_hours_from_time_period_timex(timex: str) -> Tuple[str, str]:
+    def parse_hours_from_time_period_timex(timex: str) -> Tuple[int, int]:
         hour1 = 0
         hour2 = 0
         time_list = timex.split(Constants.TIMEX_SEPARATOR[0])
         if len(time_list) > 2:
             hour1 = TimexUtil.parse_hour_from_time_timex(time_list[0])
             hour2 = TimexUtil.parse_hour_from_time_timex(time_list[1])
-        return tuple(hour1, hour2)
+        return hour1, hour2
 
     @staticmethod
     def generate_date_time_timex(date_time: datetime) -> str:
@@ -424,3 +425,61 @@ class TimexUtil:
         unit_list.sort(key=lambda x: unit_value_map[x])
 
         return TimexHelpers.generate_compound_duration_timex(unit_list)
+
+    @staticmethod
+    def resolve_time_of_day(tod: str) -> TimeOfDayResolution:
+        result = TimeOfDayResolution()
+        if tod == Constants.EARLY_MORNING:
+            result.timex = Constants.EARLY_MORNING
+            result.begin_hour = Constants.EARLY_MORNING_BEGIN_HOUR
+            result.end_hour = Constants.EARLY_MORNING_END_HOUR
+        elif tod == Constants.MORNING:
+            result.timex = Constants.MORNING
+            result.begin_hour = Constants.MORNING_BEGIN_HOUR
+            result.end_hour = Constants.MORNING_END_HOUR
+        elif tod == Constants.MID_DAY:
+            result.timex = Constants.MID_DAY
+            result.begin_hour = Constants.MID_DAY_BEGIN_HOUR
+            result.end_hour = Constants.MID_DAY_END_HOUR
+        elif tod == Constants.AFTERNOON:
+            result.timex = Constants.AFTERNOON
+            result.begin_hour = Constants.AFTERNOON_BEGIN_HOUR
+            result.end_hour = Constants.AFTERNOON_END_HOUR
+        elif tod == Constants.EVENING:
+            result.timex = Constants.EVENING
+            result.begin_hour = Constants.EVENING_BEGIN_HOUR
+            result.end_hour = Constants.EVENING_END_HOUR
+        elif tod == Constants.DAYTIME:
+            result.timex = Constants.DAYTIME
+            result.begin_hour = Constants.DAYTIME_BEGIN_HOUR
+            result.end_hour = Constants.DAYTIME_END_HOUR
+        elif tod == Constants.NIGHT:
+            result.timex = Constants.NIGHTTIME
+            result.begin_hour = Constants.NIGHTTIME_BEGIN_HOUR
+            result.end_hour = Constants.NIGHTTIME_END_HOUR
+        elif tod == Constants.BUSINESS_HOUR:
+            result.timex = Constants.BUSINESS_HOUR
+            result.begin_hour = Constants.BUSINESS_BEGIN_HOUR
+            result.end_hour = Constants.BUSINESS_END_HOUR
+        elif tod == Constants.NIGHT:
+            result.timex = Constants.NIGHT
+            result.begin_hour = Constants.NIGHT_BEGIN_HOUR
+            result.end_hour = Constants.NIGHT_END_HOUR
+        elif tod == Constants.MEALTIME_BREAKFAST:
+            result.timex = Constants.MEALTIME_BREAKFAST
+            result.begin_hour = Constants.MEAL_TIME_BREAKFAST_BEGIN_HOUR
+            result.end_hour = Constants.MEAL_TIME_BREAKFAST_END_HOUR
+        elif tod == Constants.MEALTIME_BRUNCH:
+            result.timex = Constants.MEALTIME_BRUNCH
+            result.begin_hour = Constants.MEAL_TIME_BRUNCH_BEGIN_HOUR
+            result.end_hour = Constants.MEAL_TIME_BRUNCH_END_HOUR
+        elif tod == Constants.MEALTIME_LUNCH:
+            result.timex = Constants.MEALTIME_LUNCH
+            result.begin_hour = Constants.MEAL_TIME_LUNCH_BEGIN_HOUR
+            result.end_hour = Constants.MEAL_TIME_LUNCH_END_HOUR
+        elif tod == Constants.MEALTIME_DINNER:
+            result.timex = Constants.MEALTIME_DINNER
+            result.begin_hour = Constants.MEAL_TIME_DINNER_BEGIN_HOUR
+            result.end_hour = Constants.MEAL_TIME_DINNER_END_HOUR
+        return result
+

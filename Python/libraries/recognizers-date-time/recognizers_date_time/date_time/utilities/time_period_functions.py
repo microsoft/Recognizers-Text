@@ -18,7 +18,7 @@ class TimePeriodFunctions:
         result = DateTimeResolutionResult()
 
         # Left is a time
-        left_entity = next(iter(extra.named_entity['left']), '')
+        left_entity = next(iter(extra.named_entity.get('left', [])), '')
 
         #  下午四点十分到五点十分
         if extra.data_type == PeriodType.FullTime:
@@ -29,10 +29,9 @@ class TimePeriodFunctions:
             left_result = time_func.get_short_left(left_entity)
 
         # Right is a time
-        right_entity = next(iter(extra.named_entity['right']), '')
+        right_entity = next(iter(extra.named_entity.get('right', [])), '')
         right_result = TimePeriodFunctions.get_parse_time_result(
             right_entity, extra.match, reference, time_parser)
-
 
         span_hour = right_result.hour - left_result.hour
         if span_hour < 0 or (span_hour == 0 and left_result.minute > right_result.minute):
@@ -174,4 +173,6 @@ class TimePeriodFunctions:
         extract_result.type = Constants.SYS_DATETIME_TIME
 
         result = time_parser.parse(extract_result, reference)
+        if not result:
+            return TimeResult(-1, -1, -1)
         return result.data

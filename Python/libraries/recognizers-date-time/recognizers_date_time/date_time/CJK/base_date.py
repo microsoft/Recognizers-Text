@@ -16,6 +16,7 @@ from recognizers_date_time.date_time.CJK import CJKCommonDateTimeParserConfigura
 from recognizers_text import ExtractResult, RegExpUtility, MetaData
 from recognizers_date_time.date_time.abstract_year_extractor import AbstractYearExtractor
 
+
 class CJKDateExtractorConfiguration(ABC):
 
     @property
@@ -85,7 +86,7 @@ class BaseCJKDateExtractor(DateTimeExtractor, AbstractYearExtractor):
         tokens: List[Token] = list()
         tokens.extend(self.basic_regex_match(source))
         tokens.extend(self.implicit_date(source))
-        # tokens.extend(self.duration_with_ago_and_later(source, reference))
+        tokens.extend(self.duration_with_ago_and_later(source, reference))
         result = merge_all_tokens(tokens, source, self.extractor_type_name)
 
         result = ExtractResultExtension.filter_ambiguity(result, source, self.config.ambiguity_date_filters_dict)
@@ -132,16 +133,16 @@ class BaseCJKDateExtractor(DateTimeExtractor, AbstractYearExtractor):
 
             if pos < len(source):
                 suffix = source[pos:]
-                match = self.config.before_regex.match(suffix)
+                match = RegExpUtility.get_matches(self.config.before_regex, suffix)
 
                 if not match:
-                    match = self.config.after_regex.match(suffix)
+                    match = RegExpUtility.get_matches(self.config.after_regex, suffix)
 
-                if match and suffix.strip().startswith(match.get_group()):
+                if match and suffix.startswith(match[0]):
                     meta_data = MetaData()
                     meta_data.is_duration_date_with_weekday = True
                     # "Extend extraction with weekdays like in "Friday two weeks from now", "in 3 weeks on Monday""
-                    ret.append(Token(extracted_result.start, pos + match.start(), meta_data))
+                    ret.append(Token(extracted_result.start, pos + len(match[0]), meta_data))
 
         ret.extend(self.extend_with_week_day(ret, source))
 
@@ -531,9 +532,9 @@ class BaseCJKDateParser(DateTimeParser):
         if not inner_result.success:
             inner_result = self.parse_implicit_date(source_text, reference)
 
-        # if not inner_result.success:
-        #     inner_result = self.parser_duration_with_ago_and_later(
-        #         source_text, reference)
+        if not inner_result.success:
+            inner_result = self.parser_duration_with_ago_and_later(
+                source_text, reference)
 
         if inner_result.success:
             inner_result.future_resolution: Dict[str, str] = dict()
@@ -704,29 +705,32 @@ class BaseCJKDateParser(DateTimeParser):
             return ret
 
         # handle "明日から3週間" (3 weeks from tomorrow)
-        # duration_extracted_results = self.config.duration_extractor.extract(source_text, reference)
-        # unit_match = self.config.duration_relative_duration_unit_regex.match(source_text)
-        # is_within = RegExpUtility.match_end(self.config.duration_relative_duration_unit_regex, source_text, trim=True). \
-        #     get_group(Date_Constants.WITHIN_GROUP_NAME).success
-        #
-        # if (exact_match or is_within) and unit_match and len(duration_extracted_results) > 0 \
-        #         and not unit_match.get_group(Date_Constants.FEW_GROUP_NAME):
-        #     pr = self.config.duration_parser.parse(duration_extracted_results[0], reference)
-        #     day_str = unit_match.get_group(Date_Constants.LATER_GROUP_NAME)
-        #     future = True
-        #     swift = 0
-        #
-        #     if pr:
-        #         if day_str:
-        #             swift = self.config.get_swift_day(day_str)
-        #
-        #         result_date_time = DurationParsingUtil.shift_date_time(pr.timex_str,
-        #                                                                (reference + datedelta(days=swift)),
-        #                                                                future)
-        #         ret.timex = f'{DateTimeFormatUtil.luis_date_from_datetime(result_date_time)}'
-        #         ret.future_value = past_value = result_date_time
-        #         ret.success = True
-        #         return ret
+        duration_extracted_results = self.config.duration_extractor.extract(source_text, reference)
+        unit_match = self.config.duration_relative_duration_unit_regex.match(source_text)
+        is_within = False
+        within_regex = RegExpUtility.match_end(
+            self.config.duration_relative_duration_unit_regex, source_text, trim=True)
+        if within_regex:
+            is_within = within_regex.get_group(Date_Constants.WITHIN_GROUP_NAME).success
+
+        if (exact_match or is_within) and unit_match and len(duration_extracted_results) > 0 \
+                and not unit_match.get_group(Date_Constants.FEW_GROUP_NAME):
+            pr = self.config.duration_parser.parse(duration_extracted_results[0], reference)
+            day_str = unit_match.get_group(Date_Constants.LATER_GROUP_NAME)
+            future = True
+            swift = 0
+
+            if pr:
+                if day_str:
+                    swift = self.config.get_swift_day(day_str)
+
+                result_date_time = DurationParsingUtil.shift_date_time(pr.timex_str,
+                                                                       (reference + datedelta(days=swift)),
+                                                                       future)
+                ret.timex = f'{DateTimeFormatUtil.luis_date_from_datetime(result_date_time)}'
+                ret.future_value = past_value = result_date_time
+                ret.success = True
+                return ret
 
         if not ret.success:
             ret = self.match_weekday_and_day(source_text, reference)

@@ -1,6 +1,3 @@
-#  Copyright (c) Microsoft Corporation. All rights reserved.
-#  Licensed under the MIT License.
-
 from typing import Pattern, Dict
 
 from recognizers_number import JapaneseIntegerExtractor, CJKNumberParser
@@ -378,10 +375,9 @@ class JapaneseDatePeriodParserConfiguration(CJKDatePeriodParserConfiguration):
         self._last_year_regex = RegExpUtility.get_safe_reg_exp(JapaneseDateTime.ParserConfigurationLastYearRegex)
         self._this_year_regex = RegExpUtility.get_safe_reg_exp(JapaneseDateTime.ParserConfigurationThisYearRegex)
         self._two_num_year = int(JapaneseDateTime.TwoNumYear)
-        # TODO When the implementation for these properties is added, change the None values to their respective Regexps
 
-        self._duration_extractor = None
-        self._duration_parser = None
+        self._duration_extractor = config.duration_extractor
+        self._duration_parser = config.duration_parser
 
     def to_month_number(self, month_str: str) -> int:
         return self.month_of_year[month_str] % 12 if self.month_of_year[month_str] > 12 \

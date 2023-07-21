@@ -1,4 +1,5 @@
 from abc import abstractmethod
+from calendar import Calendar
 from datetime import datetime
 from datedelta import datedelta
 import regex
@@ -6,12 +7,13 @@ from typing import List, Pattern, Callable, Dict, Optional, Match
 
 from recognizers_text import Metadata
 from recognizers_text.extractor import ExtractResult
+from recognizers_text.utilities import RegExpUtility
 from recognizers_number import Constants as NumberConstants
 from recognizers_date_time.date_time.constants import Constants, TimeTypeConstants
 from recognizers_date_time.date_time.extractors import DateTimeExtractor
 from recognizers_date_time.date_time.parsers import DateTimeParseResult, DateTimeParser
 from recognizers_date_time.date_time.utilities import DateTimeOptionsConfiguration, Token, merge_all_tokens, \
-    DateTimeFormatUtil, DateTimeResolutionResult, DateUtils
+    DateTimeFormatUtil, DateTimeResolutionResult, DateUtils, DayOfWeek, HolidayFunctions
 from recognizers_number import BaseNumberExtractor, BaseNumberParser
 
 
@@ -43,7 +45,7 @@ class BaseCJKHolidayExtractor(DateTimeExtractor):
             er.metadata = Metadata()
             er.metadata.is_holiday = True
 
-        return er
+        return ers
 
     def holiday_match(self, text: str) -> List[Token]:
         ret: List[Token] = list()
@@ -98,11 +100,168 @@ class CJKHolidayParserConfiguration(DateTimeOptionsConfiguration):
     def sanitize_year_token(self, source: str) -> str:
         raise NotImplementedError
 
+    @staticmethod
+    def new_year(year: int) -> datetime:
+        return datetime(year, 1, 1)
+
+    @staticmethod
+    def usa_independence_day(year: int) -> datetime:
+        return datetime(year, 7, 4)
+
+    @staticmethod
+    def teacher_day(year: int) -> datetime:
+        return datetime(year, 9, 10)
+
+    @staticmethod
+    def mao_birthday(year: int) -> datetime:
+        return datetime(year, 12, 26)
+
+    @staticmethod
+    def youth_day(year: int) -> datetime:
+        return datetime(year, 5, 4)
+
+    @staticmethod
+    def children_day(year: int) -> datetime:
+        return datetime(year, 6, 1)
+
+    @staticmethod
+    def female_day(year: int) -> datetime:
+        return datetime(year, 3, 8)
+
+    @staticmethod
+    def tree_plant_day(year: int) -> datetime:
+        return datetime(year, 3, 12)
+
+    @staticmethod
+    def lover_day(year: int) -> datetime:
+        return datetime(year, 2, 14)
+
+    @staticmethod
+    def christmas_day(year: int) -> datetime:
+        return datetime(year, 12, 25)
+
+    @staticmethod
+    def christmas_eve(year: int) -> datetime:
+        return datetime(year, 12, 24)
+
+    @staticmethod
+    def easter_day(year: int) -> datetime:
+        return HolidayFunctions.calculate_holiday_by_easter(year)
+
+    @staticmethod
+    def fool_day(year: int) -> datetime:
+        return datetime(year, 4, 1)
+
+    @staticmethod
+    def labor_day(year: int) -> datetime:
+        return datetime(year, 5, 1)
+
+    @staticmethod
+    def halloween_day(year: int) -> datetime:
+        return datetime(year, 10, 31)
+
+    @staticmethod
+    def mid_autumn_day(year: int) -> datetime:
+        return datetime(year, 8, 15)
+
+    @staticmethod
+    def spring_day(year: int) -> datetime:
+        return datetime(year, 1, 1)
+
+    @staticmethod
+    def new_year_eve(year: int) -> datetime:
+        return datetime(year, 12, 31)
+
+    @staticmethod
+    def lantern_day(year: int) -> datetime:
+        return datetime(year, 1, 15)
+
+    @staticmethod
+    def qing_ming_day(year: int) -> datetime:
+        return datetime(year, 4, 4)
+
+    @staticmethod
+    def dragon_boat_day(year: int) -> datetime:
+        return datetime(year, 5, 5)
+
+    @staticmethod
+    def boys_festival(year: int) -> datetime:
+        return datetime(year, 5, 5)
+
+    @staticmethod
+    def jap_national_day(year: int) -> datetime:
+        return datetime(year, 10, 1)
+
+    @staticmethod
+    def jap_mil_build_day(year: int) -> datetime:
+        return datetime(year, 8, 1)
+
+    @staticmethod
+    def girls_day(year: int) -> datetime:
+        return datetime(year, 3, 7)
+
+    @staticmethod
+    def singles_day(year: int) -> datetime:
+        return datetime(year, 11, 11)
+
+    @staticmethod
+    def chong_yang_day(year: int) -> datetime:
+        return datetime(year, 9, 9)
+
+    @staticmethod
+    def get_day(year: int, month: int, week: int, day_of_week: DayOfWeek) -> int:
+        calendar = Calendar()
+        return [d for d in calendar.itermonthdays2(year, month) if d[0] and d[1] == day_of_week - 1][week][0]
+
+    @staticmethod
+    def get_last_day(year: int, month: int, day_of_week: DayOfWeek) -> int:
+        return CJKHolidayParserConfiguration.get_day(year, month, -1, day_of_week)
+
+    @staticmethod
+    def mothers_day(year: int) -> datetime:
+        return datetime(year, 5, CJKHolidayParserConfiguration.get_day(year, 5, 1, DayOfWeek.SUNDAY))
+
+    @staticmethod
+    def fathers_day(year: int) -> datetime:
+        return datetime(year, 6, CJKHolidayParserConfiguration.get_day(year, 6, 2, DayOfWeek.SUNDAY))
+
+    @staticmethod
+    def martin_luther_king_day(year: int) -> datetime:
+        return datetime(year, 1, CJKHolidayParserConfiguration.get_day(year, 1, 2, DayOfWeek.MONDAY))
+
+    @staticmethod
+    def washingtons_birthday(year: int) -> datetime:
+        return datetime(year, 2, CJKHolidayParserConfiguration.get_day(year, 2, 2, DayOfWeek.MONDAY))
+
+    @staticmethod
+    def canberra_day(year: int) -> datetime:
+        return datetime(year, 3, CJKHolidayParserConfiguration.get_day(year, 3, 0, DayOfWeek.MONDAY))
+
+    @staticmethod
+    def memorial_day(year: int) -> datetime:
+        return datetime(year, 5, CJKHolidayParserConfiguration.get_last_day(year, 5, DayOfWeek.MONDAY))
+
+    @staticmethod
+    def labour_day(year: int) -> datetime:
+        return datetime(year, 9, CJKHolidayParserConfiguration.get_day(year, 9, 0, DayOfWeek.MONDAY))
+
+    @staticmethod
+    def international_workers_day(year: int) -> datetime:
+        return datetime(year, 5, 1)
+
+    @staticmethod
+    def columbus_day(year: int) -> datetime:
+        return datetime(year, 10, CJKHolidayParserConfiguration.get_day(year, 10, 1, DayOfWeek.MONDAY))
+
+    @staticmethod
+    def thanksgiving_day(year: int) -> datetime:
+        return datetime(year, 11, CJKHolidayParserConfiguration.get_day(year, 11, 3, DayOfWeek.THURSDAY))
+
 
 class BaseCJKHolidayParser(DateTimeParser):
     @property
     def parser_type_name(self) -> str:
-        return Constants.SYS_DATETIME_TIME
+        return Constants.SYS_DATETIME_DATE
 
     def __init__(self, config: CJKHolidayParserConfiguration):
         self.config = config
@@ -241,7 +400,7 @@ class BaseCJKHolidayParser(DateTimeParser):
 
     def is_lunar_calendar(self, text: str):
         source = text.strip().lower()
-        match = regex.match(self.config.lunar_holiday_regex, source)
+        match = RegExpUtility.get_matches(self.config.lunar_holiday_regex, source)
         if match:
             return True
         return False

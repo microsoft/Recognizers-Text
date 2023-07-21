@@ -126,7 +126,10 @@ class TimeFunctions:
         des = ""
         if regex.match(self.day_desc_regex, text):
             des = text[:-1]
-        hour = self.match_to_value(text[-1])
+        if text:
+            hour = self.match_to_value(text[-1])
+        else:
+            hour = self.match_to_value(text)
         time_result = TimeResult(hour, -1, -1)
         self.add_desc(time_result, des)
 

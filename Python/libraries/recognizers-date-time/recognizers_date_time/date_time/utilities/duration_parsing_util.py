@@ -126,7 +126,7 @@ class DurationParsingUtil:
                                        unit_map: Dict[str, str], unit_value_map: Dict[str, float],
                                        is_cjk: bool = False) -> DateTimeResolutionResult:
         ret = DateTimeResolutionResult()
-        match = regex.match(inexact_number_unit_regex, text)
+        match = RegExpUtility.get_matches(inexact_number_unit_regex, text)
         if match:
             #  set the inexact number "few", "some" to 3 for now
             if RegExpUtility.get_group(match, "NumTwoTerm"):
@@ -161,7 +161,7 @@ class DurationParsingUtil:
                 ret.future_value = ret.past_value = num_val * unit_value_map[src_unit.split()]
                 ret.success = True
 
-            return ret
+        return ret
 
     @staticmethod
     def is_less_than_day(unit: str) -> bool:

@@ -1,13 +1,11 @@
-#  Copyright (c) Microsoft Corporation. All rights reserved.
-#  Licensed under the MIT License.
-
 from typing import List, Pattern, Dict
 
 from recognizers_text import RegExpUtility
 from recognizers_number import JapaneseIntegerExtractor, CJKNumberParser, JapaneseNumberParserConfiguration
-from recognizers_date_time.date_time.CJK.base_date import CJKDateExtractorConfiguration
+from recognizers_date_time.date_time.CJK import CJKDateExtractorConfiguration, BaseCJKDurationExtractor
 from recognizers_date_time.date_time.constants import Constants
 from recognizers_date_time.date_time.extractors import DateTimeExtractor
+from recognizers_date_time.date_time.japanese.duration_extractor_config import JapaneseDurationExtractorConfiguration
 from recognizers_date_time.resources import JapaneseDateTime
 from recognizers_date_time.resources.base_date_time import BaseDateTime
 
@@ -167,7 +165,8 @@ class JapaneseDateExtractorConfiguration(CJKDateExtractorConfiguration):
         return self._number_parser
 
     def __init__(self):
-        self._duration_extractor = None
+        self._duration_extractor = BaseCJKDurationExtractor(
+            JapaneseDurationExtractorConfiguration(), False)
 
         # ２０１６年１２月１日
         self._date_regex_list_1 = RegExpUtility.get_safe_reg_exp(JapaneseDateTime.DateRegexList1)

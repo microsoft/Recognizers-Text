@@ -159,7 +159,7 @@ class BaseCJKDateTimePeriodExtractor(DateTimeExtractor):
 
         tokens.extend(self.merge_date_and_time_period(text, date_ers, time_range_ers))
         tokens.extend(self.merge_two_time_points(text, date_time_ers, time_ers))
-        # tokens.extend(self.match_duration(text, reference_time))
+        tokens.extend(self.match_duration(text, reference_time))
         tokens.extend(self.match_relative_unit(text))
         tokens.extend(self.match_date_with_period_suffix(text, date_ers))
         tokens.extend(self.match_number_with_unit(text))
@@ -229,6 +229,7 @@ class BaseCJKDateTimePeriodExtractor(DateTimeExtractor):
 
         while j < len(time_ers):
             time_points.append(time_ers[j])
+            j += 1
 
         time_points = list(sorted(time_points, key=lambda x: x.start))
 
@@ -297,7 +298,10 @@ class BaseCJKDateTimePeriodExtractor(DateTimeExtractor):
             return ret
 
         for er in ers:
-            after_str = text[er.start + er.length]
+            if er.start + er.length > len(text):
+                after_str = text[er.start + er.length]
+            else:
+                after_str = text[0]
             match = regex.match(self.config.time_of_day_regex, after_str)
             if match:
                 middle_str = after_str[0:match.start()]
@@ -401,7 +405,7 @@ class BaseCJKDateTimePeriodExtractor(DateTimeExtractor):
             date_str_end = int(date_er.start + date_er.length)
             after_str = text[date_str_end: len(text) - date_str_end]
             match_after = RegExpUtility.match_begin(self.config.time_period_left_regex, after_str, True)
-            if match_after.success:
+            if match_after:
                 ret.append(Token(int(date_er.start), date_str_end + match_after.index + match_after.length))
 
         return ret
@@ -416,16 +420,16 @@ class BaseCJKDateTimePeriodExtractor(DateTimeExtractor):
             after_str = text[(er.start + er.length) or 0:]
             followed_unit_match = RegExpUtility.match_begin(self.config.followed_unit, after_str, True)
 
-            if followed_unit_match.success:
+            if followed_unit_match:
                 durations.append(Token(er.start or 0, (er.start + er.length) or 0 +
                                        len(followed_unit_match.group())))
 
             past_regex_match = RegExpUtility.match_begin(self.config.past_regex, after_str, True)
-            if past_regex_match.success:
+            if past_regex_match:
                 durations.append(Token(er.start or 0, (er.start + er.length) or 0 + len(past_regex_match.group())))
 
         for match in RegExpUtility.get_matches(self.config.unit_regex, text):
-            durations.append(Token(match.start(), match.start() + match.end()))
+            durations.append(Token(text.index(match), len(match)))
 
         for duration in durations:
             before_str = text[0:duration.start]
@@ -433,17 +437,17 @@ class BaseCJKDateTimePeriodExtractor(DateTimeExtractor):
                 continue
 
             past_regex_match = RegExpUtility.match_end(self.config.past_regex, before_str, True)
-            if past_regex_match.success:
-                ret.append(Token(match.start(), duration.end))
+            if past_regex_match:
+                ret.append(Token(past_regex_match.index, duration.end))
                 continue
 
             future_regex_match = RegExpUtility.match_end(self.config.future_regex, before_str, True)
-            if future_regex_match.success:
-                ret.append(Token(match.start(), duration.end))
+            if future_regex_match:
+                ret.append(Token(future_regex_match.index, duration.end))
 
             time_period_left_regex_match = RegExpUtility.match_end(self.config.time_period_left_regex, before_str, True)
-            if time_period_left_regex_match.success:
-                ret.append(Token(match.start(), duration.end))
+            if time_period_left_regex_match:
+                ret.append(Token(time_period_left_regex_match.index, duration.end))
 
         return ret
 
@@ -476,7 +480,7 @@ class CJKDateTimePeriodParserConfiguration(DateTimeOptionsConfiguration):
 
     @property
     @abstractmethod
-    def duration_parser(self) -> DateTimeExtractor:
+    def duration_parser(self) -> DateTimeParser:
         raise NotImplementedError
 
     @property
@@ -596,8 +600,8 @@ class BaseCJKDateTimePeriodParser(DateTimeParser):
             if not inner_result.success:
                 inner_result = self.merge_two_time_points(source.text, reference_time)
 
-            # if not inner_result.success:
-            #     inner_result = self.parse_duration(source.text, reference_time)
+            if not inner_result.success:
+                inner_result = self.parse_duration(source.text, reference_time)
 
             if not inner_result.success:
                 inner_result = self.parse_specific_night(source.text, reference_time)
@@ -628,30 +632,29 @@ class BaseCJKDateTimePeriodParser(DateTimeParser):
                 else:
                     inner_result.future_resolution = {
                         TimeTypeConstants.START_DATETIME: DateTimeFormatUtil.
-                        format_date_time(datetime(inner_result.future_value))[0],
+                        format_date_time(inner_result.future_value[0]),
                         TimeTypeConstants.END_DATETIME: DateTimeFormatUtil.
-                        format_date_time(datetime(inner_result.future_value))[1]
+                        format_date_time(inner_result.future_value[1])
                     }
 
                     inner_result.past_resolution = {
                         TimeTypeConstants.START_DATETIME: DateTimeFormatUtil.
-                        format_date_time(datetime(inner_result.past_value))[0],
+                        format_date_time(inner_result.past_value[0]),
                         TimeTypeConstants.END_DATETIME: DateTimeFormatUtil.
-                        format_date_time(datetime(inner_result.past_value))[1]
+                        format_date_time(inner_result.past_value[1])
                     }
 
                 value = inner_result
 
-        ret = DateTimeResolutionResult(
-            text=source.text,
-            start=source.start,
-            length=source.length,
-            type=source.type,
-            date=source.data,
-            value=value,
-            timex_str='' if not value else value.timex,
-            resolution_str=''
-        )
+        ret = DateTimeParseResult()
+        ret.text = source.text
+        ret.start = source.start
+        ret.length = source.length
+        ret.type = source.type
+        ret.date = source.data
+        ret.value = value
+        ret.timex_str = '' if not value else value.timex
+        ret.resolution_str = ''
         return ret
 
     def filter_result(self, query: str, candidare_results: List[DateTimeParseResult]) -> List[DateTimeParseResult]:
@@ -772,18 +775,20 @@ class BaseCJKDateTimePeriodParser(DateTimeParser):
         er1 = self.config.time_extractor.extract(text, reference_time)
         er2 = self.config.date_time_extractor.extract(text, reference_time)
 
-        right_time = DateUtils.safe_create_from_value(reference_time.year,
+        right_time = DateUtils.safe_create_from_value(DateUtils.min_value,
+                                                      reference_time.year,
                                                       reference_time.month,
                                                       reference_time.day)
-        left_time = DateUtils.safe_create_from_value(reference_time.year,
+        left_time = DateUtils.safe_create_from_value(DateUtils.min_value,
+                                                     reference_time.year,
                                                      reference_time.month,
                                                      reference_time.day)
 
         match = regex.match(self.config.future_regex, text)
 
         # cases including 'within' are processed in ParseDuration
-        # if RegExpUtility.get_group(match, Constants.WITHIN_GROUP_NAME):
-        #     return self.parse_duration(text, reference_time)
+        if RegExpUtility.get_group(match, Constants.WITHIN_GROUP_NAME):
+            return self.parse_duration(text, reference_time)
 
         match_weekday = regex.match(self.config.weekday_regex, text)
 
@@ -834,18 +839,22 @@ class BaseCJKDateTimePeriodParser(DateTimeParser):
             future_begin = past_begin
 
         if both_have_dates:
-            right_time = DateUtils.safe_create_from_value(future_end.year,
+            right_time = DateUtils.safe_create_from_value(DateUtils.min_value,
+                                                          future_end.year,
                                                           future_end.month,
                                                           future_end.day)
-            left_time = DateUtils.safe_create_from_value(future_begin.year,
+            left_time = DateUtils.safe_create_from_value(DateUtils.min_value,
+                                                         future_begin.year,
                                                          future_begin.month,
                                                          future_begin.day)
         elif begin_has_date:
-            left_time = DateUtils.safe_create_from_value(future_begin.year,
+            left_time = DateUtils.safe_create_from_value(DateUtils.min_value,
+                                                         future_begin.year,
                                                          future_begin.month,
                                                          future_begin.day)
         elif end_has_date:
-            right_time = DateUtils.safe_create_from_value(future_end.year,
+            right_time = DateUtils.safe_create_from_value(DateUtils.min_value,
+                                                          future_end.year,
                                                           future_end.month,
                                                           future_end.day)
         left_result: DateTimeResolutionResult = pr1.value
@@ -927,7 +936,7 @@ class BaseCJKDateTimePeriodParser(DateTimeParser):
         ret = DateTimeResolutionResult()
         trimmed_text = text.strip()
         begin_hour = end_hour = end_min = 0
-        time_str: str = None
+        time_str: str = ""
 
         # Handle 昨晚 (last night)，今晨 (this morning)
         if RegExpUtility.is_exact_match(self.config.specific_time_of_day_regex, trimmed_text, True):
@@ -950,6 +959,7 @@ class BaseCJKDateTimePeriodParser(DateTimeParser):
 
             night_regex_match = regex.match(self.config.next_regex, trimmed_text)
             last_regex_match = regex.match(self.config.last_regex, trimmed_text)
+            swift = 0
             if night_regex_match:
                 swift = 1
             elif last_regex_match:
