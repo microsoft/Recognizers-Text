@@ -33,7 +33,7 @@
     "prepare": "npm run build-resources && npm run clean-build && tsc && rollup -c"
   },
   "dependencies": {
-    "lodash": "^4.17.14",
+    "lodash": "^4.17.21",
     "@microsoft/recognizers-text": "~1.3.0",
     "@microsoft/recognizers-text-number": "~1.3.0",
     "@microsoft/recognizers-text-number-with-unit": "~1.3.0"
