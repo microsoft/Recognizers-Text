@@ -1,9 +1,11 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
+declare var require: any
 
 import { Culture as BaseCulture, CultureInfo as BaseCultureInfo } from "@microsoft/recognizers-text";
-import trimEnd = require("lodash.trimend");
+const lodash = require('lodash');
 import { BigNumber } from 'bignumber.js/bignumber';
+
 import { LongFormatType } from "./number/models";
 
 export class Culture extends BaseCulture {
@@ -40,7 +42,7 @@ export class CultureInfo extends BaseCultureInfo {
 
     if (s.indexOf('.') > -1) {
       // trim leading 0 from decimal places
-      s = trimEnd(s, '0');
+      s = lodash.trimEnd(s, '0');
     }
 
     if (s.indexOf('e-') > -1) {

@@ -1,5 +1,6 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
+declare var require: any
 
 import { IExtractor, ExtractResult } from "@microsoft/recognizers-text";
 import { Constants } from "./constants";
@@ -7,7 +8,7 @@ import { BaseNumbers } from "../resources/baseNumbers";
 import { EnglishNumeric } from "../resources/englishNumeric";
 import { Match, RegExpUtility } from "@microsoft/recognizers-text";
 import { LongFormatType } from "./models";
-import escapeRegExp = require("lodash.escaperegexp");
+const lodash = require('lodash');
 
 export interface RegExpValue {
     regExp: RegExp;
@@ -114,8 +115,8 @@ export abstract class BaseNumberExtractor implements IExtractor {
 
     protected generateLongFormatNumberRegexes(type: LongFormatType, placeholder: string = BaseNumbers.PlaceHolderDefault): RegExp {
 
-        let thousandsMark = escapeRegExp(type.thousandsMark);
-        let decimalsMark = escapeRegExp(type.decimalsMark);
+        let thousandsMark = lodash.escapeRegExp(type.thousandsMark);
+        let decimalsMark = lodash.escapeRegExp(type.decimalsMark);
 
         let regexDefinition = type.decimalsMark === '\0'
             ? BaseNumbers.IntegerRegexDefinition(placeholder, thousandsMark)
