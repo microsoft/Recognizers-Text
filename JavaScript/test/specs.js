@@ -3,9 +3,9 @@
 
 var fs = require('fs');
 var path = require('path');
-var keys = require('lodash.keys');
+const lodash = require("lodash");  
 var SupportedCultures = require('./cultures');
-var supportedLanguages = keys(SupportedCultures);
+var supportedLanguages = lodash.keys(SupportedCultures);
 var specsPath = '../../Specs';
 
 module.exports.readAll = function (type) {

@@ -2,18 +2,18 @@
 // Licensed under the MIT License.
 
 import pkg from './package.json';
-import camelCase from 'lodash.camelcase';
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import sourceMaps from 'rollup-plugin-sourcemaps';
 import alias from 'rollup-plugin-alias';
 import path from 'path';
+const lodash = require("lodash");
 
 export default {
   input: `compiled/recognizers-text-suite.js`,
   output: [
     { file: pkg.module, format: 'es' },
-    { file: pkg.main, name: camelCase(pkg.name), format: 'umd', exports: 'named'  },
+    { file: pkg.main, name: lodash.camelCase(pkg.name), format: 'umd', exports: 'named'  },
     { file: pkg.browser, format: 'iife', name: 'RecognizersText', exports: 'named' }
   ],
   exports: 'named',
