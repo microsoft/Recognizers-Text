@@ -1,6 +1,6 @@
 {
   "name": "@microsoft/recognizers-text-sequence",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "recognizers-text-sequence provides robust recognition and resolution of series entities like phone numbers, URLs, and e-mail and IP addresses.",
   "author": "Microsoft Corp.",
   "license": "MIT",
@@ -32,7 +32,7 @@
     "prepare": "npm run build-resources && npm run clean-build && tsc && rollup -c"
   },
   "dependencies": {
-    "@microsoft/recognizers-text": "~1.3.0",
+    "@microsoft/recognizers-text": "~1.3.1",
     "grapheme-splitter": "^1.0.2"
   }
 }
