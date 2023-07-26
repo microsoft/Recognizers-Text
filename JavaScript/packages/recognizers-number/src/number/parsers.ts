@@ -1,11 +1,11 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
+declare var require: any
 
 import { IParser, ParseResult, ExtractResult } from "@microsoft/recognizers-text";
 import { CultureInfo, Culture } from "../culture";
 import { Constants } from "./constants";
-import trimEnd = require("lodash.trimend");
-import sortBy = require("lodash.sortby");
+const lodash = require('lodash');
 import { RegExpUtility } from "@microsoft/recognizers-text";
 import { BigNumber } from 'bignumber.js/bignumber';
 
@@ -123,7 +123,7 @@ export class BaseNumberParser implements IParser {
     protected getKeyRegex(regexMap: ReadonlyMap<string, number>): string {
         let keys = new Array<string>();
         regexMap.forEach((value, key) => keys.push(key));
-        let sortKeys = sortBy(keys, key => key.length).reverse();
+        let sortKeys = lodash.sortBy(keys, key => key.length).reverse();
         return sortKeys.join('|');
     }
 
@@ -161,7 +161,7 @@ export class BaseNumberParser implements IParser {
 
                 // tslint:disable-next-line:no-conditional-assignment
                 while ((tmpIndex = handle.indexOf(match.value, startIndex)) >= 0) {
-                    let front = trimEnd(handle.substring(0, tmpIndex));
+                    let front = lodash.trimEnd(handle.substring(0, tmpIndex));
                     startIndex = front.length;
                     handle = front + handle.substring(tmpIndex + match.length);
                 }

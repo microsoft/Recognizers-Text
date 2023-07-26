@@ -1,5 +1,6 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
+declare var require: any
 
 import { IExtractor, ExtractResult, RegExpUtility, Match, StringUtility } from "@microsoft/recognizers-text";
 import { Constants, TimeTypeConstants } from "./constants";
@@ -9,7 +10,7 @@ import { BaseDurationExtractor, BaseDurationParser } from "./baseDuration";
 import { IDateTimeParser, DateTimeParseResult } from "./parsers";
 import { BaseDateExtractor, BaseDateParser } from "./baseDate";
 import { IDateTimeExtractor } from "./baseDateTime";
-import toNumber = require("lodash.tonumber");
+const lodash = require('lodash');
 
 export interface IDatePeriodExtractorConfiguration {
     simpleCasesRegexes: RegExp[]
@@ -1171,7 +1172,7 @@ export class BaseDatePeriodParser implements IDateTimeParser {
             let numStr = match.groups('num').value;
             let er = this.config.integerExtractor.extract(numStr);
             if (er.length === 1) {
-                numOfQuarters = toNumber(this.config.numberParser.parse(er[0]).value) - 1 ;
+                numOfQuarters = lodash.toNumber(this.config.numberParser.parse(er[0]).value) - 1 ;
             }
 
             if (numOfQuarters > 0 && swift >= 0) {

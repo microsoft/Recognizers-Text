@@ -1,5 +1,6 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
+declare var require: any
 
 import { IExtractor, ExtractResult, MetaData } from "@microsoft/recognizers-text";
 import { Constants, TimeTypeConstants } from "./constants";
@@ -15,8 +16,9 @@ import { BaseDateTimePeriodExtractor, BaseDateTimePeriodParser } from "./baseDat
 import { BaseSetExtractor, BaseSetParser } from "./baseSet";
 import { BaseDurationExtractor, BaseDurationParser } from "./baseDuration";
 import { BaseHolidayExtractor, BaseHolidayParser } from "./baseHoliday";
-import isEqual = require('lodash.isequal');
 import { DateTimeOptions } from "./dateTimeRecognizer";
+const lodash = require('lodash');
+
 
 export interface IMergedExtractorConfiguration {
     dateExtractor: IDateTimeExtractor
@@ -556,7 +558,7 @@ export class BaseMergedParser implements IDateTimeParser {
 
         let futureValues = Array.from(this.getValues(future)).sort();
         let pastValues = Array.from(this.getValues(past)).sort();
-        if (isEqual(futureValues, pastValues)) {
+        if (lodash.isEqual(futureValues, pastValues)) {
             if (pastValues.length > 0) {
                 this.addResolutionFieldsAny(result, Constants.ResolveKey, past);
             }

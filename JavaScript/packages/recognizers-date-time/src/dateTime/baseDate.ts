@@ -1,5 +1,6 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
+declare var require: any
 
 import { ExtractResult, RegExpUtility, Match, StringUtility } from "@microsoft/recognizers-text";
 import { Constants, TimeTypeConstants } from "./constants";
@@ -9,7 +10,7 @@ import { Token, DateTimeFormatUtil, DateTimeResolutionResult, IDateTimeUtilityCo
 import { IDateTimeExtractor } from "./baseDateTime";
 import { BaseDurationExtractor, BaseDurationParser } from "./baseDuration";
 import { IDateTimeParser, DateTimeParseResult } from "./parsers";
-import toNumber = require("lodash.tonumber");
+const lodash = require('lodash');
 
 export interface IDateExtractorConfiguration {
     dateRegexList: RegExp[],
@@ -165,7 +166,7 @@ export class BaseDateExtractor implements IDateTimeExtractor {
         let ret = [];
         let er = this.config.ordinalExtractor.extract(source).concat(this.config.integerExtractor.extract(source));
         er.forEach(result => {
-            let num = toNumber(this.config.numberParser.parse(result).value);
+            let num = lodash.toNumber(this.config.numberParser.parse(result).value);
             if (num < 1 || num > 31) {
                 return;
             }

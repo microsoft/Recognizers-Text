@@ -1,12 +1,13 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
+declare var require: any
 
 import { IExtractor, ExtractResult, IParser, ParseResult, StringUtility } from "@microsoft/recognizers-text";
 import { CultureInfo, Constants as NumberConstants } from "@microsoft/recognizers-text-number";
-import last = require("lodash.last");
 import { Constants } from "./constants";
 import { DictionaryUtils } from "./utilities";
 import { BaseCurrency } from "../resources/baseCurrency";
+const lodash = require('lodash');
 
 export class UnitValue {
     public number: string = "";
@@ -111,7 +112,7 @@ export class NumberWithUnitParser implements IParser {
         }
 
         /* Unit type depends on last unit in suffix.*/
-        let lastUnit = last(unitKeys);
+        let lastUnit = lodash.last(unitKeys);
         if (halfResult != null) {
             lastUnit = lastUnit.substring(0, lastUnit.length - halfResult.text.length);
         }

@@ -1,12 +1,12 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
+declare var require: any
 
 import { IExtractor, ExtractResult, RegExpUtility, Match, StringUtility } from "@microsoft/recognizers-text";
 import { Culture, CultureInfo, Constants as NumberConstants } from "@microsoft/recognizers-text-number";
 import { Constants } from "./constants";
-import max = require("lodash.max");
-import escapeRegExp = require("lodash.escaperegexp");
 import { BaseUnits } from "../resources/baseUnits";
+const lodash = require('lodash');
 
 export interface INumberWithUnitExtractorConfiguration {
     readonly suffixList: ReadonlyMap<string, string>;
@@ -48,7 +48,7 @@ export class NumberWithUnitExtractor implements IExtractor {
             let maxLength = 0;
 
             this.config.prefixList.forEach(preMatch => {
-                let len = max(preMatch.split('|').filter(s => s && s.length).map(s => s.length));
+                let len = lodash.max(preMatch.split('|').filter(s => s && s.length).map(s => s.length));
                 maxLength = maxLength >= len ? maxLength : len;
             });
 
@@ -345,7 +345,7 @@ export class NumberWithUnitExtractor implements IExtractor {
     protected buildRegexFromSet(collection: string[], ignoreCase: boolean = true): Set<RegExp> {
         return new Set<RegExp>(
             collection.map(regexString => {
-                let regexTokens = regexString.split('|').map(escapeRegExp);
+                let regexTokens = regexString.split('|').map(lodash.escapeRegExp);
                 let pattern = `${this.config.buildPrefix}(${regexTokens.join('|')})${this.config.buildSuffix}`;
                 pattern += this.getRegexWithBrackets(`(${regexTokens.join('|')})`);
                 let options = "gs";
@@ -398,7 +398,7 @@ export class NumberWithUnitExtractor implements IExtractor {
             }
         }
 
-        let regexTokens = Array.from(separateWords.values()).map(escapeRegExp);
+        let regexTokens = Array.from(separateWords.values()).map(lodash.escapeRegExp);
         if (regexTokens.length === 0) {
             return null;
         }

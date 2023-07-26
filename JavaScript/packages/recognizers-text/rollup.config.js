@@ -5,14 +5,14 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import sourceMaps from 'rollup-plugin-sourcemaps';
 import pkg from './package.json';
-import camelCase from 'lodash.camelcase';
+const lodash = require("lodash"); 
 
 export default {
   input: `compiled/recognizers-text.js`,
   output: [
     { file: pkg.module, format: 'es' },
-    { file: pkg.main, name: camelCase(pkg.name), format: 'umd', exports: 'named'  },
-    { file: pkg.browser, format: 'iife', name: camelCase(pkg.name), exports: 'named' }
+    { file: pkg.main, name: lodash.camelCase(pkg.name), format: 'umd', exports: 'named'  },
+    { file: pkg.browser, format: 'iife', name: lodash.camelCase(pkg.name), exports: 'named' }
   ],
   exports: 'named',
   sourcemap: true,

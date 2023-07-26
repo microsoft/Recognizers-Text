@@ -8,8 +8,6 @@ import { LongFormatType } from "./models";
 import { CultureInfo, Culture } from "../culture";
 import { RegExpUtility, StringUtility } from "@microsoft/recognizers-text";
 import { BigNumber } from 'bignumber.js/bignumber';
-import trimEnd = require("lodash.trimend");
-import sortBy = require("lodash.sortby");
 
 export interface ICJKNumberParserConfiguration extends INumberParserConfiguration {
     readonly zeroToNineMap: ReadonlyMap<string, number>;
