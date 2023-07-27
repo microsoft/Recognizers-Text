@@ -1,6 +1,6 @@
 {
   "name": "@microsoft/recognizers-text-choice",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "recognizers-text-choice provides recognition of Boolean (yes/no) answers expressed in multiple languages, as well as base classes to support lists of alternative choices.",
   "author": "Microsoft Corp.",
   "license": "MIT",
@@ -33,7 +33,7 @@
     "prepare": "npm run build-resources && npm run clean-build && tsc && rollup -c"
   },
   "dependencies": {
-    "@microsoft/recognizers-text": "~1.3.0",
+    "@microsoft/recognizers-text": "~1.3.1",
     "grapheme-splitter": "^1.0.2"
   }
 }

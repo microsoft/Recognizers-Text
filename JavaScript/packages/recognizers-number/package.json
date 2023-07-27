@@ -1,6 +1,6 @@
 {
   "name": "@microsoft/recognizers-text-number",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "recognizers-text-number provides robust recognition and resolution of numbers expressed in multiple languages.",
   "author": "Microsoft Corp.",
   "license": "MIT",
@@ -31,7 +31,7 @@
     "prepare": "npm run build-resources && npm run clean-build && tsc && rollup -c"
   },
   "dependencies": {
-    "@microsoft/recognizers-text": "~1.3.0",
+    "@microsoft/recognizers-text": "~1.3.1",
     "bignumber.js": "^7.2.1",
     "lodash": "^4.17.21"
   }
