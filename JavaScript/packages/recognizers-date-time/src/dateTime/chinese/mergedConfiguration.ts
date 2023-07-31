@@ -1,5 +1,6 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
+declare var require: any
 
 import { IMergedExtractorConfiguration, BaseMergedExtractor, IMergedParserConfiguration, BaseMergedParser } from "../baseMerged";
 import { BaseDateExtractor, BaseDateParser } from "../baseDate";
@@ -27,7 +28,7 @@ import { DateTimeOptions } from "../dateTimeRecognizer";
 import { IDateTimeParser, DateTimeParseResult } from "../parsers";
 import { Constants, TimeTypeConstants } from "../constants";
 import { DateTimeFormatUtil, DateUtils, DateTimeResolutionResult, StringMap } from "../utilities";
-import isEqual = require('lodash.isequal');
+const lodash = require('lodash');
 
 class ChineseMergedExtractorConfiguration implements IMergedExtractorConfiguration {
     readonly dateExtractor: BaseDateExtractor
@@ -499,7 +500,7 @@ export class ChineseFullMergedParser extends BaseMergedParser {
 
         let futureValues = Array.from(this.getValues(future)).sort();
         let pastValues = Array.from(this.getValues(past)).sort();
-        if (isEqual(futureValues, pastValues)) {
+        if (lodash.isEqual(futureValues, pastValues)) {
             if (pastValues.length > 0) {
                 this.addResolutionFieldsAny(result, Constants.ResolveKey, past);
             }
