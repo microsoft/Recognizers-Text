@@ -464,25 +464,26 @@ class BaseCJKDateTimeParser(DateTimeParser):
         match_ago_and_later = regex.search(self.config.ago_later_regex, source)
         if match_ago_and_later:
             duration_res = self.config.duration_extractor.extract(source, reference)
-            pr1 = self.config.duration_parser.parse(duration_res[0], reference)
-            is_future = False
-            if RegExpUtility.get_group(match_ago_and_later, Constants.LATER_GROUP_NAME):
-                is_future = True
-            timex = pr1.timex_str
+            if duration_res:
+                pr1 = self.config.duration_parser.parse(duration_res[0], reference)
+                is_future = False
+                if RegExpUtility.get_group(match_ago_and_later, Constants.LATER_GROUP_NAME):
+                    is_future = True
+                timex = pr1.timex_str
 
-            # handle less and more mode
-            if RegExpUtility.get_group(eod, Constants.LESS_GROUP_NAME):
-                result.mod = Constants.LESS_THAN_MOD
-            elif RegExpUtility.get_group(eod, Constants.MORE_GROUP_NAME):
-                result.mod = Constants.MORE_THAN_MOD
+                # handle less and more mode
+                if RegExpUtility.get_group(eod, Constants.LESS_GROUP_NAME):
+                    result.mod = Constants.LESS_THAN_MOD
+                elif RegExpUtility.get_group(eod, Constants.MORE_GROUP_NAME):
+                    result.mod = Constants.MORE_THAN_MOD
 
-            result_datetime = DurationParsingUtil.shift_date_time(timex, reference, future=is_future)
-            result.timex = TimexUtil.generate_date_time_timex(result_datetime)
-            result.future_value = result.past_value = result_datetime
-            result.sub_date_time_entities = [pr1]
+                result_datetime = DurationParsingUtil.shift_date_time(timex, reference, future=is_future)
+                result.timex = TimexUtil.generate_date_time_timex(result_datetime)
+                result.future_value = result.past_value = result_datetime
+                result.sub_date_time_entities = [pr1]
 
-            result.success = True
-            return result
+                result.success = True
+                return result
 
         if RegExpUtility.get_group(eod, Constants.SPECIFIC_END_OF_GROUP_NAME) and len(ers) == 0:
             result = self.parse_special_time_of_date(source, reference)

@@ -711,7 +711,7 @@ class BaseCJKDateParser(DateTimeParser):
         within_regex = RegExpUtility.match_end(
             self.config.duration_relative_duration_unit_regex, source_text, trim=True)
         if within_regex:
-            is_within = within_regex.get_group(Date_Constants.WITHIN_GROUP_NAME).success
+            is_within = True if within_regex.get_group(Date_Constants.WITHIN_GROUP_NAME) else False
 
         if (exact_match or is_within) and unit_match and len(duration_extracted_results) > 0 \
                 and not unit_match.get_group(Date_Constants.FEW_GROUP_NAME):
@@ -886,8 +886,8 @@ class BaseCJKDateParser(DateTimeParser):
 
         match = RegExpUtility.exact_match(self.config.strict_week_day_regex, source_text, trim=True)
 
-        if match:
-            weekday_str = match.group(Date_Constants.WEEKDAY_GROUP_NAME)
+        if match and match.success:
+            weekday_str = match.get_group(Date_Constants.WEEKDAY_GROUP_NAME)
             weekday = self.get_day_of_week(weekday_str)
             value = DateUtils.this(reference, weekday)
 
@@ -936,9 +936,12 @@ class BaseCJKDateParser(DateTimeParser):
         if not month_str:
             swift = 0
 
-            if RegExpUtility.match_begin(self.config.next_month_regex, trimmed_source, trim=True):
+            next_month_match = RegExpUtility.match_begin(self.config.next_month_regex, trimmed_source, trim=True)
+            last_month_match = RegExpUtility.match_begin(self.config.last_month_regex, trimmed_source, trim=True)
+
+            if next_month_match and next_month_match.success:
                 swift = 1
-            elif RegExpUtility.match_begin(self.config.last_month_regex, trimmed_source, trim=True):
+            elif last_month_match and last_month_match.success:
                 swift = -1
 
             temp = reference + datedelta(months=swift)
