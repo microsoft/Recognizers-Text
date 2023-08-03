@@ -244,7 +244,7 @@ public class GermanDateTime {
     public static final String SpecialDate = "(?=\\b(an( dem)?|am)\\s+){DayRegex}\\b"
             .replace("{DayRegex}", DayRegex);
 
-    public static final String DateExtractor1 = "\\b(({WeekDayRegex})(\\s+|\\s*,\\s*))?({DayRegex}\\s*[/\\\\.,\\- ]\\s*{MonthRegex}(\\s*[/\\\\.,\\- ]\\s*{DateYearRegex})?|{BaseDateTime.FourDigitYearRegex}\\s*[/\\\\.,\\- ]\\s*{DayRegex}\\s*[/\\\\.,\\- ]\\s*{MonthRegex})\\b"
+    public static final String DateExtractor1 = "\\b(({WeekDayRegex})(\\s+|\\s*,\\s*))?({DayRegex}\\s*[/\\\\.,\\- ]\\s*({MonthNumRegex}|{MonthRegex})(\\s*[/\\\\.,\\- ]\\s*{DateYearRegex})?|{BaseDateTime.FourDigitYearRegex}\\s*[/\\\\.,\\- ]\\s*{DayRegex}\\s*[/\\\\.,\\- ]\\s*{MonthRegex})\\b"
             .replace("{WeekDayRegex}", WeekDayRegex)
             .replace("{MonthRegex}", MonthRegex)
             .replace("{DayRegex}", DayRegex)

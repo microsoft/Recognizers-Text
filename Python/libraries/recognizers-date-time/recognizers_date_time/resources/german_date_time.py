@@ -91,7 +91,7 @@ class GermanDateTime:
     WeekDayOfMonthRegex = f'\\b(?<wom>((an( dem)?|de[rs]|am)\\s+)?(?<cardinal>erste[rns]?|1\\.|zweite[rns]?|2\\.|dritte[rns]?|3\\.|vierte[rns]?|4\\.|fünfte[rns]?|5\\.|letzte[rmns]?)\\s+{WeekDayRegex}\\s+{MonthSuffixRegex})\\b'
     RelativeWeekDayRegex = f'\\b({WrittenNumRegex}\\s+{WeekDayRegex}e\\s+(von\\s+jetzt|später))\\b'
     SpecialDate = f'(?=\\b(an( dem)?|am)\\s+){DayRegex}\\b'
-    DateExtractor1 = f'\\b(({WeekDayRegex})(\\s+|\\s*,\\s*))?({DayRegex}\\s*[/\\\\.,\\- ]\\s*{MonthRegex}(\\s*[/\\\\.,\\- ]\\s*{DateYearRegex})?|{BaseDateTime.FourDigitYearRegex}\\s*[/\\\\.,\\- ]\\s*{DayRegex}\\s*[/\\\\.,\\- ]\\s*{MonthRegex})\\b'
+    DateExtractor1 = f'\\b(({WeekDayRegex})(\\s+|\\s*,\\s*))?({DayRegex}\\s*[/\\\\.,\\- ]\\s*({MonthNumRegex}|{MonthRegex})(\\s*[/\\\\.,\\- ]\\s*{DateYearRegex})?|{BaseDateTime.FourDigitYearRegex}\\s*[/\\\\.,\\- ]\\s*{DayRegex}\\s*[/\\\\.,\\- ]\\s*{MonthRegex})\\b'
     DateExtractor2 = f'\\b({MonthRegex}\\s*[/\\\\.,\\- ]\\s*{DayRegex}(?!\\s*\\-\\s*\\d{{2}}\\b)(\\s*[/\\\\.,\\- ]\\s*{DateYearRegex})?)\\b'
     DateExtractor3 = f'\\b({DayRegex}{MonthRegex})'
     DateExtractor4 = f'\\b({DayRegex}\\s*{MonthNumRegex}\\s*{DateYearRegex})\\b'

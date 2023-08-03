@@ -361,5 +361,16 @@
         "Length": 14
       }
     ]
+  },
+  {
+    "Input": "Um wie viel Uhr werde ich am Dienstag, den 15.6. den Doktor sehen?",
+    "Results": [
+      {
+        "Text": "dienstag, den 15.6",
+        "Type": "date",
+        "Start": 29,
+        "Length": 18
+      }
+    ]
   }
 ]

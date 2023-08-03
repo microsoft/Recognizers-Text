@@ -5687,5 +5687,33 @@
         }
       }
     ]
+  },
+  {
+    "Input": "Um wie viel Uhr werde ich am Dienstag, den 15.6. den Doktor sehen?",
+    "Context": {
+      "ReferenceDateTime": "2023-08-02T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "dienstag, den 15.6",
+        "Start": 29,
+        "End": 46,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "XXXX-06-15",
+              "type": "date",
+              "value": "2023-06-15"
+            },
+            {
+              "timex": "XXXX-06-15",
+              "type": "date",
+              "value": "2024-06-15"
+            }
+          ]
+        }
+      }
+    ]
   }
 ]
