@@ -129,8 +129,8 @@ export namespace EnglishDateTime {
     export const DateExtractor4 = `\\b${MonthNumRegex}\\s*[/\\\\\\-]\\s*${DayRegex}[\\.]?\\s*[/\\\\\\-]\\s*${DateYearRegex}`;
     export const DateExtractor5 = `\\b(${DayPrefix}(\\s*,)?\\s+)?${DayRegex}\\s*[/\\\\\\-\\.]\\s*(${MonthNumRegex}|${MonthRegex})\\s*[/\\\\\\-\\.]\\s*${DateYearRegex}(?!\\s*[/\\\\\\-\\.]\\s*\\d+)`;
     export const DateExtractor6 = `(?<=${DatePreposition}\\s+)(${StrictRelativeRegex}\\s+)?(${DayPrefix}\\s+)?${MonthNumRegex}[\\-\\.]${DayRegex}(?![%])${BaseDateTime.CheckDecimalRegex}\\b`;
-    export const DateExtractor7L = `\\b(${DayPrefix}(\\s*,)?\\s+)?${MonthNumRegex}\\s*/\\s*${DayRegex}${DateExtractorYearTermRegex}(?![%])\\b`;
-    export const DateExtractor7S = `\\b(${DayPrefix}(\\s*,)?\\s+)?${MonthNumRegex}\\s*/\\s*${DayRegex}(?![%])${BaseDateTime.CheckDecimalRegex}\\b`;
+    export const DateExtractor7L = `\\b(${DayPrefix}(\\s*,)?\\s+)?(the\\s+)?${MonthNumRegex}\\s*/\\s*${DayRegex}${DateExtractorYearTermRegex}(?![%])\\b`;
+    export const DateExtractor7S = `\\b(${DayPrefix}(\\s*,)?\\s+)?(the\\s+)?${MonthNumRegex}\\s*/\\s*${DayRegex}(?![%])${BaseDateTime.CheckDecimalRegex}\\b`;
     export const DateExtractor8 = `(?<=${DatePreposition}\\s+)(${StrictRelativeRegex}\\s+)?(${DayPrefix}\\s+)?${DayRegex}[\\\\\\-]${MonthNumRegex}(?![%])${BaseDateTime.CheckDecimalRegex}\\b`;
     export const DateExtractor9L = `\\b(${DayPrefix}(\\s*,)?\\s+)?${DayRegex}\\s*/\\s*${MonthNumRegex}${DateExtractorYearTermRegex}(?![%])\\b`;
     export const DateExtractor9S = `\\b(${DayPrefix}(\\s*,)?\\s+)?${DayRegex}\\s*/\\s*${MonthNumRegex}${BaseDateTime.CheckDecimalRegex}(?![%])\\b`;
