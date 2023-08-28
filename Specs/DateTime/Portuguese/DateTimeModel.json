@@ -3002,6 +3002,30 @@
     ]
   },
   {
+    "Input": "reunião para 00:00",
+    "Context": {
+      "ReferenceDateTime": "2023-05-14T12:00:00"
+    },
+    "NotSupported": "javascript, java",
+    "Results": [
+      {
+        "Text": "00:00",
+        "Start": 13,
+        "End": 17,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T00:00",
+              "type": "time",
+              "value": "00:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "reunião para as 5 e 45",
     "Context": {
       "ReferenceDateTime": "2020-05-14T12:00:00"

@@ -121,6 +121,17 @@
     ]
   },
   {
+    "Input": "I'll be back 00:00:00",
+    "Results": [
+      {
+        "Text": "00:00:00",
+        "Type": "time",
+        "Start": 13,
+        "Length": 8
+      }
+    ]
+  },
+  {
     "Input": "I'll be back 00:00:30",
     "Results": [
       {

@@ -1443,6 +1443,30 @@
     ]
   },
   {
+    "Input": "Tornerò alle 00:00",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,java",
+    "Results": [
+      {
+        "Text": "00:00",
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T00:00",
+              "type": "time",
+              "value": "00:00:00"
+            }
+          ]
+        },
+        "Start": 13,
+        "End": 17
+      }
+    ]
+  },
+  {
     "Input": "Tornerò alle 7:56:30 pm",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
