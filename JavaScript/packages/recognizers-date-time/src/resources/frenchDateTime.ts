@@ -49,7 +49,7 @@ export namespace FrenchDateTime {
     export const MonthFrontBetweenRegex = `\\b${MonthSuffixRegex}\\s+(entre|d[ue]\\s+)(${DayRegex})\\s*${RangeConnectorRegex}\\s*(${DayRegex})((\\s+|\\s*,\\s*)${YearRegex})?\\b`;
     export const BetweenRegex = `\\b(entre\\s+)(${DayRegex})\\s*${RangeConnectorRegex}\\s*(${DayRegex})\\s+${MonthSuffixRegex}((\\s+|\\s*,\\s*)${YearRegex})?\\b`;
     export const YearWordRegex = `\\b(?<year>l'ann[ée]e)\\b`;
-    export const MonthWithYear = `\\b(${WrittenMonthRegex}(\\s*),?(\\s+de)?(\\s*)(${YearRegex}|${TwoDigitYearRegex}|(?<order>cette)\\s*${YearWordRegex})|${YearWordRegex}\\s*(${PastSuffixRegex}|${NextSuffixRegex}))`;
+    export const MonthWithYear = `\\b(${WrittenMonthRegex}(\\s*),?(\\s+de)?(\\s*)(${YearRegex}|\\'?${TwoDigitYearRegex}|(?<order>cette)\\s*${YearWordRegex})|${YearWordRegex}\\s*(${PastSuffixRegex}|${NextSuffixRegex}))`;
     export const OneWordPeriodRegex = `\\b((${RelativeRegex}\\s+)?${WrittenMonthRegex}|(la\\s+)?(weekend|(fin de )?semaine|week-end|mois|ans?|l'année)\\s+${StrictRelativeRegex}|${RelativeRegex}\\s+(weekend|(fin de )?semaine|week-end|mois|ans?|l'année)|weekend|week-end|mois|l'année|an)\\b`;
     export const MonthNumWithYear = `(${YearRegex}(\\s*)[/\\-\\.](\\s*)${MonthNumRegex})|(${MonthNumRegex}(\\s*)[/\\-](\\s*)${YearRegex})`;
     export const WeekOfMonthRegex = `(?<wom>(le\\s+)?(?<cardinal>premier|1er|duexi[èe]me|2|troisi[èe]me|3|quatri[èe]me|4|cinqi[èe]me|5)\\s+semaine(\\s+de)?\\s+${MonthSuffixRegex})`;
@@ -82,7 +82,7 @@ export namespace FrenchDateTime {
     export const AmbiguousRangeModifierPrefix = `^\\b$`;
     export const NumberEndingPattern = `^\\b$`;
     export const SpecialDate = `(?<=\\b(au|le)\\s+)${DayRegex}(?!:)\\b`;
-    export const DateYearRegex = `(?<year>${YearRegex}|${TwoDigitYearRegex})`;
+    export const DateYearRegex = `(?<year>${YearRegex}|\\'?${TwoDigitYearRegex})`;
     export const DateExtractor1 = `\\b(${WeekDayRegex}(\\s+|\\s*,\\s*))?${MonthRegex}\\s*[/\\\\\\.\\-]?\\s*${DayRegex}(\\s*([/\\\\\\.\\-]|\\bde\\b)?\\s*${BaseDateTime.FourDigitYearRegex})?\\b`;
     export const DateExtractor2 = `\\b(${WeekDayRegex}(\\s+|\\s*,\\s*))?${DayRegex}(\\s+|\\s*,\\s*|\\s+)${MonthRegex}\\s*([\\.\\-]|\\bde\\b)?\\s*${DateYearRegex}\\b`;
     export const DateExtractor3 = `\\b(${WeekDayRegex}(\\s+|\\s*,\\s*))?((?<!\\d\\s)(?<!\\d)${DayRegex}(\\s+|\\s*[.,/-])(${MonthRegex}((\\s+|\\s*[.,/-]\\s*)${DateYearRegex}(?!\\s*\\d))?|${MonthNumRegex}(\\s+|\\s*[.,/-]\\s*)${DateYearRegex}(?!\\s*\\d))|${BaseDateTime.FourDigitYearRegex}\\s*[.,/-]?\\s*${DayRegex}\\s*[.,/-]?\\s*${MonthRegex})\\b`;

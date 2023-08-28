@@ -163,7 +163,7 @@ BetweenRegex: !nestedRegex
   def: \b(tussen\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*){YearRegex})?\b
   references: [ DayRegex, RangeConnectorRegex , MonthSuffixRegex, YearRegex ]
 RelativeYearRegex: !nestedRegex
-  def: ({YearRegex}|{TwoDigitYearRegex}|(?<order>volgende?|komende?|aanstaande?|aankomende?|huidige?|vorige?|afgelopen|dit)\s+jaar)
+  def: ({YearRegex}|\'?{TwoDigitYearRegex}|(?<order>volgende?|komende?|aanstaande?|aankomende?|huidige?|vorige?|afgelopen|dit)\s+jaar)
   references: [ YearRegex, TwoDigitYearRegex ]
 MonthWithYear: !nestedRegex
   def: \b(({WrittenMonthRegex}(\.)?(\s*)[/\\\-\.,]?(\s+(van|over|in))?(\s*){RelativeYearRegex})|({RelativeYearRegex}(\s*),?(\s*){WrittenMonthRegex}))\b
