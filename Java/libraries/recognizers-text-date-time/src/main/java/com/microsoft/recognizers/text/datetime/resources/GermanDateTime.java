@@ -276,7 +276,7 @@ public class GermanDateTime {
     public static final String DateExtractor6 = "^[.]"
             .replace("{WeekDayRegex}", WeekDayRegex);
 
-    public static final String DateExtractor7 = "({DayRegex}\\s*[\\.]\\s*{MonthNumRegex}[\\.]){BaseDateTime.CheckDecimalRegex}"
+    public static final String DateExtractor7 = "\\b({DayRegex}\\s*[\\.]\\s*{MonthNumRegex}[\\.]){BaseDateTime.CheckDecimalRegex}"
             .replace("{MonthNumRegex}", MonthNumRegex)
             .replace("{DayRegex}", DayRegex)
             .replace("{BaseDateTime.CheckDecimalRegex}", BaseDateTime.CheckDecimalRegex);

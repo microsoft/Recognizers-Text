@@ -757,13 +757,25 @@
   },
   {
     "Input": "Zeigen Sie mir die Aufzeichnungen vom August 99",
-    "NotSupportedByDesign": "javascript",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "August 99",
         "Type": "daterange",
         "Start": 38,
         "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Ich komme am 32.04.2023 wieder.",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "04.2023",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 7
       }
     ]
   }
