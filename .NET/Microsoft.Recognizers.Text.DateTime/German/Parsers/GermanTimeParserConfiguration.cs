@@ -105,13 +105,13 @@ namespace Microsoft.Recognizers.Text.DateTime.German
                     minStr = match.Groups["deltaminnum"].Value;
                     deltaMin = Numbers[minStr];
                 }
-            }
 
-            // @TODO move hardcoded values to resources file
+                // @TODO move hardcoded values to resources file
 
-            if (trimmedPrefix.EndsWith("zum", StringComparison.Ordinal))
-            {
-                deltaMin = -deltaMin;
+                if (trimmedPrefix.EndsWith("vor", StringComparison.Ordinal))
+                {
+                    deltaMin = -deltaMin;
+                }
             }
 
             min += deltaMin;

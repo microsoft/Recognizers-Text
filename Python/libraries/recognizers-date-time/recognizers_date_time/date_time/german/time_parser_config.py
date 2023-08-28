@@ -91,8 +91,8 @@ class GermanTimeParserConfiguration(TimeParserConfiguration):
                         match, 'deltaminnum').lower()
                     delta_min = self.numbers.get(min_str)
 
-        if trimmed_prefix.startswith('zum'):
-            delta_min = delta_min * -1
+            if trimmed_prefix.endswith('vor'):
+                delta_min = delta_min * -1
 
         adjust.minute += delta_min
 

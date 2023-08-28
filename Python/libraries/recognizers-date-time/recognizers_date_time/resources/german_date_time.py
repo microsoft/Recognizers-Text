@@ -118,7 +118,7 @@ class GermanDateTime:
     NightRegex = f'\\b(mitternacht|(nachts?|primetime|abends?))\\b'
     AmPmPrefixRegex = f'\\b((((um|gegen)\\s*)?(?<suffix>(((?<am>am morgen)|((früh|spät)\\s*)?morgens|früh|(vor|nach)mittags?)|(?<pm>((früh|spät)\\s*)?(nachmittags?|abends?)|mitternachts?))|(in der\\s*)?(?<pm>nachts?)))\\s*(um|gegen|von)\\s*)'
     CommonDatePrefixRegex = f'^[\\.]'
-    LessThanOneHour = f'\\b(?<lth>(ein(er?)?\\s+)?((drei)?viertel|halb(en?)?)(\\s*stunden?)?)|{BaseDateTime.DeltaMinuteRegex}(\\s+(min(uten?)?))|{DeltaMinuteNumRegex}(\\s+(min(uten?)?))'
+    LessThanOneHour = f'\\b(?<lth>(ein(er?)?\\s+)?((drei)?viertel|halb(en?)?)(\\s*stunden?)?)|{BaseDateTime.DeltaMinuteRegex}(\\s+(min(uten?)?)|(?=\\s+(nach|vor)))|{DeltaMinuteNumRegex}(\\s+(min(uten?)?)|(?=\\s+(nach|vor)))'
     WrittenTimeRegex = f'(um\\s*)?(?<writtentime>{HourNumRegex}(\\s*{OclockRegex}\\s*)({MinuteNumRegex}|{MinuteNumRegex}und(?<tens>zwanzig|dreißig|vierzig|fünfzig)))'
     TimePrefix = f'(?<prefix>({LessThanOneHour})(\\s*(vor(\\W)?|nach(\\W)?))?)'
     TimeSuffix = f'(?<suffix>{AmRegex}|{PmRegex}|{OclockRegex})'

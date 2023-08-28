@@ -348,7 +348,7 @@ public class GermanDateTime {
 
     public static final String CommonDatePrefixRegex = "^[\\.]";
 
-    public static final String LessThanOneHour = "\\b(?<lth>(ein(er?)?\\s+)?((drei)?viertel|halb(en?)?)(\\s*stunden?)?)|{BaseDateTime.DeltaMinuteRegex}(\\s+(min(uten?)?))|{DeltaMinuteNumRegex}(\\s+(min(uten?)?))"
+    public static final String LessThanOneHour = "\\b(?<lth>(ein(er?)?\\s+)?((drei)?viertel|halb(en?)?)(\\s*stunden?)?)|{BaseDateTime.DeltaMinuteRegex}(\\s+(min(uten?)?)|(?=\\s+(nach|vor)))|{DeltaMinuteNumRegex}(\\s+(min(uten?)?)|(?=\\s+(nach|vor)))"
             .replace("{BaseDateTime.DeltaMinuteRegex}", BaseDateTime.DeltaMinuteRegex)
             .replace("{DeltaMinuteNumRegex}", DeltaMinuteNumRegex);
 
