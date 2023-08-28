@@ -259,15 +259,15 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                         break;
 
                     case "hourAmount":
-                        Hours = int.Parse(item.Value, CultureInfo.InvariantCulture);
+                        Hours = decimal.Parse(item.Value, CultureInfo.InvariantCulture);
                         break;
 
                     case "minuteAmount":
-                        Minutes = int.Parse(item.Value, CultureInfo.InvariantCulture);
+                        Minutes = decimal.Parse(item.Value, CultureInfo.InvariantCulture);
                         break;
 
                     case "secondAmount":
-                        Seconds = int.Parse(item.Value, CultureInfo.InvariantCulture);
+                        Seconds = decimal.Parse(item.Value, CultureInfo.InvariantCulture);
                         break;
                 }
             }

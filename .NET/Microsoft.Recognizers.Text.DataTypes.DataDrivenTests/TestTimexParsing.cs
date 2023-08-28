@@ -1094,7 +1094,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         [TestMethod]
         public void DataTypes_Parsing_DurationHours()
         {
-            var timex = new TimexProperty("PT5H");
+            var timex = new TimexProperty("PT5.5H");
             CollectionAssert.AreEquivalent(new[] { Constants.TimexTypes.Duration }, timex.Types.ToList());
 
             Assert.IsNull(timex.Year);
@@ -1113,7 +1113,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsNull(timex.Months);
             Assert.IsNull(timex.Weeks);
             Assert.IsNull(timex.Days);
-            Assert.AreEqual(5, timex.Hours);
+            Assert.AreEqual(5.5m, timex.Hours);
             Assert.IsNull(timex.Minutes);
             Assert.IsNull(timex.Seconds);
             Assert.IsNull(timex.Now);
@@ -1122,7 +1122,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         [TestMethod]
         public void DataTypes_Parsing_DurationMinutes()
         {
-            var timex = new TimexProperty("PT30M");
+            var timex = new TimexProperty("PT30.5M");
             CollectionAssert.AreEquivalent(new[] { Constants.TimexTypes.Duration }, timex.Types.ToList());
 
             Assert.IsNull(timex.Year);
@@ -1142,7 +1142,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsNull(timex.Weeks);
             Assert.IsNull(timex.Days);
             Assert.IsNull(timex.Hours);
-            Assert.AreEqual(30, timex.Minutes);
+            Assert.AreEqual(30.5m, timex.Minutes);
             Assert.IsNull(timex.Seconds);
             Assert.IsNull(timex.Now);
         }
@@ -1150,7 +1150,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         [TestMethod]
         public void DataTypes_Parsing_DurationSeconds()
         {
-            var timex = new TimexProperty("PT45S");
+            var timex = new TimexProperty("PT45.5S");
             CollectionAssert.AreEquivalent(new[] { Constants.TimexTypes.Duration }, timex.Types.ToList());
 
             Assert.IsNull(timex.Year);
@@ -1171,7 +1171,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
             Assert.IsNull(timex.Days);
             Assert.IsNull(timex.Hours);
             Assert.IsNull(timex.Minutes);
-            Assert.AreEqual(45, timex.Seconds);
+            Assert.AreEqual(45.5m, timex.Seconds);
             Assert.IsNull(timex.Now);
         }
     }
