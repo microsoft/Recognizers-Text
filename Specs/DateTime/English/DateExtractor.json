@@ -746,6 +746,110 @@
     ]
   },
   {
+    "Input": "I'll go back on April first 2021.",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "April first 2021",
+        "Type": "date",
+        "Start": 16,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back Jun third 2023",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "Jun third 2023",
+        "Type": "date",
+        "Start": 13,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back September the second 2025.",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "September the second 2025",
+        "Type": "date",
+        "Start": 13,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back March one 2020",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "March one 2020",
+        "Type": "date",
+        "Start": 13,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back Aug twelve 2024.",
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "Aug twelve 2024",
+        "Type": "date",
+        "Start": 13,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back February twenty fifth",
+    "Results": [
+      {
+        "Text": "February twenty fifth",
+        "Type": "date",
+        "Start": 13,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back on Nov the twelfth.",
+    "Results": [
+      {
+        "Text": "Nov the twelfth",
+        "Type": "date",
+        "Start": 16,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back January thirty one",
+    "Results": [
+      {
+        "Text": "January thirty one",
+        "Type": "date",
+        "Start": 13,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back Oct twenty three.",
+    "Results": [
+      {
+        "Text": "Oct twenty three",
+        "Type": "date",
+        "Start": 13,
+        "Length": 16
+      }
+    ]
+  },
+  {
     "Input": "i went back two months ago",
     "Results": [
       {

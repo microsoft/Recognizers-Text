@@ -729,6 +729,218 @@
     ]
   },
   {
+    "Input": "I'll go back on April first 2021.",
+    "Context": {
+      "ReferenceDateTime": "2023-04-25T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "April first 2021",
+        "Type": "date",
+        "Value": {
+          "Timex": "2021-04-01",
+          "FutureResolution": {
+            "date": "2021-04-01"
+          },
+          "PastResolution": {
+            "date": "2021-04-01"
+          }
+        },
+        "Start": 16,
+        "Length": 16
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back Jun third 2023",
+    "Context": {
+      "ReferenceDateTime": "2023-04-25T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "Jun third 2023",
+        "Type": "date",
+        "Value": {
+          "Timex": "2023-06-03",
+          "FutureResolution": {
+            "date": "2023-06-03"
+          },
+          "PastResolution": {
+            "date": "2023-06-03"
+          }
+        },
+        "Start": 13,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back September the second 2025.",
+    "Context": {
+      "ReferenceDateTime": "2023-04-25T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "September the second 2025",
+        "Type": "date",
+        "Value": {
+          "Timex": "2025-09-02",
+          "FutureResolution": {
+            "date": "2025-09-02"
+          },
+          "PastResolution": {
+            "date": "2025-09-02"
+          }
+        },
+        "Start": 13,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back March one 2020",
+    "Context": {
+      "ReferenceDateTime": "2023-04-25T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "March one 2020",
+        "Type": "date",
+        "Value": {
+          "Timex": "2020-03-01",
+          "FutureResolution": {
+            "date": "2020-03-01"
+          },
+          "PastResolution": {
+            "date": "2020-03-01"
+          }
+        },
+        "Start": 13,
+        "Length": 14
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back Aug twelve 2024.",
+    "Context": {
+      "ReferenceDateTime": "2023-04-25T00:00:00"
+    },
+    "NotSupported": "javascript",
+    "Results": [
+      {
+        "Text": "Aug twelve 2024",
+        "Type": "date",
+        "Value": {
+          "Timex": "2024-08-12",
+          "FutureResolution": {
+            "date": "2024-08-12"
+          },
+          "PastResolution": {
+            "date": "2024-08-12"
+          }
+        },
+        "Start": 13,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back February twenty fifth",
+    "Context": {
+      "ReferenceDateTime": "2023-04-25T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "February twenty fifth",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-02-25",
+          "FutureResolution": {
+            "date": "2024-02-25"
+          },
+          "PastResolution": {
+            "date": "2023-02-25"
+          }
+        },
+        "Start": 13,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back on Nov the twelfth.",
+    "Context": {
+      "ReferenceDateTime": "2023-04-25T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "Nov the twelfth",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-11-12",
+          "FutureResolution": {
+            "date": "2023-11-12"
+          },
+          "PastResolution": {
+            "date": "2022-11-12"
+          }
+        },
+        "Start": 16,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back January thirty one",
+    "Context": {
+      "ReferenceDateTime": "2023-04-25T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "January thirty one",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-31",
+          "FutureResolution": {
+            "date": "2024-01-31"
+          },
+          "PastResolution": {
+            "date": "2023-01-31"
+          }
+        },
+        "Start": 13,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "I'll go back Oct twenty three.",
+    "Context": {
+      "ReferenceDateTime": "2023-04-25T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "Oct twenty three",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-10-23",
+          "FutureResolution": {
+            "date": "2023-10-23"
+          },
+          "PastResolution": {
+            "date": "2022-10-23"
+          }
+        },
+        "Start": 13,
+        "Length": 16
+      }
+    ]
+  },
+  {
     "Input": "I'll go back on Friday",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
