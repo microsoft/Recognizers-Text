@@ -16,7 +16,6 @@
   },
   {
     "Input": "この車は19パーセントの確率が遅れた",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "19パーセント",
@@ -31,7 +30,6 @@
   },
   {
     "Input": "彼女は50パーセントこのことはできません",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "50パーセント",
@@ -46,7 +44,6 @@
   },
   {
     "Input": "共有29.5パーセント",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "29.5パーセント",
@@ -61,7 +58,6 @@
   },
   {
     "Input": "彼は13,000.2パーセント告白失败",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "13,000.2パーセント",
@@ -76,7 +72,6 @@
   },
   {
     "Input": "彼は3500パーセント告白失败",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "3500パーセント",
@@ -91,7 +86,6 @@
   },
   {
     "Input": "僕2,100パーセント告白失败",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2,100パーセント",
@@ -107,7 +101,6 @@
   {
     "Input": "僕１，１２３パーセント告白失败",
     "Comment": "PendingValidation",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "1,123パーセント",
@@ -182,7 +175,6 @@
   },
   {
     "Input": "今日は９，９９９パ ーセ ントの確率で雪が降る",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "9,999パ ーセ ント",
@@ -197,7 +189,6 @@
   },
   {
     "Input": "２．４パーセント",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2.4パーセント",
@@ -227,7 +218,6 @@
   },
   {
     "Input": "２２％",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "22%",
@@ -257,7 +247,6 @@
   },
   {
     "Input": "22パーセント",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "22パーセント",
@@ -272,7 +261,6 @@
   },
   {
     "Input": "１２０パーセント",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "120パーセント",
@@ -302,7 +290,6 @@
   },
   {
     "Input": "1,111パーセント",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "1,111パーセント",
@@ -317,7 +304,6 @@
   },
   {
     "Input": "９，９９９パーセント",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "9,999パーセント",
@@ -332,7 +318,6 @@
   },
   {
     "Input": "５６.２パーセント",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "56.2パーセント",
@@ -347,7 +332,6 @@
   },
   {
     "Input": "3.2パーセント",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "3.2パーセント",
@@ -362,7 +346,6 @@
   },
   {
     "Input": "12.56パーセント",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "12.56パーセント",
@@ -377,7 +360,6 @@
   },
   {
     "Input": "０.４パーセント",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "0.4パーセント",
@@ -392,7 +374,6 @@
   },
   {
     "Input": "15,123パーセント",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "15,123パーセント",
@@ -407,7 +388,6 @@
   },
   {
     "Input": "１１１，１１１パーセント",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "111,111パーセント",
@@ -437,7 +417,6 @@
   },
   {
     "Input": "５．５％",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "5.5%",
@@ -452,7 +431,6 @@
   },
   {
     "Input": "２．４パ ー   セ    ン ト",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "2.4パ ー   セ    ン ト",
@@ -467,7 +445,6 @@
   },
   {
     "Input": "５２.５ k   パ ー セ  ン     ト",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "52.5 k   パ ー セ  ン     ト",
@@ -824,7 +801,7 @@
   },
   {
     "Input": "回答率は100%です。",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "100%",
@@ -839,7 +816,7 @@
   },
   {
     "Input": "ムンバイの電車の乗車率は240%です。",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "240%",
@@ -854,7 +831,7 @@
   },
   {
     "Input": "20%の人がパソコンを持っていません。",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "20%",
@@ -869,7 +846,7 @@
   },
   {
     "Input": "30%の人が犬を飼っています。",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "30%",
@@ -884,7 +861,7 @@
   },
   {
     "Input": "10%の人がパスポートを持っていません。",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "10%",
@@ -899,7 +876,7 @@
   },
   {
     "Input": "私の体脂肪率は22%です。",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "22%",
@@ -914,7 +891,7 @@
   },
   {
     "Input": "ムンバイのバスの乗車率は210%です。",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "210%",
@@ -944,7 +921,7 @@
   },
   {
     "Input": "回答率は100パーセントです。",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "100パーセント",
@@ -959,7 +936,7 @@
   },
   {
     "Input": "ムンバイの電車の乗車率は240パーセントです。",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "240パーセント",
@@ -974,7 +951,7 @@
   },
   {
     "Input": "20パーセントの人がパソコンを持っていません。",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "20パーセント",
@@ -989,7 +966,7 @@
   },
   {
     "Input": "10パーセントの人がパスポートを持っていません。",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "10パーセント",
@@ -1004,7 +981,7 @@
   },
   {
     "Input": "私の体脂肪率は22パーセントです。",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "22パーセント",
@@ -1019,7 +996,7 @@
   },
   {
     "Input": "ムンバイのバスの乗車率は210パーセントです。",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "210パーセント",
@@ -1094,7 +1071,7 @@
   },
   {
     "Input": "この問題の回答率は100%だ。",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "100%",
@@ -1109,7 +1086,7 @@
   },
   {
     "Input": "今日の会議の出席率は20%だ。",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "20%",
@@ -1124,7 +1101,7 @@
   },
   {
     "Input": "江戸川区のインド人の割合は10%です。",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "10%",
@@ -1139,17 +1116,17 @@
   },
   {
     "Input": "詳細については次のURLをご確認ください。 http://proquest.umi.com/pqdweb?RQT=305&SQ=issn%280024%2D9114%29%20and%20%28ti%28Using%203D%20CAD%20to%20design%20a%20dog%29%20or%20startpage%28158%29%29%20and%20volume%2872%29%20and%20issue%289%29%20and%20pdn%28%3E01%2F01%2F2000%20AND%20%3C12%2F31%2F2000%29&clientId=17859.",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": []
   },
   {
     "Input": "次のURLを参考にしてくだい。 https://www.test.com/search?q=30%25%2020%",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": []
   },
   {
     "Input": "回答率は１００％です。",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "100%",
@@ -1164,7 +1141,7 @@
   },
   {
     "Input": "ムンバイの電車の乗車率は２４０％です。",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "240%",
@@ -1179,7 +1156,7 @@
   },
   {
     "Input": "２０％の人がパソコンを持っています。",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "20%",
@@ -1194,7 +1171,7 @@
   },
   {
     "Input": "１０％の人がパソコンを持っています。",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "10%",
@@ -1509,7 +1486,7 @@
   },
   {
     "Input": "25パーセント",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "25パーセント",
@@ -1539,7 +1516,7 @@
   },
   {
     "Input": "二十~三十パーセント",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": []
   },
   {
@@ -1624,7 +1601,7 @@
   },
   {
     "Input": "僕1,123パーセント告白失败",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "1,123パーセント",
@@ -2007,7 +1984,7 @@
   },
   {
     "Input": "100056.33パーセント",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "100056.33パーセント",
@@ -2232,7 +2209,7 @@
   },
   {
     "Input": "5.50パーセント",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "5.50パーセント",
@@ -2492,7 +2469,7 @@
   },
   {
     "Input": "50%",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "50%",
@@ -2929,7 +2906,7 @@
   },
   {
     "Input": "マイナス122%",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "マイナス122%",
@@ -2959,7 +2936,7 @@
   },
   {
     "Input": "5パーセント",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "5パーセント",
@@ -3096,7 +3073,7 @@
   },
   {
     "Input": "アルコール量が5から20パーセントの商品を探す",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "20パーセント",

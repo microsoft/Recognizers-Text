@@ -202,7 +202,7 @@ class JapaneseOrdinalExtractor(BaseNumberExtractor):
             # だい一百五十四
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
-                    JapaneseNumeric.OrdinalRegex),
+                    JapaneseNumeric.AllOrdinalRegex),
                 val='OrdinalJpn'),
             # だい２５６５
             ReVal(
