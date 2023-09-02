@@ -43,7 +43,7 @@ class AbstractNumberWithUnitModel(Model):
                                 parse_results.append(j)
                         else:
                             parse_results.append(r)
-
+                model_result = None
                 for parse_result in parse_results:
                     model_result = ModelResult()
                     model_result.start = parse_result.start
@@ -57,6 +57,8 @@ class AbstractNumberWithUnitModel(Model):
 
                     if b_add:
                         extraction_results.append(model_result)
+                if model_result:
+                    break
         except Exception:
             pass
 

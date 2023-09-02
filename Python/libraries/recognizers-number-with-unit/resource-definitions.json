@@ -129,6 +129,18 @@
                 "class DutchNumericWithUnit:"
             ],
             "footer": [ "# pylint: enable=line-too-long" ]
+        },
+        {
+            "input": [ "Japanese", "Japanese-NumbersWithUnit" ],
+            "output": "japanese_numeric_with_unit",
+            "header": [
+                "from .base_numbers import BaseNumbers",
+                "# pylint: disable=line-too-long",
+                "",
+                "",
+                "class JapaneseNumericWithUnit:"
+            ],
+            "footer": [ "# pylint: enable=line-too-long" ]
         }
     ]
 }

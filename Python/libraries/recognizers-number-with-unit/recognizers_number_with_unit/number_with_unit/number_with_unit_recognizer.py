@@ -61,6 +61,8 @@ from .german.extractors import GermanCurrencyExtractorConfiguration
 from .german.parsers import GermanCurrencyParserConfiguration
 from .italian.extractors import ItalianCurrencyExtractorConfiguration
 from .italian.parsers import ItalianCurrencyParserConfiguration
+from .japanese.extractors import JapaneseCurrencyExtractorConfiguration
+from .japanese.parsers import JapaneseCurrencyParserConfiguration
 
 
 class NumberWithUnitOptions(IntFlag):
@@ -261,6 +263,19 @@ class NumberWithUnitRecognizer(Recognizer[NumberWithUnitOptions]):
                 BaseMergedUnitExtractor(
                     GermanCurrencyExtractorConfiguration()),
                 BaseMergedUnitParser(GermanCurrencyParserConfiguration()))
+        ]))
+        # endregion
+
+        # region Japanese
+        self.register_model('CurrencyModel', Culture.Japanese, lambda options: CurrencyModel([
+            ExtractorParserModel(
+                BaseMergedUnitExtractor(
+                    JapaneseCurrencyExtractorConfiguration()),
+                BaseMergedUnitParser(JapaneseCurrencyParserConfiguration())),
+            ExtractorParserModel(
+                NumberWithUnitExtractor(
+                    EnglishCurrencyExtractorConfiguration()),
+                NumberWithUnitParser(EnglishCurrencyParserConfiguration()))
         ]))
         # endregion
 
