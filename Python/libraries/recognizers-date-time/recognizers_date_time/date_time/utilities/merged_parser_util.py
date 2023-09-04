@@ -356,17 +356,38 @@ class MergedParserUtil:
 
             elif resolution_dict[ResolutionKey.type] == Constants.SYS_DATETIME_DATETIMEPERIOD:
                 if DateTimeResolutionKey.start in resolution:
-                    start = datetime.datetime.strptime(resolution[DateTimeResolutionKey.start], '%H')
+                    if datetime.datetime.strptime(resolution[DateTimeResolutionKey.start], "%Y-%m-%d %H:%M:%S"
+                                                  ).strftime('%Y-%m-%d %H:%M:%S'):
+                        start = datetime.datetime.strptime(resolution[DateTimeResolutionKey.start],
+                                                         "%Y-%m-%d %H:%M:%S").time()
+                    else:
+                        start = datetime.datetime.strptime(resolution[DateTimeResolutionKey.start], '%H')
+
                     if start.hour == Constants.HALF_DAY_HOUR_COUNT:
-                        start -= datetime.timedelta(hours=Constants.HALF_DAY_HOUR_COUNT)
+                        start = (datetime.datetime.combine(datetime.datetime.now().date(), start) -
+                                 datetime.timedelta(hours=Constants.HALF_DAY_HOUR_COUNT)).time()
                     else:
-                        start += datetime.timedelta(hours=Constants.HALF_DAY_HOUR_COUNT)
+                        start = (datetime.datetime.combine(datetime.datetime.now().date(), start) +
+                                 datetime.timedelta(hours=Constants.HALF_DAY_HOUR_COUNT)).time()
+
+                    resolution_pm[DateTimeResolutionKey.start] = DateTimeFormatUtil.format_time(start)
+
                 if DateTimeResolutionKey.end in resolution:
-                    end = datetime.datetime.strptime(resolution[DateTimeResolutionKey.end], '%H')
-                    if end.hour == Constants.HALF_DAY_HOUR_COUNT:
-                        end -= datetime.timedelta(hours=Constants.HALF_DAY_HOUR_COUNT)
+                    if datetime.datetime.strptime(resolution[DateTimeResolutionKey.end], "%Y-%m-%d %H:%M:%S"
+                                                  ).strftime('%Y-%m-%d %H:%M:%S'):
+                        end = datetime.datetime.strptime(resolution[DateTimeResolutionKey.end],
+                                                         "%Y-%m-%d %H:%M:%S").time()
                     else:
-                        end += datetime.timedelta(hours=Constants.HALF_DAY_HOUR_COUNT)
+                        end = datetime.datetime.strptime(resolution[DateTimeResolutionKey.end], '%H')
+
+                    if end.hour == Constants.HALF_DAY_HOUR_COUNT:
+                        end = (datetime.datetime.combine(datetime.datetime.now().date(), end) -
+                               datetime.timedelta(hours=Constants.HALF_DAY_HOUR_COUNT)).time()
+                    else:
+                        end = (datetime.datetime.combine(datetime.datetime.now().date(), end) +
+                               datetime.timedelta(hours=Constants.HALF_DAY_HOUR_COUNT)).time()
+
+                    resolution_pm[DateTimeResolutionKey.end] = DateTimeFormatUtil.format_time(end)
 
             resolution_dict[key_name + "Pm"] = resolution_pm
         return resolution_dict

@@ -25,7 +25,7 @@ class ModelResult(object):
     resolution: Union[Dict[str, object], List[Dict[str, object]]]
 
     def __repr__(self) -> str:
-        value = self.resolution.get('value', None)
+        value = self.resolution.get('value', None) if self.resolution else None
 
         if value:
             return '{} ({})'.format(self.text, value)

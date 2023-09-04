@@ -164,6 +164,14 @@ class JapaneseDateExtractorConfiguration(CJKDateExtractorConfiguration):
     def number_parser(self) -> CJKNumberParser:
         return self._number_parser
 
+    @property
+    def time_clock_desc_regex(self) -> Pattern:
+        return self._time_clock_desc_regex
+
+    @property
+    def time_minutes_desc_regex(self) -> Pattern:
+        return self._time_minutes_desc_regex
+
     def __init__(self):
         self._duration_extractor = BaseCJKDurationExtractor(
             JapaneseDurationExtractorConfiguration(), False)
@@ -253,6 +261,8 @@ class JapaneseDateExtractorConfiguration(CJKDateExtractorConfiguration):
         self._week_day_start_end = RegExpUtility.get_safe_reg_exp(JapaneseDateTime.WeekDayStartEnd)
         self._range_connector_symbol_regex = RegExpUtility.get_safe_reg_exp(BaseDateTime.RangeConnectorSymbolRegex)
         self._ambiguity_date_filters_dict = JapaneseDateTime.AmbiguityDateTimeFiltersDict
+        self._time_clock_desc_regex = RegExpUtility.get_safe_reg_exp(JapaneseDateTime.TimeClockDescRegex)
+        self._time_minutes_desc_regex = RegExpUtility.get_safe_reg_exp(JapaneseDateTime.TimeMinuteDescRegex)
 
         self._implicit_date_list = [
             self.special_day_with_num_regex, self.special_day_regex, self.this_regex, self.last_regex, self.next_regex,
