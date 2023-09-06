@@ -12,3 +12,4 @@ from .german_date_time import GermanDateTime
 from .english_time_zone import TimeZoneDefinitions
 from .dutch_date_time import DutchDateTime
 from .japanese_date_time import JapaneseDateTime
+from .catalan_date_time import CatalanDateTime

@@ -20,6 +20,8 @@ from .base_set import *
 from .base_holiday import *
 from .base_merged import *
 from .base_timezone import *
+from .base_minimal_merged import *
+from .base_minimal_configs import *
 from .CJK import *
 from .english import *
 from .spanish import *
@@ -28,3 +30,4 @@ from .french import *
 from .portuguese import *
 from .dutch import *
 from .japanese import *
+from .catalan import *
