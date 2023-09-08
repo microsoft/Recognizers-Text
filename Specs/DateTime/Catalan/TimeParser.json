@@ -1,0 +1,182 @@
+[
+  {
+    "Input": "posa l'alarma a les vuit i quaranta",
+    "Results": [
+      {
+        "Text": "vuit i quaranta",
+        "Type": "time",
+        "Value": {
+          "Timex": "T08:40",
+          "FutureResolution": {
+            "time": "08:40:00"
+          },
+          "PastResolution": {
+            "time": "08:40:00"
+          }
+        },
+        "Start": 20,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "posa l'alarma a les vuit quaranta del matí",
+    "Results": [
+      {
+        "Text": "vuit quaranta del matí",
+        "Type": "time",
+        "Value": {
+          "Timex": "T08:40",
+          "FutureResolution": {
+            "time": "08:40:00"
+          },
+          "PastResolution": {
+            "time": "08:40:00"
+          }
+        },
+        "Start": 20,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Tornaré a les 7 de la tarda",
+    "Results": [
+      {
+        "Text": "7 de la tarda",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19",
+          "FutureResolution": {
+            "time": "19:00:00"
+          },
+          "PastResolution": {
+            "time": "19:00:00"
+          }
+        },
+        "Start": 14,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "Tornaré a les 12:34",
+    "Results": [
+      {
+        "Text": "12:34",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12:34",
+          "FutureResolution": {
+            "time": "12:34:00"
+          },
+          "PastResolution": {
+            "time": "12:34:00"
+          }
+        },
+        "Start": 14,
+        "Length": 5
+      }
+    ]
+  },
+  {
+    "Input": "Són un quart de 8 del matí",
+    "Results": [
+      {
+        "Text": "un quart de 8 del matí",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07:45",
+          "FutureResolution": {
+            "time": "07:45:00"
+          },
+          "PastResolution": {
+            "time": "07:45:00"
+          }
+        },
+        "Start": 4,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "Tornaré a les set i mitja de la tarda",
+    "Results": [
+      {
+        "Text": "set i mitja de la tarda",
+        "Type": "time",
+        "Value": {
+          "Timex": "T19:30",
+          "FutureResolution": {
+            "time": "19:30:00"
+          },
+          "PastResolution": {
+            "time": "19:30:00"
+          }
+        },
+        "Start": 14,
+        "Length": 23
+      }
+    ]
+  },
+  {
+    "Input": "migdia",
+    "Results": [
+      {
+        "Text": "migdia",
+        "Type": "time",
+        "Value": {
+          "Timex": "T12",
+          "FutureResolution": {
+            "time": "12:00:00"
+          },
+          "PastResolution": {
+            "time": "12:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Tornaré a les 12 de la nit",
+    "Results": [
+      {
+        "Text": "12 de la nit",
+        "Type": "time",
+        "Value": {
+          "Timex": "T00",
+          "FutureResolution": {
+            "time": "00:00:00"
+          },
+          "PastResolution": {
+            "time": "00:00:00"
+          }
+        },
+        "Start": 14,
+        "Length": 12
+      }
+    ]
+  },
+  {
+    "Input": "Són les set de mitja del matí",
+    "Results": [
+      {
+        "Text": "set de mitja del matí",
+        "Type": "time",
+        "Value": {
+          "Timex": "T07:30",
+          "FutureResolution": {
+            "time": "07:30:00"
+          },
+          "PastResolution": {
+            "time": "07:30:00"
+          }
+        },
+        "Start": 8,
+        "Length": 21
+      }
+    ]
+  }
+]
