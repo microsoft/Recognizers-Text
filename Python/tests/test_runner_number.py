@@ -34,6 +34,13 @@ def test_number_recognizer(culture, model, options,
             assert_verbose(actual.end, expected['End'], spec_info)
 
 
+def test_individual():
+    res = recognize_percentage("ثلاثون بالمائة", 'ar-ae')
+    # res = recognize_percentage("dertig procent", 'nl-nl')
+
+    print(res)
+
+
 def get_results(culture, model, source):
     return MODELFUNCTION[model](source, culture)
 

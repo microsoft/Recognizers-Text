@@ -8,17 +8,15 @@ from decimal import Decimal, getcontext
 import copy
 import regex
 
-from recognizers_text.utilities import RegExpUtility
 from recognizers_text.culture import Culture
 from recognizers_text.extractor import ExtractResult
 from recognizers_text.parser import ParseResult
-from recognizers_number.number.parsers import BaseNumberParser, NumberParserConfiguration
-from recognizers_number.culture import CultureInfo
+from recognizers_number.number.parsers import BaseNumberParser, BaseNumberParserConfiguration
 
 getcontext().prec = 15
 
 
-class CJKNumberParserConfiguration(NumberParserConfiguration):
+class CJKNumberParserConfiguration(BaseNumberParserConfiguration):
     @property
     @abstractmethod
     def zero_to_nine_map(self) -> Dict[str, int]:

@@ -126,6 +126,10 @@ class NumberParserConfiguration(ABC):
     def round_multiplier_regex(self) -> Pattern:
         pass
 
+    @abstractmethod
+    def get_lang_specific_int_value(self, match_strs: List[str]):
+        pass
+
 
 class BaseNumberParserConfiguration(NumberParserConfiguration, ABC):
 
@@ -174,6 +178,9 @@ class BaseNumberParserConfiguration(NumberParserConfiguration, ABC):
             return self.cardinal_number_map[number_str]
 
         return 0
+
+    def get_lang_specific_int_value(self, match_strs: List[str]) -> (bool, int):
+        return False, 0
 
 
 class BaseNumberParser(Parser):
@@ -399,7 +406,7 @@ class BaseNumberParser(Parser):
                             # e.g. one hundred thousand
                             # frac[i+1] % 100 and frac[i] % 100 = 0
                             if (self.config.resolve_composite_number(frac_words[split_index]) >= sm_hundreds
-                                    and not frac_words[split_index + 1] in self.config.written_fraction_separator_texts
+                                    and frac_words[split_index + 1] not in self.config.written_fraction_separator_texts
                                     and self.config.resolve_composite_number(
                                         frac_words[split_index + 1]) < sm_hundreds):
                                 split_index += 1
@@ -555,6 +562,10 @@ class BaseNumberParser(Parser):
         return big % base_num == 0 and big / base_num >= 1
 
     def __get_int_value(self, matches: List[str]) -> Decimal:
+        special_case, value = self.config.get_lang_specific_int_value(matches)
+        if special_case:
+            return value
+
         is_end = [False] * len(matches)
 
         tmp_val = 0
@@ -788,7 +799,7 @@ class BasePercentageParser(BaseNumberParser):
 
         result: ParseResult = super().parse(source)
 
-        if not result.resolution_str is None and result.resolution_str:
+        if result.resolution_str is not None and result.resolution_str:
             if not result.resolution_str.strip().endswith('%'):
                 result.resolution_str = result.resolution_str.strip() + '%'
 
