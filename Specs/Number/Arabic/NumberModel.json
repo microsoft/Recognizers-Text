@@ -2,7 +2,7 @@
   {
     "Input": "تجده في الصفحة ال١٩٢",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java, gython",
     "Results": [
       {
         "Text": "١٩٢",

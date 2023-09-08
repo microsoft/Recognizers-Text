@@ -3,6 +3,10 @@
 
 from enum import IntFlag
 from typing import List
+
+from recognizers_number.number.arabic.extractors import ArabicOrdinalExtractor, ArabicPercentageExtractor, \
+    ArabicNumberExtractor
+from recognizers_number.number.arabic.parsers import ArabicNumberParserConfiguration
 from recognizers_text import Culture, Recognizer, Model
 from recognizers_number.culture import CultureInfo
 from recognizers_number.number.models import NumberMode, NumberModel, OrdinalModel, PercentModel, ModelResult
@@ -218,6 +222,25 @@ class NumberRecognizer(Recognizer[NumberOptions]):
             ItalianPercentageExtractor()
         ))
         # endregion
+
+        # region Arabic
+        self.register_model('NumberModel', Culture.Arabic, lambda options: NumberModel(
+            AgnosticNumberParserFactory.get_parser(
+                ParserType.NUMBER, ArabicNumberParserConfiguration()),
+            ArabicNumberExtractor(NumberMode.PURE_NUMBER)
+        ))
+        self.register_model('OrdinalModel', Culture.Arabic, lambda options: OrdinalModel(
+            AgnosticNumberParserFactory.get_parser(
+                ParserType.ORDINAL, ArabicNumberParserConfiguration()),
+            ArabicOrdinalExtractor()
+        ))
+        self.register_model('PercentModel', Culture.Arabic, lambda options: PercentModel(
+            AgnosticNumberParserFactory.get_parser(
+                ParserType.PERCENTAGE, ArabicNumberParserConfiguration()),
+            ArabicPercentageExtractor()
+        ))
+        # endregion
+
 
     def get_number_model(self, culture: str = None, fallback_to_default_culture: bool = True) -> Model:
         return self.get_model('NumberModel', culture, fallback_to_default_culture)

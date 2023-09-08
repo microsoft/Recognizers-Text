@@ -3,6 +3,7 @@ from typing import Dict
 from .base_numbers import BaseNumbers
 # pylint: disable=line-too-long
 
+
 class ArabicNumeric:
     LangMarker = 'Ara'
     CompoundNumberLanguage = False
@@ -496,3 +497,4 @@ class ArabicNumeric:
         r"الثانية الى الاخير": "end",
         r"السابق": "current"
     }
+    CurrencyRegex = BaseNumbers.CurrencyRegex
