@@ -134,13 +134,13 @@ class ArabicIntegerExtractor(BaseNumberExtractor):
                 re=RegExpUtility.get_safe_reg_exp(
                     ArabicNumeric.AllIntRegexWithLocks
                 ),
-                val='IntegerNum'
+                val=f'Integer{ArabicNumeric.LangMarker}'
             ),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
                     ArabicNumeric.AllIntRegexWithDozenSuffixLocks
                 ),
-                val='IntegerNum'
+                val=f'Integer{ArabicNumeric.LangMarker}'
             ),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
@@ -209,7 +209,7 @@ class ArabicDoubleExtractor(BaseNumberExtractor):
                 re=RegExpUtility.get_safe_reg_exp(
                     ArabicNumeric.DoubleAllFloatRegex
                 ),
-                val='DoubleNum'
+                val=f'Double{ArabicNumeric.LangMarker}'
             ),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(
@@ -339,11 +339,11 @@ class ArabicOrdinalExtractor(BaseNumberExtractor):
             ),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(ArabicNumeric.OrdinalEnglishRegex),
-                val='OrdinalNum'
+                val=f'Ordinal{ArabicNumeric.LangMarker}'
             ),
             ReVal(
                 re=RegExpUtility.get_safe_reg_exp(ArabicNumeric.OrdinalRoundNumberRegex),
-                val='OrdinalNum'
+                val=f'Ordinal{ArabicNumeric.LangMarker}'
             ),
         ]
 
