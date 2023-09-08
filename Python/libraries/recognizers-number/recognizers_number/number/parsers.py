@@ -127,6 +127,55 @@ class NumberParserConfiguration(ABC):
         pass
 
 
+class BaseNumberParserConfiguration(NumberParserConfiguration, ABC):
+
+    def normalize_token_set(self, tokens: List[str], context: ParseResult) -> List[str]:
+        frac_words: List[str]= []
+        tokens_len = len(tokens)
+        i = 0
+        while i < tokens_len:
+            if '-' in tokens[i]:
+                split_tokens = tokens[i].split('-')
+                if len(split_tokens) == 2 and split_tokens[1] in self.ordinal_number_map:
+                    frac_words.append(split_tokens[0])
+                    frac_words.append(split_tokens[1])
+                else:
+                    frac_words.append(tokens[i])
+            elif i < tokens_len - 2 and tokens[i + 1] == '-':
+                if tokens[i + 2] in self.ordinal_number_map:
+                    frac_words.append(tokens[i])
+                    frac_words.append(tokens[i + 2])
+                else:
+                    frac_words.append(
+                        tokens[i] + tokens[i + 1] + tokens[i + 2])
+                i += 2
+            else:
+                frac_words.append(tokens[i])
+            i += 1
+
+        return frac_words
+
+    def resolve_composite_number(self, number_str: str) -> int:
+        if "-" in number_str:
+            numbers = number_str.split('-')
+            ret = 0
+            for number in numbers:
+                if number in self.ordinal_number_map:
+                    ret += self.ordinal_number_map[number]
+                elif number in self.cardinal_number_map:
+                    ret += self.cardinal_number_map[number]
+
+            return ret
+
+        if number_str in self.ordinal_number_map:
+            return self.ordinal_number_map[number_str]
+
+        if number_str in self.cardinal_number_map:
+            return self.cardinal_number_map[number_str]
+
+        return 0
+
+
 class BaseNumberParser(Parser):
     def __init__(self, config: NumberParserConfiguration):
         self.config: NumberParserConfiguration = config
