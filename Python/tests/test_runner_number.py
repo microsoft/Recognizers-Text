@@ -35,10 +35,18 @@ def test_number_recognizer(culture, model, options,
 
 
 def test_individual():
-    res = recognize_percentage("ثلاثون بالمائة", 'ar-ae')
-    # res = recognize_percentage("dertig procent", 'nl-nl')
+    # res = recognize_number('مائة وستة صفحات.', 'ar-ae')  # One hundred and six
+    # res = recognize_number('سبعة وعشرون', 'ar-ae')  # Twenty seven
+    res = recognize_number('9,2321312', 'ar-ae')  # ...
 
-    print(res)
+    # res = recognize_number("zevenentwintig", 'nl-nl')
+
+    if len(res) > 0 and res[0].resolution:
+        print(f"RESULT - RESOLUTION: {res[0].resolution}")
+
+    print(f"RESULT - RES: {res}")
+
+    assert res
 
 
 def get_results(culture, model, source):
