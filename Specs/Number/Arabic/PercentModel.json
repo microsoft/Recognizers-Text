@@ -329,7 +329,7 @@
   {
     "Input": "اثنين و عشرون بالمائة",
     "Comment": "PendingValidation",
-    "NotSupported": "dotnet",
+    "NotSupported": "dotnet,python",
     "Results": [
       {
         "Text": "اثنين و عشرون بالمائة",
