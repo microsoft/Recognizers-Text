@@ -139,6 +139,12 @@ BetweenTokenRegex: !simpleRegex
   def: \b(between(\s+the)?)$
 OrdinalNumberRegex: !simpleRegex
   def: ((ال)?حادي عشر|ل(ال)?ثاني عشر|(ال)?ثالث عشر|(ال)?رابع عشر|(ال)?خامس عشر|(ال)?خمسة عشر|(ال)?سادس عشر|(ال)?سابع عشر|(ال)?ثامن عشر|(ال)?تاسع عشر|(ال)?عشرون|(ال)?عشرين|(ال)?حادي والعشرون|(ال)?حادية والعشرين|(ال)?حادي والعشرين|(ال)?ثاني والعشرون|(ال)?ثانية والعشرين|(ال)?ثالث والعشرون|(ال)?رابع والعشرون|(ال)?خامس والعشرون|(ال)?سادس والعشرون|(ال)?تاسع والعشرون|(ال)?سابع والعشرون|(ال)?رابع والعشرون|الثامن|الأول|الثالث|الرابع|الخامس|السادس|الثاني|العاشر|السابع)
+SolarMonthRegex: !simpleRegex
+  def: (?<month>يناير|فبراير|مارس|أبريل|مايو|يونيو|يوليو|أغسطس|سبتمبر|أكتوبر|نوفمبر|ديسمبر)
+LunarMonthRegex: !simpleRegex
+  def: (?<month>محرم|صفر|ربيع الأول|ربيع الثاني|جمادى الأول|جمادى الثاني|رجب|شعبان|رمضان|شوال|ذو القعدة|ذو الحجة)
+ArabicMonthRegex: !simpleRegex
+  def: (?<month>كانون الثاني|شباط|آذار|نيسان|حزيران|تموز|آب|أيلول|تشرين الأول|تشرين الثاني|كانون الأول|أيار)
 SimpleCasePreMonthRegex: !nestedRegex
   def: ((بين|من)\s+)(({DayRegex}-{DayRegex})\s+)((من|في)\s+)?((الشهر|{SolarMonthRegex}|{LunarMonthRegex}|{ArabicMonthRegex})\s+)({RelativeRegex})?({YearRegex})?
   references: [ DayRegex, SolarMonthRegex, LunarMonthRegex, ArabicMonthRegex, RelativeRegex, YearRegex ]
@@ -231,12 +237,6 @@ WeekOfRegex: !simpleRegex
   def: (the\s+)?((week)(\s+(of|(commencing|starting|beginning)(\s+on)?))|w/c)(\s+the)?
 MonthOfRegex: !simpleRegex
   def: (من)(\s*)(شهر)
-SolarMonthRegex: !simpleRegex
-  def: (?<month>يناير|فبراير|مارس|أبريل|مايو|يونيو|يوليو|أغسطس|سبتمبر|أكتوبر|نوفمبر|ديسمبر)
-LunarMonthRegex: !simpleRegex
-  def: (?<month>محرم|صفر|ربيع الأول|ربيع الثاني|جمادى الأول|جمادى الثاني|رجب|شعبان|رمضان|شوال|ذو القعدة|ذو الحجة)
-ArabicMonthRegex: !simpleRegex
-  def: (?<month>كانون الثاني|شباط|آذار|نيسان|حزيران|تموز|آب|أيلول|تشرين الأول|تشرين الثاني|كانون الأول|أيار)
 MonthRegex: !nestedRegex
   def: (?<month>{SolarMonthRegex}|{LunarMonthRegex}|{ArabicMonthRegex})
   references: [ SolarMonthRegex, LunarMonthRegex, ArabicMonthRegex ]
@@ -279,8 +279,6 @@ SpecificDayRegex: !nestedRegex
 LastDateRegex: !nestedRegex
   def: ({LastDayDateRegex}|{LastWeekDateRegex})
   references: [ LastDayDateRegex, LastWeekDateRegex, ]
-NextRegex: !simpleRegex
-  def: (\s+)?(الآتي|الأخير|التالي|القادم|من الآن|الحالي|المقبل|الحاضر)
 NextDayRegex: !nestedRegex
   def: (هذا يوم\s+|بعد\s+)?(?=(ال)?يوم\s+)?({WeekDayRegex})((\s+)({NextRegex}))?
   references: [ WeekDayRegex, NextRegex ]

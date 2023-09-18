@@ -153,6 +153,18 @@
                 "class JapaneseDateTime:"
             ],
             "footer": [ "# pylint: enable=line-too-long" ]
+        },
+        {
+            "input": [ "Arabic", "Arabic-DateTime" ],
+            "output": "arabic_date_time",
+            "header": [
+                "from .base_date_time import BaseDateTime",
+                "# pylint: disable=line-too-long",
+                "",
+                "",
+                "class ArabicDateTime:"
+            ],
+            "footer": [ "# pylint: enable=line-too-long" ]
         }
     ]
 }
