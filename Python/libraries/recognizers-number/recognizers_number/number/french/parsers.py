@@ -125,28 +125,7 @@ class FrenchNumberParserConfiguration(BaseNumberParserConfiguration):
             FrenchNumeric.RoundMultiplierRegex)
 
     def normalize_token_set(self, tokens: List[str], context: ParseResult) -> List[str]:
-        frac_words: List[str] = list()
-        tokens_len = len(tokens)
-        i = 0
-        while i < tokens_len:
-            if '-' in tokens[i]:
-                splited_tokens = tokens[i].split('-')
-                if len(splited_tokens) == 2 and splited_tokens[1] in self.ordinal_number_map:
-                    frac_words.append(splited_tokens[0])
-                    frac_words.append(splited_tokens[1])
-                else:
-                    frac_words.append(tokens[i])
-            elif i < tokens_len - 2 and tokens[i + 1] == '-':
-                if tokens[i + 2] in self.ordinal_number_map:
-                    frac_words.append(tokens[i])
-                    frac_words.append(tokens[i + 2])
-                else:
-                    frac_words.append(
-                        tokens[i] + tokens[i + 1] + tokens[i + 2])
-                i += 2
-            else:
-                frac_words.append(tokens[i])
-            i += 1
+        frac_words: List[str] = super().normalize_token_set(tokens, context)
 
         # The following piece of code is needed to compute the fraction pattern number+'et demi'
         # e.g. 'deux et demi' ('two and a half') where the numerator is omitted in French.

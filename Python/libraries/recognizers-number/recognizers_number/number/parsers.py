@@ -785,7 +785,6 @@ class BaseNumberParser(Parser):
             source = fr'((?=\b)({single_int_frac})(?=\b))|({single_int_frac})'
         elif culture_code in (Culture.Arabic, ):
             source = f'((?<=\\b)|(?<=و))({single_int_frac})(?=\\b)'
-            # source = fr'({single_int_frac})(?=\b)'
 
         pattern = RegExpUtility.get_safe_reg_exp(source, flags=regex.I | regex.S)
         return pattern
