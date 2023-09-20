@@ -46,9 +46,9 @@ def assert_verbose(actual, expected, spec_info):
         "Actual: {} | Expected: {} | Context: {}".format(actual, expected, spec_info)
 
 
-# @skip("Used for troubleshooting individual phrases")
+@skip("Used for troubleshooting individual phrases")
 def test_individual_utterance():
-    res = recognize_number("سبعة وعشرون", "ar-ae")
+    res = recognize_number("نصف مليون", "ar-ae")
 
     print(f"\nResult: {res}")
     assert len(res) > 0
