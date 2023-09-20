@@ -4,7 +4,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "15",
@@ -28,7 +28,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "2. أكتوبر",
@@ -52,7 +52,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "2- أكتوبر",
@@ -76,7 +76,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "2/ أكتوبر",
@@ -100,7 +100,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "2 أكتوبر",
@@ -124,7 +124,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "12 يناير 2016",
@@ -148,7 +148,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "الاثنين 12 يناير 2016",
@@ -172,7 +172,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "2016/02/22",
@@ -196,7 +196,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "2016/04/21",
@@ -221,7 +221,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "16/04/21",
@@ -245,7 +245,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "21-04-2016",
@@ -269,7 +269,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "4.22",
@@ -293,7 +293,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "22-4",
@@ -317,7 +317,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "4.22",
@@ -341,7 +341,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "22-4",
@@ -365,7 +365,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "4/22",
@@ -389,7 +389,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "04/22",
@@ -413,7 +413,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "4/22",
@@ -437,7 +437,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "22/04",
@@ -461,7 +461,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "2015/08/12",
@@ -485,7 +485,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "08/12, 2015",
@@ -509,7 +509,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "08/12, 15",
@@ -533,7 +533,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "1 يناير",
@@ -557,7 +557,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "يناير-1",
@@ -581,7 +581,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "الأربعاء , 22 يناير",
@@ -606,7 +606,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "أول يناير",
@@ -631,7 +631,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "الحادي والعشرين من مايو",
@@ -656,7 +656,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "واحد وعشرين مايو",
@@ -681,7 +681,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "الثاني من أغسطس",
@@ -706,7 +706,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "الثانية والعشرون من يونيو",
@@ -731,7 +731,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "الجمعة",
@@ -756,7 +756,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "الجمعة",
@@ -780,7 +780,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "اليوم",
@@ -805,7 +805,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "غداً",
@@ -830,7 +830,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "الأمس",
@@ -855,7 +855,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "قبل يوم أمس",
@@ -880,7 +880,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "بعد غد",
@@ -905,7 +905,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "بعد غد",
@@ -930,7 +930,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "اليوم التالي",
@@ -955,7 +955,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "اليوم التالي",
@@ -980,7 +980,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "هذا يوم الجمعة",
@@ -1004,7 +1004,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "الأحد القادم",
@@ -1028,7 +1028,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "الأحد الماضي",
@@ -1053,7 +1053,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "هذا الأسبوع الجمعة",
@@ -1077,7 +1077,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "الأسبوع القادم الأحد",
@@ -1101,7 +1101,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "الأسبوع الماضي الأحد",
@@ -1126,7 +1126,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "آخر يوم",
@@ -1151,7 +1151,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "آخر يوم",
@@ -1175,7 +1175,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "اليوم",
@@ -1199,7 +1199,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "15 يونيو 2016",
@@ -1224,7 +1224,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "أول يوم جمعة من يوليو",
@@ -1249,7 +1249,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "أول يوم جمعة في هذا الشهر",
@@ -1273,7 +1273,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "الأسبوع المقبل يوم الجمعة",
@@ -1298,7 +1298,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "الجمعة من الاسبوع المقبل",
@@ -1322,7 +1322,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "يومي",
@@ -1346,7 +1346,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "اليوم",
@@ -1371,7 +1371,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "اليوم الماضي",
@@ -1396,7 +1396,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "بعد أسبوعين من الآن",
@@ -1421,7 +1421,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "قبل شهر",
@@ -1446,7 +1446,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "قبل بضعة أشهر",
@@ -1471,7 +1471,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "قبل بضعة أيام",
@@ -1496,7 +1496,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "إلى 27",
@@ -1521,7 +1521,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "يوم 27",
@@ -1546,7 +1546,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "27",
@@ -1571,7 +1571,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "إلى 27",
@@ -1596,7 +1596,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "إلى 27",
@@ -1621,7 +1621,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "إلى الحادي والعشرين",
@@ -1646,7 +1646,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "للثانية والعشرين",
@@ -1671,7 +1671,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "للثاني",
@@ -1696,7 +1696,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "للثاني والعشرين",
@@ -1721,7 +1721,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "للثلاثين",
@@ -1746,7 +1746,7 @@
       "ReferenceDateTime": "2017-09-27T17:25:49.8080661+08:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "الخميس 21",
@@ -1771,7 +1771,7 @@
       "ReferenceDateTime": "2017-09-27T17:25:49.8110663+08:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "الجمعة 22",
@@ -1796,7 +1796,7 @@
       "ReferenceDateTime": "2017-09-27T17:25:49.8120465+08:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "السبت 23",
@@ -1821,7 +1821,7 @@
       "ReferenceDateTime": "2017-09-27T17:25:49.8130455+08:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "الجمعة 15",
@@ -1846,7 +1846,7 @@
       "ReferenceDateTime": "2017-09-27T17:25:49.8140457+08:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "الخميس في الحادي والعشرين",
@@ -1871,7 +1871,7 @@
       "ReferenceDateTime": "2017-09-27T17:25:49.8150456+08:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "الجمعة في الثانية والعشرين",
@@ -1896,7 +1896,7 @@
       "ReferenceDateTime": "2017-09-27T17:25:49.8160454+08:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "الجمعة في خمسة عشر",
@@ -1920,7 +1920,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:49.8200463+08:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "الأحد الثاني",
@@ -1944,7 +1944,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:49.8200463+08:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "الأحد الأول",
@@ -1968,7 +1968,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:49.8210454+08:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "الثلاثاء الثالث",
@@ -1992,7 +1992,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-27T17:25:49.8225493+08:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "الأحد الخامس",
@@ -2017,7 +2017,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "إلى 20 من الشهر القادم",
@@ -2041,7 +2041,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "إلى الحادي والثلاثين من هذا الشهر",
@@ -2065,7 +2065,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "12 يناير 2018",
@@ -2089,7 +2089,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "18-9-15",
@@ -2114,7 +2114,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "قبل يومين",
@@ -2139,7 +2139,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "قبل عامين",
@@ -2163,7 +2163,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-14T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "16. نوفمبر. 2016",
@@ -2188,7 +2188,7 @@
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "1 شهر و 21 أيام من الآن",
@@ -2213,7 +2213,7 @@
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "2 سنة و1 شهر و21 أيام من الآن",
@@ -2238,7 +2238,7 @@
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "2 عام و 21 يوما من الآن",
@@ -2263,7 +2263,7 @@
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "شهر و 2 سنة و 21 يوما من الآن",
@@ -2288,7 +2288,7 @@
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "شهر و 21 يوم من الآن",
@@ -2313,7 +2313,7 @@
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "1 شهر, 21 أيام من الآن",
@@ -2338,7 +2338,7 @@
       "ReferenceDateTime": "2017-12-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "20 من الشهر المقبل",
@@ -2362,7 +2362,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-18T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "5 ديسمبر 1391",
@@ -2386,7 +2386,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "الاثنين، يناير الثاني والعشرين، 2018",
@@ -2410,7 +2410,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "الأحد يناير الحادي والعشرين ألفان وثمانية عشر",
@@ -2435,7 +2435,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "سبتمبر الحادي والعشرين من ألف وتسعمائة وثمانية وسبعون",
@@ -2459,7 +2459,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "سبتمبر10, ألف وتسعمائة وواحد",
@@ -2483,7 +2483,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript, xpython",
     "Results": [
       {
         "Text": "العاشر من سبتمبر ، ألفين",

@@ -15,6 +15,7 @@ class Culture:
     SpanishMexican: str = 'es-mx'
     Turkish: str = 'tr-tr'
     German: str = 'de-de'
+    Arabic: str = 'ar-ae'
 
     @staticmethod
     def _get_supported_culture_codes():
@@ -31,7 +32,8 @@ class Culture:
             Culture.Spanish,
             Culture.SpanishMexican,
             Culture.Turkish,
-            Culture.German
+            Culture.German,
+            Culture.Arabic
         ]
 
     @staticmethod
