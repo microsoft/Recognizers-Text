@@ -1,6 +1,7 @@
 [
   {
     "Input": "بالتأكيد!",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "بالتأكيد",
@@ -14,6 +15,7 @@
   },
   {
     "Input": "أنا لا أظن ذلك. لا.",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "لا",
@@ -27,6 +29,7 @@
   },
   {
     "Input": "أعتقد أن هذا سينجح. لذلك نعم سوف أقوم بذلك.",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "نعم",
@@ -40,6 +43,7 @@
   },
   {
     "Input": "لا، قلت الرابع من يوليو",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "لا",
@@ -53,6 +57,7 @@
   },
   {
     "Input": "نعم... قلت لا بصل",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "نعم",
@@ -66,6 +71,7 @@
   },
   {
     "Input": "قلت لا ليس نعم!",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "لا",
@@ -79,6 +85,7 @@
   },
   {
     "Input": "نعم. أنا أقول لا",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "نعم",
@@ -92,6 +99,7 @@
   },
   {
     "Input": "اختلف ، فإنه ليس صحيح",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "ليس صحيح",
@@ -105,6 +113,7 @@
   },
   {
     "Input": "اتفق، لا مشكلة",
+    "NotSupported": "python",
     "Results": [
       {
         "Text": "اتفق",
@@ -132,6 +141,7 @@
   },
   {
     "Input": "أختلف",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "أختلف",
@@ -145,6 +155,7 @@
   },
   {
     "Input": "انها ليست على ما يرام",
+    "NotSupportedByDesign": "python",
     "Results": [
       {
         "Text": "ليست",
