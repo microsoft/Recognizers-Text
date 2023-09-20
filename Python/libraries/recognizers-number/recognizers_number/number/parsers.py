@@ -126,6 +126,62 @@ class NumberParserConfiguration(ABC):
     def round_multiplier_regex(self) -> Pattern:
         pass
 
+    @abstractmethod
+    def get_lang_specific_int_value(self, match_strs: List[str]):
+        pass
+
+
+class BaseNumberParserConfiguration(NumberParserConfiguration, ABC):
+
+    def normalize_token_set(self, tokens: List[str], context: ParseResult) -> List[str]:
+        frac_words: List[str]= []
+        tokens_len = len(tokens)
+        i = 0
+        while i < tokens_len:
+            if '-' in tokens[i]:
+                split_tokens = tokens[i].split('-')
+                if len(split_tokens) == 2 and split_tokens[1] in self.ordinal_number_map:
+                    frac_words.append(split_tokens[0])
+                    frac_words.append(split_tokens[1])
+                else:
+                    frac_words.append(tokens[i])
+            elif i < tokens_len - 2 and tokens[i + 1] == '-':
+                if tokens[i + 2] in self.ordinal_number_map:
+                    frac_words.append(tokens[i])
+                    frac_words.append(tokens[i + 2])
+                else:
+                    frac_words.append(
+                        tokens[i] + tokens[i + 1] + tokens[i + 2])
+                i += 2
+            else:
+                frac_words.append(tokens[i])
+            i += 1
+
+        return frac_words
+
+    def resolve_composite_number(self, number_str: str) -> int:
+        if "-" in number_str:
+            numbers = number_str.split('-')
+            ret = 0
+            for number in numbers:
+                if number in self.ordinal_number_map:
+                    ret += self.ordinal_number_map[number]
+                elif number in self.cardinal_number_map:
+                    ret += self.cardinal_number_map[number]
+
+            return ret
+
+        if number_str in self.ordinal_number_map:
+            return self.ordinal_number_map[number_str]
+
+        if number_str in self.cardinal_number_map:
+            return self.cardinal_number_map[number_str]
+
+        return 0
+
+    def get_lang_specific_int_value(self, match_strs: List[str]) -> (bool, int):
+        return False, 0
+
 
 class BaseNumberParser(Parser):
     def __init__(self, config: NumberParserConfiguration):
@@ -350,7 +406,7 @@ class BaseNumberParser(Parser):
                             # e.g. one hundred thousand
                             # frac[i+1] % 100 and frac[i] % 100 = 0
                             if (self.config.resolve_composite_number(frac_words[split_index]) >= sm_hundreds
-                                    and not frac_words[split_index + 1] in self.config.written_fraction_separator_texts
+                                    and frac_words[split_index + 1] not in self.config.written_fraction_separator_texts
                                     and self.config.resolve_composite_number(
                                         frac_words[split_index + 1]) < sm_hundreds):
                                 split_index += 1
@@ -506,6 +562,10 @@ class BaseNumberParser(Parser):
         return big % base_num == 0 and big / base_num >= 1
 
     def __get_int_value(self, matches: List[str]) -> Decimal:
+        special_case, value = self.config.get_lang_specific_int_value(matches)
+        if special_case:
+            return value
+
         is_end = [False] * len(matches)
 
         tmp_val = 0
@@ -719,10 +779,12 @@ class BaseNumberParser(Parser):
 
     def _get_text_number_regex(self, single_int_frac: str) -> Pattern:
         culture_code = self.config.culture_info.code
-        source = fr'(?=\b)({single_int_frac})(?=\b)'
+        source = fr'(?<=\b)({single_int_frac})(?=\b)'
 
         if culture_code in (Culture.Italian, Culture.German, Culture.Dutch):
             source = fr'((?=\b)({single_int_frac})(?=\b))|({single_int_frac})'
+        elif culture_code in (Culture.Arabic, ):
+            source = f'((?<=\\b)|(?<=و))({single_int_frac})(?=\\b)'
 
         pattern = RegExpUtility.get_safe_reg_exp(source, flags=regex.I | regex.S)
         return pattern
@@ -739,7 +801,7 @@ class BasePercentageParser(BaseNumberParser):
 
         result: ParseResult = super().parse(source)
 
-        if not result.resolution_str is None and result.resolution_str:
+        if result.resolution_str is not None and result.resolution_str:
             if not result.resolution_str.strip().endswith('%'):
                 result.resolution_str = result.resolution_str.strip() + '%'
 

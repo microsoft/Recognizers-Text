@@ -2,7 +2,7 @@
   {
     "Input": "تجده في الصفحة ال١٩٢",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "١٩٢",
@@ -91,7 +91,7 @@
   {
     "Input": "وزنه ٠,٠٨",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "٠,٠٨",
@@ -108,7 +108,7 @@
   {
     "Input": "وزنه ٠,٢٣٤٥٦",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "٠,٢٣٤٥٦",
@@ -125,7 +125,7 @@
   {
     "Input": "مقاسه ٤,٨ .",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "٤,٨",
@@ -141,7 +141,7 @@
   },
   {
     "Input": "يوجد ستة عشر تفاحاً.",
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "ستة عشر",
@@ -175,7 +175,7 @@
   {
     "Input": "مائة وستة عشر صفحة",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java, xython",
     "Results": [
       {
         "Text": "مائة وستة عشر",
@@ -192,7 +192,7 @@
   {
     "Input": "مائة وستة صفحات.",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java, xython",
     "Results": [
       {
         "Text": "مائة وستة",
@@ -378,7 +378,7 @@
   {
     "Input": "النتيجة الصحيحة ٩,٢٣٢١٣١٢ ",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "٩,٢٣٢١٣١٢",
@@ -412,7 +412,7 @@
   {
     "Input": "-١",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "-١",
@@ -429,7 +429,7 @@
   {
     "Input": "-١ ٤/٥",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "-١ ٤/٥",
@@ -445,7 +445,7 @@
   },
   {
     "Input": "لديها ثلاثة اقلام",
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "ثلاثة",
@@ -462,7 +462,7 @@
   {
     "Input": "رقم الهاتف ١٢٣٤٥٦٧٨٩١٠١٢٣١",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "١٢٣٤٥٦٧٨٩١٠١٢٣١",
@@ -479,7 +479,7 @@
   {
     "Input": "-١٢٣٤٥٦٧٨٩١٠١٢٣١",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "-١٢٣٤٥٦٧٨٩١٠١٢٣١",
@@ -496,7 +496,7 @@
   {
     "Input": " -١٢٣٤٥٦٧٨٩١٠١٢٣١",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "-١٢٣٤٥٦٧٨٩١٠١٢٣١",
@@ -513,7 +513,7 @@
   {
     "Input": "١",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "١",
@@ -530,7 +530,7 @@
   {
     "Input": "عدد سكان ١ ترليون",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "١ ترليون",
@@ -546,7 +546,7 @@
   },
   {
     "Input": "في الحديقة ثلاثة اشجار",
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "ثلاثة",
@@ -580,7 +580,7 @@
   {
     "Input": "عدد سكان المنطقة واحد وعشرون تريليون",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java, xython",
     "Results": [
       {
         "Text": "واحد وعشرون تريليون",
@@ -597,7 +597,7 @@
   {
     "Input": "عدد سكان المنطقة واحد وعشرون تريليون وثلاث مائة",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java, xython",
     "Results": [
       {
         "Text": "واحد وعشرون تريليون وثلاث مائة",
@@ -631,7 +631,7 @@
   {
     "Input": "تحتوي السلة على اثنين وخمسون فاكهة",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "اثنين وخمسون",
@@ -648,7 +648,7 @@
   {
     "Input": "يوجد في الغابة  ثلاث مائة وواحد وثلاثون  أشجار",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java, xython",
     "Results": [
       {
         "Text": "ثلاث مائة وواحد وثلاثون",
@@ -750,7 +750,7 @@
   {
     "Input": "٣/٤ الكأس",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java, xython",
     "Results": [
       {
         "Text": "٣/٤",
@@ -1425,12 +1425,12 @@
   },
   {
     "Input": "حجزت رحلتي في درجة الأولى",
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java, xython",
     "Results": []
   },
   {
     "Input": "درجة الحرارة سالب واحد",
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "سالب واحد",
@@ -1560,7 +1560,7 @@
   },
   {
     "Input": "صفر هو٠",
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "صفر",
@@ -1587,7 +1587,7 @@
   {
     "Input": "هل يوجد وقت في يوم ٥/١٧/٢٠١٨؟",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "٥",
@@ -1645,22 +1645,22 @@
   },
   {
     "Input": "الذي ذكرتها كان باطلا.",
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java, xython",
     "Results": []
   },
   {
     "Input": "الدي ذكرتها كانت غير صحيحة.",
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java, xython",
     "Results": []
   },
   {
     "Input": "أي واحد تفضل؟",
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java, xython",
     "Results": []
   },
   {
     "Input": "هذاك جيد حقا.",
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java, xython",
     "Results": []
   },
   {
@@ -1693,7 +1693,7 @@
   {
     "Input": "ستة وعشرون شخص توفي في حادث في تيكمان.",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "ستة وعشرون",
@@ -1726,7 +1726,7 @@
   {
     "Input": "أريد أن اربح ١٠٠٠٠ دولار في ٣ سنوات.",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "١٠٠٠٠",
@@ -1753,7 +1753,7 @@
   {
     "Input": "أريد أن ٢٠٠٠ دولار خلال ٣ سنوات.",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "٢٠٠٠",
@@ -1797,7 +1797,7 @@
   {
     "Input": "$٢٠",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "٢٠",
@@ -1813,7 +1813,7 @@
   },
   {
     "Input": "الإجابة سالب واحد.",
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "سالب واحد",
@@ -1830,7 +1830,7 @@
   {
     "Input": "-٤/٥",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "-٤/٥",
@@ -1931,7 +1931,7 @@
   {
     "Input": "درجة الحرارة سالب ٥",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "سالب ٥",
@@ -1948,7 +1948,7 @@
   {
     "Input": "١ ٢٣٤ ٥٦٧",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "١ ٢٣٤ ٥٦٧",
@@ -1982,7 +1982,7 @@
   {
     "Input": "الأرقام هي ١ ، ٢٣٤ ، ٥٦٧",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "١",
@@ -2154,7 +2154,7 @@
   {
     "Input": "يمكنني أن أعطيك ٣ مئة و ٢١ يوان",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "٣ مئة و ٢١",
@@ -2340,7 +2340,7 @@
   {
     "Input": "192.",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,xython,java",
     "NotSupported": "dotnet",
     "Results": [
       {
@@ -2418,7 +2418,7 @@
   {
     "Input": "السائل 180 مل",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,xython,java",
     "NotSupported": "dotnet",
     "Results": [
       {
@@ -2435,7 +2435,7 @@
   {
     "Input": " طريق 29 كم ",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,xython,java",
     "NotSupported": "dotnet",
     "Results": [
       {
@@ -2452,7 +2452,7 @@
   {
     "Input": " 4 مايو ",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,xython,java",
     "NotSupported": "dotnet",
     "Results": [
       {
@@ -2492,7 +2492,7 @@
   {
     "Input": "واحد",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,xython,java",
     "NotSupported": "dotnet",
     "Results": [
       {
@@ -2509,7 +2509,7 @@
   {
     "Input": "مفرد",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,xython,java",
     "Results": []
   },
   {
@@ -2530,13 +2530,13 @@
     ]
   },
   {
-    "Input": "4.800",
+    "Input": "4,800",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "4.800",
+        "Text": "4,800",
         "TypeName": "number",
         "Resolution": {
           "value": "4.8"
@@ -2617,7 +2617,7 @@
   {
     "Input": "ستة عشر",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "NotSupported": "dotnet",
     "Results": [
       {
@@ -2651,7 +2651,7 @@
   {
     "Input": "مائة و ستون",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "NotSupported": "dotnet",
     "Results": [
       {
@@ -2668,7 +2668,7 @@
   {
     "Input": "مائة و واحد و ستون",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,xython,java",
     "NotSupported": "dotnet",
     "Results": [
       {
@@ -2736,7 +2736,7 @@
   {
     "Input": " 3 دستات",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "NotSupported": "dotnet",
     "Results": [
       {
@@ -2770,7 +2770,7 @@
   {
     "Input": "ثلاثة دستات",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "NotSupported": "dotnet",
     "Results": [
       {
@@ -2785,13 +2785,13 @@
     ]
   },
   {
-    "Input": "1,234,567",
+    "Input": "1.234.567",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "1,234,567",
+        "Text": "1.234.567",
         "TypeName": "number",
         "Resolution": {
           "value": "1234567"
@@ -2804,7 +2804,7 @@
   {
     "Input": "1, 234, 567",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "NotSupported": "dotnet",
     "Results": [
       {
@@ -2837,13 +2837,13 @@
     ]
   },
   {
-    "Input": "9.2321312",
+    "Input": "9,2321312",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "9.2321312",
+        "Text": "9,2321312",
         "TypeName": "number",
         "Resolution": {
           "value": "9.2321312"
@@ -2854,13 +2854,13 @@
     ]
   },
   {
-    "Input": " -9.2321312",
+    "Input": " -9,2321312",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,xython,java",
     "NotSupported": "dotnet",
     "Results": [
       {
-        "Text": "-9.2321312",
+        "Text": "-9,2321312",
         "TypeName": "number",
         "Resolution": {
           "value": "-9.2321312"
@@ -2873,7 +2873,7 @@
   {
     "Input": " -1",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "NotSupported": "dotnet",
     "Results": [
       {
@@ -2890,7 +2890,7 @@
   {
     "Input": "-4/5",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "NotSupported": "dotnet",
     "Results": [
       {
@@ -2907,7 +2907,7 @@
   {
     "Input": "- 1 4/5",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "NotSupported": "dotnet",
     "Results": [
       {
@@ -2924,7 +2924,7 @@
   {
     "Input": "ثلاثة",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "NotSupported": "dotnet",
     "Results": [
       {
@@ -2941,7 +2941,7 @@
   {
     "Input": " 123456789101231",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "NotSupported": "dotnet",
     "Results": [
       {
@@ -2958,7 +2958,7 @@
   {
     "Input": "-123456789101231",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "NotSupported": "dotnet",
     "Results": [
       {
@@ -2975,7 +2975,7 @@
   {
     "Input": "1",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "NotSupported": "dotnet",
     "Results": [
       {
@@ -2992,7 +2992,7 @@
   {
     "Input": " ثلاثة ",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "NotSupported": "dotnet",
     "Results": [
       {
@@ -3009,7 +3009,7 @@
   {
     "Input": "تريليون",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "NotSupported": "dotnet",
     "Results": [
       {
@@ -3060,7 +3060,7 @@
   {
     "Input": "اثنان و خمسون",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "NotSupported": "dotnet",
     "Results": [
       {
@@ -3077,7 +3077,7 @@
   {
     "Input": "52",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "NotSupported": "dotnet",
     "Results": [
       {
@@ -3162,7 +3162,7 @@
   {
     "Input": " 200 نقطة",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "NotSupported": "dotnet",
     "Results": [
       {
@@ -3213,7 +3213,7 @@
   {
     "Input": " 322 مائة ",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "NotSupported": "dotnet",
     "Results": [
       {
@@ -3230,7 +3230,7 @@
   {
     "Input": "سبعون",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "NotSupported": "dotnet",
     "Results": [
       {
@@ -3247,7 +3247,7 @@
   {
     "Input": "2 1/4",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "NotSupported": "dotnet",
     "Results": [
       {
@@ -3264,7 +3264,7 @@
   {
     "Input": "3/4",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,xython,java",
     "NotSupported": "dotnet",
     "Results": [
       {
@@ -4165,7 +4165,7 @@
   {
     "Input": "الجواب هو ناقص واحد",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "NotSupported": "dotnet",
     "Results": [
       {
@@ -4233,7 +4233,7 @@
   {
     "Input": "الجواب هو سالب 5",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "NotSupported": "dotnet",
     "Results": [
       {
@@ -4318,7 +4318,7 @@
   {
     "Input": "1 234 567",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "NotSupported": "dotnet",
     "Results": [
       {
@@ -4335,7 +4335,7 @@
   {
     "Input": "40 000 هو نفس 40 000",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "NotSupported": "dotnet",
     "Results": [
       {
@@ -4361,7 +4361,7 @@
   {
     "Input": "وفي الوقت الراهن، يبلغ عدد سكان الصين 1 414 021 100 نسمة.",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "NotSupported": "dotnet",
     "Results": [
       {
@@ -4378,7 +4378,7 @@
   {
     "Input": "سيتم التعرف على 423 0000 كرقمين.",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "NotSupported": "dotnet",
     "Results": [
       {
@@ -4421,7 +4421,7 @@
   {
     "Input": "صفر هو 0",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "NotSupported": "dotnet",
     "Results": [
       {
@@ -4447,7 +4447,7 @@
   {
     "Input": "هل من وقت للاجتماع في 5/17/2018؟",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "NotSupported": "dotnet",
     "Results": [
       {
@@ -4482,7 +4482,7 @@
   {
     "Input": "رقم هاتفي هو +1-222-2222/2222",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "NotSupported": "dotnet",
     "Results": [
       {
@@ -4526,7 +4526,7 @@
   {
     "Input": "يمكنني أن أعطيك 10 مليون",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "NotSupported": "dotnet",
     "Results": [
       {
@@ -4543,13 +4543,13 @@
   {
     "Input": "1M ليس رقما.",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,xython,java",
     "Results": []
   },
   {
     "Input": "يمكنني أن أعطيك 310 يوان",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "NotSupported": "dotnet",
     "Results": [
       {
@@ -4635,7 +4635,7 @@
   {
     "Input": "300 و 212 رقمان صالحان",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "NotSupported": "dotnet",
     "Results": [
       {
@@ -4661,7 +4661,7 @@
   {
     "Input": "300 و سالب واحد رقمان صالحان.",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "NotSupported": "dotnet",
     "Results": [
       {
@@ -4704,25 +4704,25 @@
   {
     "Input": "الشخص الذي ذكرته غير صالح",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,xython,java",
     "Results": []
   },
   {
     "Input": "هذا غير صحيح",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,xython,java",
     "Results": []
   },
   {
     "Input": "أي شخص تفضل؟",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,xython,java",
     "Results": []
   },
   {
     "Input": "هذا جيد حقاً",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,xython,java",
     "Results": []
   },
   {
@@ -4845,7 +4845,7 @@
   {
     "Input": "مائة ألف",
     "Comment": "PendingValidation",
-    "NotSupportedByDesign": "javascript,python,java",
+    "NotSupportedByDesign": "javascript,java",
     "NotSupported": "dotnet",
     "Results": [
       {
@@ -4862,7 +4862,7 @@
   {
     "Input": "25799‪,‪52",
     "Comment": "The input contains special character \u202A (Left To Right Embedding) around the decimal separator",
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "25799‪,‪52",
@@ -4879,7 +4879,7 @@
   {
     "Input": "26،013‪,94",
     "Comment": "The input contains special character \u202A (Left To Right Embedding) next to the decimal separator",
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "26،013‪,94",
@@ -4895,7 +4895,7 @@
   },
   {
     "Input": "12،220,13",
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "12،220,13",

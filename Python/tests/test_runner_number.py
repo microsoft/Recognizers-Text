@@ -1,5 +1,6 @@
 #  Copyright (c) Microsoft Corporation. All rights reserved.
 #  Licensed under the MIT License.
+from unittest import skip
 
 import pytest
 
@@ -45,28 +46,10 @@ def assert_verbose(actual, expected, spec_info):
         "Actual: {} | Expected: {} | Context: {}".format(actual, expected, spec_info)
 
 
-def test_test():
-    two_thousand = 0
-    one = 0
+@skip("Used for troubleshooting individual phrases")
+def test_individual_utterance():
+    res = recognize_number("نصف مليون", "ar-ae")
 
-    for culture in SUPPORTED_CULTURES:
-        recognize_number("123", culture)
-
-    for x in range(0, 3000):
-        res = recognize_number("twee\u00adduizend", "nl-nl")
-        temp = res[0].resolution.get('value')
-        if temp == '2000':
-            two_thousand += 1
-        elif temp == '1000' or temp == '2':
-            one += 1
-
-    print("Number of times it returned 2000 - " + str(two_thousand))
-    print("Number of times it returned 1000 - " + str(one))
-
-
-def test_test():
-    res = recognize_number("4 thousand 3 hundred and 0 are two valid numbers", "en-us")
-    # res2 = recognize_number("3 hundred and negative one are two valid numbers.", "en-us")
-
-    print(res)
-    # print(res2)
+    print(f"\nResult: {res}")
+    assert len(res) > 0
+    assert res[0].resolution.get("value") is not None

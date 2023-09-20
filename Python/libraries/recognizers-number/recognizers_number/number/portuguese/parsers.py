@@ -8,11 +8,11 @@ from recognizers_text.utilities import RegExpUtility
 from recognizers_text.culture import Culture
 from recognizers_text.parser import ParseResult
 from recognizers_number.culture import CultureInfo
-from recognizers_number.number.parsers import NumberParserConfiguration
+from recognizers_number.number.parsers import BaseNumberParserConfiguration
 from recognizers_number.resources.portuguese_numeric import PortugueseNumeric
 
 
-class PortugueseNumberParserConfiguration(NumberParserConfiguration):
+class PortugueseNumberParserConfiguration(BaseNumberParserConfiguration):
     @property
     def cardinal_number_map(self) -> Dict[str, int]:
         return self._cardinal_number_map

@@ -9,15 +9,14 @@ import regex
 
 from recognizers_text.utilities import RegExpUtility
 from recognizers_text.culture import Culture
-from recognizers_text.extractor import ExtractResult
 from recognizers_text.parser import ParseResult
 from recognizers_number.resources.chinese_numeric import ChineseNumeric
 from recognizers_number.number.cjk_parsers import CJKNumberParser
-from recognizers_number.number.parsers import BaseNumberParser, NumberParserConfiguration
+from recognizers_number.number.parsers import BaseNumberParser, BaseNumberParserConfiguration
 from recognizers_number.culture import CultureInfo
 
 
-class ChineseNumberParserConfiguration(NumberParserConfiguration):
+class ChineseNumberParserConfiguration(BaseNumberParserConfiguration):
     @property
     def cardinal_number_map(self) -> Dict[str, int]:
         return dict()

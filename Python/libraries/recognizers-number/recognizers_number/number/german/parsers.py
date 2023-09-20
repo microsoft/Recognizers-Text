@@ -7,11 +7,11 @@ from recognizers_text.utilities import RegExpUtility
 from recognizers_text.culture import Culture
 from recognizers_text.parser import ParseResult
 from recognizers_number.culture import CultureInfo
-from recognizers_number.number.parsers import NumberParserConfiguration
+from recognizers_number.number.parsers import BaseNumberParserConfiguration
 from recognizers_number.resources.german_numeric import GermanNumeric
 
 
-class GermanNumberParserConfiguration(NumberParserConfiguration):
+class GermanNumberParserConfiguration(BaseNumberParserConfiguration):
     @property
     def cardinal_number_map(self) -> Dict[str, int]:
         return self._cardinal_number_map
@@ -128,28 +128,7 @@ class GermanNumberParserConfiguration(NumberParserConfiguration):
             GermanNumeric.FractionHalfRegex)
 
     def normalize_token_set(self, tokens: List[str], context: ParseResult) -> List[str]:
-        frac_words: List[str] = list()
-        tokens_len = len(tokens)
-        i = 0
-        while i < tokens_len:
-            if '-' in tokens[i]:
-                splited_tokens = tokens[i].split('-')
-                if len(splited_tokens) == 2 and splited_tokens[1] in self.ordinal_number_map:
-                    frac_words.append(splited_tokens[0])
-                    frac_words.append(splited_tokens[1])
-                else:
-                    frac_words.append(tokens[i])
-            elif i < tokens_len - 2 and tokens[i + 1] == '-':
-                if tokens[i + 2] in self.ordinal_number_map:
-                    frac_words.append(tokens[i])
-                    frac_words.append(tokens[i + 2])
-                else:
-                    frac_words.append(
-                        tokens[i] + tokens[i + 1] + tokens[i + 2])
-                i += 2
-            else:
-                frac_words.append(tokens[i])
-            i += 1
+        frac_words: List[str] = super().normalize_token_set(tokens, context)
 
         # The following piece of code is needed to compute the fraction pattern number+'einhalb'
         # e.g. 'zweieinhalb' ('two and a half').
@@ -175,20 +154,3 @@ class GermanNumberParserConfiguration(NumberParserConfiguration):
                     frac_words.append(word[len(frac_words[idx]):len("viertel")+len(frac_words[idx])])
 
         return frac_words
-
-    def resolve_composite_number(self, number_str: str) -> int:
-        if '-' in number_str:
-            numbers = number_str.split('-')
-            ret = 0
-            for num in numbers:
-                if num in self.ordinal_number_map:
-                    ret += self.ordinal_number_map[num]
-                elif num in self.cardinal_number_map:
-                    ret += self.cardinal_number_map[num]
-            return ret
-        elif number_str in self.ordinal_number_map:
-            return self.ordinal_number_map[number_str]
-        elif number_str in self.cardinal_number_map:
-            return self.cardinal_number_map[number_str]
-
-        return 0
