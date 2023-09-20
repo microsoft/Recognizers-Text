@@ -8,11 +8,11 @@ from recognizers_text.utilities import RegExpUtility
 from recognizers_text.culture import Culture
 from recognizers_text.parser import ParseResult
 from recognizers_number.culture import CultureInfo
-from recognizers_number.number.parsers import NumberParserConfiguration
+from recognizers_number.number.parsers import BaseNumberParserConfiguration
 from recognizers_number.resources.spanish_numeric import SpanishNumeric
 
 
-class SpanishNumberParserConfiguration(NumberParserConfiguration):
+class SpanishNumberParserConfiguration(BaseNumberParserConfiguration):
     @property
     def cardinal_number_map(self) -> Dict[str, int]:
         return self._cardinal_number_map
@@ -116,7 +116,7 @@ class SpanishNumberParserConfiguration(NumberParserConfiguration):
             SpanishNumeric.OrdinalNumberMap)
         for prefix_key in SpanishNumeric.PrefixCardinalMap:
             for suffix_key in SpanishNumeric.SuffixOrdinalMap:
-                if not prefix_key+suffix_key in ordinal_number_map:
+                if prefix_key+suffix_key not in ordinal_number_map:
                     prefix_value = SpanishNumeric.PrefixCardinalMap[prefix_key]
                     suffix_value = SpanishNumeric.SuffixOrdinalMap[suffix_key]
                     ordinal_number_map[prefix_key +
