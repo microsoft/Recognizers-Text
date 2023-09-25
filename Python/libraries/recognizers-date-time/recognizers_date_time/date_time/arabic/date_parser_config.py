@@ -280,3 +280,9 @@ class ArabicDateParserConfiguration(DateParserConfiguration):
 
     def normalise(self, text: str) -> str:
         return text
+
+    def get_swift_day(self, source: str) -> int:
+        return 0
+
+    def get_swift_month(self, source: str) -> int:
+        return 0

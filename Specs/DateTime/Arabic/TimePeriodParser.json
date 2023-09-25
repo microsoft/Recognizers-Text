@@ -32,7 +32,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "من 5 إلى 6 في المساء",
@@ -167,7 +167,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "بين 5 مساءً و 6 بعد الظهر",
@@ -275,7 +275,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "من الساعة 4:00 إلى الساعة 7",
@@ -302,7 +302,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "4 مساءً - 5 مساءً",
@@ -329,7 +329,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "4 - 5 مساءً",
@@ -437,7 +437,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "في الصباح",
@@ -464,7 +464,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "بعد الظهر",
@@ -491,7 +491,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "في الليل",
@@ -518,7 +518,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "في المساء",
@@ -545,7 +545,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "في الأمسيات",
@@ -572,7 +572,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "في الصباح الباكر",
@@ -599,7 +599,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "في أواخر الصباح",
@@ -626,7 +626,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "في الصباح الباكر",
@@ -653,7 +653,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "في وقت متأخر من الصباح",
@@ -680,7 +680,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "في وقت مبكر بعد الظهر",
@@ -707,7 +707,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "في وقت متأخر بعد الظهر",
@@ -734,7 +734,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "في وقت مبكر من المساء",
@@ -761,7 +761,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "في وقت متأخر من المساء",
@@ -788,7 +788,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "في وقت مبكر من الليل",
@@ -815,7 +815,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "في وقت متأخر من الليل",
@@ -842,7 +842,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "في أول الليل",
@@ -869,7 +869,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "عند وقت متأخر من الليل",
@@ -896,7 +896,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الساعة 1 بعد الظهر إلى 4",
@@ -922,7 +922,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "من 1:30 بعد الظهر إلى 4",
@@ -949,7 +949,7 @@
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الصباح",
@@ -976,7 +976,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "من 1:30 مساءً إلى 3:30",
@@ -1003,7 +1003,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "من 1:30 مساءً إلى 3:30 مساء",
@@ -1056,7 +1056,7 @@
     "Context": {
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "من 3 إلى 3:30",
@@ -1083,7 +1083,7 @@
       "ReferenceDateTime": "2017-12-01T13:37:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "من 1:30 إلى 3",

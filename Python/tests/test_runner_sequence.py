@@ -16,10 +16,10 @@ MODEL_FUNCTION = {
 }
 
 
-@pytest.mark.parametrize('culture, model, options, context, source, expected_results',
+@pytest.mark.parametrize('culture, model, options, context, source, expected_results, ignore_resolution',
                          get_specs(recognizer='Sequence', entity='Model'))
 def test_sequence_recognizer(
-        culture, model, options, context, source, expected_results):
+        culture, model, options, context, source, expected_results, ignore_resolution):
     results = get_results(culture, model, source)
 
     assert len(results) == len(expected_results)

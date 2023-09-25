@@ -23,6 +23,16 @@ from recognizers_date_time.date_time.arabic.dateperiod_parser_config import Arab
 from recognizers_date_time.date_time.arabic.timeperiod_parser_config import ArabicTimePeriodParserConfiguration
 from recognizers_date_time.date_time.arabic.parsers import ArabicTimeParser
 
+from recognizers_date_time.date_time.base_duration import BaseDurationExtractor, BaseDurationParser
+from recognizers_date_time.date_time.base_datetime import BaseDateTimeExtractor, BaseDateTimeParser
+from recognizers_date_time.date_time.base_datetimeperiod import BaseDateTimePeriodExtractor, BaseDateTimePeriodParser
+from recognizers_date_time.date_time.arabic.datetime_extractor_config import ArabicDateTimeExtractorConfiguration
+from recognizers_date_time.date_time.arabic.datetime_parser_config import ArabicDateTimeParserConfiguration
+from recognizers_date_time.date_time.arabic.datetimeperiod_extractor_config import ArabicDateTimePeriodExtractorConfiguration
+from recognizers_date_time.date_time.arabic.datetimeperiod_parser_config import ArabicDateTimePeriodParserConfiguration
+from recognizers_date_time.date_time.arabic.duration_extractor_config import ArabicDurationExtractorConfiguration
+from recognizers_date_time.date_time.arabic.duration_parser_config import ArabicDurationParserConfiguration
+
 
 class ArabicCommonDateTimeParserConfiguration(BaseDateParserConfiguration):
     @property
@@ -181,21 +191,18 @@ class ArabicCommonDateTimeParserConfiguration(BaseDateParserConfiguration):
         self._number_parser = BaseNumberParser(ArabicNumberParserConfiguration())
 
         #  Do not change order. The order of initialization can lead to side-effects
-        self._date_extractor = BaseDateExtractor( ArabicDateExtractorConfiguration())
+        self._date_extractor = BaseDateExtractor(ArabicDateExtractorConfiguration())
         self._time_extractor = BaseTimeExtractor(ArabicTimeExtractorConfiguration())
+        self._duration_extractor = BaseDurationExtractor(ArabicDurationExtractorConfiguration())
         self._date_period_extractor = BaseDatePeriodExtractor(ArabicDatePeriodExtractorConfiguration())
         self._time_period_extractor = BaseTimePeriodExtractor(ArabicTimePeriodExtractorConfiguration())
+        self._date_time_extractor = BaseDateTimeExtractor(ArabicDateTimeExtractorConfiguration())
+        self._date_time_period_extractor = BaseDateTimePeriodExtractor(ArabicDateTimePeriodExtractorConfiguration())
 
+        self._duration_parser = BaseDurationParser(ArabicDurationParserConfiguration(self))
         self._date_parser = BaseDateParser(ArabicDateParserConfiguration(self))
         self._time_parser = ArabicTimeParser(ArabicTimeParserConfiguration(self))
         self._date_period_parser = BaseDatePeriodParser(ArabicDatePeriodParserConfiguration(self))
         self._time_period_parser = BaseTimePeriodParser(ArabicTimePeriodParserConfiguration(self))
-
-        # Set to None until supported
-        self._duration_extractor = None
-        self._date_time_extractor = None
-        self._date_time_extractor = None
-        self._date_time_parser = None
-        self._date_time_period_parser = None
-        self._date_time_period_extractor = None
-        self._duration_parser = None
+        self._date_time_parser = BaseDateTimeParser(ArabicDateTimeParserConfiguration(self))
+        self._date_time_period_parser = BaseDateTimePeriodParser(ArabicDateTimePeriodParserConfiguration(self))

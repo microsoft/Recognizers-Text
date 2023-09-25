@@ -1,7 +1,7 @@
 [
   {
     "Input": "سأعود في 15",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "15",
@@ -13,7 +13,7 @@
   },
   {
     "Input": "سأعود في 22 أبريل",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "22 أبريل",
@@ -25,7 +25,7 @@
   },
   {
     "Input": "سأعود في 1 يناير",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "1 يناير",
@@ -37,7 +37,7 @@
   },
   {
     "Input": "سأعود في يناير 1",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "يناير 1",
@@ -49,7 +49,7 @@
   },
   {
     "Input": "سأعود في 2 أكتوبر",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "2 أكتوبر",
@@ -61,7 +61,7 @@
   },
   {
     "Input": "سأعود في 12 يناير 2016",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "12 يناير 2016",
@@ -73,7 +73,7 @@
   },
   {
     "Input": "سأعود في 12 يناير من عام 2016",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "12 يناير من عام 2016",
@@ -85,7 +85,7 @@
   },
   {
     "Input": "سأعود يوم الاثنين 12 يناير 2016",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الاثنين 12 يناير 2016",
@@ -97,7 +97,7 @@
   },
   {
     "Input": "سأعود 2016/02/22",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "2016/02/22",
@@ -109,7 +109,7 @@
   },
   {
     "Input": "سأعود 2016/04/21",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "2016/04/21",
@@ -121,7 +121,7 @@
   },
   {
     "Input": "سوف أعود 16/04/21",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "16/04/21",
@@ -133,7 +133,7 @@
   },
   {
     "Input": "سأعود 9-18-15",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "9-18-15",
@@ -145,7 +145,7 @@
   },
   {
     "Input": "سأعود في 4.22",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "4.22",
@@ -157,7 +157,7 @@
   },
   {
     "Input": "سأعود في 22-4",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "22-4",
@@ -169,7 +169,7 @@
   },
   {
     "Input": "سأعود عند 4.22",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "4.22",
@@ -181,7 +181,7 @@
   },
   {
     "Input": "سأعود عند 22-4",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "22-4",
@@ -193,7 +193,7 @@
   },
   {
     "Input": "سأعود في 4/22",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "4/22",
@@ -205,7 +205,7 @@
   },
   {
     "Input": "سأعود في 04/22",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "04/22",
@@ -217,7 +217,7 @@
   },
   {
     "Input": "سوف أعود 4/22",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "4/22",
@@ -229,7 +229,7 @@
   },
   {
     "Input": "سأعود 04/22",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "04/22",
@@ -241,7 +241,7 @@
   },
   {
     "Input": "سأعود 2015/08/12",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "2015/08/12",
@@ -253,7 +253,7 @@
   },
   {
     "Input": "سأعود 11/12, 2016",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "11/12, 2016",
@@ -265,7 +265,7 @@
   },
   {
     "Input": "سوف أعود 11/12, 16",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "11/12, 16",
@@ -277,7 +277,7 @@
   },
   {
     "Input": "سأعود في أول يناير",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "أول يناير",
@@ -289,7 +289,7 @@
   },
   {
     "Input": "سأعود في 1 كانون الثاني",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "1 كانون الثاني",
@@ -301,7 +301,7 @@
   },
   {
     "Input": "سأعود في 28-نوفمبر",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "28-نوفمبر",
@@ -313,7 +313,7 @@
   },
   {
     "Input": "سأعود الأربعاء ، 22 يناير",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الأربعاء ، 22 يناير",
@@ -325,7 +325,7 @@
   },
   {
     "Input": "سأعود أول يوم جمعة من يوليو",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "أول يوم جمعة من يوليو",
@@ -337,7 +337,7 @@
   },
   {
     "Input": "سأعود أول يوم جمعة في هذا الشهر",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "أول يوم جمعة في هذا الشهر",
@@ -349,7 +349,7 @@
   },
   {
     "Input": "سأعود بعد أسبوعين من الآن",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "بعد أسبوعين من الآن",
@@ -361,7 +361,7 @@
   },
   {
     "Input": "سأعود الأسبوع القادم يوم الجمعة",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الأسبوع القادم يوم الجمعة",
@@ -373,7 +373,7 @@
   },
   {
     "Input": "سأعود يوم الجمعة الأسبوع المقبل",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الجمعة الأسبوع المقبل",
@@ -385,7 +385,7 @@
   },
   {
     "Input": "الاثنين الماضي",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الاثنين الماضي",
@@ -397,7 +397,7 @@
   },
   {
     "Input": "سأعود يوم الثلاثاء.",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الثلاثاء",
@@ -409,7 +409,7 @@
   },
   {
     "Input": "سأعود يوم الثلاثاء. أخبار جيدة.",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الثلاثاء",
@@ -421,7 +421,7 @@
   },
   {
     "Input": "سأعود يوم الثلاثاء",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الثلاثاء",
@@ -433,7 +433,7 @@
   },
   {
     "Input": "سأعود يوم الجمعة",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الجمعة",
@@ -445,7 +445,7 @@
   },
   {
     "Input": "سأعود الجمعة",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الجمعة",
@@ -457,7 +457,7 @@
   },
   {
     "Input": "سأعود هذا اليوم",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "اليوم",
@@ -469,7 +469,7 @@
   },
   {
     "Input": "سأعود غداً",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "غداً",
@@ -481,7 +481,7 @@
   },
   {
     "Input": "سأعود بالأمس",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الأمس",
@@ -493,7 +493,7 @@
   },
   {
     "Input": "سأعود قبل يوم أمس",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "قبل يوم أمس",
@@ -505,7 +505,7 @@
   },
   {
     "Input": "سأعود بعد غد",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "بعد غد",
@@ -517,7 +517,7 @@
   },
   {
     "Input": "سأعود في اليوم الآتي",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "اليوم الآتي",
@@ -529,7 +529,7 @@
   },
   {
     "Input": "سأعود في اليوم التالي",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "اليوم التالي",
@@ -541,7 +541,7 @@
   },
   {
     "Input": "سأعود هذا يوم الجمعة",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "هذا يوم الجمعة",
@@ -553,7 +553,7 @@
   },
   {
     "Input": "سأعود يوم الأحد القادم",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الأحد القادم",
@@ -565,7 +565,7 @@
   },
   {
     "Input": "سأعود يوم الأحد الماضي",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الأحد الماضي",
@@ -577,7 +577,7 @@
   },
   {
     "Input": "سأعود في آخر يوم",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "آخر يوم",
@@ -589,7 +589,7 @@
   },
   {
     "Input": "سأعود في اليوم  الأخير",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "اليوم  الأخير",
@@ -601,7 +601,7 @@
   },
   {
     "Input": "سأعود اليوم",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "اليوم",
@@ -613,7 +613,7 @@
   },
   {
     "Input": "سأعود هذا الأسبوع الجمعة",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "هذا الأسبوع الجمعة",
@@ -625,7 +625,7 @@
   },
   {
     "Input": "سأعود الأسبوع القادم الأحد",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الأسبوع القادم الأحد",
@@ -637,7 +637,7 @@
   },
   {
     "Input": "سأعود الأسبوع الماضي الأحد",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الأسبوع الماضي الأحد",
@@ -649,7 +649,7 @@
   },
   {
     "Input": "سأعود 15 يونيو 2016",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "15 يونيو 2016",
@@ -661,7 +661,7 @@
   },
   {
     "Input": "البيسبول على مايو الحادي عشر",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "مايو الحادي عشر",
@@ -673,7 +673,7 @@
   },
   {
     "Input": "سأرجع الرابع من مايو",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الرابع من مايو",
@@ -685,7 +685,7 @@
   },
   {
     "Input": "سأرجع في الرابع من مارس",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الرابع من مارس",
@@ -697,7 +697,7 @@
   },
   {
     "Input": "سأعود يناير الأول",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "يناير الأول",
@@ -709,7 +709,7 @@
   },
   {
     "Input": "سأعود في الحادي والعشرين من مايو",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الحادي والعشرين من مايو",
@@ -721,7 +721,7 @@
   },
   {
     "Input": "سأعود مايو الحادي والعشرين",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "مايو الحادي والعشرين",
@@ -733,7 +733,7 @@
   },
   {
     "Input": "سأعود الثاني من أغسطس",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الثاني من أغسطس",
@@ -745,7 +745,7 @@
   },
   {
     "Input": "سأعود الثاني والعشرين من يونيو",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الثاني والعشرين من يونيو",
@@ -757,7 +757,7 @@
   },
   {
     "Input": "لقد عدت قبل شهرين",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "قبل شهرين",
@@ -769,7 +769,7 @@
   },
   {
     "Input": "سأعود بعد يومين",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "بعد يومين",
@@ -781,7 +781,7 @@
   },
   {
     "Input": "من الذي راسلته عبر البريد الإلكتروني قبل شهر",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "قبل شهر",
@@ -793,7 +793,7 @@
   },
   {
     "Input": "عدت إلى 27",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "إلى 27",
@@ -805,7 +805,7 @@
   },
   {
     "Input": "عدت في  يوم 27",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "يوم 27",
@@ -817,7 +817,7 @@
   },
   {
     "Input": "عدت إلى 27.",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "إلى 27",
@@ -829,7 +829,7 @@
   },
   {
     "Input": "عدت في 27!",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "27",
@@ -841,7 +841,7 @@
   },
   {
     "Input": "عدت في 27.",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "27",
@@ -853,7 +853,7 @@
   },
   {
     "Input": "عدت إلى الحادي والعشرين",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "إلى الحادي والعشرين",
@@ -865,7 +865,7 @@
   },
   {
     "Input": "عدت للثانية والعشرين",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "للثانية والعشرين",
@@ -877,7 +877,7 @@
   },
   {
     "Input": "عدت للثاني",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "للثاني",
@@ -889,7 +889,7 @@
   },
   {
     "Input": "عدت للثاني والعشرين",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "للثاني والعشرين",
@@ -901,7 +901,7 @@
   },
   {
     "Input": "عدت للحادية والثلاثين",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "للحادية والثلاثين",
@@ -913,7 +913,7 @@
   },
   {
     "Input": "عدت يوم 27",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "يوم 27",
@@ -925,7 +925,7 @@
   },
   {
     "Input": "عدت يوم 21",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "يوم 21",
@@ -937,7 +937,7 @@
   },
   {
     "Input": "عدت في 22",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "22",
@@ -949,7 +949,7 @@
   },
   {
     "Input": "عدت في الثاني!",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الثاني",
@@ -961,7 +961,7 @@
   },
   {
     "Input": "عدت في الثاني والعشرين!",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الثاني والعشرين",
@@ -973,22 +973,22 @@
   },
   {
     "Input": "الجائزة الأولى",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": []
   },
   {
     "Input": "سأذهب إلى الطابق الـ27",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": []
   },
   {
     "Input": "فعاليات تذكارية بمناسبة الذكرى الخامسة والعشرين للعلاقات الدبلوماسية بين سنغافورة والصين",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": []
   },
   {
     "Input": "الحصول على تذاكر لتجربة الباب السابع عشر المسكونة",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": []
   },
   {
@@ -996,7 +996,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-01T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "السبت الثاني",
@@ -1011,7 +1011,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-01T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الأربعاء 27",
@@ -1026,7 +1026,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-01T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الخميس في 21",
@@ -1041,7 +1041,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-01T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الجمعة في 22",
@@ -1056,7 +1056,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-01T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "السبت في 23",
@@ -1071,7 +1071,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-01T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الجمعة 15",
@@ -1086,7 +1086,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-01T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الخميس في الحادية والعشرين",
@@ -1101,7 +1101,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-01T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الجمعة في الثانية والعشرين",
@@ -1116,7 +1116,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-01T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الجمعة في الخمسة عشر",
@@ -1131,7 +1131,7 @@
     "Context": {
       "ReferenceDateTime": "2017-09-01T00:00:00"
     },
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الخميس في السابع",
@@ -1143,7 +1143,7 @@
   },
   {
     "Input": "سأعود يوم الأحد الثاني",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الأحد الثاني",
@@ -1155,7 +1155,7 @@
   },
   {
     "Input": "سأعود يوم الأحد الأول",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الأحد الأول",
@@ -1167,7 +1167,7 @@
   },
   {
     "Input": "سأعود الثلاثاء الثالث",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الثلاثاء الثالث",
@@ -1179,7 +1179,7 @@
   },
   {
     "Input": "سأعود يوم الأحد الخامس",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الأحد الخامس",
@@ -1191,7 +1191,7 @@
   },
   {
     "Input": "سأعود يوم الأحد السادس",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الأحد",
@@ -1203,7 +1203,7 @@
   },
   {
     "Input": "سأعود يوم الاثنين العاشر",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الاثنين",
@@ -1215,7 +1215,7 @@
   },
   {
     "Input": "سأعود في 20 من الشهر القادم",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "20 من الشهر القادم",
@@ -1227,7 +1227,7 @@
   },
   {
     "Input": "سأعود في 31  من هذا الشهر",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "31  من هذا الشهر",
@@ -1239,7 +1239,7 @@
   },
   {
     "Input": "قد تحاول كورتانا ترتيب مكالمة سكايب إما يوم الجمعة هذا الأسبوع أو الثلاثاء من الأسبوع المقبل",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الجمعة هذا الأسبوع",
@@ -1257,7 +1257,7 @@
   },
   {
     "Input": "قد تحاول كورتانا ترتيب مكالمة سكايب إما يوم الجمعة من هذا الأسبوع أو هذا الأسبوع يوم السبت",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الجمعة من هذا الأسبوع",
@@ -1275,7 +1275,7 @@
   },
   {
     "Input": " 2016. نوفمبر .16",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "2016. نوفمبر .16",
@@ -1287,7 +1287,7 @@
   },
   {
     "Input": "كان لدينا اجتماع 1 شهر و 21 يوم من الآن",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "1 شهر و 21 يوم من الآن",
@@ -1299,7 +1299,7 @@
   },
   {
     "Input": "غادرت هنا 2 عام و شهر و 21 يوم من الآن",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "2 عام و شهر و 21 يوم من الآن",
@@ -1311,7 +1311,7 @@
   },
   {
     "Input": "سأعيش هنا 2 عام و 21 يوم من الآن",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "2 عام و 21 يوم من الآن",
@@ -1323,7 +1323,7 @@
   },
   {
     "Input": "غادرت هنا 2 سنة 1 شهر 21 يوم من الآن",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "2 سنة 1 شهر 21 يوم من الآن",
@@ -1335,7 +1335,7 @@
   },
   {
     "Input": "غادرت هنا في العشرين من الشهر المقبل",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "العشرين من الشهر المقبل",
@@ -1347,7 +1347,7 @@
   },
   {
     "Input": "غادرت هنا في 5 ديسمبر 1391",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "5 ديسمبر 1391",
@@ -1359,7 +1359,7 @@
   },
   {
     "Input": "الاثنين, يناير الثاني والعشرين, 2018",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "الاثنين, يناير الثاني والعشرين, 2018",
@@ -1371,7 +1371,7 @@
   },
   {
     "Input": "يوم الأحد يناير الحادي والعشرين ألفان وثمانية عشر",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "الأحد يناير الحادي والعشرين ألفان وثمانية عشر",
@@ -1383,7 +1383,7 @@
   },
   {
     "Input": "في سبتمبر الحادي والعشرين من ألف وتسعمائة وثمانية وسبعون",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "سبتمبر الحادي والعشرين من ألف وتسعمائة وثمانية وسبعون",
@@ -1395,7 +1395,7 @@
   },
   {
     "Input": "في سبتمبر 10, ألف وتسعمائة وواحد",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "سبتمبر 10, ألف وتسعمائة وواحد",
@@ -1407,7 +1407,7 @@
   },
   {
     "Input": "في العاشر من سبتمبر ، ألفين",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "العاشر من سبتمبر ، ألفين",
@@ -1419,7 +1419,7 @@
   },
   {
     "Input": "ارتفاع أسعار الذهب في مصر اليوم 6 مايو.. العيار يقفز 4 جنيهات | بوابة أخبار اليوم الإلكترونية",
-    "NotSupportedByDesign": "java, javascript, xpython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "اليوم 6 مايو",

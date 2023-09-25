@@ -4,6 +4,10 @@ from recognizers_text.utilities import RegExpUtility
 from recognizers_date_time.resources.arabic_date_time import ArabicDateTime
 from recognizers_date_time.date_time.base_time import TimeExtractorConfiguration
 from recognizers_date_time.date_time.utilities import DateTimeOptions
+from recognizers_date_time.date_time.base_timezone import BaseTimeZoneExtractor
+from recognizers_date_time.date_time.arabic.timezone_extractor_config import ArabicTimeZoneExtractorConfiguration
+from recognizers_date_time.date_time.base_duration import BaseDurationExtractor
+from recognizers_date_time.date_time.arabic.duration_extractor_config import ArabicDurationExtractorConfiguration
 
 
 class ArabicTimeExtractorConfiguration(TimeExtractorConfiguration):
@@ -117,8 +121,8 @@ class ArabicTimeExtractorConfiguration(TimeExtractorConfiguration):
             ArabicDateTime.TimeBeforeAfterRegex)
 
         self._options = DateTimeOptions.NONE
-        self._time_zone_extractor = None
-        self._duration_extractor = None
+        self._time_zone_extractor = BaseTimeZoneExtractor(ArabicTimeZoneExtractorConfiguration())
+        self._duration_extractor = BaseDurationExtractor(ArabicDurationExtractorConfiguration())
 
         self._desc_regex = RegExpUtility.get_safe_reg_exp(ArabicDateTime.DescRegex)
         self._hour_num_regex = RegExpUtility.get_safe_reg_exp(ArabicDateTime.HourNumRegex)

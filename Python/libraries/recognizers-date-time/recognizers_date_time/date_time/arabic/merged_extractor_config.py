@@ -17,13 +17,13 @@ from recognizers_date_time.date_time.base_set import BaseSetExtractor
 from recognizers_date_time.date_time.base_holiday import BaseHolidayExtractor
 from recognizers_date_time.date_time.arabic.date_extractor_config import ArabicDateExtractorConfiguration
 from recognizers_date_time.date_time.arabic.time_extractor_config import ArabicTimeExtractorConfiguration
-# from recognizers_date_time.date_time.arabic.duration_extractor_config import ArabicDurationExtractorConfiguration
+from recognizers_date_time.date_time.arabic.duration_extractor_config import ArabicDurationExtractorConfiguration
 from recognizers_date_time.date_time.arabic.dateperiod_extractor_config import ArabicDatePeriodExtractorConfiguration
 from recognizers_date_time.date_time.arabic.timeperiod_extractor_config import ArabicTimePeriodExtractorConfiguration
-# from recognizers_date_time.date_time.arabic.datetime_extractor_config import ArabicDateTimeExtractorConfiguration
-# from recognizers_date_time.date_time.arabic.datetimeperiod_extractor_config import ArabicDateTimePeriodExtractorConfiguration
-# from recognizers_date_time.date_time.arabic.set_extractor_config import ArabicSetExtractorConfiguration
-# from recognizers_date_time.date_time.arabic.holiday_extractor_config import ArabicHolidayExtractorConfiguration
+from recognizers_date_time.date_time.arabic.datetime_extractor_config import ArabicDateTimeExtractorConfiguration
+from recognizers_date_time.date_time.arabic.datetimeperiod_extractor_config import ArabicDateTimePeriodExtractorConfiguration
+from recognizers_date_time.date_time.arabic.set_extractor_config import ArabicSetExtractorConfiguration
+from recognizers_date_time.date_time.arabic.holiday_extractor_config import ArabicHolidayExtractorConfiguration
 from recognizers_date_time.resources.base_date_time import BaseDateTime
 
 
@@ -180,15 +180,20 @@ class ArabicMergedExtractorConfiguration(MergedExtractorConfiguration):
             ArabicDateExtractorConfiguration())
         self._time_extractor = BaseTimeExtractor(
             ArabicTimeExtractorConfiguration())
-        self._date_time_extractor = None
+        self._date_time_extractor = BaseDateTimeExtractor(
+            ArabicDateTimeExtractorConfiguration())
         self._date_period_extractor = BaseDatePeriodExtractor(
             ArabicDatePeriodExtractorConfiguration())
         self._time_period_extractor = BaseTimePeriodExtractor(
             ArabicTimePeriodExtractorConfiguration())
-        self._date_time_period_extractor = None
-        self._duration_extractor = None
-        self._set_extractor = None
-        self._holiday_extractor = None
+        self._date_time_period_extractor = BaseDateTimePeriodExtractor(
+            ArabicDateTimePeriodExtractorConfiguration())
+        self._duration_extractor = BaseDurationExtractor(
+            ArabicDurationExtractorConfiguration())
+        self._set_extractor = BaseSetExtractor(
+            ArabicSetExtractorConfiguration())
+        self._holiday_extractor = BaseHolidayExtractor(
+            ArabicHolidayExtractorConfiguration())
         self._integer_extractor = ArabicIntegerExtractor()
         self._filter_word_regex_list = []
         self._unspecified_date_period_regex = RegExpUtility.get_safe_reg_exp(

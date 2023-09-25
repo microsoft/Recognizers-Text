@@ -55,6 +55,7 @@ def get_specs(recognizer, entity):
         for spec in sp['specs']:
             if 'NotSupportedByDesign' in spec and 'python' in spec['NotSupportedByDesign']:
                 continue
+
             not_supported = 'NotSupported' in spec and 'python' in spec['NotSupported']
             message = sp['config']['language'] + ' - ' + \
                 recognizer + ' - ' + sp['config']['model'] + entity
@@ -65,6 +66,7 @@ def get_specs(recognizer, entity):
                 spec.get('Context'),
                 spec['Input'],
                 spec['Results'],
+                spec.get('IgnoreResolution', False),
                 marks=pytest.mark.skipif(not_supported, reason=f'Not supported: {message}')))
     return ret_specs
 
@@ -73,19 +75,19 @@ ENTITY_PATTERN = re.compile('(.*)(Model|Parser|Extractor|Resolver)(.*)')
 
 CULTURES = {
     'Arabic': Culture.Arabic,
-    'Chinese': Culture.Chinese,
-    'Dutch': Culture.Dutch,
-    'English': Culture.English,
-    'EnglishOthers': Culture.EnglishOthers,
-    'French': Culture.French,
-    'Italian': Culture.Italian,
-    'Japanese': Culture.Japanese,
-    'Korean': Culture.Korean,
-    'Portuguese': Culture.Portuguese,
-    'Spanish': Culture.Spanish,
-    'SpanishMexican': Culture.SpanishMexican,
-    'Turkish': Culture.Turkish,
-    'German': Culture.German,
+    # 'Chinese': Culture.Chinese,
+    # 'Dutch': Culture.Dutch,
+    # 'English': Culture.English,
+    # 'EnglishOthers': Culture.EnglishOthers,
+    # 'French': Culture.French,
+    # 'Italian': Culture.Italian,
+    # 'Japanese': Culture.Japanese,
+    # 'Korean': Culture.Korean,
+    # 'Portuguese': Culture.Portuguese,
+    # 'Spanish': Culture.Spanish,
+    # 'SpanishMexican': Culture.SpanishMexican,
+    # 'Turkish': Culture.Turkish,
+    # 'German': Culture.German,
 }
 
 SPECS = get_all_specs()

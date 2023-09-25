@@ -8,10 +8,10 @@ from recognizers_choice import recognize_boolean
 MODELFUNCTION = {'Boolean': recognize_boolean}
 
 
-@pytest.mark.parametrize('culture, model, options, context, source, expected_results', get_specs(
+@pytest.mark.parametrize('culture, model, options, context, source, expected_results, ignore_resolution', get_specs(
     recognizer='Choice', entity='Model'))
 def test_choice_recognizer(culture, model, options,
-                           context, source, expected_results):
+                           context, source, expected_results, ignore_resolution):
     results = get_results(culture, model, source)
     assert len(results) == len(expected_results)
     for actual, expected in zip(results, expected_results):

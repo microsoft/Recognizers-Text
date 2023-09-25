@@ -13,7 +13,7 @@
   },
   {
     "Input": "سأخرج من 5 إلى 6 في المساء",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "من 5 إلى 6 في المساء",
@@ -25,7 +25,7 @@
   },
   {
     "Input": "سأخرج من 5 إلى 6 بعد الظهر",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "من 5 إلى 6 بعد الظهر",
@@ -85,7 +85,7 @@
   },
   {
     "Input": "سأخرج بين الخامسة والسادسة بعد الظهر",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "بين الخامسة والسادسة بعد الظهر",
@@ -145,7 +145,7 @@
   },
   {
     "Input": "سأكون بالخارج من الساعة 4:00 إلى الساعة 7",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "من الساعة 4:00 إلى الساعة 7",
@@ -157,7 +157,7 @@
   },
   {
     "Input": "سأخرج من 3 مساءً حتى السابعة والنصف",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "من 3 مساءً حتى السابعة والنصف",
@@ -169,7 +169,7 @@
   },
   {
     "Input": "سأكون بالخارج 4-5 مساءً",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "4-5 مساءً",
@@ -193,7 +193,7 @@
   },
   {
     "Input": "سأخرج الثالثة إلا 20 دقيقة إلى الثامنة مساءً",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الثالثة إلا 20 دقيقة إلى الثامنة مساءً",
@@ -217,7 +217,7 @@
   },
   {
     "Input": "سأخرج من الرابعة مساءً حتى الخامسة والنصف",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "من الرابعة مساءً حتى الخامسة والنصف",
@@ -229,7 +229,7 @@
   },
   {
     "Input": "سأخرج من 3 صباحًا حتى 5 مساء",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "من 3 صباحًا حتى 5 مساء",
@@ -241,7 +241,7 @@
   },
   {
     "Input": "سأخرج من الثالثة صباحا حتى الخامسة بعد الظهر",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "من الثالثة صباحا حتى الخامسة بعد الظهر",
@@ -277,7 +277,7 @@
   },
   {
     "Input": "دعنا نلتقي في الصباح",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "في الصباح",
@@ -289,7 +289,7 @@
   },
   {
     "Input": "دعنا نلتقي بعد الظهر",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "بعد الظهر",
@@ -301,7 +301,7 @@
   },
   {
     "Input": "دعنا نلتقي في الليل",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "في الليل",
@@ -313,7 +313,7 @@
   },
   {
     "Input": "دعنا نلتقي في المساء",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "في المساء",
@@ -325,7 +325,7 @@
   },
   {
     "Input": "دعنا نلتقي في الأمسيات",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "في الأمسيات",
@@ -337,7 +337,7 @@
   },
   {
     "Input": "دعونا نجتمع في الصباح الباكر",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "في الصباح الباكر",
@@ -349,7 +349,7 @@
   },
   {
     "Input": "دعونا نجتمع في أواخر الصباح",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "في أواخر الصباح",
@@ -361,7 +361,7 @@
   },
   {
     "Input": "دعنا نلتقي في الصباح الباكر",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "في الصباح الباكر",
@@ -373,7 +373,7 @@
   },
   {
     "Input": "دعنا نلتقي في وقت متأخر من الصباح",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "في وقت متأخر من الصباح",
@@ -385,7 +385,7 @@
   },
   {
     "Input": "دعونا نجتمع في وقت مبكر بعد الظهر",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "في وقت مبكر بعد الظهر",
@@ -397,7 +397,7 @@
   },
   {
     "Input": "دعونا نجتمع في وقت متأخر بعد الظهر",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "في وقت متأخر بعد الظهر",
@@ -409,7 +409,7 @@
   },
   {
     "Input": "دعنا نلتقي في وقت مبكر من المساء",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "في وقت مبكر من المساء",
@@ -421,7 +421,7 @@
   },
   {
     "Input": "دعنا نلتقي في وقت متأخر من المساء",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "في وقت متأخر من المساء",
@@ -433,7 +433,7 @@
   },
   {
     "Input": "دعونا نجتمع في وقت مبكر من الليل",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "في وقت مبكر من الليل",
@@ -445,7 +445,7 @@
   },
   {
     "Input": "دعنا نلتقي عند وقت متأخر من الليل",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "عند وقت متأخر من الليل",
@@ -457,7 +457,7 @@
   },
   {
     "Input": "دعنا نلتقي في أول الليل",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "في أول الليل",
@@ -469,7 +469,7 @@
   },
   {
     "Input": "دعنا نلتقي في وقت متأخر من الليل",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "في وقت متأخر من الليل",
@@ -493,7 +493,7 @@
   },
   {
     "Input": "حفلة في جينز من 6 إلى 11 مساء",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "من 6 إلى 11 مساء",
@@ -505,7 +505,7 @@
   },
   {
     "Input": "عقد الاجتماع من الساعة 14:00 إلى الساعة 16:30",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "من الساعة 14:00 إلى الساعة 16:30",
@@ -517,7 +517,7 @@
   },
   {
     "Input": "عقد اجتماع من اثنين إلى خمسة مساء",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "من اثنين إلى خمسة مساء",
@@ -529,7 +529,7 @@
   },
   {
     "Input": "عقد الاجتماع الساعة 1 بعد الظهر إلى 4",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الساعة 1 بعد الظهر إلى 4",
@@ -541,7 +541,7 @@
   },
   {
     "Input": "عقد الاجتماع الساعة من 1 بعد الظهر إلى 4",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "من 1 بعد الظهر إلى 4",
@@ -553,7 +553,7 @@
   },
   {
     "Input": "قم بإعداد الاجتماع 1:30 بعد الظهر إلى 4!",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "1:30 بعد الظهر إلى 4",
@@ -565,7 +565,7 @@
   },
   {
     "Input": "قم بإعداد الاجتماع 1:30 بعد الظهر. إلى 4 أشخاص",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "بعد الظهر",
@@ -577,7 +577,7 @@
   },
   {
     "Input": "مرحبًا كورتانا - يرجى تحديد موعد لقاء سكايب مع جينيفر. أحتاج إلى اجتماع مدته 30 دقيقة في فترة ما بعد الظهر ، وسأغادر يوم الجمعة.",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "بعد الظهر",
@@ -589,7 +589,7 @@
   },
   {
     "Input": "مرحبًا كورتانا - يرجى تحديد موعد لقاء سكايب مع جينيفر. أحتاج إلى اجتماع مدته 30 دقيقة يوم الجمعة ، وسأغادر بعد الظهر.",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "بعد الظهر",
@@ -601,7 +601,7 @@
   },
   {
     "Input": "عقد الاجتماع من 1:30 إلى 3:30",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "من 1:30 إلى 3:30",
@@ -613,7 +613,7 @@
   },
   {
     "Input": "عقد الاجتماع من 1:30 مساءً إلى 3:30 ",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "من 1:30 مساءً إلى 3:30",
@@ -637,7 +637,7 @@
   },
   {
     "Input": "عقد الاجتماع من 1 إلى 3:30",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "من 1 إلى 3:30",
@@ -649,7 +649,7 @@
   },
   {
     "Input": "عقد الاجتماع من 1:30 إلى 3",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "من 1:30 إلى 3",

@@ -5,8 +5,10 @@ from recognizers_text.utilities import RegExpUtility
 from recognizers_date_time.resources import ArabicDateTime, BaseDateTime
 from recognizers_date_time.date_time.extractors import DateTimeExtractor
 from recognizers_date_time.date_time.base_date import DateExtractorConfiguration
+from recognizers_date_time.date_time.base_duration import BaseDurationExtractor
 from recognizers_date_time.date_time.utilities import DateTimeUtilityConfiguration
 from recognizers_date_time.date_time.arabic.base_configs import ArabicDateTimeUtilityConfiguration
+from recognizers_date_time.date_time.arabic.duration_extractor_config import ArabicDurationExtractorConfiguration
 from recognizers_date_time.date_time.constants import Constants
 
 
@@ -155,7 +157,8 @@ class ArabicDateExtractorConfiguration(DateExtractorConfiguration):
 
         self._number_parser = BaseNumberParser(
             ArabicNumberParserConfiguration())
-        self._duration_extractor = None
+        self._duration_extractor = self._duration_extractor = BaseDurationExtractor(
+            ArabicDurationExtractorConfiguration())
         self._utility_configuration = ArabicDateTimeUtilityConfiguration()
 
         self._implicit_date_list = [

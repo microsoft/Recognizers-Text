@@ -165,6 +165,8 @@ MonthWithYear: !nestedRegex
   references: [ SolarMonthRegex, LunarMonthRegex, ArabicMonthRegex, YearRegex, RelativeRegex ]
 SpecialYearPrefixes: !simpleRegex
   def: (التقويمي(ة)?|(?<special>المالي(ة)?|الدراسي(ة)?))
+ArabicWeekRegex: !simpleRegex
+  def: (?<ArabicWeek>الأسبوعين|الاسبوعين|أسابيع|الاسبوع|الأسبوع|الإسبوع|أسبوعين|أسبوعي|اسبوعين|اسبوعي|أسبوع|الاسابيع|الأسابيع)
 OneWordPeriodRegex: !nestedRegex
   def: ((بعد|في|آخر)\s+(\d+\s+)?((ال)?سنوات|(ال)?أعوام|(ال)?سنين|(ال)?أسابيع|(ال)?أشهر|(ال)?أيام))(\s+\d+)?(\s+{FutureSuffixRegex})?|((هذا\s+)?(شهر\s+)?(الشهر|{SolarMonthRegex}|{LunarMonthRegex}|{ArabicMonthRegex})(\s+{RelativeRegex})?)|((هذا\s+)?((عطلة|خلال)\s+)?((نهاية\s+)?({ArabicWeekRegex}|العام)\s*)((بعد\s+)?{RelativeRegex})?)
   references: [ FutureSuffixRegex, SolarMonthRegex, LunarMonthRegex, ArabicMonthRegex, RelativeRegex, ArabicWeekRegex]
@@ -260,8 +262,6 @@ RelaxedOnRegex: !nestedRegex
   references: [ OrdinalDayOfMonthRegex, WeekDayofMonthRegex ]
 PrefixWeekDayRegex: !simpleRegex
   def: (\s*((,?\s*on)|[-—–]))
-ArabicWeekRegex: !simpleRegex
-  def: (?<ArabicWeek>الأسبوعين|الاسبوعين|أسابيع|الاسبوع|الأسبوع|الإسبوع|أسبوعين|أسبوعي|اسبوعين|اسبوعي|أسبوع|الاسابيع|الأسابيع)
 ThisRegex: !nestedRegex
   def: (?=يوم\s+)?({WeekDayRegex})(\s+)?(من|هذا|)(\s+)?(هذا)?(\s+)({ArabicWeekRegex})((\s+)({RelativeRegex}))?
   references: [ WeekDayRegex, ArabicWeekRegex, RelativeRegex ]
