@@ -282,7 +282,33 @@ class ArabicDateParserConfiguration(DateParserConfiguration):
         return text
 
     def get_swift_day(self, source: str) -> int:
-        return 0
+        trimmed_text = source.strip().lower()
+        swift = 0
+        matches = regex.search(self.relative_day_regex, source)
+        if trimmed_text == 'اليوم' or trimmed_text == 'اليوم الحاضر' or trimmed_text == 'اليوم العصر':
+            swift = 0
+        elif trimmed_text == 'غداً' or trimmed_text == 'الغد':
+            swift = 1
+        elif trimmed_text == 'أمس' or trimmed_text == 'البارحة' or trimmed_text == 'الأمس':
+            swift = -1
+        elif matches:
+            swift = self.get_swift(source)
+
+        return swift
 
     def get_swift_month(self, source: str) -> int:
-        return 0
+        return self.get_swift(source)
+
+    def get_swift(self, source: str) -> int:
+        trimmed_text = source.strip().lower()
+        swift = 0
+        next_prefix_matches = regex.search(
+            self.next_prefix_regex, trimmed_text)
+        past_prefix_matches = regex.search(
+            self.past_prefix_regex, trimmed_text)
+        if next_prefix_matches:
+            swift = 1
+        elif past_prefix_matches:
+            swift = -1
+
+        return swift

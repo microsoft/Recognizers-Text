@@ -1,16 +1,3 @@
-cd libraries/resource-generator
-
-echo // Installing Resource Generator Dependencies
-pip install -r ./requirements.txt
-
-echo // Building Resources
-python index.py ../recognizers-choice/resource-definitions.json
-python index.py ../recognizers-number/resource-definitions.json
-python index.py ../recognizers-number-with-unit/resource-definitions.json
-python index.py ../recognizers-date-time/resource-definitions.json
-python index.py ../recognizers-sequence/resource-definitions.json
-
-cd ../..
 echo // Installing recognizers-text
 pip install -e ./libraries/recognizers-text/
 
