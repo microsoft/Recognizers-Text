@@ -36,7 +36,10 @@ class LongFormatMode:
     DOUBLE_DOT_COMMA = LongFormatType(thousands_mark='.', decimals_mark=',')
     DOUBLE_NO_BREAK_SPACE_COMMA = LongFormatType(
         thousands_mark=Constants.NO_BREAK_SPACE, decimals_mark=',')
+    DOUBLE_NO_BREAK_SPACE_DOT = LongFormatType(
+        thousands_mark=Constants.NO_BREAK_SPACE, decimals_mark='.')
     DOUBLE_NUM_BLANK_COMMA = LongFormatType(thousands_mark=' ', decimals_mark=',')
+    DOUBLE_NUM_BLANK_DOT = LongFormatType(thousands_mark=' ', decimals_mark='.')
 
 
 class AbstractNumberModel(Model):

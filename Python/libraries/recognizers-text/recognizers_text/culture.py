@@ -2,6 +2,7 @@
 #  Licensed under the MIT License.
 
 class Culture:
+    Arabic: str = 'ar-ae'
     Chinese: str = 'zh-cn'
     Dutch: str = 'nl-nl'
     English: str = 'en-us'

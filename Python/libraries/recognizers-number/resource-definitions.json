@@ -119,6 +119,18 @@
                 "class DutchNumeric:"
             ],
             "footer": [ "# pylint: enable=line-too-long" ]
+        },
+        {
+            "input": [ "Arabic", "Arabic-Numbers" ],
+            "output": "arabic_numeric",
+            "header": [
+                "from .base_numbers import BaseNumbers",
+                "# pylint: disable=line-too-long",
+                "",
+                "",
+                "class ArabicNumeric:"
+            ],
+            "footer": [ "# pylint: enable=line-too-long" ]
         }
     ]
 }

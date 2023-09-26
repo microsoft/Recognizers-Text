@@ -220,7 +220,7 @@ class ChineseNumeric:
     TwoNumberRangeRegex3 = f'({OneNumberRangeLessRegex1}|{OneNumberRangeLessRegex2}|{OneNumberRangeLessRegex3})\\s*(且|(并|並)且?|而且|((的)?同時)|((的)?同时)|[,，])?\\s*({OneNumberRangeMoreRegex1}|{OneNumberRangeMoreRegex2}|{OneNumberRangeMoreRegex3})'
     TwoNumberRangeRegex4 = f'(?<number1>((?!(([,，](?!\\d+))|。)).)+)\\s*{TillRegex}\\s*(?<number2>((?!(([,，](?!\\d+))|。)).)+)'
     AmbiguityFiltersDict = dict([("十", "十足"),
-                                 ("伍", "队伍"),
+                                 ("伍", "队伍|入伍|退伍|伍仁"),
                                  ("肆", "放肆|肆意|肆无忌惮"),
                                  ("陆", "大陆|陆地|登陆|海陆"),
                                  ("拾", "拾取|拾起|收拾|拾到|朝花夕拾")])
