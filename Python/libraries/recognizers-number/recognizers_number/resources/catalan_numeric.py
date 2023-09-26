@@ -64,7 +64,7 @@ class CatalanNumeric:
     WrittenIntegerSeparatorTexts = [r'i']
     HalfADozenRegex = f'mitja\\s+dotzena'
     DigitalNumberRegex = f'((?<=\\b)(cent|milers|mil|milions|mil milions|bili[óo])(?=\\b))|((?<=(\\d|\\b)){BaseNumbers.MultiplierLookupRegex}(?=\\b))'
-    CardinlaNumberMap = dict([("zero", 0),
+    CardinalNumberMap = dict([("zero", 0),
                               ("una", 1),
                               ("un", 1),
                               ("u", 1),
