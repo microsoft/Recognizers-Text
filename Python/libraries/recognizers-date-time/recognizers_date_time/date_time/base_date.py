@@ -1438,7 +1438,10 @@ class BaseDateParser(DateTimeParser):
             match = regex.search(
                 self.config.relative_month_regex, trimmed_source)
             if match:
-                month_str = match.group(Constants.ORDER)
+                if match.group(Constants.ORDER):
+                    month_str = match.group(Constants.ORDER)
+                else:
+                    month_str = match
                 swift = self.config.get_swift_month(month_str)
                 date = reference.replace(month=reference.month+swift)
                 month = date.month

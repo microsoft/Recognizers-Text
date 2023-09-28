@@ -28,3 +28,4 @@ from .french import *
 from .portuguese import *
 from .dutch import *
 from .japanese import *
+from .arabic import *

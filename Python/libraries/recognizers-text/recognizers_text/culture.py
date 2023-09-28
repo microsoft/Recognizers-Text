@@ -32,7 +32,8 @@ class Culture:
             Culture.Spanish,
             Culture.SpanishMexican,
             Culture.Turkish,
-            Culture.German
+            Culture.German,
+            Culture.Arabic
         ]
 
     @staticmethod
