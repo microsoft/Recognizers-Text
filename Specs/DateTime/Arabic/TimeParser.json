@@ -2,7 +2,7 @@
   {
     "Input": "ضبط المنبه على ثمانية وأربعين",
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "ثمانية وأربعين",
@@ -24,7 +24,7 @@
   {
     "Input": "ضبط المنبه على ثمانية وأربعين صباحا",
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "ثمانية وأربعين صباحا",
@@ -68,7 +68,7 @@
   {
     "Input": "ضبط المنبه على عشرة وخمسة وأربعين",
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "عشرة وخمسة وأربعين",
@@ -134,7 +134,7 @@
   {
     "Input": "ضبط المنبه على عشرة عشرة",
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "عشرة عشرة",
@@ -156,7 +156,7 @@
   {
     "Input": "ضبط المنبه على عشرة وخمسة وخمسين  مساءً",
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "عشرة وخمسة وخمسين",
@@ -241,7 +241,7 @@
   {
     "Input": "سأعود في 7 مساء",
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "7 مساء",
@@ -263,7 +263,7 @@
   {
     "Input": "سأعود 7:56 مساءً",
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "7:56 مساءً",
@@ -285,7 +285,7 @@
   {
     "Input": "سأعود في 7:56:30 مساءً",
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "7:56:30 مساءً",
@@ -307,7 +307,7 @@
   {
     "Input": "سأعود 7:56:30 مساءً",
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "7:56:30 مساءً",
@@ -455,7 +455,7 @@
   {
     "Input": "انها الثامنة والنصف",
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "الثامنة والنصف",
@@ -584,7 +584,7 @@
   {
     "Input": "إنها ثلاث دقائق قبل الثامنة",
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "ثلاث دقائق قبل الثامنة",
@@ -606,7 +606,7 @@
   {
     "Input": "إنها الساعة السابعة والنصف",
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "الساعة السابعة والنصف",
@@ -628,7 +628,7 @@
   {
     "Input": "إنها الساعة السابعة والنصف بعد الظهر",
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "الساعة السابعة والنصف بعد الظهر",
@@ -843,7 +843,7 @@
   {
     "Input": "سأعود في السابعة وخمسة وثلاثين مساء",
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "السابعة وخمسة وثلاثين مساء",
@@ -865,7 +865,7 @@
   {
     "Input": "سأعود الحادية عشر وعشرين مساء",
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "الحادية عشر وعشرين مساء",
@@ -1098,7 +1098,7 @@
   {
     "Input": "منتصف الظهر",
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "منتصف الظهر",
@@ -1120,7 +1120,7 @@
   {
     "Input": "منتصف-الظهر",
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "منتصف-الظهر",
@@ -1247,7 +1247,7 @@
   {
     "Input": "سأعود 12 في الليل",
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "12 في الليل",
@@ -1269,7 +1269,7 @@
   {
     "Input": "سأعود 1:00 منتصف الليل",
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "1:00 منتصف الليل",
@@ -1333,7 +1333,7 @@
   {
     "Input": "سأعود الساعة 1 وقت الغداء",
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "الساعة 1 وقت الغداء",
@@ -1376,7 +1376,7 @@
   {
     "Input": "سأعود 7:56:13 مساءً",
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "7:56:13 مساءً",
@@ -1483,7 +1483,7 @@
   {
     "Input": "سأعود الخامسة والنصف إلا ثلاث دقائق",
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "الخامسة والنصف إلا ثلاث دقائق",
@@ -1505,7 +1505,7 @@
   {
     "Input": "سأعود خمسة وثلاثين في الليل",
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "خمسة وثلاثين في الليل",
@@ -1527,7 +1527,7 @@
   {
     "Input": "سأعود في الليلة الخامسة والنصف",
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "في الليلة الخامسة والنصف",

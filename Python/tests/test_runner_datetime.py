@@ -18,7 +18,7 @@ CJK_languages = [
 ]
 
 @pytest.mark.parametrize(
-    'culture, model, options, context, source, expected_results, ignore_resolution',
+    'culture, model, options, context, source, expected_results',
     get_specs(recognizer='DateTime', entity='Extractor'))
 def test_datetime_extractor(
         culture,
@@ -26,8 +26,7 @@ def test_datetime_extractor(
         options,
         context,
         source,
-        expected_results,
-        ignore_resolution):
+        expected_results):
     reference_datetime = get_reference_date(context)
     language = get_language(culture)
     extractor = create_extractor(language, model, options)
@@ -45,7 +44,7 @@ def test_datetime_extractor(
 
 
 @pytest.mark.parametrize(
-    'culture, model, options, context, source, expected_results, ignore_resolution',
+    'culture, model, options, context, source, expected_results',
     get_specs(recognizer='DateTime', entity='Parser'))
 def test_datetime_parser(
         culture,
@@ -53,8 +52,7 @@ def test_datetime_parser(
         options,
         context,
         source,
-        expected_results,
-        ignore_resolution):
+        expected_results):
     reference_datetime = get_reference_date(context)
     language = get_language(culture)
     extractor = create_extractor(language, model, options)
@@ -71,10 +69,6 @@ def test_datetime_parser(
         simple_parser_assert(spec_info, actual, expected, 'text', 'Text', True)
         simple_parser_assert(spec_info, actual, expected, 'type', 'Type')
 
-        if ignore_resolution:
-            print("Resolution not validated")
-            continue
-
         if 'Value' in expected:
             assert_verbose(actual.value is None, False, spec_info)
 
@@ -86,7 +80,7 @@ def test_datetime_parser(
 
 
 @pytest.mark.parametrize(
-    'culture, model, options, context, source, expected_results, ignore_resolution',
+    'culture, model, options, context, source, expected_results',
     get_specs(recognizer='DateTime', entity='MergedParser'))
 def test_datetime_mergedparser(
         culture,
@@ -94,8 +88,7 @@ def test_datetime_mergedparser(
         options,
         context,
         source,
-        expected_results,
-        ignore_resolution):
+        expected_results):
     reference_datetime = get_reference_date(context)
     language = get_language(culture)
     extractor = create_extractor(language, model, options)
@@ -130,7 +123,7 @@ def test_datetime_mergedparser(
 
 
 @pytest.mark.parametrize(
-    'culture, model, options, context, source, expected_results, ignore_resolution',
+    'culture, model, options, context, source, expected_results',
     get_specs(recognizer='DateTime', entity='Model'))
 def test_datetime_model(
         culture,
@@ -138,8 +131,7 @@ def test_datetime_model(
         options,
         context,
         source,
-        expected_results,
-        ignore_resolution):
+        expected_results):
     reference_datetime = get_reference_date(context)
     option_obj = get_option(options)
 

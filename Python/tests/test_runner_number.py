@@ -15,10 +15,10 @@ MODELFUNCTION = {
 }
 
 
-@pytest.mark.parametrize('culture, model, options, context, source, expected_results, ignore_resolution', get_specs(
+@pytest.mark.parametrize('culture, model, options, context, source, expected_results', get_specs(
     recognizer='Number', entity='Model'))
 def test_number_recognizer(culture, model, options,
-                           context, source, expected_results, ignore_resolution):
+                           context, source, expected_results):
 
     spec_info = model + "Model : " + source
 

@@ -14,10 +14,10 @@ MODELFUNCTION = {
 }
 
 
-@pytest.mark.parametrize('culture, model, options, context, source, expected_results, ignore_resolution',
+@pytest.mark.parametrize('culture, model, options, context, source, expected_results',
                          get_specs(recognizer='NumberWithUnit', entity='Model'))
 def test_number_with_unit_recognizer(
-        culture, model, options, context, source, expected_results, ignore_resolution):
+        culture, model, options, context, source, expected_results):
 
     results = get_results(culture, model, source)
 

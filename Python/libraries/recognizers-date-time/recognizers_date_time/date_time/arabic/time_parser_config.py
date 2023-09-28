@@ -109,11 +109,11 @@ class ArabicTimeParserConfiguration(TimeParserConfiguration):
         delta_min = 0
         trimmed_prefix = prefix.strip().lower()
 
-        if regex.search(self.half_token_regex, prefix):
+        if regex.search(self.half_token_regex, trimmed_prefix):
             delta_min = -30
-        elif regex.search(self.quarter_token_regex, prefix):
+        elif regex.search(self.quarter_token_regex, trimmed_prefix):
             delta_min = 15
-        elif regex.search(self.three_quarter_token_regex, prefix):
+        elif regex.search(self.three_quarter_token_regex, trimmed_prefix):
             delta_min = 45
         else:
             match = regex.search(self.less_than_one_hour, trimmed_prefix)
@@ -126,11 +126,11 @@ class ArabicTimeParserConfiguration(TimeParserConfiguration):
                         match, 'deltaminnum').lower()
                     delta_min = self.numbers.get(min_str)
 
-        if regex.search(self.to_half_token_regex, prefix):
+        if regex.search(self.to_half_token_regex, trimmed_prefix):
             delta_min = delta_min - 30
-        elif regex.search(self.for_half_token_regex, prefix):
+        elif regex.search(self.for_half_token_regex, trimmed_prefix):
             delta_min = -delta_min - 30
-        elif regex.search(self.to_token_regex, prefix):
+        elif regex.search(self.to_token_regex, trimmed_prefix):
             delta_min = delta_min * -1
 
         adjust.minute += delta_min

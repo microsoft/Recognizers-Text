@@ -221,7 +221,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "16/04/21",
@@ -606,7 +606,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "أول يناير",
@@ -631,7 +631,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "الحادي والعشرين من مايو",
@@ -656,7 +656,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "واحد وعشرين مايو",
@@ -681,7 +681,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "الثاني من أغسطس",
@@ -706,7 +706,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "الثانية والعشرون من يونيو",
@@ -731,7 +731,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "الجمعة",
@@ -756,7 +756,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "الجمعة",
@@ -805,7 +805,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "غداً",
@@ -830,7 +830,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "الأمس",
@@ -855,7 +855,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "قبل يوم أمس",
@@ -880,7 +880,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "بعد غد",
@@ -905,7 +905,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "بعد غد",
@@ -930,7 +930,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "اليوم التالي",
@@ -955,7 +955,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "اليوم التالي",
@@ -980,7 +980,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "هذا يوم الجمعة",
@@ -1053,7 +1053,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "هذا الأسبوع الجمعة",
@@ -1126,7 +1126,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "آخر يوم",
@@ -1151,7 +1151,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "آخر يوم",
@@ -1224,7 +1224,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "أول يوم جمعة من يوليو",
@@ -1249,7 +1249,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "أول يوم جمعة في هذا الشهر",
@@ -1298,7 +1298,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "الجمعة من الاسبوع المقبل",
@@ -1396,7 +1396,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "بعد أسبوعين من الآن",
@@ -1421,7 +1421,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "قبل شهر",
@@ -1446,7 +1446,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "قبل بضعة أشهر",
@@ -1471,7 +1471,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "قبل بضعة أيام",
@@ -1496,7 +1496,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "إلى 27",
@@ -1521,7 +1521,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "يوم 27",
@@ -1546,7 +1546,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "27",
@@ -1571,7 +1571,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "إلى 27",
@@ -1596,7 +1596,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "إلى 27",
@@ -1621,7 +1621,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "إلى الحادي والعشرين",
@@ -1646,7 +1646,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "للثانية والعشرين",
@@ -1671,7 +1671,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "للثاني",
@@ -1696,7 +1696,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "للثاني والعشرين",
@@ -1721,7 +1721,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "للثلاثين",
@@ -1746,7 +1746,7 @@
       "ReferenceDateTime": "2017-09-27T17:25:49.8080661+08:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "الخميس 21",
@@ -1771,7 +1771,7 @@
       "ReferenceDateTime": "2017-09-27T17:25:49.8110663+08:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "الجمعة 22",
@@ -1796,7 +1796,7 @@
       "ReferenceDateTime": "2017-09-27T17:25:49.8120465+08:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "السبت 23",
@@ -1821,7 +1821,7 @@
       "ReferenceDateTime": "2017-09-27T17:25:49.8130455+08:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "الجمعة 15",
@@ -1846,7 +1846,7 @@
       "ReferenceDateTime": "2017-09-27T17:25:49.8140457+08:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "الخميس في الحادي والعشرين",
@@ -1871,7 +1871,7 @@
       "ReferenceDateTime": "2017-09-27T17:25:49.8150456+08:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "الجمعة في الثانية والعشرين",
@@ -1896,7 +1896,7 @@
       "ReferenceDateTime": "2017-09-27T17:25:49.8160454+08:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "الجمعة في خمسة عشر",
@@ -2114,7 +2114,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "قبل يومين",
@@ -2139,7 +2139,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "قبل عامين",
@@ -2188,7 +2188,7 @@
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "1 شهر و 21 أيام من الآن",
@@ -2213,7 +2213,7 @@
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "2 سنة و1 شهر و21 أيام من الآن",
@@ -2238,7 +2238,7 @@
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "2 عام و 21 يوما من الآن",
@@ -2263,7 +2263,7 @@
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "شهر و 2 سنة و 21 يوما من الآن",
@@ -2288,7 +2288,7 @@
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "شهر و 21 يوم من الآن",
@@ -2313,7 +2313,7 @@
       "ReferenceDateTime": "2017-11-23T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "1 شهر, 21 أيام من الآن",
@@ -2435,7 +2435,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, gython",
+    "NotSupportedByDesign": "java, javascript, python",
     "Results": [
       {
         "Text": "سبتمبر الحادي والعشرين من ألف وتسعمائة وثمانية وسبعون",
