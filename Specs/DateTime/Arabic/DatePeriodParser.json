@@ -383,7 +383,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "false",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "فبراير",
@@ -464,7 +464,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "false",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "يونيو القادم",
@@ -572,7 +572,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "false",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "من شهر سبتمبر 16",
@@ -599,7 +599,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "false",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "2015.3",
@@ -626,7 +626,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "false",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "3-2015",
@@ -653,7 +653,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "false",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "2015/3",
@@ -680,7 +680,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "false",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "3/2015",
@@ -977,7 +977,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "false",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "12  يناير, 2016 - 2016/01/22",
@@ -1490,7 +1490,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "false",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "يونيو 2016",
@@ -1517,7 +1517,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "false",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "يونيو العام المقبل",
@@ -1814,7 +1814,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "false",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الربع الثالث من عام 2016",
@@ -1868,7 +1868,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "false",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الربع الثالث 2016",
@@ -1916,7 +1916,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "false",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الربيع القادم",
@@ -1937,7 +1937,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "false",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الصيف",
@@ -1958,7 +1958,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "false",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "صيف",
@@ -1979,7 +1979,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "false",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الصيف 2016",
@@ -2000,7 +2000,7 @@
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
     "IgnoreResolution": "false",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "صيف 2016",
@@ -3665,7 +3665,7 @@
       "ReferenceDateTime": "2017-11-08T00:00:00"
     },
     "IgnoreResolution": "false",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "نهاية شهر مارس",

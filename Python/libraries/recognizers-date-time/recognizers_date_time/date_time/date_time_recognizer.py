@@ -36,6 +36,9 @@ from .CJK.base_merged import BaseCJKMergedExtractor, BaseCJKMergedParser
 from .japanese.merged_extractor_config import JapaneseMergedExtractorConfiguration
 from .japanese.merged_parser_config import JapaneseMergedParserConfiguration
 from .japanese.common_configs import JapaneseCommonDateTimeParserConfiguration
+from .arabic.merged_extractor_config import ArabicMergedExtractorConfiguration
+from .arabic.merged_parser_config import ArabicMergedParserConfiguration
+from .arabic.common_configs import ArabicCommonDateTimeParserConfiguration
 from .catalan.common_configs import CatalanCommonDateTimeParserConfiguration
 from .catalan.merged_extractor_config import CatalanMergedExtractorConfiguration
 from .catalan.merged_parser_config import CatalanMergedParserConfiguration
@@ -114,6 +117,12 @@ class DateTimeRecognizer(Recognizer[DateTimeOptions]):
             BaseMergedParser(DutchMergedParserConfiguration(
                 DutchCommonDateTimeParserConfiguration()), options),
             BaseMergedExtractor(DutchMergedExtractorConfiguration(), options)
+        ))
+
+        self.register_model('DateTimeModel', Culture.Arabic, lambda options: DateTimeModel(
+            BaseMergedParser(ArabicMergedParserConfiguration(
+                ArabicCommonDateTimeParserConfiguration()), options),
+            BaseMergedExtractor(ArabicMergedExtractorConfiguration(), options)
         ))
 
         self.register_model('DateTimeModel', Culture.Catalan, lambda options: DateTimeModel(

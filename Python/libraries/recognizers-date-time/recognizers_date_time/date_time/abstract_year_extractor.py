@@ -92,4 +92,4 @@ class AbstractYearExtractor(DateExtractor):
                     elif 0 <= year < Constants.MAX_TWO_DIGIT_YEAR_FUTURE_NUM:
                         year += 2000
 
-        return year
+        return int(year)
