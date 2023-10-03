@@ -10,6 +10,7 @@ from ...resources.catalan_date_time import CatalanDateTime
 from ..extractors import DateTimeExtractor
 from ..parsers import DateTimeParser
 from ..base_configs import DateTimeUtilityConfiguration
+from ..base_duration import BaseDurationExtractor, BaseDurationParser
 from ..base_minimal_configs import MinimalBaseDateParserConfiguration
 from ..base_date import BaseDateExtractor, DateExtractorConfiguration, BaseDateParser
 from ..base_time import BaseTimeExtractor, BaseTimeParser
@@ -38,6 +39,7 @@ class CatalanBaseDateExtractor(BaseDateExtractor):
 
         result = merge_all_tokens(tokens, source, self.extractor_type_name)
         return result
+
 
 class CatalanCommonDateTimeParserConfiguration(MinimalBaseDateParserConfiguration):
     @property
@@ -120,7 +122,6 @@ class CatalanCommonDateTimeParserConfiguration(MinimalBaseDateParserConfiguratio
         self._cardinal_extractor = CatalanCardinalExtractor()
         self._integer_extractor = CatalanIntegerExtractor()
         self._ordinal_extractor = CatalanOrdinalExtractor()
-
         self._number_parser = BaseNumberParser(
             CatalanNumberParserConfiguration())
         self._date_extractor = CatalanBaseDateExtractor(

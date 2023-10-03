@@ -181,3 +181,6 @@ class CatalanNumberParserConfiguration(NumberParserConfiguration):
             return self.cardinal_number_map[number_str]
 
         return 0
+
+    def get_lang_specific_int_value(self, match_strs: List[str]) -> (bool, int):
+        return False, 0

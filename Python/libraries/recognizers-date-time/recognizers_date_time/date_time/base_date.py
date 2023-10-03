@@ -611,7 +611,9 @@ class BaseDateExtractor(DateTimeExtractor, AbstractYearExtractor):
     def relative_duration_date(self, source: str, reference: datetime) -> []:
         from .utilities import AgoLaterUtil
         tokens = []
-        duration_extracted_results = self.config.duration_extractor.extract(source, reference)
+        duration_extracted_results = []
+        if self.config.duration_extractor:
+            duration_extracted_results = self.config.duration_extractor.extract(source, reference)
 
         for extracted_result in duration_extracted_results:
 

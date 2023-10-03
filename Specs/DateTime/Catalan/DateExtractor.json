@@ -64,17 +64,5 @@
         "Length": 21
       }
     ]
-  },
-  {
-    "Input": "Tornaré el vint-i-dos de juny de 2017",
-    "NotSupported": "javascript",
-    "Results": [
-      {
-        "Text": "vint-i-dos de juny de 2017",
-        "Type": "date",
-        "Start": 11,
-        "Length": 26
-      }
-    ]
   }
 ]

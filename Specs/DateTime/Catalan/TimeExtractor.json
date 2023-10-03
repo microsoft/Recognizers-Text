@@ -47,10 +47,10 @@
     "Input": "Tornaré a les 7:56:35",
     "Results": [
       {
-        "Text": "7:56:35 am",
+        "Text": "7:56:35",
         "Type": "time",
         "Start": 14,
-        "Length": 10
+        "Length": 7
       }
     ]
   },

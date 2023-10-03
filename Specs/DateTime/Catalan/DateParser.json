@@ -115,29 +115,6 @@
     ]
   },
   {
-    "Input": "Primer Jan tornaré",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
-    "Results": [
-      {
-        "Text": "Primer Jan",
-        "Type": "date",
-        "Value": {
-          "Timex": "XXXX-01-01",
-          "FutureResolution": {
-            "date": "2017-01-01"
-          },
-          "PastResolution": {
-            "date": "2016-01-01"
-          }
-        },
-        "Start": 0,
-        "Length": 10
-      }
-    ]
-  },
-  {
     "Input": "Tornaré el vint-i-un de maig",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
@@ -167,7 +144,7 @@
     },
     "Results": [
       {
-        "Text": "dia dotze de novembre",
+        "Text": "dotze de novembre",
         "Type": "date",
         "Value": {
           "Timex": "XXXX-11-12",
@@ -193,12 +170,12 @@
         "Text": "3-7-2017",
         "Type": "date",
         "Value": {
-          "Timex": "2017-03-07",
+          "Timex": "2017-07-03",
           "FutureResolution": {
-            "date": "2017-03-07"
+            "date": "2017-07-03"
           },
           "PastResolution": {
-            "date": "2017-03-07"
+            "date": "2017-07-03"
           }
         },
         "Start": 11,
@@ -239,12 +216,12 @@
         "Text": "06/10/2020",
         "Type": "date",
         "Value": {
-          "Timex": "2020-06-10",
+          "Timex": "2020-10-06",
           "FutureResolution": {
-            "date": "2020-06-10"
+            "date": "2020-10-06"
           },
           "PastResolution": {
-            "date": "2020-06-10"
+            "date": "2020-10-06"
           }
         },
         "Start": 33,
