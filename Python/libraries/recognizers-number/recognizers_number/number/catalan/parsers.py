@@ -146,16 +146,6 @@ class CatalanNumberParserConfiguration(NumberParserConfiguration):
                 frac_words.append(tokens[i])
             i += 1
 
-        # TODO The following piece of code is needed to compute the fraction pattern number+'y medio'
-        # e.g. 'cinco y medio' ('five and a half') where the numerator is omitted in Catalan.
-        # It works by inserting the numerator 'un' ('a') in the list result
-        # so that the pattern is correctly processed.
-        # if len(result) > 2:
-        #     if result[len(result) - 1] == CatalanNumeric.OneHalfTokens[1] and \
-        #             result[len(result) - 2] == CatalanNumeric.WordSeparatorToken:
-        #         result[len(result) - 2] = CatalanNumeric.WrittenFractionSeparatorTexts[0]
-        #         result.insert(len(result) - 1, CatalanNumeric.OneHalfTokens[0])
-
         return frac_words
 
     def resolve_composite_number(self, number_str: str) -> int:
