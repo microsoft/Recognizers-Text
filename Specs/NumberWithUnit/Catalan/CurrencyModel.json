@@ -1,1 +1,144 @@
-[]
+[
+  {
+    "Input": "el seu company d'equip de Fulham Johnny Haynes es va convertir en el primer jugador de £ 100",
+    "Results": [
+      {
+        "Text": "£ 100",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100",
+          "unit": "Lliura"
+        },
+        "Start": 87,
+        "End": 91
+      }
+    ]
+  },
+   {
+    "Input": "10 $ no són gaires, ni 10 €",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "10 $",
+        "Start": 0,
+        "End": 3,
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Dollar",
+          "value": "10"
+        }
+      },
+      {
+        "Text": "10 €",
+        "Start": 23,
+        "End": 27,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "EUR",
+          "unit": "Euro",
+          "value": "10"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "M'agradaria comprar aquest article per 125 EUR.",
+    "NotSupported": "python, java, javascript",
+    "Results": [
+      {
+        "Text": "125 eur",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "125",
+          "unit": "Euro",
+          "isoCurrency": "EUR"
+        },
+        "Start": 39,
+        "End": 45
+      }
+    ]
+  },
+  {
+    "Input": "Bitllets: 5 €, 10 €, 20 €, 50 €, 100 €, 200 €, 500 €.",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "5 €",
+        "Start": 10,
+        "End": 12,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "EUR",
+          "unit": "Euro",
+          "value": "5"
+        }
+      },
+      {
+        "Text": "10 €",
+        "Start": 15,
+        "End": 18,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "EUR",
+          "unit": "Euro",
+          "value": "10"
+        }
+      },
+      {
+        "Text": "20 €",
+        "Start": 21,
+        "End": 24,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "EUR",
+          "unit": "Euro",
+          "value": "20"
+        }
+      },
+      {
+        "Text": "50 €",
+        "Start": 27,
+        "End": 30,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "EUR",
+          "unit": "Euro",
+          "value": "50"
+        }
+      },
+      {
+        "Text": "100 €",
+        "Start": 33,
+        "End": 37,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "EUR",
+          "unit": "Euro",
+          "value": "100"
+        }
+      },
+      {
+        "Text": "200 €",
+        "Start": 40,
+        "End": 44,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "EUR",
+          "unit": "Euro",
+          "value": "200"
+        }
+      },
+      {
+        "Text": "500 €",
+        "Start": 47,
+        "End": 51,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "EUR",
+          "unit": "Euro",
+          "value": "500"
+        }
+      }
+    ]
+  }
+]
