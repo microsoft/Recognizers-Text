@@ -111,13 +111,6 @@ class CatalanNumberParserConfiguration(NumberParserConfiguration):
 
         ordinal_number_map: Dict[str, int] = dict(
             CatalanNumeric.OrdinalNumberMap)
-        # for prefix_key in CatalanNumeric.PrefixCardinalMap:
-        #     for suffix_key in CatalanNumeric.SuffixOrdinalMap:
-        #         if not prefix_key+suffix_key in ordinal_number_map:
-        #             prefix_value = CatalanNumeric.PrefixCardinalMap[prefix_key]
-        #             suffix_value = CatalanNumeric.SuffixOrdinalMap[suffix_key]
-        #             ordinal_number_map[prefix_key +
-        #                                suffix_key] = prefix_value*suffix_value
         self._cardinal_number_map = CatalanNumeric.CardinalNumberMap
         self._ordinal_number_map = ordinal_number_map
         self._round_number_map = CatalanNumeric.RoundNumberMap
@@ -153,7 +146,7 @@ class CatalanNumberParserConfiguration(NumberParserConfiguration):
                 frac_words.append(tokens[i])
             i += 1
 
-        # The following piece of code is needed to compute the fraction pattern number+'y medio'
+        # TODO The following piece of code is needed to compute the fraction pattern number+'y medio'
         # e.g. 'cinco y medio' ('five and a half') where the numerator is omitted in Catalan.
         # It works by inserting the numerator 'un' ('a') in the list result
         # so that the pattern is correctly processed.
