@@ -1,11 +1,11 @@
 from typing import Pattern, Dict
 
 from recognizers_text.utilities import RegExpUtility
-from ...resources.arabic_date_time import ArabicDateTime
-from ..extractors import DateTimeExtractor
-from ..parsers import DateTimeParser
-from ..base_set import SetParserConfiguration, MatchedTimex
-from ..base_configs import BaseDateParserConfiguration
+from recognizers_date_time.resources.arabic_date_time import ArabicDateTime
+from recognizers_date_time.date_time.extractors import DateTimeExtractor
+from recognizers_date_time.date_time.parsers import DateTimeParser
+from recognizers_date_time.date_time.base_set import SetParserConfiguration, MatchedTimex
+from recognizers_date_time.date_time.base_configs import BaseDateParserConfiguration
 
 
 class ArabicSetParserConfiguration(SetParserConfiguration):
@@ -122,36 +122,32 @@ class ArabicSetParserConfiguration(SetParserConfiguration):
         self._set_each_regex = RegExpUtility.get_safe_reg_exp(
             ArabicDateTime.SetEachRegex)
 
+        self._day_type_regex = RegExpUtility.get_safe_reg_exp(ArabicDateTime.DayTypeRegex)
+        self._week_type_regex = RegExpUtility.get_safe_reg_exp(ArabicDateTime.WeekTypeRegex)
+        self._month_type_regex = RegExpUtility.get_safe_reg_exp(ArabicDateTime.MonthTypeRegex)
+        self._quarter_type_regex = RegExpUtility.get_safe_reg_exp(ArabicDateTime.QuarterTypeRegex)
+        self._year_type_regex = RegExpUtility.get_safe_reg_exp(ArabicDateTime.YearTypeRegex)
+        self._weekend_type_regex = RegExpUtility.get_safe_reg_exp(ArabicDateTime.WeekendTypeRegex)
+
     def get_matched_daily_timex(self, text: str) -> MatchedTimex:
-        trimmed_text = text.strip().lower()
-        if trimmed_text == 'daily':
+        trimmed_source = text.strip().lower()
+
+        if self._day_type_regex.search(trimmed_source):
             timex = 'P1D'
-        elif trimmed_text == 'weekly':
+        elif self._week_type_regex.search(trimmed_source):
             timex = 'P1W'
-        elif trimmed_text == 'biweekly':
-            timex = 'P2W'
-        elif trimmed_text == 'monthly':
+        elif self._month_type_regex.search(trimmed_source):
             timex = 'P1M'
-        elif trimmed_text == 'quarterly':
-            timex = 'P3M'
-        elif trimmed_text in ('yearly', 'annually', 'annual'):
+        elif self._year_type_regex.search(trimmed_source):
             timex = 'P1Y'
+        elif self._quarter_type_regex.search(trimmed_source):
+            timex = 'P3M'
+        elif self._weekend_type_regex.search(trimmed_source):
+            timex = 'XXXX-WXX-WE'
         else:
             return MatchedTimex(False, None)
 
         return MatchedTimex(True, timex)
 
     def get_matched_unit_timex(self, text: str) -> MatchedTimex:
-        trimmed_text = text.strip().lower()
-        if trimmed_text == 'day':
-            timex = 'P1D'
-        elif trimmed_text == 'week':
-            timex = 'P1W'
-        elif trimmed_text == 'month':
-            timex = 'P1M'
-        elif trimmed_text == 'year':
-            timex = 'P1Y'
-        else:
-            return MatchedTimex(False, None)
-
-        return MatchedTimex(True, timex)
+        return self.get_matched_daily_timex(text)

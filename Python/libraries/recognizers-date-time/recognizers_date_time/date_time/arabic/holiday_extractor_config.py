@@ -1,15 +1,11 @@
 from typing import List, Pattern
 from recognizers_text.utilities import RegExpUtility
 
-from ..base_holiday import HolidayExtractorConfiguration
-from ...resources.arabic_date_time import ArabicDateTime
+from recognizers_date_time.date_time.base_holiday import HolidayExtractorConfiguration
+from recognizers_date_time.resources.arabic_date_time import ArabicDateTime
 
 
 class ArabicHolidayExtractorConfiguration(HolidayExtractorConfiguration):
-
-    @property
-    def year_regex(self) -> Pattern:
-        return self._year_regex
 
     @property
     def year_regex(self) -> Pattern:
