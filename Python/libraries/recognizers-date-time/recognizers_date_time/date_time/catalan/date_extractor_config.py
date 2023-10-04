@@ -162,6 +162,7 @@ class CatalanDateExtractorConfiguration(DateExtractorConfiguration):
             RegExpUtility.get_safe_reg_exp(CatalanDateTime.OnRegex),
             RegExpUtility.get_safe_reg_exp(CatalanDateTime.RelaxedOnRegex),
             RegExpUtility.get_safe_reg_exp(CatalanDateTime.SpecialDayRegex),
+            # TODO - we might invest in resolving below in time.
             # RegExpUtility.get_safe_reg_exp(CatalanDateTime.ThisRegex),
             # RegExpUtility.get_safe_reg_exp(CatalanDateTime.LastDateRegex),
             # RegExpUtility.get_safe_reg_exp(CatalanDateTime.NextDateRegex),
