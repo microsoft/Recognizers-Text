@@ -15,23 +15,22 @@
     ]
   },
    {
-    "Input": "10 $ no són gaires, ni 10 €",
-    "NotSupported": "javascript, python, java",
+    "Input": "$10 no són gaires, €10 ",
     "Results": [
       {
-        "Text": "10 $",
+        "Text": "$10",
         "Start": 0,
-        "End": 3,
+        "End": 2,
         "TypeName": "currency",
         "Resolution": {
-          "unit": "Dollar",
+          "unit": "Dòlar",
           "value": "10"
         }
       },
       {
-        "Text": "10 €",
-        "Start": 23,
-        "End": 27,
+        "Text": "€10",
+        "Start": 19,
+        "End": 21,
         "TypeName": "currency",
         "Resolution": {
           "isoCurrency": "EUR",
@@ -43,7 +42,6 @@
   },
   {
     "Input": "M'agradaria comprar aquest article per 125 EUR.",
-    "NotSupported": "python, java, javascript",
     "Results": [
       {
         "Text": "125 eur",
@@ -60,7 +58,6 @@
   },
   {
     "Input": "Bitllets: 5 €, 10 €, 20 €, 50 €, 100 €, 200 €, 500 €.",
-    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "5 €",
