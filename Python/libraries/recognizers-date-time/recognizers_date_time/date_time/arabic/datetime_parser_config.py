@@ -3,12 +3,13 @@ from typing import Pattern, Dict
 from recognizers_text.utilities import RegExpUtility
 from recognizers_number.number.extractors import BaseNumberExtractor
 from recognizers_number.number.parsers import BaseNumberParser
-from ...resources.arabic_date_time import ArabicDateTime
-from ..extractors import DateTimeExtractor
-from ..parsers import DateTimeParser
-from ..utilities import DateTimeUtilityConfiguration
-from ..base_configs import BaseDateParserConfiguration
-from ..base_datetime import DateTimeParserConfiguration, MatchedTimex
+from recognizers_date_time.resources.arabic_date_time import ArabicDateTime
+from recognizers_date_time.date_time.extractors import DateTimeExtractor
+from recognizers_date_time.date_time.parsers import DateTimeParser
+from recognizers_date_time.date_time.utilities import DateTimeUtilityConfiguration
+from recognizers_date_time.date_time.base_configs import BaseDateParserConfiguration
+from recognizers_date_time.date_time.base_datetime import DateTimeParserConfiguration, MatchedTimex
+from recognizers_date_time.date_time.constants import Constants
 
 
 class ArabicDateTimeParserConfiguration(DateTimeParserConfiguration):
@@ -97,6 +98,30 @@ class ArabicDateTimeParserConfiguration(DateTimeParserConfiguration):
         return self._numbers
 
     @property
+    def night_time_regex(self) -> Pattern:
+        return self._night_time_regex
+
+    @property
+    def now_time_regex(self) -> Pattern:
+        return self._now_time_regex
+
+    @property
+    def recently_time_regex(self) -> Pattern:
+        return self._recently_time_regex
+
+    @property
+    def asap_time_regex(self) -> Pattern:
+        return self._asap_time_regex
+
+    @property
+    def next_prefix_regex(self) -> Pattern:
+        return self._next_prefix_regex
+
+    @property
+    def previous_prefix_regex(self) -> Pattern:
+        return self._previous_prefix_regex
+
+    @property
     def utility_configuration(self) -> DateTimeUtilityConfiguration:
         return self._utility_configuration
 
@@ -132,38 +157,44 @@ class ArabicDateTimeParserConfiguration(DateTimeParserConfiguration):
         self._duration_parser = config.duration_parser
         self._unit_map = config.unit_map
         self._utility_configuration = config.utility_configuration
+        self._night_time_regex = RegExpUtility.get_safe_reg_exp(ArabicDateTime.NightTimeRegex)
+        self._now_time_regex = RegExpUtility.get_safe_reg_exp(ArabicDateTime.NowTimeRegex)
+        self._recently_time_regex = RegExpUtility.get_safe_reg_exp(ArabicDateTime.RecentlyTimeRegex)
+        self._asap_time_regex = RegExpUtility.get_safe_reg_exp(ArabicDateTime.AsapTimeRegex)
+        self._next_prefix_regex = RegExpUtility.get_safe_reg_exp(ArabicDateTime.NextPrefixRegex)
+        self._previous_prefix_regex = RegExpUtility.get_safe_reg_exp(ArabicDateTime.PreviousPrefixRegex)
 
-    def have_ambiguous_token(self, source: str, matched_text: str) -> bool:
-        return False
-
-    def get_matched_now_timex(self, source: str) -> MatchedTimex:
+    def get_hour(self, source: str, hour: int) -> int:
         source = source.strip().lower()
 
-        if source.endswith('now'):
+        if RegExpUtility.match_end(self.am_time_regex, source, False) and hour >= Constants.HALF_DAY_HOUR_COUNT:
+            return hour - 12
+        elif not RegExpUtility.match_end(self.am_time_regex, source, False) and hour < Constants.HALF_DAY_HOUR_COUNT and \
+                not (RegExpUtility.match_end(self.pm_time_regex, source, False) and hour < Constants.QUARTER_DAY_HOUR_COUNT):
+            return hour + 12
+
+        return hour
+
+    def get_matched_now_timex(self, source: str) -> MatchedTimex:
+
+        if RegExpUtility.match_end(self.now_time_regex, source, True):
             return MatchedTimex(True, 'PRESENT_REF')
-        elif source in ['recently', 'previously']:
+        elif RegExpUtility.match_end(self.recently_time_regex, source, True):
             return MatchedTimex(True, 'PAST_REF')
-        elif source in ['as soon as possible', 'asap']:
+        elif RegExpUtility.match_end(self.asap_time_regex, source, True):
             return MatchedTimex(True, 'FUTURE_REF')
 
         return MatchedTimex(False, None)
 
     def get_swift_day(self, source: str) -> int:
-        source = source.strip().lower()
 
-        if source.startswith('next'):
+        if RegExpUtility.match_begin(self.next_prefix_regex, source, True):
             return 1
-        elif source.startswith('last'):
+        elif RegExpUtility.match_begin(self.previous_prefix_regex, source, True):
             return -1
 
         return 0
 
-    def get_hour(self, source: str, hour: int) -> int:
-        source = source.strip().lower()
+    def have_ambiguous_token(self, source: str, matched_text: str) -> bool:
+        return False
 
-        if source.endswith('morning') and hour >= 12:
-            return hour - 12
-        elif not source.endswith('morning') and hour < 12 and not (source.endswith('night') and hour < 6):
-            return hour + 12
-
-        return hour

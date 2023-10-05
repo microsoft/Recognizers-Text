@@ -85,7 +85,7 @@ class ArabicSetExtractorConfiguration(SetExtractorConfiguration):
     def duration_unit_regex(self) -> Pattern:
         return self._duration_unit_regex
 
-    def __init__(self, dmyDateFormat=False):
+    def __init__(self, dmyDateFormat=True):
         self._duration_extractor = BaseDurationExtractor(
             ArabicDurationExtractorConfiguration())
         self._time_extractor = BaseTimeExtractor(

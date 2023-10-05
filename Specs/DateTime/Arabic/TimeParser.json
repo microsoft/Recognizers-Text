@@ -241,7 +241,7 @@
   {
     "Input": "سأعود في 7 مساء",
     "IgnoreResolution": "true",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "7 مساء",
@@ -799,7 +799,7 @@
   },
   {
     "Input": "سأعود بعد الظهر السابعة مساء",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "بعد الظهر السابعة مساء",

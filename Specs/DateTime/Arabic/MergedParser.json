@@ -649,7 +649,7 @@
     },
     "IgnoreResolution": "true",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "2016-2-30",

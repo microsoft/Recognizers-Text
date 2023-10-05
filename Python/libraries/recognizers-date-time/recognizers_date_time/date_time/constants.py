@@ -92,6 +92,7 @@ class Constants:
     MIN_YEAR_NUM: int = int(BaseDateTime.MinYearNum)
     MAX_YEAR_NUM: int = int(BaseDateTime.MaxYearNum)
 
+    QUARTER_DAY_HOUR_COUNT = 6
     HALF_DAY_HOUR_COUNT = 12
     DAY_HOUR_COUNT = 24
     DAY_HOUR_START = 0

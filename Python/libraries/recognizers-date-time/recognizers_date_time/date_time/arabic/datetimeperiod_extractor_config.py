@@ -3,22 +3,22 @@ import regex
 
 from recognizers_number import BaseNumberExtractor, ArabicCardinalExtractor
 from recognizers_text.utilities import RegExpUtility
-from ...resources.arabic_date_time import ArabicDateTime
-from ..extractors import DateTimeExtractor
-from ..base_datetimeperiod import DateTimePeriodExtractorConfiguration, MatchedIndex
-from ..base_date import BaseDateExtractor
-from ..base_time import BaseTimeExtractor
-from ..base_duration import BaseDurationExtractor
-from ..base_timeperiod import BaseTimePeriodExtractor
-from ..base_datetime import BaseDateTimeExtractor
-from ..base_timezone import BaseTimeZoneExtractor
-from .date_extractor_config import ArabicDateExtractorConfiguration
-from .time_extractor_config import ArabicTimeExtractorConfiguration
-from .duration_extractor_config import ArabicDurationExtractorConfiguration
-from .timeperiod_extractor_config import ArabicTimePeriodExtractorConfiguration
-from .datetime_extractor_config import ArabicDateTimeExtractorConfiguration
-from .timezone_extractor_config import ArabicTimeZoneExtractorConfiguration
-from ..utilities import DateTimeOptions
+from recognizers_date_time.resources.arabic_date_time import ArabicDateTime
+from recognizers_date_time.date_time.extractors import DateTimeExtractor
+from recognizers_date_time.date_time.base_datetimeperiod import DateTimePeriodExtractorConfiguration, MatchedIndex
+from recognizers_date_time.date_time.base_date import BaseDateExtractor
+from recognizers_date_time.date_time.base_time import BaseTimeExtractor
+from recognizers_date_time.date_time.base_duration import BaseDurationExtractor
+from recognizers_date_time.date_time.base_timeperiod import BaseTimePeriodExtractor
+from recognizers_date_time.date_time.base_datetime import BaseDateTimeExtractor
+from recognizers_date_time.date_time.base_timezone import BaseTimeZoneExtractor
+from recognizers_date_time.date_time.arabic.date_extractor_config import ArabicDateExtractorConfiguration
+from recognizers_date_time.date_time.arabic.time_extractor_config import ArabicTimeExtractorConfiguration
+from recognizers_date_time.date_time.arabic.duration_extractor_config import ArabicDurationExtractorConfiguration
+from recognizers_date_time.date_time.arabic.timeperiod_extractor_config import ArabicTimePeriodExtractorConfiguration
+from recognizers_date_time.date_time.arabic.datetime_extractor_config import ArabicDateTimeExtractorConfiguration
+from recognizers_date_time.date_time.arabic.timezone_extractor_config import ArabicTimeZoneExtractorConfiguration
+from recognizers_date_time.date_time.utilities import DateTimeOptions
 
 
 class ArabicDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfiguration):
@@ -159,7 +159,7 @@ class ArabicDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigur
     def week_day_regex(self) -> Pattern:
         return self._week_day_regex
 
-    def __init__(self, dmyDateFormat=False):
+    def __init__(self, dmyDateFormat=True):
         super().__init__()
         self._week_day_regex = RegExpUtility.get_safe_reg_exp(
             ArabicDateTime.WeekDayRegex
@@ -256,4 +256,4 @@ class ArabicDateTimePeriodExtractorConfiguration(DateTimePeriodExtractorConfigur
         return MatchedIndex(matched=False, index=-1)
 
     def has_connector_token(self, source: str) -> bool:
-        return regex.fullmatch(self.range_connector_regex, source)
+        return RegExpUtility.is_exact_match(self.range_connector_regex, source, True)

@@ -379,7 +379,7 @@
   {
     "Input": "سأعود 14 أكتوبر 8:00 ، 14 أكتوبر",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "14 أكتوبر 8:00",

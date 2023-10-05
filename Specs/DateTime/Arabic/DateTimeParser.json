@@ -500,7 +500,7 @@
     },
     "IgnoreResolution": "true",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الساعة 8 مساء اليوم",
@@ -1280,7 +1280,7 @@
     },
     "IgnoreResolution": "true",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "6 يناير 2017-6:37 صباحًا",

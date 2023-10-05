@@ -413,7 +413,7 @@
     },
     "IgnoreResolution": "true",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "2015-3",
@@ -1167,7 +1167,7 @@
     },
     "IgnoreResolution": "true",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "طوال الشهر",
@@ -1744,7 +1744,7 @@
     },
     "IgnoreResolution": "true",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "12 ظهرا",
@@ -1824,7 +1824,7 @@
     },
     "IgnoreResolution": "true",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "بين 5 و 6 بعد الظهر",
