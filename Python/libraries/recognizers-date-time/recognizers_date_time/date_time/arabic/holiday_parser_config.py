@@ -3,9 +3,9 @@ import re
 from datetime import datetime
 
 from recognizers_text.utilities import RegExpUtility
-from ..utilities import DateUtils
-from ..base_holiday import BaseHolidayParserConfiguration
-from ...resources.arabic_date_time import ArabicDateTime
+from recognizers_date_time.date_time.utilities import DateUtils
+from recognizers_date_time.date_time.base_holiday import BaseHolidayParserConfiguration
+from recognizers_date_time.resources.arabic_date_time import ArabicDateTime
 
 
 class ArabicHolidayParserConfiguration(BaseHolidayParserConfiguration):
@@ -24,16 +24,20 @@ class ArabicHolidayParserConfiguration(BaseHolidayParserConfiguration):
     def get_swift_year(self, text: str) -> int:
         trimmed_text = text.strip().lower()
         swift = -10
-        if trimmed_text.startswith('next'):
+
+        if self.next_prefix_regex.search(trimmed_text):
             swift = 1
-        if trimmed_text.startswith('last'):
+
+        if self.previous_prefix_regex.search(trimmed_text):
             swift = -1
-        if trimmed_text.startswith('this'):
+
+        if self.this_prefix_regex.search(trimmed_text):
             swift = 0
+
         return swift
 
     def sanitize_holiday_token(self, holiday: str) -> str:
-        return re.sub('[ \']', '', holiday)
+        return holiday.replace(' ', '').replace('\'', '')
 
     def __init__(self, config):
         super().__init__()
@@ -41,6 +45,13 @@ class ArabicHolidayParserConfiguration(BaseHolidayParserConfiguration):
             RegExpUtility.get_safe_reg_exp(ArabicDateTime.HolidayRegex)
         ]
         self._holiday_names = ArabicDateTime.HolidayNames
+
+        self.next_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            ArabicDateTime.NextPrefixRegex)
+        self.previous_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            ArabicDateTime.PreviousPrefixRegex)
+        self.this_prefix_regex = RegExpUtility.get_safe_reg_exp(
+            ArabicDateTime.ThisPrefixRegex)
 
     def _init_holiday_funcs(self) -> Dict[str, Callable[[int], datetime]]:
         local = dict([
