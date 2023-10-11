@@ -1,0 +1,68 @@
+[
+  {
+    "Input": "Tornaré el 22 d'abril",
+    "Results": [
+      {
+        "Text": "22 d'abril",
+        "Type": "date",
+        "Start": 11,
+        "Length": 10
+      }
+    ]
+  },
+  {
+    "Input": "Tornaré el 21/04/16",
+    "Results": [
+      {
+        "Text": "21/04/16",
+        "Type": "date",
+        "Start": 11,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "tornaré avui",
+    "Results": [
+      {
+        "Text": "avui",
+        "Type": "date",
+        "Start": 8,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "tornaré demà",
+    "Results": [
+      {
+        "Text": "demà",
+        "Type": "date",
+        "Start": 8,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "Tornaré el 15 de juny de 2016",
+    "Results": [
+      {
+        "Text": "15 de juny de 2016",
+        "Type": "date",
+        "Start": 11,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "Vaig marxar d'aquí el 5 de desembre de 1391",
+    "Results": [
+      {
+        "Text": "5 de desembre de 1391",
+        "Type": "date",
+        "Start": 22,
+        "Length": 21
+      }
+    ]
+  }
+]

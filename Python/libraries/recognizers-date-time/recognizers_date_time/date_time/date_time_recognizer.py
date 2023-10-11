@@ -8,6 +8,7 @@ from recognizers_text.model import Model, ModelResult
 from .utilities import DateTimeOptions
 from .models import DateTimeModel
 from .base_merged import BaseMergedExtractor, BaseMergedParser
+from .base_minimal_merged import MinimalMergedExtractor, MinimalMergedParser
 from .english.common_configs import EnglishCommonDateTimeParserConfiguration
 from .english.merged_extractor_config import EnglishMergedExtractorConfiguration
 from .english.merged_parser_config import EnglishMergedParserConfiguration
@@ -38,6 +39,9 @@ from .japanese.common_configs import JapaneseCommonDateTimeParserConfiguration
 from .arabic.merged_extractor_config import ArabicMergedExtractorConfiguration
 from .arabic.merged_parser_config import ArabicMergedParserConfiguration
 from .arabic.common_configs import ArabicCommonDateTimeParserConfiguration
+from .catalan.common_configs import CatalanCommonDateTimeParserConfiguration
+from .catalan.merged_extractor_config import CatalanMergedExtractorConfiguration
+from .catalan.merged_parser_config import CatalanMergedParserConfiguration
 
 
 class DateTimeRecognizer(Recognizer[DateTimeOptions]):
@@ -119,6 +123,12 @@ class DateTimeRecognizer(Recognizer[DateTimeOptions]):
             BaseMergedParser(ArabicMergedParserConfiguration(
                 ArabicCommonDateTimeParserConfiguration()), options),
             BaseMergedExtractor(ArabicMergedExtractorConfiguration(), options)
+        ))
+
+        self.register_model('DateTimeModel', Culture.Catalan, lambda options: DateTimeModel(
+            MinimalMergedParser(CatalanMergedParserConfiguration(
+                CatalanCommonDateTimeParserConfiguration()), options),
+            MinimalMergedExtractor(CatalanMergedExtractorConfiguration(), options)
         ))
 
     def get_datetime_model(self, culture: str = None, fallback_to_default_culture: bool = True) -> Model:

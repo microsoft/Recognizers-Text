@@ -74,6 +74,7 @@ ENTITY_PATTERN = re.compile('(.*)(Model|Parser|Extractor|Resolver)(.*)')
 CULTURES = {
     'Arabic': Culture.Arabic,
     'Chinese': Culture.Chinese,
+    'Catalan': Culture.Catalan,
     'Dutch': Culture.Dutch,
     'English': Culture.English,
     'EnglishOthers': Culture.EnglishOthers,

@@ -30,6 +30,8 @@ from recognizers_number.number.german.extractors import GermanMergedNumberExtrac
 from recognizers_number.number.german.parsers import GermanNumberParserConfiguration
 from recognizers_number.number.italian.extractors import ItalianMergedNumberExtractor, ItalianOrdinalExtractor, ItalianPercentageExtractor
 from recognizers_number.number.italian.parsers import ItalianNumberParserConfiguration
+from recognizers_number.number.catalan.extractors import CatalanNumberExtractor, CatalanOrdinalExtractor
+from recognizers_number.number.catalan.parsers import CatalanNumberParserConfiguration
 
 
 class NumberOptions(IntFlag):
@@ -220,6 +222,19 @@ class NumberRecognizer(Recognizer[NumberOptions]):
             AgnosticNumberParserFactory.get_parser(
                 ParserType.PERCENTAGE, ItalianNumberParserConfiguration()),
             ItalianPercentageExtractor()
+        ))
+        # endregion
+
+        # region Catalan
+        self.register_model('NumberModel', Culture.Catalan, lambda options: NumberModel(
+            AgnosticNumberParserFactory.get_parser(
+                ParserType.NUMBER, CatalanNumberParserConfiguration()),
+            CatalanNumberExtractor(NumberMode.PURE_NUMBER)
+        ))
+        self.register_model('OrdinalModel', Culture.Catalan, lambda options: OrdinalModel(
+            AgnosticNumberParserFactory.get_parser(
+                ParserType.ORDINAL, CatalanNumberParserConfiguration()),
+            CatalanOrdinalExtractor()
         ))
         # endregion
 

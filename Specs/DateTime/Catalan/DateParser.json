@@ -1,0 +1,232 @@
+[
+  {
+    "Input": "Tornaré al 2 d'octubre",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "2 d'octubre",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-10-02",
+          "FutureResolution": {
+            "date": "2017-10-02"
+          },
+          "PastResolution": {
+            "date": "2016-10-02"
+          }
+        },
+        "Start": 11,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "Tornaré el 12 de gener de 2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "12 de gener de 2016",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-01-12",
+          "FutureResolution": {
+            "date": "2016-01-12"
+          },
+          "PastResolution": {
+            "date": "2016-01-12"
+          }
+        },
+        "Start": 11,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "Tornaré el dilluns 12 de gener de 2016",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "dilluns 12 de gener de 2016",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-01-12",
+          "FutureResolution": {
+            "date": "2016-01-12"
+          },
+          "PastResolution": {
+            "date": "2016-01-12"
+          }
+        },
+        "Start": 11,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "Tornaré el 21/04/16",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "21/04/16",
+        "Type": "date",
+        "Value": {
+          "Timex": "2016-04-21",
+          "FutureResolution": {
+            "date": "2016-04-21"
+          },
+          "PastResolution": {
+            "date": "2016-04-21"
+          }
+        },
+        "Start": 11,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Tornaré el dimecres 22 de gener",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "dimecres 22 de gener",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-01-22",
+          "FutureResolution": {
+            "date": "2017-01-22"
+          },
+          "PastResolution": {
+            "date": "2016-01-22"
+          }
+        },
+        "Start": 11,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "Tornaré el vint-i-un de maig",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "vint-i-un de maig",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-05-21",
+          "FutureResolution": {
+            "date": "2017-05-21"
+          },
+          "PastResolution": {
+            "date": "2016-05-21"
+          }
+        },
+        "Start": 11,
+        "Length": 17
+      }
+    ]
+  },
+  {
+    "Input": "Tornaré el dia dotze de novembre.",
+    "Context": {
+      "ReferenceDateTime": "2023-04-25T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "dotze de novembre",
+        "Type": "date",
+        "Value": {
+          "Timex": "XXXX-11-12",
+          "FutureResolution": {
+            "date": "2023-11-12"
+          },
+          "PastResolution": {
+            "date": "2022-11-12"
+          }
+        },
+        "Start": 11,
+        "Length": 21
+      }
+    ]
+  },
+  {
+    "Input": "Tornaré el 3-7-2017",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "3-7-2017",
+        "Type": "date",
+        "Value": {
+          "Timex": "2017-07-03",
+          "FutureResolution": {
+            "date": "2017-07-03"
+          },
+          "PastResolution": {
+            "date": "2017-07-03"
+          }
+        },
+        "Start": 11,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "Tornaré el 05/05/89",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "05/05/89",
+        "Type": "date",
+        "Value": {
+          "Timex": "1989-05-05",
+          "FutureResolution": {
+            "date": "1989-05-05"
+          },
+          "PastResolution": {
+            "date": "1989-05-05"
+          }
+        },
+        "Start": 11,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "aquest article es va publicar el 06/10/2020",
+    "Context": {
+      "ReferenceDateTime": "2023-05-05T00:00:00"
+    },
+    "Results": [
+      {
+        "Text": "06/10/2020",
+        "Type": "date",
+        "Value": {
+          "Timex": "2020-10-06",
+          "FutureResolution": {
+            "date": "2020-10-06"
+          },
+          "PastResolution": {
+            "date": "2020-10-06"
+          }
+        },
+        "Start": 33,
+        "Length": 10
+      }
+    ]
+  }
+]

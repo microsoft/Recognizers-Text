@@ -1,0 +1,79 @@
+[
+  {
+    "Input": "Tornaré a les 7",
+    "Results": [
+      {
+        "Text": "7",
+        "Type": "time",
+        "Start": 14,
+        "Length": 1
+      }
+    ]
+  },
+  {
+    "Input": "Tornaré a les set",
+    "Results": [
+      {
+        "Text": "set",
+        "Type": "time",
+        "Start": 14,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "Tornaré a les 7 de la tarda",
+    "Results": [
+      {
+        "Text": "7 de la tarda",
+        "Type": "time",
+        "Start": 14,
+        "Length": 13
+      }
+    ]
+  },
+  {
+    "Input": "Tornaré al migdia",
+    "Results": [
+      {
+        "Text": "migdia",
+        "Type": "time",
+        "Start": 11,
+        "Length": 6
+      }
+    ]
+  },
+  {
+    "Input": "Tornaré a les 7:56:35",
+    "Results": [
+      {
+        "Text": "7:56:35",
+        "Type": "time",
+        "Start": 14,
+        "Length": 7
+      }
+    ]
+  },
+  {
+    "Input": "Són tres minuts per a les vuit",
+    "Results": [
+      {
+        "Text": "tres minuts per a les vuit",
+        "Type": "time",
+        "Start": 4,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Tornaré a les set i trenta p. m.",
+    "Results": [
+      {
+        "Text": "set i trenta p. m.",
+        "Type": "time",
+        "Start": 14,
+        "Length": 18
+      }
+    ]
+  }
+]

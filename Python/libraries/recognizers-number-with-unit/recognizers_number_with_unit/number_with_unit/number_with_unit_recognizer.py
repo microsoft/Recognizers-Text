@@ -67,6 +67,8 @@ from .italian.extractors import ItalianCurrencyExtractorConfiguration
 from .italian.parsers import ItalianCurrencyParserConfiguration
 from .japanese.extractors import JapaneseCurrencyExtractorConfiguration
 from .japanese.parsers import JapaneseCurrencyParserConfiguration
+from .catalan.extractors import CatalanCurrencyExtractorConfiguration
+from .catalan.parsers import CatalanCurrencyParserConfiguration
 
 
 class NumberWithUnitOptions(IntFlag):
@@ -280,6 +282,15 @@ class NumberWithUnitRecognizer(Recognizer[NumberWithUnitOptions]):
                 NumberWithUnitExtractor(
                     EnglishCurrencyExtractorConfiguration()),
                 NumberWithUnitParser(EnglishCurrencyParserConfiguration()))
+        ]))
+        # endregion
+
+        # region Catalan
+        self.register_model('CurrencyModel', Culture.Catalan, lambda options: CurrencyModel([
+            ExtractorParserModel(
+                BaseMergedUnitExtractor(
+                    CatalanCurrencyExtractorConfiguration()),
+                BaseMergedUnitParser(CatalanCurrencyParserConfiguration()))
         ]))
         # endregion
 
