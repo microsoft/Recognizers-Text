@@ -2,12 +2,12 @@ from typing import Pattern, Dict
 import regex
 
 from recognizers_text.utilities import RegExpUtility
-from ...resources.arabic_date_time import ArabicDateTime
-from ..base_datetimeperiod import DateTimePeriodParserConfiguration, MatchedTimeRange
-from ..constants import Constants, TimeTypeConstants
-from ..extractors import DateTimeExtractor
-from ..parsers import DateTimeParser
-from ..base_configs import BaseDateParserConfiguration
+from recognizers_date_time.resources.arabic_date_time import ArabicDateTime
+from recognizers_date_time.date_time.base_datetimeperiod import DateTimePeriodParserConfiguration, MatchedTimeRange
+from recognizers_date_time.date_time.constants import Constants
+from recognizers_date_time.date_time.extractors import DateTimeExtractor
+from recognizers_date_time.date_time.parsers import DateTimeParser
+from recognizers_date_time.date_time.base_configs import BaseDateParserConfiguration
 
 
 class ArabicDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration):
@@ -204,8 +204,6 @@ class ArabicDateTimePeriodParserConfiguration(DateTimePeriodParserConfiguration)
         return self._time_zone_parser
 
     def get_matched_time_range(self, source: str):
-        trimmed_source = source.strip()
-
         begin_hour = 0
         end_hour = 0
         end_min = 0

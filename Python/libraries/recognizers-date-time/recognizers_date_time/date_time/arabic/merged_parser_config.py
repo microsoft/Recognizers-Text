@@ -2,8 +2,8 @@ from typing import Pattern
 
 from recognizers_text.utilities import RegExpUtility
 
-# from recognizers_date_time.date_time.arabic.holiday_parser_config import ArabicHolidayParserConfiguration
-# from recognizers_date_time.date_time.arabic.set_parser_config import ArabicSetParserConfiguration
+from recognizers_date_time.date_time.arabic.holiday_parser_config import ArabicHolidayParserConfiguration
+from recognizers_date_time.date_time.arabic.set_parser_config import ArabicSetParserConfiguration
 from recognizers_date_time.date_time.arabic.dateperiod_parser_config import ArabicDatePeriodParserConfiguration
 from recognizers_date_time.date_time.arabic.timeperiod_parser_config import ArabicTimePeriodParserConfiguration
 from recognizers_date_time.date_time.arabic.common_configs import ArabicCommonDateTimeParserConfiguration
@@ -103,5 +103,5 @@ class ArabicMergedParserConfiguration(ArabicCommonDateTimeParserConfiguration, M
             ArabicDatePeriodParserConfiguration(self))
         self._time_period_parser = BaseTimePeriodParser(
             ArabicTimePeriodParserConfiguration(self))
-        self._set_parser = None
-        self._holiday_parser = None
+        self._set_parser = BaseSetParser(ArabicSetParserConfiguration(self))
+        self._holiday_parser = BaseHolidayParser(ArabicHolidayParserConfiguration(self))

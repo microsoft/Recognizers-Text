@@ -1,7 +1,7 @@
 [
   {
     "Input": "سأترك لمدة 3 ساعات",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "3 ساعات",
@@ -13,7 +13,7 @@
   },
   {
     "Input": "سأغادر لمدة 3 أيام",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "3 أيام",
@@ -25,7 +25,7 @@
   },
   {
     "Input": "سأغادر لمدة 3.5 سنوات",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "3.5 سنوات",
@@ -37,7 +37,7 @@
   },
   {
     "Input": "سأترك مدة 3 ساعات",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "3 ساعات",
@@ -49,7 +49,7 @@
   },
   {
     "Input": "سأغادر لمدة 3 الساعات",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "3 الساعات",
@@ -61,7 +61,7 @@
   },
   {
     "Input": "سأغادر لمدة 3 ساعة",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "3 ساعة",
@@ -73,7 +73,7 @@
   },
   {
     "Input": "سأغادر لمدة 3 ساعات",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "3 ساعات",
@@ -85,7 +85,7 @@
   },
   {
     "Input": "سأغادر مدة 3 أيام",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "3 أيام",
@@ -97,7 +97,7 @@
   },
   {
     "Input": "سأغادر لمدة 3 أشهر",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "3 أشهر",
@@ -109,7 +109,7 @@
   },
   {
     "Input": "سأغادر لمدة 3 دقائق",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "3 دقائق",
@@ -121,7 +121,7 @@
   },
   {
     "Input": "سأترك مدة 3 دقائق",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "3 دقائق",
@@ -133,7 +133,7 @@
   },
   {
     "Input": "سأغادر لمدة 3.5 ثانية",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "3.5 ثانية",
@@ -145,7 +145,7 @@
   },
   {
     "Input": "سأترك لمدة 123.45 ثانية",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "123.45 ثانية",
@@ -157,7 +157,7 @@
   },
   {
     "Input": "سأغادر لمدة أسبوعين",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "أسبوعين",
@@ -169,7 +169,7 @@
   },
   {
     "Input": "سأغادر لمدة عشرين دقيقة",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "عشرين دقيقة",
@@ -181,7 +181,7 @@
   },
   {
     "Input": "سأغادر لمدة أربع وعشرين ساعة",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "أربع وعشرين ساعة",
@@ -193,7 +193,7 @@
   },
   {
     "Input": "سأغادر طوال اليوم",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "طوال اليوم",
@@ -205,7 +205,7 @@
   },
   {
     "Input": "سأغادر طوال الأسبوع",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "طوال الأسبوع",
@@ -217,7 +217,7 @@
   },
   {
     "Input": "سأغادر طوال الشهر",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "طوال الشهر",
@@ -229,7 +229,7 @@
   },
   {
     "Input": "سأغادر طوال العام",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "طوال العام",
@@ -241,7 +241,7 @@
   },
   {
     "Input": "سأغادر طوال يوم",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "طوال يوم",
@@ -253,7 +253,7 @@
   },
   {
     "Input": "سأغادر طوال أسبوع",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "طوال أسبوع",
@@ -265,7 +265,7 @@
   },
   {
     "Input": "سأغادر طوال شهر",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "طوال شهر",
@@ -277,7 +277,7 @@
   },
   {
     "Input": "سأغادر طوال السنة",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "طوال السنة",
@@ -289,7 +289,7 @@
   },
   {
     "Input": "سأغادر ليوم كامل",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "يوم كامل",
@@ -301,7 +301,7 @@
   },
   {
     "Input": "سأغادر لمدة أسبوع كامل",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "أسبوع كامل",
@@ -313,7 +313,7 @@
   },
   {
     "Input": "سأغادر لمدة شهر كامل",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "شهر كامل",
@@ -325,7 +325,7 @@
   },
   {
     "Input": "سأغادر لمدة عام كامل",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "عام كامل",
@@ -337,7 +337,7 @@
   },
   {
     "Input": "سأغادر يوم كامل",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "يوم كامل",
@@ -349,7 +349,7 @@
   },
   {
     "Input": "سأغادرلمدة أسبوع كامل",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "أسبوع كامل",
@@ -361,7 +361,7 @@
   },
   {
     "Input": "سأغادرلمدة شهر كامل",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "شهر كامل",
@@ -373,7 +373,7 @@
   },
   {
     "Input": "سأغادر لمدة سنة كاملة",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "سنة كاملة",
@@ -385,7 +385,7 @@
   },
   {
     "Input": "سأغادر لمدة ساعة",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "ساعة",
@@ -397,7 +397,7 @@
   },
   {
     "Input": "سأترك لمدة عام",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "عام",
@@ -409,7 +409,7 @@
   },
   {
     "Input": "نصف سنة",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "نصف سنة",
@@ -421,7 +421,7 @@
   },
   {
     "Input": "نصف عام",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "نصف عام",
@@ -433,7 +433,7 @@
   },
   {
     "Input": "سأترك لمدة 3 دقائق",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "3 دقائق",
@@ -445,7 +445,7 @@
   },
   {
     "Input": "سأغادر لمدة 30 دقيقة",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "30 دقيقة",
@@ -457,7 +457,7 @@
   },
   {
     "Input": "سأغادر لمدة نصف ساعة",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "نصف ساعة",
@@ -469,7 +469,7 @@
   },
   {
     "Input": "سأغادر مدة نصف ساعة",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "نصف ساعة",
@@ -481,7 +481,7 @@
   },
   {
     "Input": "سأغادر لمدة ساعة ونصف",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "ساعة ونصف",
@@ -493,7 +493,7 @@
   },
   {
     "Input": "سأغادرمدة ساعة ونصف",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "ساعة ونصف",
@@ -505,7 +505,7 @@
   },
   {
     "Input": "سأغادر لمدة نصف الساعة",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "نصف الساعة",
@@ -517,7 +517,7 @@
   },
   {
     "Input": "سأغادر لمدة ساعتين",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "ساعتين",
@@ -529,7 +529,7 @@
   },
   {
     "Input": "سأغادر لمدة ساعتين ونصف",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "ساعتين ونصف",
@@ -541,7 +541,7 @@
   },
   {
     "Input": "في أسبوع",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "أسبوع",
@@ -553,7 +553,7 @@
   },
   {
     "Input": "في يوم",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "يوم",
@@ -565,7 +565,7 @@
   },
   {
     "Input": "لمدة ساعة",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "ساعة",
@@ -577,7 +577,7 @@
   },
   {
     "Input": "لمدة شهر",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "شهر",
@@ -589,7 +589,7 @@
   },
   {
     "Input": "سأغادر لبضع ساعات",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "بضع ساعات",
@@ -601,7 +601,7 @@
   },
   {
     "Input": "سأغادر لبضع دقائق",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "بضع دقائق",
@@ -613,7 +613,7 @@
   },
   {
     "Input": "سأرحل لبضعة أيام",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "بضعة أيام",
@@ -625,7 +625,7 @@
   },
   {
     "Input": "سأغادر لعدة أيام",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "عدة أيام",
@@ -637,7 +637,7 @@
   },
   {
     "Input": "سأغادر لمدة عام واحد و شهر و 21 يوما",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "عام واحد و شهر و 21 يوما",
@@ -649,7 +649,7 @@
   },
   {
     "Input": "سأغادر لمدة 2 أيام و شهر واحد",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "2 أيام و شهر واحد",

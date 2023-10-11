@@ -2,7 +2,7 @@
   {
     "Input": "سأخرج اليوم من الخامسة إلى السابعة",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "اليوم من الخامسة إلى السابعة",
@@ -28,7 +28,7 @@
   {
     "Input": "سأخرج من 5 إلى 6 الأحد القادم",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "من 5 إلى 6 الأحد القادم",
@@ -41,7 +41,7 @@
   {
     "Input": "سأخرج من الخامسة إلى السادسة مساء الأحد القادم",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "من الخامسة إلى السادسة مساء الأحد القادم",
@@ -340,7 +340,7 @@
   {
     "Input": "سأعود بعد 3 دقائق",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "بعد 3 دقائق",
@@ -353,7 +353,7 @@
   {
     "Input": "سأعود 3 دقائق السابقة",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "3 دقائق السابقة",
@@ -366,7 +366,7 @@
   {
     "Input": "سأعود بعد 5 ساعات",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "بعد 5 ساعات",
@@ -418,7 +418,7 @@
   {
     "Input": "سأعود بعد عدة دقائق",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "بعد عدة دقائق",
@@ -431,7 +431,7 @@
   {
     "Input": "سأعود الثلاثاء في الصباح",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الثلاثاء في الصباح",
@@ -444,7 +444,7 @@
   {
     "Input": "سأعود الثلاثاء بعد الظهر",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الثلاثاء بعد الظهر",
@@ -457,7 +457,7 @@
   {
     "Input": "سأعود الثلاثاء في المساء",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الثلاثاء في المساء",
@@ -470,7 +470,7 @@
   {
     "Input": "دعونا نجتمع في الصباح الباكر الثلاثاء",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "في الصباح الباكر الثلاثاء",
@@ -821,7 +821,7 @@
   {
     "Input": "هل يمكنك تحديد موعد 9 ديسمبر بين الساعة 8 صباحًا و 2 مساءً؟",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "9 ديسمبر بين الساعة 8 صباحًا و 2 مساء",

@@ -106,7 +106,7 @@
   {
     "Input": "الأسبوع الماضي",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "الأسبوع الماضي",
@@ -184,7 +184,7 @@
   {
     "Input": "كيف يبدو يومي؟",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "يومي",
@@ -197,7 +197,7 @@
   {
     "Input": "كيف يبدو اليوم؟",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "اليوم",
@@ -307,7 +307,7 @@
   {
     "Input": "6/6/2012 15:15",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "6/6/2012 15:15",
@@ -333,7 +333,7 @@
   {
     "Input": "29 مايو",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "29 مايو",
@@ -346,7 +346,7 @@
   {
     "Input": "29 مارس",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "29 مارس",
@@ -359,7 +359,7 @@
   {
     "Input": "ولدت في مارس",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "مارس",
@@ -398,37 +398,37 @@
   {
     "Input": "ما هي ساعات بالومينو؟",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": []
   },
   {
     "Input": "في الشمس",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": []
   },
   {
     "Input": "أي بريد إلكتروني تلقى ردًا",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": []
   },
   {
     "Input": "غالبًا ما يكون وحيدًا",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": []
   },
   {
     "Input": "غالبا طائر",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": []
   },
   {
     "Input": "ساعات ميشيغان",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": []
   },
   {

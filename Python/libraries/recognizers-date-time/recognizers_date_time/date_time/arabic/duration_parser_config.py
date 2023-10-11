@@ -5,10 +5,10 @@ from recognizers_number.number.extractors import BaseNumberExtractor
 from recognizers_number.number.parsers import BaseNumberParser
 from recognizers_number.number.arabic.extractors import ArabicCardinalExtractor
 from recognizers_number.number.arabic.parsers import ArabicNumberParserConfiguration
-from ...resources.arabic_date_time import ArabicDateTime
-from ..extractors import DateTimeExtractor
-from ..base_duration import DurationParserConfiguration, BaseDurationExtractor
-from .duration_extractor_config import ArabicDurationExtractorConfiguration
+from recognizers_date_time.resources.arabic_date_time import ArabicDateTime
+from recognizers_date_time.date_time.extractors import DateTimeExtractor
+from recognizers_date_time.date_time.base_duration import DurationParserConfiguration, BaseDurationExtractor
+from recognizers_date_time.date_time.arabic.duration_extractor_config import ArabicDurationExtractorConfiguration
 
 
 class ArabicDurationParserConfiguration(DurationParserConfiguration):

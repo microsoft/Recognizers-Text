@@ -3,8 +3,8 @@ from typing import Pattern
 from recognizers_text.utilities import RegExpUtility
 from recognizers_number.number.extractors import BaseNumberExtractor
 from recognizers_number.number.arabic.extractors import ArabicCardinalExtractor
-from ...resources.arabic_date_time import ArabicDateTime
-from ..base_duration import DurationExtractorConfiguration
+from recognizers_date_time.resources.arabic_date_time import ArabicDateTime
+from recognizers_date_time.date_time.base_duration import DurationExtractorConfiguration
 
 
 class ArabicDurationExtractorConfiguration(DurationExtractorConfiguration):
@@ -135,5 +135,5 @@ class ArabicDurationExtractorConfiguration(DurationExtractorConfiguration):
         )
         self._special_number_with_unit_regex = None
         self._check_both_before_after = ArabicDateTime.CheckBothBeforeAfter
-        # TODO When the implementation for these properties is added, change the None values to their respective Regexps
+
         self._special_number_unit_regex = None
