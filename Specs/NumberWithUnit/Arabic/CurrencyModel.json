@@ -1,0 +1,130 @@
+[
+  {
+    "Input": "أصبح زميله في فريق فولهام جوني هاينز أول لاعب بقيمة 100 جنيه إسترليني",
+    "Results": [
+      {
+        "Text": "100 جنيه إسترليني",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "100",
+          "unit": "Egyptian pound"
+        },
+        "Start": 52,
+        "End": 68
+      }
+    ]
+  },
+   {
+    "Input": "10 دولارات ليست كثيرة، 10 يورو",
+    "Results": [
+      {
+        "Text": "10 يورو",
+        "Start": 23,
+        "End": 29,
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Euro",
+          "value": "10"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "أرغب في شراء هذا المنتج مقابل 125 يورو.",
+    "Results": [
+      {
+        "Text": "125 يورو",
+        "TypeName": "currency",
+        "Resolution": {
+          "value": "125",
+          "unit": "Euro",
+          "isoCurrency": "EUR"
+        },
+        "Start": 30,
+        "End": 37
+      }
+    ]
+  },
+  {
+    "Input": "التذاكر: 5 يورو، 10 يورو، 20 يورو، 50 يورو، 100 يورو، 200 يورو، 500 يورو.",
+    "Results": [
+      {
+        "Text": "5 يورو",
+        "Start": 9,
+        "End": 14,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "EUR",
+          "unit": "Euro",
+          "value": "5"
+        }
+      },
+      {
+        "Text": "10 يورو",
+        "Start": 17,
+        "End": 23,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "EUR",
+          "unit": "Euro",
+          "value": "10"
+        }
+      },
+      {
+        "Text": "20 يورو",
+        "Start": 26,
+        "End": 32,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "EUR",
+          "unit": "Euro",
+          "value": "20"
+        }
+      },
+      {
+        "Text": "50 يورو",
+        "Start": 35,
+        "End": 41,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "EUR",
+          "unit": "Euro",
+          "value": "50"
+        }
+      },
+      {
+        "Text": "100 يورو",
+        "Start": 44,
+        "End": 51,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "EUR",
+          "unit": "Euro",
+          "value": "100"
+        }
+      },
+      {
+        "Text": "200 يورو",
+        "Start": 54,
+        "End": 61,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "EUR",
+          "unit": "Euro",
+          "value": "200"
+        }
+      },
+      {
+        "Text": "500 يورو",
+        "Start": 64,
+        "End": 71,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "EUR",
+          "unit": "Euro",
+          "value": "500"
+        }
+      }
+    ]
+  }
+]
