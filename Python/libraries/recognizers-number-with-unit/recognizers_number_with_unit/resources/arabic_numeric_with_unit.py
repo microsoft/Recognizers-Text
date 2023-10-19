@@ -413,6 +413,7 @@ class ArabicNumericWithUnit:
                                      ("CFP franc", "XPF"),
                                      ("Guinean franc", "GNF"),
                                      ("Swiss franc", "CHF"),
+                                     ("Franc", "CHF"),
                                      ("Rwandan franc", "RWF"),
                                      ("Russian ruble", "RUB"),
                                      ("Transnistrian ruble", "PRB"),
@@ -575,8 +576,8 @@ class ArabicNumericWithUnit:
                                         ("Ngwee", "NGWEE"),
                                         ("Millibitcoin", "MILLIBITCOIN"),
                                         ("Satoshi", "SATOSHI")])
-    CompoundUnitConnectorRegex = f'(?<spacer>and)'
-    MultiplierRegex = f'\\s*\\b(thousand|million|billion|trillion)s?\\b'
+    CompoundUnitConnectorRegex = f'(?<spacer>ًا و|أيضا|واو العطف|و)'
+    MultiplierRegex = f'\\s*\\b(ألف|مليون|مليار|تريليون)s?\\b'
     CurrencyPrefixList = dict([("Dobra", "ديسيبل | الأمراض المنقولة جنسيا"),
                                ("Dollar", "$"),
                                ("Brazilian Real", "ريال $"),
