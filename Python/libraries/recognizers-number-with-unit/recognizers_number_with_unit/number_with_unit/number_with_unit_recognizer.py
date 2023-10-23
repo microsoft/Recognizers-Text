@@ -1,15 +1,8 @@
-#  Copyright (c) Microsoft Corporation. All rights reserved.
-#  Licensed under the MIT License.
-
 from enum import IntFlag
 from typing import List
 from recognizers_text import Culture, Recognizer
 from recognizers_text.model import Model, ModelResult
 from recognizers_number.culture import CultureInfo
-from .dutch.extractors import DutchCurrencyExtractorConfiguration, DutchTemperatureExtractorConfiguration, \
-    DutchDimensionExtractorConfiguration, DutchAgeExtractorConfiguration
-from .dutch.parsers import DutchCurrencyParserConfiguration, DutchTemperatureParserConfiguration, \
-    DutchDimensionParserConfiguration, DutchAgeParserConfiguration
 from .models import CurrencyModel, TemperatureModel, DimensionModel, AgeModel, ExtractorParserModel
 from .extractors import NumberWithUnitExtractor, BaseMergedUnitExtractor
 from .parsers import NumberWithUnitParser, BaseMergedUnitParser
@@ -69,6 +62,8 @@ from .japanese.extractors import JapaneseCurrencyExtractorConfiguration
 from .japanese.parsers import JapaneseCurrencyParserConfiguration
 from .catalan.extractors import CatalanCurrencyExtractorConfiguration
 from .catalan.parsers import CatalanCurrencyParserConfiguration
+from recognizers_number_with_unit.number_with_unit.arabic.extractors import ArabicCurrencyExtractorConfiguration
+from recognizers_number_with_unit.number_with_unit.arabic.parsers import ArabicCurrencyParserConfiguration
 
 
 class NumberWithUnitOptions(IntFlag):
@@ -291,6 +286,15 @@ class NumberWithUnitRecognizer(Recognizer[NumberWithUnitOptions]):
                 BaseMergedUnitExtractor(
                     CatalanCurrencyExtractorConfiguration()),
                 BaseMergedUnitParser(CatalanCurrencyParserConfiguration()))
+        ]))
+        # endregion
+
+        # region Arabic
+        self.register_model('CurrencyModel', Culture.Arabic, lambda options: CurrencyModel([
+            ExtractorParserModel(
+                BaseMergedUnitExtractor(
+                    ArabicCurrencyExtractorConfiguration()),
+                BaseMergedUnitParser(ArabicCurrencyParserConfiguration()))
         ]))
         # endregion
 

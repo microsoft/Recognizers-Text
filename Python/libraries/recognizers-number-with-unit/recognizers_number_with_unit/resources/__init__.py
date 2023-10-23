@@ -1,6 +1,3 @@
-#  Copyright (c) Microsoft Corporation. All rights reserved.
-#  Licensed under the MIT License.
-
 from .base_numbers import BaseNumbers
 from .chinese_numeric_with_unit import ChineseNumericWithUnit
 from .english_numeric_with_unit import EnglishNumericWithUnit
@@ -11,3 +8,5 @@ from .dutch_numeric_with_unit import DutchNumericWithUnit
 from .portuguese_numeric_with_unit import PortugueseNumericWithUnit
 from .spanish_numeric_with_unit import SpanishNumericWithUnit
 from .japanese_numeric_with_unit import JapaneseNumericWithUnit
+from .catalan_numeric_with_unit import CatalanNumericWithUnit
+from .arabic_numeric_with_unit import ArabicNumericWithUnit
