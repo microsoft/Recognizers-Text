@@ -8,7 +8,7 @@ class ArabicNumericWithUnit:
     CurrencySuffixList = dict([("Abkhazian apsar", "أبخازية أبسار"),
                                ("Afghan afghani", "أفغاني أفغاني|؋|الأفغاني|أفغاني"),
                                ("Pul", "بول"),
-                               ("Euro", "يورو|اليورو|€|يورو"),
+                               ("Euro", "EUR|يورو|اليورو|€|يورو"),
                                ("Cent", "سنتا|سنت|-سنتا|-سنت"),
                                ("Albanian lek", "ليك الألباني|ليك|ليك"),
                                ("Qindarkë", "qindarkë|qindarkës|qindarke|qindarkes"),
