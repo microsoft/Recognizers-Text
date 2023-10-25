@@ -1587,5 +1587,68 @@
         }
       }
     ]
+  },
+  {
+    "Input": "نعم 4:25 مساءً من فضلك",
+    "NotSupportedByDesign": "java, javascript",
+    "Results": [
+      {
+        "Text": "4:25 مساءً",
+        "Start": 4,
+        "Length": 10,
+        "Type": "time",
+        "Value": {
+          "Timex": "T16:25",
+          "FutureResolution": {
+            "time": "16:25:00"
+          },
+          "PastResolution": {
+            "time": "16:25:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "12:09 صباحًا",
+    "NotSupportedByDesign": "java, javascript",
+    "Results": [
+      {
+        "Text": "12:09 صباحًا",
+        "Start": 0,
+        "Length": 12,
+        "Type": "time",
+        "Value": {
+          "Timex": "T00:09",
+          "FutureResolution": {
+            "time": "00:09:00"
+          },
+          "PastResolution": {
+            "time": "00:09:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "7:00 ص",
+    "NotSupportedByDesign": "java, javascript",
+    "Results": [
+      {
+        "Text": "7:00 ص",
+        "Start": 0,
+        "Length": 6,
+        "Type": "time",
+        "Value": {
+          "Timex": "T07:00",
+          "FutureResolution": {
+            "time": "07:00:00"
+          },
+          "PastResolution": {
+            "time": "07:00:00"
+          }
+        }
+      }
+    ]
   }
 ]
