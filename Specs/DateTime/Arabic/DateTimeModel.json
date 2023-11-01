@@ -553,11 +553,11 @@
     },
     "IgnoreResolution": "true",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
-        "Text": " الآن",
-        "Start": 5,
+        "Text": "الآن",
+        "Start": 6,
         "End": 9,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
@@ -1992,11 +1992,11 @@
     },
     "IgnoreResolution": "true",
     "NotSupported": "dotnet",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
-        "Text": " الآن",
-        "Start": 5,
+        "Text": "الآن",
+        "Start": 6,
         "End": 9,
         "TypeName": "datetimeV2.datetime",
         "Resolution": {
