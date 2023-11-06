@@ -178,11 +178,11 @@ class ArabicDateExtractorConfiguration(DateExtractorConfiguration):
         if ArabicDateTime.DefaultLanguageFallback == Constants.DEFAULT_LANGUAGE_FALLBACK_DMY:
             date_extractor_4 = ArabicDateTime.DateExtractor5
             date_extractor_5 = ArabicDateTime.DateExtractor8
-            date_extractor_6 = ArabicDateTime.DateExtractor9L
+            date_extractor_6 = ArabicDateTime.DateExtractor7L
             date_extractor_7 = ArabicDateTime.DateExtractor9S
             date_extractor_8 = ArabicDateTime.DateExtractor4
             date_extractor_9 = ArabicDateTime.DateExtractor6
-            date_extractor_10 = ArabicDateTime.DateExtractor7L
+            date_extractor_10 = ArabicDateTime.DateExtractor9L
             date_extractor_11 = ArabicDateTime.DateExtractor7S
         else:
             date_extractor_4 = ArabicDateTime.DateExtractor4

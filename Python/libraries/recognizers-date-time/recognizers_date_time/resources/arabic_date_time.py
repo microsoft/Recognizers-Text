@@ -753,7 +753,7 @@ class ArabicDateTime:
     SpecialDecadeCases = dict([("noughties", 2000),
                                ("aughts", 2000),
                                ("two thousands", 2000)])
-    DefaultLanguageFallback = 'MDY'
+    DefaultLanguageFallback = 'DMY'
     SuperfluousWordList = [r'preferably', r'how about', r'maybe', r'perhaps', r'say', r'like']
     DurationDateRestrictions = [r'today', r'now']
     AmbiguityFiltersDict = dict([("^(morning|afternoon|evening|night|day)\\b", "\\b(good\\s+(morning|afternoon|evening|night|day))|(nighty\\s+night)\\b"),

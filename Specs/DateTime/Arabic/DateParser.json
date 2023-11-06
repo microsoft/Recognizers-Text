@@ -2501,5 +2501,47 @@
         }
       }
     ]
+  },
+  {
+    "Input": "12/05/2021",
+    "NotSupportedByDesign": "java, javascript",
+    "Results": [
+      {
+        "Text": "12/05/2021",
+        "Start": 0,
+        "Length": 10,
+        "Type": "date",
+        "Value": {
+          "Timex": "2021-05-12",
+          "FutureResolution": {
+            "date": "2021-05-12"
+          },
+          "PastResolution": {
+            "date": "2021-05-12"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "11/03/2009",
+    "NotSupportedByDesign": "java, javascript",
+    "Results": [
+      {
+        "Text": "11/03/2009",
+        "Start": 0,
+        "Length": 10,
+        "Type": "date",
+        "Value": {
+          "Timex": "2009-03-11",
+          "FutureResolution": {
+            "date": "2009-03-11"
+          },
+          "PastResolution": {
+            "date": "2009-03-11"
+          }
+        }
+      }
+    ]
   }
 ]

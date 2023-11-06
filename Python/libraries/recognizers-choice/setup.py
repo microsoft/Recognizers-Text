@@ -11,7 +11,7 @@ def read(fname):
 
 
 NAME = 'recognizers-text-choice-genesys'
-VERSION = '1.0.73'
+VERSION = '1.0.74'
 REQUIRES = ['recognizers-text-genesys', 'regex', 'grapheme']
 
 setup(
