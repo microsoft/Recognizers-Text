@@ -908,5 +908,29 @@
         "Type": "time"
       }
     ]
+  },
+  {
+    "Input": "عادةً ما أقوم بإعداد العشاء في حوالي الساعة الثامنة والنصف",
+    "NotSupportedByDesign": "java, javascript",
+    "Results": [
+      {
+        "Text": "الساعة الثامنة والنصف",
+        "Start": 37,
+        "Length": 21,
+        "Type": "time"
+      }
+    ]
+  },
+  {
+    "Input": "يجب أن أعود إلى المكتب بحلول الساعة الرابعة والنصف",
+    "NotSupportedByDesign": "java, javascript",
+    "Results": [
+      {
+        "Text": "الساعة الرابعة والنصف",
+        "Start": 29,
+        "Length": 21,
+        "Type": "time"
+      }
+    ]
   }
 ]

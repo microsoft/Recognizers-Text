@@ -1650,5 +1650,47 @@
         }
       }
     ]
+  },
+  {
+    "Input": "عادةً ما أقوم بإعداد العشاء في حوالي الساعة الثامنة والنصف",
+    "NotSupportedByDesign": "java, javascript",
+    "Results": [
+      {
+        "Text": "الساعة الثامنة والنصف",
+        "Start": 37,
+        "Length": 6,
+        "Type": "time",
+        "Value": {
+          "Timex": "T08:30",
+          "FutureResolution": {
+            "time": "08:30:00"
+          },
+          "PastResolution": {
+            "time": "08:30:00"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "Input": "يجب أن أعود إلى المكتب بحلول الساعة الرابعة والنصف",
+    "NotSupportedByDesign": "java, javascript",
+    "Results": [
+      {
+        "Text": "الساعة الرابعة والنصف",
+        "Start": 29,
+        "Length": 21,
+        "Type": "time",
+        "Value": {
+          "Timex": "T04:30",
+          "FutureResolution": {
+            "time": "04:30:00"
+          },
+          "PastResolution": {
+            "time": "04:30:00"
+          }
+        }
+      }
+    ]
   }
 ]

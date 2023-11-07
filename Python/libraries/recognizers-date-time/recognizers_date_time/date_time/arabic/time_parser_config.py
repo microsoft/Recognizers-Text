@@ -110,7 +110,7 @@ class ArabicTimeParserConfiguration(TimeParserConfiguration):
         trimmed_prefix = prefix.strip().lower()
 
         if regex.search(self.half_token_regex, trimmed_prefix):
-            delta_min = -30
+            delta_min = 30
         elif regex.search(self.quarter_token_regex, trimmed_prefix):
             delta_min = 15
         elif regex.search(self.three_quarter_token_regex, trimmed_prefix):
