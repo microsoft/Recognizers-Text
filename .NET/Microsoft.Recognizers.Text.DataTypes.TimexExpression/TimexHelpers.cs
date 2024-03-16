@@ -64,9 +64,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
         public static TimexRange ExpandDateTimeRange(TimexProperty timex)
         {
-            var types = timex.Types.Count != 0 ? timex.Types : TimexInference.Infer(timex);
-
-            if (types.Contains(Constants.TimexTypes.Duration))
+            if (timex.IsDuration)
             {
                 var start = CloneDateTime(timex);
                 var duration = CloneDuration(timex);
@@ -103,17 +101,17 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                 }
             }
 
-            return new TimexRange { Start = new TimexProperty(), End = new TimexProperty() };
+            return new TimexRange { Start = TimexProperty.Empty, End = TimexProperty.Empty };
         }
 
         public static TimexRange ExpandTimeRange(TimexProperty timex)
         {
-            if (!timex.Types.Contains(Constants.TimexTypes.TimeRange))
+            if (!timex.IsTimeRange)
             {
                 throw new ArgumentException("argument must be a timerange", nameof(timex));
             }
 
-            if (timex.PartOfDay != null)
+            if (timex.IsPartOfDay)
             {
                 switch (timex.PartOfDay)
                 {
@@ -150,12 +148,23 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
         public static TimexProperty TimexDateAdd(TimexProperty start, TimexProperty duration)
         {
-            if (start.DayOfWeek != null)
+            if (start.DayOfWeek != null || start.Weekend != null)
             {
                 var end = start.Clone();
+
+                if (start.DayOfWeek == null)
+                {
+                    end.DayOfWeek = DayOfWeek.Saturday.Normalize();
+                }
+
                 if (duration.Days != null)
                 {
-                    end.DayOfWeek += (int)duration.Days;
+                    var date = end.DateFromTimex();
+                    date = date.AddDays((double)duration.Days.Value);
+                    end.DayOfWeek = start.DayOfWeek != null ? date.DayOfWeek.Normalize() : null;
+                    end.Year = start.Year != null ? date.Year : null;
+                    end.Month = start.Month != null ? date.Month : null;
+                    end.WeekOfYear = start.WeekOfYear != null ? date.WeekOfYear() : null;
                 }
 
                 return end;
@@ -217,7 +226,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                         return new TimexProperty
                         {
                             Year = start.Year,
-                            Month = (int)(start.Month + duration.Months),
+                            Month = ((int)(start.Month + duration.Months) % 12) + 1, // months are from 1 to 12
                             DayOfMonth = start.DayOfMonth,
                         };
                     }
@@ -257,17 +266,17 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             var result = start.Clone();
             if (duration.Minutes != null)
             {
-                result.Minute += (int)duration.Minutes.Value;
+                result.Minute = result.Minute.GetValueOrDefault() + (int)duration.Minutes.Value;
                 if (result.Minute.Value > 59)
                 {
-                    result.Hour = (result.Hour ?? 0) + 1;
+                    result.Hour = result.Hour.GetValueOrDefault() + 1;
                     result.Minute = result.Minute.Value % 60;
                 }
             }
 
             if (duration.Hours != null)
             {
-                result.Hour += (int)duration.Hours.Value;
+                result.Hour = result.Hour.GetValueOrDefault() + (int)duration.Hours.Value;
             }
 
             if (result.Hour != null && result.Hour.Value > 23)
@@ -303,27 +312,50 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             return TimexTimeAdd(TimexDateAdd(start, duration), duration);
         }
 
-        public static DateObject DateFromTimex(TimexProperty timex)
+        public static DateObject DateTimeFromTimex(this TimexProperty timex)
         {
-            return new DateObject(timex.Year ?? 2001, timex.Month ?? 1, timex.DayOfMonth ?? 1, timex.Hour ?? 0, timex.Minute ?? 0, timex.Second ?? 0);
+            return new DateObject(timex.Year ?? 1, timex.Month ?? 1, timex.DayOfMonth ?? 1, timex.Hour ?? 0, timex.Minute ?? 0, timex.Second ?? 0);
         }
 
-        public static Time TimeFromTimex(TimexProperty timex)
+        public static DateObject DateFromTimex(this TimexProperty timex)
+        {
+            if (timex.WeekOfYear != null)
+            {
+                var dt = new DateObject(timex.Year ?? 1, 1, 1);
+                dt = dt.AddDays(timex.WeekOfYear.Value * 7);
+
+                if (timex.DayOfWeek != null)
+                {
+                    dt = dt.AddDays(timex.DayOfWeek.Value - dt.DayOfWeek.Normalize());
+                }
+
+                return dt;
+            }
+
+            if (timex.DayOfWeek != null || timex.Weekend != null)
+            {
+                return new DateObject(timex.Year ?? 1, timex.Month ?? 1, timex.DayOfMonth ?? 1).DateOfNextDay((DayOfWeek)((timex.DayOfWeek ?? 6) % 7));
+            }
+
+            return new DateObject(timex.Year ?? 1, timex.Month ?? 1, timex.DayOfMonth ?? 1);
+        }
+
+        public static Time TimeFromTimex(this TimexProperty timex)
         {
             return new Time(timex.Hour ?? 0, timex.Minute ?? 0, timex.Second ?? 0);
         }
 
-        public static DateRange DateRangeFromTimex(TimexProperty timex)
+        public static DateRange DateRangeFromTimex(this TimexProperty timex)
         {
             var expanded = ExpandDateTimeRange(timex);
             return new DateRange
             {
-                Start = DateFromTimex(expanded.Start),
-                End = DateFromTimex(expanded.End),
+                Start = DateTimeFromTimex(expanded.Start),
+                End = DateTimeFromTimex(expanded.End),
             };
         }
 
-        public static TimeRange TimeRangeFromTimex(TimexProperty timex)
+        public static TimeRange TimeRangeFromTimex(this TimexProperty timex)
         {
             var expanded = ExpandTimeRange(timex);
             return new TimeRange
@@ -426,7 +458,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
             var start = (isWeekend == null || isWeekend.Value == false) ?
                             firstMondayInWeek :
-                            TimexDateHelpers.DateOfNextDay(DayOfWeek.Saturday, firstMondayInWeek);
+                            TimexDateHelpers.DateOfNextDay(firstMondayInWeek, DayOfWeek.Saturday);
             var end = firstMondayInWeek + TimeSpan.FromDays(7);
 
             return new Tuple<TimexProperty, TimexProperty>(
@@ -522,6 +554,12 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
         {
             // Remove "PT" prefix for TimeDuration, Remove "P" prefix for DateDuration
             return timex.Substring(IsTimeDurationTimex(timex) ? 2 : 1);
+        }
+
+        private static int Normalize(this DayOfWeek day)
+        {
+            var dayNumber = (int)day;
+            return dayNumber < (int)DayOfWeek.Monday ? 7 - dayNumber : dayNumber;
         }
     }
 }

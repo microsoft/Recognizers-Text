@@ -112,7 +112,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         [TestMethod]
         public void DataTypes_Creator_nextWeek()
         {
-            var start = TimexDateHelpers.DateOfNextDay(DayOfWeek.Monday, System.DateTime.Now);
+            var start = TimexDateHelpers.DateOfNextDay(System.DateTime.Now, DayOfWeek.Monday);
             var t = TimexProperty.FromDate(start);
             t.Days = 7;
             var expected = t.TimexValue;
@@ -128,7 +128,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         [TestMethod]
         public void DataTypes_Creator_lastWeek()
         {
-            var start = TimexDateHelpers.DateOfLastDay(DayOfWeek.Monday, System.DateTime.Now);
+            var start = TimexDateHelpers.DateOfLastDay(System.DateTime.Now, DayOfWeek.Monday);
             start = start.AddDays(-7);
             var t = TimexProperty.FromDate(start);
             t.Days = 7;

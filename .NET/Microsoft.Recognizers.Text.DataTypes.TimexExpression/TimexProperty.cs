@@ -1,8 +1,10 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
+using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using DateObject = System.DateTime;
 
 namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
@@ -10,6 +12,24 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
     public class TimexProperty
     {
         private Time time;
+        private HashSet<string> types;
+        private bool? now;
+        private decimal? years;
+        private decimal? months;
+        private decimal? weeks;
+        private decimal? days;
+        private decimal? hours;
+        private decimal? minutes;
+        private decimal? seconds;
+        private int? year;
+        private int? month;
+        private int? dayOfMonth;
+        private int? dayOfWeek;
+        private string season;
+        private int? weekOfYear;
+        private bool? weekend;
+        private int? weekOfMonth;
+        private string partOfDay;
 
         public TimexProperty()
         {
@@ -20,41 +40,65 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             TimexParsing.ParseString(timex, this);
         }
 
+        public TimexProperty(TimexProperty other)
+        {
+            now = other.Now;
+            years = other.Years;
+            months = other.Months;
+            weeks = other.Weeks;
+            days = other.Days;
+            hours = other.Hours;
+            minutes = other.Minutes;
+            seconds = other.Seconds;
+            year = other.Year;
+            month = other.Month;
+            dayOfMonth = other.DayOfMonth;
+            dayOfWeek = other.DayOfWeek;
+            season = other.Season;
+            weekOfYear = other.WeekOfYear;
+            weekend = other.Weekend;
+            weekOfMonth = other.WeekOfMonth;
+            partOfDay = other.PartOfDay;
+            time = other.time == null ? null : new Time(other.time.Hour, other.time.Minute, other.time.Second);
+        }
+
+        public static TimexProperty Empty { get; } = new TimexProperty();
+
         public string TimexValue => TimexFormat.Format(this);
 
-        public HashSet<string> Types => TimexInference.Infer(this);
+        public HashSet<string> Types => types?.Count > 0 ? types : types = TimexInference.Infer(this);
 
-        public bool? Now { get; set; }
+        public bool? Now { get => now; set => SetField(v => now = v, value); }
 
-        public decimal? Years { get; set; }
+        public decimal? Years { get => years; set => SetField(v => years = v, value); }
 
-        public decimal? Months { get; set; }
+        public decimal? Months { get => months; set => SetField(v => months = v, value); }
 
-        public decimal? Weeks { get; set; }
+        public decimal? Weeks { get => weeks; set => SetField(v => weeks = v, value); }
 
-        public decimal? Days { get; set; }
+        public decimal? Days { get => days; set => SetField(v => days = v, value); }
 
-        public decimal? Hours { get; set; }
+        public decimal? Hours { get => hours; set => SetField(v => hours = v, value); }
 
-        public decimal? Minutes { get; set; }
+        public decimal? Minutes { get => minutes; set => SetField(v => minutes = v, value); }
 
-        public decimal? Seconds { get; set; }
+        public decimal? Seconds { get => seconds; set => SetField(v => seconds = v, value); }
 
-        public int? Year { get; set; }
+        public int? Year { get => year; set => SetField(v => year = v, value); }
 
-        public int? Month { get; set; }
+        public int? Month { get => month; set => SetField(v => month = v, value); }
 
-        public int? DayOfMonth { get; set; }
+        public int? DayOfMonth { get => dayOfMonth; set => SetField(v => dayOfMonth = v, value); }
 
-        public int? DayOfWeek { get; set; }
+        public int? DayOfWeek { get => dayOfWeek; set => SetField(v => dayOfWeek = v, value); }
 
-        public string Season { get; set; }
+        public string Season { get => season; set => SetField(v => season = v, value); }
 
-        public int? WeekOfYear { get; set; }
+        public int? WeekOfYear { get => weekOfYear; set => SetField(v => weekOfYear = v, value); }
 
-        public bool? Weekend { get; set; }
+        public bool? Weekend { get => weekend; set => SetField(v => weekend = v, value); }
 
-        public int? WeekOfMonth { get; set; }
+        public int? WeekOfMonth { get => weekOfMonth; set => SetField(v => weekOfMonth = v, value); }
 
         public int? Hour
         {
@@ -77,6 +121,8 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                 {
                     time = null;
                 }
+
+                types?.Clear();
             }
         }
 
@@ -101,6 +147,8 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                 {
                     time = null;
                 }
+
+                types?.Clear();
             }
         }
 
@@ -125,10 +173,34 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                 {
                     time = null;
                 }
+
+                types?.Clear();
             }
         }
 
-        public string PartOfDay { get; set; }
+        public string PartOfDay { get => partOfDay; set => SetField(v => partOfDay = v, value); }
+
+        public bool IsSeason => Season != null;
+
+        public bool IsPartOfDay => PartOfDay != null;
+
+        public bool IsPresent => Types.Contains(Constants.TimexTypes.Present);
+
+        public bool IsDefinite => Types.Contains(Constants.TimexTypes.Definite);
+
+        public bool IsDateTime => Types.Contains(Constants.TimexTypes.DateTime);
+
+        public bool IsTime => Types.Contains(Constants.TimexTypes.Time);
+
+        public bool IsDate => Types.Contains(Constants.TimexTypes.Date);
+
+        public bool IsTimeRange => Types.Contains(Constants.TimexTypes.TimeRange);
+
+        public bool IsDuration => Types.Contains(Constants.TimexTypes.Duration);
+
+        public bool IsDateRange => Types.Contains(Constants.TimexTypes.DateRange);
+
+        public bool IsDateTimeRange => Types.Contains(Constants.TimexTypes.DateTimeRange);
 
         public static TimexProperty FromDate(DateObject date)
         {
@@ -171,29 +243,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
         public TimexProperty Clone()
         {
-            return new TimexProperty
-            {
-                Now = Now,
-                Years = Years,
-                Months = Months,
-                Weeks = Weeks,
-                Days = Days,
-                Hours = Hours,
-                Minutes = Minutes,
-                Seconds = Seconds,
-                Year = Year,
-                Month = Month,
-                DayOfMonth = DayOfMonth,
-                DayOfWeek = DayOfWeek,
-                Season = Season,
-                WeekOfYear = WeekOfYear,
-                Weekend = Weekend,
-                WeekOfMonth = WeekOfMonth,
-                Hour = Hour,
-                Minute = Minute,
-                Second = Second,
-                PartOfDay = PartOfDay,
-            };
+            return new TimexProperty(this);
         }
 
         public void AssignProperties(IDictionary<string, string> source)
@@ -293,6 +343,12 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                     Days = decimal.Parse(source["amount"], CultureInfo.InvariantCulture);
                     break;
             }
+        }
+
+        private void SetField<T>(Action<T> set, T value)
+        {
+            set(value);
+            types?.Clear();
         }
     }
 }
