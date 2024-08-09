@@ -78,6 +78,7 @@
   },
   {
     "Input": "下下周末",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "下下周末",
@@ -89,6 +90,7 @@
   },
   {
     "Input": "会议在下下周",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "下下周",
@@ -122,6 +124,7 @@
   },
   {
     "Input": "下下周如何",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "下下周",
