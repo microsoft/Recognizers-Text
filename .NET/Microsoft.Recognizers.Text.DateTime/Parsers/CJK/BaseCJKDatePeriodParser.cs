@@ -1073,7 +1073,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var swift = 0;
                     if (nextMatch.Success)
                     {
-                        if (nextMatch.Groups[Constants.AfterGroupName].Success)
+                        if (nextMatch.Groups[Constants.AfterGroupName].Success || nextMatch.Value.Equals("下下", StringComparison.Ordinal))
                         {
                             swift = 2;
                         }

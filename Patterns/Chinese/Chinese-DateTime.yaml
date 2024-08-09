@@ -148,7 +148,7 @@ DatePeriodThisRegex: !simpleRegex
 DatePeriodLastRegex: !simpleRegex
   def: 上个|上一个|上|上一
 DatePeriodNextRegex: !simpleRegex
-  def: 下个|下一个|下|下一
+  def: 下下|下个|下一个|下|下一
 RelativeMonthRegex: !nestedRegex
   def: (?<relmonth>({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})\s*月)
   references: [DatePeriodThisRegex, DatePeriodLastRegex, DatePeriodNextRegex]
