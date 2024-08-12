@@ -1078,7 +1078,7 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var swift = 0;
                     if (nextNextMatch)
                     {
-                        // If it is Chinese 下下周(next next week), 下下周末(next next weekend), then swift is 2
+                        // If it is Chinese "下下周"(next next week), "下下周末"(next next weekend), then swift is 2
                         swift = 2;
                     }
                     else if (nextMatch.Success)
