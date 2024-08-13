@@ -77,6 +77,30 @@
     ]
   },
   {
+    "Input": "下下周末",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "下下周末",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "会议在下下周",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "下下周",
+        "Type": "daterange",
+        "Start": 3,
+        "Length": 3
+      }
+    ]
+  },
+  {
     "Input": "下个月完工",
     "Results": [
       {
@@ -95,6 +119,18 @@
         "Type": "daterange",
         "Start": 0,
         "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "下下周如何",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "下下周",
+        "Type": "daterange",
+        "Start": 0,
+        "Length": 3
       }
     ]
   },

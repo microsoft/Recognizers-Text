@@ -200,6 +200,58 @@
     ]
   },
   {
+    "Input": "下下周末",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "下下周末",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W14-WE",
+          "FutureResolution": {
+            "startDate": "2017-04-08",
+            "endDate": "2017-04-10"
+          },
+          "PastResolution": {
+            "startDate": "2017-04-08",
+            "endDate": "2017-04-10"
+          }
+        },
+        "Start": 0,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "会议在下下周",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "下下周",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W14",
+          "FutureResolution": {
+            "startDate": "2017-04-03",
+            "endDate": "2017-04-10"
+          },
+          "PastResolution": {
+            "startDate": "2017-04-03",
+            "endDate": "2017-04-10"
+          }
+        },
+        "Start": 3,
+        "Length": 3
+      }
+    ]
+  },
+  {
     "Input": "下个月完工",
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -246,6 +298,32 @@
         },
         "Start": 0,
         "Length": 2
+      }
+    ]
+  },
+  {
+    "Input": "下下周如何",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "下下周",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2017-W14",
+          "FutureResolution": {
+            "startDate": "2017-04-03",
+            "endDate": "2017-04-10"
+          },
+          "PastResolution": {
+            "startDate": "2017-04-03",
+            "endDate": "2017-04-10"
+          }
+        },
+        "Start": 0,
+        "Length": 3
       }
     ]
   },

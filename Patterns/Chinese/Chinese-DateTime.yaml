@@ -149,6 +149,8 @@ DatePeriodLastRegex: !simpleRegex
   def: 上个|上一个|上|上一
 DatePeriodNextRegex: !simpleRegex
   def: 下个|下一个|下|下一
+DatePeriodNextNextRegex: !simpleRegex
+  def: 下下
 RelativeMonthRegex: !nestedRegex
   def: (?<relmonth>({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})\s*月)
   references: [DatePeriodThisRegex, DatePeriodLastRegex, DatePeriodNextRegex]
@@ -181,8 +183,8 @@ PureNumYearAndMonth: !nestedRegex
   def: ({YearRegexInNumber}\s*[-\.\/]\s*{MonthNumRegex})|({MonthNumRegex}\s*\/\s*{YearRegexInNumber})
   references: [YearRegexInNumber, MonthNumRegex]
 OneWordPeriodRegex: !nestedRegex
-  def: (((?<yearrel>(明|今|去)年)\s*)?{MonthRegex}|({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})(?<halfTag>半)?\s*(周末|周|月|年)|周末|(今|明|去|前|后)年(\s*{HalfYearRegex})?)
-  references: [MonthRegex, DatePeriodThisRegex, DatePeriodLastRegex, DatePeriodNextRegex, HalfYearRegex]
+  def: (((?<yearrel>(明|今|去)年)\s*)?{MonthRegex}|({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextNextRegex}|{DatePeriodNextRegex})(?<halfTag>半)?\s*(周末|周|月|年)|周末|(今|明|去|前|后)年(\s*{HalfYearRegex})?)
+  references: [MonthRegex, DatePeriodThisRegex, DatePeriodLastRegex, DatePeriodNextNextRegex, DatePeriodNextRegex, HalfYearRegex]
 LaterEarlyPeriodRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in Japanese
   def: ^[.]
