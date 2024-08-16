@@ -934,7 +934,14 @@ namespace Microsoft.Recognizers.Text.Number
             return ret;
         }
 
-        protected int GetSplitIndex(List<string> fracWords)
+        /// <summary>
+        /// Get the split index for a fraction word list, split index used to separate the numerator and the denominator.
+        /// Ex: A fraction is "three fifth", it will be joined as a list which 1st item is "three" and 2nd item is "fifth", the split index is 1 (index of fifth).
+        /// Ex: A fraction is "two and fifty-four hundredths", the split index is 3 (index of hundredths).
+        /// </summary>
+        /// <param name="fracWords">fraction words list.</param>
+        /// <returns>split index.</returns>
+        private int GetSplitIndex(List<string> fracWords)
         {
             var splitIndex = fracWords.Count - 1;
             var currentValue = Config.ResolveCompositeNumber(fracWords[splitIndex]);
@@ -952,11 +959,10 @@ namespace Microsoft.Recognizers.Text.Number
 
                 var hundredsSM = 100;
 
-                // Below flag isUncomposobleWithSeparator is used to handle one existing bug for handling fraction input like "two and fifty-four hundredths".
-                // In the old code logic, when the loop comes to index=0 (text "two" in the input),
-                // since "two" and "fifty-four" is not composable, then it will not meet if condition below and starts to run the code after if block.
-                // It will run splitIndex++ and break, so the return index is 1 and it leads to it calculates the value as 2/(54*100)=0.003703...
-                // The right splitIndex should be 3 (text "hundredths" in the input) and the correct value should be 2 + 54/100 = 2.54.
+                // Below flag isUncomposobleWithSeparator is used to handle one scenario for handling fraction input like "two and fifty-four hundredths".
+                // Generally, when two numbers are not compsable, like "two" and "fifty-four", it will return the splitIndex as 1 (index of "fifty-four").
+                // But in this scenario, there is a separator "and" between "two" and "fifty-four" which means that the "two" is integer part and "fifty-four hundredths" is the fraction part.
+                // The splitIndex should be 3 (index of "hundredths") then.
                 bool isUncomposobleWithSeparator = previousValue < hundredsSM && !IsComposable(currentValue, previousValue) &&
                     Config.WrittenFractionSeparatorTexts.Contains(fracWords[splitIndex + 1]);
 

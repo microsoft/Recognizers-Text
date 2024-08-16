@@ -167,6 +167,15 @@
             <param name="extResult">input arabic number.</param>
             <returns>parsed result.</returns>
         </member>
+        <member name="M:Microsoft.Recognizers.Text.Number.BaseNumberParser.GetSplitIndex(System.Collections.Generic.List{System.String})">
+            <summary>
+            Get the split index for a fraction word list, split index used to separate the numerator and the denominator.
+            Ex: A fraction is "three fifth", it will be joined as a list which 1st item is "three" and 2nd item is "fifth", the split index is 1 (index of fifth).
+            Ex: A fraction is "two and fifty-four hundredths", the split index is 3 (index of hundredths).
+            </summary>
+            <param name="fracWords">fraction words list.</param>
+            <returns>split index.</returns>
+        </member>
         <member name="M:Microsoft.Recognizers.Text.Number.INumberParserConfiguration.NormalizeTokenSet(System.Collections.Generic.IEnumerable{System.String},Microsoft.Recognizers.Text.ParseResult)">
             <summary>
             Used when requiring to normalize a token to a valid expression supported by the ImmutableDictionaries (language dictionaries).
