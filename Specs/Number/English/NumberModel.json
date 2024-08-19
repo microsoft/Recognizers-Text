@@ -1129,6 +1129,38 @@
     ]
   },
   {
+    "Input": "two and fifty-four hundredths",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "two and fifty-four hundredths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "2.54"
+        },
+        "Start": 0,
+        "End": 28
+      }
+    ]
+  },
+  {
+    "Input": "two hundred and fifty-four hundredths",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "two hundred and fifty-four hundredths",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "200.54"
+        },
+        "Start": 0,
+        "End": 36
+      }
+    ]
+  },
+  {
     "Input": "1.1^+23",
     "Results": [
       {
@@ -2973,7 +3005,7 @@
           "value": "10000000000"
         }
       },
-	  {
+      {
         "Text": "10 tln",
         "TypeName": "number",
         "Start": 17,

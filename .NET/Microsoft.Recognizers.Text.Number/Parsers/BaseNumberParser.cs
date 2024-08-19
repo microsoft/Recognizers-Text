@@ -392,80 +392,15 @@ namespace Microsoft.Recognizers.Text.Number
 
                 var fracWords = Config.NormalizeTokenSet(resultText.Split(null), result).ToList();
 
-                // Split fraction with integer
-                var splitIndex = fracWords.Count - 1;
-                var currentValue = Config.ResolveCompositeNumber(fracWords[splitIndex]);
-                long roundValue = 1;
-
                 // For case like "half"
                 if (fracWords.Count == 1)
                 {
-                   result.Value = (1 / GetIntValue(fracWords)) * multiplier;
-                   return result;
+                    result.Value = (1 / GetIntValue(fracWords)) * multiplier;
+                    return result;
                 }
 
-                for (splitIndex = fracWords.Count - 2; splitIndex >= 0; splitIndex--)
-                {
-                    if (Config.WrittenFractionSeparatorTexts.Contains(fracWords[splitIndex]) ||
-                        Config.WrittenIntegerSeparatorTexts.Contains(fracWords[splitIndex]))
-                    {
-                        continue;
-                    }
-
-                    var previousValue = currentValue;
-                    currentValue = Config.ResolveCompositeNumber(fracWords[splitIndex]);
-
-                    var hundredsSM = 100;
-
-                    // Previous : hundred
-                    // Current : one
-                    if ((previousValue >= hundredsSM && previousValue > currentValue) ||
-                        (previousValue < hundredsSM && IsComposable(currentValue, previousValue)))
-                    {
-                        if (previousValue < hundredsSM && currentValue >= roundValue)
-                        {
-                            roundValue = currentValue;
-                        }
-                        else if (previousValue < hundredsSM && currentValue < roundValue)
-                        {
-                            splitIndex++;
-                            break;
-                        }
-
-                        // Current is the first word
-                        if (splitIndex == 0)
-                        {
-                            // Scan, skip the first word
-                            splitIndex = 1;
-                            while (splitIndex <= fracWords.Count - 2)
-                            {
-                                // e.g. one hundred thousand
-                                // frac[i+1] % 100 && frac[i] % 100 = 0
-                                if (Config.ResolveCompositeNumber(fracWords[splitIndex]) >= hundredsSM &&
-                                    !Config.WrittenFractionSeparatorTexts.Contains(fracWords[splitIndex + 1]) &&
-                                    Config.ResolveCompositeNumber(fracWords[splitIndex + 1]) < hundredsSM)
-                                {
-                                    splitIndex++;
-                                    break;
-                                }
-
-                                splitIndex++;
-                            }
-
-                            break;
-                        }
-
-                        continue;
-                    }
-
-                    splitIndex++;
-                    break;
-                }
-
-                if (splitIndex < 0)
-                {
-                    splitIndex = 0;
-                }
+                // Split fraction with integer
+                var splitIndex = this.GetSplitIndex(fracWords);
 
                 var fracPart = new List<string>();
                 for (var i = splitIndex; i < fracWords.Count; i++)
@@ -997,6 +932,91 @@ namespace Microsoft.Recognizers.Text.Number
             }
 
             return ret;
+        }
+
+        /// <summary>
+        /// Get the split index for a fraction word list, split index used to separate the numerator and the denominator.
+        /// Ex: A fraction is "three fifth", it will be joined as a list which 1st item is "three" and 2nd item is "fifth", the split index is 1 (index of fifth).
+        /// Ex: A fraction is "two and fifty-four hundredths", the split index is 3 (index of hundredths).
+        /// </summary>
+        /// <param name="fracWords">fraction words list.</param>
+        /// <returns>split index.</returns>
+        private int GetSplitIndex(List<string> fracWords)
+        {
+            var splitIndex = fracWords.Count - 1;
+            var currentValue = Config.ResolveCompositeNumber(fracWords[splitIndex]);
+            long roundValue = 1;
+            for (splitIndex = fracWords.Count - 2; splitIndex >= 0; splitIndex--)
+            {
+                if (Config.WrittenFractionSeparatorTexts.Contains(fracWords[splitIndex]) ||
+                    Config.WrittenIntegerSeparatorTexts.Contains(fracWords[splitIndex]))
+                {
+                    continue;
+                }
+
+                var previousValue = currentValue;
+                currentValue = Config.ResolveCompositeNumber(fracWords[splitIndex]);
+
+                var hundredsSM = 100;
+
+                // Below flag isUncomposobleWithSeparator is used to handle one scenario for handling fraction input like "two and fifty-four hundredths".
+                // Generally, when two numbers are not compsable, like "two" and "fifty-four", it will return the splitIndex as 1 (index of "fifty-four").
+                // But in this scenario, there is a separator "and" between "two" and "fifty-four" which means that the "two" is integer part and "fifty-four hundredths" is the fraction part.
+                // The splitIndex should be 3 (index of "hundredths") then.
+                bool isUncomposobleWithSeparator = previousValue < hundredsSM && !IsComposable(currentValue, previousValue) &&
+                    Config.WrittenFractionSeparatorTexts.Contains(fracWords[splitIndex + 1]);
+
+                // Previous : hundred
+                // Current : one
+                if ((previousValue >= hundredsSM && previousValue > currentValue) ||
+                    (previousValue < hundredsSM && IsComposable(currentValue, previousValue)) || isUncomposobleWithSeparator)
+                {
+                    if (previousValue < hundredsSM && currentValue >= roundValue)
+                    {
+                        roundValue = currentValue;
+                    }
+                    else if (previousValue < hundredsSM && currentValue < roundValue)
+                    {
+                        splitIndex++;
+                        break;
+                    }
+
+                    // Current is the first word
+                    if (splitIndex == 0)
+                    {
+                        // Scan, skip the first word
+                        splitIndex = 1;
+                        while (splitIndex <= fracWords.Count - 2)
+                        {
+                            // e.g. one hundred thousand
+                            // frac[i+1] % 100 && frac[i] % 100 = 0
+                            if (Config.ResolveCompositeNumber(fracWords[splitIndex]) >= hundredsSM &&
+                                !Config.WrittenFractionSeparatorTexts.Contains(fracWords[splitIndex + 1]) &&
+                                Config.ResolveCompositeNumber(fracWords[splitIndex + 1]) < hundredsSM)
+                            {
+                                splitIndex++;
+                                break;
+                            }
+
+                            splitIndex++;
+                        }
+
+                        break;
+                    }
+
+                    continue;
+                }
+
+                splitIndex++;
+                break;
+            }
+
+            if (splitIndex < 0)
+            {
+                splitIndex = 0;
+            }
+
+            return splitIndex;
         }
 
         private Regex BuildTextNumberRegex()
