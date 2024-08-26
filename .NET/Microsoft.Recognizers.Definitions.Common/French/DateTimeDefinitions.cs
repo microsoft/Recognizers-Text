@@ -255,8 +255,8 @@ namespace Microsoft.Recognizers.Definitions.French
       public const string NumberAsTimeRegex = @"^\b$";
       public const string TimeBeforeAfterRegex = @"^\b$";
       public const string DateNumberConnectorRegex = @"^\s*(?<connector>\s+[aà])\s*$";
-      public const string DecadeRegex = @"^\b$";
-      public const string DecadeWithCenturyRegex = @"^\b$";
+      public const string DecadeRegex = @"(?<decade>(?:vingt|trente|quarante|cinquante|soixante|soixante-dix|quatre-vingt|quatre-vingt-dix)ies|deux\s+mille)";
+      public static readonly string DecadeWithCenturyRegex = $@"(les\s+)?(((?<century>\d|1\d|2\d)?(')(')?(\s)?(années|s))?(?<decade>\d0)|(({CenturyRegex}(\s+|-)(et\s+)?)?{DecadeRegex})|({CenturyRegex}(\s+|-)(et\s+)?(?<decade>dix|centaines)))";
       public const string RelativeDecadeRegex = @"^\b$";
       public static readonly string YearSuffix = $@"(,?(\s*à)?\s*({DateYearRegex}|{FullTextYearRegex}))";
       public const string SuffixAfterRegex = @"^\b$";

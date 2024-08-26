@@ -593,11 +593,10 @@ TimeBeforeAfterRegex: !simpleRegex
 DateNumberConnectorRegex: !simpleRegex
   def: ^\s*(?<connector>\s+[aà])\s*$
 DecadeRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^\b$
-DecadeWithCenturyRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^\b$
+  def: (?<decade>(?:vingt|trente|quarante|cinquante|soixante|soixante-dix|quatre-vingt|quatre-vingt-dix)ies|deux\s+mille)
+DecadeWithCenturyRegex: !nestedRegex
+  def: (les\s+)?(((?<century>\d|1\d|2\d)?(')(')?(\s)?(années|s))?(?<decade>\d0)|(({CenturyRegex}(\s+|-)(et\s+)?)?{DecadeRegex})|({CenturyRegex}(\s+|-)(et\s+)?(?<decade>dix|centaines)))
+  references: [ CenturyRegex, DecadeRegex ]
 RelativeDecadeRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^\b$

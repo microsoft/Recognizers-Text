@@ -28,6 +28,10 @@ namespace SimpleConsole
 
             ShowIntro();
 
+            Console.InputEncoding = Encoding.UTF8;
+            Console.OutputEncoding = Encoding.UTF8;
+            string culture = DefaultCulture;
+
             while (true)
             {
                 // Read the text to recognize
@@ -41,11 +45,26 @@ namespace SimpleConsole
                     break;
                 }
 
+                switch (input?.Substring(0, 2).ToUpper().ToString())
+                {
+                    case "ZH":
+                        culture = Culture.Chinese;
+                        input = input.Substring(2).Trim();
+                        break;
+                    case "FR":
+                        culture = Culture.French;
+                        input = input.Substring(2).Trim();
+                        break;
+                    default:
+                        culture = DefaultCulture;
+                        break;
+                }
+
                 // Validate input
                 if (input?.Length > 0)
                 {
                     // Retrieve all the parsers and call 'Parse' to recognize all the values from the user input
-                    var results = ParseAll(input, DefaultCulture);
+                    var results = ParseAll(input, culture);
 
                     // Write output
                     Console.WriteLine(results.Any() ? $"I found the following entities ({results.Count():d}):" : "I found no entities.");
