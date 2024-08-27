@@ -8742,21 +8742,21 @@
     ]
   },
   {
-    "Input": "bonjour la maison n'est plus habitée depuis 3 ans",
+    "Input": "bonjour la maison n'est plus habitée depuis 2 ans",
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "depuis 3 ans",
+        "Text": "depuis 2 ans",
         "Start": 37,
         "End": 48,
         "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
             {
-              "timex": "P3Y",
+              "timex": "P2Y",
               "Mod": "since",
               "type": "duration",
-              "value": "94608000"
+              "value": "63072000"
             }
           ]
         }
