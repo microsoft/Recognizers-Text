@@ -8720,23 +8720,65 @@
     ]
   },
   {
-    "Input": "bonjour la maison n'est plus habitée depuis 6 ans",
-    "Context": {
-      "ReferenceDateTime": "2016-11-07T00:00:00"
-    },
+    "Input": "J'ai une voiture depuis 3 ans",
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "depuis 6 ans",
-        "Start": 37,
-        "End": 48,
-        "TypeName": "datetimeV2.date",
+        "Text": "depuis 3 ans",
+        "Start": 17,
+        "End": 28,
+        "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
             {
-              "timex": "2010-11-07",
-              "type": "date",
-              "value": "2010-11-07"
+              "timex": "P3Y",
+              "Mod": "since",
+              "type": "duration",
+              "value": "94608000"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "bonjour la maison n'est plus habitée depuis 3 ans",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "depuis 3 ans",
+        "Start": 37,
+        "End": 48,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P3Y",
+              "Mod": "since",
+              "type": "duration",
+              "value": "94608000"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "bonjour la maison n'est plus habitée depuis 1 an",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "depuis 1 an",
+        "Start": 37,
+        "End": 47,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P1Y",
+              "Mod": "since",
+              "type": "duration",
+              "value": "31536000"
             }
           ]
         }
@@ -21107,13 +21149,14 @@
         "Text": "depuis trois semaines",
         "Start": 13,
         "End": 33,
-        "TypeName": "datetimeV2.date",
+        "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
             {
-              "timex": "2021-04-29",
-              "type": "date",
-              "value": "2021-04-29"
+              "timex": "P3W",
+              "Mod": "since",
+              "type": "duration",
+              "value": "1814400"
             }
           ]
         }
