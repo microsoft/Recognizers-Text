@@ -8720,12 +8720,57 @@
     ]
   },
   {
-    "Input": "bonjour la maison n'est plus habitée depuis ans",
+    "Input": "J'ai une voiture depuis 3 ans",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "depuis ans",
+        "Text": "depuis 3 ans",
+        "Start": 17,
+        "End": 28,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P3Y",
+              "Mod": "since",
+              "type": "duration",
+              "value": "94608000"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "bonjour la maison n'est plus habitée depuis 2 ans",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "depuis 2 ans",
         "Start": 37,
-        "End": 46,
+        "End": 48,
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "P2Y",
+              "Mod": "since",
+              "type": "duration",
+              "value": "63072000"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "bonjour la maison n'est plus habitée depuis 1 an",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "depuis 1 an",
+        "Start": 37,
+        "End": 47,
         "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
@@ -8734,6 +8779,54 @@
               "Mod": "since",
               "type": "duration",
               "value": "31536000"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Je suis revenu il y a deux ans",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "il y a deux ans",
+        "Start": 15,
+        "End": 29,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2014-11-07",
+              "type": "date",
+              "value": "2014-11-07"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai dans trois ans",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans trois ans",
+        "Start": 14,
+        "End": 27,
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2019-11-07",
+              "type": "date",
+              "value": "2019-11-07"
             }
           ]
         }
@@ -21056,13 +21149,14 @@
         "Text": "depuis trois semaines",
         "Start": 13,
         "End": 33,
-        "TypeName": "datetimeV2.date",
+        "TypeName": "datetimeV2.duration",
         "Resolution": {
           "values": [
             {
-              "timex": "2021-04-29",
-              "type": "date",
-              "value": "2021-04-29"
+              "timex": "P3W",
+              "Mod": "since",
+              "type": "duration",
+              "value": "1814400"
             }
           ]
         }
