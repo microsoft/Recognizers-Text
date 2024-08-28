@@ -3177,7 +3177,10 @@
   },
   {
     "Input": "Je suis revenu il y a deux ans",
-    "NotSupported": "dotnet, javascript, python, java",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "il y a deux ans",
@@ -3193,6 +3196,30 @@
         },
         "Start": 15,
         "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "Je reviendrai dans trois ans",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans trois ans",
+        "Type": "date",
+        "Value": {
+          "Timex": "2019-11-07",
+          "FutureResolution": {
+            "date": "2019-11-07"
+          },
+          "PastResolution": {
+            "date": "2019-11-07"
+          }
+        },
+        "Start": 14,
+        "Length": 14
       }
     ]
   },

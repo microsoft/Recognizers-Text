@@ -2212,6 +2212,30 @@
     ]
   },
   {
+    "Input": "il y a deux ans",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "il y a deux ans",
+        "Type": "date",
+        "Start": 0,
+        "Length": 15
+      }
+    ]
+  },
+  {
+    "Input": "dans trois ans",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "dans trois ans",
+        "Type": "date",
+        "Start": 0,
+        "Length": 14
+      }
+    ]
+  },
+  {
     "Input": "je vais partir d'ici 2 ans et 21 jours plus tard",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
