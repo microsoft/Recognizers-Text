@@ -173,7 +173,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public static readonly string PeriodTimeOfDayWithDateRegex = $@"\b(({TimeOfDayRegex}))\b";
       public const string LessThanRegex = @"^\b$";
       public const string MoreThanRegex = @"^\b$";
-      public const string DurationUnitRegex = @"(?<unit>ann[eé]es?|ans?|mois|semaines?|jours?|heures?|hrs?|h|minutes?|mins?|secondes?|secs?|journ[eé]e)\b";
+      public const string DurationUnitRegex = @"(?<unit>\bann[eé]es?(?!\s+\d+0)\b|ans?|mois|semaines?|jours?|heures?|hrs?|h|minutes?|mins?|secondes?|secs?|journ[eé]e)\b";
       public const string SuffixAndRegex = @"(?<suffix>\s*(et)\s+(une?\s+)?(?<suffix_num>demi|quart))";
       public const string PeriodicRegex = @"\b(?<periodic>quotidien(ne)?|journellement|mensuel(le)?|jours?|hebdomadaire|bihebdomadaire|annuel(lement)?)\b";
       public static readonly string EachUnitRegex = $@"(?<each>(chaque|toutes les|tous les)(?<other>\s+autres)?\s*{DurationUnitRegex})";
@@ -256,7 +256,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public const string TimeBeforeAfterRegex = @"^\b$";
       public const string DateNumberConnectorRegex = @"^\s*(?<connector>\s+[aà])\s*$";
       public const string DecadeRegex = @"(?<decade>(?:vingt|trente|quarante|cinquante|soixante|soixante-dix|quatre-vingt|quatre-vingt-dix)ies|deux\s+mille)";
-      public static readonly string DecadeWithCenturyRegex = $@"(les\s+)?(((?<century>\d|1\d|2\d)?(')(')?(\s)?(années|s))?(?<decade>\d0)|(({CenturyRegex}(\s+|-)(et\s+)?)?{DecadeRegex})|({CenturyRegex}(\s+|-)(et\s+)?(?<decade>dix|centaines)))";
+      public static readonly string DecadeWithCenturyRegex = $@"(les\s+)?(((?<century>\d|1\d|2\d)?(')?(\s)?(années|s)?\s+(?<decade>\d0))|(({CenturyRegex}(\s+|-)(et\s+)?)?{DecadeRegex})|({CenturyRegex}(\s+|-)(et\s+)?(?<decade>dix|centaines)))";
       public const string RelativeDecadeRegex = @"^\b$";
       public static readonly string YearSuffix = $@"(,?(\s*à)?\s*({DateYearRegex}|{FullTextYearRegex}))";
       public const string SuffixAfterRegex = @"^\b$";
