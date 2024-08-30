@@ -48,13 +48,13 @@ WrittenElevenToNineteenRegex: !simpleRegex
 WrittenTensRegex: !simpleRegex
   def: (?:quatre\Wvingt(s|\Wdix)?|soixante(\Wdix)?|dix|vingt|trente|quarante|cinquante|septante|octante|huitante|nonante)
 WrittenCenturyFullYearRegex: !nestedRegex
-  def: (?:(deux\s+)?mille((\s+{WrittenOneToNineRegex})?\s+cents?)?)
+  def: (?:(deux\s+)?mille((\s+{WrittenOneToNineRegex})?\s+cent?)?)
   references: [ WrittenOneToNineRegex]
 WrittenCenturyOrdinalYearRegex: !nestedRegex
   def: ({WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|dix)
   references: [ WrittenOneToNineRegex, WrittenElevenToNineteenRegex ]
 CenturyRegex: !nestedRegex
-  def: \b(?<century>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}(\s+cents?)?)\b
+  def: \b(?<century>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}(\s+cent?)?)\b
   references: [WrittenCenturyFullYearRegex, WrittenCenturyOrdinalYearRegex ]
 LastTwoYearNumRegex: !nestedRegex
   def: (({WrittenTensRegex}(\s+|-))?({WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex})|{WrittenTensRegex})
@@ -399,8 +399,9 @@ LessThanRegex: !simpleRegex
 MoreThanRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^\b$
-DurationUnitRegex: !simpleRegex
-  def: (?<unit>\bann[eé]es?(?!\s+\d+0)\b|ans?|mois|semaines?|jours?|heures?|hrs?|h|minutes?|mins?|secondes?|secs?|journ[eé]e)\b
+DurationUnitRegex: !nestedRegex
+  def: (?<unit>\bann[eé]es?(?!(\s+(((?<century>\d|1\d|2\d)?(?<decade>\d0)\b)|(({CenturyRegex}(\s+|-)(et\s+)?)?{DecadeRegex})|({CenturyRegex}(\s+|-)(et\s+)?(?<decade>dix|centaines)))))\b|ans?|mois|semaines?|jours?|heures?|hrs?|h|minutes?|mins?|secondes?|secs?|journ[eé]e)\b
+  references: [ CenturyRegex, DecadeRegex ]
 SuffixAndRegex: !simpleRegex
   def: (?<suffix>\s*(et)\s+(une?\s+)?(?<suffix_num>demi|quart))
 PeriodicRegex: !simpleRegex
@@ -593,9 +594,9 @@ TimeBeforeAfterRegex: !simpleRegex
 DateNumberConnectorRegex: !simpleRegex
   def: ^\s*(?<connector>\s+[aà])\s*$
 DecadeRegex: !simpleRegex
-  def: (?<decade>(?:vingt|trente|quarante|cinquante|soixante|soixante-dix|quatre-vingt|quatre-vingt-dix)ies|deux\s+mille)
+  def: (?<decade>(?:dix|vingt|trente|quarante|cinquante|soixante-dix|soixante|quatre-vingt-dix|quatre-vingts|deux\s+mille))
 DecadeWithCenturyRegex: !nestedRegex
-  def: (les\s+)?(((?<century>\d|1\d|2\d)?(')?(\s)?(années|s)?\s+(?<decade>\d0))|(({CenturyRegex}(\s+|-)(et\s+)?)?{DecadeRegex})|({CenturyRegex}(\s+|-)(et\s+)?(?<decade>dix|centaines)))
+  def: (les\s+)?(années)\s+(((?<century>\d|1\d|2\d)?(?<decade>\d0)\b)|(({CenturyRegex}(\s+|-)(et\s+)?)?{DecadeRegex})|({CenturyRegex}(\s+|-)(et\s+)?(?<decade>dix|centaines)))
   references: [ CenturyRegex, DecadeRegex ]
 RelativeDecadeRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
@@ -1080,12 +1081,21 @@ WrittenDecades: !dictionary
   types: [ string, int ]
   # TODO: modify below dictionary according to the counterpart in English
   entries:
-    '': 0
+    'cent': 0
+    'dix': 10
+    'vingt': 20
+    'trente': 30
+    'quarante': 40
+    'cinquante': 50
+    'soixante': 60
+    'soixante-dix': 70
+    'quatre-vingt': 80
+    'quatre-vingt-dix': 90
 SpecialDecadeCases: !dictionary
   types: [ string, int ]
   # TODO: modify below dictionary there're special cases for written decades
   entries:
-    '': 0
+    'deux mille': 2000
 DefaultLanguageFallback: DMY
 DurationDateRestrictions: []
 # Cases collected from mined data

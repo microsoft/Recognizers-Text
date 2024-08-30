@@ -104,6 +104,7 @@ namespace Microsoft.Recognizers.Text.DateTime.French
             SeasonMap = config.SeasonMap;
             SpecialYearPrefixesMap = config.SpecialYearPrefixesMap;
             WrittenDecades = config.WrittenDecades;
+            Numbers = config.Numbers;
             SpecialDecadeCases = config.SpecialDecadeCases;
         }
 

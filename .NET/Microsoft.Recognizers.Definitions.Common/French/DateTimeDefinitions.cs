@@ -43,9 +43,9 @@ namespace Microsoft.Recognizers.Definitions.French
       public const string WrittenOneToNineRegex = @"(?:une?|deux|trois|quatre|cinq|six|sept|huit|neuf)";
       public const string WrittenElevenToNineteenRegex = @"(?:(seize|quinze|quatorze|treize|douze|onze)|dix\W(neuf|huit|sept))";
       public const string WrittenTensRegex = @"(?:quatre\Wvingt(s|\Wdix)?|soixante(\Wdix)?|dix|vingt|trente|quarante|cinquante|septante|octante|huitante|nonante)";
-      public static readonly string WrittenCenturyFullYearRegex = $@"(?:(deux\s+)?mille((\s+{WrittenOneToNineRegex})?\s+cents?)?)";
+      public static readonly string WrittenCenturyFullYearRegex = $@"(?:(deux\s+)?mille((\s+{WrittenOneToNineRegex})?\s+cent?)?)";
       public static readonly string WrittenCenturyOrdinalYearRegex = $@"({WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|dix)";
-      public static readonly string CenturyRegex = $@"\b(?<century>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}(\s+cents?)?)\b";
+      public static readonly string CenturyRegex = $@"\b(?<century>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}(\s+cent?)?)\b";
       public static readonly string LastTwoYearNumRegex = $@"(({WrittenTensRegex}(\s+|-))?({WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex})|{WrittenTensRegex})";
       public static readonly string FullTextYearRegex = $@"\b(?<fullyear>(?<firsttwoyearnum>{CenturyRegex})\s+(?<lasttwoyearnum>{LastTwoYearNumRegex})\b|\b(?<firsttwoyearnum>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}\s+cents))\b";
       public static readonly string YearRegex = $@"({BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})";
@@ -173,7 +173,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public static readonly string PeriodTimeOfDayWithDateRegex = $@"\b(({TimeOfDayRegex}))\b";
       public const string LessThanRegex = @"^\b$";
       public const string MoreThanRegex = @"^\b$";
-      public const string DurationUnitRegex = @"(?<unit>\bann[eé]es?(?!\s+\d+0)\b|ans?|mois|semaines?|jours?|heures?|hrs?|h|minutes?|mins?|secondes?|secs?|journ[eé]e)\b";
+      public static readonly string DurationUnitRegex = $@"(?<unit>\bann[eé]es?(?!(\s+(((?<century>\d|1\d|2\d)?(?<decade>\d0)\b)|(({CenturyRegex}(\s+|-)(et\s+)?)?{DecadeRegex})|({CenturyRegex}(\s+|-)(et\s+)?(?<decade>dix|centaines)))))\b|ans?|mois|semaines?|jours?|heures?|hrs?|h|minutes?|mins?|secondes?|secs?|journ[eé]e)\b";
       public const string SuffixAndRegex = @"(?<suffix>\s*(et)\s+(une?\s+)?(?<suffix_num>demi|quart))";
       public const string PeriodicRegex = @"\b(?<periodic>quotidien(ne)?|journellement|mensuel(le)?|jours?|hebdomadaire|bihebdomadaire|annuel(lement)?)\b";
       public static readonly string EachUnitRegex = $@"(?<each>(chaque|toutes les|tous les)(?<other>\s+autres)?\s*{DurationUnitRegex})";
@@ -255,8 +255,8 @@ namespace Microsoft.Recognizers.Definitions.French
       public const string NumberAsTimeRegex = @"^\b$";
       public const string TimeBeforeAfterRegex = @"^\b$";
       public const string DateNumberConnectorRegex = @"^\s*(?<connector>\s+[aà])\s*$";
-      public const string DecadeRegex = @"(?<decade>(?:vingt|trente|quarante|cinquante|soixante|soixante-dix|quatre-vingt|quatre-vingt-dix)ies|deux\s+mille)";
-      public static readonly string DecadeWithCenturyRegex = $@"(les\s+)?(((?<century>\d|1\d|2\d)?(')?(\s)?(années|s)?\s+(?<decade>\d0))|(({CenturyRegex}(\s+|-)(et\s+)?)?{DecadeRegex})|({CenturyRegex}(\s+|-)(et\s+)?(?<decade>dix|centaines)))";
+      public const string DecadeRegex = @"(?<decade>(?:dix|vingt|trente|quarante|cinquante|soixante-dix|soixante|quatre-vingt-dix|quatre-vingts|deux\s+mille))";
+      public static readonly string DecadeWithCenturyRegex = $@"(les\s+)?(années)\s+(((?<century>\d|1\d|2\d)?(?<decade>\d0)\b)|(({CenturyRegex}(\s+|-)(et\s+)?)?{DecadeRegex})|({CenturyRegex}(\s+|-)(et\s+)?(?<decade>dix|centaines)))";
       public const string RelativeDecadeRegex = @"^\b$";
       public static readonly string YearSuffix = $@"(,?(\s*à)?\s*({DateYearRegex}|{FullTextYearRegex}))";
       public const string SuffixAfterRegex = @"^\b$";
@@ -720,11 +720,20 @@ namespace Microsoft.Recognizers.Definitions.French
       public const string NightRegex = @"\b(minuit|nuit)\b";
       public static readonly Dictionary<string, int> WrittenDecades = new Dictionary<string, int>
         {
-            { @"", 0 }
+            { @"cent", 0 },
+            { @"dix", 10 },
+            { @"vingt", 20 },
+            { @"trente", 30 },
+            { @"quarante", 40 },
+            { @"cinquante", 50 },
+            { @"soixante", 60 },
+            { @"soixante-dix", 70 },
+            { @"quatre-vingt", 80 },
+            { @"quatre-vingt-dix", 90 }
         };
       public static readonly Dictionary<string, int> SpecialDecadeCases = new Dictionary<string, int>
         {
-            { @"", 0 }
+            { @"deux mille", 2000 }
         };
       public const string DefaultLanguageFallback = @"DMY";
       public static readonly string[] DurationDateRestrictions = {  };
