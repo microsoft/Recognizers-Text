@@ -173,6 +173,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public static readonly string PeriodTimeOfDayWithDateRegex = $@"\b(({TimeOfDayRegex}))\b";
       public const string LessThanRegex = @"^\b$";
       public const string MoreThanRegex = @"^\b$";
+      public const string DecadeRegex = @"(?<decade>(?:dix|vingt|trente|quarante|cinquante|soixante-dix|soixante|quatre-vingt-dix|quatre-vingts|deux\s+mille))";
       public static readonly string DecadeWithCenturyInnerRegex = $@"(((?<century>\d|1\d|2\d)?((?<decade>\d0)\b)|(?<decade>\d0)(?=s))|(({CenturyRegex}(\s+|-)(et\s+)?)?{DecadeRegex})|({CenturyRegex}(\s+|-)(et\s+)?(?<decade>dix|centaines)))";
       public static readonly string DurationUnitRegex = $@"(?<unit>\bann[eé]es?(?!\s+{DecadeWithCenturyInnerRegex})\b|ans?|mois|semaines?|jours?|heures?|hrs?|h|minutes?|mins?|secondes?|secs?|journ[eé]e)\b";
       public const string SuffixAndRegex = @"(?<suffix>\s*(et)\s+(une?\s+)?(?<suffix_num>demi|quart))";
@@ -256,7 +257,6 @@ namespace Microsoft.Recognizers.Definitions.French
       public const string NumberAsTimeRegex = @"^\b$";
       public const string TimeBeforeAfterRegex = @"^\b$";
       public const string DateNumberConnectorRegex = @"^\s*(?<connector>\s+[aà])\s*$";
-      public const string DecadeRegex = @"(?<decade>(?:dix|vingt|trente|quarante|cinquante|soixante-dix|soixante|quatre-vingt-dix|quatre-vingts|deux\s+mille))";
       public static readonly string DecadeWithCenturyRegex = $@"(les\s+)?(années)\s+{DecadeWithCenturyInnerRegex}";
       public const string RelativeDecadeRegex = @"^\b$";
       public static readonly string YearSuffix = $@"(,?(\s*à)?\s*({DateYearRegex}|{FullTextYearRegex}))";

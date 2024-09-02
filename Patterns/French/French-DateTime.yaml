@@ -399,6 +399,8 @@ LessThanRegex: !simpleRegex
 MoreThanRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^\b$
+DecadeRegex: !simpleRegex
+  def: (?<decade>(?:dix|vingt|trente|quarante|cinquante|soixante-dix|soixante|quatre-vingt-dix|quatre-vingts|deux\s+mille))
 DecadeWithCenturyInnerRegex: !nestedRegex
   def: (((?<century>\d|1\d|2\d)?((?<decade>\d0)\b)|(?<decade>\d0)(?=s))|(({CenturyRegex}(\s+|-)(et\s+)?)?{DecadeRegex})|({CenturyRegex}(\s+|-)(et\s+)?(?<decade>dix|centaines)))
   references: [ CenturyRegex, DecadeRegex ]
@@ -596,8 +598,6 @@ TimeBeforeAfterRegex: !simpleRegex
   def: ^\b$
 DateNumberConnectorRegex: !simpleRegex
   def: ^\s*(?<connector>\s+[aà])\s*$
-DecadeRegex: !simpleRegex
-  def: (?<decade>(?:dix|vingt|trente|quarante|cinquante|soixante-dix|soixante|quatre-vingt-dix|quatre-vingts|deux\s+mille))
 DecadeWithCenturyRegex: !nestedRegex
   def: (les\s+)?(années)\s+{DecadeWithCenturyInnerRegex}
   references: [ DecadeWithCenturyInnerRegex ]
