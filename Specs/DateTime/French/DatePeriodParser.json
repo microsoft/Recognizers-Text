@@ -4080,7 +4080,7 @@
   },
   {
     "Input": "Dans les années 70s",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "les années 70",
@@ -4103,7 +4103,7 @@
   },
   {
     "Input": "Dans les années 70's",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "les années 70",

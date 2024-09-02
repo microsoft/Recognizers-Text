@@ -173,7 +173,8 @@ namespace Microsoft.Recognizers.Definitions.French
       public static readonly string PeriodTimeOfDayWithDateRegex = $@"\b(({TimeOfDayRegex}))\b";
       public const string LessThanRegex = @"^\b$";
       public const string MoreThanRegex = @"^\b$";
-      public static readonly string DurationUnitRegex = $@"(?<unit>\bann[eé]es?(?!(\s+(((?<century>\d|1\d|2\d)?(?<decade>\d0)\b)|(({CenturyRegex}(\s+|-)(et\s+)?)?{DecadeRegex})|({CenturyRegex}(\s+|-)(et\s+)?(?<decade>dix|centaines)))))\b|ans?|mois|semaines?|jours?|heures?|hrs?|h|minutes?|mins?|secondes?|secs?|journ[eé]e)\b";
+      public static readonly string DecadeWithCenturyInnerRegex = $@"(((?<century>\d|1\d|2\d)?((?<decade>\d0)\b)|(?<decade>\d0)(?=s))|(({CenturyRegex}(\s+|-)(et\s+)?)?{DecadeRegex})|({CenturyRegex}(\s+|-)(et\s+)?(?<decade>dix|centaines)))";
+      public static readonly string DurationUnitRegex = $@"(?<unit>\bann[eé]es?(?!\s+{DecadeWithCenturyInnerRegex})\b|ans?|mois|semaines?|jours?|heures?|hrs?|h|minutes?|mins?|secondes?|secs?|journ[eé]e)\b";
       public const string SuffixAndRegex = @"(?<suffix>\s*(et)\s+(une?\s+)?(?<suffix_num>demi|quart))";
       public const string PeriodicRegex = @"\b(?<periodic>quotidien(ne)?|journellement|mensuel(le)?|jours?|hebdomadaire|bihebdomadaire|annuel(lement)?)\b";
       public static readonly string EachUnitRegex = $@"(?<each>(chaque|toutes les|tous les)(?<other>\s+autres)?\s*{DurationUnitRegex})";
@@ -256,7 +257,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public const string TimeBeforeAfterRegex = @"^\b$";
       public const string DateNumberConnectorRegex = @"^\s*(?<connector>\s+[aà])\s*$";
       public const string DecadeRegex = @"(?<decade>(?:dix|vingt|trente|quarante|cinquante|soixante-dix|soixante|quatre-vingt-dix|quatre-vingts|deux\s+mille))";
-      public static readonly string DecadeWithCenturyRegex = $@"(les\s+)?(années)\s+(((?<century>\d|1\d|2\d)?(?<decade>\d0)\b)|(({CenturyRegex}(\s+|-)(et\s+)?)?{DecadeRegex})|({CenturyRegex}(\s+|-)(et\s+)?(?<decade>dix|centaines)))";
+      public static readonly string DecadeWithCenturyRegex = $@"(les\s+)?(années)\s+{DecadeWithCenturyInnerRegex}";
       public const string RelativeDecadeRegex = @"^\b$";
       public static readonly string YearSuffix = $@"(,?(\s*à)?\s*({DateYearRegex}|{FullTextYearRegex}))";
       public const string SuffixAfterRegex = @"^\b$";

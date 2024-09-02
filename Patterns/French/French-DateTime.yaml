@@ -399,9 +399,12 @@ LessThanRegex: !simpleRegex
 MoreThanRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^\b$
-DurationUnitRegex: !nestedRegex
-  def: (?<unit>\bann[eé]es?(?!(\s+(((?<century>\d|1\d|2\d)?(?<decade>\d0)\b)|(({CenturyRegex}(\s+|-)(et\s+)?)?{DecadeRegex})|({CenturyRegex}(\s+|-)(et\s+)?(?<decade>dix|centaines)))))\b|ans?|mois|semaines?|jours?|heures?|hrs?|h|minutes?|mins?|secondes?|secs?|journ[eé]e)\b
+DecadeWithCenturyInnerRegex: !nestedRegex
+  def: (((?<century>\d|1\d|2\d)?((?<decade>\d0)\b)|(?<decade>\d0)(?=s))|(({CenturyRegex}(\s+|-)(et\s+)?)?{DecadeRegex})|({CenturyRegex}(\s+|-)(et\s+)?(?<decade>dix|centaines)))
   references: [ CenturyRegex, DecadeRegex ]
+DurationUnitRegex: !nestedRegex
+  def: (?<unit>\bann[eé]es?(?!\s+{DecadeWithCenturyInnerRegex})\b|ans?|mois|semaines?|jours?|heures?|hrs?|h|minutes?|mins?|secondes?|secs?|journ[eé]e)\b
+  references: [ DecadeWithCenturyInnerRegex ]
 SuffixAndRegex: !simpleRegex
   def: (?<suffix>\s*(et)\s+(une?\s+)?(?<suffix_num>demi|quart))
 PeriodicRegex: !simpleRegex
@@ -596,8 +599,8 @@ DateNumberConnectorRegex: !simpleRegex
 DecadeRegex: !simpleRegex
   def: (?<decade>(?:dix|vingt|trente|quarante|cinquante|soixante-dix|soixante|quatre-vingt-dix|quatre-vingts|deux\s+mille))
 DecadeWithCenturyRegex: !nestedRegex
-  def: (les\s+)?(années)\s+(((?<century>\d|1\d|2\d)?(?<decade>\d0)\b)|(({CenturyRegex}(\s+|-)(et\s+)?)?{DecadeRegex})|({CenturyRegex}(\s+|-)(et\s+)?(?<decade>dix|centaines)))
-  references: [ CenturyRegex, DecadeRegex ]
+  def: (les\s+)?(années)\s+{DecadeWithCenturyInnerRegex}
+  references: [ DecadeWithCenturyInnerRegex ]
 RelativeDecadeRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^\b$
