@@ -4737,11 +4737,11 @@
     ]
   },
   {
-    "Input": "Dans les années 40",
+    "Input": "Dans les années 20",
     "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "les années 40",
+        "Text": "les années 20",
         "Type": "daterange",
         "Start": 5,
         "Length": 13
