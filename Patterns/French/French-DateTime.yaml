@@ -48,13 +48,13 @@ WrittenElevenToNineteenRegex: !simpleRegex
 WrittenTensRegex: !simpleRegex
   def: (?:quatre\Wvingt(s|\Wdix)?|soixante(\Wdix)?|dix|vingt|trente|quarante|cinquante|septante|octante|huitante|nonante)
 WrittenCenturyFullYearRegex: !nestedRegex
-  def: (?:(deux\s+)?mille((\s+{WrittenOneToNineRegex})?\s+cent?)?)
+  def: (?:(deux\s+)?mille((\s+{WrittenOneToNineRegex})?\s+cents?)?)
   references: [ WrittenOneToNineRegex]
 WrittenCenturyOrdinalYearRegex: !nestedRegex
   def: ({WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|dix)
   references: [ WrittenOneToNineRegex, WrittenElevenToNineteenRegex ]
 CenturyRegex: !nestedRegex
-  def: \b(?<century>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}(\s+cent?)?)\b
+  def: \b(?<century>{WrittenCenturyFullYearRegex}|{WrittenCenturyOrdinalYearRegex}(\s+cents?)?)\b
   references: [WrittenCenturyFullYearRegex, WrittenCenturyOrdinalYearRegex ]
 LastTwoYearNumRegex: !nestedRegex
   def: (({WrittenTensRegex}(\s+|-))?({WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex})|{WrittenTensRegex})
@@ -402,7 +402,7 @@ MoreThanRegex: !simpleRegex
 DecadeRegex: !simpleRegex
   def: (?<decade>(?:dix|vingt|trente|quarante|cinquante|soixante-dix|soixante|quatre-vingt-dix|quatre-vingts|deux\s+mille))
 DecadeWithCenturyInnerRegex: !nestedRegex
-  def: (((?<century>\d|1\d|2\d)?((?<decade>\d0)\b)|(?<decade>\d0)(?=s))|(({CenturyRegex}(\s+|-)(et\s+)?)?{DecadeRegex})|({CenturyRegex}(\s+|-)(et\s+)?(?<decade>dix|centaines)))
+  def: (((?<century>\d|1\d|2\d)?((?<decade>\d0)\b)|(?<decade>\d0)(?=s))|(({CenturyRegex}(\s+)(et\s+)?)?{DecadeRegex})|({CenturyRegex}(\s+)(et\s+)?(?<decade>dix|centaines)))
   references: [ CenturyRegex, DecadeRegex ]
 DurationUnitRegex: !nestedRegex
   def: (?<unit>\bann[eé]es?(?!\s+{DecadeWithCenturyInnerRegex})\b|ans?|mois|semaines?|jours?|heures?|hrs?|h|minutes?|mins?|secondes?|secs?|journ[eé]e)\b
@@ -1082,9 +1082,7 @@ NightRegex: !simpleRegex
   def: \b(minuit|nuit)\b
 WrittenDecades: !dictionary
   types: [ string, int ]
-  # TODO: modify below dictionary according to the counterpart in English
   entries:
-    'cent': 0
     'dix': 10
     'vingt': 20
     'trente': 30
@@ -1096,7 +1094,6 @@ WrittenDecades: !dictionary
     'quatre-vingt-dix': 90
 SpecialDecadeCases: !dictionary
   types: [ string, int ]
-  # TODO: modify below dictionary there're special cases for written decades
   entries:
     'deux mille': 2000
 DefaultLanguageFallback: DMY
