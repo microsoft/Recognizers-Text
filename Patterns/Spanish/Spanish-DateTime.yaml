@@ -580,7 +580,7 @@ CenturyRegex: !simpleRegex
 DecadeRegex: !simpleRegex
   def: (?<decade>diez|veinte|treinta|cuarenta|cincuenta|se[st]enta|ochenta|noventa)
 DecadeWithCenturyRegex: !nestedRegex
-  def: (los\s+)?((((d[ée]cada(\s+de)?)\s+)(((?<century>\d|1\d|2\d)?(?<decade>\d0))))|a[ñn]os\s+((((dos\s+)?mil\s+)?({WrittenOneHundredToNineHundredRegex}\s+)?{DecadeRegex})|((dos\s+)?mil\s+)?({WrittenOneHundredToNineHundredRegex})(\s+{DecadeRegex}?)|((dos\s+)?mil)(\s+{WrittenOneHundredToNineHundredRegex}\s+)?{DecadeRegex}?))
+  def: (los\s+)?((((d[ée]cada(\s+de)?)\s+)(((?<century>\d|1\d|2\d)?(?<decade>\d0))))|a[ñn]os\s+((?<century>\d|1\d|2\d)?(?<decade>\d0)\b)|a[ñn]os\s+(((?<century>((dos\s+)?mil\s+)?({WrittenOneHundredToNineHundredRegex}\s+)?)?{DecadeRegex})|(?<century>((dos\s+)?mil\s+)?({WrittenOneHundredToNineHundredRegex}))(\s+{DecadeRegex}?)|(?<century>((dos\s+)?mil)(\s+{WrittenOneHundredToNineHundredRegex}\s+)?){DecadeRegex}?))
   references: [ WrittenOneHundredToNineHundredRegex, DecadeRegex ]
 RelativeDecadeRegex: !nestedRegex
   def: \b(((el|las?)\s+)?{RelativeRegex}\s+((?<number>[\w,]+)\s+)?(d[eé]cada|decenio)s?)\b
@@ -1048,9 +1048,16 @@ ModSuffixRegex: !nestedRegex
   references: [AgoRegex, LaterRegex, BeforeAfterRegex, FutureSuffixRegex, PastSuffixRegex]
 WrittenDecades: !dictionary
   types: [ string, int ]
-  # TODO: modify below dictionary according to the counterpart in English
   entries:
-    "": 0
+    'diez': 10
+    'veinte': 20
+    'treinta': 30
+    'cuarenta': 40
+    'cincuenta': 50
+    'sesenta': 60
+    'setenta': 70
+    'ochenta': 80
+    'noventa': 90
 SpecialDecadeCases: !dictionary
   types: [ string, int ]
   # TODO: modify below dictionary there're special cases for written decades

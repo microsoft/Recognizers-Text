@@ -232,7 +232,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public const string DateNumberConnectorRegex = @"^\s*(?<connector>a\s+las)\s*$";
       public const string CenturyRegex = @"^[.]";
       public const string DecadeRegex = @"(?<decade>diez|veinte|treinta|cuarenta|cincuenta|se[st]enta|ochenta|noventa)";
-      public static readonly string DecadeWithCenturyRegex = $@"(los\s+)?((((d[ée]cada(\s+de)?)\s+)(((?<century>\d|1\d|2\d)?(?<decade>\d0))))|a[ñn]os\s+((((dos\s+)?mil\s+)?({WrittenOneHundredToNineHundredRegex}\s+)?{DecadeRegex})|((dos\s+)?mil\s+)?({WrittenOneHundredToNineHundredRegex})(\s+{DecadeRegex}?)|((dos\s+)?mil)(\s+{WrittenOneHundredToNineHundredRegex}\s+)?{DecadeRegex}?))";
+      public static readonly string DecadeWithCenturyRegex = $@"(los\s+)?((((d[ée]cada(\s+de)?)\s+)(((?<century>\d|1\d|2\d)?(?<decade>\d0))))|a[ñn]os\s+((?<century>\d|1\d|2\d)?(?<decade>\d0)\b)|a[ñn]os\s+(((?<century>((dos\s+)?mil\s+)?({WrittenOneHundredToNineHundredRegex}\s+)?)?{DecadeRegex})|(?<century>((dos\s+)?mil\s+)?({WrittenOneHundredToNineHundredRegex}))(\s+{DecadeRegex}?)|(?<century>((dos\s+)?mil)(\s+{WrittenOneHundredToNineHundredRegex}\s+)?){DecadeRegex}?))";
       public static readonly string RelativeDecadeRegex = $@"\b(((el|las?)\s+)?{RelativeRegex}\s+((?<number>[\w,]+)\s+)?(d[eé]cada|decenio)s?)\b";
       public static readonly string ComplexDatePeriodRegex = $@"(?:((de(sde)?)\s+)?(?<start>.+)\s*({StrictTillRegex})\s*(?<end>.+)|((entre)\s+)(?<start>.+)\s*({RangeConnectorRegex})\s*(?<end>.+))";
       public const string AmbiguousPointRangeRegex = @"^(mar\.?)$";
@@ -639,7 +639,15 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public static readonly string ModSuffixRegex = $@"\b({AgoRegex}|{LaterRegex}|{BeforeAfterRegex}|{FutureSuffixRegex}|{PastSuffixRegex})\b";
       public static readonly Dictionary<string, int> WrittenDecades = new Dictionary<string, int>
         {
-            { @"", 0 }
+            { @"diez", 10 },
+            { @"veinte", 20 },
+            { @"treinta", 30 },
+            { @"cuarenta", 40 },
+            { @"cincuenta", 50 },
+            { @"sesenta", 60 },
+            { @"setenta", 70 },
+            { @"ochenta", 80 },
+            { @"noventa", 90 }
         };
       public static readonly Dictionary<string, int> SpecialDecadeCases = new Dictionary<string, int>
         {
