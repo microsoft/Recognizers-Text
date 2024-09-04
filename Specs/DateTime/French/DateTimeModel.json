@@ -3757,6 +3757,60 @@
     ]
   },
   {
+    "Input": "Qui était notre président dans les années 1990 ?",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "les années 1990",
+        "Start": 31,
+        "End": 45,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(1990-01-01,2000-01-01,P10Y)",
+              "type": "daterange",
+              "start": "1990-01-01",
+              "end": "2000-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Qui étaient les présidents des États-Unis dans les années quatre-vingt-dix ?",
+    "Debug": true,
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "les années quatre-vingt-dix",
+        "Start": 47,
+        "End": 73,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XX90-01-01,XX00-01-01,P10Y)",
+              "type": "daterange",
+              "start": "1990-01-01",
+              "end": "2000-01-01"
+            },
+            {
+              "timex": "(XX90-01-01,XX00-01-01,P10Y)",
+              "type": "daterange",
+              "start": "2090-01-01",
+              "end": "2100-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "Je vais rentrer le 02/oct.",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
