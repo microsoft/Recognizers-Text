@@ -4034,7 +4034,7 @@
   },
   {
     "Input": "Dans les années 2000, il est né.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "les années 2000",
@@ -4057,7 +4057,7 @@
   },
   {
     "Input": "Dans les années 1970's",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "les années 1970",
@@ -4080,7 +4080,7 @@
   },
   {
     "Input": "Dans les années 70s",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "les années 70",
@@ -4103,7 +4103,7 @@
   },
   {
     "Input": "Dans les années 70's",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "les années 70",
@@ -4149,7 +4149,7 @@
   },
   {
     "Input": "Dans les années 40",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "les années 40",
@@ -4172,7 +4172,7 @@
   },
   {
     "Input": "Dans les années soixante-dix",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "les années soixante-dix",
@@ -4194,8 +4194,77 @@
     ]
   },
   {
+    "Input": "Dans les années dix-neuf soixante-dix",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "les années dix-neuf soixante-dix",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(1970-01-01,1980-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "1970-01-01",
+            "endDate": "1980-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1970-01-01",
+            "endDate": "1980-01-01"
+          }
+        },
+        "Start": 5,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "Dans les années mille quatre cent vingt",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "les années mille quatre cent vingt",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(1420-01-01,1430-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "1420-01-01",
+            "endDate": "1430-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1420-01-01",
+            "endDate": "1430-01-01"
+          }
+        },
+        "Start": 5,
+        "Length": 34
+      }
+    ]
+  },
+  {
+    "Input": "Dans les années deux mille",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "les années deux mille",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2000-01-01,2010-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2010-01-01"
+          },
+          "PastResolution": {
+            "startDate": "2000-01-01",
+            "endDate": "2010-01-01"
+          }
+        },
+        "Start": 5,
+        "Length": 21
+      }
+    ]
+  },
+  {
     "Input": "Dans les années 1970",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "les années 1970",
@@ -4241,7 +4310,7 @@
   },
   {
     "Input": "Dans les années 2010",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "les années 2010",
@@ -4287,7 +4356,7 @@
   },
   {
     "Input": "Dans les années 2000",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "les années 2000",

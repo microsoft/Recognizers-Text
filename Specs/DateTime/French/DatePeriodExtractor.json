@@ -4678,7 +4678,7 @@
   },
   {
     "Input": "Dans les années 1970",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "les années 1970",
@@ -4690,7 +4690,7 @@
   },
   {
     "Input": "Dans les années 2000, il est né.",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "les années 2000",
@@ -4726,7 +4726,7 @@
   },
   {
     "Input": "Dans les années 70",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "les années 70",
@@ -4737,11 +4737,11 @@
     ]
   },
   {
-    "Input": "Dans les années 40",
-    "NotSupported": "dotnet, javascript, python, java",
+    "Input": "Dans les années 20",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
-        "Text": "les années 40",
+        "Text": "les années 20",
         "Type": "daterange",
         "Start": 5,
         "Length": 13
@@ -4750,7 +4750,7 @@
   },
   {
     "Input": "Dans les années soixante-dix",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "les années soixante-dix",
@@ -4762,13 +4762,37 @@
   },
   {
     "Input": "Dans les années dix-neuf soixante-dix",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "les années dix-neuf soixante-dix",
         "Type": "daterange",
         "Start": 5,
         "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "Dans les années mille quatre cent vingt",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "les années mille quatre cent vingt",
+        "Type": "daterange",
+        "Start": 5,
+        "Length": 34
+      }
+    ]
+  },
+  {
+    "Input": "Dans les années deux mille",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "les années deux mille",
+        "Type": "daterange",
+        "Start": 5,
+        "Length": 21
       }
     ]
   },
@@ -4786,7 +4810,7 @@
   },
   {
     "Input": "Dans les années 2010",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "les années 2010",
@@ -4810,7 +4834,7 @@
   },
   {
     "Input": "Dans les années 2000",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "javascript, python, java",
     "Results": [
       {
         "Text": "les années 2000",

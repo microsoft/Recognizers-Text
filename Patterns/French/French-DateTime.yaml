@@ -76,7 +76,7 @@ MonthSuffixRegex: !nestedRegex
   def: (?<msuf>(en\s*|le\s*|de\s*|dans\s*)?({RelativeMonthRegex}|{WrittenMonthRegex}))
   references: [ RelativeMonthRegex, WrittenMonthRegex ]
 DateUnitRegex: !simpleRegex
-  def: (?<unit>an|(?<plural>mois)|((l')?ann[eé]e|semaine|journ[eé]e|jour)(?<plural>s)?)\b
+  def: (?<unit>an(?<plural>s)?|(?<plural>mois)|((l')?ann[eé]e|semaine|journ[eé]e|jour)(?<plural>s)?)\b
 SimpleCasesRegex: !nestedRegex
   def: \b((d[ue])|entre\s+)?({DayRegex})\s*{TillRegex}\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*){YearRegex})?\b
   references: [ DayRegex, TillRegex, MonthSuffixRegex, YearRegex ]
@@ -399,8 +399,14 @@ LessThanRegex: !simpleRegex
 MoreThanRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^\b$
-DurationUnitRegex: !simpleRegex
-  def: (?<unit>ann[eé]es?|ans?|mois|semaines?|jours?|heures?|hrs?|h|minutes?|mins?|secondes?|secs?|journ[eé]e)\b
+DecadeRegex: !simpleRegex
+  def: (?<decade>(?:dix|vingt|trente|quarante|cinquante|soixante-dix|soixante|quatre-vingt-dix|quatre-vingts|deux\s+mille))
+DecadeWithCenturyInnerRegex: !nestedRegex
+  def: (((?<century>\d|1\d|2\d)?((?<decade>\d0)\b)|(?<decade>\d0)(?=s))|(({CenturyRegex}(\s+)(et\s+)?)?{DecadeRegex})|({CenturyRegex}(\s+)(et\s+)?(?<decade>dix|centaines)))
+  references: [ CenturyRegex, DecadeRegex ]
+DurationUnitRegex: !nestedRegex
+  def: (?<unit>\bann[eé]es?(?!\s+{DecadeWithCenturyInnerRegex})\b|ans?|mois|semaines?|jours?|heures?|hrs?|h|minutes?|mins?|secondes?|secs?|journ[eé]e)\b
+  references: [ DecadeWithCenturyInnerRegex ]
 SuffixAndRegex: !simpleRegex
   def: (?<suffix>\s*(et)\s+(une?\s+)?(?<suffix_num>demi|quart))
 PeriodicRegex: !simpleRegex
@@ -479,12 +485,12 @@ AgoPrefixRegex: !simpleRegex
 LaterRegex: !simpleRegex
   def: \b(plus\s+tard|à\s+partir\s+(de\s+(maintenant|demain)|d'aujourd'hui)|après\s+(aujourd'hui|demain))\b
 AgoRegex: !nestedRegex
-  def: \b((depuis|il\s+y\s*a)(\s+{AroundRegex})?|auparavant|avant\s+(?<day>hier|aujourd'hui))\b
+  def: \b((il\s+y\s*a)(\s+{AroundRegex})?|auparavant|avant\s+(?<day>hier|aujourd'hui))\b
   references: [ AroundRegex ]
 BeforeAfterRegex: !simpleRegex
   def: ^\b$
 InConnectorRegex: !simpleRegex
-  def: \b(dans|en|sur)\b
+  def: \b(dans|en)\b
 SinceYearSuffixRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^\b$
@@ -592,12 +598,9 @@ TimeBeforeAfterRegex: !simpleRegex
   def: ^\b$
 DateNumberConnectorRegex: !simpleRegex
   def: ^\s*(?<connector>\s+[aà])\s*$
-DecadeRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^\b$
-DecadeWithCenturyRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^\b$
+DecadeWithCenturyRegex: !nestedRegex
+  def: (les\s+)?(années)\s+{DecadeWithCenturyInnerRegex}
+  references: [ DecadeWithCenturyInnerRegex ]
 RelativeDecadeRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^\b$
@@ -1079,14 +1082,20 @@ NightRegex: !simpleRegex
   def: \b(minuit|nuit)\b
 WrittenDecades: !dictionary
   types: [ string, int ]
-  # TODO: modify below dictionary according to the counterpart in English
   entries:
-    '': 0
+    'dix': 10
+    'vingt': 20
+    'trente': 30
+    'quarante': 40
+    'cinquante': 50
+    'soixante': 60
+    'soixante-dix': 70
+    'quatre-vingt': 80
+    'quatre-vingt-dix': 90
 SpecialDecadeCases: !dictionary
   types: [ string, int ]
-  # TODO: modify below dictionary there're special cases for written decades
   entries:
-    '': 0
+    'deux mille': 2000
 DefaultLanguageFallback: DMY
 DurationDateRestrictions: []
 # Cases collected from mined data

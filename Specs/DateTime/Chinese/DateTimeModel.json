@@ -544,6 +544,81 @@
     ]
   },
   {
+    "Input": "下下周末",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "下下周末",
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-W14-WE",
+              "type": "daterange",
+              "start": "2017-04-08",
+              "end": "2017-04-10"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "会议在下下周",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "下下周",
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-W14",
+              "type": "daterange",
+              "start": "2017-04-03",
+              "end": "2017-04-10"
+            }
+          ]
+        },
+        "Start": 3,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "下下周如何",
+    "Context": {
+      "ReferenceDateTime": "2017-03-22T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "下下周",
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2017-W14",
+              "type": "daterange",
+              "start": "2017-04-03",
+              "end": "2017-04-10"
+            }
+          ]
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
     "Input": "后1年",
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.DateTime.Chinese;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
@@ -1021,6 +1022,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                     return ret;
                 }
 
+                // In Chinese, "下" means next, "下下周" means next next week, "下下周末" means next next weekend, need to check whether the text match "下下"
+                ChineseDatePeriodParserConfiguration config = this.config as ChineseDatePeriodParserConfiguration;
+                bool nextNextMatch = config == null ? false : config.NextNextRegex.Match(trimmedText).Success;
+
                 var nextMatch = this.config.NextRegex.Match(trimmedText);
                 var lastMatch = this.config.LastRegex.Match(trimmedText);
 
@@ -1071,7 +1076,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                 else
                 {
                     var swift = 0;
-                    if (nextMatch.Success)
+                    if (nextNextMatch)
+                    {
+                        // If it is Chinese "下下周" (next next week), "下下周末" (next next weekend), then swift is 2
+                        swift = 2;
+                    }
+                    else if (nextMatch.Success)
                     {
                         if (nextMatch.Groups[Constants.AfterGroupName].Success)
                         {
