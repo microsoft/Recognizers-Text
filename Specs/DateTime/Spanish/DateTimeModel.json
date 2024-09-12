@@ -13552,6 +13552,62 @@
     ]
   },
   {
+    "Input": "escrito en los anos 90",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "los anos 90",
+        "Start": 11,
+        "End": 21,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XX90-01-01,XX00-01-01,P10Y)",
+              "type": "daterange",
+              "start": "1990-01-01",
+              "end": "2000-01-01"
+            },
+            {
+              "timex": "(XX90-01-01,XX00-01-01,P10Y)",
+              "type": "daterange",
+              "start": "2090-01-01",
+              "end": "2100-01-01"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "escritos en los ultimos 3 anos",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "ultimos 3 anos",
+        "Start": 16,
+        "End": 29,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2013-11-07,2016-11-07,P3Y)",
+              "type": "daterange",
+              "start": "2013-11-07",
+              "end": "2016-11-07"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "¿Cuáles fueron los presidentes de Estados Unidos en la década de 1990?",
     "Context": {
       "ReferenceDateTime": "2019-05-23T00:00:00"

@@ -4147,6 +4147,60 @@
     ]
   },
   {
+    "Input": "escrito en los anos 90",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, python",
+    "NotSupportedByDesign": "javascript",
+    "Results": [
+      {
+        "Text": "los anos 90",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XX90-01-01,XX00-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2090-01-01",
+            "endDate": "2100-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1990-01-01",
+            "endDate": "2000-01-01"
+          }
+        },
+        "Start": 11,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "escritos en los ultimos 3 anos",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, python",
+    "NotSupportedByDesign": "javascript",
+    "Results": [
+      {
+        "Text": "ultimos 3 anos",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2013-11-07,2016-11-07,P3Y)",
+          "FutureResolution": {
+            "startDate": "2013-11-07",
+            "endDate": "2016-11-07"
+          },
+          "PastResolution": {
+            "startDate": "2013-11-07",
+            "endDate": "2016-11-07"
+          }
+        },
+        "Start": 16,
+        "Length": 14
+      }
+    ]
+  },
+  {
     "Input": "en los años dos mil diez",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"

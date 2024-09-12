@@ -3529,6 +3529,32 @@
     ]
   },
   {
+    "Input": "escrito en los anos 90",
+    "NotSupported": "java",
+    "NotSupportedByDesign": "javascript, python",
+    "Results": [
+      {
+        "Text": "los anos 90",
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "escritos en los ultimos 3 anos",
+    "NotSupported": "java",
+    "NotSupportedByDesign": "javascript, python",
+    "Results": [
+      {
+        "Text": "ultimos 3 anos",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 14
+      }
+    ]
+  },
+  {
     "Input": "en los 70",
     "Comment": "Won't fix, because 'los 70' has ambiguity, will be extracted as number or datetime",
     "NotSupported": "javascript, dotnet, java, python",

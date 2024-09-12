@@ -3,7 +3,7 @@
 AgeSuffixList: !dictionary
   types: [ string, string ]
   entries:
-    Año: años|año
+    Año: años|anos|año|ano
     Mes: meses|mes
     Semana: semanas|semana
     Día: dias|días|día|dia
@@ -12,7 +12,9 @@ AmbiguousAgeUnitList: !list
   types: [ string ]
   entries:
     - años
+    - anos
     - año
+    - ano
     - meses
     - mes
     - semanas
@@ -969,7 +971,7 @@ LengthSuffixList: !dictionary
     Yarda: yd|yarda|yardas
     Pulgada: pulgada|pulgadas|"
     Pie: pie|pies|ft
-    Año luz: año luz|años luz|al
+    Año luz: año luz|ano luz|años luz|anos luz|al
 AmbiguousLengthUnitList: !list
   types: [ string ]
   entries:
