@@ -23,7 +23,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
     {
       public static readonly Dictionary<string, string> AgeSuffixList = new Dictionary<string, string>
         {
-            { @"Año", @"años|año" },
+            { @"Año", @"años|anos|año|ano" },
             { @"Mes", @"meses|mes" },
             { @"Semana", @"semanas|semana" },
             { @"Día", @"dias|días|día|dia" }
@@ -31,7 +31,9 @@ namespace Microsoft.Recognizers.Definitions.Spanish
       public static readonly IList<string> AmbiguousAgeUnitList = new List<string>
         {
             @"años",
+            @"anos",
             @"año",
+            @"ano",
             @"meses",
             @"mes",
             @"semanas",
@@ -737,7 +739,7 @@ namespace Microsoft.Recognizers.Definitions.Spanish
             { @"Yarda", @"yd|yarda|yardas" },
             { @"Pulgada", @"pulgada|pulgadas|""" },
             { @"Pie", @"pie|pies|ft" },
-            { @"Año luz", @"año luz|años luz|al" }
+            { @"Año luz", @"año luz|ano luz|años luz|anos luz|al" }
         };
       public static readonly IList<string> AmbiguousLengthUnitList = new List<string>
         {

@@ -3908,11 +3908,11 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "años 1970",
+        "Text": "los años 1970",
         "Type": "daterange",
         "Value": {
           "Timex": "(1970-01-01,1980-01-01,P10Y)",
@@ -3925,8 +3925,8 @@
             "endDate": "1980-01-01"
           }
         },
-        "Start": 7,
-        "Length": 9
+        "Start": 3,
+        "Length": 13
       }
     ]
   },
@@ -3935,11 +3935,11 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "años 2000",
+        "Text": "los años 2000",
         "Type": "daterange",
         "Value": {
           "Timex": "(2000-01-01,2010-01-01,P10Y)",
@@ -3952,8 +3952,8 @@
             "endDate": "2010-01-01"
           }
         },
-        "Start": 13,
-        "Length": 9
+        "Start": 9,
+        "Length": 13
       }
     ]
   },
@@ -3989,11 +3989,11 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "años 70",
+        "Text": "los años 70",
         "Type": "daterange",
         "Value": {
           "Timex": "(XX70-01-01,XX80-01-01,P10Y)",
@@ -4006,8 +4006,8 @@
             "endDate": "1980-01-01"
           }
         },
-        "Start": 7,
-        "Length": 7
+        "Start": 3,
+        "Length": 11
       }
     ]
   },
@@ -4070,11 +4070,11 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "años 40",
+        "Text": "los años 40",
         "Type": "daterange",
         "Value": {
           "Timex": "(XX40-01-01,XX50-01-01,P10Y)",
@@ -4087,8 +4087,8 @@
             "endDate": "1950-01-01"
           }
         },
-        "Start": 7,
-        "Length": 7
+        "Start": 3,
+        "Length": 11
       }
     ]
   },
@@ -4097,11 +4097,11 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "años setenta",
+        "Text": "los años setenta",
         "Type": "daterange",
         "Value": {
           "Timex": "(XX70-01-01,XX80-01-01,P10Y)",
@@ -4114,8 +4114,8 @@
             "endDate": "1980-01-01"
           }
         },
-        "Start": 7,
-        "Length": 12
+        "Start": 3,
+        "Length": 16
       }
     ]
   },
@@ -4124,11 +4124,11 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
     },
-    "NotSupported": "dotnet, java, python",
+    "NotSupported": "java, python",
     "NotSupportedByDesign": "javascript",
     "Results": [
       {
-        "Text": "años mil novecientos setenta",
+        "Text": "los años mil novecientos setenta",
         "Type": "daterange",
         "Value": {
           "Timex": "(1970-01-01,1980-01-01,P10Y)",
@@ -4141,8 +4141,62 @@
             "endDate": "1980-01-01"
           }
         },
-        "Start": 7,
-        "Length": 28
+        "Start": 3,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "escrito en los anos 90",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, python",
+    "NotSupportedByDesign": "javascript",
+    "Results": [
+      {
+        "Text": "los anos 90",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(XX90-01-01,XX00-01-01,P10Y)",
+          "FutureResolution": {
+            "startDate": "2090-01-01",
+            "endDate": "2100-01-01"
+          },
+          "PastResolution": {
+            "startDate": "1990-01-01",
+            "endDate": "2000-01-01"
+          }
+        },
+        "Start": 11,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "escritos en los ultimos 3 anos",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, python",
+    "NotSupportedByDesign": "javascript",
+    "Results": [
+      {
+        "Text": "ultimos 3 anos",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2013-11-07,2016-11-07,P3Y)",
+          "FutureResolution": {
+            "startDate": "2013-11-07",
+            "endDate": "2016-11-07"
+          },
+          "PastResolution": {
+            "startDate": "2013-11-07",
+            "endDate": "2016-11-07"
+          }
+        },
+        "Start": 16,
+        "Length": 14
       }
     ]
   },

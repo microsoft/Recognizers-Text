@@ -105,6 +105,21 @@
     ]
   },
   {
+    "Input": "Tengo diez anos.",
+    "Results": [
+      {
+        "Text": "diez anos",
+        "TypeName": "age",
+        "Resolution": {
+          "value": "10",
+          "unit": "Año"
+        },
+        "Start": 6,
+        "End": 14
+      }
+    ]
+  },
+  {
     "Input": "¿Cuándo se va aplicar una presión seria para cumplir realmente esa promesa formulada hace un año?",
     "Results": [
       {
