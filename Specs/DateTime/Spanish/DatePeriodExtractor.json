@@ -3482,10 +3482,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "años 1970",
+        "Text": "los años 1970",
         "Type": "daterange",
-        "Start": 7,
-        "Length": 9
+        "Start": 3,
+        "Length": 13
       }
     ]
   },
@@ -3495,10 +3495,10 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "años 2000",
+        "Text": "los años 2000",
         "Type": "daterange",
-        "Start": 13,
-        "Length": 9
+        "Start": 9,
+        "Length": 13
       }
     ]
   },
@@ -3521,10 +3521,36 @@
     "NotSupportedByDesign": "javascript, python",
     "Results": [
       {
-        "Text": "años 70",
+        "Text": "los años 70",
         "Type": "daterange",
-        "Start": 7,
-        "Length": 7
+        "Start": 3,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "escrito en los anos 90",
+    "NotSupported": "java",
+    "NotSupportedByDesign": "javascript, python",
+    "Results": [
+      {
+        "Text": "los anos 90",
+        "Type": "daterange",
+        "Start": 11,
+        "Length": 11
+      }
+    ]
+  },
+  {
+    "Input": "escritos en los ultimos 3 anos",
+    "NotSupported": "java",
+    "NotSupportedByDesign": "javascript, python",
+    "Results": [
+      {
+        "Text": "ultimos 3 anos",
+        "Type": "daterange",
+        "Start": 16,
+        "Length": 14
       }
     ]
   },

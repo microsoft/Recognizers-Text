@@ -73,7 +73,7 @@ MonthSuffixRegex: !nestedRegex
   def: (?<msuf>((del?|la|el)\s+)?({RelativeMonthRegex}|{MonthRegex}))
   references: [ RelativeMonthRegex, MonthRegex ]
 DateUnitRegex: !simpleRegex
-  def: (?<unit>(año|(?<uoy>semana))(?<plural>s)?|(?<uoy>mes)(?<plural>es)?|(?<uoy>d[ií]a)(?<plural>s)?(?<business>\s+(h[aá]biles|laborales))?)\b
+  def: (?<unit>(a[nñ]o|(?<uoy>semana))(?<plural>s)?|(?<uoy>mes)(?<plural>es)?|(?<uoy>d[ií]a)(?<plural>s)?(?<business>\s+(h[aá]biles|laborales))?)\b
 PastRegex: !simpleRegex
   def: (?<past>\b(pasad(a|o)(s)?|[uú]ltim[oa](s)?|anterior(es)?|previo(s)?)\b)
 FutureRegex: !simpleRegex
@@ -162,7 +162,7 @@ MonthOfRegex: !nestedRegex
   def: (mes)(\s+)({OfPrepositionRegex})
   references: [ OfPrepositionRegex ]
 RangeUnitRegex: !simpleRegex
-  def: \b(?<unit>años?|mes(es)?|semanas?)\b
+  def: \b(?<unit>a[nñ]os?|mes(es)?|semanas?)\b
 BeforeAfterRegex: !simpleRegex
   def: ^[.]
 InConnectorRegex: !simpleRegex
@@ -433,7 +433,7 @@ PeriodSpecificTimeOfDayRegex: !nestedRegex
   def: \b(({LaterEarlyRegex}\s+)?est[ae]\s+{DateTimeTimeOfDayRegex}|({StrictRelativeRegex}\s+{PeriodTimeOfDayRegex})|anoche)\b
   references: [ PeriodTimeOfDayRegex, StrictRelativeRegex, DateTimeTimeOfDayRegex, LaterEarlyRegex ]
 UnitRegex: !simpleRegex
-  def: (?<unit>años?|(bi|tri|cuatri|se)mestre|mes(es)?|semanas?|fin(es)?\s+de\s+semana|finde|d[ií]as?|horas?|hra?s?|hs?|minutos?|mins?|segundos?|segs?|noches?)\b
+  def: (?<unit>a[nñ]os?|(bi|tri|cuatri|se)mestre|mes(es)?|semanas?|fin(es)?\s+de\s+semana|finde|d[ií]as?|horas?|hra?s?|hs?|minutos?|mins?|segundos?|segs?|noches?)\b
 ConnectorRegex: !simpleRegex
   def: ^(,|t|(para|y|a|en|por) las?|(\s*,\s*)?((cerca|alrededor)\s+)?(de\s+las?|del))$
 # SpanishTimePeriodExtractorConfiguration
@@ -561,7 +561,7 @@ OrRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[.]
 SpecialYearTermsRegex: !nestedRegex
-  def: \b(({SpecialYearPrefixes}\s+años?\s+|años?\s+({SpecialYearPrefixes}\s+)?)(de\s+)?)
+  def: \b(({SpecialYearPrefixes}\s+a[nñ]os?\s+|a[nñ]os?\s+({SpecialYearPrefixes}\s+)?)(de\s+)?)
   references: [ SpecialYearPrefixes ]
 YearPlusNumberRegex: !nestedRegex
   def: \b({SpecialYearTermsRegex}((?<year>(\d{2,4}))|{FullTextYearRegex}))\b
@@ -580,7 +580,7 @@ CenturyRegex: !simpleRegex
 DecadeRegex: !simpleRegex
   def: (?<decade>diez|veinte|treinta|cuarenta|cincuenta|se[st]enta|ochenta|noventa)
 DecadeWithCenturyRegex: !nestedRegex
-  def: (los\s+)?((((d[ée]cada(\s+de)?)\s+)(((?<century>\d|1\d|2\d)?(?<decade>\d0))))|a[ñn]os\s+((((dos\s+)?mil\s+)?({WrittenOneHundredToNineHundredRegex}\s+)?{DecadeRegex})|((dos\s+)?mil\s+)?({WrittenOneHundredToNineHundredRegex})(\s+{DecadeRegex}?)|((dos\s+)?mil)(\s+{WrittenOneHundredToNineHundredRegex}\s+)?{DecadeRegex}?))
+  def: (los\s+)?((((d[ée]cada(\s+de)?)\s+)(((?<century>\d|1\d|2\d)?(?<decade>\d0))))|a[ñn]os\s+((?<century>\d|1\d|2\d)?(?<decade>\d0)\b)|a[ñn]os\s+(((?<century>((dos\s+)?mil\s+)?({WrittenOneHundredToNineHundredRegex}\s+)?)?{DecadeRegex})|(?<century>((dos\s+)?mil\s+)?({WrittenOneHundredToNineHundredRegex}))(\s+{DecadeRegex}?)|(?<century>((dos\s+)?mil)(\s+{WrittenOneHundredToNineHundredRegex}\s+)?){DecadeRegex}?))
   references: [ WrittenOneHundredToNineHundredRegex, DecadeRegex ]
 RelativeDecadeRegex: !nestedRegex
   def: \b(((el|las?)\s+)?{RelativeRegex}\s+((?<number>[\w,]+)\s+)?(d[eé]cada|decenio)s?)\b
@@ -609,6 +609,8 @@ UnitMap: !dictionary
   entries:
     años: Y
     año: Y
+    anos: Y
+    ano: Y
     meses: MON
     mes: MON
     trimestre: 3MON
@@ -651,6 +653,8 @@ UnitValueMap: !dictionary
   entries:
     años: 31536000
     año: 31536000
+    anos: 31536000
+    ano: 31536000
     meses: 2592000
     mes: 2592000
     semanas: 604800
@@ -1048,9 +1052,16 @@ ModSuffixRegex: !nestedRegex
   references: [AgoRegex, LaterRegex, BeforeAfterRegex, FutureSuffixRegex, PastSuffixRegex]
 WrittenDecades: !dictionary
   types: [ string, int ]
-  # TODO: modify below dictionary according to the counterpart in English
   entries:
-    "": 0
+    'diez': 10
+    'veinte': 20
+    'treinta': 30
+    'cuarenta': 40
+    'cincuenta': 50
+    'sesenta': 60
+    'setenta': 70
+    'ochenta': 80
+    'noventa': 90
 SpecialDecadeCases: !dictionary
   types: [ string, int ]
   # TODO: modify below dictionary there're special cases for written decades
@@ -1167,6 +1178,8 @@ YearTerms: !list
   entries:
     - año
     - años
+    - ano
+    - anos
 YearToDateTerms: !list
   types: [ string ]
   entries:
@@ -1198,7 +1211,7 @@ QuarterTypeRegex: !simpleRegex
 SemiAnnualTypeRegex: !simpleRegex
   def: (semestral(es|mente)?)$
 YearTypeRegex: !simpleRegex
-  def: (años?|anual(mente)?)$
+  def: (a[nñ]os?|anual(mente)?)$
 ThisTerms: !list
   types: [ string ]
   entries:
