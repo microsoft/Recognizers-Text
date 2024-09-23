@@ -3573,6 +3573,42 @@
     ]
   },
   {
+    "Input": "set OOO for 1 week, from 20th dec",
+    "NotSupported": "python, javascript, java",
+    "Results": [
+      {
+        "Text": "for 1 week, from 20th dec",
+        "Type": "daterange",
+        "Start": 8,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "set OOO for 3 days, from today",
+    "NotSupported": "python, javascript, java",
+    "Results": [
+      {
+        "Text": "for 3 days, from today",
+        "Type": "daterange",
+        "Start": 8,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "set OOO for 3 days from today",
+    "NotSupported": "python, javascript, java",
+    "Results": [
+      {
+        "Text": "for 3 days from today",
+        "Type": "daterange",
+        "Start": 8,
+        "Length": 21
+      }
+    ]
+  },
+  {
     "Input": "I will come back less than 2 weeks from today",
     "NotSupported": "python, javascript",
     "Results": [

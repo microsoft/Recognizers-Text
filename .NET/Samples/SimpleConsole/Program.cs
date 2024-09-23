@@ -28,32 +28,8 @@ namespace SimpleConsole
 
             ShowIntro();
 
-            Console.InputEncoding = Encoding.UTF8;
-            Console.OutputEncoding = Encoding.UTF8;
-            string culture = DefaultCulture;
-
             while (true)
             {
-                Console.WriteLine("Please select language: 1:English, 2:Chinese, 3: French, 4: Spanish");
-                switch (Console.ReadLine()?.Trim())
-                {
-                    case "1":
-                        culture = Culture.English;
-                        break;
-                    case "2":
-                        culture = Culture.Chinese;
-                        break;
-                    case "3":
-                        culture = Culture.French;
-                        break;
-                    case "4":
-                        culture = Culture.Spanish;
-                        break;
-                    default:
-                        culture = Culture.English;
-                        break;
-                }
-
                 // Read the text to recognize
                 Console.WriteLine("Enter the text to recognize:");
                 var input = Console.ReadLine()?.Trim();
@@ -69,7 +45,7 @@ namespace SimpleConsole
                 if (input?.Length > 0)
                 {
                     // Retrieve all the parsers and call 'Parse' to recognize all the values from the user input
-                    var results = ParseAll(input, culture);
+                    var results = ParseAll(input, DefaultCulture);
 
                     // Write output
                     Console.WriteLine(results.Any() ? $"I found the following entities ({results.Count():d}):" : "I found no entities.");
