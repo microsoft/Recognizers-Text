@@ -260,12 +260,13 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly string SinceRegexExp = $@"({SinceRegex}|\bfrom(\s+the)?\b)";
       public const string AgoRegex = @"\b(ago|earlier|before\s+(?<day>yesterday|today))\b";
       public static readonly string LaterRegex = $@"\b(?:later(?!((\s+in)?\s*{OneWordPeriodRegex})|(\s+{TimeOfDayRegex})|\s+than\b)|from now|(from|after)\s+(?<day>tomorrow|tmrw?|today))\b";
-      public const string BeforeAfterRegex = @"\b((?<before>before)|(?<after>from|after))\b";
+      public const string BeforeAfterRegex = @"(,?\s*)\b((?<before>before)|(?<after>from|after))\b";
       public static readonly string ModPrefixRegex = $@"\b({RelativeRegex}|{AroundRegex}|{BeforeRegex}|{AfterRegex}|{SinceRegex})\b";
       public static readonly string ModSuffixRegex = $@"\b({AgoRegex}|{LaterRegex}|{BeforeAfterRegex}|{FutureSuffixRegex}|{PastSuffixRegex})\b";
       public const string InConnectorRegex = @"\b(in)\b";
       public static readonly string SinceYearSuffixRegex = $@"(^\s*{SinceRegex}(\s*(the\s+)?year\s*)?{YearSuffix})";
       public static readonly string WithinNextPrefixRegex = $@"\b(within(\s+the)?(\s+(?<next>{NextPrefixRegex}))?)\b";
+      public const string ForPrefixRegex = @"((?<forfrom>for.*from.*)|(?<from>\bfrom\b)|(?<for>\bfor\b))";
       public const string TodayNowRegex = @"\b(today|now|current (date|time))\b";
       public static readonly string MorningStartEndRegex = $@"(^(morning|{AmDescRegex}))|((morning|{AmDescRegex})$)";
       public static readonly string AfternoonStartEndRegex = $@"(^(afternoon|{PmDescRegex}))|((afternoon|{PmDescRegex})$)";

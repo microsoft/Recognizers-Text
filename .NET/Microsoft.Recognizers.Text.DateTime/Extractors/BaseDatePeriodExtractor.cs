@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
-
+using Microsoft.Recognizers.Text.DateTime.English;
 using Microsoft.Recognizers.Text.InternalCache;
 using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
@@ -732,6 +732,18 @@ namespace Microsoft.Recognizers.Text.DateTime
                                 tokens = ExtractWithinNextPrefix(afterString, extractionResult, inPrefix: false);
                                 ret.AddRange(tokens);
                             }
+                        }
+                    }
+
+                    // For cases like "for 1 week from today", "for 3 days from 20th May" etc..
+                    if (EnglishDatePeriodExtractorConfiguration.ForPrefixRegex != null)
+                    {
+                        Match prefixMatchFor = EnglishDatePeriodExtractorConfiguration.ForPrefixRegex.Match(beforeString);
+                        Match datepointMatchFrom = EnglishDatePeriodExtractorConfiguration.ForPrefixRegex.Match(extractionResult.Text);
+                        if (prefixMatchFor.Success && prefixMatchFor.Groups[Constants.ForGroupName].Success
+                            && datepointMatchFrom.Success && datepointMatchFrom.Groups[Constants.FromGroupName].Success)
+                        {
+                            ret.AddRange(GetTokenForRegexMatching(beforeString, EnglishDatePeriodExtractorConfiguration.ForPrefixRegex, extractionResult, inPrefix: true));
                         }
                     }
                 }

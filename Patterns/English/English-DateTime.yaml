@@ -624,7 +624,7 @@ LaterRegex: !nestedRegex
   def: \b(?:later(?!((\s+in)?\s*{OneWordPeriodRegex})|(\s+{TimeOfDayRegex})|\s+than\b)|from now|(from|after)\s+(?<day>tomorrow|tmrw?|today))\b
   references: [ OneWordPeriodRegex, TimeOfDayRegex ]
 BeforeAfterRegex: !simpleRegex
-  def: \b((?<before>before)|(?<after>from|after))\b
+  def: (,?\s*)\b((?<before>before)|(?<after>from|after))\b
 ModPrefixRegex: !nestedRegex
   def: \b({RelativeRegex}|{AroundRegex}|{BeforeRegex}|{AfterRegex}|{SinceRegex})\b
   references: [RelativeRegex, AroundRegex, BeforeRegex, AfterRegex, SinceRegex ]
@@ -639,6 +639,8 @@ SinceYearSuffixRegex: !nestedRegex
 WithinNextPrefixRegex: !nestedRegex
   def: \b(within(\s+the)?(\s+(?<next>{NextPrefixRegex}))?)\b
   references: [ NextPrefixRegex ]
+ForPrefixRegex: !simpleRegex
+  def: ((?<forfrom>for.*from.*)|(?<from>\bfrom\b)|(?<for>\bfor\b))
 TodayNowRegex: !simpleRegex  # Added to remove hard coded strings in BaseDatePeriodParser
   def: \b(today|now|current (date|time))\b
 # "next" group here is used to judge uncommon unsupported cases like "within the next 5 days before today"

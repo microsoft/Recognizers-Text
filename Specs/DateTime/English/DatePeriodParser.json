@@ -5267,6 +5267,84 @@
     ]
   },
   {
+    "Input": "set OOO for 1 week, from 20th dec",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupported": "python, javascript, java",
+    "Results": [
+      {
+        "Text": "for 1 week, from 20th dec",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2018-12-20,2018-12-27,P1W)",
+          "FutureResolution": {
+            "startDate": "2018-12-20",
+            "endDate": "2018-12-27"
+          },
+          "PastResolution": {
+            "startDate": "2018-12-20",
+            "endDate": "2018-12-27"
+          }
+        },
+        "Start": 8,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "set OOO for 3 days, from today",
+    "Context": {
+      "ReferenceDateTime": "2018-05-23T00:00:00"
+    },
+    "NotSupported": "python, javascript, java",
+    "Results": [
+      {
+        "Text": "for 3 days, from today",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2018-05-23,2018-05-26,P3D)",
+          "FutureResolution": {
+            "startDate": "2018-05-23",
+            "endDate": "2018-05-26"
+          },
+          "PastResolution": {
+            "startDate": "2018-05-23",
+            "endDate": "2018-05-26"
+          }
+        },
+        "Start": 8,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "set OOO for 3 days from today",
+    "Context": {
+      "ReferenceDateTime": "2018-05-23T00:00:00"
+    },
+    "NotSupported": "python, javascript, java",
+    "Results": [
+      {
+        "Text": "for 3 days from today",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2018-05-23,2018-05-26,P3D)",
+          "FutureResolution": {
+            "startDate": "2018-05-23",
+            "endDate": "2018-05-26"
+          },
+          "PastResolution": {
+            "startDate": "2018-05-23",
+            "endDate": "2018-05-26"
+          }
+        },
+        "Start": 8,
+        "Length": 21
+      }
+    ]
+  },
+  {
     "Input": "I have already finished all my work more than 2 weeks before today",
     "Context": {
       "ReferenceDateTime": "2018-05-29T00:00:00"
