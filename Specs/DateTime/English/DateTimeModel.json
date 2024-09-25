@@ -20952,6 +20952,81 @@
     ]
   },
   {
+    "Input": "set OOO for 1 week, from 20th dec",
+    "Context": {
+      "ReferenceDateTime": "2018-05-29T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "for 1 week, from 20th dec",
+        "Start": 8,
+        "End": 32,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2018-12-20,2018-12-27,P1W)",
+              "type": "daterange",
+              "start": "2018-12-20",
+              "end": "2018-12-27"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "set OOO for 3 days, from today",
+    "Context": {
+      "ReferenceDateTime": "2018-05-23T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "for 3 days, from today",
+        "Start": 8,
+        "End": 29,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2018-05-23,2018-05-26,P3D)",
+              "type": "daterange",
+              "start": "2018-05-23",
+              "end": "2018-05-26"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "set OOO for 3 days from today",
+    "Context": {
+      "ReferenceDateTime": "2018-05-23T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "for 3 days from today",
+        "Start": 8,
+        "End": 28,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2018-05-23,2018-05-26,P3D)",
+              "type": "daterange",
+              "start": "2018-05-23",
+              "end": "2018-05-26"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "The project was submitted last month and 3 weeks later it was approved",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"

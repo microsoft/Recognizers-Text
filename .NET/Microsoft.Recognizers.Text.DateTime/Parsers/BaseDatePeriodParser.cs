@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.DateTime.English;
 using Microsoft.Recognizers.Text.DateTime.Utilities;
 using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
@@ -476,6 +477,12 @@ namespace Microsoft.Recognizers.Text.DateTime
                 innerResult = ParseDatePointWithAgoAndLater(text, referenceDate);
             }
 
+            // Cases like "for x weeks/days from today/12 sep etc."
+            if (!innerResult.Success)
+            {
+                innerResult = ParseDatePointWithForPrefix(text, referenceDate);
+            }
+
             // Parse duration should be at the end since it will extract "the last week" from "the last week of July"
             if (!innerResult.Success)
             {
@@ -612,6 +619,65 @@ namespace Microsoft.Recognizers.Text.DateTime
                             ret.FutureValue = (DateObject)((DateTimeResolutionResult)pr.Value).FutureValue;
                             ret.PastValue = (DateObject)((DateTimeResolutionResult)pr.Value).PastValue;
                             ret.Success = true;
+                        }
+                    }
+                }
+            }
+
+            return ret;
+        }
+
+        // Only handle cases like "for x weeks/days from today/tomorrow/some day"
+        private DateTimeResolutionResult ParseDatePointWithForPrefix(string text, DateObject referenceDate)
+        {
+            var ret = new DateTimeResolutionResult();
+            var er = this.config.DateExtractor.Extract(text, referenceDate).FirstOrDefault();
+
+            if (er != null)
+            {
+                var beforeString = text.Substring(0, (int)er.Start);
+                var isAgo = this.config.AgoRegex.Match(er.Text).Success;
+                var config = this.config as EnglishDatePeriodParserConfiguration;
+
+                if (!string.IsNullOrEmpty(beforeString) && config != null)
+                {
+                    var matchFor = config.ForPrefixRegex.Match(beforeString);
+
+                    if (matchFor.Success && matchFor.Groups[Constants.ForGroupName].Success)
+                    {
+                        var pr = this.config.DateParser.Parse(er, referenceDate);
+                        var durationExtractionResult = this.config.DurationExtractor.Extract(er.Text, referenceDate).FirstOrDefault();
+
+                        if (durationExtractionResult != null)
+                        {
+                            var duration = this.config.DurationParser.Parse(durationExtractionResult);
+                            var durationInSeconds = (double)((DateTimeResolutionResult)duration.Value).PastValue;
+
+                            DateObject startDate;
+                            DateObject endDate;
+
+                            if (isAgo)
+                            {
+                                startDate = (DateObject)((DateTimeResolutionResult)pr.Value).PastValue;
+                                endDate = startDate.AddSeconds(durationInSeconds);
+                            }
+                            else
+                            {
+                                endDate = (DateObject)((DateTimeResolutionResult)pr.Value).FutureValue;
+                                startDate = endDate.AddSeconds(-durationInSeconds);
+                            }
+
+                            if (startDate != DateObject.MinValue)
+                            {
+                                var startLuisStr = DateTimeFormatUtil.LuisDate(startDate);
+                                var endLuisStr = DateTimeFormatUtil.LuisDate(endDate);
+                                var durationTimex = ((DateTimeResolutionResult)duration.Value).Timex;
+
+                                ret.Timex = $"({startLuisStr},{endLuisStr},{durationTimex})";
+                                ret.FutureValue = new Tuple<DateObject, DateObject>(startDate, endDate);
+                                ret.PastValue = new Tuple<DateObject, DateObject>(startDate, endDate);
+                                ret.Success = true;
+                            }
                         }
                     }
                 }
