@@ -992,26 +992,49 @@
     "NotSupported": "javascript, java, python",
     "Results": [
       {
-        "Text": "12 ft",
+        "Text": "12 ft 2 in",
         "TypeName": "dimension",
         "Resolution": {
-          "value": "12",
+          "value": "12.166666666666666",
           "subtype": "Length",
           "unit": "Foot"
         },
         "Start": 14,
-        "End": 18
-      },
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "he is 5 ft 2 inch",
+    "NotSupported": "javascript, java, python",
+    "Results": [
       {
-        "Text": "2 in",
+        "Text": "5 ft 2 inch",
         "TypeName": "dimension",
         "Resolution": {
-          "value": "2",
+          "value": "5.166666666666667",
           "subtype": "Length",
-          "unit": "Inch"
+          "unit": "Foot"
         },
-        "Start": 20,
-        "End": 23
+        "Start": 6,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "he is 5 foot and two in",
+    "NotSupported": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "5 foot and two in",
+        "TypeName": "dimension",
+        "Resolution": {
+          "value": "5.166666666666667",
+          "subtype": "Length",
+          "unit": "Foot"
+        },
+        "Start": 6,
+        "End": 22
       }
     ]
   },

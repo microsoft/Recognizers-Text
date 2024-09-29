@@ -919,5 +919,13 @@ namespace Microsoft.Recognizers.Definitions.English
             { @"\b(deg(rees?)?|°)$", @"\b((deg(rees?)?|°)\s*(c(elsius|entigrate)?|f(ah?renheit)?)|(temperature)(\s+(\p{L}+|\d+)){0,4}\s*(deg(rees?)?\b|°))" },
             { @"\b\d+\s*\p{L}+$", @"((\d+\s*\p{L}+\d+)|(\p{L}\d+\s*\p{L}+))" }
         };
+      public static readonly Dictionary<string, long> LengthSubUnitFractionalRatios = new Dictionary<string, long>
+        {
+            { @"Inch", 12 }
+        };
+      public static readonly Dictionary<string, string> LengthUnitToSubUnitMap = new Dictionary<string, string>
+        {
+            { @"Foot", @"Inch" }
+        };
     }
 }

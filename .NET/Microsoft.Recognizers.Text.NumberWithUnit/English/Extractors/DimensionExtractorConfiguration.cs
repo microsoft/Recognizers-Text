@@ -1,10 +1,10 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
 using System.Linq;
-
 using Microsoft.Recognizers.Definitions.English;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit.English
@@ -30,6 +30,10 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit.English
             .Concat(WeightExtractorConfiguration.WeightSuffixList.ToDictionary(x => x.Key, x => Constants.WEIGHT))
             .Concat(AngleExtractorConfiguration.AngleSuffixList.ToDictionary(x => x.Key, x => Constants.ANGLE))
             .ToImmutableDictionary(x => x.Key, x => x.Value);
+
+        public static readonly IDictionary<string, string> LengthUnitToSubUnitMap = NumbersWithUnitDefinitions.LengthUnitToSubUnitMap;
+
+        public static readonly IDictionary<string, long> LengthSubUnitFractionalRatios = NumbersWithUnitDefinitions.LengthSubUnitFractionalRatios;
 
         private static readonly ImmutableList<string> AmbiguousUnits =
             NumbersWithUnitDefinitions.AmbiguousDimensionUnitList
