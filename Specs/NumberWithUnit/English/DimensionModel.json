@@ -1039,7 +1039,7 @@
     ]
   },
   {
-    "Input": "he is 5 feet and 2 inches",
+    "Input": "he is 5 feet and 2 inches.",
     "NotSupported": "javascript, java, python",
     "Results": [
       {
