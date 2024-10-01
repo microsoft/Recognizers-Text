@@ -94,7 +94,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             // 2015-12-23 - This regex represents the standard format in Chinese dates (YMD) and has precedence over other orderings
             var dateRegex8 = new Regex(DateTimeDefinitions.DateRegexList8, RegexFlags, RegexTimeOut);
 
-            // 23/7
+            // 23/7.
             var dateRegex5 = new Regex(DateTimeDefinitions.DateRegexList5, RegexFlags, RegexTimeOut);
 
             // 7/23
