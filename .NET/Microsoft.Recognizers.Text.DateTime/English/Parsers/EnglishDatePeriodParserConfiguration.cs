@@ -95,6 +95,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             RelativeDecadeRegex = EnglishDatePeriodExtractorConfiguration.RelativeDecadeRegex;
             InConnectorRegex = config.UtilityConfiguration.InConnectorRegex;
             WithinNextPrefixRegex = EnglishDatePeriodExtractorConfiguration.WithinNextPrefixRegex;
+            ForPrefixRegex = EnglishDatePeriodExtractorConfiguration.ForPrefixRegex;
             ReferenceDatePeriodRegex = EnglishDatePeriodExtractorConfiguration.ReferenceDatePeriodRegex;
             AgoRegex = EnglishDatePeriodExtractorConfiguration.AgoRegex;
             LaterRegex = EnglishDatePeriodExtractorConfiguration.LaterRegex;
@@ -185,6 +186,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public Regex InConnectorRegex { get; }
 
         public Regex WithinNextPrefixRegex { get; }
+
+        public Regex ForPrefixRegex { get; }
 
         public Regex RestOfDateRegex { get; }
 

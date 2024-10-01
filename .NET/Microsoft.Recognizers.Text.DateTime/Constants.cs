@@ -245,6 +245,8 @@ namespace Microsoft.Recognizers.Text.DateTime
         public const string StartGroupName = "start";
         public const string EndGroupName = "end";
         public const string WithinGroupName = "within";
+        public const string ForGroupName = "for";
+        public const string FromGroupName = "from";
         public const string NumberGroupName = "number";
         public const string OrdinalGroupName = "ordinal";
         public const string OrderGroupName = "order";
