@@ -350,5 +350,16 @@
         "Length": 26
       }
     ]
+  },
+  {
+    "Input": "Mein Geburtsdatum ist der 22.04.1990",
+    "Results": [
+      {
+        "Text": "der 22.04.1990",
+        "Type": "date",
+        "Start": 22,
+        "Length": 14
+      }
+    ]
   }
 ]
