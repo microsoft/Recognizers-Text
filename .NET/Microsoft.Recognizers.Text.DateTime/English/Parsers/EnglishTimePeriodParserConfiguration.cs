@@ -27,6 +27,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             TimeOfDayRegex = EnglishTimePeriodExtractorConfiguration.TimeOfDayRegex;
             GeneralEndingRegex = EnglishTimePeriodExtractorConfiguration.GeneralEndingRegex;
             TillRegex = EnglishTimePeriodExtractorConfiguration.TillRegex;
+            TimePeriodFromFor = EnglishTimePeriodExtractorConfiguration.TimePeriodFromFor;
 
             Numbers = config.Numbers;
             UtilityConfiguration = config.UtilityConfiguration;
@@ -53,6 +54,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public Regex GeneralEndingRegex { get; }
 
         public Regex TillRegex { get; }
+
+        public Regex TimePeriodFromFor { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
 

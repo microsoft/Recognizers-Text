@@ -768,6 +768,9 @@ TasksModeNextPrefix: !simpleRegex
 TasksModeDurationToDatePatterns: !nestedRegex
   def: \b({TasksModeNextPrefix}((?<week>week)|(?<month>month)|(?<year>year)))\b
   references: [TasksModeNextPrefix]
+TimePeriodFromFor: !nestedRegex
+  def: (from\s+)?(?<time1>(({TimeRegex2}|{FirstTimeRegexInTimeRange})|({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?))\s*for\s+(.*?)\s+({DurationUnitRegex})
+  references: [ TimeRegex2, FirstTimeRegexInTimeRange, TimeRegexWithDotConnector, TillRegex, HourRegex, PeriodHourNumRegex, DescRegex, PmRegex, AmRegex, RangePrefixRegex, DurationUnitRegex ]
 UnitMap: !dictionary
   types: [ string, string ]
   entries:
