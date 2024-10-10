@@ -1014,4 +1014,12 @@ DimensionAmbiguityFiltersDict: !dictionary
   entries:
     \b(deg(rees?)?|°)$: \b((deg(rees?)?|°)\s*(c(elsius|entigrate)?|f(ah?renheit)?)|(temperature)(\s+(\p{L}+|\d+)){0,4}\s*(deg(rees?)?\b|°))
     \b\d+\s*\p{L}+$: ((\d+\s*\p{L}+\d+)|(\p{L}\d+\s*\p{L}+))
+LengthSubUnitFractionalRatios: !dictionary
+  types: [ string, long ]
+  entries:
+    Inch: 12
+LengthUnitToSubUnitMap: !dictionary
+  types: [ string, string ]
+  entries:
+    Foot: Inch
 ...
