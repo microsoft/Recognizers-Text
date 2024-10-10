@@ -10,6 +10,16 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             Timex = new TimexProperty(timex);
         }
 
+        public TimexSet(TimexProperty timex)
+        {
+            Timex = timex;
+        }
+
         public TimexProperty Timex { get; set; }
+
+        public override string ToString()
+        {
+            return TimexConvert.ConvertTimexSetToString(this);
+        }
     }
 }
