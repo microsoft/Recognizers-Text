@@ -1745,6 +1745,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "from 9 for 2.5 hrs",
@@ -1769,6 +1770,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "from 10 am for 3 hours 30 minutes",
@@ -1793,6 +1795,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "from 2pm for 2 hours",
@@ -1817,6 +1820,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "for 2.5 hours from 9",
@@ -1841,6 +1845,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "for 3 hours from 10 am",
@@ -1865,6 +1870,7 @@
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "for 2 hours from 2pm",
@@ -3977,7 +3983,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
-    "Debug": true,
     "NotSupported": "java, javascript, python",
     "Results": [
       {
@@ -4009,7 +4014,6 @@
     "Context": {
       "ReferenceDateTime": "2018-05-31T00:00:00"
     },
-    "Debug": true,
     "NotSupported": "java, javascript, python",
     "Results": [
       {

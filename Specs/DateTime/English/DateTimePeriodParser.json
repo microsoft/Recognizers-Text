@@ -304,10 +304,10 @@
   },
   {
     "Input": "Book meeting room on 14th Feb for 7 hours from 9:30am",
-    "NotSupported": "java, javascript, python",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "14th feb for 7 hours from 9:30am",
@@ -330,10 +330,10 @@
   },
   {
     "Input": "Book meeting room on 14th Feb from 9:30am for 7 hours",
-    "NotSupported": "java, javascript, python",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "14th Feb from 9:30am for 7 hours",
