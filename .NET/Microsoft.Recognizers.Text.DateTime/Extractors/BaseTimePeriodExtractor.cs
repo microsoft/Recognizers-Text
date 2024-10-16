@@ -55,7 +55,7 @@ namespace Microsoft.Recognizers.Text.DateTime
         {
             var tokens = new List<Token>();
             tokens.AddRange(MatchSimpleCases(text));
-            tokens.AddRange(MatchFromForCases(text));
+            tokens.AddRange(MatchTimePeriodWithDurationCases(text));
             tokens.AddRange(MergeTwoTimePoints(text, reference));
             tokens.AddRange(MatchTimeOfDay(text));
 
@@ -154,13 +154,13 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        // Cases like "from 6am for 3 hours" are extracted as timerange here.
-        private List<Token> MatchFromForCases(string text)
+        // Cases like "from 6am for 3 hours" and "for 3 hours from 6 am" are extracted as timerange here.
+        private List<Token> MatchTimePeriodWithDurationCases(string text)
         {
             var ret = new List<Token>();
             if (this.config as EnglishTimePeriodExtractorConfiguration != null)
             {
-                Match match = EnglishTimePeriodExtractorConfiguration.TimePeriodFromFor.Match(text);
+                Match match = EnglishTimePeriodExtractorConfiguration.TimePeriodWithDurationRegex.Match(text);
                 if (match.Success)
                 {
                     ret.Add(new Token(match.Index, match.Index + match.Length));

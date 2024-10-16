@@ -768,9 +768,15 @@ TasksModeNextPrefix: !simpleRegex
 TasksModeDurationToDatePatterns: !nestedRegex
   def: \b({TasksModeNextPrefix}((?<week>week)|(?<month>month)|(?<year>year)))\b
   references: [TasksModeNextPrefix]
-TimePeriodFromFor: !nestedRegex
-  def: (from\s+)?(?<time1>(({TimeRegex2}|{FirstTimeRegexInTimeRange})|({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?))\s*for\s+(.*?)\s+({DurationUnitRegex})
+TimePeriodFromForRegex: !nestedRegex
+  def: (from\s+)(?<time1>(({TimeRegex2}|{FirstTimeRegexInTimeRange})|({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?))\s*for\s+(.*?)\s+({DurationUnitRegex})(\s+(.*?)\s+({DurationUnitRegex}))?
   references: [ TimeRegex2, FirstTimeRegexInTimeRange, TimeRegexWithDotConnector, TillRegex, HourRegex, PeriodHourNumRegex, DescRegex, PmRegex, AmRegex, RangePrefixRegex, DurationUnitRegex ]
+TimePeriodForFromRegex: !nestedRegex
+  def: for\s+(.*?)\s+({DurationUnitRegex})(\s+(.*?)\s+({DurationUnitRegex}))?\s+(from\s+)(?<time1>(({TimeRegex2}|{FirstTimeRegexInTimeRange})|({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?))
+  references: [ TimeRegex2, FirstTimeRegexInTimeRange, TimeRegexWithDotConnector, TillRegex, HourRegex, PeriodHourNumRegex, DescRegex, PmRegex, AmRegex, RangePrefixRegex, DurationUnitRegex ]
+TimePeriodWithDurationRegex: !nestedRegex
+  def: ({TimePeriodFromForRegex}|{TimePeriodForFromRegex})
+  references: [ TimePeriodFromForRegex, TimePeriodForFromRegex ]
 UnitMap: !dictionary
   types: [ string, string ]
   entries:

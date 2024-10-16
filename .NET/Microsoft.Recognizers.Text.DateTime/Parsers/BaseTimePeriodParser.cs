@@ -4,7 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-
+using Microsoft.Recognizers.Text.DateTime.English;
 using Microsoft.Recognizers.Text.Utilities;
 
 using DateObject = System.DateTime;
@@ -118,6 +118,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (!innerResult.Success)
             {
                 innerResult = ParseTimeOfDay(entityText, referenceTime);
+            }
+
+            if (!innerResult.Success)
+            {
+                innerResult = ParseTimePeroidWithDuration(entityText, referenceTime);
             }
 
             return innerResult;
@@ -669,172 +674,98 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        // Cases like "from 6am for 3 hours" are parsing here.
-        private DateTimeResolutionResult ParseFromForCases(string text, DateObject referenceTime)
+        // Cases like "from 6am for 3 hours" and "for 3 hours from 6am" are parsing here.
+        private DateTimeResolutionResult ParseTimePeroidWithDuration(string text, DateObject referenceTime)
         {
+            var parserConfig = this.config as EnglishTimePeriodParserConfiguration;
             var ret = new DateTimeResolutionResult();
-            int year = referenceTime.Year, month = referenceTime.Month, day = referenceTime.Day;
-
-            // Handle cases like "from 4:30 to 5"
-            var match = config.SpecificTimeFromToRegex.MatchExact(text, trim: true);
-
-            if (!match.Success)
+            if (parserConfig != null)
             {
-                // Handle cases like "between 5:10 and 7"
-                match = config.SpecificTimeBetweenAndRegex.MatchExact(text, trim: true);
-            }
+                var match = parserConfig.TimePeriodWithDurationRegex.MatchExact(text, trim: true);
 
-            if (match.Success)
-            {
-                // Cases like "half past seven" are not handled here
-                if (match.Groups[Constants.PrefixGroupName].Success)
+                if (match.Success)
                 {
-                    return ret;
-                }
+                    var erDuration = parserConfig.DurationExtractor.Extract(text);
 
-                // Cases like "4" is different with "4:00" as the Timex is different "T04H" vs "T04H00M"
-                int beginHour;
-                int beginMinute = Constants.InvalidMinute;
-                int beginSecond = Constants.InvalidSecond;
-                int endHour;
-                int endMinute = Constants.InvalidMinute;
-                int endSecond = Constants.InvalidSecond;
-
-                // Get time1 and time2
-                var hourGroup = match.Groups[Constants.HourGroupName];
-
-                var hourStr = hourGroup.Captures[0].Value;
-
-                if (config.Numbers.ContainsKey(hourStr))
-                {
-                    beginHour = config.Numbers[hourStr];
-                }
-                else
-                {
-                    beginHour = int.Parse(hourStr, CultureInfo.InvariantCulture);
-                }
-
-                hourStr = hourGroup.Captures[1].Value;
-
-                if (config.Numbers.ContainsKey(hourStr))
-                {
-                    endHour = config.Numbers[hourStr];
-                }
-                else
-                {
-                    endHour = int.Parse(hourStr, CultureInfo.InvariantCulture);
-                }
-
-                var time1StartIndex = match.Groups["time1"].Index;
-                var time1EndIndex = time1StartIndex + match.Groups["time1"].Length;
-                var time2StartIndex = match.Groups["time2"].Index;
-                var time2EndIndex = time2StartIndex + match.Groups["time2"].Length;
-
-                // Get beginMinute (if exists) and endMinute (if exists)
-                for (int i = 0; i < match.Groups[Constants.MinuteGroupName].Captures.Count; i++)
-                {
-                    var minuteCapture = match.Groups[Constants.MinuteGroupName].Captures[i];
-                    if (minuteCapture.Index >= time1StartIndex && minuteCapture.Index + minuteCapture.Length <= time1EndIndex)
+                    if (erDuration is null || erDuration.Count == 0)
                     {
-                        beginMinute = int.Parse(minuteCapture.Value, CultureInfo.InvariantCulture);
+                        return ret;
                     }
-                    else if (minuteCapture.Index >= time2StartIndex && minuteCapture.Index + minuteCapture.Length <= time2EndIndex)
+
+                    var prDuration = parserConfig.DurationParser.Parse(erDuration[0]);
+                    int year = referenceTime.Year, month = referenceTime.Month, day = referenceTime.Day;
+
+                    // Cases like "half past seven" are not handled here
+                    if (match.Groups[Constants.PrefixGroupName].Success)
                     {
-                        endMinute = int.Parse(minuteCapture.Value, CultureInfo.InvariantCulture);
+                        return ret;
                     }
-                }
 
-                // Get beginSecond (if exists) and endSecond (if exists)
-                for (int i = 0; i < match.Groups[Constants.SecondGroupName].Captures.Count; i++)
-                {
-                    var secondCapture = match.Groups[Constants.SecondGroupName].Captures[i];
-                    if (secondCapture.Index >= time1StartIndex && secondCapture.Index + secondCapture.Length <= time1EndIndex)
+                    // Cases like "4" is different with "4:00" as the Timex is different "T04H" vs "T04H00M"
+                    int beginHour;
+                    int beginMinute = Constants.InvalidMinute;
+                    int beginSecond = Constants.InvalidSecond;
+
+                    // Get time1
+                    var hourGroup = match.Groups[Constants.HourGroupName];
+
+                    var hourStr = hourGroup.Captures[0].Value;
+
+                    if (config.Numbers.ContainsKey(hourStr))
                     {
-                        beginSecond = int.Parse(secondCapture.Value, CultureInfo.InvariantCulture);
-                    }
-                    else if (secondCapture.Index >= time2StartIndex && secondCapture.Index + secondCapture.Length <= time2EndIndex)
-                    {
-                        endSecond = int.Parse(secondCapture.Value, CultureInfo.InvariantCulture);
-                    }
-                }
-
-                // Desc here means descriptions like "am / pm / o'clock"
-                // Get leftDesc (if exists) and rightDesc (if exists)
-                var leftDesc = match.Groups["leftDesc"].Value;
-                var rightDesc = match.Groups["rightDesc"].Value;
-
-                for (int i = 0; i < match.Groups[Constants.DescGroupName].Captures.Count; i++)
-                {
-                    var descCapture = match.Groups[Constants.DescGroupName].Captures[i];
-                    if (descCapture.Index >= time1StartIndex && descCapture.Index + descCapture.Length <= time1EndIndex && string.IsNullOrEmpty(leftDesc))
-                    {
-                        leftDesc = descCapture.Value;
-                    }
-                    else if (descCapture.Index >= time2StartIndex && descCapture.Index + descCapture.Length <= time2EndIndex && string.IsNullOrEmpty(rightDesc))
-                    {
-                        rightDesc = descCapture.Value;
-                    }
-                }
-
-                var beginDateTime = DateObject.MinValue.SafeCreateFromValue(year, month, day, beginHour, beginMinute >= 0 ? beginMinute : 0, beginSecond >= 0 ? beginSecond : 0);
-                var endDateTime = DateObject.MinValue.SafeCreateFromValue(year, month, day, endHour, endMinute >= 0 ? endMinute : 0, endSecond >= 0 ? endSecond : 0);
-
-                var hasLeftAm = !string.IsNullOrEmpty(leftDesc) && leftDesc.StartsWith("a", StringComparison.Ordinal);
-                var hasLeftPm = !string.IsNullOrEmpty(leftDesc) && leftDesc.StartsWith("p", StringComparison.Ordinal);
-                var hasRightAm = !string.IsNullOrEmpty(rightDesc) && rightDesc.StartsWith("a", StringComparison.Ordinal);
-                var hasRightPm = !string.IsNullOrEmpty(rightDesc) && rightDesc.StartsWith("p", StringComparison.Ordinal);
-                var hasLeft = hasLeftAm || hasLeftPm;
-                var hasRight = hasRightAm || hasRightPm;
-
-                // Both time point has description like 'am' or 'pm'
-                if (hasLeft && hasRight)
-                {
-                    if (hasLeftAm)
-                    {
-                        if (beginHour >= Constants.HalfDayHourCount)
-                        {
-                            beginDateTime = beginDateTime.AddHours(-Constants.HalfDayHourCount);
-                        }
+                        beginHour = config.Numbers[hourStr];
                     }
                     else
                     {
-                        if (beginHour < Constants.HalfDayHourCount)
+                        beginHour = int.Parse(hourStr, CultureInfo.InvariantCulture);
+                    }
+
+                    var time1StartIndex = match.Groups["time1"].Index;
+                    var time1EndIndex = time1StartIndex + match.Groups["time1"].Length;
+
+                    // Get beginMinute (if exists)
+                    for (int i = 0; i < match.Groups[Constants.MinuteGroupName].Captures.Count; i++)
+                    {
+                        var minuteCapture = match.Groups[Constants.MinuteGroupName].Captures[i];
+                        if (minuteCapture.Index >= time1StartIndex && minuteCapture.Index + minuteCapture.Length <= time1EndIndex)
                         {
-                            beginDateTime = beginDateTime.AddHours(Constants.HalfDayHourCount);
+                            beginMinute = int.Parse(minuteCapture.Value, CultureInfo.InvariantCulture);
                         }
                     }
 
-                    if (hasRightAm)
+                    // Get beginSecond (if exists)
+                    for (int i = 0; i < match.Groups[Constants.SecondGroupName].Captures.Count; i++)
                     {
-                        if (endHour > Constants.HalfDayHourCount)
+                        var secondCapture = match.Groups[Constants.SecondGroupName].Captures[i];
+                        if (secondCapture.Index >= time1StartIndex && secondCapture.Index + secondCapture.Length <= time1EndIndex)
                         {
-                            endDateTime = endDateTime.AddHours(-Constants.HalfDayHourCount);
+                            beginSecond = int.Parse(secondCapture.Value, CultureInfo.InvariantCulture);
                         }
                     }
-                    else
+
+                    // Desc here means descriptions like "am / pm / o'clock"
+                    // Get leftDesc (if exists)
+                    var leftDesc = match.Groups["leftDesc"].Value;
+                    for (int i = 0; i < match.Groups[Constants.DescGroupName].Captures.Count; i++)
                     {
-                        if (endHour < Constants.HalfDayHourCount)
+                        var descCapture = match.Groups[Constants.DescGroupName].Captures[i];
+                        if (descCapture.Index >= time1StartIndex && descCapture.Index + descCapture.Length <= time1EndIndex && string.IsNullOrEmpty(leftDesc))
                         {
-                            endDateTime = endDateTime.AddHours(Constants.HalfDayHourCount);
+                            leftDesc = descCapture.Value;
                         }
                     }
-                }
-                else if (hasLeft || hasRight)
-                {
+
+                    var beginDateTime = DateObject.MinValue.SafeCreateFromValue(year, month, day, beginHour, beginMinute >= 0 ? beginMinute : 0, beginSecond >= 0 ? beginSecond : 0);
+
+                    var hasLeftAm = !string.IsNullOrEmpty(leftDesc) && leftDesc.StartsWith("a", StringComparison.Ordinal);
+                    var hasLeftPm = !string.IsNullOrEmpty(leftDesc) && leftDesc.StartsWith("p", StringComparison.Ordinal);
+
                     // one of the time point has description like 'am' or 'pm'
                     if (hasLeftAm)
                     {
                         if (beginHour >= Constants.HalfDayHourCount)
                         {
                             beginDateTime = beginDateTime.AddHours(-Constants.HalfDayHourCount);
-                        }
-
-                        if (endHour < Constants.HalfDayHourCount)
-                        {
-                            if (endDateTime < beginDateTime)
-                            {
-                                endDateTime = endDateTime.AddHours(Constants.HalfDayHourCount);
-                            }
                         }
                     }
                     else if (hasLeftPm)
@@ -843,99 +774,22 @@ namespace Microsoft.Recognizers.Text.DateTime
                         {
                             beginDateTime = beginDateTime.AddHours(Constants.HalfDayHourCount);
                         }
-
-                        if (endHour < Constants.HalfDayHourCount)
-                        {
-                            if (endDateTime < beginDateTime)
-                            {
-                                var span = beginDateTime - endDateTime;
-                                endDateTime = endDateTime.AddHours(span.TotalHours >= Constants.HalfDayHourCount ?
-                                    24 :
-                                    Constants.HalfDayHourCount);
-                            }
-                        }
                     }
 
-                    if (hasRightAm)
-                    {
-                        if (endHour > Constants.HalfDayHourCount)
-                        {
-                            endDateTime = endDateTime.AddHours(-Constants.HalfDayHourCount);
-                        }
+                    var endDateTime = beginDateTime.AddSeconds(Convert.ToInt32((prDuration.Value as DateTimeResolutionResult).FutureValue, CultureInfo.InvariantCulture));
 
-                        if (beginHour < Constants.HalfDayHourCount)
-                        {
-                            if (endDateTime < beginDateTime)
-                            {
-                                beginDateTime = beginDateTime.AddHours(-Constants.HalfDayHourCount);
-                            }
-                        }
-                    }
-                    else if (hasRightPm)
-                    {
-                        if (endHour <= Constants.HalfDayHourCount)
-                        {
-                            endDateTime = endDateTime.AddHours(Constants.HalfDayHourCount);
-                        }
+                    var beginStr = DateTimeFormatUtil.ShortTime(beginDateTime.Hour, beginMinute, beginSecond);
+                    var endStr = DateTimeFormatUtil.ShortTime(endDateTime.Hour, endDateTime.Minute, endDateTime.Second);
 
-                        if (beginHour < Constants.HalfDayHourCount)
-                        {
-                            if (endDateTime < beginDateTime)
-                            {
-                                beginDateTime = beginDateTime.AddHours(-Constants.HalfDayHourCount);
-                            }
-                            else
-                            {
-                                var span = endDateTime - beginDateTime;
-                                if (span.TotalHours > Constants.HalfDayHourCount)
-                                {
-                                    beginDateTime = beginDateTime.AddHours(Constants.HalfDayHourCount);
-                                }
-                            }
-                        }
-                    }
-                }
+                    ret.Success = true;
 
-                // No 'am' or 'pm' indicator
-                else if (beginHour <= Constants.HalfDayHourCount && endHour <= Constants.HalfDayHourCount)
-                {
-                    if (beginHour > endHour)
-                    {
-                        if (beginHour == Constants.HalfDayHourCount)
-                        {
-                            beginDateTime = beginDateTime.AddHours(-Constants.HalfDayHourCount);
-                        }
-                        else
-                        {
-                            endDateTime = endDateTime.AddHours(Constants.HalfDayHourCount);
-                        }
-                    }
+                    ret.Timex = $"({beginStr},{endStr},{DateTimeFormatUtil.LuisTimeSpan(endDateTime - beginDateTime)})";
 
-                    ret.Comment = Constants.Comment_AmPm;
-                }
+                    ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(
+                        beginDateTime,
+                        endDateTime);
 
-                if (endDateTime < beginDateTime)
-                {
-                    endDateTime = endDateTime.AddHours(24);
-                }
-
-                var beginStr = DateTimeFormatUtil.ShortTime(beginDateTime.Hour, beginMinute, beginSecond);
-                var endStr = DateTimeFormatUtil.ShortTime(endDateTime.Hour, endMinute, endSecond);
-
-                ret.Success = true;
-
-                ret.Timex = $"({beginStr},{endStr},{DateTimeFormatUtil.LuisTimeSpan(endDateTime - beginDateTime)})";
-
-                ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(
-                    beginDateTime,
-                    endDateTime);
-
-                ret.SubDateTimeEntities = new List<object>();
-
-                // In SplitDateAndTime mode, time points will be get from these SubDateTimeEntities
-                // Cases like "from 4 to 5pm", "4" should not be treated as SubDateTimeEntity
-                if (hasLeft || beginMinute != Constants.InvalidMinute || beginSecond != Constants.InvalidSecond)
-                {
+                    ret.SubDateTimeEntities = new List<object>();
                     var er = new ExtractResult()
                     {
                         Start = time1StartIndex,
@@ -947,23 +801,6 @@ namespace Microsoft.Recognizers.Text.DateTime
                     var pr = this.config.TimeParser.Parse(er, referenceTime);
                     ret.SubDateTimeEntities.Add(pr);
                 }
-
-                // Cases like "from 4am to 5", "5" should not be treated as SubDateTimeEntity
-                if (hasRight || endMinute != Constants.InvalidMinute || endSecond != Constants.InvalidSecond)
-                {
-                    var er = new ExtractResult
-                    {
-                        Start = time2StartIndex,
-                        Length = time2EndIndex - time2StartIndex,
-                        Text = text.Substring(time2StartIndex, time2EndIndex - time2StartIndex),
-                        Type = $"{Constants.SYS_DATETIME_TIME}",
-                    };
-
-                    var pr = this.config.TimeParser.Parse(er, referenceTime);
-                    ret.SubDateTimeEntities.Add(pr);
-                }
-
-                ret.Success = true;
             }
 
             return ret;

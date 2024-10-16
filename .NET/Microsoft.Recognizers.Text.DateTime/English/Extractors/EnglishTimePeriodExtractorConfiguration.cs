@@ -64,8 +64,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex GeneralEndingRegex =
             new Regex(DateTimeDefinitions.GeneralEndingRegex, RegexFlags, RegexTimeOut);
 
-        public static readonly Regex TimePeriodFromFor =
-            new Regex(DateTimeDefinitions.TimePeriodFromFor, RegexFlags, RegexTimeOut);
+        public static readonly Regex TimePeriodWithDurationRegex =
+            new Regex(DateTimeDefinitions.TimePeriodWithDurationRegex, RegexFlags, RegexTimeOut);
 
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
