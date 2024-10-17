@@ -1741,7 +1741,7 @@
     ]
   },
   {
-    "Input": "The meeting is start from 9 for 2.5 hrs.",
+    "Input": "The meeting is start from 9 for 2.5 hrs",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
     },
