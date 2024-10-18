@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
-
+using Microsoft.Recognizers.Text.DateTime.English;
 using Microsoft.Recognizers.Text.Matcher;
 using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
@@ -150,6 +150,13 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             // Remove common ambiguous cases
             ret = ExtractResultExtension.FilterAmbiguity(ret, text, this.config.AmbiguityFiltersDict);
+
+            // Merge duration with starting/starting from Mod
+            var enConfig = this.config as EnglishMergedExtractorConfiguration;
+            if (enConfig != null)
+            {
+                ret = ExtractResultExtension.MergeDurationWithStartingMod(ret, text);
+            }
 
             ret = AddMod(ret, text);
 
