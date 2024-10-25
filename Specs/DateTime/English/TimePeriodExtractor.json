@@ -55,6 +55,78 @@
     ]
   },
   {
+    "Input": "The meeting is start from 9 for 2.5 hrs",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "from 9 for 2.5 hrs",
+        "Type": "timerange",
+        "Start": 21,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "The meeting is start from 10 am for 3 hours 30 minutes",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "from 10 am for 3 hours 30 minutes",
+        "Type": "timerange",
+        "Start": 21,
+        "Length": 33
+      }
+    ]
+  },
+  {
+    "Input": "The meeting is start from 2pm for 2 hours",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "from 2pm for 2 hours",
+        "Type": "timerange",
+        "Start": 21,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "The meeting will last for 2.5 hours from 9",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "for 2.5 hours from 9",
+        "Type": "timerange",
+        "Start": 22,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "The meeting will last for 3 hours from 10 am",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "for 3 hours from 10 am",
+        "Type": "timerange",
+        "Start": 22,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "The meeting will last for 2 hours from 2pm",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "for 2 hours from 2pm",
+        "Type": "timerange",
+        "Start": 22,
+        "Length": 20
+      }
+    ]
+  },
+  {
     "Input": "I'll be out between 5 and 6pm",
     "Results": [
       {

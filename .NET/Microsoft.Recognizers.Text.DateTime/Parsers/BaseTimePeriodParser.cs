@@ -4,7 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-
+using Microsoft.Recognizers.Text.DateTime.English;
 using Microsoft.Recognizers.Text.Utilities;
 
 using DateObject = System.DateTime;
@@ -118,6 +118,11 @@ namespace Microsoft.Recognizers.Text.DateTime
             if (!innerResult.Success)
             {
                 innerResult = ParseTimeOfDay(entityText, referenceTime);
+            }
+
+            if (!innerResult.Success)
+            {
+                innerResult = ParseTimePeroidWithDuration(entityText, referenceTime);
             }
 
             return innerResult;
@@ -664,6 +669,138 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 ret.Success = true;
+            }
+
+            return ret;
+        }
+
+        // Cases like "from 6am for 3 hours" and "for 3 hours from 6am" are parsing here.
+        private DateTimeResolutionResult ParseTimePeroidWithDuration(string text, DateObject referenceTime)
+        {
+            var parserConfig = this.config as EnglishTimePeriodParserConfiguration;
+            var ret = new DateTimeResolutionResult();
+            if (parserConfig != null)
+            {
+                var match = parserConfig.TimePeriodWithDurationRegex.MatchExact(text, trim: true);
+
+                if (match.Success)
+                {
+                    var erDuration = parserConfig.DurationExtractor.Extract(text);
+
+                    if (erDuration is null || erDuration.Count == 0)
+                    {
+                        return ret;
+                    }
+
+                    var prDuration = parserConfig.DurationParser.Parse(erDuration[0]);
+                    int year = referenceTime.Year, month = referenceTime.Month, day = referenceTime.Day;
+
+                    // Cases like "half past seven" are not handled here
+                    if (match.Groups[Constants.PrefixGroupName].Success)
+                    {
+                        return ret;
+                    }
+
+                    // Cases like "4" is different with "4:00" as the Timex is different "T04H" vs "T04H00M"
+                    int beginHour;
+                    int beginMinute = Constants.InvalidMinute;
+                    int beginSecond = Constants.InvalidSecond;
+
+                    // Get time1
+                    var hourGroup = match.Groups[Constants.HourGroupName];
+
+                    var hourStr = hourGroup.Captures[0].Value;
+
+                    if (config.Numbers.ContainsKey(hourStr))
+                    {
+                        beginHour = config.Numbers[hourStr];
+                    }
+                    else
+                    {
+                        beginHour = int.Parse(hourStr, CultureInfo.InvariantCulture);
+                    }
+
+                    var time1StartIndex = match.Groups["time1"].Index;
+                    var time1EndIndex = time1StartIndex + match.Groups["time1"].Length;
+
+                    // Get beginMinute (if exists)
+                    for (int i = 0; i < match.Groups[Constants.MinuteGroupName].Captures.Count; i++)
+                    {
+                        var minuteCapture = match.Groups[Constants.MinuteGroupName].Captures[i];
+                        if (minuteCapture.Index >= time1StartIndex && minuteCapture.Index + minuteCapture.Length <= time1EndIndex)
+                        {
+                            beginMinute = int.Parse(minuteCapture.Value, CultureInfo.InvariantCulture);
+                        }
+                    }
+
+                    // Get beginSecond (if exists)
+                    for (int i = 0; i < match.Groups[Constants.SecondGroupName].Captures.Count; i++)
+                    {
+                        var secondCapture = match.Groups[Constants.SecondGroupName].Captures[i];
+                        if (secondCapture.Index >= time1StartIndex && secondCapture.Index + secondCapture.Length <= time1EndIndex)
+                        {
+                            beginSecond = int.Parse(secondCapture.Value, CultureInfo.InvariantCulture);
+                        }
+                    }
+
+                    // Desc here means descriptions like "am / pm / o'clock"
+                    // Get leftDesc (if exists)
+                    var leftDesc = match.Groups["leftDesc"].Value;
+                    for (int i = 0; i < match.Groups[Constants.DescGroupName].Captures.Count; i++)
+                    {
+                        var descCapture = match.Groups[Constants.DescGroupName].Captures[i];
+                        if (descCapture.Index >= time1StartIndex && descCapture.Index + descCapture.Length <= time1EndIndex && string.IsNullOrEmpty(leftDesc))
+                        {
+                            leftDesc = descCapture.Value;
+                        }
+                    }
+
+                    var beginDateTime = DateObject.MinValue.SafeCreateFromValue(year, month, day, beginHour, beginMinute >= 0 ? beginMinute : 0, beginSecond >= 0 ? beginSecond : 0);
+
+                    var hasLeftAm = !string.IsNullOrEmpty(leftDesc) && leftDesc.StartsWith("a", StringComparison.Ordinal);
+                    var hasLeftPm = !string.IsNullOrEmpty(leftDesc) && leftDesc.StartsWith("p", StringComparison.Ordinal);
+
+                    // one of the time point has description like 'am' or 'pm'
+                    if (hasLeftAm)
+                    {
+                        if (beginHour >= Constants.HalfDayHourCount)
+                        {
+                            beginDateTime = beginDateTime.AddHours(-Constants.HalfDayHourCount);
+                        }
+                    }
+                    else if (hasLeftPm)
+                    {
+                        if (beginHour < Constants.HalfDayHourCount)
+                        {
+                            beginDateTime = beginDateTime.AddHours(Constants.HalfDayHourCount);
+                        }
+                    }
+
+                    var endDateTime = beginDateTime.AddSeconds(Convert.ToInt32((prDuration.Value as DateTimeResolutionResult).FutureValue, CultureInfo.InvariantCulture));
+
+                    var beginStr = DateTimeFormatUtil.ShortTime(beginDateTime.Hour, beginMinute, beginSecond);
+                    var endStr = DateTimeFormatUtil.ShortTime(endDateTime.Hour, endDateTime.Minute, endDateTime.Second);
+
+                    ret.Success = true;
+
+                    ret.Timex = $"({beginStr},{endStr},{DateTimeFormatUtil.LuisTimeSpan(endDateTime - beginDateTime)})";
+
+                    ret.FutureValue = ret.PastValue = new Tuple<DateObject, DateObject>(
+                        beginDateTime,
+                        endDateTime);
+
+                    ret.SubDateTimeEntities = new List<object>();
+                    var er = new ExtractResult()
+                    {
+                        Start = time1StartIndex,
+                        Length = time1EndIndex - time1StartIndex,
+                        Text = text.Substring(time1StartIndex, time1EndIndex - time1StartIndex),
+                        Type = $"{Constants.SYS_DATETIME_TIME}",
+                    };
+
+                    var pr = this.config.TimeParser.Parse(er, referenceTime);
+                    ret.SubDateTimeEntities.Add(pr);
+                }
             }
 
             return ret;

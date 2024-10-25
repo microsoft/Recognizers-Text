@@ -167,6 +167,30 @@
     ]
   },
   {
+    "Input": "Book meeting room on 14th Feb for 7 hours from 9:30am",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "14th Feb for 7 hours from 9:30am",
+        "Type": "datetimerange",
+        "Start": 21,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "Book meeting room on 14th Feb from 9:30am for 7 hours",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "14th Feb from 9:30am for 7 hours",
+        "Type": "datetimerange",
+        "Start": 21,
+        "Length": 32
+      }
+    ]
+  },
+  {
     "Input": "I'll go back tonight",
     "Results": [
       {
@@ -1047,7 +1071,7 @@
         "Text": "from 12-04-2019 6:00am until 12-05-2019 8:00pm",
         "Type": "datetimerange",
         "Start": 20,
-        "Length": 46 
+        "Length": 46
       }
     ]
   },

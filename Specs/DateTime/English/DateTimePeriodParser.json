@@ -303,6 +303,58 @@
     ]
   },
   {
+    "Input": "Book meeting room on 14th Feb for 7 hours from 9:30am",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "14th feb for 7 hours from 9:30am",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-02-14T09:30,XXXX-02-14T16:30:00,PT7H)",
+          "FutureResolution": {
+            "startDateTime": "2017-02-14 09:30:00",
+            "endDateTime": "2017-02-14 16:30:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-02-14 09:30:00",
+            "endDateTime": "2016-02-14 16:30:00"
+          }
+        },
+        "Start": 21,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "Book meeting room on 14th Feb from 9:30am for 7 hours",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "14th Feb from 9:30am for 7 hours",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-02-14T09:30,XXXX-02-14T16:30:00,PT7H)",
+          "FutureResolution": {
+            "startDateTime": "2017-02-14 09:30:00",
+            "endDateTime": "2017-02-14 16:30:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-02-14 09:30:00",
+            "endDateTime": "2016-02-14 16:30:00"
+          }
+        },
+        "Start": 21,
+        "Length": 32
+      }
+    ]
+  },
+  {
     "Input": "I'll go back tonight",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
