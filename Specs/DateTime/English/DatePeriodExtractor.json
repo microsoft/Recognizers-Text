@@ -3888,12 +3888,46 @@
   },
   {
     "Input": "please schedule a meeting for the week starting february 4",
+    "Debug": true,
     "Results": [
       {
         "Text": "the week starting february 4",
         "Type": "daterange",
         "Start": 30,
         "Length": 28
+      }
+    ]
+  },
+  {
+    "Input": "Schedule Out of office replies for 3 days starting from next Monday",
+    "Results": [
+      {
+        "Text": "3 days starting from next Monday",
+        "Type": "daterange",
+        "Start": 35,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "set ooo for a week starting tomorrow",
+    "Results": [
+      {
+        "Text": "a week starting tomorrow",
+        "Type": "daterange",
+        "Start": 12,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "set ooo for 2 weeks starting May 20th",
+    "Results": [
+      {
+        "Text": "2 weeks starting may 20th",
+        "Type": "daterange",
+        "Start": 12,
+        "Length": 25
       }
     ]
   },

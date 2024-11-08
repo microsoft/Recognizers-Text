@@ -613,6 +613,8 @@ BeforeRegex: !nestedRegex
 AfterRegex: !nestedRegex
   def: ((\b{InclusiveModPrepositions}?((after(\s+on)?(?!\sfrom)|(?<!no\s+)later\s+than)|((year\s+)?greater\s+than))(?!\s+or\s+equal\s+to){InclusiveModPrepositions}?\b\s*?)|(?<!\w|<)((?<include>>\s*=)|>))(\s+the)?
   references: [ InclusiveModPrepositions ]
+StartingRegex: !simpleRegex
+  def: (starting|beginning)(\s+)?(?:from|on|with)?
 SinceRegex: !simpleRegex
   def: (?:(?:\b(?:since|after\s+or\s+equal\s+to|(starting|beginning)(\s)?(?:from|on|with)?|as\s+early\s+as|(any\s+time\s+)from)\b\s*?)|(?<!\w|<)(>=))(\s+the)?
 SinceRegexExp: !nestedRegex

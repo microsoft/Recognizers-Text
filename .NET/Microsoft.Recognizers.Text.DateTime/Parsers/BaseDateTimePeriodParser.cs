@@ -173,7 +173,8 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (!innerResult.Success)
             {
-                innerResult = ParseDurationWithStarting(entityText, referenceTime);
+                // Parsing cases like [duration] starting [datetime]
+                innerResult = ParseStartingWithDuration(entityText, referenceTime);
             }
 
             if (!innerResult.Success)
@@ -1384,45 +1385,43 @@ namespace Microsoft.Recognizers.Text.DateTime
             return ret;
         }
 
-        private DateTimeResolutionResult ParseDurationWithStarting(string text, DateObject referenceTime)
+        private DateTimeResolutionResult ParseStartingWithDuration(string text, DateObject referenceTime)
         {
             var ret = new DateTimeResolutionResult();
-            var er = Config.DateTimeExtractor.Extract(text, referenceTime).FirstOrDefault();
+            var datetimeERs = Config.DateTimeExtractor.Extract(text, referenceTime);
+            var enConfig = Config as EnglishDateTimePeriodParserConfiguration;
 
-            if (er != null)
+            if (enConfig != null && enConfig.StartingRegex.Match(text).Success && datetimeERs.Count == 1)
             {
-                var beforeString = text.Substring(0, (int)er.Start);
-                var config = Config as EnglishDateTimePeriodParserConfiguration;
+                var beforeString = text.Substring(0, (int)datetimeERs[0].Start);
 
-                if (!string.IsNullOrEmpty(beforeString) && config != null && (beforeString.Contains("starting") || beforeString.Contains("starting from")))
+                if (!string.IsNullOrEmpty(beforeString) && enConfig.StartingRegex.MatchEnd(beforeString, true).Success)
                 {
-                    if (true)
+                    var pr = Config.DateTimeParser.Parse(datetimeERs[0], referenceTime);
+                    var durationERs = Config.DurationExtractor.Extract(beforeString, referenceTime);
+
+                    if (durationERs.Count == 1)
                     {
-                        var pr = Config.DateTimeParser.Parse(er, referenceTime);
-                        var durationExtractionResult = Config.DurationExtractor.Extract(beforeString, referenceTime).FirstOrDefault();
+                        var duration = Config.DurationParser.Parse(durationERs[0]);
+                        var durationInSeconds = (double)((DateTimeResolutionResult)duration.Value).PastValue;
 
-                        if (durationExtractionResult != null)
+                        DateObject startDate;
+                        DateObject endDate;
+
+                        startDate = (DateObject)((DateTimeResolutionResult)pr.Value).PastValue;
+                        endDate = startDate.AddSeconds(durationInSeconds);
+
+                        if (startDate != DateObject.MinValue)
                         {
-                            var duration = Config.DurationParser.Parse(durationExtractionResult);
-                            var durationInSeconds = (double)((DateTimeResolutionResult)duration.Value).PastValue;
+                            var startLuisStr = $"{DateTimeFormatUtil.LuisDate(startDate)}{DateTimeFormatUtil.ShortTime(startDate.Hour, startDate.Minute, startDate.Second)}";
+                            var endLuisStr = $"{DateTimeFormatUtil.LuisDate(endDate)}{DateTimeFormatUtil.ShortTime(endDate.Hour, endDate.Minute, endDate.Second)}";
+                            var durationTimex = ((DateTimeResolutionResult)duration.Value).Timex;
 
-                            DateObject startDate;
-                            DateObject endDate;
-
-                            startDate = (DateObject)((DateTimeResolutionResult)pr.Value).PastValue;
-                            endDate = startDate.AddSeconds(durationInSeconds);
-
-                            if (startDate != DateObject.MinValue)
-                            {
-                                var startLuisStr = DateTimeFormatUtil.LuisDate(startDate);
-                                var endLuisStr = DateTimeFormatUtil.LuisDate(endDate);
-                                var durationTimex = ((DateTimeResolutionResult)duration.Value).Timex;
-
-                                ret.Timex = $"({startLuisStr},{endLuisStr},{durationTimex})";
-                                ret.FutureValue = new Tuple<DateObject, DateObject>(startDate, endDate);
-                                ret.PastValue = new Tuple<DateObject, DateObject>(startDate, endDate);
-                                ret.Success = true;
-                            }
+                            ret.Timex = $"({startLuisStr},{endLuisStr},{durationTimex})";
+                            ret.FutureValue = new Tuple<DateObject, DateObject>(startDate, endDate);
+                            ret.PastValue = new Tuple<DateObject, DateObject>(startDate, endDate);
+                            ret.SubDateTimeEntities = new List<object> { pr, duration };
+                            ret.Success = true;
                         }
                     }
                 }

@@ -107,6 +107,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             NowRegex = NowParseRegex;
             SpecialDayRegex = EnglishDateExtractorConfiguration.SpecialDayRegex;
             TodayNowRegex = new Regex(DateTimeDefinitions.TodayNowRegex, RegexOptions.Singleline, RegexTimeOut);
+            StartingRegex = EnglishDatePeriodExtractorConfiguration.StartingRegex;
 
             UnitMap = config.UnitMap;
             CardinalMap = config.CardinalMap;
@@ -226,6 +227,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public Regex FirstLastRegex { get; }
 
         public Regex OfYearRegex { get; }
+
+        public Regex StartingRegex { get; }
 
         Regex ISimpleDatePeriodParserConfiguration.RelativeRegex => RelativeRegex;
 
