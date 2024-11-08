@@ -34,7 +34,7 @@
   },
   {
     "Input": "Set out of office response for a day starting this Friday at 5 pm",
-    "Debug": true,
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "a day starting this friday at 5 pm",

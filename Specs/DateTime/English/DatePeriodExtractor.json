@@ -3888,7 +3888,6 @@
   },
   {
     "Input": "please schedule a meeting for the week starting february 4",
-    "Debug": true,
     "Results": [
       {
         "Text": "the week starting february 4",
@@ -3900,6 +3899,7 @@
   },
   {
     "Input": "Schedule Out of office replies for 3 days starting from next Monday",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "3 days starting from next Monday",
@@ -3911,6 +3911,7 @@
   },
   {
     "Input": "set ooo for a week starting tomorrow",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "a week starting tomorrow",
@@ -3922,6 +3923,7 @@
   },
   {
     "Input": "set ooo for 2 weeks starting May 20th",
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "2 weeks starting may 20th",

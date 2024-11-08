@@ -76,10 +76,10 @@
   },
   {
     "Input": "Set out of office response for a day starting this Friday at 5 pm",
-    "Debug": true,
     "Context": {
       "ReferenceDateTime": "2024-11-06T16:12:00"
     },
+    "NotSupported": "java, javascript, python",
     "Results": [
       {
         "Text": "a day starting this friday at 5 pm",
