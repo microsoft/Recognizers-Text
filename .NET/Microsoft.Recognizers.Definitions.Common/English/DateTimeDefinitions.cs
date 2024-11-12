@@ -316,6 +316,9 @@ namespace Microsoft.Recognizers.Definitions.English
       public static readonly string TasksModeSupressionRegexes = $@"({AmPmDescRegex}|{TasksModeSpecialDescRegex}|{TasksModeHolidayListSupression}|{DecadeRegex}|{DecadeWithCenturyRegex}|{QuarterRegex}|{QuarterRegexYearFront}|{AllHalfYearRegex}|{SeasonRegex})";
       public const string TasksModeNextPrefix = @"(?<next>next\s+)";
       public static readonly string TasksModeDurationToDatePatterns = $@"\b({TasksModeNextPrefix}((?<week>week)|(?<month>month)|(?<year>year)))\b";
+      public static readonly string TimePeriodFromForRegex = $@"(from\s+)(?<time1>(({TimeRegex2}|{FirstTimeRegexInTimeRange})|({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?))\s*for\s+(.*?)\s+({DurationUnitRegex})(\s+(.*?)\s+({DurationUnitRegex}))?";
+      public static readonly string TimePeriodForFromRegex = $@"for\s+(.*?)\s+({DurationUnitRegex})(\s+(.*?)\s+({DurationUnitRegex}))?\s+(from\s+)(?<time1>(({TimeRegex2}|{FirstTimeRegexInTimeRange})|({HourRegex}|{PeriodHourNumRegex})(\s*(?<leftDesc>{DescRegex}))?))";
+      public static readonly string TimePeriodWithDurationRegex = $@"({TimePeriodFromForRegex}|{TimePeriodForFromRegex})";
       public static readonly Dictionary<string, string> UnitMap = new Dictionary<string, string>
         {
             { @"decades", @"10Y" },
