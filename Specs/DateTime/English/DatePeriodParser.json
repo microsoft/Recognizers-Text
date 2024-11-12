@@ -6002,6 +6002,7 @@
   },
   {
     "Input": "please schedule a meeting for the week starting february 4",
+    "Debug": true,
     "Context": {
       "ReferenceDateTime": "2019-11-07T00:00:00"
     },
@@ -6025,6 +6026,85 @@
       }
     ]
   },
+  {
+    "Input": "Schedule Out of office replies for 3 days starting from next Monday",
+    "Context": {
+      "ReferenceDateTime": "2024-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "3 days starting from next monday",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2024-11-11,2024-11-14,P3D)",
+          "FutureResolution": {
+            "startDate": "2024-11-11",
+            "endDate": "2024-11-14"
+          },
+          "PastResolution": {
+            "startDate": "2024-11-11",
+            "endDate": "2024-11-14"
+          }
+        },
+        "Start": 35,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "set ooo for a week starting tomorrow",
+    "Context": {
+      "ReferenceDateTime": "2024-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "a week starting tomorrow",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2024-11-08,2024-11-15,P1W)",
+          "FutureResolution": {
+            "startDate": "2024-11-08",
+            "endDate": "2024-11-15"
+          },
+          "PastResolution": {
+            "startDate": "2024-11-08",
+            "endDate": "2024-11-15"
+          }
+        },
+        "Start": 12,
+        "Length": 24
+      }
+    ]
+  },
+  {
+    "Input": "set ooo for 2 weeks starting May 20th",
+    "Context": {
+      "ReferenceDateTime": "2024-11-07T00:00:00"
+    },
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "2 weeks starting may 20th",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "(2024-05-20,2024-06-03,P2W)",
+          "FutureResolution": {
+            "startDate": "2024-05-20",
+            "endDate": "2024-06-03"
+          },
+          "PastResolution": {
+            "startDate": "2024-05-20",
+            "endDate": "2024-06-03"
+          }
+        },
+        "Start": 12,
+        "Length": 25
+      }
+    ]
+  },
+
   {
     "Input": "please schedule a meeting for the week starting on february 4",
     "Context": {
