@@ -69,6 +69,7 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             AfterRegex = EnglishDateTimePeriodExtractorConfiguration.AfterRegex;
             UnitMap = config.UnitMap;
             Numbers = config.Numbers;
+            StartingRegex = EnglishDateTimePeriodExtractorConfiguration.StartingRegex;
 
             TasksmodeMealTimeofDayRegex = EnglishDateTimePeriodExtractorConfiguration.TasksmodeMealTimeofDayRegex;
         }
@@ -142,6 +143,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public Regex AfterRegex { get; }
 
         public Regex TasksmodeMealTimeofDayRegex { get; }
+
+        public Regex StartingRegex { get; }
 
         bool IDateTimePeriodParserConfiguration.CheckBothBeforeAfter => DateTimeDefinitions.CheckBothBeforeAfter;
 

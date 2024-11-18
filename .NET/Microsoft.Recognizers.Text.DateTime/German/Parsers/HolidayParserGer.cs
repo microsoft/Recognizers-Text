@@ -64,6 +64,7 @@ namespace Microsoft.Recognizers.Text.DateTime.German
                 { "stgeorgeday", StGeorgeDay },
                 { "mayday", Mayday },
                 { "labour", LaborDay },
+                { "laborday", LaborDay },
                 { "cincodemayoday", CincoDeMayo },
                 { "baptisteday", BaptisteDay },
                 { "usindependenceday", UsaIndependenceDay },

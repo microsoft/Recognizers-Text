@@ -175,6 +175,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public static readonly Regex OfYearRegex =
             new Regex(DateTimeDefinitions.OfYearRegex, RegexFlags, RegexTimeOut);
 
+        public static readonly Regex StartingRegex =
+            new Regex(DateTimeDefinitions.StartingRegex, RegexFlags, RegexTimeOut);
+
         private const RegexOptions RegexFlags = RegexOptions.Singleline | RegexOptions.ExplicitCapture;
 
         private static readonly Regex FromTokenRegex =

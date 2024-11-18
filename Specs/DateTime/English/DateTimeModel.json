@@ -1741,6 +1741,156 @@
     ]
   },
   {
+    "Input": "The meeting is start from 9 for 2.5 hrs",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "from 9 for 2.5 hrs",
+        "Start": 21,
+        "End": 38,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(T09,T11:30:00,PT2H30M)",
+              "type": "timerange",
+              "start": "09:00:00",
+              "end": "11:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The meeting is start from 10 am for 3 hours 30 minutes",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "from 10 am for 3 hours 30 minutes",
+        "Start": 21,
+        "End": 53,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(T10,T13:30:00,PT3H30M)",
+              "type": "timerange",
+              "start": "10:00:00",
+              "end": "13:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The meeting is start from 2pm for 2 hours",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "from 2pm for 2 hours",
+        "Start": 21,
+        "End": 40,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(T14,T16:00:00,PT2H)",
+              "type": "timerange",
+              "start": "14:00:00",
+              "end": "16:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The meeting will last for 2.5 hours from 9",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "for 2.5 hours from 9",
+        "Start": 22,
+        "End": 41,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(T09,T11:30:00,PT2H30M)",
+              "type": "timerange",
+              "start": "09:00:00",
+              "end": "11:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The meeting will last for 3 hours from 10 am",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "for 3 hours from 10 am",
+        "Start": 22,
+        "End": 43,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(T10,T13:00:00,PT3H)",
+              "type": "timerange",
+              "start": "10:00:00",
+              "end": "13:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "The meeting will last for 2 hours from 2pm",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "for 2 hours from 2pm",
+        "Start": 22,
+        "End": 41,
+        "TypeName": "datetimeV2.timerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(T14,T16:00:00,PT2H)",
+              "type": "timerange",
+              "start": "14:00:00",
+              "end": "16:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "I'll be out 5 to seven in the morning",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
@@ -3822,6 +3972,68 @@
               "type": "datetimerange",
               "start": "2015-01-01 22:00:00",
               "end": "2015-01-01 23:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Book meeting room on 14th Feb for 7 hours from 9:30am",
+    "Context": {
+      "ReferenceDateTime": "2018-05-31T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "14th feb for 7 hours from 9:30am",
+        "Start": 21,
+        "End": 52,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-02-14T09:30,XXXX-02-14T16:30:00,PT7H)",
+              "type": "datetimerange",
+              "start": "2018-02-14 09:30:00",
+              "end": "2018-02-14 16:30:00"
+            },
+            {
+              "timex": "(XXXX-02-14T09:30,XXXX-02-14T16:30:00,PT7H)",
+              "type": "datetimerange",
+              "start": "2019-02-14 09:30:00",
+              "end": "2019-02-14 16:30:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Book meeting room on 14th Feb from 9:30am for 7 hours",
+    "Context": {
+      "ReferenceDateTime": "2018-05-31T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "14th feb from 9:30am for 7 hours",
+        "Start": 21,
+        "End": 52,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(XXXX-02-14T09:30,XXXX-02-14T16:30:00,PT7H)",
+              "type": "datetimerange",
+              "start": "2018-02-14 09:30:00",
+              "end": "2018-02-14 16:30:00"
+            },
+            {
+              "timex": "(XXXX-02-14T09:30,XXXX-02-14T16:30:00,PT7H)",
+              "type": "datetimerange",
+              "start": "2019-02-14 09:30:00",
+              "end": "2019-02-14 16:30:00"
             }
           ]
         }
@@ -15135,6 +15347,106 @@
               "type": "daterange",
               "start": "2020-02-03",
               "end": "2020-02-10"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Set out of office response for a day starting this Friday at 5 pm",
+    "Context": {
+      "ReferenceDateTime": "2019-10-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "a day starting this friday at 5 pm",
+        "Start": 31,
+        "End": 64,
+        "TypeName": "datetimeV2.datetimerange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-10-11T17:00:00,2019-10-12T17:00:00,P1D)",
+              "type": "datetimerange",
+              "start": "2019-10-11 17:00:00",
+              "end": "2019-10-12 17:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Schedule Out of office replies for 3 days starting from next Monday",
+    "Context": {
+      "ReferenceDateTime": "2019-10-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "3 days starting from next monday",
+        "Start": 35,
+        "End": 66,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-10-14,2019-10-17,P3D)",
+              "type": "daterange",
+              "start": "2019-10-14",
+              "end": "2019-10-17"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "set ooo for a week starting tomorrow",
+    "Context": {
+      "ReferenceDateTime": "2019-10-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "a week starting tomorrow",
+        "Start": 12,
+        "End": 35,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-10-08,2019-10-15,P1W)",
+              "type": "daterange",
+              "start": "2019-10-08",
+              "end": "2019-10-15"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "Input": "set ooo for 2 weeks starting May 20th",
+    "Context": {
+      "ReferenceDateTime": "2019-10-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2 weeks starting may 20th",
+        "Start": 12,
+        "End": 36,
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "(2019-05-20,2019-06-03,P2W)",
+              "type": "daterange",
+              "start": "2019-05-20",
+              "end": "2019-06-03"
             }
           ]
         }

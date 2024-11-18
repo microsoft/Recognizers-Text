@@ -746,6 +746,25 @@ namespace Microsoft.Recognizers.Text.DateTime
                             ret.AddRange(GetTokenForRegexMatching(beforeString, EnglishDatePeriodExtractorConfiguration.ForPrefixRegex, extractionResult, inPrefix: true));
                         }
                     }
+
+                    // For cases like xx weeks/days starting (from) a date point
+                    if (this.config as EnglishDatePeriodExtractorConfiguration != null)
+                    {
+                        var match = EnglishDatePeriodExtractorConfiguration.StartingRegex.MatchEnd(beforeString, true);
+                        if (match.Success)
+                        {
+                            var durationERs = this.config.DurationExtractor.Extract(beforeString);
+                            if (durationERs.Count >= 1)
+                            {
+                                var lastDuration = durationERs[durationERs.Count - 1];
+                                string startingWord = beforeString.Substring(beforeString.LastIndexOf(lastDuration.Text, StringComparison.Ordinal) + lastDuration.Text.Length);
+                                if (startingWord.Trim() == match.Value.Trim())
+                                {
+                                    ret.Add(new Token(lastDuration.Start ?? 0, (extractionResult.Start ?? 0) + (extractionResult.Length ?? 0)));
+                                }
+                            }
+                        }
+                    }
                 }
             }
 

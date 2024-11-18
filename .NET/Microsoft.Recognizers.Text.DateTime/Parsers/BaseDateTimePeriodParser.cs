@@ -7,6 +7,7 @@ using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.DateTime.English;
 using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
@@ -168,6 +169,12 @@ namespace Microsoft.Recognizers.Text.DateTime
             {
                 // Cases like "today after 2:00pm", "1/1/2015 before 2:00 in the afternoon"
                 innerResult = ParseDateWithTimePeriodSuffix(entityText, referenceTime);
+            }
+
+            if (!innerResult.Success)
+            {
+                // Parsing cases like [duration] starting [datetime]
+                innerResult = ParseStartingWithDuration(entityText, referenceTime);
             }
 
             if (!innerResult.Success)
@@ -1372,6 +1379,51 @@ namespace Microsoft.Recognizers.Text.DateTime
                     ret.SubDateTimeEntities = new List<object> { pr };
 
                     return ret;
+                }
+            }
+
+            return ret;
+        }
+
+        private DateTimeResolutionResult ParseStartingWithDuration(string text, DateObject referenceTime)
+        {
+            var ret = new DateTimeResolutionResult();
+            var datetimeERs = Config.DateTimeExtractor.Extract(text, referenceTime);
+            var enConfig = Config as EnglishDateTimePeriodParserConfiguration;
+
+            if (enConfig != null && enConfig.StartingRegex.Match(text).Success && datetimeERs.Count == 1)
+            {
+                var beforeString = text.Substring(0, (int)datetimeERs[0].Start);
+
+                if (!string.IsNullOrEmpty(beforeString) && enConfig.StartingRegex.MatchEnd(beforeString, true).Success)
+                {
+                    var pr = Config.DateTimeParser.Parse(datetimeERs[0], referenceTime);
+                    var durationERs = Config.DurationExtractor.Extract(beforeString, referenceTime);
+
+                    if (durationERs.Count == 1)
+                    {
+                        var duration = Config.DurationParser.Parse(durationERs[0]);
+                        var durationInSeconds = (double)((DateTimeResolutionResult)duration.Value).PastValue;
+
+                        DateObject startDate;
+                        DateObject endDate;
+
+                        startDate = (DateObject)((DateTimeResolutionResult)pr.Value).PastValue;
+                        endDate = startDate.AddSeconds(durationInSeconds);
+
+                        if (startDate != DateObject.MinValue)
+                        {
+                            var startLuisStr = $"{DateTimeFormatUtil.LuisDate(startDate)}{DateTimeFormatUtil.ShortTime(startDate.Hour, startDate.Minute, startDate.Second)}";
+                            var endLuisStr = $"{DateTimeFormatUtil.LuisDate(endDate)}{DateTimeFormatUtil.ShortTime(endDate.Hour, endDate.Minute, endDate.Second)}";
+                            var durationTimex = ((DateTimeResolutionResult)duration.Value).Timex;
+
+                            ret.Timex = $"({startLuisStr},{endLuisStr},{durationTimex})";
+                            ret.FutureValue = new Tuple<DateObject, DateObject>(startDate, endDate);
+                            ret.PastValue = new Tuple<DateObject, DateObject>(startDate, endDate);
+                            ret.SubDateTimeEntities = new List<object> { pr, duration };
+                            ret.Success = true;
+                        }
+                    }
                 }
             }
 

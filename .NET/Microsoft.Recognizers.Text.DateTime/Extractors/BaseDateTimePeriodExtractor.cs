@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
-
+using Microsoft.Recognizers.Text.DateTime.English;
 using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
@@ -51,6 +51,9 @@ namespace Microsoft.Recognizers.Text.DateTime
             tokens.AddRange(MatchRelativeUnit(text));
             tokens.AddRange(MatchDateWithPeriodPrefix(text, reference, new List<ExtractResult>(dateErs)));
             tokens.AddRange(MergeDateWithTimePeriodSuffix(text, new List<ExtractResult>(dateErs), new List<ExtractResult>(timeErs)));
+
+            // Extracting cases like [duration] starting [datetime]
+            tokens.AddRange(MatchStartingWithDuration(text, reference));
 
             var ers = Token.MergeAllTokens(tokens, text, ExtractorName);
 
@@ -813,6 +816,37 @@ namespace Microsoft.Recognizers.Text.DateTime
                         else
                         {
                             ret.Add(new Token(tok.Start, tok.End + match.Index + match.Length));
+                        }
+                    }
+                }
+            }
+
+            return ret;
+        }
+
+        private List<Token> MatchStartingWithDuration(string text, DateObject reference)
+        {
+            var ret = new List<Token>();
+
+            if (this.config as EnglishDateTimePeriodExtractorConfiguration != null
+                && EnglishDateTimePeriodExtractorConfiguration.StartingRegex.Match(text).Success)
+            {
+                var dateTimeERs = this.config.SingleDateTimeExtractor.Extract(text, reference);
+                foreach (var dateTimeER in dateTimeERs)
+                {
+                    var beforeString = text.Substring(0, (int)dateTimeER.Start);
+                    var match = EnglishDatePeriodExtractorConfiguration.StartingRegex.MatchEnd(beforeString, true);
+                    if (match.Success)
+                    {
+                        var durationERs = this.config.DurationExtractor.Extract(beforeString);
+                        if (durationERs.Count >= 1)
+                        {
+                            var lastDuration = durationERs[durationERs.Count - 1];
+                            string startingWord = beforeString.Substring(beforeString.LastIndexOf(lastDuration.Text, StringComparison.Ordinal) + lastDuration.Text.Length);
+                            if (startingWord.Trim() == match.Value.Trim())
+                            {
+                                ret.Add(new Token((int)lastDuration.Start, (int)dateTimeER.Start + (int)dateTimeER.Length));
+                            }
                         }
                     }
                 }
