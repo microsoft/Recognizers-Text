@@ -75,6 +75,32 @@
     ]
   },
   {
+    "Input": "Set out of office response for a day starting this Friday at 5 pm",
+    "Context": {
+      "ReferenceDateTime": "2024-11-06T16:12:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "a day starting this friday at 5 pm",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(2024-11-08T17:00:00,2024-11-09T17:00:00,P1D)",
+          "FutureResolution": {
+            "startDateTime": "2024-11-08 17:00:00",
+            "endDateTime": "2024-11-09 17:00:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2024-11-08 17:00:00",
+            "endDateTime": "2024-11-09 17:00:00"
+          }
+        },
+        "Start": 31,
+        "Length": 34
+      }
+    ]
+  },
+  {
     "Input": "I'll be out from 5 to 6pm of April 22",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
@@ -299,6 +325,58 @@
         },
         "Start": 12,
         "Length": 40
+      }
+    ]
+  },
+  {
+    "Input": "Book meeting room on 14th Feb for 7 hours from 9:30am",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "14th feb for 7 hours from 9:30am",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-02-14T09:30,XXXX-02-14T16:30:00,PT7H)",
+          "FutureResolution": {
+            "startDateTime": "2017-02-14 09:30:00",
+            "endDateTime": "2017-02-14 16:30:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-02-14 09:30:00",
+            "endDateTime": "2016-02-14 16:30:00"
+          }
+        },
+        "Start": 21,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "Book meeting room on 14th Feb from 9:30am for 7 hours",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "14th Feb from 9:30am for 7 hours",
+        "Type": "datetimerange",
+        "Value": {
+          "Timex": "(XXXX-02-14T09:30,XXXX-02-14T16:30:00,PT7H)",
+          "FutureResolution": {
+            "startDateTime": "2017-02-14 09:30:00",
+            "endDateTime": "2017-02-14 16:30:00"
+          },
+          "PastResolution": {
+            "startDateTime": "2016-02-14 09:30:00",
+            "endDateTime": "2016-02-14 16:30:00"
+          }
+        },
+        "Start": 21,
+        "Length": 32
       }
     ]
   },

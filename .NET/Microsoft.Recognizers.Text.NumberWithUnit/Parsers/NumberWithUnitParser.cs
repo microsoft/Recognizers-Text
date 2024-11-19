@@ -3,8 +3,10 @@
 
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using Microsoft.Recognizers.Text.NumberWithUnit.Utilities;
 
 namespace Microsoft.Recognizers.Text.NumberWithUnit
 {
@@ -41,6 +43,11 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
             ExtractResult numberResult;
             ExtractResult halfResult;
+
+            if (extResult.Data is List<ExtractResult> && this.Config as English.DimensionParserConfiguration != null)
+            {
+                return MergeCompoundUnit(extResult);
+            }
 
             if (extResult.Data is ExtractResult unitResult)
             {
@@ -203,5 +210,165 @@ namespace Microsoft.Recognizers.Text.NumberWithUnit
 
             return unit;
         }
+
+        private static void ResolveText(List<ParseResult> prs, string source, int bias)
+        {
+            foreach (var parseResult in prs)
+            {
+                if (parseResult.Start != null && parseResult.Length != null)
+                {
+                    parseResult.Text = source.Substring((int)parseResult.Start - bias, (int)parseResult.Length);
+                }
+            }
+        }
+
+        private static bool CheckUnitsStringContains(string fractionUnitCode, string fractionUnitsString)
+        {
+            var unitsMap = new Dictionary<string, string>();
+            DictionaryUtils.BindUnitsString(unitsMap, string.Empty, fractionUnitsString);
+            return unitsMap.ContainsKey(fractionUnitCode);
+        }
+
+        /// <summary>
+        /// Parsing compounded result, like 5 foot 3 inch.
+        /// </summary>
+        /// <param name="compoundResult">Extracted compounded result.</param>
+        /// <returns>Parsed compounded result.</returns>
+        private ParseResult MergeCompoundUnit(ExtractResult compoundResult)
+        {
+            var results = new List<ParseResult>();
+            var compoundUnit = (List<ExtractResult>)compoundResult.Data;
+
+            var count = 0;
+            ParseResult result = null;
+            double? numberValue = null;
+            var mainUnitValue = string.Empty;
+            string mainUnitIsoCode = string.Empty;
+            string fractionUnitsString = string.Empty;
+
+            for (var idx = 0; idx < compoundUnit.Count; idx++)
+            {
+                var extractResult = compoundUnit[idx];
+                var parseResult = this.Parse(extractResult);
+                var parseResultValue = parseResult.Value as UnitValue;
+                var unitValue = parseResultValue?.Unit;
+
+                // Process a new group
+                if (count == 0)
+                {
+                    if (!extractResult.Type.Equals(Constants.SYS_UNIT_DIMENSION, StringComparison.Ordinal))
+                    {
+                        continue;
+                    }
+
+                    // Initialize a new result
+                    result = new ParseResult
+                    {
+                        Start = extractResult.Start,
+                        Length = extractResult.Length,
+                        Text = extractResult.Text,
+                        Type = extractResult.Type,
+                    };
+
+                    mainUnitValue = unitValue;
+
+                    if (parseResultValue?.Number != null)
+                    {
+                        numberValue = double.Parse(parseResultValue.Number, CultureInfo.InvariantCulture);
+                    }
+
+                    result.ResolutionStr = parseResult.ResolutionStr;
+                    English.DimensionParserConfiguration.LengthUnitToSubUnitMap.TryGetValue(mainUnitValue, out fractionUnitsString);
+                }
+                else
+                {
+                    long fractionNumValue = 0;
+                    string fractionUnit = parseResultValue is null ? null : parseResultValue.Unit;
+                    English.DimensionParserConfiguration.LengthSubUnitFractionalRatios.TryGetValue(parseResultValue?.Unit, out fractionNumValue);
+
+                    if (!string.IsNullOrEmpty(fractionUnit) && fractionNumValue != 0 &&
+                        CheckUnitsStringContains(fractionUnit, fractionUnitsString))
+                    {
+                        numberValue += double.Parse(parseResultValue?.Number, CultureInfo.InvariantCulture) *
+                                       (1.0 / fractionNumValue);
+                        result.ResolutionStr += ' ' + parseResult.ResolutionStr;
+                        result.Length = parseResult.Start + parseResult.Length - result.Start;
+                    }
+                    else
+                    {
+                        // If the fraction unit doesn't match the main unit, finish process this group.
+                        if (result != null)
+                        {
+                            result = CreateResult(result, mainUnitIsoCode, numberValue, mainUnitValue);
+                            results.Add(result);
+                            result = null;
+                        }
+
+                        count = 0;
+                        idx -= 1;
+                        numberValue = null;
+                        continue;
+                    }
+                }
+
+                count++;
+            }
+
+            if (result != null)
+            {
+                result = CreateResult(result, mainUnitIsoCode, numberValue, mainUnitValue);
+                results.Add(result);
+            }
+
+            ResolveText(results, compoundResult.Text, (int)compoundResult.Start);
+
+            return new ParseResult
+            {
+                Value = results,
+            };
+        }
+
+        private ParseResult CreateResult(ParseResult result, string mainUnitIsoCode, object numberValue, string mainUnitValue)
+        {
+            if (string.IsNullOrEmpty(mainUnitIsoCode) ||
+                mainUnitIsoCode.StartsWith(Constants.FAKE_ISO_CODE_PREFIX, StringComparison.Ordinal))
+            {
+                result.Value = new UnitValue
+                {
+                    Number = GetResolutionStr(numberValue),
+                    Unit = mainUnitValue,
+                };
+                if (result.Type.Equals(Constants.SYS_UNIT_DIMENSION, StringComparison.Ordinal) &&
+                        this.Config.TypeList.TryGetValue(mainUnitValue, out var unitType))
+                {
+                    result.Type = unitType;
+                }
+            }
+            else
+            {
+                result.Value = new CurrencyUnitValue
+                {
+                    Number = GetResolutionStr(numberValue),
+                    Unit = mainUnitValue,
+                    IsoCurrency = mainUnitIsoCode,
+                };
+            }
+
+            return result;
+        }
+
+        private string GetResolutionStr(object value)
+        {
+            // Nothing to resolve. This happens when the entity is a currency name only (no numerical value).
+            if (value == null)
+            {
+                return null;
+            }
+
+            return Config.CultureInfo != null ?
+                ((double)value).ToString(Config.CultureInfo) :
+                value.ToString();
+        }
+
     }
 }

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using Microsoft.Recognizers.Text;
 using Microsoft.Recognizers.Text.Choice;
 using Microsoft.Recognizers.Text.DateTime;
@@ -28,8 +29,19 @@ namespace SimpleConsole
 
             ShowIntro();
 
+            Console.InputEncoding = Encoding.UTF8;
+            Console.OutputEncoding = Encoding.UTF8;
+            string culture = DefaultCulture;
+            bool cultureSet = false;
+
             while (true)
             {
+                if (!cultureSet)
+                {
+                    culture = SetCulture();
+                    cultureSet = true;
+                }
+
                 // Read the text to recognize
                 Console.WriteLine("Enter the text to recognize:");
                 var input = Console.ReadLine()?.Trim();
@@ -41,11 +53,17 @@ namespace SimpleConsole
                     break;
                 }
 
+                if (input?.ToLower(CultureInfo.InvariantCulture) == "switch")
+                {
+                    cultureSet = false;
+                    continue;
+                }
+
                 // Validate input
                 if (input?.Length > 0)
                 {
                     // Retrieve all the parsers and call 'Parse' to recognize all the values from the user input
-                    var results = ParseAll(input, DefaultCulture);
+                    var results = ParseAll(input, culture);
 
                     // Write output
                     Console.WriteLine(results.Any() ? $"I found the following entities ({results.Count():d}):" : "I found no entities.");
@@ -53,6 +71,34 @@ namespace SimpleConsole
                     Console.WriteLine();
                 }
             }
+        }
+
+        private static string SetCulture()
+        {
+            string supportedCultures = string.Empty;
+            for (int i = 0; i < Culture.SupportedCultures.Length; i++)
+            {
+                supportedCultures += (i + 1) + ": " + Culture.SupportedCultures[i].CultureName +
+                    ((i == Culture.SupportedCultures.Length - 1) ? string.Empty : Environment.NewLine);
+            }
+
+            Console.WriteLine(supportedCultures + Environment.NewLine + "Please select language: ");
+            string culture = string.Empty;
+            if (int.TryParse(Console.ReadLine()?.Trim(), out int num) && num >= 1 && num <= Culture.SupportedCultures.Length)
+            {
+                culture = Culture.SupportedCultures[num - 1].CultureCode;
+            }
+            else
+            {
+                culture = DefaultCulture;
+            }
+
+            var cultureName = Culture.SupportedCultures
+                .Where(c => c.CultureCode == culture)
+                .Select(c => c.CultureName)
+                .FirstOrDefault();
+            Console.WriteLine("Culture {0},{1} is set.", cultureName, culture);
+            return culture;
         }
 
         /// <summary>

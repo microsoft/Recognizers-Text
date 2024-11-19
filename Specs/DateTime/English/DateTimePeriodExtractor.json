@@ -33,6 +33,18 @@
     ]
   },
   {
+    "Input": "Set out of office response for a day starting this Friday at 5 pm",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "a day starting this friday at 5 pm",
+        "Type": "datetimerange",
+        "Start": 31,
+        "Length": 34
+      }
+    ]
+  },
+  {
     "Input": "I'll be out from 5 to 6pm next sunday",
     "Results": [
       {
@@ -163,6 +175,30 @@
         "Type": "datetimerange",
         "Start": 12,
         "Length": 40
+      }
+    ]
+  },
+  {
+    "Input": "Book meeting room on 14th Feb for 7 hours from 9:30am",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "14th Feb for 7 hours from 9:30am",
+        "Type": "datetimerange",
+        "Start": 21,
+        "Length": 32
+      }
+    ]
+  },
+  {
+    "Input": "Book meeting room on 14th Feb from 9:30am for 7 hours",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "14th Feb from 9:30am for 7 hours",
+        "Type": "datetimerange",
+        "Start": 21,
+        "Length": 32
       }
     ]
   },
@@ -1047,7 +1083,7 @@
         "Text": "from 12-04-2019 6:00am until 12-05-2019 8:00pm",
         "Type": "datetimerange",
         "Start": 20,
-        "Length": 46 
+        "Length": 46
       }
     ]
   },

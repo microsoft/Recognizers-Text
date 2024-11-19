@@ -27,6 +27,9 @@ namespace Microsoft.Recognizers.Text.DateTime.English
             TimeOfDayRegex = EnglishTimePeriodExtractorConfiguration.TimeOfDayRegex;
             GeneralEndingRegex = EnglishTimePeriodExtractorConfiguration.GeneralEndingRegex;
             TillRegex = EnglishTimePeriodExtractorConfiguration.TillRegex;
+            TimePeriodWithDurationRegex = EnglishTimePeriodExtractorConfiguration.TimePeriodWithDurationRegex;
+            DurationParser = config.DurationParser;
+            DurationExtractor = config.DurationExtractor;
 
             Numbers = config.Numbers;
             UtilityConfiguration = config.UtilityConfiguration;
@@ -39,6 +42,10 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public IExtractor IntegerExtractor { get; }
 
         public IDateTimeParser TimeZoneParser { get; }
+
+        public IDateTimeParser DurationParser { get; }
+
+        public IDateTimeExtractor DurationExtractor { get; }
 
         public Regex SpecificTimeFromToRegex { get; }
 
@@ -53,6 +60,8 @@ namespace Microsoft.Recognizers.Text.DateTime.English
         public Regex GeneralEndingRegex { get; }
 
         public Regex TillRegex { get; }
+
+        public Regex TimePeriodWithDurationRegex { get; }
 
         public IImmutableDictionary<string, int> Numbers { get; }
 

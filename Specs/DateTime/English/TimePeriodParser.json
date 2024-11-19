@@ -100,6 +100,162 @@
     ]
   },
   {
+    "Input": "The meeting is start from 9 for 2.5 hrs",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "from 9 for 2.5 hrs",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T09,T11:30:00,PT2H30M)",
+          "FutureResolution": {
+            "startTime": "09:00:00",
+            "endTime": "11:30:00"
+          },
+          "PastResolution": {
+            "startTime": "09:00:00",
+            "endTime": "11:30:00"
+          }
+        },
+        "Start": 21,
+        "Length": 18
+      }
+    ]
+  },
+  {
+    "Input": "The meeting is start from 10 am for 3 hours 30 minutes",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "from 10 am for 3 hours 30 minutes",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T10,T13:30:00,PT3H30M)",
+          "FutureResolution": {
+            "startTime": "10:00:00",
+            "endTime": "13:30:00"
+          },
+          "PastResolution": {
+            "startTime": "10:00:00",
+            "endTime": "13:30:00"
+          }
+        },
+        "Start": 21,
+        "Length": 33
+      }
+    ]
+  },
+  {
+    "Input": "The meeting is start from 2pm for 2 hours",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "from 2pm for 2 hours",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T14,T16:00:00,PT2H)",
+          "FutureResolution": {
+            "startTime": "14:00:00",
+            "endTime": "16:00:00"
+          },
+          "PastResolution": {
+            "startTime": "14:00:00",
+            "endTime": "16:00:00"
+          }
+        },
+        "Start": 21,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "The meeting will last for 2.5 hours from 9",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "for 2.5 hours from 9",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T09,T11:30:00,PT2H30M)",
+          "FutureResolution": {
+            "startTime": "09:00:00",
+            "endTime": "11:30:00"
+          },
+          "PastResolution": {
+            "startTime": "09:00:00",
+            "endTime": "11:30:00"
+          }
+        },
+        "Start": 22,
+        "Length": 20
+      }
+    ]
+  },
+  {
+    "Input": "The meeting will last for 3 hours from 10 am",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "for 3 hours from 10 am",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T10,T13:00:00,PT3H)",
+          "FutureResolution": {
+            "startTime": "10:00:00",
+            "endTime": "13:00:00"
+          },
+          "PastResolution": {
+            "startTime": "10:00:00",
+            "endTime": "13:00:00"
+          }
+        },
+        "Start": 22,
+        "Length": 22
+      }
+    ]
+  },
+  {
+    "Input": "The meeting will last for 2 hours from 2pm",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T16:12:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "for 2 hours from 2pm",
+        "Type": "timerange",
+        "Value": {
+          "Timex": "(T14,T16:00:00,PT2H)",
+          "FutureResolution": {
+            "startTime": "14:00:00",
+            "endTime": "16:00:00"
+          },
+          "PastResolution": {
+            "startTime": "14:00:00",
+            "endTime": "16:00:00"
+          }
+        },
+        "Start": 22,
+        "Length": 20
+      }
+    ]
+  },
+  {
     "Input": "I'll be out between 5 and 6pm",
     "Context": {
       "ReferenceDateTime": "2016-11-07T16:12:00"
