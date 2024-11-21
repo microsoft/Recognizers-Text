@@ -93,6 +93,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public static readonly Regex DateUnitRegex = new Regex(DateTimeDefinitions.DateUnitRegex, RegexFlags, RegexTimeOut);
         public static readonly Regex LastRegex = new Regex(DateTimeDefinitions.DatePeriodLastRegex, RegexFlags, RegexTimeOut);
         public static readonly Regex NextNextRegex = new Regex(DateTimeDefinitions.DatePeriodNextNextRegex, RegexFlags, RegexTimeOut);
+        public static readonly Regex LastLastRegex = new Regex(DateTimeDefinitions.DatePeriodLastLastRegex, RegexFlags, RegexTimeOut);
         public static readonly Regex NextRegex = new Regex(DateTimeDefinitions.DatePeriodNextRegex, RegexFlags, RegexTimeOut);
         public static readonly Regex RelativeMonthRegex = new Regex(DateTimeDefinitions.RelativeMonthRegex, RegexFlags, RegexTimeOut);
         public static readonly Regex LaterEarlyPeriodRegex = new Regex(DateTimeDefinitions.LaterEarlyPeriodRegex, RegexFlags, RegexTimeOut);
