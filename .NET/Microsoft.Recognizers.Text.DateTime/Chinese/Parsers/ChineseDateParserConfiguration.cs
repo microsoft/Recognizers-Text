@@ -51,6 +51,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             WeekDayAndDayRegex = ChineseDateExtractorConfiguration.WeekDayAndDayRegex;
             DurationRelativeDurationUnitRegex = ChineseDateExtractorConfiguration.DurationRelativeDurationUnitRegex;
             SpecialDayWithNumRegex = ChineseDateExtractorConfiguration.SpecialDayWithNumRegex;
+            NextNextRegex = ChineseDateExtractorConfiguration.NextNextRegex;
+            LastLastRegex = ChineseDateExtractorConfiguration.LastLastRegex;
 
             CardinalMap = config.CardinalMap;
             UnitMap = config.UnitMap;
@@ -93,6 +95,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public Regex AfterRegex { get; }
 
         public Regex NextRegex { get; }
+
+        public Regex NextNextRegex { get; }
+
+        public Regex LastLastRegex { get; }
 
         public Regex ThisRegex { get; }
 

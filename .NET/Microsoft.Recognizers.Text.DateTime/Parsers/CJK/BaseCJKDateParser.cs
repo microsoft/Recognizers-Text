@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text.RegularExpressions;
+using Microsoft.Recognizers.Text.DateTime.Chinese;
 using Microsoft.Recognizers.Text.Utilities;
 using DateObject = System.DateTime;
 
@@ -357,7 +358,17 @@ namespace Microsoft.Recognizers.Text.DateTime
 
             if (!ret.Success)
             {
+                ret = MatchNextNextWeekday(text, referenceDate);
+            }
+
+            if (!ret.Success)
+            {
                 ret = MatchNextWeekday(text, referenceDate);
+            }
+
+            if (!ret.Success)
+            {
+                ret = MatchLastLastWeekday(text, referenceDate);
             }
 
             if (!ret.Success)
@@ -497,6 +508,28 @@ namespace Microsoft.Recognizers.Text.DateTime
             return result;
         }
 
+        protected DateTimeResolutionResult MatchNextNextWeekday(string text, DateObject reference)
+        {
+            var result = new DateTimeResolutionResult();
+            var cnConfig = this.config as ChineseDateParserConfiguration;
+            if (cnConfig != null)
+            {
+                var match = cnConfig.NextNextRegex.MatchExact(text, trim: true);
+                if (match.Success)
+                {
+                    var weekdayKey = match.Groups["weekday"].Value;
+                    var value = reference.Next((DayOfWeek)this.config.DayOfWeek[weekdayKey]);
+                    value = value.Next((DayOfWeek)this.config.DayOfWeek[weekdayKey]);
+
+                    result.Timex = DateTimeFormatUtil.LuisDate(value);
+                    result.FutureValue = result.PastValue = DateObject.MinValue.SafeCreateFromValue(value.Year, value.Month, value.Day);
+                    result.Success = true;
+                }
+            }
+
+            return result;
+        }
+
         protected DateTimeResolutionResult MatchThisWeekday(string text, DateObject reference)
         {
             var result = new DateTimeResolutionResult();
@@ -528,6 +561,29 @@ namespace Microsoft.Recognizers.Text.DateTime
                 result.Timex = DateTimeFormatUtil.LuisDate(value);
                 result.FutureValue = result.PastValue = DateObject.MinValue.SafeCreateFromValue(value.Year, value.Month, value.Day);
                 result.Success = true;
+            }
+
+            return result;
+        }
+
+        protected DateTimeResolutionResult MatchLastLastWeekday(string text, DateObject reference)
+        {
+            var result = new DateTimeResolutionResult();
+            var cnConfig = this.config as ChineseDateParserConfiguration;
+            if (cnConfig != null)
+            {
+                var match = cnConfig.LastLastRegex.MatchExact(text, trim: true);
+
+                if (match.Success)
+                {
+                    var weekdayKey = match.Groups["weekday"].Value;
+                    var value = reference.Last((DayOfWeek)this.config.DayOfWeek[weekdayKey]);
+                    value = value.Last((DayOfWeek)this.config.DayOfWeek[weekdayKey]);
+
+                    result.Timex = DateTimeFormatUtil.LuisDate(value);
+                    result.FutureValue = result.PastValue = DateObject.MinValue.SafeCreateFromValue(value.Year, value.Month, value.Day);
+                    result.Success = true;
+                }
             }
 
             return result;

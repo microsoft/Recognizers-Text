@@ -582,6 +582,54 @@
     ]
   },
   {
+    "Input": "马拉松在下下周日举行",
+    "Context": {
+      "ReferenceDateTime": "2024-11-15T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "下下周日",
+        "Type": "date",
+        "Value": {
+          "Timex": "2024-12-01",
+          "FutureResolution": {
+            "date": "2024-12-01"
+          },
+          "PastResolution": {
+            "date": "2024-12-01"
+          }
+        },
+        "Start": 4,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "任務是在上上個週三完成的",
+    "Context": {
+      "ReferenceDateTime": "2024-11-15T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "上上個週三",
+        "Type": "date",
+        "Value": {
+          "Timex": "2024-10-30",
+          "FutureResolution": {
+            "date": "2024-10-30"
+          },
+          "PastResolution": {
+            "date": "2024-10-30"
+          }
+        },
+        "Start": 4,
+        "Length": 5
+      }
+    ]
+  },
+  {
     "Input": "12号",
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"

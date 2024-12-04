@@ -101,6 +101,30 @@
     ]
   },
   {
+    "Input": "我是上上周回来的",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "上上周",
+        "Type": "daterange",
+        "Start": 2,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "你上上個週末干嘛了",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "上上個週末",
+        "Type": "daterange",
+        "Start": 1,
+        "Length": 5
+      }
+    ]
+  },
+  {
     "Input": "下个月完工",
     "Results": [
       {

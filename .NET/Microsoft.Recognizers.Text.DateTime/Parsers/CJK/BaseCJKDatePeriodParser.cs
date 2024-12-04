@@ -1023,8 +1023,10 @@ namespace Microsoft.Recognizers.Text.DateTime
                 }
 
                 // In Chinese, "下" means next, "下下周" means next next week, "下下周末" means next next weekend, need to check whether the text match "下下"
+                // "上" means last, "上上周" means last last week, "上上周末" means last last weekend, need to check whether the text match "上上"
                 ChineseDatePeriodParserConfiguration config = this.config as ChineseDatePeriodParserConfiguration;
                 bool nextNextMatch = config == null ? false : config.NextNextRegex.Match(trimmedText).Success;
+                bool lastlastMatch = config == null ? false : config.LastLastRegex.Match(trimmedText).Success;
 
                 var nextMatch = this.config.NextRegex.Match(trimmedText);
                 var lastMatch = this.config.LastRegex.Match(trimmedText);
@@ -1080,6 +1082,11 @@ namespace Microsoft.Recognizers.Text.DateTime
                     {
                         // If it is Chinese "下下周" (next next week), "下下周末" (next next weekend), then swift is 2
                         swift = 2;
+                    }
+                    else if (lastlastMatch)
+                    {
+                        // If it is Chinese "上上周" (last last week), "上上周末" (last last weekend), then swift is -2
+                        swift = -2;
                     }
                     else if (nextMatch.Success)
                     {
