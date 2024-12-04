@@ -38,6 +38,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
             SimpleCasesRegex = ChineseDatePeriodExtractorConfiguration.SimpleCasesRegex;
             ThisRegex = ChineseDatePeriodExtractorConfiguration.ThisRegex;
             NextNextRegex = ChineseDatePeriodExtractorConfiguration.NextNextRegex;
+            LastLastRegex = ChineseDatePeriodExtractorConfiguration.LastLastRegex;
             NextRegex = ChineseDatePeriodExtractorConfiguration.NextRegex;
             LastRegex = ChineseDatePeriodExtractorConfiguration.LastRegex;
             YearToYear = ChineseDatePeriodExtractorConfiguration.YearToYear;
@@ -123,6 +124,8 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
         public Regex ThisRegex { get; }
 
         public Regex NextNextRegex { get; }
+
+        public Regex LastLastRegex { get; }
 
         public Regex NextRegex { get; }
 

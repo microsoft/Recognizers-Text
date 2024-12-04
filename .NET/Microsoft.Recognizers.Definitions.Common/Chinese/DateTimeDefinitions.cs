@@ -42,6 +42,8 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public static readonly string DateThisRegex = $@"(这个|这一个|这|这一|本){WeekDayRegex}";
       public static readonly string DateLastRegex = $@"(上一个|上个|上一|上|最后一个|最后)(的)?{WeekDayRegex}";
       public static readonly string DateNextRegex = $@"(下一个|下个|下一|下)(的)?{WeekDayRegex}";
+      public static readonly string DateNextNextRegex = $@"(下下|下下[个個]){WeekDayRegex}";
+      public static readonly string DateLastLastRegex = $@"(上上|上上[个個]){WeekDayRegex}";
       public const string WeekWithWeekDayRangeRegex = @"^[.]";
       public const string WoMLastRegex = @"最后一";
       public const string WoMPreviousRegex = @"上个";
@@ -78,7 +80,8 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public const string DatePeriodThisRegex = @"这个|这一个|这|这一|本";
       public const string DatePeriodLastRegex = @"上个|上一个|上|上一";
       public const string DatePeriodNextRegex = @"下个|下一个|下|下一";
-      public const string DatePeriodNextNextRegex = @"下下";
+      public const string DatePeriodNextNextRegex = @"下下|下下[个個]";
+      public const string DatePeriodLastLastRegex = @"上上|上上[个個]";
       public static readonly string RelativeMonthRegex = $@"(?<relmonth>({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})\s*月)";
       public const string HalfYearRegex = @"((?<firstHalf>(上|前)半年)|(?<secondHalf>(下|后)半年))";
       public static readonly string YearRegex = $@"(({YearNumRegex})(\s*年)?|({SimpleYearRegex})\s*年){HalfYearRegex}?";
@@ -90,7 +93,7 @@ namespace Microsoft.Recognizers.Definitions.Chinese
       public static readonly string YearAndMonth = $@"({DatePeriodYearInCJKRegex}|{YearRegex}|(?<yearrel>明年|今年|去年))\s*({MonthRegex}|的?(?<cardinal>第一|第二|第三|第四|第五|第六|第七|第八|第九|第十|第十一|第十二|最后一)\s*个月\s*)";
       public static readonly string SimpleYearAndMonth = $@"({YearNumRegex}[/\\\-]{MonthNumRegex}\b$)";
       public static readonly string PureNumYearAndMonth = $@"({YearRegexInNumber}\s*[-\.\/]\s*{MonthNumRegex})|({MonthNumRegex}\s*\/\s*{YearRegexInNumber})";
-      public static readonly string OneWordPeriodRegex = $@"(((?<yearrel>(明|今|去)年)\s*)?{MonthRegex}|({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextNextRegex}|{DatePeriodNextRegex})(?<halfTag>半)?\s*(周末|周|月|年)|周末|(今|明|去|前|后)年(\s*{HalfYearRegex})?)";
+      public static readonly string OneWordPeriodRegex = $@"(((?<yearrel>(明|今|去)年)\s*)?{MonthRegex}|({DatePeriodThisRegex}|{DatePeriodLastLastRegex}|{DatePeriodLastRegex}|{DatePeriodNextNextRegex}|{DatePeriodNextRegex})(?<halfTag>半)?\s*([周週]末|[周週]|月|年)|[周週]末|(今|明|去|前|后)年(\s*{HalfYearRegex})?)";
       public const string LaterEarlyPeriodRegex = @"^[.]";
       public const string DatePointWithAgoAndLater = @"^[.]";
       public static readonly string WeekOfMonthRegex = $@"(?<wom>{MonthSuffixRegex}的(?<cardinal>第一|第二|第三|第四|第五|最后一)\s*周\s*)";
@@ -286,7 +289,8 @@ namespace Microsoft.Recognizers.Definitions.Chinese
         };
       public static readonly IList<string> WeekendTerms = new List<string>
         {
-            @"周末"
+            @"周末",
+            @"週末"
         };
       public static readonly IList<string> WeekTerms = new List<string>
         {
