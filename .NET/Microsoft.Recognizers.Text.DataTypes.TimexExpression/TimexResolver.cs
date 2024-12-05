@@ -26,54 +26,53 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 
         private static List<Resolution.Entry> ResolveTimex(TimexProperty timex, DateObject date)
         {
-            var types = timex.Types.Count != 0 ? timex.Types : TimexInference.Infer(timex);
-
-            if (types.Contains(Constants.TimexTypes.DateTimeRange))
+            if (timex.IsDateTimeRange)
             {
                 return ResolveDateTimeRange(timex, date);
             }
 
-            if (types.Contains(Constants.TimexTypes.Definite) && types.Contains(Constants.TimexTypes.Time))
+            if (timex.IsDefinite)
             {
-                return ResolveDefiniteTime(timex, date);
+
+                if (timex.IsTime)
+                {
+                    return ResolveDefiniteTime(timex, date);
+                }
+
+                if (timex.IsDateRange)
+                {
+                    return ResolveDefiniteDateRange(timex, date);
+                }
+
+                return ResolveDefinite(timex);
             }
 
-            if (types.Contains(Constants.TimexTypes.Definite) && types.Contains(Constants.TimexTypes.DateRange))
-            {
-                return ResolveDefiniteDateRange(timex, date);
-            }
-
-            if (types.Contains(Constants.TimexTypes.DateRange))
+            if (timex.IsDateRange)
             {
                 return ResolveDateRange(timex, date);
             }
 
-            if (types.Contains(Constants.TimexTypes.Definite))
-            {
-                return ResolveDefinite(timex);
-            }
-
-            if (types.Contains(Constants.TimexTypes.TimeRange))
+            if (timex.IsTimeRange)
             {
                 return ResolveTimeRange(timex, date);
             }
 
-            if (types.Contains(Constants.TimexTypes.DateTime))
+            if (timex.IsDateTime)
             {
                 return ResolveDateTime(timex, date);
             }
 
-            if (types.Contains(Constants.TimexTypes.Duration))
+            if (timex.IsDuration)
             {
                 return ResolveDuration(timex);
             }
 
-            if (types.Contains(Constants.TimexTypes.Date))
+            if (timex.IsDate)
             {
                 return ResolveDate(timex, date);
             }
 
-            if (types.Contains(Constants.TimexTypes.Time))
+            if (timex.IsTime)
             {
                 return ResolveTime(timex, date);
             }
@@ -308,11 +307,11 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
                 var day = timex.DayOfWeek == 7 ? DayOfWeek.Sunday : (DayOfWeek)timex.DayOfWeek;
                 if (isBefore)
                 {
-                    start = TimexDateHelpers.DateOfLastDay(day, date);
+                    start = TimexDateHelpers.DateOfLastDay(date, day);
                 }
                 else
                 {
-                    start = TimexDateHelpers.DateOfNextDay(day, date);
+                    start = TimexDateHelpers.DateOfNextDay(date, day);
                 }
             }
             else

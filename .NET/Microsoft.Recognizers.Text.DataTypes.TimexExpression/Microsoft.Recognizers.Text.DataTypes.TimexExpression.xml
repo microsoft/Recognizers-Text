@@ -4,6 +4,88 @@
         <name>Microsoft.Recognizers.Text.DataTypes.TimexExpression</name>
     </assembly>
     <members>
+        <member name="M:Microsoft.Recognizers.Text.DataTypes.TimexExpression.TimexDateHelpers.IsSameDate(System.DateTime,System.DateTime)">
+            <summary>
+            Compares the year, month and day of two date objects.
+            </summary>
+            <param name="dateX">The first date to compare.</param>
+            <param name="dateY">The second date to compare.</param>
+            <returns>Whether the date parts of the two date objects match.</returns>
+        </member>
+        <member name="M:Microsoft.Recognizers.Text.DataTypes.TimexExpression.TimexDateHelpers.IsTomorrow(System.DateTime,System.DateTime)">
+            <summary>
+            Check if this is the day after <paramref name="referenceDate"/>.
+            </summary>
+            <param name="date">The date to check.</param>
+            <param name="referenceDate">The reference date.</param>
+            <returns>True if <paramref name="date" /> is the day after <paramref name="referenceDate"/>.</returns>
+        </member>
+        <member name="M:Microsoft.Recognizers.Text.DataTypes.TimexExpression.TimexDateHelpers.IsYesterday(System.DateTime,System.DateTime)">
+            <summary>
+            Check if this is the day before <paramref name="referenceDate"/>.
+            </summary>
+            <param name="date">The date to check.</param>
+            <param name="referenceDate">The reference date.</param>
+            <returns>True if <paramref name="date" /> is the day before <paramref name="referenceDate"/>.</returns>
+        </member>
+        <member name="M:Microsoft.Recognizers.Text.DataTypes.TimexExpression.TimexDateHelpers.IsNextYear(System.DateTime,System.DateTime)">
+            <summary>
+            Check if this is the year after <paramref name="referenceDate"/>.
+            </summary>
+            <param name="date">The date to check.</param>
+            <param name="referenceDate">The reference date.</param>
+            <returns>True if <paramref name="date" /> is the year after <paramref name="referenceDate"/>.</returns>
+        </member>
+        <member name="M:Microsoft.Recognizers.Text.DataTypes.TimexExpression.TimexDateHelpers.IsLastYear(System.DateTime,System.DateTime)">
+            <summary>
+            Check if this is the year before <paramref name="referenceDate"/>.
+            </summary>
+            <param name="date">The date to check.</param>
+            <param name="referenceDate">The reference date.</param>
+            <returns>True if <paramref name="date" /> is the year before <paramref name="referenceDate"/>.</returns>
+        </member>
+        <member name="M:Microsoft.Recognizers.Text.DataTypes.TimexExpression.TimexDateHelpers.IsNextMonth(System.DateTime,System.DateTime)">
+            <summary>
+            Check if this is the month after <paramref name="referenceDate"/>.
+            </summary>
+            <param name="date">The date to check.</param>
+            <param name="referenceDate">The reference date.</param>
+            <returns>True if <paramref name="date" /> is the month after <paramref name="referenceDate"/>.</returns>
+        </member>
+        <member name="M:Microsoft.Recognizers.Text.DataTypes.TimexExpression.TimexDateHelpers.IsLastMonth(System.DateTime,System.DateTime)">
+            <summary>
+            Check if this is the month before <paramref name="referenceDate"/>.
+            </summary>
+            <param name="date">The date to check.</param>
+            <param name="referenceDate">The reference date.</param>
+            <returns>True if <paramref name="date" /> is the month before <paramref name="referenceDate"/>.</returns>
+        </member>
+        <member name="M:Microsoft.Recognizers.Text.DataTypes.TimexExpression.TimexDateHelpers.IsNextWeek(System.DateTime,System.DateTime)">
+            <summary>
+            Check if this is the week after <paramref name="referenceDate"/>.
+            </summary>
+            <param name="date">The date to check.</param>
+            <param name="referenceDate">The reference date.</param>
+            <returns>True if <paramref name="date" /> is the week after <paramref name="referenceDate"/>.</returns>
+        </member>
+        <member name="M:Microsoft.Recognizers.Text.DataTypes.TimexExpression.TimexDateHelpers.IsLastWeek(System.DateTime,System.DateTime)">
+            <summary>
+            Check if the <paramref name="date"/> is the week before <paramref name="referenceDate"/>.
+            </summary>
+            <param name="date">The date to check.</param>
+            <param name="referenceDate">The reference date.</param>
+            <returns>True if <paramref name="date" /> is the week before <paramref name="referenceDate"/>.</returns>
+        </member>
+        <member name="M:Microsoft.Recognizers.Text.DataTypes.TimexExpression.TimexDateHelpers.DateOfLastDay(System.DateTime,System.DayOfWeek)">
+            <summary>
+            Get the date of <paramref name="day"/> before the <paramref name="referenceDate"/>.
+            For example, if the <paramref name="referenceDate"/> is a Thursday and <paramref name="day"/> is Wednesday, this would return the day before <paramref name="referenceDate"/>.
+            If the <paramref name="referenceDate"/> is a Wednesday and <paramref name="day"/> is Thursday, this would return the thursday of the week before <paramref name="referenceDate"/>.
+            </summary>
+            <param name="referenceDate">The reference date to calculate the day of the week from.</param>
+            <param name="day">The day of the week.</param>
+            <returns>The date corresponding to the day of the week before the reference date.</returns>
+        </member>
         <member name="F:Microsoft.Recognizers.Text.DataTypes.TimexExpression.TimexUnit.Year">
             <summary>
             Year

@@ -3,7 +3,6 @@
 
 using System.Collections.Generic;
 using System.Globalization;
-using System.Text;
 
 namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
 {
@@ -11,51 +10,48 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
     {
         public static string Format(TimexProperty timex)
         {
-            var types = timex.Types.Count != 0 ? timex.Types : TimexInference.Infer(timex);
-
-            if (types.Contains(Constants.TimexTypes.Present))
+            if (timex.IsPresent)
             {
                 return "PRESENT_REF";
             }
 
-            if ((types.Contains(Constants.TimexTypes.DateTimeRange) || types.Contains(Constants.TimexTypes.DateRange) ||
-                 types.Contains(Constants.TimexTypes.TimeRange)) && types.Contains(Constants.TimexTypes.Duration))
+            if (timex.IsDuration && (timex.IsDateTimeRange || timex.IsDateRange || timex.IsTimeRange))
             {
                 var range = TimexHelpers.ExpandDateTimeRange(timex);
                 return $"({Format(range.Start)},{Format(range.End)},{Format(range.Duration)})";
             }
 
-            if (types.Contains(Constants.TimexTypes.DateTimeRange))
+            if (timex.IsDateTimeRange)
             {
                 return $"{FormatDate(timex)}{FormatTimeRange(timex)}";
             }
 
-            if (types.Contains(Constants.TimexTypes.DateRange))
+            if (timex.IsDateRange)
             {
                 return $"{FormatDateRange(timex)}";
             }
 
-            if (types.Contains(Constants.TimexTypes.TimeRange))
+            if (timex.IsTimeRange)
             {
                 return $"{FormatTimeRange(timex)}";
             }
 
-            if (types.Contains(Constants.TimexTypes.DateTime))
+            if (timex.IsDateTime)
             {
                 return $"{FormatDate(timex)}{FormatTime(timex)}";
             }
 
-            if (types.Contains(Constants.TimexTypes.Duration))
+            if (timex.IsDuration)
             {
                 return $"{FormatDuration(timex)}";
             }
 
-            if (types.Contains(Constants.TimexTypes.Date))
+            if (timex.IsDate)
             {
                 return $"{FormatDate(timex)}";
             }
 
-            if (types.Contains(Constants.TimexTypes.Time))
+            if (timex.IsTime)
             {
                 return $"{FormatTime(timex)}";
             }
