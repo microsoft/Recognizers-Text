@@ -48,6 +48,12 @@ DateLastRegex: !nestedRegex
 DateNextRegex: !nestedRegex
   def: (下一个|下个|下一|下)(的)?{WeekDayRegex}
   references: [WeekDayRegex]
+DateNextNextRegex: !nestedRegex
+  def: (下下|下下[个個]){WeekDayRegex}
+  references: [WeekDayRegex]
+DateLastLastRegex: !nestedRegex
+  def: (上上|上上[个個]){WeekDayRegex}
+  references: [WeekDayRegex]
 WeekWithWeekDayRangeRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in Japanese
   def: ^[.]
@@ -150,7 +156,9 @@ DatePeriodLastRegex: !simpleRegex
 DatePeriodNextRegex: !simpleRegex
   def: 下个|下一个|下|下一
 DatePeriodNextNextRegex: !simpleRegex
-  def: 下下
+  def: 下下|下下[个個]
+DatePeriodLastLastRegex: !simpleRegex
+  def: 上上|上上[个個]
 RelativeMonthRegex: !nestedRegex
   def: (?<relmonth>({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextRegex})\s*月)
   references: [DatePeriodThisRegex, DatePeriodLastRegex, DatePeriodNextRegex]
@@ -183,8 +191,8 @@ PureNumYearAndMonth: !nestedRegex
   def: ({YearRegexInNumber}\s*[-\.\/]\s*{MonthNumRegex})|({MonthNumRegex}\s*\/\s*{YearRegexInNumber})
   references: [YearRegexInNumber, MonthNumRegex]
 OneWordPeriodRegex: !nestedRegex
-  def: (((?<yearrel>(明|今|去)年)\s*)?{MonthRegex}|({DatePeriodThisRegex}|{DatePeriodLastRegex}|{DatePeriodNextNextRegex}|{DatePeriodNextRegex})(?<halfTag>半)?\s*(周末|周|月|年)|周末|(今|明|去|前|后)年(\s*{HalfYearRegex})?)
-  references: [MonthRegex, DatePeriodThisRegex, DatePeriodLastRegex, DatePeriodNextNextRegex, DatePeriodNextRegex, HalfYearRegex]
+  def: (((?<yearrel>(明|今|去)年)\s*)?{MonthRegex}|({DatePeriodThisRegex}|{DatePeriodLastLastRegex}|{DatePeriodLastRegex}|{DatePeriodNextNextRegex}|{DatePeriodNextRegex})(?<halfTag>半)?\s*([周週]末|[周週]|月|年)|[周週]末|(今|明|去|前|后)年(\s*{HalfYearRegex})?)
+  references: [MonthRegex, DatePeriodThisRegex, DatePeriodLastLastRegex, DatePeriodLastRegex, DatePeriodNextNextRegex, DatePeriodNextRegex, HalfYearRegex]
 LaterEarlyPeriodRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in Japanese
   def: ^[.]
@@ -567,6 +575,7 @@ WeekendTerms: !list
   types: [ string ]
   entries:
     - 周末
+    - 週末
 WeekTerms: !list
   types: [ string ]
   entries:

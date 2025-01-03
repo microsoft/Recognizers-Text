@@ -619,6 +619,57 @@
     ]
   },
   {
+    "Input": "我是上上周回来的",
+    "Context": {
+      "ReferenceDateTime": "2024-11-15T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "上上周",
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2024-W44",
+              "type": "daterange",
+              "start": "2024-10-28",
+              "end": "2024-11-04"
+            }
+          ]
+        },
+        "Start": 2,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "你上上個週末干嘛了",
+    "Context": {
+      "ReferenceDateTime": "2024-11-15T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "上上個週末",
+        "TypeName": "datetimeV2.daterange",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2024-W44-WE",
+              "type": "daterange",
+              "start": "2024-11-02",
+              "end": "2024-11-04"
+            }
+          ]
+        },
+        "Start": 1,
+        "End": 5
+      }
+    ]
+  },
+
+  {
     "Input": "后1年",
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
@@ -2365,6 +2416,54 @@
         },
         "Start": 0,
         "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "马拉松在下下周日举行",
+    "Context": {
+      "ReferenceDateTime": "2024-11-15T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "下下周日",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2024-12-01",
+              "type": "date",
+              "value": "2024-12-01"
+            }
+          ]
+        },
+        "Start": 4,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "任務是在上上個週三完成的",
+    "Context": {
+      "ReferenceDateTime": "2024-11-15T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "上上個週三",
+        "TypeName": "datetimeV2.date",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "2024-10-30",
+              "type": "date",
+              "value": "2024-10-30"
+            }
+          ]
+        },
+        "Start": 4,
+        "End": 8
       }
     ]
   },

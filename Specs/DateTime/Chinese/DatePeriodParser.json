@@ -252,6 +252,58 @@
     ]
   },
   {
+    "Input": "我是上上周回来的",
+    "Context": {
+      "ReferenceDateTime": "2024-11-15T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "上上周",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2024-W44",
+          "FutureResolution": {
+            "startDate": "2024-10-28",
+            "endDate": "2024-11-04"
+          },
+          "PastResolution": {
+            "startDate": "2024-10-28",
+            "endDate": "2024-11-04"
+          }
+        },
+        "Start": 2,
+        "Length": 3
+      }
+    ]
+  },
+  {
+    "Input": "你上上個週末干嘛了",
+    "Context": {
+      "ReferenceDateTime": "2024-11-15T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "上上個週末",
+        "Type": "daterange",
+        "Value": {
+          "Timex": "2024-W44-WE",
+          "FutureResolution": {
+            "startDate": "2024-11-02",
+            "endDate": "2024-11-04"
+          },
+          "PastResolution": {
+            "startDate": "2024-11-02",
+            "endDate": "2024-11-04"
+          }
+        },
+        "Start": 1,
+        "Length": 5
+      }
+    ]
+  },
+  {
     "Input": "下个月完工",
     "Context": {
       "ReferenceDateTime": "2017-03-22T00:00:00"
