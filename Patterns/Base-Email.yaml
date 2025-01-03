@@ -6,7 +6,7 @@ IPv4Regex: !simpleRegex
 NormalSuffixRegex: !simpleRegex
   def: (([0-9a-z][-]*[0-9a-z]*\.)+(?<tld>[a-z][\-a-z]{0,22}[a-z]))
 EmailPrefix: !simpleRegex
-  def: (?("")("".+?(?<!\\)"")|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^\{\}\|~\w])*)(?<=[0-9a-z])))
+  def: (?("")("".+?(?<!\\)"")|(([0-9a-z]((\.(?!\.))|([-!#\$%&'\*\+/=\?\^\{\}\|~]|[a-zA-Z0-9_]))*)(?<=[0-9a-z])))
 EmailSuffix: !nestedRegex
   def: (?(\[)(\[{IPv4Regex}\])|{NormalSuffixRegex})
   references: [ IPv4Regex, NormalSuffixRegex ]
