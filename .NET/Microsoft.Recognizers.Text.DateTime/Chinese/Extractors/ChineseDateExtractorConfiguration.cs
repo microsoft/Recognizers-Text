@@ -27,6 +27,10 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
         public static readonly Regex NextRegex = new Regex(DateTimeDefinitions.DateNextRegex, RegexFlags, RegexTimeOut);
 
+        public static readonly Regex NextNextRegex = new Regex(DateTimeDefinitions.DateNextNextRegex, RegexFlags, RegexTimeOut);
+
+        public static readonly Regex LastLastRegex = new Regex(DateTimeDefinitions.DateLastLastRegex, RegexFlags, RegexTimeOut);
+
         public static readonly Regex SpecialDayRegex = new Regex(DateTimeDefinitions.SpecialDayRegex, RegexFlags, RegexTimeOut);
 
         public static readonly Regex WeekDayOfMonthRegex = new Regex(DateTimeDefinitions.WeekDayOfMonthRegex, RegexFlags, RegexTimeOut);
@@ -78,7 +82,7 @@ namespace Microsoft.Recognizers.Text.DateTime.Chinese
 
             ImplicitDateList = new List<Regex>
             {
-                LunarRegex, SpecialDayRegex, ThisRegex, LastRegex, NextRegex,
+                LunarRegex, SpecialDayRegex, ThisRegex, LastLastRegex, LastRegex, NextNextRegex, NextRegex,
                 WeekDayRegex, WeekDayOfMonthRegex, SpecialDate,
             };
 

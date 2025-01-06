@@ -246,6 +246,30 @@
     ]
   },
   {
+    "Input": "马拉松在下下周日举行",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "下下周日",
+        "Type": "date",
+        "Start": 4,
+        "Length": 4
+      }
+    ]
+  },
+  {
+    "Input": "任務是在上上個週三完成的",
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "上上個週三",
+        "Type": "date",
+        "Start": 4,
+        "Length": 5
+      }
+    ]
+  },
+  {
     "Input": "下次的12号",
     "Results": [
       {
