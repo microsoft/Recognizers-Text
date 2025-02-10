@@ -580,6 +580,69 @@
     ]
   },
   {
+    "Input": "dure 2 heures",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "2 heures",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT2H",
+          "FutureResolution": {
+            "duration": "7200"
+          },
+          "PastResolution": {
+            "duration": "7200"
+          }
+        },
+        "Start": 5,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "durera 2 heures 50 minutes",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "2 heures 50 minutes",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT2H50M",
+          "FutureResolution": {
+            "duration": "10200"
+          },
+          "PastResolution": {
+            "duration": "10200"
+          }
+        },
+        "Start": 7,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "durera douze heures et vingt minutes",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "douze heures et vingt minutes",
+        "Type": "duration",
+        "Value": {
+          "Timex": "PT12H20M",
+          "FutureResolution": {
+            "duration": "44400"
+          },
+          "PastResolution": {
+            "duration": "44400"
+          }
+        },
+        "Start": 7,
+        "Length": 29
+      }
+    ]
+  },
+  {
     "Input": "Je pars pour 3 heures",
     "NotSupported": "dotnet, javascript, python, java",
     "Results": [
