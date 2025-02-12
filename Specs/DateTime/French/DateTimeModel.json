@@ -2735,6 +2735,78 @@
     ]
   },
   {
+    "Input": "dure 2 heures",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2 heures",
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT2H",
+              "type": "duration",
+              "value": "7200"
+            }
+          ]
+        },
+        "Start": 5,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "durera 2 heures 50 minutes",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "2 heures 50 minutes",
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT2H50M",
+              "type": "duration",
+              "value": "10200"
+            }
+          ]
+        },
+        "Start": 7,
+        "End": 25
+      }
+    ]
+  },
+  {
+    "Input": "durera douze heures et vingt minutes",
+    "Context": {
+      "ReferenceDateTime": "2016-11-07T00:00:00"
+    },
+    "NotSupported": "java, javascript, python",
+    "Results": [
+      {
+        "Text": "douze heures et vingt minutes",
+        "TypeName": "datetimeV2.duration",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "PT12H20M",
+              "type": "duration",
+              "value": "44400"
+            }
+          ]
+        },
+        "Start": 7,
+        "End": 35
+      }
+    ]
+  },
+  {
     "Input": "Je vais partir pour la ville à 3 heures",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
