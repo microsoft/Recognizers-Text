@@ -250,7 +250,7 @@ namespace Microsoft.Recognizers.Definitions.French
       public const string WeekWithWeekDayRangeRegex = @"^\b$";
       public const string GeneralEndingRegex = @"^\b$";
       public const string MiddlePauseRegex = @"^\b$";
-      public const string DurationConnectorRegex = @"^\b$";
+      public const string DurationConnectorRegex = @"^\s*(?<connector>\s+|et|,)\s*$";
       public const string PrefixArticleRegex = @"^[\.]";
       public const string OrRegex = @"^\b$";
       public const string YearPlusNumberRegex = @"^\b$";
@@ -748,7 +748,7 @@ namespace Microsoft.Recognizers.Definitions.French
         };
       public static readonly Dictionary<string, string> AmbiguityTimeFiltersDict = new Dictionary<string, string>
         {
-            { @"heures?$", @"\b(pour|durée\s+de|pendant)\s+(\S+\s+){1,2}heures?\b" }
+            { @"\bheures?\b", @"\b(pour|durée\s+de|pendant|dure|durera)\s+(\S+\s+){1,2}heures?.*$" }
         };
       public static readonly IList<string> MorningTermList = new List<string>
         {

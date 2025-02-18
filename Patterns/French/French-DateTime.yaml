@@ -579,8 +579,7 @@ MiddlePauseRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^\b$
 DurationConnectorRegex: !simpleRegex
-  # TODO: modify below regex according to the counterpart in English
-  def: ^\b$
+  def: ^\s*(?<connector>\s+|et|,)\s*$
 PrefixArticleRegex: !simpleRegex
   # TODO: modify below regex according to the counterpart in English
   def: ^[\.]
@@ -1112,7 +1111,7 @@ AmbiguityFiltersDict: !dictionary
 AmbiguityTimeFiltersDict: !dictionary
   types: [ string, string ]
   entries:
-    'heures?$': '\b(pour|durée\s+de|pendant)\s+(\S+\s+){1,2}heures?\b'
+    '\bheures?\b': '\b(pour|durée\s+de|pendant|dure|durera)\s+(\S+\s+){1,2}heures?.*$'
 # For TimeOfDay resolution
 MorningTermList: !list
   types: [ string ]
