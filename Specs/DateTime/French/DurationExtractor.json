@@ -429,6 +429,42 @@
     ]
   },
   {
+    "Input": "dure 2 heures",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "2 heures",
+        "Type": "duration",
+        "Start": 5,
+        "Length": 8
+      }
+    ]
+  },
+  {
+    "Input": "durera 2 heures 50 minutes",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "2 heures 50 minutes",
+        "Type": "duration",
+        "Start": 7,
+        "Length": 19
+      }
+    ]
+  },
+  {
+    "Input": "durera douze heures et vingt minutes",
+    "NotSupported": "javascript, python, java",
+    "Results": [
+      {
+        "Text": "douze heures et vingt minutes",
+        "Type": "duration",
+        "Start": 7,
+        "Length": 29
+      }
+    ]
+  },
+  {
     "Input": "Je partirai pour quelqués minutes",
     "Results": [
       {
