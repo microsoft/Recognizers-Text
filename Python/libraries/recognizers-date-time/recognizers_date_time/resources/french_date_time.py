@@ -105,7 +105,7 @@ class FrenchDateTime:
     MinuteNumRegex = f'(?<minnum>((vingt|trente|quarante|cinquante)(\\s*(et|-)?\\s*))?(un|deux|trois|quatre|cinq|six|sept|huit|neuf)|onze|douze|treize|quatorze|quinze|seize|dix-sept|dix-huit|dix-neuf|vingt|trente|quarante|cinquante|dix)'
     DeltaMinuteNumRegex = f'(?<deltaminnum>((vingt|trente|quarante|cinquante)(\\s*(et|-)?\\s*))?(un|deux|trois|quatre|cinq|six|sept|huit|neuf)|onze|douze|treize|quatorze|quinze|seize|dix-sept|dix-huit|dix-neuf|vingt|trente|quarante|cinquante|dix)'
     OclockRegex = f'(?<oclock>heures?|h)'
-    PmRegex = f'(?<pm>(de l\'\\s*)?apr[eè]s(\\s*|-)midi|(du|ce|de|le)\\s*(soir([ée]e)?)|(dans l[ea]\\s+)?(nuit|soir[eé]e))'
+    PmRegex = f'(?<pm>(dans l\'\\s*|de l\'\\s*)?apr[eè]s(\\s*|-)midi|(du|ce|de|le)\\s*(soir([ée]e)?)|(dans l[ea]\\s+)?(nuit|soir[eé]e))'
     AmRegex = f'(?<am>(du|de|ce|(du|de|dans)\\s*l[ea]|le)?\\s*matin[ée]e|(du|de|ce|dans l[ea]|le)?\\s*matin)'
     LessThanOneHour = f'(?<lth>(une\\s+)?quart|trois quart(s)?|demie( heure)?|({BaseDateTime.DeltaMinuteRegex}|{DeltaMinuteNumRegex})(\\s+(minutes?|mins?))|(?<=heures?\\s+((et|moins)\\s+)?)({BaseDateTime.DeltaMinuteRegex}|{DeltaMinuteNumRegex}))'
     WrittenTimeRegex = f'(?<writtentime>{HourNumRegex}\\s+(heures\\s+)?(et\\s+)?{MinuteNumRegex}(?!\\s+heures)(\\s+(minutes?|mins?))?)'
