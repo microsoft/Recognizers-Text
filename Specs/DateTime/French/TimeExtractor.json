@@ -1839,7 +1839,7 @@
     ]
   },
   {
-    "Input": "Je vais rentrer à cinq heures et demie de l'après-midi",
+    "Input": "Je vais rentrer à cinq heures de l'après-midi",
     "NotSupported": "javascript,java",
     "Results": [
       {
