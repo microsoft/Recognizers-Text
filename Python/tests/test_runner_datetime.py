@@ -353,3 +353,6 @@ def get_option(option):
 
     return option_class['NONE']
 
+def test_test():
+    res = recognize_datetime("une heure du matin", "fr-fr")
+    print(res[0])

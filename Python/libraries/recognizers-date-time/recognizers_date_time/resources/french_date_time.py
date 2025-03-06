@@ -120,9 +120,7 @@ class FrenchDateTime(BaseDateTimeResource):
     MinuteNumRegex = '(?<minnum>((vingt|trente|quarante|cinquante)(\\s*(et|-)?\\s*))?(un|deux|trois|quatre|cinq|six|sept|huit|neuf)|onze|douze|treize|quatorze|quinze|seize|dix-sept|dix-huit|dix-neuf|vingt|trente|quarante|cinquante|dix)'
     DeltaMinuteNumRegex = '(?<deltaminnum>((vingt|trente|quarante|cinquante)(\\s*(et|-)?\\s*))?(un|deux|trois|quatre|cinq|six|sept|huit|neuf)|onze|douze|treize|quatorze|quinze|seize|dix-sept|dix-huit|dix-neuf|vingt|trente|quarante|cinquante|dix)'
     OclockRegex = "(?<oclock>heures?(?!\\s+d\')|h)"
-    PmRegex = (
-        '(?<pm>(dans l\'\\s*)?apr[eè]s(\\s*|-)midi|(du|ce|de|le)\\s*(soir([ée]e)?)|(dans l[ea]\\s+)?(nuit|soir[eé]e))'
-    )
+    PmRegex = f'(?<pm>(dans l\'\\s*|de l\'\\s*)?apr[eè]s(\\s*|-)midi|(du|ce|de|le)\\s*(soir([ée]e)?)|(dans l[ea]\\s+)?(nuit|soir[eé]e))'
     AmRegex = '(?<am>(du|de|ce|(du|de|dans)\\s*l[ea]|le)?\\s*matin[ée]e|(du|de|ce|dans l[ea]|le)?\\s*matin)'
     LessThanOneHour = f'(?<lth>(une\\s+)?quart|trois quart(s)?|demie( heure)?|({BaseDateTime.DeltaMinuteRegex}|{DeltaMinuteNumRegex})(\\s+(minutes?|mins?))|(?<=heures?\\s+((et|moins)\\s+)?)({BaseDateTime.DeltaMinuteRegex}|{DeltaMinuteNumRegex}))'
     WrittenTimeRegex = (
@@ -151,7 +149,7 @@ class FrenchDateTime(BaseDateTimeResource):
     TimeRegex3 = f'\\b{BaseDateTime.HourRegex}\\.{BaseDateTime.MinuteRegex}(\\s*{DescRegex})(\\s+{TimePrefix})?'
     TimeRegex4 = f'\\b{BasicTime}(\\s*{DescRegex})?(\\s+{TimePrefix})?\\s+{TimeSuffix}\\b'
     TimeRegex5 = f'\\b{BasicTime}((\\s*{DescRegex})(\\s+{TimePrefix})?|\\s+{TimePrefix})'
-    TimeRegex6 = f'{BasicTime}(\\s*{DescRegex})?\\s+{TimeSuffix}\\b'
+    TimeRegex6 = f'{BasicTime}(\\s*{DescRegex})?(\\s*heure(s)?)?\\s+{TimeSuffix}\\b'
     TimeRegex7 = f'\\b{TimeSuffix}\\s+[àa]\\s+{BasicTime}((\\s*{DescRegex})|\\b)'
     TimeRegex8 = f'\\b{TimeSuffix}\\s+{BasicTime}((\\s*{DescRegex})|\\b)'
     TimeRegex9 = f'\\b{PeriodHourNumRegex}\\s+{FivesRegex}((\\s*{DescRegex})|\\b)'
