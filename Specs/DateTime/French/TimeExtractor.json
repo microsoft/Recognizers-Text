@@ -1861,6 +1861,18 @@
         "Length": 27
       }
     ]
+  },
+   {
+    "Input": "une heure du matin",
+    "NotSupported": "javascript, java",
+    "Results": [
+      {
+        "Text": "une heure du matin",
+        "Type": "time",
+        "Start": 0,
+        "Length": 18
+      }
+    ]
   }
 ]
 

@@ -4129,6 +4129,27 @@
         "Length": 27
       }
     ]
+  },
+  {
+    "Input": "une heure du matin",
+    "NotSupported": "dotnet, javascript, java",
+    "Results": [
+      {
+        "Text": "une heure du matin",
+        "Type": "time",
+        "Value": {
+          "Timex": "T01",
+          "FutureResolution": {
+            "time": "01:00:00"
+          },
+          "PastResolution": {
+            "time": "01:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 18
+      }
+    ]
   }
 ]
 
