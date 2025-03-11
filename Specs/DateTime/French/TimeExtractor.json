@@ -1825,5 +1825,56 @@
         "Length": 3
       }
     ]
+  },
+  {
+    "Input": "Je vais rentrer à une heure de l'après-midi",
+    "NotSupported": "javascript,java",
+    "Results": [
+      {
+        "Text": "une heure de l'après-midi",
+        "Type": "time",
+        "Start": 18,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai à dix heures de l'après-midi",
+    "NotSupported": "javascript,java",
+    "Results": [
+      {
+        "Text": "dix heures de l'après-midi",
+        "Type": "time",
+        "Start": 14,
+        "Length": 26
+      }
+    ]
+  },
+  {
+    "Input": "Je vais rentrer à cinq heures de l'après-midi",
+    "NotSupported": "javascript,java",
+    "Results": [
+      {
+        "Text": "cinq heures de l'après-midi",
+        "Type": "time",
+        "Start": 18,
+        "Length": 27
+      }
+    ]
+  },
+   {
+    "Input": "une heure du matin",
+    "NotSupported": "javascript, java",
+    "Results": [
+      {
+        "Text": "une heure du matin",
+        "Type": "time",
+        "Start": 0,
+        "Length": 18
+      }
+    ]
   }
 ]
+
+
+

@@ -4064,5 +4064,93 @@
         "Length": 3
       }
     ]
+  },
+  {
+    "Input": "Je vais rentrer à une heure de l'après-midi",
+    "NotSupported": "javascript, java",
+    "Results": [
+      {
+        "Text": "une heure de l'après-midi",
+        "Type": "time",
+        "Value": {
+          "Timex": "T13",
+          "FutureResolution": {
+            "time": "13:00:00"
+          },
+          "PastResolution": {
+            "time": "13:00:00"
+          }
+        },
+        "Start": 18,
+        "Length": 25
+      }
+    ]
+  },
+  {
+    "Input": "Je partirai à dix heures de l'après-midi",
+    "NotSupported": "javascript, java",
+    "Results": [
+      {
+        "Text": "dix heures de l'après-midi" ,
+        "Type": "time",
+        "Value": {
+          "Timex": "T22",
+          "FutureResolution": {
+            "time": "22:00:00"
+          },
+          "PastResolution": {
+            "time": "22:00:00"
+          }
+        },
+        "Start": 14,
+        "Length": 25
+      }
+    ]
+
+
+  },
+  {
+    "Input": "Je vais rentrer à cinq heures de l'après-midi",
+    "NotSupported": "javascript, java",
+    "Results": [
+      {
+        "Text": "cinq heures de l'après-midi",
+        "Type": "time",
+        "Value": {
+          "Timex": "T17",
+          "FutureResolution": {
+            "time": "17:00:00"
+          },
+          "PastResolution": {
+            "time": "17:00:00"
+          }
+        },
+        "Start": 18,
+        "Length": 27
+      }
+    ]
+  },
+  {
+    "Input": "une heure du matin",
+    "NotSupported": "dotnet, javascript, java",
+    "Results": [
+      {
+        "Text": "une heure du matin",
+        "Type": "time",
+        "Value": {
+          "Timex": "T01",
+          "FutureResolution": {
+            "time": "01:00:00"
+          },
+          "PastResolution": {
+            "time": "01:00:00"
+          }
+        },
+        "Start": 0,
+        "Length": 18
+      }
+    ]
   }
 ]
+
+
