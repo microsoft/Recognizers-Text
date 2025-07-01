@@ -307,3 +307,4 @@ class ArabicDateParserConfiguration(DateParserConfiguration):
 
         return swift
 
+
