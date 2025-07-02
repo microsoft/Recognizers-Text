@@ -273,20 +273,16 @@ class ArabicDateParserConfiguration(DateParserConfiguration):
         trimmed_text = source.strip().lower()
         swift = 0
         matches = regex.search(self.relative_day_regex, source)
-        if trimmed_text == 'اليوم':
+        if trimmed_text in self.same_day_terms:
             swift = 0
-        elif trimmed_text == 'غداً':
+        elif trimmed_text in self.plus_one_day_terms:
             swift = 1
-        elif trimmed_text == 'أمس':
+        elif trimmed_text in self.minus_one_day_terms:
             swift = -1
-        elif trimmed_text.endswith('بعد غد'):
+        elif trimmed_text in self.plus_two_day_terms:
             swift = 2
-        elif trimmed_text.endswith('أول من أمس'):
+        elif trimmed_text in self.minus_two_day_terms:
             swift = -2
-        elif trimmed_text.endswith('بعد يوم'):
-            swift = 1
-        elif trimmed_text.endswith('اليوم السابق'):
-            swift = -1
         elif matches:
             swift = self.get_swift(source)
 
