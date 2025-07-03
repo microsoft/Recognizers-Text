@@ -186,6 +186,9 @@ class ArabicDateParserConfiguration(DateParserConfiguration):
     @property
     def minus_two_day_terms(self) -> List[str]:
         return self._minus_two_day_terms
+    @property
+    def plus_one_week_terms(self) -> List[str]:
+        return self._plus_one_week_terms
 
     @property
     def check_both_before_after(self) -> bool:
@@ -245,6 +248,7 @@ class ArabicDateParserConfiguration(DateParserConfiguration):
         self._next_prefix_regex = RegExpUtility.get_safe_reg_exp(ArabicDateTime.NextPrefixRegex)
         self._relative_day_regex = RegExpUtility.get_safe_reg_exp(ArabicDateTime.RelativeDayRegex)
 
+        self._plus_one_week_terms = ArabicDateTime.PlusOneWeekTerms
         self._minus_two_day_terms = ArabicDateTime.MinusTwoDayTerms
         self._plus_two_day_terms = ArabicDateTime.PlusTwoDayTerms
         self._minus_one_day_terms = ArabicDateTime.MinusOneDayTerms
@@ -283,6 +287,8 @@ class ArabicDateParserConfiguration(DateParserConfiguration):
             swift = 2
         elif trimmed_text in self.minus_two_day_terms:
             swift = -2
+        elif trimmed_text in self.plus_one_week_terms:
+            swift =- 7
         elif matches:
             swift = self.get_swift(source)
 
