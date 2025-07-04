@@ -288,7 +288,7 @@ class ArabicDateParserConfiguration(DateParserConfiguration):
         elif trimmed_text in self.minus_two_day_terms:
             swift = -2
         elif trimmed_text in self.plus_one_week_terms:
-            swift =- 7
+            swift = 7
         elif matches:
             swift = self.get_swift(source)
 

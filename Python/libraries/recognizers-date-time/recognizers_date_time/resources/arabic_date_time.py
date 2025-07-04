@@ -924,7 +924,7 @@ class ArabicDateTime(BaseDateTimeResource):
     SameDayTerms = ['اليوم', 'اليوم الحاضر', 'اليوم العصر']
     PlusOneDayTerms = ['غداً', 'الغد', 'غد', 'غدا']
     MinusOneDayTerms = ['أمس', 'البارحة', 'الأمس']
-    PlusTwoDayTerms = ['بعد الغد', 'بعد يومين', 'بعد يومان']
+    PlusTwoDayTerms = ['بعد الغد', 'بعد يومين', 'بعد يومان','test']
     MinusTwoDayTerms = ['أول أمس']
     PlusOneWeekTerms = ['بعد أسبوع', 'في أسبوع', 'الأسبوع القادم', 'بعد اسبوع', 'الاسبوع القادم']
     FutureTerms = [r'this', r'next']
