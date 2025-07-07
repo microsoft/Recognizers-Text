@@ -128,8 +128,7 @@ class ArabicDateTime(BaseDateTimeResource):
     LastDayDateRegex = f'(?=يوم\\s+)?({WeekDayRegex})\\s+(الماضي|السابق|الأخير)'
     LastWeekDateRegex = f'({ArabicWeekRegex})\\s+(الماضي|السابق|الأخير)\\s+({WeekDayRegex})'
     LastMonthYearDateRegex = '(قبل\\s+)(\\d+ )?((بضعة|بضع|عدة)\\s+)?(سنتين|شهرين|الشهور|أشهر|اشهر|شهر|الشهر|أيام|عامين|عام|أعوام|سنة|سنين|سنوات)'
-    # Arabic relative date patterns for "after X days/weeks" constructions
-    ArabicRelativeDateRegex = r'\b(بعد\s+(يومين|يومان|أسبوع|اسبوع)|في\s+(يومين|يومان|أسبوع|اسبوع)|قبل\s+(يومين|يومان|أسبوع|اسبوع))\b'
+    ArabicRelativeDateRegex = r'\b(بعد\s+(يومين|يومان|أسبوع|اسبوع)|في\s+(يومين|يومان|أسبوع|اسبوع))\b'
     SpecificDayRegex = f'((قبل|بعد)\\s+)?((اليوم|يوم)\\s+)?(((?<=ب)الأمس|أمس|الأمس|البارحة)|(أول أمس|آخر يوم|الماضي|السابق|الأخير|يومين)|({DayRegex}\\s+{MonthRegex})|{ArabicRelativeDateRegex})'
     LastDateRegex = f'({LastDayDateRegex}|{LastWeekDateRegex})'
     NextDayRegex = f'(هذا يوم\\s+|بعد\\s+)?(?=(ال)?يوم\\s+)?({WeekDayRegex})((\\s+)({NextRegex}))?'
