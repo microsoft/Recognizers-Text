@@ -353,3 +353,7 @@ def get_option(option):
 
     return option_class['NONE']
 
+
+def test_test():
+    res = recognize_datetime("بعد يومان", "ar")
+    print(res[0])

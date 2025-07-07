@@ -186,6 +186,7 @@ class ArabicDateParserConfiguration(DateParserConfiguration):
     @property
     def minus_two_day_terms(self) -> List[str]:
         return self._minus_two_day_terms
+
     @property
     def plus_one_week_terms(self) -> List[str]:
         return self._plus_one_week_terms
