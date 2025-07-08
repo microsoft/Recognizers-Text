@@ -352,8 +352,3 @@ def get_option(option):
         return option_class['SPLIT_DATE_AND_TIME']
 
     return option_class['NONE']
-
-
-def test_test():
-    res = recognize_datetime("بعد يومان", "ar")
-    print(res[0])
