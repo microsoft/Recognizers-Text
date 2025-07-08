@@ -136,7 +136,7 @@ class ArabicDateTime(BaseDateTimeResource):
     NextWeekRegex = f'(?=بعد )?(هذا )?({ArabicWeekRegex})\\s*({NextRegex})?\\s?(يوم)?(\\s+)?({WeekDayRegex})?'
     NextDateRegex = f'((يوم\\s)?{WeekDayRegex}(\\sمن)?\\s{NextWeekRegex})|{NextWeekRegex}|{NextDayRegex}'
     CardinalDayOfMonthRegex = f'(((?<=في )|(إلى |لل|يوم ))((((ال)?عاشر|(ال)?حادي(ة)? والعشرين|(ال)?ثاني(ة)? والعشرين|(ال)?ثالث(ة)? والعشرين|(ال)?رابع(ة)? والعشرين|(ال)?خامس(ة)? والعشرين|(ال)?سادس(ة)? والعشرين|(ال)?سابع(ة)? والعشرين|(ال)?ثامن(ة)? والعشرين|(ال)?تاسع(ة)? والعشرين|(ال)?ثلاثين|(ال)?حادي(ة)? والثلاثين|(ال)?أول|(ال)?ثاني|(ال)?ثالث|(ال)?رابع|(ال)?خامس|(ال)?سادس|(ال)?سابع|(ال)?ثامن|(ال)?تاسع))|((?!{DayRegex}){DayRegex})))|((?<=يوم )({DayRegex})[\\./-]\\s+({MonthRegex}))'
-    SpecialDayRegex = f'({NextWeekDayRegex}|{CardinalDayOfMonthRegex}|{SpecificDayRegex}|{LastMonthYearDateRegex}|{ArabicRelativeDateRegex})'
+    SpecialDayRegex = f'({ArabicRelativeDateRegex}|{NextWeekDayRegex}|{CardinalDayOfMonthRegex}|{SpecificDayRegex}|{LastMonthYearDateRegex})'
     SpecialDayWithNumRegex = (
         f'\\b((?<number>{WrittenNumRegex})\\s+days?\\s+from\\s+(?<day>yesterday|tomorrow|tmr|today))\\b'
     )
@@ -925,7 +925,7 @@ class ArabicDateTime(BaseDateTimeResource):
     SameDayTerms = ['اليوم', 'اليوم الحاضر', 'اليوم العصر']
     PlusOneDayTerms = ['غداً', 'الغد', 'غد', 'غدا']
     MinusOneDayTerms = ['أمس', 'البارحة', 'الأمس']
-    PlusTwoDayTerms = ['بعد الغد', 'بعد يومين', 'بعد يومان']
+    PlusTwoDayTerms = ['بعد الغد', 'بعد يومين', 'بعد يومان', 'بعد test']
     MinusTwoDayTerms = ['أول أمس']
     PlusOneWeekTerms = ['بعد أسبوع', 'في أسبوع', 'الأسبوع القادم', 'بعد اسبوع', 'الاسبوع القادم']
     FutureTerms = [r'this', r'next']
