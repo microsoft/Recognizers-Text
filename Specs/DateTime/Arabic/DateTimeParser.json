@@ -1387,7 +1387,7 @@
         "Text": "في يوم",
         "Start": 6,
         "Length": 5,
-        "Type": "date",
+        "Type": "datetime",
         "Value": {
           "Timex": "2016-11-08",
           "FutureResolution": {
@@ -1410,7 +1410,7 @@
         "Text": "في يومين",
         "Start": 6,
         "Length": 7,
-        "Type": "date",
+        "Type": "datetime",
         "Value": {
           "Timex": "2016-11-09",
           "FutureResolution": {
@@ -1433,7 +1433,7 @@
         "Text": "في يومان",
         "Start": 6,
         "Length": 7,
-        "Type": "date",
+        "Type": "datetime",
         "Value": {
           "Timex": "2016-11-09",
           "FutureResolution": {
@@ -1456,7 +1456,7 @@
         "Text": "في ثلاثة أيام",
         "Start": 6,
         "Length": 12,
-        "Type": "date",
+        "Type": "datetime",
         "Value": {
           "Timex": "2016-11-10",
           "FutureResolution": {
@@ -1479,7 +1479,7 @@
         "Text": "في أربعة أيام",
         "Start": 6,
         "Length": 12,
-        "Type": "date",
+        "Type": "datetime",
         "Value": {
           "Timex": "2016-11-11",
           "FutureResolution": {
@@ -1502,7 +1502,7 @@
         "Text": "في خمسة أيام",
         "Start": 6,
         "Length": 11,
-        "Type": "date",
+        "Type": "datetime",
         "Value": {
           "Timex": "2016-11-12",
           "FutureResolution": {
@@ -1525,7 +1525,7 @@
         "Text": "في ستة أيام",
         "Start": 6,
         "Length": 10,
-        "Type": "date",
+        "Type": "datetime",
         "Value": {
           "Timex": "2016-11-13",
           "FutureResolution": {
@@ -1548,7 +1548,7 @@
         "Text": "في سبعة أيام",
         "Start": 6,
         "Length": 11,
-        "Type": "date",
+        "Type": "datetime",
         "Value": {
           "Timex": "2016-11-14",
           "FutureResolution": {
@@ -1571,7 +1571,7 @@
         "Text": "في أسبوع",
         "Start": 6,
         "Length": 7,
-        "Type": "date",
+        "Type": "datetime",
         "Value": {
           "Timex": "2016-11-14",
           "FutureResolution": {
@@ -1594,7 +1594,7 @@
         "Text": "في اسبوع",
         "Start": 6,
         "Length": 7,
-        "Type": "date",
+        "Type": "datetime",
         "Value": {
           "Timex": "2016-11-14",
           "FutureResolution": {
@@ -1617,7 +1617,7 @@
         "Text": "بعد يوم",
         "Start": 6,
         "Length": 6,
-        "Type": "date",
+        "Type": "datetime",
         "Value": {
           "Timex": "2016-11-08",
           "FutureResolution": {
@@ -1640,7 +1640,7 @@
         "Text": "بعد يومين",
         "Start": 6,
         "Length": 8,
-        "Type": "date",
+        "Type": "datetime",
         "Value": {
           "Timex": "2016-11-09",
           "FutureResolution": {
@@ -1663,7 +1663,7 @@
         "Text": "بعد يومان",
         "Start": 6,
         "Length": 8,
-        "Type": "date",
+        "Type": "datetime",
         "Value": {
           "Timex": "2016-11-09",
           "FutureResolution": {
@@ -1686,7 +1686,7 @@
         "Text": "بعد ثلاثة أيام",
         "Start": 6,
         "Length": 13,
-        "Type": "date",
+        "Type": "datetime",
         "Value": {
           "Timex": "2016-11-10",
           "FutureResolution": {
@@ -1709,7 +1709,7 @@
         "Text": "بعد أربعة أيام",
         "Start": 6,
         "Length": 13,
-        "Type": "date",
+        "Type": "datetime",
         "Value": {
           "Timex": "2016-11-11",
           "FutureResolution": {
@@ -1732,7 +1732,7 @@
         "Text": "بعد خمسة أيام",
         "Start": 6,
         "Length": 12,
-        "Type": "date",
+        "Type": "datetime",
         "Value": {
           "Timex": "2016-11-12",
           "FutureResolution": {
@@ -1755,7 +1755,7 @@
         "Text": "بعد ستة أيام",
         "Start": 6,
         "Length": 11,
-        "Type": "date",
+        "Type": "datetime",
         "Value": {
           "Timex": "2016-11-13",
           "FutureResolution": {
@@ -1778,7 +1778,7 @@
         "Text": "بعد سبعة أيام",
         "Start": 6,
         "Length": 12,
-        "Type": "date",
+        "Type": "datetime",
         "Value": {
           "Timex": "2016-11-14",
           "FutureResolution": {
@@ -1801,7 +1801,7 @@
         "Text": "بعد أسبوع",
         "Start": 6,
         "Length": 8,
-        "Type": "date",
+        "Type": "datetime",
         "Value": {
           "Timex": "2016-11-14",
           "FutureResolution": {
@@ -1824,7 +1824,7 @@
         "Text": "بعد اسبوع",
         "Start": 6,
         "Length": 8,
-        "Type": "date",
+        "Type": "datetime",
         "Value": {
           "Timex": "2016-11-14",
           "FutureResolution": {
