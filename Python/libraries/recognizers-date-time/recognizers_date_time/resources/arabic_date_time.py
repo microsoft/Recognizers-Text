@@ -128,7 +128,7 @@ class ArabicDateTime(BaseDateTimeResource):
     LastDayDateRegex = f'(?=يوم\\s+)?({WeekDayRegex})\\s+(الماضي|السابق|الأخير)'
     LastWeekDateRegex = f'({ArabicWeekRegex})\\s+(الماضي|السابق|الأخير)\\s+({WeekDayRegex})'
     LastMonthYearDateRegex = '(قبل\\s+)(\\d+ )?((بضعة|بضع|عدة)\\s+)?(سنتين|شهرين|الشهور|أشهر|اشهر|شهر|الشهر|أيام|عامين|عام|أعوام|سنة|سنين|سنوات)'
-    ArabicRelativeDateRegex = r'\b(بعد\s+(يوم|يومين|يومان|ثلاثة\s+أيام|أربعة\s+أيام|خمسة\s+أيام|ستة\s+أيام|سبعة\s+أيام|أسبوع|اسبوع|أسبوعين|اسبوعين)|في\s+(يوم|يومين|يومان|ثلاثة\s+أيام|أربعة\s+أيام|خمسة\s+أيام|ستة\s+أيام|سبعة\s+أيام|أسبوع|اسبوع|أسبوعين|اسبوعين))\b'
+    ArabicRelativeDateRegex = r'\b(بعد\s+(يوم|يومين|يومان|ثلاثة\s+أيام|أربعة\s+أيام|خمسة\s+أيام|ستة\s+أيام|سبعة\s+أيام|أسبوع|اسبوع|أسبوعين|اسبوعين))\b'
     SpecificDayRegex = f'((قبل|بعد)\\s+)?((اليوم|يوم)\\s+)?(((?<=ب)الأمس|أمس|الأمس|البارحة)|(أول أمس|آخر يوم|الماضي|السابق|الأخير|يومين)|({DayRegex}\\s+{MonthRegex})|{ArabicRelativeDateRegex})'
     LastDateRegex = f'({LastDayDateRegex}|{LastWeekDateRegex})'
     NextDayRegex = f'(هذا يوم\\s+|بعد\\s+)?(?=(ال)?يوم\\s+)?({WeekDayRegex})((\\s+)({NextRegex}))?'
@@ -923,16 +923,15 @@ class ArabicDateTime(BaseDateTimeResource):
     DaytimeTermList = [r'daytime']
     NightTermList = [r'night']
     SameDayTerms = ['اليوم', 'اليوم الحاضر', 'اليوم العصر']
-    PlusOneDayTerms = ['غداً', 'الغد', 'غد', 'غدا', 'في يوم', 'بعد يوم']
+    PlusOneDayTerms = ['غداً', 'الغد', 'غد', 'غدا']
     MinusOneDayTerms = ['أمس', 'البارحة', 'الأمس']
-    PlusTwoDayTerms = ['بعد الغد', 'بعد يومين', 'بعد يومان', 'في يومين', 'في يومان']
+    PlusTwoDayTerms = ['بعد الغد', 'بعد يومين', 'بعد يومان']
     MinusTwoDayTerms = ['أول أمس']
-    PlusThreeDayTerms = ['في ثلاثة أيام', 'بعد ثلاثة أيام']
-    PlusFourDayTerms = ['في أربعة أيام', 'بعد أربعة أيام']
-    PlusFiveDayTerms = ['في خمسة أيام', 'بعد خمسة أيام']
-    PlusSixDayTerms = ['في ستة أيام', 'بعد ستة أيام']
-    PlusOneWeekTerms = ['بعد أسبوع', 'في أسبوع', 'الأسبوع القادم', 'بعد اسبوع', 'في اسبوع', 'الاسبوع القادم', 'بعد سبعة أيام', 'في سبعة أيام']
-    PlusTwoWeekTerms = ['بعد أسبوعين', 'في أسبوعين', 'بعد اسبوعين', 'في اسبوعين', 'بعد أسبوعين من الآن', 'بعد اسبوعين من الآن']
+    PlusThreeDayTerms = ['بعد ثلاثة أيام']
+    PlusFourDayTerms = ['بعد أربعة أيام']
+    PlusFiveDayTerms = ['بعد خمسة أيام']
+    PlusSixDayTerms = ['بعد ستة أيام']
+    PlusOneWeekTerms = ['بعد أسبوع', 'الأسبوع القادم', 'بعد اسبوع', 'الاسبوع القادم', 'بعد سبعة أيام']
     FutureTerms = [r'this', r'next']
     LastCardinalTerms = [r'الأخير']
     MonthTerms = [r'month']

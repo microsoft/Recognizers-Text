@@ -349,7 +349,7 @@
   },
   {
     "Input": "سأعود بعد أسبوعين من الآن",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": "بعد أسبوعين من الآن",
@@ -805,7 +805,7 @@
   },
   {
     "Input": "عدت في  يوم 27",
-    "NotSupportedByDesign": "java, javascript, python",
+    "NotSupportedByDesign": "java, javascript",
     "Results": [
       {
         "Text": " 27",
