@@ -932,6 +932,7 @@ class ArabicDateTime(BaseDateTimeResource):
     PlusFiveDayTerms = ['في خمسة أيام', 'بعد خمسة أيام']
     PlusSixDayTerms = ['في ستة أيام', 'بعد ستة أيام']
     PlusOneWeekTerms = ['بعد أسبوع', 'في أسبوع', 'الأسبوع القادم', 'بعد اسبوع', 'في اسبوع', 'الاسبوع القادم', 'بعد سبعة أيام', 'في سبعة أيام']
+    PlusTwoWeekTerms = ['بعد أسبوعين', 'في أسبوعين', 'بعد اسبوعين', 'في اسبوعين', 'بعد أسبوعين من الآن', 'بعد اسبوعين من الآن']
     FutureTerms = [r'this', r'next']
     LastCardinalTerms = [r'الأخير']
     MonthTerms = [r'month']
