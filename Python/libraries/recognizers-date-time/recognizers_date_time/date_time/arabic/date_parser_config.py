@@ -188,6 +188,26 @@ class ArabicDateParserConfiguration(DateParserConfiguration):
         return self._minus_two_day_terms
 
     @property
+    def plus_one_week_terms(self) -> List[str]:
+        return self._plus_one_week_terms
+
+    @property
+    def plus_three_day_terms(self) -> List[str]:
+        return self._plus_three_day_terms
+
+    @property
+    def plus_four_day_terms(self) -> List[str]:
+        return self._plus_four_day_terms
+
+    @property
+    def plus_five_day_terms(self) -> List[str]:
+        return self._plus_five_day_terms
+
+    @property
+    def plus_six_day_terms(self) -> List[str]:
+        return self._plus_six_day_terms
+
+    @property
     def check_both_before_after(self) -> bool:
         return self._check_both_before_after
 
@@ -245,11 +265,16 @@ class ArabicDateParserConfiguration(DateParserConfiguration):
         self._next_prefix_regex = RegExpUtility.get_safe_reg_exp(ArabicDateTime.NextPrefixRegex)
         self._relative_day_regex = RegExpUtility.get_safe_reg_exp(ArabicDateTime.RelativeDayRegex)
 
+        self._plus_one_week_terms = ArabicDateTime.PlusOneWeekTerms
         self._minus_two_day_terms = ArabicDateTime.MinusTwoDayTerms
         self._plus_two_day_terms = ArabicDateTime.PlusTwoDayTerms
         self._minus_one_day_terms = ArabicDateTime.MinusOneDayTerms
         self._plus_one_day_terms = ArabicDateTime.PlusOneDayTerms
         self._same_day_terms = ArabicDateTime.SameDayTerms
+        self._plus_three_day_terms = ArabicDateTime.PlusThreeDayTerms
+        self._plus_four_day_terms = ArabicDateTime.PlusFourDayTerms
+        self._plus_five_day_terms = ArabicDateTime.PlusFiveDayTerms
+        self._plus_six_day_terms = ArabicDateTime.PlusSixDayTerms
 
     def get_swift_month_or_year(self, source: str) -> int:
         trimmed_text = source.strip().lower()
@@ -283,6 +308,16 @@ class ArabicDateParserConfiguration(DateParserConfiguration):
             swift = 2
         elif trimmed_text in self.minus_two_day_terms:
             swift = -2
+        elif trimmed_text in self.plus_three_day_terms:
+            swift = 3
+        elif trimmed_text in self.plus_four_day_terms:
+            swift = 4
+        elif trimmed_text in self.plus_five_day_terms:
+            swift = 5
+        elif trimmed_text in self.plus_six_day_terms:
+            swift = 6
+        elif trimmed_text in self.plus_one_week_terms:
+            swift = 7
         elif matches:
             swift = self.get_swift(source)
 
