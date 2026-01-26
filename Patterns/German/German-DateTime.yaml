@@ -218,7 +218,7 @@ DateExtractor6: !nestedRegex
   def: ^[.]
   references: [ WeekDayRegex ]
 DateExtractor7: !nestedRegex
-  def: ({DayRegex}\s*[\.]\s*{MonthNumRegex}[\.]){BaseDateTime.CheckDecimalRegex}
+  def: \b({DayRegex}\s*[\.]\s*{MonthNumRegex}[\.]){BaseDateTime.CheckDecimalRegex}
   references: [ MonthNumRegex, DayRegex, BaseDateTime.CheckDecimalRegex ]
 DateExtractor8: !nestedRegex
   def: (?<=\b(am)\s+){DayRegex}[/\\\.]{MonthNumRegex}([/\\\.]{DateYearRegex})?{BaseDateTime.CheckDecimalRegex}\b
