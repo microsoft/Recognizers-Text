@@ -62,7 +62,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
         {
             var d = (date == default(DateObject)) ? DateObject.Now : date;
             d = d.AddDays(-7);
-            var start = TimexDateHelpers.DateOfNextDay(DayOfWeek.Monday, d);
+            var start = TimexDateHelpers.DateOfNextDay(d, DayOfWeek.Monday);
             var t = TimexProperty.FromDate(start);
             t.Days = 7;
             return t.TimexValue;
@@ -71,7 +71,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
         public static string NextWeek(DateObject date = default(DateObject))
         {
             var d = (date == default(DateObject)) ? DateObject.Now : date;
-            var start = TimexDateHelpers.DateOfNextDay(DayOfWeek.Monday, d);
+            var start = TimexDateHelpers.DateOfNextDay(d, DayOfWeek.Monday);
             var t = TimexProperty.FromDate(start);
             t.Days = 7;
             return t.TimexValue;
@@ -80,7 +80,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
         public static string LastWeek(DateObject date = default(DateObject))
         {
             var d = (date == default(DateObject)) ? DateObject.Now : date;
-            var start = TimexDateHelpers.DateOfLastDay(DayOfWeek.Monday, d);
+            var start = TimexDateHelpers.DateOfLastDay(d, DayOfWeek.Monday);
             start = start.AddDays(-7);
             var t = TimexProperty.FromDate(start);
             t.Days = 7;

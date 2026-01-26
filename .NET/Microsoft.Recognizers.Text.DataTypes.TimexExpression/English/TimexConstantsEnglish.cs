@@ -19,6 +19,10 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
         public const string This = "this";
         public const string Last = "last";
         public const string Next = "next";
+        public const string To = "to";
+        public const string Week = "week";
+        public const string Of = "of";
+
         public static readonly string[] Days =
         {
             "Monday",
@@ -79,7 +83,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression
             "first",
             "second",
             "third",
-            "forth",
+            "fourth",
         };
 
         public static readonly IDictionary<string, string> DayParts = new Dictionary<string, string>

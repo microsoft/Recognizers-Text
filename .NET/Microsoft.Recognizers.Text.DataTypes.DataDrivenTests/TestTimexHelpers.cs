@@ -93,7 +93,7 @@ namespace Microsoft.Recognizers.Text.DataTypes.TimexExpression.Tests
         public void DataTypes_Helpers_DateFromTimex()
         {
             var timex = new TimexProperty("2017-09-27");
-            var date = TimexHelpers.DateFromTimex(timex);
+            var date = TimexHelpers.DateTimeFromTimex(timex);
             Assert.AreEqual(new System.DateTime(2017, 9, 27), date);
         }
 
