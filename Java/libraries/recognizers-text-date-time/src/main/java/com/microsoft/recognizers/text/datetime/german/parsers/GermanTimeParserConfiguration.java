@@ -109,10 +109,9 @@ public class GermanTimeParserConfiguration extends BaseOptionsConfiguration impl
                 minStr = match.get().getGroup("deltaminnum").value;
                 deltaMin = numbers.getOrDefault(minStr, 0);
             }
-        }
-
-        if (trimmedPrefix.endsWith("zum")) {
-            deltaMin = -deltaMin;
+            if (trimmedPrefix.endsWith("vor")) {
+                deltaMin = -deltaMin;
+            }
         }
 
         min += deltaMin;
