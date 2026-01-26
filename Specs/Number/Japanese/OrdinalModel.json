@@ -1,7 +1,6 @@
 [
   {
     "Input": "だい12",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "だい12",
@@ -18,7 +17,6 @@
   },
   {
     "Input": "第二百五十",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "第二百五十",
@@ -35,7 +33,6 @@
   },
   {
     "Input": "だい二百五十",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "だい二百五十",
@@ -52,7 +49,6 @@
   },
   {
     "Input": "第２５０",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "第250",
@@ -69,7 +65,6 @@
   },
   {
     "Input": "だい２５０",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "だい250",
@@ -86,7 +81,6 @@
   },
   {
     "Input": "だい一億",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "だい一億",
@@ -103,7 +97,6 @@
   },
   {
     "Input": "第一億",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "第一億",
@@ -120,7 +113,6 @@
   },
   {
     "Input": "だい一万回だい十万回",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "だい一万",
@@ -198,7 +190,6 @@
   },
   {
     "Input": "第1位第2位第3位第4位",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "第1",
@@ -265,7 +256,6 @@
   },
   {
     "Input": "第三万回",
-    "NotSupported": "python",
     "Results": [
       {
         "Text": "第三万",
@@ -516,7 +506,7 @@
   {
     "Input": "三兆番目の数字はなんですか。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "三兆番目",
@@ -534,7 +524,7 @@
   {
     "Input": "百兆番目の数字はなんですか。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "百兆番目",
@@ -905,7 +895,7 @@
   },
   {
     "Input": "一兆番目の数字はなんですか。",
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "一兆番目",
@@ -1014,7 +1004,7 @@
   {
     "Input": "前から３０番目の席に座りなさい。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "30番目",
@@ -1032,7 +1022,7 @@
   {
     "Input": "前から２番目の席に座りなさい。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "2番目",
@@ -1050,7 +1040,7 @@
   {
     "Input": "前から２０番目の席に座りなさい。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "20番目",
@@ -1068,7 +1058,7 @@
   {
     "Input": "前から２５番目の席に座りなさい。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "25番目",
@@ -1104,7 +1094,7 @@
   {
     "Input": "２００番目の数字はなんですか。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "200番目",
@@ -1140,7 +1130,7 @@
   {
     "Input": "私は１番目のが好きです。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "1番目",
@@ -1158,7 +1148,7 @@
   {
     "Input": "１番目の単語を話しなさい。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "1番目",
@@ -1176,7 +1166,7 @@
   {
     "Input": "彼女は２位になりました。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "2位",
@@ -1262,7 +1252,7 @@
   {
     "Input": "前から１１番目の席に座りなさい。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "11番目",
@@ -1280,7 +1270,7 @@
   {
     "Input": "前から２１番目の席に座りなさい。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "21番目",
@@ -1298,7 +1288,7 @@
   {
     "Input": "１２５番目の数字はなんですか。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "125番目",
@@ -1407,7 +1397,7 @@
   {
     "Input": "前から30番目の席に座りなさい。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "30番目",
@@ -1425,7 +1415,7 @@
   {
     "Input": "前から2番目の席に座りなさい。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "2番目",
@@ -1443,7 +1433,7 @@
   {
     "Input": "前から20番目の席に座りなさい。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "20番目",
@@ -1461,7 +1451,7 @@
   {
     "Input": "前から25番目の席に座りなさい。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "25番目",
@@ -1497,7 +1487,7 @@
   {
     "Input": "200番目の数字はなんですか。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "200番目",
@@ -1551,7 +1541,7 @@
   {
     "Input": "1番目の単語を話しなさい。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "1番目",
@@ -1569,7 +1559,7 @@
   {
     "Input": "彼女は2位になりました。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "2位",
@@ -1655,7 +1645,7 @@
   {
     "Input": "前から11番目の席に座りなさい。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "11番目",
@@ -1673,7 +1663,7 @@
   {
     "Input": "前から21番目の席に座りなさい。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "21番目",
@@ -1691,7 +1681,7 @@
   {
     "Input": "125番目の数字はなんですか。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "125番目",

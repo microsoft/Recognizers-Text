@@ -975,7 +975,7 @@
   },
   {
     "Input": "2222.2222.22222.222",
-    "NotSupported": "javascript, python",
+    "NotSupported": "javascript",
     "Results": [
       {
         "Text": "2222",
@@ -1457,7 +1457,7 @@
   {
     "Input": "答えは１９２です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "192",
@@ -1493,7 +1493,7 @@
   {
     "Input": "上昇率は０．２３４５６０００です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "0.23456000",
@@ -1510,7 +1510,7 @@
   {
     "Input": "この答えは４．８００です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "4.800",
@@ -1527,7 +1527,7 @@
   {
     "Input": "この算数の問題の答えは、１０３と３分の２です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "103と3分の2",
@@ -1544,7 +1544,7 @@
   {
     "Input": "倍率は１６です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "16",
@@ -1561,7 +1561,7 @@
   {
     "Input": "宿題の３分の２が終わりました。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "3分の2",
@@ -1578,7 +1578,7 @@
   {
     "Input": "答えは１１６です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "116",
@@ -1595,7 +1595,7 @@
   {
     "Input": "答えは１０６です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "106",
@@ -1612,7 +1612,7 @@
   {
     "Input": "今のWTOの加盟国は１６１です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "161",
@@ -1663,7 +1663,7 @@
   {
     "Input": "鉛筆を３ダース買いました。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "3ダース",
@@ -1680,7 +1680,7 @@
   {
     "Input": "ペンが１ダース千円で売られています。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "1ダース",
@@ -1716,7 +1716,7 @@
   {
     "Input": "１，２３４，５６７は素数ではありません。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "1,234,567",
@@ -1733,7 +1733,7 @@
   {
     "Input": "１と２３４と５６７は有効な数字です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "1",
@@ -1770,7 +1770,7 @@
   {
     "Input": "答えは９．２３２１３１２です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "9.2321312",
@@ -1855,7 +1855,7 @@
   {
     "Input": "３は奇数です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "3",
@@ -1923,7 +1923,7 @@
   {
     "Input": "１は最小の正の整数です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "1",
@@ -1940,7 +1940,7 @@
   {
     "Input": "答えは１万です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "1万",
@@ -1957,7 +1957,7 @@
   {
     "Input": "答えは１０万です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "10万",
@@ -1974,7 +1974,7 @@
   {
     "Input": "答えは１００億です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "100億",
@@ -2008,7 +2008,7 @@
   {
     "Input": "答えは２００万です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "200万",
@@ -2025,7 +2025,7 @@
   {
     "Input": "答えは１兆です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "1兆",
@@ -2042,7 +2042,7 @@
   {
     "Input": "３は素数です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "3",
@@ -2059,7 +2059,7 @@
   {
     "Input": "答えは２１兆です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "21兆",
@@ -2076,7 +2076,7 @@
   {
     "Input": "答えは２１兆３００です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "21兆300",
@@ -2093,7 +2093,7 @@
   {
     "Input": "３３１は奇数です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "331",
@@ -2110,7 +2110,7 @@
   {
     "Input": "２０万２０００は実数です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "20万2000",
@@ -2127,7 +2127,7 @@
   {
     "Input": "２２００は奇数ではありません。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "2200",
@@ -2144,7 +2144,7 @@
   {
     "Input": "２００．０３は小数です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "200.03",
@@ -2161,7 +2161,7 @@
   {
     "Input": "答えは２００．７１です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "200.71",
@@ -2216,7 +2216,7 @@
   {
     "Input": "答えは３万２２００です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "3万2200",
@@ -2233,7 +2233,7 @@
   {
     "Input": "７０は整数です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "70",
@@ -2250,7 +2250,7 @@
   {
     "Input": "５２は偶数です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "52",
@@ -2267,7 +2267,7 @@
   {
     "Input": "答えは２と４分の１です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "2と4分の1",
@@ -2284,7 +2284,7 @@
   {
     "Input": "答えは４分の３です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "4分の3",
@@ -2301,7 +2301,7 @@
   {
     "Input": "ピザを８分の１だけ食べました。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "8分の1",
@@ -2318,7 +2318,7 @@
   {
     "Input": "ケーキがまだ８分の５くらい残っています。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "8分の5",
@@ -2335,7 +2335,7 @@
   {
     "Input": "水をバケツの４分の３入れます。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "4分の3",
@@ -2352,7 +2352,7 @@
   {
     "Input": "答えは２０と５分の３です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "20と5分の3",
@@ -2369,7 +2369,7 @@
   {
     "Input": "５分の２３は仮分数です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "5分の23",
@@ -2386,7 +2386,7 @@
   {
     "Input": "答えは２３と５分の３です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "23と5分の3",
@@ -2420,7 +2420,7 @@
   {
     "Input": "答えは１と２分の１です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "1と2分の1",
@@ -2437,7 +2437,7 @@
   {
     "Input": "答えは１と４分の１です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "1と4分の1",
@@ -2454,7 +2454,7 @@
   {
     "Input": "答えは５と４分の１です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "5と4分の1",
@@ -2471,7 +2471,7 @@
   {
     "Input": "答えは１００と４分の３です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "100と4分の3",
@@ -2488,7 +2488,7 @@
   {
     "Input": "１００分の１が答えです。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "100分の1",
@@ -2657,7 +2657,7 @@
   {
     "Input": "夏休みの宿題が５分の１終わりました。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "5分の1",
@@ -2691,7 +2691,7 @@
   {
     "Input": "夏休みの宿題が５分の３終わりました。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "5分の3",
@@ -2708,7 +2708,7 @@
   {
     "Input": "５分の２０は仮分数です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "5分の20",
@@ -2725,7 +2725,7 @@
   {
     "Input": "３と５分の１は帯分数です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "3と5分の1",
@@ -2742,7 +2742,7 @@
   {
     "Input": "５分の２１は帯分数です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "5分の21",
@@ -2759,7 +2759,7 @@
   {
     "Input": "答えは２５分の１です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "25分の1",
@@ -2776,7 +2776,7 @@
   {
     "Input": "答えは２１分の３です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "21分の3",
@@ -2793,7 +2793,7 @@
   {
     "Input": "２５分の２０はまだ約分できます。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "25分の20",
@@ -2810,7 +2810,7 @@
   {
     "Input": "答えは５分の１３０です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "5分の130",
@@ -2827,7 +2827,7 @@
   {
     "Input": "答えは３５分の１００です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "35分の100",
@@ -2844,7 +2844,7 @@
   {
     "Input": "答えは５分の１３２です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "5分の132",
@@ -2861,7 +2861,7 @@
   {
     "Input": "答えは１３０と５分の２です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "130と5分の2",
@@ -2878,7 +2878,7 @@
   {
     "Input": "答えは１０５分の１です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "105分の1",
@@ -2895,7 +2895,7 @@
   {
     "Input": "答えは１００５分の１００です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "1005分の100",
@@ -2912,7 +2912,7 @@
   {
     "Input": "答えは２１分の１です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "21分の1",
@@ -2946,7 +2946,7 @@
   {
     "Input": "答えは３分の１です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "3分の1",
@@ -2963,7 +2963,7 @@
   {
     "Input": "答えは２０分の１です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "20分の1",
@@ -2980,7 +2980,7 @@
   {
     "Input": "答えは１００分の１です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "100分の1",
@@ -2997,7 +2997,7 @@
   {
     "Input": "答えは１２５分の１です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "125分の1",
@@ -3014,7 +3014,7 @@
   {
     "Input": "５分の９５００はいくつですか。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "5分の9500",
@@ -3133,7 +3133,7 @@
   {
     "Input": "答えは４分の１です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "4分の1",
@@ -3150,7 +3150,7 @@
   {
     "Input": "答えは８分の１です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "8分の1",
@@ -3167,7 +3167,7 @@
   {
     "Input": "答えは８分の５です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "8分の5",
@@ -3184,7 +3184,7 @@
   {
     "Input": "４万と４万は同じです。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "4万",
@@ -3211,7 +3211,7 @@
   {
     "Input": "現在、中国の人口は１４億１４０２万１１００人です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "14億1402万1100",
@@ -3228,7 +3228,7 @@
   {
     "Input": "４２３　００００は２つの数値として認識されます。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "423",
@@ -3283,7 +3283,7 @@
   {
     "Input": "０は０です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "0",
@@ -3347,7 +3347,7 @@
   {
     "Input": "私の電話番号は、プラス１の２２２の２２２２の２２２２です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "1",
@@ -3394,7 +3394,7 @@
   {
     "Input": "私はあなたに１０００万あげることができます。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "1000万",
@@ -3411,7 +3411,7 @@
   {
     "Input": "私はあなたに３２１元をあげることができます。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "321",
@@ -3428,7 +3428,7 @@
   {
     "Input": "４３２１は有効な数字です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "4321",
@@ -3445,7 +3445,7 @@
   {
     "Input": "４３００と０は２つの有効な数字です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "4300",
@@ -3482,7 +3482,7 @@
   {
     "Input": "４０００と３２１は２つの有効な数字です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "4000",
@@ -3519,7 +3519,7 @@
   {
     "Input": "３００と２００は２つの有効な数字です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "300",
@@ -3593,7 +3593,7 @@
   {
     "Input": "３０１は有効な数字です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "301",
@@ -3637,7 +3637,7 @@
   {
     "Input": "テチマンで２６人が事故死した。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "26",
@@ -3654,7 +3654,7 @@
   {
     "Input": "私は３年内に１万ドル稼ぎたいです。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "3",
@@ -3681,7 +3681,7 @@
   {
     "Input": "私は３年で２０００ドル稼ぎたいです。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "3",
@@ -3708,7 +3708,7 @@
   {
     "Input": "３分の２０００は仮分数です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "3分の2000",
@@ -3725,7 +3725,7 @@
   {
     "Input": "２０ドルが必要です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "20",
@@ -3741,17 +3741,17 @@
   },
   {
     "Input": "このボトルには水が１８０．２５ミリリットル入れられます。",
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": []
   },
   {
     "Input": "このボトルには水が１８０ミリリットル入れられます。",
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": []
   },
   {
     "Input": "会社から自宅までの距離は２９キロメートルです。",
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": []
   },
   {
@@ -3774,7 +3774,7 @@
   {
     "Input": "答えは192です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "192",
@@ -3791,7 +3791,7 @@
   {
     "Input": "私のパソコンのIPアドレスは192.168.1.2です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "192",
@@ -3857,7 +3857,7 @@
   {
     "Input": "上昇率は0.23456000です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "0.23456000",
@@ -3874,7 +3874,7 @@
   {
     "Input": "この答えは4.800です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "4.800",
@@ -3891,7 +3891,7 @@
   {
     "Input": "この算数の問題の答えは、103と3分の2です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "103と3分の2",
@@ -3908,7 +3908,7 @@
   {
     "Input": "倍率は16です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "16",
@@ -3925,7 +3925,7 @@
   {
     "Input": "宿題の3分の2が終わりました。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "3分の2",
@@ -3942,7 +3942,7 @@
   {
     "Input": "答えは116です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "116",
@@ -3959,7 +3959,7 @@
   {
     "Input": "答えは106です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "106",
@@ -3976,7 +3976,7 @@
   {
     "Input": "今のWTOの加盟国は161です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "161",
@@ -4027,7 +4027,7 @@
   {
     "Input": "鉛筆を3ダース買いました。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "3ダース",
@@ -4044,7 +4044,7 @@
   {
     "Input": "ペンが1ダース単位で売られています。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "1ダース",
@@ -4080,7 +4080,7 @@
   {
     "Input": "1,234,567は素数ではありません。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "1,234,567",
@@ -4097,7 +4097,7 @@
   {
     "Input": "1, 234, 567は素数ではありません。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "1",
@@ -4134,7 +4134,7 @@
   {
     "Input": "答えは9.2321312です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "9.2321312",
@@ -4151,7 +4151,7 @@
   {
     "Input": "答えは-9.2321312です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "-9.2321312",
@@ -4168,7 +4168,7 @@
   {
     "Input": "最大の負の整数は-1です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "-1",
@@ -4185,7 +4185,7 @@
   {
     "Input": "出生率は-5分の4です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "-5分の4",
@@ -4202,7 +4202,7 @@
   {
     "Input": "答えは-1と5分の4です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "-1と5分の4",
@@ -4219,7 +4219,7 @@
   {
     "Input": "3は奇数です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "3",
@@ -4236,7 +4236,7 @@
   {
     "Input": "答えは123456789101231です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "123456789101231",
@@ -4253,7 +4253,7 @@
   {
     "Input": "答えは-123456789101231です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "-123456789101231",
@@ -4270,7 +4270,7 @@
   {
     "Input": "答えは -123456789101231です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "-123456789101231",
@@ -4287,7 +4287,7 @@
   {
     "Input": "1は最小の正の整数です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "1",
@@ -4304,7 +4304,7 @@
   {
     "Input": "答えは1万です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "1万",
@@ -4321,7 +4321,7 @@
   {
     "Input": "答えは10万です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "10万",
@@ -4338,7 +4338,7 @@
   {
     "Input": "答えは100億です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "100億",
@@ -4355,7 +4355,7 @@
   {
     "Input": "答え-1万です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "-1万",
@@ -4372,7 +4372,7 @@
   {
     "Input": "答えは200万です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "200万",
@@ -4389,7 +4389,7 @@
   {
     "Input": "答えは1兆です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "1兆",
@@ -4406,7 +4406,7 @@
   {
     "Input": "3は素数です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "3",
@@ -4423,7 +4423,7 @@
   {
     "Input": "答えは21兆です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "21兆",
@@ -4440,7 +4440,7 @@
   {
     "Input": "答えは21兆300です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "21兆300",
@@ -4457,7 +4457,7 @@
   {
     "Input": "331は奇数です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "331",
@@ -4474,7 +4474,7 @@
   {
     "Input": "20万2000は実数です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "20万2000",
@@ -4491,7 +4491,7 @@
   {
     "Input": "2200は奇数ではありません。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "2200",
@@ -4508,7 +4508,7 @@
   {
     "Input": "200.03は小数です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "200.03",
@@ -4525,7 +4525,7 @@
   {
     "Input": "答えは200.71です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "200.71",
@@ -4580,7 +4580,7 @@
   {
     "Input": "答えは3万2200です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "3万2200",
@@ -4597,7 +4597,7 @@
   {
     "Input": "70は整数です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "70",
@@ -4614,7 +4614,7 @@
   {
     "Input": "52は偶数です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "52",
@@ -4631,7 +4631,7 @@
   {
     "Input": "答えは2と4分の1です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "2と4分の1",
@@ -4648,7 +4648,7 @@
   {
     "Input": "答えは4分の3です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "4分の3",
@@ -4665,7 +4665,7 @@
   {
     "Input": "ピザを8分の1だけ食べました。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "8分の1",
@@ -4682,7 +4682,7 @@
   {
     "Input": "ケーキがまだ8分の5くらい残っています。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "8分の5",
@@ -4699,7 +4699,7 @@
   {
     "Input": "水をバケツの4分の3入れます。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "4分の3",
@@ -4716,7 +4716,7 @@
   {
     "Input": "答えは20と5分の3です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "20と5分の3",
@@ -4733,7 +4733,7 @@
   {
     "Input": "5分の23は仮分数です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "5分の23",
@@ -4750,7 +4750,7 @@
   {
     "Input": "答えは23と5分の3です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "23と5分の3",
@@ -4784,7 +4784,7 @@
   {
     "Input": "答えは1と2分の1です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "1と2分の1",
@@ -4801,7 +4801,7 @@
   {
     "Input": "答えは1と4分の1です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "1と4分の1",
@@ -4818,7 +4818,7 @@
   {
     "Input": "答えは5と4分の1です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "5と4分の1",
@@ -4835,7 +4835,7 @@
   {
     "Input": "答えは100と4分の3です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "100と4分の3",
@@ -4852,7 +4852,7 @@
   {
     "Input": "100分の1が答えです。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "100分の1",
@@ -5021,7 +5021,7 @@
   {
     "Input": "夏休みの宿題が5分の1終わりました。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "5分の1",
@@ -5055,7 +5055,7 @@
   {
     "Input": "夏休みの宿題が5分の3終わりました。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "5分の3",
@@ -5072,7 +5072,7 @@
   {
     "Input": "5分の20は仮分数です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "5分の20",
@@ -5089,7 +5089,7 @@
   {
     "Input": "3と5分の1は帯分数です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "3と5分の1",
@@ -5106,7 +5106,7 @@
   {
     "Input": "5分の21は帯分数です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "5分の21",
@@ -5123,7 +5123,7 @@
   {
     "Input": "答えは25分の1です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "25分の1",
@@ -5140,7 +5140,7 @@
   {
     "Input": "答えは21分の3です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "21分の3",
@@ -5157,7 +5157,7 @@
   {
     "Input": "25分の20はまだ約分できます。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "25分の20",
@@ -5174,7 +5174,7 @@
   {
     "Input": "答えは5分の130です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "5分の130",
@@ -5191,7 +5191,7 @@
   {
     "Input": "答えは35分の100です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "35分の100",
@@ -5208,7 +5208,7 @@
   {
     "Input": "答えは5分の132です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "5分の132",
@@ -5225,7 +5225,7 @@
   {
     "Input": "答えは130と5分の2です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "130と5分の2",
@@ -5242,7 +5242,7 @@
   {
     "Input": "答えは105分の1です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "105分の1",
@@ -5259,7 +5259,7 @@
   {
     "Input": "答えは1005分の100です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "1005分の100",
@@ -5293,7 +5293,7 @@
   {
     "Input": "答えは3分の1です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "3分の1",
@@ -5310,7 +5310,7 @@
   {
     "Input": "答えは20分の1です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "20分の1",
@@ -5327,7 +5327,7 @@
   {
     "Input": "答えは100分の1です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "100分の1",
@@ -5344,7 +5344,7 @@
   {
     "Input": "答えは125分の1です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "125分の1",
@@ -5361,7 +5361,7 @@
   {
     "Input": "5分の9500はいくつですか。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "5分の9500",
@@ -5378,7 +5378,7 @@
   {
     "Input": "答えは-5分の9500です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "-5分の9500",
@@ -5395,7 +5395,7 @@
   {
     "Input": "答えは-1です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "-1",
@@ -5412,7 +5412,7 @@
   {
     "Input": "答えは-35分の100です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "-35分の100",
@@ -5446,7 +5446,7 @@
   {
     "Input": "答えは-5.5です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "-5.5",
@@ -5463,7 +5463,7 @@
   {
     "Input": "答えは-5です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "-5",
@@ -5480,7 +5480,7 @@
   {
     "Input": "答えは4分の1です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "4分の1",
@@ -5497,7 +5497,7 @@
   {
     "Input": "答えは8分の1です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "8分の1",
@@ -5514,7 +5514,7 @@
   {
     "Input": "答えは21分の1です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "21分の1",
@@ -5531,7 +5531,7 @@
   {
     "Input": "答えは8分の5です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "8分の5",
@@ -5548,7 +5548,7 @@
   {
     "Input": "答えは1234567です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "1234567",
@@ -5565,7 +5565,7 @@
   {
     "Input": "4万と4万は同じです。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "4万",
@@ -5592,7 +5592,7 @@
   {
     "Input": "現在、中国の人口は14億1402万1100人です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "14億1402万1100",
@@ -5609,7 +5609,7 @@
   {
     "Input": "423　0000は二つの数値として認識されます。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "423",
@@ -5663,7 +5663,7 @@
   {
     "Input": "0は0です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "0",
@@ -5690,7 +5690,7 @@
   {
     "Input": "2018年5月17日にいつでも会えますか。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "2018",
@@ -5727,7 +5727,7 @@
   {
     "Input": "私の電話番号は、プラス1の222の2222の2222です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "1",
@@ -5774,7 +5774,7 @@
   {
     "Input": "私はあなたに1000万あげることができます。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "1000万",
@@ -5791,7 +5791,7 @@
   {
     "Input": "私はあなたに321元をあげることができます。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "321",
@@ -5808,7 +5808,7 @@
   {
     "Input": "4321は有効な数字です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "4321",
@@ -5825,7 +5825,7 @@
   {
     "Input": "4300と0は2つの有効な数字です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "4300",
@@ -5862,7 +5862,7 @@
   {
     "Input": "4000と321は2つの有効な数字です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "4000",
@@ -5899,7 +5899,7 @@
   {
     "Input": "300と200は2つの有効な数字です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "300",
@@ -5936,7 +5936,7 @@
   {
     "Input": "300と-1は2つの有効な数字です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "300",
@@ -5973,7 +5973,7 @@
   {
     "Input": "301は有効な数字です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "301",
@@ -6017,7 +6017,7 @@
   {
     "Input": "テチマンで26人が事故死した。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "26",
@@ -6034,7 +6034,7 @@
   {
     "Input": "私は3年以内に1万ドル稼ぎたいです。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "3",
@@ -6061,7 +6061,7 @@
   {
     "Input": "私は3年で2000ドル稼ぎたいです。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "3",
@@ -6088,7 +6088,7 @@
   {
     "Input": "3分の2000は仮分数です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "3分の2000",
@@ -6105,7 +6105,7 @@
   {
     "Input": "20ドルが必要です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "20",
@@ -6121,17 +6121,17 @@
   },
   {
     "Input": "このボトルには水が180.25ミリリットル入れられます。",
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": []
   },
   {
     "Input": "このボトルには水が180ミリリットル入れられます。",
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": []
   },
   {
     "Input": "会社から自宅までの距離は29キロメートルです。",
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": []
   },
   {
@@ -6143,18 +6143,18 @@
   },
   {
     "Input": "毎日この薬を0.25 ミリリットル飲んでください。",
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": []
   },
   {
     "Input": "1メートルは数字ではありません。",
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": []
   },
   {
     "Input": "答えは百九十二です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "百九十二",
@@ -6222,7 +6222,7 @@
   {
     "Input": "この算数の問題の答えは、百三と三分の二です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "百三と三分の二",
@@ -6239,7 +6239,7 @@
   {
     "Input": "倍率は十六です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "十六",
@@ -6256,7 +6256,7 @@
   {
     "Input": "宿題の三分の二が終わりました。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "三分の二",
@@ -6273,7 +6273,7 @@
   {
     "Input": "答えは百十六です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "百十六",
@@ -6290,7 +6290,7 @@
   {
     "Input": "答えは百六です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "百六",
@@ -6307,7 +6307,7 @@
   {
     "Input": "今のWTOの加盟国は百六十一です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "百六十一",
@@ -6324,7 +6324,7 @@
   {
     "Input": "一兆分の一の大きさは目に見えません",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "一兆分の一",
@@ -6341,7 +6341,7 @@
   {
     "Input": "百億分の一の大きさは目にみえないです。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "百億分の一",
@@ -6358,7 +6358,7 @@
   {
     "Input": "桃を半ダース買いました。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "半ダース",
@@ -6375,7 +6375,7 @@
   {
     "Input": "鉛筆を三ダース買いました。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "三ダース",
@@ -6392,7 +6392,7 @@
   {
     "Input": "ペンが一ダース千円で売られています。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "一ダース",
@@ -6426,7 +6426,7 @@
   {
     "Input": "百二十三万四千五百六十七は素数ではありません。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "百二十三万四千五百六十七",
@@ -6443,7 +6443,7 @@
   {
     "Input": "一と二百三十四と五百六十七は有効な数字です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "一",
@@ -6514,7 +6514,7 @@
   {
     "Input": "最大の負の整数はマイナス一です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "マイナス一",
@@ -6531,7 +6531,7 @@
   {
     "Input": "出生率はマイナス五分の四です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "マイナス五分の四",
@@ -6548,7 +6548,7 @@
   {
     "Input": "答えはマイナス一と五分の四です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "マイナス一と五分の四",
@@ -6565,7 +6565,7 @@
   {
     "Input": "三は奇数です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "三",
@@ -6582,7 +6582,7 @@
   {
     "Input": "一は最小の正の整数です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "一",
@@ -6599,7 +6599,7 @@
   {
     "Input": "答えは一万です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "一万",
@@ -6616,7 +6616,7 @@
   {
     "Input": "答えは十万です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "十万",
@@ -6633,7 +6633,7 @@
   {
     "Input": "答えは百億です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "百億",
@@ -6650,7 +6650,7 @@
   {
     "Input": "答えはマイナス一万です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "マイナス一万",
@@ -6667,7 +6667,7 @@
   {
     "Input": "答えは二百万です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "二百万",
@@ -6684,7 +6684,7 @@
   {
     "Input": "答えは一兆です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "一兆",
@@ -6701,7 +6701,7 @@
   {
     "Input": "三は素数です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "三",
@@ -6718,7 +6718,7 @@
   {
     "Input": "答えは二十一兆です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "二十一兆",
@@ -6735,7 +6735,7 @@
   {
     "Input": "答えは二十一兆三百です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "二十一兆三百",
@@ -6752,7 +6752,7 @@
   {
     "Input": "三百三十一は奇数です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "三百三十一",
@@ -6769,7 +6769,7 @@
   {
     "Input": "二十万二千は実数です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "二十万二千",
@@ -6786,7 +6786,7 @@
   {
     "Input": "二千二百は奇数ではありません。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "二千二百",
@@ -6875,7 +6875,7 @@
   {
     "Input": "答えは三万二千二百です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "三万二千二百",
@@ -6892,7 +6892,7 @@
   {
     "Input": "七十は整数です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "七十",
@@ -6909,7 +6909,7 @@
   {
     "Input": "五十二は偶数です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "五十二",
@@ -6926,7 +6926,7 @@
   {
     "Input": "答えは二と四分の一です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "二と四分の一",
@@ -6943,7 +6943,7 @@
   {
     "Input": "答えは四分の三です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "四分の三",
@@ -6960,7 +6960,7 @@
   {
     "Input": "ピザを八分の一だけ食べました。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "八分の一",
@@ -6977,7 +6977,7 @@
   {
     "Input": "ケーキがまだ八分の五くらい残っています。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "八分の五",
@@ -7013,7 +7013,7 @@
   {
     "Input": "水をバケツの四分の三入れます。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "四分の三",
@@ -7030,7 +7030,7 @@
   {
     "Input": "答えは二十と五分の三です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "二十と五分の三",
@@ -7047,7 +7047,7 @@
   {
     "Input": "五分の二十三は仮分数です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "五分の二十三",
@@ -7064,7 +7064,7 @@
   {
     "Input": "答えは二十三と五分の三です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "二十三と五分の三",
@@ -7098,7 +7098,7 @@
   {
     "Input": "答えは一と二分の一です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "一と二分の一",
@@ -7115,7 +7115,7 @@
   {
     "Input": "答えは一と四分の一です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "一と四分の一",
@@ -7132,7 +7132,7 @@
   {
     "Input": "答えは五と四分の一です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "五と四分の一",
@@ -7149,7 +7149,7 @@
   {
     "Input": "答えは百と四分の三です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "百と四分の三",
@@ -7166,7 +7166,7 @@
   {
     "Input": "百分の一が答えです。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "百分の一",
@@ -7335,7 +7335,7 @@
   {
     "Input": "夏休みの宿題が五分の一終わりました。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "五分の一",
@@ -7369,7 +7369,7 @@
   {
     "Input": "夏休みの宿題が五分の三終わりました。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "五分の三",
@@ -7386,7 +7386,7 @@
   {
     "Input": "五分の二十は仮分数です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "五分の二十",
@@ -7403,7 +7403,7 @@
   {
     "Input": "三と五分の一は帯分数です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "三と五分の一",
@@ -7420,7 +7420,7 @@
   {
     "Input": "五分の二十一は帯分数です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "五分の二十一",
@@ -7437,7 +7437,7 @@
   {
     "Input": "答えは二十五分の一です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "二十五分の一",
@@ -7454,7 +7454,7 @@
   {
     "Input": "答えは二十一分の三です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "二十一分の三",
@@ -7471,7 +7471,7 @@
   {
     "Input": "二十五分の二十はまだ約分できます。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "二十五分の二十",
@@ -7488,7 +7488,7 @@
   {
     "Input": "答えは五分の百三十です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "五分の百三十",
@@ -7522,7 +7522,7 @@
   {
     "Input": "答えは五分の百三十二です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "五分の百三十二",
@@ -7539,7 +7539,7 @@
   {
     "Input": "答えは百三十と五分の二です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "百三十と五分の二",
@@ -7556,7 +7556,7 @@
   {
     "Input": "答えは百五分の一です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "百五分の一",
@@ -7573,7 +7573,7 @@
   {
     "Input": "答えは千五分の百です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "千五分の百",
@@ -7590,7 +7590,7 @@
   {
     "Input": "答えは百二十一分の一です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "百二十一分の一",
@@ -7607,7 +7607,7 @@
   {
     "Input": "答えは三分の一です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "三分の一",
@@ -7624,7 +7624,7 @@
   {
     "Input": "答えは二十分の一です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "二十分の一",
@@ -7641,7 +7641,7 @@
   {
     "Input": "答えは百分の一です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "百分の一",
@@ -7658,7 +7658,7 @@
   {
     "Input": "答えは百二十五分の一です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "百二十五分の一",
@@ -7675,7 +7675,7 @@
   {
     "Input": "五分の九千五百はいくつですか。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "五分の九千五百",
@@ -7692,7 +7692,7 @@
   {
     "Input": "答えはマイナス五分の九千五百です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "マイナス五分の九千五百",
@@ -7709,7 +7709,7 @@
   {
     "Input": "答えはマイナス一です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "マイナス一",
@@ -7726,7 +7726,7 @@
   {
     "Input": "答えはマイナス三十五分の百です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "マイナス三十五分の百",
@@ -7777,7 +7777,7 @@
   {
     "Input": "答えはマイナス五です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "マイナス五",
@@ -7794,7 +7794,7 @@
   {
     "Input": "答えは四分の一です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "四分の一",
@@ -7811,7 +7811,7 @@
   {
     "Input": "答えは八分の一です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "八分の一",
@@ -7828,7 +7828,7 @@
   {
     "Input": "答えは二十一分の一です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "二十一分の一",
@@ -7845,7 +7845,7 @@
   {
     "Input": "答えは八分の五です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "八分の五",
@@ -7862,7 +7862,7 @@
   {
     "Input": "答えは百二十三万四千五百六十七です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "百二十三万四千五百六十七",
@@ -7879,7 +7879,7 @@
   {
     "Input": "四万と四万は同じです。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "四万",
@@ -7978,7 +7978,7 @@
   {
     "Input": "〇は〇です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "〇",
@@ -8089,7 +8089,7 @@
   {
     "Input": "私はあなたに一千万あげることができます。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "一千万",
@@ -8332,7 +8332,7 @@
   {
     "Input": "テチマンで二十六人が事故死した。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "二十六",
@@ -8368,7 +8368,7 @@
   {
     "Input": "私は三年以内に一万ドル稼ぎたいです。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "三",
@@ -8395,7 +8395,7 @@
   {
     "Input": "私は三年で二千ドル稼ぎたいです。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "三",
@@ -8422,7 +8422,7 @@
   {
     "Input": "三分の二千は仮分数です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "三分の二千",
@@ -8439,7 +8439,7 @@
   {
     "Input": "二十ドルが必要です。",
     "IgnoreResolution": true,
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": [
       {
         "Text": "二十",
@@ -8490,32 +8490,32 @@
   },
   {
     "Input": "シアトルへのファーストクラスの席を予約してください。",
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": []
   },
   {
     "Input": "一メートルは数字ではありません。",
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": []
   },
   {
     "Input": "あなたが言及したものは無効です。",
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": []
   },
   {
     "Input": "これはあなたが間違っています。",
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": []
   },
   {
     "Input": "どちらをあなたが準備しますか。",
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": []
   },
   {
     "Input": "あれは本当にいいです。",
-    "NotSupportedByDesign": "javascript, java, python",
+    "NotSupportedByDesign": "javascript, java",
     "Results": []
   },
   {
@@ -8550,7 +8550,7 @@
   },
   {
     "Input": "2.5",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "2.5",
@@ -8565,7 +8565,7 @@
   },
   {
     "Input": "400.5",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "400.5",
@@ -8580,7 +8580,7 @@
   },
   {
     "Input": "答えは四ではなくて、五です。",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "四",
@@ -8604,7 +8604,7 @@
   },
   {
     "Input": "このコンピューターは二ドルです。",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": []
   },
   {
@@ -8654,7 +8654,7 @@
   },
   {
     "Input": "五十",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "五十",
@@ -8684,7 +8684,7 @@
   },
   {
     "Input": "四百五十",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "四百五十",
@@ -8699,7 +8699,7 @@
   },
   {
     "Input": "9年8トン",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "9",
@@ -8738,7 +8738,7 @@
   },
   {
     "Input": "これは5で、あれは4です。",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "5",
@@ -8804,7 +8804,7 @@
   },
   {
     "Input": "百九十九個",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "百九十九",
@@ -8824,7 +8824,7 @@
   },
   {
     "Input": "マイナス3分のマイナス百五十七",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "マイナス3分のマイナス百五十七",
@@ -8839,7 +8839,7 @@
   },
   {
     "Input": "1001",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "1001",
@@ -8854,7 +8854,7 @@
   },
   {
     "Input": "45642万15",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "45642万15",
@@ -8869,7 +8869,7 @@
   },
   {
     "Input": "45億4004万",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "45億4004万",
@@ -8884,7 +8884,7 @@
   },
   {
     "Input": "4千万",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "4千万",
@@ -8929,7 +8929,7 @@
   },
   {
     "Input": "千五十",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "千五十",
@@ -8944,7 +8944,7 @@
   },
   {
     "Input": "十万七千八百五十四",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "十万七千八百五十四",
@@ -9027,7 +9027,7 @@
   },
   {
     "Input": "1万250",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "1万250",
@@ -9042,7 +9042,7 @@
   },
   {
     "Input": "二千三百五十",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "二千三百五十",
@@ -9057,7 +9057,7 @@
   },
   {
     "Input": "9百万4百",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "9百万4百",
@@ -9072,7 +9072,7 @@
   },
   {
     "Input": "3896万4965",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "3896万4965",
@@ -9112,7 +9112,7 @@
   },
   {
     "Input": "20万",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "20万",
@@ -9142,7 +9142,7 @@
   },
   {
     "Input": "54600",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "54600",
@@ -9157,7 +9157,7 @@
   },
   {
     "Input": "4005万",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "4005万",
@@ -9172,7 +9172,7 @@
   },
   {
     "Input": "五分の一",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "五分の一",
@@ -9187,7 +9187,7 @@
   },
   {
     "Input": "四百六十",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "四百六十",
@@ -9217,7 +9217,7 @@
   },
   {
     "Input": "これは5ではなく、201です。",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "5",
@@ -9241,7 +9241,7 @@
   },
   {
     "Input": "25分の1014",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "25分の1014",
@@ -9276,7 +9276,7 @@
   },
   {
     "Input": "1234万",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "1234万",
@@ -9291,7 +9291,7 @@
   },
   {
     "Input": "105千万",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "105千万",
@@ -9306,7 +9306,7 @@
   },
   {
     "Input": "15.7",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "15.7",
@@ -9321,7 +9321,7 @@
   },
   {
     "Input": "40万",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "40万",
@@ -9336,7 +9336,7 @@
   },
   {
     "Input": "4000万6000",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "4000万6000",
@@ -9408,7 +9408,7 @@
   },
   {
     "Input": "6足",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "6",
@@ -9471,7 +9471,7 @@
   },
   {
     "Input": "150",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "150",
@@ -9501,7 +9501,7 @@
   },
   {
     "Input": "十億六万五百六",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "十億六万五百六",
@@ -9516,7 +9516,7 @@
   },
   {
     "Input": "9万4百",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "9万4百",
@@ -9546,7 +9546,7 @@
   },
   {
     "Input": "10012.15",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "10012.15",
@@ -9566,7 +9566,7 @@
   },
   {
     "Input": "十六万五百六",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "十六万五百六",
@@ -9581,7 +9581,7 @@
   },
   {
     "Input": "マイナス405億404万",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "マイナス405億404万",
@@ -9596,7 +9596,7 @@
   },
   {
     "Input": "4004万",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "4004万",
@@ -9635,7 +9635,7 @@
   },
   {
     "Input": "100056",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "100056",
@@ -9650,7 +9650,7 @@
   },
   {
     "Input": "十足",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "十",
@@ -9665,7 +9665,7 @@
   },
   {
     "Input": "千六百",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "千六百",
@@ -9695,7 +9695,7 @@
   },
   {
     "Input": "四十四",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "四十四",
@@ -9710,7 +9710,7 @@
   },
   {
     "Input": "2.2億",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "2.2億",
@@ -9725,7 +9725,7 @@
   },
   {
     "Input": "15",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "15",
@@ -9769,7 +9769,7 @@
   },
   {
     "Input": "101万1000",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "101万1000",
@@ -9814,7 +9814,7 @@
   },
   {
     "Input": "3/5",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "3/5",
@@ -9829,7 +9829,7 @@
   },
   {
     "Input": "6,544",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "6,544",
@@ -9886,7 +9886,7 @@
   },
   {
     "Input": "10012",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "10012",
@@ -9901,7 +9901,7 @@
   },
   {
     "Input": "10足",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "10",
@@ -10012,7 +10012,7 @@
   },
   {
     "Input": "50ダース",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "50ダース",
@@ -10057,7 +10057,7 @@
   },
   {
     "Input": "明ちゃんは指が10本あります。",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "10",
@@ -10072,7 +10072,7 @@
   },
   {
     "Input": "九万四千",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "九万四千",
@@ -10087,7 +10087,7 @@
   },
   {
     "Input": "1050",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "1050",
@@ -10102,7 +10102,7 @@
   },
   {
     "Input": "3足",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "3",
@@ -10117,7 +10117,7 @@
   },
   {
     "Input": "10",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "10",
@@ -10132,7 +10132,7 @@
   },
   {
     "Input": "10250",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "10250",
@@ -10147,7 +10147,7 @@
   },
   {
     "Input": "マイナス45億404万",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "マイナス45億404万",
@@ -10162,7 +10162,7 @@
   },
   {
     "Input": "152",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "152",
@@ -10177,7 +10177,7 @@
   },
   {
     "Input": "1,234,567",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "1,234,567",
@@ -10192,7 +10192,7 @@
   },
   {
     "Input": "7万5千4百",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "7万5千4百",
@@ -10207,7 +10207,7 @@
   },
   {
     "Input": "75400",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "75400",
@@ -10222,7 +10222,7 @@
   },
   {
     "Input": "4,565",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "4,565",
@@ -10237,7 +10237,7 @@
   },
   {
     "Input": "0.5",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "0.5",
@@ -10287,7 +10287,7 @@
   },
   {
     "Input": "100分の2",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "100分の2",
@@ -10302,7 +10302,7 @@
   },
   {
     "Input": "二千四百五十",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "二千四百五十",
@@ -10317,7 +10317,7 @@
   },
   {
     "Input": "0.23456",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "0.23456",
@@ -10332,7 +10332,7 @@
   },
   {
     "Input": "数量は一ではないですが、五です。",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "一",
@@ -10356,7 +10356,7 @@
   },
   {
     "Input": "マイナス10012",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "マイナス10012",
@@ -10371,7 +10371,7 @@
   },
   {
     "Input": "16分の5",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "16分の5",
@@ -10386,7 +10386,7 @@
   },
   {
     "Input": "10018.15",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "10018.15",
@@ -10451,7 +10451,7 @@
   },
   {
     "Input": "これは四川ではなく、五です。",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "五",
@@ -10466,7 +10466,7 @@
   },
   {
     "Input": "900万400",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "900万400",
@@ -10511,7 +10511,7 @@
   },
   {
     "Input": "16万506",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "16万506",
@@ -10526,7 +10526,7 @@
   },
   {
     "Input": "1000万",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "1000万",
@@ -10541,7 +10541,7 @@
   },
   {
     "Input": "マイナス3分のマイナス157",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "マイナス3分のマイナス157",
@@ -10672,7 +10672,7 @@
   },
   {
     "Input": "130",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "130",
@@ -10687,7 +10687,7 @@
   },
   {
     "Input": "450",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "450",
@@ -10798,7 +10798,7 @@
   },
   {
     "Input": "1005",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "1005",
@@ -10813,7 +10813,7 @@
   },
   {
     "Input": "百万四",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "百万四",
@@ -10852,7 +10852,7 @@
   },
   {
     "Input": "答えは四で、五ではないです。",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "四",
@@ -10876,7 +10876,7 @@
   },
   {
     "Input": "十億",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "十億",
@@ -10911,7 +10911,7 @@
   },
   {
     "Input": "4.78兆",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "4.78兆",
@@ -10956,7 +10956,7 @@
   },
   {
     "Input": "五億六",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "五億六",
@@ -11019,7 +11019,7 @@
   },
   {
     "Input": "4万",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "4万",
@@ -11049,7 +11049,7 @@
   },
   {
     "Input": "10万56",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "10万56",
@@ -11079,7 +11079,7 @@
   },
   {
     "Input": "百五十二",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "百五十二",
@@ -11147,7 +11147,7 @@
   },
   {
     "Input": "400余り",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "400",
@@ -11162,7 +11162,7 @@
   },
   {
     "Input": "12",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "12",
@@ -11177,7 +11177,7 @@
   },
   {
     "Input": "78万506",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "78万506",
@@ -11222,7 +11222,7 @@
   },
   {
     "Input": "100対",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "100",
@@ -11237,7 +11237,7 @@
   },
   {
     "Input": "九百九十",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "九百九十",
@@ -11252,7 +11252,7 @@
   },
   {
     "Input": "4000万6千",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "4000万6千",
@@ -11267,7 +11267,7 @@
   },
   {
     "Input": "1万12",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "1万12",
@@ -11297,7 +11297,7 @@
   },
   {
     "Input": "16分の2225",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "16分の2225",
@@ -11317,7 +11317,7 @@
   },
   {
     "Input": "250",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "250",
@@ -11332,7 +11332,7 @@
   },
   {
     "Input": "百五十",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "百五十",
@@ -11347,7 +11347,7 @@
   },
   {
     "Input": "1000004",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "1000004",
@@ -11362,7 +11362,7 @@
   },
   {
     "Input": "4兆",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "4兆",
@@ -11377,7 +11377,7 @@
   },
   {
     "Input": "2.7890e-1",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "2.7890e-1",
@@ -11422,7 +11422,7 @@
   },
   {
     "Input": "5億6",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "5億6",
@@ -11437,7 +11437,7 @@
   },
   {
     "Input": "マイナス10",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "マイナス10",
@@ -11452,7 +11452,7 @@
   },
   {
     "Input": "三分の百五十七",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "三分の百五十七",
@@ -11467,7 +11467,7 @@
   },
   {
     "Input": "50対のイヤリング",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "50",
@@ -11482,7 +11482,7 @@
   },
   {
     "Input": "これは一ではなくて、9台です。",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "一",
@@ -11506,7 +11506,7 @@
   },
   {
     "Input": "2300.1",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "2300.1",
@@ -11551,7 +11551,7 @@
   },
   {
     "Input": "10ダースのリンゴ",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "10ダース",
@@ -11566,7 +11566,7 @@
   },
   {
     "Input": "45622",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "45622",
@@ -11581,7 +11581,7 @@
   },
   {
     "Input": "3分の157",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "3分の157",
@@ -11596,7 +11596,7 @@
   },
   {
     "Input": "マイナス32",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "マイナス32",
@@ -11668,7 +11668,7 @@
   },
   {
     "Input": "六",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "六",
@@ -11703,7 +11703,7 @@
   },
   {
     "Input": "500分の2333",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "500分の2333",
@@ -11718,7 +11718,7 @@
   },
   {
     "Input": "千二百三十四万",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "千二百三十四万",
@@ -11733,7 +11733,7 @@
   },
   {
     "Input": "3千9百65",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "3千9百65",
@@ -11781,7 +11781,7 @@
   },
   {
     "Input": "150対",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "150",
@@ -11796,7 +11796,7 @@
   },
   {
     "Input": "マイナス三十二",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "マイナス三十二",
@@ -11811,7 +11811,7 @@
   },
   {
     "Input": "1万3千",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "1万3千",
@@ -11846,7 +11846,7 @@
   },
   {
     "Input": "マイナス一万",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "マイナス一万",
@@ -11876,7 +11876,7 @@
   },
   {
     "Input": "1ダース",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "1ダース",
@@ -11891,7 +11891,7 @@
   },
   {
     "Input": "10斤",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "10",
@@ -11999,7 +11999,7 @@
   },
   {
     "Input": "11.92億",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "11.92億",
@@ -12029,7 +12029,7 @@
   },
   {
     "Input": "5分の1",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "5分の1",
@@ -12044,7 +12044,7 @@
   },
   {
     "Input": "九十二万四千",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "九十二万四千",
@@ -12074,7 +12074,7 @@
   },
   {
     "Input": "5,450",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "5,450",
@@ -12137,7 +12137,7 @@
   },
   {
     "Input": "靴下5足で9.9です。",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "5",
@@ -12161,7 +12161,7 @@
   },
   {
     "Input": "シングルランキングトップ3のブランド",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "3",
@@ -12191,7 +12191,7 @@
   },
   {
     "Input": "七万五千四百",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "七万五千四百",
@@ -12206,7 +12206,7 @@
   },
   {
     "Input": "二分の一",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "二分の一",
@@ -12221,7 +12221,7 @@
   },
   {
     "Input": "4億",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "4億",
@@ -12236,7 +12236,7 @@
   },
   {
     "Input": "9万400",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "9万400",
@@ -12251,7 +12251,7 @@
   },
   {
     "Input": "100",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "100",
@@ -12281,7 +12281,7 @@
   },
   {
     "Input": "マイナス三分のマイナス百五十七",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "マイナス三分のマイナス百五十七",
@@ -12326,7 +12326,7 @@
   },
   {
     "Input": "2450",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "2450",
@@ -12356,7 +12356,7 @@
   },
   {
     "Input": "五兆六十二億四万五千二百",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "五兆六十二億四万五千二百",
@@ -12436,7 +12436,7 @@
   },
   {
     "Input": "九",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "九",
@@ -12511,7 +12511,7 @@
   },
   {
     "Input": "5千2百36",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "5千2百36",
@@ -12526,7 +12526,7 @@
   },
   {
     "Input": "10億6万506",
-    "NotSupported": "dotnet, javascript, python, java",
+    "NotSupported": "dotnet, javascript, java",
     "Results": [
       {
         "Text": "10億6万506",
@@ -12699,7 +12699,7 @@
   },
   {
     "Input": "2,204.62",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "2,204.62",
@@ -12729,7 +12729,7 @@
   },
   {
     "Input": "零",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "零",
@@ -12744,7 +12744,7 @@
   },
   {
     "Input": "の総和は零となるため二次電流は流れず",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "零",
@@ -12759,7 +12759,7 @@
   },
   {
     "Input": "0123",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "0123",
@@ -12819,7 +12819,7 @@
   },
   {
     "Input": "零 一 二 三",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "零",
@@ -12861,7 +12861,7 @@
   },
   {
     "Input": "零十",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "零十",
@@ -12876,7 +12876,7 @@
   },
   {
     "Input": "零十三",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "零十三",
@@ -12936,7 +12936,7 @@
   },
   {
     "Input": "にじゅうさん",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "にじゅうさん",
@@ -12951,7 +12951,7 @@
   },
   {
     "Input": "きゅうじゅうなな",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "きゅうじゅうなな",
@@ -13071,7 +13071,7 @@
   },
   {
     "Input": "いっせんまん さんぜんまん はっせんまん",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "いっせんまん",
@@ -13137,7 +13137,7 @@
   },
   {
     "Input": "さんぜん はっせん",
-    "NotSupported": "javascript, java, python",
+    "NotSupported": "javascript, java",
     "Results": [
       {
         "Text": "さんぜん",
