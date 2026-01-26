@@ -1611,6 +1611,30 @@
     ]
   },
   {
+    "Input": "Ik ben 00:00 terug",
+    "Context": {
+      "ReferenceDateTime": "2023-11-07T00:00:00"
+    },
+    "NotSupportedByDesign": "javascript,java",
+    "Results": [
+      {
+        "Text": "00:00",
+        "Start": 7,
+        "End": 11,
+        "TypeName": "datetimeV2.time",
+        "Resolution": {
+          "values": [
+            {
+              "timex": "T00:00",
+              "type": "time",
+              "value": "00:00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
     "Input": "Het is half acht",
     "Context": {
       "ReferenceDateTime": "2016-11-07T00:00:00"
