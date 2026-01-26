@@ -3989,7 +3989,7 @@
     ]
   },
   {
-    "Input": "Show me the records for August 99",
+    "Input": "Show me the records for august 99",
     "NotSupportedByDesign": "javascript,java",
     "Results": [
       {
@@ -3997,6 +3997,18 @@
         "Type": "daterange",
         "Start": 24,
         "Length": 9
+      }
+    ]
+  },
+  {
+    "Input": "Show me the records for august '99",
+    "NotSupportedByDesign": "javascript,java",
+    "Results": [
+      {
+        "Text": "August '99",
+        "Type": "daterange",
+        "Start": 24,
+        "Length": 10
       }
     ]
   }

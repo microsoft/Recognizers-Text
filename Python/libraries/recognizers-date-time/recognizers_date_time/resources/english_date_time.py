@@ -65,7 +65,7 @@ class EnglishDateTime:
     MonthRegex = f'\\b{MonthRegexNoWordBoundary}'
     WrittenMonthRegex = f'(((the\\s+)?month of\\s+)?{MonthRegex})'
     MonthSuffixRegex = f'(?<msuf>(?:(in|of|on)\\s+)?({RelativeMonthRegex}|{WrittenMonthRegex}))'
-    DateUnitRegex = f'(?<unit>(decade|year|(?<uoy>month|week)|(?<business>(business\\s+|week\\s*))?(?<uoy>day)|fortnight|weekend)(?<plural>s)?|(?<=(^|\\s)\\d{{1,4}})[ymwd])\\b'
+    DateUnitRegex = f'(?<unit>(decade|year|(?<uoy>month|week|fortnight)|(?<business>(business\\s+|week\\s*))?(?<uoy>day)|fortnight|weekend)(?<plural>s)?|(?<=(^|\\s)\\d{{1,4}})[ymwd])\\b'
     DateTokenPrefix = 'on '
     TimeTokenPrefix = 'at '
     TokenBeforeDate = 'on '
@@ -80,7 +80,7 @@ class EnglishDateTime:
     MonthFrontSimpleCasesRegex = f'\\b({RangePrefixRegex}\\s+)?{MonthSuffixRegex}\\s+((from)\\s+)?({DayRegex}|{WrittenOrdinalDayRegex})\\s*{TillRegex}\\s*({DayRegex}|{WrittenOrdinalDayRegex})((\\s+|\\s*,\\s*){YearRegex})?\\b'
     MonthFrontBetweenRegex = f'\\b{MonthSuffixRegex}\\s+(between\\s+)({DayRegex}|{WrittenOrdinalDayRegex})\\s*{RangeConnectorRegex}\\s*({DayRegex}|{WrittenOrdinalDayRegex})((\\s+|\\s*,\\s*){YearRegex})?\\b'
     BetweenRegex = f'\\b(between\\s+)({DayRegex}|{WrittenOrdinalDayRegex})\\s*{RangeConnectorRegex}\\s*({DayRegex}|{WrittenOrdinalDayRegex})\\s+{MonthSuffixRegex}((\\s+|\\s*,\\s*){YearRegex})?\\b'
-    MonthWithYear = f'\\b((({WrittenMonthRegex}[\\.]?|((the\\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|sixth|6th|seventh|7th|eighth|8th|ninth|9th|tenth|10th|eleventh|11th|twelfth|12th|last)\\s+month(?=\\s+(of|in))))((\\s*)[/\\\\\\-\\.,]?(\\s+(of|in))?(\\s*)({YearRegex}|{TwoDigitYearRegex}|(?<order>following|next|last|this)\\s+year)|\\s+(of|in)\\s+{TwoDigitYearRegex}))|(({YearRegex}|(?<order>following|next|last|this)\\s+year)(\\s*),?(\\s*){WrittenMonthRegex}))\\b'
+    MonthWithYear = f'\\b((({WrittenMonthRegex}[\\.]?|((the\\s+)?(?<cardinal>first|1st|second|2nd|third|3rd|fourth|4th|fifth|5th|sixth|6th|seventh|7th|eighth|8th|ninth|9th|tenth|10th|eleventh|11th|twelfth|12th|last)\\s+month(?=\\s+(of|in))))((\\s*)[/\\\\\\-\\.,]?(\\s+(of|in))?(\\s*)({YearRegex}|\'?{TwoDigitYearRegex}|(?<order>following|next|last|this)\\s+year)|\\s+(of|in)\\s+\'?{TwoDigitYearRegex}))|(({YearRegex}|(?<order>following|next|last|this)\\s+year)(\\s*),?(\\s*){WrittenMonthRegex}))\\b'
     SpecialYearPrefixes = f'(calendar|(?<special>fiscal|school))'
     OneWordPeriodRegex = f'\\b((((the\\s+)?month of\\s+)?({StrictRelativeRegex}\\s+)?{MonthRegex})|(month|year) to date|(?<toDate>((un)?till?|to)\\s+date)|({RelativeRegex}\\s+)?(my\\s+)?((?<business>working\\s+week|workweek)|week(end)?|month|fortnight|(({SpecialYearPrefixes}\\s+)?year))(?!((\\s+of)?\\s+\\d+(?!({BaseDateTime.BaseAmDescRegex}|{BaseDateTime.BasePmDescRegex}))|\\s+to\\s+date))(\\s+{AfterNextSuffixRegex})?)\\b'
     MonthNumWithYear = f'\\b(({BaseDateTime.FourDigitYearRegex}(\\s*)[/\\-\\.](\\s*){MonthNumRegex})|({MonthNumRegex}(\\s*)[/\\-](\\s*){BaseDateTime.FourDigitYearRegex}))\\b'
@@ -109,7 +109,7 @@ class EnglishDateTime:
     WhichWeekRegex = f'\\b(week)(\\s*)(?<number>5[0-3]|[1-4]\\d|0?[1-9])(\\s+of\\s+({YearRegex}|{RelativeRegex}\\s+year))?\\b'
     WeekOfRegex = f'(the\\s+)?((week)(\\s+(of|(commencing|starting|beginning)(\\s+on)?))|w/c)(\\s+the)?'
     MonthOfRegex = f'(month)(\\s*)(of)'
-    DateYearRegex = f'(?<year>{BaseDateTime.FourDigitYearRegex}|(?<!,\\s?){TwoDigitYearRegex}|{TwoDigitYearRegex}(?=(\\.(?!\\d)|[?!;]|$)))'
+    DateYearRegex = f'(?<year>{BaseDateTime.FourDigitYearRegex}|(?<!,\\s?)\'?{TwoDigitYearRegex}|\'?{TwoDigitYearRegex}(?=(\\.(?!\\d)|[?!;]|$)))'
     YearSuffix = f'((,|\\sof)?\\s*({DateYearRegex}|{FullTextYearRegex}))'
     OnRegex = f'(?<=\\bon\\s+)({DayRegex}s?)\\b'
     RelaxedOnRegex = f'(?<=\\b(on|at|in)\\s+)((?<day>(3[0-1]|[0-2]?\\d)(?:th|nd|rd|st))s?)\\b'
@@ -225,7 +225,7 @@ class EnglishDateTime:
     EachPrefixRegex = f'\\b(?<each>(each|every|once an?)\\s*$)'
     SetEachRegex = f'\\b(?<each>(each|every)(?<other>\\s+(other|alternate))?\\s*)(?!the|that)\\b'
     SetLastRegex = f'(?<last>following|next|upcoming|this|{LastNegPrefix}last|past|previous|current)'
-    EachDayRegex = f'^\\s*(each|every)\\s*day\\b'
+    EachDayRegex = f'\\s*((each|every)\\s*day)|daily\\b'
     DurationFollowedUnit = f'(^\\s*{DurationUnitRegex}\\s+{SuffixAndRegex})|(^\\s*{SuffixAndRegex}?(\\s+|-)?{DurationUnitRegex})'
     NumberCombinedWithDurationUnit = f'\\b(?<num>\\d+(\\.\\d*)?)(-)?{DurationUnitRegex}'
     AnUnitRegex = f'(\\b((?<half>(half)\\s+)?an?|another)|(?<half>(1/2|½|half)))\\s+{DurationUnitRegex}'
@@ -329,8 +329,8 @@ class EnglishDateTime:
                     ("weekend", "WE"),
                     ("fortnights", "2W"),
                     ("fortnight", "2W"),
-                    ("weekdays", "D"),
-                    ("weekday", "D"),
+                    ("weekdays", "WD"),
+                    ("weekday", "WD"),
                     ("days", "D"),
                     ("day", "D"),
                     ("d", "D"),
@@ -763,6 +763,8 @@ class EnglishDateTime:
     DoubleMultiplierRegex = f'^(bi)(-|\\s)?'
     HalfMultiplierRegex = f'^(semi)(-|\\s)?'
     DayTypeRegex = f'((week)?da(il)?ys?)$'
+    WeekDayTypeRegex = f'(weekday?)$'
+    FortNightRegex = f'(fortnight?)$'
     WeekTypeRegex = f'(week(s|ly)?)$'
     WeekendTypeRegex = f'(weekends?)$'
     MonthTypeRegex = f'(month(s|ly)?)$'

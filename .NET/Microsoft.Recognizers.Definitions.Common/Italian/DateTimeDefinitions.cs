@@ -65,7 +65,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
       public static readonly string LastTwoYearNumRegex = $@"({WrittenOneToNineRegex}|{WrittenElevenToNineteenRegex}|{WrittenTensRegex}({WrittenOneToNineRegex})?)";
       public static readonly string FullTextYearRegex = $@"\b((?<firsttwoyearnum>{WrittenCenturyFullYearRegex})(?<lasttwoyearnum>{LastTwoYearNumRegex})?)\b";
       public static readonly string TwoDigitYearRegex = $@"\b(?<![$])(?<year>([0-9]\d))(?!(\s*((\:\d)|{AmDescRegex}|{PmDescRegex}|\.\d)))\b";
-      public static readonly string DateYearRegex = $@"(?<year>{BaseDateTime.FourDigitYearRegex}|{TwoDigitYearRegex})";
+      public static readonly string DateYearRegex = $@"(?<year>{BaseDateTime.FourDigitYearRegex}|'?{TwoDigitYearRegex})";
       public static readonly string YearSuffix = $@"(,?\s*({DateYearRegex}|{FullTextYearRegex}))";
       public static readonly string YearRegex = $@"({BaseDateTime.FourDigitYearRegex}|{FullTextYearRegex})";
       public const string DateUnitRegex = @"\b(?<unit>decennio|mese|settimana|(ann|giorn)(o|(?<plural>i))|(?<plural>decenni|mesi|settimane))\b";
@@ -74,7 +74,7 @@ namespace Microsoft.Recognizers.Definitions.Italian
       public static readonly string MonthFrontBetweenRegex = $@"\b{MonthSuffixRegex}\s+([tf]ra\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})((\s+|\s*,\s*){YearRegex})?\b";
       public static readonly string BetweenRegex = $@"\b([tf]ra\s+)({DayRegex})\s*{RangeConnectorRegex}\s*({DayRegex})\s+{MonthSuffixRegex}((\s+|\s*,\s*){YearRegex})?\b";
       public const string YearWordRegex = @"\b(?<year>l'anno)\b";
-      public static readonly string MonthWithYear = $@"\b({MonthRegex}(\.)?(\s*)[/\\\-\.,]?(((\s+del)?\s+{YearRegex}|{TwoDigitYearRegex})|((\s+(del|di|il))?\s+(?<order>prossim['o]|passato|quest['o])\s*anno)|((\s+(del)?l')anno\s+(?<order>prossimo|passato))))";
+      public static readonly string MonthWithYear = $@"\b({MonthRegex}(\.)?(\s*)[/\\\-\.,]?(((\s+del)?\s+{YearRegex}|'?{TwoDigitYearRegex})|((\s+(del|di|il))?\s+(?<order>prossim['o]|passato|quest['o])\s*anno)|((\s+(del)?l')anno\s+(?<order>prossimo|passato))))";
       public const string SpecialYearPrefixes = @"(?<special>fiscale|scolastico)";
       public static readonly string OneWordPeriodRegex = $@"\b((((il|l[o'])\s*)?((mese di\s+)|({RelativeRegex}\s*))?{MonthRegex}(\s+{RelativeRegex})?)|dall'inizio\s+del(l')\s*(mese|anno)|({RelativeRegex}\s*)?(mi[ao]\s+)?(weekend|finesettimana|settimana|mese|anno)(\s+{RelativeRegex})?(?!((\s+di|del)?\s+\d+))(\s+{AfterNextSuffixRegex})?)\b";
       public static readonly string MonthNumWithYear = $@"({YearRegex}[/\-\.]{MonthNumRegex})|({MonthNumRegex}[/\-]{YearRegex})";
