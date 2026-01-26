@@ -1,0 +1,1463 @@
+[
+  {
+    "Input": "שמונת אלפים תשע מאות שמונים ושבע.",
+    "Results": [
+      {
+        "Text": "שמונת אלפים תשע מאות שמונים ושבע",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "8987"
+        },
+        "Start": 0,
+        "End": 31
+      }
+    ]
+  },
+  {
+    "Input": "תוכל למצוא אותו בעמוד 192",
+    "Results": [
+      {
+        "Text": "192",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "192"
+        },
+        "Start": 22,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "כתובת ה- IP היא 192.168.1.2",
+    "Results": [
+      {
+        "Text": "192",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "192"
+        },
+        "Start": 16,
+        "End": 18
+      },
+      {
+        "Text": "168",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "168"
+        },
+        "Start": 20,
+        "End": 22
+      },
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1"
+        },
+        "Start": 24,
+        "End": 24
+      },
+      {
+        "Text": "2",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2"
+        },
+        "Start": 26,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "שתיתי 180.25 מיליליטר מיץ",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": []
+  },
+  {
+    "Input": "אני רוצה 180 מיליליטר מים",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": []
+  },
+  {
+    "Input": "רחוב KLM 29",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": []
+  },
+  {
+    "Input": "התאריך הוא 4 במאי",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": []
+  },
+  {
+    "Input": "בכוס יש 25 מ\"ל של נוזל.",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": []
+  },
+  {
+    "Input": "במשקל 0.08",
+    "Results": [
+      {
+        "Text": "0.08",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "0.08"
+        },
+        "Start": 6,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "משקלו 0.23456",
+    "Results": [
+      {
+        "Text": "0.23456",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "0.23456"
+        },
+        "Start": 6,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "מידות 4.8.",
+    "Results": [
+      {
+        "Text": "4.8",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "4.8"
+        },
+        "Start": 6,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "ישנם שישה עשר תפוחים.",
+    "Results": [
+      {
+        "Text": "שישה עשר",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "16"
+        },
+        "Start": 5,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "היא קראה שני שלישים מהספר",
+    "Results": [
+      {
+        "Text": "שני שלישים",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.666666666666667"
+        },
+        "Start": 9,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "מאה וששה עשר עמודים",
+    "Results": [
+      {
+        "Text": "מאה וששה עשר",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "116"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "מאה ושישה עטים.",
+    "Results": [
+      {
+        "Text": "מאה ושישה",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "106"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "התוצאה הנכונה היא מאה שישים ואחת",
+    "Results": [
+      {
+        "Text": "מאה שישים ואחת",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "161"
+        },
+        "Start": 18,
+        "End": 31
+      }
+    ]
+  },
+  {
+    "Input": "אחד מכל טריליון דפים נחתך",
+    "Results": [
+      {
+        "Text": "אחד מכל טריליון",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1E-12"
+        },
+        "Start": 0,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "השמש היא אחת ממאה טריליון כוכבים",
+    "Results": [
+      {
+        "Text": "אחת ממאה טריליון",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1E-10"
+        },
+        "Start": 6,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "מאה אלף דולר",
+    "Results": [
+      {
+        "Text": "מאה אלף",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "100000"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "חצי תריסר תפוזים",
+    "Results": [
+      {
+        "Text": "חצי תריסר",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "6"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "אני רוצה 3 תריסר אפרסקים",
+    "Results": [
+      {
+        "Text": "3 תריסר",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "36"
+        },
+        "Start": 9,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "אני רוצה תריסר בננות",
+    "Results": [
+      {
+        "Text": "תריסר",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "12"
+        },
+        "Start": 9,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "קניתי שלושה תריסר ספרים",
+    "Results": [
+      {
+        "Text": "שלושה תריסר",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "36"
+        },
+        "Start": 6,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "שלוש מאות ושניים תריסר",
+    "Results": [
+      {
+        "Text": "שלוש מאות ושניים תריסר",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "324"
+        },
+        "Start": 0,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "אוכלוסיית הודו היא 1,234,567",
+    "Results": [
+      {
+        "Text": "1,234,567",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1234567"
+        },
+        "Start": 19,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "תוצאה נכונה 9.2321312",
+    "Results": [
+      {
+        "Text": "9.2321312",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "9.2321312"
+        },
+        "Start": 12,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "-9.2321312",
+    "Results": [
+      {
+        "Text": "-9.2321312",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "-9.2321312"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "-1",
+    "Results": [
+      {
+        "Text": "-1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "-1"
+        },
+        "Start": 0,
+        "End": 1
+      }
+    ]
+  },
+  {
+    "Input": "-1 4/5",
+    "Results": [
+      {
+        "Text": "-1 4/5",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "-1.8"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "יש לה שלושה עטים",
+    "Results": [
+      {
+        "Text": "שלושה",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "3"
+        },
+        "Start": 6,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "מספר טלפון 123456789101231",
+    "Results": [
+      {
+        "Text": "123456789101231",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "123456789101231"
+        },
+        "Start": 11,
+        "End": 25
+      }
+    ]
+  },
+  {
+    "Input": "-123456789101231",
+    "Results": [
+      {
+        "Text": "-123456789101231",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "-123456789101231"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "1",
+    "Results": [
+      {
+        "Text": "1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1"
+        },
+        "Start": 0,
+        "End": 0
+      }
+    ]
+  },
+  {
+    "Input": "אוכלוסייה של טריליון אחד",
+    "Results": [
+      {
+        "Text": "טריליון אחד",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1000000000000"
+        },
+        "Start": 13,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "ישנם שלושה עצים בגינה",
+    "Results": [
+      {
+        "Text": "שלושה",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "3"
+        },
+        "Start": 5,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "יש יותר מטריליון כוכבים בשמיים",
+    "Results": [
+      {
+        "Text": "טריליון",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "1000000000000"
+        },
+        "Start": 8,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "אוכלוסיית האזור היא עשרים ואחד טריליון",
+    "Results": [
+      {
+        "Text": "עשרים ואחד טריליון",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "21000000000000"
+        },
+        "Start": 21,
+        "End": 38
+      }
+    ]
+  },
+  {
+    "Input": "אוכלוסיית האזור היא עשרים ואחד טריליון שלוש מאות",
+    "Results": [
+      {
+        "Text": "עשרים ואחד טריליון שלוש מאות",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "21000000000300"
+        },
+        "Start": 20,
+        "End": 47
+      }
+    ]
+  },
+  {
+    "Input": "2 1/4",
+    "Results": [
+      {
+        "Text": "2 1/4",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "2.25"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "הסל מכיל חמישים ושתיים פירות",
+    "Results": [
+      {
+        "Text": "חמישים ושתיים",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "52"
+        },
+        "Start": 9,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "יש שלוש מאות ושלושים ואחד עצים ביער",
+    "Results": [
+      {
+        "Text": "שלוש מאות ושלושים ואחד",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "331"
+        },
+        "Start": 3,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "קניתי שמלה באלפיים שש מאות חמישים וארבע שקל.",
+    "Results": [
+      {
+        "Text": "אלפיים שש מאות חמישים וארבע",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2654"
+        },
+        "Start": 11,
+        "End": 38
+      }
+    ]
+  },
+  {
+    "Input": "1e10",
+    "Results": [
+      {
+        "Text": "1e10",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "10000000000"
+        },
+        "Start": 0,
+        "End": 3
+      }
+    ]
+  },
+  {
+    "Input": "1.1^23",
+    "Results": [
+      {
+        "Text": "1.1^23",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "8.95430243255239"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "32.2 אלף",
+    "Results": [
+      {
+        "Text": "32.2 אלף",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "32200"
+        },
+        "Start": 0,
+        "End": 7
+      }
+    ]
+  },
+  {
+    "Input": "שבעים קילומטרים.",
+    "Results": [
+      {
+        "Text": "שבעים",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "70"
+        },
+        "Start": 0,
+        "End": 4
+      }
+    ]
+  },
+  {
+    "Input": "3/4 מהכוס",
+    "Results": [
+      {
+        "Text": "3/4",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.75"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "שאר העוגה היא חמש שמיניות",
+    "Results": [
+      {
+        "Text": "חמש שמיניות",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.625"
+        },
+        "Start": 14,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "שתיתי חצי כוס מיץ",
+    "Results": [
+      {
+        "Text": "חצי",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.5"
+        },
+        "Start": 6,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "כתבתי שלושה רבעים מהדף",
+    "Results": [
+      {
+        "Text": "שלושה רבעים",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.75"
+        },
+        "Start": 6,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "עשרים ושלושה חמישיות מהרשומות הושלמו",
+    "Results": [
+      {
+        "Text": "עשרים ושלושה חמישיות",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "20.6"
+        },
+        "Start": 0,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "קראתי עשרים ושלושה חמישיות מתוך הספר",
+    "Results": [
+      {
+        "Text": "עשרים ושלושה חמישיות",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "4.6"
+        },
+        "Start": 6,
+        "End": 20
+      }
+    ]
+  },
+  {
+    "Input": "היא מעבירה עשרים ושלוש ושלוש חמישיות מהיום שלה בשינה",
+    "Results": [
+      {
+        "Text": "עשרים ושלוש ושלוש חמישיות",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "23.6"
+        },
+        "Start": 5,
+        "End": 28
+      }
+    ]
+  },
+  {
+    "Input": "מיליון אלפיים מאתיים ושלוש חמישיות מהכוסות",
+    "Results": [
+      {
+        "Text": "מיליון אלפיים מאתיים ושלוש חמישיות",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "200440.6"
+        },
+        "Start": 0,
+        "End": 33
+      }
+    ]
+  },
+  {
+    "Input": "היו לה אחד וחצי",
+    "Results": [
+      {
+        "Text": "אחד וחצי",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1.5"
+        },
+        "Start": 7,
+        "End": 14
+      }
+    ]
+  },
+  {
+    "Input": "אחמד ​​ישן שלוש שעות ורבע",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": [
+      {
+        "Text": "שלוש שעות ורבע",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1.25"
+        },
+        "Start": 18,
+        "End": 26
+      }
+    ]
+  },
+  {
+    "Input": "שתו ביום חמש ורבע כוסות מים",
+    "Results": [
+      {
+        "Text": "חמש ורבע",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "5.25"
+        },
+        "Start": 9,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "שני העצים מופרדים במרחק של מאה ושלושה רבעי מטר.",
+    "Results": [
+      {
+        "Text": "מאה ושלושה רבעי",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "100.75"
+        },
+        "Start": 21,
+        "End": 36
+      }
+    ]
+  },
+  {
+    "Input": "התוצאה הייתה מאית",
+    "Results": [
+      {
+        "Text": "מאית",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.01"
+        },
+        "Start": 11,
+        "End": 25
+      }
+    ]
+  },
+  {
+    "Input": "1.1^+23",
+    "Results": [
+      {
+        "Text": "1.1^+23",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "8.95430243255239"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "2.5^-1",
+    "Results": [
+      {
+        "Text": "2.5^-1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "0.4"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "-127.32e13",
+    "Results": [
+      {
+        "Text": "-127.32e13",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "-1.2732E+15"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "12.32e+14",
+    "Results": [
+      {
+        "Text": "12.32e+14",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "1.232E+15"
+        },
+        "Start": 0,
+        "End": 8
+      }
+    ]
+  },
+  {
+    "Input": "-12e-1",
+    "Results": [
+      {
+        "Text": "-12e-1",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "power",
+          "value": "-1.2"
+        },
+        "Start": 0,
+        "End": 5
+      }
+    ]
+  },
+  {
+    "Input": "מחיר חדר היהלומים היה שתים עשרה מיליארד ריאל.",
+    "Results": [
+      {
+        "Text": "שתים עשרה מיליארד",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "decimal",
+          "value": "1200000000"
+        },
+        "Start": 21,
+        "End": 34
+      }
+    ]
+  },
+  {
+    "Input": "אכלתי חמישית מהעוגה.",
+    "Results": [
+      {
+        "Text": "חמישית",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.2"
+        },
+        "Start": 6,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "ההסתברות לתשובה היא מאה אלף חלקי טריליון.",
+    "Results": [
+      {
+        "Text": "מאה אלף חלקי טריליון",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1E-07"
+        },
+        "Start": 20,
+        "End": 29
+      }
+    ]
+  },
+  {
+    "Input": "עברה חמישית שעה מאז ניקיתי.",
+    "Results": [
+      {
+        "Text": "חמישית",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.2"
+        },
+        "Start": 5,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "אני רוצה ש-3 חמישיות מהעבודה יבוצעו בזמן.",
+    "Results": [
+      {
+        "Text": "3 חמישיות",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.6"
+        },
+        "Start": 5,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "למדתי עשרים חמישיות שעות",
+    "Results": [
+      {
+        "Text": "עשרים חמישיות",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "4"
+        },
+        "Start": 6,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "סיימתי היום שלוש וחמישית מהעבודה",
+    "Results": [
+      {
+        "Text": "שלוש וחמישית",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "3.2"
+        },
+        "Start": 12,
+        "End": 23
+      }
+    ]
+  },
+  {
+    "Input": "בבעלותך חמישית של עשרים וחמש מהמלון",
+    "Results": [
+      {
+        "Text": "חמישית של עשרים וחמש",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "4.2"
+        },
+        "Start": 5,
+        "End": 21
+      }
+    ]
+  },
+  {
+    "Input": "נמחקו עשרים חלקים מתוך עשרים וחמישה קבצים.",
+    "Results": [
+      {
+        "Text": "עשרים חלקים מתוך עשרים וחמישה",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.8"
+        },
+        "Start": 5,
+        "End": 30
+      }
+    ]
+  },
+  {
+    "Input": "יש לי מאה של אחד חלקי שלושים וחמש",
+    "Results": [
+      {
+        "Text": "מאה של אחד חלקי שלושים וחמש",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "2.85714285714286"
+        },
+        "Start": 0,
+        "End": 24
+      }
+    ]
+  },
+  {
+    "Input": "מאה שלושים ושתיים חלקי חמש",
+    "Results": [
+      {
+        "Text": "מאה שלושים ושתיים חלקי חמש",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "26.4"
+        },
+        "Start": 0,
+        "End": 25
+      }
+    ]
+  },
+  {
+    "Input": "אחד חלקי 100 וחמש",
+    "Results": [
+      {
+        "Text": "אחד חלקי 100 וחמש",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.00952380952380952"
+        },
+        "Start": 0,
+        "End": 15
+      }
+    ]
+  },
+  {
+    "Input": "אחד של אחד חלקי מאה וחמש",
+    "Results": [
+      {
+        "Text": "אחד של אחד חלקי מאה וחמש",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.00952380952380952"
+        },
+        "Start": 0,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "מאה חלקי אלף וחמש",
+    "Results": [
+      {
+        "Text": "מאה חלקי אלף וחמש",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.0995024875621891"
+        },
+        "Start": 0,
+        "End": 16
+      }
+    ]
+  },
+  {
+    "Input": "אחד לשלוש",
+    "Results": [
+      {
+        "Text": "אחד לשלוש",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.333333333333333"
+        },
+        "Start": 14,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "1 מתוך שלוש",
+    "Results": [
+      {
+        "Text": "1 מתוך שלוש",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.333333333333333"
+        },
+        "Start": 0,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "אחד ל-3",
+    "Results": [
+      {
+        "Text": "אחד ל-3",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.333333333333333"
+        },
+        "Start": 0,
+        "End": 9
+      }
+    ]
+  },
+  {
+    "Input": "אחד לעשרים",
+    "Results": [
+      {
+        "Text": "אחד לעשרים",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.05"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "1 לעשרים",
+    "Results": [
+      {
+        "Text": "1 לעשרים",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.05"
+        },
+        "Start": 0,
+        "End": 13
+      }
+    ]
+  },
+  {
+    "Input": "אחד למאה",
+    "Results": [
+      {
+        "Text": "אחד למאה",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.01"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "כמה זה 9500 חלקי חמש",
+    "Results": [
+      {
+        "Text": "9500 חלקי חמש",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "1900"
+        },
+        "Start": 7,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "הזמנתי את הטיסה שלי במחלקה ראשונה",
+    "Results": []
+  },
+  {
+    "Input": "הטמפרטורה היא מינוס אחת",
+    "Results": [
+      {
+        "Text": "מינוס אחת",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "-1"
+        },
+        "Start": 14,
+        "End": 22
+      }
+    ]
+  },
+  {
+    "Input": "מינוס אחד חלקי עשרים",
+    "Results": [
+      {
+        "Text": "מינוס אחד חלקי עשרים",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "-0.05"
+        },
+        "Start": 0,
+        "End": 19
+      }
+    ]
+  },
+  {
+    "Input": "רביעית אחת",
+    "Results": [
+      {
+        "Text": "רביעית",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.25"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "שמינית אחת",
+    "Results": [
+      {
+        "Text": "שמינית",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.125"
+        },
+        "Start": 0,
+        "End": 2
+      }
+    ]
+  },
+  {
+    "Input": "שלוש שמיניות",
+    "Results": [
+      {
+        "Text": "שלוש שמיניות",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.375"
+        },
+        "Start": 0,
+        "End": 11
+      }
+    ]
+  },
+  {
+    "Input": "אחד מתוך שלוש",
+    "Results": [
+      {
+        "Text": "אחד מתוך שלוש",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.333333333333333"
+        },
+        "Start": 0,
+        "End": 12
+      }
+    ]
+  },
+  {
+    "Input": "אחד חלקי עשרים ואחת",
+    "Results": [
+      {
+        "Text": "אחד חלקי עשרים ואחת",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.0476190476190476"
+        },
+        "Start": 0,
+        "End": 18
+      }
+    ]
+  },
+  {
+    "Input": "שבע שמיניות של",
+    "Results": [
+      {
+        "Text": "שבע שמיניות",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "fraction",
+          "value": "0.875"
+        },
+        "Start": 0,
+        "End": 10
+      }
+    ]
+  },
+  {
+    "Input": "אפס הוא 0",
+    "Results": [
+      {
+        "Text": "אפס",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "0"
+        },
+        "Start": 0,
+        "End": 2
+      },
+      {
+        "Text": "0",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "0"
+        },
+        "Start": 6,
+        "End": 6
+      }
+    ]
+  },
+  {
+    "Input": "האם יש זמן להפגש ב- 17/5/2018?",
+    "Results": [
+      {
+        "Text": "5",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "5"
+        },
+        "Start": 19,
+        "End": 19
+      },
+      {
+        "Text": "17",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "17"
+        },
+        "Start": 21,
+        "End": 22
+      },
+      {
+        "Text": "2018",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "2018"
+        },
+        "Start": 24,
+        "End": 27
+      }
+    ]
+  },
+  {
+    "Input": "1m isn't a number.",
+    "NotSupportedByDesign": "javascript, java, python",
+    "Results": []
+  },
+  {
+    "Input": "מספר לוחית הרישוי הוא שלוש מאות ואחת.",
+    "IgnoreResolution": true,
+    "Results": [
+      {
+        "Text": "שלוש מאות ואחת",
+        "TypeName": "number",
+        "Resolution": {
+          "subtype": "integer",
+          "value": "301"
+        },
+        "Start": 22,
+        "End": 35
+      }
+    ]
+  }
+]

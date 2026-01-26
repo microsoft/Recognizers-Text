@@ -55,6 +55,15 @@
             "footer": [ "}" ]
         },
         {
+            "input": [ "Hebrew", "Hebrew-Numbers" ],
+            "output": "hebrewNumeric",
+            "header": [
+                "import { BaseNumbers } from \"./baseNumbers\";",
+                "export namespace HebrewNumeric {"
+            ],
+            "footer": [ "}" ]
+        },        
+        {
             "input": [ "French", "French-Numbers" ],
             "output": "frenchNumeric",
             "header": [
