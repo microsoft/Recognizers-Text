@@ -283,7 +283,7 @@ class EnglishNumericWithUnit:
             ("Syrian pound", "syrian pounds|syrian pound|syrian £|ل.س|syp|syria pounds|syria pound|syria £"),
             ("Tristan da Cunha pound", "tristan da cunha pounds|tristan da cunha pound|tristan da cunha £"),
             ("Pound", "pounds|pound|-pounds|-pound|£"),
-            ("Pence", "pence"),
+            ("Pence", "pence|p"),
             ("Shilling", "shillings|shilling|shilingi|sh"),
             ("Penny", "pennies|penny"),
             (
