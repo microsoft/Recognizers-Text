@@ -246,6 +246,8 @@ public class TimexUtility {
                 return new TimeOfDayResolutionResult(Constants.EarlyMorning, 4, 8, 0);
             case Constants.Morning:
                 return new TimeOfDayResolutionResult(Constants.Morning, 8, 12, 0);
+            case Constants.MidDay:
+                return new TimeOfDayResolutionResult(Constants.MidDay, 11, 13, 0);
             case Constants.Afternoon:
                 return new TimeOfDayResolutionResult(Constants.Afternoon, 12, 16, 0);
             case Constants.Evening:

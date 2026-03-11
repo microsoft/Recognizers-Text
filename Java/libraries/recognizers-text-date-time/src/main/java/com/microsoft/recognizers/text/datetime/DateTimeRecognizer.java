@@ -6,6 +6,8 @@ package com.microsoft.recognizers.text.datetime;
 import com.microsoft.recognizers.text.Culture;
 import com.microsoft.recognizers.text.ModelResult;
 import com.microsoft.recognizers.text.Recognizer;
+import com.microsoft.recognizers.text.datetime.chinese.extractors.ChineseMergedExtractorConfiguration;
+import com.microsoft.recognizers.text.datetime.chinese.parsers.ChineseMergedParserConfiguration;
 import com.microsoft.recognizers.text.datetime.english.extractors.EnglishMergedExtractorConfiguration;
 import com.microsoft.recognizers.text.datetime.english.parsers.EnglishMergedParserConfiguration;
 import com.microsoft.recognizers.text.datetime.extractors.BaseMergedDateTimeExtractor;
@@ -99,6 +101,12 @@ public class DateTimeRecognizer extends Recognizer<DateTimeOptions> {
         registerModel(DateTimeModel.class, Culture.German, dateTimeOptions -> new DateTimeModel(
                 new BaseMergedDateTimeParser(new GermanMergedParserConfiguration(options)),
                 new BaseMergedDateTimeExtractor(new GermanMergedExtractorConfiguration(options))
+        ));
+
+        // Chinese
+        registerModel(DateTimeModel.class, Culture.Chinese, dateTimeOptions -> new DateTimeModel(
+                new BaseMergedDateTimeParser(new ChineseMergedParserConfiguration(options)),
+                new BaseMergedDateTimeExtractor(new ChineseMergedExtractorConfiguration(options))
         ));
     }
 }
