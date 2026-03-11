@@ -177,6 +177,7 @@ public class Constants {
     // Timex of TimeOfDay
     public static final String EarlyMorning = "TDA";
     public static final String Morning = "TMO";
+    public static final String MidDay = "TMI";
     public static final String Afternoon = "TAF";
     public static final String Evening = "TEV";
     public static final String Daytime = "TDT";
