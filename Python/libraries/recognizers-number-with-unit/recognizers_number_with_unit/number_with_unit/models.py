@@ -1,6 +1,7 @@
 #  Copyright (c) Microsoft Corporation. All rights reserved.
 #  Licensed under the MIT License.
 
+import re
 from abc import abstractmethod
 from typing import List
 
@@ -9,6 +10,26 @@ from recognizers_text.extractor import Extractor
 from recognizers_text.parser import Parser
 from recognizers_text.utilities import QueryProcessor
 from recognizers_number_with_unit.number_with_unit.parsers import UnitValue, CurrencyUnitValue
+
+# Matches an uppercase ISO currency prefix (1–3 letters + optional $) immediately
+# followed by a digit — e.g. 'USD34', 'VND4,927', 'A$100', 'SG$40', 'CAD$1'.
+# Used in CurrencyModel.parse() to insert a separating space before
+# QueryProcessor lowercases the query, preventing the internal number extractor
+# from misreading patterns like 'usd34.6 million' as '6 million'.
+_CURRENCY_ISO_CONCAT_RE = re.compile(r'\b([A-Z]{1,3}\$|[A-Z]{3})(?=\d)')
+
+
+def _to_original_pos(normalised_pos: int, insertions: List[int]) -> int:
+    """Convert a position in the space-normalised string to the original string position.
+
+    Each inserted space at original position insertions[k] shifts all subsequent
+    normalised positions by +k+1.  To reverse: subtract the count of insertions
+    whose normalised position falls strictly before normalised_pos.
+    """
+    count = sum(
+        1 for k, p in enumerate(insertions) if p + k < normalised_pos
+    )
+    return normalised_pos - count
 
 
 class ExtractorParserModel:
@@ -105,6 +126,45 @@ class CurrencyModel(AbstractNumberWithUnitModel):
     @property
     def model_type_name(self) -> str:
         return 'currency'
+
+    def parse(self, query: str) -> List[ModelResult]:
+        # Normalise uppercase ISO currency prefixes that are directly
+        # concatenated to digits before the base class calls
+        # QueryProcessor.preprocess() (which lowercases the query).
+        #
+        # Without this step the internal EnglishNumberExtractor (Unit mode)
+        # misreads patterns such as:
+        #   'USD34.6 million'  -> extracts '6 million'  (decimal boundary)
+        #   'VND4,927 billion' -> extracts '927 billion' (comma boundary)
+        #
+        # After inserting the space:
+        #   'USD34.6 million'  -> 'USD 34.6 million'  -> '34.6 million' ✓
+        #   'VND4,927 billion' -> 'VND 4,927 billion' -> '4,927 billion' ✓
+        #
+        # Uppercase-only matching avoids false positives on common English
+        # words ('can', 'try', 'nor', etc.) which are never all-caps.
+        #
+        # When spaces are inserted the base-class results carry positions and
+        # text from the normalised string, not the original.  We record the
+        # insertion points and map every result back to the original string so
+        # that callers always receive offsets that are valid against their input.
+        insertions = [m.end() for m in _CURRENCY_ISO_CONCAT_RE.finditer(query)]
+
+        if not insertions:
+            # No concatenation found — no position adjustment needed.
+            return super().parse(query)
+
+        normalised = _CURRENCY_ISO_CONCAT_RE.sub(r'\1 ', query)
+        results = super().parse(normalised)
+
+        for result in results:
+            orig_start = _to_original_pos(result.start, insertions)
+            orig_end = _to_original_pos(result.end, insertions)
+            result.start = orig_start
+            result.end = orig_end
+            result.text = query[orig_start:orig_end + 1]
+
+        return results
 
 
 class DimensionModel(AbstractNumberWithUnitModel):
