@@ -658,7 +658,7 @@ FractionalUnitNameToCodeMap: !dictionary
 CompoundUnitConnectorRegex: !simpleRegex
     def: (?<spacer>and)
 MultiplierRegex: !simpleRegex
-  def: \s*\b(thousand|million|billion|trillion)s?\b
+  def: \s*\b(thousand|million|billion|trillion|lakh|crore)s?\b
 CurrencyPrefixList: !dictionary
   types: [ string, string ]
   entries:
@@ -666,10 +666,10 @@ CurrencyPrefixList: !dictionary
     Dobra: db|std
     Dollar: $
     Brazilian Real: R$
-    United States dollar: united states $|us$|us $|u.s. $|u.s $|usd$
+    United States dollar: united states $|us$|us $|u.s. $|u.s $|usd$|usd
     East Caribbean dollar: east caribbean $
-    Mexican peso: mxn$|mxn $|mex$
-    Australian dollar: australian $|australia $
+    Mexican peso: mxn$|mxn $|mex$|mxn
+    Australian dollar: australian $|australia $|a$|aud
     Bahamian dollar: bahamian $|bahamia $
     Barbadian dollar: barbadian $|barbadin $
     Belize dollar: belize $
@@ -677,15 +677,15 @@ CurrencyPrefixList: !dictionary
     British Virgin Islands dollar: british virgin islands $|bvi$|virgin islands $|virgin island $|british virgin island $
     Brunei dollar: brunei $|b$
     Sen: sen
-    Singapore dollar: singapore $|s$
-    Canadian dollar: canadian $|can$|c$|c $|canada $
+    Singapore dollar: singapore $|s$|sg$|sgd
+    Canadian dollar: canadian $|can$|c$|c $|canada $|cad$|cad
     Cayman Islands dollar: cayman islands $|ci$|cayman island $
     New Zealand dollar: new zealand $|nz$|nz $
     Cook Islands dollar: cook islands $|cook island $
     Fijian dollar: fijian $|fiji $
     Guyanese dollar: gy$|gy $|g$|g $
     Hong Kong dollar: hong kong $|hk$|hkd|hk $
-    Indian rupee: ₹
+    Indian rupee: ₹|inr|rs
     Jamaican dollar: jamaican $|j$|jamaica $
     Kiribati dollar: kiribati $
     Liberian dollar: liberian $|liberia $
@@ -701,12 +701,23 @@ CurrencyPrefixList: !dictionary
     Trinidad and Tobago dollar: trinidad and tobago $|trinidad $|trinidadian $
     Tuvaluan dollar: tuvaluan $
     Samoan tālā: ws$
-    Chinese yuan: ￥
-    Japanese yen: ¥
-    Euro: €
+    Chinese yuan: ￥|cny|rmb
+    Japanese yen: ¥|jpy
+    Euro: €|eur
     Pound: £
     Costa Rican colón: ₡
     Turkish lira: ₺
+# ISO 4217 prefix codes for currencies commonly used as leading prefixes
+# in financial documents but absent from symbol-only entries above
+    British pound: gbp
+    Vietnamese dong: vnd
+    Swedish krona: sek
+    Norwegian krone: nok
+    Danish krone: dkk
+    Swiss franc: chf
+    South Korean won: krw
+    Brazilian real: brl
+    South African rand: zar
 #CC
     Bitcoin: ₿|btc|xbt
 AmbiguousCurrencyUnitList: !list

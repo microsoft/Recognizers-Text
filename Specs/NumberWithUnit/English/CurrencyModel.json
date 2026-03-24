@@ -2980,5 +2980,156 @@
         }
       }
     ]
+  },
+  {
+    "Input": "USD34.6 million deal",
+    "NotSupported": "java, javascript",
+    "Results": [
+      {
+        "Text": "USD34.6 million",
+        "Start": 0,
+        "End": 14,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "unit": "United States dollar",
+          "value": "34600000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "USD0.92 Million consideration",
+    "NotSupported": "java, javascript",
+    "Results": [
+      {
+        "Text": "USD0.92 Million",
+        "Start": 0,
+        "End": 14,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "USD",
+          "unit": "United States dollar",
+          "value": "920000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "VND4,927 billion acquisition",
+    "NotSupported": "java, javascript",
+    "Results": [
+      {
+        "Text": "VND4,927 billion",
+        "Start": 0,
+        "End": 15,
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Vietnamese dong",
+          "value": "4927000000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "GBP 27 million",
+    "NotSupported": "java, javascript",
+    "Results": [
+      {
+        "Text": "gbp 27 million",
+        "Start": 0,
+        "End": 13,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "GBP",
+          "unit": "British pound",
+          "value": "27000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "SEK 60,500,000",
+    "NotSupported": "java, javascript",
+    "Results": [
+      {
+        "Text": "sek 60,500,000",
+        "Start": 0,
+        "End": 13,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "SEK",
+          "unit": "Swedish krona",
+          "value": "60500000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "CAD$1,700,000",
+    "NotSupported": "java, javascript",
+    "Results": [
+      {
+        "Text": "CAD$1,700,000",
+        "Start": 0,
+        "End": 12,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "CAD",
+          "unit": "Canadian dollar",
+          "value": "1700000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "A$100,000 cash consideration",
+    "NotSupported": "java, javascript",
+    "Results": [
+      {
+        "Text": "A$100,000",
+        "Start": 0,
+        "End": 8,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "AUD",
+          "unit": "Australian dollar",
+          "value": "100000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "SG$40 million",
+    "NotSupported": "java, javascript",
+    "Results": [
+      {
+        "Text": "SG$40 million",
+        "Start": 0,
+        "End": 12,
+        "TypeName": "currency",
+        "Resolution": {
+          "isoCurrency": "SGD",
+          "unit": "Singapore dollar",
+          "value": "40000000"
+        }
+      }
+    ]
+  },
+  {
+    "Input": "Rs 660 crore",
+    "NotSupported": "java, javascript",
+    "Results": [
+      {
+        "Text": "rs 660 crore",
+        "Start": 0,
+        "End": 11,
+        "TypeName": "currency",
+        "Resolution": {
+          "unit": "Rupee",
+          "value": "6600000000"
+        }
+      }
+    ]
   }
 ]
